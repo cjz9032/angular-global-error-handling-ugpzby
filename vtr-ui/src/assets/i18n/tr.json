@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Performans",
                         "balance": "Denge",
-                        "quiet": "Sessiz"
+                        "quiet": "Sessiz",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Yüksek CPU kullanımı Yüksek fan hızı",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Açık",
                         "whenGaming": "Oyun Oynarken",
-                        "off": "Kapalı"
+                        "off": "Kapalı",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU Hız Aşırtma etkinleştirilecek",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "BİLGİ"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Göz Koruması",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "Garantiyi uzat",
             "processor": {
                 "title": "İşlemci",
-                "notFound": "İşlemci bulunamadı"
+                "notFound": "İşlemci bilgisi yükleniyor"
             },
             "memory": {
                 "title": "Bellek",
-                "notFound": "Bellek bulunamadı",
+                "notFound": "Bellek bilgisi yükleniyor",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Disk Alanı",
-                "notFound": "Disk bulunamadı"
+                "notFound": "Disk bilgisi yükleniyor"
             },
             "software": "Yazılım güncel",
             "updated": "Güncellendi",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "Uçak Güç Kipi",
                         "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Otomatik algılama",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1521,9 +1537,9 @@
             "listContactCustomerService": "Müşteri Hizmetleri ile iletişim kurun",
             "listContactUsOnWechat": "WeChat'te bize ulaşın",
             "weChatDescription": "WeChat'te sorunuzu bizimle paylaşırsanız hızlı bir şekilde yanıt alabilirsiniz",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Sosyal medyada bizi bulun",
+            "listContactUsOnFacebook": "Facebook'ta bize ulaşın",
+            "facebookDescription": "Facebook'ta bizi bulmak için tıklayın"
         },
         "quicklinks": {
             "title": "Hızlı Bağlantılar",
@@ -1565,12 +1581,12 @@
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
             "suspicious": "ŞÜPHELİ",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Güvenlik puanınız çevrimiçinde ne kadar güvende olduğunuza dair bir fikir verir; sonuç, aşağıdakilere bağlıdır:",
+            "antivirus": "Antivirüs yazılımı tarafından korunup korunmadığınız",
+            "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
+            "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
+            "wifi": "Genel WiFi kullanırken kişisel verilerinizi şifreleyip şifrelemediğiniz",
+            "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "Vantage'ın kritik parçalarının sizde olmadığını tespit ettik. Bu parçalar arka planda indirilecek. Lütfen daha sonra yeniden deneyin.",
                 "closeText": "kapat",
                 "offlineText": "İnternet'e bağlı olmadığınızı tespit ettik. Bu sayfanın bazı kısımları düzgün çalışmayacak. Lütfen yeniden bağlanın",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Hesap oluşturma işlemi başarısız oldu. Lütfen daha sonra yeniden deneyin."
             }
         },
         "homeprotection": {

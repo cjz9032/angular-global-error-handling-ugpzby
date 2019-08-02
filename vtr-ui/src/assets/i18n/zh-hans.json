@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "性能",
                         "balance": "平衡",
-                        "quiet": "安静"
+                        "quiet": "安静",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "CPU 使用率越高，风扇速度越快",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "开启",
                         "whenGaming": "游戏时",
-                        "off": "关闭"
+                        "off": "关闭",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "将激活 CPU 超频",
@@ -88,6 +94,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -202,10 +211,6 @@
                     }
                 }
             },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
-            },
             "popupContent": {
                 "clearMacrokey": {
                     "title": "是否确实要清除此宏键？"
@@ -230,6 +235,10 @@
             },
             "recording": {
                 "title": "录制宏键，用于"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -385,19 +399,19 @@
         "menu": {
             "dashboard": "首页",
             "device": {
-                "title": "设备",
-                "sub1": "我的设备",
-                "sub2": "我的设备设置",
+                "title": "我的设备",
+                "sub1": "设备信息",
+                "sub2": "设备设置",
                 "sub3": "系统更新",
                 "sub4": "智能助手"
             },
             "security": {
-                "title": "安全性",
-                "sub1": "我的安全性",
-                "sub2": "反病毒",
+                "title": "安全顾问",
+                "sub1": "我的安全顾问",
+                "sub2": "病毒防护",
                 "sub3": "WiFi 安全",
-                "sub4": "密码安全状况",
-                "sub5": "因特网保护",
+                "sub4": "密码保险箱",
+                "sub5": "网络保护",
                 "sub6": "Windows Hello"
             },
             "support": "支持服务",
@@ -503,14 +517,15 @@
             }
         },
         "quickSettings": {
-            "title": "您的快速设置",
+            "title": "您的设置",
             "microphone": "麦克风",
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -549,8 +564,8 @@
     },
     "device": {
         "myDevice": {
-            "title": "我的设备",
-            "subtitle": "我的设备状态",
+            "title": "设备信息",
+            "subtitle": "设备状态",
             "serial": "序列号",
             "productNumber": "产品编号",
             "biosVersion": "BIOS 版本",
@@ -560,7 +575,7 @@
                 "title": "系统更新",
                 "notFound": "未找到系统更新",
                 "detail": {
-                    "uptoDate": "软件为最新",
+                    "uptoDate": "软件已更新",
                     "updatedOn": "更新时间",
                     "outdated": "软件已过时",
                     "neverRanUpdate": "从未运行更新"
@@ -569,18 +584,18 @@
             "extendedWarranty": "延长保修",
             "processor": {
                 "title": "处理器",
-                "notFound": "未找到处理器"
+                "notFound": "正在加载处理器信息"
             },
             "memory": {
                 "title": "内存",
-                "notFound": "未找到内存",
+                "notFound": "正在加载内存信息",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "磁盘空间",
-                "notFound": "未找到磁盘"
+                "notFound": "正在加载磁盘信息"
             },
-            "software": "软件为最新",
+            "software": "软件已更新",
             "updated": "已更新",
             "outOfWarranty": "保修期已过",
             "expired": "到期时间：",
@@ -597,7 +612,7 @@
                     "support": "支持服务"
                 }
             },
-            "helpful": "帮助内容"
+            "helpful": "常见问题"
         },
         "deviceSettings": {
             "helpful": "帮助内容",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "飞行电源模式",
                         "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "自动检测",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1521,9 +1537,9 @@
             "listContactCustomerService": "联系客户服务部门",
             "listContactUsOnWechat": "通过微信联系我们",
             "weChatDescription": "在微信上向我们提问，我们定会迅速回复",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "在社交媒体上找到我们",
+            "listContactUsOnFacebook": "通过 Facebook 联系我们",
+            "facebookDescription": "点击以便在 Facebook 上找到我们"
         },
         "quicklinks": {
             "title": "直通车",
@@ -1565,12 +1581,12 @@
             "good": "良好",
             "malicious": "恶意",
             "suspicious": "可疑",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "您的安全分数可以让您了解您的在线安全情况，其结果取决于您是否：",
+            "antivirus": "受到反病毒软件的保护",
+            "password": "以安全的方式管理安全程度强且复杂的密码",
+            "vpn": "监控您的网络以防暴露给攻击者",
+            "wifi": "使用公共 WiFi 时加密您的个人数据",
+            "windowsHello": "使用安全登录选项保护您的设备"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "我们检测到您丢失了 Vantage 的关键部分。这些部分将在后台下载。请稍后重试。",
                 "closeText": "关闭",
                 "offlineText": "我们检测到您没有连接到互联网。此页面的某些部分将无法正常运行。请重新连接",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "帐户创建失败。请稍后重试。"
             }
         },
         "homeprotection": {

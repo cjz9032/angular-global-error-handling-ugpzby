@@ -14,13 +14,13 @@ import { LanguageService } from 'src/app/services/language/language.service';
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value: boolean;
-	@Input() name: string;
+	@Input() onOffSwitchId: string;
 	@Input() disabled = false;
 	@Input() showLoader = false;
 	@Input() theme = 'white';
 	@Input() readonly = false;
 	@Input() isSwitchDisable = false;
-
+	@Input() switchId: string;
 	uiSubscription: Subscription;
 
 	onLabel = 'on';
@@ -40,7 +40,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.readonly = this.readonly || false;
 		this.commonService.notification.subscribe((response) => {
-			if (response.type === this.name) {
+			if (response.type === this.onOffSwitchId) {
 				this.value = response.payload;
 			}
 		});
@@ -61,10 +61,10 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 		setTimeout(() => {
 			if (!this.readonly) {
 				this.disabled = true;
-				if (this.name === 'recommended-updates') {
+				if (this.onOffSwitchId === 'recommended-updates') {
 					this.disabled = this.isSwitchDisable;
 					this.value = !this.value;
-				} else if (this.name !== 'wifiSecurity') {
+				} else if (this.onOffSwitchId !== 'wifiSecurity') {
 					this.disabled = false;
 					this.value = !this.value;
 				}

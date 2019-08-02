@@ -11,25 +11,28 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { GuardService } from 'src/app/services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
 	templateUrl: './widget-security-status.component.html',
 	styleUrls: ['./widget-security-status.component.scss']
 })
-export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
+export class WidgetSecurityStatusComponent implements OnInit{
 
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
 	isRS5OrLater: boolean;
-
+	@Input() linkId: string;
 	constructor(
 		private commonService: CommonService,
 		private translateService: TranslateService,
 		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
-		private windowsHelloService: WindowsHelloService) {}
+		private windowsHelloService: WindowsHelloService,
+		private guard: GuardService) {}
 
 	ngOnInit() {
 		this.items = [];
@@ -51,7 +54,7 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 		if (this.securityAdvisor) {
 			this.securityAdvisor.refresh();
 		}
-		if (!this.securityAdvisor.wifiSecurity.state) {
+		if (!this.securityAdvisor.wifiSecurity.state || (this.commonService.getSessionStorageValue(SessionStorageKey.DashboardInDashboardPage) && !this.guard.previousPageName.startsWith('Security'))) {
 			this.securityAdvisor.wifiSecurity.getWifiSecurityState();
 		}
 		if (windowsHello.fingerPrintStatus) {
@@ -60,12 +63,6 @@ export class WidgetSecurityStatusComponent implements OnInit, OnDestroy {
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHelloItem(windowsHello);
 		});
-	}
-
-	ngOnDestroy() {
-		if (this.securityAdvisor.wifiSecurity) {
-			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
-		}
 	}
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {

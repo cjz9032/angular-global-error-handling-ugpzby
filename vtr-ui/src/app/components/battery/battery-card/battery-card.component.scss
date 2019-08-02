@@ -36,15 +36,15 @@
 		.battery-gauge-label {
 			opacity: 0.58;
 			color: $main_dark;
-			font-size: 1.1rem;
-			font-weight: 500;
+			font-size: $caption;
+			font-weight: $weight_medium;
 			letter-spacing: 0.1rem;
 			line-height: 1.3rem;
 		}
 
 		.battery-health {
 			color: $main_dark;
-			font-size: 3.5rem;
+			font-size: $sub_header;
 			line-height: 4.2rem;
 		}
 
@@ -61,7 +61,7 @@
 			border-radius: 2.5rem;
 			background: $gradient_main;
 			color: $light;
-			font-size: 1.5rem;
+			font-size: $base;
 			font-weight: $weight_bold;
 			letter-spacing: 0.1rem;
 
@@ -85,7 +85,7 @@
 		}
 
 		.battery-conditions-tips {
-			font-size: 1.8rem;
+			font-size: $base;
 			z-index: 5;
 			width: 100%;
 			letter-spacing: 0;

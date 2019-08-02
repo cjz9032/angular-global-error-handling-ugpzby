@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Suorituskyky",
                         "balance": "Tasapaino",
-                        "quiet": "Hiljainen"
+                        "quiet": "Hiljainen",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Korkeampi suoritinkäyttö ja tuulettimen kierrosnopeus",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Käytössä",
                         "whenGaming": "Pelaamisen aikana",
-                        "off": "Poissa käytöstä"
+                        "off": "Poissa käytöstä",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU-ylikellotus aktivoidaan",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "TIETOJA"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Silmien hoito",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "Laajenna takuu",
             "processor": {
                 "title": "Suoritin",
-                "notFound": "Suoritinta ei löydy"
+                "notFound": "Ladataan suorittimen tietoja"
             },
             "memory": {
                 "title": "Muisti",
-                "notFound": "Muistia ei löydy",
+                "notFound": "Ladataan muistin tietoja",
                 "ram": "RAM-muisti"
             },
             "diskspace": {
                 "title": "Levytila",
-                "notFound": "Asemaa ei löytynyt"
+                "notFound": "Ladataan levyn tietoja"
             },
             "software": "Ohjelmisto ajan tasalla",
             "updated": "Päivitetty",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "Lentokonevirtatila",
                         "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta.Kun lentokonevirtatila on käytössä, tietokone vähentää virrankulutusta rajoittamalla akun latausta ja järjestelmän suorituskykyä.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Automaattinen tunnistus",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1521,9 +1537,9 @@
             "listContactCustomerService": "Ota asiakaspalveluun yhteyttä",
             "listContactUsOnWechat": "Ota meihin yhteyttä WeChat-palvelussa",
             "weChatDescription": "Lähetä meille kysymys WeChat-palvelussa, niin vastaamme taatusti pian",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Löydä meidät sosiaalisesta mediasta",
+            "listContactUsOnFacebook": "Ota meihin yhteyttä Facebookissa",
+            "facebookDescription": "Napsauta tätä, jos haluat löytää meidät Facebookista"
         },
         "quicklinks": {
             "title": "Pikalinkit",
@@ -1565,12 +1581,12 @@
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
             "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Turvapisteet antavat käsityksen siitä, kuinka turvallista toimintasi verkossa on. Tulos riippuu vastauksista seuraaviin:",
+            "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
+            "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
+            "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
+            "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
+            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "Olemme havainneet, että sinulta puuttuu tärkeitä Vantagen osia. Nämä osat ladataan taustalla. Yritä myöhemmin uudelleen.",
                 "closeText": "sulje",
                 "offlineText": "Internet-yhteyttä ei ole muodostettu. Jotkin tämän sivun osat eivät toimi oikein. Muodosta yhteys uudelleen",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Tilin luonti on epäonnistunut. Yritä myöhemmin uudelleen."
             }
         },
         "homeprotection": {

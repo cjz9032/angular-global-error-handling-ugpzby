@@ -97,17 +97,8 @@ export class CMSService {
 
 		// VAN-5872, server switch feature
 		// retrive from localStorage
-		const CMSOption = Object.assign(defaults, queryParams);
-		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-		if (serverSwitchLocalData) {
-			if (serverSwitchLocalData.forceit) {
-				Object.assign(CMSOption, {
-					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
-					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
-					Segment: serverSwitchLocalData.segment.Value
-				});
-			}
-		}
+		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+
 		// console.log('@sahinul cms service',CMSOption);
 
 		return new Observable(subscriber => {
@@ -159,7 +150,8 @@ export class CMSService {
 			Segment: this.localInfo.Segment,
 			Brand: this.localInfo.Brand
 		};
-		const CMSOption = Object.assign(defaults, queryParams);
+		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+		/* const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 		if (serverSwitchLocalData) {
 			if (serverSwitchLocalData.forceit) {
@@ -169,7 +161,7 @@ export class CMSService {
 					Segment: serverSwitchLocalData.segment.Value
 				});
 			}
-		}
+		} */
 
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall('/api/v1/articlecategories',
@@ -206,7 +198,8 @@ export class CMSService {
 			Segment: this.localInfo.Segment,
 			Brand: this.localInfo.Brand
 		};
-		const CMSOption = Object.assign(defaults, queryParams);
+		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+		/* const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 		if (serverSwitchLocalData) {
 			if (serverSwitchLocalData.forceit) {
@@ -216,7 +209,7 @@ export class CMSService {
 					Segment: serverSwitchLocalData.segment.Value
 				});
 			}
-		}
+		} */
 
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall('/api/v1/articles',
@@ -254,7 +247,9 @@ export class CMSService {
 			Segment: this.localInfo.Segment,
 			Brand: this.localInfo.Brand
 		};
-		const CMSOption = Object.assign(defaults, queryParams);
+
+		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+		/* const CMSOption = Object.assign(defaults, queryParams);
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 		if (serverSwitchLocalData) {
 			if (serverSwitchLocalData.forceit) {
@@ -264,7 +259,7 @@ export class CMSService {
 					Segment: serverSwitchLocalData.segment.Value
 				});
 			}
-		}
+		} */
 
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall(
@@ -290,5 +285,28 @@ export class CMSService {
 		}).filter((record) => {
 			return record.Position === position;
 		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
+	}
+
+	private updateServerSwitchCMSOptions(defaults, queryParams) {
+		const CMSOption = Object.assign(defaults, queryParams);
+		try {
+			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+			if (serverSwitchLocalData) {
+				this.commsService.setServerSwitchLocalData(serverSwitchLocalData);
+				if (serverSwitchLocalData.forceit) {
+					Object.assign(CMSOption, {
+						Lang: (serverSwitchLocalData.language.Value).toLowerCase(),
+						GEO: (serverSwitchLocalData.country.Value).toLowerCase(),
+						Segment: serverSwitchLocalData.segment.Value
+					});
+				}
+
+			}
+		}
+		catch (error) {
+			console.error(error.message);
+		}
+		return CMSOption;
+
 	}
 }

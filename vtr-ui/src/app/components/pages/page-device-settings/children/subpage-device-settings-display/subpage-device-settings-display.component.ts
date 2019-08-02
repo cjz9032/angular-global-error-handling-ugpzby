@@ -153,11 +153,12 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		if (this.isDTmachine) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
+		} else {
+			this.getCameraPrivacyModeStatus();
+			this.getCameraDetails();
+			this.displayService.startMonitorForCameraPermission();
+			this.startCameraPrivacyMonitor();
 		}
-		this.getCameraPrivacyModeStatus();
-		this.getCameraDetails();
-		this.displayService.startMonitorForCameraPermission();
-		this.startCameraPrivacyMonitor();
 	}
 	private onNotification(notification: AppNotification) {
 		if (notification) {
@@ -219,7 +220,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public onPrivacyModeChange($event: any) {
 		this.baseCameraDetail.toggleCameraPrivacyMode($event.switchValue);
 	}
-
+	// TROUBLE
 	private getCameraDetails() {
 		try {
 			// this.baseCameraDetail
@@ -232,38 +233,40 @@ export class SubpageDeviceSettingsDisplayComponent
 			// 		console.log(error);
 			// 	});
 			// console.log('Inside');
-			this.displayService.getCameraSettingsInfo().then((response) => {
-				console.log('getCameraDetails.then', response);
-				this.dataSource = response;
-				if (this.dataSource.permission === true) {
-					this.shouldCameraSectionDisabled = false;
-					console.log('getCameraDetails.then permission', this.dataSource.permission);
+			this.displayService
+				.getCameraSettingsInfo()
+				.then((response) => {
+					console.log('getCameraDetails.then', response);
+					this.dataSource = response;
+					if (this.dataSource.permission === true) {
+						this.shouldCameraSectionDisabled = false;
+						console.log('getCameraDetails.then permission', this.dataSource.permission);
 
-				} else {
-					// 	response.exposure.autoValue = true;
-					this.dataSource = this.emptyCameraDetails[0];
-					this.shouldCameraSectionDisabled = true;
-					this.cameraFeatureAccess.showAutoExposureSlider = true;
-					console.log('no camera permission .then', this.emptyCameraDetails[0]);
-					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
-					// privacy.status = false;
-					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
-					this.dataSource.exposure.autoValue = false;
-				}
-				this.cameraFeatureAccess.showAutoExposureSlider = false;
-				if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
-					this.cameraFeatureAccess.exposureAutoValue = true;
+					} else {
+						// 	response.exposure.autoValue = true;
+						this.dataSource = this.emptyCameraDetails[0];
+						this.shouldCameraSectionDisabled = true;
+						this.cameraFeatureAccess.showAutoExposureSlider = true;
+						console.log('no camera permission .then', this.emptyCameraDetails[0]);
+						const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+						// privacy.status = false;
+						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
+						this.dataSource.exposure.autoValue = false;
+					}
+					this.cameraFeatureAccess.showAutoExposureSlider = false;
+					if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
+						this.cameraFeatureAccess.exposureAutoValue = true;
 
-				} else {
-					this.cameraFeatureAccess.exposureAutoValue = false;
-				}
-				if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
-					this.cameraFeatureAccess.showAutoExposureSlider = true;
-				}
-				// if (this.dataSource.permission) {
-				// 	this.shouldCameraSectionDisabled = false;
-				// }
-			});
+					} else {
+						this.cameraFeatureAccess.exposureAutoValue = false;
+					}
+					if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
+						this.cameraFeatureAccess.showAutoExposureSlider = true;
+					}
+					// if (this.dataSource.permission) {
+					// 	this.shouldCameraSectionDisabled = false;
+					// }
+				});
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -318,6 +321,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.error(error.message);
 		}
 	}
+	// TROUBLE
 	public initEyecaremodeSettings() {
 		try {
 			if (this.displayService.isShellAvailable) {
@@ -540,6 +544,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				});
 		}
 	}
+	//  TROUBLE
 	private getCameraPrivacyModeStatus() {
 		if (this.displayService.isShellAvailable) {
 			this.displayService
@@ -838,5 +843,8 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.error(error.message);
 
 		}
+	}
+	onClick(path) {
+		this.deviceService.launchUri(path);
 	}
 }

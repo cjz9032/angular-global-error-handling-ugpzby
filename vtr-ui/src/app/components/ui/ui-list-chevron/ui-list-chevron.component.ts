@@ -19,7 +19,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	@Input() clickable = true;
 	@Input() metricsEvent: string;
 	@Input() blockPosition: string;
-	@Input() ariaLabel:string;
+	@Input() linkId: string;
 	/** object having item class list*/
 	itemStatusClass = {
 		0: 'good',
@@ -31,7 +31,9 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		6: 'text-blue'
 	};
 
-	/** object having item status icon list*/
+	/**
+	 * object having item status icon list
+	 */
 	itemStatusIconClass = {
 		0: 'check',
 		1: 'times',
@@ -90,7 +92,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 
 	/**
 	 * launchSystemUri
-	path: string */
+	 * path: string
+	 */
 	public launchSystemUri(path: string) {
 		if (path) {
 			this.deviceService.launchUri(path);

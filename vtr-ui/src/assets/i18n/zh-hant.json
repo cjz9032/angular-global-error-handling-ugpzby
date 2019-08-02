@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "效能",
                         "balance": "平衡",
-                        "quiet": "安靜"
+                        "quiet": "安靜",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "CPU 使用量越高，風扇速度越快",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "開啟",
                         "whenGaming": "遊戲時",
-                        "off": "關閉"
+                        "off": "關閉",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU 超頻將會啟動",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "資訊"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "相機",
             "eyeCareMode": "護眼",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "延長保固",
             "processor": {
                 "title": "處理器",
-                "notFound": "找不到處理器"
+                "notFound": "正在載入處理器資訊"
             },
             "memory": {
                 "title": "記憶體",
-                "notFound": "找不到記憶體",
+                "notFound": "正在載入記憶體資訊",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "磁碟空間",
-                "notFound": "找不到磁碟"
+                "notFound": "正在載入硬碟資訊"
             },
             "software": "軟體已是最新版本",
             "updated": "已更新",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "機艙電源模式",
                         "description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "自動偵測",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1521,9 +1537,9 @@
             "listContactCustomerService": "聯絡客戶服務",
             "listContactUsOnWechat": "透過 WeChat 聯絡我們",
             "weChatDescription": "透過 WeChat 向我們提問，我們一定會盡快回覆",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "透過社交媒體追蹤我們",
+            "listContactUsOnFacebook": "透過 Facebook 聯絡我們",
+            "facebookDescription": "按一下以透過 Facebook 追蹤我們"
         },
         "quicklinks": {
             "title": "快速鏈結",
@@ -1565,12 +1581,12 @@
             "good": "良好",
             "malicious": "惡意",
             "suspicious": "可疑",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "您可以從安全分數了解自身的線上安全，最後得分將依下列條件而異：",
+            "antivirus": "是否獲得防毒軟體的保護",
+            "password": "是否在安全方式中採用強式及複雜的密碼進行管理",
+            "vpn": "是否監控網路遭受攻擊的風險",
+            "wifi": "是否在使用公共 WiFi 時加密您的個人資料",
+            "windowsHello": "是否使用安全登入選項來保護裝置"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。",
                 "closeText": "關閉",
                 "offlineText": "我們發現您沒有連線到網際網路。此頁面的某些部分將無法正確運作。請重新連線",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "帳戶建立失敗。請稍後重試。"
             }
         },
         "homeprotection": {

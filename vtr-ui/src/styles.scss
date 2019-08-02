@@ -213,7 +213,7 @@ button {
 
 	.widget-heading {
 		color: $main_shade;
-		font-size: 4rem;
+		font-size: $sub_header;
 		margin-top: 4rem;
 	}
 }
@@ -291,6 +291,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	border-radius: 0.4rem;
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+	font-family: "Segoe UI";
 
 	.tooltip-inner {
 		padding: 1.2rem;
@@ -655,7 +656,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.tooltip {
 		font-size: 1.6rem;
 		border-radius: 1rem;
-		font-family: "rubik";
+		font-family: "Segoe UI";
 
 		ul {
 			padding: 0;
@@ -678,6 +679,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		color: $main_darker;
 		text-align: left;
 		max-width: 100%;
+		font-family: "Segoe UI";
 
 		span {
 			font-weight: bold;

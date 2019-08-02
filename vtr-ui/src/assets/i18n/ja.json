@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "性能",
                         "balance": "バランス",
-                        "quiet": "静音"
+                        "quiet": "静音",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "高い CPU 使用率、高速なファン",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "オン",
                         "whenGaming": "ゲーム時",
-                        "off": "オフ"
+                        "off": "オフ",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU クロックアップが有効になります",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "情報"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "カメラ",
             "eyeCareMode": "アイ・ケア",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "保証の延長",
             "processor": {
                 "title": "プロセッサー",
-                "notFound": "プロセッサーが見つかりません"
+                "notFound": "プロセッサー情報をロード中"
             },
             "memory": {
                 "title": "メモリー",
-                "notFound": "メモリーが見つかりません",
+                "notFound": "メモリー情報をロード中",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "ディスク容量",
-                "notFound": "ディスクが見つかりません"
+                "notFound": "ディスク情報をロード中"
             },
             "software": "ソフトウェアは最新です",
             "updated": "更新",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "飛行機電源モード",
                         "description": "システムの消費電力量を制御することで飛行機の AC 電源コンセントを保護します。飛行機電源モードを有効にすると、コンピューターはバッテリー充電率とシステム・パフォーマンスを制限して電力消費量を抑えます。",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "自動検出",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1515,15 +1531,15 @@
             "listUserGuide": "ユーザー・ガイド"
         },
         "needHelp": {
-            "title": "Need Help? (ヒント集)",
+            "title": "お問い合わせ",
             "description": "ご不明な点については、当社までお問い合わせください。",
             "listLenovoCommunity": "Lenovo コミュニティー",
             "listContactCustomerService": "カスタマー・サービスへのお問い合わせ",
             "listContactUsOnWechat": "WeChat でのお問い合わせ",
             "weChatDescription": "WeChat からご質問をお送りください。すぐに対応いたします",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "ソーシャル・メディアのアカウント",
+            "listContactUsOnFacebook": "Facebook でのお問い合わせ",
+            "facebookDescription": "Facebook のアカウントはここをクリック"
         },
         "quicklinks": {
             "title": "クイックリンク",
@@ -1565,12 +1581,12 @@
             "good": "良好",
             "malicious": "悪意",
             "suspicious": "疑わしい",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "セキュリティー・スコアによって、お客様がオンライン時にどれほど安全かがわかります。以下の項目を実行しているかどうかで結果が変わります。",
+            "antivirus": "ウイルス対策ソフトウェアで保護されている",
+            "password": "強力で複雑なパスワードを安全な方法で管理している",
+            "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
+            "wifi": "公共の WiFi を使用するときは個人データを暗号化している",
+            "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "Vantage の重要なピースを見逃していることがわかりました。これらのピースはバックグラウンドでダウンロードされます。後から再試行してください。",
                 "closeText": "閉じる",
                 "offlineText": "インターネットに接続されていないことがわかりました。このページの一部がが正しく動作しません。再接続してください",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "アカウント作成に失敗しました。後から再試行してください。"
             }
         },
         "homeprotection": {

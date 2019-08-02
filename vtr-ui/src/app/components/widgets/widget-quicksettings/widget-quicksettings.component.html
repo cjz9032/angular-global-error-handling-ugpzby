@@ -20,8 +20,7 @@
 							[isLoading]="microphoneStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
-					<div class="text-center"
-						*ngIf="cameraStatus.available">
+					<div class="text-center">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Camera2x'"
 							[offIconDefinition]="'icomoon icomoon-LE-Camera-privacy-mode2x'"
 							#camera
@@ -34,7 +33,7 @@
 							[isBlocked]="cameraStatus.status || !cameraStatus.permission"
 							[isCamera]="true"
 							(toggle)="onCameraStatusToggle($event)"
-							[disable]="!(cameraStatus.permission && cameraStatus.available && quickSettingsWidget[1].state)"
+							[disable]="!(cameraStatus.available && cameraStatus.permission && quickSettingsWidget[1].state)"
 							[isLoading]="cameraStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
@@ -56,23 +55,19 @@
 				</div>
 			</div>
 		</div>
-		<div *ngIf="!microphoneStatus.isLoading && !cameraStatus.isLoading">
+		
+		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
 			<div *ngIf="!microphoneStatus.permission || !cameraStatus.permission"
 				class="row permission-note mt-5">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
-						<!-- <fa-icon [icon]="['fal', 'exclamation-circle']" class="note-icon">
-					</fa-icon> -->
-						<img src="../../../../assets/icons/exclamation-circle-solid.svg"
-							class="note-icon mt-auto"
-							alt="">
-
+						<fa-icon [icon]="['fas', 'exclamation-circle']" class="note-icon">
+					</fa-icon>	
 					</div>
 					<div class="col-11 pr-0 pl-2">
 						<div *ngIf="!microphoneStatus.permission && cameraStatus.permission">
 							<p class="mb-0 mt-auto">
-								{{'dashboard.quickSettings.microphone' | translate}}
-								{{'dashboard.quickSettings.note.accessNote' | translate}}
+								{{'dashboard.quickSettings.note.microphoneNote' | translate}}
 							</p>
 							<button type="button"
 								class="btn btn-link privacy-button pl-0"
@@ -82,8 +77,7 @@
 						</div>
 						<div *ngIf="!cameraStatus.permission && microphoneStatus.permission">
 							<p class="mb-0 mt-auto">
-								{{'dashboard.quickSettings.cameraPrivacy' | translate}}
-								{{'dashboard.quickSettings.note.accessNote' | translate}}
+								{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 							</p>
 							<button type="button"
 								class="btn btn-link privacy-button pl-0"
@@ -93,8 +87,7 @@
 						</div>
 						<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission">
 							<p class="mb-0 mt-auto">
-								{{'dashboard.quickSettings.note.microphoneAndcameraPrivacyNotes' | translate}}
-								{{'dashboard.quickSettings.note.accessNote' | translate}}
+								{{'dashboard.quickSettings.note.microphoneAndcameraPrivacyNotes' | translate}}								
 							</p>
 							<button type="button"
 								class="btn btn-link privacy-button pl-0"

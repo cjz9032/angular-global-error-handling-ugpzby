@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Desempenho",
                         "balance": "Equilíbrio",
-                        "quiet": "Silencioso"
+                        "quiet": "Silencioso",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Maior utiliz. da CPU, maior veloc. da ventoinha",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Ligado",
                         "whenGaming": "Durante Jogos",
-                        "off": "Desligado"
+                        "off": "Desligado",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "O Overclocking da CPU será ativado",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "INFORMAÇÕES"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "Câmara",
             "eyeCareMode": "Cuidados c/Visão",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "Garantia alargada",
             "processor": {
                 "title": "Processador",
-                "notFound": "Processador não encontrado"
+                "notFound": "A carregar informações do processador"
             },
             "memory": {
                 "title": "Memória",
-                "notFound": "Memória não encontrada",
+                "notFound": "A carregar informações da memória",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Espaço em Disco",
-                "notFound": "Disco não encontrado"
+                "notFound": "A carregar informações do disco"
             },
             "software": "Software atualizado",
             "updated": "Atualizado",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "Modo de alimentação em avião",
                         "description": "Proteja a tomada CA do avião controlando o consumo de energia do sistema.Quando o Modo de Alimentação em Avião está ativado, o computador diminui o consumo de energia limitando a taxa de carregamento da bateria e o desempenho do sistema.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Deteção automática",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1521,9 +1537,9 @@
             "listContactCustomerService": "Contactar o serviço de apoio ao cliente",
             "listContactUsOnWechat": "Contacte-nos através de WeChat",
             "weChatDescription": "Envie-nos uma questão no WeChat e responderemos rapidamente",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Encontre-nos nas redes sociais",
+            "listContactUsOnFacebook": "Contacte-nos através do Facebook",
+            "facebookDescription": "Clique para nos encontrar no Facebook"
         },
         "quicklinks": {
             "title": "Ligações rápidas",
@@ -1565,12 +1581,12 @@
             "good": "BOA",
             "malicious": "MALICIOSA",
             "suspicious": "SUSPEITA",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "A sua pontuação de segurança permite-lhe ter uma ideia de quão seguro está online. O resultado depende de:",
+            "antivirus": "Estar protegido por software antivírus",
+            "password": "Ter palavras-passe seguras e complexas geridas de uma forma segura",
+            "vpn": "Monitorizar a exposição da sua rede a ataques",
+            "wifi": "Encriptar os seus dados pessoais quando utiliza redes WiFi públicas",
+            "windowsHello": "Proteger o dispositivo através de opções de início de sessão seguras"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "Detetámos que não tem componentes críticos do Vantage. Estes componentes serão transferidos em segundo plano. Tente novamente mais tarde.",
                 "closeText": "fechar",
                 "offlineText": "Detetámos que não está ligado à Internet. Algumas partes desta página não funcionarão corretamente. Volte a estabelecer ligação",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "A criação da conta falhou. Tente novamente mais tarde."
             }
         },
         "homeprotection": {

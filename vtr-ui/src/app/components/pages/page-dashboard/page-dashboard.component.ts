@@ -1,16 +1,12 @@
-import { Component, OnInit, SecurityContext, DoCheck, OnDestroy } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-
-import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -24,12 +20,12 @@ import { AndroidService } from 'src/app/services/android/android.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	firstName = 'User';
@@ -56,12 +52,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	constructor(
 		private router: Router,
 		public dashboardService: DashboardService,
-		public mockService: MockService,
 		public qaService: QaService,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		public commonService: CommonService,
-		private configService: ConfigService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
 		private systemUpdateService: SystemUpdateService,
@@ -69,7 +63,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private translate: TranslateService,
 		vantageShellService: VantageShellService,
 		public androidService: AndroidService,
-		private sanitizer: DomSanitizer,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private activatedRoute: ActivatedRoute,
 		private lenovoIdDialogService: LenovoIdDialogService,
@@ -92,10 +85,14 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
 		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCmsContents();
+		});
 
 	}
 
 	ngOnInit() {
+		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -116,6 +113,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 		this.setDefaultCMSContent();
 		this.fetchCmsContents();
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCmsContents();
+		});
 	}
 
 	ngDoCheck(): void {
@@ -129,6 +130,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnDestroy() {
+		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
 		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
 			if (this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();

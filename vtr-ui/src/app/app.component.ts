@@ -248,6 +248,8 @@ export class AppComponent implements OnInit {
 
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
+
+			this.isMachineInfoLoaded = this.isTranslationLoaded();
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
@@ -261,23 +263,10 @@ export class AppComponent implements OnInit {
 					this.isGaming = value.isGaming;
 
 					if (!this.languageService.isLanguageLoaded) {
-						this.languageService.useLanguage(value);
+						this.languageService.useLanguageByLocale(value.locale);
 					}
 
-					// // MVP2 - Gaming don't need multi-language support in MVP2
-					// if (!this.isGaming) {
-					// 	this.updateLanguageSettings(value);
-					// } else {
-					// 	this.translate.use('en');
-					// }
-
-					// if first launch, send a firstrun metric
-					const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
-					const appFirstRun = !hadRunApp;
-					if (appFirstRun && this.deviceService.isShellAvailable) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-						this.sendFirstRunEvent(value);
-					}
+					this.setFirstRun(value);
 
 					// if u want to see machineinfo in localstorage
 					// just add a key "machineinfo-cache-enable" and set it true
@@ -290,11 +279,11 @@ export class AppComponent implements OnInit {
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
-			this.languageService.useEnglish();
+			this.languageService.useLanguage();
 		}
 	}
 
-	private updateLanguageSettings(value: any) {
+	private setFirstRun(value: any) {
 		try {
 			const hadRunApp: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 			const appFirstRun = !hadRunApp;
@@ -305,21 +294,6 @@ export class AppComponent implements OnInit {
 				}
 
 				this.sendEnvInfoMetric(appFirstRun);
-			}
-
-			if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
-				this.translate.use(value.locale.substring(0, 2));
-				this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-			} else {
-				if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
-					value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
-				}
-				if (value && value.locale.toLowerCase() === 'zh-hans') {
-					this.translate.use('zh-Hans');
-				}
-				if (value && value.locale.toLowerCase() === 'zh-hant') {
-					this.translate.use('zh-Hant');
-				}
 			}
 		} catch (e) {
 			this.vantageShellService.getLogger().error(JSON.stringify(e));
@@ -427,6 +401,7 @@ export class AppComponent implements OnInit {
 					windowClass: 'Server-Switch-Modal',
 					keyboard: false
 				});
+
 			}
 		} catch (error) {
 			console.error('AppComponent.onKeyUp', error);
@@ -455,4 +430,18 @@ export class AppComponent implements OnInit {
 			$event.preventDefault();
 		}
 	}
+
+	/**
+	 * check in route param is Home Component passed isMachineInfoLoaded value or not.
+	 */
+	private isTranslationLoaded(): boolean {
+		if (this.activatedRoute) {
+			const isMachineInfoLoaded = this.activatedRoute.snapshot.paramMap.get('isMachineInfoLoaded');
+			if (isMachineInfoLoaded && isMachineInfoLoaded.toLowerCase() === 'true') {
+				return true;
+			}
+			return false;
+		}
+	}
+
 }

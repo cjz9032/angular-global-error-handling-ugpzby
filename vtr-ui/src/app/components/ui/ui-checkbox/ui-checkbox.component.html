@@ -1,12 +1,12 @@
 <p>
-	<input 
-		class="styled-checkbox"
-		id="styled-checkbox-1"
+	<input class="styled-checkbox"
+		id="{{checkboxId+'_checkbox'}}"
+		attr.aria-label="{{checkboxId+'_checkbox'}}"
 		type="checkbox"
 		[value]="value"
 		[checked]="checked"
 		[disabled]="disabled"
-		(change)="onChange($event)"
-		>
-	<label [ngClass]="{'disabled': disabled}" for="styled-checkbox-1">{{ label }}</label>
+		(change)="onChange($event)">
+	<label [ngClass]="{'disabled': disabled}"
+		for="styled-checkbox-1">{{ label }}</label>
 </p>

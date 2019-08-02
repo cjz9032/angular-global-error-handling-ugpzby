@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Výkon",
                         "balance": "Vyvážení",
-                        "quiet": "Tichý"
+                        "quiet": "Tichý",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Vyšší zátěž CPU a otáčky ventilátoru",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Zapnuto",
                         "whenGaming": "Při hraní",
-                        "off": "Vypnuto"
+                        "off": "Vypnuto",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "Přetaktování CPU se aktivuje",
@@ -88,6 +94,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -202,10 +211,6 @@
                     }
                 }
             },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
-            },
             "popupContent": {
                 "clearMacrokey": {
                     "title": "Opravdu chcete tuto klávesu makra vymazat?"
@@ -230,6 +235,10 @@
             },
             "recording": {
                 "title": "Záznam klávesy makra pro"
+            },
+            "initalKey": {
+                "zero": 0,
+                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "Fotoaparát",
             "eyeCareMode": "Péče o oči",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "Prodloužit záruku",
             "processor": {
                 "title": "Procesor",
-                "notFound": "Procesor nebyl nalezen"
+                "notFound": "Načítají se informace o procesoru"
             },
             "memory": {
                 "title": "Paměť",
-                "notFound": "Paměť nebyla nalezena",
+                "notFound": "Načítají se informace o paměti",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Místo na disku",
-                "notFound": "Disk nebyl nalezen"
+                "notFound": "Načítají se informace o disku"
             },
             "software": "Software je aktuální",
             "updated": "Aktualizováno",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "Napájecí schéma Letadlo",
                         "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače.Je-li aktivní napájecí režim Letadlo, omezí počítač spotřebu elektrické energie zpomalením nabíjení baterie a snížením výkonu systému.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Automatická detekce",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1521,9 +1537,9 @@
             "listContactCustomerService": "Kontaktovat servisní středisko",
             "listContactUsOnWechat": "Kontaktujte nás ve službě WeChat",
             "weChatDescription": "Pošlete nám otázku přes WeChat, určitě vám rychle odpovíme",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Najděte nás na sociálních médiích",
+            "listContactUsOnFacebook": "Kontaktujte nás na Facebooku",
+            "facebookDescription": "Kliknutím nás najdete na Facebooku"
         },
         "quicklinks": {
             "title": "Rychlé odkazy",
@@ -1565,12 +1581,12 @@
             "good": "V POŘÁDKU",
             "malicious": "ŠKODLIVÝ KÓD",
             "suspicious": "PODEZŘELÝ KÓD",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Vaše bezpečnostní skóre vám dá představu o tom, jak jste v bezpečí online, výsledek závisí na tom, zda jste:",
+            "antivirus": "Chráněni antivirovým softwarem",
+            "password": "Chráněni silnými a složitými hesly s bezpečnou správou",
+            "vpn": "Sledujete svou expozici útočníkům v síti",
+            "wifi": "Při používání veřejných sítít WiFi chráněni šifrováním svých osobních údajů",
+            "windowsHello": "Chráníte své zařízení používáním bezpečných možností přihlášení"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "Zjistili jsme, že aplikace Vantage postrádá důležité součásti. Tyto součásti se stáhnou na pozadí. Zkuste to prosím později.",
                 "closeText": "Zavřít",
                 "offlineText": "Zjistili jsme, že nejste připojeni k internetu. Některé části této stránky nebudou správně fungovat. Znovu se prosím připojte",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Vytvoření účtu se nezdařilo. Zkuste to prosím později."
             }
         },
         "homeprotection": {

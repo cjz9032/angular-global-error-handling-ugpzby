@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalAddAppsComponent } from '../modal-add-apps/modal-add-apps.component';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
 @Component({
@@ -9,38 +7,43 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
   styleUrls: ['./modal-turn-on.component.scss']
 })
 export class ModalTurnOnComponent implements OnInit {
-  runningList: any;
+  runningList: any = {};
   addAppsList: string;
   statusAskAgain: boolean;
-  constructor(private activeModal: NgbActiveModal, private modalService: NgbModal, private gamingAutoCloseService: GamingAutoCloseService) { }
+  setAutoClose: any;
+  constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
+  @Input() showTurnOnModal: boolean;
+  @Output() actionTurnOn = new EventEmitter<boolean>();
+  @Output() actionNotNow = new EventEmitter<boolean>();
+  @Output() closeTurnOnModal = new EventEmitter<boolean>();
+  @Output() actionNeedAsk = new EventEmitter<boolean>();
   ngOnInit() {
   }
 
-  showAddAppsModal(event: Event): void {
-    this.activeModal.close('close');
-    this.modalService
-      .open(ModalAddAppsComponent, {
-        backdrop: 'static',
-        size: 'lg',
-        windowClass: 'apps-modal-container'
-      });
-  }
-
-  closeModal() {
-    this.activeModal.close('close');
-  }
-
   setAksAgain(event: any) {
-    console.log(event.target.checked);
-    this.statusAskAgain = event.target.checked;
+    const status = event.target.checked;
     try {
-      this.gamingAutoCloseService.setNeedToAsk(this.statusAskAgain).then((response: any) => {
-        console.log('Set successfully ------------------------>', response);
+      this.gamingAutoCloseService.setNeedToAsk(!status).then((response: any) => {
+        console.log('Set successfully ------------------------>', !status);
+        this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
+        this.actionNeedAsk.emit(!status);
       });
     } catch (error) {
       console.error(error.message);
     }
+  }
+
+  turnOnAction(isConfirm: boolean) {
+    this.actionTurnOn.emit(isConfirm);
+  }
+
+  notNowAction(event) {
+    this.actionNotNow.emit(event);
+  }
+
+  closeModal(action: boolean) {
+    this.closeTurnOnModal.emit(action);
   }
 
 }

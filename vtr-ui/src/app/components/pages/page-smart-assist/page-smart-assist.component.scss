@@ -48,7 +48,7 @@
 		border: 1px solid $shade_lighter;
 		width: 100%;
 		p {
-			font-size: 1.5rem;
+			font-size: $body;
 			color: $main_darker;
 		}
 		a {
@@ -111,7 +111,7 @@
 
 	.int-screen-desc {
 		p {
-			font-size: 1.5rem;
+			font-size: $body;
 		}
 	}
 
@@ -155,17 +155,23 @@
 	}
 	.margin-left-5 {
 		margin-left: 5rem;
+		@media #{$mediaquery_12} {
+			margin-left: 0;
+		}
+		@media #{$mediaquery_X7} {
+			margin-left: 0;
+		}
 	}
 	.slider-note {
 		margin: 0 0 0 1.7rem;
 		padding-right: 1.4rem;
 	}
 
-	::ng-deep .vtr-ui-button .button-box .button {
-		@media #{$mediaquery_12} {
-			width: 85%;
-		}
-	}
+	// ::ng-deep .vtr-ui-button .button-box .button {
+	// 	@media #{$mediaquery_12} {
+	// 		width: 85%;
+	// 	}
+	// }
 }
 
 .vtr-page-shift-up-medium {

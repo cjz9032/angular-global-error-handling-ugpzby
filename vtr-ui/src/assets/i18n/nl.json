@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Prestaties",
                         "balance": "Balans",
-                        "quiet": "Stil"
+                        "quiet": "Stil",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Meer CPU-gebruik, ventilator sneller",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Aan",
                         "whenGaming": "Tijdens het gamen",
-                        "off": "Uit"
+                        "off": "Uit",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU overklokken wordt geactiveerd",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "INFO"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "Camera",
             "eyeCareMode": "Oogzorg",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "Garantie uitbreiden",
             "processor": {
                 "title": "Processor",
-                "notFound": "Processor niet gevonden"
+                "notFound": "Processorinformatie laden"
             },
             "memory": {
                 "title": "Geheugen",
-                "notFound": "Geheugen niet gevonden",
+                "notFound": "Geheugeninformatie laden",
                 "ram": "RAM-geheugen"
             },
             "diskspace": {
                 "title": "Schijfruimte",
-                "notFound": "Schijf niet gevonden"
+                "notFound": "Schijfinformatie laden"
             },
             "software": "Software bijgewerkt",
             "updated": "Bijgewerkt",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "Energiemodus aan boord van een vliegtuig",
                         "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Automatische detectie",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1521,9 +1537,9 @@
             "listContactCustomerService": "Neem contact op met de klantenservice",
             "listContactUsOnWechat": "Neem contact op met ons op WeChat",
             "weChatDescription": "Vuur een vraag op ons af op WeChat en we zullen snel antwoorden",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Vind ons op social media",
+            "listContactUsOnFacebook": "Neem contact met ons op via Facebook",
+            "facebookDescription": "Klik om ons te zoeken op Facebook"
         },
         "quicklinks": {
             "title": "Snelle links",
@@ -1565,12 +1581,12 @@
             "good": "GOED",
             "malicious": "SCHADELIJK",
             "suspicious": "VERDACHT",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Uw beveiligingsscore geeft u een idee hoe veilig u online bent, het resultaat is afhankelijk van het volgende:",
+            "antivirus": "Beveiligd door antivirussoftware",
+            "password": "Sterke en complexe wachtwoorden op een veilige manier beheren",
+            "vpn": "Monitoring van uw netwerkblootstelling aan aanvallers",
+            "wifi": "Uw persoonlijke gegevens coderen als u openbare WiFi gebruikt",
+            "windowsHello": "Uw apparaat beschermen met behulp van veilige aanmeldingsopties"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "We hebben vastgesteld dat er essentiële stukjes Vantage missen. Deze onderdelen worden op de achtergrond gedownload. Probeer het later alstublieft opnieuw.",
                 "closeText": "sluiten",
                 "offlineText": "We hebben geconstateerd dat u geen verbinding met internet heeft. Bepaalde onderdelen van deze pagina werken niet correct. Maak opnieuw verbinding",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Het maken van het account is mislukt. Probeer het later alstublieft opnieuw."
             }
         },
         "homeprotection": {

@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Производ-ть",
                         "balance": "Баланс",
-                        "quiet": "Тихий"
+                        "quiet": "Тихий",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Выше загрузка ЦП и скорость вент.",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Вкл.",
                         "whenGaming": "Во время игры",
-                        "off": "Выкл."
+                        "off": "Выкл.",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "Разгон ЦП будет активирован",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "ИНФОРМАЦИЯ"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -378,6 +387,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +522,10 @@
             "cameraPrivacy": "Фотокамера",
             "eyeCareMode": "Защита глаз",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
                 "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +584,16 @@
             "extendedWarranty": "Продление гарантии",
             "processor": {
                 "title": "Процессор",
-                "notFound": "Процессор не найден"
+                "notFound": "Загрузка информации о процессоре"
             },
             "memory": {
                 "title": "Память",
-                "notFound": "Память не найдена",
+                "notFound": "Загрузка информации о памяти",
                 "ram": "ОЗУ"
             },
             "diskspace": {
                 "title": "Пространство на диске",
-                "notFound": "Диск не найден"
+                "notFound": "Загрузка информации о диске"
             },
             "software": "Установлена последняя версия ПО",
             "updated": "Обновлено",
@@ -821,7 +836,8 @@
                     "airPlanePower": {
                         "title": "Автономный режим питания",
                         "description": "Защитите розетку переменного тока самолета, контролируя энергопотребление системой.Если флажок Автономный режим питания установлен, компьютер уменьшает потребление питания, ограничивая скорость зарядки аккумулятора и производительность системы.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Автоопределение",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {
@@ -1521,9 +1537,9 @@
             "listContactCustomerService": "Обратиться в службу поддержки клиентов",
             "listContactUsOnWechat": "Свяжитесь с нами в WeChat",
             "weChatDescription": "Отправьте нам вопрос в WeChat, и мы быстро ответим на него",
-            "listFindUs": "Find us on social media",
-            "listContactUsOnFacebook": "Contact us on Facebook",
-            "facebookDescription": "Click to find us on Facebook"
+            "listFindUs": "Наши страницы в социальных сетях",
+            "listContactUsOnFacebook": "Свяжитесь с нами в Facebook",
+            "facebookDescription": "Нажмите здесь, чтобы перейти на нашу страницу в Facebook"
         },
         "quicklinks": {
             "title": "Быстрые ссылки",
@@ -1565,12 +1581,12 @@
             "good": "БЕЗОПАСНАЯ",
             "malicious": "ВРЕДОНОСНАЯ",
             "suspicious": "ПОДОЗРИТЕЛЬНАЯ",
-            "securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
-            "antivirus": "Being protected by anti-virus software",
-            "password": "Having strong and complex passwords managed in a safe way",
-            "vpn": "Monitoring your network exposure to attackers",
-            "wifi": "Encrypting your personal data when using public WiFi",
-            "windowsHello": "Protecting your device using safe login options"
+            "securityScoreDepends": "Ваша оценка безопасности дает вам представление о степени вашей безопасности в Интернете, и результат зависит от следующих факторов:",
+            "antivirus": "Использование антивирусных программ",
+            "password": "Использование надежных и сложных паролей с безопасной системой управления паролями",
+            "vpn": "Мониторинг уязвимости сети к атакам",
+            "wifi": "Шифрование личных данных при использовании общедоступных сетей WiFi",
+            "windowsHello": "Защита устройства с помощью параметров безопасного входа"
         },
         "antivirus": {
             "common": {
@@ -1665,7 +1681,7 @@
                 "bodyText": "Мы обнаружили, что вам не хватает критических компонентов Vantage. Эти компоненты будут загружены в фоновом режиме. Повторите попытку позже.",
                 "closeText": "закрыть",
                 "offlineText": "Мы обнаружили, что вы не подключены к Интернету. Некоторые части этой страницы будут функционировать некорректно. Подключитесь к Интернету повторно",
-                "accountText": "Account creation failed. Please try again later."
+                "accountText": "Ошибка создания учетной записи. Повторите попытку позже."
             }
         },
         "homeprotection": {
