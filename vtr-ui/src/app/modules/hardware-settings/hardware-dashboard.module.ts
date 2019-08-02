@@ -12,7 +12,7 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 import { WidgetQuicksettingsComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetSwitchIconComponent } from 'src/app/components/widgets/widget-switch-icon/widget-switch-icon.component';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
-import { NgbCarouselModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
@@ -21,9 +21,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 
 library.add(faTimes);
-
+library.add(faExclamationCircle);
 
 @NgModule({
 	declarations: [
@@ -50,6 +51,7 @@ library.add(faTimes);
 		RouterModule,
 		FormsModule,
 		ReactiveFormsModule,
+		NgbModalModule
 	],
 	exports: [
 		MetricsModule,
