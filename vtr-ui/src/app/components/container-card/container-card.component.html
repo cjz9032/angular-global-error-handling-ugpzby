@@ -148,13 +148,13 @@
 						rel="noopener"
 						class="card-image"
 						vtrMetrics
-						id="{{containerCardId+'article_link'}}"
-						attr.aria-label="{{containerCardId+'article_link'}}"
 						metricsEvent="ArticleClick"
 						metricsItemCategory="corner-article"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
-						[style.background-image]="'url(' + img + ')'">
+						[style.background-image]="'url(' + img + ')'"
+						id="{{containerCardId+'-article_link'}}"
+						attr.aria-label="{{containerCardId+'-article_link'}}">
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"

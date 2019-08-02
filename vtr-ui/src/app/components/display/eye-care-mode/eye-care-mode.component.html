@@ -18,7 +18,8 @@
 				[maxValueLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.cold' | translate"
 				[(value)]="eyeCareModeSettings.current"
 				(change)="onEyeCareTemparatureChange($event)"
-				(valueChange)="onEyeCareTemparatureValueChange($event)">
+				(valueChange)="onEyeCareTemparatureValueChange($event)"
+				[rangeSliderId]="'color-temp-eyeCareMode'">
 			</vtr-ui-range-slider>
 		</div>
 		<div class="reset-temperature">
@@ -33,7 +34,8 @@
 					metricsParent="eye-care-mode"
 					metricsItem="btn.eye-care-mode.ResetTemparature"
 					[isFullWidth]="false"
-					[label]="'device.deviceSettings.displayCamera.display.eyeCareMode.reset' | translate">
+					[label]="'device.deviceSettings.displayCamera.display.eyeCareMode.reset' | translate"
+					[linkId]="'color-temp-eyeCareMode-reset-btn'">
 				</vtr-ui-button>
 
 			</div>
@@ -44,6 +46,7 @@
 	<div class="custom-control custom-checkbox eye-care-checkbox"
 		*ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise">
 		<input id="cb-eye-care-schedule"
+			attr.aria-label="cb-eye-care-schedule"
 			type="checkbox"
 			[disabled]="enableSunsetToSunrise"
 			class="custom-control-input"
@@ -62,6 +65,7 @@
 	<div class="custom-control custom-checkbox eye-care-checkbox"
 		*ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
 		<input id="cb-eye-care-schedule"
+			attr.aria-label="cb-eye-care-schedule"
 			type="checkbox"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"

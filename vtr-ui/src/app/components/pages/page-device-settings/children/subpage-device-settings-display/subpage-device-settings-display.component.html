@@ -18,7 +18,8 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'"
-				(toggle)="onCardCollapse($event)">
+				(toggle)="onCardCollapse($event)"
+				[collapseLinkId]="'device-settings-display'">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
 						*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
@@ -33,7 +34,8 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
-							[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate">
+							[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate"
+							[switchId]="'day-time-color-temp'">
 							<div class="row">
 								<div class="col-12">
 									<vtr-display-color-temp [displayColorTempSettings]="displayColorTempDataSource"
@@ -70,7 +72,8 @@
 							[isSwitchChecked]="eyeCareModeStatus.status"
 							(toggleOnOff)="onEyeCareModeStatusToggle($event)"
 							[theme]="'white'"
-							[tooltipText]="'device.deviceSettings.displayCamera.display.eyeCareMode.tooltip' | translate">
+							[tooltipText]="'device.deviceSettings.displayCamera.display.eyeCareMode.tooltip' | translate"
+							[switchId]="'color-temp-eyeCareMode'">
 							<div class="row">
 								<div class="col-12">
 									<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
@@ -90,7 +93,8 @@
 										[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
 										[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
 										[path]="'ms-settings:privacy-location'"
-										*ngIf="enableSunsetToSunrise">
+										*ngIf="enableSunsetToSunrise"
+										[linkId="'display-eyeCareMode-privacy-settings-link'"]>
 									</vtr-widget-permission-note>
 
 									<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
@@ -117,7 +121,8 @@
 							[showChildContent]="true"
 							[isSwitchChecked]="privacyGuardToggleStatus"
 							(toggleOnOff)="setPrivacyGuardToggleStatus($event)"
-							[theme]="'white'">
+							[theme]="'white'"
+							[linkId]="'privacy-guard'">
 							<div class="row">
 								<div class="col d-flex justify-content-between pt-2 pr-3">
 									<p class="privacy-guard-caption">
@@ -141,6 +146,7 @@
 										<input type="checkbox"
 											class="custom-control-input"
 											id="cb-privacy-guard"
+											attr.aria-label="cb-privacy-guard"
 											[checked]="privacyGuardCheckBox"
 											(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
 										<label class="custom-control-label"
@@ -174,7 +180,8 @@
 							vtrMetrics
 							metricsEvent="FeatureClick"
 							metricsParent="Page.Settings"
-							metricsName="OledPowerSettings">
+							metricsName="OledPowerSettings"
+							[linkId]="'oled-power-settings'">
 							<div class="row">
 								<div class="col-12">
 									<vtr-oled-power-settings
@@ -227,7 +234,8 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'"
-				(toggle)="onCardCollapse($event)">
+				(toggle)="onCardCollapse($event)"
+				[collapseLinkId]="'device-settings-camera'">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
 						*ngIf="cameraPrivacyModeStatus.available">
@@ -240,7 +248,8 @@
 							[rightIcon]="['far', 'question-circle']"
 							(toggleOnOff)="onCameraPrivacyModeToggle($event)"
 							[isSwitchChecked]="cameraPrivacyModeStatus.status"
-							[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
+							[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate"
+							[switchId]="'camera-privacy-mode'">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3">
@@ -259,14 +268,16 @@
 							[tooltipText]="'device.deviceSettings.displayCamera.camera.camera.tooltip' | translate"
 							(resetClick)="resetCameraSettings()"
 							[resetTextAsButton]="true"
-							[disabledAll]="shouldCameraSectionDisabled">
+							[disabledAll]="shouldCameraSectionDisabled"
+							[switchId]="'device-settings-camera'">
 							<div class="row">
 								<div class="col-12 pr-0">
 									<vtr-widget-permission-note
 										[noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
 										[description]="'device.deviceSettings.displayCamera.camera.note.description' | translate"
 										[path]="'ms-settings:privacy-webcam'"
-										*ngIf="!dataSource.permission">
+										*ngIf="!dataSource.permission"
+										[linkId]="'device-settings-camera-permission-link'">
 									</vtr-widget-permission-note>
 									<vtr-camera-control [cameraSettings]="dataSource"
 										[manualRefresh]="manualRefresh"
@@ -297,7 +308,8 @@
 							[showChildContent]="true"
 							[isSwitchChecked]="cameraBlur.enabled"
 							(toggleOnOff)="onCameraBackgroundBlur($event)"
-							[theme]="'white'">
+							[theme]="'white'"
+							[switchId]="'device-settings-camera-blur'">
 							<div class="row"
 								*ngIf="cameraBlur.enabled">
 								<div class="col-12 pr-0 my-3">

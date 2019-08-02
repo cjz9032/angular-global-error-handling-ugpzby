@@ -71,7 +71,9 @@
 						[disabled]="disabled"
 						(toggle)="onOnOffChange($event)"
 						[showLoader]="showLoaderState"
-						[theme]="theme"></vtr-ui-switch-onoff>
+						[theme]="theme"
+						id="{{switchId}}-onOffButton"
+						aria-label="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
 				</div>
 				<div *ngIf="!isSwitchVisible && linkText"
 					class="p-0 link-text">

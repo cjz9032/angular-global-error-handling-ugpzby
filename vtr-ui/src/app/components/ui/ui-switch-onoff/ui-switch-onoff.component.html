@@ -26,9 +26,7 @@
 				[disabled]="disabled"
 				[readonly]="readonly"
 				(change)="onChange($event)"
-				(click)="sendChangeEvent($event)"
-				[id]="switchId"
-				[attr.aria-label]="switchId" />
+				(click)="sendChangeEvent($event)"/>
 
 			<span class="switch {{ size }}"
 				id="{{onOffSwitchId+'_sizeStopProp'}}"

@@ -3,6 +3,8 @@
 		<strong>{{ noteTitle }}:</strong> {{ description }}
 	</div>
 	<button type="button"
+		[id]="linkId"
+		[attr.aria-label]="linkId"
 		class="btn btn-link privacy-button pl-0"
 		(click)="onClick($event)">
 		{{'device.deviceSettings.displayCamera.camera.url' | translate}}

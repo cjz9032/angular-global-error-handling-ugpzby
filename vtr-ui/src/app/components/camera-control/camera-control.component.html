@@ -34,7 +34,8 @@
 						[manualRefresh]="manualRefresh"
 						[enableSlider]="disabledAll"
 						[(value)]="cameraSettings.brightness.value"
-						(change)="onBrightnessSliderChange($event)">
+						(change)="onBrightnessSliderChange($event)"
+						[rangeSliderId]="'cameraSettings-brightness'">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item"
@@ -49,7 +50,8 @@
 						[manualRefresh]="manualRefresh"
 						[enableSlider]="disabledAll"
 						[(value)]="cameraSettings.contrast.value"
-						(change)="onContrastSliderChange($event)">
+						(change)="onContrastSliderChange($event)"
+						[rangeSliderId]="'cameraSettings-contrast'">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item"
@@ -62,7 +64,8 @@
 						<div class="float-right">
 							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue"
 								[disabled]="disabledAll"
-								(toggle)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
+								(toggle)="onAutoExposureChange($event)"
+								[onOffSwitchId]="'cameraSettings-autoExposure'"></vtr-ui-switch-onoff>
 						</div>
 					</div>
 					<vtr-ui-range-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
@@ -72,7 +75,8 @@
 						[enableSlider]="disabledAll"
 						[manualRefresh]="manualRefresh"
 						[(value)]="cameraSettings.exposure.value"
-						(change)="onExposureSliderChange($event)">
+						(change)="onExposureSliderChange($event)"
+						[rangeSliderId]="'cameraSettings-autoExposure'">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item"
@@ -84,7 +88,8 @@
 						</div>
 
 						<div class="float-right">
-							<vtr-ui-switch-onoff [value]="cameraSettings.focus.autoModeSupported"></vtr-ui-switch-onoff>
+							<vtr-ui-switch-onoff [value]="cameraSettings.focus.autoModeSupported"
+							[onOffSwitchId]="'cameraSettings-auto-focus'"></vtr-ui-switch-onoff>
 						</div>
 					</div>
 				</li>
