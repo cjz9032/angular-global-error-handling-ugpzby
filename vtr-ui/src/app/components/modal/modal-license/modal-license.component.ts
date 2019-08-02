@@ -11,7 +11,6 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class ModalLicenseComponent implements OnInit, OnDestroy {
 
-	startDateTime: any = new Date();
 	url: string;
 	/** type will be 'html' or 'txt' */
 	type: string;
@@ -45,12 +44,11 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		const currentDateTime: any = new Date();
 		const pageViewMetrics = {
 			ItemType: 'PageView',
 			PageName: this.licenseModalMetrics.pageName,
 			PageContext: this.licenseModalMetrics.pageContext,
-			PageDuration: currentDateTime - this.startDateTime,
+			PageDuration: this.pageDuration,
 			OnlineStatus: ''
 		};
 		this.sendMetricsAsync(pageViewMetrics);

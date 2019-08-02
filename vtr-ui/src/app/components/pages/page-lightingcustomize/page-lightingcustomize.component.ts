@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { ActivatedRoute } from '@angular/router';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
 	templateUrl: './page-lightingcustomize.component.html',
 	styleUrls: ['./page-lightingcustomize.component.scss']
 })
-export class PageLightingcustomizeComponent implements OnInit {
+export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	public currentProfileId: any;
 	cardContentPositionA: any = {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
@@ -15,8 +16,12 @@ export class PageLightingcustomizeComponent implements OnInit {
 	cardContentPositionB: any = {
 		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
 	};
+	startDateTime: any = new Date();
+	metrics: any;
 
-	constructor(private cmsService: CMSService, private route: ActivatedRoute) {
+	constructor(private cmsService: CMSService, private route: ActivatedRoute, private shellService: VantageShellService) {
+		this.metrics = this.shellService.getMetrics();
+
 		this.route.params.subscribe((params) => {
 			this.currentProfileId = +params['id']; // (+) converts string 'id' to a number
 		});
@@ -49,5 +54,26 @@ export class PageLightingcustomizeComponent implements OnInit {
 				}
 			}
 		});
+	}
+	ngOnDestroy() {
+		const currentDateTime: any = new Date();
+		const pageViewMetrics = {
+			ItemType: 'PageView',
+			PageName: 'PageLightingcustomizeComponent',
+			PageContext: 'PageLightingcustomizeComponent',
+			PageDuration: currentDateTime - this.startDateTime,
+			OnlineStatus: ''
+		};
+		this.sendMetricsAsync(pageViewMetrics);
+		console.log('================<>', pageViewMetrics);
+	}
+
+	sendMetricsAsync(data: any) {
+		if (this.metrics && this.metrics.sendAsync) {
+			console.log('metrics ready!');
+			this.metrics.sendAsync(data);
+		} else {
+			console.log('can not find metrics');
+		}
 	}
 }
