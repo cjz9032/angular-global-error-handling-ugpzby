@@ -1,7 +1,12 @@
-<div class='cover' *ngIf='isDropDownOpen' (click)="toggle()">
+<div class='cover'
+	id="{{dropDownId}}"
+	attr.aria-label="{{dropDownId}}"
+	*ngIf='isDropDownOpen'
+	(click)="toggle()">
 </div>
 <section class="vtr-ui-dropdown">
-	<div class="list" *ngIf="isDropDownOpen && !disabled">
+	<div class="list"
+		*ngIf="isDropDownOpen && !disabled">
 		<ul>
 			<li (click)="select(i)"
 				*ngFor="let i of list">
@@ -9,11 +14,12 @@
 			</li>
 		</ul>
 	</div>
-	<div class="input" (click)="toggle()">
+	<div class="input"
+		(click)="toggle()">
 		<div class="time">
 			<span>{{name}} {{placeholder | uppercase }} </span>
 		</div>
-		<p class="chevron" >
+		<p class="chevron">
 			<fa-icon *ngIf="!isDropDownOpen"
 				[icon]="['fal', 'chevron-down']">
 			</fa-icon>
@@ -22,5 +28,5 @@
 			</fa-icon>
 		</p>
 	</div>
-	
+
 </section>
