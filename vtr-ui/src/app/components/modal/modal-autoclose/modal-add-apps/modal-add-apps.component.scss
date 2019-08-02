@@ -1,4 +1,8 @@
 @import "../../../../app.theme.scss";
+.spinner {
+	font-size: 10rem;
+	color: $main;
+}
 .modal-main-wrapper {
 	position: fixed;
 	top: 0;

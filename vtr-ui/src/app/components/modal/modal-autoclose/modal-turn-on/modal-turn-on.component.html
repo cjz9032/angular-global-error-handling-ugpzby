@@ -25,7 +25,7 @@
           <div>
             <button class="btn enable-button"
               (click)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
-            <a (click)="closeModal(false)"
+            <a (click)="notNowAction($event)"
               class="cancel-link active">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
           </div>
         </div>

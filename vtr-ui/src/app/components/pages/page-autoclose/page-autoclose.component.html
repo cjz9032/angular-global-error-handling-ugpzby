@@ -69,7 +69,8 @@
 </div>
 
 <vtr-modal-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
-  (closeTurnOnModal)="modalCloseTurnOn($event)" (actionTurnOn)="showTurnOnModal=false;initTurnOnAction($event)">
+  (closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="showTurnOnModal=false;initNotNowAction($event)"
+  (actionTurnOn)="showTurnOnModal=false;initTurnOnAction($event)">
 </vtr-modal-turn-on>
 
 <vtr-modal-add-apps *ngIf="showAppsModal" (closeAddAppsModal)="modalCloseAddApps($event)">

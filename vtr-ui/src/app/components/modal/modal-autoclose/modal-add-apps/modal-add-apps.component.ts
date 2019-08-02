@@ -8,7 +8,7 @@ import { isUndefined } from 'util';
   styleUrls: ['./modal-add-apps.component.scss']
 })
 export class ModalAddAppsComponent implements OnInit {
-
+  loading: boolean = true;
   runningList: any = [];
   noAppsRunning = false;
   addAppsList: string;
@@ -25,11 +25,13 @@ export class ModalAddAppsComponent implements OnInit {
     try {
       this.gamingAutoCloseService.getAppsAutoCloseRunningList().then((list: any) => {
         if (!isUndefined(list.processList)) {
+          this.loading = false;
           this.runningList = list.processList;
           this.noAppsRunning = this.runningList.length === 0 ? true : false;
         }
       });
     } catch (error) {
+      this.loading = false;
       console.error(error.message);
     }
   }
