@@ -1,14 +1,12 @@
+import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
+import { WidgetNetworkboostComponent } from './../components/widgets/widget-networkboost/widget-networkboost.component';
+import { ModalNetworkboostComponent } from './../components/modal/modal-networkboost/modal-networkboost.component';
 import { GamingCommonModule } from './gaming/gaming.common.module';
-import { UiPopoverComponent } from './../components/ui/ui-popover/ui-popover.component';
-import { UiGamingDriverPopupComponent } from './../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
-import { UiGamingCollapsibleContainerComponent } from './../components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
-import { ModalGamingLegionedgeComponent } from './../components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
 import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
 import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
-import { PageNetworkBoostComponent } from '../components/pages/page-network-boost/page-network-boost.component';
 import { UiMacrokeyPopupComponent } from '../components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { UiLightingProfileToggleComponent } from '../components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from '../components/ui/ui-brightness-slider/ui-brightness-slider.component';
@@ -43,7 +41,6 @@ library.add(faCheck);
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
 		PageAutocloseComponent,
-		PageNetworkBoostComponent,
 		UiMacrokeyPopupComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
@@ -57,6 +54,9 @@ library.add(faCheck);
 		WidgetMacrokeySettingsComponent,
 		WidgetAutocloseComponent,
 		ModalTurnOnComponent,
+		ModalNetworkboostComponent,
+		PageNetworkboostComponent,
+		WidgetNetworkboostComponent,
 		ModalAddAppsComponent
 	],
 	imports: [
@@ -75,6 +75,8 @@ library.add(faCheck);
 	],
 	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
-	entryComponents: []
+	entryComponents: [ModalNetworkboostComponent]
+	
+	
 })
 export class GamingModule { }

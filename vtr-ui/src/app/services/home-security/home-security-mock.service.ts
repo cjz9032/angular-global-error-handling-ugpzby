@@ -14,7 +14,8 @@ export class HomeSecurityMockService {
 			lenovoId: {
 				email: 'email',
 				loggedIn: false
-			}
+			},
+			consoleUrl: ''
 		},
 		overview: {
 			devicePostures: {

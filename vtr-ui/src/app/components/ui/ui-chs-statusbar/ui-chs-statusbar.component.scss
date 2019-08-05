@@ -56,6 +56,13 @@
 	}
 }
 
+.badge-disable{
+	pointer-events: none;
+	span {
+		cursor: default !important;
+	}
+}
+
 @media #{$mediaquery_sm} {
 	.width-size{
 		display: flex;
