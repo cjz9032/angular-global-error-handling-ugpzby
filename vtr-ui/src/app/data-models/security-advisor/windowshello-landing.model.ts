@@ -28,7 +28,7 @@ export class WindowsHelloLandingViewModel {
 			path: 'security/windows-hello',
 			title: 'security.landing.fingerprint',
 			type: 'security',
-			id: 'sa-ov-link-windowsHello'
+			id: 'sa-ov-link-windowsHello-loading'
 		};
 		const subjectStatus = {
 			status: 2,
@@ -48,10 +48,12 @@ export class WindowsHelloLandingViewModel {
 			if (!finger) {
 				whStatus.status = 1;
 				whStatus.detail = 'common.securityAdvisor.notFound';
+				whStatus.id = 'sa-ov-link-windowsHello-notFound';
 				subjectStatus.status = 1;
 			} else {
 				whStatus.status = finger === 'active' ? 0 : 1;
 				whStatus.detail = finger === 'active' ? 'common.securityAdvisor.registered' : 'common.securityAdvisor.notRegistered';
+				whStatus.id = finger === 'active' ? 'sa-ov-link-windowsHello-registered' : 'sa-ov-link-windowsHello-notRegistered';
 				subjectStatus.status = finger === 'active' ? 0 : 1;
 			}
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger ? finger : 'notFound');
@@ -71,10 +73,12 @@ export class WindowsHelloLandingViewModel {
 		if (cacheFingerStatus && cacheFingerStatus === 'notFound') {
 			whStatus.status = 1;
 			whStatus.detail = 'common.securityAdvisor.notFound';
+			whStatus.id = 'sa-ov-link-windowsHello-notFound';
 			subjectStatus.status = cacheStatus === 'enabled' ? 0 : 1;
 		} else {
 			whStatus.status = cacheFingerStatus === 'active' ? 0 : 1;
 			whStatus.detail = cacheFingerStatus === 'active' ? 'common.securityAdvisor.registered' : 'common.securityAdvisor.notRegistered';
+			whStatus.id = cacheFingerStatus === 'active' ? 'sa-ov-link-windowsHello-registered' : 'sa-ov-link-windowsHello-notRegistered';
 			subjectStatus.status = cacheStatus === 'enabled' ? 0 : 1;
 		}
 		translate.stream(whStatus.detail).subscribe((res) => {
