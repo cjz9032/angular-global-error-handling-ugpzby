@@ -3,15 +3,15 @@
 	[ngClass]="{'disable-state': disable}"
 	(click)="onChange($event)"
 	[title]="tooltipText"
-	[id]="switchId"
-	[attr.aria-label]="switchId"
+	id="qs-{{switchId}}-switch-icon"
+	attr.aria-label="qs-{{switchId}}-switch-icon"
 	vtrMetrics
 	metricsEvent="featureClick"
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
 	<div class="switch-container"
 		[ngClass]="[value ? 'checked' : 'unchecked']">
-		<div class="title">{{ title }}</div>
+		<div class="title" id="qs-{{switchId}}-switch-title" attr.aria-label="qs-{switchId}}-switch-title">{{ title }}</div>
 		<div class="icon-container d-block">
 			<i [class]="iconDefinition"
 				[ngClass]="{'enabled' : !isBlocked}"
@@ -27,11 +27,11 @@
 			<div class="col">
 				<div class="switch-on-off">
 					<div *ngIf="!value"
-						class="switch-label off-label">
+						class="switch-label off-label"  id="qs-{{sswitchId}}-switch-on" attr.aria-label="{{switchId}}-switch-on">
 						{{'common.ui.off' | translate}}
 					</div>
 					<div *ngIf="value"
-						class="switch-label on-label">
+						class="switch-label on-label"  id="qs-{{switchId}}-switch-off" attr.aria-label="{{switchId}}-switch-off">
 						{{'common.ui.on' | translate}}</div>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 	[title]="tooltipText">
 	<div class="switch-container"
 		[ngClass]="['unchecked']">
-		<div class="title">{{ title }}</div>
+		<div class="title"  id="qs-{{switchId}}-switch-title" attr.aria-label="qs-{{switchId}}-switch-title">{{ title }}</div>
 		<div class="icon-container d-block position-relative">
 			<div class="loader center-block">
 				<div class="spinner-border text-secondary progress-spinner"
@@ -55,7 +55,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="switch-on-off">
-					<div class="switch-label off-label">
+					<div class="switch-label off-label"  id="qs-{{switchId}}-switch-loading" attr.aria-label="qs-{{switchId}}-switch-loading">
 						{{'common.ui.loading' | translate}}
 					</div>
 				</div>

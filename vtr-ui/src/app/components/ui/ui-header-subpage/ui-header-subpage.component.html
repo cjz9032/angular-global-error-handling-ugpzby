@@ -1,7 +1,7 @@
 <div class="vtr-ui-header-subpage container-fluid">
 	<div class="row" *ngIf="title!=undefined">
 		<div class="col">
-			<h2 class="title">
+			<h2 class="title" id="{{textId}}-title" attr.aria-label="{{textId}}-title">
 				{{title}}
 			</h2>
 		</div>
@@ -12,14 +12,14 @@
 			<div class="col px-20">
 				<div class="row">
 					<div class="col">
-						<div class="caption">
+						<div class="caption" id="{{textId}}-caption" attr.aria-label="{{textId}}-caption">
 							{{caption}}
 						</div>
 					</div>
 				</div>
 				<div class="row" *ngIf="menuTitle">
 					<div class="col">
-						<div class="menu-title">
+						<div class="menu-title" id="{{textId}}-jumptToSetting-title" attr.aria-label="{{textId}}-jumptToSetting-title">
 							{{menuTitle}}:
 						</div>
 					</div>
