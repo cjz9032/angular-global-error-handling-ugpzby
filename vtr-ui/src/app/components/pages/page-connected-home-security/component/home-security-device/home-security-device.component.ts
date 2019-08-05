@@ -11,6 +11,7 @@ import { CHSAccountState, ConnectedHomeSecurity, EventTypes, CHSNotificationType
 export class HomeSecurityDeviceComponent implements OnInit {
 	@Input() device;
 	@Input() allDevice;
+	@Input() common;
 	constructor(public homeSecurityMockService: HomeSecurityMockService) {
 	}
 

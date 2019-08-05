@@ -35,6 +35,7 @@ import { faCommentAltDots } from '@fortawesome/pro-light-svg-icons/faCommentAltD
 import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
 import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
+import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
 import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { CommonPipeModule } from './common/common-pipe.module';
@@ -61,6 +62,7 @@ library.add(faGift);
 library.add(faCommentAltDots);
 library.add(faShoePrints);
 library.add(faWifiSlash);
+library.add(faFlask);
 
 @NgModule({
 	declarations: [
