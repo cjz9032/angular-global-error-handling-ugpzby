@@ -3,14 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { BetaComponentComponent } from './beta-component/beta-component.component';
 
 const routes: Routes = [
-  {
-	path: '',
-	component: BetaComponentComponent
-  }
+	{
+		path: '',
+		component: BetaComponentComponent
+	}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
-export class BetaModuleRoutingModule { }
+export class BetaModuleRoutingModule {}

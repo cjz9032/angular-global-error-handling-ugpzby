@@ -52,7 +52,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'beta',
-		loadChildren: '../beta-module/beta-module.module#BetaModuleModule'
+		loadChildren: '../beta/beta.module#BetaModule'
 	},
 	{
 		path: '',
