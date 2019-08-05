@@ -52,16 +52,17 @@
 
 		<div class="p-3 row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
-			<div class="p-0 col-auto battery-conditions">
+			<div class="p-0 pr-2 col-auto battery-conditions">
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
 					[src]=" '/assets/icons/battery-conditions/good.svg'" />
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
 					[src]=" '/assets/icons/battery-conditions/fair.svg'" />
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor && batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					[src]=" '/assets/icons/battery-conditions/poor.svg'" />
-
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.AcError"
 					[src]=" '/assets/icons/battery-conditions/ac_error.svg'" />
+			</div>
+			<div class='col'>
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate:param2"></span>
