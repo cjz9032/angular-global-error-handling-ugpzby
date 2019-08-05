@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { isUndefined } from 'util';
+import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
+import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
 
 @Component({
   selector: 'vtr-page-autoclose',
@@ -13,6 +15,11 @@ export class PageAutocloseComponent implements OnInit {
   public showTurnOnModal: boolean = false;
   public showAppsModal: boolean = false;
   toggleStatus: boolean;
+  needToAsk: any;
+  autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
+  needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
+
+  // CMS Content block
   cardContentPositionA: any = {
     FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
   };
@@ -20,6 +27,7 @@ export class PageAutocloseComponent implements OnInit {
     FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
   };
   backId = 'vtr-gaming-macrokey-btn-back';
+
   constructor(private cmsService: CMSService, private gamingAutoCloseService: GamingAutoCloseService) { }
 
   ngOnInit() {
@@ -55,25 +63,34 @@ export class PageAutocloseComponent implements OnInit {
         }
       }
     });
+
+    // AutoClose Init
+    this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
   }
 
-  openTargetModal(modalOpenType: any) {
-    if ((modalOpenType.toggleStatus && modalOpenType.needToAsk)) {
-      this.showAppsModal = true;
-    } else {
-      this.showTurnOnModal = true;
-    }
-  }
-
-  doNotShowAction(event: any) {
+  openTargetModal() {
     try {
-      this.gamingAutoCloseService.setNeedToAsk(event).then((response: any) => {
-        console.log('Set successfully ------------------------>', response);
-        this.gamingAutoCloseService.setNeedToAskStatusCache(event.target.checked);
+      this.gamingAutoCloseService.getNeedToAsk().then((response: any) => {
+        this.gamingAutoCloseService.getNeedToAskStatusCache();
+        console.log("fist need status", response);
+        this.needToAsk = response;
+        if (this.toggleStatus) {
+          this.showAppsModal = true;
+        } else if (!this.toggleStatus && this.needToAsk) {
+          this.showTurnOnModal = true;
+        } else if (!this.toggleStatus && !this.needToAsk) {
+          this.showAppsModal = true;
+        }
       });
     } catch (error) {
       console.error(error.message);
     }
+  }
+
+  doNotShowAction(status: boolean) {
+    this.needToAsk = status;
+    console.log("status================Need", this.needToAsk);
+
   }
 
   initTurnOnAction(turnBtnAction: boolean) {
@@ -84,11 +101,24 @@ export class PageAutocloseComponent implements OnInit {
     this.showAppsModal = true;
   }
 
+  initNotNowAction(notNowStatus: boolean) {
+    this.showAppsModal = true;
+  }
+
   modalCloseTurnOn(action: boolean) {
     this.showTurnOnModal = action;
   }
 
   modalCloseAddApps(action: boolean) {
     this.showAppsModal = action;
+  }
+
+  toggleAutoClose(event: any) {
+    console.log(event.switchValue);
+    this.toggleStatus = event.switchValue;
+    this.gamingAutoCloseService.setAutoCloseStatus(event.switchValue).then((response: any) => {
+      this.gamingAutoCloseService.setAutoCloseStatusCache(event.switchValue);
+      this.toggleStatus = event.switchValue;
+    });
   }
 }

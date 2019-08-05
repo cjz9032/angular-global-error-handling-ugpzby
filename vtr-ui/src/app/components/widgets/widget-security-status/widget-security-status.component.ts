@@ -25,7 +25,7 @@ export class WidgetSecurityStatusComponent implements OnInit{
 	items: Array<WidgetItem>;
 	region: string;
 	isRS5OrLater: boolean;
-
+	@Input() linkId: string;
 	constructor(
 		private commonService: CommonService,
 		private translateService: TranslateService,

@@ -159,7 +159,14 @@
 		font-weight: $weight_light;
 		max-width: 60rem;
 		color: $main_darker;
-		padding-left: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 1.4rem;
+		padding-bottom: 1.4rem;
+		margin-top: 1rem;
+		background-color: $shade_lightest;
+		border: 1px solid $shade_lighter;
+		color: $main_darker;
 	}
 	.auto-set-checkbox {
 		margin-top: 2rem;

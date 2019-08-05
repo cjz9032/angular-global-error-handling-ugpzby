@@ -15,7 +15,8 @@
 				[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
 				[isCollapsed]="false"
 				[allowCollapse]="false"
-				[theme]="'blue'">
+				[theme]="'blue'"
+				[collapseLinkId]="'audio-smart-settings'">
 				<div class="row">
 					<div class="col-auto text-wrap subtitle">
 						<h3>{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}</h3>
@@ -38,7 +39,8 @@
 							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.dolby.tooltip'|translate"
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
 							[isSwitchChecked]="autoDolbyFeatureStatus.status"
-							[showLoaderState]="autoDolbyFeatureLoader">
+							[showLoaderState]="autoDolbyFeatureLoader"
+							[switchId]="'automatic-dolby'">
 
 							<div class="row no-gutters"
 								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
@@ -69,7 +71,8 @@
 							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.voip.tooltip' | translate"
 							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)"
 							[isSwitchChecked]="microphoneProperties.autoOptimization"
-							[showLoaderState]="microphoneLoader">
+							[showLoaderState]="microphoneLoader"
+							[switchId]="'audio-voip'">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -84,11 +87,13 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'"
-				(toggle)="onCardCollapse($event)">
+				(toggle)="onCardCollapse($event)"
+				[collapseLinkId]="'audio-microphone'">
 				<vtr-widget-permission-note
 					[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
 					[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
 					[path]="'ms-settings:privacy-microphone'"
+					[linkId]="'audio-microphone-permission-link'"
 					*ngIf="!microphoneProperties.permission">
 
 				</vtr-widget-permission-note>
@@ -109,7 +114,8 @@
 							[tooltipText]="'device.deviceSettings.audio.microphone.microphone.tooltip' | translate"
 							(toggleOnOff)="onToggleOfMicrophone($event)"
 							[isSwitchChecked]="microphoneProperties.muteDisabled"
-							[showLoaderState]="microphoneLoader">
+							[showLoaderState]="microphoneLoader"
+							[switchId]="'audio-microphone'">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
@@ -133,7 +139,8 @@
 										(change)="setVolume($event)"
 										[enableSlider]="!microphoneProperties.permission"
 										[value]="microphoneProperties.volume"
-										[manualRefresh]="manualRefresh">
+										[manualRefresh]="manualRefresh"
+										[rangeSliderId]="'audio-microphone-volume'">
 									</vtr-ui-range-slider>
 								</div>
 								<div class="col-2"></div>
@@ -157,7 +164,8 @@
 							(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
 							[disabled]="microphoneProperties.disableEffect"
 							[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression"
-							[showLoaderState]="microphoneLoader">
+							[showLoaderState]="microphoneLoader"
+							[switchId]="'audio-microphone-suppress'">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -177,7 +185,8 @@
 							(toggleOnOff)="setMicrophoneAEC($event)"
 							[disabled]="microphoneProperties.disableEffect"
 							[isSwitchChecked]="microphoneProperties.AEC"
-							[showLoaderState]="microphoneLoader">
+							[showLoaderState]="microphoneLoader"
+							[switchId]="'audio-microphone-acousticEcho'">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -193,7 +202,8 @@
 							[showChildContent]="true"
 							[disabled]="microphoneProperties.disableEffect"
 							[theme]="'white'"
-							[isLastChild]="true">
+							[isLastChild]="true"
+							[switchId]="'audio-microphone-optimize'">
 							<div class="row no-gutters">
 								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
 									[radioId]="'radio'| uniqueId"

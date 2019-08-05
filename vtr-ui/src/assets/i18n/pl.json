@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Wydajność",
                         "balance": "Równowaga",
-                        "quiet": "Cichy"
+                        "quiet": "Cichy",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Większa prędkość CPU i wentylatora",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Włącz",
                         "whenGaming": "Podczas grania",
-                        "off": "Wyłącz"
+                        "off": "Wyłącz",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "Przetaktowywanie CPU zostanie aktywowane",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "INFORMACJE"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -226,10 +235,6 @@
             },
             "recording": {
                 "title": "Nagrywanie klawisza makr dla"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +383,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +518,10 @@
             "cameraPrivacy": "Aparat",
             "eyeCareMode": "Ochrona oczu",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +580,16 @@
             "extendedWarranty": "Rozszerz gwarancję",
             "processor": {
                 "title": "Procesor",
-                "notFound": "Nie znaleziono procesora"
+                "notFound": "Ładowanie informacji o procesorze"
             },
             "memory": {
                 "title": "Pamięć",
-                "notFound": "Nie znaleziono pamięci",
+                "notFound": "Ładowanie informacji o pamięci",
                 "ram": "Pamięć RAM"
             },
             "diskspace": {
                 "title": "Miejsce na dysku",
-                "notFound": "Nie znaleziono dysku"
+                "notFound": "Ładowanie informacji o dysku"
             },
             "software": "Oprogramowanie aktualne",
             "updated": "Zaktualizowano",
@@ -821,7 +832,8 @@
                     "airPlanePower": {
                         "title": "Tryb samolotowy",
                         "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system.Gdy Tryb samolotowy jest włączony, komputer zmniejsza zużycie energii, ograniczając szybkość ładowania akumulatora i wydajność systemu.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Autowykrywanie",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {

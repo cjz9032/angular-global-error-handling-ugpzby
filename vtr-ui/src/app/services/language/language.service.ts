@@ -6,6 +6,8 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import Translation from 'src/app/data-models/translation/translation';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { LoggerService } from '../logger/logger.service';
+import { CommonService } from '../common/common.service';
+import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,11 +16,14 @@ export class LanguageService {
 	public subscription: Observable<Translation>;
 	private subject: BehaviorSubject<Translation>;
 	public readonly isLanguageLoaded: boolean;
+	private readonly defaultLanguage = 'en';
 
 	constructor(
 		private translate: TranslateService,
 		private logger: LoggerService,
+		private commonService: CommonService
 	) {
+		// singleton service will call it once
 		this.setupTranslation(translate);
 		this.translateStrings(translate);
 		this.subject = new BehaviorSubject<Translation>(
@@ -49,13 +54,12 @@ export class LanguageService {
 
 	private setupTranslation(translate: TranslateService) {
 		translate.addLangs([
-			'en',
-			'zh-Hans',
 			'ar',
 			'cs',
 			'da',
 			'de',
 			'el',
+			'en',
 			'es',
 			'fi',
 			'fr',
@@ -68,43 +72,67 @@ export class LanguageService {
 			'nb',
 			'nl',
 			'pl',
-			'pt-BR',
 			'pt',
+			'pt-br',
 			'ro',
 			'ru',
 			'sk',
 			'sl',
-			'sr-Latn',
+			'sr-latn',
 			'sv',
 			'tr',
 			'uk',
-			'zh-Hant'
+			'zh-hans',
+			'zh-hant'
 		]);
-		this.translate.setDefaultLang('en');
+		this.translate.setDefaultLang(this.defaultLanguage);
+
+
 	}
 
-	public useLanguage(value: any) {
+	public useLanguageByLocale(deviceLocale: string) {
 		try {
-			if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
-				this.translate.use(value.locale.substring(0, 2));
+			if (!deviceLocale) {
+				throw new Error('parameter must be device locale');
+			}
+
+			let langCode = this.defaultLanguage;
+			const locale = deviceLocale.toLowerCase();
+			if (locale && !['zh', 'pt'].includes(locale.substring(0, 2))) {
+				langCode = locale.substring(0, 2);
 			} else {
-				if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
-					value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
-				}
-				if (value && value.locale.toLowerCase() === 'zh-hans') {
-					this.translate.use('zh-Hans');
-				}
-				if (value && value.locale.toLowerCase() === 'zh-hant') {
-					this.translate.use('zh-Hant');
+				if (locale && locale.substring(0, 2) === 'pt') {
+					locale === 'pt-br' ? langCode = 'pt-br' : langCode = 'pt';
+				} else {
+					langCode = locale;
 				}
 			}
+			this.useLanguage(langCode);
 		} catch (e) {
 			this.logger.error('exception in updateLanguageSettings', JSON.stringify(e));
 		}
 	}
 
-	public useEnglish() {
-		this.translate.use('en');
+	/**
+	 * Sets current translation lang to passed value. Default is English.
+	 * @param lang pass supported language as string.
+	 */
+	public useLanguage(lang: string = this.defaultLanguage) {
+		if (lang) {
+			const locale = lang.toLowerCase();
+			this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceLocale, locale);
+			this.translate.use(locale);
+		}
+	}
+
+	public useLocaleAvailableInCache(): boolean {
+		// check cache for locale, if available then use it.
+		const locale = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceLocale, undefined);
+		if (locale) {
+			this.useLanguage(locale);
+			return true;
+		}
+		return false;
 	}
 }
 

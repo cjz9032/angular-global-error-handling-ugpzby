@@ -435,7 +435,7 @@
 				font-weight: $weight_light;
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: 4rem;
+				font-size: $sub_header;
 				line-height: 4.6rem;
 				cursor: pointer;
 			}
@@ -559,4 +559,18 @@
 .spinner-border{
 	height:50px;
 	width:50px;
+}
+.offline-icon{
+	font-size: 10rem;
+	@media #{$mediaquery_X41} {
+		font-size: 16rem;
+	}
+	@media #{$mediaquery_X42} {
+		font-size: 6rem;
+	}
+	background-color:#1d2339;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

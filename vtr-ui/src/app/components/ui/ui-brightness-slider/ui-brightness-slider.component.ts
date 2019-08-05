@@ -18,6 +18,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	public options: Options;
 
 	@Input() enableSlider;
+	@Input() lightingBrightness: any;
 
 	@Input() value = 1; // initial slider value
 	@Input() minValue = 1; // slider minimum end value

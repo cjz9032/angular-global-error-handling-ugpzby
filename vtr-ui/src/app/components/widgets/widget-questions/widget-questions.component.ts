@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BaseComponent } from "../../base/base.component";
+import { BaseComponent } from '../../base/base.component';
 
 @Component({
 	selector: 'vtr-widget-questions',
@@ -7,7 +7,7 @@ import { BaseComponent } from "../../base/base.component";
 	styleUrls: ['./widget-questions.component.scss']
 })
 export class WidgetQuestionsComponent extends BaseComponent implements OnInit {
-	@Input() itemId:string;
+	@Input() itemId: string;
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];

@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Ytelse",
                         "balance": "Balanse",
-                        "quiet": "Stille"
+                        "quiet": "Stille",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Høyere CPU-bruk og viftehastighet",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "På",
                         "whenGaming": "Når du spiller",
-                        "off": "Av"
+                        "off": "Av",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "CPU-overklokking blir aktivert",
@@ -88,6 +94,9 @@
                 },
                 "systemStatus": {
                     "info": "INFORMASJON"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -226,10 +235,6 @@
             },
             "recording": {
                 "title": "Spiller inn makrotast for"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -378,6 +383,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +518,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Øyebeskyttelse",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +580,16 @@
             "extendedWarranty": "Utvide garantien",
             "processor": {
                 "title": "Prosessor",
-                "notFound": "Finner ikke prosessor"
+                "notFound": "Laster inn prosessorinformasjon"
             },
             "memory": {
                 "title": "Minne",
-                "notFound": "Finner ikke minne",
+                "notFound": "Laster inn minneinformasjon",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Diskplass",
-                "notFound": "Finner ikke disk"
+                "notFound": "Laster inn diskinformasjon"
             },
             "software": "Programvare er oppdatert",
             "updated": "Oppdatert",
@@ -821,7 +832,8 @@
                     "airPlanePower": {
                         "title": "Strømmodus for fly",
                         "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Automatisk oppdagelse",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {

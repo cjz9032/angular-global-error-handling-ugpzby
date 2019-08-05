@@ -22,8 +22,8 @@
 						[attr.href]="!actionLink ? null : actionLink"
 						(click)="linkClicked(actionType, actionLink)"
 						vtrMetrics
-						id="{{id}}"
-						attr.aria-label="{{ariaLabel}}"
+						id="{{containerCardId+'_doc_link'}}"
+						attr.aria-label="{{containerCardId+'_doc_link'}}"
 						metricsItemCategory="corner"
 						metricsEvent="docClick"
 						[metricsItemPosition]="sideFlag + order"
@@ -36,7 +36,8 @@
 							<div *ngIf="title"
 								class="title">{{title}}</div>
 							<div *ngIf="caption"
-								class="caption" [innerHtml]="caption"></div>
+								class="caption"
+								[innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo">
 								<span class="logo-img">
@@ -53,7 +54,8 @@
 							<div *ngIf="title"
 								class="title default-cursor">{{title}}</div>
 							<div *ngIf="caption"
-								class="caption default-cursor" [innerHtml]="caption"></div>
+								class="caption default-cursor"
+								[innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo default-cursor">
 								<span class="logo-img default-cursor">
@@ -79,8 +81,8 @@
 						<a [attr.href]="!actionLink ? null : actionLink"
 							(click)="linkClicked(actionType, actionLink)"
 							vtrMetrics
-							id="{{id}}"
-							attr.aria-label="{{ariaLabel}}"
+							id="{{containerCardId+'_link'}}"
+							attr.aria-label="{{containerCardId+'_link'}}"
 							metricsItemCategory="corner"
 							metricsEvent="docClick"
 							[metricsItemPosition]="sideFlag + order"
@@ -92,9 +94,11 @@
 						</a>
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title" [innerHtml]="title"></div>
+								class="title"
+								[innerHtml]="title"></div>
 							<div *ngIf="caption"
-								class="caption" [innerHtml]="caption"></div>
+								class="caption"
+								[innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo">
 								<span class="logo-img">
@@ -110,9 +114,11 @@
 						</div>
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title default-cursor" [innerHtml]="title"></div>
+								class="title default-cursor"
+								[innerHtml]="title"></div>
 							<div *ngIf="caption"
-								class="caption default-cursor" [innerHtml]="caption"></div>
+								class="caption default-cursor"
+								[innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo default-cursor">
 								<span class="logo-img default-cursor">
@@ -142,16 +148,17 @@
 						rel="noopener"
 						class="card-image"
 						vtrMetrics
-						id="{{id}}"
-						attr.aria-label="{{ariaLabel}}"
 						metricsEvent="ArticleClick"
 						metricsItemCategory="corner-article"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
-						[style.background-image]="'url(' + img + ')'">
+						[style.background-image]="'url(' + img + ')'"
+						id="{{containerCardId+'-article_link'}}"
+						attr.aria-label="{{containerCardId+'-article_link'}}">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title" [innerHtml]="title"></div>
+								class="title"
+								[innerHtml]="title"></div>
 							<div *ngIf="caption"
 								class="caption">
 								<div [innerHtml]="caption"></div>
@@ -170,7 +177,8 @@
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title" [innerHtml]="title"></div>
+								class="title"
+								[innerHtml]="title"></div>
 							<div *ngIf="caption"
 								class="caption">
 								<div [innerHtml]="caption"></div>
@@ -186,10 +194,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="row"
+			<div class="row offline-icon col col-12"
 				*ngIf="!isOnline">
-				<img class="col col-12 image"
-					src="../../../assets/images/offline.png">
+				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
 			</div>
 		</div>
 	</div>
@@ -205,8 +212,8 @@
 						[attr.href]="!actionLink ? null : actionLink"
 						metricsItemCategory="highlight"
 						vtrMetrics
-						id="{{id}}"
-						attr.aria-label="{{ariaLabel}}"
+						id="{{containerCardId+'_article'}}"
+						attr.aria-label="{{containerCardId+'_article'}}"
 						metricsEvent="docClick"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
@@ -216,7 +223,8 @@
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title" [innerHtml]="title"></div>
+								class="title"
+								[innerHtml]="title"></div>
 						</div>
 					</a>
 					<div *ngIf="!isOnline"
@@ -224,7 +232,8 @@
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
 							<div *ngIf="title"
-								class="title" [innerHtml]="title"></div>
+								class="title"
+								[innerHtml]="title"></div>
 						</div>
 					</div>
 				</div>
@@ -241,8 +250,8 @@
 				[attr.href]="!actionLink ? null : actionLink"
 				metricsItemCategory="article"
 				vtrMetrics
-				id="{{id}}"
-				attr.aria-label="{{ariaLabel}}"
+				id="{{containerCardId+'_card_article'}}"
+				attr.aria-label="{{containerCardId+'_card_article'}}"
 				metricsEvent="docClick"
 				[metricsItemPosition]="sideFlag + order"
 				[metricsItemID]="itemID"
@@ -253,8 +262,8 @@
 						<a [attr.href]="!actionLink ? null : actionLink"
 							target="_blank"
 							rel="noopener"
-							id="{{id}}-card-image"
-							attr.aria-label="{{ariaLabel}}-card-image"
+							id="{{containerCardId+'_card_image'}}"
+							attr.aria-label="{{containerCardId+'_card_image'}}"
 							class="card-image"
 							[style.background-image]="'url(' + img + ')'">
 							<div *ngIf="logo || logoText"
@@ -269,12 +278,13 @@
 					<div class="row">
 						<div class="col col-12 content">
 							<div *ngIf="title"
-								class="title" [innerHtml]="title"></div>
+								class="title"
+								[innerHtml]="title"></div>
 							<div *ngIf="actionLink"
 								class="read-more">
 								<a [attr.href]="!actionLink ? null : actionLink"
-									id="{{id}}-read-more"
-									attr.aria-label="{{ariaLabel}}-read-more"
+									id="{{containerCardId+'_read_more'}}"
+									attr.aria-label="{{containerCardId+'_read_more'}}"
 									target="_blank"
 									rel="noopener">
 									<span class="link-label">{{action}}</span>
@@ -326,15 +336,16 @@
 							target="_blank"
 							rel="noopener"
 							vtrMetrics
-							id="{{id}}"
-							attr.aria-label="{{ariaLabel}}"
+							id="{{containerCardId+'_side_article'}}"
+							attr.aria-label="{{containerCardId+'_side_article'}}"
 							metricsEvent="docClick"
 							[metricsItemID]="itemID"
 							[metricsItemPosition]="sideFlag + order"
 							metricsItemCategory="partnerarticle">
 							<div class="col col-12 content">
 								<div *ngIf="title"
-									class="title" [innerHtml]="title"></div>
+									class="title"
+									[innerHtml]="title"></div>
 								<div *ngIf="actionLink"
 									class="read-more">
 								</div>
@@ -344,7 +355,8 @@
 							class="default-cursor">
 							<div class="col col-12 content">
 								<div *ngIf="title"
-									class="title" [innerHtml]="title"></div>
+									class="title"
+									[innerHtml]="title"></div>
 								<div *ngIf="actionLink"
 									class="read-more">
 								</div>

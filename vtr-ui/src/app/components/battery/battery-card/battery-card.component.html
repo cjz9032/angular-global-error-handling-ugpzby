@@ -94,7 +94,9 @@
 				metricsEvent="itemClick"
 				class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
 				(click)="showDetailModal(batteryDetail)"
-				[disabled]="isBatteryDetailsBtnDisabled">
+				[disabled]="isBatteryDetailsBtnDisabled"
+				id="myDevice-settings-battery-details-btn"
+				attr.aria-label="myDevice-settings-battery-details-btn">
 				{{'device.deviceSettings.batteryGauge.button' | translate }}
 			</button>
 		</div>

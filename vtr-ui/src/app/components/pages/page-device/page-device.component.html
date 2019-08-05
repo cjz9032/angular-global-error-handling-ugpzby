@@ -3,7 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
 				[back]="'common.ui.back' | translate"
-				[title]="'device.myDevice.title' | translate">
+				[title]="'device.myDevice.title' | translate"
+				[backId]="'myDevice-back-btn'">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -13,8 +14,7 @@
 				<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 					<div class="vtr-subpage">
 						<div class="vtr-page-shift-up">
-							<vtr-widget-device id="device-mydevice-card" 
-							aria-label="device-mydevice-card" ></vtr-widget-device>
+							<vtr-widget-device></vtr-widget-device>
 						</div>
 					</div>
 				</div>
@@ -24,9 +24,9 @@
 							<div class="row">
 								<div class="col col-12">
 									<vtr-container-card order="1"
-														sideFlag="r"
-														[img]="cardContentPositionA.FeatureImage"
-														[itemID]="cardContentPositionA.Id"
+										sideFlag="r"
+										[img]="cardContentPositionA.FeatureImage"
+										[itemID]="cardContentPositionA.Id"
 										[caption]="cardContentPositionA.Description"
 										[title]="cardContentPositionA.Title"
 										[logoText]="cardContentPositionA.BrandName"
@@ -37,10 +37,9 @@
 										[ratioX]="4"
 										[ratioY]="2"
 										[cornerShift]="'large'"
-										id="device-upgradePcMemory-card" 
-										aria-label="device-upgradePcMemory-card"
-										[id]="'myDevice-upgradePcMemory-card'"
-										[ariaLabel]="'myDevice-upgradePcMemory-card'">
+										id="device-container-card"
+										aria-label="device-container-card"
+										[containerCardId]="'myDevice-container-card'">
 									</vtr-container-card>
 								</div>
 							</div>
@@ -49,10 +48,11 @@
 								<div class="col col-12 cont">
 									<div class="widget-heading mb-40">{{'device.myDevice.helpful' |translate }}</div>
 									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
-														  [itemid]="'common.QAndA.itemid'|translate"
+										[itemid]="'common.QAndA.itemid'|translate"
 										[description]="'common.qAndA.subtitle' | translate"
-										[items]="qaService.qas" blockPosition="r2"
-										id="device-qa-widget" 
+										[items]="qaService.qas"
+										blockPosition="r2"
+										id="device-qa-widget"
 										aria-label="device-qa-widget"
 										[linkId]="'myDevice-qa'"></vtr-widget-questions>
 								</div>

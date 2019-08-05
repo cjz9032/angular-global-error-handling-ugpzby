@@ -3,327 +3,332 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "Termál mód",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "Teljesítmény",
+                        "balance": "Egyensúly",
+                        "quiet": "Csendes",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
-                        "perText": "Higher CPU usage, Higher fan speed",
-                        "balText": "Normal CPU and fan speed",
-                        "quietText": "Lower CPU usage, Lower fan speed"
+                        "perText": "Fokozott CPU-használat, nagyobb ventilátorsebesség",
+                        "balText": "Normál CPU- és ventilátorsebesség",
+                        "quietText": "Alacsonyabb CPU-használat, kisebb ventilátorsebesség"
                     },
-                    "wifiSecurity": "Wifi Security",
+                    "wifiSecurity": "Biztonságos WiFi",
                     "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "rapidCharge": "Gyorstöltés"
                 },
                 "legionEdge": {
-                    "title": "CPU Overclock",
+                    "title": "CPU-túlpörgetés",
                     "status": {
-                        "alwayson": "On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "Be",
+                        "whenGaming": "Játék közben",
+                        "off": "Ki",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
-                        "onText": "CPU Overclocking will be activated",
-                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
-                        "offText": "CPU Overclocking will be disabled"
+                        "onText": "Aktiválódik a CPU-túlpörgetés",
+                        "gamingText": "A játék indításakor automatikusan aktiválódik a CPU-túlpörgetés",
+                        "offText": "A CPU-túlpörgetés kikapcsol"
                     },
-                    "ramOverlock": "RAM Overclock",
+                    "ramOverlock": "RAM-túlpörgetés",
                     "popup": {
-                        "text": "Change will be effective after restarting computer.",
+                        "text": "A módosítás a számítógép újraindulása után lép érvénybe.",
                         "button": "ok"
                     },
                     "driverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "You need install driver for RAM Overclock to  make it effective",
-                        "button": "Install",
-                        "link": "cancel",
-                        "networkBoostText": "You need install driver for Network Boost to  make it effective",
-                        "hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
-                        "cpuOverclockText": "You need install driver for CPU Overclock to  make it effective"
+                        "headerText": "Illesztőprogram telepítése szükséges",
+                        "text": "Telepítse az illesztőprogramot a RAM-túlpörgetés aktiválásához (újraindítás szükséges)",
+                        "button": "Telepítse",
+                        "link": "mégse",
+                        "networkBoostText": "A Hálózat erősítése funkció működéséhez telepíteni kell az illesztőprogramját",
+                        "hybridModeText": "A Hibrid mód működéséhez telepíteni kell az illesztőprogramját",
+                        "cpuOverclockText": "Telepítse az illesztőprogramot a CPU-túlpörgetés aktiválásához (újraindítás szükséges)"
                     },
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock",
+                    "autoClose": "Automatikus bezárás",
+                    "networkBoost": "Hálózat erősítése",
+                    "hybridMode": "Hibrid mód",
+                    "touchpadLock": "Érintőfelület zárolása",
                     "lightingDriverPopup": {
-                        "headerText": "Driver Install Required",
-                        "text": "Please install driver",
-                        "button": "Install",
-                        "link": "cancel"
+                        "headerText": "Illesztőprogram telepítése szükséges",
+                        "text": "Telepítse az illesztőprogramot a világítás aktiválásához (újraindítás szükséges)",
+                        "button": "Telepítse",
+                        "link": "mégse"
                     },
                     "lightingColorMessage": {
-                        "text": "Selecting color not available to this effect."
+                        "text": "Ehhez az effektushoz nem lehet színt választani."
                     }
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
-                    "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update",
-                    "header": "System Tools"
+                    "power": "Tápellátás",
+                    "media": "Média",
+                    "macroKey": "Makróbillentyű",
+                    "hardwareScan": "Hardvervizsgálat",
+                    "systemUpdate": "Rendszerfrissítés",
+                    "header": "Rendszereszközök"
                 },
                 "lighting": {
-                    "title": "Lighting Customize",
-                    "header": "Lighting"
+                    "title": "Világítás testreszabása",
+                    "header": "Világítás"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
-                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
-                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
-                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
-                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
-                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "A Vantage Edge segítségével a beállítások a használat alapján automatikusan hangolódnak. \n Maximális teljesítmény játék során, hosszabb akkumulátoros üzemidő máskor.",
+                    "line2": "<b>Szolgáltatáskezelés – áttekintés</b> <br> Egyes szolgáltatások nem érhetők el minden eszközön",
+                    "line3": "<b>CPU-túlpörgetés </b><br> Fokozza a processzora maximális sebességét",
+                    "line4": "<b>RAM-túlpörgetés </b><br> Fokozza a memória maximális sebességét",
+                    "line5": "<b>Hálózat erősítése </b><br> Hálózati forgalom átirányítása a játszott játékhoz",
+                    "line6": "<b>Dolby </b><br> Hang beállítása a Dolby technológiával rendelkező játékokhoz",
+                    "line7": "<b>Hibrid mód </b><br> A speciális GPU-beállítások letiltása játékon kívül az akkumulátor teljesítményének növelése érdekében",
+                    "line8": "<b>Gyorstöltés </b><br> Hosszabb játékidő utazás közben gyorsabb akkumulátortöltéssel",
+                    "line9": "<b>Érintőfelület zárolása </b><br> A véletlenszerű műveletek elkerülése az érintőfelület játék közbeni letiltásával",
+                    "line10": "<b>Automatikus bezárás </b><br> A rendszer erőforrásainak maximalizálásához törölje a nem használt folyamatokat a játék megkezdése előtt",
+                    "line11": "<b>Termál mód </b><br> Preferált eszközprofil beállítása a ventilátorsebesség és hűtés vezérléséhez"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                    "systenTooltip": "Vigye az egeret a CPU/GPU/RAM vagy a különböző meghajtók fölé, és láthatja a leírásukat, többek között a gyártmányukat és a típusukat"
                 },
                 "systemStatus": {
-                    "info": "INFO"
+                    "info": "INFORMÁCIÓ"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
         "common": {
             "menu": {
                 "support": {
-                    "title": "Support",
-                    "sub1": "Support",
+                    "title": "Támogatás",
+                    "sub1": "Támogatás",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
             }
         },
         "macroKey": {
-            "title": "Macro Key",
-            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "title": "Makróbillentyű",
+            "introLine": "Rögzíthet egy sor billentyűleütést, és használhatja őket játék vagy más műveletek során.",
             "status": {
                 "on": {
-                    "title": "On",
-                    "description": "Always Enabled"
+                    "title": "Be",
+                    "description": "Mindig engedélyezve"
                 },
                 "whileGaming": {
-                    "title": "Macro Key enabled only when gaming",
-                    "description": "It will be enabled when you game and remain as num key when you don't."
+                    "title": "Makróbillentyű engedélyezése csak játék közben",
+                    "description": "Engedélyezve lesz játék közben, játékon kívül pedig numerikus billentyű marad."
                 },
                 "off": {
-                    "title": "Off",
-                    "description": "Always Off"
+                    "title": "Ki",
+                    "description": "Mindig kikapcsolva"
                 }
             },
             "details": {
                 "intro": {
-                    "noNumber": "SELECT A MACRO KEY",
-                    "title": "CREATE A MACRO KEY FOR",
-                    "line1": "click the start recording button below",
-                    "line2": "type in macro key",
-                    "line3": "stop recording when finishing typing"
+                    "noNumber": "MAKRÓBILLENTYŰ KIKAPCSOLVA",
+                    "title": "MAKRÓBILLENTYŰ LÉTREHOZÁSA EHHEZ",
+                    "line1": "kattintson a rögzítés indítása gombra alább",
+                    "line2": "adja meg a makróbillentyűt",
+                    "line3": "rögzítés leállítás a gépelés befejezésekor"
                 },
                 "buttons": {
-                    "start": "START RECORDING",
-                    "stop": "STOP RECORDING",
-                    "numberPrefix": "NUM"
+                    "start": "RÖGZÍTÉS INDÍTÁSA",
+                    "stop": "RÖGZÍTÉS LEÁLLÍTÁSA",
+                    "numberPrefix": "NUMERIKUS"
                 },
                 "recording": {
-                    "title": "START TYPING",
-                    "description": "20 inputs within 20 seconds can be recorded."
+                    "title": "KEZDJEN EL GÉPELNI",
+                    "description": "20 másodpercen keresztül 20 billentyűleütés rögzíthető."
                 },
                 "recorded": {
-                    "title": "MACRO KEY FOR ",
-                    "deleteKey": "Delete Key",
-                    "clear": "Clear",
+                    "title": "MAKRÓBILLENTYŰ EHHEZ ",
+                    "deleteKey": "Billentyű törlése",
+                    "clear": "Törlés",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Delay",
-                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                            "title": "Késleltetés megtartása",
+                            "description": "A billentyűleütések között időtartam megmarad a makróbillentyű lenyomásakor végzett műveletsorban."
                         },
                         "ignore": {
-                            "title": "Ignore Delay",
-                            "description": "Intervals of key actions will be ignored."
+                            "title": "Késleltetés figyelmen kívül hagyása",
+                            "description": "A billentyűleütések közötti késleltetést a rendszer figyelmen kívül hagyja."
                         }
                     },
                     "repeatStatus": {
                         "repeat1": {
-                            "title": "No Repeat",
-                            "description": "No Repeat"
+                            "title": "Nincs ismétlés",
+                            "description": "Nincs ismétlés"
                         },
                         "repeat2": {
-                            "title": "Repeat 2 Times",
-                            "description": "Repeats 2 times"
+                            "title": "2 ismétlés",
+                            "description": "2-szer ismétlődik"
                         },
                         "repeat3": {
-                            "title": "Repeat 3 Times",
-                            "description": "Repeats 3 times"
+                            "title": "3 ismétlés",
+                            "description": "3-szor ismétlődik"
                         },
                         "repeat4": {
-                            "title": "Repeat 4 Times",
-                            "description": "Repeats 4 times"
+                            "title": "4 ismétlés",
+                            "description": "4-szer ismétlődik"
                         },
                         "repeat5": {
-                            "title": "Repeat 5 Times",
-                            "description": "Repeats 5 times"
+                            "title": "5 ismétlés",
+                            "description": "5-ször ismétlődik"
                         },
                         "repeat6": {
-                            "title": "Repeat 6 Times",
-                            "description": "Repeats 6 times"
+                            "title": "6 ismétlés",
+                            "description": "6-szor ismétlődik"
                         },
                         "repeat7": {
-                            "title": "Repeat 7 Times",
-                            "description": "Repeats 7 times"
+                            "title": "7 ismétlés",
+                            "description": "7-szer ismétlődik"
                         },
                         "repeat8": {
-                            "title": "Repeat 8 Times",
-                            "description": "Repeats 8 times"
+                            "title": "8 ismétlés",
+                            "description": "8-szor ismétlődik"
                         },
                         "repeat9": {
-                            "title": "Repeat 9 Times",
-                            "description": "Repeats 9 times"
+                            "title": "9 ismétlés",
+                            "description": "9-szer ismétlődik"
                         },
                         "repeat10": {
-                            "title": "Repeat 10 Times",
-                            "description": "Repeats 10 times"
+                            "title": "10 ismétlés",
+                            "description": "10-szer ismétlődik"
                         }
                     },
                     "list": {
                         "header": {
-                            "col1": "Key Action",
-                            "col2": "Interval"
+                            "col1": "Billentyűművelet",
+                            "col2": "Intervallum"
                         },
                         "footer": {
-                            "title": "Next input.."
+                            "title": "Következő bevitel.."
                         }
                     }
                 }
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Are you sure you want to clear this macro key?"
+                    "title": "Biztosan törli ezt a makróbillentyűt?"
                 },
                 "timeoutRecording": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if no input for 20 seconds."
+                    "title": "A rögzítés túllépte az időkorlátot.",
+                    "body": "A rögzítés időkorlátja lejár, ha 20 másodpercig nem történik bevitel."
                 },
                 "maximumInput": {
-                    "title": "Maximum Input Reached.",
-                    "body": "Macro key can only store inputs less than 20."
+                    "title": "Elérte a maximális beviteli korlátot.",
+                    "body": "A makróbillentyűk csak 20-nál kevesebb műveletet tudnak tárolni."
                 },
                 "inputStopped": {
-                    "title": "Time Out For Recording.",
-                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                    "title": "A rögzítés túllépte az időkorlátot.",
+                    "body": "A rögzítés időkorlátja lejár, ha 10 másodpercnél tovább szünetel a bevitel."
                 },
                 "confirmButton": {
-                    "btnClear": "Clear",
-                    "btnCancel": "Cancel"
+                    "btnClear": "Törlés",
+                    "btnCancel": "Mégse"
                 },
                 "btnOk": "OK"
             },
             "recording": {
-                "title": "Recording Macro Key For"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
+                "title": "Makróbillentyű rögzítése ehhez"
             }
         },
         "lightingProfile": {
-            "title": "Lighting",
+            "title": "Világítás",
             "effect": {
                 "option1": {
-                    "title": "On"
+                    "title": "Be"
                 },
                 "option2": {
-                    "title": "Flicker"
+                    "title": "Villogás"
                 },
                 "option3": {
-                    "title": "Breath"
+                    "title": "Lélegzetvétel"
                 },
                 "option4": {
-                    "title": "Wave"
+                    "title": "Hullám"
                 },
                 "option5": {
-                    "title": "Smooth"
+                    "title": "Sima"
                 },
                 "option6": {
-                    "title": "CPU Temperature"
+                    "title": "Processzor hőmérséklete"
                 },
                 "option7": {
-                    "title": "CPU Utilization"
+                    "title": "CPU-használat"
                 },
                 "option8": {
-                    "title": "Off"
+                    "title": "Ki"
                 },
                 "apply": {
-                    "title": "APPLY"
+                    "title": "ALKALMAZÁS"
                 },
                 "applied": {
-                    "title": "APPLIED"
+                    "title": "ALKALMAZVA"
                 }
             },
             "brightness": {
                 "text1": {
-                    "title": "*Brightness setting doesn't apply on "
+                    "title": "*A fényerő beállítás nem érvényes erre "
                 },
                 "text2": {
-                    "title": " effect"
+                    "title": " effektus"
                 }
             },
             "lightingSingleLightingOption": {
                 "option1": {
-                    "title": "Always On"
+                    "title": "Mindig bekapcsolva"
                 },
                 "option2": {
-                    "title": "Fast Blink"
+                    "title": "Gyors villogás"
                 },
                 "option3": {
-                    "title": "Medium Blink"
+                    "title": "Közepes sebességű villogás"
                 },
                 "option4": {
-                    "title": "Slow Blink"
+                    "title": "Lassú villogás"
                 },
                 "option5": {
-                    "title": "Blink Level"
+                    "title": "Villogás sebessége"
                 }
             },
             "profile": {
                 "text1": {
-                    "title": "Lighting is currently off. Select the profile tab above to turn it on and customize it."
+                    "title": "A világítás ki van kapcsolva. A fenti Profil lapot választva kapcsolhatja be, illetve szabhatja személyre."
                 },
                 "text2": {
-                    "title": "effect"
+                    "title": "effektus"
                 },
                 "text3": {
-                    "title": "Effect"
+                    "title": "Hatás"
                 }
             },
             "button": {
                 "default": {
-                    "title": "Set to default"
+                    "title": "Beállítás alapértékekre"
                 }
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Ki"
                 },
                 "text2": {
-                    "title": "Profile 1"
+                    "title": "1. profil"
                 },
                 "text3": {
-                    "title": "Profile 2"
+                    "title": "2. profil"
                 },
                 "text4": {
-                    "title": "Profile 3"
+                    "title": "3. profil"
                 }
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Ki"
                 },
                 "text2": {
                     "title": 1
@@ -335,33 +340,33 @@
                     "title": 3
                 },
                 "Customize": {
-                    "title": "Customize"
+                    "title": "Személyre szabás"
                 },
                 "heading": {
-                    "title": "Select Profile:"
+                    "title": "Profil kiválasztása:"
                 }
             },
             "colourwheel": {
                 "text1": {
-                    "title": "Selecting colour not available to this effect."
+                    "title": "Ehhez az effektushoz nem lehet színt választani."
                 },
                 "text2": {
-                    "title": "APPLY"
+                    "title": "ALKALMAZÁS"
                 },
                 "text3": {
-                    "title": "APPLIED"
+                    "title": "ALKALMAZVA"
                 },
                 "text4": {
-                    "title": "R:"
+                    "title": "P:"
                 },
                 "text5": {
-                    "title": "G:"
+                    "title": "Z:"
                 },
                 "text6": {
-                    "title": "B:"
+                    "title": "K:"
                 },
                 "text7": {
-                    "title": "Color"
+                    "title": "Szín"
                 }
             }
         },
@@ -378,6 +383,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +518,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Szemvédő",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +580,16 @@
             "extendedWarranty": "Jótállás kiterjesztése",
             "processor": {
                 "title": "Processzor",
-                "notFound": "A processzor nem található"
+                "notFound": "Processzoradatok betöltése"
             },
             "memory": {
                 "title": "Memória",
-                "notFound": "A memória nem található",
+                "notFound": "Memóriaadatok betöltése",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Lemezterület",
-                "notFound": "A lemez nem található"
+                "notFound": "Lemezadatok betöltése"
             },
             "software": "A szoftverek naprakészek",
             "updated": "Frissítve",
@@ -821,7 +832,8 @@
                     "airPlanePower": {
                         "title": "Repülőgépes energiaséma",
                         "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Automatikus észlelés",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {

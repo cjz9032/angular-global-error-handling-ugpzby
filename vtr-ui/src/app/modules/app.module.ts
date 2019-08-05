@@ -29,6 +29,10 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faCircleNotch } from '@fortawesome/pro-light-svg-icons/faCircleNotch';
+import { faBrowser } from '@fortawesome/pro-light-svg-icons/faBrowser';
+import { faGift } from '@fortawesome/pro-light-svg-icons/faGift';
+import { faCommentAltDots } from '@fortawesome/pro-light-svg-icons/faCommentAltDots';
+import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
 import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
@@ -38,7 +42,7 @@ import { ModalArticleDetailComponent } from '../components/modal/modal-article-d
 import { SharedModule } from './shared.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
-
+import { faWifiSlash} from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 
 library.add(faCheck);
 library.add(faExclamation);
@@ -52,6 +56,11 @@ library.add(faMinusCircle);
 library.add(faChevronUp);
 library.add(faChevronDown);
 library.add(faCircleNotch);
+library.add(faBrowser);
+library.add(faGift);
+library.add(faCommentAltDots);
+library.add(faShoePrints);
+library.add(faWifiSlash);
 
 @NgModule({
 	declarations: [

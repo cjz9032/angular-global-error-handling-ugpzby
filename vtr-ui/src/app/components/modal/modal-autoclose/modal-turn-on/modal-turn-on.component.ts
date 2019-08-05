@@ -15,30 +15,31 @@ export class ModalTurnOnComponent implements OnInit {
 
   @Input() showTurnOnModal: boolean;
   @Output() actionTurnOn = new EventEmitter<boolean>();
+  @Output() actionNotNow = new EventEmitter<boolean>();
   @Output() closeTurnOnModal = new EventEmitter<boolean>();
-  @Output() actionNeedAsk = new EventEmitter<any>();
+  @Output() actionNeedAsk = new EventEmitter<boolean>();
   ngOnInit() {
   }
 
-  // showAddAppsModal(event: Event): void {
-  //   // this.activeModal.close('close');
-  //   // this.modalService
-  //   //   .open(ModalAddAppsComponent, {
-  //   //     backdrop: 'static',
-  //   //     size: 'lg',
-  //   //     windowClass: 'apps-modal-container'
-  //   //   });
-  //   this.gamingAutoCloseService.setAutoCloseStatus(true).then((status: any) => {
-  //     this.gamingAutoCloseService.setAutoCloseStatusCache(status);
-  //   });
-  // }
-
   setAksAgain(event: any) {
-    this.actionNeedAsk.emit(event.target.checked);
+    const status = event.target.checked;
+    try {
+      this.gamingAutoCloseService.setNeedToAsk(!status).then((response: any) => {
+        console.log('Set successfully ------------------------>', !status);
+        this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
+        this.actionNeedAsk.emit(!status);
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
   }
 
-  turnOnAction(isConfirm: boolean = false) {
+  turnOnAction(isConfirm: boolean) {
     this.actionTurnOn.emit(isConfirm);
+  }
+
+  notNowAction(event) {
+    this.actionNotNow.emit(event);
   }
 
   closeModal(action: boolean) {

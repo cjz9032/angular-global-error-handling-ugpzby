@@ -22,6 +22,9 @@
 					"dolby": "Dolby",
 					"rapidCharge": "Rapid Charge"
 				},
+				"quickSettingstitle": {
+					"title": "Quick Settings"
+						},
 				"legionEdge": {
 					"title": "CPU Overclock",
 					"status": {
@@ -515,10 +518,11 @@
 			"title": "Your Quick Settings",
 			"microphone": "Microphone",
 			"cameraPrivacy": "Camera",
-			"eyeCareMode": "Eye Care Mode",
+			"eyeCareMode": "Eye Care",
 			"note": {
-				"accessNote": "Lenovo Vantage doesn't have access to",
-				"microphoneAndcameraPrivacyNotes": "Camera and Microphone.",
+				"microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+				"cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera.",
+				"microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
 				"accessUrl": "Go to Windows settings to give access"
 			}
 		},
@@ -970,7 +974,7 @@
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
 						},
-						"reset": "Reset temperature",
+						"reset": "Reset",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
@@ -1004,7 +1008,7 @@
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
 						},
-						"reset": "Reset temperature",
+						"reset": "Reset",
 						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
@@ -1033,7 +1037,7 @@
 					"camera": {
 						"title": "Camera",
 						"tooltip": "Click here to reset Camera properties to default settings.",
-						"reset": "Reset factory settings"
+						"reset": "Reset"
 					},
 					"brightness": "Brightness",
 					"contrast": "Contrast",
@@ -1193,7 +1197,7 @@
 					"goToWindowsHello": "Go to Windows Hello Settings",
 					"screenTimeoutSettings": "Go to Screen timeout settings"
 				},
-				"resetToDefault": "RESET TO DEFAULT SETTINGS"
+				"resetToDefault": "RESET"
 			},
 			"intelligentScreen": {
 				"title": "Intelligent Screen",

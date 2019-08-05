@@ -5,7 +5,8 @@
 				[back]="'common.ui.back' | translate"
 				[title]="'common.menu.device.sub2' | translate"
 				[parentPath]="parentPath"
-				[menuItems]="menuItems"></vtr-header-main>
+				[menuItems]="menuItems"
+				[backId]="'myDevice-settings-back-btn'"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -30,7 +31,8 @@
 									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 										[description]="'common.qAndA.subtitle' | translate"
 										[items]="qaService.qas"
-										blockPosition="r2"></vtr-widget-questions>
+										blockPosition="r2"
+										[linkId]="'device-settings-qa'"></vtr-widget-questions>
 								</div>
 							</div>
 							<div class="row">
@@ -48,7 +50,10 @@
 										[ratioY]="2"
 										order="3"
 										sideFlag='r'
-										[cornerShift]="'large'">
+										[cornerShift]="'large'"
+										id="device-settings-container-card"
+										aria-label="device-settings-container-card"
+										[containerCardId]="'device-settings-container-card'">
 									</vtr-container-card>
 								</div>
 							</div>

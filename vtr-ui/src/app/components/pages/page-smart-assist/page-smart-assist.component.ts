@@ -172,7 +172,7 @@ export class PageSmartAssistComponent implements OnInit {
 				this.initZeroTouchLock(isFirstTimeLoad);
 				this.initZeroTouchLogin();
 			}
-			if (this.smartAssistCapability.isIntelligentMediaSupported) {
+			if (this.smartAssistCapability.isIntelligentMediaSupported && isFirstTimeLoad) {
 				this.intelligentMedia = this.smartAssistCapability.isIntelligentMediaSupported;
 				this.getVideoPauseResumeStatus();
 			}
@@ -220,7 +220,7 @@ export class PageSmartAssistComponent implements OnInit {
 			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
 			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
 				this.smartAssistCapability.isIntelligentScreenSupported)) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen')
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
 			}
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error);
@@ -268,7 +268,7 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 
 			if (!(this.intelligentSecurity.isIntelligentSecuritySupported && isFirstTimeLoad)) {
-				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security')
+				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
 			}
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
@@ -417,12 +417,12 @@ export class PageSmartAssistComponent implements OnInit {
 			.then((isSuccess: boolean) => {
 				if (this.smartAssist.isShellAvailable) {
 					this.initSmartAssist(false);
-				}
+		 		}
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
 	}
 
-	private getVideoPauseResumeStatus() {
+	private  getVideoPauseResumeStatus() {
 		console.log('getVideoPauseResumeStatus');
 		try {
 			if (this.smartAssist.isShellAvailable) {
@@ -433,7 +433,7 @@ export class PageSmartAssistComponent implements OnInit {
 						console.log('getVideoPauseResumeStatus.then:', response);
 
 						if (!response.available) {
-							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media')
+							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						}
 					}).catch(error => {
 						console.error('getVideoPauseResumeStatus.error', error);

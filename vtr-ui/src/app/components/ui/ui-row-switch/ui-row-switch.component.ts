@@ -37,7 +37,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() resetText = '';
 	@Input() isSwitchChecked = true;
 	@Input() tooltipText = '';
-	@Input() name = '';
+	@Input() switchId = '';
 	@Input() disabled = false;
 	@Input() disabledAll = false;
 	@Input() type = undefined;
@@ -51,6 +51,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 	@Input() toolTipStatus = false;
+	@Input() isDisabled = false;
 	public contentExpand = false;
 
 

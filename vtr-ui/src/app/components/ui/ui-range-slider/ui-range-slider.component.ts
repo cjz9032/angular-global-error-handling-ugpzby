@@ -19,6 +19,7 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	public options: Options;
 
 	@Input() enableSlider;
+	@Input() rangeSliderId;
 
 
 	@Input() value = 0; // initial slider value

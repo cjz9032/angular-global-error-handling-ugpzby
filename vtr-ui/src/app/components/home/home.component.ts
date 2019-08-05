@@ -22,26 +22,27 @@ export class HomeComponent implements OnInit {
 	ngOnInit() {
 		if (this.deviceService.isShellAvailable) {
 			this.deviceService.getMachineInfo().then(info => {
-				this.languageService.useLanguage(info);
+				this.languageService.useLanguageByLocale(info.locale);
 				this.vantageLaunch(info);
 			});
 		} else {
-			// for browser load english language
-			this.languageService.useEnglish();
+			// for browser, load english language
+			this.languageService.useLanguage();
 			this.vantageLaunch(undefined);
 		}
 	}
 
 	/**
-	  * @param info: The machine info object.
-	  * @summary will launch the application based on the machine info
-	  */
+	 * will launch the application based on the machine info
+	 * @param info: The machine info object.
+	 */
 	public vantageLaunch(info: any) {
 		try {
+			const routeParam = { isMachineInfoLoaded: true };
 			if (info && info.isGaming) {
-				this.router.navigate(['/device-gaming']);
+				this.router.navigate(['/device-gaming', routeParam]);
 			} else {
-				this.router.navigate(['/dashboard']);
+				this.router.navigate(['/dashboard', routeParam]);
 			}
 		} catch (err) {
 			this.logger.error(`ERROR in vantageLaunch() of home.component`, err);

@@ -7,7 +7,10 @@
                     "status": {
                         "performance": "Výkon",
                         "balance": "Vyvážení",
-                        "quiet": "Tichý"
+                        "quiet": "Tichý",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
                     },
                     "statusText": {
                         "perText": "Vyšší zátěž CPU a otáčky ventilátoru",
@@ -23,7 +26,10 @@
                     "status": {
                         "alwayson": "Zapnuto",
                         "whenGaming": "Při hraní",
-                        "off": "Vypnuto"
+                        "off": "Vypnuto",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
                         "onText": "Přetaktování CPU se aktivuje",
@@ -88,6 +94,9 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"
+                },
+                "quickSettingstitle": {
+                    "title": "Quick Settings"
                 }
             }
         },
@@ -201,10 +210,6 @@
                         }
                     }
                 }
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             },
             "popupContent": {
                 "clearMacrokey": {
@@ -378,6 +383,11 @@
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
                 "body": "Only apps currently running will show in the list below."
+            },
+            "addAppsButton": "Add",
+            "noRunningApps": {
+                "title": "No Running Apps To Add",
+                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
         }
     },
@@ -508,9 +518,10 @@
             "cameraPrivacy": "Fotoaparát",
             "eyeCareMode": "Péče o oči",
             "note": {
-                "accessNote": "doesn't have access to Lenovo Vantage",
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access"
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
+                "accessUrl": "Go to Windows settings to give access",
+                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
+                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
             }
         },
         "systemStatus": {
@@ -569,16 +580,16 @@
             "extendedWarranty": "Prodloužit záruku",
             "processor": {
                 "title": "Procesor",
-                "notFound": "Procesor nebyl nalezen"
+                "notFound": "Načítají se informace o procesoru"
             },
             "memory": {
                 "title": "Paměť",
-                "notFound": "Paměť nebyla nalezena",
+                "notFound": "Načítají se informace o paměti",
                 "ram": "RAM"
             },
             "diskspace": {
                 "title": "Místo na disku",
-                "notFound": "Disk nebyl nalezen"
+                "notFound": "Načítají se informace o disku"
             },
             "software": "Software je aktuální",
             "updated": "Aktualizováno",
@@ -821,7 +832,8 @@
                     "airPlanePower": {
                         "title": "Napájecí schéma Letadlo",
                         "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače.Je-li aktivní napájecí režim Letadlo, omezí počítač spotřebu elektrické energie zpomalením nabíjení baterie a snížením výkonu systému.",
-                        "checkBoxDesc": "Auto detection"
+                        "checkBoxDesc": "Automatická detekce",
+                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
                     }
                 },
                 "energyStar": {

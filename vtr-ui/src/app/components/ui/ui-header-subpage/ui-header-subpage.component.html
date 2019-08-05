@@ -28,7 +28,8 @@
 					<div *ngFor="let item of items; let i=index"
 					 class="col-auto p-0">
 						<div class="menu-item"
-						id="{{ariaLabel}}-jumptoSetting-{{i}}"
+						id="jumptoSetting-{{item.path}}"
+						attr.aria-label="jumptoSetting-{{item.path}}"
 						 (click)="menuItemClick($event, item)">
 							{{item.title | translate}}
 						</div>

@@ -1,7 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import {MockService} from '../../../services/mock/mock.service';
-import {NgbCarouselConfig, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
-import {ModalArticleDetailComponent} from '../../modal/modal-article-detail/modal-article-detail.component';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -28,12 +26,12 @@ export class WidgetCarouselComponent implements OnInit {
 	@Input() showNavigationIndicators: boolean;
 	@Input() wrap: boolean;
 	@Input() order: number;
-	@Input() id: string;
-	@Input() ariaLabel: string;
+	@Input() carouselId: string;
+
 
 	isOnline = true;
 
-	constructor(private config: NgbCarouselConfig, private MocckService: MockService, private commonService: CommonService) {
+	constructor(private config: NgbCarouselConfig, private commonService: CommonService) {
 
 	}
 
@@ -70,7 +68,7 @@ export class WidgetCarouselComponent implements OnInit {
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		const change = changes['data'];
+		const change = changes.data;
 		if (!change.isFirstChange()) {
 			this.parseToCarouselModel();
 		}
