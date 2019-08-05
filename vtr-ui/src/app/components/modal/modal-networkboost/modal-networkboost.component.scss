@@ -1,0 +1,152 @@
+@import "../../../app.theme.scss";
+::ng-deep .apps-modal-container {
+	.modal-dialog {
+		top: 25%;
+	}
+	.modal-header {
+		border: 0;
+		padding: 2rem 2rem 0;
+	}
+	.modal-content {
+		border-radius: 1rem;
+		background: $dark_cell;
+		color: $light;
+		min-height: 60rem;
+	}
+	.modal-body {
+		padding: 1rem 4rem;
+		.title-content {
+			h3 {
+				font-size: 3.5rem;
+				font-weight: $weight_light;
+				margin-bottom: 1rem;
+			}
+			p {
+				font-size: 1.5rem;
+				color: $gaming_light_05;
+			}
+		}
+		.app-add-container {
+			background: $gaming_darkest;
+			min-height: 40rem;
+			max-height: 40rem;
+			overflow-y: auto;
+			overflow-x: hidden;
+			margin-top: 1.5rem;
+			padding: 3rem 4rem;
+			.app-list {
+				padding: 0;
+				li {
+					list-style-type: none;
+					display: inline-block;
+					margin-right: 5rem;
+					margin-bottom: 4.5rem;
+					div:nth-child(1) {
+						width: 5rem;
+						height: 5rem;
+						margin: auto;
+					}
+					div:nth-child(2) {
+						text-align: center;
+						padding: 1rem 0 1.5rem;
+						font-size: 1.6rem;
+						color: rgba(255, 255, 255, 0.8);
+					}
+				}
+			}
+			.btn-add-app {
+				position: relative;
+				width: 8rem;
+				height: 4rem;
+				input {
+					opacity: 0;
+					position: absolute;
+					width: 8rem;
+					height: 4rem;
+					& + .action {
+						background-image: url("../../../../assets/icons/auto-close/add.svg");
+						background-repeat: no-repeat;
+						background-position: center center;
+						width: 8rem;
+						height: 4rem;
+						border: 1px solid $gaming_light_blue;
+						border-radius: 2rem;
+					}
+					&:checked + .action {
+						background-image: url("../../../../assets/icons/auto-close/checkLine.svg");
+						background-color: $gaming_light_blue;
+					}
+				}
+			}
+		}
+	}
+}
+::ng-deep .autoClose-Modal {
+	.modal-dialog {
+		max-width: 66rem;
+	}
+	.modal-content {
+		border-radius: 1rem;
+	}
+}
+.modal-main-wrapper {
+	padding: 3rem 4rem;
+	&.modal-body {
+		padding: 0;
+	}
+
+	.content-body {
+		min-height: 10rem;
+	}
+
+	fa-icon {
+		font-size: 3rem;
+		color: $main;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		font-weight: normal;
+		color: $blue-dark;
+	}
+
+	p {
+		font-size: 1.6rem;
+		color: $light-grey;
+		padding: 0.5rem 0;
+	}
+
+	.btn-close {
+		button.close {
+			&:hover {
+				opacity: 0.75;
+			}
+		}
+	}
+	.enable-button {
+		background: $gradient_main;
+		border-radius: 3rem;
+		color: $light;
+		font-size: 2rem;
+		padding: 1rem 3rem;
+		margin-top: 1rem;
+		font-weight: $weight_600;
+		text-transform: uppercase;
+	}
+
+	.cancel-link {
+		color: $main;
+		font-size: 2rem;
+		text-decoration: underline;
+		vertical-align: middle;
+		padding: 1rem 3rem;
+		font-weight: $weight_600;
+		margin-top: 1rem;
+		cursor: pointer;
+		text-transform: uppercase;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

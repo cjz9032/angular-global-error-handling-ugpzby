@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class PassWordManagerWidgetItem extends WidgetItem {
 	constructor(passwordManager: PasswordManager, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'sa-widget-lnk-pm',
+			id: 'sa-widget-lnk-pm-loading',
 			path: 'security/password-protection',
 			type: 'security',
 			metricsItemName: 'Password Manager'
@@ -36,14 +36,17 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 			case 'installed':
 				translateKey = 'common.securityAdvisor.installed';
 				this.status = 5;
+				this.id = 'sa-widget-lnk-pm-installed';
 				break;
 			case 'installing':
 				translateKey = 'common.securityAdvisor.installing';
 				this.status = 4;
+				this.id = 'sa-widget-lnk-pm-installing';
 				break;
 			default:
 				translateKey = 'common.securityAdvisor.notInstalled';
 				this.status = 5;
+				this.id = 'sa-widget-lnk-pm-notInstalled';
 		}
 		this.translateService.stream(translateKey).subscribe((value: string) => {
 			this.detail = value;

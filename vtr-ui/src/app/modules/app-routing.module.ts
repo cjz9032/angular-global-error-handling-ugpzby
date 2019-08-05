@@ -51,6 +51,10 @@ const routes: Routes = [
 		loadChildren: './android/android-dashboard.module#AndroidDashboardModule'
 	},
 	{
+		path: 'beta',
+		loadChildren: '../beta/beta.module#BetaModule'
+	},
+	{
 		path: '',
 		component: HomeComponent,
 		pathMatch: 'full'
