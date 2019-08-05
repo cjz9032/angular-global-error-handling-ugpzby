@@ -148,13 +148,13 @@
 						rel="noopener"
 						class="card-image"
 						vtrMetrics
-						id="{{containerCardId+'article_link'}}"
-						attr.aria-label="{{containerCardId+'article_link'}}"
 						metricsEvent="ArticleClick"
 						metricsItemCategory="corner-article"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
-						[style.background-image]="'url(' + img + ')'">
+						[style.background-image]="'url(' + img + ')'"
+						id="{{containerCardId+'-article_link'}}"
+						attr.aria-label="{{containerCardId+'-article_link'}}">
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
@@ -194,10 +194,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="row"
+			<div class="row offline-icon col col-12"
 				*ngIf="!isOnline">
-				<img class="col col-12 image"
-					src="../../../assets/images/offline.png">
+				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
 			</div>
 		</div>
 	</div>

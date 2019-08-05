@@ -64,14 +64,14 @@
 	<div class="footer-component text-center" *ngIf="number && !number.status">
 		<div class="start-button">
 			<vtr-ui-button id="gaming_macrokey_startrecording" attr.aria-label="gaming_macrokey_startrecording"
-				metricsParent="WelcomePage" metricsEvent="featureClick" [metricsItem]="'START RECORDING'"
+				metricsEvent="featureClick" [metricsItem]="'macrokey_start_recording'"
 				[label]="'gaming.macroKey.details.buttons.start' | translate" [btnHeight]=true [isGradient]=true
 				(onClick)="onStartClicked($event)">
 			</vtr-ui-button>
 		</div>
 		<div class="stop-button">
 			<vtr-ui-button id="gaming_macrokey_stoprecording" attr.aria-label="gaming_macrokey_stoprecording"
-				metricsParent="WelcomePage" metricsEvent="featureClick" [metricsItem]="'STOP RECORDING'"
+				 metricsEvent="featureClick" [metricsItem]="'macrokey_stop_recording'"
 				[label]="'gaming.macroKey.details.buttons.stop' | translate" [btnHeight]=true [isGradient]=true
 				(onClick)="onStopClicked($event)">
 			</vtr-ui-button>

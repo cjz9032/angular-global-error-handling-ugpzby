@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Gravar Tecla de Macro Para"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -522,7 +518,7 @@
             "cameraPrivacy": "Câmara",
             "eyeCareMode": "Cuidados c/Visão",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
                 "accessUrl": "Go to Windows settings to give access",
                 "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
                 "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."

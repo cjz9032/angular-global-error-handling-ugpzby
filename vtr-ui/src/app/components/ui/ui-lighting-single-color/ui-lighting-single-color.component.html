@@ -5,7 +5,7 @@
 			<label class="gaming-radio">{{option.name | translate}}
 				<input type="radio" name="price" id="gaming_lighting_singlecolor_blink"
 					attr.aria-label="gaming_lighting_singlecolor_blink" vtrMetrics
-					[metricsItem]="option.name | translate" metricsEvent="featureClick" (click)="getValue(option.id)"
+					[metricsItem]="'singlecolor_blink_option'+option.id" metricsEvent="featureClick" (click)="getValue(option.id)"
 					[checked]="isChecked(option.id)" [value]=option.id>
 				<span class="checkmark"></span>
 			</label>

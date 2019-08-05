@@ -70,8 +70,8 @@
 										[metricsItem]="item.title"
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
-										id="myDevice-status-learn-more-{{i}}"
-										attr.aria-label="myDevice-status-learn-more-{{i}}"
+										id="myDevice-status-learn-more-{{item.id}}"
+										attr.aria-label="myDevice-status-learn-more-{{item.id}}"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">
@@ -85,8 +85,8 @@
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
 										href="javascript:void(0);"
-										id="myDevice-status-learn-more-{{i}}"
-										attr.aria-label="myDevice-status-learn-more-{{i}}"
+										id="myDevice-status-learn-more-{{item.id}}"
+										attr.aria-label="myDevice-status-learn-more-{{item.id}}"
 										(click)="deviceService.launchUri(item.path)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">

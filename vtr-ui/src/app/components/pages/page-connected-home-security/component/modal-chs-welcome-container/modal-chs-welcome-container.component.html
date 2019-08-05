@@ -7,6 +7,7 @@
 			metricsItem="closeCHSWelcomeModal"
 			metricsEvent="featureClick"
 			metricsParent="ConnectedHomeSecurity"
+			[ngClass]="{'invisible': isLocationServiceOn === true && showPageLocation === true}"
 			(click)="closeModal('success')">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""

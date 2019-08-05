@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Запись клавиши макроса для"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -522,7 +518,7 @@
             "cameraPrivacy": "Фотокамера",
             "eyeCareMode": "Защита глаз",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
                 "accessUrl": "Go to Windows settings to give access",
                 "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
                 "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
