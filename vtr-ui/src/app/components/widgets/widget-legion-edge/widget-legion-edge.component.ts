@@ -55,7 +55,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			id: 'legion_edge_cpuoverlock',
 			ariaLabel: 'legion_edge_cpuoverlock',
-			type: 'gaming.dashboard.device.legionEdge.title'
+			type: 'gaming.dashboard.device.legionEdge.title',
+
 		},
 		{
 			readMoreText: '',
@@ -76,7 +77,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			readonly: true,
 			id: 'legion_edge_ramoverlock',
 			ariaLabel: 'legion_edge_ramoverlock',
-			type: 'gaming.dashboard.device.legionEdge.ramOverlock'
+			type: 'gaming.dashboard.device.legionEdge.ramOverlock',
+			settings: ''
 		},
 		{
 			readMoreText: '',
@@ -98,7 +100,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			ariaLabel: 'legion_edge_autoclose',
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose',
-			canNavigate: true
+			canNavigate: true,
+			settings: 'legion_edge_autoclose_settings'
 		},
 		{
 			readMoreText: '',
@@ -122,7 +125,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			ariaLabel: 'legion_edge_networkboost',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',
-			canNavigate: true
+			canNavigate: true,
+			settings: 'legion_edge_networkboost_settings'
 		},
 		{
 			readMoreText: '',
@@ -144,7 +148,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			readonly: true,
 			id: 'legion_edge_hybridmode',
 			ariaLabel: 'legion_edge_hybridmode',
-			type: 'gaming.dashboard.device.legionEdge.hybridMode'
+			type: 'gaming.dashboard.device.legionEdge.hybridMode',
+			settings: ''
 		},
 		{
 			readMoreText: '',
@@ -164,7 +169,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			id: 'legion_edge_touchpadlock',
 			ariaLabel: 'legion_edge_touchpadlock',
-			type: 'gaming.dashboard.device.legionEdge.touchpadLock'
+			type: 'gaming.dashboard.device.legionEdge.touchpadLock',
+			settings: ''
 		}
 	];
 
@@ -177,21 +183,21 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				header: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
-				ariaLabels: 'gaming.dashboard.device.legionEdge.status.alwaysonUid',
+				id: 'cpu_overclock_on',
 				value: 1
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
-				ariaLabels: 'gaming.dashboard.device.legionEdge.status.whenGamingUid',
+				id: 'cpu_overclock_when_gaming',
 				value: 2
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.off',
 				name: 'gaming.dashboard.device.legionEdge.status.off',
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
-				ariaLabels: 'gaming.dashboard.device.legionEdge.status.offUid',
+				id: 'cpu_overclock_off',
 				value: 3
 			}
 		]
