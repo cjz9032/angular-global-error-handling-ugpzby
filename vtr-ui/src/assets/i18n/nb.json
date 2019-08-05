@@ -676,16 +676,16 @@
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
                     "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
-                    "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
-                    "LimitedACAdapterSupport": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
+                    "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
+                    "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
                     "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Ta det ut av maskinen og avkjøl det til romtemperatur.",
                     "PermanentError": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
+                    "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt."
                 },
                 "updating": "Oppdatering",
                 "voltageError": "Feil batterispenning",
@@ -799,8 +799,8 @@
                         "readMoreText": "Les mer.",
                         "noteInfo": " Batteriladeterskelen er fremdeles ikke fullstendig aktiv. Koble fra maskinen din og la batterinivået gå ned til eller under terskelen for ladestopp.",
                         "settings": {
-                            "title1": "Terskel for innebygd batteri",
-                            "title2": "Terskel for avtakbart batteri"
+                            "title1": "Terskel for primærbatteri",
+                            "title2": "Terskel for sekundærbatteri"
                         },
                         "popup": {
                             "title": "Aktiver batteriladeterskel",

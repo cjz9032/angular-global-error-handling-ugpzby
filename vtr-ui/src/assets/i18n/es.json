@@ -676,16 +676,16 @@
                     "Bad": "<b>Se produjo un error de batería.</b> No se puede cargar/descargar la batería. Sustituya la batería.",
                     "NotDetected": "<b>No se ha detectado ninguna batería o no hay</b> ninguna batería conectada.",
                     "NotGood": "<b>La batería no está en buen estado.</b>",
-                    "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b> Su sistema Lenovo no admite este adaptador de CA. Puede que se apague repentinamente. Conecte un adaptador de CA correcto.",
-                    "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto.",
+                    "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
+                    "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
                     "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente.",
                     "StoreLimitation": "<b>La batería solo puede almacenar un {{value}}% de</b> su capacidad de carga original.",
                     "HighTemperature": "Se interrumpió la <b>descarga</b> debido a que la <b>temperatura de la batería es demasiado alta.</b>",
                     "TrickleCharge": "La batería se <b>descargó completamente</b> y se debe volver a cargar. El proceso podría tomar diez horas o más.",
                     "OverheatedBattery": "La batería tiene una <b>temperatura demasiado alta</b>. Retírela del sistema y deje que se enfríe a temperatura ambiente.",
                     "PermanentError": "La batería ha <b>fallado debido al desgaste normal.</b> No se puede cargar la batería. Sustituya la batería.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>El adaptador de CA no es compatible.</b> Su sistema Lenovo no admite este adaptador de CA. Puede que se apague repentinamente. Conecte un adaptador de CA correcto.",
+                    "LimitedACAdapterSupportDetail": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto."
                 },
                 "updating": "Actualizando",
                 "voltageError": "Voltaje de batería incorrecto",
@@ -799,8 +799,8 @@
                         "readMoreText": "Leer más.",
                         "noteInfo": " El umbral de carga de la batería aún no está completamente activo. Desconecte la máquina y deje que la batería se agote o quede bajo el umbral de detención de carga.",
                         "settings": {
-                            "title1": "Umbral de batería incorporada",
-                            "title2": "Umbral de batería extraíble"
+                            "title1": "Umbral de batería principal",
+                            "title2": "Umbral de batería secundaria"
                         },
                         "popup": {
                             "title": "Habilitar umbral de carga de batería",

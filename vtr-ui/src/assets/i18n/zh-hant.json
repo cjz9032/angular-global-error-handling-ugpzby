@@ -676,16 +676,16 @@
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
                     "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
                     "NotGood": "<b>電池狀況不佳。</b>",
-                    "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
-                    "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
+                    "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
+                    "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
                     "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
                     "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
                     "PermanentError": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
+                    "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。"
                 },
                 "updating": "正在更新",
                 "voltageError": "電池電壓不正確",
@@ -799,8 +799,8 @@
                         "readMoreText": "較多內容。",
                         "noteInfo": " 電池充電臨界值仍未完全作用。請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
                         "settings": {
-                            "title1": "內建電池的臨界值",
-                            "title2": "抽取式電池的臨界值"
+                            "title1": "主要電池的臨界值",
+                            "title2": "次要電池的臨界值"
                         },
                         "popup": {
                             "title": "啟用電池的充電臨界值",
