@@ -17,7 +17,7 @@ export class PasswordManagerLandingViewModel {
 			path: 'security/password-protection',
 			title: 'common.securityAdvisor.pswdMgr',
 			type: 'security',
-			id: 'sa-ov-link-passwordManager'
+			id: 'sa-ov-link-passwordManager-loading'
 		};
 		const subjectStatus = {
 			status: 2,
@@ -38,16 +38,19 @@ export class PasswordManagerLandingViewModel {
 				case 'installed':
 					pmStatus.detail = 'common.securityAdvisor.installed';
 					pmStatus.status = 5;
+					pmStatus.id = 'sa-ov-link-passwordManager-installed';
 					subjectStatus.status = 2;
 					break;
 				case 'installing':
 					pmStatus.detail = 'common.securityAdvisor.installing';
 					pmStatus.status = 4;
+					pmStatus.id = 'sa-ov-link-passwordManager-installing';
 					subjectStatus.status = 1;
 					break;
 				default:
 					pmStatus.detail = 'common.securityAdvisor.notInstalled';
 					pmStatus.status = 5;
+					pmStatus.id = 'sa-ov-link-passwordManager-notInstalled';
 					subjectStatus.status = 1;
 			}
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, status);

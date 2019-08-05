@@ -24,7 +24,7 @@
 						id="security"
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-10 mx-auto">
-							<vtr-container-collapsible [ariaLabel]="'intelligentSecurity'"
+							<vtr-container-collapsible [collapseLinkId]="'intelligentSecurity'"
 								[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
 								componentName="intelligent security"
 								[isCollapsed]="false"
@@ -265,7 +265,7 @@
 									</div>
 								</div>
 								<div class="row ml-3">
-									<vtr-ui-button [automationId]="'intelligentSecurity_reset_btn'"
+									<vtr-ui-button [linkId]="'intelligentSecurity_reset_btn'"
 										(onClick)="onResetDefaultSettings($event)"
 										[upperCaseLabel]="true"
 										[label]="'device.smartAssist.intelligentSecurity.resetToDefault' | translate"
@@ -282,7 +282,7 @@
 						id="screen"
 						*ngIf="intelligentScreen.isIntelligentScreenVisible">
 						<div class="col-10 mx-auto">
-							<vtr-container-collapsible [ariaLabel]="'intelligentScreen'"
+							<vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
 								componentName="intelligent screen"
 								[isCollapsed]="false"
@@ -372,7 +372,7 @@
 						id="aps"
 						*ngIf='isAPSAvailable'>
 						<div class="col-10 mx-auto">
-							<vtr-container-collapsible [ariaLabel]="'activeProtection'"
+							<vtr-container-collapsible [collapseLinkId]="'activeProtection'"
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
 								componentName=""
 								[isCollapsed]="false"
@@ -390,7 +390,7 @@
 						id="voice"
 						*ngIf="lenovoVoice.available">
 						<div class="col-10 mx-auto">
-							<vtr-container-collapsible [ariaLabel]="'intelligentVoice'"
+							<vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
 								[cardTitle]="'device.smartAssist.voice.title' | translate"
 								[isCollapsed]="false"
 								[allowCollapse]="true"
@@ -409,8 +409,8 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col col-12">
-									<vtr-container-card [id]="'smart-assist-container-card'"
-										[ariaLabel]="'smart-assist-container-card'"
+									<vtr-container-card
+										[containerCardId]="'smart-assist-container-card'"
 										[img]="cardContentPositionA.FeatureImage"
 										[caption]="cardContentPositionA.Description"
 										[title]="cardContentPositionA.Title"

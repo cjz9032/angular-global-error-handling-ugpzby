@@ -12,6 +12,7 @@
 		<div class="col-10 mx-auto ">
 			<!-- Input & Accessories -->
 			<vtr-container-collapsible
+				[collapseLinkId]="'inputAccessories'"
 				[cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
 				componentName="Input & Accessories"
 				[isCollapsed]="false"
@@ -26,7 +27,8 @@
 							[caption]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate"
 							[leftIcon]="['fal', 'keyboard']"
 							[showChildContent]="true"
-							[theme]="'white'">
+							[theme]="'white'" 
+							[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 									<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
@@ -76,6 +78,7 @@
 							[isSwitchVisible]="true"
 							[isSwitchChecked]="switchValue"
 							(toggleOnOff)="fnCtrlKey($event)"
+							[switchId]="'inputAccessories-fnCtrlKey'"
 							>
 							<div class="fn-ctrl-block" *ngIf="switchValue">
 								<div class="row">

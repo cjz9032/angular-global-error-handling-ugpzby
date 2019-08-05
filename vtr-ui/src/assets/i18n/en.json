@@ -414,7 +414,10 @@
 			},
 			"support": "Support",
 			"homeSecurity": "Connected Home",
-			"privacy": "Privacy"
+			"privacy": "Privacy",
+			"beta":{
+				"title": "beta"
+			}
 		},
 		"securityAdvisor": {
 			"title": "Security Advisor",

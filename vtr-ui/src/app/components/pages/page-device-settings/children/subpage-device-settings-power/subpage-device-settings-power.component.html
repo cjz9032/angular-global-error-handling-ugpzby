@@ -33,8 +33,7 @@
 			<vtr-ui-header-subpage [items]="headerMenuItems"
 				[title]="'device.deviceSettings.power.title' | translate"
 				[caption]="'device.deviceSettings.power.description' | translate"
-				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"
-				[ariaLabel]="'deviceSettings-power'"></vtr-ui-header-subpage>
+				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"></vtr-ui-header-subpage>
 	</div>
 	</div>
 	<vtr-power-smart-settings
@@ -49,7 +48,7 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
 				[isCollapsed]="false"
-				[collapseLinkId]="'device-settings-power-batterySettings-collapsible'">
+				[collapseLinkId]="'device-settings-batterySettings'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="showAirplanePowerModeSection">
@@ -62,6 +61,7 @@
 							[tooltipText]="batterySettings.items[0].tooltipText"
 							[isSwitchChecked]="toggleAirplanePowerModeFlag"
 							[showChildContent]=true
+							[switchId]="'ds-power-battery-airplane'"
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 							<div class="row">
 								<div class="col px-20">
@@ -99,6 +99,7 @@
 							[showChildContent]="true"
 							[isSwitchChecked]="showBatteryThreshold"
 							(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
+							[switchId]="'ds-power-battery-threshold'"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 							<div *ngIf="showBatteryThreshold">
 								<vtr-battery-charge-threshold-settings
@@ -155,6 +156,7 @@
 							[isSwitchChecked]="expressChargingStatus.status"
 							[disabled]="expressChargingLock"
 							[showLoaderState]="conservationModeLock"
+							[switchId]="'ds-power-battery-expressCharging'"
 							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
@@ -172,6 +174,7 @@
 							[isSwitchChecked]="conservationModeStatus.status"
 							[disabled]="conservationModeLock"
 							[showLoaderState]="expressChargingLock"
+							[switchId]="'ds-power-battery-conservationMode'"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>
@@ -189,7 +192,7 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[isCollapsed]="false"
-				[collapseLinkId]="'device-settings-power-powerSettings-collapsible'">
+				[collapseLinkId]="'device-settings-powerSettings'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="!isDesktopMachine">
@@ -204,6 +207,7 @@
 							[rightIcon]="powerSettings[0].rightImageSource"
 							[showChildContent]="true"
 							[tooltipText]="powerSettings[0].tooltipText"
+							[switchId]="'ds-power-alwaysUSB'"
 							(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
 							<!-- <div class="auto-set-checkbox left-margin"
 								[ngClass]="{'disable': toggleAlwaysOnUsbFlag === false}">
@@ -260,6 +264,7 @@
 							[leftIcon]="['icomoon','icomoon-LE-Easy-resume2x']"
 							[rightIcon]="powerSettings[1].rightImageSource"
 							[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
+							[switchId]="'ds-power-easyResume'"
 							(toggleOnOff)="onToggleOfEasyResume($event)">
 						</vtr-ui-row-switch>
 					</li>
@@ -275,7 +280,7 @@
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
 				[isCollapsed]="false"
-				[collapseLinkId]="'device-settings-power-otherSettings-collapsible'">
+				[collapseLinkId]="'device-settings-otherSettings'">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of otherSettings">
@@ -288,6 +293,7 @@
 							[isLastChild]=true
 							[leftIcon]="item.leftImageSource"
 							[isSwitchChecked]="vantageToolbarStatus.status"
+							[switchId]="'ds-power-otherSettings-toolBar'"
 							(toggleOnOff)="onVantageToolBarStatusToggle($event)">
 						</vtr-ui-row-switch>
 					</li>
@@ -301,7 +307,8 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.energyStar.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
-				[isCollapsed]="false">
+				[isCollapsed]="false"
+				[collapseLinkId]="'device-settings-power-otherSettings'">
 				<div class="row energystar-container">
 					<div class="col-lg-2 col-md-2 col-sm-12">
 						<img class="img-fluid mx-auto d-block"

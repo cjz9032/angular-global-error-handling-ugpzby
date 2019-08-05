@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class WindowsHelloWidgetItem extends WidgetItem {
 	constructor(windowsHello: WindowsHello, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'sa-widget-lnk-wh',
+			id: 'sa-widget-lnk-wh-loading',
 			path: 'security/windows-hello',
 			type: 'security',
 			metricsItemName: 'Windows Hello'
@@ -19,12 +19,14 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 		if (cacheStatus) {
 			this.status = cacheStatus === 'enabled' ? 0 : 1;
 			this.detail = cacheStatus;
+			this.id = cacheStatus === 'enbaled' ? 'sa-widget-lnk-wh-enabled' : 'sa-widget-lnk-wh-disabled';
 			this.translateStatus(this.detail);
 		}
 		if (windowsHello.fingerPrintStatus) {
 			const active = windowsHello.fingerPrintStatus === 'active';
 			this.status = active ? 0 : 1;
 			this.detail = active ? 'enabled' : 'disabled';
+			this.id = active ? 'sa-widget-lnk-wh-enabled' : 'sa-widget-lnk-wh-disabled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 			this.translateStatus(this.detail);
 		}
@@ -32,6 +34,7 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (fpStatus) => {
 			this.status = fpStatus === 'active' ? 0 : 1;
 			this.detail = fpStatus === 'active' ? 'enabled' : 'disabled';
+			this.id = fpStatus === 'active' ? 'sa-widget-lnk-wh-enabled' : 'sa-widget-lnk-wh-disabled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 			this.translateStatus(this.detail);
 		});

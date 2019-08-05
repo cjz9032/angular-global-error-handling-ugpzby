@@ -73,7 +73,8 @@
 						[showLoader]="showLoaderState"
 						[theme]="theme"
 						[isSwitchDisable] ="isDisabled"						
-						></vtr-ui-switch-onoff>
+						id="{{switchId}}-onOffButton"
+						aria-label="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
 				</div>
 				<div *ngIf="!isSwitchVisible && linkText"
 					class="p-0 link-text">
