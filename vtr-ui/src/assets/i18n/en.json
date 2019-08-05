@@ -11,7 +11,6 @@
 						"performanceUid": "thermal_mode_performance",
 						"balanceUid": "thermal_mode_balance",
 						"quietUid": "thermal_mode_quiet"
-
 					},
 					"statusText": {
 						"perText": "Higher CPU usage, Higher fan speed",
@@ -24,17 +23,16 @@
 				},
 				"quickSettingstitle": {
 					"title": "Quick Settings"
-						},
+				},
 				"legionEdge": {
 					"title": "CPU Overclock",
 					"status": {
 						"alwayson": "On",
 						"whenGaming": "When Gaming",
 						"off": "Off",
-						"alwaysonUid":"cpu_overclock_on",
+						"alwaysonUid": "cpu_overclock_on",
 						"whenGamingUid": "cpu_overclock_when_gaming",
 						"offUid": "cpu_overclock_off"
-
 					},
 					"statusText": {
 						"onText": "CPU Overclocking will be activated",
@@ -2197,8 +2195,7 @@
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",
 		"business": "Business Use",
-		"custom": "Custom",
-		"experience": "Experience",
+		"custom": "Custom Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
 		"moreInterest": "+ more interests",
 		"title1": "Welcome to",
