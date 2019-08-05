@@ -44,4 +44,7 @@ export class ModalNetworkboostComponent implements OnInit {
   closeModal() {
     this.activeModal.close('close');
   }
+  addAppsToList(event, i) {
+
+  }
 }
