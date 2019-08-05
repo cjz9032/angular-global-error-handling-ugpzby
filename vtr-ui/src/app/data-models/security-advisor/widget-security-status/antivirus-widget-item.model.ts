@@ -8,7 +8,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 	antivirus: Antivirus;
 	constructor(antivirus: Antivirus, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'sa-widget-lnk-av',
+			id: 'sa-widget-lnk-av-loading',
 			path: 'security/anti-virus',
 			type: 'security',
 			metricsItemName: 'Anti-Virus'
@@ -68,16 +68,19 @@ export class AntivirusWidgetItem extends WidgetItem {
 			this.translateService.stream('common.securityAdvisor.enabled').subscribe((value) => {
 				this.detail = value;
 				this.status = 0;
+				this.id = 'sa-widget-lnk-av-enabled';
 			});
 		} else if (!avStatus && !fwStatus) {
 			this.translateService.stream('common.securityAdvisor.disabled').subscribe((value) => {
 				this.detail = value;
 				this.status = 1;
+				this.id = 'sa-widget-lnk-av-disabled';
 			});
 		} else {
 			this.translateService.stream('common.securityAdvisor.partiallyProtected').subscribe((value) => {
 				this.detail = value;
 				this.status = 3;
+				this.id = 'sa-widget-lnk-av-partiallyProtected';
 			});
 		}
 		commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, avStatus);
