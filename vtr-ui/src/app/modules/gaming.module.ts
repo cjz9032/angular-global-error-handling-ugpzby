@@ -1,3 +1,5 @@
+import { WidgetNetworkboostComponent } from './../components/widgets/widget-networkboost/widget-networkboost.component';
+import { ModalNetworkboostComponent } from './../components/modal/modal-networkboost/modal-networkboost.component';
 import { GamingCommonModule } from './gaming/gaming.common.module';
 import { UiPopoverComponent } from './../components/ui/ui-popover/ui-popover.component';
 import { UiGamingDriverPopupComponent } from './../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
@@ -57,6 +59,9 @@ library.add(faCheck);
 		WidgetMacrokeySettingsComponent,
 		WidgetAutocloseComponent,
 		ModalTurnOnComponent,
+		ModalNetworkboostComponent,
+		PageNetworkBoostComponent,
+		WidgetNetworkboostComponent,
 		ModalAddAppsComponent
 	],
 	imports: [
@@ -75,6 +80,8 @@ library.add(faCheck);
 	],
 	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
-	entryComponents: []
+	entryComponents: [ModalNetworkboostComponent]
+	
+	
 })
 export class GamingModule { }

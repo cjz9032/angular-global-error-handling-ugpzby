@@ -1,3 +1,4 @@
+import { NetworkBoostStatus } from './../../../data-models/gaming/networkboost-status.model';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, NgZone } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -5,7 +6,6 @@ import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.mode
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { NetworkBoostStatus } from 'src/app/data-models/gaming/networkboost-status.model';
 import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -55,8 +55,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			id: 'legion_edge_cpuoverlock',
 			ariaLabel: 'legion_edge_cpuoverlock',
-			type: 'gaming.dashboard.device.legionEdge.title',
-
+			type: 'gaming.dashboard.device.legionEdge.title'
 		},
 		{
 			readMoreText: '',
@@ -277,7 +276,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		// TBD add autoclose later at index 2
 		// TODO have to remove this || condition and line no 242.
 		this.legionUpdate[2].isVisible = gamingStatus.optimizationFeature;
-		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature; // || true;
+		//TODO below is for the network boost subpage
+		this.legionUpdate[3].isVisible =  gamingStatus.networkBoostFeature || false;
 		console.log('aparna  driver lack ' + gamingStatus.networkBoostFeature);
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
@@ -478,7 +478,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public onPopupClosed($event) {
 		const name = $event.name;
-		console.log('-----------------------------------', name);
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
@@ -486,7 +485,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.title') {
-			console.log('------------------');
 			this.legionUpdate[0].isDriverPopup = false;
 		}
 	}
@@ -560,18 +558,19 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	onIconClick(event: any) {
 		event = event || { name: '' };
 		const { name } = event;
+		console.log('---------------------', name);
 		this.legionUpdate[3].isDriverPopup = false;
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.gamingCapabilities.fbNetFilter = !!this.gamingCapabilities.fbNetFilter;
+			this.router.navigate(['/gaming/networkboost']);
+
 			if (!this.gamingCapabilities.fbNetFilter) {
-				console.log('-----------------------<><>', name, this.legionUpdate[3].isDriverPopup);
 				this.legionUpdate[3].isDriverPopup = true;
 			}
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.autoClose') {
 			this.router.navigate(['/gaming/autoclose']);
 		}
-
 	}
 
 	onShowDropdown(event) {
