@@ -33,8 +33,8 @@ import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/
 import { HomeSecurityNotifications } from 'src/app/data-models/home-security/home-security-notifications.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { Subscription } from 'rxjs';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 
 @Component({
@@ -137,7 +137,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		if (this.chs.account && this.chs.account.state) {
 			this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
-			this.account = new HomeSecurityAccount(this.chs, this.common,this.lenovoIdDialogService);
+			this.account = new HomeSecurityAccount(this.chs, this.common, this.lenovoIdDialogService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 				state: this.account.state,
 				expiration: this.account.expiration,
@@ -193,10 +193,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				if (!this.commonService.getSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture)) {
 					this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, true);
 					this.chs.overview.devicePostures.getDevicePosture()
-					.then(() => {
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-					})
-					.catch((err: Error) => this.handleResponseError(err));
+						.then(() => {
+							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+						})
+						.catch((err: Error) => this.handleResponseError(err));
 				}
 				this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, true);
 			} else if (!location
@@ -227,17 +227,17 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				if (this.wifiSecurity.isLocationServiceOn) {
 					this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, true);
 					this.chs.overview.devicePostures.getDevicePosture()
-					.then(() => {
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-					})
-					.catch((err: Error) => this.handleResponseError(err));
+						.then(() => {
+							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+						})
+						.catch((err: Error) => this.handleResponseError(err));
 				}
 			}
 			this.chs.refresh()
-			.then(() => {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			})
-			.catch((err: Error) => this.handleResponseError(err));
+				.then(() => {
+					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+				})
+				.catch((err: Error) => this.handleResponseError(err));
 			this.pullCHS();
 		}
 	}
@@ -253,10 +253,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	onFocus(): void {
 		if (this.chs && !this.intervalId) {
 			this.chs.refresh()
-			.then(() => {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			})
-			.catch((err: Error) => this.handleResponseError(err));
+				.then(() => {
+					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+				})
+				.catch((err: Error) => this.handleResponseError(err));
 			this.pullCHS();
 		}
 	}
@@ -266,10 +266,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		const visibility = document.visibilityState;
 		if (visibility === 'visible' && !this.intervalId) {
 			this.chs.refresh()
-			.then(() => {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			})
-			.catch((err: Error) => this.handleResponseError(err));
+				.then(() => {
+					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+				})
+				.catch((err: Error) => this.handleResponseError(err));
 			this.pullCHS();
 		} else if (visibility === 'hidden') {
 			window.clearInterval(this.intervalId);

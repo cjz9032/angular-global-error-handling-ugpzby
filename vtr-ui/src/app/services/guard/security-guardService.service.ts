@@ -2,7 +2,7 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
 	providedIn: 'root',
@@ -13,7 +13,8 @@ export class GuardService {
 	pageContext: any;
 	previousPageName = '';
 
-	constructor(private shellService: VantageShellService,
+	constructor(
+		private shellService: VantageShellService,
 		private commonService: CommonService) {
 		this.metrics = shellService.getMetrics();
 	}
