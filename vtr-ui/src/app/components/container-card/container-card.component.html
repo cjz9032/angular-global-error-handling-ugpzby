@@ -195,10 +195,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="row"
+			<div class="row offline-icon col col-12"
 				*ngIf="!isOnline">
-				<img class="col col-12 image"
-					src="../../../assets/images/offline.png">
+				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
 			</div>
 		</div>
 	</div>

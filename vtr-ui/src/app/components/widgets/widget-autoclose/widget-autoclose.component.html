@@ -19,7 +19,7 @@
       <div>
         <img [src]="app.iconName | sanitize : 'resourceUrl'">
       </div>
-      <div>{{'app.processDescription' | translate}}</div>
+      <div>{{app.processDescription}}</div>
       <div class="remove-app" (click)="removeApp(app.processDescription,i)">
         <svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
