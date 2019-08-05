@@ -75,6 +75,7 @@ export class BreachedAccountsService implements OnDestroy {
 				console.log('isFigleafInstalled', isFigleafInstalled);
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
+			map((breachedAccounts) => breachedAccounts.filter(x => !x.isFixed)),
 			map((breachedAccounts) => {
 				const breaches = breachedAccounts.filter(x => x.domain !== 'n/a');
 				const unknownBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
