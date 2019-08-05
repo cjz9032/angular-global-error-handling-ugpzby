@@ -64,7 +64,7 @@ export class WidgetNetworkboostComponent implements OnInit {
 		windowClass: 'autoClose-Modal'
 	});
   }
-  removeApp(app: any) {
+  removeApp(app: any, i) {
 
   }
 }
