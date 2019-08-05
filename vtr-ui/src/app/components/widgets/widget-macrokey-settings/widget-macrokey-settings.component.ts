@@ -26,18 +26,21 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			title: 'gaming.macroKey.status.on.title',
 			name: 'gaming.macroKey.status.on.title',
 			description: 'gaming.macroKey.status.on.description',
+			id: 'macro_key_settings_on',
 			value: 1
 		},
 		{
 			title: 'gaming.macroKey.status.whileGaming.title',
 			name: 'gaming.macroKey.status.whileGaming.title',
 			description: 'gaming.macroKey.status.whileGaming.description',
+			id: 'macro_key_settings_enabled_when_gaming',
 			value: 2
 		},
 		{
 			title: 'gaming.macroKey.status.off.title',
 			name: 'gaming.macroKey.status.off.title',
 			description: 'gaming.macroKey.status.off.description',
+			id: 'macro_key_settings_off',
 			value: 3
 		}
 	];
