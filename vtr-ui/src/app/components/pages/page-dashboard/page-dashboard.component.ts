@@ -17,6 +17,7 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { AndroidService } from 'src/app/services/android/android.service';
+import { UPEService } from 'src/app/services/upe/upe.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -58,10 +59,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		public commonService: CommonService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
+		private upeService: UPEService,
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
-		vantageShellService: VantageShellService,
+		private vantageShellService: VantageShellService,
 		public androidService: AndroidService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private activatedRoute: ActivatedRoute,
@@ -86,7 +88,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		// this.qaService.setCurrentLangTranslations();
 		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCmsContents();
+			this.fetchContent();
 		});
 
 	}
@@ -112,10 +114,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		}
 
 		this.setDefaultCMSContent();
-		this.fetchCmsContents();
+		this.fetchContent();
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCmsContents();
+			this.fetchContent();
 		});
 	}
 
@@ -140,7 +142,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.qaService.destroyChangeSubscribed();
 	}
 
-	fetchCmsContents(lang?: string) {
+
+	private fetchContent(lang ?: string) {
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -152,66 +155,84 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				GEO: 'US',
 			};
 		}
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
-			(response: any) => {
-				const callCmsEndTime: any = new Date();
-				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
+		this.getTileBSource().then((source) => {
+			this.cmsService.fetchCMSContent(queryOptions).subscribe(
+				(response: any) => {
+					const callCmsEndTime: any = new Date();
+					const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
 					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-					const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
-						return {
-							albumId: 1,
-							id: record.Id,
-							source: record.Title,
-							title: record.Description,
-							url: record.FeatureImage,
-							ActionLink: record.ActionLink
-						};
-					});
-					if (heroBannerItems && heroBannerItems.length) {
-						this.heroBannerItems = heroBannerItems;
+				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+					return {
+								albumId: 1,
+								id: record.Id,
+								source: record.Title,
+								title: record.Description,
+								url: record.FeatureImage,
+								ActionLink: record.ActionLink
+					};
+				});
+				if (heroBannerItems && heroBannerItems.length) {
+					this.heroBannerItems = heroBannerItems;
+				}
+						if (source === 'CMS') {
+				const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				if (cardContentPositionB) {
+					this.cardContentPositionB = cardContentPositionB;
+					if (this.cardContentPositionB.BrandName) {
+						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+								}
 					}
+				}
 
-					const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+				if (cardContentPositionC) {
+					this.cardContentPositionC = cardContentPositionC;
+					if (this.cardContentPositionC.BrandName) {
+						this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+					}
+				}
+
+				const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+				if (cardContentPositionD) {
+					this.cardContentPositionD = cardContentPositionD;
+				}
+
+				const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				if (cardContentPositionE) {
+					this.cardContentPositionE = cardContentPositionE;
+				}
+
+				const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+				if (cardContentPositionF) {
+					this.cardContentPositionF = cardContentPositionF;
+				}
+					} else {
+						const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
+						this.loggerService.info(msg);
+						this.fetchContent('en');
+					}
+				},
+				error => {
+					console.log('fetchCMSContent error', error);
+				}
+			);
+			if (source === 'UPE') {
+				const upeParam = {
+					position: 'position-B'
+				};
+				this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
+					const cardContentPositionB = this.upeService.getOneUPEContent(response, 'half-width-title-description-link-image', 'position-B')[0];
 					if (cardContentPositionB) {
 						this.cardContentPositionB = cardContentPositionB;
 						if (this.cardContentPositionB.BrandName) {
 							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 						}
+						cardContentPositionB.DataSource = 'upe';
 					}
-
-					const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
-					if (cardContentPositionC) {
-						this.cardContentPositionC = cardContentPositionC;
-						if (this.cardContentPositionC.BrandName) {
-							this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-						}
-					}
-
-					const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
-					if (cardContentPositionD) {
-						this.cardContentPositionD = cardContentPositionD;
-					}
-
-					const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
-					if (cardContentPositionE) {
-						this.cardContentPositionE = cardContentPositionE;
-					}
-
-					const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
-					if (cardContentPositionF) {
-						this.cardContentPositionF = cardContentPositionF;
-					}
-				} else {
-					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
-					this.loggerService.info(msg);
-					this.fetchCmsContents('en');
-				}
-			},
-			error => {
-				console.log('fetchCMSContent error', error);
+				});
 			}
-		);
+		});
 	}
 
 	onFeedbackModal() {
@@ -223,7 +244,24 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	public onConnectivityClick($event: any) {
+	public onConnectivityClick($event: any) {}
+
+
+	private getTileBSource() {
+		return new Promise((resolve, reject) => {
+			resolve('UPE');
+			// try {
+			// 	this.vantageShellService.calcDeviceFilter('{"var":"HypothesisGroups.TileBSource"}').then((source) => {
+			// 		resolve(source);
+			// 	}, error => {
+			// 		console.log('getTileBSource:' + error);
+			// 		reject(error);
+			// 	});
+			// } catch (ex) {
+			// 	console.error('getTileBSource' + ex.message);
+			// 	reject(ex);
+			// }
+		});
 	}
 
 	private setDefaultCMSContent() {
