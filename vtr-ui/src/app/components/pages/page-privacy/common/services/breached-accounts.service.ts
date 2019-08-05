@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { EMPTY, merge, of, ReplaySubject, Subject } from 'rxjs';
+import { EMPTY, merge, ReplaySubject, Subject } from 'rxjs';
 import {
 	catchError,
 	debounceTime,
@@ -8,7 +8,7 @@ import {
 	switchMap,
 	switchMapTo,
 	take,
-	takeUntil, tap
+	takeUntil
 } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
@@ -67,7 +67,7 @@ export class BreachedAccountsService implements OnDestroy {
 			this.emailScannerService.validationStatusChanged$.pipe(distinctUntilChanged()),
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(distinctUntilChanged()),
 			this.getNewBreachedAccounts$.asObservable().pipe(distinctUntilChanged()),
-			this.updateTriggersService.shouldUpdate$.pipe(distinctUntilChanged()),
+			this.updateTriggersService.shouldUpdate$,
 		).pipe(
 			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
