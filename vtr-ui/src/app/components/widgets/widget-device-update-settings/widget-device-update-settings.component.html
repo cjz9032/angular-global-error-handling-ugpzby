@@ -40,7 +40,7 @@
 												href="javascript:void();" *ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
 
-												<vtr-ui-switch-onoff [name]="item.type" [name]="item.name"
+												<vtr-ui-switch-onoff [name]="item.type" [onOffSwitchId]="item.name"
 													(toggle)="onToggleOnOff($event)" [value]="item.isChecked"
 													[disabled]="disableButtons" [readonly]="item.readonly" vtrMetrics [metricsItem]="item.id"
 													metricsEvent="featureClick">
