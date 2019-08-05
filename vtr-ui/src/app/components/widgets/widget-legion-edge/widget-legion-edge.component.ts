@@ -563,7 +563,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.gamingCapabilities.fbNetFilter = !!this.gamingCapabilities.fbNetFilter;
 			this.router.navigate(['/gaming/networkboost']);
-
 			if (!this.gamingCapabilities.fbNetFilter) {
 				this.legionUpdate[3].isDriverPopup = true;
 			}
