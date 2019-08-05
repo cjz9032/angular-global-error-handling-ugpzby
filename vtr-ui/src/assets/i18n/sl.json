@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Snemanje makro tipke za"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -520,9 +516,9 @@
             "title": "Vaše hitre nastavitve",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Očem prijazen način",
+            "eyeCareMode": "Očem prijazno",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone.",
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
                 "accessUrl": "Go to Windows settings to give access",
                 "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
                 "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."

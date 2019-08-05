@@ -3,7 +3,8 @@
 		<vtr-ui-lighting-profile-toggle (setLightingProfileId)="setLightingProfileId($event)"
 			[currentProfile]="currentProfile"></vtr-ui-lighting-profile-toggle>
 		<vtr-ui-brightness-slider *ngIf="!isProfileOff && showBrightnessSlider===true"
-			[lightingData]="profileBrightness" (setLightingBrightness)="setLightingBrightness($event)">
+			[lightingData]="profileBrightness" (setLightingBrightness)="setLightingBrightness($event)"
+			[lightingBrightness]="'lighting_brightness'">
 		</vtr-ui-brightness-slider>
 	</div>
 	<div class="lighting-area">
@@ -72,9 +73,9 @@
 		</div>
 	</div>
 	<div *ngIf="!isProfileOff && profileRGBFeature===255" class="footer-part d-flex flex-row-reverse">
-		<a id="gaming_lighting_setdefault_profile" vtrMetrics
-			[metricsItem]="'gaming.lightingProfile.button.default.title' | translate"
-			attr.aria-label="gaming_lighting_setdefault_profile" href="javascript:void(0);" class="link"
+		<a id="gaming_lighting_setdefault_profile" vtrMetrics [metricsItem]="'lighting_set_to_default'"
+			metricsEvent="featureClick" attr.aria-label="gaming_lighting_setdefault_profile" href="javascript:void(0);"
+			class="link"
 			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
 	</div>
 </div>

@@ -560,3 +560,17 @@
 	height:50px;
 	width:50px;
 }
+.offline-icon{
+	font-size: 10rem;
+	@media #{$mediaquery_X41} {
+		font-size: 16rem;
+	}
+	@media #{$mediaquery_X42} {
+		font-size: 6rem;
+	}
+	background-color:#1d2339;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

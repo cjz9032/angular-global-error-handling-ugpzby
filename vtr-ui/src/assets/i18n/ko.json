@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "매크로 키 기록 중"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -522,7 +518,7 @@
             "cameraPrivacy": "카메라",
             "eyeCareMode": "아이 케어",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
                 "accessUrl": "Go to Windows settings to give access",
                 "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
                 "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
