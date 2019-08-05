@@ -1,0 +1,133 @@
+@import "../../../app.theme.scss";
+.vtr-widget-system-monitor {
+	color: $gaming_lightest;
+	.intro-text {
+		font-size: 1.6rem;
+		padding-top: 2rem;
+		padding-bottom: 1rem;
+	}
+	.widget-container {
+		border-radius: $border_radius;
+		background: $dark_cell;
+		box-shadow: $drop_shadow_gaming;
+		padding: 6rem;
+		@media #{$mediaquery_6} {
+			padding: 4rem;
+		}
+		&::ng-deep vtr-ui-switch-onoff {
+			.checkbox {
+				input {
+					& + .switch {
+						background: $gaming_switch_light;
+						height: 2.4rem;
+						width: 5.4rem;
+						transition: all 0.2s ease-in;
+						small {
+							background: $gaming_switch_dark;
+							height: 1.8rem;
+							width: 1.8rem;
+							margin-top: 0.1rem;
+							transition: all 0.2s ease-in;
+						}
+					}
+					&.wifi-checked + .switch {
+						background: $gaming_green_gradient;
+						transition: all 0.2s ease-in;
+						small {
+							background: $gaming_lightest;
+							transition: all 0.2s ease-in;
+							left: 3.2rem;
+						}
+					}
+				}
+				.switch-label.on-label {
+					color: $gaming_lightest;
+					font-weight: bold;
+					font-size: 1.2rem;
+					padding-top: 0.1rem;
+					text-indent: -0.4rem;
+					transition: all 0.2s ease-in;
+					@media #{$medium-screen} {
+						padding-top: 0.3rem;
+					}
+					@media #{$small-screen} {
+						padding-top: 0.3rem;
+					}
+				}
+				.switch-label.off-label {
+					color: $gaming_switch_dark;
+					font-weight: bold;
+					font-size: 1.2rem;
+					padding-top: 0.1rem;
+					text-indent: 0;
+					transition: all 0.2s ease-in;
+					@media #{$medium-screen} {
+						padding-top: 0.3rem;
+					}
+					@media #{$small-screen} {
+						padding-top: 0.3rem;
+					}
+				}
+			}
+		}
+
+		.autoclose-wrapper {
+			background: $gaming_darkest;
+			width: 100%;
+			min-height: 40rem;
+			border-radius: 0.8rem;
+			position: relative;
+			ul {
+				padding: 2rem;
+				li.add-icon {
+					div:nth-child(1) {
+						background: $gaming_grey_lightest;
+						line-height: 4.5rem;
+						cursor: pointer;
+						text-align: center;
+					}
+				}
+				li {
+					list-style-type: none;
+					display: inline-block;
+					text-align: center;
+					vertical-align: top;
+					padding: 2rem 3rem;
+					position: relative;
+					margin-bottom: 3rem;
+					width: 14.28%;
+					div:nth-child(1) {
+						width: 4.5rem;
+						height: 4.5rem;
+						text-align: center;
+						margin: auto;
+					}
+					div:nth-child(2) {
+						font-size: 1.6rem;
+						margin-top: 0.5rem;
+						text-align: center;
+						height: 5rem;
+						overflow: hidden;
+					}
+					.remove-app {
+						opacity: 0;
+						transition: 0.3s ease all;
+						position: absolute;
+						top: 0;
+						right: 0;
+						margin: 0.5rem;
+						cursor: pointer;
+					}
+					&:hover:not(:first-child) {
+						background: $gaming_light_02;
+						border-radius: 0.5rem;
+						.remove-app {
+							opacity: 1;
+							transition: 0.3s ease all;
+						}
+					}
+				}
+			}
+		}
+	}
+}

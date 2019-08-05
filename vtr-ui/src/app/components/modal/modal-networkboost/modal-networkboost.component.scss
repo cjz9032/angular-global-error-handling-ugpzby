@@ -1,0 +1,136 @@
+@import "../../../app.theme.scss";
+.spinner {
+	font-size: 10rem;
+	color: $main;
+}
+.modal-main-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1040;
+	width: 100vw;
+	height: 100vh;
+	background-color: $screen_dark_50;
+}
+ui-popover-apps {
+	position: absolute;
+	max-width: 110rem;
+	background: $dark_cell;
+	z-index: 9;
+	border-radius: 1rem;
+	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
+	right: 0;
+	left: 0;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	height: 65vh;
+	@media #{$medium-screen} {
+		max-width: 80%;
+	}
+	@media #{$small-screen} {
+		max-width: 80%;
+	}
+}
+::ng-deep .vtr-modal-add-apps {
+	.top-header {
+		border: 0;
+		padding: 2rem 1rem 0;
+	}
+	.modal-content {
+		border-radius: 1rem;
+		color: $light;
+		min-height: 60rem;
+	}
+	.modal-body {
+		.main-content-body {
+			padding: 1rem 4rem;
+		}
+		.title-content {
+			h3 {
+				font-size: 3.5rem;
+				font-weight: $weight_light;
+				margin-bottom: 1rem;
+				color: $light;
+			}
+			p {
+				font-size: 1.5rem;
+				color: $gaming_light_05;
+			}
+		}
+		.app-add-container {
+			background: #1f2a42;
+			min-height: 40rem;
+			margin-top: 1.5rem;
+			padding: 3rem 4rem;
+			overflow: auto;
+			max-height: 40rem;
+			@media #{$large-screen} {
+				min-height: 42rem;
+			}
+			@media #{$large-screen-1} {
+				max-height: 44rem;
+			}
+			@media #{$mediaquery_7} {
+				max-height: 50rem;
+			}
+			.app-list {
+				padding: 0;
+				max-height: 100%;
+				li {
+					list-style-type: none;
+					display: inline-block;
+					margin-right: 5rem;
+					margin-bottom: 4.5rem;
+					div:nth-child(1) {
+						width: 5rem;
+						height: 5rem;
+						margin: auto;
+					}
+					div:nth-child(2) {
+						text-align: center;
+						padding: 1rem 0 1.5rem;
+						font-size: 1.6rem;
+						color: rgba(255, 255, 255, 0.8);
+					}
+				}
+			}
+			.btn-add-app {
+				position: relative;
+				width: 8rem;
+				height: 4rem;
+				input {
+					opacity: 0;
+					position: absolute;
+					width: 8rem;
+					height: 4rem;
+					& + .action {
+						background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/add%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='%23047aff' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+						background-repeat: no-repeat;
+						background-position: center center;
+						width: 8rem;
+						height: 4rem;
+						border: 1px solid $gaming_light_blue;
+						border-radius: 2rem;
+					}
+					&:checked + .action {
+						background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+						background-color: $gaming_light_blue;
+					}
+				}
+			}
+		}
+		.no-running-app {
+			color: $light;
+			.text-content {
+				h3 {
+					font-size: 3.5rem;
+					font-weight: $weight_light;
+				}
+				p {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+}
