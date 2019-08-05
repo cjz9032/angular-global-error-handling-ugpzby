@@ -35,12 +35,12 @@ import { faCommentAltDots } from '@fortawesome/pro-light-svg-icons/faCommentAltD
 import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
 import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
-import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
-import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
+// import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
+// import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { SharedModule } from './shared.module';
-import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
+// import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 
 
@@ -66,10 +66,10 @@ library.add(faShoePrints);
 		AppComponent,
 		HomeComponent,
 		ModalWelcomeComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
+		// ModalAboutComponent,
+		// ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent,
+		// ModalLicenseComponent,
 		ModalServerSwitchComponent
 	],
 	imports: [
@@ -108,10 +108,10 @@ library.add(faShoePrints);
 	],
 	entryComponents: [
 		ModalWelcomeComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
+		// ModalAboutComponent,
+		// ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent,
+		// ModalLicenseComponent,
 		ModalServerSwitchComponent
 	],
 	bootstrap: [AppComponent],
