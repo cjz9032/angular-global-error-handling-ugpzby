@@ -404,7 +404,7 @@
             "security": {
                 "title": "Securitate",
                 "sub1": "Securitatea mea",
-                "sub2": "Antivirus:",
+                "sub2": "Antivirus",
                 "sub3": "Securitate WiFi",
                 "sub4": "Sănătatea parolei",
                 "sub5": "Protecție pe internet",
@@ -417,7 +417,7 @@
         "securityAdvisor": {
             "title": "Asistenţă securitate",
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
-            "antiVirus": "Antivirus:",
+            "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
@@ -1586,7 +1586,7 @@
         },
         "antivirus": {
             "common": {
-                "title": "Antivirus:",
+                "title": "Antivirus",
                 "back": "ÎNAPOI",
                 "why": "De ce McAfee?",
                 "recommends": "Lenovo recomandă McAfee pentru a vă proteja toate dispozitivele cu:",
