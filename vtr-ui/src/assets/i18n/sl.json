@@ -676,16 +676,16 @@
                     "Bad": "<b>Prišlo je do napake baterije.</b> Baterije ni mogoče polniti/prazniti. Zamenjajte baterijo.",
                     "NotDetected": "<b>Baterija ni zaznana ali ni</b> priključena.",
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
-                    "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b> Vaš računalnik Lenovo ne podpira tega napajalnika. Povzroči lahko nenaden izklop. Priključite pravilen napajalnik.",
-                    "LimitedACAdapterSupport": "<b>Napajalnik računalniku Lenovo ne more zagotoviti dovolj energije</b>, kar bo vplivalo na učinkovitost delovanja sistema in hitrost polnjenja. Znova priključite ustrezen napajalnik.",
+                    "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
+                    "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
                     "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
                     "OverheatedBattery": "Baterija je <b>prevroča</b>. Odstranite jo iz računalnika in jo ohladite na sobno temperaturo.",
                     "PermanentError": "Baterija <b>ne deluje več zaradi običajne obrabe.</b> Baterije ni mogoče polniti. Zamenjajte baterijo.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Napajalnik ni podprt.</b> Vaš računalnik Lenovo ne podpira tega napajalnika. Povzroči lahko nenaden izklop. Priključite pravilen napajalnik.",
+                    "LimitedACAdapterSupportDetail": "<b>Napajalnik računalniku Lenovo ne more zagotoviti dovolj energije</b>, kar bo vplivalo na učinkovitost delovanja sistema in hitrost polnjenja. Znova priključite ustrezen napajalnik."
                 },
                 "updating": "Posodabljanje",
                 "voltageError": "Napačna napetost baterije",
@@ -799,8 +799,8 @@
                         "readMoreText": "Preberite več.",
                         "noteInfo": " Prag polnjenja baterije še vedno ni v celoti dejaven. Odklopite računalnik in pustite, da se baterija izprazni do ali pod prag prenehanja polnjenja.",
                         "settings": {
-                            "title1": "Prag za vgrajeno baterijo",
-                            "title2": "Prag za odstranljivo baterijo"
+                            "title1": "Prag za primarno baterijo",
+                            "title2": "Prag za sekundarno baterijo"
                         },
                         "popup": {
                             "title": "Omogoči prag polnjenja baterije",

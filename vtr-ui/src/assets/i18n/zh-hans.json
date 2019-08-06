@@ -679,16 +679,16 @@
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
                     "NotDetected": "<b>未检测到电池或未</b>插入电池。",
                     "NotGood": "<b>电池状况不佳。</b>",
-                    "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
-                    "LimitedACAdapterSupport": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
+                    "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
+                    "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
                     "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新以安装最新的驱动程序。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
                     "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
                     "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
+                    "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
                 "seeDetailsLink": "See Details"
@@ -799,8 +799,8 @@
                         "noteInfo": "电池充电阈值仍未完全激活。拔下电源线，让电池电量耗尽或低于停止充电阈值。",
                         "readMoreText": "阅读更多。",
                         "settings": {
-                            "title1": "内置电池阈值",
-                            "title2": "可拆卸电池阈值"
+                            "title1": "主电池阈值",
+                            "title2": "备用电池阈值"
                         },
                         "popup": {
                             "title": "启用电池充电阈值",

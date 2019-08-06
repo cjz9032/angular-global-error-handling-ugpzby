@@ -3,7 +3,7 @@
 		<div class="row justify-content-end">
 			<div class="btn-close">
 				<button type="button" class="close" aria-hidden="true" (click)="close()" vtrMetrics
-					[metricsItem]="'popover_close'" metricsEvent="featureClick">
+					[metricsItem]="'popover_close'" metricsEvent="featureClick" id="gaming_popup_close" attr.aria-label="gaming_popup_close">
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 				</button>
 			</div>
@@ -14,7 +14,7 @@
 		</div>
 		<hr>
 		<div class="row">
-			<button id="gaming_legionedge_popup_close" attr.aria-label="gaming_legionedge_popup_close"
+			<button id="gaming_popup_ok" attr.aria-label="gaming_popup_ok"
 				class="btn enable-button" vtrMetrics
 				[metricsItem]="'popover_ok'"
 				metricsEvent="featureClick"

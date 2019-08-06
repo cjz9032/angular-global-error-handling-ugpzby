@@ -676,16 +676,16 @@
                     "Bad": "<b>אירעה שגיאת סוללה.</b> לא ניתן לטעון/לפרוק את הסוללה. החליפו את הסוללה.",
                     "NotDetected": "<b>לא אותרה סוללה או שהיא</b> אינה מחוברת.",
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
-                    "NotSupportACAdapter": "<b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.",
-                    "LimitedACAdapterSupport": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון.",
+                    "NotSupportACAdapter": "<b>מתאם ה-AC אינו נתמך.</b>",
+                    "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
                     "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
                     "OverheatedBattery": "הסוללה <b>חמה מדי</b>. הסירו אותה מהמחשב והניחו לה להתקרר לטמפרטורת החדר.",
                     "PermanentError": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.",
+                    "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון."
                 },
                 "updating": "עדכון",
                 "voltageError": "מתח הסוללה שגוי",
@@ -799,8 +799,8 @@
                         "readMoreText": "פרטים נוספים.",
                         "noteInfo": " סף טעינת הסוללה עדיין לא פעיל באופן מלא. נתקו את המחשב מהחשמל ואפשרו לסוללה להתרוקן עד לסף עצירת הטעינה, או מתחתיו.",
                         "settings": {
-                            "title1": "סף עבור הסוללה המובנית",
-                            "title2": "סף עבור הסוללה הניתנת להסרה"
+                            "title1": "סף עבור הסוללה הראשית",
+                            "title2": "סף עבור הסוללה המשנית"
                         },
                         "popup": {
                             "title": "הפעלת סף טעינת הסוללה",
