@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Apagado"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Perfil 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Apagado"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1

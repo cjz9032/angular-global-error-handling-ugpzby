@@ -10,15 +10,6 @@ import { PageAutocloseComponent } from './../components/pages/page-autoclose/pag
 import { PageUserComponent } from '../components/pages/page-user/page-user.component';
 
 const routes: Routes = [
-	// {
-	// 	path: 'dashboard',
-	// 	component: PageDashboardComponent,
-	// 	canDeactivate: [GuardService],
-	// 	canActivate: [GuardService],
-	// 	data: {
-	// 		pageName: 'Dashboard'
-	// 	}
-	// },
 	{
 		path: '',
 		component: PageDeviceGamingComponent,
@@ -35,7 +26,7 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'Device',
+			pageName: 'Gaming.Dashboard',
 			pageContent: 'Device Status'
 		}
 	},
@@ -45,7 +36,7 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'Macrokey'
+			pageName: 'Gaming.Macrokey'
 		}
 	},
 	{
@@ -55,7 +46,7 @@ const routes: Routes = [
 		canActivate: [ GuardService ],
 
 		data: {
-			pageName: 'Lightingcustomize'
+			pageName: 'Gaming.Lighting'
 		}
 	},
 	{
@@ -64,16 +55,16 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'NetworkBoost'
+			pageName: 'Gaming.NetworkBoost'
 		}
 	},
 	{
 		path: 'autoclose',
 		component: PageAutocloseComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
 		data: {
-			pageName: 'AutoClose'
+			pageName: 'Gaming.AutoClose'
 		}
 	},
 	{

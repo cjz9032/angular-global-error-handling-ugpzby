@@ -38,11 +38,11 @@ export class HomeComponent implements OnInit {
 	 */
 	public vantageLaunch(info: any) {
 		try {
-			const routeParam = { isMachineInfoLoaded: true };
+			// const routeParam = { isMachineInfoLoaded: true };
 			if (info && info.isGaming) {
-				this.router.navigate(['/device-gaming', routeParam]);
+				this.router.navigate(['/device-gaming']);
 			} else {
-				this.router.navigate(['/dashboard', routeParam]);
+				this.router.navigate(['/dashboard']);
 			}
 		} catch (err) {
 			this.logger.error(`ERROR in vantageLaunch() of home.component`, err);

@@ -15,7 +15,7 @@
 				<div class="media pl-3 align-items-center"
 					id="{{item.name}}"
 					attr.aria-label="{{item.name}}">
-                  <fa-icon [icon]="item.leftImageSource"></fa-icon>
+                  <img [src]="item.leftImageSource"/>
                   <div class="media-body pb-0 mb-0 small pl-3">
                     <div class="d-flex justify-content-between align-items-center w-100">
                       <div class="update-title"
@@ -27,6 +27,7 @@
 							id="{{'su-auto-updates-onoff-'+item.name}}"
 							attr.aria-label="{{'su-auto-updates-onoff-'+item.name}}"
 							[name]="item.name"
+							[onOffSwitchId]="item.name"
                           (toggle)="onToggleOnOff($event)" [value]="item.isChecked" [isSwitchDisable]="item.isDisabled" [disabled]="item.isDisabled">
                         </vtr-ui-switch-onoff>
 

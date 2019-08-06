@@ -157,6 +157,12 @@
 
 		&__tooltip-context {
 			width: 50rem;
+			@media #{$mediaquery_md} {
+				width: 35rem;
+			}
+			@media #{$mediaquery_sm} {
+				width: 20rem;
+			}
 		}
 
 		&__tooltip-context-title {
