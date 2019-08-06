@@ -52,16 +52,16 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 		});
 	}
 	ngOnDestroy() {
-		const currentDateTime: any = new Date();
-		const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: 'PageMacrokeyComponent',
-			PageContext: 'PageMacrokeyComponent',
-			PageDuration: currentDateTime - this.startDateTime,
-			OnlineStatus: ''
-		};
-		this.sendMetricsAsync(pageViewMetrics);
-		console.log(pageViewMetrics);
+		// const currentDateTime: any = new Date();
+		// const pageViewMetrics = {
+		// 	ItemType: 'PageView',
+		// 	PageName: 'PageMacrokeyComponent',
+		// 	PageContext: 'PageMacrokeyComponent',
+		// 	PageDuration: currentDateTime - this.startDateTime,
+		// 	OnlineStatus: ''
+		// };
+		// this.sendMetricsAsync(pageViewMetrics);
+		//console.log(pageViewMetrics);
 	}
 
 	sendMetricsAsync(data: any) {
