@@ -1,3 +1,4 @@
+import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
@@ -5,7 +6,6 @@ import { PageDeviceGamingComponent } from '../components/pages/page-device-gamin
 import { GuardService } from '../services/guard/security-guardService.service';
 import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
-import { PageNetworkBoostComponent } from '../components/pages/page-network-boost/page-network-boost.component';
 import { PageAutocloseComponent } from './../components/pages/page-autoclose/page-autoclose.component';
 import { PageUserComponent } from '../components/pages/page-user/page-user.component';
 
@@ -60,7 +60,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'networkboost',
-		component: PageNetworkBoostComponent,
+		component: PageNetworkboostComponent,
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {

@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UiChsStatusbarComponent implements OnInit {
 	@Input() ecoSystem;
+	@Input() common;
 	@Input() regular: false;
 	isShowMore = true;
 	constructor() { }
