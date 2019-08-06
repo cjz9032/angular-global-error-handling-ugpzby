@@ -249,7 +249,7 @@ export class AppComponent implements OnInit {
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
 
-			this.isMachineInfoLoaded = this.isTranslationLoaded();
+			// this.isMachineInfoLoaded = this.isTranslationLoaded();
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
@@ -441,14 +441,14 @@ export class AppComponent implements OnInit {
 	/**
 	 * check in route param is Home Component passed isMachineInfoLoaded value or not.
 	 */
-	private isTranslationLoaded(): boolean {
-		if (this.activatedRoute) {
-			const isMachineInfoLoaded = this.activatedRoute.snapshot.paramMap.get('isMachineInfoLoaded');
-			if (isMachineInfoLoaded && isMachineInfoLoaded.toLowerCase() === 'true') {
-				return true;
-			}
-			return false;
-		}
-	}
+	// private isTranslationLoaded(): boolean {
+	// 	if (this.activatedRoute) {
+	// 		const isMachineInfoLoaded = this.activatedRoute.snapshot.paramMap.get('isMachineInfoLoaded');
+	// 		if (isMachineInfoLoaded && isMachineInfoLoaded.toLowerCase() === 'true') {
+	// 			return true;
+	// 		}
+	// 		return false;
+	// 	}
+	// }
 
 }
