@@ -249,18 +249,17 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	private getTileBSource() {
 		return new Promise((resolve, reject) => {
-			resolve('UPE');
-			// try {
-			// 	this.vantageShellService.calcDeviceFilter('{"var":"HypothesisGroups.TileBSource"}').then((source) => {
-			// 		resolve(source);
-			// 	}, error => {
-			// 		console.log('getTileBSource:' + error);
-			// 		reject(error);
-			// 	});
-			// } catch (ex) {
-			// 	console.error('getTileBSource' + ex.message);
-			// 	reject(ex);
-			// }
+			try {
+				this.vantageShellService.calcDeviceFilter('{"var":"HypothesisGroups.TileBSource"}').then((source) => {
+					resolve(source);
+				}, error => {
+					console.log('getTileBSource:' + error);
+					reject(error);
+				});
+			} catch (ex) {
+				console.error('getTileBSource' + ex.message);
+				reject(ex);
+			}
 		});
 	}
 
