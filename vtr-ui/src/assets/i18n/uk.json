@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Вимк."
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Профіль 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Вимк."
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1

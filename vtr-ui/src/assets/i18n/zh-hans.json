@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "关闭"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "概要文件 1"
@@ -351,7 +351,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "关闭"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -1743,7 +1743,7 @@
             "helpKeep": "SurfEasy VPN 可帮助您的联机活动保持安全和隐秘。",
             "getSufEasy": "获取 SurfEasy",
             "openSufEasy": "打开 SurfEasy",
-            "whySufEasy": "为何要使用虚拟专用网络（VPN）？",
+            "whySufEasy": "为何要使用虚拟专用网络 (VPN)？",
             "whySufEasyDescription": "使用咖啡店或机场等地的 Wi-Fi 热点会让您的敏感信息暴露给网络犯罪分子。SurfEasy VPN 是一种无记录 VPN，用于加密个人信息，并且不会跟踪或存储联机活动或位置。",
             "startUseSufEasy": "立即开始使用 SurfEasy",
             "startUseSufEasy1": "通过银行级加密帮助确保您收发的数据的安全和隐秘。",
