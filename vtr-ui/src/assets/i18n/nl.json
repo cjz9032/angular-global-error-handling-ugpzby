@@ -389,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -412,7 +427,10 @@
             },
             "support": "Ondersteuning",
             "homeSecurity": "Verbonden Thuis",
-            "privacy": "Privacy"
+            "privacy": "Privacy",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Beveiligingsadviseur",
@@ -518,10 +536,10 @@
             "cameraPrivacy": "Camera",
             "eyeCareMode": "Oogzorg",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage heeft geen toegang tot de camera en de microfoon.",
+                "accessUrl": "Ga naar de Windows-instellingen om toegang te geven",
+                "microphoneNote": "Lenovo Vantage heeft geen toegang tot de microfoon.",
+                "cameraPrivacyNote": "Lenovo Vantage heeft geen toegang tot de camera."
             }
         },
         "systemStatus": {
@@ -1188,7 +1206,7 @@
                     "description1": "Deze functie maakt gebruik van Windows Hello. Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
-                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Automatische aanmelding via IR-camera werkt niet.",
+                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden."
                 },
                 "WindowsLink": {
