@@ -27,6 +27,7 @@
 							id="{{'su-auto-updates-onoff-'+item.name}}"
 							attr.aria-label="{{'su-auto-updates-onoff-'+item.name}}"
 							[name]="item.name"
+							[onOffSwitchId]="item.name"
                           (toggle)="onToggleOnOff($event)" [value]="item.isChecked" [isSwitchDisable]="item.isDisabled" [disabled]="item.isDisabled">
                         </vtr-ui-switch-onoff>
 
