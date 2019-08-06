@@ -513,9 +513,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.catch((error) => {
 					console.error('setRamOcStatus', error);
 				});
-		} else {
-			// to hide the existing popup which is open(hybridmode, ramoc)
-			this.legionUpdate[1].isPopup = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
@@ -527,9 +524,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.catch((error) => {
 					console.error('setHybridModeStatus', error);
 				});
-		} else {
-			// to hide the existing popup which is open(hybridmode, ramoc)
-			this.legionUpdate[4].isPopup = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
 			this.TouchpadLockStatusObj.touchpadLockStatus = $event.switchValue;
@@ -582,6 +576,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	onShowDropdown(event) {
 		if (event.type === 'gaming.dashboard.device.legionEdge.title') {
 			if (this.drop.hideDropDown) {
+				this.closeLegionEdgePopups();
 				this.legionUpdate[0].isDriverPopup = true;
 			}
 		}

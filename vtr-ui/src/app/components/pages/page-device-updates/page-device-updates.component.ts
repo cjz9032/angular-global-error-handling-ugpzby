@@ -105,7 +105,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['fas', 'battery-three-quarters'],
+			leftImageSource: ['../../../../../../assets/icons/Icon_critical_updates_20px.svg'],
 			header: 'systemUpdates.autoUpdateSettings.critical.title',
 			name: 'critical-updates',
 			subHeader: '',
@@ -119,7 +119,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['fas', 'battery-three-quarters'],
+			leftImageSource: ['../../../../../../assets/icons/Icon_recommended_updates_20px.svg'],
 			header: 'systemUpdates.autoUpdateSettings.recommended.title',
 			name: 'recommended-updates',
 			subHeader: '',
@@ -133,7 +133,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: '',
-			leftImageSource: ['fas', 'battery-three-quarters'],
+			leftImageSource: ['../../../../../../assets/icons/Icon_Windows_Update_20px.svg'],
 			header: 'systemUpdates.autoUpdateSettings.windows.title',
 			name: 'windows-updates',
 			subHeader: '',
