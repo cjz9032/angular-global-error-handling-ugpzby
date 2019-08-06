@@ -56,7 +56,13 @@ export class AppComponent implements OnInit {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
-
+		if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+			this.commonService.isBetaUser().then((result) => {
+				if (result === 0 || result === 3) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+				}
+			});
+		}
 		this.metricsClient = this.vantageShellService.getMetrics();
 		//#region VAN-2779 this is moved in MVP 2
 		this.deviceService
