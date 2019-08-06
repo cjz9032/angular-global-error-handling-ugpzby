@@ -13,7 +13,7 @@
 							<div class="inner-toggle">
 
 								<input type="radio" value="0" name="lighting-porfile" vtrMetrics
-									[metricsItem]="'lighting_customize_off'" metricsEvent="featureClick" id="off_radio"
+									[metricsItem]="'lighting_customize_off'" metricsEvent="featureClick" metricsParam="'profileId'" metricsValue="0" id="off_radio"
 									attr.aria-label="off_radio" [checked]="setprofId===0" (click)="SetProfile($event)">
 								<label for="off_radio" id="off"
 									[ngClass]="{'toggle-stable': isPopupVisible && setprofId===0, 'gamingTextColor': setprofId==0}">
@@ -21,7 +21,7 @@
 
 
 								<input type="radio" value="1" name="lighting-porfile" vtrMetrics
-									[metricsItem]="'lighting_customize_profile1'" metricsEvent="featureClick"
+									[metricsItem]="'lighting_customize_profile1'" metricsEvent="featureClick" metricsParam="'profileId'" metricsValue="1"
 									id="first_radio" attr.aria-label="first_radio" [checked]="setprofId===1"
 									(click)="SetProfile($event)">
 								<label for="first_radio"
@@ -30,7 +30,7 @@
 
 
 								<input type="radio" value="2" name="lighting-porfile" vtrMetrics
-									[metricsItem]="'lighting_customize_profile2'" metricsEvent="featureClick"
+									[metricsItem]="'lighting_customize_profile2'" metricsEvent="featureClick" metricsParam="'profileId'" metricsValue="2"
 									id="second_radio" attr.aria-label="second_radio" [checked]="setprofId===2"
 									(click)="SetProfile($event)">
 								<label for="second_radio"
@@ -38,7 +38,7 @@
 									id="second_lbl">{{'gaming.lightingProfile.lightingProfileHeading.text3.title' | translate}}</label>
 
 								<input type="radio" value="3" name="lighting-porfile" vtrMetrics
-									[metricsItem]="'lighting_customize_profile3'" metricsEvent="featureClick"
+									[metricsItem]="'lighting_customize_profile3'" metricsEvent="featureClick" metricsParam="'profileId'" metricsValue="3"
 									id="third_radio" attr.aria-label="third_radio" [checked]="setprofId===3"
 									(click)="SetProfile($event)">
 								<label for="third_radio"
@@ -54,12 +54,13 @@
 						<ul class="list-group">
 							<li class="list-group-item">
 								<a  *ngIf="isPopupVisible" (click)="isdriverpopup==true" vtrMetrics
-									[metricsItem]="'lighting_customize_settings'" metricsEvent="featureClick"
+									[metricsItem]="'gaming_lightingProfile_widget_gearicon'" metricsEvent="featureClick"
 									id="lighting_customize_settings" attr.aria-label="lighting_customize_settings">
 									   <i class="icon icon-gear"></i>
 									   {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
-								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]"
-									vtrMetrics [metricsItem]="'lighting_customize'" metricsEvent="featureClick"
+
+								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]" vtrMetrics
+									[metricsItem]="'lighting_customize'" metricsEvent="featureClick" metricsParam="lightingcustomize" metricsValue="{{setprofId}}"
 									id="lighting_customize" attr.aria-label="lighting_customize">
 									   <i class="icon icon-gear"></i>
 									  {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
