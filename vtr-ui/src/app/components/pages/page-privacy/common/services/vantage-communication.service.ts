@@ -154,7 +154,7 @@ export class VantageCommunicationService {
 		};
 	}
 
-	private sendContractToPrivacyCore<T>(contract: { contract: string, command: string, payload: string | Object }): Observable<T> {
+	private sendContractToPrivacyCore<T>(contract: { contract: string, command: string, payload: string | object }): Observable<T> {
 		if (this.vantageShellService.getPrivacyCore()) {
 			return from(this.vantageShellService.getPrivacyCore().sendContractToPlugin(contract)) as Observable<T>;
 		} else {
