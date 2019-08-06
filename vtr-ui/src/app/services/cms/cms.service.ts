@@ -85,6 +85,9 @@ export class CMSService {
 	}
 
 	fetchCMSContent(queryParams) {
+		if (!this.localInfo) {
+			return;
+		}
 		const defaults = {
 			Lang: this.localInfo.Lang,
 			GEO: this.localInfo.GEO,
@@ -139,7 +142,9 @@ export class CMSService {
 	}
 
 	fetchCMSArticleCategories(queryParams) {
-
+		if (!this.localInfo) {
+			return;
+		}
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
@@ -292,6 +297,14 @@ export class CMSService {
 		try {
 			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 			if (serverSwitchLocalData) {
+
+				const langMap = {
+					'sr-latn': 'sr'
+				};
+				if (langMap[serverSwitchLocalData.language.Value]) {
+					serverSwitchLocalData.language.Value = langMap[serverSwitchLocalData.language.Value];
+				}
+
 				this.commsService.setServerSwitchLocalData(serverSwitchLocalData);
 				if (serverSwitchLocalData.forceit) {
 					Object.assign(CMSOption, {
@@ -302,8 +315,7 @@ export class CMSService {
 				}
 
 			}
-		}
-		catch (error) {
+		} catch (error) {
 			console.error(error.message);
 		}
 		return CMSOption;
