@@ -277,7 +277,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		// TODO have to remove this || condition and line no 242.
 		this.legionUpdate[2].isVisible = gamingStatus.optimizationFeature;
 		//TODO below is for the network boost subpage
-		this.legionUpdate[3].isVisible =  gamingStatus.networkBoostFeature || false;
+		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || false;
 		console.log('aparna  driver lack ' + gamingStatus.networkBoostFeature);
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
@@ -476,6 +476,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.TouchpadLockStatus, touchpadLockStatus);
 	}
 
+	public closeLegionEdgePopups() {
+		Object.entries(this.legionUpdate).forEach(([key]) => {
+			this.legionUpdate[key].isDriverPopup = false;
+			this.legionUpdate[key].isPopup = false;
+		});
+	}
+
 	public onPopupClosed($event) {
 		const name = $event.name;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
@@ -491,6 +498,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public async toggleOnOffRamOCStatus($event) {
 		const { name, checked } = $event.target;
+		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
 				this.legionUpdate[1].isDriverPopup = $event;
@@ -558,8 +566,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	onIconClick(event: any) {
 		event = event || { name: '' };
 		const { name } = event;
-		console.log('---------------------', name);
-		this.legionUpdate[3].isDriverPopup = false;
+		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.gamingCapabilities.fbNetFilter = !!this.gamingCapabilities.fbNetFilter;
 			this.router.navigate(['/gaming/networkboost']);
