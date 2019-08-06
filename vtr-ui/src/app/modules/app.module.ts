@@ -39,9 +39,10 @@ import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight'
 // import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
-import { SharedModule } from './shared.module';
+// import { SharedModule } from './shared.module';
 // import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 library.add(faCheck);
@@ -89,13 +90,15 @@ library.add(faShoePrints);
 		UiButtonModule,
 		RouterModule,
 		CommonPipeModule,
-		SharedModule,
+		FormsModule,
+		ReactiveFormsModule,
+		// SharedModule,
 	],
 	exports: [
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
-		SharedModule,
+		// SharedModule,
 	],
 	providers: [
 		CommonService,

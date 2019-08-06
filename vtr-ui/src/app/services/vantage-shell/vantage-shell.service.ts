@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Container } from 'inversify';
-import * as Phoenix from '@lenovo/tan-client-bridge';
+import * as Phoenix from '@lenovo/tan-client-bridge/index';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { Container } from 'inversify';
 
 @Injectable({
 	providedIn: 'root'
@@ -54,7 +54,7 @@ export class VantageShellService {
 	public registerEvent(eventType: any, handler: any) {
 		if (this.phoenix) {
 			this.phoenix.on(eventType, (val) => {
-			// 	console.log('Event fired: ', eventType, val);
+				// 	console.log('Event fired: ', eventType, val);
 				handler(val);
 			});
 		}
@@ -73,29 +73,29 @@ export class VantageShellService {
 	private setConsoleLogProxy() {
 		const consoleProxy = Object.assign({}, console);
 		const logger = this.getLogger();
-		console.log = (msg) => {	
+		console.log = (msg) => {
 			consoleProxy.log(msg);
-			if(logger){
+			if (logger) {
 				msg = JSON.stringify(msg);
 				logger.info(msg);
 			}
 		};
-		
-		console.error = (err) => {		
+
+		console.error = (err) => {
 			consoleProxy.error(err);
-			if(logger){
+			if (logger) {
 				err = JSON.stringify(err);
 				logger.error(err);
 			}
 		};
 
-		console.warn = (msg) => {		
+		console.warn = (msg) => {
 			consoleProxy.warn(msg);
-			if(logger){
+			if (logger) {
 				msg = JSON.stringify(msg);
 				logger.warn(msg);
 			}
-		};		
+		};
 	}
 
 	public getLenovoId(): any {
