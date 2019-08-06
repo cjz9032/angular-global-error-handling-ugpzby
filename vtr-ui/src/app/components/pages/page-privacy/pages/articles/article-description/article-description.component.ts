@@ -2,8 +2,9 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { map } from 'rxjs/operators';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { MS_IN_DAY, UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
+import { DifferenceInDays } from '../../../utils/helpers';
 
 @Component({
 	selector: 'vtr-article-description',
@@ -19,7 +20,7 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 	isFigleafInstalled$ = this.userDataGetStateService.isFigleafInstalled$;
 
 	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
-		map((res) => res.daysToNotifyTrialExpired)
+		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000))
 	);
 
 	constructor(

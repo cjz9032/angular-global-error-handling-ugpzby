@@ -65,3 +65,7 @@ export function snake2PascalCase(string) {
 // )(users) //["Jack", "Milady"]
 
 export const pipe = (...functions) => args => functions.reduce((arg, fn) => fn(arg), args);
+
+export function DifferenceInDays(firstDate, secondDate) {
+	return Math.round((secondDate - firstDate) / (1000 * 60 * 60 * 24));
+}
