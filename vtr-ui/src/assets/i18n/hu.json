@@ -676,16 +676,16 @@
                     "Bad": "<b>Hiba történt az akkumulátorral.</b> Az akkumulátor nem tölthető/meríthető le. Cserélje ki az akkumulátort.",
                     "NotDetected": "<b>Nem található akkumulátor, vagy</b> az akkumulátor nincs megfelelően behelyezve.",
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
-                    "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
-                    "LimitedACAdapterSupport": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert.",
+                    "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
+                    "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
                     "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
                     "OverheatedBattery": "Az akkumulátor <b>túl meleg</b>. Vegye ki a számítógépből, és hagyja lehűlni szobahőmérsékletre.",
                     "PermanentError": "Az akkumulátor <b>elhasználódott</b>. Az akkumulátor nem tölthető. Cserélje ki az akkumulátort.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
+                    "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert."
                 },
                 "updating": "Frissítés",
                 "voltageError": "Helytelen akkumulátorfeszültség",
@@ -799,8 +799,8 @@
                         "readMoreText": "További információ.",
                         "noteInfo": " Az akkumulátortöltési küszöbérték még nem aktív teljesen. Válassza le a gépet az elektromos hálózatról, és hagyja, hogy az akkumulátor teljesen vagy a töltés leállítási küszöbértéke alá merüljön le.",
                         "settings": {
-                            "title1": "Beépített akkumulátor küszöbértéke",
-                            "title2": "Eltávolítható akkumulátor küszöbértéke"
+                            "title1": "Elsődleges akkumulátor küszöbértéke",
+                            "title2": "Másodlagos akkumulátor küszöbértéke"
                         },
                         "popup": {
                             "title": "Akkumulátortöltési küszöbérték engedélyezése",
