@@ -32,9 +32,9 @@ export class GuardService {
 
 		const data = {
 			ItemType: 'PageView',
-			PageName: activatedRouteSnapshot.data.pageName,
-			PageDuration: `${Math.floor((Date.now() - this.interTime) / 1000)}`,
-			PageContext: this.pageContext,
+			pageName: activatedRouteSnapshot.data.pageName,
+			pageDuration: `${Math.floor((Date.now() - this.interTime) / 1000)}`,
+			pageContext: this.pageContext,
 		};
 		console.log('Deactivate : ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
 		this.previousPageName = activatedRouteSnapshot.data.pageName;

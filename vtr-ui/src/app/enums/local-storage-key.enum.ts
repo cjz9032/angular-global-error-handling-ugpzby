@@ -152,4 +152,5 @@ export enum LocalStorageKey {
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 
+	BetaUser = '[LocalStorageKey] BetaUser'
 }

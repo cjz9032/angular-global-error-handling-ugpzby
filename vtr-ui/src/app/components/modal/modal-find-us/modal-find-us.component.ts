@@ -16,7 +16,7 @@ export class ModalFindUsComponent implements OnInit, AfterViewInit {
 		private localInfoService: LocalInfoService
 	) {
 		localInfoService.getLocalInfo().then(result => {
-			this.region = result.Lang;
+			this.region = result.GEO;
 		}).catch(e => {
 			this.region = 'us';
 		});

@@ -20,7 +20,7 @@ export class HeaderMainComponent implements OnInit {
 	@Input() backId: string;
 	@Input() isInnerBack = false;
 	@Output() innerBack = new EventEmitter();
-
+	@Input() textId: string;
 	constructor(private router: Router) { }
 
 	ngOnInit() {

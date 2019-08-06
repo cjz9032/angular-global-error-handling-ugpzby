@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Desligado"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Perfil 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Desligado"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -389,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -412,7 +427,10 @@
             },
             "support": "Suporte",
             "homeSecurity": "Casa conectada",
-            "privacy": "Privacidade"
+            "privacy": "Privacidade",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Orient. Segurança",
@@ -518,10 +536,10 @@
             "cameraPrivacy": "Câmera",
             "eyeCareMode": "Proteção Ocular",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "O Lenovo Vantage não tem acesso à câmera e ao microfone.",
+                "accessUrl": "Ir para as configurações do Windows para dar acesso",
+                "microphoneNote": "O Lenovo Vantage não tem acesso ao microfone.",
+                "cameraPrivacyNote": "O Lenovo Vantage não tem acesso à câmera."
             }
         },
         "systemStatus": {
@@ -1188,7 +1206,7 @@
                     "description1": "Esse recurso depende do Windows Hello. Verifique se o reconhecimento facial está ativado nas configurações do Windows.",
                     "description2": "O recurso usa sensores e câmera para detectar sua presença. No entanto, o recurso NÃO coleta qualquer dado pessoal.",
                     "description3": "1. Se o computador estiver no modo de tenda, de tablet ou de base, esses recursos podem não funcionar devidamente.",
-                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O login automático da câmera IR não funcionará.",
+                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O Login sem toques não funcionará.",
                     "description5": "3. Ajuste a tela do computador em um ângulo adequado para que a câmara IR possa reconhecer o seu rosto para fazer login automático."
                 },
                 "WindowsLink": {
