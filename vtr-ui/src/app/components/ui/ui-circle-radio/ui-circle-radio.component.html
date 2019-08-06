@@ -19,6 +19,7 @@
 			<div *ngIf="!hideIcon"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
 		</label>
-		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']" id="{{textID}}-{{value}}-label">{{label|uppercase}}</div>
+		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
+			id="{{textId}}-{{value}}-label">{{label|uppercase}}</div>
 	</div>
 </div>
