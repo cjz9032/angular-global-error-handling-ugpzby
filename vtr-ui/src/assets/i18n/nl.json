@@ -676,16 +676,16 @@
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
                     "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
-                    "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
-                    "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
+                    "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
+                    "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
                     "MissingDriver": "<b>Het stuurprogramma voor Lenovo-energiebeheer</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren.",
                     "StoreLimitation": "<b>De batterij kan slechts {{value}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
                     "OverheatedBattery": "De batterij is <b>te heet</b>. Verwijder hem uit de computer en laat hem afkoelen tot kamertemperatuur.",
                     "PermanentError": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
+                    "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan."
                 },
                 "updating": "Bezig met updaten",
                 "voltageError": "Batterijspanning onjuist",
@@ -799,8 +799,8 @@
                         "readMoreText": "Meer weergeven.",
                         "noteInfo": " De drempelwaarde voor batterijlading is niet volledig geactiveerd. Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveau waarop het opladen wordt gestopt.",
                         "settings": {
-                            "title1": "Drempel voor ingebouwde batterij",
-                            "title2": "Drempel voor verwijderbare batterij"
+                            "title1": "Drempel voor primaire batterij",
+                            "title2": "Drempel voor secundaire batterij"
                         },
                         "popup": {
                             "title": "Drempelwaarde voor batterijlading inschakelen",

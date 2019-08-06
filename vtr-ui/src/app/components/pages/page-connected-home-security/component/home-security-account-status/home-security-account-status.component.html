@@ -42,6 +42,7 @@
 		<vtr-ui-button *ngIf="account?.state === 'standard'"
 			id="chs-account-btn-manageAccount" aria-label="chs-account-btn-manageAccount"
 			(click)="common?.openCornet('login')"
+			[isDisabled]="!common?.connectedHomeSecurity?.account?.consoleUrl"
 			[isFullWidth]="true"
 			metricsEvent="FeatureClick"
 			metricsItem="manageAccount"
@@ -51,6 +52,7 @@
 	</div>
 	<a class="already-account text-uppercase"
 		*ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
+		[ngClass]="{'disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 		href="javascript:void(0)" target="_blank"
 		(click)="common?.openCornet('profile')"
 		id="chs-account-alreadyHaveAccount"

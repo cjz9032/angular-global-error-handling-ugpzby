@@ -676,16 +676,16 @@
                     "Bad": "<b>Ein Akkufehler ist aufgetreten.</b> Der Akku kann nicht aufgeladen/entladen werden. Tauschen Sie den Akku aus.",
                     "NotDetected": "<b>Kein Akku erkannt</b> oder nicht ordnungsgemäß eingesetzter Akku.",
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
-                    "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
-                    "LimitedACAdapterSupport": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an.",
+                    "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
+                    "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
                     "MissingDriver": "Der <b>Lenovo Power Manager-Treiber</b> ist nicht installiert oder funktioniert nicht ordnungsgemäß. Führen Sie Windows Update aus, um den aktuellen Treiber zu installieren.",
                     "StoreLimitation": "Der Akku kann <b>nur {{value}}% der ursprünglichen vollen Ladekapazität</b> speichern.",
                     "HighTemperature": "Das <b>Entladen</b> wurde gestoppt, da die <b>Temperatur des Akkus zu hoch</b> ist.",
                     "TrickleCharge": "Der Akku wurde <b>komplett entladen</b> und muss aufgeladen werden. Das kann zehn Stunden oder länger dauern.",
                     "OverheatedBattery": "Der Akku ist <b>zu heiß</b>. Entnehmen Sie ihn aus dem Computer, und lassen Sie ihn auf Raumtemperatur abkühlen.",
                     "PermanentError": "Am Akku ist <b>aufgrund von normalem Gebrauch ein Fehler aufgetreten</b>. Der Akku kann nicht aufgeladen werden. Tauschen Sie den Akku aus.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
+                    "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an."
                 },
                 "updating": "Aktualisierung",
                 "voltageError": "Akkuspannung falsch",
@@ -799,8 +799,8 @@
                         "readMoreText": "Weiterlesen.",
                         "noteInfo": " Der Schwellenwert für die Akkuladung ist noch nicht komplett aktiv. Bitte trennen Sie Ihr Gerät von der Stromversorgung und warten Sie, bis der Akku ganz oder bis zum Ladestopp-Schwellenwert entladen ist.",
                         "settings": {
-                            "title1": "Schwellenwert für eingebauten Akku",
-                            "title2": "Schwellenwert für wechselbaren Akku"
+                            "title1": "Schwellenwert für primären Akku",
+                            "title2": "Schwellenwert für sekundären Akku"
                         },
                         "popup": {
                             "title": "Schwellenwert für Akkuladung aktivieren",

@@ -1,0 +1,55 @@
+<div class="vtr-page-device-gaming vtr-page container-fluid macro-key-subpage">
+  <div class="row vtr-page-header">
+    <div class="col vtr-col">
+      <vtr-header-main [title]="'gaming.networkBoost.title' | translate" [backarrow]="'&lt; '"
+        [back]="'common.ui.back' | translate" [backId]="backId">
+      </vtr-header-main>
+    </div>
+  </div>
+  <div class="row vtr-page-content">
+    <div class="col vtr-col">
+      <div class="container-fluid">
+        <div class="row">
+          <div [ngClass]="'col-sm-12 col-md-12 col-lg-8 col-xl-8 vtr-page-left-column'">
+            <div class="vtr-page-shift-up nmx-40">
+              <div class="container-fluid">
+                <div class="row mb-60">
+                  <div class="col col-12 px-40">
+                    <vtr-widget-networkboost [introTitle]="'gaming.networkBoost.introLine' | translate">
+                    </vtr-widget-networkboost>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 vtr-page-right-column">
+            <div class="vtr-page-shift-up">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+                    <vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
+                      [img]="cardContentPositionA.FeatureImage" [title]="cardContentPositionA.Title"
+                      [logoText]="cardContentPositionA.BrandName" [action]="cardContentPositionA.Action"
+                      [actionType]="cardContentPositionA.ActionType" [actionLink]="cardContentPositionA.ActionLink"
+                      [type]="'article'" [ratioX]="4" [ratioY]="4">
+                    </vtr-container-card>
+                  </div>
+
+                  <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+                    <vtr-container-card order="2" [itemID]="cardContentPositionB.id"
+                      [img]="cardContentPositionB.FeatureImage" [caption]="cardContentPositionB.Description"
+                      [title]="cardContentPositionB.Title" [logoText]="cardContentPositionB.BrandName"
+                      [action]="cardContentPositionB.Action" [actionType]="cardContentPositionB.ActionType"
+                      [actionLink]="cardContentPositionB.ActionLink" [type]="'corner'" [ratioX]="4" [ratioY]="2"
+                      [cornerShift]="'large'">
+                    </vtr-container-card>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

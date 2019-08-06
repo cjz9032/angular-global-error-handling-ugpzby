@@ -31,7 +31,7 @@ export class WifiSecurityLandingViewModel {
 			path: 'security/wifi-security',
 			title: 'common.securityAdvisor.wifi',
 			type: 'security',
-			id: 'sa-ov-link-wifiSecurity'
+			id: 'sa-ov-link-wifiSecurity-loading'
 		};
 		const subjectStatus = {
 			title: 'common.securityAdvisor.wifi',
@@ -52,10 +52,12 @@ export class WifiSecurityLandingViewModel {
 			if (location) {
 				wfStatus.status = state === 'enabled' ? 0 : 1;
 				wfStatus.detail = state === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+				wfStatus.id = state === 'enabled' ? 'sa-ov-link-wifiSecurity-enabled' : 'sa-ov-link-wifiSecurity-disabled';
 				subjectStatus.status = (state === 'enabled') ? 0 : 1;
 			} else {
 				wfStatus.status = 1;
 				wfStatus.detail = 'common.securityAdvisor.disabled';
+				wfStatus.id = 'sa-ov-link-wifiSecurity-disabled';
 				subjectStatus.status = 1;
 			}
 			if (state) {

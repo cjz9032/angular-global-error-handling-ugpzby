@@ -676,16 +676,16 @@
                     "Bad": "<b>On tapahtunut akkuvirhe.</b> Akkua ei voi ladata tai sen varausta purkaa. Vaihda akku.",
                     "NotDetected": "<b>Akkua ei havaittu, tai sitä ei</b> ole liitetty.",
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
-                    "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
-                    "LimitedACAdapterSupport": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
+                    "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
+                    "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
                     "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
                     "OverheatedBattery": "Akun lämpötila on <b>liian korkea</b>. Poista akku tietokoneesta ja jäähdytä se huoneenlämpöiseksi.",
                     "PermanentError": "Akussa on ilmennyt <b>vika normaalin kulumisen vuoksi.</b> Akkua ei voi ladata. Vaihda akku.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
+                    "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen."
                 },
                 "updating": "Päivitetään",
                 "voltageError": "Akun jännite on virheellinen",
@@ -799,8 +799,8 @@
                         "readMoreText": "Lue lisää.",
                         "noteInfo": " Akun varauksen kynnysarvo ei ole täysin käytössä. Irrota laite ja anna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
                         "settings": {
-                            "title1": "Sisäisen akun kynnysarvo",
-                            "title2": "Irrotettavan akun kynnysarvo"
+                            "title1": "Ensisijaisen akun kynnysarvo",
+                            "title2": "Toissijaisen akun kynnysarvo"
                         },
                         "popup": {
                             "title": "Ota akun varauksen kynnysarvo käyttöön",

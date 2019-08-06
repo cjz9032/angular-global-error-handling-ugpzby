@@ -404,7 +404,7 @@
             "security": {
                 "title": "Securitate",
                 "sub1": "Securitatea mea",
-                "sub2": "Antivirus:",
+                "sub2": "Antivirus",
                 "sub3": "Securitate WiFi",
                 "sub4": "Sănătatea parolei",
                 "sub5": "Protecție pe internet",
@@ -417,7 +417,7 @@
         "securityAdvisor": {
             "title": "Asistenţă securitate",
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
-            "antiVirus": "Antivirus:",
+            "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
@@ -676,16 +676,16 @@
                     "Bad": "<b>A apărut o eroare la baterie.</b> Bateria nu poate fi încărcată/descărcată. Înlocuiţi bateria.",
                     "NotDetected": "<b>Nu a fost detectată nicio baterie sau bateria nu</b> este conectată.",
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
-                    "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
-                    "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
+                    "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
+                    "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
                     "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
                     "OverheatedBattery": "Bateria este <b>prea fierbinte</b>. Scoateţi-o din calculator şi lăsaţi-o să se răcească la temperatura camerei.",
                     "PermanentError": "Bateria <b>nu a funcţionat din cauza uzurii normale.</b> Bateria nu poate fi încărcată. Înlocuiţi bateria.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
+                    "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit."
                 },
                 "updating": "Actualizare",
                 "voltageError": "Tensiunea bateriei este incorectă",
@@ -799,8 +799,8 @@
                         "readMoreText": "Citiți mai multe.",
                         "noteInfo": " Pragul de încărcare a bateriei nu este încă complet activ. Deconectaţi aparatul şi lăsaţi bateria să se descarce la sau sub pragul de oprire a încărcării.",
                         "settings": {
-                            "title1": "Prag pentru bateria încorporată",
-                            "title2": "Prag pentru bateria detașabilă"
+                            "title1": "Prag pentru bateria principală",
+                            "title2": "Prag pentru bateria secundară"
                         },
                         "popup": {
                             "title": "Activați pragul pentru încărcarea bateriei",
@@ -1586,7 +1586,7 @@
         },
         "antivirus": {
             "common": {
-                "title": "Antivirus:",
+                "title": "Antivirus",
                 "back": "ÎNAPOI",
                 "why": "De ce McAfee?",
                 "recommends": "Lenovo recomandă McAfee pentru a vă proteja toate dispozitivele cu:",
