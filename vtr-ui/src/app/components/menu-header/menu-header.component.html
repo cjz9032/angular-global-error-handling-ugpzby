@@ -3,9 +3,10 @@
 		<div class="menu-header-tab {{tab.prop}}"
 		routerLink="/{{tab.path}}"
 		routerLinkActive="active"
-		id="'myDevice-settings-header-menu-'{{tab.icon}}"
-		attr.aria-label="'myDevice-settings-header-menu-'{{tab.icon}}">
-			<div class="tab-label">{{tab.label}}</div>
+		id="myDevice-settings-header-menu-{{tab.icon}}"
+		attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}">
+			<div class="tab-label" id="myDevice-settings-header-menu-{{tab.icon}}-title"
+			attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}-title">{{tab.label}}</div>
 			<fa-icon [icon]="['fas', 'square']" class="menu-pointer"></fa-icon>
 		</div>
 	</ng-container>
