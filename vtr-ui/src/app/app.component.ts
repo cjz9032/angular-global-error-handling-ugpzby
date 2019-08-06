@@ -345,7 +345,7 @@ export class AppComponent implements OnInit {
 					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
 					let langCode = serverSwitchLocalData.language.Value.toLowerCase();
-					const langMap = {
+					/* const langMap = {
 						'zh-hant': 'zh-Hant',
 						'zh-hans': 'zh-Hans',
 						'pt-br': 'pt-BR'
@@ -353,14 +353,14 @@ export class AppComponent implements OnInit {
 					if (langMap[langCode]) {
 						langCode = langMap[langCode];
 					}
-
+ */
 					const allLangs = this.translate.getLangs();
 					const currentLang = this.translate.currentLang ? this.translate.currentLang.toLowerCase() : this.translate.defaultLang.toLowerCase();
 
 					// change language only when countrycode or language code changes
 					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
 						// this.translate.resetLang('ar');
-						this.languageService.useLanguage(langCode);
+						// this.languageService.useLanguage(langCode);
 						if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
 							this.translate.reloadLang(langCode);
 						}

@@ -292,6 +292,14 @@ export class CMSService {
 		try {
 			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 			if (serverSwitchLocalData) {
+
+				const langMap = {
+					'sr-latn': 'sr'
+				};
+				if (langMap[serverSwitchLocalData.language.Value]) {
+					serverSwitchLocalData.language.Value = langMap[serverSwitchLocalData.language.Value];
+				}
+
 				this.commsService.setServerSwitchLocalData(serverSwitchLocalData);
 				if (serverSwitchLocalData.forceit) {
 					Object.assign(CMSOption, {
