@@ -25,9 +25,9 @@
 			 alt="Trial soon expired">
 	</div>
 	<div class="sidebar-expired-widget__text">
-		<strong class="sidebar-expired-widget__text-strong" [ngPlural]="timeToExpires">
-			<ng-template ngPluralCase="=1">Trial expires in {{timeToExpires}} day</ng-template>
-			<ng-template ngPluralCase="other">Trial expires in {{timeToExpires}} days</ng-template>
+		<strong class="sidebar-expired-widget__text-strong" [ngPlural]="timeToExpires$ | async">
+			<ng-template ngPluralCase="=1">Trial expires in {{timeToExpires$ | async}} day</ng-template>
+			<ng-template ngPluralCase="other">Trial expires in {{timeToExpires$ | async}} days</ng-template>
 		</strong>
 		<div class="sidebar-expired-widget__main-text sidebar-expired-widget__main-text--sm">
 			<p class="sidebar-expired-widget__text-light">Get a subscription and stay in control of your privacy.</p>

@@ -3,6 +3,7 @@ import { VantageCommunicationService } from '../../../common/services/vantage-co
 import { AppStatuses } from '../../../userDataStatuses';
 import { map } from 'rxjs/operators';
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
 
 @Component({
 	selector: 'vtr-article-description',
@@ -17,9 +18,14 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 	isFigleafTrialExpired$ = this.userDataGetStateService.isFigleafTrialExpired$;
 	isFigleafInstalled$ = this.userDataGetStateService.isFigleafInstalled$;
 
+	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
+		map((res) => res.daysToNotifyTrialExpired)
+	);
+
 	constructor(
 		private vantageCommunicationService: VantageCommunicationService,
-		private userDataGetStateService: UserDataGetStateService
+		private userDataGetStateService: UserDataGetStateService,
+		private figleafOverviewService: FigleafOverviewService
 	) {}
 
 	ngAfterViewInit() {

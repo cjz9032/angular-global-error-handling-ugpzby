@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import {
-	TIME_TO_SHOW_EXPIRED_PITCH_MS,
-	UserDataGetStateService
-} from '../../../common/services/user-data-get-state.service';
-
-const MS_IN_DAY = 24 * 60 * 60 * 1000;
+import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { map } from 'rxjs/operators';
+import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
 
 @Component({
 	selector: 'vtr-trial-expired-widget',
@@ -12,11 +9,15 @@ const MS_IN_DAY = 24 * 60 * 60 * 1000;
 	styleUrls: ['./trial-expired-widget.component.scss']
 })
 export class TrialExpiredWidgetComponent {
-	timeToExpires = TIME_TO_SHOW_EXPIRED_PITCH_MS / MS_IN_DAY;
 	isFigleafTrialSoonExpired$ = this.userDataGetStateService.isFigleafTrialSoonExpired$;
 	isFigleafTrialExpired$ = this.userDataGetStateService.isFigleafTrialExpired$;
 
+	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
+		map((res) => res.daysToNotifyTrialExpired)
+	);
+
 	constructor(
 		private userDataGetStateService: UserDataGetStateService,
+		private figleafOverviewService: FigleafOverviewService
 	) {	}
 }

@@ -1,7 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TIME_TO_SHOW_EXPIRED_PITCH_MS } from '../../services/user-data-get-state.service';
-
-const MS_IN_DAY = 24 * 60 * 60 * 1000;
 
 @Component({
 	selector: 'vtr-big-pitch',
@@ -16,8 +13,7 @@ export class BigPitchComponent {
 	};
 	@Input() isFigleafTrialSoonExpired = false;
 	@Input() isFigleafTrialExpired = false;
+	@Input() timeToExpires;
 	@Input() articleId: number;
 	@Output() clickMore = new EventEmitter();
-
-	timeToExpires = TIME_TO_SHOW_EXPIRED_PITCH_MS / MS_IN_DAY;
 }

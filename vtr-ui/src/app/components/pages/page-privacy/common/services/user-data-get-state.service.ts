@@ -18,6 +18,7 @@ export interface UserStatuses {
 }
 
 export const TIME_TO_SHOW_EXPIRED_PITCH_MS = 24 * 60 * 60 * 1000;
+export const MS_IN_DAY = 24 * 60 * 60 * 1000;
 
 @Injectable({
 	providedIn: 'root'
@@ -143,7 +144,9 @@ export class UserDataGetStateService {
 	private calculateAppStatuses() {
 		let appStatus = AppStatuses.figLeafInstalled;
 		const isTrialLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Trial;
-		const isTrialExpiredSoon = this.figleafStatus && this.figleafStatus.expirationDate <= Math.floor( (Date.now() + TIME_TO_SHOW_EXPIRED_PITCH_MS) / 1000);
+		console.log('calculateAppStatuses calculateAppStatuses', this.figleafStatus);
+		const timeToShowExpiredPitchMs = this.figleafStatus.daysToNotifyTrialExpired * 2 * MS_IN_DAY;
+		const isTrialExpiredSoon = this.figleafStatus && this.figleafStatus.expirationDate <= Math.floor( (Date.now() + timeToShowExpiredPitchMs) / 1000);
 		const isTrialExpired = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.TrialExpired;
 
 		if (isTrialLicense && isTrialExpiredSoon) {

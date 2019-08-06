@@ -75,7 +75,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<AccessiblePasswords>(contract).pipe(
-			tap((response) => console.log('sendContractToPrivacyCore', response)),
+			tap((response) => console.log('getAccessiblePasswords', response)),
 			catchError((err) => {
 				console.error('AccessiblePasswords err', err);
 				return EMPTY;
