@@ -44,7 +44,7 @@ export class HomeSecurityCommon {
 				}).catch((err: Error) => {
 					this.startTrialDisabled = false;
 					if (err instanceof LocationPermissionOffError) {
-						this.dialogService.openCHSPermissionModal();
+						this.dialogService.openCHSPermissionModal(true);
 					} else {
 						this.dialogService.homeSecurityAccountDialog();
 					}
@@ -61,7 +61,7 @@ export class HomeSecurityCommon {
 					}).catch((err: Error) => {
 						this.startTrialDisabled = false;
 						if (err instanceof LocationPermissionOffError) {
-							this.dialogService.openCHSPermissionModal();
+							this.dialogService.openCHSPermissionModal(true);
 						}
 					});
 					alreadyLoggedIn = true;

@@ -6,8 +6,7 @@ import {
 } from 'src/app/services/device/device.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { CommonService } from '../common/common.service';
-import { AppNotification } from '../../data-models/common/app-notification.model';
-import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,7 +19,8 @@ export class ConfigService {
 	constructor(
 		private deviceService: DeviceService,
 		private userService: UserService,
-		private commonService: CommonService) { }
+		private commonService: CommonService) {
+		}
 
 	menuItemsGaming: Array<any> = [{
 		id: 'device',
@@ -492,17 +492,10 @@ export class ConfigService {
 			if (country.toLowerCase() !== 'us') {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
-			if (this.userService.auth) {
+			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
+			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, this.betaItem);
 			}
-			this.commonService.notification.subscribe((notification: AppNotification) => {
-				if (notification.type === LenovoIdStatus.SignedIn && !resultMenu.find((item) => item.id === 'beta'))  {
-					resultMenu.splice(resultMenu.length - 1, 0, this.betaItem);
-				} else if (notification.type === LenovoIdStatus.SignedOut) {
-					const beta = resultMenu.find((item) => item.id === 'beta');
-					if (beta) { resultMenu.splice(resultMenu.indexOf(beta), 1); }
-				}
-			});
 			resolve(resultMenu);
 		});
 	}

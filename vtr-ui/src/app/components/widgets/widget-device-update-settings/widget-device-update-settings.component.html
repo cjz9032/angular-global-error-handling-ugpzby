@@ -42,8 +42,7 @@
 
 												<vtr-ui-switch-onoff [name]="item.type" [onOffSwitchId]="item.name"
 													(toggle)="onToggleOnOff($event)" [value]="item.isChecked"
-													[disabled]="disableButtons" [readonly]="item.readonly" vtrMetrics [metricsItem]="item.id"
-													metricsEvent="featureClick">
+													[disabled]="disableButtons" [readonly]="item.readonly" >
 												</vtr-ui-switch-onoff>
 												<vtr-ui-popover [item]="item" [showMePartially]="item.isPopup"
 													(closeClicked)="onClosed($event)">
