@@ -6,8 +6,8 @@ export enum FlipToBootErrorCodeEnum {
 }
 
 export enum FlipToBootSupportedEnum {
-	Succeed = 0,
-	Fail = -1
+	Succeed = 1,
+	Fail = 0
 }
 
 export enum FlipToBootCurrentModeEnum {

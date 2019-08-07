@@ -213,7 +213,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			isSwitchVisible: true
 		}
 	];
-	toggleFlipToBootStatus = false;
+	toggleFlipToBootStatus = true;
 	showFlipToBootSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 	async changeBatteryMode(event, mode) {
 		// Code suggested fangtian1@lenovo.com, above commented code is the previous one
@@ -1076,8 +1076,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	onToggleOfFlipToBoot($event: boolean) {
-		const status: FlipToBootSetStatus = $event ? FlipToBootSetStatusEnum.On : FlipToBootSetStatusEnum.Off;
+	onToggleOfFlipToBoot($event: any) {
+		const status: FlipToBootSetStatus = $event.switchValue ? FlipToBootSetStatusEnum.On : FlipToBootSetStatusEnum.Off;
 		this.powerService.setFlipToBootSettings(status)
 			.then(res => {
 				if (+res.ErrorCode !== 0) {
