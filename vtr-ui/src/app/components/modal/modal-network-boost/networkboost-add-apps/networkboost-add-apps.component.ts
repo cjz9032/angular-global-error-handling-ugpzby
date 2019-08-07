@@ -14,6 +14,8 @@ export class NetworkboostAddAppsComponent implements OnInit {
   addAppsList: string;
   statusAskAgain: boolean;
   @Input() showAppsModal: boolean;
+  @Input() addedApps = 0;
+  maxAppsCount = 5;
   @Output() closeAddAppsModal = new EventEmitter<boolean>();
   constructor(private networkBoostService: NetworkBoostService) { }
 
@@ -21,22 +23,38 @@ export class NetworkboostAddAppsComponent implements OnInit {
     this.refreshNetworkBoostList();
   }
 
-  async addAppsToList(event: any, index: number) {
-    if (event && event.target && event.target.checked) {
+  async onValueChange(event: any) {
+    if (event && event.target) {
       this.addAppsList = event.target.value;
-      try {
-        console.log('THIS IS THE ADD', this.addAppsList);
-        const result = await this.networkBoostService.addProcessToNetworkBoost(this.addAppsList);
-        console.log(`Another adding process to network bosst for => `, result);
-        this.refreshNetworkBoostList();
-        // this.networkBoostService.addProcessToNetworkBoost(this.addAppsList).then(res => {
-        //   console.log(`Another adding process to network bosst for .then => `, res);
-        //   this.refreshNetworkBoostList();
-        // });
-        console.log(`After adding process to network bosst => `);
-      } catch (error) {
-        console.log(`ERROR in addAppsToList()`, error);
+      if (event.target.checked) {
+        this.addAppToList(event.target.value);
+      } else {
+        this.removeApp(event.target.value);
       }
+      
+    }
+  }
+  
+async addAppToList(app) {
+  try {
+    const result = await this.networkBoostService.addProcessToNetworkBoost(app);
+    if (result) {
+      this.addedApps += 1;
+    }
+    console.log(`Another adding process to network bosst for => `, result);
+  } catch (error) {
+    console.log(`ERROR in addAppsToList()`, error);
+  }
+}
+  async removeApp(app) {
+    try {
+      const result = await this.networkBoostService.deleteProcessInNetBoost(app);
+      console.log(`RESULT from deleteProcessInNetBoost()`, result);
+      if (result) {
+        this.addedApps -= 1;
+      }
+    } catch (err) {
+      console.log(`ERROR in removeApp()`, err);
     }
   }
 
