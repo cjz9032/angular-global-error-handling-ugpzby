@@ -41,6 +41,9 @@
 					class="icomoon icomoon-FA-Plug2x"></span>
 				<span *ngIf="(isCharging && isExpressCharging)"
 					class="icomoon icomoon-LE-expressCharging2x"></span>
+				<img *ngIf="(!isCharging && isAirplaneMode)"
+					class="airplane-mod"
+					[src]=" '/assets/images/battery/ICON_AIRPLANE_MODE_BATTERY.svg'" />
 			</div>
 		</div>
 	</div>

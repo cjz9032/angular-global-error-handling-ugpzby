@@ -25,8 +25,6 @@ enum PowerMode {
 	styleUrls: ['./subpage-device-settings-power.component.scss']
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
-	title = 'Power Settings';
-	machineBrand: number;
 	public vantageToolbarStatus = new FeatureStatus(false, true);
 	public alwaysOnUSBStatus = new FeatureStatus(false, true);
 	public usbChargingStatus = new FeatureStatus(false, true);
@@ -72,11 +70,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	toggleAirplanePowerModeFlag = false;
 	airplaneAutoDetection = false;
 	usbChargingInBatteryModeStatus = true;
-	headerCaption =
-		'This section enables you to dynamically adjust thermal performance and maximize the battery life.' +
-		' It also has other popular power-related features.' +
-		' You can check the default settings in this section and customize your system according to your needs.';
-	headerMenuTitle = 'Jump to Settings';
 	isDesktopMachine = true;
 	showBatteryThreshold = false;
 	value = 1;
@@ -102,108 +95,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			path: 'other'
 		}
 	];
-	batterySettings = {
-		status: {
-			airplanePowerMode: false,
-			batteryChargeThreshold: false,
-			expressCharging: true,
-			conservationMode: false
-		},
-		items: [
-			{
-				readMoreText: 'Read More',
-				rightImageSource: ['far', 'question-circle'],
-				leftImageSource: ['fal', 'plane'],
-				header: 'Airplane Power Mode',
-				subHeader: ' Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance.',
-				isCheckBoxVisible: true,
-				isSwitchVisible: true,
-				tooltipText:
-					'Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance.'
-			},
-			{
-				readMoreText: 'Read More',
-				rightImageSource: ['far', 'question-circle'],
-				leftImageSource: ['fal', 'battery-half'],
-				header: 'Battery Charge Threshold',
-				subHeader:
-					'If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.',
-				isCheckBoxVisible: false,
-				isSwitchVisible: false,
-				tooltipText:
-					`If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold.
-					Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.`
-			},
-			{
-				readMoreText: 'Read More',
-				rightImageSource: ['far', 'question-circle'],
-				leftImageSource: ['fal', 'battery-bolt'],
-				header: 'Express Charging',
-				subHeader:
-					'Express Charge allows your battery to a full charge much faster than normal mode.',
-				isCheckBoxVisible: false,
-				isSwitchVisible: false,
-				tooltipText:
-					'Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery.'
-			},
-			{
-				readMoreText: 'Read More',
-				rightImageSource: ['far', 'question-circle'],
-				leftImageSource: ['fal', 'battery-quarter'],
-				header: 'Conservation Mode',
-				subHeader:
-					`This function is useful to  extend the lifespan of your battery when plugged. <br>
-			When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.`,
-				isCheckBoxVisible: false,
-				isSwitchVisible: false,
-				tooltipText:
-					'When enabled, your battery will only charge to 55-60%. This will shorten the amount of time you can use your computer when disconnected from an AC power source, but it will maximize the amount of time before you will need to replace your computer\'s battery.'
-			}
-		]
-	};
 	// removed from conservation mode <br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.
-	powerSettings = [
-		{
-			readMoreText: 'Read More',
-			rightImageSource: [],
-			leftImageSource: ['fab', 'usb'],
-			header: 'Always on USB',
-			subHeader:
-				'Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:',
-			isCheckBoxVisible: true,
-			isSwitchVisible: true,
-			isSwitchChecked: this.toggleAlwaysOnUsbFlag,
-			checkboxDesc: 'Enable USB charging from battery power when the computer is off.'
-		},
-		{
-			readMoreText: 'Read More',
-			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['fal', 'tachometer-fastest '],
-			header: 'Easy Resume',
-			subHeader:
-				`Enable this feature to improve your resume time if you frequently open and close your computer's lid.`,
-			isCheckBoxVisible: false,
-			isSwitchVisible: false,
-			isSwitchChecked: false,
-			tooltipText:
-				`This feature will improve your resume time if you frequently open and close your computer’s lid.
-				When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook
-				to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend.`
-		}
-	];
 
-	otherSettings = [
-		{
-			readMoreText: 'Read More',
-			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['fal', 'thumbtack'],
-			header: 'Lenovo Vantage Toolbar',
-			subHeader:
-				'Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings.',
-			isCheckBoxVisible: true,
-			isSwitchVisible: true
-		}
-	];
 	async changeBatteryMode(event, mode) {
 		// Code suggested fangtian1@lenovo.com, above commented code is the previous one
 		if (mode === 'expressCharging') {
@@ -274,12 +167,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.conservationModeLock = false;
 		}
 	}
-	constructor(public powerService: PowerService,
-		private deviceService: DeviceService,
-		private commonService: CommonService,
-		public modalService: NgbModal,
-		private batteryService: BatteryDetailService,
-		public shellServices: VantageShellService) { }
+	constructor(public powerService: PowerService, private deviceService: DeviceService, private commonService: CommonService, public modalService: NgbModal, public shellServices: VantageShellService) { }
 
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
@@ -288,15 +176,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
+			this.headerMenuItems.splice(0, 1);
 		}
-		this.getMachineInfo();
+		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
 		this.getVantageToolBarStatus();
-		this.getAirplaneModeAutoDetectionOnThinkPad();
-		if (this.machineType === 1) {
-			this.batteryCountStatusEventRef = this.getBatterStatusEvent.bind(this);
-			this.getBatteryThresholdInformation();
-		}
+
 		this.getEnergyStarCapability();
 
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
@@ -325,27 +210,34 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			windowClass: 'read-more'
 		});
 	}
+
 	closeContextModal() {
 		this.modalService.dismissAll();
 	}
-	getAndSetAlwaysOnUSBForBrands(machineName: any) {
+
+	async getBatteryAndPowerSettings(machineName: any) {
 		console.log('inside getAndSetAlwaysOnUSBForBrands');
 		console.log('machine', machineName);
 
 		switch (machineName) {
 			case 1:
-				this.getAirplaneModeCapabilityThinkPad();
-				this.getAlwaysOnUSBCapabilityThinkPad();
-				this.getEasyResumeCapabilityThinkPad();
+				this.getAirplaneModeAutoDetectionOnThinkPad();
+				this.batteryCountStatusEventRef = this.getBatteryStatusEvent.bind(this);
+				this.getBatteryThresholdInformation();
+				await this.getAirplaneModeCapabilityThinkPad();
+				await this.getAlwaysOnUSBCapabilityThinkPad();
+				await this.getEasyResumeCapabilityThinkPad();
 				break;
 			case 0:
-				this.getConservationModeStatusIdeaPad();
-				this.getRapidChargeModeStatusIdeaPad();
-				this.getAlwaysOnUSBStatusIdeaPad();
-				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+				await this.getConservationModeStatusIdeaPad();
+				await this.getRapidChargeModeStatusIdeaPad();
+				await this.getAlwaysOnUSBStatusIdeaPad();
+				await this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
 				break;
 		}
+		this.hideBatteryLink();
 	}
+
 	onUsbChargingStatusChange() {
 		console.log('usb charge state entered');
 		this.updatePowerMode();
@@ -353,7 +245,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	onToggleOfAlwaysOnUsb(event) {
 		this.toggleAlwaysOnUsbFlag = event.switchValue;
-		switch (this.machineBrand) {
+		switch (this.machineType) {
 			case 1:
 				if (this.toggleAlwaysOnUsbFlag && this.usbChargingCheckboxFlag) {
 					this.powerMode = PowerMode.Shutdown;
@@ -372,8 +264,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 		this.updatePowerMode();
 	}
+
 	onToggleOfEasyResume(event) {
-		switch (this.machineBrand) {
+		switch (this.machineType) {
 			case 1:
 				this.setEasyResumeThinkPad(event);
 				console.log('Easy Resume: ThinkPad');
@@ -383,8 +276,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				break;
 		}
 	}
+
 	onToggleOfAirplanePowerMode(event) {
-		switch (this.machineBrand) {
+		switch (this.machineType) {
 			case 1:
 				this.setAirplaneModeThinkPad(event);
 				console.log('Airplane Power mOde Set: ThinkPad', event);
@@ -403,7 +297,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		} else {
 			this.powerMode = PowerMode.Disabled;
 		}
-		switch (this.machineBrand) {
+
+		switch (this.machineType) {
 			case 1:
 				console.log('always on usb: thinkpad');
 				this.setAlwaysOnUSBStatusThinkPad(this.powerMode, this.usbChargingCheckboxFlag);
@@ -412,28 +307,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.setUSBChargingInBatteryModeStatusIdeaNoteBook(this.usbChargingCheckboxFlag);
 				console.log('always on usb: ideapad');
 				break;
-		}
-	}
-	private getMachineInfo() {
-		try {
-			if (this.deviceService.isShellAvailable) {
-				this.deviceService.getMachineType()
-					.then((value: any) => {
-						console.log('getMachineInfo.then', value);
-						this.machineBrand = value;
-						// .subBrand.toLowerCase();
-						// 0  means "ideaPad"
-						// 1  means "thinkPad"
-						// 2 means "ideaCenter"
-						// 3 means "thinkCenter"
-						console.log('getMachineInfo.then', this.machineBrand);
-						this.getAndSetAlwaysOnUSBForBrands(this.machineBrand);
-					}).catch(error => {
-						console.error('getMachineInfo', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
 		}
 	}
 
@@ -558,13 +431,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.then((value: boolean) => {
 					console.log('getAirplaneModeCapabilityThinkPad.then', value);
 					this.showAirplanePowerModeSection = value;
-					this.hideBatteryLink();
 					if (this.showAirplanePowerModeSection) {
 						this.getAirplaneModeThinkPad();
 					}
 				})
 				.catch(error => {
-					this.hideBatteryLink();
 					console.error('getAirplaneModeCapabilityThinkPad', error);
 				});
 		}
@@ -577,6 +448,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.then((airPlanePowerMode: any) => {
 						console.log('getAirplaneModeThinkPad.then', airPlanePowerMode);
 						this.toggleAirplanePowerModeFlag = airPlanePowerMode;
+						this.commonService.sendNotification('AirplaneModeStatus',
+							this.toggleAirplanePowerModeFlag);
 					})
 					.catch(error => {
 						console.error('getAirplaneModeThinkPad', error);
@@ -642,7 +515,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	onAirplaneAutoModeStatusChange() {
 		console.log('onAirplaneAutoModeStatusChange', this.airplaneAutoDetection);
-		this.setAirplaneModeAutoDetectionOnThinkPad(this.airplaneAutoDetection)
+		this.setAirplaneModeAutoDetectionOnThinkPad(this.airplaneAutoDetection);
 	}
 	// End ThinkPad
 
@@ -731,10 +604,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.then((featureStatus: FeatureStatus) => {
 						console.log('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 						this.conservationModeStatus = featureStatus;
-						this.hideBatteryLink();
 					})
 					.catch(error => {
-						this.hideBatteryLink();
 						console.error('getConservationModeStatusIdeaNoteBook', error);
 					});
 			}
@@ -750,10 +621,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.then((featureStatus: FeatureStatus) => {
 						console.log('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
 						this.expressChargingStatus = featureStatus;
-						this.hideBatteryLink();
 					})
 					.catch(error => {
-						this.hideBatteryLink();
 						console.error('getRapidChargeModeStatusIdeaNoteBook', error);
 					});
 			}
@@ -769,15 +638,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.setConservationModeStatusIdeaNoteBook(status);
 				console.log('setConservationModeStatusIdeaNoteBook.then', value);
 
-				// await	this.powerService
-				// 		.setConservationModeStatusIdeaNoteBook(status)
-				// 		.then((value: boolean) => {
-				// 			console.log('setConservationModeStatusIdeaNoteBook.then', value);
-				// 			//this.getConservationModeStatusIdeaPad();
-				// 		})
-				// 		.catch(error => {
-				// 			console.error('setConservationModeStatusIdeaNoteBook', error);
-				// 		});
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -791,15 +651,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				const value = await this.powerService
 					.setRapidChargeModeStatusIdeaNoteBook(status);
 				console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
-				// this.powerService
-				// 	.setRapidChargeModeStatusIdeaNoteBook(status)
-				// 	.then((value: boolean) => {
-				// 		console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
-				// 		//this.getRapidChargeModeStatusIdeaPad();
-				// 	})
-				// 	.catch(error => {
-				// 		console.error('setRapidChargeModeStatusIdeaNoteBook', error);
-				// 	});
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -870,7 +721,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	/**
 	 * launchSystemUri
-	path: string */
+	 * path: string
+	 */
 	public launchSystemUri(path: string) {
 		console.log('system uri called ', path);
 		if (path) {
@@ -883,7 +735,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	// start battery threshold settings
-	private getBatterStatusEvent(response) {
+	private getBatteryStatusEvent(response) {
 		// console.log('Event response here---------------....>%%%%%%%%%%%?>', response)
 		this.responseData = response;
 		this.getBatteryThresholdInformation();
@@ -897,7 +749,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.responseData = res || [];
 					if (this.responseData && this.responseData.length > 0) {
 						this.isChargeThresholdAvailable = this.responseData[0].isCapable;
-						this.hideBatteryLink();
 						this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 						this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
 						this.primaryCheckBox = this.responseData[0].checkBoxValue;
@@ -938,7 +789,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);
 				})
 				.catch(error => {
-					this.hideBatteryLink();
 					console.error('', error);
 				});
 		}
@@ -987,12 +837,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					checkBoxValue: batteryDetails.checkBoxValue
 				};
 				if (inputString === 'changedValues') {
-					// console.log('chnaged values here------------>');
 					this.powerService
 						.setChargeThresholdValue(batteryInfo)
 						.then((value: any) => {
-							// console.log('change threshold value------------------->>>>>>>>>', value);
-							// this.getBatteryThresholdInformation();
 							const notification = {
 								isOn: true,
 								stopValue1: this.selectedStopAtChargeVal, stopValue2: this.selectedStopAtChargeVal1

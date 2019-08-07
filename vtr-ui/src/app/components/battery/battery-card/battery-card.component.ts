@@ -150,16 +150,21 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * gets changed values at charge threshold section
+	 * gets changed values at charge threshold section && Airplane Mode section
 	 * @param notification: AppNotification for change in chargeThreshold
 	 */
 	onNotification(notification: AppNotification) {
-		if (notification && notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
-			this.chargeThresholdInfo = notification.payload;
-			if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
-				this.param1 = { value: this.chargeThresholdInfo.stopValue1 };
+		if (notification) {
+			if (notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
+				this.chargeThresholdInfo = notification.payload;
+				if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
+					this.param1 = { value: this.chargeThresholdInfo.stopValue1 };
+				}
+				this.sendThresholdWarning();
 			}
-			this.sendThresholdWarning();
+			if (notification.type === 'AirplaneModeStatus') {
+				this.batteryIndicator.isAirplaneMode = notification.payload;
+			}
 		}
 	}
 
@@ -172,6 +177,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 		this.batteryInfo[0].fullChargeCapacity = this.batteryInfo[0].fullChargeCapacity || 0;
 		this.batteryInfo[0].designCapacity = this.batteryInfo[0].designCapacity || 0;
+		this.batteryIndicator.isAirplaneMode = this.batteryIndicator.isAirplaneMode || false;
 	}
 
 	public updateBatteryDetails() {
