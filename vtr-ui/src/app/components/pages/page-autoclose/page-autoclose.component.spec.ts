@@ -9,7 +9,12 @@ import { Pipe } from '@angular/core';
 const gamingAutoCloseServiceMock = jasmine.createSpyObj('GamingAutoCloseService', [
 	'isShellAvailable',
 	'gamingAutoClose',
-	'getAutoCloseStatusCache'
+	'getAutoCloseStatusCache',
+	'setAutoCloseStatus',
+	'setAutoCloseStatusCache',
+	'getNeedToAskStatusCache',
+	'getNeedToAsk',
+	'setNeedToAskStatusCache'
 ]);
 
 const cmsServiceMock = jasmine.createSpyObj('CMSService', [ 'fetchCMSContent', 'getOneCMSContent' ]);
@@ -188,9 +193,71 @@ describe('PageAutocloseComponent', () => {
 		})
 	);
 
-	it('should create', () => {
+	it('should create component', () => {
 		expect(component).toBeTruthy();
 	});
+
+	it(
+		'toggleStatus should change change when jsbridge returns true',
+		fakeAsync(() => {
+			gamingAutoCloseServiceMock.setAutoCloseStatus.and.returnValue(Promise.resolve(true));
+			gamingAutoCloseServiceMock.setAutoCloseStatusCache.and.returnValue();
+			component.setAutoCloseStatus(true);
+			tick(10);
+			expect(component.toggleStatus).toEqual(true);
+		})
+	);
+
+	it(
+		'toggleStatus should not change when jsbridge returns false',
+		fakeAsync(() => {
+			component.toggleStatus = true;
+			fixture.detectChanges();
+			gamingAutoCloseServiceMock.setAutoCloseStatus.and.returnValue(Promise.resolve(false));
+			component.toggleAutoClose(false);
+			tick(10);
+			expect(component.toggleStatus).toEqual(true);
+		})
+	);
+
+	it(
+		'toggleStatus is true then should show running apps popup directly',
+		fakeAsync(() => {
+			component.toggleStatus = true;
+			fixture.detectChanges();
+			gamingAutoCloseServiceMock.getNeedToAsk.and.returnValue(Promise.resolve(true));
+			component.openTargetModal();
+			tick(10);
+			expect(component.showAppsModal).toEqual(true);
+			expect(component.showTurnOnModal).toEqual(false);
+		})
+	);
+
+	it(
+		'toggleStatus is false and needToAsk true then should show turnon popup',
+		fakeAsync(() => {
+			component.toggleStatus = false;
+			fixture.detectChanges();
+			gamingAutoCloseServiceMock.getNeedToAsk.and.returnValue(Promise.resolve(true));
+			component.openTargetModal();
+			tick(10);
+			expect(component.showAppsModal).toEqual(false);
+			expect(component.showTurnOnModal).toEqual(true);
+		})
+	);
+
+	it(
+		'toggleStatus is false and needToAsk false then should show running apps popup directly',
+		fakeAsync(() => {
+			component.toggleStatus = false;
+			fixture.detectChanges();
+			gamingAutoCloseServiceMock.getNeedToAsk.and.returnValue(Promise.resolve(false));
+			component.openTargetModal();
+			tick(10);
+			expect(component.showAppsModal).toEqual(true);
+			expect(component.showTurnOnModal).toEqual(false);
+		})
+	);
 });
 
 export function mockPipe(options: Pipe): Pipe {
