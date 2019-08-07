@@ -27,7 +27,7 @@ const routes: Routes = [
 		canActivate: [ GuardService ],
 		data: {
 			pageName: 'Gaming.Dashboard',
-			pageContent: 'Device Status'
+			pageContent: 'Gaming Dashboard'
 		}
 	},
 	{
@@ -36,7 +36,8 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'Gaming.Macrokey'
+			pageName: 'Gaming.Macrokey',
+			pageContent: 'Gaming Macrokey'
 		}
 	},
 	{
@@ -46,7 +47,8 @@ const routes: Routes = [
 		canActivate: [ GuardService ],
 
 		data: {
-			pageName: 'Gaming.Lighting'
+			pageName: 'Gaming.Lighting',
+			pageContent: 'Gaming Lighting'
 		}
 	},
 	{
@@ -55,7 +57,9 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'Gaming.NetworkBoost'
+			pageName: 'Gaming.NetworkBoost',
+			pageContent: 'Gaming NetworkBoost'
+
 		}
 	},
 	{
@@ -64,7 +68,8 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'Gaming.AutoClose'
+			pageName: 'Gaming.AutoClose',
+			pageContent: 'Gaming AutoClose'
 		}
 	},
 	{
