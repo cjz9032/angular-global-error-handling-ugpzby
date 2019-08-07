@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "끄기"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "프로파일 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "끄기"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -389,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -412,7 +427,10 @@
             },
             "support": "지원",
             "homeSecurity": "홈 연결",
-            "privacy": "프라이버시"
+            "privacy": "프라이버시",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "보안 어드바이저",
@@ -518,10 +536,10 @@
             "cameraPrivacy": "카메라",
             "eyeCareMode": "아이 케어",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage가 카메라와 마이크에 액세스할 수 없습니다.",
+                "accessUrl": "액세스 권한을 부여하려면 Windows 설정으로 이동합니다",
+                "microphoneNote": "Lenovo Vantage가 마이크에 액세스할 수 없습니다.",
+                "cameraPrivacyNote": "Lenovo Vantage가 카메라에 액세스할 수 없습니다."
             }
         },
         "systemStatus": {
@@ -676,16 +694,16 @@
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
                     "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
-                    "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
-                    "LimitedACAdapterSupport": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오.",
+                    "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
+                    "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
                     "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오.",
                     "StoreLimitation": "<b>배터리는 원래 완전 충전 용량의 {{value}}%만</b> 저장할 수 있습니다.",
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
                     "OverheatedBattery": "배터리가 <b>너무 뜨겁습니다</b>. 컴퓨터에서 배터리를 제거하여 상온 정도까지 식히십시오.",
                     "PermanentError": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
+                    "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오."
                 },
                 "updating": "업데이트하는 중",
                 "voltageError": "배터리 전압 잘못됨",
@@ -799,8 +817,8 @@
                         "readMoreText": "자세히 읽으십시오.",
                         "noteInfo": " 배터리 충전 임계값이 여전히 완전히 활성화되지 않았습니다. 컴퓨터 플러그를 뽑고 충전 중지 임계값 이하로 배터리를 방전하십시오.",
                         "settings": {
-                            "title1": "기본 제공 배터리의 임계값",
-                            "title2": "이동식 배터리의 임계값"
+                            "title1": "기본 배터리의 임계값",
+                            "title2": "보조 배터리의 임계값"
                         },
                         "popup": {
                             "title": "배터리 충전 임계값 사용",
@@ -1188,7 +1206,7 @@
                     "description1": "이 기능은 Windows Hello를 이용합니다. Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
                     "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
-                    "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 자동 IR 카메라 로그인이 작동하지 않습니다.",
+                    "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오."
                 },
                 "WindowsLink": {

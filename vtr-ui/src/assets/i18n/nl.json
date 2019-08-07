@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Uit"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profiel 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Uit"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -389,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -412,7 +427,10 @@
             },
             "support": "Ondersteuning",
             "homeSecurity": "Verbonden Thuis",
-            "privacy": "Privacy"
+            "privacy": "Privacy",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Beveiligingsadviseur",
@@ -518,10 +536,10 @@
             "cameraPrivacy": "Camera",
             "eyeCareMode": "Oogzorg",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage heeft geen toegang tot de camera en de microfoon.",
+                "accessUrl": "Ga naar de Windows-instellingen om toegang te geven",
+                "microphoneNote": "Lenovo Vantage heeft geen toegang tot de microfoon.",
+                "cameraPrivacyNote": "Lenovo Vantage heeft geen toegang tot de camera."
             }
         },
         "systemStatus": {
@@ -676,16 +694,16 @@
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
                     "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
-                    "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
-                    "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
+                    "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
+                    "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
                     "MissingDriver": "<b>Het stuurprogramma voor Lenovo-energiebeheer</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren.",
                     "StoreLimitation": "<b>De batterij kan slechts {{value}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
                     "OverheatedBattery": "De batterij is <b>te heet</b>. Verwijder hem uit de computer en laat hem afkoelen tot kamertemperatuur.",
                     "PermanentError": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
+                    "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan."
                 },
                 "updating": "Bezig met updaten",
                 "voltageError": "Batterijspanning onjuist",
@@ -799,8 +817,8 @@
                         "readMoreText": "Meer weergeven.",
                         "noteInfo": " De drempelwaarde voor batterijlading is niet volledig geactiveerd. Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveau waarop het opladen wordt gestopt.",
                         "settings": {
-                            "title1": "Drempel voor ingebouwde batterij",
-                            "title2": "Drempel voor verwijderbare batterij"
+                            "title1": "Drempel voor primaire batterij",
+                            "title2": "Drempel voor secundaire batterij"
                         },
                         "popup": {
                             "title": "Drempelwaarde voor batterijlading inschakelen",
@@ -1188,7 +1206,7 @@
                     "description1": "Deze functie maakt gebruik van Windows Hello. Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
-                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Automatische aanmelding via IR-camera werkt niet.",
+                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden."
                 },
                 "WindowsLink": {

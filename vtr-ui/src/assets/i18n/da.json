@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Deaktiveret"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Deaktiveret"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -389,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -412,7 +427,10 @@
             },
             "support": "Support",
             "homeSecurity": "Tilsluttet Home",
-            "privacy": "Anonymitet"
+            "privacy": "Anonymitet",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Sikkerhedsvejledning",
@@ -518,10 +536,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Øjenpleje",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage har ikke adgang til kamera og mikrofon.",
+                "accessUrl": "Gå til Windows-indstillingerne for at give adgang",
+                "microphoneNote": "Lenovo Vantage har ikke adgang til mikrofon.",
+                "cameraPrivacyNote": "Lenovo Vantage har ikke adgang til kamera."
             }
         },
         "systemStatus": {
@@ -676,16 +694,16 @@
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
                     "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
-                    "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
-                    "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
+                    "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
+                    "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
                     "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver.",
                     "StoreLimitation": "<b>Batteriet kan kun lagre {{value}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Tag det ud af computeren, og lad det køle af til almindelig stuetemperatur.",
                     "PermanentError": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
+                    "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter."
                 },
                 "updating": "Opdaterer",
                 "voltageError": "Forkert batterispænding",
@@ -799,8 +817,8 @@
                         "readMoreText": "Læs mere.",
                         "noteInfo": " Opladningsgrænse for batteri er stadig ikke fuldt aktiv. Tag maskinens strømstik ud, og lad batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
                         "settings": {
-                            "title1": "Grænse for indbygget batteri",
-                            "title2": "Grænse for flytbart batteri"
+                            "title1": "Grænse for primært batteri",
+                            "title2": "Grænse for sekundært batteri"
                         },
                         "popup": {
                             "title": "Aktivér opladningsgrænse for batteri",
@@ -1188,7 +1206,7 @@
                     "description1": "Denne funktion er afhængig af Windows Hello. Kontrollér, at ansigtsgenkendelse er slået til i Windows-indstillinger.",
                     "description2": "Funktionen bruger sensorer og kameraet til at registrere din tilstedeværelse. Men funktionen indsamler IKKE personlige data.",
                     "description3": "1. Hvis din computer er i Telt-, Tablet- eller Støtte-tilstand, fungerer disse funktioner muligvis ikke korrekt.",
-                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Automatisk logon til infrarødt kamera fungerer ikke.",
+                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Logon uden berøring fungerer ikke.",
                     "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon."
                 },
                 "WindowsLink": {

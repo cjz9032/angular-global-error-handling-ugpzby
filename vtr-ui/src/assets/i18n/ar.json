@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "إيقاف"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "ملف التعريف 1"
@@ -351,7 +351,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "إيقاف"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -389,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -412,7 +427,10 @@
             },
             "support": "الدعم",
             "homeSecurity": "المنزل المتصل",
-            "privacy": "الخصوصية"
+            "privacy": "الخصوصية",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "مستشار الأمان",
@@ -518,10 +536,10 @@
             "cameraPrivacy": "الكاميرا",
             "eyeCareMode": "العناية بالعين",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "لا يتمتع Lenovo Vantage بالوصول إلى الميكروفون والكاميرا.",
+                "accessUrl": "انتقل إلى إعدادات Windows لمنح الوصول",
+                "microphoneNote": "لا يتمتع Lenovo Vantage بالوصول إلى الميكروفون.",
+                "cameraPrivacyNote": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا."
             }
         },
         "systemStatus": {
@@ -676,16 +694,16 @@
                     "Bad": "<b>حدث خطأ في البطارية.</b> لا يمكن شحن/تفريغ البطارية. استبدل البطارية.",
                     "NotDetected": "<b>لم يتم الكشف عن بطارية أو</b> البطارية غير موصولة.",
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
-                    "NotSupportACAdapter": "<b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.",
-                    "LimitedACAdapterSupport": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
+                    "NotSupportACAdapter": "<b>محول التيار المتردد غير مدعوم.</b>",
+                    "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
                     "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
                     "OverheatedBattery": "البطارية <b>ساخنة أكثر من اللازم</b>. اعمل على إخراجها من الكمبيوتر وتبريدها وصولاً إلى درجة حرارة الغرفة.",
                     "PermanentError": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.",
+                    "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب."
                 },
                 "updating": "جار التحديث",
                 "voltageError": "جهد البطارية غير صحيح",
@@ -799,8 +817,8 @@
                         "readMoreText": "اقرأ أكثر.",
                         "noteInfo": " لا يزال حد شحن البطارية غير نشط بشكل كامل. الرجاء فصل الطاقة عن الجهاز، ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
                         "settings": {
-                            "title1": "حد البطارية المدمجة",
-                            "title2": "حد البطارية القابلة للإزالة"
+                            "title1": "حد البطارية الرئيسية",
+                            "title2": "حد البطارية الثانوية"
                         },
                         "popup": {
                             "title": "تمكين حد شحن البطارية",
@@ -1188,7 +1206,7 @@
                     "description1": "تعتمد هذه الميزة على Windows Hello. تأكد من تشغيل ميزة التعرف على الوجوه في إعدادات Windows.",
                     "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك. ومع ذلك، فإن الميزة لا تجمع أي بيانات شخصية.",
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
-                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن يعمل تسجيل دخول كاميرا الأشعة تحت الحمراء تلقائيًا.",
+                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة \"تسجيل الدخول من دون لمس\".",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي."
                 },
                 "WindowsLink": {

@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Vypnuto"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -351,7 +351,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Vypnuto"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -389,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -412,7 +427,10 @@
             },
             "support": "Podpora",
             "homeSecurity": "Připojeno Domů",
-            "privacy": "Soukromí"
+            "privacy": "Soukromí",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Bezpečnostního rádce",
@@ -676,16 +694,16 @@
                     "Bad": "<b>Došlo k chybě baterie.</b> Baterii nelze nabít/vybít. Vyměňte ji.",
                     "NotDetected": "<b>Nebyla zjištěna žádná baterie</b> nebo baterie není připojena.",
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
-                    "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
-                    "LimitedACAdapterSupport": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Znovu připojte správný napájecí adaptér.",
+                    "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
+                    "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
                     "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač.",
                     "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{value}}%</b> své původní kapacity.",
                     "HighTemperature": "<b>Vybíjení</b> bylo zastaveno kvůli <b>přehřátí baterie</b>.",
                     "TrickleCharge": "Baterie je <b>zcela vybitá</b> a je třeba ji nabít. To může trvat deset i více hodin.",
                     "OverheatedBattery": "Baterie je <b>přehřátá</b>. Vyjměte ji z počítače a nechte ji vychladnout na pokojovou teplotu.",
                     "PermanentError": "Došlo k <b>selhání baterie z důvodu běžného opotřebení.</b> Baterii nelze nabít. Vyměňte ji.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
+                    "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér."
                 },
                 "updating": "Aktualizování",
                 "voltageError": "Nesprávné napětí baterie",
@@ -799,8 +817,8 @@
                         "readMoreText": "Další informace.",
                         "noteInfo": " Prahová hodnota nabíjení baterie stále není plně aktivní. Odpojte počítač a nechte baterii vybít na nebo pod limit nabíjení baterie.",
                         "settings": {
-                            "title1": "Prahová hodnota pro vestavěnou baterii",
-                            "title2": "Prahová hodnota pro vyjímatelnou baterii"
+                            "title1": "Prahová hodnota pro primární baterii",
+                            "title2": "Prahová hodnota pro sekundární baterii"
                         },
                         "popup": {
                             "title": "Povolit limit nabíjení baterie",

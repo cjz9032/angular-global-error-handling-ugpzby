@@ -1,6 +1,6 @@
 import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
 import { GuardService } from '../services/guard/security-guardService.service';
@@ -51,6 +51,10 @@ const routes: Routes = [
 		loadChildren: './android/android-dashboard.module#AndroidDashboardModule'
 	},
 	{
+		path: 'beta',
+		loadChildren: '../beta/beta.module#BetaModule'
+	},
+	{
 		path: '',
 		component: HomeComponent,
 		pathMatch: 'full'
@@ -68,7 +72,7 @@ const routes: Routes = [
 			useHash: true,
 			scrollPositionRestoration: 'enabled',
 			enableTracing: false,
-			// preloadingStrategy: PreloadAllModules
+			preloadingStrategy: PreloadAllModules
 		})
 	],
 	exports: [RouterModule]

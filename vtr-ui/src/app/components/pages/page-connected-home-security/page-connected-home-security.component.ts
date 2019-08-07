@@ -137,7 +137,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		if (this.chs.account && this.chs.account.state) {
 			this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
-			this.account = new HomeSecurityAccount(this.chs, this.common,this.lenovoIdDialogService);
+			this.account = new HomeSecurityAccount(this.chs, this.common, this.lenovoIdDialogService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 				state: this.account.state,
 				expiration: this.account.expiration,
@@ -203,7 +203,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				&& this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)
 				&& this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
 				setTimeout(() => {
-					this.dialogService.openCHSPermissionModal().result.then((reason) => {
+					this.dialogService.openCHSPermissionModal(true).result.then((reason) => {
 						if (reason === 'startTrailError') {
 							this.dialogService.homeSecurityAccountDialog();
 						}
@@ -370,7 +370,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
-			welcomeModal.componentInstance.welcomeFlag = true;
+			welcomeModal.componentInstance.needTrial = true;
 			return welcomeModal;
 		}
 	}
@@ -408,6 +408,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	private handleResponseError(err: Error) {
 		const showPluginMissing = this.commonService.getSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog);
 		if (err instanceof PluginMissingError) {
+			if (this.common) {
+				this.common.startTrialDisabled = true;
+			}
 			if (showPluginMissing !== 'show' && showPluginMissing !== 'finish') {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'show');
 				this.dialogService.homeSecurityPluginMissingDialog();

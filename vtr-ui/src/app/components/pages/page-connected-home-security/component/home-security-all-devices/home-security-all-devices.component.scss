@@ -137,7 +137,11 @@
                 font-size: 1.8rem;
                 font-weight: $weight_600;
                 color: black;
-            }
+			}
+			.button-container {
+				margin: 0.5rem 0;
+				text-align: center;
+			}
             .text-description {
                 display: flex;
                 justify-content: center;
@@ -147,14 +151,19 @@
 
             ::ng-deep {
                 .vtr-ui-button {
-                    display: block;
+                    display: inline-block;
                     .button-box {
+						padding: 0;
                         display: flex;
                         justify-content: center;
                     }
                 }
             }
         }
+	}
+
+	.url-disabled {
+		pointer-events: none;
 	}
 
 	@media #{$medium-screen} {
