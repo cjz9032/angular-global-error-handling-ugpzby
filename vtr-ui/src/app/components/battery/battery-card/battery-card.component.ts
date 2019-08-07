@@ -181,6 +181,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	public updateBatteryDetails() {
+
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 			this.initBatteryInformation();
 			const remainingPercentages = [];
@@ -201,6 +202,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
+
 		this.getBatteryCondition();
 	}
 
@@ -279,6 +281,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 				this.param2 = { value: parseFloat(percentLimit.toFixed(1)) };
 			}
+
 			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {
 					case 'normal':
@@ -305,7 +308,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 
 		this.batteryConditions = batteryConditions;
-
+		console.log('Battery Conditions ====>', this.batteryConditions);
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, indicator: this.batteryIndicator, conditions: this.batteryConditions });
 
 		console.log('Battery conditions length', this.batteryConditions.length);
