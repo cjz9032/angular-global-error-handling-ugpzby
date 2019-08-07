@@ -1,4 +1,4 @@
-import { of, Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { PageAutocloseComponent } from './page-autoclose.component';
@@ -172,9 +172,6 @@ describe('PageAutocloseComponent', () => {
 	let component: PageAutocloseComponent;
 	let fixture: ComponentFixture<PageAutocloseComponent>;
 	gamingAutoCloseServiceMock.isShellAvailable.and.returnValue(true);
-	cmsServiceMock.fetchCMSContent.withArgs(queryOptions).and.returnValue(of(cmsCardResponse));
-	gamingAutoCloseServiceMock.getAutoCloseStatusCache.withArgs().and.returnValue(true);
-	cmsServiceMock.getOneCMSContent.and.returnValue(cmsCardResponse.Results);
 
 	beforeEach(
 		async(() => {
