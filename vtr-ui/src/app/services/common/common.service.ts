@@ -190,6 +190,8 @@ export class CommonService {
 	}
 
 	public isBetaUser(): Promise<number> {
-		return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
+		if (WinRT) {
+			return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
+		}
 	}
 }
