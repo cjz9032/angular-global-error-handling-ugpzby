@@ -7,7 +7,6 @@ import {	UUID} from 'angular2-uuid';
 import {	LocalStorageKey} from '../../enums/local-storage-key.enum';
 
 import {	environment} from '../../../environments/environment';
-import { 	CookieService } from 'ngx-cookie-service';
 import { 	NetworkStatus } from 'src/app/enums/network-status.enum';
 import { 	Observable } from 'rxjs';
 import { 	AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -24,7 +23,6 @@ export class UPEService {
 	constructor(
 		private commsService: CommsService,
 		private commonService: CommonService,
-		private cookieService: CookieService,
 		private vantageShellService: VantageShellService,
 		private deviceService: DeviceService
 	) {
@@ -54,11 +52,15 @@ export class UPEService {
 		return new Promise((resolve, reject) => {
 			const upeApiKey = this.commonService.getLocalStorageValue(LocalStorageKey.UPEAPIKey);
 			if (!upeApiKey || forceReg) {
-				this.generateAPIKey().then((result) => {
-					resolve(result);
-				}, error => {
-					reject(error);
-				});
+				try {
+					this.generateAPIKey().then((result) => {
+						resolve(result);
+					}, error => {
+						reject(error);
+					});
+				} catch (ex) {
+					reject(ex);
+				}
 			} else {
 				resolve(upeApiKey);
 			}
