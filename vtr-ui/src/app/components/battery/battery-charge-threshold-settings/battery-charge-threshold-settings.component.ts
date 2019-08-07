@@ -21,6 +21,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() isCheckedAuto: any;
 	@Output() sendBatteryDetails = new EventEmitter();
 	@Output() autoChecked = new EventEmitter<boolean>();
+	@Input() textId='';
 
 
 
