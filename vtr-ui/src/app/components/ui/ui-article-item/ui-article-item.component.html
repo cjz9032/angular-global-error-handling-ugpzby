@@ -47,11 +47,16 @@
 					metricsItemPosition="{{ index }}"
 					metricsViewOrder="{{metricsDatas.viewOrder}}"
 					metricsPageNumber="{{metricsDatas.pageNumber}}"
+					[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
+					[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
+					[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
 					(click)="showArticleDetails()">{{item.Title}}</a>
 				<div class="logo-text">
 					<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
 				</div>
 				<div *ngIf="item.ReadMore && item.Thumbnail"
+					[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
+					[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
 					class="read-more">
 					<a href="javascript:;"
 						vtrMetrics
@@ -122,11 +127,16 @@
 					metricsItemPosition="{{index}}"
 					metricsViewOrder="{{metricsDatas.viewOrder}}"
 					metricsPageNumber="{{metricsDatas.pageNumber}}"
+					[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
+					[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
+					[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
 					(click)="showArticleDetails()">{{item.Title}}</a>
 				<div class="logo-text">
 					<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 				</div>
 				<div *ngIf="item.ActionLink && item.FeatureImage && item.Action"
+					[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
+					[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
 					class="read-more">
 					<a href="javascript:;"
 						vtrMetrics

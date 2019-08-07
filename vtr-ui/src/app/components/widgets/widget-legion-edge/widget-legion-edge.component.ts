@@ -100,7 +100,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose',
 			canNavigate: true,
-			settings: 'legion_edge_autoclose_settings'
+			settings: 'legion_edge_autoclose_gearicon'
 		},
 		{
 			readMoreText: '',
@@ -125,7 +125,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',
 			canNavigate: true,
-			settings: 'legion_edge_networkboost_settings'
+			settings: 'legion_edge_networkboost_gearicon'
 		},
 		{
 			readMoreText: '',
@@ -221,8 +221,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	) { }
 	ngOnInit() {
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
-				console.log(`GAMINGCAPABLITIES in widget-legion-edge.component`, response);
+			if (response.type === Gaming.GamingCapabilities) {
+				console.log(`GAMINGCAPABILITIES in widget-legion-edge.component`, response);
 				this.gamingCapabilities = response.payload;
 				this.legionEdgeInit();
 			}

@@ -33,7 +33,7 @@ export class WidgetLightingComponent implements OnInit {
 		this.setprofId = 0;
 		this.getCapabilities();
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
+			if (response.type === Gaming.GamingCapabilities) {
 				this.getCapabilities();
 			}
 		});
