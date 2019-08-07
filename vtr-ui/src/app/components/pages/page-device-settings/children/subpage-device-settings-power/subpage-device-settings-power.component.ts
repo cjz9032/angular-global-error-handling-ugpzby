@@ -1080,7 +1080,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		const status: FlipToBootSetStatus = $event.switchValue ? FlipToBootSetStatusEnum.On : FlipToBootSetStatusEnum.Off;
 		this.powerService.setFlipToBootSettings(status)
 			.then(res => {
-				if (+res.ErrorCode !== 0) {
+				if (+res.ErrorCode !== FlipToBootErrorCodeEnum.Succeed) {
 					this.toggleFlipToBootStatus = false;
 				}
 			})
