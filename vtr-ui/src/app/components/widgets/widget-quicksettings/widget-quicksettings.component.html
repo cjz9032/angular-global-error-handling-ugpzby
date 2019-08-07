@@ -23,7 +23,7 @@
 							id="qs-switch-camera" aria-label="qs-switch-camera" [switchId]="'camera'"
 							[isBlocked]="cameraStatus.status || !cameraStatus.permission" [isCamera]="true"
 							(toggle)="onCameraStatusToggle($event)"
-							[disable]="!(cameraStatus.available && cameraStatus.permission && quickSettingsWidget[1].state)"
+							[disable]="!(cameraStatus.permission && quickSettingsWidget[1].state)"
 							[isLoading]="cameraStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
