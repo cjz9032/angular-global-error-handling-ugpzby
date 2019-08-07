@@ -209,6 +209,28 @@ export class SmartAssistService {
 		}
 	}
 
+	public getSuperResolutionStatus(): Promise<FeatureStatus> {
+		try {
+			if (this.isShellAvailable) {
+				return this.intelligentMedia.getSuperResolutionStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setSuperResolutionStatus(value: boolean): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.intelligentMedia.setSuperResolutionStatus(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	//#endregion
 
 

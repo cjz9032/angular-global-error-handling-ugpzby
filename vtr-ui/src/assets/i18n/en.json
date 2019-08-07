@@ -1268,6 +1268,12 @@
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			},
+			"superResolution": {
+				"heading": "Intelligent Media",
+				"title": "Super resolution",
+				"desc": "This feature improves the video quality  when in a bad network environment or your video source is in a low resolution.",
+				"tooltip": "This feature intelligently optimize video quality based on the battery power condition/AC adapter/CPU temperature and only works for  below video player(local and online): Lenovo player Windows media player Storm player Thunderbolt player Note: If one of above factor not fulfilled, it might work even it is on."
+			},
 			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",

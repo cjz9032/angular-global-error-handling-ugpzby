@@ -46,6 +46,9 @@ export class PageSmartAssistComponent implements OnInit {
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
 
+	public isSuperResolutionLoading = true;
+	public superResolution = new FeatureStatus(false, true);
+
 	headerMenuItems: PageAnchorLink[] = [
 		{
 			title: 'device.smartAssist.intelligentSecurity.title',
@@ -181,6 +184,7 @@ export class PageSmartAssistComponent implements OnInit {
 				this.initIntelligentScreen();
 			}
 		}
+		this.getSuperResolutionStatus();
 	}
 
 	private apsAvailability() {
@@ -441,6 +445,22 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 		} catch (error) {
 			console.error('getVideoPauseResumeStatus' + error.message);
+		}
+	}
+
+	private getSuperResolutionStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getSuperResolutionStatus()
+					.then((response: FeatureStatus) => {
+						this.isSuperResolutionLoading = false;
+						this.superResolution = response;
+					}).catch(error => {
+						console.error('getSuperResolutionStatus.error', error);
+					});
+			}
+		} catch (error) {
+			console.error('getSuperResolutionStatus' + error.message);
 		}
 	}
 }

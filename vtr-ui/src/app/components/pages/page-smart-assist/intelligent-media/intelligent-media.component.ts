@@ -10,7 +10,13 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 export class IntelligentMediaComponent implements OnInit {
 	@Input() isChecked = false;
 	@Input() isLoading = true;
+	@Input() intelligentMediaAvailable = true;
 	@Output() videoPlaybackToggle: EventEmitter<any> = new EventEmitter();
+
+	@Input() isSRChecked = false;
+	@Input() isSRLoading = true;
+	@Input() superResolutionAvailable = true;
+	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
 
 	constructor(private smartAssist: SmartAssistService) { }
 
@@ -31,6 +37,22 @@ export class IntelligentMediaComponent implements OnInit {
 			}
 		} catch (error) {
 			console.error('setVideoPauseResumeStatus' + error.message);
+		}
+	}
+
+	public setSuperResolutionStatus(event) {
+		this.superResolutionToggle.emit(event.value);
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.setSuperResolutionStatus(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setSuperResolutionStatus.then', value);
+					}).catch(error => {
+						console.error('setSuperResolutionStatus', error);
+					});
+			}
+		} catch (error) {
+			console.error('setSuperResolutionStatus' + error.message);
 		}
 	}
 }
