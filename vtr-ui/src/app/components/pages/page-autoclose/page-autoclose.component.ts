@@ -26,7 +26,7 @@ export class PageAutocloseComponent implements OnInit {
 	cardContentPositionB: any = {
 		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
 	};
-	backId = 'vtr-gaming-macrokey-btn-back';
+	backId = 'vtr-gaming-autoclose-btn-back';
 
 	constructor(private cmsService: CMSService, private gamingAutoCloseService: GamingAutoCloseService) {}
 
