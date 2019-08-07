@@ -390,7 +390,7 @@
 				"body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
 			}
 		}, "networkBoost": {
-		"title": "Networkboost",
+		"title": "Network Boost",
 		"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
 		"modalTurn": {
 			"title": "Turn on Network Boost ?",

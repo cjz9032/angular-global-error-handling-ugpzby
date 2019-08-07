@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalNetworkboostComponent } from './modal-networkboost.component';
+import { NetworkboostTurnOnComponent } from './networkboost-turn-on.component';
 
-describe('ModalNetworkboostComponent', () => {
-  let component: ModalNetworkboostComponent;
-  let fixture: ComponentFixture<ModalNetworkboostComponent>;
+describe('NetworkboostTurnOnComponent', () => {
+  let component: NetworkboostTurnOnComponent;
+  let fixture: ComponentFixture<NetworkboostTurnOnComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalNetworkboostComponent ]
+      declarations: [ NetworkboostTurnOnComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalNetworkboostComponent);
+    fixture = TestBed.createComponent(NetworkboostTurnOnComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
