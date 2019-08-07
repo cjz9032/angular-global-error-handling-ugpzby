@@ -40,13 +40,11 @@ export class OneClickScanComponent implements OnDestroy {
 	}
 
 	handleScanAllow(permitValue: boolean) {
-		permitValue ? this.nextStep() : this.resetScan();
+		permitValue ? this.nextStep() : this.sendSkipAndResetScan();
 	}
 
 	getStepForScanning() {
-		return this.permitService.getPermits().length === 0 ?
-			this.resetScan() :
-			this.permitService.getPermits();
+		return this.permitService.isSkipAll() ? this.sendSkipAndResetScan() : this.permitService.getPermits();
 	}
 
 	private nextStep() {
@@ -61,14 +59,18 @@ export class OneClickScanComponent implements OnDestroy {
 	}
 
 	private resetScan() {
+		this.permitService.clearPermits();
+		this.oneClickScanStepsService.resetStep();
+		this.commonPopupService.close(this.popupId);
+	}
+
+	private sendSkipAndResetScan() {
 		const isSkipAll = this.permitService.isSkipAll();
 
 		if (isSkipAll) {
 			this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction, 'Skip');
 		}
 
-		this.permitService.clearPermits();
-		this.oneClickScanStepsService.resetStep();
-		this.commonPopupService.close(this.popupId);
+		this.resetScan();
 	}
 }
