@@ -26,7 +26,7 @@ export class PageNetworkboostComponent implements OnInit {
   cardContentPositionB: any = {
     FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
   };
-  backId = 'vtr-gaming-macrokey-btn-back';
+  backId = 'vtr-gaming-networkboost-btn-back';
 
   constructor(private cmsService: CMSService, private networkBoostService: NetworkBoostService,
     private commonService: CommonService) { }
