@@ -82,18 +82,29 @@ export class UserDataGetStateService {
 			this.figleafOverviewService.figleafSettings$.pipe(
 				map((settings) => settings.isAntitrackingEnabled),
 				catchError((err) => of(false))
-			)
-		]).pipe(
-			filter(([trackingData, isTrackersBlocked]) => trackingData.typeData === typeData.Users),
-		).subscribe(([trackingData, isTrackersBlocked]) => {
-			const trackersCount = Object.keys(trackingData.trackingData.trackers).length;
-			let status = trackersCount ? FeaturesStatuses.exist : FeaturesStatuses.none;
+			),
+			this.communicationWithFigleafService.isFigleafReadyForCommunication$
+		]).subscribe(([trackingData, isTrackersBlocked, isFigleafReadyForCommunication]) => {
+			let status: FeaturesStatuses;
+			const isUserData = trackingData.typeData === typeData.Users;
+
+			if (isUserData) {
+				const trackersCount = Object.keys(trackingData.trackingData.trackers).length;
+				status = trackersCount ? FeaturesStatuses.exist : FeaturesStatuses.none;
+			}
+
+			if (isFigleafReadyForCommunication && isTrackersBlocked) {
+				status = FeaturesStatuses.none;
+			}
+
+			if (!isUserData && !isFigleafReadyForCommunication) {
+				status = FeaturesStatuses.undefined;
+			}
+
 			if (trackingData.error) {
 				status = FeaturesStatuses.error;
 			}
-			if (isTrackersBlocked) {
-				status = FeaturesStatuses.none;
-			}
+
 			this.websiteTrackersResult = status;
 			this.updateUserDataSubject();
 		});
