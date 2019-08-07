@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, OnDestroy, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, TemplateRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PowerService } from 'src/app/services/power/power.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
@@ -11,6 +11,15 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { BehaviorSubject } from 'rxjs';
+import { FlipToBootSetStatus } from "../../../../../services/power/flipToBoot.interface";
+import { fal } from "@fortawesome/pro-light-svg-icons";
+import {
+	FlipToBootCurrentModeEnum,
+	FlipToBootErrorCodeEnum,
+	FlipToBootSetStatusEnum,
+	FlipToBootSupportedEnum
+} from "../../../../../services/power/flipToBoot.enum";
 
 
 enum PowerMode {
@@ -204,6 +213,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			isSwitchVisible: true
 		}
 	];
+	toggleFlipToBootStatus = false;
+	showFlipToBootSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 	async changeBatteryMode(event, mode) {
 		// Code suggested fangtian1@lenovo.com, above commented code is the previous one
 		if (mode === 'expressCharging') {
@@ -284,6 +295,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+
+		this.getFlipToBootCapability();
 
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
@@ -642,7 +655,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	onAirplaneAutoModeStatusChange() {
 		console.log('onAirplaneAutoModeStatusChange', this.airplaneAutoDetection);
-		this.setAirplaneModeAutoDetectionOnThinkPad(this.airplaneAutoDetection)
+		this.setAirplaneModeAutoDetectionOnThinkPad(this.airplaneAutoDetection);
 	}
 	// End ThinkPad
 
@@ -1047,6 +1060,32 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			})
 			.catch(error => {
 				console.log('getEnergyStarCapability.error', error);
+			});
+	}
+
+	private getFlipToBootCapability() {
+		this.powerService.getFlipToBootCapability()
+			.then(res => {
+				if (+res.ErrorCode === FlipToBootErrorCodeEnum.Succeed && +res.Supported === FlipToBootSupportedEnum.Succeed) {
+					this.showFlipToBootSection$.next(true);
+					this.toggleFlipToBootStatus = +res.CurrentMode === FlipToBootCurrentModeEnum.SucceedEnable;
+				}
+			})
+			.catch(error => {
+				console.log('getFlipToBootCapability.error', error);
+			});
+	}
+
+	onToggleOfFlipToBoot($event: boolean) {
+		const status: FlipToBootSetStatus = $event ? FlipToBootSetStatusEnum.On : FlipToBootSetStatusEnum.Off;
+		this.powerService.setFlipToBootSettings(status)
+			.then(res => {
+				if (+res.ErrorCode !== 0) {
+					this.toggleFlipToBootStatus = false;
+				}
+			})
+			.catch(error => {
+				console.log('setFlipToBootSettings.error', error);
 			});
 	}
 }

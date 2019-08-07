@@ -195,11 +195,24 @@
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-powerSettings'">
 				<ul class="list-group list-group-flush">
+					<li *ngIf="showFlipToBootSection$ | async">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
+							[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
+							[isSwitchVisible]=true
+							[isLastChild]=false
+							[isSwitchChecked]='toggleFlipToBootStatus'
+							[leftIcon]="['icomoon','icomoon-LE-Easy-resume2x']"
+							[rightIcon]="powerSettings[1].rightImageSource"
+							[tooltipText]="'device.deviceSettings.power.powerSettings.flipToBoot.tooltip' | translate"
+							[switchId]="'ds-power-flipToBoot'"
+							(toggleOnOff)="onToggleOfFlipToBoot($event)">
+						</vtr-ui-row-switch>
+					</li>
 					<li class=""
 						*ngIf="!isDesktopMachine">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
-							[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]="!showEasyResumeSection"
@@ -257,7 +270,6 @@
 						*ngIf="showEasyResumeSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
-							[name]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]=true
