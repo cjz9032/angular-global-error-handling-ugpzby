@@ -1,26 +1,28 @@
 import { Injectable } from '@angular/core';
-import { AnalyticsService } from './analytics.service';
-import { UserDataGetStateService } from './user-data-get-state.service';
+import { AnalyticsService } from '../analytics.service';
+import { UserDataGetStateService } from '../user-data-get-state.service';
 import { merge } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
-import { PrivacyScoreService } from '../../pages/result/privacy-score/privacy-score.service';
-import { pipe, snake2PascalCase } from '../../utils/helpers';
-import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
-import { FeaturesStatuses } from '../../userDataStatuses';
-import { PrivacyModule } from '../../privacy.module';
+import { PrivacyScoreService } from '../../../pages/result/privacy-score/privacy-score.service';
+import { snake2PascalCase } from '../../../utils/helpers';
+import { TaskActionWithTimeoutService, TasksName } from './task-action-with-timeout.service';
+import { FeaturesStatuses } from '../../../userDataStatuses';
 
 const INSTALLED_TIMEOUT_FOR_TASK = 24 * 60 * 60 * 1000;
 
 @Injectable({
 	providedIn: 'root'
 })
-export class TaskActionService {
+export class TaskObserverService {
 	constructor(
 		private analyticsService: AnalyticsService,
 		private userDataGetStateService: UserDataGetStateService,
 		private privacyScoreService: PrivacyScoreService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 	) {
+	}
+
+	start() {
 		merge(
 			this.taskActionWithTimeoutService.taskTimeWatcher(TasksName.privacyAppInstallationAction, INSTALLED_TIMEOUT_FOR_TASK).pipe(
 				map((value) => {
@@ -35,7 +37,7 @@ export class TaskActionService {
 				withLatestFrom(this.privacyScoreService.newPrivacyScore$),
 				map(([ value, score ]) => {
 					const { privacyLevel } = this.privacyScoreService.getStaticDataAccordingToScore(score);
-					const taskResult = value.TaskResult === 'Timeout' ? 'Timeout' : snake2PascalCase(privacyLevel);
+					const taskResult = value.TaskResult === null ? snake2PascalCase(privacyLevel) : value.TaskResult;
 
 					const isHasError = Object.values(this.userDataGetStateService.getUserDataStatus())
 						.filter((status) => status === FeaturesStatuses.error)

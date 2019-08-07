@@ -7,6 +7,7 @@ import { instanceDestroyed } from '../utils/custom-rxjs-operators/instance-destr
 import { RoutersName } from '../privacy-routing-name';
 import { FigleafOverviewService } from '../common/services/figleaf-overview.service';
 import { UpdateTriggersService } from '../common/services/update-triggers.service';
+import { TaskObserverService } from '../common/services/analytics/task-observer.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
@@ -59,6 +60,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private routerChangeHandler: RouterChangeHandlerService,
 		private figleafOverviewService: FigleafOverviewService,
 		private updateTriggersService: UpdateTriggersService,
+		private taskObserverService: TaskObserverService
 	) {
 	}
 
@@ -68,6 +70,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.taskObserverService.start();
 		this.communicationWithFigleafService.connect();
 		this.routerChangeHandler.onChange$
 			.pipe(
