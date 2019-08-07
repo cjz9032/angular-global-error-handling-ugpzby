@@ -185,6 +185,8 @@ describe('PageAutocloseComponent', () => {
 				]
 			}).compileComponents();
 			fixture = TestBed.createComponent(PageAutocloseComponent);
+			cmsServiceMock.fetchCMSContent.withArgs(queryOptions).and.returnValue(of(cmsCardResponse));
+			cmsServiceMock.getOneCMSContent.and.returnValue(cmsCardResponse.Results);
 			component = fixture.componentInstance;
 			fixture.detectChanges();
 		})
