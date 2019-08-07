@@ -1,6 +1,5 @@
 import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
 import { WidgetNetworkboostComponent } from './../components/widgets/widget-networkboost/widget-networkboost.component';
-import { ModalNetworkboostComponent } from './../components/modal/modal-networkboost/modal-networkboost.component';
 import { GamingCommonModule } from './gaming/gaming.common.module';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
@@ -33,6 +32,8 @@ import { WidgetOfflineModule } from '../components/widgets/widget-offline-info/w
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalTurnOnComponent } from '../components/modal/modal-autoclose/modal-turn-on/modal-turn-on.component';
 import { ModalAddAppsComponent } from '../components/modal/modal-autoclose/modal-add-apps/modal-add-apps.component';
+import { NetworkboostAddAppsComponent } from '../components/modal/modal-network-boost/networkboost-add-apps/networkboost-add-apps.component';
+import { NetworkboostTurnOnComponent } from '../components/modal/modal-network-boost/networkboost-turn-on/networkboost-turn-on.component';
 
 library.add(faCheck);
 
@@ -54,10 +55,11 @@ library.add(faCheck);
 		WidgetMacrokeySettingsComponent,
 		WidgetAutocloseComponent,
 		ModalTurnOnComponent,
-		ModalNetworkboostComponent,
 		PageNetworkboostComponent,
 		WidgetNetworkboostComponent,
-		ModalAddAppsComponent
+		ModalAddAppsComponent,
+		NetworkboostAddAppsComponent,
+		NetworkboostTurnOnComponent
 	],
 	imports: [
 		CommonModule,
@@ -75,7 +77,7 @@ library.add(faCheck);
 	],
 	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
-	entryComponents: [ModalNetworkboostComponent]
+	entryComponents: []
 	
 	
 })
