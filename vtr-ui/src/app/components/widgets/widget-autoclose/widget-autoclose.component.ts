@@ -8,49 +8,47 @@ import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclo
 import { isUndefined } from 'util';
 
 @Component({
-  selector: 'vtr-widget-autoclose',
-  templateUrl: './widget-autoclose.component.html',
-  styleUrls: ['./widget-autoclose.component.scss']
+	selector: 'vtr-widget-autoclose',
+	templateUrl: './widget-autoclose.component.html',
+	styleUrls: [ './widget-autoclose.component.scss' ]
 })
 export class WidgetAutocloseComponent implements OnInit {
-  @Output() actionModal = new EventEmitter<any>();
-  @Input() turnOnACStatus: boolean;
-  public autoCloseAppList: any;
-  gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
-  constructor(private gamingCapabilityService: GamingAllCapabilitiesService, private gamingAutoCloseService: GamingAutoCloseService) { }
+	@Output() actionModal = new EventEmitter<any>();
+	@Input() turnOnACStatus: boolean;
+	public autoCloseAppList: any;
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
 
-  ngOnInit() {
-    this.gamingProperties.optimizationFeature = this.gamingCapabilityService.getCapabilityFromCache(
-      LocalStorageKey.optimizationFeature
-    );
-    this.refreshAutoCloseList();
-  }
+	ngOnInit() {
+		this.refreshAutoCloseList();
+	}
 
-  // Get Gaming AutoClose Lists
+	// Get Gaming AutoClose Lists
 
-  public refreshAutoCloseList() {
-    this.autoCloseAppList = this.gamingAutoCloseService.getAutoCloseListCache();
-    try {
-      this.gamingAutoCloseService.getAppsAutoCloseList().then((appList: any) => {
-        if (!isUndefined(appList.processList)) {
-          this.autoCloseAppList = appList.processList;
-          this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
-        }
-      });
-    } catch (error) {
-      console.error(error.message);
-    }
-  }
+	public refreshAutoCloseList() {
+		this.autoCloseAppList = this.gamingAutoCloseService.getAutoCloseListCache();
+		try {
+			this.gamingAutoCloseService.getAppsAutoCloseList().then((appList: any) => {
+				if (!isUndefined(appList.processList)) {
+					this.autoCloseAppList = appList.processList;
+					this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
+				}
+			});
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
 
-  public openAutoCloseModal() {
-    this.actionModal.emit();
-  }
+	public openAutoCloseModal() {
+		this.actionModal.emit();
+	}
 
-  removeApp(appName: string, index: number) {
-    this.gamingAutoCloseService.delAppsAutoCloseList(appName).then((response: any) => {
-      console.log('Deleted successfully ------------------------>', response);
-      this.autoCloseAppList.splice(index, 1);
-      this.refreshAutoCloseList();
-    });
-  }
+	removeApp(appName: string, index: number) {
+		this.gamingAutoCloseService.delAppsAutoCloseList(appName).then((response: boolean) => {
+			console.log('Deleted successfully ------------------------>', response);
+			if (response) {
+				this.autoCloseAppList.splice(index, 1);
+				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
+			}
+		});
+	}
 }
