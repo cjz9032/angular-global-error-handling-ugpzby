@@ -12,7 +12,7 @@ export class UiHeaderSubpageComponent implements OnInit {
 	@Input() caption: string;
 	@Input() menuTitle: string;
 	@Input() items: any[];
-	@Input() ariaLabel:string;
+	@Input() textId: string;
 	constructor() { }
 
 	ngOnInit() {

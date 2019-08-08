@@ -56,16 +56,16 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		});
 	}
 	ngOnDestroy() {
-		const currentDateTime: any = new Date();
-		const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: 'PageLightingcustomizeComponent',
-			PageContext: 'PageLightingcustomizeComponent',
-			PageDuration: currentDateTime - this.startDateTime,
-			OnlineStatus: ''
-		};
-		this.sendMetricsAsync(pageViewMetrics);
-		console.log('================<>', pageViewMetrics);
+		// const currentDateTime: any = new Date();
+		// const pageViewMetrics = {
+		// 	ItemType: 'PageView',
+		// 	PageName: 'PageLightingcustomizeComponent',
+		// 	PageContext: 'PageLightingcustomizeComponent',
+		// 	PageDuration: currentDateTime - this.startDateTime,
+		// 	OnlineStatus: ''
+		// };
+		// this.sendMetricsAsync(pageViewMetrics);
+		// console.log('================<>', pageViewMetrics);
 	}
 
 	sendMetricsAsync(data: any) {

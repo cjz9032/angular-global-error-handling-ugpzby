@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "錄製的巨集鍵用於"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "關閉"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "設定檔 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "關閉"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -416,7 +427,10 @@
             },
             "support": "支援",
             "homeSecurity": "連線家庭",
-            "privacy": "隱私權"
+            "privacy": "隱私權",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "安全顧問",
@@ -522,10 +536,10 @@
             "cameraPrivacy": "相機",
             "eyeCareMode": "護眼",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage 沒有攝影機和麥克風的存取權。",
+                "accessUrl": "移至 Windows 設定以授與存取權",
+                "microphoneNote": "Lenovo Vantage 沒有麥克風的存取權。",
+                "cameraPrivacyNote": "Lenovo Vantage 沒有攝影機的存取權。"
             }
         },
         "systemStatus": {
@@ -680,16 +694,16 @@
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
                     "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
                     "NotGood": "<b>電池狀況不佳。</b>",
-                    "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
-                    "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
+                    "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
+                    "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
                     "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
                     "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
                     "PermanentError": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
+                    "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。"
                 },
                 "updating": "正在更新",
                 "voltageError": "電池電壓不正確",
@@ -803,8 +817,8 @@
                         "readMoreText": "較多內容。",
                         "noteInfo": " 電池充電臨界值仍未完全作用。請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
                         "settings": {
-                            "title1": "內建電池的臨界值",
-                            "title2": "抽取式電池的臨界值"
+                            "title1": "主要電池的臨界值",
+                            "title2": "次要電池的臨界值"
                         },
                         "popup": {
                             "title": "啟用電池的充電臨界值",
@@ -2200,7 +2214,6 @@
         "personal": "個人使用",
         "business": "業務使用",
         "custom": "自訂",
-        "experience": "體驗",
         "privacytitle": "透過允許匿名收集使用方式統計資料，協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",

@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Makrotaste aufzeichnen für"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Aus"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Aus"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -416,7 +427,10 @@
             },
             "support": "Unterstützung",
             "homeSecurity": "Vernetztes Zuhause",
-            "privacy": "Vertraulichkeit"
+            "privacy": "Vertraulichkeit",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Sicherheitsratgeber",
@@ -522,10 +536,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Augen schonen",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage hat keinen Zugriff auf die Kamera und das Mikrofon.",
+                "accessUrl": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren",
+                "microphoneNote": "Lenovo Vantage hat keinen Zugriff auf das Mikrofon.",
+                "cameraPrivacyNote": "Lenovo Vantage hat keinen Zugriff auf die Kamera."
             }
         },
         "systemStatus": {
@@ -680,16 +694,16 @@
                     "Bad": "<b>Ein Akkufehler ist aufgetreten.</b> Der Akku kann nicht aufgeladen/entladen werden. Tauschen Sie den Akku aus.",
                     "NotDetected": "<b>Kein Akku erkannt</b> oder nicht ordnungsgemäß eingesetzter Akku.",
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
-                    "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
-                    "LimitedACAdapterSupport": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an.",
+                    "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
+                    "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
                     "MissingDriver": "Der <b>Lenovo Power Manager-Treiber</b> ist nicht installiert oder funktioniert nicht ordnungsgemäß. Führen Sie Windows Update aus, um den aktuellen Treiber zu installieren.",
                     "StoreLimitation": "Der Akku kann <b>nur {{value}}% der ursprünglichen vollen Ladekapazität</b> speichern.",
                     "HighTemperature": "Das <b>Entladen</b> wurde gestoppt, da die <b>Temperatur des Akkus zu hoch</b> ist.",
                     "TrickleCharge": "Der Akku wurde <b>komplett entladen</b> und muss aufgeladen werden. Das kann zehn Stunden oder länger dauern.",
                     "OverheatedBattery": "Der Akku ist <b>zu heiß</b>. Entnehmen Sie ihn aus dem Computer, und lassen Sie ihn auf Raumtemperatur abkühlen.",
                     "PermanentError": "Am Akku ist <b>aufgrund von normalem Gebrauch ein Fehler aufgetreten</b>. Der Akku kann nicht aufgeladen werden. Tauschen Sie den Akku aus.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
+                    "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an."
                 },
                 "updating": "Aktualisierung",
                 "voltageError": "Akkuspannung falsch",
@@ -803,8 +817,8 @@
                         "readMoreText": "Weiterlesen.",
                         "noteInfo": " Der Schwellenwert für die Akkuladung ist noch nicht komplett aktiv. Bitte trennen Sie Ihr Gerät von der Stromversorgung und warten Sie, bis der Akku ganz oder bis zum Ladestopp-Schwellenwert entladen ist.",
                         "settings": {
-                            "title1": "Schwellenwert für eingebauten Akku",
-                            "title2": "Schwellenwert für wechselbaren Akku"
+                            "title1": "Schwellenwert für primären Akku",
+                            "title2": "Schwellenwert für sekundären Akku"
                         },
                         "popup": {
                             "title": "Schwellenwert für Akkuladung aktivieren",
@@ -1192,7 +1206,7 @@
                     "description1": "Diese Funktion basiert auf Windows Hello. Stellen Sie sicher, dass die Gesichtserkennung in den Windows-Einstellungen eingeschaltet ist.",
                     "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen. Die Funktion sammelt jedoch KEINE personenbezogenen Daten.",
                     "description3": "1. Wenn Ihr Computer im Zelt‑, Tablet‑ oder Standmodus ist, funktionieren diese Funktionen möglicherweise nicht ordnungsgemäß.",
-                    "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die automatische Anmeldung per IR-Kamera funktioniert nicht.",
+                    "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die Zero-Touch-Anmeldung funktioniert nicht.",
                     "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann."
                 },
                 "WindowsLink": {
@@ -2200,7 +2214,6 @@
         "personal": "Private Verwendung",
         "business": "Geschäftliche Nutzung",
         "custom": "Benutzerdefinierte Erfahrung",
-        "experience": "Erfahrung",
         "privacytitle": "Indem Sie der anonymen Erfassung von Nutzungsstatistiken zustimmen, helfen Sie uns dabei, diese App zu verbessern.",
         "moreInterest": "+ mehr Interessen",
         "title1": "Willkommen bei",

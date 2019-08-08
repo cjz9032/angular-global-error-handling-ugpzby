@@ -10,7 +10,8 @@
 				[maxValueLegend]="'device.deviceSettings.displayCamera.display.dispColorTemp.options.cold' | translate"
 				(change)="onDisplayColorTemparatureChange($event)"
 				[(value)]="displayColorTempSettings.current"
-				(valueChangeEnd)="dragChangeValue($event)">
+				(valueChangeEnd)="dragChangeValue($event)"
+				[rangeSliderId]="'day-time-color-temp'">
 			</vtr-ui-range-slider>
 		</div>
 		<div class="reset-temperature">
@@ -20,7 +21,8 @@
 					metricsParent="eye-care-mode"
 					metricsItem="btn.eye-care-mode.ResetTemparature"
 					[isFullWidth]="false"
-					[label]="'device.deviceSettings.displayCamera.display.dispColorTemp.reset' | translate">
+					[label]="'device.deviceSettings.displayCamera.display.dispColorTemp.reset' | translate"
+					[linkId]="'day-time-color-temp-reset-btn'">
 				</vtr-ui-button>
 
 			</div>

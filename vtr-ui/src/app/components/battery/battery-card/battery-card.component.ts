@@ -139,7 +139,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryGauge = response.batteryIndicatorInfo;
 				this.updateBatteryDetails();
 
-				let showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
+				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
 				if (showBatteryDetail && !this.isModalShown) {
 					this.showDetailModal(this.batteryModal);
 					this.isModalShown = true;
@@ -246,6 +246,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * sets a battery condition tip & icon from battery health & battery condition
 	 */
 	public getBatteryCondition() {
+		let healthCondition: number;
 		const batteryConditions = [];
 		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
 
@@ -264,17 +265,18 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 
+			healthCondition = this.batteryHealth;
+			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
+
 			if (isThinkpad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
-				this.batteryHealth = BatteryConditionsEnum.StoreLimitation;
+				healthCondition = BatteryConditionsEnum.StoreLimitation;
 				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 				this.param2 = { value: parseFloat(percentLimit.toFixed(1)) };
 			}
-			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
-
 			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {
 					case 'normal':
-						batteryConditions.push(new BatteryConditionModel(this.batteryHealth,
+						batteryConditions.push(new BatteryConditionModel(healthCondition,
 							this.batteryQuality[this.batteryConditionStatus]));
 						break;
 					case 'hightemperature':

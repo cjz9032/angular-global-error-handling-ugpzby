@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "录制宏键，用于"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "关闭"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "概要文件 1"
@@ -355,7 +351,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "关闭"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -416,7 +427,10 @@
             },
             "support": "支持服务",
             "homeSecurity": "互联家庭网络",
-            "privacy": "隐私"
+            "privacy": "隐私",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "安全顾问",
@@ -522,10 +536,10 @@
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage 无法访问摄像头和麦克风。",
+                "accessUrl": "转到 Windows 设置以授予访问权限",
+                "microphoneNote": "Lenovo Vantage 无法访问麦克风。",
+                "cameraPrivacyNote": "Lenovo Vantage 无法访问摄像头。"
             }
         },
         "systemStatus": {
@@ -683,16 +697,16 @@
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
                     "NotDetected": "<b>未检测到电池或未</b>插入电池。",
                     "NotGood": "<b>电池状况不佳。</b>",
-                    "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
-                    "LimitedACAdapterSupport": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
+                    "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
+                    "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
                     "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新以安装最新的驱动程序。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
                     "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
                     "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
+                    "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
                 "seeDetailsLink": "See Details"
@@ -803,8 +817,8 @@
                         "noteInfo": "电池充电阈值仍未完全激活。拔下电源线，让电池电量耗尽或低于停止充电阈值。",
                         "readMoreText": "阅读更多。",
                         "settings": {
-                            "title1": "内置电池阈值",
-                            "title2": "可拆卸电池阈值"
+                            "title1": "主电池阈值",
+                            "title2": "备用电池阈值"
                         },
                         "popup": {
                             "title": "启用电池充电阈值",
@@ -1747,7 +1761,7 @@
             "helpKeep": "SurfEasy VPN 可帮助您的联机活动保持安全和隐秘。",
             "getSufEasy": "获取 SurfEasy",
             "openSufEasy": "打开 SurfEasy",
-            "whySufEasy": "为何要使用虚拟专用网络（VPN）？",
+            "whySufEasy": "为何要使用虚拟专用网络 (VPN)？",
             "whySufEasyDescription": "使用咖啡店或机场等地的 Wi-Fi 热点会让您的敏感信息暴露给网络犯罪分子。SurfEasy VPN 是一种无记录 VPN，用于加密个人信息，并且不会跟踪或存储联机活动或位置。",
             "startUseSufEasy": "立即开始使用 SurfEasy",
             "startUseSufEasy1": "通过银行级加密帮助确保您收发的数据的安全和隐秘。",
@@ -2200,7 +2214,6 @@
         "personal": "个人使用",
         "business": "商业用途",
         "custom": "自定义",
-        "experience": "体验",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
         "title1": "欢迎来到",

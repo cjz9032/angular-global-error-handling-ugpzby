@@ -2,8 +2,8 @@
 	<div class="modal-body vtr-ui-gaming-driver-popup">
 		<div class="row justify-content-end">
 			<div class="btn-close">
-				<button type="button" class="close" aria-hidden="true" (click)="close()" vtrMetrics [metricsItem]="'close' | translate"
-					metricsEvent="featureClick">
+				<button type="button" class="close" aria-hidden="true" (click)="close()" vtrMetrics [metricsItem]="'driverPopup_close'"
+					metricsEvent="featureClick" id="gaming_driverPopup_close" attr.aria-label="gaming_driverPopup_close">
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 				</button>
 			</div>
@@ -16,13 +16,13 @@
 		<hr>
 		<div class="row">
 			<button class="btn enable-button" vtrMetrics
-				[metricsItem]="'gaming.dashboard.device.legionEdge.driverPopup.button' | translate"
+				[metricsItem]="'driverPopup_install'"
 				metricsEvent="featureClick"
-				(click)="systemUpdatePage()">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</button>
+				(click)="systemUpdatePage()" id="gaming_driverPopup_install" attr.aria-label="gaming_driverPopup_install">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</button>
 			<a (click)="close()" vtrMetrics
-				[metricsItem]="'gaming.dashboard.device.legionEdge.driverPopup.link' | translate"
+				[metricsItem]="'driverPopup_cancel'"
 				metricsEvent="featureClick"
-				class="cancel-link active">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
+				class="cancel-link active" id="gaming_driverPopup_cancel" attr.aria-label="gaming_driverPopup_cancel">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
 		</div>
 	</div>
 </ui-gaming-driver-popup>

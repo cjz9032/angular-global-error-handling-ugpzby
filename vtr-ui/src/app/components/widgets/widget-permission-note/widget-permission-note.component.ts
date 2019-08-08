@@ -11,7 +11,7 @@ export class WidgetPermissionNoteComponent implements OnInit {
 	@Input() noteTitle: string;
 	@Input() description: string;
 	@Input() path: string;
-
+	@Input() linkId: string;
 	constructor(public deviceService: DeviceService) { }
 
 	ngOnInit() {

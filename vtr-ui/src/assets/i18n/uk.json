@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Запис клавіші макросів для"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Вимк."
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Профіль 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Вимк."
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -416,7 +427,10 @@
             },
             "support": "підтримка",
             "homeSecurity": "Підключений дім",
-            "privacy": "Конфіденційність"
+            "privacy": "Конфіденційність",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Порадник з безпеки",
@@ -522,10 +536,10 @@
             "cameraPrivacy": "Камера",
             "eyeCareMode": "Захист зору",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage не надано доступ до камери та мікрофона.",
+                "accessUrl": "Перейдіть до настройок Windows, щоб надати доступ",
+                "microphoneNote": "Lenovo Vantage не надано доступ до мікрофона.",
+                "cameraPrivacyNote": "Lenovo Vantage не надано доступ до камери."
             }
         },
         "systemStatus": {
@@ -680,16 +694,16 @@
                     "Bad": "<b>Сталася помилка акумулятора.</b> Не вдається зарядити або розрядити акумулятор. Замініть акумулятор.",
                     "NotDetected": "<b>Акумулятор не виявлено</b> або не підключено.",
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
-                    "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
-                    "LimitedACAdapterSupport": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
+                    "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
+                    "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
                     "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер.",
                     "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
                     "OverheatedBattery": "Акумулятор <b>сильно нагрівся</b>. Вийміть його з комп’ютера та охолодіть до кімнатної температури.",
                     "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
+                    "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму."
                 },
                 "updating": "Оновлення",
                 "voltageError": "Неправильна напруга акумулятора",
@@ -803,8 +817,8 @@
                         "readMoreText": "Розгорніть.",
                         "noteInfo": " Граничне значення заряду акумулятора ще не активовано повністю. Відключіть комп'ютер від електромережі та дайте акумулятору розрядитися до граничного значення або сильніше.",
                         "settings": {
-                            "title1": "Граничне значення для вбудованого акумулятора",
-                            "title2": "Граничне значення для знімного акумулятора"
+                            "title1": "Граничне значення для основного акумулятора",
+                            "title2": "Граничне значення для додаткового акумулятора"
                         },
                         "popup": {
                             "title": "Увімкнути граничне значення заряду акумулятора",
@@ -1192,7 +1206,7 @@
                     "description1": "Ця функція працює за допомогою Windows Hello. Переконайтеся, що ввімкнули розпізнавання облич у настройках Windows.",
                     "description2": "Ця функція виявляє вашу присутність за допомогою датчиків і камери. Однак ця функція НЕ збирає жодних персональних даних.",
                     "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
-                    "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід за допомогою ІЧ-камери не працюватиме.",
+                    "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу."
                 },
                 "WindowsLink": {
@@ -2200,7 +2214,6 @@
         "personal": "Для особистих потреб",
         "business": "Для роботи",
         "custom": "Користувацький досвід",
-        "experience": "Досвід",
         "privacytitle": "Допоможіть удосконалити цю програму — дозвольте нам збирати анонімну статистику використання.",
         "moreInterest": "+ більше вподобань",
         "title1": "Вітаємо в",

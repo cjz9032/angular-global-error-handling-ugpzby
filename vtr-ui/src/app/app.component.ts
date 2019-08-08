@@ -56,7 +56,13 @@ export class AppComponent implements OnInit {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
-
+		if (vantageShellService.isShellAvailable && !this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+			this.commonService.isBetaUser().then((result) => {
+				if (result === 0 || result === 3) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+				}
+			});
+		}
 		this.metricsClient = this.vantageShellService.getMetrics();
 		//#region VAN-2779 this is moved in MVP 2
 		this.deviceService
@@ -249,7 +255,7 @@ export class AppComponent implements OnInit {
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
 
-			this.isMachineInfoLoaded = this.isTranslationLoaded();
+			// this.isMachineInfoLoaded = this.isTranslationLoaded();
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
@@ -339,7 +345,7 @@ export class AppComponent implements OnInit {
 					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
 					let langCode = serverSwitchLocalData.language.Value.toLowerCase();
-					const langMap = {
+					/* const langMap = {
 						'zh-hant': 'zh-Hant',
 						'zh-hans': 'zh-Hans',
 						'pt-br': 'pt-BR'
@@ -347,11 +353,18 @@ export class AppComponent implements OnInit {
 					if (langMap[langCode]) {
 						langCode = langMap[langCode];
 					}
-
+ */
 					const allLangs = this.translate.getLangs();
-					if (allLangs.indexOf(langCode) >= 0) {
+					const currentLang = this.translate.currentLang ? this.translate.currentLang.toLowerCase() : this.translate.defaultLang.toLowerCase();
+
+					// change language only when countrycode or language code changes
+					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
 						// this.translate.resetLang('ar');
-						this.translate.reloadLang(langCode);
+						// this.languageService.useLanguage(langCode);
+						if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
+							this.translate.reloadLang(langCode);
+						}
+
 						this.translate.use(langCode).subscribe(
 							(data) => console.log('@sahinul trans use NEXT'),
 							(error) => console.log('@sahinul server switch error ', error),
@@ -434,14 +447,14 @@ export class AppComponent implements OnInit {
 	/**
 	 * check in route param is Home Component passed isMachineInfoLoaded value or not.
 	 */
-	private isTranslationLoaded(): boolean {
-		if (this.activatedRoute) {
-			const isMachineInfoLoaded = this.activatedRoute.snapshot.paramMap.get('isMachineInfoLoaded');
-			if (isMachineInfoLoaded && isMachineInfoLoaded.toLowerCase() === 'true') {
-				return true;
-			}
-			return false;
-		}
-	}
+	// private isTranslationLoaded(): boolean {
+	// 	if (this.activatedRoute) {
+	// 		const isMachineInfoLoaded = this.activatedRoute.snapshot.paramMap.get('isMachineInfoLoaded');
+	// 		if (isMachineInfoLoaded && isMachineInfoLoaded.toLowerCase() === 'true') {
+	// 			return true;
+	// 		}
+	// 		return false;
+	// 	}
+	// }
 
 }

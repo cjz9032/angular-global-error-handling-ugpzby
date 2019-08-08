@@ -17,6 +17,7 @@
 			<p class="subscribe">{{ 'security.wifisecurity.threatlocator.tryAgain' | translate}}</p>
 		</div>
 		<iframe *ngIf="online" [src]="threatLocatorUrl | sanitize : 'resourceUrl'"
+			attr.sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
 			class="w-100 h-100 border"
 			scrolling="no"
 			frameborder="0"></iframe>

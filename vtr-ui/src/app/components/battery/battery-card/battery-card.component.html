@@ -13,7 +13,9 @@
 	<ng-template #batteryDetail
 		let-modal>
 		<div class="modal-header">
-			<h4 class="modal-title battery-detail-modal-title pl-5">
+			<h4 class="modal-title battery-detail-modal-title pl-5"
+				id="myDevice-settings-battery-deatails-heading"
+				attr.aria-label="myDevice-settings-battery-deatails-heading">
 				{{'device.deviceSettings.batteryGauge.details.title' | translate }}
 			</h4>
 			<button type="button"
@@ -32,10 +34,14 @@
 		</div>
 	</ng-template>
 	<div class="container p-5 battery-panel-background">
-		<div class="battery-gauge-label text-uppercase">
+		<div class="battery-gauge-label text-uppercase"
+			id="myDevice-settings-batteryGauge-title"
+			attr.aria-label="myDevice-settings-batteryGauge-title">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
-		<div class="battery-health">
+		<div class="battery-health"
+				id="myDevice-settings-batteryGauge-subtitle"
+				attr.aria-label="myDevice-settings-batteryGauge-subtitle">
 			{{'device.deviceSettings.batteryGauge.subtitle' | translate}}
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
@@ -52,18 +58,17 @@
 
 		<div class="p-3 row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
-			<div class="p-0 pr-3 col-auto battery-conditions">
+			<div class="p-0 pr-2 col-auto battery-conditions">
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
 					[src]=" '/assets/icons/battery-conditions/good.svg'" />
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
 					[src]=" '/assets/icons/battery-conditions/fair.svg'" />
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor && batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					[src]=" '/assets/icons/battery-conditions/poor.svg'" />
-
 				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.AcError"
 					[src]=" '/assets/icons/battery-conditions/ac_error.svg'" />
 			</div>
-			<div class='col pt-2'>
+			<div class='col'>
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate:param2"></span>
@@ -73,7 +78,7 @@
 					[innerHTML]="batteryConditionNote | translate"></span>
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError&&shortAcErrNote"
 					class="link-label"
-					(click)="showDetailTip(i)"><br>{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
+					(click)="showDetailTip(i)">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
 			</div>
 
 		</div>
@@ -94,7 +99,9 @@
 				metricsEvent="itemClick"
 				class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
 				(click)="showDetailModal(batteryDetail)"
-				[disabled]="isBatteryDetailsBtnDisabled">
+				[disabled]="isBatteryDetailsBtnDisabled"
+				id="myDevice-settings-battery-details-btn"
+				attr.aria-label="myDevice-settings-battery-details-btn">
 				{{'device.deviceSettings.batteryGauge.button' | translate }}
 			</button>
 		</div>

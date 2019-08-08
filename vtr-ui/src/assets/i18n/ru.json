@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Запись клавиши макроса для"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Выкл."
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Профиль 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Выкл."
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,21 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+            }
         }
     },
     "common": {
@@ -416,7 +427,10 @@
             },
             "support": "Поддержка",
             "homeSecurity": "Домашняя сеть",
-            "privacy": "Конфиденциальность"
+            "privacy": "Конфиденциальность",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Помощник по безопасности",
@@ -522,10 +536,10 @@
             "cameraPrivacy": "Фотокамера",
             "eyeCareMode": "Защита глаз",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "У Lenovo Vantage нет доступа к камере и микрофону.",
+                "accessUrl": "Перейдите в раздел параметров Windows, чтобы предоставить доступ",
+                "microphoneNote": "У Lenovo Vantage нет доступа к микрофону.",
+                "cameraPrivacyNote": "У Lenovo Vantage нет доступа к камере."
             }
         },
         "systemStatus": {
@@ -680,16 +694,16 @@
                     "Bad": "<b>Произошла ошибка аккумулятора.</b> Не удается зарядить/разрядить аккумулятор. Замените аккумулятор.",
                     "NotDetected": "<b>Аккумулятор не найден</b> или не подключен.",
                     "NotGood": "<b>Аккумулятор не в хорошем состоянии.</b>",
-                    "NotSupportACAdapter": "<b>Адаптер электропитания не поддерживается.</b> Ваш компьютер Lenovo не поддерживает этот адаптер электропитания. Он может вызвать внезапное отключение. Подключите правильный адаптер электропитания.",
-                    "LimitedACAdapterSupport": "<b>Адаптер электропитания не может обеспечить достаточное питание</b> вашему компьютеру Lenovo, что отразится на производительности системы и скорости зарядки. Подключите правильный адаптер электропитания.",
+                    "NotSupportACAdapter": "<b>Адаптер электропитания не поддерживается.</b>",
+                    "LimitedACAdapterSupport": "<b>Адаптер электропитания не может обеспечить достаточное питание.</b>",
                     "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не установлен или работает неправильно. Запустите Центр обновления Windows, чтобы установить последнюю версию драйвера.",
                     "StoreLimitation": "<b>Аккумулятор может хранить только {{value}}% от</b> своей исходной емкости полного заряда.",
                     "HighTemperature": "<b>Разрядка</b> остановлена из-за <b>слишком высокой температуры аккумулятора.</b>",
                     "TrickleCharge": "Аккумулятор <b>полностью разряжен,</b> требуется повторная зарядка. Для этого может потребоваться более десяти часов.",
                     "OverheatedBattery": "Аккумулятор <b>слишком горячий</b>. Извлеките его из компьютера и охладите до комнатной температуры.",
                     "PermanentError": "Неисправность аккумулятора, <b>вызванная большим сроком службы.</b> Не удается зарядить аккумулятор. Замените аккумулятор.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Адаптер электропитания не поддерживается.</b> Ваш компьютер Lenovo не поддерживает этот адаптер электропитания. Он может вызвать внезапное отключение. Подключите правильный адаптер электропитания.",
+                    "LimitedACAdapterSupportDetail": "<b>Адаптер электропитания не может обеспечить достаточное питание</b> вашему компьютеру Lenovo, что отразится на производительности системы и скорости зарядки. Подключите правильный адаптер электропитания."
                 },
                 "updating": "Обновление",
                 "voltageError": "Неправильное напряжение аккумулятора",
@@ -803,8 +817,8 @@
                         "readMoreText": "Подробнее.",
                         "noteInfo": " Пороговый уровень заряда аккумулятора по-прежнему не является полностью активным. Отключите компьютер от сети переменного тока и дайте аккумулятору разрядиться до порогового уровня прекращения зарядки или ниже его.",
                         "settings": {
-                            "title1": "Порог для встроенного аккумулятора",
-                            "title2": "Порог для съемного аккумулятора"
+                            "title1": "Порог для основного аккумулятора",
+                            "title2": "Порог для дополнительного аккумулятора"
                         },
                         "popup": {
                             "title": "Включить порог заряда аккумулятора",
@@ -1192,7 +1206,7 @@
                     "description1": "Эта функция основана на технологии Windows Hello. Убедитесь, что функция распознавания лица включена в параметрах Windows.",
                     "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры. Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор каких-либо личных данных.",
                     "description3": "1. Если компьютер находится в режиме тента, планшета или консоли, эти функции могут работать неправильно.",
-                    "description4": "2. Если компьютер находится в режиме гибернации или выключен. Функция автоматического входа с помощью ИК-камеры не будет работать.",
+                    "description4": "2. Если компьютер находится в режиме гибернации или выключен. Функция бесконтактного входа не будет работать.",
                     "description5": "3. Подберите угол наклона экрана вашего компьютера таким образом, чтобы ИК-камера могла распознавать ваше лицо для автоматического входа в систему."
                 },
                 "WindowsLink": {
@@ -2200,7 +2214,6 @@
         "personal": "Личное пользование",
         "business": "Использование для работы или бизнеса",
         "custom": "Особое использование",
-        "experience": "Опыт",
         "privacytitle": "Помогите нам повысить качество этого приложения, разрешив анонимный сбор статистики использования.",
         "moreInterest": "+ другие интересы",
         "title1": "Добро пожаловать в",
