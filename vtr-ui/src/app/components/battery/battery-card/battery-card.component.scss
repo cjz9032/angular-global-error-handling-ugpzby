@@ -89,6 +89,9 @@
 			vertical-align: middle;
 			letter-spacing: 0;
 		}
+		.battery-conditions-icon {
+			font-size: 2rem;
+		}
 		.good {
 			color: #{$go_light};
 		}
@@ -97,9 +100,6 @@
 		}
 		.fair {
 			color: #{$orange};
-		}
-		.fair-inner-icon {
-			color: #{$light};
 		}
 		.loader {
 			position: absolute;

@@ -254,20 +254,26 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * sets a battery condition tip & icon from battery health & battery condition
 	 */
 	public getBatteryCondition() {
+		// const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		let healthCondition: number;
 		const batteryConditions = [];
-		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
+		const isThinkPad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
 
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
 		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
-			if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-				batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
-			}
 
-			if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-				batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
+			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
+			// if (machineType === 1 && machineType === 3) {
+			if (isThinkPad) {
+				if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
+				}
+
+				if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
+				}
 			}
 		}
 
@@ -276,7 +282,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			healthCondition = this.batteryHealth;
 			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
 
-			if (isThinkpad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
+			if (isThinkPad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
 				healthCondition = BatteryConditionsEnum.StoreLimitation;
 				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 				this.param2 = { value: parseFloat(percentLimit.toFixed(1)) };
