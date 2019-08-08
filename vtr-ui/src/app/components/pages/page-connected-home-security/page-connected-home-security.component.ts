@@ -84,7 +84,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.welcomeModel = new HomeSecurityWelcome();
 		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice();
 		this.allDevicesInfo = new HomeSecurityAllDevice();
-		this.notificationItems = new HomeSecurityNotifications();
+		this.notificationItems = new HomeSecurityNotifications(this.translateService);
 		this.account = new HomeSecurityAccount();
 	}
 
@@ -155,7 +155,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 
 		if (this.chs.notifications) {
-			this.notificationItems = new HomeSecurityNotifications(this.chs.notifications);
+			this.notificationItems = new HomeSecurityNotifications(this.translateService, this.chs.notifications);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
 		}
 
@@ -183,7 +183,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 			}
 			if (chs.notifications) {
-				this.notificationItems = new HomeSecurityNotifications(chs.notifications);
+				this.notificationItems = new HomeSecurityNotifications(this.translateService, chs.notifications);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
 			}
 		});

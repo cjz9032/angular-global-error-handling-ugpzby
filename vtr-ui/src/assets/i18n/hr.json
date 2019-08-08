@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Netočan napon baterije",
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Prikaži pojedinosti"
             },
             "power": {
                 "title": "Napajanje",
@@ -990,7 +994,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Ponovno postavite temperaturu",
+                        "reset": "Ponovno postavljanje",
                         "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
                         "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Ponovno postavite temperaturu",
+                        "reset": "Ponovno postavljanje",
                         "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
                         "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kliknite ovdje kako biste vratili svojstva Kamere na zadane postavke.",
-                        "reset": "Vrati na tvorničke postavke"
+                        "reset": "Ponovno postavljanje"
                     },
                     "brightness": "Svjetlina",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Idite na postavke sustava Windows Hello",
                     "screenTimeoutSettings": "Idi na postavke isteka vremena za zaslon"
                 },
-                "resetToDefault": "VRAĆANJE NA ZADANE POSTAVKE"
+                "resetToDefault": "Ponovno postavljanje"
             },
             "intelligentScreen": {
                 "title": "Inteligentni zaslon",

@@ -45,7 +45,7 @@
                       <img [src]="item.iconName | sanitize : 'resourceUrl'">
 
                     </div>
-                    <div class="text-break">{{item.processDescription}}{{item.isChedked}}</div>
+                    <div class="text-break">{{item.processDescription}}</div>
                     <div class="btn-add-app mx-auto">
                       <input type="checkbox" value="{{item.processPath}}" [(ngModel)]="item.isChedked"
                       [disabled]="addedApps>=5 && !item.isChedked" (change)="onValueChange($event)">

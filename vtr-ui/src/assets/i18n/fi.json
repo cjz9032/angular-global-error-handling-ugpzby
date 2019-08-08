@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Akun jännite on virheellinen",
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Lisätietoja on seuraavissa"
             },
             "power": {
                 "title": "Virta",
@@ -990,7 +994,7 @@
                             "warm": "Lämmin (parempi silmille)",
                             "cold": "Kylmä"
                         },
-                        "reset": "Lämpötilan uudelleenasetus",
+                        "reset": "Uudelleenasetus",
                         "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
                         "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Lämmin (parempi silmille)",
                             "cold": "Kylmä"
                         },
-                        "reset": "Lämpötilan uudelleenasetus",
+                        "reset": "Uudelleenasetus",
                         "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
                         "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Napsauta tätä, jos haluat palauttaa kameran ominaisuuksien oletusasetukset.",
-                        "reset": "Palauta tehdasasetukset"
+                        "reset": "Uudelleenasetus"
                     },
                     "brightness": "Kirkkaus",
                     "contrast": "Kontrasti",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
                     "screenTimeoutSettings": "Siirry näytön aikakatkaisun asetuksiin"
                 },
-                "resetToDefault": "PALAUTA TEHDASASETUKSET"
+                "resetToDefault": "Uudelleenasetus"
             },
             "intelligentScreen": {
                 "title": "Älykäs näyttö",
