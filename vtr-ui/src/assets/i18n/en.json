@@ -1446,7 +1446,12 @@
 		"title": "Connected Home Security",
 		"notification": {
 			"recent": "Recent security notifications",
-			"notifications": "Notifications"
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
 		},
 		"ecosystem": {
 			"ecosystemBlockTitle": "Protect your device ecosystem",
