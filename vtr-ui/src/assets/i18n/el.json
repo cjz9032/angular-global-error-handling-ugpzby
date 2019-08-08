@@ -536,10 +536,10 @@
             "cameraPrivacy": "Κάμερα",
             "eyeCareMode": "Φροντίδα ματιών",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα και στο μικρόφωνο.",
+                "accessUrl": "Μεταβείτε στις ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση",
+                "microphoneNote": "Το Lenovo Vantage δεν έχει πρόσβαση στο μικρόφωνο.",
+                "cameraPrivacyNote": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα."
             }
         },
         "systemStatus": {
@@ -1206,7 +1206,7 @@
                     "description1": "Αυτή η δυνατότητα βασίζεται στο Windows Hello. Βεβαιωθείτε ότι η αναγνώριση προσώπου είναι ενεργοποιημένη στις ρυθμίσεις των Windows.",
                     "description2": "Η δυνατότητα χρησιμοποιεί αισθητήρες και κάμερα για να ανιχνεύει την παρουσία σας. Ωστόσο, ΔΕΝ συλλέγει, αποθηκεύει ή διαρρέει προσωπικά δεδομένα ή εικόνες.",
                     "description3": "1. Εάν ο υπολογιστής σας είναι σε λειτουργία σκηνής, tablet ή ανάκλισης, οι δυνατότητες αυτές ενδέχεται να μη λειτουργούν σωστά.",
-                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η αυτόματη είσοδος με κάμερα IR δεν θα λειτουργήσει.",
+                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η σύνδεση χωρίς αφή δεν θα λειτουργήσει.",
                     "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο."
                 },
                 "WindowsLink": {
@@ -2214,7 +2214,6 @@
         "personal": "Προσωπική χρήση",
         "business": "Επαγγελματική χρήση",
         "custom": "Προσαρμοσμένη εμπειρία",
-        "experience": "Εμπειρία",
         "privacytitle": "Βοηθήστε μας να βελτιώσουμε την ποιότητα της εφαρμογής, επιτρέποντας την ανώνυμη στατιστικών στοιχείων χρήσης.",
         "moreInterest": "+ περισσότερα ενδιαφέροντα",
         "title1": "Καλώς ορίσατε στο",

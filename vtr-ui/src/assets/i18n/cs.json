@@ -536,10 +536,10 @@
             "cameraPrivacy": "Fotoaparát",
             "eyeCareMode": "Péče o oči",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage nemá přístup ke kameře ani k mikrofonu.",
+                "accessUrl": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows",
+                "microphoneNote": "Lenovo Vantage nemá přístup k mikrofonu.",
+                "cameraPrivacyNote": "Lenovo Vantage nemá přístup ke kameře."
             }
         },
         "systemStatus": {
@@ -1206,7 +1206,7 @@
                     "description1": "Tato funkce závisí na Windows Hello. Ujistěte se, že je v nastavení systému Windows zapnuto rozpoznávání obličeje.",
                     "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát. Tato funkce však neshromažďuje žádné osobní údaje.",
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
-                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Automatické přihlášení pomocí infračervené kamery nebude funkční.",
+                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení."
                 },
                 "WindowsLink": {
@@ -2214,7 +2214,6 @@
         "personal": "Osobní použití",
         "business": "Obchodní použití",
         "custom": "Vlastní zkušenost",
-        "experience": "Zkusenosti",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
         "moreInterest": "+ další zájmy",
         "title1": "Vítá vás",

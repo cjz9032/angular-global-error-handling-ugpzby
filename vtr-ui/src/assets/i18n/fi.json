@@ -1206,7 +1206,7 @@
                     "description1": "Tämä ominaisuus hyödyntää Windows Hellota. Varmista, että kasvojentunnistus on otettu käyttöön Windowsin asetuksista.",
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
-                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Automaattinen infrapunakameran sisäänkirjaus ei toimi.",
+                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten."
                 },
                 "WindowsLink": {
@@ -2214,7 +2214,6 @@
         "personal": "Henkilökohtainen käyttö",
         "business": "Yrityskäyttö",
         "custom": "Mukautettu käyttökokemus",
-        "experience": "Kokea",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
         "title1": "Tervetuloa",
