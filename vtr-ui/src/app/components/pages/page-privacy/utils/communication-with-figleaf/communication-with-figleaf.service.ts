@@ -75,7 +75,7 @@ export class CommunicationWithFigleafService {
 			const isFigleafNotOnboarded = figleafStatus.status === 1;
 			this.isFigleafNotOnboarded.next(isFigleafNotOnboarded);
 
-			if (isFigleafReady) {
+			if (isFigleafNotOnboarded) {
 				this.taskActionWithTimeoutService.finishedAction(TasksName.privacyAppInstallationAction);
 			}
 		}, (error) => {
