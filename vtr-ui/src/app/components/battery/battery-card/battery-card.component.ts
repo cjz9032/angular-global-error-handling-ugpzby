@@ -301,7 +301,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Poor));
 						break;
 					case 'hardwareauthenticationerror':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryQuality.Fair));
+						break;
+					case 'nonthinkpadbattery':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryQuality.Fair));
+						break;
+					case 'unsupportedbattery':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryQuality.Fair));
 						break;
 				}
 			});
@@ -311,22 +317,33 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		console.log('Battery Conditions ====>', this.batteryConditions);
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, indicator: this.batteryIndicator, conditions: this.batteryConditions });
 
-		console.log('Battery conditions length', this.batteryConditions.length);
-		this.batteryConditionNotes = [];
-		this.batteryConditions.forEach((batteryCondition) => {
-			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
-
-			if (batteryCondition.conditionStatus === this.batteryQuality.AcError && !this.shortAcErrNote) {
-				translation += 'Detail';
-			}
-
-			this.batteryConditionNotes.push(translation);
-		});
+		this.setConditionTips();
 
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
+	}
+
+	setConditionTips() {
+		this.batteryConditionNotes = [];
+		let count = 0;
+		this.batteryConditions.forEach((batteryCondition) => {
+
+			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
+			if (batteryCondition.conditionStatus === this.batteryQuality.AcError && !this.shortAcErrNote) {
+				translation += 'Detail';
+			}
+			if (batteryCondition.condition === BatteryConditionsEnum.UnsupportedBattery) {
+				if (count === 0) {
+					this.batteryConditionNotes.push(translation);
+				}
+				count++;
+
+			} else {
+				this.batteryConditionNotes.push(translation);
+			}
+		});
 	}
 
 	showDetailTip(index: number) {
