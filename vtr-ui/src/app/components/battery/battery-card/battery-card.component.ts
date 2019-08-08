@@ -261,7 +261,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
-		if (!(this.batteryIndicator.batteryNotDetected && this.batteryGauge.isPowerDriverMissing)) {
+		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
 			if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
 				batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
 			}
