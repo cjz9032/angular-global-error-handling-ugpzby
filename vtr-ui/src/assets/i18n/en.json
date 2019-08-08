@@ -401,7 +401,11 @@
 		},
 		"modalAddApps": {
 			"title": "Add apps to Network Boost",
-			"body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+			"body": {
+				"part1" : "You can add up to 5 additional apps to boost",
+				"part2" : "of",
+				"part3": "added"
+			}
 		}
 	}
 },

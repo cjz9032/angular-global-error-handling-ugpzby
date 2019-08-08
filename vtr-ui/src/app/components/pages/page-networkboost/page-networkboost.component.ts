@@ -2,6 +2,7 @@ import { CommonService } from './../../../services/common/common.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { Component, OnInit } from '@angular/core';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
   selector: 'vtr-page-networkboost',
@@ -12,7 +13,8 @@ export class PageNetworkboostComponent implements OnInit {
   public showTurnOnModal = false;
   public showAppsModal = false;
   changeListNum = 0;
-  toggleStatus: boolean;
+  appsCount = 0;
+  toggleStatus: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus) || false;
   needToAsk: any;
   autoCloseStatusObj: any = {};
   needToAskStatusObj: any = {};
@@ -123,17 +125,18 @@ export class PageNetworkboostComponent implements OnInit {
       console.log(`ERROR in setNetworkBoostStatus()`, err);
     }
   }
+
   async setAksAgain(status: boolean) {
     try {
       await this.networkBoostService.setNeedToAsk(status);
     } catch (error) {
-      console.error(`ERROR in setAksAgain()`, error.message);
+      console.error(`ERROR in setAksAgain()`, error);
     }
   }
   async getNetworkBoostStatus() {
     try {
       this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
-      // need to set cache
+      this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
     } catch (err) {
       console.log(`ERROR in setNetworkBoostStatus()`, err);
     }
