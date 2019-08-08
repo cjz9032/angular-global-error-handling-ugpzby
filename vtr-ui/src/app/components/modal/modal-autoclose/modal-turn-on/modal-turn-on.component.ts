@@ -7,9 +7,6 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
   styleUrls: ['./modal-turn-on.component.scss']
 })
 export class ModalTurnOnComponent implements OnInit {
-  runningList: any = {};
-  addAppsList: string;
-  statusAskAgain: boolean;
   setAutoClose: any;
   constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
@@ -17,28 +14,19 @@ export class ModalTurnOnComponent implements OnInit {
   @Output() actionTurnOn = new EventEmitter<boolean>();
   @Output() actionNotNow = new EventEmitter<boolean>();
   @Output() closeTurnOnModal = new EventEmitter<boolean>();
-  @Output() actionNeedAsk = new EventEmitter<boolean>();
+  @Output() actionNeedAsk = new EventEmitter<any>();
   ngOnInit() {
   }
 
   setAksAgain(event: any) {
-    const status = event.target.checked;
-    try {
-      this.gamingAutoCloseService.setNeedToAsk(!status).then((response: any) => {
-        console.log('Set successfully ------------------------>', !status);
-        this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
-        this.actionNeedAsk.emit(!status);
-      });
-    } catch (error) {
-      console.error(error.message);
-    }
+    this.actionNeedAsk.emit(event);
   }
 
   turnOnAction(isConfirm: boolean) {
     this.actionTurnOn.emit(isConfirm);
   }
 
-  notNowAction(event) {
+  notNowAction(event: any) {
     this.actionNotNow.emit(event);
   }
 
