@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Tensione batteria non corretta",
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> per estenderne la durata, la batteria è stata impostata per interromperne la ricarica al {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Visualizza dettagli"
             },
             "power": {
                 "title": "Alimentazione",
@@ -990,7 +994,7 @@
                             "warm": "Caldo (migliore per gli occhi)",
                             "cold": "Fredda"
                         },
-                        "reset": "Ripristina temperatura",
+                        "reset": "Reimposta",
                         "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
                         "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Caldo (migliore per gli occhi)",
                             "cold": "Fredda"
                         },
-                        "reset": "Ripristina temperatura",
+                        "reset": "Reimposta",
                         "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
                         "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Fotocamera",
                         "tooltip": "Fare clic qui per ripristinare le impostazioni predefinite delle proprietà della fotocamera.",
-                        "reset": "Ripristina impostazioni predefinite"
+                        "reset": "Reimposta"
                     },
                     "brightness": "Liminosità",
                     "contrast": "Contrasto",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Vai a Impostazioni di Windows Hello",
                     "screenTimeoutSettings": "Accedi alle impostazioni di timeout dello schermo"
                 },
-                "resetToDefault": "RIPRISTINA IMPOSTAZIONI PREDEFINITE"
+                "resetToDefault": "Reimposta"
             },
             "intelligentScreen": {
                 "title": "Schermo intelligente",

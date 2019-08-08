@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Tensiunea bateriei este incorectă",
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Vedeți detaliile"
             },
             "power": {
                 "title": "Alimentare",
@@ -990,7 +994,7 @@
                             "warm": "Cald (mai bine pentru ochi)",
                             "cold": "Rece"
                         },
-                        "reset": "Resetați temperatura",
+                        "reset": "Resetare",
                         "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
                         "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Cald (mai bine pentru ochi)",
                             "cold": "Rece"
                         },
-                        "reset": "Resetați temperatura",
+                        "reset": "Resetare",
                         "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
                         "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Cameră",
                         "tooltip": "Dați clic aici pentru a reseta proprietățile camerei la setările implicite.",
-                        "reset": "Resetare la setările din fabrică"
+                        "reset": "Resetare"
                     },
                     "brightness": "Luminozitate",
                     "contrast": "Contrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Accesați setările Windows Hello",
                     "screenTimeoutSettings": "Accesați setările de expirare a ecranului"
                 },
-                "resetToDefault": "RESETARE LA SETĂRILE IMPLICITE"
+                "resetToDefault": "Resetare"
             },
             "intelligentScreen": {
                 "title": "Ecran inteligent",

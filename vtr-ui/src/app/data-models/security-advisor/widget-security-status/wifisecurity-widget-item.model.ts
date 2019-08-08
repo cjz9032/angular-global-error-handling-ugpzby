@@ -9,7 +9,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 export class WifiSecurityWidgetItem extends WidgetItem {
 	constructor(wifiSecurity: WifiSecurity, commonService: CommonService, private translateService: TranslateService, private ngZone: NgZone) {
 		super({
-			id: 'sa-widget-lnk-ws-loading',
+			id: 'sa-widget-lnk-ws',
 			path: 'security/wifi-security',
 			type: 'security',
 			metricsItemName: 'WiFi Security'
@@ -45,11 +45,9 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 			if (location) {
 				this.status = status === 'enabled' ? 0 : 1;
 				this.detail = status;
-				this.id = status === 'enabled' ? 'sa-widget-lnk-ws-enabled' : 'sa-widget-lnk-ws-disabled';
 			} else {
 				this.status = 1;
 				this.detail = 'disabled';
-				this.id = 'sa-widget-lnk-ws-disabled';
 			}
 
 			this.translateStatus(this.detail);
