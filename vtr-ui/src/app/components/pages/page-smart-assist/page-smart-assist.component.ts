@@ -417,12 +417,12 @@ export class PageSmartAssistComponent implements OnInit {
 			.then((isSuccess: boolean) => {
 				if (this.smartAssist.isShellAvailable) {
 					this.initSmartAssist(false);
-		 		}
+				}
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
 	}
 
-	private  getVideoPauseResumeStatus() {
+	private getVideoPauseResumeStatus() {
 		console.log('getVideoPauseResumeStatus');
 		try {
 			if (this.smartAssist.isShellAvailable) {

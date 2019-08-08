@@ -150,16 +150,21 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * gets changed values at charge threshold section
+	 * gets changed values at charge threshold section && Airplane Mode section
 	 * @param notification: AppNotification for change in chargeThreshold
 	 */
 	onNotification(notification: AppNotification) {
-		if (notification && notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
-			this.chargeThresholdInfo = notification.payload;
-			if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
-				this.param1 = { value: this.chargeThresholdInfo.stopValue1 };
+		if (notification) {
+			if (notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
+				this.chargeThresholdInfo = notification.payload;
+				if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
+					this.param1 = { value: this.chargeThresholdInfo.stopValue1 };
+				}
+				this.sendThresholdWarning();
 			}
-			this.sendThresholdWarning();
+			if (notification.type === 'AirplaneModeStatus') {
+				this.batteryIndicator.isAirplaneMode = notification.payload;
+			}
 		}
 	}
 
@@ -172,9 +177,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 		this.batteryInfo[0].fullChargeCapacity = this.batteryInfo[0].fullChargeCapacity || 0;
 		this.batteryInfo[0].designCapacity = this.batteryInfo[0].designCapacity || 0;
+		this.batteryIndicator.isAirplaneMode = this.batteryIndicator.isAirplaneMode || false;
 	}
 
 	public updateBatteryDetails() {
+
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 			this.initBatteryInformation();
 			const remainingPercentages = [];
@@ -195,6 +202,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
+
 		this.getBatteryCondition();
 	}
 
@@ -253,7 +261,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryGauge.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
-		if (!(this.batteryIndicator.batteryNotDetected && this.batteryGauge.isPowerDriverMissing)) {
+		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
 			if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
 				batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
 			}
@@ -273,6 +281,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 				this.param2 = { value: parseFloat(percentLimit.toFixed(1)) };
 			}
+
 			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {
 					case 'normal':
@@ -292,32 +301,49 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Poor));
 						break;
 					case 'hardwareauthenticationerror':
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryQuality.Fair));
+						break;
+					case 'nonthinkpadbattery':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryQuality.Fair));
+						break;
+					case 'unsupportedbattery':
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.UnsupportedBattery, BatteryQuality.Fair));
 						break;
 				}
 			});
 		}
 
 		this.batteryConditions = batteryConditions;
-
+		console.log('Battery Conditions ====>', this.batteryConditions);
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, indicator: this.batteryIndicator, conditions: this.batteryConditions });
 
-		console.log('Battery conditions length', this.batteryConditions.length);
-		this.batteryConditionNotes = [];
-		this.batteryConditions.forEach((batteryCondition) => {
-			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
-
-			if (batteryCondition.conditionStatus === this.batteryQuality.AcError && !this.shortAcErrNote) {
-				translation += 'Detail';
-			}
-
-			this.batteryConditionNotes.push(translation);
-		});
+		this.setConditionTips();
 
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
+	}
+
+	setConditionTips() {
+		this.batteryConditionNotes = [];
+		let count = 0;
+		this.batteryConditions.forEach((batteryCondition) => {
+
+			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
+			if (batteryCondition.conditionStatus === this.batteryQuality.AcError && !this.shortAcErrNote) {
+				translation += 'Detail';
+			}
+			if (batteryCondition.condition === BatteryConditionsEnum.UnsupportedBattery) {
+				if (count === 0) {
+					this.batteryConditionNotes.push(translation);
+				}
+				count++;
+
+			} else {
+				this.batteryConditionNotes.push(translation);
+			}
+		});
 	}
 
 	showDetailTip(index: number) {
