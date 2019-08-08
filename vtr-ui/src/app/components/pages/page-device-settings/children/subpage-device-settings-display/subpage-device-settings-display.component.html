@@ -4,7 +4,8 @@
 			<vtr-ui-header-subpage [items]="headerMenuItems"
 				[title]="title | translate"
 				[caption]="'device.deviceSettings.displayCamera.description' | translate"
-				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate">
+				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"
+				[textId]="'ds-display-camera'">
 			</vtr-ui-header-subpage>
 		</div>
 	</div>
@@ -18,7 +19,8 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'"
-				(toggle)="onCardCollapse($event)">
+				(toggle)="onCardCollapse($event)"
+				[collapseLinkId]="'device-settings-display'">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
 						*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
@@ -33,7 +35,8 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
-							[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate">
+							[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate"
+							[switchId]="'day-time-color-temp'">
 							<div class="row">
 								<div class="col-12">
 									<vtr-display-color-temp [displayColorTempSettings]="displayColorTempDataSource"
@@ -44,7 +47,8 @@
 										(colorPreviewValue)="setToEyeCareMode()">
 									</vtr-display-color-temp>
 									<div class="row">
-										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4">
+										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" 
+											id="day-time-color-temp-note" attr.aria-label="day-time-color-temp-note" >
 											<p>{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
 											</p>
 										</div>
@@ -91,7 +95,8 @@
 										[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
 										[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
 										[path]="'ms-settings:privacy-location'"
-										*ngIf="enableSunsetToSunrise">
+										*ngIf="enableSunsetToSunrise"
+										[linkId]="'display-eyeCareMode-privacy-settings-link'">
 									</vtr-widget-permission-note>
 
 									<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
@@ -118,10 +123,13 @@
 							[showChildContent]="true"
 							[isSwitchChecked]="privacyGuardToggleStatus"
 							(toggleOnOff)="setPrivacyGuardToggleStatus($event)"
-							[theme]="'white'">
+							[theme]="'white'"
+							[switchId]="'privacy-guard'">
 							<div class="row">
 								<div class="col d-flex justify-content-between pt-2 pr-3">
-									<p class="privacy-guard-caption">
+									<p class="privacy-guard-caption"
+										id="privacy-guard-description"
+										attr.aria-label="privacy-guard-description">
 										{{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}
 									</p>
 									<!-- <img class="img-privacy-guard"
@@ -130,7 +138,9 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="feature-note p-4 m-4">
+								<div class="feature-note p-4 m-4"
+										id="privacy-guard-note"
+										attr.aria-label="privacy-guard-note">
 									<p>{{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}
 									</p>
 								</div>
@@ -142,11 +152,13 @@
 										<input type="checkbox"
 											class="custom-control-input"
 											id="cb-privacy-guard"
+											attr.aria-label="cb-privacy-guard"
 											[checked]="privacyGuardCheckBox"
 											(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
 										<label class="custom-control-label"
 											for="cb-privacy-guard">
-											<span>
+											<span id="cb-privacy-guard-description"
+												attr.aria-label="cb-privacy-guard-description">
 												{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}
 											</span>
 										</label>
@@ -158,8 +170,7 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3"
-						*ngIf="hasOLEDPowerControlCapability">
+					<li class="pt-3" *ngIf="hasOLEDPowerControlCapability">
 						<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
@@ -175,7 +186,8 @@
 							vtrMetrics
 							metricsEvent="FeatureClick"
 							metricsParent="Page.Settings"
-							metricsName="OledPowerSettings">
+							metricsName="OledPowerSettings"
+							[switchId]="'oled-power-settings'">
 							<div class="row">
 								<div class="col-12">
 									<vtr-oled-power-settings
@@ -228,10 +240,12 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'"
-				(toggle)="onCardCollapse($event)">
+				(toggle)="onCardCollapse($event)"
+				[collapseLinkId]="'device-settings-camera'">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3">
 						<vtr-ui-row-switch
+							[switchId]="'camera-privacy-mode'"
 							[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							componentName="Camera Privacy Mode"
 							[name]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
@@ -245,7 +259,6 @@
 							[isDisabled]="!cameraPrivacyModeStatus.available">
 							<div class="row">
 								<div class="col-12 pr-0">
-
 									<div *ngIf="!cameraPrivacyModeStatus.available"
 										class="row permission-note mt-5">
 										<div class="col-12 p-3 d-flex">
@@ -255,12 +268,15 @@
 												</fa-icon>
 											</div>
 											<div class="col-11 pr-0 pl-2">
-												<p class="mb-0 mt-auto">
+												<p class="mb-0 mt-auto" id="camera-privacy-mode-note"
+												attr.aria-label="camera-privacy-mode-note">
 													{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 												</p>
 												<button type="button"
 													class="btn btn-link privacy-button pl-0"
-													(click)="onClick('ms-settings:privacy-webcam')">
+													(click)="onClick('ms-settings:privacy-webcam')"
+													id="camera-privacy-mode-access-url"
+													attr.aria-label="camera-privacy-mode-access-url">
 													{{'dashboard.quickSettings.note.accessUrl' | translate}}
 												</button>
 											</div>
@@ -285,7 +301,8 @@
 							[tooltipText]="'device.deviceSettings.displayCamera.camera.camera.tooltip' | translate"
 							(resetClick)="resetCameraSettings()"
 							[resetTextAsButton]="true"
-							[disabledAll]="shouldCameraSectionDisabled">
+							[disabledAll]="shouldCameraSectionDisabled"
+							[switchId]="'device-settings-camera'">
 							<div class="row">
 								<div class="col-12 pr-0">
 									<div *ngIf="!dataSource.permission"
@@ -297,12 +314,16 @@
 												</fa-icon>
 											</div>
 											<div class="col-11 pr-0 pl-2">
-												<p class="mb-0 mt-auto">
+												<p class="mb-0 mt-auto"
+												id="device-settings-camera-privacy-note"
+												attr.aria-label="device-settings-camera-privacy-note">
 													{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 												</p>
 												<button type="button"
 													class="btn btn-link privacy-button pl-0"
-													(click)="onClick('ms-settings:privacy-webcam')">
+													(click)="onClick('ms-settings:privacy-webcam')"
+													id="device-settings-camera-access-url"
+													attr.aria-label="device-settings-camera-access-url">
 													{{'dashboard.quickSettings.note.accessUrl' | translate}}
 												</button>
 											</div>
@@ -342,7 +363,8 @@
 							[showChildContent]="true"
 							[isSwitchChecked]="cameraBlur.enabled"
 							(toggleOnOff)="onCameraBackgroundBlur($event)"
-							[theme]="'white'">
+							[theme]="'white'"
+							[switchId]="'device-settings-camera-blur'">
 							<div class="row"
 								*ngIf="cameraBlur.enabled">
 								<div class="col-12 pr-0 my-3">

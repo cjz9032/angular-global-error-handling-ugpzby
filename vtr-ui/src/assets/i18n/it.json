@@ -1166,7 +1166,7 @@
                     "tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevazione presenza umana."
                 },
                 "zeroTouchLogin": {
-                    "title": "Accesso zero touch",
+                    "title": "Accesso automatico",
                     "caption": "Questa funzione sblocca o attiva automaticamente il computer quando l'utente si avvicina o si siede di fronte al PC.",
                     "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
@@ -1206,7 +1206,7 @@
                     "description1": "Questa funzione si basa su Windows Hello. Verificare che il riconoscimento facciale sia attivo nelle impostazioni di Windows.",
                     "description2": "La funzione utilizza sensori e fotocamera per rilevare la presenza dell'utente. Tuttavia, non raccoglie alcun dato personale.",
                     "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
-                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico alla fotocamera IR non funzionerà.",
+                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico non funzionerà.",
                     "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico."
                 },
                 "WindowsLink": {
@@ -2214,7 +2214,6 @@
         "personal": "Uso personale",
         "business": "Uso aziendale",
         "custom": "Esperienza personalizzata",
-        "experience": "Esperienza",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
         "moreInterest": "+ più interessi",
         "title1": "Benvenuto in",
