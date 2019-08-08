@@ -103,7 +103,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			id: 'quick_settings_dolby',
 			ariaLabel: 'quick_settings_dolby',
 			type: 'gaming.dashboard.device.quickSettings.dolby',
-			settings: 'quick_settings_dolby_settings'
+			settings: 'quick_settings_dolby_gearicon'
 		}
 	];
 
@@ -172,7 +172,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.registerThermalModeEvent();
 		}
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
+			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingCapabilities = response.payload;
 				if (this.gamingCapabilities.smartFanFeature) {
 					this.registerThermalModeEvent();

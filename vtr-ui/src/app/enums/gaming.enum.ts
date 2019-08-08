@@ -1,3 +1,3 @@
 export enum Gaming {
-	GamingCapablities = '[Gaming] GamingCapablities'
+	GamingCapabilities = '[Gaming] GamingCapabilities'
 }
