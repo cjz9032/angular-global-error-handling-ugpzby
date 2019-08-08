@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "배터리 전압 잘못됨",
                 "batteryNotDetected": "배터리 없음",
                 "thresholdNote": "<b>참고:</b> 배터리 수명을 연장하기 위해 {{value}}%에서 충전이 멈추도록 배터리를 설정했습니다.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "세부사항 참조"
             },
             "power": {
                 "title": "전원",
@@ -990,7 +994,7 @@
                             "warm": "웜(눈에 더 적절)",
                             "cold": "정상"
                         },
-                        "reset": "온도 재설정",
+                        "reset": "재설정",
                         "tooltip": "아이 케어 모드는 디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 덜어줍니다.",
                         "onSunsetToSunriseScheduleDescription": "아이케어 모드를 일몰에서 일출로 예약",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "웜(눈에 더 적절)",
                             "cold": "정상"
                         },
-                        "reset": "온도 재설정",
+                        "reset": "재설정",
                         "tooltip": "아이 케어 모드는 디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 덜어줍니다.",
                         "onSunsetToSunriseScheduleDescription": "아이케어 모드를 일몰에서 일출로 예약",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "카메라",
                         "tooltip": "카메라 속성을 기본 설정으로 다시 설정하려면, 여기를 클릭하십시오.",
-                        "reset": "공장 기본 설정으로 초기화"
+                        "reset": "재설정"
                     },
                     "brightness": "밝기",
                     "contrast": "대비",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
                     "screenTimeoutSettings": "화면 시간 종료 설정으로 이동"
                 },
-                "resetToDefault": "기본 설정 복구"
+                "resetToDefault": "재설정"
             },
             "intelligentScreen": {
                 "title": "지능형 화면",
