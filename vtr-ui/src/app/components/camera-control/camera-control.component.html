@@ -11,10 +11,14 @@
 					title="{{'device.deviceSettings.displayCamera.camera.notAvailable' | translate}}" />
 				<div class="error"
 					*ngIf="isCameraInErrorState">
-					<div class="error-title">
+					<div class="error-title"
+						id="camera-error-title"
+						attr.aria-label="camera-error-title">
 						{{ cameraErrorTitle | translate }}
 					</div>
-					<div class="error-description">
+					<div class="error-description"
+						id="camera-error-description"
+						attr.aria-label="camera-error-description">
 						{{ cameraErrorDescription | translate }}
 					</div>
 				</div>
@@ -24,7 +28,9 @@
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item border-top"
 					*ngIf="cameraSettings.brightness.supported">
-					<div class="slider-item-text text-uppercase">
+					<div class="slider-item-text text-uppercase"
+						id="camera-brightness"
+						attr.aria-label="camera-brightness">
 						<!-- Brightness -->
 						{{'device.deviceSettings.displayCamera.camera.brightness' | translate}}
 					</div>
@@ -40,7 +46,9 @@
 				</li>
 				<li class="list-group-item"
 					*ngIf="cameraSettings.contrast.supported">
-					<div class="slider-item-text text-uppercase">
+					<div class="slider-item-text text-uppercase"
+						id="camera-contrast"
+						attr.aria-label="camera-contrast">
 						<!-- Contrast -->
 						{{'device.deviceSettings.displayCamera.camera.contrast' | translate}}
 					</div>
@@ -57,7 +65,9 @@
 				<li class="list-group-item"
 					*ngIf="cameraSettings.exposure.autoModeSupported">
 					<div class="d-flex justify-content-between">
-						<div class="slider-item-text text-uppercase">
+						<div class="slider-item-text text-uppercase"
+							id="camera-auto-exposure"
+							attr.aria-label="camera-auto-exposure">
 							<!-- Auto Exposure -->
 							{{'device.deviceSettings.displayCamera.camera.autoExposure' | translate}}
 						</div>
@@ -89,7 +99,7 @@
 
 						<div class="float-right">
 							<vtr-ui-switch-onoff [value]="cameraSettings.focus.autoModeSupported"
-							[onOffSwitchId]="'cameraSettings-auto-focus'"></vtr-ui-switch-onoff>
+								[onOffSwitchId]="'cameraSettings-auto-focus'"></vtr-ui-switch-onoff>
 						</div>
 					</div>
 				</li>

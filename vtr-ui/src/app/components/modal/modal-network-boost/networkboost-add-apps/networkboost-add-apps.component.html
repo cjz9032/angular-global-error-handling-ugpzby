@@ -33,7 +33,10 @@
                 <h3>
                   {{'gaming.networkBoost.modalAddApps.title' | translate }}
                 </h3>
-                <p>{{ 'gaming.networkBoost.modalAddApps.body' | translate }}</p>
+                <p>{{ 'gaming.networkBoost.modalAddApps.body.part1' | translate }} (
+                  {{addedApps}} {{'gaming.networkBoost.modalAddApps.body.part2' | translate}} {{maxAppsCount}}
+                  {{'gaming.networkBoost.modalAddApps.body.part3' | translate}} )
+                </p>
               </div>
               <div class="app-add-container">
                 <ul class="app-list d-flex flex-wrap">
@@ -42,9 +45,10 @@
                       <img [src]="item.iconName | sanitize : 'resourceUrl'">
 
                     </div>
-                    <div class="text-break">{{item.processDescription}}</div>
+                    <div class="text-break">{{item.processDescription}}{{item.isChedked}}</div>
                     <div class="btn-add-app mx-auto">
-                      <input type="checkbox" value="{{item.processPath}}" (change)="addAppsToList($event,i)">
+                      <input type="checkbox" value="{{item.processPath}}" [(ngModel)]="item.isChedked"
+                      [disabled]="addedApps>=5 && !item.isChedked" (change)="onValueChange($event)">
                       <div class="action"></div>
                     </div>
                   </li>

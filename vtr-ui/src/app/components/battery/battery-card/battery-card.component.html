@@ -13,7 +13,9 @@
 	<ng-template #batteryDetail
 		let-modal>
 		<div class="modal-header">
-			<h4 class="modal-title battery-detail-modal-title pl-5">
+			<h4 class="modal-title battery-detail-modal-title pl-5"
+				id="myDevice-settings-battery-deatails-heading"
+				attr.aria-label="myDevice-settings-battery-deatails-heading">
 				{{'device.deviceSettings.batteryGauge.details.title' | translate }}
 			</h4>
 			<button type="button"
@@ -32,10 +34,14 @@
 		</div>
 	</ng-template>
 	<div class="container p-5 battery-panel-background">
-		<div class="battery-gauge-label text-uppercase">
+		<div class="battery-gauge-label text-uppercase"
+			id="myDevice-settings-batteryGauge-title"
+			attr.aria-label="myDevice-settings-batteryGauge-title">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
-		<div class="battery-health">
+		<div class="battery-health"
+				id="myDevice-settings-batteryGauge-subtitle"
+				attr.aria-label="myDevice-settings-batteryGauge-subtitle">
 			{{'device.deviceSettings.batteryGauge.subtitle' | translate}}
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}

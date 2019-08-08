@@ -1206,7 +1206,7 @@
                     "description1": "Denne funksjonen er avhengig av Windows Hello. Pass på at ansiktsgjenkjenning er aktivert i Windows-innstillingene.",
                     "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
                     "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
-                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Automatisk pålogging med det infrarøde kameraet vil ikke fungere.",
+                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk."
                 },
                 "WindowsLink": {
@@ -2214,7 +2214,6 @@
         "personal": "Personlig bruk",
         "business": "Jobbrelatert bruk",
         "custom": "Egendefinert brukeropplevelse",
-        "experience": "Erfaring",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
