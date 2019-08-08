@@ -13,9 +13,9 @@ import { combineLatest, of } from 'rxjs';
 import { FigleafOverviewService, FigleafSettings } from '../../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { BreachedAccount, BreachedAccountsService } from '../../../common/services/breached-accounts.service';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { CountNumberOfIssuesService } from '../../../common/services/count-number-of-issues.service';
 import { FeaturesStatuses } from '../../../userDataStatuses';
+import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,7 +23,7 @@ import { FeaturesStatuses } from '../../../userDataStatuses';
 export class PrivacyScoreService {
 
 	constructor(
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private figleafOverviewService: FigleafOverviewService,
 		private browserAccountsService: BrowserAccountsService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
@@ -41,7 +41,7 @@ export class PrivacyScoreService {
 		withoutScan: 1 / 3
 	};
 
-	private ammountPasswordFromBrowser$ = this.userDataGetStateService.userDataStatus$.pipe(
+	private ammountPasswordFromBrowser$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
@@ -58,7 +58,7 @@ export class PrivacyScoreService {
 	);
 
 	private monitoringEnable$ = this.getFigleafSetting((settings: FigleafSettings) => settings.isBreachMonitoringEnabled);
-	private isAntitrackingEnabled$ = this.userDataGetStateService.userDataStatus$.pipe(
+	private isAntitrackingEnabled$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.undefined &&
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.error),

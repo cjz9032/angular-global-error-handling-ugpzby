@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { UserDataStateService } from '../../../common/services/app-statuses/user-data-state.service';
 import { map } from 'rxjs/operators';
 import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
 import { DifferenceInDays } from '../../../utils/helpers';
+import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
 
 @Component({
 	selector: 'vtr-trial-expired-widget',
@@ -10,15 +11,15 @@ import { DifferenceInDays } from '../../../utils/helpers';
 	styleUrls: ['./trial-expired-widget.component.scss']
 })
 export class TrialExpiredWidgetComponent {
-	isFigleafTrialSoonExpired$ = this.userDataGetStateService.isFigleafTrialSoonExpired$;
-	isFigleafTrialExpired$ = this.userDataGetStateService.isFigleafTrialExpired$;
+	isFigleafTrialSoonExpired$ = this.appStatusesService.isFigleafSoonExpired$;
+	isFigleafTrialExpired$ = this.appStatusesService.isFigleafExpired$;
 
 	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
 		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000))
 	);
 
 	constructor(
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private figleafOverviewService: FigleafOverviewService
 	) {	}
 }

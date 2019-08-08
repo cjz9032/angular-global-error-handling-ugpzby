@@ -4,7 +4,7 @@ import { UserAllowService } from '../../common/services/user-allow.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { FeaturesStatuses } from '../../userDataStatuses';
-import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
+import { UserDataStateService } from '../../common/services/app-statuses/user-data-state.service';
 import { getDisplayedCountValueOfIssues } from '../../utils/helpers';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
@@ -12,6 +12,7 @@ import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../common/services/analytics/task-action-with-timeout.service';
+import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -21,12 +22,12 @@ import {
 export class TrackersComponent implements OnInit {
 	isConsentGiven$ = this.userAllowService.allowToShow.pipe(map((value) => value['trackingMap']));
 	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount.pipe(
-		map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)) || 0),
+		map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataStateService.websiteTrackersResult, issueCount)) || 0),
 		startWith(0),
 		distinctUntilChanged()
 	);
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
-	isWebsiteTrackersWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
+	isWebsiteTrackersWasScanned$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.undefined &&
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.error),
@@ -64,7 +65,8 @@ export class TrackersComponent implements OnInit {
 		private userAllowService: UserAllowService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
+		private userDataStateService: UserDataStateService,
 		private vantageCommunicationService: VantageCommunicationService,
 		private trackingMapService: TrackingMapService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,

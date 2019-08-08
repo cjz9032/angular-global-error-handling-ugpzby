@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { MetricsData } from '../../../../../directives/metrics.directive';
 import { RoutersName } from '../../privacy-routing-name';
-import { UserDataGetStateService } from './user-data-get-state.service';
+import { UserDataStateService } from './app-statuses/user-data-state.service';
 import { RouterChangeHandlerService } from './router-change-handler.service';
+import { AppStatusesService } from './app-statuses/app-statuses.service';
 
 export enum ItemTypes {
 	TaskAction = 'TaskAction',
@@ -46,7 +47,7 @@ export class AnalyticsService {
 
 	constructor(
 		private shellService: VantageShellService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private routerChangeHandlerService: RouterChangeHandlerService) {
 	}
 
@@ -76,7 +77,7 @@ export class AnalyticsService {
 
 	sendItemClickData(data: DataToSendOnItemClick) {
 		const ItemParam = typeof data.ItemParm === 'string' ? JSON.parse(data.ItemParm) : data.ItemParm;
-		const userDataStatuses = this.userDataGetStateService.getUserDataStatus();
+		const userDataStatuses = this.appStatusesService.getGlobalStatus();
 		const itemParameters = JSON.stringify({
 			...ItemParam,
 			...userDataStatuses,

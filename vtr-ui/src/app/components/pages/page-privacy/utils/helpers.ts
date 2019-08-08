@@ -39,8 +39,14 @@ export function getDisplayedCountValueOfIssues(status: FeaturesStatuses, issuesC
 	}
 }
 
-export function getFigleafProtectedStatus(appState: AppStatuses | AppStatuses.figLeafInstalled | AppStatuses.trialSoonExpired | AppStatuses.trialExpired) {
-	const figleafProtectStatuses = [AppStatuses.figLeafInstalled, AppStatuses.trialSoonExpired, AppStatuses.trialExpired];
+export function getFigleafProtectedStatus(appState: AppStatuses) {
+	const figleafProtectStatuses = [
+		AppStatuses.figLeafInstalled,
+		AppStatuses.trialSoonExpired,
+		AppStatuses.trialExpired,
+		AppStatuses.subscriptionSoonExpired,
+		AppStatuses.subscriptionExpired,
+	];
 	return figleafProtectStatuses.includes(appState);
 }
 

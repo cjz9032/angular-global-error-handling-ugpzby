@@ -1,10 +1,9 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
-import { AppStatuses } from '../../../userDataStatuses';
 import { map } from 'rxjs/operators';
-import { MS_IN_DAY, UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
 import { DifferenceInDays } from '../../../utils/helpers';
+import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
 
 @Component({
 	selector: 'vtr-article-description',
@@ -15,9 +14,9 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 	@Input() article;
 	@ViewChild('innerHTML', { static: false }) articleInner: ElementRef;
 
-	isFigleafTrialSoonExpired$ = this.userDataGetStateService.isFigleafTrialSoonExpired$;
-	isFigleafTrialExpired$ = this.userDataGetStateService.isFigleafTrialExpired$;
-	isFigleafInstalled$ = this.userDataGetStateService.isFigleafInstalled$;
+	isFigleafTrialSoonExpired$ = this.appStatusesService.isFigleafSoonExpired$;
+	isFigleafTrialExpired$ = this.appStatusesService.isFigleafExpired$;
+	isFigleafInstalled$ = this.appStatusesService.isFigleafInstalled$;
 
 	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
 		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000))
@@ -25,7 +24,7 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 
 	constructor(
 		private vantageCommunicationService: VantageCommunicationService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private figleafOverviewService: FigleafOverviewService
 	) {}
 

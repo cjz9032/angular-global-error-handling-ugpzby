@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { CountNumberOfIssuesService } from './count-number-of-issues.service';
-import { UserDataGetStateService } from './user-data-get-state.service';
+import { UserDataStateService } from './app-statuses/user-data-state.service';
 import { MockWindows } from '../../utils/moked-api';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
@@ -40,7 +40,7 @@ export class WidgetDataService {
 
 	constructor(
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
-		private userDataGetStateService: UserDataGetStateService,
+		private userDataGetStateService: UserDataStateService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {
 		countNumberOfIssuesService.websiteTrackersCount.pipe(
