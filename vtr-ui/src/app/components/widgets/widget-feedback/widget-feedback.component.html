@@ -3,9 +3,11 @@
 		<div class="row">
 			<div class="col">
 				<div class="title"
-					*ngIf="title">{{ title }}</div>
+					*ngIf="title"
+					id="dashboard-give-feedback-title" attr.aria-label="dashboard-give-feedback-title">{{ title }}</div>
 				<div class="description"
-					*ngIf="description">
+					*ngIf="description"
+					id="dashboard-give-feedback-description" attr.aria-label="dashboard-give-feedback-description">
 					{{ description }}
 				</div>
 				<div *ngIf="actionName"
