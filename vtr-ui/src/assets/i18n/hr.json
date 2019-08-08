@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Netočan napon baterije",
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Prikaži pojedinosti"
             },
             "power": {
                 "title": "Napajanje",
@@ -990,7 +994,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Ponovno postavite temperaturu",
+                        "reset": "Ponovno postavljanje",
                         "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
                         "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Ponovno postavite temperaturu",
+                        "reset": "Ponovno postavljanje",
                         "tooltip": "Način rada ugodan za oči prilagođava temperaturu boje prikaza kako bi filtrirao plavu svjetlost i smanjio naprezanje očiju.",
                         "onSunsetToSunriseScheduleDescription": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kliknite ovdje kako biste vratili svojstva Kamere na zadane postavke.",
-                        "reset": "Vrati na tvorničke postavke"
+                        "reset": "Ponovno postavljanje"
                     },
                     "brightness": "Svjetlina",
                     "contrast": "Kontrast",
@@ -1166,7 +1170,7 @@
                     "tooltip": "Kliknite ovdje kako biste ponovno postavili postavke otkrivanja ljudske prisutnosti."
                 },
                 "zeroTouchLogin": {
-                    "title": "Prijava Zero Touch",
+                    "title": "Automatska prijava",
                     "caption": "Ta značajka automatski otključava računalo ili ga vraća iz stanja mirovanja kada dođete ispred njega ili mu se približite.",
                     "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
@@ -1206,14 +1210,14 @@
                     "description1": "Ta značajka oslanja se na Windows Hello. Pobrinite se da je prepoznavanje lica uključeno u postavkama sustava Windows.",
                     "description2": "Ta značajka koristi se senzorima i kamerom kako bi otkrila vašu prisutnost. Međutim, značajka NE prikuplja nikakve osobne podatke.",
                     "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
-                    "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava IC kamere neće funkcionirati.",
+                    "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava neće raditi.",
                     "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sustava Windows Hello",
                     "screenTimeoutSettings": "Idi na postavke isteka vremena za zaslon"
                 },
-                "resetToDefault": "VRAĆANJE NA ZADANE POSTAVKE"
+                "resetToDefault": "Ponovno postavljanje"
             },
             "intelligentScreen": {
                 "title": "Inteligentni zaslon",
@@ -2214,7 +2218,6 @@
         "personal": "Osobna upotreba",
         "business": "Upotreba u poslovne svrhe",
         "custom": "Prilagodite iskustvo",
-        "experience": "Iskustvo",
         "privacytitle": "Pomozite nam poboljšati kvalitetu ove aplikacije omogućavanjem prikupljanja anonimnih statističkih podataka o korištenju.",
         "moreInterest": "+ više područja interesa",
         "title1": "Dobrodošli u",

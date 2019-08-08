@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -536,10 +540,10 @@
             "cameraPrivacy": "Fotoaparát",
             "eyeCareMode": "Péče o oči",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage nemá přístup ke kameře ani k mikrofonu.",
+                "accessUrl": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows",
+                "microphoneNote": "Lenovo Vantage nemá přístup k mikrofonu.",
+                "cameraPrivacyNote": "Lenovo Vantage nemá přístup ke kameře."
             }
         },
         "systemStatus": {
@@ -709,7 +713,7 @@
                 "voltageError": "Nesprávné napětí baterie",
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Zobrazit podrobnosti"
             },
             "power": {
                 "title": "Napájení",
@@ -990,7 +994,7 @@
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
-                        "reset": "Resetovat teplotu",
+                        "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
-                        "reset": "Resetovat teplotu",
+                        "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Fotoaparát",
                         "tooltip": "Kliknutím sem obnovíte výchozí nastavení vlastností kamery.",
-                        "reset": "Obnovit nastavení z výroby"
+                        "reset": "Reset"
                     },
                     "brightness": "Jas",
                     "contrast": "Kontrast",
@@ -1206,14 +1210,14 @@
                     "description1": "Tato funkce závisí na Windows Hello. Ujistěte se, že je v nastavení systému Windows zapnuto rozpoznávání obličeje.",
                     "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát. Tato funkce však neshromažďuje žádné osobní údaje.",
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
-                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Automatické přihlášení pomocí infračervené kamery nebude funkční.",
+                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
                     "screenTimeoutSettings": "Přechod na nastavení časového limitu vypnutí obrazovky"
                 },
-                "resetToDefault": "OBNOVIT VÝCHOZÍ NASTAVENÍ"
+                "resetToDefault": "Reset"
             },
             "intelligentScreen": {
                 "title": "Inteligentní obrazovka",
@@ -2214,7 +2218,6 @@
         "personal": "Osobní použití",
         "business": "Obchodní použití",
         "custom": "Vlastní zkušenost",
-        "experience": "Zkusenosti",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
         "moreInterest": "+ další zájmy",
         "title1": "Vítá vás",

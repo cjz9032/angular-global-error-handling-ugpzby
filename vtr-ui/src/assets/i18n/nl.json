@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Batterijspanning onjuist",
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Bekijk meer informatie"
             },
             "power": {
                 "title": "Energiebeheer",
@@ -990,7 +994,7 @@
                             "warm": "Warm (beter voor de ogen)",
                             "cold": "Koud"
                         },
-                        "reset": "Temperatuur opnieuw instellen",
+                        "reset": "Resetten",
                         "tooltip": "In de Oogzorg-modus wordt de kleurtemperatuur van uw beeldscherm aangepast om blauw licht eruit te filteren en uw ogen minder te belasten.",
                         "onSunsetToSunriseScheduleDescription": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Warm (beter voor de ogen)",
                             "cold": "Koud"
                         },
-                        "reset": "Temperatuur opnieuw instellen",
+                        "reset": "Resetten",
                         "tooltip": "In de Oogzorg-modus wordt de kleurtemperatuur van uw beeldscherm aangepast om blauw licht eruit te filteren en uw ogen minder te belasten.",
                         "onSunsetToSunriseScheduleDescription": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Camera",
                         "tooltip": "Klik hier om de camera-eigenschappen te herstellen naar de standaardwaarden.",
-                        "reset": "Fabrieksinstellingen herstellen"
+                        "reset": "Resetten"
                     },
                     "brightness": "Helderheid",
                     "contrast": "Contrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
                     "screenTimeoutSettings": "Ga naar de instellingen voor de time-out van het beeldscherm"
                 },
-                "resetToDefault": "DE STANDAARDINSTELLINGEN HERSTELLEN"
+                "resetToDefault": "Resetten"
             },
             "intelligentScreen": {
                 "title": "Intelligent beeldscherm",
@@ -2214,7 +2218,6 @@
         "personal": "Persoonlijk gebruik",
         "business": "Zakelijk gebruik",
         "custom": "Aangepaste ervaring",
-        "experience": "Ervaring",
         "privacytitle": "Help ons de kwaliteit van de app te verbeteren door toe te staan dat anoniem gebruiksgegevens worden verzameld.",
         "moreInterest": "+ meer interesses",
         "title1": "Welkom bij",

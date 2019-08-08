@@ -10,11 +10,11 @@
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
 	<div class="switch-container"
-		[ngClass]="[value ? 'checked' : 'unchecked']">
-		<div class="title"
+		[ngClass]="[value ? 'checked' : 'unchecked',disable ? 'disable-container' : '']">
+		<div class="title" [ngClass]="{'disable-container' : disable}"
 			id="qs-{{switchId}}-switch-title"
 			attr.aria-label="qs-{switchId}}-switch-title">{{ title }}</div>
-		<div class="icon-container d-block">
+		<div class="icon-container d-block"  [ngClass]="{'disable-container' : disable}">
 			<i [class]="iconDefinition"
 				[ngClass]="{'enabled' : !isBlocked}"
 				*ngIf="!isBlocked"></i>
@@ -32,7 +32,7 @@
 						class="switch-label off-label"
 						id="qs-{{switchId}}-switch-on"
 						attr.aria-label="{{switchId}}-switch-on">
-						{{'common.ui.off' | translate}}
+						<span *ngIf="!disable">{{'common.ui.off' | translate}}</span>
 					</div>
 					<div *ngIf="value"
 						class="switch-label on-label"

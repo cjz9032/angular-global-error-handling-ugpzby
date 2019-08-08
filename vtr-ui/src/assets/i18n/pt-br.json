@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Voltagem da bateria incorreta",
                 "batteryNotDetected": "Nenhuma bateria detectada",
                 "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ver detalhes"
             },
             "power": {
                 "title": "Energia",
@@ -990,7 +994,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Fria"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Reconfigurar",
                         "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
                         "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Fria"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Reconfigurar",
                         "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
                         "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Câmera",
                         "tooltip": "Clique aqui para redefinir as propriedades da câmera para as configurações padrão.",
-                        "reset": "Redefinir configurações de fábrica"
+                        "reset": "Reconfigurar"
                     },
                     "brightness": "Brilho",
                     "contrast": "Contraste",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Ir para as configurações do Windows Hello",
                     "screenTimeoutSettings": "Vá para Configurações de tempo limite de tela"
                 },
-                "resetToDefault": "REDEFINIR PARA CONFIGURAÇÕES PADRÃO"
+                "resetToDefault": "Reconfigurar"
             },
             "intelligentScreen": {
                 "title": "Tela inteligente",
@@ -2214,7 +2218,6 @@
         "personal": "Uso pessoal",
         "business": "Uso comercial",
         "custom": "Personalizar a experiência",
-        "experience": "Experiência",
         "privacytitle": "Ajude-nos a melhorar a qualidade do aplicativo permitindo a coleta anônima de estatísticas de uso.",
         "moreInterest": "+ mais interesses",
         "title1": "Bem-vindo ao",

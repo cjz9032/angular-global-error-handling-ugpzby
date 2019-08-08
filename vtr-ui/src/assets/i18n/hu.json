@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -536,10 +540,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Szemvédő",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "A Lenovo Vantage nem fér hozzá a kamerához és a mikrofonhoz.",
+                "accessUrl": "A Windows beállításai között adhat hozzáférést",
+                "microphoneNote": "A Lenovo Vantage nem fér hozzá a mikrofonhoz.",
+                "cameraPrivacyNote": "A Lenovo Vantage nem fér hozzá a kamerához."
             }
         },
         "systemStatus": {
@@ -709,7 +713,7 @@
                 "voltageError": "Helytelen akkumulátorfeszültség",
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Részletek megtekintése"
             },
             "power": {
                 "title": "Tápellátás",
@@ -990,7 +994,7 @@
                             "warm": "Meleg (jobb a szemnek)",
                             "cold": "Hideg"
                         },
-                        "reset": "Hőmérséklet visszaállítása",
+                        "reset": "Visszaállítás",
                         "tooltip": "A Szemvédő mód úgy módosítja a képernyő színhőmérsékletét, hogy kiszűrje a kék fényt és csökkentse a szem terhelését.",
                         "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Meleg (jobb a szemnek)",
                             "cold": "Hideg"
                         },
-                        "reset": "Hőmérséklet visszaállítása",
+                        "reset": "Visszaállítás",
                         "tooltip": "A Szemvédő mód úgy módosítja a képernyő színhőmérsékletét, hogy kiszűrje a kék fényt és csökkentse a szem terhelését.",
                         "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "A kamera tulajdonságainak az alapértelmezett beállításokra való visszaállításához kattintson ide.",
-                        "reset": "Visszaállítás a gyári beállításokra"
+                        "reset": "Visszaállítás"
                     },
                     "brightness": "Fényerő",
                     "contrast": "Kontraszt",
@@ -1206,14 +1210,14 @@
                     "description1": "A funkcióhoz a Windows Hello szükséges. Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
-                    "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az infravörös kamerával való automatikus bejelentkezés nem használható.",
+                    "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
                     "screenTimeoutSettings": "Ugrás a képernyő időtúllépésének beállításaihoz"
                 },
-                "resetToDefault": "ALAPÉRTELMEZETT BEÁLLÍTÁSOK VISSZAÁLLÍTÁSA"
+                "resetToDefault": "Visszaállítás"
             },
             "intelligentScreen": {
                 "title": "Intelligens képernyő",
@@ -2214,7 +2218,6 @@
         "personal": "Személyes használat",
         "business": "Céges használat",
         "custom": "Egyéni megoldások",
-        "experience": "Tapasztalat",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
         "moreInterest": "+ további érdeklődési kör",
         "title1": "Üdvözli a",

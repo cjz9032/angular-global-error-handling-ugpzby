@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "מתח הסוללה שגוי",
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "ראו פרטים"
             },
             "power": {
                 "title": "צריכת חשמל",
@@ -990,7 +994,7 @@
                             "warm": "חם (עדיף לעיניים)",
                             "cold": "קרה"
                         },
-                        "reset": "איפוס הטמפרטורה",
+                        "reset": "איפוס",
                         "tooltip": "מצב שמירה על העיניים מתאים באופן אוטומטי את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את ההשפעה על העיניים.",
                         "onSunsetToSunriseScheduleDescription": "תזמון מצב שמירה על העיניים מהשקיעה עד הזריחה",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "חם (עדיף לעיניים)",
                             "cold": "קרה"
                         },
-                        "reset": "איפוס הטמפרטורה",
+                        "reset": "איפוס",
                         "tooltip": "מצב שמירה על העיניים מתאים באופן אוטומטי את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את ההשפעה על העיניים.",
                         "onSunsetToSunriseScheduleDescription": "תזמון מצב שמירה על העיניים מהשקיעה עד הזריחה",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "מצלמה",
                         "tooltip": "לחצו כאן כדי לאפס את מאפייני המצלמה להגדרות ברירת המחדל.",
-                        "reset": "הגדרות איפוס להגדרות היצרן"
+                        "reset": "איפוס"
                     },
                     "brightness": "בהירות",
                     "contrast": "ניגודיות",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "מעבר אל הגדרות Windows Hello",
                     "screenTimeoutSettings": "עברו אל הגדרות הגבלת זמן פעילות המסך"
                 },
-                "resetToDefault": "איפוס להגדרות ברירת המחדל"
+                "resetToDefault": "איפוס"
             },
             "intelligentScreen": {
                 "title": "מסך חכם",
@@ -2214,7 +2218,6 @@
         "personal": "שימוש אישי",
         "business": "שימוש עסקי",
         "custom": "חוויה מותאמת אישית",
-        "experience": "ניסיון",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
         "moreInterest": "‏+ תחומי עניין נוספים",
         "title1": "ברוכים הבאים אל",

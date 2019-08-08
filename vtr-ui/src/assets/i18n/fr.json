@@ -56,7 +56,7 @@
                     "touchpadLock": "Verrou pavé tactile",
                     "lightingDriverPopup": {
                         "headerText": "Installation du pilote requise",
-                        "text": "Installer le pilote pour activer l'éclairage CPU (redémarrage obligatoire)",
+                        "text": "Installer le pilote pour activer l'éclairage (redémarrage obligatoire)",
                         "button": "Installer",
                         "link": "annuler"
                     },
@@ -256,7 +256,7 @@
                     "title": "Doux"
                 },
                 "option6": {
-                    "title": "Température UC"
+                    "title": "Température CPU"
                 },
                 "option7": {
                     "title": "Utilisation CPU"
@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Tension de la batterie incorrecte",
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Voir les détails"
             },
             "power": {
                 "title": "Alimentation",
@@ -990,7 +994,7 @@
                             "warm": "Chaud (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
-                        "reset": "Réinitialiser la température",
+                        "reset": "Réinitialiser",
                         "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
                         "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Chaud (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
-                        "reset": "Réinitialiser la température",
+                        "reset": "Réinitialiser",
                         "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
                         "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Caméra",
                         "tooltip": "Cliquez ici pour restaurer les paramètres par défaut des propriétés de la caméra.",
-                        "reset": "Restaurer les paramètres d'usine par défaut"
+                        "reset": "Réinitialiser"
                     },
                     "brightness": "Luminosité",
                     "contrast": "Contraste",
@@ -1206,14 +1210,14 @@
                     "description1": "Cette fonction dépend de Windows Hello. Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
-                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion à la caméra automatique IR ne fonctionnera pas.",
+                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
                     "screenTimeoutSettings": "Accédez aux paramètres de mise en veille de l'écran"
                 },
-                "resetToDefault": "RESTAURATION DES PARAMÈTRES PAR DÉFAUT"
+                "resetToDefault": "Réinitialiser"
             },
             "intelligentScreen": {
                 "title": "Écran intelligent",
@@ -2214,7 +2218,6 @@
         "personal": "Usage personnel",
         "business": "Usage professionnel",
         "custom": "Expérience personnalisée",
-        "experience": "Expérience",
         "privacytitle": "Aidez-nous à améliorer la qualité de l'application en autorisant la collecte de statistiques d'utilisation anonymes.",
         "moreInterest": "+ plus d'intérêts",
         "title1": "Bienvenue",

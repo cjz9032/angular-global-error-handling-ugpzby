@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "誤ったバッテリー電圧",
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "詳細を見る"
             },
             "power": {
                 "title": "電源",
@@ -990,7 +994,7 @@
                             "warm": "暖色 (目に優しい)",
                             "cold": "寒色"
                         },
-                        "reset": "温度をリセット",
+                        "reset": "リセット",
                         "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
                         "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "暖色 (目に優しい)",
                             "cold": "寒色"
                         },
-                        "reset": "温度をリセット",
+                        "reset": "リセット",
                         "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
                         "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "カメラ",
                         "tooltip": "カメラのプロパティをデフォルト設定にリセットするには、ここをクリックしてください。",
-                        "reset": "工場出荷時の状態にリセット"
+                        "reset": "リセット"
                     },
                     "brightness": "明るさ",
                     "contrast": "コントラスト",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Windows Hello 設定に移動",
                     "screenTimeoutSettings": "画面のタイムアウト設定に移動します"
                 },
-                "resetToDefault": "デフォルト設定にリセットする"
+                "resetToDefault": "リセット"
             },
             "intelligentScreen": {
                 "title": "インテリジェント・スクリーン",
@@ -2214,7 +2218,6 @@
         "personal": "個人用",
         "business": "仕事用",
         "custom": "カスタム・エクスペリエンス",
-        "experience": "経験",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
         "moreInterest": "+ その他のことに興味がある",
         "title1": "ようこそ",

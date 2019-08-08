@@ -44,17 +44,17 @@ export class WidgetSecurityComponent implements OnInit {
 	ngOnInit() {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
+			const tooltipsInit = [
+				'security.landing.antivirus',
+				'security.landing.password',
+				this.region !== 'cn' ? 'security.landing.vpn' : null,
+				'security.landing.wifi',
+				this.windowsHelloService.showWindowsHello() ? 'security.landing.windowsHello' : null
+			];
+			this.tooltips = tooltipsInit.filter(current => current !== undefined && current !== null && current !== '');
 		}).catch(e => {
 			this.region = 'us';
 		});
-		const tooltipsInit = [
-			'security.landing.antivirus',
-			'security.landing.password',
-			this.region !== 'CN' ? 'security.landing.vpn' : null,
-			'security.landing.wifi',
-			this.windowsHelloService.showWindowsHello() ? 'security.landing.windowsHello' : null
-		];
-		this.tooltips = tooltipsInit.filter(current => current !== undefined && current !== null && current !== '');
 	}
 
 	fetchCMSArticleCategory() {

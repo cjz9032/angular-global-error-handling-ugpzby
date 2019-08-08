@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -536,10 +540,10 @@
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage 无法访问摄像头和麦克风。",
+                "accessUrl": "转到 Windows 设置以授予访问权限",
+                "microphoneNote": "Lenovo Vantage 无法访问麦克风。",
+                "cameraPrivacyNote": "Lenovo Vantage 无法访问摄像头。"
             }
         },
         "systemStatus": {
@@ -709,7 +713,7 @@
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "查看详细信息"
             },
             "power": {
                 "title": "电源管理",
@@ -990,7 +994,7 @@
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
-                        "reset": "重置温度",
+                        "reset": "重置",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
@@ -1024,7 +1028,7 @@
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
-                        "reset": "重置温度",
+                        "reset": "重置",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "摄像头",
                         "tooltip": "单击此处将摄像头属性重置为缺省设置。",
-                        "reset": "重置出厂设置"
+                        "reset": "重置"
                     },
                     "brightness": "亮度",
                     "contrast": "对比度",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "恢复默认设置"
+                "resetToDefault": "重置"
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
@@ -2214,7 +2218,6 @@
         "personal": "个人使用",
         "business": "商业用途",
         "custom": "自定义",
-        "experience": "体验",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
         "title1": "欢迎来到",

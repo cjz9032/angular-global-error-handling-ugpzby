@@ -11,7 +11,9 @@
 	</ng5-slider>
 	<div class="row label"
 		*ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">
-		<div class="col">{{ minValueLegend }}</div>
-		<div class="col text-right">{{ maxValueLegend }}</div>
+		<div class="col" id="{{rangeSliderId + '-min-value-title'}}"
+		attr.aria-label="{{rangeSliderId + '-min-value-title'}}">{{ minValueLegend }}</div>
+		<div class="col text-right" id="{{rangeSliderId + '-max-value-title'}}"
+		attr.aria-label="{{rangeSliderId + '-max-value-title'}}">{{ maxValueLegend }}</div>
 	</div>
 </div>

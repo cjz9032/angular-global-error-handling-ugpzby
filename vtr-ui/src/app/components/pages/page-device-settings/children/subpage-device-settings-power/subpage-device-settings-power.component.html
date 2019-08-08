@@ -47,6 +47,7 @@
 		class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
+
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-batterySettings'">
@@ -89,7 +90,7 @@
 
 					<!-- MVP 2 feature -->
 					<li class=""
-						*ngIf="machineType == 1 && isChargeThresholdAvailable">
+					*ngIf="machineType == 1 && isChargeThresholdAvailable">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
@@ -116,7 +117,9 @@
 									[selectedStartAtCharge]="selectedStartAtChargeVal"
 									[isCheckedAuto]="primaryCheckBox"
 									(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
-									(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')">
+									(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')"
+									[textId] ="'threshold-primary-battery'">
+									
 								</vtr-battery-charge-threshold-settings>
 
 								<vtr-battery-charge-threshold-settings *ngIf="responseData && responseData.length > 1"
@@ -131,7 +134,8 @@
 									[selectedStartAtCharge]="selectedStartAtChargeVal1"
 									[isCheckedAuto]="secondaryCheckBox"
 									(sendBatteryDetails)="setChargeThresholdValues($event, 2, 'changedValues')"
-									(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')">
+									(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')"
+									[textId] ="'threshold-secondary-battery'">
 								</vtr-battery-charge-threshold-settings>
 								<vtr-battery-charge-threshold-settings *ngIf="showWarningMsg"
 									[displayNoteOnly]="true"
@@ -223,7 +227,8 @@
 								<div class="col-auto justify-content-start align-items-center pr-2">
 									<i class="icomoon icomoon-LE-Charging-USB2x"></i>
 								</div>
-								<div class="col-auto px-0 align-self-center seperator">
+								<div class="col-auto px-0 align-self-center seperator" id="always-on-usb-or"
+								attr.aria-label="always-on-usb-or">
 									{{'device.deviceSettings.power.powerSettings.or' | translate}}
 								</div>
 								<div class="col-auto pl-2">
@@ -231,8 +236,8 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-12">
-									<div class="custom-control custom-checkbox always-on-usb-checkbox"
+								<div class="col px-20">
+									<div class="auto-set-checkbox"
 										*ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
 											attr.aria-label="cb-always-on-usb"
@@ -241,11 +246,9 @@
 											[disabled]="!toggleAlwaysOnUsbFlag"
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
-											class="custom-control-input"
 											checked="" />
 										<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
-										<label class="custom-control-label "
-											for="cb-always-on-usb">
+										<label for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
 									</div>

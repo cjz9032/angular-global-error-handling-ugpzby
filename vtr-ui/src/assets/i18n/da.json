@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Forkert batterispænding",
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Flere oplysninger"
             },
             "power": {
                 "title": "Strøm",
@@ -990,7 +994,7 @@
                             "warm": "Varm (bedre for øjne)",
                             "cold": "Kold"
                         },
-                        "reset": "Nulstil temperatur",
+                        "reset": "Nulstil",
                         "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
                         "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Varm (bedre for øjne)",
                             "cold": "Kold"
                         },
-                        "reset": "Nulstil temperatur",
+                        "reset": "Nulstil",
                         "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
                         "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klik her for at nulstille egenskaberne for kameraet til standardindstillingerne.",
-                        "reset": "Nulstil til fabriksindstillingerne"
+                        "reset": "Nulstil"
                     },
                     "brightness": "Lysstyrke",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
                     "screenTimeoutSettings": "Gå til indstillinger for skærmtimeout"
                 },
-                "resetToDefault": "NULSTIL TIL STANDARDINDSTILLINGERNE"
+                "resetToDefault": "Nulstil"
             },
             "intelligentScreen": {
                 "title": "Intelligent skærm",
@@ -2214,7 +2218,6 @@
         "personal": "Personlig brug",
         "business": "På arbejde",
         "custom": "Tilpasset oplevelse",
-        "experience": "Erfaring",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",

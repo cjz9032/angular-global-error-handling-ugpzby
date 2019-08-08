@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Akkuspannung falsch",
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Details anzeigen"
             },
             "power": {
                 "title": "Stromversorgung",
@@ -990,7 +994,7 @@
                             "warm": "Warm (besser für die Augen)",
                             "cold": "Kalt"
                         },
-                        "reset": "Temperatur zurücksetzen",
+                        "reset": "Zurücksetzen",
                         "tooltip": "Der Modus \"Augen schonen\" passt die Farbtemperatur der Anzeige automatisch an. Blaues Licht wird gefiltert, was die Augen schont.",
                         "onSunsetToSunriseScheduleDescription": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Warm (besser für die Augen)",
                             "cold": "Kalt"
                         },
-                        "reset": "Temperatur zurücksetzen",
+                        "reset": "Zurücksetzen",
                         "tooltip": "Der Modus \"Augen schonen\" passt die Farbtemperatur der Anzeige automatisch an. Blaues Licht wird gefiltert, was die Augen schont.",
                         "onSunsetToSunriseScheduleDescription": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klicken Sie hier, um die Kameraeigenschaften auf die Standardeinstellungen zurückzusetzen.",
-                        "reset": "Auf Werkseinstellungen zurücksetzen"
+                        "reset": "Zurücksetzen"
                     },
                     "brightness": "Helligkeit",
                     "contrast": "Kontrast",
@@ -1206,14 +1210,14 @@
                     "description1": "Diese Funktion basiert auf Windows Hello. Stellen Sie sicher, dass die Gesichtserkennung in den Windows-Einstellungen eingeschaltet ist.",
                     "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen. Die Funktion sammelt jedoch KEINE personenbezogenen Daten.",
                     "description3": "1. Wenn Ihr Computer im Zelt‑, Tablet‑ oder Standmodus ist, funktionieren diese Funktionen möglicherweise nicht ordnungsgemäß.",
-                    "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die automatische Anmeldung per IR-Kamera funktioniert nicht.",
+                    "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die Zero-Touch-Anmeldung funktioniert nicht.",
                     "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello-Einstellungen aufrufen",
                     "screenTimeoutSettings": "Gehen Sie zu den Einstellungen für das Bildschirmzeitlimit"
                 },
-                "resetToDefault": "STANDARDEINSTELLUNGEN WIEDERHERSTELLEN"
+                "resetToDefault": "Zurücksetzen"
             },
             "intelligentScreen": {
                 "title": "Intelligente Anzeige",
@@ -2214,7 +2218,6 @@
         "personal": "Private Verwendung",
         "business": "Geschäftliche Nutzung",
         "custom": "Benutzerdefinierte Erfahrung",
-        "experience": "Erfahrung",
         "privacytitle": "Indem Sie der anonymen Erfassung von Nutzungsstatistiken zustimmen, helfen Sie uns dabei, diese App zu verbessern.",
         "moreInterest": "+ mehr Interessen",
         "title1": "Willkommen bei",

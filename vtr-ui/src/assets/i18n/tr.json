@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Pil voltajı yanlış",
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ayrıntıları görün"
             },
             "power": {
                 "title": "Güç",
@@ -990,7 +994,7 @@
                             "warm": "Sıcak (Gözler için daha iyi)",
                             "cold": "Soğuk"
                         },
-                        "reset": "Sıcaklığı sıfırla",
+                        "reset": "Sıfırla",
                         "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
                         "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Sıcak (Gözler için daha iyi)",
                             "cold": "Soğuk"
                         },
-                        "reset": "Sıcaklığı sıfırla",
+                        "reset": "Sıfırla",
                         "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
                         "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kamera özelliklerini varsayılan ayarlarına sıfırlamak için buraya tıklayın.",
-                        "reset": "Fabrika ayarlarına sıfırla"
+                        "reset": "Sıfırla"
                     },
                     "brightness": "Parlaklık",
                     "contrast": "Karşıtlık",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
                     "screenTimeoutSettings": "Ekran zaman aşımı ayarlarına git"
                 },
-                "resetToDefault": "VARSAYILAN AYARLARA SIFIRLA"
+                "resetToDefault": "Sıfırla"
             },
             "intelligentScreen": {
                 "title": "Akıllı Ekran",
@@ -2214,7 +2218,6 @@
         "personal": "Kişisel Kullanım",
         "business": "İş Amaçlı Kullanım",
         "custom": "Özel Deneyim",
-        "experience": "Deneyim",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
         "moreInterest": "+ diğer ilgi alanları",
         "title1": "WRITEit'e hoş geldiniz",

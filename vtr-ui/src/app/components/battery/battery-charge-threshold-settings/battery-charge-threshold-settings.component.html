@@ -4,7 +4,9 @@
 		<div class="row"
 			*ngIf="title && !displayNoteOnly">
 			<div class="col px-20 pb-4">
-				<div class="threshold-for-built-in-battery">
+				<div class="threshold-for-built-in-battery" 
+				id="{{textId}}-title"
+							attr.aria-label="{{textId}}-title">
 					{{ title }}
 				</div>
 			</div>
@@ -29,11 +31,15 @@
 									type="button">
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
-											<div class="select-title">
+											<div class="select-title" 
+											id="{{textId}}-startcharge"
+												attr.aria-label="{{textId}}-startcharge">
 												{{start}}
 											</div>
 
-											<div class="select-text text-left">
+											<div class="select-text text-left" 
+											id="{{textId}}-selectedstartcharge"
+											attr.aria-label="{{textId}}-selectedstartcharge">
 												{{selectedStartAtCharge}}%
 											</div>
 										</div>
@@ -46,7 +52,8 @@
 								</button>
 								<div ngbDropdownMenu
 									aria-labelledby="">
-									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
+									<a  id="{{textId}}-startAtChargeOptions" attr.aria-label="{{textId}}-startAtChargeOptions"
+										[ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
 										*ngFor="let item of startAtChargeOptions"
 										(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();">{{item}}%</a>
 								</div>
@@ -65,10 +72,13 @@
 									type="button">
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
-											<div class="select-title">
+											<div class="select-title" id="{{textId}}-stopcharge"
+											attr.aria-label="{{textId}}-stopcharge">
 												{{stop}}
 											</div>
-											<div class="select-text text-left">
+											<div class="select-text text-left"
+											id="{{textId}}-selectedStopAtCharge"
+											attr.aria-label="{{textId}}-selectedStopAtCharge">
 												{{selectedStopAtCharge}}%
 											</div>
 										</div>
@@ -81,7 +91,8 @@
 								</button>
 								<div ngbDropdownMenu
 									aria-labelledby="">
-									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
+									<a id="{{textId}}-stopAtChargeOptions" attr.aria-label="{{textId}}-stopAtChargeOptions"
+									[ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
 										*ngFor="let item of stopAtChargeOptions"
 										(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();">{{item}}%</a>
 								</div>
@@ -109,7 +120,7 @@
 		</div>
 		<!--start of row seperator-->
 		<div class="row"
-			*ngIf="!displayNoteOnly">
+		*ngIf="!displayNoteOnly">
 			<div class="col px-20">
 				<div class="row-seperator">&nbsp;</div>
 			</div>
@@ -118,10 +129,10 @@
 
 		<!--start of Note -->
 		<div class="row"
-			*ngIf="showWarningMsg">
+		*ngIf="showWarningMsg">
 			<div class="col px-20">
 				<div class="note-box">
-					<div class="note">
+					<div class="note" id="battery-threshold-note" attr.aria-label="battery-threshold-note">
 						<b>{{'device.deviceSettings.power.batterySettings.batteryThreshold.note' | translate}} :</b>
 						{{'device.deviceSettings.power.batterySettings.batteryThreshold.noteInfo' | translate}}
 					</div>

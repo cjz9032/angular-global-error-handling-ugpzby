@@ -4,7 +4,8 @@
 			<vtr-header-main [backarrow]="backarrow"
 				[back]="'common.ui.back' | translate"
 				[title]="'device.myDevice.title' | translate"
-				[backId]="'myDevice-back-btn'">
+				[backId]="'myDevice-back-btn'"
+				[textId]="'myDevice'">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -46,7 +47,8 @@
 
 							<div class="row mb-40">
 								<div class="col col-12 cont">
-									<div class="widget-heading mb-40">{{'device.myDevice.helpful' |translate }}</div>
+									<div class="widget-heading mb-40" id="myDevice-helpfull-content-title"
+									 attr.aria-label="myDevice-helpfull-content-title">{{'device.myDevice.helpful' |translate }}</div>
 									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 										[itemid]="'common.QAndA.itemid'|translate"
 										[description]="'common.qAndA.subtitle' | translate"

@@ -55,7 +55,9 @@
 		<label class="custom-control-label"
 			for="cb-eye-care-schedule">
 			<span class="text-capitalize"
-				[ngClass]="{'disabled':sunsetToSunriseStatus.available && enableSunsetToSunrise}">
+				[ngClass]="{'disabled':sunsetToSunriseStatus.available && enableSunsetToSunrise}"
+				id="cb-eye-care-schedule-text"
+				attr.aria-label="cb-eye-care-schedule-text">
 				<!-- Schedule eye care mode from sunset to sunrise  -->
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 				{{sunriseToSunsetText}}
@@ -72,7 +74,9 @@
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
 		<label class="custom-control-label"
 			for="cb-eye-care-schedule">
-			<span class="">
+			<span class=""
+				id="cb-eye-care-schedule-text"
+				attr.aria-label="cb-eye-care-schedule-text">
 				<!-- Schedule eye care mode from sunset to sunrise  -->
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 				{{sunriseToSunsetText}}

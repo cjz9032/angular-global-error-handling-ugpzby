@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "電池電壓不正確",
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "查看詳細資料"
             },
             "power": {
                 "title": "電源",
@@ -990,7 +994,7 @@
                             "warm": "暖色 (對眼睛較好)",
                             "cold": "冷卻"
                         },
-                        "reset": "重設溫度",
+                        "reset": "重設",
                         "tooltip": "護眼模式會調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。",
                         "onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "暖色 (對眼睛較好)",
                             "cold": "冷卻"
                         },
-                        "reset": "重設溫度",
+                        "reset": "重設",
                         "tooltip": "護眼模式會調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。",
                         "onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "相機",
                         "tooltip": "按一下此處，即可將攝影機屬性重設為預設設定。",
-                        "reset": "重設為原廠預設值"
+                        "reset": "重設"
                     },
                     "brightness": "亮度",
                     "contrast": "對比",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "跳至 Windows Hello 設定",
                     "screenTimeoutSettings": "前往螢幕逾時設定"
                 },
-                "resetToDefault": "重設為預設值"
+                "resetToDefault": "重設"
             },
             "intelligentScreen": {
                 "title": "智慧型螢幕",
@@ -2214,7 +2218,6 @@
         "personal": "個人使用",
         "business": "業務使用",
         "custom": "自訂",
-        "experience": "體驗",
         "privacytitle": "透過允許匿名收集使用方式統計資料，協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",
