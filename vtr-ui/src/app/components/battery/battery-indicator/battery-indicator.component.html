@@ -17,7 +17,9 @@
 					*ngIf="batteryNotDetected">
 					<img [src]=" '/assets/icons/battery-conditions/no_battery.svg'"
 						class="error-icon" />
-					<span class="no-battery-detected">
+					<span class="no-battery-detected"
+					id="myDevice-settings-batteryGauge-notDetected-title"
+					attr.aria-label="myDevice-settings-batteryGauge-notDetected-title">
 						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}
 					</span>
 				</div>
@@ -27,11 +29,15 @@
 					{{ getTimeRemaining() }}
 				</div>
 				<div class="remaining-text text-uppercase"
-					*ngIf="timeText === 'timeRemaining'">
+					*ngIf="timeText === 'timeRemaining'"
+					id="myDevice-settings-batteryGauge-remainingTime-title"
+					attr.aria-label="myDevice-settings-batteryGauge-remainingTime-title">
 					{{'device.deviceSettings.batteryGauge.details.remainingTime' | translate}}
 				</div>
 				<div class="remaining-text text-uppercase"
-					*ngIf="timeText === 'timeCompletion'">
+					*ngIf="timeText === 'timeCompletion'"
+					id="myDevice-settings-batteryGauge-charge-title"
+					attr.aria-label="myDevice-settings-batteryGauge-charge-title">
 					{{'device.deviceSettings.batteryGauge.charge' | translate}}
 				</div>
 			</div>

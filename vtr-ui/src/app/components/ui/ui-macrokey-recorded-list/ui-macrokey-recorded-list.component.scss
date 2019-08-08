@@ -42,7 +42,7 @@
 	&.recording {
 		position: relative;
 		&::after {
-			content: 'Next input';
+			content: attr(data-line);
 			padding-top: 1rem;
 			position: absolute;
 			bottom: 19rem;
@@ -98,7 +98,7 @@
 			cursor: pointer;
 			position: relative;
 			svg {
-				vertical-align: bottom;
+				vertical-align: text-bottom;
 			}
 			&:nth-child(odd) {
 				background-color: $gaming_hover;
@@ -133,7 +133,7 @@
 					font-weight: 500;
 					color: $gaming_light_blue;
 					&:hover {
-						width: 11rem;
+						width: auto;
 					}
 				}
 			}

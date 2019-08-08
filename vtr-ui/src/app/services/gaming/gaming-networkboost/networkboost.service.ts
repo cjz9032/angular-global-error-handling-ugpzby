@@ -36,7 +36,16 @@ export class NetworkBoostService {
 			throw new Error(error);
 		}
 	}
-
+	getNetUsingProcesses(): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingNetworkBoost.getNetUsingProcesses();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
+		}
+	}
 	setNetworkBoostStatus(value: boolean): Promise<boolean> {
 		try {
 			if (this.isShellAvailable) {

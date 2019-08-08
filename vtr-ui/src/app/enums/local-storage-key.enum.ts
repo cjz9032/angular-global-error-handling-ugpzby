@@ -46,6 +46,7 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
+	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
 	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
@@ -118,6 +119,7 @@ export enum LocalStorageKey {
 	hddName = '[LocalStorageKey] hddName',
 	isSystemDisk = '[LocalStorageKey] isSystemDisk',
 	usedDisk = '[LocalStorageKey] usedDisk',
+
 
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',

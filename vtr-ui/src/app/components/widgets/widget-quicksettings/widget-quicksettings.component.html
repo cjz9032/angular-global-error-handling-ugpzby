@@ -2,7 +2,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12">
-				<div class="heading">{{'dashboard.quickSettings.title' | translate}}</div>
+				<div class="heading" id="dashboard-quick-settings-title"
+				 attr.aria-label="dashboard-quick-settings-title">{{'dashboard.quickSettings.title' | translate}}</div>
 				<div [ngClass]="cameraStatus.available ? 'widget-icon-3': 'widget-icon-2'">
 					<div class="text-left">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"

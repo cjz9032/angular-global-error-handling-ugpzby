@@ -3,7 +3,7 @@
 		<div class="col">
 			<vtr-ui-header-subpage [title]="'device.deviceSettings.audio.title' | translate"
 				[caption]="'device.deviceSettings.audio.description' | translate"
-				[textId]="'myDevice-settings-audio'">
+				[textId]="'ds-audio'">
 			</vtr-ui-header-subpage>
 
 		</div>
@@ -97,7 +97,7 @@
 					[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
 					[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
 					[path]="'ms-settings:privacy-microphone'"
-					[linkId]="'audio-microphone-permission-link'"
+					[linkId]="'audio-microphone-permission'"
 					*ngIf="!microphoneProperties.permission">
 
 				</vtr-widget-permission-note>
@@ -217,7 +217,8 @@
 									[value]='optimizeMode'
 									[checked]="optimizeMode === microOptimizeModeResponse.current"
 									[disabled]="microphoneProperties.disableEffect"
-									(change)="onOptimizeModesRadioChange($event)">
+									(change)="onOptimizeModesRadioChange($event)"
+									[textId]="'myDevice-settings-audio-microphone-optimize'">
 								</vtr-ui-circle-radio>
 							</div>
 						</vtr-ui-row-switch>

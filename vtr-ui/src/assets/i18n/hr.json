@@ -1166,7 +1166,7 @@
                     "tooltip": "Kliknite ovdje kako biste ponovno postavili postavke otkrivanja ljudske prisutnosti."
                 },
                 "zeroTouchLogin": {
-                    "title": "Prijava Zero Touch",
+                    "title": "Automatska prijava",
                     "caption": "Ta značajka automatski otključava računalo ili ga vraća iz stanja mirovanja kada dođete ispred njega ili mu se približite.",
                     "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
@@ -1206,7 +1206,7 @@
                     "description1": "Ta značajka oslanja se na Windows Hello. Pobrinite se da je prepoznavanje lica uključeno u postavkama sustava Windows.",
                     "description2": "Ta značajka koristi se senzorima i kamerom kako bi otkrila vašu prisutnost. Međutim, značajka NE prikuplja nikakve osobne podatke.",
                     "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
-                    "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava IC kamere neće funkcionirati.",
+                    "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava neće raditi.",
                     "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave."
                 },
                 "WindowsLink": {
@@ -2214,7 +2214,6 @@
         "personal": "Osobna upotreba",
         "business": "Upotreba u poslovne svrhe",
         "custom": "Prilagodite iskustvo",
-        "experience": "Iskustvo",
         "privacytitle": "Pomozite nam poboljšati kvalitetu ove aplikacije omogućavanjem prikupljanja anonimnih statističkih podataka o korištenju.",
         "moreInterest": "+ više područja interesa",
         "title1": "Dobrodošli u",

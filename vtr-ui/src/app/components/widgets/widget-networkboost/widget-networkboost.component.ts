@@ -1,70 +1,73 @@
+import { CommonService } from 'src/app/services/common/common.service';
+import { isUndefined } from 'util';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
-import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
-import { GamingAllCapabilitiesService } from './../../../services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GamingAllCapabilities } from './../../../data-models/gaming/gaming-all-capabilities';
-import { ModalNetworkboostComponent } from './../../modal/modal-networkboost/modal-networkboost.component';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
-  selector: 'vtr-widget-networkboost',
-  templateUrl: './widget-networkboost.component.html',
-  styleUrls: ['./widget-networkboost.component.scss']
+	selector: 'vtr-widget-networkboost',
+	templateUrl: './widget-networkboost.component.html',
+	styleUrls: ['./widget-networkboost.component.scss']
 })
-export class WidgetNetworkboostComponent implements OnInit {
-  @Input() introTitle: string;
-  public title: string;
-  public networkBoostStatus = false;
-  appsList = [];
-  gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
-  constructor(private modalService: NgbModal, private gamingCapabilityService: GamingAllCapabilitiesService, private networkBoostService: NetworkBoostService) { }
+export class WidgetNetworkboostComponent implements OnInit, OnChanges {
+	@Input() introTitle: string;
+	@Input() changeNum: any = 0;
+	@Output() actionModal = new EventEmitter<any>();
+	@Output() addedApps = new EventEmitter<any>();
 
-  ngOnInit() {
-	this.title = this.introTitle;
-	this.gamingProperties.optimizationFeature = this.gamingCapabilityService.getCapabilityFromCache(
-		LocalStorageKey.optimizationFeature
-	);
-	this.initNetworkBoostStatus();
-	this.getNetworkBoostList();
-
-  }
-
-
-  public async initNetworkBoostStatus() {
-	try {
-		if (this.networkBoostService.isShellAvailable) {
-		this.networkBoostStatus = await this.networkBoostService.getNetworkBoostStatus();
-		}
-	} catch (err) {
-	console.log(`ERROR in initNetworkBoostStatus() of widget-networkboost.comp`, err);
+	public title: string;
+	public networkBoostStatus = false;
+	runningAppsList = [];
+	gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
+	constructor(private networkBoostService: NetworkBoostService, private commonService: CommonService) {
+		this.getNetworkBoostListCache();
 	}
-  }
 
-  public async setNetworkBoostStatus(event: any) {
+	ngOnInit() {
+		this.title = this.introTitle;
+		this.getNetworkBoostList();
+	}
+
+	ngOnChanges(changes: any) {
+		this.getNetworkBoostList();
+	}
+	public openModal() {
+		this.actionModal.emit();
+	}
+
+	async getNetworkBoostList() {
 		try {
-	this.networkBoostStatus = event.switchValue;
-	this.networkBoostService.setNetworkBoostStatus(this.networkBoostStatus);
-		} catch (err) {
-		console.log(`ERROR in setNetworkBoostStatus() of widget-networkboost.comp`, err);
+			const appList: any = await this.networkBoostService.getNetworkBoostList();
+			if (!isUndefined(appList.processList)) {
+				this.runningAppsList = appList.processList;
+				this.sendAddedApps();
+				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostList, appList);
+			}
+		} catch (error) {
+			console.log(`ERROR in getNetworkBoostList()`, error.message);
 		}
-  }
-
-  public getNetworkBoostList() {
-	try {
-		this.networkBoostService.getNetworkBoostList().then((list: any) => {
-		});
-	} catch (error) {
-		console.error(error.message);
 	}
-  }
+	getNetworkBoostListCache() {
+		const appList: any = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostList, {});
+		if (appList && !isUndefined(appList.processList)) {
+			this.runningAppsList = appList.processList || [];
+			this.sendAddedApps();
+		}
+	}
 
-  openModal(): void {
-	this.modalService.open(ModalNetworkboostComponent, {
-		centered: true,
-		windowClass: 'autoClose-Modal'
-	});
-  }
-  removeApp(app: any, i) {
-
-  }
+	async removeApp(app: any, i: any) {
+		try {
+			const result = await this.networkBoostService.deleteProcessInNetBoost(app);
+			console.log(`RESULT from deleteProcessInNetBoost()`, result);
+			this.getNetworkBoostList();
+		} catch (err) {
+			console.log(`ERROR in removeApp()`, err);
+		}
+	}
+	
+	sendAddedApps() {
+		this.runningAppsList = this.runningAppsList || [];
+		this.addedApps.emit(this.runningAppsList.length);
+	}
 }
