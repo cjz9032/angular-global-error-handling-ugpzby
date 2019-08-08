@@ -49,11 +49,14 @@
 						</fa-icon>
 					</div>
 					<div class="col-11 pr-0 pl-2">
-						<p class="mb-0 mt-auto">
+						<p class="mb-0 mt-auto" id="qs-microphone-note" 
+							attr.aria-label="qs-microphone-note">
 							{{'dashboard.quickSettings.note.microphoneNote' | translate}}
 						</p>
 						<button type="button" class="btn btn-link privacy-button pl-0"
-							(click)="onClick('ms-settings:privacy-microphone')">
+							(click)="onClick('ms-settings:privacy-microphone')"
+							id="qs-microphone-access-link" 
+							attr.aria-label="qs-microphone-access-link">
 							{{'dashboard.quickSettings.note.accessUrl' | translate}}
 						</button>
 					</div>
@@ -66,12 +69,15 @@
 						</fa-icon>
 					</div>
 					<div class="col-11 pr-0 pl-2">
-							<p class="mb-0 mt-auto">
+							<p class="mb-0 mt-auto" id="qs-camera-note" 
+									attr.aria-label="qs-camera-note">
 									{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 								</p>
 								<button type="button"
 									class="btn btn-link privacy-button pl-0"
-									(click)="onClick('ms-settings:privacy-webcam')">
+									(click)="onClick('ms-settings:privacy-webcam')"
+									id="qs-camera-access-link" 
+									attr.aria-label="qs-camera-access-link">
 									{{'dashboard.quickSettings.note.accessUrl' | translate}}
 								</button>
 					</div>
@@ -86,21 +92,29 @@
 					</div>
 					<div class="col-11 pr-0 pl-2" *ngIf="isDTmachine">
 						<div class="col-11 pr-0 pl-2">
-							<p class="mb-0 mt-auto">
+							<p class="mb-0 mt-auto"
+							id="qs-microphone-dt-machine-note" 
+							attr.aria-label="qs-microphone-dt-machine-note">
 								{{'dashboard.quickSettings.note.microphoneNote' | translate}}
 							</p>
 							<button type="button" class="btn btn-link privacy-button pl-0"
-								(click)="onClick('ms-settings:privacy-microphone')">
+								(click)="onClick('ms-settings:privacy-microphone')"
+								id="qs-microphone-dt-machine-access-ink" 
+								attr.aria-label="qs-microphone-dt-machine-access-ink">
 								{{'dashboard.quickSettings.note.accessUrl' | translate}}
 							</button>
 						</div>
 					</div>
 					<div class="col-11 pr-0 pl-2" *ngIf="!isDTmachine">
-						<p class="mb-0 mt-auto">
+						<p class="mb-0 mt-auto"
+							id="qs-microphone-camera-note" 
+							attr.aria-label="qs-microphone-camera-note">
 							{{'dashboard.quickSettings.note.microphoneAndcameraPrivacyNotes' | translate}}
 						</p>
 						<button type="button" class="btn btn-link privacy-button pl-0"
-							(click)="onClick('ms-settings:privacy-webcam')">
+							(click)="onClick('ms-settings:privacy-webcam')"
+								id="qs-microphone-camera-access-ink" 
+								attr.aria-label="qs-microphone-camera-access-ink">
 							{{'dashboard.quickSettings.note.accessUrl' | translate}}
 						</button>
 					</div>
