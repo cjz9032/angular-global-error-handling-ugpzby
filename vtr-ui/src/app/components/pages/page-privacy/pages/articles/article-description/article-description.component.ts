@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
 import { DifferenceInDays } from '../../../utils/helpers';
 import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { AppStatuses } from '../../../userDataStatuses';
 
 @Component({
 	selector: 'vtr-article-description',
@@ -14,9 +15,18 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 	@Input() article;
 	@ViewChild('innerHTML', { static: false }) articleInner: ElementRef;
 
-	isFigleafTrialSoonExpired$ = this.appStatusesService.isFigleafSoonExpired$;
-	isFigleafTrialExpired$ = this.appStatusesService.isFigleafExpired$;
-	isFigleafInstalled$ = this.appStatusesService.isFigleafInstalled$;
+	isShow$ = this.appStatusesService.isAppStatusesEqual([
+		AppStatuses.trialSoonExpired,
+		AppStatuses.subscriptionSoonExpired,
+		AppStatuses.trialExpired,
+		AppStatuses.subscriptionExpired
+	]);
+
+	appStatuses$ = this.appStatusesService.globalStatus$.pipe(
+		map((globalStatus) => globalStatus.appState)
+	);
+
+	isFigleafInstalled$ = this.appStatusesService.isAppStatusesEqual([AppStatuses.figLeafInstalled]);
 
 	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
 		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000))

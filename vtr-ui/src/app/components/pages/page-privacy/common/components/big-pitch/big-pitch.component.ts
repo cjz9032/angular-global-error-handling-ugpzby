@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AppStatuses } from '../../../userDataStatuses';
 
 @Component({
 	selector: 'vtr-big-pitch',
@@ -11,9 +12,11 @@ export class BigPitchComponent {
 		text: 'Get the app that lets you decide when to share and when to be private, wherever you go online. ' +
 			'Trial duration 14-day. No credit card required.'
 	};
-	@Input() isFigleafTrialSoonExpired = false;
-	@Input() isFigleafTrialExpired = false;
+	@Input() isShowExpiredPitch = false;
+	@Input() appStatuses: AppStatuses;
 	@Input() timeToExpires;
 	@Input() articleId: number;
 	@Output() clickMore = new EventEmitter();
+
+	appStatusesEnum = AppStatuses;
 }

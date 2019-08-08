@@ -24,11 +24,6 @@ export class AppStatusesService {
 		shareReplay(1)
 	);
 
-	isFigleafSoonExpired$ = this.isAppStatusesEqual([AppStatuses.trialSoonExpired, AppStatuses.subscriptionSoonExpired]);
-	isFigleafExpired$ = this.isAppStatusesEqual([AppStatuses.trialExpired, AppStatuses.subscriptionExpired]);
-
-	isFigleafInstalled$ = this.isAppStatusesEqual([AppStatuses.figLeafInstalled]);
-
 	constructor(
 		private globalAppStatusService: GlobalAppStatusService,
 		private userDataGetStateService: UserDataStateService
@@ -49,7 +44,7 @@ export class AppStatusesService {
 		this.globalStatus.next(this.getGlobalStatus());
 	}
 
-	private isAppStatusesEqual(appStatus: AppStatuses[]) {
+	isAppStatusesEqual(appStatus: AppStatuses[]) {
 		return this.globalStatus$.pipe(
 			map((userDataStatus) => appStatus.includes(userDataStatus.appState))
 		);

@@ -45,7 +45,6 @@ export class GlobalAppStatusService {
 		let appStatus = AppStatuses.figLeafInstalled;
 		const isTrialLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Trial;
 		const isSubscriptionLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Subscription;
-		console.log('this.figleafStatus', this.figleafStatus);
 		const daysToNotifyTrialExpired = (this.figleafStatus && this.figleafStatus.daysToNotifyTrialExpired) ? this.figleafStatus.daysToNotifyTrialExpired : 1;
 		const timeToShowExpiredPitchMs = daysToNotifyTrialExpired * MS_IN_DAY;
 		const isExpiredSoon = this.figleafStatus && this.figleafStatus.expirationDate <= Math.floor((Date.now() + timeToShowExpiredPitchMs) / 1000);
