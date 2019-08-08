@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Voltaje de batería incorrecto",
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ver detalles"
             },
             "power": {
                 "title": "Energía",
@@ -990,7 +994,7 @@
                             "warm": "Cálido (mejor para los ojos)",
                             "cold": "Frío"
                         },
-                        "reset": "Restablecer temperatura",
+                        "reset": "Restablecer",
                         "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
                         "onSunsetToSunriseScheduleDescription": "Planificación del modo de cuidado ocular de anochecer a amanecer",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Cálido (mejor para los ojos)",
                             "cold": "Frío"
                         },
-                        "reset": "Restablecer temperatura",
+                        "reset": "Restablecer",
                         "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
                         "onSunsetToSunriseScheduleDescription": "Planificación del modo de cuidado ocular de anochecer a amanecer",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Cámara",
                         "tooltip": "Haga clic aquí para restablecer los valores predeterminados de las propiedades de la cámara.",
-                        "reset": "Restablecer valores predeterminados de fábrica"
+                        "reset": "Restablecer"
                     },
                     "brightness": "Brillo",
                     "contrast": "Contraste",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
                     "screenTimeoutSettings": "Vaya a Configuración de tiempo de espera de pantalla"
                 },
-                "resetToDefault": "RESTABLECER A LOS VALORES PREDETERMINADOS"
+                "resetToDefault": "Restablecer"
             },
             "intelligentScreen": {
                 "title": "Pantalla inteligente",

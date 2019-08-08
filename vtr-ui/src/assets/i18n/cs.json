@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Nesprávné napětí baterie",
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Zobrazit podrobnosti"
             },
             "power": {
                 "title": "Napájení",
@@ -990,7 +994,7 @@
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
-                        "reset": "Resetovat teplotu",
+                        "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
-                        "reset": "Resetovat teplotu",
+                        "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Fotoaparát",
                         "tooltip": "Kliknutím sem obnovíte výchozí nastavení vlastností kamery.",
-                        "reset": "Obnovit nastavení z výroby"
+                        "reset": "Reset"
                     },
                     "brightness": "Jas",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
                     "screenTimeoutSettings": "Přechod na nastavení časového limitu vypnutí obrazovky"
                 },
-                "resetToDefault": "OBNOVIT VÝCHOZÍ NASTAVENÍ"
+                "resetToDefault": "Reset"
             },
             "intelligentScreen": {
                 "title": "Inteligentní obrazovka",

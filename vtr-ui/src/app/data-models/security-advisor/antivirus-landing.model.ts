@@ -25,7 +25,7 @@ export class AntiVirusLandingViewModel {
 			path: 'security/anti-virus',
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
-			id: 'sa-ov-link-antivirus-loading'
+			id: 'sa-ov-link-antivirus'
 		};
 		const fwStatus = {
 			status: 4,
@@ -33,7 +33,7 @@ export class AntiVirusLandingViewModel {
 			path: 'security/anti-virus',
 			title: 'security.landing.firewall',
 			type: 'security',
-			id: 'sa-ov-link-firewall-loading'
+			id: 'sa-ov-link-firewall'
 		};
 		const subjectStatus = {
 			status: 2,
@@ -62,10 +62,8 @@ export class AntiVirusLandingViewModel {
 			if (typeof av === 'boolean' && typeof fw === 'boolean') {
 				avStatus.status = av === true ? 0 : 1;
 				avStatus.detail = av === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				avStatus.id = av === true ? 'sa-ov-link-antivirus-enabled' : 'sa-ov-link-antivirus-disabled';
 				fwStatus.status = fw === true ? 0 : 1;
 				fwStatus.detail = fw === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				fwStatus.id = fw === true ? 'sa-ov-link-firewall-enabled' : 'sa-ov-link-firewall-disabled';
 				if (av && fw) {
 					subjectStatus.status = 0;
 				} else if (av || fw) {
@@ -76,7 +74,6 @@ export class AntiVirusLandingViewModel {
 			} else if (typeof fw !== 'boolean' && typeof av === 'boolean') {
 				avStatus.status = av === true ? 0 : 1;
 				avStatus.detail = av === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				avStatus.id = av === true ? 'sa-ov-link-antivirus-enabled' : 'sa-ov-link-antivirus-disabled';
 				fwStatus.status = null;
 				subjectStatus.status = av === true ? 0 : 1;
 				if (currentPage === 'windows') {
@@ -87,7 +84,6 @@ export class AntiVirusLandingViewModel {
 			} else if (typeof av !== 'boolean' && typeof fw === 'boolean') {
 				fwStatus.status = fw === true ? 0 : 1;
 				fwStatus.detail = fw === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				fwStatus.id = fw === true ? 'sa-ov-link-firewall-enabled' : 'sa-ov-link-firewall-disabled';
 				avStatus.status = null;
 				subjectStatus.status = fw === true ? 0 : 1;
 				if (currentPage === 'windows') {

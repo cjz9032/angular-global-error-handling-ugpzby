@@ -280,20 +280,10 @@ export class SystemUpdateService {
 		}
 	}
 
-	public installAllUpdates(removeDelayedUpdates: boolean) {
+	public installUpdatesList(removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>, isInstallAll: boolean) {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
-			this.selectCoreqUpdateForInstallAll();
-			const unIgnoredUpdates = this.getUnIgnoredUpdatesForInstallAll(this.updateInfo.updateList);
-			const updates = this.mapToInstallRequest(unIgnoredUpdates, removeDelayedUpdates);
-			this.installUpdates(updates, true);
-		}
-	}
-
-	public installSelectedUpdates(removeDelayedUpdates: boolean) {
-		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
-			const updatesToInstall = this.getSelectedUpdates(this.updateInfo.updateList);
-			const updates = this.mapToInstallRequest(updatesToInstall, removeDelayedUpdates);
-			this.installUpdates(updates, false);
+			const updates = this.mapToInstallRequest(updateList, removeDelayedUpdates);
+			this.installUpdates(updates, isInstallAll);
 		}
 	}
 
@@ -383,12 +373,12 @@ export class SystemUpdateService {
 		}
 	}
 
-	private selectCoreqUpdateForInstallAll() {
-		if (this.updateInfo.updateList && this.updateInfo.updateList.length > 0) {
-			this.updateInfo.updateList.forEach((update) => {
+	public selectCoreqUpdateForInstallAll(updateList: any) {
+		if (updateList && updateList.length > 0) {
+			updateList.forEach((update) => {
 				if (update.coreqPackageID && !update.isIgnored) {
 					const coreqPackages = update.coreqPackageID.split(',');
-					this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, true, update.packageID);
+					this.selectCoreqUpdate(updateList, coreqPackages, true, update.packageID);
 				}
 			});
 
@@ -401,7 +391,9 @@ export class SystemUpdateService {
 				return value.packageID === coreqPackage;
 			});
 			if (coreqUpdate) {
-				coreqUpdate.dependedByPackages = coreqUpdate.dependedByPackages +  ',' + dependedByPackage;
+				if (!coreqUpdate.dependedByPackages.includes(dependedByPackage)) {
+					coreqUpdate.dependedByPackages = coreqUpdate.dependedByPackages +  ',' + dependedByPackage;
+				}
 				coreqUpdate.isSelected = isSelected;
 				if (isSelected) {
 					coreqUpdate.isDependency = true;
@@ -476,13 +468,13 @@ export class SystemUpdateService {
 	}
 
 	// returns reboot type and array of update name which requires pop up to show before installation
-	public getRebootType(updateList: Array<AvailableUpdateDetail>, source: string): { rebootType: UpdateRebootType, packages: Array<string> } {
+	public getRebootType(updateList: Array<AvailableUpdateDetail>): { rebootType: UpdateRebootType, packages: Array<string> } {
 		let rebootType = UpdateRebootType.Unknown;
 		const packages = new Array<string>();
 
-		const rebootDelayedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootDelayed, source);
-		const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced, source);
-		const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced, source);
+		const rebootDelayedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootDelayed);
+		const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced);
+		const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced);
 
 		// Priority #1 RebootDelayed : return details of it, no need to check other.
 		if (rebootDelayedUpdates && rebootDelayedUpdates.length > 0) {
@@ -515,9 +507,9 @@ export class SystemUpdateService {
 		return { rebootType, packages };
 	}
 
-	private getUpdateByRebootType(updateList: Array<AvailableUpdateDetail>, rebootType: UpdateRebootType, source: string): Array<AvailableUpdateDetail> {
+	private getUpdateByRebootType(updateList: Array<AvailableUpdateDetail>, rebootType: UpdateRebootType): Array<AvailableUpdateDetail> {
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return ((value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase()) && (value.isSelected || (source === 'all' && !value.isIgnored)));
+			return (value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase());
 		});
 		return updates;
 	}
