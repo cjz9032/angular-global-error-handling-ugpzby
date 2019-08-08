@@ -68,7 +68,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		);
 		this.initMacroKeySubpage();
 		this.commonService.notification.subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
+			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingProperties = response.payload;
 				this.initMacroKeySubpage();
 			}

@@ -536,10 +536,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Szemvédő",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "A Lenovo Vantage nem fér hozzá a kamerához és a mikrofonhoz.",
+                "accessUrl": "A Windows beállításai között adhat hozzáférést",
+                "microphoneNote": "A Lenovo Vantage nem fér hozzá a mikrofonhoz.",
+                "cameraPrivacyNote": "A Lenovo Vantage nem fér hozzá a kamerához."
             }
         },
         "systemStatus": {
@@ -1206,7 +1206,7 @@
                     "description1": "A funkcióhoz a Windows Hello szükséges. Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
-                    "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az infravörös kamerával való automatikus bejelentkezés nem használható.",
+                    "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez."
                 },
                 "WindowsLink": {
@@ -2214,7 +2214,6 @@
         "personal": "Személyes használat",
         "business": "Céges használat",
         "custom": "Egyéni megoldások",
-        "experience": "Tapasztalat",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
         "moreInterest": "+ további érdeklődési kör",
         "title1": "Üdvözli a",

@@ -536,10 +536,10 @@
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage 无法访问摄像头和麦克风。",
+                "accessUrl": "转到 Windows 设置以授予访问权限",
+                "microphoneNote": "Lenovo Vantage 无法访问麦克风。",
+                "cameraPrivacyNote": "Lenovo Vantage 无法访问摄像头。"
             }
         },
         "systemStatus": {
@@ -2214,7 +2214,6 @@
         "personal": "个人使用",
         "business": "商业用途",
         "custom": "自定义",
-        "experience": "体验",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
         "title1": "欢迎来到",
