@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Helytelen akkumulátorfeszültség",
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Részletek megtekintése"
             },
             "power": {
                 "title": "Tápellátás",
@@ -990,7 +994,7 @@
                             "warm": "Meleg (jobb a szemnek)",
                             "cold": "Hideg"
                         },
-                        "reset": "Hőmérséklet visszaállítása",
+                        "reset": "Visszaállítás",
                         "tooltip": "A Szemvédő mód úgy módosítja a képernyő színhőmérsékletét, hogy kiszűrje a kék fényt és csökkentse a szem terhelését.",
                         "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Meleg (jobb a szemnek)",
                             "cold": "Hideg"
                         },
-                        "reset": "Hőmérséklet visszaállítása",
+                        "reset": "Visszaállítás",
                         "tooltip": "A Szemvédő mód úgy módosítja a képernyő színhőmérsékletét, hogy kiszűrje a kék fényt és csökkentse a szem terhelését.",
                         "onSunsetToSunriseScheduleDescription": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "A kamera tulajdonságainak az alapértelmezett beállításokra való visszaállításához kattintson ide.",
-                        "reset": "Visszaállítás a gyári beállításokra"
+                        "reset": "Visszaállítás"
                     },
                     "brightness": "Fényerő",
                     "contrast": "Kontraszt",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
                     "screenTimeoutSettings": "Ugrás a képernyő időtúllépésének beállításaihoz"
                 },
-                "resetToDefault": "ALAPÉRTELMEZETT BEÁLLÍTÁSOK VISSZAÁLLÍTÁSA"
+                "resetToDefault": "Visszaállítás"
             },
             "intelligentScreen": {
                 "title": "Intelligens képernyő",

@@ -71,6 +71,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.stopMonitorForCamera();
 		this.deviceService.stopMicrophoneMonitor();
 		this.stopEyeCareMonitor();
+		this.displayService.stopMonitorForCameraPermission();
 	}
 
 	//#region private functions
