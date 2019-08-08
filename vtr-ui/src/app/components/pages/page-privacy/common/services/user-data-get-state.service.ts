@@ -105,6 +105,8 @@ export class UserDataGetStateService {
 				status = FeaturesStatuses.error;
 			}
 
+			console.log('status', status, isFigleafReadyForCommunication, isTrackersBlocked);
+
 			this.websiteTrackersResult = status;
 			this.updateUserDataSubject();
 		});
@@ -154,7 +156,8 @@ export class UserDataGetStateService {
 	private calculateAppStatuses() {
 		let appStatus = AppStatuses.figLeafInstalled;
 		const isTrialLicense = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.Trial;
-		const timeToShowExpiredPitchMs = this.figleafStatus.daysToNotifyTrialExpired * MS_IN_DAY;
+		const daysToNotifyTrialExpired = (this.figleafStatus && this.figleafStatus.daysToNotifyTrialExpired) ? this.figleafStatus.daysToNotifyTrialExpired : 1;
+		const timeToShowExpiredPitchMs = daysToNotifyTrialExpired * MS_IN_DAY;
 		const isTrialExpiredSoon = this.figleafStatus && this.figleafStatus.expirationDate <= Math.floor( (Date.now() + timeToShowExpiredPitchMs) / 1000);
 		const isTrialExpired = this.figleafStatus && this.figleafStatus.licenseType === this.licenseTypes.TrialExpired;
 
