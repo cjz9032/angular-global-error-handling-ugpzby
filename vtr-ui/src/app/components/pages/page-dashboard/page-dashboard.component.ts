@@ -1,27 +1,27 @@
-import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { QaService } from '../../../services/qa/qa.service';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { Status } from 'src/app/data-models/widgets/status.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { DeviceService } from 'src/app/services/device/device.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
-import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
-import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
-import { UserService } from 'src/app/services/user/user.service';
-import { AndroidService } from 'src/app/services/android/android.service';
-import { UPEService } from 'src/app/services/upe/upe.service';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
-import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import {	Component,	OnInit,	DoCheck,	OnDestroy} from '@angular/core';
+import {	Router,	ActivatedRoute} from '@angular/router';
+import {	NgbModal,	NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import {	TranslateService,	LangChangeEvent} from '@ngx-translate/core';
+import {	SecurityAdvisor} from '@lenovo/tan-client-bridge';
+import {	QaService} from '../../../services/qa/qa.service';
+import {	DashboardService} from 'src/app/services/dashboard/dashboard.service';
+import {	Status} from 'src/app/data-models/widgets/status.model';
+import {	CommonService} from 'src/app/services/common/common.service';
+import {	DeviceService} from 'src/app/services/device/device.service';
+import {	CMSService} from 'src/app/services/cms/cms.service';
+import {	AppNotification} from 'src/app/data-models/common/app-notification.model';
+import {	LenovoIdKey} from 'src/app/enums/lenovo-id-key.enum';
+import {	NetworkStatus} from 'src/app/enums/network-status.enum';
+import {	FeedbackFormComponent} from '../../feedback-form/feedback-form/feedback-form.component';
+import {	SystemUpdateService} from 'src/app/services/system-update/system-update.service';
+import {	VantageShellService} from '../../../services/vantage-shell/vantage-shell.service';
+import {	UserService} from 'src/app/services/user/user.service';
+import {	AndroidService} from 'src/app/services/android/android.service';
+import {	UPEService} from 'src/app/services/upe/upe.service';
+import {	SecurityAdvisorMockService} from 'src/app/services/security/securityMock.service';
+import {	LenovoIdDialogService} from 'src/app/services/dialog/lenovoIdDialog.service';
+import {	LoggerService} from 'src/app/services/logger/logger.service';
+import {	SessionStorageKey} from 'src/app/enums/session-storage-key-enum';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -143,7 +143,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 
-	private fetchContent(lang ?: string) {
+	private fetchContent(lang ? : string) {
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -160,53 +160,53 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				(response: any) => {
 					const callCmsEndTime: any = new Date();
 					const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
-				if (response && response.length > 0) {
-					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
-					return {
+					if (response && response.length > 0) {
+						this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
+						const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+							return {
 								albumId: 1,
 								id: record.Id,
 								source: record.Title,
 								title: record.Description,
 								url: record.FeatureImage,
 								ActionLink: record.ActionLink
-					};
-				});
-				if (heroBannerItems && heroBannerItems.length) {
-					this.heroBannerItems = heroBannerItems;
-				}
+							};
+						});
+						if (heroBannerItems && heroBannerItems.length) {
+							this.heroBannerItems = heroBannerItems;
+						}
 						if (source === 'CMS') {
-				const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
-				if (cardContentPositionB) {
-					this.cardContentPositionB = cardContentPositionB;
-					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+							const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+							if (cardContentPositionB) {
+								this.cardContentPositionB = cardContentPositionB;
+								if (this.cardContentPositionB.BrandName) {
+									this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 								}
-					}
-				}
+							}
+						}
 
-				const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
-				if (cardContentPositionC) {
-					this.cardContentPositionC = cardContentPositionC;
-					if (this.cardContentPositionC.BrandName) {
-						this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-					}
-				}
+						const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+						if (cardContentPositionC) {
+							this.cardContentPositionC = cardContentPositionC;
+							if (this.cardContentPositionC.BrandName) {
+								this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+							}
+						}
 
-				const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
-				if (cardContentPositionD) {
-					this.cardContentPositionD = cardContentPositionD;
-				}
+						const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+						if (cardContentPositionD) {
+							this.cardContentPositionD = cardContentPositionD;
+						}
 
-				const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
-				if (cardContentPositionE) {
-					this.cardContentPositionE = cardContentPositionE;
-				}
+						const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+						if (cardContentPositionE) {
+							this.cardContentPositionE = cardContentPositionE;
+						}
 
-				const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
-				if (cardContentPositionF) {
-					this.cardContentPositionF = cardContentPositionF;
-				}
+						const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+						if (cardContentPositionF) {
+							this.cardContentPositionF = cardContentPositionF;
+						}
 					} else {
 						const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 						this.loggerService.info(msg);
