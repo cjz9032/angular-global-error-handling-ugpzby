@@ -56,7 +56,7 @@
                     "touchpadLock": "Verrou pavé tactile",
                     "lightingDriverPopup": {
                         "headerText": "Installation du pilote requise",
-                        "text": "Installer le pilote pour activer l'éclairage CPU (redémarrage obligatoire)",
+                        "text": "Installer le pilote pour activer l'éclairage (redémarrage obligatoire)",
                         "button": "Installer",
                         "link": "annuler"
                     },
