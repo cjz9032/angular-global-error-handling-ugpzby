@@ -208,6 +208,16 @@
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
+							<a *ngIf="modernPreloadService.IsEntitled"
+								vtrMetrics
+								id="menu-main-lnk-open-modern-preload"
+								attr.aria-label="menu-main-lnk-open-modern-preload"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="ModernPreloadButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								(click)="openModernPreloadModal()">My Software</a>
 							<a vtrMetrics
 								id="menu-main-lnk-open-preference"
 								attr.aria-label="menu-main-lnk-open-preference"

@@ -43,6 +43,8 @@ import { ModalArticleDetailComponent } from '../components/modal/modal-article-d
 import { SharedModule } from './shared.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+import { ModernPreloadModule } from './modern-preload/modern-preload.module';
+
 import { faWifiSlash} from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 
 library.add(faCheck);
@@ -93,12 +95,14 @@ library.add(faFlask);
 		RouterModule,
 		CommonPipeModule,
 		SharedModule,
+		ModernPreloadModule,
 	],
 	exports: [
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
 		SharedModule,
+		ModernPreloadModule,
 	],
 	providers: [
 		CommonService,

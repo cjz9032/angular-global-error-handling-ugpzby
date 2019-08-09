@@ -90,22 +90,15 @@
 						</vtr-ui-gaming-driver-popup>
 						<ul class="list-group">
 							<li class="list-group-item">
-								<a  *ngIf="isPopupVisible"  (click)="checkStatus(isPopupVisible)" vtrMetrics
-									[metricsItem]="'lighting_customize_settings'"
-									metricsEvent="featureClick"
-									id="lighting_customize_settings"
-									attr.aria-label="lighting_customize_settings">
+								<a  *ngIf="isPopupVisible"  (click)="checkStatus(isPopupVisible)" vtrMetrics [metricsItem]="'lighting_customize'"
+									metricsEvent="featureClick" metricsParam="lightingcustomize" metricsValue="{{setprofId}}" id="lighting_customize"
+									attr.aria-label="lighting_customize">
 									   <i class="icon icon-gear"></i>
 									   {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
 
-								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]"
-									vtrMetrics
-									[metricsItem]="'lighting_customize'"
-									metricsEvent="featureClick"
-									metricsParam="lightingcustomize"
-									metricsValue="{{setprofId}}"
-									id="lighting_customize"
-									attr.aria-label="lighting_customize">
+								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]" vtrMetrics
+									[metricsItem]="'lighting_customize'" metricsEvent="featureClick" metricsParam="lightingcustomize"
+									metricsValue="{{setprofId}}" id="lighting_customize" attr.aria-label="lighting_customize">
 									   <i class="icon icon-gear"></i>
 									  {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
 							</li>

@@ -39,7 +39,7 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 	async getNetworkBoostList() {
 		try {
 			const appList: any = await this.networkBoostService.getNetworkBoostList();
-			if (!isUndefined(appList.processList)) {
+			if (appList && !isUndefined(appList.processList)) {
 				this.runningAppsList = appList.processList;
 				this.sendAddedApps();
 				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostList, appList);

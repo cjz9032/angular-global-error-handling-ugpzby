@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Nesprávne napätie batérie",
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{value}}%.",
-                "seeDetailsLink": "See details"
+                "seeDetailsLink": "Zobraziť podrobnosti"
             },
             "power": {
                 "title": "Napájanie",
@@ -990,7 +994,7 @@
                             "warm": "Teplé farby (lepšie pre oči)",
                             "cold": "Studené farby"
                         },
-                        "reset": "Vynulovať teplotu farieb",
+                        "reset": "Obnoviť predvolené",
                         "tooltip": "Režim na ochranu zraku automaticky upravuje teplotu farieb obrazovky odfiltrovaním spektra modrého svetla na zníženie únavy zraku.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovať režim na ochranu zraku medzi západom a východom slnka",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Teplé farby (lepšie pre oči)",
                             "cold": "Studené farby"
                         },
-                        "reset": "Vynulovať teplotu farieb",
+                        "reset": "Obnoviť predvolené",
                         "tooltip": "Režim na ochranu zraku automaticky upravuje teplotu farieb obrazovky odfiltrovaním spektra modrého svetla na zníženie únavy zraku.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovať režim na ochranu zraku medzi západom a východom slnka",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kliknite sem na obnovenie predvolených nastavení vlastností kamery.",
-                        "reset": "Obnovenie nastavení predvolených výrobcom"
+                        "reset": "Obnoviť predvolené"
                     },
                     "brightness": "Jas",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Prejsť na nastavenia služby Windows Hello",
                     "screenTimeoutSettings": "Prejdite na nastavenia časovača obrazovky"
                 },
-                "resetToDefault": "OBNOVIŤ PREDVOLENÉ NASTAVENIA"
+                "resetToDefault": "Obnoviť predvolené"
             },
             "intelligentScreen": {
                 "title": "Inteligentná obrazovka",
