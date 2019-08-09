@@ -267,12 +267,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
 			// if (machineType === 1 && machineType === 3) {
 			if (isThinkPad) {
-				if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
-				}
+				if (this.batteryGauge.acAdapterStatus && this.batteryGauge.acAdapterStatus !== null) {
+					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.AcError));
+					}
 
-				if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
+					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.AcError));
+					}
 				}
 			}
 		}
