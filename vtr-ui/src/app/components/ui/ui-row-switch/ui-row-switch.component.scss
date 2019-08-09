@@ -135,10 +135,11 @@
 			border-radius: 2.25rem;
 			background: $gradient_main;
 			color: $light;
-			font-size: 1.08rem;
+			font-size: $body;
 			font-weight: $weight_bold;
 			text-align: center;
 			text-transform: uppercase;
+			min-width: 12rem;
 		}
 	}
 }

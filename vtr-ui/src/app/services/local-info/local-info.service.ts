@@ -35,12 +35,12 @@ export class LocalInfoService {
 						osName = 'Android';
 					}
 					this.localInfo = {
-						Lang: result.locale.toLowerCase() || 'en',
-						GEO: result.country.toLowerCase() || 'us',
-						OEM: result.manufacturer || 'Lenovo',
-						OS: osName || 'Windows',
+						Lang: result.locale.toLowerCase() ? result.locale.toLowerCase() : 'en',
+						GEO: result.country.toLowerCase() ? result.country.toLowerCase() : 'us',
+						OEM: result.manufacturer ? result.manufacturer : 'Lenovo',
+						OS: osName ? osName : 'Windows',
 						Segment: result.isGaming ? 'Gaming' : 'Consumer',
-						Brand: result.brand || 'Lenovo',
+						Brand: result.brand ? result.brand : 'Lenovo',
 					};
 					return this.localInfo;
 				});

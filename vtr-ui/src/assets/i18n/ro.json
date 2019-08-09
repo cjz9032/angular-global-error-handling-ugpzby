@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Înregistrarea tastei macro pentru"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Dez."
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Dez."
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,25 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
+            }
         }
     },
     "common": {
@@ -408,7 +423,7 @@
             "security": {
                 "title": "Securitate",
                 "sub1": "Securitatea mea",
-                "sub2": "Antivirus:",
+                "sub2": "Antivirus",
                 "sub3": "Securitate WiFi",
                 "sub4": "Sănătatea parolei",
                 "sub5": "Protecție pe internet",
@@ -416,12 +431,15 @@
             },
             "support": "Asistenţă",
             "homeSecurity": "Conectat acasă",
-            "privacy": "Confidenţialitate"
+            "privacy": "Confidenţialitate",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Asistenţă securitate",
             "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
-            "antiVirus": "Antivirus:",
+            "antiVirus": "Antivirus",
             "wifi": "Securitate WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
@@ -522,10 +540,10 @@
             "cameraPrivacy": "Cameră",
             "eyeCareMode": "Îngrijire ochi",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage nu are acces la cameră și microfon.",
+                "accessUrl": "Accesați setările Windows pentru a acorda acces",
+                "microphoneNote": "Lenovo Vantage nu are acces la microfon.",
+                "cameraPrivacyNote": "Lenovo Vantage nu are acces la cameră."
             }
         },
         "systemStatus": {
@@ -680,22 +698,22 @@
                     "Bad": "<b>A apărut o eroare la baterie.</b> Bateria nu poate fi încărcată/descărcată. Înlocuiţi bateria.",
                     "NotDetected": "<b>Nu a fost detectată nicio baterie sau bateria nu</b> este conectată.",
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
-                    "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
-                    "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
+                    "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
+                    "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
                     "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
                     "OverheatedBattery": "Bateria este <b>prea fierbinte</b>. Scoateţi-o din calculator şi lăsaţi-o să se răcească la temperatura camerei.",
                     "PermanentError": "Bateria <b>nu a funcţionat din cauza uzurii normale.</b> Bateria nu poate fi încărcată. Înlocuiţi bateria.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
+                    "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit."
                 },
                 "updating": "Actualizare",
                 "voltageError": "Tensiunea bateriei este incorectă",
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Vedeți detaliile"
             },
             "power": {
                 "title": "Alimentare",
@@ -803,8 +821,8 @@
                         "readMoreText": "Citiți mai multe.",
                         "noteInfo": " Pragul de încărcare a bateriei nu este încă complet activ. Deconectaţi aparatul şi lăsaţi bateria să se descarce la sau sub pragul de oprire a încărcării.",
                         "settings": {
-                            "title1": "Prag pentru bateria încorporată",
-                            "title2": "Prag pentru bateria detașabilă"
+                            "title1": "Prag pentru bateria principală",
+                            "title2": "Prag pentru bateria secundară"
                         },
                         "popup": {
                             "title": "Activați pragul pentru încărcarea bateriei",
@@ -976,7 +994,7 @@
                             "warm": "Cald (mai bine pentru ochi)",
                             "cold": "Rece"
                         },
-                        "reset": "Resetați temperatura",
+                        "reset": "Resetare",
                         "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
                         "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
@@ -990,7 +1008,7 @@
                             "warm": "Cald (mai bine pentru ochi)",
                             "cold": "Rece"
                         },
-                        "reset": "Resetați temperatura",
+                        "reset": "Resetare",
                         "tooltip": "Modul de protejare a ochilor ajustează temperatura culorii ecranului dvs. pentru a filtra lumina albastră și pentru a proteja ochii.",
                         "onSunsetToSunriseScheduleDescription": "Programați modul de protejare a ochilor de la apus până la răsărit",
                         "note": {
@@ -1039,7 +1057,7 @@
                     "camera": {
                         "title": "Cameră",
                         "tooltip": "Dați clic aici pentru a reseta proprietățile camerei la setările implicite.",
-                        "reset": "Resetare la setările din fabrică"
+                        "reset": "Resetare"
                     },
                     "brightness": "Luminozitate",
                     "contrast": "Contrast",
@@ -1192,14 +1210,14 @@
                     "description1": "Această caracteristică se bazează pe Windows Hello. Asigurați-vă că recunoașterea feței este activată în setările Windows.",
                     "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
                     "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
-                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea automată a camerei IR nu va funcționa.",
+                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
                     "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
                     "screenTimeoutSettings": "Accesați setările de expirare a ecranului"
                 },
-                "resetToDefault": "RESETARE LA SETĂRILE IMPLICITE"
+                "resetToDefault": "Resetare"
             },
             "intelligentScreen": {
                 "title": "Ecran inteligent",
@@ -1590,7 +1608,7 @@
         },
         "antivirus": {
             "common": {
-                "title": "Antivirus:",
+                "title": "Antivirus",
                 "back": "ÎNAPOI",
                 "why": "De ce McAfee?",
                 "recommends": "Lenovo recomandă McAfee pentru a vă proteja toate dispozitivele cu:",
@@ -2200,7 +2218,6 @@
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
         "custom": "Experiență personalizată",
-        "experience": "Experienţă",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",

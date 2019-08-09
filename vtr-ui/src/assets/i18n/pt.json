@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Gravar Tecla de Macro Para"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Desligado"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Perfil 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Desligado"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,25 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
+            }
         }
     },
     "common": {
@@ -416,7 +431,10 @@
             },
             "support": "Suporte",
             "homeSecurity": "Casa conectada",
-            "privacy": "Privacidade"
+            "privacy": "Privacidade",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Assistente de Segurança",
@@ -522,10 +540,10 @@
             "cameraPrivacy": "Câmara",
             "eyeCareMode": "Cuidados c/Visão",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "O Lenovo Vantage não tem acesso à Câmara nem ao Microfone.",
+                "accessUrl": "Aceda às definições do Windows para conceder acesso",
+                "microphoneNote": "O Lenovo Vantage não tem acesso ao Microfone.",
+                "cameraPrivacyNote": "O Lenovo Vantage não tem acesso à Câmara."
             }
         },
         "systemStatus": {
@@ -680,22 +698,22 @@
                     "Bad": "<b>Ocorreu um erro de bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
                     "NotDetected": "<b>Nenhuma bateria detetada ou</b> bateria não ligada.",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
-                    "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b> O seu computador Lenovo não suporta este transformador CA. Poderá causar um encerramento súbito. Ligue um transformador CA correto.",
-                    "LimitedACAdapterSupport": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto.",
+                    "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b>",
+                    "LimitedACAdapterSupport": "<b>O transformador CA não consegue fornecer energia suficiente.</b>",
                     "MissingDriver": "<b>O controlador do Lenovo Power Manager</b> não está instalado ou não está a funcionar corretamente. Execute o Windows Update para instalar o controlador mais recente.",
                     "StoreLimitation": "<b>A bateria apenas pode armazenar {{value}}% da</b> respetiva capacidade original de carga total.",
                     "HighTemperature": "<b>A descarga</b> parou porque a <b>temperatura da bateria é demasiado elevada.</b>",
                     "TrickleCharge": "A bateria foi <b>totalmente descarregada</b> e necessita de ser recarregada. Esta operação pode demorar dez horas ou mais.",
                     "OverheatedBattery": "A bateria está <b>demasiado quente</b>. Remova-a do computador e arrefeça-a à temperatura ambiente.",
                     "PermanentError": "A bateria <b>falhou devido ao desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>O transformador CA não é suportado.</b> O seu computador Lenovo não suporta este transformador CA. Poderá causar um encerramento súbito. Ligue um transformador CA correto.",
+                    "LimitedACAdapterSupportDetail": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto."
                 },
                 "updating": "Atualizar",
                 "voltageError": "Tensão da bateria incorreta",
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ver detalhes"
             },
             "power": {
                 "title": "Alimentação",
@@ -803,8 +821,8 @@
                         "readMoreText": "Ler mais.",
                         "noteInfo": " O Limiar de Carregamento da Bateria ainda não está totalmente ativo. Desligue os cabos do equipamento e permita que a bateria se descarregue até ou abaixo do limiar de paragem de carregamento.",
                         "settings": {
-                            "title1": "Limiar para bateria incorporada",
-                            "title2": "Limiar para bateria removível"
+                            "title1": "Limiar da bateria principal",
+                            "title2": "Limiar para bateria secundária"
                         },
                         "popup": {
                             "title": "Ativar Limiar de Carregamento da Bateria",
@@ -976,7 +994,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Frio"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Redefinir",
                         "tooltip": "O Modo de Cuidados com a Visão ajusta a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos.",
                         "onSunsetToSunriseScheduleDescription": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
                         "note": {
@@ -990,7 +1008,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Frio"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Redefinir",
                         "tooltip": "O Modo de Cuidados com a Visão ajusta a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos.",
                         "onSunsetToSunriseScheduleDescription": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
                         "note": {
@@ -1039,7 +1057,7 @@
                     "camera": {
                         "title": "Câmara",
                         "tooltip": "Clique aqui para redefinir as propriedades da câmara para as predefinições.",
-                        "reset": "Repor as definições de fábrica"
+                        "reset": "Redefinir"
                     },
                     "brightness": "Luminosidade",
                     "contrast": "Contraste",
@@ -1152,7 +1170,7 @@
                     "tooltip": "Clique aqui para repor as definições de Deteção de presença humana."
                 },
                 "zeroTouchLogin": {
-                    "title": "Login Zero Touch",
+                    "title": "Login sem toques",
                     "caption": "Esta funcionalidade desbloqueia ou reativa automaticamente o computador quando o utilizador estiver sentado em frente ou se aproximar do mesmo.",
                     "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
@@ -1192,14 +1210,14 @@
                     "description1": "Esta funcionalidade depende do Windows Hello. Verifique se o reconhecimento facial está ativado nas definições do Windows.",
                     "description2": "O recurso usa sensores e câmara para detetar a sua presença. No entanto, a funcionalidade NÃO recolhe qualquer dado pessoal.",
                     "description3": "1. Se o computador estiver no modo Tenda, Tablet ou Suporte, estas funcionalidades poderão não funcionar corretamente.",
-                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O início de sessão automático com câmara de IV não irá funcionar.",
+                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O login sem toques não funcionará.",
                     "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vá para as definições Windows Hello",
                     "screenTimeoutSettings": "Aceda a Definições de tempo de espera do ecrã"
                 },
-                "resetToDefault": "REPOR AS PREDEFINIÇÕES"
+                "resetToDefault": "Redefinir"
             },
             "intelligentScreen": {
                 "title": "Ecrã Inteligente",
@@ -2200,7 +2218,6 @@
         "personal": "Utilização pessoal",
         "business": "Utilização comercial",
         "custom": "Experiência personalizada",
-        "experience": "Experiência",
         "privacytitle": "Ajude-nos a melhorar a qualidade da aplicação, permitindo a recolha de estatísticas de utilização anónimas.",
         "moreInterest": "+ mais interesses",
         "title1": "Bem-vindo a",

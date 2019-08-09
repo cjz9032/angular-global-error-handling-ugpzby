@@ -3,7 +3,9 @@
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
 				[back]="'common.ui.back' | translate"
-				[title]="'device.myDevice.title' | translate">
+				[title]="'device.myDevice.title' | translate"
+				[backId]="'myDevice-back-btn'"
+				[textId]="'myDevice'">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -36,16 +38,17 @@
 										[ratioX]="4"
 										[ratioY]="2"
 										[cornerShift]="'large'"
-										id="device-upgradePcMemory-card"
-										aria-label="device-upgradePcMemory-card"
-										[containerCardId]="'myDevice-upgradePcMemory-card'">
+										id="device-container-card"
+										aria-label="device-container-card"
+										[containerCardId]="'myDevice-container-card'">
 									</vtr-container-card>
 								</div>
 							</div>
 
 							<div class="row mb-40">
 								<div class="col col-12 cont">
-									<div class="widget-heading mb-40">{{'device.myDevice.helpful' |translate }}</div>
+									<div class="widget-heading mb-40" id="myDevice-helpfull-content-title"
+									 attr.aria-label="myDevice-helpfull-content-title">{{'device.myDevice.helpful' |translate }}</div>
 									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 										[itemid]="'common.QAndA.itemid'|translate"
 										[description]="'common.qAndA.subtitle' | translate"

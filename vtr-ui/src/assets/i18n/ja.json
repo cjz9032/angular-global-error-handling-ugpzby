@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "マクロ・キーを記録"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "オフ"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "プロファイル 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "オフ"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,25 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
+            }
         }
     },
     "common": {
@@ -416,7 +431,10 @@
             },
             "support": "サポート",
             "homeSecurity": "接続ホーム",
-            "privacy": "プライバシー"
+            "privacy": "プライバシー",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "セキュリティー・アドバイザー",
@@ -522,10 +540,10 @@
             "cameraPrivacy": "カメラ",
             "eyeCareMode": "アイ・ケア",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage がカメラとマイクロホンにアクセスできません。",
+                "accessUrl": "Windows 設定に移動してアクセスできるようにします",
+                "microphoneNote": "Lenovo Vantage がマイクロホンにアクセスできません。",
+                "cameraPrivacyNote": "Lenovo Vantage がカメラにアクセスできません。"
             }
         },
         "systemStatus": {
@@ -680,22 +698,22 @@
                     "Bad": "<b>バッテリー・エラーが発生しました。</b>バッテリーを充電/放電できません。バッテリーを交換してください。",
                     "NotDetected": "<b>バッテリーが検出されないか</b>、接続されていません。",
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
-                    "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
-                    "LimitedACAdapterSupport": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。",
+                    "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
+                    "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
                     "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。",
                     "StoreLimitation": "<b>バッテリーはフル充電容量の {{value}}%</b> しか充電できません。",
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
                     "OverheatedBattery": "バッテリーが<b>熱くなって</b>います。コンピューターから取り外して、室温まで冷ましてください。",
                     "PermanentError": "<b>正常摩耗のためバッテリーは故障</b>しています。バッテリーが充電できません。バッテリーを交換してください。",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
+                    "LimitedACAdapterSupportDetail": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。"
                 },
                 "updating": "更新中",
                 "voltageError": "誤ったバッテリー電圧",
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "詳細を見る"
             },
             "power": {
                 "title": "電源",
@@ -803,8 +821,8 @@
                         "readMoreText": "表示を多くする。",
                         "noteInfo": " バッテリー充電のしきい値がまだ完全にアクティブではありません。マシンの電源を切り、充電停止しきい値以下までバッテリを放電してください。",
                         "settings": {
-                            "title1": "内蔵バッテリーのしきい値",
-                            "title2": "取り外し可能なバッテリーのしきい値"
+                            "title1": "プライマリー・バッテリーのしきい値",
+                            "title2": "セカンダリ・バッテリーのしきい値"
                         },
                         "popup": {
                             "title": "バッテリー充電しきい値を有効にする",
@@ -976,7 +994,7 @@
                             "warm": "暖色 (目に優しい)",
                             "cold": "寒色"
                         },
-                        "reset": "温度をリセット",
+                        "reset": "リセット",
                         "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
                         "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
@@ -990,7 +1008,7 @@
                             "warm": "暖色 (目に優しい)",
                             "cold": "寒色"
                         },
-                        "reset": "温度をリセット",
+                        "reset": "リセット",
                         "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
                         "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
@@ -1039,7 +1057,7 @@
                     "camera": {
                         "title": "カメラ",
                         "tooltip": "カメラのプロパティをデフォルト設定にリセットするには、ここをクリックしてください。",
-                        "reset": "工場出荷時の状態にリセット"
+                        "reset": "リセット"
                     },
                     "brightness": "明るさ",
                     "contrast": "コントラスト",
@@ -1199,7 +1217,7 @@
                     "goToWindowsHello": "Windows Hello 設定に移動",
                     "screenTimeoutSettings": "画面のタイムアウト設定に移動します"
                 },
-                "resetToDefault": "デフォルト設定にリセットする"
+                "resetToDefault": "リセット"
             },
             "intelligentScreen": {
                 "title": "インテリジェント・スクリーン",
@@ -2200,7 +2218,6 @@
         "personal": "個人用",
         "business": "仕事用",
         "custom": "カスタム・エクスペリエンス",
-        "experience": "経験",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
         "moreInterest": "+ その他のことに興味がある",
         "title1": "ようこそ",

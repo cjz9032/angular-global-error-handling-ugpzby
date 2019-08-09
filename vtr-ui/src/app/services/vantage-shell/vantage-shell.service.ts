@@ -12,11 +12,13 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	providedIn: 'root'
 })
 export class VantageShellService {
+	public readonly isShellAvailable;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
+			this.isShellAvailable = true;
 			this.setConsoleLogProxy();
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
@@ -48,13 +50,15 @@ export class VantageShellService {
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity
 			]);
+		} else {
+			this.isShellAvailable = false;
 		}
 	}
 
 	public registerEvent(eventType: any, handler: any) {
 		if (this.phoenix) {
 			this.phoenix.on(eventType, (val) => {
-			// 	console.log('Event fired: ', eventType, val);
+				// 	console.log('Event fired: ', eventType, val);
 				handler(val);
 			});
 		}
@@ -73,29 +77,29 @@ export class VantageShellService {
 	private setConsoleLogProxy() {
 		const consoleProxy = Object.assign({}, console);
 		const logger = this.getLogger();
-		console.log = (msg) => {	
+		console.log = (msg) => {
 			consoleProxy.log(msg);
-			if(logger){
+			if (logger) {
 				msg = JSON.stringify(msg);
 				logger.info(msg);
 			}
 		};
-		
-		console.error = (err) => {		
+
+		console.error = (err) => {
 			consoleProxy.error(err);
-			if(logger){
+			if (logger) {
 				err = JSON.stringify(err);
 				logger.error(err);
 			}
 		};
 
-		console.warn = (msg) => {		
+		console.warn = (msg) => {
 			consoleProxy.warn(msg);
-			if(logger){
+			if (logger) {
 				msg = JSON.stringify(msg);
 				logger.warn(msg);
 			}
-		};		
+		};
 	}
 
 	public getLenovoId(): any {
@@ -215,6 +219,16 @@ export class VantageShellService {
 
 	private downloadMetricsPolicy() {
 		return this.http.get<string>('/assets/privacy-json/metrics.json');
+	}
+
+	/**
+	 * returns modern preload object from VantageShellService of JS Bridge
+	 */
+	public getModernPreload(): any {
+		if (this.phoenix) {
+			return this.phoenix.modernPreload;
+		}
+		return undefined;
 	}
 
 	/**

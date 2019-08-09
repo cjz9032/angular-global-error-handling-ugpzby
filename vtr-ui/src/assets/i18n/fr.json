@@ -56,7 +56,7 @@
                     "touchpadLock": "Verrou pavé tactile",
                     "lightingDriverPopup": {
                         "headerText": "Installation du pilote requise",
-                        "text": "Installer le pilote pour activer l'éclairage CPU (redémarrage obligatoire)",
+                        "text": "Installer le pilote pour activer l'éclairage (redémarrage obligatoire)",
                         "button": "Installer",
                         "link": "annuler"
                     },
@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Enregistrement de touche macro pour"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -260,7 +256,7 @@
                     "title": "Doux"
                 },
                 "option6": {
-                    "title": "Température UC"
+                    "title": "Température CPU"
                 },
                 "option7": {
                     "title": "Utilisation CPU"
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Désactivé"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Désactivé"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,25 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
+            }
         }
     },
     "common": {
@@ -416,7 +431,10 @@
             },
             "support": "Soutien",
             "homeSecurity": "Maison connectée",
-            "privacy": "Confidentialité"
+            "privacy": "Confidentialité",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Conseil sécurité",
@@ -522,10 +540,10 @@
             "cameraPrivacy": "Caméra",
             "eyeCareMode": "Protection yeux",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage n'a pas accès à la caméra et au micro.",
+                "accessUrl": "Accéder aux paramètres Windows pour donner accès",
+                "microphoneNote": "Lenovo Vantage n'a pas accès au micro.",
+                "cameraPrivacyNote": "Lenovo Vantage n'a pas accès à la caméra."
             }
         },
         "systemStatus": {
@@ -680,22 +698,22 @@
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
                     "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
-                    "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
-                    "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat.",
+                    "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
+                    "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
                     "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
                     "OverheatedBattery": "La batterie est <b>trop chaude</b>. Retirez-la de l'ordinateur et laissez-la refroidir à la température ambiante.",
                     "PermanentError": "La batterie est <b>défaillante suite à une usure normale.</b> La batterie ne peut pas être rechargée. Remplacez la batterie.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
+                    "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat."
                 },
                 "updating": "Mise à jour",
                 "voltageError": "Tension de la batterie incorrecte",
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Voir les détails"
             },
             "power": {
                 "title": "Alimentation",
@@ -803,8 +821,8 @@
                         "readMoreText": "En savoir plus.",
                         "noteInfo": " Le seuil de chargement de la batterie n'est toujours pas pleinement actif. Veuillez débrancher votre appareil et laisser votre batterie se vider jusqu'au seuil d'arrêt de chargement ou en dessous de celui-ci.",
                         "settings": {
-                            "title1": "Seuil pour batterie intégrée",
-                            "title2": "Seuil pour batterie amovible"
+                            "title1": "Seuil pour batterie principale",
+                            "title2": "Seuil pour batterie secondaire"
                         },
                         "popup": {
                             "title": "Activer le seuil de chargement de la batterie",
@@ -976,7 +994,7 @@
                             "warm": "Chaud (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
-                        "reset": "Réinitialiser la température",
+                        "reset": "Réinitialiser",
                         "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
                         "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
                         "note": {
@@ -990,7 +1008,7 @@
                             "warm": "Chaud (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
-                        "reset": "Réinitialiser la température",
+                        "reset": "Réinitialiser",
                         "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
                         "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
                         "note": {
@@ -1039,7 +1057,7 @@
                     "camera": {
                         "title": "Caméra",
                         "tooltip": "Cliquez ici pour restaurer les paramètres par défaut des propriétés de la caméra.",
-                        "reset": "Restaurer les paramètres d'usine par défaut"
+                        "reset": "Réinitialiser"
                     },
                     "brightness": "Luminosité",
                     "contrast": "Contraste",
@@ -1192,14 +1210,14 @@
                     "description1": "Cette fonction dépend de Windows Hello. Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
-                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion à la caméra automatique IR ne fonctionnera pas.",
+                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
                     "screenTimeoutSettings": "Accédez aux paramètres de mise en veille de l'écran"
                 },
-                "resetToDefault": "RESTAURATION DES PARAMÈTRES PAR DÉFAUT"
+                "resetToDefault": "Réinitialiser"
             },
             "intelligentScreen": {
                 "title": "Écran intelligent",
@@ -2200,7 +2218,6 @@
         "personal": "Usage personnel",
         "business": "Usage professionnel",
         "custom": "Expérience personnalisée",
-        "experience": "Expérience",
         "privacytitle": "Aidez-nous à améliorer la qualité de l'application en autorisant la collecte de statistiques d'utilisation anonymes.",
         "moreInterest": "+ plus d'intérêts",
         "title1": "Bienvenue",

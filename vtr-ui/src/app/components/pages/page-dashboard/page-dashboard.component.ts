@@ -1,6 +1,6 @@
 import {	Component,	OnInit,	DoCheck,	OnDestroy} from '@angular/core';
 import {	Router,	ActivatedRoute} from '@angular/router';
-import {	NgbModal,	NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import {	TranslateService,	LangChangeEvent} from '@ngx-translate/core';
 import {	SecurityAdvisor} from '@lenovo/tan-client-bridge';
 import {	QaService} from '../../../services/qa/qa.service';
@@ -22,6 +22,7 @@ import {	SecurityAdvisorMockService} from 'src/app/services/security/securityMoc
 import {	LenovoIdDialogService} from 'src/app/services/dialog/lenovoIdDialog.service';
 import {	LoggerService} from 'src/app/services/logger/logger.service';
 import {	SessionStorageKey} from 'src/app/enums/session-storage-key-enum';
+import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -127,6 +128,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		if (lastAction !== this.protocalAction) {
 			if (this.protocalAction.toLowerCase() === 'lenovoid') {
 				this.lenovoIdDialogService.openLenovoIdDialog();
+			} else if (this.protocalAction.toLowerCase() === 'modernpreload') {
+				this.openModernPreloadModal();
 			}
 		}
 	}
@@ -241,6 +244,22 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			size: 'lg',
 			centered: true,
 			windowClass: 'feedback-modal'
+		});
+	}
+
+	openModernPreloadModal() {
+		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'modern-preload-modal',
+			keyboard: false,
+			beforeDismiss: () => {
+				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
+					modernPreloadModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
 		});
 	}
 

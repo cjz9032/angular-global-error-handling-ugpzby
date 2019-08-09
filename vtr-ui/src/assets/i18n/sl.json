@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Snemanje makro tipke za"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Izklopljeno"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Izklopljeno"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,25 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
+            }
         }
     },
     "common": {
@@ -416,7 +431,10 @@
             },
             "support": "Podpora",
             "homeSecurity": "Povezani dom",
-            "privacy": "Zasebnost"
+            "privacy": "Zasebnost",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Varnostni svetovalec",
@@ -520,12 +538,12 @@
             "title": "Vaše hitre nastavitve",
             "microphone": "Mikrofon",
             "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Očem prijazen način",
+            "eyeCareMode": "Očem prijazno",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage nima dostopa do kamere in mikrofona.",
+                "accessUrl": "Odprite nastavitve sistema Windows in omogočite dostop",
+                "microphoneNote": "Lenovo Vantage nima dostopa do mikrofona.",
+                "cameraPrivacyNote": "Lenovo Vantage nima dostopa do kamere."
             }
         },
         "systemStatus": {
@@ -680,22 +698,22 @@
                     "Bad": "<b>Prišlo je do napake baterije.</b> Baterije ni mogoče polniti/prazniti. Zamenjajte baterijo.",
                     "NotDetected": "<b>Baterija ni zaznana ali ni</b> priključena.",
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
-                    "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b> Vaš računalnik Lenovo ne podpira tega napajalnika. Povzroči lahko nenaden izklop. Priključite pravilen napajalnik.",
-                    "LimitedACAdapterSupport": "<b>Napajalnik računalniku Lenovo ne more zagotoviti dovolj energije</b>, kar bo vplivalo na učinkovitost delovanja sistema in hitrost polnjenja. Znova priključite ustrezen napajalnik.",
+                    "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
+                    "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
                     "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
                     "OverheatedBattery": "Baterija je <b>prevroča</b>. Odstranite jo iz računalnika in jo ohladite na sobno temperaturo.",
                     "PermanentError": "Baterija <b>ne deluje več zaradi običajne obrabe.</b> Baterije ni mogoče polniti. Zamenjajte baterijo.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Napajalnik ni podprt.</b> Vaš računalnik Lenovo ne podpira tega napajalnika. Povzroči lahko nenaden izklop. Priključite pravilen napajalnik.",
+                    "LimitedACAdapterSupportDetail": "<b>Napajalnik računalniku Lenovo ne more zagotoviti dovolj energije</b>, kar bo vplivalo na učinkovitost delovanja sistema in hitrost polnjenja. Znova priključite ustrezen napajalnik."
                 },
                 "updating": "Posodabljanje",
                 "voltageError": "Napačna napetost baterije",
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{value}}% napolnjenosti.",
-                "seeDetailsLink": "See details"
+                "seeDetailsLink": "Prikaži podrobnosti"
             },
             "power": {
                 "title": "Napajanje",
@@ -803,8 +821,8 @@
                         "readMoreText": "Preberite več.",
                         "noteInfo": " Prag polnjenja baterije še vedno ni v celoti dejaven. Odklopite računalnik in pustite, da se baterija izprazni do ali pod prag prenehanja polnjenja.",
                         "settings": {
-                            "title1": "Prag za vgrajeno baterijo",
-                            "title2": "Prag za odstranljivo baterijo"
+                            "title1": "Prag za primarno baterijo",
+                            "title2": "Prag za sekundarno baterijo"
                         },
                         "popup": {
                             "title": "Omogoči prag polnjenja baterije",
@@ -976,7 +994,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Ponastavitev temperature",
+                        "reset": "Ponastavitev",
                         "tooltip": "Očem prijazen način prilagodi barvno temperaturo zaslona, tako da filtrira modro svetlobo in zmanjša utrujenost oči.",
                         "onSunsetToSunriseScheduleDescription": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
                         "note": {
@@ -990,7 +1008,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Ponastavitev temperature",
+                        "reset": "Ponastavitev",
                         "tooltip": "Očem prijazen način prilagodi barvno temperaturo zaslona, tako da filtrira modro svetlobo in zmanjša utrujenost oči.",
                         "onSunsetToSunriseScheduleDescription": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
                         "note": {
@@ -1039,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kliknite tukaj za ponastavitev lastnosti kamere na privzete nastavitve.",
-                        "reset": "Ponastavitev na tovarniške nastavitve"
+                        "reset": "Ponastavitev"
                     },
                     "brightness": "Svetlost",
                     "contrast": "Kontrast",
@@ -1192,14 +1210,14 @@
                     "description1": "Ta funkcija uporablja Windows Hello. Poskrbite, da je funkcija prepoznavanja obraza vklopljena v nastavitvah sistema Windows.",
                     "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti. Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
                     "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stanja, te funkcije morda ne bodo pravilno delovale.",
-                    "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen. Samodejna prijava z IR-kamero ne bo delovala.",
+                    "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen. Prijava brez dotika ne bo delovala.",
                     "description5": "3. Prilagodite zaslon računalnika na primeren kot, tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Odprite nastavitve Windows Hello",
                     "screenTimeoutSettings": "Odprite nastavitve časa za izklop zaslona"
                 },
-                "resetToDefault": "PONASTAVITEV NA PRIVZETE NASTAVITVE"
+                "resetToDefault": "Ponastavitev"
             },
             "intelligentScreen": {
                 "title": "Inteligentni zaslon",
@@ -2200,7 +2218,6 @@
         "personal": "Osebna uporaba",
         "business": "Poslovna uporaba",
         "custom": "Izkušnja po meri",
-        "experience": "Izkušnje",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
         "moreInterest": "+ več zanimanj",
         "title1": "Pozdravljeni v programu WRITEit,",

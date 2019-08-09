@@ -1,3 +1,4 @@
+import { NetworkBoostStatus } from './../../../data-models/gaming/networkboost-status.model';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, NgZone } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -5,7 +6,6 @@ import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.mode
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { NetworkBoostStatus } from 'src/app/data-models/gaming/networkboost-status.model';
 import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -76,7 +76,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			readonly: true,
 			id: 'legion_edge_ramoverlock',
 			ariaLabel: 'legion_edge_ramoverlock',
-			type: 'gaming.dashboard.device.legionEdge.ramOverlock'
+			type: 'gaming.dashboard.device.legionEdge.ramOverlock',
+			settings: ''
 		},
 		{
 			readMoreText: '',
@@ -98,7 +99,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			ariaLabel: 'legion_edge_autoclose',
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose',
-			canNavigate: true
+			canNavigate: true,
+			settings: 'legion_edge_autoclose_gearicon'
 		},
 		{
 			readMoreText: '',
@@ -122,7 +124,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			ariaLabel: 'legion_edge_networkboost',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',
-			canNavigate: true
+			canNavigate: true,
+			settings: 'legion_edge_networkboost_gearicon'
 		},
 		{
 			readMoreText: '',
@@ -144,7 +147,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			readonly: true,
 			id: 'legion_edge_hybridmode',
 			ariaLabel: 'legion_edge_hybridmode',
-			type: 'gaming.dashboard.device.legionEdge.hybridMode'
+			type: 'gaming.dashboard.device.legionEdge.hybridMode',
+			settings: ''
 		},
 		{
 			readMoreText: '',
@@ -164,7 +168,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			id: 'legion_edge_touchpadlock',
 			ariaLabel: 'legion_edge_touchpadlock',
-			type: 'gaming.dashboard.device.legionEdge.touchpadLock'
+			type: 'gaming.dashboard.device.legionEdge.touchpadLock',
+			settings: ''
 		}
 	];
 
@@ -177,21 +182,21 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				header: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
-				ariaLabels: 'gaming.dashboard.device.legionEdge.status.alwaysonUid',
+				id: 'cpu_overclock_on',
 				value: 1
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
-				ariaLabels: 'gaming.dashboard.device.legionEdge.status.whenGamingUid',
+				id: 'cpu_overclock_when_gaming',
 				value: 2
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.off',
 				name: 'gaming.dashboard.device.legionEdge.status.off',
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
-				ariaLabels: 'gaming.dashboard.device.legionEdge.status.offUid',
+				id: 'cpu_overclock_off',
 				value: 3
 			}
 		]
@@ -216,8 +221,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	) { }
 	ngOnInit() {
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
-				console.log(`GAMINGCAPABLITIES in widget-legion-edge.component`, response);
+			if (response.type === Gaming.GamingCapabilities) {
+				console.log(`GAMINGCAPABILITIES in widget-legion-edge.component`, response);
 				this.gamingCapabilities = response.payload;
 				this.legionEdgeInit();
 			}
@@ -271,7 +276,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		// TBD add autoclose later at index 2
 		// TODO have to remove this || condition and line no 242.
 		this.legionUpdate[2].isVisible = gamingStatus.optimizationFeature;
-		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature; // || true;
+		//TODO below is for the network boost subpage
+		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || false;
 		console.log('aparna  driver lack ' + gamingStatus.networkBoostFeature);
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
@@ -470,9 +476,15 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.TouchpadLockStatus, touchpadLockStatus);
 	}
 
+	public closeLegionEdgePopups() {
+		Object.entries(this.legionUpdate).forEach(([key]) => {
+			this.legionUpdate[key].isDriverPopup = false;
+			this.legionUpdate[key].isPopup = false;
+		});
+	}
+
 	public onPopupClosed($event) {
 		const name = $event.name;
-		console.log('-----------------------------------', name);
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
@@ -480,13 +492,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.title') {
-			console.log('------------------');
 			this.legionUpdate[0].isDriverPopup = false;
 		}
 	}
 
 	public async toggleOnOffRamOCStatus($event) {
 		const { name, checked } = $event.target;
+		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
 				this.legionUpdate[1].isDriverPopup = $event;
@@ -501,9 +513,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.catch((error) => {
 					console.error('setRamOcStatus', error);
 				});
-		} else {
-			// to hide the existing popup which is open(hybridmode, ramoc)
-			this.legionUpdate[1].isPopup = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
@@ -515,9 +524,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.catch((error) => {
 					console.error('setHybridModeStatus', error);
 				});
-		} else {
-			// to hide the existing popup which is open(hybridmode, ramoc)
-			this.legionUpdate[4].isPopup = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
 			this.TouchpadLockStatusObj.touchpadLockStatus = $event.switchValue;
@@ -554,23 +560,23 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	onIconClick(event: any) {
 		event = event || { name: '' };
 		const { name } = event;
-		this.legionUpdate[3].isDriverPopup = false;
+		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.gamingCapabilities.fbNetFilter = !!this.gamingCapabilities.fbNetFilter;
+			this.router.navigate(['/gaming/networkboost']);
 			if (!this.gamingCapabilities.fbNetFilter) {
-				console.log('-----------------------<><>', name, this.legionUpdate[3].isDriverPopup);
 				this.legionUpdate[3].isDriverPopup = true;
 			}
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.autoClose') {
 			this.router.navigate(['/gaming/autoclose']);
 		}
-
 	}
 
 	onShowDropdown(event) {
 		if (event.type === 'gaming.dashboard.device.legionEdge.title') {
 			if (this.drop.hideDropDown) {
+				this.closeLegionEdgePopups();
 				this.legionUpdate[0].isDriverPopup = true;
 			}
 		}

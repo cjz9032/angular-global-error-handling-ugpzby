@@ -42,7 +42,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			tooltipText: '',
 			id: 'quick_settings_thermalmode',
 			ariaLabel: 'quick_settings_thermalmode',
-			type: 'auto-updates'
+			type: 'auto-updates',
+			settings: ''
 		},
 		{
 			readMoreText: '',
@@ -61,7 +62,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			tooltipText: '',
 			id: 'quick_settings_repidcharge',
 			ariaLabel: 'quick_settings_repidcharge',
-			type: 'gaming.dashboard.device.quickSettings.rapidCharge'
+			type: 'gaming.dashboard.device.quickSettings.rapidCharge',
+			settings: ''
 		},
 		{
 			readMoreText: '',
@@ -80,7 +82,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			tooltipText: '',
 			id: 'quick_settings_wifisecurity',
 			ariaLabel: 'quick_settings_wifisecurity',
-			type: 'auto-updates'
+			type: 'auto-updates',
+			settings: ''
 		},
 		{
 			readMoreText: '',
@@ -99,7 +102,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			tooltipText: '',
 			id: 'quick_settings_dolby',
 			ariaLabel: 'quick_settings_dolby',
-			type: 'gaming.dashboard.device.quickSettings.dolby'
+			type: 'gaming.dashboard.device.quickSettings.dolby',
+			settings: 'quick_settings_dolby_gearicon'
 		}
 	];
 
@@ -112,18 +116,21 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					header: 'gaming.dashboard.device.quickSettings.status.performance',
 					name: 'gaming.dashboard.device.quickSettings.status.performance',
 					description: 'gaming.dashboard.device.quickSettings.statusText.perText',
+					id: 'thermal_mode_performance',
 					value: 3
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.balance',
 					name: 'gaming.dashboard.device.quickSettings.status.balance',
 					description: 'gaming.dashboard.device.quickSettings.statusText.balText',
+					id: 'thermal_mode_balance',
 					value: 2
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.quiet',
 					name: 'gaming.dashboard.device.quickSettings.status.quiet',
 					description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
+					id: 'thermal_mode_quiet',
 					value: 1
 				}
 			]
@@ -165,7 +172,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.registerThermalModeEvent();
 		}
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
+			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingCapabilities = response.payload;
 				if (this.gamingCapabilities.smartFanFeature) {
 					this.registerThermalModeEvent();

@@ -1,4 +1,5 @@
-<div class="record-list-wrapper" [ngClass]="{'recording': recordingStatus}">
+<div class="record-list-wrapper" [ngClass]="{'recording': recordingStatus}"
+	attr.data-line="{{ 'gaming.macroKey.details.recorded.list.footer.title' | translate }}">
 	<div class="row top-fix">
 		<div class="col-sm-12" *ngIf="!recordingStatus">
 			<div class="title-main">
@@ -33,7 +34,10 @@
 				<div class="record-list">
 					<ng-container *ngFor="let record of recordsList; let i = index;">
 						<div class="record-item" (mouseover)="hoveredPair = record.pairName"
-							(mouseleave)="hoveredPair = ''" [ngClass]="{paired: record.pairName === hoveredPair}">
+							(mouseleave)="hoveredPair = ''" [ngClass]="{paired: record.pairName === hoveredPair}"
+							id="macro_key_delete_key{{record.pairName}}"
+							attr.aria-label="macro_key_delete_key{{record.pairName}}" vtrMetrics
+							[metricsItem]="'macro_key_delete_key'+record.pairName" metricsEvent="featureClick">
 							<div class="pressing" *ngIf="record.status === 1">
 								<div class="key">
 									<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
@@ -100,8 +104,8 @@
 	</div>
 	<div class="bottom-fix" *ngIf="!recordingStatus">
 		<div class="text-right">
-			<div class="delete-btn" (click)="clearRecords()"  vtrMetrics [metricsItem]="'Clear Records'"
-			metricsEvent="featureClick">
+			<div class="delete-btn" (click)="clearRecords()" vtrMetrics [metricsItem]="'macrokey_clear_records'"
+				metricsEvent="featureClick" id="macrokey_clear_records" attr.aria-label="macrokey_clear_records">
 				<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
 					<title>6.20pxIcon/bin</title>
