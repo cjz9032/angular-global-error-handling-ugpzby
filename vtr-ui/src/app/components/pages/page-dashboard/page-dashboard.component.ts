@@ -23,6 +23,8 @@ import {	LenovoIdDialogService} from 'src/app/services/dialog/lenovoIdDialog.ser
 import {	LoggerService} from 'src/app/services/logger/logger.service';
 import {	SessionStorageKey} from 'src/app/enums/session-storage-key-enum';
 import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -69,7 +71,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private activatedRoute: ActivatedRoute,
 		private lenovoIdDialogService: LenovoIdDialogService,
-		private loggerService: LoggerService
+		private loggerService: LoggerService,
+		private hypService: HypothesisService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -267,19 +270,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 
 	private getTileBSource() {
-		return new Promise((resolve, reject) => {
-			try {
-				this.vantageShellService.calcDeviceFilter('{"var":"HypothesisGroups.TileBSource"}').then((source) => {
-					resolve(source);
-				}, error => {
-					console.log('getTileBSource:' + error);
-					reject(error);
-				});
-			} catch (ex) {
-				console.error('getTileBSource' + ex.message);
-				reject(ex);
-			}
-		});
+		 return this.hypService.getFeatureSetting('TileBSource');
 	}
 
 	private setDefaultCMSContent() {
