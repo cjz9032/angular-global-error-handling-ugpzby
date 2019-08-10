@@ -84,22 +84,13 @@
 
 		.battery-conditions-tips {
 			font-size: $base;
-			z-index: 5;
 			width: 100%;
-			vertical-align: middle;
 			letter-spacing: 0;
+			padding: 0.5rem 0;
+			align-self: center;
 		}
-		.battery-conditions-icon {
-			font-size: 2rem;
-		}
-		.good {
-			color: #{$go_light};
-		}
-		.poor {
-			color: #{$stop_dark};
-		}
-		.fair {
-			color: #{$orange};
+		.icomoon {
+			font-size: 3.5rem;
 		}
 		.loader {
 			position: absolute;

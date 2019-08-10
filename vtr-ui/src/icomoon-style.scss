@@ -15,6 +15,30 @@
 		content: $icomoon-auto-screen-off;
 	}
 }
+.icomoon-ConditionACAdapterError {
+	&:before {
+		content: $icomoon-ConditionACAdapterError;
+		color: #f17f14;
+	}
+}
+.icomoon-ConditionBadBattery {
+	&:before {
+		content: $icomoon-ConditionBadBattery;
+		color: #e74c3c;
+	}
+}
+.icomoon-ConditionFairBattery {
+	&:before {
+		content: $icomoon-ConditionFairBattery;
+		color: #f17f14;
+	}
+}
+.icomoon-ConditionGoodBattery {
+	&:before {
+		content: $icomoon-ConditionGoodBattery;
+		color: #30d487;
+	}
+}
 .icomoon-dynamic {
 	&:before {
 		content: $icomoon-dynamic;
@@ -512,6 +536,12 @@
 .icomoon-music {
 	&:before {
 		content: $icomoon-music;
+	}
+}
+.icomoon-NoBatteryError {
+	&:before {
+		content: $icomoon-NoBatteryError;
+		color: #f17f14;
 	}
 }
 .icomoon-normal {
