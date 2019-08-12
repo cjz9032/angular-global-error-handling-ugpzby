@@ -26,15 +26,14 @@ export class UiGamingCollapsibleContainerComponent implements OnInit, OnChanges 
 	) { }
 
 	ngOnInit() {
-		this.options.dropOptions.forEach((option: any) => {
-			if (option.value === this.options.curSelected) {
-				this.currentOption = option.name;
-				this.currentDescription = option.description;
-			}
-		});
+		this.getCurrentOption();
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
+		this.getCurrentOption();
+	}
+	
+	public getCurrentOption() {
 		this.options.dropOptions.forEach((option: any) => {
 			if (option.value === this.options.curSelected) {
 				this.currentOption = option.name;
@@ -42,7 +41,6 @@ export class UiGamingCollapsibleContainerComponent implements OnInit, OnChanges 
 			}
 		});
 	}
-
 	public toggleOptions(options) {
 		if (!this.options.hideDropDown) {
 			this.showOptions = !this.showOptions;
