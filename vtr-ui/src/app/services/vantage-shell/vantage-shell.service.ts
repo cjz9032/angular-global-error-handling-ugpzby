@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as Phoenix from '@lenovo/tan-client-bridge/index';
+import * as Phoenix from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
