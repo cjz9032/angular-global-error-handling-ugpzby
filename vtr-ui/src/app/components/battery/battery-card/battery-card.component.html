@@ -71,21 +71,25 @@
 			<div class='col'>
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
 					class="battery-conditions-tips"
-					[innerHTML]="batteryConditionNote | translate:param2"></span>
+					[innerHTML]="batteryConditionNote | translate:param2" id="myDevice-settings-battery-condition-tip"
+					attr.aria-label="myDevice-settings-battery-condition-tip"></span>
 				<span
 					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="battery-conditions-tips"
-					[innerHTML]="batteryConditionNote | translate"></span>
+					[innerHTML]="batteryConditionNote | translate" id="myDevice-settings-battery-condition-tip"
+					attr.aria-label="myDevice-settings-battery-condition-tip"></span>
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError&&shortAcErrNote"
 					class="link-label"
-					(click)="showDetailTip(i)">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
+					(click)="showDetailTip(i)" id="myDevice-settings-batteryGauge-seeDetails-link"
+					attr.aria-label="myDevice-settings-batteryGauge-seeDetails-link">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
 			</div>
 
 		</div>
 		<div class="feature-note p-2 mt-2"
 			*ngIf="chargeThresholdInfo?.isOn">
 			<div class="row">
-				<p>
+				<p id="myDevice-settings-batteryGauge-threshold-note"
+				attr.aria-label="myDevice-settings-batteryGauge-threshold-note">
 					<span [innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate:param1"></span>
 				</p>
 			</div>
