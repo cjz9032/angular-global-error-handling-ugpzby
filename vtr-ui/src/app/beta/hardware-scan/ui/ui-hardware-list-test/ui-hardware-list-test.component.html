@@ -1,0 +1,39 @@
+<div class="vtr-ui-hardware-list-test">
+	<ul class="list-group modal-scroll">
+		<li class="list-group-item" *ngFor="let item of items; let id = index"
+			[ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
+			<div class="module">
+				<div class="custom-control form-control-lg custom-checkbox">
+					<input id="{{ item.id }}" type="checkbox" class="custom-control-input"
+						[indeterminate]="item.indeterminate" [(ngModel)]="item.selected"
+						(click)="onSelectAllChildren(item.id)" />
+					<label class="custom-control-label name" for="{{ item.id }}">{{ item.name }} - <span
+							class="subname">{{ item.subname }}</span></label>
+				</div>
+				<fa-icon [icon]="['fal', 'angle-up']" [ngClass]="{'angle': item.collapsed, 'rotate': !item.collapsed}"
+					(click)="item.collapsed = !item.collapsed" [attr.aria-expanded]="item.collapsed"
+					aria-controls="{{ id }}">
+				</fa-icon>
+			</div>
+			<div id="{{ id }}" class="sub-module" [ngbCollapse]="!item.collapsed">
+				<ul class="list-group">
+					<li class="list-group-item" *ngFor="let test of item.tests" (change)=onCheckChildren(item.id)>
+						<div class="custom-control form-control-lg custom-checkbox">
+							<input id="{{ test.id + id }}" type="checkbox" class="custom-control-input"
+								[(ngModel)]="test.selected" />
+							<label class="custom-control-label name-test"
+								for="{{ test.id + id }}">{{ test.name }}</label>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+	<div class="options">
+		<a class="select-item" (click)="onSelectAll()">{{select}}</a>
+		<span class="select-item-subtitle">/</span>
+		<a class="select-item" (click)="onDeselectAll()">{{deselect}}</a>
+		<span class="select-item-subtitle">{{allOptions}}</span>
+	</div>
+
+</div>

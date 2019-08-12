@@ -75,7 +75,7 @@ export class MetricsDirective {
 					data.ItemValue = this.metricsValue;
 				}
 			}
-				break;
+			break;
 			case 'articleclick':
 			case 'docclick': {
 				data.ItemType = 'ArticleClick';
@@ -83,13 +83,14 @@ export class MetricsDirective {
 				if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
 					this.viewOrderService[this.metricsParent] = 0;
 				}
+				data.ItemParm = this.metricsParam;
 				data.viewOrder = (++this.viewOrderService[this.metricsParent]);
-				data.ItemID = this.metricsItemID || 'null';
-				data.ItemCategory = this.metricsItemCategory || 'null';
-				data.ItemPosition = this.metricsItemPosition || 'null';
+				data.ItemID = this.metricsItemID;
+				data.ItemCategory = this.metricsItemCategory;
+				data.ItemPosition = this.metricsItemPosition;
 				data.PageNumber = this.metricsPageNumber || 1;
-				break;
 			}
+			break;
 			case 'settingupdate': {
 				data.ItemType = 'SettingUpdate';
 				data.SettingParent = this.metricsParent;
