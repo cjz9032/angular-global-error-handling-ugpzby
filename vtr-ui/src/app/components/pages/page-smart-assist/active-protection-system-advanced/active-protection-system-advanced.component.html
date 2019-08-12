@@ -15,13 +15,23 @@
 						[isSwitchVisible]="true"
 						[showChildContent]="true"
 						[isSwitchChecked]="penStatus"
-						(toggleOnOff)="setPenSetting($event)">
+						(toggleOnOff)="setPenSetting($event)"
+						vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsParent="Device.MyDeviceSettings"
+						metricsItem="ActiveProtectionSystem.Advanced.PenInput"
+						metricsValue="penStatus">
 						<div class="dropdown col-sm-6 pl-0">
 							<vtr-ui-dropdown [dropDownId]="'penIntervalsDropDown'"
 								*ngIf=" penStatus "
 								[list]="intervals"
 								[value]="penDelay"
-								(change)="setPenDelayTime($event)">
+								(change)="setPenDelayTime($event)"
+								vtrMetrics
+								metricsEvent="FeatureClick"
+								metricsParent="Device.MyDeviceSettings"
+								metricsItem="ActiveProtectionSystem.Advanced.PenInput.Dropdown"
+								metricsValue="penStatus">
 							</vtr-ui-dropdown>
 						</div>
 					</vtr-ui-row-switch>
@@ -37,7 +47,12 @@
 						[isSwitchVisible]="true"
 						[showChildContent]="true"
 						[isSwitchChecked]="touchStatus"
-						(toggleOnOff)="setTouchInputSetting($event)">
+						(toggleOnOff)="setTouchInputSetting($event)"
+						vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsParent="Device.MyDeviceSettings"
+						metricsItem="ActiveProtectionSystem.Advanced.TouchInput"
+						metricsValue="touchStatus">
 					</vtr-ui-row-switch>
 				</div>
 			</li>
@@ -51,7 +66,12 @@
 						[isSwitchVisible]="true"
 						[showChildContent]="true"
 						[isSwitchChecked]="pSensorStatus"
-						(toggleOnOff)="setPSensorSetting($event)">
+						(toggleOnOff)="setPSensorSetting($event)"
+						vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsParent="Device.MyDeviceSettings"
+						metricsItem="ActiveProtectionSystem.Advanced.PSensorInput"
+						metricsValue="pSensorStatus">
 					</vtr-ui-row-switch>
 				</div>
 			</li>
