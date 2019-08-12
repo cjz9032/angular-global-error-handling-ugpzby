@@ -25,7 +25,7 @@ export class UserService {
 
 	public firstName = 'User';
 	lastName = '';
-	initials = '';
+	initials = 'U';
 
 	private lid: any;
 	private metrics: any;
@@ -42,7 +42,7 @@ export class UserService {
 		public deviceService: DeviceService
 	) {
 		this.translate.stream('lenovoId.user').subscribe((firstName) => {
-			if (!this.auth) {
+			if (!this.auth && firstName !== 'lenovoId.user') {
 				this.setName(firstName, this.lastName);
 			}
 		});
