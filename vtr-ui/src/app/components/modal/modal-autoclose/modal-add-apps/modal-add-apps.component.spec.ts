@@ -11,27 +11,7 @@ const gamingAutoCloseServiceMock = jasmine.createSpyObj('GamingAutoCloseService'
 	'getAppsAutoCloseRunningList'
 ]);
 
-const sampleRunningAppList = {
-	processList: [
-		{ processDescription: 'E046963F.LenovoCompanion', iconName: 'ms-appdata:///local/icon/31b3d9d7dea8e073.png' },
-		{ processDescription: 'Microsoft Store', iconName: 'ms-appdata:///local/icon/24381e8e2df0ab73.png' },
-		{
-			processDescription: 'Microsoft.Windows.ShellExperienceHost',
-			iconName: 'ms-appdata:///local/icon/3862fc8e419fa507.png'
-		},
-		{ processDescription: 'Shell Input Application', iconName: 'ms-appdata:///local/icon/ea2b14e5811d195d.png' },
-		{ processDescription: 'Skype for Business', iconName: 'ms-appdata:///local/icon/29fd475c909f7486.png' },
-		{ processDescription: 'Windows Calculator', iconName: 'ms-appdata:///local/icon/ddfff48c74049c74.png' },
-		{
-			processDescription: 'microsoft.windowscommunicationsapps',
-			iconName: 'ms-appdata:///local/icon/7b2ca07c9a67cc86.png'
-		},
-		{
-			processDescription: 'windows.immersivecontrolpanel',
-			iconName: 'ms-appdata:///local/icon/4a4341b5d5250f32.png'
-		}
-	]
-};
+
 
 describe('ModalAddAppsComponent', () => {
 	let component: ModalAddAppsComponent;
@@ -46,7 +26,7 @@ describe('ModalAddAppsComponent', () => {
 					mockPipe({ name: 'translate' }),
 					mockPipe({ name: 'sanitize' })
 				],
-				schemas: [ NO_ERRORS_SCHEMA ],
+				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceMock }
@@ -65,18 +45,6 @@ describe('ModalAddAppsComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it(
-		'should show running app list',
-		fakeAsync(() => {
-			gamingAutoCloseServiceMock.getAppsAutoCloseRunningList.and.returnValue(
-				Promise.resolve(sampleRunningAppList)
-			);
-			component.refreshRunningList();
-			tick(20);
-			expect(component.runningList).toBeDefined();
-			expect(component.runningList.length).toBeGreaterThan(0);
-		})
-	);
 });
 
 export function mockPipe(options: Pipe): Pipe {

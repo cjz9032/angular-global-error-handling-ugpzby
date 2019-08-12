@@ -28,6 +28,7 @@ import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 // import { UiHeaderWarrantyComponent } from 'src/app/components/ui/ui-header-warranty/ui-header-warranty.component';
 import { MetricsModule } from '../directives/metrics.module';
 import { HeaderMainModule } from '../components/header-main/header-main.module';
+import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
 
 @NgModule({
 	declarations: [
@@ -36,6 +37,7 @@ import { HeaderMainModule } from '../components/header-main/header-main.module';
 		// MenuHeaderComponent,
 		// UiHeaderWarrantyComponent,
 		// MenuMainComponent,
+		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent,
 		// ModalWelcomeComponent,
 		PageUserComponent
@@ -69,6 +71,7 @@ import { HeaderMainModule } from '../components/header-main/header-main.module';
 		// MenuHeaderComponent,
 		// UiHeaderWarrantyComponent,
 		// MenuMainComponent,
+		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent,
 		// ModalWelcomeComponent,
 		Ng5SliderModule,
@@ -92,6 +95,7 @@ import { HeaderMainModule } from '../components/header-main/header-main.module';
 	],
 	entryComponents: [
 		// ModalWelcomeComponent,
+		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
