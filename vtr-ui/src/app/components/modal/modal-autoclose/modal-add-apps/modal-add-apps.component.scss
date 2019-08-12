@@ -24,7 +24,7 @@ ui-popover-apps {
 	margin: auto;
 	top: 0;
 	bottom: 0;
-	height: 65vh;
+	height: calc(100vh - 35rem);
 	@media #{$medium-screen} {
 		max-width: 80%;
 	}

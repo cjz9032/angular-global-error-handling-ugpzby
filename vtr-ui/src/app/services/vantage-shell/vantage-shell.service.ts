@@ -222,6 +222,16 @@ export class VantageShellService {
 	}
 
 	/**
+	 * returns modern preload object from VantageShellService of JS Bridge
+	 */
+	public getModernPreload(): any {
+		if (this.phoenix) {
+			return this.phoenix.modernPreload;
+		}
+		return undefined;
+	}
+
+	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */
 	public getSystemUpdate(): any {

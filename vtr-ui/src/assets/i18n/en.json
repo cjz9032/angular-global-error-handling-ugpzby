@@ -42,7 +42,7 @@
 					"ramOverlock": "RAM Overclock",
 					"popup": {
 						"text": "Change will be effective after restarting computer.",
-						"button": "ok"
+						"button": "OK"
 					},
 					"driverPopup": {
 						"headerText": "Driver Install Required",
@@ -50,14 +50,14 @@
 						"networkBoostText": "You need install driver for Network Boost to  make it effective",
 						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
 						"cpuOverclockText": "Install driver to activate CPU Overclock (Reboot Required)",
-						"button": "Install",
-						"link": "cancel"
+						"button": "INSTALL",
+						"link": "CANCEl"
 					},
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
 						"text": "Install driver to activate lighting (Reboot Required)",
-						"button": "Install",
-						"link": "cancel"
+						"button": "INSTALL",
+						"link": "CANCEl"
 					},
 					"lightingColorMessage": {
 						"text": "Selecting color not available to this effect."
@@ -228,8 +228,8 @@
 					"body": "Recording will time out if the input stopped for more than 10 seconds."
 				},
 				"confirmButton": {
-					"btnClear": "Clear",
-					"btnCancel": "Cancel"
+					"btnClear": "CLEAR",
+					"btnCancel": "CANCEL"
 				},
 				"btnOk": "OK"
 			},
@@ -309,7 +309,7 @@
 			},
 			"button": {
 				"default": {
-					"title": "Set to default"
+					"title": "SET TO DEFAULT"
 				}
 			},
 			"profileheading": {
