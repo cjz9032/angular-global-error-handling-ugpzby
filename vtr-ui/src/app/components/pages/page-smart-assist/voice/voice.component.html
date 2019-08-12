@@ -9,7 +9,7 @@
 						*ngIf="!showLoader"
 						vtrMetrics
 						metricsEvent="featureClick"
-						[metricsItem]="btnText"
+						metricsItem="voice_{{voiceStatus}}_btn"
 						type="button"
 						class="btn btn-primary btn-block install-btn"
 						(click)="btnClicked()">

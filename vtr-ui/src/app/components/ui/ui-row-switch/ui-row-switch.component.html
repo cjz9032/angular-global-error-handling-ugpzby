@@ -128,7 +128,10 @@
 
 				<div class="p-0"
 					*ngIf="rightIcon.length > 0 && voice">
-					<fa-icon id="{{switchId+ '_voice_right_icon'}}"
+					<fa-icon vtrMetrics
+						metricsEvent="featureClick"
+						metricsItem="{{switchId}}_right_icon" 
+						id="{{switchId+ '_voice_right_icon'}}"
 						attr.aria-label="{{switchId+ '_voice_right_icon'}}"
 						class="right-icon"
 						[icon]="rightIcon"
