@@ -90,7 +90,7 @@
 	</div>
 	<div class="row overlay" *ngIf="pluginAvailable && account && (account.state === 'trialExpired' || account.state === 'local')">
 		<div class="col content-container" *ngIf="account.state === 'trialExpired'">
-			<div class="text">{{'homeSecurity.overview.trialExpired' | translate}}</div>
+			<div class="text" title="{{'homeSecurity.overview.trialExpired' | translate}}">{{'homeSecurity.overview.trialExpired' | translate}}</div>
 			<div class="button-container">
 				<vtr-ui-button
 					id="chs-btn-ad-upgrade"
@@ -104,7 +104,7 @@
 			</div>
 		</div>
 		<div class="col content-container" *ngIf="account.state === 'local'">
-			<div class="text">{{'homeSecurity.overview.freeTrial' | translate}}</div>
+			<div class="text" title="{{'homeSecurity.overview.freeTrial' | translate}}">{{'homeSecurity.overview.freeTrial' | translate}}</div>
 			<div class="button-container">
 				<vtr-ui-button
 					id="chs-btn-ad-startTrial"

@@ -4,11 +4,13 @@ import { SettingsService } from 'src/app/services/settings.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({
 	selector: 'vtr-page-settings',
 	templateUrl: './page-settings.component.html',
-	styleUrls: ['./page-settings.component.scss']
+	styleUrls: ['./page-settings.component.scss'],
+	providers: [TimerService]
 })
 export class PageSettingsComponent implements OnInit, OnDestroy {
 
@@ -24,7 +26,6 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	valueToBoolean = [false, true, false];
 
-	pageDuration: number;
 
 	preferenceSettings: any;
 
@@ -51,7 +52,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		private shellService: VantageShellService,
 		private settingsService: SettingsService,
 		private commonService: CommonService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private timerService: TimerService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
@@ -63,11 +65,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.getAllToggles();
+		this.timerService.start();
 
-		this.pageDuration = 0;
-		setInterval(() => {
-			this.pageDuration += 1;
-		}, 1000);
 	}
 
 	ngOnDestroy() {
@@ -75,7 +74,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			ItemType: 'PageView',
 			PageName: 'Page.Settings',
 			PageContext: 'Preference settings page',
-			PageDuration: this.pageDuration,
+			PageDuration: this.timerService.stop(),
 			OnlineStatus: ''
 		};
 		this.sendMetrics(pageViewMetrics);

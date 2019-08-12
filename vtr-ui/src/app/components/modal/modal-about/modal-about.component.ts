@@ -49,7 +49,8 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 	}
 
 	agreementClicked() {
-		const agreementUrl = `assets/licenses/Agreement/${this.lang}.html`;
+		const useLang = this.checkLangName(this.lang);
+		const agreementUrl = `assets/licenses/Agreement/${useLang}.html`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
 			pageContext: 'License agreement',
@@ -82,6 +83,24 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		aboutModal.componentInstance.type = 'txt';
 		aboutModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
 		this.closeModal();
+	}
+
+	checkLangName(lang: string) {
+		let useLang = lang.toLocaleLowerCase();
+		switch (useLang) {
+			case 'pt-br':
+				useLang = 'pt-BR';
+				break;
+			case 'zh-hans':
+				useLang = 'zh-Hans';
+				break;
+			case 'zh-hant':
+				useLang = 'zh-Hant';
+				break;
+			default:
+				break;
+		}
+		return useLang;
 	}
 
 	launchUserGuide() {
