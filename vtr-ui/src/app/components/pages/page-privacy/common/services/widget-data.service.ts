@@ -43,19 +43,22 @@ export class WidgetDataService {
 		private userDataGetStateService: UserDataStateService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {
-		countNumberOfIssuesService.websiteTrackersCount.pipe(
+	}
+
+	startWrite() {
+		this.countNumberOfIssuesService.websiteTrackersCount.pipe(
 			map((issueCount) => getCountOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
 			this.updateWidgetCounters({websiteTrackersScan: count});
 		});
-		countNumberOfIssuesService.breachedAccountsCount.pipe(
+		this.countNumberOfIssuesService.breachedAccountsCount.pipe(
 			map((issueCount) => getCountOfIssues(this.userDataGetStateService.breachedAccountsResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
 			this.updateWidgetCounters({breachedAccountsScan: count});
 		});
-		countNumberOfIssuesService.nonPrivatePasswordCount.pipe(
+		this.countNumberOfIssuesService.nonPrivatePasswordCount.pipe(
 			map((issueCount) => getCountOfIssues(this.userDataGetStateService.nonPrivatePasswordResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
