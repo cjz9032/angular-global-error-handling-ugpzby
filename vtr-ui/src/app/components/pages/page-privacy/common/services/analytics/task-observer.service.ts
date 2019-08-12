@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AnalyticsService } from '../analytics.service';
+import { AnalyticsService } from './analytics.service';
 import { merge } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
 import { PrivacyScoreService } from '../../../pages/result/privacy-score/privacy-score.service';

@@ -3,7 +3,7 @@ import { CommonPopupService } from '../../common/services/popups/common-popup.se
 import { map, tap } from 'rxjs/operators';
 import { TrackingMapService } from './services/tracking-map.service';
 import { SingleTrackersInfo, TrackersInfo, typeData } from './services/tracking-map.interface';
-import { AnalyticsService } from '../../common/services/analytics.service';
+import { AnalyticsService } from '../../common/services/analytics/analytics.service';
 import { GetParentForAnalyticsService } from '../../common/services/get-parent-for-analytics.service';
 
 export const DEFAULT_ICON = {

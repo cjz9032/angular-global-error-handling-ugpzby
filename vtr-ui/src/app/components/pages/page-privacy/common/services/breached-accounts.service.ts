@@ -8,7 +8,7 @@ import {
 	switchMap,
 	switchMapTo,
 	take,
-	takeUntil
+	takeUntil, tap
 } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
-import { MetricsData } from '../../../../../directives/metrics.directive';
-import { RoutersName } from '../../privacy-routing-name';
-import { UserDataStateService } from './app-statuses/user-data-state.service';
-import { RouterChangeHandlerService } from './router-change-handler.service';
-import { AppStatusesService } from './app-statuses/app-statuses.service';
+import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
+import { MetricsData } from '../../../../../../directives/metrics.directive';
+import { RoutersName } from '../../../privacy-routing-name';
+import { UserDataStateService } from '../app-statuses/user-data-state.service';
+import { RouterChangeHandlerService } from '../router-change-handler.service';
+import { AppStatusesService } from '../app-statuses/app-statuses.service';
 
 export enum ItemTypes {
 	TaskAction = 'TaskAction',
