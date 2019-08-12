@@ -6,11 +6,13 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { HttpClient } from '@angular/common/http';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
-	styleUrls: ['./modal-welcome.component.scss']
+	styleUrls: ['./modal-welcome.component.scss'],
+	providers: [TimerService]
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	progress = 49;
@@ -18,8 +20,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	page = 1;
 	privacyPolicy = true;
 	checkedArray: string[] = [];
-	startTime: number;
-	endTime: number;
 	metrics: any;
 	data: any = {
 		page2: {
@@ -41,8 +41,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
 		private http: HttpClient,
-		public commonService: CommonService) {
-		this.startTime = new Date().getTime();
+		public commonService: CommonService,
+		private timerService: TimerService) {
 		this.metrics = shellService.getMetrics();
 		this.privacyPolicy = this.metrics.metricsEnabled;
 		const self = this;
@@ -52,6 +52,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.timerService.start();
 	}
 
 	ngAfterViewInit() {
@@ -64,15 +65,15 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.metrics.metricsEnabled = (this.privacyPolicy === true);
 		let tutorialData;
 		if (page < 2) {
-			this.endTime = new Date().getTime();
 			const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
-				PageDuration: Math.floor((this.endTime - this.startTime) / 1000)
+				PageContext: `page${page}`,
+				PageDuration: this.timerService.stop()
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
-			this.startTime = new Date().getTime();
+			this.timerService.start();
 			this.page = page;
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, null, null);
@@ -90,7 +91,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			});
 
 			const usageData = {
-				ItemType: 'featureClick',
+				ItemType: 'FeatureClick',
 				ItemName: 'UsageType',
 				ItemValue: this.data.page2.radioValue,
 				ItemParent: 'WelcomePage'
@@ -98,18 +99,18 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.metrics.sendAsync(usageData);
 
 			const interestData = {
-				ItemType: 'featureClick',
+				ItemType: 'FeatureClick',
 				ItemName: 'Interest',
 				ItemValue: this.checkedArray,
 				ItemParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(interestData);
 
-			this.endTime = new Date().getTime();
 			const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
-				PageDuration: Math.floor((this.endTime - this.startTime) / 1000)
+				PageContext: `page${page}`,
+				PageDuration: this.timerService.stop()
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
