@@ -188,6 +188,12 @@
 		color: #4a81fd;
 	}
 }
+.icomoon-Flip-to-boot {
+	&:before {
+		content: $icomoon-Flip-to-boot;
+		color: #4a81fd;
+	}
+}
 .icomoon-Fn-key-Ctrol-swap {
 	&:before {
 		content: $icomoon-Fn-key-Ctrol-swap;
@@ -198,6 +204,12 @@
 	&:before {
 		content: $icomoon-games;
 		color: #4a81fd;
+	}
+}
+.icomoon-Hidden-keyboard-functions {
+	&:before {
+		content: $icomoon-Hidden-keyboard-functions;
+		color: #418afd;
 	}
 }
 .icomoon-keep-my-display {
@@ -518,6 +530,12 @@
 .icomoon-star {
 	&:before {
 		content: $icomoon-star;
+	}
+}
+.icomoon-Top-row-keys {
+	&:before {
+		content: $icomoon-Top-row-keys;
+		color: #418afd;
 	}
 }
 .icomoon-translation {

@@ -35,10 +35,9 @@
 				[caption]="'device.deviceSettings.power.description' | translate"
 				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"
 				[textId]="'myDevice-settings-power'"></vtr-ui-header-subpage>
+		</div>
 	</div>
-	</div>
-	<vtr-power-smart-settings
-	(isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
+	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
 	<vtr-smart-standby *ngIf="!isDesktopMachine"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
@@ -74,12 +73,12 @@
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
 											checked="" />
-										<label
-											for="cb-airplane-mode">
+										<label for="cb-airplane-mode">
 											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 										</label>
 									</div>
-									<label *ngIf="airplaneAutoDetection" class="auto-detection-note">
+									<label *ngIf="airplaneAutoDetection"
+										class="auto-detection-note">
 										{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
 									</label>
 								</div>
@@ -195,14 +194,14 @@
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-powerSettings'">
 				<ul class="list-group list-group-flush">
-					<li *ngIf="showFlipToBootSection$ | async">
+					<li>
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]=false
 							[isSwitchChecked]='toggleFlipToBootStatus'
-							[leftIcon]="['icomoon','icomoon-LE-Easy-resume2x']"
+							[leftIcon]="['icomoon','icomoon-Flip-to-boot']"
 							[rightIcon]="powerSettings[1].rightImageSource"
 							[tooltipText]="'device.deviceSettings.power.powerSettings.flipToBoot.tooltip' | translate"
 							[switchId]="'ds-power-flipToBoot'"
