@@ -43,9 +43,12 @@ import { ModalArticleDetailComponent } from '../components/modal/modal-article-d
 import { SharedModule } from './shared.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { ModernPreloadModule } from './modern-preload/modern-preload.module';
-
-import { faWifiSlash} from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 
 library.add(faCheck);
 library.add(faExclamation);
@@ -53,6 +56,7 @@ library.add(faBolt);
 library.add(faChevronRight);
 library.add(faTimesCircle);
 library.add(faCaretUp);
+library.add(faCaretRight);
 library.add(faCaretDown);
 library.add(faPlusCircle);
 library.add(faMinusCircle);
@@ -65,6 +69,9 @@ library.add(faCommentAltDots);
 library.add(faShoePrints);
 library.add(faWifiSlash);
 library.add(faFlask);
+library.add(faExclamationTriangle);
+library.add(faExclamationCircle);
+library.add(faQuestionCircle);
 
 @NgModule({
 	declarations: [

@@ -41,7 +41,7 @@ export class ModalThreatLocatorComponent implements OnInit {
 			const metricsData = eventData.event.event;
 
 			const data = {
-				ItemType: 'featureClick',
+				ItemType: 'FeatureClick',
 				ItemName: `ThreatLocator.${metricsData}`,
 				ItemParent: 'Features.SecurityAdvisor'
 			};
