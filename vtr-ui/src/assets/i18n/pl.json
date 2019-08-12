@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Nieprawidłowe napięcie akumulatora",
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Zobacz szczegóły"
             },
             "power": {
                 "title": "Zasilanie",
@@ -990,7 +994,7 @@
                             "warm": "Ciepły (lepsze dla oczu)",
                             "cold": "Zimny"
                         },
-                        "reset": "Zresetuj temperaturę",
+                        "reset": "Resetuj",
                         "tooltip": "Tryb ochrony oczu automatycznie dostosowuje temperaturę barwową ekranu, aby odfiltrowywać niebieskie światło męczące oczy.",
                         "onSunsetToSunriseScheduleDescription": "Ustaw tryb ochrony oczu od zachodu do wschodu słońca",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Ciepły (lepsze dla oczu)",
                             "cold": "Zimny"
                         },
-                        "reset": "Zresetuj temperaturę",
+                        "reset": "Resetuj",
                         "tooltip": "Tryb ochrony oczu automatycznie dostosowuje temperaturę barwową ekranu, aby odfiltrowywać niebieskie światło męczące oczy.",
                         "onSunsetToSunriseScheduleDescription": "Ustaw tryb ochrony oczu od zachodu do wschodu słońca",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Aparat",
                         "tooltip": "Kliknij tutaj, aby przywrócić właściwości kamery do ustawień domyślnych.",
-                        "reset": "Przywróć ustawienia fabryczne"
+                        "reset": "Resetuj"
                     },
                     "brightness": "Jasność",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Przejdź do ustawień funkcji Windows Hello",
                     "screenTimeoutSettings": "Przejdź do ustawień limitu czasu ekranu"
                 },
-                "resetToDefault": "RESETUJ DO USTAWIEŃ DOMYŚLNYCH"
+                "resetToDefault": "Resetuj"
             },
             "intelligentScreen": {
                 "title": "Inteligentny ekran",

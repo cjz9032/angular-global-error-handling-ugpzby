@@ -25,24 +25,18 @@ export class CMSService {
 	region: string;
 	segment: string; // VAN-5872, server switch feature
 	localInfo: any;
+	defaultInfo = { Lang: 'en', GEO: 'us', OEM: 'Lenovo', OS: 'Windows', Segment: 'SMB', Brand: 'Lenovo' };
 
 	constructor(
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
-		localInfoService: LocalInfoService,
+		private localInfoService: LocalInfoService,
 		private commonService: CommonService// VAN-5872, server switch feature
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
 		}).catch(e => {
-			this.localInfo = {
-				Lang: 'en',
-				GEO: 'us',
-				OEM: 'Lenovo',
-				OS: 'Windows',
-				Segment: 'SMB',
-				Brand: 'Lenovo'
-			};
+			this.localInfo = this.defaultInfo;
 			console.log(e);
 		});
 	}
@@ -86,7 +80,19 @@ export class CMSService {
 
 	fetchCMSContent(queryParams) {
 		if (!this.localInfo) {
-			return;
+			return new Observable(subscriber => {
+				this.localInfoService.getLocalInfo().then(result => {
+					this.localInfo = result;
+					this.fetchCMSContent(queryParams).subscribe((result2: any) => {
+						subscriber.next(result2);
+					});
+				}).catch(e => {
+					this.localInfo = this.defaultInfo;
+					this.fetchCMSContent(queryParams).subscribe((result2: any) => {
+						subscriber.next(result2);
+					});
+				});
+			});
 		}
 		const defaults = {
 			Lang: this.localInfo.Lang,
@@ -143,7 +149,13 @@ export class CMSService {
 
 	fetchCMSArticleCategories(queryParams) {
 		if (!this.localInfo) {
-			return;
+			return this.localInfoService.getLocalInfo().then(result => {
+				this.localInfo = result;
+				return this.fetchCMSArticleCategories(queryParams);
+			}).catch(e => {
+				this.localInfo = this.defaultInfo;
+				return this.fetchCMSArticleCategories(queryParams);
+			});
 		}
 		// VAN-5872, server switch feature
 		// retrive from localStorage
@@ -320,5 +332,28 @@ export class CMSService {
 		}
 		return CMSOption;
 
+	}
+
+	fetchCMSEntitledAppList(queryParams) {
+		const defaults = {
+			Lang: this.localInfo.Lang,
+			GEO: this.localInfo.GEO
+		};
+
+		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+
+		return new Promise((resolve, reject) => {
+			this.commsService.endpointGetCall('/api/v1/entitledapps',
+				CMSOption,
+				{}).subscribe(
+					(response: any) => {
+						resolve(response.Results);
+					},
+					error => {
+						console.log('fetchCMSEntitledAppList error ', error);
+						reject('fetchCMSEntitledAppList error');
+					}
+				);
+		});
 	}
 }

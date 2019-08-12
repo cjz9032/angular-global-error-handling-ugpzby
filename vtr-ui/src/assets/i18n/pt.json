@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Tensão da bateria incorreta",
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ver detalhes"
             },
             "power": {
                 "title": "Alimentação",
@@ -990,7 +994,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Frio"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Redefinir",
                         "tooltip": "O Modo de Cuidados com a Visão ajusta a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos.",
                         "onSunsetToSunriseScheduleDescription": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Frio"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Redefinir",
                         "tooltip": "O Modo de Cuidados com a Visão ajusta a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos.",
                         "onSunsetToSunriseScheduleDescription": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Câmara",
                         "tooltip": "Clique aqui para redefinir as propriedades da câmara para as predefinições.",
-                        "reset": "Repor as definições de fábrica"
+                        "reset": "Redefinir"
                     },
                     "brightness": "Luminosidade",
                     "contrast": "Contraste",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Vá para as definições Windows Hello",
                     "screenTimeoutSettings": "Aceda a Definições de tempo de espera do ecrã"
                 },
-                "resetToDefault": "REPOR AS PREDEFINIÇÕES"
+                "resetToDefault": "Redefinir"
             },
             "intelligentScreen": {
                 "title": "Ecrã Inteligente",
