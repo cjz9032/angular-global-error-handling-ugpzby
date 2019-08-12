@@ -11,7 +11,7 @@ reference : https://fonts.google.com/specimen/Rubik
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
 // @import "~bootstrap/dist/css/bootstrap.css";
-
+@import "./app/beta/beta-styles.scss";
 @import "app/app.theme";
 
 html {

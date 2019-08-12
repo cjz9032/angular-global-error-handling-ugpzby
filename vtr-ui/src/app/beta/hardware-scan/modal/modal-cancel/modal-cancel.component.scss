@@ -1,0 +1,42 @@
+@import "../../../../app.theme";
+
+.title {
+    font-size: 3.5rem;
+}
+
+.loading {
+    font-size: 3rem;
+    color: $main;
+}
+
+.description {
+    font-size: 2rem;
+}
+
+.modal-body {
+  padding: 0 5rem 3rem 5rem;
+}
+
+.close-button {
+  border: none;
+  color: $main;
+  padding: 0 1rem 1rem 1rem ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: $weight_light;
+  outline: none;
+  font-size: 5rem;
+}
+
+.user-submit {
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  font-weight: $weight_bold;  
+  text-transform: uppercase;
+}
+
+.padding-header {
+    padding: 3rem;
+}
