@@ -190,7 +190,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			});
 			this.remainingPercentages = remainingPercentages;
 			this.sendThresholdWarning();
-			this.batteryHealth = 4;
+			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 		} else {
 			this.batteryIndicator.batteryNotDetected = false;
@@ -289,7 +289,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 				this.param2 = { value: parseFloat(percentLimit.toFixed(1)) };
 			}
-			this.batteryInfo[0].batteryCondition = ['hardwareauthenticationerror'];
 			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {
 					case 'normal':
