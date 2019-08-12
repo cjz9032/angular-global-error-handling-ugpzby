@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "录制宏键，用于"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "关闭"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "概要文件 1"
@@ -355,7 +351,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "关闭"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,25 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
+            }
         }
     },
     "common": {
@@ -416,7 +431,10 @@
             },
             "support": "支持服务",
             "homeSecurity": "互联家庭网络",
-            "privacy": "隐私"
+            "privacy": "隐私",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "安全顾问",
@@ -522,10 +540,10 @@
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage 无法访问摄像头和麦克风。",
+                "accessUrl": "转到 Windows 设置以授予访问权限",
+                "microphoneNote": "Lenovo Vantage 无法访问麦克风。",
+                "cameraPrivacyNote": "Lenovo Vantage 无法访问摄像头。"
             }
         },
         "systemStatus": {
@@ -683,19 +701,19 @@
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
                     "NotDetected": "<b>未检测到电池或未</b>插入电池。",
                     "NotGood": "<b>电池状况不佳。</b>",
-                    "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
-                    "LimitedACAdapterSupport": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
+                    "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
+                    "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
                     "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新以安装最新的驱动程序。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
                     "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
                     "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
+                    "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "查看详细信息"
             },
             "power": {
                 "title": "电源管理",
@@ -803,8 +821,8 @@
                         "noteInfo": "电池充电阈值仍未完全激活。拔下电源线，让电池电量耗尽或低于停止充电阈值。",
                         "readMoreText": "阅读更多。",
                         "settings": {
-                            "title1": "内置电池阈值",
-                            "title2": "可拆卸电池阈值"
+                            "title1": "主电池阈值",
+                            "title2": "备用电池阈值"
                         },
                         "popup": {
                             "title": "启用电池充电阈值",
@@ -976,7 +994,7 @@
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
-                        "reset": "重置温度",
+                        "reset": "重置",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
@@ -1010,7 +1028,7 @@
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
-                        "reset": "重置温度",
+                        "reset": "重置",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
@@ -1039,7 +1057,7 @@
                     "camera": {
                         "title": "摄像头",
                         "tooltip": "单击此处将摄像头属性重置为缺省设置。",
-                        "reset": "重置出厂设置"
+                        "reset": "重置"
                     },
                     "brightness": "亮度",
                     "contrast": "对比度",
@@ -1199,7 +1217,7 @@
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "恢复默认设置"
+                "resetToDefault": "重置"
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
@@ -1747,7 +1765,7 @@
             "helpKeep": "SurfEasy VPN 可帮助您的联机活动保持安全和隐秘。",
             "getSufEasy": "获取 SurfEasy",
             "openSufEasy": "打开 SurfEasy",
-            "whySufEasy": "为何要使用虚拟专用网络（VPN）？",
+            "whySufEasy": "为何要使用虚拟专用网络 (VPN)？",
             "whySufEasyDescription": "使用咖啡店或机场等地的 Wi-Fi 热点会让您的敏感信息暴露给网络犯罪分子。SurfEasy VPN 是一种无记录 VPN，用于加密个人信息，并且不会跟踪或存储联机活动或位置。",
             "startUseSufEasy": "立即开始使用 SurfEasy",
             "startUseSufEasy1": "通过银行级加密帮助确保您收发的数据的安全和隐秘。",
@@ -2200,7 +2218,6 @@
         "personal": "个人使用",
         "business": "商业用途",
         "custom": "自定义",
-        "experience": "体验",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
         "title1": "欢迎来到",
@@ -2237,5 +2254,119 @@
         "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"
-    }
+    },
+	"hardwareScan": {
+		"name": "硬件扫描",
+		"title": "执行硬件扫描",
+		"subtitle": "硬件扫描正在执行，请稍候",
+		"quickScan": "快速扫描",
+		"finalResultCode": "最终结果代码",
+		"resultCode": "结果代码",
+		"cancel": "取消",
+		"complete": "完成",
+		"incomplete": "未完成",
+		"loadingComponents": "正在加载组件",
+		"hardwareComponents": "硬件组件",
+		"loadingDevices": "设备正在加载",
+		"select": "选择",
+		"deselect": "取消选择",
+		"allOptions": "全部选项",
+		"latestResult": "最新结果",
+		"back": "返回",
+		"viewResults": "查看结果",
+		"save": "保存",
+		"details": "详细信息",
+		"recurrence": "循环",
+		"interval": "间隔",
+		"time": "时间",
+		"type": "类型",
+		"hours": "小时",
+		"minutes": "分钟",
+		"am": "上午",
+		"pm": "下午",
+		"previousResult": "以前的结果",
+		"lastScanOn": "上次扫描时间",
+		"result": "结果",
+		"viewDetailsLog": "查看详细信息日志",
+		"ok": "确定",
+		"notOk": "不正常",
+		"notScanned": "未扫描",
+		"pass": "通过",
+		"fail": "失败",
+		"cancelled": "已取消",
+		"warning": "警告",
+		"errorResult": "请选择要运行的测试。",
+		"buy": "立即购买",
+		"errorDeviceChoose": "请选择要运行的设备。",
+		"errorNoOptionSelected": "请选择一个选项。",
+		"offline": "此设备正在脱机模式下运行，请连接因特网",
+		"common": {
+			"menu": "硬件扫描"
+		},
+		"customize": {
+			"name": "定制",
+			"test": "定制测试",
+			"description": "选择以下选项，定制您的测试",
+			"runTests": "运行选中的测试"
+		},
+		"scheduledScan": {
+			"name": "安排扫描",
+			"title": "安排您的扫描",
+			"newScan": "安排新扫描",
+			"fullScan": "完整扫描",
+			"onlyOnce": "仅一次",
+			"eachDay": "每天",
+			"eachWeek": "每周",
+			"eachMonth": "每月",
+			"eachYear": "每年",
+			"schedule": "安排",
+			"date": "日期",
+			"pickDate": "选择日期",
+			"scanScheduled": "已安排硬件扫描！",
+			"description": "已安排在相同的时间和日期进行另一次扫描！",
+			"error": "错误",
+			"delete": "删除"
+		},
+		"recoverBadSectors": {
+			"title": "恢复坏扇区",
+			"description": "用于发现和修复磁盘上坏扇区的 Lenovo 工具",
+			"goTo": "恢复坏扇区",
+			"localDevices": "本地设备",
+			"numberSectors": "读取的扇区数",
+			"numberBadSectors": "找到的坏扇区数",
+			"numberFixedSectors": "修复的扇区数",
+			"numberNonFixedSectors": "未修复的扇区数",
+			"status": "操作状态",
+			"elapsedTime": "已用时间",
+			"hours": "小时",
+			"hour": "小时",
+			"minutes": "分钟",
+			"minute": "分钟",
+			"seconds": "秒",
+			"second": "秒",
+			"moreInfo": "正在恢复坏扇区，请稍候",
+			"systemEvent": "测试已中止，因为发生了可能影响结果的系统事件。",
+			"systemPasswordProtected": "设备可能受密码保护。请尝试禁用密码保护。",
+			"popup": {
+				"description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
+				"yes": "是",
+				"no": "否"
+			}
+		},
+		"support": {
+			"title": "下载专业诊断工具",
+			"subtitle": "Lenovo 支持"
+		},
+		"eTicket": {
+			"header": "检测到硬件问题。",
+			"problemDetected": "硬件扫描已检测到以下计算机的组件存在问题",
+			"ticketRequestQuestion": "如果您的计算机在保修期内，Lenovo 可以发送更换部件。您是否要打开一个硬件更换凭单以解决此问题",
+			"openTicket": "打开凭单"
+		},
+		"battery": {
+			"title": "启用电池充电阈值",
+			"description": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少运行时电池使用寿命。为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
+			"enable": "启用"
+		}
+	}
 }

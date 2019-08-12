@@ -22,10 +22,16 @@ import { TranslationModule } from './translation.module';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { MetricsModule } from '../directives/metrics.module';
 import { HeaderMainModule } from '../components/header-main/header-main.module';
+import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
 
 @NgModule({
 	declarations: [
 		BaseComponent,
+		// HeaderMainComponent,
+		// MenuHeaderComponent,
+		// UiHeaderWarrantyComponent,
+		// MenuMainComponent,
+		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent,
 		PageUserComponent
 	],
@@ -53,6 +59,10 @@ import { HeaderMainModule } from '../components/header-main/header-main.module';
 		FontAwesomeModule,
 		FormsModule,
 		HttpClientModule,
+		// MenuHeaderComponent,
+		// UiHeaderWarrantyComponent,
+		// MenuMainComponent,
+		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent,
 		Ng5SliderModule,
 		ReactiveFormsModule,
@@ -73,6 +83,8 @@ import { HeaderMainModule } from '../components/header-main/header-main.module';
 		SettingsService
 	],
 	entryComponents: [
+		// ModalWelcomeComponent,
+		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

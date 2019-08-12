@@ -98,11 +98,6 @@
 									name="radio"
 									id="radio1"
 									value="personal"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.personal"
-									[metricsValue]="!radio1.checked"
 									#radio1 />
 								<img for="radio1"
 									alt="Personal Use"
@@ -122,11 +117,6 @@
 									name="radio"
 									id="radio2"
 									value="business"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.business"
-									[metricsValue]="!radio2.checked"
 									#radio2 />
 								<img alt="Business Use"
 									for="radio2"
@@ -145,18 +135,13 @@
 									name="radio"
 									id="radio3"
 									value="custom"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.custom"
-									[metricsValue]="!radio3.checked"
 									#radio3 />
 								<img alt="Custom Experience"
 									for="radio3"
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
 								<label for="radio3"
-									class="centered">{{ "welcometutorial.custom" | translate }}<br>{{ "welcometutorial.experience" | translate }}</label>
+									class="centered">{{ "welcometutorial.custom" | translate }} </label>
 							</div>
 						</div>
 					</div>
@@ -171,11 +156,6 @@
 							*ngFor="let interest of interestCopy">
 							<input type="checkbox"
 								[id]="interest + 'checkbox'"
-								vtrMetrics
-								metricsEvent="featureClick"
-								[metricsItem]="'chk.' + interest"
-								metricsParent="WelcomePage"
-								[metricsValue]="!checkbox1.checked"
 								#checkbox1
 								(click)="toggle($event, interest)" />
 							<label

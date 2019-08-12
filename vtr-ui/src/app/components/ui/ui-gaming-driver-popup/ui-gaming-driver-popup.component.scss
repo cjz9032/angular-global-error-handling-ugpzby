@@ -66,7 +66,7 @@ ui-gaming-driver-popup {
       padding: 1rem 3rem;
       margin-top: 1rem;
       font-weight: $weight_bold;
-      text-transform: uppercase;
+     // text-transform: uppercase;
     }
 
     .cancel-link {
@@ -78,7 +78,7 @@ ui-gaming-driver-popup {
       font-weight: $weight_600;
       margin-top: 1rem;
       cursor: pointer;
-      text-transform: uppercase;
+      //text-transform: uppercase;
 
       &:hover {
         text-decoration: underline;

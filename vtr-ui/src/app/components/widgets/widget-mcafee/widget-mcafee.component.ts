@@ -24,13 +24,14 @@ export class WidgetMcafeeComponent implements OnInit {
 		['fr', 'Fr-FR'],
 		['de', 'De-DE'],
 		['el', 'El-GR'],
-		['lt', 'It-IT'],
-		['no', 'Nb-NO'],
+		['it', 'It-IT'],
+		['nb', 'Nb-NO'],
 		['pl', 'Pl-PL'],
 		['pt', 'Pt-PT'],
+		['br', 'Pt-BR'],
 		['ru', 'Ru-RU'],
 		['es', 'Es-ES'],
-		['sv', 'Sv-SV'],
+		['sv', 'Sv-SE'],
 		['tr', 'Tr-TR'],
 		['*', 'En-US'],
 	]);
@@ -50,6 +51,7 @@ export class WidgetMcafeeComponent implements OnInit {
 	ngOnInit() {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.country = result.GEO;
+			this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
 		}).catch(e => {
 			this.country = 'us';
 		});
@@ -60,6 +62,9 @@ export class WidgetMcafeeComponent implements OnInit {
 		const language = (typeof this.translate.currentLang === 'string') ? this.translate.currentLang.substring(0, 2) : '*';
 		if (language === 'en' && this.country === 'gb') {
 			return this.nls.get('gb');
+		}
+		if (language === 'pt' && this.country === 'br') {
+			return this.nls.get('br');
 		}
 		if (this.nls.has(language)) {
 			return this.nls.get(language);

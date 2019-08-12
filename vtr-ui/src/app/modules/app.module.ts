@@ -37,6 +37,7 @@ import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 // import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
 // import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
+import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 // import { SharedModule } from './shared.module';
@@ -44,6 +45,12 @@ import { ModalArticleDetailComponent } from '../components/modal/modal-article-d
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
+import { ModernPreloadModule } from './modern-preload/modern-preload.module';
 
 library.add(faCheck);
 library.add(faExclamation);
@@ -51,6 +58,7 @@ library.add(faBolt);
 library.add(faChevronRight);
 library.add(faTimesCircle);
 library.add(faCaretUp);
+library.add(faCaretRight);
 library.add(faCaretDown);
 library.add(faPlusCircle);
 library.add(faMinusCircle);
@@ -61,6 +69,11 @@ library.add(faBrowser);
 library.add(faGift);
 library.add(faCommentAltDots);
 library.add(faShoePrints);
+library.add(faWifiSlash);
+library.add(faFlask);
+library.add(faExclamationTriangle);
+library.add(faExclamationCircle);
+library.add(faQuestionCircle);
 
 @NgModule({
 	declarations: [
@@ -92,13 +105,14 @@ library.add(faShoePrints);
 		CommonPipeModule,
 		FormsModule,
 		ReactiveFormsModule,
-		// SharedModule,
+		ModernPreloadModule,
 	],
 	exports: [
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
 		// SharedModule,
+		ModernPreloadModule,
 	],
 	providers: [
 		CommonService,

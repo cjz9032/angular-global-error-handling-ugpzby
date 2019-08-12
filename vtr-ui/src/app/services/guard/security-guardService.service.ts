@@ -3,6 +3,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -12,15 +13,17 @@ export class GuardService {
 	metrics: any;
 	pageContext: any;
 	previousPageName = '';
+	private timerService;
 
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService) {
 		this.metrics = shellService.getMetrics();
+		this.timerService = new TimerService();
 	}
 
 	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-		this.interTime = Date.now();
+		this.timerService.start();
 		console.log('Activate : ' + activatedRouteSnapshot.data.pageName);
 		return true;
 	}
@@ -33,9 +36,9 @@ export class GuardService {
 
 		const data = {
 			ItemType: 'PageView',
-			PageName: activatedRouteSnapshot.data.pageName,
-			PageDuration: `${Math.floor((Date.now() - this.interTime) / 1000)}`,
-			PageContext: this.pageContext,
+			pageName: activatedRouteSnapshot.data.pageName,
+			pageDuration: this.timerService.stop(),
+			pageContext: this.pageContext,
 		};
 		console.log('Deactivate : ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
 		this.previousPageName = activatedRouteSnapshot.data.pageName;

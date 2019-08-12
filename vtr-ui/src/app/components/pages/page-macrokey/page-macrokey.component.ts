@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-macrokey',
 	templateUrl: './page-macrokey.component.html',
 	styleUrls: ['./page-macrokey.component.scss']
 })
-export class PageMacrokeyComponent implements OnInit {
+export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
 	};
@@ -14,8 +15,12 @@ export class PageMacrokeyComponent implements OnInit {
 		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
 	};
 	backId = 'vtr-gaming-macrokey-btn-back';
+	startDateTime: any = new Date();
+	metrics: any;
+	constructor(private cmsService: CMSService, private shellService: VantageShellService) {
+		this.metrics = this.shellService.getMetrics();
 
-	constructor(private cmsService: CMSService) { }
+	}
 
 	ngOnInit() {
 		// TODO: Change the query params for macrokey subpage
@@ -45,5 +50,26 @@ export class PageMacrokeyComponent implements OnInit {
 				}
 			}
 		});
+	}
+	ngOnDestroy() {
+		// const currentDateTime: any = new Date();
+		// const pageViewMetrics = {
+		// 	ItemType: 'PageView',
+		// 	PageName: 'PageMacrokeyComponent',
+		// 	PageContext: 'PageMacrokeyComponent',
+		// 	PageDuration: currentDateTime - this.startDateTime,
+		// 	OnlineStatus: ''
+		// };
+		// this.sendMetricsAsync(pageViewMetrics);
+		//console.log(pageViewMetrics);
+	}
+
+	sendMetricsAsync(data: any) {
+		if (this.metrics && this.metrics.sendAsync) {
+			console.log('metrics ready!');
+			this.metrics.sendAsync(data);
+		} else {
+			console.log('can not find metrics');
+		}
 	}
 }

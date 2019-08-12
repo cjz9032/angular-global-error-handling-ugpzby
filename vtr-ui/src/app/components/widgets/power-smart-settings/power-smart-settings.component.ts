@@ -48,7 +48,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		console.log('Machine Type: ' + this.machineType);
-		if (thinkpad === this.machineType) {
+
+		if (thinkpad === this.machineType || this.isYogo730()) {
 			this.add = 0; // thinkpad
 			this.initPowerSmartSettingsForThinkPad();
 		} else if (ideapad === this.machineType) {
@@ -60,6 +61,19 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	isYogo730() {
+		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
+		var isYogo730: boolean = false;
+		var regExForYoga730 = /YOGA 730/gi;
+		if (cacheMachineFamilyName && (cacheMachineFamilyName.search(regExForYoga730) != -1)) {
+			isYogo730 = true;
+			console.log('isYogo730: ', isYogo730);
+		}
+		return isYogo730;
+	}
 	onIntelligentCoolingToggle(event, isSetManualMode: boolean = true) {
 		if (event.switchValue) {
 			this.enableIntelligentCoolingToggle = true;

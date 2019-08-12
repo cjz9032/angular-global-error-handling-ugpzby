@@ -1,54 +1,56 @@
 import { NotificationItem } from './home-security-notification-item.model';
 import { CHSNotificationType, CHSNotifications } from '@lenovo/tan-client-bridge';
+import { TranslateService } from '@ngx-translate/core';
 
 export class HomeSecurityNotifications {
-	iconName: string;
-	color: string;
-	title: string;
-	subText: string;
-	date: string;
 	// notification: CHSNotifications;
 	notificationItem: NotificationItem[];
-	constructor(notification?: CHSNotifications) {
+	constructor(translateService: TranslateService, notification?: CHSNotifications) {
 		this.notificationItem = [];
 		if (!notification || !notification.value) { return; }
 		notification.value.forEach(value => {
 			let iconName: string;
 			let color: string;
+			let title: string;
 			switch (value.type) {
 				case CHSNotificationType.connectedUnsafeNetwork: {
 					iconName = 'wifi';
 					color = 'red';
+					title = 'homeSecurity.notification.unsafeNetworkConnection';
 					break;
 				}
 				case CHSNotificationType.applianceDisconnected: {
 					iconName = 'wifi-slash';
 					color = 'grey';
+					title = 'homeSecurity.notification.deviceDisconnected';
 					break;
 				}
 				case CHSNotificationType.homeNetworkUnsafe: {
 					iconName = 'exclamation-circle';
 					color = 'red';
+					title = 'homeSecurity.notification.networkUnsafe';
 					break;
 				}
 				case CHSNotificationType.unknownDeviceConnected: {
 					iconName = 'question-circle';
 					color = 'orange';
+					title = 'homeSecurity.notification.newDeviceDetected';
 					break;
 				}
 				case CHSNotificationType.vulnerableDeviceDetected: {
 					iconName = 'laptop';
 					color = 'blue';
+					title = 'homeSecurity.notification.unsafeDeviceDetected';
 					break;
 				}
 			}
 			this.notificationItem.push(new NotificationItem({
 				iconName,
 				color,
-				title: value.content.title,
+				title,
 				notificationDetail: value.content.content,
 				date: this.getTime(value.time)
-			}));
+			}, translateService));
 		});
 	}
 

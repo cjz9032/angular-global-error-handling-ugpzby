@@ -3,7 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main
 				[title]="deviceService.isArm || !commonService.isOnline ? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
-				[forwardLink]=""></vtr-header-main>
+				[forwardLink]=""
+				[textId]="'dashboard'"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -42,6 +43,8 @@
 											[showNavigationArrows]="true"
 											[showNavigationIndicators]="true"
 											[carouselId]="'dashboard-lnk-hero-banner'"
+											id="dashboard-lnk-hero-banner"
+											aria-label="dashboard-lnk-hero-banner"
 											link="thumbnailUrl"></vtr-widget-carousel>
 									</div>
 
@@ -184,7 +187,8 @@
 										<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 											[description]="'common.qAndA.subtitle' | translate"
 											[items]="qaService.qas"
-											blockPosition="r4"></vtr-widget-questions>
+											blockPosition="r4"
+											[linkId]="'dashboard-qa'"></vtr-widget-questions>
 									</div>
 								</div>
 
@@ -192,7 +196,7 @@
 									*ngIf="!deviceService.isArm">
 									<div class="col-sm-12 py-40">
 										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-											[linkId]="'dashboard'">
+											[linkId]="'dashboard-sa'">
 										</vtr-widget-security-status>
 									</div>
 								</div>

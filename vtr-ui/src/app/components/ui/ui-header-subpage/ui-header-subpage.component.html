@@ -1,7 +1,7 @@
 <div class="vtr-ui-header-subpage container-fluid">
 	<div class="row" *ngIf="title!=undefined">
 		<div class="col">
-			<h2 class="title">
+			<h2 class="title" id="{{textId}}-header-title" attr.aria-label="{{textId}}-header-title">
 				{{title}}
 			</h2>
 		</div>
@@ -12,14 +12,14 @@
 			<div class="col px-20">
 				<div class="row">
 					<div class="col">
-						<div class="caption">
+						<div class="caption" id="{{textId}}-header-caption" attr.aria-label="{{textId}}-header-caption">
 							{{caption}}
 						</div>
 					</div>
 				</div>
 				<div class="row" *ngIf="menuTitle">
 					<div class="col">
-						<div class="menu-title">
+						<div class="menu-title" id="{{textId}}-jumptToSettings-title" attr.aria-label="{{textId}}-jumptToSettings-title">
 							{{menuTitle}}:
 						</div>
 					</div>
@@ -28,7 +28,8 @@
 					<div *ngFor="let item of items; let i=index"
 					 class="col-auto p-0">
 						<div class="menu-item"
-						id="{{ariaLabel}}-jumptoSetting-{{i}}"
+						id="jumptoSetting-{{item.path}}"
+						attr.aria-label="jumptoSetting-{{item.path}}"
 						 (click)="menuItemClick($event, item)">
 							{{item.title | translate}}
 						</div>

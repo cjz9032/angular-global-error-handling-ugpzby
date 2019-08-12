@@ -2,8 +2,11 @@
 	<ng-container *ngFor="let tab of menuItems; let i=index;">
 		<div class="menu-header-tab {{tab.prop}}"
 		routerLink="/{{tab.path}}"
-		routerLinkActive="active">
-			<div class="tab-label">{{tab.label}}</div>
+		routerLinkActive="active"
+		id="myDevice-settings-header-menu-{{tab.icon}}"
+		attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}">
+			<div class="tab-label" id="myDevice-settings-header-menu-{{tab.icon}}-title"
+			attr.aria-label="myDevice-settings-header-menu-{{tab.icon}}-title">{{tab.label}}</div>
 			<fa-icon [icon]="['fas', 'square']" class="menu-pointer"></fa-icon>
 		</div>
 	</ng-container>

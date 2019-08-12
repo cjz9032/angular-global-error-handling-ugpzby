@@ -13,6 +13,7 @@
 						<div class="all-device-name text-uppercase">{{'homeSecurity.overview.allDevices' | translate}}</div>
 						<div class="manage">
 							<a target="_blank" href="javascript:void(0)"
+								[ngClass]="{'disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 								id="chs-lnk-ad-manageAccount"
 								attr.aria-label="chs-lnk-ad-manageAccount"
 								vtrMetrics
@@ -42,13 +43,16 @@
 						<div class="status">
 							<h3 *ngIf="account && allDevicesInfo && (allDevicesInfo.allDevicesNumber !== 0 || this.account.state === 'trialExpired' || this.account.state === 'local')">
 								<span class="badge badge-pill badge-success"
+									title="{{'homeSecurity.overview.secure' | translate}}"
 									*ngIf="allDevicesInfo.allDevicesStatus && this.account.state!=='trialExpired' && this.account.state!=='local'">
 									{{'homeSecurity.overview.secure' | translate}}
 								</span>
 								<span class="badge badge-pill badge-danger" (click)="common.openCornet()"
 									*ngIf="!allDevicesInfo.allDevicesStatus || this.account.state==='trialExpired' || this.account.state==='local'"
+									[ngClass]="{'url-disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 									id="chs-btn-ad-needAttention"
 									attr.aria-label="chs-btn-ad-needAttention"
+									title="{{'homeSecurity.overview.needAttention' | translate}}"
 									vtrMetrics
 									metricsItem="needAttentionAllDevice"
 									metricsEvent="featureClick">
@@ -57,6 +61,7 @@
 						</div>
 						<div class="protected-device">
 							<a  target="_blank" href="javascript:void(0)"
+								[ngClass]="{'disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 								id="chs-lnk-ad-seeProtectedDevices"
 								aria-label="chs-lnk-ad-seeProtectedDevices"
 								vtrMetrics
@@ -73,6 +78,7 @@
 							metricsItem="addDeviceAllDevice"
 							metricsEvent="featureClick"
 							(click)="common.openCornet()"
+							[isDisabled]="!common?.connectedHomeSecurity?.account?.consoleUrl"
 							[title]="'homeSecurity.overview.addDevice' | translate"
 							[label]="'homeSecurity.overview.addDevice' | translate">
 						</vtr-ui-button>
@@ -84,28 +90,32 @@
 	</div>
 	<div class="row overlay" *ngIf="pluginAvailable && account && (account.state === 'trialExpired' || account.state === 'local')">
 		<div class="col content-container" *ngIf="account.state === 'trialExpired'">
-			<div class="text">{{'homeSecurity.overview.trialExpired' | translate}}</div>
-			<vtr-ui-button
-				id="chs-btn-ad-upgrade"
-				aria-label="chs-btn-ad-upgrade"
-				metricsItem="upgradeAllDevice"
-				metricsEvent="featureClick"
-				(click)="common.upgrade()"
-				[title]="'homeSecurity.overview.upgrade' | translate"
-				[label]="'homeSecurity.overview.upgrade' | translate">
-			</vtr-ui-button>
+			<div class="text" title="{{'homeSecurity.overview.trialExpired' | translate}}">{{'homeSecurity.overview.trialExpired' | translate}}</div>
+			<div class="button-container">
+				<vtr-ui-button
+					id="chs-btn-ad-upgrade"
+					aria-label="chs-btn-ad-upgrade"
+					metricsItem="upgradeAllDevice"
+					metricsEvent="featureClick"
+					(click)="common.upgrade()"
+					[title]="'homeSecurity.overview.upgrade' | translate"
+					[label]="'homeSecurity.overview.upgrade' | translate">
+				</vtr-ui-button>
+			</div>
 		</div>
 		<div class="col content-container" *ngIf="account.state === 'local'">
-			<div class="text">{{'homeSecurity.overview.freeTrial' | translate}}</div>
-			<vtr-ui-button
-				id="chs-btn-ad-startTrial"
-				aria-label="chs-btn-ad-startTrial"
-				metricsItem="CHSStartTrialButton"
-				metricsEvent="featureClick"
-				(click)="common.startTrial()"
-				[label]="'homeSecurity.overview.startTrial' | translate"
-				[isDisabled]="common?.startTrialDisabled">
-			</vtr-ui-button>
+			<div class="text" title="{{'homeSecurity.overview.freeTrial' | translate}}">{{'homeSecurity.overview.freeTrial' | translate}}</div>
+			<div class="button-container">
+				<vtr-ui-button
+					id="chs-btn-ad-startTrial"
+					aria-label="chs-btn-ad-startTrial"
+					metricsItem="CHSStartTrialButton"
+					metricsEvent="featureClick"
+					(click)="common.startTrial()"
+					[label]="'homeSecurity.overview.startTrial' | translate"
+					[isDisabled]="common?.startTrialDisabled">
+				</vtr-ui-button>
+			</div>
 		</div>
 	</div>
 </div>

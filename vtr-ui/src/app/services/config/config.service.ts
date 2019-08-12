@@ -3,7 +3,10 @@ import {
 } from '@angular/core';
 import {
 	DeviceService
-} from '../device/device.service';
+} from 'src/app/services/device/device.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { CommonService } from '../common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,7 +16,11 @@ export class ConfigService {
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
-	constructor(private deviceService: DeviceService) { }
+	constructor(
+		private deviceService: DeviceService,
+		private userService: UserService,
+		private commonService: CommonService) {
+		}
 
 	menuItemsGaming: Array<any> = [{
 		id: 'device',
@@ -431,6 +438,49 @@ export class ConfigService {
 		subitems: []
 	}];
 
+	betaItem = {
+		id: 'beta',
+		label: 'common.menu.beta.title',
+		beta: true,
+		path: 'beta',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.beta',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'flask'],
+		forArm: false,
+		subitems: [
+			// {
+			// id: 'password-protection-beta',
+			// label: 'common.menu.beta.password',
+			// path: '',
+			// icon: '',
+			// metricsEvent: 'itemClick',
+			// metricsParent: 'navbar',
+			// metricsItem: 'link.beta.passwordprotection',
+			// routerLinkActiveOptions: {
+			// 	exact: true
+			// },
+			// subitems: []
+			// }
+			{
+				id: 'hardware-scan',
+				label: 'hardwareScan.name',
+				path: 'hardware-scan',
+				icon: '',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.hardwarescan',
+				routerLinkActiveOptions: {
+					exact: true
+				},
+				subitems: []
+			}
+		]
+	};
+
 	getMenuItems(isGaming) {
 		if (isGaming) {
 			return this.menuItemsGaming;
@@ -454,6 +504,10 @@ export class ConfigService {
 			}
 			if (country.toLowerCase() !== 'us') {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
+			}
+			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
+			if (isBetaUser) {
+				resultMenu.splice(resultMenu.length - 1, 0, this.betaItem);
 			}
 			resolve(resultMenu);
 		});

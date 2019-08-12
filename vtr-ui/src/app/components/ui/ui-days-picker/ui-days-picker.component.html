@@ -5,12 +5,13 @@
 		<div class="col-md-10 col-sm-12 pl-0">
 
 			<div class="dropdown">
-				<input id="daysId"
+				<input id="{{daysId}}"
+				attr.aria-label="{{daysId}}"
 					class="dropcheck"
 					type="checkbox"
 					[checked]="showDropDown"
 					(click)="onToggleDropDown()">
-				<label for="daysId"
+				<label for="{{daysId}}"
 					class="dropbtn">
 					<div class="row align-items-center d-flex justify-content-between pl-5">
 						<h5>{{schedule}}</h5>
@@ -34,6 +35,7 @@
 												type="checkbox"
 												value="{{i.shortName}}"
 												id="{{i.shortName}}"
+												attr.aria-label="{{i.shortName}}"
 												[(ngModel)]="i.status"
 												(change)="selectDay($event)">
 											<label class="custom-control-label"
@@ -53,8 +55,12 @@
 									<div class="select-close">
 										<fa-icon [icon]="['fal', 'check']"
 											(click)="setOffDays()"
+											id="daysPickerDone"
+											attr.aria-label="daysPickerDone"
 											*ngIf="checkedLength > 0"></fa-icon>
 										<fa-icon [icon]="['fal', 'times']"
+										id="daysPickerClear"
+										attr.aria-label="daysPickerClear"
 											(click)="clearSettings()"></fa-icon>
 									</div>
 								</div>

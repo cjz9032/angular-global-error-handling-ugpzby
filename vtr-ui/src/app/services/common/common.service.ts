@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Injectable({
 	providedIn: 'root'
@@ -186,5 +187,11 @@ export class CommonService {
 	}
 	public sendGamingCapabilitiesNotification(action, payload) {
 		this.gamingCapabalities.next({ type: action, payload });
+	}
+
+	public isBetaUser(): Promise<number> {
+		if (WinRT) {
+			return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
+		}
 	}
 }

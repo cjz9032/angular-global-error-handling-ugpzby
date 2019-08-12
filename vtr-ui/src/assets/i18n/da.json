@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Optager makro-tast for"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Deaktiveret"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Deaktiveret"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,25 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
+            }
         }
     },
     "common": {
@@ -403,7 +418,8 @@
                 "sub1": "Min enhed",
                 "sub2": "Mine enhedsindstillinger",
                 "sub3": "Systemopdatering",
-                "sub4": "Smart hjælp"
+                "sub4": "Smart hjælp",
+                "sub5": ""
             },
             "security": {
                 "title": "Sikkerhed",
@@ -416,7 +432,10 @@
             },
             "support": "Support",
             "homeSecurity": "Tilsluttet Home",
-            "privacy": "Anonymitet"
+            "privacy": "Anonymitet",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Sikkerhedsvejledning",
@@ -522,10 +541,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Øjenpleje",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage har ikke adgang til kamera og mikrofon.",
+                "accessUrl": "Gå til Windows-indstillingerne for at give adgang",
+                "microphoneNote": "Lenovo Vantage har ikke adgang til mikrofon.",
+                "cameraPrivacyNote": "Lenovo Vantage har ikke adgang til kamera."
             }
         },
         "systemStatus": {
@@ -680,22 +699,22 @@
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
                     "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
-                    "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
-                    "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
+                    "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
+                    "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
                     "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver.",
                     "StoreLimitation": "<b>Batteriet kan kun lagre {{value}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Tag det ud af computeren, og lad det køle af til almindelig stuetemperatur.",
                     "PermanentError": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
+                    "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter."
                 },
                 "updating": "Opdaterer",
                 "voltageError": "Forkert batterispænding",
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Flere oplysninger"
             },
             "power": {
                 "title": "Strøm",
@@ -803,8 +822,8 @@
                         "readMoreText": "Læs mere.",
                         "noteInfo": " Opladningsgrænse for batteri er stadig ikke fuldt aktiv. Tag maskinens strømstik ud, og lad batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
                         "settings": {
-                            "title1": "Grænse for indbygget batteri",
-                            "title2": "Grænse for flytbart batteri"
+                            "title1": "Grænse for primært batteri",
+                            "title2": "Grænse for sekundært batteri"
                         },
                         "popup": {
                             "title": "Aktivér opladningsgrænse for batteri",
@@ -976,7 +995,7 @@
                             "warm": "Varm (bedre for øjne)",
                             "cold": "Kold"
                         },
-                        "reset": "Nulstil temperatur",
+                        "reset": "Nulstil",
                         "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
                         "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
@@ -990,7 +1009,7 @@
                             "warm": "Varm (bedre for øjne)",
                             "cold": "Kold"
                         },
-                        "reset": "Nulstil temperatur",
+                        "reset": "Nulstil",
                         "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
                         "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
@@ -1039,7 +1058,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klik her for at nulstille egenskaberne for kameraet til standardindstillingerne.",
-                        "reset": "Nulstil til fabriksindstillingerne"
+                        "reset": "Nulstil"
                     },
                     "brightness": "Lysstyrke",
                     "contrast": "Kontrast",
@@ -1192,14 +1211,14 @@
                     "description1": "Denne funktion er afhængig af Windows Hello. Kontrollér, at ansigtsgenkendelse er slået til i Windows-indstillinger.",
                     "description2": "Funktionen bruger sensorer og kameraet til at registrere din tilstedeværelse. Men funktionen indsamler IKKE personlige data.",
                     "description3": "1. Hvis din computer er i Telt-, Tablet- eller Støtte-tilstand, fungerer disse funktioner muligvis ikke korrekt.",
-                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Automatisk logon til infrarødt kamera fungerer ikke.",
+                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Logon uden berøring fungerer ikke.",
                     "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
                     "screenTimeoutSettings": "Gå til indstillinger for skærmtimeout"
                 },
-                "resetToDefault": "NULSTIL TIL STANDARDINDSTILLINGERNE"
+                "resetToDefault": "Nulstil"
             },
             "intelligentScreen": {
                 "title": "Intelligent skærm",
@@ -2200,7 +2219,6 @@
         "personal": "Personlig brug",
         "business": "På arbejde",
         "custom": "Tilpasset oplevelse",
-        "experience": "Erfaring",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
@@ -2237,5 +2255,119 @@
         "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
         "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
-    }
+    },
+	"hardwareScan": {
+		"name": "Hardwaresøgning",
+		"title": "Udfør en hardwaresøgning",
+		"subtitle": "Vent, mens der udføres hardwaresøgning",
+		"quickScan": "Hurtig søgning",
+		"finalResultCode": "Kode for det endelige resultat",
+		"resultCode": "Resultatkode",
+		"cancel": "Annuller",
+		"complete": "Udført",
+		"incomplete": "Ufuldstændig",
+		"loadingComponents": "Indlæser komponenter",
+		"hardwareComponents": "Hardwarekomponenter",
+		"loadingDevices": "Enheder indlæses",
+		"select": "Vælg",
+		"deselect": "Fravælg",
+		"allOptions": "Alle indstillinger",
+		"latestResult": "Seneste resultat",
+		"back": "TILBAGE",
+		"viewResults": "Se resultater",
+		"save": "Gem",
+		"details": "Oplysninger",
+		"recurrence": "Gentagelse",
+		"interval": "Interval",
+		"time": "Klokkeslæt",
+		"type": "Type",
+		"hours": "Timer",
+		"minutes": "Minutter",
+		"am": "formiddag",
+		"pm": "eftermiddag",
+		"previousResult": "Tidligere resultater",
+		"lastScanOn": "Seneste søgning den",
+		"result": "Resultat",
+		"viewDetailsLog": "Vis log med detaljer",
+		"ok": "OK",
+		"notOk": "IKKE OK",
+		"notScanned": "INGEN SØGNING",
+		"pass": "Bestået",
+		"fail": "Mislykkedes",
+		"cancelled": "Annulleret",
+		"warning": "Advarsel!",
+		"errorResult": "Du skal vælge en test, der skal køres.",
+		"buy": "Køb nu",
+		"errorDeviceChoose": "Du skal vælge en enhed, der skal køres.",
+		"errorNoOptionSelected": "Du skal vælge en indstilling.",
+		"offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
+		"common": {
+			"menu": "Hardwaresøgning"
+		},
+		"customize": {
+			"name": "Tilpas",
+			"test": "Tilpas test",
+			"description": "Vælg indstillingerne nedenfor for at tilpasse testen",
+			"runTests": "Kør de valgte test"
+		},
+		"scheduledScan": {
+			"name": "Planlæg søgning",
+			"title": "Planlæg din søgning",
+			"newScan": "Planlæg ny søgning",
+			"fullScan": "Fuld søgning",
+			"onlyOnce": "Kun én gang",
+			"eachDay": "Hver dag",
+			"eachWeek": "Hver uge",
+			"eachMonth": "Hver måned",
+			"eachYear": "Hvert år",
+			"schedule": "Planlæg",
+			"date": "Dato",
+			"pickDate": "Vælg en dato",
+			"scanScheduled": "En hardwaresøgning blev planlagt!",
+			"description": "Der er allerede planlagt en anden scanning på samme tid og den samme dato!",
+			"error": "Fejl",
+			"delete": "Slet"
+		},
+		"recoverBadSectors": {
+			"title": "Retablering af dårlige sektorer",
+			"description": "Lenovo-værktøj til registrering og reparation af beskadigede sektorer på en disk",
+			"goTo": "Gå til gendannelse af beskadigede sektorer",
+			"localDevices": "Lokale enheder",
+			"numberSectors": "Antal læste sektorer",
+			"numberBadSectors": "Antal dårlige sektorer, der blev fundet",
+			"numberFixedSectors": "Antal udbedrede sektorer",
+			"numberNonFixedSectors": "Antal ikke-udbedrede sektorer",
+			"status": "Driftsstatus",
+			"elapsedTime": "Forløbet tid",
+			"hours": "Timer",
+			"hour": "Time",
+			"minutes": "Minutter",
+			"minute": "Minut",
+			"seconds": "Sekunder",
+			"second": "Sekund",
+			"moreInfo": "Vent et øjeblik, mens gendannelsen af beskadigede sektorer udføres",
+			"systemEvent": "Testen blev afbrudt, fordi der opstod en systemhændelse, som kunne kompromittere resultatet.",
+			"systemPasswordProtected": "Enheden er muligvis beskyttet med adgangskode. Prøv at deaktivere beskyttelsen med adgangskode.",
+			"popup": {
+				"description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
+				"yes": "Ja",
+				"no": "Nej"
+			}
+		},
+		"support": {
+			"title": "Download professionelle fejlfindingsværktøjer",
+			"subtitle": "Lenovo Support"
+		},
+		"eTicket": {
+			"header": "Der blev registreret et hardwareproblem.",
+			"problemDetected": "Hardwaresøgningen har registreret et problem med følgende komponenter på din computer",
+			"ticketRequestQuestion": "Lenovo kan sende en udskiftningsdel, hvis din computer er dækket af garantien. Vil du oprette en supportanmodning om hardwareudskiftning for at løse dette problem",
+			"openTicket": "Åbn supportanmodning"
+		},
+		"battery": {
+			"title": "Aktivér opladningsgrænse for batteri",
+			"description": "Ved at bruge tilpasset opladning af batteriet kan du forlænge den samlede batterilevetid, mens du bruger enheden. Når batteriet ikke lades helt op, vil batteriets driftstid dog være kortere. For at aktivere denne funktion fuldt ud skal du tage maskinens strømstik ud og lade batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
+			"enable": "Aktivér"
+		}
+	}
 }

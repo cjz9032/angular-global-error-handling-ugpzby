@@ -235,10 +235,6 @@
             },
             "recording": {
                 "title": "Registrazione tasto macro per"
-            },
-            "initalKey": {
-                "zero": 0,
-                "m1": "M1"
             }
         },
         "lightingProfile": {
@@ -318,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Disattivato"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profilo 1"
@@ -332,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Disattivato"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -393,6 +389,25 @@
                 "title": "No Running Apps To Add",
                 "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
             }
+        },
+        "networkBoost": {
+            "title": "Networkboost",
+            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "modalTurn": {
+                "title": "Turn on Network Boost ?",
+                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
+                "checkedTitle": "Don't ask again",
+                "btnConfirm": "Turn on",
+                "btnCancel": "Not now"
+            },
+            "modalAddApps": {
+                "title": "Add apps to Network Boost",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
+            }
         }
     },
     "common": {
@@ -416,7 +431,10 @@
             },
             "support": "Supporto",
             "homeSecurity": "Abitazione connessa",
-            "privacy": "Vita Privata"
+            "privacy": "Vita Privata",
+            "beta": {
+                "title": "beta"
+            }
         },
         "securityAdvisor": {
             "title": "Assistente sicurezza",
@@ -522,10 +540,10 @@
             "cameraPrivacy": "Fotocamera",
             "eyeCareMode": "Comfort visivo",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Camera and Microphone",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage non ha accesso alla fotocamera e al microfono.",
+                "accessUrl": "Vai alle impostazioni di Windows per consentire l'accesso",
+                "microphoneNote": "Lenovo Vantage non ha accesso al microfono.",
+                "cameraPrivacyNote": "Lenovo Vantage non ha accesso alla fotocamera."
             }
         },
         "systemStatus": {
@@ -680,22 +698,22 @@
                     "Bad": "<b>Si è verificato un errore della batteria.</b> La batteria non può essere caricata/scaricata. Sostituire la batteria.",
                     "NotDetected": "<b>Nessuna batteria rilevata o</b> collegata.",
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
-                    "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
-                    "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato.",
+                    "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
+                    "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
                     "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
                     "OverheatedBattery": "La batteria è <b>troppo calda</b>. Rimuoverla dal computer e lasciare che si raffreddi fino a temperatura ambiente.",
                     "PermanentError": "La batteria si è <b>deteriorata a causa del normale utilizzo.</b> La batteria non può essere caricata. Sostituire la batteria.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
+                    "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato."
                 },
                 "updating": "Aggiornamento",
                 "voltageError": "Tensione batteria non corretta",
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> per estenderne la durata, la batteria è stata impostata per interromperne la ricarica al {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Visualizza dettagli"
             },
             "power": {
                 "title": "Alimentazione",
@@ -803,8 +821,8 @@
                         "readMoreText": "Ulteriori informazioni.",
                         "noteInfo": " La soglia di carica della batteria non è ancora completamente attiva. Scollegare la presa di alimentazione del computer e scaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
                         "settings": {
-                            "title1": "Soglia per batteria integrata",
-                            "title2": "Soglia per batteria rimovibile"
+                            "title1": "Soglia per batteria primaria",
+                            "title2": "Soglia per batteria secondaria"
                         },
                         "popup": {
                             "title": "Abilita soglia di carica della batteria",
@@ -976,7 +994,7 @@
                             "warm": "Caldo (migliore per gli occhi)",
                             "cold": "Fredda"
                         },
-                        "reset": "Ripristina temperatura",
+                        "reset": "Reimposta",
                         "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
                         "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
@@ -990,7 +1008,7 @@
                             "warm": "Caldo (migliore per gli occhi)",
                             "cold": "Fredda"
                         },
-                        "reset": "Ripristina temperatura",
+                        "reset": "Reimposta",
                         "tooltip": "La modalità Comfort visivo regola la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi.",
                         "onSunsetToSunriseScheduleDescription": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
                         "note": {
@@ -1039,7 +1057,7 @@
                     "camera": {
                         "title": "Fotocamera",
                         "tooltip": "Fare clic qui per ripristinare le impostazioni predefinite delle proprietà della fotocamera.",
-                        "reset": "Ripristina impostazioni predefinite"
+                        "reset": "Reimposta"
                     },
                     "brightness": "Liminosità",
                     "contrast": "Contrasto",
@@ -1152,7 +1170,7 @@
                     "tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevazione presenza umana."
                 },
                 "zeroTouchLogin": {
-                    "title": "Accesso zero touch",
+                    "title": "Accesso automatico",
                     "caption": "Questa funzione sblocca o attiva automaticamente il computer quando l'utente si avvicina o si siede di fronte al PC.",
                     "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
@@ -1192,14 +1210,14 @@
                     "description1": "Questa funzione si basa su Windows Hello. Verificare che il riconoscimento facciale sia attivo nelle impostazioni di Windows.",
                     "description2": "La funzione utilizza sensori e fotocamera per rilevare la presenza dell'utente. Tuttavia, non raccoglie alcun dato personale.",
                     "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
-                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico alla fotocamera IR non funzionerà.",
+                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico non funzionerà.",
                     "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vai a Impostazioni di Windows Hello",
                     "screenTimeoutSettings": "Accedi alle impostazioni di timeout dello schermo"
                 },
-                "resetToDefault": "RIPRISTINA IMPOSTAZIONI PREDEFINITE"
+                "resetToDefault": "Reimposta"
             },
             "intelligentScreen": {
                 "title": "Schermo intelligente",
@@ -2200,7 +2218,6 @@
         "personal": "Uso personale",
         "business": "Uso aziendale",
         "custom": "Esperienza personalizzata",
-        "experience": "Esperienza",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
         "moreInterest": "+ più interessi",
         "title1": "Benvenuto in",
@@ -2237,5 +2254,119 @@
         "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."
-    }
+    },
+	"hardwareScan": {
+		"name": "Scansione hardware",
+		"title": "Esegui una scansione hardware",
+		"subtitle": "Attendere il completamento della scansione hardware",
+		"quickScan": "Scansione veloce",
+		"finalResultCode": "Codice del risultato finale",
+		"resultCode": "Codice risultato",
+		"cancel": "Annulla",
+		"complete": "Completato",
+		"incomplete": "Incompleto",
+		"loadingComponents": "Caricamento dei componenti",
+		"hardwareComponents": "Componenti hardware",
+		"loadingDevices": "Caricamento dei dispositivi",
+		"select": "Selezionare",
+		"deselect": "Deseleziona",
+		"allOptions": "Tutte le opzioni",
+		"latestResult": "Risultato più recente",
+		"back": "INDIETRO",
+		"viewResults": "Visualizza risultati",
+		"save": "Salva",
+		"details": "Dettagli",
+		"recurrence": "Ricorrenza",
+		"interval": "Intervallo",
+		"time": "Ora",
+		"type": "Tipo",
+		"hours": "Ore",
+		"minutes": "Minuti",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "Risultati precedenti",
+		"lastScanOn": "Ultima scansione eseguita",
+		"result": "Risultato",
+		"viewDetailsLog": "Visualizza log dettagli",
+		"ok": "OK",
+		"notOk": "NON OK",
+		"notScanned": "SCANSIONE NON ESEGUITA",
+		"pass": "Corretto",
+		"fail": "Non riuscito",
+		"cancelled": "Annullato",
+		"warning": "Avvertenza",
+		"errorResult": "Scegli un test da eseguire.",
+		"buy": "Acquista ora",
+		"errorDeviceChoose": "Selezionare un dispositivo per eseguire la scansione.",
+		"errorNoOptionSelected": "Selezionare un'opzione.",
+		"offline": "Questo dispositivo è in esecuzione in modalità offline, connettersi a Internet",
+		"common": {
+			"menu": "Scansione hardware"
+		},
+		"customize": {
+			"name": "Personalizza",
+			"test": "Personalizza test",
+			"description": "Seleziona le opzioni riportate di seguito per personalizzare il test",
+			"runTests": "Esegui test selezionati"
+		},
+		"scheduledScan": {
+			"name": "Pianifica scansione",
+			"title": "Pianifica scansione personalizzata",
+			"newScan": "Pianifica nuova scansione",
+			"fullScan": "Scansione completa",
+			"onlyOnce": "Solo una volta",
+			"eachDay": "Ogni giorno",
+			"eachWeek": "Ogni settimana",
+			"eachMonth": "Ogni mese",
+			"eachYear": "Ogni anno",
+			"schedule": "Pianifica",
+			"date": "Data",
+			"pickDate": "Seleziona una data",
+			"scanScheduled": "È stata pianificata una scansione hardware.",
+			"description": "Un'altra scansione è stata già pianificata alla stessa data e ora.",
+			"error": "Errore",
+			"delete": "Elimina"
+		},
+		"recoverBadSectors": {
+			"title": "Ripristina settori danneggiati",
+			"description": "Strumento Lenovo per rilevare e correggere i settori danneggiati su un disco",
+			"goTo": "Vai al ripristino dei settori danneggiati",
+			"localDevices": "Dispositivi locali",
+			"numberSectors": "Numero di settori letti",
+			"numberBadSectors": "Numero di settori danneggiati trovati",
+			"numberFixedSectors": "Numero di settori corretti",
+			"numberNonFixedSectors": "Numero di settori non corretti",
+			"status": "Stato operazione",
+			"elapsedTime": "Tempo trascorso",
+			"hours": "Ore",
+			"hour": "Ora",
+			"minutes": "Minuti",
+			"minute": "Minuto",
+			"seconds": "Secondi",
+			"second": "Secondo",
+			"moreInfo": "Attendere il completamento dell'operazione di ripristino dei settori danneggiati",
+			"systemEvent": "Test interrotto a causa di un evento di sistema che poteva comprometterne il risultato.",
+			"systemPasswordProtected": "Il dispositivo può essere protetto da password. Provare a disabilitare la protezione con password.",
+			"popup": {
+				"description": "L'esecuzione della scansione e del ripristino può causare la perdita dei dati. Si consiglia di effettuare una copia di backup prima di eseguire questa operazione. Procedere?",
+				"yes": "Sì",
+				"no": "No"
+			}
+		},
+		"support": {
+			"title": "Scarica strumenti di diagnostica professionali",
+			"subtitle": "Supporto Lenovo"
+		},
+		"eTicket": {
+			"header": "Problema hardware rilevato.",
+			"problemDetected": "La scansione hardware ha rilevato un problema relativo ai seguenti componenti del computer",
+			"ticketRequestQuestion": "Se il computer è coperto da garanzia, Lenovo può inviare una parte sostitutiva. Aprire un ticket di sostituzione hardware per risolvere il problema",
+			"openTicket": "Apri ticket"
+		},
+		"battery": {
+			"title": "Abilita soglia di carica della batteria",
+			"description": "L'abilitazione della carica personalizzata della batteria consente di prolungare la durata della batteria e di utilizzare il dispositivo più a lungo. Tuttavia, se la carica non è completa, l'autonomia della batteria sarà inferiore. Per abilitare questa funzione, scollegare la presa di alimentazione del computer e scaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
+			"enable": "Abilita"
+		}
+	}
 }

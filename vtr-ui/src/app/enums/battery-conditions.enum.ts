@@ -11,6 +11,9 @@ export enum BatteryConditionsEnum {
 	OverheatedBattery,
 	PermanentError,
 	HardwareAuthenticationError,
+	UnsupportedBattery,
+	NonThinkPadBattery,
+	NonLenovoUsbPowerAdapter,
 
 	MissingDriver,
 

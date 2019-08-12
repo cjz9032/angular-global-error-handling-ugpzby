@@ -1,3 +1,4 @@
+import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
@@ -5,20 +6,10 @@ import { PageDeviceGamingComponent } from '../components/pages/page-device-gamin
 import { GuardService } from '../services/guard/security-guardService.service';
 import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
-import { PageNetworkBoostComponent } from '../components/pages/page-network-boost/page-network-boost.component';
 import { PageAutocloseComponent } from './../components/pages/page-autoclose/page-autoclose.component';
 import { PageUserComponent } from '../components/pages/page-user/page-user.component';
 
 const routes: Routes = [
-	// {
-	// 	path: 'dashboard',
-	// 	component: PageDashboardComponent,
-	// 	canDeactivate: [GuardService],
-	// 	canActivate: [GuardService],
-	// 	data: {
-	// 		pageName: 'Dashboard'
-	// 	}
-	// },
 	{
 		path: '',
 		component: PageDeviceGamingComponent,
@@ -35,8 +26,8 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'Device',
-			pageContent: 'Device Status'
+			pageName: 'Gaming.Dashboard',
+			pageContent: 'Gaming Dashboard'
 		}
 	},
 	{
@@ -45,7 +36,8 @@ const routes: Routes = [
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'Macrokey'
+			pageName: 'Gaming.Macrokey',
+			pageContent: 'Gaming Macrokey'
 		}
 	},
 	{
@@ -55,25 +47,29 @@ const routes: Routes = [
 		canActivate: [ GuardService ],
 
 		data: {
-			pageName: 'Lightingcustomize'
+			pageName: 'Gaming.Lighting',
+			pageContent: 'Gaming Lighting'
 		}
 	},
 	{
 		path: 'networkboost',
-		component: PageNetworkBoostComponent,
+		component: PageNetworkboostComponent,
 		canDeactivate: [ GuardService ],
 		canActivate: [ GuardService ],
 		data: {
-			pageName: 'NetworkBoost'
+			pageName: 'Gaming.NetworkBoost',
+			pageContent: 'Gaming NetworkBoost'
+
 		}
 	},
 	{
 		path: 'autoclose',
 		component: PageAutocloseComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
+		canDeactivate: [ GuardService ],
+		canActivate: [ GuardService ],
 		data: {
-			pageName: 'AutoClose'
+			pageName: 'Gaming.AutoClose',
+			pageContent: 'Gaming AutoClose'
 		}
 	},
 	{

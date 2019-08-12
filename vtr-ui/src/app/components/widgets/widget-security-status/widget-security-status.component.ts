@@ -66,7 +66,7 @@ export class WidgetSecurityStatusComponent implements OnInit{
 	}
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {
-		const windowsHelloItem = this.items.find(item => item.id === 'sa-widget-lnk-wh');
+		const windowsHelloItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-wh'));
 		if (this.windowsHelloService.showWindowsHello()) {
 			if (!windowsHelloItem) {
 				this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
@@ -74,20 +74,20 @@ export class WidgetSecurityStatusComponent implements OnInit{
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 		} else {
 			if (windowsHelloItem) {
-				this.items = this.items.filter(item => item.id !== 'sa-widget-lnk-wh');
+				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-wh'));
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 		}
 	}
 	showVpn() {
-		const vpnItem = this.items.find(item => item.id === 'sa-widget-lnk-vpn');
+		const vpnItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-vpn'));
 		if (this.region !== 'cn') {
 			if (!vpnItem) {
 				this.items.splice(3, 0, new VPNWidgetItem(this.securityAdvisor.vpn, this.commonService, this.translateService));
 			}
 		} else {
 			if (vpnItem) {
-				this.items = this.items.filter(item => item.id !== 'sa-widget-lnk-vpn');
+				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-vpn'));
 			}
 		}
 	}

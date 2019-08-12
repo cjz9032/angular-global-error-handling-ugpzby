@@ -1,26 +1,22 @@
 <div class="multi-state-toggle">
 	<div class="inner-toggle">
 
-		<input type="radio" vtrMetrics [metricsItem]="'gaming.lightingProfile.profileheading.text1.title' | translate"
-			metricsEvent="featureClick" value="0" name="lighting-porfile" id="off_radio" [checked]="currentProfile===0"
+		<input type="radio"   vtrMetrics [metricsItem]="'lighting_profile_off'" metricsEvent="featureClick" metricsParam="'profileId'" [metricsValue]="0" value="0" name="lighting-porfile" id="off_radio" attr.aria-label = "off_radio" [checked]="currentProfile===0"
 			(change)="SetProfile($event)">
 		<label for="off_radio" id="off">{{'gaming.lightingProfile.profileheading.text1.title' | translate}}</label>
 
 
-		<input type="radio" vtrMetrics [metricsItem]="'gaming.lightingProfile.profileheading.text2.title' | translate"
-		metricsEvent="featureClick" value="1" name="lighting-porfile" id="first_radio" [checked]="currentProfile===1"
+		<input type="radio" vtrMetrics [metricsItem]="'lighting_profile_1'" metricsEvent="featureClick" metricsParam="'profileId'" [metricsValue]="1" value="1" name="lighting-porfile" id="first_radio" attr.aria-label = "first_radio" [checked]="currentProfile===1"
 			(change)="SetProfile($event)">
 		<label for="first_radio" id="first_lbl">{{'gaming.lightingProfile.profileheading.text2.title' | translate}}</label>
 
 
-		<input type="radio" vtrMetrics [metricsItem]="'gaming.lightingProfile.profileheading.text3.title' | translate"
-		metricsEvent="featureClick" value="2" name="lighting-porfile" id="second_radio" [checked]="currentProfile===2"
+		<input type="radio" vtrMetrics [metricsItem]="'lighting_profile_2'" metricsEvent="featureClick" metricsParam="'profileId'" [metricsValue]="2" value="2" name="lighting-porfile" id="second_radio" attr.aria-label = "second_radio" [checked]="currentProfile===2"
 			(change)="SetProfile($event)">
 		<label for="second_radio" id="second_lbl">{{'gaming.lightingProfile.profileheading.text3.title' | translate}}</label>
 
 
-		<input type="radio" vtrMetrics [metricsItem]="'gaming.lightingProfile.profileheading.text4.title' | translate"
-		metricsEvent="featureClick" value="3" name="lighting-porfile" id="third_radio" [checked]="currentProfile===3"
+		<input type="radio" vtrMetrics [metricsItem]="'lighting_profile_3'" metricsEvent="featureClick" metricsParam="'profileId'" [metricsValue]="3" value="3" name="lighting-porfile" id="third_radio" attr.aria-label = "third_radio" [checked]="currentProfile===3"
 			(change)="SetProfile($event)">
 		<label for="third_radio"
 			id="third_lbl">{{'gaming.lightingProfile.profileheading.text4.title' | translate}}</label>
