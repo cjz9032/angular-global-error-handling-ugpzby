@@ -1,5 +1,5 @@
 <div class="vtr-battery-indicator"
-	#batteryIndicator>
+	#batteryIndicatorRef>
 	<div class="cell">
 		<div class="battery-shadow"></div>
 		<div #battery
@@ -7,14 +7,14 @@
 			<div class="acid-container">
 				<div class="fill"></div>
 				<div class="percentage"
-					*ngIf="!batteryNotDetected">
-					{{ percentage }}
+					*ngIf="!batteryIndicator.batteryNotDetected">
+					{{ batteryIndicator.percent }}
 					<span class="percentage-symbol">
 						%
 					</span>
 				</div>
 				<div class="battery-error"
-					*ngIf="batteryNotDetected">
+					*ngIf="batteryIndicator.batteryNotDetected">
 					<span class="icomoon icomoon-NoBatteryError error-icon"></span>
 					<span class="no-battery-detected"
 						id="myDevice-settings-batteryGauge-notDetected-title"
@@ -23,34 +23,35 @@
 					</span>
 				</div>
 			</div>
-			<div *ngIf="!batteryNotDetected && !hideRemainingTimeTxt">
+			<div *ngIf="!batteryIndicator.batteryNotDetected && !hideRemainingTimeTxt">
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>
 				<div class="remaining-text text-uppercase"
-					*ngIf="timeText === 'timeRemaining'"
+					*ngIf="batteryIndicator.timeText === 'timeRemaining'"
 					id="myDevice-settings-batteryGauge-remainingTime-title"
 					attr.aria-label="myDevice-settings-batteryGauge-remainingTime-title">
 					{{'device.deviceSettings.batteryGauge.details.remainingTime' | translate}}
 				</div>
 				<div class="remaining-text text-uppercase"
-					*ngIf="timeText === 'timeCompletion'"
+					*ngIf="batteryIndicator.timeText === 'timeCompletion'"
 					id="myDevice-settings-batteryGauge-charge-title"
 					attr.aria-label="myDevice-settings-batteryGauge-charge-title">
 					{{'device.deviceSettings.batteryGauge.charge' | translate}}
 				</div>
 			</div>
 			<div class="battery-charging"
-				*ngIf="!batteryNotDetected">
-				<span *ngIf="(isCharging && !(isExpressCharging || isAirplaneMode || isChargeThresholdOn))"
+				*ngIf="!batteryIndicator.batteryNotDetected">
+				<span
+					*ngIf="(batteryIndicator.charging && !(batteryIndicator.expressCharging || batteryIndicator.isAirplaneMode || batteryIndicator.isChargeThresholdOn))"
 					class="icomoon icomoon-FA-Plug2x"></span>
-				<span *ngIf="(isCharging && isExpressCharging)"
+				<span *ngIf="(batteryIndicator.charging && batteryIndicator.expressCharging)"
 					class="icomoon icomoon-LE-expressCharging2x"></span>
-				<span *ngIf="(!isCharging && isAirplaneMode)"
+				<span *ngIf="(!batteryIndicator.charging && batteryIndicator.isAirplaneMode)"
 					class="icomoon icomoon-LE-Airplanemode2x"></span>
-				<span *ngIf="(isCharging && isAirplaneMode)"
+				<span *ngIf="(batteryIndicator.charging && batteryIndicator.isAirplaneMode)"
 					class="icomoon icomoon-LE-AirplanemodeCharging2x"></span>
-				<span *ngIf="(isCharging && isChargeThresholdOn)"
+				<span *ngIf="(batteryIndicator.charging && batteryIndicator.isChargeThresholdOn)"
 					class="icomoon icomoon-LE-ConservationCharging2x"></span>
 			</div>
 		</div>

@@ -46,15 +46,7 @@
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
-			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
-				[remainingMinutes]="batteryIndicator.minutes"
-				[percentage]="batteryIndicator.percent"
-				[isCharging]="batteryIndicator.charging"
-				[isExpressCharging]="batteryIndicator.expressCharging"
-				[batteryNotDetected]="batteryIndicator.batteryNotDetected"
-				[timeText]="batteryIndicator.timeText"
-				[isAirplaneMode]="batteryIndicator.isAirplaneMode"
-				[isChargeThresholdOn]="batteryIndicator.isChargeThresholdOn">
+			<vtr-battery-indicator [batteryIndicator]="batteryIndicator">
 			</vtr-battery-indicator>
 		</div>
 
