@@ -12,7 +12,7 @@ const getLightingProfileById: any = { didSuccess : true, profileId : 2, brightne
 		{lightPanelType : 32, lightEffectType : 2, lightColor : '55943D'},
 		{lightPanelType : 64, lightEffectType : 2, lightColor : '4A9325'}
 	]};
-fdescribe('UiLightingProfileComponent', () => {
+describe('UiLightingProfileComponent', () => {
 	let component: UiLightingProfileComponent;
 	let fixture: ComponentFixture<UiLightingProfileComponent>;
 	gamingLightingServiceMock.isShellAvailable.and.returnValue(true);
