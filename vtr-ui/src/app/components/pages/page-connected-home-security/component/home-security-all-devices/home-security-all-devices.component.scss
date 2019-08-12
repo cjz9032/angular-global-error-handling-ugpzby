@@ -166,11 +166,15 @@
 			border-radius: $border_radius;
 			opacity: 0.9;
             .text {
-                display: flex;
-                justify-content: center;
                 font-size: 1.8rem;
                 font-weight: $weight_600;
-                color: black;
+				color: $dark;
+				padding-left: 0;
+				text-align: center;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				margin: 0 1rem;
 			}
 			.button-container {
 				margin: 0.5rem 0;
@@ -255,3 +259,4 @@
 	}
 
 }
+
