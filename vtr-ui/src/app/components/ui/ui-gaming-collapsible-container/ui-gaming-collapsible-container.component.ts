@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
@@ -8,7 +8,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges }
 		'(document:click)': 'generalClick($event)'
 	},
 })
-export class UiGamingCollapsibleContainerComponent implements OnInit {
+export class UiGamingCollapsibleContainerComponent implements OnInit, OnChanges {
 
 	@Input() public options;
 	@Output() public change = new EventEmitter<any>();
@@ -26,6 +26,15 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+		this.options.dropOptions.forEach((option: any) => {
+			if (option.value === this.options.curSelected) {
+				this.currentOption = option.name;
+				this.currentDescription = option.description;
+			}
+		});
+	}
+
+	ngOnChanges(changes: SimpleChanges) {
 		this.options.dropOptions.forEach((option: any) => {
 			if (option.value === this.options.curSelected) {
 				this.currentOption = option.name;
