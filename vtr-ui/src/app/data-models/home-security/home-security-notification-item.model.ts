@@ -8,13 +8,13 @@ export class NotificationItem {
 	date: string;
 	path = 'home-security';
 
-	constructor(arg: any = {}, private translateService: TranslateService) {
+	constructor(arg: any = {}, translateService: TranslateService) {
 		this.iconName = arg.iconName;
 		this.color = arg.color;
 		this.title = arg.title;
 		this.subText = arg.notificationDetail;
 		this.date = arg.date;
-		this.translateService.stream(this.title).subscribe((result: string) => {
+		translateService.stream(this.title).subscribe((result: string) => {
 			this.title = result;
 		});
 	}

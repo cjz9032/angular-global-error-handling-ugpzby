@@ -20,6 +20,9 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
+import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -63,7 +66,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private dialogService: LenovoIdDialogService,
 		private keyboardService: InputAccessoriesService,
-		private windowsHelloService: WindowsHelloService
+		public modalService: NgbModal,
+		private windowsHelloService: WindowsHelloService,
+		public modernPreloadService: ModernPreloadService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
@@ -422,6 +427,22 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, inputAccessoriesCapability);
 		}).catch((error) => {
 			console.error('error in initSmartAssist.Promise.all()', error);
+		});
+	}
+
+	openModernPreloadModal() {
+		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'modern-preload-modal',
+			keyboard: false,
+			beforeDismiss: () => {
+				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
+					modernPreloadModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
 		});
 	}
 }
