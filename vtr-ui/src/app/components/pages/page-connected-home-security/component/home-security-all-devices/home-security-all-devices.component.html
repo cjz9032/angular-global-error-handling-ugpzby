@@ -43,6 +43,7 @@
 						<div class="status">
 							<h3 *ngIf="account && allDevicesInfo && (allDevicesInfo.allDevicesNumber !== 0 || this.account.state === 'trialExpired' || this.account.state === 'local')">
 								<span class="badge badge-pill badge-success"
+									title="{{'homeSecurity.overview.secure' | translate}}"
 									*ngIf="allDevicesInfo.allDevicesStatus && this.account.state!=='trialExpired' && this.account.state!=='local'">
 									{{'homeSecurity.overview.secure' | translate}}
 								</span>
@@ -51,6 +52,7 @@
 									[ngClass]="{'url-disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 									id="chs-btn-ad-needAttention"
 									attr.aria-label="chs-btn-ad-needAttention"
+									title="{{'homeSecurity.overview.needAttention' | translate}}"
 									vtrMetrics
 									metricsItem="needAttentionAllDevice"
 									metricsEvent="featureClick">
