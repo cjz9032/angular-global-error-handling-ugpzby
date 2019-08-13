@@ -889,12 +889,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	showPowerSettings() {
 
-		if (!(!this.isDesktopMachine || this.showEasyResumeSection)) {
+		if (!(!this.isDesktopMachine || this.showEasyResumeSection || this.showFlipToBootSection$.value)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 		}
 
 		// return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
-		return !this.isDesktopMachine || this.showEasyResumeSection;
+		return !this.isDesktopMachine || this.showEasyResumeSection || this.showFlipToBootSection$.value;
 		// return !this.isDesktopMachine || this.showEasyResumeSection;
 	}
 

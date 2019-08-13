@@ -194,7 +194,7 @@
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-powerSettings'">
 				<ul class="list-group list-group-flush">
-					<li>
+					<li *ngIf="showFlipToBootSection$ | async">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
