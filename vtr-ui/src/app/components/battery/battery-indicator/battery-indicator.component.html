@@ -42,7 +42,7 @@
 			</div>
 			<div class="battery-charging"
 				*ngIf="!batteryNotDetected">
-				<span *ngIf="(isCharging && !isExpressCharging)"
+				<span *ngIf="(isCharging && !(isExpressCharging || isAirplaneMode || isChargeThresholdOn))"
 					class="icomoon icomoon-FA-Plug2x"></span>
 				<span *ngIf="(isCharging && isExpressCharging)"
 					class="icomoon icomoon-LE-expressCharging2x"></span>
@@ -50,6 +50,8 @@
 					class="icomoon icomoon-LE-Airplanemode2x"></span>
 				<span *ngIf="(isCharging && isAirplaneMode)"
 					class="icomoon icomoon-LE-AirplanemodeCharging2x"></span>
+				<span *ngIf="(isCharging && isChargeThresholdOn)"
+					class="icomoon icomoon-LE-ConservationCharging2x"></span>
 			</div>
 		</div>
 	</div>

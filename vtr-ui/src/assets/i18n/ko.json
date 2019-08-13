@@ -96,7 +96,7 @@
                     "info": "정보"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "빠른 설정"
                 }
             }
         },
@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "매크로 키 ",
-                    "deleteKey": "Delete 키",
+                    "deleteKey": "Delete",
                     "clear": "지우기",
                     "intervalStatus": {
                         "keep": {
@@ -371,42 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "자동 닫기",
+            "introLine": "게임 실행 시 닫으려는 앱을 추가합니다. 이는 미사용 리소스를 확보하여 게임 중 성능을 극대화합니다. 참고: 이 기능은 앱을 완전히 종료합니다. 따라서 작업을 저장했는지 항상 확인하십시오.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "자동 닫기를 사용하시겠습니까?",
+                "body": "게임을 할 때 추가된 앱을 종료하여 게임을 위한 추가 리소스를 확보합니다.",
+                "checkedTitle": "다시 묻지 않음",
+                "btnConfirm": "켜기",
+                "btnCancel": "나중에"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "자동 닫기에 앱 추가",
+                "body": "현재 실행 중인 앱만 아래 목록에 표시됩니다."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "추가",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "추가할 실행 중인 앱 없음",
+                "body": "현재 실행 중인 앱만 표시됩니다. 추가하려는 앱을 실행한 다음 다시 시도하십시오."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "네트워크 향상",
+            "introLine": "네트워크 향상은 게임 우선 순위를 네트워크 최고 수준으로 자동 설정하여 속도를 극대화합니다. Twitch나 Discord 같은 앱을 게임 중에 사용할 경우 아래 목록에 추가하여 네트워크에서 우선 순위가 부여되도록 하는 것이 좋습니다.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "네트워크 향상을 켜시겠습니까?",
+                "body": "네트워크 향상을 켜시겠습니까? 추가된 앱은 실행 중에 더 많은 네트워크를 공유합니다.",
+                "checkedTitle": "다시 묻지 않음",
+                "btnConfirm": "켜기",
+                "btnCancel": "나중에"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
-                }
+                "title": "네트워크 향상에 앱 추가",
+                "body": "최대 5개의 앱 추가 가능(5 중 4개 추가됨)."
             }
         }
     },
@@ -1447,7 +1443,12 @@
         "title": "홈 보안 연결",
         "notification": {
             "recent": "최근 보안 알림",
-            "notifications": "알림"
+            "notifications": "알림",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "장치 생태계 보호",
@@ -2255,118 +2256,123 @@
         "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."
     },
-	"hardwareScan" : {
-		"name": "하드웨어 검사",
-		"title": "하드웨어 스캔을 수행합니다.",
-		"subtitle": "하드웨어 스캔을 수행하는 동안 기다려 주십시오.",
-		"quickScan": "빠른 스캔",
-		"finalResultCode": "최종 결과 코드",
-		"resultCode": "결과 코드",
-		"cancel": "취소",
-		"complete": "완료",
-		"incomplete": "완료되지 않음",
-		"loadingComponents": "구성 요소 로드 중",
-		"hardwareComponents": "하드웨어 구성 요소",
-		"loadingDevices": "장치 로드 중",
-		"select": "선택",
-		"deselect": "선택 해제",
-		"allOptions": "모든 옵션",
-		"latestResult": "최신 결과",
-		"back": "뒤로",
-		"viewResults": "결과 보기",
-		"save": "저장",
-		"details": "상세 정보",
-		"recurrence": "재발",
-		"interval": "간격",
-		"time": "시간",
-		"type": "유형",
-		"hours": "시간",
-		"minutes": "분",
-		"am": "오전",
-		"pm": "오후",
-		"previousResult": "이전 결과",
-		"lastScanOn": "최종 검색",
-		"result": "결과",
-		"viewDetailsLog": "세부사항 로그",
-		"ok": "확인",
-		"notOk": "정상이 아님",
-		"notScanned": "스캔되지 않음",
-		"pass": "통과",
-		"fail": "실패",
-		"cancelled": "취소됨",
-		"warning": "경고",
-		"errorResult": "실행할 테스트를 선택해야 합니다.",
-		"buy":							"지금 구입",
-		"errorDeviceChoose":			"실행할 장치를 선택해야 합니다.",
-		"errorNoOptionSelected":		"원하는 옵션을 선택하십시오.",
-		"offline":						"이 장치가 오프 라인 모드에서 실행 중입니다. 인터넷에 연결하십시오",
-		"common": {
-		  "menu": "하드웨어 검사"
-		},
-		"customize": {
-		  "name": "사용자 정의",
-		  "test": "테스트 사용자 지정",
-		  "description": "테스트를 사용자 정의하려면 아래 옵션을 선택하십시오.",
-		  "runTests": "선택한 테스트 실행"
-		},
-		"scheduledScan": {
-		  "name": "스캔 예약",
-		  "title": "스캔 예약",
-		  "newScan": "새 검사 예약",
-		  "fullScan": "전체 스캔",
-		  "onlyOnce": "한 번만",
-		  "eachDay": "매일",
-		  "eachWeek": "매주",
-		  "eachMonth": "매달",
-		  "eachYear": "매년",
-		  "schedule": "스케줄",
-		  "date": "날짜",
-		  "pickDate": "날짜 선택",
-		  "scanScheduled": "하드웨어 스캔 예정됨!",
-		  "description": 	"다른 스캔이 이미 같은 시간과 날짜에 예약되었습니다!",
-		  "error":			"오류",
-		  "delete":			"삭제"
-		},
-		"recoverBadSectors": {
-		  "title": "불량 섹터 복구",
-		  "description": "Lenovo 도구를 통해 디스크의 불량 섹터 검색 및 수정",
-		  "goTo": "불량 섹터 복구로 이동",
-		  "localDevices": "로컬 장치",
-		  "numberSectors": "읽은 섹터 수",
-		  "numberBadSectors": "발견된 불량 섹터 수",
-		  "numberFixedSectors": "수정된 섹터 수",
-		  "numberNonFixedSectors": "수정되지 않은 섹터 수",
-		  "status": "작동 상태",
-		  "elapsedTime": "경과 시간",
-		  "hours": "시간",
-		  "hour": "시간",
-		  "minutes": "분",
-		  "minute": "분",
-		  "seconds": "초",
-		  "second": "초",
-		  "moreInfo": "불량 섹터 복구를 수행하는 동안 기다리십시오.",
-		  "systemEvent":	"결과가 손상될 수 있는 시스템 이벤트가 발생하여 테스트가 중단됩니다.",
-		  "systemPasswordProtected":	"장치는 암호화된 상태일 수 있습니다. 암호 보호 해제를 시도합니다.",
-
-		  "popup" : {
-			"description" : "검색 및 복구를 실행하면, 데이터가 손실될 수 있습니다. 이 작업을 실행하기 전에 백업을 작성하는 것이 좋습니다. 계속하시겠습니까?",
-			"yes":	"예",
-			"no":	"아니요"}
-		},
-		"support": {
-		  "title": "전문 진단 도구 다운로드",
-		  "subtitle": "Lenovo 지원"
-		},
-		"eTicket": {
-		  "header": "하드웨어 문제가 감지됨.",
-		  "problemDetected": "하드웨어 검사 결과 컴퓨터의 다음 구성 요소에 문제가 있음을 발견했습니다.",
-		  "ticketRequestQuestion": "Lenovo는 귀하의 컴퓨터가 보증 기간 중이면 교체 부품을 보낼 수 있습니다. 문제를 해결하기 위해 하드웨어 교체 티켓을 여시겠습니까?",
-		  "openTicket": "티켓 열기"
-		},
-		"battery":{
-			"title": "배터리 충전 임계값 사용",
-			"description": "사용자 지정 배터리 충전을 사용하면, 이 장치를 사용할 때 전체 배터리 상태가 더 오래 지속될 수 있습니다. 그러나 완전 충전을 하지 않으면, 런타임 배터리 수명이 줄어듭니다. 이 기능을 완벽하게 사용하려면, 컴퓨터 플러그를 뽑고 충전 중지 임계값 이하로 배터리를 방전하십시오.",
-			"enable": "사용"
-		}
-	}
+    "hardwareScan": {
+        "name": "하드웨어 검사",
+        "title": "하드웨어 스캔을 수행합니다.",
+        "subtitle": "하드웨어 스캔을 수행하는 동안 기다려 주십시오.",
+        "quickScan": "빠른 스캔",
+        "finalResultCode": "최종 결과 코드",
+        "resultCode": "결과 코드",
+        "cancel": "취소",
+        "complete": "완료",
+        "incomplete": "완료되지 않음",
+        "loadingComponents": "구성 요소 로드 중",
+        "hardwareComponents": "하드웨어 구성 요소",
+        "loadingDevices": "장치 로드 중",
+        "select": "선택",
+        "deselect": "선택 해제",
+        "allOptions": "모든 옵션",
+        "latestResult": "최신 결과",
+        "back": "뒤로",
+        "viewResults": "결과 보기",
+        "save": "저장",
+        "details": "상세 정보",
+        "recurrence": "재발",
+        "interval": "간격",
+        "time": "시간",
+        "type": "유형",
+        "hours": "시간",
+        "minutes": "분",
+        "am": "오전",
+        "pm": "오후",
+        "previousResult": "이전 결과",
+        "lastScanOn": "최종 검색",
+        "result": "결과",
+        "viewDetailsLog": "세부사항 로그",
+        "ok": "확인",
+        "notOk": "정상이 아님",
+        "notScanned": "스캔되지 않음",
+        "pass": "통과",
+        "fail": "실패",
+        "cancelled": "취소됨",
+        "warning": "경고",
+        "errorResult": "실행할 테스트를 선택해야 합니다.",
+        "buy": "지금 구입",
+        "errorDeviceChoose": "실행할 장치를 선택해야 합니다.",
+        "errorNoOptionSelected": "원하는 옵션을 선택하십시오.",
+        "offline": "이 장치가 오프 라인 모드에서 실행 중입니다. 인터넷에 연결하십시오",
+        "customize": {
+            "name": "사용자 정의",
+            "test": "테스트 사용자 지정",
+            "description": "테스트를 사용자 정의하려면 아래 옵션을 선택하십시오.",
+            "runTests": "선택한 테스트 실행"
+        },
+        "scheduledScan": {
+            "name": "스캔 예약",
+            "title": "스캔 예약",
+            "newScan": "새 검사 예약",
+            "fullScan": "전체 스캔",
+            "onlyOnce": "한 번만",
+            "eachDay": "매일",
+            "eachWeek": "매주",
+            "eachMonth": "매달",
+            "eachYear": "매년",
+            "schedule": "스케줄",
+            "date": "날짜",
+            "pickDate": "날짜 선택",
+            "scanScheduled": "하드웨어 스캔 예정됨!",
+            "description": "다른 스캔이 이미 같은 시간과 날짜에 예약되었습니다!",
+            "error": "오류",
+            "delete": "삭제",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "불량 섹터 복구",
+            "description": "Lenovo 도구를 통해 디스크의 불량 섹터 검색 및 수정",
+            "goTo": "불량 섹터 복구로 이동",
+            "localDevices": "로컬 장치",
+            "numberSectors": "읽은 섹터 수",
+            "numberBadSectors": "발견된 불량 섹터 수",
+            "numberFixedSectors": "수정된 섹터 수",
+            "numberNonFixedSectors": "수정되지 않은 섹터 수",
+            "status": "작동 상태",
+            "elapsedTime": "경과 시간",
+            "hours": "시간",
+            "hour": "시간",
+            "minutes": "분",
+            "minute": "분",
+            "seconds": "초",
+            "second": "초",
+            "moreInfo": "불량 섹터 복구를 수행하는 동안 기다리십시오.",
+            "systemEvent": "결과가 손상될 수 있는 시스템 이벤트가 발생하여 테스트가 중단됩니다.",
+            "systemPasswordProtected": "장치는 암호화된 상태일 수 있습니다. 암호 보호 해제를 시도합니다.",
+            "popup": {
+                "description": "검색 및 복구를 실행하면, 데이터가 손실될 수 있습니다. 이 작업을 실행하기 전에 백업을 작성하는 것이 좋습니다. 계속하시겠습니까?",
+                "yes": "예",
+                "no": "아니요"
+            }
+        },
+        "support": {
+            "title": "전문 진단 도구 다운로드",
+            "subtitle": "Lenovo 지원"
+        },
+        "eTicket": {
+            "header": "하드웨어 문제가 감지됨.",
+            "problemDetected": "하드웨어 검사 결과 컴퓨터의 다음 구성 요소에 문제가 있음을 발견했습니다.",
+            "ticketRequestQuestion": "Lenovo는 귀하의 컴퓨터가 보증 기간 중이면 교체 부품을 보낼 수 있습니다. 문제를 해결하기 위해 하드웨어 교체 티켓을 여시겠습니까?",
+            "openTicket": "티켓 열기"
+        },
+        "battery": {
+            "title": "배터리 충전 임계값 사용",
+            "description": "사용자 지정 배터리 충전을 사용하면, 이 장치를 사용할 때 전체 배터리 상태가 더 오래 지속될 수 있습니다. 그러나 완전 충전을 하지 않으면, 런타임 배터리 수명이 줄어듭니다. 이 기능을 완벽하게 사용하려면, 컴퓨터 플러그를 뽑고 충전 중지 임계값 이하로 배터리를 방전하십시오.",
+            "enable": "사용"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
+    }
 }

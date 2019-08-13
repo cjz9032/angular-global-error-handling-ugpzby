@@ -153,11 +153,12 @@
 		border: 1px solid $shade_lighter;
 		justify-content: space-between;
 		.note-icon{
-			font-size: 20px;	
+			font-size: 20px;
 		}
 		.privacy-button {
 			font-size: 1.4rem;
 			letter-spacing: 0.76px;
+			text-align: left;
 		}
 	}
 }

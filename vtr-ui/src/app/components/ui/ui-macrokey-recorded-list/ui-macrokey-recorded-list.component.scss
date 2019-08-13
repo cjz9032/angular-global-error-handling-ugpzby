@@ -17,14 +17,27 @@
 
 .col-6 {
 	min-width: 30rem;
+	@media #{$mediaquery_X6} {
+		min-width: 35rem;
+	}
+
+	@media #{$mediaquery_16} {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	@media #{$mediaquery_X3} {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
 }
 
 .select-wrapper {
 	@media #{$mediaquery_16} {
-		width: 22.6rem;
+		width: auto;
 	}
 	@media #{$mediaquery_X3} {
-		width: 27.4rem;
+		width: auto;
 	}
 }
 

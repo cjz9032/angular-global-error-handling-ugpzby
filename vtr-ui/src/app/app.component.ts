@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
-		if (vantageShellService.isShellAvailable && !this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+		if (vantageShellService.isShellAvailable && !this.commonService.haveLocalStorageKey(LocalStorageKey.BetaUser)) {
 			this.commonService.isBetaUser().then((result) => {
 				if (result === 0 || result === 3) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);

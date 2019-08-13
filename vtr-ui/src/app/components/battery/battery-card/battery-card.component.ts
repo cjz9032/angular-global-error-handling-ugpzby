@@ -213,6 +213,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private sendThresholdWarning() {
 		if (this.chargeThresholdInfo && this.remainingPercentages
 			&& this.remainingPercentages.length > 0) {
+			this.batteryIndicator.isChargeThresholdOn = this.chargeThresholdInfo.isOn;
 			if (this.chargeThresholdInfo.isOn) {
 				if (this.chargeThresholdInfo.stopValue1 &&
 					this.remainingPercentages[0] &&

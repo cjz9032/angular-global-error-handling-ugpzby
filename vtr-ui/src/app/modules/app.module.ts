@@ -36,19 +36,18 @@ import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
 import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
-import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
-import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
-import { SharedModule } from './shared.module';
-import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { ModernPreloadModule } from './modern-preload/modern-preload.module';
+import { PageLayoutModule } from '../components/page-layout/page-layout.module';
 
 library.add(faCheck);
 library.add(faExclamation);
@@ -78,11 +77,8 @@ library.add(faQuestionCircle);
 		AppComponent,
 		HomeComponent,
 		ModalWelcomeComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent,
-		ModalServerSwitchComponent
+		ModalServerSwitchComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -101,15 +97,17 @@ library.add(faQuestionCircle);
 		UiButtonModule,
 		RouterModule,
 		CommonPipeModule,
-		SharedModule,
+		FormsModule,
+		ReactiveFormsModule,
 		ModernPreloadModule,
+		PageLayoutModule,
 	],
 	exports: [
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
-		SharedModule,
 		ModernPreloadModule,
+		PageLayoutModule,
 	],
 	providers: [
 		CommonService,
@@ -122,10 +120,7 @@ library.add(faQuestionCircle);
 	],
 	entryComponents: [
 		ModalWelcomeComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent,
 		ModalServerSwitchComponent
 	],
 	bootstrap: [AppComponent],
