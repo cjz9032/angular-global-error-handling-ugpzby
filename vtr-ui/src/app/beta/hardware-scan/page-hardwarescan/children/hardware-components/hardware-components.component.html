@@ -1,0 +1,61 @@
+<div class="vtr-hardware-components">
+	<div class="row">
+		<div class="col col-12">
+			<vtr-widget-hardware-scan *ngIf="!isScanDone" [title]="getDeviceTitle()"
+				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
+				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
+				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
+				[finalResultCode]="finalResultCode" [disableQuickScan]="!isLoadingDone()"
+				[tooltipInformation]="tooltipInformation"
+				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
+				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
+				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="checkPreScanInfo(0)"
+				(checkCancel)="onCancelScan()" (checkAnchor)="onCustomizeScan()" [statusText]="finalStatusToken()">
+			</vtr-widget-hardware-scan>
+		</div>
+	</div>
+
+	<div class="p-5">
+		<div class="row">
+			<div class="col-12">
+				<div class="header">
+					<div
+						[ngClass]="{'heading1': !isScanExecuting() || isRecoverExecuting(), 'heading2': isScanExecuting() && !isRecoverExecuting()}">
+						{{getComponentsTitle()}}</div>
+					<a class="action-anchor" (click)="isScanExecuting() ? onViewResults() : onViewResultsRecover()"
+						*ngIf="enableViewResults" [routerLink]="viewResultsPath"
+						routerLinkActive="active">{{viewResultsText}}</a>
+
+					<a class="refresh-button" *ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
+						(click)="refreshModules()">{{refreshText}} <fa-icon class="refresh-icon" placement="auto"
+							[icon]="['fal', 'redo']" container="body"></fa-icon> </a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="hardware-lists-container">
+					<vtr-ui-hardware-list *ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
+						[items]="getItemToDisplay()">
+					</vtr-ui-hardware-list>
+
+					<div class="loading-components" *ngIf="!isLoadingDone() && !isRecoverExecuting()">
+						<fa-icon placement="auto" spin="true" [icon]="['fal', 'circle-notch']" container="body">
+						</fa-icon>
+					</div>
+
+					<vtr-widget-hardware-scan-item *ngIf="isScanExecuting()" [items]="modules"
+						[resultCodeText]="'hardwareScan.resultCode' | translate"
+						[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
+						[isLoadingDone]="isLoadingDone()">
+					</vtr-widget-hardware-scan-item>
+
+					<vtr-ui-hardware-list *ngIf="isRecoverExecuting() && !isScanExecuting()"
+						[items]="devicesRecoverBadSectors">
+					</vtr-ui-hardware-list>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

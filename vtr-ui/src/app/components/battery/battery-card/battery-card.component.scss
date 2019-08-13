@@ -1,7 +1,7 @@
 @import "./../../../app.theme.scss";
 
 .close-button {
-	color: rgba(73, 106, 253, 1);
+	color: #496afd;
 	font-weight: 400;
 	font-size: 2.4rem;
 	line-height: 1;
@@ -84,22 +84,13 @@
 
 		.battery-conditions-tips {
 			font-size: $base;
-			z-index: 5;
 			width: 100%;
-			vertical-align: middle;
 			letter-spacing: 0;
+			padding: 0.5rem 0;
+			align-self: center;
 		}
-		.good {
-			color: #{$go_light};
-		}
-		.poor {
-			color: #{$stop_dark};
-		}
-		.fair {
-			color: #{$orange};
-		}
-		.fair-inner-icon {
-			color: #{$light};
+		.icomoon {
+			font-size: 3.5rem;
 		}
 		.loader {
 			position: absolute;
@@ -115,10 +106,11 @@
 
 		.link-label {
 			margin-left: 1rem;
-			color: #4a81fd;
+			color: $menu_hover;
 			text-decoration: underline;
 			cursor: pointer;
-			font-size: 1.8rem;
+			vertical-align: middle;
+			font-size: $base;
 		}
 	}
 }
