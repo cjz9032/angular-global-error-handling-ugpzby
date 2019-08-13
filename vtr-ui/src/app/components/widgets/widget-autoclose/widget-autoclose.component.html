@@ -15,9 +15,9 @@
       </div>
       <div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
     </li>
-    <li *ngFor="let app of autoCloseAppList; let i = index">
+    <li *ngFor="let app of appListData; let i = index">
       <div>
-        <img [src]="app.iconName | sanitize : 'resourceUrl'">
+        <img src="{{app.iconName}}" alt="{{app.processDescription}}" />
       </div>
       <div>{{app.processDescription}}</div>
       <div class="remove-app" (click)="removeApp(app.processDescription,i)">

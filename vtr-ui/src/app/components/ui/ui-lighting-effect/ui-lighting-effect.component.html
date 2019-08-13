@@ -9,7 +9,7 @@
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }"
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
-						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.id"  [metricsParam]="option.id" metricsValue="{{i}}"
+						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.id" metricsParam="{{option.id}}" metricsValue="{{option.value}}"
 						metricsEvent="featureClick" id="{{option.id}}" attr.aria-label = "{{option.id}}">
 						<a class="dropdown-item">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}

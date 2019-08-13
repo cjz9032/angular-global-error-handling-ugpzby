@@ -24,7 +24,8 @@
                                 metricsEvent="featureClick">
                               </vtr-ui-switch-onoff>
                               <p class="intro-text">{{'gaming.networkBoost.introLine' | translate}}</p>
-                              <vtr-widget-networkboost [changeNum]="changeListNum" (actionModal)="openTargetModal()">
+                              <vtr-widget-networkboost [changeNum]="changeListNum" (actionModal)="openTargetModal()"
+                              (addedApps)="appsCount = $event">
                               </vtr-widget-networkboost>
                             </div>
                           </div>
@@ -73,5 +74,5 @@
   (actionTurnOn)="showTurnOnModal=false;initTurnOnAction($event)">
 </vtr-networkboost-turn-on>
 
-<vtr-networkboost-add-apps *ngIf="showAppsModal" (closeAddAppsModal)="modalCloseAddApps($event)">
+<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount" (closeAddAppsModal)="modalCloseAddApps($event)">
 </vtr-networkboost-add-apps>

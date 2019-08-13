@@ -96,7 +96,7 @@
                     "info": "INFO"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Schnell-Einstellungen"
                 }
             }
         },
@@ -371,38 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Automatisch schließen",
+            "introLine": "Apps, die beim Spielestart beendet werden. So bleiben mehr Ressourcen für beste Spieleleistung. HINWEIS: Bei dieser Funktion wird die App komplett geschlossen. Achten Sie also immer darauf, dass Sie Ihre Arbeit gespeichert haben.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Automatisches Schließen aktivieren?",
+                "body": "Apps, die Sie hinzugefügt haben, werden geschlossen, wenn Sie spielen, was Ressourcen für Spiele freigibt.",
+                "checkedTitle": "Nicht mehr fragen",
+                "btnConfirm": "Anschalten",
+                "btnCancel": "Jetzt nicht"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Apps für autom. Schließen hinzufügen",
+                "body": "Nur aktuell ausgeführte Apps stehen in der Liste unten."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Hinzufügen",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Keine laufenden Apps zum Hinzufügen",
+                "body": "Nur aktuell ausgeführte Apps sind sichtbar. Starten Sie eine App, um sie hinzuzufügen, und kehren Sie dann hierher zurück."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Netzwerk-Boost",
+            "introLine": "Mit dem Netzwerkboost erhalten Spiele die höchste Netzwerkpriorität und sind am schnellsten. Wenn Sie beim Spielen Apps wie Twitch oder Discord nutzen, fügen Sie sie hinzu, damit sie ebenfalls Priorität erhalten.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Netzwerkboost aktivieren?",
+                "body": "Netzwerkboost aktivieren? Apps, die Sie hinzugefügt haben, erhalten eine höhere Netzwerkpriorität, wenn sie ausgeführt werden.",
+                "checkedTitle": "Nicht mehr fragen",
+                "btnConfirm": "Anschalten",
+                "btnCancel": "Jetzt nicht"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "title": "Apps für Netzwerkboost aktivieren",
+                "body": "Bis zu 5 weitere Apps hinzufügen (4 von 5 genutzt)"
             }
         }
     },
@@ -709,7 +709,7 @@
                 "voltageError": "Akkuspannung falsch",
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Details anzeigen"
             },
             "power": {
                 "title": "Stromversorgung",
@@ -990,7 +990,7 @@
                             "warm": "Warm (besser für die Augen)",
                             "cold": "Kalt"
                         },
-                        "reset": "Temperatur zurücksetzen",
+                        "reset": "Zurücksetzen",
                         "tooltip": "Der Modus \"Augen schonen\" passt die Farbtemperatur der Anzeige automatisch an. Blaues Licht wird gefiltert, was die Augen schont.",
                         "onSunsetToSunriseScheduleDescription": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",
                         "note": {
@@ -1004,7 +1004,7 @@
                             "warm": "Warm (besser für die Augen)",
                             "cold": "Kalt"
                         },
-                        "reset": "Temperatur zurücksetzen",
+                        "reset": "Zurücksetzen",
                         "tooltip": "Der Modus \"Augen schonen\" passt die Farbtemperatur der Anzeige automatisch an. Blaues Licht wird gefiltert, was die Augen schont.",
                         "onSunsetToSunriseScheduleDescription": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",
                         "note": {
@@ -1053,7 +1053,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klicken Sie hier, um die Kameraeigenschaften auf die Standardeinstellungen zurückzusetzen.",
-                        "reset": "Auf Werkseinstellungen zurücksetzen"
+                        "reset": "Zurücksetzen"
                     },
                     "brightness": "Helligkeit",
                     "contrast": "Kontrast",
@@ -1206,14 +1206,14 @@
                     "description1": "Diese Funktion basiert auf Windows Hello. Stellen Sie sicher, dass die Gesichtserkennung in den Windows-Einstellungen eingeschaltet ist.",
                     "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen. Die Funktion sammelt jedoch KEINE personenbezogenen Daten.",
                     "description3": "1. Wenn Ihr Computer im Zelt‑, Tablet‑ oder Standmodus ist, funktionieren diese Funktionen möglicherweise nicht ordnungsgemäß.",
-                    "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die automatische Anmeldung per IR-Kamera funktioniert nicht.",
+                    "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die Zero-Touch-Anmeldung funktioniert nicht.",
                     "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello-Einstellungen aufrufen",
                     "screenTimeoutSettings": "Gehen Sie zu den Einstellungen für das Bildschirmzeitlimit"
                 },
-                "resetToDefault": "STANDARDEINSTELLUNGEN WIEDERHERSTELLEN"
+                "resetToDefault": "Zurücksetzen"
             },
             "intelligentScreen": {
                 "title": "Intelligente Anzeige",
@@ -1443,7 +1443,12 @@
         "title": "Sicherheit für das verbundene Zuhause",
         "notification": {
             "recent": "Aktuelle Sicherheitsbenachrichtigungen",
-            "notifications": "Benachrichtigungen"
+            "notifications": "Benachrichtigungen",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Schützen Sie Ihr Geräte-Ökosystem",
@@ -2214,7 +2219,6 @@
         "personal": "Private Verwendung",
         "business": "Geschäftliche Nutzung",
         "custom": "Benutzerdefinierte Erfahrung",
-        "experience": "Erfahrung",
         "privacytitle": "Indem Sie der anonymen Erfassung von Nutzungsstatistiken zustimmen, helfen Sie uns dabei, diese App zu verbessern.",
         "moreInterest": "+ mehr Interessen",
         "title1": "Willkommen bei",
@@ -2251,5 +2255,124 @@
         "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden."
+    },
+    "hardwareScan": {
+        "name": "Hardware-Scan",
+        "title": "Hardware-Scan durchführen",
+        "subtitle": "Bitte warten Sie, während der Hardware-Scan durchgeführt wird",
+        "quickScan": "Schneller Scan",
+        "finalResultCode": "Letzter Ergebniscode",
+        "resultCode": "Ergebniscode",
+        "cancel": "Abbrechen",
+        "complete": "Abgeschlossen",
+        "incomplete": "Nicht abgeschlossen",
+        "loadingComponents": "Komponenten werden geladen",
+        "hardwareComponents": "Hardwarekomponenten",
+        "loadingDevices": "Einheiten werden geladen",
+        "select": "Wählen Sie",
+        "deselect": "Abwählen",
+        "allOptions": "Alle Optionen",
+        "latestResult": "Aktuelles Ergebnis",
+        "back": "ZURÜCK",
+        "viewResults": "Ergebnisse anzeigen",
+        "save": "Speic",
+        "details": "Details",
+        "recurrence": "Wiederauftreten",
+        "interval": "Intervall",
+        "time": "Uhrzeit",
+        "type": "Typ",
+        "hours": "Stunden",
+        "minutes": "Minuten",
+        "am": "AM",
+        "pm": "PM",
+        "previousResult": "Vorherige Ergebnisse",
+        "lastScanOn": "Letzter Scan am",
+        "result": "Ergebnis",
+        "viewDetailsLog": "Detailprotokoll anzeigen",
+        "ok": "OK",
+        "notOk": "NICHT OK",
+        "notScanned": "NICHT GESCANNT",
+        "pass": "Verschlüsselung",
+        "fail": "Fehlgeschlagen",
+        "cancelled": "Abgebrochen",
+        "warning": "Warnung",
+        "errorResult": "Sie müssen einen Test für die Durchführung auswählen.",
+        "buy": "Jetzt kaufen",
+        "errorDeviceChoose": "Sie müssen eine Einheit für die Durchführung auswählen.",
+        "errorNoOptionSelected": "Bitte wählen Sie eine Option aus.",
+        "offline": "Dieses Gerät läuft im Offline-Modus, bitte stellen Sie eine Internetverbindung her",
+        "customize": {
+            "name": "Anpassen",
+            "test": "Test anpassen",
+            "description": "Passen Sie den Test an, indem Sie die folgenden Optionen wählen",
+            "runTests": "Ausgewählte Tests durchführen"
+        },
+        "scheduledScan": {
+            "name": "Scan planen",
+            "title": "Ihren Scan planen",
+            "newScan": "Neuen Scan planen",
+            "fullScan": "Vollständiger Scan",
+            "onlyOnce": "Nur einmal",
+            "eachDay": "Täglich",
+            "eachWeek": "Wöchentlich",
+            "eachMonth": "Monatlich",
+            "eachYear": "Jährlich",
+            "schedule": "Planen",
+            "date": "Datum",
+            "pickDate": "Datum auswählen",
+            "scanScheduled": "Ein Hardware-Scan wurde geplant!",
+            "description": "Ein weiterer Scan war bereits zum gleichen Zeitpunkt und Datum geplant.",
+            "error": "Fehler",
+            "delete": "Löschen",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Wiederherstellung von fehlerhaften Sektoren",
+            "description": "Lenovo Tool zum Ermitteln und Reparieren fehlerhafter Sektoren auf einem Datenträger",
+            "goTo": "Zum Wiederherstellen fehlerhafter Sektoren wechseln",
+            "localDevices": "Lokale Einheiten",
+            "numberSectors": "Anzahl der gelesenen Sektoren",
+            "numberBadSectors": "Anzahl der gefundenen fehlerhaften Sektoren",
+            "numberFixedSectors": "Anzahl der behobenen Sektoren",
+            "numberNonFixedSectors": "Anzahl der nicht behobenen Sektoren",
+            "status": "Status des Vorgangs",
+            "elapsedTime": "Verstrichene Zeit",
+            "hours": "Stunden",
+            "hour": "Stunde",
+            "minutes": "Minuten",
+            "minute": "Minute",
+            "seconds": "Sekunden",
+            "second": "Sekunde",
+            "moreInfo": "Bitte warten Sie, während fehlerhafte Sektoren wiederhergestellt werden",
+            "systemEvent": "Der Test wurde abgebrochen, da ein Systemereignis aufgetreten ist, das das Ergebnis beeinträchtigen könnte.",
+            "systemPasswordProtected": "Einheit ist möglicherweise kennwortgeschützt. Versuchen Sie, den Kennwortschutz zu deaktivieren.",
+            "popup": {
+                "description": "Die Durchführung von Scans und Reparaturen kann zu Datenverlust führen. Es wird empfohlen, eine Sicherungskopie zu erstellen, bevor Sie diesen Vorgang ausführen. Möchten Sie wirklich fortfahren?",
+                "yes": "Ja",
+                "no": "Nein"
+            }
+        },
+        "support": {
+            "title": "Professionelle Diagnosetools herunterladen",
+            "subtitle": "Lenovo Support"
+        },
+        "eTicket": {
+            "header": "Hardwareproblem erkannt.",
+            "problemDetected": "Der Hardware-Scan hat ein Problem mit den folgenden Komponenten Ihres Computers festgestellt",
+            "ticketRequestQuestion": "Lenovo kann Ihnen ein Ersatzteil zusenden, wenn Ihr Computer unter die Garantie fällt. Möchten Sie ein Hardware-Ersatzticket öffnen, um das Problem zu beheben",
+            "openTicket": "Ticket eröffnen"
+        },
+        "battery": {
+            "title": "Schwellenwert für Akkuladung aktivieren",
+            "description": "Durch die Aktivierung einer angepassten Akkuladung verlängert sich die Gesamtnutzungszeit des Akkus beim Verwenden dieses Geräts. Wenn Sie den Akku jedoch nicht komplett aufladen, ist die Akkulebenszeit kürzer. Um diese Funktion komplett zu aktivieren, trennen Sie bitte Ihr Gerät von der Stromversorgung und warten Sie, bis der Akku ganz entladen ist oder die Kapazität unter dem Schwellenwert liegt.",
+            "enable": "Aktivieren"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
     }
 }

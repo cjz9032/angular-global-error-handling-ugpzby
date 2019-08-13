@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Container } from 'inversify';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
@@ -7,6 +6,7 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { Container } from 'inversify';
 
 @Injectable({
 	providedIn: 'root'
@@ -48,7 +48,8 @@ export class VantageShellService {
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
-				Phoenix.Features.ConnectedHomeSecurity
+				Phoenix.Features.ConnectedHomeSecurity,
+				Phoenix.Features.HardwareScan
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -219,6 +220,16 @@ export class VantageShellService {
 
 	private downloadMetricsPolicy() {
 		return this.http.get<string>('/assets/privacy-json/metrics.json');
+	}
+
+	/**
+	 * returns modern preload object from VantageShellService of JS Bridge
+	 */
+	public getModernPreload(): any {
+		if (this.phoenix) {
+			return this.phoenix.modernPreload;
+		}
+		return undefined;
 	}
 
 	/**
@@ -792,4 +803,13 @@ export class VantageShellService {
 		}
 		return vanStub;
 	}
+
+	// =================== Start Hardware Scan
+	public getHardwareScan(): any {
+		if (this.phoenix) {
+			return this.phoenix.hardwareScan;
+		}
+		return undefined;
+	}
+	// ==================== End Hardware Scan
 }

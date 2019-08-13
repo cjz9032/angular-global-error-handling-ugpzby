@@ -34,8 +34,8 @@ export class BatteryConditionModel {
 				return 'device.deviceSettings.batteryGauge.condition.TrickleCharge';
 			case BatteryConditionsEnum.PermanentError:
 				return 'device.deviceSettings.batteryGauge.condition.PermanentError';
-			case BatteryConditionsEnum.HardwareAuthenticationError:
-				return 'device.deviceSettings.batteryGauge.condition.HardwareAuthenticationError';
+			case BatteryConditionsEnum.UnsupportedBattery:
+				return 'device.deviceSettings.batteryGauge.condition.Illegal';
 		}
 	}
 }

@@ -56,7 +56,7 @@
                     "touchpadLock": "Verrou pavé tactile",
                     "lightingDriverPopup": {
                         "headerText": "Installation du pilote requise",
-                        "text": "Installer le pilote pour activer l'éclairage CPU (redémarrage obligatoire)",
+                        "text": "Installer le pilote pour activer l'éclairage (redémarrage obligatoire)",
                         "button": "Installer",
                         "link": "annuler"
                     },
@@ -96,7 +96,7 @@
                     "info": "INFO"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Paramètres rapides"
                 }
             }
         },
@@ -256,7 +256,7 @@
                     "title": "Doux"
                 },
                 "option6": {
-                    "title": "Température UC"
+                    "title": "Température CPU"
                 },
                 "option7": {
                     "title": "Utilisation CPU"
@@ -371,38 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Fermeture automatique",
+            "introLine": "Ajout les app à ferm au lancement d'un jeu. Ceci va libérer des ressources inutilisées pour optimiser les performances de jeu. REMARQUE : cette fonction ferme complètement l'application. Par conséquent, assurez-vous que vous avez enregistré votre travail.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Activer la fonction de fermeture automatique ?",
+                "body": "Les applications que vous avez ajoutées seront fermées lorsque vous jouerez, libérant ainsi des ressources pour le jeu.",
+                "checkedTitle": "Ne plus demander",
+                "btnConfirm": "Activer",
+                "btnCancel": "Pas maintenant"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Ajouter des applications à la fonction de fermeture automatique",
+                "body": "Uniquement les application en cours d'exécution s'afficheront dans la liste ci-dessous."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Ajouter",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Aucune application en cours d'exécution à ajouter",
+                "body": "Seules les applications en cours d'exécution s'afficheront. Lancez une application à ajouter et revenez."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Amélioration réseau",
+            "introLine": "L'activation de l'amélioration réseau permettra de donner automatiquement la priorité maximale aux jeux dans votre réseau, optimisant la vitesse. Si vous utilisez certaines applications quand vous jouez, telles que Twitch ou Discord, il est recommandé de les ajouter à la liste ci-dessous afin qu'elles soient également optimisées sur votre réseau.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Activer l'amélioration réseau ?",
+                "body": "Activer l'amélioration réseau ? Les applications que vous avez ajoutées partageront davantage de réseau lorsqu'elles sont en cours d'exécution.",
+                "checkedTitle": "Ne plus demander",
+                "btnConfirm": "Activer",
+                "btnCancel": "Pas maintenant"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "title": "Ajouter des applications à l'amélioration réseau",
+                "body": "Vous pouvez ajouter au maximum 5 applications supplémentaires à améliorer (4 sur 5 ajoutées)"
             }
         }
     },
@@ -709,7 +709,7 @@
                 "voltageError": "Tension de la batterie incorrecte",
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Voir les détails"
             },
             "power": {
                 "title": "Alimentation",
@@ -990,7 +990,7 @@
                             "warm": "Chaud (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
-                        "reset": "Réinitialiser la température",
+                        "reset": "Réinitialiser",
                         "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
                         "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
                         "note": {
@@ -1004,7 +1004,7 @@
                             "warm": "Chaud (meilleur pour les yeux)",
                             "cold": "Froide"
                         },
-                        "reset": "Réinitialiser la température",
+                        "reset": "Réinitialiser",
                         "tooltip": "Le mode protection des yeux règle la température des couleurs de votre écran pour filtrer la lumière bleue afin de l'atténuer et ainsi réduire la fatigue oculaire.",
                         "onSunsetToSunriseScheduleDescription": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
                         "note": {
@@ -1053,7 +1053,7 @@
                     "camera": {
                         "title": "Caméra",
                         "tooltip": "Cliquez ici pour restaurer les paramètres par défaut des propriétés de la caméra.",
-                        "reset": "Restaurer les paramètres d'usine par défaut"
+                        "reset": "Réinitialiser"
                     },
                     "brightness": "Luminosité",
                     "contrast": "Contraste",
@@ -1206,14 +1206,14 @@
                     "description1": "Cette fonction dépend de Windows Hello. Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
-                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion à la caméra automatique IR ne fonctionnera pas.",
+                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
                     "screenTimeoutSettings": "Accédez aux paramètres de mise en veille de l'écran"
                 },
-                "resetToDefault": "RESTAURATION DES PARAMÈTRES PAR DÉFAUT"
+                "resetToDefault": "Réinitialiser"
             },
             "intelligentScreen": {
                 "title": "Écran intelligent",
@@ -1443,7 +1443,12 @@
         "title": "Sécurité domestique connectée",
         "notification": {
             "recent": "Notifications de sécurité récentes",
-            "notifications": "Notifications"
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Protégez votre écosystème d'appareils",
@@ -2214,7 +2219,6 @@
         "personal": "Usage personnel",
         "business": "Usage professionnel",
         "custom": "Expérience personnalisée",
-        "experience": "Expérience",
         "privacytitle": "Aidez-nous à améliorer la qualité de l'application en autorisant la collecte de statistiques d'utilisation anonymes.",
         "moreInterest": "+ plus d'intérêts",
         "title1": "Bienvenue",
@@ -2251,5 +2255,124 @@
         "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
         "Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte."
+    },
+    "hardwareScan": {
+        "name": "Analyse matérielle",
+        "title": "Exécuter une analyse du matériel",
+        "subtitle": "Veuillez patienter pendant l'exécution de l'analyse du matériel",
+        "quickScan": "Analyse rapide",
+        "finalResultCode": "Code de résultat final",
+        "resultCode": "Code de résultat",
+        "cancel": "Annuler",
+        "complete": "Terminé",
+        "incomplete": "Incomplet",
+        "loadingComponents": "Chargement des composants",
+        "hardwareComponents": "Composants matériels",
+        "loadingDevices": "Chargement des périphériques",
+        "select": "Sélectionner",
+        "deselect": "Désélectionner",
+        "allOptions": "Toutes les options",
+        "latestResult": "Dernier résultat",
+        "back": "RETOUR",
+        "viewResults": "Afficher les résultats",
+        "save": "Sauv.",
+        "details": "Détails",
+        "recurrence": "Récurrence",
+        "interval": "Intervalle",
+        "time": "Heur",
+        "type": "Type",
+        "hours": "Heures",
+        "minutes": "Minutes",
+        "am": "AM",
+        "pm": "PM",
+        "previousResult": "Résultats précédents",
+        "lastScanOn": "Dernière analyse le",
+        "result": "Résultat",
+        "viewDetailsLog": "Afficher les détails du journal",
+        "ok": "OK",
+        "notOk": "NON OK",
+        "notScanned": "NON ANALYSÉ",
+        "pass": "Réussite",
+        "fail": "Echec",
+        "cancelled": "Annulé",
+        "warning": "Avertissement",
+        "errorResult": "Vous devez choisir un test à exécuter.",
+        "buy": "Acheter maintenant",
+        "errorDeviceChoose": "Vous devez choisir quel périphérique doit être exécuté.",
+        "errorNoOptionSelected": "Vous devez sélectionner une option.",
+        "offline": "Ce périphérique fonctionne en mode hors connexion. Veuillez vous connecter à Internet",
+        "customize": {
+            "name": "Personnaliser",
+            "test": "Personnaliser le test",
+            "description": "Sélectionnez les options ci-dessous pour personnaliser votre test",
+            "runTests": "Exécuter les tests sélectionnés"
+        },
+        "scheduledScan": {
+            "name": "Planifier une analyse",
+            "title": "Planifier votre analyse",
+            "newScan": "Planifier une nouvelle analyse",
+            "fullScan": "Analyse complète",
+            "onlyOnce": "Une fois seulement",
+            "eachDay": "Chaque jour",
+            "eachWeek": "Chaque semaine",
+            "eachMonth": "Chaque mois",
+            "eachYear": "Chaque année",
+            "schedule": "Planifier",
+            "date": "Date",
+            "pickDate": "Choisir une date",
+            "scanScheduled": "Une analyse du matériel est planifiée !",
+            "description": "Une autre analyse a déjà été planifiée à la même heure et à la même date !",
+            "error": "Erreur",
+            "delete": "Supprimer",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Récupérer les secteurs incorrects",
+            "description": "Outil Lenovo pour découvrir et corriger les secteurs défectueux sur un disque",
+            "goTo": "Se rendre à la récupération des secteurs défectueux",
+            "localDevices": "Périphériques locaux",
+            "numberSectors": "Nombre de secteurs lus",
+            "numberBadSectors": "Nombre de secteurs incorrects détectés",
+            "numberFixedSectors": "Nombre de secteurs corrigés",
+            "numberNonFixedSectors": "Nombre de secteurs non corrigés",
+            "status": "Etat de l'opération",
+            "elapsedTime": "Délai écoulé",
+            "hours": "Heures",
+            "hour": "Heure",
+            "minutes": "Minutes",
+            "minute": "Minute",
+            "seconds": "Secondes",
+            "second": "Second",
+            "moreInfo": "Veuillez patienter pendant l'exécution de la récupération des secteurs défectueux",
+            "systemEvent": "Le test a été annulé car un événement système qui pourrait avoir une incidence sur les résultats s'est produit.",
+            "systemPasswordProtected": "Il est possible que le périphérique soit protégé par un mot de passe. Essayez de désactiver la protection par mot de passe.",
+            "popup": {
+                "description": "L'exécution d'une analyse et d'une réparation peut entraîner la perte de données. Il est recommandé d'effectuer une sauvegarde avant d'exécuter cette opération. Souhaitez-vous vraiment poursuivre ?",
+                "yes": "Oui",
+                "no": "Non"
+            }
+        },
+        "support": {
+            "title": "Télécharger les outils de diagnostic professionnels",
+            "subtitle": "Support Lenovo"
+        },
+        "eTicket": {
+            "header": "Problème matériel détecté.",
+            "problemDetected": "L'analyse du matériel a détecté un problème au niveau des composants suivants sur votre ordinateur",
+            "ticketRequestQuestion": "Lenovo peut vous envoyer une pièce de remplacement si votre ordinateur est sous garantie. Souhaitez-vous soumettre un ticket de remplacement de matériel pour remédier à ce problème",
+            "openTicket": "Soumettre un ticket"
+        },
+        "battery": {
+            "title": "Activer le seuil de chargement de la batterie",
+            "description": "Le fait d'activer la charge de batterie personnalisée optimise l'état de santé général de la batterie lorsque vous utilisez ce périphérique. Toutefois, si la batterie n'est pas entièrement chargée, la durée de vie de la batterie sera réduite. Afin d'activer pleinement cette fonctionnalité, veuillez débrancher l'appareil et laisser la batterie se vider ou être en dessous du seuil de chargement.",
+            "enable": "Activer"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
     }
 }

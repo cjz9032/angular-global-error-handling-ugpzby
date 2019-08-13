@@ -3,11 +3,13 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({
 	selector: 'vtr-modal-license',
 	templateUrl: './modal-license.component.html',
-	styleUrls: ['./modal-license.component.scss']
+	styleUrls: ['./modal-license.component.scss'],
+	providers: [TimerService]
 })
 export class ModalLicenseComponent implements OnInit, OnDestroy {
 
@@ -24,6 +26,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 		private http: HttpClient,
 		private sanitizer: DomSanitizer,
 		private shellService: VantageShellService,
+		private timerService: TimerService
 	) {
 		this.metrics = this.shellService.getMetrics();
 	}
@@ -37,10 +40,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 				this.setIframeUrl();
 			}
 		});
-		this.pageDuration = 0;
-		setInterval(() => {
-			this.pageDuration += 1;
-		}, 1000);
+		this.timerService.start();
 	}
 
 	ngOnDestroy() {
@@ -48,7 +48,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			ItemType: 'PageView',
 			PageName: this.licenseModalMetrics.pageName,
 			PageContext: this.licenseModalMetrics.pageContext,
-			PageDuration: this.pageDuration,
+			PageDuration: this.timerService.stop(),
 			OnlineStatus: ''
 		};
 		this.sendMetricsAsync(pageViewMetrics);

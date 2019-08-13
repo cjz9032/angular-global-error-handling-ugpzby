@@ -96,7 +96,7 @@
                     "info": "BİLGİ"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Hızlı Ayarlar"
                 }
             }
         },
@@ -371,38 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Oto. Kapat",
+            "introLine": "Oyun açarken kapanacak uygulamaları ekleyin. Bu işlem, kullanılmayan kaynakları boşa çıkarıp oyun performansını en üst düzeye yükseltir. NOT: Bu özellik uygulamayı tamamen kapatır. Bu yüzden, çalışmanızı kaydettiğinizden emin olun.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Otomatik Kapat özelliği açılsın mı?",
+                "body": "Eklediğiniz uygulamalar oyun oynarken kapatılarak kaynakların oyun için serbest kalması sağlanır.",
+                "checkedTitle": "Yeniden sorma",
+                "btnConfirm": "Aç",
+                "btnCancel": "Şimdi değil"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Otomatik Kapat'a uygulama ekle",
+                "body": "Aşağıdaki listede yalnızca çalışmakta olan uygulamalar gösterilir."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Ekle",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Eklenecek çalışan uygulama yok",
+                "body": "Yalnızca çalışmakta olan uygulamalar gösterilir. Lütfen eklemek istediğiniz bir uygulamayı başlatıp geri gelin."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Ağ Yükseltme",
+            "introLine": "Ağ Yükseltme oyunların önceliğini otomatik olarak ağdaki en yüksek seviyeye ayarlayarak hızı en üst düzeye çıkarır. Oyun oynarken Twitch veya Discord gibi uygulamalar kullanıyorsanız ağınızda bunların da öncelikli olması için bu uygulamaları aşağıdaki listeye ekleyin.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Ağ Yükseltme açılsın mı?",
+                "body": "Ağ Yükseltme açılsın mı? Eklediğiniz uygulamalar çalışırken daha fazla ağ paylaşır.",
+                "checkedTitle": "Yeniden sorma",
+                "btnConfirm": "Aç",
+                "btnCancel": "Şimdi değil"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "title": "Ağ Yükseltme'ye uygulama ekle",
+                "body": "Yükseltme için en fazla 5 uygulama daha ekleyebilirsiniz (4/5 eklendi)"
             }
         }
     },
@@ -709,7 +709,7 @@
                 "voltageError": "Pil voltajı yanlış",
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ayrıntıları görün"
             },
             "power": {
                 "title": "Güç",
@@ -990,7 +990,7 @@
                             "warm": "Sıcak (Gözler için daha iyi)",
                             "cold": "Soğuk"
                         },
-                        "reset": "Sıcaklığı sıfırla",
+                        "reset": "Sıfırla",
                         "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
                         "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
@@ -1004,7 +1004,7 @@
                             "warm": "Sıcak (Gözler için daha iyi)",
                             "cold": "Soğuk"
                         },
-                        "reset": "Sıcaklığı sıfırla",
+                        "reset": "Sıfırla",
                         "tooltip": "Göz Koruması Kipi, mavi ışığı filtreleyip göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar.",
                         "onSunsetToSunriseScheduleDescription": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
                         "note": {
@@ -1053,7 +1053,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kamera özelliklerini varsayılan ayarlarına sıfırlamak için buraya tıklayın.",
-                        "reset": "Fabrika ayarlarına sıfırla"
+                        "reset": "Sıfırla"
                     },
                     "brightness": "Parlaklık",
                     "contrast": "Karşıtlık",
@@ -1213,7 +1213,7 @@
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
                     "screenTimeoutSettings": "Ekran zaman aşımı ayarlarına git"
                 },
-                "resetToDefault": "VARSAYILAN AYARLARA SIFIRLA"
+                "resetToDefault": "Sıfırla"
             },
             "intelligentScreen": {
                 "title": "Akıllı Ekran",
@@ -1443,7 +1443,12 @@
         "title": "Bağlı Ev Güvenliği",
         "notification": {
             "recent": "En son güvenlik bildirimleri",
-            "notifications": "Bildirimler"
+            "notifications": "Bildirimler",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Cihazınızın ekosistemini koruyun",
@@ -2214,7 +2219,6 @@
         "personal": "Kişisel Kullanım",
         "business": "İş Amaçlı Kullanım",
         "custom": "Özel Deneyim",
-        "experience": "Deneyim",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
         "moreInterest": "+ diğer ilgi alanları",
         "title1": "WRITEit'e hoş geldiniz",
@@ -2251,5 +2255,124 @@
         "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
         "Note": "Not: ",
         "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir."
+    },
+    "hardwareScan": {
+        "name": "Donanım Taraması",
+        "title": "Donanım taraması yap",
+        "subtitle": "Donanım taraması yapılırken lütfen bekleyin",
+        "quickScan": "Hızlı Tarama",
+        "finalResultCode": "Nihai Sonuç Kodu",
+        "resultCode": "Sonuç Kodu",
+        "cancel": "İptal",
+        "complete": "Tamamla",
+        "incomplete": "Tamamlanmadı",
+        "loadingComponents": "Bileşenler Yükleniyor",
+        "hardwareComponents": "Donanım Bileşenleri",
+        "loadingDevices": "Cihazlar Yükleniyor",
+        "select": "Araç çubuğunda",
+        "deselect": "Seçimi Kaldır",
+        "allOptions": "Tüm Seçenekler",
+        "latestResult": "En Son Sonuç",
+        "back": "GERİ",
+        "viewResults": "Sonuçları görüntüle",
+        "save": "Kaydet",
+        "details": "Ayrıntılar",
+        "recurrence": "Yinelenme",
+        "interval": "Aralık",
+        "time": "Saat",
+        "type": "Tip",
+        "hours": "Saat",
+        "minutes": "Dakika",
+        "am": "AM",
+        "pm": "PM",
+        "previousResult": "Önceki Sonuçlar",
+        "lastScanOn": "Son Tarama:",
+        "result": "Sonuç",
+        "viewDetailsLog": "Ayrıntılar Günlüğünü Görüntüle",
+        "ok": "TAMAM",
+        "notOk": "TAMAM DEĞİL",
+        "notScanned": "TARANMADI",
+        "pass": "Geçti",
+        "fail": "Başarısız",
+        "cancelled": "İptal edildi",
+        "warning": "Uyarı",
+        "errorResult": "Lütfen çalıştırmak istediğiniz testi seçin.",
+        "buy": "Şimdi satın al",
+        "errorDeviceChoose": "Lütfen çalıştırmak istediğiniz cihazı seçin.",
+        "errorNoOptionSelected": "Lütfen bir seçenek belirleyin.",
+        "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
+        "customize": {
+            "name": "Özelleştir",
+            "test": "Testi Özelleştir",
+            "description": "Testinizi özelleştirmek için ilgili seçenekleri aşağıdan belirleyin",
+            "runTests": "Seçilen testleri çalıştır"
+        },
+        "scheduledScan": {
+            "name": "Taramayı zamanla",
+            "title": "Taramanızı planlayın",
+            "newScan": "Yeni tarama zamanla",
+            "fullScan": "Tam tarama",
+            "onlyOnce": "Yalnızca Bir Kez",
+            "eachDay": "Her Gün",
+            "eachWeek": "Her Hafta",
+            "eachMonth": "Her Ay",
+            "eachYear": "Her Yıl",
+            "schedule": "Zamanla",
+            "date": "Tarih",
+            "pickDate": "Tarih Seçin",
+            "scanScheduled": "Donanım Taraması Zamanlandı!",
+            "description": "Aynı tarih ve saat için başka bir tarama zaten planlanmış!",
+            "error": "Hata",
+            "delete": "Sil",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Bozuk Kesimleri Kurtar",
+            "description": "Diskteki bozuk kesimleri bulmak ve düzeltmek için kullanılabilecek Lenovo aracı",
+            "goTo": "Bozuk kesimleri kurtar aracına gidin",
+            "localDevices": "Yerel Cihazlar",
+            "numberSectors": "Okunan kesim sayısı",
+            "numberBadSectors": "Bulunan bozuk kesim sayısı",
+            "numberFixedSectors": "Düzeltilen kesim sayısı",
+            "numberNonFixedSectors": "Düzeltilemeyen kesim sayısı",
+            "status": "Çalışma durumu",
+            "elapsedTime": "Geçen süre",
+            "hours": "Saat",
+            "hour": "Saat",
+            "minutes": "Dakika",
+            "minute": "Dakika",
+            "seconds": "Saniye",
+            "second": "Saniye",
+            "moreInfo": "Bozuk kesimler kurtarılırken lütfen bekleyin",
+            "systemEvent": "Sonucu olumsuz etkileyebilecek bir sistem olayı meydana geldiğinden sınama durduruldu.",
+            "systemPasswordProtected": "Cihaz, parola korumalı olabilir. Parola korumasını devre dışı bırakmayı deneyin.",
+            "popup": {
+                "description": "Tarama ve onarım işleminin yürütülmesi veri kaybına neden olabilir. Bu işlemi yürütmeden önce yedekleme yapmanız önerilir. Devam etmek istediğinizden emin misiniz?",
+                "yes": "Evet",
+                "no": "Hayır"
+            }
+        },
+        "support": {
+            "title": "Profesyonel tanılama araçlarını indirin",
+            "subtitle": "Lenovo destek"
+        },
+        "eTicket": {
+            "header": "Donanım sorunu algılandı.",
+            "problemDetected": "Donanım taraması, bilgisayarınızın aşağıdaki bileşenleriyle ilgili bir sorun algıladı",
+            "ticketRequestQuestion": "Bilgisayarınız garanti kapsamındaysa Lenovo yedek parça gönderebilir. Sorunu gidermek için bir donanım değiştirme bileti açmak ister misiniz",
+            "openTicket": "Bilet aç"
+        },
+        "battery": {
+            "title": "Pil Şarj Eşiğini Etkinleştirme",
+            "description": "Özel bir pil şarjının etkinleştirilmesi, bu cihazı kullanırken genel pil durumunun daha uzun süre dayanmasını sağlar. Ancak şarjın tam dolu olmaması, çalışma zamanı pil ömrünün daha az olmasına neden olur. Bu özelliği tamamen etkinleştirmek için lütfen makinenizi fişten çekin ve pilinizin tam olarak boşalmasını veya doldurmayı durdurma eşiğinin altına düşmesini bekleyin.",
+            "enable": "Etkinleştir"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
     }
 }

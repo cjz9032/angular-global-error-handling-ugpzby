@@ -189,7 +189,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			if (this.protocalAction.toLowerCase() === 'enable') {
 				this.systemUpdateService.setUpdateSchedule(true, false);
 				const metricData = {
-					ItemType: 'featureClick',
+					ItemType: 'FeatureClick',
 					ItemName: 'chk.critical-updates',
 					ItemValue: 'True',
 					ItemParent: 'Device.SystemUpdate'
@@ -395,21 +395,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	private installAllUpdate(removeDelayedUpdates: boolean) {
+	private installUpdates(removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>, isInstallAll: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
-			this.isInstallingAllUpdates = true;
-			this.systemUpdateService.isInstallingAllUpdates = true;
+			this.isInstallingAllUpdates = isInstallAll;
+			this.systemUpdateService.isInstallingAllUpdates = isInstallAll;
 			this.resetState();
-			this.systemUpdateService.installAllUpdates(removeDelayedUpdates);
-		}
-	}
-
-	private installSelectedUpdate(removeDelayedUpdates: boolean) {
-		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
-			this.isInstallingAllUpdates = false;
-			this.systemUpdateService.isInstallingAllUpdates = false;
-			this.resetState();
-			this.systemUpdateService.installSelectedUpdates(removeDelayedUpdates);
+			this.systemUpdateService.installUpdatesList(removeDelayedUpdates, updateList, isInstallAll);
 		}
 	}
 
@@ -470,6 +461,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	public showInstallConfirmation(source: string) {
+		const isInstallAll = source !== 'selected';
 		const modalRef = this.modalService
 			.open(ModalCommonConfirmationComponent, {
 				backdrop: 'static',
@@ -477,8 +469,18 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
-		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
 		let removeDelayedUpdates = false;
+		let updatesToInstall = [];
+
+		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));;
+		if (!isInstallAll) {
+			updatesToInstall = this.systemUpdateService.getSelectedUpdates(updatesToInstall);
+		} else {
+			this.systemUpdateService.selectCoreqUpdateForInstallAll(updatesToInstall);
+			updatesToInstall = this.systemUpdateService.getUnIgnoredUpdatesForInstallAll(updatesToInstall);
+		}
+		const { rebootType, packages } = this.systemUpdateService.getRebootType(updatesToInstall);
+
 		if (rebootType === UpdateRebootType.RebootDelayed) {
 			this.showRebootDelayedModal(modalRef);
 		} else if (rebootType === UpdateRebootType.RebootForced) {
@@ -488,7 +490,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		} else {
 			modalRef.dismiss();
 			// its normal update type installation which doesn't require rebooting/power-off
-			this.installUpdateBySource(source, removeDelayedUpdates);
+			this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
@@ -503,7 +505,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					} else {
 						removeDelayedUpdates = true;
 					}
-					this.installUpdateBySource(source, removeDelayedUpdates);
+					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 				}
 			},
 			reason => {
@@ -516,14 +518,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onGetSupportClick($event: any) {
 	}
 
-	private installUpdateBySource(source: string, removeDelayedUpdates: boolean) {
+	private installUpdateBySource(isInstallAll: boolean, removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>) {
 		this.isInstallFailedMessageToasted = false;
 		this.isRebootRequested = false;
-		if (source === 'selected') {
-			this.installSelectedUpdate(removeDelayedUpdates);
-		} else {
-			this.installAllUpdate(removeDelayedUpdates);
-		}
+		this.installUpdates(removeDelayedUpdates, updateList, isInstallAll);
 	}
 
 	private showRebootForceModal(modalRef: NgbModalRef) {

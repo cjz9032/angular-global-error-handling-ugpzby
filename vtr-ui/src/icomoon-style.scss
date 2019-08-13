@@ -15,6 +15,26 @@
 		content: $icomoon-auto-screen-off;
 	}
 }
+.icomoon-ConditionACAdapterError {
+	&:before {
+		content: $icomoon-ConditionACAdapterError;
+	}
+}
+.icomoon-ConditionBadBattery {
+	&:before {
+		content: $icomoon-ConditionBadBattery;
+	}
+}
+.icomoon-ConditionFairBattery {
+	&:before {
+		content: $icomoon-ConditionFairBattery;
+	}
+}
+.icomoon-ConditionGoodBattery {
+	&:before {
+		content: $icomoon-ConditionGoodBattery;
+	}
+}
 .icomoon-dynamic {
 	&:before {
 		content: $icomoon-dynamic;
@@ -229,6 +249,16 @@
 		color: #4a81fd;
 	}
 }
+.icomoon-LE-Airplanemode2x {
+	&:before {
+		content: $icomoon-LE-Airplanemode2x;
+	}
+}
+.icomoon-LE-AirplanemodeCharging2x {
+	&:before {
+		content: $icomoon-LE-AirplanemodeCharging2x;
+	}
+}
 .icomoon-LE-Always-on-usb2x {
 	&:before {
 		content: $icomoon-LE-Always-on-usb2x;
@@ -280,6 +310,11 @@
 	&:before {
 		content: $icomoon-LE-Charging-USB2x;
 		color: #4a81fd;
+	}
+}
+.icomoon-LE-ConservationCharging2x {
+	&:before {
+		content: $icomoon-LE-ConservationCharging2x;
 	}
 }
 .icomoon-LE-Conservation-mode2x {
@@ -503,6 +538,11 @@
 .icomoon-music {
 	&:before {
 		content: $icomoon-music;
+	}
+}
+.icomoon-NoBatteryError {
+	&:before {
+		content: $icomoon-NoBatteryError;
 	}
 }
 .icomoon-normal {
