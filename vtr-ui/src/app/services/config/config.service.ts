@@ -465,6 +465,19 @@ export class ConfigService {
 			// },
 			// subitems: []
 			// }
+			{
+				id: 'hardware-scan',
+				label: 'hardwareScan.name',
+				path: 'hardware-scan',
+				icon: '',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.hardwarescan',
+				routerLinkActiveOptions: {
+					exact: true
+				},
+				subitems: []
+			}
 		]
 	};
 
