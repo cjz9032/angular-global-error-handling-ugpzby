@@ -21,7 +21,12 @@
 								[leftIcon]="['icomoon', 'icomoon-Active-protection']"
 								[theme]="'white'"
 								[showChildContent]='true'
-								(toggleOnOff)="setAPSMode($event)">
+								(toggleOnOff)="setAPSMode($event)"
+								vtrMetrics
+								metricsEvent="FeatureClick"
+								metricsParent="Device.MyDeviceSettings"
+								metricsItem="ActiveProtectionSystem.Toggle"
+								metricsValue="apsStatus">
 								<div class="slider">
 									<vtr-ui-aps-slider [apsSliderId]="'activeProtectionSystemSensitivity'"
 										[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
@@ -31,7 +36,12 @@
 										[value]="apsSensitivity"
 										[theme]="'white'"
 										[step]='50'
-										(change)='setAPSSensitivityLevel($event)'>
+										(change)='setAPSSensitivityLevel($event)'
+										vtrMetrics
+										metricsEvent="ItemClick"
+										metricsParent="Device.MyDeviceSettings"
+										metricsItem="ActiveProtectionSystem.Sensitivity.Slider"
+										metricsValue="$event.value">
 									</vtr-ui-aps-slider>
 								</div>
 								<div class="checkbox">
@@ -39,7 +49,12 @@
 										[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
 										[checked]="repeatShock"
 										(toggle)="setAutoDisableSetting($event)"
-										[disabled]="!apsStatus">
+										[disabled]="!apsStatus"
+										vtrMetrics
+										metricsEvent="ItemClick"
+										metricsParent="Device.MyDeviceSettings"
+										metricsItem="ActiveProtectionSystem.AutoDisable"
+										metricsValue="$event" >
 									</vtr-ui-checkbox>
 								</div>
 							</vtr-ui-row-switch>
@@ -57,7 +72,12 @@
 							[isSwitchChecked]="manualSnooze"
 							[showChildContent]="true"
 							(toggleOnOff)="setSnoozeSetting($event)"
-							[disabled]="!apsStatus">
+							[disabled]="!apsStatus"
+							vtrMetrics
+							metricsEvent="FeatureClick"
+							metricsParent="Device.MyDeviceSettings"
+							metricsItem="ActiveProtectionSystem.ManualOverride"
+							metricsValue="manualSnooze">
 							<div *ngIf="manualSnooze"
 								class="dropdown row">
 								<section class="col-sm-6">
@@ -69,7 +89,12 @@
 										[list]="intervals"
 										[value]="manualSnoozeTime"
 										(change)="setSnoozeTime($event)"
-										[disabled]="!apsStatus">
+										[disabled]="!apsStatus"
+										vtrMetrics
+										metricsEvent="FeatureClick"
+										metricsParent="Device.MyDeviceSettings"
+										metricsItem="ActiveProtectionSystem.ManualOverride.Dropdown"
+										metricsValue="selectedSnoozeTime">
 									</vtr-ui-dropdown>
 								</section>
 								<section class="col-sm-5">
@@ -79,7 +104,11 @@
 											attr.aria-label="manualActiveProtectionSuspension_btn"
 											[disabled]="!apsStatus"
 											class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
-											(click)="suspendNow()">
+											(click)="suspendNow()"
+											vtrMetrics
+											metricsEvent="ItemClick"
+											metricsParent="Device.MyDeviceSettings"
+											metricsItem="ActiveProtectionSystem.ManualOverride.SuspendNow">
 											{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate }}
 										</button>
 									</div>
