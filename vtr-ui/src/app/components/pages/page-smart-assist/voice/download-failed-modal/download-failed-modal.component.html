@@ -7,7 +7,8 @@
 			href="javascript:;"
 			class="close-btn"
 			vtrMetrics
-			metricsEvent="featureClick"
+			metricsEvent="FeatureClick"
+			metricsParent="download_failed_modal"
 			metricsItem="failed_modal_close_icon"
 			(click)="closeModal()">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
@@ -28,7 +29,8 @@
 	<div class="line"></div>
 	<div class="row">
 		<button vtrMetrics
-			metricsEvent="featureClick"
+			metricsEvent="FeatureClick"
+			metricsParent="download_failed_modal"
 			metricsItem="failed_modal_close_btn" 
 			id="download_failed_modal_close_btn"
 			attr.aria-label="download_failed_modal_close_btn"

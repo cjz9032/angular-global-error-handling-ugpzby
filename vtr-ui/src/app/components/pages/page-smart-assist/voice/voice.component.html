@@ -8,7 +8,8 @@
 						attr.aria-label="voice-install-btn"
 						*ngIf="!showLoader"
 						vtrMetrics
-						metricsEvent="featureClick"
+						metricsEvent="FeatureClick"
+						metricsParent="voice-card"
 						metricsItem="voice_{{voiceStatus}}_btn"
 						type="button"
 						class="btn btn-primary btn-block install-btn"
