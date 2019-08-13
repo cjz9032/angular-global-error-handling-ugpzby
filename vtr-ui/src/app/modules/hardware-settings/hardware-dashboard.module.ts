@@ -22,6 +22,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 library.add(faTimes);
 library.add(faExclamationCircle);
@@ -43,7 +44,7 @@ library.add(faExclamationCircle);
 		UiButtonModule,
 		WidgetSecurityStatusModule,
 		NgbCarouselModule,
-		HeaderMainModule,
+		// HeaderMainModule,
 		NgbDropdownModule,
 		WidgetOfflineModule,
 		WidgetCarouselModule,
@@ -51,7 +52,8 @@ library.add(faExclamationCircle);
 		RouterModule,
 		FormsModule,
 		ReactiveFormsModule,
-		NgbModalModule
+		NgbModalModule,
+		PageLayoutModule
 	],
 	exports: [
 		MetricsModule,
@@ -62,6 +64,7 @@ library.add(faExclamationCircle);
 		RouterModule,
 		FormsModule,
 		ReactiveFormsModule,
+		PageLayoutModule,
 	],
 	providers: [MockService],
 	entryComponents: [FeedbackFormComponent],

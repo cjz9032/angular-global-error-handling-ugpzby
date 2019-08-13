@@ -18,25 +18,21 @@
 .icomoon-ConditionACAdapterError {
 	&:before {
 		content: $icomoon-ConditionACAdapterError;
-		color: #f17f14;
 	}
 }
 .icomoon-ConditionBadBattery {
 	&:before {
 		content: $icomoon-ConditionBadBattery;
-		color: #e74c3c;
 	}
 }
 .icomoon-ConditionFairBattery {
 	&:before {
 		content: $icomoon-ConditionFairBattery;
-		color: #f17f14;
 	}
 }
 .icomoon-ConditionGoodBattery {
 	&:before {
 		content: $icomoon-ConditionGoodBattery;
-		color: #30d487;
 	}
 }
 .icomoon-dynamic {
@@ -310,15 +306,15 @@
 		color: #4a81fd;
 	}
 }
+.icomoon-LE-ConservationCharging2x {
+	&:before {
+		content: $icomoon-LE-ConservationCharging2x;
+	}
+}
 .icomoon-LE-Conservation-mode2x {
 	&:before {
 		content: $icomoon-LE-Conservation-mode2x;
 		color: #4a81fd;
-	}
-}
-.icomoon-LE-ConvervationCharging2x {
-	&:before {
-		content: $icomoon-LE-ConvervationCharging2x;
 	}
 }
 .icomoon-LE-CoolingDown2x {
@@ -541,7 +537,6 @@
 .icomoon-NoBatteryError {
 	&:before {
 		content: $icomoon-NoBatteryError;
-		color: #f17f14;
 	}
 }
 .icomoon-normal {

@@ -115,6 +115,14 @@ export class CommonService {
 		this.sendNotification(key, value);
 	}
 
+	public haveLocalStorageKey(key: LocalStorageKey | DashboardLocalStorageKey, defaultValue?: any): any {
+		const value = window.localStorage.getItem(key);
+		if (value === null || value === undefined) {
+			return false;
+		}
+		return true;
+	}
+
 	/**
 	 * Returns parsed json object if key is found else returns undefined
 	 * @param key key use to store value in local storage

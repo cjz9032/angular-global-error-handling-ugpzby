@@ -156,6 +156,12 @@ button {
 	letter-spacing: 0.1em;
 }
 
+// for bootstrap hamburger menu touch input
+.dropdown-backdrop{
+	z-index: 0;
+}
+
+
 .vtr-page {
 	height: 100%;
 

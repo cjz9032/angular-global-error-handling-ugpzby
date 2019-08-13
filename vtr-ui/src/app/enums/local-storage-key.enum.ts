@@ -120,7 +120,6 @@ export enum LocalStorageKey {
 	isSystemDisk = '[LocalStorageKey] isSystemDisk',
 	usedDisk = '[LocalStorageKey] usedDisk',
 
-
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
 	MacroKeyStatus = '[LocalStorageKey] MacroKeyStatus',
@@ -153,6 +152,7 @@ export enum LocalStorageKey {
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
-
+	UPEUserID = '[LocalStorageKey] UPEUserID',
+	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
 	BetaUser = '[LocalStorageKey] BetaUser'
 }
