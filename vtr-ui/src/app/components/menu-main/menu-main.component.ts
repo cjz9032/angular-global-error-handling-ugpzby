@@ -218,9 +218,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			}
 		}
 		if (!this.deviceService.showPrivacy) {
-			showItem = false;
+			if (item.onlyPrivacy) {
+				showItem = false;
+			}
 		}
-
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
 		}

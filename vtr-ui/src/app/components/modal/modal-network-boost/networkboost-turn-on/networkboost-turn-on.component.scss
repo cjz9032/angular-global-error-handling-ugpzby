@@ -108,18 +108,15 @@ ui-popover-turn-on {
 	}
 
 	.cancel-link {
+		height: 3.2rem;
 		color: $main;
 		font-size: 2rem;
-		text-decoration: underline;
 		vertical-align: middle;
-		padding: 1rem 3rem;
+		padding: 0 0.5rem;
 		font-weight: $weight_600;
-		margin-top: 1rem;
+		margin-top: 1.8rem;
+		margin-left: 3rem;
+		border-bottom: 2px solid $main;
 		cursor: pointer;
-		text-transform: uppercase;
-
-		&:hover {
-			text-decoration: underline;
-		}
 	}
 }

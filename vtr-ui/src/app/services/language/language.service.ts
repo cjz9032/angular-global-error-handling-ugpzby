@@ -121,7 +121,8 @@ export class LanguageService {
 		if (lang) {
 			const locale = lang.toLowerCase();
 			this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceLocale, locale);
-			this.translate.use(locale);
+			//this.translate.use(locale);
+			this.translate.use('sr');
 		}
 	}
 
