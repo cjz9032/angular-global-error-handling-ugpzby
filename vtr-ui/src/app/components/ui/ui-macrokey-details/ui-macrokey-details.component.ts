@@ -21,7 +21,8 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.timeoutRecording.title',
 		bodyText: 'gaming.macroKey.popupContent.timeoutRecording.body',
-		btnConfirm: false
+		btnConfirm: false,
+		metricsItemId: ''
 	};
 
 	constructor() {}
@@ -71,12 +72,14 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 			if (changes.messageData.currentValue === MacroKeyMessageData.timeout10) {
 				this.modalContent.headerTitle = 'gaming.macroKey.popupContent.timeoutRecording.title';
 				this.modalContent.bodyText = 'gaming.macroKey.popupContent.inputStopped.body';
+				this.modalContent.metricsItemId='macrokey_10s_timeout_dialog_ok_button';
 				this.showModal = !this.showModal;
 				this.toggleRecording(true);
 			}
 			if (changes.messageData.currentValue === MacroKeyMessageData.timeout20) {
 				this.modalContent.headerTitle = 'gaming.macroKey.popupContent.timeoutRecording.title';
 				this.modalContent.bodyText = 'gaming.macroKey.popupContent.timeoutRecording.body';
+				this.modalContent.metricsItemId='macrokey_20s_timeout_dialog_ok_button';
 				this.showModal = !this.showModal;
 				this.toggleRecording(true);
 			}

@@ -11,7 +11,7 @@ reference : https://fonts.google.com/specimen/Rubik
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
 // @import "~bootstrap/dist/css/bootstrap.css";
-
+@import "./app/beta/beta-styles.scss";
 @import "app/app.theme";
 
 html {
@@ -155,6 +155,12 @@ svg-icon {
 button {
 	letter-spacing: 0.1em;
 }
+
+// for bootstrap hamburger menu touch input
+.dropdown-backdrop{
+	z-index: 0;
+}
+
 
 .vtr-page {
 	height: 100%;
