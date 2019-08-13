@@ -27,6 +27,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() itemID: string;
 	@Input() sideFlag = '';
 	@Input() containerCardId = '';
+	@Input() dataSource = '';
 
 	isLoading = true;
 

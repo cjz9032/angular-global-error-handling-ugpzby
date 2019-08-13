@@ -22,7 +22,9 @@
 					</li>
 				</ng-container>
 				<div class="information">
-					<p>{{ currentDescription | translate }}</p>
+					<p *ngFor="let option of options.dropOptions"
+					[ngStyle]="{display: option.value != options.curSelected? 'none':''}">
+					{{ option.description | translate }}</p>
 				</div>
 			</div>
 		</ng-container>

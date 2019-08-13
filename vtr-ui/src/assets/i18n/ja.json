@@ -96,7 +96,7 @@
                     "info": "情報"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "クイック設定"
                 }
             }
         },
@@ -371,42 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "自動クローズ",
+            "introLine": "ゲーム開始時に閉じるアプリを追加します。未使用リソースが解放されゲームのパフォーマンスが最大化されます。注: この機能はアプリを完全に閉じます。そのため、必ず作業内容を保存してください。",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "自動クローズを有効にしますか?",
+                "body": "追加したアプリはゲーム中は閉じられ、ゲーム用のリソースが解放されます。",
+                "checkedTitle": "次回から表示しない",
+                "btnConfirm": "オンにする",
+                "btnCancel": "今はしない"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "自動クローズにアプリを追加",
+                "body": "リストには、現在実行中のアプリのみが表示されます。"
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "追加",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "追加できる実行中のアプリはありません",
+                "body": "現在実行中のアプリのみが表示されます。追加したいアプリを起動してからここに戻ってください。"
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "ネットワーク・ブースト",
+            "introLine": "ネットワーク・ブーストを有効にすると、ネットワーク内でゲームが自動的に最優先になり、速度が最大になります。ゲーム中に Twitch や Discord などのアプリを使用している場合は、以下のリストに追加してネットワークで優先されるようにします。",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "ネットワーク・ブーストを有効にしますか?",
+                "body": "ネットワーク・ブーストを有効にしますか?追加したアプリは、実行中により多くのネットワークを共有します。",
+                "checkedTitle": "次回から表示しない",
+                "btnConfirm": "オンにする",
+                "btnCancel": "今はしない"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
-                }
+                "title": "ネットワーク・ブーストにアプリを追加",
+                "body": "最大 5 つのアプリを追加してブーストできます (4 / 5 追加済み)"
             }
         }
     },
@@ -1447,7 +1443,12 @@
         "title": "接続ホーム・セキュリティー",
         "notification": {
             "recent": "最近のセキュリティー通知",
-            "notifications": "通知"
+            "notifications": "通知",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "デバイスのエコシステムを保護する",
@@ -2255,118 +2256,123 @@
         "Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
     },
-	"hardwareScan": {
-		"name": "ハードウェア・スキャン",
-		"title": "ハードウェア・スキャンを実行",
-		"subtitle": "ハードウェア・スキャンを実行しています。お待ちください",
-		"quickScan": "簡易スキャン",
-		"finalResultCode": "最終結果コード",
-		"resultCode": "リザルト・コード",
-		"cancel": "キャンセル",
-		"complete": "完了",
-		"incomplete": "未完了",
-		"loadingComponents": "コンポーネントをロード中",
-		"hardwareComponents": "ハードウェア・コンポーネント",
-		"loadingDevices": "デバイスのロード中",
-		"select": "ツールバーで",
-		"deselect": "選択解除",
-		"allOptions": "すべてのオプション",
-		"latestResult": "最新の結果",
-		"back": "戻る",
-		"viewResults": "結果の表示",
-		"save": "上書き保存",
-		"details": "詳細",
-		"recurrence": "再発",
-		"interval": "間隔",
-		"time": "時刻",
-		"type": "タイプ",
-		"hours": "時間",
-		"minutes": "分",
-		"am": "AM",
-		"pm": "午後",
-		"previousResult": "前の結果",
-		"lastScanOn": "前回のスキャン日",
-		"result": "結果",
-		"viewDetailsLog": "詳細の表示ログ",
-		"ok": "OK",
-		"notOk": "NOT OK",
-		"notScanned": "未スキャン",
-		"pass": "成功",
-		"fail": "失敗",
-		"cancelled": "キャンセルされました",
-		"warning": "警告",
-		"errorResult": "はい、実行するテストを選択する必要があります。",
-		"buy": "すぐに購入",
-		"errorDeviceChoose": "使用するデバイスを選択する必要があります。",
-		"errorNoOptionSelected": "オプションを選択する必要があります。",
-		"offline": "このデバイスはオフラインモードです。インターネットに接続してください",
-		"common": {
-			"menu": "ハードウェア・スキャン"
-		},
-		"customize": {
-			"name": "カスタマイズ",
-			"test": "テストをカスタマイズ",
-			"description": "以下のオプションを選択してテストをカスタマイズします",
-			"runTests": "選択したテストを実行"
-		},
-		"scheduledScan": {
-			"name": "スキャンのスケジュール",
-			"title": "スキャンのスケジュール",
-			"newScan": "新規スキャンのスケジュール",
-			"fullScan": "フル・スキャン",
-			"onlyOnce": "一回のみ",
-			"eachDay": "毎日",
-			"eachWeek": "毎週",
-			"eachMonth": "毎月",
-			"eachYear": "毎年",
-			"schedule": "スケジュール",
-			"date": "日付",
-			"pickDate": "日付を選択",
-			"scanScheduled": "ハードウェア・スキャンがスケジュールされました!",
-			"description": "別のスキャンが同じ日時にすでにスケジュールされています。",
-			"error": "エラー",
-			"delete": "削除"
-		},
-		"recoverBadSectors": {
-			"title": "不良セクターの復元",
-			"description": "ディスク上の不良セクターを検出して修正するための Lenovo ツール",
-			"goTo": "不良セクター復元へ進む",
-			"localDevices": "ローカル・デバイス",
-			"numberSectors": "読み取られたセクターの数",
-			"numberBadSectors": "検出された不良セクターの数",
-			"numberFixedSectors": "修正されたセクターの数",
-			"numberNonFixedSectors": "未修正のセクターの数",
-			"status": "操作ステータス",
-			"elapsedTime": "経過時間",
-			"hours": "時間",
-			"hour": "時間",
-			"minutes": "分",
-			"minute": "分",
-			"seconds": "秒",
-			"second": "秒",
-			"moreInfo": "不良セクターの復元を実行しています。お待ちください",
-			"systemEvent": "テスト結果に影響を及ぼす可能性があるシステム・イベントが発生したため、テストが中止されました。",
-			"systemPasswordProtected": "デバイスはパスワードで保護されている可能性があります。パスワードの保護を無効にしてください。",
-			"popup": {
-				"description": "スキャンと修復を実行すると、データが失われる可能性があります。この操作を実行する前にバックアップを作成することをお勧めします。続行してもよろしいですか",
-				"yes": "はい",
-				"no": "いいえ"
-			}
-		},
-		"support": {
-			"title": "プロの診断ツールをダウンロードする",
-			"subtitle": "Lenovo サポート"
-		},
-		"eTicket": {
-			"header": "ハードウェアの問題が検出されました。",
-			"problemDetected": "ハードウェア・スキャンで、コンピューターの次のコンポーネントに問題が検出されました",
-			"ticketRequestQuestion": "お使いのコンピューターが保証期間中の場合、Lenovo は交換部品を送ることができます。ハードウェア交換チケットを開き、問題に対処しますか",
-			"openTicket": "チケットを開く"
-		},
-		"battery": {
-			"title": "バッテリー充電しきい値を有効にする",
-			"description": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
-			"enable": "有効にする"
-		}
-	}
+    "hardwareScan": {
+        "name": "ハードウェア・スキャン",
+        "title": "ハードウェア・スキャンを実行",
+        "subtitle": "ハードウェア・スキャンを実行しています。お待ちください",
+        "quickScan": "簡易スキャン",
+        "finalResultCode": "最終結果コード",
+        "resultCode": "リザルト・コード",
+        "cancel": "キャンセル",
+        "complete": "完了",
+        "incomplete": "未完了",
+        "loadingComponents": "コンポーネントをロード中",
+        "hardwareComponents": "ハードウェア・コンポーネント",
+        "loadingDevices": "デバイスのロード中",
+        "select": "ツールバーで",
+        "deselect": "選択解除",
+        "allOptions": "すべてのオプション",
+        "latestResult": "最新の結果",
+        "back": "戻る",
+        "viewResults": "結果の表示",
+        "save": "上書き保存",
+        "details": "詳細",
+        "recurrence": "再発",
+        "interval": "間隔",
+        "time": "時刻",
+        "type": "タイプ",
+        "hours": "時間",
+        "minutes": "分",
+        "am": "AM",
+        "pm": "午後",
+        "previousResult": "前の結果",
+        "lastScanOn": "前回のスキャン日",
+        "result": "結果",
+        "viewDetailsLog": "詳細の表示ログ",
+        "ok": "OK",
+        "notOk": "NOT OK",
+        "notScanned": "未スキャン",
+        "pass": "成功",
+        "fail": "失敗",
+        "cancelled": "キャンセルされました",
+        "warning": "警告",
+        "errorResult": "はい、実行するテストを選択する必要があります。",
+        "buy": "すぐに購入",
+        "errorDeviceChoose": "使用するデバイスを選択する必要があります。",
+        "errorNoOptionSelected": "オプションを選択する必要があります。",
+        "offline": "このデバイスはオフラインモードです。インターネットに接続してください",
+        "customize": {
+            "name": "カスタマイズ",
+            "test": "テストをカスタマイズ",
+            "description": "以下のオプションを選択してテストをカスタマイズします",
+            "runTests": "選択したテストを実行"
+        },
+        "scheduledScan": {
+            "name": "スキャンのスケジュール",
+            "title": "スキャンのスケジュール",
+            "newScan": "新規スキャンのスケジュール",
+            "fullScan": "フル・スキャン",
+            "onlyOnce": "一回のみ",
+            "eachDay": "毎日",
+            "eachWeek": "毎週",
+            "eachMonth": "毎月",
+            "eachYear": "毎年",
+            "schedule": "スケジュール",
+            "date": "日付",
+            "pickDate": "日付を選択",
+            "scanScheduled": "ハードウェア・スキャンがスケジュールされました!",
+            "description": "別のスキャンが同じ日時にすでにスケジュールされています。",
+            "error": "エラー",
+            "delete": "削除",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "不良セクターの復元",
+            "description": "ディスク上の不良セクターを検出して修正するための Lenovo ツール",
+            "goTo": "不良セクター復元へ進む",
+            "localDevices": "ローカル・デバイス",
+            "numberSectors": "読み取られたセクターの数",
+            "numberBadSectors": "検出された不良セクターの数",
+            "numberFixedSectors": "修正されたセクターの数",
+            "numberNonFixedSectors": "未修正のセクターの数",
+            "status": "操作ステータス",
+            "elapsedTime": "経過時間",
+            "hours": "時間",
+            "hour": "時間",
+            "minutes": "分",
+            "minute": "分",
+            "seconds": "秒",
+            "second": "秒",
+            "moreInfo": "不良セクターの復元を実行しています。お待ちください",
+            "systemEvent": "テスト結果に影響を及ぼす可能性があるシステム・イベントが発生したため、テストが中止されました。",
+            "systemPasswordProtected": "デバイスはパスワードで保護されている可能性があります。パスワードの保護を無効にしてください。",
+            "popup": {
+                "description": "スキャンと修復を実行すると、データが失われる可能性があります。この操作を実行する前にバックアップを作成することをお勧めします。続行してもよろしいですか",
+                "yes": "はい",
+                "no": "いいえ"
+            }
+        },
+        "support": {
+            "title": "プロの診断ツールをダウンロードする",
+            "subtitle": "Lenovo サポート"
+        },
+        "eTicket": {
+            "header": "ハードウェアの問題が検出されました。",
+            "problemDetected": "ハードウェア・スキャンで、コンピューターの次のコンポーネントに問題が検出されました",
+            "ticketRequestQuestion": "お使いのコンピューターが保証期間中の場合、Lenovo は交換部品を送ることができます。ハードウェア交換チケットを開き、問題に対処しますか",
+            "openTicket": "チケットを開く"
+        },
+        "battery": {
+            "title": "バッテリー充電しきい値を有効にする",
+            "description": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
+            "enable": "有効にする"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
+    }
 }

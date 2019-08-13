@@ -222,7 +222,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				showItem = false;
 			}
 		}
-
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
 		}

@@ -96,7 +96,7 @@
                     "systenTooltip": "قم بتمرير الماوس فوق CPU/GPU/RAM ومحركات الأقراص المختلفة لإظهار أوصافها بما في ذلك معلومات التصنيع والطراز"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "الإعدادات السريعة"
                 }
             }
         },
@@ -371,42 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "إغلاق تلقائي",
+            "introLine": "إضافة تطبيقات تُغلق عند بدء تشغيل لعبة. سيقوم ذلك بتحرير الموارد غير المستخدمة لتحسين الأداء الخاص بالألعاب لأقصى حد. ملاحظة: تعمل هذه الميزة على إغلاق التطبيق تمامًا. لذا احرص دائمًا على حفظ عملك.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "هل تريد تشغيل الإغلاق التلقائي؟",
+                "body": "سيتم إغلاق التطبيقات التي أضفتها عند اللعب، مما يؤدي إلى تحرير الموارد للعب.",
+                "checkedTitle": "عدم السؤال مرة أخرى",
+                "btnConfirm": "تشغيل",
+                "btnCancel": "ليس الآن"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "إضافة تطبيقات للإغلاق التلقائي",
+                "body": "ستظهر التطبيقات قيد التشغيل فقط في القائمة أدناه."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "إضافة",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "لا توجد تطبيقات قيد التشغيل لإضافتها",
+                "body": "ستظهر التطبيقات قيد التشغيل حاليًا فقط. يُرجى تشغيل تطبيق تريد إضافته والمحاولة مجددًا."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "تعزيز الشبكة",
+            "introLine": "تعزيز الشبكة يعيّن أولوية الألعاب إلى أعلى مستوى في شبكتك، يزيد السرعة إلى أقصى حد. إذا كنت تستخدم تطبيقًا أثناء اللعب، مثل Twitch أو Discord، فمن المستحسن أن تضيفه أدناه لكي يتلقى هو أيضًا الأولوية على شبكتك.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "هل تريد تشغيل تعزيز الشبكة؟",
+                "body": "هل تريد تشغيل تعزيز الشبكة؟ ستشارك التطبيقات التي أضفتها المزيد من الشبكات عند تشغيلها.",
+                "checkedTitle": "عدم السؤال مرة أخرى",
+                "btnConfirm": "تشغيل",
+                "btnCancel": "ليس الآن"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
-                }
+                "title": "إضافة تطبيقات إلى تعزيز الشبكة",
+                "body": "يمكنك إضافة 5 تطبيقات أخرى (تم إضافة 4 من 5)"
             }
         }
     },
@@ -1447,7 +1443,12 @@
         "title": "أمان المنزل المتصل",
         "notification": {
             "recent": "إعلامات الأمان الأخيرة",
-            "notifications": "الإعلامات"
+            "notifications": "الإعلامات",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "حماية النظام البيئي جهازك",
@@ -2256,117 +2257,122 @@
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
     },
     "hardwareScan": {
-		"name": "فحص الأجهزة",
-		"title": "إجراء فحص لمكونات الجهاز",
-		"subtitle": "الرجاء الانتظار، إذ يتم إجراء فحص لمكونات الجهاز",
-		"quickScan": "فحص سريع",
-		"finalResultCode": "رمز النتيجة النهائية",
-		"resultCode": "رمز النتيجة",
-		"cancel": "إلغاء",
-		"complete": "كامل",
-		"incomplete": "غير مكتمل",
-		"loadingComponents": "جارٍ تحميل المكونات",
-		"hardwareComponents": "مكونات الجهاز",
-		"loadingDevices": "جارٍ تحميل الجهاز",
-		"select": "تحديد",
-		"deselect": "إلغاء تحديد",
-		"allOptions": "كل الخيارات",
-		"latestResult": "آخر نتيجة",
-		"back": "السابق",
-		"viewResults": "عرض النتائج",
-		"save": "حفظ",
-		"details": "التفاصيل",
-		"recurrence": "تكرار",
-		"interval": "فاصل زمني",
-		"time": "الوقت",
-		"type": "النوع",
-		"hours": "ساعات",
-		"minutes": "دقائق",
-		"am": "صباحًا",
-		"pm": "مساءً",
-		"previousResult": "النتائج السابقة",
-		"lastScanOn": "آخر فحص في",
-		"result": "النتيجة",
-		"viewDetailsLog": "عرض سجل التفاصيل",
-		"ok": "موافق",
-		"notOk": "ليس كما يرام",
-		"notScanned": "لم يتم الفحص",
-		"pass": "نجاح",
-		"fail": "فشل",
-		"cancelled": "تم الإلغاء",
-		"warning": "تحذير",
-		"errorResult": "رجاء، يلزمك اختيار اختبار لإجرائه.",
-		"buy": "شراء الآن",
-		"errorDeviceChoose": "رجاءً، يلزمك اختيار جهاز لتشغيله.",
-		"errorNoOptionSelected": "رجاءً، أنت بحاجة لتحديد خيار.",
-		"offline": "هذا الجهاز يعمل في وضع عدم الاتصال، يرجى الاتصال بالإنترنت",
-		"common": {
-			"menu": "فحص الأجهزة"
-		},
-		"customize": {
-			"name": "تخصيص",
-			"test": "تخصيص اختبار",
-			"description": "حدد الخيار أدناه لتخصيص اختبارك",
-			"runTests": "إجراء اختبارات محددة"
-		},
-		"scheduledScan": {
-			"name": "جدولة فحص",
-			"title": "جدولة الفحص الخاص بك",
-			"newScan": "جدولة فحص جديد",
-			"fullScan": "فحص شامل",
-			"onlyOnce": "مرة واحدة فقط",
-			"eachDay": "كل يوم",
-			"eachWeek": "كل أسبوع",
-			"eachMonth": "كل شهر",
-			"eachYear": "كل عام",
-			"schedule": "جدولة",
-			"date": "التاريخ",
-			"pickDate": "اختر تاريخًا",
-			"scanScheduled": "تمت جدولة فحص مكونات الجهاز!",
-			"description": "كان من المقرر بالفعل إجراء فحص آخر في نفس الوقت والتاريخ!",
-			"error": "خطأ",
-			"delete": "حذف"
-		},
-		"recoverBadSectors": {
-			"title": "استعادة القطاعات المصابة",
-			"description": "أداة Lenovo لاكتشاف القطاعات المصابة على القرص وعلاجها",
-			"goTo": "الانتقال إلى استعادة القطاعات المصابة",
-			"localDevices": "أجهزة محلية",
-			"numberSectors": "تمت قراءة بعض القطاعات",
-			"numberBadSectors": "تم العثور على بعض القطاعات",
-			"numberFixedSectors": "عدد القطاعات التم تمت معالجتها",
-			"numberNonFixedSectors": "عدد القطاعات التي لم تتم معالجتها",
-			"status": "حالة العملية",
-			"elapsedTime": "الوقت المنقضي",
-			"hours": "ساعات",
-			"hour": "ساعة",
-			"minutes": "دقائق",
-			"minute": "دقيقة",
-			"seconds": "ثوانٍ",
-			"second": "ثانية",
-			"moreInfo": "الرجاء الانتظار، إذ تتم استعادة القطاعات المصابة الآن",
-			"systemEvent": "تم إيقاف الاختبار بسبب وقوع حدث في النظام قد يؤثر سلبًا على النتيجة.",
-			"systemPasswordProtected": "قد يكون الجهاز محميًا بكلمة مرور. حاول تعطيل الحماية بكلمة مرور.",
-			"popup": {
-				"description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
-				"yes": "نعم",
-				"no": "لا"
-			}
-		},
-		"support": {
-			"title": "تنزيل أدوات تشخيص احترافية",
-			"subtitle": "دعم Lenovo"
-		},
-		"eTicket": {
-			"header": "تم اكتشاف مشكلة في مكونات الجهاز.",
-			"problemDetected": "بعد فحص مكونات الجهاز تبين وجود مشكلة في المكونات التالية للكمبيوتر",
-			"ticketRequestQuestion": "يمكن لشركة Lenovo أن تُرسل قطعة غيار إذا كان جهاز الكمبيوتر يخضع للضمان. هل تريد فتح تذكرة لاستبدال مكون الجهاز وحل المشكلة؟",
-			"openTicket": "فتح تذكرة"
-		},
-		"battery": {
-			"title": "تمكين حد شحن البطارية",
-			"description": "يؤدي تمكين شحن البطارية المخصص إلى أن تدوم سلامة البطارية أطول من ذي قبل أثناء استخدامك لهذا الجهاز. على الرغم من ذلك، سيؤدي عدم الشحن بشكل كامل إلى تقليل فترة تشغيل البطارية. وحتى يتسنى لك تمكين هذه الميزة بشكل كامل، افصل الطاقة عن الجهاز، ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
-			"enable": "تمكين"
-		}
-	}
+        "name": "فحص الأجهزة",
+        "title": "إجراء فحص لمكونات الجهاز",
+        "subtitle": "الرجاء الانتظار، إذ يتم إجراء فحص لمكونات الجهاز",
+        "quickScan": "فحص سريع",
+        "finalResultCode": "رمز النتيجة النهائية",
+        "resultCode": "رمز النتيجة",
+        "cancel": "إلغاء",
+        "complete": "كامل",
+        "incomplete": "غير مكتمل",
+        "loadingComponents": "جارٍ تحميل المكونات",
+        "hardwareComponents": "مكونات الجهاز",
+        "loadingDevices": "جارٍ تحميل الجهاز",
+        "select": "تحديد",
+        "deselect": "إلغاء تحديد",
+        "allOptions": "كل الخيارات",
+        "latestResult": "آخر نتيجة",
+        "back": "السابق",
+        "viewResults": "عرض النتائج",
+        "save": "حفظ",
+        "details": "التفاصيل",
+        "recurrence": "تكرار",
+        "interval": "فاصل زمني",
+        "time": "الوقت",
+        "type": "النوع",
+        "hours": "ساعات",
+        "minutes": "دقائق",
+        "am": "صباحًا",
+        "pm": "مساءً",
+        "previousResult": "النتائج السابقة",
+        "lastScanOn": "آخر فحص في",
+        "result": "النتيجة",
+        "viewDetailsLog": "عرض سجل التفاصيل",
+        "ok": "موافق",
+        "notOk": "ليس كما يرام",
+        "notScanned": "لم يتم الفحص",
+        "pass": "نجاح",
+        "fail": "فشل",
+        "cancelled": "تم الإلغاء",
+        "warning": "تحذير",
+        "errorResult": "رجاء، يلزمك اختيار اختبار لإجرائه.",
+        "buy": "شراء الآن",
+        "errorDeviceChoose": "رجاءً، يلزمك اختيار جهاز لتشغيله.",
+        "errorNoOptionSelected": "رجاءً، أنت بحاجة لتحديد خيار.",
+        "offline": "هذا الجهاز يعمل في وضع عدم الاتصال، يرجى الاتصال بالإنترنت",
+        "customize": {
+            "name": "تخصيص",
+            "test": "تخصيص اختبار",
+            "description": "حدد الخيار أدناه لتخصيص اختبارك",
+            "runTests": "إجراء اختبارات محددة"
+        },
+        "scheduledScan": {
+            "name": "جدولة فحص",
+            "title": "جدولة الفحص الخاص بك",
+            "newScan": "جدولة فحص جديد",
+            "fullScan": "فحص شامل",
+            "onlyOnce": "مرة واحدة فقط",
+            "eachDay": "كل يوم",
+            "eachWeek": "كل أسبوع",
+            "eachMonth": "كل شهر",
+            "eachYear": "كل عام",
+            "schedule": "جدولة",
+            "date": "التاريخ",
+            "pickDate": "اختر تاريخًا",
+            "scanScheduled": "تمت جدولة فحص مكونات الجهاز!",
+            "description": "كان من المقرر بالفعل إجراء فحص آخر في نفس الوقت والتاريخ!",
+            "error": "خطأ",
+            "delete": "حذف",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "استعادة القطاعات المصابة",
+            "description": "أداة Lenovo لاكتشاف القطاعات المصابة على القرص وعلاجها",
+            "goTo": "الانتقال إلى استعادة القطاعات المصابة",
+            "localDevices": "أجهزة محلية",
+            "numberSectors": "تمت قراءة بعض القطاعات",
+            "numberBadSectors": "تم العثور على بعض القطاعات",
+            "numberFixedSectors": "عدد القطاعات التم تمت معالجتها",
+            "numberNonFixedSectors": "عدد القطاعات التي لم تتم معالجتها",
+            "status": "حالة العملية",
+            "elapsedTime": "الوقت المنقضي",
+            "hours": "ساعات",
+            "hour": "ساعة",
+            "minutes": "دقائق",
+            "minute": "دقيقة",
+            "seconds": "ثوانٍ",
+            "second": "ثانية",
+            "moreInfo": "الرجاء الانتظار، إذ تتم استعادة القطاعات المصابة الآن",
+            "systemEvent": "تم إيقاف الاختبار بسبب وقوع حدث في النظام قد يؤثر سلبًا على النتيجة.",
+            "systemPasswordProtected": "قد يكون الجهاز محميًا بكلمة مرور. حاول تعطيل الحماية بكلمة مرور.",
+            "popup": {
+                "description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
+                "yes": "نعم",
+                "no": "لا"
+            }
+        },
+        "support": {
+            "title": "تنزيل أدوات تشخيص احترافية",
+            "subtitle": "دعم Lenovo"
+        },
+        "eTicket": {
+            "header": "تم اكتشاف مشكلة في مكونات الجهاز.",
+            "problemDetected": "بعد فحص مكونات الجهاز تبين وجود مشكلة في المكونات التالية للكمبيوتر",
+            "ticketRequestQuestion": "يمكن لشركة Lenovo أن تُرسل قطعة غيار إذا كان جهاز الكمبيوتر يخضع للضمان. هل تريد فتح تذكرة لاستبدال مكون الجهاز وحل المشكلة؟",
+            "openTicket": "فتح تذكرة"
+        },
+        "battery": {
+            "title": "تمكين حد شحن البطارية",
+            "description": "يؤدي تمكين شحن البطارية المخصص إلى أن تدوم سلامة البطارية أطول من ذي قبل أثناء استخدامك لهذا الجهاز. على الرغم من ذلك، سيؤدي عدم الشحن بشكل كامل إلى تقليل فترة تشغيل البطارية. وحتى يتسنى لك تمكين هذه الميزة بشكل كامل، افصل الطاقة عن الجهاز، ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
+            "enable": "تمكين"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
+    }
 }
