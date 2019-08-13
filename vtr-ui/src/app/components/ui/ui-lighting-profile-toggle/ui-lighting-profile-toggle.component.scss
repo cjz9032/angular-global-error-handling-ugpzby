@@ -65,16 +65,25 @@
             justify-content: center;
             position: relative;
             z-index: 1;
-            cursor: pointer;
+			cursor: pointer;
+			.num{
+				display: none;
+			}
             @media #{$small-screen}{
                 white-space: nowrap;
                 overflow: hidden;
-                letter-spacing: 2rem;
-                text-indent: -20rem;
+                //letter-spacing: 2rem;
+                //text-indent: -20rem;
                 &#off{
                     letter-spacing: 0;
                     text-indent: 0;
-                }
+				}
+				&>span:nth-child(1){
+					display:none;
+				}
+				.num{
+					display: block;
+				}
             }
         }
     }
