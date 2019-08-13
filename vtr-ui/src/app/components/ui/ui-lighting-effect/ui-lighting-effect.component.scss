@@ -1,89 +1,90 @@
 @import "../../../app.theme.scss";
 
 .select-box {
-  &:hover {
-    .dropdown-menu {
-      display: none;
-      &.show {
-        display: block;
-      }
-    }
-  }
-  .brightCondition{
-	  color: $gaming_lightest;
-    font-size: 1.8rem;
-    @media #{$large-screen-1}{
-      font-size: 1.6rem;
-    }
-  }
-  .dropdown-toggle {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.6rem;
-    color: $shade_light;
-    margin-bottom: -1.2rem;
-    .icon {
-      position: relative;
-      font-size: 2.2rem;
-      top: 0px!important;
-    }
-    &::after {
-      display: none;
-    }
-  }
-  .gaming-dropdown-menu {
-    width: 100%;
-    background-color: $gaming_shade;
-    border: none;
-    border-radius: 0.8rem;
-    position: absolute;
-    overflow: hidden;
-    z-index: 10;
-    top: 3.5rem;
-    li {
-      list-style: none;
-      .dropdown-item {
-        color: $gaming_lightest;
-        font-size: 1.6rem;
-        height: 5.5rem;
-        line-height: 5.5rem;
-        position: relative;
-        padding-left: 5rem;
-        .icon {
-          position: absolute;
-          left: 2rem;
-          font-size: 2rem;
-          background: $gaming_green_gradient;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          opacity: 0;
-        }
-        &:hover {
-          background: $gaming_hover;
-        }
-      }
-      &.selected {
-        .dropdown-item {
-          .icon {
-            opacity: 1;
-            color: $good_dark;
-          }
-        }
-      }
-    }
-    .information {
-      margin: 1.6rem;
-      margin-bottom: 5rem;
-      margin-top: 0;
-      border-top: 1px solid $gaming_darkest;
-      padding-top: 1.6rem;
-      p {
-        font-size: 1.4rem;
-        color: $main_lightest;
-
-      }
-    }
-
-  }
+	&:hover {
+		.dropdown-menu {
+			display: none;
+			&.show {
+				display: block;
+			}
+		}
+	}
+	.brightCondition {
+		color: $gaming_lightest;
+		font-size: 1.8rem;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		@media #{$large-screen-1} {
+			font-size: 1.6rem;
+		}
+	}
+	.dropdown-toggle {
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.6rem;
+		color: $shade_light;
+		margin-bottom: -1.2rem;
+		.icon {
+			position: relative;
+			font-size: 2.2rem;
+			top: 0px !important;
+		}
+		&::after {
+			display: none;
+		}
+	}
+	.gaming-dropdown-menu {
+		width: 100%;
+		background-color: $gaming_shade;
+		border: none;
+		border-radius: 0.8rem;
+		position: absolute;
+		overflow: hidden;
+		z-index: 10;
+		top: 3.5rem;
+		li {
+			list-style: none;
+			.dropdown-item {
+				color: $gaming_lightest;
+				font-size: 1.6rem;
+				height: 5.5rem;
+				line-height: 5.5rem;
+				position: relative;
+				padding-left: 5rem;
+				.icon {
+					position: absolute;
+					left: 2rem;
+					font-size: 2rem;
+					background: $gaming_green_gradient;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					background-clip: text;
+					opacity: 0;
+				}
+				&:hover {
+					background: $gaming_hover;
+				}
+			}
+			&.selected {
+				.dropdown-item {
+					.icon {
+						opacity: 1;
+						color: $good_dark;
+					}
+				}
+			}
+		}
+		.information {
+			margin: 1.6rem;
+			margin-bottom: 5rem;
+			margin-top: 0;
+			border-top: 1px solid $gaming_darkest;
+			padding-top: 1.6rem;
+			p {
+				font-size: 1.4rem;
+				color: $main_lightest;
+			}
+		}
+	}
 }

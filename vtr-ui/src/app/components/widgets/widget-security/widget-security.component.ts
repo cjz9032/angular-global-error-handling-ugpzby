@@ -12,6 +12,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 })
 export class WidgetSecurityComponent implements OnInit {
 	@Input() percentValue: number;
+	@Input() showWindowsHello: boolean;
 	articleId = '1C95D1D5D20D4888AC043821E7355D35';
 	articleCategory: string;
 	region: string;
@@ -49,7 +50,7 @@ export class WidgetSecurityComponent implements OnInit {
 				'security.landing.password',
 				this.region !== 'cn' ? 'security.landing.vpn' : null,
 				'security.landing.wifi',
-				this.windowsHelloService.showWindowsHello() ? 'security.landing.windowsHello' : null
+				this.showWindowsHello ? 'security.landing.windowsHello' : null
 			];
 			this.tooltips = tooltipsInit.filter(current => current !== undefined && current !== null && current !== '');
 		}).catch(e => {

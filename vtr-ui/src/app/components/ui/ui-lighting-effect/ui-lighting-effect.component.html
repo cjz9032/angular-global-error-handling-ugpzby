@@ -9,8 +9,9 @@
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }"
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
-						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.id" metricsParam="{{option.id}}" metricsValue="{{option.value}}"
-						metricsEvent="featureClick" id="{{option.id}}" attr.aria-label = "{{option.id}}">
+						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.id"
+						metricsParam="{{option.id}}" metricsValue="{{option.value}}" metricsEvent="featureClick"
+						id="{{option.id}}" attr.aria-label="{{option.id}}">
 						<a class="dropdown-item">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
 						</a>
@@ -22,7 +23,8 @@
 			</div>
 		</ng-container>
 	</div>
-	<p class="brightCondition" *ngIf="enableBrightCondition1">
+	<p class="brightCondition" title="{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+		{{'gaming.lightingProfile.brightness.text2.title' | translate}}"  *ngIf="enableBrightCondition1">
 		{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
 		{{'gaming.lightingProfile.brightness.text2.title' | translate}}</p>
 </div>
