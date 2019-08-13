@@ -96,7 +96,7 @@
                     "info": "INFORMAÇÕES"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Definições Rápidas"
                 }
             }
         },
@@ -371,42 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Fechar automaticamente",
+            "introLine": "Adic. aplic. a fechar quando inicia um jogo. Isto libertará recursos não utilizados para maximizar o desempenho em jogo. NOTA: esta funcionalidade fecha completamente a aplicação. Assim, certifique-se sempre de que guardou o seu trabalho.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Ativar a funcionalidade Fechar Automaticamente?",
+                "body": "As aplicações adicionadas serão fechadas quando estiver a jogar, libertando recursos para o jogo.",
+                "checkedTitle": "Não perguntar novamente",
+                "btnConfirm": "Ligar",
+                "btnCancel": "Agora não"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Adicionar aplicações a Fechar Automaticamente",
+                "body": "Apenas serão apresentadas na lista abaixo aplicações em execução."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Adicionar",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Nenhuma aplicação em execução a adicionar",
+                "body": "Apenas serão apresentadas aplicações em execução. Inicie uma aplicação que pretende adicionar e volte."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Reforço da rede",
+            "introLine": "Ativar o Reforço da Rede define automaticamente a prioridade dos jogos para o nível máximo dentro da rede, maximizando a velocidade. Se estiver a utilizar aplicações durante o jogo, como Twitch ou Discord, recomendamos que as adicione à lista abaixo para que também tenham prioridade na rede.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Ativar o Reforço da Rede?",
+                "body": "Ativar o Reforço da Rede? As aplicações adicionadas irão partilhar mais rede quando estiverem em execução.",
+                "checkedTitle": "Não perguntar novamente",
+                "btnConfirm": "Ligar",
+                "btnCancel": "Agora não"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
-                }
+                "title": "Adicionar aplicações ao Reforço da Rede",
+                "body": "Pode adicionar até 5 aplicações a reforçar (4 de 5 adicionadas)"
             }
         }
     },
@@ -1447,7 +1443,12 @@
         "title": "Segurança de Casa Conectada",
         "notification": {
             "recent": "Notificações de segurança recentes",
-            "notifications": "Notificações"
+            "notifications": "Notificações",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Proteja o ecossistema do dispositivo",
@@ -2255,118 +2256,123 @@
         "Note": "Nota: ",
         "settingsNotes": "todas as definições nesta página irão necessitar que o utilizador reinicie esta aplicação para que tenham efeito."
     },
-	"hardwareScan": {
-		"name": "Verificação de Hardware",
-		"title": "Efetuar uma verificação de hardware",
-		"subtitle": "Aguarde enquanto a verificação de hardware está em execução",
-		"quickScan": "Verificação Rápida",
-		"finalResultCode": "Código de resultado final",
-		"resultCode": "Código de Resultado",
-		"cancel": "Cancelar",
-		"complete": "Concluído",
-		"incomplete": "Incompleto",
-		"loadingComponents": "A carregar componentes",
-		"hardwareComponents": "Componentes de hardware",
-		"loadingDevices": "A carregar dispositivos",
-		"select": "Selecionar",
-		"deselect": "Desmarcar",
-		"allOptions": "Todas as opções",
-		"latestResult": "Resultado mais recente",
-		"back": "RETROCEDER",
-		"viewResults": "Ver resultados",
-		"save": "Guardar",
-		"details": "Detalhes",
-		"recurrence": "Recorrência",
-		"interval": "Intervalo",
-		"time": "Hora",
-		"type": "Tipo",
-		"hours": "Horas",
-		"minutes": "Minutos",
-		"am": "AM",
-		"pm": "PM",
-		"previousResult": "Resultados anteriores",
-		"lastScanOn": "Última verificação em",
-		"result": "Resultado",
-		"viewDetailsLog": "Ver registo de detalhes",
-		"ok": "OK",
-		"notOk": "NÃO OK",
-		"notScanned": "NÃO VERIFICADO",
-		"pass": "Com êxito",
-		"fail": "Sem êxito",
-		"cancelled": "Cancelado",
-		"warning": "Atenção",
-		"errorResult": "É necessário escolher um teste a executar.",
-		"buy": "Comprar agora",
-		"errorDeviceChoose": "É necessário escolher um dispositivo a executar.",
-		"errorNoOptionSelected": "É necessário selecionar uma opção.",
-		"offline": "Este dispositivo está a funcionar no modo offline. Estabeleça ligação à Internet",
-		"common": {
-			"menu": "Verificação de Hardware"
-		},
-		"customize": {
-			"name": "Personalizar",
-			"test": "Personalizar teste",
-			"description": "Selecione as opções abaixo para personalizar o teste",
-			"runTests": "Executar testes selecionados"
-		},
-		"scheduledScan": {
-			"name": "Agendar verificação",
-			"title": "Agende a verificação",
-			"newScan": "Agendar nova verificação",
-			"fullScan": "Verificação total",
-			"onlyOnce": "Apenas uma vez",
-			"eachDay": "Todos os dias",
-			"eachWeek": "Todas as semanas",
-			"eachMonth": "Todos os meses",
-			"eachYear": "Todos os anos",
-			"schedule": "Agendar",
-			"date": "Data",
-			"pickDate": "Escolha uma data",
-			"scanScheduled": "Foi agendada uma verificação de hardware!",
-			"description": "Já estava agendada outra verificação para a mesma data e hora!",
-			"error": "Erro",
-			"delete": "Eliminar"
-		},
-		"recoverBadSectors": {
-			"title": "Recuperar setores danificados",
-			"description": "Ferramenta Lenovo para descobrir e reparar setores danificados num disco",
-			"goTo": "Ir para recuperação de setores danificados",
-			"localDevices": "Dispositivos locais",
-			"numberSectors": "Número de setores lidos",
-			"numberBadSectors": "Número de setores danificados encontrados",
-			"numberFixedSectors": "Número de setores corrigidos",
-			"numberNonFixedSectors": "Número de setores não corrigidos",
-			"status": "Estado da operação",
-			"elapsedTime": "Tempo decorrido",
-			"hours": "Horas",
-			"hour": "Hora",
-			"minutes": "Minutos",
-			"minute": "Minuto",
-			"seconds": "Segundos",
-			"second": "Segundo",
-			"moreInfo": "Aguarde enquanto a recuperação de setores danificados está em execução",
-			"systemEvent": "O teste foi abortado devido à ocorrência de um evento do sistema que poderia comprometer o resultado.",
-			"systemPasswordProtected": "O dispositivo poderá estar protegido por palavra-passe. Experimente desativar a proteção por palavra-passe.",
-			"popup": {
-				"description": "A execução da verificação e reparação pode originar perda de dados. É recomendado efetuar uma cópia de segurança antes de executar esta operação. Tem a certeza de que pretende continuar?",
-				"yes": "Sim",
-				"no": "Não"
-			}
-		},
-		"support": {
-			"title": "Transferir ferramentas de diagnóstico profissionais",
-			"subtitle": "Lenovo Support"
-		},
-		"eTicket": {
-			"header": "Problema de hardware detetado.",
-			"problemDetected": "A Verificação do hardware detetou um problema com os seguintes componentes do computador",
-			"ticketRequestQuestion": "A Lenovo pode enviar uma peça de substituição, caso o computador se encontre sob garantia. Gostaria de abrir um pedido de substituição de hardware para resolver o problema?",
-			"openTicket": "Abrir pedido"
-		},
-		"battery": {
-			"title": "Ativar Limiar de Carregamento da Bateria",
-			"description": "Permitir um carregamento da bateria personalizado permitirá que o estado global da bateria dure durante mais tempo enquanto utiliza este dispositivo. No entanto, não ter um carregamento completo levará a uma menor duração da bateria. Para ativar integralmente esta funcionalidade, desligue os cabos do equipamento e permita que a bateria se descarregue até ou abaixo do limiar de paragem de carregamento.",
-			"enable": "Ativar"
-		}
-	}
+    "hardwareScan": {
+        "name": "Verificação de Hardware",
+        "title": "Efetuar uma verificação de hardware",
+        "subtitle": "Aguarde enquanto a verificação de hardware está em execução",
+        "quickScan": "Verificação Rápida",
+        "finalResultCode": "Código de resultado final",
+        "resultCode": "Código de Resultado",
+        "cancel": "Cancelar",
+        "complete": "Concluído",
+        "incomplete": "Incompleto",
+        "loadingComponents": "A carregar componentes",
+        "hardwareComponents": "Componentes de hardware",
+        "loadingDevices": "A carregar dispositivos",
+        "select": "Selecionar",
+        "deselect": "Desmarcar",
+        "allOptions": "Todas as opções",
+        "latestResult": "Resultado mais recente",
+        "back": "RETROCEDER",
+        "viewResults": "Ver resultados",
+        "save": "Guardar",
+        "details": "Detalhes",
+        "recurrence": "Recorrência",
+        "interval": "Intervalo",
+        "time": "Hora",
+        "type": "Tipo",
+        "hours": "Horas",
+        "minutes": "Minutos",
+        "am": "AM",
+        "pm": "PM",
+        "previousResult": "Resultados anteriores",
+        "lastScanOn": "Última verificação em",
+        "result": "Resultado",
+        "viewDetailsLog": "Ver registo de detalhes",
+        "ok": "OK",
+        "notOk": "NÃO OK",
+        "notScanned": "NÃO VERIFICADO",
+        "pass": "Com êxito",
+        "fail": "Sem êxito",
+        "cancelled": "Cancelado",
+        "warning": "Atenção",
+        "errorResult": "É necessário escolher um teste a executar.",
+        "buy": "Comprar agora",
+        "errorDeviceChoose": "É necessário escolher um dispositivo a executar.",
+        "errorNoOptionSelected": "É necessário selecionar uma opção.",
+        "offline": "Este dispositivo está a funcionar no modo offline. Estabeleça ligação à Internet",
+        "customize": {
+            "name": "Personalizar",
+            "test": "Personalizar teste",
+            "description": "Selecione as opções abaixo para personalizar o teste",
+            "runTests": "Executar testes selecionados"
+        },
+        "scheduledScan": {
+            "name": "Agendar verificação",
+            "title": "Agende a verificação",
+            "newScan": "Agendar nova verificação",
+            "fullScan": "Verificação total",
+            "onlyOnce": "Apenas uma vez",
+            "eachDay": "Todos os dias",
+            "eachWeek": "Todas as semanas",
+            "eachMonth": "Todos os meses",
+            "eachYear": "Todos os anos",
+            "schedule": "Agendar",
+            "date": "Data",
+            "pickDate": "Escolha uma data",
+            "scanScheduled": "Foi agendada uma verificação de hardware!",
+            "description": "Já estava agendada outra verificação para a mesma data e hora!",
+            "error": "Erro",
+            "delete": "Eliminar",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Recuperar setores danificados",
+            "description": "Ferramenta Lenovo para descobrir e reparar setores danificados num disco",
+            "goTo": "Ir para recuperação de setores danificados",
+            "localDevices": "Dispositivos locais",
+            "numberSectors": "Número de setores lidos",
+            "numberBadSectors": "Número de setores danificados encontrados",
+            "numberFixedSectors": "Número de setores corrigidos",
+            "numberNonFixedSectors": "Número de setores não corrigidos",
+            "status": "Estado da operação",
+            "elapsedTime": "Tempo decorrido",
+            "hours": "Horas",
+            "hour": "Hora",
+            "minutes": "Minutos",
+            "minute": "Minuto",
+            "seconds": "Segundos",
+            "second": "Segundo",
+            "moreInfo": "Aguarde enquanto a recuperação de setores danificados está em execução",
+            "systemEvent": "O teste foi abortado devido à ocorrência de um evento do sistema que poderia comprometer o resultado.",
+            "systemPasswordProtected": "O dispositivo poderá estar protegido por palavra-passe. Experimente desativar a proteção por palavra-passe.",
+            "popup": {
+                "description": "A execução da verificação e reparação pode originar perda de dados. É recomendado efetuar uma cópia de segurança antes de executar esta operação. Tem a certeza de que pretende continuar?",
+                "yes": "Sim",
+                "no": "Não"
+            }
+        },
+        "support": {
+            "title": "Transferir ferramentas de diagnóstico profissionais",
+            "subtitle": "Lenovo Support"
+        },
+        "eTicket": {
+            "header": "Problema de hardware detetado.",
+            "problemDetected": "A Verificação do hardware detetou um problema com os seguintes componentes do computador",
+            "ticketRequestQuestion": "A Lenovo pode enviar uma peça de substituição, caso o computador se encontre sob garantia. Gostaria de abrir um pedido de substituição de hardware para resolver o problema?",
+            "openTicket": "Abrir pedido"
+        },
+        "battery": {
+            "title": "Ativar Limiar de Carregamento da Bateria",
+            "description": "Permitir um carregamento da bateria personalizado permitirá que o estado global da bateria dure durante mais tempo enquanto utiliza este dispositivo. No entanto, não ter um carregamento completo levará a uma menor duração da bateria. Para ativar integralmente esta funcionalidade, desligue os cabos do equipamento e permita que a bateria se descarregue até ou abaixo do limiar de paragem de carregamento.",
+            "enable": "Ativar"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
+    }
 }

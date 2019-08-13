@@ -96,7 +96,7 @@
                     "systenTooltip": "将鼠标悬停在 CPU/GPU/RAM 和不同的驱动器上以显示其描述（包括制造和型号信息）"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "快速设置"
                 }
             }
         },
@@ -371,42 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "自动关闭",
+            "introLine": "添加在您启动游戏时要关闭的应用。这将释放未使用的资源以最大限度地提高游戏性能。注意：此功能会完全关闭应用。因此请始终确保您已保存您的工作。",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "是否打开自动关闭？",
+                "body": "在游戏时，系统将关闭您添加的应用，为游戏释放资源。",
+                "checkedTitle": "不再询问",
+                "btnConfirm": "开启",
+                "btnCancel": "现在不"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "将应用添加到自动关闭",
+                "body": "下方列表中仅显示当前运行的应用。"
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "添加",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "没有任何要添加的正在运行的应用",
+                "body": "仅显示当前正在运行的应用。请启动要添加的应用并返回。"
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "网络增强",
+            "introLine": "启用网络增强会自动将游戏优先级设置为您网络内的最高级别，最大限度地提高速度。如果您在游戏时使用任何应用，如 Twitch 或 Discord，建议您将它们添加到下方列表中使其也能在您的网络上获取优先级。",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "是否打开网络增强？",
+                "body": "是否打开网络增强？您添加的应用在运行时将共享更多网络。",
+                "checkedTitle": "不再询问",
+                "btnConfirm": "开启",
+                "btnCancel": "现在不"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
-                }
+                "title": "将应用添加到网络增强",
+                "body": "最多可添加 5 个要加速的应用（已添加 4 个）"
             }
         }
     },
@@ -1447,7 +1443,12 @@
         "title": "互联家庭网络安全性",
         "notification": {
             "recent": "最近的安全通知",
-            "notifications": "通知"
+            "notifications": "通知",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "保护您的设备生态系统",
@@ -2255,118 +2256,123 @@
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"
     },
-	"hardwareScan": {
-		"name": "硬件扫描",
-		"title": "执行硬件扫描",
-		"subtitle": "硬件扫描正在执行，请稍候",
-		"quickScan": "快速扫描",
-		"finalResultCode": "最终结果代码",
-		"resultCode": "结果代码",
-		"cancel": "取消",
-		"complete": "完成",
-		"incomplete": "未完成",
-		"loadingComponents": "正在加载组件",
-		"hardwareComponents": "硬件组件",
-		"loadingDevices": "设备正在加载",
-		"select": "选择",
-		"deselect": "取消选择",
-		"allOptions": "全部选项",
-		"latestResult": "最新结果",
-		"back": "返回",
-		"viewResults": "查看结果",
-		"save": "保存",
-		"details": "详细信息",
-		"recurrence": "循环",
-		"interval": "间隔",
-		"time": "时间",
-		"type": "类型",
-		"hours": "小时",
-		"minutes": "分钟",
-		"am": "上午",
-		"pm": "下午",
-		"previousResult": "以前的结果",
-		"lastScanOn": "上次扫描时间",
-		"result": "结果",
-		"viewDetailsLog": "查看详细信息日志",
-		"ok": "确定",
-		"notOk": "不正常",
-		"notScanned": "未扫描",
-		"pass": "通过",
-		"fail": "失败",
-		"cancelled": "已取消",
-		"warning": "警告",
-		"errorResult": "请选择要运行的测试。",
-		"buy": "立即购买",
-		"errorDeviceChoose": "请选择要运行的设备。",
-		"errorNoOptionSelected": "请选择一个选项。",
-		"offline": "此设备正在脱机模式下运行，请连接因特网",
-		"common": {
-			"menu": "硬件扫描"
-		},
-		"customize": {
-			"name": "定制",
-			"test": "定制测试",
-			"description": "选择以下选项，定制您的测试",
-			"runTests": "运行选中的测试"
-		},
-		"scheduledScan": {
-			"name": "安排扫描",
-			"title": "安排您的扫描",
-			"newScan": "安排新扫描",
-			"fullScan": "完整扫描",
-			"onlyOnce": "仅一次",
-			"eachDay": "每天",
-			"eachWeek": "每周",
-			"eachMonth": "每月",
-			"eachYear": "每年",
-			"schedule": "安排",
-			"date": "日期",
-			"pickDate": "选择日期",
-			"scanScheduled": "已安排硬件扫描！",
-			"description": "已安排在相同的时间和日期进行另一次扫描！",
-			"error": "错误",
-			"delete": "删除"
-		},
-		"recoverBadSectors": {
-			"title": "恢复坏扇区",
-			"description": "用于发现和修复磁盘上坏扇区的 Lenovo 工具",
-			"goTo": "恢复坏扇区",
-			"localDevices": "本地设备",
-			"numberSectors": "读取的扇区数",
-			"numberBadSectors": "找到的坏扇区数",
-			"numberFixedSectors": "修复的扇区数",
-			"numberNonFixedSectors": "未修复的扇区数",
-			"status": "操作状态",
-			"elapsedTime": "已用时间",
-			"hours": "小时",
-			"hour": "小时",
-			"minutes": "分钟",
-			"minute": "分钟",
-			"seconds": "秒",
-			"second": "秒",
-			"moreInfo": "正在恢复坏扇区，请稍候",
-			"systemEvent": "测试已中止，因为发生了可能影响结果的系统事件。",
-			"systemPasswordProtected": "设备可能受密码保护。请尝试禁用密码保护。",
-			"popup": {
-				"description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
-				"yes": "是",
-				"no": "否"
-			}
-		},
-		"support": {
-			"title": "下载专业诊断工具",
-			"subtitle": "Lenovo 支持"
-		},
-		"eTicket": {
-			"header": "检测到硬件问题。",
-			"problemDetected": "硬件扫描已检测到以下计算机的组件存在问题",
-			"ticketRequestQuestion": "如果您的计算机在保修期内，Lenovo 可以发送更换部件。您是否要打开一个硬件更换凭单以解决此问题",
-			"openTicket": "打开凭单"
-		},
-		"battery": {
-			"title": "启用电池充电阈值",
-			"description": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少运行时电池使用寿命。为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
-			"enable": "启用"
-		}
-	}
+    "hardwareScan": {
+        "name": "硬件扫描",
+        "title": "执行硬件扫描",
+        "subtitle": "硬件扫描正在执行，请稍候",
+        "quickScan": "快速扫描",
+        "finalResultCode": "最终结果代码",
+        "resultCode": "结果代码",
+        "cancel": "取消",
+        "complete": "完成",
+        "incomplete": "未完成",
+        "loadingComponents": "正在加载组件",
+        "hardwareComponents": "硬件组件",
+        "loadingDevices": "设备正在加载",
+        "select": "选择",
+        "deselect": "取消选择",
+        "allOptions": "全部选项",
+        "latestResult": "最新结果",
+        "back": "返回",
+        "viewResults": "查看结果",
+        "save": "保存",
+        "details": "详细信息",
+        "recurrence": "循环",
+        "interval": "间隔",
+        "time": "时间",
+        "type": "类型",
+        "hours": "小时",
+        "minutes": "分钟",
+        "am": "上午",
+        "pm": "下午",
+        "previousResult": "以前的结果",
+        "lastScanOn": "上次扫描时间",
+        "result": "结果",
+        "viewDetailsLog": "查看详细信息日志",
+        "ok": "确定",
+        "notOk": "不正常",
+        "notScanned": "未扫描",
+        "pass": "通过",
+        "fail": "失败",
+        "cancelled": "已取消",
+        "warning": "警告",
+        "errorResult": "请选择要运行的测试。",
+        "buy": "立即购买",
+        "errorDeviceChoose": "请选择要运行的设备。",
+        "errorNoOptionSelected": "请选择一个选项。",
+        "offline": "此设备正在脱机模式下运行，请连接因特网",
+        "customize": {
+            "name": "定制",
+            "test": "定制测试",
+            "description": "选择以下选项，定制您的测试",
+            "runTests": "运行选中的测试"
+        },
+        "scheduledScan": {
+            "name": "安排扫描",
+            "title": "安排您的扫描",
+            "newScan": "安排新扫描",
+            "fullScan": "完整扫描",
+            "onlyOnce": "仅一次",
+            "eachDay": "每天",
+            "eachWeek": "每周",
+            "eachMonth": "每月",
+            "eachYear": "每年",
+            "schedule": "安排",
+            "date": "日期",
+            "pickDate": "选择日期",
+            "scanScheduled": "已安排硬件扫描！",
+            "description": "已安排在相同的时间和日期进行另一次扫描！",
+            "error": "错误",
+            "delete": "删除",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "恢复坏扇区",
+            "description": "用于发现和修复磁盘上坏扇区的 Lenovo 工具",
+            "goTo": "恢复坏扇区",
+            "localDevices": "本地设备",
+            "numberSectors": "读取的扇区数",
+            "numberBadSectors": "找到的坏扇区数",
+            "numberFixedSectors": "修复的扇区数",
+            "numberNonFixedSectors": "未修复的扇区数",
+            "status": "操作状态",
+            "elapsedTime": "已用时间",
+            "hours": "小时",
+            "hour": "小时",
+            "minutes": "分钟",
+            "minute": "分钟",
+            "seconds": "秒",
+            "second": "秒",
+            "moreInfo": "正在恢复坏扇区，请稍候",
+            "systemEvent": "测试已中止，因为发生了可能影响结果的系统事件。",
+            "systemPasswordProtected": "设备可能受密码保护。请尝试禁用密码保护。",
+            "popup": {
+                "description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
+                "yes": "是",
+                "no": "否"
+            }
+        },
+        "support": {
+            "title": "下载专业诊断工具",
+            "subtitle": "Lenovo 支持"
+        },
+        "eTicket": {
+            "header": "检测到硬件问题。",
+            "problemDetected": "硬件扫描已检测到以下计算机的组件存在问题",
+            "ticketRequestQuestion": "如果您的计算机在保修期内，Lenovo 可以发送更换部件。您是否要打开一个硬件更换凭单以解决此问题",
+            "openTicket": "打开凭单"
+        },
+        "battery": {
+            "title": "启用电池充电阈值",
+            "description": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少运行时电池使用寿命。为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
+            "enable": "启用"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
+    }
 }
