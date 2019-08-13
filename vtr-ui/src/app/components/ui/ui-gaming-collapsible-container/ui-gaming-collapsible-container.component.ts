@@ -8,7 +8,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, 
 		'(document:click)': 'generalClick($event)'
 	},
 })
-export class UiGamingCollapsibleContainerComponent implements OnInit, OnChanges {
+export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	@Input() public options;
 	@Output() public change = new EventEmitter<any>();
@@ -29,10 +29,6 @@ export class UiGamingCollapsibleContainerComponent implements OnInit, OnChanges 
 		this.getCurrentOption();
 	}
 
-	ngOnChanges(changes: SimpleChanges) {
-		// this.getCurrentOption();
-	}
-	
 	public getCurrentOption() {
 		this.options.dropOptions.forEach((option: any) => {
 			if (option.value === this.options.curSelected) {
