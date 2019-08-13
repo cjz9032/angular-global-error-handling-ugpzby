@@ -33,13 +33,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
-	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
+	public cameraPrivacyModeStatus = new FeatureStatus(true, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
 	public enableSlider = false;
 	public isEyeCareMode = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
+	public hideNote = false;
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
@@ -167,8 +168,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				case DeviceMonitorStatus.CameraStatus:
 					console.log('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
-
-
+					this.hideNote = !this.dataSource.permission;
 					if (payload) {
 						this.shouldCameraSectionDisabled = false;
 						// this.cameraFeatureAccess.showAutoExposureSlider = false;
@@ -246,6 +246,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						// 	response.exposure.autoValue = true;
 						this.dataSource = this.emptyCameraDetails[0];
 						this.shouldCameraSectionDisabled = true;
+						this.hideNote = true;
 						this.cameraFeatureAccess.showAutoExposureSlider = true;
 						console.log('no camera permission .then', this.emptyCameraDetails[0]);
 						const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
@@ -819,6 +820,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('disabled all is', event);
 		this.shouldCameraSectionDisabled = event;
 		this.dataSource.permission = false;
+		this.hideNote = true;
 		this.cameraFeatureAccess.exposureAutoValue = false;
 		if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
 			this.cameraFeatureAccess.showAutoExposureSlider = true;
