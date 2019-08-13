@@ -96,7 +96,7 @@
                     "info": "INFORMÁCIÓ"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Gyorsbeállítások"
                 }
             }
         },
@@ -371,42 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Automatikus bezárás",
+            "introLine": "Adja meg, hogy mely alkalmazásokat szeretné bezárni egy játék indításakor. Ezzel a használaton kívüli erőforrások felszabadításával maximalizálhatja a játékok teljesítményét. MEGJEGYZÉS: A szolgáltatás teljesen bezárja az alkalmazást. Ezért minden esetben mentse a munkáját.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Bekapcsolja az automatikus bezárást?",
+                "body": "A hozzáadott alkalmazásokat a játék közben bezárja a rendszer, hogy erőforrások szabaduljanak fel a játékhoz.",
+                "checkedTitle": "Ne kérdezze meg többet",
+                "btnConfirm": "Bekapcsolás",
+                "btnCancel": "Ne most"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Alkalmazások hozzáadása az automatikus bezárási funkcióhoz",
+                "body": "Az alábbi listában csak a jelenleg futó alkalmazások jelennek meg:"
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Hozzáadás",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Nincsenek hozzáadandó futó alkalmazások",
+                "body": "Csak a jelenleg futó alkalmazások jelennek meg. Indítsa el a hozzáadni kívánt alkalmazást, és lépjen vissza ide."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Hálózat erősítése",
+            "introLine": "A Hálózat erősítése lehetőség engedélyezésekor a játékok elsődleges prioritást élveznek a hálózaton, így maximalizálva a sebességet. Ha játék közben más alkalmazást is használ (pl. a Twitch-et vagy a Discordot), akkor javasoljuk, hogy vegye fel őket a lenti listába, hogy ezek az alkalmazások is előnyt élvezzenek a hálózaton.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Bekapcsolja a Hálózat erősítése funkciót?",
+                "body": "Bekapcsolja a Hálózat erősítése funkciót? A hozzáadott alkalmazások nagyobb sávszélességet kapnak a futásuk során.",
+                "checkedTitle": "Ne kérdezze meg többet",
+                "btnConfirm": "Bekapcsolás",
+                "btnCancel": "Ne most"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
-                }
+                "title": "Alkalmazások hozzáadása a Hálózat erősítése szolgáltatáshoz",
+                "body": "Maximum 5 további alkalmazást vehet fel (4/5 felvéve)"
             }
         }
     },
@@ -1447,7 +1443,12 @@
         "title": "Biztonsági rendszer csatlakoztatott otthonhoz",
         "notification": {
             "recent": "Legutóbbi biztonsági értesítések",
-            "notifications": "Értesítések"
+            "notifications": "Értesítések",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "A készülék ökoszisztémájának védelme",
@@ -2255,118 +2256,123 @@
         "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."
     },
-	"hardwareScan": {
-		"name": "Hardvervizsgálat",
-		"title": "Hardvervizsgálat futtatása",
-		"subtitle": "Várjon, amíg a hardvervizsgálat lefut!",
-		"quickScan": "Gyorsteszt",
-		"finalResultCode": "Végső eredménykód",
-		"resultCode": "Eredménykód",
-		"cancel": "Mégse",
-		"complete": "Befejezve",
-		"incomplete": "Befejezetlen",
-		"loadingComponents": "Összetevők betöltése",
-		"hardwareComponents": "Hardverösszetevők",
-		"loadingDevices": "Eszközök betöltése",
-		"select": "Válassza ki a",
-		"deselect": "Kiválasztás törlése",
-		"allOptions": "Minden lehetőség",
-		"latestResult": "Legutóbbi eredmény",
-		"back": "VISSZA",
-		"viewResults": "Eredmények megtekintése",
-		"save": "Mentés",
-		"details": "Részletek",
-		"recurrence": "Ismétlődés",
-		"interval": "Intervallum",
-		"time": "Idő",
-		"type": "Típus",
-		"hours": "Óra",
-		"minutes": "Perc",
-		"am": "de.",
-		"pm": "du.",
-		"previousResult": "Korábbi eredmények",
-		"lastScanOn": "Legutóbbi ellenőrzés:",
-		"result": "Eredmény",
-		"viewDetailsLog": "Részletes napló megtekintése",
-		"ok": "OK",
-		"notOk": "NEM OK",
-		"notScanned": "NINCS ELLENŐRIZVE",
-		"pass": "Megfelelt",
-		"fail": "Hibás",
-		"cancelled": "Visszavonva",
-		"warning": "Figyelmetetés",
-		"errorResult": "Válasszon ki egy tesztet a futtatáshoz!",
-		"buy": "Vásárlás most",
-		"errorDeviceChoose": "Válasszon ki egy eszközt a futtatáshoz.",
-		"errorNoOptionSelected": "Válasszon ki egy lehetőséget.",
-		"offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
-		"common": {
-			"menu": "Hardvervizsgálat"
-		},
-		"customize": {
-			"name": "Személyre szabás",
-			"test": "Teszt testreszabása",
-			"description": "A teszt testreszabásához válasszon a lenti lehetőségek közül",
-			"runTests": "Kiválasztott tesztek futtatása"
-		},
-		"scheduledScan": {
-			"name": "Ellenőrzés ütemezése",
-			"title": "Ellenőrzés ütemezése",
-			"newScan": "Új ellenőrzés ütemezése",
-			"fullScan": "Teljes ellenőrzés",
-			"onlyOnce": "Csak egyszer",
-			"eachDay": "Minden nap",
-			"eachWeek": "Minden héten",
-			"eachMonth": "Minden hónapban",
-			"eachYear": "Minden évben",
-			"schedule": "Ütemezés",
-			"date": "Dátum",
-			"pickDate": "Válasszon dátumot!",
-			"scanScheduled": "Be van ütemezve egy hardverellenőrzés.",
-			"description": "Már be van ütemezve egy másik keresés ugyanarra a napra és időpontra!",
-			"error": "Hiba",
-			"delete": "Törlés"
-		},
-		"recoverBadSectors": {
-			"title": "Hibás szektorok helyreállítása",
-			"description": "Egy Lenovo-eszköz a lemezen található hibás szektorok felfedezéséhez és javításához",
-			"goTo": "Hibás szektorok helyreállításának megkezdése",
-			"localDevices": "Helyi eszközök",
-			"numberSectors": "Beolvasott szektorok száma",
-			"numberBadSectors": "Talált hibás szektorok száma",
-			"numberFixedSectors": "Javított szektorok száma",
-			"numberNonFixedSectors": "Nem javított szektorok száma",
-			"status": "Művelet állapota",
-			"elapsedTime": "Eltelt idő",
-			"hours": "Óra",
-			"hour": "Óra",
-			"minutes": "Perc",
-			"minute": "Perc",
-			"seconds": "Másodperc",
-			"second": "Másodperc",
-			"moreInfo": "Várjon, amíg a rendszer helyreállítja a hibás szektorokat!",
-			"systemEvent": "A teszt megszakadt, mert az eredmény pontosságát esetlegesen veszélyeztető rendszeresemény történt.",
-			"systemPasswordProtected": "Előfordulhat, hogy az eszköz jelszóval védett. Kapcsolja ki a jelszavas védelmet.",
-			"popup": {
-				"description": "A keresés és javítás adatvesztést okozhat. Javasoljuk, hogy a művelet végrehajtása előtt készítsen biztonsági másolatot. Biztosan folytatja?",
-				"yes": "Igen",
-				"no": "Nem"
-			}
-		},
-		"support": {
-			"title": "Professzionális diagnosztikai eszközök letöltése",
-			"subtitle": "Lenovo-támogatás"
-		},
-		"eTicket": {
-			"header": "Hardverhiba észlelve.",
-			"problemDetected": "A hardvervizsgálat a számítógép következő összetevőivel kapcsolatban hibát észlelt",
-			"ticketRequestQuestion": "Ha a számítógépe még garanciális, a Lenovo cserealkatrészt küldhet. Szeretne hardvercsere-jegyet létrehozni a probléma megoldása érdekében?",
-			"openTicket": "Jegy létrehozása"
-		},
-		"battery": {
-			"title": "Akkumulátortöltési küszöbérték engedélyezése",
-			"description": "Az egyéni akkumulátortöltés használatával megnövelhető az akkumulátor eszközhasználat közbeni élettartama. Ha azonban nem tölti fel teljesen az akkumulátort, az üzemidő rövidebb lesz. A funkció teljes kihasználásához válassza le a gépet az elektromos hálózatról, és hagyja, hogy az akkumulátor teljesen vagy a töltésleállítási küszöbérték alá merüljön le.",
-			"enable": "Engedélyezés"
-		}
-	}
+    "hardwareScan": {
+        "name": "Hardvervizsgálat",
+        "title": "Hardvervizsgálat futtatása",
+        "subtitle": "Várjon, amíg a hardvervizsgálat lefut!",
+        "quickScan": "Gyorsteszt",
+        "finalResultCode": "Végső eredménykód",
+        "resultCode": "Eredménykód",
+        "cancel": "Mégse",
+        "complete": "Befejezve",
+        "incomplete": "Befejezetlen",
+        "loadingComponents": "Összetevők betöltése",
+        "hardwareComponents": "Hardverösszetevők",
+        "loadingDevices": "Eszközök betöltése",
+        "select": "Válassza ki a",
+        "deselect": "Kiválasztás törlése",
+        "allOptions": "Minden lehetőség",
+        "latestResult": "Legutóbbi eredmény",
+        "back": "VISSZA",
+        "viewResults": "Eredmények megtekintése",
+        "save": "Mentés",
+        "details": "Részletek",
+        "recurrence": "Ismétlődés",
+        "interval": "Intervallum",
+        "time": "Idő",
+        "type": "Típus",
+        "hours": "Óra",
+        "minutes": "Perc",
+        "am": "de.",
+        "pm": "du.",
+        "previousResult": "Korábbi eredmények",
+        "lastScanOn": "Legutóbbi ellenőrzés:",
+        "result": "Eredmény",
+        "viewDetailsLog": "Részletes napló megtekintése",
+        "ok": "OK",
+        "notOk": "NEM OK",
+        "notScanned": "NINCS ELLENŐRIZVE",
+        "pass": "Megfelelt",
+        "fail": "Hibás",
+        "cancelled": "Visszavonva",
+        "warning": "Figyelmetetés",
+        "errorResult": "Válasszon ki egy tesztet a futtatáshoz!",
+        "buy": "Vásárlás most",
+        "errorDeviceChoose": "Válasszon ki egy eszközt a futtatáshoz.",
+        "errorNoOptionSelected": "Válasszon ki egy lehetőséget.",
+        "offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
+        "customize": {
+            "name": "Személyre szabás",
+            "test": "Teszt testreszabása",
+            "description": "A teszt testreszabásához válasszon a lenti lehetőségek közül",
+            "runTests": "Kiválasztott tesztek futtatása"
+        },
+        "scheduledScan": {
+            "name": "Ellenőrzés ütemezése",
+            "title": "Ellenőrzés ütemezése",
+            "newScan": "Új ellenőrzés ütemezése",
+            "fullScan": "Teljes ellenőrzés",
+            "onlyOnce": "Csak egyszer",
+            "eachDay": "Minden nap",
+            "eachWeek": "Minden héten",
+            "eachMonth": "Minden hónapban",
+            "eachYear": "Minden évben",
+            "schedule": "Ütemezés",
+            "date": "Dátum",
+            "pickDate": "Válasszon dátumot!",
+            "scanScheduled": "Be van ütemezve egy hardverellenőrzés.",
+            "description": "Már be van ütemezve egy másik keresés ugyanarra a napra és időpontra!",
+            "error": "Hiba",
+            "delete": "Törlés",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Hibás szektorok helyreállítása",
+            "description": "Egy Lenovo-eszköz a lemezen található hibás szektorok felfedezéséhez és javításához",
+            "goTo": "Hibás szektorok helyreállításának megkezdése",
+            "localDevices": "Helyi eszközök",
+            "numberSectors": "Beolvasott szektorok száma",
+            "numberBadSectors": "Talált hibás szektorok száma",
+            "numberFixedSectors": "Javított szektorok száma",
+            "numberNonFixedSectors": "Nem javított szektorok száma",
+            "status": "Művelet állapota",
+            "elapsedTime": "Eltelt idő",
+            "hours": "Óra",
+            "hour": "Óra",
+            "minutes": "Perc",
+            "minute": "Perc",
+            "seconds": "Másodperc",
+            "second": "Másodperc",
+            "moreInfo": "Várjon, amíg a rendszer helyreállítja a hibás szektorokat!",
+            "systemEvent": "A teszt megszakadt, mert az eredmény pontosságát esetlegesen veszélyeztető rendszeresemény történt.",
+            "systemPasswordProtected": "Előfordulhat, hogy az eszköz jelszóval védett. Kapcsolja ki a jelszavas védelmet.",
+            "popup": {
+                "description": "A keresés és javítás adatvesztést okozhat. Javasoljuk, hogy a művelet végrehajtása előtt készítsen biztonsági másolatot. Biztosan folytatja?",
+                "yes": "Igen",
+                "no": "Nem"
+            }
+        },
+        "support": {
+            "title": "Professzionális diagnosztikai eszközök letöltése",
+            "subtitle": "Lenovo-támogatás"
+        },
+        "eTicket": {
+            "header": "Hardverhiba észlelve.",
+            "problemDetected": "A hardvervizsgálat a számítógép következő összetevőivel kapcsolatban hibát észlelt",
+            "ticketRequestQuestion": "Ha a számítógépe még garanciális, a Lenovo cserealkatrészt küldhet. Szeretne hardvercsere-jegyet létrehozni a probléma megoldása érdekében?",
+            "openTicket": "Jegy létrehozása"
+        },
+        "battery": {
+            "title": "Akkumulátortöltési küszöbérték engedélyezése",
+            "description": "Az egyéni akkumulátortöltés használatával megnövelhető az akkumulátor eszközhasználat közbeni élettartama. Ha azonban nem tölti fel teljesen az akkumulátort, az üzemidő rövidebb lesz. A funkció teljes kihasználásához válassza le a gépet az elektromos hálózatról, és hagyja, hogy az akkumulátor teljesen vagy a töltésleállítási küszöbérték alá merüljön le.",
+            "enable": "Engedélyezés"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
+    }
 }

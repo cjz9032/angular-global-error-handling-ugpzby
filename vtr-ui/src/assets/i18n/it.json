@@ -96,7 +96,7 @@
                     "info": "INFO"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Impostazioni rapide"
                 }
             }
         },
@@ -371,42 +371,38 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Chiusura automatica",
+            "introLine": "Agg. app da chiud. quando si avvia un gioco. Verranno liberate risorse per ottimizzare le prestazioni dei videogame. NOTA: questa funzione chiude completamente l'app. Quindi, assicurati sempre di aver salvato il tuo lavoro.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Attivare Chiusura automatica?",
+                "body": "Le app aggiunte verranno chiuse mentre si gioca, liberando risorse per i videogame.",
+                "checkedTitle": "Non mostr. più questo mess.",
+                "btnConfirm": "Attiva",
+                "btnCancel": "Non ora"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Aggiungi app a Chiusura automatica",
+                "body": "Nel seguente elenco verranno visualizzate solo le app in esecuzione."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Aggiungi",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Nessuna app in esecuzione da aggiungere",
+                "body": "Verranno visualizzate solo le app in esecuzione. Avvia un'app che desideri aggiungere e riprova."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Ottimizzazione rete",
+            "introLine": "Potenziamento rete imposta automaticamente la priorità dei giochi al livello più alto nella rete, aumentando la velocità. Se usi un'app durante il gioco, come Twitch o Discord, aggiungila al seguente elenco per ricevere la priorità nella rete.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Attivare Potenziamento rete?",
+                "body": "Attivare Potenziamento rete? Le app aggiunte condivideranno più banda di rete quando sono in esecuzione.",
+                "checkedTitle": "Non mostr. più questo mess.",
+                "btnConfirm": "Attiva",
+                "btnCancel": "Non ora"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
-                }
+                "title": "Aggiungi app a Potenziamento rete",
+                "body": "Puoi aggiungere fino a 5 app (4 di 5 aggiunte)"
             }
         }
     },
@@ -1447,7 +1443,12 @@
         "title": "Protezione abitazione connessa",
         "notification": {
             "recent": "Notifiche di sicurezza recenti",
-            "notifications": "Notifiche"
+            "notifications": "Notifiche",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Proteggi l'ecosistema del dispositivo",
@@ -2255,118 +2256,123 @@
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."
     },
-	"hardwareScan": {
-		"name": "Scansione hardware",
-		"title": "Esegui una scansione hardware",
-		"subtitle": "Attendere il completamento della scansione hardware",
-		"quickScan": "Scansione veloce",
-		"finalResultCode": "Codice del risultato finale",
-		"resultCode": "Codice risultato",
-		"cancel": "Annulla",
-		"complete": "Completato",
-		"incomplete": "Incompleto",
-		"loadingComponents": "Caricamento dei componenti",
-		"hardwareComponents": "Componenti hardware",
-		"loadingDevices": "Caricamento dei dispositivi",
-		"select": "Selezionare",
-		"deselect": "Deseleziona",
-		"allOptions": "Tutte le opzioni",
-		"latestResult": "Risultato più recente",
-		"back": "INDIETRO",
-		"viewResults": "Visualizza risultati",
-		"save": "Salva",
-		"details": "Dettagli",
-		"recurrence": "Ricorrenza",
-		"interval": "Intervallo",
-		"time": "Ora",
-		"type": "Tipo",
-		"hours": "Ore",
-		"minutes": "Minuti",
-		"am": "AM",
-		"pm": "PM",
-		"previousResult": "Risultati precedenti",
-		"lastScanOn": "Ultima scansione eseguita",
-		"result": "Risultato",
-		"viewDetailsLog": "Visualizza log dettagli",
-		"ok": "OK",
-		"notOk": "NON OK",
-		"notScanned": "SCANSIONE NON ESEGUITA",
-		"pass": "Corretto",
-		"fail": "Non riuscito",
-		"cancelled": "Annullato",
-		"warning": "Avvertenza",
-		"errorResult": "Scegli un test da eseguire.",
-		"buy": "Acquista ora",
-		"errorDeviceChoose": "Selezionare un dispositivo per eseguire la scansione.",
-		"errorNoOptionSelected": "Selezionare un'opzione.",
-		"offline": "Questo dispositivo è in esecuzione in modalità offline, connettersi a Internet",
-		"common": {
-			"menu": "Scansione hardware"
-		},
-		"customize": {
-			"name": "Personalizza",
-			"test": "Personalizza test",
-			"description": "Seleziona le opzioni riportate di seguito per personalizzare il test",
-			"runTests": "Esegui test selezionati"
-		},
-		"scheduledScan": {
-			"name": "Pianifica scansione",
-			"title": "Pianifica scansione personalizzata",
-			"newScan": "Pianifica nuova scansione",
-			"fullScan": "Scansione completa",
-			"onlyOnce": "Solo una volta",
-			"eachDay": "Ogni giorno",
-			"eachWeek": "Ogni settimana",
-			"eachMonth": "Ogni mese",
-			"eachYear": "Ogni anno",
-			"schedule": "Pianifica",
-			"date": "Data",
-			"pickDate": "Seleziona una data",
-			"scanScheduled": "È stata pianificata una scansione hardware.",
-			"description": "Un'altra scansione è stata già pianificata alla stessa data e ora.",
-			"error": "Errore",
-			"delete": "Elimina"
-		},
-		"recoverBadSectors": {
-			"title": "Ripristina settori danneggiati",
-			"description": "Strumento Lenovo per rilevare e correggere i settori danneggiati su un disco",
-			"goTo": "Vai al ripristino dei settori danneggiati",
-			"localDevices": "Dispositivi locali",
-			"numberSectors": "Numero di settori letti",
-			"numberBadSectors": "Numero di settori danneggiati trovati",
-			"numberFixedSectors": "Numero di settori corretti",
-			"numberNonFixedSectors": "Numero di settori non corretti",
-			"status": "Stato operazione",
-			"elapsedTime": "Tempo trascorso",
-			"hours": "Ore",
-			"hour": "Ora",
-			"minutes": "Minuti",
-			"minute": "Minuto",
-			"seconds": "Secondi",
-			"second": "Secondo",
-			"moreInfo": "Attendere il completamento dell'operazione di ripristino dei settori danneggiati",
-			"systemEvent": "Test interrotto a causa di un evento di sistema che poteva comprometterne il risultato.",
-			"systemPasswordProtected": "Il dispositivo può essere protetto da password. Provare a disabilitare la protezione con password.",
-			"popup": {
-				"description": "L'esecuzione della scansione e del ripristino può causare la perdita dei dati. Si consiglia di effettuare una copia di backup prima di eseguire questa operazione. Procedere?",
-				"yes": "Sì",
-				"no": "No"
-			}
-		},
-		"support": {
-			"title": "Scarica strumenti di diagnostica professionali",
-			"subtitle": "Supporto Lenovo"
-		},
-		"eTicket": {
-			"header": "Problema hardware rilevato.",
-			"problemDetected": "La scansione hardware ha rilevato un problema relativo ai seguenti componenti del computer",
-			"ticketRequestQuestion": "Se il computer è coperto da garanzia, Lenovo può inviare una parte sostitutiva. Aprire un ticket di sostituzione hardware per risolvere il problema",
-			"openTicket": "Apri ticket"
-		},
-		"battery": {
-			"title": "Abilita soglia di carica della batteria",
-			"description": "L'abilitazione della carica personalizzata della batteria consente di prolungare la durata della batteria e di utilizzare il dispositivo più a lungo. Tuttavia, se la carica non è completa, l'autonomia della batteria sarà inferiore. Per abilitare questa funzione, scollegare la presa di alimentazione del computer e scaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
-			"enable": "Abilita"
-		}
-	}
+    "hardwareScan": {
+        "name": "Scansione hardware",
+        "title": "Esegui una scansione hardware",
+        "subtitle": "Attendere il completamento della scansione hardware",
+        "quickScan": "Scansione veloce",
+        "finalResultCode": "Codice del risultato finale",
+        "resultCode": "Codice risultato",
+        "cancel": "Annulla",
+        "complete": "Completato",
+        "incomplete": "Incompleto",
+        "loadingComponents": "Caricamento dei componenti",
+        "hardwareComponents": "Componenti hardware",
+        "loadingDevices": "Caricamento dei dispositivi",
+        "select": "Selezionare",
+        "deselect": "Deseleziona",
+        "allOptions": "Tutte le opzioni",
+        "latestResult": "Risultato più recente",
+        "back": "INDIETRO",
+        "viewResults": "Visualizza risultati",
+        "save": "Salva",
+        "details": "Dettagli",
+        "recurrence": "Ricorrenza",
+        "interval": "Intervallo",
+        "time": "Ora",
+        "type": "Tipo",
+        "hours": "Ore",
+        "minutes": "Minuti",
+        "am": "AM",
+        "pm": "PM",
+        "previousResult": "Risultati precedenti",
+        "lastScanOn": "Ultima scansione eseguita",
+        "result": "Risultato",
+        "viewDetailsLog": "Visualizza log dettagli",
+        "ok": "OK",
+        "notOk": "NON OK",
+        "notScanned": "SCANSIONE NON ESEGUITA",
+        "pass": "Corretto",
+        "fail": "Non riuscito",
+        "cancelled": "Annullato",
+        "warning": "Avvertenza",
+        "errorResult": "Scegli un test da eseguire.",
+        "buy": "Acquista ora",
+        "errorDeviceChoose": "Selezionare un dispositivo per eseguire la scansione.",
+        "errorNoOptionSelected": "Selezionare un'opzione.",
+        "offline": "Questo dispositivo è in esecuzione in modalità offline, connettersi a Internet",
+        "customize": {
+            "name": "Personalizza",
+            "test": "Personalizza test",
+            "description": "Seleziona le opzioni riportate di seguito per personalizzare il test",
+            "runTests": "Esegui test selezionati"
+        },
+        "scheduledScan": {
+            "name": "Pianifica scansione",
+            "title": "Pianifica scansione personalizzata",
+            "newScan": "Pianifica nuova scansione",
+            "fullScan": "Scansione completa",
+            "onlyOnce": "Solo una volta",
+            "eachDay": "Ogni giorno",
+            "eachWeek": "Ogni settimana",
+            "eachMonth": "Ogni mese",
+            "eachYear": "Ogni anno",
+            "schedule": "Pianifica",
+            "date": "Data",
+            "pickDate": "Seleziona una data",
+            "scanScheduled": "È stata pianificata una scansione hardware.",
+            "description": "Un'altra scansione è stata già pianificata alla stessa data e ora.",
+            "error": "Errore",
+            "delete": "Elimina",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Ripristina settori danneggiati",
+            "description": "Strumento Lenovo per rilevare e correggere i settori danneggiati su un disco",
+            "goTo": "Vai al ripristino dei settori danneggiati",
+            "localDevices": "Dispositivi locali",
+            "numberSectors": "Numero di settori letti",
+            "numberBadSectors": "Numero di settori danneggiati trovati",
+            "numberFixedSectors": "Numero di settori corretti",
+            "numberNonFixedSectors": "Numero di settori non corretti",
+            "status": "Stato operazione",
+            "elapsedTime": "Tempo trascorso",
+            "hours": "Ore",
+            "hour": "Ora",
+            "minutes": "Minuti",
+            "minute": "Minuto",
+            "seconds": "Secondi",
+            "second": "Secondo",
+            "moreInfo": "Attendere il completamento dell'operazione di ripristino dei settori danneggiati",
+            "systemEvent": "Test interrotto a causa di un evento di sistema che poteva comprometterne il risultato.",
+            "systemPasswordProtected": "Il dispositivo può essere protetto da password. Provare a disabilitare la protezione con password.",
+            "popup": {
+                "description": "L'esecuzione della scansione e del ripristino può causare la perdita dei dati. Si consiglia di effettuare una copia di backup prima di eseguire questa operazione. Procedere?",
+                "yes": "Sì",
+                "no": "No"
+            }
+        },
+        "support": {
+            "title": "Scarica strumenti di diagnostica professionali",
+            "subtitle": "Supporto Lenovo"
+        },
+        "eTicket": {
+            "header": "Problema hardware rilevato.",
+            "problemDetected": "La scansione hardware ha rilevato un problema relativo ai seguenti componenti del computer",
+            "ticketRequestQuestion": "Se il computer è coperto da garanzia, Lenovo può inviare una parte sostitutiva. Aprire un ticket di sostituzione hardware per risolvere il problema",
+            "openTicket": "Apri ticket"
+        },
+        "battery": {
+            "title": "Abilita soglia di carica della batteria",
+            "description": "L'abilitazione della carica personalizzata della batteria consente di prolungare la durata della batteria e di utilizzare il dispositivo più a lungo. Tuttavia, se la carica non è completa, l'autonomia della batteria sarà inferiore. Per abilitare questa funzione, scollegare la presa di alimentazione del computer e scaricare completamente la batteria o scendere sotto la soglia di arresto della carica.",
+            "enable": "Abilita"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
+    }
 }
