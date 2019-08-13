@@ -2,15 +2,16 @@
 
 I have already done the beta-module framework, just need to add the beta feature to it and it will work.
 
-I have already done a beta feature for the password manager, you can also use it as an example.
+Hardware-scan team is done their beta-feature , you can also learn it as an example.
 
 ## Add the beta feature need these step
 
-1.you need new a folder to put your beta feature file
+1.We hope that the features in the beta module are independent and isolated, so you need new a folder to put your all beta feature file , in case of your beta-feature don't need move to official version, we can delete it without modify other code
 
 2.use `ng g module feature-name --routing` command to create your feature module and routing module in your folder
 
-3.create or copy your feature component to this folder, if your component just use exist the basic ui/widget component , you don't need create or copy them , else you should create your new ui/widget in your folder like example.
+3.create or copy your feature component to this folder, if your component just use exist the basic ui/widget component , you don't need create or copy them , else you should create your new ui/widget in your folder like example. If you change the base component, you should create the new base component in your beta-feature file and 
+add beta prefix in component selector name in component.ts to distinguish the official version of the component
 
 4.Coding your-module and your-routing module according to your feature content.
 
