@@ -26,8 +26,6 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 import { WidgetAutocloseComponent } from '../components/widgets/widget-autoclose/widget-autoclose.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
 import { MetricsModule } from '../directives/metrics.module';
-import { faCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { WidgetOfflineModule } from '../components/widgets/widget-offline-info/widget-offline.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalTurnOnComponent } from '../components/modal/modal-autoclose/modal-turn-on/modal-turn-on.component';
@@ -35,7 +33,23 @@ import { ModalAddAppsComponent } from '../components/modal/modal-autoclose/modal
 import { NetworkboostAddAppsComponent } from '../components/modal/modal-network-boost/networkboost-add-apps/networkboost-add-apps.component';
 import { NetworkboostTurnOnComponent } from '../components/modal/modal-network-boost/networkboost-turn-on/networkboost-turn-on.component';
 
+// Load Icons for Gaming
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons/faQuestionCircle';
+import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
+import { faCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
+import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTop';
+import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+
+library.add(faSpinner);
+library.add(faCog);
+library.add(faQuestionCircle);
 library.add(faCheck);
+library.add(faCheckCircle);
+library.add(faChevronDown);
+library.add(faArrowAltToTop);
 
 @NgModule({
 	declarations: [
@@ -78,7 +92,7 @@ library.add(faCheck);
 	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	entryComponents: []
-	
-	
+
+
 })
 export class GamingModule { }

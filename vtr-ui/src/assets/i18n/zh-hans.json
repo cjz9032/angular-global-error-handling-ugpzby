@@ -43,21 +43,21 @@
                     },
                     "driverPopup": {
                         "headerText": "需要安装驱动程序",
-                        "text": "安装驱动程序以激活 RAM 超频（需要重新引导）",
+                        "text": "安装驱动程序以激活RAM超频（需要重启）",
                         "networkBoostText": "您需要安装用于网络增强的驱动程序才能使其生效",
                         "hybridModeText": "您需要安装混合模式的驱动程序才能使其生效",
-                        "cpuOverclockText": "安装驱动程序以激活 CPU 超频（需要重新引导）",
+                        "cpuOverclockText": "安装驱动程序以激活CPU超频（需要重启）",
                         "button": "安装",
                         "link": "取消"
                     },
                     "lightingDriverPopup": {
                         "headerText": "需要安装驱动程序",
-                        "text": "安装驱动程序以激活灯光（需要重新引导）",
+                        "text": "安装驱动程序以激活灯光（需要重启）",
                         "button": "安装",
                         "link": "取消"
                     },
                     "lightingColorMessage": {
-                        "text": "选择此效果不可用的颜色。"
+                        "text": "此效果不可设置颜色"
                     },
                     "autoClose": "自动关闭",
                     "networkBoost": "网络增强",
@@ -142,11 +142,11 @@
                 },
                 "recording": {
                     "title": "开始输入",
-                    "description": "可在 20 秒内录制 20 次输入。"
+                    "description": "可以在20秒内录制20个按键"
                 },
                 "recorded": {
                     "title": "宏键",
-                    "deleteKey": "Delete 键",
+                    "deleteKey": "删除",
                     "clear": "清除",
                     "intervalStatus": {
                         "keep": {
@@ -250,7 +250,7 @@
                     "title": "呼吸"
                 },
                 "option4": {
-                    "title": "波形"
+                    "title": "波浪"
                 },
                 "option5": {
                     "title": "平滑"
@@ -273,7 +273,7 @@
             },
             "brightness": {
                 "text1": {
-                    "title": "*亮度设置未应用"
+                    "title": "*效果无法设置亮度"
                 },
                 "text2": {
                     "title": " 效果"
@@ -309,7 +309,7 @@
             },
             "button": {
                 "default": {
-                    "title": "设为缺省设置"
+                    "title": "恢复缺省设置"
                 }
             },
             "profileheading": {
@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -536,10 +540,10 @@
             "cameraPrivacy": "相机",
             "eyeCareMode": "护眼",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage 无法访问摄像头和麦克风。",
+                "accessUrl": "转到 Windows 设置以授予访问权限",
+                "microphoneNote": "Lenovo Vantage 无法访问麦克风。",
+                "cameraPrivacyNote": "Lenovo Vantage 无法访问摄像头。"
             }
         },
         "systemStatus": {
@@ -709,7 +713,7 @@
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "查看详细信息"
             },
             "power": {
                 "title": "电源管理",
@@ -990,7 +994,7 @@
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
-                        "reset": "重置温度",
+                        "reset": "重置",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
@@ -1024,7 +1028,7 @@
                             "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
-                        "reset": "重置温度",
+                        "reset": "重置",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
                         "onSunsetToSunriseScheduleDescription": "设定从日落到日出的护眼模式",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "摄像头",
                         "tooltip": "单击此处将摄像头属性重置为缺省设置。",
-                        "reset": "重置出厂设置"
+                        "reset": "重置"
                     },
                     "brightness": "亮度",
                     "contrast": "对比度",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "恢复默认设置"
+                "resetToDefault": "重置"
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
@@ -2214,7 +2218,6 @@
         "personal": "个人使用",
         "business": "商业用途",
         "custom": "自定义",
-        "experience": "体验",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
         "title1": "欢迎来到",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"
-    }
+    },
+	"hardwareScan": {
+		"name": "硬件扫描",
+		"title": "执行硬件扫描",
+		"subtitle": "硬件扫描正在执行，请稍候",
+		"quickScan": "快速扫描",
+		"finalResultCode": "最终结果代码",
+		"resultCode": "结果代码",
+		"cancel": "取消",
+		"complete": "完成",
+		"incomplete": "未完成",
+		"loadingComponents": "正在加载组件",
+		"hardwareComponents": "硬件组件",
+		"loadingDevices": "设备正在加载",
+		"select": "选择",
+		"deselect": "取消选择",
+		"allOptions": "全部选项",
+		"latestResult": "最新结果",
+		"back": "返回",
+		"viewResults": "查看结果",
+		"save": "保存",
+		"details": "详细信息",
+		"recurrence": "循环",
+		"interval": "间隔",
+		"time": "时间",
+		"type": "类型",
+		"hours": "小时",
+		"minutes": "分钟",
+		"am": "上午",
+		"pm": "下午",
+		"previousResult": "以前的结果",
+		"lastScanOn": "上次扫描时间",
+		"result": "结果",
+		"viewDetailsLog": "查看详细信息日志",
+		"ok": "确定",
+		"notOk": "不正常",
+		"notScanned": "未扫描",
+		"pass": "通过",
+		"fail": "失败",
+		"cancelled": "已取消",
+		"warning": "警告",
+		"errorResult": "请选择要运行的测试。",
+		"buy": "立即购买",
+		"errorDeviceChoose": "请选择要运行的设备。",
+		"errorNoOptionSelected": "请选择一个选项。",
+		"offline": "此设备正在脱机模式下运行，请连接因特网",
+		"common": {
+			"menu": "硬件扫描"
+		},
+		"customize": {
+			"name": "定制",
+			"test": "定制测试",
+			"description": "选择以下选项，定制您的测试",
+			"runTests": "运行选中的测试"
+		},
+		"scheduledScan": {
+			"name": "安排扫描",
+			"title": "安排您的扫描",
+			"newScan": "安排新扫描",
+			"fullScan": "完整扫描",
+			"onlyOnce": "仅一次",
+			"eachDay": "每天",
+			"eachWeek": "每周",
+			"eachMonth": "每月",
+			"eachYear": "每年",
+			"schedule": "安排",
+			"date": "日期",
+			"pickDate": "选择日期",
+			"scanScheduled": "已安排硬件扫描！",
+			"description": "已安排在相同的时间和日期进行另一次扫描！",
+			"error": "错误",
+			"delete": "删除"
+		},
+		"recoverBadSectors": {
+			"title": "恢复坏扇区",
+			"description": "用于发现和修复磁盘上坏扇区的 Lenovo 工具",
+			"goTo": "恢复坏扇区",
+			"localDevices": "本地设备",
+			"numberSectors": "读取的扇区数",
+			"numberBadSectors": "找到的坏扇区数",
+			"numberFixedSectors": "修复的扇区数",
+			"numberNonFixedSectors": "未修复的扇区数",
+			"status": "操作状态",
+			"elapsedTime": "已用时间",
+			"hours": "小时",
+			"hour": "小时",
+			"minutes": "分钟",
+			"minute": "分钟",
+			"seconds": "秒",
+			"second": "秒",
+			"moreInfo": "正在恢复坏扇区，请稍候",
+			"systemEvent": "测试已中止，因为发生了可能影响结果的系统事件。",
+			"systemPasswordProtected": "设备可能受密码保护。请尝试禁用密码保护。",
+			"popup": {
+				"description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
+				"yes": "是",
+				"no": "否"
+			}
+		},
+		"support": {
+			"title": "下载专业诊断工具",
+			"subtitle": "Lenovo 支持"
+		},
+		"eTicket": {
+			"header": "检测到硬件问题。",
+			"problemDetected": "硬件扫描已检测到以下计算机的组件存在问题",
+			"ticketRequestQuestion": "如果您的计算机在保修期内，Lenovo 可以发送更换部件。您是否要打开一个硬件更换凭单以解决此问题",
+			"openTicket": "打开凭单"
+		},
+		"battery": {
+			"title": "启用电池充电阈值",
+			"description": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少运行时电池使用寿命。为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
+			"enable": "启用"
+		}
+	}
 }

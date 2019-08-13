@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Netačan napon baterije",
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
-                "seeDetailsLink": "See details"
+                "seeDetailsLink": "Pogledajte detalje"
             },
             "power": {
                 "title": "Napajanje",
@@ -990,7 +994,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Postavite temperaturu na početnu vrednost",
+                        "reset": "Poništi",
                         "tooltip": "Režim za zaštitu vida prilagođava temperaturu boja ekrana kako bi se isfiltriralo plavo svetlo i smanjilo naprezanje očiju.",
                         "onSunsetToSunriseScheduleDescription": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Postavite temperaturu na početnu vrednost",
+                        "reset": "Poništi",
                         "tooltip": "Režim za zaštitu vida prilagođava temperaturu boja ekrana kako bi se isfiltriralo plavo svetlo i smanjilo naprezanje očiju.",
                         "onSunsetToSunriseScheduleDescription": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kliknite ovde da biste svojstva kamere vratili na podrazumevane vrednosti.",
-                        "reset": "Ponovo postavi na fabričke postavke"
+                        "reset": "Poništi"
                     },
                     "brightness": "Osvetljenost",
                     "contrast": "Kontrast",
@@ -1166,7 +1170,7 @@
                     "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskih prisustva."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch prijavljivanje",
+                    "title": "Bezdodirno prijavljivanje",
                     "caption": "Ova funkcija automatski otključava ili budi računar kada ste ispred njega ili mu prilazite.",
                     "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
@@ -1206,14 +1210,14 @@
                     "description1": "Ova funkcija se oslanja na sistem Windows Hello. Uverite se da je prepoznavanje lica uključeno u postavkama operativnog sistema Windows.",
                     "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo. Međutim, funkcija NE prikuplja, nikakve lične podatke.",
                     "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
-                    "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Automatsko prijavljivanje putem IC kamere neće funkcionisati.",
+                    "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Bezdodirno prijavljivanje neće raditi.",
                     "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sistema Windows Hello",
                     "screenTimeoutSettings": "Idite na postavke vremena čekanja za ekran"
                 },
-                "resetToDefault": "PONOVNO POSTAVLJANJE NA PODRAZUMEVANE POSTAVKE"
+                "resetToDefault": "Poništi"
             },
             "intelligentScreen": {
                 "title": "Inteligentni ekran",
@@ -2214,7 +2218,6 @@
         "personal": "Lična upotreba",
         "business": "Poslovna upotreba",
         "custom": "Prilagođeno iskustvo",
-        "experience": "Iskustvo",
         "privacytitle": "Dozvolite nam anonimno prikupljanje podataka o statistici korišćenja kako bismo poboljšali kvalitet aplikacije.",
         "moreInterest": "+ više oblasti interesovanja",
         "title1": "Dobro došli u",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
         "Note": "Napomena: ",
         "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju."
-    }
+    },
+	"hardwareScan": {
+		"name": "Skeniranje hardvera",
+		"title": "Obavite skeniranje hardvera",
+		"subtitle": "Sačekajte dok se obavlja skeniranje hardvera",
+		"quickScan": "Brzo skeniranje",
+		"finalResultCode": "Konačni povratni kôd",
+		"resultCode": "Povratni kôd",
+		"cancel": "Otkaži",
+		"complete": "Završi",
+		"incomplete": "Nije završeno",
+		"loadingComponents": "Učitavanje komponenti",
+		"hardwareComponents": "Hardverske komponente",
+		"loadingDevices": "Učitavanje uređaja",
+		"select": "Izaberi",
+		"deselect": "Poništite izbor",
+		"allOptions": "Sve opcije",
+		"latestResult": "Najnoviji rezultat",
+		"back": "NAZAD",
+		"viewResults": "Prikaži rezultate",
+		"save": "Sačuvaj",
+		"details": "Detalji",
+		"recurrence": "Ponavljanje",
+		"interval": "Interval",
+		"time": "Vreme",
+		"type": "Tip",
+		"hours": "Sati",
+		"minutes": "Minuti",
+		"am": "pre podne",
+		"pm": "popodne",
+		"previousResult": "Prethodni rezultati",
+		"lastScanOn": "Poslednje skeniranje",
+		"result": "Rezultat",
+		"viewDetailsLog": "Prikaži evidenciju sa detaljima",
+		"ok": "U redu",
+		"notOk": "NIJE U REDU",
+		"notScanned": "NIJE SKENIRANO",
+		"pass": "Uspelo je",
+		"fail": "Nije uspelo",
+		"cancelled": "Otkazano",
+		"warning": "Upozorenje",
+		"errorResult": "Morate izabrati test koji ćete pokrenuti.",
+		"buy": "Kupi odmah",
+		"errorDeviceChoose": "Morate izabrati uređaj koji ćete pokrenuti.",
+		"errorNoOptionSelected": "Morate da izaberete neku opciju.",
+		"offline": "Uređaj radi u režimu van mreže, povežite internet",
+		"common": {
+			"menu": "Skeniranje hardvera"
+		},
+		"customize": {
+			"name": "Prilagodi",
+			"test": "Prilagodite test",
+			"description": "Izaberite opcije ispod da biste prilagodili test",
+			"runTests": "Pokreni izabrane testove"
+		},
+		"scheduledScan": {
+			"name": "Zakaži skeniranje",
+			"title": "Zakažite skeniranje",
+			"newScan": "Zakažite novo skeniranje",
+			"fullScan": "Potpuno skeniranje",
+			"onlyOnce": "Samo jednom",
+			"eachDay": "Svaki dan",
+			"eachWeek": "Svake sedmice",
+			"eachMonth": "Svakog meseca",
+			"eachYear": "Svake godine",
+			"schedule": "Zakaži",
+			"date": "Datum",
+			"pickDate": "Izaberite datum",
+			"scanScheduled": "Obavljeno je skeniranje hardvera!",
+			"description": "Drugo skeniranje je već bilo zakazano u isto vreme i datum!",
+			"error": "Greška",
+			"delete": "Izbriši"
+		},
+		"recoverBadSectors": {
+			"title": "Oporavi neispravne sektore",
+			"description": "Lenovo alat za otkrivanje i popravljanje neispravnih sektora na disku",
+			"goTo": "Idite na oporavak neispravnih sektora",
+			"localDevices": "Logički uređaji",
+			"numberSectors": "Broj pročitanih sektora",
+			"numberBadSectors": "Broj pronađenih neispravnih sektora",
+			"numberFixedSectors": "Broj ispravljenih sektora",
+			"numberNonFixedSectors": "Broj neispravljenih sektora",
+			"status": "Radni status",
+			"elapsedTime": "Proteklo vreme",
+			"hours": "Sati",
+			"hour": "Sat",
+			"minutes": "Minuti",
+			"minute": "Minut",
+			"seconds": "Sekundi",
+			"second": "Sekunda",
+			"moreInfo": "Pričekajte dok se obavlja oporavak neispravnih sektora",
+			"systemEvent": "Testiranje je obustavljeno usled događaja do kojeg je došlo na sistemu koji bi mogao da ugrozi ishod.",
+			"systemPasswordProtected": "Uređaj je možda zaštićen lozinkom. Pokušajte da onemogućite zaštitu pomoću lozinke.",
+			"popup": {
+				"description": "Izvršenje skeniranja i popravke može da prouzrokuje gubitak podataka. Preporučujemo da napravite rezervnu kopiju pre izvršavanja ove operacije. Želite li zaista da nastavite?",
+				"yes": "Da",
+				"no": "Ne"
+			}
+		},
+		"support": {
+			"title": "Preuzmite profesionalne dijagnostičke alatke",
+			"subtitle": "Lenovo podrška"
+		},
+		"eTicket": {
+			"header": "Otkriven je problem sa hardverom.",
+			"problemDetected": "Skeniranje hardvera je otkrilo problem sa sledećim komponentama računara",
+			"ticketRequestQuestion": "Lenovo može da pošalje deo za zamenu ako je računar pod garancijom. Želite li da napravite zahtev za zamenu hardvera da biste rešili problem",
+			"openTicket": "Napravi zahtev"
+		},
+		"battery": {
+			"title": "Omogući prag punjenja baterije",
+			"description": "Omogućavanje prilagođenoj punjenja baterija omogućiće da opšte zdravlje baterije duže traje dok koristite ovaj uređaj. Međutim, ako baterija ne bude napunjena u potpunosti, trajanje baterije pri izvršavanju će biti kraće. Da biste u potpunosti omogućili ovu funkciju, isključite mašinu i omogućite da se baterija isprazni ili da bude ispod praga za prestanak punjenja.",
+			"enable": "Omogući"
+		}
+	}
 }

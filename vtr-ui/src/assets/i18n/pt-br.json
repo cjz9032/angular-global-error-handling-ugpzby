@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Voltagem da bateria incorreta",
                 "batteryNotDetected": "Nenhuma bateria detectada",
                 "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ver detalhes"
             },
             "power": {
                 "title": "Energia",
@@ -990,7 +994,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Fria"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Reconfigurar",
                         "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
                         "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Fria"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Reconfigurar",
                         "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
                         "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Câmera",
                         "tooltip": "Clique aqui para redefinir as propriedades da câmera para as configurações padrão.",
-                        "reset": "Redefinir configurações de fábrica"
+                        "reset": "Reconfigurar"
                     },
                     "brightness": "Brilho",
                     "contrast": "Contraste",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Ir para as configurações do Windows Hello",
                     "screenTimeoutSettings": "Vá para Configurações de tempo limite de tela"
                 },
-                "resetToDefault": "REDEFINIR PARA CONFIGURAÇÕES PADRÃO"
+                "resetToDefault": "Reconfigurar"
             },
             "intelligentScreen": {
                 "title": "Tela inteligente",
@@ -2214,7 +2218,6 @@
         "personal": "Uso pessoal",
         "business": "Uso comercial",
         "custom": "Personalizar a experiência",
-        "experience": "Experiência",
         "privacytitle": "Ajude-nos a melhorar a qualidade do aplicativo permitindo a coleta anônima de estatísticas de uso.",
         "moreInterest": "+ mais interesses",
         "title1": "Bem-vindo ao",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "Enviar estatísticas anônimas de uso para a Lenovo.",
         "Note": "Nota: ",
         "settingsNotes": "todas as configurações nesta página precisarão que os usuários reiniciem este aplicativo para entrarem em vigor."
-    }
+    },
+	"hardwareScan": {
+		"name": "Verificação de Hardware",
+		"title": "Executar uma verificação de hardware",
+		"subtitle": "Aguarde enquanto a verificação de hardware está em execução",
+		"quickScan": "Verificação Rápida",
+		"finalResultCode": "Código de resultado final",
+		"resultCode": "Código de resultado",
+		"cancel": "Cancelar",
+		"complete": "Concluído",
+		"incomplete": "Não concluída",
+		"loadingComponents": "Carregando Componentes",
+		"hardwareComponents": "Componentes de Hardware",
+		"loadingDevices": "Carregando Dispositivos",
+		"select": "Selecionar",
+		"deselect": "Desmarcar",
+		"allOptions": "Todas as Opções",
+		"latestResult": "Resultado Mais Recentes",
+		"back": "VOLTAR",
+		"viewResults": "Exibir resultados",
+		"save": "Salvar",
+		"details": "Detalhes",
+		"recurrence": "Recorrência",
+		"interval": "Intervalo",
+		"time": "Hora",
+		"type": "Tipo",
+		"hours": "Horas",
+		"minutes": "Minutos",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "Resultados Anteriores",
+		"lastScanOn": "Última Verificação em",
+		"result": "Resultado",
+		"viewDetailsLog": "Exibir Log de Detalhes",
+		"ok": "OK",
+		"notOk": "NÃO OK",
+		"notScanned": "NÃO DIGITALIZADO",
+		"pass": "Êxito",
+		"fail": "Falha",
+		"cancelled": "Cancelado",
+		"warning": "Aviso",
+		"errorResult": "É necessário escolher um teste para ser executado.",
+		"buy": "Comprar agora",
+		"errorDeviceChoose": "É necessário escolher um dispositivo para ser executado.",
+		"errorNoOptionSelected": "É necessário selecionar uma opção.",
+		"offline": "Este dispositivo está em execução no modo offline, conecte-se à Internet",
+		"common": {
+			"menu": "Verificação de Hardware"
+		},
+		"customize": {
+			"name": "Personalizar",
+			"test": "Personalizar Teste",
+			"description": "Selecione as opções abaixo para personalizar o teste",
+			"runTests": "Executar testes selecionados"
+		},
+		"scheduledScan": {
+			"name": "Agendar verificação",
+			"title": "Agendar sua verificação",
+			"newScan": "Agendar nova verificação",
+			"fullScan": "Verificação completa",
+			"onlyOnce": "Apenas uma vez",
+			"eachDay": "Cada dia",
+			"eachWeek": "Cada semana",
+			"eachMonth": "Cada mês",
+			"eachYear": "Cada ano",
+			"schedule": "Agendamento",
+			"date": "Data",
+			"pickDate": "Escolher uma data",
+			"scanScheduled": "Uma verificação de hardware foi agendada!",
+			"description": "Outra verificação já estava agendada na mesma hora e data.",
+			"error": "Erro",
+			"delete": "Excluir"
+		},
+		"recoverBadSectors": {
+			"title": "Recuperar setores ruins",
+			"description": "Ferramenta Lenovo para descobrir e corrigir setores com defeito em um disco",
+			"goTo": "Ir para recuperação de setores com defeito",
+			"localDevices": "Dispositivos Locais",
+			"numberSectors": "Número de setores lidos",
+			"numberBadSectors": "Número de setores com defeito encontrados",
+			"numberFixedSectors": "Número de setores fixados",
+			"numberNonFixedSectors": "Número de setores não fixados",
+			"status": "Status de operação",
+			"elapsedTime": "Tempo decorrido",
+			"hours": "Horas",
+			"hour": "Hora",
+			"minutes": "Minutos",
+			"minute": "Minuto",
+			"seconds": "Segundos",
+			"second": "Segundo",
+			"moreInfo": "Aguarde enquanto a recuperação de setores com defeito está sendo executada",
+			"systemEvent": "Teste cancelado porque ocorreu um evento do sistema que poderia comprometer o resultado.",
+			"systemPasswordProtected": "O dispositivo pode estar protegido por senha. Tente desativar a proteção por senha.",
+			"popup": {
+				"description": "A execução de verificação e de reparo pode causar perda de dados. Recomenda-se fazer um backup antes de executar esta operação. Tem certeza que deseja continuar?",
+				"yes": "Sim",
+				"no": "Não"
+			}
+		},
+		"support": {
+			"title": "Baixar ferramentas de diagnóstico profissional",
+			"subtitle": "Suporte da Lenovo"
+		},
+		"eTicket": {
+			"header": "Problema de hardware detectado.",
+			"problemDetected": "A Verificação de hardware detectou um problema com os seguintes componentes do seu computador",
+			"ticketRequestQuestion": "A Lenovo pode enviar uma peça de substituição, se o seu computador estiver sob garantia. Gostaria de abrir um tíquete de substituição de hardware para solucionar o problema",
+			"openTicket": "Abra tíquete"
+		},
+		"battery": {
+			"title": "Ativar Limite de Carga da Bateria",
+			"description": "Ativar uma carga de bateria personalizada permitirá que a integridade geral da bateria dure mais conforme você usar este dispositivo. No entanto, não ter uma carga máxima permitirá menos tempo de execução da vida útil da bateria. Para ativar completamente esse recurso, desconecte sua máquina e permita que a bateria descarregue até ou abaixo do limite de interrupção de carga.",
+			"enable": "Ativar"
+		}
+	}
 }

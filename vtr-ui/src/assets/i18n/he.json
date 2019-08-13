@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "מתח הסוללה שגוי",
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "ראו פרטים"
             },
             "power": {
                 "title": "צריכת חשמל",
@@ -990,7 +994,7 @@
                             "warm": "חם (עדיף לעיניים)",
                             "cold": "קרה"
                         },
-                        "reset": "איפוס הטמפרטורה",
+                        "reset": "איפוס",
                         "tooltip": "מצב שמירה על העיניים מתאים באופן אוטומטי את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את ההשפעה על העיניים.",
                         "onSunsetToSunriseScheduleDescription": "תזמון מצב שמירה על העיניים מהשקיעה עד הזריחה",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "חם (עדיף לעיניים)",
                             "cold": "קרה"
                         },
-                        "reset": "איפוס הטמפרטורה",
+                        "reset": "איפוס",
                         "tooltip": "מצב שמירה על העיניים מתאים באופן אוטומטי את טמפרטורת הצבע של התצוגה כדי לסנן את האור הכחול ולהפחית את ההשפעה על העיניים.",
                         "onSunsetToSunriseScheduleDescription": "תזמון מצב שמירה על העיניים מהשקיעה עד הזריחה",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "מצלמה",
                         "tooltip": "לחצו כאן כדי לאפס את מאפייני המצלמה להגדרות ברירת המחדל.",
-                        "reset": "הגדרות איפוס להגדרות היצרן"
+                        "reset": "איפוס"
                     },
                     "brightness": "בהירות",
                     "contrast": "ניגודיות",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "מעבר אל הגדרות Windows Hello",
                     "screenTimeoutSettings": "עברו אל הגדרות הגבלת זמן פעילות המסך"
                 },
-                "resetToDefault": "איפוס להגדרות ברירת המחדל"
+                "resetToDefault": "איפוס"
             },
             "intelligentScreen": {
                 "title": "מסך חכם",
@@ -2214,7 +2218,6 @@
         "personal": "שימוש אישי",
         "business": "שימוש עסקי",
         "custom": "חוויה מותאמת אישית",
-        "experience": "ניסיון",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
         "moreInterest": "‏+ תחומי עניין נוספים",
         "title1": "ברוכים הבאים אל",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה."
-    }
+    },
+	"hardwareScan": {
+		"name": "סריקת חומרה",
+		"title": "ביצוע סריקת חומרה",
+		"subtitle": "המתינו כאשר סריקת החומרה מתבצעת",
+		"quickScan": "סריקה מהירה",
+		"finalResultCode": "קוד תוצאה סופי",
+		"resultCode": "קוד תוצאה",
+		"cancel": "ביטול",
+		"complete": "הושלם",
+		"incomplete": "לא הושלמה",
+		"loadingComponents": "טעינת רכיבים",
+		"hardwareComponents": "רכיבי חומרה",
+		"loadingDevices": "טעינת התקנים",
+		"select": "בחרו",
+		"deselect": "ביטול הבחירה",
+		"allOptions": "כל האפשרויות",
+		"latestResult": "התוצאה האחרונה",
+		"back": "חזרה",
+		"viewResults": "צפו בתוצאות",
+		"save": "שמירה",
+		"details": "פרטים",
+		"recurrence": "הישנות",
+		"interval": "מרווח",
+		"time": "זמן",
+		"type": "סוג",
+		"hours": "שעות",
+		"minutes": "דקות",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "תוצאות קודמות",
+		"lastScanOn": "סריקה אחרונה",
+		"result": "תוצאה",
+		"viewDetailsLog": "הצגת יומן הפרטים",
+		"ok": "אישור",
+		"notOk": "לא תקין",
+		"notScanned": "לא סרוק",
+		"pass": "עבר",
+		"fail": "נכשל",
+		"cancelled": "מבוטל",
+		"warning": "אזהרה",
+		"errorResult": "עליכם לבחור בדיקה.",
+		"buy": "קנו עכשיו",
+		"errorDeviceChoose": "יש לבחור מכשיר להפעלה.",
+		"errorNoOptionSelected": "יש לבחור אפשרות.",
+		"offline": "המכשיר פועל במצב לא מקוון, יש לחבר אותו לאינטרנט",
+		"common": {
+			"menu": "סריקת חומרה"
+		},
+		"customize": {
+			"name": "התאמה אישית",
+			"test": "התאמה אישית של הבדיקה",
+			"description": "בחר את האפשרויות הבאות כדי להתאים אישית את הבדיקה",
+			"runTests": "הפעילו בדיקות שנבחרו"
+		},
+		"scheduledScan": {
+			"name": "תזמון סריקה",
+			"title": "תזמון סריקה",
+			"newScan": "תזמון סריקה חדשה",
+			"fullScan": "סריקה מלאה",
+			"onlyOnce": "רק פעם אחת",
+			"eachDay": "כל יום",
+			"eachWeek": "כל שבוע",
+			"eachMonth": "כל חודש",
+			"eachYear": "כל שנה",
+			"schedule": "תזמון",
+			"date": "תאריך",
+			"pickDate": "יש לבחור תאריך",
+			"scanScheduled": "נקבעה סריקת חומרה",
+			"description": "בתאריך הזה ובשעה הזו כבר נקבעה סריקה נוספת!",
+			"error": "שגיאה",
+			"delete": "מחק"
+		},
+		"recoverBadSectors": {
+			"title": "שחזור סקטורים פגומים",
+			"description": "כלי של Lenovo שנועד לגלות ולתקן סקטורים פגומים בדיסק",
+			"goTo": "עברו אל שחזור סקטורים פגומים",
+			"localDevices": "התקנים מקומיים",
+			"numberSectors": "מספר הסקטורים שנקראו",
+			"numberBadSectors": "מספר הסקטורים הפגומים שנמצאו",
+			"numberFixedSectors": "מספר הסקטורים שתוקנו",
+			"numberNonFixedSectors": "מספר הסקטורים שלא תוקנו",
+			"status": "סטטוס הפעולה",
+			"elapsedTime": "זמן שחלף",
+			"hours": "שעות",
+			"hour": "שעה",
+			"minutes": "דקות",
+			"minute": "דקה",
+			"seconds": "שניות",
+			"second": "שניה",
+			"moreInfo": "המתינו בזמן השחזור של סקטורים פגומים",
+			"systemEvent": "הבדיקה הופסקה מאחר והתרחש אירוע מערכת היכול לפגום בתוצאה.",
+			"systemPasswordProtected": "ייתכן וההתקן מוגן על ידי סיסמה. נסו להשבית את פונקציית ההגנה בסיסמה.",
+			"popup": {
+				"description": "ביצוע פעולת סריקה ותיקון עלול לגרום לאובדן נתונים. מומלץ ליצור עותק גיבוי לפני ביצוע הפעולה. האם אתם בטוחים שברצונכם להמשיך?",
+				"yes": "כן",
+				"no": "לא"
+			}
+		},
+		"support": {
+			"title": "הורידו כלי אבחון מקצועיים",
+			"subtitle": "התמיכה של Lenovo"
+		},
+		"eTicket": {
+			"header": "זוהתה בעיית חומרה.",
+			"problemDetected": "סריקת החומרה זיהתה בעיה ברכיבים הבאים של המחשב",
+			"ticketRequestQuestion": "Lenovo יכולה לשלוח חלק חלופי אם יש אחריות על המחשב שלך. האם ברצונך לפתוח כרטיס החלפת חומרה כדי לטפל בבעיה",
+			"openTicket": "פתיחת כרטיס"
+		},
+		"battery": {
+			"title": "הפעלת סף טעינת הסוללה",
+			"description": "הפעלת טעינה מותאמת אישית לסוללה תשפר את רמת התקינות הכללית של הסוללה ותאפשר לה לפעול זמן רב יותר במהלך השימוש בהתקן זה. עם זאת, טעינה חלקית בלבד תקצר את משך הפעילות הרציפה של הסוללה. כדי להפעיל תכונה זו באופן מלא, יש לנתק את המחשב מהחשמל ולאפשר לסוללה להתרוקן עד לסף עצירת הטעינה, או מתחתיו.",
+			"enable": "הפעלת"
+		}
+	}
 }

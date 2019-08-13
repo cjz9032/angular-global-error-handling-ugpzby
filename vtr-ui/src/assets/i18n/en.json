@@ -42,7 +42,7 @@
 					"ramOverlock": "RAM Overclock",
 					"popup": {
 						"text": "Change will be effective after restarting computer.",
-						"button": "ok"
+						"button": "OK"
 					},
 					"driverPopup": {
 						"headerText": "Driver Install Required",
@@ -50,14 +50,14 @@
 						"networkBoostText": "You need install driver for Network Boost to  make it effective",
 						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
 						"cpuOverclockText": "Install driver to activate CPU Overclock (Reboot Required)",
-						"button": "Install",
-						"link": "cancel"
+						"button": "INSTALL",
+						"link": "CANCEl"
 					},
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
 						"text": "Install driver to activate lighting (Reboot Required)",
-						"button": "Install",
-						"link": "cancel"
+						"button": "INSTALL",
+						"link": "CANCEl"
 					},
 					"lightingColorMessage": {
 						"text": "Selecting color not available to this effect."
@@ -228,8 +228,8 @@
 					"body": "Recording will time out if the input stopped for more than 10 seconds."
 				},
 				"confirmButton": {
-					"btnClear": "Clear",
-					"btnCancel": "Cancel"
+					"btnClear": "CLEAR",
+					"btnCancel": "CANCEL"
 				},
 				"btnOk": "OK"
 			},
@@ -309,7 +309,7 @@
 			},
 			"button": {
 				"default": {
-					"title": "Set to default"
+					"title": "SET TO DEFAULT"
 				}
 			},
 			"profileheading": {
@@ -373,25 +373,25 @@
 		"autoClose": {
 			"title": "Auto Close",
 			"addAppsButton": "Add",
-			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize the gaming performance. NOTE: This feature closes the app completely. So always make sure that you've saved your work.",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
-				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
+				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "Turn on",
 				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
-				"body": "Only apps currently running will show in the list below."
+				"body": "Only apps currently running will be shown in the list below."
 			},
 			"noRunningApps": {
-				"title": "No Running Apps To Add",
-				"body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+				"title": "No running apps to add",
+				"body": "Only apps that are currently running will be shown. Please launch an app that you want to add and come back."
 			}
 		}, "networkBoost": {
 		"title": "Network Boost",
-		"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+		"introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
 		"modalTurn": {
 			"title": "Turn on Network Boost ?",
 			"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
@@ -401,7 +401,11 @@
 		},
 		"modalAddApps": {
 			"title": "Add apps to Network Boost",
-			"body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+			"body": {
+				"part1" : "You can add up to 5 additional apps to boost",
+				"part2" : "of",
+				"part3": "added"
+			}
 		}
 	}
 },
@@ -1442,7 +1446,12 @@
 		"title": "Connected Home Security",
 		"notification": {
 			"recent": "Recent security notifications",
-			"notifications": "Notifications"
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
 		},
 		"ecosystem": {
 			"ecosystemBlockTitle": "Protect your device ecosystem",
@@ -2249,5 +2258,124 @@
 		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
 		"Note": "Note: ",
 		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
+	},
+	"hardwareScan": {
+		"name": "Hardware Scan",
+		"title": "Perform a hardware scan",
+		"subtitle": "Please wait while hardware scan is being performed",
+		"quickScan": "Quick Scan",
+		"finalResultCode": "Final Result Code",
+		"resultCode": "Result Code",
+		"cancel": "Cancel",
+		"complete": "Complete",
+		"incomplete": "Incomplete",
+		"completed": "Completed",
+		"notCompleted": "Not Completed",
+		"loadingComponents": "Loading Components",
+		"hardwareComponents": "Hardware Components",
+		"loadingDevices": "Devices Loading",
+		"select": "Select",
+		"deselect": "Deselect",
+		"allOptions": "All Options",
+		"latestResult": "Latest Result",
+		"back": "BACK",
+		"viewResults": "View results",
+		"refreshModules": "Refresh Modules",
+		"save": "Save",
+		"details": "Details",
+		"recurrence": "Recurrence",
+		"interval": "Interval",
+		"time": "Time",
+		"type": "Type",
+		"hours": "Hours",
+		"minutes": "Minutes",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "Previous Results",
+		"lastScanOn": "Last Scan on",
+		"result": "Result",
+		"viewDetailsLog": "View Details Log",
+		"ok": "OK",
+		"notOk": "NOT OK",
+		"notScanned": "NOT SCANNED",
+		"pass": "Pass",
+		"fail": "Fail",
+		"cancelled": "Cancelled",
+		"warning": "Warning",
+		"errorResult": "Please, you need to choose a test to run.",
+		"buy": "Buy now",
+		"errorDeviceChoose": "Please, you need to choose a device to run.",
+		"errorNoOptionSelected": "Please, you need to select an option.",
+		"offline": "This device is running offline mode, please connect internet",
+		"yes": "yes",
+		"attention": "Attention",
+		"cancelTextPrompt": "Are you sure you would like to cancel?",
+		"cancelTextProgress": "Please wait for cancel progress",
+		"customize": {
+			"name": "Customize",
+			"test": "Customize Test",
+			"description": "Select the options below to customize your test",
+			"runTests": "Run selected tests"
+		},
+		"scheduledScan": {
+			"name": "Schedule scan",
+			"title": "Schedule your scan",
+			"newScan": "Schedule new scan",
+			"fullScan": "Full scan",
+			"onlyOnce": "Only Once",
+			"eachDay": "Each Day",
+			"eachWeek": "Each Week",
+			"eachMonth": "Each Month",
+			"eachYear": "Each Year",
+			"schedule": "Schedule",
+			"date": "Date",
+			"pickDate": "Pick a Date",
+			"scanScheduled": "A Hardware Scan Was Scheduled!",
+			"description": "Another scan was already scheduled at the same time and date!",
+			"error": "Error",
+			"delete": "Delete",
+			"warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+		},
+		"recoverBadSectors": {
+			"title": "Recover Bad Sectors",
+			"description": "Lenovo tool to discover and fix bad sectors on a disk",
+			"goTo": "Go to recover bad sectors",
+			"localDevices": "Local Devices",
+			"numberSectors": "Number of sectors read",
+			"numberBadSectors": "Number of bad sectors found",
+			"numberFixedSectors": "Number of fixed sectors",
+			"numberNonFixedSectors": "Number of non fixed sectors",
+			"status": "Operation status",
+			"elapsedTime": "Elapsed time",
+			"hours": "Hours",
+			"hour": "Hour",
+			"minutes": "Minutes",
+			"minute": "Minute",
+			"seconds": "Seconds",
+			"second": "Second",
+			"moreInfo": "Please wait while recover bad sectors is being performed",
+			"systemEvent": "Test aborted because a system event that could compromise the outcome has happened.",
+			"systemPasswordProtected": "Device may be password protected. Try disabling the password protection.",
+			"popup": {
+				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. Are you sure you want to proceed?",
+				"yes": "Yes",
+				"no": "No"
+			}
+		},
+		"support": {
+			"title": "Download professional diagnostic tools",
+			"subtitle": "Lenovo support"
+		},
+		"eTicket": {
+			"header": "Hardware problem detected.",
+			"problemDetected": "The Hardware scan has detected a problem with the followings components of your computer",
+			"ticketRequestQuestion": "Lenovo can send a replacement part if your computer is under warranty. Would you like to open a hardware replacement ticket to address the problem",
+			"openTicket": "Open ticket"
+		},
+		"battery": {
+			"title": "Enable Battery Charge Threshold",
+			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
+			"enable": "Enable"
+		}
 	}
 }

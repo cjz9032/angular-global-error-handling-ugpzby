@@ -8,49 +8,29 @@ import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclo
 import { isUndefined } from 'util';
 
 @Component({
-  selector: 'vtr-widget-autoclose',
-  templateUrl: './widget-autoclose.component.html',
-  styleUrls: ['./widget-autoclose.component.scss']
+	selector: 'vtr-widget-autoclose',
+	templateUrl: './widget-autoclose.component.html',
+	styleUrls: ['./widget-autoclose.component.scss']
 })
 export class WidgetAutocloseComponent implements OnInit {
-  @Output() actionModal = new EventEmitter<any>();
-  @Input() turnOnACStatus: boolean;
-  public autoCloseAppList: any;
-  gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
-  constructor(private gamingCapabilityService: GamingAllCapabilitiesService, private gamingAutoCloseService: GamingAutoCloseService) { }
+	@Output() actionModal = new EventEmitter<any>();
+	@Output() removeFromList = new EventEmitter<any>();
+	@Input() turnOnACStatus: boolean;
+	@Input() appListData: any[];
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
-  ngOnInit() {
-    this.gamingProperties.optimizationFeature = this.gamingCapabilityService.getCapabilityFromCache(
-      LocalStorageKey.optimizationFeature
-    );
-    this.refreshAutoCloseList();
-  }
+	ngOnInit() {
+	}
 
-  // Get Gaming AutoClose Lists
+	// Open Target Modal
+	public openAutoCloseModal() {
+		this.actionModal.emit();
+	}
 
-  public refreshAutoCloseList() {
-    this.autoCloseAppList = this.gamingAutoCloseService.getAutoCloseListCache();
-    try {
-      this.gamingAutoCloseService.getAppsAutoCloseList().then((appList: any) => {
-        if (!isUndefined(appList.processList)) {
-          this.autoCloseAppList = appList.processList;
-          this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
-        }
-      });
-    } catch (error) {
-      console.error(error.message);
-    }
-  }
+	// Remove App from Autoclose List
 
-  public openAutoCloseModal() {
-    this.actionModal.emit();
-  }
+	public removeApp(name: string, index: number) {
+		this.removeFromList.emit({ name, index });
+	}
 
-  removeApp(appName: string, index: number) {
-    this.gamingAutoCloseService.delAppsAutoCloseList(appName).then((response: any) => {
-      console.log('Deleted successfully ------------------------>', response);
-      this.autoCloseAppList.splice(index, 1);
-      this.refreshAutoCloseList();
-    });
-  }
 }

@@ -63,7 +63,7 @@ import { faPlane } from '@fortawesome/pro-light-svg-icons/faPlane';
 import { faThumbtack } from '@fortawesome/pro-light-svg-icons/faThumbtack';
 import { faBatteryHalf } from '@fortawesome/pro-light-svg-icons/faBatteryHalf';
 import { faBatteryBolt } from '@fortawesome/pro-light-svg-icons/faBatteryBolt';
-import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
+import { faQuestionCircle, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faBatteryQuarter } from '@fortawesome/pro-light-svg-icons/faBatteryQuarter';
 import { faTachometerFast } from '@fortawesome/pro-light-svg-icons/faTachometerFast';
 import { faMicrophone } from '@fortawesome/pro-light-svg-icons/faMicrophone';
@@ -83,8 +83,9 @@ import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faCircle as faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
 import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
-
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 
 library.add(faCheck);
 library.add(faCheckCircle);
@@ -116,6 +117,9 @@ library.add(falTimes);
 library.add(faCircle);
 library.add(falCircle);
 library.add(faSync);
+library.add(faCircleNotch);
+library.add(faAngleRight);
+library.add(faCalendarAlt);
 
 
 @NgModule({

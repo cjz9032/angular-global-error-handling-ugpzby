@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Akun jännite on virheellinen",
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Lisätietoja on seuraavissa"
             },
             "power": {
                 "title": "Virta",
@@ -990,7 +994,7 @@
                             "warm": "Lämmin (parempi silmille)",
                             "cold": "Kylmä"
                         },
-                        "reset": "Lämpötilan uudelleenasetus",
+                        "reset": "Uudelleenasetus",
                         "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
                         "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Lämmin (parempi silmille)",
                             "cold": "Kylmä"
                         },
-                        "reset": "Lämpötilan uudelleenasetus",
+                        "reset": "Uudelleenasetus",
                         "tooltip": "Silmien hoitotila suodattaa sinistä valoa ja vähentää rasitusta silmille säätämällä näytön värilämpötilaa.",
                         "onSunsetToSunriseScheduleDescription": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Napsauta tätä, jos haluat palauttaa kameran ominaisuuksien oletusasetukset.",
-                        "reset": "Palauta tehdasasetukset"
+                        "reset": "Uudelleenasetus"
                     },
                     "brightness": "Kirkkaus",
                     "contrast": "Kontrasti",
@@ -1206,14 +1210,14 @@
                     "description1": "Tämä ominaisuus hyödyntää Windows Hellota. Varmista, että kasvojentunnistus on otettu käyttöön Windowsin asetuksista.",
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
-                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Automaattinen infrapunakameran sisäänkirjaus ei toimi.",
+                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
                     "screenTimeoutSettings": "Siirry näytön aikakatkaisun asetuksiin"
                 },
-                "resetToDefault": "PALAUTA TEHDASASETUKSET"
+                "resetToDefault": "Uudelleenasetus"
             },
             "intelligentScreen": {
                 "title": "Älykäs näyttö",
@@ -2214,7 +2218,6 @@
         "personal": "Henkilökohtainen käyttö",
         "business": "Yrityskäyttö",
         "custom": "Mukautettu käyttökokemus",
-        "experience": "Kokea",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
         "title1": "Tervetuloa",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
         "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
-    }
+    },
+	"hardwareScan": {
+		"name": "Laitteistotarkistus",
+		"title": "Suorita laitteistotarkistus",
+		"subtitle": "Odota, laitteistotarkistusta suoritetaan",
+		"quickScan": "Pikatarkistus",
+		"finalResultCode": "Lopullinen tuloskoodi",
+		"resultCode": "Tuloskoodi",
+		"cancel": "Peruuta",
+		"complete": "Valmis",
+		"incomplete": "Kesken",
+		"loadingComponents": "Ladataan osia",
+		"hardwareComponents": "Laitteisto-osat",
+		"loadingDevices": "Laitteita ladataan",
+		"select": "Valitse",
+		"deselect": "Poista valinta",
+		"allOptions": "Kaikki vaihtoehdot",
+		"latestResult": "Viimeisin tulos",
+		"back": "EDELLINEN",
+		"viewResults": "Näytä tulokset",
+		"save": "Tallenna",
+		"details": "Tiedot",
+		"recurrence": "Toistuminen",
+		"interval": "Aikaväli",
+		"time": "Aika",
+		"type": "Tyyppi",
+		"hours": "tuntia",
+		"minutes": "minuuttia",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "Aiemmat tulokset",
+		"lastScanOn": "Edellinen tarkistus",
+		"result": "Tulos",
+		"viewDetailsLog": "Näytä tietoloki",
+		"ok": "OK",
+		"notOk": "EI OK",
+		"notScanned": "EI TARKISTETTU",
+		"pass": "Onnistui",
+		"fail": "Epäonnistui",
+		"cancelled": "Peruutettu",
+		"warning": "Varoitus",
+		"errorResult": "Sinun on valittava suoritettava testi.",
+		"buy": "Osta heti",
+		"errorDeviceChoose": "Valitse suoritettava laite.",
+		"errorNoOptionSelected": "Valitse oikea vaihtoehto.",
+		"offline": "Tämä laite toimii offline-tilassa, muodosta Internet-yhteys",
+		"common": {
+			"menu": "Laitteistotarkistus"
+		},
+		"customize": {
+			"name": "Mukautus",
+			"test": "Mukauta testiä",
+			"description": "Voit mukauttaa testiä valitsemalla alla olevista vaihtoehdoista",
+			"runTests": "Suorita valitut testit"
+		},
+		"scheduledScan": {
+			"name": "Ajoita tarkistus",
+			"title": "Ajoita tarkistus",
+			"newScan": "Ajoita uusi tarkistus",
+			"fullScan": "Täydellinen tarkistus",
+			"onlyOnce": "Vain kerran",
+			"eachDay": "Joka päivä",
+			"eachWeek": "Joka viikko",
+			"eachMonth": "Joka kuukausi",
+			"eachYear": "Joka vuosi",
+			"schedule": "Ajoitus",
+			"date": "Päivämäärä",
+			"pickDate": "Valitse päivämäärä",
+			"scanScheduled": "Laitteistotarkistus on ajoitettu.",
+			"description": "Toinen tarkistus on jo ajoitettu samaan aikaan ja samalle päivälle!",
+			"error": "Virhe",
+			"delete": "Poista"
+		},
+		"recoverBadSectors": {
+			"title": "Korjaa vialliset sektorit",
+			"description": "Lenovo-työkalu levyn viallisten sektorien etsimiseen ja korjaamiseen",
+			"goTo": "Siirry viallisten sektorien palautukseen",
+			"localDevices": "Paikalliset laitteet",
+			"numberSectors": "Luettujen sektorien määrä",
+			"numberBadSectors": "Viallisten sektorien määrä",
+			"numberFixedSectors": "Korjattujen sektorien määrä",
+			"numberNonFixedSectors": "Korjaamattomien sektorien määrä",
+			"status": "Toiminnon tila",
+			"elapsedTime": "Kulunut aika",
+			"hours": "tuntia",
+			"hour": "tunti",
+			"minutes": "minuuttia",
+			"minute": "minuutti",
+			"seconds": "sekuntia",
+			"second": "sekunti",
+			"moreInfo": "Odota, viallisten sektorien palautusta suoritetaan",
+			"systemEvent": "Testi keskeytyi testituloksen mahdollisesti vaarantavan järjestelmätapahtuman takia.",
+			"systemPasswordProtected": "Laite saattaa olla suojattu salasanalla. Kokeile poistaa salasanasuojaus käytöstä.",
+			"popup": {
+				"description": "Skannauksen ja korjauksen toteutus voi aiheuttaa tietojen katoamisen. Varmuuskopiointi on suositeltavaa tehdä ennen tämän toiminnon suorittamista. Haluatko varmasti jatkaa?",
+				"yes": "Kyllä",
+				"no": "Ei"
+			}
+		},
+		"support": {
+			"title": "Lataa ammattimaiset vianmääritystyökalut",
+			"subtitle": "Lenovo-tuki"
+		},
+		"eTicket": {
+			"header": "Laitteisto-ongelma havaittiin.",
+			"problemDetected": "Laitteistotarkistuksessa on havaittu ongelma tietokoneen seuraavissa osissa:",
+			"ticketRequestQuestion": "Lenovo voi lähettää vaihdettavan osan, jos tietokoneen takuuaika on vielä voimassa. Haluatko avata laitteiston vaihtoa koskevan palvelupyynnön ongelman korjaamiseksi?",
+			"openTicket": "Avaa ongelmaraportti"
+		},
+		"battery": {
+			"title": "Ota akun varauksen kynnysarvo käyttöön",
+			"description": "Kun otat mukautetun akun varauksen käyttöön, laitteen akku pysyy toimintakunnossa pitempään. Akun varauksen kesto käytön aikana kuitenkin lyhenee, koska akku ei lataudu täyteen. Jotta voit ottaa tämän toiminnon täysin käyttöön, irrota laite ja anna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
+			"enable": "Ota käyttöön"
+		}
+	}
 }

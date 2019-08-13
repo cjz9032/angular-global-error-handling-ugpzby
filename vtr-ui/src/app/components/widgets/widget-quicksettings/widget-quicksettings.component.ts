@@ -29,8 +29,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(true, true);
 	private notificationSubscription: Subscription;
-	// public modalStatus;
-	public test: any;
 	public quickSettingsWidget = [
 		{
 			tooltipText: 'MICROPHONE',
@@ -71,6 +69,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.stopMonitorForCamera();
 		this.deviceService.stopMicrophoneMonitor();
 		this.stopEyeCareMonitor();
+		this.displayService.stopMonitorForCameraPermission();
 	}
 
 	//#region private functions
@@ -94,24 +93,23 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					break;
 			}
 			if (notification.type === DeviceMonitorStatus.OOBEStatus) {
-				this.test = notification.payload;
 				if (notification.payload) {
-				this.getMicrophoneStatus();
-				this.displayService.startMonitorForCameraPermission();
-				this.getCameraPrivacyStatus();
+					this.getMicrophoneStatus();
+					this.displayService.startMonitorForCameraPermission();
+					this.getCameraPrivacyStatus();
 				}
 			}
 		}
 	}
 
 	private getQuickSettingStatus() {
-		const modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial) || {page : 1};
+		const modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial) || { page: 1 };
 		if (modalStatus.page === 2) {
 			this.getMicrophoneStatus();
 			this.displayService.startMonitorForCameraPermission();
 			this.getCameraPrivacyStatus();
-			
-		}		
+
+		}
 		this.initEyecaremodeSettings();
 		this.startEyeCareMonitor();
 	}
@@ -198,7 +196,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		console.log('startMonitorHandlerForCamera', value);
-
 		// this.cameraStatus = value;
 		this.cameraStatus.available = value.available;
 		this.cameraStatus.status = value.status;

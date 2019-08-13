@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Batterijspanning onjuist",
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Bekijk meer informatie"
             },
             "power": {
                 "title": "Energiebeheer",
@@ -990,7 +994,7 @@
                             "warm": "Warm (beter voor de ogen)",
                             "cold": "Koud"
                         },
-                        "reset": "Temperatuur opnieuw instellen",
+                        "reset": "Resetten",
                         "tooltip": "In de Oogzorg-modus wordt de kleurtemperatuur van uw beeldscherm aangepast om blauw licht eruit te filteren en uw ogen minder te belasten.",
                         "onSunsetToSunriseScheduleDescription": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Warm (beter voor de ogen)",
                             "cold": "Koud"
                         },
-                        "reset": "Temperatuur opnieuw instellen",
+                        "reset": "Resetten",
                         "tooltip": "In de Oogzorg-modus wordt de kleurtemperatuur van uw beeldscherm aangepast om blauw licht eruit te filteren en uw ogen minder te belasten.",
                         "onSunsetToSunriseScheduleDescription": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Camera",
                         "tooltip": "Klik hier om de camera-eigenschappen te herstellen naar de standaardwaarden.",
-                        "reset": "Fabrieksinstellingen herstellen"
+                        "reset": "Resetten"
                     },
                     "brightness": "Helderheid",
                     "contrast": "Contrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
                     "screenTimeoutSettings": "Ga naar de instellingen voor de time-out van het beeldscherm"
                 },
-                "resetToDefault": "DE STANDAARDINSTELLINGEN HERSTELLEN"
+                "resetToDefault": "Resetten"
             },
             "intelligentScreen": {
                 "title": "Intelligent beeldscherm",
@@ -2214,7 +2218,6 @@
         "personal": "Persoonlijk gebruik",
         "business": "Zakelijk gebruik",
         "custom": "Aangepaste ervaring",
-        "experience": "Ervaring",
         "privacytitle": "Help ons de kwaliteit van de app te verbeteren door toe te staan dat anoniem gebruiksgegevens worden verzameld.",
         "moreInterest": "+ meer interesses",
         "title1": "Welkom bij",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
-    }
+    },
+	"hardwareScan": {
+		"name": "Hardwarescan",
+		"title": "Een hardwarescan uitvoeren",
+		"subtitle": "Een ogenblik geduld terwijl de hardwarescan wordt uitgevoerd",
+		"quickScan": "Snelle scan",
+		"finalResultCode": "Laatste resultaatcode",
+		"resultCode": "Resultaatcode",
+		"cancel": "Annuleren",
+		"complete": "Voltooid",
+		"incomplete": "Niet voltooid",
+		"loadingComponents": "Componenten laden",
+		"hardwareComponents": "Hardwareonderdelen",
+		"loadingDevices": "Laden van apparaten",
+		"select": "Selecteren",
+		"deselect": "Selectie opheffen",
+		"allOptions": "Alle opties",
+		"latestResult": "Meest recente resultaat",
+		"back": "TERUG",
+		"viewResults": "Resultaten weergeven",
+		"save": "Opslaan",
+		"details": "Details",
+		"recurrence": "Terugkeerpatroon",
+		"interval": "Interval",
+		"time": "Tijd",
+		"type": "Type",
+		"hours": "Uur",
+		"minutes": "Minuten",
+		"am": "VM",
+		"pm": "NM",
+		"previousResult": "Voorgaande resultaten",
+		"lastScanOn": "Laatste scan op",
+		"result": "Resultaat",
+		"viewDetailsLog": "Logboek met details weergeven",
+		"ok": "OK",
+		"notOk": "NIET OK",
+		"notScanned": "NIET GESCAND",
+		"pass": "Gelukt",
+		"fail": "Mislukt",
+		"cancelled": "Geannuleerd",
+		"warning": "Waarschuwing",
+		"errorResult": "Kies een test om uit te voeren.",
+		"buy": "Nu kopen",
+		"errorDeviceChoose": "Kies een apparaat om uit te voeren.",
+		"errorNoOptionSelected": "Selecteer een optie.",
+		"offline": "Op dit apparaat wordt de offline stand uitgevoerd. Maak verbinding met internet",
+		"common": {
+			"menu": "Hardwarescan"
+		},
+		"customize": {
+			"name": "Aanpassen",
+			"test": "Test aanpassen",
+			"description": "Selecteer de onderstaande opties om uw test aan te passen",
+			"runTests": "Geselecteerde tests uitvoeren"
+		},
+		"scheduledScan": {
+			"name": "Scan plannen",
+			"title": "Uw scan plannen",
+			"newScan": "Nieuwe scan plannen",
+			"fullScan": "Volledige scan",
+			"onlyOnce": "Slechts eenmaal",
+			"eachDay": "Elke dag",
+			"eachWeek": "Elke week",
+			"eachMonth": "Elke maand",
+			"eachYear": "Elk jaar",
+			"schedule": "Rooster",
+			"date": "Datum",
+			"pickDate": "Een datum kiezen",
+			"scanScheduled": "Er is een hardwarescan gepland.",
+			"description": "Er is al een andere scan op dezelfde tijd en datum gepland.",
+			"error": "Fout",
+			"delete": "Verwijderen"
+		},
+		"recoverBadSectors": {
+			"title": "Slechte sectoren herstellen",
+			"description": "Lenovo-hulpmiddel om beschadigde sectoren op een schijf te detecteren en te repareren",
+			"goTo": "Beschadigde sectoren herstellen",
+			"localDevices": "Lokale apparaten",
+			"numberSectors": "Aantal gelezen sectoren",
+			"numberBadSectors": "Aantal beschadigde sectoren die zijn gevonden",
+			"numberFixedSectors": "Aantal herstelde sectoren",
+			"numberNonFixedSectors": "Aantal niet-herstelde sectoren",
+			"status": "Status van bewerking",
+			"elapsedTime": "Verstreken tijd",
+			"hours": "Uur",
+			"hour": "Uur",
+			"minutes": "Minuten",
+			"minute": "Minuut",
+			"seconds": "Seconden",
+			"second": "Seconde",
+			"moreInfo": "Wacht tot de beschadigde sectoren zijn hersteld",
+			"systemEvent": "Test is afgebroken omdat er een systeemgebeurtenis heeft plaatsgevonden die het resultaat van de test kan beïnvloeden.",
+			"systemPasswordProtected": "Het apparaat is mogelijk met een wachtwoord beveiligd. Probeer de wachtwoordbeveiliging uit te schakelen.",
+			"popup": {
+				"description": "Het uitvoeren van scans en herstel kan gegevensverlies tot gevolg hebben. Het verdient aanbeveling een back-up te maken voordat u deze bewerking uitvoert. Weet u zeker dat u wilt doorgaan?",
+				"yes": "Ja",
+				"no": "Nee"
+			}
+		},
+		"support": {
+			"title": "Professionele diagnosehulpprogramma's downloaden",
+			"subtitle": "Ondersteuning van Lenovo"
+		},
+		"eTicket": {
+			"header": "Probleem in hardware aangetroffen.",
+			"problemDetected": "Tijdens de hardwarescan is er een probleem met de volgende onderdelen van uw computer gedetecteerd",
+			"ticketRequestQuestion": "Lenovo kan een vervangend onderdeel verzenden als uw computer onder garantie valt. Wilt u een ticket voor hardwarevervanging openen om het probleem op te lossen",
+			"openTicket": "Ticket openen"
+		},
+		"battery": {
+			"title": "Drempelwaarde voor batterijlading inschakelen",
+			"description": "Als u opladen tot een aangepast niveau inschakelt, blijft de batterij tijdens het gebruik van het apparaat langer in goede conditie. Maar als u de batterij niet volledig oplaadt, kunt u het apparaat minder lang gebruiken alvorens de batterij leeg is. Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveau waarop het opladen wordt gestopt om deze functie volledig te activeren.",
+			"enable": "Inschakelen"
+		}
+	}
 }

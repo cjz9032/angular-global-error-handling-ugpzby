@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Voltaje de batería incorrecto",
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ver detalles"
             },
             "power": {
                 "title": "Energía",
@@ -990,7 +994,7 @@
                             "warm": "Cálido (mejor para los ojos)",
                             "cold": "Frío"
                         },
-                        "reset": "Restablecer temperatura",
+                        "reset": "Restablecer",
                         "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
                         "onSunsetToSunriseScheduleDescription": "Planificación del modo de cuidado ocular de anochecer a amanecer",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Cálido (mejor para los ojos)",
                             "cold": "Frío"
                         },
-                        "reset": "Restablecer temperatura",
+                        "reset": "Restablecer",
                         "tooltip": "La modalidad de cuidado de la visión ajusta la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos.",
                         "onSunsetToSunriseScheduleDescription": "Planificación del modo de cuidado ocular de anochecer a amanecer",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Cámara",
                         "tooltip": "Haga clic aquí para restablecer los valores predeterminados de las propiedades de la cámara.",
-                        "reset": "Restablecer valores predeterminados de fábrica"
+                        "reset": "Restablecer"
                     },
                     "brightness": "Brillo",
                     "contrast": "Contraste",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
                     "screenTimeoutSettings": "Vaya a Configuración de tiempo de espera de pantalla"
                 },
-                "resetToDefault": "RESTABLECER A LOS VALORES PREDETERMINADOS"
+                "resetToDefault": "Restablecer"
             },
             "intelligentScreen": {
                 "title": "Pantalla inteligente",
@@ -2214,7 +2218,6 @@
         "personal": "Uso personal",
         "business": "Uso empresarial",
         "custom": "Experiencia personalizada",
-        "experience": "Experiencia",
         "privacytitle": "Ayúdenos a mejorar la calidad de la aplicación al permitir la recopilación anónima de estadísticas de uso.",
         "moreInterest": "+ más intereses",
         "title1": "Bienvenido a",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
         "Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
-    }
+    },
+	"hardwareScan": {
+		"name": "Exploración de hardware",
+		"title": "Llevar a cabo una exploración de hardware",
+		"subtitle": "Espere mientras se lleva a cabo la exploración de hardware",
+		"quickScan": "Exploración rápida",
+		"finalResultCode": "Código de resultado final",
+		"resultCode": "Código de resultados",
+		"cancel": "Cancelar",
+		"complete": "Completo",
+		"incomplete": "Incompleto",
+		"loadingComponents": "Cargando componentes",
+		"hardwareComponents": "Componentes de hardware",
+		"loadingDevices": "Dispositivos cargando",
+		"select": "Seleccione",
+		"deselect": "Eliminar selección",
+		"allOptions": "Todas las opciones",
+		"latestResult": "Resultados más recientes",
+		"back": "ATRÁS",
+		"viewResults": "Ver resultados",
+		"save": "Guardar",
+		"details": "Detalles",
+		"recurrence": "Periodicidad",
+		"interval": "Intervalo",
+		"time": "Hora",
+		"type": "Tipo",
+		"hours": "Horas",
+		"minutes": "Minutos",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "Resultados anteriores",
+		"lastScanOn": "Última exploración el",
+		"result": "Resultado",
+		"viewDetailsLog": "Ver registro de detalles",
+		"ok": "Aceptar",
+		"notOk": "INCORRECTO",
+		"notScanned": "NO EXPLORADO",
+		"pass": "Aprobada",
+		"fail": "Reprobada",
+		"cancelled": "Cancelado",
+		"warning": "Advertencia",
+		"errorResult": "Debe seleccionar una prueba a ejecutar.",
+		"buy": "Comprar ahora",
+		"errorDeviceChoose": "Debe seleccionar un dispositivo a ejecutar.",
+		"errorNoOptionSelected": "Debe seleccionar una opción.",
+		"offline": "Este dispositivo se está ejecutando en modalidad sin conexión, conecte a Internet",
+		"common": {
+			"menu": "Exploración de hardware"
+		},
+		"customize": {
+			"name": "Personalizar",
+			"test": "Prueba de personalización",
+			"description": "Seleccione las opciones indicadas a continuación para personalizar la prueba",
+			"runTests": "Ejecutar pruebas seleccionadas"
+		},
+		"scheduledScan": {
+			"name": "Programar exploración",
+			"title": "Programar la exploración",
+			"newScan": "Programar exploración nueva",
+			"fullScan": "Exploración completa",
+			"onlyOnce": "Solo una vez",
+			"eachDay": "Diaria",
+			"eachWeek": "Semanal",
+			"eachMonth": "Mensual",
+			"eachYear": "Anual",
+			"schedule": "Planificar",
+			"date": "Fecha",
+			"pickDate": "Seleccionar una fecha",
+			"scanScheduled": "Se programó una exploración de hardware",
+			"description": "¡Ya se programó otro análisis a la misma hora y fecha!",
+			"error": "Error",
+			"delete": "Eliminar"
+		},
+		"recoverBadSectors": {
+			"title": "Recuperar sectores incorrectos",
+			"description": "Herramienta Lenovo para identificar y reparar errores de sectores defectuosos en un disco",
+			"goTo": "Ir a recuperación de sectores defectuosos",
+			"localDevices": "Dispositivos locales",
+			"numberSectors": "Número de sectores leídos",
+			"numberBadSectors": "Número de sectores incorrectos encontrados",
+			"numberFixedSectors": "Número de sectores lógicos reparados",
+			"numberNonFixedSectors": "Número de sectores lógicos no reparados",
+			"status": "Estado de operación",
+			"elapsedTime": "Tiempo transcurrido",
+			"hours": "Horas",
+			"hour": "Hora",
+			"minutes": "Minutos",
+			"minute": "Minuto",
+			"seconds": "Segundos",
+			"second": "Segundo",
+			"moreInfo": "Espere mientras se realiza la recuperación de sectores defectuosos",
+			"systemEvent": "Se canceló la prueba debido a que se ha producido un suceso en el sistema que podría comprometer los resultados.",
+			"systemPasswordProtected": "El dispositivo puede estar protegido con contraseña. Intente deshabilitar la protección con contraseña.",
+			"popup": {
+				"description": "La ejecución del examen y la reparación pueden producir la pérdida de datos. Se recomienda realizar una copia de seguridad antes de ejecutar esta operación. ¿Seguro que desea continuar?",
+				"yes": "Sí",
+				"no": "No"
+			}
+		},
+		"support": {
+			"title": "Descargar herramientas de diagnóstico profesionales",
+			"subtitle": "Soporte de Lenovo"
+		},
+		"eTicket": {
+			"header": "Se detectaron problemas de hardware.",
+			"problemDetected": "La exploración de hardware detectó un problema con los siguientes componentes del sistema",
+			"ticketRequestQuestion": "Lenovo puede enviar una pieza de repuesto si el sistema está en garantía. ¿Desea abrir un ticket de sustitución de hardware para abordar el problema?",
+			"openTicket": "Abrir ticket"
+		},
+		"battery": {
+			"title": "Habilitar umbral de carga de batería",
+			"description": "Activar una carga de batería personalizada permitirá que la duración general de la batería sea más prolongada mientras utiliza este dispositivo. Sin embargo, si la batería no está cargada completamente, el tiempo de duración de esta en funcionamiento será menor. Para activar completamente esta característica, desconecte la máquina y deje que la batería se agote o quede bajo el umbral de detención de carga.",
+			"enable": "Habilitar"
+		}
+	}
 }

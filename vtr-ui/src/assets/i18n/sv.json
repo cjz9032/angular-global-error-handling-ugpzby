@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Felaktig batterispänning",
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Visa information"
             },
             "power": {
                 "title": "Ström",
@@ -990,7 +994,7 @@
                             "warm": "Varmt (bättre för ögonen)",
                             "cold": "Kall"
                         },
-                        "reset": "Nollställ temperatur",
+                        "reset": "Återställ",
                         "tooltip": "Ögonskyddsläge justerar automatiskt färgtemperaturen på bildskärmen och filtrerar bort blått ljus för att minska belastningen på ögonen.",
                         "onSunsetToSunriseScheduleDescription": "Schemalägg ögonskyddsläge från morgon till kväll",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Varmt (bättre för ögonen)",
                             "cold": "Kall"
                         },
-                        "reset": "Nollställ temperatur",
+                        "reset": "Återställ",
                         "tooltip": "Ögonskyddsläge justerar automatiskt färgtemperaturen på bildskärmen och filtrerar bort blått ljus för att minska belastningen på ögonen.",
                         "onSunsetToSunriseScheduleDescription": "Schemalägg ögonskyddsläge från morgon till kväll",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klicka här för att återställa standardinställningarna för kameran.",
-                        "reset": "Återställ fabriksinställningar"
+                        "reset": "Återställ"
                     },
                     "brightness": "Ljusstyrka",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
                     "screenTimeoutSettings": "Öppna inställningarna för skärmens tidsgräns"
                 },
-                "resetToDefault": "ÅTERSTÄLL STANDARDINSTÄLLNINGAR"
+                "resetToDefault": "Återställ"
             },
             "intelligentScreen": {
                 "title": "Intelligent skärm",
@@ -2214,7 +2218,6 @@
         "personal": "Privat",
         "business": "Arbete",
         "custom": "Skräddarsydd upplevelse",
-        "experience": "Erfarenhet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
         "moreInterest": "+ fler intressen",
         "title1": "Välkommen till",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
         "Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
-    }
+    },
+	"hardwareScan": {
+		"name": "Maskinvarugenomsökning",
+		"title": "Kör en maskinvarugenomsökning",
+		"subtitle": "Vänta medan maskinvarugenomsökningen sker",
+		"quickScan": "Snabb genomsökning",
+		"finalResultCode": "Slutlig resultatkod",
+		"resultCode": "Resultatkod",
+		"cancel": "Avbryt",
+		"complete": "Slutförd",
+		"incomplete": "Ofullständigt",
+		"loadingComponents": "Läser in komponenter",
+		"hardwareComponents": "Maskinvarukomponenter",
+		"loadingDevices": "Enheter läses in",
+		"select": "Välj",
+		"deselect": "Avmarkera",
+		"allOptions": "Alla alternativ",
+		"latestResult": "Senaste resultat",
+		"back": "TILLBAKA",
+		"viewResults": "Visa resultat",
+		"save": "Spara",
+		"details": "Information",
+		"recurrence": "Frekvens",
+		"interval": "Intervall",
+		"time": "Tidpunkt",
+		"type": "Typ",
+		"hours": "Timmar",
+		"minutes": "Minuter",
+		"am": "förmiddag",
+		"pm": "eftermiddag",
+		"previousResult": "Tidigare resultat",
+		"lastScanOn": "Senaste genomsökning",
+		"result": "Resultat",
+		"viewDetailsLog": "Visa informationslogg",
+		"ok": "OK",
+		"notOk": "INTE OK",
+		"notScanned": "INTE GENOMSÖKT",
+		"pass": "Godkänd",
+		"fail": "Ej godkänd",
+		"cancelled": "Avbrutet",
+		"warning": "Varning",
+		"errorResult": "Du måste välja ett test som ska köras.",
+		"buy": "Köp nu",
+		"errorDeviceChoose": "Du måste välja en enhet som ska köras.",
+		"errorNoOptionSelected": "Du måste välja ett alternativ.",
+		"offline": "Enheten körs offline. Anslut till internet",
+		"common": {
+			"menu": "Maskinvarugenomsökning"
+		},
+		"customize": {
+			"name": "Anpassa",
+			"test": "Anpassa test",
+			"description": "Välj alternativen nedan för att anpassa testet",
+			"runTests": "Kör valda tester"
+		},
+		"scheduledScan": {
+			"name": "Schemalägg genomsökning",
+			"title": "Schemalägg genomsökningen",
+			"newScan": "Schemalägg ny genomsökning",
+			"fullScan": "Full genomsökning",
+			"onlyOnce": "En gång",
+			"eachDay": "Varje dag",
+			"eachWeek": "Varje vecka",
+			"eachMonth": "Varje månad",
+			"eachYear": "Varje år",
+			"schedule": "Schemalägg",
+			"date": "Datum",
+			"pickDate": "Välj ett datum",
+			"scanScheduled": "En maskinvarusökning har schemalagts!",
+			"description": "En annan genomsökning har redan schemalagts för samma tid och datum!",
+			"error": "Fel",
+			"delete": "Ta bort"
+		},
+		"recoverBadSectors": {
+			"title": "Återställa skadade sektorer",
+			"description": "Lenovos verktyg för att hitta och korrigera skadade sektorer på en hårddisk",
+			"goTo": "Fortsätt med att återställa skadade sektorer",
+			"localDevices": "Lokala enheter",
+			"numberSectors": "Antal lästa sektorer",
+			"numberBadSectors": "Antal skadade sektorer",
+			"numberFixedSectors": "Antal åtgärdade sektorer",
+			"numberNonFixedSectors": "Antal icke-åtgärdade sektorer",
+			"status": "Driftsstatus",
+			"elapsedTime": "Tidsåtgång",
+			"hours": "Timmar",
+			"hour": "Timme",
+			"minutes": "Minuter",
+			"minute": "Minut",
+			"seconds": "Sekunder",
+			"second": "Sekund",
+			"moreInfo": "Vänta medan skadade sektorer återställs",
+			"systemEvent": "Testet avbröts på grund av en systemhändelse som kan påverka resultatet.",
+			"systemPasswordProtected": "Enheten kanske är lösenordsskyddad. Prova att inaktivera lösenordsskyddet.",
+			"popup": {
+				"description": "Genomsökningen och reparationen kan resultera i att data går förlorade. Vi rekommenderar att du skapar en säkerhetskopia innan du utför denna åtgärd. Vill du fortsätta?",
+				"yes": "Ja",
+				"no": "Nej"
+			}
+		},
+		"support": {
+			"title": "Hämta professionella diagnostikverktyg",
+			"subtitle": "Lenovo-supporten"
+		},
+		"eTicket": {
+			"header": "Maskinvaruproblem påträffades.",
+			"problemDetected": "Vid genomsökningen av maskinvaran påträffades ett problem med följande datorkomponenter",
+			"ticketRequestQuestion": "Lenovo kan skicka en ersättningsdel om datorn omfattas av garanti. Vill du skapa ett ärende för utbyte av maskinvara för att åtgärda problemet?",
+			"openTicket": "Skapa ärende"
+		},
+		"battery": {
+			"title": "Aktivera gränsvärde för batteriladdning",
+			"description": "Genom att aktivera anpassad batteriladdning kan du få batteriet att räcka längre när du använder enheten. Mindre än full laddning ger kortare batteritid under körning. Aktivera funktionen genom att koppla från enheten och ladda ur batteriet till stoppunkten eller mer.",
+			"enable": "Aktivera"
+		}
+	}
 }

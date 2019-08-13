@@ -69,7 +69,7 @@ ui-popover {
 		padding: 1rem 3rem;
 		margin-top: 1rem;
 		font-weight: $weight_bold;
-		text-transform: uppercase;
+		//text-transform: uppercase;
 	}
 
 	.cancel-link {
@@ -81,7 +81,7 @@ ui-popover {
 		font-weight: $weight_bold;
 		margin-top: 1rem;
 		cursor: pointer;
-		text-transform: uppercase;
+		//text-transform: uppercase;
 
 		&:hover {
 			text-decoration: underline;

@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -536,10 +540,10 @@
             "cameraPrivacy": "Fotoaparát",
             "eyeCareMode": "Péče o oči",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage nemá přístup ke kameře ani k mikrofonu.",
+                "accessUrl": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows",
+                "microphoneNote": "Lenovo Vantage nemá přístup k mikrofonu.",
+                "cameraPrivacyNote": "Lenovo Vantage nemá přístup ke kameře."
             }
         },
         "systemStatus": {
@@ -709,7 +713,7 @@
                 "voltageError": "Nesprávné napětí baterie",
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Zobrazit podrobnosti"
             },
             "power": {
                 "title": "Napájení",
@@ -990,7 +994,7 @@
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
-                        "reset": "Resetovat teplotu",
+                        "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
-                        "reset": "Resetovat teplotu",
+                        "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Fotoaparát",
                         "tooltip": "Kliknutím sem obnovíte výchozí nastavení vlastností kamery.",
-                        "reset": "Obnovit nastavení z výroby"
+                        "reset": "Reset"
                     },
                     "brightness": "Jas",
                     "contrast": "Kontrast",
@@ -1206,14 +1210,14 @@
                     "description1": "Tato funkce závisí na Windows Hello. Ujistěte se, že je v nastavení systému Windows zapnuto rozpoznávání obličeje.",
                     "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát. Tato funkce však neshromažďuje žádné osobní údaje.",
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
-                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Automatické přihlášení pomocí infračervené kamery nebude funkční.",
+                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
                     "screenTimeoutSettings": "Přechod na nastavení časového limitu vypnutí obrazovky"
                 },
-                "resetToDefault": "OBNOVIT VÝCHOZÍ NASTAVENÍ"
+                "resetToDefault": "Reset"
             },
             "intelligentScreen": {
                 "title": "Inteligentní obrazovka",
@@ -2214,7 +2218,6 @@
         "personal": "Osobní použití",
         "business": "Obchodní použití",
         "custom": "Vlastní zkušenost",
-        "experience": "Zkusenosti",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
         "moreInterest": "+ další zájmy",
         "title1": "Vítá vás",
@@ -2251,5 +2254,121 @@
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
         "Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
-    }
+    },
+	"hardwareScan": {
+		"name": "Kontrola hardwaru",
+		"title": "Spusťte kontrolu hardwaru",
+		"subtitle": "Počkejte na dokončení kontroly hardwaru",
+		"quickScan": "Rychlá kontrola",
+		"finalResultCode": "Výsledný kód",
+		"resultCode": "Výsledný kód",
+		"cancel": "Storno",
+		"complete": "Dokončeno",
+		"incomplete": "Nedokončeno",
+		"loadingComponents": "Načítání součástí",
+		"hardwareComponents": "Hardwarové součásti",
+		"loadingDevices": "Načítání zařízení",
+		"select": "Pomocí tlačítka",
+		"deselect": "Zrušit výběr",
+		"allOptions": "Všechny možnosti",
+		"latestResult": "Nejnovější výsledek",
+		"back": "ZPĚT",
+		"viewResults": "Zobrazit výsledky",
+		"save": "Uložit",
+		"details": "Podrobnosti",
+		"recurrence": "Opakování",
+		"interval": "Interval",
+		"time": "Čas",
+		"type": "Typ",
+		"hours": "Hodin",
+		"minutes": "Minut",
+		"am": "dop.",
+		"pm": "odp.",
+		"previousResult": "Předchozí výsledky",
+		"lastScanOn": "Minulá kontrola",
+		"result": "Výsledek",
+		"viewDetailsLog": "Zobrazit protokol podrobností",
+		"ok": "OK",
+		"notOk": "NENÍ OK",
+		"notScanned": "NEKONTROLOVÁNO",
+		"pass": "Akce byla úspěšná.",
+		"fail": "Akce nebyla úspěšná.",
+		"cancelled": "Zrušeno",
+		"warning": "Varování",
+		"errorResult": "Je nutno vybrat test, který chcete spustit.",
+		"buy": "Koupit",
+		"errorDeviceChoose": "Musíte vybrat zařízení, které chcete spustit.",
+		"errorNoOptionSelected": "Musíte vybrat některou z možností.",
+		"description": "Aktivací vlastního nabíjení baterie prodloužíte celkovou výdrž baterie při používání tohoto zařízení. Bez nabíjení do plna se však zkrátí provozní životnost baterie. Chcete-li tuto funkci plně aktivovat, odpojte počítač a nechte baterii vybít na nebo pod limit nabíjení baterie.",
+		"enable": "Povolit",
+		"offline": "Toto zařízení je v režimu offline. Připojte jej k internetu",
+		"common": {
+			"menu": "Kontrola hardwaru"
+		},
+		"customize": {
+			"name": "Přizpůsobit",
+			"test": "Přizpůsobit test",
+			"description": "Přizpůsob si test výběrem možností níže",
+			"runTests": "Spustit vybrané testy"
+		},
+		"scheduledScan": {
+			"name": "Naplánovat kontrolu",
+			"title": "Naplánujte si kontrolu",
+			"newScan": "Naplánovat novou kontrolu",
+			"fullScan": "Kompletní kontrola",
+			"onlyOnce": "Pouze jednou",
+			"eachDay": "Každý den",
+			"eachWeek": "Každý týden",
+			"eachMonth": "Každý měsíc",
+			"eachYear": "Každý rok",
+			"schedule": "Naplánovat",
+			"date": "Datum",
+			"pickDate": "Vyberte datum",
+			"scanScheduled": "Kontrola hardwaru byla naplánována.",
+			"description": "Další kontrola již byla naplánována na stejný čas a datum!",
+			"error": "Chyba",
+			"delete": "Odstranit"
+		},
+		"recoverBadSectors": {
+			"title": "Obnovit vadné sektory",
+			"description": "Nástroj Lenovo k vyhledání a opravě vadných sektorů na disku",
+			"goTo": "Přejít k obnově vadných sektorů",
+			"localDevices": "Místní zařízení",
+			"numberSectors": "Počet načtených sektorů",
+			"numberBadSectors": "Počet nalezených vadných sektorů",
+			"numberFixedSectors": "Počet opravených sektorů",
+			"numberNonFixedSectors": "Počet neopravených sektorů",
+			"status": "Stav operace",
+			"elapsedTime": "Uběhlý čas",
+			"hours": "Hodin",
+			"hour": "Hodina",
+			"minutes": "Minut",
+			"minute": "Minuta",
+			"seconds": "Sekund",
+			"second": "Sekunda",
+			"systemEvent": "Test byl přerušen, protože došlo k systémové události, která by mohla ovlivnit jeho výsledek.",
+			"systemPasswordProtected": "Je možné, že jednotka pevného disku je chráněna heslem. Zkuste vypnout ochranu heslem.",
+			"moreInfo": "Počkejte na dokončení obnovy vadných sektorů",
+			"popup": {
+				"description": "Během procesu kontroly a opravy může dojít ke ztrátě dat. Před spuštěním této operace proto doporučujeme provést zálohu. Opravdu chcete pokračovat?",
+				"yes": "Ano",
+				"no": "Ne"
+			}
+		},
+		"support": {
+			"title": "Stáhnout profesionální diagnostické nástroje",
+			"subtitle": "Podpora Lenovo"
+		},
+		"eTicket": {
+			"header": "Byl zjištěn problém s hardwarem.",
+			"problemDetected": "Při kontrole hardwaru byl zjištěn problém s následujícími součástmi počítače",
+			"ticketRequestQuestion": "Pokud je váš počítač v záruce, může společnost Lenovo zaslat náhradní díl. Chcete otevřít hlášení výměny hardwaru a vyřešit problém?",
+			"openTicket": "Otevřít hlášení"
+		},
+		"battery": {
+			"title": "Povolit limit nabíjení baterie",
+			"description": "Aktivací vlastního nabíjení baterie prodloužíte celkovou výdrž baterie při používání tohoto zařízení. Bez nabíjení do plna se však zkrátí provozní životnost baterie. Chcete-li tuto funkci plně aktivovat, odpojte počítač a nechte baterii vybít na nebo pod limit nabíjení baterie.",
+			"enable": "Povolit"
+		}
+	}
 }

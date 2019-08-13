@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Tensão da bateria incorreta",
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Ver detalhes"
             },
             "power": {
                 "title": "Alimentação",
@@ -990,7 +994,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Frio"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Redefinir",
                         "tooltip": "O Modo de Cuidados com a Visão ajusta a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos.",
                         "onSunsetToSunriseScheduleDescription": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Quente (melhor para os olhos)",
                             "cold": "Frio"
                         },
-                        "reset": "Redefinir temperatura",
+                        "reset": "Redefinir",
                         "tooltip": "O Modo de Cuidados com a Visão ajusta a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos.",
                         "onSunsetToSunriseScheduleDescription": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Câmara",
                         "tooltip": "Clique aqui para redefinir as propriedades da câmara para as predefinições.",
-                        "reset": "Repor as definições de fábrica"
+                        "reset": "Redefinir"
                     },
                     "brightness": "Luminosidade",
                     "contrast": "Contraste",
@@ -1166,7 +1170,7 @@
                     "tooltip": "Clique aqui para repor as definições de Deteção de presença humana."
                 },
                 "zeroTouchLogin": {
-                    "title": "Login Zero Touch",
+                    "title": "Login sem toques",
                     "caption": "Esta funcionalidade desbloqueia ou reativa automaticamente o computador quando o utilizador estiver sentado em frente ou se aproximar do mesmo.",
                     "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
                 },
@@ -1206,14 +1210,14 @@
                     "description1": "Esta funcionalidade depende do Windows Hello. Verifique se o reconhecimento facial está ativado nas definições do Windows.",
                     "description2": "O recurso usa sensores e câmara para detetar a sua presença. No entanto, a funcionalidade NÃO recolhe qualquer dado pessoal.",
                     "description3": "1. Se o computador estiver no modo Tenda, Tablet ou Suporte, estas funcionalidades poderão não funcionar corretamente.",
-                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O início de sessão automático com câmara de IV não irá funcionar.",
+                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O login sem toques não funcionará.",
                     "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vá para as definições Windows Hello",
                     "screenTimeoutSettings": "Aceda a Definições de tempo de espera do ecrã"
                 },
-                "resetToDefault": "REPOR AS PREDEFINIÇÕES"
+                "resetToDefault": "Redefinir"
             },
             "intelligentScreen": {
                 "title": "Ecrã Inteligente",
@@ -2214,7 +2218,6 @@
         "personal": "Utilização pessoal",
         "business": "Utilização comercial",
         "custom": "Experiência personalizada",
-        "experience": "Experiência",
         "privacytitle": "Ajude-nos a melhorar a qualidade da aplicação, permitindo a recolha de estatísticas de utilização anónimas.",
         "moreInterest": "+ mais interesses",
         "title1": "Bem-vindo a",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "Enviar estatísticas de utilização anónimas para a Lenovo.",
         "Note": "Nota: ",
         "settingsNotes": "todas as definições nesta página irão necessitar que o utilizador reinicie esta aplicação para que tenham efeito."
-    }
+    },
+	"hardwareScan": {
+		"name": "Verificação de Hardware",
+		"title": "Efetuar uma verificação de hardware",
+		"subtitle": "Aguarde enquanto a verificação de hardware está em execução",
+		"quickScan": "Verificação Rápida",
+		"finalResultCode": "Código de resultado final",
+		"resultCode": "Código de Resultado",
+		"cancel": "Cancelar",
+		"complete": "Concluído",
+		"incomplete": "Incompleto",
+		"loadingComponents": "A carregar componentes",
+		"hardwareComponents": "Componentes de hardware",
+		"loadingDevices": "A carregar dispositivos",
+		"select": "Selecionar",
+		"deselect": "Desmarcar",
+		"allOptions": "Todas as opções",
+		"latestResult": "Resultado mais recente",
+		"back": "RETROCEDER",
+		"viewResults": "Ver resultados",
+		"save": "Guardar",
+		"details": "Detalhes",
+		"recurrence": "Recorrência",
+		"interval": "Intervalo",
+		"time": "Hora",
+		"type": "Tipo",
+		"hours": "Horas",
+		"minutes": "Minutos",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "Resultados anteriores",
+		"lastScanOn": "Última verificação em",
+		"result": "Resultado",
+		"viewDetailsLog": "Ver registo de detalhes",
+		"ok": "OK",
+		"notOk": "NÃO OK",
+		"notScanned": "NÃO VERIFICADO",
+		"pass": "Com êxito",
+		"fail": "Sem êxito",
+		"cancelled": "Cancelado",
+		"warning": "Atenção",
+		"errorResult": "É necessário escolher um teste a executar.",
+		"buy": "Comprar agora",
+		"errorDeviceChoose": "É necessário escolher um dispositivo a executar.",
+		"errorNoOptionSelected": "É necessário selecionar uma opção.",
+		"offline": "Este dispositivo está a funcionar no modo offline. Estabeleça ligação à Internet",
+		"common": {
+			"menu": "Verificação de Hardware"
+		},
+		"customize": {
+			"name": "Personalizar",
+			"test": "Personalizar teste",
+			"description": "Selecione as opções abaixo para personalizar o teste",
+			"runTests": "Executar testes selecionados"
+		},
+		"scheduledScan": {
+			"name": "Agendar verificação",
+			"title": "Agende a verificação",
+			"newScan": "Agendar nova verificação",
+			"fullScan": "Verificação total",
+			"onlyOnce": "Apenas uma vez",
+			"eachDay": "Todos os dias",
+			"eachWeek": "Todas as semanas",
+			"eachMonth": "Todos os meses",
+			"eachYear": "Todos os anos",
+			"schedule": "Agendar",
+			"date": "Data",
+			"pickDate": "Escolha uma data",
+			"scanScheduled": "Foi agendada uma verificação de hardware!",
+			"description": "Já estava agendada outra verificação para a mesma data e hora!",
+			"error": "Erro",
+			"delete": "Eliminar"
+		},
+		"recoverBadSectors": {
+			"title": "Recuperar setores danificados",
+			"description": "Ferramenta Lenovo para descobrir e reparar setores danificados num disco",
+			"goTo": "Ir para recuperação de setores danificados",
+			"localDevices": "Dispositivos locais",
+			"numberSectors": "Número de setores lidos",
+			"numberBadSectors": "Número de setores danificados encontrados",
+			"numberFixedSectors": "Número de setores corrigidos",
+			"numberNonFixedSectors": "Número de setores não corrigidos",
+			"status": "Estado da operação",
+			"elapsedTime": "Tempo decorrido",
+			"hours": "Horas",
+			"hour": "Hora",
+			"minutes": "Minutos",
+			"minute": "Minuto",
+			"seconds": "Segundos",
+			"second": "Segundo",
+			"moreInfo": "Aguarde enquanto a recuperação de setores danificados está em execução",
+			"systemEvent": "O teste foi abortado devido à ocorrência de um evento do sistema que poderia comprometer o resultado.",
+			"systemPasswordProtected": "O dispositivo poderá estar protegido por palavra-passe. Experimente desativar a proteção por palavra-passe.",
+			"popup": {
+				"description": "A execução da verificação e reparação pode originar perda de dados. É recomendado efetuar uma cópia de segurança antes de executar esta operação. Tem a certeza de que pretende continuar?",
+				"yes": "Sim",
+				"no": "Não"
+			}
+		},
+		"support": {
+			"title": "Transferir ferramentas de diagnóstico profissionais",
+			"subtitle": "Lenovo Support"
+		},
+		"eTicket": {
+			"header": "Problema de hardware detetado.",
+			"problemDetected": "A Verificação do hardware detetou um problema com os seguintes componentes do computador",
+			"ticketRequestQuestion": "A Lenovo pode enviar uma peça de substituição, caso o computador se encontre sob garantia. Gostaria de abrir um pedido de substituição de hardware para resolver o problema?",
+			"openTicket": "Abrir pedido"
+		},
+		"battery": {
+			"title": "Ativar Limiar de Carregamento da Bateria",
+			"description": "Permitir um carregamento da bateria personalizado permitirá que o estado global da bateria dure durante mais tempo enquanto utiliza este dispositivo. No entanto, não ter um carregamento completo levará a uma menor duração da bateria. Para ativar integralmente esta funcionalidade, desligue os cabos do equipamento e permita que a bateria se descarregue até ou abaixo do limiar de paragem de carregamento.",
+			"enable": "Ativar"
+		}
+	}
 }

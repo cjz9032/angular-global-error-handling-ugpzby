@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "電池電壓不正確",
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "查看詳細資料"
             },
             "power": {
                 "title": "電源",
@@ -990,7 +994,7 @@
                             "warm": "暖色 (對眼睛較好)",
                             "cold": "冷卻"
                         },
-                        "reset": "重設溫度",
+                        "reset": "重設",
                         "tooltip": "護眼模式會調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。",
                         "onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "暖色 (對眼睛較好)",
                             "cold": "冷卻"
                         },
-                        "reset": "重設溫度",
+                        "reset": "重設",
                         "tooltip": "護眼模式會調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。",
                         "onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "相機",
                         "tooltip": "按一下此處，即可將攝影機屬性重設為預設設定。",
-                        "reset": "重設為原廠預設值"
+                        "reset": "重設"
                     },
                     "brightness": "亮度",
                     "contrast": "對比",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "跳至 Windows Hello 設定",
                     "screenTimeoutSettings": "前往螢幕逾時設定"
                 },
-                "resetToDefault": "重設為預設值"
+                "resetToDefault": "重設"
             },
             "intelligentScreen": {
                 "title": "智慧型螢幕",
@@ -2214,7 +2218,6 @@
         "personal": "個人使用",
         "business": "業務使用",
         "custom": "自訂",
-        "experience": "體驗",
         "privacytitle": "透過允許匿名收集使用方式統計資料，協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",
@@ -2251,5 +2254,119 @@
         "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
-    }
+    },
+	"hardwareScan": {
+		"name": "硬體掃描",
+		"title": "執行硬體掃描",
+		"subtitle": "硬體掃描正在執行，請稍候",
+		"quickScan": "快速掃描",
+		"finalResultCode": "最終結果代碼",
+		"resultCode": "結果代碼",
+		"cancel": "取消",
+		"complete": "完成",
+		"incomplete": "未完成",
+		"loadingComponents": "載入元件",
+		"hardwareComponents": "硬體元件",
+		"loadingDevices": "裝置載入",
+		"select": "在工具列中選取",
+		"deselect": "取消選取",
+		"allOptions": "所有選項",
+		"latestResult": "最新結果",
+		"back": "上一步",
+		"viewResults": "檢視結果",
+		"save": "儲存",
+		"details": "明細",
+		"recurrence": "週期",
+		"interval": "間隔",
+		"time": "時間",
+		"type": "類型",
+		"hours": "時數",
+		"minutes": "分鐘",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "先前的結果",
+		"lastScanOn": "上次掃描時間",
+		"result": "結果",
+		"viewDetailsLog": "檢視詳細資料日誌",
+		"ok": "確定",
+		"notOk": "尚未就緒",
+		"notScanned": "未掃描",
+		"pass": "通過",
+		"fail": "失敗",
+		"cancelled": "已取消",
+		"warning": "警告",
+		"errorResult": "您必須選擇要執行的測試。",
+		"buy": "立即購買",
+		"errorDeviceChoose": "您必須選擇要執行的裝置。",
+		"errorNoOptionSelected": "您必須選擇一個選項。",
+		"offline": "此裝置正在執行離線模式，請與網際網路連線",
+		"common": {
+			"menu": "硬體掃描"
+		},
+		"customize": {
+			"name": "自訂",
+			"test": "自訂測試",
+			"description": "選取下方選項以自訂測試",
+			"runTests": "執行選取的測試"
+		},
+		"scheduledScan": {
+			"name": "排程掃描",
+			"title": "排程您的掃描",
+			"newScan": "排程新掃描",
+			"fullScan": "完整掃描",
+			"onlyOnce": "僅一次",
+			"eachDay": "每天",
+			"eachWeek": "每週",
+			"eachMonth": "每月",
+			"eachYear": "每年",
+			"schedule": "排程",
+			"date": "日期",
+			"pickDate": "挑選日期",
+			"scanScheduled": "已排程硬體掃描！",
+			"description": "相同的日期和時間已排程另一次掃描！",
+			"error": "錯誤",
+			"delete": "刪除"
+		},
+		"recoverBadSectors": {
+			"title": "回復錯誤磁區",
+			"description": "尋找並修復磁碟上錯誤磁區的 Lenovo 工具",
+			"goTo": "前往回復錯誤磁區",
+			"localDevices": "本機裝置",
+			"numberSectors": "讀取的磁區數目",
+			"numberBadSectors": "找到的錯誤磁區數目",
+			"numberFixedSectors": "修正的磁區數目",
+			"numberNonFixedSectors": "未修正的磁區數目",
+			"status": "作業狀態",
+			"elapsedTime": "已耗用時間",
+			"hours": "小時",
+			"hour": "小時",
+			"minutes": "分鐘",
+			"minute": "分鐘",
+			"seconds": "秒",
+			"second": "秒",
+			"moreInfo": "回復錯誤磁區正在執行，請稍候",
+			"systemEvent": "測試中止，因為發生可能影響結果的系統事件。",
+			"systemPasswordProtected": "裝置可能受到密碼保護。嘗試停用密碼保護。",
+			"popup": {
+				"description": "執行掃描和修復可能會導致資料遺失。建議您在執行此作業之前先備份。您確定要繼續嗎？",
+				"yes": "是",
+				"no": "否"
+			}
+		},
+		"support": {
+			"title": "下載專業診斷工具",
+			"subtitle": "Lenovo 支援"
+		},
+		"eTicket": {
+			"header": "偵測到硬體問題。",
+			"problemDetected": "硬體掃描偵測到您電腦的以下元件有問題",
+			"ticketRequestQuestion": "如果您的電腦在保固期內，Lenovo 可以遞送更換零件。是否要開立硬體更換票證以解決此問題",
+			"openTicket": "開立票證"
+		},
+		"battery": {
+			"title": "啟用電池的充電臨界值",
+			"description": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
+			"enable": "啟用"
+		}
+	}
 }

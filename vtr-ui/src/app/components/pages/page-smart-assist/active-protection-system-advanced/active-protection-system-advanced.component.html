@@ -1,4 +1,5 @@
-<p class="caption">
+<p class="caption" id="activeProtectionSystem-advanced-settings-desc"
+	attr.aria-label="activeProtectionSystem-advanced-settings-desc">
 	{{'device.smartAssist.activeProtectionSystem.advanced.description' | translate}}
 </p>
 <div class="container">
@@ -15,7 +16,8 @@
 						[isSwitchVisible]="true"
 						[showChildContent]="true"
 						[isSwitchChecked]="penStatus"
-						(toggleOnOff)="setPenSetting($event)">
+						(toggleOnOff)="setPenSetting($event)"
+						[switchId]="'activeProtectionSystem-advanced-pen'">
 						<div class="dropdown col-sm-6 pl-0">
 							<vtr-ui-dropdown [dropDownId]="'penIntervalsDropDown'"
 								*ngIf=" penStatus "
@@ -37,7 +39,8 @@
 						[isSwitchVisible]="true"
 						[showChildContent]="true"
 						[isSwitchChecked]="touchStatus"
-						(toggleOnOff)="setTouchInputSetting($event)">
+						(toggleOnOff)="setTouchInputSetting($event)"
+						[switchId]="'activeProtectionSystem_touchInput'">
 					</vtr-ui-row-switch>
 				</div>
 			</li>
@@ -51,7 +54,8 @@
 						[isSwitchVisible]="true"
 						[showChildContent]="true"
 						[isSwitchChecked]="pSensorStatus"
-						(toggleOnOff)="setPSensorSetting($event)">
+						(toggleOnOff)="setPSensorSetting($event)"
+						[switchId]="'activeProtectionSystem_advanced_hand'">
 					</vtr-ui-row-switch>
 				</div>
 			</li>

@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -414,7 +418,8 @@
                 "sub1": "Min enhed",
                 "sub2": "Mine enhedsindstillinger",
                 "sub3": "Systemopdatering",
-                "sub4": "Smart hjælp"
+                "sub4": "Smart hjælp",
+                "sub5": ""
             },
             "security": {
                 "title": "Sikkerhed",
@@ -709,7 +714,7 @@
                 "voltageError": "Forkert batterispænding",
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Flere oplysninger"
             },
             "power": {
                 "title": "Strøm",
@@ -990,7 +995,7 @@
                             "warm": "Varm (bedre for øjne)",
                             "cold": "Kold"
                         },
-                        "reset": "Nulstil temperatur",
+                        "reset": "Nulstil",
                         "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
                         "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
@@ -1004,7 +1009,7 @@
                             "warm": "Varm (bedre for øjne)",
                             "cold": "Kold"
                         },
-                        "reset": "Nulstil temperatur",
+                        "reset": "Nulstil",
                         "tooltip": "Øjenbeskyttelsestilstand justerer automatisk din skærms farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre.",
                         "onSunsetToSunriseScheduleDescription": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
                         "note": {
@@ -1053,7 +1058,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klik her for at nulstille egenskaberne for kameraet til standardindstillingerne.",
-                        "reset": "Nulstil til fabriksindstillingerne"
+                        "reset": "Nulstil"
                     },
                     "brightness": "Lysstyrke",
                     "contrast": "Kontrast",
@@ -1213,7 +1218,7 @@
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
                     "screenTimeoutSettings": "Gå til indstillinger for skærmtimeout"
                 },
-                "resetToDefault": "NULSTIL TIL STANDARDINDSTILLINGERNE"
+                "resetToDefault": "Nulstil"
             },
             "intelligentScreen": {
                 "title": "Intelligent skærm",
@@ -2214,7 +2219,6 @@
         "personal": "Personlig brug",
         "business": "På arbejde",
         "custom": "Tilpasset oplevelse",
-        "experience": "Erfaring",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
@@ -2251,5 +2255,119 @@
         "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
         "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
-    }
+    },
+	"hardwareScan": {
+		"name": "Hardwaresøgning",
+		"title": "Udfør en hardwaresøgning",
+		"subtitle": "Vent, mens der udføres hardwaresøgning",
+		"quickScan": "Hurtig søgning",
+		"finalResultCode": "Kode for det endelige resultat",
+		"resultCode": "Resultatkode",
+		"cancel": "Annuller",
+		"complete": "Udført",
+		"incomplete": "Ufuldstændig",
+		"loadingComponents": "Indlæser komponenter",
+		"hardwareComponents": "Hardwarekomponenter",
+		"loadingDevices": "Enheder indlæses",
+		"select": "Vælg",
+		"deselect": "Fravælg",
+		"allOptions": "Alle indstillinger",
+		"latestResult": "Seneste resultat",
+		"back": "TILBAGE",
+		"viewResults": "Se resultater",
+		"save": "Gem",
+		"details": "Oplysninger",
+		"recurrence": "Gentagelse",
+		"interval": "Interval",
+		"time": "Klokkeslæt",
+		"type": "Type",
+		"hours": "Timer",
+		"minutes": "Minutter",
+		"am": "formiddag",
+		"pm": "eftermiddag",
+		"previousResult": "Tidligere resultater",
+		"lastScanOn": "Seneste søgning den",
+		"result": "Resultat",
+		"viewDetailsLog": "Vis log med detaljer",
+		"ok": "OK",
+		"notOk": "IKKE OK",
+		"notScanned": "INGEN SØGNING",
+		"pass": "Bestået",
+		"fail": "Mislykkedes",
+		"cancelled": "Annulleret",
+		"warning": "Advarsel!",
+		"errorResult": "Du skal vælge en test, der skal køres.",
+		"buy": "Køb nu",
+		"errorDeviceChoose": "Du skal vælge en enhed, der skal køres.",
+		"errorNoOptionSelected": "Du skal vælge en indstilling.",
+		"offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
+		"common": {
+			"menu": "Hardwaresøgning"
+		},
+		"customize": {
+			"name": "Tilpas",
+			"test": "Tilpas test",
+			"description": "Vælg indstillingerne nedenfor for at tilpasse testen",
+			"runTests": "Kør de valgte test"
+		},
+		"scheduledScan": {
+			"name": "Planlæg søgning",
+			"title": "Planlæg din søgning",
+			"newScan": "Planlæg ny søgning",
+			"fullScan": "Fuld søgning",
+			"onlyOnce": "Kun én gang",
+			"eachDay": "Hver dag",
+			"eachWeek": "Hver uge",
+			"eachMonth": "Hver måned",
+			"eachYear": "Hvert år",
+			"schedule": "Planlæg",
+			"date": "Dato",
+			"pickDate": "Vælg en dato",
+			"scanScheduled": "En hardwaresøgning blev planlagt!",
+			"description": "Der er allerede planlagt en anden scanning på samme tid og den samme dato!",
+			"error": "Fejl",
+			"delete": "Slet"
+		},
+		"recoverBadSectors": {
+			"title": "Retablering af dårlige sektorer",
+			"description": "Lenovo-værktøj til registrering og reparation af beskadigede sektorer på en disk",
+			"goTo": "Gå til gendannelse af beskadigede sektorer",
+			"localDevices": "Lokale enheder",
+			"numberSectors": "Antal læste sektorer",
+			"numberBadSectors": "Antal dårlige sektorer, der blev fundet",
+			"numberFixedSectors": "Antal udbedrede sektorer",
+			"numberNonFixedSectors": "Antal ikke-udbedrede sektorer",
+			"status": "Driftsstatus",
+			"elapsedTime": "Forløbet tid",
+			"hours": "Timer",
+			"hour": "Time",
+			"minutes": "Minutter",
+			"minute": "Minut",
+			"seconds": "Sekunder",
+			"second": "Sekund",
+			"moreInfo": "Vent et øjeblik, mens gendannelsen af beskadigede sektorer udføres",
+			"systemEvent": "Testen blev afbrudt, fordi der opstod en systemhændelse, som kunne kompromittere resultatet.",
+			"systemPasswordProtected": "Enheden er muligvis beskyttet med adgangskode. Prøv at deaktivere beskyttelsen med adgangskode.",
+			"popup": {
+				"description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
+				"yes": "Ja",
+				"no": "Nej"
+			}
+		},
+		"support": {
+			"title": "Download professionelle fejlfindingsværktøjer",
+			"subtitle": "Lenovo Support"
+		},
+		"eTicket": {
+			"header": "Der blev registreret et hardwareproblem.",
+			"problemDetected": "Hardwaresøgningen har registreret et problem med følgende komponenter på din computer",
+			"ticketRequestQuestion": "Lenovo kan sende en udskiftningsdel, hvis din computer er dækket af garantien. Vil du oprette en supportanmodning om hardwareudskiftning for at løse dette problem",
+			"openTicket": "Åbn supportanmodning"
+		},
+		"battery": {
+			"title": "Aktivér opladningsgrænse for batteri",
+			"description": "Ved at bruge tilpasset opladning af batteriet kan du forlænge den samlede batterilevetid, mens du bruger enheden. Når batteriet ikke lades helt op, vil batteriets driftstid dog være kortere. For at aktivere denne funktion fuldt ud skal du tage maskinens strømstik ud og lade batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
+			"enable": "Aktivér"
+		}
+	}
 }
