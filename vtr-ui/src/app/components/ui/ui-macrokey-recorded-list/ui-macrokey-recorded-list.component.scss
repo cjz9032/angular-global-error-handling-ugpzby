@@ -2,7 +2,7 @@
 
 .title-main {
 	font-size: 3.4rem;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	font-weight: 500;
 	padding: 1.6rem 0;
 	@media #{$mediaquery_11} {
@@ -208,7 +208,7 @@
 	font-weight: 700;
 	color: $gaming_light_blue;
 	display: inline-block;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	padding: 0.4rem;
 	svg {
 		path {

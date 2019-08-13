@@ -1,0 +1,18 @@
+<div class="vtr-schedule-row" [ngClass]="{
+		'white-theme': theme === 'white',
+		'blue-theme': theme === 'blue'
+	}">
+	<div class="container-fluid p-0">
+		<div class="container-fluid p-0">
+			<div class="row">
+				<div class="col schedule-row">
+					<div class="title">{{ title }}</div>
+					<div class= "type-icon">
+						<div class="type-scan">{{ typeScan }}</div>
+						<button class="type-button" (click)="onEdit()"> <fa-icon class="right-icon" [icon]="['fas', 'angle-right']"></fa-icon>  </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

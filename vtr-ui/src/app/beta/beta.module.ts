@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { BetaModuleRoutingModule } from './beta-routing.module';
 import { BetaComponentComponent } from './beta-component/beta-component.component';
 import { SharedModule } from '../modules/shared.module';
+import { HardwareScanRoutingModule } from './hardware-scan/hardware-scan-routing.module';
+import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 
 @NgModule({
 	declarations: [
@@ -12,6 +14,8 @@ import { SharedModule } from '../modules/shared.module';
 	imports: [
 		CommonModule,
 		BetaModuleRoutingModule,
+		HardwareScanModule,
+		HardwareScanRoutingModule,
 		SharedModule
 	],
 	schemas: [

@@ -9,6 +9,7 @@
 				"files": [
 					"/index.html",
 					"/assets/cms-cache/**",
+					"/assets/i18n/**",
 					"/*.css"
 				]
 			}

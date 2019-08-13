@@ -40,8 +40,8 @@
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
 		<div class="battery-health"
-				id="myDevice-settings-batteryGauge-subtitle"
-				attr.aria-label="myDevice-settings-batteryGauge-subtitle">
+			id="myDevice-settings-batteryGauge-subtitle"
+			attr.aria-label="myDevice-settings-batteryGauge-subtitle">
 			{{'device.deviceSettings.batteryGauge.subtitle' | translate}}
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
@@ -52,29 +52,30 @@
 				[isCharging]="batteryIndicator.charging"
 				[isExpressCharging]="batteryIndicator.expressCharging"
 				[batteryNotDetected]="batteryIndicator.batteryNotDetected"
-				[timeText]="batteryIndicator.timeText">
+				[timeText]="batteryIndicator.timeText"
+				[isAirplaneMode]="batteryIndicator.isAirplaneMode"
+				[isChargeThresholdOn]="batteryIndicator.isChargeThresholdOn">
 			</vtr-battery-indicator>
 		</div>
 
 		<div class="p-3 row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
-			<div class="p-0 pr-2 col-auto battery-conditions">
-				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
-					[src]=" '/assets/icons/battery-conditions/good.svg'" />
-				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
-					[src]=" '/assets/icons/battery-conditions/fair.svg'" />
-				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor && batteryConditions[i].condition!=batteryConditionsEnum.Error"
-					[src]=" '/assets/icons/battery-conditions/poor.svg'" />
-				<img *ngIf="batteryConditions[i].conditionStatus == batteryQuality.AcError"
-					[src]=" '/assets/icons/battery-conditions/ac_error.svg'" />
+			<div class="p-0 pr-2 col-auto ">
+				<span *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
+					class="icomoon icomoon-ConditionGoodBattery"></span>
+				<span *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
+					class="icomoon icomoon-ConditionFairBattery"></span>
+				<span *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor &&
+					batteryConditions[i].condition!=batteryConditionsEnum.Error"
+					class="icomoon icomoon-ConditionBadBattery"></span>
+				<span *ngIf="batteryConditions[i].conditionStatus == batteryQuality.AcError"
+					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
-			<div class='col'>
+			<div class='col battery-conditions-tips'>
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
-					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate:param2"></span>
 				<span
 					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error"
-					class="battery-conditions-tips"
 					[innerHTML]="batteryConditionNote | translate"></span>
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError&&shortAcErrNote"
 					class="link-label"

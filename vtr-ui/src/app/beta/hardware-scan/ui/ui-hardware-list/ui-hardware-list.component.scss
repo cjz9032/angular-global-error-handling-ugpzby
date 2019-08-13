@@ -1,0 +1,170 @@
+@import "../../../../app.theme";
+
+.vtr-ui-list-hardware {
+	.list1 {
+		margin: 3.5rem 0;
+
+		.list-group-item {
+			background-color: $shade_extralight;
+			border-color: $shade_lightest;
+			padding: 1.5rem 1rem 1.5rem 0.2rem;
+
+			.title {
+				font-size: 1.4rem;
+				font-weight: $weight_bold;
+				padding-top: 0rem;
+				padding-left: 1.5rem;
+			}
+
+			.subtitle {
+				font-size: 1.4rem;
+				padding-top: 0rem;
+				padding-left: 1.5rem;
+			}
+		}
+	}
+
+	.list2 {
+		margin-top: 1rem;
+		.list-group-item {
+			border-radius: 0rem !important;
+			border: 0.1rem solid $shade_lighter;
+			padding: 1.5rem 1rem 1.5rem 0.2rem;
+
+			.title {
+				font-size: 1.6rem;
+				font-weight: $weight_bold;
+				padding-top: 0rem;
+			}
+		}
+
+		.details {
+			padding: 0 !important;
+
+			table {
+				margin: 0 !important;
+				border: none !important;
+				font-size: 1.1rem;
+				color: $shade_darkest;
+
+				tr {
+					td {
+						&:first-child {
+							font-weight: $weight_bold;
+							border-left: none !important;
+						}
+
+						&:last-child {
+							border-right: none !important;
+						}
+					}
+
+					&:first-child {
+						td {
+							border-top: none !important;
+						}
+					}
+
+					&:last-child {
+						td {
+							border-bottom: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.list3 {
+		.list-group-item {
+			background-color: $shade_extralight;
+			border-color: $shade_lightest;
+			padding: 1.5rem 1rem 1.5rem 0.2rem;
+			.item-line{
+				.item-left{
+					display: block !important;
+					width: 60%;
+					.title {
+						color: $main_dark;
+						font-size: 1.4rem;
+						font-weight: $weight_bold;
+						padding-top: 0rem;
+						padding-left: 1.5rem;
+					}
+
+					.subtitle {
+						font-size: 1.4rem;
+						padding-top: 0rem;
+						padding-left: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	.test-status {
+		min-width: 5.5rem;
+		text-align: center;
+
+		.progress-value-text {
+			font-size: 1.4rem !important;
+			font-weight: $weight_bold;
+		}
+
+		.loading {
+			color: $main;
+		}
+
+		fa-icon {
+			font-size: 2.7rem;
+		}
+	}
+
+	.item-line {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.item-left {
+		display: flex;
+		justify-content: left;
+		align-items: center;
+	}
+
+	.item-right {
+		display: flex;
+		justify-content: right;
+		align-items: center;
+
+		.result-code-icon {
+			margin-right: 0.5rem;
+			font-size: 1.4rem;
+			color: $main;
+			cursor: pointer;
+
+			&:hover {
+				color: $highlight;
+			}
+		}
+
+		.module-result-text {
+			padding-right: 1rem;
+			font-size: 1rem;
+			font-weight: $weight_bold;
+			text-transform: uppercase;
+		}
+
+		.module-result-icon {
+			font-size: 2rem;
+		}
+
+		.noScanned {
+			color: $main_dark;
+		}
+	}
+
+	.warning {
+		color: $warning_dark;
+	}
+}

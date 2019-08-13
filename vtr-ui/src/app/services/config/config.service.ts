@@ -442,7 +442,7 @@ export class ConfigService {
 		id: 'beta',
 		label: 'common.menu.beta.title',
 		beta: true,
-		path: 'beta',
+		path: 'beta/hardware-scan',
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
 		metricsItem: 'link.beta',
@@ -452,19 +452,19 @@ export class ConfigService {
 		icon: ['fal', 'flask'],
 		forArm: false,
 		subitems: [
-			// {
-			// id: 'password-protection-beta',
-			// label: 'common.menu.beta.password',
-			// path: '',
-			// icon: '',
-			// metricsEvent: 'itemClick',
-			// metricsParent: 'navbar',
-			// metricsItem: 'link.beta.passwordprotection',
-			// routerLinkActiveOptions: {
-			// 	exact: true
-			// },
-			// subitems: []
-			// }
+			{
+				id: 'hardware-scan',
+				label: 'hardwareScan.name',
+				path: '',
+				icon: '',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.hardwarescan',
+				routerLinkActiveOptions: {
+					exact: true
+				},
+				subitems: []
+			}
 		]
 	};
 

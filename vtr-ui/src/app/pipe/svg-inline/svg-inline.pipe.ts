@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable, Subscription } from 'rxjs';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Pipe({
 	name: 'svgInline',
