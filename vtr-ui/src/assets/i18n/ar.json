@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "مفتاح الماكرو لـ ",
-                    "deleteKey": "مفتاح Delete",
+                    "deleteKey": "Delete",
                     "clear": "مسح",
                     "intervalStatus": {
                         "keep": {
