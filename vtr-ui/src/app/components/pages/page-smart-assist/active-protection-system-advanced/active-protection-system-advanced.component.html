@@ -1,4 +1,6 @@
-<p class="caption">
+<p class="caption"
+	id="activeProtectionSystem-advanced-settings-desc"
+	attr.aria-label="activeProtectionSystem-advanced-settings-desc">
 	{{'device.smartAssist.activeProtectionSystem.advanced.description' | translate}}
 </p>
 <div class="container">
@@ -21,6 +23,7 @@
 						metricsParent="Device.MyDeviceSettings"
 						metricsItem="ActiveProtectionSystem.Advanced.PenInput"
 						metricsValue="penStatus">
+						[switchId]="'activeProtectionSystem-advanced-pen'">
 						<div class="dropdown col-sm-6 pl-0">
 							<vtr-ui-dropdown [dropDownId]="'penIntervalsDropDown'"
 								*ngIf=" penStatus "
@@ -53,6 +56,7 @@
 						metricsParent="Device.MyDeviceSettings"
 						metricsItem="ActiveProtectionSystem.Advanced.TouchInput"
 						metricsValue="touchStatus">
+						[switchId]="'activeProtectionSystem_touchInput'">
 					</vtr-ui-row-switch>
 				</div>
 			</li>
@@ -72,6 +76,7 @@
 						metricsParent="Device.MyDeviceSettings"
 						metricsItem="ActiveProtectionSystem.Advanced.PSensorInput"
 						metricsValue="pSensorStatus">
+						[switchId]="'activeProtectionSystem_advanced_hand'">
 					</vtr-ui-row-switch>
 				</div>
 			</li>

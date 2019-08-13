@@ -33,6 +33,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() remainingMinutes = 0; // number of minutes remaining
 	@Input() timeText = '';
 	@Input() batteryNotDetected = false;
+	@Input() isAirplaneMode = false;
 
 	constructor(public translate: TranslateService) {
 	}

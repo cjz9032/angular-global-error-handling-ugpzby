@@ -30,6 +30,8 @@ export class UiButtonComponent implements OnInit {
 	@Input() isGradient = false;
 	@Input() title: string;
 	@Input() linkId:any;
+	@Input() routerPath: string;
+
 	constructor() { }
 
 	onClickButton(event) {

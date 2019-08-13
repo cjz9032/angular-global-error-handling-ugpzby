@@ -189,7 +189,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			if (this.protocalAction.toLowerCase() === 'enable') {
 				this.systemUpdateService.setUpdateSchedule(true, false);
 				const metricData = {
-					ItemType: 'featureClick',
+					ItemType: 'FeatureClick',
 					ItemName: 'chk.critical-updates',
 					ItemValue: 'True',
 					ItemParent: 'Device.SystemUpdate'

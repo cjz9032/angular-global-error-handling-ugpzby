@@ -48,7 +48,8 @@ export class VantageShellService {
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
-				Phoenix.Features.ConnectedHomeSecurity
+				Phoenix.Features.ConnectedHomeSecurity,
+				Phoenix.Features.HardwareScan
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -802,4 +803,13 @@ export class VantageShellService {
 		}
 		return vanStub;
 	}
+
+	// =================== Start Hardware Scan
+	public getHardwareScan(): any {
+		if (this.phoenix) {
+			return this.phoenix.hardwareScan;
+		}
+		return undefined;
+	}
+	// ==================== End Hardware Scan
 }

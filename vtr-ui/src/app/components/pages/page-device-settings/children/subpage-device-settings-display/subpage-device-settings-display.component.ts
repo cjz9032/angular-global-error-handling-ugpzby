@@ -33,7 +33,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
-	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
+	public cameraPrivacyModeStatus = new FeatureStatus(true, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
 	public enableSlider = false;
@@ -167,8 +167,6 @@ export class SubpageDeviceSettingsDisplayComponent
 				case DeviceMonitorStatus.CameraStatus:
 					console.log('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
-
-
 					if (payload) {
 						this.shouldCameraSectionDisabled = false;
 						// this.cameraFeatureAccess.showAutoExposureSlider = false;
