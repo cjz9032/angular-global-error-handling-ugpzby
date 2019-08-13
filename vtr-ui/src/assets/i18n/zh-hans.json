@@ -43,21 +43,21 @@
                     },
                     "driverPopup": {
                         "headerText": "需要安装驱动程序",
-                        "text": "安装驱动程序以激活 RAM 超频（需要重新引导）",
+                        "text": "安装驱动程序以激活RAM超频（需要重启）",
                         "networkBoostText": "您需要安装用于网络增强的驱动程序才能使其生效",
                         "hybridModeText": "您需要安装混合模式的驱动程序才能使其生效",
-                        "cpuOverclockText": "安装驱动程序以激活 CPU 超频（需要重新引导）",
+                        "cpuOverclockText": "安装驱动程序以激活CPU超频（需要重启）",
                         "button": "安装",
                         "link": "取消"
                     },
                     "lightingDriverPopup": {
                         "headerText": "需要安装驱动程序",
-                        "text": "安装驱动程序以激活灯光（需要重新引导）",
+                        "text": "安装驱动程序以激活灯光（需要重启）",
                         "button": "安装",
                         "link": "取消"
                     },
                     "lightingColorMessage": {
-                        "text": "选择此效果不可用的颜色。"
+                        "text": "此效果不可设置颜色"
                     },
                     "autoClose": "自动关闭",
                     "networkBoost": "网络增强",
@@ -142,11 +142,11 @@
                 },
                 "recording": {
                     "title": "开始输入",
-                    "description": "可在 20 秒内录制 20 次输入。"
+                    "description": "可以在20秒内录制20个按键"
                 },
                 "recorded": {
                     "title": "宏键",
-                    "deleteKey": "Delete 键",
+                    "deleteKey": "删除",
                     "clear": "清除",
                     "intervalStatus": {
                         "keep": {
@@ -250,7 +250,7 @@
                     "title": "呼吸"
                 },
                 "option4": {
-                    "title": "波形"
+                    "title": "波浪"
                 },
                 "option5": {
                     "title": "平滑"
@@ -273,7 +273,7 @@
             },
             "brightness": {
                 "text1": {
-                    "title": "*亮度设置未应用"
+                    "title": "*效果无法设置亮度"
                 },
                 "text2": {
                     "title": " 效果"
@@ -309,7 +309,7 @@
             },
             "button": {
                 "default": {
-                    "title": "设为缺省设置"
+                    "title": "恢复缺省设置"
                 }
             },
             "profileheading": {
