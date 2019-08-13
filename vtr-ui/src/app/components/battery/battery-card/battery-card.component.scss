@@ -92,6 +92,27 @@
 		.icomoon {
 			font-size: 3.5rem;
 		}
+		.icomoon-ConditionACAdapterError {
+			&:before {
+				color: #f17f14;
+			}
+		}
+		.icomoon-ConditionBadBattery {
+			&:before {
+				color: #e74c3c;
+			}
+		}
+		.icomoon-ConditionFairBattery {
+			&:before {
+				color: #f17f14;
+			}
+		}
+		.icomoon-ConditionGoodBattery {
+			&:before {
+				color: #30d487;
+			}
+		}
+		
 		.loader {
 			position: absolute;
 			z-index: 999;

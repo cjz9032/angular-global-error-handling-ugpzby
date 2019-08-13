@@ -34,6 +34,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() timeText = '';
 	@Input() batteryNotDetected = false;
 	@Input() isAirplaneMode = false;
+	@Input() isChargeThresholdOn = false;
 
 	constructor(public translate: TranslateService) {
 	}
@@ -45,7 +46,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		if (changes['percentage'] && !changes['percentage'].firstChange) {
+		if (changes.percentage && !changes.percentage.firstChange) {
 			this.refreshLevel();
 		}
 		this.checkRemainingTimeIsZero();
@@ -63,8 +64,8 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	 * @param level decimal value ranging from 0.0 to 1.0
 	 */
 	refreshLevel() {
-		let level = 1,
-			fillWidth = 0;
+		let level = 1;
+		let fillWidth = 0;
 		let percentage = this.percentage;
 
 		if (this.batteryNotDetected) {
