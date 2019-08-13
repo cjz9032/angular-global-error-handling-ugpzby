@@ -259,7 +259,7 @@
 							[isDisabled]="shouldCameraSectionDisabled">
 							<div class="row">
 								<div class="col-12 pr-0">
-									<div *ngIf="shouldCameraSectionDisabled"
+									<div *ngIf="hideNote"
 										class="row permission-note mt-5">
 										<div class="col-12 p-3 d-flex">
 											<div class="col-1 pl-0 text-center">
@@ -305,7 +305,7 @@
 							[switchId]="'device-settings-camera'">
 							<div class="row">
 								<div class="col-12 pr-0">
-									<div *ngIf="shouldCameraSectionDisabled"
+									<div *ngIf="hideNote"
 										class="row permission-note my-2">
 										<div class="col-12 p-3 d-flex">
 											<div class="col-1 pl-0 text-center">
