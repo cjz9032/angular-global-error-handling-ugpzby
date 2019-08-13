@@ -30,7 +30,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit, OnChanges 
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		this.getCurrentOption();
+		// this.getCurrentOption();
 	}
 	
 	public getCurrentOption() {
