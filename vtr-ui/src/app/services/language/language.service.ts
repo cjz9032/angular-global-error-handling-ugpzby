@@ -26,9 +26,7 @@ export class LanguageService {
 		// singleton service will call it once
 		this.setupTranslation(translate);
 		this.translateStrings(translate);
-		this.subject = new BehaviorSubject<Translation>(
-			new Translation(TranslationSection.Unknown, undefined)
-		);
+		this.subject = new BehaviorSubject<Translation>(new Translation(TranslationSection.Unknown, undefined));
 		this.subscription = this.subject;
 		this.isLanguageLoaded = true;
 	}
@@ -36,16 +34,13 @@ export class LanguageService {
 	private translateStrings(translate: TranslateService) {
 		// runtime change in language can be handled like below.
 		// subscribe to top level object and update text in one go
-		translate.get(TranslationSection.CommonMenu)
-			.subscribe((changes: any) => {
-				this.notifyChanges(TranslationSection.CommonMenu, changes);
-			});
+		translate.get(TranslationSection.CommonMenu).subscribe((changes: any) => {
+			this.notifyChanges(TranslationSection.CommonMenu, changes);
+		});
 
-		translate.get(TranslationSection.CommonUi)
-			.subscribe((changes: any) => {
-				this.notifyChanges(TranslationSection.CommonUi, changes);
-
-			});
+		translate.get(TranslationSection.CommonUi).subscribe((changes: any) => {
+			this.notifyChanges(TranslationSection.CommonUi, changes);
+		});
 	}
 
 	private notifyChanges(type: TranslationSection, payload: any) {
@@ -86,8 +81,6 @@ export class LanguageService {
 			'zh-hant'
 		]);
 		this.translate.setDefaultLang(this.defaultLanguage);
-
-
 	}
 
 	public useLanguageByLocale(deviceLocale: string) {
@@ -98,11 +91,11 @@ export class LanguageService {
 
 			let langCode = this.defaultLanguage;
 			const locale = deviceLocale.toLowerCase();
-			if (locale && !['zh', 'pt'].includes(locale.substring(0, 2))) {
+			if (locale && ![ 'zh', 'pt' ].includes(locale.substring(0, 2))) {
 				langCode = locale.substring(0, 2);
 			} else {
 				if (locale && locale.substring(0, 2) === 'pt') {
-					locale === 'pt-br' ? langCode = 'pt-br' : langCode = 'pt';
+					locale === 'pt-br' ? (langCode = 'pt-br') : (langCode = 'pt');
 				} else {
 					langCode = locale;
 				}
@@ -121,8 +114,8 @@ export class LanguageService {
 		if (lang) {
 			const locale = lang.toLowerCase();
 			this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceLocale, locale);
-			//this.translate.use(locale);
-			this.translate.use('sr');
+			this.translate.use(locale);
+			//this.translate.use('sr');
 		}
 	}
 
@@ -136,4 +129,3 @@ export class LanguageService {
 		return false;
 	}
 }
-
