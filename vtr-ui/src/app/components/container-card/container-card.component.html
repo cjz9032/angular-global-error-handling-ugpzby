@@ -235,6 +235,7 @@
 				<div class="col col-12 content">
 					<a *ngIf="isOnline"
 						[attr.href]="!actionLink ? null : actionLink"
+						(click)="linkClicked(actionType, actionLink)"
 						metricsItemCategory="highlight"
 						vtrMetrics
 						id="{{containerCardId+'_article'}}"
@@ -275,6 +276,7 @@
 		<div class="container-fluid">
 			<a *ngIf="isOnline"
 				[attr.href]="!actionLink ? null : actionLink"
+				(click)="linkClicked(actionType, actionLink)"
 				metricsItemCategory="article"
 				vtrMetrics
 				id="{{containerCardId+'_card_article'}}"
@@ -313,6 +315,7 @@
 							<div *ngIf="actionLink"
 								class="read-more">
 								<a [attr.href]="!actionLink ? null : actionLink"
+								(click)="linkClicked(actionType, actionLink)"
 									id="{{containerCardId+'_read_more'}}"
 									attr.aria-label="{{containerCardId+'_read_more'}}"
 									target="_blank"
