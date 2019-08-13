@@ -18,9 +18,11 @@
 		.footer-component {
 			.start-button {
 				display: none;
+				letter-spacing: 0px;
 			}
 			.stop-button {
 				display: block;
+				letter-spacing: 0px;
 			}
 		}
 	}
@@ -115,7 +117,7 @@
 	.button {
 		padding: 1.2rem 8rem !important;
 		@media #{$mediaquery_sm} {
-		padding: 1.2rem 6.5rem !important;
+			padding: 1.2rem 6.5rem !important;
 		}
 	}
 }
