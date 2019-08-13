@@ -35,14 +35,16 @@ import { faCommentAltDots } from '@fortawesome/pro-light-svg-icons/faCommentAltD
 import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
 import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
+// import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
+// import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
-import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
-import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
-import { SharedModule } from './shared.module';
-import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
+// import { SharedModule } from './shared.module';
+// import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
@@ -78,10 +80,10 @@ library.add(faQuestionCircle);
 		AppComponent,
 		HomeComponent,
 		ModalWelcomeComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
+		// ModalAboutComponent,
+		// ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent,
+		// ModalLicenseComponent,
 		ModalServerSwitchComponent
 	],
 	imports: [
@@ -101,14 +103,15 @@ library.add(faQuestionCircle);
 		UiButtonModule,
 		RouterModule,
 		CommonPipeModule,
-		SharedModule,
+		FormsModule,
+		ReactiveFormsModule,
 		ModernPreloadModule,
 	],
 	exports: [
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
-		SharedModule,
+		// SharedModule,
 		ModernPreloadModule,
 	],
 	providers: [
@@ -122,10 +125,10 @@ library.add(faQuestionCircle);
 	],
 	entryComponents: [
 		ModalWelcomeComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
+		// ModalAboutComponent,
+		// ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent,
+		// ModalLicenseComponent,
 		ModalServerSwitchComponent
 	],
 	bootstrap: [AppComponent],

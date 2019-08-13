@@ -2,7 +2,7 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Injectable({
