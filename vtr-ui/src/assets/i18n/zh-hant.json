@@ -1,2378 +1,2378 @@
 {
-    "gaming": {
-        "dashboard": {
-            "device": {
-                "quickSettings": {
-                    "title": "熱模式",
-                    "status": {
-                        "performance": "效能",
-                        "balance": "平衡",
-                        "quiet": "安靜",
-                        "performanceUid": "thermal_mode_performance",
-                        "balanceUid": "thermal_mode_balance",
-                        "quietUid": "thermal_mode_quiet"
-                    },
-                    "statusText": {
-                        "perText": "CPU 使用量越高，風扇速度越快",
-                        "balText": "正常 CPU 和風扇速度",
-                        "quietText": "CPU 使用量越低，風扇速度越慢"
-                    },
-                    "wifiSecurity": "Wifi 安全性",
-                    "dolby": "Dolby",
-                    "rapidCharge": "快速充電"
-                },
-                "legionEdge": {
-                    "title": "CPU 超頻",
-                    "status": {
-                        "alwayson": "開啟",
-                        "whenGaming": "遊戲時",
-                        "off": "關閉",
-                        "alwaysonUid": "cpu_overclock_on",
-                        "whenGamingUid": "cpu_overclock_when_gaming",
-                        "offUid": "cpu_overclock_off"
-                    },
-                    "statusText": {
-                        "onText": "CPU 超頻將會啟動",
-                        "gamingText": "CPU 超頻將於遊戲啟動時自動啟動",
-                        "offText": "CPU 超頻將會停用"
-                    },
-                    "ramOverlock": "RAM 超頻",
-                    "popup": {
-                        "text": "變更將於電腦重新開機後生效。",
-                        "button": "確定"
-                    },
-                    "driverPopup": {
-                        "headerText": "需要安裝驅動程式",
-                        "text": "安裝驅動程式以啟動 RAM 超頻（需要重新開機）",
-                        "button": "安裝",
-                        "link": "取消",
-                        "networkBoostText": "您必須為網路加速安裝驅動程式以使其生效",
-                        "hybridModeText": "您必須為混合模式安裝驅動程式以使其生效",
-                        "cpuOverclockText": "安裝驅動程式以啟動 CPU 超頻（需要重新開機）"
-                    },
-                    "autoClose": "自動關閉",
-                    "networkBoost": "網路加速",
-                    "hybridMode": "混合模式",
-                    "touchpadLock": "觸控板鎖定",
-                    "lightingDriverPopup": {
-                        "headerText": "需要安裝驅動程式",
-                        "text": "安裝驅動程式以啟動照明（需要重新開機）",
-                        "button": "安裝",
-                        "link": "取消"
-                    },
-                    "lightingColorMessage": {
-                        "text": "選取的色彩不具備這個效果。"
-                    }
-                },
-                "systemTools": {
-                    "power": "電源",
-                    "media": "媒體",
-                    "macroKey": "巨集鍵",
-                    "hardwareScan": "硬體掃描",
-                    "systemUpdate": "系統更新",
-                    "header": "系統工具"
-                },
-                "lighting": {
-                    "title": "自訂照明",
-                    "header": "照明"
-                },
-                "legionEdgeModal": {
-                    "line1": "透過 Vantage Edge，您的設定將根據使用情形自動調整。\n 最大化遊戲時的效能，非遊戲時則提供較長的電池續航力。",
-                    "line2": "<b>功能管理概觀</b><br> 某些功能並非在所有裝置上都可使用",
-                    "line3": "<b>CPU 超頻 </b><br> 提升處理器的最高速度",
-                    "line4": "<b>RAM 超頻 </b><br> 提升記憶體的最高速度",
-                    "line5": "<b>網路加速 </b><br> 為您正在玩的遊戲設定最高的網路流量優先順序",
-                    "line6": "<b>Dolby </b><br> 透過 Dolby 技術，特別針對遊戲調整音訊",
-                    "line7": "<b>混合模式 </b><br> 不玩遊戲時停用進階 GPU 設定，以提升電池效能",
-                    "line8": "<b>快速充電 </b><br> 電池充電速度提高，有更多時間隨時隨地暢玩遊戲",
-                    "line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
-                    "line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
-                    "line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制"
-                },
-                "systemInfo": {
-                    "systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
-                },
-                "systemStatus": {
-                    "info": "資訊"
-                },
-                "quickSettingstitle": {
-                    "title": "快速設定"
-                }
-            }
-        },
-        "common": {
-            "menu": {
-                "support": {
-                    "title": "支援",
-                    "sub1": "支援",
-                    "sub2": "Facebook",
-                    "sub3": "Instagram"
-                }
-            }
-        },
-        "macroKey": {
-            "title": "巨集鍵",
-            "introLine": "您可以錄製連續的輸入按鍵，並在遊戲或其他作業進行時使用。",
-            "status": {
-                "on": {
-                    "title": "開啟",
-                    "description": "一律啟用"
-                },
-                "whileGaming": {
-                    "title": "巨集鍵僅在遊戲時啟用",
-                    "description": "它會在您遊戲時啟用，而在非遊戲時維持為數字鍵。"
-                },
-                "off": {
-                    "title": "關閉",
-                    "description": "一律停用"
-                }
-            },
-            "details": {
-                "intro": {
-                    "noNumber": "選取巨集鍵",
-                    "title": "建立的巨集鍵用於",
-                    "line1": "在下方按一下開始錄製按鈕",
-                    "line2": "鍵入巨集鍵",
-                    "line3": "在完成鍵入時停止錄製"
-                },
-                "buttons": {
-                    "start": "開始錄製",
-                    "stop": "停止錄製",
-                    "numberPrefix": "NUM"
-                },
-                "recording": {
-                    "title": "開始鍵入",
-                    "description": "可在 20 秒內錄製 20 個輸入。"
-                },
-                "recorded": {
-                    "title": "巨集鍵用於",
-                    "deleteKey": "刪除按鍵",
-                    "clear": "清除",
-                    "intervalStatus": {
-                        "keep": {
-                            "title": "保留延遲",
-                            "description": "按鍵動作的間隔將予以保留，並在這個巨集鍵使用時套用。"
-                        },
-                        "ignore": {
-                            "title": "忽略延遲",
-                            "description": "按鍵動作間隔將遭忽略。"
-                        }
-                    },
-                    "repeatStatus": {
-                        "repeat1": {
-                            "title": "無重複",
-                            "description": "無重複"
-                        },
-                        "repeat2": {
-                            "title": "重複 2 次",
-                            "description": "重複 2 次"
-                        },
-                        "repeat3": {
-                            "title": "重複 3 次",
-                            "description": "重複 3 次"
-                        },
-                        "repeat4": {
-                            "title": "重複 4 次",
-                            "description": "重複 4 次"
-                        },
-                        "repeat5": {
-                            "title": "重複 5 次",
-                            "description": "重複 5 次"
-                        },
-                        "repeat6": {
-                            "title": "重複 6 次",
-                            "description": "重複 6 次"
-                        },
-                        "repeat7": {
-                            "title": "重複 7 次",
-                            "description": "重複 7 次"
-                        },
-                        "repeat8": {
-                            "title": "重複 8 次",
-                            "description": "重複 8 次"
-                        },
-                        "repeat9": {
-                            "title": "重複 9 次",
-                            "description": "重複 9 次"
-                        },
-                        "repeat10": {
-                            "title": "重複 10 次",
-                            "description": "重複 10 次"
-                        }
-                    },
-                    "list": {
-                        "header": {
-                            "col1": "按鍵動作",
-                            "col2": "間隔"
-                        },
-                        "footer": {
-                            "title": "下一個輸入.."
-                        }
-                    }
-                }
-            },
-            "popupContent": {
-                "clearMacrokey": {
-                    "title": "您確定要刪除此巨集鍵嗎？"
-                },
-                "timeoutRecording": {
-                    "title": "錄製逾時。",
-                    "body": "錄製將在連續 20 秒無任何輸入時逾時。"
-                },
-                "maximumInput": {
-                    "title": "已達最大限制。",
-                    "body": "巨集鍵限存輸入數目不得超過 20 個。"
-                },
-                "inputStopped": {
-                    "title": "錄製逾時。",
-                    "body": "錄製將在輸入停止超過 10 秒時逾時。"
-                },
-                "confirmButton": {
-                    "btnClear": "清除",
-                    "btnCancel": "取消"
-                },
-                "btnOk": "確定"
-            },
-            "recording": {
-                "title": "錄製的巨集鍵用於"
-            }
-        },
-        "lightingProfile": {
-            "title": "照明",
-            "effect": {
-                "option1": {
-                    "title": "開啟"
-                },
-                "option2": {
-                    "title": "閃爍"
-                },
-                "option3": {
-                    "title": "呼吸"
-                },
-                "option4": {
-                    "title": "波浪"
-                },
-                "option5": {
-                    "title": "平滑"
-                },
-                "option6": {
-                    "title": "CPU 溫度"
-                },
-                "option7": {
-                    "title": "CPU 使用率"
-                },
-                "option8": {
-                    "title": "關閉"
-                },
-                "apply": {
-                    "title": "套用"
-                },
-                "applied": {
-                    "title": "已套用"
-                }
-            },
-            "brightness": {
-                "text1": {
-                    "title": "*亮度設定不會套用於"
-                },
-                "text2": {
-                    "title": " 效果"
-                }
-            },
-            "lightingSingleLightingOption": {
-                "option1": {
-                    "title": "一律開啟"
-                },
-                "option2": {
-                    "title": "快速閃爍"
-                },
-                "option3": {
-                    "title": "中速閃爍"
-                },
-                "option4": {
-                    "title": "慢速閃爍"
-                },
-                "option5": {
-                    "title": "閃爍等級"
-                }
-            },
-            "profile": {
-                "text1": {
-                    "title": "照明目前已關閉。選取上面的設定檔標籤並將其開啟，接著進行自訂。"
-                },
-                "text2": {
-                    "title": "效果"
-                },
-                "text3": {
-                    "title": "效果"
-                }
-            },
-            "button": {
-                "default": {
-                    "title": "設定為預設值"
-                }
-            },
-            "profileheading": {
-                "text1": {
-                    "title": "Off"
-                },
-                "text2": {
-                    "title": "設定檔 1"
-                },
-                "text3": {
-                    "title": "設定檔 2"
-                },
-                "text4": {
-                    "title": "設定檔 3"
-                }
-            },
-            "lightingProfileHeading": {
-                "text1": {
-                    "title": "Off"
-                },
-                "text2": {
-                    "title": 1
-                },
-                "text3": {
-                    "title": 2
-                },
-                "text4": {
-                    "title": 3
-                },
-                "Customize": {
-                    "title": "自訂"
-                },
-                "heading": {
-                    "title": "選取設定檔："
-                }
-            },
-            "colourwheel": {
-                "text1": {
-                    "title": "選取的色彩不具備這個效果。"
-                },
-                "text2": {
-                    "title": "套用"
-                },
-                "text3": {
-                    "title": "已套用"
-                },
-                "text4": {
-                    "title": "R："
-                },
-                "text5": {
-                    "title": "G："
-                },
-                "text6": {
-                    "title": "B："
-                },
-                "text7": {
-                    "title": "顏色"
-                }
-            }
-        },
-        "autoClose": {
-            "title": "自動關閉",
-            "introLine": "新增要在啟動遊戲時關閉的應用程式。這將會釋出未使用的資源，以獲得最佳遊戲效能。注意：此功能完全關閉應用程式。因此請務必確定您已儲存您的工作。",
-            "modalTurnAutoClose": {
-                "title": "開啟「自動關閉」？",
-                "body": "新增的應用程式將會在您玩遊戲時關閉，以釋出資源供遊戲使用。",
-                "checkedTitle": "不要再問我這個問題",
-                "btnConfirm": "開啟",
-                "btnCancel": "稍後再問"
-            },
-            "modalAddApps": {
-                "title": "將應用程式新增至「自動關閉」",
-                "body": "下方清單中只會顯示目前執行的應用程式。"
-            },
-            "addAppsButton": "新增",
-            "noRunningApps": {
-                "title": "沒有要新增的執行中應用程式",
-                "body": "只會顯示目前執行的應用程式。請啟動要新增的應用程式並返回。"
-            }
-        },
-        "networkBoost": {
-            "title": "網路加速",
-            "introLine": "啟用網路加速會自動在您的網路中將遊戲的優先順序設定為最高等級，以達到最高速度。若您在玩遊戲時使用應用程式，例如 Twitch 或 Discord，建議您在下方清單加上它們，讓它們也能在您網路上優先使用。",
-            "modalTurn": {
-                "title": "開啟「網路加速」？",
-                "body": "開啟「網路加速」？新增的應用程式在執行時將會共用更多網路。",
-                "checkedTitle": "不要再問我這個問題",
-                "btnConfirm": "開啟",
-                "btnCancel": "稍後再問"
-            },
-            "modalAddApps": {
-                "title": "將應用程式新增至「網路加速」",
-                "body": "最多可再新增 5 個要加速的應用程式（已新增 4 個）"
-            }
-        }
-    },
-    "common": {
-        "menu": {
-            "dashboard": "儀表板",
-            "device": {
-                "title": "裝置",
-                "sub1": "我的裝置",
-                "sub2": "我的裝置設定",
-                "sub3": "系統更新",
-                "sub4": "智慧助理"
-            },
-            "security": {
-                "title": "安全性",
-                "sub1": "我的安全性",
-                "sub2": "防毒",
-                "sub3": "WiFi 安全性",
-                "sub4": "密碼安全狀態",
-                "sub5": "網際網路保護",
-                "sub6": "Windows Hello"
-            },
-            "support": "支援",
-            "homeSecurity": "連線家庭",
-            "privacy": "隱私權",
-            "beta": {
-                "title": "beta"
-            }
-        },
-        "securityAdvisor": {
-            "title": "安全顧問",
-            "subtitle": "檢查您的裝置是否安全。",
-            "antiVirus": "防毒",
-            "wifi": "WiFi 安全性",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
-            "windowsHello": "Windows Hello",
-            "enabled": "已啟用",
-            "disabled": "已停用",
-            "partiallyProtected": "受部分保護",
-            "installed": "已安裝",
-            "notInstalled": "未安裝",
-            "loading": "正在載入",
-            "installing": "正在安裝",
-            "notFound": "找不到",
-            "registered": "已註冊",
-            "notRegistered": "未註冊"
-        },
-        "qAndA": {
-            "title": "您機器的問答",
-            "subtitle": "為您的設備找到一些有用的提示。",
-            "question1": "備份及還原檔案",
-            "question2": "如何重新整理電腦",
-            "question3": "如何知道電腦的 CPU",
-            "question4": "檢查電腦的電池使用情況",
-            "question5": "將電腦當作平板電腦使用",
-            "question6": "瞭解您的個人助理 Cortana"
-        },
-        "ui": {
-            "back": "上一步",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "收合",
-            "expand": "展開",
-            "loader": "獲取狀態",
-            "loading": "載入中..."
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "隱私權"
-        }
-    },
-    "tutorial": {
-        "almostThere": "快完成了！",
-        "para1": "再按幾個按鈕就大功告成了。",
-        "para2": "在我們為您提供最佳體驗之前，還需要設定幾項內容。",
-        "personalise": "開始個人化",
-        "howIsitUsed": "您要如何使用它？",
-        "howMachinUsed": "按一下符合此電腦用途的描述",
-        "business": "商務",
-        "personal": "個人",
-        "custom": "自訂",
-        "skip": "跳過",
-        "next": "下一步",
-        "interests": "您的興趣是什麼？",
-        "howOnesMachinUsed": "按一下符合此電腦用途的描述",
-        "games": "遊戲",
-        "news": "新聞",
-        "entertainment": "娛樂",
-        "arts": "藝文",
-        "politics": "政治",
-        "sports": "體育",
-        "regionalNews": "地方新聞",
-        "technology": "技術"
-    },
-    "dashboard": {
-        "headerMain": {
-            "title": "今天看起來充滿活力"
-        },
-        "offlineInfo": {
-            "title": "未偵測到網際網路連線",
-            "subtitle": "進一步瞭解如何解決連線問題",
-            "buttonText": "獲得支援"
-        },
-        "feedback": {
-            "title": "提供意見回饋",
-            "subtitle": "告訴我們您對 Vantage 的評價。",
-            "button": "提供意見回饋",
-            "form": {
-                "email": "Email (optional)",
-                "comments": "留言...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "謝謝您的意見回饋！"
-                },
-                "question1": "您喜歡 Vantage 的新風格嗎？",
-                "question2": "您是否滿意其效能？",
-                "question3": "您未來會更常使用這款應用程式嗎？",
-                "yes": "是",
-                "no": "否",
-                "tips1": "請將任何其他意見告訴我們",
-                "sendFeedback": "傳送意見回饋",
-                "submitScreenShot": "傳送螢幕擷取畫面"
-            }
-        },
-        "quickSettings": {
-            "title": "您的快速設定",
-            "microphone": "麥克風",
-            "cameraPrivacy": "相機",
-            "eyeCareMode": "護眼",
-            "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage 沒有攝影機和麥克風的存取權。",
-                "accessUrl": "移至 Windows 設定以授與存取權",
-                "microphoneNote": "Lenovo Vantage 沒有麥克風的存取權。",
-                "cameraPrivacyNote": "Lenovo Vantage 沒有攝影機的存取權。"
-            }
-        },
-        "systemStatus": {
-            "title": "系統狀態",
-            "subtitle": "快速掌握您的裝置狀態。",
-            "memory": {
-                "title": "記憶體",
-                "detail": {
-                    "notFound": "找不到記憶體",
-                    "of": "/"
-                }
-            },
-            "diskSpace": {
-                "title": "磁碟空間",
-                "detail": {
-                    "notFound": "找不到磁碟",
-                    "of": "/"
-                }
-            },
-            "warranty": {
-                "title": "保固",
-                "detail": {
-                    "notFound": "找不到保固",
-                    "until": "直到",
-                    "expiredOn": "保固到期日",
-                    "notAvailable": "沒有可用保固"
-                }
-            },
-            "systemUpdate": {
-                "title": "系統更新",
-                "detail": {
-                    "update": "更新"
-                }
-            }
-        }
-    },
-    "device": {
-        "myDevice": {
-            "title": "我的裝置",
-            "subtitle": "我的裝置狀態",
-            "serial": "序號",
-            "productNumber": "產品編號",
-            "biosVersion": "Bios 版本",
-            "learnMore": "進一步瞭解",
-            "freeMemory": "可用記憶體",
-            "systemUpdate": {
-                "title": "系統更新",
-                "notFound": "找不到系統更新",
-                "detail": {
-                    "uptoDate": "軟體已是最新版本",
-                    "updatedOn": "更新時間",
-                    "outdated": "軟體是舊版",
-                    "neverRanUpdate": "從未更新"
-                }
-            },
-            "extendedWarranty": "延長保固",
-            "processor": {
-                "title": "處理器",
-                "notFound": "正在載入處理器資訊"
-            },
-            "memory": {
-                "title": "記憶體",
-                "notFound": "正在載入記憶體資訊",
-                "ram": "RAM"
-            },
-            "diskspace": {
-                "title": "磁碟空間",
-                "notFound": "正在載入硬碟資訊"
-            },
-            "software": "軟體已是最新版本",
-            "updated": "已更新",
-            "outOfWarranty": "保固期限已過",
-            "expired": "到期日",
-            "of": "/",
-            "warranty": {
-                "notFound": "找不到保固",
-                "detail": {
-                    "title": "延長保固",
-                    "inWarranty": "在保固期內",
-                    "daysRemaining": "剩餘天數",
-                    "outOfWarranty": "保固期限已過",
-                    "expiredOn": "到期日",
-                    "notAvailable": "沒有可用保固",
-                    "support": "支援"
-                }
-            },
-            "helpful": "實用內容"
-        },
-        "deviceSettings": {
-            "helpful": "實用內容",
-            "batteryGauge": {
-                "title": "電池計量器",
-                "subtitle": "電池性能",
-                "hours": "小時",
-                "hour": "時",
-                "minutes": "分",
-                "minute": "分鐘",
-                "charge": "充飽的時間",
-                "button": "請參閱電池詳細資訊",
-                "details": {
-                    "title": "電池詳細資料",
-                    "primary": "主要電池",
-                    "secondary": "次要電池",
-                    "tertiary": "三級電池",
-                    "status": "狀態",
-                    "wattage": "瓦特數",
-                    "barcode": "條碼",
-                    "remainingPercent": "剩餘百分比",
-                    "temp": "溫度",
-                    "frupn": "FRU 零件編號",
-                    "remainingTime": "剩餘時間",
-                    "chargeCompletionTime": "充電完成時間",
-                    "cycleCount": "充電次數",
-                    "chemistry": "裝置化學性質",
-                    "remainingCap": "剩餘容量",
-                    "designCap": "設計容量",
-                    "fullChargeCap": "充飽容量",
-                    "manufDt": "製造日期",
-                    "designVolt": "設計電壓",
-                    "volts": "電壓",
-                    "firstUseDt": "第一次使用日期",
-                    "firmwareVer": "韌體版本",
-                    "chargeStatusString": {
-                        "error": "錯誤",
-                        "notinstalled": "未安裝",
-                        "noactivity": "沒有活動",
-                        "charging": "正在充電",
-                        "discharging": "正在放電",
-                        "acdischarging": "正在放電（使用交流電）"
-                    },
-                    "deviceChemistry": {
-                        "li-polymer": "鋰聚合物",
-                        "li-ion": "鋰離子",
-                        "li_polymer": "鋰聚合物",
-                        "li_ion": "鋰離子",
-                        "silver-zinc": "銀鋅",
-                        "silver_zinc": "銀鋅",
-                        "nicd": "鎳鎘",
-                        "nimh": "鎳氫",
-                        "unknown": "不明"
-                    },
-                    "manufacturer": {
-                        "title": "製造商",
-                        "celxpert": "Celxpert",
-                        "smp": "SMP"
-                    }
-                },
-                "condition": {
-                    "Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",
-                    "Good": "<b>電池狀況良好。</b>",
-                    "Exhaustion": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
-                    "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
-                    "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
-                    "NotGood": "<b>電池狀況不佳。</b>",
-                    "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
-                    "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。",
-                    "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
-                    "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
-                    "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
-                    "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
-                    "PermanentError": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
-                    "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
-                    "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。"
-                },
-                "updating": "正在更新",
-                "voltageError": "電池電壓不正確",
-                "batteryNotDetected": "未偵測到電池",
-                "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
-                "seeDetailsLink": "查看詳細資料"
-            },
-            "power": {
-                "title": "電源",
-                "subtitle": "電源設定",
-                "description": "您可以從這個區段，動態調整散熱效能，使電池能延到最長壽命。這個區段也提供其他受歡迎的電源相關功能。您可以查看此區段中的預設設定，根據您的需求來自訂系統。",
-                "jumpto": {
-                    "title": "移至設定",
-                    "battery": "電池",
-                    "power": "電源",
-                    "other": "其他"
-                },
-                "powerSmartSettings": {
-                    "title": "智慧型電源設定",
-                    "subtitle": "智慧型冷卻",
-                    "subtitle1": "電池與安靜",
-                    "description1": "開啟後，此功能會動態調整散熱設定以符合您的需求。它會調整可使裝置維持冷卻和安靜，並同時達到手持狀態或閒置的設定。 當裝置停放在穩定表面時，它會將效能調整到最佳情況。關閉後，您可以手動設定散熱優先順序。",
-                    "description2": "智慧型冷卻會調整風扇速度，表面溫度和效能達到最佳化。此功能具有以下模式，而且現在可透過 Windows 效能電源滑桿進行操作。",
-                    "description3": "智慧型冷卻會自動平衡散熱效能以符合您的需求。當筆記型電腦處於手持狀態時，智慧型冷卻功能會調整效能設定，使裝置表面的溫度較低，進而維持使用上的舒適度。當裝置放置在桌面上時，此功能會調整效能達到最佳化。",
-                    "description13": "開啟後，此功能會動態調整散熱設定以符合您的需求。它會調整可使裝置維持冷卻和安靜，並同時達到手持狀態或閒置的設定。 當裝置停放在穩定表面時，它會將效能調整到最佳情況。關閉後，您可以手動設定散熱優先順序。",
-                    "description14": "此功能可讓您視需要調整風扇速度、最大化系統效能或延長電池壽命。它有以下三種模式。您也可以使用快速鍵 (Fn+Q) 或 Lenovo Vantage 工具列切換模式。",
-                    "readMore": "較多內容。",
-                    "gotoWindows": {
-                        "title": "跳至 Windows 設定",
-                        "modalBodyText1": "用滑鼠按一下系統匣中的 Windows 電池圖示，即可操作 Windows 效能電源滑桿"
-                    },
-                    "intelligentCooling": {
-                        "title": "智慧型冷卻",
-                        "description": "",
-                        "tooltip": "",
-                        "optimize": "最佳化系統",
-                        "apsHint": "若要啟用智慧型冷卻，您必須安裝並啟用 Lenovo Active Protection System。",
-                        "options": {
-                            "quiteCool3": "安靜與低溫",
-                            "performance3": "效能",
-                            "quiteCool4": "安靜與低溫",
-                            "performance4": "效能",
-                            "quiteCool5": "安靜與低溫",
-                            "performance5": "效能",
-                            "batterySaving": "省電",
-                            "performance13": "效能",
-                            "quiteCool13": "安靜與低溫",
-                            "performance14": "極致效能",
-                            "quiteCool14": "智慧型冷卻"
-                        },
-                        "readMore": {
-                            "mode1": "安靜模式",
-                            "mode2": "平衡模式",
-                            "mode3": "效能模式",
-                            "line1": "滑桿在最左邊。降低風扇速度和效能以獲得更涼爽、更安靜的電腦和最佳的電池續航力。",
-                            "line2": "滑桿在中央。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
-                            "line3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。",
-                            "line4": "更多資訊"
-                        },
-                        "selectedModeText": {
-                            "quiteCool": "此模式可實現風扇速度和系統效能平衡的最佳體驗。例如，在遊戲中，它可以最佳化效能。在辦公室裡，它可以減少噪音。",
-                            "batterySaving": "此模式透過自動調整亮度、變更電源設定、停用進階影像處理功能等來實現最長電池壽命。",
-                            "performance": "此模式可實現最高系統效能。在此模式中，風扇高速轉動可能會產生很大的噪音。"
-                        },
-                        "intelligentCoolingModesModal": {
-                            "title": "變更智慧型冷卻模式",
-                            "close": "關閉",
-                            "coolingModesList": {
-                                "list1": "按一下工具列中的 Windows 電池圖示",
-                                "list2": "Windows 電池計量器隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
-                            }
-                        }
-                    },
-                    "nonintelligentCooling": {
-                        "options": {
-                            "intelligentCooling": "智慧型冷卻",
-                            "extremeCooling": "極致效能",
-                            "battery&Quite": "電池與安靜"
-                        }
-                    },
-                    "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作"
-                },
-                "powerSettings": {
-                    "title": "電源設定",
-                    "alwaysUSB": {
-                        "title": "一律開啟 USB",
-                        "description": "當電腦處於睡眠、休眠或關閉模式時，透過電腦上的一律開啟 USB 接頭為 USB 裝置充電。智慧型手機或平板電腦可以使用黃色編碼或印有下列圖示的 USB 接頭快速充電：",
-                        "checkbox": "當電腦關機時，啟用筆記本電腦電池的 USB 充電。"
-                    },
-                    "easyResume": {
-                        "title": "輕鬆回復",
-                        "description": "如果您需要頻繁地打開及闔上電腦機蓋，請啟用此功能以改善電腦恢復作業的時間。",
-                        "tooltip": "如果您需要頻繁地打開、闔上電腦機蓋，此功能將改善電腦恢復作業的時間。啟用時，您的電腦將在您闔上其機蓋時進入省電模式，但是如果您在闔上機蓋後的 15 分鐘內打開機蓋，電腦將立即恢復正常作業。此功能也可讓您的筆記型電腦嘗試完成擱置中的活動（例如傳送電子郵件或下載檔案），然後再使系統暫停。"
-                    },
-                    "or": "或"
-                },
-                "otherSettings": {
-                    "title": "其他設定",
-                    "vantageToolbar": {
-                        "title": "Lenovo Vantage 工具列",
-                        "description": "將 Vantage 工具列釘到 Windows 工作列中，就能輕鬆取得詳細的電池資訊，以及操作您的快速設定。"
-                    }
-                },
-                "batterySettings": {
-                    "title": "電池設定",
-                    "batteryThreshold": {
-                        "title": "電池的充電臨界值",
-                        "description": "如果您使用電腦時大多都會接上 AC 整流器，而且很少使用電池電力，可以將最高充電值設定為低於 100% 來延長電池的壽命。這方式非常有用，因為不常使用的電池若能維持在非完全充飽的狀態，可延長其壽命。",
-                        "tooltip": "如果電池目前已充電至停止充電臨界值以上，請拔下電源，直到電池放電至停止充電臨界值或以下。根據電池狀態（不論新舊），其開始或停止充電的確切時間點可能會有最多 2% 的誤差。如果您啟用此功能，建議您偶爾執行一次電池計量器重設以確保獲得正確的電池性能報告。",
-                        "note": "備注",
-                        "readMoreText": "較多內容。",
-                        "noteInfo": " 電池充電臨界值仍未完全作用。請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
-                        "settings": {
-                            "title1": "主要電池的臨界值",
-                            "title2": "次要電池的臨界值"
-                        },
-                        "popup": {
-                            "title": "啟用電池的充電臨界值",
-                            "description1": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。",
-                            "description2": "為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
-                            "enable": "啟用",
-                            "cancel": "取消"
-                        },
-                        "options": {
-                            "start": "低於下列百分比時開始充電",
-                            "checkboxText": "自動將開始充電臨界值設定為停止充電臨界值減 5%。",
-                            "stop": "達到下列百分比時停止充電"
-                        }
-                    },
-                    "expressCharging": {
-                        "title": "快速充電",
-                        "description": "快速充電的電池充電速度比一般模式快得多。",
-                        "tooltip": "快速充電雖可加快系統電池的充電速度，但這項功能可能會造成電池使用壽命縮短。"
-                    },
-                    "conservationMode": {
-                        "title": "省電模式",
-                        "description": "此功能可延長已插入電池的使用壽命。<br>啟用此模式後，電池將只充電至容量的 55-60%，有利於電池使用壽命延到最長。然而當電腦斷開與交流電源的連接後，此功能會縮短其使用時間。",
-                        "tooltip": {
-                            "line1": "此功能可延長已插入電池的使用壽命。",
-                            "line2": "啟用此模式後，電池將只充電至容量的 55-60%，有利於電池使用壽命延到最長。然而當電腦斷開與交流電源的連接後，此功能會縮短其使用時間。",
-                            "line3": "注意：快速充電和省電模式無法同時作用。如果開啟其中一種模式，另一種模式將會自動關閉。"
-                        }
-                    },
-                    "airPlanePower": {
-                        "title": "機艙電源模式",
-                        "description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
-                        "checkBoxDesc": "自動偵測",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
-                    }
-                },
-                "energyStar": {
-                    "title": "Energy Star",
-                    "description": "ENERGY STAR 認證產品"
-                },
-                "smartStandby": {
-                    "title": "智慧型待命",
-                    "description": "此功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
-                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
-                    "timer": {
-                        "heading": "設定您一般使用這部電腦的時間",
-                        "subHeading1": "開始",
-                        "subHeading2": "結束",
-                        "subHeading3": "將此排程用於",
-                        "endTimeNote": "結束時間必須距開始時間 20 小時內",
-                        "timeUnits": {
-                            "unit1": "小時",
-                            "unit2": "分鐘",
-                            "unit3": "上午/下午"
-                        },
-                        "amPms": {
-                            "am": "上午",
-                            "pm": "下午"
-                        }
-                    },
-                    "warningtip": "請至少選擇一天。",
-                    "days": {
-                        "shortName": {
-                            "sun": "星期日",
-                            "mon": "星期一",
-                            "tue": "星期二",
-                            "wed": "星期三",
-                            "thurs": "星期四",
-                            "fri": "星期五",
-                            "sat": "星期六"
-                        },
-                        "name": {
-                            "sun": "星期日",
-                            "mon": "星期一",
-                            "tue": "星期二",
-                            "wed": "星期三",
-                            "thurs": "星期四",
-                            "fri": "星期五",
-                            "sat": "星期六"
-                        },
-                        "everyday": "每天",
-                        "weekdays": "週間日",
-                        "weekends": "週末"
-                    }
-                }
-            },
-            "audio": {
-                "title": "音效",
-                "subtitle": "音訊設定",
-                "description": "您可以透過這個區段來自動最佳化或完全手動配置音訊設定，例如 Dolby 設定、麥克風等。",
-                "audioSmartsettings": {
-                    "title": "智慧型音訊設定",
-                    "subtitle": "以應用程式為基礎的設定",
-                    "description": "根據您在使用的不同應用程式，自動調整音訊設定。",
-                    "dolby": {
-                        "title": "自動 Dolby 音訊設定",
-                        "tooltip": "自動 Dolby 音訊設定可因應您正在使用的不同應用程式，將 Dolby 音訊設定為適用模式，增強您的音訊體驗。",
-                        "options": {
-                            "dynamic": "動態",
-                            "movie": "電影",
-                            "music": "音樂",
-                            "games": "遊戲",
-                            "voip": "語音"
-                        }
-                    },
-                    "voip": {
-                        "title": "針對 VoIP 的自動音訊最佳化",
-                        "tooltip": "可在 VoIP 通話時，自動切換成 Dolby 語音模式，提供清晰、穩定的音質。"
-                    }
-                },
-                "microphone": {
-                    "title": "麥克風",
-                    "note": {
-                        "title": "注意事項",
-                        "description": "Lenovo Vantage沒有存取麥克風的權限。請為 Lenovo Vantage 應用程式開啟麥克風的存取權限。"
-                    },
-                    "microphone": {
-                        "title": "麥克風",
-                        "tooltip": "您可以經由調整麥克風音量和指定適當模式，自訂您的 MIC 效果。"
-                    },
-                    "volume": {
-                        "title": "麥克風音量",
-                        "description": "Dolby 音效能由您聆賞的所有內容提供宏亮有力的清晰音效，為您的內容和設備選擇適當的模式。",
-                        "options": {
-                            "silent": "無聲",
-                            "loud": "大聲"
-                        }
-                    },
-                    "suppress": {
-                        "title": "消除鍵盤噪音",
-                        "tooltip": "開啟此項可藉由消除鍵盤噪音將麥克風音效最佳化。"
-                    },
-                    "acoustic": {
-                        "title": "回音消除",
-                        "tooltip": "開啟此功能可藉由降低回音將麥克風音效最佳化。"
-                    },
-                    "optimize": {
-                        "title": "最佳化我的麥克風：",
-                        "tooltip": "配置麥克風效果以依據不同的情境和環境強化您的音訊體驗。",
-                        "options": {
-                            "VoiceRecognition": "語音辨識",
-                            "OnlyMyVoice": "只有我的聲音",
-                            "Normal": "一般",
-                            "MultipleVoices": "多人聲音"
-                        }
-                    }
-                }
-            },
-            "displayCamera": {
-                "title": "顯示器和攝影機",
-                "subtitle": "顯示器與攝影機設定",
-                "description": "您可以透過這個區段來改善您的視覺體驗，以及設定攝影機屬性。請在此處了解更多功能，及自訂您的顯示器體驗。",
-                "jumpTo": {
-                    "title": "移至設定",
-                    "shortcuts": {
-                        "display": {
-                            "title": "顯示"
-                        },
-                        "camera": {
-                            "title": "相機"
-                        }
-                    }
-                },
-                "display": {
-                    "title": "顯示",
-                    "eyeCareMode": {
-                        "title": "護眼模式",
-                        "checkbox": "安排從日落到日出的護眼模式",
-                        "options": {
-                            "warm": "暖色 (對眼睛較好)",
-                            "cold": "冷卻"
-                        },
-                        "reset": "重設",
-                        "tooltip": "護眼模式會調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。",
-                        "onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
-                        "note": {
-                            "title": "備注",
-                            "description": "Lenovo Vantage 需要存取您的位置資訊，才能計算您所在當地的日出和日落時間。"
-                        }
-                    },
-                    "dispColorTemp": {
-                        "title": "顯示器色溫",
-                        "options": {
-                            "warm": "暖色 (對眼睛較好)",
-                            "cold": "冷卻"
-                        },
-                        "reset": "重設",
-                        "tooltip": "護眼模式會調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。",
-                        "onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
-                        "note": {
-                            "title": "備注",
-                            "description": "啟用護眼模式後，此色溫不會生效。不過，您可以拖曳滑桿來加以預覽。如果要使它生效，請關閉護眼模式。"
-                        }
-                    },
-                    "privacyGuard": {
-                        "title": "隱私保護",
-                        "description": "此功能可防止他人偷看您的螢幕。開啟後，它會變更您顯示器的視角，讓您周圍的人無法看見顯示器上的內容。您也可以按下「Fn+D」鍵來切換模式。",
-                        "note": "隱私保護在螢幕直向模式中無法運作。在此模式中，仍可從側邊看到您的畫面。",
-                        "labelText": "輸入密碼時啟用此功能"
-                    },
-                    "oledPowerSettings": {
-                        "title": "OLED 電源設定",
-                        "description": [
-                            "您也可以選擇性地降低顯示畫面不同部分的亮度，藉此降低電腦 OLED 顯示器的耗電量並延長電池壽命。",
-                            "我們也建議將工作列和顯示畫面中不常變化的其他區域的亮度降低，以延長顯示器的整體壽命。"
-                        ],
-                        "reset": "重設溫度",
-                        "tooltip": "此功能可以選擇性地降低顯示畫面不同部分的亮度，藉此降低耗電量並延長電池壽命。",
-                        "dropDown": {
-                            "seconds": "秒",
-                            "minute": "分鐘",
-                            "minutes": "分",
-                            "alwaysOn": "保持開啟",
-                            "never": "永不",
-                            "halfTime": "顯示器關閉計時器的一半時間"
-                        },
-                        "taskBarDimmer": "工作列調光器",
-                        "backgroundDimmer": "背景調光器",
-                        "displayDimmer": "顯示器調光器"
-                    }
-                },
-                "camera": {
-                    "title": "相機",
-                    "note": {
-                        "title": "備注",
-                        "description": "Lenovo Vantage 沒有存取攝影機的權限。請為 Lenovo Vantage應用程式開啟攝影機的存取權限。"
-                    },
-                    "url": "跳至 Windows 隱私權設定",
-                    "cameraPrivacy": {
-                        "title": "攝影機隱私模式",
-                        "tooltip": "啟用隱私設定時，攝影機會停止傳送即時影像。請僅在您不想在視訊通話時與其他人共用您的影像時開啟此設定。"
-                    },
-                    "camera": {
-                        "title": "相機",
-                        "tooltip": "按一下此處，即可將攝影機屬性重設為預設設定。",
-                        "reset": "重設"
-                    },
-                    "brightness": "亮度",
-                    "contrast": "對比",
-                    "autoExposure": "自動曝光",
-                    "autoFocus": "自動對焦",
-                    "notAvailable": "無法使用攝影機",
-                    "camerablur": {
-                        "title": "相機背景模糊",
-                        "caption": "當您使用攝影機進行任何視訊通話或拍照時，此功能會讓背景模糊。您可以從下面選項選擇不同的效果。",
-                        "blurMode": "模糊模式",
-                        "comicMode": "漫畫模式",
-                        "sketchMode": "素描模式"
-                    },
-                    "cameraLoadingFailed": {
-                        "inUseTitle": "攝影機正在使用中",
-                        "inUseDescription": "另一個應用程式正在使用攝影機。關閉應用程式，然後重試一次。",
-                        "loadingFailedTitle": "攝影機正在使用中或載入失敗",
-                        "loadingFailedDescription": "關閉應用程式，然後重試一次。"
-                    }
-                }
-            },
-            "inputAccessories": {
-                "title": "輸入和配件",
-                "subtitle": "輸入和配件設定",
-                "description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整最佳電源管理的設定",
-                "inputAccessory": {
-                    "title": "智慧型鍵盤",
-                    "hiddenKeyboardFunctions": {
-                        "title": "隱藏的鍵盤功能",
-                        "description": "您可以同時按下 Fn 鍵（位於鍵盤左下角）與其他按鍵以叫出下列鍵盤對照表中顯示的指令。"
-                    },
-                    "firstKeyObj": {
-                        "tittle": "Fn + Tab",
-                        "description": "啟用高解析度顯示器的縮放功能",
-                        "image": ""
-                    },
-                    "secondKeyObj": {
-                        "tittle": "Fn + 4",
-                        "description": "進入睡眠模式",
-                        "image": ""
-                    },
-                    "thirdKeyObj": {
-                        "tittle": "Fn + D",
-                        "description": "開啟和關閉隱私保護",
-                        "image": ""
-                    },
-                    "fourthKeyObj": {
-                        "tittle": "Fn + Q",
-                        "description": "在效能模式和靜音模式之間切換",
-                        "image": ""
-                    },
-                    "fifthKeyObj": {
-                        "tittle": "Fn + 空格鍵",
-                        "description": "變更鍵盤背光狀態",
-                        "image": ""
-                    }
-                },
-                "userDefinedKey": {
-                    "title": "使用者定義鍵",
-                    "caption": "以星星圖示代表的按鍵可讓您設定使用者定義的功能",
-                    "dropDown": {
-                        "title": "使用者定義鍵的動作",
-                        "note": "附註：這可用來輸入經常輸入的按鍵，例如電子郵件地址或郵寄地址。Lenovo 建議您絕對不要使用這項功能來儲存及輸入密碼或任何其他私人資訊。",
-                        "options": {
-                            "option1": "請選取",
-                            "option2": "打開網站",
-                            "option3": "輸入文字"
-                        }
-                    },
-                    "tooltip": "要填入的內容",
-                    "apply": {
-                        "title": "套用"
-                    },
-                    "website": {
-                        "url": "網站 URL"
-                    },
-                    "enterText": {
-                        "title": "要輸入的文字"
-                    }
-                },
-                "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
-                }
-            }
-        },
-        "smartAssist": {
-            "title": "智慧助理",
-            "description": "Lenovo 智慧型感應會結合您電腦上的感應器來偵測您的活動，並調整最佳電源管理的設定，以及保護您的隱私。",
-            "jumpTo": {
-                "title": "移至設定",
-                "security": "安全性",
-                "screen": "螢幕",
-                "media": "媒體",
-                "voice": "語音",
-                "APS": "APS"
-            },
-            "intelligentSecurity": {
-                "title": "智慧型安全",
-                "readMore": "較多內容",
-                "HumanPresenceDetection": {
-                    "title": "人員在場偵測",
-                    "tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
-                },
-                "humanPresenceDetection": {
-                    "title": "使用者在場感應",
-                    "tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
-                },
-                "zeroTouchLogin": {
-                    "title": "紅外線攝影機自動登入",
-                    "caption": "當您坐在電腦前面或接近電腦時，此功能會自動解除鎖定或喚醒電腦。",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
-                },
-                "zeroTouchLock": {
-                    "title": "自動鎖定螢幕",
-                    "caption": "偵測不到使用者在場時，此功能將使顯示器變暗並鎖定電腦。當您在無人看管且未鎖定的情況下離開電腦時，它可降低未經授權存取電腦的機會。它也會在偵測不到您在場時，讓系統進入新式待命模式，以降低耗電量。",
-                    "autoScreenLockTimer": {
-                        "title": "自動螢幕鎖定計時器",
-                        "radioButton": {
-                            "fast": "快",
-                            "medium": "中",
-                            "slow": "慢"
-                        },
-                        "toolTipContent": "選取您所需的選項，即可在未偵測到人員在場時以快/中/慢等速度鎖定螢幕。然而，螢幕遭到鎖定的時間也會受到實際使用情況、感應器功能，以及 Windows 螢幕逾時設定的影響。因此、我們強烈建議您在離開座位前立即將系統上鎖。"
-                    }
-                },
-                "distanceSensitivityAdjusting": {
-                    "title": "距離敏感度調整",
-                    "caption": "自動距離調整將會透過 AI 引擎自動更新偵測距離。",
-                    "options": {
-                        "near": "近",
-                        "far": "遠"
-                    },
-                    "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
-                        "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
-                        }
-                    }
-                },
-                "note": {
-                    "description1": "此功能必須依賴 Windows Hello。確定 Windows 設定中已開啟臉部辨識。",
-                    "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
-                    "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
-                    "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
-                    "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。"
-                },
-                "WindowsLink": {
-                    "goToWindowsHello": "跳至 Windows Hello 設定",
-                    "screenTimeoutSettings": "前往螢幕逾時設定"
-                },
-                "resetToDefault": "重設"
-            },
-            "intelligentScreen": {
-                "title": "智慧型螢幕",
-                "description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整電源管理的設定。例如，如果它偵測到您正在走路，便會使顯示器變暗；如果偵測到您正在閱讀，則不會使顯示器變暗。",
-                "autoScreenOff": {
-                    "title": "自動螢幕關閉",
-                    "caption": "面朝下或行走時，自動關閉顯示器。",
-                    "note": "如果您在 Windows 設定的「系統」區段中將電源計劃設定成「使用電池時永不關閉顯示器」，就無法使用這個功能。請選取「永不」以外的值才能啟用這個功能。",
-                    "windowsLink": "移至 Windows 設定中的電源和睡眠設定"
-                },
-                "keepMyDisplay": {
-                    "title": "保持顯示",
-                    "caption": "當我在閱讀或瀏覽時，保持顯示。",
-                    "displaySlider": {
-                        "title": "瀏覽時，顯示器變暗前的分鐘數",
-                        "startTime": "0 分鐘",
-                        "endTime": "60 分鐘"
-                    }
-                }
-            },
-            "activeProtectionSystem": {
-                "title": "Active Protection System",
-                "description": "Lenovo Active Protection System 是一種自主功能，可協助保護硬碟避免因強烈物理震動和振動而受損。其將持續監視電腦的移動，而且會在預測到掉落或類似損害事件時暫停硬碟運作。",
-                "activeProtection": {
-                    "title": "Active Protection",
-                    "caption": "改變敏感度，在低敏感模式下，只有較強的撞擊才會啟動保護",
-                    "checkbox": "忽略重複震動，例如火車或汽車內的震動"
-                },
-                "manualActiveProtectionSuspension": {
-                    "title": "手動暫停 Active Protection",
-                    "caption": "允許我手動暫停 Active Protection System",
-                    "dropdown-title": "暫停時間",
-                    "button": "立即暫停"
-                },
-                "advanced": {
-                    "description": "為了改善使用平板電腦時的硬碟存取，系統在偵測到下列動作時會暫停 Active Protection System",
-                    "pen": {
-                        "title": "數位筆輸入",
-                        "description": "使用數位筆輸入時，在數位筆輸入離開範圍時啟用 APS"
-                    },
-                    "touch": {
-                        "title": "觸控輸入",
-                        "description": "使用觸控輸入時，在未偵測到觸控輸入時啟用 APS"
-                    },
-                    "hand": {
-                        "title": "電腦邊緣感應到手接近",
-                        "description": "啟用平板電腦模式時，在未偵測到手部時啟用 APS"
-                    },
-                    "more": "其他資訊",
-                    "advanced-settings": "進階設定",
-                    "hide": "隱藏進階設定"
-                },
-                "APS": {
-                    "more": "其他資訊",
-                    "advancedSettings": "進階設定",
-                    "hideAdvancedSettings": "隱藏進階設定",
-                    "lowSensitivity": "低敏感度",
-                    "mediumSensitivity": "中敏感度",
-                    "highSensitivity": "高敏感度"
-                }
-            },
-            "intelligentMedia": {
-                "heading": "智慧型媒體",
-                "title": "視頻播放智慧控制",
-                "desc": "此功能將在您離開電腦時暫停視訊，並在您回來時繼續播放視訊。",
-                "tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
-            },
-            "voice": {
-                "title": "語音",
-                "description": "Lenovo Voice 可使用語音到文字功能，協助將您的語音轉換為文字，並使用翻譯功能提供從語音到文字的即時翻譯。",
-                "installBtnText": "安裝",
-                "launchBtnText": "啟動",
-                "voiceToText": {
-                    "title": "語音到文字",
-                    "caption": "此功能可協助將您的語音轉換為文字。"
-                },
-                "translation": {
-                    "title": "翻譯",
-                    "caption": "此功能提供語音的即時翻譯。翻譯的內容顯示在文字中。您可以根據需求選擇來源語言和目標語言。"
-                },
-                "modalPopUp": {
-                    "heading": "開始使用：",
-                    "point1": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。",
-                    "point2": "開啟要用來記錄轉換文字的檔案。",
-                    "point3": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「語音到文字」。",
-                    "point4": "選取所需的語言，然後按一下麥克風圖示開始。",
-                    "point5": "將游標放在要編輯的位置並開始說話。",
-                    "point6": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「翻譯」。",
-                    "point7": "選擇所需的來源語言和目標語言。",
-                    "point8": "根據您的需求，設定從喇叭或麥克風輸入語音。",
-                    "point9": "按一下麥克風圖示開始說話",
-                    "closeText": "關閉"
-                },
-                "modalInstallationFailed": {
-                    "btnText": "確定",
-                    "title": "安裝失敗",
-                    "desc": "若要使用 Lenovo Voice，請稍後重試。"
-                }
-            }
-        }
-    },
-    "systemUpdates": {
-        "title": "系統更新",
-        "back": "上一步",
-        "history": "完整歷程記錄",
-        "notAvailable": "無法使用",
-        "notInstalled": "未安裝",
-        "criticalUpdates": "重要更新",
-        "recommendedUpdates": "建議更新",
-        "optionalUpdates": "選用更新項目",
-        "ignoredUpdates": "已忽略的更新",
-        "successInstall": "已成功安裝：",
-        "failedInstall": "安裝失敗：",
-        "at": "時間：",
-        "readMore": "較多內容",
-        "popup": {
-            "reboot": "重新啟動",
-            "shutdown": "關機",
-            "rebootForceMsg": "您選取的更新將在安裝後使系統自動重新開機。",
-            "shutdownForceMsg": "您選取的更新將在安裝後使系統自動關機。",
-            "rebootDelayedMsg": "更新安裝時，您選取的更新將會在安裝後使系統重新開機。請勿關閉您的系統、卸下電源或配件。我們建議您儲存工作，為您的系統重新開機預作準備。",
-            "rebootRequiredMsg": "為了成功安裝更新，您的電腦需要重新開機以確保一切運作安全、順暢。",
-            "okayButton": "確定",
-            "cancelButton": "取消",
-            "rebootButton": "立即重新開機",
-            "dismissButton": "關閉",
-            "rebootPending": "重新開機擱置中"
-        },
-        "autoUpdateSettings": {
-            "title": "自動更新設定",
-            "subtitle": "自動安裝更新",
-            "critical": {
-                "title": "重要更新",
-                "tooltip": "重要更新可防止出現重大問題、嚴重故障、硬體故障或資料毀損。"
-            },
-            "recommended": {
-                "title": "推薦的更新",
-                "tooltip": "推薦的驅動程序更新可使計算機以最佳性能運行。"
-            },
-            "windows": {
-                "title": "Windows Updates",
-                "url": "Windows 設定"
-            }
-        },
-        "support": {
-            "title": "Lenovo 支援網站"
-        },
-        "banner": {
-            "neverChecked": "歡迎使用系統更新。",
-            "title": "保持最新狀態的系統才是健康的系統。",
-            "last": "上次更新：",
-            "next": "下次的排定更新：",
-            "checkButton": "檢查更新",
-            "checking": "檢查更新項目",
-            "downloading": "下載更新完成",
-            "installing": "正在安裝更新",
-            "percent": "% 已完成",
-            "cancelCheck": "取消檢查",
-            "cancelUpdates": "取消更新",
-            "available": "可用更新",
-            "description": "這些套件包含了對電腦正常運作至關重要的硬體驅動程式更新和其他系統公用程式更新。重要更新項目在保護電腦資料方面也很重要，應該立即安裝。不安裝這些套件可能會導致資料遺失、系統不正常或硬體故障。",
-            "installButton": "安裝所有更新",
-            "result": {
-                "success": "已正確安裝所有更新",
-                "fail": {
-                    "title": "部分更新項目未正確安裝。",
-                    "description": "下載或安裝這些更新期間出了問題。請確定您處於線上狀態，而且在安裝更新時請勿關閉電腦。"
-                }
-            }
-        },
-        "updateCheckbox": {
-            "rebootRequired": "需要重新開機",
-            "failReason": "失敗原因：AC 電源整流器未連接到您的電腦。",
-            "manufacturer": "製造商：",
-            "version": "版本：",
-            "installVersion": "已安裝的版本：",
-            "downloadSize": "下載大小：",
-            "diskSpaceNeeded": "所需磁碟空間：",
-            "ignore": "忽略",
-            "attend": "處理",
-            "rebootRequiredTag": "需要重新開機",
-            "rebootDelayTag": "需要重新開機，需要使用電源",
-            "shutdownRequiredTag": "需要關機",
-            "dependedPackage": "相依性套件"
-        },
-        "availableUpdates": {
-            "title": "可用更新",
-            "description": "這些套件包含了對電腦正常運作至關重要的更新。重要更新有助於使您的電腦更安全、更可靠，因此應該在可用時立即安裝。建議更新和選用更新有助於使您的軟體保持最新狀態，以及使您的電腦保持最佳運作狀態。",
-            "installAllUpdates": "安裝所有更新",
-            "installSuccessHeader": "已正確安裝所有更新",
-            "installFailHeader": "部分更新項目未正確安裝",
-            "installFailDescription": "下載和安裝這些更新期間出了問題。請確定您處於線上狀態，而且在安裝更新時請勿關閉電腦。",
-            "optionalUpdates": "選用更新項目",
-            "installSelectedUpdates": "安裝選取的更新"
-        },
-        "installationHistory": {
-            "name": "名稱",
-            "sortByDate": "依日期排列",
-            "packageSize": "套件大小：",
-            "releaseDate": "發行日期：",
-            "showAll": "顯示所有",
-            "noInstallationHistory": "沒有安裝歷程記錄"
-        },
-        "statusCodeMessage": {
-            "commonFailure": "擷取新的更新時發生問題。請稍後重試。",
-            "upToDate": "沒有可用的更新。您的系統已經更新為最新狀態",
-            "egatherException": "收集使用者資訊時發生錯誤。",
-            "gatheringUserInfoException": "收集使用者資訊時發生錯誤。",
-            "certificateValidationException": "更新內容伺服器無效。請稍後重試。",
-            "downloadException": "下載更新時發生錯誤。",
-            "connectException": "無法連接到更新內容伺服器。",
-            "notEnoughDiskSpace": "沒有足夠的磁碟空間可執行目前的作業。",
-            "proxyAuthenticationException": "Proxy 使用者名稱或密碼不正確。",
-            "proxyConnectionException": "無法連接到 Proxy 伺服器。",
-            "autoScriptEvaluationException": "評估自動配置 script 時發生錯誤。",
-            "localRepositoryConnectionFailureException": "無法連線到本端儲存庫。",
-            "localRepositoryDatabaseException": "找不到本端儲存庫的資料庫或是該資料庫已毀損。",
-            "networkInterruptedException": "系統更新伺服器目前無法使用。請稍後重試。",
-            "helpCenterInvalidServerException": "系統更新伺服器無效。請稍後重試。",
-            "catalogNotFoundException": "找不到適用於您系統的更新。",
-            "catalogCrcErrorException": "目前正在更新您系統的目錄。請稍後重試。",
-            "catalogErrorException": "在系統更新伺服器上偵測到您系統的更新目錄發生錯誤。請稍後重試。",
-            "fileNotFoundException": "找不到檔案。"
-        }
-    },
-    "homeSecurity": {
-        "title": "連線家庭安全性",
-        "notification": {
-            "recent": "最近的安全通知",
-            "notifications": "通知",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "保護您的裝置生態系統",
-            "thisDevice": "這部裝置",
-            "allDevices": "全部裝置",
-            "protected": "受到保護",
-            "notProtected": "未受到保護",
-            "trialExpired": "試用已過期",
-            "upgrade": "升級",
-            "inEcosystem": "生態系統模式中",
-            "ecosystemEnable": "生態系統已啟用",
-            "inTrial": "試用模式中",
-            "addEcosystem": "新增到生態系統",
-            "enableEcosystem": "啟用生態系統",
-            "startTrial": "開始試用",
-            "fullAccess": "完整存取權",
-            "renew": "更新"
-        },
-        "overview": {
-            "overviewBlockTitle": "您的生態系統安全概要",
-            "allDevices": "全部裝置",
-            "myDevice": "我的裝置",
-            "thisComputer": "這台電腦",
-            "secure": "安全",
-            "needAttention": "需要關注",
-            "manageAccount": "管理帳戶",
-            "devices": "裝置",
-            "seeProtectedDevices": "請參閱受保護裝置",
-            "addDevice": "新增裝置",
-            "trialExpired": "試用已過期 - 升級以保護您的全部裝置",
-            "upgrade": "升級",
-            "freeTrial": "保護您的全部裝置 - 30 天免費試用版",
-            "startTrial": "開始試用"
-        },
-        "tour": {
-            "back": "上一頁",
-            "skip": "跳過",
-            "start": "開始導覽",
-            "done": "完成",
-            "welcome1": "歡迎使用",
-            "welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
-            "welcomeDescStart": "立即開始 30 天免費試用。",
-            "welcome2": "Vantage 獨家",
-            "welcomeDesc2": "連線家庭安全性直接內建於 Vantage，可供快速存取生態系統和安全警報的保護狀態。",
-            "create": "建立您的帳戶",
-            "lenovoId": "使用 Lenovo ID",
-            "notifications": "接收關於您家中狀態的<b>通知</b>",
-            "monitor": "<b>監控</b>您家中裝置的安全性",
-            "peaceOfMind": "隨時保護全家裝置安全，讓您備感<b>安心</b>！",
-            "signInLenovoId": "使用 Lenovo ID 進行註冊",
-            "haveLenovo": "我沒有 <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;建立 Lenovo ID",
-            "without": "<b>無帳戶</b>情況下繼續",
-            "skipAndTrial": "跳過並開始試用",
-            "alreadyHave": "我已經有<b>連線家庭安全性帳戶</b>了",
-            "loginCHS": "登入現有的 CHS 帳戶",
-            "locationTitle": "啟用位置追蹤",
-            "locationPermission": "為了使這項功能正確運作，您必須啟用這部裝置的位置追踪"
-        },
-        "accountStatus": {
-            "title": "我的連線家庭安全性",
-            "startTrial": "開始試用",
-            "manageAccount": "管理帳戶",
-            "upgradeAccount": "升級帳戶",
-            "inTrialDetail1": "試用將在 {{remainingDays}} 天後結束。",
-            "inTrialDetail2": "您目前還在試用期間。您可以無限次存取各項功能。",
-            "trialExpiredDetail1": "您的試用已到期。",
-            "trialExpiredDetail2": "您的試用已到期，您的裝置生態系統將不再受到保護。",
-            "upgradedDetail1": "您的帳戶會持續有效直至 {{expiredDate}}。",
-            "upgradedDetail2": "您的裝置生態系統目前正受到保護。",
-            "localAccountDetail2": "按下面的按鈕，開始免費試用 30 天。",
-            "alreadyHaveAccount": "已經有啟動碼了嗎？"
-        }
-    },
-    "support": {
-        "common": {
-            "getSupport": "獲得支援"
-        },
-        "warranty": {
-            "titleInWarranty": "在保固期內",
-            "titleWarrantyExpired": "保固已過期",
-            "titleWarrantyNotFound": "找不到保固",
-            "statusInWarranty": "在保固期內",
-            "statusWarrantyExpired": "已過期",
-            "statusWarrantyNotFound": "找不到保固",
-            "yearDepotWarranty": "年到府取件保固",
-            "warrantyDetails": "保固詳細資料：",
-            "startDate": "開始日期：",
-            "endDate": "結束日：",
-            "status": "狀態：",
-            "subDescription1": "此產品具有數年有限保固，並享有到府取件維修服務。客戶可致電當地服務中心以取得更多資訊。經銷商可提供此產品的自行送修。",
-            "subDescription2": "我們找不到您裝置的保固詳細資料，如需其他保固選項，請造訪我們的支援網站。",
-            "viewWarrantyOptions": "檢視保固選項",
-            "offlineTips1": "如需最新的保固資訊，請連線至網際網路。",
-            "offlineTips2": "請連線至網際網路以更新保固資訊。"
-        },
-        "documentation": {
-            "title": "文件",
-            "listUserGuide": "使用手冊"
-        },
-        "needHelp": {
-            "title": "需要協助嗎？",
-            "description": "請聯絡我們以便為您提供協助。",
-            "listLenovoCommunity": "Lenovo 社群",
-            "listContactCustomerService": "聯絡客戶服務",
-            "listContactUsOnWechat": "透過 WeChat 聯絡我們",
-            "weChatDescription": "透過 WeChat 向我們提問，我們一定會盡快回覆",
-            "listFindUs": "透過社交媒體追蹤我們",
-            "listContactUsOnFacebook": "透過 Facebook 聯絡我們",
-            "facebookDescription": "按一下以透過 Facebook 追蹤我們"
-        },
-        "quicklinks": {
-            "title": "快速鏈結",
-            "description": "請聯絡我們以便為您提供協助。",
-            "listETicket": "透過電子票證獲得支援",
-            "listServiceProvider": "尋找服務供應商",
-            "listAboutLenovoVantage": "關於 Lenovo Vantage"
-        },
-        "about": {
-            "version": "版本",
-            "licenseAgreement": "授權合約",
-            "otherSoftwareLicenses": "其他軟體授權",
-            "ourWebsite": "我們的網站",
-            "aboutYourDevice": "關於您的裝置",
-            "copyright": "© 2002-2019 Lenovo all rights reserved"
-        },
-        "quickAccess": {
-            "categories": "類別",
-            "categoriesDesc": "在我們的文章中尋找實用的資訊。",
-            "seeArticles": "查看文章"
-        }
-    },
-    "security": {
-        "landing": {
-            "fully": "受到完整保護",
-            "fullyDesc": "恭喜您！您受到良好保護。",
-            "notFully": "未受到完整保護",
-            "notFullyDesc": "您未受到完整保護。立即瞭解如何更好地保護自己。",
-            "security101": "安全顧問 101",
-            "firewall": "防火牆",
-            "pwdHealth": "密碼安全狀態",
-            "vpnSecurity": "VPN 安全性",
-            "vpnVirtual": "虛擬私人網路",
-            "wifiConnected": "WiFi 與連線家庭安全性",
-            "connectedHomeSecurity": "連線家庭安全性",
-            "fingerprint": "指紋辨識器",
-            "seeAllNetwork": "查看所有加入的網路",
-            "maliciousNetwork": "本月已阻止您的電腦加入 {{maliciousWifi}} 個惡意網路。",
-            "good": "良好",
-            "malicious": "惡意",
-            "suspicious": "可疑",
-            "securityScoreDepends": "您可以從安全分數了解自身的線上安全，最後得分將依下列條件而異：",
-            "antivirus": "是否獲得防毒軟體的保護",
-            "password": "是否在安全方式中採用強式及複雜的密碼進行管理",
-            "vpn": "是否監控網路遭受攻擊的風險",
-            "wifi": "是否在使用公共 WiFi 時加密您的個人資料",
-            "windowsHello": "是否使用安全登入選項來保護裝置"
-        },
-        "antivirus": {
-            "common": {
-                "title": "防毒",
-                "back": "上一步",
-                "why": "為何選擇 McAfee？",
-                "recommends": "Lenovo 建議使用 McAfee 來保護您所有的裝置，因其具備下列優點：",
-                "award": "針對最新的線上威脅提供獲獎肯定的保護，包括勒索軟體和惡意軟體",
-                "dedicated": "始終優於 Defender 和其他頂尖 AV 提供者的專用安全性",
-                "deviceToCloud": "無損及電腦速度的裝置對雲端技術",
-                "poweredBy": "搭載 McAfee",
-                "privacyTerms": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>",
-                "mcafeePremium": "McAfee 特級保護",
-                "protectedBy": "您目前受到 {{protectedName}} 的保護。但是，您可以透過 McAfee LiveSafe 獲得更好的保護。",
-                "virusScan": "病毒掃描",
-                "firewall": "防火牆",
-                "disabled": "已停用",
-                "enableVirusScan": "啟用病毒掃描",
-                "enablenFirewall": "啟用防火牆",
-                "enableFirewall": "啟用防火牆"
-            },
-            "windowsDefender": {
-                "optimallyProtected": "未受到最佳保護",
-                "subtitle": "您目前正受到 Windows Defender 的保護。不過，您可以透過 McAfee LiveSafe 獲得更佳的保護。透過下方內容進一步瞭解。",
-                "learnMore": "進一步瞭解 McAfee",
-                "windowsProtected": "Windows Defender 基本保護",
-                "windowsSubtitle": "Windows Defender 為您的裝置提供基本保護"
-            },
-            "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "您目前受到 McAfee LiveSafe 的保護",
-                "valid": "有效期限",
-                "upgrade": "立即升級",
-                "launch": "啟動 McAfee",
-                "getMacfee": "取得 McAfee",
-                "topBenefits": "McAfee LiveSafe 的主要優勢",
-                "awardTitle": "獲獎肯定的防毒軟體",
-                "awardSubtitle": "在 PC 上防堵病毒、惡意軟體、勒索軟體、間諜軟體、垃圾程式等。",
-                "encryptedTitle": "加密儲存",
-                "encryptedSubtitle": "使用 128 位元加密將機密檔案儲存在您的 PC 上，以保持機密檔案的隱私。",
-                "identityTitle": "身分盜用保護",
-                "identitySubtitle": "負責保護您的身分，避免遭到盜用或詐騙。",
-                "supportTitle": "免費客戶支援",
-                "supportSubtitle": "在訂閱期間，獲得電話、交談式或線上支援。",
-                "antiTitle": "反垃圾郵件",
-                "antiSubtitle": "藉由移除可能包含危險連結和病毒的電子郵件，阻止危險郵件到達您的收件匣。",
-                "virusTitle": "病毒防護承諾",
-                "virusSubtitle": "當 PC 出現病毒時，McAfee 專家將遠端存取您的電腦以移除病毒，消除您的後顧之憂。",
-                "parentalTitle": "家長監護",
-                "parentalSubtitle": "防堵不希望讓孩子看到的網站和搜尋結果。此外，還可讓您設定孩子上網的時間長度限制。",
-                "license": "授權有效期限",
-                "trial": "試用有效期限"
-            },
-            "others": {
-                "othersProtection": "為您的裝置提供基本保護"
-            }
-        },
-        "wifisecurity": {
-            "header": {
-                "title": "WiFi 與連線家庭安全性",
-                "back": "上一步"
-            },
-            "container": {
-                "title": "Lenovo Wifi 安全性",
-                "name": "WIFI 安全性",
-                "enable": "已啟用",
-                "disable": "已停用",
-                "less": "較少資訊",
-                "more": "更多資訊",
-                "networkHistory": "網路歷程記錄",
-                "connect": "最後連線",
-                "showmore": "顯示更多",
-                "showless": "顯示較少內容",
-                "button": "啟用 WiFi 安全性",
-                "disableDecribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。"
-            },
-            "threatlocator": {
-                "describe": "使用威脅偵測器判斷您周圍網路的安全性。",
-                "button": "檢查威脅",
-                "connectionError": "連線錯誤",
-                "tryAgain": "網路無法使用，因此我們找不到對您的威脅，請連接到網際網路，然後重試。"
-            },
-            "locationmodal": {
-                "title": "啟用位置服務",
-                "describe1": "若要使用 Lenovo WiFi 安全性，您必須啟用 Lenovo Vantage 的位置服務。您現在要啟用位置嗎？",
-                "describe2": "若要使用連線家庭安全性，您必須啟用 Lenovo Vantage 的位置服務。您現在要啟用位置嗎？",
-                "agree": "同意",
-                "cancel": "取消"
-            },
-            "errorMessage": {
-                "headerText": "錯誤",
-                "bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。",
-                "closeText": "關閉",
-                "offlineText": "我們發現您沒有連線到網際網路。此頁面的某些部分將無法正確運作。請重新連線",
-                "accountText": "帳戶建立失敗。請稍後重試。"
-            }
-        },
-        "homeprotection": {
-            "homesecurity": {
-                "title": "連線家庭安全性",
-                "titleDescription": "連線家庭安全性以三種方式保障您的安全：",
-                "homeSecurityAffect1": "連線家庭安全性可確保裝置的安全，並且未遭入侵",
-                "homeSecurityAffect2": "連線家庭安全性可確保您連線的網路的安全",
-                "homeSecurityAffect3": "連線家庭安全性可確保連線至您家庭網路的其他裝置的安全。",
-                "describe": "不安全的裝置和網路可能會引入惡意軟體，導致身分遭盜用，並洩露隱私和財務資訊。請啟用此功能以降低讓您的裝置和家庭網路遭受攻擊的風險",
-                "subtitle": "安心保障",
-                "subtitleDescribe": "如果連線家庭安全性偵測到裝置或家庭網路有漏洞，或是如果您連線至潛在的惡意網路，將會向您傳送警示。<tag>這裡</tag>還可進一步瞭解連線家庭安全性。",
-                "tryNow": "立即試用"
-            },
-            "invitationcode": {
-                "button": "輸入邀請代碼",
-                "buttonDescribe": "您已將此裝置加入現有的連線家庭安全性帳戶。",
-                "title": "已經有連線家庭安全性了嗎？",
-                "titleDescribe": "請確保已啟用 Vantage 的位置權限，以便將您的裝置新增至現有的連線家庭帳戶，並且使用連線家庭安全性。",
-                "enterCode": "輸入您的連線代碼",
-                "addHome": "新增家庭",
-                "ok": "確定",
-                "continue": "繼續",
-                "cancel": "取消",
-                "validateCode": "驗證碼",
-                "success": "已成功連線",
-                "canUse": "您現在可以開始使用連線家庭安全性",
-                "tryAgain": "代碼不正確，請重試！",
-                "activationCode": "啟動代碼"
-            },
-            "securityhealth": {
-                "title": "安全性健康情況",
-                "deviceName1": "來自可信任來源的應用程式",
-                "deviceName2": "開發人員模式",
-                "deviceName3": "UAC 通知",
-                "deviceName4": "防毒可用性",
-                "deviceName5": "硬碟加密",
-                "deviceName6": "防火牆可用性",
-                "deviceName7": "已啟用 Windows",
-                "deviceName8": "安全更新可用性",
-                "deviceName9": "密碼保護",
-                "deviceName10": "自動更新服務可用性",
-                "fail": "失敗",
-                "pass": "通過",
-                "learnMoreAboutSecurityHealth": "在<tag>這裡</tag>分別深入瞭解這些元件。",
-                "peaceOfMind": "您希望更安心嗎？",
-                "button": "啟用 WiFi 安全性"
-            }
-        },
-        "vpn": {
-            "statusTitle": "SURFEASY VPN",
-            "title": "VPN 安全性",
-            "header": "SurfEasy VPN",
-            "whatIsSufEasy": "SurfEasy VPN 會加密您傳送和接收的資訊，讓您可以放心透過任何網際網路連線安全地私下使用 PC、Mac®、智慧型手機或平板電腦。",
-            "whatCanSufEasy1": "在您上網時為您提供保護的虛擬私人網路提供者。在不使用 VPN 的情況下，您的電腦可能較容易遭受攻擊者和身分竊盜者的攻擊。VPN 無聲地在背景執行，並提供安全性和隱私保護。",
-            "startUseSufEasy4": "SurfEasy 使用者可以享用每 30 天 250 MB 的免費流量！依照 SurfEasy 應用程式的&quot;獎勵&quot;標籤上的步驟進行操作，以獲得更多流量。",
-            "howToGetData": "如何獲得免費流量：",
-            "howToGetData1": "確認電子郵件，贏得 +250 MB 流量",
-            "howToGetData2": "加入第二個裝置，贏得 +250 MB 流量",
-            "howToGetData3": "推薦朋友，贏得 +500 MB 流量",
-            "howToGetData4": "在 Facebook 上為 SurfEasy 按讚，贏得 +100 MB 流量",
-            "howToGetData5": "在 Twitter 上跟隨 SurfEasy，贏得 +100 MB 流量",
-            "helpKeep": "透過 SurfEasy VPN 協助您保持線上活動的安全性和隱私。",
-            "getSufEasy": "取得 SurfEasy",
-            "openSufEasy": "開啟 SurfEasy",
-            "whySufEasy": "為何使用虛擬私人網路 (VPN)？",
-            "whySufEasyDescription": "使用 Wi-Fi 熱點（例如咖啡廳或機場的熱點）可能會讓您的機密資訊暴露在網路犯罪的風險中。SurfEasy VPN 是無日誌的 VPN，可加密您的個人資訊且不會追蹤或儲存您的線上活動或位置。",
-            "startUseSufEasy": "立即開始使用 SurfEasy",
-            "startUseSufEasy1": "透過銀行級加密，協助確保您傳送和接收的資料的安全性和隱私。",
-            "startUseSufEasy2": "協助防止公司追蹤您的線上活動或位置。",
-            "startUseSufEasy3": "免費和特級的產品提供多種選擇，以滿足您的需要和預算。",
-            "howToUseSufEasy": "如何使用 SurfEasy VPN",
-            "whatCanSufEasy2": "在存取公用 Wi-Fi 熱點時，保護您的隱私並開啟 SurfEasy VPN。透過 Lenovo Starter VPN 計劃，您可以完成獎勵活動以獲取更多的資料保護頻寬。升級後擁有無限制的頻寬，可保護最多 5 部智慧型手機、平板電腦和電腦。",
-            "getStarted": "開啟 SurfEasy VPN：",
-            "getStarted1": "按一下上方的「開啟 SurfEasy」按鈕以啟動 SurfEasy VPN。",
-            "getStarted2": "開啟 VPN 並稍待片刻，確認連線的安全。",
-            "getStarted3": "如有需要，請變更您的區域或位置，並享有安全的私人網路。",
-            "poweredBySurfEasy": "搭載 SurfEasy",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
-        },
-        "passwordManager": {
-            "statusTitle": "DASHLANE 密碼管理程式",
-            "title": "密碼安全狀態",
-            "header": "Dashlane",
-            "whatIsPmNotInstalled": "可儲存高保護性的複雜密碼及立即登入每個網站的最安全、最簡單的方法。",
-            "whatIsPmInstalled": "更安全的數位生活就在眼前：新增密碼、啟用暗網監視以及自動填入個人和付款資訊。",
-            "startProtect": "開始以簡單的方式保護您的線上帳戶。",
-            "discount": "Lenovo 使用者獨享 Dashlane 特級版五折優惠。",
-            "offer": "優惠僅適用於新的 Dashlane 使用者！",
-            "getDashLane": "取得 Dashlane",
-            "learnMoreAbout": "<tag>進一步瞭解</tag>如何充分利用 Dashlane",
-            "openDashLane": "開啟 Dashlane",
-            "neverForget": "Dashlane：永遠不再忘記任何密碼",
-            "whatIsDashLane": "Dashlane 是搭配您的瀏覽器使用的密碼管理程式和數位保護應用程式。它會自動儲存密碼和個人資料，為您記住所有內容，並安全地儲存所有內容。Dashlane 也會分析帳戶安全性，並提供可改善密碼安全狀態的簡單方法。",
-            "helpYou": "Dashlane 幫助您",
-            "helpYou1": "記住無限個使用者名稱和密碼。",
-            "helpYou2": "隨時隨地立即登入，提供流暢的瀏覽體驗",
-            "helpYou3": "在裝置上同步處理，讓您隨時都可存取重要的帳戶",
-            "helpYou4": "可付諸行動的簡單建議，提升您的線上保護",
-            "getStarted": "開始使用 Dashlane 嗎？",
-            "checkOutThisGuide": "使用 Dashlane 保持線上安全，節省時間免煩惱。如需入門的詳細指示，<tag>請查看此手冊。</tag>",
-            "allowsYou": "Dashlane 可讓您",
-            "allowsYou1": "隨時隨地立即登入，提供流暢的瀏覽體驗 - 在裝置上同步處理，讓您隨時都可存取重要的帳戶",
-            "allowsYou2": "監視暗網以保護您的個人資訊",
-            "allowsYou3": "透過內建 VPN，在不安全的 WiFi 網路上保持安全",
-            "allowsYou4": "在不顯示密碼的情況下安全地共用密碼",
-            "poweredByDashLane": "搭載 Dashlane",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
-        },
-        "windowsHello": {
-            "statusTitle": "WINDOWS HELLO",
-            "title": "Windows Hello",
-            "protectYourDevice": "使用 Lenovo 推薦的這些安全性選配產品保護您的裝置。",
-            "signIn": "使用 Windows Hello 快速安全地登入。",
-            "signInTitle": "使用 Windows Hello 快速安全地登入",
-            "setUp": "設定 Windows Hello",
-            "whyWindowsHello": "為何選擇 Windows Hello？",
-            "whyWindowsHelloDescription1": "Windows Hello 讓登入電腦變得更簡單、更安全，也可以用於您的線上 Microsoft 應用程式。依照以下指示開始使用 Windows Hello。",
-            "startUsingToday": "立即開始使用 Windows Hello",
-            "visitAndRegister": "造訪 Windows Hello 網頁並註冊您的指紋。",
-            "visitInSettings": "在系統設定中<tag>造訪 Windows Hello</tag>",
-            "unlock": "使用 Windows Hello 登入，並使用手指輕觸感應器以解除鎖定 PC。",
-            "startUsingWindowsHello": "開始使用 Windows Hello 登入 Microsoft 應用程式，例如 Outlook、OneDrive、Office 365 和 Xbox Live。",
-            "visitMicrosoft": "造訪 Microsoft",
-            "poweredByWindowsHello": "搭載 Windows Hello",
-            "privacyPolicy": "進一步瞭解<tag>隱私權政策</tag>",
-            "whyWindowsHelloDescription2": "Windows Hello 讓登入電腦變得更簡單、更安全。而您也可以用於您的線上 Microsoft 應用程式。依照以下指示開始使用 Windows Hello",
-            "authentication": "Windows Hello 鑑別",
-            "traditional": "傳統密碼可能會遭竊，並從世界任何地方用於存取您的帳戶。更安全、更方便。Windows Hello 是新一代密碼。使用您的指紋辨識器來取代不安全的密碼登入。",
-            "howToStart": "如何開始使用 Windows Hello？"
-        }
-    },
-    "lenovoId": {
-        "login": "登入",
-        "logout": "登出",
-        "unlockExclusives": "解除鎖定獨家功能",
-        "user": "使用者",
-        "welcomeText": "{{firstName}}，今天看起來充滿活力！",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "今天看起來充滿活力！",
-        "helloUser": "{{firstName}}，您好！",
-        "ssoErrorTitle": "錯誤",
-        "ssoErrorCommon": "糟糕，我們遇到了錯誤。請再試一次。",
-        "ssoErrorCommonEx": "非預期的錯誤。請再試一次。",
-        "ssoErrorTimeStampIncorrect": "糟糕，您 PC 的時間似乎不正確。請更正您 PC 上的時間，然後再試一次。",
-        "ssoErrorNetworkDisconnected": "糟糕！連線失敗！請檢查您的網際網路連線，然後再試一次。",
-        "ssoErrorCommunicating": "網路錯誤。請檢查您的連線，然後再試一次。",
-        "ssoErrorAccountPluginNotExist": "遺漏外掛程式。如果您已連線至網際網路，我們將會在背景自動還原外掛程式。這可能需要一點時間，請稍後重試。"
-    },
-    "faq": {
-        "footer": {
-            "title": "找不到你要找的東西？",
-            "description": "需要額外的支持嗎？ 不要猶豫與VIA聯繫：",
-            "body": "聯想社區",
-            "button": "去論壇"
-        },
-        "question1": {
-            "title": "備份及還原檔案",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        備份及還原檔案    </div>    <hr />    <div style='margin-bottom:7rem;'>        備份讓您有備無患。將檔案複本保存在另一個硬碟上，以防原件出現問題。    </div>    <div style='font-size:3rem;font-weight:bold;'>        設定備份    </div>    <hr />    <div class='mb-5'>        選取<span style='font-weight:bold'>開始</span> 按鈕，接著依序選取<span style='font-weight:bold'>設定</span> > <span style='font-weight:bold'>更新和安全性</span> > <span style='font-weight:bold'>備份</span> > <span style='font-weight:bold'>新增硬碟</span>，然後選擇外部硬碟或網路位置來進行備份。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        設定完成。使用者資料夾 (C:\\\\Users\\\\username) 中的所有資料會每隔 1 小時備份一次。若要變更要進行備份的檔案或是備份的發生頻率，請前往<span style='font-weight:bold;'>其他選項</span>。    </div>    <div style='font-size:3rem;font-weight:bold;'>        還原檔案    </div>    <div class='mb-5'>        如果您遺漏了重要檔案或資料夾，請按以下步驟將其還原：    </div>    <div>        <div class='mb-3'>1.在工作列上的搜尋方塊中鍵入<span style='font-weight:bold;'>還原檔案</span>，然後選取<span class='font-weight:bold'>使用檔案歷程記錄來還原檔案</span>。</div>        <div class='mb-3'>2.尋找需要的檔案，然後使用箭頭來查看其所有版本</div>        <div class='mb-3'>3.在找到需要版本後，選取<span style='font-weight:bold'>還原</span>，將其儲存到原始位置。若要將檔案儲存到不同的位置，請按住不放 (或用滑鼠右鍵按一下) <span style='font-weight:bold'>還原</span>，並選取<span style='font-weight:bold'>還原至</span>，接著選擇新位置。</div>    </div></div>",
-            "para1": {
-                "line1": "It's always good to have a backup.",
-                "line2": "Keep copies of your files on another drive in case something happens to the originals."
-            },
-            "heading1": "Set up your backup",
-            "para2": {
-                "span1": "Select the",
-                "span2": "Start",
-                "span3": "button, select",
-                "span4": "Settings",
-                "span5": "Update & security",
-                "span6": "Backup",
-                "span7": "Add a drive",
-                "span8": ", and then choose an external drive or network location for your backups."
-            },
-            "para3": {
-                "span1": "All set.",
-                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
-                "span3": "To change which files get backed up or how often backups happen, go to",
-                "span4": "More options."
-            },
-            "heading2": "Restore your files",
-            "para4": "If you're missing an important file or folder, here's how to get it back:",
-            "para5": {
-                "span1": "1. Type",
-                "span2": "Restore files",
-                "span3": "in the search box on the taskbar, and then select",
-                "span4": "Restore your files with File History.",
-                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
-                "span6": "3. When you find the version you want, select",
-                "span7": "Restore",
-                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
-                "span9": "Restore",
-                "span10": ", select",
-                "span11": "Restore to",
-                "span12": "and then choose a new location."
-            }
-        },
-        "question2": {
-            "title": "如何重新整理電腦",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        如何重新整理電腦    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        問題狀況    </div>    <div style='padding:5px 0;'>        如果電腦執行性能不若以往，且您不知道原因，這時您可以在不刪除任何個人檔案或變更設定的情況下重新整理您的電腦。Windows 可以「重新整理」您的電腦，在不刪除您的個人檔案情況下，使您的電腦像是全新安裝。    </div>    <div style='padding:5px 0;'>        重新整理電腦時，將發生下列情況：您的檔案和個人化設定完全不會變更    </div>    <div style='padding:5px 0;'>        <ul>            <li>您的電腦設定將變更回預設值</li>            <li>來自 Windows 市集的應用程式將被保留</li>            <li>您自光碟或網站所安裝的應用程序將予以刪除</li>            <li>已刪除檔案的清單將儲存在桌面上</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        受影響的品牌    </div>    <div>        <ul>            <li>所有桌上型電腦和筆記型電腦</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        作業系統    </div>    <div>        <ul>            <li>Windows 8、8.1 與 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        解決方案    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        輕點或按一下<span style='font-weight:bold;'>設定</span>                    </li>                    <li style='padding:5px 0;'>                        輕點或按一下<span style='font-weight:bold;'>更新與復原</span>                    </li>                    <li style='padding:5px 0;'>                        <div>輕點或按一下<span style='font-weight:bold;'>復原</span></div>                        <div style='padding:5px 0'>在不影響檔案的情況下重新整理您的電腦，或者輕點或按一下<span style='font-weight:bold;'>開始使用</span>。</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        按一下<span style='font-weight:bold;'>「下一步」</span>。                    </li>                    <li style='padding:5px 0;'>                        按一下<span style='font-weight:bold;'>「重新整理」 </span>啟動重新整理作業。                    </li>                    <li style='padding:5px 0;'>                        重新整理作業完成之後，您可以在桌面上找到「已移除的應用程式」清單                    </li>                    <li style='padding:5px 0;'>                        您可以一邊尋找已移除應用程式，一邊重新整理系統                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> 在「開始」功能表中所提供的搜尋方塊中，搜尋<span style='font-weight:bold;'>重新整理</span>。</li>                    <li style='padding:5px 0;'>                        <div>在搜尋結果中，按一下<span style='font-weight:bold;'>「在不影響檔案的情況下重新整理您的電腦」</span>，如下所示。</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>按一下<span style='font-weight:bold;'>在不影響檔案的情況下重新整理您的電腦</span>標題下方的<span style='font-weight:bold;'>入門</span>按鈕，開始重新整理 Windows 10 電腦。</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        其他資訊    </div>    <div>        在大多數情況下，開始重新整理電腦後，整個作業將自行完成。然而，如果 Windows 需要遺失的檔案，則其會要求您插入還原媒體，通常是 DVD 光碟或隨身碟。如果發生這種情況，則您將依據所用電腦而需要不同的媒體。    </div>    <div style='padding:10px 0'>        如果使用 DVD 將電腦升級到 Windows 8.1 或 Windows RT 8.1，請使用該光碟。如果您沒有 Windows 8.1 或 Windows RT 8.1 媒體，請與 Microsoft 支援服務聯繫。    </div></div>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
-                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
-            },
-            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-            "para3": {
-                "span1": "Your PC settings will be changed back to its defaults",
-                "span2": "Apps from windows store will be kept",
-                "span3": "Apps you installed from disc or website will be removed",
-                "span4": "A list of removed files will be saved on your desktop"
-            },
-            "heading2": "Affected Brands",
-            "para4": "All Desktop and Laptops",
-            "heading3": "Operation System",
-            "para5": "Windows 8, 8.1 & 10",
-            "heading4": "Solution",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "Tap or click",
-                    "line2": "Settings "
-                },
-                "span2": {
-                    "line1": "Tap or click",
-                    "line2": "Update and recovery"
-                },
-                "span3": {
-                    "line1": "Tap or click",
-                    "line2": "Recovery"
-                },
-                "span4": {
-                    "line1": "Under Refresh your PC without affecting your files, tap or click",
-                    "line2": "Get started."
-                },
-                "span5": {
-                    "line1": "Click",
-                    "line2": "\"Next\"."
-                },
-                "span6": {
-                    "line1": "Click",
-                    "line2": "\"Refresh\"",
-                    "line3": "to start the refresh process."
-                },
-                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
-                "span8": "You can find the removed apps while refreshing your system"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "Search for",
-                    "line2": "refresh",
-                    "line3": "in the search tool available in the Start menu"
-                },
-                "span2": {
-                    "line1": "Click on",
-                    "line2": "\"Refresh your PC without affecting your files\"",
-                    "line3": " in the search results as shown below."
-                },
-                "span3": {
-                    "line1": "Click on the",
-                    "line2": "Get started",
-                    "line3": "button just below the heading",
-                    "line4": "\"Refresh your PC without affecting your files\"",
-                    "line5": "to start refreshing your Windows 10 PC."
-                }
-            },
-            "header5": "Additional Information",
-            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
-        },
-        "question3": {
-            "title": "如何知道電腦的 CPU",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    如何知道電腦的 CPU</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>問題狀況</h3><p>術語 32 位元和 64 位元是指電腦處理器 (也稱為 CPU) 處理資訊的方式。64 位元版本 Windows 在處理大量隨機存取記憶體 (RAM) 時的效率比 32 位元版本系統來得高。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影響的品牌</h3><p>上述問題狀況與以下系統相關，但並不侷限於這些系統：</p><ul>    <li>所有桌上型電腦和筆記型電腦</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>作業系統</h3><ul>    <li>Windows 7、8 與 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決方案</h3><p><strong><u>Windows 7 或 Vista</u></strong></p><ol>    <li>按一下<strong>開始按鈕</strong>圖片的<strong>開始按鈕</strong>，然後用右鍵按一下電腦，接著按一下「內容」  </li>    <li>您可以在「系統」下查看系統類型。</li></ol><p><strong><u>Windows 8 與 Windows 10</u></strong></p><p><strong>方法 1：</strong>在控制面板中查看「系統」視窗</p><ol>    <li>將手指從螢幕右邊滑過，然後輕點<strong>搜尋</strong>。或者，當使用滑鼠時，請指向螢幕的右下角，然後按一下<strong>搜尋。</strong></li>    <li>在搜尋方塊中鍵入<strong>系統</strong>，然後輕點或按一下<strong>設定。</strong></li>    <li>輕點或按一下<strong>系統</strong></li>    <li>當執行 64 位元版本的 Windows 8 時，「系統」標題下的「系統類型」區段中將會顯示 <strong>64 位元作業系統</strong>。當執行 32<strong> 位元版本的 Windows</strong> <strong>8</strong> 時，「系統」標題下的「系統類型」區段中將會顯示 <strong>32 位元作業系統</strong>。<br /> </li></ol><p><strong>方法 2</strong>：檢視系統資訊視窗</p><ol>    <li>將手指從螢幕右邊滑過，然後輕點<strong>搜尋</strong>。或者，當使用滑鼠時，請指向螢幕的右下角，然後按一下<strong>搜尋。</strong></li>    <li>在搜尋方塊中，鍵入<strong>系統資訊</strong></li>    <li>輕點或按一下<strong>系統</strong>，輕點或按一下<strong>系統資訊，</strong>然後按一下<strong>系統摘要。</strong></li>    <li>當執行 <strong>64 位元</strong>版本的 Windows 8<strong></strong> 時，「項目」標題下的<strong>系統類型</strong>欄位中會顯示 x64-based PC。<br /><br />當執行<strong> 32 位元</strong>版本的 Windows 8 時，「項目」標題下的<strong>系統類型</strong>欄位會顯示 x86-based PC。 </li></ol><p> </p>",
-            "heading1": "Symptom",
-            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
-            "heading2": "Affected Brands",
-            "para2": "The above symptom is associated with, but not limited to, the following systems:",
-            "para3": "All Desktop and Laptops",
-            "heading3": "Operating System",
-            "para4": "Windows 7, 8, 10",
-            "heading4": "Solution",
-            "para5": "Windows 7 or Vista",
-            "para6": {
-                "span1": {
-                    "line1": "Open System by clicking the",
-                    "line2": "Start button",
-                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
-                },
-                "span2": "Under System, you can view the system type."
-            },
-            "para7": "Windows 8 and Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "Method 1:",
-                    "line2": "View the System window in Control Panel"
-                },
-                "span2": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span3": {
-                    "line1": "Type",
-                    "line2": "system",
-                    "line3": "in the search box, and then tap or click",
-                    "line4": "Settings."
-                },
-                "span4": {
-                    "line1": "Tap or click",
-                    "line2": "System"
-                },
-                "span5": {
-                    "line1": "If you are running a 64-bit version of Windows 8,",
-                    "line2": "64-bit Operating System",
-                    "line3": "is displayed in the System type field under the System heading.",
-                    "line4": "If you are running a 32",
-                    "line5": "-bit version of Windows 8, 32-bit Operating",
-                    "line6": "System is displayed in the System type field under the System heading."
-                },
-                "span6": {
-                    "line1": "Method 2:",
-                    "line2": "View the System Information window"
-                },
-                "span7": {
-                    "line1": "Swipe in from the right edge of the screen, and then tap",
-                    "line2": "Search.",
-                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
-                    "line4": "Search."
-                },
-                "span8": {
-                    "line1": "In the search box, type",
-                    "line2": "system information"
-                },
-                "span9": {
-                    "line1": "Tap or click",
-                    "line2": "System",
-                    "line3": ", tap or click",
-                    "line4": "System Information,",
-                    "line5": "and then click",
-                    "line6": "System Summary."
-                },
-                "span10": {
-                    "line1": "If you are running a",
-                    "line2": 64,
-                    "line3": "bit version of Windows 8, 32-bit Operating,",
-                    "line4": "x64-based PC is displayed in the",
-                    "line5": "System type",
-                    "line6": "field under the Item heading."
-                }
-            },
-            "para9": {
-                "line1": "If you are running a",
-                "line2": "32-bit",
-                "line3": "version of Windows 8,x86-based PC is displayed in the",
-                "line4": "System type",
-                "line5": "field under the Item heading."
-            }
-        },
-        "question4": {
-            "title": "檢查電腦的電池使用情況",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    檢查電腦的電池使用情況</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 分析電源使用</h3><p>4 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5 <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6 <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
-            "heading1": "Symptom",
-            "para1": {
-                "span1": "Windows 10 includes a new",
-                "span2": "“Battery Use”",
-                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
-            },
-            "heading2": "Affected Brands",
-            "para2": "Lenovo laptops, desktops",
-            "heading3": "Affected Systems",
-            "para3": "All",
-            "heading4": "Operating System",
-            "para4": "Windows 10",
-            "heading5": "Solution",
-            "para5": {
-                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
-                "line2": "control panel",
-                "line3": "view, this feature is located in the new",
-                "line4": "“Settings”",
-                "line5": "app"
-            },
-            "para6": {
-                "span1": "A. Find the Battery Use Screen",
-                "span2": {
-                    "line1": "1. Click or Tap the",
-                    "line2": "“Settings”",
-                    "line3": "option from the start menu"
-                },
-                "span3": {
-                    "line1": "2. In",
-                    "line2": "Settings",
-                    "line3": "select",
-                    "line4": "“System”",
-                    "line5": "and then select",
-                    "line6": "“Battery saver.”"
-                },
-                "span4": {
-                    "line1": "3. Click or tap the",
-                    "line2": "“Battery use”",
-                    "line3": "link under this heading to see more details."
-                },
-                "span5": "B. Analyze Your Power Usage",
-                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-                "span7": {
-                    "line1": 5,
-                    "line2": "“System”,",
-                    "line3": "“Display”,",
-                    "line4": "and",
-                    "line5": "“Wi-Fi”",
-                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
-                },
-                "span8": {
-                    "line1": "6. The",
-                    "line2": "“In use”",
-                    "line3": "and",
-                    "line4": "“Background”",
-                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
-                },
-                "span9": {
-                    "line1": "7. If apps are using power in the background, you can click or tap the",
-                    "line2": "“Change background app settings”",
-                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
-                },
-                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
-            }
-        },
-        "question5": {
-            "title": "將電腦當作平板電腦使用",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    將電腦當作平板電腦使用</div><hr><p>平板電腦模式讓 Windows 搭配觸控螢幕裝置使用時，更加直覺又輕鬆。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>使用平板電腦模式</h3><p>若要開啟平板電腦模式、請在工作列上選取<strong>動作中心</strong>，然後選取<strong>平板電腦模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>備注</h3><p>若要了解您的裝置是否可以自動啟用平板電腦模式，請在製造商網站上搜尋您的裝置。這項功能的支援會依硬體、所安裝的驅動程式和製造商對於裝置的設定方式而有差異。 </p><p> </p><p>在平板電腦模式下，應用程式會開啟全螢幕，提供更多的工作空間。若要關閉應用程式，請將其拖曳到螢幕底部。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>要訣</h3><p>當電腦處於平板電腦模式時，工作列將會出現，但可在想要更多螢幕空間時將其隱藏起來。選取<strong>開始 </strong>按鈕，接著依序選取<strong>設定 </strong>> <strong>系統 </strong>> <strong> 平板電腦模式</strong>，然後啟動<strong>在平板電腦模式中自動隱藏工作列</strong>。若要查看隱藏的工作列，請從螢幕底部向上滑動，或使用滑鼠移至該處。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>同時使用兩個應用程式</h3><p>若要在平板電腦模式下並排使用兩個應用程式，請將開啟的應用程式往下拖動到側面。您會看到兩個應用程式貼齊到一處，而且旁邊會有任何開啟的應用程式。</p><p>在這個檢視中，您也可以：</p><ul>    <li>使用位於兩個貼齊應用程式之間的共用邊緣，同時重新調整兩個應用程式的大小。</li>    <li>從任務檢視中開啟新的應用程式&mdash;在工作列上選取<strong>工作檢視</strong>，然後選取一個應用程式，接著將其拖到一側，以便將它貼齊到分隔的螢幕。</li>    <li>使用工作列上的返回按鈕來返回應用程式，或者開啟先前使用的應用程式。</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
-            "heading1": "Use tablet mode",
-            "para2": {
-                "span1": "To turn on tablet mode, select",
-                "span2": "action center",
-                "span3": "on the taskbar, then select",
-                "span4": "Tablet mode."
-            },
-            "heading2": "Note",
-            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
-            "heading3": "Tip",
-            "para5": {
-                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
-                "span2": "Select the",
-                "span3": "Start",
-                "span4": "button, select",
-                "span5": " Settings",
-                "span6": "System",
-                "span7": "Tablet mode",
-                "span8": ", then turn on",
-                "span9": "Automatically hide the taskbar in tablet mode.",
-                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
-            },
-            "heading4": "Use two apps simultaneously",
-            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
-            "para7": "In this view, you can also:",
-            "para8": {
-                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
-                "span2": {
-                    "line1": "Open a new app from task view—select",
-                    "line2": "Task view",
-                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
-                },
-                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-            }
-        },
-        "question6": {
-            "title": "瞭解您的個人助理 Cortana",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    瞭解您的個人助理 Cortana</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana 是什麼？</h3><hr /><p>Cortana 是您的數位代理程式。她會協助您完成許多工作。</p><p>隨著使用 Cortana 次數逐漸增加，您的體驗就會越來越具個人化。</p><p>若要開始使用、請在搜尋方塊中輸入問題，或者選擇麥克風，並與 Cortana 對話。(適用於所有類型電腦的打字工作，但需要一支用來說話的麥克風。)</p><p>如果您不確定要說什麼，則當您在工作列上選擇搜尋方塊時，鎖定螢幕和 Cortana 主頁上就會出現建議話語。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>主頁 2. 筆記型電腦 3. 設定 4. 意見回饋</li></ol><p>以下是 Cortana 可以為您做的一些事情：</p><ul>    <li>根據時間、地點或人物提供提醒。</li>    <li>追蹤包裹、團隊、興趣和航班。</li>    <li>發送電子郵件和簡訊。</li>    <li>管理行事曆，並讓您掌握最新狀態。</li>    <li>建立和管理清單。</li>    <li>輕鬆聊天和玩遊戲。</li>    <li>尋找事實、檔案、地點和資訊。</li>    <li>在系統上開啟任何應用程式。</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>試用這個功能：設定提醒</h3><hr /><p>Cortana 可以做的一件事就是提供提醒。她可以根據時間、地點，甚至是人，提醒您要做哪些事。</p><p>例如，打字或說話「下次 Tanya 打電話來的時候，提醒我祝賀她。」</p><p>當您下次收到 Tanya 的來電時，您就會收到提醒。</p><p>額外獎勵&mdash;如果是使用 Windows 手機，或者用於 iPhone 或 Android 的 Cortana，則 Cortana 可以設定為同步通知電腦與手機。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>嘿 Cortana？</h3><hr /><p>設定 Cortana，使其每次聽到您說「嘿 Cortana？」時開始聆聽您的指示。選取工作列上的搜尋方塊，開啟 Cortana 主頁。然後選取<strong>設定</strong>，並開啟<strong>讓 Cortana 回應「嘿 Cortana」。</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>備注</p><p>Cortana 僅適用於某些國家/地區，而且某些 Cortana 功能不適用於世界任何地方。</p><p> </p>",
-            "heading1": "What is Cortana?",
-            "para1": "Cortana is your digital agent. She'll help you get things done.",
-            "para2": "The more you use Cortana, the more personalized your experience will be.",
-            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
-            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
-            "para6": "Here are some things Cortana can do for you:",
-            "bulletset1": {
-                "span1": "Give you reminders based on time, places, or people.",
-                "span2": "Track packages, teams, interests, and flights.",
-                "span3": "Send emails and texts.",
-                "span4": "Manage your calendar and keep you up to date.",
-                "span5": "Create and manage lists.",
-                "span6": "Chit chat and play games.",
-                "span7": "Find facts, files, places, and info.",
-                "span8": "Open any app on your system."
-            },
-            "heading2": "Try this: Set a reminder",
-            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
-            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
-            "para9": "The reminder will appear when you get a call from Tanya.",
-            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
-            "heading3": "Hey Cortana?",
-            "para11": {
-                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
-                "span2": {
-                    "line1": "Then select",
-                    "line2": "Settings",
-                    "line3": "and turn on",
-                    "line4": "Let Cortana respond to “Hey Cortana.”"
-                }
-            },
-            "para12": "Note",
-            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
-        },
-        "pageTitle": "支持細節"
-    },
-    "welcometutorial": {
-        "description": "Vantage 讓您更容易更新驅動程式、執行診斷、要求支援並瞭解裝置。快速自訂您的體驗，並找到針對您的需要量身提供的實用資訊",
-        "bullets1": "使用Vantage儀表板查看系統的狀態。",
-        "bullets2": "使用安全性顧問，安全管理更輕鬆 (適用於特定系統)。",
-        "bullets3": "使用自動更新，讓裝置隨時保持為最佳狀態 (適用於特定系統)。",
-        "subtitle1": "您要如何使用您的裝置？",
-        "subtitle2": "告訴我們您的興趣",
-        "personal": "個人使用",
-        "business": "業務使用",
-        "custom": "自訂",
-        "privacytitle": "透過允許匿名收集使用方式統計資料，協助我們改善應用程式的品質。",
-        "moreInterest": "+ 更多興趣",
-        "title1": "歡迎使用",
-        "title2": "Lenovo",
-        "title3": "Vantage",
-        "privacypolicy": "Lenovo 的隱私權政策",
-        "done": "DONE",
-        "interests": {
-            "games": "遊戲",
-            "news": "新聞",
-            "entertainment": "娛樂",
-            "technology": "技術",
-            "sports": "體育",
-            "arts": "藝文",
-            "regionalNews": "地方新聞",
-            "politics": "政治",
-            "music": "音樂",
-            "science": "科學"
-        }
-    },
-    "settings": {
-        "preferenceSettings": "喜好設定",
-        "settings": "設定",
-        "settingsDescription": "在喜好設定頁面中，您可以根據 Vantage 的訊息類別選擇開啟/關閉您的訊息通知，請注意即使所有訊息類別皆已停用，必要時您可能偶爾仍會收到 Vantage 的系統重要訊息。",
-        "messagesInLenovoVantage": "Lenovo Vantage 中的訊息",
-        "appFeatures": "應用程式功能",
-        "appFeaturesDescription": "與 System Update、文章和其他重要功能相關的訊息。",
-        "marketing": "行銷",
-        "marketingDescription": "促銷訊息包括 Lenovo 特別優惠。",
-        "actionTriggered": "引發的動作",
-        "actionTriggeredDescription": "使用者選取設定（例如自動安裝重要/建議的更新）所觸發的訊息。",
-        "OtherSettings": "其他設定",
-        "usageStatistics": "使用情形統計資料",
-        "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
-        "Note": "附註：",
-        "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
-    },
-    "hardwareScan": {
-        "name": "硬體掃描",
-        "title": "執行硬體掃描",
-        "subtitle": "硬體掃描正在執行，請稍候",
-        "quickScan": "快速掃描",
-        "finalResultCode": "最終結果代碼",
-        "resultCode": "結果代碼",
-        "cancel": "取消",
-        "complete": "完成",
-        "incomplete": "未完成",
-        "loadingComponents": "載入元件",
-        "hardwareComponents": "硬體元件",
-        "loadingDevices": "裝置載入",
-        "select": "在工具列中選取",
-        "deselect": "取消選取",
-        "allOptions": "所有選項",
-        "latestResult": "最新結果",
-        "back": "上一步",
-        "viewResults": "檢視結果",
-        "save": "儲存",
-        "details": "明細",
-        "recurrence": "週期",
-        "interval": "間隔",
-        "time": "時間",
-        "type": "類型",
-        "hours": "時數",
-        "minutes": "分鐘",
-        "am": "AM",
-        "pm": "PM",
-        "previousResult": "先前的結果",
-        "lastScanOn": "上次掃描時間",
-        "result": "結果",
-        "viewDetailsLog": "檢視詳細資料日誌",
-        "ok": "確定",
-        "notOk": "尚未就緒",
-        "notScanned": "未掃描",
-        "pass": "通過",
-        "fail": "失敗",
-        "cancelled": "已取消",
-        "warning": "警告",
-        "errorResult": "您必須選擇要執行的測試。",
-        "buy": "立即購買",
-        "errorDeviceChoose": "您必須選擇要執行的裝置。",
-        "errorNoOptionSelected": "您必須選擇一個選項。",
-        "offline": "此裝置正在執行離線模式，請與網際網路連線",
-        "customize": {
-            "name": "自訂",
-            "test": "自訂測試",
-            "description": "選取下方選項以自訂測試",
-            "runTests": "執行選取的測試"
-        },
-        "scheduledScan": {
-            "name": "排程掃描",
-            "title": "排程您的掃描",
-            "newScan": "排程新掃描",
-            "fullScan": "完整掃描",
-            "onlyOnce": "僅一次",
-            "eachDay": "每天",
-            "eachWeek": "每週",
-            "eachMonth": "每月",
-            "eachYear": "每年",
-            "schedule": "排程",
-            "date": "日期",
-            "pickDate": "挑選日期",
-            "scanScheduled": "已排程硬體掃描！",
-            "description": "相同的日期和時間已排程另一次掃描！",
-            "error": "錯誤",
-            "delete": "刪除",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
-        },
-        "recoverBadSectors": {
-            "title": "回復錯誤磁區",
-            "description": "尋找並修復磁碟上錯誤磁區的 Lenovo 工具",
-            "goTo": "前往回復錯誤磁區",
-            "localDevices": "本機裝置",
-            "numberSectors": "讀取的磁區數目",
-            "numberBadSectors": "找到的錯誤磁區數目",
-            "numberFixedSectors": "修正的磁區數目",
-            "numberNonFixedSectors": "未修正的磁區數目",
-            "status": "作業狀態",
-            "elapsedTime": "已耗用時間",
-            "hours": "小時",
-            "hour": "小時",
-            "minutes": "分鐘",
-            "minute": "分鐘",
-            "seconds": "秒",
-            "second": "秒",
-            "moreInfo": "回復錯誤磁區正在執行，請稍候",
-            "systemEvent": "測試中止，因為發生可能影響結果的系統事件。",
-            "systemPasswordProtected": "裝置可能受到密碼保護。嘗試停用密碼保護。",
-            "popup": {
-                "description": "執行掃描和修復可能會導致資料遺失。建議您在執行此作業之前先備份。您確定要繼續嗎？",
-                "yes": "是",
-                "no": "否"
-            }
-        },
-        "support": {
-            "title": "下載專業診斷工具",
-            "subtitle": "Lenovo 支援"
-        },
-        "eTicket": {
-            "header": "偵測到硬體問題。",
-            "problemDetected": "硬體掃描偵測到您電腦的以下元件有問題",
-            "ticketRequestQuestion": "如果您的電腦在保固期內，Lenovo 可以遞送更換零件。是否要開立硬體更換票證以解決此問題",
-            "openTicket": "開立票證"
-        },
-        "battery": {
-            "title": "啟用電池的充電臨界值",
-            "description": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
-            "enable": "啟用"
-        },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
-    }
+	"gaming": {
+		"dashboard": {
+			"device": {
+				"quickSettings": {
+					"title": "熱模式",
+					"status": {
+						"performance": "效能",
+						"balance": "平衡",
+						"quiet": "安靜",
+						"performanceUid": "thermal_mode_performance",
+						"balanceUid": "thermal_mode_balance",
+						"quietUid": "thermal_mode_quiet"
+					},
+					"statusText": {
+						"perText": "CPU 使用量越高，風扇速度越快",
+						"balText": "正常 CPU 和風扇速度",
+						"quietText": "CPU 使用量越低，風扇速度越慢"
+					},
+					"wifiSecurity": "Wifi 安全性",
+					"dolby": "Dolby",
+					"rapidCharge": "快速充電"
+				},
+				"legionEdge": {
+					"title": "CPU 超頻",
+					"status": {
+						"alwayson": "開啟",
+						"whenGaming": "遊戲時",
+						"off": "關閉",
+						"alwaysonUid": "cpu_overclock_on",
+						"whenGamingUid": "cpu_overclock_when_gaming",
+						"offUid": "cpu_overclock_off"
+					},
+					"statusText": {
+						"onText": "CPU 超頻將會啟動",
+						"gamingText": "CPU 超頻將於遊戲啟動時自動啟動",
+						"offText": "CPU 超頻將會停用"
+					},
+					"ramOverlock": "RAM 超頻",
+					"popup": {
+						"text": "變更將於電腦重新開機後生效。",
+						"button": "確定"
+					},
+					"driverPopup": {
+						"headerText": "需要安裝驅動程式",
+						"text": "安裝驅動程式以啟動 RAM 超頻（需要重新開機）",
+						"button": "安裝",
+						"link": "取消",
+						"networkBoostText": "您必須為網路加速安裝驅動程式以使其生效",
+						"hybridModeText": "您必須為混合模式安裝驅動程式以使其生效",
+						"cpuOverclockText": "安裝驅動程式以啟動 CPU 超頻（需要重新開機）"
+					},
+					"autoClose": "自動關閉",
+					"networkBoost": "網路加速",
+					"hybridMode": "混合模式",
+					"touchpadLock": "觸控板鎖定",
+					"lightingDriverPopup": {
+						"headerText": "需要安裝驅動程式",
+						"text": "安裝驅動程式以啟動照明（需要重新開機）",
+						"button": "安裝",
+						"link": "取消"
+					},
+					"lightingColorMessage": {
+						"text": "選取的色彩不具備這個效果。"
+					}
+				},
+				"systemTools": {
+					"power": "電源",
+					"media": "媒體",
+					"macroKey": "巨集鍵",
+					"hardwareScan": "硬體掃描",
+					"systemUpdate": "系統更新",
+					"header": "系統工具"
+				},
+				"lighting": {
+					"title": "自訂照明",
+					"header": "照明"
+				},
+				"legionEdgeModal": {
+					"line1": "透過 Vantage Edge，您的設定將根據使用情形自動調整。\n 最大化遊戲時的效能，非遊戲時則提供較長的電池續航力。",
+					"line2": "<b>功能管理概觀</b><br> 某些功能並非在所有裝置上都可使用",
+					"line3": "<b>CPU 超頻 </b><br> 提升處理器的最高速度",
+					"line4": "<b>RAM 超頻 </b><br> 提升記憶體的最高速度",
+					"line5": "<b>網路加速 </b><br> 為您正在玩的遊戲設定最高的網路流量優先順序",
+					"line6": "<b>Dolby </b><br> 透過 Dolby 技術，特別針對遊戲調整音訊",
+					"line7": "<b>混合模式 </b><br> 不玩遊戲時停用進階 GPU 設定，以提升電池效能",
+					"line8": "<b>快速充電 </b><br> 電池充電速度提高，有更多時間隨時隨地暢玩遊戲",
+					"line9": "<b>觸控板鎖定 </b><br> 在遊戲時停用觸控板，防止錯誤的輸入",
+					"line10": "<b>自動關閉 </b><br> 在您開始暢玩遊戲之前先清除與遊戲無關的處理程序，盡可能地利用所有可用的系統資源",
+					"line11": "<b>熱模式 </b><br> 設定您偏好的裝置設定檔中的風扇速度和冷卻控制"
+				},
+				"systemInfo": {
+					"systenTooltip": "將游標移至 CPU/GPU/RAM 和不同的驅動程式之上以查看其個別描述，包括製造與機型資訊"
+				},
+				"systemStatus": {
+					"info": "資訊"
+				},
+				"quickSettingstitle": {
+					"title": "快速設定"
+				}
+			}
+		},
+		"common": {
+			"menu": {
+				"support": {
+					"title": "支援",
+					"sub1": "支援",
+					"sub2": "Facebook",
+					"sub3": "Instagram"
+				}
+			}
+		},
+		"macroKey": {
+			"title": "巨集鍵",
+			"introLine": "您可以錄製連續的輸入按鍵，並在遊戲或其他作業進行時使用。",
+			"status": {
+				"on": {
+					"title": "開啟",
+					"description": "一律啟用"
+				},
+				"whileGaming": {
+					"title": "巨集鍵僅在遊戲時啟用",
+					"description": "它會在您遊戲時啟用，而在非遊戲時維持為數字鍵。"
+				},
+				"off": {
+					"title": "關閉",
+					"description": "一律停用"
+				}
+			},
+			"details": {
+				"intro": {
+					"noNumber": "選取巨集鍵",
+					"title": "建立的巨集鍵用於",
+					"line1": "在下方按一下開始錄製按鈕",
+					"line2": "鍵入巨集鍵",
+					"line3": "在完成鍵入時停止錄製"
+				},
+				"buttons": {
+					"start": "開始錄製",
+					"stop": "停止錄製",
+					"numberPrefix": "NUM"
+				},
+				"recording": {
+					"title": "開始鍵入",
+					"description": "可在 20 秒內錄製 20 個輸入。"
+				},
+				"recorded": {
+					"title": "巨集鍵用於",
+					"deleteKey": "刪除",
+					"clear": "清除",
+					"intervalStatus": {
+						"keep": {
+							"title": "保留延遲",
+							"description": "按鍵動作的間隔將予以保留，並在這個巨集鍵使用時套用。"
+						},
+						"ignore": {
+							"title": "忽略延遲",
+							"description": "按鍵動作間隔將遭忽略。"
+						}
+					},
+					"repeatStatus": {
+						"repeat1": {
+							"title": "無重複",
+							"description": "無重複"
+						},
+						"repeat2": {
+							"title": "重複 2 次",
+							"description": "重複 2 次"
+						},
+						"repeat3": {
+							"title": "重複 3 次",
+							"description": "重複 3 次"
+						},
+						"repeat4": {
+							"title": "重複 4 次",
+							"description": "重複 4 次"
+						},
+						"repeat5": {
+							"title": "重複 5 次",
+							"description": "重複 5 次"
+						},
+						"repeat6": {
+							"title": "重複 6 次",
+							"description": "重複 6 次"
+						},
+						"repeat7": {
+							"title": "重複 7 次",
+							"description": "重複 7 次"
+						},
+						"repeat8": {
+							"title": "重複 8 次",
+							"description": "重複 8 次"
+						},
+						"repeat9": {
+							"title": "重複 9 次",
+							"description": "重複 9 次"
+						},
+						"repeat10": {
+							"title": "重複 10 次",
+							"description": "重複 10 次"
+						}
+					},
+					"list": {
+						"header": {
+							"col1": "按鍵動作",
+							"col2": "間隔"
+						},
+						"footer": {
+							"title": "下一個輸入.."
+						}
+					}
+				}
+			},
+			"popupContent": {
+				"clearMacrokey": {
+					"title": "您確定要刪除此巨集鍵嗎？"
+				},
+				"timeoutRecording": {
+					"title": "錄製逾時。",
+					"body": "錄製將在連續 20 秒無任何輸入時逾時。"
+				},
+				"maximumInput": {
+					"title": "已達最大限制。",
+					"body": "巨集鍵限存輸入數目不得超過 20 個。"
+				},
+				"inputStopped": {
+					"title": "錄製逾時。",
+					"body": "錄製將在輸入停止超過 10 秒時逾時。"
+				},
+				"confirmButton": {
+					"btnClear": "清除",
+					"btnCancel": "取消"
+				},
+				"btnOk": "確定"
+			},
+			"recording": {
+				"title": "錄製的巨集鍵用於"
+			}
+		},
+		"lightingProfile": {
+			"title": "照明",
+			"effect": {
+				"option1": {
+					"title": "開啟"
+				},
+				"option2": {
+					"title": "閃爍"
+				},
+				"option3": {
+					"title": "呼吸"
+				},
+				"option4": {
+					"title": "波浪"
+				},
+				"option5": {
+					"title": "平滑"
+				},
+				"option6": {
+					"title": "CPU 溫度"
+				},
+				"option7": {
+					"title": "CPU 使用率"
+				},
+				"option8": {
+					"title": "關閉"
+				},
+				"apply": {
+					"title": "套用"
+				},
+				"applied": {
+					"title": "已套用"
+				}
+			},
+			"brightness": {
+				"text1": {
+					"title": "*亮度設定不會套用於"
+				},
+				"text2": {
+					"title": " 效果"
+				}
+			},
+			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "一律開啟"
+				},
+				"option2": {
+					"title": "快速閃爍"
+				},
+				"option3": {
+					"title": "中速閃爍"
+				},
+				"option4": {
+					"title": "慢速閃爍"
+				},
+				"option5": {
+					"title": "閃爍等級"
+				}
+			},
+			"profile": {
+				"text1": {
+					"title": "照明目前已關閉。選取上面的設定檔標籤並將其開啟，接著進行自訂。"
+				},
+				"text2": {
+					"title": "效果"
+				},
+				"text3": {
+					"title": "效果"
+				}
+			},
+			"button": {
+				"default": {
+					"title": "設定為預設值"
+				}
+			},
+			"profileheading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": "設定檔 1"
+				},
+				"text3": {
+					"title": "設定檔 2"
+				},
+				"text4": {
+					"title": "設定檔 3"
+				}
+			},
+			"lightingProfileHeading": {
+				"text1": {
+					"title": "Off"
+				},
+				"text2": {
+					"title": 1
+				},
+				"text3": {
+					"title": 2
+				},
+				"text4": {
+					"title": 3
+				},
+				"Customize": {
+					"title": "自訂"
+				},
+				"heading": {
+					"title": "選取設定檔："
+				}
+			},
+			"colourwheel": {
+				"text1": {
+					"title": "選取的色彩不具備這個效果。"
+				},
+				"text2": {
+					"title": "套用"
+				},
+				"text3": {
+					"title": "已套用"
+				},
+				"text4": {
+					"title": "R："
+				},
+				"text5": {
+					"title": "G："
+				},
+				"text6": {
+					"title": "B："
+				},
+				"text7": {
+					"title": "顏色"
+				}
+			}
+		},
+		"autoClose": {
+			"title": "自動關閉",
+			"introLine": "新增要在啟動遊戲時關閉的應用程式。這將會釋出未使用的資源，以獲得最佳遊戲效能。注意：此功能完全關閉應用程式。因此請務必確定您已儲存您的工作。",
+			"modalTurnAutoClose": {
+				"title": "開啟「自動關閉」？",
+				"body": "新增的應用程式將會在您玩遊戲時關閉，以釋出資源供遊戲使用。",
+				"checkedTitle": "不要再問我這個問題",
+				"btnConfirm": "開啟",
+				"btnCancel": "稍後再問"
+			},
+			"modalAddApps": {
+				"title": "將應用程式新增至「自動關閉」",
+				"body": "下方清單中只會顯示目前執行的應用程式。"
+			},
+			"addAppsButton": "新增",
+			"noRunningApps": {
+				"title": "沒有要新增的執行中應用程式",
+				"body": "只會顯示目前執行的應用程式。請啟動要新增的應用程式並返回。"
+			}
+		},
+		"networkBoost": {
+			"title": "網路加速",
+			"introLine": "啟用網路加速會自動在您的網路中將遊戲的優先順序設定為最高等級，以達到最高速度。若您在玩遊戲時使用應用程式，例如 Twitch 或 Discord，建議您在下方清單加上它們，讓它們也能在您網路上優先使用。",
+			"modalTurn": {
+				"title": "開啟「網路加速」？",
+				"body": "開啟「網路加速」？新增的應用程式在執行時將會共用更多網路。",
+				"checkedTitle": "不要再問我這個問題",
+				"btnConfirm": "開啟",
+				"btnCancel": "稍後再問"
+			},
+			"modalAddApps": {
+				"title": "將應用程式新增至「網路加速」",
+				"body": "最多可再新增 5 個要加速的應用程式（已新增 4 個）"
+			}
+		}
+	},
+	"common": {
+		"menu": {
+			"dashboard": "儀表板",
+			"device": {
+				"title": "裝置",
+				"sub1": "我的裝置",
+				"sub2": "我的裝置設定",
+				"sub3": "系統更新",
+				"sub4": "智慧助理"
+			},
+			"security": {
+				"title": "安全性",
+				"sub1": "我的安全性",
+				"sub2": "防毒",
+				"sub3": "WiFi 安全性",
+				"sub4": "密碼安全狀態",
+				"sub5": "網際網路保護",
+				"sub6": "Windows Hello"
+			},
+			"support": "支援",
+			"homeSecurity": "連線家庭",
+			"privacy": "隱私權",
+			"beta": {
+				"title": "beta"
+			}
+		},
+		"securityAdvisor": {
+			"title": "安全顧問",
+			"subtitle": "檢查您的裝置是否安全。",
+			"antiVirus": "防毒",
+			"wifi": "WiFi 安全性",
+			"pswdMgr": "Password Manager",
+			"vpn": "VPN",
+			"windowsHello": "Windows Hello",
+			"enabled": "已啟用",
+			"disabled": "已停用",
+			"partiallyProtected": "受部分保護",
+			"installed": "已安裝",
+			"notInstalled": "未安裝",
+			"loading": "正在載入",
+			"installing": "正在安裝",
+			"notFound": "找不到",
+			"registered": "已註冊",
+			"notRegistered": "未註冊"
+		},
+		"qAndA": {
+			"title": "您機器的問答",
+			"subtitle": "為您的設備找到一些有用的提示。",
+			"question1": "備份及還原檔案",
+			"question2": "如何重新整理電腦",
+			"question3": "如何知道電腦的 CPU",
+			"question4": "檢查電腦的電池使用情況",
+			"question5": "將電腦當作平板電腦使用",
+			"question6": "瞭解您的個人助理 Cortana"
+		},
+		"ui": {
+			"back": "上一步",
+			"on": "ON",
+			"off": "OFF",
+			"collapse": "收合",
+			"expand": "展開",
+			"loader": "獲取狀態",
+			"loading": "載入中..."
+		}
+	},
+	"privacy": {
+		"headerMain": {
+			"title": "隱私權"
+		}
+	},
+	"tutorial": {
+		"almostThere": "快完成了！",
+		"para1": "再按幾個按鈕就大功告成了。",
+		"para2": "在我們為您提供最佳體驗之前，還需要設定幾項內容。",
+		"personalise": "開始個人化",
+		"howIsitUsed": "您要如何使用它？",
+		"howMachinUsed": "按一下符合此電腦用途的描述",
+		"business": "商務",
+		"personal": "個人",
+		"custom": "自訂",
+		"skip": "跳過",
+		"next": "下一步",
+		"interests": "您的興趣是什麼？",
+		"howOnesMachinUsed": "按一下符合此電腦用途的描述",
+		"games": "遊戲",
+		"news": "新聞",
+		"entertainment": "娛樂",
+		"arts": "藝文",
+		"politics": "政治",
+		"sports": "體育",
+		"regionalNews": "地方新聞",
+		"technology": "技術"
+	},
+	"dashboard": {
+		"headerMain": {
+			"title": "今天看起來充滿活力"
+		},
+		"offlineInfo": {
+			"title": "未偵測到網際網路連線",
+			"subtitle": "進一步瞭解如何解決連線問題",
+			"buttonText": "獲得支援"
+		},
+		"feedback": {
+			"title": "提供意見回饋",
+			"subtitle": "告訴我們您對 Vantage 的評價。",
+			"button": "提供意見回饋",
+			"form": {
+				"email": "Email (optional)",
+				"comments": "留言...",
+				"button": "Submit",
+				"addScreenshot": "Add ScreenShot",
+				"messages": {
+					"feedbackSuccess": "謝謝您的意見回饋！"
+				},
+				"question1": "您喜歡 Vantage 的新風格嗎？",
+				"question2": "您是否滿意其效能？",
+				"question3": "您未來會更常使用這款應用程式嗎？",
+				"yes": "是",
+				"no": "否",
+				"tips1": "請將任何其他意見告訴我們",
+				"sendFeedback": "傳送意見回饋",
+				"submitScreenShot": "傳送螢幕擷取畫面"
+			}
+		},
+		"quickSettings": {
+			"title": "您的快速設定",
+			"microphone": "麥克風",
+			"cameraPrivacy": "相機",
+			"eyeCareMode": "護眼",
+			"note": {
+				"microphoneAndcameraPrivacyNotes": "Lenovo Vantage 沒有攝影機和麥克風的存取權。",
+				"accessUrl": "移至 Windows 設定以授與存取權",
+				"microphoneNote": "Lenovo Vantage 沒有麥克風的存取權。",
+				"cameraPrivacyNote": "Lenovo Vantage 沒有攝影機的存取權。"
+			}
+		},
+		"systemStatus": {
+			"title": "系統狀態",
+			"subtitle": "快速掌握您的裝置狀態。",
+			"memory": {
+				"title": "記憶體",
+				"detail": {
+					"notFound": "找不到記憶體",
+					"of": "/"
+				}
+			},
+			"diskSpace": {
+				"title": "磁碟空間",
+				"detail": {
+					"notFound": "找不到磁碟",
+					"of": "/"
+				}
+			},
+			"warranty": {
+				"title": "保固",
+				"detail": {
+					"notFound": "找不到保固",
+					"until": "直到",
+					"expiredOn": "保固到期日",
+					"notAvailable": "沒有可用保固"
+				}
+			},
+			"systemUpdate": {
+				"title": "系統更新",
+				"detail": {
+					"update": "更新"
+				}
+			}
+		}
+	},
+	"device": {
+		"myDevice": {
+			"title": "我的裝置",
+			"subtitle": "我的裝置狀態",
+			"serial": "序號",
+			"productNumber": "產品編號",
+			"biosVersion": "Bios 版本",
+			"learnMore": "進一步瞭解",
+			"freeMemory": "可用記憶體",
+			"systemUpdate": {
+				"title": "系統更新",
+				"notFound": "找不到系統更新",
+				"detail": {
+					"uptoDate": "軟體已是最新版本",
+					"updatedOn": "更新時間",
+					"outdated": "軟體是舊版",
+					"neverRanUpdate": "從未更新"
+				}
+			},
+			"extendedWarranty": "延長保固",
+			"processor": {
+				"title": "處理器",
+				"notFound": "正在載入處理器資訊"
+			},
+			"memory": {
+				"title": "記憶體",
+				"notFound": "正在載入記憶體資訊",
+				"ram": "RAM"
+			},
+			"diskspace": {
+				"title": "磁碟空間",
+				"notFound": "正在載入硬碟資訊"
+			},
+			"software": "軟體已是最新版本",
+			"updated": "已更新",
+			"outOfWarranty": "保固期限已過",
+			"expired": "到期日",
+			"of": "/",
+			"warranty": {
+				"notFound": "找不到保固",
+				"detail": {
+					"title": "延長保固",
+					"inWarranty": "在保固期內",
+					"daysRemaining": "剩餘天數",
+					"outOfWarranty": "保固期限已過",
+					"expiredOn": "到期日",
+					"notAvailable": "沒有可用保固",
+					"support": "支援"
+				}
+			},
+			"helpful": "實用內容"
+		},
+		"deviceSettings": {
+			"helpful": "實用內容",
+			"batteryGauge": {
+				"title": "電池計量器",
+				"subtitle": "電池性能",
+				"hours": "小時",
+				"hour": "時",
+				"minutes": "分",
+				"minute": "分鐘",
+				"charge": "充飽的時間",
+				"button": "請參閱電池詳細資訊",
+				"details": {
+					"title": "電池詳細資料",
+					"primary": "主要電池",
+					"secondary": "次要電池",
+					"tertiary": "三級電池",
+					"status": "狀態",
+					"wattage": "瓦特數",
+					"barcode": "條碼",
+					"remainingPercent": "剩餘百分比",
+					"temp": "溫度",
+					"frupn": "FRU 零件編號",
+					"remainingTime": "剩餘時間",
+					"chargeCompletionTime": "充電完成時間",
+					"cycleCount": "充電次數",
+					"chemistry": "裝置化學性質",
+					"remainingCap": "剩餘容量",
+					"designCap": "設計容量",
+					"fullChargeCap": "充飽容量",
+					"manufDt": "製造日期",
+					"designVolt": "設計電壓",
+					"volts": "電壓",
+					"firstUseDt": "第一次使用日期",
+					"firmwareVer": "韌體版本",
+					"chargeStatusString": {
+						"error": "錯誤",
+						"notinstalled": "未安裝",
+						"noactivity": "沒有活動",
+						"charging": "正在充電",
+						"discharging": "正在放電",
+						"acdischarging": "正在放電（使用交流電）"
+					},
+					"deviceChemistry": {
+						"li-polymer": "鋰聚合物",
+						"li-ion": "鋰離子",
+						"li_polymer": "鋰聚合物",
+						"li_ion": "鋰離子",
+						"silver-zinc": "銀鋅",
+						"silver_zinc": "銀鋅",
+						"nicd": "鎳鎘",
+						"nimh": "鎳氫",
+						"unknown": "不明"
+					},
+					"manufacturer": {
+						"title": "製造商",
+						"celxpert": "Celxpert",
+						"smp": "SMP"
+					}
+				},
+				"condition": {
+					"Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",
+					"Good": "<b>電池狀況良好。</b>",
+					"Exhaustion": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
+					"Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
+					"NotDetected": "<b>未偵測到電池或未</b>插入電池。",
+					"NotGood": "<b>電池狀況不佳。</b>",
+					"NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
+					"LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
+					"MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。",
+					"StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
+					"HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
+					"TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
+					"OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
+					"PermanentError": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
+					"NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
+					"LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。"
+				},
+				"updating": "正在更新",
+				"voltageError": "電池電壓不正確",
+				"batteryNotDetected": "未偵測到電池",
+				"thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
+				"seeDetailsLink": "查看詳細資料"
+			},
+			"power": {
+				"title": "電源",
+				"subtitle": "電源設定",
+				"description": "您可以從這個區段，動態調整散熱效能，使電池能延到最長壽命。這個區段也提供其他受歡迎的電源相關功能。您可以查看此區段中的預設設定，根據您的需求來自訂系統。",
+				"jumpto": {
+					"title": "移至設定",
+					"battery": "電池",
+					"power": "電源",
+					"other": "其他"
+				},
+				"powerSmartSettings": {
+					"title": "智慧型電源設定",
+					"subtitle": "智慧型冷卻",
+					"subtitle1": "電池與安靜",
+					"description1": "開啟後，此功能會動態調整散熱設定以符合您的需求。它會調整可使裝置維持冷卻和安靜，並同時達到手持狀態或閒置的設定。 當裝置停放在穩定表面時，它會將效能調整到最佳情況。關閉後，您可以手動設定散熱優先順序。",
+					"description2": "智慧型冷卻會調整風扇速度，表面溫度和效能達到最佳化。此功能具有以下模式，而且現在可透過 Windows 效能電源滑桿進行操作。",
+					"description3": "智慧型冷卻會自動平衡散熱效能以符合您的需求。當筆記型電腦處於手持狀態時，智慧型冷卻功能會調整效能設定，使裝置表面的溫度較低，進而維持使用上的舒適度。當裝置放置在桌面上時，此功能會調整效能達到最佳化。",
+					"description13": "開啟後，此功能會動態調整散熱設定以符合您的需求。它會調整可使裝置維持冷卻和安靜，並同時達到手持狀態或閒置的設定。 當裝置停放在穩定表面時，它會將效能調整到最佳情況。關閉後，您可以手動設定散熱優先順序。",
+					"description14": "此功能可讓您視需要調整風扇速度、最大化系統效能或延長電池壽命。它有以下三種模式。您也可以使用快速鍵 (Fn+Q) 或 Lenovo Vantage 工具列切換模式。",
+					"readMore": "較多內容。",
+					"gotoWindows": {
+						"title": "跳至 Windows 設定",
+						"modalBodyText1": "用滑鼠按一下系統匣中的 Windows 電池圖示，即可操作 Windows 效能電源滑桿"
+					},
+					"intelligentCooling": {
+						"title": "智慧型冷卻",
+						"description": "",
+						"tooltip": "",
+						"optimize": "最佳化系統",
+						"apsHint": "若要啟用智慧型冷卻，您必須安裝並啟用 Lenovo Active Protection System。",
+						"options": {
+							"quiteCool3": "安靜與低溫",
+							"performance3": "效能",
+							"quiteCool4": "安靜與低溫",
+							"performance4": "效能",
+							"quiteCool5": "安靜與低溫",
+							"performance5": "效能",
+							"batterySaving": "省電",
+							"performance13": "效能",
+							"quiteCool13": "安靜與低溫",
+							"performance14": "極致效能",
+							"quiteCool14": "智慧型冷卻"
+						},
+						"readMore": {
+							"mode1": "安靜模式",
+							"mode2": "平衡模式",
+							"mode3": "效能模式",
+							"line1": "滑桿在最左邊。降低風扇速度和效能以獲得更涼爽、更安靜的電腦和最佳的電池續航力。",
+							"line2": "滑桿在中央。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
+							"line3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。",
+							"line4": "更多資訊"
+						},
+						"selectedModeText": {
+							"quiteCool": "此模式可實現風扇速度和系統效能平衡的最佳體驗。例如，在遊戲中，它可以最佳化效能。在辦公室裡，它可以減少噪音。",
+							"batterySaving": "此模式透過自動調整亮度、變更電源設定、停用進階影像處理功能等來實現最長電池壽命。",
+							"performance": "此模式可實現最高系統效能。在此模式中，風扇高速轉動可能會產生很大的噪音。"
+						},
+						"intelligentCoolingModesModal": {
+							"title": "變更智慧型冷卻模式",
+							"close": "關閉",
+							"coolingModesList": {
+								"list1": "按一下工具列中的 Windows 電池圖示",
+								"list2": "Windows 電池計量器隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
+							}
+						}
+					},
+					"nonintelligentCooling": {
+						"options": {
+							"intelligentCooling": "智慧型冷卻",
+							"extremeCooling": "極致效能",
+							"battery&Quite": "電池與安靜"
+						}
+					},
+					"description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作"
+				},
+				"powerSettings": {
+					"title": "電源設定",
+					"alwaysUSB": {
+						"title": "一律開啟 USB",
+						"description": "當電腦處於睡眠、休眠或關閉模式時，透過電腦上的一律開啟 USB 接頭為 USB 裝置充電。智慧型手機或平板電腦可以使用黃色編碼或印有下列圖示的 USB 接頭快速充電：",
+						"checkbox": "當電腦關機時，啟用筆記本電腦電池的 USB 充電。"
+					},
+					"easyResume": {
+						"title": "輕鬆回復",
+						"description": "如果您需要頻繁地打開及闔上電腦機蓋，請啟用此功能以改善電腦恢復作業的時間。",
+						"tooltip": "如果您需要頻繁地打開、闔上電腦機蓋，此功能將改善電腦恢復作業的時間。啟用時，您的電腦將在您闔上其機蓋時進入省電模式，但是如果您在闔上機蓋後的 15 分鐘內打開機蓋，電腦將立即恢復正常作業。此功能也可讓您的筆記型電腦嘗試完成擱置中的活動（例如傳送電子郵件或下載檔案），然後再使系統暫停。"
+					},
+					"or": "或"
+				},
+				"otherSettings": {
+					"title": "其他設定",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage 工具列",
+						"description": "將 Vantage 工具列釘到 Windows 工作列中，就能輕鬆取得詳細的電池資訊，以及操作您的快速設定。"
+					}
+				},
+				"batterySettings": {
+					"title": "電池設定",
+					"batteryThreshold": {
+						"title": "電池的充電臨界值",
+						"description": "如果您使用電腦時大多都會接上 AC 整流器，而且很少使用電池電力，可以將最高充電值設定為低於 100% 來延長電池的壽命。這方式非常有用，因為不常使用的電池若能維持在非完全充飽的狀態，可延長其壽命。",
+						"tooltip": "如果電池目前已充電至停止充電臨界值以上，請拔下電源，直到電池放電至停止充電臨界值或以下。根據電池狀態（不論新舊），其開始或停止充電的確切時間點可能會有最多 2% 的誤差。如果您啟用此功能，建議您偶爾執行一次電池計量器重設以確保獲得正確的電池性能報告。",
+						"note": "備注",
+						"readMoreText": "較多內容。",
+						"noteInfo": " 電池充電臨界值仍未完全作用。請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
+						"settings": {
+							"title1": "主要電池的臨界值",
+							"title2": "次要電池的臨界值"
+						},
+						"popup": {
+							"title": "啟用電池的充電臨界值",
+							"description1": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。",
+							"description2": "為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
+							"enable": "啟用",
+							"cancel": "取消"
+						},
+						"options": {
+							"start": "低於下列百分比時開始充電",
+							"checkboxText": "自動將開始充電臨界值設定為停止充電臨界值減 5%。",
+							"stop": "達到下列百分比時停止充電"
+						}
+					},
+					"expressCharging": {
+						"title": "快速充電",
+						"description": "快速充電的電池充電速度比一般模式快得多。",
+						"tooltip": "快速充電雖可加快系統電池的充電速度，但這項功能可能會造成電池使用壽命縮短。"
+					},
+					"conservationMode": {
+						"title": "省電模式",
+						"description": "此功能可延長已插入電池的使用壽命。<br>啟用此模式後，電池將只充電至容量的 55-60%，有利於電池使用壽命延到最長。然而當電腦斷開與交流電源的連接後，此功能會縮短其使用時間。",
+						"tooltip": {
+							"line1": "此功能可延長已插入電池的使用壽命。",
+							"line2": "啟用此模式後，電池將只充電至容量的 55-60%，有利於電池使用壽命延到最長。然而當電腦斷開與交流電源的連接後，此功能會縮短其使用時間。",
+							"line3": "注意：快速充電和省電模式無法同時作用。如果開啟其中一種模式，另一種模式將會自動關閉。"
+						}
+					},
+					"airPlanePower": {
+						"title": "機艙電源模式",
+						"description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
+						"checkBoxDesc": "自動偵測",
+						"note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+					}
+				},
+				"energyStar": {
+					"title": "Energy Star",
+					"description": "ENERGY STAR 認證產品"
+				},
+				"smartStandby": {
+					"title": "智慧型待命",
+					"description": "此功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
+					"tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
+					"timer": {
+						"heading": "設定您一般使用這部電腦的時間",
+						"subHeading1": "開始",
+						"subHeading2": "結束",
+						"subHeading3": "將此排程用於",
+						"endTimeNote": "結束時間必須距開始時間 20 小時內",
+						"timeUnits": {
+							"unit1": "小時",
+							"unit2": "分鐘",
+							"unit3": "上午/下午"
+						},
+						"amPms": {
+							"am": "上午",
+							"pm": "下午"
+						}
+					},
+					"warningtip": "請至少選擇一天。",
+					"days": {
+						"shortName": {
+							"sun": "星期日",
+							"mon": "星期一",
+							"tue": "星期二",
+							"wed": "星期三",
+							"thurs": "星期四",
+							"fri": "星期五",
+							"sat": "星期六"
+						},
+						"name": {
+							"sun": "星期日",
+							"mon": "星期一",
+							"tue": "星期二",
+							"wed": "星期三",
+							"thurs": "星期四",
+							"fri": "星期五",
+							"sat": "星期六"
+						},
+						"everyday": "每天",
+						"weekdays": "週間日",
+						"weekends": "週末"
+					}
+				}
+			},
+			"audio": {
+				"title": "音效",
+				"subtitle": "音訊設定",
+				"description": "您可以透過這個區段來自動最佳化或完全手動配置音訊設定，例如 Dolby 設定、麥克風等。",
+				"audioSmartsettings": {
+					"title": "智慧型音訊設定",
+					"subtitle": "以應用程式為基礎的設定",
+					"description": "根據您在使用的不同應用程式，自動調整音訊設定。",
+					"dolby": {
+						"title": "自動 Dolby 音訊設定",
+						"tooltip": "自動 Dolby 音訊設定可因應您正在使用的不同應用程式，將 Dolby 音訊設定為適用模式，增強您的音訊體驗。",
+						"options": {
+							"dynamic": "動態",
+							"movie": "電影",
+							"music": "音樂",
+							"games": "遊戲",
+							"voip": "語音"
+						}
+					},
+					"voip": {
+						"title": "針對 VoIP 的自動音訊最佳化",
+						"tooltip": "可在 VoIP 通話時，自動切換成 Dolby 語音模式，提供清晰、穩定的音質。"
+					}
+				},
+				"microphone": {
+					"title": "麥克風",
+					"note": {
+						"title": "注意事項",
+						"description": "Lenovo Vantage沒有存取麥克風的權限。請為 Lenovo Vantage 應用程式開啟麥克風的存取權限。"
+					},
+					"microphone": {
+						"title": "麥克風",
+						"tooltip": "您可以經由調整麥克風音量和指定適當模式，自訂您的 MIC 效果。"
+					},
+					"volume": {
+						"title": "麥克風音量",
+						"description": "Dolby 音效能由您聆賞的所有內容提供宏亮有力的清晰音效，為您的內容和設備選擇適當的模式。",
+						"options": {
+							"silent": "無聲",
+							"loud": "大聲"
+						}
+					},
+					"suppress": {
+						"title": "消除鍵盤噪音",
+						"tooltip": "開啟此項可藉由消除鍵盤噪音將麥克風音效最佳化。"
+					},
+					"acoustic": {
+						"title": "回音消除",
+						"tooltip": "開啟此功能可藉由降低回音將麥克風音效最佳化。"
+					},
+					"optimize": {
+						"title": "最佳化我的麥克風：",
+						"tooltip": "配置麥克風效果以依據不同的情境和環境強化您的音訊體驗。",
+						"options": {
+							"VoiceRecognition": "語音辨識",
+							"OnlyMyVoice": "只有我的聲音",
+							"Normal": "一般",
+							"MultipleVoices": "多人聲音"
+						}
+					}
+				}
+			},
+			"displayCamera": {
+				"title": "顯示器和攝影機",
+				"subtitle": "顯示器與攝影機設定",
+				"description": "您可以透過這個區段來改善您的視覺體驗，以及設定攝影機屬性。請在此處了解更多功能，及自訂您的顯示器體驗。",
+				"jumpTo": {
+					"title": "移至設定",
+					"shortcuts": {
+						"display": {
+							"title": "顯示"
+						},
+						"camera": {
+							"title": "相機"
+						}
+					}
+				},
+				"display": {
+					"title": "顯示",
+					"eyeCareMode": {
+						"title": "護眼模式",
+						"checkbox": "安排從日落到日出的護眼模式",
+						"options": {
+							"warm": "暖色 (對眼睛較好)",
+							"cold": "冷卻"
+						},
+						"reset": "重設",
+						"tooltip": "護眼模式會調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。",
+						"onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
+						"note": {
+							"title": "備注",
+							"description": "Lenovo Vantage 需要存取您的位置資訊，才能計算您所在當地的日出和日落時間。"
+						}
+					},
+					"dispColorTemp": {
+						"title": "顯示器色溫",
+						"options": {
+							"warm": "暖色 (對眼睛較好)",
+							"cold": "冷卻"
+						},
+						"reset": "重設",
+						"tooltip": "護眼模式會調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。",
+						"onSunsetToSunriseScheduleDescription": "安排從日落到日出的護眼模式",
+						"note": {
+							"title": "備注",
+							"description": "啟用護眼模式後，此色溫不會生效。不過，您可以拖曳滑桿來加以預覽。如果要使它生效，請關閉護眼模式。"
+						}
+					},
+					"privacyGuard": {
+						"title": "隱私保護",
+						"description": "此功能可防止他人偷看您的螢幕。開啟後，它會變更您顯示器的視角，讓您周圍的人無法看見顯示器上的內容。您也可以按下「Fn+D」鍵來切換模式。",
+						"note": "隱私保護在螢幕直向模式中無法運作。在此模式中，仍可從側邊看到您的畫面。",
+						"labelText": "輸入密碼時啟用此功能"
+					},
+					"oledPowerSettings": {
+						"title": "OLED 電源設定",
+						"description": [
+							"您也可以選擇性地降低顯示畫面不同部分的亮度，藉此降低電腦 OLED 顯示器的耗電量並延長電池壽命。",
+							"我們也建議將工作列和顯示畫面中不常變化的其他區域的亮度降低，以延長顯示器的整體壽命。"
+						],
+						"reset": "重設溫度",
+						"tooltip": "此功能可以選擇性地降低顯示畫面不同部分的亮度，藉此降低耗電量並延長電池壽命。",
+						"dropDown": {
+							"seconds": "秒",
+							"minute": "分鐘",
+							"minutes": "分",
+							"alwaysOn": "保持開啟",
+							"never": "永不",
+							"halfTime": "顯示器關閉計時器的一半時間"
+						},
+						"taskBarDimmer": "工作列調光器",
+						"backgroundDimmer": "背景調光器",
+						"displayDimmer": "顯示器調光器"
+					}
+				},
+				"camera": {
+					"title": "相機",
+					"note": {
+						"title": "備注",
+						"description": "Lenovo Vantage 沒有存取攝影機的權限。請為 Lenovo Vantage應用程式開啟攝影機的存取權限。"
+					},
+					"url": "跳至 Windows 隱私權設定",
+					"cameraPrivacy": {
+						"title": "攝影機隱私模式",
+						"tooltip": "啟用隱私設定時，攝影機會停止傳送即時影像。請僅在您不想在視訊通話時與其他人共用您的影像時開啟此設定。"
+					},
+					"camera": {
+						"title": "相機",
+						"tooltip": "按一下此處，即可將攝影機屬性重設為預設設定。",
+						"reset": "重設"
+					},
+					"brightness": "亮度",
+					"contrast": "對比",
+					"autoExposure": "自動曝光",
+					"autoFocus": "自動對焦",
+					"notAvailable": "無法使用攝影機",
+					"camerablur": {
+						"title": "相機背景模糊",
+						"caption": "當您使用攝影機進行任何視訊通話或拍照時，此功能會讓背景模糊。您可以從下面選項選擇不同的效果。",
+						"blurMode": "模糊模式",
+						"comicMode": "漫畫模式",
+						"sketchMode": "素描模式"
+					},
+					"cameraLoadingFailed": {
+						"inUseTitle": "攝影機正在使用中",
+						"inUseDescription": "另一個應用程式正在使用攝影機。關閉應用程式，然後重試一次。",
+						"loadingFailedTitle": "攝影機正在使用中或載入失敗",
+						"loadingFailedDescription": "關閉應用程式，然後重試一次。"
+					}
+				}
+			},
+			"inputAccessories": {
+				"title": "輸入和配件",
+				"subtitle": "輸入和配件設定",
+				"description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整最佳電源管理的設定",
+				"inputAccessory": {
+					"title": "智慧型鍵盤",
+					"hiddenKeyboardFunctions": {
+						"title": "隱藏的鍵盤功能",
+						"description": "您可以同時按下 Fn 鍵（位於鍵盤左下角）與其他按鍵以叫出下列鍵盤對照表中顯示的指令。"
+					},
+					"firstKeyObj": {
+						"tittle": "Fn + Tab",
+						"description": "啟用高解析度顯示器的縮放功能",
+						"image": ""
+					},
+					"secondKeyObj": {
+						"tittle": "Fn + 4",
+						"description": "進入睡眠模式",
+						"image": ""
+					},
+					"thirdKeyObj": {
+						"tittle": "Fn + D",
+						"description": "開啟和關閉隱私保護",
+						"image": ""
+					},
+					"fourthKeyObj": {
+						"tittle": "Fn + Q",
+						"description": "在效能模式和靜音模式之間切換",
+						"image": ""
+					},
+					"fifthKeyObj": {
+						"tittle": "Fn + 空格鍵",
+						"description": "變更鍵盤背光狀態",
+						"image": ""
+					}
+				},
+				"userDefinedKey": {
+					"title": "使用者定義鍵",
+					"caption": "以星星圖示代表的按鍵可讓您設定使用者定義的功能",
+					"dropDown": {
+						"title": "使用者定義鍵的動作",
+						"note": "附註：這可用來輸入經常輸入的按鍵，例如電子郵件地址或郵寄地址。Lenovo 建議您絕對不要使用這項功能來儲存及輸入密碼或任何其他私人資訊。",
+						"options": {
+							"option1": "請選取",
+							"option2": "打開網站",
+							"option3": "輸入文字"
+						}
+					},
+					"tooltip": "要填入的內容",
+					"apply": {
+						"title": "套用"
+					},
+					"website": {
+						"url": "網站 URL"
+					},
+					"enterText": {
+						"title": "要輸入的文字"
+					}
+				},
+				"fnCtrlKey": {
+					"title": "FN key and Ctrl key swap",
+					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+					"more": "MORE",
+					"control1": "TOUCHPAD CONTROLS",
+					"control2": "MOUSE CONTROLS"
+				}
+			}
+		},
+		"smartAssist": {
+			"title": "智慧助理",
+			"description": "Lenovo 智慧型感應會結合您電腦上的感應器來偵測您的活動，並調整最佳電源管理的設定，以及保護您的隱私。",
+			"jumpTo": {
+				"title": "移至設定",
+				"security": "安全性",
+				"screen": "螢幕",
+				"media": "媒體",
+				"voice": "語音",
+				"APS": "APS"
+			},
+			"intelligentSecurity": {
+				"title": "智慧型安全",
+				"readMore": "較多內容",
+				"HumanPresenceDetection": {
+					"title": "人員在場偵測",
+					"tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
+				},
+				"humanPresenceDetection": {
+					"title": "使用者在場感應",
+					"tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
+				},
+				"zeroTouchLogin": {
+					"title": "紅外線攝影機自動登入",
+					"caption": "當您坐在電腦前面或接近電腦時，此功能會自動解除鎖定或喚醒電腦。",
+					"tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+				},
+				"zeroTouchLock": {
+					"title": "自動鎖定螢幕",
+					"caption": "偵測不到使用者在場時，此功能將使顯示器變暗並鎖定電腦。當您在無人看管且未鎖定的情況下離開電腦時，它可降低未經授權存取電腦的機會。它也會在偵測不到您在場時，讓系統進入新式待命模式，以降低耗電量。",
+					"autoScreenLockTimer": {
+						"title": "自動螢幕鎖定計時器",
+						"radioButton": {
+							"fast": "快",
+							"medium": "中",
+							"slow": "慢"
+						},
+						"toolTipContent": "選取您所需的選項，即可在未偵測到人員在場時以快/中/慢等速度鎖定螢幕。然而，螢幕遭到鎖定的時間也會受到實際使用情況、感應器功能，以及 Windows 螢幕逾時設定的影響。因此、我們強烈建議您在離開座位前立即將系統上鎖。"
+					}
+				},
+				"distanceSensitivityAdjusting": {
+					"title": "距離敏感度調整",
+					"caption": "自動距離調整將會透過 AI 引擎自動更新偵測距離。",
+					"options": {
+						"near": "近",
+						"far": "遠"
+					},
+					"tooltipcontent": {
+						"context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+						"context2": "When you manually set the detection distance, please pay attention to the following:",
+						"list": {
+							"line1": "Near: 0 – 0.42 meters (17 inches)",
+							"line2": "Middle: 0 – 0.60 meters (24 inches)",
+							"line3": "Far: 0 – 1.20 meters (47 inches)",
+							"line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+							"line5": "The recommended detection distance is within 0.60 meters."
+						}
+					}
+				},
+				"note": {
+					"description1": "此功能必須依賴 Windows Hello。確定 Windows 設定中已開啟臉部辨識。",
+					"description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
+					"description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
+					"description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
+					"description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。"
+				},
+				"WindowsLink": {
+					"goToWindowsHello": "跳至 Windows Hello 設定",
+					"screenTimeoutSettings": "前往螢幕逾時設定"
+				},
+				"resetToDefault": "重設"
+			},
+			"intelligentScreen": {
+				"title": "智慧型螢幕",
+				"description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整電源管理的設定。例如，如果它偵測到您正在走路，便會使顯示器變暗；如果偵測到您正在閱讀，則不會使顯示器變暗。",
+				"autoScreenOff": {
+					"title": "自動螢幕關閉",
+					"caption": "面朝下或行走時，自動關閉顯示器。",
+					"note": "如果您在 Windows 設定的「系統」區段中將電源計劃設定成「使用電池時永不關閉顯示器」，就無法使用這個功能。請選取「永不」以外的值才能啟用這個功能。",
+					"windowsLink": "移至 Windows 設定中的電源和睡眠設定"
+				},
+				"keepMyDisplay": {
+					"title": "保持顯示",
+					"caption": "當我在閱讀或瀏覽時，保持顯示。",
+					"displaySlider": {
+						"title": "瀏覽時，顯示器變暗前的分鐘數",
+						"startTime": "0 分鐘",
+						"endTime": "60 分鐘"
+					}
+				}
+			},
+			"activeProtectionSystem": {
+				"title": "Active Protection System",
+				"description": "Lenovo Active Protection System 是一種自主功能，可協助保護硬碟避免因強烈物理震動和振動而受損。其將持續監視電腦的移動，而且會在預測到掉落或類似損害事件時暫停硬碟運作。",
+				"activeProtection": {
+					"title": "Active Protection",
+					"caption": "改變敏感度，在低敏感模式下，只有較強的撞擊才會啟動保護",
+					"checkbox": "忽略重複震動，例如火車或汽車內的震動"
+				},
+				"manualActiveProtectionSuspension": {
+					"title": "手動暫停 Active Protection",
+					"caption": "允許我手動暫停 Active Protection System",
+					"dropdown-title": "暫停時間",
+					"button": "立即暫停"
+				},
+				"advanced": {
+					"description": "為了改善使用平板電腦時的硬碟存取，系統在偵測到下列動作時會暫停 Active Protection System",
+					"pen": {
+						"title": "數位筆輸入",
+						"description": "使用數位筆輸入時，在數位筆輸入離開範圍時啟用 APS"
+					},
+					"touch": {
+						"title": "觸控輸入",
+						"description": "使用觸控輸入時，在未偵測到觸控輸入時啟用 APS"
+					},
+					"hand": {
+						"title": "電腦邊緣感應到手接近",
+						"description": "啟用平板電腦模式時，在未偵測到手部時啟用 APS"
+					},
+					"more": "其他資訊",
+					"advanced-settings": "進階設定",
+					"hide": "隱藏進階設定"
+				},
+				"APS": {
+					"more": "其他資訊",
+					"advancedSettings": "進階設定",
+					"hideAdvancedSettings": "隱藏進階設定",
+					"lowSensitivity": "低敏感度",
+					"mediumSensitivity": "中敏感度",
+					"highSensitivity": "高敏感度"
+				}
+			},
+			"intelligentMedia": {
+				"heading": "智慧型媒體",
+				"title": "視頻播放智慧控制",
+				"desc": "此功能將在您離開電腦時暫停視訊，並在您回來時繼續播放視訊。",
+				"tooltip": "此功能不適用於 Web 視訊播放程式。受歡迎的本端視訊播放程式（例如 Windows Media Player、5KPlayer 等）都支援此功能。"
+			},
+			"voice": {
+				"title": "語音",
+				"description": "Lenovo Voice 可使用語音到文字功能，協助將您的語音轉換為文字，並使用翻譯功能提供從語音到文字的即時翻譯。",
+				"installBtnText": "安裝",
+				"launchBtnText": "啟動",
+				"voiceToText": {
+					"title": "語音到文字",
+					"caption": "此功能可協助將您的語音轉換為文字。"
+				},
+				"translation": {
+					"title": "翻譯",
+					"caption": "此功能提供語音的即時翻譯。翻譯的內容顯示在文字中。您可以根據需求選擇來源語言和目標語言。"
+				},
+				"modalPopUp": {
+					"heading": "開始使用：",
+					"point1": "確保 Lenovo Voice 圖示有顯示在 Windows 系統匣中。",
+					"point2": "開啟要用來記錄轉換文字的檔案。",
+					"point3": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「語音到文字」。",
+					"point4": "選取所需的語言，然後按一下麥克風圖示開始。",
+					"point5": "將游標放在要編輯的位置並開始說話。",
+					"point6": "按一下 Windows 系統匣中的 Lenovo Voice 圖示，然後選取「翻譯」。",
+					"point7": "選擇所需的來源語言和目標語言。",
+					"point8": "根據您的需求，設定從喇叭或麥克風輸入語音。",
+					"point9": "按一下麥克風圖示開始說話",
+					"closeText": "關閉"
+				},
+				"modalInstallationFailed": {
+					"btnText": "確定",
+					"title": "安裝失敗",
+					"desc": "若要使用 Lenovo Voice，請稍後重試。"
+				}
+			}
+		}
+	},
+	"systemUpdates": {
+		"title": "系統更新",
+		"back": "上一步",
+		"history": "完整歷程記錄",
+		"notAvailable": "無法使用",
+		"notInstalled": "未安裝",
+		"criticalUpdates": "重要更新",
+		"recommendedUpdates": "建議更新",
+		"optionalUpdates": "選用更新項目",
+		"ignoredUpdates": "已忽略的更新",
+		"successInstall": "已成功安裝：",
+		"failedInstall": "安裝失敗：",
+		"at": "時間：",
+		"readMore": "較多內容",
+		"popup": {
+			"reboot": "重新啟動",
+			"shutdown": "關機",
+			"rebootForceMsg": "您選取的更新將在安裝後使系統自動重新開機。",
+			"shutdownForceMsg": "您選取的更新將在安裝後使系統自動關機。",
+			"rebootDelayedMsg": "更新安裝時，您選取的更新將會在安裝後使系統重新開機。請勿關閉您的系統、卸下電源或配件。我們建議您儲存工作，為您的系統重新開機預作準備。",
+			"rebootRequiredMsg": "為了成功安裝更新，您的電腦需要重新開機以確保一切運作安全、順暢。",
+			"okayButton": "確定",
+			"cancelButton": "取消",
+			"rebootButton": "立即重新開機",
+			"dismissButton": "關閉",
+			"rebootPending": "重新開機擱置中"
+		},
+		"autoUpdateSettings": {
+			"title": "自動更新設定",
+			"subtitle": "自動安裝更新",
+			"critical": {
+				"title": "重要更新",
+				"tooltip": "重要更新可防止出現重大問題、嚴重故障、硬體故障或資料毀損。"
+			},
+			"recommended": {
+				"title": "推薦的更新",
+				"tooltip": "推薦的驅動程序更新可使計算機以最佳性能運行。"
+			},
+			"windows": {
+				"title": "Windows Updates",
+				"url": "Windows 設定"
+			}
+		},
+		"support": {
+			"title": "Lenovo 支援網站"
+		},
+		"banner": {
+			"neverChecked": "歡迎使用系統更新。",
+			"title": "保持最新狀態的系統才是健康的系統。",
+			"last": "上次更新：",
+			"next": "下次的排定更新：",
+			"checkButton": "檢查更新",
+			"checking": "檢查更新項目",
+			"downloading": "下載更新完成",
+			"installing": "正在安裝更新",
+			"percent": "% 已完成",
+			"cancelCheck": "取消檢查",
+			"cancelUpdates": "取消更新",
+			"available": "可用更新",
+			"description": "這些套件包含了對電腦正常運作至關重要的硬體驅動程式更新和其他系統公用程式更新。重要更新項目在保護電腦資料方面也很重要，應該立即安裝。不安裝這些套件可能會導致資料遺失、系統不正常或硬體故障。",
+			"installButton": "安裝所有更新",
+			"result": {
+				"success": "已正確安裝所有更新",
+				"fail": {
+					"title": "部分更新項目未正確安裝。",
+					"description": "下載或安裝這些更新期間出了問題。請確定您處於線上狀態，而且在安裝更新時請勿關閉電腦。"
+				}
+			}
+		},
+		"updateCheckbox": {
+			"rebootRequired": "需要重新開機",
+			"failReason": "失敗原因：AC 電源整流器未連接到您的電腦。",
+			"manufacturer": "製造商：",
+			"version": "版本：",
+			"installVersion": "已安裝的版本：",
+			"downloadSize": "下載大小：",
+			"diskSpaceNeeded": "所需磁碟空間：",
+			"ignore": "忽略",
+			"attend": "處理",
+			"rebootRequiredTag": "需要重新開機",
+			"rebootDelayTag": "需要重新開機，需要使用電源",
+			"shutdownRequiredTag": "需要關機",
+			"dependedPackage": "相依性套件"
+		},
+		"availableUpdates": {
+			"title": "可用更新",
+			"description": "這些套件包含了對電腦正常運作至關重要的更新。重要更新有助於使您的電腦更安全、更可靠，因此應該在可用時立即安裝。建議更新和選用更新有助於使您的軟體保持最新狀態，以及使您的電腦保持最佳運作狀態。",
+			"installAllUpdates": "安裝所有更新",
+			"installSuccessHeader": "已正確安裝所有更新",
+			"installFailHeader": "部分更新項目未正確安裝",
+			"installFailDescription": "下載和安裝這些更新期間出了問題。請確定您處於線上狀態，而且在安裝更新時請勿關閉電腦。",
+			"optionalUpdates": "選用更新項目",
+			"installSelectedUpdates": "安裝選取的更新"
+		},
+		"installationHistory": {
+			"name": "名稱",
+			"sortByDate": "依日期排列",
+			"packageSize": "套件大小：",
+			"releaseDate": "發行日期：",
+			"showAll": "顯示所有",
+			"noInstallationHistory": "沒有安裝歷程記錄"
+		},
+		"statusCodeMessage": {
+			"commonFailure": "擷取新的更新時發生問題。請稍後重試。",
+			"upToDate": "沒有可用的更新。您的系統已經更新為最新狀態",
+			"egatherException": "收集使用者資訊時發生錯誤。",
+			"gatheringUserInfoException": "收集使用者資訊時發生錯誤。",
+			"certificateValidationException": "更新內容伺服器無效。請稍後重試。",
+			"downloadException": "下載更新時發生錯誤。",
+			"connectException": "無法連接到更新內容伺服器。",
+			"notEnoughDiskSpace": "沒有足夠的磁碟空間可執行目前的作業。",
+			"proxyAuthenticationException": "Proxy 使用者名稱或密碼不正確。",
+			"proxyConnectionException": "無法連接到 Proxy 伺服器。",
+			"autoScriptEvaluationException": "評估自動配置 script 時發生錯誤。",
+			"localRepositoryConnectionFailureException": "無法連線到本端儲存庫。",
+			"localRepositoryDatabaseException": "找不到本端儲存庫的資料庫或是該資料庫已毀損。",
+			"networkInterruptedException": "系統更新伺服器目前無法使用。請稍後重試。",
+			"helpCenterInvalidServerException": "系統更新伺服器無效。請稍後重試。",
+			"catalogNotFoundException": "找不到適用於您系統的更新。",
+			"catalogCrcErrorException": "目前正在更新您系統的目錄。請稍後重試。",
+			"catalogErrorException": "在系統更新伺服器上偵測到您系統的更新目錄發生錯誤。請稍後重試。",
+			"fileNotFoundException": "找不到檔案。"
+		}
+	},
+	"homeSecurity": {
+		"title": "連線家庭安全性",
+		"notification": {
+			"recent": "最近的安全通知",
+			"notifications": "通知",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "保護您的裝置生態系統",
+			"thisDevice": "這部裝置",
+			"allDevices": "全部裝置",
+			"protected": "受到保護",
+			"notProtected": "未受到保護",
+			"trialExpired": "試用已過期",
+			"upgrade": "升級",
+			"inEcosystem": "生態系統模式中",
+			"ecosystemEnable": "生態系統已啟用",
+			"inTrial": "試用模式中",
+			"addEcosystem": "新增到生態系統",
+			"enableEcosystem": "啟用生態系統",
+			"startTrial": "開始試用",
+			"fullAccess": "完整存取權",
+			"renew": "更新"
+		},
+		"overview": {
+			"overviewBlockTitle": "您的生態系統安全概要",
+			"allDevices": "全部裝置",
+			"myDevice": "我的裝置",
+			"thisComputer": "這台電腦",
+			"secure": "安全",
+			"needAttention": "需要關注",
+			"manageAccount": "管理帳戶",
+			"devices": "裝置",
+			"seeProtectedDevices": "請參閱受保護裝置",
+			"addDevice": "新增裝置",
+			"trialExpired": "試用已過期 - 升級以保護您的全部裝置",
+			"upgrade": "升級",
+			"freeTrial": "保護您的全部裝置 - 30 天免費試用版",
+			"startTrial": "開始試用"
+		},
+		"tour": {
+			"back": "上一頁",
+			"skip": "跳過",
+			"start": "開始導覽",
+			"done": "完成",
+			"welcome1": "歡迎使用",
+			"welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
+			"welcomeDescStart": "立即開始 30 天免費試用。",
+			"welcome2": "Vantage 獨家",
+			"welcomeDesc2": "連線家庭安全性直接內建於 Vantage，可供快速存取生態系統和安全警報的保護狀態。",
+			"create": "建立您的帳戶",
+			"lenovoId": "使用 Lenovo ID",
+			"notifications": "接收關於您家中狀態的<b>通知</b>",
+			"monitor": "<b>監控</b>您家中裝置的安全性",
+			"peaceOfMind": "隨時保護全家裝置安全，讓您備感<b>安心</b>！",
+			"signInLenovoId": "使用 Lenovo ID 進行註冊",
+			"haveLenovo": "我沒有 <b>Lenovo ID</b>",
+			"createLenovo": "&nbsp;建立 Lenovo ID",
+			"without": "<b>無帳戶</b>情況下繼續",
+			"skipAndTrial": "跳過並開始試用",
+			"alreadyHave": "我已經有<b>連線家庭安全性帳戶</b>了",
+			"loginCHS": "登入現有的 CHS 帳戶",
+			"locationTitle": "啟用位置追蹤",
+			"locationPermission": "為了使這項功能正確運作，您必須啟用這部裝置的位置追踪"
+		},
+		"accountStatus": {
+			"title": "我的連線家庭安全性",
+			"startTrial": "開始試用",
+			"manageAccount": "管理帳戶",
+			"upgradeAccount": "升級帳戶",
+			"inTrialDetail1": "試用將在 {{remainingDays}} 天後結束。",
+			"inTrialDetail2": "您目前還在試用期間。您可以無限次存取各項功能。",
+			"trialExpiredDetail1": "您的試用已到期。",
+			"trialExpiredDetail2": "您的試用已到期，您的裝置生態系統將不再受到保護。",
+			"upgradedDetail1": "您的帳戶會持續有效直至 {{expiredDate}}。",
+			"upgradedDetail2": "您的裝置生態系統目前正受到保護。",
+			"localAccountDetail2": "按下面的按鈕，開始免費試用 30 天。",
+			"alreadyHaveAccount": "已經有啟動碼了嗎？"
+		}
+	},
+	"support": {
+		"common": {
+			"getSupport": "獲得支援"
+		},
+		"warranty": {
+			"titleInWarranty": "在保固期內",
+			"titleWarrantyExpired": "保固已過期",
+			"titleWarrantyNotFound": "找不到保固",
+			"statusInWarranty": "在保固期內",
+			"statusWarrantyExpired": "已過期",
+			"statusWarrantyNotFound": "找不到保固",
+			"yearDepotWarranty": "年到府取件保固",
+			"warrantyDetails": "保固詳細資料：",
+			"startDate": "開始日期：",
+			"endDate": "結束日：",
+			"status": "狀態：",
+			"subDescription1": "此產品具有數年有限保固，並享有到府取件維修服務。客戶可致電當地服務中心以取得更多資訊。經銷商可提供此產品的自行送修。",
+			"subDescription2": "我們找不到您裝置的保固詳細資料，如需其他保固選項，請造訪我們的支援網站。",
+			"viewWarrantyOptions": "檢視保固選項",
+			"offlineTips1": "如需最新的保固資訊，請連線至網際網路。",
+			"offlineTips2": "請連線至網際網路以更新保固資訊。"
+		},
+		"documentation": {
+			"title": "文件",
+			"listUserGuide": "使用手冊"
+		},
+		"needHelp": {
+			"title": "需要協助嗎？",
+			"description": "請聯絡我們以便為您提供協助。",
+			"listLenovoCommunity": "Lenovo 社群",
+			"listContactCustomerService": "聯絡客戶服務",
+			"listContactUsOnWechat": "透過 WeChat 聯絡我們",
+			"weChatDescription": "透過 WeChat 向我們提問，我們一定會盡快回覆",
+			"listFindUs": "透過社交媒體追蹤我們",
+			"listContactUsOnFacebook": "透過 Facebook 聯絡我們",
+			"facebookDescription": "按一下以透過 Facebook 追蹤我們"
+		},
+		"quicklinks": {
+			"title": "快速鏈結",
+			"description": "請聯絡我們以便為您提供協助。",
+			"listETicket": "透過電子票證獲得支援",
+			"listServiceProvider": "尋找服務供應商",
+			"listAboutLenovoVantage": "關於 Lenovo Vantage"
+		},
+		"about": {
+			"version": "版本",
+			"licenseAgreement": "授權合約",
+			"otherSoftwareLicenses": "其他軟體授權",
+			"ourWebsite": "我們的網站",
+			"aboutYourDevice": "關於您的裝置",
+			"copyright": "© 2002-2019 Lenovo all rights reserved"
+		},
+		"quickAccess": {
+			"categories": "類別",
+			"categoriesDesc": "在我們的文章中尋找實用的資訊。",
+			"seeArticles": "查看文章"
+		}
+	},
+	"security": {
+		"landing": {
+			"fully": "受到完整保護",
+			"fullyDesc": "恭喜您！您受到良好保護。",
+			"notFully": "未受到完整保護",
+			"notFullyDesc": "您未受到完整保護。立即瞭解如何更好地保護自己。",
+			"security101": "安全顧問 101",
+			"firewall": "防火牆",
+			"pwdHealth": "密碼安全狀態",
+			"vpnSecurity": "VPN 安全性",
+			"vpnVirtual": "虛擬私人網路",
+			"wifiConnected": "WiFi 與連線家庭安全性",
+			"connectedHomeSecurity": "連線家庭安全性",
+			"fingerprint": "指紋辨識器",
+			"seeAllNetwork": "查看所有加入的網路",
+			"maliciousNetwork": "本月已阻止您的電腦加入 {{maliciousWifi}} 個惡意網路。",
+			"good": "良好",
+			"malicious": "惡意",
+			"suspicious": "可疑",
+			"securityScoreDepends": "您可以從安全分數了解自身的線上安全，最後得分將依下列條件而異：",
+			"antivirus": "是否獲得防毒軟體的保護",
+			"password": "是否在安全方式中採用強式及複雜的密碼進行管理",
+			"vpn": "是否監控網路遭受攻擊的風險",
+			"wifi": "是否在使用公共 WiFi 時加密您的個人資料",
+			"windowsHello": "是否使用安全登入選項來保護裝置"
+		},
+		"antivirus": {
+			"common": {
+				"title": "防毒",
+				"back": "上一步",
+				"why": "為何選擇 McAfee？",
+				"recommends": "Lenovo 建議使用 McAfee 來保護您所有的裝置，因其具備下列優點：",
+				"award": "針對最新的線上威脅提供獲獎肯定的保護，包括勒索軟體和惡意軟體",
+				"dedicated": "始終優於 Defender 和其他頂尖 AV 提供者的專用安全性",
+				"deviceToCloud": "無損及電腦速度的裝置對雲端技術",
+				"poweredBy": "搭載 McAfee",
+				"privacyTerms": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>",
+				"mcafeePremium": "McAfee 特級保護",
+				"protectedBy": "您目前受到 {{protectedName}} 的保護。但是，您可以透過 McAfee LiveSafe 獲得更好的保護。",
+				"virusScan": "病毒掃描",
+				"firewall": "防火牆",
+				"disabled": "已停用",
+				"enableVirusScan": "啟用病毒掃描",
+				"enablenFirewall": "啟用防火牆",
+				"enableFirewall": "啟用防火牆"
+			},
+			"windowsDefender": {
+				"optimallyProtected": "未受到最佳保護",
+				"subtitle": "您目前正受到 Windows Defender 的保護。不過，您可以透過 McAfee LiveSafe 獲得更佳的保護。透過下方內容進一步瞭解。",
+				"learnMore": "進一步瞭解 McAfee",
+				"windowsProtected": "Windows Defender 基本保護",
+				"windowsSubtitle": "Windows Defender 為您的裝置提供基本保護"
+			},
+			"mcafee": {
+				"title": "McAfee LiveSafe",
+				"subtitle": "您目前受到 McAfee LiveSafe 的保護",
+				"valid": "有效期限",
+				"upgrade": "立即升級",
+				"launch": "啟動 McAfee",
+				"getMacfee": "取得 McAfee",
+				"topBenefits": "McAfee LiveSafe 的主要優勢",
+				"awardTitle": "獲獎肯定的防毒軟體",
+				"awardSubtitle": "在 PC 上防堵病毒、惡意軟體、勒索軟體、間諜軟體、垃圾程式等。",
+				"encryptedTitle": "加密儲存",
+				"encryptedSubtitle": "使用 128 位元加密將機密檔案儲存在您的 PC 上，以保持機密檔案的隱私。",
+				"identityTitle": "身分盜用保護",
+				"identitySubtitle": "負責保護您的身分，避免遭到盜用或詐騙。",
+				"supportTitle": "免費客戶支援",
+				"supportSubtitle": "在訂閱期間，獲得電話、交談式或線上支援。",
+				"antiTitle": "反垃圾郵件",
+				"antiSubtitle": "藉由移除可能包含危險連結和病毒的電子郵件，阻止危險郵件到達您的收件匣。",
+				"virusTitle": "病毒防護承諾",
+				"virusSubtitle": "當 PC 出現病毒時，McAfee 專家將遠端存取您的電腦以移除病毒，消除您的後顧之憂。",
+				"parentalTitle": "家長監護",
+				"parentalSubtitle": "防堵不希望讓孩子看到的網站和搜尋結果。此外，還可讓您設定孩子上網的時間長度限制。",
+				"license": "授權有效期限",
+				"trial": "試用有效期限"
+			},
+			"others": {
+				"othersProtection": "為您的裝置提供基本保護"
+			}
+		},
+		"wifisecurity": {
+			"header": {
+				"title": "WiFi 與連線家庭安全性",
+				"back": "上一步"
+			},
+			"container": {
+				"title": "Lenovo Wifi 安全性",
+				"name": "WIFI 安全性",
+				"enable": "已啟用",
+				"disable": "已停用",
+				"less": "較少資訊",
+				"more": "更多資訊",
+				"networkHistory": "網路歷程記錄",
+				"connect": "最後連線",
+				"showmore": "顯示更多",
+				"showless": "顯示較少內容",
+				"button": "啟用 WiFi 安全性",
+				"disableDecribe": "Lenovo WiFi 安全性是一項先進的雲端式軟體服務，可協助您的裝置區分安全與潛在惡意的無線網路。"
+			},
+			"threatlocator": {
+				"describe": "使用威脅偵測器判斷您周圍網路的安全性。",
+				"button": "檢查威脅",
+				"connectionError": "連線錯誤",
+				"tryAgain": "網路無法使用，因此我們找不到對您的威脅，請連接到網際網路，然後重試。"
+			},
+			"locationmodal": {
+				"title": "啟用位置服務",
+				"describe1": "若要使用 Lenovo WiFi 安全性，您必須啟用 Lenovo Vantage 的位置服務。您現在要啟用位置嗎？",
+				"describe2": "若要使用連線家庭安全性，您必須啟用 Lenovo Vantage 的位置服務。您現在要啟用位置嗎？",
+				"agree": "同意",
+				"cancel": "取消"
+			},
+			"errorMessage": {
+				"headerText": "錯誤",
+				"bodyText": "我們發現您缺少 Vantage 的關鍵組件。這些組件將在背景進行下載。請稍後重試。",
+				"closeText": "關閉",
+				"offlineText": "我們發現您沒有連線到網際網路。此頁面的某些部分將無法正確運作。請重新連線",
+				"accountText": "帳戶建立失敗。請稍後重試。"
+			}
+		},
+		"homeprotection": {
+			"homesecurity": {
+				"title": "連線家庭安全性",
+				"titleDescription": "連線家庭安全性以三種方式保障您的安全：",
+				"homeSecurityAffect1": "連線家庭安全性可確保裝置的安全，並且未遭入侵",
+				"homeSecurityAffect2": "連線家庭安全性可確保您連線的網路的安全",
+				"homeSecurityAffect3": "連線家庭安全性可確保連線至您家庭網路的其他裝置的安全。",
+				"describe": "不安全的裝置和網路可能會引入惡意軟體，導致身分遭盜用，並洩露隱私和財務資訊。請啟用此功能以降低讓您的裝置和家庭網路遭受攻擊的風險",
+				"subtitle": "安心保障",
+				"subtitleDescribe": "如果連線家庭安全性偵測到裝置或家庭網路有漏洞，或是如果您連線至潛在的惡意網路，將會向您傳送警示。<tag>這裡</tag>還可進一步瞭解連線家庭安全性。",
+				"tryNow": "立即試用"
+			},
+			"invitationcode": {
+				"button": "輸入邀請代碼",
+				"buttonDescribe": "您已將此裝置加入現有的連線家庭安全性帳戶。",
+				"title": "已經有連線家庭安全性了嗎？",
+				"titleDescribe": "請確保已啟用 Vantage 的位置權限，以便將您的裝置新增至現有的連線家庭帳戶，並且使用連線家庭安全性。",
+				"enterCode": "輸入您的連線代碼",
+				"addHome": "新增家庭",
+				"ok": "確定",
+				"continue": "繼續",
+				"cancel": "取消",
+				"validateCode": "驗證碼",
+				"success": "已成功連線",
+				"canUse": "您現在可以開始使用連線家庭安全性",
+				"tryAgain": "代碼不正確，請重試！",
+				"activationCode": "啟動代碼"
+			},
+			"securityhealth": {
+				"title": "安全性健康情況",
+				"deviceName1": "來自可信任來源的應用程式",
+				"deviceName2": "開發人員模式",
+				"deviceName3": "UAC 通知",
+				"deviceName4": "防毒可用性",
+				"deviceName5": "硬碟加密",
+				"deviceName6": "防火牆可用性",
+				"deviceName7": "已啟用 Windows",
+				"deviceName8": "安全更新可用性",
+				"deviceName9": "密碼保護",
+				"deviceName10": "自動更新服務可用性",
+				"fail": "失敗",
+				"pass": "通過",
+				"learnMoreAboutSecurityHealth": "在<tag>這裡</tag>分別深入瞭解這些元件。",
+				"peaceOfMind": "您希望更安心嗎？",
+				"button": "啟用 WiFi 安全性"
+			}
+		},
+		"vpn": {
+			"statusTitle": "SURFEASY VPN",
+			"title": "VPN 安全性",
+			"header": "SurfEasy VPN",
+			"whatIsSufEasy": "SurfEasy VPN 會加密您傳送和接收的資訊，讓您可以放心透過任何網際網路連線安全地私下使用 PC、Mac®、智慧型手機或平板電腦。",
+			"whatCanSufEasy1": "在您上網時為您提供保護的虛擬私人網路提供者。在不使用 VPN 的情況下，您的電腦可能較容易遭受攻擊者和身分竊盜者的攻擊。VPN 無聲地在背景執行，並提供安全性和隱私保護。",
+			"startUseSufEasy4": "SurfEasy 使用者可以享用每 30 天 250 MB 的免費流量！依照 SurfEasy 應用程式的&quot;獎勵&quot;標籤上的步驟進行操作，以獲得更多流量。",
+			"howToGetData": "如何獲得免費流量：",
+			"howToGetData1": "確認電子郵件，贏得 +250 MB 流量",
+			"howToGetData2": "加入第二個裝置，贏得 +250 MB 流量",
+			"howToGetData3": "推薦朋友，贏得 +500 MB 流量",
+			"howToGetData4": "在 Facebook 上為 SurfEasy 按讚，贏得 +100 MB 流量",
+			"howToGetData5": "在 Twitter 上跟隨 SurfEasy，贏得 +100 MB 流量",
+			"helpKeep": "透過 SurfEasy VPN 協助您保持線上活動的安全性和隱私。",
+			"getSufEasy": "取得 SurfEasy",
+			"openSufEasy": "開啟 SurfEasy",
+			"whySufEasy": "為何使用虛擬私人網路 (VPN)？",
+			"whySufEasyDescription": "使用 Wi-Fi 熱點（例如咖啡廳或機場的熱點）可能會讓您的機密資訊暴露在網路犯罪的風險中。SurfEasy VPN 是無日誌的 VPN，可加密您的個人資訊且不會追蹤或儲存您的線上活動或位置。",
+			"startUseSufEasy": "立即開始使用 SurfEasy",
+			"startUseSufEasy1": "透過銀行級加密，協助確保您傳送和接收的資料的安全性和隱私。",
+			"startUseSufEasy2": "協助防止公司追蹤您的線上活動或位置。",
+			"startUseSufEasy3": "免費和特級的產品提供多種選擇，以滿足您的需要和預算。",
+			"howToUseSufEasy": "如何使用 SurfEasy VPN",
+			"whatCanSufEasy2": "在存取公用 Wi-Fi 熱點時，保護您的隱私並開啟 SurfEasy VPN。透過 Lenovo Starter VPN 計劃，您可以完成獎勵活動以獲取更多的資料保護頻寬。升級後擁有無限制的頻寬，可保護最多 5 部智慧型手機、平板電腦和電腦。",
+			"getStarted": "開啟 SurfEasy VPN：",
+			"getStarted1": "按一下上方的「開啟 SurfEasy」按鈕以啟動 SurfEasy VPN。",
+			"getStarted2": "開啟 VPN 並稍待片刻，確認連線的安全。",
+			"getStarted3": "如有需要，請變更您的區域或位置，並享有安全的私人網路。",
+			"poweredBySurfEasy": "搭載 SurfEasy",
+			"privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+		},
+		"passwordManager": {
+			"statusTitle": "DASHLANE 密碼管理程式",
+			"title": "密碼安全狀態",
+			"header": "Dashlane",
+			"whatIsPmNotInstalled": "可儲存高保護性的複雜密碼及立即登入每個網站的最安全、最簡單的方法。",
+			"whatIsPmInstalled": "更安全的數位生活就在眼前：新增密碼、啟用暗網監視以及自動填入個人和付款資訊。",
+			"startProtect": "開始以簡單的方式保護您的線上帳戶。",
+			"discount": "Lenovo 使用者獨享 Dashlane 特級版五折優惠。",
+			"offer": "優惠僅適用於新的 Dashlane 使用者！",
+			"getDashLane": "取得 Dashlane",
+			"learnMoreAbout": "<tag>進一步瞭解</tag>如何充分利用 Dashlane",
+			"openDashLane": "開啟 Dashlane",
+			"neverForget": "Dashlane：永遠不再忘記任何密碼",
+			"whatIsDashLane": "Dashlane 是搭配您的瀏覽器使用的密碼管理程式和數位保護應用程式。它會自動儲存密碼和個人資料，為您記住所有內容，並安全地儲存所有內容。Dashlane 也會分析帳戶安全性，並提供可改善密碼安全狀態的簡單方法。",
+			"helpYou": "Dashlane 幫助您",
+			"helpYou1": "記住無限個使用者名稱和密碼。",
+			"helpYou2": "隨時隨地立即登入，提供流暢的瀏覽體驗",
+			"helpYou3": "在裝置上同步處理，讓您隨時都可存取重要的帳戶",
+			"helpYou4": "可付諸行動的簡單建議，提升您的線上保護",
+			"getStarted": "開始使用 Dashlane 嗎？",
+			"checkOutThisGuide": "使用 Dashlane 保持線上安全，節省時間免煩惱。如需入門的詳細指示，<tag>請查看此手冊。</tag>",
+			"allowsYou": "Dashlane 可讓您",
+			"allowsYou1": "隨時隨地立即登入，提供流暢的瀏覽體驗 - 在裝置上同步處理，讓您隨時都可存取重要的帳戶",
+			"allowsYou2": "監視暗網以保護您的個人資訊",
+			"allowsYou3": "透過內建 VPN，在不安全的 WiFi 網路上保持安全",
+			"allowsYou4": "在不顯示密碼的情況下安全地共用密碼",
+			"poweredByDashLane": "搭載 Dashlane",
+			"privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+		},
+		"windowsHello": {
+			"statusTitle": "WINDOWS HELLO",
+			"title": "Windows Hello",
+			"protectYourDevice": "使用 Lenovo 推薦的這些安全性選配產品保護您的裝置。",
+			"signIn": "使用 Windows Hello 快速安全地登入。",
+			"signInTitle": "使用 Windows Hello 快速安全地登入",
+			"setUp": "設定 Windows Hello",
+			"whyWindowsHello": "為何選擇 Windows Hello？",
+			"whyWindowsHelloDescription1": "Windows Hello 讓登入電腦變得更簡單、更安全，也可以用於您的線上 Microsoft 應用程式。依照以下指示開始使用 Windows Hello。",
+			"startUsingToday": "立即開始使用 Windows Hello",
+			"visitAndRegister": "造訪 Windows Hello 網頁並註冊您的指紋。",
+			"visitInSettings": "在系統設定中<tag>造訪 Windows Hello</tag>",
+			"unlock": "使用 Windows Hello 登入，並使用手指輕觸感應器以解除鎖定 PC。",
+			"startUsingWindowsHello": "開始使用 Windows Hello 登入 Microsoft 應用程式，例如 Outlook、OneDrive、Office 365 和 Xbox Live。",
+			"visitMicrosoft": "造訪 Microsoft",
+			"poweredByWindowsHello": "搭載 Windows Hello",
+			"privacyPolicy": "進一步瞭解<tag>隱私權政策</tag>",
+			"whyWindowsHelloDescription2": "Windows Hello 讓登入電腦變得更簡單、更安全。而您也可以用於您的線上 Microsoft 應用程式。依照以下指示開始使用 Windows Hello",
+			"authentication": "Windows Hello 鑑別",
+			"traditional": "傳統密碼可能會遭竊，並從世界任何地方用於存取您的帳戶。更安全、更方便。Windows Hello 是新一代密碼。使用您的指紋辨識器來取代不安全的密碼登入。",
+			"howToStart": "如何開始使用 Windows Hello？"
+		}
+	},
+	"lenovoId": {
+		"login": "登入",
+		"logout": "登出",
+		"unlockExclusives": "解除鎖定獨家功能",
+		"user": "使用者",
+		"welcomeText": "{{firstName}}，今天看起來充滿活力！",
+		"welcomeTextWithouUserName": "Looking energized today!",
+		"welcomeTextWithoutUserName": "今天看起來充滿活力！",
+		"helloUser": "{{firstName}}，您好！",
+		"ssoErrorTitle": "錯誤",
+		"ssoErrorCommon": "糟糕，我們遇到了錯誤。請再試一次。",
+		"ssoErrorCommonEx": "非預期的錯誤。請再試一次。",
+		"ssoErrorTimeStampIncorrect": "糟糕，您 PC 的時間似乎不正確。請更正您 PC 上的時間，然後再試一次。",
+		"ssoErrorNetworkDisconnected": "糟糕！連線失敗！請檢查您的網際網路連線，然後再試一次。",
+		"ssoErrorCommunicating": "網路錯誤。請檢查您的連線，然後再試一次。",
+		"ssoErrorAccountPluginNotExist": "遺漏外掛程式。如果您已連線至網際網路，我們將會在背景自動還原外掛程式。這可能需要一點時間，請稍後重試。"
+	},
+	"faq": {
+		"footer": {
+			"title": "找不到你要找的東西？",
+			"description": "需要額外的支持嗎？ 不要猶豫與VIA聯繫：",
+			"body": "聯想社區",
+			"button": "去論壇"
+		},
+		"question1": {
+			"title": "備份及還原檔案",
+			"description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        備份及還原檔案    </div>    <hr />    <div style='margin-bottom:7rem;'>        備份讓您有備無患。將檔案複本保存在另一個硬碟上，以防原件出現問題。    </div>    <div style='font-size:3rem;font-weight:bold;'>        設定備份    </div>    <hr />    <div class='mb-5'>        選取<span style='font-weight:bold'>開始</span> 按鈕，接著依序選取<span style='font-weight:bold'>設定</span> > <span style='font-weight:bold'>更新和安全性</span> > <span style='font-weight:bold'>備份</span> > <span style='font-weight:bold'>新增硬碟</span>，然後選擇外部硬碟或網路位置來進行備份。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        設定完成。使用者資料夾 (C:\\\\Users\\\\username) 中的所有資料會每隔 1 小時備份一次。若要變更要進行備份的檔案或是備份的發生頻率，請前往<span style='font-weight:bold;'>其他選項</span>。    </div>    <div style='font-size:3rem;font-weight:bold;'>        還原檔案    </div>    <div class='mb-5'>        如果您遺漏了重要檔案或資料夾，請按以下步驟將其還原：    </div>    <div>        <div class='mb-3'>1.在工作列上的搜尋方塊中鍵入<span style='font-weight:bold;'>還原檔案</span>，然後選取<span class='font-weight:bold'>使用檔案歷程記錄來還原檔案</span>。</div>        <div class='mb-3'>2.尋找需要的檔案，然後使用箭頭來查看其所有版本</div>        <div class='mb-3'>3.在找到需要版本後，選取<span style='font-weight:bold'>還原</span>，將其儲存到原始位置。若要將檔案儲存到不同的位置，請按住不放 (或用滑鼠右鍵按一下) <span style='font-weight:bold'>還原</span>，並選取<span style='font-weight:bold'>還原至</span>，接著選擇新位置。</div>    </div></div>",
+			"para1": {
+				"line1": "It's always good to have a backup.",
+				"line2": "Keep copies of your files on another drive in case something happens to the originals."
+			},
+			"heading1": "Set up your backup",
+			"para2": {
+				"span1": "Select the",
+				"span2": "Start",
+				"span3": "button, select",
+				"span4": "Settings",
+				"span5": "Update & security",
+				"span6": "Backup",
+				"span7": "Add a drive",
+				"span8": ", and then choose an external drive or network location for your backups."
+			},
+			"para3": {
+				"span1": "All set.",
+				"span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
+				"span3": "To change which files get backed up or how often backups happen, go to",
+				"span4": "More options."
+			},
+			"heading2": "Restore your files",
+			"para4": "If you're missing an important file or folder, here's how to get it back:",
+			"para5": {
+				"span1": "1. Type",
+				"span2": "Restore files",
+				"span3": "in the search box on the taskbar, and then select",
+				"span4": "Restore your files with File History.",
+				"span5": "2. Look for the file you need, then use the arrows to see all its versions",
+				"span6": "3. When you find the version you want, select",
+				"span7": "Restore",
+				"span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
+				"span9": "Restore",
+				"span10": ", select",
+				"span11": "Restore to",
+				"span12": "and then choose a new location."
+			}
+		},
+		"question2": {
+			"title": "如何重新整理電腦",
+			"description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        如何重新整理電腦    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        問題狀況    </div>    <div style='padding:5px 0;'>        如果電腦執行性能不若以往，且您不知道原因，這時您可以在不刪除任何個人檔案或變更設定的情況下重新整理您的電腦。Windows 可以「重新整理」您的電腦，在不刪除您的個人檔案情況下，使您的電腦像是全新安裝。    </div>    <div style='padding:5px 0;'>        重新整理電腦時，將發生下列情況：您的檔案和個人化設定完全不會變更    </div>    <div style='padding:5px 0;'>        <ul>            <li>您的電腦設定將變更回預設值</li>            <li>來自 Windows 市集的應用程式將被保留</li>            <li>您自光碟或網站所安裝的應用程序將予以刪除</li>            <li>已刪除檔案的清單將儲存在桌面上</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        受影響的品牌    </div>    <div>        <ul>            <li>所有桌上型電腦和筆記型電腦</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        作業系統    </div>    <div>        <ul>            <li>Windows 8、8.1 與 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        解決方案    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        輕點或按一下<span style='font-weight:bold;'>設定</span>                    </li>                    <li style='padding:5px 0;'>                        輕點或按一下<span style='font-weight:bold;'>更新與復原</span>                    </li>                    <li style='padding:5px 0;'>                        <div>輕點或按一下<span style='font-weight:bold;'>復原</span></div>                        <div style='padding:5px 0'>在不影響檔案的情況下重新整理您的電腦，或者輕點或按一下<span style='font-weight:bold;'>開始使用</span>。</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        按一下<span style='font-weight:bold;'>「下一步」</span>。                    </li>                    <li style='padding:5px 0;'>                        按一下<span style='font-weight:bold;'>「重新整理」 </span>啟動重新整理作業。                    </li>                    <li style='padding:5px 0;'>                        重新整理作業完成之後，您可以在桌面上找到「已移除的應用程式」清單                    </li>                    <li style='padding:5px 0;'>                        您可以一邊尋找已移除應用程式，一邊重新整理系統                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> 在「開始」功能表中所提供的搜尋方塊中，搜尋<span style='font-weight:bold;'>重新整理</span>。</li>                    <li style='padding:5px 0;'>                        <div>在搜尋結果中，按一下<span style='font-weight:bold;'>「在不影響檔案的情況下重新整理您的電腦」</span>，如下所示。</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>按一下<span style='font-weight:bold;'>在不影響檔案的情況下重新整理您的電腦</span>標題下方的<span style='font-weight:bold;'>入門</span>按鈕，開始重新整理 Windows 10 電腦。</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        其他資訊    </div>    <div>        在大多數情況下，開始重新整理電腦後，整個作業將自行完成。然而，如果 Windows 需要遺失的檔案，則其會要求您插入還原媒體，通常是 DVD 光碟或隨身碟。如果發生這種情況，則您將依據所用電腦而需要不同的媒體。    </div>    <div style='padding:10px 0'>        如果使用 DVD 將電腦升級到 Windows 8.1 或 Windows RT 8.1，請使用該光碟。如果您沒有 Windows 8.1 或 Windows RT 8.1 媒體，請與 Microsoft 支援服務聯繫。    </div></div>",
+			"heading1": "Symptom",
+			"para1": {
+				"span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
+				"span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
+			},
+			"para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
+			"para3": {
+				"span1": "Your PC settings will be changed back to its defaults",
+				"span2": "Apps from windows store will be kept",
+				"span3": "Apps you installed from disc or website will be removed",
+				"span4": "A list of removed files will be saved on your desktop"
+			},
+			"heading2": "Affected Brands",
+			"para4": "All Desktop and Laptops",
+			"heading3": "Operation System",
+			"para5": "Windows 8, 8.1 & 10",
+			"heading4": "Solution",
+			"para6": "Windows 8/8.1",
+			"para7": {
+				"span1": {
+					"line1": "Tap or click",
+					"line2": "Settings "
+				},
+				"span2": {
+					"line1": "Tap or click",
+					"line2": "Update and recovery"
+				},
+				"span3": {
+					"line1": "Tap or click",
+					"line2": "Recovery"
+				},
+				"span4": {
+					"line1": "Under Refresh your PC without affecting your files, tap or click",
+					"line2": "Get started."
+				},
+				"span5": {
+					"line1": "Click",
+					"line2": "\"Next\"."
+				},
+				"span6": {
+					"line1": "Click",
+					"line2": "\"Refresh\"",
+					"line3": "to start the refresh process."
+				},
+				"span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
+				"span8": "You can find the removed apps while refreshing your system"
+			},
+			"para8": "Windows 10",
+			"para9": {
+				"span1": {
+					"line1": "Search for",
+					"line2": "refresh",
+					"line3": "in the search tool available in the Start menu"
+				},
+				"span2": {
+					"line1": "Click on",
+					"line2": "\"Refresh your PC without affecting your files\"",
+					"line3": " in the search results as shown below."
+				},
+				"span3": {
+					"line1": "Click on the",
+					"line2": "Get started",
+					"line3": "button just below the heading",
+					"line4": "\"Refresh your PC without affecting your files\"",
+					"line5": "to start refreshing your Windows 10 PC."
+				}
+			},
+			"header5": "Additional Information",
+			"para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
+			"para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+		},
+		"question3": {
+			"title": "如何知道電腦的 CPU",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>    如何知道電腦的 CPU</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>問題狀況</h3><p>術語 32 位元和 64 位元是指電腦處理器 (也稱為 CPU) 處理資訊的方式。64 位元版本 Windows 在處理大量隨機存取記憶體 (RAM) 時的效率比 32 位元版本系統來得高。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影響的品牌</h3><p>上述問題狀況與以下系統相關，但並不侷限於這些系統：</p><ul>    <li>所有桌上型電腦和筆記型電腦</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>作業系統</h3><ul>    <li>Windows 7、8 與 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決方案</h3><p><strong><u>Windows 7 或 Vista</u></strong></p><ol>    <li>按一下<strong>開始按鈕</strong>圖片的<strong>開始按鈕</strong>，然後用右鍵按一下電腦，接著按一下「內容」  </li>    <li>您可以在「系統」下查看系統類型。</li></ol><p><strong><u>Windows 8 與 Windows 10</u></strong></p><p><strong>方法 1：</strong>在控制面板中查看「系統」視窗</p><ol>    <li>將手指從螢幕右邊滑過，然後輕點<strong>搜尋</strong>。或者，當使用滑鼠時，請指向螢幕的右下角，然後按一下<strong>搜尋。</strong></li>    <li>在搜尋方塊中鍵入<strong>系統</strong>，然後輕點或按一下<strong>設定。</strong></li>    <li>輕點或按一下<strong>系統</strong></li>    <li>當執行 64 位元版本的 Windows 8 時，「系統」標題下的「系統類型」區段中將會顯示 <strong>64 位元作業系統</strong>。當執行 32<strong> 位元版本的 Windows</strong> <strong>8</strong> 時，「系統」標題下的「系統類型」區段中將會顯示 <strong>32 位元作業系統</strong>。<br /> </li></ol><p><strong>方法 2</strong>：檢視系統資訊視窗</p><ol>    <li>將手指從螢幕右邊滑過，然後輕點<strong>搜尋</strong>。或者，當使用滑鼠時，請指向螢幕的右下角，然後按一下<strong>搜尋。</strong></li>    <li>在搜尋方塊中，鍵入<strong>系統資訊</strong></li>    <li>輕點或按一下<strong>系統</strong>，輕點或按一下<strong>系統資訊，</strong>然後按一下<strong>系統摘要。</strong></li>    <li>當執行 <strong>64 位元</strong>版本的 Windows 8<strong></strong> 時，「項目」標題下的<strong>系統類型</strong>欄位中會顯示 x64-based PC。<br /><br />當執行<strong> 32 位元</strong>版本的 Windows 8 時，「項目」標題下的<strong>系統類型</strong>欄位會顯示 x86-based PC。 </li></ol><p> </p>",
+			"heading1": "Symptom",
+			"para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
+			"heading2": "Affected Brands",
+			"para2": "The above symptom is associated with, but not limited to, the following systems:",
+			"para3": "All Desktop and Laptops",
+			"heading3": "Operating System",
+			"para4": "Windows 7, 8, 10",
+			"heading4": "Solution",
+			"para5": "Windows 7 or Vista",
+			"para6": {
+				"span1": {
+					"line1": "Open System by clicking the",
+					"line2": "Start button",
+					"line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
+				},
+				"span2": "Under System, you can view the system type."
+			},
+			"para7": "Windows 8 and Windows 10",
+			"para8": {
+				"span1": {
+					"line1": "Method 1:",
+					"line2": "View the System window in Control Panel"
+				},
+				"span2": {
+					"line1": "Swipe in from the right edge of the screen, and then tap",
+					"line2": "Search.",
+					"line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
+					"line4": "Search."
+				},
+				"span3": {
+					"line1": "Type",
+					"line2": "system",
+					"line3": "in the search box, and then tap or click",
+					"line4": "Settings."
+				},
+				"span4": {
+					"line1": "Tap or click",
+					"line2": "System"
+				},
+				"span5": {
+					"line1": "If you are running a 64-bit version of Windows 8,",
+					"line2": "64-bit Operating System",
+					"line3": "is displayed in the System type field under the System heading.",
+					"line4": "If you are running a 32",
+					"line5": "-bit version of Windows 8, 32-bit Operating",
+					"line6": "System is displayed in the System type field under the System heading."
+				},
+				"span6": {
+					"line1": "Method 2:",
+					"line2": "View the System Information window"
+				},
+				"span7": {
+					"line1": "Swipe in from the right edge of the screen, and then tap",
+					"line2": "Search.",
+					"line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
+					"line4": "Search."
+				},
+				"span8": {
+					"line1": "In the search box, type",
+					"line2": "system information"
+				},
+				"span9": {
+					"line1": "Tap or click",
+					"line2": "System",
+					"line3": ", tap or click",
+					"line4": "System Information,",
+					"line5": "and then click",
+					"line6": "System Summary."
+				},
+				"span10": {
+					"line1": "If you are running a",
+					"line2": 64,
+					"line3": "bit version of Windows 8, 32-bit Operating,",
+					"line4": "x64-based PC is displayed in the",
+					"line5": "System type",
+					"line6": "field under the Item heading."
+				}
+			},
+			"para9": {
+				"line1": "If you are running a",
+				"line2": "32-bit",
+				"line3": "version of Windows 8,x86-based PC is displayed in the",
+				"line4": "System type",
+				"line5": "field under the Item heading."
+			}
+		},
+		"question4": {
+			"title": "檢查電腦的電池使用情況",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>    檢查電腦的電池使用情況</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 分析電源使用</h3><p>4 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5 <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6 <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+			"heading1": "Symptom",
+			"para1": {
+				"span1": "Windows 10 includes a new",
+				"span2": "“Battery Use”",
+				"span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
+			},
+			"heading2": "Affected Brands",
+			"para2": "Lenovo laptops, desktops",
+			"heading3": "Affected Systems",
+			"para3": "All",
+			"heading4": "Operating System",
+			"para4": "Windows 10",
+			"heading5": "Solution",
+			"para5": {
+				"line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
+				"line2": "control panel",
+				"line3": "view, this feature is located in the new",
+				"line4": "“Settings”",
+				"line5": "app"
+			},
+			"para6": {
+				"span1": "A. Find the Battery Use Screen",
+				"span2": {
+					"line1": "1. Click or Tap the",
+					"line2": "“Settings”",
+					"line3": "option from the start menu"
+				},
+				"span3": {
+					"line1": "2. In",
+					"line2": "Settings",
+					"line3": "select",
+					"line4": "“System”",
+					"line5": "and then select",
+					"line6": "“Battery saver.”"
+				},
+				"span4": {
+					"line1": "3. Click or tap the",
+					"line2": "“Battery use”",
+					"line3": "link under this heading to see more details."
+				},
+				"span5": "B. Analyze Your Power Usage",
+				"span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
+				"span7": {
+					"line1": 5,
+					"line2": "“System”,",
+					"line3": "“Display”,",
+					"line4": "and",
+					"line5": "“Wi-Fi”",
+					"line6": "percentages. This shows how much battery power has been used by system processes, the display,"
+				},
+				"span8": {
+					"line1": "6. The",
+					"line2": "“In use”",
+					"line3": "and",
+					"line4": "“Background”",
+					"line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
+				},
+				"span9": {
+					"line1": "7. If apps are using power in the background, you can click or tap the",
+					"line2": "“Change background app settings”",
+					"line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
+				},
+				"span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
+			}
+		},
+		"question5": {
+			"title": "將電腦當作平板電腦使用",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>    將電腦當作平板電腦使用</div><hr><p>平板電腦模式讓 Windows 搭配觸控螢幕裝置使用時，更加直覺又輕鬆。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>使用平板電腦模式</h3><p>若要開啟平板電腦模式、請在工作列上選取<strong>動作中心</strong>，然後選取<strong>平板電腦模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>備注</h3><p>若要了解您的裝置是否可以自動啟用平板電腦模式，請在製造商網站上搜尋您的裝置。這項功能的支援會依硬體、所安裝的驅動程式和製造商對於裝置的設定方式而有差異。 </p><p> </p><p>在平板電腦模式下，應用程式會開啟全螢幕，提供更多的工作空間。若要關閉應用程式，請將其拖曳到螢幕底部。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>要訣</h3><p>當電腦處於平板電腦模式時，工作列將會出現，但可在想要更多螢幕空間時將其隱藏起來。選取<strong>開始 </strong>按鈕，接著依序選取<strong>設定 </strong>> <strong>系統 </strong>> <strong> 平板電腦模式</strong>，然後啟動<strong>在平板電腦模式中自動隱藏工作列</strong>。若要查看隱藏的工作列，請從螢幕底部向上滑動，或使用滑鼠移至該處。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>同時使用兩個應用程式</h3><p>若要在平板電腦模式下並排使用兩個應用程式，請將開啟的應用程式往下拖動到側面。您會看到兩個應用程式貼齊到一處，而且旁邊會有任何開啟的應用程式。</p><p>在這個檢視中，您也可以：</p><ul>    <li>使用位於兩個貼齊應用程式之間的共用邊緣，同時重新調整兩個應用程式的大小。</li>    <li>從任務檢視中開啟新的應用程式&mdash;在工作列上選取<strong>工作檢視</strong>，然後選取一個應用程式，接著將其拖到一側，以便將它貼齊到分隔的螢幕。</li>    <li>使用工作列上的返回按鈕來返回應用程式，或者開啟先前使用的應用程式。</li></ul><p> </p>",
+			"para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
+			"heading1": "Use tablet mode",
+			"para2": {
+				"span1": "To turn on tablet mode, select",
+				"span2": "action center",
+				"span3": "on the taskbar, then select",
+				"span4": "Tablet mode."
+			},
+			"heading2": "Note",
+			"para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
+			"para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+			"heading3": "Tip",
+			"para5": {
+				"span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
+				"span2": "Select the",
+				"span3": "Start",
+				"span4": "button, select",
+				"span5": " Settings",
+				"span6": "System",
+				"span7": "Tablet mode",
+				"span8": ", then turn on",
+				"span9": "Automatically hide the taskbar in tablet mode.",
+				"span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
+			},
+			"heading4": "Use two apps simultaneously",
+			"para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
+			"para7": "In this view, you can also:",
+			"para8": {
+				"span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
+				"span2": {
+					"line1": "Open a new app from task view—select",
+					"line2": "Task view",
+					"line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
+				},
+				"span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+			}
+		},
+		"question6": {
+			"title": "瞭解您的個人助理 Cortana",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>    瞭解您的個人助理 Cortana</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana 是什麼？</h3><hr /><p>Cortana 是您的數位代理程式。她會協助您完成許多工作。</p><p>隨著使用 Cortana 次數逐漸增加，您的體驗就會越來越具個人化。</p><p>若要開始使用、請在搜尋方塊中輸入問題，或者選擇麥克風，並與 Cortana 對話。(適用於所有類型電腦的打字工作，但需要一支用來說話的麥克風。)</p><p>如果您不確定要說什麼，則當您在工作列上選擇搜尋方塊時，鎖定螢幕和 Cortana 主頁上就會出現建議話語。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>主頁 2. 筆記型電腦 3. 設定 4. 意見回饋</li></ol><p>以下是 Cortana 可以為您做的一些事情：</p><ul>    <li>根據時間、地點或人物提供提醒。</li>    <li>追蹤包裹、團隊、興趣和航班。</li>    <li>發送電子郵件和簡訊。</li>    <li>管理行事曆，並讓您掌握最新狀態。</li>    <li>建立和管理清單。</li>    <li>輕鬆聊天和玩遊戲。</li>    <li>尋找事實、檔案、地點和資訊。</li>    <li>在系統上開啟任何應用程式。</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>試用這個功能：設定提醒</h3><hr /><p>Cortana 可以做的一件事就是提供提醒。她可以根據時間、地點，甚至是人，提醒您要做哪些事。</p><p>例如，打字或說話「下次 Tanya 打電話來的時候，提醒我祝賀她。」</p><p>當您下次收到 Tanya 的來電時，您就會收到提醒。</p><p>額外獎勵&mdash;如果是使用 Windows 手機，或者用於 iPhone 或 Android 的 Cortana，則 Cortana 可以設定為同步通知電腦與手機。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>嘿 Cortana？</h3><hr /><p>設定 Cortana，使其每次聽到您說「嘿 Cortana？」時開始聆聽您的指示。選取工作列上的搜尋方塊，開啟 Cortana 主頁。然後選取<strong>設定</strong>，並開啟<strong>讓 Cortana 回應「嘿 Cortana」。</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>備注</p><p>Cortana 僅適用於某些國家/地區，而且某些 Cortana 功能不適用於世界任何地方。</p><p> </p>",
+			"heading1": "What is Cortana?",
+			"para1": "Cortana is your digital agent. She'll help you get things done.",
+			"para2": "The more you use Cortana, the more personalized your experience will be.",
+			"para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
+			"para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
+			"para5": " Home 2. Notebook 3. Settings 4. Feedback",
+			"para6": "Here are some things Cortana can do for you:",
+			"bulletset1": {
+				"span1": "Give you reminders based on time, places, or people.",
+				"span2": "Track packages, teams, interests, and flights.",
+				"span3": "Send emails and texts.",
+				"span4": "Manage your calendar and keep you up to date.",
+				"span5": "Create and manage lists.",
+				"span6": "Chit chat and play games.",
+				"span7": "Find facts, files, places, and info.",
+				"span8": "Open any app on your system."
+			},
+			"heading2": "Try this: Set a reminder",
+			"para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
+			"para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
+			"para9": "The reminder will appear when you get a call from Tanya.",
+			"para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
+			"heading3": "Hey Cortana?",
+			"para11": {
+				"span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
+				"span2": {
+					"line1": "Then select",
+					"line2": "Settings",
+					"line3": "and turn on",
+					"line4": "Let Cortana respond to “Hey Cortana.”"
+				}
+			},
+			"para12": "Note",
+			"para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
+		},
+		"pageTitle": "支持細節"
+	},
+	"welcometutorial": {
+		"description": "Vantage 讓您更容易更新驅動程式、執行診斷、要求支援並瞭解裝置。快速自訂您的體驗，並找到針對您的需要量身提供的實用資訊",
+		"bullets1": "使用Vantage儀表板查看系統的狀態。",
+		"bullets2": "使用安全性顧問，安全管理更輕鬆 (適用於特定系統)。",
+		"bullets3": "使用自動更新，讓裝置隨時保持為最佳狀態 (適用於特定系統)。",
+		"subtitle1": "您要如何使用您的裝置？",
+		"subtitle2": "告訴我們您的興趣",
+		"personal": "個人使用",
+		"business": "業務使用",
+		"custom": "自訂",
+		"privacytitle": "透過允許匿名收集使用方式統計資料，協助我們改善應用程式的品質。",
+		"moreInterest": "+ 更多興趣",
+		"title1": "歡迎使用",
+		"title2": "Lenovo",
+		"title3": "Vantage",
+		"privacypolicy": "Lenovo 的隱私權政策",
+		"done": "DONE",
+		"interests": {
+			"games": "遊戲",
+			"news": "新聞",
+			"entertainment": "娛樂",
+			"technology": "技術",
+			"sports": "體育",
+			"arts": "藝文",
+			"regionalNews": "地方新聞",
+			"politics": "政治",
+			"music": "音樂",
+			"science": "科學"
+		}
+	},
+	"settings": {
+		"preferenceSettings": "喜好設定",
+		"settings": "設定",
+		"settingsDescription": "在喜好設定頁面中，您可以根據 Vantage 的訊息類別選擇開啟/關閉您的訊息通知，請注意即使所有訊息類別皆已停用，必要時您可能偶爾仍會收到 Vantage 的系統重要訊息。",
+		"messagesInLenovoVantage": "Lenovo Vantage 中的訊息",
+		"appFeatures": "應用程式功能",
+		"appFeaturesDescription": "與 System Update、文章和其他重要功能相關的訊息。",
+		"marketing": "行銷",
+		"marketingDescription": "促銷訊息包括 Lenovo 特別優惠。",
+		"actionTriggered": "引發的動作",
+		"actionTriggeredDescription": "使用者選取設定（例如自動安裝重要/建議的更新）所觸發的訊息。",
+		"OtherSettings": "其他設定",
+		"usageStatistics": "使用情形統計資料",
+		"usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
+		"Note": "附註：",
+		"settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
+	},
+	"hardwareScan": {
+		"name": "硬體掃描",
+		"title": "執行硬體掃描",
+		"subtitle": "硬體掃描正在執行，請稍候",
+		"quickScan": "快速掃描",
+		"finalResultCode": "最終結果代碼",
+		"resultCode": "結果代碼",
+		"cancel": "取消",
+		"complete": "完成",
+		"incomplete": "未完成",
+		"loadingComponents": "載入元件",
+		"hardwareComponents": "硬體元件",
+		"loadingDevices": "裝置載入",
+		"select": "在工具列中選取",
+		"deselect": "取消選取",
+		"allOptions": "所有選項",
+		"latestResult": "最新結果",
+		"back": "上一步",
+		"viewResults": "檢視結果",
+		"save": "儲存",
+		"details": "明細",
+		"recurrence": "週期",
+		"interval": "間隔",
+		"time": "時間",
+		"type": "類型",
+		"hours": "時數",
+		"minutes": "分鐘",
+		"am": "AM",
+		"pm": "PM",
+		"previousResult": "先前的結果",
+		"lastScanOn": "上次掃描時間",
+		"result": "結果",
+		"viewDetailsLog": "檢視詳細資料日誌",
+		"ok": "確定",
+		"notOk": "尚未就緒",
+		"notScanned": "未掃描",
+		"pass": "通過",
+		"fail": "失敗",
+		"cancelled": "已取消",
+		"warning": "警告",
+		"errorResult": "您必須選擇要執行的測試。",
+		"buy": "立即購買",
+		"errorDeviceChoose": "您必須選擇要執行的裝置。",
+		"errorNoOptionSelected": "您必須選擇一個選項。",
+		"offline": "此裝置正在執行離線模式，請與網際網路連線",
+		"customize": {
+			"name": "自訂",
+			"test": "自訂測試",
+			"description": "選取下方選項以自訂測試",
+			"runTests": "執行選取的測試"
+		},
+		"scheduledScan": {
+			"name": "排程掃描",
+			"title": "排程您的掃描",
+			"newScan": "排程新掃描",
+			"fullScan": "完整掃描",
+			"onlyOnce": "僅一次",
+			"eachDay": "每天",
+			"eachWeek": "每週",
+			"eachMonth": "每月",
+			"eachYear": "每年",
+			"schedule": "排程",
+			"date": "日期",
+			"pickDate": "挑選日期",
+			"scanScheduled": "已排程硬體掃描！",
+			"description": "相同的日期和時間已排程另一次掃描！",
+			"error": "錯誤",
+			"delete": "刪除",
+			"warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+		},
+		"recoverBadSectors": {
+			"title": "回復錯誤磁區",
+			"description": "尋找並修復磁碟上錯誤磁區的 Lenovo 工具",
+			"goTo": "前往回復錯誤磁區",
+			"localDevices": "本機裝置",
+			"numberSectors": "讀取的磁區數目",
+			"numberBadSectors": "找到的錯誤磁區數目",
+			"numberFixedSectors": "修正的磁區數目",
+			"numberNonFixedSectors": "未修正的磁區數目",
+			"status": "作業狀態",
+			"elapsedTime": "已耗用時間",
+			"hours": "小時",
+			"hour": "小時",
+			"minutes": "分鐘",
+			"minute": "分鐘",
+			"seconds": "秒",
+			"second": "秒",
+			"moreInfo": "回復錯誤磁區正在執行，請稍候",
+			"systemEvent": "測試中止，因為發生可能影響結果的系統事件。",
+			"systemPasswordProtected": "裝置可能受到密碼保護。嘗試停用密碼保護。",
+			"popup": {
+				"description": "執行掃描和修復可能會導致資料遺失。建議您在執行此作業之前先備份。您確定要繼續嗎？",
+				"yes": "是",
+				"no": "否"
+			}
+		},
+		"support": {
+			"title": "下載專業診斷工具",
+			"subtitle": "Lenovo 支援"
+		},
+		"eTicket": {
+			"header": "偵測到硬體問題。",
+			"problemDetected": "硬體掃描偵測到您電腦的以下元件有問題",
+			"ticketRequestQuestion": "如果您的電腦在保固期內，Lenovo 可以遞送更換零件。是否要開立硬體更換票證以解決此問題",
+			"openTicket": "開立票證"
+		},
+		"battery": {
+			"title": "啟用電池的充電臨界值",
+			"description": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
+			"enable": "啟用"
+		},
+		"completed": "Completed",
+		"notCompleted": "Not Completed",
+		"refreshModules": "Refresh Modules",
+		"yes": "yes",
+		"attention": "Attention",
+		"cancelTextPrompt": "Are you sure you would like to cancel?",
+		"cancelTextProgress": "Please wait for cancel progress"
+	}
 }

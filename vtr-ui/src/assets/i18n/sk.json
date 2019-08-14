@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "KLÁVES MAKRA PRE ",
-                    "deleteKey": "Kláves Delete",
+                    "deleteKey": "Delete",
                     "clear": "Zmazať",
                     "intervalStatus": {
                         "keep": {
