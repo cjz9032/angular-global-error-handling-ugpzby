@@ -144,6 +144,10 @@ export class PageSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.isZeroTouchLoginVisible = false;
 		this.intelligentSecurity.isIntelligentSecuritySupported = false;
 		this.intelligentSecurity.isWindowsHelloRegistered = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = true;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;
+		this.intelligentSecurity.facilRecognitionCameraAccess= true;
+		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 	}
 
 	private setIntelligentScreen() {
@@ -209,6 +213,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getReadingOrBrowsingVisibility(),
 			this.smartAssist.getReadingOrBrowsingStatus(),
 			this.smartAssist.getReadingOrBrowsingTime()
+			// this.smartAssist.getZeroTouchLockFacialRecoStatus()
 		]).then((responses: any[]) => {
 			this.intelligentScreen.isIntelligentScreenVisible = responses[0];
 			this.intelligentScreen.isAutoScreenOffVisible = responses[1];
@@ -217,6 +222,10 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentScreen.isReadingOrBrowsingVisible = responses[4];
 			this.intelligentScreen.isReadingOrBrowsingEnabled = responses[5];
 			this.intelligentScreen.readingOrBrowsingTime = responses[6];
+			// this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = responses[6].available;
+			// this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = responses[6].status;
+			// this.intelligentSecurity.FacilRecognitionCameraAccess = responses[6].permission;
+			// this.intelligentSecurity.FacialRecognitionCameraPrivacyMode = responses[6].privacymode;
 			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
 			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
 				this.smartAssistCapability.isIntelligentScreenSupported)) {
@@ -348,6 +357,13 @@ export class PageSmartAssistComponent implements OnInit {
 			.then((isSuccess: boolean) => {
 				console.log('onZeroTouchLockTimerChange.setSelectedLockTimer', isSuccess, value);
 			});
+	}
+
+	public onZeroTouchLockFacialRecoChange() {
+		this.smartAssist.setZeroTouchLockFacialRecoStatus(this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled)
+		.then((isSuccess: boolean) => {
+				console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus`);
+		});
 	}
 
 	public onDistanceSensitivityAdjustToggle(event: any) {

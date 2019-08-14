@@ -86,6 +86,15 @@ export class SmartAssistService {
 		return this.intelligentSensing.SetHPDPresentLeaveSetting(option);
 	}
 
+	public getZeroTouchLockFacialRecoStatus(): Promise<boolean> {
+		return Promise.resolve(true);		
+	}
+
+	public setZeroTouchLockFacialRecoStatus(value: boolean):Promise<boolean> {
+		return Promise.resolve(true);
+
+	}
+
 	public getZeroTouchLoginVisibility(): Promise<boolean> {
 		// Get Auto Screen Lock section visibility
 		return this.intelligentSensing.GetHPDApproachCapability();

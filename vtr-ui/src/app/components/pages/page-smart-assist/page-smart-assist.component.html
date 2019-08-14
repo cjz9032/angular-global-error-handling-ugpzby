@@ -197,6 +197,24 @@
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
+											<div class="row">
+												<div class="col px-20">
+													<div class="auto-set-checkbox" *ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
+														<input id="cb-zero-touch-lock"
+															attr.aria-label="cb-zero-touch-lock"
+															type="checkbox"
+															name="zero-check-lock-checkbox-id"
+															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.FacilRecognitionCameraAccess
+															|| intelligentSecurity.FacialRecognitionCameraPrivacyMode"
+															[(ngModel)]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
+															(ngModelChange)='onZeroTouchLockFacialRecoChange()'
+															checked=""/>
+														<label for="cb-zero-touch-lock">
+															{{ 'Enabled facial recognition to improve the detect accuary' }}
+														</label>
+												</div>
+												</div>
+											</div>
 											<div class="row blur"
 												[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
 												<div
