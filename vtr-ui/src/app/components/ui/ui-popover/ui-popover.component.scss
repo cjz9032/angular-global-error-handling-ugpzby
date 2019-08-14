@@ -14,10 +14,10 @@ ui-popover {
 		width: 45rem;
 	}
 	@media #{$medium-screen} {
-		width: 50rem;
+		width: 55rem;
 	}
 	@media #{$mediaquery_X31} {
-		width: 40rem;
+		width: 48rem;
 	}
 	&::after {
 		content: "";

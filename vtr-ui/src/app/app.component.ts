@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
 		private timerService: TimerService,
 		private languageService: LanguageService
 	) {
-		// to check web version in browser
+		// to check web and js bridge version in browser console
 		const win: any = window;
 		win.webAppVersion = {
 			web: environment.appVersion,
@@ -344,7 +344,7 @@ export class AppComponent implements OnInit {
 					serverSwitchLocalData.forceit = true;
 					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
-					let langCode = serverSwitchLocalData.language.Value.toLowerCase();
+					const langCode = serverSwitchLocalData.language.Value.toLowerCase();
 					/* const langMap = {
 						'zh-hant': 'zh-Hant',
 						'zh-hans': 'zh-Hans',
