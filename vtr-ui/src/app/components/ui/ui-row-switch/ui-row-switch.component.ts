@@ -52,6 +52,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Output() resetClick = new EventEmitter<Event>();
 	@Input() toolTipStatus = false;
 	@Input() isDisabled = false;
+	@Input() metricsParent = '';
 	public contentExpand = false;
 
 
@@ -132,7 +133,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 				windowClass: 'Voice-Modal',
 			});
 		modalRef.componentInstance.value = this.voiceValue;
-
+		modalRef.componentInstance.metricsParent = this.metricsParent;	
 	}
 	// private closeTooltip($event: Event) {
 	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {

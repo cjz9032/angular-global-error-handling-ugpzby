@@ -14,8 +14,8 @@
 		class="close-btn"
 		vtrMetrics
 		metricsEvent="FeatureClick"
-		metricsParent="{{value}}.modal"
-		metricsItem="modal_{{value}}_close_icon"
+		metricsParent="Device.SmartAssist.{{metricsParent}}"
+		metricsItem="{{metricsParent}}ModalCloseIcon"
 		(click)="closeModal()">
 		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 			alt=""
@@ -112,8 +112,8 @@
 				(click)="closeModal()"
 				vtrMetrics
 				metricsEvent="FeatureClick"
-				metricsParent="{{value}}.modal"
-				metricsItem="modal_{{value}}_close_btn">{{'device.smartAssist.voice.modalPopUp.closeText' | translate}}</button>
+				metricsParent="Device.SmartAssist.{{metricsParent}}"
+				metricsItem="{{metricsParent}}ModalCloseButton">{{'device.smartAssist.voice.modalPopUp.closeText' | translate}}</button>
 		</div>
 
 	</div>
