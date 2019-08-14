@@ -161,7 +161,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				GEO: 'US',
 			};
 		}
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.getTileBSource().then((source) => {
+			this.cmsService.fetchCMSContent(queryOptions).subscribe(
 				(response: any) => {
 					const callCmsEndTime: any = new Date();
 					const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
@@ -180,12 +181,17 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						if (heroBannerItems && heroBannerItems.length) {
 							this.heroBannerItems = heroBannerItems;
 						}
-						this.getTileBSource().then((source) => {
-							if (source === 'CMS') {
-								this.getTileBContent('CMS', response);
-							}},
-							() => {this.getTileBContent('CMS', response); }
-						);
+
+						if (source === 'CMS') {
+							const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+							if (cardContentPositionB) {
+								this.cardContentPositionB = cardContentPositionB;
+								if (this.cardContentPositionB.BrandName) {
+									this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+								}
+								cardContentPositionB.DataSource = 'cms';
+							}
+						}
 
 						const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
 						if (cardContentPositionC) {
@@ -220,9 +226,20 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				}
 			);
 
-		this.getTileBSource().then((source) => {
 			if (source === 'UPE') {
-				this.getTileBContent('UPE', null);
+				const upeParam = {
+					position: 'position-B'
+				};
+				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
+					const cardContentPositionB = this.upeService.getOneUPEContent(upeResp, 'half-width-title-description-link-image', 'position-B')[0];
+					if (cardContentPositionB) {
+						this.cardContentPositionB = cardContentPositionB;
+						if (this.cardContentPositionB.BrandName) {
+							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+						}
+						cardContentPositionB.DataSource = 'upe';
+					}
+				});
 			}
 		});
 	}
@@ -256,34 +273,13 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 
 	private getTileBSource() {
-		 return this.hypService.getFeatureSetting('TileBSource');
-	}
-
-	private getTileBContent(source, response) {
-		if (source === 'UPE') {
-			const upeParam = {
-				position: 'position-B'
-			};
-			this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
-				const cardContentPositionB = this.upeService.getOneUPEContent(upeResp, 'half-width-title-description-link-image', 'position-B')[0];
-				if (cardContentPositionB) {
-					this.cardContentPositionB = cardContentPositionB;
-					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-					}
-					cardContentPositionB.DataSource = 'upe';
-				}
+		 return new Promise((resolve) => {
+			this.hypService.getFeatureSetting('TileBSource').then((source) => {
+				resolve(source);
+			}, () => {
+				resolve('CMS');
 			});
-		} else {
-			const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
-			if (cardContentPositionB) {
-				this.cardContentPositionB = cardContentPositionB;
-				if (this.cardContentPositionB.BrandName) {
-					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-				}
-				cardContentPositionB.DataSource = 'cms';
-			}
-		}
+		 });
 	}
 
 	private setDefaultCMSContent() {
