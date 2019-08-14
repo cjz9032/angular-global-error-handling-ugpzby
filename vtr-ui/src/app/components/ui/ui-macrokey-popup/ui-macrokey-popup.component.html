@@ -1,7 +1,7 @@
 <div class="modal-main-wrapper">
 	<ui-popover>
-		{{modalContent.metricsItemPopup}}
-		<div class="modal-body vtr-ui-macrokey-popup" [id]="modalContent.metricsItemPopup || 'single'" attr.aria-label="modalContent.metricsItemPopup || 'single'">
+
+		<div class="modal-body vtr-ui-macrokey-popup" [id]="modalContent.metricsItemPopup || 'macrokey_popup_close'" attr.aria-label="modalContent.metricsItemPopup || 'macrokey_popup_close'">
 			<div class="row justify-content-end">
 				<div class="btn-close">
 					<button type="button" class="close" aria-hidden="true" (click)="submitAction(false)" id="{{modalContent.metricsItemClose}}" attr.aria-label="{{modalContent.metricsItemClose}}" vtrMetrics [metricsItem]="'macrokey_popup_close'"
@@ -13,7 +13,7 @@
 			<div class="content-body">
 				<h1>{{modalContent.headerTitle | translate}}</h1>
 				<p>{{modalContent.bodyText | translate}}</p>
-			</div>{{modalContent.metricsItemPopup}}
+			</div>
 			<hr>
 			<div class="row">
 				<div *ngIf="modalContent.btnConfirm">
