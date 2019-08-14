@@ -14,6 +14,7 @@ import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -40,6 +41,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public isEyeCareMode = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
+	public hideNote = false;
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
@@ -50,6 +52,9 @@ export class SubpageDeviceSettingsDisplayComponent
 	public privacyGuardOnPasswordCapability = false;
 	public privacyGuardInterval: any;
 	public hasOLEDPowerControlCapability = false;
+	private Windows: any;
+	private DeviceInformation: any;
+	private DeviceClass: any;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -114,16 +119,21 @@ export class SubpageDeviceSettingsDisplayComponent
 	];
 	public cameraBlur = new CameraBlur();
 	isDTmachine = false;
+	isAllInOneMachineFlag = false;
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
 		public displayService: DisplayService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
+		private vantageShellService: VantageShellService,
 		private cameraFeedService: CameraFeedService) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
+		this.Windows = vantageShellService.getWindows();
+		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
+		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
 	}
 
 	ngOnInit() {
@@ -149,9 +159,10 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getOLEDPowerControlCapability();
 	}
 
-	initCameraSection() {
+	async initCameraSection() {
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		if (this.isDTmachine) {
+		this.isAllInOneMachineFlag = await this.isAllInOneMachine();
+		if (this.isDTmachine && !this.isAllInOneMachineFlag) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
 		} else {
 			this.getCameraPrivacyModeStatus();
@@ -160,6 +171,25 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.startCameraPrivacyMonitor();
 		}
 	}
+
+	async isAllInOneMachine() {
+		let frontCameraCount = 0;
+		try {
+			let panel = this.Windows.Devices.Enumeration.Panel.front;
+			let devices = await this.DeviceInformation.findAllAsync(this.DeviceClass.videoCapture);
+			devices.forEach(function (cameraDeviceInfo) {
+				if (cameraDeviceInfo.enclosureLocation != null && cameraDeviceInfo.enclosureLocation.panel === panel) {
+					frontCameraCount = frontCameraCount + 1;
+				}
+			});
+			console.log('frontCameraCount: ', frontCameraCount)
+			return frontCameraCount > 0 ? true : false;
+		} catch (error) {
+			console.log('isAllInOneMachine:', error);
+			return frontCameraCount > 0 ? true : false;
+		}
+	}
+
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
@@ -167,6 +197,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				case DeviceMonitorStatus.CameraStatus:
 					console.log('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
+					this.hideNote = !this.dataSource.permission;
 					if (payload) {
 						this.shouldCameraSectionDisabled = false;
 						// this.cameraFeatureAccess.showAutoExposureSlider = false;
@@ -244,6 +275,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						// 	response.exposure.autoValue = true;
 						this.dataSource = this.emptyCameraDetails[0];
 						this.shouldCameraSectionDisabled = true;
+						this.hideNote = true;
 						this.cameraFeatureAccess.showAutoExposureSlider = true;
 						console.log('no camera permission .then', this.emptyCameraDetails[0]);
 						const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
@@ -817,6 +849,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('disabled all is', event);
 		this.shouldCameraSectionDisabled = event;
 		this.dataSource.permission = false;
+		this.hideNote = true;
 		this.cameraFeatureAccess.exposureAutoValue = false;
 		if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
 			this.cameraFeatureAccess.showAutoExposureSlider = true;

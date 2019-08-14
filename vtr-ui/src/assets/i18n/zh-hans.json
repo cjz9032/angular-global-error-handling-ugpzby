@@ -273,7 +273,7 @@
             },
             "brightness": {
                 "text1": {
-                    "title": "*效果无法设置亮度"
+                    "title": "*亮度设置不会应用于  呼吸 效果"
                 },
                 "text2": {
                     "title": " 效果"
@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "将应用添加到网络增强",
-                "body": "最多可添加 5 个要加速的应用（已添加 4 个）"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -851,7 +855,7 @@
                         "title": "飞行电源模式",
                         "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。",
                         "checkBoxDesc": "自动检测",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "如果已勾选自动检测功能，计算机将在其检测到机上环境后自动打开飞行电源模式，并在您离开时将其关闭。"
                     }
                 },
                 "energyStar": {
