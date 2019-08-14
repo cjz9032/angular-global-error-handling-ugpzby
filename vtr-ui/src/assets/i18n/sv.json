@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "MAKROTANGENT FÖR ",
-                    "deleteKey": "Delete-tangent",
+                    "deleteKey": "Delete",
                     "clear": "Radera",
                     "intervalStatus": {
                         "keep": {

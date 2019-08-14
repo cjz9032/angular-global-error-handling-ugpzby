@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "매크로 키 ",
-                    "deleteKey": "Delete 키",
+                    "deleteKey": "Delete",
                     "clear": "지우기",
                     "intervalStatus": {
                         "keep": {
