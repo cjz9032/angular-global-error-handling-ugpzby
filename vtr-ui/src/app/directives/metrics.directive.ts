@@ -78,6 +78,8 @@ export class MetricsDirective {
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
 			case 'featureclick':
+			case 'FeatureClick':
+			case 'ItemClick':
 			case 'itemclick': {
 				data.ItemType = 'FeatureClick';
 				data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
@@ -92,6 +94,7 @@ export class MetricsDirective {
 			}
 
 			case 'articleclick':
+			case 'ArticleClick':
 			case 'docclick': {
 				data.ItemType = 'ArticleClick';
 				data.ItemParent = this.metricsParent;
@@ -136,7 +139,7 @@ export class MetricsDirective {
 
 		if (this.metrics && this.metrics.sendAsync) {
 			try {
-				console.log('metrics data ::------------------------------------------------------*******', JSON.stringify(data));
+				console.log('metrics data ::-------------------------------*******', JSON.stringify(data));
 				await this.metrics.sendAsync(data);
 			} catch (ex) {
 				this.devService.writeLog('sending metric breaks with exception:' + ex);
