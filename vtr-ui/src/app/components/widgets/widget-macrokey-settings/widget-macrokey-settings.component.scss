@@ -569,7 +569,7 @@
 		padding-bottom: 1.4rem;
 		margin: 1rem 0;
 		@media #{$mediaquery_sm} {
-			width: 40rem;
+			width: auto;
 		}
 		.dropdown-toggle {
 			cursor: pointer;
@@ -584,6 +584,9 @@
 				padding-left: 1.2rem;
 				color: $gaming_lightest;
 				cursor: pointer;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 			.icon {
 				position: relative;
@@ -600,8 +603,17 @@
 			top: 5rem !important;
 			li {
 				a {
-					height: 5rem !important;
-					line-height: 4.4rem !important;
+					height: auto !important;
+					line-height: inherit !important;
+					padding-top: 1.6rem;
+					padding-bottom: 1.6rem;
+					white-space: normal;
+					.icon {
+						top: 0px;
+						bottom: 0px;
+						height: 3rem;
+						margin: auto;
+					}
 				}
 			}
 			.information {

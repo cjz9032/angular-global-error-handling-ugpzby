@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "MACRO SLEUTEL VOOR ",
-                    "deleteKey": "Delete-toets",
+                    "deleteKey": "Delete",
                     "clear": "Leegmaken",
                     "intervalStatus": {
                         "keep": {

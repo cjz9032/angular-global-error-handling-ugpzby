@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "ΠΛΗΚΤΡΟ ΜΑΚΡΟΕΝΤΟΛΗΣ ΓΙΑ ",
-                    "deleteKey": "Πλήκτρο Delete",
+                    "deleteKey": "Delete",
                     "clear": "Εκκαθ.",
                     "intervalStatus": {
                         "keep": {
