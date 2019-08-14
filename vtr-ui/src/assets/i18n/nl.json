@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Apps toevoegen aan netwerkboost",
-                "body": "Voeg tot 5 extra apps toe (4/5 toegevoegd)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -851,7 +855,7 @@
                         "title": "Energiemodus aan boord van een vliegtuig",
                         "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
                         "checkBoxDesc": "Automatische detectie",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
                     }
                 },
                 "energyStar": {
