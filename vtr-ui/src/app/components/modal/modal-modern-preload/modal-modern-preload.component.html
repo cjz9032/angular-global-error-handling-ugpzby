@@ -103,7 +103,7 @@
 							[isDisabled]="checkedAppList.length === 0" [label]="'Restart Download'">
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.DOWNLOADING" [isFullWidth]="true"
-							[isDisabled]="true" [label]="'Downloading'">
+							[isDisabled]="true" [label]="'Downloading...'">
 						</vtr-ui-button>
 					</div>
 					<a *ngIf="downloadButtonStatus !== downloadButtonStatusEnum.DOWNLOADING" vtrMetrics
