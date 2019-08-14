@@ -22,7 +22,7 @@
                     "rapidCharge": "Charge rapide"
                 },
                 "legionEdge": {
-                    "title": "Overclocking CPU",
+                    "title": "Overclocking UC",
                     "status": {
                         "alwayson": "Activé",
                         "whenGaming": "Lorsque vous jouez",
@@ -32,9 +32,9 @@
                         "offUid": "cpu_overclock_off"
                     },
                     "statusText": {
-                        "onText": "L'Overclocking CPU sera activé",
-                        "gamingText": "L'Overclocking CPU sera activé automatiquement au lancement de la partie",
-                        "offText": "L'Overclocking CPU sera désactivé"
+                        "onText": "L'Overclocking UC sera activé",
+                        "gamingText": "L'Overclocking UC sera activé automatiquement au lancement de la partie",
+                        "offText": "L'Overclocking UC sera désactivé"
                     },
                     "ramOverlock": "Overclocking RAM",
                     "popup": {
@@ -48,7 +48,7 @@
                         "link": "annuler",
                         "networkBoostText": "Vous devez installer le pilote pour l'amélioration réseau afin de l'activer",
                         "hybridModeText": "Vous devez installer le pilote pour le mode hybride afin de l'activer",
-                        "cpuOverclockText": "Installer le pilote pour activer l'Overclocking CPU (redémarrage obligatoire)"
+                        "cpuOverclockText": "Installer le pilote pour activer l'Overclocking UC (redémarrage obligatoire)"
                     },
                     "autoClose": "Fermeture automatique",
                     "networkBoost": "Amélioration réseau",
@@ -79,7 +79,7 @@
                 "legionEdgeModal": {
                     "line1": "Avec Vantage Edge, vos paramètres seront automatiquement réglées selon l'utilisation. \n Performance maximale lorsque vous jouez, durée de vie de la batterie plus longue quand vous ne jouez pas.",
                     "line2": "<b>Aperçu de la gestion des fonctions</b> <br> Certaines fonctions non disponibles sur tous les périphériques",
-                    "line3": "<b>Overclocking CPU </b><br> Améliorez la vitesse maximale pour votre processeur",
+                    "line3": "<b>Overclocking UC </b><br> Améliorez la vitesse maximale pour votre processeur",
                     "line4": "<b>Overclocking RAM </b><br> Améliorez la vitesse maximale pour votre mémoire",
                     "line5": "<b>Amélioration réseau </b><br> Priorisez le trafic réseau pour le jeu lorsque vous jouez",
                     "line6": "<b>Dolby </b><br> Réglez les paramètres audio spécialement pour le jeu grâce à la technologie Dolby",
@@ -90,7 +90,7 @@
                     "line11": "<b>Mode thermique </b><br> Définissez votre profil périphérique favori pour contrôler la vitesse du ventilateur et le refroidissement"
                 },
                 "systemInfo": {
-                    "systenTooltip": "Placez le curseur sur CPU/GPU/RAM et sur différents lecteurs pour afficher leurs descriptions, y compris les informations relatives à la fabrication et au modèle"
+                    "systenTooltip": "Placez le curseur sur UC/GPU/RAM et sur différents lecteurs pour afficher leurs descriptions, y compris les informations relatives à la fabrication et au modèle"
                 },
                 "systemStatus": {
                     "info": "INFO"
@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "TOUCHE MACRO POUR ",
-                    "deleteKey": "Suppr",
+                    "deleteKey": "Touche Suppr",
                     "clear": "Effacer",
                     "intervalStatus": {
                         "keep": {
@@ -256,10 +256,10 @@
                     "title": "Doux"
                 },
                 "option6": {
-                    "title": "Température CPU"
+                    "title": "Température UC"
                 },
                 "option7": {
-                    "title": "Utilisation CPU"
+                    "title": "Utilisation UC"
                 },
                 "option8": {
                     "title": "Désactivé"
@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Désactivé"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "Désactivé"
                 },
                 "text2": {
                     "title": 1
