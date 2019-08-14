@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "MAKRO TIPKA ZA ",
-                    "deleteKey": "Tipka Delete",
+                    "deleteKey": "Delete",
                     "clear": "Izbriši",
                     "intervalStatus": {
                         "keep": {

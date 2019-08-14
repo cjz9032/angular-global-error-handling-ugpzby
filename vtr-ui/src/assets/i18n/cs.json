@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "KLÁVESA MAKRA PRO ",
-                    "deleteKey": "Klávesa Delete",
+                    "deleteKey": "Delete",
                     "clear": "Vymazat",
                     "intervalStatus": {
                         "keep": {

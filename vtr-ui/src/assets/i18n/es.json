@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "TECLA DE MACRO PARA ",
-                    "deleteKey": "Tecla Eliminar",
+                    "deleteKey": "Eliminar",
                     "clear": "Borrar",
                     "intervalStatus": {
                         "keep": {

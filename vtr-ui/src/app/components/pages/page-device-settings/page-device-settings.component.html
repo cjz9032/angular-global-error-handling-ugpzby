@@ -1,71 +1,5 @@
-<div class="vtr-page-device-settings vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow"
-				[back]="'common.ui.back' | translate"
-				[title]="'common.menu.device.sub2' | translate"
-				[parentPath]="parentPath"
-				[menuItems]="menuItems"
-				[backId]="'myDevice-settings-back-btn'"
-				[textId]="'myDevice-settings'"></vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="row">
-				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
-					<router-outlet></router-outlet>
-				</div>
-				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
-					<div class="vtr-page-shift-up-medium">
-						<div class="container-fluid">
-							<div class="row mb-40">
-								<div class="col col-12"
-									[ngClass]="{'battery-unavailable': isDesktopMachine}">
-									<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
-								</div>
-							</div>
-							<div class="row mb-40">
-								<div class="col col-12 cont">
-									<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}
-									</div>
-									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
-										[description]="'common.qAndA.subtitle' | translate"
-										[items]="qaService.qas"
-										blockPosition="r2"
-										[linkId]="'device-settings-qa'"></vtr-widget-questions>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col col-12">
-									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-										[itemID]="cardContentPositionA.Id"
-										[caption]="cardContentPositionA.Description"
-										[title]="cardContentPositionA.Title"
-										[logoText]="cardContentPositionA.BrandName"
-										[action]="cardContentPositionA.Action"
-										[actionType]="cardContentPositionA.ActionType"
-										[actionLink]="cardContentPositionA.ActionLink"
-										[type]="'corner-article'"
-										[ratioX]="4"
-										[ratioY]="2"
-										order="3"
-										sideFlag='r'
-										[cornerShift]="'large'"
-										id="device-settings-container-card"
-										aria-label="device-settings-container-card"
-										[containerCardId]="'device-settings-container-card'">
-									</vtr-container-card>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- VAN-3149 hide till search is implemented -->
-	<!-- <form class="card">
+<!-- VAN-3149 hide till search is implemented -->
+<!-- <form class="card">
 		<div class="card-body row no-gutters align-items-center">
 			<div class="search-icon">
 				<fa-icon [icon]="['fas', 'search']"></fa-icon>
@@ -77,4 +11,62 @@
 			</div>
 		</div>
 	</form> -->
-</div>
+
+<vtr-page-layout [pageTitle]="'common.menu.device.sub2' | translate"
+	[backLinkText]="'common.ui.back' | translate"
+	[textId]="'myDevice-settings'"
+	[parentPath]="parentPath"
+	[menuItems]="menuItems"
+	[pageCssClass]="'device-settings'">
+
+	<left-content>
+		<div class="mt-5">
+			<router-outlet></router-outlet>
+		</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<div class="row mb-40">
+				<div class="col col-12"
+					[ngClass]="{'battery-unavailable': isDesktopMachine}">
+					<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
+				</div>
+			</div>
+			<div class="row mb-40">
+				<div class="col col-12 cont">
+					<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}
+					</div>
+					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+						[description]="'common.qAndA.subtitle' | translate"
+						[items]="qaService.qas"
+						blockPosition="r2"
+						[linkId]="'device-settings-qa'"></vtr-widget-questions>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-12">
+					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+						[itemID]="cardContentPositionA.Id"
+						[caption]="cardContentPositionA.Description"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[type]="'corner-article'"
+						[ratioX]="4"
+						[ratioY]="2"
+						order="3"
+						sideFlag='r'
+						[cornerShift]="'large'"
+						id="device-settings-container-card"
+						aria-label="device-settings-container-card"
+						[containerCardId]="'device-settings-container-card'">
+					</vtr-container-card>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>

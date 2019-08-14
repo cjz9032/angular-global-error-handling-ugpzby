@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "MAKRO-TAST FOR ",
-                    "deleteKey": "Tasten Delete",
+                    "deleteKey": "Delete",
                     "clear": "Ryd",
                     "intervalStatus": {
                         "keep": {
