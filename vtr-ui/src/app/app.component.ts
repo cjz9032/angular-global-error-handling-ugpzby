@@ -269,11 +269,14 @@ export class AppComponent implements OnInit {
 					this.isGaming = value.isGaming;
 
 					// update DeviceInfo values in case user switched language
-					const deviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-					this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, deviceInfo);
+					const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+					const isLocaleSame = (cachedDeviceInfo && cachedDeviceInfo.locale === value.locale);
 
-					if (!this.languageService.isLanguageLoaded) {
+					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
 						this.languageService.useLanguageByLocale(value.locale);
+						cachedDeviceInfo.isGamingDevice = value.isGaming;
+						cachedDeviceInfo.locale = value.locale;
+						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 
 					this.setFirstRun(value);
