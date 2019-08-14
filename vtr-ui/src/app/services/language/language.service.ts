@@ -96,6 +96,8 @@ export class LanguageService {
 			} else {
 				if (locale && locale.substring(0, 2) === 'pt') {
 					locale === 'pt-br' ? (langCode = 'pt-br') : (langCode = 'pt');
+				} else if (locale && locale.substring(0, 2) === 'sr') {
+					locale === 'sr-latn' ? (langCode = 'sr-latn') : (langCode = 'sr');
 				} else {
 					langCode = locale;
 				}
@@ -115,7 +117,6 @@ export class LanguageService {
 			const locale = lang.toLowerCase();
 			this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceLocale, locale);
 			this.translate.use(locale);
-			//this.translate.use('sr');
 		}
 	}
 
