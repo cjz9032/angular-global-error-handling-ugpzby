@@ -15,6 +15,26 @@
 		content: $icomoon-auto-screen-off;
 	}
 }
+.icomoon-ConditionACAdapterError {
+	&:before {
+		content: $icomoon-ConditionACAdapterError;
+	}
+}
+.icomoon-ConditionBadBattery {
+	&:before {
+		content: $icomoon-ConditionBadBattery;
+	}
+}
+.icomoon-ConditionFairBattery {
+	&:before {
+		content: $icomoon-ConditionFairBattery;
+	}
+}
+.icomoon-ConditionGoodBattery {
+	&:before {
+		content: $icomoon-ConditionGoodBattery;
+	}
+}
 .icomoon-dynamic {
 	&:before {
 		content: $icomoon-dynamic;
@@ -200,6 +220,12 @@
 		color: #4a81fd;
 	}
 }
+.icomoon-Hidden-keyboard-functions {
+	&:before {
+		content: $icomoon-Hidden-keyboard-functions;
+		color: #418afd;
+	}
+}
 .icomoon-keep-my-display {
 	&:before {
 		content: $icomoon-keep-my-display;
@@ -215,6 +241,16 @@
 	&:before {
 		content: $icomoon-LE-Active-pen-battery2x;
 		color: #4a81fd;
+	}
+}
+.icomoon-LE-Airplanemode2x {
+	&:before {
+		content: $icomoon-LE-Airplanemode2x;
+	}
+}
+.icomoon-LE-AirplanemodeCharging2x {
+	&:before {
+		content: $icomoon-LE-AirplanemodeCharging2x;
 	}
 }
 .icomoon-LE-Always-on-usb2x {
@@ -268,6 +304,11 @@
 	&:before {
 		content: $icomoon-LE-Charging-USB2x;
 		color: #4a81fd;
+	}
+}
+.icomoon-LE-ConservationCharging2x {
+	&:before {
+		content: $icomoon-LE-ConservationCharging2x;
 	}
 }
 .icomoon-LE-Conservation-mode2x {
@@ -493,6 +534,11 @@
 		content: $icomoon-music;
 	}
 }
+.icomoon-NoBatteryError {
+	&:before {
+		content: $icomoon-NoBatteryError;
+	}
+}
 .icomoon-normal {
 	&:before {
 		content: $icomoon-normal;
@@ -518,6 +564,12 @@
 .icomoon-star {
 	&:before {
 		content: $icomoon-star;
+	}
+}
+.icomoon-Top-row-keys {
+	&:before {
+		content: $icomoon-Top-row-keys;
+		color: #418afd;
 	}
 }
 .icomoon-translation {

@@ -35,10 +35,9 @@
 				[caption]="'device.deviceSettings.power.description' | translate"
 				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"
 				[textId]="'myDevice-settings-power'"></vtr-ui-header-subpage>
+		</div>
 	</div>
-	</div>
-	<vtr-power-smart-settings
-	(isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
+	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
 	<vtr-smart-standby *ngIf="!isDesktopMachine"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
@@ -59,8 +58,8 @@
 							[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings.items[0].leftImageSource"
-							[tooltipText]="batterySettings.items[0].tooltipText"
+							[leftIcon]="['fal', 'plane']"
+							[tooltipText]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
 							[isSwitchChecked]="toggleAirplanePowerModeFlag"
 							[showChildContent]=true
 							[switchId]="'ds-power-battery-airplane'"
@@ -75,12 +74,12 @@
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
 											checked="" />
-										<label
-											for="cb-airplane-mode">
+										<label for="cb-airplane-mode">
 											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 										</label>
 									</div>
-									<label *ngIf="airplaneAutoDetection" class="auto-detection-note">
+									<label *ngIf="airplaneAutoDetection"
+										class="auto-detection-note">
 										{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
 									</label>
 								</div>
@@ -90,14 +89,14 @@
 
 					<!-- MVP 2 feature -->
 					<li class=""
-					*ngIf="machineType == 1 && isChargeThresholdAvailable">
+						*ngIf="machineType == 1 && isChargeThresholdAvailable">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
 							[isSwitchVisible]=true
 							[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
-							[leftIcon]="batterySettings.items[1].leftImageSource"
-							[rightIcon]="batterySettings.items[1].rightImageSource"
+							[leftIcon]="['fal', 'battery-half']"
+							[rightIcon]="['far', 'question-circle']"
 							[showChildContent]="true"
 							[isSwitchChecked]="showBatteryThreshold"
 							(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
@@ -118,8 +117,8 @@
 									[isCheckedAuto]="primaryCheckBox"
 									(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
 									(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')"
-									[textId] ="'threshold-primary-battery'">
-									
+									[textId]="'threshold-primary-battery'">
+
 								</vtr-battery-charge-threshold-settings>
 
 								<vtr-battery-charge-threshold-settings *ngIf="responseData && responseData.length > 1"
@@ -135,7 +134,7 @@
 									[isCheckedAuto]="secondaryCheckBox"
 									(sendBatteryDetails)="setChargeThresholdValues($event, 2, 'changedValues')"
 									(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')"
-									[textId] ="'threshold-secondary-battery'">
+									[textId]="'threshold-secondary-battery'">
 								</vtr-battery-charge-threshold-settings>
 								<vtr-battery-charge-threshold-settings *ngIf="showWarningMsg"
 									[displayNoteOnly]="true"
@@ -147,16 +146,13 @@
 
 					<li class=""
 						*ngIf="expressChargingStatus.available">
-						<!--
-						*ngIf="batterySettings.status.expressCharging"
-						-->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 							[name]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.expressCharging.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]="!conservationModeStatus.available"
-							[leftIcon]="batterySettings.items[2].leftImageSource"
+							[leftIcon]="['fal', 'battery-bolt']"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.expressCharging.tooltip' | translate"
 							[isSwitchChecked]="expressChargingStatus.status"
 							[disabled]="expressChargingLock"
@@ -167,14 +163,13 @@
 					</li>
 					<li class=""
 						*ngIf="conservationModeStatus.available">
-						<!-- *ngIf="batterySettings.status.conservationMode"* -->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
 							[name]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]=true
-							[leftIcon]="batterySettings.items[3].leftImageSource"
+							[leftIcon]="['fal', 'battery-quarter']"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.conservationMode.tooltip.line1' | translate"
 							[isSwitchChecked]="conservationModeStatus.status"
 							[disabled]="conservationModeLock"
@@ -207,28 +202,20 @@
 							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]="!showEasyResumeSection"
-							[isSwitchChecked]="alwaysOnUSBStatus.status"
-							[leftIcon]="powerSettings[0].leftImageSource"
-							[rightIcon]="powerSettings[0].rightImageSource"
+							[isSwitchChecked]="toggleAlwaysOnUsbFlag"
+							[leftIcon]="['fab', 'usb']"
+							[rightIcon]="[]"
 							[showChildContent]="true"
-							[tooltipText]="powerSettings[0].tooltipText"
+							[tooltipText]=""
 							[switchId]="'ds-power-alwaysUSB'"
 							(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
-							<!-- <div class="auto-set-checkbox left-margin"
-								[ngClass]="{'disable': toggleAlwaysOnUsbFlag === false}">
-								<input type="checkbox"
-									name="alwasy-on-usb-checkbox-id"
-									[disabled]="!toggleAlwaysOnUsbFlag"
-									[(ngModel)]="usbChargingCheckboxFlag"
-									(ngModelChange)='onUsbChargingStatusChange()'>
-								<label> {{ powerSettings[0].checkboxDesc }} </label>
-							</div> -->
 							<div class="row">
 								<div class="col-auto justify-content-start align-items-center pr-2">
 									<i class="icomoon icomoon-LE-Charging-USB2x"></i>
 								</div>
-								<div class="col-auto px-0 align-self-center seperator" id="always-on-usb-or"
-								attr.aria-label="always-on-usb-or">
+								<div class="col-auto px-0 align-self-center seperator"
+									id="always-on-usb-or"
+									attr.aria-label="always-on-usb-or">
 									{{'device.deviceSettings.power.powerSettings.or' | translate}}
 								</div>
 								<div class="col-auto pl-2">
@@ -247,8 +234,8 @@
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
 											checked="" />
-										<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
-										<label for="cb-always-on-usb">
+										<label class="custom-control-label "
+											for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
 									</div>
@@ -266,7 +253,7 @@
 							[isLastChild]=true
 							[isSwitchChecked]='toggleEasyResumeStatus'
 							[leftIcon]="['icomoon','icomoon-LE-Easy-resume2x']"
-							[rightIcon]="powerSettings[1].rightImageSource"
+							[rightIcon]="['far', 'question-circle']"
 							[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
 							[switchId]="'ds-power-easyResume'"
 							(toggleOnOff)="onToggleOfEasyResume($event)">
@@ -286,8 +273,7 @@
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-otherSettings'">
 				<ul class="list-group list-group-flush">
-					<li class=""
-						*ngFor="let item of otherSettings">
+					<li class="">
 						<vtr-ui-row-switch
 							[componentName]="'device.deviceSettings.power.otherSettings.title' | translate"
 							[name]="'device.deviceSettings.power.otherSettings.title' | translate"
@@ -295,7 +281,7 @@
 							[caption]="'device.deviceSettings.power.otherSettings.vantageToolbar.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]=true
-							[leftIcon]="item.leftImageSource"
+							[leftIcon]="['fal', 'thumbtack']"
 							[isSwitchChecked]="vantageToolbarStatus.status"
 							[switchId]="'ds-power-otherSettings-toolBar'"
 							(toggleOnOff)="onVantageToolBarStatusToggle($event)">

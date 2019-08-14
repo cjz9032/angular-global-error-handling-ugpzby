@@ -3,7 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main
 				[title]="deviceService.isArm || !commonService.isOnline ? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
-				[forwardLink]=""></vtr-header-main>
+				[forwardLink]=""
+				[textId]="'dashboard'"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -57,6 +58,7 @@
 											[action]="cardContentPositionB.Action"
 											[actionType]="cardContentPositionB.ActionType"
 											[actionLink]="cardContentPositionB.ActionLink"
+											[dataSource]="cardContentPositionB.DataSource"
 											[type]="'corner'"
 											[ratioX]="4"
 											[ratioY]="2"
