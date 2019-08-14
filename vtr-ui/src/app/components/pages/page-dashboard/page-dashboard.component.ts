@@ -275,7 +275,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	private getTileBSource() {
 		 return new Promise((resolve) => {
 			this.hypService.getFeatureSetting('TileBSource').then((source) => {
-				resolve(source);
+				if (source === 'UPE') {
+					resolve('UPE');
+				} else {
+					resolve('CMS');
+				}
 			}, () => {
 				resolve('CMS');
 			});
