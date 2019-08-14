@@ -77,6 +77,9 @@
 			padding-right: 5rem;
 			@media #{$mediaquery_X4} {
 				padding-left: 7rem;
+				span {
+					max-width: 33rem;
+				}
 			}
 			@media #{$mediaquery_lg} {
 				font-size: 2.8rem;
@@ -158,7 +161,10 @@
 		&__tooltip-context {
 			width: 50rem;
 			@media #{$mediaquery_md} {
-				width: 35rem;
+				width: 34rem;
+			}
+			@media #{$mediaquery_13} {
+				width: 28rem;
 			}
 			@media #{$mediaquery_sm} {
 				width: 20rem;
