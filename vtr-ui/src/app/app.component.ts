@@ -20,6 +20,8 @@ import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
+import { DeviceInfo } from './data-models/common/device-info.model';
+import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
 
 
 declare var Windows;
@@ -30,8 +32,6 @@ declare var Windows;
 	providers: [TimerService]
 })
 export class AppComponent implements OnInit {
-	title = 'vtr-ui';
-
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
@@ -268,6 +268,10 @@ export class AppComponent implements OnInit {
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 
+					// update DeviceInfo values in case user switched language
+					const deviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
+					this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, deviceInfo);
+
 					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
 					}
@@ -285,7 +289,9 @@ export class AppComponent implements OnInit {
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
-			this.languageService.useLanguage();
+			if (!this.languageService.isLanguageLoaded) {
+				this.languageService.useLanguage();
+			}
 		}
 	}
 
@@ -443,18 +449,4 @@ export class AppComponent implements OnInit {
 			$event.preventDefault();
 		}
 	}
-
-	/**
-	 * check in route param is Home Component passed isMachineInfoLoaded value or not.
-	 */
-	// private isTranslationLoaded(): boolean {
-	// 	if (this.activatedRoute) {
-	// 		const isMachineInfoLoaded = this.activatedRoute.snapshot.paramMap.get('isMachineInfoLoaded');
-	// 		if (isMachineInfoLoaded && isMachineInfoLoaded.toLowerCase() === 'true') {
-	// 			return true;
-	// 		}
-	// 		return false;
-	// 	}
-	// }
-
 }
