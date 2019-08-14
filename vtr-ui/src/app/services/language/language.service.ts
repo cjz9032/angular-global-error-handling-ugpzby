@@ -1,20 +1,14 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-
-import Translation from 'src/app/data-models/translation/translation';
-import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { LoggerService } from '../logger/logger.service';
 import { CommonService } from '../common/common.service';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
+import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class LanguageService {
-	public subscription: Observable<Translation>;
-	private subject: BehaviorSubject<Translation>;
 	public readonly isLanguageLoaded: boolean;
 	private readonly defaultLanguage = 'en';
 
@@ -25,26 +19,7 @@ export class LanguageService {
 	) {
 		// singleton service will call it once
 		this.setupTranslation(translate);
-		this.translateStrings(translate);
-		this.subject = new BehaviorSubject<Translation>(new Translation(TranslationSection.Unknown, undefined));
-		this.subscription = this.subject;
 		this.isLanguageLoaded = true;
-	}
-
-	private translateStrings(translate: TranslateService) {
-		// runtime change in language can be handled like below.
-		// subscribe to top level object and update text in one go
-		translate.get(TranslationSection.CommonMenu).subscribe((changes: any) => {
-			this.notifyChanges(TranslationSection.CommonMenu, changes);
-		});
-
-		translate.get(TranslationSection.CommonUi).subscribe((changes: any) => {
-			this.notifyChanges(TranslationSection.CommonUi, changes);
-		});
-	}
-
-	private notifyChanges(type: TranslationSection, payload: any) {
-		this.subject.next(new Translation(type, payload));
 	}
 
 	private setupTranslation(translate: TranslateService) {
@@ -80,7 +55,11 @@ export class LanguageService {
 			'zh-hans',
 			'zh-hant'
 		]);
-		this.translate.setDefaultLang(this.defaultLanguage);
+
+		const hasDefaultLanguage = this.useLocaleAvailableInCache();
+		if (!hasDefaultLanguage) {
+			this.translate.setDefaultLang(this.defaultLanguage);
+		}
 	}
 
 	public useLanguageByLocale(deviceLocale: string) {
@@ -91,7 +70,7 @@ export class LanguageService {
 
 			let langCode = this.defaultLanguage;
 			const locale = deviceLocale.toLowerCase();
-			if (locale && ![ 'zh', 'pt' ].includes(locale.substring(0, 2))) {
+			if (locale && !['zh', 'pt'].includes(locale.substring(0, 2))) {
 				langCode = locale.substring(0, 2);
 			} else {
 				if (locale && locale.substring(0, 2) === 'pt') {
@@ -113,17 +92,15 @@ export class LanguageService {
 	public useLanguage(lang: string = this.defaultLanguage) {
 		if (lang) {
 			const locale = lang.toLowerCase();
-			this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceLocale, locale);
 			this.translate.use(locale);
-			//this.translate.use('sr');
 		}
 	}
 
-	public useLocaleAvailableInCache(): boolean {
+	private useLocaleAvailableInCache(): boolean {
 		// check cache for locale, if available then use it.
-		const locale = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceLocale, undefined);
-		if (locale) {
-			this.useLanguage(locale);
+		const deviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+		if (deviceInfo && deviceInfo.locale) {
+			this.useLanguage(deviceInfo.locale);
 			return true;
 		}
 		return false;
