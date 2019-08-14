@@ -23,7 +23,9 @@
 			</div>
 		</ng-container>
 	</div>
-	<p class="brightCondition" *ngIf="enableBrightCondition1" id="lighting_brightness_setting_msg" attr.aria-label="lighting_brightness_setting_msg">
+	<p class="brightCondition" ngbTooltip="{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+		{{'gaming.lightingProfile.brightness.text2.title' | translate}}"  *ngIf="enableBrightCondition1"
+		id="lighting_brightness_setting_msg" attr.aria-label="lighting_brightness_setting_msg">
 		{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
 		{{'gaming.lightingProfile.brightness.text2.title' | translate}}</p>
 </div>
