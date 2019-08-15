@@ -69,6 +69,7 @@ export class CommunicationWithFigleafService {
 				filter((isFigleafInstalled) => !isFigleafInstalled),
 			))
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
+			console.log('figleafStatus', figleafStatus);
 			const isFigleafReady = figleafStatus.status === 0;
 			this.isFigleafReadyForCommunication.next(isFigleafReady);
 
