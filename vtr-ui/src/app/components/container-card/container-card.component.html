@@ -316,7 +316,6 @@
 							<div *ngIf="actionLink"
 								class="read-more">
 								<a [attr.href]="!actionLink ? null : actionLink"
-								(click)="linkClicked(actionType, actionLink)"
 									id="{{containerCardId+'_read_more'}}"
 									attr.aria-label="{{containerCardId+'_read_more'}}"
 									target="_blank"
