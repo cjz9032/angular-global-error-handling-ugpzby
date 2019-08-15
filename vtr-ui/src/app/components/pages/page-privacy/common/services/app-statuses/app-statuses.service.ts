@@ -13,13 +13,6 @@ export enum featuresResult {
 
 export type GlobalStatuses = {appState: AppStatuses} & {[feature in featuresResult]: FeaturesStatuses};
 
-// export interface GlobalStatuses {
-// 	appState: AppStatuses;
-// 	breachedAccountsResult: FeaturesStatuses;
-// 	websiteTrackersResult: FeaturesStatuses;
-// 	nonPrivatePasswordResult: FeaturesStatuses;
-// }
-
 @Injectable({
 	providedIn: 'root'
 })
@@ -36,6 +29,7 @@ export class AppStatusesService {
 		private globalAppStatusService: GlobalAppStatusService,
 		private userDataGetStateService: UserDataStateService
 	) {
+		this.updateGlobalStatus();
 		this.userDataGetStateService.updateData$.subscribe((val) => {
 			this.updateGlobalStatus();
 		});

@@ -31,6 +31,8 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
 	score;
 
+	isShowScore$ = this.scoreShowSpinnerService.isShow$;
+
 	isFirstTimeVisitor$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) => userDataStatus.appState === AppStatuses.firstTimeVisitor)
 	);
@@ -47,8 +49,6 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.scoreShowSpinnerService.isShow$.subscribe((val) => console.log('consentGiven', val));
-
 		combineLatest([
 			this.privacyScoreService.newPrivacyScore$,
 			this.isFirstTimeVisitor$

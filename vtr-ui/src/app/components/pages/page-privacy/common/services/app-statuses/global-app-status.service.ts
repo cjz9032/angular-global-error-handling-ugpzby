@@ -3,6 +3,7 @@ import { AppStatuses, FeaturesStatuses } from '../../../userDataStatuses';
 import { FigleafOverviewService, FigleafStatus, licenseTypes } from '../figleaf-overview.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { UserDataStateService } from './user-data-state.service';
+import { GetFeaturesConsentService } from './get-features-consent.service';
 
 export const MS_IN_DAY = 24 * 60 * 60 * 1000;
 
@@ -17,7 +18,8 @@ export class GlobalAppStatusService {
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private figleafOverviewService: FigleafOverviewService,
-		private userDataStateService: UserDataStateService
+		private userDataStateService: UserDataStateService,
+		private getFeaturesConsentService: GetFeaturesConsentService
 	) {
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$.subscribe((isFigleafReadyForCommunication) => {
 			this.isFigleafReadyForCommunication = isFigleafReadyForCommunication;
@@ -38,6 +40,14 @@ export class GlobalAppStatusService {
 				return AppStatuses.scanPerformed;
 			}
 		}
+
+		const getFeaturesConsent = this.getFeaturesConsentService.getFeaturesConsent();
+		const isConsentGiven = Object.values(getFeaturesConsent).includes(true);
+
+		if (isConsentGiven) {
+			return AppStatuses.scanPerformed;
+		}
+
 		return AppStatuses.firstTimeVisitor;
 	}
 
