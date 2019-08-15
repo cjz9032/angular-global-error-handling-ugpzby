@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {
 	catchError,
-	debounceTime,
 	distinctUntilChanged,
 	filter,
 	map,
+	share,
 	shareReplay,
 	startWith,
-	switchMapTo
+	switchMapTo,
+	take
 } from 'rxjs/operators';
 import { combineLatest, of } from 'rxjs';
 import { FigleafOverviewService, FigleafSettings } from '../../../common/services/figleaf-overview.service';
@@ -54,7 +55,9 @@ export class PrivacyScoreService {
 						return acc;
 					}, 0);
 				}
-			)))
+			),
+			take(1)
+		))
 	);
 
 	private monitoringEnable$ = this.getFigleafSetting((settings: FigleafSettings) => settings.isBreachMonitoringEnabled);
@@ -95,7 +98,6 @@ export class PrivacyScoreService {
 		this.getMonitoringEnable(),
 		this.getIsAntitrackingEnabled()
 	]).pipe(
-		debounceTime(500),
 		map(([breachedAccountScore, passwordFromBrowserScore, monitoringScore, antitrackingScore]) => {
 			return Math.round(
 				(
@@ -150,7 +152,8 @@ export class PrivacyScoreService {
 	private getBreachesAccount(filterFunc) {
 		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 			filter((breachedAccounts) => breachedAccounts.error === null),
-			map((breachedAccounts) => breachedAccounts.breaches.filter(filterFunc).length)
+			map((breachedAccounts) => breachedAccounts.breaches.filter(filterFunc).length),
+			share()
 		);
 	}
 

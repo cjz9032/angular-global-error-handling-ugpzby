@@ -12,6 +12,7 @@ import {
 	TasksName
 } from '../../../common/services/analytics/task-action-with-timeout.service';
 import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { ScoreShowSpinnerService } from './score-show-spinner.service';
 
 @Component({
 	selector: 'vtr-privacy-score',
@@ -30,6 +31,8 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
 	score;
 
+	isShowScore$ = this.scoreShowSpinnerService.isShow$;
+
 	isFirstTimeVisitor$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) => userDataStatus.appState === AppStatuses.firstTimeVisitor)
 	);
@@ -41,6 +44,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		private vantageCommunicationService: VantageCommunicationService,
 		private changeDetectorRef: ChangeDetectorRef,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
+		private scoreShowSpinnerService: ScoreShowSpinnerService,
 		private commonPopupService: CommonPopupService) {
 	}
 

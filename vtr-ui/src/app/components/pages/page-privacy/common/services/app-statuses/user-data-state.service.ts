@@ -83,8 +83,6 @@ export class UserDataStateService {
 				status = FeaturesStatuses.error;
 			}
 
-			console.log('status', status, isFigleafReadyForCommunication, isTrackersBlocked);
-
 			this.websiteTrackersResult = status;
 			this.updateDataSubject();
 		});
