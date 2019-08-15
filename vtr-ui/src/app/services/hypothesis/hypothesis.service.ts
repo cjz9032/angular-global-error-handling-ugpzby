@@ -29,7 +29,7 @@ export class HypothesisService {
 						reject(error);
 					});
 			} catch (ex) {
-				console.error('getHypothesis' + ex.message);
+				console.error('getHypothesis:' + ex.message);
 				reject(ex);
 			}
 		});
@@ -41,7 +41,13 @@ export class HypothesisService {
 				resolve(this.hypSettings[feature]);
 			} else {
 				this.getHypothesis().then(() => {
-						resolve(this.hypSettings[feature]);
+						if(this.hypSettings){
+							resolve(this.hypSettings[feature]);
+						}
+						else
+						{
+							reject('get hypothesis setting failed.');
+						}
 					},
 					error => {
 						reject(error);
