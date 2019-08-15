@@ -45,7 +45,8 @@ interface GetBreachedAccountsState {
 	providedIn: 'root'
 })
 export class BreachedAccountsService implements OnDestroy {
-	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
+	private onGetBreachedAccounts = new ReplaySubject<GetBreachedAccountsState>(1);
+	onGetBreachedAccounts$ = this.onGetBreachedAccounts.asObservable();
 
 	private getNewBreachedAccounts$ = new Subject<boolean>();
 
@@ -84,7 +85,7 @@ export class BreachedAccountsService implements OnDestroy {
 			catchError((error) => this.handleError(error)),
 			takeUntil(instanceDestroyed(this))
 		).subscribe((response: BreachedAccount[]) => {
-			this.onGetBreachedAccounts$.next({breaches: response, error: null});
+			this.onGetBreachedAccounts.next({breaches: response, error: null});
 			this.sendTaskAcrion();
 		});
 	}
@@ -112,7 +113,7 @@ export class BreachedAccountsService implements OnDestroy {
 	private handleError(error: any) {
 		console.error('onGetBreachedAccounts', error);
 		if (error !== ErrorNames.noAccessToken) {
-			this.onGetBreachedAccounts$.next({breaches: null, error: error});
+			this.onGetBreachedAccounts.next({breaches: null, error});
 		}
 		this.sendTaskAcrion();
 		return EMPTY;

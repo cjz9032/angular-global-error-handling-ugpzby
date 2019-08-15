@@ -5,12 +5,20 @@ import { ReplaySubject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { AppStatuses, FeaturesStatuses } from '../../../userDataStatuses';
 
-export interface GlobalStatuses {
-	appState: AppStatuses;
-	breachedAccountsResult: FeaturesStatuses;
-	websiteTrackersResult: FeaturesStatuses;
-	nonPrivatePasswordResult: FeaturesStatuses;
+export enum featuresResult {
+	breachedAccountsResult = 'breachedAccountsResult',
+	websiteTrackersResult = 'websiteTrackersResult',
+	nonPrivatePasswordResult = 'nonPrivatePasswordResult'
 }
+
+export type GlobalStatuses = {appState: AppStatuses} & {[feature in featuresResult]: FeaturesStatuses};
+
+// export interface GlobalStatuses {
+// 	appState: AppStatuses;
+// 	breachedAccountsResult: FeaturesStatuses;
+// 	websiteTrackersResult: FeaturesStatuses;
+// 	nonPrivatePasswordResult: FeaturesStatuses;
+// }
 
 @Injectable({
 	providedIn: 'root'
