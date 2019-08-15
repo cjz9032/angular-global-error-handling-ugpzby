@@ -64,7 +64,7 @@ class FigleafConnector {
 					cb();
 				});
 				serviceClosedCount = 0;
-				RECONNECT_TIMEOUT = 1000
+				RECONNECT_TIMEOUT = 1000;
 			} else {
 				connection = null;
 				this.disconnectFromFigleaf();
