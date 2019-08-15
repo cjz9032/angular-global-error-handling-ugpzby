@@ -166,13 +166,21 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 				.battery-error {
 					@extend .base-percentage-text;
-					font-size: 3rem;
-					// color: $stop;
-					top: calc(30%);
+					// font-size: 3rem;
+					// // color: $stop;
+					// top: calc(30%);
 
 					.error-icon {
-						top: -0.8rem;
+						font-size: 3.5rem;
+						align-self: center;
 						position: relative;
+						bottom: 2rem;
+						right: 3rem;
+					}
+					.icomoon-NoBatteryError {
+						&:before {
+							color: #f17f14;
+						}
 					}
 					.no-battery-detected {
 						margin-left: 1rem;
@@ -227,6 +235,11 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			position: absolute;
 			top: 20%;
 			left: 5%;
+			.airplane-mod {
+				width: 4rem;
+				height: 4rem;
+				vertical-align: auto;
+			}
 			@media #{$mediaquery_X21} {
 				top: 10%;
 			}

@@ -333,4 +333,27 @@ export class CMSService {
 		return CMSOption;
 
 	}
+
+	fetchCMSEntitledAppList(queryParams) {
+		const defaults = {
+			Lang: this.localInfo.Lang,
+			GEO: this.localInfo.GEO
+		};
+
+		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+
+		return new Promise((resolve, reject) => {
+			this.commsService.endpointGetCall('/api/v1/entitledapps',
+				CMSOption,
+				{}).subscribe(
+					(response: any) => {
+						resolve(response.Results);
+					},
+					error => {
+						console.log('fetchCMSEntitledAppList error ', error);
+						reject('fetchCMSEntitledAppList error');
+					}
+				);
+		});
+	}
 }

@@ -1,10 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, OnChanges } from '@angular/core';
 import { isUndefined } from 'util';
+import { LanguageService } from 'src/app/services/language/language.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-ui-macrokey-collapsible-container',
 	templateUrl: './ui-macrokey-collapsible-container.component.html',
-	styleUrls: [ './ui-macrokey-collapsible-container.component.scss' ],
+	styleUrls: ['./ui-macrokey-collapsible-container.component.scss'],
 	host: {
 		'(document:click)': 'generalClick($event)'
 	}
@@ -21,10 +23,17 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 	public selectedOption: any;
 	public currentDescription: string;
 	public selectedDescription: string;
+	defaultLanguage: any;
 
-	constructor(private elementRef: ElementRef) {}
+	constructor(private elementRef: ElementRef, private languageService: LanguageService, private deviceService: DeviceService) { }
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.deviceService
+			.getMachineInfo()
+			.then((value: any) => {
+				this.defaultLanguage = value.locale;
+			});
+	}
 
 	public toggleOptions() {
 		this.showOptions = !this.showOptions;

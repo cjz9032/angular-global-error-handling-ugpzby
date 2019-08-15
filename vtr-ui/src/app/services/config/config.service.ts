@@ -439,33 +439,19 @@ export class ConfigService {
 	}];
 
 	betaItem = {
-		id: 'beta',
-		label: 'common.menu.beta.title',
+		id: 'hardware-scan',
+		label: 'hardwareScan.name',
 		beta: true,
-		path: 'beta',
+		path: 'beta/hardware-scan',
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
-		metricsItem: 'link.beta',
+		metricsItem: 'link.hardwarescan',
 		routerLinkActiveOptions: {
 			exact: true
 		},
 		icon: ['fal', 'flask'],
 		forArm: false,
-		subitems: [
-			// {
-			// id: 'password-protection-beta',
-			// label: 'common.menu.beta.password',
-			// path: '',
-			// icon: '',
-			// metricsEvent: 'itemClick',
-			// metricsParent: 'navbar',
-			// metricsItem: 'link.beta.passwordprotection',
-			// routerLinkActiveOptions: {
-			// 	exact: true
-			// },
-			// subitems: []
-			// }
-		]
+		subitems: []
 	};
 
 	getMenuItems(isGaming) {

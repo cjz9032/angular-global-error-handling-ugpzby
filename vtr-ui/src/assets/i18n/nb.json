@@ -96,7 +96,7 @@
                     "info": "INFORMASJON"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Hurtiginnstillinger"
                 }
             }
         },
@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "MAKROTAST FOR ",
-                    "deleteKey": "Slett tast",
+                    "deleteKey": "Slett",
                     "clear": "Nullstill",
                     "intervalStatus": {
                         "keep": {
@@ -371,38 +371,42 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Lukk automatisk",
+            "introLine": "Tilføy apper du vil lukke når spill startes. Frigjør ubrukte ressurser for å maksimere ytelsen i spill. Merk: Denne funksjonen lukker appen fullstendig. Derfor må alltid kontrollere at du har lagret arbeidet ditt.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Slå på automatisk lukking?",
+                "body": "Apper du har lagt til lukkes når du spiller, og frigjør ressurser for spilling.",
+                "checkedTitle": "Ikke spør igjen",
+                "btnConfirm": "Slå på",
+                "btnCancel": "Ikke nå"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Legg til apper som skal lukkes automatisk",
+                "body": "Bare apper som kjører vil vises i listen nedenfor."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Legg til",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Ingen kjørende apper å legge til",
+                "body": "Viser bare apper som kjører. Start appen du vil legge til, og kom tilbake."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Nettverks-forbedring",
+            "introLine": "Nettverksforbedring setter automatisk prioriteten på spill til høyeste nivå i nettverket for å maksimere hastigheten. Hvis du bruker apper som Twitch eller Discord under spilling, bør du legge dem til nedenfor slik at de også får prioritet på nettverket.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Slå på nettverksforbedring?",
+                "body": "Slå på nettverksforbedring? Apper du legger til deler mer nettverk når de kjøres.",
+                "checkedTitle": "Ikke spør igjen",
+                "btnConfirm": "Slå på",
+                "btnCancel": "Ikke nå"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "title": "Legg apper til i nettverksforbedring",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Feil batterispenning",
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "For detaljer se"
             },
             "power": {
                 "title": "Strøm",
@@ -851,7 +855,7 @@
                         "title": "Strømmodus for fly",
                         "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen.",
                         "checkBoxDesc": "Automatisk oppdagelse",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
                     }
                 },
                 "energyStar": {
@@ -990,7 +994,7 @@
                             "warm": "Varm (bedre for øynene)",
                             "cold": "Kaldt"
                         },
-                        "reset": "Tilbakestill temperatur",
+                        "reset": "Tilbakestill",
                         "tooltip": "Øyebeskyttelsesmodus justerer automatisk skjermens fargetemperatur for å filtrere ut blått lys og redusere belastningen på øynene.",
                         "onSunsetToSunriseScheduleDescription": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Varm (bedre for øynene)",
                             "cold": "Kaldt"
                         },
-                        "reset": "Tilbakestill temperatur",
+                        "reset": "Tilbakestill",
                         "tooltip": "Øyebeskyttelsesmodus justerer automatisk skjermens fargetemperatur for å filtrere ut blått lys og redusere belastningen på øynene.",
                         "onSunsetToSunriseScheduleDescription": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klikk her for å tilbakestille Kameraegenskaper til standardinnstillingene.",
-                        "reset": "Gjenopprett fabrikkinnstillinger"
+                        "reset": "Tilbakestill"
                     },
                     "brightness": "Lysstyrke",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
                     "screenTimeoutSettings": "Gå til innstillingene for tidsutkobling av skjermen"
                 },
-                "resetToDefault": "TILBAKESTILL TIL STANDARDINNSTILLINGENE"
+                "resetToDefault": "Tilbakestill"
             },
             "intelligentScreen": {
                 "title": "Intelligent skjerm",
@@ -1443,7 +1447,12 @@
         "title": "Sikkerhet for tilkoblede hjem",
         "notification": {
             "recent": "Nylige sikkerhetsvarsler",
-            "notifications": "Varsler"
+            "notifications": "Varsler",
+            "unsafeNetworkConnection": "Usikker nettverksforbindelse",
+            "networkUnsafe": "Usikkert nettverk",
+            "deviceDisconnected": "Enhet frakoblet",
+            "newDeviceDetected": "Ny enhet funnet",
+            "unsafeDeviceDetected": "Usikker enhet funnet"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Beskytt enhetens økosystem",
@@ -2250,5 +2259,124 @@
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
+    },
+    "hardwareScan": {
+        "errorNoOptionSelected": "Du må velge et alternativ.",
+        "errorDeviceChoose": "Du må velge en enhet du vil bruke.",
+        "buy": "Kjøp nå",
+        "name": "Maskinvaresøk",
+        "title": "Utfør en maskinvaresøk",
+        "subtitle": "Vent mens maskinvaresøk utføres",
+        "quickScan": "Hurtig kanalsøk",
+        "finalResultCode": "Sluttresultatkode",
+        "resultCode": "Resultatkode",
+        "cancel": "Avbryt",
+        "complete": "Fullført",
+        "incomplete": "Ufullstendig",
+        "loadingComponents": "Finne komponenter",
+        "hardwareComponents": "Maskinvare Komponenter",
+        "loadingDevices": "Enheter som lastes",
+        "select": "Velg",
+        "deselect": "Angre velg",
+        "allOptions": "Alle muligheter",
+        "latestResult": "Siste resultat",
+        "back": "TILBAKE",
+        "viewResults": "Vis resultater",
+        "save": "Lagre",
+        "details": "Detaljer",
+        "recurrence": "Gjentagelse",
+        "interval": "Intervall",
+        "time": "Tid",
+        "type": "Type",
+        "hours": "Timer",
+        "minutes": "Minutter",
+        "am": "AM",
+        "pm": "PM",
+        "previousResult": "Tidligere resultater",
+        "lastScanOn": "Siste søk",
+        "result": "Resultat",
+        "viewDetailsLog": "Vis detaljer Logg",
+        "ok": "OK",
+        "notOk": "IKKE OK",
+        "notScanned": "IKKE SKANNET",
+        "pass": "Bestått",
+        "fail": "Feil",
+        "cancelled": "Avbrutt",
+        "warning": "Advarsel",
+        "errorResult": "Du må velge en test for å kjøre den.",
+        "offline": "Denne enheten kjører i frakoblet modus, så koble den til Internett",
+        "battery": {
+            "title": "Aktiver batteriladeterskel",
+            "description": "Aktiverer du egendefinert batterilading, vil selve batteriet generelt sett vare lenger når du bruker denne enheten. Å ikke lade batteriet helt opp vil imidlertid gi kortere brukstid. For å aktivere denne funksjonen helt må du ta ut støpselet til datamaskinen og la batteriet lades helt ut eller til under terskelen for ladestopp.",
+            "enable": "Aktiver"
+        },
+        "customize": {
+            "name": "Tilpass",
+            "test": "Tilpass testen",
+            "description": "Velg alternativene nedenfor for å tilpasse testen",
+            "runTests": "Kjør valgte tester"
+        },
+        "scheduledScan": {
+            "name": "Planlegg skanning",
+            "title": "Planlegg skanningen",
+            "newScan": "Planlegg ny skanning",
+            "fullScan": "Fullstendig skanning",
+            "onlyOnce": "Bare en gang",
+            "eachDay": "Hver dag",
+            "eachWeek": "Hver uke",
+            "eachMonth": "Hver måned",
+            "eachYear": "Hvert år",
+            "schedule": "Plan",
+            "date": "Dato",
+            "pickDate": "Velg en dato",
+            "scanScheduled": "En maskinvaresøk var planlagt!",
+            "description": "En annen skanning er allerede planlagt på samme tid og dato!",
+            "error": "Feil",
+            "delete": "Slett",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Gjenopprett skadde sektorer",
+            "description": "Lenovo-verktøy for å oppdage og reparere skadede sektorer på en disk",
+            "goTo": "Gå for å gjenopprette dårlige sektorer",
+            "localDevices": "Lokale enheter",
+            "numberSectors": "Antall sektorer lest",
+            "numberBadSectors": "Antall skadde sektorer funnet",
+            "numberFixedSectors": "Antall sektorer fikset",
+            "numberNonFixedSectors": "Antall sektorer ikke fikset",
+            "status": "Operasjons status",
+            "elapsedTime": "Tid som er gått",
+            "hours": "Timer",
+            "hour": "Time",
+            "minutes": "Minutter",
+            "minute": "Minutt",
+            "seconds": "Sekunder",
+            "second": "Sekund",
+            "moreInfo": "Vent litt mens Gjenopprett ugyldige sektorer blir utført",
+            "systemEvent": "Testen ble avbrutt fordi det har oppstått en systemhendelse som kan påvirke resultatet.",
+            "systemPasswordProtected": "Enheten kan være passordbeskyttet. Prøv å deaktivere passordbeskyttelsen.",
+            "popup": {
+                "yes": "Ja",
+                "no": "Nei",
+                "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
+            }
+        },
+        "support": {
+            "title": "Last ned profesjonelle feil søkings verktøy",
+            "subtitle": "Lenovo Support"
+        },
+        "eTicket": {
+            "header": "Maskinvareproblem oppdaget.",
+            "problemDetected": "Maskinvaresøk har oppdaget et problem med følgende av datamaskinens komponenter",
+            "ticketRequestQuestion": "Lenovo kan sende deg en ny del hvis datamaskinen fremdeles dekkes av garantien. Vil du opprette en forespørsel om utskiftning av maskinvare for å løse problemet",
+            "openTicket": "Opprett forespørsel"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
     }
 }

@@ -65,16 +65,25 @@
             justify-content: center;
             position: relative;
             z-index: 1;
-            cursor: pointer;
+			cursor: pointer;
+			.num{
+				display: none;
+			}
             @media #{$small-screen}{
                 white-space: nowrap;
                 overflow: hidden;
-                letter-spacing: 2rem;
-                text-indent: -20rem;
+                //letter-spacing: 2rem;
+                //text-indent: -20rem;
                 &#off{
                     letter-spacing: 0;
                     text-indent: 0;
-                }
+				}
+				&>span:nth-child(1){
+					display:none;
+				}
+				.num{
+					display: block;
+				}
             }
         }
     }
@@ -88,7 +97,7 @@
 		transition: left 0.3s ease-in-out;
 		left: 0;
 	}
-	#off_radio:checked {
+	#profile_off_radio:checked {
 		& ~ #off {
 			color: $gaming_lightest;
 		}
@@ -96,7 +105,7 @@
 			left: 0%;
 		}
 	}
-	#first_radio:checked {
+	#profile_first_radio:checked {
 		& ~ #first_lbl {
 			color: $gaming_lightest;
 		}
@@ -104,7 +113,7 @@
 			left: 25%;
 		}
 	}
-	#second_radio:checked {
+	#profile_second_radio:checked {
 		& ~ #second_lbl {
 			color: $gaming_lightest;
 		}
@@ -112,7 +121,39 @@
 			left: 50%;
 		}
 	}
-	#third_radio:checked {
+	#profile_third_radio:checked {
+		& ~ #third_lbl {
+			color: $gaming_lightest;
+		}
+		& ~ .toggle {
+			left: 75%;
+		}
+	}
+	#single_off_radio:checked {
+		& ~ #off {
+			color: $gaming_lightest;
+		}
+		& ~ .toggle {
+			left: 0%;
+		}
+	}
+	#single_first_radio:checked {
+		& ~ #first_lbl {
+			color: $gaming_lightest;
+		}
+		& ~ .toggle {
+			left: 25%;
+		}
+	}
+	#single_second_radio:checked {
+		& ~ #second_lbl {
+			color: $gaming_lightest;
+		}
+		& ~ .toggle {
+			left: 50%;
+		}
+	}
+	#single_third_radio:checked {
 		& ~ #third_lbl {
 			color: $gaming_lightest;
 		}

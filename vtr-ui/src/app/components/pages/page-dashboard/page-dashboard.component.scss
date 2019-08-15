@@ -1,7 +1,6 @@
 @import "../../../app.theme";
 
 .vtr-page-dashboard {
-
 	.p-30 {
 		padding: 1.875rem;
 	}
@@ -28,9 +27,9 @@
 	.pt-6 {
 		padding-top: 6rem;
 	}
-	.vtr-page-right-column{
-	@media #{$mediaquery_X8} {
-		padding: 4rem 4rem 4rem 8.5rem;
+	.vtr-page-right-column {
+		@media #{$mediaquery_X8} {
+			padding: 4rem 4rem 4rem 8.5rem;
+		}
 	}
-}
 }

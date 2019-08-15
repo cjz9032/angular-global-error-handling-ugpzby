@@ -18,9 +18,11 @@
 		.footer-component {
 			.start-button {
 				display: none;
+				letter-spacing: 0px;
 			}
 			.stop-button {
 				display: block;
+				letter-spacing: 0px;
 			}
 		}
 	}
@@ -37,7 +39,7 @@
 					font-size: 3rem;
 				}
 				p:nth-child(2) {
-					text-transform: uppercase;
+					//text-transform: uppercase;
 					font-size: 5rem;
 					color: $gaming;
 					font-weight: 700;
@@ -104,7 +106,7 @@
 			font-size: 1.4rem;
 			font-weight: 500;
 			font-style: italic;
-			text-transform: capitalize;
+			//text-transform: capitalize;
 			border-top-right-radius: 0.8rem;
 			border-top-left-radius: 0.8rem;
 		}
@@ -112,10 +114,16 @@
 }
 
 ::ng-deep {
-	.button {
-		padding: 1.2rem 8rem !important;
-		@media #{$mediaquery_sm} {
-		padding: 1.2rem 6.5rem !important;
+	.start-button,
+	.stop-button {
+		.button {
+			padding: 1.2rem 8rem !important;
+			@media #{$mediaquery_13} {
+				padding: 1.2rem 3rem !important;
+			}
+			@media #{$mediaquery_X3} {
+				padding: 1.2rem 6.5rem !important;
+			}
 		}
 	}
 }

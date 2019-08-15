@@ -6,6 +6,13 @@ import { HttpClient } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { Pipe } from '@angular/core';
+import {
+	BrowserDynamicTestingModule,
+	platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
+
+declare const require: any;
+
 const gamingAutoCloseServiceMock = jasmine.createSpyObj('GamingAutoCloseService', [
 	'isShellAvailable',
 	'gamingAutoClose',
@@ -14,10 +21,50 @@ const gamingAutoCloseServiceMock = jasmine.createSpyObj('GamingAutoCloseService'
 	'setAutoCloseStatusCache',
 	'getNeedToAskStatusCache',
 	'getNeedToAsk',
-	'setNeedToAskStatusCache'
+	'setNeedToAskStatusCache',
+	'delAppsAutoCloseList',
+	'getAppsAutoCloseList',
+	'getAutoCloseListCache',
+	'setAutoCloseListCache',
+	'delAppsAutoCloseList',
+	'getAppsAutoCloseRunningList'
 ]);
 
-const cmsServiceMock = jasmine.createSpyObj('CMSService', [ 'fetchCMSContent', 'getOneCMSContent' ]);
+const cmsServiceMock = jasmine.createSpyObj('CMSService', ['fetchCMSContent', 'getOneCMSContent']);
+
+const sampleRunningAppList = {
+	processList: [
+		{ processDescription: 'E046963F.LenovoCompanion', iconName: 'ms-appdata:///local/icon/31b3d9d7dea8e073.png' },
+		{ processDescription: 'Microsoft Store', iconName: 'ms-appdata:///local/icon/24381e8e2df0ab73.png' },
+		{
+			processDescription: 'Microsoft.Windows.ShellExperienceHost',
+			iconName: 'ms-appdata:///local/icon/3862fc8e419fa507.png'
+		},
+		{ processDescription: 'Shell Input Application', iconName: 'ms-appdata:///local/icon/ea2b14e5811d195d.png' },
+		{ processDescription: 'Skype for Business', iconName: 'ms-appdata:///local/icon/29fd475c909f7486.png' },
+		{ processDescription: 'Windows Calculator', iconName: 'ms-appdata:///local/icon/ddfff48c74049c74.png' },
+		{
+			processDescription: 'microsoft.windowscommunicationsapps',
+			iconName: 'ms-appdata:///local/icon/7b2ca07c9a67cc86.png'
+		},
+		{
+			processDescription: 'windows.immersivecontrolpanel',
+			iconName: 'ms-appdata:///local/icon/4a4341b5d5250f32.png'
+		}
+	]
+};
+
+const sampleAutoCloseList = {
+	processList: [
+		{ processDescription: 'Google Chrome', iconName: 'ms-appdata:///local/icon/83a48b2b3d643451.png' },
+		{
+			processDescription: 'Microsoft.MicrosoftEdgeDevToolsPreview',
+			iconName: 'ms-appdata:///local/icon/31b3d9d7dea8e073.png'
+		},
+		{ processDescription: 'Slack', iconName: 'ms-appdata:///local/icon/256509debf91d991.png' },
+		{ processDescription: 'Visual Studio Code', iconName: 'ms-appdata:///local/icon/e817dc2039be4789.png' }
+	]
+};
 const cmsCardResponse = {
 	Results: [
 		{
@@ -133,7 +180,7 @@ const cmsCardResponse = {
 			Template: 'half-width-top-image-title-link',
 			Position: 'position-E',
 			ExpirationDate: null,
-			Filters: { and: [ { 'GEOs.Any': [ 'US' ] }, { 'Segments.Any': [ 'Commercial', 'SMB' ] } ] }
+			Filters: { and: [{ 'GEOs.Any': ['US'] }, { 'Segments.Any': ['Commercial', 'SMB'] }] }
 		},
 		{
 			Id: 'ca1fa898b60946369fda234010c1da3a',
@@ -176,8 +223,8 @@ describe('PageAutocloseComponent', () => {
 	beforeEach(
 		async(() => {
 			TestBed.configureTestingModule({
-				declarations: [ PageAutocloseComponent, mockPipe({ name: 'translate' }) ],
-				schemas: [ NO_ERRORS_SCHEMA ],
+				declarations: [PageAutocloseComponent, mockPipe({ name: 'translate' })],
+				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceMock },
@@ -195,6 +242,49 @@ describe('PageAutocloseComponent', () => {
 	it('should create component', () => {
 		expect(component).toBeTruthy();
 	});
+
+	it(
+		'should show app list',
+		fakeAsync(() => {
+			gamingAutoCloseServiceMock.getAppsAutoCloseList.and.returnValue(Promise.resolve(sampleAutoCloseList));
+			gamingAutoCloseServiceMock.setAutoCloseListCache
+				.withArgs(sampleAutoCloseList.processList)
+				.and.returnValue();
+			component.refreshAutoCloseList();
+			tick(20);
+			expect(component.autoCloseAppList).toBeDefined();
+			expect(component.autoCloseAppList.length).toBeGreaterThan(0);
+		})
+	);
+
+	it(
+		'should remove a app',
+		fakeAsync(() => {
+			component.autoCloseAppList = sampleAutoCloseList.processList;
+			fixture.detectChanges();
+			gamingAutoCloseServiceMock.delAppsAutoCloseList.and.returnValue(Promise.resolve(true));
+			gamingAutoCloseServiceMock.setAutoCloseListCache
+				.withArgs(sampleAutoCloseList.processList)
+				.and.returnValue();
+			component.deleteAppFromList('Google Chrome');
+			tick(20);
+			expect(component.autoCloseAppList).toBeDefined();
+			expect(component.autoCloseAppList.length).toEqual(3);
+		})
+	);
+
+	it(
+		'should not remove a app',
+		fakeAsync(() => {
+			component.autoCloseAppList = sampleAutoCloseList.processList;
+			fixture.detectChanges();
+			gamingAutoCloseServiceMock.delAppsAutoCloseList.and.returnValue(Promise.resolve(false));
+			component.deleteAppFromList('Google Chrome');
+			tick(20);
+			expect(component.autoCloseAppList).toBeDefined();
+			expect(component.autoCloseAppList.length).toEqual(4);
+		})
+	);
 
 	it(
 		'toggleStatus should change change when jsbridge returns true',
@@ -255,6 +345,19 @@ describe('PageAutocloseComponent', () => {
 			tick(10);
 			expect(component.showAppsModal).toEqual(true);
 			expect(component.showTurnOnModal).toEqual(false);
+		})
+	);
+
+	it(
+		'should show running app list',
+		fakeAsync(() => {
+			gamingAutoCloseServiceMock.getAppsAutoCloseRunningList.and.returnValue(
+				Promise.resolve(sampleRunningAppList)
+			);
+			component.refreshRunningList();
+			tick(20);
+			expect(component.runningList).toBeDefined();
+			expect(component.runningList.length).toBeGreaterThan(0);
 		})
 	);
 });

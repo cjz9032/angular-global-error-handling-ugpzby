@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class HomeSecurityNotifications {
 	// notification: CHSNotifications;
 	notificationItem: NotificationItem[];
-	constructor(private translateService: TranslateService, notification?: CHSNotifications) {
+	constructor(translateService: TranslateService, notification?: CHSNotifications) {
 		this.notificationItem = [];
 		if (!notification || !notification.value) { return; }
 		notification.value.forEach(value => {
@@ -50,7 +50,7 @@ export class HomeSecurityNotifications {
 				title,
 				notificationDetail: value.content.content,
 				date: this.getTime(value.time)
-			}, this.translateService));
+			}, translateService));
 		});
 	}
 

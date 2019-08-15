@@ -2,8 +2,6 @@ import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
-import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
-import { GuardService } from '../services/guard/security-guardService.service';
 
 const routes: Routes = [
 

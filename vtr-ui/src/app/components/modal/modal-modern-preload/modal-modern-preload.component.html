@@ -1,0 +1,182 @@
+<div class="modal-body vtr-modal-modern-preload" [class.page-app]="page != PageNames.LOADING" [ngSwitch]="page">
+	<div role="button" class="close-btn" [class.show]="page != PageNames.LOADING" aria-hidden="true" vtrMetrics
+		metricsItem="ModernPreload.closeButton" metricsEvent="FeatureClick" metricsParent="Modern Preload"
+		id="modern-preload-close-button" attr.aria-label="modern-preload-close-button" (click)="closeModal()">
+		<img [src]=" '/assets/icons/Close-white.svg' | svgInline | async" alt="" srcset="">
+	</div>
+	<div class="content" *ngSwitchCase="PageNames.LOADING">
+		<div class="loading-page">
+			<div class="loading-content" #loadingImg [style.height.px]="loadingImg.clientWidth * 115 / 386">
+				<img src="/assets/images/modern-preload/img_modern_preload_loading_386x115_200.jpg" />
+			</div>
+			<div class="spinner-content w-100 text-center">
+				<div class="spinner-border text-primary progress-spinner" role="status"></div>
+			</div>
+			<div class="loading-text">Please wait while we prepare a list of the software that was included in the
+				purchase of your device.</div>
+		</div>
+		<div class="pre-load-img">
+			<img src="/assets/images/modern-preload/failed.png" />
+			<img src="/assets/images/modern-preload/img_modern_preload_landing_page_735x165_200.jpg" />
+		</div>
+	</div>
+	<div class="content" *ngSwitchCase="PageNames.APP">
+		<div class="app-page">
+			<div class="landing-content">
+				<div class="title-box">
+					<div class="title">My Software</div>
+					<div class="sub-title">
+						Download and install software that was included in the purchase of your device.
+					</div>
+				</div>
+			</div>
+			<div class="app-content">
+				<div class="description">
+					Click download below to redeem software that was purchased with your device.
+					If at any time you need to download your software again,
+					you can do so by clicking the My Software button in the Vantage menu.
+				</div>
+				<div class="row no-gutters" *ngIf="appList">
+					<div class="col-12 col-md-6 app-item" *ngFor="let app of appList">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" [(ngModel)]="app.isChecked"
+								id="modern-preload-app-{{app.udcId}}"
+								[disabled]="downloadButtonStatus === downloadButtonStatusEnum.DOWNLOADING"
+								attr.aria-label="modern-preload-app-{{app.udcId}}" (change)="checkedApp()" />
+							<label class="custom-control-label" for="modern-preload-app-{{app.udcId}}">
+								<div class="app-logo">
+									<img [src]="app.thumbnail" />
+								</div>
+							</label>
+						</div>
+
+						<div class="item-info" [ngSwitch]="app.showStatus">
+							<b>{{ app.title }}</b>
+							<div class="status-box download_available" *ngSwitchCase="statusEnum.NOT_INSTALL">
+								<img class="status-icon" id="modern-preload-app-icon-{{app.udcId}}"
+									[src]="'/assets/images/modern-preload/img_my_software_download_available.svg' | svgInline | async" />
+								<div class="status-text">Download Available</div>
+							</div>
+							<div class="status-box download_complete" *ngSwitchCase="statusEnum.DOWNLOAD_COMPLETE">
+								<img class="status-icon" id="modern-preload-app-icon-{{app.udcId}}"
+									[src]="'/assets/images/modern-preload/img_my_software_green_check.svg' | svgInline | async" />
+								<div class="status-text">Download Complete</div>
+							</div>
+							<!-- <div class="status-box download_installing" *ngSwitchCase="statusEnum.INSTALLING">
+								<img class="status-icon" id="modern-preload-app-icon-{{app.udcId}}"
+									[src]="'/assets/images/modern-preload/img_my_software_green_check.svg' | svgInline | async" />
+								<div class="status-text">Installing</div>
+							</div> -->
+							<div class="status-box failed-install" *ngSwitchCase="statusEnum.FAILED_INSTALL">
+								<img class="status-icon" id="modern-preload-app-icon-{{app.udcId}}"
+									[src]="'/assets/images/modern-preload/img_my_software_failed_install.svg' | svgInline | async" />
+								<div class="status-text">Failed Install</div>
+							</div>
+							<div class="status-box installed" *ngSwitchCase="statusEnum.INSTALLED">
+								<img class="status-icon" id="modern-preload-app-icon-{{app.udcId}}"
+									[src]="'/assets/images/modern-preload/img_my_software_green_check.svg' | svgInline | async" />
+								<div class="status-text">Installed</div>
+							</div>
+							<div class="status-box downloading" *ngSwitchCase="statusEnum.DOWNLOADING">
+								<div class="downloading-text">{{ app.progress }}% downloading</div>
+								<div class="progress-box w-100">
+									<ngb-progressbar type="success" [value]="app.progress" [height]="'0.8rem'">
+									</ngb-progressbar>
+								</div>
+							</div>
+							<div>{{ app.company }}</div>
+							<div>Size: {{ app.size }}</div>
+							<div>Version: {{ app.version }}</div>
+						</div>
+					</div>
+				</div>
+				<div class="button-content mb-4">
+					<div class="btn-box mr-5" [ngSwitch]="downloadButtonStatus">
+						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.DOWNLOAD"
+							(onClick)="installEntitledApp()" metricsEvent="FeatureClick" metricsParent="Modern Preload"
+							metricsItem="btn.Download" [isFullWidth]="true" [isDisabled]="checkedAppList.length === 0"
+							[label]="'Download'">
+						</vtr-ui-button>
+						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.RESTART_DOWNLOAD"
+							(onClick)="installEntitledApp()" metricsEvent="FeatureClick" metricsParent="Modern Preload"
+							metricsItem="btn.RestartDownload" [isFullWidth]="true"
+							[isDisabled]="checkedAppList.length === 0" [label]="'Restart Download'">
+						</vtr-ui-button>
+						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.DOWNLOADING" [isFullWidth]="true"
+							[isDisabled]="true" [label]="'Downloading...'">
+						</vtr-ui-button>
+					</div>
+					<a *ngIf="downloadButtonStatus !== downloadButtonStatusEnum.DOWNLOADING" vtrMetrics
+						metricsItem="ModernPreload.skipButton" metricsEvent="FeatureClick"
+						metricsParent="Modern Preload" id="modern-preload-skip-button"
+						attr.aria-label="modern-preload-skip-button" href="javascript:;" class="btn-skip"
+						(click)="closeModal()">
+						Skip
+					</a>
+					<a *ngIf="downloadButtonStatus === downloadButtonStatusEnum.DOWNLOADING" vtrMetrics
+						metricsItem="ModernPreload.CancelButton" metricsEvent="FeatureClick"
+						metricsParent="Modern Preload" id="modern-preload-cancel-button"
+						attr.aria-label="modern-preload-cancel-button" href="javascript:;" class="btn-skip"
+						(click)="cancel()">
+						Cancel
+					</a>
+				</div>
+				<div class="bottom-tips" *ngIf="!isAppInstallError">
+					<p>Note: After clicking Download, you may get a prompt from Windows to allow us to install the
+						software on your device. Once finished installing your apps will show up automatically on your
+						desktop or start menu.</p>
+					<p>You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage
+						during installation.</p>
+				</div>
+				<div class="bottom-tips" *ngIf="isAppInstallError">
+					<p>Alert: Something went wrong during the download or installation. Please make sure you are
+						connected to the internet and retry.
+						Remember to keep Vantage open while we install your software. You may close the My Software page
+						and continue to explore
+						Vantage or minimize Vantage while we complete your software installation.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content" *ngSwitchCase="PageNames.ERROR">
+		<div class="app-page">
+			<div class="landing-content">
+				<div class="title-box">
+					<div class="title">My Software</div>
+					<div class="sub-title">
+						Download and install software that was included in the purchase of your device.
+					</div>
+				</div>
+			</div>
+			<div class="error-content">
+				<div class="d-flex">
+					<div class="error-icon">
+						<img
+							[src]="'/assets/images/modern-preload/failed.png'" />
+					</div>
+					<div class="error-box w-100 pt-2">
+						<div class="description mb-2">
+							Sorry, there was a problem retrieving the software download information.
+						</div>
+						<div class="bottom-tips mb-5">Try clicking on the "Retry" button below or try again later by
+							clicking on the "My Software" button in the Vantage menu.</div>
+						<div class="button-content mb-4">
+							<div class="btn-box mr-5">
+								<vtr-ui-button (onClick)="retry()" metricsEvent="FeatureClick"
+									metricsParent="Modern Preload" metricsItem="btn.Retry" [isFullWidth]="true"
+									[label]="'Retry'">
+								</vtr-ui-button>
+							</div>
+							<a vtrMetrics metricsItem="ModernPreload.skipButton" metricsEvent="FeatureClick"
+								metricsParent="Modern Preload" id="modern-preload-skip-button"
+								attr.aria-label="modern-preload-skip-button" href="javascript:;" class="btn-skip"
+								(click)="closeModal()">
+								Skip
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

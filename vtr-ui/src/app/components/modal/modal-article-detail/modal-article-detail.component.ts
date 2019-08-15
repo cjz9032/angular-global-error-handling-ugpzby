@@ -4,11 +4,13 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { ActivatedRoute } from '@angular/router';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
 	templateUrl: './modal-article-detail.component.html',
-	styleUrls: ['./modal-article-detail.component.scss']
+	styleUrls: ['./modal-article-detail.component.scss'],
+	providers: [TimerService]
 })
 export class ModalArticleDetailComponent implements OnInit {
 	articleId: string;
@@ -26,7 +28,8 @@ export class ModalArticleDetailComponent implements OnInit {
 		vantageShellService: VantageShellService,
 		private activatedRoute: ActivatedRoute,
 		private sanitizer: DomSanitizer,
-		private element: ElementRef
+		private element: ElementRef,
+		private timerService: TimerService,
 	) {
 		this.metricClient = vantageShellService.getMetrics();
 		this.metricsParent = this.getPageName(activatedRoute) + '.Article';
@@ -56,6 +59,8 @@ export class ModalArticleDetailComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+
+		this.timerService.start();
 	}
 
 	private getPageName(activatedRoute: ActivatedRoute) {
@@ -88,7 +93,7 @@ export class ModalArticleDetailComponent implements OnInit {
 				ItemID: this.articleId,
 				ItemParent: this.metricsParent,
 				ItemCategory: this.articleCategory,
-				Duration: (new Date().getTime() - this.enterTime) / 1000,
+				Duration: this.timerService.stop(),
 				DocReadPosition: Math.round(((modalElement.scrollTop + window.innerHeight) / modalElement.scrollHeight) * 20),
 				MediaReadPosition: 0
 			};
