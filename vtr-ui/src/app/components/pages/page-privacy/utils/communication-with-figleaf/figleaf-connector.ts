@@ -13,7 +13,7 @@ const PACKAGE_FAMILY_NAME = 'Lenovo.FigLeaf_e83k4pgknp69a';
 var onConnectListeners = [];
 var onDisconnectListeners = [];
 var reconnectTimer = null;
-const RECONNECT_TIMEOUT = 10000;
+var RECONNECT_TIMEOUT = 1000;
 var connection = null;
 var serviceClosedCount = 0;
 
@@ -64,6 +64,7 @@ class FigleafConnector {
 					cb();
 				});
 				serviceClosedCount = 0;
+				RECONNECT_TIMEOUT = 1000
 			} else {
 				connection = null;
 				this.disconnectFromFigleaf();
@@ -90,6 +91,9 @@ class FigleafConnector {
 		}
 		clearTimeout(reconnectTimer);
 		reconnectTimer = setTimeout(() => {
+			if (RECONNECT_TIMEOUT < 10000) {
+				RECONNECT_TIMEOUT += 3000;
+			}
 			this.connect();
 		}, RECONNECT_TIMEOUT);
 	}
