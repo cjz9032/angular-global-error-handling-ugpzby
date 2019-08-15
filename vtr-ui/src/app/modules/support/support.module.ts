@@ -21,6 +21,10 @@ import { faTicketAlt } from '@fortawesome/pro-light-svg-icons/faTicketAlt';
 import { faBriefcase } from '@fortawesome/pro-light-svg-icons/faBriefcase';
 import { faHeart as falHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { CommonPipeModule } from '../common/common-pipe.module';
+import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
+import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
+import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 library.add(faBook);
@@ -36,6 +40,9 @@ library.add(falHeart);
 		PageSupportComponent,
 		UIArticleItemComponent,
 		ContainerArticleComponent,
+		ModalLicenseComponent,
+		ModalAboutComponent,
+		ModalFindUsComponent,
 	],
 	imports: [
 		CommonModule,
@@ -45,11 +52,15 @@ library.add(falHeart);
 		CommonWidgetModule,
 		SharedModule,
 		WidgetOfflineModule,
+		NgbModalModule
 	],
 	providers: [
 		SupportService,
 	],
 	entryComponents: [
+		ModalLicenseComponent,
+		ModalAboutComponent,
+		ModalFindUsComponent,
 	]
 })
 export class SupportModule { }

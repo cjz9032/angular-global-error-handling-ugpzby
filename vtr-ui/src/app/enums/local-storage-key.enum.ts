@@ -35,6 +35,7 @@ export enum LocalStorageKey {
 	LidStarterAccount = '[LocalStorageKey] LidStarterAccount',
 	LidFirstSignInDate = '[LocalStorageKey] LidFirstSignInDate',
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
+	LidSsoDevMode = '[LocalStorageKey] LidSsoDevMode',
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
 	CurrentThermalModeFeature = '[LocalStorageKey] CurrentThermalModeFeature',
@@ -120,7 +121,6 @@ export enum LocalStorageKey {
 	isSystemDisk = '[LocalStorageKey] isSystemDisk',
 	usedDisk = '[LocalStorageKey] usedDisk',
 
-
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
 	MacroKeyStatus = '[LocalStorageKey] MacroKeyStatus',
@@ -153,6 +153,7 @@ export enum LocalStorageKey {
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
-
+	UPEUserID = '[LocalStorageKey] UPEUserID',
+	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
 	BetaUser = '[LocalStorageKey] BetaUser'
 }

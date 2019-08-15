@@ -96,7 +96,7 @@
                     "systenTooltip": "قم بتمرير الماوس فوق CPU/GPU/RAM ومحركات الأقراص المختلفة لإظهار أوصافها بما في ذلك معلومات التصنيع والطراز"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "الإعدادات السريعة"
                 }
             }
         },
@@ -146,16 +146,16 @@
                 },
                 "recorded": {
                     "title": "مفتاح الماكرو لـ ",
-                    "deleteKey": "مفتاح Delete",
+                    "deleteKey": "Delete",
                     "clear": "مسح",
                     "intervalStatus": {
                         "keep": {
                             "title": "المحافظة على التأخير",
-                            "description": "ستتم المحافظة على الفواصل الزمنية بين إجراءات المفاتيح وسيتم تطبيقها عند استخدام مفتاح الماكرو هذا."
+                            "description": "ستتم المحافظة على الفواصل الزمنية بين إجراءات المفاتيح وسيتم تطبيقها عند استخدام مفتاح الماكرو هذا"
                         },
                         "ignore": {
                             "title": "تجاهل التأخير",
-                            "description": "سيتم تجاهل الفواصل الزمنية بين إجراءات المفاتيح."
+                            "description": "سيتم تجاهل الفواصل الزمنية بين إجراءات المفاتيح"
                         }
                     },
                     "repeatStatus": {
@@ -371,38 +371,42 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "إغلاق تلقائي",
+            "introLine": "إضافة تطبيقات تُغلق عند بدء تشغيل لعبة. سيقوم ذلك بتحرير الموارد غير المستخدمة لتحسين الأداء الخاص بالألعاب لأقصى حد. ملاحظة: تعمل هذه الميزة على إغلاق التطبيق تمامًا. لذا احرص دائمًا على حفظ عملك.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "هل تريد تشغيل الإغلاق التلقائي؟",
+                "body": "سيتم إغلاق التطبيقات التي أضفتها عند اللعب، مما يؤدي إلى تحرير الموارد للعب.",
+                "checkedTitle": "عدم السؤال مرة أخرى",
+                "btnConfirm": "تشغيل",
+                "btnCancel": "ليس الآن"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "إضافة تطبيقات للإغلاق التلقائي",
+                "body": "ستظهر التطبيقات قيد التشغيل فقط في القائمة أدناه."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "إضافة",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "لا توجد تطبيقات قيد التشغيل لإضافتها",
+                "body": "ستظهر التطبيقات قيد التشغيل حاليًا فقط. يُرجى تشغيل تطبيق تريد إضافته والمحاولة مجددًا."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "تعزيز الشبكة",
+            "introLine": "تعزيز الشبكة يعيّن أولوية الألعاب إلى أعلى مستوى في شبكتك، يزيد السرعة إلى أقصى حد. إذا كنت تستخدم تطبيقًا أثناء اللعب، مثل Twitch أو Discord، فمن المستحسن أن تضيفه أدناه لكي يتلقى هو أيضًا الأولوية على شبكتك.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "هل تريد تشغيل تعزيز الشبكة؟",
+                "body": "هل تريد تشغيل تعزيز الشبكة؟ ستشارك التطبيقات التي أضفتها المزيد من الشبكات عند تشغيلها.",
+                "checkedTitle": "عدم السؤال مرة أخرى",
+                "btnConfirm": "تشغيل",
+                "btnCancel": "ليس الآن"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "title": "إضافة تطبيقات إلى تعزيز الشبكة",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "جهد البطارية غير صحيح",
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لزيادة المدى العمري للبطارية، يجب تعيين البطارية بحيث يتوقف شحنها عند وصول الشحن إلى {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "انظر التفاصيل"
             },
             "power": {
                 "title": "الطاقة",
@@ -851,7 +855,7 @@
                         "title": "وضع الطاقة في الطائرة",
                         "description": "تمكّن من حماية مأخذ طاقة التيار المتردد في الطائرة عبر التحكم في استهلاك الطاقة في النظام.عند تمكين وضع الطاقة في الطائرة‬، يخفض الكمبيوتر استهلاك الطاقة من خلال الحد من سرعة شحن البطارية وأداء النظام.",
                         "checkBoxDesc": "الكشف التلقائي",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "إذا تم اختيار ميزة \"الكشف التلقائي\"، فسيقوم الكمبيوتر بتشغيل وضع الطاقة في الطائرة تلقائيًا عندما يكتشف بيئة متن الطائرة ويغلقه عند مغادرة هذه البيئة."
                     }
                 },
                 "energyStar": {
@@ -990,7 +994,7 @@
                             "warm": "دافئ (أفضل للعيون)",
                             "cold": "بارد"
                         },
-                        "reset": "إعادة تعيين درجة الحرارة",
+                        "reset": "إعادة تعيين",
                         "tooltip": "يقوم وضع العناية بالعين بضبط درجة حرارة ألوان جهاز العرض لتصفية الضوء الأزرق وتقليل إجهاد العين.",
                         "onSunsetToSunriseScheduleDescription": "جدولة وضع العناية بالعين من غروب الشمس حتى شروقها",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "دافئ (أفضل للعيون)",
                             "cold": "بارد"
                         },
-                        "reset": "إعادة تعيين درجة الحرارة",
+                        "reset": "إعادة تعيين",
                         "tooltip": "يقوم وضع العناية بالعين بضبط درجة حرارة ألوان جهاز العرض لتصفية الضوء الأزرق وتقليل إجهاد العين.",
                         "onSunsetToSunriseScheduleDescription": "جدولة وضع العناية بالعين من غروب الشمس حتى شروقها",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "الكاميرا",
                         "tooltip": "انقر هنا لإعادة تعيين خصائص الكاميرا إلى الإعدادات الافتراضية.",
-                        "reset": "إعادة تعيين إلى إعدادات المصنع"
+                        "reset": "إعادة تعيين"
                     },
                     "brightness": "السطوع",
                     "contrast": "التباين",
@@ -1206,14 +1210,14 @@
                     "description1": "تعتمد هذه الميزة على Windows Hello. تأكد من تشغيل ميزة التعرف على الوجوه في إعدادات Windows.",
                     "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك. ومع ذلك، فإن الميزة لا تجمع أي بيانات شخصية.",
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
-                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة \"تسجيل الدخول من دون لمس\".",
+                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
                     "screenTimeoutSettings": "إعدادات مهلة الذهاب إلى الشاشة"
                 },
-                "resetToDefault": "إعادة تعيين إلى الإعدادات الافتراضية"
+                "resetToDefault": "إعادة تعيين"
             },
             "intelligentScreen": {
                 "title": "شاشة ذكية",
@@ -1443,7 +1447,12 @@
         "title": "أمان المنزل المتصل",
         "notification": {
             "recent": "إعلامات الأمان الأخيرة",
-            "notifications": "الإعلامات"
+            "notifications": "الإعلامات",
+            "unsafeNetworkConnection": "اتصال الشبكة غير آمن",
+            "networkUnsafe": "الشبكة غير آمنة",
+            "deviceDisconnected": "تم قطع اتصال الجهاز",
+            "newDeviceDetected": "تم اكتشاف جهاز جديد",
+            "unsafeDeviceDetected": "تم اكتشاف جهاز غير آمن"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "حماية النظام البيئي جهازك",
@@ -2250,5 +2259,124 @@
         "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
+    },
+    "hardwareScan": {
+        "name": "فحص الأجهزة",
+        "title": "إجراء فحص لمكونات الجهاز",
+        "subtitle": "الرجاء الانتظار، إذ يتم إجراء فحص لمكونات الجهاز",
+        "quickScan": "فحص سريع",
+        "finalResultCode": "رمز النتيجة النهائية",
+        "resultCode": "رمز النتيجة",
+        "cancel": "إلغاء",
+        "complete": "كامل",
+        "incomplete": "غير مكتمل",
+        "loadingComponents": "جارٍ تحميل المكونات",
+        "hardwareComponents": "مكونات الجهاز",
+        "loadingDevices": "جارٍ تحميل الجهاز",
+        "select": "تحديد",
+        "deselect": "إلغاء تحديد",
+        "allOptions": "كل الخيارات",
+        "latestResult": "آخر نتيجة",
+        "back": "السابق",
+        "viewResults": "عرض النتائج",
+        "save": "حفظ",
+        "details": "التفاصيل",
+        "recurrence": "تكرار",
+        "interval": "فاصل زمني",
+        "time": "الوقت",
+        "type": "النوع",
+        "hours": "ساعات",
+        "minutes": "دقائق",
+        "am": "صباحًا",
+        "pm": "مساءً",
+        "previousResult": "النتائج السابقة",
+        "lastScanOn": "آخر فحص في",
+        "result": "النتيجة",
+        "viewDetailsLog": "عرض سجل التفاصيل",
+        "ok": "موافق",
+        "notOk": "ليس كما يرام",
+        "notScanned": "لم يتم الفحص",
+        "pass": "نجاح",
+        "fail": "فشل",
+        "cancelled": "تم الإلغاء",
+        "warning": "تحذير",
+        "errorResult": "رجاء، يلزمك اختيار اختبار لإجرائه.",
+        "buy": "شراء الآن",
+        "errorDeviceChoose": "رجاءً، يلزمك اختيار جهاز لتشغيله.",
+        "errorNoOptionSelected": "رجاءً، أنت بحاجة لتحديد خيار.",
+        "offline": "هذا الجهاز يعمل في وضع عدم الاتصال، يرجى الاتصال بالإنترنت",
+        "customize": {
+            "name": "تخصيص",
+            "test": "تخصيص اختبار",
+            "description": "حدد الخيار أدناه لتخصيص اختبارك",
+            "runTests": "إجراء اختبارات محددة"
+        },
+        "scheduledScan": {
+            "name": "جدولة فحص",
+            "title": "جدولة الفحص الخاص بك",
+            "newScan": "جدولة فحص جديد",
+            "fullScan": "فحص شامل",
+            "onlyOnce": "مرة واحدة فقط",
+            "eachDay": "كل يوم",
+            "eachWeek": "كل أسبوع",
+            "eachMonth": "كل شهر",
+            "eachYear": "كل عام",
+            "schedule": "جدولة",
+            "date": "التاريخ",
+            "pickDate": "اختر تاريخًا",
+            "scanScheduled": "تمت جدولة فحص مكونات الجهاز!",
+            "description": "كان من المقرر بالفعل إجراء فحص آخر في نفس الوقت والتاريخ!",
+            "error": "خطأ",
+            "delete": "حذف",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "استعادة القطاعات المصابة",
+            "description": "أداة Lenovo لاكتشاف القطاعات المصابة على القرص وعلاجها",
+            "goTo": "الانتقال إلى استعادة القطاعات المصابة",
+            "localDevices": "أجهزة محلية",
+            "numberSectors": "تمت قراءة بعض القطاعات",
+            "numberBadSectors": "تم العثور على بعض القطاعات",
+            "numberFixedSectors": "عدد القطاعات التم تمت معالجتها",
+            "numberNonFixedSectors": "عدد القطاعات التي لم تتم معالجتها",
+            "status": "حالة العملية",
+            "elapsedTime": "الوقت المنقضي",
+            "hours": "ساعات",
+            "hour": "ساعة",
+            "minutes": "دقائق",
+            "minute": "دقيقة",
+            "seconds": "ثوانٍ",
+            "second": "ثانية",
+            "moreInfo": "الرجاء الانتظار، إذ تتم استعادة القطاعات المصابة الآن",
+            "systemEvent": "تم إيقاف الاختبار بسبب وقوع حدث في النظام قد يؤثر سلبًا على النتيجة.",
+            "systemPasswordProtected": "قد يكون الجهاز محميًا بكلمة مرور. حاول تعطيل الحماية بكلمة مرور.",
+            "popup": {
+                "description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
+                "yes": "نعم",
+                "no": "لا"
+            }
+        },
+        "support": {
+            "title": "تنزيل أدوات تشخيص احترافية",
+            "subtitle": "دعم Lenovo"
+        },
+        "eTicket": {
+            "header": "تم اكتشاف مشكلة في مكونات الجهاز.",
+            "problemDetected": "بعد فحص مكونات الجهاز تبين وجود مشكلة في المكونات التالية للكمبيوتر",
+            "ticketRequestQuestion": "يمكن لشركة Lenovo أن تُرسل قطعة غيار إذا كان جهاز الكمبيوتر يخضع للضمان. هل تريد فتح تذكرة لاستبدال مكون الجهاز وحل المشكلة؟",
+            "openTicket": "فتح تذكرة"
+        },
+        "battery": {
+            "title": "تمكين حد شحن البطارية",
+            "description": "يؤدي تمكين شحن البطارية المخصص إلى أن تدوم سلامة البطارية أطول من ذي قبل أثناء استخدامك لهذا الجهاز. على الرغم من ذلك، سيؤدي عدم الشحن بشكل كامل إلى تقليل فترة تشغيل البطارية. وحتى يتسنى لك تمكين هذه الميزة بشكل كامل، افصل الطاقة عن الجهاز، ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
+            "enable": "تمكين"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
     }
 }

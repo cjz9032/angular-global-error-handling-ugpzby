@@ -96,7 +96,7 @@
                     "info": "INFORMACIJE"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Hitre nastavitve"
                 }
             }
         },
@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "MAKRO TIPKA ZA ",
-                    "deleteKey": "Tipka Delete",
+                    "deleteKey": "Delete",
                     "clear": "Izbriši",
                     "intervalStatus": {
                         "keep": {
@@ -371,38 +371,42 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "addAppsButton": "Add",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Samodejno zapiranje",
+            "addAppsButton": "Dodaj",
+            "introLine": "Dodajte aplikacije, ki naj se zaprejo ob zagonu igre. To sprosti neuporabljene vire za izboljšano igranje. OPOMBA: Ta funkcija povsem zapre aplikacijo. Zato se vedno prepričajte, da ste shranili svoje delo.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Želite vklopiti samodejno zapiranje?",
+                "body": "Aplikacije, ki ste jih dodali, se bodo zaprle med igranjem in tako sprostile vire za igranje.",
+                "checkedTitle": "Ne sprašuj več",
+                "btnConfirm": "Vklop",
+                "btnCancel": "Ne zdaj"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Dodaj aplikacije v samodejno zapiranje",
+                "body": "Na spodnjem seznamu bodo prikazane samo aplikacije, ki se trenutno izvajajo."
             },
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Ni aplikacij, ki bi jih bilo mogoče dodati",
+                "body": "Prikazane bodo samo aplikacije, ki se trenutno izvajajo. Zaženite aplikacijo, ki jo želite dodati, in se vrnite."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Omrežna pospešitev",
+            "introLine": "Če omogočite omrežno pospešitev, v omrežju samodejno nastavite najvišjo prioriteto iger za višjo hitrost. Če med igranjem uporabljate aplikacije, kot je Twitch ali Discord, priporočamo, da jih dodate na spodnji seznam, tako da bodo v omrežju obravnavane prednostno.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Ali želite vklopiti omrežno pospešitev?",
+                "body": "Ali želite vklopiti omrežno pospešitev? Aplikacije, ki jih dodate, med izvajanjem delijo več omrežja.",
+                "checkedTitle": "Ne sprašuj več",
+                "btnConfirm": "Vklop",
+                "btnCancel": "Ne zdaj"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "title": "Dodaj aplikacije v omrežno pospešitev",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Napačna napetost baterije",
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{value}}% napolnjenosti.",
-                "seeDetailsLink": "See details"
+                "seeDetailsLink": "Prikaži podrobnosti"
             },
             "power": {
                 "title": "Napajanje",
@@ -851,7 +855,7 @@
                         "title": "Način porabe za letalo",
                         "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema.Če je omogočen način porabe za letalo, računalnik zmanjša porabo energije z omejevanjem hitrosti polnjenja baterije in učinkovitosti delovanja sistema.",
                         "checkBoxDesc": "Samodejno zaznavanje",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Če je označeno potrditveno polje za samodejno zaznavanje, bo računalnik samodejno vklopil način porabe za letalo, ko zazna, da ste v letalu, in ga izklopil, ko se izkrcate."
                     }
                 },
                 "energyStar": {
@@ -990,7 +994,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Ponastavitev temperature",
+                        "reset": "Ponastavitev",
                         "tooltip": "Očem prijazen način prilagodi barvno temperaturo zaslona, tako da filtrira modro svetlobo in zmanjša utrujenost oči.",
                         "onSunsetToSunriseScheduleDescription": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Toplo (bolje za oči)",
                             "cold": "Hladno"
                         },
-                        "reset": "Ponastavitev temperature",
+                        "reset": "Ponastavitev",
                         "tooltip": "Očem prijazen način prilagodi barvno temperaturo zaslona, tako da filtrira modro svetlobo in zmanjša utrujenost oči.",
                         "onSunsetToSunriseScheduleDescription": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kliknite tukaj za ponastavitev lastnosti kamere na privzete nastavitve.",
-                        "reset": "Ponastavitev na tovarniške nastavitve"
+                        "reset": "Ponastavitev"
                     },
                     "brightness": "Svetlost",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Odprite nastavitve Windows Hello",
                     "screenTimeoutSettings": "Odprite nastavitve časa za izklop zaslona"
                 },
-                "resetToDefault": "PONASTAVITEV NA PRIVZETE NASTAVITVE"
+                "resetToDefault": "Ponastavitev"
             },
             "intelligentScreen": {
                 "title": "Inteligentni zaslon",
@@ -1443,7 +1447,12 @@
         "title": "Povezana domača varnost",
         "notification": {
             "recent": "Nedavna varnostna obvestila",
-            "notifications": "Obvestila"
+            "notifications": "Obvestila",
+            "unsafeNetworkConnection": "Omrežna povezava, ki ni varna",
+            "networkUnsafe": "Omrežje, ki ni varno",
+            "deviceDisconnected": "Naprava odklopljena",
+            "newDeviceDetected": "Zaznana je nova naprava",
+            "unsafeDeviceDetected": "Zaznana je naprava, ki ni varna"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Zaščita ekosistema naprave",
@@ -2250,5 +2259,124 @@
         "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
         "Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
+    },
+    "hardwareScan": {
+        "name": "Pregled strojne opreme",
+        "title": "Izvedba pregleda strojne opreme",
+        "subtitle": "Počakajte, medtem ko se izvaja pregled strojne opreme",
+        "quickScan": "Hitri pregled",
+        "finalResultCode": "Končne koda rezultatov",
+        "resultCode": "Koda rezultata",
+        "cancel": "Prekliči",
+        "complete": "Končano",
+        "incomplete": "Nezaključeno",
+        "loadingComponents": "Nalaganje komponent",
+        "hardwareComponents": "Komponente strojne opreme",
+        "loadingDevices": "Nalaganje naprav",
+        "select": "Izbira",
+        "deselect": "Prekliči izbiro",
+        "allOptions": "Vse možnosti",
+        "latestResult": "Zadnji rezultat",
+        "back": "NAZAJ",
+        "viewResults": "Ogled rezultatov",
+        "save": "Shrani",
+        "details": "Podrobnosti",
+        "recurrence": "Ponavljanje",
+        "interval": "Razmik",
+        "time": "Ura",
+        "type": "Vrsta",
+        "hours": "h",
+        "minutes": "min",
+        "am": "AM",
+        "pm": "PM",
+        "previousResult": "Prejšnji rezultati",
+        "lastScanOn": "Zadnji pregled:",
+        "result": "Rezultat",
+        "viewDetailsLog": "Ogled dnevnika s podrobnostmi",
+        "ok": "V redu",
+        "notOk": "NI V REDU",
+        "notScanned": "NI PREGLEDANO",
+        "pass": "Uspešno",
+        "fail": "Neuspešno",
+        "cancelled": "Preklicano",
+        "warning": "Opozorilo",
+        "errorResult": "Izbrati morate preskus, ki ga želite zagnati.",
+        "buy": "Kupite zdaj",
+        "errorDeviceChoose": "Izbrati morate napravo, ki jo želite zagnati.",
+        "errorNoOptionSelected": "Izbrati morate eno od možnosti.",
+        "offline": "Ta naprava deluje brez povezave, vzpostavite internetno povezavo",
+        "customize": {
+            "name": "Prilagodi",
+            "test": "Prilagajanje preskusa",
+            "description": "Izberite spodnje možnosti in prilagodite preskus",
+            "runTests": "Zaženite izbrane preskuse"
+        },
+        "scheduledScan": {
+            "name": "Nastavitev časa pregleda",
+            "title": "Nastavite čas pregleda",
+            "newScan": "Nastavite čas novega pregleda",
+            "fullScan": "Popoln pregled",
+            "onlyOnce": "Samo enkrat",
+            "eachDay": "Vsak dan",
+            "eachWeek": "Vsak teden",
+            "eachMonth": "Vsak mesec",
+            "eachYear": "Vsako leto",
+            "schedule": "Urnik",
+            "date": "Datum",
+            "pickDate": "Izberite datum",
+            "scanScheduled": "Pregled strojne opreme je načrtovan!",
+            "description": "Ob isti uri in datumu je že načrtovan drug pregled.",
+            "error": "Napaka",
+            "delete": "Izbriši",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Obnovitev poškodovanih sektorjev",
+            "description": "Orodje Lenovo za odkrivanje in popravljanje poškodovanih sektorjev na disku",
+            "goTo": "Pojdi na obnovitev poškodovanih sektorjev",
+            "localDevices": "Lokalne naprave",
+            "numberSectors": "Število prebranih sektorjev",
+            "numberBadSectors": "Število najdenih poškodovanih sektorjev",
+            "numberFixedSectors": "Število popravljenih sektorjev",
+            "numberNonFixedSectors": "Število nepopravljenih sektorjev",
+            "status": "Stanje delovanja",
+            "elapsedTime": "Pretečeni čas",
+            "hours": "h",
+            "hour": "h",
+            "minutes": "min",
+            "minute": "min",
+            "seconds": "s",
+            "second": "s",
+            "moreInfo": "Počakajte, da se izvede obnovite poškodovanih sektorjev",
+            "systemEvent": "Preskus je bil preklican, ker je prišlo do sistemskega dogodka, ki bi lahko ogrozil rezultat.",
+            "systemPasswordProtected": "Naprava je morda zaščitena z geslom. Poskušajte onemogočiti zaščito z geslom.",
+            "popup": {
+                "description": "Izvajanje pregleda in popravila lahko povzroči izgubo podatkov. Priporočamo, da pred začetkom tega postopka izdelate varnostno kopijo. Ali ste prepričani, da želite nadaljevati?",
+                "yes": "Da",
+                "no": "Ne"
+            }
+        },
+        "support": {
+            "title": "Prenos profesionalnih diagnostičnih orodij",
+            "subtitle": "Lenovo Support"
+        },
+        "eTicket": {
+            "header": "Zaznana je težava s strojno opremo.",
+            "problemDetected": "Pregled strojne opreme je zaznal težavo s spodnjimi komponentami vašega računalnika",
+            "ticketRequestQuestion": "Družba Lenovo lahko pošlje nadomestni del, če je računalnik pod garancijo. Ali želite odpreti zahtevo za zamenjavo strojne opreme, da bi odpravili težavo",
+            "openTicket": "Odprta vozovnica"
+        },
+        "battery": {
+            "title": "Omogoči prag polnjenja baterije",
+            "description": "Če omogočite polnjenje baterije po meri, bo splošno stanje delovanja baterije pri uporabi te naprave trajalo dalj časa. Vendar pa dejstvo, da baterija ni povsem napolnjena, pomeni, da bo tudi njen čas delovanja krajši. Če želite to funkcijo omogočiti v celoti, odklopite računalnik in pustite, da se baterija izprazni do praga za ustavitev polnjenja ali pod njega.",
+            "enable": "Omogoči"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
     }
 }

@@ -96,7 +96,7 @@
                     "info": "INFO"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Rýchle nastavenia"
                 }
             }
         },
@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "KLÁVES MAKRA PRE ",
-                    "deleteKey": "Kláves Delete",
+                    "deleteKey": "Delete",
                     "clear": "Zmazať",
                     "intervalStatus": {
                         "keep": {
@@ -371,38 +371,42 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "addAppsButton": "Add",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Automatické zatvorenie",
+            "addAppsButton": "Pridať",
+            "introLine": "Pridajte aplikácie na zatvorenie pri hre. Na maximálny herný výkon uvoľnite nevyužité zdroje. POZNÁMKA: Táto funkcia úplne zatvorí aplikáciu. Preto sa vždy uistite, že ste si prácu uložili.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Zapnúť automatické zatvorenie?",
+                "body": "Aplikácie, ktoré ste pridali, sa ukončia, keď hráte hry, vďaka čomu sa uvoľnia prostriedky pre hranie hier.",
+                "checkedTitle": "Viac sa nepýtať",
+                "btnConfirm": "Zapnúť",
+                "btnCancel": "Teraz nie"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Pridať aplikácie na automatické zatvorenie",
+                "body": "V nasledujúcom zozname sa zobrazia iba spustené aplikácie."
             },
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Žiadne spustené aplikácie na pridanie",
+                "body": "Zobrazia sa iba práve spustené aplikácie. Spustite aplikáciu, ktorú chcete pridať a vráťte sa späť."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Zrýchlenie siete",
+            "introLine": "Zapnutie zvýšenia výkonu siete automaticky uprednostní hry v sieti s maximálnou rýchlosťou. Ak používate aplikácie pri hraní hier, napríklad Twitch alebo Discord, pridajte ich nižšie, aby mali prioritu aj v sieti.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Zapnúť zvýšenie výkonu siete?",
+                "body": "Zapnúť zvýšenie výkonu siete? Aplikácie, ktoré ste pridali, budú zdieľať väčšiu časť siete, keď budú spustené.",
+                "checkedTitle": "Viac sa nepýtať",
+                "btnConfirm": "Zapnúť",
+                "btnCancel": "Teraz nie"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
-                "body": "You can add up to 5 additional apps to boost(4 of 5 added)"
+                "title": "Pridať aplikácie na zvýšenie výkonu siete",
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -709,7 +713,7 @@
                 "voltageError": "Nesprávne napätie batérie",
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{value}}%.",
-                "seeDetailsLink": "See details"
+                "seeDetailsLink": "Zobraziť podrobnosti"
             },
             "power": {
                 "title": "Napájanie",
@@ -851,7 +855,7 @@
                         "title": "Režim napájania Lietadlo",
                         "description": "Ochrana elektrickej zásuvky lietadla ovládaním spotreby energie systémom.Keď je režim napájania Lietadlo zapnutý, počítač zníži spotrebu energie obmedzením intenzity nabíjania batérie a výkonu systému.",
                         "checkBoxDesc": "Automatické zisťovanie",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Ak je začiarknuté automatické zisťovanie a počítač zistí prostredie na palube lietadla, automaticky zapne režim napájania V lietadle, ktorý sa vypne, keď palubu lietadla opustíte."
                     }
                 },
                 "energyStar": {
@@ -990,7 +994,7 @@
                             "warm": "Teplé farby (lepšie pre oči)",
                             "cold": "Studené farby"
                         },
-                        "reset": "Vynulovať teplotu farieb",
+                        "reset": "Obnoviť predvolené",
                         "tooltip": "Režim na ochranu zraku automaticky upravuje teplotu farieb obrazovky odfiltrovaním spektra modrého svetla na zníženie únavy zraku.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovať režim na ochranu zraku medzi západom a východom slnka",
                         "note": {
@@ -1004,7 +1008,7 @@
                             "warm": "Teplé farby (lepšie pre oči)",
                             "cold": "Studené farby"
                         },
-                        "reset": "Vynulovať teplotu farieb",
+                        "reset": "Obnoviť predvolené",
                         "tooltip": "Režim na ochranu zraku automaticky upravuje teplotu farieb obrazovky odfiltrovaním spektra modrého svetla na zníženie únavy zraku.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovať režim na ochranu zraku medzi západom a východom slnka",
                         "note": {
@@ -1053,7 +1057,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Kliknite sem na obnovenie predvolených nastavení vlastností kamery.",
-                        "reset": "Obnovenie nastavení predvolených výrobcom"
+                        "reset": "Obnoviť predvolené"
                     },
                     "brightness": "Jas",
                     "contrast": "Kontrast",
@@ -1213,7 +1217,7 @@
                     "goToWindowsHello": "Prejsť na nastavenia služby Windows Hello",
                     "screenTimeoutSettings": "Prejdite na nastavenia časovača obrazovky"
                 },
-                "resetToDefault": "OBNOVIŤ PREDVOLENÉ NASTAVENIA"
+                "resetToDefault": "Obnoviť predvolené"
             },
             "intelligentScreen": {
                 "title": "Inteligentná obrazovka",
@@ -1443,7 +1447,12 @@
         "title": "Zabezpečenie prepojenej domácnosti",
         "notification": {
             "recent": "Posledné bezpečnostné oznámenia",
-            "notifications": "Oznámenia"
+            "notifications": "Oznámenia",
+            "unsafeNetworkConnection": "Nebezpečné sieťové pripojenie",
+            "networkUnsafe": "Nebezpečná sieť",
+            "deviceDisconnected": "Zariadenie sa odpojilo",
+            "newDeviceDetected": "Zistilo sa nové zariadenie",
+            "unsafeDeviceDetected": "Zistilo sa nebezpečné zariadenie"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Chráňte ekosystém svojho zariadenia",
@@ -2250,5 +2259,124 @@
         "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
         "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
+    },
+    "hardwareScan": {
+        "name": "Kontrola hardvéru",
+        "title": "Vykonať kontrolu hardvéru",
+        "subtitle": "Čakajte, kým sa vykonáva kontrola hardvéru",
+        "quickScan": "Rýchla kontrola",
+        "finalResultCode": "Konečný výsledný kód",
+        "resultCode": "Kód výsledku",
+        "cancel": "Zrušiť",
+        "complete": "Úplná",
+        "incomplete": "Nedokončené",
+        "loadingComponents": "Načítanie komponentov",
+        "hardwareComponents": "Hardvérové komponenty",
+        "loadingDevices": "Načítanie zariadení",
+        "select": "Vybrať",
+        "deselect": "Zrušiť výber",
+        "allOptions": "Všetky možnosti",
+        "latestResult": "Najnovší výsledok",
+        "back": "SPÄŤ",
+        "viewResults": "Zobraziť výsledky",
+        "save": "Uložiť",
+        "details": "Podrobnosti",
+        "recurrence": "Opakovanie",
+        "interval": "Pauza",
+        "time": "Čas",
+        "type": "Typ",
+        "hours": "Hodiny",
+        "minutes": "Minúty",
+        "am": "dop.",
+        "pm": "pop.",
+        "previousResult": "Predchádzajúce výsledky",
+        "lastScanOn": "Minulá kontrola dňa",
+        "result": "Výsledok",
+        "viewDetailsLog": "Zobraziť podrobnosti denníka",
+        "ok": "OK",
+        "notOk": "NIE JE V PORIADKU",
+        "notScanned": "NESKONTROLOVANÉ",
+        "pass": "Úspešne",
+        "fail": "Neúspešne",
+        "cancelled": "Zrušené",
+        "warning": "Varovanie",
+        "errorResult": "Vyžaduje sa, aby ste spustili test.",
+        "buy": "Kúpiť teraz",
+        "errorDeviceChoose": "Vyžaduje sa, aby ste vybrali zariadenie, ktoré chcete spustiť.",
+        "errorNoOptionSelected": "Musíte vybrať niektorú z možností.",
+        "offline": "Toto zariadenie je v režime offline, pripojte ho k internetu",
+        "customize": {
+            "name": "Prispôsobiť",
+            "test": "Prispôsobiť test",
+            "description": "Výberom nasledujúcich možností si prispôsobíte test",
+            "runTests": "Spustiť vybraté testy"
+        },
+        "scheduledScan": {
+            "name": "Naplánovať kontrolu",
+            "title": "Naplánujte si kontrolu",
+            "newScan": "Naplánovať novú kontrolu",
+            "fullScan": "Úplná kontrola",
+            "onlyOnce": "Iba raz",
+            "eachDay": "Každý deň",
+            "eachWeek": "Každý týždeň",
+            "eachMonth": "Každý mesiac",
+            "eachYear": "Každý rok",
+            "schedule": "Plán",
+            "date": "Dátum",
+            "pickDate": "Vybrať dátum",
+            "scanScheduled": "Kontrola hardvéru bola naplánovaná.",
+            "description": "Ďalšia kontrola bola naplánovaná na rovnaký čas a dátum!",
+            "error": "Chyba",
+            "delete": "Odstrániť",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Obnoviť chybné sektory",
+            "description": "Nástroj Lenovo na odhaľovanie a opravu chybných sektorov na disku",
+            "goTo": "Prejsť na obnovenie chybných sektorov",
+            "localDevices": "Lokálne zariadenia",
+            "numberSectors": "Počet načítaných sektorov",
+            "numberBadSectors": "Počet nájdených chybných sektorov",
+            "numberFixedSectors": "Počet opravených sektorov",
+            "numberNonFixedSectors": "Počet neopravených sektorov",
+            "status": "Stav operácie",
+            "elapsedTime": "Uplynutý čas",
+            "hours": "Hodiny",
+            "hour": "Hodina",
+            "minutes": "Minúty",
+            "minute": "Minúta",
+            "seconds": "Sekundy",
+            "second": "Sekunda",
+            "moreInfo": "Počkajte, kým sa nevykoná obnovenie chybných sektorov",
+            "systemEvent": "Test bol zrušený v dôsledku výskytu systémovej udalosti, ktorá by mohla znehodnotiť jeho výsledok.",
+            "systemPasswordProtected": "Zariadenie môže byť chránené heslom. Skúste vypnúť ochranu heslom.",
+            "popup": {
+                "description": "Vykonanie kontroly a opravy môže spôsobiť stratu údajov. Pred vykonaním tejto operácie sa odporúča vytvorenie zálohy. Naozaj to chcete pokračovať?",
+                "yes": "Áno",
+                "no": "Nie"
+            }
+        },
+        "support": {
+            "title": "Stiahnite si profesionálne diagnostické nástroje",
+            "subtitle": "Podpora spoločnosti Lenovo"
+        },
+        "eTicket": {
+            "header": "Zistil sa problém s hardvérom.",
+            "problemDetected": "Kontrola hardvéru zistila problém s nasledujúcimi súčasťami počítača",
+            "ticketRequestQuestion": "Spoločnosť Lenovo môže odoslať náhradný diel, ak je počítač v záruke. Chcete požiadať o výmenu hardvéru a vyriešiť problém",
+            "openTicket": "Požiadať o poskytnutie služby"
+        },
+        "battery": {
+            "title": "Zapnúť hraničnú úroveň nabitia batérie",
+            "description": "Zapnutie vlastnej hraničnej úrovne nabitia batérie umožní predĺžiť životnosť batérie pri používaní tohto zariadenia. Ak však batéria nie je plne nabitá, jej výdrž je kratšia. Ak chcete túto funkciu v plnej miere zapnúť, odpojte zariadenie a nechajte batériu, aby sa vybila na alebo pod hraničnú úroveň nabitia.",
+            "enable": "Zapnúť"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
     }
 }

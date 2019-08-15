@@ -13,7 +13,7 @@ export class HeaderMainComponent implements OnInit {
 
 	@Input() title: string;
 	@Input() back: string;
-	@Input() backarrow: string;
+	@Input() backarrow = '<';
 	@Input() forwardLink: { path: string, label: string };
 	@Input() menuItems: any[];
 	@Input() parentPath: string;

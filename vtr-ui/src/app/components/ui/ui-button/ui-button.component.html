@@ -7,6 +7,8 @@
 			type="button"
 			class="btn button"
 			vtrMetrics
+			[routerLink]="routerPath"
+			routerLinkActive="active"
 			[id]="linkId"
 			[attr.aria-label]="linkId"
 			[metricsItem]="metricsItem"
@@ -22,7 +24,7 @@
 						'halfWidth': isHalfWidth,
 						'text-upper-case': upperCaseLabel,
 						'regular-width': isRegular,
-						'min-height': btnHeight, 
+						'min-height': btnHeight,
 						'btn-gradient': isGradient}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
@@ -31,8 +33,10 @@
 			class="button disable"
 			[disabled]="false"
 			[id]="linkId"
-			[attr.aria-label]="linkId"	
+			[attr.aria-label]="linkId"
 			vtrMetrics
+			[routerLink]="routerPath"
+			routerLinkActive="active"
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"

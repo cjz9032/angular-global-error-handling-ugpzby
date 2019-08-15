@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { DownloadFailedModalComponent } from 'src/app/components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
 import { ModalErrorMessageComponent } from 'src/app/components/modal/modal-error-message/modal-error-message.component';
 import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
 import { ModalIntelligentCoolingModesComponent } from 'src/app/components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
@@ -22,7 +21,6 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		/*ModalServerSwitchComponent,*/
 		DownloadFailedModalComponent,
 		ModalBatteryChargeThresholdComponent,
-		ModalCommonConfirmationComponent,
 		ModalErrorMessageComponent,
 		ModalHomeProtectionLocationNoticeComponent,
 		ModalIntelligentCoolingModesComponent,
@@ -53,7 +51,6 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		/*ModalServerSwitchComponent,*/
 		DownloadFailedModalComponent,
 		ModalBatteryChargeThresholdComponent,
-		ModalCommonConfirmationComponent,
 		ModalErrorMessageComponent,
 		ModalHomeProtectionLocationNoticeComponent,
 		ModalIntelligentCoolingModesComponent,

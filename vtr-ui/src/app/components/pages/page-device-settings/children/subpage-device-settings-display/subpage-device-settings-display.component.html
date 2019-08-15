@@ -47,7 +47,7 @@
 										(colorPreviewValue)="setToEyeCareMode()">
 									</vtr-display-color-temp>
 									<div class="row">
-										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" 
+										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4"
 											id="day-time-color-temp-note" attr.aria-label="day-time-color-temp-note" >
 											<p>{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
 											</p>
@@ -231,7 +231,7 @@
 
 	<!-- Camera -->
 	<div class="row py-5 smartsettings-card"
-		*ngIf="!isDTmachine"
+		*ngIf="!isDTmachine || this.isAllInOneMachineFlag"
 		id="camera"
 		[hidden]="isCameraHidden">
 		<div class="col-10 mx-auto ">
@@ -243,7 +243,7 @@
 				(toggle)="onCardCollapse($event)"
 				[collapseLinkId]="'device-settings-camera'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3">
+					<li class="pt-3" *ngIf="cameraPrivacyModeStatus.available">
 						<vtr-ui-row-switch
 							[switchId]="'camera-privacy-mode'"
 							[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
@@ -256,10 +256,10 @@
 							(toggleOnOff)="onCameraPrivacyModeToggle($event)"
 							[isSwitchChecked]="cameraPrivacyModeStatus.status"
 							[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate"
-							[isDisabled]="!cameraPrivacyModeStatus.available">
+							[isDisabled]="shouldCameraSectionDisabled">
 							<div class="row">
 								<div class="col-12 pr-0">
-									<div *ngIf="!cameraPrivacyModeStatus.available"
+									<div *ngIf="hideNote"
 										class="row permission-note mt-5">
 										<div class="col-12 p-3 d-flex">
 											<div class="col-1 pl-0 text-center">
@@ -305,7 +305,7 @@
 							[switchId]="'device-settings-camera'">
 							<div class="row">
 								<div class="col-12 pr-0">
-									<div *ngIf="!dataSource.permission"
+									<div *ngIf="hideNote"
 										class="row permission-note my-2">
 										<div class="col-12 p-3 d-flex">
 											<div class="col-1 pl-0 text-center">

@@ -1,3 +1,4 @@
+import { CommonService } from 'src/app/services/common/common.service';
 import { NetworkBoostService } from './../../../../services/gaming/gaming-networkboost/networkboost.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { isUndefined } from 'util';
@@ -62,7 +63,7 @@ async addAppToList(app) {
     try {
       const result: any = await this.networkBoostService.getNetUsingProcesses();
       console.log('RESULT frpm NB', result);
-      if (!isUndefined(result.processList)) {
+      if (result && !isUndefined(result.processList)) {
         this.loading = false;
         this.runningList = result.processList || [];
         this.noAppsRunning = this.runningList.length === 0 ? true : false;
