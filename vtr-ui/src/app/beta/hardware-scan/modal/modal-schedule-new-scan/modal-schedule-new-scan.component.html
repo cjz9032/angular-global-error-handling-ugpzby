@@ -62,10 +62,9 @@
 	<br />
 
 	<div class="row">
-		<div class="col">
-			<button type="submit" id="ScheduleButton" class="btn btn-primary user-submit"
-				(click)="onNewScanScheduling()"> {{ scheduleNewScanButtonText }}
-			</button>
+		<div class="col buttons">
+			<beta-vtr-ui-button [label]="scheduleNewScanButtonText" [isDisabled]="disable"
+				(onClick)="onNewScanScheduling()"></beta-vtr-ui-button>
 
 			<a *ngIf="editMode" class="action-anchor" (click)="onDeleteScan()">{{ delete }}</a>
 		</div>
