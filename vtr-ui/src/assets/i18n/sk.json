@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Posledné bezpečnostné oznámenia",
             "notifications": "Oznámenia",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Nebezpečné sieťové pripojenie",
+            "networkUnsafe": "Nebezpečná sieť",
+            "deviceDisconnected": "Zariadenie sa odpojilo",
+            "newDeviceDetected": "Zistilo sa nové zariadenie",
+            "unsafeDeviceDetected": "Zistilo sa nebezpečné zariadenie"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Chráňte ekosystém svojho zariadenia",

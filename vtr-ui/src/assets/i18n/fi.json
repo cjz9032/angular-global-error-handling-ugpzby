@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Viimeaikaiset suojausilmoitukset",
             "notifications": "Ilmoitukset",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Verkkoyhteys ei ole turvallinen",
+            "networkUnsafe": "Verkko ei ole turvallinen",
+            "deviceDisconnected": "Laitteen yhteys on katkaistu",
+            "newDeviceDetected": "Uusi laite havaittu",
+            "unsafeDeviceDetected": "Vaarallinen laite havaittu"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Suojaa laitteesi ekosysteemi",

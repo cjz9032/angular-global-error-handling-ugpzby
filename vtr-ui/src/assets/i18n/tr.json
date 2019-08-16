@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "En son güvenlik bildirimleri",
             "notifications": "Bildirimler",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Güvenli olmayan ağ bağlantısı",
+            "networkUnsafe": "Ağ güvenli değil",
+            "deviceDisconnected": "Cihaz bağlantısı kesildi",
+            "newDeviceDetected": "Yeni cihaz algılandı",
+            "unsafeDeviceDetected": "Güvenli olmayan cihaz algılandı"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Cihazınızın ekosistemini koruyun",
