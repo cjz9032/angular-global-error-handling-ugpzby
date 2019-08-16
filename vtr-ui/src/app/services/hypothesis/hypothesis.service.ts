@@ -20,7 +20,9 @@ export class HypothesisService {
 	private getHypothesis() {
 		return new Promise((resolve, reject) => {
 			try {
-				this.shellService.calcDeviceFilter('{"var":"HypothesisGroups"}').then((hyp) => {
+				const filter = this.shellService.calcDeviceFilter('{"var":"HypothesisGroups"}');
+				if(filter){
+					filter.then((hyp) => {
 						this.hypSettings = hyp;
 						resolve();
 					},
@@ -28,8 +30,12 @@ export class HypothesisService {
 						console.log('getHypothesis:' + error);
 						reject(error);
 					});
-			} catch (ex) {
-				console.error('getHypothesis' + ex.message);
+				}
+				else{
+					reject('getHypothesis failed');
+				}
+			}catch(ex) {
+				console.log('getHypothesis:' + ex.message);
 				reject(ex);
 			}
 		});
@@ -41,7 +47,13 @@ export class HypothesisService {
 				resolve(this.hypSettings[feature]);
 			} else {
 				this.getHypothesis().then(() => {
-						resolve(this.hypSettings[feature]);
+						if(this.hypSettings){
+							resolve(this.hypSettings[feature]);
+						}
+						else
+						{
+							reject('get hypothesis setting failed.');
+						}
 					},
 					error => {
 						reject(error);

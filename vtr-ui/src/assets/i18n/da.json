@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Seneste sikkerhedsmeddelelser",
             "notifications": "Meddelelser",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Usikker netværksforbindelse",
+            "networkUnsafe": "Usikkert netværk",
+            "deviceDisconnected": "Enhed er frakoblet",
+            "newDeviceDetected": "Ny enhed er registreret",
+            "unsafeDeviceDetected": "Usikker enhed er registreret"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Beskyt din enheds økosystem",

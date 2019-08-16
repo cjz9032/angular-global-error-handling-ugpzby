@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Πρόσφατες ειδοποιήσεις ασφάλειας",
             "notifications": "Ειδοποιήσεις",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Μη ασφαλής σύνδεση δικτύου",
+            "networkUnsafe": "Δίκτυο μη ασφαλές",
+            "deviceDisconnected": "Συσκευή αποσυνδέθηκε",
+            "newDeviceDetected": "Ανιχνεύτηκε νέα συσκευή",
+            "unsafeDeviceDetected": "Ανιχνεύτηκε μη ασφαλής συσκευή"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Προστατεύστε το περιβάλλον της συσκευής σας",

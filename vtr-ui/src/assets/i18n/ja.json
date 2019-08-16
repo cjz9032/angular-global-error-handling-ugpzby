@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "最近のセキュリティー通知",
             "notifications": "通知",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "安全でないネットワーク接続",
+            "networkUnsafe": "安全でないネットワーク",
+            "deviceDisconnected": "切断されたデバイス",
+            "newDeviceDetected": "新しいデバイスが検出されました",
+            "unsafeDeviceDetected": "安全ではないデバイスが検出されました"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "デバイスのエコシステムを保護する",
