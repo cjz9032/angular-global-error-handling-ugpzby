@@ -1,3 +1,3 @@
 export enum DashboardLocalStorageKey {
-	DeviceLocale = '[DashboardLocalStorageKey] DeviceLocale',
+	DeviceInfo = '[DashboardLocalStorageKey] DeviceInfo',
 }

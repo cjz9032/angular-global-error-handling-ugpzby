@@ -146,12 +146,12 @@
                 },
                 "recorded": {
                     "title": "מקש מאקרו עבור ",
-                    "deleteKey": "מחקו",
+                    "deleteKey": "מחקו מקש",
                     "clear": "ניקוי",
                     "intervalStatus": {
                         "keep": {
                             "title": "המשיכו את ההשהיה",
-                            "description": "מרווחים בין פעולות מקשים יישמרו ויוחלו בעת השימוש במקש מאקרו זה."
+                            "description": "מרווחים בין פעולות מקשים יישמרו ויפעלו בעת השימוש במקש מאקרו זה."
                         },
                         "ignore": {
                             "title": "התעלמו מההשהיה",
@@ -298,7 +298,7 @@
             },
             "profile": {
                 "text1": {
-                    "title": "התאורה כבויה כרגע. בחר בכרטיסיית הפרופיל למעלה כדי להפעיל אותה ולבצע התאמה אישית שלה."
+                    "title": "התאורה כבויה כרגע. בחרו בכרטיסיית הפרופיל למעלה כדי להפעיל אותה ולבצע התאמה אישית שלה."
                 },
                 "text2": {
                     "title": "אפקט"
@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "כבוי"
                 },
                 "text2": {
                     "title": "פרופיל 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "כבוי"
                 },
                 "text2": {
                     "title": 1
@@ -343,7 +343,7 @@
                     "title": "התאמה אישית"
                 },
                 "heading": {
-                    "title": "בחר פרופיל:"
+                    "title": "בחרו פרופיל:"
                 }
             },
             "colourwheel": {
@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "הודעות אבטחה אחרונות",
             "notifications": "הודעות",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "חיבור הרשת לא בטוח",
+            "networkUnsafe": "רשת לא בטוחה",
+            "deviceDisconnected": "המכשיר מנותק",
+            "newDeviceDetected": "זוהה מכשיר חדש",
+            "unsafeDeviceDetected": "זוהה מכשיר לא בטוח"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "הגנו על המערכת האקולוגית של המכשיר",

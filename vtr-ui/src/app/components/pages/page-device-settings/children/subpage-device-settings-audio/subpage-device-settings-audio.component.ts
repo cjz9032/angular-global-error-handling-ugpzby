@@ -8,6 +8,9 @@ import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-op
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -29,14 +32,28 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	microphoneLoader = true;
 	autoDolbyFeatureLoader = true;
 	isDTmachine = false;
+	private notificationSubscription: Subscription;
 
-	constructor(private audioService: AudioService,
+	constructor(
+		private audioService: AudioService,
 		private dashboardService: DashboardService,
 		private commonService: CommonService) {
 	}
 
 	ngOnInit() {
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+		if (welcomeTutorial && welcomeTutorial.page === 2) {
+			this.initFeatures();
+		}
+
+	}
+
+	private initFeatures() {
 		this.initMockData();
 		this.getMicrophoneSettings();
 		this.getDolbyFeatureStatus();
@@ -44,12 +61,29 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.getSupportedModes();
 		this.startMonitor();
 		this.startMonitorForDolby();
-
 	}
 
 	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 		this.stopMonitor();
 		this.stopMonitorForDolby();
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case LocalStorageKey.WelcomeTutorial:
+					if (payload.page === 2) {
+						this.initFeatures();
+					}
+					break;
+				default:
+					break;
+			}
+		}
 	}
 
 	getSupportedModes() {
