@@ -25,11 +25,11 @@
 			</div>
 			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto pr-2 ml-auto">
 
-				<vtr-ui-button id="sa-av-btn-launchmcafee"
-					aria-label="sa-av-btn-launchmcafee"
+				<vtr-ui-button
 					(onClick)="list.buttonClick()"
 					metricsEvent="featureClick"
 					[metricsItem]="list.metricsItem"
+					[linkId]="'sa-av-btn-launchmcafee'"
 					[title]="list.buttonTitle | translate"
 					[label]="list.buttonTitle | translate" [isRegular]=regular ></vtr-ui-button>
 			</div>
