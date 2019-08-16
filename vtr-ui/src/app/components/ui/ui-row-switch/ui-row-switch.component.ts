@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
 import { BaseComponent } from '../../base/base.component';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -47,6 +48,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() voice = false;
 	@Input() voiceValue = '';
 	@Output() toggleOnOff = new EventEmitter<boolean>();
+	@Output() rebootToggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
@@ -100,7 +102,35 @@ export class UiRowSwitchComponent extends BaseComponent {
 		} else {
 			this.toggleOnOff.emit($event);
 		}
+		this.rebootConfirm($event);
 	}
+	 public rebootConfirm($event) {
+		if (this.title === this.translate.instant('device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title')) {
+			this.isSwitchChecked = !this.isSwitchChecked;
+			if (this.isSwitchChecked) {
+				this.modalService.open(ModalRebootConfirmComponent, {
+					backdrop: 'static',
+					size: 'sm',
+					centered: true,
+					windowClass: 'Battery-Charge-Threshold-Modal'
+				}).result.then(
+					result => {
+						if (result === 'enable') {
+							this.rebootToggleOnOff.emit($event);
+						} else if (result === 'close') {
+							this.isSwitchChecked = !this.isSwitchChecked;
+						}
+					},
+					reason => {
+					}
+				);
+			} else {
+				this.rebootToggleOnOff.emit($event);
+			}
+		} else {
+			this.rebootToggleOnOff.emit($event);
+		}
+	 }
 
 	public onReadMoreClick($event) {
 		this.readMoreClick.emit($event);

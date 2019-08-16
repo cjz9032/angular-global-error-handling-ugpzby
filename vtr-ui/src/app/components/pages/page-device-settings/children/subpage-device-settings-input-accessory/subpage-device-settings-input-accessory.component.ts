@@ -22,7 +22,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
 	public keyboardCompatability: boolean;
-	public switchValue = false;
+	public switchValue = false;	
+	public stickyFunStatus = false;
+
 	constructor(private keyboardService: InputAccessoriesService, private commonService: CommonService, ) { }
 
 	ngOnInit() {
@@ -196,5 +198,5 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 	fnCtrlKey(event) {
 		this.switchValue = event.switchValue;
-	}
+	}	
 }
