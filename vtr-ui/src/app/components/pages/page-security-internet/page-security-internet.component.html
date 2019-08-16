@@ -45,22 +45,22 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<vtr-ui-button id="sa-vpn-btn-getsufeasy"
-														aria-label="sa-vpn-btn-getsufeasy"
+													<vtr-ui-button
 														*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
 														(click)="getSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="getSurfEasy"
+														[linkId]="'sa-vpn-btn-getsufeasy'"
 														[isDisabled]="statusItem.status === 'installing' || isOnline === false"
 														[label]="'security.vpn.getSufEasy' | translate"
 														[title]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
-													<vtr-ui-button id="sa-vpn-btn-opensufeasy"
-														aria-label="sa-vpn-btn-opensufeasy"
+													<vtr-ui-button
 														*ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="openSurfEasy"
+														[linkId]="'sa-vpn-btn-opensufeasy'"
 														[label]="'security.vpn.openSufEasy' | translate"
 														[title]="'security.vpn.openSufEasy' | translate">
 													</vtr-ui-button>
@@ -209,14 +209,12 @@
 											*vtrTranslate="'security.vpn.privacyPolicyAndTermsOfService' | translate">
 
 											<a id="sa-vpn-lnk-privacypolicy"
-												aria-label="sa-vpn-lnk-privacypolicy"
 												vtrMetrics
 												metricsEvent="featureClick"
 												metricsItem="privacyPolicy"
 												href="https://www.surfeasy.com/privacy_policy/"
 												target="_blank"></a>
 											<a id="sa-vpn-lnk-termsofservices"
-												aria-label="sa-vpn-lnk-termsofservices"
 												vtrMetrics
 												metricsEvent="featureClick"
 												metricsItem="termsOfServices"
@@ -236,7 +234,8 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
+											[linkId]="'internet-protection'">
 										</vtr-widget-security-status>
 									</div>
 								</div>
@@ -259,22 +258,22 @@
 											cornerShift="large"
 											order="r1">
 										</vtr-container-card>-->
-										<vtr-container-card id="sa-vpn-lnk-cardcontent"
-															aria-label="sa-vpn-lnk-cardcontent"
-															[img]="cardContentPositionA.FeatureImage" [itemID]="cardContentPositionA.Id"
-															[caption]="cardContentPositionA.Description"
-															[title]="cardContentPositionA.Title"
-															[logoText]="cardContentPositionA.BrandName"
-															[action]="cardContentPositionA.Action"
-															[actionType]="cardContentPositionA.ActionType"
-															[actionLink]="cardContentPositionA.ActionLink"
-															[type]="'corner-article'"
-															cornerShift="large"
-															order="1"
-															sideFlag="r"
-															[ratioX]="4"
-															[ratioY]="2"
-															[cornerShift]="'large'">
+										<vtr-container-card
+											[img]="cardContentPositionA.FeatureImage" [itemID]="cardContentPositionA.Id"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionType]="cardContentPositionA.ActionType"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner-article'"
+											cornerShift="large"
+											order="1"
+											sideFlag="r"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'"
+											[containerCardId]="'sa-vpn-modal'">
 										</vtr-container-card>
 									</div>
 								</div>

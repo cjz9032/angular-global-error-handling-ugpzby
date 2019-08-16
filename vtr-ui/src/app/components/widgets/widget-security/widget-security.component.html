@@ -33,8 +33,7 @@
 				<p class="row1">{{security.subTitle[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<p class="row1">{{security.subTitle2[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<div class="button-row">
-					<vtr-ui-button id="sa-ov-btn-securityArticle"
-						aria-label="sa-ov-btn-securityArticle"
+					<vtr-ui-button
 						metricsItem="securityAdvisor101"
 						metricsEvent="ArticleClick"
 						metricsItemPosition="1"
@@ -44,6 +43,7 @@
 						[label]="'security.landing.security101' | translate"
 						[title]="'security.landing.security101' | translate"
 						(onClick)="buttonClick()"
+						[linkId]="'sa-ov-btn-securityArticle'"
 						[upperCaseLabel]=false></vtr-ui-button>
 				</div>
 			</div>

@@ -64,7 +64,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	toggleAlwaysOnUsbFlag = false;
 	usbChargingCheckboxFlag = false;
 	powerMode = PowerMode.Sleep;
-	showEasyResumeSection = false;
+	showEasyResumeSection = true;
 	toggleEasyResumeStatus = false;
 	showAirplanePowerModeSection = false;
 	toggleAirplanePowerModeFlag = false;
@@ -229,6 +229,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				await this.getEasyResumeCapabilityThinkPad();
 				break;
 			case 0:
+				this.showEasyResumeSection = false;
 				await this.getConservationModeStatusIdeaPad();
 				await this.getRapidChargeModeStatusIdeaPad();
 				await this.getAlwaysOnUSBStatusIdeaPad();
@@ -875,14 +876,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	showPowerSettings() {
-
-		if (!(!this.isDesktopMachine || this.showEasyResumeSection)) {
+		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+			return false;
 		}
-
-		// return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
-		return !this.isDesktopMachine || this.showEasyResumeSection;
-		// return !this.isDesktopMachine || this.showEasyResumeSection;
+		return true
 	}
 
 	private getEnergyStarCapability() {
