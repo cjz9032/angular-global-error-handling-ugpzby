@@ -229,6 +229,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				await this.getEasyResumeCapabilityThinkPad();
 				break;
 			case 0:
+				this.showEasyResumeSection = false;
 				await this.getConservationModeStatusIdeaPad();
 				await this.getRapidChargeModeStatusIdeaPad();
 				await this.getAlwaysOnUSBStatusIdeaPad();
