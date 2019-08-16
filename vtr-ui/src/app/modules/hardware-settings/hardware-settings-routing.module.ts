@@ -89,7 +89,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 
 		data: {
-			pageName: 'Device.MyDeviceSettings',
+			pageName: 'Device.SmartAssist',
 			pageContent: 'My Device Status'
 		}
 	},

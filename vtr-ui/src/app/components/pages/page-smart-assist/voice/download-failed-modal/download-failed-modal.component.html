@@ -8,8 +8,8 @@
 			class="close-btn"
 			vtrMetrics
 			metricsEvent="FeatureClick"
-			metricsParent="download_failed_modal"
-			metricsItem="failed_modal_close_icon"
+			metricsParent="Device.SmartAssist.InstallFailed"
+			metricsItem="InstallFailedModalCloseIcon"
 			(click)="closeModal()">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""
@@ -30,8 +30,8 @@
 	<div class="row">
 		<button vtrMetrics
 			metricsEvent="FeatureClick"
-			metricsParent="download_failed_modal"
-			metricsItem="failed_modal_close_btn" 
+			metricsParent="Device.SmartAssist.InstallFailed"
+			metricsItem="InstallFailedModalCloseButton" 
 			id="download_failed_modal_close_btn"
 			attr.aria-label="download_failed_modal_close_btn"
 			class="btn close-button"
