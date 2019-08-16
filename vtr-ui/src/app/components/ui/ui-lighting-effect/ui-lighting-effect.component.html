@@ -23,8 +23,13 @@
 			</div>
 		</ng-container>
 	</div>
-	<p class="brightCondition" title="{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
-		{{'gaming.lightingProfile.brightness.text2.title' | translate}}"  *ngIf="enableBrightCondition1">
-		{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
-		{{'gaming.lightingProfile.brightness.text2.title' | translate}}</p>
+	<p class="brightCondition" title="{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}	{{'gaming.lightingProfile.brightness.text2.title' | translate}}"  *ngIf="enableBrightCondition1">
+		<span *ngIf="defaultLang === 'ar' || defaultLang === 'he'" 	dir="rtl">
+				{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+				{{'gaming.lightingProfile.brightness.text2.title' | translate}}
+		</span>
+		<span *ngIf="defaultLang !== 'ar' && defaultLang !== 'he'" >
+				{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+				{{'gaming.lightingProfile.brightness.text2.title' | translate}}
+		</span>		</p>
 </div>

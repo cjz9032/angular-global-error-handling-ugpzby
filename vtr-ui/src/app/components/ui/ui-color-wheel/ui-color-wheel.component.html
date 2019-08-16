@@ -1,6 +1,11 @@
 <div class="vtr-ui-color-wheel picker-container">
 	<div class="overlay" *ngIf="showOverlay">
-		{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
+		<div  *ngIf="defaultLang !== 'ar' && defaultLang !== 'he'">
+				{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
+		</div>
+		<div *ngIf="defaultLang === 'ar' || defaultLang === 'he'" 	dir="rtl">
+				{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
+		</div>
 	</div>
 
 	<div class="row">
