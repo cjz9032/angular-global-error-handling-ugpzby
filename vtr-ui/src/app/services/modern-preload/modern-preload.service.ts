@@ -5,6 +5,7 @@ import { CommonService } from '../common/common.service';
 import { ModernPreloadEnum } from 'src/app/enums/modern-preload.enum';
 import { DeviceService } from '../device/device.service';
 import { CMSService } from '../cms/cms.service';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -15,7 +16,8 @@ export class ModernPreloadService {
 		private vantageShellService: VantageShellService,
 		private cmsService: CMSService,
 		private deviceService: DeviceService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private logService: LoggerService
 	) {
 		this.modernPreloadBridge = this.vantageShellService.getModernPreload();
 		this.initialize();
@@ -52,10 +54,12 @@ export class ModernPreloadService {
 			this.modernPreloadBridge.getIsEntitled().then((response) => {
 				if (response.result !== undefined) {
 					this.IsEntitled = response.result;
+				} else {
+					this.logService.error('ModernPreloadService.getIsEntitled result undefined.', JSON.stringify(response));
 				}
 				this.commonService.sendNotification(ModernPreloadEnum.GetIsEntitledRespond, this.IsEntitled);
 			}).catch((error) => {
-				console.log(error);
+				this.logService.error('ModernPreloadService.getIsEntitled error.', JSON.stringify(error));
 				this.commonService.sendNotification(ModernPreloadEnum.GetIsEntitledRespond, this.IsEntitled);
 			});
 		}
@@ -67,17 +71,18 @@ export class ModernPreloadService {
 			this.modernPreloadBridge.getEntitledAppList()])
 				.then((responses) => {
 					this.cmsAppList = responses[0];
+					this.logService.info('ModernPreloadService.getAppList cms response.', JSON.stringify(this.cmsAppList));
 					this.handleGetAppListResponse(responses[1].appList);
 				})
 				.catch((error) => {
-					console.log(error);
+					this.logService.error('ModernPreloadService.getAppList error.', JSON.stringify(error));
 					this.commonService.sendNotification(ModernPreloadEnum.CommonException, error);
 				});
 		} else if (this.isInitialized) {
 			this.modernPreloadBridge.getEntitledAppList().then((response) => {
 				this.handleGetAppListResponse(response.appList);
 			}).catch((error) => {
-				console.log(error);
+				this.logService.error('ModernPreloadService.getAppList error.', JSON.stringify(error));
 				this.commonService.sendNotification(ModernPreloadEnum.CommonException, error);
 			});
 		}
@@ -85,6 +90,7 @@ export class ModernPreloadService {
 
 	private handleGetAppListResponse(bridgeAppList: any) {
 		if (bridgeAppList && this.cmsAppList) {
+			this.logService.info('ModernPreloadService.handleGetAppListResponse response.', JSON.stringify(bridgeAppList));
 			const mergedAppList: AppItem = this.mergeAppDetails(bridgeAppList, this.cmsAppList);
 			this.commonService.sendNotification(ModernPreloadEnum.GetEntitledAppListRespond, mergedAppList);
 		}
@@ -92,14 +98,14 @@ export class ModernPreloadService {
 
 	private mergeAppDetails(appList: any, cmsAppList: any) {
 		appList.forEach(app => {
-			const detailFromCMS = cmsAppList.find((detail) => detail.UDCId === app.partNum);
+			const detailFromCMS = cmsAppList.find((detail) => detail.UDCId.includes(app.partNum));
 			if (detailFromCMS) {
 				app.company = detailFromCMS.Company;
 				app.filters = detailFromCMS.Filters;
 				app.size = detailFromCMS.Size;
 				app.thumbnail = detailFromCMS.Thumbnail;
 				app.title = detailFromCMS.Title;
-				app.udcId = detailFromCMS.UDCId;
+				app.udcId = app.partNum;
 				app.version = detailFromCMS.Version;
 			}
 		});
@@ -119,12 +125,14 @@ export class ModernPreloadService {
 		if (this.isInitialized && i < appList.length && !this.isCancelInstall) {
 			this.cancelToken = {};
 			this.modernPreloadBridge.downloadOrInstallEntitledApps([appList[i]], (progressResponse) => {
+				this.logService.info('ModernPreloadService.installApp progress response.', JSON.stringify(progressResponse));
 				if (progressResponse && !this.isCancelInstall) {
 					this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppProgress, progressResponse);
 				}
 			}, this.cancelToken)
 				.then((response) => {
 					this.cancelToken = undefined;
+					this.logService.info('ModernPreloadService.installApp response.', JSON.stringify(response));
 					if (response.appList && i === appList.length - 1) {
 						this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppResult, response.appList);
 					} else if (response.appList && !this.isCancelInstall) {
@@ -133,7 +141,7 @@ export class ModernPreloadService {
 						this.installApp(i, appList);
 					}
 				}).catch((error) => {
-					console.error(error);
+					this.logService.error('ModernPreloadService.installApp error.', JSON.stringify(error));
 					this.cancelToken = undefined;
 					if (error.errorcode === 499) {
 						this.commonService.sendNotification(ModernPreloadEnum.InstallationCancelled);
@@ -168,7 +176,7 @@ export class ModernPreloadService {
 						this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppResult, response.appList);
 					}
 				}).catch((error) => {
-					console.error(error);
+					this.logService.error('ModernPreloadService.installAllApp error.', JSON.stringify(error));
 					this.cancelToken = undefined;
 					if (error.errorcode === 499) {
 						this.commonService.sendNotification(ModernPreloadEnum.InstallationCancelled);

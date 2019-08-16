@@ -26,7 +26,7 @@ export class LoggerService {
 	 * get formatted message
 	 */
 	private getMessage(message: string, data: any = {}) {
-		return `WE v${this.version}:- ${message} | Data: ${JSON.stringify(data)}`;
+		return `v${this.version}:- ${message} | data: ${JSON.stringify(data)}`;
 	}
 
 	public debug(message: string, data: any = {}): void {

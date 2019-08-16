@@ -22,7 +22,7 @@
 					<div class="col button-row">
 						<button
 							[ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
-							vtrMetrics metricsEvent="itemClick" metricsParent="hardware-scan" [disabled]="disableQuickScan"
+							vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan" [disabled]="disableQuickScan"
 							(click)="onQuickScan()">{{buttonText}}</button>
 						<a [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}"
 							(click)="onAnchor()">{{anchorText}}</a>

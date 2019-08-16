@@ -1,10 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
-import Translation from 'src/app/data-models/translation/translation';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { CommonService } from '../../../services/common/common.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',
@@ -22,19 +18,11 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Input() isSwitchDisable = false;
 	uiSubscription: Subscription;
 
-	onLabel = 'on';
-	offLabel = 'off';
 	size = 'switch-xs';
 
 	constructor(
-		public languageService: LanguageService,
-		public commonService: CommonService,
-		public modalService: NgbModal
-	) {
-		this.uiSubscription = this.languageService.subscription.subscribe((translation: Translation) => {
-			this.onLanguageChange(translation);
-		});
-	}
+		public commonService: CommonService
+	) { }
 
 	ngOnInit() {
 		this.readonly = this.readonly || false;
@@ -63,7 +51,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 				if (this.onOffSwitchId === 'recommended-updates') {
 					this.disabled = this.isSwitchDisable;
 					this.value = !this.value;
-				} else if (this.onOffSwitchId !== 'wifiSecurity') {
+				} else if (this.onOffSwitchId !== 'sa-ws-switch') {
 					this.disabled = false;
 					this.value = !this.value;
 				}
@@ -83,12 +71,6 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 		if (this.readonly) {
 			$event.switchValue = !this.value;
 			this.toggle.emit($event);
-		}
-	}
-	onLanguageChange(translation: Translation) {
-		if (translation && translation.type === TranslationSection.CommonUi) {
-			this.onLabel = translation.payload.on;
-			this.offLabel = translation.payload.off;
 		}
 	}
 
