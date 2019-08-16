@@ -12,14 +12,15 @@ import { ChargeThresholdInformation } from 'src/app/enums/battery-information.en
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { BehaviorSubject } from 'rxjs';
-import { FlipToBootSetStatus } from "../../../../../services/power/flipToBoot.interface";
-import { fal } from "@fortawesome/pro-light-svg-icons";
+import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
+import { fal } from '@fortawesome/pro-light-svg-icons';
 import {
 	FlipToBootCurrentModeEnum,
 	FlipToBootErrorCodeEnum,
 	FlipToBootSetStatusEnum,
 	FlipToBootSupportedEnum
-} from "../../../../../services/power/flipToBoot.enum";
+} from '../../../../../services/power/flipToBoot.enum';
+import { MetricService } from "../../../../../services/metric/metric.service";
 
 
 enum PowerMode {
@@ -178,13 +179,23 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.conservationModeLock = false;
 		}
 	}
-	constructor(public powerService: PowerService, private deviceService: DeviceService, private commonService: CommonService, public modalService: NgbModal, public shellServices: VantageShellService) { }
+
+	constructor(
+		public powerService: PowerService,
+		private deviceService: DeviceService,
+		private commonService: CommonService,
+		public modalService: NgbModal,
+		public shellServices: VantageShellService,
+		private metrics: MetricService
+	) {
+	}
 
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 
 		this.getFlipToBootCapability();
+		console.log(this.deviceService);
 
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
@@ -339,6 +350,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				});
 		}
 	}
+
 	private getAlwaysOnUSBStatusThinkPad() {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -361,6 +373,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private getEasyResumeCapabilityThinkPad() {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -383,6 +396,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private getEasyResumeStatusThinkPad() {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -400,6 +414,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private setEasyResumeThinkPad(event: any) {
 		try {
 			console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', event);
@@ -418,6 +433,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private setAlwaysOnUSBStatusThinkPad(event: any, checkboxVal: any) {
 		try {
 			console.log('setAlwaysOnUSBStatusThinkPad.then', event);
@@ -436,6 +452,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private getAirplaneModeCapabilityThinkPad() {
 		console.log('getAirplaneModeCapabilityThinkPad ');
 		if (this.powerService.isShellAvailable) {
@@ -453,6 +470,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				});
 		}
 	}
+
 	private getAirplaneModeThinkPad() {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -472,6 +490,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private setAirplaneModeThinkPad(event: any) {
 		try {
 			console.log('setAirplaneModeThinkPad entered', event);
@@ -508,6 +527,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private setAirplaneModeAutoDetectionOnThinkPad(status: boolean) {
 		try {
 			console.log('setAirplaneModeAutoDetectionOnThinkPad entered', status);
@@ -530,6 +550,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		console.log('onAirplaneAutoModeStatusChange', this.airplaneAutoDetection);
 		this.setAirplaneModeAutoDetectionOnThinkPad(this.airplaneAutoDetection);
 	}
+
 	// End ThinkPad
 
 	// Start IdeaNoteBook
@@ -551,6 +572,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private getUSBChargingInBatteryModeStatusIdeaNoteBook() {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -575,6 +597,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private setUSBChargingInBatteryModeStatusIdeaNoteBook(event: any) {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -592,6 +615,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private setAlwaysOnUSBStatusIdeaPad(event: any) {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -609,6 +633,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private getConservationModeStatusIdeaPad() {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -626,6 +651,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private getRapidChargeModeStatusIdeaPad() {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -643,6 +669,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private async setConservationModeStatusIdeaNoteBook(status: any) {
 		try {
 			console.log('setConservationModeStatusIdeaNoteBook.then', status);
@@ -656,6 +683,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	private async setRapidChargeModeStatusIdeaNoteBook(status) {
 		try {
 			console.log('setRapidChargeModeStatusIdeaNoteBook.then', status);
@@ -690,6 +718,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
 	public onVantageToolBarStatusToggle(event: any) {
 		console.log('onVantageToolBarStatusToggle', event.switchValue);
 		try {
@@ -699,13 +728,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						console.log('setVantageToolBarStatus.then', event.switchValue);
 						this.getVantageToolBarStatus();
 					}).catch(error => {
-						console.error('setVantageToolBarStatus', error);
-					});
+					console.error('setVantageToolBarStatus', error);
+				});
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
+
 	public getStartMonitorCallBack(featureStatus: FeatureStatus) {
 		console.log('getStartMonitorCallBack', featureStatus);
 		this.vantageToolbarStatus = featureStatus;
@@ -719,17 +749,19 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.then((value: any) => {
 					console.log('startmonitor', value);
 				}).catch(error => {
-					console.error('startmonitor', error);
-				});
+				console.error('startmonitor', error);
+			});
 
 		}
 	}
+
 	public stopMonitor() {
 		console.log('stop eyecare monitor');
 		if (this.powerService.isShellAvailable) {
 			this.powerService.stopMonitor();
 		}
 	}
+
 	// End Lenovo Vantage ToolBar
 
 	/**
@@ -753,6 +785,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.responseData = response;
 		this.getBatteryThresholdInformation();
 	}
+
 	public getBatteryThresholdInformation() {
 		let notification;
 		if (this.powerService.isShellAvailable) {
@@ -911,6 +944,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	private getFlipToBootCapability() {
+		// think machine should pass through the procedure;
+		if (+this.machineType === 1) {
+			return;
+		}
 		this.powerService.getFlipToBootCapability()
 			.then(res => {
 				if (+res.ErrorCode === FlipToBootErrorCodeEnum.Succeed && +res.Supported === FlipToBootSupportedEnum.Succeed) {
@@ -929,7 +966,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			.then(res => {
 				if (+res.ErrorCode !== FlipToBootErrorCodeEnum.Succeed) {
 					this.toggleFlipToBootStatus = false;
+					return res;
 				}
+				const metricsData = {
+					itemParent: 'Device.MyDeviceSettings',
+					itemName: 'FlipToBoot',
+					value: status
+				};
+				this.metrics.sendMetrics(metricsData);
 			})
 			.catch(error => {
 				console.log('setFlipToBootSettings.error', error);
