@@ -6,7 +6,7 @@
                     "title": "الوضع الحراري",
                     "status": {
                         "performance": "الأداء",
-                        "balance": "توزان",
+                        "balance": "التوازن",
                         "quiet": "هادئ",
                         "performanceUid": "thermal_mode_performance",
                         "balanceUid": "thermal_mode_balance",
@@ -146,16 +146,16 @@
                 },
                 "recorded": {
                     "title": "مفتاح الماكرو لـ ",
-                    "deleteKey": "Delete",
+                    "deleteKey": "مفتاح Delete",
                     "clear": "مسح",
                     "intervalStatus": {
                         "keep": {
                             "title": "المحافظة على التأخير",
-                            "description": "ستتم المحافظة على الفواصل الزمنية بين إجراءات المفاتيح وسيتم تطبيقها عند استخدام مفتاح الماكرو هذا"
+                            "description": "ستتم المحافظة على الفواصل الزمنية بين إجراءات المفاتيح وسيتم تطبيقها عند استخدام مفتاح الماكرو هذا."
                         },
                         "ignore": {
                             "title": "تجاهل التأخير",
-                            "description": "سيتم تجاهل الفواصل الزمنية بين إجراءات المفاتيح"
+                            "description": "سيتم تجاهل الفواصل الزمنية بين إجراءات المفاتيح."
                         }
                     },
                     "repeatStatus": {
@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "إيقاف"
                 },
                 "text2": {
                     "title": "ملف التعريف 1"
@@ -351,7 +351,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "إيقاف"
                 },
                 "text2": {
                     "title": 1
