@@ -15,7 +15,6 @@
 							<a target="_blank" href="javascript:void(0)"
 								[ngClass]="{'disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 								id="chs-lnk-ad-manageAccount"
-								attr.aria-label="chs-lnk-ad-manageAccount"
 								vtrMetrics
 								metricsItem="manageAccountAllDevice"
 								metricsEvent="featureClick"
@@ -51,7 +50,6 @@
 									*ngIf="!allDevicesInfo.allDevicesStatus || this.account.state==='trialExpired' || this.account.state==='local'"
 									[ngClass]="{'url-disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 									id="chs-btn-ad-needAttention"
-									attr.aria-label="chs-btn-ad-needAttention"
 									title="{{'homeSecurity.overview.needAttention' | translate}}"
 									vtrMetrics
 									metricsItem="needAttentionAllDevice"
@@ -63,7 +61,6 @@
 							<a  target="_blank" href="javascript:void(0)"
 								[ngClass]="{'disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 								id="chs-lnk-ad-seeProtectedDevices"
-								aria-label="chs-lnk-ad-seeProtectedDevices"
 								vtrMetrics
 								metricsItem="seeProtectedDevicesAllDevice"
 								metricsEvent="featureClick"
@@ -74,7 +71,7 @@
 					<div class="col-md-6 col-12 add-device">
 						<vtr-ui-button
 							id="chs-btn-ad-addDevice"
-							attr.aria-label="chs-btn-ad-addDevice"
+							role="button"
 							metricsItem="addDeviceAllDevice"
 							metricsEvent="featureClick"
 							(click)="common.openCornet()"
@@ -94,7 +91,7 @@
 			<div class="button-container">
 				<vtr-ui-button
 					id="chs-btn-ad-upgrade"
-					aria-label="chs-btn-ad-upgrade"
+					role="button"
 					metricsItem="upgradeAllDevice"
 					metricsEvent="featureClick"
 					(click)="common.upgrade()"
@@ -108,7 +105,7 @@
 			<div class="button-container">
 				<vtr-ui-button
 					id="chs-btn-ad-startTrial"
-					aria-label="chs-btn-ad-startTrial"
+					role="button"
 					metricsItem="CHSStartTrialButton"
 					metricsEvent="featureClick"
 					(click)="common.startTrial()"

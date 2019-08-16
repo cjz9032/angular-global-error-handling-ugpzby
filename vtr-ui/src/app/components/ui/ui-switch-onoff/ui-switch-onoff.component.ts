@@ -51,7 +51,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 				if (this.onOffSwitchId === 'recommended-updates') {
 					this.disabled = this.isSwitchDisable;
 					this.value = !this.value;
-				} else if (this.onOffSwitchId !== 'wifiSecurity') {
+				} else if (this.onOffSwitchId !== 'sa-ws-switch') {
 					this.disabled = false;
 					this.value = !this.value;
 				}

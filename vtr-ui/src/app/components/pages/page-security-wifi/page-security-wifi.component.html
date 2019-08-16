@@ -58,7 +58,6 @@
 
 																<a vtrMetrics
 																	id="sa-ws-lnk-sh-learnmore"
-																	aria-label="sa-ws-lnk-sh-learnmore"
 																	metricsEvent="ArticleClick"
 																	metricsItem="learnMoreAboutSecurityHealth"
 																	metricsItemPosition="3"
@@ -100,15 +99,14 @@
 																	{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
 																</div>
 																<div class="button-box">
-																	<vtr-ui-button id="sa-ws-btn-sh-enablewifisecurity"
-																		aria-label="sa-ws-btn-sh-enablewifisecurity"
+																	<vtr-ui-button
 																		metricsEvent="FeatureClick"
 																		metricsItem="enableWiFiSecurity"
 																		(onClick)="enableWiFiSecurity($event)"
 																		[isDisabled]="cancelClick"
 																		[label]="'security.homeprotection.securityhealth.button' | translate"
 																		[title]="'security.homeprotection.securityhealth.button' | translate"
-																		[linkId]="'wifi-security-enableWifiSecurity-btn'">
+																		[linkId]="'sa-ws-btn-sh-enablewifisecurity'">
 																	</vtr-ui-button>
 																</div>
 															</div>
@@ -141,8 +139,7 @@
 
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card id="sa-ws-lnk-cardcontent"
-											aria-label="sa-ws-lnk-cardcontent"
+										<vtr-container-card
 											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
@@ -157,7 +154,7 @@
 											cornerShift="large"
 											order="1"
 											sideFlag="r"
-											[containerCardId]="'wifisecurity-card'">
+											[containerCardId]="'sa-ws-modal'">
 										</vtr-container-card>
 									</div>
 								</div>
