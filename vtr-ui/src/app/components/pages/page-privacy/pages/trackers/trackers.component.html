@@ -6,7 +6,7 @@
 		<vtr-feature-header
 			[texts]="textForFeatureHeader"
 			[isFeatureWasScanned]="(isWebsiteTrackersWasScanned$ | async) && (isConsentGiven$ | async)"
-			[countOfIssue]="websiteTrackersCount$ | async"
+			[countOfIssue]="0"
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
 			<span class="trackers-page__title--red">{{websiteTrackersCount$ | async}}</span> tracking tools found
 		</vtr-feature-header>
