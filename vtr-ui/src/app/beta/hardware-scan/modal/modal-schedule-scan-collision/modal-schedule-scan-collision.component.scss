@@ -1,33 +1,26 @@
 @import "../../../../app.theme";
 
-.error{
-    font-size: 3rem;
-    font-weight: bold;
+.error {
+	font-size: 3rem;
+	font-weight: bold;
 }
 
-.description{
-    font-size: 2rem;
+.description {
+	font-size: 2rem;
 }
 
 .modal-body {
-  padding: 0 5rem 3rem 5rem;
+	padding: 0 5rem 3rem 5rem;
 }
 
-.close-button{
-  border: none;
-  color: $gradient_main;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 200;
-  outline: none;
-  font-size: 20px;
+.close-button {
+	border: none;
+	color: $gradient_main;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-weight: 200;
+	outline: none;
+	font-size: 20px;
 }
-
-.user-submit {
-  font-size: 2rem;
-  padding: 1rem 3rem;
-  border-radius: 5rem;
-}
-
