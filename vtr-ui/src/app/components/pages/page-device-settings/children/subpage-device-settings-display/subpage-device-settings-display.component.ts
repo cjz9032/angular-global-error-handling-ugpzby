@@ -120,7 +120,6 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraBlur = new CameraBlur();
 	isDTmachine = false;
 	isAllInOneMachineFlag = false;
-	private welcomeTutorial: WelcomeTutorial = undefined;
 
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
@@ -153,9 +152,9 @@ export class SubpageDeviceSettingsDisplayComponent
 			}
 		);
 
-		this.welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (this.welcomeTutorial && this.welcomeTutorial.page === 2) {
+		if (welcomeTutorial && welcomeTutorial.page === 2) {
 			this.initFeatures();
 		}
 	}

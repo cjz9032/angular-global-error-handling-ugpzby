@@ -32,7 +32,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	microphoneLoader = true;
 	autoDolbyFeatureLoader = true;
 	isDTmachine = false;
-	private welcomeTutorial: WelcomeTutorial = undefined;
 	private notificationSubscription: Subscription;
 
 	constructor(
@@ -46,9 +45,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		this.welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (this.welcomeTutorial && this.welcomeTutorial.page === 2) {
+		if (welcomeTutorial && welcomeTutorial.page === 2) {
 			this.initFeatures();
 		}
 

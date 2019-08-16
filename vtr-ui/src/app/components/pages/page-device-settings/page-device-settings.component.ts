@@ -57,7 +57,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;
 	machineType: number;
-	private welcomeTutorial: WelcomeTutorial = undefined;
 	private notificationSubscription: Subscription;
 
 
@@ -104,9 +103,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		});*/  // VAN-5872, server switch feature
 		this.initInputAccessories();
 
-		this.welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (this.welcomeTutorial && this.welcomeTutorial.page === 2) {
+		if (welcomeTutorial && welcomeTutorial.page === 2) {
 			this.getMicrophoneSettings();
 		}
 	}
