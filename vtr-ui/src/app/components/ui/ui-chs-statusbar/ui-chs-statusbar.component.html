@@ -23,7 +23,7 @@
 							[ngClass]="{'badge-disable':badgeItem.text === 'homeSecurity.ecosystem.startTrial' && common?.startTrialDisabled}"
 								vtrMetrics
 								id="{{badgeItem.id}}"
-								attr.aria-label="{{badgeItem.id}}"
+								role="button"
 								metricsEvent="FeatureClick"
 								metricsItem="{{badgeItem.metricsItem}}">
 								<span class="badge badge-pill text-uppercase" [ngClass]="badgeItem.status | textClass"
@@ -39,7 +39,7 @@
 					*ngIf="isShowMore===false"
 					(click)="isShowMore=true"
 					id="chs-ecosystem-btn-collapseEcosystem"
-					attr.aria-label="chs-ecosystem-btn-collapseEcosystem"
+					role="button"
 					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="collapseEcosystem">
@@ -50,7 +50,7 @@
 					*ngIf="isShowMore===true"
 					(click)="isShowMore=false"
 					id="chs-ecosystem-btn-expandEcosystem"
-					attr.aria-label="chs-ecosystem-btn-expandEcosystem"
+					role="button"
 					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="expandEcosystem">

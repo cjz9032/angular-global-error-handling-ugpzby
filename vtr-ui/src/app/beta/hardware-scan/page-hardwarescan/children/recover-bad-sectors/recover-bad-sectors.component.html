@@ -22,7 +22,7 @@
 
 		<div class="row" *ngIf="devices">
 			<div class="button-row">
-				<button class="col action-button" vtrMetrics metricsEvent="itemClick" metricsParent="hardware-scan"
+				<button class="col action-button" vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan"
 					[metricsItem]="'btn.'+textButton" (click)="startRecover()">
 					{{textButton}}
 				</button>
