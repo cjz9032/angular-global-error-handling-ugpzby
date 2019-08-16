@@ -149,7 +149,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 
-	private fetchContent(lang ? : string) {
+	private fetchContent(lang ?: string) {
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -181,6 +181,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						if (heroBannerItems && heroBannerItems.length) {
 							this.heroBannerItems = heroBannerItems;
 						}
+
 						if (source === 'CMS') {
 							const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
 							if (cardContentPositionB) {
@@ -188,6 +189,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 								if (this.cardContentPositionB.BrandName) {
 									this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 								}
+								cardContentPositionB.DataSource = 'cms';
 							}
 						}
 
@@ -223,12 +225,13 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					console.log('fetchCMSContent error', error);
 				}
 			);
+
 			if (source === 'UPE') {
 				const upeParam = {
 					position: 'position-B'
 				};
-				this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-					const cardContentPositionB = this.upeService.getOneUPEContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
+					const cardContentPositionB = this.upeService.getOneUPEContent(upeResp, 'half-width-title-description-link-image', 'position-B')[0];
 					if (cardContentPositionB) {
 						this.cardContentPositionB = cardContentPositionB;
 						if (this.cardContentPositionB.BrandName) {
@@ -270,7 +273,17 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 
 	private getTileBSource() {
-		 return this.hypService.getFeatureSetting('TileBSource');
+		 return new Promise((resolve) => {
+			this.hypService.getFeatureSetting('TileBSource').then((source) => {
+				if (source === 'UPE') {
+					resolve('UPE');
+				} else {
+					resolve('CMS');
+				}
+			}, () => {
+				resolve('CMS');
+			});
+		 });
 	}
 
 	private setDefaultCMSContent() {

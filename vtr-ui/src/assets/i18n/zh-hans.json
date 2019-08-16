@@ -1448,11 +1448,11 @@
 		"notification": {
 			"recent": "最近的安全通知",
 			"notifications": "通知",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "不安全的网络连接",
+			"networkUnsafe": "网络不安全",
+			"deviceDisconnected": "设备已断开连接",
+			"newDeviceDetected": "检测到新设备",
+			"unsafeDeviceDetected": "检测到不安全的设备"
 		},
 		"ecosystem": {
 			"ecosystemBlockTitle": "保护您的设备生态系统",

@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Notifications de sécurité récentes",
             "notifications": "Notifications",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Connexion réseau non sécurisée",
+            "networkUnsafe": "Réseau non sécurisé",
+            "deviceDisconnected": "Périphérique déconnecté",
+            "newDeviceDetected": "Nouveau périphérique détecté",
+            "unsafeDeviceDetected": "Périphérique non sécurisé détecté"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Protégez votre écosystème d'appareils",

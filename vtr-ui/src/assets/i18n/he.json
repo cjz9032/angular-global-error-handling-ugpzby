@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "הודעות אבטחה אחרונות",
             "notifications": "הודעות",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "חיבור הרשת לא בטוח",
+            "networkUnsafe": "רשת לא בטוחה",
+            "deviceDisconnected": "המכשיר מנותק",
+            "newDeviceDetected": "זוהה מכשיר חדש",
+            "unsafeDeviceDetected": "זוהה מכשיר לא בטוח"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "הגנו על המערכת האקולוגית של המכשיר",
