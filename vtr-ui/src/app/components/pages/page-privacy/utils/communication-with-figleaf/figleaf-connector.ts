@@ -91,7 +91,7 @@ class FigleafConnector {
 		}
 		clearTimeout(reconnectTimer);
 		reconnectTimer = setTimeout(() => {
-			if (RECONNECT_TIMEOUT < 6000) {
+			if (RECONNECT_TIMEOUT < 10000) {
 				RECONNECT_TIMEOUT += 1000;
 			}
 			this.connect();
