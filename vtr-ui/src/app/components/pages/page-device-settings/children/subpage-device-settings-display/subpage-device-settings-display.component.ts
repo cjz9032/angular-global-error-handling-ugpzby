@@ -15,9 +15,9 @@ import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-fe
 import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-enum defaultTemparature {
-	defaultValue = 4500
-}
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+
+
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
 	templateUrl: './subpage-device-settings-display.component.html',
@@ -120,6 +120,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraBlur = new CameraBlur();
 	isDTmachine = false;
 	isAllInOneMachineFlag = false;
+	private welcomeTutorial: WelcomeTutorial = undefined;
+
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
@@ -150,6 +152,15 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
+
+		this.welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+		if (this.welcomeTutorial && this.welcomeTutorial.page === 2) {
+			this.initFeatures();
+		}
+	}
+
+	private initFeatures() {
 		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
 		this.getPrivacyGuardCapabilityStatus();
@@ -175,14 +186,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	async isAllInOneMachine() {
 		let frontCameraCount = 0;
 		try {
-			let panel = this.Windows.Devices.Enumeration.Panel.front;
-			let devices = await this.DeviceInformation.findAllAsync(this.DeviceClass.videoCapture);
-			devices.forEach(function (cameraDeviceInfo) {
-				if (cameraDeviceInfo.enclosureLocation != null && cameraDeviceInfo.enclosureLocation.panel === panel) {
+			const panel = this.Windows.Devices.Enumeration.Panel.front;
+			const devices = await this.DeviceInformation.findAllAsync(this.DeviceClass.videoCapture);
+			devices.forEach((cameraDeviceInfo) => {
+				if (cameraDeviceInfo.enclosureLocation !== null && cameraDeviceInfo.enclosureLocation.panel === panel) {
 					frontCameraCount = frontCameraCount + 1;
 				}
 			});
-			console.log('frontCameraCount: ', frontCameraCount)
+			console.log('frontCameraCount: ', frontCameraCount);
 			return frontCameraCount > 0 ? true : false;
 		} catch (error) {
 			console.log('isAllInOneMachine:', error);
@@ -216,6 +227,11 @@ export class SubpageDeviceSettingsDisplayComponent
 						if (this.dataSource.exposure.supported === true && this.cameraFeatureAccess.exposureAutoValue === false) {
 							this.cameraFeatureAccess.showAutoExposureSlider = true;
 						}
+					}
+					break;
+				case LocalStorageKey.WelcomeTutorial:
+					if (payload.page === 2) {
+						this.initFeatures();
 					}
 					break;
 				default:
@@ -381,6 +397,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 		}
 	}
+
 	private setEyeCareModeStatus(value: boolean) {
 		try {
 			if (this.displayService.isShellAvailable) {
@@ -396,6 +413,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.error(error.message);
 		}
 	}
+
 	private getEyeCareModeStatus() {
 		if (this.displayService.isShellAvailable) {
 			this.displayService

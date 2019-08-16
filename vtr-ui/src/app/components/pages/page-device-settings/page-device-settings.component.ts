@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
-import { DevService } from '../../../services/dev/dev.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -9,6 +8,9 @@ import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -55,8 +57,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;
 	machineType: number;
+	private welcomeTutorial: WelcomeTutorial = undefined;
+	private notificationSubscription: Subscription;
+
+
 	constructor(
-		private devService: DevService,
 		public qaService: QaService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
@@ -69,8 +74,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
-
-		this.getMicrophoneSettings();
 
 		// Evaluate the translations for QA on language Change
 		// this.qaService.setTranslationService(this.translate);
@@ -87,7 +90,10 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
+		console.log('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		// translate subheader menus
 		/*this.menuItems.forEach(m => {
@@ -97,6 +103,27 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			});
 		});*/  // VAN-5872, server switch feature
 		this.initInputAccessories();
+
+		this.welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+		if (this.welcomeTutorial && this.welcomeTutorial.page === 2) {
+			this.getMicrophoneSettings();
+		}
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case LocalStorageKey.WelcomeTutorial:
+					if (payload.page === 2) {
+						this.getMicrophoneSettings();
+					}
+					break;
+				default:
+					break;
+			}
+		}
 	}
 
 	initInputAccessories() {
@@ -170,6 +197,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 	// VAN-5872, server switch feature
 	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 		this.qaService.destroyChangeSubscribed();
 	}
 
