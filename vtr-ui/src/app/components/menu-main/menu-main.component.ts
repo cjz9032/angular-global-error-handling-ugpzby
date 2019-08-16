@@ -378,8 +378,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 						this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
 
-						const isAvailable =
-							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
+						const isAvailable = (responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 

@@ -1,7 +1,6 @@
 <div class="vtr-modal-chs-welcome-container position-relative">
 	<div class="modal-header justify-content-end">
 		<div role="button" id="chs-tour-btn-close"
-			attr.aria-label="chs-tour-btn-close"
 			href="javascript:;"
 			class="close-btn"
 			metricsItem="closeCHSWelcomeModal"
@@ -93,7 +92,7 @@
 		</div>
 		<vtr-ui-button
 			id="chs-tour-btn-login-lenovoId"
-			aria-label="chs-tour-btn-login-lenovoId"
+			role="button"
 			metricsEvent="FeatureClick"
 			metricsItem="loginLenovoId"
 			metricsParent="{{metricsParent}}"
@@ -124,7 +123,7 @@
 			<div class="ml-0 mr-4 pl-0">
 				<vtr-ui-button *ngIf="!isLocationServiceOn"
 					id="chs-tour-btn-openLocation"
-					aria-label="chs-tour-btn-openLocation"
+					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeOpenLocationButton"
 					metricsParent="{{metricsParent}}"
@@ -135,7 +134,7 @@
 				<!-- show done button -->
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
 					id="chs-tour-location-done-btn"
-					aria-label="chs-tour-location-done-btn"
+					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"
 					metricsParent="{{metricsParent}}"
@@ -151,7 +150,7 @@
 			class="row text-center align-items-center justify-content-center">
 			<div>
 				<vtr-ui-button id="chs-tour-btn-start"
-					aria-label="chs-tour-btn-start"
+					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeNextButton"
 					metricsParent="{{metricsParent}}"
@@ -163,7 +162,7 @@
 		<div *ngIf="switchPage === 2" class="row text-center justify-content-between align-items-center no-gutters">
 			<div class="button-welcome">
 				<vtr-ui-button id="chs-tour-btn-prev"
-					aria-label="chs-tour-btn-prev"
+					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomePrevButton"
 					metricsParent="{{metricsParent}}"
@@ -174,7 +173,7 @@
 			<div class="button-welcome">
 				<vtr-ui-button
 					id="chs-tour-btn-next"
-					aria-label="chs-tour-btn-next"
+					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeNextButton"
 					metricsParent="{{metricsParent}}"
@@ -186,7 +185,7 @@
 		<div *ngIf="switchPage === 3" class="row text-center justify-content-between align-items-center no-gutters">
 			<div class="button-welcome">
 				<vtr-ui-button id="chs-tour-btn-pageThree-prev"
-					aria-label="chs-tour-btn-pageThree-prev"
+					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomePrevButton"
 					metricsParent="{{metricsParent}}"
@@ -196,7 +195,6 @@
 			</div>
 			<div class="button-welcome">
 				<a id="chs-tour-lnk-skip"
-					attr.aria-label="chs-tour-lnk-skip"
 					vtrMetrics
 					metricsEvent="FeatureClick"
 					metricsItem="CHSStartTrialButton"

@@ -31,7 +31,7 @@ export class WidgetMcafeeComponent implements OnInit {
 		['br', 'Pt-BR'],
 		['ru', 'Ru-RU'],
 		['es', 'Es-ES'],
-		['sv', 'Sv-SE'],
+		['sv', 'Sv-SV'],
 		['tr', 'Tr-TR'],
 		['*', 'En-US'],
 	]);
