@@ -26,7 +26,7 @@ export class TrialExpiredWidgetComponent {
 	);
 
 	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
-		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000))
+		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000) || 1),
 	);
 
 	constructor(
