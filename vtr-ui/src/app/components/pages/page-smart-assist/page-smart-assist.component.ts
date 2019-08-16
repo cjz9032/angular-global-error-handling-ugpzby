@@ -191,7 +191,7 @@ export class PageSmartAssistComponent implements OnInit {
 					'APS Capability ---------------------------------', response[0],
 					'APS SENSOR ---------------------------------', response[1],
 					'HDD STATUS ---------------------------------', response[2]);
-				(response[0] && response[1] && response[2] > 0) ? this.isAPSAvailable = true : this.isAPSAvailable = true;
+				(response[0] && response[1] && response[2] > 0) ? this.isAPSAvailable = true : this.isAPSAvailable = false;
 
 				if (!this.isAPSAvailable) {
 					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
