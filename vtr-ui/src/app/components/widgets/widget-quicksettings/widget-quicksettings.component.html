@@ -10,7 +10,6 @@
 					<div class="text-left">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
-							#microphone
 							[value]="microphoneStatus.status && microphoneStatus.permission"
 							[title]="'dashboard.quickSettings.microphone' | translate"
 							metricsItem="microphone"
@@ -27,7 +26,6 @@
 						class="text-center">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Camera2x'"
 							[offIconDefinition]="'icomoon icomoon-LE-Camera-privacy-mode2x'"
-							#camera
 							[value]="!cameraStatus.status && cameraStatus.permission"
 							[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 							metricsItem="camera"
@@ -44,7 +42,6 @@
 					<div class="text-right">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
-							#eyecare
 							[title]="'dashboard.quickSettings.eyeCareMode' | translate"
 							metricsItem="eyeCareMode"
 							id="qs-switch-eyeCareMode"
