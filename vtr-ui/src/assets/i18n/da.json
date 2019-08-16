@@ -96,7 +96,7 @@
                     "info": "INFO"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Hurtige indstillinger"
                 }
             }
         },
@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "MAKRO-TAST FOR ",
-                    "deleteKey": "Tasten Delete",
+                    "deleteKey": "Delete",
                     "clear": "Ryd",
                     "intervalStatus": {
                         "keep": {
@@ -371,37 +371,37 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Luk automatisk",
+            "introLine": "Tilføj apps, der skal lukkes ved spilstart. Dette frigør ressourcer til optimering af ydeevnen for spil. BEMÆRK: Denne funktion lukker appen fuldstændigt. Du skal altid sørge for, at du har gemt arbejdet.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Vil du aktivere automatisk lukning?",
+                "body": "De apps, du har tilføjet, lukkes, når du spiller, hvilket frigør ressourcer til spil.",
+                "checkedTitle": "Spørg ikke igen",
+                "btnConfirm": "Tænd",
+                "btnCancel": "Ikke nu"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Føj apps til automatisk lukning",
+                "body": "Kun apps, der kører, vises på listen nedenfor."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Tilføj",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Der er ingen kørende apps at tilføje",
+                "body": "Kun apps, der kører i øjeblikket, vises. Start en app, du vil tilføje, og vend tilbage."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
+            "title": "Netværksforstærkning",
+            "introLine": "Hvis Netværksforstærkning aktiveres, får spil højeste prioritet på netværket, så hastigheden øges. Hvis du bruger apps, mens du spiller, f.eks. Twitch eller Discord, anbefales det, at du tilføjer dem på listen nedenfor, så de også får prioritet på netværket.",
             "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Vil du slå Netværksforstærkning til?",
+                "body": "Vil du slå Netværksforstærkning til? De apps, du har tilføjet, deler mere netværkskapacitet, når de kører.",
+                "checkedTitle": "Spørg ikke igen",
+                "btnConfirm": "Tænd",
+                "btnCancel": "Ikke nu"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
+                "title": "Føj apps til Netværksforstærkning",
                 "body": {
                     "part1": "You can add up to 5 additional apps to boost",
                     "part2": "of",
@@ -418,8 +418,7 @@
                 "sub1": "Min enhed",
                 "sub2": "Mine enhedsindstillinger",
                 "sub3": "Systemopdatering",
-                "sub4": "Smart hjælp",
-                "sub5": ""
+                "sub4": "Smart hjælp"
             },
             "security": {
                 "title": "Sikkerhed",
@@ -856,7 +855,7 @@
                         "title": "Flytilstand",
                         "description": "Beskyt flyets vekselstrømskontakt ved at styre systemets strømforbrug.Når Flytilstand er aktiveret, reducerer computeren strømforbruget ved at begrænse batteriopladningshastigheden og systemets ydeevne.",
                         "checkBoxDesc": "Automatisk registrering",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Hvis den automatiske søgefunktion er markeret, slår computeren automatisk Flytilstand til, når den registrerer et miljø om bord på et fly, og slår den fra, når du forlader flyet."
                     }
                 },
                 "energyStar": {
@@ -1448,7 +1447,12 @@
         "title": "Tilsluttet Home Security",
         "notification": {
             "recent": "Seneste sikkerhedsmeddelelser",
-            "notifications": "Meddelelser"
+            "notifications": "Meddelelser",
+            "unsafeNetworkConnection": "Usikker netværksforbindelse",
+            "networkUnsafe": "Usikkert netværk",
+            "deviceDisconnected": "Enhed er frakoblet",
+            "newDeviceDetected": "Ny enhed er registreret",
+            "unsafeDeviceDetected": "Usikker enhed er registreret"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Beskyt din enheds økosystem",
@@ -2256,118 +2260,123 @@
         "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
     },
-	"hardwareScan": {
-		"name": "Hardwaresøgning",
-		"title": "Udfør en hardwaresøgning",
-		"subtitle": "Vent, mens der udføres hardwaresøgning",
-		"quickScan": "Hurtig søgning",
-		"finalResultCode": "Kode for det endelige resultat",
-		"resultCode": "Resultatkode",
-		"cancel": "Annuller",
-		"complete": "Udført",
-		"incomplete": "Ufuldstændig",
-		"loadingComponents": "Indlæser komponenter",
-		"hardwareComponents": "Hardwarekomponenter",
-		"loadingDevices": "Enheder indlæses",
-		"select": "Vælg",
-		"deselect": "Fravælg",
-		"allOptions": "Alle indstillinger",
-		"latestResult": "Seneste resultat",
-		"back": "TILBAGE",
-		"viewResults": "Se resultater",
-		"save": "Gem",
-		"details": "Oplysninger",
-		"recurrence": "Gentagelse",
-		"interval": "Interval",
-		"time": "Klokkeslæt",
-		"type": "Type",
-		"hours": "Timer",
-		"minutes": "Minutter",
-		"am": "formiddag",
-		"pm": "eftermiddag",
-		"previousResult": "Tidligere resultater",
-		"lastScanOn": "Seneste søgning den",
-		"result": "Resultat",
-		"viewDetailsLog": "Vis log med detaljer",
-		"ok": "OK",
-		"notOk": "IKKE OK",
-		"notScanned": "INGEN SØGNING",
-		"pass": "Bestået",
-		"fail": "Mislykkedes",
-		"cancelled": "Annulleret",
-		"warning": "Advarsel!",
-		"errorResult": "Du skal vælge en test, der skal køres.",
-		"buy": "Køb nu",
-		"errorDeviceChoose": "Du skal vælge en enhed, der skal køres.",
-		"errorNoOptionSelected": "Du skal vælge en indstilling.",
-		"offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
-		"common": {
-			"menu": "Hardwaresøgning"
-		},
-		"customize": {
-			"name": "Tilpas",
-			"test": "Tilpas test",
-			"description": "Vælg indstillingerne nedenfor for at tilpasse testen",
-			"runTests": "Kør de valgte test"
-		},
-		"scheduledScan": {
-			"name": "Planlæg søgning",
-			"title": "Planlæg din søgning",
-			"newScan": "Planlæg ny søgning",
-			"fullScan": "Fuld søgning",
-			"onlyOnce": "Kun én gang",
-			"eachDay": "Hver dag",
-			"eachWeek": "Hver uge",
-			"eachMonth": "Hver måned",
-			"eachYear": "Hvert år",
-			"schedule": "Planlæg",
-			"date": "Dato",
-			"pickDate": "Vælg en dato",
-			"scanScheduled": "En hardwaresøgning blev planlagt!",
-			"description": "Der er allerede planlagt en anden scanning på samme tid og den samme dato!",
-			"error": "Fejl",
-			"delete": "Slet"
-		},
-		"recoverBadSectors": {
-			"title": "Retablering af dårlige sektorer",
-			"description": "Lenovo-værktøj til registrering og reparation af beskadigede sektorer på en disk",
-			"goTo": "Gå til gendannelse af beskadigede sektorer",
-			"localDevices": "Lokale enheder",
-			"numberSectors": "Antal læste sektorer",
-			"numberBadSectors": "Antal dårlige sektorer, der blev fundet",
-			"numberFixedSectors": "Antal udbedrede sektorer",
-			"numberNonFixedSectors": "Antal ikke-udbedrede sektorer",
-			"status": "Driftsstatus",
-			"elapsedTime": "Forløbet tid",
-			"hours": "Timer",
-			"hour": "Time",
-			"minutes": "Minutter",
-			"minute": "Minut",
-			"seconds": "Sekunder",
-			"second": "Sekund",
-			"moreInfo": "Vent et øjeblik, mens gendannelsen af beskadigede sektorer udføres",
-			"systemEvent": "Testen blev afbrudt, fordi der opstod en systemhændelse, som kunne kompromittere resultatet.",
-			"systemPasswordProtected": "Enheden er muligvis beskyttet med adgangskode. Prøv at deaktivere beskyttelsen med adgangskode.",
-			"popup": {
-				"description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
-				"yes": "Ja",
-				"no": "Nej"
-			}
-		},
-		"support": {
-			"title": "Download professionelle fejlfindingsværktøjer",
-			"subtitle": "Lenovo Support"
-		},
-		"eTicket": {
-			"header": "Der blev registreret et hardwareproblem.",
-			"problemDetected": "Hardwaresøgningen har registreret et problem med følgende komponenter på din computer",
-			"ticketRequestQuestion": "Lenovo kan sende en udskiftningsdel, hvis din computer er dækket af garantien. Vil du oprette en supportanmodning om hardwareudskiftning for at løse dette problem",
-			"openTicket": "Åbn supportanmodning"
-		},
-		"battery": {
-			"title": "Aktivér opladningsgrænse for batteri",
-			"description": "Ved at bruge tilpasset opladning af batteriet kan du forlænge den samlede batterilevetid, mens du bruger enheden. Når batteriet ikke lades helt op, vil batteriets driftstid dog være kortere. For at aktivere denne funktion fuldt ud skal du tage maskinens strømstik ud og lade batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
-			"enable": "Aktivér"
-		}
-	}
+    "hardwareScan": {
+        "name": "Hardwaresøgning",
+        "title": "Udfør en hardwaresøgning",
+        "subtitle": "Vent, mens der udføres hardwaresøgning",
+        "quickScan": "Hurtig søgning",
+        "finalResultCode": "Kode for det endelige resultat",
+        "resultCode": "Resultatkode",
+        "cancel": "Annuller",
+        "complete": "Udført",
+        "incomplete": "Ufuldstændig",
+        "loadingComponents": "Indlæser komponenter",
+        "hardwareComponents": "Hardwarekomponenter",
+        "loadingDevices": "Enheder indlæses",
+        "select": "Vælg",
+        "deselect": "Fravælg",
+        "allOptions": "Alle indstillinger",
+        "latestResult": "Seneste resultat",
+        "back": "TILBAGE",
+        "viewResults": "Se resultater",
+        "save": "Gem",
+        "details": "Oplysninger",
+        "recurrence": "Gentagelse",
+        "interval": "Interval",
+        "time": "Klokkeslæt",
+        "type": "Type",
+        "hours": "Timer",
+        "minutes": "Minutter",
+        "am": "formiddag",
+        "pm": "eftermiddag",
+        "previousResult": "Tidligere resultater",
+        "lastScanOn": "Seneste søgning den",
+        "result": "Resultat",
+        "viewDetailsLog": "Vis log med detaljer",
+        "ok": "OK",
+        "notOk": "IKKE OK",
+        "notScanned": "INGEN SØGNING",
+        "pass": "Bestået",
+        "fail": "Mislykkedes",
+        "cancelled": "Annulleret",
+        "warning": "Advarsel!",
+        "errorResult": "Du skal vælge en test, der skal køres.",
+        "buy": "Køb nu",
+        "errorDeviceChoose": "Du skal vælge en enhed, der skal køres.",
+        "errorNoOptionSelected": "Du skal vælge en indstilling.",
+        "offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
+        "customize": {
+            "name": "Tilpas",
+            "test": "Tilpas test",
+            "description": "Vælg indstillingerne nedenfor for at tilpasse testen",
+            "runTests": "Kør de valgte test"
+        },
+        "scheduledScan": {
+            "name": "Planlæg søgning",
+            "title": "Planlæg din søgning",
+            "newScan": "Planlæg ny søgning",
+            "fullScan": "Fuld søgning",
+            "onlyOnce": "Kun én gang",
+            "eachDay": "Hver dag",
+            "eachWeek": "Hver uge",
+            "eachMonth": "Hver måned",
+            "eachYear": "Hvert år",
+            "schedule": "Planlæg",
+            "date": "Dato",
+            "pickDate": "Vælg en dato",
+            "scanScheduled": "En hardwaresøgning blev planlagt!",
+            "description": "Der er allerede planlagt en anden scanning på samme tid og den samme dato!",
+            "error": "Fejl",
+            "delete": "Slet",
+            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+        },
+        "recoverBadSectors": {
+            "title": "Retablering af dårlige sektorer",
+            "description": "Lenovo-værktøj til registrering og reparation af beskadigede sektorer på en disk",
+            "goTo": "Gå til gendannelse af beskadigede sektorer",
+            "localDevices": "Lokale enheder",
+            "numberSectors": "Antal læste sektorer",
+            "numberBadSectors": "Antal dårlige sektorer, der blev fundet",
+            "numberFixedSectors": "Antal udbedrede sektorer",
+            "numberNonFixedSectors": "Antal ikke-udbedrede sektorer",
+            "status": "Driftsstatus",
+            "elapsedTime": "Forløbet tid",
+            "hours": "Timer",
+            "hour": "Time",
+            "minutes": "Minutter",
+            "minute": "Minut",
+            "seconds": "Sekunder",
+            "second": "Sekund",
+            "moreInfo": "Vent et øjeblik, mens gendannelsen af beskadigede sektorer udføres",
+            "systemEvent": "Testen blev afbrudt, fordi der opstod en systemhændelse, som kunne kompromittere resultatet.",
+            "systemPasswordProtected": "Enheden er muligvis beskyttet med adgangskode. Prøv at deaktivere beskyttelsen med adgangskode.",
+            "popup": {
+                "description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
+                "yes": "Ja",
+                "no": "Nej"
+            }
+        },
+        "support": {
+            "title": "Download professionelle fejlfindingsværktøjer",
+            "subtitle": "Lenovo Support"
+        },
+        "eTicket": {
+            "header": "Der blev registreret et hardwareproblem.",
+            "problemDetected": "Hardwaresøgningen har registreret et problem med følgende komponenter på din computer",
+            "ticketRequestQuestion": "Lenovo kan sende en udskiftningsdel, hvis din computer er dækket af garantien. Vil du oprette en supportanmodning om hardwareudskiftning for at løse dette problem",
+            "openTicket": "Åbn supportanmodning"
+        },
+        "battery": {
+            "title": "Aktivér opladningsgrænse for batteri",
+            "description": "Ved at bruge tilpasset opladning af batteriet kan du forlænge den samlede batterilevetid, mens du bruger enheden. Når batteriet ikke lades helt op, vil batteriets driftstid dog være kortere. For at aktivere denne funktion fuldt ud skal du tage maskinens strømstik ud og lade batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
+            "enable": "Aktivér"
+        },
+        "completed": "Completed",
+        "notCompleted": "Not Completed",
+        "refreshModules": "Refresh Modules",
+        "yes": "yes",
+        "attention": "Attention",
+        "cancelTextPrompt": "Are you sure you would like to cancel?",
+        "cancelTextProgress": "Please wait for cancel progress"
+    }
 }

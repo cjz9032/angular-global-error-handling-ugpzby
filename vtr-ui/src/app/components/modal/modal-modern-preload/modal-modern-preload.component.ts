@@ -139,7 +139,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 					setApp.showStatus = this.statusEnum.DOWNLOADING;
 					break;
 				case ModernPreloadEnum.StatusInstalling:
-					setApp.showStatus = this.statusEnum.INSTALLING;
+					setApp.showStatus = this.statusEnum.DOWNLOAD_COMPLETE;
 					break;
 			}
 		});

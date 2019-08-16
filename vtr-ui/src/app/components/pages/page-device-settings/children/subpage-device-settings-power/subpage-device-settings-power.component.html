@@ -195,7 +195,7 @@
 				[collapseLinkId]="'device-settings-powerSettings'">
 				<ul class="list-group list-group-flush">
 					<li class=""
-						*ngIf="!isDesktopMachine">
+						*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 							[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
@@ -234,7 +234,7 @@
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
 											checked="" />
-										<label class="custom-control-label "
+										<label
 											for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>

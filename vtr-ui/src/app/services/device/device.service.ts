@@ -7,6 +7,7 @@ import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
+import { HypothesisService } from '../hypothesis/hypothesis.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -28,7 +29,8 @@ export class DeviceService {
 		private shellService: VantageShellService,
 		private commonService: CommonService,
 		public androidService: AndroidService,
-		private router: Router) {
+		private router: Router,
+		private hypSettings: HypothesisService) {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
@@ -103,15 +105,11 @@ export class DeviceService {
 	}
 
 	private initshowPrivacy() {
-		// set this.showPrivacy appropriately based on machineInfo data
-		try {
-			if (this.isShellAvailable) {
-				this.shellService.calcDeviceFilter('{"var":"HypothesisGroups.PrivacyTab"}').then((privacy) => {
-					this.showPrivacy = (privacy === 'enabled');
-				});
-			}
-		} catch (error) {
-			console.error('initPrivacy' + error.message);
+		// set this.showPrivacy appropriately based on machineInfo data	
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
+				this.showPrivacy = (privacy === 'enabled');
+			});
 		}
 	}
 

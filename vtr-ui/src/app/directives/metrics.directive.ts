@@ -1,25 +1,39 @@
-import { Directive, HostListener, Input } from '@angular/core';
-import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
-import { ActivatedRoute } from '@angular/router';
-import { VieworderService } from '../services/view-order/vieworder.service';
-import { DevService } from '../services/dev/dev.service';
-import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
+import {
+	Directive,
+	HostListener,
+	Input
+} from '@angular/core';
+import {
+	VantageShellService
+} from '../services/vantage-shell/vantage-shell.service';
+import {
+	ActivatedRoute
+} from '@angular/router';
+import {
+	VieworderService
+} from '../services/view-order/vieworder.service';
+import {
+	DevService
+} from '../services/dev/dev.service';
+import {
+	MetricsTranslateService
+} from '../services/mertics-traslate/metrics-translate.service';
 
 export interface MetricsData {
 	ItemType: string;
-	ItemName?: string;
-	ItemParent?: string;
-	ItemParm?: string;
-	ItemValue?: string;
-	viewOrder?: number;
-	ItemID?: string;
-	ItemCategory?: string;
-	ItemPosition?: string;
-	PageNumber?: string;
-	SettingParent?: string;
-	SettingName?: string;
-	SettingValue?: string;
-	SettingParm?: string;
+	ItemName ? : string;
+	ItemParent ? : string;
+	ItemParm ? : string;
+	ItemValue ? : string;
+	viewOrder ? : number;
+	ItemID ? : string;
+	ItemCategory ? : string;
+	ItemPosition ? : string;
+	PageNumber ? : string;
+	SettingParent ? : string;
+	SettingName ? : string;
+	SettingValue ? : string;
+	SettingParm ? : string;
 }
 
 
@@ -64,6 +78,8 @@ export class MetricsDirective {
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
 			case 'featureclick':
+			case 'FeatureClick':
+			case 'ItemClick':
 			case 'itemclick': {
 				data.ItemType = 'FeatureClick';
 				data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
@@ -74,9 +90,11 @@ export class MetricsDirective {
 				if (typeof this.metricsValue !== 'undefined') {
 					data.ItemValue = this.metricsValue;
 				}
+				break;
 			}
-			break;
+
 			case 'articleclick':
+			case 'ArticleClick':
 			case 'docclick': {
 				data.ItemType = 'ArticleClick';
 				data.ItemParent = this.metricsParent;
@@ -89,8 +107,9 @@ export class MetricsDirective {
 				data.ItemCategory = this.metricsItemCategory;
 				data.ItemPosition = this.metricsItemPosition;
 				data.PageNumber = this.metricsPageNumber || 1;
+				break;
 			}
-			break;
+
 			case 'settingupdate': {
 				data.ItemType = 'SettingUpdate';
 				data.SettingParent = this.metricsParent;
@@ -99,6 +118,7 @@ export class MetricsDirective {
 				if (this.metricsSettingParm) {
 					data.SettingParm = this.metricsSettingParm;
 				}
+				break;
 			}
 		}
 		return data;
@@ -119,7 +139,7 @@ export class MetricsDirective {
 
 		if (this.metrics && this.metrics.sendAsync) {
 			try {
-				console.log('metrics data ::', JSON.stringify(data));
+				console.log('metrics data ::-------------------------------*******', JSON.stringify(data));
 				await this.metrics.sendAsync(data);
 			} catch (ex) {
 				this.devService.writeLog('sending metric breaks with exception:' + ex);
