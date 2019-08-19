@@ -12,7 +12,7 @@ export class UiLightingProfileToggleComponent implements OnInit {
 	public p2Checked: boolean;
 	public p3Checked: boolean;
 	public isToggle: boolean = true;
-
+	@Input() id: string ='';
 	constructor() {
 
 

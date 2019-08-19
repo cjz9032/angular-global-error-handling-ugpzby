@@ -4,8 +4,7 @@ import {
 	Output,
 	EventEmitter,
 	OnDestroy,
-	NgZone,
-	ViewChild
+	NgZone
 } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
@@ -18,6 +17,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -55,11 +55,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.getQuickSettingStatus();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
 
+		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+		if (welcomeTutorial && welcomeTutorial.page === 2) {
+			this.initFeatures();
+		}
 	}
 
 	ngOnDestroy() {
@@ -89,27 +93,21 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					this.cameraStatus.isLoading = false;
 					this.cameraStatus.permission = payload;
 					break;
+				case LocalStorageKey.WelcomeTutorial:
+					if (payload.page === 2) {
+						this.initFeatures();
+					}
+					break;
 				default:
 					break;
-			}
-			if (notification.type === DeviceMonitorStatus.OOBEStatus) {
-				if (notification.payload) {
-					this.getMicrophoneStatus();
-					this.displayService.startMonitorForCameraPermission();
-					this.getCameraPrivacyStatus();
-				}
 			}
 		}
 	}
 
-	private getQuickSettingStatus() {
-		const modalStatus = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial) || { page: 1 };
-		if (modalStatus.page === 2) {
-			this.getMicrophoneStatus();
-			this.displayService.startMonitorForCameraPermission();
-			this.getCameraPrivacyStatus();
-
-		}
+	private initFeatures() {
+		this.getMicrophoneStatus();
+		this.displayService.startMonitorForCameraPermission();
+		this.getCameraPrivacyStatus();
 		this.initEyecaremodeSettings();
 		this.startEyeCareMonitor();
 	}

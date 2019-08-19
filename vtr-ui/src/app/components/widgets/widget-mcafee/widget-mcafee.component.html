@@ -26,9 +26,7 @@
 				[upperCaseLabel]="false"
 				*ngIf="install"
 				[linkId]="'security-av-mcafee-launch-btn'"></vtr-ui-button>
-			<a	id="sa-av-link-visitmcafee"
-				aria-label="sa-av-link-visitmcafee"
-				class="d-block"
+			<a class="d-block"
 				[ngClass]="{'unclickable': !isOnline}"
 				href="{{urlGetMcAfee}}"
 				target="_blank">
@@ -40,7 +38,7 @@
 					[upperCaseLabel]="false"
 					[isDisabled]="!isOnline"
 					*ngIf="!install"
-					[linkId]="'security-av-get-mcafee-btn'"></vtr-ui-button>
+					[linkId]="'sa-av-btn-visitmcafee'"></vtr-ui-button>
 			</a>
 		</div>
 	</div>

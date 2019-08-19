@@ -1,6 +1,6 @@
 import { Directive, ElementRef, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { GetParentForAnalyticsService } from '../services/get-parent-for-analytics.service';
-import { AnalyticsService, ItemTypes } from '../services/analytics.service';
+import { AnalyticsService, ItemTypes } from '../services/analytics/analytics.service';
 
 @Directive({
 	selector: '[vtrSendAnalytics]'

@@ -107,7 +107,6 @@
 					<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
 					<div class="text-regular" *vtrTranslate="'security.homeprotection.homesecurity.subtitleDescribe' | translate">
 						<a vtrMetrics  id="sa-ws-lnk-CHS-here"
-							aria-label="sa-ws-lnk-CHS-here"
 							metricsEvent="ArticleClick"
 							metricsItem="learnMoreAboutSecurityHealth"
 							metricsItemPosition="1"
@@ -124,9 +123,9 @@
 		<div class="row">
 			<div class="col-sm-6" routerLink="/home-security" *ngIf="isChsExist">
 				<div class="button-box shift-left">
-					<vtr-ui-button id="sa-ws-btn-trynow"
-						aria-label="sa-ws-btn-trynow"
+					<vtr-ui-button
 						metricsItem="tryNow"
+						[linkId]="'sa-ws-btn-trynow'"
 						[label]="'security.homeprotection.homesecurity.tryNow' | translate"
 						[title]="'security.homeprotection.homesecurity.tryNow' | translate"
 						[isDisabled]="!data.tryNowEnable">

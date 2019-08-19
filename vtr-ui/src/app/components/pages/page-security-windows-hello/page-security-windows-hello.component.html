@@ -56,10 +56,10 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<vtr-ui-button id="sa-wh-btn-setupwindowshello"
-														aria-label="sa-wh-btn-setupwindowshello"
+													<vtr-ui-button
 														metricsEvent="FeatureClick"
 														metricsItem="setUpWindowsHello"
+														[linkId]="'sa-wh-btn-setupwindowshello'"
 														(click)="setUpWindowsHello()"
 														[title]="'security.windowsHello.setUp' | translate"
 														[label]="'security.windowsHello.setUp' | translate">
@@ -108,7 +108,6 @@
 																{{'security.windowsHello.visitAndRegister' | translate}}
 																<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
 																	<a id="sa-wh-lnk-visitwindowshello"
-																		aria-label="sa-wh-lnk-visitwindowshello"
 																		vtrMetrics
 																		metricsEvent="FeatureClick"
 																		metricsItem="setUpWindowsHello"
@@ -154,7 +153,6 @@
 															<div class="text-regular">
 																{{'security.windowsHello.startUsingWindowsHello' | translate}}
 																<a *ngIf="isOnline; else spanText" id="sa-wh-lnk-visitmicrosoft"
-																	aria-label="sa-wh-lnk-visitmicrosoft"
 																	target="_blank"
 																	vtrMetrics
 																	metricsItem="visitMicrosoft"
@@ -180,7 +178,6 @@
 										<p class="text-regular"
 											*vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
 											<a id="sa-wh-lnk-privacypolicy"
-												aria-label="sa-wh-lnk-privacypolicy"
 												vtrMetrics
 												metricsEvent="FeatureClick"
 												metricsItem="privacyPolicy"
@@ -227,7 +224,6 @@
 														{{'security.windowsHello.visitAndRegister' | translate}}
 														<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
 															<a id="sa-wh-lnk-visitwindowshello"
-																aria-label="sa-wh-lnk-visitwindowshello"
 																vtrMetrics
 																metricsEvent="FeatureClick"
 																metricsItem="setUpWindowsHello"
@@ -248,7 +244,6 @@
 														<div class="text-regular">
 															{{'security.windowsHello.startUsingWindowsHello' | translate}}
 															<a *vtrLinkStatus="'security.windowsHello.visitMicrosoft' | translate" id="sa-wh-lnk-visitmicrosoft"
-																aria-label="sa-wh-lnk-visitmicrosoft"
 																target="_blank"
 																vtrMetrics
 																metricsItem="visitMicrosoft"
@@ -271,15 +266,15 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
+											[linkId]="'windows-hello'">
 										</vtr-widget-security-status>
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card id="sa-wh-lnk-card-content"
-											aria-label="sa-wh-lnk-card-content"
+										<vtr-container-card
 											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
@@ -293,7 +288,8 @@
 											type="corner-article"
 											cornerShift="large"
 											order="1"
-											sideFlag="r">
+											sideFlag="r"
+											[containerCardId]="'sa-wh-modal'">
 										</vtr-container-card>
 									</div>
 								</div>
