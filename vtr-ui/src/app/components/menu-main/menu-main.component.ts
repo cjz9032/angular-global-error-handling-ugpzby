@@ -49,6 +49,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	isRS5OrLater: boolean;
 	isGamingHome: boolean;
 	currentUrl: string;
+	isSMode: boolean;
 
 
 	constructor(
@@ -206,6 +207,18 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	showItem(item) {
 		let showItem = true;
+		if (this.deviceService.isSMode) {
+			if (!item.sMode) {
+				showItem = false;
+			}
+			if (item.id === 'device') {
+				item.subitems.forEach((subitem, index, object) => {
+					if (!subitem.sMode) {
+						object.splice(index, 1);
+					}
+				});
+			}
+		}
 		if (this.deviceService.isArm) {
 			if (!item.forArm) {
 				showItem = false;
