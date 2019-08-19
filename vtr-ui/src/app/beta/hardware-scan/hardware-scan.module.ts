@@ -29,6 +29,26 @@ import { UiButtonModule } from './ui/ui-button/ui-button.module';
 import { ContainerCardModule } from './container-card/container-card.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
+import { faRedo } from '@fortawesome/pro-light-svg-icons/faRedo';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
+import { faAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
+
+library.add(faCaretUp);
+library.add(faCaretRight);
+library.add(faCaretDown);
+library.add(faRedo);
+library.add(faExclamationTriangle);
+library.add(faExclamationCircle);
+library.add(faQuestionCircle);
+library.add(faAngleUp);
+
+
 @NgModule({
 	declarations: [
 		ModalCancelComponent,
