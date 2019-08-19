@@ -12,7 +12,7 @@
 		<div class="errorMessage">{{ errorMessage }}</div>
 	</div>
 
-	<vtr-ui-hardware-list-test [items]="items"></vtr-ui-hardware-list-test>
+	<vtr-ui-hardware-list-test [items]="items" (selectAny)="receiveSelect()"></vtr-ui-hardware-list-test>
 
 	<div class="row">
 		<div class="col button-row">
