@@ -85,6 +85,7 @@ export class PageAutocloseComponent implements OnInit {
 				this.gamingAutoCloseService.setNeedToAskStatusCache(needToAskStatus);
 				console.log('first need status', needToAskStatus);
 				this.needToAsk = needToAskStatus;
+				this.hiddenScroll(true);
 				if (this.toggleStatus) {
 					this.showAppsModal = true;
 				} else if (!this.toggleStatus && this.needToAsk) {
@@ -114,18 +115,30 @@ export class PageAutocloseComponent implements OnInit {
 	initTurnOnAction() {
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
+		this.hiddenScroll(true);
 	}
 
 	initNotNowAction(notNowStatus: boolean) {
 		this.showAppsModal = true;
+		this.hiddenScroll(true);
 	}
 
 	modalCloseTurnOn(action: boolean) {
 		this.showTurnOnModal = action;
+		this.hiddenScroll(false);
 	}
 
 	modalCloseAddApps(action: boolean) {
 		this.showAppsModal = action;
+		this.hiddenScroll(false);
+	}
+
+	hiddenScroll(action: boolean) {
+		if (action) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
 	}
 
 	toggleAutoClose(event: any) {

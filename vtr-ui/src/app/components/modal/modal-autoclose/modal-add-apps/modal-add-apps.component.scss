@@ -11,6 +11,9 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: $screen_dark_50;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 ui-popover-apps {
 	position: absolute;
@@ -19,12 +22,6 @@ ui-popover-apps {
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-	right: 0;
-	left: 0;
-	margin: auto;
-	top: 0;
-	bottom: 0;
-	height: calc(100vh - 35rem);
 	@media #{$medium-screen} {
 		max-width: 80%;
 	}
