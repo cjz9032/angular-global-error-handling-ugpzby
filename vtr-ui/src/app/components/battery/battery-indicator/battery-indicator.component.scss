@@ -204,7 +204,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 			.base-remaining-text {
 				position: absolute;
-				font-size: $caption;
+				font-size: 1rem;
 				z-index: 5;
 				font-weight: $weight_bold;
 				width: 100%;
@@ -222,7 +222,6 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				@extend .base-remaining-text;
 				color: $main_dark;
 				bottom: 5%;
-				font-size: $caption;
 				font-weight: $weight_medium;
 			}
 		}
