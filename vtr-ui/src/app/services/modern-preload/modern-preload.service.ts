@@ -49,7 +49,7 @@ export class ModernPreloadService {
 		}
 	}
 
-	private getIsEntitled() {
+	public getIsEntitled() {
 		if (this.isInitialized) {
 			this.modernPreloadBridge.getIsEntitled().then((response) => {
 				if (response.result !== undefined) {

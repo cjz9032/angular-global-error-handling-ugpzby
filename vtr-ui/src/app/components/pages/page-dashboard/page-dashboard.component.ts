@@ -32,7 +32,6 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 	styleUrls: ['./page-dashboard.component.scss'],
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
-	firstName = 'User';
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -103,14 +102,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		const self = this;
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			} else {
-				self.firstName = this.userService.firstName;
-			}
-		});
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
@@ -548,9 +539,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
-					break;
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
 					break;
 				default:
 					break;

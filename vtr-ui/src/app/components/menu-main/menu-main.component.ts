@@ -23,6 +23,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -34,7 +35,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	@Input() loadMenuItem: any = {};
 	public machineFamilyName: string;
 	public country: string;
-	public firstName: 'User';
 	// commonMenuSubscription: Subscription;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
@@ -142,12 +142,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
-		const self = this;
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			}
-		});
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -217,7 +211,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				showItem = false;
 			}
 		}
-		if (item.id === 'privacy') {
+		if (item.id === 'privacy1') {
 			if (!this.deviceService.showPrivacy) {
 				showItem = false;
 			}
@@ -246,9 +240,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
-					break;
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, notification.payload.family);
@@ -256,6 +247,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					break;
 				case LocalStorageKey.MachineFamilyName:
 					this.machineFamilyName = notification.payload;
+					break;
+				case NetworkStatus.Online:
+					this.modernPreloadService.getIsEntitled();
 					break;
 				default:
 					break;

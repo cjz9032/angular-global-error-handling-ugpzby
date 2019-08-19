@@ -1,4 +1,6 @@
-<div>
+<div vtrSendAnalytics
+	 customPageName="Privacy.Home"
+	 [metricsEvent]="'PageView'">
     <ul class="header-nav">
         <li class="header-nav__item" *ngFor="let featureConfig of featurePagesConfig">
             <a class="header-nav__link" routerLink="{{featureConfig.routerLink}}" routerLinkActive="active">

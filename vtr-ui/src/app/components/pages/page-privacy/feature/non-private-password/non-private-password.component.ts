@@ -2,14 +2,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../common/services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { distinctUntilChanged, filter, map, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { FeaturesStatuses } from '../../userDataStatuses';
-import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { combineLatest } from 'rxjs';
+import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
 
 @Component({
 	selector: 'vtr-non-private-password',
@@ -31,7 +31,7 @@ export class NonPrivatePasswordComponent implements OnInit {
 	removePasswordPopupId = 'removePassword';
 	browserName: string;
 
-	isNonPrivatePasswordWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
+	isNonPrivatePasswordWasScanned$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
@@ -40,10 +40,10 @@ export class NonPrivatePasswordComponent implements OnInit {
 
 	isShowAccountsStored$ = combineLatest([
 		this.isFigleafReadyForCommunication$,
-		this.userDataGetStateService.userDataStatus$
+		this.appStatusesService.globalStatus$
 	]).pipe(
-		map(([isFigleafReadyForCommunication, userDataStatus]) => {
-			return userDataStatus.nonPrivatePasswordResult === FeaturesStatuses.undefined &&
+		map(([isFigleafReadyForCommunication, globalStatus]) => {
+			return globalStatus.nonPrivatePasswordResult === FeaturesStatuses.undefined &&
 				isFigleafReadyForCommunication;
 		})
 	);
@@ -65,7 +65,7 @@ export class NonPrivatePasswordComponent implements OnInit {
 		private browserAccountsService: BrowserAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private vantageCommunicationService: VantageCommunicationService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private commonPopupService: CommonPopupService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private route: ActivatedRoute,

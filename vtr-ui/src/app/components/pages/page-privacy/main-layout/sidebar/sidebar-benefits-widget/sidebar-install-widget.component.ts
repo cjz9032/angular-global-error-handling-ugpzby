@@ -3,10 +3,10 @@ import { RouterChangeHandlerService } from '../../../common/services/router-chan
 import { filter, takeUntil, tap } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sidebar-install-widget.service';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
 import { getFigleafProtectedStatus } from '../../../utils/helpers';
+import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -31,13 +31,13 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	constructor(
 		private routerChangeHandler: RouterChangeHandlerService,
 		private sidebarInstallWidgetService: SidebarInstallWidgetService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 	) {
 	}
 
 	ngOnInit() {
 		merge(
-			this.userDataGetStateService.userDataStatus$.pipe(
+			this.appStatusesService.globalStatus$.pipe(
 				tap(({appState}) => {
 					this.isFirstTimeVisitor = appState === AppStatuses.firstTimeVisitor;
 					this.isFigleafInstalled = getFigleafProtectedStatus(appState);
