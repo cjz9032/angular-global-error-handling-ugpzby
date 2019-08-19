@@ -15,6 +15,7 @@ import { SharedModule } from '../shared.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { ModalZeroTouchLockFacialRecognitionComponent } from '../../components/modal/modal-zero-touch-lock-facial-recognition/modal-zero-touch-lock-facial-recognition.component';
 
 @NgModule({
 	declarations: [
@@ -30,7 +31,8 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		ModalVoiceComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalWifiSecurityInvitationComponent,
-		ModalChsWelcomeContainerComponent
+		ModalChsWelcomeContainerComponent,
+		ModalZeroTouchLockFacialRecognitionComponent
 
 	],
 	imports: [
@@ -60,7 +62,8 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		ModalVoiceComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalWifiSecurityInvitationComponent,
-		ModalChsWelcomeContainerComponent
+		ModalChsWelcomeContainerComponent,
+		ModalZeroTouchLockFacialRecognitionComponent
 
 	]
 })

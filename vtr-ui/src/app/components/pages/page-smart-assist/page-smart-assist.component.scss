@@ -203,3 +203,19 @@
 	}
 }
 
+.permission-note {
+	width: 100%;
+	background-color: $shade_lightest;
+	font-size: 1.4rem;
+	border: 1px solid $shade_lighter;
+	justify-content: space-between;
+	.note-icon{
+		font-size: 20px;
+	}
+	.privacy-button {
+		font-size: 1.4rem;
+		letter-spacing: 0.76px;
+		text-align: left;
+	}
+}
+

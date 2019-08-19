@@ -204,15 +204,57 @@
 															attr.aria-label="cb-zero-touch-lock"
 															type="checkbox"
 															name="zero-check-lock-checkbox-id"
-															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.FacilRecognitionCameraAccess
-															|| intelligentSecurity.FacialRecognitionCameraPrivacyMode"
+															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
+															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 															[(ngModel)]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
 															(ngModelChange)='onZeroTouchLockFacialRecoChange()'
 															checked=""/>
 														<label for="cb-zero-touch-lock">
 															{{ 'Enabled facial recognition to improve the detect accuary' }}
 														</label>
+												</div>			
 												</div>
+												<div class="row">
+													<div class="col-12 pr-0">
+														<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode"
+														class="row permission-note mt-5">
+														<div class="col-12 p-3 d-flex">
+															<div class="col-1 pl-0 text-center">
+																<fa-icon [icon]="['fas','exclamation-circle']" class="note-icon">
+																</fa-icon>
+															</div>
+															<div  *ngIf="intelligentSecurity.facilRecognitionCameraAccess" class="col-11 pr-0 pl-2" >
+																<p class="mb-0 mt-auto" id="ztl-facial-recognition-permission-note"
+																attr.aria-label="ztl-facial-recognition-permission-note">
+																{{"Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work."}}
+																</p>
+																<button type="button"
+																class="btn btn-link privacy-button pl-0"
+																(click)="onClick('ms-settings:privacy-webcam')"
+																id="ztl-facial-recognition-access-url"
+																attr.aria-label="ztl-facial-recognition-access-url">
+																{{'Go to Windows Settings to give access'}}
+																</button>
+															</div>
+															<div class="col-11 pr-0 pl-2" *ngIf="!intelligentSecurity.facialRecognitionCameraPrivacyMode">
+																	<p class="mb-0 mt-auto" id="ztl-facial-recognition-privacy-note"
+																	attr.aria-label="ztl-facial-recognition-privacy-note">
+																	{{"Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work."}}
+																	</p>
+																	<button type="button"
+																	class="btn btn-link privacy-button pl-0"
+																	(click)="onClick('ms-settings:privacy-webcam')"
+																	id="ztl-facial-recognition-privacy-url"
+																	attr.aria-label="ztl-facial-recognition-privacy-url">
+																	{{'Go to Camera privacy mode to turn off it'}}
+																	</button>
+																</div>
+														</div>
+
+														</div>
+
+													</div>
+
 												</div>
 											</div>
 											<div class="row blur"

@@ -15,6 +15,8 @@ import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalZeroTouchLockFacialRecognitionComponent } from '../../modal/modal-zero-touch-lock-facial-recognition/modal-zero-touch-lock-facial-recognition.component';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -87,6 +89,7 @@ export class PageSmartAssistComponent implements OnInit {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private translate: TranslateService,
+		public modalService: NgbModal
 	) {
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -360,10 +363,33 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	public onZeroTouchLockFacialRecoChange() {
-		this.smartAssist.setZeroTouchLockFacialRecoStatus(this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled)
-		.then((isSuccess: boolean) => {
-				console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus`);
-		});
+		// this.smartAssist.setZeroTouchLockFacialRecoStatus(this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled)
+		// .then((isSuccess: boolean) => {
+		// 		console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus`);
+		// });
+		this.zeroTouchLockFacialRecoPopup();
+	}
+
+	zeroTouchLockFacialRecoPopup() {
+		console.log('zero touch lock facial recognition modal open');
+		this.modalService.open(ModalZeroTouchLockFacialRecognitionComponent, {
+			backdrop: 'static',
+			size: 'sm',
+			centered: true,
+			windowClass: 'Zero-touch-lock-facial-recognition-Modal'
+		}).result.then(
+			result => {
+				if (result === 'enable') {
+					// close modal and to set	
+					this.smartAssist.setZeroTouchLockFacialRecoStatus(this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled)
+					.then((isSuccess: boolean) => {
+							console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus`);
+		}			);	
+				} else if (result === 'cancel') {
+					// cancel and close modal
+				}
+			}
+		)
 	}
 
 	public onDistanceSensitivityAdjustToggle(event: any) {
@@ -458,5 +484,9 @@ export class PageSmartAssistComponent implements OnInit {
 		} catch (error) {
 			console.error('getVideoPauseResumeStatus' + error.message);
 		}
+	}
+
+	onClick(path) {
+		this.deviceService.launchUri(path);
 	}
 }

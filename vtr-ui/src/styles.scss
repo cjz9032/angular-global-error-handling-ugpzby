@@ -830,3 +830,25 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .is-android {
 	margin-top: 2rem !important;
 }
+
+/*Zero-touch-lock-facial-recognition-modal-styles*/
+.Zero-touch-lock-facial-recognition-Modal {
+	.modal-dialog {
+		max-width: 35%;
+
+		@media #{$mediaquery_11} {
+			max-width: 75%;
+			margin: 0 auto;
+		}
+
+		@media #{$mediaquery_X8} {
+			max-width: 50%;
+		}
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+	}
+}
