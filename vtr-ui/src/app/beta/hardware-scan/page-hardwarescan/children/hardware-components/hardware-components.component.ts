@@ -378,7 +378,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCustomizeScan() {
 		if (this.isLoadingDone()) {
-			const modalRef = this.modalService.open(this.customizeModal);
+			const modalRef = this.modalService.open(this.customizeModal, {
+				size: 'lg',
+				centered: true,
+				windowClass: 'custom-modal-size'
+			});
 			modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
 			console.log('[MODAL] ', modalRef.componentInstance.items);
 			modalRef.componentInstance.passEntry.subscribe(() => {
