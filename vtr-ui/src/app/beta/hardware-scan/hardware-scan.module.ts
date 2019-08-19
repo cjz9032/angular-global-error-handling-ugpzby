@@ -27,6 +27,7 @@ import { HeaderMainComponent } from './header-main/header-main.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { UiButtonModule } from './ui/ui-button/ui-button.module';
 import { ContainerCardModule } from './container-card/container-card.module';
+import { MetricsModule } from 'src/app/directives/metrics.module';
 
 @NgModule({
 	declarations: [
@@ -63,7 +64,8 @@ import { ContainerCardModule } from './container-card/container-card.module';
 		NgbCollapseModule,
 		NgbTooltipModule,
 		NgbProgressbarModule,
-		ContainerCardModule
+		ContainerCardModule,
+		MetricsModule
 	],
 	exports: [
 		NgbCollapseModule
