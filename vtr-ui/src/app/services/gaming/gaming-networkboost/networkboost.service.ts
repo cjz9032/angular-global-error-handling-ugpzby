@@ -1,3 +1,5 @@
+import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
+import { CommonService } from './../../common/common.service';
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 
@@ -8,7 +10,7 @@ export class NetworkBoostService {
 	private gamingNetworkBoost: any;
 	public isShellAvailable = false;
 
-	constructor(private shellService: VantageShellService) {
+	constructor(private shellService: VantageShellService, private commonService: CommonService) {
 		this.gamingNetworkBoost = shellService.getNetworkBoost();
 		if (this.gamingNetworkBoost) {
 			this.isShellAvailable = true;
@@ -79,23 +81,17 @@ export class NetworkBoostService {
 		}
 	}
 
-	getNeedToAsk(): Promise<boolean> {
+	getNeedToAsk(): any {
 		try {
-			if (this.isShellAvailable) {
-				return this.gamingNetworkBoost.getNeedToAsk();
-			}
-			return undefined;
+			return this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup);
 		} catch (error) {
 			throw new Error(error);
 		}
 	}
 
-	setNeedToAsk(value: boolean): Promise<boolean> {
+	setNeedToAsk(value: boolean) {
 		try {
-			if (this.isShellAvailable) {
-				return this.gamingNetworkBoost.setNeedToAsk(value);
-			}
-			return undefined;
+			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, value);
 		} catch (error) {
 			throw new Error(error);
 		}

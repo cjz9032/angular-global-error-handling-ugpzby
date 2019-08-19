@@ -72,9 +72,9 @@ export class PageNetworkboostComponent implements OnInit {
 
   async	openTargetModal() {
     try {
-      this.needToAsk = await this.networkBoostService.getNeedToAsk();
-      this.needToAsk = this.needToAsk == undefined ? false : this.needToAsk;
-      console.log('NEED TO ASK FROM JS BRIDGE =>', this.needToAsk);
+      this.needToAsk = this.networkBoostService.getNeedToAsk();
+      this.needToAsk = this.needToAsk === undefined ? false : this.needToAsk;
+      console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk);
       if (this.toggleStatus) {
         this.showAppsModal = true;
       } else if (!this.toggleStatus && !this.needToAsk) {
@@ -128,11 +128,12 @@ export class PageNetworkboostComponent implements OnInit {
 
   async setAksAgain(status: boolean) {
     try {
-      await this.networkBoostService.setNeedToAsk(status);
+      this.networkBoostService.setNeedToAsk(status);
     } catch (error) {
       console.error(`ERROR in setAksAgain()`, error);
     }
   }
+
   async getNetworkBoostStatus() {
     try {
       this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
