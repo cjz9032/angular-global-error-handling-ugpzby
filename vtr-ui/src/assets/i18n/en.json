@@ -1082,7 +1082,7 @@
 			"inputAccessories": {
 				"title": "Input & Accessories",
 				"subtitle": "Input & Accessories settings",
-				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+				"description": "This section enables you to set the most frequently used keyboard and mouse functions. Explore more features here.",
 				"inputAccessory": {
 					"title": "Intelligent Keyboard",
 					"hiddenKeyboardFunctions": {
