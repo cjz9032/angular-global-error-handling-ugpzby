@@ -75,6 +75,8 @@ export class PageAutocloseComponent implements OnInit {
 		this.refreshRunningList();
 		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
 		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
+		console.log('first need status', this.needToAsk);
+
 	}
 
 	openTargetModal() {
@@ -82,19 +84,15 @@ export class PageAutocloseComponent implements OnInit {
 		this.refreshAutoCloseList();
 		this.refreshRunningList();
 		try {
-			this.gamingAutoCloseService.getNeedToAsk().then((needToAskStatus: boolean) => {
-				this.gamingAutoCloseService.setNeedToAskStatusCache(needToAskStatus);
-				console.log('first need status', needToAskStatus);
-				this.needToAsk = needToAskStatus;
-				this.hiddenScroll(true);
-				if (this.toggleStatus) {
-					this.showAppsModal = true;
-				} else if (!this.toggleStatus && this.needToAsk) {
-					this.showTurnOnModal = true;
-				} else if (!this.toggleStatus && !this.needToAsk) {
-					this.showAppsModal = true;
-				}
-			});
+			this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
+			this.hiddenScroll(true);
+			if (this.toggleStatus) {
+				this.showAppsModal = true;
+			} else if (!this.toggleStatus && (this.needToAsk || isUndefined(this.needToAsk))) {
+				this.showTurnOnModal = true;
+			} else if (!this.toggleStatus && !this.needToAsk) {
+				this.showAppsModal = true;
+			}
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -103,11 +101,9 @@ export class PageAutocloseComponent implements OnInit {
 	doNotShowAction(event: any) {
 		const status = event.target.checked;
 		try {
-			this.gamingAutoCloseService.setNeedToAsk(!status).then((response: any) => {
-				console.log('Set successfully ------------------------>', !status);
-				this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
-				this.needToAsk = !status;
-			});
+			console.log('Set successfully ------------------------>', !status);
+			this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
+			this.needToAsk = !status;
 		} catch (error) {
 			console.error(error.message);
 		}
