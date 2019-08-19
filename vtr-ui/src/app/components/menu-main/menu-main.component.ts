@@ -23,6 +23,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -246,6 +247,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					break;
 				case LocalStorageKey.MachineFamilyName:
 					this.machineFamilyName = notification.payload;
+					break;
+				case NetworkStatus.Online:
+					this.modernPreloadService.getIsEntitled();
 					break;
 				default:
 					break;
