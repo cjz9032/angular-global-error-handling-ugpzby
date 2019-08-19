@@ -50,7 +50,7 @@
 					class="icomoon icomoon-LE-Airplanemode2x"></span>
 				<span *ngIf="(isCharging && isAirplaneMode)"
 					class="icomoon icomoon-LE-AirplanemodeCharging2x"></span>
-				<span *ngIf="(isCharging && isChargeThresholdOn)"
+				<span *ngIf="(isCharging && isChargeThresholdOn && !isAirplaneMode)"
 					class="icomoon icomoon-LE-ConservationCharging2x"></span>
 			</div>
 		</div>
