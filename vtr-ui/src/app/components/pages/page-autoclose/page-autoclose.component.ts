@@ -78,6 +78,7 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	openTargetModal() {
+		this.loadingContent.loading = true;
 		this.refreshAutoCloseList();
 		this.refreshRunningList();
 		try {
@@ -194,7 +195,7 @@ export class PageAutocloseComponent implements OnInit {
 					console.log('Added successfully ------------------------>', success);
 					if (success) {
 						this.refreshAutoCloseList();
-						this.refreshRunningList();
+						// this.refreshRunningList();
 					}
 				});
 			} catch (error) {
