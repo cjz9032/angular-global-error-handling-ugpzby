@@ -81,6 +81,7 @@ export class PageNetworkboostComponent implements OnInit {
       this.needToAsk = this.networkBoostService.getNeedToAsk();
       this.needToAsk = this.needToAsk === undefined ? false : this.needToAsk;
       console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk);
+      console.log('TOGGLE STATUS =>', this.toggleStatus);
       if (this.toggleStatus) {
         this.showAppsModal = true;
       } else if (!this.toggleStatus && !this.needToAsk) {
@@ -107,13 +108,15 @@ export class PageNetworkboostComponent implements OnInit {
   }
 
   initTurnOnAction(event: any) {
+    this.showTurnOnModal = false;
     this.setAksAgain(event.askAgainStatus);
     this.setNetworkBoostStatus({ switchValue: true });
     this.showAppsModal = true;
   }
 
-  initNotNowAction(notNowStatus: boolean) {
-    this.showAppsModal = true;
+  initNotNowAction() {
+    this.showTurnOnModal = false;
+    this.showAppsModal = false;
   }
 
   modalCloseTurnOn(action: boolean) {

@@ -91,6 +91,7 @@ export class NetworkBoostService {
 
 	setNeedToAsk(value: boolean) {
 		try {
+			value = value === undefined ? false : value;
 			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, value);
 		} catch (error) {
 			throw new Error(error);
