@@ -101,6 +101,8 @@ ui-popover-apps {
 					div.app-text-title {
 						margin: 0 auto;
 						max-width: 15rem;
+						text-overflow: ellipsis;
+						overflow: hidden;
 					}
 					div:nth-child(1) {
 						width: 5rem;
