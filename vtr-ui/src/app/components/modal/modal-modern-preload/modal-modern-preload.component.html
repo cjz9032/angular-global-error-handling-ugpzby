@@ -50,27 +50,27 @@
 							<b>{{ app.title }}</b>
 							<div class="status-box download_available" *ngSwitchCase="statusEnum.NOT_INSTALL">
 								<img class="status-icon"
-									[src]="downloadIconBase64" alt="" srcset="">
+									[src]="downloadIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
 								<div class="status-text">Download Available</div>
 							</div>
 							<div class="status-box download_complete" *ngSwitchCase="statusEnum.DOWNLOAD_COMPLETE">
 								<img class="status-icon"
-									[src]="successIconBase64" alt="" srcset="">
+									[src]="successIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
 								<div class="status-text">Download Complete</div>
 							</div>
 							<!-- <div class="status-box download_installing" *ngSwitchCase="statusEnum.INSTALLING">
 								<img class="status-icon"
-									[src]="successIconBase64" alt="" srcset="">
+									[src]="successIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
 								<div class="status-text">Installing</div>
 							</div> -->
 							<div class="status-box failed-install" *ngSwitchCase="statusEnum.FAILED_INSTALL">
 								<img class="status-icon"
-									[src]="errorIconBase64" alt="" srcset="">
+									[src]="errorIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
 								<div class="status-text">Failed Install</div>
 							</div>
 							<div class="status-box installed" *ngSwitchCase="statusEnum.INSTALLED">
 								<img class="status-icon"
-									[src]="successIconBase64" alt="" srcset="">
+									[src]="successIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
 								<div class="status-text">Installed</div>
 							</div>
 							<div class="status-box downloading" *ngSwitchCase="statusEnum.DOWNLOADING">
@@ -147,7 +147,7 @@
 			<div class="error-content">
 				<div class="d-flex">
 					<div class="error-icon">
-						<img [src]="errorIconBase64" alt="" srcset="">
+						<img [src]="errorIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
 					</div>
 					<div class="error-box w-100 pt-2">
 						<div class="description mb-2">
