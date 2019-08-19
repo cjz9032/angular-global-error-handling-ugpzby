@@ -100,7 +100,10 @@ export class BreachedAccountsService implements OnDestroy {
 		return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'})
 			.pipe(
 				map((response: GetBreachedAccountsResponse) => response.payload.breaches),
-				catchError((err) => EMPTY)
+				catchError((err) => {
+					console.error('getFigleafBreachedAccountsError', err);
+					return EMPTY;
+				})
 			);
 	}
 

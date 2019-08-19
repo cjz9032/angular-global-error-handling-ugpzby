@@ -41,6 +41,8 @@ export class TrackersComponent implements OnInit {
 		figleafInstalled: 'Learn more about tracking tools that Lenovo Privacy Essentials by FigLeaf blocked on websites you visit.',
 		figleafUninstalled: 'Some websites use tracking tools to collect information about you. ' +
 			'They may share it with third-party partners without notifying you.',
+		noIssuesTitle: 'No tracking tools found',
+		noIssuesDescription: 'It’s either because you’re using a new PC or you cleared your browser history. You can come back here anytime for updated tracking tools information.'
 	};
 
 	tryProductText = {

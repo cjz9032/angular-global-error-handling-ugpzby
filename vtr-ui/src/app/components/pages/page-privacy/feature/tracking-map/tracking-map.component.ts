@@ -26,7 +26,7 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
 	defaultIcon = DEFAULT_ICON;
 
-	textForLoader = 'Creating tracker map for the most popular websitess';
+	textForLoader = 'Creating tracker map for the most popular websites';
 
 	constructor(
 		private trackingMapService: TrackingMapService,

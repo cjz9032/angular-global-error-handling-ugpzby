@@ -29,7 +29,7 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 	isFigleafInstalled$ = this.appStatusesService.isAppStatusesEqual([AppStatuses.figLeafInstalled]);
 
 	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
-		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000))
+		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000) || 1)
 	);
 
 	constructor(
