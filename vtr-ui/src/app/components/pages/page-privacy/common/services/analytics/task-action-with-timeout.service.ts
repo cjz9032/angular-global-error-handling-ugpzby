@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, map, switchMap, take, timeout } from 'rxjs/operators';
-import { PrivacyModule } from '../../../privacy.module';
 
 export enum TasksName {
 	scoreScanAction = 'scoreScanAction',
@@ -17,28 +16,15 @@ export const STANDART_TIMEOUT_FOR_TASK = 120000;
 	providedIn: 'root'
 })
 export class TaskActionWithTimeoutService {
-	private taskActionsStart$ = {
-		[TasksName.scoreScanAction]: new Subject<number>(),
-		[TasksName.privacyAppInstallationAction]: new Subject<number>(),
-		[TasksName.scanBreachesAction]: new Subject<number>(),
-		[TasksName.getNonPrivateStoragesAction]: new Subject<number>(),
-		[TasksName.getTrackingDataAction]: new Subject<number>(),
-	};
-
-	private taskActionsFinished$ = {
-		[TasksName.scoreScanAction]: new Subject(),
-		[TasksName.privacyAppInstallationAction]: new Subject(),
-		[TasksName.scanBreachesAction]: new Subject(),
-		[TasksName.getNonPrivateStoragesAction]: new Subject(),
-		[TasksName.getTrackingDataAction]: new Subject(),
-	};
+	private taskActionsStart$ = this.createSubjectsFromTasksName<number>();
+	private taskActionsFinished$ = this.createSubjectsFromTasksName<string>();
 
 	startAction(actionName: TasksName) {
 		this.taskActionsStart$[actionName].next(Date.now());
 	}
 
-	finishedAction(actionName: TasksName) {
-		this.taskActionsFinished$[actionName].next();
+	finishedAction(actionName: TasksName, value = null) {
+		this.taskActionsFinished$[actionName].next(value);
 	}
 
 	private getTaskDuration(timeStart) {
@@ -51,7 +37,10 @@ export class TaskActionWithTimeoutService {
 				switchMap((startTime) => {
 					return this.taskActionsFinished$[taskName].pipe(
 						debounceTime(500),
-						map(() => ({TaskDuration: this.getTaskDuration(startTime)})),
+						map((taskActionResult) => ({
+							TaskDuration: this.getTaskDuration(startTime),
+							TaskResult: taskActionResult || null
+						})),
 						take(1),
 						timeout(due),
 						catchError(() => of({
@@ -59,7 +48,18 @@ export class TaskActionWithTimeoutService {
 							TaskDuration: this.getTaskDuration(startTime)
 						}))
 					);
-				})
+				}),
 			);
+	}
+
+	private createSubjectsFromTasksName<T>(): {[TaskName in TasksName]: Subject<T>} {
+		return Object.keys(TasksName).reduce((prev, key) => this.createSubject<number>(prev, key), {});
+	}
+
+	private createSubject<T>(prev, key: string) {
+		return {
+			...prev,
+			[TasksName[key]]: new Subject<T>()
+		};
 	}
 }

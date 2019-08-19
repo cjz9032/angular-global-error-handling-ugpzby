@@ -22,7 +22,7 @@ export class PermitService {
 		this.permitsValue.push(step);
 	}
 
-	setPermit() {
+	doActionWithPermits() {
 		this.permitsValue.forEach((step) => {
 			switch (step) {
 				case this.oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD:
@@ -43,6 +43,10 @@ export class PermitService {
 
 	getPermits() {
 		return this.permitsValue;
+	}
+
+	isSkipAll() {
+		return this.permitsValue.length === 0;
 	}
 
 	private setPermitTrackersAndPassword() {
