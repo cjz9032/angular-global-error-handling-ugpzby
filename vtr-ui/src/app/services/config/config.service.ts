@@ -439,33 +439,19 @@ export class ConfigService {
 	}];
 
 	betaItem = {
-		id: 'beta',
-		label: 'common.menu.beta.title',
+		id: 'hardware-scan',
+		label: 'hardwareScan.name',
 		beta: true,
 		path: 'beta/hardware-scan',
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
-		metricsItem: 'link.beta',
+		metricsItem: 'link.hardwarescan',
 		routerLinkActiveOptions: {
 			exact: true
 		},
 		icon: ['fal', 'flask'],
 		forArm: false,
-		subitems: [
-			{
-				id: 'hardware-scan',
-				label: 'hardwareScan.name',
-				path: '',
-				icon: '',
-				metricsEvent: 'itemClick',
-				metricsParent: 'navbar',
-				metricsItem: 'link.hardwarescan',
-				routerLinkActiveOptions: {
-					exact: true
-				},
-				subitems: []
-			}
-		]
+		subitems: []
 	};
 
 	getMenuItems(isGaming) {

@@ -1,22 +1,54 @@
 import { Component, OnInit } from '@angular/core';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 
 @Component({
-  selector: 'vtr-top-row-functions',
-  templateUrl: './top-row-functions.component.html',
-  styleUrls: ['./top-row-functions.component.scss']
+	selector: 'vtr-top-row-functions',
+	templateUrl: './top-row-functions.component.html',
+	styleUrls: ['./top-row-functions.component.scss']
 })
 export class TopRowFunctionsComponent implements OnInit {
 
-  public isHotKeys = true;
+	public isHotKeys = true;
 	public isFnKeys = false;
-  public stickyFunStatus = false;
-  
-  constructor() { }
+	public stickyFunStatus = false;
+	public capabilitiesObj: any = {};
 
-  ngOnInit() {
-  }
+	constructor(private keyboardService: InputAccessoriesService) { }
+
+	ngOnInit() {
+		this.getFunctionCapabilities();
+	}
+
+	public getFunctionCapabilities() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				Promise.all([
+					this.keyboardService.getTopRowFnLockCapability(),
+					this.keyboardService.getTopRowFnStickKeyCapability(),
+					this.keyboardService.getTopRowPrimaryFunctionCapability(),
+				]).then((response: any[]) => {
+					this.capabilitiesObj = {
+						fnLockCap: response[0],
+						stickyFunCap: response[1],
+						primaryFunCap: response[2]
+					};
+					console.log('promise all resonse  here ------------->', this.capabilitiesObj);
+					if (response[0]) {
+						this.getStatusOfFnLock();
+					}
+				});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	public getStatusOfFnLock() {
+		this.keyboardService.getFnLockStatus().then(res => {
+			console.log('getFnLockStatus------------>', res);
+		});
+	}
+
 	public onChanggeKeyType(event: any, value: string) {
-		console.log(value, '------------------> log here');
 		if (value === '1') {
 			this.isHotKeys = true;
 			this.isFnKeys = false;
@@ -24,8 +56,8 @@ export class TopRowFunctionsComponent implements OnInit {
 			this.isHotKeys = false;
 			this.isFnKeys = true;
 		}
-  }
-  public onStickyFunToggle(event: any) {
+	}
+	public onStickyFunToggle(event: any) {
 		this.stickyFunStatus = event.switchValue;
 	}
 }

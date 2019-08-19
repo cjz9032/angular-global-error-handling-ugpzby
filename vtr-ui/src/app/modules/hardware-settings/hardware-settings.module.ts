@@ -51,6 +51,7 @@ import { VoiceComponent } from 'src/app/components/pages/page-smart-assist/voice
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { CommonModalModule } from '../common/common-modal.module';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -178,13 +179,16 @@ library.add(faCalendarAlt);
 		WidgetSecurityStatusModule,
 		NgbDropdownModule,
 		RouterModule,
-		NgbCollapseModule
+		NgbCollapseModule,
+		PageLayoutModule,
 	],
 	exports: [
 		CommonModule,
 		CommonUiModule,
 		CommonWidgetModule,
 		CommonModalModule,
+		PageLayoutModule,
+		RouterModule,
 	],
 	providers: [
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },

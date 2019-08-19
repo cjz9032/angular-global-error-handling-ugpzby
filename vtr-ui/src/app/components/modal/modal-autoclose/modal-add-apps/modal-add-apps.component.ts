@@ -14,11 +14,9 @@ export class ModalAddAppsComponent implements OnInit {
 	@Input() runningListData: any[];
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
 	@Output() addAppToList = new EventEmitter<boolean>();
-	public loading: boolean = true;
 	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
 	ngOnInit() {
-		this.loading = this.loaderData.loading;
 	}
 
 	addAppData(event: any) {

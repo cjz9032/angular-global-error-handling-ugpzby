@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "巨集鍵用於",
-                    "deleteKey": "刪除按鍵",
+                    "deleteKey": "刪除",
                     "clear": "清除",
                     "intervalStatus": {
                         "keep": {
@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "將應用程式新增至「網路加速」",
-                "body": "最多可再新增 5 個要加速的應用程式（已新增 4 個）"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -851,7 +855,7 @@
                         "title": "機艙電源模式",
                         "description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
                         "checkBoxDesc": "自動偵測",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "如果勾選自動偵測，當電腦偵測到機上環境時，將自動開啟機艙電源模式，並在您下機時將其關閉。"
                     }
                 },
                 "energyStar": {

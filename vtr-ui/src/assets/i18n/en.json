@@ -51,13 +51,13 @@
 						"hybridModeText": "You need install driver for Hybrid Mode to  make it effective",
 						"cpuOverclockText": "Install driver to activate CPU Overclock (Reboot Required)",
 						"button": "INSTALL",
-						"link": "CANCEl"
+						"link": "CANCEL"
 					},
 					"lightingDriverPopup": {
 						"headerText": "Driver Install Required",
 						"text": "Install driver to activate lighting (Reboot Required)",
 						"button": "INSTALL",
-						"link": "CANCEl"
+						"link": "CANCEL"
 					},
 					"lightingColorMessage": {
 						"text": "Selecting color not available to this effect."
@@ -146,7 +146,7 @@
 				},
 				"recorded": {
 					"title": "MACRO KEY FOR ",
-					"deleteKey": "Delete Key",
+					"deleteKey": "Delete",
 					"clear": "Clear",
 					"intervalStatus": {
 						"keep": {
@@ -373,21 +373,21 @@
 		"autoClose": {
 			"title": "Auto Close",
 			"addAppsButton": "Add",
-			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize the gaming performance. NOTE: This feature closes the app completely. So always make sure that you've saved your work.",
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
-				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
+				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "Turn on",
 				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
-				"body": "Only apps currently running will be shown in the list below."
+				"body": "Only apps currently running will show in the list below."
 			},
 			"noRunningApps": {
-				"title": "No running apps to add",
-				"body": "Only apps that are currently running will be shown. Please launch an app that you want to add and come back."
+				"title": "No Running Apps To Add",
+				"body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
 			}
 		},
 		"networkBoost": {
@@ -397,8 +397,8 @@
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "Turn on",
-				"btnCancel": "Not now"
+				"btnConfirm": "TURN ON",
+				"btnCancel": "NOT NOW"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -1115,26 +1115,27 @@
 						"image": ""
 					},
 					"topRowFunctions": {
-						"title": "Keyboard Top-row Function",
-						"description": "The top row of the keyboard provides the following two functions. Select the one you want.",
+						"title": "Keyboard top-row function",
+						"description": "The top row of the keyboard provides the following two functions. Select the one you want:",
 						"subSection": {
-							"description": "To temporarily switch the above two functions, press Fn+Esc.",
+							"description": "To switch the above two functions, press Fn+Esc.",
 							"radioButton": {
 								"sFunKey": "SPECIAL FUNCTION",
 								"fnKey": "F1-F12 FUNCTION"
 							}
 						},
 						"subSectionTwo": {
-							"title": "Changing the default primary function",
-							"description": "When on, the default primary function you've set will be changed to the opposite. Restart your computer to make the changes take effect."
+							"title": "Reversing the default primary function",
+							"description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
 						},
 						"subSectionThree": {
-							"title": "Fn Sticky key",
-							"description": "With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key. When you press the Fn key twice, the Fn key is locked in the pressed condition until you press the Fn key again.",
+							"title": "How to use Fn key combinations",
+							"description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
 							"radioButton": {
 								"nMehod": "Normal method",
 								"fnKeyMehod": "Fn Sticky key method"
-							}
+							},
+							"note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
 						},
 						"popup": {
 							"title": "Reboot computer",

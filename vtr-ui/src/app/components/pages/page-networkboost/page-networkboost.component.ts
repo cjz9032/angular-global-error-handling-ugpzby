@@ -1,3 +1,5 @@
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { AppNotification } from './../../../data-models/common/app-notification.model';
 import { CommonService } from './../../../services/common/common.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +20,7 @@ export class PageNetworkboostComponent implements OnInit {
   needToAsk: any;
   autoCloseStatusObj: any = {};
   needToAskStatusObj: any = {};
-
+  isOnline = true;
   // CMS Content block
   cardContentPositionA: any = {
     FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
@@ -32,6 +34,10 @@ export class PageNetworkboostComponent implements OnInit {
     private commonService: CommonService) { }
 
   ngOnInit() {
+    this.isOnline = this.commonService.isOnline;
+    this.commonService.notification.subscribe((notification: AppNotification) => {
+      this.onNotification(notification);
+    });
     const queryOptions = {
       Page: 'dashboard',
       Lang: 'EN',
@@ -85,6 +91,14 @@ export class PageNetworkboostComponent implements OnInit {
       }
     } catch (error) {
       console.log(`ERROR in openTargetModal() `, error);
+    }
+  }
+  private onNotification(notification: AppNotification) {
+    if (notification && (notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)) {
+      this.isOnline = notification.payload.isOnline;
+    }
+    if (this.isOnline === undefined) {
+      this.isOnline = true;
     }
   }
 

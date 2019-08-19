@@ -114,10 +114,16 @@
 }
 
 ::ng-deep {
-	.button {
-		padding: 1.2rem 8rem !important;
-		@media #{$mediaquery_sm} {
-			padding: 1.2rem 6.5rem !important;
+	.start-button,
+	.stop-button {
+		.button {
+			padding: 1.2rem 8rem !important;
+			@media #{$mediaquery_13} {
+				padding: 1.2rem 3rem !important;
+			}
+			@media #{$mediaquery_X3} {
+				padding: 1.2rem 6.5rem !important;
+			}
 		}
 	}
 }

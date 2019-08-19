@@ -11,6 +11,9 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: $screen_dark_50;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 ui-popover-apps {
 	position: absolute;
@@ -19,23 +22,19 @@ ui-popover-apps {
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-	right: 0;
-	left: 0;
-	margin: auto;
-	top: 0;
-	bottom: 0;
-	height: calc(100vh - 35rem);
 	@media #{$medium-screen} {
 		max-width: 80%;
 	}
 	@media #{$small-screen} {
 		max-width: 80%;
 	}
+	@media #{$large-screen} {
+		min-width: 110rem;
+	}
 }
 ::ng-deep .vtr-modal-add-apps {
 	.top-header {
 		border: 0;
-		padding: 2rem 1rem 0;
 	}
 	.modal-content {
 		border-radius: 1rem;
@@ -43,6 +42,9 @@ ui-popover-apps {
 		min-height: 60rem;
 	}
 	.modal-body {
+		@media #{$large-screen} {
+			min-width: 91.4rem;
+		}
 		.main-content-body {
 			padding: 1rem 4rem;
 		}
@@ -95,6 +97,10 @@ ui-popover-apps {
 						width: 50% !important;
 						padding-left: 2rem;
 						padding-right: 2rem;
+					}
+					div.app-text-title {
+						margin: 0 auto;
+						max-width: 15rem;
 					}
 					div:nth-child(1) {
 						width: 5rem;

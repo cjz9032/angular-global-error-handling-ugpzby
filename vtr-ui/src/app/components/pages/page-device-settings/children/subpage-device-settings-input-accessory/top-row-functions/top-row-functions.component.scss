@@ -1,17 +1,19 @@
+@import "../../../../../../app.theme.scss";
+
 .title-blck{
     .left-icon {    
         display: inline-block;
-        font-size: 2rem;
+        font-size: $section_header;
         height: 1em;
         width: 1.12em;
-        color:#4a81fd;
+        color:$menu_hover;
         overflow: visible;
         vertical-align: -0.12em;    
 }
 .title {
-    font-size: 2.25rem;
-    color: #2f3447;
-    font-weight: 300;
+    font-size: $section_header;
+    color: $main_darker;
+    font-weight: $weight_light;
     letter-spacing: 0.05rem;
     text-transform: none;
     min-width: 40rem;
@@ -19,17 +21,17 @@
 }
 .caption {
     .text{
-        font-size: 1.75rem;
-        font-weight: 300;
-        color: #2f3447;
+        font-size: $body;
+        font-weight: $weight_light;
+        color: $main_darker;
     }  
     max-width: 60rem;
 }
 .link-text {
-    font-size: 1.4rem;
+    font-size: $body;
     text-decoration: underline;
     letter-spacing: 0.05rem;
-    color: #007bff;
+    color: $menu_hover;
     cursor: pointer;
     padding-top: 0.3rem;
 }
