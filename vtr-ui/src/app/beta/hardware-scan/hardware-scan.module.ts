@@ -23,10 +23,10 @@ import { HardwareComponentsComponent } from './page-hardwarescan/children/hardwa
 import { RecoverBadSectorsComponent } from './page-hardwarescan/children/recover-bad-sectors/recover-bad-sectors.component';
 import { HardwareViewResultsComponent } from './page-hardwarescan/children/hardware-view-results/hardware-view-results.component';
 import { SharedModule } from 'src/app/modules/shared.module';
-import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { HeaderMainComponent } from './header-main/header-main.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { UiButtonModule } from './ui/ui-button/ui-button.module';
+import { ContainerCardModule } from './container-card/container-card.module';
 
 @NgModule({
 	declarations: [
@@ -63,7 +63,8 @@ import { UiButtonModule } from './ui/ui-button/ui-button.module';
 		NgbCollapseModule,
 		NgbTooltipModule,
 		NgbProgressbarModule,
-		ContainerCardModule
+		ContainerCardModule,
+		ContainerCardComponent
 	],
 	exports: [
 		NgbCollapseModule
