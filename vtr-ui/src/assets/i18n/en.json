@@ -1138,8 +1138,8 @@
 							"note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
 						},
 						"popup": {
-							"title": "Reboot computer",
-							"description": "Changing the default top row function requires rebooting your computer to take effect. Sure to reboot?",
+							"title": "Restart computer",
+							"description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
 						}
