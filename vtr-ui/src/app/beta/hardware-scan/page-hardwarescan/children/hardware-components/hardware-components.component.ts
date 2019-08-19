@@ -418,7 +418,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.getPreScanInfo(preScanInformationRequest).then((response) => {
 			for (const message of response.MessageList) {
 				if (message.id === 'connect-power') {
-					this.batteryMessage = this.translate.instant('hardwareScan.battery.description');
+					this.batteryMessage = message.description;
 					break;
 				}
 			}
