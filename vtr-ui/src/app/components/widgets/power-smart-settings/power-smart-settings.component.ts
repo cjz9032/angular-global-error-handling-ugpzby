@@ -45,7 +45,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal) { }
 
 	ngOnInit() {
-
+		this.showIC = this.commonService.getLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		console.log('Machine Type: ' + this.machineType);
 
@@ -57,6 +57,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			this.initPowerSmartSettingsForIdeaPad();
 		} else {
 			this.showIC = 0;
+			this.commonService.setLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion, this.showIC);
 			this.isPowerSmartSettingHidden.emit(true);
 		}
 	}
@@ -108,6 +109,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			console.log('getITSModeForICIdeapad: ', response);
 			if (response && !response.available) {
 				this.showIC = 0;
+				this.commonService.setLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion, this.showIC);
 				this.isPowerSmartSettingHidden.emit(true);
 				return;
 			}
@@ -129,6 +131,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
 					this.showIntelligentCoolingToggle = true;
 					this.showIC = response.itsVersion + this.add;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion, this.showIC);
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description13');
 					const currentMode = IntelligentCoolingModes.getModeForIdeaPadITS3(response.currentMode);
 					if (currentMode === IntelligentCoolingModes.Error) {
@@ -145,6 +148,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
 					this.showIntelligentCoolingToggle = false;
 					this.showIC = response.itsVersion + this.add;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion, this.showIC);
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description14');
 					const currentMode = IntelligentCoolingModes.getMode(response.currentMode);
 					this.updateSelectedModeText(currentMode);
@@ -231,6 +235,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					// DYTC 4 supported
 					console.log('DYTC 4 supported');
 					this.showIC = 4;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion, this.showIC);
 					this.cQLCapability = await this.getCQLCapability();
 					this.tIOCapability = await this.getTIOCapability();
 					console.log('cQLCapability: ' + this.cQLCapability + ', tIOCapability: ' + this.tIOCapability);
@@ -250,6 +255,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					// DYTC 5 supported
 					console.log('DYTC 5 supported');
 					this.showIC = 5;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion, this.showIC);
 				}
 			}
 			if (!isITS) {
@@ -261,6 +267,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					// Legacy Capable or DYTC 3.0
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description3');
 					this.showIC = 3;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion, this.showIC);
 					this.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
 					console.log('DYTC 3.0 supported');
 					this.apsStatus = await this.getAPSState();
@@ -287,6 +294,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				} else {
 					console.log('Intelligent Cooling Not Supported');
 					this.showIC = 0;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ShowIntelligentCoolingVersion, this.showIC);
 					this.isPowerSmartSettingHidden.emit(true);
 				}
 			}
