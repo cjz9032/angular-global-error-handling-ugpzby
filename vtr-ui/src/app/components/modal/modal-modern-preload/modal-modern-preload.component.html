@@ -62,11 +62,11 @@
 									[src]="'/assets/images/modern-preload/img_my_software_green_check.svg' | svgInline | async" />
 								<div class="status-text">Download Complete</div>
 							</div>
-							<div class="status-box download_installing" *ngSwitchCase="statusEnum.INSTALLING">
+							<!-- <div class="status-box download_installing" *ngSwitchCase="statusEnum.INSTALLING">
 								<img class="status-icon" id="modern-preload-app-icon-{{app.udcId}}"
 									[src]="'/assets/images/modern-preload/img_my_software_green_check.svg' | svgInline | async" />
 								<div class="status-text">Installing</div>
-							</div>
+							</div> -->
 							<div class="status-box failed-install" *ngSwitchCase="statusEnum.FAILED_INSTALL">
 								<img class="status-icon" id="modern-preload-app-icon-{{app.udcId}}"
 									[src]="'/assets/images/modern-preload/img_my_software_failed_install.svg' | svgInline | async" />
@@ -103,7 +103,7 @@
 							[isDisabled]="checkedAppList.length === 0" [label]="'Restart Download'">
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.DOWNLOADING" [isFullWidth]="true"
-							[isDisabled]="true" [label]="'Downloading'">
+							[isDisabled]="true" [label]="'Downloading...'">
 						</vtr-ui-button>
 					</div>
 					<a *ngIf="downloadButtonStatus !== downloadButtonStatusEnum.DOWNLOADING" vtrMetrics

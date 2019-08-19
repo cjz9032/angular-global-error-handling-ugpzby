@@ -32,8 +32,6 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 			.getMachineInfo()
 			.then((value: any) => {
 				this.defaultLanguage = value.locale;
-				console.log("RAJAN===========>", value);
-				console.log("RAJAN2===========>", this.defaultLanguage);
 			});
 	}
 

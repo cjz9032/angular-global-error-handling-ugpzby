@@ -10,6 +10,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 enum ssoErroType {
 
@@ -101,6 +102,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private startBind: any;
 	private completeBInd: any;
 	private notificationSubscription: Subscription;
+	private isSsoDevMode = false;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -190,10 +192,15 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (!this.cacheCleared) {
 			// Hide browser while clearing cache
 			this.webView.changeVisibility('webviewPlaceHolder', false);
-			// This is the link for SSO production environment
+
+			// This is the link to clear cache for SSO production environment
 			this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
-			// This is the link for SSO dev environment
-			// this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
+			const LidSsoDevMode = this.commonService.getLocalStorageValue(LocalStorageKey.LidSsoDevMode);
+			if (LidSsoDevMode) {
+				this.isSsoDevMode = true;
+				// This is the link to clear cache for SSO dev environment
+				this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
+			}
 			this.cacheCleared = true;
 		}
 	}
@@ -257,9 +264,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
 			}
-			// if (eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
-			// 	 return;
-			// }
+			if (self.isSsoDevMode && eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
+				 return;
+			}
 			self.webView.changeVisibility('spinnerCtrl', false);
 			self.webView.changeVisibility('webviewPlaceHolder', true);
 			const htmlContent = eventData.content;
