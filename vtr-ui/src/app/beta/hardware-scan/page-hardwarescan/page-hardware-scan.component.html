@@ -4,7 +4,7 @@
 			<beta-vtr-header-main [backarrow]="backarrow"
 				[hide]="(!isScanDoneExecuting() && isScanExecuting()) || (!isScanDoneExecuting() && isRecoverExecuting())"
 				[isInnerBack]="isScanDoneExecuting()" (innerBack)="redirectBack()"
-				[back]="'hardwareScan.back' | translate" [title]="'hardwareScan.name' | translate">
+				[back]="'hardwareScan.back' | translate" [title]="setTitle()">
 			</beta-vtr-header-main>
 		</div>
 	</div>
