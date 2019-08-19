@@ -5,11 +5,10 @@ import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { AccessTokenService } from '../../common/services/access-token.service';
-import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { SafeStorageService } from '../../common/services/safe-storage.service';
-import { PrivacyModule } from '../../privacy.module';
+import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -25,7 +24,7 @@ export class BreachedAccountsFacadeService {
 			)
 		);
 	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
-	emailWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
+	emailWasScanned$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.undefined &&
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.error),
@@ -42,7 +41,7 @@ export class BreachedAccountsFacadeService {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private breachedAccountsService: BreachedAccountsService,
 		private accessTokenService: AccessTokenService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private emailScannerService: EmailScannerService,
 		private safeStorageService: SafeStorageService

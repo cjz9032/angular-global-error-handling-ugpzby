@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
-import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 import { BrowserAccountsService } from '../../common/services/browser-accounts.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
@@ -11,6 +10,7 @@ import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../common/services/analytics/task-action-with-timeout.service';
+import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -20,7 +20,7 @@ import {
 export class BrowserAccountsComponent {
 	browserStoredAccountsData = {showDetailAction: 'expand'};
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
-	isNonPrivatePasswordWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
+	isNonPrivatePasswordWasScanned$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
@@ -32,7 +32,7 @@ export class BrowserAccountsComponent {
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private browserAccountsService: BrowserAccountsService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private vantageCommunicationService: VantageCommunicationService,
