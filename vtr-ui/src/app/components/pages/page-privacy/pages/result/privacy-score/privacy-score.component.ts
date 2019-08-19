@@ -5,13 +5,14 @@ import { filter, map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { combineLatest } from 'rxjs';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../../common/services/analytics/task-action-with-timeout.service';
+import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { ScoreShowSpinnerService } from './score-show-spinner.service';
 
 @Component({
 	selector: 'vtr-privacy-score',
@@ -30,17 +31,20 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
 	score;
 
-	isFirstTimeVisitor$ = this.userDataGetStateService.userDataStatus$.pipe(
+	isShowScore$ = this.scoreShowSpinnerService.isShow$;
+
+	isFirstTimeVisitor$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) => userDataStatus.appState === AppStatuses.firstTimeVisitor)
 	);
 
 	constructor(
 		private privacyScoreService: PrivacyScoreService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private vantageCommunicationService: VantageCommunicationService,
 		private changeDetectorRef: ChangeDetectorRef,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
+		private scoreShowSpinnerService: ScoreShowSpinnerService,
 		private commonPopupService: CommonPopupService) {
 	}
 

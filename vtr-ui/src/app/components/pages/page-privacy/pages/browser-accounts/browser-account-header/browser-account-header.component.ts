@@ -21,6 +21,8 @@ export class BrowserAccountHeaderComponent {
 			'while you do the things you love online.',
 		figleafUninstalled: 'If you store passwords for your bank accounts or social media profiles in your web browser, ' +
 			'you risk sharing this private information unintentionally with apps and extensions on your PC.',
+		noIssuesTitle: 'No vulnerable passwords found',
+		noIssuesDescription: 'You should continue to avoid storing your passwords in your browsers. To be safe, you should only store them in an app built with privacy in mind. '
 	};
 
 	textForTooltip = 'Your passwords can be freely accessed by third-party apps. ' +

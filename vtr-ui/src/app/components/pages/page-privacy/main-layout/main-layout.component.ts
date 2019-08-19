@@ -7,12 +7,15 @@ import { instanceDestroyed } from '../utils/custom-rxjs-operators/instance-destr
 import { RoutersName } from '../privacy-routing-name';
 import { FigleafOverviewService } from '../common/services/figleaf-overview.service';
 import { UpdateTriggersService } from '../common/services/update-triggers.service';
+import { TaskObserverService } from '../common/services/analytics/task-observer.service';
+import { WidgetDataService } from '../common/services/widget-data.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
 	showNavigationBlock: boolean;
 	showSupportBanner: boolean;
 	moveBlockToTop: boolean;
+	isShowStat: boolean;
 }
 
 const defaultPageSettings: PageSettings = {
@@ -20,12 +23,14 @@ const defaultPageSettings: PageSettings = {
 	showNavigationBlock: false,
 	showSupportBanner: false,
 	moveBlockToTop: false,
+	isShowStat: false,
 };
 const featurePageSettings: PageSettings = {
 	showPrivacyScore: true,
 	showNavigationBlock: true,
 	showSupportBanner: true,
 	moveBlockToTop: true,
+	isShowStat: true,
 };
 
 @Component({
@@ -34,12 +39,9 @@ const featurePageSettings: PageSettings = {
 	styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit, OnDestroy {
-	showPrivacyScore = false;
-	showNavigationBlock = false;
-	showSupportBanner = false;
-	moveBlockToTop = false;
+	currentPageSettings: PageSettings;
 
-	pagesSettings: { [path in RoutersName]: PageSettings } = {
+	private pagesSettings: { [path in RoutersName]: PageSettings } = {
 		[RoutersName.LANDING]: defaultPageSettings,
 		[RoutersName.ARTICLES]: defaultPageSettings,
 		[RoutersName.ARTICLEDETAILS]: defaultPageSettings,
@@ -59,6 +61,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private routerChangeHandler: RouterChangeHandlerService,
 		private figleafOverviewService: FigleafOverviewService,
 		private updateTriggersService: UpdateTriggersService,
+		private taskObserverService: TaskObserverService,
+		private widgetDataService: WidgetDataService
 	) {
 	}
 
@@ -68,6 +72,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.taskObserverService.start();
+		this.widgetDataService.startWrite();
 		this.communicationWithFigleafService.connect();
 		this.routerChangeHandler.onChange$
 			.pipe(
@@ -82,10 +88,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		this.communicationWithFigleafService.disconnect();
 	}
 
-	setCurrentRouterPage(routerPage: string) {
-		this.showPrivacyScore = this.pagesSettings[routerPage].showPrivacyScore;
-		this.showNavigationBlock = this.pagesSettings[routerPage].showNavigationBlock;
-		this.showSupportBanner = this.pagesSettings[routerPage].showSupportBanner;
-		this.moveBlockToTop = this.pagesSettings[routerPage].moveBlockToTop;
+	private setCurrentRouterPage(routerPage: string) {
+		this.currentPageSettings = this.pagesSettings[routerPage];
 	}
 }

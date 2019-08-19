@@ -34,7 +34,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	@Input() loadMenuItem: any = {};
 	public machineFamilyName: string;
 	public country: string;
-	public firstName: 'User';
 	// commonMenuSubscription: Subscription;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
@@ -142,12 +141,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
-		const self = this;
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			}
-		});
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -217,7 +210,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				showItem = false;
 			}
 		}
-		if (item.id === 'privacy') {
+		if (item.id === 'privacy1') {
 			if (!this.deviceService.showPrivacy) {
 				showItem = false;
 			}
@@ -246,9 +239,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
-					break;
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, notification.payload.family);

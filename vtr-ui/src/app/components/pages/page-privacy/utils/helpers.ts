@@ -39,8 +39,14 @@ export function getDisplayedCountValueOfIssues(status: FeaturesStatuses, issuesC
 	}
 }
 
-export function getFigleafProtectedStatus(appState: AppStatuses | AppStatuses.figLeafInstalled | AppStatuses.trialSoonExpired | AppStatuses.trialExpired) {
-	const figleafProtectStatuses = [AppStatuses.figLeafInstalled, AppStatuses.trialSoonExpired, AppStatuses.trialExpired];
+export function getFigleafProtectedStatus(appState: AppStatuses) {
+	const figleafProtectStatuses = [
+		AppStatuses.figLeafInstalled,
+		AppStatuses.trialSoonExpired,
+		AppStatuses.trialExpired,
+		AppStatuses.subscriptionSoonExpired,
+		AppStatuses.subscriptionExpired,
+	];
 	return figleafProtectStatuses.includes(appState);
 }
 
@@ -65,3 +71,7 @@ export function snake2PascalCase(string) {
 // )(users) //["Jack", "Milady"]
 
 export const pipe = (...functions) => args => functions.reduce((arg, fn) => fn(arg), args);
+
+export function DifferenceInDays(firstDate, secondDate) {
+	return Math.round((secondDate - firstDate) / (1000 * 60 * 60 * 24));
+}
