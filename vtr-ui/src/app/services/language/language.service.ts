@@ -56,10 +56,7 @@ export class LanguageService {
 			'zh-hant'
 		]);
 
-		const hasDefaultLanguage = this.useLocaleAvailableInCache();
-		if (!hasDefaultLanguage) {
-			this.translate.setDefaultLang(this.defaultLanguage);
-		}
+		this.useLocaleAvailableInCache();
 	}
 
 	public useLanguageByLocale(deviceLocale: string) {

@@ -24,8 +24,8 @@
 					</div>
 					<div *ngIf="cameraStatus.available"
 						class="text-center">
-						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Camera2x'"
-							[offIconDefinition]="'icomoon icomoon-LE-Camera-privacy-mode2x'"
+						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-Camera'"
+							[offIconDefinition]="'icomoon icomoon-Camera-slash'"
 							[value]="!cameraStatus.status && cameraStatus.permission"
 							[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 							metricsItem="camera"
