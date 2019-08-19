@@ -95,6 +95,8 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 		if (notification) {
 			switch (notification.type) {
 				case NetworkStatus.Online:
+					this.isOnline = notification.payload.isOnline;
+					break;
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					break;

@@ -63,8 +63,7 @@ import { ContainerCardModule } from './container-card/container-card.module';
 		NgbCollapseModule,
 		NgbTooltipModule,
 		NgbProgressbarModule,
-		ContainerCardModule,
-		ContainerCardComponent
+		ContainerCardModule
 	],
 	exports: [
 		NgbCollapseModule
