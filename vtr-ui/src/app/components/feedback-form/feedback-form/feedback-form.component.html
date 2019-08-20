@@ -10,7 +10,8 @@
 			<div class="line"></div>
 			<div class="qa-item"
 				*ngFor="let qa of questions">
-				<div class="question" [innerHTML]="qa.question | translate"></div>
+				<div class="question" [innerHTML]="qa.question | translate" [id]="qa.name"
+				[attr.aria-label]="qa.name"></div>
 				<div class="form-check form-check-inline">
 					<input class="form-check-input"
 						type="radio"
@@ -38,7 +39,8 @@
 
 			<div class="row">
 				<div class="col">
-					<div class="comment-tip">
+					<div class="comment-tip" id="feedback-form-additional-comments"
+					attr.aria-label="feedback-form-additional-comments">
 						{{'dashboard.feedback.form.tips1' | translate}}
 					</div>
 					<textarea placeholder="{{'dashboard.feedback.form.comments' | translate}}"
@@ -92,7 +94,8 @@
 		<div class="success-icon">
 			<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
 		</div>
-		<div class="thank-you">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
+		<div class="thank-you" id="feedback-modal-thank-you"
+		attr.aria-label="feedback-modal-thank-you">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
 		<div class="left-time">{{ leftTime }}</div>
 	</div>
 

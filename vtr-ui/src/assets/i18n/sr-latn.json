@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "TASTER MAKROA ZA ",
-                    "deleteKey": "Izbriši ključ",
+                    "deleteKey": "Izbriši",
                     "clear": "Obriši",
                     "intervalStatus": {
                         "keep": {
@@ -855,7 +855,7 @@
                         "title": "Režim korišćenja u avionu",
                         "description": "Zaštitite utičnicu za napajanje naizmeničnom strujom u avionu kontrolom potrošnje vašeg sistema.Kada je omogućen režim korišćenja u avionu, računar smanjuje potrošnju napajanja ograničavanjem brzine punjenja i performansi sistema.",
                         "checkBoxDesc": "Automatska detekcija",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Ako je označena Automatska detekcija, vaš računar će automatski uključiti režim napajanja u avionu kada otkrije okruženje unutar aviona i isključiti ga kada napustite okruženje."
                     }
                 },
                 "energyStar": {

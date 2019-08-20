@@ -146,7 +146,7 @@
                 },
                 "recorded": {
                     "title": "TOUCHE MACRO POUR ",
-                    "deleteKey": "Touche Suppr",
+                    "deleteKey": "Suppr",
                     "clear": "Effacer",
                     "intervalStatus": {
                         "keep": {
@@ -402,7 +402,11 @@
             },
             "modalAddApps": {
                 "title": "Ajouter des applications à l'amélioration réseau",
-                "body": "Vous pouvez ajouter au maximum 5 applications supplémentaires à améliorer (4 sur 5 ajoutées)"
+                "body": {
+                    "part1": "You can add up to 5 additional apps to boost",
+                    "part2": "of",
+                    "part3": "added"
+                }
             }
         }
     },
@@ -851,7 +855,7 @@
                         "title": "Mode d'alimentation pour avion",
                         "description": "Protégez la prise avion en contrôlant la consommation d'énergie de votre système.Lorsque le mode d'alimentation pour avion est activé, l'ordinateur réduit la consommation d'énergie en limitant la vitesse de chargement de la batterie et les performances du système.",
                         "checkBoxDesc": "Détection automatique",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Si la détection automatique est cochée, votre ordinateur passe automatiquement en mode d'alimentation pour avion dès qu'il détecte que vous embarquez dans un avion et le désactive quand vous le quittez."
                     }
                 },
                 "energyStar": {

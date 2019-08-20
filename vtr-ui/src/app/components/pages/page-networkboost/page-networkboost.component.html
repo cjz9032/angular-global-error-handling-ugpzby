@@ -1,4 +1,15 @@
-<div class="vtr-page-device-gaming vtr-page container-fluid macro-key-subpage">
+
+<div>
+  <div class="vtr-page-device-gaming vtr-page container-fluid macro-key-subpage">
+      <div class="row" *ngIf="!isOnline">
+          <div class="col col-12 px-40 pb-40">
+            <vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+              [subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+              [buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
+              [isButtonVisible]="false" id="dashboard-btn-connectivity">
+            </vtr-widget-offline-info>
+          </div>
+        </div>
   <div class="row vtr-page-header">
     <div class="col vtr-col">
       <vtr-header-main [title]="'gaming.networkBoost.title' | translate" [backarrow]="'&lt; '"
@@ -20,8 +31,8 @@
                         <div class="container-fluid">
                           <div class="row">
                             <div class="col-sm-12">
-                              <vtr-ui-switch-onoff [value]="toggleStatus" (toggle)="setNetworkBoostStatus($event)" vtrMetrics
-                                metricsEvent="featureClick">
+                              <vtr-ui-switch-onoff [value]="toggleStatus" (toggle)="setNetworkBoostStatus($event)" 
+                              vtrMetrics metricsEvent="featureClick">
                               </vtr-ui-switch-onoff>
                               <p class="intro-text">{{'gaming.networkBoost.introLine' | translate}}</p>
                               <vtr-widget-networkboost [changeNum]="changeListNum" (actionModal)="openTargetModal()"
@@ -70,9 +81,12 @@
 </div>
 
 <vtr-networkboost-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
-  (closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="showTurnOnModal=false;initNotNowAction($event)"
-  (actionTurnOn)="showTurnOnModal=false;initTurnOnAction($event)">
+  (closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="initNotNowAction()"
+  (actionTurnOn)="initTurnOnAction($event)">
 </vtr-networkboost-turn-on>
 
-<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount" (closeAddAppsModal)="modalCloseAddApps($event)">
+<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount" 
+(closeAddAppsModal)="modalCloseAddApps($event)">
 </vtr-networkboost-add-apps>
+
+</div>
