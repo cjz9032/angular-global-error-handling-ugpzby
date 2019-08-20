@@ -26,7 +26,7 @@
 						</div>
 
 						<div class="row py-5"
-							*ngIf="!deviceService.isArm"
+							*ngIf="!deviceService.isArm && !deviceService.isSMode"
 							id="settings-messages">
 							<div class="col-10 mx-auto ">
 								<vtr-container-collapsible
