@@ -18,7 +18,6 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
 	ngOnInit() {
-		this.loading = this.loaderData.loading;
 	}
 
 	addAppData(event: any) {

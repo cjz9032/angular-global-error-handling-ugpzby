@@ -8,8 +8,9 @@
 						attr.aria-label="voice-install-or-launch-btn"
 						*ngIf="!showLoader"
 						vtrMetrics
-						metricsEvent="featureClick"
-						[metricsItem]="btnText"
+						metricsEvent="FeatureClick"
+						metricsParent="Device.SmartAssist"
+						metricsItem="Voice{{voiceStatus}}Button"
 						type="button"
 						class="btn btn-primary btn-block install-btn"
 						(click)="btnClicked()">
@@ -31,7 +32,8 @@
 					[rightIcon]="['far', 'question-circle']"
 					[voice]="true"
 					[voiceValue]="voiceToText"
-					[showChildContent]="true">
+					[showChildContent]="true"
+					[metricsParent]="'VoiceToText'">
 				</vtr-ui-row-switch>
 			</li>
 			<li class="">
@@ -43,7 +45,8 @@
 					[rightIcon]="['far', 'question-circle']"
 					[voice]="true"
 					[voiceValue]="translation"
-					[showChildContent]="true">
+					[showChildContent]="true"
+					[metricsParent]="'Translation'">
 				</vtr-ui-row-switch>
 			</li>
 		</ul>

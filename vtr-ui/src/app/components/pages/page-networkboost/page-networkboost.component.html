@@ -47,28 +47,28 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 vtr-page-right-column">
-            <div class="vtr-page-shift-up">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-                    <vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
-                      [img]="cardContentPositionA.FeatureImage" [title]="cardContentPositionA.Title"
-                      [logoText]="cardContentPositionA.BrandName" [action]="cardContentPositionA.Action"
-                      [actionType]="cardContentPositionA.ActionType" [actionLink]="cardContentPositionA.ActionLink"
-                      [type]="'article'" [ratioX]="4" [ratioY]="4">
-                    </vtr-container-card>
-                  </div>
+            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 vtr-page-right-column">
+              <div class="vtr-page-shift-up">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+                      <vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
+                        [img]="cardContentPositionA.FeatureImage" [title]="cardContentPositionA.Title"
+                        [logoText]="cardContentPositionA.BrandName" [action]="cardContentPositionA.Action"
+                        [actionType]="cardContentPositionA.ActionType" [actionLink]="cardContentPositionA.ActionLink"
+                        [type]="'article'" [ratioX]="4" [ratioY]="4">
+                      </vtr-container-card>
+                    </div>
 
-                  <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-                    <vtr-container-card order="2" [itemID]="cardContentPositionB.id"
-                      [img]="cardContentPositionB.FeatureImage" [caption]="cardContentPositionB.Description"
-                      [title]="cardContentPositionB.Title" [logoText]="cardContentPositionB.BrandName"
-                      [action]="cardContentPositionB.Action" [actionType]="cardContentPositionB.ActionType"
-                      [actionLink]="cardContentPositionB.ActionLink" [type]="'corner'" [ratioX]="4" [ratioY]="2"
-                      [cornerShift]="'large'">
-                    </vtr-container-card>
+                    <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+                      <vtr-container-card order="2" [itemID]="cardContentPositionB.id"
+                        [img]="cardContentPositionB.FeatureImage" [caption]="cardContentPositionB.Description"
+                        [title]="cardContentPositionB.Title" [logoText]="cardContentPositionB.BrandName"
+                        [action]="cardContentPositionB.Action" [actionType]="cardContentPositionB.ActionType"
+                        [actionLink]="cardContentPositionB.ActionLink" [type]="'corner'" [ratioX]="4" [ratioY]="2"
+                        [cornerShift]="'large'">
+                      </vtr-container-card>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -78,7 +78,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <vtr-networkboost-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
   (closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="initNotNowAction()"
