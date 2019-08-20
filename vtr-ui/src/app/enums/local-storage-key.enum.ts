@@ -158,5 +158,5 @@ export enum LocalStorageKey {
 	UPEUserID = '[LocalStorageKey] UPEUserID',
 	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
 	BetaUser = '[LocalStorageKey] BetaUser',
-	ShowIntelligentCoolingVersion = '[LocalStorageKey] ShowIntelligentCoolingVersion'
+	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability'
 }
