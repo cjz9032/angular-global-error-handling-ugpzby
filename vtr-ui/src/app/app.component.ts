@@ -36,6 +36,8 @@ export class AppComponent implements OnInit {
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
 	private metricsClient: any;
+	private beta;
+
 	constructor(
 		private displayService: DisplayService,
 		private router: Router,
@@ -56,9 +58,21 @@ export class AppComponent implements OnInit {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
-		if (vantageShellService.isShellAvailable && !this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-			this.commonService.isBetaUser().then((result) => {
-				if (result === 0 || result === 3) {
+		if (vantageShellService.isShellAvailable) {
+			this.beta = vantageShellService.getBetaUser();
+			this.beta.getBetaUser().then((result) => {
+				if (!result) {
+					if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+						this.commonService.isBetaUser().then((data) => {
+							if (data === 0 || data === 3) {
+								this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+								this.beta.setBetaUser();
+							}
+						});
+					} else {
+						this.beta.setBetaUser();
+					}
+				} else {
 					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
 				}
 			});

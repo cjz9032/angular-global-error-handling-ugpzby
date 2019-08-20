@@ -21,6 +21,9 @@
 					"dolby": "Dolby",
 					"rapidCharge": "Brzo punjenje"
 				},
+				"quickSettingstitle": {
+					"title": "Brze postavke"
+				},
 				"legionEdge": {
 					"title": "Overklok procesora",
 					"status": {
@@ -94,10 +97,8 @@
 				},
 				"systemStatus": {
 					"info": "INFORMACIJE"
-				},
-				"quickSettingstitle": {
-					"title": "Brze postavke"
 				}
+				
 			}
 		},
 		"common": {
@@ -2328,7 +2329,8 @@
 			"description": "Drugo skeniranje je već bilo zakazano u isto vreme i datum!",
 			"error": "Greška",
 			"delete": "Izbriši",
-			"warningBatterySaver": "Napomena: Zakazana skeniranja se neće obaviti u režimu uštede baterije"
+            "warningBatterySaver": "Napomena: Zakazana skeniranja se neće obaviti u režimu uštede baterije",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Oporavi neispravne sektore",
