@@ -439,25 +439,27 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		warranty.type = 'system';
 		this.systemStatus[2] = warranty;
 
-		const systemUpdate = new Status();
-		systemUpdate.status = 4;
-		systemUpdate.id = 'systemupdate';
-		systemUpdate.metricsItemName = 'System Update';
+		if (this.deviceService && !this.deviceService.isSMode) {
+			const systemUpdate = new Status();
+			systemUpdate.status = 4;
+			systemUpdate.id = 'systemupdate';
+			systemUpdate.metricsItemName = 'System Update';
 
-		this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
-			systemUpdate.title = value;
-		});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+				systemUpdate.title = value;
+			});
 
-		this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
-			systemUpdate.detail = value;
-		});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+				systemUpdate.detail = value;
+			});
 
 
-		systemUpdate.path = 'device/system-updates';
-		systemUpdate.asLink = true;
-		systemUpdate.isSystemLink = false;
-		systemUpdate.type = 'system';
-		this.systemStatus[3] = systemUpdate;
+			systemUpdate.path = 'device/system-updates';
+			systemUpdate.asLink = true;
+			systemUpdate.isSystemLink = false;
+			systemUpdate.type = 'system';
+			this.systemStatus[3] = systemUpdate;
+		}
 
 	}
 
@@ -516,21 +518,23 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		// system update
-		this.dashboardService.getRecentUpdateInfo().subscribe(value => {
-			if (value) {
-				const systemUpdate = this.systemStatus[3];
-				const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
-				if (value.status === 1) {
-					if (diffInDays > 30) {
-						systemUpdate.status = 1;
+		if (this.deviceService && !this.deviceService.isSMode) {
+			this.dashboardService.getRecentUpdateInfo().subscribe(value => {
+				if (value) {
+					const systemUpdate = this.systemStatus[3];
+					const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
+					if (value.status === 1) {
+						if (diffInDays > 30) {
+							systemUpdate.status = 1;
+						} else {
+							systemUpdate.status = 0;
+						}
 					} else {
-						systemUpdate.status = 0;
+						systemUpdate.status = 1;
 					}
-				} else {
-					systemUpdate.status = 1;
 				}
-			}
-		});
+			});
+		}
 	}
 
 	private onNotification(notification: AppNotification) {

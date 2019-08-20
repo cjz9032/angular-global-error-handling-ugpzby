@@ -34,6 +34,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		sMode: true,
 		subitems: []
 	}, {
 		id: 'support',
@@ -47,6 +48,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
+		sMode: true,
 		subitems: [{
 			id: 'support',
 			label: 'gaming.common.menu.support.sub1',
@@ -113,6 +115,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		sMode: true,
 		subitems: []
 	}, {
 		id: 'device',
@@ -123,6 +126,7 @@ export class ConfigService {
 		metricsParent: 'navbar',
 		metricsItem: 'link.device',
 		forArm: false,
+		sMode: true,
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
@@ -134,6 +138,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			sMode: true,
 			subitems: []
 		}, {
 			id: 'device-settings',
@@ -146,6 +151,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: false
 			},
+			sMode: true,
 			subitems: []
 		}, {
 			id: 'system-updates',
@@ -230,6 +236,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
+		sMode: true,
 		subitems: []
 	},
 	{
@@ -258,6 +265,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		sMode: true,
 		subitems: []
 	}];
 	menuItemsPrivacy: Array<any> = [{
@@ -272,6 +280,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		sMode: true,
 		subitems: []
 	}, {
 		id: 'privacy',
@@ -295,6 +304,7 @@ export class ConfigService {
 		metricsParent: 'navbar',
 		metricsItem: 'link.device',
 		forArm: false,
+		sMode: true,
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
@@ -306,6 +316,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			sMode: true,
 			subitems: []
 		}, {
 			id: 'device-settings',
@@ -318,6 +329,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: false
 			},
+			sMode: true,
 			subitems: []
 		}, {
 			id: 'system-updates',
@@ -402,6 +414,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
+		sMode: true,
 		subitems: []
 	},
 	{
