@@ -39,7 +39,7 @@
 								formControlName="cmsserver"
 								required>
 								<option *ngFor="let cmsserver of serverSwitchData.serverList"
-									[ngValue]="cmsserver">{{cmsserver}}</option>
+									[ngValue]="cmsserver">{{cmsserver.Value}}</option>
 							</select>
 						</div>
 					</div>
@@ -82,11 +82,43 @@
 							</select>
 						</div>
 					</div>
-					<div class="col-12">
-						<input type="submit"
-							class="btn btn-lg btn-primary"
-							value="Submit">
+
+					<div class="form-group row mb-2">
+						<label for="oem"
+							class="col col-4 col-form-label">OEM</label>
+						<div class="col">
+							<select name="oem"
+								id="oem"
+								formControlName="oem"
+								required>
+								<option *ngFor="let oem of serverSwitchData.oemList"
+									[ngValue]="oem">{{oem.Value}}</option>
+							</select>
+						</div>
 					</div>
+
+					<div class="form-group row mb-2">
+						<label for="brand"
+							class="col col-4 col-form-label">Brand</label>
+						<div class="col">
+							<select name="brand"
+								id="brand"
+								formControlName="brand"
+								required>
+								<option *ngFor="let brand of serverSwitchData.brandList"
+									[ngValue]="brand">{{brand.Value}}</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row mb-2">
+						<div class="col">
+							<input type="submit"
+								class="btn btn-lg btn-primary button"
+								value="Submit">
+						</div>
+					</div>
+
 				</form>
 			</div>
 		</div>

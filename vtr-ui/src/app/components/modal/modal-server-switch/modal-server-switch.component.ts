@@ -42,10 +42,12 @@ export class ModalServerSwitchComponent implements OnInit {
 			country: new FormControl(this.serverSwitchData.countryList[0], Validators.required),
 			language: new FormControl(this.serverSwitchData.languageList[7], Validators.required),
 			segment: new FormControl(this.serverSwitchData.segmentList[3], Validators.required),
-			cmsserver: new FormControl(this.serverSwitchData.serverList[0], Validators.required)
+			cmsserver: new FormControl(this.serverSwitchData.serverList[0], Validators.required),
+			oem: new FormControl(this.serverSwitchData.oemList[0], Validators.required),
+			brand: new FormControl(this.serverSwitchData.brandList[0], Validators.required)
 		});
 
-		// VAN-5872, server switch feature
+		//  VAN-5872, server switch feature
 		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
 		if (serverSwitchLocalData && serverSwitchLocalData.forceit && serverSwitchLocalData.forceit === true) {
 			this.serverSwitchForm.controls.country.setValue(
@@ -54,7 +56,9 @@ export class ModalServerSwitchComponent implements OnInit {
 				this.getSelectedObject(this.serverSwitchData.languageList, serverSwitchLocalData.language.Value));
 			this.serverSwitchForm.controls.segment.setValue(
 				this.getSelectedObject(this.serverSwitchData.segmentList, serverSwitchLocalData.segment.Value));
-			this.serverSwitchForm.controls.cmsserver.setValue(serverSwitchLocalData.cmsserver);
+			this.serverSwitchForm.controls.cmsserver.setValue(this.getSelectedObject(this.serverSwitchData.serverList, serverSwitchLocalData.cmsserver.Value));
+			this.serverSwitchForm.controls.oem.setValue(this.getSelectedObject(this.serverSwitchData.oemList, serverSwitchLocalData.oem.Value));
+			this.serverSwitchForm.controls.brand.setValue(this.getSelectedObject(this.serverSwitchData.brandList, serverSwitchLocalData.brand.Value));
 		}
 	}
 	closeModal() {
@@ -75,9 +79,9 @@ export class ModalServerSwitchComponent implements OnInit {
 			status: false,
 			message: []
 		};
-		//console.log(formData);
+		// console.log(formData);
 
-		//validating
+		// validating
 		if (isNull(formData.cmsserver) || isUndefined(formData.cmsserver)) {
 			this.sddInvalid.status = true;
 			this.sddInvalid.message.push('CMS API is required.');
@@ -106,8 +110,21 @@ export class ModalServerSwitchComponent implements OnInit {
 			this.serverSwitchData.segment = formData.segment;
 		}
 
+		if (isNull(formData.oem) || isUndefined(formData.oem)) {
+			this.sddInvalid.status = true;
+			this.sddInvalid.message.push('OEM is required.');
+		} else {
+			this.serverSwitchData.oem = formData.oem;
+		}
 
-		//submit success
+		if (isNull(formData.brand) || isUndefined(formData.brand)) {
+			this.sddInvalid.status = true;
+			this.sddInvalid.message.push('Brand is required.');
+		} else {
+			this.serverSwitchData.brand = formData.brand;
+		}
+
+		// submit success
 		if (!this.sddInvalid.status) {
 			this.serverSwitchProcess();
 		}
@@ -121,10 +138,12 @@ export class ModalServerSwitchComponent implements OnInit {
 			language: this.serverSwitchData.language,
 			segment: this.serverSwitchData.segment,
 			cmsserver: this.serverSwitchData.cmsserver,
+			oem: this.serverSwitchData.oem,
+			brand: this.serverSwitchData.brand,
 			forceit: false
 		};
 
-		//storing into localStorage
+		//  storing into localStorage
 		this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
 		this.closeModal();
@@ -136,11 +155,11 @@ export class ModalServerSwitchComponent implements OnInit {
 			urlTree.queryParams['d'] = (new Date).getTime();
 		} else {
 			urlTree = this.router.createUrlTree(
-				[this.router.url], { queryParams: { serverswitch: 'true', d: (new Date).getTime() }, queryParamsHandling: "merge", skipLocationChange: false }
+				[this.router.url], { queryParams: { serverswitch: 'true', d: (new Date).getTime() }, queryParamsHandling: 'merge', skipLocationChange: false }
 			);
 		}
 
-		//window.location.href = urlTree.toString();
+		// window.location.href = urlTree.toString();
 		this.router.navigateByUrl(urlTree);
 
 		/*
@@ -149,14 +168,14 @@ export class ModalServerSwitchComponent implements OnInit {
 		if (qry.length > 1) {
 		  qry = qry[1].toString().replace('') + '&serverswitch=true';
 		} else {
-		  //window.location.search = '?serverswitch=true&d='+(new Date).getTime();
+		  // window.location.search = '?serverswitch=true&d='+(new Date).getTime();
 		}
 		console.log(window.location.href);
 		window.location.href = window.location.href + window.location.search;
-		//window.location.reload();
+		// window.location.reload();
 		*/
-		//reload with new serverSwitch Parms
-		//this.redirectTo(this.router.url,{ serverswitch: 'true',d: (new Date).getTime()});
+		// reload with new serverSwitch Parms
+		// this.redirectTo(this.router.url,{ serverswitch: 'true',d: (new Date).getTime()});
 	}
 
 	redirectTo(uri: string, parms: {}) {
@@ -166,13 +185,13 @@ export class ModalServerSwitchComponent implements OnInit {
 			return false;
 		};
 		let urlRootTree = this.router.createUrlTree(
-			['/'], { queryParams: parms, queryParamsHandling: "merge", skipLocationChange: false }
+			['/'], { queryParams: parms, queryParamsHandling: 'merge', skipLocationChange: false }
 		);
 		let urlTree = this.router.createUrlTree(
-			[uri], { queryParams: parms, queryParamsHandling: "merge", skipLocationChange: false }
+			[uri], { queryParams: parms, queryParamsHandling: 'merge', skipLocationChange: false }
 		);
 
-		//this.router.navigateByUrl(uri, { queryParams: parms, queryParamsHandling: "merge", skipLocationChange: false });
+		// this.router.navigateByUrl(uri, { queryParams: parms, queryParamsHandling: 'merge', skipLocationChange: false });
 		this.router.navigateByUrl(urlRootTree)
 			.then(() => {
 				console.log('@sh navigateByUrl', this.router.parseUrl(this.router.url), parms);
@@ -182,7 +201,7 @@ export class ModalServerSwitchComponent implements OnInit {
 
 	private getSelectedObject(array: any[], value: string) {
 		return array.find(o => o.Value === value);
-		// array.filter(e => e.Value === value);
+		//  array.filter(e => e.Value === value);
 
 	}
 }
