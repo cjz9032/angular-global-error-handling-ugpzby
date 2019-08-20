@@ -99,3 +99,22 @@
 		visibility: hidden;
 	}
 }
+.disabled-class{
+	opacity: 0.7;
+	label {	
+		&:after, &:before {
+			border-color: $light-grey;
+		}	
+		&:after {
+			background-color: $light-grey;
+		}	
+		&:hover {
+			cursor: not-allowed;		
+		}	
+	}
+}
+.icomoon-Special-function, .icomoon-F1-F12-funciton {
+	&:before {
+		font-size: $title
+	}
+}
