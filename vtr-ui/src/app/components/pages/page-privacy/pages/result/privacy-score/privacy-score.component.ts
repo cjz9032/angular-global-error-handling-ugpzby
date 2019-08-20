@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { PrivacyScoreService } from './privacy-score.service';
-import { filter, map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
@@ -53,10 +53,9 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			this.privacyScoreService.newPrivacyScore$,
 			this.isFirstTimeVisitor$
 		]).pipe(
-			filter(([score, isFirstTimeVisitor]) => !isFirstTimeVisitor),
 			takeUntil(instanceDestroyed(this)),
-		).subscribe(([score]) => {
-			this.setDataAccordingToScore(score);
+		).subscribe(([score, isFirstTimeVisitor]) => {
+			isFirstTimeVisitor ? this.setDataAccordingToScore(0) : this.setDataAccordingToScore(score);
 			this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
 			this.changeDetectorRef.detectChanges();
 		});
