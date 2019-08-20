@@ -23,10 +23,31 @@ import { HardwareComponentsComponent } from './page-hardwarescan/children/hardwa
 import { RecoverBadSectorsComponent } from './page-hardwarescan/children/recover-bad-sectors/recover-bad-sectors.component';
 import { HardwareViewResultsComponent } from './page-hardwarescan/children/hardware-view-results/hardware-view-results.component';
 import { SharedModule } from 'src/app/modules/shared.module';
-import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { HeaderMainComponent } from './header-main/header-main.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { UiButtonModule } from './ui/ui-button/ui-button.module';
+import { ContainerCardModule } from './container-card/container-card.module';
+import { MetricsModule } from 'src/app/directives/metrics.module';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
+import { faRedo } from '@fortawesome/pro-light-svg-icons/faRedo';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
+import { faAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
+
+library.add(faCaretUp);
+library.add(faCaretRight);
+library.add(faCaretDown);
+library.add(faRedo);
+library.add(faExclamationTriangle);
+library.add(faExclamationCircle);
+library.add(faQuestionCircle);
+library.add(faAngleUp);
+
 
 @NgModule({
 	declarations: [
@@ -63,7 +84,8 @@ import { UiButtonModule } from './ui/ui-button/ui-button.module';
 		NgbCollapseModule,
 		NgbTooltipModule,
 		NgbProgressbarModule,
-		ContainerCardModule
+		ContainerCardModule,
+		MetricsModule
 	],
 	exports: [
 		NgbCollapseModule

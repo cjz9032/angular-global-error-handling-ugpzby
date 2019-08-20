@@ -27,6 +27,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	routeSubscription: Subscription;
 	currentRouter: any;
 	hidePreviousResult = false;
+	hideRecover = false;
 
 
 	constructor(
@@ -64,12 +65,15 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		switch (page) {
 			case 'recover-bad-sectors':
 				this.hidePreviousResult = false;
+				this.hideRecover = true;
 				break;
 			case 'view-results':
 				this.hidePreviousResult = true;
+				this.hideRecover = false;
 				break;
 			default:
 				this.hidePreviousResult = false;
+				this.hideRecover = false;
 				break;
 		}
 	}
@@ -112,6 +116,16 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	public getProgress() {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.getProgress();
+		}
+	}
+
+	public setTitle() {
+		if (this.hardwareScanService) {
+			if (this.hideRecover || this.isRecoverExecuting() || this.isRecoverInProgress()) {
+				return this.translate.instant('hardwareScan.recoverBadSectors.title');
+			} else {
+				return this.translate.instant('hardwareScan.name');
+			}
 		}
 	}
 
