@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
+import { DevService } from '../dev/dev.service';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -31,7 +32,8 @@ export class CMSService {
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
-		private commonService: CommonService// VAN-5872, server switch feature
+		private commonService: CommonService, // VAN-5872, server switch feature,
+		private devService: DevService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
@@ -45,15 +47,18 @@ export class CMSService {
 		return new Promise((resolve, reject) => {
 			if (!filters) {
 				console.log('vantageShellService.deviceFilter skipped filter call due to empty filter.');
+				this.devService.writeLog('vantageShellService.deviceFilter skipped filter call due to empty filter.');
 				return resolve(true);
 			}
 
 			return this.vantageShellService.deviceFilter(filters).then(
 				(result) => {
 					resolve(result);
+					this.devService.writeLog('vantageShellService.deviceFilter ', filters);
 				},
 				(reason) => {
 					console.log('vantageShellService.deviceFilter error', reason);
+					this.devService.writeLog('vantageShellService.deviceFilter error', reason);
 					resolve(false);
 				}
 			);
@@ -64,12 +69,15 @@ export class CMSService {
 		return new Promise((resolve, reject) => {
 			const promises = [];
 
+			this.devService.writeLog('filterCMSContent results', JSON.stringify(results));
 			results.forEach((result) => {
 				promises.push(this.deviceFilter(result.Filters));
+				this.devService.writeLog('filterCMSContent result', JSON.stringify(result));
 			});
 
 			Promise.all(promises).then((deviceFilterValues) => {
 				const filteredResults = results.filter((result, index) => {
+					this.devService.writeLog('filterCMSContent deviceFilterValues', deviceFilterValues[index]);
 					return deviceFilterValues[index];
 				});
 
@@ -129,12 +137,15 @@ export class CMSService {
 			/*'/api/v1/features', Object.assign(defaults, queryParams), {}*/
 			'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
 		).subscribe((response: any) => {
+			this.devService.writeLog('getCMSContent ', JSON.stringify(response.Results));
 			this.filterCMSContent(response.Results).then(
 				(result) => {
+					this.devService.writeLog('getCMSContent result', JSON.stringify(result));
 					subscriber.next(result);
 					subscriber.complete();
 				},
 				(reason) => {
+					this.devService.writeLog('getCMSContent error', reason);
 					console.log('fetchCMSContent error', reason);
 					subscriber.error(reason);
 				}
@@ -322,7 +333,10 @@ export class CMSService {
 					Object.assign(CMSOption, {
 						Lang: (serverSwitchLocalData.language.Value).toLowerCase(),
 						GEO: (serverSwitchLocalData.country.Value).toLowerCase(),
-						Segment: serverSwitchLocalData.segment.Value
+						Segment: serverSwitchLocalData.segment.Value,
+						OEM: serverSwitchLocalData.oem.Value,
+						Brand: serverSwitchLocalData.brand.Value
+
 					});
 				}
 

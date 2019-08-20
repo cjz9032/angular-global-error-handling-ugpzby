@@ -1,15 +1,16 @@
-import {	Injectable} from '@angular/core';
-import {	CommsService} from '../comms/comms.service';
-import {	CommonService} from '../common/common.service';
-import {	DeviceService} from '../device/device.service';
-import {	VantageShellService} from '../vantage-shell/vantage-shell.service';
-import {	UUID} from 'angular2-uuid';
-import {	LocalStorageKey} from '../../enums/local-storage-key.enum';
+import { Injectable } from '@angular/core';
+import { CommsService } from '../comms/comms.service';
+import { CommonService } from '../common/common.service';
+import { DeviceService } from '../device/device.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { UUID } from 'angular2-uuid';
+import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 
-import {	environment} from '../../../environments/environment';
-import { 	NetworkStatus } from 'src/app/enums/network-status.enum';
-import { 	Observable } from 'rxjs';
-import { 	AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { environment } from '../../../environments/environment';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { Observable } from 'rxjs';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { DevService } from '../dev/dev.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -24,7 +25,8 @@ export class UPEService {
 		private commsService: CommsService,
 		private commonService: CommonService,
 		private vantageShellService: VantageShellService,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private devService: DevService
 	) {
 
 	}
@@ -33,14 +35,17 @@ export class UPEService {
 		return new Promise((resolve, reject) => {
 			if (!filters) {
 				console.log('vantageShellService.deviceFilter skipped filter call due to empty filter.');
+				this.devService.writeLog('vantageShellService.deviceFilter skipped filter call due to empty filter.');
 				return resolve(true);
 			}
 
 			return this.vantageShellService.deviceFilter(filters).then(
 				(result) => {
+					this.devService.writeLog('vantageShellService.deviceFilter ', JSON.stringify(result));
 					resolve(result);
 				},
 				(reason) => {
+					this.devService.writeLog('vantageShellService.deviceFilter error', reason);
 					console.log('vantageShellService.deviceFilter error', reason);
 					resolve(false);
 				}
@@ -123,12 +128,12 @@ export class UPEService {
 			this.commsService.callUpeApi(
 				'/upe/auth/registerDevice', queryParams, {}
 			).subscribe((response: any) => {
-					if (response.status === 200) {
-						resolve(regData.hash);
-					} else {
-						reject(response.status + ' ' + response.statusText);
-					}
-				},
+				if (response.status === 200) {
+					resolve(regData.hash);
+				} else {
+					reject(response.status + ' ' + response.statusText);
+				}
+			},
 				error => {
 					console.log('registerDeviceToUPEServer error', error);
 					reject('registerDeviceToUPEServer error');
@@ -165,13 +170,13 @@ export class UPEService {
 			this.commsService.callUpeApi(
 				'/upe/recommendation/recommends', queryParam, {}
 			).subscribe((response: any) => {
-					if (response.status === 200) {
-						subscriber.next(response.body.results);
-						subscriber.complete();
-					} else {
-						subscriber.error(response.status + ' ' + response.statusText);
-					}
-				},
+				if (response.status === 200) {
+					subscriber.next(response.body.results);
+					subscriber.complete();
+				} else {
+					subscriber.error(response.status + ' ' + response.statusText);
+				}
+			},
 				(reason) => {
 					if (reason.status === 401) {
 						this.getUpeAPIKey(true);
