@@ -10,35 +10,34 @@
             </vtr-widget-offline-info>
           </div>
         </div>
-    <div class="row vtr-page-header">
-      <div class="col vtr-col">
-        <vtr-header-main [title]="'gaming.networkBoost.title' | translate" [backarrow]="'&lt; '"
-          [back]="'common.ui.back' | translate" [backId]="backId">
-        </vtr-header-main>
-      </div>
+  <div class="row vtr-page-header">
+    <div class="col vtr-col">
+      <vtr-header-main [title]="'gaming.networkBoost.title' | translate" [backarrow]="'&lt; '"
+        [back]="'common.ui.back' | translate" [backId]="backId">
+      </vtr-header-main>
     </div>
-    <div class="row vtr-page-content">
-      <div class="col vtr-col">
-        <div class="container-fluid">
-          <div class="row">
-            <div [ngClass]="'col-sm-12 col-md-12 col-lg-8 col-xl-8 vtr-page-left-column'">
-              <div class="vtr-page-shift-up nmx-40">
-                <div class="container-fluid">
-                  <div class="row mb-60">
-                    <div class="col col-12 px-40">
-                      <div class="vtr-widget-system-monitor">
-                        <div class="widget-container">
-                          <div class="container-fluid">
-                            <div class="row">
-                              <div class="col-sm-12">
-                                <vtr-ui-switch-onoff [value]="toggleStatus" (toggle)="setNetworkBoostStatus($event)"
-                                  vtrMetrics metricsEvent="featureClick">
-                                </vtr-ui-switch-onoff>
-                                <p class="intro-text">{{'gaming.networkBoost.introLine' | translate}}</p>
-                                <vtr-widget-networkboost [changeNum]="changeListNum" (actionModal)="openTargetModal()"
-                                  (addedApps)="appsCount = $event">
-                                </vtr-widget-networkboost>
-                              </div>
+  </div>
+  <div class="row vtr-page-content">
+    <div class="col vtr-col">
+      <div class="container-fluid">
+        <div class="row">
+          <div [ngClass]="'col-sm-12 col-md-12 col-lg-8 col-xl-8 vtr-page-left-column'">
+            <div class="vtr-page-shift-up nmx-40">
+              <div class="container-fluid">
+                <div class="row mb-60">
+                  <div class="col col-12 px-40">
+                    <div class="vtr-widget-system-monitor">
+                      <div class="widget-container">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <vtr-ui-switch-onoff [value]="toggleStatus" (toggle)="setNetworkBoostStatus($event)" 
+                              vtrMetrics metricsEvent="featureClick">
+                              </vtr-ui-switch-onoff>
+                              <p class="intro-text">{{'gaming.networkBoost.introLine' | translate}}</p>
+                              <vtr-widget-networkboost [changeNum]="changeListNum" (actionModal)="openTargetModal()"
+                              (addedApps)="appsCount = $event">
+                              </vtr-widget-networkboost>
                             </div>
                           </div>
                         </div>
@@ -80,13 +79,13 @@
     </div>
   </div>
 
-  <vtr-networkboost-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
-    (closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="showTurnOnModal=false;initNotNowAction($event)"
-    (actionTurnOn)="showTurnOnModal=false;initTurnOnAction($event)">
-  </vtr-networkboost-turn-on>
+<vtr-networkboost-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
+  (closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="initNotNowAction()"
+  (actionTurnOn)="initTurnOnAction($event)">
+</vtr-networkboost-turn-on>
 
-  <vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount"
-    (closeAddAppsModal)="modalCloseAddApps($event)">
-  </vtr-networkboost-add-apps>
+<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount" 
+(closeAddAppsModal)="modalCloseAddApps($event)">
+</vtr-networkboost-add-apps>
 
 </div>
