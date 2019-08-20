@@ -24,7 +24,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public enableViewResults = false;
 	public viewResultsText = this.translate.instant('hardwareScan.viewResults');
-	public refreshText = this.translate.instant('hardwareScan.refreshModules');
+	public refreshText = this.translate.instant('hardwareScan.refreshModule');
 	public viewResultsPath = '';
 	public resultItems: any;
 	public hardwareTitle = '';
@@ -378,7 +378,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCustomizeScan() {
 		if (this.isLoadingDone()) {
-			const modalRef = this.modalService.open(this.customizeModal);
+			const modalRef = this.modalService.open(this.customizeModal, {
+				size: 'lg',
+				centered: true,
+				windowClass: 'custom-modal-size'
+			});
 			modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
 			console.log('[MODAL] ', modalRef.componentInstance.items);
 			modalRef.componentInstance.passEntry.subscribe(() => {
@@ -418,7 +422,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.getPreScanInfo(preScanInformationRequest).then((response) => {
 			for (const message of response.MessageList) {
 				if (message.id === 'connect-power') {
-					this.batteryMessage = this.translate.instant('hardwareScan.battery.description');
+					this.batteryMessage = message.description;
 					break;
 				}
 			}

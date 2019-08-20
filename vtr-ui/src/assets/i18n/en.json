@@ -2281,7 +2281,7 @@
 		"latestResult": "Latest Result",
 		"back": "BACK",
 		"viewResults": "View results",
-		"refreshModules": "Refresh Modules",
+		"refreshModule": "Refresh Modules",
 		"save": "Save",
 		"details": "Details",
 		"recurrence": "Recurrence",
@@ -2333,6 +2333,7 @@
 			"pickDate": "Pick a Date",
 			"scanScheduled": "A Hardware Scan Was Scheduled!",
 			"description": "Another scan was already scheduled at the same time and date!",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time.",
 			"error": "Error",
 			"delete": "Delete",
 			"warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
