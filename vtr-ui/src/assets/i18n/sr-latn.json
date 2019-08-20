@@ -21,6 +21,9 @@
 					"dolby": "Dolby",
 					"rapidCharge": "Brzo punjenje"
 				},
+				"quickSettingstitle": {
+					"title": "Brze postavke"
+				},
 				"legionEdge": {
 					"title": "Overklok procesora",
 					"status": {
@@ -94,10 +97,8 @@
 				},
 				"systemStatus": {
 					"info": "INFORMACIJE"
-				},
-				"quickSettingstitle": {
-					"title": "Brze postavke"
 				}
+				
 			}
 		},
 		"common": {
