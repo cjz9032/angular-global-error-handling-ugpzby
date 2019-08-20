@@ -2328,7 +2328,8 @@
 			"description": "Μια άλλη σάρωση ήταν ήδη προγραμματισμένη την ίδια στιγμή και ημερομηνία!",
 			"error": "Σφάλμα",
 			"delete": "Διαγραφή",
-			"warningBatterySaver": "Σημείωση: Οι προγραμματισμένες σαρώσεις δεν θα εκτελεστούν στη λειτουργία εξοικονόμησης μπαταρίας"
+			"warningBatterySaver": "Σημείωση: Οι προγραμματισμένες σαρώσεις δεν θα εκτελεστούν στη λειτουργία εξοικονόμησης μπαταρίας",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Αποκατάσταση κατεστραμμένων τομέων",

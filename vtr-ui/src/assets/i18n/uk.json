@@ -2328,7 +2328,8 @@
 			"description": "Інше сканування вже заплановано на цей час і дату!",
 			"error": "Помилка",
 			"delete": "Видалити",
-			"warningBatterySaver": "Примітка. Планові сканування не виконуватимуться в режимі економії заряду акумулятора"
+			"warningBatterySaver": "Примітка. Планові сканування не виконуватимуться в режимі економії заряду акумулятора",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Відновлення пошкоджених секторів",

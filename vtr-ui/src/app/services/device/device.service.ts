@@ -22,6 +22,7 @@ export class DeviceService {
 	public is64bit = true;
 	public showPrivacy = false;
 	public isGaming = false;
+	public isSMode = false;
 	private isGamingDashboardLoaded = false;
 	private machineInfo: any;
 
@@ -38,41 +39,12 @@ export class DeviceService {
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
-		// if (this.microphone) {
-		// 	this.startDeviceMonitor();
-		// }
 		this.initIsArm();
 		this.initshowPrivacy();
+		this.getMachineInfo().then((info) => {
+			this.isSMode = info && info.isSMode;
+		});
 	}
-
-	// private loadGamingDashboard() {
-	// 	if (!this.isGamingDashboardLoaded) {
-	// 		this.isGamingDashboardLoaded = true;
-	// 		if (this.isGaming) {
-	// 			this.router.navigateByUrl('/device-gaming');
-	// 		} else {
-	// 			this.router.navigateByUrl('/dashboard');
-	// 		}
-	// 	}
-	// }
-
-	// private initIsGaming() {
-	// 	try {
-	// 		if (this.isShellAvailable) {
-	// 			this.getMachineInfo()
-	// 				.then((machineInfo: any) => {
-	// 					if (machineInfo.isGaming !== undefined) {
-	// 						console.log('initIsGaming', machineInfo.isGaming);
-	// 						this.isGaming = machineInfo.isGaming;
-	// 					}
-	// 				}).catch(error => {
-	// 					console.error('initIsGaming', error);
-	// 				});
-	// 		}
-	// 	} catch (error) {
-	// 		console.error('initArm' + error.message);
-	// 	}
-	// }
 
 	private initIsArm() {
 		try {
@@ -105,7 +77,7 @@ export class DeviceService {
 	}
 
 	private initshowPrivacy() {
-		// set this.showPrivacy appropriately based on machineInfo data	
+		// set this.showPrivacy appropriately based on machineInfo data
 		if (this.hypSettings) {
 			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
 				this.showPrivacy = (privacy === 'enabled');

@@ -2328,7 +2328,8 @@
 			"description": "Der er allerede planlagt en anden scanning på samme tid og den samme dato!",
 			"error": "Fejl",
 			"delete": "Slet",
-			"warningBatterySaver": "Bemærk: Planlagte scanninger kører ikke i strømsparetilstand"
+			"warningBatterySaver": "Bemærk: Planlagte scanninger kører ikke i strømsparetilstand",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Retablering af dårlige sektorer",

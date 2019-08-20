@@ -2328,7 +2328,8 @@
 			"description": "Ob isti uri in datumu je že načrtovan drug pregled.",
 			"error": "Napaka",
 			"delete": "Izbriši",
-			"warningBatterySaver": "Opomba: načrtovani pregledi se ne bodo izvedli v načinu varčevanja z baterijo"
+			"warningBatterySaver": "Opomba: načrtovani pregledi se ne bodo izvedli v načinu varčevanja z baterijo",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Obnovitev poškodovanih sektorjev",

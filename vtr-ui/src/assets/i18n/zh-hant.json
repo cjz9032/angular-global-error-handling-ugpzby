@@ -2328,7 +2328,8 @@
 			"description": "相同的日期和時間已排程另一次掃描！",
 			"error": "錯誤",
 			"delete": "刪除",
-			"warningBatterySaver": "附註：「排程掃描」不會在「省電功能」模式下執行"
+			"warningBatterySaver": "附註：「排程掃描」不會在「省電功能」模式下執行",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "回復錯誤磁區",

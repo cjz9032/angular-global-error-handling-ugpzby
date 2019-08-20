@@ -2328,7 +2328,8 @@
 			"description": "別のスキャンが同じ日時にすでにスケジュールされています。",
 			"error": "エラー",
 			"delete": "削除",
-			"warningBatterySaver": "注: スケジュール・スキャンは、バッテリー節約モードでは実行されません"
+			"warningBatterySaver": "注: スケジュール・スキャンは、バッテリー節約モードでは実行されません",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "不良セクターの復元",

@@ -2328,7 +2328,8 @@
 			"description": "Már be van ütemezve egy másik keresés ugyanarra a napra és időpontra!",
 			"error": "Hiba",
 			"delete": "Törlés",
-			"warningBatterySaver": "Megjegyzés: Az ütemezett vizsgálatok energiatakarékos módban nem működnek"
+			"warningBatterySaver": "Megjegyzés: Az ütemezett vizsgálatok energiatakarékos módban nem működnek",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Hibás szektorok helyreállítása",

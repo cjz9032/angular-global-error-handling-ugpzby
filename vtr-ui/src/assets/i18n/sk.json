@@ -2328,7 +2328,8 @@
 			"description": "Ďalšia kontrola bola naplánovaná na rovnaký čas a dátum!",
 			"error": "Chyba",
 			"delete": "Odstrániť",
-			"warningBatterySaver": "Poznámka: Plánované snímania sa nevykonajú v režime Šetrič batérie"
+			"warningBatterySaver": "Poznámka: Plánované snímania sa nevykonajú v režime Šetrič batérie",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Obnoviť chybné sektory",

@@ -2333,7 +2333,8 @@
 			"description": "En annen skanning er allerede planlagt på samme tid og dato!",
 			"error": "Feil",
 			"delete": "Slett",
-			"warningBatterySaver": "Merk: Planlagte skanninger vil ikke bli utført i batterisparingsmodus"
+			"warningBatterySaver": "Merk: Planlagte skanninger vil ikke bli utført i batterisparingsmodus",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Gjenopprett skadde sektorer",

@@ -2328,7 +2328,8 @@
 			"description": "Toinen tarkistus on jo ajoitettu samaan aikaan ja samalle päivälle!",
 			"error": "Virhe",
 			"delete": "Poista",
-			"warningBatterySaver": "Huomautus: Ajoitettuja tarkistuksia ei suoriteta virransäästötilassa"
+			"warningBatterySaver": "Huomautus: Ajoitettuja tarkistuksia ei suoriteta virransäästötilassa",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Korjaa vialliset sektorit",

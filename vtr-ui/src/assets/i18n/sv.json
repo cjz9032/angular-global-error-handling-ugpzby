@@ -2328,7 +2328,8 @@
 			"description": "En annan genomsökning har redan schemalagts för samma tid och datum!",
 			"error": "Fel",
 			"delete": "Ta bort",
-			"warningBatterySaver": "Obs! Schemalagda sökningar fungerar inte i batterisparläge"
+			"warningBatterySaver": "Obs! Schemalagda sökningar fungerar inte i batterisparläge",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Återställa skadade sektorer",

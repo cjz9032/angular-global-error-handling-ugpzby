@@ -2328,7 +2328,8 @@
 			"description": "O altă scanare a fost deja programată în aceeași dată, la aceeași oră!",
 			"error": "Eroare",
 			"delete": "Ştergere",
-			"warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie"
+			"warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Recuperarea sectoarelor defecte",

@@ -57,6 +57,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 			closeButton: 'LicenseAgreementCloseButton',
 		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'license-Modal'
@@ -75,6 +76,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 			closeButton: 'OtherSoftwareLicensesCloseButton',
 		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'license-Modal'

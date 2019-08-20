@@ -2328,7 +2328,8 @@
 			"description": "Er is al een andere scan op dezelfde tijd en datum gepland.",
 			"error": "Fout",
 			"delete": "Verwijderen",
-			"warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld"
+			"warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Slechte sectoren herstellen",

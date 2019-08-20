@@ -2328,7 +2328,8 @@
 			"description": "¡Ya se programó otro análisis a la misma hora y fecha!",
 			"error": "Error",
 			"delete": "Eliminar",
-			"warningBatterySaver": "Nota: los análisis planificados no se ejecutarán en la modalidad de ahorro de batería"
+			"warningBatterySaver": "Nota: los análisis planificados no se ejecutarán en la modalidad de ahorro de batería",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Recuperar sectores incorrectos",

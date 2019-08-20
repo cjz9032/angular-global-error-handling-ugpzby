@@ -2328,7 +2328,8 @@
 			"description": "다른 스캔이 이미 같은 시간과 날짜에 예약되었습니다!",
 			"error": "오류",
 			"delete": "삭제",
-			"warningBatterySaver": "참고: 예약된 검사는 배터리 절약 모드에서 수행되지 않음"
+			"warningBatterySaver": "참고: 예약된 검사는 배터리 절약 모드에서 수행되지 않음",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "불량 섹터 복구",

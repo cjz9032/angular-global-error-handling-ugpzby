@@ -2328,7 +2328,8 @@
 			"description": "Ein weiterer Scan war bereits zum gleichen Zeitpunkt und Datum geplant.",
 			"error": "Fehler",
 			"delete": "Löschen",
-			"warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt"
+			"warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Wiederherstellung von fehlerhaften Sektoren",

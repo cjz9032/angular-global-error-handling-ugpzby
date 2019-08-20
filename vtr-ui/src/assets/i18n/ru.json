@@ -2328,7 +2328,8 @@
 			"description": "На то же время и дату было запланировано еще одно сканирование!",
 			"error": "Ошибка",
 			"delete": "Удалить",
-			"warningBatterySaver": "Примечание. Запланированные проверки не будут выполняться в режиме экономии заряда"
+			"warningBatterySaver": "Примечание. Запланированные проверки не будут выполняться в режиме экономии заряда",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Восстановление поврежденных секторов",

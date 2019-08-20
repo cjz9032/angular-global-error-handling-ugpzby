@@ -2328,7 +2328,8 @@
 			"description": "Une autre analyse a déjà été planifiée à la même heure et à la même date !",
 			"error": "Erreur",
 			"delete": "Supprimer",
-			"warningBatterySaver": "Remarque : les analyses planifiées ne sont pas effectuées en mode économiseur de batterie"
+			"warningBatterySaver": "Remarque : les analyses planifiées ne sont pas effectuées en mode économiseur de batterie",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Récupérer les secteurs incorrects",

@@ -2328,7 +2328,8 @@
 			"description": "Un'altra scansione è stata già pianificata alla stessa data e ora.",
 			"error": "Errore",
 			"delete": "Elimina",
-			"warningBatterySaver": "Nota: le scansioni pianificate non verranno eseguite in modalità risparmio batteria"
+			"warningBatterySaver": "Nota: le scansioni pianificate non verranno eseguite in modalità risparmio batteria",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Ripristina settori danneggiati",

@@ -2328,7 +2328,8 @@
 			"description": "Já estava agendada outra verificação para a mesma data e hora!",
 			"error": "Erro",
 			"delete": "Eliminar",
-			"warningBatterySaver": "Nota: as Verificações Programadas não serão executadas no modo Poupança de Bateria"
+			"warningBatterySaver": "Nota: as Verificações Programadas não serão executadas no modo Poupança de Bateria",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Recuperar setores danificados",

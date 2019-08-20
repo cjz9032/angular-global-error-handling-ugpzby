@@ -17,16 +17,16 @@
 							<div class="col-11">
 								<vtr-ui-header-subpage [title]="'settings.settings' | translate"
 									[caption]="'settings.settingsDescription' | translate"
-									*ngIf="!deviceService.isArm">
+									*ngIf="!deviceService.isArm && !deviceService.isSMode">
 								</vtr-ui-header-subpage>
 								<vtr-ui-header-subpage [title]="'settings.settings' | translate"
-								*ngIf="deviceService.isArm">
+								*ngIf="deviceService.isArm || deviceService.isSMode">
 								</vtr-ui-header-subpage>
 							</div>
 						</div>
 
 						<div class="row py-5"
-							*ngIf="!deviceService.isArm"
+							*ngIf="!deviceService.isArm && !deviceService.isSMode"
 							id="settings-messages">
 							<div class="col-10 mx-auto ">
 								<vtr-container-collapsible

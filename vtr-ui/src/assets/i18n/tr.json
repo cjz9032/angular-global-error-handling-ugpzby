@@ -2328,7 +2328,8 @@
 			"description": "Aynı tarih ve saat için başka bir tarama zaten planlanmış!",
 			"error": "Hata",
 			"delete": "Sil",
-			"warningBatterySaver": "Not: Pil Tasarrufu kipinde Zamanlanmış Taramalar gerçekleştirilmez"
+			"warningBatterySaver": "Not: Pil Tasarrufu kipinde Zamanlanmış Taramalar gerçekleştirilmez",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Bozuk Kesimleri Kurtar",

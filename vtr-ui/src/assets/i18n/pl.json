@@ -2328,7 +2328,8 @@
 			"description": "Kolejne skanowanie zostało już zaplanowane w tym samym czasie i dniu!",
 			"error": "Błąd",
 			"delete": "Usuń",
-			"warningBatterySaver": "Uwaga: zaplanowane skanowania nie zostaną wykonane w trybie oszczędzania baterii"
+			"warningBatterySaver": "Uwaga: zaplanowane skanowania nie zostaną wykonane w trybie oszczędzania baterii",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "Odzyskaj uszkodzone sektory",

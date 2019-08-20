@@ -2328,7 +2328,8 @@
 			"description": "已安排在相同的时间和日期进行另一次扫描！",
 			"error": "错误",
 			"delete": "删除",
-			"warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行"
+			"warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行",
+			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
 		},
 		"recoverBadSectors": {
 			"title": "恢复坏扇区",
