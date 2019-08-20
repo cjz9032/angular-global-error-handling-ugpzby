@@ -22,7 +22,7 @@ export class CommsService {
 
 	endpointGetCall(endpoint, queryParams: any = {}, httpOptions: any = {}) {
 		const url = (this.serverSwitchLocalData && this.serverSwitchLocalData.forceit && this.serverSwitchLocalData.forceit === true ?
-			this.serverSwitchLocalData.cmsserver : this.env.cmsApiRoot) + endpoint;
+			this.serverSwitchLocalData.cmsserver.Value : this.env.cmsApiRoot) + endpoint;
 
 		const httpQueryParams = new HttpParams({
 			fromObject: queryParams
@@ -31,6 +31,8 @@ export class CommsService {
 		httpOptions.params = httpQueryParams;
 
 		this.devService.writeLog('API GET ENDPOINT: ', url);
+		this.devService.writeLog('params: ', httpOptions.params);
+		this.devService.writeLog('API GET ENDPOINT complete: ', url + '?' + httpOptions.params);
 		return this.http.get(url, httpOptions);
 	}
 
@@ -45,8 +47,10 @@ export class CommsService {
 
 		this.devService.writeLog('CALL UPE API: ', url);
 		return this.http.post(url, JSON.stringify(queryParams),
-			 {observe: 'response',
-			  headers: reqHeader	});
+			{
+				observe: 'response',
+				headers: reqHeader
+			});
 	}
 
 
