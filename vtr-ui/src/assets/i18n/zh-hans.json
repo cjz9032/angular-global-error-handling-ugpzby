@@ -1448,7 +1448,7 @@
 		"notification": {
 			"recent": "最近的安全通知",
 			"notifications": "通知",
-            "unsafeNetworkConnection": "不安全的网络连接",
+			"unsafeNetworkConnection": "不安全的网络连接",
 			"networkUnsafe": "网络不安全",
 			"deviceDisconnected": "设备已断开连接",
 			"newDeviceDetected": "检测到新设备",
@@ -2328,7 +2328,7 @@
 			"description": "已安排在相同的时间和日期进行另一次扫描！",
 			"error": "错误",
 			"delete": "删除",
-			"warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+			"warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行"
 		},
 		"recoverBadSectors": {
 			"title": "恢复坏扇区",
@@ -2371,12 +2371,12 @@
 			"description": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少运行时电池使用寿命。为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
 			"enable": "启用"
 		},
-		"completed": "Completed",
-		"notCompleted": "Not Completed",
-		"refreshModules": "Refresh Modules",
-		"yes": "yes",
-		"attention": "Attention",
-		"cancelTextPrompt": "Are you sure you would like to cancel?",
-		"cancelTextProgress": "Please wait for cancel progress"
+		"refreshModule": "刷新模块",
+		"completed": "完毕",
+		"notCompleted": "未完成",
+		"yes": "是",
+		"attention": "注意",
+		"cancelTextPrompt": "您确定要取消吗？",
+		"cancelTextProgress": "请等待取消进度"
 	}
 }

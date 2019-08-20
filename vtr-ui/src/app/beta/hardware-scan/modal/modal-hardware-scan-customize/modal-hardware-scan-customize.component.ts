@@ -37,4 +37,10 @@ export class ModalHardwareScanCustomizeComponent implements OnInit {
 			this.errorMessage = this.translate.instant('hardwareScan.errorResult');
 		}
 	}
+
+	public receiveSelect(){
+		if(this.errorMessage !== ''){
+			this.errorMessage = '';
+		}
+	}
 }

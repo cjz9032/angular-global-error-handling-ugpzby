@@ -45,6 +45,7 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 	public minute: string;
 	public amPm: string;
 	public intervalOption: number;
+	public disable: boolean;
 
 	constructor(public activeModal: NgbActiveModal, private translate: TranslateService) {
 		this.optionsAMPM = [{ name: this.translate.instant('hardwareScan.am'), id: 1 }, { name: this.translate.instant('hardwareScan.pm'), id: 2 }];
@@ -151,7 +152,7 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 			}
 
 			(<HTMLInputElement>document.getElementById('quick')).checked = true;
-			(<HTMLInputElement>document.getElementById('ScheduleButton')).disabled = true;
+			this.disable = true;
 		}
 	}
 
@@ -230,9 +231,9 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 				console.log('currentDate: ', currentDate);
 
 				if (chosenDate > currentDate) {
-					(<HTMLInputElement>document.getElementById('ScheduleButton')).disabled = false;
+					this.disable = false;
 				} else {
-					(<HTMLInputElement>document.getElementById('ScheduleButton')).disabled = true;
+					this.disable = true;
 				}
 			}
 		}
