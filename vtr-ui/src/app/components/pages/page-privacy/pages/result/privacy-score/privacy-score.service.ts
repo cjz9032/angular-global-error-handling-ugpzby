@@ -102,7 +102,6 @@ export class PrivacyScoreService {
 		this.getIsAntitrackingEnabled()
 	]).pipe(
 		map(([breachedAccountScore, passwordFromBrowserScore, monitoringScore, antitrackingScore]) => {
-			console.log('>>>>>>>>>', breachedAccountScore, passwordFromBrowserScore, monitoringScore, antitrackingScore);
 			return Math.round(
 				(
 					breachedAccountScore +
