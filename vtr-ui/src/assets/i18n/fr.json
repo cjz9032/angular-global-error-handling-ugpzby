@@ -2329,7 +2329,7 @@
 			"error": "Erreur",
 			"delete": "Supprimer",
 			"warningBatterySaver": "Remarque : les analyses planifiées ne sont pas effectuées en mode économiseur de batterie",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Une autre analyse a déjà été planifiée dans une période de dix minutes. Veuillez choisir un autre moment."
 		},
 		"recoverBadSectors": {
 			"title": "Récupérer les secteurs incorrects",
@@ -2378,6 +2378,7 @@
 		"yes": "Oui",
 		"attention": "Attention",
 		"cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
-		"cancelTextProgress": "Veuillez attendre la progression de l'annulation"
+		"cancelTextProgress": "Veuillez attendre la progression de l'annulation",
+		"pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau."
 	}
 }

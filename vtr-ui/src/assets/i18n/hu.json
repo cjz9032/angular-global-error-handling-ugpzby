@@ -2329,7 +2329,7 @@
 			"error": "Hiba",
 			"delete": "Törlés",
 			"warningBatterySaver": "Megjegyzés: Az ütemezett vizsgálatok energiatakarékos módban nem működnek",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Egy újabb vizsgálat már be van ütemezve tíz perces időtartamon belül. Válasszon másik időpontot."
 		},
 		"recoverBadSectors": {
 			"title": "Hibás szektorok helyreállítása",
@@ -2378,6 +2378,7 @@
 		"yes": "Igen",
 		"attention": "Figyelem",
 		"cancelTextPrompt": "Biztosan megszakítja a műveletet?",
-		"cancelTextProgress": "Várja meg a megszakítási folyamatot"
+		"cancelTextProgress": "Várja meg a megszakítási folyamatot",
+		"pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
 	}
 }

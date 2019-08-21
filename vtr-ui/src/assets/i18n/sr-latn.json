@@ -2329,7 +2329,7 @@
 			"error": "Greška",
 			"delete": "Izbriši",
 			"warningBatterySaver": "Napomena: Zakazana skeniranja se neće obaviti u režimu uštede baterije",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Drugo skeniranje je već planirano unutar vremenskog perioda od deset minuta. Odaberite neko drugo vreme."
 		},
 		"recoverBadSectors": {
 			"title": "Oporavi neispravne sektore",
@@ -2378,6 +2378,7 @@
 		"yes": "Da",
 		"attention": "Pažnja",
 		"cancelTextPrompt": "Želite li zaista da otkažete?",
-		"cancelTextProgress": "Sačekajte otkazivanje"
+		"cancelTextProgress": "Sačekajte otkazivanje",
+		"pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga."
 	}
 }

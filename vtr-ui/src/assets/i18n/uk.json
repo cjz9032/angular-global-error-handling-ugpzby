@@ -2329,7 +2329,7 @@
 			"error": "Помилка",
 			"delete": "Видалити",
 			"warningBatterySaver": "Примітка. Планові сканування не виконуватимуться в режимі економії заряду акумулятора",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "У наступні десять хвилин заплановано інше сканування. Виберіть інший час."
 		},
 		"recoverBadSectors": {
 			"title": "Відновлення пошкоджених секторів",
@@ -2378,6 +2378,7 @@
 		"yes": "Так",
 		"attention": "Увага!",
 		"cancelTextPrompt": "Скасувати?",
-		"cancelTextProgress": "Дочекайтеся завершення скасування"
+		"cancelTextProgress": "Дочекайтеся завершення скасування",
+		"pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його."
 	}
 }

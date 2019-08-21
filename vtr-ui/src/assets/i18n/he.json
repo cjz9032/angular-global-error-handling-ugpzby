@@ -2329,7 +2329,7 @@
 			"error": "שגיאה",
 			"delete": "מחק",
 			"warningBatterySaver": "הערה: סריקות מתוזמנות לא יבוצעו במצב חיסכון בסוללה",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "סריקה נוספת כבר נקבעה בטווח זמן של עשר דקות. בחר זמן אחר."
 		},
 		"recoverBadSectors": {
 			"title": "שחזור סקטורים פגומים",
@@ -2378,6 +2378,7 @@
 		"yes": "כן",
 		"attention": "שימו לב",
 		"cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?",
-		"cancelTextProgress": "המתינו לביצוע הביטול"
+		"cancelTextProgress": "המתינו לביצוע הביטול",
+		"pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה."
 	}
 }

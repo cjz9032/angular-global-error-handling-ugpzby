@@ -2329,7 +2329,7 @@
 			"error": "خطأ",
 			"delete": "حذف",
 			"warningBatterySaver": "ملاحظة: لن يتم إجراء عمليات الفحص المجدولة في وضع توفير البطارية",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "كان من المقرر بالفعل إجراء مسح آخر في غضون فترة زمنية عشر دقائق. الرجاء اختيار وقت آخر."
 		},
 		"recoverBadSectors": {
 			"title": "استعادة القطاعات المصابة",
@@ -2378,6 +2378,7 @@
 		"yes": "نعم",
 		"attention": "تنبيه",
 		"cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
-		"cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء"
+		"cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء",
+		"pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته."
 	}
 }

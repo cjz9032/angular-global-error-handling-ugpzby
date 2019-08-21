@@ -2329,7 +2329,7 @@
 			"error": "Eroare",
 			"delete": "Ştergere",
 			"warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment."
 		},
 		"recoverBadSectors": {
 			"title": "Recuperarea sectoarelor defecte",
@@ -2378,6 +2378,7 @@
 		"yes": "Da",
 		"attention": "Atenţie",
 		"cancelTextPrompt": "Sigur anulaţi?",
-		"cancelTextProgress": "Aşteptaţi anularea progresului"
+		"cancelTextProgress": "Aşteptaţi anularea progresului",
+		"pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
 	}
 }

@@ -2329,7 +2329,7 @@
 			"error": "Napaka",
 			"delete": "Izbriši",
 			"warningBatterySaver": "Opomba: načrtovani pregledi se ne bodo izvedli v načinu varčevanja z baterijo",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "V obdobju desetih minut je že bil načrtovan drug pregled. Izberite drugo uro."
 		},
 		"recoverBadSectors": {
 			"title": "Obnovitev poškodovanih sektorjev",
@@ -2378,6 +2378,7 @@
 		"yes": "Da",
 		"attention": "Opozorilo",
 		"cancelTextPrompt": "Ali ste prepričani, da želite preklicati?",
-		"cancelTextProgress": "Počakajte na potek preklica"
+		"cancelTextProgress": "Počakajte na potek preklica",
+		"pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga."
 	}
 }

@@ -2329,7 +2329,7 @@
 			"error": "Hata",
 			"delete": "Sil",
 			"warningBatterySaver": "Not: Pil Tasarrufu kipinde Zamanlanmış Taramalar gerçekleştirilmez",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "On dakikalık zaman dilimi içinde başka bir tarama zaten zamanlandı. Lütfen başka bir zaman seçin."
 		},
 		"recoverBadSectors": {
 			"title": "Bozuk Kesimleri Kurtar",
@@ -2378,6 +2378,7 @@
 		"yes": "Evet",
 		"attention": "Dikkat",
 		"cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
-		"cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin"
+		"cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
+		"pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin."
 	}
 }

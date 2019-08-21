@@ -2329,7 +2329,7 @@
 			"error": "错误",
 			"delete": "删除",
 			"warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行",
-			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
 		},
 		"recoverBadSectors": {
 			"title": "恢复坏扇区",
@@ -2378,6 +2378,7 @@
 		"yes": "是",
 		"attention": "注意",
 		"cancelTextPrompt": "您确定要取消吗？",
-		"cancelTextProgress": "请等待取消进度"
+		"cancelTextProgress": "请等待取消进度",
+		"pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
 	}
 }
