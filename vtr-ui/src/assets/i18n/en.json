@@ -378,8 +378,8 @@
 				"title": "Turn on Auto Close ?",
 				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "Turn on",
-				"btnCancel": "Not now"
+				"btnConfirm": "TURN ON",
+				"btnCancel": "NOT NOW"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
