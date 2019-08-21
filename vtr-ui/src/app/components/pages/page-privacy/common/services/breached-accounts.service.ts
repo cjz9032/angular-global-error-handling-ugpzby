@@ -65,7 +65,7 @@ export class BreachedAccountsService implements OnDestroy {
 
 	private getBreachedAccounts() {
 		return merge(
-			this.emailScannerService.scanNotifier$.pipe(distinctUntilChanged()),
+			this.emailScannerService.scanNotifier$,
 			this.emailScannerService.validationStatusChanged$.pipe(distinctUntilChanged()),
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 				tap((isFigleafReadyForCommunication) => this.resetBreachedAccounts(isFigleafReadyForCommunication)),
