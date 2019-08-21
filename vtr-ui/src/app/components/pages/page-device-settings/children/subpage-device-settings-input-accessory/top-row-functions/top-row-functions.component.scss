@@ -16,7 +16,6 @@
     font-weight: $weight_light;
     letter-spacing: 0.05rem;
     text-transform: none;
-    min-width: 40rem;
 }
 }
 .caption {
@@ -28,7 +27,7 @@
     max-width: 60rem;
 }
 .link-text {
-    font-size: $body;
+    font-size: $caption;
     text-decoration: underline;
     letter-spacing: 0.05rem;
     color: $menu_hover;
