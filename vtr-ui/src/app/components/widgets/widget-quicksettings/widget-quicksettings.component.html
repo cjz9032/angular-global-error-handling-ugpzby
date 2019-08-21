@@ -54,17 +54,6 @@
 							[isLoading]="eyeCareModeStatus.isLoading"></vtr-widget-switch-icon>
 					</div>
 				</div>
-				<div class="widget-icon-2 text-right link-text text-uppercase">
-					<a class="nav-link"
-						vtrMetrics
-						id="qs-lnk-my-device-settings"
-						attr.aria-label="qs-lnk-my-device-settings"
-						[metricsEvent]="'FeatureClick'"
-						[metricsItem]="'MyDeviceSettings'"
-						routerLink="/device/device-settings">
-						{{'common.menu.device.sub2' | translate}}
-					</a>
-				</div>
 			</div>
 		</div>
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
