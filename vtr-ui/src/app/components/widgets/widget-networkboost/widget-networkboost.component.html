@@ -17,9 +17,12 @@
     </li>
     <li *ngFor="let app of runningAppsList; let i = index">
       <div>
-        <img *ngIf="app && app.iconName" [src]="app.iconName | sanitize : 'resourceUrl'">
+        <img *ngIf="app && app.iconName" [src]="app.iconName | sanitize : 'resourceUrl'"
+         alt="{{app.processDescription}}" />
       </div>
-      <div>{{app.processDescription}}</div>
+      <div placement="bottom" ngbTooltip="{{app.processDescription}}">
+        {{app.processDescription}}
+      </div>
       <div class="remove-app" (click)="removeApp(app.processPath,i)">
         <svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">

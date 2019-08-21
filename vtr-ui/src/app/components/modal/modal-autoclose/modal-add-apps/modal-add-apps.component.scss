@@ -45,6 +45,12 @@ ui-popover-apps {
 		@media #{$large-screen} {
 			min-width: 91.4rem;
 		}
+		@media #{$mediaquery_X7} {
+			min-width: 91.4rem;
+		}
+		@media #{$mediaquery_X5} {
+			min-width: 70rem;
+		}
 		.main-content-body {
 			padding: 1rem 4rem;
 		}
@@ -85,16 +91,11 @@ ui-popover-apps {
 					position: relative;
 					padding-bottom: 35px;
 					margin-bottom: 5rem;
-					@media #{$mediaquery_lg} {
+					width: 20%;
+					padding-left: 0.5rem;
+					padding-right: 0.5rem;
+					@media #{$mediaquery_md} {
 						width: 33.3% !important;
-					}
-					@media #{$mediaquery_X22} {
-						width: 33.3% !important;
-						padding-left: 2rem;
-						padding-right: 2rem;
-					}
-					@media #{$mediaquery_X3} {
-						width: 50% !important;
 						padding-left: 2rem;
 						padding-right: 2rem;
 					}
@@ -107,6 +108,7 @@ ui-popover-apps {
 					div:nth-child(1) {
 						width: 5rem;
 						height: 5rem;
+						text-align: center;
 						margin: auto;
 					}
 					div:nth-child(2) {
