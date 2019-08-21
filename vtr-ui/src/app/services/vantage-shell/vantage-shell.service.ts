@@ -49,7 +49,8 @@ export class VantageShellService {
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
-				Phoenix.Features.HardwareScan
+				Phoenix.Features.HardwareScan,
+				Phoenix.Features.BetaUser
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -809,6 +810,13 @@ export class VantageShellService {
 			vanStub = this.shell.VantageStub.instance;
 		}
 		return vanStub;
+	}
+
+	public getBetaUser(): any {
+		if (this.phoenix) {
+			return this.phoenix.betaUser;
+		}
+		return undefined;
 	}
 
 	// =================== Start Hardware Scan
