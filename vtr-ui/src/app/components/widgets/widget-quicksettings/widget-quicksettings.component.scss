@@ -11,7 +11,7 @@
 		display: flex;
 		// justify-content: space-between;
 		> div {
-			swidth: 33%;
+			width: 33%;
 		}
 	}
 
@@ -44,7 +44,7 @@
 		letter-spacing: 0.05rem;
 		color: $menu_hover;
 		cursor: pointer;
-		padding-top: 0.3rem;
+		padding-top: 1.8rem;
 		font-weight: 600;
 	}
 }
