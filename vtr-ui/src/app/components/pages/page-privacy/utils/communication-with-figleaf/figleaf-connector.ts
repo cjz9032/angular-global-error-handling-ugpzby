@@ -79,9 +79,12 @@ class FigleafConnector {
 	}
 
 	private disconnectFromFigleaf() {
-		onDisconnectListeners.forEach((cb) => {
-			cb();
-		});
+		if (RECONNECT_TIMEOUT >= 5000) {
+			onDisconnectListeners.forEach((cb) => {
+				cb();
+			});
+		}
+
 		this.reconnect();
 	}
 
