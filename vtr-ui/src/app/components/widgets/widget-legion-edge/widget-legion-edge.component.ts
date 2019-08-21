@@ -275,12 +275,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
 		// TBD add autoclose later at index 2
 		// TODO have to remove this || condition and line no 242.
-		// this.legionUpdate[2].isVisible = gamingStatus.optimizationFeature || false;
-		// this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || false;
-
-		// Hiding Auto close and Network boost for MVP3 Release
-		this.legionUpdate[2].isVisible = false;
-		this.legionUpdate[3].isVisible = false;
+		this.legionUpdate[2].isVisible = gamingStatus.optimizationFeature || false;
+		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || false;
 		//TODO below is for the network boost subpage
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
