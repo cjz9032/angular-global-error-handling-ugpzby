@@ -12,6 +12,7 @@ export class TopRowFunctionsComponent implements OnInit {
 	public isFnKeys = false;
 	public stickyFunStatus = false;
 	public capabilitiesObj: any = {};
+	public showAdvancedSection = false;
 
 	constructor(private keyboardService: InputAccessoriesService) { }
 

@@ -1116,6 +1116,7 @@
 					},
 					"topRowFunctions": {
 						"title": "Keyboard top-row function",
+						"advSettings": "Advanced settings",
 						"description": "The top row of the keyboard provides the following two functions. Select the one you want:",
 						"subSection": {
 							"description": "To switch the above two functions, press Fn+Esc.",
