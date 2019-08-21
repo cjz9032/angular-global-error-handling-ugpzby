@@ -198,6 +198,8 @@ export class PageAutocloseComponent implements OnInit {
 			} catch (error) {
 				console.error(error.message);
 			}
+		} else {
+			this.deleteAppFromList({ name: event.target.value });
 		}
 	}
 
@@ -206,7 +208,8 @@ export class PageAutocloseComponent implements OnInit {
 		this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
 			console.log('Deleted successfully ------------------------>', response);
 			if (response) {
-				this.autoCloseAppList.splice(appData.index, 1);
+				// this.autoCloseAppList.splice(appData.index, 1);
+				this.refreshAutoCloseList();
 				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 			}
 		});
