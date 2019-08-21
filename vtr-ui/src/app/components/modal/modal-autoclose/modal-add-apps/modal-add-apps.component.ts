@@ -15,9 +15,12 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
 	@Output() addAppToList = new EventEmitter<boolean>();
 	public loading: boolean;
+	public loadingNoApps: boolean;
 	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
 	ngOnInit() {
+		this.loading = this.loaderData.loading;
+		this.loadingNoApps = this.loaderData.noApps;
 	}
 
 	addAppData(event: any) {
@@ -31,6 +34,9 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 	ngOnChanges(changes: any) {
 		if (this.loading) {
 			this.loading = this.loaderData.loading;
+		}
+		if (this.loadingNoApps) {
+			this.loadingNoApps = this.loaderData.noApps;
 		}
 	}
 }

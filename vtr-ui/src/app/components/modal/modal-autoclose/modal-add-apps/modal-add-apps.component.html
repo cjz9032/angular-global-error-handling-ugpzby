@@ -28,7 +28,7 @@
         </div>
         <div class="main-content-body">
           <div class="response-content">
-            <div class="running-apps" *ngIf="!loaderData.noApps">
+            <div class="running-apps" *ngIf="!loadingNoApps">
               <div class="title-content">
                 <h3>
                   {{'gaming.autoClose.modalAddApps.title' | translate }}
@@ -37,12 +37,13 @@
               </div>
               <div class="app-add-container">
                 <ul class="app-list d-flex flex-wrap">
-                  <li *ngFor="let item of runningListData; let i= index" class="w-25">
+                  <li *ngFor="let item of runningListData; let i= index">
                     <div>
                       <img [src]="item.iconName | sanitize : 'resourceUrl'">
 
                     </div>
-                    <div class="app-text-title" placement="bottom" ngbTooltip="{{item.processDescription}}">
+                    <div class="app-text-title" container="body" placement="bottom"
+                      ngbTooltip="{{item.processDescription}}">
                       {{item.processDescription}}</div>
                     <div class="btn-add-app mx-auto">
                       <input type="checkbox" value="{{item.processDescription}}" (change)="addAppData($event)">
@@ -52,7 +53,7 @@
                 </ul>
               </div>
             </div>
-            <div class="no-running-app" *ngIf="loaderData.noApps">
+            <div class="no-running-app" *ngIf="loadingNoApps">
               <div class="image-content d-flex justify-content-center">
                 <img src="../../../../../assets/icons/auto-close/NoRunningAppPic.png" />
               </div>

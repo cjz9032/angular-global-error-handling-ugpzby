@@ -128,6 +128,7 @@ export class PageAutocloseComponent implements OnInit {
 	modalCloseAddApps(action: boolean) {
 		this.showAppsModal = action;
 		this.hiddenScroll(false);
+		this.refreshRunningList();
 	}
 
 	hiddenScroll(action: boolean) {
