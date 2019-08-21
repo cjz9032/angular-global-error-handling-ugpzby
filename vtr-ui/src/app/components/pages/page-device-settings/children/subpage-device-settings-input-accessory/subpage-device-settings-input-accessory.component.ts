@@ -21,16 +21,18 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
-	public keyboardCompatability: boolean;
+	public keyboardCompatibility: boolean;
 	public switchValue = false;
+	public stickyFunStatus = false;
+
 	constructor(private keyboardService: InputAccessoriesService, private commonService: CommonService, ) { }
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
-			let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability)
-			this.keyboardCompatability = inputAccessoriesCapability.isKeyboardMapAvailable;
-			if (this.keyboardCompatability) {
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			this.keyboardCompatibility = inputAccessoriesCapability.isKeyboardMapAvailable;
+			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
 		}
@@ -182,7 +184,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
 						}
 						this.additionalCapabilitiesObj = {
-							performane: response[0],
+							performance: response[0],
 							privacy: response[1],
 							magnifier: response[2],
 							backLight: response[3],

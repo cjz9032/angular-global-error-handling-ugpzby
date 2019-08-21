@@ -9,7 +9,7 @@
 .widget-icon-3 {
 	display: flex;
 	// justify-content: space-between;
-	>div{
+	> div {
 		width: 33%;
 	}
 }
@@ -17,7 +17,7 @@
 .widget-icon-2 {
 	display: flex;
 	// justify-content: flex-start;
-	>div{
+	> div {
 		width: 33%;
 	}
 }
@@ -27,8 +27,8 @@
 	font-size: 1.3rem;
 	border: 1px solid $shade_lighter;
 	justify-content: space-between;
-	.note-icon{
-	font-size: 20px;
+	.note-icon {
+		font-size: 20px;
 	}
 	.privacy-button {
 		font-size: 1.3rem;

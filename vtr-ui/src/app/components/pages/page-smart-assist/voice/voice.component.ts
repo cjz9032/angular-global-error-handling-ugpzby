@@ -21,7 +21,7 @@ export class VoiceComponent implements OnInit {
 	showLoader = false;
 	btnText = "";
 	installedStatus = InstalledStatus.CANCELED;
-
+	voiceStatus = "";
 	constructor(
 		private smartAssist: SmartAssistService,
 		private translate: TranslateService,
@@ -29,6 +29,7 @@ export class VoiceComponent implements OnInit {
 
 	ngOnInit() {
 		this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
+		this.voiceStatus="Install";
 		this.isLenovoVoiceInstalled();
 	}
 
@@ -50,9 +51,11 @@ export class VoiceComponent implements OnInit {
 						if (status) {
 							this.installedStatus = InstalledStatus.DONE;
 							this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
+							this.voiceStatus = "Launch";
 						} else {
 							this.installedStatus == InstalledStatus.CANCELED;
 							this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
+							this.voiceStatus = "Install";
 						}
 					}).catch(error => {
 						console.error('isLenovoVoiceInstalled', error);
@@ -75,6 +78,7 @@ export class VoiceComponent implements OnInit {
 						if (status == InstalledStatus.DONE) {
 							this.installedStatus = InstalledStatus.DONE;
 							this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
+							this.voiceStatus = "Launch";
 						} else if (status == InstalledStatus.FAILED) {
 							this.installedStatus = InstalledStatus.FAILED;
 							this.onDownloadFailedModal();
