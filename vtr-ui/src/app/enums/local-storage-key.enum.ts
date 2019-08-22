@@ -48,6 +48,8 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
 	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
+	NetworkBoosNeedToAskPopup = '[LocalStorageKey] NetworkBoosNeedToAskPopup',
+
 	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
@@ -155,5 +157,6 @@ export enum LocalStorageKey {
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 	UPEUserID = '[LocalStorageKey] UPEUserID',
 	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
-	BetaUser = '[LocalStorageKey] BetaUser'
+	BetaUser = '[LocalStorageKey] BetaUser',
+	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability'
 }

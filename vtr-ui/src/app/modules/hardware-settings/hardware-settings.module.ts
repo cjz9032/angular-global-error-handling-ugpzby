@@ -46,6 +46,7 @@ import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/
 import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { UserDefinedKeyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
+import { TopRowFunctionsComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions/top-row-functions.component';
 import { VoiceComponent } from 'src/app/components/pages/page-smart-assist/voice/voice.component';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
@@ -159,7 +160,8 @@ library.add(faCalendarAlt);
 		SubpageDeviceSettingsInputAccessoryComponent,
 		SubpageDeviceSettingsPowerComponent,
 		UserDefinedKeyComponent,
-		VoiceComponent,
+		TopRowFunctionsComponent,
+		VoiceComponent
 	],
 	imports: [
 		CommonModule,

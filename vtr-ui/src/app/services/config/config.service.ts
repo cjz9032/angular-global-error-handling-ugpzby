@@ -4,7 +4,6 @@ import {
 import {
 	DeviceService
 } from 'src/app/services/device/device.service';
-import { UserService } from 'src/app/services/user/user.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
@@ -18,9 +17,8 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	constructor(
 		private deviceService: DeviceService,
-		private userService: UserService,
 		private commonService: CommonService) {
-		}
+	}
 
 	menuItemsGaming: Array<any> = [{
 		id: 'device',
@@ -484,7 +482,7 @@ export class ConfigService {
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-			if (this.countryCodes.indexOf(country.toLowerCase()) !== -1) {
+			if (country.toLowerCase() === 'us') {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);

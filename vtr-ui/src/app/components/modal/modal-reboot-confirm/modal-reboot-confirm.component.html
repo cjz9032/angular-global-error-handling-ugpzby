@@ -1,0 +1,23 @@
+<div class="modal-body vtr-modal-reboot-machine">
+	<div class="row justify-content-end">
+		<div class="btn-close">
+			<button type="button"
+				class="close"
+				aria-hidden="true"
+				(click)="closeModal()">
+				<fa-icon [icon]="['fal', 'times']"></fa-icon>
+			</button>
+		</div>
+	</div>
+	<h1 id="ds-reboot-popup" attr.aria-label="ds-reboot-popup"> {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.title' | translate}}</h1>
+	<p id="ds-rebootpopup-description2" attr.aria-label="ds-rebootpopup-description2">{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.description' | translate}}</p>
+	<hr>
+	<div class="row">
+		<button id="reboot-popup-enable"  attr.aria-label="reboot-popup-enable" class="btn enable-button"
+			(click)="proceedToReboot()">{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.reboot' | translate}}</button>
+		<a  id="reboot-popup-cancel"  attr.aria-label="reboot-popup-cancel"(click)="closeModal()"
+			class="cancel-link active"
+			>{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.cancel' | translate}}</a>
+	</div>
+
+</div>
