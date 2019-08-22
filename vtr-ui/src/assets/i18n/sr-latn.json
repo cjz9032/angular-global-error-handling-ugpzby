@@ -378,8 +378,8 @@
                 "title": "Turn on Auto Close ?",
                 "body": "Apps you added will be closed when you game, freeing resources for gaming.",
                 "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "btnConfirm": "TURN ON",
+                "btnCancel": "NOT NOW"
             },
             "modalAddApps": {
                 "title": "Add apps to Auto Close",
@@ -397,8 +397,8 @@
                 "title": "Turn on Network Boost ?",
                 "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
                 "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "btnConfirm": "TURN ON",
+                "btnCancel": "NOT NOW"
             },
             "modalAddApps": {
                 "title": "Add apps to Network Boost",
