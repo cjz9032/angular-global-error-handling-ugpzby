@@ -1,0 +1,47 @@
+@import '../../../app.theme';
+
+.vtr-page-apps-for-you {
+	.vtr-page-content {
+
+		background: $shade_lightest;
+
+		.quick-assess-item {
+			width: 25%;
+			padding: 1.2rem;
+			text-decoration: none;
+
+			.item-con {
+				padding: 1.2rem 1rem 2.4rem;
+				width: 100%;
+				border: 1px solid #ECF0F1;
+				border-radius: 5px;
+				background: linear-gradient(180deg, #FBFCFC 0%, #F5F7F8 100%);
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				text-align: center;
+				cursor: pointer;
+
+				.item-button {
+					text-transform: uppercase;
+					width: 86%;
+					padding: 0 2rem;
+					margin-left: 7%;
+					height: 4rem;
+					line-height: 4rem;
+					border-radius: 10rem;
+					background: $gradient_main;
+					color: $light;
+					font-size: 1.5rem;
+					letter-spacing: 0.1rem;
+					font-weight: $weight_600;
+					text-align: center;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

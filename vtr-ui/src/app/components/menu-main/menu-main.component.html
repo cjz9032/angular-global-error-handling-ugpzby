@@ -239,7 +239,17 @@
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
-							<a *ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
+							<a class="dropdown-item link"
+							vtrMetrics
+							id="menu-main-lnk-open-lma"
+							attr.aria-label="menu-main-lnk-open-lma"
+							routerLinkActive="link-active"
+							[metricsEvent]="item.metricsEvent"
+							[metricsParent]="item.metricsParent"
+							metricsItem="LenovoMigrationAssistantButton"
+							routerLink="/apps-for-you"
+							href="javascript:void(0)">Lenovo Migration Assistant</a>
+							<a *ngIf="commonService.isOnline && !deviceService.isSMode && !deviceService.isGaming && modernPreloadService.IsEntitled"
 								vtrMetrics
 								id="menu-main-lnk-open-modern-preload"
 								attr.aria-label="menu-main-lnk-open-modern-preload"

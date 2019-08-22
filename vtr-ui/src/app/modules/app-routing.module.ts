@@ -2,6 +2,7 @@ import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { AppsForYouModule } from './apps-for-you/apps-for-you.module';
 
 const routes: Routes = [
 
@@ -43,6 +44,10 @@ const routes: Routes = [
 	{
 		path: 'support',
 		loadChildren: './support/support.module#SupportModule'
+	},
+	{
+		path: 'apps-for-you',
+		loadChildren: './apps-for-you/apps-for-you.module#AppsForYouModule'
 	},
 	{
 		path: 'android',

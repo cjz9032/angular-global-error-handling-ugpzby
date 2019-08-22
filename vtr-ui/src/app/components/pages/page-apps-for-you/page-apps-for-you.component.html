@@ -1,0 +1,27 @@
+<div class="vtr-page-apps-for-you vtr-page">
+	<div class="row vtr-page-header">
+		<div class="col vtr-col">
+			<vtr-header-main [title]="title | translate" [isInnerBack]="isCategoryArticlesShow"
+				(innerBack)="onInnerBack()" [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
+				[backId]="backId"></vtr-header-main>
+		</div>
+	</div>
+	<div class="row vtr-page-content">
+		<div class="col vtr-col">
+			<div class="container-fluid">
+				<div class="img-con pt-4">
+					<img class="qr-img"
+						[src]=" '/assets/images/apps-for-you/LMA icon.png'"
+						alt="Lenovo Migration Assistant" />
+				</div>
+				<a href="javascript:;"
+					class="quick-assess-item col col-6 col-sm-3"
+					(click)="clickInstall()">
+					<div class="item-con">
+						<div class="item-button">install</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
