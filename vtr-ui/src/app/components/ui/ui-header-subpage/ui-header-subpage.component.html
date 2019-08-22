@@ -28,6 +28,9 @@
 					<div *ngFor="let item of items; let i=index"
 					 class="col-auto p-0">
 						<div class="menu-item"
+						vtrMetrics
+						metricsItem="{{item.path}}"
+						metricsEvent="FeatureClick"
 						id="jumptoSetting-{{item.path}}"
 						attr.aria-label="jumptoSetting-{{item.path}}"
 						 (click)="menuItemClick($event, item)">

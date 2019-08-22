@@ -68,7 +68,11 @@ export class LanguageService {
 			let langCode = this.defaultLanguage;
 			const locale = deviceLocale.toLowerCase();
 			if (locale && ![ 'zh', 'pt' ].includes(locale.substring(0, 2))) {
-				langCode = locale.substring(0, 2);
+				if (locale && locale.substring(0, 2) === 'sr') {
+					langCode = 'sr-Latn';
+				} else {
+					langCode = locale.substring(0, 2);
+				}
 			} else {
 				if (locale && locale.substring(0, 2) === 'pt') {
 					locale === 'pt-br' ? (langCode = 'pt-br') : (langCode = 'pt');

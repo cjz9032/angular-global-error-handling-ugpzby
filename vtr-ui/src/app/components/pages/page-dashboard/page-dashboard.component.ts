@@ -237,7 +237,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	onFeedbackModal() {
 		this.modalService.open(FeedbackFormComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'feedback-modal'
