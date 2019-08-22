@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalWifiSecurityInvitationComponent } from './modal-wifi-security-invitation.component';
 
-describe('ModalWifiSecurityInvitationComponent', () => {
+xdescribe('ModalWifiSecurityInvitationComponent', () => {
 	// let component: ModalWifiSecurityInvitationComponent;
 	// let fixture: ComponentFixture<ModalWifiSecurityInvitationComponent>;
 

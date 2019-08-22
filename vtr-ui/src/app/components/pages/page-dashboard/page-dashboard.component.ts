@@ -1,29 +1,30 @@
-import {	Component,	OnInit,	DoCheck,	OnDestroy} from '@angular/core';
-import {	Router,	ActivatedRoute} from '@angular/router';
+import { Component, OnInit, DoCheck, OnDestroy, SecurityContext } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import {	TranslateService,	LangChangeEvent} from '@ngx-translate/core';
-import {	SecurityAdvisor} from '@lenovo/tan-client-bridge';
-import {	QaService} from '../../../services/qa/qa.service';
-import {	DashboardService} from 'src/app/services/dashboard/dashboard.service';
-import {	Status} from 'src/app/data-models/widgets/status.model';
-import {	CommonService} from 'src/app/services/common/common.service';
-import {	DeviceService} from 'src/app/services/device/device.service';
-import {	CMSService} from 'src/app/services/cms/cms.service';
-import {	AppNotification} from 'src/app/data-models/common/app-notification.model';
-import {	LenovoIdKey} from 'src/app/enums/lenovo-id-key.enum';
-import {	NetworkStatus} from 'src/app/enums/network-status.enum';
-import {	FeedbackFormComponent} from '../../feedback-form/feedback-form/feedback-form.component';
-import {	SystemUpdateService} from 'src/app/services/system-update/system-update.service';
-import {	VantageShellService} from '../../../services/vantage-shell/vantage-shell.service';
-import {	UserService} from 'src/app/services/user/user.service';
-import {	AndroidService} from 'src/app/services/android/android.service';
-import {	UPEService} from 'src/app/services/upe/upe.service';
-import {	SecurityAdvisorMockService} from 'src/app/services/security/securityMock.service';
-import {	LenovoIdDialogService} from 'src/app/services/dialog/lenovoIdDialog.service';
-import {	LoggerService} from 'src/app/services/logger/logger.service';
-import {	SessionStorageKey} from 'src/app/enums/session-storage-key-enum';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { QaService } from '../../../services/qa/qa.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { Status } from 'src/app/data-models/widgets/status.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { AndroidService } from 'src/app/services/android/android.service';
+import { UPEService } from 'src/app/services/upe/upe.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -72,7 +73,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		private lenovoIdDialogService: LenovoIdDialogService,
 		private loggerService: LoggerService,
-		private hypService: HypothesisService
+		private hypService: HypothesisService,
+		private sanitizer: DomSanitizer
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -149,7 +151,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 
-	private fetchContent(lang ? : string) {
+	private fetchContent(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -172,8 +174,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 							return {
 								albumId: 1,
 								id: record.Id,
-								source: record.Title,
-								title: record.Description,
+								source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+								title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
 								url: record.FeatureImage,
 								ActionLink: record.ActionLink
 							};
@@ -266,11 +268,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	public onConnectivityClick($event: any) {}
+	public onConnectivityClick($event: any) { }
 
 
 	private getTileBSource() {
-		 return this.hypService.getFeatureSetting('TileBSource');
+		return this.hypService.getFeatureSetting('TileBSource');
 	}
 
 	private setDefaultCMSContent() {

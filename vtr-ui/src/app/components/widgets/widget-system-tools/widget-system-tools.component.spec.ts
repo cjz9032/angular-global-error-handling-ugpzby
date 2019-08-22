@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { RouterLinkWithHref } from '@angular/router';
 import { By } from '@angular/platform-browser';
 
-describe('WidgetSystemToolsComponent', () => {
+xdescribe('WidgetSystemToolsComponent', () => {
   let component: WidgetSystemToolsComponent;
   let fixture: ComponentFixture<WidgetSystemToolsComponent>;
 
