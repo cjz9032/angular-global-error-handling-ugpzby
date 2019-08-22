@@ -1,5 +1,5 @@
 ngb-tooltip-window.vtr-tooltip.tooltip {
-    .button-box {
+	.button-box {
 		margin-top: 1rem;
 		display: flex;
 		justify-content: center;
@@ -23,6 +23,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			display: inline-block;
 			// cursor: pointer;
 			padding: 0.3rem 1.8rem;
+			text-transform: capitalize;
 		}
 	}
 }

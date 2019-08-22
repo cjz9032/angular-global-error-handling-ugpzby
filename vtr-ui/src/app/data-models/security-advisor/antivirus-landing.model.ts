@@ -55,7 +55,7 @@ export class AntiVirusLandingViewModel {
 		translate.stream(subjectStatus.title).subscribe((res) => {
 			subjectStatus.title = res;
 		});
-		const setAntivirusStatus = (av: boolean, fw: boolean, currentPage: string) => {
+		const setAntivirusStatus = (av: boolean | undefined, fw: boolean | undefined, currentPage: string) => {
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
 

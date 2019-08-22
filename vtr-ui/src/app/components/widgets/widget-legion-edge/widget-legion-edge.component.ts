@@ -277,8 +277,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		// TODO have to remove this || condition and line no 242.
 		// this.legionUpdate[2].isVisible = gamingStatus.optimizationFeature || false;
 		// this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || false;
-
-		// Hiding Auto close and Network boost for MVP3 Release
 		this.legionUpdate[2].isVisible = false;
 		this.legionUpdate[3].isVisible = false;
 		//TODO below is for the network boost subpage
