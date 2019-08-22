@@ -1,8 +1,15 @@
 @import "../../../styles/common-blocks";
 
+:host {
+	width: 100%;
+}
+
 .feature-header {
 	&__title {
 		@extend %subtitle;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 
 		&--red {
 			color: red;
