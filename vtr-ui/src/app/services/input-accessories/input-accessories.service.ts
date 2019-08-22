@@ -7,8 +7,10 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 export class InputAccessoriesService {
 	public keyboardManager: any;
 	public isShellAvailable = false;
+	private voipHotkeys;
 
 	constructor(shellService: VantageShellService) {
+		this.voipHotkeys = shellService.getVoipHotkeysObject();
 		this.keyboardManager = shellService.getKeyboardManagerObject();
 		if (this.keyboardManager) {
 			this.isShellAvailable = true;
@@ -27,6 +29,7 @@ export class InputAccessoriesService {
 		}
 
 	}
+
 	//  Check Keyboard UDK Compatability Status
 	public GetUDKCapability(): Promise<boolean> {
 		try {
@@ -51,8 +54,6 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-
-
 
 
 	// Start Hidden keyboard keys
@@ -101,6 +102,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
 	public GetKbdHiddenKeyBackLightCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -111,6 +113,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
 	public GetKbdHiddenKeyMagnifierCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -121,6 +124,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
 	public GetKbdHiddenKeyPerformanceModeCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -136,51 +140,74 @@ export class InputAccessoriesService {
 
 // Start Top Row Function keys
 
-public getTopRowFnLockCapability(): Promise<boolean> {
-	try {
-		if (this.keyboardManager) {
-			const response = this.keyboardManager.GetTopRowFnLockCapability();
-			return response;
+	public getTopRowFnLockCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetTopRowFnLockCapability();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error.message);
 	}
-}
-public getTopRowFnStickKeyCapability(): Promise<boolean> {
-	try {
-		if (this.keyboardManager) {
-			const response = this.keyboardManager.GetTopRowFnStickKeyCapability();
-			return response;
-		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error.message);
-	}
-}
-public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
-	try {
-		if (this.keyboardManager) {
-			const response = this.keyboardManager.GetTopRowPrimaryFunctionCapability();
-			return response;
-		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error.message);
-	}
-}
 
-public getFnLockStatus(): Promise<any> {
-	try {
-		if (this.keyboardManager) {
-			const response = this.keyboardManager.GetFnLockStatus();
-			return response;
+	public getTopRowFnStickKeyCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetTopRowFnStickKeyCapability();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error.message);
 	}
-}
 
+	public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetTopRowPrimaryFunctionCapability();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 
+	public getFnLockStatus(): Promise<any> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetFnLockStatus();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+// Voiphotkeys Feature
+	public GetVoipHotkeysSettings(): Promise<any> {
+		try {
+			if (this.voipHotkeys) {
+				return this.voipHotkeys.getVOIPHotkeysSettings();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public SetVoipHotkeysSettings(selectedApp: number): Promise<any> {
+		try {
+			if (this.voipHotkeys) {
+				return this.voipHotkeys.setVOIPHotkeysSettings(selectedApp);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

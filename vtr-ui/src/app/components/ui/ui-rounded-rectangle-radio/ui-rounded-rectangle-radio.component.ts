@@ -13,12 +13,13 @@ export class UiRoundedRectangleRadioComponent implements OnInit {
 	@Input() value: string;
 	@Input() checked = false;
 	@Input() disabled = false;
-	@Input() name:string;
+	@Input() name: string;
 
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon = false;
 
-	constructor() { }
+	constructor() {
+	}
 
 	ngOnInit() {
 	}

@@ -25,7 +25,13 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public switchValue = false;
 	public stickyFunStatus = false;
 
-	constructor(private keyboardService: InputAccessoriesService, private commonService: CommonService, ) { }
+	public selectedApp: '';
+	public installedApps: any[];
+	public showVoiphotkeysSection = true;
+	public isAppInstalled = false;
+
+	constructor(private keyboardService: InputAccessoriesService, private commonService: CommonService,) {
+	}
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
@@ -36,6 +42,39 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				this.getKBDLayoutName();
 			}
 		}
+	}
+
+	getVoipHotkeysSettings() {
+		this.keyboardService.GetVoipHotkeysSettings()
+			.then(res => {
+				res.appList.forEach((element: { isAppInstalled: boolean; }) => {
+					if (element.isAppInstalled === true) {
+						this.isAppInstalled = true;
+					}
+				});
+				if (res.errorCode === 0 && res.capability === true && this.isAppInstalled === true) {
+					this.showVoiphotkeysSection = true;
+					// this.installedApps = res.appList;
+					if (res.appList.length === 1) {
+						this.selectedApp = res.appList[0].appName;
+					}
+				}
+			})
+			.catch(error => {
+				console.log('getVoipHotkeysSettings error', error);
+			});
+	}
+
+	setVoipHotkeysSettings($event: any) {
+		this.keyboardService.SetVoipHotkeysSettings($event)
+			.then(res => {
+				if (res.errorCode === 0) {
+					this.selectedApp = res.appList[$event];
+				}
+			})
+			.catch(error => {
+				console.log('setVoipHotkeysSettings error', error);
+			});
 	}
 
 	// To get Keyboard Layout Name
@@ -72,6 +111,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
 		const type = machineType.toLowerCase();
@@ -155,6 +195,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
 		}
 	}
+
 	// To get Additional Capability Status
 	public getAdditionalCapabilities() {
 		this.shortcutKeys = [];
@@ -196,6 +237,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+
 	fnCtrlKey(event) {
 		this.switchValue = event.switchValue;
 	}
