@@ -23,7 +23,7 @@ export class HypothesisService {
 		return new Promise((resolve, reject) => {
 			try {
 				const filter = this.shellService.calcDeviceFilter('{"var":"HypothesisGroups"}');
-				this.devService.writeLog('getHypothesis filter: ', filter);
+				this.devService.writeLog('getHypothesis filter: ', JSON.stringify(filter));
 				if (filter) {
 					filter.then((hyp) => {
 						this.hypSettings = hyp;
@@ -56,7 +56,7 @@ export class HypothesisService {
 				this.getHypothesis().then(() => {
 					if (this.hypSettings) {
 						resolve(this.hypSettings[feature]);
-						this.devService.writeLog('get hypothesis  getFeatureSetting: ' + this.hypSettings[feature]);
+						this.devService.writeLog('get hypothesis  getFeatureSetting: ' + JSON.stringify(this.hypSettings[feature]));
 					}
 					else {
 						this.devService.writeLog('get hypothesis  getFeatureSetting: setting failed.');

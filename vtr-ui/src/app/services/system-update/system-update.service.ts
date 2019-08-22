@@ -121,9 +121,6 @@ export class SystemUpdateService {
 					console.log('getUpdateHistory', response);
 					this.installationHistory = response;
 					this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
-				}).catch((error) => {
-					// get current status
-					console.log('getUpdateHistory.error', error);
 				});
 		}
 	}
@@ -161,7 +158,6 @@ export class SystemUpdateService {
 					'',
 					error.message,
 					MetricHelper.timeSpan(new Date(), timeStartSearch));
-				console.log('checkForUpdates.error', error);
 			});
 		}
 		return undefined;
@@ -173,9 +169,6 @@ export class SystemUpdateService {
 				.then((status: boolean) => {
 					console.log('cancelUpdateCheck then', status);
 					// todo: ui changes to show on update cancel
-				})
-				.catch((error) => {
-					console.log('cancelUpdateCheck.error', error);
 				});
 		}
 	}
@@ -303,9 +296,6 @@ export class SystemUpdateService {
 					if (status) {
 						this.commonService.sendNotification(UpdateProgress.WindowsRebooting);
 					}
-				})
-				.catch((error) => {
-					console.log('cancelUpdateCheck.error', error);
 				});
 		}
 	}
@@ -315,9 +305,6 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.getIgnoredUpdates()
 			.then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('getIgnoredUpdates.error', error);
 			});
 		}
 	}
@@ -327,9 +314,6 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.ignoreUpdate(packageName)
 			.then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('ignoreUpdate.error', error);
 			});
 		}
 	}
@@ -339,9 +323,6 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.unignoreUpdate(packageName)
 			.then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('unIgnoreUpdate.error', error);
 			});
 		}
 	}
@@ -569,7 +550,6 @@ export class SystemUpdateService {
 				this.getScheduleUpdateStatus(true);
 			}
 		}).catch((error) => {
-			console.log(error);
 			if (error &&
 				((error.description && error.description.includes('errorcode: 606'))
 				|| (error.errorcode && error.errorcode === 606))) {
@@ -726,9 +706,6 @@ export class SystemUpdateService {
 					this.isDownloadingCancel = true;
 					this.isInstallingAllUpdates = true;
 					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
-				})
-				.catch((error) => {
-					console.log('cancelDownload.error', error);
 				});
 		}
 	}

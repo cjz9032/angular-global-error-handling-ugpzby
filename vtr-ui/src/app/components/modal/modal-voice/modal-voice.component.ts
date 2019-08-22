@@ -10,6 +10,7 @@ export class ModalVoiceComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal) { }
 value: any;
+metricsParent: any;
   ngOnInit() {
   }
 

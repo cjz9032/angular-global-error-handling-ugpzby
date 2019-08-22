@@ -39,7 +39,7 @@
 								formControlName="cmsserver"
 								required>
 								<option *ngFor="let cmsserver of serverSwitchData.serverList"
-									[ngValue]="cmsserver">{{cmsserver.Value}}</option>
+									[ngValue]="cmsserver">{{cmsserver}}</option>
 							</select>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 								formControlName="segment"
 								required>
 								<option *ngFor="let segment of serverSwitchData.segmentList"
-									[ngValue]="segment">{{segment.Value}}</option>
+									[ngValue]="segment">{{segment}}</option>
 							</select>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 								formControlName="oem"
 								required>
 								<option *ngFor="let oem of serverSwitchData.oemList"
-									[ngValue]="oem">{{oem.Value}}</option>
+									[ngValue]="oem">{{oem}}</option>
 							</select>
 						</div>
 					</div>
@@ -106,7 +106,7 @@
 								formControlName="brand"
 								required>
 								<option *ngFor="let brand of serverSwitchData.brandList"
-									[ngValue]="brand">{{brand.Value}}</option>
+									[ngValue]="brand">{{brand}}</option>
 							</select>
 						</div>
 					</div>

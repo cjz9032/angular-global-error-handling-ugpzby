@@ -134,4 +134,53 @@ export class InputAccessoriesService {
 
 	// End  Hidden keyboard keys
 
+// Start Top Row Function keys
+
+public getTopRowFnLockCapability(): Promise<boolean> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.GetTopRowFnLockCapability();
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
+public getTopRowFnStickKeyCapability(): Promise<boolean> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.GetTopRowFnStickKeyCapability();
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
+public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.GetTopRowPrimaryFunctionCapability();
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
+
+public getFnLockStatus(): Promise<any> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.GetFnLockStatus();
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
+
+
 }
