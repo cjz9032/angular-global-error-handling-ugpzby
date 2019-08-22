@@ -166,9 +166,9 @@ export class PageAutocloseComponent implements OnInit {
 		}
 	}
 
-	public refreshRunningList() {
+	async refreshRunningList() {
 		try {
-			this.gamingAutoCloseService.getAppsAutoCloseRunningList().then((list: any) => {
+			await this.gamingAutoCloseService.getAppsAutoCloseRunningList().then((list: any) => {
 				if (!isUndefined(list.processList)) {
 					this.runningList = list.processList;
 					const noAppsRunning = this.runningList.length === 0 ? true : false;
@@ -199,7 +199,12 @@ export class PageAutocloseComponent implements OnInit {
 				console.error(error.message);
 			}
 		} else {
-			this.deleteAppFromList({ name: event.target.value });
+			this.gamingAutoCloseService.delAppsAutoCloseList(event.target.value).then((response: boolean) => {
+				if (response) {
+					this.refreshAutoCloseList();
+					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
+				}
+			});
 		}
 	}
 
@@ -210,8 +215,8 @@ export class PageAutocloseComponent implements OnInit {
 			if (response) {
 				// this.autoCloseAppList.splice(appData.index, 1);
 				this.refreshAutoCloseList();
-				this.refreshRunningList();
 				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
+				this.refreshRunningList();
 			}
 		});
 	}
