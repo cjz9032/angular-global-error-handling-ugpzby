@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { isUndefined } from 'util';
 
 @Component({
@@ -7,7 +6,7 @@ import { isUndefined } from 'util';
 	templateUrl: './modal-add-apps.component.html',
 	styleUrls: ['./modal-add-apps.component.scss']
 })
-export class ModalAddAppsComponent implements OnInit, OnChanges {
+export class ModalAddAppsComponent implements OnInit {
 	statusAskAgain: boolean;
 	@Input() loaderData: any;
 	@Input() showAppsModal: boolean;
@@ -33,12 +32,4 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 		this.closeAddAppsModal.emit(action);
 	}
 
-	ngOnChanges(changes: any) {
-		if (this.loading) {
-			this.loading = this.loaderData.loading;
-		}
-		if (this.loadingNoApps) {
-			this.loadingNoApps = this.loaderData.noApps;
-		}
-	}
 }
