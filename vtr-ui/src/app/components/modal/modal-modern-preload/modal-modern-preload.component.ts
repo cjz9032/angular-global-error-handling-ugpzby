@@ -37,6 +37,29 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		FAILED_INSTALL: -1,
 	};
 
+	successIconBase64 = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciI
+		HZpZXdCb3g9IjAgMCAyMSAyMSI+PHRpdGxlPmltZ19teV9zb2Z0d2FyZV9ncmVlbl9jaGVjazwvdGl0bGU+PHBhdGggZD0iTTI
+		wLjUsMTAuNWExMCwxMCwwLDEsMS0xMC0xMCwxMCwxMCwwLDAsMSwxMCwxMCIgc3R5bGU9ImZpbGw6IzRkYTM0NiIvPjxwYXRoI
+		GQ9Ik0yMC41LDEwLjVhMTAsMTAsMCwxLDEtMTAtMTBBMTAsMTAsMCwwLDEsMjAuNSwxMC41WiIgc3R5bGU9ImZpbGw6bm9uZTt
+		zdHJva2U6I2ZmZjtzdHJva2UtbWl0ZXJsaW1pdDoxMCIvPjxwb2x5bGluZSBwb2ludHM9IjUgMTAuOSA4LjYgMTQuOCAxNiA2L
+		jkiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjJweCIvPjw
+		vc3ZnPg==`;
+	errorIconBase64 = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZ
+		pZXdCb3g9IjAgMCAyMSAyMSI+PHRpdGxlPmltZ19teV9zb2Z0d2FyZV9mYWlsZWRfaW5zdGFsbDwvdGl0bGU+PHBhdGggZD0iT
+		TIwLjUsMTAuNWExMCwxMCwwLDEsMS0xMC0xMGgwYTEwLDEwLDAsMCwxLDEwLDEwaDAiIHN0eWxlPSJmaWxsOiNkYWM0MjYiLz4
+		8Y2lyY2xlIGN4PSIxMC41IiBjeT0iMTAuNSIgcj0iMTAiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pd
+		GVybGltaXQ6MTAiLz48ZyBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiPjxwYXRoIGQ9Ik05LjgsMTIuOSw5LjEsNi44VjMuOWg
+		yLjdWNi43bC0uNiw2LjFIOS44Wk05LjIsMTZWMTMuN2gyLjVWMTZaIiBzdHlsZT0iZmlsbDojZmZmIi8+PC9nPjwvc3ZnPg==`;
+	downloadIconBase64 = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmci
+		IHZpZXdCb3g9IjAgMCAyMSAyMSI+PHRpdGxlPmltZ19teV9zb2Z0d2FyZV9kb3dubG9hZF9hdmFpbGFibGU8L3RpdGxlPjxwYX
+		RoIGQ9Ik0yMC41LDEwLjVhMTAsMTAsMCwxLDEtMTAtMTAsMTAsMTAsMCwwLDEsMTAsMTAiIHN0eWxlPSJmaWxsOiM0ZGEzNDYi
+		Lz48cGF0aCBkPSJNMjAuNSwxMC41YTEwLDEwLDAsMSwxLTEwLTEwQTEwLDEwLDAsMCwxLDIwLjUsMTAuNVoiIHN0eWxlPSJmaW
+		xsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTAiLz48cmVjdCB4PSI4LjkiIHk9IjMuNyIgd2lkdGg9IjIu
+		OSIgaGVpZ2h0PSI1LjciIHN0eWxlPSJmaWxsOiNmZmYiLz48cG9seWdvbiBwb2ludHM9IjcuNyA4LjkgMTMuNCA4LjkgMTAuNS
+		AxMyA3LjcgOC45IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBvbHlsaW5lIHBvaW50cz0iNS4zIDEwLjUgNS4zIDE0LjggMTYuMSAx
+		NC44IDE2LjEgMTAuOCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbWl0ZXJsaW1pdDoxMCIvPjwvc3ZnPg
+		==`;
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		private commonService: CommonService,
@@ -191,10 +214,19 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	checkNetWork() {
 		if (!this.isOnline && this.page === this.PageNames.LOADING) {
 			this.page = this.PageNames.ERROR;
+		} else if (!this.isOnline && this.page === this.PageNames.APP && this.nowInstallingAppID !== '') {
+			const setApp = this.appList.find(a => a.appID === this.nowInstallingAppID);
+			if (setApp.showStatus === this.statusEnum.DOWNLOADING || 
+				setApp.showStatus === this.statusEnum.INSTALLING) {
+				this.cancel();
+				this.isAppInstallError = true;
+			}
 		}
 	}
 
 	closeModal() {
 		this.activeModal.close('close');
 	}
+
+
 }

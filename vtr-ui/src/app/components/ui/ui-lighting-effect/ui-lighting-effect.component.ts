@@ -25,7 +25,7 @@ export class UiLightingEffectComponent implements OnInit {
 	public selectedDescription: string;
 	@Input() effectOptionName: string;
 	public selectedOption: any;
-
+	@Input() defaultLang : any;
 	constructor(private elementRef: ElementRef) { }
 
 	ngOnInit() {

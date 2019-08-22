@@ -43,6 +43,7 @@
 						[action]="cardContentPositionB.Action"
 						[actionType]="cardContentPositionB.ActionType"
 						[actionLink]="cardContentPositionB.ActionLink"
+						[dataSource]="cardContentPositionB.DataSource"
 						[type]="'corner'"
 						[ratioX]="4"
 						[ratioY]="2"
@@ -168,10 +169,10 @@
 			</div>
 
 			<div class="row no-gutters"
-				*ngIf="!deviceService.isArm">
+				*ngIf="!deviceService.isArm && !deviceService.isSMode">
 				<div class="col-sm-12 py-40">
 					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-						[linkId]="'dashboard-sa'">
+						[linkId]="'dashboard'">
 					</vtr-widget-security-status>
 				</div>
 			</div>

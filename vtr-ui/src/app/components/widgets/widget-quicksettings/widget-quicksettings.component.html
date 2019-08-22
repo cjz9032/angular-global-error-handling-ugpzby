@@ -10,7 +10,6 @@
 					<div class="text-left">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
-							#microphone
 							[value]="microphoneStatus.status && microphoneStatus.permission"
 							[title]="'dashboard.quickSettings.microphone' | translate"
 							metricsItem="microphone"
@@ -25,9 +24,8 @@
 					</div>
 					<div *ngIf="cameraStatus.available"
 						class="text-center">
-						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Camera2x'"
-							[offIconDefinition]="'icomoon icomoon-LE-Camera-privacy-mode2x'"
-							#camera
+						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-Camera'"
+							[offIconDefinition]="'icomoon icomoon-Camera-slash'"
 							[value]="!cameraStatus.status && cameraStatus.permission"
 							[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 							metricsItem="camera"
@@ -44,7 +42,6 @@
 					<div class="text-right">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
-							#eyecare
 							[title]="'dashboard.quickSettings.eyeCareMode' | translate"
 							metricsItem="eyeCareMode"
 							id="qs-switch-eyeCareMode"
@@ -57,7 +54,7 @@
 							[isLoading]="eyeCareModeStatus.isLoading"></vtr-widget-switch-icon>
 					</div>
 				</div>
-				<div class="widget-icon-2 text-right link-text text-uppercase">
+				<div class="text-right link-text text-uppercase">
 					<a class="nav-link"
 						vtrMetrics
 						id="qs-lnk-my-device-settings"
@@ -72,7 +69,7 @@
 		</div>
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
 			<div *ngIf="!microphoneStatus.permission && cameraStatus.permission"
-				class="row permission-note mt-5">
+				class="row permission-note mt-2">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
 						<fa-icon [icon]="['fas', 'exclamation-circle']"
@@ -96,7 +93,7 @@
 				</div>
 			</div>
 			<div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission"
-				class="row permission-note mt-5">
+				class="row permission-note mt-2">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
 						<fa-icon [icon]="['fas', 'exclamation-circle']"
@@ -120,7 +117,7 @@
 				</div>
 			</div>
 			<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading"
-				class="row permission-note mt-5">
+				class="row permission-note mt-2">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
 						<fa-icon [icon]="['fas', 'exclamation-circle']"

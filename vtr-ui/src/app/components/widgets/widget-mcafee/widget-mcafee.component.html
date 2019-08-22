@@ -17,18 +17,15 @@
 
 	<div class="row justify-content-end">
 		<div class="col-auto py-5">
-			<vtr-ui-button id="sa-av-btn-launchmcafee"
-				aria-label="sa-av-btn-launchmcafee"
+			<vtr-ui-button
 				[metricsItem]="'launchMcafee'"
 				(onClick)="mcafee.launch()"
 				[label]="'security.antivirus.mcafee.launch' | translate"
 				[title]="'security.antivirus.mcafee.launch' | translate"
 				[upperCaseLabel]="false"
 				*ngIf="install"
-				[linkId]="'security-av-mcafee-launch-btn'"></vtr-ui-button>
-			<a	id="sa-av-link-visitmcafee"
-				aria-label="sa-av-link-visitmcafee"
-				class="d-block"
+				[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
+			<a class="d-block"
 				[ngClass]="{'unclickable': !isOnline}"
 				href="{{urlGetMcAfee}}"
 				target="_blank">
@@ -40,7 +37,7 @@
 					[upperCaseLabel]="false"
 					[isDisabled]="!isOnline"
 					*ngIf="!install"
-					[linkId]="'security-av-get-mcafee-btn'"></vtr-ui-button>
+					[linkId]="'sa-av-btn-visitmcafee'"></vtr-ui-button>
 			</a>
 		</div>
 	</div>

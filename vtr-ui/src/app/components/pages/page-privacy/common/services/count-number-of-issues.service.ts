@@ -11,11 +11,7 @@ import { typeData } from '../../feature/tracking-map/services/tracking-map.inter
 export class CountNumberOfIssuesService {
 	breachedAccountsCount = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 		filter((breachedAccounts) => breachedAccounts.error === null),
-		map((breachesState) => {
-			const mainBreaches = breachesState.breaches.filter((breach) => breach.domain !== 'n/a');
-			const otherBreaches = breachesState.breaches.filter((breach) => breach.domain === 'n/a');
-			return otherBreaches.length > 0 ? mainBreaches.length + 1 : mainBreaches.length;
-		}),
+		map((breachesState) => breachesState.breaches.length),
 		startWith(0),
 		shareReplay(1)
 	);

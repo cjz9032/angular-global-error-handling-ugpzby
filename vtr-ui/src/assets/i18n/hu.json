@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Legutóbbi biztonsági értesítések",
             "notifications": "Értesítések",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Nem biztonságos hálózati kapcsolat",
+            "networkUnsafe": "Nem biztonságos hálózat",
+            "deviceDisconnected": "Eszköz leválasztva",
+            "newDeviceDetected": "Új eszköz észlelve",
+            "unsafeDeviceDetected": "Nem biztonságos eszköz észlelve"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "A készülék ökoszisztémájának védelme",
@@ -2328,7 +2328,8 @@
             "description": "Már be van ütemezve egy másik keresés ugyanarra a napra és időpontra!",
             "error": "Hiba",
             "delete": "Törlés",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Megjegyzés: Az ütemezett vizsgálatok energiatakarékos módban nem működnek",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Hibás szektorok helyreállítása",
@@ -2371,12 +2372,12 @@
             "description": "Az egyéni akkumulátortöltés használatával megnövelhető az akkumulátor eszközhasználat közbeni élettartama. Ha azonban nem tölti fel teljesen az akkumulátort, az üzemidő rövidebb lesz. A funkció teljes kihasználásához válassza le a gépet az elektromos hálózatról, és hagyja, hogy az akkumulátor teljesen vagy a töltésleállítási küszöbérték alá merüljön le.",
             "enable": "Engedélyezés"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Modulok frissítése",
+        "completed": "Befejezve",
+        "notCompleted": "Nincs kész",
+        "yes": "Igen",
+        "attention": "Figyelem",
+        "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
+        "cancelTextProgress": "Várja meg a megszakítási folyamatot"
     }
 }

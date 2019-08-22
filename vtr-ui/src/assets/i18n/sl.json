@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Nedavna varnostna obvestila",
             "notifications": "Obvestila",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Omrežna povezava, ki ni varna",
+            "networkUnsafe": "Omrežje, ki ni varno",
+            "deviceDisconnected": "Naprava odklopljena",
+            "newDeviceDetected": "Zaznana je nova naprava",
+            "unsafeDeviceDetected": "Zaznana je naprava, ki ni varna"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Zaščita ekosistema naprave",
@@ -2328,7 +2328,8 @@
             "description": "Ob isti uri in datumu je že načrtovan drug pregled.",
             "error": "Napaka",
             "delete": "Izbriši",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Opomba: načrtovani pregledi se ne bodo izvedli v načinu varčevanja z baterijo",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Obnovitev poškodovanih sektorjev",
@@ -2371,12 +2372,12 @@
             "description": "Če omogočite polnjenje baterije po meri, bo splošno stanje delovanja baterije pri uporabi te naprave trajalo dalj časa. Vendar pa dejstvo, da baterija ni povsem napolnjena, pomeni, da bo tudi njen čas delovanja krajši. Če želite to funkcijo omogočiti v celoti, odklopite računalnik in pustite, da se baterija izprazni do praga za ustavitev polnjenja ali pod njega.",
             "enable": "Omogoči"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Osvežitev modulov",
+        "completed": "Zaključeno",
+        "notCompleted": "Ni končano",
+        "yes": "Da",
+        "attention": "Opozorilo",
+        "cancelTextPrompt": "Ali ste prepričani, da želite preklicati?",
+        "cancelTextProgress": "Počakajte na potek preklica"
     }
 }

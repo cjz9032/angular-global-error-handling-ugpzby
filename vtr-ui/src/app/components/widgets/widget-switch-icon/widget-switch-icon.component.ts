@@ -49,6 +49,17 @@ export class WidgetSwitchIconComponent implements OnInit {
 
 		}
 	}
+	findId(value,disable){
+		if(value && !disable){
+			return 'qs-'+this.switchId+'-switch-on-state'
+		}
+		else if(!value && !disable){
+			return 'qs-'+this.switchId+'-switch-off-state'
+		}
+		else{
+			return 'qs-'+this.switchId+'-switch-disable-state'
+		}
 
+	}
 
 }

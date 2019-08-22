@@ -46,7 +46,7 @@ export enum ErrorNames {
 	noAccessToken = 'noAccessToken'
 }
 
-const USER_EMAIL_HASH = 'privacy-user-email-hash';
+export const USER_EMAIL_HASH = 'privacy-user-email-hash';
 
 @Injectable({
 	providedIn: 'root'

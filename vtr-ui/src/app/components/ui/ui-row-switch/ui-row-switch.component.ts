@@ -105,33 +105,30 @@ export class UiRowSwitchComponent extends BaseComponent {
 		}
 		this.rebootConfirm($event);
 	}
-	 public rebootConfirm($event) {
+	public rebootConfirm($event) {
 		if (this.title === this.translate.instant('device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title')) {
 			this.isSwitchChecked = !this.isSwitchChecked;
-			if (this.isSwitchChecked) {
-				this.modalService.open(ModalRebootConfirmComponent, {
-					backdrop: 'static',
-					size: 'sm',
-					centered: true,
-					windowClass: 'Battery-Charge-Threshold-Modal'
-				}).result.then(
-					result => {
-						if (result === 'enable') {
-							this.rebootToggleOnOff.emit($event);
-						} else if (result === 'close') {
-							this.isSwitchChecked = !this.isSwitchChecked;
-						}
-					},
-					reason => {
+			this.modalService.open(ModalRebootConfirmComponent, {
+				backdrop: 'static',
+				size: 'sm',
+				centered: true,
+				windowClass: 'Battery-Charge-Threshold-Modal'
+			}).result.then(
+				result => {
+					if (result === 'enable') {
+						this.rebootToggleOnOff.emit($event);
+					} else if (result === 'close') {
+						this.isSwitchChecked = !this.isSwitchChecked;
 					}
-				);
-			} else {
-				this.rebootToggleOnOff.emit($event);
-			}
+				},
+				reason => {
+				}
+			);
+
 		} else {
 			this.rebootToggleOnOff.emit($event);
 		}
-	 }
+	}
 
 	public onReadMoreClick($event) {
 		this.readMoreClick.emit($event);
@@ -163,7 +160,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 				windowClass: 'Voice-Modal',
 			});
 		modalRef.componentInstance.value = this.voiceValue;
-		modalRef.componentInstance.metricsParent = this.metricsParent;	
+		modalRef.componentInstance.metricsParent = this.metricsParent;
 	}
 	// private closeTooltip($event: Event) {
 	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {

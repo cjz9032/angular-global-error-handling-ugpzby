@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Ostatnie powiadomienia dotyczące zabezpieczeń",
             "notifications": "Powiadomienia",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Niebezpieczne połączenie sieciowe",
+            "networkUnsafe": "Niebezpieczna sieć",
+            "deviceDisconnected": "Rozłączono urządzenie",
+            "newDeviceDetected": "Wykryto nowe urządzenie",
+            "unsafeDeviceDetected": "Wykryto niebezpieczne urządzenie"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Chroń ekosystem swojego urządzenia",
@@ -2328,7 +2328,8 @@
             "description": "Kolejne skanowanie zostało już zaplanowane w tym samym czasie i dniu!",
             "error": "Błąd",
             "delete": "Usuń",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Uwaga: zaplanowane skanowania nie zostaną wykonane w trybie oszczędzania baterii",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Odzyskaj uszkodzone sektory",
@@ -2371,12 +2372,12 @@
             "description": "Włączenie niestandardowego progu ładowania akumulatora umożliwi dłuższe utrzymywanie akumulatora w dobrym stanie podczas korzystania z tego urządzenia. Niepełne ładowanie akumulatora skróci jednak czas pracy na nim. W celu pełnego włączenia tej funkcji należy odłączyć komputer od zasilania z sieci elektrycznej i poczekać, aż stopień naładowania akumulatora spadnie co najmniej do wartości progu zatrzymania ładowania.",
             "enable": "Włącz"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Odśwież moduły",
+        "completed": "Zakończono.",
+        "notCompleted": "Nie zakończono",
+        "yes": "Tak",
+        "attention": "Uwaga",
+        "cancelTextPrompt": "Czy na pewno chcesz anulować?",
+        "cancelTextProgress": "Poczekaj na anulowanie postępu"
     }
 }

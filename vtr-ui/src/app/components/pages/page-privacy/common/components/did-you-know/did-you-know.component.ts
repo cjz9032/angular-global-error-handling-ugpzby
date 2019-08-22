@@ -15,7 +15,7 @@ import { CountNumberOfIssuesService } from '../../services/count-number-of-issue
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { RoutersName } from '../../../privacy-routing-name';
 import { FeaturesStatuses } from '../../../userDataStatuses';
-import { UserDataGetStateService } from '../../services/user-data-get-state.service';
+import { AppStatusesService } from '../../services/app-statuses/app-statuses.service';
 
 @Component({
 	selector: 'vtr-did-you-know',
@@ -96,7 +96,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 		private routerChangeHandlerService: RouterChangeHandlerService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private cdr: ChangeDetectorRef
 	) {
 	}
@@ -137,7 +137,7 @@ export class DidYouKnowComponent implements OnInit, OnDestroy {
 	}
 
 	private getWasScannedState(userStatuses: string) {
-		return this.userDataGetStateService.userDataStatus$.pipe(
+		return this.appStatusesService.globalStatus$.pipe(
 			map((userDataStatus) =>
 				userDataStatus[userStatuses] !== FeaturesStatuses.undefined &&
 				userDataStatus[userStatuses] !== FeaturesStatuses.error),
