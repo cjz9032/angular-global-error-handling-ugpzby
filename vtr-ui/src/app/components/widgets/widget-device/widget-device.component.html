@@ -4,7 +4,8 @@
 				src="assets/images/device.png" /> </div>
 		<div class="row mt-20">
 			<div class="col">
-				<div class="family">{{myDevice.family}}</div>
+				<div class="family" id="myDevice-machine-info"
+				attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
 			</div>
 		</div>
 		<div class="row">
@@ -28,8 +29,8 @@
 				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header text-wrap" id="myDevice-product-number"
-				attr.aria-label="myDevice-product-number">{{'device.myDevice.biosVersion'|translate}}:
+				<span class="device-sub-header text-wrap" id="myDevice-bios-version"
+				attr.aria-label="myDevice-bios-version">{{'device.myDevice.biosVersion'|translate}}:
 					{{myDevice.bios}}</span>
 
 			</div>

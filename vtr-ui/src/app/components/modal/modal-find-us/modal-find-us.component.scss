@@ -7,7 +7,7 @@
 	justify-content: center;
 }
 
-.About-Modal {
+.find-us-modal {
 	border-radius: $border_radius;
 	background: $light;
 	background-size: cover;
@@ -15,7 +15,7 @@
 	box-shadow: $drop_shadow;
 	padding: 4rem;
 	position: relative;
-	width: 55rem;
+	width: 100%;
 
 	.img-con {
 		height: 30.5rem;
