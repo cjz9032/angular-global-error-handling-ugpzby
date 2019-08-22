@@ -183,6 +183,13 @@ export class SystemUpdateService {
 			}).then((response: ScheduleUpdateStatus) => {
 				console.log('getScheduleUpdateStatus response', response);
 				this.processScheduleUpdate(response, false);
+			}).catch((error) => {
+				console.log('getScheduleUpdateStatus error', error);
+				if (error && error.errorcode === 606) {
+					setTimeout(() => {
+						this.getScheduleUpdateStatus(canReportProgress);
+					}, 200);
+				}
 			});
 		}
 	}
@@ -547,13 +554,17 @@ export class SystemUpdateService {
 				}
 			} else {
 				// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
-				this.getScheduleUpdateStatus(true);
+				setTimeout(() => {
+					this.getScheduleUpdateStatus(true);
+				}, 200);
 			}
 		}).catch((error) => {
 			if (error &&
 				((error.description && error.description.includes('errorcode: 606'))
 				|| (error.errorcode && error.errorcode === 606))) {
-				this.getScheduleUpdateStatus(true);
+				setTimeout(() => {
+					this.getScheduleUpdateStatus(true);
+				}, 200);
 			}
 		});
 	}
