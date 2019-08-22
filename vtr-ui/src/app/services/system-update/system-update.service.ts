@@ -184,7 +184,6 @@ export class SystemUpdateService {
 				console.log('getScheduleUpdateStatus response', response);
 				this.processScheduleUpdate(response, false);
 			}).catch((error) => {
-				console.log('getScheduleUpdateStatus error', error);
 				if (error && error.errorcode === 606) {
 					setTimeout(() => {
 						this.getScheduleUpdateStatus(canReportProgress);
