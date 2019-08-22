@@ -293,10 +293,10 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.hideNote = true;
 						this.cameraFeatureAccess.showAutoExposureSlider = true;
 						console.log('no camera permission .then', this.emptyCameraDetails[0]);
-						const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+						const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 						// privacy.status = false;
-						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
-						this.dataSource.exposure.autoValue = false;
+						// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
+						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
 					}
 					this.cameraFeatureAccess.showAutoExposureSlider = false;
 					if (this.dataSource.exposure.autoValue === true && !this.shouldCameraSectionDisabled) {
@@ -345,7 +345,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						eyeCare.status = this.eyeCareModeStatus.status;
 						console.log('eycare mode request sent to the dashboard------------->', eyeCare);
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
-
+						// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
@@ -497,6 +497,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
 							this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
+							// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 						}
 
 					}).catch(error => {
@@ -585,7 +586,8 @@ export class SubpageDeviceSettingsDisplayComponent
 					this.onPrivacyModeChange($event.switchValue);
 					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
 					privacy.status = $event.switchValue;
-					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
+					// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
+					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
 				}).catch(error => {
 					console.error('setCameraStatus', error);
 				});
@@ -613,7 +615,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		console.log('startMonitorHandlerForCamera', value);
 		this.cameraPrivacyModeStatus = value;
-		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
+		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
+		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
 	}
 
 	startCameraPrivacyMonitor() {
