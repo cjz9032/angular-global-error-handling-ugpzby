@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { EMPTY, merge, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { catchError, map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
 import { UserAllowService } from '../../../common/services/user-allow.service';
@@ -22,6 +22,7 @@ import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../../common/services/analytics/task-action-with-timeout.service';
+import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 
 @Injectable({
 	providedIn: 'root'
@@ -49,7 +50,8 @@ export class TrackingMapService {
 		private http: HttpClient,
 		private vantageCommunicationService: VantageCommunicationService,
 		private figleafOverviewService: FigleafOverviewService,
-		private taskActionWithTimeoutService: TaskActionWithTimeoutService
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
+		@Inject(PRIVACY_ENVIRONMENT) private environment
 	) {
 		this.updateTrackingData();
 
@@ -101,12 +103,18 @@ export class TrackingMapService {
 			.filter((site) => site && trackersInfo.sites[site.domain])
 			.map((site) => ({
 				domain: site.domain,
-				favicon_url: trackersInfo.sites[site.domain].icon,
+				favicon_url: this.environment.staticUrl + trackersInfo.sites[site.domain].icon,
 				trackers: trackersInfo.sites[site.domain].trackers
 			}));
+
 		const trackers = sites
 			.reduce((acc, val) => returnUniqueElementsInArray<TrackingDataSiteDescription>(acc.concat(val.trackers)), [])
-			.reduce((acc, tracker) => ({...acc, [tracker]: trackersInfo.trackers[tracker]}), {});
+			.reduce((acc, tracker) => ({
+				...acc, [tracker]: {
+					...trackersInfo.trackers[tracker],
+					logo_url: this.environment.staticUrl + trackersInfo.trackers[tracker].logo_url,
+				}
+			}), {});
 
 		return {sites, trackers};
 	}
@@ -117,7 +125,11 @@ export class TrackingMapService {
 				map((userHistory) => userHistory.visitedWebsites),
 				map((userHistory) => ({typeData: typeData.Users, sites: userHistory})),
 				catchError((err) => {
-					this.trackingData.next({typeData: typeData.Users, trackingData: {sites: [], trackers: {}}, error: err});
+					this.trackingData.next({
+						typeData: typeData.Users,
+						trackingData: {sites: [], trackers: {}},
+						error: err
+					});
 					this.sendTaskAction();
 					console.error('VisitedWebsites err', err);
 					return EMPTY;

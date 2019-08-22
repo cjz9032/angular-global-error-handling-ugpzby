@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Recente beveiligingsmeldingen",
             "notifications": "Berichten",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Onveilige netwerkverbinding",
+            "networkUnsafe": "Onveilig netwerk",
+            "deviceDisconnected": "Verbinding met apparaat verbroken",
+            "newDeviceDetected": "Nieuw apparaat gedetecteerd",
+            "unsafeDeviceDetected": "Onveilig apparaat gedetecteerd"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Bescherm het ecosysteem van uw apparaat",
@@ -2328,7 +2328,8 @@
             "description": "Er is al een andere scan op dezelfde tijd en datum gepland.",
             "error": "Fout",
             "delete": "Verwijderen",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Slechte sectoren herstellen",
@@ -2371,12 +2372,12 @@
             "description": "Als u opladen tot een aangepast niveau inschakelt, blijft de batterij tijdens het gebruik van het apparaat langer in goede conditie. Maar als u de batterij niet volledig oplaadt, kunt u het apparaat minder lang gebruiken alvorens de batterij leeg is. Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveau waarop het opladen wordt gestopt om deze functie volledig te activeren.",
             "enable": "Inschakelen"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Modules vernieuwen",
+        "completed": "Voltooid",
+        "notCompleted": "Niet voltooid",
+        "yes": "Ja",
+        "attention": "Let op",
+        "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
+        "cancelTextProgress": "Wacht op de voortgang van de annulering"
     }
 }

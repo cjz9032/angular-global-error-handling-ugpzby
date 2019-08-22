@@ -1,12 +1,12 @@
 <div class="privacy-score" data-analyticsName="ScoreBlock">
 	<div class="privacy-score__picture score-pic">
 		<div [class]="'score-pic__circle score-pic__circle--' + privacyLevel">
-			<div *ngIf="isFirstTimeVisitor$ | async" class="score-pic__symbol">
+			<div *ngIf="(isFirstTimeVisitor$ | async)" class="score-pic__symbol">
 				<img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
 			</div>
 			<div *ngIf="!(isFirstTimeVisitor$ | async)" class="score-pic__number">
-				<vtr-spinner *ngIf="!score"></vtr-spinner>
-				<span *ngIf="score">{{score}} <span class="score-pic__percent">%</span></span>
+				<vtr-spinner *ngIf="!(isShowScore$ | async)"></vtr-spinner>
+				<span *ngIf="(isShowScore$ | async)">{{score}} <span class="score-pic__percent">%</span></span>
 			</div>
 		</div>
 	</div>

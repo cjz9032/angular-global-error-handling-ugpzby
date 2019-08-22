@@ -32,14 +32,14 @@
 									<div class="row no-gutters"
 										*ngIf="showIntelligentCoolingModes">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
-											[radioId]="'radio1'"
+											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
 											[value]="'performance'"
 											[checked]="radioPerformance"
 											(change)="changePerformance($event)">
 										</vtr-ui-circle-radio-with-checkbox>
-										<vtr-ui-circle-radio-with-checkbox [radioId]="'radio2'"
+										<vtr-ui-circle-radio-with-checkbox [radioId]="'radioICQuiteCool'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
 											[value]="showIC==14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
@@ -47,7 +47,7 @@
 											(change)="changeQuietCool($event)">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
-											[radioId]="'radio1'"
+											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
 											[value]="'performance'"
@@ -55,7 +55,7 @@
 											(change)="changePerformance($event)">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
-											[radioId]="'radio3'"
+											[radioId]="'quiteBatterySaving'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
 											[value]="'LE-Battery-Life-mode2x'"

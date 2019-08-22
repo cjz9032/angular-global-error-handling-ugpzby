@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform, OnDestroy } from '@angular/core';
+import { Pipe, PipeTransform, OnDestroy, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Observable } from 'rxjs/internal/Observable';
@@ -16,6 +16,7 @@ export class SvgInlinePipe implements PipeTransform, OnDestroy {
 
 	getContent(url) {
 		return new Promise(resovle => {
+			url = this.sanitizer.sanitize(SecurityContext.URL, url);
 			const request = new XMLHttpRequest();
 			request.open('GET', url, true);
 			request.send(null);

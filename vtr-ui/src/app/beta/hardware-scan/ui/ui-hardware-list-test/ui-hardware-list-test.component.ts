@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class UiHardwareListTestComponent implements OnInit {
 	@Input() items: any[];
+	@Output() selectAny: EventEmitter<any> = new EventEmitter();
 
 	constructor(private translate: TranslateService) { }
 
@@ -38,6 +39,7 @@ export class UiHardwareListTestComponent implements OnInit {
 		const isSelected = this.items.find(item => item.id === itemId).selected;
 		this.items.find(item => item.id === itemId).tests.map(test => test.selected = isSelected);
 		this.items.find(item => item.id === itemId).indeterminate = false;
+		this.selectAny.emit();
 	}
 
 	public onCheckChildren(itemId: any) {
@@ -54,5 +56,7 @@ export class UiHardwareListTestComponent implements OnInit {
 			this.items.find(item => item.id === itemId).selected = true;
 			this.items.find(item => item.id === itemId).indeterminate = false;
 		}
+
+		this.selectAny.emit();
 	}
 }

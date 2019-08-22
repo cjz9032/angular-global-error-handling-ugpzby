@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Nylige sikkerhetsvarsler",
             "notifications": "Varsler",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Usikker nettverksforbindelse",
+            "networkUnsafe": "Usikkert nettverk",
+            "deviceDisconnected": "Enhet frakoblet",
+            "newDeviceDetected": "Ny enhet funnet",
+            "unsafeDeviceDetected": "Usikker enhet funnet"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Beskytt enhetens økosystem",
@@ -2333,7 +2333,8 @@
             "description": "En annen skanning er allerede planlagt på samme tid og dato!",
             "error": "Feil",
             "delete": "Slett",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Merk: Planlagte skanninger vil ikke bli utført i batterisparingsmodus",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Gjenopprett skadde sektorer",
@@ -2371,12 +2372,12 @@
             "ticketRequestQuestion": "Lenovo kan sende deg en ny del hvis datamaskinen fremdeles dekkes av garantien. Vil du opprette en forespørsel om utskiftning av maskinvare for å løse problemet",
             "openTicket": "Opprett forespørsel"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Oppdater moduler",
+        "completed": "Fullført",
+        "notCompleted": "Ikke fullført",
+        "yes": "Ja",
+        "attention": "NB",
+        "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
+        "cancelTextProgress": "Vent mens avbrytingen pågår"
     }
 }

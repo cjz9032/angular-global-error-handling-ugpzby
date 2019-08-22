@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "최근 보안 알림",
             "notifications": "알림",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "안전하지 않은 네트워크 연결",
+            "networkUnsafe": "안전하지 않은 네트워크",
+            "deviceDisconnected": "장치 연결이 끊어짐",
+            "newDeviceDetected": "새 장치가 검색됨",
+            "unsafeDeviceDetected": "안전하지 않은 장치가 검색됨"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "장치 생태계 보호",
@@ -2328,7 +2328,8 @@
             "description": "다른 스캔이 이미 같은 시간과 날짜에 예약되었습니다!",
             "error": "오류",
             "delete": "삭제",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "참고: 예약된 검사는 배터리 절약 모드에서 수행되지 않음",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "불량 섹터 복구",
@@ -2371,12 +2372,12 @@
             "description": "사용자 지정 배터리 충전을 사용하면, 이 장치를 사용할 때 전체 배터리 상태가 더 오래 지속될 수 있습니다. 그러나 완전 충전을 하지 않으면, 런타임 배터리 수명이 줄어듭니다. 이 기능을 완벽하게 사용하려면, 컴퓨터 플러그를 뽑고 충전 중지 임계값 이하로 배터리를 방전하십시오.",
             "enable": "사용"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "모듈 새로 고침",
+        "completed": "완료",
+        "notCompleted": "완료되지 않음",
+        "yes": "예",
+        "attention": "주의",
+        "cancelTextPrompt": "정말 취소하시겠습니까?",
+        "cancelTextProgress": "취소 진행을 기다리십시오"
     }
 }

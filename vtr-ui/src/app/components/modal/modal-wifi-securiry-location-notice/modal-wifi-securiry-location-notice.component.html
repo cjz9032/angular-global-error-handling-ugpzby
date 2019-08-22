@@ -1,6 +1,6 @@
 <div class="wifi-security-location-modal">
 	<h1>{{ header | translate }} </h1>
-	<div role="button" class="close-btn" id="{{closeButtonId}}" attr.aria-label="{{closeButtonId}}" (click)="onCancelClick($event)">
+	<div role="button" class="close-btn" id="{{closeButtonId}}" (click)="onCancelClick($event)">
 		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</div>
 	<p class="description">
@@ -11,7 +11,7 @@
 	</ul>
 	<div class="d-flex">
 		<div class="ml-0 mr-4 pl-0">
-			<button id="{{agreeButtonId}}" attr.aria-label="{{agreeButtonId}}" type="button"
+			<button id="{{agreeButtonId}}" type="button"
 				class="btn btn-default modal-button"
 				(click)="onOkClick($event)"
 				vtrMetrics
@@ -22,7 +22,7 @@
 			</button>
 		</div>
 		<div class="ml-0 mr-4 pl-0">
-			<div id="{{cancelButtonId}}" attr.aria-label="{{cancelButtonId}}" role="button"
+			<div id="{{cancelButtonId}}" role="button"
 				class="btn btn-default modal-button-cancel"
 				(click)="onCancelClick($event)"
 				vtrMetrics

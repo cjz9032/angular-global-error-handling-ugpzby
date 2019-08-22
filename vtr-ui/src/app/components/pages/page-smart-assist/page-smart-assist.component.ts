@@ -162,14 +162,14 @@ export class PageSmartAssistComponent implements OnInit {
 		this.apsAvailability();
 
 		if (this.smartAssistCapability === undefined) {
-			this.initZeroTouchLock(isFirstTimeLoad);
+			this.initZeroTouchLock();
 			this.initZeroTouchLogin();
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
-				this.initZeroTouchLock(isFirstTimeLoad);
+				this.initZeroTouchLock();
 				this.initZeroTouchLogin();
 			}
 			if (this.smartAssistCapability.isIntelligentMediaSupported && isFirstTimeLoad) {
@@ -248,7 +248,7 @@ export class PageSmartAssistComponent implements OnInit {
 		});
 	}
 
-	private initZeroTouchLock(isFirstTimeLoad: boolean) {
+	private initZeroTouchLock() {
 		Promise.all([
 			this.smartAssist.getZeroTouchLockVisibility(),
 			this.smartAssist.getZeroTouchLockStatus(),
@@ -267,7 +267,7 @@ export class PageSmartAssistComponent implements OnInit {
 				this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
 			}
 
-			if (!(this.intelligentSecurity.isIntelligentSecuritySupported && isFirstTimeLoad)) {
+			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
 			}
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);

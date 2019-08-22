@@ -14,28 +14,23 @@
 			width: 33%;
 		}
 	}
+}
 
-	.widget-icon-2 {
-		display: flex;
-		// justify-content: flex-start;
-		> div {
-			width: 33%;
-		}
+.widget-icon-2 {
+	display: flex;
+	// justify-content: flex-start;
+	> div {
+		width: 33%;
 	}
-	.permission-note {
-		width: 100%;
-		background-color: $shade_lightest;
-		font-size: 1.3rem;
-		border: 1px solid $shade_lighter;
-		justify-content: space-between;
-		.note-icon {
-			font-size: 20px;
-		}
-		.privacy-button {
-			font-size: 1.3rem;
-			letter-spacing: 0.76px;
-			text-align: left;
-		}
+}
+.permission-note {
+	width: 100%;
+	background-color: $shade_lightest;
+	font-size: 1.3rem;
+	border: 1px solid $shade_lighter;
+	justify-content: space-between;
+	.note-icon {
+		font-size: 20px;
 	}
 
 	.link-text {
@@ -46,5 +41,10 @@
 		cursor: pointer;
 		padding-top: 1.8rem;
 		font-weight: 600;
+	}
+	.privacy-button {
+		font-size: 1.3rem;
+		letter-spacing: 0.76px;
+		text-align: left;
 	}
 }

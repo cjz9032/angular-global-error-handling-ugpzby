@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "最近のセキュリティー通知",
             "notifications": "通知",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "安全でないネットワーク接続",
+            "networkUnsafe": "安全でないネットワーク",
+            "deviceDisconnected": "切断されたデバイス",
+            "newDeviceDetected": "新しいデバイスが検出されました",
+            "unsafeDeviceDetected": "安全ではないデバイスが検出されました"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "デバイスのエコシステムを保護する",
@@ -2328,7 +2328,8 @@
             "description": "別のスキャンが同じ日時にすでにスケジュールされています。",
             "error": "エラー",
             "delete": "削除",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "注: スケジュール・スキャンは、バッテリー節約モードでは実行されません",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "不良セクターの復元",
@@ -2371,12 +2372,12 @@
             "description": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
             "enable": "有効にする"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "モジュールの更新",
+        "completed": "完了",
+        "notCompleted": "未完了",
+        "yes": "はい",
+        "attention": "重要",
+        "cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
+        "cancelTextProgress": "キャンセルの進捗をお待ちください"
     }
 }

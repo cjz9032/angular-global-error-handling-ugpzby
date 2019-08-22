@@ -505,7 +505,7 @@
     },
     "dashboard": {
         "headerMain": {
-            "title": "Parece revitalizado/a hoje "
+            "title": "Parece revitalizadora hoje "
         },
         "offlineInfo": {
             "title": "Não foi detetada ligação à Internet",
@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Notificações de segurança recentes",
             "notifications": "Notificações",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Ligação de rede insegura",
+            "networkUnsafe": "Rede insegura",
+            "deviceDisconnected": "Dispositivo desconectado",
+            "newDeviceDetected": "Novo dispositivo detetado",
+            "unsafeDeviceDetected": "Dispositivo inseguro detetado"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Proteja o ecossistema do dispositivo",
@@ -2328,7 +2328,8 @@
             "description": "Já estava agendada outra verificação para a mesma data e hora!",
             "error": "Erro",
             "delete": "Eliminar",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Nota: as Verificações Programadas não serão executadas no modo Poupança de Bateria",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Recuperar setores danificados",
@@ -2371,12 +2372,12 @@
             "description": "Permitir um carregamento da bateria personalizado permitirá que o estado global da bateria dure durante mais tempo enquanto utiliza este dispositivo. No entanto, não ter um carregamento completo levará a uma menor duração da bateria. Para ativar integralmente esta funcionalidade, desligue os cabos do equipamento e permita que a bateria se descarregue até ou abaixo do limiar de paragem de carregamento.",
             "enable": "Ativar"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Atualizar Módulos",
+        "completed": "Concluído",
+        "notCompleted": "Não Concluído",
+        "yes": "Sim",
+        "attention": "Atenção",
+        "cancelTextPrompt": "Tem a certeza de que pretende cancelar?",
+        "cancelTextProgress": "Aguarde o progresso do cancelamento"
     }
 }

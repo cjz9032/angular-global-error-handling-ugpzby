@@ -146,12 +146,12 @@
                 },
                 "recorded": {
                     "title": "מקש מאקרו עבור ",
-                    "deleteKey": "מחקו",
+                    "deleteKey": "מחקו מקש",
                     "clear": "ניקוי",
                     "intervalStatus": {
                         "keep": {
                             "title": "המשיכו את ההשהיה",
-                            "description": "מרווחים בין פעולות מקשים יישמרו ויוחלו בעת השימוש במקש מאקרו זה."
+                            "description": "מרווחים בין פעולות מקשים יישמרו ויפעלו בעת השימוש במקש מאקרו זה."
                         },
                         "ignore": {
                             "title": "התעלמו מההשהיה",
@@ -298,7 +298,7 @@
             },
             "profile": {
                 "text1": {
-                    "title": "התאורה כבויה כרגע. בחר בכרטיסיית הפרופיל למעלה כדי להפעיל אותה ולבצע התאמה אישית שלה."
+                    "title": "התאורה כבויה כרגע. בחרו בכרטיסיית הפרופיל למעלה כדי להפעיל אותה ולבצע התאמה אישית שלה."
                 },
                 "text2": {
                     "title": "אפקט"
@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "כבוי"
                 },
                 "text2": {
                     "title": "פרופיל 1"
@@ -328,7 +328,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "כבוי"
                 },
                 "text2": {
                     "title": 1
@@ -343,7 +343,7 @@
                     "title": "התאמה אישית"
                 },
                 "heading": {
-                    "title": "בחר פרופיל:"
+                    "title": "בחרו פרופיל:"
                 }
             },
             "colourwheel": {
@@ -698,7 +698,7 @@
                     "Bad": "<b>אירעה שגיאת סוללה.</b> לא ניתן לטעון/לפרוק את הסוללה. החליפו את הסוללה.",
                     "NotDetected": "<b>לא אותרה סוללה או שהיא</b> אינה מחוברת.",
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
-                    "NotSupportACAdapter": "<b>מתאם ה-AC אינו נתמך.</b>",
+                    "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
                     "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
@@ -706,7 +706,7 @@
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
                     "OverheatedBattery": "הסוללה <b>חמה מדי</b>. הסירו אותה מהמחשב והניחו לה להתקרר לטמפרטורת החדר.",
                     "PermanentError": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה.",
-                    "NotSupportACAdapterDetail": "<b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.",
+                    "NotSupportACAdapterDetail": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.</span>",
                     "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון."
                 },
                 "updating": "עדכון",
@@ -794,7 +794,7 @@
                     "title": "הגדרות צריכת חשמל",
                     "alwaysUSB": {
                         "title": "‏USB פועל תמיד",
-                        "description": "טעינת התקני USB באמצעות מחבר USB פועל תמיד של המחשב, כאשר המחשב במצב המתנה, שינה או כבוי.ניתן לטעון במהירות טלפון חכם או מחשב לוח באמצעות מחבר ה-USB הנושא את הסמלים הבאים:",
+                        "description": "<span dir='rtl'>טעינת התקני USB באמצעות מחבר USB פועל תמיד של המחשב, כאשר המחשב במצב המתנה, שינה או כבוי.ניתן לטעון במהירות טלפון חכם או מחשב לוח באמצעות מחבר ה-USB הנושא את הסמלים הבאים:</span>",
                         "checkbox": "הפעלת טעינת USB מסוללת המחשב הנייד כאשר המחשב כבוי."
                     },
                     "easyResume": {
@@ -808,7 +808,7 @@
                     "title": "הגדרות נוספות",
                     "vantageToolbar": {
                         "title": "סרגל הכלים של Lenovo Vantage",
-                        "description": "הצמידו את סרגל הכלים של Vantage לשורת המשימות של Windows כדי לקבל בקלות פרטים נוספים על הסוללה וגישה להגדרות המהירות."
+                        "description": "<span dir='rtl'>הצמידו את סרגל הכלים של Vantage לשורת המשימות של Windows כדי לקבל בקלות פרטים נוספים על הסוללה וגישה להגדרות המהירות.</span>"
                     }
                 },
                 "batterySettings": {
@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "הודעות אבטחה אחרונות",
             "notifications": "הודעות",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "חיבור הרשת לא בטוח",
+            "networkUnsafe": "רשת לא בטוחה",
+            "deviceDisconnected": "המכשיר מנותק",
+            "newDeviceDetected": "זוהה מכשיר חדש",
+            "unsafeDeviceDetected": "זוהה מכשיר לא בטוח"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "הגנו על המערכת האקולוגית של המכשיר",
@@ -2328,7 +2328,8 @@
             "description": "בתאריך הזה ובשעה הזו כבר נקבעה סריקה נוספת!",
             "error": "שגיאה",
             "delete": "מחק",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "הערה: סריקות מתוזמנות לא יבוצעו במצב חיסכון בסוללה",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "שחזור סקטורים פגומים",
@@ -2371,12 +2372,12 @@
             "description": "הפעלת טעינה מותאמת אישית לסוללה תשפר את רמת התקינות הכללית של הסוללה ותאפשר לה לפעול זמן רב יותר במהלך השימוש בהתקן זה. עם זאת, טעינה חלקית בלבד תקצר את משך הפעילות הרציפה של הסוללה. כדי להפעיל תכונה זו באופן מלא, יש לנתק את המחשב מהחשמל ולאפשר לסוללה להתרוקן עד לסף עצירת הטעינה, או מתחתיו.",
             "enable": "הפעלת"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "רענון מודולים",
+        "completed": "הושלם",
+        "notCompleted": "לא הושלם",
+        "yes": "כן",
+        "attention": "שימו לב",
+        "cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?",
+        "cancelTextProgress": "המתינו לביצוע הביטול"
     }
 }

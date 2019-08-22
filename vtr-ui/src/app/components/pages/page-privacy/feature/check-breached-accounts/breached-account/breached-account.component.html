@@ -11,10 +11,10 @@
 				 *ngIf="account.domain | sitesFavicon:'/assets/images/privacy-tab/Unknown.png' | async as favicon; else defaultFavicon"
 				 [src]="account.image || favicon"
 				 [alt]="account.domain">
-			<!--<div class="breached-account__count"-->
-				 <!--*ngIf="account.domain === 'n/a'">-->
-				<!--{{otherBreaches.length}}-->
-			<!--</div>-->
+			<div class="breached-account__count"
+					   *ngIf="account.domain === 'n/a'">
+			{{otherBreaches.length}}
+		</div>
 		</div>
         <div class="breached-account__text">
             <div class="breached-account__social">

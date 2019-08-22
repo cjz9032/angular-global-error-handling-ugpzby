@@ -1,11 +1,12 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.149",
+	"version": "1.0.155",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
 		"build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --prod",
 		"build": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng build --prod",
+		"serve": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng serve",
 		"test": "ng test",
 		"lint": "ng lint",
 		"fix-no-console": "node prebuild/no-console.js",
@@ -13,7 +14,6 @@
 		"pwa": "ng build --prod & http-server ./dist/vtr-ui -p 4200 -c-1 ",
 		"release": "standard-version",
 		"dev++": "npm run release && git push --follow-tags origin develop",
-		"dev": "node --max_old_space_size=1024 ./node_modules/@angular/cli/bin/ng build",
 		"stats": "ng build --prod --stats-json",
 		"analyze": "webpack-bundle-analyzer dist/vtr-ui/stats.json",
 		"dev-stats": "ng build --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
