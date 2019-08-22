@@ -256,7 +256,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private cleaningUpScan(response: any) {
-		if (response && typeof response.finalResultCode !== undefined) {
+		if (response) {
 			this.finalResponse = response;
 			this.finalResultCode = response.finalResultCode;
 			this.tooltipInformation = response.resultDescription;

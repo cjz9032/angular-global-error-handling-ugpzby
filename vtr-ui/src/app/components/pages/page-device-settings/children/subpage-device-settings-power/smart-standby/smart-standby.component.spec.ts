@@ -1,9 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SmartStandbyComponent } from './smart-standby.component';
-import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
-import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
-import { UiRowSwitchComponent } from 'src/app/components/ui/ui-row-switch/ui-row-switch.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonService } from 'src/app/services/common/common.service';

@@ -36,10 +36,11 @@
 									<ul class="list-group list-group-flush"
 										*ngIf="isMessageSettings">
 										<li>
-											<vtr-ui-row-switch id="settings-appFeatures"
-											aria-label="settings-appFeatures"
-											[title]="'settings.appFeatures' | translate"
+											<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
 												[name]="'AppFeaturesToggle'"
+												[switchId]="'settingsAppFeaturesToggle'"
+												id="settings-appFeaturesToggle"
+												aria-label="settings-appFeatures"
 												[caption]="'settings.appFeaturesDescription' | translate"
 												[isSwitchVisible]=true
 												[leftIcon]="messageSettings[0].leftImageSource"
@@ -51,6 +52,7 @@
 										<li>
 											<vtr-ui-row-switch [title]="'settings.marketing' | translate"
 												[name]="'MarketingToggle'"
+												[switchId]="'settingsMarketingToggle'"
 												id="settings-marketingToggle"
 												aria-label="settings-marketingToggle"
 												[caption]="'settings.marketingDescription' | translate"
@@ -64,6 +66,7 @@
 										<li>
 											<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
 												[name]="'ActionTriggeredToggle'"
+												[switchId]="'settingsActionTriggeredToggle'"
 												id="settings-actionTriggeredToggle"
 												aria-label="settings-actionTriggeredToggle"
 												[caption]="'settings.actionTriggeredDescription' | translate"
@@ -91,7 +94,8 @@
 									<ul class="list-group list-group-flush">
 										<li *ngIf="isToggleUsageStatistics">
 											<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
-												[name]="'UsageStatisticsToggle'"
+												[name]="'settingsUsageStatisticsToggle'"
+												[switchId]="'settingsUsageStatisticsToggle'"
 												id="settings-usageStatisticsToggle"
 												aria-label="settings-usageStatisticsToggle"
 												[caption]="'settings.usageStatisticsDescription' | translate"
