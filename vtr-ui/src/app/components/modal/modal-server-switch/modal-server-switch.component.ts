@@ -41,8 +41,8 @@ export class ModalServerSwitchComponent implements OnInit {
 		this.serverSwitchForm = new FormGroup({
 			country: new FormControl(this.serverSwitchData.countryList[0], Validators.required),
 			language: new FormControl(this.serverSwitchData.languageList[7], Validators.required),
-			segment: new FormControl(this.serverSwitchData.segmentList[3], Validators.required),
-			cmsserver: new FormControl(this.serverSwitchData.serverList[0], Validators.required),
+			segment: new FormControl(this.serverSwitchData.segmentList[1], Validators.required),
+			cmsserver: new FormControl(this.serverSwitchData.serverList[1], Validators.required),
 			oem: new FormControl(this.serverSwitchData.oemList[0], Validators.required),
 			brand: new FormControl(this.serverSwitchData.brandList[0], Validators.required)
 		});
@@ -54,11 +54,10 @@ export class ModalServerSwitchComponent implements OnInit {
 				this.getSelectedObject(this.serverSwitchData.countryList, serverSwitchLocalData.country.Value));
 			this.serverSwitchForm.controls.language.setValue(
 				this.getSelectedObject(this.serverSwitchData.languageList, serverSwitchLocalData.language.Value));
-			this.serverSwitchForm.controls.segment.setValue(
-				this.getSelectedObject(this.serverSwitchData.segmentList, serverSwitchLocalData.segment.Value));
-			this.serverSwitchForm.controls.cmsserver.setValue(this.getSelectedObject(this.serverSwitchData.serverList, serverSwitchLocalData.cmsserver.Value));
-			this.serverSwitchForm.controls.oem.setValue(this.getSelectedObject(this.serverSwitchData.oemList, serverSwitchLocalData.oem.Value));
-			this.serverSwitchForm.controls.brand.setValue(this.getSelectedObject(this.serverSwitchData.brandList, serverSwitchLocalData.brand.Value));
+			this.serverSwitchForm.controls.segment.setValue(serverSwitchLocalData.segment);
+			this.serverSwitchForm.controls.cmsserver.setValue(serverSwitchLocalData.cmsserver);
+			this.serverSwitchForm.controls.oem.setValue(serverSwitchLocalData.oem);
+			this.serverSwitchForm.controls.brand.setValue(serverSwitchLocalData.brand);
 		}
 	}
 	closeModal() {
@@ -147,7 +146,7 @@ export class ModalServerSwitchComponent implements OnInit {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
 		this.closeModal();
-
+		this.onClickEscape(); // somehow at times this window is not closing. called again to close this window.
 
 		let urlTree = this.router.parseUrl(this.router.url);
 		if (urlTree.queryParams['serverswitch']) {

@@ -34,6 +34,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		this.hardwareScanService.setRecoverInProgress(true);
 		this.hardwareScanService.setScanExecutionStatus(false);
 		this.hardwareScanService.setRecoverExecutionStatus(false);
+		this.hardwareScanService.setIsScanDone(false);
 	}
 
 	ngOnInit() {
