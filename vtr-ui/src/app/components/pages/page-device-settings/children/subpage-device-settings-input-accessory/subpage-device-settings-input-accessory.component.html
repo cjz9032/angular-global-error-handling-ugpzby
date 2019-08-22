@@ -89,7 +89,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[tooltipText]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.tooltip' | translate"
 							[switchId]="'inputAccessories-VoipHotkeys'">
-							<div class="row pt-5" *ngIf="true; else noAppInstalled">
+							<div class="row pt-5" *ngIf="installedApps.length > 0; else noAppInstalled">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 									<vtr-ui-rectangle-radio *ngFor="let installedApp of installedApps"
 															[radioId]="'radio'| uniqueId"
@@ -99,7 +99,7 @@
 															[checked]="installedApp.appName === selectedApp"
 															(change)="setVoipHotkeysSettings(installedApp.appName)">
 									</vtr-ui-rectangle-radio>
-									<div class="row">
+									<div class="row pt-5">
 										<div class="feature-note col-12 pl-5 pr-5 pt-4 pb-4"
 											 id="hasInstalledApps-note" attr.aria-label="hasInstalledApps-note">
 											<p>{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsNote' | translate}}</p>

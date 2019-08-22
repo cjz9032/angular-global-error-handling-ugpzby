@@ -27,13 +27,14 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
 	public selectedApp: '';
 	public installedApps: any[];
-	public showVoiphotkeysSection = true;
+	public showVoiphotkeysSection = false;
 	public isAppInstalled = false;
 
 	constructor(private keyboardService: InputAccessoriesService, private commonService: CommonService,) {
 	}
 
 	ngOnInit() {
+		this.getVoipHotkeysSettings();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
 			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
@@ -54,7 +55,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				});
 				if (res.errorCode === 0 && res.capability === true && this.isAppInstalled === true) {
 					this.showVoiphotkeysSection = true;
-					// this.installedApps = res.appList;
+					this.installedApps = res.appList;
 					if (res.appList.length === 1) {
 						this.selectedApp = res.appList[0].appName;
 					}
