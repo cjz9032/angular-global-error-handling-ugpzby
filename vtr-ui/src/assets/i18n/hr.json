@@ -2328,7 +2328,8 @@
             "description": "Još jedno skeniranje je već zakazano za isto vrijeme i datum!",
             "error": "Pogreška",
             "delete": "Izbriši",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Napomena: Zakazani pregledi se neće izvoditi u načinu rada za uštedu baterije",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Oporavak neispravnih sektora",
@@ -2371,12 +2372,12 @@
             "description": "Omogućivanje prilagođenog punjenja baterije omogućit će dulje sveukupno trajanje baterije dok koristite ovaj uređaj. Međutim, ako baterija nije u potpunosti napunjena, njezino trajanje bit će kraće. Kako biste u potpunosti omogućili ovu značajku, odspojite uređaj i pustite da se baterija isprazni do praga za zaustavljanje punjenja ili ispod njega.",
             "enable": "Omogući"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Osvježi module",
+        "completed": "Dovršeno",
+        "notCompleted": "Nije dovršeno",
+        "yes": "Da",
+        "attention": "Pažnja",
+        "cancelTextPrompt": "Želite li zaista odustati?",
+        "cancelTextProgress": "Pričekajte napredak otkazivanja"
     }
 }

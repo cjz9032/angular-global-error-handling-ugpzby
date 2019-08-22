@@ -2328,7 +2328,8 @@
             "description": "На то же время и дату было запланировано еще одно сканирование!",
             "error": "Ошибка",
             "delete": "Удалить",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Примечание. Запланированные проверки не будут выполняться в режиме экономии заряда",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Восстановление поврежденных секторов",
@@ -2371,12 +2372,12 @@
             "description": "Включение функции пользовательской зарядки аккумулятора позволяет увеличить общее время его работоспособности при использовании этого устройства. Однако при неполной зарядке аккумулятора время его автономной работы уменьшается. Чтобы полностью включить эту функцию, отключите компьютер от сети переменного тока и дайте аккумулятору разрядиться до порогового уровня прекращения зарядки или ниже его.",
             "enable": "Включить"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Обновить модули",
+        "completed": "Выполнено",
+        "notCompleted": "Не выполнено",
+        "yes": "Да",
+        "attention": "Внимание",
+        "cancelTextPrompt": "Действительно отменить?",
+        "cancelTextProgress": "Дождитесь отмены"
     }
 }

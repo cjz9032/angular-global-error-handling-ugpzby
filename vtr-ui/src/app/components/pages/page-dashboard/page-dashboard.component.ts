@@ -32,7 +32,6 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 	styleUrls: ['./page-dashboard.component.scss'],
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
-	firstName = 'User';
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -103,14 +102,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		const self = this;
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			} else {
-				self.firstName = this.userService.firstName;
-			}
-		});
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
@@ -246,7 +237,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	onFeedbackModal() {
 		this.modalService.open(FeedbackFormComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'feedback-modal'
@@ -448,25 +439,27 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		warranty.type = 'system';
 		this.systemStatus[2] = warranty;
 
-		const systemUpdate = new Status();
-		systemUpdate.status = 4;
-		systemUpdate.id = 'systemupdate';
-		systemUpdate.metricsItemName = 'System Update';
+		if (this.deviceService && !this.deviceService.isSMode) {
+			const systemUpdate = new Status();
+			systemUpdate.status = 4;
+			systemUpdate.id = 'systemupdate';
+			systemUpdate.metricsItemName = 'System Update';
 
-		this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
-			systemUpdate.title = value;
-		});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+				systemUpdate.title = value;
+			});
 
-		this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
-			systemUpdate.detail = value;
-		});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+				systemUpdate.detail = value;
+			});
 
 
-		systemUpdate.path = 'device/system-updates';
-		systemUpdate.asLink = true;
-		systemUpdate.isSystemLink = false;
-		systemUpdate.type = 'system';
-		this.systemStatus[3] = systemUpdate;
+			systemUpdate.path = 'device/system-updates';
+			systemUpdate.asLink = true;
+			systemUpdate.isSystemLink = false;
+			systemUpdate.type = 'system';
+			this.systemStatus[3] = systemUpdate;
+		}
 
 	}
 
@@ -525,21 +518,23 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		// system update
-		this.dashboardService.getRecentUpdateInfo().subscribe(value => {
-			if (value) {
-				const systemUpdate = this.systemStatus[3];
-				const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
-				if (value.status === 1) {
-					if (diffInDays > 30) {
-						systemUpdate.status = 1;
+		if (this.deviceService && !this.deviceService.isSMode) {
+			this.dashboardService.getRecentUpdateInfo().subscribe(value => {
+				if (value) {
+					const systemUpdate = this.systemStatus[3];
+					const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
+					if (value.status === 1) {
+						if (diffInDays > 30) {
+							systemUpdate.status = 1;
+						} else {
+							systemUpdate.status = 0;
+						}
 					} else {
-						systemUpdate.status = 0;
+						systemUpdate.status = 1;
 					}
-				} else {
-					systemUpdate.status = 1;
 				}
-			}
-		});
+			});
+		}
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -548,9 +543,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
-					break;
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
 					break;
 				default:
 					break;

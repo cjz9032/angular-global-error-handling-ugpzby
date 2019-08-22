@@ -222,8 +222,14 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				@extend .base-remaining-text;
 				color: $main_dark;
 				bottom: 5%;
-				font-size: $caption;
 				font-weight: $weight_medium;
+				font-size: 1rem;
+				@media only screen and (min-width: 1200px) and (max-width: 1280px) {
+					font-size: 0.9rem;
+				}
+				@media only screen and (max-width: 992px) {
+					font-size: 1.5rem;
+				}
 			}
 		}
 

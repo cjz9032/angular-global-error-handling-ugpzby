@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "最近的安全通知",
             "notifications": "通知",
-			"unsafeNetworkConnection": "不安全的網路連線",
-			"networkUnsafe": "網路不安全",
-			"deviceDisconnected": "裝置已斷線",
-			"newDeviceDetected": "偵測到新裝置",
-			"unsafeDeviceDetected": "偵測到不安全的裝置"
+            "unsafeNetworkConnection": "不安全的網路連線",
+            "networkUnsafe": "網路不安全",
+            "deviceDisconnected": "裝置已斷線",
+            "newDeviceDetected": "偵測到新裝置",
+            "unsafeDeviceDetected": "偵測到不安全的裝置"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "保護您的裝置生態系統",
@@ -2328,7 +2328,8 @@
             "description": "相同的日期和時間已排程另一次掃描！",
             "error": "錯誤",
             "delete": "刪除",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "附註：「排程掃描」不會在「省電功能」模式下執行",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "回復錯誤磁區",
@@ -2371,12 +2372,12 @@
             "description": "啟用自訂電池充電可讓您在使用此裝置時，整體電池性能更持久。不過，若充電不完全會減少執行階段電池壽命。為了完全啟用此功能，請拔除您的裝置，讓電池電力清空至停止充電臨界值或以下。",
             "enable": "啟用"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "重新整理模組",
+        "completed": "已完成",
+        "notCompleted": "未完成",
+        "yes": "是",
+        "attention": "請注意",
+        "cancelTextPrompt": "您確定要取消嗎？",
+        "cancelTextProgress": "請等待取消進度"
     }
 }

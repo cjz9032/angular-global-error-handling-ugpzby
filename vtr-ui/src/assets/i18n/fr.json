@@ -2328,7 +2328,8 @@
             "description": "Une autre analyse a déjà été planifiée à la même heure et à la même date !",
             "error": "Erreur",
             "delete": "Supprimer",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Remarque : les analyses planifiées ne sont pas effectuées en mode économiseur de batterie",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Récupérer les secteurs incorrects",
@@ -2371,12 +2372,12 @@
             "description": "Le fait d'activer la charge de batterie personnalisée optimise l'état de santé général de la batterie lorsque vous utilisez ce périphérique. Toutefois, si la batterie n'est pas entièrement chargée, la durée de vie de la batterie sera réduite. Afin d'activer pleinement cette fonctionnalité, veuillez débrancher l'appareil et laisser la batterie se vider ou être en dessous du seuil de chargement.",
             "enable": "Activer"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
+        "refreshModule": "Actualiser les modules",
+        "completed": "Terminé",
+        "notCompleted": "Non terminé",
+        "yes": "Oui",
         "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
+        "cancelTextProgress": "Veuillez attendre la progression de l'annulation"
     }
 }

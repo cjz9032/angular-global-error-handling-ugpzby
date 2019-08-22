@@ -111,58 +111,54 @@ export class WifiHomeViewModel {
 				this.homeStatus = value;
 			}
 		});
-		try {
-			this.wifiSecurity = wifiSecurity;
-			if (wifiSecurity.state) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
-				}
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
-			} else if (cacheWifiSecurityState) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
-				}
+		this.wifiSecurity = wifiSecurity;
+		if (wifiSecurity && wifiSecurity.state) {
+			if (wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
 			}
-			if (wifiSecurity.wifiHistory) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
-				this.allHistorys = wifiSecurity.wifiHistory;
-				this.allHistorys = this.mappingHistory(this.allHistorys);
-				if (this.allHistorys.length > 4) {
-						this.hasMore = true;
-				} else {
-					this.hasMore = false;
-				}
-				this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
-				commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-				this.historys = this.mappingHistory(this.historys);
-			} else if (cacheWifiSecurityHistory) {
-				this.allHistorys = cacheWifiSecurityHistory;
-				this.allHistorys = this.mappingHistory(this.allHistorys);
-				if (this.allHistorys.length > 4) {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
+		} else if (cacheWifiSecurityState) {
+			if (wifiSecurity && wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
+			}
+		}
+		if (wifiSecurity && wifiSecurity.wifiHistory) {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
+			this.allHistorys = wifiSecurity.wifiHistory;
+			this.allHistorys = this.mappingHistory(this.allHistorys);
+			if (this.allHistorys.length > 4) {
 					this.hasMore = true;
-				} else {
-					this.hasMore = false;
-				}
-				this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
-				commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-				this.historys = this.mappingHistory(this.historys);
+			} else {
+				this.hasMore = false;
 			}
-			if (homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {
-				this.tryNowEnable = true;
-				this.tryNowUrl = homeProtection.chsConsoleUrl;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, homeProtection.chsConsoleUrl);
-			} else if (cacheWifiSecurityChsConsoleUrl && cacheWifiSecurityChsConsoleUrl !== '') {
-				this.tryNowEnable = true;
-				this.tryNowUrl = cacheWifiSecurityChsConsoleUrl;
+			this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+			this.historys = this.mappingHistory(this.historys);
+		} else if (cacheWifiSecurityHistory) {
+			this.allHistorys = cacheWifiSecurityHistory;
+			this.allHistorys = this.mappingHistory(this.allHistorys);
+			if (this.allHistorys.length > 4) {
+				this.hasMore = true;
+			} else {
+				this.hasMore = false;
 			}
-			if (homeProtection.status) {
-				this.homeStatus = homeProtection.status;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, homeProtection.status);
-			} else if (cacheHomeStatus) {
-				this.homeStatus = cacheHomeStatus;
-			}
-		} catch (err) {
-			console.log(`${err}`);
+			this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+			this.historys = this.mappingHistory(this.historys);
+		}
+		if (homeProtection && homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {
+			this.tryNowEnable = true;
+			this.tryNowUrl = homeProtection.chsConsoleUrl;
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, homeProtection.chsConsoleUrl);
+		} else if (cacheWifiSecurityChsConsoleUrl && cacheWifiSecurityChsConsoleUrl !== '') {
+			this.tryNowEnable = true;
+			this.tryNowUrl = cacheWifiSecurityChsConsoleUrl;
+		}
+		if (homeProtection && homeProtection.status) {
+			this.homeStatus = homeProtection.status;
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, homeProtection.status);
+		} else if (cacheHomeStatus) {
+			this.homeStatus = cacheHomeStatus;
 		}
 	}
 
@@ -193,27 +189,23 @@ export class SecurityHealthViewModel {
 
 	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, public translate: TranslateService, private ngZone: NgZone) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture);
-		try {
-			if (wifiSecurity.state) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
-					commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
-				}
-			} else if (cacheWifiSecurityState) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
-				}
-				// this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
+		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture)
+		if (wifiSecurity && wifiSecurity.state) {
+			if (wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
 			}
-			if (homeProtection.devicePosture) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection.devicePosture);
-				this.createHomeDevicePosture(homeProtection.devicePosture);
-			} else if (cacheHomeDevicePosture) {
-				this.createHomeDevicePosture(cacheHomeDevicePosture);
+		} else if (cacheWifiSecurityState) {
+			if (wifiSecurity && wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
 			}
-		} catch (err) {
-			console.log(`${err}`);
+			// this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
+		}
+		if (homeProtection && homeProtection.devicePosture) {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection.devicePosture);
+			this.createHomeDevicePosture(homeProtection.devicePosture);
+		} else if (cacheHomeDevicePosture) {
+			this.createHomeDevicePosture(cacheHomeDevicePosture);
 		}
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
 			if (value) {

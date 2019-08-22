@@ -2328,7 +2328,8 @@
             "description": "Toinen tarkistus on jo ajoitettu samaan aikaan ja samalle päivälle!",
             "error": "Virhe",
             "delete": "Poista",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Huomautus: Ajoitettuja tarkistuksia ei suoriteta virransäästötilassa",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Korjaa vialliset sektorit",
@@ -2371,12 +2372,12 @@
             "description": "Kun otat mukautetun akun varauksen käyttöön, laitteen akku pysyy toimintakunnossa pitempään. Akun varauksen kesto käytön aikana kuitenkin lyhenee, koska akku ei lataudu täyteen. Jotta voit ottaa tämän toiminnon täysin käyttöön, irrota laite ja anna akun tyhjentyä latauksen lopettamisen kynnysarvoon asti tai sen alle.",
             "enable": "Ota käyttöön"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Päivitä moduulit",
+        "completed": "Valmis",
+        "notCompleted": "Kesken",
+        "yes": "Kyllä",
+        "attention": "Huomio:",
+        "cancelTextPrompt": "Haluatko varmasti peruuttaa?",
+        "cancelTextProgress": "Odota, kunnes peruutus on meneillään"
     }
 }

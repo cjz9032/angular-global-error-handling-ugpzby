@@ -37,6 +37,9 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 		const delay = setInterval(() => {
 			if (this.item) {
 				this.calcHeight();
+				if (this.item.Category && this.item.Category.length > 0 && this.item.Category[0].Id) {
+					this.itemCategory = this.item.Category[0].Id;
+				}
 				clearInterval(delay);
 			}
 		}, 100);

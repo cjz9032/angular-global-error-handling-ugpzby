@@ -39,7 +39,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	@Input() wifiIsShowMore: string;
-	isShowMore = true; // less info, more info
+	isShowMore = false; // less info, more info
 	isShowMoreLink = true; // show more link
 	region: string;
 	isWifiSecurityEnabled = true;
@@ -78,37 +78,17 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	}
 
 	enableWifiSecurity(): void {
-		try {
-			if (this.data.wifiSecurity) {
-				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-					if (res === true) {
-						this.data.isLWSEnabled = true;
-					} else {
-						this.data.isLWSEnabled = false;
-					}
-					this.data.homeProtection.refresh();
-				}, (error) => {
-					this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-				});
-			}
-		} catch {
-			throw new Error('wifiSecurity is null');
-		}
-	}
-
-	disableWifiSecurity(): void {
-		try {
-			if (this.data.wifiSecurity) {
-				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-					if (res === true) {
-						this.data.isLWSEnabled = false;
-					} else {
-						this.data.isLWSEnabled = true;
-					}
-				});
-			}
-		} catch {
-			throw new Error('wifiSecurity is null');
+		if (this.data && this.data.wifiSecurity) {
+			this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+				if (res === true) {
+					this.data.isLWSEnabled = true;
+				} else {
+					this.data.isLWSEnabled = false;
+				}
+				this.data.homeProtection.refresh();
+			}, (error) => {
+				this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+			});
 		}
 	}
 

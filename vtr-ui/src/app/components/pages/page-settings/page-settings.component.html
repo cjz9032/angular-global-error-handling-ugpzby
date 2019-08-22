@@ -9,24 +9,24 @@
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
-			<div class="row">
+			<div class="row vtr-page-left-column">
 				<div class="col-lg-2 col-sm-12"></div>
-				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
+				<div class="col-lg-8 col-sm-12 settings-main-column">
 					<div class="subpage-settings vtr-subpage">
 						<div class="row">
 							<div class="col-11">
 								<vtr-ui-header-subpage [title]="'settings.settings' | translate"
 									[caption]="'settings.settingsDescription' | translate"
-									*ngIf="!deviceService.isArm">
+									*ngIf="!deviceService.isArm && !deviceService.isSMode">
 								</vtr-ui-header-subpage>
 								<vtr-ui-header-subpage [title]="'settings.settings' | translate"
-								*ngIf="deviceService.isArm">
+								*ngIf="deviceService.isArm || deviceService.isSMode">
 								</vtr-ui-header-subpage>
 							</div>
 						</div>
 
 						<div class="row py-5"
-							*ngIf="!deviceService.isArm"
+							*ngIf="!deviceService.isArm && !deviceService.isSMode"
 							id="settings-messages">
 							<div class="col-10 mx-auto ">
 								<vtr-container-collapsible
@@ -36,10 +36,11 @@
 									<ul class="list-group list-group-flush"
 										*ngIf="isMessageSettings">
 										<li>
-											<vtr-ui-row-switch id="settings-appFeatures"
-											aria-label="settings-appFeatures"
-											[title]="'settings.appFeatures' | translate"
+											<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
 												[name]="'AppFeaturesToggle'"
+												[switchId]="'settingsAppFeaturesToggle'"
+												id="settings-appFeaturesToggle"
+												aria-label="settings-appFeatures"
 												[caption]="'settings.appFeaturesDescription' | translate"
 												[isSwitchVisible]=true
 												[leftIcon]="messageSettings[0].leftImageSource"
@@ -51,6 +52,7 @@
 										<li>
 											<vtr-ui-row-switch [title]="'settings.marketing' | translate"
 												[name]="'MarketingToggle'"
+												[switchId]="'settingsMarketingToggle'"
 												id="settings-marketingToggle"
 												aria-label="settings-marketingToggle"
 												[caption]="'settings.marketingDescription' | translate"
@@ -64,6 +66,7 @@
 										<li>
 											<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
 												[name]="'ActionTriggeredToggle'"
+												[switchId]="'settingsActionTriggeredToggle'"
 												id="settings-actionTriggeredToggle"
 												aria-label="settings-actionTriggeredToggle"
 												[caption]="'settings.actionTriggeredDescription' | translate"
@@ -91,7 +94,8 @@
 									<ul class="list-group list-group-flush">
 										<li *ngIf="isToggleUsageStatistics">
 											<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
-												[name]="'UsageStatisticsToggle'"
+												[name]="'settingsUsageStatisticsToggle'"
+												[switchId]="'settingsUsageStatisticsToggle'"
 												id="settings-usageStatisticsToggle"
 												aria-label="settings-usageStatisticsToggle"
 												[caption]="'settings.usageStatisticsDescription' | translate"
