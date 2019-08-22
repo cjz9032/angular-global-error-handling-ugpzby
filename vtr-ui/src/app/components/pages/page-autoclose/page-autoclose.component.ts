@@ -22,6 +22,7 @@ export class PageAutocloseComponent implements OnInit {
 	// Toggle status
 	toggleStatus: boolean;
 	needToAsk: any;
+	getNeedStatus: boolean;
 	autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
 	needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
 
@@ -80,9 +81,6 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	openTargetModal() {
-		this.loadingContent.loading = true;
-		this.refreshAutoCloseList();
-		this.refreshRunningList();
 		try {
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 			this.hiddenScroll(true);
@@ -102,8 +100,7 @@ export class PageAutocloseComponent implements OnInit {
 		const status = event.target.checked;
 		try {
 			console.log('Set successfully ------------------------>', !status);
-			this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
-			this.needToAsk = !status;
+			this.getNeedStatus = !status;
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -116,6 +113,8 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	initNotNowAction(notNowStatus: boolean) {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
@@ -128,6 +127,7 @@ export class PageAutocloseComponent implements OnInit {
 	modalCloseAddApps(action: boolean) {
 		this.showAppsModal = action;
 		this.hiddenScroll(false);
+		this.refreshRunningList();
 		this.refreshRunningList();
 	}
 
@@ -210,6 +210,7 @@ export class PageAutocloseComponent implements OnInit {
 			if (response) {
 				// this.autoCloseAppList.splice(appData.index, 1);
 				this.refreshAutoCloseList();
+				this.refreshRunningList();
 				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 			}
 		});

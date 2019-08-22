@@ -14,8 +14,8 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 	@Input() runningListData: any[];
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
 	@Output() addAppToList = new EventEmitter<boolean>();
-	public loading: boolean;
-	public loadingNoApps: boolean;
+	public loading = true;
+	public loadingNoApps = false;
 	constructor() { }
 
 	ngOnInit() {
