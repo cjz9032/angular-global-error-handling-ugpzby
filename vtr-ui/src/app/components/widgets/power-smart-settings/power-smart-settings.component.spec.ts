@@ -9,7 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
 
-describe('PowerSmartSettingsComponent', () => {
+xdescribe('PowerSmartSettingsComponent', () => {
 	let component: PowerSmartSettingsComponent;
 	let fixture: ComponentFixture<PowerSmartSettingsComponent>;
 	let debugElement;

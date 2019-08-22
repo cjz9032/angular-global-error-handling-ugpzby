@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NetworkboostTurnOnComponent } from './networkboost-turn-on.component';
 
-describe('NetworkboostTurnOnComponent', () => {
+xdescribe('NetworkboostTurnOnComponent', () => {
   let component: NetworkboostTurnOnComponent;
   let fixture: ComponentFixture<NetworkboostTurnOnComponent>;
 

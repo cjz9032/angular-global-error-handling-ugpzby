@@ -1116,7 +1116,8 @@
 					},
 					"topRowFunctions": {
 						"title": "Keyboard top-row function",
-						"advSettings": "Advanced settings",
+						"showAdvSettings": "SHOW ADVANCED SETTINGS",
+						"hideAdvSettings": "HIDE ADVANCED SETTINGS",
 						"description": "The top row of the keyboard provides the following two functions. Select the one you want:",
 						"subSection": {
 							"description": "To switch the above two functions, press Fn+Esc.",
@@ -1134,7 +1135,7 @@
 							"description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
 							"radioButton": {
 								"nMehod": "Normal method",
-								"fnKeyMehod": "Fn Sticky key method"
+								"fnKeyMehod": "Fn Sticky Key method"
 							},
 							"note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
 						},

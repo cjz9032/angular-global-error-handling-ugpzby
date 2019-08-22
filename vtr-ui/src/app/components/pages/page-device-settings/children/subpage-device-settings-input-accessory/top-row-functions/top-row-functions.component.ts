@@ -8,10 +8,7 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 })
 export class TopRowFunctionsComponent implements OnInit {
 
-	public isHotKeys = true;
-	public isFnKeys = false;
-	public stickyFunStatus = false;
-	public capabilitiesObj: any = {};
+	public topRowKeyObj: any = {};
 	public showAdvancedSection = false;
 
 	constructor(private keyboardService: InputAccessoriesService) { }
@@ -28,14 +25,19 @@ export class TopRowFunctionsComponent implements OnInit {
 					this.keyboardService.getTopRowFnStickKeyCapability(),
 					this.keyboardService.getTopRowPrimaryFunctionCapability(),
 				]).then((response: any[]) => {
-					this.capabilitiesObj = {
+					this.topRowKeyObj = {
 						fnLockCap: response[0],
 						stickyFunCap: response[1],
 						primaryFunCap: response[2]
 					};
-					console.log('promise all resonse  here ------------->', this.capabilitiesObj);
 					if (response[0]) {
 						this.getStatusOfFnLock();
+					}
+					if (response[1]) {
+						this.getStatusOfStickyFun();
+					}
+					if (response[2]) {
+						this.getStatusOfPrimaryFun();
 					}
 				});
 			}
@@ -43,22 +45,36 @@ export class TopRowFunctionsComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+
 	public getStatusOfFnLock() {
 		this.keyboardService.getFnLockStatus().then(res => {
-			console.log('getFnLockStatus------------>', res);
+			this.topRowKeyObj.fnLockStatus = res;
+		});
+	}
+	public getStatusOfStickyFun() {
+		this.keyboardService.getFnStickKeyStatus().then(res => {
+			this.topRowKeyObj.stickyFunStatus = res;
+		});
+	}
+	public getStatusOfPrimaryFun() {
+		this.keyboardService.getPrimaryFunctionStatus().then(res => {
+			this.topRowKeyObj.primaryFunStatus = res;
 		});
 	}
 
-	public onChanggeKeyType(event: any, value: string) {
-		if (value === '1') {
-			this.isHotKeys = true;
-			this.isFnKeys = false;
-		} else {
-			this.isHotKeys = false;
-			this.isFnKeys = true;
-		}
+	public onChangeFunType(value: boolean) {
+		this.keyboardService.setFnLock(value).then(res => {
+		});
 	}
-	public onStickyFunToggle(event: any) {
-		this.stickyFunStatus = event.switchValue;
+	public onChangeKeyType(value: boolean) {
+		this.topRowKeyObj.stickyFunStatus = value;
+		this.keyboardService.setFnStickKeyStatus(value).then(res => {
+		});
+	}
+	public rebootToggleOnOff(event) {
+		console.log('onPrimaryFunToggle log here------->', event.switchValue);
+		this.keyboardService.setPrimaryFunction(event.switchValue).then(res => {
+			console.log('onPrimaryFunToggle log here------->', res);
+		});
 	}
 }
