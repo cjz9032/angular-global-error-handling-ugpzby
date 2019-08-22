@@ -159,5 +159,7 @@ export enum LocalStorageKey {
 	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
 	BetaUser = '[LocalStorageKey] BetaUser',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
-	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability'
+	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
+	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
+	EasyResumeCapability = '[LocalStorageKey] EasyResumeCapability'
 }
