@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WidgetRecoverBadSectorsComponent } from './widget-recover-bad-sectors.component';
 
-describe('WidgetRecoverBadSectorsComponent', () => {
+xdescribe('WidgetRecoverBadSectorsComponent', () => {
   let component: WidgetRecoverBadSectorsComponent;
   let fixture: ComponentFixture<WidgetRecoverBadSectorsComponent>;
 

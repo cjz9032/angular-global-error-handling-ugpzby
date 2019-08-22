@@ -11,7 +11,7 @@ const gamingSystemUpdateServiceMock = jasmine.createSpyObj('GamingSystemUpdateSe
 const gamingKeyLockServiceMock = jasmine.createSpyObj('GamingKeyLockService', ['isShellAvailable', 'getKeyLockStatus']);
 const gamingHybridModeServiceMock = jasmine.createSpyObj('GamingHybridModeService', ['isShellAvailable', 'getHybridModeStatus']);
 
-describe('WidgetLegionEdgeComponent', () => {
+xdescribe('WidgetLegionEdgeComponent', () => {
   let component: WidgetLegionEdgeComponent;
   let fixture: ComponentFixture<WidgetLegionEdgeComponent>;
   gamingSystemUpdateServiceMock.isShellAvailable.and.returnValue(true);
