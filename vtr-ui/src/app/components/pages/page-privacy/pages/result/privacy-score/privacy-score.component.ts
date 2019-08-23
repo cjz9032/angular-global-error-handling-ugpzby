@@ -55,8 +55,15 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		]).pipe(
 			takeUntil(instanceDestroyed(this)),
 		).subscribe(([score, isFirstTimeVisitor]) => {
-			isFirstTimeVisitor ? this.setDataAccordingToScore(0) : this.setDataAccordingToScore(score);
-			this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
+			if (isFirstTimeVisitor) {
+				this.setDataAccordingToScore(0);
+			}
+
+			if (!isFirstTimeVisitor) {
+				this.setDataAccordingToScore(score);
+				this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
+			}
+
 			this.changeDetectorRef.detectChanges();
 		});
 	}
@@ -65,7 +72,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	}
 
 	setDataAccordingToScore(score) {
-		const { privacyLevel, title, text } = this.privacyScoreService.getStaticDataAccordingToScore(score);
+		const {privacyLevel, title, text} = this.privacyScoreService.getStaticDataAccordingToScore(score);
 		this.score = score;
 		this.privacyLevel = privacyLevel;
 		this.title = title;
