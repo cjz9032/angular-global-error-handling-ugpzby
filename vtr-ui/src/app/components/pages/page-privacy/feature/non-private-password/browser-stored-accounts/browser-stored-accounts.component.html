@@ -1,6 +1,6 @@
 <div *ngFor="let browser of installedBrowsers?.browserData; trackBy: trackByBrowser; let i = index">
 	<vtr-installed-browser
-		*ngIf="nonPrivatePasswordCount > 0"
+		*ngIf="!isNonPrivatePasswordWasScanned || browser.accountsCount > 0"
 		[installedBrowser]="browser"
 		[showDetailAction]="inputData.showDetailAction"
 		[index]="i"
