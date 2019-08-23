@@ -2,6 +2,10 @@
 
 $triangleSize: 10px;
 
+:host {
+	display: flex;
+}
+
 .tooltip-fg {
 	position: relative;
 
