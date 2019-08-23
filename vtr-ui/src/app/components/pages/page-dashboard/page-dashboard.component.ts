@@ -166,7 +166,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 								source: record.Title,
 								title: record.Description,
 								url: record.FeatureImage,
-								ActionLink: record.ActionLink
+								ActionLink: record.ActionLink,
+								ActionType: record.ActionType
 							};
 						});
 						if (heroBannerItems && heroBannerItems.length) {
@@ -237,7 +238,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	onFeedbackModal() {
 		this.modalService.open(FeedbackFormComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'feedback-modal'

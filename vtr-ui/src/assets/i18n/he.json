@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "קלט ועזרים",
                 "subtitle": "הגדרות קלט ועזרים",
-                "description": "החישה החכמה של Lenovo משלבת חיישנים שונים של המחשב כדי לזהות את הפעילויות שלכם ולכוונן הגדרות לצורך ניהול צריכת חשמל אופטימלית",
+                "description": "סעיף זה מאפשר לך להגדיר את פונקציות המקלדת והעכבר הנפוצות ביותר. גלה תכונות נוספות כאן.",
                 "inputAccessory": {
                     "title": "מקלדת חכמה",
                     "hiddenKeyboardFunctions": {
@@ -1113,6 +1113,36 @@
                         "tittle": "Fn + מקש רווח",
                         "description": "שינוי מצבי תאורה אחורית של המקלדת",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Keyboard top-row function",
+                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "subSection": {
+                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIAL FUNCTION",
+                                "fnKey": "F1-F12 FUNCTION"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Reversing the default primary function",
+                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                        },
+                        "subSectionThree": {
+                            "title": "How to use Fn key combinations",
+                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "radioButton": {
+                                "nMehod": "Normal method",
+                                "fnKeyMehod": "Fn Sticky key method"
+                            },
+                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                        },
+                        "popup": {
+                            "title": "Restart computer",
+                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
+                            "reboot": "REBOOT",
+                            "cancel": "NOT NOW"
+                        }
                     }
                 },
                 "userDefinedKey": {
@@ -2329,7 +2359,7 @@
             "error": "שגיאה",
             "delete": "מחק",
             "warningBatterySaver": "הערה: סריקות מתוזמנות לא יבוצעו במצב חיסכון בסוללה",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+            "scheduleIntervalLimit": "סריקה נוספת כבר נקבעה בטווח זמן של עשר דקות. בחר זמן אחר."
         },
         "recoverBadSectors": {
             "title": "שחזור סקטורים פגומים",
@@ -2378,6 +2408,7 @@
         "yes": "כן",
         "attention": "שימו לב",
         "cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?",
-        "cancelTextProgress": "המתינו לביצוע הביטול"
+        "cancelTextProgress": "המתינו לביצוע הביטול",
+        "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה."
     }
 }

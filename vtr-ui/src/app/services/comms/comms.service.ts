@@ -22,16 +22,13 @@ export class CommsService {
 
 	endpointGetCall(endpoint, queryParams: any = {}, httpOptions: any = {}) {
 		const url = (this.serverSwitchLocalData && this.serverSwitchLocalData.forceit && this.serverSwitchLocalData.forceit === true ?
-			this.serverSwitchLocalData.cmsserver.Value : this.env.cmsApiRoot) + endpoint;
+			this.serverSwitchLocalData.cmsserver : this.env.cmsApiRoot) + endpoint;
 
 		const httpQueryParams = new HttpParams({
 			fromObject: queryParams
 		});
 
 		httpOptions.params = httpQueryParams;
-
-		this.devService.writeLog('API GET ENDPOINT: ', url);
-		this.devService.writeLog('params: ', httpOptions.params);
 		this.devService.writeLog('API GET ENDPOINT complete: ', url + '?' + httpOptions.params);
 		return this.http.get(url, httpOptions);
 	}
