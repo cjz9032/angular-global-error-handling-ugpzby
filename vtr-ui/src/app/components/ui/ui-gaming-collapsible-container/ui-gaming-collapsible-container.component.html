@@ -1,6 +1,6 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" attr.aria-label="gaming-drop" (click)="toggleOptions(options)">
+		<a class="dropdown-toggle" id="gaming-drop" attr.aria-label="gaming-drop" (click)="toggleOptions(options)" tabindex="0">
 			<span *ngFor="let option of options.dropOptions"
 				[ngStyle]="{display: option.value != options.curSelected? 'none':''}">
 				{{option.name  | translate}}
