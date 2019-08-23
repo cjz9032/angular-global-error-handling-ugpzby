@@ -16,12 +16,12 @@
 		</div>
 		<div class="sidebar-install-widget__button-group">
 			<button class="sidebar-install-widget__button sidebar-install-widget__button--transparent"
+					vtrOfflineMode
 					vtrOpenFigleafInstaller
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
-					[metricsItem]="'InstallButton'"
-					vtrOfflineMode>
-				{{primaryButtonText}}
+					[metricsItem]="'InstallButton'">
+				{{primaryButtonText | changeActionButtonText | async}}
 			</button>
 			<div class="sidebar-install-widget__button-link">
 				<a class="sidebar-install-widget__show-more"

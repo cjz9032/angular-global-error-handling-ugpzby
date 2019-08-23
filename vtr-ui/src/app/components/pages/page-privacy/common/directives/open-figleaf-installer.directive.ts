@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Directive, HostListener, OnDestroy } from '@angular/core';
 import { VantageCommunicationService } from '../services/vantage-communication.service';
 import { TaskActionWithTimeoutService, TasksName } from '../services/analytics/task-action-with-timeout.service';
 import { CommonService } from '../../../../../services/common/common.service';
@@ -9,16 +9,14 @@ import { CommunicationWithFigleafService } from '../../utils/communication-with-
 @Directive({
 	selector: '[vtrOpenFigleafInstaller]'
 })
-export class OpenFigleafInstallerDirective implements OnDestroy, AfterViewInit {
-	currentText = '';
-
+export class OpenFigleafInstallerDirective implements OnDestroy {
 	constructor(
 		private vantageCommunicationService: VantageCommunicationService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private commonService: CommonService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private elem: ElementRef
-	) {	}
+	) {
+	}
 
 	@HostListener('click', ['$event']) onClick($event) {
 		if (!this.commonService.isOnline) {
@@ -29,7 +27,8 @@ export class OpenFigleafInstallerDirective implements OnDestroy, AfterViewInit {
 			take(1),
 			filter((isFigleafNotOnboarded) => isFigleafNotOnboarded),
 			switchMap(() => this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:')),
-		).subscribe(() => {});
+		).subscribe(() => {
+		});
 
 		this.communicationWithFigleafService.isFigleafNotOnboarded$.pipe(
 			take(1),
@@ -44,20 +43,7 @@ export class OpenFigleafInstallerDirective implements OnDestroy, AfterViewInit {
 		);
 	}
 
-	ngAfterViewInit() {
-		this.currentText = this.elem.nativeElement.innerText;
-
-		this.communicationWithFigleafService.isFigleafNotOnboarded$.pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((isFigleafNotOnboarded) => {
-			this.elem.nativeElement.innerText = !isFigleafNotOnboarded ? this.currentText : this.changeText(this.currentText, 'open', 'install');
-		});
-	}
-
 	ngOnDestroy() {
 	}
 
-	private changeText(currentText: string, newText: string, oldText: string) {
-		return currentText.toLowerCase().replace(oldText, newText);
-	}
 }

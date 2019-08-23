@@ -14,7 +14,7 @@
 				   vtrSendAnalytics
 				   [metricsEvent]="'ItemClick'"
 				   [metricsItem]="'InstallButton'">
-					Install
+					{{'Install' | changeActionButtonText | async}}
 				</a>
 			</div>
 			<div class="try-product__button-link try-product__button-link--to-right">

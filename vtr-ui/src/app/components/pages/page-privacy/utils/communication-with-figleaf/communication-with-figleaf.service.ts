@@ -19,7 +19,6 @@ export interface MessageFromFigleaf {
 
 export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new ReplaySubject(1);
-	isFigleafUninstalled$ = new ReplaySubject(1);
 	private isFigleafReadyForCommunication = new BehaviorSubject<boolean>(false);
 	isFigleafReadyForCommunication$ = this.isFigleafReadyForCommunication.pipe(distinctUntilChanged());
 
