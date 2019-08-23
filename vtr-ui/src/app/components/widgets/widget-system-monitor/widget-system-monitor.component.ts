@@ -4,12 +4,12 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
-import { SystemStatus } from 'src/app/data-models/gaming/system-status.model'
+import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 
 @Component({
 	selector: 'app-widget-system-monitor',
 	templateUrl: './widget-system-monitor.component.html',
-	styleUrls: ['./widget-system-monitor.component.scss']
+	styleUrls: [ './widget-system-monitor.component.scss' ]
 })
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuUseFrequency: string;
@@ -39,29 +39,30 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public loop: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
 	public SystemStatusObj: any = new SystemStatus();
-	@Input() cpuCurrent = .4;
+	@Input() cpuCurrent = 0.4;
 	@Input() cpuMax = 2.2;
 	@Input() gpuCurrent = 1.8;
 	@Input() gpuMax = 3.3;
 	@Input() ramCurrent = 15.7;
 	@Input() ramMax = 32;
 	public hds: any = [];
-	public defaultHds = [{
-		capacity: 476,
-		diskUsage: '14',
-		hddName: 'LENSE30512GMSP34MEAT3TA',
-		isSystemDisk: 'true',
-		type: 'SSD',
-		usedDisk: 71
-	}];
+	public defaultHds = [
+		{
+			capacity: 476,
+			diskUsage: '14',
+			hddName: 'LENSE30512GMSP34MEAT3TA',
+			isSystemDisk: 'true',
+			type: 'SSD',
+			usedDisk: 71
+		}
+	];
 
 	constructor(
 		private hwInfoService: HwInfoService,
 		private commonService: CommonService,
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private gamingCapabilityService: GamingAllCapabilitiesService
-
-	) { }
+	) {}
 
 	// CPU Panel Data
 	GetcpuBaseFrequencyCache(): any {
@@ -74,7 +75,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuCapacity);
 	}
 	SetcpuCapacityCache(cpuCapacityCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuCapacity, cpuCapacityCache)
+		this.commonService.setLocalStorageValue(LocalStorageKey.cpuCapacity, cpuCapacityCache);
 	}
 	GetcpuUsageCache(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuUsage);
@@ -181,7 +182,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.isSystemDisk, isSystemDisk);
 	}
 
-
 	public getLocalSystemCache() {
 		if (this.GetcpuBaseFrequencyCache() !== undefined) {
 			this.cpuCurrent = this.GetcpuBaseFrequencyCache();
@@ -237,16 +237,12 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		if (this.GethddNameCache() !== undefined) {
 			this.hddName = this.GethddNameCache();
 		}
-
-
 	}
 	public async getDynamicInfoService() {
 		try {
 			const hwInfo = await this.hwInfoService.getDynamicInformation();
 			this.formDynamicInformation(hwInfo);
-		} catch (err) {
-			console.log(`ERROR in getDynamicInfoService() of  widget-system-monitor.component`, err);
-		}
+		} catch (err) {}
 	}
 
 	public formDynamicInformation(hwInfo: any) {
@@ -262,7 +258,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			}
 			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
-
 			}
 
 			this.SystemStatusObj.cpuBaseFrequency = this.cpuCurrent;
@@ -280,9 +275,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.SystemStatusObj.ramUsage = hwInfo.memoryUsage;
 			this.initialiseDisksList(hwInfo.diskList);
 			this.setFormDynamicInformationCache(hwInfo);
-		} catch (err) {
-			console.log(`ERROR in formDynamicInformation() of widget-system-monitor.component`, err);
-		}
+		} catch (err) {}
 	}
 
 	public initialiseDisksList(diskList: any[] = []) {
@@ -321,7 +314,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public getMachineInfoService() {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
-				console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 				if (hwInfo.cpuBaseFrequence !== '') {
 					this.cpuMax = hwInfo.cpuBaseFrequence;
 				}
@@ -350,9 +342,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.SystemStatusObj.ramOver = this.ramOver;
 				this.commonService.setLocalStorageValue(LocalStorageKey.ramOver, this.ramOver);
 			});
-		} catch (error) {
-			console.error(error.message);
-		}
+		} catch (error) {}
 	}
 
 	convertToBoolean(input: string): boolean | undefined {
@@ -402,8 +392,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		if (pct > 1) {
 			pct = 1;
 		}
-		const deg = parseFloat((360 * (pct - .5)).toFixed(1));
-		if (pct > .5) {
+		const deg = parseFloat((360 * (pct - 0.5)).toFixed(1));
+		if (pct > 0.5) {
 			return deg;
 		} else {
 			return 0;
@@ -422,8 +412,12 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	getStackHeight(pct) {
-		if (pct > 100) { pct = 100; }
-		if (pct < 0) { pct = 0; }
+		if (pct > 100) {
+			pct = 100;
+		}
+		if (pct < 0) {
+			pct = 0;
+		}
 		const height = 100 - pct;
 		return height;
 	}
@@ -438,7 +432,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	getFloorPct(current, max) {
-		const pct = Math.floor((current / max) * 100);
+		const pct = Math.floor(current / max * 100);
 		return pct;
 	}
 }

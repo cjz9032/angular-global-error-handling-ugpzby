@@ -75,8 +75,6 @@ export class PageAutocloseComponent implements OnInit {
 		this.refreshRunningList();
 		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
 		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
-		console.log('first need status', this.needToAsk);
-
 	}
 
 	openTargetModal() {
@@ -94,18 +92,16 @@ export class PageAutocloseComponent implements OnInit {
 				this.showAppsModal = true;
 			}
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
 	doNotShowAction(event: any) {
 		const status = event.target.checked;
 		try {
-			console.log('Set successfully ------------------------>', !status);
 			this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
 			this.needToAsk = !status;
 		} catch (error) {
-			console.error(error.message);
 		}
 	}
 
@@ -162,7 +158,7 @@ export class PageAutocloseComponent implements OnInit {
 				}
 			});
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
@@ -178,33 +174,25 @@ export class PageAutocloseComponent implements OnInit {
 		} catch (error) {
 			const noAppsRunning = this.runningList.length === 0 ? true : false;
 			this.loadingContent = { loading: false, noApps: noAppsRunning };
-			console.error(error.message);
 		}
 	}
 
 	public addAppDataToList(event: any) {
-		console.log(event.target.checked);
-		console.log(event.target.value);
 		if (event.target.checked) {
 			const addApp = event.target.value;
 			try {
 				this.gamingAutoCloseService.addAppsAutoCloseList(addApp).then((success: any) => {
-					console.log('Added successfully ------------------------>', success);
 					if (success) {
 						this.refreshAutoCloseList();
-						// this.refreshRunningList();
 					}
 				});
 			} catch (error) {
-				console.error(error.message);
 			}
 		}
 	}
 
 	deleteAppFromList(appData: any) {
-		console.log(appData);
 		this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
-			console.log('Deleted successfully ------------------------>', response);
 			if (response) {
 				this.autoCloseAppList.splice(appData.index, 1);
 				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);

@@ -54,11 +54,8 @@ xdescribe('WidgetSystemMonitorComponent', () => {
 	it('should update the lightining features for single color', fakeAsync(() => {
 		component.getDynamicInfoService();
 		fixture.detectChanges();
-		// component.uhwinfo = {};
 		gamingHwinfoMock.getDynamicInformation.and.returnValue(Promise.resolve());
-		// console.log('testing result----', component.uhwinfo);
 		tick(10);
-		// expect(Object.keys(component.uhwinfo).length).toBeGreaterThanOrEqual(1);
 	}));
 
 });
