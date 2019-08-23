@@ -13,6 +13,7 @@ import { isUndefined } from 'util';
 import { Options } from 'src/app/data-models/gaming/lighting-options';
 import { LightEffectComplexType } from 'src/app/enums/light-effect-complex-type';
 import { LightEffectRGBFeature, LightEffectSingleOrComplex } from 'src/app/enums/light-effect-rgbfeature';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-ui-lighting-profile',
@@ -267,15 +268,22 @@ export class UiLightingProfileComponent implements OnInit {
 	public imagePath = './../../../../assets/images/gaming/lighting';
 	public panelImage1: string;
 	public panelImage2: string;
-
+	defaultLanguage: any;
 	constructor(
 		private gamingLightingService: GamingLightingService,
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private deviceService: DeviceService
 	) { }
 
 	ngOnInit() {
 		console.log('id----------------------------------', this.currentProfileId);
+		this.deviceService
+			.getMachineInfo()
+			.then((value: any) => {
+				this.defaultLanguage = value.locale;
+			});
+			console.log('default language is ----------------------------------', this.defaultLanguage);
 		this.isProfileOff = false;
 		if (LocalStorageKey.LightingCapabilities !== undefined) {
 			console.log('LocalStorageKey.LightingCapabilities----------------------------------');

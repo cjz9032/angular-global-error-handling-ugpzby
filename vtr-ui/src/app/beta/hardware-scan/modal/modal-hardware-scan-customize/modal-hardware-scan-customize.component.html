@@ -12,11 +12,11 @@
 		<div class="errorMessage">{{ errorMessage }}</div>
 	</div>
 
-	<vtr-ui-hardware-list-test [items]="items"></vtr-ui-hardware-list-test>
+	<vtr-ui-hardware-list-test [items]="items" (selectAny)="receiveSelect()"></vtr-ui-hardware-list-test>
 
 	<div class="row">
 		<div class="col button-row">
-			<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsParent="hardware-scan" (click)="onClickRun()">{{ buttonText }}</button>
+			<button class="action-button" vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan" (click)="onClickRun()">{{ buttonText }}</button>
 		</div>
 	</div>
 </div>

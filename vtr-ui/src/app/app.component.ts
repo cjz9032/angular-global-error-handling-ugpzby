@@ -20,6 +20,8 @@ import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
+import { DeviceInfo } from './data-models/common/device-info.model';
+import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
 
 
 declare var Windows;
@@ -30,12 +32,12 @@ declare var Windows;
 	providers: [TimerService]
 })
 export class AppComponent implements OnInit {
-	title = 'vtr-ui';
-
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
 	private metricsClient: any;
+	private beta;
+
 	constructor(
 		private displayService: DisplayService,
 		private router: Router,
@@ -50,15 +52,27 @@ export class AppComponent implements OnInit {
 		private timerService: TimerService,
 		private languageService: LanguageService
 	) {
-		// to check web version in browser
+		// to check web and js bridge version in browser console
 		const win: any = window;
 		win.webAppVersion = {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
-		if (vantageShellService.isShellAvailable && !this.commonService.haveLocalStorageKey(LocalStorageKey.BetaUser)) {
-			this.commonService.isBetaUser().then((result) => {
-				if (result === 0 || result === 3) {
+		if (vantageShellService.isShellAvailable) {
+			this.beta = vantageShellService.getBetaUser();
+			this.beta.getBetaUser().then((result) => {
+				if (!result) {
+					if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+						this.commonService.isBetaUser().then((data) => {
+							if (data === 0 || data === 3) {
+								this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+								this.beta.setBetaUser();
+							}
+						});
+					} else {
+						this.beta.setBetaUser();
+					}
+				} else {
 					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
 				}
 			});
@@ -268,8 +282,15 @@ export class AppComponent implements OnInit {
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 
-					if (!this.languageService.isLanguageLoaded) {
+					// update DeviceInfo values in case user switched language
+					const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+					const isLocaleSame = (cachedDeviceInfo && cachedDeviceInfo.locale === value.locale);
+
+					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
 						this.languageService.useLanguageByLocale(value.locale);
+						cachedDeviceInfo.isGamingDevice = value.isGaming;
+						cachedDeviceInfo.locale = value.locale;
+						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 
 					this.setFirstRun(value);
@@ -285,7 +306,9 @@ export class AppComponent implements OnInit {
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
-			this.languageService.useLanguage();
+			if (!this.languageService.isLanguageLoaded) {
+				this.languageService.useLanguage();
+			}
 		}
 	}
 
@@ -344,7 +367,7 @@ export class AppComponent implements OnInit {
 					serverSwitchLocalData.forceit = true;
 					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
-					let langCode = serverSwitchLocalData.language.Value.toLowerCase();
+					const langCode = serverSwitchLocalData.language.Value.toLowerCase();
 					/* const langMap = {
 						'zh-hant': 'zh-Hant',
 						'zh-hans': 'zh-Hans',
@@ -443,18 +466,4 @@ export class AppComponent implements OnInit {
 			$event.preventDefault();
 		}
 	}
-
-	/**
-	 * check in route param is Home Component passed isMachineInfoLoaded value or not.
-	 */
-	// private isTranslationLoaded(): boolean {
-	// 	if (this.activatedRoute) {
-	// 		const isMachineInfoLoaded = this.activatedRoute.snapshot.paramMap.get('isMachineInfoLoaded');
-	// 		if (isMachineInfoLoaded && isMachineInfoLoaded.toLowerCase() === 'true') {
-	// 			return true;
-	// 		}
-	// 		return false;
-	// 	}
-	// }
-
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RoutersName } from '../../privacy-routing-name';
-import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
+import { UserDataStateService } from '../../common/services/app-statuses/user-data-state.service';
 import { CommsService } from '../../../../../services/comms/comms.service';
 import { map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -30,7 +30,7 @@ export class ArticlesService {
 	private articlesCache$: Observable<any>;
 
 	constructor(
-		private userDataGetStateService: UserDataGetStateService,
+		private userDataGetStateService: UserDataStateService,
 		private commsService: CommsService,
 	) {}
 

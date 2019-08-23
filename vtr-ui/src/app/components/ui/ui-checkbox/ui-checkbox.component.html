@@ -8,5 +8,5 @@
 		[disabled]="disabled"
 		(change)="onChange($event)">
 	<label [ngClass]="{'disabled': disabled}"
-		for="styled-checkbox-1">{{ label }}</label>
+		for="{{checkboxId+'_checkbox'}}">{{ label }}</label>
 </p>

@@ -8,9 +8,12 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container } from 'inversify';
 
+declare var Windows;
+
 @Injectable({
 	providedIn: 'root'
 })
+
 export class VantageShellService {
 	public readonly isShellAvailable;
 	private phoenix: any;
@@ -49,7 +52,8 @@ export class VantageShellService {
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
-				Phoenix.Features.HardwareScan
+				Phoenix.Features.HardwareScan,
+				Phoenix.Features.BetaUser
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -78,29 +82,36 @@ export class VantageShellService {
 	private setConsoleLogProxy() {
 		const consoleProxy = Object.assign({}, console);
 		const logger = this.getLogger();
-		console.log = (msg) => {
-			consoleProxy.log(msg);
+		console.log = (msg, ...args) => {
+			const message = this.getMessage(msg);
+			consoleProxy.log(message, args);
 			if (logger) {
-				msg = JSON.stringify(msg);
-				logger.info(msg);
+				// msg = JSON.stringify(msg);
+				logger.info(message);
 			}
 		};
 
-		console.error = (err) => {
-			consoleProxy.error(err);
+		console.error = (msg, ...args) => {
+			const message = this.getMessage(msg);
+			consoleProxy.error(message, args);
 			if (logger) {
-				err = JSON.stringify(err);
-				logger.error(err);
+				// msg = JSON.stringify(msg);
+				logger.error(message);
 			}
 		};
 
-		console.warn = (msg) => {
-			consoleProxy.warn(msg);
+		console.warn = (msg, ...args) => {
+			const message = this.getMessage(msg);
+			consoleProxy.warn(message, args);
 			if (logger) {
-				msg = JSON.stringify(msg);
-				logger.warn(msg);
+				// msg = JSON.stringify(msg);
+				logger.warn(message);
 			}
 		};
+	}
+
+	private getMessage(message: string, data: any = {}) {
+		return `v${environment.appVersion}:- ${message}`;
 	}
 
 	public getLenovoId(): any {
@@ -148,6 +159,15 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getShellVersion() {
+		if (Windows) {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+		}
+
+		return '';
+	}
+
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
@@ -155,8 +175,10 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.metrics) {
 			const metricClient = this.phoenix.metrics;
 			if (!metricClient.isInit) {
+				const jsBridgeVesion = this.getVersion() || '';
+				const shellVersion = this.getShellVersion();
 				metricClient.init({
-					appVersion: environment.appVersion,
+					appVersion: `Web:${environment.appVersion};Bridge:${jsBridgeVesion};Shell:${shellVersion}`,
 					appId: MetricHelper.getAppId('dß'),
 					appName: 'vantage3',
 					channel: '',
@@ -802,6 +824,13 @@ export class VantageShellService {
 			vanStub = this.shell.VantageStub.instance;
 		}
 		return vanStub;
+	}
+
+	public getBetaUser(): any {
+		if (this.phoenix) {
+			return this.phoenix.betaUser;
+		}
+		return undefined;
 	}
 
 	// =================== Start Hardware Scan

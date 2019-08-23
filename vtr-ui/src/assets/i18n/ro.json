@@ -1448,11 +1448,11 @@
         "notification": {
             "recent": "Notificări recente de securitate",
             "notifications": "Notificări",
-            "unsafeNetworkConnection": "Unsafe network connection",
-            "networkUnsafe": "Network unsafe",
-            "deviceDisconnected": "Device disconnected",
-            "newDeviceDetected": "New device detected",
-            "unsafeDeviceDetected": "Unsafe device detected"
+            "unsafeNetworkConnection": "Conexiune nesigură la rețea",
+            "networkUnsafe": "Rețea nesigură",
+            "deviceDisconnected": "Dispozitiv deconectat",
+            "newDeviceDetected": "S-a detectat un dispozitiv nou",
+            "unsafeDeviceDetected": "S-a detectat un dispozitiv nesigur"
         },
         "ecosystem": {
             "ecosystemBlockTitle": "Protejați-vă ecosistemul dispozitivului",
@@ -2328,7 +2328,8 @@
             "description": "O altă scanare a fost deja programată în aceeași dată, la aceeași oră!",
             "error": "Eroare",
             "delete": "Ştergere",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Recuperarea sectoarelor defecte",
@@ -2371,12 +2372,12 @@
             "description": "Activarea unei încărcări personalizate pentru baterie va permite ca timpul general de utilizare a bateriei să dureze mai mult pe măsură ce utilizați acest dispozitiv. Cu toate acestea, fără o încărcare completă, bateria va avea o durată de utilizare mai mică. Pentru a activa pe deplin această caracteristică, deconectați aparatul și lăsați bateria să se descarce până la sau sub pragul de oprire a încărcării.",
             "enable": "Activare"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Reîmprospătare module",
+        "completed": "Finalizat",
+        "notCompleted": "Nefinalizat",
+        "yes": "Da",
+        "attention": "Atenţie",
+        "cancelTextPrompt": "Sigur anulaţi?",
+        "cancelTextProgress": "Aşteptaţi anularea progresului"
     }
 }

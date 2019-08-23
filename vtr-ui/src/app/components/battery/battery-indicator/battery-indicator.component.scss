@@ -222,8 +222,14 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				@extend .base-remaining-text;
 				color: $main_dark;
 				bottom: 5%;
-				font-size: $caption;
 				font-weight: $weight_medium;
+				font-size: 1rem;
+				@media #{$mediaquery_22} {
+					font-size: 0.9rem;
+				}
+				@media #{$mediaquery_23} {
+					font-size: 1.5rem;
+				}
 			}
 		}
 
@@ -244,7 +250,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				top: 10%;
 			}
 			@media #{$mediaquery_X23} {
-				left: 0%;
+				left: 5%;
 			}
 			.transparent {
 				color: transparent;

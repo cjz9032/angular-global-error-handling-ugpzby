@@ -27,7 +27,6 @@ import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 	styleUrls: ['./page-dashboard-android.component.scss']
 })
 export class PageDashboardAndroidComponent implements OnInit {
-	firstName = 'User';
 	/* submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit; */
 	securityAdvisor: SecurityAdvisor;
@@ -87,14 +86,6 @@ export class PageDashboardAndroidComponent implements OnInit {
 			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
 		}
 
-		const self = this;
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			} else {
-				self.firstName = this.userService.firstName;
-			}
-		});
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
@@ -447,9 +438,6 @@ export class PageDashboardAndroidComponent implements OnInit {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
-					break;
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
 					break;
 				default:
 					break;

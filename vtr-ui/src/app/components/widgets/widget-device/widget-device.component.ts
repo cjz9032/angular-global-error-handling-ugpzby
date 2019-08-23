@@ -33,10 +33,10 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private dashboardServcie: DashboardService
 	) {
 		this.myDevice = new MyDevice();
-		this.setDefaultInfo();
 	}
 
 	ngOnInit() {
+		this.setDefaultInfo();
 		this.timer.start();
 		this.getDeviceInfo();
 	}
@@ -53,6 +53,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	}
 
 	private setDefaultInfo() {
+		let index = 0;
+
 		const systemStatus = this.deviceStatus;
 		const processor = new Status();
 		processor.id = 'processor';
@@ -62,7 +64,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		processor.path = 'ms-settings:about';
 		processor.asLink = false;
 		processor.isSystemLink = true;
-		systemStatus[0] = processor;
+		systemStatus[index++] = processor;
 
 		const memory = new Status();
 		memory.id = 'memory';
@@ -72,7 +74,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		memory.path = 'ms-settings:about';
 		memory.asLink = false;
 		memory.isSystemLink = true;
-		systemStatus[1] = memory;
+		systemStatus[index++] = memory;
 
 		const disk = new Status();
 		disk.id = 'disk';
@@ -82,7 +84,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		disk.path = 'ms-settings:storagesense';
 		disk.asLink = false;
 		disk.isSystemLink = true;
-		systemStatus[2] = disk;
+		systemStatus[index++] = disk;
 
 		this.translate.stream('device.myDevice.learnMore').subscribe((value) => {
 			processor.detail = value;
@@ -90,18 +92,20 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			disk.detail = value;
 		});
 
-		const systemUpdate = new Status();
-		systemUpdate.id = 'systemupdate';
-		this.translate.stream('device.myDevice.systemUpdate.notFound').subscribe((value) => {
-			systemUpdate.title = value;
-		});
-		this.translate.stream('device.myDevice.systemUpdate.title').subscribe((value) => {
-			systemUpdate.detail = value;
-		});
-		systemUpdate.path = 'device/system-updates';
-		systemUpdate.asLink = true;
-		systemUpdate.isSystemLink = false;
-		systemStatus[3] = systemUpdate;
+		if (this.deviceService && !this.deviceService.isSMode) {
+			const systemUpdate = new Status();
+			systemUpdate.id = 'systemupdate';
+			this.translate.stream('device.myDevice.systemUpdate.notFound').subscribe((value) => {
+				systemUpdate.title = value;
+			});
+			this.translate.stream('device.myDevice.systemUpdate.title').subscribe((value) => {
+				systemUpdate.detail = value;
+			});
+			systemUpdate.path = 'device/system-updates';
+			systemUpdate.asLink = true;
+			systemUpdate.isSystemLink = false;
+			systemStatus[index++] = systemUpdate;
+		}
 
 		const warranty = new Status();
 		warranty.id = 'warranty';
@@ -114,7 +118,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		warranty.path = '/support';
 		warranty.asLink = true;
 		warranty.isSystemLink = false;
-		systemStatus[4] = warranty;
+		systemStatus[index] = warranty;
 	}
 
 	private getDeviceInfo() {
@@ -187,50 +191,57 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		});
 
 		// sysupdate
-		this.dashboardServcie.getRecentUpdateInfo().subscribe(data => {
-			if (data) {
-				const systemUpdate = this.deviceStatus[3];
+		if (this.deviceService && !this.deviceService.isSMode) {
+			this.dashboardServcie.getRecentUpdateInfo().subscribe(data => {
+				if (data) {
+					const systemUpdate = this.deviceStatus[3];
 
-				const updateStatus = data.status;
-				const lastUpdate = data.lastupdate;
-				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
+					const updateStatus = data.status;
+					const lastUpdate = data.lastupdate;
+					const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 
-				if (updateStatus === 1) {
-					this.translate.stream('device.myDevice.systemUpdate.detail.uptoDate').subscribe((value) => {
-						systemUpdate.title = value;
-					});
-					// `Software up to date `;
-					this.translate.stream('device.myDevice.systemUpdate.detail.updatedOn').subscribe((value) => {
-						systemUpdate.systemDetails = `${value} ${this.commonService.formatLocalDate(lastUpdate)}`;
-					});
+					if (updateStatus === 1) {
+						this.translate.stream('device.myDevice.systemUpdate.detail.uptoDate').subscribe((value) => {
+							systemUpdate.title = value;
+						});
+						// `Software up to date `;
+						this.translate.stream('device.myDevice.systemUpdate.detail.updatedOn').subscribe((value) => {
+							systemUpdate.systemDetails = `${value} ${this.commonService.formatLocalDate(lastUpdate)}`;
+						});
 
-					if (diffInDays > 30) {
+						if (diffInDays > 30) {
+							this.translate.stream('device.myDevice.systemUpdate.detail.outdated').subscribe((value) => {
+								systemUpdate.title = value;
+							});
+							// `Software outdated `;
+							systemUpdate.status = 1;
+						} else {
+							systemUpdate.status = 0;
+						}
+					} else {
 						this.translate.stream('device.myDevice.systemUpdate.detail.outdated').subscribe((value) => {
 							systemUpdate.title = value;
 						});
-						// `Software outdated `;
-						systemUpdate.status = 1;
-					} else {
-						systemUpdate.status = 0;
-					}
-				} else {
-					this.translate.stream('device.myDevice.systemUpdate.detail.outdated').subscribe((value) => {
-						systemUpdate.title = value;
-					});
 
-					this.translate.stream('device.myDevice.systemUpdate.detail.neverRanUpdate').subscribe((value) => {
-						systemUpdate.systemDetails = value;
-					});
-					// `never ran update`;
-					systemUpdate.status = 1;
+						this.translate.stream('device.myDevice.systemUpdate.detail.neverRanUpdate').subscribe((value) => {
+							systemUpdate.systemDetails = value;
+						});
+						// `never ran update`;
+						systemUpdate.status = 1;
+					}
 				}
-			}
-		});
+			});
+		}
 
 		// warranty
 		this.dashboardServcie.getWarrantyInfo().subscribe(data => {
 			if (data) {
-				const warranty = this.deviceStatus[4];
+				let warranty;
+				if (this.deviceService && !this.deviceService.isSMode) {
+					warranty = this.deviceStatus[4];
+				} else {
+					warranty = this.deviceStatus[3];
+				}
 				const warrantyDate = this.commonService.formatDate(data.expired);
 				// in warranty
 				if (data.status === 0) {

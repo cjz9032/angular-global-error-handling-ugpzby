@@ -208,7 +208,7 @@
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
-							<a *ngIf="modernPreloadService.IsEntitled"
+							<a *ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
 								vtrMetrics
 								id="menu-main-lnk-open-modern-preload"
 								attr.aria-label="menu-main-lnk-open-modern-preload"

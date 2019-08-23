@@ -170,7 +170,7 @@ public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
 	}
 }
 
-public getFnLockStatus(): Promise<any> {
+public getFnLockStatus(): Promise<boolean> {
 	try {
 		if (this.keyboardManager) {
 			const response = this.keyboardManager.GetFnLockStatus();
@@ -182,5 +182,61 @@ public getFnLockStatus(): Promise<any> {
 	}
 }
 
+public getFnStickKeyStatus(): Promise<boolean> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.GetFnStickKeyStatus();
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
+public getPrimaryFunctionStatus(): Promise<boolean> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.GetPrimaryFunctionStatus();
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
 
+public setFnStickKeyStatus(value): Promise<boolean> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.SetFnStickKey(value);
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
+
+public setFnLock(value): Promise<boolean> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.SetFnLock(value);
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
+public setPrimaryFunction(value): Promise<boolean> {
+	try {
+		if (this.keyboardManager) {
+			const response = this.keyboardManager.SetPrimaryFunction(value);
+			return response;
+		}
+		return undefined;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+}
 }

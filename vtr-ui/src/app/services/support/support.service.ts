@@ -117,12 +117,14 @@ export class SupportService {
 
 	showFindUsPop() {
 		const findUsModal: NgbModalRef = this.modalService.open(ModalFindUsComponent, {
+			backdrop: true,
 			centered: true,
-			windowClass: 'About-Modal'
+			windowClass: 'Find-Us-Modal'
 		});
 	}
 	showAboutPop() {
 		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
+			backdrop: true,
 			centered: true,
 			windowClass: 'About-Modal'
 		});

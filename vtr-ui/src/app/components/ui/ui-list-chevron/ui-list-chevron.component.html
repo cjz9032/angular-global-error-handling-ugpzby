@@ -6,7 +6,6 @@
 
 			<a routerLink="/{{item.path}}"
 				id="{{linkId}}-{{item.id}}"
-				attr.aria-label="{{linkId}}-{{item.id}}"
 				[queryParams]="item.pathParams"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
@@ -117,7 +116,6 @@
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
 			<a href="javascript:void(0);"
 				id="{{linkId}}-{{item.id}}"
-				attr.aria-label="{{linkId}}-{{item.id}}"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
 				[metricsEvent]="metricsEvent"
