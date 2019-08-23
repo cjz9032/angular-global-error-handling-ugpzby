@@ -126,7 +126,7 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event'])
 	async onclick(event) {
-		// console.log(" click number :: " + event.detail);
+		console.log(" click number :: " + event.detail);
 
 		// prevent default event propogation for more than 1 click stop event propagation
 		if (event.detail > 1) {
