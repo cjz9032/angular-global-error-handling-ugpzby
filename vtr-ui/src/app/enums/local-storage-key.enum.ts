@@ -163,5 +163,7 @@ export enum LocalStorageKey {
 	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
 	EasyResumeCapability = '[LocalStorageKey] EasyResumeCapability',
 	VantageToolbarCapability = '[LocalStorageKey] VantageToolbarCapability',
-	EnergyStarCapability = '[LocalStorageKey] EnergyStarCapability'
+	EnergyStarCapability = '[LocalStorageKey] EnergyStarCapability',
+	AirplanePowerModeCapability = '[LocalStorageKey] AirplanePowerModeCapability',
+	BatteryChargeThresholdCapability = '[LocalStorageKey] BatteryChargeThresholdCapability'
 }
