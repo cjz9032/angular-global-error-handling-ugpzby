@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading">{{'systemUpdates.availableUpdates.title' | translate}}</div>
+					<div class="heading" id="su_availableUpdates" role="article">{{'systemUpdates.availableUpdates.title' | translate}}</div>
 				</div>
 			</div>
 		</div>
@@ -15,8 +15,7 @@
 			<div class="col-sm-12 col-md-12 col-lg-4">
 				<div class="button-box shift-right">
 					<vtr-ui-button
-						id="su_install_all_updates"
-						aria-label="su_install_all_updates"
+						[linkId]="'su_install_all_updates'"
 						(onClick)="onInstallAllUpdates($event)"
 						[isDisabled]="!((criticalUpdates && criticalUpdates.length > 0) || (recommendedUpdates && recommendedUpdates.length > 0) || (optionalUpdates && optionalUpdates.length > 0))"
 						[upperCaseLabel]="true"
@@ -66,7 +65,7 @@
 					*ngIf="criticalUpdates && criticalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{criticalUpdates.length}}
+							<div class="heading" id="su_criticalUpdates" role="article">{{criticalUpdates.length}}
 								{{'systemUpdates.criticalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
@@ -81,7 +80,7 @@
 					*ngIf="recommendedUpdates && recommendedUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{recommendedUpdates.length}}
+							<div class="heading" id="su_recommendedUpdates" role="article">{{recommendedUpdates.length}}
 								{{'systemUpdates.recommendedUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
@@ -96,7 +95,7 @@
 					*ngIf="optionalUpdates && optionalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{optionalUpdates.length}}
+							<div class="heading" id="su_optionalUpdates" role="article">{{optionalUpdates.length}}
 									{{'systemUpdates.optionalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								(ignoreUpdate)="onIgnoreUpdate($event)"
@@ -112,7 +111,7 @@
 					<div class="col">
 						<div class="header">
 							<div class="row d-flex justify-content-between w-100">
-								<div class="heading">{{ignoredUpdates.length}}
+								<div class="heading" id="su_ignoredUpdates" role="article">{{ignoredUpdates.length}}
 									{{'systemUpdates.ignoredUpdates' | translate}}</div>
 								<div class="px-3 collapse-control"
 									id="su-col-exp-ignore"
@@ -146,8 +145,7 @@
 					<div class="col-12">
 						<div class="button-box shift-left">
 							<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
-							id="su_install_selected_updates"
-							aria-label="su_install_selected_updates"
+								[linkId]="'su_install_selected_updates'"
 								[isDisabled]="!isUpdateSelected"
 								[upperCaseLabel]="true"
 								[label]="'systemUpdates.availableUpdates.installSelectedUpdates' | translate"
