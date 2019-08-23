@@ -24,6 +24,7 @@ import {	LoggerService} from 'src/app/services/logger/logger.service';
 import {	SessionStorageKey} from 'src/app/enums/session-storage-key-enum';
 import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 
 
 @Component({
@@ -71,7 +72,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		private lenovoIdDialogService: LenovoIdDialogService,
 		private loggerService: LoggerService,
-		private hypService: HypothesisService
+		private hypService: HypothesisService,
+		private adPolicyService: AdPolicyService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -440,7 +442,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		warranty.type = 'system';
 		this.systemStatus[2] = warranty;
 
-		if (this.deviceService && !this.deviceService.isSMode) {
+		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
 			const systemUpdate = new Status();
 			systemUpdate.status = 4;
 			systemUpdate.id = 'systemupdate';
@@ -519,7 +521,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		// system update
-		if (this.deviceService && !this.deviceService.isSMode) {
+		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
 			this.dashboardService.getRecentUpdateInfo().subscribe(value => {
 				if (value) {
 					const systemUpdate = this.systemStatus[3];
