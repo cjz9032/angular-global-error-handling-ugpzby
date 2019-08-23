@@ -11,6 +11,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 
 
 enum PowerMode {
@@ -26,6 +27,7 @@ enum PowerMode {
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public vantageToolbarStatus = new FeatureStatus(false, true);
+	vantageToolbarCache: FeatureStatus;
 	public alwaysOnUSBStatus = new FeatureStatus(false, true);
 	public usbChargingStatus = new FeatureStatus(false, true);
 	public easyResumeStatus = new FeatureStatus(false, true);
@@ -36,6 +38,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public batteryGauge: any;
 	public showWarningMsg: boolean;
 	public isEnergyStarProduct = false;
+	public energyStarCache: boolean;
 	public isChargeThresholdAvailable = false;
 
 	@Input() isCollapsed = true;
@@ -73,6 +76,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	isDesktopMachine = true;
 	showBatteryThreshold = false;
 	value = 1;
+	alwaysOnUSBCache: AlwaysOnUSBCapability = undefined;
+	easyResumeCache: FeatureStatus;
+
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.power.powerSmartSettings.title',
@@ -170,6 +176,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	constructor(public powerService: PowerService, private deviceService: DeviceService, private commonService: CommonService, public modalService: NgbModal, public shellServices: VantageShellService) { }
 
 	ngOnInit() {
+		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 
@@ -190,6 +197,63 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.getBatteryCharge(notification);
 		});
 
+	}
+
+	initDataFromCache() {
+		this.initPowerSettingsFromCache();
+		this.initOtherSettingsFromCache();
+		this.initEnergyStarFromCache();
+	}
+
+	initEnergyStarFromCache() {
+		try {
+			debugger
+			this.energyStarCache = this.commonService.getLocalStorageValue(LocalStorageKey.EnergyStarCapability, undefined);
+			if (this.energyStarCache != undefined) {
+				this.isEnergyStarProduct = this.energyStarCache;
+			} else {
+				this.energyStarCache = false;
+			}
+		} catch (error) {
+			console.log("initEnergyStarFromCache", error);
+		}
+	}
+
+	initOtherSettingsFromCache() {
+		try {
+			this.vantageToolbarCache = this.commonService.getLocalStorageValue(LocalStorageKey.VantageToolbarCapability, undefined);
+			if (this.vantageToolbarCache) {
+				this.vantageToolbarStatus.available = this.vantageToolbarCache.available;
+				this.vantageToolbarStatus.status = this.vantageToolbarCache.status;
+			} else {
+				this.vantageToolbarCache = new FeatureStatus(false, true);
+			}
+		} catch (error) {
+			console.log("initOtherSettingsFromCache", error);
+		}
+	}
+
+	initPowerSettingsFromCache() {
+		try {
+			this.alwaysOnUSBCache = this.commonService.getLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, undefined);
+			if (this.alwaysOnUSBCache) {
+				this.toggleAlwaysOnUsbFlag = this.alwaysOnUSBCache.toggleState
+				this.usbChargingInBatteryModeStatus = this.alwaysOnUSBCache.checkbox.available;
+				this.usbChargingCheckboxFlag = this.alwaysOnUSBCache.checkbox.status
+			} else {
+				this.alwaysOnUSBCache = new AlwaysOnUSBCapability();
+			}
+
+			this.easyResumeCache = this.commonService.getLocalStorageValue(LocalStorageKey.EasyResumeCapability, undefined);
+			if (this.easyResumeCache) {
+				this.showEasyResumeSection = this.easyResumeCache.available
+				this.toggleEasyResumeStatus = this.easyResumeCache.status;
+			} else {
+				this.easyResumeCache = new FeatureStatus(false, false);
+			}
+		} catch (error) {
+			console.log("initPowerSettingsFromCache", error);
+		}
 	}
 
 	ngOnDestroy() {
@@ -263,6 +327,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				console.log('always on usb: ideapad');
 				break;
 		}
+		this.alwaysOnUSBCache.toggleState = this.toggleAlwaysOnUsbFlag;
+		this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
 		this.updatePowerMode();
 	}
 
@@ -338,6 +404,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						if (alwaysOnUsbThinkPad.isEnabled) {
 							this.toggleAlwaysOnUsbFlag = true;
 						}
+						this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
+						this.alwaysOnUSBCache.toggleState = this.toggleAlwaysOnUsbFlag;
+						this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
 
 					})
 					.catch(error => {
@@ -359,6 +428,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				} else {
 					this.showEasyResumeSection = false;
 				}
+				this.easyResumeCache.available = this.showEasyResumeSection;
+				this.commonService.setLocalStorageValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
 			} catch (error) {
 				console.error('getEasyResumeCapabilityThinkPad', error);
 			}
@@ -372,6 +443,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.then((value: any) => {
 						console.log('getEasyResumeStatusThinkPad.then', value);
 						this.toggleEasyResumeStatus = value;
+						this.easyResumeCache.status = this.toggleEasyResumeStatus;
+						this.commonService.setLocalStorageValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
 					})
 					.catch(error => {
 						console.error('getEasyResumeStatusThinkPad', error);
@@ -519,6 +592,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				console.log('getAlwaysOnUSBStatusIdeaNoteBook.then', featureStatus);
 				this.alwaysOnUSBStatus = featureStatus;
 				this.toggleAlwaysOnUsbFlag = this.alwaysOnUSBStatus.status;
+				this.alwaysOnUSBCache.toggleState = this.toggleAlwaysOnUsbFlag;
+				this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
 			} catch (error) {
 				console.error('getAlwaysOnUSBStatusIdeaNoteBook', error);
 			}
@@ -537,6 +612,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						if (this.usbChargingInBatteryModeStatus) {
 							this.usbChargingCheckboxFlag = featureStatus.status;
 						}
+						this.alwaysOnUSBCache.checkbox.available = this.usbChargingInBatteryModeStatus;
+						this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
+						this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
+						// if (this.alwaysOnUSBStatus.status) {
+						// 	this.toggleAlwaysOnUsbFlag = true;
+						// }
 					})
 					.catch(error => {
 						console.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error);
@@ -642,6 +723,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.then((featureStatus: FeatureStatus) => {
 						console.log('getVantageToolBarStatus.then', featureStatus);
 						this.vantageToolbarStatus = featureStatus;
+						this.commonService.setLocalStorageValue(LocalStorageKey.VantageToolbarCapability, featureStatus);
 					})
 					.catch(error => {
 						console.error('getVantageToolBarStatus', error);
@@ -672,6 +754,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public getStartMonitorCallBack(featureStatus: FeatureStatus) {
 		console.log('getStartMonitorCallBack', featureStatus);
 		this.vantageToolbarStatus = featureStatus;
+		this.commonService.setLocalStorageValue(LocalStorageKey.VantageToolbarCapability, featureStatus);
 	}
 
 	public startMonitor() {
@@ -851,6 +934,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				console.log('getEnergyStarCapability.then', response);
 
 				this.isEnergyStarProduct = response;
+				this.commonService.setLocalStorageValue(LocalStorageKey.EnergyStarCapability, this.isEnergyStarProduct);
 			})
 			.catch(error => {
 				console.log('getEnergyStarCapability.error', error);
