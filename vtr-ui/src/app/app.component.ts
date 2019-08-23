@@ -23,13 +23,12 @@ import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
 import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
 
-
 declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
-	providers: [TimerService]
+	styleUrls: [ './app.component.scss' ],
+	providers: [ TimerService ]
 })
 export class AppComponent implements OnInit {
 	machineInfo: any;
@@ -93,9 +92,7 @@ export class AppComponent implements OnInit {
 					}
 				}
 			})
-			.catch((error) => {
-				console.error('getIsARM', error);
-			});
+			.catch((error) => {});
 
 		//#endregion
 
@@ -163,15 +160,19 @@ export class AppComponent implements OnInit {
 		const scale = window.devicePixelRatio || 1;
 		const displayWidth = window.screen.width;
 		const displayHeight = window.screen.height;
-		this.metricsClient.sendAsync(new GetEnvInfo({
-			imcVersion,
-			srvVersion: hsaSrvInfo.vantageSvcVersion,
-			shellVersion,
-			windowSize: `${Math.floor(displayWidth / 100) * 100}x${Math.floor(displayHeight / 100) * 100}`,
-			displaySize: `${Math.floor(displayWidth * scale / 100) * 100}x${Math.floor(displayHeight * scale / 100) * 100}`,
-			scalingSize: scale, // this value would is accurate in edge
-			isFirstLaunch
-		}));
+		this.metricsClient.sendAsync(
+			new GetEnvInfo({
+				imcVersion,
+				srvVersion: hsaSrvInfo.vantageSvcVersion,
+				shellVersion,
+				windowSize: `${Math.floor(displayWidth / 100) * 100}x${Math.floor(displayHeight / 100) * 100}`,
+				displaySize: `${Math.floor(displayWidth * scale / 100) * 100}x${Math.floor(
+					displayHeight * scale / 100
+				) * 100}`,
+				scalingSize: scale, // this value would is accurate in edge
+				isFirstLaunch
+			})
+		);
 	}
 
 	private sendAppLoadedMetric() {
@@ -185,7 +186,7 @@ export class AppComponent implements OnInit {
 	}
 
 	public sendAppResumeMetric() {
-		this.timerService.start();	// restart timer
+		this.timerService.start(); // restart timer
 		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, null, null, 0));
 	}
 
@@ -263,7 +264,6 @@ export class AppComponent implements OnInit {
 
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
-
 			// this.isMachineInfoLoaded = this.isTranslationLoaded();
 			return this.deviceService
 				.getMachineInfo()
@@ -277,8 +277,11 @@ export class AppComponent implements OnInit {
 					this.isGaming = value.isGaming;
 
 					// update DeviceInfo values in case user switched language
-					const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
-					const isLocaleSame = (cachedDeviceInfo && cachedDeviceInfo.locale === value.locale);
+					const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(
+						DashboardLocalStorageKey.DeviceInfo,
+						undefined
+					);
+					const isLocaleSame = cachedDeviceInfo && cachedDeviceInfo.locale === value.locale;
 
 					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
 						this.languageService.useLanguageByLocale(value.locale);
@@ -294,9 +297,7 @@ export class AppComponent implements OnInit {
 					// then relaunch app you will see the machineinfo in localstorage.
 					return value;
 				})
-				.catch((error) => {
-					console.error('getMachineInfo', error);
-				});
+				.catch((error) => {});
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -331,13 +332,9 @@ export class AppComponent implements OnInit {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					})
-					.catch((error) => {
-						console.error('checkIsDesktopMachine', error);
-					});
+					.catch((error) => {});
 			}
-		} catch (error) {
-			console.error(error.message);
-		}
+		} catch (error) {}
 	}
 
 	private notifyNetworkState() {
@@ -371,7 +368,9 @@ export class AppComponent implements OnInit {
 					}
  */
 					const allLangs = this.translate.getLangs();
-					const currentLang = this.translate.currentLang ? this.translate.currentLang.toLowerCase() : this.translate.defaultLang.toLowerCase();
+					const currentLang = this.translate.currentLang
+						? this.translate.currentLang.toLowerCase()
+						: this.translate.defaultLang.toLowerCase();
 
 					// change language only when countrycode or language code changes
 					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
@@ -406,7 +405,7 @@ export class AppComponent implements OnInit {
 		});
 	}
 
-	@HostListener('window:keyup', ['$event'])
+	@HostListener('window:keyup', [ '$event' ])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -430,14 +429,11 @@ export class AppComponent implements OnInit {
 					windowClass: 'Server-Switch-Modal',
 					keyboard: false
 				});
-
 			}
-		} catch (error) {
-			console.error('AppComponent.onKeyUp', error);
-		}
+		} catch (error) {}
 	}
 
-	@HostListener('window:load', ['$event'])
+	@HostListener('window:load', [ '$event' ])
 	onLoad(event) {
 		this.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
@@ -449,7 +445,7 @@ export class AppComponent implements OnInit {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', ['$event'])
+	@HostListener('window:keydown', [ '$event' ])
 	disableCtrlACV($event: KeyboardEvent) {
 		if (
 			($event.ctrlKey || $event.metaKey) &&

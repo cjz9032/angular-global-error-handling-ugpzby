@@ -92,7 +92,7 @@ export class PageAutocloseComponent implements OnInit {
 				this.showAppsModal = true;
 			}
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
@@ -102,7 +102,6 @@ export class PageAutocloseComponent implements OnInit {
 			this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
 			this.needToAsk = !status;
 		} catch (error) {
-			console.error(error.message);
 		}
 	}
 
@@ -159,7 +158,7 @@ export class PageAutocloseComponent implements OnInit {
 				}
 			});
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
@@ -175,7 +174,6 @@ export class PageAutocloseComponent implements OnInit {
 		} catch (error) {
 			const noAppsRunning = this.runningList.length === 0 ? true : false;
 			this.loadingContent = { loading: false, noApps: noAppsRunning };
-			console.error(error.message);
 		}
 	}
 
@@ -189,7 +187,6 @@ export class PageAutocloseComponent implements OnInit {
 					}
 				});
 			} catch (error) {
-				console.error(error.message);
 			}
 		}
 	}
