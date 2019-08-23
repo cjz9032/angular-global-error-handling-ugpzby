@@ -200,7 +200,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	public onRegThermalModeEvent(status: any) {
-		console.log('onRegThermalModeEvent callback event, ============><', status);
 		if (status !== undefined) {
 			const regThermalModeStatusObj = new ThermalModeStatus();
 			// setting previous value to localstorage
@@ -261,7 +260,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.drop.curSelected = this.GetThermalModeCacheStatus();
 			if (this.gamingThermalModeService) {
 				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeStatus();
-				console.log(`SUCCESSFULLY got thermal mode status`, thermalModeStatus);
 				if (thermalModeStatus !== undefined) {
 					this.drop.curSelected = thermalModeStatus;
 					const ThermalModeStatusObj = new thermalModeStatus();
@@ -270,7 +268,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				}
 			}
 		} catch (error) {
-			console.error(`ERROR in renderThermalModeStatus() of widget.quicksettings-list.component`, error);
 		}
 	}
 
@@ -332,7 +329,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.commonService.setLocalStorageValue(LocalStorageKey.DolbyModeCache, dolbySettings);
 
 		} catch (err) {
-			console.log(`ERROR in getDolbySettings()`, err);
 		} finally {
 			this.checkQuickSettingsVisibility();
 		}
@@ -347,18 +343,15 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.quickSettings[3].isChecked = !value;
 			}
 		} catch (err) {
-			console.log(`ERROR in setDolbySettings()`, err);
 		}
 	}
 
 	public initialiseDolbyCache() {
 		try {
 			const { available, status } = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyModeCache, { available: false, status: false });
-			console.log(available, '=====================<>DOLBY', status);
 			this.quickSettings[3].isVisible = available;
 			this.quickSettings[3].isChecked = status;
 		} catch (err) {
-			console.log(`ERROR in initialiseDolbyCache()`, err);
 		}
 	}
 
@@ -369,7 +362,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.quickSettings[1].isVisible = rapidChargeSettings.available || false;
 			this.quickSettings[1].isChecked = rapidChargeSettings.status || false;
 		} catch (err) {
-			console.log(`ERROR in getRapidChargeSettings() of quickSettings`, err);
 		} finally {
 			this.checkQuickSettingsVisibility();
 		}
@@ -382,7 +374,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.commonService.setLocalStorageValue(LocalStorageKey.RapidChargeCache, { available: this.quickSettings[1].isVisible, status: status });
 			}
 		} catch (err) {
-			console.log(`ERROR in setRapidChargeSettings() of quickSettings`, err);
 		}
 	}
 

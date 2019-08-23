@@ -198,7 +198,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	toggleMenu(event) {
 		this.showMenu = !this.showMenu;
-		console.log('TOGGLE MENU', this.showMenu);
 	}
 
 	isParentActive(item) {
@@ -237,7 +236,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	menuItemClick(event, path) {
-		// console.log (path);
 		this.router.navigateByUrl(path);
 	}
 
@@ -336,7 +334,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	getMenuItems(): Promise<any> {
-		console.log('Getting menu items for the Gaming device?', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;

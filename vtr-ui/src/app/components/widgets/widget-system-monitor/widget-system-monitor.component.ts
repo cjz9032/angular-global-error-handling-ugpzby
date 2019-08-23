@@ -245,7 +245,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			const hwInfo = await this.hwInfoService.getDynamicInformation();
 			this.formDynamicInformation(hwInfo);
 		} catch (err) {
-			console.log(`ERROR in getDynamicInfoService() of  widget-system-monitor.component`, err);
 		}
 	}
 
@@ -281,7 +280,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.initialiseDisksList(hwInfo.diskList);
 			this.setFormDynamicInformationCache(hwInfo);
 		} catch (err) {
-			console.log(`ERROR in formDynamicInformation() of widget-system-monitor.component`, err);
 		}
 	}
 
@@ -321,7 +319,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public getMachineInfoService() {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
-				console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 				if (hwInfo.cpuBaseFrequence !== '') {
 					this.cpuMax = hwInfo.cpuBaseFrequence;
 				}

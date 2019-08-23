@@ -42,34 +42,28 @@ async addAppToList(app) {
     if (result) {
       this.addedApps += 1;
     }
-    console.log(`Another adding process to network bosst for => `, result);
   } catch (error) {
-    console.log(`ERROR in addAppsToList()`, error);
   }
 }
   async removeApp(app) {
     try {
       const result = await this.networkBoostService.deleteProcessInNetBoost(app);
-      console.log(`RESULT from deleteProcessInNetBoost()`, result);
       if (result) {
         this.addedApps -= 1;
       }
     } catch (err) {
-      console.log(`ERROR in removeApp()`, err);
     }
   }
 
   async refreshNetworkBoostList() {
     try {
       const result: any = await this.networkBoostService.getNetUsingProcesses();
-      console.log('RESULT frpm NB', result);
       if (result && !isUndefined(result.processList)) {
         this.loading = false;
         this.runningList = result.processList || [];
         this.noAppsRunning = this.runningList.length === 0 ? true : false;
       }
     } catch (error) {
-      console.log(`ERROR in refreshNetworkBoostList()`, error);
     }
   }
 

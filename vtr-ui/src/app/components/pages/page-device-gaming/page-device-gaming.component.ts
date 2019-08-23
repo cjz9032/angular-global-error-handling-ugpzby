@@ -68,9 +68,7 @@ export class PageDeviceGamingComponent implements OnInit {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		console.log('Status of internet ================>', this.isOnline);
 		if (this.dashboardService.isShellAvailable) {
-			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
 		}
 
@@ -78,12 +76,10 @@ export class PageDeviceGamingComponent implements OnInit {
 			this.gamingAllCapabilitiesService
 				.getCapabilities()
 				.then((response) => {
-					console.log(`-------------------///////////////////////////////  From getCapabilities()----------------`);
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
 					PageDeviceGamingComponent.allCapablitiyFlag = true;
 				})
 				.catch((err) => {
-					console.log(`ERROR in appComponent getCapabilities()`, err);
 				});
 		}
 		this.setDefaultCMSContent();
@@ -185,7 +181,6 @@ export class PageDeviceGamingComponent implements OnInit {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
 			}
 		);
 	}
@@ -300,7 +295,6 @@ export class PageDeviceGamingComponent implements OnInit {
 			.getSystemInfo()
 			.then((value: any) => {
 				this.systemStatus = this.mapSystemInfoResponse(value);
-				console.log('getSystemInfo.then', value, this.systemStatus);
 			})
 			.catch((error) => {
 				console.error('getSystemInfo', error);
@@ -312,7 +306,6 @@ export class PageDeviceGamingComponent implements OnInit {
 			.getSecurityStatus()
 			.then((value: any) => {
 				this.securityStatus = this.mapSecurityStatusResponse(value);
-				console.log('getSecurityStatus.then', value);
 			})
 			.catch((error) => {
 				console.error('getSecurityStatus', error);

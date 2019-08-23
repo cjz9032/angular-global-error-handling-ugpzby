@@ -80,8 +80,6 @@ export class PageNetworkboostComponent implements OnInit {
     try {
       this.needToAsk = this.networkBoostService.getNeedToAsk();
       this.needToAsk = this.needToAsk === undefined ? false : this.needToAsk;
-      console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk);
-      console.log('TOGGLE STATUS =>', this.toggleStatus);
       if (this.toggleStatus) {
         this.showAppsModal = true;
       } else if (!this.toggleStatus && !this.needToAsk) {

@@ -82,7 +82,6 @@ export class AppComponent implements OnInit {
 		this.deviceService
 			.getIsARM()
 			.then((status: boolean) => {
-				console.log('getIsARM.then', status);
 				if (!status || !deviceService.isAndroid) {
 					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(
 						LocalStorageKey.WelcomeTutorial
@@ -103,7 +102,6 @@ export class AppComponent implements OnInit {
 		window.addEventListener(
 			'online',
 			(e) => {
-				console.log('online', e, navigator.onLine);
 				this.notifyNetworkState();
 			},
 			false
@@ -112,7 +110,6 @@ export class AppComponent implements OnInit {
 		window.addEventListener(
 			'offline',
 			(e) => {
-				console.log('offline', e, navigator.onLine);
 				this.notifyNetworkState();
 			},
 			false
@@ -207,12 +204,10 @@ export class AppComponent implements OnInit {
 		modalRef.result.then(
 			(result: WelcomeTutorial) => {
 				// on open
-				console.log('welcome-modal-size', result);
 				this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
 			},
 			(reason: WelcomeTutorial) => {
 				// on close
-				console.log('welcome-modal-size', reason);
 				if (reason instanceof WelcomeTutorial) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
@@ -273,7 +268,6 @@ export class AppComponent implements OnInit {
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
-					console.log(`SUCCESSFULLY got the machine info =>`, value);
 					this.commonService.sendNotification('MachineInfo', this.machineInfo);
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
 					this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
@@ -334,7 +328,6 @@ export class AppComponent implements OnInit {
 				this.deviceService
 					.getMachineType()
 					.then((value: any) => {
-						console.log('checkIsDesktopMachine.then', value);
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					})

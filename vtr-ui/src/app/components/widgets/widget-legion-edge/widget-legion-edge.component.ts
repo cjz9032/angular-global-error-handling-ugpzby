@@ -222,7 +222,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	ngOnInit() {
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
-				console.log(`GAMINGCAPABILITIES in widget-legion-edge.component`, response);
 				this.gamingCapabilities = response.payload;
 				this.legionEdgeInit();
 			}
@@ -273,13 +272,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		const gamingStatus = this.gamingCapabilities;
 		this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
 		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
-		// TBD add autoclose later at index 2
-		// TODO have to remove this || condition and line no 242.
-		// this.legionUpdate[2].isVisible = gamingStatus.optimizationFeature || false;
-		// this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || false;
 		this.legionUpdate[2].isVisible = false;
 		this.legionUpdate[3].isVisible = false;
-		//TODO below is for the network boost subpage
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
@@ -317,7 +311,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public renderAutoCloseStatus() {
 		this.gamingAutoCloseService.getAutoCloseStatus().then((autoCloseModeStatus) => {
 			if (autoCloseModeStatus !== undefined) {
-				console.log('autoCloseModeStatus  ' + autoCloseModeStatus);
 				this.autoCloseStatusObj.autoCloseStatus = autoCloseModeStatus;
 				this.setAutoCloseCacheStatus(autoCloseModeStatus);
 				this.legionUpdate[2].isChecked = autoCloseModeStatus;
@@ -326,10 +319,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public renderNetworkBoostStatus() {
-		console.log('aparna  inside status');
 		this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
 			if (networkBoostModeStatus !== undefined) {
-				console.log('aparna  ' + networkBoostModeStatus);
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
 				this.SetNetworkBoostCacheStatus(networkBoostModeStatus);
 				this.legionUpdate[3].isChecked = networkBoostModeStatus;
@@ -344,19 +335,16 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.setAutoCloseCacheStatus(status);
 			}
 		} catch (err) {
-			console.log(`ERROR in AutoClose of widget-legion.component`, err);
 		}
 	}
 
 	public async setNetworkBoostStatus(status: any) {
 		try {
 			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
-			// TODO has to confirm with aparna to update status of cache IRR of isStatusUpdated.
 			if (isStatusUpdated) {
 				this.SetNetworkBoostCacheStatus(status);
 			}
 		} catch (err) {
-			console.log(`ERROR in setNetworkBoostStatus() of widget-legion.component`, err);
 		}
 	}
 
@@ -408,7 +396,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.gamingSystemUpdateService
 				.setCpuOCStatus(this.setCpuOCStatus.cpuOCStatus)
 				.then((value: boolean) => {
-					console.log('setCpuOCStatus.then', value);
 					if (!value) {
 						this.drop.curSelected = this.GetCPUOverClockCacheStatus();
 					} else {
@@ -417,7 +404,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					}
 				})
 				.catch((error) => {
-					console.error('setCpuOCStatus', error);
 				});
 		}
 	}
@@ -509,10 +495,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.gamingSystemUpdateService
 				.setRamOCStatus($event.switchValue)
 				.then((value: boolean) => {
-					console.log('setRamOc.then', value);
 				})
 				.catch((error) => {
-					console.error('setRamOcStatus', error);
 				});
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
@@ -520,10 +504,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.gamingHybridModeService
 				.setHybridModeStatus($event.switchValue)
 				.then((value: boolean) => {
-					console.log('setHybridModeStatus.then', value);
 				})
 				.catch((error) => {
-					console.error('setHybridModeStatus', error);
 				});
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
@@ -531,7 +513,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.gamingKeyLockService
 				.setKeyLockStatus($event.switchValue)
 				.then((value: boolean) => {
-					console.log('setKeyLockStatus.then', value);
 					if (value) {
 						this.SetTouchpadLockCacheStatus($event.switchValue);
 					} else {
@@ -539,7 +520,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					}
 				})
 				.catch((error) => {
-					console.error('setKeyLockStatus', error);
 				});
 		}
 
