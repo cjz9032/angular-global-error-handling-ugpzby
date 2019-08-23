@@ -1,35 +1,35 @@
-import {	Component,	OnInit,	DoCheck,	OnDestroy} from '@angular/core';
-import {	Router,	ActivatedRoute} from '@angular/router';
+import { SupportService } from './../../../services/support/support.service';
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import {	TranslateService,	LangChangeEvent} from '@ngx-translate/core';
-import {	SecurityAdvisor} from '@lenovo/tan-client-bridge';
-import {	QaService} from '../../../services/qa/qa.service';
-import {	DashboardService} from 'src/app/services/dashboard/dashboard.service';
-import {	Status} from 'src/app/data-models/widgets/status.model';
-import {	CommonService} from 'src/app/services/common/common.service';
-import {	DeviceService} from 'src/app/services/device/device.service';
-import {	CMSService} from 'src/app/services/cms/cms.service';
-import {	AppNotification} from 'src/app/data-models/common/app-notification.model';
-import {	LenovoIdKey} from 'src/app/enums/lenovo-id-key.enum';
-import {	NetworkStatus} from 'src/app/enums/network-status.enum';
-import {	FeedbackFormComponent} from '../../feedback-form/feedback-form/feedback-form.component';
-import {	SystemUpdateService} from 'src/app/services/system-update/system-update.service';
-import {	VantageShellService} from '../../../services/vantage-shell/vantage-shell.service';
-import {	UserService} from 'src/app/services/user/user.service';
-import {	AndroidService} from 'src/app/services/android/android.service';
-import {	UPEService} from 'src/app/services/upe/upe.service';
-import {	SecurityAdvisorMockService} from 'src/app/services/security/securityMock.service';
-import {	LenovoIdDialogService} from 'src/app/services/dialog/lenovoIdDialog.service';
-import {	LoggerService} from 'src/app/services/logger/logger.service';
-import {	SessionStorageKey} from 'src/app/enums/session-storage-key-enum';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { QaService } from '../../../services/qa/qa.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { Status } from 'src/app/data-models/widgets/status.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { AndroidService } from 'src/app/services/android/android.service';
+import { UPEService } from 'src/app/services/upe/upe.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
-
 
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
-	styleUrls: ['./page-dashboard.component.scss'],
+	styleUrls: [ './page-dashboard.component.scss' ]
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	submit = this.translate.instant('dashboard.feedback.form.button');
@@ -38,6 +38,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	public systemStatus: Status[] = [];
 	public isOnline = true;
 	private protocalAction: any;
+
+	warrantyData: { info: any; cache: boolean };
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -71,7 +73,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		private lenovoIdDialogService: LenovoIdDialogService,
 		private loggerService: LoggerService,
-		private hypService: HypothesisService
+		private hypService: HypothesisService,
+		public supportService: SupportService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -94,6 +97,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.fetchContent();
 		});
 
+		this.isOnline = this.commonService.isOnline;
+		this.warrantyData = this.supportService.warrantyData;
 	}
 
 	ngOnInit() {
@@ -114,6 +119,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchContent();
 		});
+
+		this.getWarrantyInfo(this.isOnline);
 	}
 
 	ngDoCheck(): void {
@@ -130,7 +137,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+		if (
+			this.router.routerState.snapshot.url.indexOf('security') === -1 &&
+			this.router.routerState.snapshot.url.indexOf('dashboard') === -1
+		) {
 			if (this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
@@ -139,8 +149,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.qaService.destroyChangeSubscribed();
 	}
 
+	getWarrantyInfo(online: boolean) {
+		this.supportService.getWarrantyInfo(online);
+	}
 
-	private fetchContent(lang ?: string) {
+	private fetchContent(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -149,7 +162,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			queryOptions = {
 				Page: 'dashboard',
 				Lang: lang,
-				GEO: 'US',
+				GEO: 'US'
 			};
 		}
 		this.getTileBSource().then((source) => {
@@ -159,33 +172,45 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 					if (response && response.length > 0) {
 						this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-						const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
-							return {
-								albumId: 1,
-								id: record.Id,
-								source: record.Title,
-								title: record.Description,
-								url: record.FeatureImage,
-								ActionLink: record.ActionLink,
-								ActionType: record.ActionType
-							};
-						});
+						const heroBannerItems = this.cmsService
+							.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
+							.map((record, index) => {
+								return {
+									albumId: 1,
+									id: record.Id,
+									source: record.Title,
+									title: record.Description,
+									url: record.FeatureImage,
+									ActionLink: record.ActionLink,
+									ActionType: record.ActionType
+								};
+							});
 						if (heroBannerItems && heroBannerItems.length) {
 							this.heroBannerItems = heroBannerItems;
 						}
 
 						if (source === 'CMS') {
-							const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+							const cardContentPositionB = this.cmsService.getOneCMSContent(
+								response,
+								'half-width-title-description-link-image',
+								'position-B'
+							)[0];
 							if (cardContentPositionB) {
 								this.cardContentPositionB = cardContentPositionB;
 								if (this.cardContentPositionB.BrandName) {
-									this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+									this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
+										'|'
+									)[0];
 								}
 								cardContentPositionB.DataSource = 'cms';
 							}
 						}
 
-						const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+						const cardContentPositionC = this.cmsService.getOneCMSContent(
+							response,
+							'half-width-title-description-link-image',
+							'position-C'
+						)[0];
 						if (cardContentPositionC) {
 							this.cardContentPositionC = cardContentPositionC;
 							if (this.cardContentPositionC.BrandName) {
@@ -193,17 +218,29 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 							}
 						}
 
-						const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+						const cardContentPositionD = this.cmsService.getOneCMSContent(
+							response,
+							'full-width-title-image-background',
+							'position-D'
+						)[0];
 						if (cardContentPositionD) {
 							this.cardContentPositionD = cardContentPositionD;
 						}
 
-						const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+						const cardContentPositionE = this.cmsService.getOneCMSContent(
+							response,
+							'half-width-top-image-title-link',
+							'position-E'
+						)[0];
 						if (cardContentPositionE) {
 							this.cardContentPositionE = cardContentPositionE;
 						}
 
-						const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+						const cardContentPositionF = this.cmsService.getOneCMSContent(
+							response,
+							'half-width-top-image-title-link',
+							'position-F'
+						)[0];
 						if (cardContentPositionF) {
 							this.cardContentPositionF = cardContentPositionF;
 						}
@@ -213,7 +250,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						this.fetchContent('en');
 					}
 				},
-				error => {
+				(error) => {
 					console.log('fetchCMSContent error', error);
 				}
 			);
@@ -223,7 +260,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					position: 'position-B'
 				};
 				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
-					const cardContentPositionB = this.upeService.getOneUPEContent(upeResp, 'half-width-title-description-link-image', 'position-B')[0];
+					const cardContentPositionB = this.upeService.getOneUPEContent(
+						upeResp,
+						'half-width-title-description-link-image',
+						'position-B'
+					)[0];
 					if (cardContentPositionB) {
 						this.cardContentPositionB = cardContentPositionB;
 						if (this.cardContentPositionB.BrandName) {
@@ -263,30 +304,34 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	public onConnectivityClick($event: any) {}
 
-
 	private getTileBSource() {
-		 return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then((source) => {
-				if (source === 'UPE') {
-					resolve('UPE');
-				} else {
+		return new Promise((resolve) => {
+			this.hypService.getFeatureSetting('TileBSource').then(
+				(source) => {
+					if (source === 'UPE') {
+						resolve('UPE');
+					} else {
+						resolve('CMS');
+					}
+				},
+				() => {
 					resolve('CMS');
 				}
-			}, () => {
-				resolve('CMS');
-			});
-		 });
+			);
+		});
 	}
 
 	private setDefaultCMSContent() {
-		this.heroBannerItems = [{
-			albumId: 1,
-			id: 1,
-			source: 'Vantage',
-			title: 'Welcome to the next generation of Lenovo Vantage!',
-			url: '/assets/cms-cache/Vantage3Hero-zone0.jpg',
-			ActionLink: null
-		}];
+		this.heroBannerItems = [
+			{
+				albumId: 1,
+				id: 1,
+				source: 'Vantage',
+				title: 'Welcome to the next generation of Lenovo Vantage!',
+				url: '/assets/cms-cache/Vantage3Hero-zone0.jpg',
+				ActionLink: null
+			}
+		];
 
 		this.cardContentPositionB = {
 			Title: '',
@@ -418,7 +463,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		disk.type = 'system';
 		this.systemStatus[1] = disk;
 
-
 		const warranty = new Status();
 		warranty.status = 4;
 		warranty.id = 'warranty';
@@ -431,7 +475,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.translate.stream('dashboard.systemStatus.warranty.detail.notFound').subscribe((value) => {
 			warranty.detail = value;
 		});
-
 
 		warranty.path = '/support';
 		warranty.asLink = false;
@@ -454,24 +497,22 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				systemUpdate.detail = value;
 			});
 
-
 			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
 			systemUpdate.type = 'system';
 			this.systemStatus[3] = systemUpdate;
 		}
-
 	}
 
 	private getSystemInfo() {
 		// ram and disk
-		this.dashboardService.getMemoryDiskUsage().then(value => {
+		this.dashboardService.getMemoryDiskUsage().then((value) => {
 			if (value) {
 				const memory = this.systemStatus[0];
 				const totalRam = value.memory.total;
 				const usedRam = value.memory.used;
-				const percentRam = parseInt(((usedRam / totalRam) * 100).toFixed(0), 10);
+				const percentRam = parseInt((usedRam / totalRam * 100).toFixed(0), 10);
 				if (percentRam > 70) {
 					memory.status = 1;
 				} else {
@@ -481,10 +522,16 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				const totalDisk = value.disk.total;
 				const usedDisk = value.disk.used;
 				this.translate.stream('dashboard.systemStatus.memory.detail.of').subscribe((re) => {
-					memory.detail = `${this.commonService.formatBytes(usedRam, 1)} ${re} ${this.commonService.formatBytes(totalRam, 1)}`;
-					disk.detail = `${this.commonService.formatBytes(usedDisk, 1)} ${re} ${this.commonService.formatBytes(totalDisk, 1)}`;
+					memory.detail = `${this.commonService.formatBytes(
+						usedRam,
+						1
+					)} ${re} ${this.commonService.formatBytes(totalRam, 1)}`;
+					disk.detail = `${this.commonService.formatBytes(
+						usedDisk,
+						1
+					)} ${re} ${this.commonService.formatBytes(totalDisk, 1)}`;
 				});
-				const percent = parseInt(((usedDisk / totalDisk) * 100).toFixed(0), 10);
+				const percent = parseInt((usedDisk / totalDisk * 100).toFixed(0), 10);
 				if (percent > 90) {
 					disk.status = 1;
 				} else {
@@ -494,7 +541,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		// warranty
-		this.dashboardService.getWarrantyInfo().subscribe(value => {
+		this.dashboardService.getWarrantyInfo().subscribe((value) => {
 			if (value) {
 				const warranty = this.systemStatus[2];
 				const warrantyDate = this.commonService.formatDate(value.expired);
@@ -520,7 +567,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 		// system update
 		if (this.deviceService && !this.deviceService.isSMode) {
-			this.dashboardService.getRecentUpdateInfo().subscribe(value => {
+			this.dashboardService.getRecentUpdateInfo().subscribe((value) => {
 				if (value) {
 					const systemUpdate = this.systemStatus[3];
 					const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
