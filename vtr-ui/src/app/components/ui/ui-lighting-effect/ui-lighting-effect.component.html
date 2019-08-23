@@ -1,6 +1,6 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()">
+		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()" tabindex="0">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</a>

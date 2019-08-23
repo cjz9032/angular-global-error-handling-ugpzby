@@ -70,6 +70,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		if (this.cache) {
 			//init ui
 			this.showIC = this.cache.showIC;
+			if (this.showIC == 0) {
+				this.isPowerSmartSettingHidden.emit(true);
+				return;
+			}
 			this.captionText = this.cache.captionText != "" ? this.translate.instant(this.cache.captionText): "";
 			this.showIntelligentCoolingToggle = this.cache.autoModeToggle.available;
 			this.enableIntelligentCoolingToggle = this.cache.autoModeToggle.status;
