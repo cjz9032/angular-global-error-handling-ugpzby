@@ -166,7 +166,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 								source: record.Title,
 								title: record.Description,
 								url: record.FeatureImage,
-								ActionLink: record.ActionLink
+								ActionLink: record.ActionLink,
+								ActionType: record.ActionType
 							};
 						});
 						if (heroBannerItems && heroBannerItems.length) {

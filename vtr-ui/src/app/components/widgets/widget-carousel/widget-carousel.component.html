@@ -18,7 +18,7 @@
 				rel="noopener"
 				class="carousel-link"
 				[ngClass]="{'no-link': !model.link}"
-				(click)="linkClicked($event, model.link)">
+				(click)="linkClicked($event, model.linkType, model.link)">
 				<img [src]="model.image"
 					class="image img-fluid">
 				<div class="carousel-caption">
