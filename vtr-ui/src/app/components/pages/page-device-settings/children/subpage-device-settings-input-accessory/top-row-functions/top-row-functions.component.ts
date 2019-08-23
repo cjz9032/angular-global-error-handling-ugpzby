@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 
 @Component({
 	selector: 'vtr-top-row-functions',
@@ -11,7 +12,9 @@ export class TopRowFunctionsComponent implements OnInit {
 	public topRowKeyObj: any = {};
 	public showAdvancedSection = false;
 
-	constructor(private keyboardService: InputAccessoriesService) { }
+	constructor(
+		private keyboardService: InputAccessoriesService,
+		public systemUpdateService: SystemUpdateService) { }
 
 	ngOnInit() {
 		this.getFunctionCapabilities();
@@ -63,6 +66,7 @@ export class TopRowFunctionsComponent implements OnInit {
 	}
 
 	public onChangeFunType(value: boolean) {
+		console.log('set funlock req here ------------->', value)
 		this.keyboardService.setFnLock(value).then(res => {
 		});
 	}
@@ -72,9 +76,10 @@ export class TopRowFunctionsComponent implements OnInit {
 		});
 	}
 	public rebootToggleOnOff(event) {
-		console.log('onPrimaryFunToggle log here------->', event.switchValue);
-		this.keyboardService.setPrimaryFunction(event.switchValue).then(res => {
-			console.log('onPrimaryFunToggle log here------->', res);
+		this.keyboardService.setPrimaryFunction(event.switchValue).then((res: any) => {
+			if (res.RebootRequired === true) {
+				this.systemUpdateService.restartWindows();
+			}
 		});
 	}
 }
