@@ -9,7 +9,7 @@
 					vtrOfflineMode
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'InstallButton'"
-					[metricsParam]="articleId ? {ArticleId: articleId} : ''"
+					[metricsParam]="articleId ? {ArticleId: articleId} : {}"
 			>
 				Install Now
 			</button>
@@ -18,7 +18,7 @@
 			   vtrSendAnalytics
 			   [metricsEvent]="'ItemClick'"
 			   [metricsItem]="'LearnMoreLink'"
-			   [metricsParam]="articleId ? {ArticleId: articleId} : ''"
+			   [metricsParam]="articleId ? {ArticleId: articleId} : {}"
 			   (click)="clickMore.emit()">
 				Learn more
 			</a>
