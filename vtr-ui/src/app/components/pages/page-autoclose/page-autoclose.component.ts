@@ -99,7 +99,6 @@ export class PageAutocloseComponent implements OnInit {
 	doNotShowAction(event: any) {
 		const status = event.target.checked;
 		try {
-			console.log('Set successfully ------------------------>', !status);
 			this.getNeedStatus = !status;
 		} catch (error) {
 			console.error(error.message);
@@ -189,10 +188,8 @@ export class PageAutocloseComponent implements OnInit {
 			const addApp = event.target.value;
 			try {
 				this.gamingAutoCloseService.addAppsAutoCloseList(addApp).then((success: any) => {
-					console.log('Added successfully ------------------------>', success);
 					if (success) {
 						this.refreshAutoCloseList();
-						// this.refreshRunningList();
 					}
 				});
 			} catch (error) {
@@ -211,10 +208,8 @@ export class PageAutocloseComponent implements OnInit {
 	deleteAppFromList(appData: any) {
 		console.log(appData);
 		this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
-			console.log('Deleted successfully ------------------------>', response);
 			if (response) {
-				// this.autoCloseAppList.splice(appData.index, 1);
-				this.refreshAutoCloseList();
+				this.autoCloseAppList.splice(appData.index, 1);
 				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				this.refreshRunningList();
 			}

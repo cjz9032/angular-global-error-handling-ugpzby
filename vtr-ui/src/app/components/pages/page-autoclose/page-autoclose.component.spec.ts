@@ -314,7 +314,7 @@ xdescribe('PageAutocloseComponent', () => {
 		fakeAsync(() => {
 			component.toggleStatus = true;
 			fixture.detectChanges();
-			gamingAutoCloseServiceMock.getNeedToAsk.and.returnValue(Promise.resolve(true));
+			gamingAutoCloseServiceMock.getNeedToAskStatusCache.and.returnValue(true);
 			component.openTargetModal();
 			tick(10);
 			expect(component.showAppsModal).toEqual(true);
@@ -326,8 +326,8 @@ xdescribe('PageAutocloseComponent', () => {
 		'toggleStatus is false and needToAsk true then should show turnon popup',
 		fakeAsync(() => {
 			component.toggleStatus = false;
+			component.needToAsk = true;
 			fixture.detectChanges();
-			gamingAutoCloseServiceMock.getNeedToAsk.and.returnValue(Promise.resolve(true));
 			component.openTargetModal();
 			tick(10);
 			expect(component.showAppsModal).toEqual(false);
@@ -339,8 +339,8 @@ xdescribe('PageAutocloseComponent', () => {
 		'toggleStatus is false and needToAsk false then should show running apps popup directly',
 		fakeAsync(() => {
 			component.toggleStatus = false;
+			component.needToAsk = false;
 			fixture.detectChanges();
-			gamingAutoCloseServiceMock.getNeedToAsk.and.returnValue(Promise.resolve(false));
 			component.openTargetModal();
 			tick(10);
 			expect(component.showAppsModal).toEqual(true);
