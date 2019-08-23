@@ -3,6 +3,7 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -198,5 +199,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 	fnCtrlKey(event) {
 		this.switchValue = event.switchValue;
+	}
+
+	launchProtocol(protocol: string) {
+		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
+			WinRT.launchUri(protocol);
+		}
 	}
 }
