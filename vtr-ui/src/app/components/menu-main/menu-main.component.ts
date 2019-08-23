@@ -28,10 +28,11 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
-	styleUrls: ['./menu-main.component.scss']
+	styleUrls: [ './menu-main.component.scss' ]
 })
 export class MenuMainComponent implements OnInit, AfterViewInit {
-	@ViewChild('menuTarget', { static: false }) menuTarget: ElementRef;
+	@ViewChild('menuTarget', { static: false })
+	menuTarget: ElementRef;
 	@Input() loadMenuItem: any = {};
 	public machineFamilyName: string;
 	public country: string;
@@ -50,7 +51,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
-
 
 	constructor(
 		private router: Router,
@@ -71,13 +71,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService
 	) {
-		localInfoService.getLocalInfo().then(result => {
-			this.region = result.GEO;
-			this.showVpn();
-		}).catch(e => {
-			this.region = 'us';
-			this.showVpn();
-		});
+		localInfoService
+			.getLocalInfo()
+			.then((result) => {
+				this.region = result.GEO;
+				this.showVpn();
+			})
+			.catch((e) => {
+				this.region = 'us';
+				this.showVpn();
+			});
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
@@ -130,12 +133,15 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	onFocus(): void {
 		this.showVpn();
 	}
-	@HostListener('document:click', ['$event.target'])
+	@HostListener('document:click', [ '$event.target' ])
 	onClick(targetElement) {
 		if (this.menuTarget) {
 			const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 			const toggleMenuButton =
-				targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars') || targetElement.parentElement.classList.contains('fa-bars') || targetElement.localName === 'path';
+				targetElement.classList.contains('navbar-toggler-icon ') ||
+				targetElement.classList.contains('fa-bars') ||
+				targetElement.parentElement.classList.contains('fa-bars') ||
+				targetElement.localName === 'path';
 			if (!clickedInside && !toggleMenuButton) {
 				this.showMenu = false;
 			}
@@ -158,9 +164,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				.then((value: number) => {
 					this.loadMenuOptions(value);
 				})
-				.catch((error) => {
-					console.error('checkIsDesktopMachine', error);
-				});
+				.catch((error) => {});
 		}
 
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
@@ -184,8 +188,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit(): void {
 		this.getMenuItems().then((items) => {
-			const chsItem = items.find(item => item.id === 'home-security');
-			if (!chsItem) { return; }
+			const chsItem = items.find((item) => item.id === 'home-security');
+			if (!chsItem) {
+				return;
+			}
 			this.preloadImages = [].concat(chsItem.pre);
 		});
 	}
@@ -198,7 +204,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	toggleMenu(event) {
 		this.showMenu = !this.showMenu;
-		console.log('TOGGLE MENU', this.showMenu);
 	}
 
 	isParentActive(item) {
@@ -237,7 +242,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	menuItemClick(event, path) {
-		// console.log (path);
 		this.router.navigateByUrl(path);
 	}
 
@@ -255,7 +259,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			switch (notification.type) {
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, notification.payload.family);
+					this.commonService.setLocalStorageValue(
+						LocalStorageKey.MachineFamilyName,
+						notification.payload.family
+					);
 					this.country = notification.payload.country;
 					break;
 				case LocalStorageKey.MachineFamilyName:
@@ -336,7 +343,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	getMenuItems(): Promise<any> {
-		console.log('Getting menu items for the Gaming device?', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
@@ -353,7 +359,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					this.logger.error('get IsSmartAssistSupported');
 
 					// if cache has value true for IsSmartAssistSupported, add menu item
-					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
+					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
+						LocalStorageKey.IsSmartAssistSupported,
+						false
+					);
 
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
@@ -370,32 +379,54 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.smartAssist.getAPSCapability(),
 						this.smartAssist.getSensorStatus(),
 						this.smartAssist.getHDDStatus()
-					]).then((responses: any[]) => {
-						this.logger.error('inside Promise.all THEN JS Bridge call', responses);
+					])
+						.then((responses: any[]) => {
+							this.logger.error('inside Promise.all THEN JS Bridge call', responses);
 
-						console.log('showSmartAssist.Promise.all()', responses);
-						console.log('Smart Assist Expressions', responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && (responses[7] > 0)));
-						// cache smart assist capability
-						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
-						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
-						smartAssistCapability.isLenovoVoiceSupported = responses[2];
-						smartAssistCapability.isIntelligentMediaSupported = responses[3];
-						smartAssistCapability.isIntelligentScreenSupported = responses[4];
-						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && (responses[7] > 0));
-						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
-						this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
+							console.log('showSmartAssist.Promise.all()', responses);
+							console.log(
+								'Smart Assist Expressions',
+								responses[0] ||
+									responses[1] ||
+									responses[2] ||
+									responses[3].available ||
+									responses[4] ||
+									(responses[5] && responses[6] && responses[7] > 0)
+							);
+							// cache smart assist capability
+							const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
+							smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
+							smartAssistCapability.isLenovoVoiceSupported = responses[2];
+							smartAssistCapability.isIntelligentMediaSupported = responses[3];
+							smartAssistCapability.isIntelligentScreenSupported = responses[4];
+							smartAssistCapability.isAPSSupported = responses[5] && responses[6] && responses[7] > 0;
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.SmartAssistCapability,
+								smartAssistCapability
+							);
+							this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
 
-						const isAvailable = (responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
-						// const isAvailable = true;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
+							const isAvailable =
+								responses[0] ||
+								responses[1] ||
+								responses[2] ||
+								responses[3].available ||
+								responses[4] ||
+								(responses[5] && responses[6] && responses[7] > 0);
+							// const isAvailable = true;
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.IsSmartAssistSupported,
+								isAvailable
+							);
 
-						// avoid duplicate entry. if not added earlier then add menu
-						if (isAvailable && !isSmartAssistSupported) {
-							this.addSmartAssistMenu(myDeviceItem);
-						}
-					}).catch((error) => {
-						this.logger.error('error in initSmartAssist.Promise.all()', error);
-					});
+							// avoid duplicate entry. if not added earlier then add menu
+							if (isAvailable && !isSmartAssistSupported) {
+								this.addSmartAssistMenu(myDeviceItem);
+							}
+						})
+						.catch((error) => {
+							this.logger.error('error in initSmartAssist.Promise.all()', error);
+						});
 				}
 			}
 		});
@@ -422,17 +453,17 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	initInputAccessories() {
-		Promise.all([
-			this.keyboardService.GetUDKCapability(),
-			this.keyboardService.GetKeyboardMapCapability()
-		]).then((responses: any[]) => {
-			const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
-			inputAccessoriesCapability.isUdkAvailable = responses[0];
-			inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-			this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, inputAccessoriesCapability);
-		}).catch((error) => {
-			console.error('error in initSmartAssist.Promise.all()', error);
-		});
+		Promise.all([ this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability() ])
+			.then((responses: any[]) => {
+				const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
+				inputAccessoriesCapability.isUdkAvailable = responses[0];
+				inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+				this.commonService.setLocalStorageValue(
+					LocalStorageKey.InputAccessoriesCapability,
+					inputAccessoriesCapability
+				);
+			})
+			.catch((error) => {});
 	}
 
 	openModernPreloadModal() {

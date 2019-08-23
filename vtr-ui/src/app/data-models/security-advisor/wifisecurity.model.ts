@@ -65,7 +65,6 @@ export class WifiHomeViewModel {
 									this.isLWSEnabled = false;
 								}
 							}, (error) => {
-								console.log('no permission');
 							});
 						}
 					}

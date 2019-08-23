@@ -45,7 +45,6 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostList, appList);
 			}
 		} catch (error) {
-			console.log(`ERROR in getNetworkBoostList()`, error.message);
 		}
 	}
 	getNetworkBoostListCache() {
@@ -59,13 +58,10 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 	async removeApp(app: any, i: any) {
 		try {
 			const result = await this.networkBoostService.deleteProcessInNetBoost(app);
-			console.log(`RESULT from deleteProcessInNetBoost()`, result);
 			this.getNetworkBoostList();
 		} catch (err) {
-			console.log(`ERROR in removeApp()`, err);
 		}
 	}
-	
 	sendAddedApps() {
 		this.runningAppsList = this.runningAppsList || [];
 		this.addedApps.emit(this.runningAppsList.length);
