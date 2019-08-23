@@ -21,19 +21,19 @@ import {
 
 export interface MetricsData {
 	ItemType: string;
-	ItemName ? : string;
-	ItemParent ? : string;
-	ItemParm ? : string;
-	ItemValue ? : string;
-	viewOrder ? : number;
-	ItemID ? : string;
-	ItemCategory ? : string;
-	ItemPosition ? : string;
-	PageNumber ? : string;
-	SettingParent ? : string;
-	SettingName ? : string;
-	SettingValue ? : string;
-	SettingParm ? : string;
+	ItemName?: string;
+	ItemParent?: string;
+	ItemParm?: string;
+	ItemValue?: string;
+	viewOrder?: number;
+	ItemID?: string;
+	ItemCategory?: string;
+	ItemPosition?: string;
+	PageNumber?: string;
+	SettingParent?: string;
+	SettingName?: string;
+	SettingValue?: string;
+	SettingParm?: string;
 }
 
 
@@ -124,8 +124,17 @@ export class MetricsDirective {
 		return data;
 	}
 
-	@HostListener('click', ['$event.target'])
-	async onclick(target) {
+	@HostListener('click', ['$event'])
+	async onclick(event) {
+		console.log(" click number :: " + event.detail);
+
+		// prevent default event propogation for more than 1 click stop event propagation
+		if (event.detail > 1) {
+			event.preventDefault();
+			event.stopPropagation();
+			return;
+		}
+		// Only for first click (when event.detail ===1 )log the metrics and propagate event
 		if (!this.metricsParent) {
 			this.metricsParent = this.activatedRoute.snapshot.data.pageName;
 		}
@@ -145,5 +154,6 @@ export class MetricsDirective {
 				this.devService.writeLog('sending metric breaks with exception:' + ex);
 			}
 		}
+
 	}
 }
