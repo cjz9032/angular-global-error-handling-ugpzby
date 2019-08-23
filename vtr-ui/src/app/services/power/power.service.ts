@@ -519,14 +519,14 @@ export class PowerService {
 		return undefined;
 	}
 
-	public getSmartStandbyActiveStartEnd(): Promise<boolean> {
+	public getSmartStandbyActiveStartEnd(): Promise<string> {
 		if (this.devicePowerThinkPad) {
 			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyActiveStartEnd();
 		}
 		return undefined;
 	}
 
-	public getSmartStandbyDaysOfWeekOff(): Promise<boolean> {
+	public getSmartStandbyDaysOfWeekOff(): Promise<string> {
 		if (this.devicePowerThinkPad) {
 			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyDaysOfWeekOff();
 		}

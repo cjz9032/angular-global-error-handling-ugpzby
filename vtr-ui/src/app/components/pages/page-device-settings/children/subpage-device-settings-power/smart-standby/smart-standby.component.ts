@@ -49,27 +49,19 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	setSmartStandbySection() {
+	async setSmartStandbySection() {
 		if (this.powerService.isShellAvailable) {
-			this.powerService.getSmartStandbyEnabled()
-				.then((response: boolean) => {
-					console.log('getSmartStandbyEnabled response', response);
-					this.smartStandby.isEnabled = response;
-					if (this.smartStandby.isEnabled) {
-						Promise.all([
-							this.powerService.getSmartStandbyActiveStartEnd(),
-							this.powerService.getSmartStandbyDaysOfWeekOff()
-						]).then((responses: any[]) => {
-							this.smartStandby.activeStartEnd = responses[0];
-							this.splitStartEndTime();
-							this.smartStandby.daysOfWeekOff = responses[1];
-						}).catch((error) => {
-							console.log('getSmartStandbyCapability Error', error);
-						});
-					}
-				}).catch((error) => {
-					console.log('getSmartStandbyCapability Error', error);
-				});
+			const response = await this.powerService.getSmartStandbyEnabled();
+			console.log('getSmartStandbyEnabled response', response);
+			this.smartStandby.isEnabled = response;
+			if (this.smartStandby.isEnabled) {
+				const activeStartEnd = await this.powerService.getSmartStandbyActiveStartEnd();
+				const daysOffWeek = await this.powerService.getSmartStandbyDaysOfWeekOff();
+				this.smartStandby.activeStartEnd = activeStartEnd;
+				this.splitStartEndTime();
+				this.smartStandby.daysOfWeekOff = daysOffWeek;
+
+			}
 		}
 		// this.initSmartStandby();
 	}
