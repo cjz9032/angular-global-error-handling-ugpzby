@@ -33,7 +33,6 @@ interface UserProfile {
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	@Input() size: 'default' | 'small' = 'default';
 	@Output() userEmail = new EventEmitter<string>();
-	emailWasScanned$ = this.emailScannerService.scanNotifier$;
 
 	emailForm = this.formBuilder.group({
 		email: ['', [Validators.required, Validators.pattern(EMAIL_REGEXP)]],

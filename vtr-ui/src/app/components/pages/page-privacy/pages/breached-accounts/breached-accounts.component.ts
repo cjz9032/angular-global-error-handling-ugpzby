@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { takeUntil } from 'rxjs/operators';
+import { delayWhen, filter, takeUntil } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
@@ -27,7 +27,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 		title: 'Check email for breaches',
 		figleafTitle: 'Lenovo Privacy Essentials by FigLeaf watches out for breaches',
 		figleafInstalled: 'If your personal information shows up in one, you’ll be notified right away.',
-		figleafUninstalled: 'Find out if your private information is being exposed. We will check the dark web and every known data breach.',
+		figleafUninstalled: 'Find out if your private information is being exposed. We will check the dark web and every known data breach. Your full email will be encrypted and won’t be visible to anyone except you.',
 		noIssuesTitle: 'No breaches found for your email',
 		noIssuesDescription: 'Your private information associated with this email address is safe so far.'
 	};
@@ -47,11 +47,11 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 		this.breachedAccountsService.getNewBreachedAccounts();
 
 		this.userEmail$.pipe(
+			delayWhen(() => this.emailScannerService.loadingStatusChanged$.pipe(filter((isLoad) => !isLoad))),
 			takeUntil(instanceDestroyed(this)),
 		).subscribe((userEmail) => {
 			this.updateTextForHeader(userEmail);
 		});
-
 	}
 
 	ngOnDestroy() {

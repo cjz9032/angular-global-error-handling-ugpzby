@@ -11,7 +11,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	@Input() metricsEvent: string; // ItemType
 	@Input() metricsItem: string; // ItemName
 	@Input() metricsValue?: string; // ItemValue
-	@Input() metricsParam?: string | object; // ItemParm
+	@Input() metricsParam?: object; // ItemParm
 	@Input() pageContext?: string; // PageContext
 	@Input() metricsParent?: string; // ItemParent
 	@Input() customPageName?: string;
