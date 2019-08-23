@@ -161,5 +161,7 @@ export enum LocalStorageKey {
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
 	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
 	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
-	EasyResumeCapability = '[LocalStorageKey] EasyResumeCapability'
+	EasyResumeCapability = '[LocalStorageKey] EasyResumeCapability',
+	VantageToolbarCapability = '[LocalStorageKey] VantageToolbarCapability',
+	EnergyStarCapability = '[LocalStorageKey] EnergyStarCapability'
 }

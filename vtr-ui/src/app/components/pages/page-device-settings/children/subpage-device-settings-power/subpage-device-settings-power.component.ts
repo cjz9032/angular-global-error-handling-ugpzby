@@ -27,6 +27,7 @@ enum PowerMode {
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public vantageToolbarStatus = new FeatureStatus(false, true);
+	vantageToolbarCache: FeatureStatus;
 	public alwaysOnUSBStatus = new FeatureStatus(false, true);
 	public usbChargingStatus = new FeatureStatus(false, true);
 	public easyResumeStatus = new FeatureStatus(false, true);
@@ -37,6 +38,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public batteryGauge: any;
 	public showWarningMsg: boolean;
 	public isEnergyStarProduct = false;
+	public energyStarCache: boolean;
 	public isChargeThresholdAvailable = false;
 
 	@Input() isCollapsed = true;
@@ -199,6 +201,36 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initDataFromCache() {
 		this.initPowerSettingsFromCache();
+		this.initOtherSettingsFromCache();
+		this.initEnergyStarFromCache();
+	}
+
+	initEnergyStarFromCache() {
+		try {
+			debugger
+			this.energyStarCache = this.commonService.getLocalStorageValue(LocalStorageKey.EnergyStarCapability, undefined);
+			if (this.energyStarCache != undefined) {
+				this.isEnergyStarProduct = this.energyStarCache;
+			} else {
+				this.energyStarCache = false;
+			}
+		} catch (error) {
+			console.log("initEnergyStarFromCache", error);
+		}
+	}
+
+	initOtherSettingsFromCache() {
+		try {
+			this.vantageToolbarCache = this.commonService.getLocalStorageValue(LocalStorageKey.VantageToolbarCapability, undefined);
+			if (this.vantageToolbarCache) {
+				this.vantageToolbarStatus.available = this.vantageToolbarCache.available;
+				this.vantageToolbarStatus.status = this.vantageToolbarCache.status;
+			} else {
+				this.vantageToolbarCache = new FeatureStatus(false, true);
+			}
+		} catch (error) {
+			console.log("initOtherSettingsFromCache", error);
+		}
 	}
 
 	initPowerSettingsFromCache() {
@@ -691,6 +723,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.then((featureStatus: FeatureStatus) => {
 						console.log('getVantageToolBarStatus.then', featureStatus);
 						this.vantageToolbarStatus = featureStatus;
+						this.commonService.setLocalStorageValue(LocalStorageKey.VantageToolbarCapability, featureStatus);
 					})
 					.catch(error => {
 						console.error('getVantageToolBarStatus', error);
@@ -721,6 +754,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public getStartMonitorCallBack(featureStatus: FeatureStatus) {
 		console.log('getStartMonitorCallBack', featureStatus);
 		this.vantageToolbarStatus = featureStatus;
+		this.commonService.setLocalStorageValue(LocalStorageKey.VantageToolbarCapability, featureStatus);
 	}
 
 	public startMonitor() {
@@ -900,6 +934,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				console.log('getEnergyStarCapability.then', response);
 
 				this.isEnergyStarProduct = response;
+				this.commonService.setLocalStorageValue(LocalStorageKey.EnergyStarCapability, this.isEnergyStarProduct);
 			})
 			.catch(error => {
 				console.log('getEnergyStarCapability.error', error);
