@@ -7,15 +7,18 @@
 	box-shadow: $drop_shadow;
 	padding: 4rem;
 	letter-spacing: 0;
+	margin-bottom: 4rem;
 
 	&.in-warranty {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat,
 			linear-gradient(to left bottom, #4980fc, #2e62d9);
+		background-size: cover;
 	}
 
 	&.expired {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat,
 			linear-gradient(to left top, #f17f14, #ed4e04);
+		background-size: cover;
 
 		.button {
 			color: #c94000;
