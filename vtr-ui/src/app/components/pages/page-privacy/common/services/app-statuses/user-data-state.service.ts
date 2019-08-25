@@ -34,9 +34,15 @@ export class UserDataStateService {
 			let status = breachesState.breaches !== null && breachesState.breaches.length ?
 				FeaturesStatuses.exist :
 				FeaturesStatuses.none;
+
 			if (breachesState.error) {
 				status = FeaturesStatuses.error;
 			}
+
+			if (breachesState.reset) {
+				status = FeaturesStatuses.undefined;
+			}
+
 			this.breachedAccountsResult = status;
 			this.updateDataSubject();
 		});

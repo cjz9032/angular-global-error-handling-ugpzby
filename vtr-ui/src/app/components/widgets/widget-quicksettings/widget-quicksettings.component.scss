@@ -1,16 +1,18 @@
 @import "../../../app.theme.scss";
 
-.heading {
-	color: $main_darker;
-	font-size: 3.5rem;
-	margin-bottom: 5rem;
-	font-weight: $weight-medium;
-}
-.widget-icon-3 {
-	display: flex;
-	// justify-content: space-between;
-	> div {
-		width: 33%;
+.vtr-widget-quicksettings {
+	.heading {
+		color: $main_darker;
+		font-size: 3.5rem;
+		margin-bottom: 5rem;
+		font-weight: $weight-medium;
+	}
+	.widget-icon-3 {
+		display: flex;
+		// justify-content: space-between;
+		> div {
+			width: 33%;
+		}
 	}
 }
 
@@ -29,6 +31,16 @@
 	justify-content: space-between;
 	.note-icon {
 		font-size: 20px;
+	}
+
+	.link-text {
+		font-size: $body;
+		text-decoration: underline;
+		letter-spacing: 0.05rem;
+		color: $menu_hover;
+		cursor: pointer;
+		padding-top: 1.8rem;
+		font-weight: 600;
 	}
 	.privacy-button {
 		font-size: 1.3rem;

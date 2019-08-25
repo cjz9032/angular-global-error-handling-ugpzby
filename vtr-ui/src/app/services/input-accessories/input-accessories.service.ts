@@ -6,10 +6,12 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 })
 export class InputAccessoriesService {
 	public keyboardManager: any;
+	private mouseAndTouchPad: any;
 	public isShellAvailable = false;
 
 	constructor(shellService: VantageShellService) {
 		this.keyboardManager = shellService.getKeyboardManagerObject();
+		this.mouseAndTouchPad = shellService.getMouseAndTouchPad();
 		if (this.keyboardManager) {
 			this.isShellAvailable = true;
 		}
@@ -134,53 +136,135 @@ export class InputAccessoriesService {
 
 	// End  Hidden keyboard keys
 
-// Start Top Row Function keys
+	// Start Top Row Function keys
 
-public getTopRowFnLockCapability(): Promise<boolean> {
-	try {
-		if (this.keyboardManager) {
-			const response = this.keyboardManager.GetTopRowFnLockCapability();
-			return response;
+	public getTopRowFnLockCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetTopRowFnLockCapability();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error.message);
 	}
-}
-public getTopRowFnStickKeyCapability(): Promise<boolean> {
-	try {
-		if (this.keyboardManager) {
-			const response = this.keyboardManager.GetTopRowFnStickKeyCapability();
-			return response;
+	public getTopRowFnStickKeyCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetTopRowFnStickKeyCapability();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error.message);
 	}
-}
-public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
-	try {
-		if (this.keyboardManager) {
-			const response = this.keyboardManager.GetTopRowPrimaryFunctionCapability();
-			return response;
+	public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetTopRowPrimaryFunctionCapability();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error.message);
 	}
-}
 
-public getFnLockStatus(): Promise<any> {
-	try {
-		if (this.keyboardManager) {
-			const response = this.keyboardManager.GetFnLockStatus();
-			return response;
+	public getFnLockStatus(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetFnLockStatus();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error.message);
 	}
-}
 
+	public getFnStickKeyStatus(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetFnStickKeyStatus();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public getPrimaryFunctionStatus(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetPrimaryFunctionStatus();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 
+	public setFnStickKeyStatus(value): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.SetFnStickKey(value);
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setFnLock(value): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.SetFnLock(value);
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public setPrimaryFunction(value): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.SetPrimaryFunction(value);
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getMouseCapability(): Promise<boolean> {
+		try {
+			if (this.mouseAndTouchPad) {
+				this.mouseAndTouchPad.GetMouseCapability();
+			}
+			return this.booleanPromise(false);
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getTouchPadCapability(): Promise<boolean> {
+		try {
+			if (this.mouseAndTouchPad) {
+				this.mouseAndTouchPad.GetTouchpadCapability();
+			}
+			return this.booleanPromise(false);
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	private booleanPromise(value: boolean): Promise<boolean> {
+		return new Promise((resolve) => resolve(value));
+	}
 }

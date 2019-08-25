@@ -1,18 +1,13 @@
-<div *ngIf="capabilitiesObj.fnLockCap || capabilitiesObj.stickyFunCap || capabilitiesObj.primaryFunCap">
-  <div *ngIf="capabilitiesObj.fnLockCap">
+<div *ngIf="topRowKeyObj.fnLockCap || topRowKeyObj.stickyFunCap || topRowKeyObj.primaryFunCap">
+  <div *ngIf="topRowKeyObj.fnLockCap">
     <div class="row">
       <div class="col-12 pl-3">
-        <div class="col-12 px-0 title-blck d-flex">
-          <div class="col-9 px-0 d-flex">
-            <div class="left-icon">
-              <fa-icon [icon]="['fal', 'keyboard']"></fa-icon>
-            </div>
-            <div class="title pl-2">
-              {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
-            </div>
+        <div class="col-12 title-blck px-0 d-flex">
+          <div class="left-icon">
+            <fa-icon [icon]="['fal', 'keyboard']"></fa-icon>
           </div>
-          <div class="col-3 text-center px-0">
-            <span class="link-text mt-2">Advanced settings</span>
+          <div class="title pl-2">
+            {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
           </div>
         </div>
         <div class="col-12 pl-5 pr-0 caption">
@@ -20,54 +15,84 @@
             {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
           </div>
           <div class="my-3">
-            <vtr-ui-rectangle-radio [radioId]="'radio1'" [checked]="true" [group]="'radio'"
+            <vtr-ui-rectangle-radio [radioId]="'radio1'"
+              [checked]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || !(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) ? true: false"
+              [group]="'radio'"
               [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
-              [value]="'1'">
+              [value]="'1'" [iconName]="'icomoon icomoon-Special-function'" [disabled]="showAdvancedSection"
+              (change)="onChangeFunType(topRowKeyObj.primaryFunStatus)">
             </vtr-ui-rectangle-radio>
             <vtr-ui-rectangle-radio [radioId]="'radio2'" [group]="'radio'"
+              [checked]="(!topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? true: false"
               [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
-              [value]="'2'">
+              [value]="'2'" [iconName]="'icomoon icomoon-F1-F12-funciton'" [disabled]="showAdvancedSection"
+              (change)="onChangeFunType(!topRowKeyObj.primaryFunStatus)">
             </vtr-ui-rectangle-radio>
             <p class="text mt-3">
               {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.description' | translate}}
             </p>
+            <div *ngIf="!showAdvancedSection">
+              <span class="link-text mt-2" (click)="showAdvancedSection = true">
+                {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.showAdvSettings' | translate}}
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <vtr-ui-row-switch></vtr-ui-row-switch>
   </div>
-  <div *ngIf="capabilitiesObj.stickyFunCap">
-    <vtr-ui-row-switch
-      [title]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title' | translate"
-      componentName="Input Accessories" [leftIcon]="['fal', '']"
-      [caption]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.description' | translate"
-      [showChildContent]="true" [isSwitchVisible]="true" [isSwitchChecked]="false"
-      (toggleOnOff)="onStickyFunToggle($event)" [theme]="'white'"
-      [switchId]="'inputAccessories-hiddenKeyboardFunctions'">
-    </vtr-ui-row-switch>
-  </div>
-  <div *ngIf="capabilitiesObj.primaryFunCap">
-    <vtr-ui-row-switch
-      [title]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.title' | translate"
-      componentName="Input Accessories" [leftIcon]="['fal', '']"
-      [caption]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.description' | translate"
-      [showChildContent]="true" [theme]="'white'" [switchId]="'inputAccessories-subSection'">
-      <div class="pl-5 pr-0 mt-5">
-        <vtr-ui-rounded-rectangle-radio [radioId]="'nMehod_show'" [group]="'topRowKeys'" name="nMehod_show"
-          [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod' | translate"
-          [value]="'1'" [checked]="isHotKeys" (change)="onChanggeKeyType($event, '1')" [disabled]="false">
-        </vtr-ui-rounded-rectangle-radio>
-        <vtr-ui-rounded-rectangle-radio [radioId]="'fnKeyMehod_show'" [group]="'topRowKeys'" name="fnKeyMehod_show"
-          [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod' | translate"
-          [value]="'2'" [checked]="isFnKeys" (change)="onChanggeKeyType($event, '2')" [disabled]="false">
-        </vtr-ui-rounded-rectangle-radio>
-        <vtr-widget-permission-note
-											[noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
-                      [description]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.note' | translate"
-                      [noPath]="true">
-      </vtr-widget-permission-note>
+  <div *ngIf="showAdvancedSection">
+    <div *ngIf="topRowKeyObj.primaryFunCap">
+      <vtr-ui-row-switch
+        [title]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title' | translate"
+        componentName="Input Accessories" [leftIcon]="['fal', '']"
+        [caption]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.description' | translate"
+        [showChildContent]="true" [isSwitchVisible]="true" [isSwitchChecked]="topRowKeyObj.primaryFunStatus"
+        (rebootToggleOnOff)="rebootToggleOnOff($event)" [theme]="'white'"
+        [switchId]="'inputAccessories-hiddenKeyboardFunctions'">
+      </vtr-ui-row-switch>
+    </div>
+    <div *ngIf="topRowKeyObj.stickyFunCap">
+      <div class="col-12 pl-3">
+        <div class="col-12 title-blck px-0 d-flex">
+          <div class="title pl-5">
+            {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.title' | translate}}
+          </div>
+        </div>
+        <div class="col-12 pl-5 pr-0">
+          <div class="caption">
+            <div class="text">
+              {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.description' | translate}}
+            </div>
+          </div>
+          <div class="pl-2 pr-0 mt-5">
+            <vtr-ui-rounded-rectangle-radio [radioId]="'nMehod_show'" [group]="'topRowKeys'" name="nMehod_show"
+              [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod' | translate"
+              [value]="false" [checked]="!topRowKeyObj.stickyFunStatus" (change)="onChangeKeyType(false)"
+              [disabled]="false">
+            </vtr-ui-rounded-rectangle-radio>
+            <vtr-ui-rounded-rectangle-radio [radioId]="'fnKeyMehod_show'" [group]="'topRowKeys'" name="fnKeyMehod_show"
+              [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod' | translate"
+              [value]="true" [checked]="topRowKeyObj.stickyFunStatus" (change)="onChangeKeyType(true)"
+              [disabled]="false">
+            </vtr-ui-rounded-rectangle-radio>
+            <div class="caption mt-3">
+              <vtr-widget-permission-note
+                [noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
+                [description]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.note' | translate"
+                [noPath]="true">
+              </vtr-widget-permission-note>
+            </div>
+          </div>
+        </div>
       </div>
-    </vtr-ui-row-switch>
+    </div>
+    <div class="pl-5">
+      <span class="link-text mt-2 ml-4" (click)="showAdvancedSection = false">
+        {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.hideAdvSettings' | translate}}
+      </span>
+    </div>
+    <vtr-ui-row-switch></vtr-ui-row-switch>
   </div>
 </div>

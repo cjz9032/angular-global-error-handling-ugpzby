@@ -3,9 +3,16 @@
 .feature-header {
 	&__title {
 		@extend %subtitle;
+		line-height: normal;
 
 		&--red {
 			color: red;
+		}
+
+		&--three-dots {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
 		}
 	}
 

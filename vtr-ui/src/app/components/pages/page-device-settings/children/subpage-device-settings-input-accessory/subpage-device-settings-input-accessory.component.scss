@@ -190,7 +190,9 @@
   div {
     cursor: default;
   }
-  .fn-ctrl-block {
+  .control-options-block {
+	  margin-top: 1rem;
+	  margin-bottom: 2rem;
 	  p {
 		  color: $main_darker;
 		  font-weight: $weight_bold;
@@ -200,7 +202,7 @@
 	  .controls {
 		color: $main;
 		font-size: 1.3rem;
-		font-weight: $weight_bold;
+		font-weight: $weight_medium;
 		padding-top: 0.5rem;
 		  a {
 			  &:hover {

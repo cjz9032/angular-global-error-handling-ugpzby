@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalRebootConfirmComponent } from './modal-reboot-confirm.component';
 
-describe('ModalRebootConfirmComponent', () => {
+xdescribe('ModalRebootConfirmComponent', () => {
   let component: ModalRebootConfirmComponent;
   let fixture: ComponentFixture<ModalRebootConfirmComponent>;
 

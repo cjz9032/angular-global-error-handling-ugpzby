@@ -841,4 +841,11 @@ export class VantageShellService {
 		return undefined;
 	}
 	// ==================== End Hardware Scan
+
+	public getMouseAndTouchPad(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.inputControlLinks;
+		}
+		return undefined;
+	}
 }
