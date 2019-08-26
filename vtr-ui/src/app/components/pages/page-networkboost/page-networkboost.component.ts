@@ -79,16 +79,18 @@ export class PageNetworkboostComponent implements OnInit {
   async	openTargetModal() {
     try {
       this.needToAsk = this.networkBoostService.getNeedToAsk();
-      this.needToAsk = this.needToAsk === undefined ? false : this.needToAsk;
-      console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk);
+      this.needToAsk = (this.needToAsk === undefined || isNaN(this.needToAsk)) ? 0 : this.needToAsk;
+      console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk, this.needToAsk == 1, this.needToAsk == 2);
       console.log('TOGGLE STATUS =>', this.toggleStatus);
       if (this.toggleStatus) {
         this.showAppsModal = true;
-      } else if (!this.toggleStatus && !this.needToAsk) {
-        this.showTurnOnModal = true;
-      } else {
-        this.setNetworkBoostStatus({ switchValue: true });
+      } else if (this.needToAsk == 1 || this.needToAsk == 2) {
+        if (this.needToAsk == 2) {
+          this.setNetworkBoostStatus({ switchValue: true });
+        }
         this.showAppsModal = true;
+      } else {
+        this.showTurnOnModal = true;
       }
     } catch (error) {
       console.log(`ERROR in openTargetModal() `, error);
@@ -114,9 +116,12 @@ export class PageNetworkboostComponent implements OnInit {
     this.showAppsModal = true;
   }
 
-  initNotNowAction() {
+  initNotNowAction(event) {
+    this.setAksAgain(event.askAgainStatus);
     this.showTurnOnModal = false;
-    this.showAppsModal = false;
+    this.showAppsModal = true;
+    this.changeListNum += 1;
+
   }
 
   modalCloseTurnOn(action: boolean) {
