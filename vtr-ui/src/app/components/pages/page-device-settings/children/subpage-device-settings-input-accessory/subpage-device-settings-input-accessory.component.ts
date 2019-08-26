@@ -209,7 +209,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		this.switchValue = event.switchValue;
 	}
 
-	launchProtocol(protocol: string) {
+	public launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
 			WinRT.launchUri(protocol);
 		}
