@@ -485,7 +485,8 @@ export class ConfigService {
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-			if (country.toLowerCase() === 'us') {
+			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
+			if (country.toLowerCase() === 'us' && locale.startsWith('en')) {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
