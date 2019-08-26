@@ -22,6 +22,7 @@ import { LanguageService } from './services/language/language.service';
 import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
 import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
+import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
 
 
 declare var Windows;
@@ -458,9 +459,11 @@ export class AppComponent implements OnInit {
 	// Defect fix VAN-2988
 	@HostListener('window:keydown', ['$event'])
 	disableCtrlACV($event: KeyboardEvent) {
+		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
+
 		if (
 			($event.ctrlKey || $event.metaKey) &&
-			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)
+			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86) && !isPrivacyTab
 		) {
 			$event.stopPropagation();
 			$event.preventDefault();

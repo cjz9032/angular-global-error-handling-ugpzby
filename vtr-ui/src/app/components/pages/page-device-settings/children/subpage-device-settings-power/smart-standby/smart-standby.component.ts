@@ -54,32 +54,25 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	setSmartStandbySection() {
+	async setSmartStandbySection() {
 		if (this.powerService.isShellAvailable) {
-			this.powerService.getSmartStandbyEnabled()
-				.then((response: boolean) => {
-					console.log('getSmartStandbyEnabled response', response);
-					this.smartStandby.isEnabled = response;
-					this.cache.isEnabled = response;
-					this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
-					if (this.smartStandby.isEnabled) {
-						Promise.all([
-							this.powerService.getSmartStandbyActiveStartEnd(),
-							this.powerService.getSmartStandbyDaysOfWeekOff()
-						]).then((responses: any[]) => {
-							this.smartStandby.activeStartEnd = responses[0];
-							this.splitStartEndTime();
-							this.smartStandby.daysOfWeekOff = responses[1];
-							this.cache.activeStartEnd = this.smartStandby.activeStartEnd;
-							this.cache.daysOfWeekOff = this.smartStandby.daysOfWeekOff;
-							this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
-						}).catch((error) => {
-							console.log('getSmartStandbyCapability Error', error);
-						});
-					}
-				}).catch((error) => {
-					console.log('getSmartStandbyCapability Error', error);
-				});
+			const response = await this.powerService.getSmartStandbyEnabled();
+			console.log('getSmartStandbyEnabled response', response);
+			this.smartStandby.isEnabled = response;
+			this.cache.isEnabled = response;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+			if (this.smartStandby.isEnabled) {
+				const activeStartEnd = await this.powerService.getSmartStandbyActiveStartEnd();
+				const daysOffWeek = await this.powerService.getSmartStandbyDaysOfWeekOff();
+				this.smartStandby.activeStartEnd = activeStartEnd;
+				this.splitStartEndTime();
+				this.smartStandby.daysOfWeekOff = daysOffWeek;
+				this.cache.activeStartEnd = this.smartStandby.activeStartEnd;
+				this.cache.daysOfWeekOff = this.smartStandby.daysOfWeekOff;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+
+			}
+
 		}
 		// this.initSmartStandby();
 	}
