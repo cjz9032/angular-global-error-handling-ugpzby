@@ -80,6 +80,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	airplanePowerCache: AlwaysOnUSBCapability = undefined;
 	easyResumeCache: FeatureStatus;
 	batteryChargeThresholdCache: BatteryChargeThresholdCapability = undefined;
+	expressChargingCache: FeatureStatus = undefined;
+	conservationModeCache: FeatureStatus = undefined;
 
 	headerMenuItems = [
 		{
@@ -174,6 +176,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.expressChargingLock = false;
 			this.conservationModeLock = false;
 		}
+		this.expressChargingCache.status = this.expressChargingStatus.status;
+		this.expressChargingCache.isLoading = this.expressChargingLock;
+		this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
+
+		this.conservationModeCache.status = this.conservationModeStatus.status;
+		this.conservationModeCache.isLoading = this.conservationModeLock;
+		this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
 	}
 	constructor(public powerService: PowerService, private deviceService: DeviceService, private commonService: CommonService, public modalService: NgbModal, public shellServices: VantageShellService) { }
 
@@ -203,11 +212,43 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initDataFromCache() {
 		this.initAirplanePowerFromCache();
-		this.initBatteryChargeThresholdFromCache()
+		this.initBatteryChargeThresholdFromCache();
+		this.initExpressChargingFromCache();
+		this.initConservationModeFromCache();
 		this.initPowerSettingsFromCache();
 		this.initOtherSettingsFromCache();
 		this.initEnergyStarFromCache();
 
+	}
+
+	initExpressChargingFromCache() {
+		try {
+			this.expressChargingCache = this.commonService.getLocalStorageValue(LocalStorageKey.ExpressChargingCapability, undefined);
+			if (this.expressChargingCache != undefined) {
+				this.expressChargingStatus.available = this.expressChargingCache.available;
+				this.expressChargingStatus.status = this.expressChargingCache.status;
+				this.expressChargingLock = this.expressChargingCache.isLoading;
+			} else {
+				this.expressChargingCache = new FeatureStatus(false, true, true, false);
+			}
+		} catch (error) {
+			console.log("initExpressChargingFromCache", error);
+		}
+	}
+
+	initConservationModeFromCache() {
+		try {
+			this.conservationModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.ConservationModeCapability, undefined);
+			if (this.conservationModeCache != undefined) {
+				this.conservationModeStatus.available = this.conservationModeCache.available;
+				this.conservationModeStatus.status = this.conservationModeCache.status;
+				this.conservationModeLock = this.conservationModeCache.isLoading;
+			} else {
+				this.conservationModeCache = new FeatureStatus(false, true, true, false);
+			}
+		} catch (error) {
+			console.log("initConservationModeFromCache", error);
+		}
 	}
 
 	initBatteryChargeThresholdFromCache() {
@@ -721,6 +762,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				const featureStatus = await this.powerService.getConservationModeStatusIdeaNoteBook();
 				console.log('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 				this.conservationModeStatus = featureStatus;
+
+				this.conservationModeCache = featureStatus;
+				this.conservationModeCache.isLoading = this.conservationModeLock;
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
 			} catch (error) {
 				console.error('getConservationModeStatusIdeaNoteBook', error);
 			}
@@ -733,6 +778,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				const featureStatus = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
 				console.log('getRapidChargeModeStatusIdeaNoteBook.then', featureStatus);
 				this.expressChargingStatus = featureStatus;
+				this.expressChargingCache = featureStatus;
+				this.expressChargingCache.isLoading = this.expressChargingLock;
+				this.commonService.setLocalStorageValue(LocalStorageKey.ExpressChargingCapability, this.expressChargingCache);
 			} catch (error) {
 				console.error('getRapidChargeModeStatusIdeaNoteBook', error);
 			}
