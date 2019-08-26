@@ -190,8 +190,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				if (this.hardwareScanService) {
 					console.log('[onCancelScan] Start');
 					this.cancelRequested = true;
+					//this.cancelHandler.cancel();
 					this.hardwareScanService.cancelScanExecution()
 						.then((response) => {
+							console.log('response: ', response);
 						});
 				}
 			});
@@ -251,6 +253,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					}
 					console.log('[End]: getDoScan()');
 					console.log(this.finalResponse);
+				})
+				.finally(() => {
+					this.cleaningUpScan(undefined);
 				});
 		}
 	}

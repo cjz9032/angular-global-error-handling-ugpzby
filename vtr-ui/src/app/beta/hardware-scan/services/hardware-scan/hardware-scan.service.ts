@@ -316,38 +316,12 @@ export class HardwareScanService {
 			return this.hardwareScanBridge.cancelScan((response: any) => {
 				console.log('[cancelScanExecution][Progress]: ', response);
 			})
-				.then((response) => {
-					this.cancelRequested = true;
-					// if (response) {
-					// 	console.log('[cancelScanExecution]', response);
-
-					// 	// // In this case, we receive a empty response from LenovoService (no reason, bug?)
-					// 	// // We send a new request to get the final response
-					// 	if (response.finalDoScanResponse.finalResultCode === undefined ||
-					// 		response.finalDoScanResponse.finalResultCode === null) {
-					// 		this.hardwareScanBridge.cancelScan().then((finalResponse: any) => {
-					// 			this.updateStatusOfTests(finalResponse.finalDoScanResponse);
-					// 			this.updateProgress(finalResponse.finalDoScanResponse);
-					// 			this.updateScanResponse(finalResponse.finalDoScanResponse);
-					// 			return finalResponse.finalDoScanResponse;
-					// 		});
-					// 	}
-
-					// 	// // Normal flow in case the response is not empty
-					// 	if (response.finalDoScanResponse !== undefined && response.finalDoScanResponse !== null) {
-					// 		this.updateStatusOfTests(response.finalDoScanResponse);
-					// 		this.updateProgress(response.finalDoScanResponse);
-					// 		this.updateScanResponse(response.finalDoScanResponse);
-					// 		return response.finalDoScanResponse;
-					// 	}
-
-					// } else {
-					// 	console.log('[Service] Response is undefined');
-					// }
-				})
-				.finally(() => {
-					this.cleanUp();
-				});
+			.then((response) => {
+				this.cancelRequested = true;
+			})
+			.finally(() => {
+				this.cleanUp();
+			});
 		}
 		return undefined;
 	}
