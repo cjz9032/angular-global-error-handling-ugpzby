@@ -39,6 +39,7 @@ export class HardwareScanService {
 	private previousResults = {};
 	private previousItemsWidget = {};
 	private cancelRequested: boolean;
+	private disableCancel = false;
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
@@ -174,6 +175,10 @@ export class HardwareScanService {
 
 	public setHasItemsToRecoverBadSectors(status: boolean) {
 		this.hasItemsToRecoverBadSectors = status;
+	}
+
+	public isDisableCancel() {
+		return this.disableCancel;
 	}
 
 	public deleteScan(payload) {
@@ -341,10 +346,12 @@ export class HardwareScanService {
 
 	public getRecoverBadSectors(payload) {
 		console.log('[Start] Recover on Service');
+		this.disableCancel = true;
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
 				this.updateRecover(response);
 				this.updateProgressRecover(response);
+				this.disableCancel = false;
 			}).then((response) => {
 				console.log(response);
 

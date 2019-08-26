@@ -603,6 +603,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return this.completeStatusToken;
 	}
 
+	public isDisableCancel() {
+		return this.hardwareScanService.isDisableCancel();
+	}
+
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
