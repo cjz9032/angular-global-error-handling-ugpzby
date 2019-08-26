@@ -8,19 +8,25 @@
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 				</button>
 			</div> -->
-		<a role="button" type="button" href="javascript:;" class="close-btn" (click)="closeModal()" id="voice-modal-{{value}}-close-icon"
-		attr.aria-label="voice-modal-{{value}}-close-icon">
-			<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-		</a>
-	</div>
-	<h1 class="mb-3" *ngIf="value=='voiceToText'" id="voice-modal-{{value}}-title"
-		attr.aria-label="voice-modal-{{value}}-title">
-		{{'device.smartAssist.voice.voiceToText.title' | translate}}</h1>
-	<h1 class="mb-3" *ngIf="value=='translation'" id="voice-modal-{{value}}-title"
-		attr.aria-label="voice-modal-{{value}}-title">
-		{{'device.smartAssist.voice.translation.title' | translate}}</h1>
-	<h1 class="mb-3 sub-heading" id="voice-modal-{{value}}-sub-heading" attr.aria-label="voice-modal-{{value}}-sub-heading">
-		{{'device.smartAssist.voice.modalPopUp.heading' | translate}}</h1>
+			<a role="button"
+		type="button"
+		href="javascript:;"
+		class="close-btn"
+		vtrMetrics
+		metricsEvent="FeatureClick"
+		metricsParent="Device.SmartAssist.{{metricsParent}}"
+		metricsItem="{{metricsParent}}ModalCloseIcon"
+		(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
+	</a>
+		</div>
+		<h1 class="mb-3" *ngIf="value=='voiceToText'">
+			{{'device.smartAssist.voice.voiceToText.title' | translate}}</h1>
+			<h1 class="mb-3" *ngIf="value=='translation'">
+					{{'device.smartAssist.voice.translation.title' | translate}}</h1>
+		<h1 class="mb-3 sub-heading">{{'device.smartAssist.voice.modalPopUp.heading' | translate}}</h1>
 
 	<div class="row">
 		<div class="col">
@@ -78,43 +84,45 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col">
-			<div class="number-list">
-				<li>
-					<div class="d-flex justify-content-start mb-2 mr-2">
-						<div class="">
-							<p class="serial serial2">4.</p>
-						</div>
-						<span class="text-regular"
-							*ngIf="value=='voiceToText'" id="voice-modal-{{value}}-point-4"
-							attr.aria-label="voice-modal-{{value}}-point-4">{{'device.smartAssist.voice.modalPopUp.point4' | translate}}</span>
-						<span class="text-regular"
-							*ngIf="value=='translation'" id="voice-modal-{{value}}-point-4"
-							attr.aria-label="voice-modal-{{value}}-point-4">{{'device.smartAssist.voice.modalPopUp.point8' | translate}}</span>
-					</div>
-				</li>
-			</div>
-		</div>
-	</div>
+						<div class="row">
+								<div class="col">
+									<div class="number-list">
+											<li>
+													<div class="d-flex justify-content-start mb-2 mr-2">
+															<div class="">
+																	<p class="serial serial2">4.</p>
+															</div>
+														<span class="text-regular" *ngIf="value=='voiceToText'">{{'device.smartAssist.voice.modalPopUp.point4' | translate}}</span>
+														<span class="text-regular" *ngIf="value=='translation'">{{'device.smartAssist.voice.modalPopUp.point8' | translate}}</span>
+													</div>
+											</li>
+									</div>
+								</div>
+								</div>
 
-	<div class="row">
-		<div class="col">
-			<div class="number-list">
-				<li>
-					<div class="d-flex justify-content-start mb-2 mr-2">
-						<div class="">
-							<p class="serial">5.</p>
-						</div>
-						<span class="text-regular"
-							*ngIf="value=='voiceToText'" id="voice-modal-{{value}}-point-5"
-							attr.aria-label="voice-modal-{{value}}-point-5">{{'device.smartAssist.voice.modalPopUp.point5' | translate}}</span>
-						<span class="text-regular"
-							*ngIf="value=='translation'" id="voice-modal-{{value}}-point-5"
-							attr.aria-label="voice-modal-{{value}}-point-5">{{'device.smartAssist.voice.modalPopUp.point9' | translate}}</span>
-					</div>
-				</li>
-			</div>
+								<div class="row">
+										<div class="col">
+											<div class="number-list">
+													<li>
+															<div class="d-flex justify-content-start mb-2 mr-2">
+																	<div class="">
+																			<p class="serial">5.</p>
+																	</div>
+																<span class="text-regular" *ngIf="value=='voiceToText'">{{'device.smartAssist.voice.modalPopUp.point5' | translate}}</span>
+																<span class="text-regular" *ngIf="value=='translation'">{{'device.smartAssist.voice.modalPopUp.point9' | translate}}</span>
+															</div>
+													</li>
+											</div>
+										</div>
+										</div>
+										<div class="line"></div>
+		<div class="row">
+			<button class="btn close-button"
+				(click)="closeModal()"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="Device.SmartAssist.{{metricsParent}}"
+				metricsItem="{{metricsParent}}ModalCloseButton">{{'device.smartAssist.voice.modalPopUp.closeText' | translate}}</button>
 		</div>
 	</div>
 	<div class="line"></div>

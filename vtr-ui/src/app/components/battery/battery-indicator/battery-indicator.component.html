@@ -3,7 +3,7 @@
 	<div class="cell">
 		<div class="battery-shadow"></div>
 		<div #battery
-			class="battery">
+			[class]="isInDetailsModal?'battery detail-battery': 'battery'">
 			<div class="acid-container">
 				<div class="fill"></div>
 				<div class="percentage"
@@ -27,7 +27,7 @@
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>
-				<div class="remaining-text text-uppercase"
+				<div [class]="isInDetailsModal?'remaining-text text-uppercase remaining-text-detail': 'remaining-text text-uppercase'"
 					*ngIf="timeText === 'timeRemaining'"
 					id="myDevice-settings-batteryGauge-remainingTime-title"
 					attr.aria-label="myDevice-settings-batteryGauge-remainingTime-title">
@@ -50,7 +50,7 @@
 					class="icomoon icomoon-LE-Airplanemode2x"></span>
 				<span *ngIf="(isCharging && isAirplaneMode)"
 					class="icomoon icomoon-LE-AirplanemodeCharging2x"></span>
-				<span *ngIf="(isCharging && isChargeThresholdOn)"
+				<span *ngIf="(isCharging && isChargeThresholdOn && !isAirplaneMode)"
 					class="icomoon icomoon-LE-ConservationCharging2x"></span>
 			</div>
 		</div>

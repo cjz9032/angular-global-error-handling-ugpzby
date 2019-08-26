@@ -24,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { CommonPipeModule } from '../common/common-pipe.module';
 
 @NgModule({
 	declarations: [
@@ -50,6 +51,7 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclama
 		FormsModule,
 		ReactiveFormsModule,
 		NgbModalModule,
+		CommonPipeModule,
 		PageLayoutModule
 	],
 	exports: [

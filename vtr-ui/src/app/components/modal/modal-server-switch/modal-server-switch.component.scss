@@ -1,26 +1,26 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
 .vtr-modal-server-switch {
 	padding: 0;
 	display: flex;
 	flex-flow: column;
-	height: calc(100vh - 5.5rem);
-    box-sizing: border-box;
-    font-size: 2rem;
-    font-weight: normal;
+	height: 40rem;
+	box-sizing: border-box;
+	font-size: 2rem;
+	font-weight: normal;
 
 	fa-icon {
 		font-size: 2rem;
 		color: $main;
 	}
 
-	.server-content{
-        width: 100%;
-        height: 100%;
+	.server-content {
+		width: 100%;
+		height: 100%;
 		padding-right: 4rem;
 		overflow-x: hidden;
-        overflow-y: auto;
-        margin-top: 0.5rem;
+		overflow-y: auto;
+		margin-top: 0.5rem;
 	}
 
 	h1 {
@@ -41,7 +41,8 @@
 		padding-bottom: 4rem;
 	}
 
-	.ng-invalid.ng-dirty, .ng-invalid.ng-touched{
+	.ng-invalid.ng-dirty,
+	.ng-invalid.ng-touched {
 		border-color: red;
 	}
 
@@ -51,6 +52,32 @@
 	}
 }
 
+.button {
+	text-transform: uppercase;
+	height: 5rem;
+	line-height: 5rem;
+	border: none;
+	border-radius: 10rem;
+	background: $gradient_main;
+	padding: 0 3rem;
+	color: $light;
+	font-size: 1.5rem;
+	letter-spacing: 0.1rem;
+	font-weight: $weight_600;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-appearance: initial;
+	max-width: 26rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+	&:disabled {
+		opacity: 0.5;
+	}
+}
 .btn-close {
 	position: absolute;
 	right: 2rem;

@@ -56,10 +56,7 @@ export class LanguageService {
 			'zh-hant'
 		]);
 
-		const hasDefaultLanguage = this.useLocaleAvailableInCache();
-		if (!hasDefaultLanguage) {
-			this.translate.setDefaultLang(this.defaultLanguage);
-		}
+		this.useLocaleAvailableInCache();
 	}
 
 	public useLanguageByLocale(deviceLocale: string) {
@@ -70,8 +67,12 @@ export class LanguageService {
 
 			let langCode = this.defaultLanguage;
 			const locale = deviceLocale.toLowerCase();
-			if (locale && !['zh', 'pt'].includes(locale.substring(0, 2))) {
-				langCode = locale.substring(0, 2);
+			if (locale && ![ 'zh', 'pt' ].includes(locale.substring(0, 2))) {
+				if (locale && locale.substring(0, 2) === 'sr') {
+					langCode = 'sr-Latn';
+				} else {
+					langCode = locale.substring(0, 2);
+				}
 			} else {
 				if (locale && locale.substring(0, 2) === 'pt') {
 					locale === 'pt-br' ? (langCode = 'pt-br') : (langCode = 'pt');
@@ -100,7 +101,10 @@ export class LanguageService {
 
 	private useLocaleAvailableInCache(): boolean {
 		// check cache for locale, if available then use it.
-		const deviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+		const deviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(
+			DashboardLocalStorageKey.DeviceInfo,
+			undefined
+		);
 		if (deviceInfo && deviceInfo.locale) {
 			this.useLanguage(deviceInfo.locale);
 			return true;

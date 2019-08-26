@@ -2328,7 +2328,8 @@
             "description": "Další kontrola již byla naplánována na stejný čas a datum!",
             "error": "Chyba",
             "delete": "Odstranit",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Poznámka: Plánovaná skenování se neprovedou v režimu úspory baterie",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Obnovit vadné sektory",
@@ -2371,12 +2372,12 @@
             "description": "Aktivací vlastního nabíjení baterie prodloužíte celkovou výdrž baterie při používání tohoto zařízení. Bez nabíjení do plna se však zkrátí provozní životnost baterie. Chcete-li tuto funkci plně aktivovat, odpojte počítač a nechte baterii vybít na nebo pod limit nabíjení baterie.",
             "enable": "Povolit"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Aktualizovat moduly",
+        "completed": "Dokončeno",
+        "notCompleted": "Nedokončeno",
+        "yes": "Ano",
+        "attention": "Upozornění",
+        "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
+        "cancelTextProgress": "Počkejte na dokončení procesu zrušení"
     }
 }

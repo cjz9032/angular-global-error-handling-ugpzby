@@ -15,6 +15,16 @@
 		content: $icomoon-auto-screen-off;
 	}
 }
+.icomoon-Camera {
+	&:before {
+		content: $icomoon-Camera;
+	}
+}
+.icomoon-Camera-slash {
+	&:before {
+		content: $icomoon-Camera-slash;
+	}
+}
 .icomoon-ConditionACAdapterError {
 	&:before {
 		content: $icomoon-ConditionACAdapterError;
@@ -40,6 +50,12 @@
 		content: $icomoon-dynamic;
 	}
 }
+.icomoon-F1-F12-funciton {
+	&:before {
+		content: $icomoon-F1-F12-funciton;
+		color: #4a81fd;
+	}
+}
 .icomoon-FA-Battery-bolt2x {
 	&:before {
 		content: $icomoon-FA-Battery-bolt2x;
@@ -58,11 +74,6 @@
 .icomoon-FA-Briefcase2x {
 	&:before {
 		content: $icomoon-FA-Briefcase2x;
-	}
-}
-.icomoon-FA-Camera2x {
-	&:before {
-		content: $icomoon-FA-Camera2x;
 	}
 }
 .icomoon-face-recognition {
@@ -220,12 +231,6 @@
 		color: #4a81fd;
 	}
 }
-.icomoon-Hidden-keyboard-functions {
-	&:before {
-		content: $icomoon-Hidden-keyboard-functions;
-		color: #418afd;
-	}
-}
 .icomoon-keep-my-display {
 	&:before {
 		content: $icomoon-keep-my-display;
@@ -281,11 +286,6 @@
 	&:before {
 		content: $icomoon-LE-Breached-accounts2x;
 		color: #4a81fd;
-	}
-}
-.icomoon-LE-Camera-privacy-mode2x {
-	&:before {
-		content: $icomoon-LE-Camera-privacy-mode2x;
 	}
 }
 .icomoon-LE-ChargeFromShutdown2x {
@@ -561,15 +561,15 @@
 		color: #4a81fd;
 	}
 }
+.icomoon-Special-function {
+	&:before {
+		content: $icomoon-Special-function;
+		color: #4a81fd;
+	}
+}
 .icomoon-star {
 	&:before {
 		content: $icomoon-star;
-	}
-}
-.icomoon-Top-row-keys {
-	&:before {
-		content: $icomoon-Top-row-keys;
-		color: #418afd;
 	}
 }
 .icomoon-translation {

@@ -8,9 +8,12 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container } from 'inversify';
 
+declare var Windows;
+
 @Injectable({
 	providedIn: 'root'
 })
+
 export class VantageShellService {
 	public readonly isShellAvailable;
 	private phoenix: any;
@@ -49,7 +52,8 @@ export class VantageShellService {
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
-				Phoenix.Features.HardwareScan
+				Phoenix.Features.HardwareScan,
+				Phoenix.Features.BetaUser
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -155,6 +159,15 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getShellVersion() {
+		if (Windows) {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+		}
+
+		return '';
+	}
+
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
@@ -162,8 +175,10 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.metrics) {
 			const metricClient = this.phoenix.metrics;
 			if (!metricClient.isInit) {
+				const jsBridgeVesion = this.getVersion() || '';
+				const shellVersion = this.getShellVersion();
 				metricClient.init({
-					appVersion: environment.appVersion,
+					appVersion: `Web:${environment.appVersion};Bridge:${jsBridgeVesion};Shell:${shellVersion}`,
 					appId: MetricHelper.getAppId('dß'),
 					appName: 'vantage3',
 					channel: '',
@@ -811,6 +826,13 @@ export class VantageShellService {
 		return vanStub;
 	}
 
+	public getBetaUser(): any {
+		if (this.phoenix) {
+			return this.phoenix.betaUser;
+		}
+		return undefined;
+	}
+
 	// =================== Start Hardware Scan
 	public getHardwareScan(): any {
 		if (this.phoenix) {
@@ -819,4 +841,11 @@ export class VantageShellService {
 		return undefined;
 	}
 	// ==================== End Hardware Scan
+
+	public getMouseAndTouchPad(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.inputControlLinks;
+		}
+		return undefined;
+	}
 }

@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
+import { DevService } from '../dev/dev.service';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -31,7 +32,8 @@ export class CMSService {
 		private commsService: CommsService,
 		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
-		private commonService: CommonService// VAN-5872, server switch feature
+		private commonService: CommonService, // VAN-5872, server switch feature,
+		private devService: DevService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
@@ -45,15 +47,20 @@ export class CMSService {
 		return new Promise((resolve, reject) => {
 			if (!filters) {
 				console.log('vantageShellService.deviceFilter skipped filter call due to empty filter.');
+				// this.devService.writeLog('vantageShellService.deviceFilter skipped filter call due to empty filter.');
 				return resolve(true);
 			}
 
 			return this.vantageShellService.deviceFilter(filters).then(
 				(result) => {
+					this.devService.writeLog('vantageShellService.deviceFilter filters', JSON.stringify(filters));
+					this.devService.writeLog('vantageShellService.deviceFilter result', JSON.stringify(result));
 					resolve(result);
+
 				},
 				(reason) => {
 					console.log('vantageShellService.deviceFilter error', reason);
+					this.devService.writeLog('vantageShellService.deviceFilter error', reason);
 					resolve(false);
 				}
 			);
@@ -64,15 +71,18 @@ export class CMSService {
 		return new Promise((resolve, reject) => {
 			const promises = [];
 
+			// this.devService.writeLog('filterCMSContent results :: ', JSON.stringify(results));
 			results.forEach((result) => {
 				promises.push(this.deviceFilter(result.Filters));
+				/* this.devService.writeLog('filterCMSContent result', JSON.stringify(result)); */
 			});
 
 			Promise.all(promises).then((deviceFilterValues) => {
 				const filteredResults = results.filter((result, index) => {
+					this.devService.writeLog('filterCMSContent deviceFilterValues :: result ', JSON.stringify(result));
 					return deviceFilterValues[index];
 				});
-
+				this.devService.writeLog('filterCMSContent filteredResults :: filteredResults ', JSON.stringify(filteredResults));
 				resolve(filteredResults);
 			});
 		});
@@ -102,12 +112,8 @@ export class CMSService {
 			Segment: this.localInfo.Segment,
 			Brand: this.localInfo.Brand
 		};
-		// Object.assign(defaults, queryParams);
 
-		// VAN-5872, server switch feature
-		// retrive from localStorage
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-
 		// console.log('@sahinul cms service',CMSOption);
 
 		return new Observable(subscriber => {
@@ -129,19 +135,22 @@ export class CMSService {
 			/*'/api/v1/features', Object.assign(defaults, queryParams), {}*/
 			'/api/v1/features', CMSOption, httpOptions// VAN-5872, server switch feature
 		).subscribe((response: any) => {
+			/* this.devService.writeLog('getCMSContent ', JSON.stringify(response.Results)); */
 			this.filterCMSContent(response.Results).then(
 				(result) => {
+					this.devService.writeLog('getCMSContent::filterCMSContent::result', JSON.stringify(result));
 					subscriber.next(result);
 					subscriber.complete();
 				},
 				(reason) => {
-					console.log('fetchCMSContent error', reason);
+					this.devService.writeLog('getCMSContent::error', reason);
+					console.log('getCMSContent::error', reason);
 					subscriber.error(reason);
 				}
 			);
 		},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('getCMSContent::error', error);
 				subscriber.error(error);
 			}
 		);
@@ -168,17 +177,6 @@ export class CMSService {
 			Brand: this.localInfo.Brand
 		};
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-		/* const CMSOption = Object.assign(defaults, queryParams);
-		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-		if (serverSwitchLocalData) {
-			if (serverSwitchLocalData.forceit) {
-				Object.assign(CMSOption, {
-					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
-					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
-					Segment: serverSwitchLocalData.segment.Value
-				});
-			}
-		} */
 
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall('/api/v1/articlecategories',
@@ -191,13 +189,13 @@ export class CMSService {
 								resolve(result);
 							},
 							(reason) => {
-								console.log('fetchCMSContent error', reason);
+								console.log('fetchCMSArticleCategories:error', reason);
 								reject('fetchCMSContent error');
 							}
 						);
 					},
 					error => {
-						console.log('fetchCMSContent error', error);
+						console.log('fetchCMSArticleCategories::error', error);
 						reject('fetchCMSContent error');
 					}
 				);
@@ -216,17 +214,6 @@ export class CMSService {
 			Brand: this.localInfo.Brand
 		};
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-		/* const CMSOption = Object.assign(defaults, queryParams);
-		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-		if (serverSwitchLocalData) {
-			if (serverSwitchLocalData.forceit) {
-				Object.assign(CMSOption, {
-					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
-					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
-					Segment: serverSwitchLocalData.segment.Value
-				});
-			}
-		} */
 
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall('/api/v1/articles',
@@ -239,13 +226,13 @@ export class CMSService {
 								resolve(result);
 							},
 							(reason) => {
-								console.log('fetchCMSContent error', reason);
+								console.log('fetchCMSArticles:: error', reason);
 								reject('fetchCMSContent error');
 							}
 						);
 					},
 					error => {
-						console.log('fetchCMSArticles error', error);
+						console.log('fetchCMSArticles:: error', error);
 						reject('fetchCMSArticles error');
 					}
 				);
@@ -253,7 +240,6 @@ export class CMSService {
 	}
 
 	fetchCMSArticle(articleId, queryParams?) {
-
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
@@ -266,17 +252,6 @@ export class CMSService {
 		};
 
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
-		/* const CMSOption = Object.assign(defaults, queryParams);
-		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-		if (serverSwitchLocalData) {
-			if (serverSwitchLocalData.forceit) {
-				Object.assign(CMSOption, {
-					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
-					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
-					Segment: serverSwitchLocalData.segment.Value
-				});
-			}
-		} */
 
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall(
@@ -289,7 +264,7 @@ export class CMSService {
 						resolve(response);
 					},
 					error => {
-						console.log('fetchCMSArticle error', error);
+						console.log('fetchCMSArticle::error', error);
 						reject('fetchCMSArticle error');
 					}
 				);
@@ -304,6 +279,20 @@ export class CMSService {
 		}).sort((a, b) => a.Priority.localeCompare(b.Priority));
 	}
 
+	/* const CMSOption = Object.assign(defaults, queryParams);
+		const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+		if (serverSwitchLocalData) {
+			if (serverSwitchLocalData.forceit) {
+				Object.assign(CMSOption, {
+					Lang: (serverSwitchLocalData.language.Value).toUpperCase(),
+					GEO: (serverSwitchLocalData.country.Value).toUpperCase(),
+					Segment: serverSwitchLocalData.segment.Value
+				});
+			}
+		} */
+	// Object.assign(defaults, queryParams);
+	// VAN-5872, server switch feature
+	// retrive from localStorage
 	private updateServerSwitchCMSOptions(defaults, queryParams) {
 		const CMSOption = Object.assign(defaults, queryParams);
 		try {
@@ -322,7 +311,9 @@ export class CMSService {
 					Object.assign(CMSOption, {
 						Lang: (serverSwitchLocalData.language.Value).toLowerCase(),
 						GEO: (serverSwitchLocalData.country.Value).toLowerCase(),
-						Segment: serverSwitchLocalData.segment.Value
+						Segment: serverSwitchLocalData.segment,
+						OEM: serverSwitchLocalData.oem,
+						Brand: serverSwitchLocalData.brand
 					});
 				}
 
@@ -350,7 +341,7 @@ export class CMSService {
 						resolve(response.Results);
 					},
 					error => {
-						console.log('fetchCMSEntitledAppList error ', error);
+						console.log('fetchCMSEntitledAppList::error ', error);
 						reject('fetchCMSEntitledAppList error');
 					}
 				);

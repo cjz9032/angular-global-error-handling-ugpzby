@@ -2328,7 +2328,8 @@
             "description": "Ein weiterer Scan war bereits zum gleichen Zeitpunkt und Datum geplant.",
             "error": "Fehler",
             "delete": "Löschen",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Wiederherstellung von fehlerhaften Sektoren",
@@ -2371,12 +2372,12 @@
             "description": "Durch die Aktivierung einer angepassten Akkuladung verlängert sich die Gesamtnutzungszeit des Akkus beim Verwenden dieses Geräts. Wenn Sie den Akku jedoch nicht komplett aufladen, ist die Akkulebenszeit kürzer. Um diese Funktion komplett zu aktivieren, trennen Sie bitte Ihr Gerät von der Stromversorgung und warten Sie, bis der Akku ganz entladen ist oder die Kapazität unter dem Schwellenwert liegt.",
             "enable": "Aktivieren"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Module aktualisieren",
+        "completed": "Fertig",
+        "notCompleted": "Nicht fertig",
+        "yes": "Ja",
+        "attention": "Achtung",
+        "cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?",
+        "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist"
     }
 }

@@ -2328,7 +2328,8 @@
             "description": "Der er allerede planlagt en anden scanning på samme tid og den samme dato!",
             "error": "Fejl",
             "delete": "Slet",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "Bemærk: Planlagte scanninger kører ikke i strømsparetilstand",
+            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
         },
         "recoverBadSectors": {
             "title": "Retablering af dårlige sektorer",
@@ -2371,12 +2372,12 @@
             "description": "Ved at bruge tilpasset opladning af batteriet kan du forlænge den samlede batterilevetid, mens du bruger enheden. Når batteriet ikke lades helt op, vil batteriets driftstid dog være kortere. For at aktivere denne funktion fuldt ud skal du tage maskinens strømstik ud og lade batteriet aflade til under den grænse, hvor enheden stopper med at oplade.",
             "enable": "Aktivér"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "Opdater moduler",
+        "completed": "Udført",
+        "notCompleted": "Ikke fuldført",
+        "yes": "Ja",
+        "attention": "Advarsel!",
+        "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
+        "cancelTextProgress": "Vent et øjeblik, mens status annulleres"
     }
 }

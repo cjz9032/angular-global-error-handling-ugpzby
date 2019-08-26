@@ -7,9 +7,12 @@
 			<div class="row">
 				<div class="col schedule-row">
 					<div class="title">{{ title }}</div>
-					<div class= "type-icon">
+					<div class="type-icon">
 						<div class="type-scan">{{ typeScan }}</div>
-						<button class="type-button" (click)="onEdit()"> <fa-icon class="right-icon" [icon]="['fas', 'angle-right']"></fa-icon>  </button>
+						<button class="type-button" (click)="onEdit()" vtrMetrics metricsEvent="FeatureClick"
+							metricsItem="btn.Edit.Schedule" metricsParent="Page.HardwareScan">
+							<fa-icon class="right-icon" [icon]="['fas', 'angle-right']"></fa-icon>
+						</button>
 					</div>
 				</div>
 			</div>

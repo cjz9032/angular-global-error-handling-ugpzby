@@ -50,6 +50,7 @@
 									*ngIf="!allDevicesInfo.allDevicesStatus || this.account.state==='trialExpired' || this.account.state==='local'"
 									[ngClass]="{'url-disabled': !common?.connectedHomeSecurity?.account?.consoleUrl}"
 									id="chs-btn-ad-needAttention"
+									role="link"
 									title="{{'homeSecurity.overview.needAttention' | translate}}"
 									vtrMetrics
 									metricsItem="needAttentionAllDevice"

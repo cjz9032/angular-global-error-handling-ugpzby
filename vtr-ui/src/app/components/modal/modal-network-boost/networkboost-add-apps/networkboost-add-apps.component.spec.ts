@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NetworkboostAddAppsComponent } from './networkboost-add-apps.component';
 
-describe('NetworkboostAddAppsComponent', () => {
+xdescribe('NetworkboostAddAppsComponent', () => {
   let component: NetworkboostAddAppsComponent;
   let fixture: ComponentFixture<NetworkboostAddAppsComponent>;
 

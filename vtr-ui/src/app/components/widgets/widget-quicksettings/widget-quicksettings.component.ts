@@ -55,6 +55,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.initDataFromCache();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -63,6 +64,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 		if (welcomeTutorial && welcomeTutorial.page === 2) {
 			this.initFeatures();
+		}
+	}
+
+	initDataFromCache() {
+		let cameraState: FeatureStatus = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+		if (cameraState) {
+			this.cameraStatus.available = cameraState.available;
 		}
 	}
 
