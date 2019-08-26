@@ -7,15 +7,17 @@ import {
 	share,
 	shareReplay,
 	startWith,
+	switchMap,
 	switchMapTo,
-	take
+	take,
+	withLatestFrom
 } from 'rxjs/operators';
 import { combineLatest, of } from 'rxjs';
 import { FigleafOverviewService, FigleafSettings } from '../../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { BreachedAccount, BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 import { CountNumberOfIssuesService } from '../../../common/services/count-number-of-issues.service';
-import { FeaturesStatuses } from '../../../userDataStatuses';
+import { AppStatuses, FeaturesStatuses } from '../../../userDataStatuses';
 import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
 
 @Injectable({
@@ -65,10 +67,11 @@ export class PrivacyScoreService {
 		map((userDataStatus) =>
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.undefined &&
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.error),
-		filter(Boolean),
-		switchMapTo(
-			this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled)
-		),
+		switchMap((isTrackersResultExist) => {
+			return isTrackersResultExist ?
+				this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled) :
+				of(false);
+		}),
 		catchError((err) => of(false))
 	);
 
@@ -220,7 +223,11 @@ export class PrivacyScoreService {
 		const defaultValue = (this.coefficients.trackingTools * this.coefficients.withoutScan) as number;
 
 		return this.isAntitrackingEnabled$.pipe(
-			map((isAntitrackingEnabled) => Number(isAntitrackingEnabled) * this.coefficients.trackingTools),
+			withLatestFrom(this.appStatusesService.globalStatus$),
+			map(([isAntitrackingEnabled, appStatuses]) => {
+				const isFigleafInstalled = appStatuses.appState !== AppStatuses.scanPerformed && appStatuses.appState !== AppStatuses.firstTimeVisitor;
+				return isFigleafInstalled ? Number(isAntitrackingEnabled) * this.coefficients.trackingTools : defaultValue;
+			}),
 			startWith(defaultValue),
 			catchError((err) => {
 				return of(defaultValue);
