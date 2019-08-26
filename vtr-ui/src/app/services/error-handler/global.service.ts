@@ -10,6 +10,6 @@ export class GlobalErrorHandler implements ErrorHandler {
 	}
 
 	handleError(error) {
-		this.logger.error('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ', error);
+		this.logger.error('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ', error.message);
 	}
 }

@@ -30,7 +30,7 @@ export class IntelligentMediaComponent implements OnInit {
 					.then((value: boolean) => {
 						console.log('setVideoPauseResumeStatus.then', value);
 					}).catch(error => {
-						this.logger.error('setVideoPauseResumeStatus', error);
+						this.logger.error('setVideoPauseResumeStatus', error.message);
 					});
 			}
 		} catch (error) {

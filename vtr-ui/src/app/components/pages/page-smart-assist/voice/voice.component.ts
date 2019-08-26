@@ -60,7 +60,7 @@ export class VoiceComponent implements OnInit {
 							this.voiceStatus = 'Install';
 						}
 					}).catch(error => {
-						this.logger.error('isLenovoVoiceInstalled', error);
+						this.logger.error('isLenovoVoiceInstalled', error.message);
 					});
 			}
 		} catch (error) {
@@ -89,7 +89,7 @@ export class VoiceComponent implements OnInit {
 						}
 					}).catch(error => {
 						this.showLoader = false;
-						this.logger.error('downloadLenovoVoice', error);
+						this.logger.error('downloadLenovoVoice', error.message);
 					});
 			}
 		} catch (error) {
@@ -106,7 +106,7 @@ export class VoiceComponent implements OnInit {
 					.then((status: boolean) => {
 						console.log('launchLenovoVoice.then', status);
 					}).catch(error => {
-						this.logger.error('launchLenovoVoice', error);
+						this.logger.error('launchLenovoVoice', error.message);
 					});
 			}
 		} catch (error) {

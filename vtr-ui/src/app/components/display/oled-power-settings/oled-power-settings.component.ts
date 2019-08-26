@@ -126,12 +126,13 @@ export class OledPowerSettingsComponent implements OnInit {
 						}
 
 					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : getOLEDPowerControlCapability', error);
+						this.logger.error('OLED-Power-Settings : getOLEDPowerControlCapability', error.message);
 
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('OLED-Power-Settings : getOLEDPowerControlCapability', error.message);
+
 
 		}
 	}
@@ -177,12 +178,12 @@ export class OledPowerSettingsComponent implements OnInit {
 						this.taskBarDimmerValue = result.displayStrIndex;
 
 					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error);
+						this.logger.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error.message);
 
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error.message);
 
 		}
 	}
@@ -197,12 +198,12 @@ export class OledPowerSettingsComponent implements OnInit {
 						this.backgroundDimmerValue = result.displayStrIndex;
 
 					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error);
+						this.logger.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error.message);
 
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error.message);
 
 		}
 	}
@@ -217,13 +218,12 @@ export class OledPowerSettingsComponent implements OnInit {
 						this.displayDimmerValue = result.displayStrIndex;
 
 					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : getDisplayDimmerSetting error', error);
+						this.logger.error('OLED-Power-Settings : getDisplayDimmerSetting error', error.message);
 
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
-
+			this.logger.error('OLED-Power-Settings : getDisplayDimmerSetting error', error.message);
 		}
 	}
 
@@ -237,12 +237,11 @@ export class OledPowerSettingsComponent implements OnInit {
 						console.log('OLED-Power-Settings : setTaskbarDimmerSetting.then', result);
 
 					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : setTaskbarDimmerSetting error ', error);
-
+						this.logger.error('OLED-Power-Settings : setTaskbarDimmerSetting error ', error.message);
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('OLED-Power-Settings : setTaskbarDimmerSetting error ', error.message);
 		}
 	}
 
@@ -259,11 +258,10 @@ export class OledPowerSettingsComponent implements OnInit {
 
 					}).catch(error => {
 						this.logger.error('OLED-Power-Settings : setBackgroundDimmerSetting error', error.message);
-
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('OLED-Power-Settings : setBackgroundDimmerSetting error', error.message);
 		}
 	}
 
@@ -280,12 +278,12 @@ export class OledPowerSettingsComponent implements OnInit {
 
 
 					}).catch(error => {
-						this.logger.error('OLED-Power-Settings : setDisplayDimmerSetting error', error);
+						this.logger.error('OLED-Power-Settings : setDisplayDimmerSetting error', error.message);
 
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('OLED-Power-Settings : setDisplayDimmerSetting error', error.message);
 		}
 	}
 }

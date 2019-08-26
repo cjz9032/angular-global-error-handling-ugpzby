@@ -53,7 +53,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					}
 				})
 					.catch(error => {
-						this.logger.error('keyboard Layout name error here', error);
+						this.logger.error('keyboard Layout name error here', error.message);
 					});
 			}
 		} catch (error) {
@@ -70,7 +70,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					this.getAdditionalCapabilities();
 				})
 					.catch(error => {
-						this.logger.error('keyboard Layout name error here', error);
+						this.logger.error('keyboard Layout name error here', error.message);
 					});
 			}
 		} catch (error) {

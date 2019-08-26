@@ -96,7 +96,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.microOptimizeModeResponse = response;
 						console.log('getSupportedModes', response);
 					}).catch(error => {
-						this.logger.error('getSupportedModes', error);
+						this.logger.error('getSupportedModes', error.message);
 					});
 			}
 		} catch (error) {
@@ -112,7 +112,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value) => {
 						console.log('onOptimizeModesRadioChange:', value);
 					}).catch(error => {
-						this.logger.error('onOptimizeModesRadioChange', error);
+						this.logger.error('onOptimizeModesRadioChange', error.message);
 					});
 			}
 		} catch (error) {
@@ -131,7 +131,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.microphoneLoader = false;
 						console.log('getMicrophoneSettings', microphone);
 					}).catch(error => {
-						this.logger.error('getMicrophoneSettings', error);
+						this.logger.error('getMicrophoneSettings', error.message);
 					});
 			}
 		} catch (error) {
@@ -150,7 +150,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value) => {
 						console.log('onAutomaticDolbyAudioToggleOnOff', value);
 					}).catch(error => {
-						this.logger.error('onAutomaticDolbyAudioToggleOnOff', error);
+						this.logger.error('onAutomaticDolbyAudioToggleOnOff', error.message);
 					});
 			}
 		} catch (error) {
@@ -171,7 +171,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.autoDolbyFeatureLoader = false;
 						console.log('getDolbyFeatureStatus:', dolbyFeature);
 					}).catch(error => {
-						this.logger.error('getDolbyFeatureStatus', error);
+						this.logger.error('getDolbyFeatureStatus', error.message);
 						this.autoDolbyFeatureLoader = false;
 						this.autoDolbyFeatureStatus.available = false;
 					});
@@ -191,7 +191,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.dolbyModeResponse = response;
 						console.log('getDolbyModesStatus:', response);
 					}).catch(error => {
-						this.logger.error('getDolbyModesStatus', error);
+						this.logger.error('getDolbyModesStatus', error.message);
 					});
 			}
 		} catch (error) {
@@ -206,7 +206,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('startMonitorForDolby', value);
 					}).catch(error => {
-						this.logger.error('startMonitorForDolby', error);
+						this.logger.error('startMonitorForDolby', error.message);
 					});
 			}
 		} catch (error) {
@@ -221,7 +221,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('stopMonitorForDolby', value);
 					}).catch(error => {
-						this.logger.error('stopMonitorForDolby', error);
+						this.logger.error('stopMonitorForDolby', error.message);
 					});
 			}
 		} catch (error) {
@@ -242,7 +242,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value) => {
 						console.log('onDolbySeetingRadioChange:', value);
 					}).catch(error => {
-						this.logger.error('onDolbySeetingRadioChange', error);
+						this.logger.error('onDolbySeetingRadioChange', error.message);
 					});
 			}
 		} catch (error) {
@@ -257,7 +257,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value) => {
 						console.log('onToggleOfMicrophoneAutoOptimization:', value);
 					}).catch(error => {
-						this.logger.error('onToggleOfMicrophoneAutoOptimization', error);
+						this.logger.error('onToggleOfMicrophoneAutoOptimization', error.message);
 					});
 			}
 		} catch (error) {
@@ -274,7 +274,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value) => {
 						console.log('setVolume', value);
 					}).catch(error => {
-						this.logger.error('setVolume', error);
+						this.logger.error('setVolume', error.message);
 					});
 			}
 		} catch (error) {
@@ -292,7 +292,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
 						console.log('onToggleOfMicrophone', value);
 					}).catch(error => {
-						this.logger.error('onToggleOfMicrophone', error);
+						this.logger.error('onToggleOfMicrophone', error.message);
 					});
 			}
 		} catch (error) {
@@ -307,7 +307,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('onToggleOfSuppressKbdNoise', value);
 					}).catch(error => {
-						this.logger.error('onToggleOfSuppressKbdNoise', error);
+						this.logger.error('onToggleOfSuppressKbdNoise', error.message);
 					});
 			}
 		} catch (error) {
@@ -322,7 +322,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('setMicrophoneAEC', value);
 					}).catch(error => {
-						this.logger.error('setMicrophoneAEC', error);
+						this.logger.error('setMicrophoneAEC', error.message);
 					});
 			}
 		} catch (error) {
@@ -337,7 +337,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('startMonitor', value);
 					}).catch(error => {
-						this.logger.error('startMonitor', error);
+						this.logger.error('startMonitor', error.message);
 					});
 			}
 		} catch (error) {
@@ -352,7 +352,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('stopMonitor', value);
 					}).catch(error => {
-						this.logger.error('stopMonitor', error);
+						this.logger.error('stopMonitor', error.message);
 					});
 			}
 		} catch (error) {

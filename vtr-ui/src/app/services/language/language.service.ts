@@ -84,8 +84,8 @@ export class LanguageService {
 				}
 			}
 			this.useLanguage(langCode);
-		} catch (e) {
-			this.logger.error('exception in updateLanguageSettings', JSON.stringify(e));
+		} catch (error) {
+			this.logger.error('exception in updateLanguageSettings', error.message);
 		}
 	}
 

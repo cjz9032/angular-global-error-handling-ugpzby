@@ -22,6 +22,6 @@ export class OpenSeePlansDirective {
 			take(1)
 		).subscribe(
 			() => { },
-			(err) => this.logger.error('Open link error ', err));
+			(error) => this.logger.error('Open link error ', error.message));
 	}
 }

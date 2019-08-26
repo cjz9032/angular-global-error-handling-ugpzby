@@ -197,7 +197,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('frontCameraCount: ', frontCameraCount);
 			return frontCameraCount > 0 ? true : false;
 		} catch (error) {
-			console.log('isAllInOneMachine:', error);
+			console.log('isAllInOneMachine:', error.message);
 			return frontCameraCount > 0 ? true : false;
 		}
 	}
@@ -349,7 +349,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 						// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
-						this.logger.error('onEyeCareModeStatusToggle', error);
+						this.logger.error('onEyeCareModeStatusToggle', error.message);
 					});
 
 				if (!this.eyeCareModeStatus.status) {
@@ -389,7 +389,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						}
 
 					}).catch(error => {
-						this.logger.error('initEyecaremodeSettings', error);
+						this.logger.error('initEyecaremodeSettings', error.message);
 
 					});
 			}
@@ -407,7 +407,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('setEyeCareModeState.then', result);
 
 					}).catch(error => {
-						this.logger.error('setEyeCareModeState', error);
+						this.logger.error('setEyeCareModeState', error.message);
 					});
 			}
 		} catch (error) {
@@ -429,7 +429,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					}
 				})
 				.catch(error => {
-					this.logger.error('getEyeCareModeState', error);
+					this.logger.error('getEyeCareModeState', error.message);
 				});
 		}
 	}
@@ -503,7 +503,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						}
 
 					}).catch(error => {
-						this.logger.error('setEyeCareAutoMode', error);
+						this.logger.error('setEyeCareAutoMode', error.message);
 					});
 			}
 		} catch (error) {
@@ -524,7 +524,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.enableSunsetToSunrise = true;
 						}
 					}).catch(error => {
-						this.logger.error('getSunsetToSunrise', error);
+						this.logger.error('getSunsetToSunrise', error.message);
 					});
 			}
 		} catch (error) {
@@ -591,7 +591,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
 				}).catch(error => {
-					this.logger.error('setCameraStatus', error);
+					this.logger.error('setCameraStatus', error.message);
 				});
 		}
 	}
@@ -609,7 +609,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					}
 				})
 				.catch(error => {
-					this.logger.error('getCameraStatus', error);
+					this.logger.error('getCameraStatus', error.message);
 				});
 		}
 	}
@@ -630,11 +630,11 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('startCameraPrivacyMonitor.then', val);
 
 					}).catch(error => {
-						this.logger.error('startCameraPrivacyMonitor', error);
+						this.logger.error('startCameraPrivacyMonitor', error.message);
 					});
 			}
 		} catch (error) {
-			console.log('startCameraPrivacyMonitor', error);
+			console.log('startCameraPrivacyMonitor', error.message);
 		}
 	}
 
@@ -645,11 +645,11 @@ export class SubpageDeviceSettingsDisplayComponent
 					.then((value: any) => {
 						console.log('stopMonitorForCamera.then', value);
 					}).catch(error => {
-						this.logger.error('stopMonitorForCamera', error);
+						this.logger.error('stopMonitorForCamera', error.message);
 					});
 			}
 		} catch (error) {
-			console.log('stopMonitorForCamera', error);
+			console.log('stopMonitorForCamera', error.message);
 		}
 	}
 
@@ -735,7 +735,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((value: any) => {
 					console.log('startmonitor', value);
 				}).catch(error => {
-					this.logger.error('startmonitor', error);
+					this.logger.error('startmonitor', error.message);
 				});
 
 		}
@@ -770,7 +770,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					this.cameraBlur = response;
 					console.log('initCameraBlurMethods', response);
 				}).catch(error => {
-					console.log('initCameraBlurMethods', error);
+					console.log('initCameraBlurMethods', error.message);
 				});
 		}
 	}
@@ -785,7 +785,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((response) => {
 					console.log('onCameraBackgroundOptionChange', response);
 				}).catch(error => {
-					console.log('onCameraBackgroundOptionChange', error);
+					console.log('onCameraBackgroundOptionChange', error.message);
 				});
 		}
 	}
@@ -814,7 +814,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			}
 		})
 			.catch(error => {
-				this.logger.error('privacy guard compatability error here', error);
+				this.logger.error('privacy guard compatability error here', error.message);
 			});
 
 	}
@@ -825,7 +825,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.privacyGuardToggleStatus = value;
 		})
 			.catch(error => {
-				this.logger.error('privacy guard status error here', error);
+				this.logger.error('privacy guard status error here', error.message);
 			});
 	}
 	public getPrivacyGuardOnPasswordCapabilityStatus() {
@@ -838,12 +838,12 @@ export class SubpageDeviceSettingsDisplayComponent
 					// console.log('privacy guard on password status here -------------.>', value);
 				})
 					.catch(error => {
-						this.logger.error('privacy guard on password status error here', error);
+						this.logger.error('privacy guard on password status error here', error.message);
 					});
 			}
 		})
 			.catch(error => {
-				this.logger.error('privacy guard on password compatability error here', error);
+				this.logger.error('privacy guard on password compatability error here', error.message);
 			});
 	}
 
@@ -852,7 +852,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// console.log('set privacy guard status here ------****-------.>', response);
 		})
 			.catch(error => {
-				this.logger.error('set privacy guard status error here', error);
+				this.logger.error('set privacy guard status error here', error.message);
 			});
 	}
 
@@ -861,7 +861,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// console.log('set privacy guard on password status here -------------.>', response);
 		})
 			.catch(error => {
-				this.logger.error('set privacy guard on password status error here', error);
+				this.logger.error('set privacy guard on password status error here', error.message);
 			});
 	}
 
@@ -888,7 +888,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.hasOLEDPowerControlCapability = result;
 
 					}).catch(error => {
-						this.logger.error('getOLEDPowerControlCapability', error);
+						this.logger.error('getOLEDPowerControlCapability', error.message);
 
 					});
 			}

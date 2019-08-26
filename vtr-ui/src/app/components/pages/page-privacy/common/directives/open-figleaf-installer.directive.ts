@@ -40,7 +40,7 @@ export class OpenFigleafInstallerDirective implements OnDestroy {
 			() => {
 				this.taskActionWithTimeoutService.startAction(TasksName.privacyAppInstallationAction);
 			},
-			(err) => this.logger.error('openInstaller', err),
+			(error) => this.logger.error('openInstaller', error.message),
 		);
 	}
 

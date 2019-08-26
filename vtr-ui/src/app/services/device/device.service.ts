@@ -54,7 +54,7 @@ export class DeviceService {
 				.then((status: boolean) => {
 					this.isArm = status;
 				}).catch(error => {
-					this.logger.error('initArm', error);
+					this.logger.error('initArm', error.message);
 				});
 		} catch (error) {
 			this.logger.error('initArm' + error.message);

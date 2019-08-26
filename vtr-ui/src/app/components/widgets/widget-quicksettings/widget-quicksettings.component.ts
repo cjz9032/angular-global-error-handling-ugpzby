@@ -147,7 +147,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus); this.cameraStatus.isLoading = false;
 						}
 					}).catch(error => {
-						this.logger.error('getCameraPermission', error);
+						this.logger.error('getCameraPermission', error.message);
 						this.cameraStatus.isLoading = false;
 					});
 			}
@@ -173,7 +173,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							}
 						}
 					}).catch(error => {
-						this.logger.error('initEyecaremodeSettings', error);
+						this.logger.error('initEyecaremodeSettings', error.message);
 					});
 			}
 		} catch (error) {
@@ -205,7 +205,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						}
 					})
 					.catch(error => {
-						this.logger.error('getCameraStatus', error);
+						this.logger.error('getCameraStatus', error.message);
 					});
 			}
 		} catch (error) {
@@ -232,11 +232,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						console.log('startMonitorForCameraPrivacy.then', val);
 
 					}).catch(error => {
-						this.logger.error('startMonitorForCameraPrivacy', error);
+						this.logger.error('startMonitorForCameraPrivacy', error.message);
 					});
 			}
 		} catch (error) {
-			console.log('startMonitorForCameraPrivacy', error);
+			console.log('startMonitorForCameraPrivacy', error.message);
 		}
 	}
 
@@ -247,11 +247,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					.then((value: any) => {
 						console.log('stopMonitorForCamera.then', value);
 					}).catch(error => {
-						this.logger.error('stopMonitorForCamera', error);
+						this.logger.error('stopMonitorForCamera', error.message);
 					});
 			}
 		} catch (error) {
-			console.log('stopMonitorForCamera', error);
+			console.log('stopMonitorForCamera', error.message);
 		}
 	}
 
@@ -269,7 +269,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					}
 				})
 				.catch(error => {
-					this.logger.error('getCameraStatus', error);
+					this.logger.error('getCameraStatus', error.message);
 				});
 		}
 	}
@@ -286,7 +286,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardEyeCareMode, featureStatus);
 				})
 				.catch(error => {
-					this.logger.error('getEyeCareMode', error);
+					this.logger.error('getEyeCareMode', error.message);
 				});
 		}
 	}
@@ -310,13 +310,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					}).catch(error => {
 						this.cameraStatus.isLoading = false;
 						this.quickSettingsWidget[1].state = true;
-						this.logger.error('getCameraStatus', error);
+						this.logger.error('getCameraStatus', error.message);
 					});
 			}
 		} catch (error) {
 			this.cameraStatus.isLoading = false;
 			this.quickSettingsWidget[1].state = true;
-			console.log('onCameraStatusToggle', error);
+			console.log('onCameraStatusToggle', error.message);
 		}
 	}
 
@@ -336,13 +336,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					}).catch(error => {
 						this.microphoneStatus.isLoading = false;
 						this.quickSettingsWidget[0].state = true;
-						this.logger.error('setMicrophoneStatus', error);
+						this.logger.error('setMicrophoneStatus', error.message);
 					});
 			}
 		} catch (error) {
 			this.microphoneStatus.isLoading = false;
 			this.quickSettingsWidget[0].state = true;
-			console.log('onMicrophoneStatusToggle', error);
+			console.log('onMicrophoneStatusToggle', error.message);
 		}
 	}
 
@@ -364,13 +364,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 						this.eyeCareModeStatus.isLoading = false;
 						this.quickSettingsWidget[2].state = true;
-						this.logger.error('setEyeCareMode', error);
+						this.logger.error('setEyeCareMode', error.message);
 					});
 			}
 		} catch (error) {
 			this.eyeCareModeStatus.isLoading = false;
 			this.quickSettingsWidget[2].state = true;
-			console.log('onEyeCareModeToggle', error);
+			console.log('onEyeCareModeToggle', error.message);
 		}
 	}
 
@@ -386,7 +386,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				.then((value: any) => {
 					console.log('startEyeCareMonitor', value);
 				}).catch(error => {
-					this.logger.error('startEyeCareMonitor', error);
+					this.logger.error('startEyeCareMonitor', error.message);
 				});
 
 		}

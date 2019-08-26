@@ -200,7 +200,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('startMonitorForICIdeapad.then', value);
 					}).catch(error => {
-						this.logger.error('startMonitorForICIdeapad', error);
+						this.logger.error('startMonitorForICIdeapad', error.message);
 					});
 			}
 		} catch (error) {
@@ -215,7 +215,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('stopMonitorForICIdeapad', value);
 					}).catch(error => {
-						this.logger.error('stopMonitorForICIdeapad', error);
+						this.logger.error('stopMonitorForICIdeapad', error.message);
 					});
 			}
 		} catch (error) {
@@ -418,7 +418,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						console.log('setAutoModeSetting.then', value);
 					})
 					.catch(error => {
-						this.logger.error('setAutoModeSetting', error);
+						this.logger.error('setAutoModeSetting', error.message);
 					});
 			}
 		} catch (error) {
@@ -445,7 +445,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						this.setPerformanceAndCool(mode);
 					})
 					.catch(error => {
-						this.logger.error('setManualModeSetting', error);
+						this.logger.error('setManualModeSetting', error.message);
 					});
 			}
 		} catch (error) {

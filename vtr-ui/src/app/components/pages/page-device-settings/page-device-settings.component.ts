@@ -150,7 +150,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 							this.menuItems.splice(1, 1);
 						}
 					}).catch(error => {
-						this.logger.error('getMicrophoneSettings', error);
+						this.logger.error('getMicrophoneSettings', error.message);
 					});
 			}
 		} catch (error) {
@@ -174,7 +174,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('fetchCMSContent error', error.message);
 			}
 		);
 		this.cardContentPositionA = {

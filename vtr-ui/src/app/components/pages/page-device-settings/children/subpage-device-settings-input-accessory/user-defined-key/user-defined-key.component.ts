@@ -70,7 +70,7 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.hasUDKCapability = false;
 			}
 		} catch (error) {
-			console.log('ngOnInit: ', error);
+			console.log('ngOnInit: ', error.message);
 		}
 	}
 
@@ -107,7 +107,7 @@ export class UserDefinedKeyComponent implements OnInit {
 						this.udkActionInfo = new UDKActionInfo(value);
 						this.initValues(this.udkActionInfo);
 					}).catch(error => {
-						this.logger.error('keyboard getUDKTypeList error here', error);
+						this.logger.error('keyboard getUDKTypeList error here', error.message);
 					});
 			}
 		} catch (error) {
@@ -124,7 +124,7 @@ export class UserDefinedKeyComponent implements OnInit {
 						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
 						console.log('keyboard setUDKTypeList here -------------.>', value);
 					}).catch(error => {
-						this.logger.error('keyboard setUDKTypeList error here', error);
+						this.logger.error('keyboard setUDKTypeList error here', error.message);
 					});
 			}
 		} catch (error) {

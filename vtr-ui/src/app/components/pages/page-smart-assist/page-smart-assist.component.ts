@@ -128,7 +128,7 @@ export class PageSmartAssistComponent implements OnInit {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 			}
 		} catch (error) {
-			console.log('initVisibility', error);
+			console.log('initVisibility', error.message);
 		}
 	}
 
@@ -197,7 +197,7 @@ export class PageSmartAssistComponent implements OnInit {
 					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				}
 			})
-			.catch((error) => { console.log('APS ERROR------------------', error); });
+			.catch((error) => { console.log('APS ERROR------------------', error.message); });
 	}
 
 	private initIntelligentScreen() {
@@ -223,7 +223,7 @@ export class PageSmartAssistComponent implements OnInit {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
 			}
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
 		});
 	}
 
@@ -244,7 +244,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentSecurity.isWindowsHelloRegistered = responses[5];
 			console.log('PageSmartAssistComponent.Promise.ZeroTouchLogin()', responses, this.intelligentSecurity);
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error.message);
 		});
 	}
 
@@ -272,7 +272,7 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error.message);
 		});
 	}
 
@@ -407,7 +407,7 @@ export class PageSmartAssistComponent implements OnInit {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('fetchCMSContent error', error.message);
 			}
 		);
 	}
@@ -436,7 +436,7 @@ export class PageSmartAssistComponent implements OnInit {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						}
 					}).catch(error => {
-						this.logger.error('getVideoPauseResumeStatus.error', error);
+						this.logger.error('getVideoPauseResumeStatus.error', error.message);
 					});
 			}
 		} catch (error) {

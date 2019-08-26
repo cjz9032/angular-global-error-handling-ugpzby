@@ -48,7 +48,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 					}
 					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
 				}).catch((error) => {
-					console.log('getSmartStandbyCapability Error', error);
+					console.log('getSmartStandbyCapability Error', error.message);
 				});
 		}
 	}
@@ -68,11 +68,11 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							this.splitStartEndTime();
 							this.smartStandby.daysOfWeekOff = responses[1];
 						}).catch((error) => {
-							console.log('getSmartStandbyCapability Error', error);
+							console.log('getSmartStandbyCapability Error', error.message);
 						});
 					}
 				}).catch((error) => {
-					console.log('getSmartStandbyCapability Error', error);
+					console.log('getSmartStandbyCapability Error', error.message);
 				});
 		}
 		// this.initSmartStandby();
@@ -100,7 +100,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						this.setSmartStandbySection();
 					})
 					.catch(error => {
-						this.logger.error('setSmartStandbyEnabled', error);
+						this.logger.error('setSmartStandbyEnabled', error.message);
 					});
 			}
 		} catch (error) {
@@ -142,7 +142,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							}
 						})
 						.catch(error => {
-							this.logger.error('setSmartStandbyStartTime', error);
+							this.logger.error('setSmartStandbyStartTime', error.message);
 						});
 				}
 			} catch (error) {
@@ -165,7 +165,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						}
 					})
 					.catch(error => {
-						this.logger.error('setSmartStandbyDaysOfWeekOff.error', error);
+						this.logger.error('setSmartStandbyDaysOfWeekOff.error', error.message);
 					});
 			}
 		} catch (error) {

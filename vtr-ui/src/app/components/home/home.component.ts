@@ -42,8 +42,8 @@ export class HomeComponent implements OnInit {
 				// for browser
 				this.setLocaleAndDevice(undefined);
 			}
-		} catch (err) {
-			this.logger.error(`ERROR in ngOnInit() of home.component`, err);
+		} catch (error) {
+			this.logger.error(`ERROR in ngOnInit() of home.component`, error.message);
 		}
 	}
 
@@ -65,8 +65,8 @@ export class HomeComponent implements OnInit {
 			} else {
 				this.router.navigate(['/dashboard']);
 			}
-		} catch (err) {
-			this.logger.error(`ERROR in vantageLaunch() of home.component`, err);
+		} catch (error) {
+			this.logger.error(`ERROR in vantageLaunch() of home.component`, error.message);
 		}
 	}
 }

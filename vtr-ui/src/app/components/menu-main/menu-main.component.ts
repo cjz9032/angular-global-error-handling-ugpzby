@@ -30,7 +30,7 @@ import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
-	styleUrls: [ './menu-main.component.scss' ]
+	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, AfterViewInit {
 	@ViewChild('menuTarget', { static: false })
@@ -136,7 +136,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	onFocus(): void {
 		this.showVpn();
 	}
-	@HostListener('document:click', [ '$event.target' ])
+	@HostListener('document:click', ['$event.target'])
 	onClick(targetElement) {
 		if (this.menuTarget) {
 			const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
@@ -167,7 +167,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				.then((value: number) => {
 					this.loadMenuOptions(value);
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		}
 
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
@@ -397,11 +397,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 							console.log(
 								'Smart Assist Expressions',
 								responses[0] ||
-									responses[1] ||
-									responses[2] ||
-									responses[3].available ||
-									responses[4] ||
-									(responses[5] && responses[6] && responses[7] > 0)
+								responses[1] ||
+								responses[2] ||
+								responses[3].available ||
+								responses[4] ||
+								(responses[5] && responses[6] && responses[7] > 0)
 							);
 							// cache smart assist capability
 							const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
@@ -435,7 +435,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 							}
 						})
 						.catch((error) => {
-							this.logger.error('error in initSmartAssist.Promise.all()', error);
+							this.logger.error('error in initSmartAssist.Promise.all()', error.message);
 						});
 				}
 			}
@@ -463,7 +463,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	initInputAccessories() {
-		Promise.all([ this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability() ])
+		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
 			.then((responses: any[]) => {
 				const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
 				inputAccessoriesCapability.isUdkAvailable = responses[0];
@@ -473,7 +473,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					inputAccessoriesCapability
 				);
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	}
 
 	openModernPreloadModal() {
