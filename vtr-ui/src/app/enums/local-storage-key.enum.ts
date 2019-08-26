@@ -159,7 +159,6 @@ export enum LocalStorageKey {
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 	UPEUserID = '[LocalStorageKey] UPEUserID',
-	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
 	BetaUser = '[LocalStorageKey] BetaUser',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability'
 }
