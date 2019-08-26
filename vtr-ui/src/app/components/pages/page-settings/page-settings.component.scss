@@ -2,8 +2,7 @@
 
 .vtr-page {
 	.vtr-page-content {
-		.vtr-page-left-column {
-			background-color: $light;
+		.settings-main-column {
 			padding: 0 4rem 4rem;
 		}
 	}
@@ -38,5 +37,15 @@
 		border: 1px solid #ECF0F1;
 		border-radius: 0.4rem;
 		background-color: #F5F7F8;
+	}
+}
+
+:host-context(.is-gaming) {
+	.subpage-settings {
+		.settings-note {
+			color: $gaming_light_05;
+			background-color: $gaming_darker;
+			border: 1px solid $gaming_dark;
+		}
 	}
 }

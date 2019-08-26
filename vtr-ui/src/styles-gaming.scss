@@ -262,6 +262,18 @@
 											color: $gaming_lightest;
 											padding-left: 0;
 										}
+
+										.icon-check,.icon-times {
+											.icon-bg {
+												fa-icon {
+													color: $gaming-Darkslate-blue;
+												}
+											}
+
+											&::before {
+												content: "";
+											}
+										}
 									}
 								}
 

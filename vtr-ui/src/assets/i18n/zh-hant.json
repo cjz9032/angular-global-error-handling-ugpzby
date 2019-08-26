@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "輸入和配件",
                 "subtitle": "輸入和配件設定",
-                "description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整最佳電源管理的設定",
+                "description": "您可使用本節內容設定最常用的鍵盤和滑鼠功能。從這裡探索更多功能。",
                 "inputAccessory": {
                     "title": "智慧型鍵盤",
                     "hiddenKeyboardFunctions": {
@@ -1113,6 +1113,36 @@
                         "tittle": "Fn + 空格鍵",
                         "description": "變更鍵盤背光狀態",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Keyboard top-row function",
+                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "subSection": {
+                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIAL FUNCTION",
+                                "fnKey": "F1-F12 FUNCTION"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Reversing the default primary function",
+                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                        },
+                        "subSectionThree": {
+                            "title": "How to use Fn key combinations",
+                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "radioButton": {
+                                "nMehod": "Normal method",
+                                "fnKeyMehod": "Fn Sticky key method"
+                            },
+                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                        },
+                        "popup": {
+                            "title": "Restart computer",
+                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
+                            "reboot": "REBOOT",
+                            "cancel": "NOT NOW"
+                        }
                     }
                 },
                 "userDefinedKey": {
@@ -2329,7 +2359,7 @@
             "error": "錯誤",
             "delete": "刪除",
             "warningBatterySaver": "附註：「排程掃描」不會在「省電功能」模式下執行",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+            "scheduleIntervalLimit": "另一次掃描已排程在十分鐘內進行。請選擇其他時間。"
         },
         "recoverBadSectors": {
             "title": "回復錯誤磁區",
@@ -2378,6 +2408,7 @@
         "yes": "是",
         "attention": "請注意",
         "cancelTextPrompt": "您確定要取消嗎？",
-        "cancelTextProgress": "請等待取消進度"
+        "cancelTextProgress": "請等待取消進度",
+        "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。"
     }
 }

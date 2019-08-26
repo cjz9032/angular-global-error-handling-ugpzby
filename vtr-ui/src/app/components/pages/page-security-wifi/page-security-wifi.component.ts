@@ -233,21 +233,17 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	enableWiFiSecurity(event): void {
-		try {
-			if (this.wifiSecurity) {
-				this.wifiSecurity.enableWifiSecurity().then((res) => {
-					if (res === true) {
-						this.wifiHomeViewModel.isLWSEnabled = true;
-					} else {
-						this.wifiHomeViewModel.isLWSEnabled = false;
-					}
+		if (this.wifiSecurity) {
+			this.wifiSecurity.enableWifiSecurity().then((res) => {
+				if (res === true) {
+					this.wifiHomeViewModel.isLWSEnabled = true;
+				} else {
+					this.wifiHomeViewModel.isLWSEnabled = false;
 				}
-					, (error) => {
-						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-					});
 			}
-		} catch (err) {
-			throw new Error('wifiSecurity is null');
+				, (error) => {
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+				});
 		}
 	}
 

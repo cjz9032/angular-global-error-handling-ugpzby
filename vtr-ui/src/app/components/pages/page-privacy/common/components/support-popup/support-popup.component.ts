@@ -9,7 +9,7 @@ import { DeviceService } from '../../../../../../services/device/device.service'
 @Component({
 	selector: 'vtr-support-popup',
 	templateUrl: './support-popup.component.html',
-	styleUrls: ['./support-popup.scss']
+	styleUrls: [ './support-popup.scss' ]
 })
 export class SupportPopupComponent implements OnInit {
 	private licenseTypes = licenseTypes;
@@ -19,11 +19,9 @@ export class SupportPopupComponent implements OnInit {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private figleafOverviewService: FigleafOverviewService,
 		private deviceService: DeviceService
-	) {
-	}
+	) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	openLenovoSupport() {
 		from(this.deviceService.getMachineInfo()).subscribe((info) => {
@@ -33,17 +31,23 @@ export class SupportPopupComponent implements OnInit {
 	}
 
 	openFigleafSupport() {
-		this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
-			switchMap((isReady) => isReady ? this.figleafOverviewService.figleafStatus$ :
-					of({licenseType: this.licenseTypes.NonInstalled, appVersion: ''})),
-			take(1)
-		).subscribe((status) => {
-			try {
-				const getParams = window.btoa(`appState=${licenseTypes[status.licenseType]}&appVersion=${status.appVersion || 0}`);
-				this.vantageCommunicationService.openUri(`https://figleafapp.com/lv/help/?${getParams}`);
-			} catch (error) {
-				console.error(error.message);
-			}
-		});
+		this.communicationWithFigleafService.isFigleafReadyForCommunication$
+			.pipe(
+				switchMap(
+					(isReady) =>
+						isReady
+							? this.figleafOverviewService.figleafStatus$
+							: of({ licenseType: this.licenseTypes.NonInstalled, appVersion: '' })
+				),
+				take(1)
+			)
+			.subscribe((status) => {
+				try {
+					const getParams = window.btoa(
+						`appState=${licenseTypes[status.licenseType]}&appVersion=${status.appVersion || 0}`
+					);
+					this.vantageCommunicationService.openUri(`https://figleafapp.com/lv/help/?${getParams}`);
+				} catch (error) {}
+			});
 	}
 }

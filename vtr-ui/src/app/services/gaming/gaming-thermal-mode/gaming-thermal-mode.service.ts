@@ -10,9 +10,7 @@ export class GamingThermalModeService {
 
 	constructor(shellService: VantageShellService) {
 		this.gamingThermalMode = shellService.getGamingThermalMode();
-		console.log(shellService.getGamingThermalMode());
 		if(this.gamingThermalMode === undefined) {
-			console.log('Undefine Interface');
 		}
 		if (this.gamingThermalMode) {
 			this.isShellAvailable = true;

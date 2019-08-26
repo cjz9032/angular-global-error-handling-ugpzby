@@ -256,7 +256,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private cleaningUpScan(response: any) {
-		if (response && typeof response.finalResultCode !== undefined) {
+		if (response) {
 			this.finalResponse = response;
 			this.finalResultCode = response.finalResultCode;
 			this.tooltipInformation = response.resultDescription;
@@ -435,7 +435,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					windowClass: 'schedule-new-modal-size'
 				});
 
-				(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.warning');
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.battery.title');
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.batteryMessage;
 
 				modal.result.then((result) => {

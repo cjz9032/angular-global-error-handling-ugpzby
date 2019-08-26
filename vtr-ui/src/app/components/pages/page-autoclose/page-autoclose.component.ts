@@ -78,54 +78,61 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	openTargetModal() {
+		this.loadingContent.loading = true;
 		this.refreshAutoCloseList();
 		this.refreshRunningList();
 		try {
-			this.gamingAutoCloseService.getNeedToAsk().then((needToAskStatus: boolean) => {
-				this.gamingAutoCloseService.setNeedToAskStatusCache(needToAskStatus);
-				console.log('first need status', needToAskStatus);
-				this.needToAsk = needToAskStatus;
-				if (this.toggleStatus) {
-					this.showAppsModal = true;
-				} else if (!this.toggleStatus && this.needToAsk) {
-					this.showTurnOnModal = true;
-				} else if (!this.toggleStatus && !this.needToAsk) {
-					this.showAppsModal = true;
-				}
-			});
+			this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
+			this.hiddenScroll(true);
+			if (this.toggleStatus) {
+				this.showAppsModal = true;
+			} else if (!this.toggleStatus && (this.needToAsk || isUndefined(this.needToAsk))) {
+				this.showTurnOnModal = true;
+			} else if (!this.toggleStatus && !this.needToAsk) {
+				this.showAppsModal = true;
+			}
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
 	doNotShowAction(event: any) {
 		const status = event.target.checked;
 		try {
-			this.gamingAutoCloseService.setNeedToAsk(!status).then((response: any) => {
-				console.log('Set successfully ------------------------>', !status);
-				this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
-				this.needToAsk = !status;
-			});
+			this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
+			this.needToAsk = !status;
 		} catch (error) {
-			console.error(error.message);
 		}
 	}
 
 	initTurnOnAction() {
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
+		this.hiddenScroll(true);
 	}
 
 	initNotNowAction(notNowStatus: boolean) {
 		this.showAppsModal = true;
+		this.hiddenScroll(true);
 	}
 
 	modalCloseTurnOn(action: boolean) {
 		this.showTurnOnModal = action;
+		this.hiddenScroll(false);
 	}
 
 	modalCloseAddApps(action: boolean) {
 		this.showAppsModal = action;
+		this.hiddenScroll(false);
+		this.refreshRunningList();
+	}
+
+	hiddenScroll(action: boolean) {
+		if (action) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
 	}
 
 	toggleAutoClose(event: any) {
@@ -151,7 +158,7 @@ export class PageAutocloseComponent implements OnInit {
 				}
 			});
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
@@ -167,33 +174,25 @@ export class PageAutocloseComponent implements OnInit {
 		} catch (error) {
 			const noAppsRunning = this.runningList.length === 0 ? true : false;
 			this.loadingContent = { loading: false, noApps: noAppsRunning };
-			console.error(error.message);
 		}
 	}
 
 	public addAppDataToList(event: any) {
-		console.log(event.target.checked);
-		console.log(event.target.value);
 		if (event.target.checked) {
 			const addApp = event.target.value;
 			try {
 				this.gamingAutoCloseService.addAppsAutoCloseList(addApp).then((success: any) => {
-					console.log('Added successfully ------------------------>', success);
 					if (success) {
 						this.refreshAutoCloseList();
-						this.refreshRunningList();
 					}
 				});
 			} catch (error) {
-				console.error(error.message);
 			}
 		}
 	}
 
 	deleteAppFromList(appData: any) {
-		console.log(appData);
 		this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
-			console.log('Deleted successfully ------------------------>', response);
 			if (response) {
 				this.autoCloseAppList.splice(appData.index, 1);
 				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);

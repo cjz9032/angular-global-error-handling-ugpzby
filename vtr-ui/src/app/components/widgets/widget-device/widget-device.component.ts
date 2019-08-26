@@ -9,6 +9,7 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
 import {DashboardService} from 'src/app/services/dashboard/dashboard.service';
 import {map, mergeMap } from 'rxjs/operators';
+import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 @Component({
 	selector: 'vtr-widget-device',
 	templateUrl: './widget-device.component.html',
@@ -30,7 +31,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private timer: TimerService,
 		private metrics: MetricService,
-		private dashboardServcie: DashboardService
+		private dashboardServcie: DashboardService,
+		private adPolicyService: AdPolicyService
 	) {
 		this.myDevice = new MyDevice();
 	}
@@ -92,7 +94,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			disk.detail = value;
 		});
 
-		if (this.deviceService && !this.deviceService.isSMode) {
+		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
 			const systemUpdate = new Status();
 			systemUpdate.id = 'systemupdate';
 			this.translate.stream('device.myDevice.systemUpdate.notFound').subscribe((value) => {
@@ -191,7 +193,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		});
 
 		// sysupdate
-		if (this.deviceService && !this.deviceService.isSMode) {
+		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
 			this.dashboardServcie.getRecentUpdateInfo().subscribe(data => {
 				if (data) {
 					const systemUpdate = this.deviceStatus[3];
@@ -237,7 +239,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		this.dashboardServcie.getWarrantyInfo().subscribe(data => {
 			if (data) {
 				let warranty;
-				if (this.deviceService && !this.deviceService.isSMode) {
+				if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
 					warranty = this.deviceStatus[4];
 				} else {
 					warranty = this.deviceStatus[3];

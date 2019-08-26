@@ -135,7 +135,13 @@
 										[indexTimes]="2"
 										[type]="articlesType">
 									</vtr-container-article>
-									<vtr-container-article [items]="articles.leftBottom"
+									<vtr-container-article class="d-none d-lg-block" [items]="articles.leftBottom"
+										*ngIf="isOnline"
+										[startIndex]="5"
+										[indexTimes]="2"
+										[type]="articlesType">
+									</vtr-container-article>
+									<vtr-container-article class="d-lg-none" [items]="articles.leftBottomSmall"
 										*ngIf="isOnline"
 										[startIndex]="5"
 										[indexTimes]="2"
@@ -149,7 +155,13 @@
 										[indexTimes]="2"
 										[type]="articlesType">
 									</vtr-container-article>
-									<vtr-container-article [items]="articles.middleBottom"
+									<vtr-container-article class="d-none d-lg-block" [items]="articles.middleBottom"
+										*ngIf="isOnline"
+										[startIndex]="6"
+										[indexTimes]="2"
+										[type]="articlesType">
+									</vtr-container-article>
+									<vtr-container-article class="d-lg-none" [items]="articles.middleBottomSmall"
 										*ngIf="isOnline"
 										[startIndex]="6"
 										[indexTimes]="2"
@@ -202,7 +214,7 @@
 									</div>
 								</div>
 
-								<div class="row"
+								<div class="row d-none d-lg-block"
 								*ngIf="articlesType !== 'loading' && articles.right.length > 0">
 									<div class="col col-12 p-60">
 									<vtr-container-article [items]="articles.right"

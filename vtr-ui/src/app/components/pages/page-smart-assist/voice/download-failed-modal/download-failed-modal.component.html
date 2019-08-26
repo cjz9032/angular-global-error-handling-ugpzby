@@ -6,6 +6,10 @@
 			type="button"
 			href="javascript:;"
 			class="close-btn"
+			vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="Device.SmartAssist.InstallFailed"
+			metricsItem="InstallFailedModalCloseIcon"
 			(click)="closeModal()">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""
@@ -26,7 +30,11 @@
 	</div>
 	<div class="line"></div>
 	<div class="row">
-		<button id="download_failed_modal_close_btn"
+		<button vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="Device.SmartAssist.InstallFailed"
+			metricsItem="InstallFailedModalCloseButton" 
+			id="download_failed_modal_close_btn"
 			attr.aria-label="download_failed_modal_close_btn"
 			class="btn close-button"
 			(click)="closeModal()">{{'device.smartAssist.voice.modalInstallationFailed.btnText' | translate}}</button>
