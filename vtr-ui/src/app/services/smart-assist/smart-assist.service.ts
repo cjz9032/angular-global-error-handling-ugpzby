@@ -87,11 +87,12 @@ export class SmartAssistService {
 	}
 
 	public getZeroTouchLockFacialRecoStatus(): Promise<boolean> {
-		return Promise.resolve(true);		
+		return this.intelligentSensing.getLockFacialRecognitionSettings();
 	}
 
 	public setZeroTouchLockFacialRecoStatus(value: boolean):Promise<boolean> {
-		return Promise.resolve(true);
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.setLockFacialRecognitionSettings(option);
 
 	}
 

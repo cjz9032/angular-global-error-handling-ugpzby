@@ -6,8 +6,15 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './modal-zero-touch-lock-facial-recognition.component.html',
   styleUrls: ['./modal-zero-touch-lock-facial-recognition.component.scss']
 })
+
+
 export class ModalZeroTouchLockFacialRecognitionComponent implements OnInit {
 
+  // public paEvent = {
+  //   Active: 'active',
+  //   Cancel: 'cancel',
+  //   Close: 'close'
+  // }
   constructor( public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
@@ -18,7 +25,7 @@ export class ModalZeroTouchLockFacialRecognitionComponent implements OnInit {
   }
 
   closeModal() {
-    this.activeModal.close('close');
+    this.activeModal.close('cancel');
   }
 
 }

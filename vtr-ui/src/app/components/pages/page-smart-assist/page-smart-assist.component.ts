@@ -17,6 +17,7 @@ import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-as
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalZeroTouchLockFacialRecognitionComponent } from '../../modal/modal-zero-touch-lock-facial-recognition/modal-zero-touch-lock-facial-recognition.component';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -89,7 +90,8 @@ export class PageSmartAssistComponent implements OnInit {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		public modalService: NgbModal
+		public modalService: NgbModal,
+		private router: Router
 	) {
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -215,8 +217,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getAutoScreenOffNoteStatus(),
 			this.smartAssist.getReadingOrBrowsingVisibility(),
 			this.smartAssist.getReadingOrBrowsingStatus(),
-			this.smartAssist.getReadingOrBrowsingTime()
-			// this.smartAssist.getZeroTouchLockFacialRecoStatus()
+			this.smartAssist.getReadingOrBrowsingTime(),
 		]).then((responses: any[]) => {
 			this.intelligentScreen.isIntelligentScreenVisible = responses[0];
 			this.intelligentScreen.isAutoScreenOffVisible = responses[1];
@@ -225,10 +226,6 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentScreen.isReadingOrBrowsingVisible = responses[4];
 			this.intelligentScreen.isReadingOrBrowsingEnabled = responses[5];
 			this.intelligentScreen.readingOrBrowsingTime = responses[6];
-			// this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = responses[6].available;
-			// this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = responses[6].status;
-			// this.intelligentSecurity.FacilRecognitionCameraAccess = responses[6].permission;
-			// this.intelligentSecurity.FacialRecognitionCameraPrivacyMode = responses[6].privacymode;
 			console.log('PageSmartAssistComponent.Promise.IntelligentScreen()', responses, this.intelligentScreen);
 			if (!(this.intelligentScreen.isIntelligentScreenVisible &&
 				this.smartAssistCapability.isIntelligentScreenSupported)) {
@@ -267,12 +264,17 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getSelectedLockTimer(),
 			this.smartAssist.getHPDStatus(),
 			this.smartAssist.getHPDVisibilityInIdeaPad(),
-			this.smartAssist.getHPDVisibilityInThinkPad()
+			this.smartAssist.getHPDVisibilityInThinkPad(),
+			this.smartAssist.getZeroTouchLockFacialRecoStatus()
 		]).then((responses: any[]) => {
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
 			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
 			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
 			this.intelligentSecurity.isHPDEnabled = responses[3];
+			this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = responses[6].available;
+			this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = responses[6].status;
+			this.intelligentSecurity.facilRecognitionCameraAccess = responses[6].cameraPermission;
+			this.intelligentSecurity.facialRecognitionCameraPrivacyMode = responses[6].privacyModeStatus;
 			if (this.machineType === 0) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
 			} else {
@@ -363,11 +365,16 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	public onZeroTouchLockFacialRecoChange() {
-		// this.smartAssist.setZeroTouchLockFacialRecoStatus(this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled)
-		// .then((isSuccess: boolean) => {
-		// 		console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus`);
-		// });
-		this.zeroTouchLockFacialRecoPopup();
+		const value = this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled;
+		if(value === false) {
+			this.smartAssist.setZeroTouchLockFacialRecoStatus(value)
+			.then((isSuccess: boolean) => {
+			console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess} ; ${value}`);
+		});		
+		} else {
+			this.zeroTouchLockFacialRecoPopup();
+		}
+		
 	}
 
 	zeroTouchLockFacialRecoPopup() {
@@ -383,10 +390,13 @@ export class PageSmartAssistComponent implements OnInit {
 					// close modal and to set	
 					this.smartAssist.setZeroTouchLockFacialRecoStatus(this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled)
 					.then((isSuccess: boolean) => {
-							console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus`);
+							console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess}`);
 		}			);	
 				} else if (result === 'cancel') {
 					// cancel and close modal
+					setTimeout(() => {
+						this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;						
+					}, 0);
 				}
 			}
 		)
@@ -488,5 +498,10 @@ export class PageSmartAssistComponent implements OnInit {
 
 	onClick(path) {
 		this.deviceService.launchUri(path);
+	}
+
+	onJumpClick() {
+		this.router.navigate(['/device/device-settings/display-camera']);
+		// this.router.navigate(['/device/device-settings/display-camera',{id:'camera'}]);
 	}
 }
