@@ -35,6 +35,10 @@ class FigleafConnector {
 			message.insert(messageKey.toString(), messageToFigleaf[messageKey]);
 		}
 		return new Promise((resolve, reject) => {
+			if (connection === null) {
+				reject('Connection lost or not established');
+			}
+
 			connection.sendMessageAsync(message).then((response) => {
 				if (response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
 					const responseMessage = JSON.parse(response.message.result);
@@ -42,7 +46,7 @@ class FigleafConnector {
 				} else {
 					connection = null;
 					this.disconnectFromFigleaf();
-					reject('request message to figleaf failed');
+					reject('Request message to figleaf failed');
 				}
 			});
 		});
@@ -79,9 +83,12 @@ class FigleafConnector {
 	}
 
 	private disconnectFromFigleaf() {
-		onDisconnectListeners.forEach((cb) => {
-			cb();
-		});
+		if (RECONNECT_TIMEOUT >= 5000) {
+			onDisconnectListeners.forEach((cb) => {
+				cb();
+			});
+		}
+
 		this.reconnect();
 	}
 
