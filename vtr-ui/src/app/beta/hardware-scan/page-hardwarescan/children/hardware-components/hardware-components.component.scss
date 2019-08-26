@@ -12,14 +12,12 @@
 		.heading1 {
 			color: $main_darker;
 			font-size: 3rem;
-			padding-left: 0.5rem;
 			text-transform: capitalize;
 		}
 
 		.heading2 {
 			color: $main;
 			font-size: 3rem;
-			padding-left: 0.5rem;
 
 			&::first-letter {
 				text-transform: uppercase;
