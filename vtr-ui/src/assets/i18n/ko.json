@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "보증을 찾을 수 없음",
             "yearDepotWarranty": "1년 보관 보증",
             "warrantyDetails": "보증 세부 정보:",
+            "warrantyDashboardDetails": "보증 세부 정보",
             "startDate": "시작 날짜: ",
             "endDate": "계약 종료일: ",
             "status": "상태: ",

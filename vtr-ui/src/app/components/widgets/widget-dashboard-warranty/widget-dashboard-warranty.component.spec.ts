@@ -1,6 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WidgetDashboardWarrantyComponent } from './widget-dashboard-warranty.component';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 xdescribe('WidgetDashboardWarrantyComponent', () => {
 	let component: WidgetDashboardWarrantyComponent;

@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "未找到保修信息",
             "yearDepotWarranty": "年维修站保修",
             "warrantyDetails": "保修详细信息：",
+            "warrantyDashboardDetails": "保修详细信息",
             "startDate": "开始日期：",
             "endDate": "结束日期：",
             "status": "状态：",

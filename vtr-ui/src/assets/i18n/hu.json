@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "A jótállás nem található",
             "yearDepotWarranty": "Y Depot-jótállás",
             "warrantyDetails": "Jótállás részletei:",
+            "warrantyDashboardDetails": "Jótállás részletei",
             "startDate": "Kezdő dátum: ",
             "endDate": "Záró dátum: ",
             "status": "Állapot: ",

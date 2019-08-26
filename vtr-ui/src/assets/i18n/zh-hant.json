@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "找不到保固",
             "yearDepotWarranty": "年到府取件保固",
             "warrantyDetails": "保固詳細資料：",
+            "warrantyDashboardDetails": "保固詳細資料",
             "startDate": "開始日期：",
             "endDate": "結束日：",
             "status": "狀態：",

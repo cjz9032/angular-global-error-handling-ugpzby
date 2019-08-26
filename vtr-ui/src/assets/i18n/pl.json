@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "Nie znaleziono gwarancji",
             "yearDepotWarranty": "Roczna gwarancja serwisu wysyłkowego",
             "warrantyDetails": "Szczegóły gwarancji:",
+            "warrantyDashboardDetails": "Szczegóły gwarancji",
             "startDate": "Data rozpoczęcia: ",
             "endDate": "Data zakończenia: ",
             "status": "Stan: ",
