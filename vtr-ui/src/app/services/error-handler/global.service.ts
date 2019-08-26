@@ -5,11 +5,11 @@ import { LoggerService } from '../logger/logger.service';
 	providedIn: 'root'
 })
 export class GlobalErrorHandler implements ErrorHandler {
-	constructor(private logger: LoggerService) {
-
-	}
+	constructor(private logger: LoggerService) { }
 
 	handleError(error) {
-		this.logger.error('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ', error.message);
+		// log error with error message
+		this.logger.error('GlobalErrorHandler: uncaught exception', error.message);
+		console.error('GlobalErrorHandler: uncaught exception', error);
 	}
 }

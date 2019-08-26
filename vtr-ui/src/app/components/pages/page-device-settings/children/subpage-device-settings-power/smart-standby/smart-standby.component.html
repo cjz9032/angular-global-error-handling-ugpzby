@@ -30,13 +30,15 @@
 								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading1'"
 								[id]="'dropcheck1'"
 								[showDropDown]="showDropDown[0]"
-								(setTime)="onSetActiveStartEnd($event, true)">
+								(setTime)="onSetActiveStartEnd($event, true)"
+								[linkId]="'start'">
 							</vtr-ui-time-picker>
 							<vtr-ui-time-picker [time]="smartStandbyEndTime"
 								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
 								[id]="'dropcheck2'"
 								[showDropDown]="showDropDown[1]"
-								(setTime)="onSetActiveStartEnd($event, false)">
+								(setTime)="onSetActiveStartEnd($event, false)"
+								[linkId]="'end'">
 							</vtr-ui-time-picker>
 							<div *ngIf="showDiffNote"
 								class="row">

@@ -8,8 +8,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
-import { TranslateService } from '@ngx-translate/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
@@ -62,7 +60,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		public languageService: LanguageService,
 		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
-		private translate: TranslateService,
 		localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
@@ -115,9 +112,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					this.showWindowsHelloItem(windowsHello);
 				});
 			}
-			// this.commonMenuSubscription = this.languageService.subscription.subscribe((translation: Translation) => {
-			// 	this.onLanguageChange(translation);
-			// });
 		});
 
 		this.router.events.subscribe((ev) => {
@@ -286,14 +280,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			}
 		}
 	}
-
-	// onLanguageChange(translation: Translation) {
-	// 	// this.getMenuItems().then((items)=>{
-	// 	// 	if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
-	// 	// 		items[0].label = translation.payload.dashboard;
-	// 	// 	}
-	// 	// })
-	// }
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {

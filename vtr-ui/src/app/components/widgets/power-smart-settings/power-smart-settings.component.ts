@@ -160,6 +160,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
 					this.showIntelligentCoolingToggle = true;
 					this.showIC = response.itsVersion + this.add;
+					this.cache.showIC = this.showIC;
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description13');
 					this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.description13';
 					const currentMode = IntelligentCoolingModes.getModeForIdeaPadITS3(response.currentMode);
@@ -176,6 +177,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				} else if (response.itsVersion === 4) {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
 					this.showIntelligentCoolingToggle = false;
+					this.showIC = response.itsVersion + this.add;
+					this.cache.showIC = this.showIC;
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description14');
 					this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.description14';
 					const currentMode = IntelligentCoolingModes.getMode(response.currentMode);

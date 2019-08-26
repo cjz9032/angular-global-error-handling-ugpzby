@@ -34,8 +34,8 @@ export class CMSService {
 		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
-		private logger: LoggerService,
-		private devService: DevService
+		private devService: DevService,
+		private logger: LoggerService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
@@ -318,10 +318,9 @@ export class CMSService {
 						Brand: serverSwitchLocalData.brand
 					});
 				}
-
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('CMSService.updateServerSwitchCMSOptions', error.message);
 		}
 		return CMSOption;
 

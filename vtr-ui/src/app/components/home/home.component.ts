@@ -6,6 +6,8 @@ import { LanguageService } from 'src/app/services/language/language.service';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { TranslationNotification } from 'src/app/data-models/translation/translation';
 
 @Component({
 	selector: 'vtr-home',
@@ -13,7 +15,7 @@ import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+	private deviceInfo: DeviceInfo;
 	constructor(
 		public deviceService: DeviceService,
 		private router: Router,
@@ -25,17 +27,24 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit() {
 		try {
+			this.commonService.notification.subscribe((notification: AppNotification) => {
+				this.onNotification(notification);
+			});
+
 			if (this.deviceService.isShellAvailable) {
 				const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
 
 				// if deviceInfo is available then load from cache else invoke JS bridge
 				if (cachedDeviceInfo && cachedDeviceInfo.locale) {
-					this.setLocaleAndDevice(cachedDeviceInfo);
+					this.deviceInfo = cachedDeviceInfo;
+					this.languageService.useLanguageByLocale(cachedDeviceInfo.locale);
+
 				} else {
+					// if cache not found or first run
 					this.deviceService.getMachineInfo().then(info => {
-						const deviceInfo: DeviceInfo = { isGamingDevice: info.isGaming, locale: info.locale };
-						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, deviceInfo);
-						this.setLocaleAndDevice(deviceInfo);
+						this.deviceInfo = { isGamingDevice: info.isGaming, locale: info.locale };
+						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, this.deviceInfo);
+						this.languageService.useLanguageByLocale(info.locale);
 					});
 				}
 			} else {
@@ -58,7 +67,7 @@ export class HomeComponent implements OnInit {
 		}
 	}
 
-	public vantageLaunch(isGaming: boolean) {
+	private vantageLaunch(isGaming: boolean) {
 		try {
 			if (isGaming) {
 				this.router.navigate(['/device-gaming']);
@@ -67,6 +76,19 @@ export class HomeComponent implements OnInit {
 			}
 		} catch (error) {
 			this.logger.error(`ERROR in vantageLaunch() of home.component`, error.message);
+		}
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case TranslationNotification.TranslationLoaded:
+					this.logger.error(`HomeComponent.onNotification`, notification);
+					this.vantageLaunch(this.deviceInfo.isGamingDevice);
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }
