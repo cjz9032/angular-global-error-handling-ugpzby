@@ -8,8 +8,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
-import { TranslateService } from '@ngx-translate/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
@@ -30,7 +28,7 @@ import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
-	styleUrls: [ './menu-main.component.scss' ]
+	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, AfterViewInit {
 	@ViewChild('menuTarget', { static: false })
@@ -62,7 +60,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		public languageService: LanguageService,
 		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
-		private translate: TranslateService,
 		localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
@@ -115,9 +112,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					this.showWindowsHelloItem(windowsHello);
 				});
 			}
-			// this.commonMenuSubscription = this.languageService.subscription.subscribe((translation: Translation) => {
-			// 	this.onLanguageChange(translation);
-			// });
 		});
 
 		this.router.events.subscribe((ev) => {
@@ -136,7 +130,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	onFocus(): void {
 		this.showVpn();
 	}
-	@HostListener('document:click', [ '$event.target' ])
+	@HostListener('document:click', ['$event.target'])
 	onClick(targetElement) {
 		if (this.menuTarget) {
 			const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
@@ -167,7 +161,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				.then((value: number) => {
 					this.loadMenuOptions(value);
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		}
 
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
@@ -287,14 +281,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	// onLanguageChange(translation: Translation) {
-	// 	// this.getMenuItems().then((items)=>{
-	// 	// 	if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
-	// 	// 		items[0].label = translation.payload.dashboard;
-	// 	// 	}
-	// 	// })
-	// }
-
 	showWindowsHelloItem(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
@@ -397,11 +383,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 							console.log(
 								'Smart Assist Expressions',
 								responses[0] ||
-									responses[1] ||
-									responses[2] ||
-									responses[3].available ||
-									responses[4] ||
-									(responses[5] && responses[6] && responses[7] > 0)
+								responses[1] ||
+								responses[2] ||
+								responses[3].available ||
+								responses[4] ||
+								(responses[5] && responses[6] && responses[7] > 0)
 							);
 							// cache smart assist capability
 							const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
@@ -463,7 +449,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	initInputAccessories() {
-		Promise.all([ this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability() ])
+		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
 			.then((responses: any[]) => {
 				const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
 				inputAccessoriesCapability.isUdkAvailable = responses[0];
@@ -473,7 +459,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					inputAccessoriesCapability
 				);
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	}
 
 	openModernPreloadModal() {
