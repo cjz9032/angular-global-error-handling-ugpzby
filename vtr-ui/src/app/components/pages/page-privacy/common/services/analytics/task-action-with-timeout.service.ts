@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
-import { catchError, debounceTime, map, switchMap, take, timeout } from 'rxjs/operators';
+import { catchError, debounceTime, map, switchMap, take, tap, timeout } from 'rxjs/operators';
 
 export enum TasksName {
 	scoreScanAction = 'scoreScanAction',
@@ -49,6 +49,7 @@ export class TaskActionWithTimeoutService {
 						}))
 					);
 				}),
+				tap((res) => console.log('for Mars analytics >>>>', res))
 			);
 	}
 

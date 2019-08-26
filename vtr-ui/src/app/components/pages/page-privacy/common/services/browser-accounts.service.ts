@@ -106,7 +106,7 @@ export class BrowserAccountsService {
 					browserData.map((browser) => ({...browser, accountsCount: accessiblePasswords[browser.name]}))
 				),
 				catchError((error) => {
-					this.installedBrowsersData$.next({browserData: [], error: error});
+					this.installedBrowsersData$.next({browserData: [], error});
 					this.sendTaskAcrion();
 					return EMPTY;
 				})

@@ -54,6 +54,9 @@ ui-popover-apps {
 		}
 		.main-content-body {
 			padding: 1rem 4rem;
+			.running-apps {
+				padding-bottom: 1rem;
+			}
 		}
 		.title-content {
 			h3 {
@@ -129,6 +132,9 @@ ui-popover-apps {
 				left: 0px;
 				right: 0px;
 				margin: auto;
+				&:hover {
+					cursor: pointer;
+				}
 				input {
 					opacity: 0;
 					position: absolute;
@@ -153,6 +159,7 @@ ui-popover-apps {
 		.no-running-app {
 			color: $light;
 			.text-content {
+				padding-bottom: 3.4rem;
 				h3 {
 					font-size: 3.5rem;
 					font-weight: $weight_light;

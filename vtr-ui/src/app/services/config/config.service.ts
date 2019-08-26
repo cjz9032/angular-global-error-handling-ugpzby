@@ -283,7 +283,7 @@ export class ConfigService {
 	}, {
 		id: 'privacy',
 		label: 'common.menu.privacy',
-		path: 'privacy/breaches',
+		path: 'privacy',
 		icon: ['fal', 'user-shield'],
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',

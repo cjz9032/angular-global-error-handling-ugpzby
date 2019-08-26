@@ -1,13 +1,13 @@
 <div *ngIf="showedArticle" class="article-widget">
-    <div class="article-widget__top-description">
-        <p class="article-widget__title">Privacy hub</p>
-		<a class="article-widget__link"
-		   vtrSendAnalytics
-		   [metricsEvent]="'ItemClick'"
-		   [metricsItem]="'ArticlesSeeAllButton'"
-		   vtrOfflineMode positionContextTo="left"
-		   routerLink="/privacy/articles">See all articles</a>
-	</div>
+<!--    <div class="article-widget__top-description">-->
+<!--        <p class="article-widget__title">Privacy hub</p>-->
+<!--		<a class="article-widget__link"-->
+<!--		   vtrSendAnalytics-->
+<!--		   [metricsEvent]="'ItemClick'"-->
+<!--		   [metricsItem]="'ArticlesSeeAllButton'"-->
+<!--		   vtrOfflineMode positionContextTo="left"-->
+<!--		   routerLink="/privacy/articles">See all articles</a>-->
+<!--	</div>-->
     <vtr-article-preview
 		(openArticle)="openArticle($event)"
 		[article]="showedArticle"></vtr-article-preview>

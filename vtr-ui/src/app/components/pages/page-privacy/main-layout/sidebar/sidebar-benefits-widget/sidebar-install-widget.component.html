@@ -14,22 +14,24 @@
 				<p class="sidebar-install-widget__text-light">{{installWidgetSettings.text}}</p>
 			</div>
 		</div>
-		<button class="sidebar-install-widget__button sidebar-install-widget__button--transparent"
-				vtrOpenFigleafInstaller
-				vtrSendAnalytics
-				[metricsEvent]="'ItemClick'"
-				[metricsItem]="'InstallButton'"
-				vtrOfflineMode>
-			{{primaryButtonText}}
-		</button>
-		<div class="sidebar-install-widget__button-link">
-			<a class="sidebar-install-widget__show-more"
-			   vtrSendAnalytics
-			   [metricsEvent]="'ItemClick'"
-			   [metricsItem]="'LearnMoreLink'"
-			   routerLink="/privacy/landing">
-				<span class="sidebar-install-widget__show-more-text">{{linkButtonText}}</span>
-			</a>
+		<div class="sidebar-install-widget__button-group">
+			<button class="sidebar-install-widget__button sidebar-install-widget__button--transparent"
+					vtrOfflineMode
+					vtrOpenFigleafInstaller
+					vtrSendAnalytics
+					[metricsEvent]="'ItemClick'"
+					[metricsItem]="'InstallButton'">
+				{{primaryButtonText | changeActionButtonText | async}}
+			</button>
+			<div class="sidebar-install-widget__button-link">
+				<a class="sidebar-install-widget__show-more"
+				   vtrSendAnalytics
+				   [metricsEvent]="'ItemClick'"
+				   [metricsItem]="'LearnMoreLink'"
+				   routerLink="/privacy/landing">
+					<span class="sidebar-install-widget__show-more-text">{{linkButtonText}}</span>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

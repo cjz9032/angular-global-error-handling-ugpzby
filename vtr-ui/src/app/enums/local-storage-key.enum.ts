@@ -158,5 +158,14 @@ export enum LocalStorageKey {
 	UPEUserID = '[LocalStorageKey] UPEUserID',
 	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
 	BetaUser = '[LocalStorageKey] BetaUser',
-	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability'
+	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
+	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
+	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
+	EasyResumeCapability = '[LocalStorageKey] EasyResumeCapability',
+	VantageToolbarCapability = '[LocalStorageKey] VantageToolbarCapability',
+	EnergyStarCapability = '[LocalStorageKey] EnergyStarCapability',
+	AirplanePowerModeCapability = '[LocalStorageKey] AirplanePowerModeCapability',
+	BatteryChargeThresholdCapability = '[LocalStorageKey] BatteryChargeThresholdCapability',
+	ExpressChargingCapability = '[LocalStorageKey] ExpressChargingCapability',
+	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability'
 }

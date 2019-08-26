@@ -23,7 +23,12 @@
 		align-items: flex-start;
 	}
 
+	&__feature-header {
+		max-width: 100%;
+	}
+
 	&__tooltip {
+		padding-top: 1rem;
 		//align-self: center;
 	}
 
