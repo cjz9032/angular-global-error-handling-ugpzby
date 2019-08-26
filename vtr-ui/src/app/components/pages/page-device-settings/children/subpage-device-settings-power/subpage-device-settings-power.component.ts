@@ -76,23 +76,28 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.power.powerSmartSettings.title',
-			path: 'smartSettings'
+			path: 'smartSettings',
+			metricsItem: 'PowerSmartSettings'
 		},
 		{
 			title: 'device.deviceSettings.power.smartStandby.title',
-			path: 'smartStandby'
+			path: 'smartStandby',
+			metricsItem: 'SmartStandby'
 		},
 		{
 			title: 'device.deviceSettings.power.batterySettings.title',
 			path: 'battery',
+			metricsItem: 'BatterySettings'
 		},
 		{
 			title: 'device.deviceSettings.power.powerSettings.title',
-			path: 'power'
+			path: 'power',
+			metricsItem: 'PowerSettings'
 		},
 		{
 			title: 'device.deviceSettings.power.otherSettings.title',
-			path: 'other'
+			path: 'other',
+			metricsItem: 'OtherSettings'
 		}
 	];
 	// removed from conservation mode <br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.
