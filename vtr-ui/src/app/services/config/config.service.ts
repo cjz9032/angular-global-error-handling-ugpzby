@@ -6,6 +6,7 @@ import {
 } from 'src/app/services/device/device.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -162,6 +163,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			adPolicyId: AdPolicyId.SystemUpdate,
 			subitems: []
 		}]
 	}, {
@@ -340,6 +342,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			adPolicyId: AdPolicyId.SystemUpdate,
 			subitems: []
 		}]
 	}, {
@@ -482,7 +485,8 @@ export class ConfigService {
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-			if (country.toLowerCase() === 'us') {
+			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
+			if (country.toLowerCase() === 'us' && locale.startsWith('en')) {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);

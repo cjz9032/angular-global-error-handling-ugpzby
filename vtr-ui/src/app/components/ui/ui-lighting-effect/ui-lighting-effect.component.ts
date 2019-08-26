@@ -25,14 +25,10 @@ export class UiLightingEffectComponent implements OnInit {
 	public selectedDescription: string;
 	@Input() effectOptionName: string;
 	public selectedOption: any;
-	@Input() defaultLang : any;
+	@Input() defaultLang: any;
 	constructor(private elementRef: ElementRef) { }
 
 	ngOnInit() {
-		// console.log('selected value in drop ng on it', this.selectedValue);
-		// this.selectedOption = this.options.dropOptions.filter(
-		// 	(option) => option.value === this.selectedValue
-		// )[0];
 	}
 
 	public toggleOptions() {

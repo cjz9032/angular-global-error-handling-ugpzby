@@ -53,7 +53,8 @@ export class VantageShellService {
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
-				Phoenix.Features.BetaUser
+				Phoenix.Features.BetaUser,
+				Phoenix.Features.AdPolicy
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -195,7 +196,6 @@ export class VantageShellService {
 						}
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
-						console.log('an error ocurr when sending metrics event', ex);
 						return Promise.resolve({
 							status: 0,
 							desc: 'ok'
@@ -250,6 +250,16 @@ export class VantageShellService {
 	public getModernPreload(): any {
 		if (this.phoenix) {
 			return this.phoenix.modernPreload;
+		}
+		return undefined;
+	}
+
+	/**
+	 * returns ad policy object from VantageShellService of JS Bridge
+	 */
+	public getAdPolicy(): any {
+		if (this.phoenix) {
+			return this.phoenix.adPolicy;
 		}
 		return undefined;
 	}
@@ -460,13 +470,9 @@ export class VantageShellService {
 	}
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
-			try {
-				return this.phoenix.deviceFilter.calc(filter);
-			} catch (error) {
-				console.log(`VantageShellService.calcDeviceFilter: ${filter}`, error);
-			}
+			return this.phoenix.deviceFilter.calc(filter);
 		}
-		return null;
+		return undefined;
 	}
 	public getLogger(): any {
 		if (this.shell) {
@@ -631,7 +637,6 @@ export class VantageShellService {
 			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
-			console.log('getGamingAuto========>>>>>>>', this.phoenix.gaming);
 			return this.phoenix.gaming.gamingAutoClose;
 		}
 		return undefined;
@@ -644,7 +649,6 @@ export class VantageShellService {
 			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
-			console.log('Deleting the following macro key ---->', macroKey);
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
 		}
 		return undefined;

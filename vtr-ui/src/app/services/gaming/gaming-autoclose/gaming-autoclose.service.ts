@@ -44,7 +44,6 @@ export class GamingAutoCloseService {
   getAppsAutoCloseList(): Promise<boolean> {
     try {
       if (this.isShellAvailable) {
-        console.log('Here============>', this.gamingAutoClose);
         return this.gamingAutoClose.getAutoCloseList();
       }
       return undefined;
