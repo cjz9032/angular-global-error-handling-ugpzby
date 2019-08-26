@@ -32,7 +32,12 @@
 	.note-icon {
 		font-size: 20px;
 	}
-
+	.privacy-button {
+		font-size: 1.3rem;
+		letter-spacing: 0.76px;
+		text-align: left;
+	}
+}
 	.link-text {
 		font-size: $body;
 		text-decoration: underline;
@@ -42,9 +47,3 @@
 		padding-top: 1.8rem;
 		font-weight: 600;
 	}
-	.privacy-button {
-		font-size: 1.3rem;
-		letter-spacing: 0.76px;
-		text-align: left;
-	}
-}
