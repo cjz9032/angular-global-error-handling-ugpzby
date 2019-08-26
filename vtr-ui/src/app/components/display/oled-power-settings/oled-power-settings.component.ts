@@ -2,6 +2,7 @@ import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { DropDownInterval } from '../../../data-models/common/drop-down-interval.model';
 import { TranslateService } from '@ngx-translate/core';
 import { DisplayService } from 'src/app/services/display/display.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-oled-power-settings',
@@ -17,7 +18,9 @@ export class OledPowerSettingsComponent implements OnInit {
 	public backgroundDimmerValue: number;
 	public displayDimmerValue: number;
 
-	constructor(public displayService: DisplayService,
+	constructor(
+		public displayService: DisplayService,
+		private logger: LoggerService,
 		private translate: TranslateService) { }
 
 	ngOnInit() {
@@ -34,12 +37,12 @@ export class OledPowerSettingsComponent implements OnInit {
 	}
 
 	private populateIntervals() {
-		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); //'';
-		const minute = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minute'); //'minute';
-		const minutes = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minutes');  //'minutes';
-		const alwaysOn = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.alwaysOn'); //'Always on';
-		const never = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.never'); //'Never';
-		const halfTime = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.halfTime'); //'Half time of display off timer';
+		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); // '';
+		const minute = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minute'); // 'minute';
+		const minutes = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.minutes');  // 'minutes';
+		const alwaysOn = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.alwaysOn'); // 'Always on';
+		const never = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.never'); // 'Never';
+		const halfTime = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.halfTime'); // 'Half time of display off timer';
 
 		this.intervals = [{
 			name: alwaysOn,
@@ -123,12 +126,12 @@ export class OledPowerSettingsComponent implements OnInit {
 						}
 
 					}).catch(error => {
-						console.error('OLED-Power-Settings : getOLEDPowerControlCapability', error);
+						this.logger.error('OLED-Power-Settings : getOLEDPowerControlCapability', error);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 
 		}
 	}
@@ -174,12 +177,12 @@ export class OledPowerSettingsComponent implements OnInit {
 						this.taskBarDimmerValue = result.displayStrIndex;
 
 					}).catch(error => {
-						console.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error);
+						this.logger.error('OLED-Power-Settings : getTaskbarDimmerSetting error', error);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 
 		}
 	}
@@ -194,12 +197,12 @@ export class OledPowerSettingsComponent implements OnInit {
 						this.backgroundDimmerValue = result.displayStrIndex;
 
 					}).catch(error => {
-						console.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error);
+						this.logger.error('OLED-Power-Settings : getBackgroundDimmerSetting error', error);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 
 		}
 	}
@@ -214,12 +217,12 @@ export class OledPowerSettingsComponent implements OnInit {
 						this.displayDimmerValue = result.displayStrIndex;
 
 					}).catch(error => {
-						console.error('OLED-Power-Settings : getDisplayDimmerSetting error', error);
+						this.logger.error('OLED-Power-Settings : getDisplayDimmerSetting error', error);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 
 		}
 	}
@@ -234,12 +237,12 @@ export class OledPowerSettingsComponent implements OnInit {
 						console.log('OLED-Power-Settings : setTaskbarDimmerSetting.then', result);
 
 					}).catch(error => {
-						console.error('OLED-Power-Settings : setTaskbarDimmerSetting error ', error);
+						this.logger.error('OLED-Power-Settings : setTaskbarDimmerSetting error ', error);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -255,12 +258,12 @@ export class OledPowerSettingsComponent implements OnInit {
 
 
 					}).catch(error => {
-						console.error('OLED-Power-Settings : setBackgroundDimmerSetting error', error.message);
+						this.logger.error('OLED-Power-Settings : setBackgroundDimmerSetting error', error.message);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -277,12 +280,12 @@ export class OledPowerSettingsComponent implements OnInit {
 
 
 					}).catch(error => {
-						console.error('OLED-Power-Settings : setDisplayDimmerSetting error', error);
+						this.logger.error('OLED-Power-Settings : setDisplayDimmerSetting error', error);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 }

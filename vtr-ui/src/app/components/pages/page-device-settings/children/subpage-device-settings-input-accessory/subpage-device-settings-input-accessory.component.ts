@@ -3,6 +3,7 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -25,7 +26,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public switchValue = false;
 	public stickyFunStatus = false;
 
-	constructor(private keyboardService: InputAccessoriesService, private commonService: CommonService, ) { }
+	constructor(
+		private keyboardService: InputAccessoriesService,
+		private commonService: CommonService,
+		private logger: LoggerService,
+	) { }
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
@@ -48,11 +53,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					}
 				})
 					.catch(error => {
-						console.error('keyboard Layout name error here', error);
+						this.logger.error('keyboard Layout name error here', error);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -65,11 +70,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					this.getAdditionalCapabilities();
 				})
 					.catch(error => {
-						console.error('keyboard Layout name error here', error);
+						this.logger.error('keyboard Layout name error here', error);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	// To display the keyboard map image
@@ -193,7 +198,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	fnCtrlKey(event) {

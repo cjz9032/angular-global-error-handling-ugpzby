@@ -10,6 +10,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { DevService } from '../dev/dev.service';
+import { LoggerService } from '../logger/logger.service';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -33,6 +34,7 @@ export class CMSService {
 		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
+		private logger: LoggerService,
 		private devService: DevService
 	) {
 		localInfoService.getLocalInfo().then(result => {
@@ -319,7 +321,7 @@ export class CMSService {
 
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 		return CMSOption;
 

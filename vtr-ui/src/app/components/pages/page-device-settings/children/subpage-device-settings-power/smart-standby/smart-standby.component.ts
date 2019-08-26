@@ -4,6 +4,7 @@ import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-smart-standby',
@@ -22,7 +23,10 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
-	constructor(public powerService: PowerService, public commonService: CommonService) { }
+	constructor(
+		public powerService: PowerService,
+		private logger: LoggerService,
+		public commonService: CommonService) { }
 
 	ngOnInit() {
 		this.showSmartStandby();
@@ -96,11 +100,11 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						this.setSmartStandbySection();
 					})
 					.catch(error => {
-						console.error('setSmartStandbyEnabled', error);
+						this.logger.error('setSmartStandbyEnabled', error);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 		// this.smartStandby.isEnabled = isEnabled;
 	}
@@ -138,11 +142,11 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							}
 						})
 						.catch(error => {
-							console.error('setSmartStandbyStartTime', error);
+							this.logger.error('setSmartStandbyStartTime', error);
 						});
 				}
 			} catch (error) {
-				console.error(error.message);
+				this.logger.error(error.message);
 			}
 		}
 	}
@@ -161,11 +165,11 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						}
 					})
 					.catch(error => {
-						console.error('setSmartStandbyDaysOfWeekOff.error', error);
+						this.logger.error('setSmartStandbyDaysOfWeekOff.error', error);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 

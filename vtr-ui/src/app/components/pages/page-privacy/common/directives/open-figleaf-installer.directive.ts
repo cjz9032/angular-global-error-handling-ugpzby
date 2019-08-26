@@ -5,6 +5,7 @@ import { CommonService } from '../../../../../services/common/common.service';
 import { filter, switchMap, take, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Directive({
 	selector: '[vtrOpenFigleafInstaller]'
@@ -15,8 +16,9 @@ export class OpenFigleafInstallerDirective implements OnDestroy {
 		private vantageCommunicationService: VantageCommunicationService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private commonService: CommonService,
+		private logger: LoggerService,
 		private communicationWithFigleafService: CommunicationWithFigleafService
-	) {	}
+	) { }
 
 	@HostListener('click', ['$event']) onClick($event) {
 		if (!this.commonService.isOnline) {
@@ -27,7 +29,7 @@ export class OpenFigleafInstallerDirective implements OnDestroy {
 			take(1),
 			filter((isFigleafNotOnboarded) => isFigleafNotOnboarded),
 			switchMap(() => this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:')),
-		).subscribe(() => {});
+		).subscribe(() => { });
 
 		this.communicationWithFigleafService.isFigleafNotOnboarded$.pipe(
 			take(1),
@@ -38,7 +40,7 @@ export class OpenFigleafInstallerDirective implements OnDestroy {
 			() => {
 				this.taskActionWithTimeoutService.startAction(TasksName.privacyAppInstallationAction);
 			},
-			(err) => console.error('openInstaller', err),
+			(err) => this.logger.error('openInstaller', err),
 		);
 	}
 

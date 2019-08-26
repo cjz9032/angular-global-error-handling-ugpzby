@@ -12,6 +12,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 const thinkpad = 1;
 const ideapad = 0;
 @Component({
@@ -43,6 +44,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	constructor(
 		public powerService: PowerService,
 		private translate: TranslateService,
+		private logger: LoggerService,
 		public commonService: CommonService,
 		public modalService: NgbModal) { }
 
@@ -70,12 +72,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		if (this.cache) {
 			//init ui
 			this.showIC = this.cache.showIC;
-			this.captionText = this.cache.captionText != "" ? this.translate.instant(this.cache.captionText): "";
+			this.captionText = this.cache.captionText !== '' ? this.translate.instant(this.cache.captionText) : '';
 			this.showIntelligentCoolingToggle = this.cache.autoModeToggle.available;
 			this.enableIntelligentCoolingToggle = this.cache.autoModeToggle.status;
 			this.showIntelligentCoolingModes = this.cache.showIntelligentCoolingModes;
 			this.apsStatus = this.cache.apsState;
-			this.selectedModeText = this.cache.selectedModeText != "" ? this.translate.instant(this.cache.selectedModeText): "";
+			this.selectedModeText = this.cache.selectedModeText !== '' ? this.translate.instant(this.cache.selectedModeText) : '';
 			this.setPerformanceAndCool(this.cache.mode);
 
 		} else {
@@ -147,7 +149,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			console.error('initPowerSmartSettingsForIdeaPad: ' + error.message);
+			this.logger.error('initPowerSmartSettingsForIdeaPad: ' + error.message);
 		}
 	}
 
@@ -182,7 +184,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			console.error('initPowerSmartSettingsUIForIdeaPad: ' + error.message);
+			this.logger.error('initPowerSmartSettingsUIForIdeaPad: ' + error.message);
 		}
 	}
 
@@ -198,11 +200,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('startMonitorForICIdeapad.then', value);
 					}).catch(error => {
-						console.error('startMonitorForICIdeapad', error);
+						this.logger.error('startMonitorForICIdeapad', error);
 					});
 			}
 		} catch (error) {
-			console.error('startMonitorForICIdeapad' + error.message);
+			this.logger.error('startMonitorForICIdeapad' + error.message);
 		}
 	}
 
@@ -213,16 +215,16 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('stopMonitorForICIdeapad', value);
 					}).catch(error => {
-						console.error('stopMonitorForICIdeapad', error);
+						this.logger.error('stopMonitorForICIdeapad', error);
 					});
 			}
 		} catch (error) {
-			console.error('stopMonitorForICIdeapad' + error.message);
+			this.logger.error('stopMonitorForICIdeapad' + error.message);
 		}
 	}
 
 	updateSelectedModeText(mode: IntelligentCoolingModes) {
-		let text = "";
+		let text = '';
 		switch (mode) {
 			case IntelligentCoolingModes.Cool:
 				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.quiteCool';
@@ -245,7 +247,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setITSModeForICIdeapad(value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -332,7 +334,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -342,7 +344,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getDYTCRevision();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private setPerformanceAndCool(mode: IntelligentCoolingMode) {
@@ -387,7 +389,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getCQLCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private getTIOCapability() {
@@ -396,7 +398,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getTIOCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private async setAutoModeSetting(event: any) {
@@ -416,11 +418,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						console.log('setAutoModeSetting.then', value);
 					})
 					.catch(error => {
-						console.error('setAutoModeSetting', error);
+						this.logger.error('setAutoModeSetting', error);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private async setManualModeSetting(mode: IntelligentCoolingMode) {
@@ -443,11 +445,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						this.setPerformanceAndCool(mode);
 					})
 					.catch(error => {
-						console.error('setManualModeSetting', error);
+						this.logger.error('setManualModeSetting', error);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private getManualModeSetting() {
@@ -456,7 +458,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getManualModeSetting();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -467,7 +469,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getAPSState();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -477,7 +479,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyCQLCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private getLegacyTIOCapability() {
@@ -486,7 +488,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyTIOCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -496,7 +498,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyManualModeCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private getLegacyAutoModeState() {
@@ -505,7 +507,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyAutoModeState();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private async getLegacyManualModeState() {
@@ -516,7 +518,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return mode1;
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private setLegacyAutoModeState(value: boolean) {
@@ -525,7 +527,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setLegacyAutoModeState(value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private setLegacyManualModeState(value: boolean) {
@@ -534,7 +536,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setLegacyManualModeState(value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	// =============== End Legacy

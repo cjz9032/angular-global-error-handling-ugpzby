@@ -5,6 +5,7 @@ import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-cam
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ChangeContext } from 'ng5-slider';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-camera-control',
@@ -53,6 +54,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		public cameraFeedService: CameraFeedService,
 		public baseCameraDetail: BaseCameraDetail,
 		private vantageShellService: VantageShellService,
+		private appLogger: LoggerService,
 		private ngZone: NgZone
 	) {
 		this.Windows = vantageShellService.getWindows();
@@ -218,7 +220,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			console.log('onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
-			console.error(error.message);
+			this.appLogger.error('CameraControlComponent:onAutoExposureChange', error.message);
 		}
 	}
 

@@ -436,11 +436,11 @@ export class PageSmartAssistComponent implements OnInit {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						}
 					}).catch(error => {
-						console.error('getVideoPauseResumeStatus.error', error);
+						this.logger.error('getVideoPauseResumeStatus.error', error);
 					});
 			}
 		} catch (error) {
-			console.error('getVideoPauseResumeStatus' + error.message);
+			this.logger.error('getVideoPauseResumeStatus' + error.message);
 		}
 	}
 }
