@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "Takuuta ei löydy",
             "yearDepotWarranty": "Takuu Y-korjauskeskuksessa.",
             "warrantyDetails": "Takuutiedot:",
+            "warrantyDashboardDetails": "Takuutiedot",
             "startDate": "Aloituspäivämäärä: ",
             "endDate": "Päättymispäivämäärä: ",
             "status": "Tila: ",

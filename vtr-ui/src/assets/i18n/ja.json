@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "保証が見つかりませんでした",
             "yearDepotWarranty": "Y デポ保証",
             "warrantyDetails": "保証の詳細:",
+            "warrantyDashboardDetails": "保証の詳細",
             "startDate": "開始日:",
             "endDate": "終了日:",
             "status": "ステータス:",

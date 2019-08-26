@@ -154,7 +154,7 @@ $mediaquery_19: "only screen and (min-width: 2160px) and (max-width : 3840px) an
 $mediaquery_20: "only screen and (min-width:350px) and (max-width : 500px)";
 $mediaquery_21: "only screen and (min-width:500px) and (max-width:992px)";
 $mediaquery_22: "only screen and (min-width: 1200px) and (max-width: 1280px)";
-$mediaquery_23: "only screen and (max-width: 992px)";
+$mediaquery_23: "only screen and (max-width: 991px)";
 $mediaquery_xl: "only screen and (max-width : 1199px)";
 $mediaquery_lg: "only screen and (max-width : 992px)";
 $mediaquery_md: "only screen and (max-width : 768px)";
@@ -280,3 +280,7 @@ $medium-screen: "only screen and (min-width : 768px) and (max-width : 991.98px)"
 $below-large-screen: "only screen and (min-width : 993px) and (max-width : 1199px)";
 $large-screen-1: "only screen and (min-width : 1200px) and (max-width : 1366px)";
 $large-screen: "only screen and (min-width : 1200px)";
+
+/*large screen */
+$mediaquery_XXL100x: "only screen and (min-width: 1920px) and (max-width : 3840px) and (max-resolution: 100dpi)";
+$mediaquery_XXL350x: "only screen and (min-width: 1920px) and (max-width : 3840px) and (min-resolution: 100dpi) and (max-resolution: 350dpi)";

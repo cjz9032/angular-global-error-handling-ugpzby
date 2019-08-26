@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "Гарантію не знайдено",
             "yearDepotWarranty": "Гарантія від сервіс-центру Y",
             "warrantyDetails": "Відомості про гарантію:",
+            "warrantyDashboardDetails": "Відомості про гарантію",
             "startDate": "Дата початку: ",
             "endDate": "Дата закінчення: ",
             "status": "Статус: ",

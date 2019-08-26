@@ -8,6 +8,7 @@ import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -31,6 +32,7 @@ export class DeviceService {
 		private commonService: CommonService,
 		public androidService: AndroidService,
 		private router: Router,
+		private logger: LoggerService,
 		private hypSettings: HypothesisService) {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
@@ -52,10 +54,10 @@ export class DeviceService {
 				.then((status: boolean) => {
 					this.isArm = status;
 				}).catch(error => {
-					console.error('initArm', error);
+					this.logger.error('initArm', error.message);
 				});
 		} catch (error) {
-			console.error('initArm' + error.message);
+			this.logger.error('initArm' + error.message);
 		}
 	}
 
@@ -72,7 +74,7 @@ export class DeviceService {
 				return isArm;
 			}
 		} catch (error) {
-			console.error('getIsARM' + error.message);
+			this.logger.error('getIsARM' + error.message);
 		}
 	}
 

@@ -11,6 +11,7 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -66,6 +67,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public audioService: AudioService,
+		private logger: LoggerService,
 		private translate: TranslateService
 	) {
 		this.fetchCMSArticles();
@@ -148,11 +150,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 							this.menuItems.splice(1, 1);
 						}
 					}).catch(error => {
-						console.error('getMicrophoneSettings', error);
+						this.logger.error('getMicrophoneSettings', error.message);
 					});
 			}
 		} catch (error) {
-			console.error('getMicrophoneSettings' + error.message);
+			this.logger.error('getMicrophoneSettings' + error.message);
 		}
 	}
 
@@ -172,7 +174,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('fetchCMSContent error', error.message);
 			}
 		);
 		this.cardContentPositionA = {

@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "Garancija ni bila najdena",
             "yearDepotWarranty": "-letna garancija s popravilom na servisu",
             "warrantyDetails": "Podrobnosti garancije:",
+            "warrantyDashboardDetails": "Podrobnosti garancije",
             "startDate": "Datum začetka: ",
             "endDate": "Datum konca: ",
             "status": "Stanje: ",

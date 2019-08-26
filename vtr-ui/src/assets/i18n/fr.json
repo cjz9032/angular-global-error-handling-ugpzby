@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "Impossible de trouver la garantie",
             "yearDepotWarranty": "Garantie dépôt Y",
             "warrantyDetails": "Détails de la garantie :",
+            "warrantyDashboardDetails": "Détails de la garantie",
             "startDate": "Date de début : ",
             "endDate": "Date de fin : ",
             "status": "Etat : ",

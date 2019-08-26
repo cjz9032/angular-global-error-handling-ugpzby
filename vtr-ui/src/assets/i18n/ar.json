@@ -1570,6 +1570,7 @@
             "statusWarrantyNotFound": "لم يتم العثور على الضمان",
             "yearDepotWarranty": "ضمان Y Depot",
             "warrantyDetails": "تفاصيل الضمان:",
+            "warrantyDashboardDetails": "تفاصيل الضمان",
             "startDate": "وقت البدء: ",
             "endDate": "تاريخ الانتهاء: ",
             "status": "الحالة: ",

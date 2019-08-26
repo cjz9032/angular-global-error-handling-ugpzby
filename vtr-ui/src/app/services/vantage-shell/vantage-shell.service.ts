@@ -53,7 +53,8 @@ export class VantageShellService {
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
-				Phoenix.Features.BetaUser
+				Phoenix.Features.BetaUser,
+				Phoenix.Features.AdPolicy
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -249,6 +250,16 @@ export class VantageShellService {
 	public getModernPreload(): any {
 		if (this.phoenix) {
 			return this.phoenix.modernPreload;
+		}
+		return undefined;
+	}
+
+	/**
+	 * returns ad policy object from VantageShellService of JS Bridge
+	 */
+	public getAdPolicy(): any {
+		if (this.phoenix) {
+			return this.phoenix.adPolicy;
 		}
 		return undefined;
 	}
@@ -459,13 +470,9 @@ export class VantageShellService {
 	}
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
-			try {
-				return this.phoenix.deviceFilter.calc(filter);
-			} catch (error) {
-				console.log(`VantageShellService.calcDeviceFilter: ${filter}`, error);
-			}
+			return this.phoenix.deviceFilter.calc(filter);
 		}
-		return null;
+		return undefined;
 	}
 	public getLogger(): any {
 		if (this.shell) {

@@ -27,8 +27,8 @@ declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: [ './app.component.scss' ],
-	providers: [ TimerService ]
+	styleUrls: ['./app.component.scss'],
+	providers: [TimerService]
 })
 export class AppComponent implements OnInit {
 	machineInfo: any;
@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
 					}
 				}
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 
 		//#endregion
 
@@ -223,6 +223,7 @@ export class AppComponent implements OnInit {
 			return;
 		}
 		sessionStorage.clear();
+		this.getMachineInfo();
 
 		this.sendAppLaunchMetric('launch');
 
@@ -255,7 +256,6 @@ export class AppComponent implements OnInit {
 			}
 		});
 
-		this.getMachineInfo();
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
@@ -276,17 +276,12 @@ export class AppComponent implements OnInit {
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 
-					// update DeviceInfo values in case user switched language
-					const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(
-						DashboardLocalStorageKey.DeviceInfo,
-						undefined
-					);
-					const isLocaleSame = cachedDeviceInfo && cachedDeviceInfo.locale === value.locale;
+					const isLocaleSame = this.languageService.isLocaleSame(value.locale);
 
 					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
 						this.languageService.useLanguageByLocale(value.locale);
-						cachedDeviceInfo.isGamingDevice = value.isGaming;
-						cachedDeviceInfo.locale = value.locale;
+						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
+						// update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 
@@ -297,7 +292,7 @@ export class AppComponent implements OnInit {
 					// then relaunch app you will see the machineinfo in localstorage.
 					return value;
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -332,9 +327,9 @@ export class AppComponent implements OnInit {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					})
-					.catch((error) => {});
+					.catch((error) => { });
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	private notifyNetworkState() {
@@ -405,7 +400,7 @@ export class AppComponent implements OnInit {
 		});
 	}
 
-	@HostListener('window:keyup', [ '$event' ])
+	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -430,10 +425,10 @@ export class AppComponent implements OnInit {
 					keyboard: false
 				});
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
-	@HostListener('window:load', [ '$event' ])
+	@HostListener('window:load', ['$event'])
 	onLoad(event) {
 		this.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
@@ -445,7 +440,7 @@ export class AppComponent implements OnInit {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', [ '$event' ])
+	@HostListener('window:keydown', ['$event'])
 	disableCtrlACV($event: KeyboardEvent) {
 		if (
 			($event.ctrlKey || $event.metaKey) &&

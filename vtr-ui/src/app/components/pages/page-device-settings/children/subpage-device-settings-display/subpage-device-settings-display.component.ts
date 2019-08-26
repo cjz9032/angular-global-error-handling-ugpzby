@@ -16,6 +16,7 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 
 @Component({
@@ -128,6 +129,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		private commonService: CommonService,
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
+		private logger: LoggerService,
 		private cameraFeedService: CameraFeedService) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
@@ -195,7 +197,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('frontCameraCount: ', frontCameraCount);
 			return frontCameraCount > 0 ? true : false;
 		} catch (error) {
-			console.log('isAllInOneMachine:', error);
+			console.log('isAllInOneMachine:', error.message);
 			return frontCameraCount > 0 ? true : false;
 		}
 	}
@@ -313,7 +315,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					// }
 				});
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 
 	}
@@ -347,7 +349,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 						// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
-						console.error('onEyeCareModeStatusToggle', error);
+						this.logger.error('onEyeCareModeStatusToggle', error.message);
 					});
 
 				if (!this.eyeCareModeStatus.status) {
@@ -363,7 +365,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				// }
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	// TROUBLE
@@ -387,12 +389,12 @@ export class SubpageDeviceSettingsDisplayComponent
 						}
 
 					}).catch(error => {
-						console.error('initEyecaremodeSettings', error);
+						this.logger.error('initEyecaremodeSettings', error.message);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 
 		}
 	}
@@ -405,11 +407,11 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('setEyeCareModeState.then', result);
 
 					}).catch(error => {
-						console.error('setEyeCareModeState', error);
+						this.logger.error('setEyeCareModeState', error.message);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -427,7 +429,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					}
 				})
 				.catch(error => {
-					console.error('getEyeCareModeState', error);
+					this.logger.error('getEyeCareModeState', error.message);
 				});
 		}
 	}
@@ -439,7 +441,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					.setDisplayColortemperature($event.value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public onEyeCareTemparatureValueChange($event: ChangeContext) {
@@ -450,7 +452,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					.setDisplayColortemperature($event.value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private setEyeCareModeTemparature(value: number) {
@@ -461,7 +463,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					.setDisplayColortemperature(value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public onResetTemparature($event: any) {
@@ -480,7 +482,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public onSunsetToSunrise($featureStatus: any) {
@@ -501,11 +503,11 @@ export class SubpageDeviceSettingsDisplayComponent
 						}
 
 					}).catch(error => {
-						console.error('setEyeCareAutoMode', error);
+						this.logger.error('setEyeCareAutoMode', error.message);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public getSunsetToSunrise() {
@@ -522,11 +524,11 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.enableSunsetToSunrise = true;
 						}
 					}).catch(error => {
-						console.error('getSunsetToSunrise', error);
+						this.logger.error('getSunsetToSunrise', error.message);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	// End EyeCare Mode
@@ -546,7 +548,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.displayService.setDaytimeColorTemperature($event.value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public setToEyeCareMode() {
@@ -569,7 +571,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	// Display color temperature end here
@@ -589,7 +591,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
 					this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, privacy);
 				}).catch(error => {
-					console.error('setCameraStatus', error);
+					this.logger.error('setCameraStatus', error.message);
 				});
 		}
 	}
@@ -607,7 +609,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					}
 				})
 				.catch(error => {
-					console.error('getCameraStatus', error);
+					this.logger.error('getCameraStatus', error.message);
 				});
 		}
 	}
@@ -628,11 +630,11 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('startCameraPrivacyMonitor.then', val);
 
 					}).catch(error => {
-						console.error('startCameraPrivacyMonitor', error);
+						this.logger.error('startCameraPrivacyMonitor', error.message);
 					});
 			}
 		} catch (error) {
-			console.log('startCameraPrivacyMonitor', error);
+			console.log('startCameraPrivacyMonitor', error.message);
 		}
 	}
 
@@ -643,11 +645,11 @@ export class SubpageDeviceSettingsDisplayComponent
 					.then((value: any) => {
 						console.log('stopMonitorForCamera.then', value);
 					}).catch(error => {
-						console.error('stopMonitorForCamera', error);
+						this.logger.error('stopMonitorForCamera', error.message);
 					});
 			}
 		} catch (error) {
-			console.log('stopMonitorForCamera', error);
+			console.log('stopMonitorForCamera', error.message);
 		}
 	}
 
@@ -733,7 +735,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((value: any) => {
 					console.log('startmonitor', value);
 				}).catch(error => {
-					console.error('startmonitor', error);
+					this.logger.error('startmonitor', error.message);
 				});
 
 		}
@@ -757,7 +759,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.cameraBlur.enabled = $event.switchValue;
 			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, '');
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -768,7 +770,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					this.cameraBlur = response;
 					console.log('initCameraBlurMethods', response);
 				}).catch(error => {
-					console.log('initCameraBlurMethods', error);
+					console.log('initCameraBlurMethods', error.message);
 				});
 		}
 	}
@@ -783,7 +785,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((response) => {
 					console.log('onCameraBackgroundOptionChange', response);
 				}).catch(error => {
-					console.log('onCameraBackgroundOptionChange', error);
+					console.log('onCameraBackgroundOptionChange', error.message);
 				});
 		}
 	}
@@ -812,7 +814,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			}
 		})
 			.catch(error => {
-				console.error('privacy guard compatability error here', error);
+				this.logger.error('privacy guard compatability error here', error.message);
 			});
 
 	}
@@ -823,7 +825,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.privacyGuardToggleStatus = value;
 		})
 			.catch(error => {
-				console.error('privacy guard status error here', error);
+				this.logger.error('privacy guard status error here', error.message);
 			});
 	}
 	public getPrivacyGuardOnPasswordCapabilityStatus() {
@@ -836,12 +838,12 @@ export class SubpageDeviceSettingsDisplayComponent
 					// console.log('privacy guard on password status here -------------.>', value);
 				})
 					.catch(error => {
-						console.error('privacy guard on password status error here', error);
+						this.logger.error('privacy guard on password status error here', error.message);
 					});
 			}
 		})
 			.catch(error => {
-				console.error('privacy guard on password compatability error here', error);
+				this.logger.error('privacy guard on password compatability error here', error.message);
 			});
 	}
 
@@ -850,7 +852,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// console.log('set privacy guard status here ------****-------.>', response);
 		})
 			.catch(error => {
-				console.error('set privacy guard status error here', error);
+				this.logger.error('set privacy guard status error here', error.message);
 			});
 	}
 
@@ -859,7 +861,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// console.log('set privacy guard on password status here -------------.>', response);
 		})
 			.catch(error => {
-				console.error('set privacy guard on password status error here', error);
+				this.logger.error('set privacy guard on password status error here', error.message);
 			});
 	}
 
@@ -886,12 +888,12 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.hasOLEDPowerControlCapability = result;
 
 					}).catch(error => {
-						console.error('getOLEDPowerControlCapability', error);
+						this.logger.error('getOLEDPowerControlCapability', error.message);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 
 		}
 	}
