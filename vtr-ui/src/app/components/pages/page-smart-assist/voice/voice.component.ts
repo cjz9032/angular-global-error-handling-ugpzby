@@ -3,11 +3,12 @@ import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.s
 import { TranslateService } from '@ngx-translate/core';
 import { DownloadFailedModalComponent } from './download-failed-modal/download-failed-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 enum InstalledStatus {
-	DONE = "InstallDone",
-	FAILED = "InstallFailed",
-	CANCELED = "InstallCanceled"
+	DONE = 'InstallDone',
+	FAILED = 'InstallFailed',
+	CANCELED = 'InstallCanceled'
 }
 
 @Component({
@@ -19,25 +20,26 @@ export class VoiceComponent implements OnInit {
 	voiceToText: any = 'voiceToText';
 	translation: any = 'translation';
 	showLoader = false;
-	btnText = "";
+	btnText = '';
 	installedStatus = InstalledStatus.CANCELED;
-	voiceStatus = "";
+	voiceStatus = '';
 	constructor(
 		private smartAssist: SmartAssistService,
 		private translate: TranslateService,
+		private logger: LoggerService,
 		private modalService: NgbModal) { }
 
 	ngOnInit() {
 		this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
-		this.voiceStatus="Install";
+		this.voiceStatus = 'Install';
 		this.isLenovoVoiceInstalled();
 	}
 
 	btnClicked() {
-		if (this.installedStatus == InstalledStatus.DONE) {
+		if (this.installedStatus === InstalledStatus.DONE) {
 			this.launchLenovoVoice();
 		} else {
-			this.downloadLenovoVoice()
+			this.downloadLenovoVoice();
 		}
 	}
 
@@ -51,18 +53,18 @@ export class VoiceComponent implements OnInit {
 						if (status) {
 							this.installedStatus = InstalledStatus.DONE;
 							this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
-							this.voiceStatus = "Launch";
+							this.voiceStatus = 'Launch';
 						} else {
-							this.installedStatus == InstalledStatus.CANCELED;
+							this.installedStatus = InstalledStatus.CANCELED;
 							this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
-							this.voiceStatus = "Install";
+							this.voiceStatus = 'Install';
 						}
 					}).catch(error => {
-						console.error('isLenovoVoiceInstalled', error);
+						this.logger.error('isLenovoVoiceInstalled', error.message);
 					});
 			}
 		} catch (error) {
-			console.error('isLenovoVoiceInstalled' + error.message);
+			this.logger.error('isLenovoVoiceInstalled' + error.message);
 		}
 	}
 
@@ -75,11 +77,11 @@ export class VoiceComponent implements OnInit {
 					.then((status: string) => {
 						console.log('downloadLenovoVoice.then', status);
 						this.showLoader = false;
-						if (status == InstalledStatus.DONE) {
+						if (status === InstalledStatus.DONE) {
 							this.installedStatus = InstalledStatus.DONE;
 							this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
-							this.voiceStatus = "Launch";
-						} else if (status == InstalledStatus.FAILED) {
+							this.voiceStatus = 'Launch';
+						} else if (status === InstalledStatus.FAILED) {
 							this.installedStatus = InstalledStatus.FAILED;
 							this.onDownloadFailedModal();
 						} else {
@@ -87,12 +89,12 @@ export class VoiceComponent implements OnInit {
 						}
 					}).catch(error => {
 						this.showLoader = false;
-						console.error('downloadLenovoVoice', error);
+						this.logger.error('downloadLenovoVoice', error.message);
 					});
 			}
 		} catch (error) {
 			this.showLoader = false;
-			console.error('downloadLenovoVoice' + error.message);
+			this.logger.error('downloadLenovoVoice' + error.message);
 		}
 	}
 
@@ -104,11 +106,11 @@ export class VoiceComponent implements OnInit {
 					.then((status: boolean) => {
 						console.log('launchLenovoVoice.then', status);
 					}).catch(error => {
-						console.error('launchLenovoVoice', error);
+						this.logger.error('launchLenovoVoice', error.message);
 					});
 			}
 		} catch (error) {
-			console.error('launchLenovoVoice' + error.message);
+			this.logger.error('launchLenovoVoice' + error.message);
 		}
 	}
 

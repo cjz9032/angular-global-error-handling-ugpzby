@@ -15,6 +15,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -57,6 +58,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef,
+		private logger: LoggerService,
 		private activatedRoute: ActivatedRoute) {
 	}
 
@@ -122,7 +124,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}, 30000);
 			}
 		} catch (error) {
-			console.error('getBatteryDetailOnCard: ' + error.message);
+			this.logger.error('getBatteryDetailOnCard: ' + error.message);
 		}
 	}
 
@@ -145,7 +147,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					this.isModalShown = true;
 				}
 			}).catch(error => {
-				console.error('getBatteryDetails error', error);
+				this.logger.error('getBatteryDetails error', error.message);
 			});
 	}
 
