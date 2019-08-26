@@ -470,13 +470,9 @@ export class VantageShellService {
 	}
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
-			try {
-				return this.phoenix.deviceFilter.calc(filter);
-			} catch (error) {
-				console.log(`VantageShellService.calcDeviceFilter: ${filter}`, error);
-			}
+			return this.phoenix.deviceFilter.calc(filter);
 		}
-		return null;
+		return undefined;
 	}
 	public getLogger(): any {
 		if (this.shell) {
