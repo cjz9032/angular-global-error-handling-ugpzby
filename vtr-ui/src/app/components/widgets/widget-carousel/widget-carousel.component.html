@@ -1,4 +1,5 @@
-<div class="vtr-widget-carousel">
+<div class="vtr-widget-carousel"
+	#carouselContainer>
 	<ngb-carousel *ngIf="carouselModel"
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">
@@ -19,8 +20,9 @@
 				class="carousel-link"
 				[ngClass]="{'no-link': !model.link}"
 				(click)="linkClicked($event, model.linkType, model.link)">
-				<img [src]="model.image"
-					class="image img-fluid">
+				<div class="image img-fluid"
+						[style.backgroundImage]="'url(' + model.image + ')'"
+						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">
 					<h3 class="source" [innerHTML]="model.source" id="{{carouselId}}-{{cIndex}}-source"
 					attr.aria-label="{{carouselId}}-{{cIndex}}-source"></h3>
@@ -31,8 +33,9 @@
 			<div *ngIf="!isOnline"
 				class="carousel-link default-cursor"
 				[ngClass]="{'no-link': !model.link}">
-				<img [src]="model.image"
-					class="image img-fluid">
+				<div class="image img-fluid"
+						[style.backgroundImage]="'url(' + model.image + ')'"
+						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">
 					<h3 class="source" [innerHTML]="model.source" id="{{carouselId}}-{{cIndex}}-source"
 					attr.aria-label="{{carouselId}}-{{cIndex}}-source"></h3>
