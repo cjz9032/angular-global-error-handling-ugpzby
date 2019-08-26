@@ -22,7 +22,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	analyticsData = {
 		'confirmationPopup': {
 			ItemName: 'BreachedAccountsClosePopupButton',
-			ItemParent: 'ConfirmYousrEmailPopup',
+			ItemParent: 'ConfirmYourEmailPopup',
 		},
 		'low-privacy-popup': {
 			ItemName: 'ScorePopupCloseButton',

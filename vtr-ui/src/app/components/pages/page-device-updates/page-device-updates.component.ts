@@ -328,8 +328,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					// lastScanTime: "2019-03-12T18:24:03"
 					// nextScheduleScanTime: "2019-03-15T10:07:42"
 					// scheduleScanEnabled: true
-				}).catch(error => {
-					console.error('getLastUpdateScanDetail', error);
 				});
 		}
 	}

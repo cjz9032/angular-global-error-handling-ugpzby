@@ -6,12 +6,14 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 })
 export class InputAccessoriesService {
 	public keyboardManager: any;
+	private mouseAndTouchPad: any;
 	public isShellAvailable = false;
 	private voipHotkeys;
 
 	constructor(shellService: VantageShellService) {
 		this.voipHotkeys = shellService.getVoipHotkeysObject();
 		this.keyboardManager = shellService.getKeyboardManagerObject();
+		this.mouseAndTouchPad = shellService.getMouseAndTouchPad();
 		if (this.keyboardManager) {
 			this.isShellAvailable = true;
 		}
@@ -138,7 +140,7 @@ export class InputAccessoriesService {
 
 	// End  Hidden keyboard keys
 
-// Start Top Row Function keys
+	// Start Top Row Function keys
 
 	public getTopRowFnLockCapability(): Promise<boolean> {
 		try {
@@ -176,6 +178,101 @@ export class InputAccessoriesService {
 		}
 	}
 
+	public getFnLockStatus(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetFnLockStatus();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getFnStickKeyStatus(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetFnStickKeyStatus();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public getPrimaryFunctionStatus(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetPrimaryFunctionStatus();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setFnStickKeyStatus(value): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.SetFnStickKey(value);
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setFnLock(value): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.SetFnLock(value);
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public setPrimaryFunction(value): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.SetPrimaryFunction(value);
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getMouseCapability(): Promise<boolean> {
+		try {
+			if (this.mouseAndTouchPad) {
+				this.mouseAndTouchPad.GetMouseCapability();
+			}
+			return this.booleanPromise(false);
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getTouchPadCapability(): Promise<boolean> {
+		try {
+			if (this.mouseAndTouchPad) {
+				this.mouseAndTouchPad.GetTouchpadCapability();
+			}
+			return this.booleanPromise(false);
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	private booleanPromise(value: boolean): Promise<boolean> {
+		return new Promise((resolve) => resolve(value));
+	}
 	public getFnLockStatus(): Promise<any> {
 		try {
 			if (this.keyboardManager) {

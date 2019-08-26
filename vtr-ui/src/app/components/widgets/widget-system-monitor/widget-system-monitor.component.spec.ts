@@ -15,7 +15,7 @@ xdescribe('WidgetSystemMonitorComponent', () => {
 	const gamingHwinfoMock = jasmine.createSpyObj('HwInfoService', ['isShellAvailable', 'getDynamicInformation', 'getMachineInfomation']);
 
 	beforeEach(function () {
-		timerCallback = jasmine.createSpy("timerCallback");
+		timerCallback = jasmine.createSpy('timerCallback');
 		jasmine.clock().install();
 		TestBed.configureTestingModule({
 			declarations: [WidgetSystemMonitorComponent,
@@ -39,7 +39,7 @@ xdescribe('WidgetSystemMonitorComponent', () => {
 	});
 
 
-	it("causes a timeout to be called", function () {
+	it('causes a timeout to be called', function () {
 		setTimeout(function () {
 			timerCallback();
 		}, 100);
@@ -51,15 +51,15 @@ xdescribe('WidgetSystemMonitorComponent', () => {
 		expect(timerCallback).toHaveBeenCalled();
 	});
 
-	it('should update the lightining features for single color', fakeAsync(() => {
-		component.getDynamicInfoService();
-		fixture.detectChanges();
-		// component.uhwinfo = {};
-		gamingHwinfoMock.getDynamicInformation.and.returnValue(Promise.resolve());
-		console.log('testing result----',component.uhwinfo);
-		tick(10);
-		expect(Object.keys(component.uhwinfo).length).toBeGreaterThanOrEqual(1);
-	}));
+	// it('should update the lightining features for single color', fakeAsync(() => {
+	// 	component.getDynamicInfoService();
+	// 	fixture.detectChanges();
+	// 	// component.uhwinfo = {};
+	// 	gamingHwinfoMock.getDynamicInformation.and.returnValue(Promise.resolve());
+	// 	console.log('testing result----',component.uhwinfo);
+	// 	tick(10);
+	// 	expect(Object.keys(component.uhwinfo).length).toBeGreaterThanOrEqual(1);
+	// }));
 
 });
 
@@ -73,10 +73,10 @@ export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
 		name: options.name
 	};
-	return <any>Pipe(metadata)(class MockPipe {
+	return Pipe(metadata)(class MockPipe {
 		public transform(query: string, ...args: any[]): any {
 			return query;
 		}
-	});
+	}) as any;
 }
 

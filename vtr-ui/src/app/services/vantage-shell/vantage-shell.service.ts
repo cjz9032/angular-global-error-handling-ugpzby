@@ -8,9 +8,12 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container } from 'inversify';
 
+declare var Windows;
+
 @Injectable({
 	providedIn: 'root'
 })
+
 export class VantageShellService {
 	public readonly isShellAvailable;
 	private phoenix: any;
@@ -156,6 +159,15 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getShellVersion() {
+		if (Windows) {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+		}
+
+		return '';
+	}
+
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
@@ -163,8 +175,10 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.metrics) {
 			const metricClient = this.phoenix.metrics;
 			if (!metricClient.isInit) {
+				const jsBridgeVesion = this.getVersion() || '';
+				const shellVersion = this.getShellVersion();
 				metricClient.init({
-					appVersion: environment.appVersion,
+					appVersion: `Web:${environment.appVersion};Bridge:${jsBridgeVesion};Shell:${shellVersion}`,
 					appId: MetricHelper.getAppId('dß'),
 					appName: 'vantage3',
 					channel: '',
@@ -832,6 +846,13 @@ export class VantageShellService {
 	public getVoipHotkeysObject(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.input.voipHotkeys;
+		}
+		return undefined;
+	}
+
+	public getMouseAndTouchPad(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.inputControlLinks;
 		}
 		return undefined;
 	}

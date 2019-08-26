@@ -18,6 +18,7 @@
 ui-popover-apps {
 	position: absolute;
 	max-width: 110rem;
+	min-width: 60%;
 	background: $dark_cell;
 	z-index: 9;
 	border-radius: 1rem;
@@ -53,6 +54,9 @@ ui-popover-apps {
 		}
 		.main-content-body {
 			padding: 1rem 4rem;
+			.running-apps {
+				padding-bottom: 1rem;
+			}
 		}
 		.title-content {
 			h3 {
@@ -71,7 +75,8 @@ ui-popover-apps {
 			min-height: 40rem;
 			margin-top: 1.5rem;
 			padding: 3rem 4rem;
-			overflow: auto;
+			overflow-y: auto;
+			overflow-x: hidden;
 			max-height: 40rem;
 			@media #{$large-screen} {
 				min-height: 42rem;
@@ -127,6 +132,9 @@ ui-popover-apps {
 				left: 0px;
 				right: 0px;
 				margin: auto;
+				&:hover {
+					cursor: pointer;
+				}
 				input {
 					opacity: 0;
 					position: absolute;
@@ -151,6 +159,7 @@ ui-popover-apps {
 		.no-running-app {
 			color: $light;
 			.text-content {
+				padding-bottom: 3.4rem;
 				h3 {
 					font-size: 3.5rem;
 					font-weight: $weight_light;

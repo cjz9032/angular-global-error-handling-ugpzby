@@ -9,9 +9,9 @@
 	}
 
 	&__text {
-		display: flex;
-		flex-flow: row;
-		flex-wrap: wrap;
+		//display: flex;
+		//flex-flow: row;
+		//flex-wrap: wrap;
 		margin-top: 2rem;
 		@extend %text-common;
 		font-size: 1.6rem;

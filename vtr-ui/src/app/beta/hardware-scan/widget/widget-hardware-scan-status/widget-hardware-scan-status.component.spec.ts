@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WidgetHardwareScanStatusComponent } from './widget-hardware-scan-status.component';
 
-describe('WidgetHardwareScanStatusComponent', () => {
+xdescribe('WidgetHardwareScanStatusComponent', () => {
 	let component: WidgetHardwareScanStatusComponent;
 	let fixture: ComponentFixture<WidgetHardwareScanStatusComponent>;
 

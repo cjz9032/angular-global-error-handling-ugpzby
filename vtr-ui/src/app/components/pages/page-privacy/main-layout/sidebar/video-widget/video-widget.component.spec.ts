@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VideoWidgetComponent } from './video-widget.component';
 
-describe('VideoWidgetComponent', () => {
+xdescribe('VideoWidgetComponent', () => {
   let component: VideoWidgetComponent;
   let fixture: ComponentFixture<VideoWidgetComponent>;
 

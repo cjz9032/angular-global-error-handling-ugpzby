@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalTurnOnComponent } from './modal-turn-on.component';
 
-describe('ModalTurnOnComponent', () => {
+xdescribe('ModalTurnOnComponent', () => {
   let component: ModalTurnOnComponent;
   let fixture: ComponentFixture<ModalTurnOnComponent>;
 

@@ -50,6 +50,12 @@
 		content: $icomoon-dynamic;
 	}
 }
+.icomoon-F1-F12-funciton {
+	&:before {
+		content: $icomoon-F1-F12-funciton;
+		color: #4a81fd;
+	}
+}
 .icomoon-FA-Battery-bolt2x {
 	&:before {
 		content: $icomoon-FA-Battery-bolt2x;
@@ -552,6 +558,12 @@
 .icomoon-privacy-guard {
 	&:before {
 		content: $icomoon-privacy-guard;
+		color: #4a81fd;
+	}
+}
+.icomoon-Special-function {
+	&:before {
+		content: $icomoon-Special-function;
 		color: #4a81fd;
 	}
 }

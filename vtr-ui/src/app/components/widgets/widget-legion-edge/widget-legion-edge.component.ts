@@ -22,7 +22,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 @Component({
 	selector: 'vtr-widget-legion-edge',
 	templateUrl: './widget-legion-edge.component.html',
-	styleUrls: ['./widget-legion-edge.component.scss']
+	styleUrls: [ './widget-legion-edge.component.scss' ]
 })
 export class WidgetLegionEdgeComponent implements OnInit {
 	public RamOCSatusObj = new RamOCSatus();
@@ -218,7 +218,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingNetworkBoostService: NetworkBoostService,
 		private gamingAutoCloseService: GamingAutoCloseService,
 		private router: Router
-	) { }
+	) {}
 	ngOnInit() {
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
@@ -273,11 +273,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		const gamingStatus = this.gamingCapabilities;
 		this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
 		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
-		// TBD add autoclose later at index 2
-		// TODO have to remove this || condition and line no 242.
 		this.legionUpdate[2].isVisible = gamingStatus.optimizationFeature || false;
 		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature || false;
-		//TODO below is for the network boost subpage
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
@@ -286,7 +283,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		} else {
 			this.drop.hideDropDown = false;
 		}
-
 
 		if (gamingStatus.cpuOCFeature) {
 			this.renderCPUOverClockStatus();
@@ -420,7 +416,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 	}
 	openModal() {
-
 		this.modalService.open(ModalGamingLegionedgeComponent, { windowClass: 'gaming-help-modal' });
 	}
 	public renderRamOverClockStatus() {
@@ -476,7 +471,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public closeLegionEdgePopups() {
-		Object.entries(this.legionUpdate).forEach(([key]) => {
+		Object.entries(this.legionUpdate).forEach(([ key ]) => {
 			this.legionUpdate[key].isDriverPopup = false;
 			this.legionUpdate[key].isPopup = false;
 		});
@@ -562,13 +557,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.gamingCapabilities.fbNetFilter = !!this.gamingCapabilities.fbNetFilter;
-			this.router.navigate(['/gaming/networkboost']);
+			this.router.navigate([ '/gaming/networkboost' ]);
 			if (!this.gamingCapabilities.fbNetFilter) {
 				this.legionUpdate[3].isDriverPopup = true;
 			}
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.autoClose') {
-			this.router.navigate(['/gaming/autoclose']);
+			this.router.navigate([ '/gaming/autoclose' ]);
 		}
 	}
 

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col d-flex justify-content-between">
 				<img class="gaming-header-image" src="./../../../../assets/images/gaming/legionEdge.png" />
-				<div class="help-box">
+				<div class="help-box" role="img" aria-describedby="legion">
 					<a (click)="openModal()" id="legion_edge_help" attr.aria-label="legion_edge_help" vtrMetrics
 						[metricsItem]="'legion_edge_help'" metricsEvent="featureClick">
 						<!-- <i class="icon icon-question" ></i> -->
@@ -23,3 +23,4 @@
 		</div>
 	</div>
 </div>
+<p id="legion" style="visibility: hidden;">legion edge Help icon</p>
