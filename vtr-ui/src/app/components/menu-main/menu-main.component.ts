@@ -24,6 +24,8 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
+import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -69,7 +71,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
 		private windowsHelloService: WindowsHelloService,
-		public modernPreloadService: ModernPreloadService
+		public modernPreloadService: ModernPreloadService,
+		private adPolicyService: AdPolicyService
 	) {
 		localInfoService
 			.getLocalInfo()
@@ -229,13 +232,20 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				showItem = false;
 			}
 		}
-		if (item.id === 'privacy1') {
+		if (item.id === 'privacy') {
 			if (!this.deviceService.showPrivacy) {
 				showItem = false;
 			}
 		}
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
+		}
+		if (!this.adPolicyService.IsSystemUpdateEnabled && item.id === 'device') {
+			item.subitems.forEach((subitem, index, object) => {
+				if (subitem.adPolicyId && subitem.adPolicyId === AdPolicyId.SystemUpdate) {
+					object.splice(index, 1);
+				}
+			});
 		}
 
 		return showItem;
