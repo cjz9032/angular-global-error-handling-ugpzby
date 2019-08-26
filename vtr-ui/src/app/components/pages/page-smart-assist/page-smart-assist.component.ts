@@ -50,27 +50,32 @@ export class PageSmartAssistComponent implements OnInit {
 		{
 			title: 'device.smartAssist.intelligentSecurity.title',
 			path: 'security',
-			sortOrder: 1
+			sortOrder: 1,
+			metricsItem: 'IntelligentSecurity'
 		},
 		{
 			title: 'device.smartAssist.intelligentScreen.title',
 			path: 'screen',
-			sortOrder: 2
+			sortOrder: 2,
+			metricsItem: 'IntelligentScreen'
 		},
 		{
 			title: 'device.smartAssist.intelligentMedia.heading',
 			path: 'media',
-			sortOrder: 3
+			sortOrder: 3,
+			metricsItem: 'IntelligentMedia'
 		},
 		{
 			title: 'device.smartAssist.activeProtectionSystem.title',
 			path: 'aps',
-			sortOrder: 4
+			sortOrder: 4,
+			metricsItem: 'ActiveProtectionSystem'
 		},
 		{
 			title: 'device.smartAssist.voice.title',
 			path: 'voice',
-			sortOrder: 5
+			sortOrder: 5,
+			metricsItem: 'Voice'
 		},
 
 	];

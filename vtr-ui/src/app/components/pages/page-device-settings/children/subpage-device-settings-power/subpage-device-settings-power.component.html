@@ -121,7 +121,7 @@
 
 								</vtr-battery-charge-threshold-settings>
 
-								<vtr-battery-charge-threshold-settings *ngIf="responseData && responseData.length > 1"
+								<vtr-battery-charge-threshold-settings *ngIf="isSecondBatteryAvailable"
 									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title2' | translate"
 									[type]="'secondary'"
 									[start]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"
