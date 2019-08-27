@@ -178,7 +178,7 @@ describe('WidgetLegionEdgeComponent', () => {
     component.renderAutoCloseStatus();
     tick(10);
     fixture.detectChanges();
-    const autoCloseStatusData = component.legionUpdate[2].isChecked;
+    const autoCloseStatusData = component.legionUpdate[3].isChecked;
     expect(autoCloseStatusData).toEqual(true);
   }));
 
@@ -189,7 +189,7 @@ describe('WidgetLegionEdgeComponent', () => {
     component.renderNetworkBoostStatus();
     tick(10);
     fixture.detectChanges();
-    const networkBosstStatusData = component.legionUpdate[3].isChecked;
+    const networkBosstStatusData = component.legionUpdate[2].isChecked;
     expect(networkBosstStatusData).toEqual(true);
   }));
 
