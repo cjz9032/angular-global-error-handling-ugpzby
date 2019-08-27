@@ -494,10 +494,10 @@ export class ConfigService {
 			if (country.toLowerCase() !== 'us') {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
-			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
-			if (isBetaUser) {
-				resultMenu.splice(resultMenu.length - 1, 0, this.betaItem);
-			}
+			// const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
+			// if (isBetaUser) {
+			// 	resultMenu.splice(resultMenu.length - 1, 0, this.betaItem);
+			// }
 			resolve(resultMenu.filter(item => !item.hide));
 		});
 	}
