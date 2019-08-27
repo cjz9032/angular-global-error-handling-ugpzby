@@ -203,7 +203,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				&& this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)
 				&& this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
 				setTimeout(() => {
-					this.dialogService.openCHSPermissionModal(true).result.then((reason) => {
+					this.dialogService.openCHSPermissionModal().result.then((reason) => {
 						if (reason === 'startTrailError') {
 							this.dialogService.homeSecurityAccountDialog();
 						}
@@ -370,7 +370,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
-			welcomeModal.componentInstance.needTrial = true;
 			return welcomeModal;
 		}
 	}
@@ -386,7 +385,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
-			welcomeModal.componentInstance.switchPage = 4;
+			welcomeModal.componentInstance.switchPage = 2;
 			welcomeModal.componentInstance.hasSystemPermissionShowed = this.welcomeModel.hasSystemPermissionShowed;
 			return welcomeModal;
 		}
