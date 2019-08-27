@@ -84,7 +84,7 @@
 </div>
 
 <vtr-networkboost-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
-	(closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="initNotNowAction()"
+	(closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="initNotNowAction($event)"
 	(actionTurnOn)="initTurnOnAction($event)">
 </vtr-networkboost-turn-on>
 
