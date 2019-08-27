@@ -24,6 +24,7 @@ import { ModernPreloadService } from 'src/app/services/modern-preload/modern-pre
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -346,13 +347,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	private showSmartAssist() {
-		this.logger.error('inside showSmartAssist');
+		this.logger.info('inside showSmartAssist');
 		this.getMenuItems().then((items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
-					this.logger.error('get IsSmartAssistSupported');
+					this.logger.info('get IsSmartAssistSupported');
 
 					// if cache has value true for IsSmartAssistSupported, add menu item
 					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
@@ -363,7 +364,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
-					this.logger.error('before Promise.all JS Bridge call');
+					this.logger.info('before Promise.all JS Bridge call');
 
 					// still check if any of the feature supported. if yes then add menu
 					Promise.all([
@@ -377,7 +378,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.smartAssist.getHDDStatus()
 					])
 						.then((responses: any[]) => {
-							this.logger.error('inside Promise.all THEN JS Bridge call', responses);
+							this.logger.info('inside Promise.all THEN JS Bridge call', responses);
 
 							console.log('showSmartAssist.Promise.all()', responses);
 							console.log(
@@ -400,7 +401,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 								LocalStorageKey.SmartAssistCapability,
 								smartAssistCapability
 							);
-							this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
+							this.logger.info('inside Promise.all THEN JS Bridge call', smartAssistCapability);
 
 							const isAvailable =
 								responses[0] ||
@@ -422,6 +423,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						})
 						.catch((error) => {
 							this.logger.error('error in initSmartAssist.Promise.all()', error.message);
+							return EMPTY;
 						});
 				}
 			}

@@ -3,6 +3,7 @@ import { EmailScannerService } from '../services/email-scanner.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 interface ScanSteps {
 	text: string;
@@ -59,6 +60,7 @@ export class ScanStepsComponent implements OnInit, OnDestroy {
 			this._steps = this[this.steps];
 		} else {
 			this.logger.error('invalid param steps in ScanStepsComponent');
+			return EMPTY;
 		}
 	}
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-top-row-functions',
@@ -43,7 +44,8 @@ export class TopRowFunctionsComponent implements OnInit {
 				});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getFunctionCapabilities', error.message);
+			return EMPTY;
 		}
 	}
 	public getStatusOfFnLock() {

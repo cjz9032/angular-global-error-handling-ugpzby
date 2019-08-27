@@ -13,6 +13,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 const thinkpad = 1;
 const ideapad = 0;
 @Component({
@@ -150,6 +151,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('initPowerSmartSettingsForIdeaPad: ' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -188,6 +190,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('initPowerSmartSettingsUIForIdeaPad: ' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -204,10 +207,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						console.log('startMonitorForICIdeapad.then', value);
 					}).catch(error => {
 						this.logger.error('startMonitorForICIdeapad', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('startMonitorForICIdeapad' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -219,10 +224,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						console.log('stopMonitorForICIdeapad', value);
 					}).catch(error => {
 						this.logger.error('stopMonitorForICIdeapad', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('stopMonitorForICIdeapad' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -250,7 +257,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setITSModeForICIdeapad(value);
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('setPowerSmartSettingsForIdeaPad :: ' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -337,7 +345,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('initPowerSmartSettingsForThinkPad', error.message);
+			return EMPTY;
 		}
 	}
 
@@ -347,7 +356,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getDYTCRevision();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getDYTCRevision', error.message);
+			return new Promise((resolve) => { resolve(6); });
 		}
 	}
 	private setPerformanceAndCool(mode: IntelligentCoolingMode) {
@@ -392,7 +402,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getCQLCapability();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getCQLCapability ::' + error.message);
+			return false;
 		}
 	}
 	private getTIOCapability() {
@@ -401,7 +412,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getTIOCapability();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getTIOCapability', error.message);
+			return false;
 		}
 	}
 	private async setAutoModeSetting(event: any) {
@@ -422,10 +434,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					})
 					.catch(error => {
 						this.logger.error('setAutoModeSetting', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('setAutoModeSetting', error.message);
+			return EMPTY;
 		}
 	}
 	private async setManualModeSetting(mode: IntelligentCoolingMode) {
@@ -449,10 +463,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					})
 					.catch(error => {
 						this.logger.error('setManualModeSetting', error.message);
+						return false;
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('setManualModeSetting', error.message);
+			return false;
 		}
 	}
 	private getManualModeSetting() {
@@ -461,7 +477,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getManualModeSetting();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getManualModeSetting', error.message);
+			return 'error';
 		}
 	}
 
@@ -472,7 +489,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getAPSState();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getAPSState', error.message);
+			return false;
 		}
 	}
 
@@ -482,7 +500,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyCQLCapability();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getLegacyCQLCapability', error.message);
+			return false;
 		}
 	}
 	private getLegacyTIOCapability() {
@@ -491,7 +510,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyTIOCapability();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getLegacyTIOCapability', error.message);
+			return 0;
 		}
 	}
 
@@ -501,7 +521,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyManualModeCapability();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getLegacyManualModeCapability', error.message);
+			return false;
 		}
 	}
 	private getLegacyAutoModeState() {
@@ -510,7 +531,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyAutoModeState();
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getLegacyAutoModeState', error.message);
+			return false;
 		}
 	}
 	private async getLegacyManualModeState() {
@@ -521,7 +543,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return mode1;
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('getLegacyManualModeState', error.message);
+			return EMPTY;
 		}
 	}
 	private setLegacyAutoModeState(value: boolean) {
@@ -530,7 +553,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setLegacyAutoModeState(value);
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('setLegacyAutoModeState', error.message);
+			return EMPTY;
 		}
 	}
 	private setLegacyManualModeState(value: boolean) {
@@ -539,7 +563,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setLegacyManualModeState(value);
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('setLegacyManualModeState', error.message);
+			return EMPTY;
 		}
 	}
 	// =============== End Legacy
