@@ -427,7 +427,7 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		hide: true,
+		hide: false,
 		subitems: [],
 		pre: [
 			'assets/images/connected-home-security/welcome-page-one.png',
