@@ -33,3 +33,35 @@
 		}
 	}
 }
+::ng-deep {
+	.vtr-header-main {
+		background: none !important;
+		&::before {
+			background: none !important;
+		}
+	}
+
+	.vtr-page-left-column {
+		background: none !important;
+	}
+}
+
+.container {
+	@media #{$mediaquery_5} {
+		max-width: 100%;
+		padding: 0rem 7rem;
+	}
+
+	@media #{$mediaquery_md} {
+		padding: 0rem 3.5rem;
+	}
+
+	@media #{$mediaquery_XL100X} {
+		max-width: 160rem;
+	}
+
+	@media #{$mediaquery_XXL350X} {
+		max-width: 100%;
+		padding: 0rem 7rem;
+	}
+}
