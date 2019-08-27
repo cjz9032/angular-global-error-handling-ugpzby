@@ -14,6 +14,7 @@ import { ModalCancelComponent } from '../../../modal/modal-cancel/modal-cancel.c
 import { ModalEticketComponent } from '../../../modal/modal-eticket/modal-eticket.component';
 import { ModalScheduleScanCollisionComponent } from '../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-hardware-components',
@@ -64,6 +65,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private translate: TranslateService,
+		private logger: LoggerService,
 	) {
 		this.viewResultsPath = '/beta/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
@@ -256,7 +258,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private cleaningUpScan(response: any) {
-		if (response && typeof response.finalResultCode !== undefined) {
+		if (response) {
 			this.finalResponse = response;
 			this.finalResultCode = response.finalResultCode;
 			this.tooltipInformation = response.resultDescription;
@@ -341,7 +343,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					this.myDevice = value;
 					console.log('getDeviceInfo.then', value);
 				}).catch(error => {
-					console.error('getDeviceInfo', error);
+					this.logger.error('getDeviceInfo', error.message);
 				});
 		}
 	}
@@ -435,7 +437,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					windowClass: 'schedule-new-modal-size'
 				});
 
-				(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.warning');
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.battery.title');
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.batteryMessage;
 
 				modal.result.then((result) => {

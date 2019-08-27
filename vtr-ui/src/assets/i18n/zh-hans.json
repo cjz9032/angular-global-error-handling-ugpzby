@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "输入和附件",
                 "subtitle": "输入和附件设置",
-                "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，并调整设置以实现最优电源管理",
+                "description": "本部分能够让您设置最常用的键盘和鼠标功能。在这里探索更多功能。",
                 "inputAccessory": {
                     "title": "智能键盘",
                     "hiddenKeyboardFunctions": {
@@ -1113,6 +1113,36 @@
                         "tittle": "Fn + 空格键",
                         "description": "更改键盘背光状态",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Keyboard top-row function",
+                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "subSection": {
+                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIAL FUNCTION",
+                                "fnKey": "F1-F12 FUNCTION"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Reversing the default primary function",
+                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                        },
+                        "subSectionThree": {
+                            "title": "How to use Fn key combinations",
+                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "radioButton": {
+                                "nMehod": "Normal method",
+                                "fnKeyMehod": "Fn Sticky key method"
+                            },
+                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                        },
+                        "popup": {
+                            "title": "Restart computer",
+                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
+                            "reboot": "REBOOT",
+                            "cancel": "NOT NOW"
+                        }
                     }
                 },
                 "userDefinedKey": {
@@ -1540,6 +1570,7 @@
             "statusWarrantyNotFound": "未找到保修信息",
             "yearDepotWarranty": "年维修站保修",
             "warrantyDetails": "保修详细信息：",
+            "warrantyDashboardDetails": "保修详细信息",
             "startDate": "开始日期：",
             "endDate": "结束日期：",
             "status": "状态：",
@@ -2217,7 +2248,7 @@
         "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定做的系统管家。我们在Vantage中集成了多种功能可以帮助您轻松掌握系统状态，并持续保持系统处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
         "bullets1": "系统整体状态在首页清晰可览。",
         "bullets2": "安全顾问助您轻松改善系统安全状况。",
-        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型不可用）。",
+        "bullets3": "自动更新让您的设备处于最佳状态 (ARM平台机型不可用)。",
         "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "告诉我们您的兴趣",
         "personal": "个人使用",
@@ -2329,7 +2360,7 @@
             "error": "错误",
             "delete": "删除",
             "warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+            "scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
         },
         "recoverBadSectors": {
             "title": "恢复坏扇区",
@@ -2378,6 +2409,7 @@
         "yes": "是",
         "attention": "注意",
         "cancelTextPrompt": "您确定要取消吗？",
-        "cancelTextProgress": "请等待取消进度"
+        "cancelTextProgress": "请等待取消进度",
+        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
     }
 }

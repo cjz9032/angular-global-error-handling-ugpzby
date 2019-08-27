@@ -70,7 +70,7 @@
 				"systemTools": {
 					"power": "Power",
 					"media": "Media",
-					"macroKey": "Marco Key",
+					"macroKey": "Macro Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update",
 					"header": "System Tools"
@@ -1570,6 +1570,7 @@
 			"statusWarrantyNotFound": "Warranty not found",
 			"yearDepotWarranty": "Y Depot Warranty",
 			"warrantyDetails": "Warranty Details:",
+			"warrantyDashboardDetails": "Warranty Details",
 			"startDate": "Start date: ",
 			"endDate": "End date: ",
 			"status": "Status: ",
@@ -2342,6 +2343,7 @@
 		"attention": "Attention",
 		"cancelTextPrompt": "Are you sure you would like to cancel?",
 		"cancelTextProgress": "Please wait for cancel progress",
+		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

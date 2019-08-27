@@ -24,9 +24,9 @@
 								(toggleOnOff)="setAPSMode($event)"
 								vtrMetrics
 								metricsEvent="FeatureClick"
-								metricsParent="Device.MyDeviceSettings"
+								metricsParent="Device.SmartAssist"
 								metricsItem="activeProtectionSystem"
-								[metricsValue]="apsStatus">
+								[metricsValue]="!apsStatus">
 								<div class="slider">
 									<vtr-ui-aps-slider [apsSliderId]="'activeProtectionSystemSensitivity'"
 										[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
@@ -39,9 +39,9 @@
 										(change)='setAPSSensitivityLevel($event)'
 										vtrMetrics
 										metricsEvent="ItemClick"
-										metricsParent="Device.MyDeviceSettings"
+										metricsParent="Device.SmartAssist"
 										metricsItem="ActiveProtectionSystem.Sensitivity.Slider"
-										metricsValue="$event.value">
+										>
 									</vtr-ui-aps-slider>
 								</div>
 								<div class="checkbox">
@@ -52,9 +52,9 @@
 										[disabled]="!apsStatus"
 										vtrMetrics
 										metricsEvent="ItemClick"
-										metricsParent="Device.MyDeviceSettings"
+										metricsParent="Device.SmartAssist"
 										metricsItem="ActiveProtectionSystem.AutoDisable"
-										metricsValue="$event" >
+										[metricsValue]="repeatShock" >
 									</vtr-ui-checkbox>
 								</div>
 							</vtr-ui-row-switch>
@@ -75,9 +75,9 @@
 							[disabled]="!apsStatus"
 							vtrMetrics
 							metricsEvent="FeatureClick"
-							metricsParent="Device.MyDeviceSettings"
+							metricsParent="Device.SmartAssist"
 							metricsItem="ActiveProtectionSystem.ManualOverride"
-							metricsValue="manualSnooze">
+							[metricsValue]="manualSnooze">
 							<div *ngIf="manualSnooze"
 								class="dropdown row">
 								<section class="col-sm-6">
@@ -92,9 +92,9 @@
 										[disabled]="!apsStatus"
 										vtrMetrics
 										metricsEvent="FeatureClick"
-										metricsParent="Device.MyDeviceSettings"
+										metricsParent="Device.SmartAssist"
 										metricsItem="ActiveProtectionSystem.ManualOverride.Dropdown"
-										metricsValue="selectedSnoozeTime">
+										[metricsValue]="selectedSnoozeTime">
 									</vtr-ui-dropdown>
 								</section>
 								<section class="col-sm-5">
@@ -107,7 +107,7 @@
 											(click)="suspendNow()"
 											vtrMetrics
 											metricsEvent="ItemClick"
-											metricsParent="Device.MyDeviceSettings"
+											metricsParent="Device.SmartAssist"
 											metricsItem="ActiveProtectionSystem.ManualOverride.SuspendNow">
 											{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate }}
 										</button>

@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Entrada e acessórios",
                 "subtitle": "Configurações de entrada e acessórios",
-                "description": "A Detecção inteligente da Lenovo combina vários sensores no computador para detectar suas atividades e ajustar as configurações para gerenciamento de energia ideal",
+                "description": "Esta seção permite que você configure as funções de teclado e mouse usadas com mais frequência. Explore mais recursos aqui.",
                 "inputAccessory": {
                     "title": "Teclado inteligente",
                     "hiddenKeyboardFunctions": {
@@ -1113,6 +1113,36 @@
                         "tittle": "Fn + Espaço",
                         "description": "altera os estados de retroiluminação do teclado",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Keyboard top-row function",
+                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "subSection": {
+                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIAL FUNCTION",
+                                "fnKey": "F1-F12 FUNCTION"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Reversing the default primary function",
+                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                        },
+                        "subSectionThree": {
+                            "title": "How to use Fn key combinations",
+                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "radioButton": {
+                                "nMehod": "Normal method",
+                                "fnKeyMehod": "Fn Sticky key method"
+                            },
+                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                        },
+                        "popup": {
+                            "title": "Restart computer",
+                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
+                            "reboot": "REBOOT",
+                            "cancel": "NOT NOW"
+                        }
                     }
                 },
                 "userDefinedKey": {
@@ -1540,6 +1570,7 @@
             "statusWarrantyNotFound": "Garantia não encontrada",
             "yearDepotWarranty": "Garantia de depósito Y",
             "warrantyDetails": "Detalhes da garantia:",
+            "warrantyDashboardDetails": "Detalhes da garantia",
             "startDate": "Data de início: ",
             "endDate": "Data final: ",
             "status": "Status: ",
@@ -2329,7 +2360,7 @@
             "error": "Erro",
             "delete": "Excluir",
             "warningBatterySaver": "Nota: as Varreduras planejadas não serão executadas no modo Economizador de bateria",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+            "scheduleIntervalLimit": "Outra verificação já estava agendada dentro de um intervalo de dez minutos. Escolha outra hora."
         },
         "recoverBadSectors": {
             "title": "Recuperar setores ruins",
@@ -2378,6 +2409,7 @@
         "yes": "Sim",
         "attention": "Atenção",
         "cancelTextPrompt": "Tem certeza de que gostaria de cancelar?",
-        "cancelTextProgress": "Aguarde o progresso do cancelamento"
+        "cancelTextProgress": "Aguarde o progresso do cancelamento",
+        "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a."
     }
 }

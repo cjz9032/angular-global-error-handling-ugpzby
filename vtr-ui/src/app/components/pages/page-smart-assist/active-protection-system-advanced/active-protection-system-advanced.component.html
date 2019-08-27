@@ -20,9 +20,9 @@
 						(toggleOnOff)="setPenSetting($event)"
 						vtrMetrics
 						metricsEvent="FeatureClick"
-						metricsParent="Device.MyDeviceSettings"
+						metricsParent="Device.SmartAssist"
 						metricsItem="ActiveProtectionSystem.Advanced.PenInput"
-						metricsValue="penStatus">
+						metricsValue="penStatus"
 						[switchId]="'activeProtectionSystem-advanced-pen'">
 						<div class="dropdown col-sm-6 pl-0">
 							<vtr-ui-dropdown [dropDownId]="'penIntervalsDropDown'"
@@ -32,7 +32,7 @@
 								(change)="setPenDelayTime($event)"
 								vtrMetrics
 								metricsEvent="FeatureClick"
-								metricsParent="Device.MyDeviceSettings"
+								metricsParent="Device.SmartAssist"
 								metricsItem="ActiveProtectionSystem.Advanced.PenInput.Dropdown"
 								metricsValue="penStatus">
 							</vtr-ui-dropdown>
@@ -53,9 +53,9 @@
 						(toggleOnOff)="setTouchInputSetting($event)"
 						vtrMetrics
 						metricsEvent="FeatureClick"
-						metricsParent="Device.MyDeviceSettings"
+						metricsParent="Device.SmartAssist"
 						metricsItem="ActiveProtectionSystem.Advanced.TouchInput"
-						metricsValue="touchStatus">
+						metricsValue="touchStatus"
 						[switchId]="'activeProtectionSystem_touchInput'">
 					</vtr-ui-row-switch>
 				</div>
@@ -73,9 +73,9 @@
 						(toggleOnOff)="setPSensorSetting($event)"
 						vtrMetrics
 						metricsEvent="FeatureClick"
-						metricsParent="Device.MyDeviceSettings"
+						metricsParent="Device.SmartAssist"
 						metricsItem="ActiveProtectionSystem.Advanced.PSensorInput"
-						metricsValue="pSensorStatus">
+						metricsValue="pSensorStatus"
 						[switchId]="'activeProtectionSystem_advanced_hand'">
 					</vtr-ui-row-switch>
 				</div>

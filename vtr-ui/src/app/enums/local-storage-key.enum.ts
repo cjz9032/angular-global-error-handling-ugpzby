@@ -150,13 +150,15 @@ export enum LocalStorageKey {
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
+	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
+	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
+	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
 
 	// Auto close storage key
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 	UPEUserID = '[LocalStorageKey] UPEUserID',
-	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
 	BetaUser = '[LocalStorageKey] BetaUser',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability'
 }

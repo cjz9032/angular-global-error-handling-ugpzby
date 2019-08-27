@@ -189,13 +189,18 @@
 					}
 				}
 				.icon {
-					margin-right: 0.5rem;
+					margin-right: -0.5rem;
 					font-size: 2rem;
 					transition: all .2s ease-in-out;
 					border-radius: 50%;
 					padding: 0.6rem;
 					color: $gaming_grey_lightest;
 					vertical-align: middle;
+					height:3.2rem;
+					widows:3.3rem;
+					display:inline-block;
+					text-align:center;
+					line-height:1.2rem;
 				}
 			}
 		}

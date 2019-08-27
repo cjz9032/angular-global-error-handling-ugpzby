@@ -51,6 +51,7 @@ export class SystemUpdateService {
 	public isInstallationCompleted = false;
 	public isInstallationSuccess = false;
 	public isDownloadingCancel = false;
+	public isImcErrorOrEmptyResponse = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -121,9 +122,6 @@ export class SystemUpdateService {
 					console.log('getUpdateHistory', response);
 					this.installationHistory = response;
 					this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
-				}).catch((error) => {
-					// get current status
-					console.log('getUpdateHistory.error', error);
 				});
 		}
 	}
@@ -161,7 +159,6 @@ export class SystemUpdateService {
 					'',
 					error.message,
 					MetricHelper.timeSpan(new Date(), timeStartSearch));
-				console.log('checkForUpdates.error', error);
 			});
 		}
 		return undefined;
@@ -173,9 +170,6 @@ export class SystemUpdateService {
 				.then((status: boolean) => {
 					console.log('cancelUpdateCheck then', status);
 					// todo: ui changes to show on update cancel
-				})
-				.catch((error) => {
-					console.log('cancelUpdateCheck.error', error);
 				});
 		}
 	}
@@ -189,6 +183,7 @@ export class SystemUpdateService {
 				this.processScheduleUpdate(response.payload, true);
 			}).then((response: ScheduleUpdateStatus) => {
 				console.log('getScheduleUpdateStatus response', response);
+				this.isImcErrorOrEmptyResponse = false;
 				this.processScheduleUpdate(response, false);
 			});
 		}
@@ -303,9 +298,6 @@ export class SystemUpdateService {
 					if (status) {
 						this.commonService.sendNotification(UpdateProgress.WindowsRebooting);
 					}
-				})
-				.catch((error) => {
-					console.log('cancelUpdateCheck.error', error);
 				});
 		}
 	}
@@ -315,9 +307,6 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.getIgnoredUpdates()
 			.then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('getIgnoredUpdates.error', error);
 			});
 		}
 	}
@@ -327,9 +316,6 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.ignoreUpdate(packageName)
 			.then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('ignoreUpdate.error', error);
 			});
 		}
 	}
@@ -339,9 +325,6 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.unignoreUpdate(packageName)
 			.then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('unIgnoreUpdate.error', error);
 			});
 		}
 	}
@@ -515,6 +498,7 @@ export class SystemUpdateService {
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
+		this.isImcErrorOrEmptyResponse = false;
 		if (updates.length === 0) {
 			this.installedUpdates = [];
 			const payload = new AvailableUpdate();
@@ -566,14 +550,19 @@ export class SystemUpdateService {
 				}
 			} else {
 				// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
-				this.getScheduleUpdateStatus(true);
+				setTimeout(() => {
+					this.getScheduleUpdateStatus(true);
+				}, 2500);
+				this.isImcErrorOrEmptyResponse = true;
 			}
 		}).catch((error) => {
-			console.log(error);
 			if (error &&
 				((error.description && error.description.includes('errorcode: 606'))
 				|| (error.errorcode && error.errorcode === 606))) {
-				this.getScheduleUpdateStatus(true);
+				setTimeout(() => {
+					this.getScheduleUpdateStatus(true);
+				}, 200);
+				this.isImcErrorOrEmptyResponse = true;
 			}
 		});
 	}
@@ -726,9 +715,6 @@ export class SystemUpdateService {
 					this.isDownloadingCancel = true;
 					this.isInstallingAllUpdates = true;
 					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
-				})
-				.catch((error) => {
-					console.log('cancelDownload.error', error);
 				});
 		}
 	}

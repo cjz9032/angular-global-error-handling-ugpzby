@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "입력 및 액세서리",
                 "subtitle": "입력 및 액세서리 설정",
-                "description": "Lenovo 지능형 센싱은 컴퓨터의 다양한 센서를 조합하여 사용자의 활동을 감지하고 전원 관리가 최적화될 수 있도록 설정을 조정합니다",
+                "description": "이 섹션에서는 가장 자주 사용하는 키보드 및 마우스 기능을 설정할 수 있습니다. 여기에서 더 많은 기능을 살펴보십시오.",
                 "inputAccessory": {
                     "title": "지능형 키보드",
                     "hiddenKeyboardFunctions": {
@@ -1113,6 +1113,36 @@
                         "tittle": "Fn + 스페이스",
                         "description": "키보드 백라이트 상태 변경",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Keyboard top-row function",
+                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "subSection": {
+                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIAL FUNCTION",
+                                "fnKey": "F1-F12 FUNCTION"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Reversing the default primary function",
+                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                        },
+                        "subSectionThree": {
+                            "title": "How to use Fn key combinations",
+                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "radioButton": {
+                                "nMehod": "Normal method",
+                                "fnKeyMehod": "Fn Sticky key method"
+                            },
+                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                        },
+                        "popup": {
+                            "title": "Restart computer",
+                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
+                            "reboot": "REBOOT",
+                            "cancel": "NOT NOW"
+                        }
                     }
                 },
                 "userDefinedKey": {
@@ -1540,6 +1570,7 @@
             "statusWarrantyNotFound": "보증을 찾을 수 없음",
             "yearDepotWarranty": "1년 보관 보증",
             "warrantyDetails": "보증 세부 정보:",
+            "warrantyDashboardDetails": "보증 세부 정보",
             "startDate": "시작 날짜: ",
             "endDate": "계약 종료일: ",
             "status": "상태: ",
@@ -2329,7 +2360,7 @@
             "error": "오류",
             "delete": "삭제",
             "warningBatterySaver": "참고: 예약된 검사는 배터리 절약 모드에서 수행되지 않음",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+            "scheduleIntervalLimit": "다른 스캔이 이미 10분 시간 범위 내에 예약되었습니다. 다른 시간을 선택하십시오."
         },
         "recoverBadSectors": {
             "title": "불량 섹터 복구",
@@ -2378,6 +2409,7 @@
         "yes": "예",
         "attention": "주의",
         "cancelTextPrompt": "정말 취소하시겠습니까?",
-        "cancelTextProgress": "취소 진행을 기다리십시오"
+        "cancelTextProgress": "취소 진행을 기다리십시오",
+        "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오."
     }
 }

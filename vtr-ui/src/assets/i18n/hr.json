@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Unos i pomagala",
                 "subtitle": "Postavke unosa i pomagala",
-                "description": "Pametni senzori tvrtke Lenovo kombinacija su raznih senzora na računalu koji prate vašu aktivnost i prilagođavaju postavke radi optimalnog upravljanja potrošnjom energije",
+                "description": "Ovaj odjeljak omogućuje vam postavljanje najčešće korištenih funkcija tipkovnice i miša. Daljnje značajke istražite ovdje.",
                 "inputAccessory": {
                     "title": "Inteligentna tipkovnica",
                     "hiddenKeyboardFunctions": {
@@ -1113,6 +1113,36 @@
                         "tittle": "Fn + razmaknica",
                         "description": "promijeni stanje pozadinskog osvjetljenja tipkovnice",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Keyboard top-row function",
+                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "subSection": {
+                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIAL FUNCTION",
+                                "fnKey": "F1-F12 FUNCTION"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Reversing the default primary function",
+                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                        },
+                        "subSectionThree": {
+                            "title": "How to use Fn key combinations",
+                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "radioButton": {
+                                "nMehod": "Normal method",
+                                "fnKeyMehod": "Fn Sticky key method"
+                            },
+                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                        },
+                        "popup": {
+                            "title": "Restart computer",
+                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
+                            "reboot": "REBOOT",
+                            "cancel": "NOT NOW"
+                        }
                     }
                 },
                 "userDefinedKey": {
@@ -1540,6 +1570,7 @@
             "statusWarrantyNotFound": "Jamstvo nije pronađeno",
             "yearDepotWarranty": "Standardno jamstvo Y",
             "warrantyDetails": "Detalji o jamstvu:",
+            "warrantyDashboardDetails": "Detalji o jamstvu",
             "startDate": "Datum početka: ",
             "endDate": "Datum isteka: ",
             "status": "Stanje: ",
@@ -2329,7 +2360,7 @@
             "error": "Pogreška",
             "delete": "Izbriši",
             "warningBatterySaver": "Napomena: Zakazani pregledi se neće izvoditi u načinu rada za uštedu baterije",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+            "scheduleIntervalLimit": "Još jedno skeniranje već je zakazano u roku manjem od deset minuta. Odaberite drugo vrijeme."
         },
         "recoverBadSectors": {
             "title": "Oporavak neispravnih sektora",
@@ -2378,6 +2409,7 @@
         "yes": "Da",
         "attention": "Pažnja",
         "cancelTextPrompt": "Želite li zaista odustati?",
-        "cancelTextProgress": "Pričekajte napredak otkazivanja"
+        "cancelTextProgress": "Pričekajte napredak otkazivanja",
+        "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju."
     }
 }

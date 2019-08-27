@@ -10,7 +10,8 @@
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
 	<div class="switch-container"
-		[ngClass]="[value ? 'checked' : 'unchecked',disable ? 'disable-container' : '']">
+		[ngClass]="[value ? 'checked' : 'unchecked',disable ? 'disable-container' : '']" 
+		[id]="findId(value,disable)">
 		<div class="title" [ngClass]="{'disable-container' : disable}"
 			id="qs-{{switchId}}-switch-title"
 			attr.aria-label="qs-{{switchId}}-switch-title">{{ title }}</div>
@@ -50,7 +51,7 @@
 	[ngClass]="['disable-state']"
 	[title]="tooltipText">
 	<div class="switch-container"
-		[ngClass]="['unchecked']">
+		[ngClass]="['unchecked']" id="qs-{{switchId}}-switch-loading-state">
 		<div class="title"
 			id="qs-{{switchId}}-switch-title"
 			attr.aria-label="qs-{{switchId}}-switch-title">{{ title }}</div>
