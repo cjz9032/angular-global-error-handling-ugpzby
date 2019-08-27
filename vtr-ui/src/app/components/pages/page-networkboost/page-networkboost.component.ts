@@ -92,6 +92,7 @@ export class PageNetworkboostComponent implements OnInit {
       } else {
         this.showTurnOnModal = true;
       }
+      this.hiddenScroll(true);
     } catch (error) {
       console.log(`ERROR in openTargetModal() `, error);
     }
@@ -114,6 +115,7 @@ export class PageNetworkboostComponent implements OnInit {
     this.setAksAgain(event.askAgainStatus);
     this.setNetworkBoostStatus({ switchValue: true });
     this.showAppsModal = true;
+    this.hiddenScroll(true);
   }
 
   initNotNowAction(event) {
@@ -121,7 +123,7 @@ export class PageNetworkboostComponent implements OnInit {
     this.showTurnOnModal = false;
     this.showAppsModal = true;
     this.changeListNum += 1;
-
+    this.hiddenScroll(true);
   }
 
   modalCloseTurnOn(action: boolean) {
@@ -129,10 +131,12 @@ export class PageNetworkboostComponent implements OnInit {
     if (!this.showTurnOnModal) {
       this.changeListNum += 1;
     }
+    this.hiddenScroll(false);
   }
 
   modalCloseAddApps(action: boolean) {
     this.showAppsModal = action;
+    this.hiddenScroll(false);
     if (!this.showAppsModal) {
       this.changeListNum += 1;
     }
@@ -164,4 +168,12 @@ export class PageNetworkboostComponent implements OnInit {
       console.log(`ERROR in setNetworkBoostStatus()`, err);
     }
   }
+
+  hiddenScroll(action: boolean) {
+		if (action) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}
 }

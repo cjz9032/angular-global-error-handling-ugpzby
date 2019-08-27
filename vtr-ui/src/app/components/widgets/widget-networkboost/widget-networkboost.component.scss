@@ -9,17 +9,20 @@
 		padding: 2rem;
 		li.add-icon {
 			div:nth-child(1) {
-				// background: $gaming_grey_lightest;
-				background: rgba(255,255,255,0.6);
+				background: $gaming_white60;
 				line-height: 4.5rem;
 				cursor: pointer;
 				text-align: center;
+				border-radius: 0.3rem;
 				&:hover {
-					background: rgba(255,255,255,0.8);
+					background: $gaming_white80;
 				}
-			}
-			.isdisabled {
-				background: rgba(255,255,255,0.2) !important;
+				&:active {
+					transform: scale(0.95);
+				}
+				.isdisabled {
+					background: rgba(255,255,255,0.2) !important;
+				}
 			}
 		}
 		li {
@@ -49,7 +52,6 @@
 				text-align: center;
 				height: 5rem;
 				overflow: hidden;
-				max-width: 15rem;
 				text-overflow: ellipsis;
 			}
 			.remove-app {
