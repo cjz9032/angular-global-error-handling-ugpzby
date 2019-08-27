@@ -378,7 +378,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					])
 						.then((responses: any[]) => {
 							this.logger.error('inside Promise.all THEN JS Bridge call', responses);
-
 							console.log('showSmartAssist.Promise.all()', responses);
 							console.log(
 								'Smart Assist Expressions',
@@ -438,6 +437,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			metricsItem: 'link.smartassist',
 			routerLinkActiveOptions: { exact: true },
 			icon: '',
+			sMode: true,
 			subitems: []
 		});
 	}
