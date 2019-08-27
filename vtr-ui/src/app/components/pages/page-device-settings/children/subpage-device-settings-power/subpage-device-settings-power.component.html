@@ -188,7 +188,7 @@
 
 	<div class="row py-5"
 		id="power"
-		*ngIf="showPowerSettings()">
+		*ngIf="!isDesktopMachine && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[isCollapsed]="false"
@@ -234,8 +234,7 @@
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
 											checked="" />
-										<label
-											for="cb-always-on-usb">
+										<label for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
 									</div>
