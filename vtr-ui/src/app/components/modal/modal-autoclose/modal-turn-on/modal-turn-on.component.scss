@@ -106,18 +106,28 @@ ui-popover-turn-on {
 		padding: 1rem 3rem;
 		margin-top: 1rem;
 		font-weight: $weight_600;
+		&:active {
+			transform: scale(0.95);
+		}
 	}
 
 	.cancel-link {
 		height: 3.2rem;
-		color: $main;
+		color: $btn_secondary_color;
 		font-size: 2rem;
 		vertical-align: middle;
 		padding: 0 0.5rem;
 		font-weight: $weight_600;
 		margin-top: 1.8rem;
 		margin-left: 3rem;
-		border-bottom: 2px solid $main;
+		border-bottom: 2px solid $btn_secondary_color;
 		cursor: pointer;
+		&:hover {
+			color: $btn_primary_color;
+			border-bottom: 2px solid $btn_primary_color;
+		}
+		&:active {
+			transform: scale(0.95);
+		}
 	}
 }

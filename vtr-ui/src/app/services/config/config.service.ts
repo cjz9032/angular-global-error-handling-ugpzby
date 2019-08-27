@@ -283,7 +283,7 @@ export class ConfigService {
 	}, {
 		id: 'privacy',
 		label: 'common.menu.privacy',
-		path: 'privacy/breaches',
+		path: 'privacy',
 		icon: ['fal', 'user-shield'],
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
@@ -427,7 +427,7 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		hide: true,
+		hide: false,
 		subitems: [],
 		pre: [
 			'assets/images/connected-home-security/welcome-page-one.png',

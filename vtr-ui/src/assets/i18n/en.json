@@ -70,7 +70,7 @@
 				"systemTools": {
 					"power": "Power",
 					"media": "Media",
-					"macroKey": "Marco Key",
+					"macroKey": "Macro Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update",
 					"header": "System Tools"
@@ -1116,7 +1116,7 @@
 					},
 					"topRowFunctions": {
 						"title": "Keyboard top-row function",
-						"showAdvSettings": "SHOW ADVANCED SETTINGS",
+						"showAdvSettings": "ADVANCED SETTINGS",
 						"hideAdvSettings": "HIDE ADVANCED SETTINGS",
 						"description": "The top row of the keyboard provides the following two functions. Select the one you want:",
 						"subSection": {

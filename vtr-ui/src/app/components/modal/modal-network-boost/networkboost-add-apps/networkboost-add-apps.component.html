@@ -50,7 +50,7 @@
                     <div class="btn-add-app mx-auto">
                       <input type="checkbox" value="{{item.processPath}}" [(ngModel)]="item.isChedked"
                       [disabled]="addedApps>=5 && !item.isChedked" (change)="onValueChange($event)">
-                      <div class="action"></div>
+                      <div class="action" [ngClass]="{isDisabled: addedApps>=5 && !item.isChedked}"></div>
                     </div>
                   </li>
                 </ul>

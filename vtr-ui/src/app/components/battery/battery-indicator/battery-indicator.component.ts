@@ -35,6 +35,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() batteryNotDetected = false;
 	@Input() isAirplaneMode = false;
 	@Input() isChargeThresholdOn = false;
+	@Input() isInDetailsModal = false;
 
 	constructor(public translate: TranslateService) {
 	}

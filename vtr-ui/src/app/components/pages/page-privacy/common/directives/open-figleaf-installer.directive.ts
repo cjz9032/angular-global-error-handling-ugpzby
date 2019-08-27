@@ -10,13 +10,13 @@ import { CommunicationWithFigleafService } from '../../utils/communication-with-
 	selector: '[vtrOpenFigleafInstaller]'
 })
 export class OpenFigleafInstallerDirective implements OnDestroy {
-
 	constructor(
 		private vantageCommunicationService: VantageCommunicationService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private commonService: CommonService,
-		private communicationWithFigleafService: CommunicationWithFigleafService
-	) {	}
+		private communicationWithFigleafService: CommunicationWithFigleafService,
+	) {
+	}
 
 	@HostListener('click', ['$event']) onClick($event) {
 		if (!this.commonService.isOnline) {
@@ -27,7 +27,8 @@ export class OpenFigleafInstallerDirective implements OnDestroy {
 			take(1),
 			filter((isFigleafNotOnboarded) => isFigleafNotOnboarded),
 			switchMap(() => this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:')),
-		).subscribe(() => {});
+		).subscribe(() => {
+		});
 
 		this.communicationWithFigleafService.isFigleafNotOnboarded$.pipe(
 			take(1),
@@ -44,4 +45,5 @@ export class OpenFigleafInstallerDirective implements OnDestroy {
 
 	ngOnDestroy() {
 	}
+
 }
