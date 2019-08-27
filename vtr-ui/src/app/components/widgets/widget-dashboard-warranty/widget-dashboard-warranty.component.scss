@@ -5,7 +5,7 @@
 	background-size: cover;
 	color: $light;
 	box-shadow: $drop_shadow;
-	padding: 4rem;
+	padding: 3.6rem 4rem;
 	letter-spacing: 0;
 	margin-bottom: 4rem;
 
@@ -17,26 +17,29 @@
 
 	&.expired {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat,
-			linear-gradient(to left top, #f17f14, #ed4e04);
+			linear-gradient(to left top, $stop_light, $stop_dark);
 		background-size: cover;
-
-		.button {
-			color: #c94000;
-		}
 	}
 
 	&.not-found {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat,
-			linear-gradient(to left bottom, #bbb, #888);
-
-		.button {
-			color: $shade_darkest;
+			linear-gradient(to left bottom, #e2e4e5, #e4e4e1);
+		color: $blue-dark;
+		.sub-description {
+			b {
+				text-transform: lowercase;
+				display: inline-block;
+				&::first-letter {
+					text-transform: uppercase;
+				}
+			}
 		}
 	}
 
 	.title {
-		font-size: 2.5rem;
+		font-size: 2.4rem;
 		font-weight: $weight_bold;
+		padding-bottom: 1.5rem;
 	}
 
 	.sub-title {
@@ -49,8 +52,17 @@
 	.sub-description {
 		font-size: 1.5rem;
 		font-weight: $weight_medium;
-		opacity: .8;
-		line-height: 2.3rem;
+		line-height: 2rem;
+		padding-bottom: 2rem;
+		span {
+			opacity: .8;
+		}
+	}
+
+	.status-wrapper {
+		b {
+			white-space: nowrap;
+		}
 	}
 
 	.button {
@@ -59,13 +71,13 @@
 		width: 100%;
 		height: 5rem;
 		line-height: 5rem;
-		border: none;
+		border: 0.1rem solid $shade_blue;
 		border-radius: 10rem;
 		background: $light;
 		padding: 0 3rem;
-		color: $main;
-		font-size: 1.5rem;
-		letter-spacing: 0.1rem;
+		color: $blue-dark;
+		font-size: 1.6rem;
+		letter-spacing: 0.15rem;
 		font-weight: $weight_bold;
 		text-align: center;
 		text-decoration: none;
