@@ -379,17 +379,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					])
 						.then((responses: any[]) => {
 							this.logger.info('inside Promise.all THEN JS Bridge call', responses);
-
-							console.log('showSmartAssist.Promise.all()', responses);
-							console.log(
-								'Smart Assist Expressions',
-								responses[0] ||
-								responses[1] ||
-								responses[2] ||
-								responses[3].available ||
-								responses[4] ||
-								(responses[5] && responses[6] && responses[7] > 0)
-							);
 							// cache smart assist capability
 							const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
 							smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
@@ -440,6 +429,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			metricsItem: 'link.smartassist',
 			routerLinkActiveOptions: { exact: true },
 			icon: '',
+			sMode: true,
 			subitems: []
 		});
 	}
