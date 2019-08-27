@@ -468,7 +468,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
 			statusValue: HardwareScanTestResult.Pass,
 			statusToken: this.statusToken(HardwareScanTestResult.Pass),
-			date: dateString,
+			date: this.finalResponse.startDate,
 			information: this.finalResponse.resultDescription,
 			items: []
 		};
