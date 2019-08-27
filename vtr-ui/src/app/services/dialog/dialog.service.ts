@@ -142,7 +142,7 @@ export class DialogService {
 		}
 	}
 
-	openCHSPermissionModal(needTrial): NgbModalRef {
+	openCHSPermissionModal(): NgbModalRef {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false)) {
 			if (this.modalService.hasOpenModals()) {
 				return;
@@ -154,8 +154,7 @@ export class DialogService {
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
-			welcomeModal.componentInstance.switchPage = 4;
-			welcomeModal.componentInstance.needTrial = needTrial;
+			welcomeModal.componentInstance.switchPage = 2;
 			return welcomeModal;
 		}
 	}
