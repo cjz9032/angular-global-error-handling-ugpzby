@@ -3,11 +3,13 @@ import { WidgetQuicksettingsListComponent } from './widget-quicksettings-list.co
 import { Pipe } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { AudioService } from 'src/app/services/audio/audio.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 
+const audioServiceMock = jasmine.createSpyObj('AudioService', ['isShellAvailable', 'getDolbyFeatureStatus', 'setDolbyOnOff']);
 const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeService', ['isShellAvailable', 'getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeEvent']);
 
-xdescribe('WidgetQuicksettingsListComponent', () => {
+describe('WidgetQuicksettingsListComponent', () => {
 	let component: WidgetQuicksettingsListComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
 	gamingThermalModeServiceMock.isShellAvailable.and.returnValue(true);
@@ -18,7 +20,9 @@ xdescribe('WidgetQuicksettingsListComponent', () => {
 				mockPipe({ name: 'translate' })],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
-				{ provide: HttpClient }, { provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock }
+				{ provide: HttpClient },
+				{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
+				{ provide: AudioService, useValue: audioServiceMock }
 			]
 		}).compileComponents();
 		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
@@ -46,6 +50,7 @@ xdescribe('WidgetQuicksettingsListComponent', () => {
 		gamingThermalModeServiceMock.getThermalModeStatus().then((response: any) => {
 			thermalModePromisedData = response;
 		});
+		component.renderThermalModeStatus();
 		tick(10);
 		fixture.detectChanges();
 		expect(uiThermalModeValue).toEqual(cacheThermalModeValue);
@@ -61,6 +66,10 @@ xdescribe('WidgetQuicksettingsListComponent', () => {
 		expect(cacheThermalModeValue).not.toEqual(PreCacheThermalModeValue);
 	}));
 
+	it('should give ischecked true after calling set dolby', fakeAsync(() => {
+		component.setDolbySettings(true);
+		expect(component.quickSettings[3].isChecked).toEqual(false);
+	}));
 
 });
 

@@ -1,19 +1,21 @@
 export class GamingAllCapabilities {
-	public cpuInfoFeature: Boolean = false;
-	public gpuInfoFeature: Boolean = false;
-	public memoryInfoFeature: Boolean = false;
-	public hddInfoFeature: Boolean = false;
-	public winKeyLockFeature: Boolean = false;
-	public touchpadLockFeature: Boolean = true;
-	public networkBoostFeature: Boolean = false;
-	public cpuOCFeature: Boolean = false;
-	public ledSetFeature: Boolean = false;
-	public memOCFeature: Boolean = false;
-	public macroKeyFeature: Boolean = false;
-	public hybridModeFeature: Boolean = false;
-	public optimizationFeature: Boolean = false;
-	public smartFanFeature: Boolean = false;
-	public xtuService: Boolean = false;
-	public fbnetFilter: Boolean = false;
-	public ledDriver: Boolean = false;
+	public cpuInfoFeature = false;
+	public gpuInfoFeature = false;
+	public memoryInfoFeature = false;
+	public hddInfoFeature = false;
+	public winKeyLockFeature = false;
+	public touchpadLockFeature = true;
+	public networkBoostFeature = false;
+	public cpuOCFeature = false;
+	public ledSetFeature = false;
+	public memOCFeature = false;
+	public macroKeyFeature = false;
+	public hybridModeFeature = false;
+	public optimizationFeature = false;
+	public smartFanFeature = false;
+	public xtuService = false;
+	public fbnetFilter = false;
+	public ledDriver = false;
+	public touchpadLockStatus = false;
+
 }

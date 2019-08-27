@@ -60,12 +60,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.display.title',
-			path: 'display'
+			path: 'display',
+			metricsItem: 'Display'
 
 		},
 		{
 			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.camera.title',
-			path: 'camera'
+			path: 'camera',
+			metricsItem: 'Camera'
 		}
 	];
 	emptyCameraDetails = [

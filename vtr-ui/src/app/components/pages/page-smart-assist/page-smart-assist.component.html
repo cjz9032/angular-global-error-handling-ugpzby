@@ -18,7 +18,8 @@
 						<vtr-ui-header-subpage [items]="headerMenuItems"
 							[caption]="'device.smartAssist.description' | translate"
 							[menuTitle]="'device.smartAssist.jumpTo.title' | translate"
-							[textId]="'smart-assist'">
+							[textId]="'smart-assist'"
+							[metricsParent]="'Device.SmartAssist'">
 						</vtr-ui-header-subpage>
 					</div>
 
@@ -408,7 +409,8 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								(toggle)="onCardCollapse($event)"
+								[metricsParent]="'Device.SmartAssist'">
 								<vtr-voice></vtr-voice>
 							</vtr-container-collapsible>
 						</div>
