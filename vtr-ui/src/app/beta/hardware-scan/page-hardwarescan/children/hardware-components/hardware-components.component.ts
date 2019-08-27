@@ -518,6 +518,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
+		this.hardwareScanService.setIsViewingRecoverLog(false);
 		this.hardwareScanService.setViewResultItems(results);
 		this.hardwareScanService.setScanExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);
@@ -580,6 +581,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
+		this.hardwareScanService.setIsViewingRecoverLog(true);
 		this.hardwareScanService.setViewResultItems(results);
 		this.hardwareScanService.setRecoverExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);

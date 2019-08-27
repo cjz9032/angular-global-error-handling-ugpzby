@@ -27,6 +27,7 @@ export class HardwareScanService {
 	private recoverInProgress = false;
 	private recoverInit = false;
 	private deviceInRecover: string;
+	private isViewingRecoverLog = false;
 
 	private quickScanRequest: any = []; // request modules
 	private quickScanResponse: any = []; // response modules
@@ -163,6 +164,14 @@ export class HardwareScanService {
 
 	public setRecoverInProgress(status: boolean) {
 		this.recoverInProgress = status;
+	}
+
+	public getIsViewingRecoverLog() {
+		return this.isViewingRecoverLog;
+	}
+
+	public setIsViewingRecoverLog(status: boolean) {
+		this.isViewingRecoverLog = status;
 	}
 
 	public isRecoverInit() {
