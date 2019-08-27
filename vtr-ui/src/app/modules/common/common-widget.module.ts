@@ -10,6 +10,7 @@ import { WidgetPermissionNoteComponent } from 'src/app/components/widgets/widget
 // import { WidgetQuestionsComponent } from 'src/app/components/widgets/widget-questions/widget-questions.component';
 import { WidgetRebootComponent } from 'src/app/components/widgets/widget-reboot/widget-reboot.component';
 import { WidgetSupportComponent } from 'src/app/components/widgets/widget-support/widget-support.component';
+import { WidgetWarrantyComponent } from 'src/app/components/widgets/widget-warranty/widget-warranty.component';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -22,6 +23,7 @@ import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 		// WidgetQuestionsComponent,
 		WidgetRebootComponent,
 		WidgetSupportComponent,
+		WidgetWarrantyComponent,
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -31,6 +33,7 @@ import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 		// WidgetQuestionsComponent,
 		WidgetRebootComponent,
 		WidgetSupportComponent,
+		WidgetWarrantyComponent,
 		NgbProgressbarModule,
 
 	],

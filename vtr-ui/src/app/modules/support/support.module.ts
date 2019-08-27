@@ -25,7 +25,7 @@ import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/mo
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { WidgetWarrantyModule } from 'src/app/components/widgets/widget-warranty/widget-warranty.module';
+
 
 library.add(faBook);
 library.add(faCommentAlt);
@@ -52,8 +52,7 @@ library.add(falHeart);
 		CommonWidgetModule,
 		SharedModule,
 		WidgetOfflineModule,
-		NgbModalModule,
-		WidgetWarrantyModule
+		NgbModalModule
 	],
 	providers: [
 		SupportService,

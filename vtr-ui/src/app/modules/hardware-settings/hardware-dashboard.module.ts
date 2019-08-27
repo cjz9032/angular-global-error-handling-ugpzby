@@ -24,7 +24,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { CommonPipeModule } from '../common/common-pipe.module';
-import { WidgetWarrantyModule } from 'src/app/components/widgets/widget-warranty/widget-warranty.module';
+import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
 
 @NgModule({
 	declarations: [
@@ -33,6 +33,7 @@ import { WidgetWarrantyModule } from 'src/app/components/widgets/widget-warranty
 		WidgetFeedbackComponent,
 		WidgetSwitchIconComponent,
 		WidgetQuicksettingsComponent,
+		WidgetDashboardWarrantyComponent
 	],
 	imports: [
 		CommonModule,
@@ -52,8 +53,7 @@ import { WidgetWarrantyModule } from 'src/app/components/widgets/widget-warranty
 		ReactiveFormsModule,
 		NgbModalModule,
 		CommonPipeModule,
-		PageLayoutModule,
-		WidgetWarrantyModule
+		PageLayoutModule
 	],
 	exports: [
 		MetricsModule,
@@ -65,6 +65,7 @@ import { WidgetWarrantyModule } from 'src/app/components/widgets/widget-warranty
 		FormsModule,
 		ReactiveFormsModule,
 		PageLayoutModule,
+		WidgetDashboardWarrantyComponent
 	],
 	providers: [ MockService ],
 	entryComponents: [ FeedbackFormComponent ],
