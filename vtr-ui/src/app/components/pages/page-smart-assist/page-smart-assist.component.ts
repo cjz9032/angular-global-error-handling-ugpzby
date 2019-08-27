@@ -15,6 +15,7 @@ import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -224,6 +225,7 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -245,6 +247,7 @@ export class PageSmartAssistComponent implements OnInit {
 			console.log('PageSmartAssistComponent.Promise.ZeroTouchLogin()', responses, this.intelligentSecurity);
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -273,6 +276,7 @@ export class PageSmartAssistComponent implements OnInit {
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -437,10 +441,12 @@ export class PageSmartAssistComponent implements OnInit {
 						}
 					}).catch(error => {
 						this.logger.error('getVideoPauseResumeStatus.error', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('getVideoPauseResumeStatus' + error.message);
+			return EMPTY;
 		}
 	}
 }

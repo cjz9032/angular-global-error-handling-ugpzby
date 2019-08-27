@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -55,9 +56,11 @@ export class DeviceService {
 					this.isArm = status;
 				}).catch(error => {
 					this.logger.error('initArm', error.message);
+					return false;
 				});
 		} catch (error) {
 			this.logger.error('initArm' + error.message);
+			return false;
 		}
 	}
 
@@ -75,6 +78,7 @@ export class DeviceService {
 			}
 		} catch (error) {
 			this.logger.error('getIsARM' + error.message);
+			return isArm;
 		}
 	}
 

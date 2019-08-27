@@ -5,6 +5,7 @@ import { CommonService } from '../common/common.service';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
+import { EMPTY } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -76,7 +77,8 @@ export class LanguageService {
 			}
 			this.useLanguage(langCode);
 		} catch (error) {
-			this.logger.error('exception in updateLanguageSettings', error.message);
+			this.logger.error('updateLanguageSettings', error.message);
+			return EMPTY;
 		}
 	}
 
