@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { UDKActionInfo, INPUT_TEXT, OPEN_WEB } from './UDKActionInfo';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 
 @Component({
@@ -108,10 +109,12 @@ export class UserDefinedKeyComponent implements OnInit {
 						this.initValues(this.udkActionInfo);
 					}).catch(error => {
 						this.logger.error('keyboard getUDKTypeList error here', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('keyboard getUDKTypeList error here' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -125,10 +128,12 @@ export class UserDefinedKeyComponent implements OnInit {
 						console.log('keyboard setUDKTypeList here -------------.>', value);
 					}).catch(error => {
 						this.logger.error('keyboard setUDKTypeList error here', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('keyboard setUDKTypeList error here', error.message);
+			return EMPTY;
 		}
 	}
 

@@ -11,6 +11,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -321,6 +322,7 @@ export class CMSService {
 			}
 		} catch (error) {
 			this.logger.error('CMSService.updateServerSwitchCMSOptions', error.message);
+			return undefined;
 		}
 		return CMSOption;
 

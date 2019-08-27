@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-home',
@@ -53,7 +54,9 @@ export class HomeComponent implements OnInit {
 			}
 		} catch (error) {
 			this.logger.error(`ERROR in ngOnInit() of home.component`, error.message);
+			return EMPTY;
 		}
+
 	}
 
 	private setLocaleAndDevice(deviceInfo: DeviceInfo) {
@@ -76,6 +79,7 @@ export class HomeComponent implements OnInit {
 			}
 		} catch (error) {
 			this.logger.error(`ERROR in vantageLaunch() of home.component`, error.message);
+			return EMPTY;
 		}
 	}
 
