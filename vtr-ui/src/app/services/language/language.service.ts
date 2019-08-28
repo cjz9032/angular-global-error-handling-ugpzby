@@ -77,7 +77,7 @@ export class LanguageService {
 			}
 			this.useLanguage(langCode);
 		} catch (error) {
-			this.logger.error('updateLanguageSettings', error.message);
+			this.logger.error('LanguageService.useLanguageByLocale', error.message);
 			return EMPTY;
 		}
 	}
@@ -94,6 +94,7 @@ export class LanguageService {
 			locale = isLanguageSupported ? locale : this.defaultLanguage;
 			this.translate.use(locale).subscribe(() => {
 				// translation file loaded
+				this.logger.error('LanguageService.useLanguage translation loaded', locale);
 				this.commonService.sendNotification(TranslationNotification.TranslationLoaded, locale);
 			});
 		}

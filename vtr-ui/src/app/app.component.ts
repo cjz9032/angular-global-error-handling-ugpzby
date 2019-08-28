@@ -1,7 +1,7 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd, ParamMap, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -17,11 +17,15 @@ import { AppAction, GetEnvInfo, AppLoaded } from 'src/app/data-models/metrics/ev
 import * as MetricsConst from 'src/app/enums/metrics.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { environment } from 'src/environments/environment';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
 import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
+import { AppNotification } from './data-models/common/app-notification.model';
+import { TranslationNotification } from './data-models/translation/translation';
+import { LoggerService } from './services/logger/logger.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 declare var Windows;
 @Component({
@@ -30,12 +34,13 @@ declare var Windows;
 	styleUrls: ['./app.component.scss'],
 	providers: [TimerService]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
 	private metricsClient: any;
 	private beta;
+	private subscription: Subscription;
 
 	constructor(
 		private displayService: DisplayService,
@@ -43,13 +48,14 @@ export class AppComponent implements OnInit {
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		private translate: TranslateService,
+		// private translate: TranslateService,
 		private userService: UserService,
 		private settingsService: SettingsService,
 		private vantageShellService: VantageShellService,
-		private activatedRoute: ActivatedRoute,
+		// private activatedRoute: ActivatedRoute,
 		private timerService: TimerService,
-		private languageService: LanguageService
+		private languageService: LanguageService,
+		private logger: LoggerService,
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -57,6 +63,12 @@ export class AppComponent implements OnInit {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
+
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+
 		if (vantageShellService.isShellAvailable) {
 			this.beta = vantageShellService.getBetaUser();
 			this.beta.getBetaUser().then((result) => {
@@ -77,22 +89,6 @@ export class AppComponent implements OnInit {
 			});
 		}
 		this.metricsClient = this.vantageShellService.getMetrics();
-		//#region VAN-2779 this is moved in MVP 2
-		this.deviceService
-			.getIsARM()
-			.then((status: boolean) => {
-				if (!status || !deviceService.isAndroid) {
-					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(
-						LocalStorageKey.WelcomeTutorial
-					);
-					if (tutorial === undefined && navigator.onLine) {
-						this.openWelcomeModal(1);
-					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
-						this.openWelcomeModal(2);
-					}
-				}
-			})
-			.catch((error) => { });
 
 		//#endregion
 
@@ -120,6 +116,22 @@ export class AppComponent implements OnInit {
 			}
 		});
 		this.notifyNetworkState();
+	}
+
+	private launchWelcomeModal() {
+		this.deviceService
+			.getIsARM()
+			.then((status: boolean) => {
+				if (!status || !this.deviceService.isAndroid) {
+					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					if (tutorial === undefined && navigator.onLine) {
+						this.openWelcomeModal(1);
+					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
+						this.openWelcomeModal(2);
+					}
+				}
+			})
+			.catch((error) => { });
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -261,6 +273,13 @@ export class AppComponent implements OnInit {
 		// VAN-5872, server switch feature
 		// this.serverSwitchThis();
 	}
+
+	ngOnDestroy() {
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
+	}
+
 
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
@@ -430,6 +449,20 @@ export class AppComponent implements OnInit {
 		) {
 			$event.stopPropagation();
 			$event.preventDefault();
+		}
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case TranslationNotification.TranslationLoaded:
+					this.logger.info(`AppComponent.onNotification`, notification);
+					// launch welcome modal once translation is loaded, meanwhile show spinner from home component
+					this.launchWelcomeModal();
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }
