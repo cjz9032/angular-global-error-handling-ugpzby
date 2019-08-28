@@ -39,6 +39,12 @@ export interface MetricsData {
 
 declare var window;
 
+/**
+ * Hi all, this is a core file of metric implementation, before you change
+ * this file, please estimate if your change affects the other component. And
+ * it is better to let know or create a code review to me. I can help to review
+ * yor change.
+ */
 @Directive({
 	selector: '[vtrMetrics]'
 })
