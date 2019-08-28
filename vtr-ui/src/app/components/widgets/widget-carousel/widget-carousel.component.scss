@@ -40,6 +40,10 @@
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 			max-width: 60%;
+			@media #{$mediaquery_X31} {
+				max-width: 80%;
+				font-size: 2.4rem;
+			}
 		}
 
 		.source {
