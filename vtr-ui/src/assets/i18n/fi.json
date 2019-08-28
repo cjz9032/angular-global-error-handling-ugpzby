@@ -2363,7 +2363,7 @@
             "error": "Virhe",
             "delete": "Poista",
             "warningBatterySaver": "Huomautus: Ajoitettuja tarkistuksia ei suoriteta virransäästötilassa",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Toinen tarkistus on jo ajoitettu tapahtuvaksi kymmenen minuutin ajanjakson kuluessa. Valitse toinen aika."
         },
         "recoverBadSectors": {
             "title": "Korjaa vialliset sektorit",
@@ -2412,6 +2412,7 @@
         "yes": "Kyllä",
         "attention": "Huomio:",
         "cancelTextPrompt": "Haluatko varmasti peruuttaa?",
-        "cancelTextProgress": "Odota, kunnes peruutus on meneillään"
+        "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
+		"pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se."
     }
 }

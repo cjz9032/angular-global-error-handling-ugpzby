@@ -2363,7 +2363,7 @@
             "error": "Błąd",
             "delete": "Usuń",
             "warningBatterySaver": "Uwaga: zaplanowane skanowania nie zostaną wykonane w trybie oszczędzania baterii",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Kolejne skanowanie zaplanowano już w ciągu dziesięciu minut. Wybierz inną godzinę."
         },
         "recoverBadSectors": {
             "title": "Odzyskaj uszkodzone sektory",
@@ -2412,6 +2412,7 @@
         "yes": "Tak",
         "attention": "Uwaga",
         "cancelTextPrompt": "Czy na pewno chcesz anulować?",
-        "cancelTextProgress": "Poczekaj na anulowanie postępu"
+        "cancelTextProgress": "Poczekaj na anulowanie postępu",
+		"pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować."
     }
 }

@@ -30,5 +30,7 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		this.item = this.hardwareScanService.getViewResultItems();
 	}
 
-	ngOnDestroy() {}
+	ngOnDestroy() {
+		this.hardwareScanService.setIsViewingRecoverLog(false);
+	}
 }

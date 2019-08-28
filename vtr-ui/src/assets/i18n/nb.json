@@ -2368,7 +2368,7 @@
             "error": "Feil",
             "delete": "Slett",
             "warningBatterySaver": "Merk: Planlagte skanninger vil ikke bli utført i batterisparingsmodus",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "En ny skanning var allerede planlagt innenfor en periode på ti minutter. Velg en annen tid."
         },
         "recoverBadSectors": {
             "title": "Gjenopprett skadde sektorer",
@@ -2412,6 +2412,7 @@
         "yes": "Ja",
         "attention": "NB",
         "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
-        "cancelTextProgress": "Vent mens avbrytingen pågår"
+        "cancelTextProgress": "Vent mens avbrytingen pågår",
+		"pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten."
     }
 }
