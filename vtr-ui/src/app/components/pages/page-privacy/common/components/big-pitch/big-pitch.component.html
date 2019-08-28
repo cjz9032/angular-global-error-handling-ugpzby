@@ -9,16 +9,15 @@
 					vtrOfflineMode
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'InstallButton'"
-					[metricsParam]="articleId ? {ArticleId: articleId} : ''"
-			>
-				Install Now
+					[metricsParam]="articleId ? {ArticleId: articleId} : {}">
+				{{'Install Now' | changeActionButtonText | async}}
 			</button>
 			<a class="pitch__link"
 			   routerLink="/privacy/landing"
 			   vtrSendAnalytics
 			   [metricsEvent]="'ItemClick'"
 			   [metricsItem]="'LearnMoreLink'"
-			   [metricsParam]="articleId ? {ArticleId: articleId} : ''"
+			   [metricsParam]="articleId ? {ArticleId: articleId} : {}"
 			   (click)="clickMore.emit()">
 				Learn more
 			</a>

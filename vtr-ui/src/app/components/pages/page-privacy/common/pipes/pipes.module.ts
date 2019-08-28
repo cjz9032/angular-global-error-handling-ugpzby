@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SitesFaviconPipe } from './sites-favicon.pipe';
+import { ChangeActionButtonTextPipe } from './change-action-button-text.pipe';
 
 @NgModule({
 	declarations: [
-		SitesFaviconPipe
+		SitesFaviconPipe,
+		ChangeActionButtonTextPipe
 	],
 	exports: [
-		SitesFaviconPipe
+		SitesFaviconPipe,
+		ChangeActionButtonTextPipe
 	],
 	imports: [
 		CommonModule

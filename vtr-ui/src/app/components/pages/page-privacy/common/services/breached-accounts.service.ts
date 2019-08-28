@@ -39,6 +39,7 @@ export interface BreachedAccount {
 interface GetBreachedAccountsState {
 	breaches: BreachedAccount[];
 	error: string | null;
+	reset?: boolean;
 }
 
 @Injectable({
@@ -64,9 +65,12 @@ export class BreachedAccountsService implements OnDestroy {
 
 	private getBreachedAccounts() {
 		return merge(
-			this.emailScannerService.scanNotifier$.pipe(distinctUntilChanged()),
+			this.emailScannerService.scanNotifier$,
 			this.emailScannerService.validationStatusChanged$.pipe(distinctUntilChanged()),
-			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(distinctUntilChanged()),
+			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
+				tap((isFigleafReadyForCommunication) => this.resetBreachedAccounts(isFigleafReadyForCommunication)),
+				distinctUntilChanged()
+			),
 			this.getNewBreachedAccounts$.asObservable().pipe(distinctUntilChanged()),
 			this.updateTriggersService.shouldUpdate$,
 		).pipe(
@@ -120,5 +124,11 @@ export class BreachedAccountsService implements OnDestroy {
 		}
 		this.sendTaskAcrion();
 		return EMPTY;
+	}
+
+	private resetBreachedAccounts(isFigleafReadyForCommunication) {
+		if (!isFigleafReadyForCommunication) {
+			this.onGetBreachedAccounts.next({breaches: [], error: null, reset: true});
+		}
 	}
 }
