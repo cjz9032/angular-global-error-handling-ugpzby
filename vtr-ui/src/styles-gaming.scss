@@ -339,6 +339,9 @@
 								border: none !important;
 								li{
 									border-bottom-color: $screen_dark_15;
+									&:hover {
+										background-color: $screen_dark_10;
+									}
 									.title{
 										color: $gaming_lightest;
 										.systemDetails {
