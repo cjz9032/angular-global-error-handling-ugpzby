@@ -1,5 +1,6 @@
-import { CommonService } from './../../../services/common/common.service';
+import { CommonService, } from './../../../services/common/common.service';
 import { OnInit, Input, Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'vtr-widget-dashboard-warranty',
@@ -9,7 +10,7 @@ import { OnInit, Input, Component } from '@angular/core';
 export class WidgetDashboardWarrantyComponent implements OnInit {
 	@Input() item: any;
 	@Input() isConnected: boolean;
-
+	public pageParent: string;
 	status = {
 		title: [
 			'support.warranty.titleInWarranty',
@@ -23,9 +24,13 @@ export class WidgetDashboardWarrantyComponent implements OnInit {
 		]
 	};
 
-	constructor(private commonService: CommonService) {}
+	constructor(private commonService: CommonService, private activatedRoute: ActivatedRoute) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		try {
+			this.pageParent = this.activatedRoute.snapshot.data.pageName;
+		} catch (ex) {}
+	}
 
 	getRoundYear(dayDiff: number) {
 		return dayDiff > 0 ? Math.round(dayDiff / 365) : 0;
