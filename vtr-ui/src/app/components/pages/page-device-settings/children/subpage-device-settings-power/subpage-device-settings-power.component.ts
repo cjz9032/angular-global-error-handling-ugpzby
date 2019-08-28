@@ -329,7 +329,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		console.log('getAlwaysOnUSBCapabilityThinkPad ');
 		if (this.powerService.isShellAvailable) {
 			try {
-				const value = await this.powerService.getAlwaysOnUSBCapabilityThinkPad()
+				const value = await this.powerService.getAlwaysOnUSBCapabilityThinkPad();
 				console.log('getAlwaysOnUSBCapabilityThinkPad.then', value);
 				this.alwaysOnUSBStatus.available = value;
 				this.getAlwaysOnUSBStatusThinkPad();
@@ -367,7 +367,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	private async getEasyResumeCapabilityThinkPad() {
 		if (this.powerService.isShellAvailable) {
 			try {
-				const value = await this.powerService.getEasyResumeCapabilityThinkPad()
+				const value = await this.powerService.getEasyResumeCapabilityThinkPad();
 				console.log('getEasyResumeCapabilityThinkPad.then', value);
 				if (value === true) {
 					this.showEasyResumeSection = true;
@@ -682,7 +682,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		try {
 			if (this.powerService.isShellAvailable) {
 				const featureStatus = await this.powerService.getVantageToolBarStatus();
-				console.log('getVantageToolBarStatus.then', featureStatus);
+				this.logger.info('getVantageToolBarStatus.then', featureStatus);
 				this.vantageToolbarStatus = featureStatus;
 			}
 		} catch (error) {
