@@ -472,7 +472,7 @@ export class HardwareScanService {
 					this.modulesRetrieved = response;
 					this.categoryInformationList = this.modulesRetrieved.categoryList;
 
-					this.customScanRequest = this.buildScanRequest(this.modulesRetrieved);
+					this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
 					this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
 					console.log('this.customScanRequest: ', this.customScanRequest);
 					console.log('this.quickScanRequest: ', this.quickScanRequest);
@@ -570,7 +570,7 @@ export class HardwareScanService {
 		}
 	}
 
-	private buildScanRequest(modulesRetrieved: any) {
+	private buildScanRequest(modulesRetrieved: any, culture: string) {
 		console.log('[Start] Build scan request');
 		const scanRequests = [];
 		let testRequestList = [];
@@ -588,7 +588,7 @@ export class HardwareScanService {
 					}
 				}
 				scanRequests.push({
-					lang: 'en-US',
+					lang: culture,
 					loopCount: 0,
 					loopRepeatMinutes: 0,
 					testRequestList: testRequestList,
@@ -741,7 +741,7 @@ export class HardwareScanService {
 		console.log('[End] Update Modules');
 	}
 
-	public filterCustomTests() {
+	public filterCustomTests(culture: string) {
 		console.log('[Start] Filter custom tests');
 		const customModules = this.getCustomScanModules();
 		const modules = customModules.filter(i => i.selected || i.indeterminate);
@@ -774,7 +774,7 @@ export class HardwareScanService {
 
 				// Creating request
 				const scanRequest = {
-					lang: 'en-US',
+					lang: culture,
 					loopCount: 0,
 					loopRepeatMinutes: 0,
 					testRequestList: testsSelected,
