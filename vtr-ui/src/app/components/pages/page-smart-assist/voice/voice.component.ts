@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DownloadFailedModalComponent } from './download-failed-modal/download-failed-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 enum InstalledStatus {
 	DONE = 'InstallDone',
@@ -61,10 +62,12 @@ export class VoiceComponent implements OnInit {
 						}
 					}).catch(error => {
 						this.logger.error('isLenovoVoiceInstalled', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('isLenovoVoiceInstalled' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -90,11 +93,13 @@ export class VoiceComponent implements OnInit {
 					}).catch(error => {
 						this.showLoader = false;
 						this.logger.error('downloadLenovoVoice', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.showLoader = false;
 			this.logger.error('downloadLenovoVoice' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -107,10 +112,12 @@ export class VoiceComponent implements OnInit {
 						console.log('launchLenovoVoice.then', status);
 					}).catch(error => {
 						this.logger.error('launchLenovoVoice', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('launchLenovoVoice' + error.message);
+			return EMPTY;
 		}
 	}
 

@@ -1,3 +1,4 @@
+import { SettingsPageLayoutModule } from './../../components/settings-page-layout/settings-page-layout.module';
 import { ActiveProtectionSystemAdvancedComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system-advanced/active-protection-system-advanced.component';
 import { ActiveProtectionSystemComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
 import { AutoupdateSettingsComponent } from 'src/app/components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
@@ -53,7 +54,6 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { CommonModalModule } from '../common/common-modal.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
@@ -83,7 +83,7 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
-import { faCircle as faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
+import { faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
 import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
@@ -122,7 +122,6 @@ library.add(faSync);
 library.add(faCircleNotch);
 library.add(faAngleRight);
 library.add(faCalendarAlt);
-
 
 @NgModule({
 	declarations: [
@@ -181,6 +180,7 @@ library.add(faCalendarAlt);
 		RouterModule,
 		NgbCollapseModule,
 		PageLayoutModule,
+		SettingsPageLayoutModule
 	],
 	exports: [
 		CommonModule,
@@ -188,14 +188,10 @@ library.add(faCalendarAlt);
 		CommonWidgetModule,
 		CommonModalModule,
 		PageLayoutModule,
-		RouterModule,
+		SettingsPageLayoutModule,
+		RouterModule
 	],
-	providers: [
-		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	providers: [ { provide: BaseCameraDetail, useClass: CameraDetailMockService } ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
-export class HardwareSettingsModule { }
+export class HardwareSettingsModule {}

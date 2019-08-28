@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-intelligent-media',
@@ -31,10 +32,12 @@ export class IntelligentMediaComponent implements OnInit {
 						console.log('setVideoPauseResumeStatus.then', value);
 					}).catch(error => {
 						this.logger.error('setVideoPauseResumeStatus', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('setVideoPauseResumeStatus' + error.message);
+			return EMPTY;
 		}
 	}
 }

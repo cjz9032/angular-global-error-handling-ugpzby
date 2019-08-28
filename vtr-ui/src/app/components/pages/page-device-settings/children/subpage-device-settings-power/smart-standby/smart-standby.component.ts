@@ -5,6 +5,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-smart-standby',
@@ -101,10 +102,12 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 					})
 					.catch(error => {
 						this.logger.error('setSmartStandbyEnabled', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('setSmartStandbyEnabled', error.message);
+			return EMPTY;
 		}
 		// this.smartStandby.isEnabled = isEnabled;
 	}
@@ -143,10 +146,12 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						})
 						.catch(error => {
 							this.logger.error('setSmartStandbyStartTime', error.message);
+							return EMPTY;
 						});
 				}
 			} catch (error) {
-				this.logger.error(error.message);
+				this.logger.error('setSmartStandbyStartTime', error.message);
+				return EMPTY;
 			}
 		}
 	}
@@ -166,10 +171,12 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 					})
 					.catch(error => {
 						this.logger.error('setSmartStandbyDaysOfWeekOff.error', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error(error.message);
+			this.logger.error('onSetDaysOfWeekOff', error.message);
+			return EMPTY;
 		}
 	}
 

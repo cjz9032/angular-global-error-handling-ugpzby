@@ -282,5 +282,5 @@ $large-screen-1: "only screen and (min-width : 1200px) and (max-width : 1366px)"
 $large-screen: "only screen and (min-width : 1200px)";
 
 /*large screen */
-$mediaquery_XXL100x: "only screen and (min-width: 1920px) and (max-width : 3840px) and (max-resolution: 100dpi)";
-$mediaquery_XXL350x: "only screen and (min-width: 1920px) and (max-width : 3840px) and (min-resolution: 100dpi) and (max-resolution: 350dpi)";
+$mediaquery_XL100X: "only screen and (min-width: 1600px) and (max-width : 3840px) and (max-resolution: 100dpi)";
+$mediaquery_XXL350X: "only screen and (min-width: 1920px) and (max-width : 3840px) and (min-resolution: 100dpi) and (max-resolution: 350dpi)";

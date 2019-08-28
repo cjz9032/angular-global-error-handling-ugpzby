@@ -415,16 +415,16 @@ export class AppComponent implements OnInit {
 				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
 			}
 
-			// VAN-5872, server switch feature
-			if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
-				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
-					backdrop: true,
-					size: 'lg',
-					centered: true,
-					windowClass: 'Server-Switch-Modal',
-					keyboard: false
-				});
-			}
+			// // VAN-5872, server switch feature
+			// if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
+			// 	const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+			// 		backdrop: true,
+			// 		size: 'lg',
+			// 		centered: true,
+			// 		windowClass: 'Server-Switch-Modal',
+			// 		keyboard: false
+			// 	});
+			// }
 		} catch (error) { }
 	}
 

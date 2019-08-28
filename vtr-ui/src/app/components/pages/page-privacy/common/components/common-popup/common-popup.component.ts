@@ -10,48 +10,47 @@ import { VIDEO_POPUP_ID } from '../../../main-layout/sidebar/video-widget/video-
 @Component({
 	selector: 'vtr-common-popup',
 	templateUrl: './common-popup.component.html',
-	styleUrls: [ './common-popup.component.scss' ]
+	styleUrls: ['./common-popup.component.scss'],
 })
 export class CommonPopupComponent implements OnInit, OnDestroy {
-	@ContentChild(TemplateRef, { static: true })
-	template: TemplateRef<any>;
+	@ContentChild(TemplateRef, { static: true }) template: TemplateRef<any>;
 	@Input() popUpId: string;
 	@Input() size: 'big' | 'large' | 'default' = 'default';
 
 	isOpen = false;
 
 	analyticsData = {
-		confirmationPopup: {
+		'confirmationPopup': {
 			ItemName: 'BreachedAccountsClosePopupButton',
-			ItemParent: 'ConfirmYousrEmailPopup'
+			ItemParent: 'ConfirmYourEmailPopup',
 		},
 		'low-privacy-popup': {
 			ItemName: 'ScorePopupCloseButton',
-			ItemParent: 'ScorePopup'
+			ItemParent: 'ScorePopup',
 		},
 		choseBrowserPopup: {
 			ItemName: 'WebsiteTrackersClosePopupButton',
-			ItemParent: 'WebsiteTrackersPopup'
+			ItemParent: 'WebsiteTrackersPopup',
 		},
 		'support-popup': {
 			ItemName: 'HelpPopupCloseButton',
-			ItemParent: 'HelpPopup'
+			ItemParent: 'HelpPopup',
 		},
 		oneClickScan: {
 			ItemName: 'ScorePopupCloseButton',
-			ItemParent: 'ScorePopup'
+			ItemParent: 'ScorePopup',
 		},
 		trackingMapSingle: {
 			ItemName: 'WebsiteTrackersDetailCloseButton',
-			ItemParent: 'DetailPopup'
+			ItemParent: 'DetailPopup',
 		},
 		removePassword: {
 			ItemName: 'NonPrivatePasswordsClosePopupButton',
-			ItemParent: 'HowToRemoveAccountsPopup'
+			ItemParent: 'HowToRemoveAccountsPopup',
 		},
 		[VIDEO_POPUP_ID]: {
 			ItemName: 'VideoCloseButton',
-			ItemParent: 'VideoPopup'
+			ItemParent: 'VideoPopup',
 		}
 	};
 
@@ -59,20 +58,23 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 		private commonPopupService: CommonPopupService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
 		private routerChangeHandlerService: RouterChangeHandlerService,
-		private analyticsService: AnalyticsService
-	) {}
+		private analyticsService: AnalyticsService) {
+	}
 
 	ngOnInit() {
 		const popup = this;
 
 		// ensure popUpId attribute exists
 		if (!popup.popUpId) {
+			console.error('Attribute `popUpId` is required! Need add `popUpId` to vtr-common-popup');
 			return;
 		}
 
 		this.commonPopupService
 			.getOpenState(this.popUpId)
-			.pipe(takeUntil(instanceDestroyed(this)))
+			.pipe(
+				takeUntil(instanceDestroyed(this))
+			)
 			.subscribe(({ id, isOpenState }: CommonPopupEventType) => {
 				this.isOpen = isOpenState;
 			});
@@ -86,8 +88,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 		this.closePopup();
 	}
 
-	openPopup() {
-		// not work now
+	openPopup() { // not work now
 		this.commonPopupService.open(this.popUpId);
 	}
 

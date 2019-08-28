@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs';
+import { Subscription, EMPTY } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/beta/hardware-scan/enums/hw-scan-progress.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -344,6 +344,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					console.log('getDeviceInfo.then', value);
 				}).catch(error => {
 					this.logger.error('getDeviceInfo', error.message);
+					return EMPTY;
 				});
 		}
 	}

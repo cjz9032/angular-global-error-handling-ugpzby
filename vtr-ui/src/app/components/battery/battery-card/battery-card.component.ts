@@ -16,6 +16,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -125,6 +126,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('getBatteryDetailOnCard: ' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -148,6 +150,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}
 			}).catch(error => {
 				this.logger.error('getBatteryDetails error', error.message);
+				return EMPTY;
 			});
 	}
 

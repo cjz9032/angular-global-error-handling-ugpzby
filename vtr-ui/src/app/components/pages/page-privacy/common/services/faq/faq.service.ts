@@ -70,16 +70,6 @@ export class FaqService {
 					],
 					icon: 'tools',
 				},
-				{
-					id: 'hashed-password',
-					title: 'What is a hashed password?',
-					texts: [
-						`Some data breaches contain passwords that are still encrypted, so they aren’t visible at first glance.
-						 But eventually, these passwords will be decrypted — it could take someone a couple of hours or months,
-						  depending on the strength. You should change your password right now.`
-					],
-					icon: 'key',
-				},
 			]
 		},
 

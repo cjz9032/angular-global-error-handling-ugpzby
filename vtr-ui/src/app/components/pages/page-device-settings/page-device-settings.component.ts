@@ -12,6 +12,7 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -151,10 +152,12 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 						}
 					}).catch(error => {
 						this.logger.error('getMicrophoneSettings', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.logger.error('getMicrophoneSettings' + error.message);
+			return EMPTY;
 		}
 	}
 
