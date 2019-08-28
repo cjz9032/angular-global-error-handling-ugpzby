@@ -33,6 +33,7 @@ import { TrialExpiredWidgetComponent } from './main-layout/sidebar/trial-expired
 import { OfflineWidgetComponent } from './main-layout/sidebar/offline-widget/offline-widget.component';
 import { VideoWidgetComponent } from './main-layout/sidebar/video-widget/video-widget.component';
 import { CustomFontAwesomeModule } from './custom-font-awesome.module';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 @NgModule({
 	imports: [
@@ -46,7 +47,8 @@ import { CustomFontAwesomeModule } from './custom-font-awesome.module';
 		TrackingMapModule,
 		NonPrivatePasswordModule,
 		VtrCommonModule,
-		OneClickScanModule
+		OneClickScanModule,
+		AppSearchModule
 	],
 	declarations: [
 		// Mail Layout Components

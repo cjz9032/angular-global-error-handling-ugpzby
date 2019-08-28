@@ -19,7 +19,8 @@
 							<div [ngClass]="{'vtr-page-shift-up': isOnline}">
 								<div class="vtr-page-security-windows-hello">
 									<div class="container-fluid p-40 security-card">
-										<div class="row">
+										<div class="row"
+										[vtrAppSearchScroller]="['search-windows-hello']">
 											<div class="col">
 												<div class="heading">{{'security.windowsHello.title' | translate}}</div>
 											</div>
