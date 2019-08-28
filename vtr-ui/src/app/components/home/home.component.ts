@@ -1,5 +1,5 @@
 import { DeviceService } from 'src/app/services/device/device.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LanguageService } from 'src/app/services/language/language.service';
@@ -8,15 +8,18 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
-import { EMPTY } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { EMPTY } from 'rxjs/internal/observable/empty';
+
 
 @Component({
 	selector: 'vtr-home',
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 	private deviceInfo: DeviceInfo;
+	private subscription: Subscription;
 	constructor(
 		public deviceService: DeviceService,
 		private router: Router,
@@ -27,8 +30,10 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.logger.info(`HomeComponent.ngOnInit`);
+
 		try {
-			this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 				this.onNotification(notification);
 			});
 
@@ -50,27 +55,24 @@ export class HomeComponent implements OnInit {
 				}
 			} else {
 				// for browser
-				this.setLocaleAndDevice(undefined);
+				this.languageService.useLanguage();
+				this.vantageLaunch(false);
 			}
 		} catch (error) {
-			this.logger.error(`ERROR in ngOnInit() of home.component`, error.message);
+			this.logger.error(`HomeComponent.ngOnInit`, error.message);
 			return EMPTY;
 		}
 
 	}
 
-	private setLocaleAndDevice(deviceInfo: DeviceInfo) {
-		if (deviceInfo) {
-			this.languageService.useLanguageByLocale(deviceInfo.locale);
-			this.vantageLaunch(deviceInfo.isGamingDevice);
-		} else {
-			// for browser, load english language
-			this.languageService.useLanguage();
-			this.vantageLaunch(false);
+	ngOnDestroy() {
+		if (this.subscription) {
+			this.subscription.unsubscribe();
 		}
 	}
 
 	private vantageLaunch(isGaming: boolean) {
+		this.logger.info(`HomeComponent.vantageLaunch `, isGaming);
 		try {
 			if (isGaming) {
 				this.router.navigate(['/device-gaming']);
@@ -78,7 +80,7 @@ export class HomeComponent implements OnInit {
 				this.router.navigate(['/dashboard']);
 			}
 		} catch (error) {
-			this.logger.error(`ERROR in vantageLaunch() of home.component`, error.message);
+			this.logger.error(`HomeComponent.vantageLaunch`, error.message);
 			return EMPTY;
 		}
 	}
@@ -87,7 +89,7 @@ export class HomeComponent implements OnInit {
 		if (notification) {
 			switch (notification.type) {
 				case TranslationNotification.TranslationLoaded:
-					this.logger.error(`HomeComponent.onNotification`, notification);
+					this.logger.info(`HomeComponent.onNotification`, notification);
 					this.vantageLaunch(this.deviceInfo.isGamingDevice);
 					break;
 				default:
