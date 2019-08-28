@@ -184,7 +184,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 		this.hardwareScanService.getPluginInfo()
 			.then((hwscanPluginInfo: any) => {
-				this.showHWScanMenu = hwscanPluginInfo !== undefined;
+				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy
+				this.showHWScanMenu = hwscanPluginInfo !== undefined && hwscanPluginInfo.LegacyPlugin === false;
 			})
 			.catch(() => {
 				this.showHWScanMenu = false;
