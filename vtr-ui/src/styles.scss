@@ -301,6 +301,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	font-family: "Segoe UI";
+	@media#{$mediaquery_xl}{
+		max-width: 20rem;
+	}
 
 	.tooltip-inner {
 		padding: 1.2rem;
