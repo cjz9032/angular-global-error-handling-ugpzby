@@ -1,0 +1,40 @@
+
+
+<div class="search-block" #searchBox (click)="onParentClick($event)">
+	<div class="input-block"
+		[class.is-show-result]="searchResults.length > 0">
+		<div class="search-icon">
+			<fa-icon [icon]="['fal', 'search']"></fa-icon>
+		</div>
+		<input type="text" #searchInput class="search-input"
+		[placeholder]="searchTips"
+		(input)="onTextChange(searchInput.value)" />
+		<div class="clean-button"
+			[class.active]="searchInput.value"
+			vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="Search"
+			metricsItem="cleanSearch"
+			(click)="onCleanClick()">
+		</div>
+	</div>
+	<div class="dropdown-block mt-1" (click)="onDropDownClick($event)">
+		<ul>
+			<li *ngFor="let item of searchResults"
+				(click)="onResultClick(item)"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="Search"
+				[metricsItem]="item.id"
+				[metricsParam]="searchInput.value">
+				<a [routerLink]="item.route" class="item-block">
+					<div class="item-icon">
+						<fa-icon *ngIf="item.icon.length" [icon]="item.icon"></fa-icon>
+						<fa-icon *ngIf="!item.icon.length" [icon]="['fal', 'gem']"></fa-icon>
+					</div>
+					<span class="item-text">{{item.desc}}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

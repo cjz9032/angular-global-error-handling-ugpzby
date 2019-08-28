@@ -15,7 +15,7 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { RouterModule } from '@angular/router';
 import { MetricsModule } from 'src/app/directives/metrics.module';
-
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 library.add(faQuestionCircle);
 library.add(faChevronCircleRight);
 library.add(faCheck);
@@ -37,7 +37,8 @@ library.add(faChevronRight);
 		CommonPipeModule,
 		FontAwesomeModule,
 		RouterModule,
-		MetricsModule
+		MetricsModule,
+		AppSearchModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

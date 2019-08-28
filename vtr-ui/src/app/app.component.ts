@@ -59,25 +59,25 @@ export class AppComponent implements OnInit {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
-		// if (vantageShellService.isShellAvailable) {
-		// 	this.beta = vantageShellService.getBetaUser();
-		// 	this.beta.getBetaUser().then((result) => {
-		// 		if (!result) {
-		// 			if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-		// 				this.commonService.isBetaUser().then((data) => {
-		// 					if (data === 0 || data === 3) {
-		// 						this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-		// 						this.beta.setBetaUser();
-		// 					}
-		// 				});
-		// 			} else {
-		// 				this.beta.setBetaUser();
-		// 			}
-		// 		} else {
-		// 			this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-		// 		}
-		// 	});
-		// }
+		if (vantageShellService.isShellAvailable) {
+			this.beta = vantageShellService.getBetaUser();
+			this.beta.getBetaUser().then((result) => {
+				if (!result) {
+					if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+						this.commonService.isBetaUser().then((data) => {
+							if (data === 0 || data === 3) {
+								this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+								this.beta.setBetaUser();
+							}
+						});
+					} else {
+						this.beta.setBetaUser();
+					}
+				} else {
+					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+				}
+			});
+		}
 		this.metricsClient = this.vantageShellService.getMetrics();
 		//#region VAN-2779 this is moved in MVP 2
 		this.deviceService
