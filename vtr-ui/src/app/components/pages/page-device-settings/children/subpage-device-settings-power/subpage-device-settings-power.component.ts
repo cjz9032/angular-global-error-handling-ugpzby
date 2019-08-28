@@ -188,7 +188,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
-		this.getVantageToolBarStatus();
+		this.getVantageToolBarCapability();
 
 		this.getEnergyStarCapability();
 
@@ -244,6 +244,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
 				break;
 		}
+		this.hideBatteryLink();
+	}
+
+	async getVantageToolBarCapability() {
+		await this.getVantageToolBarStatus();
 		this.hideBatteryLink();
 	}
 
@@ -324,7 +329,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		console.log('getAlwaysOnUSBCapabilityThinkPad ');
 		if (this.powerService.isShellAvailable) {
 			try {
-				const value = await this.powerService.getAlwaysOnUSBCapabilityThinkPad()
+				const value = await this.powerService.getAlwaysOnUSBCapabilityThinkPad();
 				console.log('getAlwaysOnUSBCapabilityThinkPad.then', value);
 				this.alwaysOnUSBStatus.available = value;
 				this.getAlwaysOnUSBStatusThinkPad();
@@ -362,7 +367,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	private async getEasyResumeCapabilityThinkPad() {
 		if (this.powerService.isShellAvailable) {
 			try {
-				const value = await this.powerService.getEasyResumeCapabilityThinkPad()
+				const value = await this.powerService.getEasyResumeCapabilityThinkPad();
 				console.log('getEasyResumeCapabilityThinkPad.then', value);
 				if (value === true) {
 					this.showEasyResumeSection = true;
@@ -673,19 +678,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	// End IdeaNoteBook
 	// Start Lenovo Vantage ToolBar
-	private getVantageToolBarStatus() {
+	private async getVantageToolBarStatus() {
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getVantageToolBarStatus()
-					.then((featureStatus: FeatureStatus) => {
-						console.log('getVantageToolBarStatus.then', featureStatus);
-						this.vantageToolbarStatus = featureStatus;
-					})
-					.catch(error => {
-						this.logger.error('getVantageToolBarStatus', error.message);
-						return EMPTY;
-					});
+				const featureStatus = await this.powerService.getVantageToolBarStatus();
+				this.logger.info('getVantageToolBarStatus.then', featureStatus);
+				this.vantageToolbarStatus = featureStatus;
 			}
 		} catch (error) {
 			this.logger.error('getVantageToolBarStatus', error.message);
@@ -888,9 +886,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	showPowerSettings() {
 		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
-			return false;
 		}
-		return true;
+	}
+
+	hideOtherSettings() {
+		if (this.vantageToolbarStatus && !this.vantageToolbarStatus.available) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
+		}
 	}
 
 	private getEnergyStarCapability() {
