@@ -201,12 +201,6 @@ export class SecurityHealthViewModel {
 			}
 			// this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
 		}
-		if (homeProtection && homeProtection.devicePosture) {
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection.devicePosture);
-			this.createHomeDevicePosture(homeProtection.devicePosture);
-		} else if (cacheHomeDevicePosture) {
-			this.createHomeDevicePosture(cacheHomeDevicePosture);
-		}
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
 			if (value) {
 				if (wifiSecurity.isLocationServiceOn !== undefined) {
@@ -223,80 +217,6 @@ export class SecurityHealthViewModel {
 					}
 				}
 			});
-		});
-		homeProtection.on(EventTypes.homeDevicePostureEvent, (value) => {
-			this.ngZone.run(() => {
-				if (value) {
-					commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
-					this.createHomeDevicePosture(value);
-				}
-			});
-		});
-	}
-
-	createHomeDevicePosture(devicePosture: Array<DeviceInfo>) {
-		this.homeDevicePosture = [];
-		devicePosture.forEach((item) => {
-			const it: DevicePostureDetail = {
-				status: 0,
-				title: '',
-				detail: '',
-				path: 'security/wifi-security',
-				type: 'security'
-			};
-			it.status = item.vulnerable === 'true' ? 1 : 6;
-			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
-			this.translate.stream(it.detail).subscribe((res) => {
-				it.detail = res;
-			});
-			this.mappingDevicePosture(it, item.config);
-			if (it.title !== 'other') {
-				this.homeDevicePosture.push(it);
-			}
-		});
-	}
-
-	mappingDevicePosture(detail: DevicePostureDetail, config: string) {
-		const titles = [
-			'security.homeprotection.securityhealth.deviceName1',
-			'security.homeprotection.securityhealth.deviceName2',
-			'security.homeprotection.securityhealth.deviceName3',
-			'security.homeprotection.securityhealth.deviceName4',
-			'security.homeprotection.securityhealth.deviceName5',
-			'security.homeprotection.securityhealth.deviceName6',
-			'security.homeprotection.securityhealth.deviceName7',
-			'security.homeprotection.securityhealth.deviceName8',
-			'security.homeprotection.securityhealth.deviceName9',
-			'security.homeprotection.securityhealth.deviceName10'
-		];
-		let title: string;
-		config = config.toLowerCase();
-		if (config.indexOf('apps') !== -1) {
-			title = titles[0];
-		} else if (config.indexOf('developer') !== -1) {
-			title = titles[1];
-		} else if (config.indexOf('uac') !== -1) {
-			title = titles[2];
-		} else if (config.indexOf('antivirus') !== -1) {
-			title = titles[3];
-		} else if (config.indexOf('drive') !== -1) {
-			title = titles[4];
-		} else if (config.indexOf('firewall') !== -1) {
-			title = titles[5];
-		} else if (config.indexOf('windows') !== -1) {
-			title = titles[6];
-		} else if (config.indexOf('security') !== -1) {
-			title = titles[7];
-		} else if ((config.indexOf('pin') !== -1) || (config.indexOf('password') !== -1)) {
-			title = titles[8];
-		} else if ((config.indexOf('automatic') !== -1)) {
-			title = titles[9];
-		} else {
-			detail.title = 'other';
-			return;
-		}
-		this.translate.stream(title).subscribe((res) => {
-			detail.title = res;
 		});
 	}
 }

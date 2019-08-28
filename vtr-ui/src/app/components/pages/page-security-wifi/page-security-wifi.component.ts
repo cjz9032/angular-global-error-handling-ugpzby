@@ -112,22 +112,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				this.wifiSecurity.refresh().catch((err) => this.handleError(err));
 				this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
 			}
-			if (this.wifiSecurity.isLocationServiceOn) {
-				if (this.homeProtection) {
-					this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, true);
-					this.homeProtection.getDevicePosture().catch((err) => this.handleError(err));
-				}
-			} else {
-				this.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (isLocationServiceOn) => {
-					if (!this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture)) {
-						if (isLocationServiceOn) {
-							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, true);
-							this.homeProtection.getDevicePosture().catch((err) => this.handleError(err));
-						}
-					}
-				});
-			}
-
 			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
@@ -161,12 +145,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
-		if (this.homeProtection) {
-			if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture)) {
-				this.homeProtection.cancelGetDevicePosture();
-				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, false);
-			}
-		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
@@ -195,13 +173,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				this.homeProtection.status = 'unjoined';
 				this.isShowInvitationCode = true;
 			}
-		}
-	}
-
-	startGetDevicePosture(res: Array<DeviceInfo>) {
-		if (res !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, res);
-			this.securityHealthViewModel.createHomeDevicePosture(res);
 		}
 	}
 

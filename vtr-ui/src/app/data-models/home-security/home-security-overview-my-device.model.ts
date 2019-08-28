@@ -1,34 +1,33 @@
-import { CHSDevicePosture, CHSDeviceOverview } from '@lenovo/tan-client-bridge';
-import { TranslateService } from '@ngx-translate/core';
+import { CHSDeviceOverview, DevicePosture, DeviceCondition } from '@lenovo/tan-client-bridge';
 
 export class HomeSecurityOverviewMyDevice {
 	deviceName: string;
-	devicePostures: CHSDevicePosture[];
+	devicePosture: DeviceCondition[];
 	deviceStatus: string;
 
-	constructor(overview?: CHSDeviceOverview) {
+	constructor(overview?: CHSDeviceOverview, devicePosture?: DevicePosture) {
 		if (!overview) { return; }
 		if (overview.myDevice && overview.myDevice.name) {
 			this.deviceName = overview.myDevice.name;
 		}
-		if (overview.devicePostures && overview.devicePostures.value.length > 0) {
-			this.createHomeDevicePosture(overview.devicePostures.value);
-			this.creatDeviceStatus(overview.devicePostures.value);
+		if (devicePosture && devicePosture.value.length > 0) {
+			this.createHomeDevicePosture(devicePosture.value);
+			this.creatDeviceStatus(devicePosture.value);
 		}
 	}
 
-	createHomeDevicePosture(chsDevicePostures: CHSDevicePosture[]) {
-		this.devicePostures = chsDevicePostures.map((devicePosture) => {
+	createHomeDevicePosture(devicePosture: DeviceCondition[]) {
+		this.devicePosture = devicePosture.map((deviceCondition) => {
 			return {
-				name: this.mappingDevicePosture(devicePosture),
-				vulnerable: devicePosture.vulnerable
+				name: this.mappingDevicePosture(deviceCondition),
+				vulnerable: deviceCondition.vulnerable
 			};
 		});
 	}
 
-	mappingDevicePosture(devicePosture: CHSDevicePosture) {
+	mappingDevicePosture(deviceCondition: DeviceCondition) {
 		let title: string;
-		const config = devicePosture.name.toLowerCase();
+		const config = deviceCondition.name.toLowerCase();
 		if (config.includes('apps')) {
 			title = 'security.homeprotection.securityhealth.deviceName1';
 		} else if (config.includes('developer')) {
@@ -55,10 +54,10 @@ export class HomeSecurityOverviewMyDevice {
 		return title;
 	}
 
-	creatDeviceStatus(devicePostures: CHSDevicePosture[]) {
+	creatDeviceStatus(devicePosture: DeviceCondition[]) {
 		this.deviceStatus = '';
-		if (devicePostures.length !== 0) {
-			this.devicePostures.forEach((item) => {
+		if (devicePosture.length !== 0) {
+			this.devicePosture.forEach((item) => {
 				if (this.deviceStatus !== 'needs attention') {
 					if (item.vulnerable === true) {
 						this.deviceStatus = 'needs attention';
