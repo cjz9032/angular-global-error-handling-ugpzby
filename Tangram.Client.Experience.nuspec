@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Tangram.Client.Experience</id>
-    <version>1.0.154</version>
+    <version>1.0.162</version>
     <authors>Lenovo Vantage team</authors>
     <owners>Lenovo Vantage team</owners>
     <projectUrl>ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience</projectUrl>
