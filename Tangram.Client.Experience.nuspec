@@ -13,6 +13,6 @@
   </metadata>
   <files>
     <file src="vtr-ui.zip" target="build" />
-    <file src="Lenovo.Vantage.Service.props" target="build" />
+    <file src="Tangram.Client.Experience.props" target="build" />
   </files>
 </package>
