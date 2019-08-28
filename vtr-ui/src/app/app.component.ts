@@ -12,7 +12,7 @@ import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
-import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+// import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { AppAction, GetEnvInfo, AppLoaded } from 'src/app/data-models/metrics/events.model';
 import * as MetricsConst from 'src/app/enums/metrics.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
@@ -259,7 +259,7 @@ export class AppComponent implements OnInit {
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
-		this.serverSwitchThis();
+		// this.serverSwitchThis();
 	}
 
 	private getMachineInfo() {
@@ -342,63 +342,45 @@ export class AppComponent implements OnInit {
 	}
 
 	// VAN-5872, server switch feature
-	private serverSwitchThis() {
-		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-			if (params.has('serverswitch')) {
-				// retrive from localStorage
-				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-				if (serverSwitchLocalData) {
-					// force cms service to use this server parms
-					serverSwitchLocalData.forceit = true;
-					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+	// private serverSwitchThis() {
+	// 	this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+	// 		if (params.has('serverswitch')) {
+	// 			// retrive from localStorage
+	// 			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+	// 			if (serverSwitchLocalData) {
+	// 				// force cms service to use this server parms
+	// 				serverSwitchLocalData.forceit = true;
+	// 				this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
-					const langCode = serverSwitchLocalData.language.Value.toLowerCase();
-					/* const langMap = {
-						'zh-hant': 'zh-Hant',
-						'zh-hans': 'zh-Hans',
-						'pt-br': 'pt-BR'
-					};
-					if (langMap[langCode]) {
-						langCode = langMap[langCode];
-					}
- */
-					const allLangs = this.translate.getLangs();
-					const currentLang = this.translate.currentLang
-						? this.translate.currentLang.toLowerCase()
-						: this.translate.defaultLang.toLowerCase();
+	// 				const langCode = serverSwitchLocalData.language.Value.toLowerCase();
+	// 				const allLangs = this.translate.getLangs();
+	// 				const currentLang = this.translate.currentLang
+	// 					? this.translate.currentLang.toLowerCase()
+	// 					: this.translate.defaultLang.toLowerCase();
 
-					// change language only when countrycode or language code changes
-					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
-						// this.translate.resetLang('ar');
-						// this.languageService.useLanguage(langCode);
-						if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
-							this.translate.reloadLang(langCode);
-						}
+	// 				// change language only when countrycode or language code changes
+	// 				if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
+	// 					// this.translate.resetLang('ar');
+	// 					// this.languageService.useLanguage(langCode);
+	// 					if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
+	// 						this.translate.reloadLang(langCode);
+	// 					}
 
-						this.translate.use(langCode).subscribe(
-							(data) => console.log('@sahinul trans use NEXT'),
-							(error) => console.log('@sahinul server switch error ', error),
-							() => {
-								// Evaluate the translations for QA on language Change
-								// this.qaService.setTranslationService(this.translate);
-								// this.qaService.setCurrentLangTranslations();
-								console.log('@sahinul server switch completed');
-
-								// VAN-6417, language right to left
-								/*if ((['ar', 'he']).indexOf(langCode) >= 0) {
-									window.document.getElementsByTagName("html")[0].dir = 'rtl';
-									window.document.getElementsByTagName("html")[0].lang = langCode;
-								} else {
-									window.document.getElementsByTagName("html")[0].dir = 'ltr';
-									window.document.getElementsByTagName("html")[0].lang = langCode;
-								}*/
-							}
-						);
-					}
-				}
-			}
-		});
-	}
+	// 					this.translate.use(langCode).subscribe(
+	// 						(data) => console.log('@sahinul trans use NEXT'),
+	// 						(error) => console.log('@sahinul server switch error ', error),
+	// 						() => {
+	// 							// Evaluate the translations for QA on language Change
+	// 							// this.qaService.setTranslationService(this.translate);
+	// 							// this.qaService.setCurrentLangTranslations();
+	// 							console.log('@sahinul server switch completed');
+	// 						}
+	// 					);
+	// 				}
+	// 			}
+	// 		}
+	// 	});
+	// }
 
 	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
