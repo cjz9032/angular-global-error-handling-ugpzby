@@ -24,6 +24,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -46,6 +47,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	public showSearchBox = false;
 
 	showMenu = false;
+	showHWScanMenu: boolean = false;
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
@@ -71,7 +73,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
 		private windowsHelloService: WindowsHelloService,
-		public modernPreloadService: ModernPreloadService
+		public modernPreloadService: ModernPreloadService,
+		private hardwareScanService: HardwareScanService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
@@ -178,6 +181,14 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		if (cacheMachineFamilyName) {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
+
+		this.hardwareScanService.getPluginInfo()
+			.then((hwscanPluginInfo: any) => {
+				this.showHWScanMenu = hwscanPluginInfo !== undefined;
+			})
+			.catch(() => {
+				this.showHWScanMenu = false;
+			});
 	}
 
 	private loadMenuOptions(machineType: number) {
@@ -232,6 +243,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				showItem = false;
 			}
 		}
+
+		if (item.id === 'hardware-scan') {
+			showItem = this.showHWScanMenu;
+		}
+
 		if (item.id === 'privacy') {
 			if (!this.deviceService.showPrivacy) {
 				showItem = false;
