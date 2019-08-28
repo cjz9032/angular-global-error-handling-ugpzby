@@ -168,6 +168,62 @@ export class VantageShellService {
 		return '';
 	}
 
+	private normalizeEventName(eventName) {
+		eventName = eventName.toLowerCase();
+		switch (eventName) {
+			case 'firstrun':
+				eventName = 'FirstRun';
+				break;
+			case 'apploaded':
+				eventName = 'AppLoaded';
+				break;
+			case 'articledisplay':
+				eventName = 'ArticleDisplay';
+				break;
+			case 'appaction':
+				eventName = 'AppAction';
+				break;
+			case 'getenvinfo':
+				eventName = 'GetEnvInfo';
+				break;
+			case 'pageview':
+				eventName = 'PageView';
+				break;
+			case 'featureclick':
+				eventName = 'FeatureClick';
+				break;
+			case 'itemclick':
+				eventName = 'ItemClick';
+				break;
+			case 'itemview':
+				eventName = 'ItemView';
+				break;
+			case 'articleclick':
+				eventName = 'ArticleClick';
+				break;
+			case 'docclick':
+				eventName = 'DocClick';
+				break;
+			case 'articleview':
+				eventName = 'ArticleView';
+				break;
+			case 'docview':
+				eventName = 'DocView';
+				break;
+			case 'taskaction':
+				eventName = 'TaskAction';
+				break;
+			case 'settingupdate':
+				eventName = 'SettingUpdate';
+				break;
+			case 'userfeedback':
+				eventName = 'UserFeedback';
+				break;
+		}
+
+		return eventName;
+	}
+
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
@@ -184,6 +240,7 @@ export class VantageShellService {
 					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
+				const that = this;
 				metricClient.isInit = true;
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
@@ -191,8 +248,17 @@ export class VantageShellService {
 					try {
 						// automatically fill the OnlineStatus for page view event
 						if (!data.OnlineStatus) {
-							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
+
+						const isBeta = that.commonService.getLocalStorageValue(
+							LocalStorageKey.BetaUser
+						);
+						if (isBeta) {
+							data.IsBetaUser = true;
+						}
+
+						data.ItemType = that.normalizeEventName(data.ItemType);
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
 						console.log('an error ocurr when sending metrics event', ex);
