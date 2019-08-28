@@ -1,8 +1,9 @@
-import { AppSearchDirective } from './app-search-scroll.directive';
+import { AppSearchScrollerDirective } from './app-search-scroller.directive';
 
 describe('AppSearchDirective', () => {
-  it('should create an instance', () => {
-    const directive = new AppSearchDirective();
-    expect(directive).toBeTruthy();
-  });
+	let appSearchService, elmentRef;
+	it('should create an instance', () => {
+		const directive = new AppSearchScrollerDirective(elmentRef, appSearchService);
+		expect(directive).toBeTruthy();
+	});
 });
