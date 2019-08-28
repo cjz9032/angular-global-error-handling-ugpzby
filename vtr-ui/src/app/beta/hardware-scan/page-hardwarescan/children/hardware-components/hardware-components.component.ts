@@ -391,7 +391,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
 			console.log('[MODAL] ', modalRef.componentInstance.items);
 			modalRef.componentInstance.passEntry.subscribe(() => {
-				this.hardwareScanService.filterCustomTests();
+				this.hardwareScanService.filterCustomTests(this.culture);
 				this.checkPreScanInfo(1); // custom scan
 			});
 		}
