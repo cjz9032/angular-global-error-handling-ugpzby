@@ -202,6 +202,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	toggleMenu(event) {
 		this.showMenu = !this.showMenu;
+		event.stopPropagation();
 	}
 
 	isParentActive(item) {
