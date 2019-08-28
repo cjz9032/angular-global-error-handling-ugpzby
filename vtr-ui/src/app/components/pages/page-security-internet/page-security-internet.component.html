@@ -19,7 +19,9 @@
 							<div [ngClass]="{'vtr-page-shift-up': isOnline}">
 								<div class="vtr-page-security-internet">
 									<div class="container-fluid p-40 security-card">
-										<div class="row">
+										<div class="row"
+										[vtrAppSearchScroller]="['search-internet-protection']"
+										>
 											<div class="col">
 												<div class="heading">{{'security.vpn.header' | translate}}</div>
 											</div>

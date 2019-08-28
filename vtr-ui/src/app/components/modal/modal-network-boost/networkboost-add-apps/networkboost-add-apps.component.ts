@@ -63,12 +63,15 @@ async addAppToList(app) {
     try {
       const result: any = await this.networkBoostService.getNetUsingProcesses();
       console.log('RESULT frpm NB', result);
+      this.loading = false;
+      this.runningList = [];
       if (result && !isUndefined(result.processList)) {
-        this.loading = false;
         this.runningList = result.processList || [];
-        this.noAppsRunning = this.runningList.length === 0 ? true : false;
       }
+      this.noAppsRunning = this.runningList.length === 0 ? true : false;
     } catch (error) {
+      this.loading = false;
+      this.noAppsRunning = true;
       console.log(`ERROR in refreshNetworkBoostList()`, error);
     }
   }

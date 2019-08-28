@@ -9,7 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSquare } from '@fortawesome/free-solid-svg-icons/faSquare';
 import { RouterModule } from '@angular/router/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 library.add(faSquare);
 
@@ -30,7 +30,8 @@ library.add(faSquare);
 		MetricsModule,
 		TranslationModule.forChild(),
 		RouterModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		AppSearchModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

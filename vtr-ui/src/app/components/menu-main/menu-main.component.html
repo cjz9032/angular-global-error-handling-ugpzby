@@ -72,7 +72,7 @@
 			<ul class="navbar-nav ml-auto"
 				*ngIf="loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable">
 				<ng-container *ngFor="let item of items; let i=index">
-					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
+					<li *ngIf="item.subitems.length===0&&isCommomItem(item)&&showItem(item)"
 						class="nav-item">
 						<a class="nav-link {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
@@ -84,7 +84,7 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
-							(click)="showMenu = false"
+							(click)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon *ngIf="item.icon[0]!=='icomoon'"
@@ -98,7 +98,9 @@
 							<span *ngIf="item.beta" class="beta">Beta</span>
 						</a>
 					</li>
-					<li *ngIf="item.subitems.length>0&&item.id!=='user'&&showItem(item)"
+					<li *ngIf="item.subitems.length>0
+						&&isCommomItem(item)
+						&&showItem(item)"
 						class="nav-item dropdown"
 						[ngClass]="{'active': isParentActive(item)}">
 						<a class="nav-link dropdown-toggle {{item.id}}"
@@ -116,7 +118,7 @@
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded="false"
-							(click)="showMenu = false"
+							(click)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon [icon]="item.icon"
@@ -143,7 +145,7 @@
 									target="_blank"
 									rel="noopener"
 									href="javascript:void(0)"
-									(click)="showMenu = false; openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
+									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 									vtrMetrics
 									id="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
@@ -155,7 +157,7 @@
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
 									routerLink="{{subitem.path}}"
-									(click)="showMenu = false">{{subitem.label | translate}}</a>
+									(click)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink  && subitem.path!=='support'"
 									vtrMetrics
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
@@ -167,9 +169,37 @@
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
 									routerLink="/{{item.path}}/{{subitem.path}}"
-									(click)="showMenu = false">{{subitem.label | translate}}</a>
+									(click)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
 							</span>
 
+						</div>
+					</li>
+					<li *ngIf="item.id==='app-search'&&showItem(item)"
+						class="nav-item search-nav-item">
+						<div class="search-nav-item-mask" *ngIf="showSearchBox" (click)="onClickSearchMask()"></div>
+						<a class="nav-link {{item.id}}"
+							[ngClass]="{'beta-item':item.beta}"
+							vtrMetrics
+							id="menu-main-nav-lnk-{{item.id}}"
+							attr.aria-label="menu-main-nav-lnk-{{item.id}}"
+							[metricsEvent]="item.metricsEvent"
+							[metricsParent]="item.metricsParent"
+							[metricsItem]="item.metricsItem"
+							(click)="onMenuItemClick(item, $event)"
+							*ngIf="item.label | translate">
+							<div class="icon">
+								<fa-icon *ngIf="item.icon[0]!=='icomoon'"
+									[icon]="item.icon"
+									class="fa-icon"></fa-icon>
+								<span *ngIf="item.icon[0]==='icomoon'"
+									[ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
+							</div>
+
+							{{item.label | translate}}
+							<span *ngIf="item.beta" class="beta">Beta</span>
+						</a>
+						<div class="search-dropdown d-none d-md-block" *ngIf="showSearchBox">
+							<vtr-search-dropdown></vtr-search-dropdown>
 						</div>
 					</li>
 					<li *ngIf="item.id==='user'"
@@ -196,7 +226,7 @@
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded="false"
-							(click)="showMenu = false">
+							(click)="onMenuItemClick(item)">
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
 							</div>
@@ -227,7 +257,7 @@
 								class="dropdown-item link"
 								href="javascript:void(0)"
 								routerLink="settings"
-								(click)="showMenu = false">{{ 'settings.preferenceSettings' | translate }}</a>
+								(click)="onMenuItemClick(item)">{{ 'settings.preferenceSettings' | translate }}</a>
 							<a *ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
 								id="menu-main-lnk-open-lenovoid-login"
@@ -237,7 +267,7 @@
 								metricsItem="LenovoIdSignInButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); showMenu = false">{{'lenovoId.login' | translate}}</a>
+								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
 								id="menu-main-lnk-open-lenovoid-unlock"
@@ -247,7 +277,7 @@
 								metricsItem="LenovoIdStarterIdButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); showMenu = false">{{'lenovoId.unlockExclusives' | translate}}</a>
+								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
 								id="menu-main-lnk-user-logout"
@@ -257,7 +287,7 @@
 								metricsItem="LenovoIdSignOutButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								(click)="onLogout(); showMenu = false">{{'lenovoId.logout' | translate}}</a>
+								(click)="onLogout(); onMenuItemClick(item)">{{'lenovoId.logout' | translate}}</a>
 						</div>
 					</li>
 					<div *ngIf="item.id==='home-security'"
@@ -270,4 +300,7 @@
 			</ul>
 		</div>
 	</nav>
+	<div class="search-dropdown-sm d-xl-none" *ngIf="showSearchBox">
+		<vtr-search-dropdown></vtr-search-dropdown>
+	</div>
 </div>
