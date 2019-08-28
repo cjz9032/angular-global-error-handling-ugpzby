@@ -18,7 +18,7 @@ import { EMPTY } from 'rxjs/internal/observable/empty';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-	private deviceInfo: DeviceInfo;
+	// private deviceInfo: DeviceInfo;
 	private subscription: Subscription;
 	constructor(
 		public deviceService: DeviceService,
@@ -42,16 +42,18 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 				// if deviceInfo is available then load from cache else invoke JS bridge
 				if (cachedDeviceInfo && cachedDeviceInfo.locale) {
-					this.deviceInfo = cachedDeviceInfo;
+					// this.deviceInfo = cachedDeviceInfo;
 					this.languageService.useLanguageByLocale(cachedDeviceInfo.locale);
 
-				} else {
-					// if cache not found or first run
-					this.deviceService.getMachineInfo().then(info => {
-						this.deviceInfo = { isGamingDevice: info.isGaming, locale: info.locale };
-						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, this.deviceInfo);
-						this.languageService.useLanguageByLocale(info.locale);
-					});
+					// } else {
+					// 	// if cache not found or first run
+					// 	this.deviceService.getMachineInfo().then(info => {
+					// 		this.deviceInfo = { isGamingDevice: info.isGaming, locale: info.locale };
+					// 		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, this.deviceInfo);
+					// 		if (!this.languageService.isLanguageLoaded) {
+					// 			this.languageService.useLanguageByLocale(info.locale);
+					// 		}
+					// 	});
 				}
 			} else {
 				// for browser
@@ -90,7 +92,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 			switch (notification.type) {
 				case TranslationNotification.TranslationLoaded:
 					this.logger.info(`HomeComponent.onNotification`, notification);
-					this.vantageLaunch(this.deviceInfo.isGamingDevice);
+					const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+					this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
 					break;
 				default:
 					break;
