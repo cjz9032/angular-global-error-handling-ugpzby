@@ -325,6 +325,35 @@
 							}
 						}
 					}
+					.vtr-page-shift-up{
+						.vtr-widget-device{
+							background: $dark_cell !important;
+							.family, .subheader{
+								color: $gaming_lightest;
+							}
+							.device-sub-header, .sub-header-separator {
+								color: $gaming_grey_lightest;
+							}
+							.status-list{
+								background: $gaming-Darkslate-blue;
+								border: none !important;
+								li{
+									border-bottom-color: $screen_dark_15;
+									.title{
+										color: $gaming_lightest;
+										.systemDetails {
+											color: $gaming_lightest;
+										}
+									}
+									&.good {
+										.detail {
+											color: $gaming_grey_lightest !important;
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 
 				.vtr-container-collapsible.white-theme {
@@ -539,7 +568,7 @@
 						background: $dark_cell;
 
 						.title {
-							color: $gaming_lightest;
+							color: $gaming_lightest !important;
 						}
 
 						.description {
