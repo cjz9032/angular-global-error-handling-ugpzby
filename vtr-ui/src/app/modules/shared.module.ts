@@ -23,6 +23,7 @@ import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { MetricsModule } from '../directives/metrics.module';
 import { HeaderMainModule } from '../components/header-main/header-main.module';
 import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 @NgModule({
 	declarations: [
@@ -49,7 +50,8 @@ import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal
 		TranslationModule.forChild(),
 		UiButtonModule,
 		MetricsModule,
-		HeaderMainModule
+		HeaderMainModule,
+		AppSearchModule
 	],
 	exports: [
 		AngularSvgIconModule,
@@ -71,7 +73,8 @@ import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal
 		PageUserComponent,
 		UiButtonModule,
 		MetricsModule,
-		HeaderMainModule
+		HeaderMainModule,
+		AppSearchModule
 	],
 	providers: [
 		CommsService,

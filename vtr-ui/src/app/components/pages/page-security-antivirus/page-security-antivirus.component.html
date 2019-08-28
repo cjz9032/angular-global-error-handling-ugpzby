@@ -16,7 +16,8 @@
 							<div *ngIf="isOnline"
 								class="header mt-minus">
 								<div class="rounded-card-with-shadow p-5">
-									<div class="row">
+									<div class="row"
+										[vtrAppSearchScroller]="['search-anti-virus']">
 										<div class="col-auto align-self-center">
 											<img class="img-fluid"
 												src="./../../../../assets/images/antivirus/protection.png" />

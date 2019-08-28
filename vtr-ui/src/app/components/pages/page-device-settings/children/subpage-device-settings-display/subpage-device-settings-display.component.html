@@ -15,6 +15,7 @@
 		<div class="col-10 mx-auto ">
 			<!-- Display -->
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
+				[vtrAppSearchScroller]="['search-display']"
 				componentName="display"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
@@ -236,6 +237,7 @@
 		[hidden]="isCameraHidden">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
+				[vtrAppSearchScroller]="['search-camera']"
 				componentName="Camera"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
