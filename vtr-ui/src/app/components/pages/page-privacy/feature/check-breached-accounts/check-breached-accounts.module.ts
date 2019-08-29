@@ -11,6 +11,7 @@ import { BreachedAccountComponent } from './breached-account/breached-account.co
 import { BreachedDescriptionComponent } from './breached-description/breached-description.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { BreachedOtherDescriptionComponent } from './breached-other-description/breached-other-description.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { BreachedOtherDescriptionComponent } from './breached-other-description/
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
 		BreachedOtherDescriptionComponent,
+		VerifyEmailComponent,
 	],
 	exports: [
 		EmailScannerComponent,
@@ -32,7 +34,8 @@ import { BreachedOtherDescriptionComponent } from './breached-other-description/
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
 		ConfirmationPopupComponent,
-		BreachedOtherDescriptionComponent
+		BreachedOtherDescriptionComponent,
+		VerifyEmailComponent
 	],
 	imports: [
 		CommonModule,

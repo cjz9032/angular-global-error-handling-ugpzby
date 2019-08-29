@@ -58,7 +58,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	}
 
 	startVerify() {
-		this.commonPopupService.open(this.confirmationPopupName);
+		// this.commonPopupService.open(this.confirmationPopupName);
 		this.emailScannerService.sendConfirmationCode().subscribe();
 	}
 

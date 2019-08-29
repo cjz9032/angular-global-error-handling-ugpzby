@@ -2,7 +2,7 @@
 		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'">
 
-	<div class="breaches-page__header">
+	<div class="breaches-page__header" *ngIf="!(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async)">
 		<vtr-feature-header
 			class="breaches-page__feature-header"
 			[texts]="textForFeatureHeader"
@@ -56,13 +56,22 @@
 		</vtr-email-scanner>
 
 		<vtr-breached-account
-			*ngIf="(breachedAccounts$ | async)?.length"
+			*ngIf="(breachedAccounts$ | async)?.length && !(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async)"
 			[breachedAccounts]="(breachedAccounts$ | async)"
 			[isUserAuthorized]="isUserAuthorized$ | async"
 			[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
 			(openFigleaf)="openFigleafByUrl($event)"
 			(verifyClick)="startVerify()">
 		</vtr-breached-account>
+
+		<vtr-verify-email
+			*ngIf="(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async)"
+			[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
+			[userEmail]="userEmail$ | async"
+			[breachedAccountsLength]="(breachedAccounts$ | async)?.length"
+			(verifyEmailEmit)="startVerify()">
+		</vtr-verify-email>
+
 	</div>
 </section>
 
