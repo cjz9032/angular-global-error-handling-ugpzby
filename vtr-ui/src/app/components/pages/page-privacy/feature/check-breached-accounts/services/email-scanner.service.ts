@@ -137,7 +137,7 @@ export class EmailScannerService {
 		return getBreachedAccounts.pipe(
 			switchMap((breaches: BreachedAccountsFromServerResponse) => {
 				this.loadingStatusChanged.next(false);
-				return [this.transformBreachesFromServer(breaches)];
+				return [this.transformBreachesFromServer(breaches, accessToken)];
 			}),
 			catchError((error) => {
 				console.error('Confirmation Error', error);
@@ -188,7 +188,7 @@ export class EmailScannerService {
 		return response;
 	}
 
-	private transformBreachesFromServer(breaches: BreachedAccountsFromServerResponse) {
+	private transformBreachesFromServer(breaches: BreachedAccountsFromServerResponse, isHaveToken: string) {
 		return breaches.data.reduce((acc, breachData) => {
 			const date = new Date(breachData.publish_date * 1000);
 			const newData = {
@@ -200,6 +200,7 @@ export class EmailScannerService {
 				details: breachData.breach.description,
 				image: '',
 				hasPassword: breachData.record_has_password,
+				isEmailConfirmed: !!isHaveToken
 			};
 			acc.push(newData);
 			return acc;

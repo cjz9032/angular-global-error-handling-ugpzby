@@ -70,7 +70,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	}
 
 	openFigleafByUrl(link) {
-		this.vantageCommunicationService.openFigleafByUrl(link);
+		link ? this.vantageCommunicationService.openFigleafByUrl(link) : this.openFigleafApp();
 	}
 
 	getTextForTooltip(numberOfIssues) {
