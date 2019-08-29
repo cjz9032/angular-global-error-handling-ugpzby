@@ -488,6 +488,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.title') {
 			this.legionUpdate[0].isDriverPopup = false;
 		}
+		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
+			this.legionUpdate[2].isDriverPopup = false;
+		}
 	}
 
 	public async toggleOnOffRamOCStatus($event) {
