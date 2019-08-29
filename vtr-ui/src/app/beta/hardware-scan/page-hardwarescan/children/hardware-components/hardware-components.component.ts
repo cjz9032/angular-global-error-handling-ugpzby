@@ -254,6 +254,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					console.log('[End]: getDoScan()');
 					console.log(this.finalResponse);
 				})
+				.catch(() => {
+					// This command avoid crashs on HW Scan and cancelScan if an exception occurs.
+					this.cancelRequested = true;
+				})
 				.finally(() => {
 					this.cleaningUpScan(undefined);
 				});
