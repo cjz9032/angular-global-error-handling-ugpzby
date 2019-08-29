@@ -198,6 +198,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		}
 		this.hideRemainingTimeTxt = false;
 	}
+
 	// returns windows object
 	private getCssPropertyValue(propertyName: string): string {
 		if (this.cssStyleDeclaration) {
