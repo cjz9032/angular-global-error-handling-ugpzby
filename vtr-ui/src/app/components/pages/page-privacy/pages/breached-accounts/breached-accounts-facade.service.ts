@@ -80,12 +80,13 @@ export class BreachedAccountsFacadeService {
 	);
 
 	isShowVerifyBlock$ = combineLatest([
+		this.breachedAccountWereScanned$,
 		this.isAccountVerify$,
 		this.isFigleafReadyForCommunication$,
 		this.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$
 	]).pipe(
-		map(([isAccountVerify, isFigleafReadyForCommunication, isBreachedFoundAndUserNotAuthorizedWithoutFigleaf]) => (
-			(!isAccountVerify && isFigleafReadyForCommunication) || isBreachedFoundAndUserNotAuthorizedWithoutFigleaf
+		map(([breachedAccountWereScanned, isAccountVerify, isFigleafReadyForCommunication, isBreachedFoundAndUserNotAuthorizedWithoutFigleaf]) => (
+			(breachedAccountWereScanned && !isAccountVerify && isFigleafReadyForCommunication) || isBreachedFoundAndUserNotAuthorizedWithoutFigleaf
 		))
 	);
 }
