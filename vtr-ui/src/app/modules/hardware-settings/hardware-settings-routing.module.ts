@@ -10,6 +10,7 @@ import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/pa
 import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { PageHardwareScanComponent } from './../../beta/hardware-scan/page-hardwarescan/page-hardware-scan.component';
 
 
 const routes: Routes = [
@@ -96,6 +97,16 @@ const routes: Routes = [
 	{
 		path: 'system-updates',
 		component: PageDeviceUpdatesComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'Device.SystemUpdate',
+			pageContent: 'My Device Status'
+		}
+	},
+	{
+		path: 'hardware-scan',
+		component: PageHardwareScanComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
