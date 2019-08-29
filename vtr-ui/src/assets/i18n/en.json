@@ -392,7 +392,7 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speed. If you are using any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
+			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
