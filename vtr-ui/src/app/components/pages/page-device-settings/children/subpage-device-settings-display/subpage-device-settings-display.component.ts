@@ -175,34 +175,44 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	initEyeCareModeFromCache() {
-		this.eyeCareModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, undefined);
-		if (this.eyeCareModeCache) {
-			this.eyeCareModeStatus.available = this.eyeCareModeCache.available;
-			if (!this.eyeCareModeStatus.available) {
-				return;
+		try {
+			this.eyeCareModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, undefined);
+			if (this.eyeCareModeCache) {
+				this.eyeCareModeStatus.available = this.eyeCareModeCache.available;
+				if (!this.eyeCareModeStatus.available) {
+					return;
+				}
+				this.eyeCareModeStatus.status = this.eyeCareModeCache.toggleStatus;
+				this.eyeCareDataSource = this.eyeCareModeCache.eyeCareDataSource;
+				this.enableSlider = this.eyeCareModeCache.enableSlider;
+				this.enableSunsetToSunrise = this.eyeCareModeCache.enableSunsetToSunrise;
+				this.sunsetToSunriseModeStatus = this.eyeCareModeCache.sunsetToSunriseStatus;
+			} else {
+				this.eyeCareModeCache = new EyeCareModeCapability();
 			}
-			this.eyeCareModeStatus.status = this.eyeCareModeCache.toggleStatus;
-			this.eyeCareDataSource = this.eyeCareModeCache.eyeCareDataSource;
-			this.enableSlider = this.eyeCareModeCache.enableSlider;
-			this.enableSunsetToSunrise = this.eyeCareModeCache.enableSunsetToSunrise;
-			this.sunsetToSunriseModeStatus = this.eyeCareModeCache.sunsetToSunriseStatus;
-		} else {
-			this.eyeCareModeCache = new EyeCareModeCapability();
+		} catch (error) {
+			console.error('initEyeCareModeFromCache', error);
 		}
 	}
+
 	initDisplayColorTempFromCache() {
-		this.displayColorTempCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, undefined);
-		if (this.displayColorTempCache) {
-			this.displayColorTempDataSource.available = this.displayColorTempCache.available;
-			if (!this.displayColorTempDataSource.available) {
-				return;
+		try {
+			this.displayColorTempCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, undefined);
+			if (this.displayColorTempCache) {
+				this.displayColorTempDataSource = {};
+				this.displayColorTempDataSource.available = this.displayColorTempCache.available;
+				if (!this.displayColorTempDataSource.available) {
+					return;
+				}
+				this.displayColorTempDataSource.current = this.displayColorTempCache.current;
+				this.displayColorTempDataSource.maximum = this.displayColorTempCache.maximum;
+				this.displayColorTempDataSource.minimum = this.displayColorTempCache.minimum;
+				this.displayColorTempDataSource.eyemodestate = this.displayColorTempCache.eyeCareMode;
+			} else {
+				this.displayColorTempCache = new EyeCareModeResponse();
 			}
-			this.displayColorTempDataSource.current = this.displayColorTempCache.current;
-			this.displayColorTempDataSource.maximum = this.displayColorTempCache.maximum;
-			this.displayColorTempDataSource.minimum = this.displayColorTempCache.minimum;
-			this.displayColorTempDataSource.eyemodestate = this.displayColorTempCache.eyeCareMode;
-		} else {
-			this.displayColorTempCache = new EyeCareModeResponse();
+		} catch (error) {
+			console.error('initDisplayColorTempFromCache', error);
 		}
 	}
 
