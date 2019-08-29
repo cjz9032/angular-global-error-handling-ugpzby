@@ -45,6 +45,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
+	public hpdSensorType = 0;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -108,6 +109,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
 			this.setIntelligentSecurity();
+			this.initHPDSensorType();
 			this.setIntelligentScreen();
 			this.initSmartAssist(true);
 		}
@@ -446,6 +448,22 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 		} catch (error) {
 			console.error('getVideoPauseResumeStatus' + error.message);
+		}
+	}
+
+	initHPDSensorType() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDSensorType()
+					.then((type: number) => {
+						this.hpdSensorType = type;
+						console.log('getHPDSensorType: ', this.hpdSensorType);
+					}).catch(error => {
+						console.error('getHPDSensorType', error);
+					});
+			}
+		} catch (error) {
+			console.error('getHPDSensorType' + error.message);
 		}
 	}
 }
