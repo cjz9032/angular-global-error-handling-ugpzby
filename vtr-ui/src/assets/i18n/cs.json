@@ -2363,7 +2363,7 @@
             "error": "Chyba",
             "delete": "Odstranit",
             "warningBatterySaver": "Poznámka: Plánovaná skenování se neprovedou v režimu úspory baterie",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Další skenování bylo naplánováno již během deseti minut. Zvolte jiný čas."
         },
         "recoverBadSectors": {
             "title": "Obnovit vadné sektory",
@@ -2412,6 +2412,7 @@
         "yes": "Ano",
         "attention": "Upozornění",
         "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
-        "cancelTextProgress": "Počkejte na dokončení procesu zrušení"
+        "cancelTextProgress": "Počkejte na dokončení procesu zrušení",
+		"pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je."
     }
 }

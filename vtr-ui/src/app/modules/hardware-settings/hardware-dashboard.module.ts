@@ -25,6 +25,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { CommonPipeModule } from '../common/common-pipe.module';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 @NgModule({
 	declarations: [
@@ -52,7 +53,8 @@ import { CommonPipeModule } from '../common/common-pipe.module';
 		ReactiveFormsModule,
 		NgbModalModule,
 		CommonPipeModule,
-		PageLayoutModule
+		PageLayoutModule,
+		AppSearchModule
 	],
 	exports: [
 		MetricsModule,
@@ -64,6 +66,7 @@ import { CommonPipeModule } from '../common/common-pipe.module';
 		FormsModule,
 		ReactiveFormsModule,
 		PageLayoutModule,
+		AppSearchModule
 	],
 	providers: [MockService],
 	entryComponents: [FeedbackFormComponent],

@@ -18,19 +18,6 @@ export class HomeSecurityMockService {
 			consoleUrl: ''
 		},
 		overview: {
-			devicePostures: {
-				value: [
-					{ name: 'PasswordProtection', vulnerable: false },
-					{ name: 'HardDriveEncryption', vulnerable: true },
-					{ name: 'AntiVirusAvailability', vulnerable: false },
-					{ name: 'FirewallAvailability', vulnerable: false },
-					{ name: 'AppsFromUnknownSources', vulnerable: true },
-					{ name: 'DeveloperMode', vulnerable: true },
-					{ name: 'NotActivatedWindows', vulnerable: false },
-					{ name: 'UacNotification', vulnerable: false }],
-				getDevicePosture() { return Promise.resolve(); },
-				cancelGetDevicePosture() {}
-			},
 			myDevice: {
 				name: 'ThinkPad T470',
 				protected: true,

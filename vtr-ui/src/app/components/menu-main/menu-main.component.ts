@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, Optional } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -43,6 +43,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	public countryCode: string;
 	public locale: string;
 	public items: any = [];
+	public showSearchBox = false;
+
 	showMenu = false;
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
@@ -130,8 +132,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	onFocus(): void {
 		this.showVpn();
 	}
-	@HostListener('document:click', ['$event.target'])
-	onClick(targetElement) {
+
+	@HostListener('document:click', ['$event'])
+	onClick(event) {
+		const targetElement = event.target;
 		if (this.menuTarget) {
 			const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 			const toggleMenuButton =
@@ -139,6 +143,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			if (!clickedInside && !toggleMenuButton) {
 				this.showMenu = false;
 			}
+		}
+
+		if (!event.fromSearchBox && !event.fromSearchMenu) {
+			this.updateSearchBoxState(false);
 		}
 	}
 
@@ -236,9 +244,33 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		return showItem;
 	}
 
+	isCommomItem(item) {
+		return item.id !== 'user' && item.id !== 'app-search';
+	}
+
+	updateSearchBoxState(isActive) {
+		this.showSearchBox = isActive;
+	}
+
+	onMenuItemClick(item, event?) {
+		this.showMenu = false;
+		if (item.id === 'app-search') {
+			this.updateSearchBoxState(!this.showSearchBox);
+			if (event) {
+				event.fromSearchMenu = true;
+			}
+		}
+	}
+
+	onClickSearchMask() {
+		this.showMenu = false;
+		this.updateSearchBoxState(false);
+	}
+
 	menuItemClick(event, path) {
-		// console.log (path);
-		this.router.navigateByUrl(path);
+		if (path) {
+			this.router.navigateByUrl(path);
+		}
 	}
 
 	//  to popup Lenovo ID modal dialog

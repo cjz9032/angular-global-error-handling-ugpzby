@@ -2363,7 +2363,7 @@
             "error": "Chyba",
             "delete": "Odstrániť",
             "warningBatterySaver": "Poznámka: Plánované snímania sa nevykonajú v režime Šetrič batérie",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "V rámci desaťminútového časového rozpätia už je naplánovaná iná kontrola. Vyberte iný čas."
         },
         "recoverBadSectors": {
             "title": "Obnoviť chybné sektory",
@@ -2412,6 +2412,7 @@
         "yes": "Áno",
         "attention": "Upozornenie",
         "cancelTextPrompt": "Naozaj chcete vykonať zrušenie?",
-        "cancelTextProgress": "Počkajte na informácie o postupe rušenia"
+        "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
+		"pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju."
     }
 }

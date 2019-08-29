@@ -146,7 +146,12 @@ export class PageNetworkboostComponent implements OnInit {
     try {
       this.toggleStatus = event.switchValue;
       await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
-      // need to set cache
+      if (!this.toggleStatus) {
+        if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) == 2) {
+          this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup , 1);
+        }
+      }
+      this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
     } catch (err) {
       console.log(`ERROR in setNetworkBoostStatus()`, err);
     }

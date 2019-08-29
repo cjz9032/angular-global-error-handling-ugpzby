@@ -2363,7 +2363,7 @@
             "error": "エラー",
             "delete": "削除",
             "warningBatterySaver": "注: スケジュール・スキャンは、バッテリー節約モードでは実行されません",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "10分以内に別のスキャンが既にスケジュールされています。別の時間を選択してください。"
         },
         "recoverBadSectors": {
             "title": "不良セクターの復元",
@@ -2412,6 +2412,7 @@
         "yes": "はい",
         "attention": "重要",
         "cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
-        "cancelTextProgress": "キャンセルの進捗をお待ちください"
+        "cancelTextProgress": "キャンセルの進捗をお待ちください",
+		"pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。"
     }
 }

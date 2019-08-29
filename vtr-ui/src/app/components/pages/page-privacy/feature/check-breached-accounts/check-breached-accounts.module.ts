@@ -11,6 +11,7 @@ import { BreachedAccountComponent } from './breached-account/breached-account.co
 import { BreachedDescriptionComponent } from './breached-description/breached-description.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { BreachedOtherDescriptionComponent } from './breached-other-description/breached-other-description.component';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { BreachedOtherDescriptionComponent } from './breached-other-description/
 		CommonModule,
 		ReactiveFormsModule,
 		FormsModule,
-		VtrCommonModule
+		VtrCommonModule,
+		AppSearchModule
 	],
 })
 export class CheckBreachedAccountsModule {
