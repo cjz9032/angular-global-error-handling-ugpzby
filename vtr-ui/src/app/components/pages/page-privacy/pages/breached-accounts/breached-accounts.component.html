@@ -56,7 +56,7 @@
 		</vtr-email-scanner>
 
 		<vtr-breached-account
-			*ngIf="(breachedAccounts$ | async)?.length && !(isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async)"
+			*ngIf="((isUserAuthorized$ | async) || (isFigleafReadyForCommunication$ | async)) && (breachedAccounts$ | async)?.length"
 			[breachedAccounts]="(breachedAccounts$ | async)"
 			[isUserAuthorized]="isUserAuthorized$ | async"
 			[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"

@@ -11,13 +11,20 @@ $leftIndent: 7.5rem;
 		left: 50%;
 		top: 10%;
 		transform: translate(-50%, 0);
-		display: flex;
-		flex-flow: column;
 		border-radius: 10px;
 		box-shadow: 0 7px 31px 0 rgba(52,73,94,0.18);
-		padding: 6rem;
 		background: #fff;
+
+		&--confirmation {
+			padding: 3rem 3rem 4rem 3rem;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-flow: column;
 		text-align: center;
+		padding: 6rem;
 	}
 
 	&__title {

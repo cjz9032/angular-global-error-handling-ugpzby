@@ -59,13 +59,12 @@ export class BreachedAccountsFacadeService {
 
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = combineLatest([
 		this.emailWasScanned$,
-		this.breachedAccounts$,
+		this.breachedAccountsCount$,
 		this.isUserAuthorized$,
 		this.isFigleafReadyForCommunication$
 	]).pipe(
-		map(([emailWasScanned, breachedAccounts, isUserAuthorized, isFigleafReadyForCommunication]) => (
-			emailWasScanned && breachedAccounts.length && !isUserAuthorized && !isFigleafReadyForCommunication
+		map(([emailWasScanned, breachedAccountsCount, isUserAuthorized, isFigleafReadyForCommunication]) => (
+			emailWasScanned && breachedAccountsCount && !isUserAuthorized && !isFigleafReadyForCommunication
 		)),
-		startWith(false)
 	);
 }

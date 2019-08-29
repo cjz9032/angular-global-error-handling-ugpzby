@@ -173,6 +173,11 @@ export class EmailScannerService {
 		if (SHA1HashFromEmail) {
 			response = this.http.get<BreachedAccountsFromServerResponse>(
 				`${this.environment.backendUrl}/api/v1/vantage/public/emailbreaches?email_hash=${SHA1HashFromEmail}`,
+				{
+					headers: new HttpHeaders({
+						'Accept-Version': 'v1.1'
+					})
+				}
 			);
 		}
 
@@ -190,7 +195,7 @@ export class EmailScannerService {
 				domain: breachData.breach.site,
 				date: date.toDateString(),
 				email: breachData.email,
-				password: breachData.password_plaintext,
+				password: breachData.password_plaintext || '',
 				name: breachData.username,
 				details: breachData.breach.description,
 				image: '',
