@@ -21,6 +21,7 @@ export class WidgetHardwareScanComponent implements OnInit {
 	@Input() percent = 0;
 	@Input() showProgress = false;
 	@Input() disableQuickScan: boolean;
+	@Input() disableCancel: boolean;
 	@Input() tooltipInformation: any;
 	@Input() offlineText: string;
 	@Input() isOnline = true;

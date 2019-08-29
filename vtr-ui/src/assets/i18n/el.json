@@ -2363,7 +2363,7 @@
             "error": "Σφάλμα",
             "delete": "Διαγραφή",
             "warningBatterySaver": "Σημείωση: Οι προγραμματισμένες σαρώσεις δεν θα εκτελεστούν στη λειτουργία εξοικονόμησης μπαταρίας",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Μια άλλη σάρωση είχε ήδη προγραμματιστεί εντός χρονικού διαστήματος δέκα λεπτών. Επιλέξτε μια άλλη ώρα."
         },
         "recoverBadSectors": {
             "title": "Αποκατάσταση κατεστραμμένων τομέων",
@@ -2412,6 +2412,7 @@
         "yes": "Ναι",
         "attention": "Προσοχή",
         "cancelTextPrompt": "Σίγουρα θέλετε να ακυρώσετε τη διαδικασία;",
-        "cancelTextProgress": "Περιμένετε να ακυρωθεί η πρόοδος"
+        "cancelTextProgress": "Περιμένετε να ακυρωθεί η πρόοδος",
+		"pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της."
     }
 }

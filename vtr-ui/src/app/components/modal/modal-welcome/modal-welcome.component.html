@@ -12,7 +12,7 @@
 	<!-- <div class="vtr-modal-body"> -->
 	<div *ngSwitchCase="1">
 		<div class="card shadow-sm">
-			<div class="card-body p-0">
+			<div class="card-body p-0" *ngIf="'welcometutorial.title1' | translate">
 				<div class="banner-page-1 row justify-content-center align-items-center">
 					<div class="col-auto title-alignment">
 						<div class="row justify-content-center align-items-center">
@@ -38,12 +38,9 @@
 					<div class="row no-gutters justify-content-center align-items-center">
 						<div class="col-auto title2">
 							<ul>
-								<li *ngIf="'welcometutorial.bullets1' | translate">
-									{{"welcometutorial.bullets1" | translate }}</li>
-								<li *ngIf="'welcometutorial.bullets2' | translate">
-									{{"welcometutorial.bullets2" | translate }}</li>
-								<li *ngIf="'welcometutorial.bullets3' | translate">
-									{{"welcometutorial.bullets3" | translate }}</li>
+								<li>{{"welcometutorial.bullets1" | translate }}</li>
+								<li>{{"welcometutorial.bullets2" | translate }}</li>
+								<li>{{"welcometutorial.bullets3" | translate }}</li>
 							</ul>
 						</div>
 					</div>
@@ -77,7 +74,7 @@
 	<!-- end of page1-->
 	<div *ngSwitchCase="2">
 		<div class="card shadow-sm">
-			<div class="card-body p-0">
+			<div class="card-body p-0" *ngIf="'welcometutorial.subtitle1' | translate">
 				<div class="banner-page-2 row justify-content-center align-items-center">
 				</div>
 				<div class="content-page-2"

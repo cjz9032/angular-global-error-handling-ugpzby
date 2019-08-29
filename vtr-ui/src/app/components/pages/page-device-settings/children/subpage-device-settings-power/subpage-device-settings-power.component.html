@@ -160,7 +160,7 @@
 
 	<div class="row py-5"
 		id="power"
-		*ngIf="showPowerSettings()">
+		*ngIf="!isDesktopMachine && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[vtrAppSearchScroller]="['search-usb-charging', 'search-easy-resume']"

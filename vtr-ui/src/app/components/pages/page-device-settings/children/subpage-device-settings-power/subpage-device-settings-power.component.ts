@@ -393,6 +393,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				break;
 		}
 		this.hideBatteryLink();
+		this.showPowerSettings();
 	}
 
 	onUsbChargingStatusChange() {
@@ -822,22 +823,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	// End IdeaNoteBook
 	// Start Lenovo Vantage ToolBar
-	private getVantageToolBarStatus() {
+	private async getVantageToolBarStatus() {
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getVantageToolBarStatus()
-					.then((featureStatus: FeatureStatus) => {
-						console.log('getVantageToolBarStatus.then', featureStatus);
-						this.vantageToolbarStatus = featureStatus;
-						this.commonService.setLocalStorageValue(LocalStorageKey.VantageToolbarCapability, featureStatus);
-					})
-					.catch(error => {
-						console.error('getVantageToolBarStatus', error);
-					});
+				const featureStatus = await this.powerService.getVantageToolBarStatus();
+				console.log('getVantageToolBarStatus.then', featureStatus);
+				this.vantageToolbarStatus = featureStatus;
+				this.hideOtherSettings();
 			}
 		} catch (error) {
 			console.error(error.message);
+			this.hideOtherSettings();
 		}
 	}
 
@@ -862,6 +858,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		console.log('getStartMonitorCallBack', featureStatus);
 		this.vantageToolbarStatus = featureStatus;
 		this.commonService.setLocalStorageValue(LocalStorageKey.VantageToolbarCapability, featureStatus);
+		this.hideOtherSettings();
 	}
 
 	public startMonitor() {
@@ -1060,9 +1057,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	showPowerSettings() {
 		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
-			return false;
+			// return false;
 		}
-		return true;
+		// return true;
+	}
+
+	hideOtherSettings() {
+		if (this.vantageToolbarStatus && !this.vantageToolbarStatus.available) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
+		}
 	}
 
 	private getEnergyStarCapability() {

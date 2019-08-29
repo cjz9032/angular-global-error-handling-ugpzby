@@ -2346,6 +2346,7 @@
 		"attention": "Attention",
 		"cancelTextPrompt": "Are you sure you would like to cancel?",
 		"cancelTextProgress": "Please wait for cancel progress",
+		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

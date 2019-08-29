@@ -1,4 +1,13 @@
 @import "../../app.theme";
+:host-context(.is-gaming) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 9rem;
+  display: block;
+  background-color: $gaming_darkest;
+}
 
 .vtr-menu-main {
   position: fixed;

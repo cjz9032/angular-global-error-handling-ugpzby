@@ -2363,7 +2363,7 @@
             "error": "Ошибка",
             "delete": "Удалить",
             "warningBatterySaver": "Примечание. Запланированные проверки не будут выполняться в режиме экономии заряда",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Еще одна проверка уже была назначена в пределах десятиминутного интервала. Выберите другое время."
         },
         "recoverBadSectors": {
             "title": "Восстановление поврежденных секторов",
@@ -2412,6 +2412,7 @@
         "yes": "Да",
         "attention": "Внимание",
         "cancelTextPrompt": "Действительно отменить?",
-        "cancelTextProgress": "Дождитесь отмены"
+        "cancelTextProgress": "Дождитесь отмены",
+		"pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее."
     }
 }

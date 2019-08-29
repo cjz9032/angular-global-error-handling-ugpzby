@@ -2363,7 +2363,7 @@
             "error": "Fehler",
             "delete": "Löschen",
             "warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus."
         },
         "recoverBadSectors": {
             "title": "Wiederherstellung von fehlerhaften Sektoren",
@@ -2412,6 +2412,7 @@
         "yes": "Ja",
         "attention": "Achtung",
         "cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?",
-        "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist"
+        "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist",
+		"pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn."
     }
 }
