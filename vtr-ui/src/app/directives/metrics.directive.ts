@@ -21,19 +21,19 @@ import {
 
 export interface MetricsData {
 	ItemType: string;
-	ItemName ? : string;
-	ItemParent ? : string;
-	ItemParm ? : string;
-	ItemValue ? : string;
-	viewOrder ? : number;
-	ItemID ? : string;
-	ItemCategory ? : string;
-	ItemPosition ? : string;
-	PageNumber ? : string;
-	SettingParent ? : string;
-	SettingName ? : string;
-	SettingValue ? : string;
-	SettingParm ? : string;
+	ItemName?: string;
+	ItemParent?: string;
+	ItemParm?: string;
+	ItemValue?: string;
+	viewOrder?: number;
+	ItemID?: string;
+	ItemCategory?: string;
+	ItemPosition?: string;
+	PageNumber?: string;
+	SettingParent?: string;
+	SettingName?: string;
+	SettingValue?: string;
+	SettingParm?: string;
 }
 
 
@@ -126,13 +126,12 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event.target'])
 	async onclick(target) {
-		// checking for metrics values
 		if (!this.metricsParent) {
-			// this.metricsParent = this.activatedRoute.snapshot.data.pageName; // the parent name must be there, this line creates unwanted pagenames in gaming and hardware
-			this.devService.writeLog('sending metric breaks, missing parent name');
+			this.metricsParent = this.activatedRoute.snapshot.data.pageName;
 		}
-		if (!this.metricsEvent) {
-			this.devService.writeLog('sending metric breaks, missing event name');
+
+		if (!this.metricsEvent || !this.metricsParent) {
+			this.devService.writeLog('sending metric breaks, missing event name or parent');
 			return;
 		}
 
