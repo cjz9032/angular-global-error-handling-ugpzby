@@ -49,7 +49,8 @@
 													(closeClicked)="onClosed($event)">
 												</vtr-ui-popover>
 												<vtr-ui-gaming-driver-popup [showMePartially]="item.isDriverPopup"
-													[popupText]="item.driverPopupText"></vtr-ui-gaming-driver-popup>
+													[popupText]="item.driverPopupText" (driverpopval)="onClosed(item)">
+												</vtr-ui-gaming-driver-popup>
 												<fa-icon class=" question" triggers="click:blur" placement="auto"
 													[ngbTooltip]="item.tooltipText" [icon]="['far', 'question-circle']"
 													container="body" tooltipClass="vtr-tooltip">

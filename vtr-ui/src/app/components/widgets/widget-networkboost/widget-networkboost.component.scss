@@ -1,4 +1,7 @@
 @import "../../../app.theme.scss";
+.isdisabled {
+	background-color:  $gaming_darker !important;
+}
 .autoclose-wrapper {
 	background: $gaming_darkest;
 	width: 100%;
@@ -20,9 +23,7 @@
 				&:active {
 					transform: scale(0.95);
 				}
-				.isdisabled {
-					background: rgba(255,255,255,0.2) !important;
-				}
+				
 			}
 		}
 		li {
