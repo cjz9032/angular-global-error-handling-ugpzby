@@ -103,7 +103,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		);
 	}
 
-	private getLevelCssValues(level: number): any {
+	getLevelCssValues(level: number): any {
 		// Green:	RemainTimePercent >= 25%
 		// Yellow:	RemainTimePercent  in [15%, 24%]
 		// Red:		RemainTimePercent < 15%
@@ -160,17 +160,6 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				);
 				break;
 		}
-		// switch (this.batteryHealth) {
-		// 	case 'Good':
-		// 		borderColor = this.getCssPropertyValue('--border-color-25-100');
-		// 		break;
-		// 	case 'Fair':
-		// 		borderColor = this.getCssPropertyValue('--border-color-15-24');
-		// 		break;
-		// 	case 'Poor':
-		// 		borderColor = this.getCssPropertyValue('--border-color-0-14');
-		// 		break;
-		// }
 		return { borderColor, borderShadowColor, fillColor };
 	}
 
@@ -217,7 +206,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		return '';
 	}
 
-	private getCssDeclaration() {
+	getCssDeclaration() {
 		this.cssStyleDeclaration = window.getComputedStyle(
 			this.batteryIndicator.nativeElement
 		);
