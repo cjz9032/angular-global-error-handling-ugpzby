@@ -53,8 +53,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
-			id: 'legion_edge_cpuoverlock',
-			ariaLabel: 'legion_edge_cpuoverlock',
+			id: 'legionedge cpuoverlock',
+			ariaLabel: 'legionedge cpuoverlock',
 			type: 'gaming.dashboard.device.legionEdge.title'
 		},
 		{
@@ -74,8 +74,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			readonly: true,
-			id: 'legion_edge_ramoverlock',
-			ariaLabel: 'legion_edge_ramoverlock',
+			id: 'legionedge ramoverlock',
+			ariaLabel: 'legionedge ramoverlock',
 			type: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			settings: ''
 		},
@@ -97,8 +97,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			readonly: true,
-			id: 'legion_edge_networkboost',
-			ariaLabel: 'legion_edge_networkboost',
+			id: 'legionedge networkboost',
+			ariaLabel: 'legionedge networkboost',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',
 			canNavigate: true,
@@ -120,8 +120,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: false,
 			tooltipText: '',
-			id: 'legion_edge_autoclose',
-			ariaLabel: 'legion_edge_autoclose',
+			id: 'legionedge autoclose',
+			ariaLabel: 'legionedge autoclose',
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose',
 			canNavigate: true,
@@ -145,8 +145,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			readonly: true,
-			id: 'legion_edge_hybridmode',
-			ariaLabel: 'legion_edge_hybridmode',
+			id: 'legionedge hybridmode',
+			ariaLabel: 'legionedge hybridmode',
 			type: 'gaming.dashboard.device.legionEdge.hybridMode',
 			settings: ''
 		},
@@ -166,8 +166,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isDriverPopup: false,
 			isChecked: true,
 			tooltipText: '',
-			id: 'legion_edge_touchpadlock',
-			ariaLabel: 'legion_edge_touchpadlock',
+			id: 'legionedge touchpadlock',
+			ariaLabel: 'legionedge touchpadlock',
 			type: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			settings: ''
 		}
@@ -182,21 +182,21 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				header: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
-				id: 'cpu_overclock_on',
+				id: 'cpu overclock on',
 				value: 1
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
-				id: 'cpu_overclock_when_gaming',
+				id: 'cpu overclock when gaming',
 				value: 2
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.off',
 				name: 'gaming.dashboard.device.legionEdge.status.off',
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
-				id: 'cpu_overclock_off',
+				id: 'cpu overclock off',
 				value: 3
 			}
 		]
