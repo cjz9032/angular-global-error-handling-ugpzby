@@ -172,8 +172,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	public onCancelScan() {
-		if (this.isRecoverExecuting() && !this.isDisableCancel()) {
-			if (this.hardwareScanService) {
+		if (this.isRecoverExecuting()) {
+			if (this.hardwareScanService  && !this.isDisableCancel()) {
 				console.log('[onCancelScan] Start');
 				this.hardwareScanService.cancelScanExecution()
 					.then((response) => {
