@@ -2363,7 +2363,7 @@
             "error": "Errore",
             "delete": "Elimina",
             "warningBatterySaver": "Nota: le scansioni pianificate non verranno eseguite in modalità risparmio batteria",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Un'altra scansione è stata già pianificata in un intervallo di tempo di dieci minuti. Selezionare un altro orario."
         },
         "recoverBadSectors": {
             "title": "Ripristina settori danneggiati",
@@ -2412,6 +2412,7 @@
         "yes": "Sì",
         "attention": "Attenzione",
         "cancelTextPrompt": "Annullare l'operazione?",
-        "cancelTextProgress": "Attendere l'annullamento dell'operazione"
+        "cancelTextProgress": "Attendere l'annullamento dell'operazione",
+		"pluginNotUpdate": "La scansione hardware non è disponibile perché è obsoleta. Eseguire l'aggiornamento."
     }
 }

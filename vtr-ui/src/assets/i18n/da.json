@@ -2363,7 +2363,7 @@
             "error": "Fejl",
             "delete": "Slet",
             "warningBatterySaver": "Bemærk: Planlagte scanninger kører ikke i strømsparetilstand",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Der er allerede planlagt en anden søgning inden for en ti minutters tidsperiode. Vælg et andet klokkeslæt."
         },
         "recoverBadSectors": {
             "title": "Retablering af dårlige sektorer",
@@ -2412,6 +2412,7 @@
         "yes": "Ja",
         "attention": "Advarsel!",
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
-        "cancelTextProgress": "Vent et øjeblik, mens status annulleres"
+        "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
+		"pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den."
     }
 }

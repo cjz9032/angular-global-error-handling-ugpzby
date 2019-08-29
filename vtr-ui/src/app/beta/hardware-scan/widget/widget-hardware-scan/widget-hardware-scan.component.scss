@@ -203,6 +203,7 @@
 			text-transform: uppercase;
 
 			.cancel-check-text {
+				color: $light;
 				cursor: pointer;
 				border-bottom: medium solid $main_gstart;
 				padding-bottom: 1rem;
@@ -211,6 +212,14 @@
 					color: $light;
 					border: none;
 				}
+			}
+
+			.disabled-cancel {
+				color: $shade_light;
+				cursor: default;
+				pointer-events: none !important;
+				border-bottom: medium solid $main_light;
+				padding-bottom: 1rem;
 			}
 		}
 

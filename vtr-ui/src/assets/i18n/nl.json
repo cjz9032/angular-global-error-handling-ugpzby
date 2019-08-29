@@ -2363,7 +2363,7 @@
             "error": "Fout",
             "delete": "Verwijderen",
             "warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip."
         },
         "recoverBadSectors": {
             "title": "Slechte sectoren herstellen",
@@ -2412,6 +2412,7 @@
         "yes": "Ja",
         "attention": "Let op",
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
-        "cancelTextProgress": "Wacht op de voortgang van de annulering"
+        "cancelTextProgress": "Wacht op de voortgang van de annulering",
+		"pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
     }
 }

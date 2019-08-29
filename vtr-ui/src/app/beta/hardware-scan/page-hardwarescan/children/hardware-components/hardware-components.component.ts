@@ -190,8 +190,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				if (this.hardwareScanService) {
 					console.log('[onCancelScan] Start');
 					this.cancelRequested = true;
+					//this.cancelHandler.cancel();
 					this.hardwareScanService.cancelScanExecution()
 						.then((response) => {
+							console.log('response: ', response);
 						});
 				}
 			});
@@ -251,6 +253,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					}
 					console.log('[End]: getDoScan()');
 					console.log(this.finalResponse);
+				})
+				.finally(() => {
+					this.cleaningUpScan(undefined);
 				});
 		}
 	}
@@ -463,7 +468,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
 			statusValue: HardwareScanTestResult.Pass,
 			statusToken: this.statusToken(HardwareScanTestResult.Pass),
-			date: dateString,
+			date: this.finalResponse.startDate,
 			information: this.finalResponse.resultDescription,
 			items: []
 		};
@@ -513,6 +518,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
+		this.hardwareScanService.setIsViewingRecoverLog(false);
 		this.hardwareScanService.setViewResultItems(results);
 		this.hardwareScanService.setScanExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);
@@ -575,6 +581,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
+		this.hardwareScanService.setIsViewingRecoverLog(true);
 		this.hardwareScanService.setViewResultItems(results);
 		this.hardwareScanService.setRecoverExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);
@@ -596,6 +603,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public finalStatusToken() {
 		return this.completeStatusToken;
+	}
+
+	public isDisableCancel() {
+		return this.hardwareScanService.isDisableCancel();
 	}
 
 	private onNotification(notification: AppNotification) {

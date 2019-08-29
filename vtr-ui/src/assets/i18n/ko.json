@@ -2363,7 +2363,7 @@
             "error": "오류",
             "delete": "삭제",
             "warningBatterySaver": "참고: 예약된 검사는 배터리 절약 모드에서 수행되지 않음",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "다른 스캔이 이미 10분 시간 범위 내에 예약되었습니다. 다른 시간을 선택하십시오."
         },
         "recoverBadSectors": {
             "title": "불량 섹터 복구",
@@ -2412,6 +2412,7 @@
         "yes": "예",
         "attention": "주의",
         "cancelTextPrompt": "정말 취소하시겠습니까?",
-        "cancelTextProgress": "취소 진행을 기다리십시오"
+        "cancelTextProgress": "취소 진행을 기다리십시오",
+		"pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오."
     }
 }

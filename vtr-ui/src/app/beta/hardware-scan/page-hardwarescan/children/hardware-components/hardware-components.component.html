@@ -6,6 +6,7 @@
 				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
 				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
 				[finalResultCode]="finalResultCode" [disableQuickScan]="!isLoadingDone()"
+				[disableCancel]="isDisableCancel()"
 				[tooltipInformation]="tooltipInformation"
 				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
 				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
