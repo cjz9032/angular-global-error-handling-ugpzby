@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { combineLatest } from 'rxjs';
-import { distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
@@ -17,14 +17,25 @@ export class BreachedAccountsFacadeService {
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	breachedAccounts$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
+			debounceTime(100),
 			filter((breachedAccounts) => breachedAccounts.error === null),
 			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				})
 			)
 		);
+	isAccountVerify$ = this.breachedAccountsService.onGetBreachedAccounts$
+		.pipe(
+			debounceTime(100),
+			filter((breachedAccounts) => breachedAccounts.error === null),
+			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
+					return !(breach.hasOwnProperty('isEmailConfirmed') && breach.isEmailConfirmed === false);
+				})
+			),
+			map((breachedAccounts) => breachedAccounts.length > 0)
+		);
 	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
-	emailWasScanned$ = this.appStatusesService.globalStatus$.pipe(
+	breachedAccountWereScanned$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.undefined &&
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.error),
@@ -58,13 +69,23 @@ export class BreachedAccountsFacadeService {
 	);
 
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = combineLatest([
-		this.emailWasScanned$,
+		this.breachedAccountWereScanned$,
 		this.breachedAccountsCount$,
 		this.isUserAuthorized$,
 		this.isFigleafReadyForCommunication$
 	]).pipe(
-		map(([emailWasScanned, breachedAccountsCount, isUserAuthorized, isFigleafReadyForCommunication]) => (
-			emailWasScanned && breachedAccountsCount && !isUserAuthorized && !isFigleafReadyForCommunication
+		map(([breachedAccountWereScanned, breachedAccountsCount, isUserAuthorized, isFigleafReadyForCommunication]) => (
+			breachedAccountWereScanned && breachedAccountsCount && !isUserAuthorized && !isFigleafReadyForCommunication
 		)),
+	);
+
+	isShowVerifyBlock$ = combineLatest([
+		this.isAccountVerify$,
+		this.isFigleafReadyForCommunication$,
+		this.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$
+	]).pipe(
+		map(([isAccountVerify, isFigleafReadyForCommunication, isBreachedFoundAndUserNotAuthorizedWithoutFigleaf]) => (
+			(!isAccountVerify && isFigleafReadyForCommunication) || isBreachedFoundAndUserNotAuthorizedWithoutFigleaf
+		))
 	);
 }

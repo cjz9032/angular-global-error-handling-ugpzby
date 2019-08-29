@@ -23,6 +23,8 @@ export class VerifyEmailComponent {
 
 	verifyEmailClick() {
 		this.verifyEmailEmit.emit(true);
-		this.isShowConfrimation = true;
+		if (!this.isFigleafReadyForCommunication) {
+			this.isShowConfrimation = true;
+		}
 	}
 }
