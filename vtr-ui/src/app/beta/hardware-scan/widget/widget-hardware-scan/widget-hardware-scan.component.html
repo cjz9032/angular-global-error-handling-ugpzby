@@ -47,7 +47,7 @@
 
 					<div class="col col-12 row">
 						<div class="cancel-check" *ngIf="!(percent === 100)">
-							<a class="cancel-check-text" (click)="onCancel()">{{cancelText}}</a>
+							<a [ngClass]="{'cancel-check-text': !disableCancel, 'disabled-cancel': disableCancel}" (click)="onCancel()">{{cancelText}}</a>
 						</div>
 						<div class="container final-result-code" *ngIf="finalResultCode">
 							<span class="result-code-value-text">{{finalResultCodeText}}:</span>

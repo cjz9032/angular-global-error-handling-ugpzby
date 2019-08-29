@@ -2363,7 +2363,7 @@
             "error": "Error",
             "delete": "Eliminar",
             "warningBatterySaver": "Nota: los análisis planificados no se ejecutarán en la modalidad de ahorro de batería",
-            "scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time."
+			"scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento."
         },
         "recoverBadSectors": {
             "title": "Recuperar sectores incorrectos",
@@ -2412,6 +2412,7 @@
         "yes": "Sí",
         "attention": "Atención",
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
-        "cancelTextProgress": "Espere el proceso de cancelación"
+        "cancelTextProgress": "Espere el proceso de cancelación",
+		"pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
     }
 }

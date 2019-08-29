@@ -24,8 +24,8 @@
 				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row mb-40">
-								<div class="col col-12 cont" *ngIf="(isLoadingDone() || isScanDoneExecuting()) && !isRecoverInProgress() && !isRecoverExecuting()">
+							<div class="row">
+								<div class="col col-12 cont mb-40" *ngIf="((isLoadingDone() || isScanDoneExecuting()) && !isRecoverInProgress() && !isRecoverExecuting()) && !getIsViewingRecoverLog()">
 									<vtr-widget-schedule-scan>
 									</vtr-widget-schedule-scan>
 								</div>
@@ -48,9 +48,9 @@
 								</div>
 							</div>
 
-							<div class="row mb-40">
-								<div class="col col-12 cont"
-									*ngIf="hasDevicesToRecoverBadSectors() && !isRecoverInProgress() && isLoadingDone()">
+							<div class="row">
+								<div class="col col-12 cont mb-40"
+									*ngIf="(hasDevicesToRecoverBadSectors() && !isRecoverInProgress() && isLoadingDone()) && !getIsViewingRecoverLog()">
 									<vtr-widget-recover-bad-sectors
 										[title]="'hardwareScan.recoverBadSectors.title' | translate"
 										[description]="'hardwareScan.recoverBadSectors.description' | translate"
