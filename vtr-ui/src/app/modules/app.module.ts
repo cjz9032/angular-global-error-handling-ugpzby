@@ -48,6 +48,7 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclama
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { ModernPreloadModule } from './modern-preload/modern-preload.module';
 import { PageLayoutModule } from '../components/page-layout/page-layout.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 library.add(faCheck);
 library.add(faExclamation);
@@ -101,6 +102,7 @@ library.add(faQuestionCircle);
 		ReactiveFormsModule,
 		ModernPreloadModule,
 		PageLayoutModule,
+		FontAwesomeModule
 	],
 	exports: [
 		NavbarModule,
