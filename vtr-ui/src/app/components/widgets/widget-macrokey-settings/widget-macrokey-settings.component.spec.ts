@@ -13,7 +13,13 @@ const macrokeyServiceMock = jasmine.createSpyObj('MacrokeyService', [
 	'getMacrokeyRecordedStatusCache',
 	'getMacrokeyInitialKeyDataCache',
 	'getMacrokeyInputChangeCache',
-	'gamingMacroKeyInitializeEvent'
+	'gamingMacroKeyInitializeEvent',
+	'setMacrokeyTypeStatusCache',
+	'setMacrokeyRecordedStatusCache',
+	'setMacrokeyInputChangeCache',
+	'setMacrokeyInitialKeyDataCache',
+	'setStartRecording',
+	'setStopRecording'
 ]);
 
 const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', [
@@ -23,7 +29,7 @@ const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabili
 ]);
 
 const keyTypeSampleData = { MacroKeyStatus: 1, MacroKeyType: 0 };
-const recordedStatusSampleData = [
+let recordedStatusSampleData = [
 	{ key: '7', status: false },
 	{ key: '8', status: false },
 	{ key: '9', status: false },
@@ -87,6 +93,74 @@ fdescribe('WidgetMacrokeySettingsComponent', () => {
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
+	});
+
+	it('Numberpad should be true', () => {
+		keyTypeSampleData.MacroKeyType = 0;
+		component.updateMacroKeyTypeStatusDetails(keyTypeSampleData);
+		expect(component.isNumpad).toEqual(true);
+	});
+
+	it('Numberpad should be false', () => {
+		keyTypeSampleData.MacroKeyType = 1;
+		component.updateMacroKeyTypeStatusDetails(keyTypeSampleData);
+		expect(component.isNumpad).toEqual(false);
+	});
+
+	it('Macrokey status should be off', () => {
+		keyTypeSampleData.MacroKeyStatus = 1;
+		component.updateMacroKeyTypeStatusDetails(keyTypeSampleData);
+		expect(component.macroKeyTypeStatus.MacroKeyStatus).toEqual(1);
+	});
+
+	it('Macrokey status should be on', () => {
+		keyTypeSampleData.MacroKeyStatus = 2;
+		component.updateMacroKeyTypeStatusDetails(keyTypeSampleData);
+		expect(component.macroKeyTypeStatus.MacroKeyStatus).toEqual(2);
+	});
+
+	it('Macrokey status should be when gaming', () => {
+		keyTypeSampleData.MacroKeyStatus = 3;
+		component.updateMacroKeyTypeStatusDetails(keyTypeSampleData);
+		expect(component.macroKeyTypeStatus.MacroKeyStatus).toEqual(3);
+	});
+
+	it('Inital number selected should be 0', () => {
+		component.updateMacroKeyRecordedStatusDetails(recordedStatusSampleData);
+		expect(component.numberSelected.key).toEqual('0');
+	});
+
+	it('Number selected should change to 0', () => {
+		inputChangeSampleData.key = '0';
+		component.updateMacroKeyKeyChangeDetails(inputChangeSampleData);
+		expect(component.numberSelected.key).toEqual('0');
+	});
+
+	it('Number selected should change to 6', () => {
+		inputChangeSampleData.key = '6';
+		component.updateMacroKeyKeyChangeDetails(inputChangeSampleData);
+		expect(component.numberSelected.key).toEqual('6');
+	});
+
+	it('Input data should change to defaults', () => {
+		inputChangeSampleData.key = '0';
+		inputChangeSampleData.macro.interval = 1;
+		inputChangeSampleData.macro.repeat = 1;
+		inputChangeSampleData.macro.inputs = [];
+		component.updateMacroKeyKeyChangeDetails(inputChangeSampleData);
+		expect(component.macroKeyInputData.key).toEqual('0');
+		expect(component.macroKeyInputData.macro.interval).toEqual(1);
+		expect(component.macroKeyInputData.macro.repeat).toEqual(1);
+		expect(component.macroKeyInputData.macro.inputs).toEqual([]);
+	});
+
+	it('Reset inputs and message data when started recording', () => {
+		const recordingChangeData = { recordingStatus: true };
+		component.onRecordingChanged(recordingChangeData);
+		expect(component.macroKeyInputData.macro.inputs).toEqual([]);
+		expect(component.macroKeyMessageData).toEqual('');
+		recordingChangeData.recordingStatus = false;
+		component.onRecordingChanged(recordingChangeData);
 	});
 });
 
