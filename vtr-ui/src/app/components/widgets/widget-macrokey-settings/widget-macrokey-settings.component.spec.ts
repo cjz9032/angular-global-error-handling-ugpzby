@@ -61,6 +61,7 @@ fdescribe('WidgetMacrokeySettingsComponent', () => {
 	macrokeyServiceMock.getMacrokeyTypeStatusCache.and.returnValue(keyTypeSampleData);
 	macrokeyServiceMock.getMacrokeyRecordedStatusCache.and.returnValue(recordedStatusSampleData);
 	macrokeyServiceMock.getMacrokeyInputChangeCache.and.returnValue(sampleInputData);
+	macrokeyServiceMock.getMacrokeyInitialKeyDataCache.and.returnValue(sampleInputData);
 
 	beforeEach(
 		async(() => {
