@@ -245,7 +245,7 @@ export class InputAccessoriesService {
 	public getMouseCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {
-			return	this.mouseAndTouchPad.GetMouseCapability();
+				return this.mouseAndTouchPad.GetMouseCapability();
 			}
 			return this.booleanPromise(false);
 		} catch (error) {
@@ -256,7 +256,7 @@ export class InputAccessoriesService {
 	public getTouchPadCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {
-			return this.mouseAndTouchPad.GetTouchpadCapability();
+				return this.mouseAndTouchPad.GetTouchpadCapability();
 			}
 			return this.booleanPromise(false);
 		} catch (error) {
