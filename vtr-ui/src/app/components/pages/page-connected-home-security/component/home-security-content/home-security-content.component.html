@@ -1,4 +1,4 @@
-<div class="vtr-connected-home">
+<div class="vtr-home-security-content">
 	<div class="container-fluid p-40">
 		<div class="row">
 			<div class="col">
@@ -119,6 +119,11 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="divider" *ngIf="page === 'homeSecurity'"></div>
+		<div class="home-security-card row" *ngIf="page === 'homeSecurity'">
+			<vtr-home-security-card
+			></vtr-home-security-card>
 		</div>
 	</div>
 </div>
