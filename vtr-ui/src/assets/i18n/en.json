@@ -1245,7 +1245,8 @@
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
 					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Login will not work.",
-					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
+					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
 				},
 				"WindowsLink": {
 					"goToWindowsHello": "Go to Windows Hello Settings",

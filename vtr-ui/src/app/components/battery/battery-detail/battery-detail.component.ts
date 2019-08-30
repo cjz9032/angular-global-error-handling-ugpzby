@@ -30,7 +30,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	batteryChargeStatus = BatteryChargeStatus;
 
 	constructor(
-		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		public commonService: CommonService,
 		public cd: ChangeDetectorRef,
