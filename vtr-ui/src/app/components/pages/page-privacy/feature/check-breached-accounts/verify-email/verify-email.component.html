@@ -23,9 +23,10 @@
 			<h3 class="verify__title"><span class="verify__title--red">{{breachedAccountsLength}}</span> breached accounts found</h3>
 			<p class="verify__text">To see breached accounts, verify your email so we can make sure it belongs to you.</p>
 
-			<span>
-			<button class="verify__button" (click)="verifyEmailClick()">Verify email</button>
-		</span>
+			<p>
+				<button class="verify__button"
+						(click)="verifyEmailClick()">{{isFigleafReadyForCommunication ? 'Verify email in app' : 'Verify email'}}</button>
+			</p>
 		</div>
 	</div>
 	<div class="verify__block verify__block--confirmation" *ngIf="isShowConfrimation">
