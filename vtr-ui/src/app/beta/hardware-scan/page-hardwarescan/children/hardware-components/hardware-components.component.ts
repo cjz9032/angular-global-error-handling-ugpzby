@@ -173,7 +173,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCancelScan() {
 		if (this.isRecoverExecuting()) {
-			if (this.hardwareScanService) {
+			if (this.hardwareScanService  && !this.isDisableCancel()) {
 				console.log('[onCancelScan] Start');
 				this.hardwareScanService.cancelScanExecution()
 					.then((response) => {
@@ -391,7 +391,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
 			console.log('[MODAL] ', modalRef.componentInstance.items);
 			modalRef.componentInstance.passEntry.subscribe(() => {
-				this.hardwareScanService.filterCustomTests();
+				this.hardwareScanService.filterCustomTests(this.culture);
 				this.checkPreScanInfo(1); // custom scan
 			});
 		}

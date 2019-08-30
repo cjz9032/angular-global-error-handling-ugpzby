@@ -163,7 +163,21 @@ export class ConfigService {
 				exact: true
 			},
 			subitems: []
-		}]
+		}
+		// {
+		// 		id: 'smart-performance',
+		// 		label: 'Smart performance',
+		// 		path: 'smart-performance',
+		// 		icon: '',
+		// 		metricsEvent: 'itemClick',
+		// 		metricsParent: 'navbar',
+		// 		metricsItem: '',
+		// 		routerLinkActiveOptions: {
+		// 			exact: true
+		// 		},
+		// 		subitems: []
+		// 	}
+		]
 	}, {
 		id: 'security',
 		label: 'common.menu.security.title',

@@ -392,7 +392,7 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speed. If you are using any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
+			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
@@ -1245,7 +1245,8 @@
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
 					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Login will not work.",
-					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
+					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
 				},
 				"WindowsLink": {
 					"goToWindowsHello": "Go to Windows Hello Settings",
