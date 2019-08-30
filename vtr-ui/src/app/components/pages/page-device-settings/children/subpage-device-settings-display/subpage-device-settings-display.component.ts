@@ -172,8 +172,16 @@ export class SubpageDeviceSettingsDisplayComponent
 		try {
 			this.initDisplayColorTempFromCache();
 			this.initEyeCareModeFromCache();
+			this.initCameraPrivacyFromCache();
 		} catch (error) {
 			this.logger.error('initDataFromCache', error.message);
+		}
+	}
+
+	initCameraPrivacyFromCache() {
+		const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+		if (privacy && privacy.available !== undefined) {
+			this.cameraPrivacyModeStatus.available = privacy.available;
 		}
 	}
 
