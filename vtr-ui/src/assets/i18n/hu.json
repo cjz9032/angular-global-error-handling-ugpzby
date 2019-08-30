@@ -1245,7 +1245,8 @@
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
-                    "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez."
+                    "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
@@ -2363,7 +2364,7 @@
             "error": "Hiba",
             "delete": "Törlés",
             "warningBatterySaver": "Megjegyzés: Az ütemezett vizsgálatok energiatakarékos módban nem működnek",
-			"scheduleIntervalLimit": "Egy újabb vizsgálat már be van ütemezve tíz perces időtartamon belül. Válasszon másik időpontot."
+            "scheduleIntervalLimit": "Egy újabb vizsgálat már be van ütemezve tíz perces időtartamon belül. Válasszon másik időpontot."
         },
         "recoverBadSectors": {
             "title": "Hibás szektorok helyreállítása",
@@ -2413,6 +2414,6 @@
         "attention": "Figyelem",
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
-		"pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
+        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
     }
 }

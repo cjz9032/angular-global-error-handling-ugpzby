@@ -1245,7 +1245,8 @@
                     "description2": "O recurso usa sensores e câmera para detectar sua presença. No entanto, o recurso NÃO coleta qualquer dado pessoal.",
                     "description3": "1. Se o computador estiver no modo de tenda, de tablet ou de base, esses recursos podem não funcionar devidamente.",
                     "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O Login sem toques não funcionará.",
-                    "description5": "3. Ajuste a tela do computador em um ângulo adequado para que a câmara IR possa reconhecer o seu rosto para fazer login automático."
+                    "description5": "3. Ajuste a tela do computador em um ângulo adequado para que a câmara IR possa reconhecer o seu rosto para fazer login automático.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ir para as configurações do Windows Hello",
@@ -2363,7 +2364,7 @@
             "error": "Erro",
             "delete": "Excluir",
             "warningBatterySaver": "Nota: as Varreduras planejadas não serão executadas no modo Economizador de bateria",
-			"scheduleIntervalLimit": "Outra verificação já estava agendada dentro de um intervalo de dez minutos. Escolha outra hora."
+            "scheduleIntervalLimit": "Outra verificação já estava agendada dentro de um intervalo de dez minutos. Escolha outra hora."
         },
         "recoverBadSectors": {
             "title": "Recuperar setores ruins",
@@ -2413,6 +2414,6 @@
         "attention": "Atenção",
         "cancelTextPrompt": "Tem certeza de que gostaria de cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
-		"pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a."
+        "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a."
     }
 }

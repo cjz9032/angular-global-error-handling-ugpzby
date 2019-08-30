@@ -1245,7 +1245,8 @@
                     "description2": "La característica utiliza sensores y la cámara para detectar su presencia. Sin embargo, la característica NO recopila datos personales.",
                     "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
                     "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión sin interacción no funcionará.",
-                    "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático."
+                    "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
@@ -2363,7 +2364,7 @@
             "error": "Error",
             "delete": "Eliminar",
             "warningBatterySaver": "Nota: los análisis planificados no se ejecutarán en la modalidad de ahorro de batería",
-			"scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento."
+            "scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento."
         },
         "recoverBadSectors": {
             "title": "Recuperar sectores incorrectos",
@@ -2413,6 +2414,6 @@
         "attention": "Atención",
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
-		"pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
+        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
     }
 }

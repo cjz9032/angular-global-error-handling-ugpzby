@@ -1245,7 +1245,8 @@
                     "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
                     "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
-                    "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오."
+                    "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
@@ -2363,7 +2364,7 @@
             "error": "오류",
             "delete": "삭제",
             "warningBatterySaver": "참고: 예약된 검사는 배터리 절약 모드에서 수행되지 않음",
-			"scheduleIntervalLimit": "다른 스캔이 이미 10분 시간 범위 내에 예약되었습니다. 다른 시간을 선택하십시오."
+            "scheduleIntervalLimit": "다른 스캔이 이미 10분 시간 범위 내에 예약되었습니다. 다른 시간을 선택하십시오."
         },
         "recoverBadSectors": {
             "title": "불량 섹터 복구",
@@ -2413,6 +2414,6 @@
         "attention": "주의",
         "cancelTextPrompt": "정말 취소하시겠습니까?",
         "cancelTextProgress": "취소 진행을 기다리십시오",
-		"pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오."
+        "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오."
     }
 }

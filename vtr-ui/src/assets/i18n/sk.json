@@ -1245,7 +1245,8 @@
                     "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti. Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
                     "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
                     "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Bezdotykové prihlásenie nebude fungovať.",
-                    "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení."
+                    "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Prejsť na nastavenia služby Windows Hello",
@@ -2363,7 +2364,7 @@
             "error": "Chyba",
             "delete": "Odstrániť",
             "warningBatterySaver": "Poznámka: Plánované snímania sa nevykonajú v režime Šetrič batérie",
-			"scheduleIntervalLimit": "V rámci desaťminútového časového rozpätia už je naplánovaná iná kontrola. Vyberte iný čas."
+            "scheduleIntervalLimit": "V rámci desaťminútového časového rozpätia už je naplánovaná iná kontrola. Vyberte iný čas."
         },
         "recoverBadSectors": {
             "title": "Obnoviť chybné sektory",
@@ -2413,6 +2414,6 @@
         "attention": "Upozornenie",
         "cancelTextPrompt": "Naozaj chcete vykonať zrušenie?",
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
-		"pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju."
+        "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju."
     }
 }

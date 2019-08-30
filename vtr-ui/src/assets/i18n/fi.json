@@ -1245,7 +1245,8 @@
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
                     "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
-                    "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten."
+                    "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
@@ -2363,7 +2364,7 @@
             "error": "Virhe",
             "delete": "Poista",
             "warningBatterySaver": "Huomautus: Ajoitettuja tarkistuksia ei suoriteta virransäästötilassa",
-			"scheduleIntervalLimit": "Toinen tarkistus on jo ajoitettu tapahtuvaksi kymmenen minuutin ajanjakson kuluessa. Valitse toinen aika."
+            "scheduleIntervalLimit": "Toinen tarkistus on jo ajoitettu tapahtuvaksi kymmenen minuutin ajanjakson kuluessa. Valitse toinen aika."
         },
         "recoverBadSectors": {
             "title": "Korjaa vialliset sektorit",
@@ -2413,6 +2414,6 @@
         "attention": "Huomio:",
         "cancelTextPrompt": "Haluatko varmasti peruuttaa?",
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
-		"pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se."
+        "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se."
     }
 }

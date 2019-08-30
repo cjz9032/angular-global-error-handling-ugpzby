@@ -1245,7 +1245,8 @@
                     "description2": "O recurso usa sensores e câmara para detetar a sua presença. No entanto, a funcionalidade NÃO recolhe qualquer dado pessoal.",
                     "description3": "1. Se o computador estiver no modo Tenda, Tablet ou Suporte, estas funcionalidades poderão não funcionar corretamente.",
                     "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O login sem toques não funcionará.",
-                    "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático."
+                    "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vá para as definições Windows Hello",
@@ -2363,7 +2364,7 @@
             "error": "Erro",
             "delete": "Eliminar",
             "warningBatterySaver": "Nota: as Verificações Programadas não serão executadas no modo Poupança de Bateria",
-			"scheduleIntervalLimit": "Já estava agendada outra verificação no período de dez minutos. Escolha outra hora."
+            "scheduleIntervalLimit": "Já estava agendada outra verificação no período de dez minutos. Escolha outra hora."
         },
         "recoverBadSectors": {
             "title": "Recuperar setores danificados",
@@ -2413,6 +2414,6 @@
         "attention": "Atenção",
         "cancelTextPrompt": "Tem a certeza de que pretende cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
-		"pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a."
+        "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a."
     }
 }
