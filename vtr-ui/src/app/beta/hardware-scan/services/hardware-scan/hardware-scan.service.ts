@@ -44,6 +44,30 @@ export class HardwareScanService {
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
+
+		let self = this;
+		window.onfocus = function(){
+			self.validateScanState();
+		};
+	}
+
+	private validateScanState() {
+		if (this.scanExecution) {
+			console.log('Running hwscan');
+			for (const module of this.modules) {
+				for (const test of module.listTest) {
+					if (test.status === HardwareScanTestResult.Cancelled) {
+						// When there are cancelled tests, go back to home
+						console.log('Going back to home due to a cancelled test');
+						this.cancelRequested = true;
+						this.scanExecution = false;
+						this.cleanUp();
+						return;
+					}
+				}
+			}
+			console.log('No cancelled tests found.');
+		}
 	}
 
 	public getCategoryInformation() {
