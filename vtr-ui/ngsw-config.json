@@ -20,7 +20,8 @@
 			"updateMode": "lazy",
 			"resources": {
 				"files": [
-					"/assets/**"
+					"/assets/**",
+					"!/assets/privacy-json/trackers.json"
 				],
 				"urls": [
 					"https://qa.csw.lenovo.com/**",

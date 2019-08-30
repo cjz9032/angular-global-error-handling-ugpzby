@@ -7,17 +7,18 @@ import { TranslateStore } from '@ngx-translate/core';
 import { MinutesToHourminPipe } from 'src/app/pipe/minutes-to-hourmin.pipe';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 
-fdescribe('BatteryDetailComponent', () => {
+xdescribe('BatteryDetailComponent', () => {
 	let component: BatteryDetailComponent;
 	let fixture: ComponentFixture<BatteryDetailComponent>;
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [BatteryDetailComponent, BatteryIndicatorComponent, MinutesToHourminPipe],
-			imports: [TranslationModule],
-			providers: [TranslateStore]
+	beforeEach(
+		async(() => {
+			TestBed.configureTestingModule({
+				declarations: [ BatteryDetailComponent, BatteryIndicatorComponent, MinutesToHourminPipe ],
+				imports: [ TranslationModule ],
+				providers: [ TranslateStore ]
+			}).compileComponents();
 		})
-			.compileComponents();
-	}));
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(BatteryDetailComponent);

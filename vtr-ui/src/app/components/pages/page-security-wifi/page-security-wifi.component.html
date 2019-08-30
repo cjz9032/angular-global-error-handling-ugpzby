@@ -23,10 +23,13 @@
 									[wifiIsShowMore]="wifiIsShowMore"></wifi-security>
 							</div>
 						</div>
-						<div hidden id="home-security"
+						<div class="connected-home-status" *ngIf="region === 'us' && language === 'en'">
+							<vtr-connected-home-status></vtr-connected-home-status>
+						</div>
+						<div id="home-security" *ngIf="region === 'us' && language === 'en'"
 							class="connected-home-container">
-							<vtr-connected-home [data]="wifiHomeViewModel"
-								[isShowInvitationCode]="isShowInvitationCode"></vtr-connected-home>
+							<vtr-home-security-content
+							[page]="'wifiSecurity'"></vtr-home-security-content>
 						</div>
 					</div>
 					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
