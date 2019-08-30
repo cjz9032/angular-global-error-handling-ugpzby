@@ -2372,7 +2372,8 @@
 			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time.",
 			"error": "Error",
 			"delete": "Delete",
-			"warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+			"warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode.",
+			"information": "Your scan has been scheduled and will run in the background on the following date:"
 		},
 		"recoverBadSectors": {
 			"title": "Recover Bad Sectors",
