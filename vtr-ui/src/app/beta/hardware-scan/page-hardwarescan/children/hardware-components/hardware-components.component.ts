@@ -92,10 +92,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					if (test.status === HardwareScanTestResult.Cancelled) {
 						// When there are cancelled tests, go back to home
 						console.log('Going back to home due to a cancelled test');
-						this.hardwareScanService.setScanExecutionStatus(false);
-						// this.hardwareScanService.setCancelRequested(true);
-						this.hardwareScanService.cleanUp();
-						this.initComponent();
+						location.reload();
 						return;
 					}
 				}
