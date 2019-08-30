@@ -17,6 +17,7 @@ export class SmartAssistService {
 	private intelligentMedia;
 	private activeProtectionSystem;
 	private lenovoVoice;
+	private superResolution;
 
 	public isShellAvailable = false;
 	public isAPSavailable = false;
@@ -27,9 +28,10 @@ export class SmartAssistService {
 		this.intelligentMedia = shellService.getIntelligentMedia();
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
 		this.lenovoVoice = shellService.getLenovoVoice();
+		this.superResolution = shellService.getSuperResolution();
 
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
-		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice) {
+		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -212,7 +214,7 @@ export class SmartAssistService {
 	public getSuperResolutionStatus(): Promise<FeatureStatus> {
 		try {
 			if (this.isShellAvailable) {
-				return this.intelligentMedia.getSuperResolutionStatus();
+				return this.superResolution.getSuperResolutionStatus();
 			}
 			return undefined;
 		} catch (error) {
@@ -223,7 +225,7 @@ export class SmartAssistService {
 	public setSuperResolutionStatus(value: boolean): Promise<boolean> {
 		try {
 			if (this.isShellAvailable) {
-				return this.intelligentMedia.setSuperResolutionStatus(value);
+				return this.superResolution.setSuperResolutionStatus(value);
 			}
 			return undefined;
 		} catch (error) {

@@ -574,6 +574,13 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getSuperResolution(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.superResolution.superResolution;
+		}
+		return undefined;
+	}
+
 	public getPreferenceSettings() {
 		if (this.phoenix) {
 			return this.phoenix.preferenceSettings;
