@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { delayWhen, filter, takeUntil } from 'rxjs/operators';
+import { delayWhen, filter, take, takeUntil } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
@@ -14,11 +14,13 @@ import { BreachedAccountsFacadeService } from './breached-accounts-facade.servic
 })
 export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	breachedAccounts$ = this.breachedAccountsFacadeService.breachedAccounts$;
+	isAccountVerify$ = this.breachedAccountsFacadeService.isAccountVerify$;
+	isShowVerifyBlock$ = this.breachedAccountsFacadeService.isShowVerifyBlock$;
 	isFigleafReadyForCommunication$ = this.breachedAccountsFacadeService.isFigleafReadyForCommunication$;
 	isUserAuthorized$ = this.breachedAccountsFacadeService.isUserAuthorized$;
 	breachedAccountsCount$ = this.breachedAccountsFacadeService.breachedAccountsCount$;
 	userEmail$ = this.breachedAccountsFacadeService.userEmail$;
-	emailWasScanned$ = this.breachedAccountsFacadeService.emailWasScanned$;
+	breachedAccountWereScanned$ = this.breachedAccountsFacadeService.breachedAccountWereScanned$;
 	isUndefinedWithoutFigleafState$ = this.breachedAccountsFacadeService.isUndefinedWithoutFigleafState$;
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = this.breachedAccountsFacadeService.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$;
 
@@ -58,8 +60,9 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	}
 
 	startVerify() {
-		this.commonPopupService.open(this.confirmationPopupName);
-		this.emailScannerService.sendConfirmationCode().subscribe();
+		this.isFigleafReadyForCommunication$.pipe(take(1)).subscribe((isFigleafReadyForCommunication) => {
+			isFigleafReadyForCommunication ? this.openFigleafApp() : this.emailScannerService.sendConfirmationCode().subscribe();
+		});
 	}
 
 	openFigleafApp() {
@@ -67,7 +70,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	}
 
 	openFigleafByUrl(link) {
-		this.vantageCommunicationService.openFigleafByUrl(link);
+		link ? this.vantageCommunicationService.openFigleafByUrl(link) : this.openFigleafApp();
 	}
 
 	getTextForTooltip(numberOfIssues) {
