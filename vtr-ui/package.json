@@ -55,7 +55,7 @@
 		"ngx-color-picker": "^8.0.0",
 		"ngx-cookie-service": "^2.1.0",
 		"popper.js": "^1.15.0",
-		"reinvented-color-wheel": "^0.2.4",
+		"reinvented-color-wheel": "^0.2.8",
 		"rxjs": "^6.5.2",
 		"tslib": "^1.9.0",
 		"x2js": "^3.2.6",
