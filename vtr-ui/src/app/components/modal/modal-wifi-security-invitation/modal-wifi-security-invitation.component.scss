@@ -13,10 +13,6 @@
 		color: $main_dark;
 		letter-spacing: 0;
 	}
-	.activation{
-		visibility: hidden;
-		margin-top: 1.5rem;
-	}
 	.description {
 		font-size: 1.3rem;
 		font-weight: $weight_bold;
@@ -52,8 +48,8 @@
 	}
 	.code-input-group{
 		box-shadow: $drop_shadow;
-		border: 1px solid #e0e0e0;
-		border-radius: 0.5rem;
+		border: 1px solid $main;
+		border-radius: 2rem;
 		input{
 			font-weight:$weight_bold;
 		}
@@ -71,11 +67,13 @@
 		.form-control{
 			border: 0px;
 			font-size: 1.6rem;
-			padding: 0 3rem 1.5rem;
+			padding: 1.5rem 3rem 1.5rem 0;
 			letter-spacing: 0.2rem;
 			text-transform: uppercase;
 			margin-bottom: 0.1rem;
-			width: 99%;
+			margin-top: 0.1rem;
+			margin-left: 2rem;
+			width: 80%;
 		}
 		.form-control:focus{
 			box-shadow:0px 0px;
@@ -89,13 +87,20 @@
 		font-size: 1.5rem;
 		color: $light;
 		font-weight: $weight_bold;
+		margin: 1rem;
 	}
+
+	.cancel-button {
+		background: $shade_extralight;
+		color: $dark;
+	}
+
 	.join-info{
 		line-height: 2.5rem;
 		font-size: 1.3rem;
 		font-weight: $weight_bold;
 		padding-top: 1.5rem;
-		
+
 		.success{
 			font-weight: $weight_bold;
 			font-size: 2.5rem;
@@ -117,13 +122,13 @@
 	}
 
 	.joinfailed{
-		border: 1px solid #F8D5D5;
-		background-color: #FEF8F8;
+		border: 1px solid $border_light;
+		background-color: $text_light;
 		box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
 
 		input{
 			color: $alt;
-			background-color: #FEF8F8;
+			background-color: $text_light;
 		}
 	}
 }

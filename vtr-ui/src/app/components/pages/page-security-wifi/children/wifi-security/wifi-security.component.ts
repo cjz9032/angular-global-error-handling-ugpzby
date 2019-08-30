@@ -1,8 +1,7 @@
 import {
 	Component,
 	OnInit,
-	Input,
-	NgZone
+	Input
 } from '@angular/core';
 import {
 	NgbModalRef,
@@ -14,9 +13,6 @@ import {
 import {
 	WifiHomeViewModel
 } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import {
-	EventTypes
-} from '@lenovo/tan-client-bridge';
 import {
 	BaseComponent
 } from '../../../../base/base.component';
@@ -39,9 +35,10 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	@Input() wifiIsShowMore: string;
-	isShowMore = false; // less info, more info
+	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
-	region: string;
+	region = 'us';
+	language = 'en';
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
 	showMore = false;
@@ -55,7 +52,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		private commonService: CommonService,
 		private localInfoService: LocalInfoService,
 		private dialogService: DialogService,
-		private ngZone: NgZone
 	) {
 		super();
 	}
@@ -63,8 +59,16 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	ngOnInit() {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
+			this.language = result.Lang;
 		}).catch(e => {
 			this.region = 'us';
+			this.language = 'en';
+		}).then(() => {
+			if (this.wifiIsShowMore !== 'false' && this.region === 'us' && this.language === 'en') {
+				this.isShowMore = true;
+			} else {
+				this.isShowMore = false;
+			}
 		});
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;
