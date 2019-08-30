@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.171",
+	"version": "1.0.162",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
