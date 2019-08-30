@@ -17,10 +17,10 @@
             </vtr-ui-list-scheduled-scan>
           </div>
           <div class="button-row">
-              <beta-vtr-ui-button (onClick)="onScheduleScanModal(false)"
-              metricsEvent="ItemClick"
-              metricsParent="Device.HardwareScan"
-              metricsItem="btn.schedulenewscan"
+			  <beta-vtr-ui-button (onClick)="onScheduleScanModal(false)"
+			  [metricsEvent]="'FeatureClick'"
+			  [metricsItem]="'btn.Modal.Schedule'"
+			  [metricsParent]="'Page.HardwareScan'"
               [isFullWidth]="true"
               [icon] ="['far', 'clock']"
               [label]="buttonText"
