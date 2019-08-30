@@ -36,7 +36,7 @@ const sampleInputData = {
 	}
 };
 
-fdescribe('UiMacrokeyRecordedListComponent', () => {
+xdescribe('UiMacrokeyRecordedListComponent', () => {
 	let component: UiMacrokeyRecordedListComponent;
 	let fixture: ComponentFixture<UiMacrokeyRecordedListComponent>;
 
