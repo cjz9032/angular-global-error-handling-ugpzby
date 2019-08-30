@@ -286,7 +286,7 @@ export class ConfigService {
 	}, {
 		id: 'privacy',
 		label: 'common.menu.privacy',
-		path: 'privacy/breaches',
+		path: 'privacy',
 		icon: ['fal', 'user-shield'],
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
@@ -483,7 +483,8 @@ export class ConfigService {
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
-			if (country.toLowerCase() === 'us' && locale.startsWith('en')) {
+			const brand = machineInfo && machineInfo.brand ? machineInfo.brand : 'lenovo';
+			if (country.toLowerCase() === 'us' && locale.startsWith('en') && brand.toLowerCase() !== 'think') {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
