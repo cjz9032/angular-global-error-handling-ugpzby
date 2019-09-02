@@ -16,17 +16,19 @@
           </div>
           <div class="my-3">
             <vtr-ui-rectangle-radio [radioId]="'radio1'"
-              [checked]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || !(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) ? true: false"
+              [checked]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? true: false"
               [group]="'radio'"
               [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
-              [value]="'1'" [iconName]="'icomoon icomoon-Special-function'" [disabled]="showAdvancedSection"
-              (change)="onChangeFunType(topRowKeyObj.primaryFunStatus)">
+              [iconName]="'icomoon icomoon-Special-function'" [disabled]="showAdvancedSection"
+              (change)="onChangeFunType(topRowKeyObj.primaryFunStatus)"
+              [value]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? true: false">
             </vtr-ui-rectangle-radio>
             <vtr-ui-rectangle-radio [radioId]="'radio2'" [group]="'radio'"
-              [checked]="(!topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? true: false"
+              [checked]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? false: true"
               [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
-              [value]="'2'" [iconName]="'icomoon icomoon-F1-F12-funciton'" [disabled]="showAdvancedSection"
-              (change)="onChangeFunType(!topRowKeyObj.primaryFunStatus)">
+              [iconName]="'icomoon icomoon-F1-F12-funciton'" [disabled]="showAdvancedSection"
+              (change)="onChangeFunType(!topRowKeyObj.primaryFunStatus)"
+              [value]="(topRowKeyObj.primaryFunStatus && topRowKeyObj.fnLockStatus) || (!topRowKeyObj.primaryFunStatus && !topRowKeyObj.fnLockStatus) ? false: true">
             </vtr-ui-rectangle-radio>
             <p class="text mt-3">
               {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.description' | translate}}
@@ -77,7 +79,7 @@
               [value]="true" [checked]="topRowKeyObj.stickyFunStatus" (change)="onChangeKeyType(true)"
               [disabled]="false">
             </vtr-ui-rounded-rectangle-radio>
-            <div class="caption mt-3">
+            <div class="caption mt-3" *ngIf="topRowKeyObj.stickyFunStatus">
               <vtr-widget-permission-note
                 [noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
                 [description]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.note' | translate"

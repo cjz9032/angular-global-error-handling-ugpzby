@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
@@ -12,8 +12,8 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	@Input() emitter: EventEmitter<any>;
 	securityAdvisor: any;
 
-	header = 'security.homeprotection.invitationcode.enterCode';
-	description = 'security.homeprotection.invitationcode.addHome';
+	header = 'security.homeprotection.invitationcode.joinChs';
+	description = 'security.homeprotection.invitationcode.enterCode';
 
 	OkText = 'security.homeprotection.invitationcode.continue';
 	CancelText = 'security.homeprotection.invitationcode.cancel';

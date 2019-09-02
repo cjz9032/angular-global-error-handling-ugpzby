@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
-import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
+import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
@@ -16,6 +16,8 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 
 @Component({
@@ -30,6 +32,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
 	public displayColorTempDataSource: any;
+	public displayColorTempCache: EyeCareModeResponse;
+	public eyeCareModeCache: EyeCareModeCapability;
 	public cameraDetails1: ICameraSettingsResponse;
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
@@ -60,12 +64,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.display.title',
-			path: 'display'
+			path: 'display',
+			metricsItem: 'Display'
 
 		},
 		{
 			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.camera.title',
-			path: 'camera'
+			path: 'camera',
+			metricsItem: 'Camera'
 		}
 	];
 	emptyCameraDetails = [
@@ -128,7 +134,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		private commonService: CommonService,
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
-		private cameraFeedService: CameraFeedService) {
+		private cameraFeedService: CameraFeedService,
+		private logger: LoggerService) {
+
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -139,6 +147,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
+		this.initDataFromCache();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -148,7 +157,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log('cameraDetail subpage-dev-settings', this.dataSource);
 			},
 			error => {
-				console.log(error);
+				this.logger.error(error.message);
 			}
 		);
 
@@ -156,6 +165,57 @@ export class SubpageDeviceSettingsDisplayComponent
 		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 		if (welcomeTutorial && welcomeTutorial.page === 2) {
 			this.initFeatures();
+		}
+	}
+
+	initDataFromCache() {
+		try {
+			this.initDisplayColorTempFromCache();
+			this.initEyeCareModeFromCache();
+		} catch (error) {
+			this.logger.error('initDataFromCache', error.message);
+		}
+	}
+
+	initEyeCareModeFromCache() {
+		try {
+			this.eyeCareModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, undefined);
+			if (this.eyeCareModeCache) {
+				this.eyeCareModeStatus.available = this.eyeCareModeCache.available;
+				if (!this.eyeCareModeStatus.available) {
+					return;
+				}
+				this.eyeCareModeStatus.status = this.eyeCareModeCache.toggleStatus;
+				this.eyeCareDataSource = this.eyeCareModeCache.eyeCareDataSource;
+				this.enableSlider = this.eyeCareModeCache.enableSlider;
+				this.enableSunsetToSunrise = this.eyeCareModeCache.enableSunsetToSunrise;
+				this.sunsetToSunriseModeStatus = this.eyeCareModeCache.sunsetToSunriseStatus;
+			} else {
+				this.eyeCareModeCache = new EyeCareModeCapability();
+			}
+		} catch (error) {
+			this.logger.error('initEyeCareModeFromCache', error.message);
+		}
+	}
+
+	initDisplayColorTempFromCache() {
+		try {
+			this.displayColorTempCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, undefined);
+			if (this.displayColorTempCache) {
+				this.displayColorTempDataSource = {};
+				this.displayColorTempDataSource.available = this.displayColorTempCache.available;
+				if (!this.displayColorTempDataSource.available) {
+					return;
+				}
+				this.displayColorTempDataSource.current = this.displayColorTempCache.current;
+				this.displayColorTempDataSource.maximum = this.displayColorTempCache.maximum;
+				this.displayColorTempDataSource.minimum = this.displayColorTempCache.minimum;
+				this.displayColorTempDataSource.eyemodestate = this.displayColorTempCache.eyeCareMode;
+			} else {
+				this.displayColorTempCache = new EyeCareModeResponse();
+			}
+		} catch (error) {
+			this.logger.error('initDisplayColorTempFromCache', error.message);
 		}
 	}
 
@@ -195,7 +255,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('frontCameraCount: ', frontCameraCount);
 			return frontCameraCount > 0 ? true : false;
 		} catch (error) {
-			console.log('isAllInOneMachine:', error);
+			console.log('isAllInOneMachine:', error.message);
 			return frontCameraCount > 0 ? true : false;
 		}
 	}
@@ -274,7 +334,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// 		console.log('getCameraDetails.then', response);
 			// 	})
 			// 	.catch(error => {
-			// 		console.log(error);
+			// 		console.log(error.message);
 			// 	});
 			// console.log('Inside');
 			this.displayService
@@ -313,7 +373,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					// }
 				});
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 
 	}
@@ -322,12 +382,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
 			this.eyeCareDataSource = response;
-			// if (response.current === 4500 && response.eyecaremode === 4500) {
-			// 	this.eyeCareDataSource.current = response.eyecaremode;
-			// }
-			// this.cd.detectChanges();
-			// this.eyecareDatasource.current = response.current;
 			console.log('getDisplayColortemperature.then', this.eyeCareDataSource);
+			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 		});
 	}
 	public onEyeCareModeStatusToggle(event: any) {
@@ -346,8 +402,12 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('eycare mode request sent to the dashboard------------->', eyeCare);
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 
+						this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
+						this.eyeCareModeCache.enableSlider = this.enableSlider;
+						this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 					}).catch(error => {
-						console.error('onEyeCareModeStatusToggle', error);
+						this.logger.error('onEyeCareModeStatusToggle', error.message);
 					});
 
 				if (!this.eyeCareModeStatus.status) {
@@ -363,7 +423,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				// }
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	// TROUBLE
@@ -387,12 +447,12 @@ export class SubpageDeviceSettingsDisplayComponent
 						}
 
 					}).catch(error => {
-						console.error('initEyecaremodeSettings', error);
+						this.logger.error('initEyecaremodeSettings', error.message);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 
 		}
 	}
@@ -405,11 +465,11 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('setEyeCareModeState.then', result);
 
 					}).catch(error => {
-						console.error('setEyeCareModeState', error);
+						this.logger.error('setEyeCareModeState', error.message);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -425,9 +485,13 @@ export class SubpageDeviceSettingsDisplayComponent
 					if (this.eyeCareModeStatus.available === true) {
 						console.log('eyeCareModeStatus.available', featureStatus.available);
 					}
+					this.eyeCareModeCache.available = this.eyeCareModeStatus.available;
+					this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
+					this.eyeCareModeCache.enableSlider = this.enableSlider;
+					this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 				})
 				.catch(error => {
-					console.error('getEyeCareModeState', error);
+					this.logger.error('getEyeCareModeState', error.message);
 				});
 		}
 	}
@@ -435,11 +499,13 @@ export class SubpageDeviceSettingsDisplayComponent
 		try {
 			console.log('temparature changed in display', $event);
 			if (this.displayService.isShellAvailable) {
-				this.displayService
-					.setDisplayColortemperature($event.value);
+				this.displayService.setDisplayColortemperature($event.value);
+
+				this.eyeCareModeCache.eyeCareDataSource.current = $event.value;
+				this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public onEyeCareTemparatureValueChange($event: ChangeContext) {
@@ -450,7 +516,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					.setDisplayColortemperature($event.value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	private setEyeCareModeTemparature(value: number) {
@@ -461,7 +527,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					.setDisplayColortemperature(value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public onResetTemparature($event: any) {
@@ -477,10 +543,16 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						console.log('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
 						// this.getDisplayColorTemperature();
+
+						this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
+						this.eyeCareModeCache.enableSlider = this.enableSlider;
+						this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
+						this.eyeCareModeCache.sunsetToSunriseStatus = this.sunsetToSunriseModeStatus;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public onSunsetToSunrise($featureStatus: any) {
@@ -497,14 +569,19 @@ export class SubpageDeviceSettingsDisplayComponent
 							// this.isEyeCareMode = this.eyeCareModeStatus.status;
 							this.enableSlider = response.eyecaremodeState;
 							this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
+
+							this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
+							this.eyeCareModeCache.enableSlider = this.enableSlider;
+							this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
+							this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 						}
 
 					}).catch(error => {
-						console.error('setEyeCareAutoMode', error);
+						this.logger.error('setEyeCareAutoMode', error.message);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public getSunsetToSunrise() {
@@ -519,13 +596,17 @@ export class SubpageDeviceSettingsDisplayComponent
 						if (status.permission === false) {
 							// 	this.displayService.openPrivacyLocation();
 							this.enableSunsetToSunrise = true;
+
+							this.eyeCareModeCache.sunsetToSunriseStatus = this.sunsetToSunriseModeStatus;
+							this.eyeCareModeCache.enableSunsetToSunrise = this.enableSunsetToSunrise;
+							this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 						}
 					}).catch(error => {
-						console.error('getSunsetToSunrise', error);
+						this.logger.error('getSunsetToSunrise', error.message);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	// End EyeCare Mode
@@ -534,7 +615,13 @@ export class SubpageDeviceSettingsDisplayComponent
 	public getDaytimeColorTemperature() {
 		this.displayService.getDaytimeColorTemperature().then((response) => {
 			this.displayColorTempDataSource = response;
-			console.log('getDisplayColortemperature.then', this.displayColorTempDataSource);
+			console.log('getDaytimeColorTemperature.then', this.displayColorTempDataSource);
+			this.displayColorTempCache.available = this.displayColorTempDataSource.available;
+			this.displayColorTempCache.current = this.displayColorTempDataSource.current;
+			this.displayColorTempCache.maximum = this.displayColorTempDataSource.maximum;
+			this.displayColorTempCache.minimum = this.displayColorTempDataSource.minimum;
+			this.displayColorTempCache.eyeCareMode = this.displayColorTempDataSource.eyemodestate;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 		});
 	}
 
@@ -543,9 +630,11 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('temparature changed in display ----->', $event);
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setDaytimeColorTemperature($event.value);
+				this.displayColorTempCache.current = $event.value;
+				this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	public setToEyeCareMode() {
@@ -565,10 +654,12 @@ export class SubpageDeviceSettingsDisplayComponent
 					.resetDaytimeColorTemperature().then((resetData: any) => {
 						console.log('temparature reset data', resetData);
 						this.displayColorTempDataSource.current = resetData || 6500;
+						this.displayColorTempCache.current = this.displayColorTempDataSource.current;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DisplayColorTempCapability, this.displayColorTempCache);
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 	// Display color temperature end here
@@ -587,7 +678,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					privacy.status = $event.switchValue;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
 				}).catch(error => {
-					console.error('setCameraStatus', error);
+					this.logger.error('setCameraStatus', error.message);
 				});
 		}
 	}
@@ -605,7 +696,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					}
 				})
 				.catch(error => {
-					console.error('getCameraStatus', error);
+					this.logger.error('getCameraStatus', error.message);
 				});
 		}
 	}
@@ -625,11 +716,11 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('startCameraPrivacyMonitor.then', val);
 
 					}).catch(error => {
-						console.error('startCameraPrivacyMonitor', error);
+						this.logger.error('startCameraPrivacyMonitor', error.message);
 					});
 			}
 		} catch (error) {
-			console.log('startCameraPrivacyMonitor', error);
+			console.log('startCameraPrivacyMonitor', error.message);
 		}
 	}
 
@@ -640,11 +731,11 @@ export class SubpageDeviceSettingsDisplayComponent
 					.then((value: any) => {
 						console.log('stopMonitorForCamera.then', value);
 					}).catch(error => {
-						console.error('stopMonitorForCamera', error);
+						this.logger.error('stopMonitorForCamera', error.message);
 					});
 			}
 		} catch (error) {
-			console.log('stopMonitorForCamera', error);
+			console.log('stopMonitorForCamera', error.message);
 		}
 	}
 
@@ -705,6 +796,8 @@ export class SubpageDeviceSettingsDisplayComponent
 			} else {
 				this.enableSunsetToSunrise = false;
 			}
+			this.eyeCareModeCache.enableSunsetToSunrise = this.enableSunsetToSunrise;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 		});
 		// this.cd.detectChanges();
 	}
@@ -721,6 +814,12 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.eyeCareModeStatus.status = resetData.eyecaremodeState;
 		this.enableSlider = resetData.eyecaremodeState;
 		this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
+
+		this.eyeCareModeCache.sunsetToSunriseStatus = this.sunsetToSunriseModeStatus;
+		this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
+		this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
+		this.eyeCareModeCache.enableSlider = this.enableSlider;
+		this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 	}
 	public startEyeCareMonitor() {
 		console.log('start eyecare monitor');
@@ -730,7 +829,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((value: any) => {
 					console.log('startmonitor', value);
 				}).catch(error => {
-					console.error('startmonitor', error);
+					this.logger.error('startmonitor', error.message);
 				});
 
 		}
@@ -754,7 +853,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.cameraBlur.enabled = $event.switchValue;
 			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, '');
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 		}
 	}
 
@@ -765,7 +864,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					this.cameraBlur = response;
 					console.log('initCameraBlurMethods', response);
 				}).catch(error => {
-					console.log('initCameraBlurMethods', error);
+					console.log('initCameraBlurMethods', error.message);
 				});
 		}
 	}
@@ -780,7 +879,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((response) => {
 					console.log('onCameraBackgroundOptionChange', response);
 				}).catch(error => {
-					console.log('onCameraBackgroundOptionChange', error);
+					console.log('onCameraBackgroundOptionChange', error.message);
 				});
 		}
 	}
@@ -809,7 +908,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			}
 		})
 			.catch(error => {
-				console.error('privacy guard compatability error here', error);
+				this.logger.error('privacy guard compatability error here', error.message);
 			});
 
 	}
@@ -820,7 +919,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.privacyGuardToggleStatus = value;
 		})
 			.catch(error => {
-				console.error('privacy guard status error here', error);
+				this.logger.error('privacy guard status error here', error.message);
 			});
 	}
 	public getPrivacyGuardOnPasswordCapabilityStatus() {
@@ -833,12 +932,12 @@ export class SubpageDeviceSettingsDisplayComponent
 					// console.log('privacy guard on password status here -------------.>', value);
 				})
 					.catch(error => {
-						console.error('privacy guard on password status error here', error);
+						this.logger.error('privacy guard on password status error here', error.message);
 					});
 			}
 		})
 			.catch(error => {
-				console.error('privacy guard on password compatability error here', error);
+				this.logger.error('privacy guard on password compatability error here', error.message);
 			});
 	}
 
@@ -847,7 +946,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// console.log('set privacy guard status here ------****-------.>', response);
 		})
 			.catch(error => {
-				console.error('set privacy guard status error here', error);
+				this.logger.error('set privacy guard status error here', error.message);
 			});
 	}
 
@@ -856,7 +955,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// console.log('set privacy guard on password status here -------------.>', response);
 		})
 			.catch(error => {
-				console.error('set privacy guard on password status error here', error);
+				this.logger.error('set privacy guard on password status error here', error.message);
 			});
 	}
 
@@ -883,12 +982,12 @@ export class SubpageDeviceSettingsDisplayComponent
 						this.hasOLEDPowerControlCapability = result;
 
 					}).catch(error => {
-						console.error('getOLEDPowerControlCapability', error);
+						this.logger.error('getOLEDPowerControlCapability', error.message);
 
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error(error.message);
 
 		}
 	}

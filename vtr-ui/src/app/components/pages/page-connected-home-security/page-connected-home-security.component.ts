@@ -6,7 +6,7 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import {
-	EventTypes, ConnectedHomeSecurity, PluginMissingError, LocationPermissionOffError, CHSAccountState, WifiSecurity
+	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -19,7 +19,6 @@ import {
 } from 'src/app/data-models/home-security/home-security-page-status.model';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalChsWelcomeContainerComponent } from '../page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
@@ -29,12 +28,14 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-security-welcome.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
-import { HomeSecurityOverviewMyDevice } from 'src/app/data-models/home-security/home-security-overview-my-device.model';
-import { HomeSecurityNotifications } from 'src/app/data-models/home-security/home-security-notifications.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { DevicePostureMockService } from 'src/app/services/device-posture/device-posture-mock.service';
+import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/home-security-device-posture.model';
 
 
 @Component({
@@ -46,12 +47,12 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	pageStatus: HomeSecurityPageStatus;
 
 	chs: ConnectedHomeSecurity;
+	devicePosture: DevicePosture;
 	wifiSecurity: WifiSecurity;
 	permission: any;
 	welcomeModel: HomeSecurityWelcome;
 	allDevicesInfo: HomeSecurityAllDevice;
-	homeSecurityOverviewMyDevice: HomeSecurityOverviewMyDevice;
-	notificationItems: HomeSecurityNotifications;
+	homeSecurityDevicePosture: HomeSecurityDevicePosture;
 	account: HomeSecurityAccount;
 	common: HomeSecurityCommon;
 	backId = 'chs-btn-back';
@@ -59,18 +60,23 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	notificationSubscription: Subscription;
 	intervalId: number;
 	interval = 15000;
+	devicePostureArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
+	devicePostureArticleCategory: string;
 
 	constructor(
 		vantageShellService: VantageShellService,
 		public homeSecurityMockService: HomeSecurityMockService,
+		public devicePostureMockService: DevicePostureMockService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
 		private dialogService: DialogService,
-		private lenovoIdDialogService: LenovoIdDialogService
+		private lenovoIdDialogService: LenovoIdDialogService,
+		private cmsService: CMSService,
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
+		this.devicePosture = vantageShellService.getDevicePosture();
 		if (vantageShellService.getSecurityAdvisor()) {
 			this.wifiSecurity = vantageShellService.getSecurityAdvisor().wifiSecurity;
 		} else {
@@ -79,13 +85,16 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
+		if (!this.devicePosture) {
+			this.devicePosture = this.devicePostureMockService.getDevicePosture();
+		}
 		this.permission = vantageShellService.getPermission();
 		this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
 		this.welcomeModel = new HomeSecurityWelcome();
-		this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice();
-		this.allDevicesInfo = new HomeSecurityAllDevice();
-		this.notificationItems = new HomeSecurityNotifications(this.translateService);
 		this.account = new HomeSecurityAccount();
+		this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.homeSecurityMockService.getConnectedHomeSecurity().overview.allDevices);
+		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture();
+		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
@@ -111,20 +120,12 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		});
 
-		const cacheMyDevice = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice);
-		if (cacheMyDevice) {
-			this.homeSecurityOverviewMyDevice = cacheMyDevice;
-		}
-		if (this.chs && this.chs.overview) {
-			this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(this.chs.overview);
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
-		}
 		const cacheAllDevices = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices);
 		if (cacheAllDevices) {
 			this.allDevicesInfo = cacheAllDevices;
 		}
-		if (this.chs && this.chs.overview && this.chs.overview.allDevices) {
-			this.allDevicesInfo = new HomeSecurityAllDevice(this.chs.overview);
+		if (this.chs && this.chs.overview && this.homeSecurityMockService.getConnectedHomeSecurity().overview.allDevices) {
+			this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.homeSecurityMockService.getConnectedHomeSecurity().overview.allDevices);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 		}
 		const cacheAccount = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount);
@@ -149,21 +150,18 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 		}
-		const cacheNotifications = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications);
-		if (cacheNotifications) {
-			this.notificationItems = cacheNotifications;
-		}
-
-		if (this.chs.notifications) {
-			this.notificationItems = new HomeSecurityNotifications(this.translateService, this.chs.notifications);
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
+		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
+		if (this.wifiSecurity && this.devicePosture && this.devicePosture.value.length > 0) {
+			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.wifiSecurity, this.devicePosture, this.translateService);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
+				isLocationServiceOn: this.homeSecurityDevicePosture.isLocationServiceOn,
+				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
+			});
+		} else if (cacheDevicePosture) {
+			this.homeSecurityDevicePosture = cacheDevicePosture;
 		}
 
 		this.chs.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
-			if (chs && chs.overview) {
-				this.homeSecurityOverviewMyDevice = new HomeSecurityOverviewMyDevice(chs.overview);
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityMyDevice, this.homeSecurityOverviewMyDevice);
-			}
 			if (chs.account) {
 				this.common = new HomeSecurityCommon(chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
 				this.account = new HomeSecurityAccount(chs, this.common, this.lenovoIdDialogService);
@@ -179,12 +177,18 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				}
 			}
 			if (chs.overview.allDevices) {
-				this.allDevicesInfo = new HomeSecurityAllDevice(chs.overview);
+				this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.homeSecurityMockService.getConnectedHomeSecurity().overview.allDevices);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAllDevices, this.allDevicesInfo);
 			}
-			if (chs.notifications) {
-				this.notificationItems = new HomeSecurityNotifications(this.translateService, chs.notifications);
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityNotifications, this.notificationItems);
+		});
+
+		this.chs.on(EventTypes.devicePostureEvent, (devicePosture) => {
+			if (devicePosture && devicePosture.value.length > 0) {
+				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.wifiSecurity, devicePosture, this.translateService);
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
+					isLocationServiceOn: this.homeSecurityDevicePosture.isLocationServiceOn,
+					homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
+				});
 			}
 		});
 
@@ -192,7 +196,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			if (location) {
 				if (!this.commonService.getSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture)) {
 					this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, true);
-					this.chs.overview.devicePostures.getDevicePosture()
+					this.devicePosture.getDevicePosture()
 						.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 						})
@@ -203,19 +207,19 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				&& this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)
 				&& this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
 				setTimeout(() => {
-					this.dialogService.openCHSPermissionModal(true).result.then((reason) => {
-						if (reason === 'startTrailError') {
-							this.dialogService.homeSecurityAccountDialog();
-						}
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-					}).catch((reason) => {
-						if (reason === 'startTrailError') {
-							this.dialogService.homeSecurityAccountDialog();
-						}
-						this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-					});
+					const openPermissionModal = this.dialogService.openCHSPermissionModal();
+					if (openPermissionModal) {
+						openPermissionModal.result.then(() => {
+							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
+						});
+					}
 				}, 0);
 			}
+			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.wifiSecurity, this.devicePosture, this.translateService);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
+				isLocationServiceOn: this.homeSecurityDevicePosture.isLocationServiceOn,
+				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
+			});
 		});
 
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.WidgetWifiStatus)) {
@@ -223,10 +227,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 
 		if (this.chs) {
-			if (this.chs.overview && this.chs.overview.devicePostures && this.wifiSecurity) {
+			if (this.devicePosture && this.wifiSecurity) {
 				if (this.wifiSecurity.isLocationServiceOn) {
 					this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, true);
-					this.chs.overview.devicePostures.getDevicePosture()
+					this.devicePosture.getDevicePosture()
 						.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 						})
@@ -283,10 +287,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		if (this.chs && this.chs.overview && this.chs.overview.devicePostures) {
+		if (this.devicePosture) {
 			if (this.commonService.getSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture)) {
 				this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, false);
-				this.chs.overview.devicePostures.cancelGetDevicePosture();
+				this.devicePosture.cancelGetDevicePosture();
 			}
 		}
 	}
@@ -308,43 +312,19 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 								return;
 							}
 							if (this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, false)) {
-								this.openPermissionModal().result.then((reason) => {
-									if (reason === 'startTrailError') {
-										this.dialogService.homeSecurityAccountDialog();
-									}
-									this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-								}).catch((reason) => {
-									if (reason === 'startTrailError') {
-										this.dialogService.homeSecurityAccountDialog();
-									}
+								this.dialogService.openCHSPermissionModal().result.then(() => {
 									this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 								});
 							}
 						});
 					} else {
-						this.openPermissionModal().result.then((reason) => {
-							if (reason === 'startTrailError') {
-								this.dialogService.homeSecurityAccountDialog();
-							}
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-						}).catch((reason) => {
-							if (reason === 'startTrailError') {
-								this.dialogService.homeSecurityAccountDialog();
-							}
+						this.dialogService.openCHSPermissionModal().result.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 						});
 					}
 				});
 			} else {
-				this.openWelcomeModal(showWelcome).result.then((reason) => {
-					if (reason === 'startTrailError') {
-						this.dialogService.homeSecurityAccountDialog();
-					}
-					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
-				}).catch((reason) => {
-					if (reason === 'startTrailError') {
-						this.dialogService.homeSecurityAccountDialog();
-					}
+				this.dialogService.openWelcomeModal(showWelcome).result.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowWelcomeDialog, 'finish');
 				});
 			}
@@ -353,43 +333,30 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 	}
 
-	openWelcomeModal(showWelcome): NgbModalRef {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
+	fetchCMSArticles() {
+		this.cmsService.fetchCMSArticle(this.devicePostureArticleId, { Lang: 'EN' }).then((response: any) => {
+			if (response && response.Results && response.Results.Category) {
+				this.devicePostureArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, showWelcome + 1);
-
-			if (showWelcome === 1) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-			}
-
-			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'Welcome-container-Modal'
-			});
-			welcomeModal.componentInstance.needTrial = true;
-			return welcomeModal;
-		}
+		});
 	}
 
-	openPermissionModal(): NgbModalRef {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
+	openDevicePostureArticle(): void {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal',
+			keyboard: false,
+			backdrop: true,
+			beforeDismiss: () => {
+				if (articleDetailModal.componentInstance.onBeforeDismiss) {
+					articleDetailModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
 			}
-			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'Welcome-container-Modal'
-			});
-			welcomeModal.componentInstance.switchPage = 4;
-			welcomeModal.componentInstance.hasSystemPermissionShowed = this.welcomeModel.hasSystemPermissionShowed;
-			return welcomeModal;
-		}
+		});
+
+		articleDetailModal.componentInstance.articleId = this.devicePostureArticleId;
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -426,5 +393,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 			}).catch((err: Error) => this.handleResponseError(err));
 		}, this.interval);
+	}
+
+	public switchState() {
+		if (this.homeSecurityMockService.state === 'notRegister') {
+			this.homeSecurityMockService.state = 'register';
+		} else {
+			this.homeSecurityMockService.state = 'notRegister';
+		}
 	}
 }

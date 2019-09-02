@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { UiButtonComponent } from './ui-button.component';
 import { MetricsModule } from 'src/app/directives/metrics.module';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { RouterModule } from '@angular/router';
-
 @NgModule({
 	declarations: [
 		UiButtonComponent
@@ -14,7 +14,8 @@ import { RouterModule } from '@angular/router';
 	imports: [
 		CommonModule,
 		MetricsModule,
-		RouterModule
+		RouterModule,
+		AppSearchModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

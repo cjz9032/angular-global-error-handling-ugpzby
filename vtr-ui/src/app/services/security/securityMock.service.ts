@@ -157,21 +157,6 @@ export class SecurityAdvisorMockService {
 			familyId: 'string',
 			nickName: 'string',
 			imageUrl: 'string',
-			devicePosture: [
-				{
-					config: 'Password Protection',
-					vulnerable: 'true'
-				}, {
-					config: 'Hard Drive Encryption',
-					vulnerable: 'false'
-				}, {
-					config: 'Antivirus Availability',
-					vulnerable: 'true'
-				}, {
-					config: 'Firewall Availability',
-					vulnerable: 'true'
-				}
-			],
 			launchConsole() {
 				return Promise.resolve(true);
 			},
@@ -183,8 +168,6 @@ export class SecurityAdvisorMockService {
 			},
 			updateActivateDeviceState(res: HomeProtectionDeviceInfo): void {},
 			getActivateDeviceState(callback: Function): void {},
-			getDevicePosture(): Promise<any> { return Promise.resolve(); },
-			cancelGetDevicePosture(): void {},
 			on(type, handler) {
 				return this;
 			},

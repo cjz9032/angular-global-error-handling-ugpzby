@@ -79,17 +79,20 @@ export class PageNetworkboostComponent implements OnInit {
   async	openTargetModal() {
     try {
       this.needToAsk = this.networkBoostService.getNeedToAsk();
-      this.needToAsk = this.needToAsk === undefined ? false : this.needToAsk;
-      console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk);
+      this.needToAsk = (this.needToAsk === undefined || isNaN(this.needToAsk)) ? 0 : this.needToAsk;
+      console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk, this.needToAsk == 1, this.needToAsk == 2);
       console.log('TOGGLE STATUS =>', this.toggleStatus);
       if (this.toggleStatus) {
         this.showAppsModal = true;
-      } else if (!this.toggleStatus && !this.needToAsk) {
-        this.showTurnOnModal = true;
-      } else {
-        this.setNetworkBoostStatus({ switchValue: true });
+      } else if (this.needToAsk == 1 || this.needToAsk == 2) {
+        if (this.needToAsk == 2) {
+          this.setNetworkBoostStatus({ switchValue: true });
+        }
         this.showAppsModal = true;
+      } else {
+        this.showTurnOnModal = true;
       }
+      this.hiddenScroll(true);
     } catch (error) {
       console.log(`ERROR in openTargetModal() `, error);
     }
@@ -112,11 +115,15 @@ export class PageNetworkboostComponent implements OnInit {
     this.setAksAgain(event.askAgainStatus);
     this.setNetworkBoostStatus({ switchValue: true });
     this.showAppsModal = true;
+    this.hiddenScroll(true);
   }
 
-  initNotNowAction() {
+  initNotNowAction(event) {
+    this.setAksAgain(event.askAgainStatus);
     this.showTurnOnModal = false;
-    this.showAppsModal = false;
+    this.showAppsModal = true;
+    this.changeListNum += 1;
+    this.hiddenScroll(true);
   }
 
   modalCloseTurnOn(action: boolean) {
@@ -124,10 +131,12 @@ export class PageNetworkboostComponent implements OnInit {
     if (!this.showTurnOnModal) {
       this.changeListNum += 1;
     }
+    this.hiddenScroll(false);
   }
 
   modalCloseAddApps(action: boolean) {
     this.showAppsModal = action;
+    this.hiddenScroll(false);
     if (!this.showAppsModal) {
       this.changeListNum += 1;
     }
@@ -137,7 +146,12 @@ export class PageNetworkboostComponent implements OnInit {
     try {
       this.toggleStatus = event.switchValue;
       await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
-      // need to set cache
+      if (!this.toggleStatus) {
+        if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) == 2) {
+          this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup , 1);
+        }
+      }
+      this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
     } catch (err) {
       console.log(`ERROR in setNetworkBoostStatus()`, err);
     }
@@ -159,4 +173,12 @@ export class PageNetworkboostComponent implements OnInit {
       console.log(`ERROR in setNetworkBoostStatus()`, err);
     }
   }
+
+  hiddenScroll(action: boolean) {
+		if (action) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}
 }

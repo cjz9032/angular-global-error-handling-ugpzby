@@ -66,5 +66,10 @@
 			background-image: -o-linear-gradient(to right, #2e62d9, #4980fc);
 			background-image: linear-gradient(to right, #2e62d9, #4980fc);
 		}
+		.btn-red {
+			background: $light;
+			color: $danger_dark;
+			border: 0.1rem solid $danger_dark;
+		}
 	}
 }

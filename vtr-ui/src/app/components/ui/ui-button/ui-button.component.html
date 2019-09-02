@@ -24,7 +24,8 @@
 						'text-upper-case': upperCaseLabel,
 						'regular-width': isRegular,
 						'min-height': btnHeight,
-						'btn-gradient': isGradient}"
+						'btn-gradient': isGradient,
+						'btn-red': isRed}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
 			title="{{tooltip?label:''}}"

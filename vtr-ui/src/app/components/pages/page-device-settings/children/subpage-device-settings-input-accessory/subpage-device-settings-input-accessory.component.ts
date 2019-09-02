@@ -258,7 +258,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		}
 	}
 
-	private getMouseAndTouchPadCapability() {
+	public getMouseAndTouchPadCapability() {
 		if (this.keyboardService.isShellAvailable) {
 			Promise.all([
 				this.keyboardService.getMouseCapability(),

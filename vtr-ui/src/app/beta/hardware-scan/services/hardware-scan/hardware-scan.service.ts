@@ -27,6 +27,7 @@ export class HardwareScanService {
 	private recoverInProgress = false;
 	private recoverInit = false;
 	private deviceInRecover: string;
+	private isViewingRecoverLog = false;
 
 	private quickScanRequest: any = []; // request modules
 	private quickScanResponse: any = []; // response modules
@@ -39,6 +40,7 @@ export class HardwareScanService {
 	private previousResults = {};
 	private previousItemsWidget = {};
 	private cancelRequested: boolean;
+	private disableCancel = false;
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
@@ -164,6 +166,14 @@ export class HardwareScanService {
 		this.recoverInProgress = status;
 	}
 
+	public getIsViewingRecoverLog() {
+		return this.isViewingRecoverLog;
+	}
+
+	public setIsViewingRecoverLog(status: boolean) {
+		this.isViewingRecoverLog = status;
+	}
+
 	public isRecoverInit() {
 		return this.recoverInit;
 	}
@@ -174,6 +184,10 @@ export class HardwareScanService {
 
 	public setHasItemsToRecoverBadSectors(status: boolean) {
 		this.hasItemsToRecoverBadSectors = status;
+	}
+
+	public isDisableCancel() {
+		return this.disableCancel;
 	}
 
 	public deleteScan(payload) {
@@ -316,38 +330,12 @@ export class HardwareScanService {
 			return this.hardwareScanBridge.cancelScan((response: any) => {
 				console.log('[cancelScanExecution][Progress]: ', response);
 			})
-				.then((response) => {
-					this.cancelRequested = true;
-					// if (response) {
-					// 	console.log('[cancelScanExecution]', response);
-
-					// 	// // In this case, we receive a empty response from LenovoService (no reason, bug?)
-					// 	// // We send a new request to get the final response
-					// 	if (response.finalDoScanResponse.finalResultCode === undefined ||
-					// 		response.finalDoScanResponse.finalResultCode === null) {
-					// 		this.hardwareScanBridge.cancelScan().then((finalResponse: any) => {
-					// 			this.updateStatusOfTests(finalResponse.finalDoScanResponse);
-					// 			this.updateProgress(finalResponse.finalDoScanResponse);
-					// 			this.updateScanResponse(finalResponse.finalDoScanResponse);
-					// 			return finalResponse.finalDoScanResponse;
-					// 		});
-					// 	}
-
-					// 	// // Normal flow in case the response is not empty
-					// 	if (response.finalDoScanResponse !== undefined && response.finalDoScanResponse !== null) {
-					// 		this.updateStatusOfTests(response.finalDoScanResponse);
-					// 		this.updateProgress(response.finalDoScanResponse);
-					// 		this.updateScanResponse(response.finalDoScanResponse);
-					// 		return response.finalDoScanResponse;
-					// 	}
-
-					// } else {
-					// 	console.log('[Service] Response is undefined');
-					// }
-				})
-				.finally(() => {
-					this.cleanUp();
-				});
+			.then((response) => {
+				this.cancelRequested = true;
+			})
+			.finally(() => {
+				this.cleanUp();
+			});
 		}
 		return undefined;
 	}
@@ -367,10 +355,12 @@ export class HardwareScanService {
 
 	public getRecoverBadSectors(payload) {
 		console.log('[Start] Recover on Service');
+		this.disableCancel = true;
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
 				this.updateRecover(response);
 				this.updateProgressRecover(response);
+				this.disableCancel = false;
 			}).then((response) => {
 				console.log(response);
 
@@ -462,13 +452,14 @@ export class HardwareScanService {
 	public async initLoadingModules(culture) {
 		this.hasItemsToRecoverBadSectors = false;
 		this.getAllItems(culture).then(() => {
-			this.getItemsToRecoverBadSectors().then((response) => {
-				this.devicesToRecoverBadSectors = response.categoryList[0];
-				console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
-				if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
-					this.hasItemsToRecoverBadSectors = true;
-				}
-			});
+			// Recover is hidden because CLI is under approval on SSRB - SR-2087 -->
+			// this.getItemsToRecoverBadSectors().then((response) => {
+			// 	this.devicesToRecoverBadSectors = response.categoryList[0];
+			// 	console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
+			// 	if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
+			// 		this.hasItemsToRecoverBadSectors = true;
+			// 	}
+			// });
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
 		});
@@ -482,7 +473,7 @@ export class HardwareScanService {
 					this.modulesRetrieved = response;
 					this.categoryInformationList = this.modulesRetrieved.categoryList;
 
-					this.customScanRequest = this.buildScanRequest(this.modulesRetrieved);
+					this.customScanRequest = this.buildScanRequest(this.modulesRetrieved, culture);
 					this.quickScanRequest = this.filterQuickRequest(this.customScanRequest);
 					console.log('this.customScanRequest: ', this.customScanRequest);
 					console.log('this.quickScanRequest: ', this.quickScanRequest);
@@ -580,7 +571,7 @@ export class HardwareScanService {
 		}
 	}
 
-	private buildScanRequest(modulesRetrieved: any) {
+	private buildScanRequest(modulesRetrieved: any, culture: string) {
 		console.log('[Start] Build scan request');
 		const scanRequests = [];
 		let testRequestList = [];
@@ -598,7 +589,7 @@ export class HardwareScanService {
 					}
 				}
 				scanRequests.push({
-					lang: 'en-US',
+					lang: culture,
 					loopCount: 0,
 					loopRepeatMinutes: 0,
 					testRequestList: testRequestList,
@@ -751,7 +742,7 @@ export class HardwareScanService {
 		console.log('[End] Update Modules');
 	}
 
-	public filterCustomTests() {
+	public filterCustomTests(culture: string) {
 		console.log('[Start] Filter custom tests');
 		const customModules = this.getCustomScanModules();
 		const modules = customModules.filter(i => i.selected || i.indeterminate);
@@ -784,7 +775,7 @@ export class HardwareScanService {
 
 				// Creating request
 				const scanRequest = {
-					lang: 'en-US',
+					lang: culture,
 					loopCount: 0,
 					loopRepeatMinutes: 0,
 					testRequestList: testsSelected,

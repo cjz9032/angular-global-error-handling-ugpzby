@@ -141,10 +141,10 @@
 		display: block;
 	}
 
-    .input-group{
+	.input-group {
 		border: none;
 		border-image: none;
-		box-shadow: 0px 0px 2.2rem rgba(0,0,0,0.3);
+		box-shadow: 0px 0px 2.2rem rgba(0, 0, 0, 0.3);
 		font-size: 1.2rem;
 		font-weight: $weight_medium;
 		text-transform: uppercase;
@@ -158,13 +158,13 @@
 		flex-direction: column;
 		padding: 1.6rem;
 		border: 0.1rem solid $screen_dark_10;
-	  }
-	  .form-control{
+	}
+	.form-control {
 		padding: 0px;
 		outline: invert;
 		border: medium;
 		border-image: none;
-	  }
+	}
 
 	textarea {
 		margin-top: 1rem;

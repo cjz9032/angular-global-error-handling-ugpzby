@@ -501,6 +501,12 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
-
 	//#endregion
+
+	public getHPDSensorType(): Promise<number> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetHPDSensorType();
+		}
+		return undefined;
+	}
 }

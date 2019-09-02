@@ -5,7 +5,7 @@ import { ContainerCardComponent } from './container-card.component';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SanitizeModule } from 'src/app/modules/sanitize.module';
-
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faArrowRight);
@@ -20,7 +20,8 @@ library.add(faArrowRight);
 		CommonPipeModule,
 		MetricsModule,
 		FontAwesomeModule,
-		SanitizeModule
+		SanitizeModule,
+		AppSearchModule
 	],
 	exports: [
 		ContainerCardComponent
