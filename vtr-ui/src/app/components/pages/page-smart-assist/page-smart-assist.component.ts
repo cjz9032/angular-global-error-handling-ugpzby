@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ChangeContext } from 'ng5-slider';
 
@@ -17,14 +17,17 @@ import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-as
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalZeroTouchLockFacialRecognitionComponent } from '../../modal/modal-zero-touch-lock-facial-recognition/modal-zero-touch-lock-facial-recognition.component';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
+import { throttle, throttleTime, debounce, debounceTime } from 'rxjs/operators';
+import { of, fromEvent } from 'rxjs';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
 	templateUrl: './page-smart-assist.component.html',
 	styleUrls: ['./page-smart-assist.component.scss']
 })
-export class PageSmartAssistComponent implements OnInit {
+export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	title = 'Smart Assist';
 	back = 'BACK';
@@ -48,6 +51,9 @@ export class PageSmartAssistComponent implements OnInit {
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
+	private visibilityChange: any;
+	private Windows: any;
+	private windowsObj: any;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -91,7 +97,8 @@ export class PageSmartAssistComponent implements OnInit {
 		private commonService: CommonService,
 		private translate: TranslateService,
 		public modalService: NgbModal,
-		private router: Router
+		private router: Router,
+		private vantageShellService:VantageShellService
 	) {
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -99,6 +106,24 @@ export class PageSmartAssistComponent implements OnInit {
 		});
 
 		this.fetchCMSArticles();
+
+		//below logic required to getZeroTouchLockFacialRecoStatus when window is maximized from minimized state
+		this.visibilityChange = this.onVisibilityChanged.bind(this);
+		document.addEventListener('visibilitychange', this.visibilityChange);
+		fromEvent(document.body, 'mouseenter')
+			.pipe(
+				throttleTime(2500)
+			)
+			.subscribe(() => {
+				this.onMouseEnterEvent();
+			});	
+		this.Windows = vantageShellService.getWindows();
+		this.windowsObj =  this.Windows.Devices.Enumeration.DeviceAccessInformation
+		.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
+
+		this.windowsObj.addEventListener('accesschanged', () => {
+			this.permissionChanged();
+		});
 	}
 
 	ngOnInit() {
@@ -111,6 +136,10 @@ export class PageSmartAssistComponent implements OnInit {
 			this.setIntelligentScreen();
 			this.initSmartAssist(true);
 		}
+	}
+
+	ngOnDestroy() {
+		document.removeEventListener('visibilitychange', this.visibilityChange);
 	}
 
 	initVisibility() {
@@ -265,16 +294,12 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getHPDStatus(),
 			this.smartAssist.getHPDVisibilityInIdeaPad(),
 			this.smartAssist.getHPDVisibilityInThinkPad(),
-			this.smartAssist.getZeroTouchLockFacialRecoStatus()
+			this.getFacialRecognitionStatus()
 		]).then((responses: any[]) => {
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
 			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
 			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
 			this.intelligentSecurity.isHPDEnabled = responses[3];
-			this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = responses[6].available;
-			this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = responses[6].status;
-			this.intelligentSecurity.facilRecognitionCameraAccess = responses[6].cameraPermission;
-			this.intelligentSecurity.facialRecognitionCameraPrivacyMode = responses[6].privacyModeStatus;
 			if (this.machineType === 0) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
 			} else {
@@ -374,7 +399,6 @@ export class PageSmartAssistComponent implements OnInit {
 		} else {
 			this.zeroTouchLockFacialRecoPopup();
 		}
-		
 	}
 
 	zeroTouchLockFacialRecoPopup() {
@@ -391,7 +415,7 @@ export class PageSmartAssistComponent implements OnInit {
 					this.smartAssist.setZeroTouchLockFacialRecoStatus(this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled)
 					.then((isSuccess: boolean) => {
 							console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess}`);
-		}			);	
+		});	
 				} else if (result === 'cancel') {
 					// cancel and close modal
 					setTimeout(() => {
@@ -497,11 +521,46 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	onClick(path) {
-		this.deviceService.launchUri(path);
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
 	}
 
 	onJumpClick() {
-		this.router.navigate(['/device/device-settings/display-camera']);
-		// this.router.navigate(['/device/device-settings/display-camera',{id:'camera'}]);
+		let navigationExtras : NavigationExtras = {
+			queryParams: {'cameraSession_id': 'camera'},
+			fragment: 'anchor'
+		};
+		// this.router.navigate(['/device/device-settings/display-camera']);
+		this.router.navigate(['/device/device-settings/display-camera',navigationExtras]);
+	}
+
+	getFacialRecognitionStatus() {
+		return this.smartAssist.getZeroTouchLockFacialRecoStatus().then((res:any) => {
+			if (res) {
+				this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = res.available;
+				this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = res.status;
+				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
+				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
+			}
+			console.log(`getFacialRecognitionStatus refresh successed`);
+		})
+	}
+
+	onVisibilityChanged() {
+		if (!document.hidden) {
+			this.getFacialRecognitionStatus();
+			console.log(`zero touch lock facial recognition visibilityChanged - getFacialRecognitionStatus`)
+		}
+	}
+
+	onMouseEnterEvent() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition onMouseEnterEvent - getFacialRecognitionStatus`);
+	}
+
+	permissionChanged() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
 	}
 }

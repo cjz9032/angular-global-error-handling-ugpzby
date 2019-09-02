@@ -16,6 +16,9 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -120,6 +123,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraBlur = new CameraBlur();
 	isDTmachine = false;
 	isAllInOneMachineFlag = false;
+	cameraSession_id:Subscription;
 
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
@@ -128,7 +132,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		private commonService: CommonService,
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
-		private cameraFeedService: CameraFeedService) {
+		private cameraFeedService: CameraFeedService,
+		private route: ActivatedRoute
+		) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -157,6 +163,16 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (welcomeTutorial && welcomeTutorial.page === 2) {
 			this.initFeatures();
 		}
+
+		this.cameraSession_id = this.route
+		.queryParamMap
+		.pipe(map(params => params.get('cameraSession_id') || 'None'))
+		.subscribe(() => {
+			console.log(`get queryParamMap for navigation from smart assist`)
+			setTimeout(() => {
+				document.getElementById('camera').scrollIntoView();
+			},200);
+		})
 	}
 
 	private initFeatures() {
@@ -249,6 +265,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.stopEyeCareMonitor();
 		this.stopMonitorForCamera();
 		clearTimeout(this.privacyGuardInterval);
+		if (this.cameraSession_id) {
+			this.cameraSession_id.unsubscribe();
+		}
 	}
 
 	/**
