@@ -1,7 +1,9 @@
-const { version } = require('../package.json');
+let { version } = require('../package.json');
 const fs = require('fs');
 const path = require('path');
-const file = path.resolve('vtr-ui/postbuild/Tangram.Client.Experience.nuspec');
+
+version = `${version}.${process.argv[2]}`;
+const file = path.resolve('./postbuild/Tangram.Client.Experience.nuspec');
 
 fs.writeFileSync(file,
     fs.readFileSync(file, 'utf-8')
