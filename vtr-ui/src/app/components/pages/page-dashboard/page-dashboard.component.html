@@ -43,6 +43,7 @@
 						[action]="cardContentPositionB.Action"
 						[actionType]="cardContentPositionB.ActionType"
 						[actionLink]="cardContentPositionB.ActionLink"
+						[dataSource]="cardContentPositionB.DataSource"
 						[type]="'corner'"
 						[ratioX]="4"
 						[ratioY]="2"
@@ -134,6 +135,7 @@
 			<div class="row no-gutters">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+						[vtrAppSearchScroller]="['search-feedback']"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
 						[action]="'feedback'"
@@ -142,7 +144,9 @@
 
 					<div class="pt-6"
 						*ngIf="!deviceService.isArm">
-						<vtr-widget-quicksettings></vtr-widget-quicksettings>
+						<vtr-widget-quicksettings
+							[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
+						</vtr-widget-quicksettings>
 					</div>
 				</div>
 				<div class="col-sm-12 col-md-12 pb-40"
@@ -168,10 +172,10 @@
 			</div>
 
 			<div class="row no-gutters"
-				*ngIf="!deviceService.isArm">
+				*ngIf="!deviceService.isArm && !deviceService.isSMode">
 				<div class="col-sm-12 py-40">
 					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-						[linkId]="'dashboard-sa'">
+						[linkId]="'dashboard'">
 					</vtr-widget-security-status>
 				</div>
 			</div>

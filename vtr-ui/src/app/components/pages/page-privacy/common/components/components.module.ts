@@ -31,7 +31,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-tooltip.component';
 import { OfflineModeComponent } from './offline-mode/offline-mode.component';
-
+import { AppSearchModule} from 'src/app/beta/app-search/app-search.module';
 @NgModule({
 	declarations: [
 		SimpleLoaderComponent,
@@ -95,7 +95,8 @@ import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 		SanitizeModule,
 		RouterModule,
 		DirectivesModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		AppSearchModule
 	]
 })
 export class ComponentsModule {

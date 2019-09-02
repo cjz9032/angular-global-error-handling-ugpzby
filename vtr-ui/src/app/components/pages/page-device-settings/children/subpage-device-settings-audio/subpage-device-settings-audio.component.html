@@ -13,6 +13,7 @@
 		id="audio">
 		<div class="col-10 mx-auto">
 			<vtr-container-collapsible componentName="Audio SmartSettings"
+				[vtrAppSearchScroller]="['search-audio-smart']"
 				[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
 				[isCollapsed]="false"
 				[allowCollapse]="false"
@@ -20,9 +21,11 @@
 				[collapseLinkId]="'audio-smart-settings'">
 				<div class="row">
 					<div class="col-auto text-wrap subtitle">
-						<h3 id="audio-audioSmartSettings-sub-title" attr.aria-label="ds-audio-audioSmartSettings-sub-title">
+						<h3 id="audio-audioSmartSettings-sub-title"
+							attr.aria-label="ds-audio-audioSmartSettings-sub-title">
 							{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}</h3>
-						<p id="audio-audioSmartSettings-description" attr.aria-label="ds-audio-audioSmartSettings-description">
+						<p id="audio-audioSmartSettings-description"
+							attr.aria-label="ds-audio-audioSmartSettings-description">
 							{{'device.deviceSettings.audio.audioSmartsettings.description' | translate }}</p>
 					</div>
 				</div>
@@ -49,7 +52,7 @@
 								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
 								<vtr-ui-circle-radio *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
 									theme="blue"
-									[radioId]="'radio'| uniqueId"
+									[radioId]="'radioDolbyMode' + dolbyMode | removeSpace"
 									[group]="radioGroupAutoDolbySettings"
 									[label]="dolbyMode | dolbyModesTranslation"
 									[value]='dolbyMode'
@@ -87,6 +90,7 @@
 		id="microphone">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="Microphone"
+				[vtrAppSearchScroller]="['search-microphone']"
 				[cardTitle]="'device.deviceSettings.audio.microphone.title' | translate"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
@@ -132,7 +136,8 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[disabled]="!microphoneProperties.permission"
-							[theme]="'white'">
+							[theme]="'white'"
+							[switchId]="'audio-microphone-volume'">
 							<div class="row">
 								<div class="col-10">
 									<vtr-ui-range-slider
@@ -210,7 +215,7 @@
 							[switchId]="'audio-microphone-optimize'">
 							<div class="row no-gutters">
 								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
-									[radioId]="'radio'| uniqueId"
+									[radioId]="'radioMicrophone' + optimizeMode | removeSpace"
 									[group]="radioOptimiseMicSettings"
 									[label]="optimizeMode | separatePascalCase"
 									[theme]="'white'"

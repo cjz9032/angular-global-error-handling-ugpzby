@@ -2,7 +2,7 @@ import { Component, Input, OnInit, OnDestroy, ContentChild, TemplateRef } from '
 import { CommonPopupService, CommonPopupEventType } from '../../services/popups/common-popup.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
-import { AnalyticsService } from '../../services/analytics.service';
+import { AnalyticsService } from '../../services/analytics/analytics.service';
 import { GetParentForAnalyticsService } from '../../services/get-parent-for-analytics.service';
 import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
 import { VIDEO_POPUP_ID } from '../../../main-layout/sidebar/video-widget/video-widget.component';
@@ -22,7 +22,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	analyticsData = {
 		'confirmationPopup': {
 			ItemName: 'BreachedAccountsClosePopupButton',
-			ItemParent: 'ConfirmYousrEmailPopup',
+			ItemParent: 'ConfirmYourEmailPopup',
 		},
 		'low-privacy-popup': {
 			ItemName: 'ScorePopupCloseButton',

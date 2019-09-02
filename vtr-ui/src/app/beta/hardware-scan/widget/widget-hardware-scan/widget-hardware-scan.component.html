@@ -1,73 +1,75 @@
 <div class="vtr-widget-hardware-scan">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col col-12 hardwarescan-background">
-				<div class="row" *ngIf="!isOnline && !showProgress">
-					<div class="col-2 align-self-center text-right pr-0">
-						<fa-icon [icon]="['fal', 'wifi-slash']" class="offline-icon"></fa-icon>
-					</div>
-					<div class="col-10 pl-0">
-						<div class="row">
-							<div class="col offline-text">{{offlineText}}</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col title">{{title}}</div>
-				</div>
-				<div class="row" *ngIf="showProgress && !(percent === 100)">
-					<div class="col row1">{{subTitle}}</div>
-				</div>
-				<div *ngIf="!showProgress" class="row">
-					<div class="col button-row">
-						<button
-							[ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}"
-							vtrMetrics metricsEvent="itemClick" metricsParent="hardware-scan" [disabled]="disableQuickScan"
-							(click)="onQuickScan()">{{buttonText}}</button>
-						<a [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}"
-							(click)="onAnchor()">{{anchorText}}</a>
-					</div>
-				</div>
-				<div *ngIf="showProgress" class="col row hwscan-header">
-					<div class="col col-12 row progress-div">
-						<div *ngIf="!(percent === 100)" class="col col-12 progress-percent-text">
-							<span class="progress-value-text">{{percent}}</span>
-							<span class="progress-complete-text">% {{completeText}}</span>
-						</div>
-					</div>
-					<div *ngIf="!(percent === 100)" class="col col-12 row progress-bar-div-container">
-						<div class="col col-12 progress-bar-div">
-							<ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
-						</div>
-					</div>
-					<div *ngIf="(percent === 100)" class="col col-12 row status">
-						<span>{{statusText}}</span>
-					</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-12 hardwarescan-background">
+                <div class="vtr-widget-offline-info" *ngIf="!isOnline && !showProgress">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col col-12 offline-info-background">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="offline-icon">
+                                        <fa-icon [icon]="['fal', 'wifi-slash']" class="icon"></fa-icon>
+                                    </div>
+                                    <div class="w-100 offline-content">
+                                        <div class="row">
+                                            <div class="col title">{{offlineText}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col title">{{title}}</div>
+                </div>
+                <div class="row" *ngIf="showProgress && !(percent === 100)">
+                    <div class="col row1">{{subTitle}}</div>
+                </div>
+                <div *ngIf="!showProgress" class="row">
+                    <div class="col button-row">
+                        <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan" [disabled]="disableQuickScan" (click)="onQuickScan()">{{buttonText}}</button>
+                        <a [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">{{anchorText}}</a>
+                    </div>
+                </div>
+                <div *ngIf="showProgress" class="col row hwscan-header">
+                    <div class="col col-12 row progress-div">
+                        <div *ngIf="!(percent === 100)" class="col col-12 progress-percent-text">
+                            <span class="progress-value-text">{{percent}}</span>
+                            <span class="progress-complete-text">% {{completeText}}</span>
+                        </div>
+                    </div>
+                    <div *ngIf="!(percent === 100)" class="col col-12 row progress-bar-div-container">
+                        <div class="col col-12 progress-bar-div">
+                            <ngb-progressbar type="success" [value]="percent" [height]="'0.6rem'"></ngb-progressbar>
+                        </div>
+                    </div>
+                    <div *ngIf="(percent === 100)" class="col col-12 row status">
+                        <span>{{statusText}}</span>
+                    </div>
 
 
-					<div class="col col-12 row">
-						<div class="cancel-check" *ngIf="!(percent === 100)">
-							<a class="cancel-check-text" (click)="onCancel()">{{cancelText}}</a>
-						</div>
-						<div class="container final-result-code" *ngIf="finalResultCode">
-							<span class="result-code-value-text">{{finalResultCodeText}}:</span>
-							<span class="result-code-complete-text"> {{finalResultCode}}</span>
-							<fa-icon *ngIf="tooltipInformation" class="result-code-icon" triggers="click:blur"
-								placement="auto" [ngbTooltip]="tooltipFinalResultCode"
-								[icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
-							</fa-icon>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div class="col col-12 row">
+                        <div class="cancel-check" *ngIf="!(percent === 100)">
+                            <a [ngClass]="{'cancel-check-text': !disableCancel, 'disabled-cancel': disableCancel}" (click)="onCancel()">{{cancelText}}</a>
+                        </div>
+                        <div class="container final-result-code" *ngIf="finalResultCode">
+                            <span class="result-code-value-text">{{finalResultCodeText}}:</span>
+                            <span class="result-code-complete-text"> {{finalResultCode}}</span>
+                            <fa-icon *ngIf="tooltipInformation" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
+                            </fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <ng-template #tooltipFinalResultCode>
-	<div [innerHTML]="tooltipInformation"></div>
-	<div class='button-box'>
-		<a [attr.href]="'https://support.lenovo.com/contactus'" target="_blank"><button
+    <div [innerHTML]="tooltipInformation"></div>
+    <div class='button-box'>
+        <a [attr.href]="'https://support.lenovo.com/contactus'" target="_blank"><button
 				class='btn button'>{{ lenovoSupport }}</button>
 		</a>
-	</div>
+    </div>
 </ng-template>

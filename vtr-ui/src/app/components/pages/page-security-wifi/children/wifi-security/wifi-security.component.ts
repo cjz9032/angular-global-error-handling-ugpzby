@@ -1,8 +1,7 @@
 import {
 	Component,
 	OnInit,
-	Input,
-	NgZone
+	Input
 } from '@angular/core';
 import {
 	NgbModalRef,
@@ -14,9 +13,6 @@ import {
 import {
 	WifiHomeViewModel
 } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import {
-	EventTypes
-} from '@lenovo/tan-client-bridge';
 import {
 	BaseComponent
 } from '../../../../base/base.component';
@@ -41,7 +37,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() wifiIsShowMore: string;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
-	region: string;
+	region = 'us';
+	language = 'en';
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
 	showMore = false;
@@ -55,7 +52,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		private commonService: CommonService,
 		private localInfoService: LocalInfoService,
 		private dialogService: DialogService,
-		private ngZone: NgZone
 	) {
 		super();
 	}
@@ -63,8 +59,16 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	ngOnInit() {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
+			this.language = result.Lang;
 		}).catch(e => {
 			this.region = 'us';
+			this.language = 'en';
+		}).then(() => {
+			if (this.wifiIsShowMore !== 'false' && this.region === 'us' && this.language === 'en') {
+				this.isShowMore = true;
+			} else {
+				this.isShowMore = false;
+			}
 		});
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;
@@ -78,37 +82,17 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	}
 
 	enableWifiSecurity(): void {
-		try {
-			if (this.data.wifiSecurity) {
-				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-					if (res === true) {
-						this.data.isLWSEnabled = true;
-					} else {
-						this.data.isLWSEnabled = false;
-					}
-					this.data.homeProtection.refresh();
-				}, (error) => {
-					this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-				});
-			}
-		} catch {
-			throw new Error('wifiSecurity is null');
-		}
-	}
-
-	disableWifiSecurity(): void {
-		try {
-			if (this.data.wifiSecurity) {
-				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-					if (res === true) {
-						this.data.isLWSEnabled = false;
-					} else {
-						this.data.isLWSEnabled = true;
-					}
-				});
-			}
-		} catch {
-			throw new Error('wifiSecurity is null');
+		if (this.data && this.data.wifiSecurity) {
+			this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+				if (res === true) {
+					this.data.isLWSEnabled = true;
+				} else {
+					this.data.isLWSEnabled = false;
+				}
+				this.data.homeProtection.refresh();
+			}, (error) => {
+				this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+			});
 		}
 	}
 

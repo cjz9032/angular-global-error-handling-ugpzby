@@ -30,7 +30,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 })
 export class PageDeviceGamingComponent implements OnInit {
 	public static allCapablitiyFlag = false;
-	firstName = 'User';
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -68,13 +67,6 @@ export class PageDeviceGamingComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		const self = this;
-
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			}
-		});
 		this.isOnline = this.commonService.isOnline;
 		console.log('Status of internet ================>', this.isOnline);
 		if (this.dashboardService.isShellAvailable) {
@@ -542,9 +534,6 @@ export class PageDeviceGamingComponent implements OnInit {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
-					break;
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
 					break;
 				default:
 					break;

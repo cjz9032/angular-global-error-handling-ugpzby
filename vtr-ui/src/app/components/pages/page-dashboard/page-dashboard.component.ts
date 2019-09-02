@@ -1,29 +1,30 @@
-import {	Component,	OnInit,	DoCheck,	OnDestroy} from '@angular/core';
-import {	Router,	ActivatedRoute} from '@angular/router';
+import { Component, OnInit, DoCheck, OnDestroy, SecurityContext } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import {	TranslateService,	LangChangeEvent} from '@ngx-translate/core';
-import {	SecurityAdvisor} from '@lenovo/tan-client-bridge';
-import {	QaService} from '../../../services/qa/qa.service';
-import {	DashboardService} from 'src/app/services/dashboard/dashboard.service';
-import {	Status} from 'src/app/data-models/widgets/status.model';
-import {	CommonService} from 'src/app/services/common/common.service';
-import {	DeviceService} from 'src/app/services/device/device.service';
-import {	CMSService} from 'src/app/services/cms/cms.service';
-import {	AppNotification} from 'src/app/data-models/common/app-notification.model';
-import {	LenovoIdKey} from 'src/app/enums/lenovo-id-key.enum';
-import {	NetworkStatus} from 'src/app/enums/network-status.enum';
-import {	FeedbackFormComponent} from '../../feedback-form/feedback-form/feedback-form.component';
-import {	SystemUpdateService} from 'src/app/services/system-update/system-update.service';
-import {	VantageShellService} from '../../../services/vantage-shell/vantage-shell.service';
-import {	UserService} from 'src/app/services/user/user.service';
-import {	AndroidService} from 'src/app/services/android/android.service';
-import {	UPEService} from 'src/app/services/upe/upe.service';
-import {	SecurityAdvisorMockService} from 'src/app/services/security/securityMock.service';
-import {	LenovoIdDialogService} from 'src/app/services/dialog/lenovoIdDialog.service';
-import {	LoggerService} from 'src/app/services/logger/logger.service';
-import {	SessionStorageKey} from 'src/app/enums/session-storage-key-enum';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { QaService } from '../../../services/qa/qa.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { Status } from 'src/app/data-models/widgets/status.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { AndroidService } from 'src/app/services/android/android.service';
+import { UPEService } from 'src/app/services/upe/upe.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
+import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -32,7 +33,6 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 	styleUrls: ['./page-dashboard.component.scss'],
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
-	firstName = 'User';
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -72,7 +72,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		private lenovoIdDialogService: LenovoIdDialogService,
 		private loggerService: LoggerService,
-		private hypService: HypothesisService
+		private hypService: HypothesisService,
+		private sanitizer: DomSanitizer
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -103,14 +104,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		const self = this;
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			} else {
-				self.firstName = this.userService.firstName;
-			}
-		});
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
@@ -149,7 +142,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 
-	private fetchContent(lang ?: string) {
+	private fetchContent(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -172,8 +165,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 							return {
 								albumId: 1,
 								id: record.Id,
-								source: record.Title,
-								title: record.Description,
+								source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+								title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
 								url: record.FeatureImage,
 								ActionLink: record.ActionLink
 							};
@@ -246,7 +239,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	onFeedbackModal() {
 		this.modalService.open(FeedbackFormComponent, {
-			backdrop: 'static',
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'feedback-modal'
@@ -269,11 +262,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	public onConnectivityClick($event: any) {}
+	public onConnectivityClick($event: any) { }
 
 
 	private getTileBSource() {
-		 return new Promise((resolve) => {
+		return new Promise((resolve) => {
 			this.hypService.getFeatureSetting('TileBSource').then((source) => {
 				if (source === 'UPE') {
 					resolve('UPE');
@@ -283,7 +276,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			}, () => {
 				resolve('CMS');
 			});
-		 });
+		});
 	}
 
 	private setDefaultCMSContent() {
@@ -448,25 +441,27 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		warranty.type = 'system';
 		this.systemStatus[2] = warranty;
 
-		const systemUpdate = new Status();
-		systemUpdate.status = 4;
-		systemUpdate.id = 'systemupdate';
-		systemUpdate.metricsItemName = 'System Update';
+		if (this.deviceService && !this.deviceService.isSMode) {
+			const systemUpdate = new Status();
+			systemUpdate.status = 4;
+			systemUpdate.id = 'systemupdate';
+			systemUpdate.metricsItemName = 'System Update';
 
-		this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
-			systemUpdate.title = value;
-		});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+				systemUpdate.title = value;
+			});
 
-		this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
-			systemUpdate.detail = value;
-		});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+				systemUpdate.detail = value;
+			});
 
 
-		systemUpdate.path = 'device/system-updates';
-		systemUpdate.asLink = true;
-		systemUpdate.isSystemLink = false;
-		systemUpdate.type = 'system';
-		this.systemStatus[3] = systemUpdate;
+			systemUpdate.path = 'device/system-updates';
+			systemUpdate.asLink = true;
+			systemUpdate.isSystemLink = false;
+			systemUpdate.type = 'system';
+			this.systemStatus[3] = systemUpdate;
+		}
 
 	}
 
@@ -525,21 +520,23 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		// system update
-		this.dashboardService.getRecentUpdateInfo().subscribe(value => {
-			if (value) {
-				const systemUpdate = this.systemStatus[3];
-				const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
-				if (value.status === 1) {
-					if (diffInDays > 30) {
-						systemUpdate.status = 1;
+		if (this.deviceService && !this.deviceService.isSMode) {
+			this.dashboardService.getRecentUpdateInfo().subscribe(value => {
+				if (value) {
+					const systemUpdate = this.systemStatus[3];
+					const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
+					if (value.status === 1) {
+						if (diffInDays > 30) {
+							systemUpdate.status = 1;
+						} else {
+							systemUpdate.status = 0;
+						}
 					} else {
-						systemUpdate.status = 0;
+						systemUpdate.status = 1;
 					}
-				} else {
-					systemUpdate.status = 1;
 				}
-			}
-		});
+			});
+		}
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -548,9 +545,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
-					break;
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
 					break;
 				default:
 					break;

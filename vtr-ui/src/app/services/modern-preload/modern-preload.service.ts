@@ -49,7 +49,7 @@ export class ModernPreloadService {
 		}
 	}
 
-	private getIsEntitled() {
+	public getIsEntitled() {
 		if (this.isInitialized) {
 			this.modernPreloadBridge.getIsEntitled().then((response) => {
 				if (response.result !== undefined) {
@@ -98,14 +98,14 @@ export class ModernPreloadService {
 
 	private mergeAppDetails(appList: any, cmsAppList: any) {
 		appList.forEach(app => {
-			const detailFromCMS = cmsAppList.find((detail) => detail.UDCId === app.partNum);
+			const detailFromCMS = cmsAppList.find((detail) => detail.UDCId.includes(app.partNum));
 			if (detailFromCMS) {
 				app.company = detailFromCMS.Company;
 				app.filters = detailFromCMS.Filters;
 				app.size = detailFromCMS.Size;
 				app.thumbnail = detailFromCMS.Thumbnail;
 				app.title = detailFromCMS.Title;
-				app.udcId = detailFromCMS.UDCId;
+				app.udcId = app.partNum;
 				app.version = detailFromCMS.Version;
 			}
 		});

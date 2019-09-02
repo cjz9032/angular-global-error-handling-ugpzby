@@ -4,9 +4,10 @@
 	<div #innerHTML [innerHTML]="article?.Body"></div>
 	<div class="article__pitch" *ngIf="!(isFigleafInstalled$ | async)">
 		<vtr-big-pitch
-			[articleId]="article?.ActionLink"
-			[isFigleafTrialExpired]="isFigleafTrialExpired$ | async"
-			[isFigleafTrialSoonExpired]="isFigleafTrialSoonExpired$ | async">
+			[articleId]="article?.Id"
+			[isShowExpiredPitch]="isShow$ | async"
+			[appStatuses]="appStatuses$ | async"
+			[timeToExpires]="timeToExpires$ | async">
 		</vtr-big-pitch>
 	</div>
 </div>

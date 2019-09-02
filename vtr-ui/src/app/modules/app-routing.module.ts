@@ -53,6 +53,10 @@ const routes: Routes = [
 		loadChildren: '../beta/beta.module#BetaModule'
 	},
 	{
+		path: 'device/smart-performance',
+		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
+	},
+	{
 		path: '',
 		component: HomeComponent,
 		pathMatch: 'full'
@@ -61,6 +65,8 @@ const routes: Routes = [
 		path: '**',
 		component: HomeComponent
 	}
+
+
 ];
 
 

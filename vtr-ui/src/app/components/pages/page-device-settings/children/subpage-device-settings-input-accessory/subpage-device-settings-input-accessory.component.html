@@ -9,11 +9,12 @@
 	</div>
 
 	<div class="row py-5 smartsettings-card"
-		id="Input & Accessories" attr.aria-label="Input & Accessories" >
+		id="Input & Accessories"
+		attr.aria-label="Input & Accessories">
 		<div class="col-10 mx-auto ">
 			<!-- Input & Accessories -->
-			<vtr-container-collapsible
-				[collapseLinkId]="'inputAccessories'"
+			<vtr-container-collapsible [collapseLinkId]="'inputAccessories'"
+				[vtrAppSearchScroller]="['search-hidden-keyboard-fn', 'search-Keyboard-top-row']"
 				[cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
 				componentName="Input & Accessories"
 				[isCollapsed]="false"
@@ -21,14 +22,14 @@
 				[theme]="'white'">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
-						*ngIf="machineType == 1 && keyboardCompatability">
+						*ngIf="machineType == 1 && keyboardCompatibility">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
 							componentName="Input Accessories"
 							[caption]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate"
 							[leftIcon]="['fal', 'keyboard']"
 							[showChildContent]="true"
-							[theme]="'white'" 
+							[theme]="'white'"
 							[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -41,7 +42,7 @@
 												[style.background-image]="additionalCapabilitiesObj.backLight ? 'url(' + kbdBlIcon + ')': ''">
 												<div class="img-preview"
 													[style.background-image]="additionalCapabilitiesObj.magnifier ? 'url(' + merlynIcon + ')': ''">
-													<img *ngIf="additionalCapabilitiesObj.performane"
+													<img *ngIf="additionalCapabilitiesObj.performance"
 														[src]="zoomIcon"
 														class="image" />
 												</div>
@@ -54,19 +55,27 @@
 							<div class="row keys-row">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex"
 									*ngFor="let key of shortcutKeys">
-									<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 pl-1" >
-										<h4 class="mb-0 caption-tittle" id="title-caption" attr.aria-label="{{key.title}}-title" >
+									<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 pl-1">
+										<h4 class="mb-0 caption-tittle"
+											id="title-caption"
+											attr.aria-label="{{key.title}}-title">
 											{{key + '.tittle' | translate}}
 										</h4>
 									</div>
-									<div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" >
-										<p class="hidden-keyboard-text mb-0" id="title-description" attr.aria-label="{{key.title}}-description">
+									<div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+										<p class="hidden-keyboard-text mb-0"
+											id="title-description"
+											attr.aria-label="{{key.title}}-description">
 											{{key + '.description' | translate}}
 										</p>
 									</div>
 								</div>
 							</div>
 						</vtr-ui-row-switch>
+					</li>
+					<li class="pt-3"
+						*ngIf="machineType == 1">
+						<vtr-top-row-functions></vtr-top-row-functions>
 					</li>
 					<!-- <li class="pt-3">
 						<vtr-ui-row-switch
@@ -81,31 +90,37 @@
 							(toggleOnOff)="fnCtrlKey($event)"
 							[switchId]="'inputAccessories-fnCtrlKey'"
 							>
-							<div class="fn-ctrl-block" *ngIf="switchValue">
+							<div *ngIf="switchValue">
 								<div class="row">
 									<div class="col-auto pt-3">
 										<img src="../../../../../../assets/images/Fn-Ctrl-key.PNG">
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-auto pt-5">
-										<p>{{'device.deviceSettings.inputAccessories.fnCtrlKey.more' | translate}}</p>
-									</div>
-								</div>
-								<div class="row controls">
-									<div class="col-auto">
-										<a><span>{{'device.deviceSettings.inputAccessories.fnCtrlKey.control1' | translate}}</span></a>
-									</div>
-									<div class="col-auto">
-										<a><span>{{'device.deviceSettings.inputAccessories.fnCtrlKey.control2' | translate}}</span></a>
-									</div>
-								</div>
 							</div>
 						</vtr-ui-row-switch>
 					</li> -->
-
 					<vtr-user-defined-key></vtr-user-defined-key>
 				</ul>
+				<div class="control-options-block"
+					*ngIf="isTouchPadVisible || isMouseVisible">
+					<div class="row">
+						<div class="col-auto">
+							<p>{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}</p>
+						</div>
+					</div>
+					<div class="row controls">
+						<div class="col-auto"
+							*ngIf="isTouchPadVisible">
+							<a
+								(click)='launchProtocol("ms-settings:devices-touchpad")'><span>{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}</span></a>
+						</div>
+						<div class="col-auto"
+							*ngIf="isMouseVisible">
+							<a
+								(click)='launchProtocol("ms-settings:mousetouchpad")'><span>{{'device.deviceSettings.inputAccessories.controlOptions.control2' | translate}}</span></a>
+						</div>
+					</div>
+				</div>
 			</vtr-container-collapsible>
 		</div>
 	</div>

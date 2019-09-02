@@ -1,6 +1,6 @@
 import { Directive, ElementRef, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { GetParentForAnalyticsService } from '../services/get-parent-for-analytics.service';
-import { AnalyticsService, ItemTypes } from '../services/analytics.service';
+import { AnalyticsService, ItemTypes } from '../services/analytics/analytics.service';
 
 @Directive({
 	selector: '[vtrSendAnalytics]'
@@ -11,7 +11,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	@Input() metricsEvent: string; // ItemType
 	@Input() metricsItem: string; // ItemName
 	@Input() metricsValue?: string; // ItemValue
-	@Input() metricsParam?: string | object; // ItemParm
+	@Input() metricsParam?: object; // ItemParm
 	@Input() pageContext?: string; // PageContext
 	@Input() metricsParent?: string; // ItemParent
 	@Input() customPageName?: string;

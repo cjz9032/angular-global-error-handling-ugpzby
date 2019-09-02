@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FeedbackFormComponent } from 'src/app/components/feedback-form/feedback-form/feedback-form.component';
 import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.module';
 import { TranslationModule } from '../translation.module';
@@ -13,19 +15,17 @@ import { WidgetQuicksettingsComponent } from 'src/app/components/widgets/widget-
 import { WidgetSwitchIconComponent } from 'src/app/components/widgets/widget-switch-icon/widget-switch-icon.component';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { NgbCarouselModule, NgbDropdownModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
-import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
-
-library.add(faTimes);
-library.add(faExclamationCircle);
+import { CommonPipeModule } from '../common/common-pipe.module';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 @NgModule({
 	declarations: [
@@ -44,7 +44,6 @@ library.add(faExclamationCircle);
 		UiButtonModule,
 		WidgetSecurityStatusModule,
 		NgbCarouselModule,
-		// HeaderMainModule,
 		NgbDropdownModule,
 		WidgetOfflineModule,
 		WidgetCarouselModule,
@@ -53,7 +52,9 @@ library.add(faExclamationCircle);
 		FormsModule,
 		ReactiveFormsModule,
 		NgbModalModule,
-		PageLayoutModule
+		CommonPipeModule,
+		PageLayoutModule,
+		AppSearchModule
 	],
 	exports: [
 		MetricsModule,
@@ -65,9 +66,15 @@ library.add(faExclamationCircle);
 		FormsModule,
 		ReactiveFormsModule,
 		PageLayoutModule,
+		AppSearchModule
 	],
 	providers: [MockService],
 	entryComponents: [FeedbackFormComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class HardwareDashboardModule { }
+export class HardwareDashboardModule {
+	constructor() {
+		library.add(faTimes);
+		library.add(faExclamationCircle);
+	}
+}

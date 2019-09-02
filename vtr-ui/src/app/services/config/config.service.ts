@@ -4,7 +4,6 @@ import {
 import {
 	DeviceService
 } from 'src/app/services/device/device.service';
-import { UserService } from 'src/app/services/user/user.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
@@ -18,9 +17,8 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	constructor(
 		private deviceService: DeviceService,
-		private userService: UserService,
 		private commonService: CommonService) {
-		}
+	}
 
 	menuItemsGaming: Array<any> = [{
 		id: 'device',
@@ -34,6 +32,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		sMode: true,
 		subitems: []
 	}, {
 		id: 'support',
@@ -47,6 +46,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
+		sMode: true,
 		subitems: [{
 			id: 'support',
 			label: 'gaming.common.menu.support.sub1',
@@ -113,6 +113,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		sMode: true,
 		subitems: []
 	}, {
 		id: 'device',
@@ -123,6 +124,7 @@ export class ConfigService {
 		metricsParent: 'navbar',
 		metricsItem: 'link.device',
 		forArm: false,
+		sMode: true,
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
@@ -134,6 +136,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			sMode: true,
 			subitems: []
 		}, {
 			id: 'device-settings',
@@ -146,6 +149,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: false
 			},
+			sMode: true,
 			subitems: []
 		}, {
 			id: 'system-updates',
@@ -159,7 +163,21 @@ export class ConfigService {
 				exact: true
 			},
 			subitems: []
-		}]
+		}
+		// {
+		// 		id: 'smart-performance',
+		// 		label: 'Smart performance',
+		// 		path: 'smart-performance',
+		// 		icon: '',
+		// 		metricsEvent: 'itemClick',
+		// 		metricsParent: 'navbar',
+		// 		metricsItem: '',
+		// 		routerLinkActiveOptions: {
+		// 			exact: true
+		// 		},
+		// 		subitems: []
+		// 	}
+		]
 	}, {
 		id: 'security',
 		label: 'common.menu.security.title',
@@ -230,6 +248,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
+		sMode: true,
 		subitems: []
 	},
 	{
@@ -258,6 +277,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		sMode: true,
 		subitems: []
 	}];
 	menuItemsPrivacy: Array<any> = [{
@@ -272,11 +292,12 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: true,
+		sMode: true,
 		subitems: []
 	}, {
 		id: 'privacy',
 		label: 'common.menu.privacy',
-		path: 'privacy/breaches',
+		path: 'privacy',
 		icon: ['fal', 'user-shield'],
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
@@ -295,6 +316,7 @@ export class ConfigService {
 		metricsParent: 'navbar',
 		metricsItem: 'link.device',
 		forArm: false,
+		sMode: true,
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
@@ -306,6 +328,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			sMode: true,
 			subitems: []
 		}, {
 			id: 'device-settings',
@@ -318,6 +341,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: false
 			},
+			sMode: true,
 			subitems: []
 		}, {
 			id: 'system-updates',
@@ -402,6 +426,7 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
+		sMode: true,
 		subitems: []
 	},
 	{
@@ -416,6 +441,7 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
+		hide: false,
 		subitems: [],
 		pre: [
 			'assets/images/connected-home-security/welcome-page-one.png',
@@ -438,7 +464,7 @@ export class ConfigService {
 		subitems: []
 	}];
 
-	betaItem = {
+	betaItem = [{
 		id: 'hardware-scan',
 		label: 'hardwareScan.name',
 		beta: true,
@@ -452,7 +478,21 @@ export class ConfigService {
 		icon: ['fal', 'flask'],
 		forArm: false,
 		subitems: []
-	};
+	}, {
+		id: 'app-search',
+		label: ' ',
+		beta: true,
+		path: '',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.app-search',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'search'],
+		forArm: false,
+		subitems: []
+	}];
 
 	getMenuItems(isGaming) {
 		if (isGaming) {
@@ -470,7 +510,7 @@ export class ConfigService {
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-			if (this.countryCodes.indexOf(country.toLowerCase()) !== -1) {
+			if (country.toLowerCase() === 'us') {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
@@ -480,9 +520,9 @@ export class ConfigService {
 			}
 			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
 			if (isBetaUser) {
-				resultMenu.splice(resultMenu.length - 1, 0, this.betaItem);
+				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 			}
-			resolve(resultMenu);
+			resolve(resultMenu.filter(item => !item.hide));
 		});
 	}
 

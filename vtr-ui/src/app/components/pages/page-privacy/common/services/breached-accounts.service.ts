@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { EMPTY, merge, of, ReplaySubject, Subject } from 'rxjs';
+import { EMPTY, merge, ReplaySubject, Subject } from 'rxjs';
 import {
 	catchError,
 	debounceTime,
@@ -39,13 +39,15 @@ export interface BreachedAccount {
 interface GetBreachedAccountsState {
 	breaches: BreachedAccount[];
 	error: string | null;
+	reset?: boolean;
 }
 
 @Injectable({
 	providedIn: 'root'
 })
 export class BreachedAccountsService implements OnDestroy {
-	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
+	private onGetBreachedAccounts = new ReplaySubject<GetBreachedAccountsState>(1);
+	onGetBreachedAccounts$ = this.onGetBreachedAccounts.asObservable();
 
 	private getNewBreachedAccounts$ = new Subject<boolean>();
 
@@ -63,11 +65,14 @@ export class BreachedAccountsService implements OnDestroy {
 
 	private getBreachedAccounts() {
 		return merge(
-			this.emailScannerService.scanNotifier$.pipe(distinctUntilChanged()),
+			this.emailScannerService.scanNotifier$,
 			this.emailScannerService.validationStatusChanged$.pipe(distinctUntilChanged()),
-			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(distinctUntilChanged()),
+			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
+				tap((isFigleafReadyForCommunication) => this.resetBreachedAccounts(isFigleafReadyForCommunication)),
+				distinctUntilChanged()
+			),
 			this.getNewBreachedAccounts$.asObservable().pipe(distinctUntilChanged()),
-			this.updateTriggersService.shouldUpdate$.pipe(distinctUntilChanged()),
+			this.updateTriggersService.shouldUpdate$,
 		).pipe(
 			debounceTime(200),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
@@ -75,6 +80,7 @@ export class BreachedAccountsService implements OnDestroy {
 				console.log('isFigleafInstalled', isFigleafInstalled);
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
+			map((breachedAccounts) => breachedAccounts.filter(x => !x.isFixed)),
 			map((breachedAccounts) => {
 				const breaches = breachedAccounts.filter(x => x.domain !== 'n/a');
 				const unknownBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
@@ -83,7 +89,7 @@ export class BreachedAccountsService implements OnDestroy {
 			catchError((error) => this.handleError(error)),
 			takeUntil(instanceDestroyed(this))
 		).subscribe((response: BreachedAccount[]) => {
-			this.onGetBreachedAccounts$.next({breaches: response, error: null});
+			this.onGetBreachedAccounts.next({breaches: response, error: null});
 			this.sendTaskAcrion();
 		});
 	}
@@ -98,7 +104,10 @@ export class BreachedAccountsService implements OnDestroy {
 		return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'})
 			.pipe(
 				map((response: GetBreachedAccountsResponse) => response.payload.breaches),
-				catchError((err) => EMPTY)
+				catchError((err) => {
+					console.error('getFigleafBreachedAccountsError', err);
+					return EMPTY;
+				})
 			);
 	}
 
@@ -111,9 +120,15 @@ export class BreachedAccountsService implements OnDestroy {
 	private handleError(error: any) {
 		console.error('onGetBreachedAccounts', error);
 		if (error !== ErrorNames.noAccessToken) {
-			this.onGetBreachedAccounts$.next({breaches: null, error: error});
+			this.onGetBreachedAccounts.next({breaches: null, error});
 		}
 		this.sendTaskAcrion();
 		return EMPTY;
+	}
+
+	private resetBreachedAccounts(isFigleafReadyForCommunication) {
+		if (!isFigleafReadyForCommunication) {
+			this.onGetBreachedAccounts.next({breaches: [], error: null, reset: true});
+		}
 	}
 }

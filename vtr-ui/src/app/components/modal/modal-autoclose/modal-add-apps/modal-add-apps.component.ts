@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { isUndefined } from 'util';
 
 @Component({
@@ -14,11 +13,15 @@ export class ModalAddAppsComponent implements OnInit {
 	@Input() runningListData: any[];
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
 	@Output() addAppToList = new EventEmitter<boolean>();
-	public loading: boolean = true;
-	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
+	public loading = true;
+	public loadingNoApps = false;
+	constructor() { }
 
 	ngOnInit() {
-		this.loading = this.loaderData.loading;
+		if (!isUndefined(this.loaderData)) {
+			this.loading = this.loaderData.loading;
+			this.loadingNoApps = this.loaderData.noApps;
+		}
 	}
 
 	addAppData(event: any) {
@@ -28,4 +31,5 @@ export class ModalAddAppsComponent implements OnInit {
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
 	}
+
 }

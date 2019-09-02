@@ -1,3 +1,5 @@
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { AppNotification } from './../../../data-models/common/app-notification.model';
 import { CommonService } from './../../../services/common/common.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +20,7 @@ export class PageNetworkboostComponent implements OnInit {
   needToAsk: any;
   autoCloseStatusObj: any = {};
   needToAskStatusObj: any = {};
-
+  isOnline = true;
   // CMS Content block
   cardContentPositionA: any = {
     FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
@@ -32,6 +34,10 @@ export class PageNetworkboostComponent implements OnInit {
     private commonService: CommonService) { }
 
   ngOnInit() {
+    this.isOnline = this.commonService.isOnline;
+    this.commonService.notification.subscribe((notification: AppNotification) => {
+      this.onNotification(notification);
+    });
     const queryOptions = {
       Page: 'dashboard',
       Lang: 'EN',
@@ -72,19 +78,31 @@ export class PageNetworkboostComponent implements OnInit {
 
   async	openTargetModal() {
     try {
-      this.needToAsk = await this.networkBoostService.getNeedToAsk();
-      this.needToAsk = this.needToAsk == undefined ? false : this.needToAsk;
-      console.log('NEED TO ASK FROM JS BRIDGE =>', this.needToAsk);
+      this.needToAsk = this.networkBoostService.getNeedToAsk();
+      this.needToAsk = (this.needToAsk === undefined || isNaN(this.needToAsk)) ? 0 : this.needToAsk;
+      console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk, this.needToAsk == 1, this.needToAsk == 2);
+      console.log('TOGGLE STATUS =>', this.toggleStatus);
       if (this.toggleStatus) {
         this.showAppsModal = true;
-      } else if (!this.toggleStatus && !this.needToAsk) {
-        this.showTurnOnModal = true;
-      } else {
-        this.setNetworkBoostStatus({ switchValue: true });
+      } else if (this.needToAsk == 1 || this.needToAsk == 2) {
+        if (this.needToAsk == 2) {
+          this.setNetworkBoostStatus({ switchValue: true });
+        }
         this.showAppsModal = true;
+      } else {
+        this.showTurnOnModal = true;
       }
+      this.hiddenScroll(true);
     } catch (error) {
       console.log(`ERROR in openTargetModal() `, error);
+    }
+  }
+  private onNotification(notification: AppNotification) {
+    if (notification && (notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)) {
+      this.isOnline = notification.payload.isOnline;
+    }
+    if (this.isOnline === undefined) {
+      this.isOnline = true;
     }
   }
 
@@ -93,13 +111,19 @@ export class PageNetworkboostComponent implements OnInit {
   }
 
   initTurnOnAction(event: any) {
+    this.showTurnOnModal = false;
     this.setAksAgain(event.askAgainStatus);
     this.setNetworkBoostStatus({ switchValue: true });
     this.showAppsModal = true;
+    this.hiddenScroll(true);
   }
 
-  initNotNowAction(notNowStatus: boolean) {
+  initNotNowAction(event) {
+    this.setAksAgain(event.askAgainStatus);
+    this.showTurnOnModal = false;
     this.showAppsModal = true;
+    this.changeListNum += 1;
+    this.hiddenScroll(true);
   }
 
   modalCloseTurnOn(action: boolean) {
@@ -107,10 +131,12 @@ export class PageNetworkboostComponent implements OnInit {
     if (!this.showTurnOnModal) {
       this.changeListNum += 1;
     }
+    this.hiddenScroll(false);
   }
 
   modalCloseAddApps(action: boolean) {
     this.showAppsModal = action;
+    this.hiddenScroll(false);
     if (!this.showAppsModal) {
       this.changeListNum += 1;
     }
@@ -120,7 +146,12 @@ export class PageNetworkboostComponent implements OnInit {
     try {
       this.toggleStatus = event.switchValue;
       await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
-      // need to set cache
+      if (!this.toggleStatus) {
+        if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) == 2) {
+          this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup , 1);
+        }
+      }
+      this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
     } catch (err) {
       console.log(`ERROR in setNetworkBoostStatus()`, err);
     }
@@ -128,11 +159,12 @@ export class PageNetworkboostComponent implements OnInit {
 
   async setAksAgain(status: boolean) {
     try {
-      await this.networkBoostService.setNeedToAsk(status);
+      this.networkBoostService.setNeedToAsk(status);
     } catch (error) {
       console.error(`ERROR in setAksAgain()`, error);
     }
   }
+
   async getNetworkBoostStatus() {
     try {
       this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
@@ -141,4 +173,12 @@ export class PageNetworkboostComponent implements OnInit {
       console.log(`ERROR in setNetworkBoostStatus()`, err);
     }
   }
+
+  hiddenScroll(action: boolean) {
+		if (action) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}
 }

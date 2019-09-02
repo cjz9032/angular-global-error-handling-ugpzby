@@ -13,7 +13,7 @@ const PACKAGE_FAMILY_NAME = 'Lenovo.FigLeaf_e83k4pgknp69a';
 var onConnectListeners = [];
 var onDisconnectListeners = [];
 var reconnectTimer = null;
-const RECONNECT_TIMEOUT = 10000;
+var RECONNECT_TIMEOUT = 300;
 var connection = null;
 var serviceClosedCount = 0;
 
@@ -35,6 +35,10 @@ class FigleafConnector {
 			message.insert(messageKey.toString(), messageToFigleaf[messageKey]);
 		}
 		return new Promise((resolve, reject) => {
+			if (connection === null) {
+				reject('Connection lost or not established');
+			}
+
 			connection.sendMessageAsync(message).then((response) => {
 				if (response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
 					const responseMessage = JSON.parse(response.message.result);
@@ -42,7 +46,7 @@ class FigleafConnector {
 				} else {
 					connection = null;
 					this.disconnectFromFigleaf();
-					reject('request message to figleaf failed');
+					reject('Request message to figleaf failed');
 				}
 			});
 		});
@@ -64,6 +68,7 @@ class FigleafConnector {
 					cb();
 				});
 				serviceClosedCount = 0;
+				RECONNECT_TIMEOUT = 300;
 			} else {
 				connection = null;
 				this.disconnectFromFigleaf();
@@ -78,9 +83,12 @@ class FigleafConnector {
 	}
 
 	private disconnectFromFigleaf() {
-		onDisconnectListeners.forEach((cb) => {
-			cb();
-		});
+		if (RECONNECT_TIMEOUT >= 5000) {
+			onDisconnectListeners.forEach((cb) => {
+				cb();
+			});
+		}
+
 		this.reconnect();
 	}
 
@@ -90,6 +98,9 @@ class FigleafConnector {
 		}
 		clearTimeout(reconnectTimer);
 		reconnectTimer = setTimeout(() => {
+			if (RECONNECT_TIMEOUT < 10000) {
+				RECONNECT_TIMEOUT += 1000;
+			}
 			this.connect();
 		}, RECONNECT_TIMEOUT);
 	}

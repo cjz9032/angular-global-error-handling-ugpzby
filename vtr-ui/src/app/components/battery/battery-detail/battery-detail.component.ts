@@ -30,7 +30,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	batteryChargeStatus = BatteryChargeStatus;
 
 	constructor(
-		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		public commonService: CommonService,
 		public cd: ChangeDetectorRef,
@@ -74,7 +73,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 							// remaining time will not be displayed
 							response.detail[i].remainingTime = undefined;
 						}
-						// response[i].chargeStatus == this.batteryChargeStatus.CHARGING.id;
 						if (response.indicator.timeText === 'timeCompletion') {
 							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.chargeCompletionTime';
 						} else {
@@ -125,7 +123,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 
 	ngOnDestroy() {
-		// clearTimeout(this.batteryTimer);
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}

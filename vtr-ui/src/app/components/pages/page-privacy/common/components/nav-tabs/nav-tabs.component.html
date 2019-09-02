@@ -1,4 +1,7 @@
-<div>
+<div vtrSendAnalytics
+	 customPageName="Privacy.Home"
+	 [metricsEvent]="'PageView'"
+	 [vtrAppSearchScroller]="['search-email-breach', 'search-check-tracking', 'search-vulnerable-passwords']">
     <ul class="header-nav">
         <li class="header-nav__item" *ngFor="let featureConfig of featurePagesConfig">
             <a class="header-nav__link" routerLink="{{featureConfig.routerLink}}" routerLinkActive="active">

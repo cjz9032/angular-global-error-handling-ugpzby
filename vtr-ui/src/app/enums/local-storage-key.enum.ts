@@ -28,7 +28,6 @@ export enum LocalStorageKey {
 	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
 	SecurityLandingScore = '[LocalStorageKey] SecurityLandingScore',
 	SecurityLandingMaliciousWifi = '[LocalStorageKey] SecurityLandingMaliciousWifi',
-	HomeProtectionDevicePosture = '[LocalStorageKey] HomeProtectionDevicePosture',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
 	LidFakeDeviceID = '[LocalStorageKey] LidFakeDeviceID',
@@ -46,8 +45,11 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
+	ConnectedHomeSecurityDevicePosture = '[LocalStorageKey] ConnectedHomeSecurityDevicePosture',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
 	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
+	NetworkBoosNeedToAskPopup = '[LocalStorageKey] NetworkBoosNeedToAskPopup',
+
 	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
@@ -155,5 +157,17 @@ export enum LocalStorageKey {
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 	UPEUserID = '[LocalStorageKey] UPEUserID',
 	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
-	BetaUser = '[LocalStorageKey] BetaUser'
+	BetaUser = '[LocalStorageKey] BetaUser',
+	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
+	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
+	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
+	EasyResumeCapability = '[LocalStorageKey] EasyResumeCapability',
+	VantageToolbarCapability = '[LocalStorageKey] VantageToolbarCapability',
+	EnergyStarCapability = '[LocalStorageKey] EnergyStarCapability',
+	AirplanePowerModeCapability = '[LocalStorageKey] AirplanePowerModeCapability',
+	BatteryChargeThresholdCapability = '[LocalStorageKey] BatteryChargeThresholdCapability',
+	ExpressChargingCapability = '[LocalStorageKey] ExpressChargingCapability',
+	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability',
+	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
+	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability'
 }

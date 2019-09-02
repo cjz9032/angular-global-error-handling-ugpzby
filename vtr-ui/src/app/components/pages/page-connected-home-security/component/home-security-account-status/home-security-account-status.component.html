@@ -21,7 +21,8 @@
 	</div>
 	<div class="startTrial-btn mb-5">
 		<vtr-ui-button *ngIf="account?.state === 'local'"
-			id="chs-account-btn-startTrial" aria-label="chs-account-btn-startTrial"
+			id="chs-account-btn-startTrial"
+			role="button"
 			(click)="common?.startTrial()"
 			[isFullWidth]="true"
 			metricsEvent="FeatureClick"
@@ -31,7 +32,8 @@
 			[isDisabled]="common?.startTrialDisabled">
 		</vtr-ui-button>
 		<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
-			id="chs-account-btn-upgradeAccount" aria-label="chs-account-btn-upgradeAccount"
+			id="chs-account-btn-upgradeAccount"
+			role="button"
 			(click)="common?.upgrade()"
 			[isFullWidth]="true"
 			metricsEvent="FeatureClick"
@@ -40,7 +42,8 @@
 			[title]="'homeSecurity.accountStatus.upgradeAccount' | translate">
 		</vtr-ui-button>
 		<vtr-ui-button *ngIf="account?.state === 'standard'"
-			id="chs-account-btn-manageAccount" aria-label="chs-account-btn-manageAccount"
+			id="chs-account-btn-manageAccount"
+			role="button"
 			(click)="common?.openCornet('login')"
 			[isDisabled]="!common?.connectedHomeSecurity?.account?.consoleUrl"
 			[isFullWidth]="true"
@@ -56,7 +59,6 @@
 		href="javascript:void(0)" target="_blank"
 		(click)="common?.openCornet('profile')"
 		id="chs-account-alreadyHaveAccount"
-		attr.aria-label="chs-account-alreadyHaveAccount"
 		vtrMetrics
 		metricsEvent="featureClick"
 		metricsItem="alreadyHaveAccount">

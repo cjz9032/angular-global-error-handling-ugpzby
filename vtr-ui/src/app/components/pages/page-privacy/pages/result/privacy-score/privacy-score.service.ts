@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
 import {
 	catchError,
-	debounceTime,
 	distinctUntilChanged,
 	filter,
 	map,
+	share,
 	shareReplay,
 	startWith,
-	switchMapTo
+	switchMap,
+	switchMapTo,
+	take,
+	withLatestFrom
 } from 'rxjs/operators';
 import { combineLatest, of } from 'rxjs';
 import { FigleafOverviewService, FigleafSettings } from '../../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { BreachedAccount, BreachedAccountsService } from '../../../common/services/breached-accounts.service';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { CountNumberOfIssuesService } from '../../../common/services/count-number-of-issues.service';
-import { FeaturesStatuses } from '../../../userDataStatuses';
+import { AppStatuses, FeaturesStatuses } from '../../../userDataStatuses';
+import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,7 +26,7 @@ import { FeaturesStatuses } from '../../../userDataStatuses';
 export class PrivacyScoreService {
 
 	constructor(
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private figleafOverviewService: FigleafOverviewService,
 		private browserAccountsService: BrowserAccountsService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
@@ -41,7 +44,7 @@ export class PrivacyScoreService {
 		withoutScan: 1 / 3
 	};
 
-	private ammountPasswordFromBrowser$ = this.userDataGetStateService.userDataStatus$.pipe(
+	private ammountPasswordFromBrowser$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
@@ -54,18 +57,21 @@ export class PrivacyScoreService {
 						return acc;
 					}, 0);
 				}
-			)))
+			),
+			take(1)
+		))
 	);
 
 	private monitoringEnable$ = this.getFigleafSetting((settings: FigleafSettings) => settings.isBreachMonitoringEnabled);
-	private isAntitrackingEnabled$ = this.userDataGetStateService.userDataStatus$.pipe(
+	private isAntitrackingEnabled$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.undefined &&
 			userDataStatus.websiteTrackersResult !== FeaturesStatuses.error),
-		filter(Boolean),
-		switchMapTo(
-			this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled)
-		),
+		switchMap((isTrackersResultExist) => {
+			return isTrackersResultExist ?
+				this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled) :
+				of(false);
+		}),
 		catchError((err) => of(false))
 	);
 
@@ -95,7 +101,6 @@ export class PrivacyScoreService {
 		this.getMonitoringEnable(),
 		this.getIsAntitrackingEnabled()
 	]).pipe(
-		debounceTime(500),
 		map(([breachedAccountScore, passwordFromBrowserScore, monitoringScore, antitrackingScore]) => {
 			return Math.round(
 				(
@@ -150,7 +155,8 @@ export class PrivacyScoreService {
 	private getBreachesAccount(filterFunc) {
 		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 			filter((breachedAccounts) => breachedAccounts.error === null),
-			map((breachedAccounts) => breachedAccounts.breaches.filter(filterFunc).length)
+			map((breachedAccounts) => breachedAccounts.breaches.filter(filterFunc).length),
+			share()
 		);
 	}
 
@@ -217,7 +223,11 @@ export class PrivacyScoreService {
 		const defaultValue = (this.coefficients.trackingTools * this.coefficients.withoutScan) as number;
 
 		return this.isAntitrackingEnabled$.pipe(
-			map((isAntitrackingEnabled) => Number(isAntitrackingEnabled) * this.coefficients.trackingTools),
+			withLatestFrom(this.appStatusesService.globalStatus$),
+			map(([isAntitrackingEnabled, appStatuses]) => {
+				const isFigleafInstalled = appStatuses.appState !== AppStatuses.scanPerformed && appStatuses.appState !== AppStatuses.firstTimeVisitor;
+				return isFigleafInstalled ? Number(isAntitrackingEnabled) * this.coefficients.trackingTools : defaultValue;
+			}),
 			startWith(defaultValue),
 			catchError((err) => {
 				return of(defaultValue);

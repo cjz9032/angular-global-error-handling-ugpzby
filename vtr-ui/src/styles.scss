@@ -301,6 +301,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	font-family: "Segoe UI";
+	@media #{$mediaquery_xl} {
+		max-width: 20rem;
+	}
 
 	.tooltip-inner {
 		padding: 1.2rem;
@@ -649,7 +652,21 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .About-Modal {
 	.modal-dialog {
-		// max-width: 75%;
+		width: 47.8rem;
+		margin: 1.75rem auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: none;
+		border: none;
+	}
+}
+
+.Find-Us-Modal {
+	.modal-dialog {
+		width: 55rem;
 		margin: 1.75rem auto;
 		overflow-y: initial !important;
 	}
@@ -665,7 +682,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-dialog {
 		margin: 1.75rem auto;
 		overflow: auto;
-		// max-width: 70% !important;
+		width: 52rem;
 	}
 
 	.modal-content {

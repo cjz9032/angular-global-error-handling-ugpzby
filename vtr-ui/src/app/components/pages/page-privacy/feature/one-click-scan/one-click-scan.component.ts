@@ -2,6 +2,10 @@ import { ChangeDetectionStrategy, Component, Input, OnDestroy } from '@angular/c
 import { OneClickScanSteps, OneClickScanStepsService } from './services/one-click-scan-steps.service';
 import { PermitService } from './services/permit.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
+import {
+	TaskActionWithTimeoutService,
+	TasksName
+} from '../../common/services/analytics/task-action-with-timeout.service';
 
 @Component({
 	selector: 'vtr-one-click-scan',
@@ -19,7 +23,9 @@ export class OneClickScanComponent implements OnDestroy {
 		private oneClickScanStepsService: OneClickScanStepsService,
 		private permitService: PermitService,
 		private commonPopupService: CommonPopupService,
-	) {	}
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService
+	) {
+	}
 
 	ngOnDestroy() {
 		this.resetScan();
@@ -34,20 +40,20 @@ export class OneClickScanComponent implements OnDestroy {
 	}
 
 	handleScanAllow(permitValue: boolean) {
-		permitValue ? this.nextStep() : this.resetScan();
+		permitValue ? this.nextStep() : this.sendSkipAndResetScan();
 	}
 
 	getStepForScanning() {
-		return this.permitService.getPermits().length === 0 ?
-			this.resetScan() :
-			this.permitService.getPermits();
+		return this.permitService.isSkipAll() ? this.sendSkipAndResetScan() : this.permitService.getPermits();
 	}
 
 	private nextStep() {
 		this.currentStep = this.oneClickScanStepsService.nextStep();
 
-		if (this.currentStep === null) {
-			this.permitService.setPermit();
+		const isLastStep = this.currentStep === null;
+
+		if (isLastStep) {
+			this.permitService.doActionWithPermits();
 			this.resetScan();
 		}
 	}
@@ -56,5 +62,15 @@ export class OneClickScanComponent implements OnDestroy {
 		this.permitService.clearPermits();
 		this.oneClickScanStepsService.resetStep();
 		this.commonPopupService.close(this.popupId);
+	}
+
+	private sendSkipAndResetScan() {
+		const isSkipAll = this.permitService.isSkipAll();
+
+		if (isSkipAll) {
+			this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction, 'Skip');
+		}
+
+		this.resetScan();
 	}
 }

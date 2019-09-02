@@ -5,8 +5,9 @@ import { ConnectedHomeSecurity, CHSAccountState, WinRT, EventTypes, CHSNotificat
 	providedIn: 'root',
 })
 export class HomeSecurityMockService {
+	public state = 'notRegister';
 
-	private connectedHomeSecurity: ConnectedHomeSecurity = {
+	private connectedHomeSecurity: any = {
 		account: {
 			state: CHSAccountState.local,
 			serverTimeUTC: new Date(),
@@ -18,34 +19,16 @@ export class HomeSecurityMockService {
 			consoleUrl: ''
 		},
 		overview: {
-			devicePostures: {
-				value: [
-					{ name: 'PasswordProtection', vulnerable: false },
-					{ name: 'HardDriveEncryption', vulnerable: true },
-					{ name: 'AntiVirusAvailability', vulnerable: false },
-					{ name: 'FirewallAvailability', vulnerable: false },
-					{ name: 'AppsFromUnknownSources', vulnerable: true },
-					{ name: 'DeveloperMode', vulnerable: true },
-					{ name: 'NotActivatedWindows', vulnerable: false },
-					{ name: 'UacNotification', vulnerable: false }],
-				getDevicePosture() { return Promise.resolve(); },
-				cancelGetDevicePosture() {}
-			},
 			myDevice: {
 				name: 'ThinkPad T470',
 				protected: true,
 			},
 			allDevices: [
-				{ name: 'aaa', protected: true },
-				{ name: 'bbb', protected: true },
-				{ name: 'ccc', protected: true },
-				{ name: 'ddd', protected: true },
-				{ name: 'eee', protected: true },
-				{ name: 'fff', protected: true },
-				{ name: 'fff', protected: true },
-				{ name: 'fff', protected: true },
-				{ name: 'fff', protected: true },
-				{ name: 'ggg', protected: false }
+				{ type: 'familyMembers', count: 6 },
+				{ type: 'places', count: 7, icon: 2 },
+				{ type: 'personalDevices', count: 8 },
+				{ type: 'wifiNetworks', count: 2 },
+				{ type: 'homeDevices', count: 1 }
 			]
 		},
 		notifications: {

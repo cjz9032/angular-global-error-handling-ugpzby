@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, Optional } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -23,6 +23,8 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -34,7 +36,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	@Input() loadMenuItem: any = {};
 	public machineFamilyName: string;
 	public country: string;
-	public firstName: 'User';
 	// commonMenuSubscription: Subscription;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
@@ -43,12 +44,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	public countryCode: string;
 	public locale: string;
 	public items: any = [];
+	public showSearchBox = false;
+
 	showMenu = false;
+	showHWScanMenu: boolean = false;
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
 	isGamingHome: boolean;
 	currentUrl: string;
+	isSMode: boolean;
 
 
 	constructor(
@@ -68,7 +73,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
 		private windowsHelloService: WindowsHelloService,
-		public modernPreloadService: ModernPreloadService
+		public modernPreloadService: ModernPreloadService,
+		private hardwareScanService: HardwareScanService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
@@ -129,8 +135,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	onFocus(): void {
 		this.showVpn();
 	}
-	@HostListener('document:click', ['$event.target'])
-	onClick(targetElement) {
+
+	@HostListener('document:click', ['$event'])
+	onClick(event) {
+		const targetElement = event.target;
 		if (this.menuTarget) {
 			const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 			const toggleMenuButton =
@@ -139,15 +147,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				this.showMenu = false;
 			}
 		}
+
+		if (!event.fromSearchBox && !event.fromSearchMenu) {
+			this.updateSearchBoxState(false);
+		}
 	}
 
 	ngOnInit() {
-		const self = this;
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			}
-		});
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -175,6 +181,17 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		if (cacheMachineFamilyName) {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
+
+		this.hardwareScanService.getPluginInfo()
+			.then((hwscanPluginInfo: any) => {
+				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
+				this.showHWScanMenu = hwscanPluginInfo !== undefined && 
+									  hwscanPluginInfo.LegacyPlugin === false && 
+									  hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
+			})
+			.catch(() => {
+				this.showHWScanMenu = false;
+			});
 	}
 
 	private loadMenuOptions(machineType: number) {
@@ -212,11 +229,28 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	showItem(item) {
 		let showItem = true;
+		if (this.deviceService.isSMode) {
+			if (!item.sMode) {
+				showItem = false;
+			}
+			if (item.id === 'device') {
+				item.subitems.forEach((subitem, index, object) => {
+					if (!subitem.sMode) {
+						object.splice(index, 1);
+					}
+				});
+			}
+		}
 		if (this.deviceService.isArm) {
 			if (!item.forArm) {
 				showItem = false;
 			}
 		}
+
+		if (item.id === 'hardware-scan') {
+			showItem = this.showHWScanMenu;
+		}
+
 		if (item.id === 'privacy') {
 			if (!this.deviceService.showPrivacy) {
 				showItem = false;
@@ -229,9 +263,33 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		return showItem;
 	}
 
+	isCommomItem(item) {
+		return item.id !== 'user' && item.id !== 'app-search';
+	}
+
+	updateSearchBoxState(isActive) {
+		this.showSearchBox = isActive;
+	}
+
+	onMenuItemClick(item, event?) {
+		this.showMenu = false;
+		if (item.id === 'app-search') {
+			this.updateSearchBoxState(!this.showSearchBox);
+			if (event) {
+				event.fromSearchMenu = true;
+			}
+		}
+	}
+
+	onClickSearchMask() {
+		this.showMenu = false;
+		this.updateSearchBoxState(false);
+	}
+
 	menuItemClick(event, path) {
-		// console.log (path);
-		this.router.navigateByUrl(path);
+		if (path) {
+			this.router.navigateByUrl(path);
+		}
 	}
 
 	//  to popup Lenovo ID modal dialog
@@ -246,9 +304,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
-					break;
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, notification.payload.family);
@@ -256,6 +311,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					break;
 				case LocalStorageKey.MachineFamilyName:
 					this.machineFamilyName = notification.payload;
+					break;
+				case NetworkStatus.Online:
+					this.modernPreloadService.getIsEntitled();
 					break;
 				default:
 					break;
@@ -378,8 +436,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 						this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
 
-						const isAvailable =
-							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
+						const isAvailable = (responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 

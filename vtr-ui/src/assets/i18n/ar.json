@@ -6,7 +6,7 @@
                     "title": "الوضع الحراري",
                     "status": {
                         "performance": "الأداء",
-                        "balance": "توزان",
+                        "balance": "التوازن",
                         "quiet": "هادئ",
                         "performanceUid": "thermal_mode_performance",
                         "balanceUid": "thermal_mode_balance",
@@ -80,7 +80,7 @@
                     "header": "الإضاءة"
                 },
                 "legionEdgeModal": {
-                    "line1": "باستخدام Vantage Edge، سيتم تشغيل إعداداتك تلقائيًا تبعًا للاستخدام. \n أقصى أداء عند اللعب، عمر بطارية أطول في حالة التوقف عن اللعب.",
+                    "line1": "سيتم تشغيل إعداداتك تلقائيًا تبعًا للاستخدام. \n أقصى أداء عند اللعب، عمر بطارية أطول في حالة التوقف عن اللعب.",
                     "line2": "<b>نظرة عامة حول إدارة الميزات</b> <br> بعض الميزات غير متوفرة علي جميع الأجهزة",
                     "line3": "<b>كسر سرعة وحدة CPU</b><br> تعزيز السرعة القصوى للمعالج",
                     "line4": "<b>كسر سرعة وحدة RAM</b><br> تعزيز السرعة القصوى للذاكرة",
@@ -146,16 +146,16 @@
                 },
                 "recorded": {
                     "title": "مفتاح الماكرو لـ ",
-                    "deleteKey": "Delete",
+                    "deleteKey": "مفتاح Delete",
                     "clear": "مسح",
                     "intervalStatus": {
                         "keep": {
                             "title": "المحافظة على التأخير",
-                            "description": "ستتم المحافظة على الفواصل الزمنية بين إجراءات المفاتيح وسيتم تطبيقها عند استخدام مفتاح الماكرو هذا"
+                            "description": "ستتم المحافظة على الفواصل الزمنية بين إجراءات المفاتيح وسيتم تطبيقها عند استخدام مفتاح الماكرو هذا."
                         },
                         "ignore": {
                             "title": "تجاهل التأخير",
-                            "description": "سيتم تجاهل الفواصل الزمنية بين إجراءات المفاتيح"
+                            "description": "سيتم تجاهل الفواصل الزمنية بين إجراءات المفاتيح."
                         }
                     },
                     "repeatStatus": {
@@ -314,7 +314,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "إيقاف"
                 },
                 "text2": {
                     "title": "ملف التعريف 1"
@@ -351,7 +351,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Off"
+                    "title": "إيقاف"
                 },
                 "text2": {
                     "title": 1
@@ -698,7 +698,7 @@
                     "Bad": "<b>حدث خطأ في البطارية.</b> لا يمكن شحن/تفريغ البطارية. استبدل البطارية.",
                     "NotDetected": "<b>لم يتم الكشف عن بطارية أو</b> البطارية غير موصولة.",
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
-                    "NotSupportACAdapter": "<b>محول التيار المتردد غير مدعوم.</b>",
+                    "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
                     "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
@@ -706,7 +706,7 @@
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
                     "OverheatedBattery": "البطارية <b>ساخنة أكثر من اللازم</b>. اعمل على إخراجها من الكمبيوتر وتبريدها وصولاً إلى درجة حرارة الغرفة.",
                     "PermanentError": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
-                    "NotSupportACAdapterDetail": "<b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.",
+                    "NotSupportACAdapterDetail": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.</span>",
                     "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب."
                 },
                 "updating": "جار التحديث",
@@ -794,7 +794,7 @@
                     "title": "إعدادات الطاقة",
                     "alwaysUSB": {
                         "title": "‏USB قيد التشغيل دائمًا",
-                        "description": "اشحن أجهزة USB عبر موصل USB قيد التشغيل دائمًا على الكمبيوتر، عندما يكون الكمبيوتر في وضع السكون أو الإسبات أو التوقف عن التشغيل.يمكن شحن الهاتف الذكي أو الكمبيوتر اللوحي بسرعة من موصل USB المرمز باللون الأصفر أو المطبوع بالحرير بواسطة هذه الرموز.",
+                        "description": "<span dir='rtl'>اشحن أجهزة USB عبر موصل USB قيد التشغيل دائمًا على الكمبيوتر، عندما يكون الكمبيوتر في وضع السكون أو الإسبات أو التوقف عن التشغيل.يمكن شحن الهاتف الذكي أو الكمبيوتر اللوحي بسرعة من موصل USB المرمز باللون الأصفر أو المطبوع بالحرير بواسطة هذه الرموز.</span>",
                         "checkbox": "تمكين شحن USB من بطارية الكمبيوتر المحمول عند إيقاف تشغيل الكمبيوتر."
                     },
                     "easyResume": {
@@ -808,7 +808,7 @@
                     "title": "إعدادات أخرى",
                     "vantageToolbar": {
                         "title": "شريط أدوات Lenovo Vantage",
-                        "description": "قم بتثبيت شريط أدوات Vantage في شريط مهام Windows للحصول بسهولة على مزيد من تفاصيل البطارية والوصول إلى إعداداتك السريعة."
+                        "description": "<span dir='rtl'>قم بتثبيت شريط أدوات Vantage في شريط مهام Windows للحصول بسهولة على مزيد من تفاصيل البطارية والوصول إلى إعداداتك السريعة.</span>"
                     }
                 },
                 "batterySettings": {
@@ -1113,6 +1113,38 @@
                         "tittle": "Fn + مسافة",
                         "description": "تغيير حالات الإضاءة الخلفية للوحة المفاتيح",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Keyboard top-row function",
+                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
+                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
+                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "subSection": {
+                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIAL FUNCTION",
+                                "fnKey": "F1-F12 FUNCTION"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Reversing the default primary function",
+                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                        },
+                        "subSectionThree": {
+                            "title": "How to use Fn key combinations",
+                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "radioButton": {
+                                "nMehod": "Normal method",
+                                "fnKeyMehod": "Fn Sticky Key method"
+                            },
+                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                        },
+                        "popup": {
+                            "title": "Restart computer",
+                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
+                            "reboot": "REBOOT",
+                            "cancel": "NOT NOW"
+                        }
                     }
                 },
                 "userDefinedKey": {
@@ -1140,7 +1172,9 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
                     "more": "MORE",
                     "control1": "TOUCHPAD CONTROLS",
                     "control2": "MOUSE CONTROLS"
@@ -2328,7 +2362,8 @@
             "description": "كان من المقرر بالفعل إجراء فحص آخر في نفس الوقت والتاريخ!",
             "error": "خطأ",
             "delete": "حذف",
-            "warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+            "warningBatterySaver": "ملاحظة: لن يتم إجراء عمليات الفحص المجدولة في وضع توفير البطارية",
+			"scheduleIntervalLimit": "كان من المقرر بالفعل إجراء مسح آخر في غضون فترة زمنية عشر دقائق. الرجاء اختيار وقت آخر."
         },
         "recoverBadSectors": {
             "title": "استعادة القطاعات المصابة",
@@ -2371,12 +2406,13 @@
             "description": "يؤدي تمكين شحن البطارية المخصص إلى أن تدوم سلامة البطارية أطول من ذي قبل أثناء استخدامك لهذا الجهاز. على الرغم من ذلك، سيؤدي عدم الشحن بشكل كامل إلى تقليل فترة تشغيل البطارية. وحتى يتسنى لك تمكين هذه الميزة بشكل كامل، افصل الطاقة عن الجهاز، ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
             "enable": "تمكين"
         },
-        "completed": "Completed",
-        "notCompleted": "Not Completed",
-        "refreshModules": "Refresh Modules",
-        "yes": "yes",
-        "attention": "Attention",
-        "cancelTextPrompt": "Are you sure you would like to cancel?",
-        "cancelTextProgress": "Please wait for cancel progress"
+        "refreshModule": "تحديث الوحدات",
+        "completed": "مكتمل",
+        "notCompleted": "غير مكتمل",
+        "yes": "نعم",
+        "attention": "تنبيه",
+        "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
+        "cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء",
+		"pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته."
     }
 }

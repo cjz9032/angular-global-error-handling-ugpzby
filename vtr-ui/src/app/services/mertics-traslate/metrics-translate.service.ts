@@ -29,7 +29,7 @@ export class MetricsTranslateService {
 	}
 
 	public translate(sourceValue): string {
-		console.log('1.&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&', sourceValue);
+		console.log('1.------', sourceValue);
 		let matchedKey = '';
 		for (const i in this.targetLanguage) {
 			if (this.targetLanguage[i] === sourceValue) {
@@ -37,10 +37,10 @@ export class MetricsTranslateService {
 				break;
 			}
 		}
-		console.log('2.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', matchedKey);
+		console.log('2.------', matchedKey);
 		let targetValue = this.expand(this.baseLanguage, matchedKey);
-		targetValue = targetValue ? targetValue : sourceValue;
-		console.log('3.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', targetValue);
+		targetValue = targetValue ? targetValue : sourceValue; // if value found in en.json, else use given value
+		console.log('3.------', targetValue);
 		return targetValue;
 	}
 

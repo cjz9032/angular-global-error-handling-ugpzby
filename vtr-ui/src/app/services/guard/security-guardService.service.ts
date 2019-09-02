@@ -2,28 +2,35 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { TimerService } from 'src/app/services/timer/timer.service';
+import { Observable, from } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class GuardService {
-	interTime: number;
+	interTime = 0;
 	metrics: any;
 	pageContext: any;
 	previousPageName = '';
-	private timerService;
+	duration = 0;
 
-	constructor(
-		private shellService: VantageShellService,
+	constructor(private shellService: VantageShellService,
 		private commonService: CommonService) {
-		this.metrics = shellService.getMetrics();
-		this.timerService = new TimerService();
-	}
+
+	this.metrics = shellService.getMetrics();
+	window.addEventListener('blur',()=>{
+	this.duration =this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`);
+
+})
+window.addEventListener('focus',()=>{
+	this.interTime=Date.now();
+
+})
+
+}
 
 	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-		this.timerService.start();
+		this.interTime = Date.now();
 		console.log('Activate : ' + activatedRouteSnapshot.data.pageName);
 		return true;
 	}
@@ -36,9 +43,9 @@ export class GuardService {
 
 		const data = {
 			ItemType: 'PageView',
-			pageName: activatedRouteSnapshot.data.pageName,
-			pageDuration: this.timerService.stop(),
-			pageContext: this.pageContext,
+			PageName: activatedRouteSnapshot.data.pageName,
+			PageDuration: this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`),
+			PageContext: this.pageContext,
 		};
 		console.log('Deactivate : ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
 		this.previousPageName = activatedRouteSnapshot.data.pageName;

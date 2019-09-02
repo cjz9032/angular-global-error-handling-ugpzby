@@ -70,16 +70,6 @@ export class FaqService {
 					],
 					icon: 'tools',
 				},
-				{
-					id: 'hashed-password',
-					title: 'What is a hashed password?',
-					texts: [
-						`Some data breaches contain passwords that are still encrypted, so they aren’t visible at first glance.
-						 But eventually, these passwords will be decrypted — it could take someone a couple of hours or months,
-						  depending on the strength. You should change your password right now.`
-					],
-					icon: 'key',
-				},
 			]
 		},
 
@@ -153,55 +143,43 @@ export class FaqService {
 			title: 'Other question',
 			questions: [
 				{
-					id: 'privacy-score2',
-					title: 'What is a privacy score?',
+					id: 'see-all-my-passwords',
+					title: 'I see all my passwords in the Privacy tab. How did they get there?',
 					iconPath: '',
 					texts: [
-						`Major web browsers let you store your usernames and passwords for your favorite sites, so you
-						can log in quickly.
-						But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.
-						Major web browsers let you store your usernames and passwords for your favorite sites, so you
-						can log in quickly. But these passwords are usually not well encrypted, making your accounts.
-						Major web browsers let you store your usernames and passwords for your favorite sites, so you
-						can log in quickly. But these passwords are usually not well encrypted, making your accounts
-						vulnerable to hacking. Major web browsers let you store your usernames and passwords for your
-						favorite sites, so you can log in quickly. But these passwords are usually not well encrypted,
-						making your accounts.`,
-						`Major web browsers let you store your usernames and passwords for your favorite sites, so you
-						can log in quickly. But these passwords are usually not well encrypted, making your accounts
-						vulnerable to hacking. Major web browsers let you store your usernames and passwords for your
-						favorite sites, so you can log in quickly. But these passwords are usually not well encrypted,
-						making your accounts.`
+						`You allowed us to search for your email in all known data breaches.
+						The passwords you’re seeing are compromised passwords for accounts tied to your email address.
+						We also discovered that you’re storing passwords in your browsers after you let us run a quick scan.
+						We can't see any of the information we're showing you, and we'll never share it.`
 					],
-					icon: 'database',
+					icon: 'key',
 				},
 				{
-					id: 'password-management2',
-					title: `Is it browser password management safe? Is it browser password management safe?
-					Is it browser password management safe? Is it browser password management safe?`,
+					id: 'many-emails',
+					title: `How many emails can I monitor for breaches?`,
 					iconPath: '',
 					texts: [
-						'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly.'
+						'You can monitor one email in the Privacy tab. If you want to keep tabs on your privacy for your other email addresses, install Lenovo Privacy Essentials by FigLeaf.'
 					],
-					icon: 'database',
+					icon: 'envelope',
 				},
 				{
-					id: 'privacy-as-security2',
-					title: 'Is privacy the same as security?',
+					id: 'still-use-free-services',
+					title: 'Can I still use free services like Google, Facebook, Amazon while blocking tracking tools?',
 					iconPath: '',
 					texts: [
-						'Is privacy the same as security?'
+						'You can browse your favorite sites as before. The only difference is that you\'ll see non-customized ads and content.'
 					],
-					icon: 'database',
+					icon: 'browser',
 				},
 				{
 					id: 'trackers2',
-					title: 'What are trackers?',
+					title: 'Why is it unsafe to store my passwords in my browser?',
 					iconPath: '',
 					texts: [
-						'Is privacy the same as security?'
+						'While convenient, storing login details for your favorite sites in your browser isn’t a good idea. This data can be read by any program on your PC without your knowledge, which means that almost anyone can see this info — and you won’t know about it.'
 					],
-					icon: 'database',
+					icon: 'lock-open-alt',
 				},
 			]
 		}
@@ -216,7 +194,7 @@ export class FaqService {
 		},
 		landing: {
 			visible: true,
-			questions: this.questionCategories.dataBreaches
+			questions: this.questionCategories.otherQuestions
 		},
 		privacy: {
 			visible: true,
@@ -236,11 +214,11 @@ export class FaqService {
 		},
 		articles: {
 			visible: true,
-			questions: this.questionCategories.dataBreaches
+			questions: this.questionCategories.otherQuestions
 		},
 		'article-details': {
 			visible: true,
-			questions: this.questionCategories.dataBreaches
+			questions: this.questionCategories.otherQuestions
 		}
 	};
 }

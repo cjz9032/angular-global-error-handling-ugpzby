@@ -92,7 +92,7 @@ export class WifiHomeViewModel {
 					} else {
 						this.hasMore = false;
 					}
-					this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+					this.historys = wifiSecurity.wifiHistory.slice(0, 4);
 					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				}
 				this.historys = this.mappingHistory(this.historys);
@@ -111,58 +111,54 @@ export class WifiHomeViewModel {
 				this.homeStatus = value;
 			}
 		});
-		try {
-			this.wifiSecurity = wifiSecurity;
-			if (wifiSecurity.state) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
-				}
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
-			} else if (cacheWifiSecurityState) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
-				}
+		this.wifiSecurity = wifiSecurity;
+		if (wifiSecurity && wifiSecurity.state) {
+			if (wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
 			}
-			if (wifiSecurity.wifiHistory) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
-				this.allHistorys = wifiSecurity.wifiHistory;
-				this.allHistorys = this.mappingHistory(this.allHistorys);
-				if (this.allHistorys.length > 4) {
-						this.hasMore = true;
-				} else {
-					this.hasMore = false;
-				}
-				this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
-				commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-				this.historys = this.mappingHistory(this.historys);
-			} else if (cacheWifiSecurityHistory) {
-				this.allHistorys = cacheWifiSecurityHistory;
-				this.allHistorys = this.mappingHistory(this.allHistorys);
-				if (this.allHistorys.length > 4) {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
+		} else if (cacheWifiSecurityState) {
+			if (wifiSecurity && wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
+			}
+		}
+		if (wifiSecurity && wifiSecurity.wifiHistory) {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
+			this.allHistorys = wifiSecurity.wifiHistory;
+			this.allHistorys = this.mappingHistory(this.allHistorys);
+			if (this.allHistorys.length > 4) {
 					this.hasMore = true;
-				} else {
-					this.hasMore = false;
-				}
-				this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
-				commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
-				this.historys = this.mappingHistory(this.historys);
+			} else {
+				this.hasMore = false;
 			}
-			if (homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {
-				this.tryNowEnable = true;
-				this.tryNowUrl = homeProtection.chsConsoleUrl;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, homeProtection.chsConsoleUrl);
-			} else if (cacheWifiSecurityChsConsoleUrl && cacheWifiSecurityChsConsoleUrl !== '') {
-				this.tryNowEnable = true;
-				this.tryNowUrl = cacheWifiSecurityChsConsoleUrl;
+			this.historys = wifiSecurity.wifiHistory.slice(0, 4);
+			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+			this.historys = this.mappingHistory(this.historys);
+		} else if (cacheWifiSecurityHistory) {
+			this.allHistorys = cacheWifiSecurityHistory;
+			this.allHistorys = this.mappingHistory(this.allHistorys);
+			if (this.allHistorys.length > 4) {
+				this.hasMore = true;
+			} else {
+				this.hasMore = false;
 			}
-			if (homeProtection.status) {
-				this.homeStatus = homeProtection.status;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, homeProtection.status);
-			} else if (cacheHomeStatus) {
-				this.homeStatus = cacheHomeStatus;
-			}
-		} catch (err) {
-			console.log(`${err}`);
+			this.historys = cacheWifiSecurityHistory.slice(0, 4);
+			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+			this.historys = this.mappingHistory(this.historys);
+		}
+		if (homeProtection && homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {
+			this.tryNowEnable = true;
+			this.tryNowUrl = homeProtection.chsConsoleUrl;
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, homeProtection.chsConsoleUrl);
+		} else if (cacheWifiSecurityChsConsoleUrl && cacheWifiSecurityChsConsoleUrl !== '') {
+			this.tryNowEnable = true;
+			this.tryNowUrl = cacheWifiSecurityChsConsoleUrl;
+		}
+		if (homeProtection && homeProtection.status) {
+			this.homeStatus = homeProtection.status;
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, homeProtection.status);
+		} else if (cacheHomeStatus) {
+			this.homeStatus = cacheHomeStatus;
 		}
 	}
 
@@ -177,8 +173,6 @@ export class WifiHomeViewModel {
 			i = item;
 			if (i.info.indexOf('Connected') === -1) {
 				const info = i.info.replace(/T/g, ' ');
-				// const connect = 'security.wifisecurity.container.connect';
-				// const information = connect + info;
 				i.info = info;
 			}
 			Historys.push(i);
@@ -189,31 +183,20 @@ export class WifiHomeViewModel {
 
 export class SecurityHealthViewModel {
 	isLWSEnabled: boolean;
-	homeDevicePosture: Array<DevicePostureDetail> = [];
+	homeDevicePosture: DevicePostureDetail[] = [];
 
 	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, public translate: TranslateService, private ngZone: NgZone) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture);
-		try {
-			if (wifiSecurity.state) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
-					commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
-				}
-			} else if (cacheWifiSecurityState) {
-				if (wifiSecurity.isLocationServiceOn !== undefined) {
-					this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
-				}
-				// this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
+		if (wifiSecurity && wifiSecurity.state) {
+			if (wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
 			}
-			if (homeProtection.devicePosture) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection.devicePosture);
-				this.createHomeDevicePosture(homeProtection.devicePosture);
-			} else if (cacheHomeDevicePosture) {
-				this.createHomeDevicePosture(cacheHomeDevicePosture);
+		} else if (cacheWifiSecurityState) {
+			if (wifiSecurity && wifiSecurity.isLocationServiceOn !== undefined) {
+				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
 			}
-		} catch (err) {
-			console.log(`${err}`);
 		}
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
 			if (value) {
@@ -231,80 +214,6 @@ export class SecurityHealthViewModel {
 					}
 				}
 			});
-		});
-		homeProtection.on(EventTypes.homeDevicePostureEvent, (value) => {
-			this.ngZone.run(() => {
-				if (value) {
-					commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
-					this.createHomeDevicePosture(value);
-				}
-			});
-		});
-	}
-
-	createHomeDevicePosture(devicePosture: Array<DeviceInfo>) {
-		this.homeDevicePosture = [];
-		devicePosture.forEach((item) => {
-			const it: DevicePostureDetail = {
-				status: 0,
-				title: '',
-				detail: '',
-				path: 'security/wifi-security',
-				type: 'security'
-			};
-			it.status = item.vulnerable === 'true' ? 1 : 6;
-			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
-			this.translate.stream(it.detail).subscribe((res) => {
-				it.detail = res;
-			});
-			this.mappingDevicePosture(it, item.config);
-			if (it.title !== 'other') {
-				this.homeDevicePosture.push(it);
-			}
-		});
-	}
-
-	mappingDevicePosture(detail: DevicePostureDetail, config: string) {
-		const titles = [
-			'security.homeprotection.securityhealth.deviceName1',
-			'security.homeprotection.securityhealth.deviceName2',
-			'security.homeprotection.securityhealth.deviceName3',
-			'security.homeprotection.securityhealth.deviceName4',
-			'security.homeprotection.securityhealth.deviceName5',
-			'security.homeprotection.securityhealth.deviceName6',
-			'security.homeprotection.securityhealth.deviceName7',
-			'security.homeprotection.securityhealth.deviceName8',
-			'security.homeprotection.securityhealth.deviceName9',
-			'security.homeprotection.securityhealth.deviceName10'
-		];
-		let title: string;
-		config = config.toLowerCase();
-		if (config.indexOf('apps') !== -1) {
-			title = titles[0];
-		} else if (config.indexOf('developer') !== -1) {
-			title = titles[1];
-		} else if (config.indexOf('uac') !== -1) {
-			title = titles[2];
-		} else if (config.indexOf('antivirus') !== -1) {
-			title = titles[3];
-		} else if (config.indexOf('drive') !== -1) {
-			title = titles[4];
-		} else if (config.indexOf('firewall') !== -1) {
-			title = titles[5];
-		} else if (config.indexOf('windows') !== -1) {
-			title = titles[6];
-		} else if (config.indexOf('security') !== -1) {
-			title = titles[7];
-		} else if ((config.indexOf('pin') !== -1) || (config.indexOf('password') !== -1)) {
-			title = titles[8];
-		} else if ((config.indexOf('automatic') !== -1)) {
-			title = titles[9];
-		} else {
-			detail.title = 'other';
-			return;
-		}
-		this.translate.stream(title).subscribe((res) => {
-			detail.title = res;
 		});
 	}
 }

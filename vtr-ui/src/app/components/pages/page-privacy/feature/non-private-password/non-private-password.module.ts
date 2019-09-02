@@ -6,7 +6,7 @@ import { InstalledBrowserComponent } from './browser-stored-accounts/installed-b
 import { RouterModule } from '@angular/router';
 import { VtrCommonModule } from '../../common/vtr-common.module';
 import { RemovePasswordComponent } from './browser-stored-accounts/remove-password/remove-password.component';
-
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 @NgModule({
 	declarations: [
 		NonPrivatePasswordComponent,
@@ -22,6 +22,7 @@ import { RemovePasswordComponent } from './browser-stored-accounts/remove-passwo
 		CommonModule,
 		RouterModule,
 		VtrCommonModule,
+		AppSearchModule
 	]
 })
 export class NonPrivatePasswordModule {

@@ -1,0 +1,39 @@
+@import "../../../../../app.theme.scss";
+.vtr-home-security-after-signup {
+	.content-container {
+        box-shadow: $drop_shadow;
+		border-radius: $border_radius;
+		background-color: $light;
+        padding: 1.5rem;
+		width: 100%;
+		.coronet-logo {
+			width: 10rem;
+		}
+		.content-body {
+			background-color: $shade_extralight;
+			border-radius: $border_radius;
+			border: 0.1rem solid $shade_lighter;
+			font-size: 1.8rem;
+			color: $shade_darker;
+			.red {
+				color: $danger_dark;
+			}
+		}
+		::ng-deep {
+			.button {
+				min-height: 4rem !important;
+			}
+		}
+		.tryNow-btn{
+			::ng-deep {
+				.button-box {
+					float: right;
+					.button {
+						max-width: 18rem;
+					}
+				}
+			}
+		}
+    }
+
+}

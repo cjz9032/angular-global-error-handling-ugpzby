@@ -40,8 +40,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: false,
 			isChecked: false,
 			tooltipText: '',
-			id: 'quick_settings_thermalmode',
-			ariaLabel: 'quick_settings_thermalmode',
+			id: 'quicksettings thermalmode',
+			ariaLabel: 'quicksettings thermalmode',
 			type: 'auto-updates',
 			settings: ''
 		},
@@ -60,8 +60,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id: 'quick_settings_repidcharge',
-			ariaLabel: 'quick_settings_repidcharge',
+			id: 'quicksettings repidcharge',
+			ariaLabel: 'quicksettings repidcharge',
 			type: 'gaming.dashboard.device.quickSettings.rapidCharge',
 			settings: ''
 		},
@@ -80,8 +80,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id: 'quick_settings_wifisecurity',
-			ariaLabel: 'quick_settings_wifisecurity',
+			id: 'quicksettings wifisecurity',
+			ariaLabel: 'quicksettings wifisecurity',
 			type: 'auto-updates',
 			settings: ''
 		},
@@ -100,10 +100,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id: 'quick_settings_dolby',
-			ariaLabel: 'quick_settings_dolby',
+			id: 'quicksettings dolby',
+			ariaLabel: 'quicksettings dolby',
 			type: 'gaming.dashboard.device.quickSettings.dolby',
-			settings: 'quick_settings_dolby_gearicon'
+			settings: 'quicksettings dolby gear'
 		}
 	];
 
@@ -116,21 +116,21 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					header: 'gaming.dashboard.device.quickSettings.status.performance',
 					name: 'gaming.dashboard.device.quickSettings.status.performance',
 					description: 'gaming.dashboard.device.quickSettings.statusText.perText',
-					id: 'thermal_mode_performance',
+					id: 'thermalmode performance',
 					value: 3
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.balance',
 					name: 'gaming.dashboard.device.quickSettings.status.balance',
 					description: 'gaming.dashboard.device.quickSettings.statusText.balText',
-					id: 'thermal_mode_balance',
+					id: 'thermalmode balance',
 					value: 2
 				},
 				{
 					header: 'gaming.dashboard.device.quickSettings.status.quiet',
 					name: 'gaming.dashboard.device.quickSettings.status.quiet',
 					description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
-					id: 'thermal_mode_quiet',
+					id: 'thermalmode quiet',
 					value: 1
 				}
 			]

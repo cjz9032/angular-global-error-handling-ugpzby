@@ -46,7 +46,7 @@ export enum ErrorNames {
 	noAccessToken = 'noAccessToken'
 }
 
-const USER_EMAIL_HASH = 'privacy-user-email-hash';
+export const USER_EMAIL_HASH = 'privacy-user-email-hash';
 
 @Injectable({
 	providedIn: 'root'
@@ -75,6 +75,7 @@ export class EmailScannerService {
 
 	setUserEmail(userEmail) {
 		this._userEmail$.next(userEmail);
+		this.safeStorageService.setEmail(userEmail);
 	}
 
 	scanNotifierEmit() {
@@ -136,7 +137,6 @@ export class EmailScannerService {
 		return getBreachedAccounts.pipe(
 			switchMap((breaches: BreachedAccountsFromServerResponse) => {
 				this.loadingStatusChanged.next(false);
-				this.setUserEmail(breaches.userEmail);
 				return [this.transformBreachesFromServer(breaches)];
 			}),
 			catchError((error) => {
