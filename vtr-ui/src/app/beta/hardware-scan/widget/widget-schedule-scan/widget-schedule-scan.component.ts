@@ -245,11 +245,9 @@ export class WidgetScheduleScanComponent implements OnInit {
 		if (scheduleScanRequest) {
 			console.log('[REQUEST] ScheduleScanRequest:');
 			console.log(JSON.stringify(scheduleScanRequest));
-
 			if (this.hardwareScanService) {
 				this.hardwareScanService.getScheduleScan(scheduleScanRequest)
 					.then((response) => {
-						console.log("[DATA] >>>>>>>>>> ", response);
 						if (response.status === 'COLLISION') {
 							console.log('Scan Collision Detected');
 							// const error = this.translate.instant('hardwareScan.scheduleScan.error');
