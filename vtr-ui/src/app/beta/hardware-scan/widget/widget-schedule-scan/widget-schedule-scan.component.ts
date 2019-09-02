@@ -249,6 +249,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 			if (this.hardwareScanService) {
 				this.hardwareScanService.getScheduleScan(scheduleScanRequest)
 					.then((response) => {
+						console.log("[DATA] >>>>>>>>>> ", response);
 						if (response.status === 'COLLISION') {
 							console.log('Scan Collision Detected');
 							// const error = this.translate.instant('hardwareScan.scheduleScan.error');
@@ -257,16 +258,13 @@ export class WidgetScheduleScanComponent implements OnInit {
 						} else {
 							this.hardwareScanService.getNextScans().then((response) => {
 								this.items = [];
-								let dateString;
-								let time;
 								for (const req of response.scheduleRequests) {
 									const scheduleScanDelete = {
 										taskID: req.taskID
 									};
 
 									const date = req.scheduleDate[0].split('/');
-									dateString = date[2] + '-' + date[0] + '-' + date[1];
-									time = this.formatTime(req.scheduleTime);
+									const dateString = date[2] + '-' + date[0] + '-' + date[1];
 
 									let type = '';
 									if (req.scheduleType === HardwareScheduleScanType.Quick) {
@@ -278,7 +276,10 @@ export class WidgetScheduleScanComponent implements OnInit {
 									this.items.push({ name: req.nextExecutionDate, scanType: type, frequency: req.scheduleFrequency, date: dateString, time: req.scheduleTime, deleteReq: scheduleScanDelete });
 
 								}
-								const desc = this.translate.instant('hardwareScan.scheduledScan.information') + ' ' + dateString + ' ' + time;
+								const dateSplit = scheduleScanRequest.scheduleDate[0].split('/');
+								const dateSchedule = dateSplit[2] + '-' + dateSplit[0] + '-' + dateSplit[1];
+								const timeSchedule = this.formatTime(scheduleScanRequest.scheduleTime);
+								const desc = this.translate.instant('hardwareScan.scheduledScan.information') + ' ' + dateSchedule + ' ' + timeSchedule;
 								this.OnCollisionModal('', desc);
 							});
 						}
@@ -305,8 +306,8 @@ export class WidgetScheduleScanComponent implements OnInit {
 			hours = '12';
 			ampm = this.translate.instant('hardwareScan.am');
 		} else if (parseInt(hours, 10) > 12) {
-			const temp = parseInt(hours, 10) - 12;
-			hours = String(temp);
+			const temp = '0' + (parseInt(hours, 10) - 12);
+			hours = temp.substring(temp.length - 2, temp.length);
 		} else {
 			ampm = this.translate.instant('hardwareScan.am');
 		}
