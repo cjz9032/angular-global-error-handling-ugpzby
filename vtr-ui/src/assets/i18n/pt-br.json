@@ -802,6 +802,11 @@
                         "description": "Ative este recurso para aprimorar o tempo para retomada se você abre e fecha a tampa do computador com frequência.",
                         "tooltip": "Este recurso aprimorará o tempo para retomada se você abre e fecha a tampa do computador com frequência. Quando ativado, o computador entrará em um modo de potência baixa quando você fechar a tampa, mas retomará imediatamente se você reabrir a tampa dentro de 15 minutos depois de fechá-la. Esse recurso também permite que seu notebook tente concluir atividades pendentes (como envio de email ou download de arquivo) antes que o sistema entre em suspensão."
                     },
+					"flipToBoot": {
+						"title": "Abrir para inicializar",
+						"description": "Esse recurso permite ligar o computador ao abrir a tampa, da mesma forma que pressionar o botão liga/desliga. ",
+						"tooltip": "Esse recurso inicia automaticamente o computador ao abrir a tampa.  Ele é útil se você tiver configurado as informações de login facial no Windows Hello."
+					},
                     "or": "Ou"
                 },
                 "otherSettings": {
