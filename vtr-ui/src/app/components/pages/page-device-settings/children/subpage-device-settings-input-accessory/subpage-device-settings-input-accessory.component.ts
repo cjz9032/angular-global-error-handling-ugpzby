@@ -5,6 +5,9 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { of } from "rxjs";
+import { every, filter, find, first, map, pluck, takeUntil } from "rxjs/operators";
+import { element } from "protractor";
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -29,8 +32,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public isTouchPadVisible = false;
 	public isMouseVisible = false;
 
-	public selectedApp: '';
-	public installedApps: any[];
+	public selectedApp: number | string = '';
+	public installedApps: any[] = [];
 	public showVoiphotkeysSection = false;
 	public isAppInstalled = false;
 
@@ -55,31 +58,60 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 
 	getVoipHotkeysSettings() {
-		this.keyboardService.GetVoipHotkeysSettings()
+		const voipAppName = ['Skype For Business', 'Microsoft Teams'];
+		// this.keyboardService.GetVoipHotkeysSettings()
+		Promise.resolve({
+			errorCode: 0,
+			capability: true,
+			appList: [
+				{
+					appName: 0,
+					isAppInstalled: true
+				},
+				{
+					appName: 1,
+					isAppInstalled: true
+				}
+			]
+		})
 			.then(res => {
-				res.appList.forEach((element: { isAppInstalled: boolean; }) => {
-					if (element.isAppInstalled === true) {
+				if (+res.errorCode !== 0 || !res.capability) {
+					return res;
+				}
+				this.showVoiphotkeysSection = true;
+				res.appList.forEach((element: { isAppInstalled: boolean, appName: number | string; }) => {
+					if (element.isAppInstalled) {
 						this.isAppInstalled = true;
 					}
+					element.appName = voipAppName[element.appName];
 				});
-				if (res.errorCode === 0 && res.capability === true && this.isAppInstalled === true) {
-					this.showVoiphotkeysSection = true;
+				if (this.isAppInstalled) {
 					this.installedApps = res.appList;
-					if (res.appList.length === 1) {
-						this.selectedApp = res.appList[0].appName;
-					}
+				}
+				if (res.appList.length === 1) {
+					this.selectedApp = res.appList[0].appName;
 				}
 			})
 			.catch(error => {
 				console.log('getVoipHotkeysSettings error', error);
 			});
+
+		// of(this.keyboardService.GetVoipHotkeysSettings())
+		// 	.pipe(
+		// 		filter((res: any) => res.errorCode === 0 && res.capability),
+		// 		map((res: any) => res.appList),
+		// 		find((item: any) => item.isAppInstalled)
+		// 	)
+		// 	.subscribe();
 	}
 
 	setVoipHotkeysSettings($event: any) {
+		const prev = this.selectedApp;
+		this.selectedApp = $event;
 		this.keyboardService.SetVoipHotkeysSettings($event)
 			.then(res => {
-				if (res.errorCode === 0) {
-					this.selectedApp = res.appList[$event];
+				if (+res.errorCode !== 0) {
+					this.selectedApp = prev;
 				}
 			})
 			.catch(error => {

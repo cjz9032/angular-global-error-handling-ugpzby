@@ -273,18 +273,6 @@ export class InputAccessoriesService {
 	private booleanPromise(value: boolean): Promise<boolean> {
 		return new Promise((resolve) => resolve(value));
 	}
-	public getFnLockStatus(): Promise<any> {
-		try {
-			if (this.keyboardManager) {
-				const response = this.keyboardManager.GetFnLockStatus();
-				return response;
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
 // Voiphotkeys Feature
 	public GetVoipHotkeysSettings(): Promise<any> {
 		try {

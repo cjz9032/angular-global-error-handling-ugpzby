@@ -77,13 +77,14 @@
 						*ngIf="machineType == 1">
 						<vtr-top-row-functions></vtr-top-row-functions>
 					</li>
+					{{showVoiphotkeysSection}}
 					<!--					vtr-ui-rounded-rectangle-radio -->
-					<li class="pt-3" *ngIf="showVoiphotkeysSection">
+					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.title' | translate"
 							componentName="Input Accessories"
 							[caption]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description' | translate"
-							[leftIcon]="['fal', 'phone']"
+							[leftIcon]="['fal', 'keyboard']"
 							[showChildContent]="true"
 							[theme]="'white'"
 							[isLastChild]="true"
@@ -94,12 +95,15 @@
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 									<vtr-ui-rectangle-radio *ngFor="let installedApp of installedApps"
 															[radioId]="'radio'| uniqueId"
+															[iconName]="'far question-circle'"
 															[label]="installedApp.appName"
 															[value]='installedApp.appName'
 															[group]="'app'"
 															[checked]="installedApp.appName === selectedApp"
 															(change)="setVoipHotkeysSettings(installedApp.appName)">
 									</vtr-ui-rectangle-radio>
+									{{installedApps | json}}
+									{{selectedApp}}
 									<div class="row pt-5">
 										<div class="feature-note col-12 pl-5 pr-5 pt-4 pb-4"
 											 id="hasInstalledApps-note" attr.aria-label="hasInstalledApps-note">
@@ -109,7 +113,10 @@
 								</div>
 							</div>
 							<ng-template #noAppInstalled>
-								<div>test</div>
+								<div class="col-12">
+									<i class="icon"></i>
+									<span></span>
+								</div>
 								<div class="row">
 									<div class="feature-note col-12 pl-5 pr-5 pt-4 pb-4"
 										 id="noInstalledApps-note" attr.aria-label="noInstalledApps-note">
