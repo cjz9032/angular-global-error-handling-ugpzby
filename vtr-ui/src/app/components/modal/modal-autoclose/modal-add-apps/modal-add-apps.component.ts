@@ -8,7 +8,7 @@ import { isUndefined } from 'util';
 })
 export class ModalAddAppsComponent implements OnInit, OnChanges {
 	statusAskAgain: boolean;
-	@Input() loaderData: any;
+	@Input() loaderData: any = {};
 	@Input() showAppsModal: boolean;
 	@Input() runningListData: any[];
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
