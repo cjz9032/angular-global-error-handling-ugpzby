@@ -1478,6 +1478,10 @@
 			"fileNotFoundException": "File not found."
 		}
 	},
+	"smartPerformance" : {
+		"title": "Health & Support",
+		"back": "BACK"
+	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
 		"notification": {
