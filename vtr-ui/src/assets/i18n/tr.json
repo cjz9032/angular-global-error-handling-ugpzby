@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Giriş ve Aksesuarlar",
                 "subtitle": "Giriş ve Aksesuarlar Ayarları",
-                "description": "Lenovo Akıllı Algılama, etkinliklerinizi algılamak ve ideal güç yönetimi ayarlarını düzenlemek için bilgisayarınızın çeşitli algılayıcılarını birleştirir",
+                "description": "Bu bölüm, en sık kullanılan klavye ve fare işlevlerini ayarlamanızı sağlar. Buradaki daha fazla özelliği keşfedin.",
                 "inputAccessory": {
                     "title": "Akıllı Klavye",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "Garanti bulunamadı",
             "yearDepotWarranty": "Yıllık Depo Garantisi",
             "warrantyDetails": "Garanti Ayrıntıları:",
+            "warrantyDashboardDetails": "Garanti Ayrıntıları",
             "startDate": "Başlangıç tarihi: ",
             "endDate": "Bitiş tarihi: ",
             "status": "Durum: ",

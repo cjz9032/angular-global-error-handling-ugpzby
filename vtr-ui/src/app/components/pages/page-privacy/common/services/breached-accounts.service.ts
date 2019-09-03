@@ -34,6 +34,7 @@ export interface BreachedAccount {
 	link?: string;
 	hasPassword?: boolean;
 	hasEmail?: boolean;
+	isEmailConfirmed?: boolean;
 }
 
 interface GetBreachedAccountsState {
