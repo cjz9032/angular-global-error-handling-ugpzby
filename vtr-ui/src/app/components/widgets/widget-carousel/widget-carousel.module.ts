@@ -4,7 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/cor
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { WidgetCarouselComponent } from './widget-carousel.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 @NgModule({
 	declarations: [
 		WidgetCarouselComponent
@@ -16,7 +16,8 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 		CommonModule,
 		CommonPipeModule,
 		MetricsModule,
-		NgbCarouselModule
+		NgbCarouselModule,
+		AppSearchModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tangram.Client.Experience</id>
+    <version>1.0.162</version>
+    <authors>Lenovo Vantage team</authors>
+    <owners>Lenovo Vantage team</owners>
+    <projectUrl>ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Nuget package of Vantage UI dist</description>
+    <copyright>Copyright Lenovo 2019</copyright>
+    <tags>Vantage UI Angular</tags>
+  </metadata>
+  <files>
+    <file src="vtr-ui.zip" target="build" />
+    <file src="Tangram.Client.Experience.props" target="build" />
+  </files>
+</package>

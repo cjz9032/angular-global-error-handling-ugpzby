@@ -29,8 +29,9 @@
 					 class="col-auto p-0">
 						<div class="menu-item"
 						vtrMetrics
-						metricsItem="{{item.path}}"
+						metricsItem="{{item.metricsItem}}"
 						metricsEvent="FeatureClick"
+						[metricsParent]="metricsParent"
 						id="jumptoSetting-{{item.path}}"
 						attr.aria-label="jumptoSetting-{{item.path}}"
 						 (click)="menuItemClick($event, item)">

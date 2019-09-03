@@ -30,6 +30,7 @@
 
 											<vtr-widget-device-update [title]="updateTitle | translate"
 												*ngIf="isOnline"
+												[vtrAppSearchScroller]="['search-check-update']"
 												[subTitle1]="getLastUpdatedText()"
 												[subTitle2]="getNextUpdatedScanText()"
 												[buttonText]="'systemUpdates.banner.checkButton' | translate"
@@ -80,8 +81,8 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row mb-40">
-									<div class="col col-12 cont">
-
+									<div class="col col-12 cont"
+									[vtrAppSearchScroller]="['search-critical-update', 'search-recommend-update', 'search-windows-update']">
 										<vtr-autoupdate-settings
 											[title]="'systemUpdates.autoUpdateSettings.title' | translate"
 											componentName="Auto Update Settings"

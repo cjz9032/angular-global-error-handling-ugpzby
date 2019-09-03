@@ -88,13 +88,20 @@ export class ModalArticleDetailComponent implements OnInit {
 	sendArticleViewMetric() {
 		if (this.metricClient) {
 			const modalElement = this.element.nativeElement.closest('ngb-modal-window');
+			const articleBox = document.querySelector('.article-content') as HTMLElement;
+			const articleContent = document.querySelector('.article-body') as HTMLElement;
+			let DocReadPosition = -1;
+			if (articleBox && articleContent) {
+				DocReadPosition = (articleBox.scrollTop + articleBox.offsetHeight) * 100 / articleContent.offsetHeight;
+				DocReadPosition = Math.round(DocReadPosition);
+			}
 			const metricsData = {
 				ItemType: 'ArticleView',
 				ItemID: this.articleId,
 				ItemParent: this.metricsParent,
 				ItemCategory: this.articleCategory,
 				Duration: this.timerService.stop(),
-				DocReadPosition: Math.round(((modalElement.scrollTop + window.innerHeight) / modalElement.scrollHeight) * 20),
+				DocReadPosition,
 				MediaReadPosition: 0
 			};
 			this.metricClient.sendAsync(metricsData);

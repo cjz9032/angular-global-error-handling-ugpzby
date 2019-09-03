@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SharedModule } from '../shared.module';
 import { RouterModule } from '@angular/router';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 @NgModule({
 	declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
 	imports: [
 		CommonModule,
 		SharedModule,
-		RouterModule
+		RouterModule,
+		AppSearchModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageLayoutComponent } from './page-layout.component';
 
-describe('PageContainerComponent', () => {
+xdescribe('PageContainerComponent', () => {
 	let component: PageLayoutComponent;
 	let fixture: ComponentFixture<PageLayoutComponent>;
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, Optional } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -24,6 +24,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -43,7 +44,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	public countryCode: string;
 	public locale: string;
 	public items: any = [];
+	public showSearchBox = false;
+
 	showMenu = false;
+	showHWScanMenu: boolean = false;
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
@@ -69,7 +73,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
 		private windowsHelloService: WindowsHelloService,
-		public modernPreloadService: ModernPreloadService
+		public modernPreloadService: ModernPreloadService,
+		private hardwareScanService: HardwareScanService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
@@ -130,8 +135,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	onFocus(): void {
 		this.showVpn();
 	}
-	@HostListener('document:click', ['$event.target'])
-	onClick(targetElement) {
+
+	@HostListener('document:click', ['$event'])
+	onClick(event) {
+		const targetElement = event.target;
 		if (this.menuTarget) {
 			const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 			const toggleMenuButton =
@@ -139,6 +146,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			if (!clickedInside && !toggleMenuButton) {
 				this.showMenu = false;
 			}
+		}
+
+		if (!event.fromSearchBox && !event.fromSearchMenu) {
+			this.updateSearchBoxState(false);
 		}
 	}
 
@@ -170,6 +181,17 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		if (cacheMachineFamilyName) {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
+
+		this.hardwareScanService.getPluginInfo()
+			.then((hwscanPluginInfo: any) => {
+				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
+				this.showHWScanMenu = hwscanPluginInfo !== undefined && 
+									  hwscanPluginInfo.LegacyPlugin === false && 
+									  hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
+			})
+			.catch(() => {
+				this.showHWScanMenu = false;
+			});
 	}
 
 	private loadMenuOptions(machineType: number) {
@@ -224,7 +246,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				showItem = false;
 			}
 		}
-		if (item.id === 'privacy1') {
+
+		if (item.id === 'hardware-scan') {
+			showItem = this.showHWScanMenu;
+		}
+
+		if (item.id === 'privacy') {
 			if (!this.deviceService.showPrivacy) {
 				showItem = false;
 			}
@@ -236,9 +263,33 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		return showItem;
 	}
 
+	isCommomItem(item) {
+		return item.id !== 'user' && item.id !== 'app-search';
+	}
+
+	updateSearchBoxState(isActive) {
+		this.showSearchBox = isActive;
+	}
+
+	onMenuItemClick(item, event?) {
+		this.showMenu = false;
+		if (item.id === 'app-search') {
+			this.updateSearchBoxState(!this.showSearchBox);
+			if (event) {
+				event.fromSearchMenu = true;
+			}
+		}
+	}
+
+	onClickSearchMask() {
+		this.showMenu = false;
+		this.updateSearchBoxState(false);
+	}
+
 	menuItemClick(event, path) {
-		// console.log (path);
-		this.router.navigateByUrl(path);
+		if (path) {
+			this.router.navigateByUrl(path);
+		}
 	}
 
 	//  to popup Lenovo ID modal dialog

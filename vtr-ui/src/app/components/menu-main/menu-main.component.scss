@@ -1,4 +1,13 @@
 @import "../../app.theme";
+:host-context(.is-gaming) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 9rem;
+  display: block;
+  background-color: $gaming_darkest;
+}
 
 .vtr-menu-main {
   position: fixed;
@@ -17,7 +26,7 @@
     position: relative;
     top: -0.6rem;
     left: -0.1rem;
-    margin-right: 2rem;
+    margin-right: 0.2rem;
   }
 
   .beta-item{
@@ -79,6 +88,26 @@
 				text-align: left;
 			}
 		}
+
+	.search-dropdown {
+		position: absolute;
+		top: calc(#{$menu_height} + 0.5rem);
+		width: 40rem;
+		right: 0rem;
+	}
+
+	.search-nav-item {
+		position: relative;
+	}
+
+	.search-nav-item-mask {
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 100;
+		cursor: pointer;
+	}
 
     .navbar-collapse {
       &.show {
@@ -360,6 +389,11 @@
       top: 0.3rem;
     }
   }
+}
+.search-dropdown-sm{
+  position: absolute;
+  top: 9.5rem;
+  right: 2.2rem;
 }
 
 @media #{$mediaquery_xl} {

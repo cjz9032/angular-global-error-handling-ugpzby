@@ -2,6 +2,7 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [title]="'settings.preferenceSettings' | translate"
+				[vtrAppSearchScroller]="['search-preference-subscription']"
 				[backarrow]="'&lt; '"
 				[back]="'common.ui.back' | translate"
 				[backId]="backId"></vtr-header-main>
@@ -51,6 +52,7 @@
 										</li>
 										<li>
 											<vtr-ui-row-switch [title]="'settings.marketing' | translate"
+												[vtrAppSearchScroller]="['search-preference-marketing']"
 												[name]="'MarketingToggle'"
 												[switchId]="'settingsMarketingToggle'"
 												id="settings-marketingToggle"
@@ -65,6 +67,7 @@
 										</li>
 										<li>
 											<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
+												[vtrAppSearchScroller]="['search-preference-action-trigger']"
 												[name]="'ActionTriggeredToggle'"
 												[switchId]="'settingsActionTriggeredToggle'"
 												id="settings-actionTriggeredToggle"
@@ -96,6 +99,7 @@
 											<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
 												[name]="'settingsUsageStatisticsToggle'"
 												[switchId]="'settingsUsageStatisticsToggle'"
+												[vtrAppSearchScroller]="['search-preference-statistics']"
 												id="settings-usageStatisticsToggle"
 												aria-label="settings-usageStatisticsToggle"
 												[caption]="'settings.usageStatisticsDescription' | translate"
