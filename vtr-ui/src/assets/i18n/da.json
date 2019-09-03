@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Input og tilbehør",
                 "subtitle": "Indstillinger for input og tilbehør",
-                "description": "Lenovo Intelligent registrering kombinerer forskellige sensorer på computeren til at registrere dine aktiviteter og justere indstillinger, så du får den optimale strømstyring",
+                "description": "I denne sektion kan du indstille de hyppigst anvendte tastatur- og musefunktioner. Udforsk flere funktioner her.",
                 "inputAccessory": {
                     "title": "Intelligent tastatur",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "Garantien blev ikke fundet",
             "yearDepotWarranty": "Garanti på Y-deponering",
             "warrantyDetails": "Garantioplysninger:",
+            "warrantyDashboardDetails": "Garantioplysninger",
             "startDate": "Startdato: ",
             "endDate": "Slutdato: ",
             "status": "Status: ",

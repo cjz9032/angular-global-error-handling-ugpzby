@@ -81,8 +81,7 @@ describe('BatteryDetailComponent', () => {
 			declarations: [BatteryDetailComponent, BatteryIndicatorComponent, MinutesToHourminPipe],
 			imports: [TranslationModule],
 			providers: [TranslateStore]
-		})
-			.compileComponents();
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

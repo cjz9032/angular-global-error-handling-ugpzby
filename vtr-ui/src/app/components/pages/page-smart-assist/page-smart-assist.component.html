@@ -10,7 +10,7 @@
 			</vtr-header-main>
 		</div>
 	</div>
-	<div class="row vtr-page-content">
+	<div class="row vtr-page-content">	
 		<div class="col vtr-col">
 			<div class="row">
 				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
@@ -272,6 +272,9 @@
 										</p>
 										<p id="smart-assist-intelligent-security-note-desc3"
 										attr.aria-label="smart-assist-intelligent-security-note-desc3">{{'device.smartAssist.intelligentSecurity.note.description5' | translate}}
+										</p>
+										<p *ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)" id="smart-assist-intelligent-security-note-desc4"
+										attr.aria-label="smart-assist-intelligent-security-note-desc4">{{'device.smartAssist.intelligentSecurity.note.description6' | translate}}
 										</p>
 									</div>
 								</div>

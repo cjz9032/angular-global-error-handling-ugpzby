@@ -19,7 +19,6 @@ export class WidgetSystemToolsComponent implements OnInit {
 	ngOnInit() {
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
-				console.log(`GAMINGCAPABILITIES in widget-system-tools.component`, response);
 				this.gamingProperties = response.payload;
 			}
 		});

@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } fro
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { DeviceInfo, PluginMissingError, EventTypes } from '@lenovo/tan-client-bridge';
+import { PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
@@ -17,12 +17,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-
-interface DevicePostureDetail {
-	status: number; // 1,2
-	title: string; // name
-	detail: string; // faied,passed
-}
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -50,6 +45,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	wifiIsShowMore: boolean;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
+	homeSecurity: phoenix.ConnectedHomeSecurity;
 	homeProtection: phoenix.HomeProtection;
 	isShowInvitationCode: boolean;
 	wifiHomeViewModel: WifiHomeViewModel;
@@ -59,6 +55,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	cancelClick = false;
 	isOnline = true;
 	notificationSubscription: Subscription;
+	region = 'us';
+	language = 'en';
 
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -68,12 +66,14 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
 		public translate: TranslateService,
+		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
+		this.homeSecurity = shellService.getConnectedHomeSecurity();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
@@ -97,6 +97,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	ngOnInit() {
+		this.localInfoService.getLocalInfo().then(result => {
+			this.region = result.GEO;
+			this.language = result.Lang;
+		}).catch(e => {
+			this.region = 'us';
+			this.language = 'en';
+		});
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);

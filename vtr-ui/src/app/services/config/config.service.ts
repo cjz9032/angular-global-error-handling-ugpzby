@@ -6,6 +6,7 @@ import {
 } from 'src/app/services/device/device.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -162,8 +163,23 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			adPolicyId: AdPolicyId.SystemUpdate,
 			subitems: []
-		}]
+		}
+		// {
+		// 		id: 'smart-performance',
+		// 		label: 'Smart performance',
+		// 		path: 'smart-performance',
+		// 		icon: '',
+		// 		metricsEvent: 'itemClick',
+		// 		metricsParent: 'navbar',
+		// 		metricsItem: '',
+		// 		routerLinkActiveOptions: {
+		// 			exact: true
+		// 		},
+		// 		subitems: []
+		// 	}
+		]
 	}, {
 		id: 'security',
 		label: 'common.menu.security.title',
@@ -249,6 +265,7 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
+		hide: true,
 		subitems: []
 	},
 	{
@@ -340,6 +357,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			adPolicyId: AdPolicyId.SystemUpdate,
 			subitems: []
 		}]
 	}, {
@@ -427,13 +445,7 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		hide: false,
-		subitems: [],
-		pre: [
-			'assets/images/connected-home-security/welcome-page-one.png',
-			'assets/images/connected-home-security/welcome-page-two.png',
-			'assets/images/connected-home-security/welcome-chs-logo.png'
-		]
+		subitems: []
 	},
 	{
 		id: 'user',
@@ -446,6 +458,7 @@ export class ConfigService {
 		routerLinkActiveOptions: {
 			exact: true
 		},
+		sMode: true,
 		forArm: true,
 		subitems: []
 	}];
@@ -496,7 +509,9 @@ export class ConfigService {
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-			if (country.toLowerCase() === 'us') {
+			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
+			const brand = machineInfo && machineInfo.brand ? machineInfo.brand : 'lenovo';
+			if (country.toLowerCase() === 'us' && locale.startsWith('en') && brand.toLowerCase() !== 'think') {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);

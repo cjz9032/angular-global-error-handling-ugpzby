@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Eingabe und Zubehör",
                 "subtitle": "Einstellungen für Eingabe und Zubehör",
-                "description": "Bei der Funktion \"Intelligente Sensorik\" von Lenovo werden verschiedene Sensoren auf Ihrem Computer kombiniert, um Ihre Aktivitäten zu analysieren und die Energieverwaltung optimal anzupassen",
+                "description": "In diesem Abschnitt können Sie die am häufigsten verwendeten Tastatur- und Mausfunktionen festlegen. Weitere Funktionen finden Sie hier.",
                 "inputAccessory": {
                     "title": "Intelligente Tastatur",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "Garantie wurde nicht gefunden",
             "yearDepotWarranty": "Y Depot-Garantie",
             "warrantyDetails": "Garantiedetails:",
+            "warrantyDashboardDetails": "Garantiedetails",
             "startDate": "Startdatum: ",
             "endDate": "Enddatum: ",
             "status": "Status: ",

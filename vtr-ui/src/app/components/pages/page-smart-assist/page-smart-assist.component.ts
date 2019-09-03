@@ -15,6 +15,7 @@ import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -45,6 +46,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
+	public hpdSensorType = 0;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -108,6 +110,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
 			this.setIntelligentSecurity();
+			this.initHPDSensorType();
 			this.setIntelligentScreen();
 			this.initSmartAssist(true);
 		}
@@ -133,7 +136,7 @@ export class PageSmartAssistComponent implements OnInit {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 			}
 		} catch (error) {
-			console.log('initVisibility', error);
+			console.log('initVisibility', error.message);
 		}
 	}
 
@@ -202,7 +205,7 @@ export class PageSmartAssistComponent implements OnInit {
 					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				}
 			})
-			.catch((error) => { console.log('APS ERROR------------------', error); });
+			.catch((error) => { console.log('APS ERROR------------------', error.message); });
 	}
 
 	private initIntelligentScreen() {
@@ -228,7 +231,8 @@ export class PageSmartAssistComponent implements OnInit {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
 			}
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -249,7 +253,8 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentSecurity.isWindowsHelloRegistered = responses[5];
 			console.log('PageSmartAssistComponent.Promise.ZeroTouchLogin()', responses, this.intelligentSecurity);
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -277,7 +282,8 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -412,7 +418,7 @@ export class PageSmartAssistComponent implements OnInit {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('fetchCMSContent error', error.message);
 			}
 		);
 	}
@@ -441,11 +447,29 @@ export class PageSmartAssistComponent implements OnInit {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						}
 					}).catch(error => {
-						console.error('getVideoPauseResumeStatus.error', error);
+						this.logger.error('getVideoPauseResumeStatus.error', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error('getVideoPauseResumeStatus' + error.message);
+			this.logger.error('getVideoPauseResumeStatus' + error.message);
+			return EMPTY;
+		}
+	}
+
+	initHPDSensorType() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDSensorType()
+					.then((type: number) => {
+						this.hpdSensorType = type;
+						console.log('getHPDSensorType: ', this.hpdSensorType);
+					}).catch(error => {
+						console.error('getHPDSensorType', error);
+					});
+			}
+		} catch (error) {
+			console.error('getHPDSensorType' + error.message);
 		}
 	}
 }

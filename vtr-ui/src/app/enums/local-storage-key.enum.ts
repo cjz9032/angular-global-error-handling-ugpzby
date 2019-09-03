@@ -28,7 +28,6 @@ export enum LocalStorageKey {
 	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
 	SecurityLandingScore = '[LocalStorageKey] SecurityLandingScore',
 	SecurityLandingMaliciousWifi = '[LocalStorageKey] SecurityLandingMaliciousWifi',
-	HomeProtectionDevicePosture = '[LocalStorageKey] HomeProtectionDevicePosture',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
 	LidFakeDeviceID = '[LocalStorageKey] LidFakeDeviceID',
@@ -46,6 +45,7 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
+	ConnectedHomeSecurityDevicePosture = '[LocalStorageKey] ConnectedHomeSecurityDevicePosture',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
 	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
 	NetworkBoosNeedToAskPopup = '[LocalStorageKey] NetworkBoosNeedToAskPopup',
@@ -150,13 +150,15 @@ export enum LocalStorageKey {
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
+	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
+	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
+	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
 
 	// Auto close storage key
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 	UPEUserID = '[LocalStorageKey] UPEUserID',
-	UPEAPIKey = '[LocalStorageKey] UPEAPIKey',
 	BetaUser = '[LocalStorageKey] BetaUser',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
 	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
@@ -167,5 +169,7 @@ export enum LocalStorageKey {
 	AirplanePowerModeCapability = '[LocalStorageKey] AirplanePowerModeCapability',
 	BatteryChargeThresholdCapability = '[LocalStorageKey] BatteryChargeThresholdCapability',
 	ExpressChargingCapability = '[LocalStorageKey] ExpressChargingCapability',
-	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability'
+	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability',
+	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
+	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability'
 }

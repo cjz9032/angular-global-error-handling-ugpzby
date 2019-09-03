@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalScheduleNewScanComponent } from '../../modal/modal-schedule-new-scan/modal-schedule-new-scan.component';
 import { ModalScheduleScanCollisionComponent } from '../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../services/hardware-scan/hardware-scan.service';
+import { timeInterval } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-widget-schedule-scan',
@@ -140,9 +141,9 @@ export class WidgetScheduleScanComponent implements OnInit {
 				.then((response) => {
 					if (response.status === 'COLLISION') {
 						console.log('Scan Collision Detected');
-						const error = this.translate.instant('hardwareScan.scheduleScan.error');
-						const description = this.translate.instant('hardwareScan.scheduleScan.description');
-						this.OnCollisionModal(error, description);
+						// const error = this.translate.instant('hardwareScan.scheduleScan.error');
+						// const description = this.translate.instant('hardwareScan.scheduleScan.description');
+						this.OnCollisionModal();
 					} else {
 						this.hardwareScanService.getNextScans().then((response) => {
 							this.items = [];
@@ -169,25 +170,44 @@ export class WidgetScheduleScanComponent implements OnInit {
 		}
 	}
 
-	async OnCollisionModal(error, description) {
-		this.modalService
+	async OnCollisionModal(error = null, description = null, size: string = 'lg') {
+		let modal;
+		if (size === 'sm') {
+			modal = this.modalService
 			.open(ModalScheduleScanCollisionComponent, {
 				backdrop: 'static',
-				size: 'lg',
+				size: 'sm',
 				centered: true,
 				windowClass: 'schedule-new-modal-size'
-			})
-			.result.then(
-				result => {
-					if (result) {
-						console.log('Result');
-					} else {
-						console.log('Result undefined');
-					}
-				},
-				reason => {
+			});
+		} else {
+			modal = this.modalService
+				.open(ModalScheduleScanCollisionComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'schedule-new-modal-size'
+			});
+		}
+
+		if (error != null) {
+			modal.componentInstance.error = error;
+		}
+		if (description != null) {
+			modal.componentInstance.description = description;
+		}
+
+		modal.result.then(
+			result => {
+				if (result) {
+					console.log('Result');
+				} else {
+					console.log('Result undefined');
 				}
-			);
+			},
+			reason => {
+			}
+		);
 	}
 
 	public buildScheduleScanRequest(data: any) {
@@ -222,7 +242,6 @@ export class WidgetScheduleScanComponent implements OnInit {
 	}
 
 	public getScheduleScan(scheduleScanRequest) {
-
 		if (scheduleScanRequest) {
 			console.log('[REQUEST] ScheduleScanRequest:');
 			console.log(JSON.stringify(scheduleScanRequest));
@@ -232,19 +251,22 @@ export class WidgetScheduleScanComponent implements OnInit {
 					.then((response) => {
 						if (response.status === 'COLLISION') {
 							console.log('Scan Collision Detected');
-							const error = this.translate.instant('hardwareScan.scheduleScan.error');
-							const description = this.translate.instant('hardwareScan.scheduleScan.description');
-							this.OnCollisionModal(error, description);
+							// const error = this.translate.instant('hardwareScan.scheduleScan.error');
+							// const description = this.translate.instant('hardwareScan.scheduleScan.description');
+							this.OnCollisionModal();
 						} else {
 							this.hardwareScanService.getNextScans().then((response) => {
 								this.items = [];
+								let dateString;
+								let time;
 								for (const req of response.scheduleRequests) {
 									const scheduleScanDelete = {
 										taskID: req.taskID
 									};
 
 									const date = req.scheduleDate[0].split('/');
-									const dateString = date[2] + '-' + date[0] + '-' + date[1];
+									dateString = date[2] + '-' + date[0] + '-' + date[1];
+									time = this.formatTime(req.scheduleTime);
 
 									let type = '';
 									if (req.scheduleType === HardwareScheduleScanType.Quick) {
@@ -256,6 +278,8 @@ export class WidgetScheduleScanComponent implements OnInit {
 									this.items.push({ name: req.nextExecutionDate, scanType: type, frequency: req.scheduleFrequency, date: dateString, time: req.scheduleTime, deleteReq: scheduleScanDelete });
 
 								}
+								const desc = this.translate.instant('hardwareScan.scheduledScan.information') + ' ' + dateString + ' ' + time;
+								this.OnCollisionModal('', desc);
 							});
 						}
 					});
@@ -269,6 +293,25 @@ export class WidgetScheduleScanComponent implements OnInit {
 	public disable() {
 		const isExecuting = !this.hardwareScanService.isScanDoneExecuting() && (this.hardwareScanService.isScanExecuting() || this.hardwareScanService.isRecoverExecuting());
 		return isExecuting;
+	}
+
+	public formatTime(time: string) {
+		const hourMinute = time.split(':');
+		const minute = hourMinute[1];
+		let hours = hourMinute[0];
+		let ampm = this.translate.instant('hardwareScan.pm');
+
+		if (parseInt(hours, 10) === 0) {
+			hours = '12';
+			ampm = this.translate.instant('hardwareScan.am');
+		} else if (parseInt(hours, 10) > 12) {
+			const temp = parseInt(hours, 10) - 12;
+			hours = String(temp);
+		} else {
+			ampm = this.translate.instant('hardwareScan.am');
+		}
+
+		return hours + ':' + minute + ' ' + ampm;
 	}
 }
 

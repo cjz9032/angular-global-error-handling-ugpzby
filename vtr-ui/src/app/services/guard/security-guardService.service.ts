@@ -8,18 +8,18 @@ import { Observable, from } from 'rxjs';
 	providedIn: 'root',
 })
 export class GuardService {
-	interTime: number;
+	interTime = 0;
 	metrics: any;
 	pageContext: any;
 	previousPageName = '';
-	duration:any;
+	duration = 0;
 
 	constructor(private shellService: VantageShellService,
 		private commonService: CommonService) {
 
 	this.metrics = shellService.getMetrics();
 	window.addEventListener('blur',()=>{
-	this.duration =this.duration+parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`);
+	this.duration =this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`);
 
 })
 window.addEventListener('focus',()=>{
@@ -31,7 +31,6 @@ window.addEventListener('focus',()=>{
 
 	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 		this.interTime = Date.now();
-		console.log('Activate : ' + activatedRouteSnapshot.data.pageName);
 		return true;
 	}
 
@@ -44,10 +43,9 @@ window.addEventListener('focus',()=>{
 		const data = {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
-			PageDuration:this.duration+ parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`),
+			PageDuration: this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`),
 			PageContext: this.pageContext,
 		};
-		console.log('Deactivate : ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
 		this.previousPageName = activatedRouteSnapshot.data.pageName;
 		this.metrics.sendAsync(data);
 		return true;
