@@ -926,7 +926,8 @@ export class HardwareScanService {
 						testInfo['status'] = test[j].result;
 						testInfo['statusToken'] = this.statusToken(test[j].result);
 
-						if (testInfo['status'] === HardwareScanTestResult.NotStarted) {
+						if (testInfo['status'] === HardwareScanTestResult.NotStarted ||
+							testInfo['status'] === HardwareScanTestResult.InProgress) {
 							testInfo['status'] = HardwareScanOverallResult.Cancelled;
 							testInfo['statusToken'] = this.statusToken(HardwareScanOverallResult.Cancelled);
 						}
