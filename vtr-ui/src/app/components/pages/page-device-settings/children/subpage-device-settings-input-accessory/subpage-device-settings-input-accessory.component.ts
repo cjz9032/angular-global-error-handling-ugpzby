@@ -5,9 +5,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { of } from "rxjs";
-import { every, filter, find, first, map, pluck, takeUntil } from "rxjs/operators";
-import { element } from "protractor";
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -36,6 +33,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public installedApps: any[] = [];
 	public showVoiphotkeysSection = false;
 	public isAppInstalled = false;
+	voipAppName = ['Skype For Business', 'Microsoft Teams'];
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -58,7 +56,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 
 	getVoipHotkeysSettings() {
-		const voipAppName = ['Skype For Business', 'Microsoft Teams'];
 		// this.keyboardService.GetVoipHotkeysSettings()
 		Promise.resolve({
 			errorCode: 0,
@@ -83,26 +80,14 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					if (element.isAppInstalled) {
 						this.isAppInstalled = true;
 					}
-					element.appName = voipAppName[element.appName];
 				});
 				if (this.isAppInstalled) {
 					this.installedApps = res.appList;
-				}
-				if (res.appList.length === 1) {
-					this.selectedApp = res.appList[0].appName;
 				}
 			})
 			.catch(error => {
 				console.log('getVoipHotkeysSettings error', error);
 			});
-
-		// of(this.keyboardService.GetVoipHotkeysSettings())
-		// 	.pipe(
-		// 		filter((res: any) => res.errorCode === 0 && res.capability),
-		// 		map((res: any) => res.appList),
-		// 		find((item: any) => item.isAppInstalled)
-		// 	)
-		// 	.subscribe();
 	}
 
 	setVoipHotkeysSettings($event: any) {
