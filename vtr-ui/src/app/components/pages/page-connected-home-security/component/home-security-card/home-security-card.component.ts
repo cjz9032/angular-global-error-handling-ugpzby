@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/home-security-device-posture.model';
 
 @Component({
 	selector: 'vtr-home-security-card',
@@ -7,6 +8,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 	styleUrls: ['./home-security-card.component.scss']
 })
 export class HomeSecurityCardComponent implements OnInit {
+	@Input() data: HomeSecurityDevicePosture;
 	dialogService: DialogService;
 
 
@@ -18,7 +20,11 @@ export class HomeSecurityCardComponent implements OnInit {
 	}
 
 	joinGroup() {
-		this.dialogService.openInvitationCodeDialog();
+		if (this.data && this.data.isLocationServiceOn) {
+			this.dialogService.openInvitationCodeDialog();
+		} else {
+			this.dialogService.openCHSPermissionModal();
+		}
 	}
 
 }
