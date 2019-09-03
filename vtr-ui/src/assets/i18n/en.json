@@ -635,7 +635,6 @@
 		"deviceSettings": {
 			"helpful": "Helpful Content",
 			"batteryGauge": {
-				"title": "BATTERY GAUGE",
 				"subtitle": "Battery",
 				"hours": "hours",
 				"hour": "hour",
@@ -643,9 +642,7 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
-				"updating": "Updating",
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
-				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
@@ -1174,7 +1171,7 @@
 					"title": "FN key and Ctrl key swap",
 					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
 				},
-				"controlOptions":{
+				"controlOptions": {
 					"more": "MORE",
 					"control1": "TOUCHPAD CONTROLS",
 					"control2": "MOUSE CONTROLS"

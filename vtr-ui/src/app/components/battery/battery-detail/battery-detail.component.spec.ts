@@ -21,8 +21,6 @@ describe('BatteryDetailComponent', () => {
 		heading: '',
 		chargeStatusString: 'device.deviceSettings.batteryGauge.details.chargeStatusString.charging',
 		remainingTimeText: 'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
-		isExpressCharging: false,
-		isVoltageError: false,
 
 		barCode: 'X2XP899J0N0',
 		batteryCondition: ['Normal'],
@@ -56,7 +54,7 @@ describe('BatteryDetailComponent', () => {
 		minutes: 31,
 		percent: 14,
 		timeText: 'timeRemaining',
-		voltageError: false,
+
 		convertMin(totalMin: number) {
 			this.hours = Math.trunc(totalMin / 60);
 			this.minutes = Math.trunc(totalMin % 60);
@@ -66,6 +64,7 @@ describe('BatteryDetailComponent', () => {
 	const dataConditions: BatteryConditionModel[] = [{
 		condition: 0,
 		conditionStatus: 0,
+
 		getBatteryConditionTip(condition: number): string {
 			return 'device.deviceSettings.batteryGauge.condition.Good';
 		}

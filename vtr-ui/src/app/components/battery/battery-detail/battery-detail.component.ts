@@ -121,7 +121,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		return true;
 	}
 
-
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
