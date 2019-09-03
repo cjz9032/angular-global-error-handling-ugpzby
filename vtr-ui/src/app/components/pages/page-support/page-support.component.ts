@@ -25,6 +25,8 @@ export class PageSupportComponent implements OnInit {
 		leftBottom: [],
 		middleBottom: [],
 		right: [],
+		leftBottomSmall: [],
+		middleBottomSmall: [],
 	};
 	backupContentArticles = this.copyObjectArray(this.emptyArticles);
 	articles = this.copyObjectArray(this.emptyArticles);
@@ -306,6 +308,11 @@ export class PageSupportComponent implements OnInit {
 					this.articles.middleBottom.push(article);
 				} else {
 					this.articles.right.push(article);
+				}
+				if (index % 2 === 0) {
+					this.articles.leftBottomSmall.push(article);
+				} else {
+					this.articles.middleBottomSmall.push(article);
 				}
 			}
 		});

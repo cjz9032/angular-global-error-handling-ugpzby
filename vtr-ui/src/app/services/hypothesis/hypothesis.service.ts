@@ -29,19 +29,15 @@ export class HypothesisService {
 						this.hypSettings = hyp;
 						resolve();
 					},
-						error => {
-							console.log('getHypothesis:' + error);
-							this.devService.writeLog('getHypothesis: ', error);
-
-							reject(error);
-						});
-				}
-				else {
+					error => {
+						this.devService.writeLog('getHypothesis: ', error);
+						reject(error);
+					});
+				} else {
 					reject('getHypothesis failed');
 					this.devService.writeLog('getHypothesis failed: ');
 				}
 			} catch (ex) {
-				console.log('getHypothesis:' + ex.message);
 				this.devService.writeLog('getHypothesis: ' + ex.message);
 				reject(ex);
 			}
@@ -57,8 +53,7 @@ export class HypothesisService {
 					if (this.hypSettings) {
 						resolve(this.hypSettings[feature]);
 						this.devService.writeLog('get hypothesis  getFeatureSetting: ' + JSON.stringify(this.hypSettings[feature]));
-					}
-					else {
+					} else {
 						this.devService.writeLog('get hypothesis  getFeatureSetting: setting failed.');
 						reject('get hypothesis setting failed.');
 					}

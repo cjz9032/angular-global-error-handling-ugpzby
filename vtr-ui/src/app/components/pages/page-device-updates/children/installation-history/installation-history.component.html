@@ -15,7 +15,6 @@
 										</div>
 										<div class="col col-3 sort-order">
 											<a id="su_installation_update_sort_order"
-												aria-label="su_installation_update_sort_order"
 												(click)="toggleSortOrder()">
 												<div class="sort-heading-text">{{'systemUpdates.installationHistory.sortByDate' | translate}}</div>
 												<div class="sort-icon">
@@ -29,7 +28,7 @@
 									</div>
 								</div>
 							</li>
-							<li *ngFor="let item of installationHistory">
+							<li *ngFor="let item of installationHistory" id="su_history_item">
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col col-11 item-text">
@@ -37,13 +36,19 @@
 												<div class="col">
 													<span class="title"
 														[ngClass]="{'light-title':item.lightTitle}">
-														<fa-icon class="success" id="{{item.packageID +':success'}}" attr.aria-label="{{item.packageID +':success'}}"
-															*ngIf="item.status.toLocaleLowerCase() === 'installed'"
-															[icon]="['fas', 'check-circle']"></fa-icon>
-														<fa-icon class="failure" id="{{item.packageID +':failure'" attr.aria-label="{{item.packageID +':failure'}}"
-															*ngIf="item.status.toLocaleLowerCase() === 'failed'"
-															[icon]="['fas', 'times-circle']"></fa-icon>
-														{{item.packageDesc}} - {{item.version}}
+														<div class="icon-check" *ngIf="item.status.toLocaleLowerCase() === 'installed'">
+																<div class="icon-bg">
+																	<fa-icon id="{{'su_history_icon_'+item.packageID +':success'}}" attr.aria-label="{{item.packageID +':success'}}"
+																		[icon]="['fas', 'check']"></fa-icon>
+																</div>
+														</div>
+														<div class="icon-times" *ngIf="item.status.toLocaleLowerCase() === 'failed'">
+																<div class="icon-bg">
+																	<fa-icon id="{{'su_history_icon_'+item.packageID +':failure'" attr.aria-label="{{item.packageID +':failure'}}"
+																		[icon]="['fas', 'times']"></fa-icon>
+																</div>
+														</div>
+														<span id="{{'su_history_'+item.packageID}}" role="listitem">{{item.packageDesc}} - {{item.version}}</span>
 													</span>
 												</div>
 											</div>

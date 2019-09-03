@@ -19,13 +19,13 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { CommonPipeModule } from '../common/common-pipe.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
+import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
 
 @NgModule({
 	declarations: [
@@ -34,6 +34,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		WidgetFeedbackComponent,
 		WidgetSwitchIconComponent,
 		WidgetQuicksettingsComponent,
+		WidgetDashboardWarrantyComponent
 	],
 	imports: [
 		CommonModule,
@@ -66,11 +67,12 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		FormsModule,
 		ReactiveFormsModule,
 		PageLayoutModule,
-		AppSearchModule
+		AppSearchModule,
+		WidgetDashboardWarrantyComponent
 	],
-	providers: [MockService],
-	entryComponents: [FeedbackFormComponent],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	providers: [ MockService ],
+	entryComponents: [ FeedbackFormComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
 export class HardwareDashboardModule {
 	constructor() {

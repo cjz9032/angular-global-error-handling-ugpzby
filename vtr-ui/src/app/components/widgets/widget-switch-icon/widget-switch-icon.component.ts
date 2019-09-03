@@ -28,7 +28,6 @@ export class WidgetSwitchIconComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		console.log(this.title, this.iconDefinition);
 	}
 
 	onChange(event: Event) {
@@ -40,11 +39,9 @@ export class WidgetSwitchIconComponent implements OnInit {
 		}
 
 		if (this.isCamera) {
-			console.log('WIDGET SWITCH ICON VALUE', this.value);
 			this.toggle.emit(this.value);
 		} else {
 			this.value = !this.value;
-			console.log('WIDGET SWITCH ICON VALUE', this.value);
 			this.toggle.emit(this.value);
 
 		}

@@ -20,7 +20,6 @@
 		text-transform: uppercase;
 		opacity: .4;
 		letter-spacing: 0;
-		margin-bottom: 2.5rem;
 	}
 	.close-btn{
 		position: absolute;
@@ -101,6 +100,10 @@
 		font-weight: $weight_bold;
 		padding-top: 1.5rem;
 
+		.joinGroupSuccess{
+			height: 14rem;
+			line-height: 14rem;
+		}
 		.success{
 			font-weight: $weight_bold;
 			font-size: 2.5rem;
