@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Vstup a príslušenstvo",
                 "subtitle": "Nastavenia vstupu a príslušenstva",
-                "description": "Funkcia inteligentného snímania Lenovo prostredníctvom kombinácie rôznych senzorov v počítači zisťuje vaše aktivity a upravuje nastavenia týkajúce sa optimálnej správy napájania",
+                "description": "Táto časť umožňuje nastaviť najčastejšie používané funkcie klávesnice a myši. S ďalšími funkciami sa oboznámte tu.",
                 "inputAccessory": {
                     "title": "Inteligentná klávesnica",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "Záruka sa nenašla",
             "yearDepotWarranty": "Ročná záruka s opravou v servisnom stredisku",
             "warrantyDetails": "Informácie o záruke:",
+            "warrantyDashboardDetails": "Informácie o záruke",
             "startDate": "Dátum začiatku: ",
             "endDate": "Dátum konca: ",
             "status": "Stav: ",

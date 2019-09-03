@@ -5,10 +5,10 @@
 		[options]="options"
 		(valueChange)="onValueChange($event)"
 		(userChange)="onChange($event)"
-		[manualRefresh]="manualRefresh"	
+		[manualRefresh]="manualRefresh"
 		(userChangeEnd)="dragEnd($event)"
-		id="{{rangeSliderId + '-range-slider'}}"
-		attr.aria-label="{{rangeSliderId + '-range-slider'}}">
+		id="{{rangeSliderId + '-slider'}}"
+		attr.aria-label="{{rangeSliderId + '-slider'}}">
 	</ng5-slider>
 	<div class="row label"
 		*ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">

@@ -17,9 +17,7 @@ import { DevService } from '../dev/dev.service';
 })
 
 export class UPEService {
-	language: string;
-	region: string;
-	machineInfo: any;
+	private readonly UPEAPIKey = 'UPEAPIKey';
 
 	constructor(
 		private commsService: CommsService,
@@ -55,8 +53,13 @@ export class UPEService {
 
 	private getUpeAPIKey(forceReg: boolean) {
 		return new Promise((resolve, reject) => {
-			const upeApiKey = this.commonService.getLocalStorageValue(LocalStorageKey.UPEAPIKey);
-			if (!upeApiKey || forceReg) {
+			const win: any = window;
+			let cred = null;
+			if (win.VantageStub) {
+				cred = win.VantageStub.getCredential(this.UPEAPIKey);
+			}
+
+			if (!cred || forceReg) {
 				try {
 					this.generateAPIKey().then((result) => {
 						resolve(result);
@@ -67,7 +70,7 @@ export class UPEService {
 					reject(ex);
 				}
 			} else {
-				resolve(upeApiKey);
+				resolve(cred.password);
 			}
 		});
 	}
@@ -91,8 +94,8 @@ export class UPEService {
 			if (win.VantageStub) {
 				win.VantageStub.onupeapikeyfound = (result) => {
 					this.registerDeviceToUPEServer(JSON.parse(result)).then((data: any) => {
-						if (data) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.UPEAPIKey, data);
+						if (data) {							
+							win.VantageStub.createCredential(this.UPEAPIKey, data);
 							resolve(data);
 						} else {
 							console.log('register UPE Server failed.');

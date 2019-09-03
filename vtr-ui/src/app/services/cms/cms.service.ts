@@ -10,6 +10,8 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { DevService } from '../dev/dev.service';
+import { LoggerService } from '../logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -33,7 +35,8 @@ export class CMSService {
 		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
-		private devService: DevService
+		private devService: DevService,
+		private logger: LoggerService
 	) {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
@@ -46,21 +49,21 @@ export class CMSService {
 	deviceFilter(filters) {
 		return new Promise((resolve, reject) => {
 			if (!filters) {
-				console.log('vantageShellService.deviceFilter skipped filter call due to empty filter.');
+				// console.log('vantageShellService.deviceFilter skipped filter call due to empty filter.');
 				// this.devService.writeLog('vantageShellService.deviceFilter skipped filter call due to empty filter.');
 				return resolve(true);
 			}
 
 			return this.vantageShellService.deviceFilter(filters).then(
 				(result) => {
-					this.devService.writeLog('vantageShellService.deviceFilter filters', JSON.stringify(filters));
-					this.devService.writeLog('vantageShellService.deviceFilter result', JSON.stringify(result));
+					// this.devService.writeLog('vantageShellService.deviceFilter filters', JSON.stringify(filters));
+					// this.devService.writeLog('vantageShellService.deviceFilter result', JSON.stringify(result));
 					resolve(result);
 
 				},
 				(reason) => {
-					console.log('vantageShellService.deviceFilter error', reason);
-					this.devService.writeLog('vantageShellService.deviceFilter error', reason);
+					// console.log('vantageShellService.deviceFilter error', reason);
+					// this.devService.writeLog('vantageShellService.deviceFilter error', reason);
 					resolve(false);
 				}
 			);
@@ -79,10 +82,10 @@ export class CMSService {
 
 			Promise.all(promises).then((deviceFilterValues) => {
 				const filteredResults = results.filter((result, index) => {
-					this.devService.writeLog('filterCMSContent deviceFilterValues :: result ', JSON.stringify(result));
+					// this.devService.writeLog('filterCMSContent deviceFilterValues :: result ', JSON.stringify(result));
 					return deviceFilterValues[index];
 				});
-				this.devService.writeLog('filterCMSContent filteredResults :: filteredResults ', JSON.stringify(filteredResults));
+				// this.devService.writeLog('filterCMSContent filteredResults :: filteredResults ', JSON.stringify(filteredResults));
 				resolve(filteredResults);
 			});
 		});
@@ -138,13 +141,13 @@ export class CMSService {
 			/* this.devService.writeLog('getCMSContent ', JSON.stringify(response.Results)); */
 			this.filterCMSContent(response.Results).then(
 				(result) => {
-					this.devService.writeLog('getCMSContent::filterCMSContent::result', JSON.stringify(result));
+					// this.devService.writeLog('getCMSContent::filterCMSContent::result', JSON.stringify(result));
 					subscriber.next(result);
 					subscriber.complete();
 				},
 				(reason) => {
-					this.devService.writeLog('getCMSContent::error', reason);
-					console.log('getCMSContent::error', reason);
+					// this.devService.writeLog('getCMSContent::error', reason);
+					// console.log('getCMSContent::error', reason);
 					subscriber.error(reason);
 				}
 			);
@@ -316,10 +319,10 @@ export class CMSService {
 						Brand: serverSwitchLocalData.brand
 					});
 				}
-
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('CMSService.updateServerSwitchCMSOptions', error.message);
+			return undefined;
 		}
 		return CMSOption;
 

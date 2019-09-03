@@ -6,6 +6,7 @@ import {
 } from 'src/app/services/device/device.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -162,6 +163,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			adPolicyId: AdPolicyId.SystemUpdate,
 			subitems: []
 		}
 		// {
@@ -249,6 +251,21 @@ export class ConfigService {
 		},
 		forArm: false,
 		sMode: true,
+		subitems: []
+	},
+	{
+		id: 'home-security',
+		label: 'common.menu.homeSecurity',
+		path: 'home-security',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.homesecurity',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'home-lg-alt'],
+		forArm: false,
+		hide: true,
 		subitems: []
 	},
 	{
@@ -340,6 +357,7 @@ export class ConfigService {
 			routerLinkActiveOptions: {
 				exact: true
 			},
+			adPolicyId: AdPolicyId.SystemUpdate,
 			subitems: []
 		}]
 	}, {
@@ -416,6 +434,20 @@ export class ConfigService {
 		subitems: []
 	},
 	{
+		id: 'home-security',
+		label: 'common.menu.homeSecurity',
+		path: 'home-security',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.homesecurity',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'home-lg-alt'],
+		forArm: false,
+		subitems: []
+	},
+	{
 		id: 'user',
 		label: 'User',
 		path: 'user',
@@ -426,6 +458,7 @@ export class ConfigService {
 		routerLinkActiveOptions: {
 			exact: true
 		},
+		sMode: true,
 		forArm: true,
 		subitems: []
 	}];
@@ -444,26 +477,6 @@ export class ConfigService {
 		icon: ['fal', 'flask'],
 		forArm: false,
 		subitems: []
-	}, {
-		id: 'home-security',
-		label: 'common.menu.homeSecurity',
-		beta: true,
-		path: 'beta/home-security',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.homesecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'home-lg-alt'],
-		forArm: false,
-		hide: false,
-		subitems: [],
-		pre: [
-			'assets/images/connected-home-security/welcome-page-one.png',
-			'assets/images/connected-home-security/welcome-page-two.png',
-			'assets/images/connected-home-security/welcome-chs-logo.png'
-		]
 	}, {
 		id: 'app-search',
 		label: ' ',
@@ -496,7 +509,9 @@ export class ConfigService {
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
-			if (country.toLowerCase() === 'us') {
+			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
+			const brand = machineInfo && machineInfo.brand ? machineInfo.brand : 'lenovo';
+			if (country.toLowerCase() === 'us' && locale.startsWith('en') && brand.toLowerCase() !== 'think') {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);

@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Syöttö ja lisävarusteet",
                 "subtitle": "Syötteen ja lisävarusteiden asetukset",
-                "description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen eri tunnistimia toimintojen tunnistamista ja optimaalisen virranhallinnan asetusten muokkaamista varten",
+                "description": "Tämän osion tietojen avulla voit määrittää usein käytetyt näppäimistö- ja hiiritoiminnot. Tutustu lisäominaisuuksiin täällä.",
                 "inputAccessory": {
                     "title": "Älykäs näppäimistö",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "Takuuta ei löydy",
             "yearDepotWarranty": "Takuu Y-korjauskeskuksessa.",
             "warrantyDetails": "Takuutiedot:",
+            "warrantyDashboardDetails": "Takuutiedot",
             "startDate": "Aloituspäivämäärä: ",
             "endDate": "Päättymispäivämäärä: ",
             "status": "Tila: ",
