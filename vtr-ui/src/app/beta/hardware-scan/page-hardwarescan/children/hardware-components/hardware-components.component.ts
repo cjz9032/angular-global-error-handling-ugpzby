@@ -79,6 +79,28 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		this.initComponent();
+
+		let self = this;
+		window.onfocus = function(){
+			self.validateScanState();
+		};
+	}
+
+	private validateScanState() {
+		if (this.hardwareScanService.isScanExecuting()) {
+			console.log('Running hwscan');
+			for (const module of this.modules) {
+				for (const test of module.listTest) {
+					if (test.status === HardwareScanTestResult.Cancelled) {
+						// When there are cancelled tests, go back to home
+						console.log('Going back to home due to a cancelled test');
+						location.reload();
+						return;
+					}
+				}
+			}
+			console.log('No cancelled tests found.');
+		}
 	}
 
 	ngOnDestroy() {
@@ -175,7 +197,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCancelScan() {
 		if (this.isRecoverExecuting()) {
-			if (this.hardwareScanService) {
+			if (this.hardwareScanService  && !this.isDisableCancel()) {
 				console.log('[onCancelScan] Start');
 				this.hardwareScanService.cancelScanExecution()
 					.then((response) => {
@@ -192,8 +214,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				if (this.hardwareScanService) {
 					console.log('[onCancelScan] Start');
 					this.cancelRequested = true;
+					//this.cancelHandler.cancel();
 					this.hardwareScanService.cancelScanExecution()
 						.then((response) => {
+							console.log('response: ', response);
 						});
 				}
 			});
@@ -253,6 +277,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					}
 					console.log('[End]: getDoScan()');
 					console.log(this.finalResponse);
+				})
+				.catch((ex: any) => {
+					// This command avoid crashs on HW Scan and cancelScan if an exception occurs.
+					if (ex !== null) {
+						this.cancelRequested = true;
+					}
+				})
+				.finally(() => {
+					this.cleaningUpScan(undefined);
 				});
 		}
 	}
@@ -389,7 +422,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
 			console.log('[MODAL] ', modalRef.componentInstance.items);
 			modalRef.componentInstance.passEntry.subscribe(() => {
-				this.hardwareScanService.filterCustomTests();
+				this.hardwareScanService.filterCustomTests(this.culture);
 				this.checkPreScanInfo(1); // custom scan
 			});
 		}
@@ -438,7 +471,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					windowClass: 'schedule-new-modal-size'
 				});
 
-				(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.battery.title');
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.warning');
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.batteryMessage;
 
 				modal.result.then((result) => {
@@ -466,7 +499,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
 			statusValue: HardwareScanTestResult.Pass,
 			statusToken: this.statusToken(HardwareScanTestResult.Pass),
-			date: dateString,
+			date: this.finalResponse.startDate,
 			information: this.finalResponse.resultDescription,
 			items: []
 		};
@@ -516,6 +549,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
+		this.hardwareScanService.setIsViewingRecoverLog(false);
 		this.hardwareScanService.setViewResultItems(results);
 		this.hardwareScanService.setScanExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);
@@ -578,6 +612,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			results.items.push(item);
 		}
 
+		this.hardwareScanService.setIsViewingRecoverLog(true);
 		this.hardwareScanService.setViewResultItems(results);
 		this.hardwareScanService.setRecoverExecutionStatus(false);
 		this.hardwareScanService.setIsScanDone(false);
@@ -599,6 +634,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public finalStatusToken() {
 		return this.completeStatusToken;
+	}
+
+	public isDisableCancel() {
+		return this.hardwareScanService.isDisableCancel();
 	}
 
 	private onNotification(notification: AppNotification) {

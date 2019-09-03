@@ -81,7 +81,7 @@
 					</vtr-widget-dashboard-warranty>
 
 					<div class="pt-6" *ngIf="!deviceService.isArm">
-						<vtr-widget-quicksettings></vtr-widget-quicksettings>
+						<vtr-widget-quicksettings [vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']"></vtr-widget-quicksettings>
 					</div>
 				</div>
 				<div class="col-sm-12 col-md-12 pb-40" *ngIf="!deviceService.isArm">

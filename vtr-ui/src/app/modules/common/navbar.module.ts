@@ -24,6 +24,8 @@ import { faUserShield } from '@fortawesome/pro-light-svg-icons/faUserShield';
 import { faLock } from '@fortawesome/pro-light-svg-icons/faLock';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faAngleDown } from '@fortawesome/pro-light-svg-icons/faAngleDown';
+import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 //#endregion
 
 
@@ -43,6 +45,7 @@ library.add(faArrowLeft);
 library.add(faCheck);
 library.add(faTimes);
 library.add(faAngleDown);
+library.add(faSearch);
 
 //#endregion
 
@@ -56,6 +59,7 @@ library.add(faAngleDown);
 		UiHeaderWarrantyComponent,
 		MetricsModule,
 		NgbDropdownModule,
+		AppSearchModule
 	],
 	imports: [
 		CommonModule,
@@ -63,7 +67,8 @@ library.add(faAngleDown);
 		TranslationModule.forChild(),
 		NgbDropdownModule,
 		FontAwesomeModule,
-		RouterModule
+		RouterModule,
+		AppSearchModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

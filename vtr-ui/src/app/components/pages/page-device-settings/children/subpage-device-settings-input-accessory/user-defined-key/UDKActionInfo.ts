@@ -4,7 +4,7 @@ export class UDKActionInfo {
 	keyType: number;
 	actionType: number;
 	actionValue: string;
-	index: number = 0;
+	index = 0;
 	constructor(response) {
 		this.processGetResponse(response);
 	}
@@ -16,26 +16,26 @@ export class UDKActionInfo {
 				&& response.UDKType[0].SettingList
 				&& response.UDKType[0].SettingList.length
 				&& response.UDKType[0].SettingList[0].Setting) {
-					let info = response.UDKType[0].SettingList[0].Setting;
-					for (var data of info) {
-						console.log('data.key: ' + data.key + ', data.value: ' + data.value)
-						switch(data.key) {
-							case "UserDefinedKeyType":
-								this.keyType = Number(data.value);
+				const info = response.UDKType[0].SettingList[0].Setting;
+				for (const data of info) {
+					console.log('data.key: ' + data.key + ', data.value: ' + data.value);
+					switch (data.key) {
+						case 'UserDefinedKeyType':
+							this.keyType = Number(data.value);
 							break;
-							case "UserDefinedKeyActionType":
-								this.actionType = Number(data.value);
+						case 'UserDefinedKeyActionType':
+							this.actionType = Number(data.value);
 							break;
-							case INPUT_TEXT.str:
-								this.actionValue = data.value;
-								this.index = 2
+						case INPUT_TEXT.str:
+							this.actionValue = data.value;
+							this.index = 2;
 							break;
-							case OPEN_WEB.str:
-								this.actionValue = data.value;
-								this.index = 1
+						case OPEN_WEB.str:
+							this.actionValue = data.value;
+							this.index = 1;
 							break;
-						}
 					}
+				}
 			} else {
 				console.log('Response id not in correct format', response);
 			}

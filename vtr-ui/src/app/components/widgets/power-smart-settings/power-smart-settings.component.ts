@@ -71,9 +71,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
 		if (this.cache) {
-			//init ui
+			// init ui
 			this.showIC = this.cache.showIC;
-			if (this.showIC === 0) { return; }
+			if (this.showIC === 0) {
+				this.isPowerSmartSettingHidden.emit(true);
+				return;
+			}
 			this.captionText = this.cache.captionText !== '' ? this.translate.instant(this.cache.captionText) : '';
 			this.showIntelligentCoolingToggle = this.cache.autoModeToggle.available;
 			this.enableIntelligentCoolingToggle = this.cache.autoModeToggle.status;
@@ -92,9 +95,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);
-		var isYogo730: boolean = false;
-		var regExForYoga730 = /YOGA 730/gi;
-		if (cacheMachineFamilyName && (cacheMachineFamilyName.search(regExForYoga730) != -1)) {
+		let isYogo730 = false;
+		const regExForYoga730 = /YOGA 730/gi;
+		if (cacheMachineFamilyName && (cacheMachineFamilyName.search(regExForYoga730) !== -1)) {
 			isYogo730 = true;
 			console.log('isYogo730: ', isYogo730);
 		}
@@ -241,7 +244,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.quiteCool';
 				break;
 			case IntelligentCoolingModes.Performance:
-				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance'
+				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance';
 				break;
 			case IntelligentCoolingModes.BatterySaving:
 				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving';

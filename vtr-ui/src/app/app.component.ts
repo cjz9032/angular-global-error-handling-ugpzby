@@ -26,6 +26,7 @@ import { AppNotification } from './data-models/common/app-notification.model';
 import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
 
 declare var Windows;
 @Component({
@@ -443,9 +444,11 @@ export class AppComponent implements OnInit, OnDestroy {
 	// Defect fix VAN-2988
 	@HostListener('window:keydown', ['$event'])
 	disableCtrlACV($event: KeyboardEvent) {
+		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
+
 		if (
 			($event.ctrlKey || $event.metaKey) &&
-			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)
+			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86) && !isPrivacyTab
 		) {
 			$event.stopPropagation();
 			$event.preventDefault();

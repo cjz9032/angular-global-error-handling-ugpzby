@@ -1,24 +1,28 @@
 <ui-popover *ngIf="showMePartially">
-	<div class="modal-body vtr-ui-popover">
+	<div class="modal-body vtr-ui-popover" tabindex="-1" >
 		<div class="row justify-content-end">
 			<div class="btn-close">
-				<button type="button" class="close" aria-hidden="true" (click)="close()" vtrMetrics
-					[metricsItem]="'popover_close'" metricsEvent="featureClick" id="gaming_popup_close" attr.aria-label="gaming_popup_close">
-					<fa-icon [icon]="['fal', 'times']"></fa-icon>
-				</button>
+				<a type="button" class="close" aria-hidden="true" (click)="close()" vtrMetrics
+					[metricsItem]="'popover_close'" metricsEvent="featureClick" id="gaming_popup_close" attr.aria-label="gaming_popup_close" role="link" aria-labelledby="popup_close">
+					<fa-icon [icon]="['fal', 'times']" ></fa-icon>
+			</a>
 			</div>
 		</div>
-		<div class="content-body">
+		<div class="content-body" tabindex="0" role="dialog" aria-labelledby="restart_popup">
 			<h1>{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</h1>
 			<p></p>
 		</div>
 		<hr>
 		<div class="row">
-			<button id="gaming_popup_ok" attr.aria-label="gaming_popup_ok"
+			<a id="gaming_popup_ok" attr.aria-label="gaming_popup_ok"
 				class="btn enable-button" vtrMetrics
 				[metricsItem]="'popover_ok'"
 				metricsEvent="featureClick"
-				(click)="close()">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</button>
+				(click)="close()" tabindex="0" role="link">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</a>
 		</div>
 	</div>
+	<span id="restart_popup" style="visibility: hidden;">{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</span>
+	<span id="popup_close" style="visibility: hidden;">close</span>
+
 </ui-popover>
+

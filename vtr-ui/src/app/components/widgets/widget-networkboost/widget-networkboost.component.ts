@@ -33,7 +33,9 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 		this.getNetworkBoostList();
 	}
 	public openModal() {
-		this.actionModal.emit();
+		if (this.runningAppsList && this.runningAppsList.length < 5) {
+			this.actionModal.emit();
+		}
 	}
 
 	async getNetworkBoostList() {

@@ -1116,6 +1116,8 @@
                     },
                     "topRowFunctions": {
                         "title": "Keyboard top-row function",
+                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
+                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
                         "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
                         "subSection": {
                             "description": "To switch the above two functions, press Fn+Esc.",
@@ -1133,7 +1135,7 @@
                             "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
                             "radioButton": {
                                 "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky key method"
+                                "fnKeyMehod": "Fn Sticky Key method"
                             },
                             "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
                         },
@@ -1170,7 +1172,9 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
                     "more": "MORE",
                     "control1": "TOUCHPAD CONTROLS",
                     "control2": "MOUSE CONTROLS"
@@ -2360,7 +2364,7 @@
             "error": "Fout",
             "delete": "Verwijderen",
             "warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
-            "scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip."
+			"scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip."
         },
         "recoverBadSectors": {
             "title": "Slechte sectoren herstellen",
@@ -2410,6 +2414,6 @@
         "attention": "Let op",
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
-        "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
+		"pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
     }
 }

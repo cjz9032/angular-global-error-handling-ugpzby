@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { HardwareScanService } from './hardware-scan.service';
 
-describe('HardwareScanService', () => {
+xdescribe('HardwareScanService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 
@@ -10,14 +11,13 @@ import { EMPTY } from 'rxjs';
 })
 export class TopRowFunctionsComponent implements OnInit {
 
-	public isHotKeys = true;
-	public isFnKeys = false;
-	public stickyFunStatus = false;
-	public capabilitiesObj: any = {};
+	public topRowKeyObj: any = {};
+	public showAdvancedSection = false;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
-		private logger: LoggerService,
+		public systemUpdateService: SystemUpdateService,
+		private logger: LoggerService
 	) { }
 
 	ngOnInit() {
@@ -32,14 +32,19 @@ export class TopRowFunctionsComponent implements OnInit {
 					this.keyboardService.getTopRowFnStickKeyCapability(),
 					this.keyboardService.getTopRowPrimaryFunctionCapability(),
 				]).then((response: any[]) => {
-					this.capabilitiesObj = {
+					this.topRowKeyObj = {
 						fnLockCap: response[0],
 						stickyFunCap: response[1],
 						primaryFunCap: response[2]
 					};
-					console.log('promise all resonse  here ------------->', this.capabilitiesObj);
 					if (response[0]) {
 						this.getStatusOfFnLock();
+					}
+					if (response[1]) {
+						this.getStatusOfStickyFun();
+					}
+					if (response[2]) {
+						this.getStatusOfPrimaryFun();
 					}
 				});
 			}
@@ -48,22 +53,38 @@ export class TopRowFunctionsComponent implements OnInit {
 			return EMPTY;
 		}
 	}
+
 	public getStatusOfFnLock() {
 		this.keyboardService.getFnLockStatus().then(res => {
-			console.log('getFnLockStatus------------>', res);
+			this.topRowKeyObj.fnLockStatus = res;
+		});
+	}
+	public getStatusOfStickyFun() {
+		this.keyboardService.getFnStickKeyStatus().then(res => {
+			this.topRowKeyObj.stickyFunStatus = res;
+		});
+	}
+	public getStatusOfPrimaryFun() {
+		this.keyboardService.getPrimaryFunctionStatus().then(res => {
+			this.topRowKeyObj.primaryFunStatus = res;
 		});
 	}
 
-	public onChanggeKeyType(event: any, value: string) {
-		if (value === '1') {
-			this.isHotKeys = true;
-			this.isFnKeys = false;
-		} else {
-			this.isHotKeys = false;
-			this.isFnKeys = true;
-		}
+	public onChangeFunType(value: boolean) {
+		console.log('set funlock req here ------------->', value);
+		this.keyboardService.setFnLock(value).then(res => {
+		});
 	}
-	public onStickyFunToggle(event: any) {
-		this.stickyFunStatus = event.switchValue;
+	public onChangeKeyType(value: boolean) {
+		this.topRowKeyObj.stickyFunStatus = value;
+		this.keyboardService.setFnStickKeyStatus(value).then(res => {
+		});
+	}
+	public rebootToggleOnOff(event) {
+		this.keyboardService.setPrimaryFunction(event.switchValue).then((res: any) => {
+			if (res.RebootRequired === true) {
+				this.systemUpdateService.restartWindows();
+			}
+		});
 	}
 }

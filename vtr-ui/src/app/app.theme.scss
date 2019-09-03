@@ -85,9 +85,17 @@ $shade_extralight: #f6f8f8;
 $shade_blue: #34495e;
 $blue-dark: #24536d;
 $light-grey: #788590;
+$border_light: #F8D5D5;
+$text_light: #FEF8F8;
 
 $light: #fff;
 $dark: #000;
+
+// updated button color, hover & active effect
+$btn_primary_color: #0073ff;
+$btn_secondary_color: #2486ff;
+$gaming_white60: rgba(255, 255, 255, 0.6);
+$gaming_white80: rgba(255, 255, 255, 0.8);
 
 $screen_dark_05: rgba(0, 0, 0, 0.05);
 $screen_dark_10: rgba(0, 0, 0, 0.1);
@@ -284,3 +292,8 @@ $large-screen: "only screen and (min-width : 1200px)";
 /*large screen */
 $mediaquery_XL100X: "only screen and (min-width: 1600px) and (max-width : 3840px) and (max-resolution: 100dpi)";
 $mediaquery_XXL350X: "only screen and (min-width: 1920px) and (max-width : 3840px) and (min-resolution: 100dpi) and (max-resolution: 350dpi)";
+
+/*media query for high contrast mode*/
+$high-contrast-grey: #c0c0c0;
+$black-on-white: "screen and (-ms-high-contrast: black-on-white)";
+$white-on-black: "screen and (-ms-high-contrast: white-on-black)";

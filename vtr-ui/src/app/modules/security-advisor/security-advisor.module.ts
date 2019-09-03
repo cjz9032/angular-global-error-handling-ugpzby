@@ -12,6 +12,7 @@ import { PageSecurityWindowsHelloComponent } from 'src/app/components/pages/page
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
 import { ConnectedHomeMyHomeComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
 import { ConnectedHomeComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home/connected-home.component';
+import { ConnectedHomeStatusComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home-status/connected-home-status.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetMcafeeComponent } from 'src/app/components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetSecurityComponent } from 'src/app/components/widgets/widget-security/widget-security.component';
@@ -34,6 +35,7 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
+import { HomeSecurityShareModule } from '../home-security-share/home-security-share.module';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
@@ -66,6 +68,7 @@ library.add(faChevronUp);
 		WifiSecurityComponent,
 		ConnectedHomeComponent,
 		ConnectedHomeMyHomeComponent,
+		ConnectedHomeStatusComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,
 		PageSecurityWindowsHelloComponent,
@@ -96,7 +99,8 @@ library.add(faChevronUp);
 		HeaderMainModule,
 		WidgetOfflineModule,
 		UiListChevronModule,
-		CommonModalModule
+		CommonModalModule,
+		HomeSecurityShareModule
 	],
 	providers: [
 		DialogService

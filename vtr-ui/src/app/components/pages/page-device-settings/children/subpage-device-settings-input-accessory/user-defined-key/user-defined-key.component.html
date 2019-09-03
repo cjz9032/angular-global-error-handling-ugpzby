@@ -1,5 +1,5 @@
 <li class="pt-3 user-defined-key-block"
-*ngIf="hasUDKCapability">
+	*ngIf="hasUDKCapability">
 	<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
 		componentName="User defined key"
 		[caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
@@ -30,11 +30,15 @@
 										type="button" id="ip-userdefinedkey-dropdown-btn" attr.aria-label="ip-userdefinedkey-dropdown-btn">
 										<div class="row d-flex justify-content-between">
 											<div class="col-auto pl-1 pr-1">
-												<div class="select-title" id="ip-userdefinedkey-dropdown-title" attr.aria-label="ip-userdefinedkey-dropdown-title">
+												<div class="select-title"
+													id="ip-userdefinedkey-dropdown-title"
+													attr.aria-label="ip-userdefinedkey-dropdown-title">
 													{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title' | translate}}
 												</div>
 
-												<div class="select-text text-left" id="userdefinedkey-selected-text" attr.aria-label="userdefinedkey-selected-text">
+												<div class="select-text text-left"
+													id="userdefinedkey-selected-text"
+													attr.aria-label="userdefinedkey-selected-text">
 													{{selectedValue.title}}
 												</div>
 											</div>
@@ -48,12 +52,12 @@
 									</button>
 									<div ngbDropdownMenu
 										aria-labelledby="">
-										<a  
-										[ngClass]="['dropdown-item']"
+										<a [ngClass]="['dropdown-item']"
 											*ngFor="let item of userDefinedKeyOptions, let i=index"
-											id="userdefinedkey-{{i}}" attr.aria-label="userdefinedkey-{{i}}"
+											id="userdefinedkey-{{i}}"
+											attr.aria-label="userdefinedkey-{{i}}"
 											(click)="onChange(item)">{{item.title}}
-											</a>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -68,7 +72,8 @@
 									(ngSubmit)="udkSubmit(2)">
 									<div class="row no-gutters">
 										<div class="input-group mt-3">
-											<label id="ip-webseiteurl" attr.aria-label="ip-webseiteurl">{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
+											<label id="ip-webseiteurl"
+												attr.aria-label="ip-webseiteurl">{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
 											<textarea class="form-control"
 												[(ngModel)]="url"
 												name="url"
@@ -94,7 +99,9 @@
 
 							<div class="col"
 								*ngIf="selectedValue.value == 3">
-								<div class="note align-items-center" id="ip-accesories-note" attr.aria-label="ip-accesories-note">
+								<div class="note align-items-center"
+									id="ip-accesories-note"
+									attr.aria-label="ip-accesories-note">
 									{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
 								</div>
 							</div>
@@ -107,15 +114,16 @@
 									(ngSubmit)="udkSubmit(3)">
 									<div class="row no-gutters">
 										<div class="input-group mt-3">
-											<label id="ip-texttobe-entered" attr.aria-label="ip-texttobe-entered" >{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
+											<label id="ip-texttobe-entered"
+												attr.aria-label="ip-texttobe-entered">{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
 											<textarea class="form-control"
 												[(ngModel)]="description"
 												name="description"
 												required></textarea>
 										</div>
 										<div class="col-12">
-											<button 
-											id="ip-userdefined-key-applybtn" attr.aria-label="ip-userdefined-key-applybtn"
+											<button id="ip-userdefined-key-applybtn"
+												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
 												class="button"
 												[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"

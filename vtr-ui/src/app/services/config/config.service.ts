@@ -165,7 +165,21 @@ export class ConfigService {
 			},
 			adPolicyId: AdPolicyId.SystemUpdate,
 			subitems: []
-		}]
+		}
+		// {
+		// 		id: 'smart-performance',
+		// 		label: 'Smart performance',
+		// 		path: 'smart-performance',
+		// 		icon: '',
+		// 		metricsEvent: 'itemClick',
+		// 		metricsParent: 'navbar',
+		// 		metricsItem: '',
+		// 		routerLinkActiveOptions: {
+		// 			exact: true
+		// 		},
+		// 		subitems: []
+		// 	}
+		]
 	}, {
 		id: 'security',
 		label: 'common.menu.security.title',
@@ -431,7 +445,6 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		hide: true,
 		subitems: []
 	},
 	{
@@ -450,7 +463,7 @@ export class ConfigService {
 		subitems: []
 	}];
 
-	betaItem = {
+	betaItem = [{
 		id: 'hardware-scan',
 		label: 'hardwareScan.name',
 		beta: true,
@@ -464,7 +477,21 @@ export class ConfigService {
 		icon: ['fal', 'flask'],
 		forArm: false,
 		subitems: []
-	};
+	}, {
+		id: 'app-search',
+		label: ' ',
+		beta: true,
+		path: '',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.app-search',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'search'],
+		forArm: false,
+		subitems: []
+	}];
 
 	getMenuItems(isGaming) {
 		if (isGaming) {
@@ -492,10 +519,10 @@ export class ConfigService {
 			if (country.toLowerCase() !== 'us') {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
-			// const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
-			// if (isBetaUser) {
-			// 	resultMenu.splice(resultMenu.length - 1, 0, this.betaItem);
-			// }
+			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
+			if (isBetaUser) {
+				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
+			}
 			resolve(resultMenu.filter(item => !item.hide));
 		});
 	}

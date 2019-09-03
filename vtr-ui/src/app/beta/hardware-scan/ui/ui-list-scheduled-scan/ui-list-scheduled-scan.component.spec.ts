@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiListScheduledScanComponent } from './ui-list-scheduled-scan.component';
 
-describe('UiListScheduledScanComponent', () => {
+xdescribe('UiListScheduledScanComponent', () => {
   let component: UiListScheduledScanComponent;
   let fixture: ComponentFixture<UiListScheduledScanComponent>;
 

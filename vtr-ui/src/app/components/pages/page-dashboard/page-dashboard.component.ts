@@ -1,5 +1,5 @@
 import { SupportService } from './../../../services/support/support.service';
-import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy, SecurityContext } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -26,6 +26,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -76,7 +77,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
 		public supportService: SupportService,
-		private adPolicyService: AdPolicyService
+		private adPolicyService: AdPolicyService,
+		private sanitizer: DomSanitizer
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -174,19 +176,16 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 					if (response && response.length > 0) {
 						this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-						const heroBannerItems = this.cmsService
-							.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
-							.map((record, index) => {
-								return {
-									albumId: 1,
-									id: record.Id,
-									source: record.Title,
-									title: record.Description,
-									url: record.FeatureImage,
-									ActionLink: record.ActionLink,
-									ActionType: record.ActionType
-								};
-							});
+						const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+							return {
+								albumId: 1,
+								id: record.Id,
+								source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+								title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+								url: record.FeatureImage,
+								ActionLink: record.ActionLink
+							};
+						});
 						if (heroBannerItems && heroBannerItems.length) {
 							this.heroBannerItems = heroBannerItems;
 						}
@@ -304,22 +303,19 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	public onConnectivityClick($event: any) {}
+	public onConnectivityClick($event: any) { }
 
 	private getTileBSource() {
 		return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then(
-				(source) => {
-					if (source === 'UPE') {
-						resolve('UPE');
-					} else {
-						resolve('CMS');
-					}
-				},
-				() => {
+			this.hypService.getFeatureSetting('TileBSource').then((source) => {
+				if (source === 'UPE') {
+					resolve('UPE');
+				} else {
 					resolve('CMS');
 				}
-			);
+			}, () => {
+				resolve('CMS');
+			});
 		});
 	}
 

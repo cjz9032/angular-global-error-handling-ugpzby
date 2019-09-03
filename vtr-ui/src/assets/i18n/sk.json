@@ -1116,6 +1116,8 @@
                     },
                     "topRowFunctions": {
                         "title": "Keyboard top-row function",
+                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
+                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
                         "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
                         "subSection": {
                             "description": "To switch the above two functions, press Fn+Esc.",
@@ -1133,7 +1135,7 @@
                             "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
                             "radioButton": {
                                 "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky key method"
+                                "fnKeyMehod": "Fn Sticky Key method"
                             },
                             "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
                         },
@@ -1170,7 +1172,9 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
                     "more": "MORE",
                     "control1": "TOUCHPAD CONTROLS",
                     "control2": "MOUSE CONTROLS"
@@ -2360,7 +2364,7 @@
             "error": "Chyba",
             "delete": "Odstrániť",
             "warningBatterySaver": "Poznámka: Plánované snímania sa nevykonajú v režime Šetrič batérie",
-            "scheduleIntervalLimit": "V rámci desaťminútového časového rozpätia už je naplánovaná iná kontrola. Vyberte iný čas."
+			"scheduleIntervalLimit": "V rámci desaťminútového časového rozpätia už je naplánovaná iná kontrola. Vyberte iný čas."
         },
         "recoverBadSectors": {
             "title": "Obnoviť chybné sektory",
@@ -2410,6 +2414,6 @@
         "attention": "Upozornenie",
         "cancelTextPrompt": "Naozaj chcete vykonať zrušenie?",
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
-        "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju."
+		"pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju."
     }
 }

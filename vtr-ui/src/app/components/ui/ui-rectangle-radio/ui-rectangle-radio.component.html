@@ -1,4 +1,4 @@
-<div class="vtr-ui-rectangle-radio">
+<div class="vtr-ui-rectangle-radio" [ngClass]= "disabled ? 'disabled-class': ' '">
 	<input id="{{radioId}}"
 		name="{{group}}"
 		type="radio"
@@ -10,9 +10,11 @@
 		vtrMetrics
 		metricsEvent="featureClick"
 		[metricsItem]="'radio.'+label"
-		[metricsValue]="!radio.checked" />
+		[metricsValue]="!radio.checked"/>
 	<label for="{{radioId}}">
-		<span class="label">{{label}}</span>
+
+		<span class="label">{{label}}</span>		
+		<span class="{{iconName}} mt-3"></span>
 
 		<span *ngIf="!hideIcon" [ngClass]="'icomoon icomoon-'+getIconName(label)"></span>
 		<!--<fa-icon class="icon"

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalChsWelcomeContainerComponent } from './modal-chs-welcome-container.component';
 
-describe('ModalChsWelcomeContainerComponent', () => {
+xdescribe('ModalChsWelcomeContainerComponent', () => {
   // let component: ModalChsWelcomeContainerComponent;
   // let fixture: ComponentFixture<ModalChsWelcomeContainerComponent>;
 

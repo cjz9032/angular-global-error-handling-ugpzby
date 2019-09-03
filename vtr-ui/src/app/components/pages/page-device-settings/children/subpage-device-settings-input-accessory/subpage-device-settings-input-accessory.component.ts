@@ -3,6 +3,7 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 
@@ -26,11 +27,13 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public keyboardCompatibility: boolean;
 	public switchValue = false;
 	public stickyFunStatus = false;
+	public isTouchPadVisible = false;
+	public isMouseVisible = false;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private commonService: CommonService,
-		private logger: LoggerService,
+		private logger: LoggerService
 	) { }
 
 	ngOnInit() {
@@ -42,6 +45,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				this.getKBDLayoutName();
 			}
 		}
+		this.getMouseAndTouchPadCapability();
 	}
 
 	// To get Keyboard Layout Name
@@ -209,5 +213,26 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 	fnCtrlKey(event) {
 		this.switchValue = event.switchValue;
+	}
+
+	public launchProtocol(protocol: string) {
+		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
+			WinRT.launchUri(protocol);
+		}
+	}
+
+	public getMouseAndTouchPadCapability() {
+		if (this.keyboardService.isShellAvailable) {
+			Promise.all([
+				this.keyboardService.getMouseCapability(),
+				this.keyboardService.getTouchPadCapability()
+			]).then((responses: any[]) => {
+				this.logger.info('SubpageDeviceSettingsInputAccessoryComponent: getMouseAndTouchPadCapability.response', responses);
+				this.isMouseVisible = responses[0];
+				this.isTouchPadVisible = responses[1];
+			}).catch((error) => {
+				this.logger.error('SubpageDeviceSettingsInputAccessoryComponent: error in getMouseAndTouchPadCapability.Promise.all()', error);
+			});
+		}
 	}
 }

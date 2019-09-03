@@ -46,32 +46,38 @@ export class PageSmartAssistComponent implements OnInit {
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
+	public hpdSensorType = 0;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
 			title: 'device.smartAssist.intelligentSecurity.title',
 			path: 'security',
-			sortOrder: 1
+			sortOrder: 1,
+			metricsItem: 'IntelligentSecurity'
 		},
 		{
 			title: 'device.smartAssist.intelligentScreen.title',
 			path: 'screen',
-			sortOrder: 2
+			sortOrder: 2,
+			metricsItem: 'IntelligentScreen'
 		},
 		{
 			title: 'device.smartAssist.intelligentMedia.heading',
 			path: 'media',
-			sortOrder: 3
+			sortOrder: 3,
+			metricsItem: 'IntelligentMedia'
 		},
 		{
 			title: 'device.smartAssist.activeProtectionSystem.title',
 			path: 'aps',
-			sortOrder: 4
+			sortOrder: 4,
+			metricsItem: 'ActiveProtectionSystem'
 		},
 		{
 			title: 'device.smartAssist.voice.title',
 			path: 'voice',
-			sortOrder: 5
+			sortOrder: 5,
+			metricsItem: 'Voice'
 		},
 
 	];
@@ -104,6 +110,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
 			this.setIntelligentSecurity();
+			this.initHPDSensorType();
 			this.setIntelligentScreen();
 			this.initSmartAssist(true);
 		}
@@ -447,6 +454,22 @@ export class PageSmartAssistComponent implements OnInit {
 		} catch (error) {
 			this.logger.error('getVideoPauseResumeStatus' + error.message);
 			return EMPTY;
+		}
+	}
+
+	initHPDSensorType() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDSensorType()
+					.then((type: number) => {
+						this.hpdSensorType = type;
+						console.log('getHPDSensorType: ', this.hpdSensorType);
+					}).catch(error => {
+						console.error('getHPDSensorType', error);
+					});
+			}
+		} catch (error) {
+			console.error('getHPDSensorType' + error.message);
 		}
 	}
 }

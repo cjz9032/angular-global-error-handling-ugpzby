@@ -18,7 +18,8 @@
 						<vtr-ui-header-subpage [items]="headerMenuItems"
 							[caption]="'device.smartAssist.description' | translate"
 							[menuTitle]="'device.smartAssist.jumpTo.title' | translate"
-							[textId]="'smart-assist'">
+							[textId]="'smart-assist'"
+							[metricsParent]="'Device.SmartAssist'">
 						</vtr-ui-header-subpage>
 					</div>
 
@@ -272,6 +273,9 @@
 										<p id="smart-assist-intelligent-security-note-desc3"
 										attr.aria-label="smart-assist-intelligent-security-note-desc3">{{'device.smartAssist.intelligentSecurity.note.description5' | translate}}
 										</p>
+										<p *ngIf="isThinkPad && intelligentSecurity.isZeroTouchLoginVisible && intelligentSecurity.isZeroTouchLockVisible && (hpdSensorType == 2)" id="smart-assist-intelligent-security-note-desc4"
+										attr.aria-label="smart-assist-intelligent-security-note-desc4">{{'device.smartAssist.intelligentSecurity.note.description6' | translate}}
+										</p>
 									</div>
 								</div>
 								<div class="row ml-3">
@@ -408,7 +412,8 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								(toggle)="onCardCollapse($event)"
+								[metricsParent]="'Device.SmartAssist'">
 								<vtr-voice></vtr-voice>
 							</vtr-container-collapsible>
 						</div>

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiHardwareListCheckboxComponent } from './ui-hardware-list-checkbox.component';
 
-describe('UiHardwareListCheckboxComponent', () => {
+xdescribe('UiHardwareListCheckboxComponent', () => {
   let component: UiHardwareListCheckboxComponent;
   let fixture: ComponentFixture<UiHardwareListCheckboxComponent>;
 

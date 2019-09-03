@@ -1,0 +1,27 @@
+@import "../../../../../app.theme";
+
+.vtr-connected-home-status {
+	box-shadow: $drop_shadow;
+	border-radius: $border_radius;
+	background-color: $light;
+	.title {
+		display: inline-block;
+		font-size: 3.6rem;
+		font-weight: 400;
+		margin-right: 2rem;
+	}
+
+	.chsStatus {
+		margin: auto 0;
+		.line-height-2-5 {
+			line-height: 2.5rem;
+			height: 2.5rem;
+		}
+	}
+
+	vtr-ui-button {
+		::ng-deep .button {
+			min-height: 5rem !important;
+		}
+	}
+}

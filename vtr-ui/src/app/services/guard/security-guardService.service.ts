@@ -8,18 +8,18 @@ import { Observable, from } from 'rxjs';
 	providedIn: 'root',
 })
 export class GuardService {
-	interTime: number;
+	interTime = 0;
 	metrics: any;
 	pageContext: any;
 	previousPageName = '';
-	duration:any;
+	duration = 0;
 
 	constructor(private shellService: VantageShellService,
 		private commonService: CommonService) {
 
 	this.metrics = shellService.getMetrics();
 	window.addEventListener('blur',()=>{
-	this.duration =this.duration+parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`);
+	this.duration =this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`);
 
 })
 window.addEventListener('focus',()=>{
@@ -43,7 +43,7 @@ window.addEventListener('focus',()=>{
 		const data = {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
-			PageDuration:this.duration+ parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`),
+			PageDuration: this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`),
 			PageContext: this.pageContext,
 		};
 		this.previousPageName = activatedRouteSnapshot.data.pageName;

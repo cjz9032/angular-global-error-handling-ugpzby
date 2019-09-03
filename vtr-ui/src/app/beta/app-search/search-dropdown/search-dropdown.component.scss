@@ -1,0 +1,172 @@
+@import "../../../app.theme.scss";
+$block_width: 40rem;
+$item_height: 6rem;
+$icon_size: 2.4rem;
+$clean_icon_size: 1.6rem;
+$font_size: 1.4rem;
+$line_height: 2.0rem;
+
+.mid-text {
+	display: block;
+	height: 100%;
+	line-height: $line_height;
+	font-size: $font_size;
+	flex-grow: 1;
+}
+
+.flex-all-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.item-outer-block {
+	display: flex;
+	width: 100%;
+	height: $item_height;
+	position: relative;
+}
+
+.search-block {
+	width: $block_width;
+	color: $dark;
+
+	.input-block {
+		background: $light;
+		box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+		border: 1px solid $menu_hover;
+		border-radius: 0.5rem;
+		position: relative;
+		z-index: 11;
+
+		&.is-show-result {
+			border-radius: 0.5rem 0.5rem 0 0;
+		}
+
+		@extend .item-outer-block;
+
+		::-ms-clear {
+			display: none;
+		}
+
+		.search-icon {
+			font-size: $icon_size;
+			height: calc($item_height - 2px);
+			width: $icon_size + 3rem;
+			color: $menu_hover;
+			@extend .flex-all-center;
+		}
+
+		.search-input {
+			@extend .mid-text;
+			border: none;
+			padding-left: 0;
+
+			:focus {
+				border: none;
+			}
+		}
+
+		.clean-button {
+			position: relative;
+			font-size: $clean_icon_size;
+			height: 100%;
+			width: $clean_icon_size + 3rem;
+			@extend .flex-all-center;
+			cursor: pointer;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				height: 1px;
+				width: 2rem;
+				top: 50%;
+				left: 50%;
+				margin-left: -1.2rem;
+				background: rgba(102, 116, 129, 0.5);
+			}
+
+			&::before {
+				-webkit-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+
+			&::after {
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+
+			&.active{
+				&::before,
+				&::after {
+					background: rgb(102, 116, 129);
+				}
+				&:hover {
+					&::before,
+				&::after {
+					background: $menu_hover;
+				}
+				}
+			}
+
+			img {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+		}
+	}
+
+	.dropdown-block {
+		width: 100%;
+		z-index: 10;
+		position: relative;
+		top: -1px;
+		box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+		border-radius: 0 0 0.5rem 0.5rem;
+		max-height: calc(100vh - 16rem);
+		overflow-y: auto;
+
+		ul {
+			padding-left: 0;
+			margin-left: 0;
+			width: 100%;
+			list-style-type: none;
+
+			li {
+				width: 100%;
+				background: #f5f7f8;
+				border-top: 1px solid $grey_light;
+
+				&:first-child {
+					border-top: none;
+				}
+
+				&:hover {
+					background: #fff;
+				}
+
+				.item-block {
+					@extend .item-outer-block;
+
+					.item-icon {
+						font-size: 2.2rem;
+						height: calc(6rem - 1px);
+						width: calc(5.4rem + 1px);
+						color: $menu_hover;
+						@extend .flex-all-center;
+					}
+
+					.item-text {
+						@extend .mid-text;
+						color: $shade_blue;
+						font-weight: $weight_bold;
+						line-height: 6rem;
+						text-transform: capitalize;
+					}
+				}
+
+			}
+		}
+	}
+}
