@@ -5,6 +5,24 @@
 
 		background: $shade_lightest;
 
+		.img-con {
+			height: 10rem;
+			display: flex;
+			justify-content: center;
+		}
+
+		.app-spinner {
+			position: absolute;
+			text-align: center;
+			margin-top: -50px;
+			margin-bottom: -16px;
+		}
+		
+		.app-spinner-img {
+			max-width: 100px;
+			max-height: 100px;
+		}
+		
 		.quick-assess-item {
 			width: 25%;
 			padding: 1.2rem;
@@ -23,7 +41,6 @@
 				cursor: pointer;
 
 				.item-button {
-					text-transform: uppercase;
 					width: 86%;
 					padding: 0 2rem;
 					margin-left: 7%;
@@ -32,7 +49,7 @@
 					border-radius: 10rem;
 					background: $gradient_main;
 					color: $light;
-					font-size: 1.5rem;
+					font-size: 2rem;
 					letter-spacing: 0.1rem;
 					font-weight: $weight_600;
 					text-align: center;

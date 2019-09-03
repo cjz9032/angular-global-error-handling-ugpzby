@@ -8,19 +8,31 @@
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
-			<div class="container-fluid">
+			<div class="container-fluid" *ngIf="appDetails">
 				<div class="img-con pt-4">
 					<img class="qr-img"
-						[src]=" '/assets/images/apps-for-you/LMA icon.png'"
+						[src]="'/assets/images/apps-for-you/LMA icon.png'"
 						alt="Lenovo Migration Assistant" />
 				</div>
+				<p id="appInstallSpinner" class="app-spinner" style="display:block;">
+					<img class="app-spinner-img" [src]="'/assets/images/apps-for-you/spinner.png'" />
+				</p>
 				<a href="javascript:;"
 					class="quick-assess-item col col-6 col-sm-3"
-					(click)="clickInstall()">
-					<div class="item-con">
-						<div class="item-button">install</div>
+					(click)="clickInstallButton()">
+					<div class="item-con" [ngSwitch]="appDetails.showStatus">
+						<div class="item-button" *ngSwitchCase="statusEnum.NOT_INSTALL">
+							Install
+						</div>
+						<div class="item-button" *ngSwitchCase="statusEnum.INSTALLING">
+							Installing
+						</div>
+						<div class="item-button" *ngSwitchCase="statusEnum.INSTALLED">
+							Launch
+						</div>
 					</div>
 				</a>
+				<span>app details</span>
 			</div>
 		</div>
 	</div>
