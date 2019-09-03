@@ -1,0 +1,76 @@
+<div class="vtr-page-connected-home-security vtr-page">
+    <div class="row vtr-page-header">
+        <div class="col vtr-col">
+            <vtr-header-main [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
+                [title]="'homeSecurity.title' | translate" [backId]="backId"></vtr-header-main>
+        </div>
+    </div>
+    <div class="row vtr-page-content">
+        <div class="col vtr-col">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-8 vtr-page-left-column">
+                    <div class="vtr-subpage">
+                        <div class="vtr-page-shift-up">
+                            <div class="container-fluid">
+                                <div class="row mb-40 content-container p-40">
+                                    <div class="container-fluid">
+                                        <vtr-home-security-device-demo
+                                            [device]="account?.device"
+											[allDevice]="account?.allDevice"
+											[common]="common"
+                                          ></vtr-home-security-device-demo>
+                                    </div>
+                                </div>
+                                <div class="row content-container p-40">
+                                    <div class="container-fluid fix-height">
+                                        <div class="row title">{{'homeSecurity.overview.overviewBlockTitle' | translate}}</div>
+                                        <div class="container-fluid sub-container">
+                                            <div class="row sub-title mydevice-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
+                                            <div class="row container-fluid h-50 device-card">
+                                                <vtr-home-security-my-device-demo class="container-fluid"
+                                                    [homeSecurityOverviewMyDevice]="homeSecurityOverviewMyDevice">
+                                                </vtr-home-security-my-device-demo>
+                                            </div>
+                                            <div class="row sub-title">{{'homeSecurity.overview.allDevices' | translate}}
+                                            </div>
+                                            <div class="row container-fluid home-card">
+												<vtr-home-security-all-devices-demo class="container-fluid"
+													[common]="common"
+                                                    [allDevicesInfo]="allDevicesInfo"
+                                                    [account]="account">
+                                                </vtr-home-security-all-devices-demo>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 vtr-page-right-column">
+                    <div class="vtr-page-shift-up">
+                        <div class="container-fluid">
+                            <div class="row mb-40">
+                                <div class="col col-12">
+									<vtr-home-security-account-status-demo
+										[account]="account"
+                                        [common]="common">
+                                    </vtr-home-security-account-status-demo>
+                                </div>
+                            </div>
+                            <div class="row mb-40">
+                                <div class="col col-12" [ngClass]="{'offline':!isOnline}">
+                                    <vtr-widget-questions [title]="'homeSecurity.notification.notifications' | translate"
+                                        [description]="'homeSecurity.notification.recent' | translate "
+                                        [items]="notificationItems?.notificationItem" [clickable]="false"
+                                        [chevronVisibility]=false>
+                                    </vtr-widget-questions>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

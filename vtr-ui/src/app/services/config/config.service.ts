@@ -252,20 +252,6 @@ export class ConfigService {
 		subitems: []
 	},
 	{
-		id: 'home-security',
-		label: 'common.menu.homeSecurity',
-		path: 'home-security',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.homesecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'home-lg-alt'],
-		forArm: false,
-		subitems: []
-	},
-	{
 		id: 'user',
 		label: 'User',
 		path: 'user',
@@ -430,26 +416,6 @@ export class ConfigService {
 		subitems: []
 	},
 	{
-		id: 'home-security',
-		label: 'common.menu.homeSecurity',
-		path: 'home-security',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.homesecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'home-lg-alt'],
-		forArm: false,
-		hide: false,
-		subitems: [],
-		pre: [
-			'assets/images/connected-home-security/welcome-page-one.png',
-			'assets/images/connected-home-security/welcome-page-two.png',
-			'assets/images/connected-home-security/welcome-chs-logo.png'
-		]
-	},
-	{
 		id: 'user',
 		label: 'User',
 		path: 'user',
@@ -478,6 +444,26 @@ export class ConfigService {
 		icon: ['fal', 'flask'],
 		forArm: false,
 		subitems: []
+	}, {
+		id: 'home-security',
+		label: 'common.menu.homeSecurity',
+		beta: true,
+		path: 'beta/home-security',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.homesecurity',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'home-lg-alt'],
+		forArm: false,
+		hide: false,
+		subitems: [],
+		pre: [
+			'assets/images/connected-home-security/welcome-page-one.png',
+			'assets/images/connected-home-security/welcome-page-two.png',
+			'assets/images/connected-home-security/welcome-chs-logo.png'
+		]
 	}, {
 		id: 'app-search',
 		label: ' ',

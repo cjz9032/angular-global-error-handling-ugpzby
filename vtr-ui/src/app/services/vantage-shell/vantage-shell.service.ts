@@ -54,7 +54,8 @@ export class VantageShellService {
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
 				Phoenix.Features.BetaUser,
-				Phoenix.Features.DevicePosture
+				Phoenix.Features.DevicePosture,
+				'ConnectedHomeSecurityDemo'
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -345,9 +346,9 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurityDemo {
 		if (this.phoenix) {
-			return this.phoenix.connectedHomeSecurity;
+			return this.phoenix.connectedHomeSecurityDemo;
 		}
 		return undefined;
 	}
