@@ -23,23 +23,3 @@
 		cursor: pointer;
 	}
 }
-
-.video {
-	&__wrapper {
-		display: flex;
-		align-items: center;
-		align-content: center;
-		justify-content: center;
-		padding: 2rem 0 0 0;
-	}
-
-	&__title {
-		color: #34495E;
-		font-size: 3.5rem;
-		line-height: 4.2rem;
-	}
-
-	&__iframe {
-		padding-top: 2rem;
-	}
-}

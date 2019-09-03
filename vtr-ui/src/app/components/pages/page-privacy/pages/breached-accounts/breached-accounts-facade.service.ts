@@ -18,7 +18,7 @@ export class BreachedAccountsFacadeService {
 	breachedAccounts$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
 			debounceTime(100),
-			filter((breachedAccounts) => breachedAccounts.error === null),
+			filter((breachedAccounts) => breachedAccounts.error === null && !breachedAccounts.reset),
 			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				})
@@ -27,7 +27,7 @@ export class BreachedAccountsFacadeService {
 	isAccountVerify$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
 			debounceTime(100),
-			filter((breachedAccounts) => breachedAccounts.error === null),
+			filter((breachedAccounts) => breachedAccounts.error === null && !breachedAccounts.reset),
 			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isEmailConfirmed') && breach.isEmailConfirmed === false);
 				})

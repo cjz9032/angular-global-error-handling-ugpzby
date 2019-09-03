@@ -154,9 +154,8 @@ export class PrivacyScoreService {
 
 	private getBreachesAccount(filterFunc) {
 		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
-			filter((breachedAccounts) => breachedAccounts.error === null),
-			map((breachedAccounts) => breachedAccounts.breaches.filter(filterFunc).length),
-			share()
+			filter((breachedAccounts) => breachedAccounts.error === null && !breachedAccounts.reset),
+			map((breachedAccounts) => breachedAccounts.breaches.filter(filterFunc).length)
 		);
 	}
 

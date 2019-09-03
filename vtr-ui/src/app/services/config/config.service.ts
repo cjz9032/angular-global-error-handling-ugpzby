@@ -511,7 +511,7 @@ export class ConfigService {
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 			const brand = machineInfo && machineInfo.brand ? machineInfo.brand : 'lenovo';
-			if (country.toLowerCase() === 'us' && locale.startsWith('en') && brand.toLowerCase() !== 'think') {
+			if (country.toLowerCase() === 'us' && locale.startsWith('en') ) {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);

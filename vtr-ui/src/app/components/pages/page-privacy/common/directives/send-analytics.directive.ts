@@ -54,7 +54,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		if (this.metricsEvent === ItemTypes.PageView) {
 			this.pageDestroyTime = +Date.now();
-			this.pageDuration = (this.pageDestroyTime - this.pageInitTime) / 1000;
+			this.pageDuration = Math.round((this.pageDestroyTime - this.pageInitTime) / 1000);
 
 			const dataToSendOnPageView = {
 				PageContext: this.pageContext,

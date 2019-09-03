@@ -28,7 +28,7 @@ export class TaskActionWithTimeoutService {
 	}
 
 	private getTaskDuration(timeStart) {
-		return(Date.now() - timeStart) / 1000;
+		return Math.round((Date.now() - timeStart) / 1000);
 	}
 
 	taskTimeWatcher(taskName: TasksName, due = STANDART_TIMEOUT_FOR_TASK): Observable<{TaskDuration: number, TaskResult?: string}> {
