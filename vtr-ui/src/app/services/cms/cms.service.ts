@@ -28,7 +28,7 @@ export class CMSService {
 	region: string;
 	segment: string; // VAN-5872, server switch feature
 	localInfo: any;
-	defaultInfo = { Lang: 'en', GEO: 'us', OEM: 'Lenovo', OS: 'Windows', Segment: 'SMB', Brand: 'Lenovo' };
+	defaultInfo = { Lang: 'en', GEO: 'us', OEM: 'Lenovo', OS: 'Windows', Segment: 'Consumer', Brand: 'Lenovo' };
 
 	constructor(
 		private commsService: CommsService,
@@ -41,7 +41,6 @@ export class CMSService {
 		localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
 		}).catch(e => {
-			this.localInfo = this.defaultInfo;
 			console.log(e);
 		});
 	}
@@ -96,24 +95,29 @@ export class CMSService {
 			return new Observable(subscriber => {
 				this.localInfoService.getLocalInfo().then(result => {
 					this.localInfo = result;
-					this.fetchCMSContent(queryParams).subscribe((result2: any) => {
+					this.requestCMSContent(queryParams, this.localInfo).subscribe((result2: any) => {
 						subscriber.next(result2);
 					});
 				}).catch(e => {
-					this.localInfo = this.defaultInfo;
-					this.fetchCMSContent(queryParams).subscribe((result2: any) => {
+					this.requestCMSContent(queryParams, this.defaultInfo).subscribe((result2: any) => {
 						subscriber.next(result2);
 					});
 				});
 			});
+		} else {
+			return this.requestCMSContent(queryParams, this.localInfo);
 		}
+
+	}
+
+	requestCMSContent(queryParams, locInfo) {
 		const defaults = {
-			Lang: this.localInfo.Lang,
-			GEO: this.localInfo.GEO,
-			OEM: this.localInfo.OEM,
-			OS: this.localInfo.OS,
-			Segment: this.localInfo.Segment,
-			Brand: this.localInfo.Brand
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO,
+			OEM: locInfo.OEM,
+			OS: locInfo.OS,
+			Segment: locInfo.Segment,
+			Brand: locInfo.Brand
 		};
 
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
@@ -127,8 +131,7 @@ export class CMSService {
 					if (notification && notification.type === NetworkStatus.Online) {
 						this.getCMSContent(CMSOption, subscriber);
 					}
-				}
-				);
+				});
 			}
 		});
 	}
@@ -163,21 +166,25 @@ export class CMSService {
 		if (!this.localInfo) {
 			return this.localInfoService.getLocalInfo().then(result => {
 				this.localInfo = result;
-				return this.fetchCMSArticleCategories(queryParams);
+				return this.requestCMSArticleCategories(queryParams, this.localInfo);
 			}).catch(e => {
-				this.localInfo = this.defaultInfo;
-				return this.fetchCMSArticleCategories(queryParams);
+				return this.requestCMSArticleCategories(queryParams, this.defaultInfo);
 			});
+		} else {
+			return this.requestCMSArticleCategories(queryParams, this.localInfo);
 		}
+	}
+
+	requestCMSArticleCategories(queryParams, locInfo) {
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
-			Lang: this.localInfo.Lang,
-			GEO: this.localInfo.GEO,
-			OEM: this.localInfo.OEM,
-			OS: this.localInfo.OS,
-			Segment: this.localInfo.Segment,
-			Brand: this.localInfo.Brand
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO,
+			OEM: locInfo.OEM,
+			OS: locInfo.OS,
+			Segment: locInfo.Segment,
+			Brand: locInfo.Brand
 		};
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 
@@ -205,16 +212,31 @@ export class CMSService {
 		});
 	}
 
+
 	fetchCMSArticles(queryParams, returnAll = false) {
+		if (!this.localInfo) {
+			return this.localInfoService.getLocalInfo().then(result => {
+				this.localInfo = result;
+				return this.requestCMSArticles(queryParams, this.localInfo);
+			}).catch(e => {
+				return this.requestCMSArticles(queryParams, this.defaultInfo);
+			});
+		} else {
+			return this.requestCMSArticles(queryParams, this.localInfo);
+		}
+	}
+
+
+	requestCMSArticles(queryParams, locInfo) {
 		// VAN-5872, server switch feature
 		// retrive from localStorage
 		const defaults = {
-			Lang: this.localInfo.Lang,
-			GEO: this.localInfo.GEO,
-			OEM: this.localInfo.OEM,
-			OS: this.localInfo.OS,
-			Segment: this.localInfo.Segment,
-			Brand: this.localInfo.Brand
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO,
+			OEM: locInfo.OEM,
+			OS: locInfo.OS,
+			Segment: locInfo.Segment,
+			Brand: locInfo.Brand
 		};
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 
@@ -242,16 +264,29 @@ export class CMSService {
 		});
 	}
 
+
 	fetchCMSArticle(articleId, queryParams?) {
-		// VAN-5872, server switch feature
-		// retrive from localStorage
+		if (!this.localInfo) {
+			return this.localInfoService.getLocalInfo().then(result => {
+				this.localInfo = result;
+				return this.requestCMSArticle(articleId, this.localInfo, queryParams);
+			}).catch(e => {
+				return this.requestCMSArticle(articleId, this.defaultInfo, queryParams);
+			});
+		} else {
+			return this.requestCMSArticle(articleId, this.localInfo, queryParams);
+		}
+
+	}
+
+	requestCMSArticle(articleId, locInfo, queryParams?) {
 		const defaults = {
-			Lang: this.localInfo.Lang,
-			GEO: this.localInfo.GEO,
-			OEM: this.localInfo.OEM,
-			OS: this.localInfo.OS,
-			Segment: this.localInfo.Segment,
-			Brand: this.localInfo.Brand
+			Lang: locInfo.Lang,
+			GEO: locInfo.GEO,
+			OEM: locInfo.OEM,
+			OS: locInfo.OS,
+			Segment: locInfo.Segment,
+			Brand: locInfo.Brand
 		};
 
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
