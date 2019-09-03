@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Vnašanje in pripomočki",
                 "subtitle": "Nastavitve vnašanja in pripomočkov",
-                "description": "Tehnologija Lenovo za pametno zaznavanje združuje različne senzorje v računalniku, ki zaznavajo vaše dejavnosti in prilagodijo nastavitve za optimalno upravljanje porabe energije",
+                "description": "V tem razdelku lahko nastavite najpogosteje uporabljane funkcije tipkovnice in miške. Tukaj raziščite več funkcij.",
                 "inputAccessory": {
                     "title": "Pametna tipkovnica",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Garancija ni bila najdena",
             "yearDepotWarranty": "-letna garancija s popravilom na servisu",
             "warrantyDetails": "Podrobnosti garancije:",
+            "warrantyDashboardDetails": "Podrobnosti garancije",
             "startDate": "Datum začetka: ",
             "endDate": "Datum konca: ",
             "status": "Stanje: ",

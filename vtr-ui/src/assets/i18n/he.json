@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "קלט ועזרים",
                 "subtitle": "הגדרות קלט ועזרים",
-                "description": "החישה החכמה של Lenovo משלבת חיישנים שונים של המחשב כדי לזהות את הפעילויות שלכם ולכוונן הגדרות לצורך ניהול צריכת חשמל אופטימלית",
+                "description": "סעיף זה מאפשר לך להגדיר את פונקציות המקלדת והעכבר הנפוצות ביותר. גלה תכונות נוספות כאן.",
                 "inputAccessory": {
                     "title": "מקלדת חכמה",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "האחריות לא נמצאה",
             "yearDepotWarranty": "אחריות של Y Depot",
             "warrantyDetails": "פרטי האחריות:",
+            "warrantyDashboardDetails": "פרטי האחריות",
             "startDate": "תאריך התחלה: ",
             "endDate": "תאריך סיום: ",
             "status": "מצב: ",

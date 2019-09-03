@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Vstup & Příslušenství",
                 "subtitle": "Vstup & Příslušenství – Nastavení",
-                "description": "Technologie inteligentní detekce Lenovo rozpoznává pomocí různých snímačů v počítači vaši aktuální činnost a přizpůsobuje podle ní řízení spotřeby",
+                "description": "Tato část umožňuje nastavit nejčastěji používané funkce klávesnice a myši. Prozkoumejte další funkce zde.",
                 "inputAccessory": {
                     "title": "Inteligentní klávesnice",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Záruka nebyla nalezena.",
             "yearDepotWarranty": "R záruky typu Depot",
             "warrantyDetails": "Podrobnosti o záruce:",
+            "warrantyDashboardDetails": "Podrobnosti o záruce",
             "startDate": "Datum zahájení: ",
             "endDate": "Datum ukončení: ",
             "status": "Stav: ",

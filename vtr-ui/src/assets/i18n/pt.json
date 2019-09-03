@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Introdução e Acessórios",
                 "subtitle": "Definições de Introdução e Acessórios",
-                "description": "A Deteção Inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades e ajustar as definições para uma gestão da energia ideal",
+                "description": "Esta secção permite definir as funções de teclado e rato mais frequentemente utilizadas. Explore mais funcionalidades aqui.",
                 "inputAccessory": {
                     "title": "Teclado Inteligente",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Garantia não encontrada",
             "yearDepotWarranty": "Garantia Y Depot",
             "warrantyDetails": "Detalhes da garantia:",
+            "warrantyDashboardDetails": "Detalhes da garantia",
             "startDate": "Data de início: ",
             "endDate": "Data de fim: ",
             "status": "Estado: ",

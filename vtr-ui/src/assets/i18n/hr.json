@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Unos i pomagala",
                 "subtitle": "Postavke unosa i pomagala",
-                "description": "Pametni senzori tvrtke Lenovo kombinacija su raznih senzora na računalu koji prate vašu aktivnost i prilagođavaju postavke radi optimalnog upravljanja potrošnjom energije",
+                "description": "Ovaj odjeljak omogućuje vam postavljanje najčešće korištenih funkcija tipkovnice i miša. Daljnje značajke istražite ovdje.",
                 "inputAccessory": {
                     "title": "Inteligentna tipkovnica",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Jamstvo nije pronađeno",
             "yearDepotWarranty": "Standardno jamstvo Y",
             "warrantyDetails": "Detalji o jamstvu:",
+            "warrantyDashboardDetails": "Detalji o jamstvu",
             "startDate": "Datum početka: ",
             "endDate": "Datum isteka: ",
             "status": "Stanje: ",

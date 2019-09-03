@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "入力およびアクセサリ",
                 "subtitle": "入力およびアクセサリ設定",
-                "description": "Lenovo インテリジェント・センサーはコンピューターのさまざまなセンサーを組み合わせて操作を検出し、最適な電源管理の設定を調整します",
+                "description": "このセクションでは、最も頻繁に使用されるキーボードおよびマウス機能を設定できます。その他の機能についてはこちらをご覧ください。",
                 "inputAccessory": {
                     "title": "インテリジェント・キーボード",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "保証が見つかりませんでした",
             "yearDepotWarranty": "Y デポ保証",
             "warrantyDetails": "保証の詳細:",
+            "warrantyDashboardDetails": "保証の詳細",
             "startDate": "開始日:",
             "endDate": "終了日:",
             "status": "ステータス:",

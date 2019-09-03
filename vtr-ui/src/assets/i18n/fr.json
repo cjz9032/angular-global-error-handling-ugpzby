@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Saisie et accessoires",
                 "subtitle": "Paramètres de saisie et des accessoires",
-                "description": "Le capteur intelligent Lenovo combine plusieurs capteurs sur votre ordinateur afin de détecter vos activités et régler les paramètres pour une gestion de l'alimentation optimale",
+                "description": "Cette section vous permet de définir les fonctions du clavier et de la souris les plus fréquemment utilisées. Découvrez plus de fonctions ici.",
                 "inputAccessory": {
                     "title": "Clavier intelligent",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Impossible de trouver la garantie",
             "yearDepotWarranty": "Garantie dépôt Y",
             "warrantyDetails": "Détails de la garantie :",
+            "warrantyDashboardDetails": "Détails de la garantie",
             "startDate": "Date de début : ",
             "endDate": "Date de fin : ",
             "status": "Etat : ",

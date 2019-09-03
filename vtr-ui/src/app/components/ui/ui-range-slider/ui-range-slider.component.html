@@ -8,7 +8,9 @@
 		(valueChange)="onValueChange($event)"
 		(userChange)="onChange($event)"
 		[manualRefresh]="manualRefresh"
-		(userChangeEnd)="dragEnd($event)">
+		(userChangeEnd)="dragEnd($event)"
+		id="{{rangeSliderId + '-slider'}}"
+		attr.aria-label="{{rangeSliderId + '-slider'}}">
 	</ng5-slider>
 	<div class="row label"
 		*ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">

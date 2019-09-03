@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Wprowadzanie i akcesoria",
                 "subtitle": "Ustawienia wprowadzania i akcesoriów",
-                "description": "Funkcja inteligentnej detekcji Lenovo łączy działanie różnych czujników w komputerze, co pozwala wykryć aktywność użytkownika i odpowiednio dostosować optymalne ustawienia zarządzania energią",
+                "description": "Ta sekcja umożliwia ustawienie najczęściej używanych funkcji klawiatury i myszy. Poznaj więcej funkcji tutaj.",
                 "inputAccessory": {
                     "title": "Inteligentna klawiatura",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Nie znaleziono gwarancji",
             "yearDepotWarranty": "Roczna gwarancja serwisu wysyłkowego",
             "warrantyDetails": "Szczegóły gwarancji:",
+            "warrantyDashboardDetails": "Szczegóły gwarancji",
             "startDate": "Data rozpoczęcia: ",
             "endDate": "Data zakończenia: ",
             "status": "Stan: ",

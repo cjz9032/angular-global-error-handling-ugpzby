@@ -33,3 +33,80 @@
 		}
 	}
 }
+
+.page-header-bg {
+	background: #289cd0;
+	background: linear-gradient(to right, #72d0bb 0%, #289cd0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#72d0bb", endColorstr="#289cd0", GradientType=1);
+	&::before {
+		content: "";
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		position: absolute;
+		width: 100%;
+		background: url(/assets/images/gaming/GamingTopImage.jpg) center center no-repeat;
+		background-size: cover;
+		opacity: 0.15;
+	}
+}
+
+.page-content-bg {
+	background: #f1f1f1;
+	background: linear-gradient(to right, #f1f1f1 40%, #ffffff 40%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1f1f1", endColorstr="#FFFFFF", GradientType=1);
+	@media #{$mediaquery_md} {
+		background: none !important;
+	}
+}
+
+::ng-deep {
+	.page-content-bg {
+		.vtr-header-main {
+			background: none !important;
+			padding: 5rem 8.5rem 8rem 1.2rem !important;
+			&::before {
+				background: none !important;
+			}
+			@media #{$mediaquery_md} {
+				padding: 5rem 8.5rem 8rem 5rem !important;
+			}
+		}
+		.vtr-page-left-column {
+			background-color: #f1f1f1;
+			padding-right: 3.6rem;
+			@media #{$mediaquery_md} {
+				padding: 0rem 5rem;
+				padding-bottom: 10rem;
+			}
+		}
+
+		.vtr-page-right-column {
+			padding-left: 3.6rem;
+			@media #{$mediaquery_md} {
+				padding: 0rem 5rem;
+			}
+		}
+	}
+}
+
+.container {
+	@media #{$mediaquery_5} {
+		max-width: 100%;
+		padding: 0rem 7rem;
+	}
+
+	@media #{$mediaquery_md} {
+		padding: 0rem 0rem;
+	}
+
+	@media #{$mediaquery_XL100X} {
+		max-width: 160rem;
+	}
+
+	@media #{$mediaquery_XXL350X} {
+		max-width: 100%;
+		padding: 0rem 7rem;
+	}
+}

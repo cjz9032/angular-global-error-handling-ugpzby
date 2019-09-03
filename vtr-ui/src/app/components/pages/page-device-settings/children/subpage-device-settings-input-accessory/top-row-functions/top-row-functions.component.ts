@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-top-row-functions',
@@ -14,7 +16,9 @@ export class TopRowFunctionsComponent implements OnInit {
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
-		public systemUpdateService: SystemUpdateService) { }
+		public systemUpdateService: SystemUpdateService,
+		private logger: LoggerService
+	) { }
 
 	ngOnInit() {
 		this.getFunctionCapabilities();
@@ -45,7 +49,8 @@ export class TopRowFunctionsComponent implements OnInit {
 				});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getFunctionCapabilities', error.message);
+			return EMPTY;
 		}
 	}
 
@@ -66,7 +71,7 @@ export class TopRowFunctionsComponent implements OnInit {
 	}
 
 	public onChangeFunType(value: boolean) {
-		console.log('set funlock req here ------------->', value)
+		console.log('set funlock req here ------------->', value);
 		this.keyboardService.setFnLock(value).then(res => {
 		});
 	}

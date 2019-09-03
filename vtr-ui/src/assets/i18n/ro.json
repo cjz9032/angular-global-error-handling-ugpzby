@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Intrare și accesorii",
                 "subtitle": "Setări intrare și accesorii",
-                "description": "Detectarea inteligentă Lenovo combină diverși senzori de pe computerul dvs. pentru a vă detecta activitățile și pentru a regla setările pentru gestionarea optimă a alimentării",
+                "description": "Această secţiune vă permite să setaţi cele mai utilizate funcţii de tastatură şi mouse. Exploraţi mai multe caracteristici aici.",
                 "inputAccessory": {
                     "title": "Tastatură inteligentă",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Garanția nu a fost găsită",
             "yearDepotWarranty": "Garanție de tip Y Depot",
             "warrantyDetails": "Detalii garanție:",
+            "warrantyDashboardDetails": "Detalii garanție",
             "startDate": "Dată de început: ",
             "endDate": "Dată de încheiere: ",
             "status": "Stare: ",

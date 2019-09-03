@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.171",
+	"version": "1.0.176",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -10,6 +10,7 @@
 		"test": "ng test",
 		"lint": "ng lint",
 		"fix-no-console": "node prebuild/no-console.js",
+		"update-nuspec-version": "node postbuild/nuget.js",
 		"e2e": "ng e2e",
 		"pwa": "ng build --prod & http-server ./dist/vtr-ui -p 4200 -c-1 ",
 		"release": "standard-version",

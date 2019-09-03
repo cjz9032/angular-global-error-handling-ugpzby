@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Bevitel és kellékek",
                 "subtitle": "Bevitel és kellékek beállításai",
-                "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket, és úgy módosítja a beállításokat, hogy az energiagazdálkodás optimális legyen",
+                "description": "Ez a szakasz lehetővé teszi a leggyakrabban használt billentyűzet- és egérfunkciók beállítását. Fedezzen fel további funkciókat itt.",
                 "inputAccessory": {
                     "title": "Intelligens billentyűzet",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "A jótállás nem található",
             "yearDepotWarranty": "Y Depot-jótállás",
             "warrantyDetails": "Jótállás részletei:",
+            "warrantyDashboardDetails": "Jótállás részletei",
             "startDate": "Kezdő dátum: ",
             "endDate": "Záró dátum: ",
             "status": "Állapot: ",

@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Inmatning och tillbehör",
                 "subtitle": "Inställningar för inmatning och tillbehör",
-                "description": "Lenovo Intelligent avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för optimalt energisparläge",
+                "description": "I detta avsnitt kan du ställa in de tangentbords- och musfunktioner du använder oftast. Se fler funktioner här.",
                 "inputAccessory": {
                     "title": "Intelligent tangentbord",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Garantin hittades inte",
             "yearDepotWarranty": "Verkstadsgaranti år",
             "warrantyDetails": "Garantiinformation:",
+            "warrantyDashboardDetails": "Garantiinformation",
             "startDate": "Startdatum: ",
             "endDate": "Slutdatum: ",
             "status": "Status: ",

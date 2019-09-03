@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Unos i pribor",
                 "subtitle": "Postavke unosa i pribora",
-                "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti i prilagodile postavke za optimalno upravljanje napajanjem",
+                "description": "Ovaj odeljak vam omogućava da podesite najčešće korišćene funkcije tastature i miša. Istražite ovde više funkcija.",
                 "inputAccessory": {
                     "title": "Inteligentna tastatura",
                     "hiddenKeyboardFunctions": {
@@ -1579,6 +1579,7 @@
             "statusWarrantyNotFound": "Garancija nije pronađena",
             "yearDepotWarranty": "-godišnja garancija za popravku u servisu",
             "warrantyDetails": "Detalji garancije:",
+            "warrantyDashboardDetails": "Detalji garancije",
             "startDate": "Datum početka: ",
             "endDate": "Datum isteka: ",
             "status": "Status: ",

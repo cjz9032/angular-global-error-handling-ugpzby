@@ -1087,7 +1087,7 @@
             "inputAccessories": {
                 "title": "الإدخال والملحقات",
                 "subtitle": "إعدادات الإدخال والملحقات",
-                "description": "تدمج ميزة \"الاستشعار الذكي من Lenovo\" أجهزة الاستشعار المختلفة على الكمبيوتر للكشف عن أنشطتك وضبط الإعدادات لإدارة الطاقة بشكل مثالي",
+                "description": "يمكّنك هذا القسم من ضبط وظائف لوحة المفاتيح والماوس الأكثر استخدامًا. استكشف المزيد من الميزات هنا.",
                 "inputAccessory": {
                     "title": "لوحة المفاتيح الذكية",
                     "hiddenKeyboardFunctions": {
@@ -1121,8 +1121,6 @@
                     },
                     "topRowFunctions": {
                         "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
                         "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
                         "subSection": {
                             "description": "To switch the above two functions, press Fn+Esc.",
@@ -1579,6 +1577,7 @@
             "statusWarrantyNotFound": "لم يتم العثور على الضمان",
             "yearDepotWarranty": "ضمان Y Depot",
             "warrantyDetails": "تفاصيل الضمان:",
+            "warrantyDashboardDetails": "تفاصيل الضمان",
             "startDate": "وقت البدء: ",
             "endDate": "تاريخ الانتهاء: ",
             "status": "الحالة: ",
@@ -2368,7 +2367,7 @@
             "error": "خطأ",
             "delete": "حذف",
             "warningBatterySaver": "ملاحظة: لن يتم إجراء عمليات الفحص المجدولة في وضع توفير البطارية",
-			"scheduleIntervalLimit": "كان من المقرر بالفعل إجراء مسح آخر في غضون فترة زمنية عشر دقائق. الرجاء اختيار وقت آخر."
+            "scheduleIntervalLimit": "كان من المقرر بالفعل إجراء مسح آخر في غضون فترة زمنية عشر دقائق. الرجاء اختيار وقت آخر."
         },
         "recoverBadSectors": {
             "title": "استعادة القطاعات المصابة",
