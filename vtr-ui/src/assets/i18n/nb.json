@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Inndata og tilbehør",
                 "subtitle": "Innstillinger for inndata og tilbehør",
-                "description": "Lenovo Intelligent Sensing kombinerer de ulike sensorene på datamaskinen for å gjenkjenne aktivitetene dine og justere innstillingene for optimal strømstyring",
+                "description": "I denne delen kan du definere de mest brukte tastatur- og musefunksjonene. Utforsk flere funksjoner her.",
                 "inputAccessory": {
                     "title": "Smarttastatur",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "Fant ikke garanti",
             "yearDepotWarranty": "års servicesentergaranti",
             "warrantyDetails": "Garantidetaljer:",
+            "warrantyDashboardDetails": "Garantidetaljer",
             "startDate": "Startdato: ",
             "endDate": "Sluttdato: ",
             "status": "Status: ",

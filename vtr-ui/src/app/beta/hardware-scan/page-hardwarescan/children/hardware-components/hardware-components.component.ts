@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs';
+import { Subscription, EMPTY } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/beta/hardware-scan/enums/hw-scan-progress.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -14,6 +14,7 @@ import { ModalCancelComponent } from '../../../modal/modal-cancel/modal-cancel.c
 import { ModalEticketComponent } from '../../../modal/modal-eticket/modal-eticket.component';
 import { ModalScheduleScanCollisionComponent } from '../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-hardware-components',
@@ -64,6 +65,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private translate: TranslateService,
+		private logger: LoggerService,
 	) {
 		this.viewResultsPath = '/beta/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
@@ -374,7 +376,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					this.myDevice = value;
 					console.log('getDeviceInfo.then', value);
 				}).catch(error => {
-					console.error('getDeviceInfo', error);
+					this.logger.error('getDeviceInfo', error.message);
+					return EMPTY;
 				});
 		}
 	}

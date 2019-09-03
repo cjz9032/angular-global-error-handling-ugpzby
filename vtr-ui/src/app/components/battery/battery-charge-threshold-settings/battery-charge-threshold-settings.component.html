@@ -28,7 +28,8 @@
 								<button [ngClass]="['btn','btn-outline-shadow',isCheckedAuto?'disabled':'']"
 									ngbDropdownToggle
 									[disabled]="isCheckedAuto?true:false"
-									type="button">
+									type="button" id="{{textId}}-start-dropdown"
+									attr.aria-label="{{textId}}-start-dropdown">
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
 											<div class="select-title" 
@@ -52,10 +53,11 @@
 								</button>
 								<div ngbDropdownMenu
 									aria-labelledby="">
-									<a  id="{{textId}}-startAtChargeOptions" attr.aria-label="{{textId}}-startAtChargeOptions"
-										[ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
+									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
 										*ngFor="let item of startAtChargeOptions"
-										(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();">{{item}}%</a>
+										(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();" 
+										id="{{textId}}-startAtChargeOption-{{item}}" 
+										attr.aria-label="{{textId}}-startAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
@@ -69,7 +71,9 @@
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow']"
 									ngbDropdownToggle
-									type="button">
+									type="button"
+									id="{{textId}}-stop-dropdown"
+									attr.aria-label="{{textId}}-stop-dropdown">
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
 											<div class="select-title" id="{{textId}}-stopcharge"
@@ -91,10 +95,11 @@
 								</button>
 								<div ngbDropdownMenu
 									aria-labelledby="">
-									<a id="{{textId}}-stopAtChargeOptions" attr.aria-label="{{textId}}-stopAtChargeOptions"
-									[ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
+									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
 										*ngFor="let item of stopAtChargeOptions"
-										(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();">{{item}}%</a>
+										(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
+										id="{{textId}}-stopAtChargeOption-{{item}}" 
+										attr.aria-label="{{textId}}-stopAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>

@@ -20,7 +20,7 @@ export class RouterChangeHandlerService {
 				share(),
 			)
 			.subscribe((val: NavigationEnd) => {
-				this.currentRoute = this.getCurrentRoute(val.url);
+				this.currentRoute = this.getCurrentRoute(val.urlAfterRedirects);
 				this.changeHandler$.next(this.currentRoute);
 			});
 	}
