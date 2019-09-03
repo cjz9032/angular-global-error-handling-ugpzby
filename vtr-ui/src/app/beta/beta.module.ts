@@ -6,8 +6,6 @@ import { BetaComponentComponent } from './beta-component/beta-component.componen
 import { SharedModule } from '../modules/shared.module';
 import { HardwareScanRoutingModule } from './hardware-scan/hardware-scan-routing.module';
 import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
-import { ConnectedHomeSecurityDemoModule } from '../modules/connected-home-security-demo/connected-home-security.module';
-import { ConnectedHomeSecurityRoutingDemoModule } from '../modules/connected-home-security-demo/connected-home-security-routing.module';
 
 @NgModule({
 	declarations: [
@@ -18,9 +16,7 @@ import { ConnectedHomeSecurityRoutingDemoModule } from '../modules/connected-hom
 		BetaModuleRoutingModule,
 		HardwareScanModule,
 		HardwareScanRoutingModule,
-		SharedModule,
-		ConnectedHomeSecurityDemoModule,
-		ConnectedHomeSecurityRoutingDemoModule
+		SharedModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
