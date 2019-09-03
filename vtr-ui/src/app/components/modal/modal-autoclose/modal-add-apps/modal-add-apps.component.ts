@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { isUndefined } from 'util';
 
 @Component({
@@ -6,7 +6,7 @@ import { isUndefined } from 'util';
 	templateUrl: './modal-add-apps.component.html',
 	styleUrls: ['./modal-add-apps.component.scss']
 })
-export class ModalAddAppsComponent implements OnInit {
+export class ModalAddAppsComponent implements OnInit, OnChanges {
 	statusAskAgain: boolean;
 	@Input() loaderData: any;
 	@Input() showAppsModal: boolean;
@@ -21,6 +21,12 @@ export class ModalAddAppsComponent implements OnInit {
 		if (!isUndefined(this.loaderData)) {
 			this.loading = this.loaderData.loading;
 			this.loadingNoApps = this.loaderData.noApps;
+		}
+	}
+
+	ngOnChanges(changes: any) {
+		if (this.loading) {
+			this.loading = this.loaderData.loading;
 		}
 	}
 
