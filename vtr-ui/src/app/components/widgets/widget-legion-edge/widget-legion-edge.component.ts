@@ -304,6 +304,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 
 		if (gamingStatus.networkBoostFeature) {
+			// this.legionUpdate[2].readonly = false;
 			this.renderNetworkBoostStatus();
 		}
 	}
@@ -320,10 +321,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public renderNetworkBoostStatus() {
-		console.log('aparna  inside status');
+		// console.log('aparna  inside status');
 		this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
 			if (networkBoostModeStatus !== undefined) {
-				console.log('aparna  ' + networkBoostModeStatus);
+				// console.log('aparna  ' + networkBoostModeStatus);
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
 				this.SetNetworkBoostCacheStatus(networkBoostModeStatus);
 				this.legionUpdate[2].isChecked = networkBoostModeStatus;
@@ -348,6 +349,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			// TODO has to confirm with aparna to update status of cache IRR of isStatusUpdated.
 			if (isStatusUpdated) {
 				this.SetNetworkBoostCacheStatus(status);
+				this.legionUpdate[2].isChecked = status;
 			}
 		} catch (err) {
 			console.log(`ERROR in setNetworkBoostStatus() of widget-legion.component`, err);
@@ -548,9 +550,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			if (!this.gamingCapabilities.fbnetFilter) {
 				this.legionUpdate[2].isDriverPopup = $event;
 			} else {
-				this.legionUpdate[2].isPopup = $event;
+				// 	this.legionUpdate[2].isPopup = $event;
+				await this.setNetworkBoostStatus($event.switchValue);
 			}
-			await this.setNetworkBoostStatus($event.switchValue);
 		}
 	}
 
