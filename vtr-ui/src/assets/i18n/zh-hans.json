@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "输入和附件",
                 "subtitle": "输入和附件设置",
-                "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，并调整设置以实现最优电源管理",
+                "description": "本部分能够让您设置最常用的键盘和鼠标功能。在这里探索更多功能。",
                 "inputAccessory": {
                     "title": "智能键盘",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "未找到保修信息",
             "yearDepotWarranty": "年维修站保修",
             "warrantyDetails": "保修详细信息：",
+            "warrantyDashboardDetails": "保修详细信息",
             "startDate": "开始日期：",
             "endDate": "结束日期：",
             "status": "状态：",

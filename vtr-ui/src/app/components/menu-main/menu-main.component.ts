@@ -8,8 +8,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
-import { TranslateService } from '@ngx-translate/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
@@ -24,6 +22,9 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
+import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
+import { EMPTY } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 
 @Component({
@@ -32,7 +33,8 @@ import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardwar
 	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit, AfterViewInit {
-	@ViewChild('menuTarget', { static: false }) menuTarget: ElementRef;
+	@ViewChild('menuTarget', { static: false })
+	menuTarget: ElementRef;
 	@Input() loadMenuItem: any = {};
 	public machineFamilyName: string;
 	public country: string;
@@ -55,7 +57,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	currentUrl: string;
 	isSMode: boolean;
 
-
 	constructor(
 		private router: Router,
 		public configService: ConfigService,
@@ -64,7 +65,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		public languageService: LanguageService,
 		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
-		private translate: TranslateService,
 		localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
@@ -74,15 +74,19 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		public modalService: NgbModal,
 		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService,
+		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService
 	) {
-		localInfoService.getLocalInfo().then(result => {
-			this.region = result.GEO;
-			this.showVpn();
-		}).catch(e => {
-			this.region = 'us';
-			this.showVpn();
-		});
+		localInfoService
+			.getLocalInfo()
+			.then((result) => {
+				this.region = result.GEO;
+				this.showVpn();
+			})
+			.catch((e) => {
+				this.region = 'us';
+				this.showVpn();
+			});
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
@@ -114,9 +118,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					this.showWindowsHelloItem(windowsHello);
 				});
 			}
-			// this.commonMenuSubscription = this.languageService.subscription.subscribe((translation: Translation) => {
-			// 	this.onLanguageChange(translation);
-			// });
 		});
 
 		this.router.events.subscribe((ev) => {
@@ -142,7 +143,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		if (this.menuTarget) {
 			const clickedInside = this.menuTarget.nativeElement.contains(targetElement);
 			const toggleMenuButton =
-				targetElement.classList.contains('navbar-toggler-icon ') || targetElement.classList.contains('fa-bars') || targetElement.parentElement.classList.contains('fa-bars') || targetElement.localName === 'path';
+				targetElement.classList.contains('navbar-toggler-icon ') ||
+				targetElement.classList.contains('fa-bars') ||
+				targetElement.parentElement.classList.contains('fa-bars') ||
+				targetElement.localName === 'path';
 			if (!clickedInside && !toggleMenuButton) {
 				this.showMenu = false;
 			}
@@ -169,9 +173,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				.then((value: number) => {
 					this.loadMenuOptions(value);
 				})
-				.catch((error) => {
-					console.error('checkIsDesktopMachine', error);
-				});
+				.catch((error) => { });
 		}
 
 		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
@@ -185,8 +187,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		this.hardwareScanService.getPluginInfo()
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-				this.showHWScanMenu = hwscanPluginInfo !== undefined && 
-									  hwscanPluginInfo.LegacyPlugin === false && 
+				this.showHWScanMenu = hwscanPluginInfo !== undefined &&
+									  hwscanPluginInfo.LegacyPlugin === false &&
 									  hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
 			})
 			.catch(() => {
@@ -206,8 +208,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit(): void {
 		this.getMenuItems().then((items) => {
-			const chsItem = items.find(item => item.id === 'home-security');
-			if (!chsItem) { return; }
+			const chsItem = items.find((item) => item.id === 'home-security');
+			if (!chsItem) {
+				return;
+			}
 			this.preloadImages = [].concat(chsItem.pre);
 		});
 	}
@@ -220,7 +224,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	toggleMenu(event) {
 		this.showMenu = !this.showMenu;
-		console.log('TOGGLE MENU', this.showMenu);
+		event.stopPropagation();
 	}
 
 	isParentActive(item) {
@@ -258,6 +262,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
+		}
+		if (!this.adPolicyService.IsSystemUpdateEnabled && item.id === 'device') {
+			item.subitems.forEach((subitem, index, object) => {
+				if (subitem.adPolicyId && subitem.adPolicyId === AdPolicyId.SystemUpdate) {
+					object.splice(index, 1);
+				}
+			});
 		}
 
 		return showItem;
@@ -306,7 +317,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			switch (notification.type) {
 				case 'MachineInfo':
 					this.machineFamilyName = notification.payload.family;
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, notification.payload.family);
+					this.commonService.setLocalStorageValue(
+						LocalStorageKey.MachineFamilyName,
+						notification.payload.family
+					);
 					this.country = notification.payload.country;
 					break;
 				case LocalStorageKey.MachineFamilyName:
@@ -320,14 +334,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			}
 		}
 	}
-
-	// onLanguageChange(translation: Translation) {
-	// 	// this.getMenuItems().then((items)=>{
-	// 	// 	if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
-	// 	// 		items[0].label = translation.payload.dashboard;
-	// 	// 	}
-	// 	// })
-	// }
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
@@ -387,7 +393,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	getMenuItems(): Promise<any> {
-		console.log('Getting menu items for the Gaming device?', this.deviceService.isGaming);
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
@@ -395,21 +400,24 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	private showSmartAssist() {
-		this.logger.error('inside showSmartAssist');
+		this.logger.info('inside showSmartAssist');
 		this.getMenuItems().then((items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
-					this.logger.error('get IsSmartAssistSupported');
+					this.logger.info('get IsSmartAssistSupported');
 
 					// if cache has value true for IsSmartAssistSupported, add menu item
-					const isSmartAssistSupported = this.commonService.getLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, false);
+					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
+						LocalStorageKey.IsSmartAssistSupported,
+						false
+					);
 
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
-					this.logger.error('before Promise.all JS Bridge call');
+					this.logger.info('before Promise.all JS Bridge call');
 
 					// still check if any of the feature supported. if yes then add menu
 					Promise.all([
@@ -421,32 +429,44 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.smartAssist.getAPSCapability(),
 						this.smartAssist.getSensorStatus(),
 						this.smartAssist.getHDDStatus()
-					]).then((responses: any[]) => {
-						this.logger.error('inside Promise.all THEN JS Bridge call', responses);
+					])
+						.then((responses: any[]) => {
+							this.logger.info('inside Promise.all THEN JS Bridge call', responses);
+							// cache smart assist capability
+							const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
+							smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
+							smartAssistCapability.isLenovoVoiceSupported = responses[2];
+							smartAssistCapability.isIntelligentMediaSupported = responses[3];
+							smartAssistCapability.isIntelligentScreenSupported = responses[4];
+							smartAssistCapability.isAPSSupported = responses[5] && responses[6] && responses[7] > 0;
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.SmartAssistCapability,
+								smartAssistCapability
+							);
+							this.logger.info('inside Promise.all THEN JS Bridge call', smartAssistCapability);
 
-						console.log('showSmartAssist.Promise.all()', responses);
-						console.log('Smart Assist Expressions', responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && (responses[7] > 0)));
-						// cache smart assist capability
-						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
-						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
-						smartAssistCapability.isLenovoVoiceSupported = responses[2];
-						smartAssistCapability.isIntelligentMediaSupported = responses[3];
-						smartAssistCapability.isIntelligentScreenSupported = responses[4];
-						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && (responses[7] > 0));
-						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
-						this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
+							const isAvailable =
+								responses[0] ||
+								responses[1] ||
+								responses[2] ||
+								responses[3].available ||
+								responses[4] ||
+								(responses[5] && responses[6] && responses[7] > 0);
+							// const isAvailable = true;
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.IsSmartAssistSupported,
+								isAvailable
+							);
 
-						const isAvailable = (responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
-						// const isAvailable = true;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
-
-						// avoid duplicate entry. if not added earlier then add menu
-						if (isAvailable && !isSmartAssistSupported) {
-							this.addSmartAssistMenu(myDeviceItem);
-						}
-					}).catch((error) => {
-						this.logger.error('error in initSmartAssist.Promise.all()', error);
-					});
+							// avoid duplicate entry. if not added earlier then add menu
+							if (isAvailable && !isSmartAssistSupported) {
+								this.addSmartAssistMenu(myDeviceItem);
+							}
+						})
+						.catch((error) => {
+							this.logger.error('error in initSmartAssist.Promise.all()', error.message);
+							return EMPTY;
+						});
 				}
 			}
 		});
@@ -462,6 +482,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			metricsItem: 'link.smartassist',
 			routerLinkActiveOptions: { exact: true },
 			icon: '',
+			sMode: true,
 			subitems: []
 		});
 	}
@@ -473,17 +494,17 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	initInputAccessories() {
-		Promise.all([
-			this.keyboardService.GetUDKCapability(),
-			this.keyboardService.GetKeyboardMapCapability()
-		]).then((responses: any[]) => {
-			const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
-			inputAccessoriesCapability.isUdkAvailable = responses[0];
-			inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-			this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, inputAccessoriesCapability);
-		}).catch((error) => {
-			console.error('error in initSmartAssist.Promise.all()', error);
-		});
+		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
+			.then((responses: any[]) => {
+				const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
+				inputAccessoriesCapability.isUdkAvailable = responses[0];
+				inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+				this.commonService.setLocalStorageValue(
+					LocalStorageKey.InputAccessoriesCapability,
+					inputAccessoriesCapability
+				);
+			})
+			.catch((error) => { });
 	}
 
 	openModernPreloadModal() {

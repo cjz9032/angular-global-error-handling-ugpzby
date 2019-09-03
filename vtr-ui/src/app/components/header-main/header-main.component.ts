@@ -28,10 +28,8 @@ export class HeaderMainComponent implements OnInit {
 		if (this.parentPath !== '' && this.parentPath !== undefined) {
 			this.menuItems.forEach((d, i) => {
 				d.path = self.parentPath + '/' + d.path;
-				console.log('UPDATED PATH', d.path);
 			});
 		}
-		console.log('MENU ITEMS UPDATED', this.menuItems);
 	}
 
 	onInnerBack() {

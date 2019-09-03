@@ -39,3 +39,13 @@
 		background-color: #F5F7F8;
 	}
 }
+
+:host-context(.is-gaming) {
+	.subpage-settings {
+		.settings-note {
+			color: $gaming_light_05;
+			background-color: $gaming_darker;
+			border: 1px solid $gaming_dark;
+		}
+	}
+}

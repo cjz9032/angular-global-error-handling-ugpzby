@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Invoer & bureau-accessoires",
                 "subtitle": "Instellingen voor bureau-accessoires en invoer",
-                "description": "Lenovo intelligente detectie combineert verschillende sensoren op uw computer om uw activiteiten te detecteren en de instellingen voor optimaal energiebeheer aan te passen",
+                "description": "In dit gedeelte kun je de toetsenbord- en muisfuncties instellen die je het meest gebruikt. Ontdek hier meer functies.",
                 "inputAccessory": {
                     "title": "Intelligent toetsenbord",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "Garantie niet gevonden",
             "yearDepotWarranty": "Jr depotgarantie",
             "warrantyDetails": "Garantiedetails:",
+            "warrantyDashboardDetails": "Garantiedetails",
             "startDate": "Begindatum: ",
             "endDate": "Einddatum: ",
             "status": "Status: ",

@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "Input e accessori",
                 "subtitle": "Impostazioni di input e accessori",
-                "description": "Rilevamento intelligente Lenovo combina vari sensori del computer per rilevare le attività e modificare le impostazioni per il risparmio energia ottimale",
+                "description": "In questa sezione è possibile impostare le funzioni di tastiera e mouse utilizzate più frequentemente. Scopri altre funzioni qui.",
                 "inputAccessory": {
                     "title": "Tastiera intelligente",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "Garanzia non trovata",
             "yearDepotWarranty": "Garanzia deposito annuale",
             "warrantyDetails": "Dettagli garanzia:",
+            "warrantyDashboardDetails": "Dettagli garanzia",
             "startDate": "Data di inizio: ",
             "endDate": "Data di fine: ",
             "status": "Stato: ",

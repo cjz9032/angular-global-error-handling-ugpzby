@@ -1082,7 +1082,7 @@
             "inputAccessories": {
                 "title": "輸入和配件",
                 "subtitle": "輸入和配件設定",
-                "description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整最佳電源管理的設定",
+                "description": "您可使用本節內容設定最常用的鍵盤和滑鼠功能。從這裡探索更多功能。",
                 "inputAccessory": {
                     "title": "智慧型鍵盤",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1574,7 @@
             "statusWarrantyNotFound": "找不到保固",
             "yearDepotWarranty": "年到府取件保固",
             "warrantyDetails": "保固詳細資料：",
+            "warrantyDashboardDetails": "保固詳細資料",
             "startDate": "開始日期：",
             "endDate": "結束日：",
             "status": "狀態：",

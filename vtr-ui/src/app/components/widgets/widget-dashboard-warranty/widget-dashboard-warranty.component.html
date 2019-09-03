@@ -1,0 +1,44 @@
+<div class="vtr-widget-warranty"
+	[ngClass]="{'in-warranty': item.info.status == 0, 'expired': item.info.status ==1, 'not-found': item.info.status == 2}">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col"
+				*ngIf="item.info.status >= 0">
+				<div class="title">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
+				<div class="content">
+					<div class="sub-description">
+						<div class="left-col">
+							<div class="pb-2 status-wrapper">
+								<span>{{'support.warranty.status' | translate}}</span><b>{{status.detail[item.info.status] | translate}}</b>
+							</div>
+						</div>
+						<div class="right-col">
+							<div class="pb-2">
+								<span>{{'support.warranty.startDate' | translate}}</span>
+								<b *ngIf="item.info.status !== 2">{{dateFormat(item.info.startDate)}}</b>
+								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
+							</div>
+							<div class="pb-2">
+								<span>{{'support.warranty.endDate' | translate}}</span>
+								<b *ngIf="item.info.status !== 2">{{dateFormat(item.info.endDate)}}</b>
+								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="button-box">
+					<a role="button"
+						id="support-view-warranty-options"
+						aria-label="support-view-warranty-options"
+						href="{{item.info.url}}"
+						target="_blank"
+						class="button"
+						vtrMetrics
+						metricsItem="ViewWarrantyOptionsButton"
+						metricsEvent="FeatureClick"
+						metricsParent="{{pageParent}}">{{'support.warranty.viewWarrantyOptions' | translate}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
