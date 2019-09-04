@@ -19,8 +19,9 @@
 									[common]="common">
 								</vtr-home-security-after-signup>
 								<vtr-home-security-content *ngIf="homeSecurityMockService.state === 'notRegister'"
-									[page]="'homeSecurity'"
-									[data]="homeSecurityDevicePosture">
+									page="homeSecurity"
+									[location]="homeSecurityLocation"
+									[permission]="permission">
 								</vtr-home-security-content>
                             </div>
                         </div>

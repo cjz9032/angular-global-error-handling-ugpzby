@@ -36,6 +36,7 @@ import { DevicePostureMockService } from 'src/app/services/device-posture/device
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/home-security-device-posture.model';
+import { HomeSecurityLocation } from 'src/app/data-models/home-security/home-security-location.model';
 
 
 @Component({
@@ -53,6 +54,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	welcomeModel: HomeSecurityWelcome;
 	allDevicesInfo: HomeSecurityAllDevice;
 	homeSecurityDevicePosture: HomeSecurityDevicePosture;
+	homeSecurityLocation: HomeSecurityLocation;
 	account: HomeSecurityAccount;
 	common: HomeSecurityCommon;
 	backId = 'chs-btn-back';
@@ -94,6 +96,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.account = new HomeSecurityAccount();
 		this.allDevicesInfo = new HomeSecurityAllDevice(this.translateService, this.homeSecurityMockService.getConnectedHomeSecurity().overview.allDevices);
 		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture();
+		this.homeSecurityLocation = new HomeSecurityLocation();
 		this.fetchCMSArticles();
 	}
 
@@ -160,6 +163,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		} else if (cacheDevicePosture) {
 			this.homeSecurityDevicePosture = cacheDevicePosture;
 		}
+		const cacheLocation = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation);
+		if (this.wifiSecurity) {
+			this.homeSecurityLocation = new HomeSecurityLocation(this.wifiSecurity);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.homeSecurityLocation);
+		} else if (cacheLocation) {
+			this.homeSecurityLocation = cacheLocation;
+		}
 
 		this.chs.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
 			if (chs.account) {
@@ -220,6 +230,18 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				isLocationServiceOn: this.homeSecurityDevicePosture.isLocationServiceOn,
 				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
 			});
+			this.homeSecurityLocation = new HomeSecurityLocation(this.wifiSecurity);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.homeSecurityLocation);
+		});
+
+		this.chs.on(EventTypes.wsIsComputerPermissionOnEvent, () => {
+			this.homeSecurityLocation = new HomeSecurityLocation(this.wifiSecurity);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.homeSecurityLocation);
+		});
+
+		this.chs.on(EventTypes.wsIsDevicePermissionOnEvent, () => {
+			this.homeSecurityLocation = new HomeSecurityLocation(this.wifiSecurity);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.homeSecurityLocation);
 		});
 
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.WidgetWifiStatus)) {
