@@ -23,6 +23,8 @@ export class PageAppsForYouComponent implements OnInit {
 	isCategoryArticlesShow: true;
 	systemUpdateBridge: any;
 	appDetails: AppDetails;
+	appDetailsJson: any;	// For Debug
+	errorMessage: any;
 	installButtonStatus: number;
 	public appGuid: any;
 
@@ -57,6 +59,8 @@ export class PageAppsForYouComponent implements OnInit {
 
 	ngOnInit() {
 		this.appsForYouService.getAppDetails();
+		this.errorMessage = '';
+		this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -77,14 +81,23 @@ export class PageAppsForYouComponent implements OnInit {
 					this.initAppDetails(notification.payload);
 					break;
 				case AppsForYouEnum.InstallAppProgress:
+					this.appDetails.showStatus = this.statusEnum.INSTALLING;
 					this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 					break;
 				case AppsForYouEnum.InstallAppResult:
 					if (notification.payload === 'InstallDone') {
 						this.appDetails.showStatus = this.statusEnum.INSTALLED;
 						this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+					} else if (notification.payload === 'NotFinished') {
+						this.errorMessage = 'Installation failed. Please try again.';
+						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
+						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+					} else if (notification.payload === 'InstallerRunning') {
+						this.appDetails.showStatus = this.statusEnum.INSTALLING;
+						this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 					} else {
-						this.appDetails.showStatus = this.statusEnum.INSTALLED;
+						this.errorMessage = 'Installation failed. Please try again.';
+						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					}
 					break;
@@ -97,6 +110,7 @@ export class PageAppsForYouComponent implements OnInit {
 	initAppDetails(appDetails: AppDetails) {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
+		this.appDetailsJson = JSON.stringify(this.appDetails);
 		this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 	}
 
@@ -105,10 +119,11 @@ export class PageAppsForYouComponent implements OnInit {
 			case this.installButtonStatusEnum.SEEMORE:
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
-				const path = this.systemUpdateBridge.getLaunchPath(this.appGuid);
+				const path =  await this.systemUpdateBridge.getLaunchPath(this.appGuid);
 				break;
 			case this.installButtonStatusEnum.INSTALL:
 			default:
+				this.errorMessage = '';
 				await this.appsForYouService.installApp(this.appGuid);
 				break;
 		}

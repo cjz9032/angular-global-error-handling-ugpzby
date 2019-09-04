@@ -12,32 +12,35 @@ export class AppDetails {
 	title: string;
 	image: string;
 	description: string;
-	category: {
-		id: string; // app category id
-		title: string; // app category title
-	};
-	privacyurl: string; // app privacy url
-	pfn: string; // app pfn
-	url: string; // app url
-	installtype: {
-		id: string; 	// app install type id
-		title: string; 	// app install type i.e., Desktop or Windows Store app or Web App
-	};
-	downloadlink: string; // app download link
-	videourl: string; 	// app video url
-	recommendation: [{
-		id: string; 	// app recommendation id
-		title: string; 	// app recommendation title
-	},
-	{
-		id: string; 	// app recommendation id
-		title: string; 	// app recommendation title
-	}];
+	category: Category;
+	privacyurl: string; 	// app privacy url
+	pfn: string;			// app pfn
+	url: string; 			// app url
+	installtype: Installtype;
+	downloadlink: string;	// app download link
+	videourl: string; 		// app video url
+	recommendations: Recommendation[];
 	screenshots: []; 	// ["{app screenshot1}",  "{app screenshot2}"],
 	by: string; 		// app manufacturer name
-	updated: string; 	// app updated date
+	updated: Date; 		// app updated date
+	type: string;
 	filters: [];
 	showStatus: number;
+}
+
+export class Category {
+	id: string; 	// app category id
+	title: string; 	// app category title
+}
+
+export class Installtype {
+	id: string; 	// app install type id
+	title: string; 	// app install type i.e., Desktop or Windows Store app or Web App
+}
+
+export class Recommendation {
+	id: string; 	// app recommendation id
+	title: string; 	// app recommendation title
 }
 
 @Injectable({
@@ -78,6 +81,7 @@ export class AppsForYouService {
 
 	getAppDetails() {
 		if (this.isInitialized && !this.cmsAppDetails) {
+			// TODO: obtain app id by code
 			const appId = '030B3E7E-9235-4A44-823A-8D02B7A6F30F';
 			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: 'en' })])
 				.then((response) => {
@@ -98,7 +102,25 @@ export class AppsForYouService {
 		appDetails.id = detailFromCMS.Id;
 		appDetails.title = detailFromCMS.Title;
 		appDetails.image = detailFromCMS.Image;
+
+		// Description
 		appDetails.description = detailFromCMS.Description;
+
+		// Screenshots
+		appDetails.screenshots = Object.assign({}, detailFromCMS.Screenshots);
+
+		// Additional Information
+		appDetails.by = detailFromCMS.By;
+		appDetails.updated = detailFromCMS.Updated;
+		// TODO: fix undefined in nest object
+		// appDetails.installtype.id = detailFromCMS.InstallType.Id;
+		// appDetails.installtype.title = detailFromCMS.InstallType.Title;
+		// appDetails.category.id = detailFromCMS.Category.Id;
+		// appDetails.category.title = detailFromCMS.Category.Title;
+
+		// Legal Agreement
+		appDetails.privacyurl = detailFromCMS.PrivacyURL;
+
 		return appDetails;
 	}
 

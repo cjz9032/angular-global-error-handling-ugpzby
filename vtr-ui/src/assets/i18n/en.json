@@ -2482,5 +2482,39 @@
 			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
 			"enable": "Enable"
 		}
+	},
+	"appsForYou": {
+		"common": {
+			"errorMessage": {
+				"installationFailed": "Installation failed. Please try again.",
+				"networkError": "Network Error.",
+				"installationCancelled": "Installation Cancelled."
+			}
+		},
+		"menuText": {
+			"adobeRedemption": "Adobe Redemption",
+			"lenovoMigrationAssistant": "Lenovo Migration Assistant"
+		},
+		"appDetails": {
+			"installButton": {
+				"install": "Install",
+				"installing": "Installing",
+				"installed": "Installed",
+				"launch": "Launch",
+				"seeMore": "See More"
+			},
+			"fieldName": {
+				"description": "Description",
+				"screenshots": "Screenshots",
+				"additionalInformation": "Additional Information",
+				"by": "By:",
+				"updated": "Updated:",
+				"type": "Type:",
+				"category": "Category:",
+				"legalAgreement": "Legal Agreement",
+				"readMore": "Read More",
+				"readLess": "Read Less"
+			}
+		}
 	}
 }
