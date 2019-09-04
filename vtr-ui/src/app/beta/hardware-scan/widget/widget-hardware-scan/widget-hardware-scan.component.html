@@ -53,10 +53,10 @@
                         <div class="cancel-check" *ngIf="!(percent === 100)">
                             <a [ngClass]="{'cancel-check-text': !disableCancel, 'disabled-cancel': disableCancel}" (click)="onCancel()">{{cancelText}}</a>
                         </div>
-                        <div class="container final-result-code" *ngIf="finalResultCode">
+                        <div class="container final-result-code" *ngIf="getFinalResultCode()">
                             <span class="result-code-value-text">{{finalResultCodeText}}:</span>
-                            <span class="result-code-complete-text"> {{finalResultCode}}</span>
-                            <fa-icon *ngIf="tooltipInformation" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
+                            <span class="result-code-complete-text"> {{getFinalResultCode()}}</span>
+                            <fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="getTooltipInformation()" [icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
                             </fa-icon>
                         </div>
                     </div>
