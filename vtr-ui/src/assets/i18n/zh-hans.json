@@ -1250,7 +1250,8 @@
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
-                    "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
+                    "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
@@ -2394,7 +2395,7 @@
             "error": "错误",
             "delete": "删除",
             "warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行",
-			"scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
+            "scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
         },
         "recoverBadSectors": {
             "title": "恢复坏扇区",
@@ -2444,6 +2445,6 @@
         "attention": "注意",
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
-		"pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
+        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
     }
 }

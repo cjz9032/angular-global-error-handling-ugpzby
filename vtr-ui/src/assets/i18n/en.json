@@ -635,7 +635,6 @@
 		"deviceSettings": {
 			"helpful": "Helpful Content",
 			"batteryGauge": {
-				"title": "BATTERY GAUGE",
 				"subtitle": "Battery",
 				"hours": "hours",
 				"hour": "hour",
@@ -643,9 +642,7 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
-				"updating": "Updating",
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
-				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
@@ -730,6 +727,7 @@
 					"subtitle": "Intelligent Cooling",
 					"subtitle1": "Battery & Quiet",
 					"description1": "When on, this feature dynamically adjusts thermal settings to your needs. It adjusts settings to keep the device cool and quiet while being held or idle. While the device is on a stable surface, it optimizes the performance. When off, you can manually set the thermal priority.",
+					"nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
 					"description13": "When on, this feature dynamically adjusts thermal settings to your needs. It adjusts settings to keep the device cool and quiet while being held or idle. While the device is on a stable surface, it optimizes the performance. When off, you can manually set the thermal priority.",
@@ -1483,6 +1481,10 @@
 			"catalogErrorException": "An error was detected with the update catalog for your system on the System Update Server. Please try again later.",
 			"fileNotFoundException": "File not found."
 		}
+	},
+	"smartPerformance" : {
+		"title": "Health & Support",
+		"back": "BACK"
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",

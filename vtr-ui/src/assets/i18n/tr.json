@@ -1250,7 +1250,8 @@
                     "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
                     "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Sıfır Dokunma ile Oturum Açma kullanılamaz.",
-                    "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın."
+                    "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
@@ -2394,7 +2395,7 @@
             "error": "Hata",
             "delete": "Sil",
             "warningBatterySaver": "Not: Pil Tasarrufu kipinde Zamanlanmış Taramalar gerçekleştirilmez",
-			"scheduleIntervalLimit": "On dakikalık zaman dilimi içinde başka bir tarama zaten zamanlandı. Lütfen başka bir zaman seçin."
+            "scheduleIntervalLimit": "On dakikalık zaman dilimi içinde başka bir tarama zaten zamanlandı. Lütfen başka bir zaman seçin."
         },
         "recoverBadSectors": {
             "title": "Bozuk Kesimleri Kurtar",
@@ -2444,6 +2445,6 @@
         "attention": "Dikkat",
         "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
-		"pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin."
+        "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin."
     }
 }

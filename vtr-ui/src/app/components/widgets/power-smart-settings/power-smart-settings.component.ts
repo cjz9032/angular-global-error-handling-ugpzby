@@ -295,6 +295,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 							this.onIntelligentCoolingToggle(customEvent);
 						}
 					} else {
+						this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.nocqldesc');
+						this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.nocqldesc';
 						this.showIntelligentCoolingToggle = false;
 					}
 					this.setPerformanceAndCool(mode);

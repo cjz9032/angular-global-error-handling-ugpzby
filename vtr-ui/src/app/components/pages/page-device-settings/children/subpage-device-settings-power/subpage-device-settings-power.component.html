@@ -170,6 +170,7 @@
 					<li *ngIf="showFlipToBootSection$ | async">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
+							[name]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]=false
@@ -185,6 +186,7 @@
 						*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+							[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]="!showEasyResumeSection"
@@ -232,6 +234,7 @@
 						*ngIf="showEasyResumeSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
+							[name]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
 							[isLastChild]=true

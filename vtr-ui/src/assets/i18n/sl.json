@@ -1250,7 +1250,8 @@
                     "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti. Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
                     "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stanja, te funkcije morda ne bodo pravilno delovale.",
                     "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen. Prijava brez dotika ne bo delovala.",
-                    "description5": "3. Prilagodite zaslon računalnika na primeren kot, tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo."
+                    "description5": "3. Prilagodite zaslon računalnika na primeren kot, tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Odprite nastavitve Windows Hello",
@@ -2394,7 +2395,7 @@
             "error": "Napaka",
             "delete": "Izbriši",
             "warningBatterySaver": "Opomba: načrtovani pregledi se ne bodo izvedli v načinu varčevanja z baterijo",
-			"scheduleIntervalLimit": "V obdobju desetih minut je že bil načrtovan drug pregled. Izberite drugo uro."
+            "scheduleIntervalLimit": "V obdobju desetih minut je že bil načrtovan drug pregled. Izberite drugo uro."
         },
         "recoverBadSectors": {
             "title": "Obnovitev poškodovanih sektorjev",
@@ -2444,6 +2445,6 @@
         "attention": "Opozorilo",
         "cancelTextPrompt": "Ali ste prepričani, da želite preklicati?",
         "cancelTextProgress": "Počakajte na potek preklica",
-		"pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga."
+        "pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga."
     }
 }
