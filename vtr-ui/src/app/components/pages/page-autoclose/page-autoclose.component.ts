@@ -103,6 +103,8 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	initTurnOnAction() {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
@@ -199,11 +201,14 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	deleteAppFromList(appData: any) {
+		console.log(appData);
+		this.autoCloseAppList.splice(appData.index, 1);
 		this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
 			if (response) {
-				this.autoCloseAppList.splice(appData.index, 1);
 				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				this.refreshRunningList();
+			} else {
+				this.refreshAutoCloseList();
 			}
 		});
 	}
