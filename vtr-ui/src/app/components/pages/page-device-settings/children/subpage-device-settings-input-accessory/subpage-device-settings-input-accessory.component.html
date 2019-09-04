@@ -83,7 +83,7 @@
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.title' | translate"
 							componentName="Input Accessories"
 							[caption]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.main' | translate"
-							[leftIcon]="['fal', 'keyboard']"
+							[leftIcon]="['icomoon', 'VOIP-Hotkeys']"
 							[showChildContent]="true"
 							[theme]="'white'"
 							[isLastChild]="true"
@@ -99,7 +99,7 @@
 									<div class="pl-2 pt-3 pb-4 prompting">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}</div>
 									<vtr-ui-rectangle-radio *ngFor="let installedApp of installedApps"
 															[radioId]="'radio'| uniqueId"
-															[iconName]="'far question-circle'"
+															[iconName]="'app-icon ' + iconName[installedApp.appName]"
 															[label]="voipAppName[installedApp.appName]"
 															[value]='installedApp.appName'
 															[group]="'app'"
@@ -115,10 +115,22 @@
 								</div>
 							</div>
 							<ng-template #noAppInstalled>
-								<div class="col-12 prompting">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}</div>
-								<div class="col-12">
-									<i class="icon"></i>
-									<span></span>
+								<div class="row">
+									<div class="col-12">
+										<div class="pl-2 pt-3 pb-4 prompting">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}</div>
+									</div>
+								</div>
+								<div class="row mt-2">
+									<div class="col-12 pl-5">
+										<span class="app-icon icon-s4b mr-4"></span>
+										<span class="app-text">Skype for Business 2016</span>
+									</div>
+								</div>
+								<div class="row mt-5 pb-4 mb-5">
+									<div class="col-12 pl-5">
+										<span class="app-icon icon-teams mr-4"></span>
+										<span class="app-text">Microsoft Teams 1.0</span>
+									</div>
 								</div>
 								<div class="row">
 									<div class="feature-note col-12 pl-5 pr-5 pt-4 pb-4"

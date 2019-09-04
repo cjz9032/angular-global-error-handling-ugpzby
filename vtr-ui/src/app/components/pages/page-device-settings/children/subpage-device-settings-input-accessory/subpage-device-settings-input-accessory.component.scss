@@ -251,8 +251,43 @@
 
 .voip {
 	.caption,
-	.prompting {
+	.prompting,
+	.app-text {
 		font-size: 1.75rem;
 		font-weight: 300;
+	}
+}
+
+.app-icon {
+	display: inline-block;
+	width: 5rem;
+	height: 5rem;
+	vertical-align: middle;
+
+	&.icon-s4b {
+		background: url('src/assets/images/S4B_2016.png') center/cover;
+	}
+	&.icon-teams {
+		background: url('src/assets/images/Microsoft_Teams_1.0.png') center/cover;
+	}
+}
+
+:host ::ng-deep {
+	vtr-ui-rectangle-radio {
+		.app-icon {
+			display: inline-block;
+			position: absolute;
+			bottom: 1.5rem;
+			right: 1.5rem;
+			width: 4rem;
+			height: 4rem;
+
+			&.icon-s4b {
+				background: url('src/assets/images/S4B_2016.png') center/cover;
+			}
+			&.icon-teams {
+				background: url('src/assets/images/Microsoft_Teams_1.0.png') center/cover;
+			}
+		}
 	}
 }

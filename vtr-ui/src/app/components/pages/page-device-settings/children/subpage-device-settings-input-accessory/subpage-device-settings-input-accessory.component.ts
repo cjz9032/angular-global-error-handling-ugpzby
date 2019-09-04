@@ -5,6 +5,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SupportedAppEnum, VoipErrorCodeEnum } from '../../../../../services/input-accessories/voip.enum';
+import { VoipAppListInterface, VoipResponseInterface } from '../../../../../services/input-accessories/voip.interface';
 import { EMPTY } from 'rxjs';
 
 @Component({
@@ -31,10 +33,11 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public isMouseVisible = false;
 
 	public selectedApp: number | string = '';
-	public installedApps: any[] = [];
+	public installedApps: VoipAppListInterface[] = [];
 	public showVoiphotkeysSection = false;
 	public isAppInstalled = false;
 	voipAppName = ['Skype For Business', 'Microsoft Teams'];
+	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -58,26 +61,28 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
 	getVoipHotkeysSettings() {
 		// this.keyboardService.GetVoipHotkeysSettings()
-		Promise.resolve({
-			errorCode: 0,
+		Promise.resolve<VoipResponseInterface>({
+			errorCode: VoipErrorCodeEnum.SUCCEED,
 			capability: true,
 			appList: [
 				{
 					appName: 0,
-					isAppInstalled: true
+					isAppInstalled: true,
+					isSelected: true
 				},
 				{
 					appName: 1,
-					isAppInstalled: true
+					isAppInstalled: true,
+					isSelected: false
 				}
 			]
 		})
 			.then(res => {
-				if (+res.errorCode !== 0 || !res.capability) {
+				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED || !res.capability) {
 					return res;
 				}
 				this.showVoiphotkeysSection = true;
-				res.appList.forEach((element: { isAppInstalled: boolean, appName: number | string; }) => {
+				res.appList.forEach(element => {
 					if (element.isAppInstalled) {
 						this.isAppInstalled = true;
 					}
@@ -91,12 +96,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			});
 	}
 
-	setVoipHotkeysSettings($event: any) {
+	setVoipHotkeysSettings($event: SupportedAppEnum) {
 		const prev = this.selectedApp;
 		this.selectedApp = $event;
 		this.keyboardService.SetVoipHotkeysSettings($event)
 			.then(res => {
-				if (+res.errorCode !== 0) {
+				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED) {
 					this.selectedApp = prev;
 				}
 			})
