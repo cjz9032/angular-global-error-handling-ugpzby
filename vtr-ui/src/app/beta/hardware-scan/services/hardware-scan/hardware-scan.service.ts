@@ -41,6 +41,8 @@ export class HardwareScanService {
 	private previousItemsWidget = {};
 	private cancelRequested: boolean;
 	private disableCancel = false;
+	private finalResponse: any;
+	private enableViewResults = false;
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
@@ -188,6 +190,43 @@ export class HardwareScanService {
 
 	public isDisableCancel() {
 		return this.disableCancel;
+	}
+
+	public setFinalResponse(response: any) {
+		this.finalResponse = response;
+	}
+
+	public getFinalResponse() {
+		return this.finalResponse;
+	}
+
+	public getFinalResultCode() {
+		if (this.finalResponse && this.finalResponse.finalResultCode) {
+			return this.finalResponse.finalResultCode;
+		}
+		return '';
+	}
+
+	public getFinalResultDescription() {
+		if (this.finalResponse && this.finalResponse.resultDescription) {
+			return this.finalResponse.resultDescription;
+		}
+		return '';
+	}
+
+	public getFinalResultStartDate() {
+		if (this.finalResponse && this.finalResponse.startDate) {
+			return this.finalResponse.startDate;
+		}
+		return '';
+	}
+
+	public setEnableViewResults(status: boolean) {
+		this.enableViewResults = status;
+	}
+
+	public getEnableViewResults() {
+		return this.enableViewResults;
 	}
 
 	public deleteScan(payload) {
@@ -887,7 +926,8 @@ export class HardwareScanService {
 						testInfo['status'] = test[j].result;
 						testInfo['statusToken'] = this.statusToken(test[j].result);
 
-						if (testInfo['status'] === HardwareScanTestResult.NotStarted) {
+						if (testInfo['status'] === HardwareScanTestResult.NotStarted ||
+							testInfo['status'] === HardwareScanTestResult.InProgress) {
 							testInfo['status'] = HardwareScanOverallResult.Cancelled;
 							testInfo['statusToken'] = this.statusToken(HardwareScanOverallResult.Cancelled);
 						}
