@@ -54,11 +54,12 @@ export class CommunicationWithFigleafService {
 
 	private receiveFigleafReadyForCommunicationState() {
 		const figleafConnectSubscription = timer(0, 3000).pipe(
-			switchMap(() => this.sendTestMessage()),
-			catchError((err) => {
-				console.error('send test message error: ', err);
-				return EMPTY;
-			}),
+			switchMap(() => this.sendTestMessage().pipe(
+				catchError((err) => {
+					console.error('send test message error: ', err);
+					return EMPTY;
+				}),
+			)),
 			distinctUntilChanged()
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
 			const isFigleafReady = figleafStatus.status === 0;
