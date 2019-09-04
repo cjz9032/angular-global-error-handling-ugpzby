@@ -303,6 +303,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 
 		if (gamingStatus.networkBoostFeature) {
+			// this.legionUpdate[2].readonly = false;
 			this.renderNetworkBoostStatus();
 		}
 	}
@@ -341,6 +342,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
 			if (isStatusUpdated) {
 				this.SetNetworkBoostCacheStatus(status);
+				this.legionUpdate[2].isChecked = status;
 			}
 		} catch (err) {}
 	}
@@ -523,9 +525,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			if (!this.gamingCapabilities.fbnetFilter) {
 				this.legionUpdate[2].isDriverPopup = $event;
 			} else {
-				this.legionUpdate[2].isPopup = $event;
+				// 	this.legionUpdate[2].isPopup = $event;
+				await this.setNetworkBoostStatus($event.switchValue);
 			}
-			await this.setNetworkBoostStatus($event.switchValue);
 		}
 	}
 

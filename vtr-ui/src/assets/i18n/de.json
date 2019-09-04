@@ -802,6 +802,11 @@
                         "description": "Aktivieren Sie diese Funktion, um die Aktivierungszeit zu verkürzen, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen.",
                         "tooltip": "Mit dieser Funktion wird die Aktivierungszeit verkürzt, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen. Ist diese Funktion aktiviert, wird der Computer beim Schließen der Abdeckung in einen Modus mit niedrigen Stromverbrauch versetzt, ist aber sofort wieder einsatzbereit, wenn Sie die Abdeckung innerhalb von 15 Minuten wieder öffnen. Bei dieser Funktion führt Ihr Notebook außerdem noch nicht abgeschlossene Aktivitäten zu Ende (wie das Senden einer E-Mail oder das Herunterladen einer Datei), bevor das System in den Energiesparmodus übergeht."
                     },
+					"flipToBoot": {
+						"title": "Beim Aufklappen einschalten",
+						"description": "Mit dieser Funktion wird der Computer eingeschaltet, wenn Sie den Deckel öffnen – so, als hätten Sie auf den Netzschalter gedrückt. ",
+						"tooltip": "Mit dieser Funktion startet der Computer beim Öffnen des Deckels.  Sie ist besonders nützlich, wenn Sie Anmeldedaten zur Gesichtserkennung über Windows Hello hinterlegt haben."
+					},
                     "or": "Oder"
                 },
                 "otherSettings": {
@@ -1245,7 +1250,8 @@
                     "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen. Die Funktion sammelt jedoch KEINE personenbezogenen Daten.",
                     "description3": "1. Wenn Ihr Computer im Zelt‑, Tablet‑ oder Standmodus ist, funktionieren diese Funktionen möglicherweise nicht ordnungsgemäß.",
                     "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die Zero-Touch-Anmeldung funktioniert nicht.",
-                    "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann."
+                    "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello-Einstellungen aufrufen",
@@ -2389,7 +2395,7 @@
             "error": "Fehler",
             "delete": "Löschen",
             "warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
-			"scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus."
+            "scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus."
         },
         "recoverBadSectors": {
             "title": "Wiederherstellung von fehlerhaften Sektoren",
@@ -2439,6 +2445,6 @@
         "attention": "Achtung",
         "cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?",
         "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist",
-		"pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn."
+        "pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn."
     }
 }

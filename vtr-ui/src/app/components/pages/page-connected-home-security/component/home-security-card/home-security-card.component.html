@@ -11,9 +11,10 @@
 				<vtr-ui-button
 					metricsEvent="featureClick"
 					metricsItem="startTrial"
+					(click)="openTrialModal()"
 					[title]="'homeSecurity.card.startTrial' | translate"
 					[label]="'homeSecurity.card.startTrial' | translate"
-					[linkId]="'chs-card-btn-startTrial'">
+					linkId="chs-card-btn-startTrial">
 				</vtr-ui-button>
 			</div>
 		</div>
@@ -31,7 +32,7 @@
 					[title]="'homeSecurity.card.join' | translate"
 					[label]="'homeSecurity.card.join' | translate"
 					(onClick)="joinGroup()"
-					[linkId]="'chs-card-btn-joinGroup'">
+					linkId="chs-card-btn-joinGroup">
 				</vtr-ui-button>
 			</div>
 		</div>

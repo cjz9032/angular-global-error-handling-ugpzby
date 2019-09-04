@@ -802,6 +802,11 @@
                         "description": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor a funkció engedélyezésével gyorsabbá tehető a visszatérés.",
                         "tooltip": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor ezzel a funkcióval gyorsabbá tehető a visszatérés. Ha engedélyezi a funkciót, akkor a számítógép a képernyő lehajtásakor alacsony energiafogyasztási állapotba lép, de azonnal visszatér, ha a képernyő lecsukásától számított 15 percen belül nyitja fel a képernyőt. A funkció használata esetén a notebook megpróbálja befejezni a függőben lévő tevékenységeket (például az e-mailek küldését vagy a fájlok letöltését) a rendszer működésének felfüggesztése előtt."
                     },
+					"flipToBoot": {
+						"title": "Rendszerindítás kinyitással",
+						"description": "Ez a funkció lehetővé teszi a számítógép bekapcsolását fedelének kinyitásával, ugyanúgy, mintha megnyomná a bekapcsoló gombot. ",
+						"tooltip": "Ez a funkció a fedél kinyitásakor automatikusan elindítja a számítógépet.  Különösen akkor hasznos, ha beállította az arcképpel történő bejelentkezést a Windows Hello segítségével."
+					},
                     "or": "Vagy"
                 },
                 "otherSettings": {
@@ -1245,7 +1250,8 @@
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
-                    "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez."
+                    "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
@@ -2389,7 +2395,7 @@
             "error": "Hiba",
             "delete": "Törlés",
             "warningBatterySaver": "Megjegyzés: Az ütemezett vizsgálatok energiatakarékos módban nem működnek",
-			"scheduleIntervalLimit": "Egy újabb vizsgálat már be van ütemezve tíz perces időtartamon belül. Válasszon másik időpontot."
+            "scheduleIntervalLimit": "Egy újabb vizsgálat már be van ütemezve tíz perces időtartamon belül. Válasszon másik időpontot."
         },
         "recoverBadSectors": {
             "title": "Hibás szektorok helyreállítása",
@@ -2439,6 +2445,6 @@
         "attention": "Figyelem",
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
-		"pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
+        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
     }
 }
