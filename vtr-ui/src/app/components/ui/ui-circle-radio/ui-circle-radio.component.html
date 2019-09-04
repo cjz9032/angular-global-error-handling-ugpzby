@@ -15,7 +15,7 @@
 			[metricsItem]="'radio.'+label"
 			[metricsValue]="!radio.checked">
 		<label for="{{radioId}}"
-			class="checkbox-custom-label">
+			class="checkbox-custom-label" id="{{radioId}}" attr.aria-label="{{radioId}}">
 			<div *ngIf="!hideIcon"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
 		</label>

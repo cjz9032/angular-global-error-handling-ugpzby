@@ -1250,7 +1250,8 @@
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
                     "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
-                    "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden."
+                    "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
@@ -2394,7 +2395,7 @@
             "error": "Fout",
             "delete": "Verwijderen",
             "warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
-			"scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip."
+            "scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip."
         },
         "recoverBadSectors": {
             "title": "Slechte sectoren herstellen",
@@ -2444,6 +2445,6 @@
         "attention": "Let op",
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
-		"pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
+        "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
     }
 }
