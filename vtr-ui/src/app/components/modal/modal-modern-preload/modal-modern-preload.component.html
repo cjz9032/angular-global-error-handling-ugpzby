@@ -120,7 +120,7 @@
 						<img [src]="errorIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
 					</div>
 					<div class="error-box w-100 pt-2">
-						<div class="error-text mb-5" [innerHTML]="'modernPreload.errorDescription' | translate"></div>
+						<div class="bottom-tips mb-5" [innerHTML]="'modernPreload.errorDescription' | translate"></div>
 						<div class="button-content mb-4">
 							<div class="btn-box mr-5">
 								<vtr-ui-button (onClick)="retry()" metricsEvent="FeatureClick"
