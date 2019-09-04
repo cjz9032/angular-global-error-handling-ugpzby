@@ -16,7 +16,6 @@ import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalZeroTouchLockFacialRecognitionComponent } from '../../modal/modal-zero-touch-lock-facial-recognition/modal-zero-touch-lock-facial-recognition.component';
 import { Router, NavigationExtras } from '@angular/router';
 import { throttle, throttleTime, debounce, debounceTime } from 'rxjs/operators';
 import { of, fromEvent } from 'rxjs';
@@ -398,39 +397,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public onZeroTouchLockFacialRecoChange() {
 		const value = this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled;
-		if(value === false) {
-			this.smartAssist.setZeroTouchLockFacialRecoStatus(value)
+		this.smartAssist.setZeroTouchLockFacialRecoStatus(value)
 			.then((isSuccess: boolean) => {
 			console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess} ; ${value}`);
 		});		
-		} else {
-			this.zeroTouchLockFacialRecoPopup();
-		}
-	}
-
-	zeroTouchLockFacialRecoPopup() {
-		console.log('zero touch lock facial recognition modal open');
-		this.modalService.open(ModalZeroTouchLockFacialRecognitionComponent, {
-			backdrop: 'static',
-			size: 'sm',
-			centered: true,
-			windowClass: 'Zero-touch-lock-facial-recognition-Modal'
-		}).result.then(
-			result => {
-				if (result === 'enable') {
-					// close modal and to set	
-					this.smartAssist.setZeroTouchLockFacialRecoStatus(this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled)
-					.then((isSuccess: boolean) => {
-							console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess}`);
-		});	
-				} else if (result === 'cancel') {
-					// cancel and close modal
-					setTimeout(() => {
-						this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;						
-					}, 0);
-				}
-			}
-		)
 	}
 
 	public onDistanceSensitivityAdjustToggle(event: any) {

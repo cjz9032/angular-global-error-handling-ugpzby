@@ -219,3 +219,14 @@
 	}
 }
 
+.facial-recognition {
+	h3 {
+		font-weight: $weight_bold;
+		color: $main_darker;
+	}
+	p {
+		font-size: $body;
+		font-weight: $weight_light;
+		max-width: 60rem;
+	}
+}
