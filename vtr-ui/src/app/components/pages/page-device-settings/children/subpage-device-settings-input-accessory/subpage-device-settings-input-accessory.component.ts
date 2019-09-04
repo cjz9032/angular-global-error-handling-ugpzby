@@ -5,6 +5,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -114,11 +115,13 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					}
 				})
 					.catch(error => {
-						console.error('keyboard Layout name error here', error);
+						this.logger.error('keyboard Layout name error here', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getKBDLayoutName', error.message);
+			return EMPTY;
 		}
 	}
 
@@ -131,11 +134,13 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					this.getAdditionalCapabilities();
 				})
 					.catch(error => {
-						console.error('keyboard Layout name error here', error);
+						this.logger.error('keyboard Layout name error here', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getKBDMachineType', error.message);
+			return EMPTY;
 		}
 	}
 
@@ -261,7 +266,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getAdditionalCapabilities', error.message);
+			return EMPTY;
 		}
 	}
 

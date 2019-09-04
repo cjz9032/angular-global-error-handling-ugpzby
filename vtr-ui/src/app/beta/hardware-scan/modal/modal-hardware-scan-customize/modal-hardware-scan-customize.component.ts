@@ -38,8 +38,8 @@ export class ModalHardwareScanCustomizeComponent implements OnInit {
 		}
 	}
 
-	public receiveSelect(){
-		if(this.errorMessage !== ''){
+	public receiveSelect() {
+		if (this.errorMessage !== '') {
 			this.errorMessage = '';
 		}
 	}

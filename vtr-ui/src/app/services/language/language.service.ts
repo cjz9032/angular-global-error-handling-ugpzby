@@ -4,59 +4,54 @@ import { LoggerService } from '../logger/logger.service';
 import { CommonService } from '../common/common.service';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
+import { TranslationNotification } from 'src/app/data-models/translation/translation';
+import { EMPTY } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class LanguageService {
-	public readonly isLanguageLoaded: boolean;
+	public isLanguageLoaded = false;
 	private readonly defaultLanguage = 'en';
+	private readonly supportedLanguages: Array<string> = [
+		'ar',
+		'cs',
+		'da',
+		'de',
+		'el',
+		'en',
+		'es',
+		'fi',
+		'fr',
+		'he',
+		'hr',
+		'hu',
+		'it',
+		'ja',
+		'ko',
+		'nb',
+		'nl',
+		'pl',
+		'pt',
+		'pt-br',
+		'ro',
+		'ru',
+		'sk',
+		'sl',
+		'sr-latn',
+		'sv',
+		'tr',
+		'uk',
+		'zh-hans',
+		'zh-hant'
+	];
 
 	constructor(
 		private translate: TranslateService,
 		private logger: LoggerService,
 		private commonService: CommonService
 	) {
-		// singleton service will call it once
-		this.setupTranslation(translate);
-		this.isLanguageLoaded = true;
-	}
-
-	private setupTranslation(translate: TranslateService) {
-		translate.addLangs([
-			'ar',
-			'cs',
-			'da',
-			'de',
-			'el',
-			'en',
-			'es',
-			'fi',
-			'fr',
-			'he',
-			'hr',
-			'hu',
-			'it',
-			'ja',
-			'ko',
-			'nb',
-			'nl',
-			'pl',
-			'pt',
-			'pt-br',
-			'ro',
-			'ru',
-			'sk',
-			'sl',
-			'sr-latn',
-			'sv',
-			'tr',
-			'uk',
-			'zh-hans',
-			'zh-hant'
-		]);
-
-		this.useLocaleAvailableInCache();
+		translate.addLangs(this.supportedLanguages);
 	}
 
 	public useLanguageByLocale(deviceLocale: string) {
@@ -67,7 +62,7 @@ export class LanguageService {
 
 			let langCode = this.defaultLanguage;
 			const locale = deviceLocale.toLowerCase();
-			if (locale && ![ 'zh', 'pt' ].includes(locale.substring(0, 2))) {
+			if (locale && !['zh', 'pt'].includes(locale.substring(0, 2))) {
 				if (locale && locale.substring(0, 2) === 'sr') {
 					langCode = 'sr-Latn';
 				} else {
@@ -81,8 +76,9 @@ export class LanguageService {
 				}
 			}
 			this.useLanguage(langCode);
-		} catch (e) {
-			this.logger.error('exception in updateLanguageSettings', JSON.stringify(e));
+		} catch (error) {
+			this.logger.error('LanguageService.useLanguageByLocale', error.message);
+			return EMPTY;
 		}
 	}
 
@@ -92,20 +88,30 @@ export class LanguageService {
 	 */
 	public useLanguage(lang: string = this.defaultLanguage) {
 		if (lang) {
-			const locale = lang.toLowerCase();
-			this.translate.use(locale);
+			this.isLanguageLoaded = true;
+			let locale = lang.toLowerCase();
+			const isLanguageSupported = this.isLanguageSupported(locale);
+			locale = isLanguageSupported ? locale : this.defaultLanguage;
+			this.translate.use(locale).subscribe(() => {
+				// translation file loaded
+				this.logger.error('LanguageService.useLanguage translation loaded', locale);
+				this.commonService.sendNotification(TranslationNotification.TranslationLoaded, locale);
+			});
 		}
 	}
 
-	private useLocaleAvailableInCache(): boolean {
-		// check cache for locale, if available then use it.
-		const deviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(
-			DashboardLocalStorageKey.DeviceInfo,
-			undefined
-		);
-		if (deviceInfo && deviceInfo.locale) {
-			this.useLanguage(deviceInfo.locale);
-			return true;
+	private isLanguageSupported(lang: string): boolean {
+		if (lang) {
+			return this.supportedLanguages.includes(lang.toLowerCase());
+		}
+		return false;
+	}
+
+	public isLocaleSame(lang: string) {
+		const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+		if (cachedDeviceInfo && cachedDeviceInfo.locale && cachedDeviceInfo.locale.length > 0) {
+			const isLocaleSame = cachedDeviceInfo.locale === lang.toLowerCase();
+			return isLocaleSame;
 		}
 		return false;
 	}

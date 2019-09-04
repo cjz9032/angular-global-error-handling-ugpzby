@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DevService } from 'src/app/services/dev/dev.service';
-import { R3TargetBinder } from '@angular/compiler';
 
 @Component({
 	selector: 'vtr-menu-header',
@@ -11,13 +9,9 @@ export class MenuHeaderComponent implements OnInit {
 
 	@Input() menuItems = [];
 
-	constructor(
-		private devService: DevService
-	) { }
+	constructor() { }
 
-	ngOnInit() {
-		this.devService.writeLog('HEADER MENU INIT', this.menuItems);
-	}
+	ngOnInit() { }
 
 	getActiveTab() {
 		let activeTab = {};
