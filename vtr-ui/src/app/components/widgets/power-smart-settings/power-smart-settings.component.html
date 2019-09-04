@@ -32,35 +32,43 @@
 									<div class="row no-gutters"
 										*ngIf="showIntelligentCoolingModes">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
+											[theme]="'blue'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
 											[value]="'performance'"
 											[checked]="radioPerformance"
-											(change)="changePerformance($event)">
+											(change)="changePerformance($event)"
+											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox [radioId]="'radioICQuiteCool'"
+											[theme]="'blue'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
 											[value]="showIC==14 ? 'LE-IntelligentCooling2x' : 'LE-CoolingDown2x' "
 											[checked]="radioQuietCool"
-											(change)="changeQuietCool($event)">
+											(change)="changeQuietCool($event)"
+											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
+											[theme]="'blue'"
 											[radioId]="'radioICPerformance'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
 											[value]="'performance'"
 											[checked]="radioPerformance"
-											(change)="changePerformance($event)">
+											(change)="changePerformance($event)"
+											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC===14"
+											[theme]="'blue'"
 											[radioId]="'quiteBatterySaving'"
 											[group]="'radio'"
 											[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
 											[value]="'LE-Battery-Life-mode2x'"
 											[checked]="radioBatterySaving"
-											(change)="changeBatterySaving($event)">
+											(change)="changeBatterySaving($event)"
+											[textId]="'myDevice-settings-power-intelligent-cooling'">
 										</vtr-ui-circle-radio-with-checkbox>
 									</div>
 									<div class="well"
