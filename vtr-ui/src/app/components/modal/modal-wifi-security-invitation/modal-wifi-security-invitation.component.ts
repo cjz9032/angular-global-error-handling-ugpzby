@@ -9,7 +9,6 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class ModalWifiSecurityInvitationComponent implements OnInit {
 
-	@Input() emitter: EventEmitter<any>;
 	securityAdvisor: any;
 
 	header = 'security.homeprotection.invitationcode.joinChs';
@@ -52,7 +51,9 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 					this.startJoin = false;
 					if (result) {
 						this.joinSuccess = true;
-						this.emitter.emit('invitationsuccess');
+						setTimeout(() => {
+							this.closeModal();
+						}, 3000);
 					} else {
 						this.joinFailed = true;
 					}

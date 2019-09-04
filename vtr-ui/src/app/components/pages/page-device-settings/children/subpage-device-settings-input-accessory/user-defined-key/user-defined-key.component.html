@@ -27,7 +27,7 @@
 									placement="bottom">
 									<button [ngClass]="['btn','btn-outline-shadow']"
 										ngbDropdownToggle
-										type="button">
+										type="button" id="ip-userdefinedkey-dropdown-btn" attr.aria-label="ip-userdefinedkey-dropdown-btn">
 										<div class="row d-flex justify-content-between">
 											<div class="col-auto pl-1 pr-1">
 												<div class="select-title"
@@ -85,7 +85,9 @@
 												class="button"
 												[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"
 												[disabled]="form1.invalid || udkFormSubmitted"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
+												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}"
+												id="ip-userdefined-key-applybtn"
+												attr.aria-label="ip-userdefined-key-applybtn">
 												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
 
 											</button>

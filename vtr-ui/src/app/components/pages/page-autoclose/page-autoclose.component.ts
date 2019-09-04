@@ -76,8 +76,6 @@ export class PageAutocloseComponent implements OnInit {
 		this.refreshRunningList();
 		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
 		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
-		console.log('first need status', this.needToAsk);
-
 	}
 
 	openTargetModal() {
@@ -92,7 +90,7 @@ export class PageAutocloseComponent implements OnInit {
 				this.showAppsModal = true;
 			}
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
@@ -101,7 +99,6 @@ export class PageAutocloseComponent implements OnInit {
 		try {
 			this.getNeedStatus = !status;
 		} catch (error) {
-			console.error(error.message);
 		}
 	}
 
@@ -163,7 +160,7 @@ export class PageAutocloseComponent implements OnInit {
 				}
 			});
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
@@ -179,13 +176,10 @@ export class PageAutocloseComponent implements OnInit {
 		} catch (error) {
 			const noAppsRunning = this.runningList.length === 0 ? true : false;
 			this.loadingContent = { loading: false, noApps: noAppsRunning };
-			console.error(error.message);
 		}
 	}
 
 	public addAppDataToList(event: any) {
-		console.log(event.target.checked);
-		console.log(event.target.value);
 		if (event.target.checked) {
 			const addApp = event.target.value;
 			try {
@@ -195,7 +189,6 @@ export class PageAutocloseComponent implements OnInit {
 					}
 				});
 			} catch (error) {
-				console.error(error.message);
 			}
 		} else {
 			this.gamingAutoCloseService.delAppsAutoCloseList(event.target.value).then((response: boolean) => {

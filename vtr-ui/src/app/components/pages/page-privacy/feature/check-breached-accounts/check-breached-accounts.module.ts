@@ -12,6 +12,7 @@ import { BreachedDescriptionComponent } from './breached-description/breached-de
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { BreachedOtherDescriptionComponent } from './breached-other-description/breached-other-description.component';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
 		BreachedOtherDescriptionComponent,
+		VerifyEmailComponent,
 	],
 	exports: [
 		EmailScannerComponent,
@@ -33,7 +35,8 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
 		ConfirmationPopupComponent,
-		BreachedOtherDescriptionComponent
+		BreachedOtherDescriptionComponent,
+		VerifyEmailComponent
 	],
 	imports: [
 		CommonModule,
