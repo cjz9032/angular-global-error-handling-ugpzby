@@ -1,9 +1,10 @@
 <div class="vtr-menu-main">
 	<nav class="navbar navbar-expand-xl pr-0">
 		<div *ngIf="!deviceService.isGaming && !isGamingHome"
-			class="navbar-brand pt-0">
+			class="navbar-brand p-0">
 			<a vtrMetrics
 				*ngIf="items.length>0"
+				class="menu-main-logo"
 				id="menu-main-lnk-l-logo"
 				attr.aria-label="menu-main-lnk-l-logo"
 				routerLinkActive="link-active"
@@ -247,7 +248,7 @@
 								metricsItem="ModernPreloadButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								(click)="openModernPreloadModal()">My Software</a>
+								(click)="openModernPreloadModal()">{{ 'modernPreload.title' | translate }}</a>
 							<a vtrMetrics
 								id="menu-main-lnk-open-preference"
 								attr.aria-label="menu-main-lnk-open-preference"
