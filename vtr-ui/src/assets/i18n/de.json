@@ -802,6 +802,11 @@
                         "description": "Aktivieren Sie diese Funktion, um die Aktivierungszeit zu verkürzen, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen.",
                         "tooltip": "Mit dieser Funktion wird die Aktivierungszeit verkürzt, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen. Ist diese Funktion aktiviert, wird der Computer beim Schließen der Abdeckung in einen Modus mit niedrigen Stromverbrauch versetzt, ist aber sofort wieder einsatzbereit, wenn Sie die Abdeckung innerhalb von 15 Minuten wieder öffnen. Bei dieser Funktion führt Ihr Notebook außerdem noch nicht abgeschlossene Aktivitäten zu Ende (wie das Senden einer E-Mail oder das Herunterladen einer Datei), bevor das System in den Energiesparmodus übergeht."
                     },
+					"flipToBoot": {
+						"title": "Beim Aufklappen einschalten",
+						"description": "Mit dieser Funktion wird der Computer eingeschaltet, wenn Sie den Deckel öffnen – so, als hätten Sie auf den Netzschalter gedrückt. ",
+						"tooltip": "Mit dieser Funktion startet der Computer beim Öffnen des Deckels.  Sie ist besonders nützlich, wenn Sie Anmeldedaten zur Gesichtserkennung über Windows Hello hinterlegt haben."
+					},
                     "or": "Oder"
                 },
                 "otherSettings": {
@@ -1245,7 +1250,8 @@
                     "description2": "Die Funktion verwendet Sensoren und die Kamera, um Ihre Anwesenheit zu erkennen. Die Funktion sammelt jedoch KEINE personenbezogenen Daten.",
                     "description3": "1. Wenn Ihr Computer im Zelt‑, Tablet‑ oder Standmodus ist, funktionieren diese Funktionen möglicherweise nicht ordnungsgemäß.",
                     "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die Zero-Touch-Anmeldung funktioniert nicht.",
-                    "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann."
+                    "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello-Einstellungen aufrufen",
@@ -2295,6 +2301,31 @@
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden."
     },
+    "modernPreload": {
+        "cancel": "Abbrechen",
+        "close": "Schließen",
+        "download": "Herunterladen",
+        "downloadAvailable": "Download verfügbar",
+        "downloadComplete": "Download abgeschlossen",
+        "downloading": "Herunterladen...",
+        "failedDownload": "Fehlgeschlagener Download",
+        "failedInstall": "Fehlgeschlagene Installation",
+        "installed": "Installiert",
+        "restartDownload": "Download neu starten",
+        "retry": "Wiederholen",
+        "skip": "Überspringen",
+        "noteDownloading": "Hinweis: Nach dem Klick auf „Herunterladen“ fordert Windows Sie möglicherweise dazu auf, die Installation der Software auf Ihrer Einheit zuzulassen. Nach der Installation erscheinen Ihre Apps automatisch auf dem Desktop oder im Startmenü.<br /><br />Sie können die Seite „Meine Software“ schließen und Lenovo Vantage weiterhin verwenden. Schließen Sie Lenovo Vantage nicht während der Installation.",
+        "noteFailedDownload": "Warnung: Während des Downloads oder der Installation ist etwas schief gelaufen. Stellen Sie sicher, dass Sie mit dem Internet verbunden sind, und versuchen Sie es erneut. Denken Sie daran, Vantage offen zu halten, während wir Ihre Software installieren. Sie können die Seite „Meine Software“ schließen und weiterhin Vantage erkunden oder Vantage minimieren, während wir Ihre Softwareinstallation abschließen.",
+        "noteDownloadComplete": "Hinweis: Nach dem Klick auf „Herunterladen“ fordert Windows Sie möglicherweise dazu auf, die Installation der Software auf Ihrer Einheit zuzulassen. Nach der Installation erscheinen Ihre Apps automatisch auf dem Desktop oder im Startmenü.<br /><br />Sie können die Seite „Meine Software“ schließen und Lenovo Vantage weiterhin verwenden. Schließen Sie Lenovo Vantage nicht während der Installation.",
+        "noteDownloadAvailable": "Hinweis: Nach dem Klick auf „Herunterladen“ fordert Windows Sie möglicherweise dazu auf, die Installation der Software auf Ihrer Einheit zuzulassen. Nach der Installation erscheinen Ihre Apps automatisch auf dem Desktop oder im Startmenü.<br /><br />Sie können die Seite „Meine Software“ schließen und Lenovo Vantage weiterhin verwenden. Schließen Sie Lenovo Vantage nicht während der Installation.",
+        "sizeText": "Größe",
+        "versionText": "Version",
+        "softwareDescription": "Klicken Sie unten auf „Herunterladen“, um Software, die mit Ihrem Gerät erworben wurde, einzulösen. Wenn Sie Ihre Software zu irgendeinem Zeitpunkt erneut herunterladen müssen, können Sie dies tun, indem Sie im Vantage-Menü auf die Schaltfläche „Meine Software“ klicken.",
+        "title": "Meine Software",
+        "loadingDescription": "Bitte warten Sie, während wir eine Liste der Software erstellen, die beim Kauf Ihres Gerätes enthalten war.",
+        "shortDescription": "Sie können die Software herunterladen und installieren, die im Lieferumfang Ihres Geräts enthalten war.",
+        "errorDescription": "<h2>Leider gab es ein Problem beim Abrufen der Software-Download-Informationen</h2>Versuchen Sie, auf die Schaltfläche „Wiederholen“ unten zu klicken, oder versuchen Sie es später erneut, indem Sie im Vantage-Menü auf die Schaltfläche „Meine Software“ klicken."
+    },
     "hardwareScan": {
         "name": "Hardware-Scan",
         "title": "Hardware-Scan durchführen",
@@ -2364,7 +2395,7 @@
             "error": "Fehler",
             "delete": "Löschen",
             "warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
-			"scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus."
+            "scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus."
         },
         "recoverBadSectors": {
             "title": "Wiederherstellung von fehlerhaften Sektoren",
@@ -2414,6 +2445,6 @@
         "attention": "Achtung",
         "cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?",
         "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist",
-		"pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn."
+        "pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn."
     }
 }
