@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Subscription } from 'rxjs';
+import { Subscription, EMPTY } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/beta/hardware-scan/enums/hw-scan-progress.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -14,6 +14,7 @@ import { ModalCancelComponent } from '../../../modal/modal-cancel/modal-cancel.c
 import { ModalEticketComponent } from '../../../modal/modal-eticket/modal-eticket.component';
 import { ModalScheduleScanCollisionComponent } from '../../../modal/modal-schedule-scan-collision/modal-schedule-scan-collision.component';
 import { HardwareScanService } from '../../../services/hardware-scan/hardware-scan.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-hardware-components',
@@ -22,14 +23,12 @@ import { HardwareScanService } from '../../../services/hardware-scan/hardware-sc
 })
 export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
-	public enableViewResults = false;
 	public viewResultsText = this.translate.instant('hardwareScan.viewResults');
 	public refreshText = this.translate.instant('hardwareScan.refreshModule');
 	public viewResultsPath = '';
 	public resultItems: any;
 	public hardwareTitle = '';
 	public isScanDone = false;
-	public finalResultCode: string;
 	public modules: any;
 	public progress = 0;
 	public myDevice: MyDevice;
@@ -41,7 +40,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	private notificationSubscription: Subscription;
 	private customizeModal = ModalHardwareScanCustomizeComponent;
-	private finalResponse: any;
 	private startDate: any;
 	public itemsNextScan: any = [];
 	private cancelHandler = {
@@ -64,6 +62,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private translate: TranslateService,
+		private logger: LoggerService,
 	) {
 		this.viewResultsPath = '/beta/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
@@ -77,6 +76,28 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		this.initComponent();
+
+		let self = this;
+		window.onfocus = function(){
+			self.validateScanState();
+		};
+	}
+
+	private validateScanState() {
+		if (this.hardwareScanService.isScanExecuting()) {
+			console.log('Running hwscan');
+			for (const module of this.modules) {
+				for (const test of module.listTest) {
+					if (test.status === HardwareScanTestResult.Cancelled) {
+						// When there are cancelled tests, go back to home
+						console.log('Going back to home due to a cancelled test');
+						location.reload();
+						return;
+					}
+				}
+			}
+			console.log('No cancelled tests found.');
+		}
 	}
 
 	ngOnDestroy() {
@@ -103,8 +124,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			if (!this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isRecoverExecuting() && !this.hardwareScanService.isLoadingDone()) {
 				this.hardwareScanService.initLoadingModules(this.culture);
 			}
+			this.hardwareScanService.setFinalResponse(null);
+			this.hardwareScanService.setEnableViewResults(false);
 		}
-		this.enableViewResults = false;
 	}
 
 	public isLoadingDone() {
@@ -129,6 +151,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.getProgress();
 		}
+	}
+
+	public getEnableViewResults() {
+		return this.hardwareScanService.getEnableViewResults();
 	}
 
 	public getComponentsTitle() {
@@ -168,6 +194,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.hardwareTitle = title;
 		} else {
 			this.hardwareTitle = this.translate.instant('hardwareScan.title');
+		}
+	}
+
+	private getFinalResultCode() {
+		if (this.hardwareScanService) {
+			this.hardwareScanService.getFinalResultCode();
 		}
 	}
 
@@ -230,9 +262,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	*/
 	private getDoScan(scanType: number, requests: any) {
 		console.log('[Start]: getDoScan()');
-		this.finalResponse = null;
-		this.finalResultCode = '';
-		this.tooltipInformation = '';
 		this.startDate = new Date();
 		this.progress = 0;
 		this.cancelRequested = false;
@@ -245,6 +274,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		console.log('[getDoScan] - payload: ' + JSON.stringify(payload));
 		if (this.hardwareScanService) {
+			this.hardwareScanService.setFinalResponse(null);
 			this.hardwareScanService.getDoScan(payload, this.modules, this.cancelHandler)
 				.then((response) => {
 					this.cleaningUpScan(response);
@@ -252,7 +282,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						this.checkETicket();
 					}
 					console.log('[End]: getDoScan()');
-					console.log(this.finalResponse);
+					console.log(this.hardwareScanService.getFinalResponse());
+				})
+				.catch((ex: any) => {
+					// This command avoid crashs on HW Scan and cancelScan if an exception occurs.
+					if (ex !== null) {
+						this.cancelRequested = true;
+					}
 				})
 				.finally(() => {
 					this.cleaningUpScan(undefined);
@@ -262,9 +298,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	private cleaningUpScan(response: any) {
 		if (response) {
-			this.finalResponse = response;
-			this.finalResultCode = response.finalResultCode;
-			this.tooltipInformation = response.resultDescription;
+			this.hardwareScanService.setFinalResponse(response);
 		}
 
 		if (this.modalCancelRef) {
@@ -272,7 +306,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.cancelRequested === false) {
-			this.enableViewResults = true;
+			this.hardwareScanService.setEnableViewResults(true);
 		} else {
 			this.initComponent();
 		}
@@ -281,27 +315,30 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public async checkETicket() {
 		let brokenModules = '';
 		const categoryInfoList = this.hardwareScanService.getCategoryInformation();
-		for (const scanRequest of this.finalResponse.responses) { // For each module
-			for (const groupResult of scanRequest.groupResults) { // For each device
-				let broken = false;
-				for (const testResult of groupResult.testResultList) { // For each test
-					// console.log("[TEST] " + testResult.result);
-					if (testResult.result === 3) { // TestResultType.Fail
-						if (brokenModules !== '') {
-							brokenModules += '; ';
-						}
-
-						for (const category of categoryInfoList) {
-							if (category.id === groupResult.moduleName) {
-								brokenModules += category.name;
+		const finalResponse = this.hardwareScanService.getFinalResponse();
+		if (finalResponse) {
+			for (const scanRequest of finalResponse.responses) { // For each module
+				for (const groupResult of scanRequest.groupResults) { // For each device
+					let broken = false;
+					for (const testResult of groupResult.testResultList) { // For each test
+						// console.log("[TEST] " + testResult.result);
+						if (testResult.result === 3) { // TestResultType.Fail
+							if (brokenModules !== '') {
+								brokenModules += '; ';
 							}
+
+							for (const category of categoryInfoList) {
+								if (category.id === groupResult.moduleName) {
+									brokenModules += category.name;
+								}
+							}
+							broken = true;
+							break;
 						}
-						broken = true;
+					}
+					if (broken === true) {
 						break;
 					}
-				}
-				if (broken === true) {
-					break;
 				}
 			}
 		}
@@ -319,7 +356,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			if (this.myDevice) {
 				serial = this.myDevice.sn;
 			}
-			const ticketUrl = 'SerialNumber=' + serial + '&DiagCode=' + this.finalResultCode + '&Channel=vantage&TestDate=' + stringDate;
+			const ticketUrl = 'SerialNumber=' + serial + '&DiagCode=' + this.hardwareScanService.getFinalResultCode() + '&Channel=vantage&TestDate=' + stringDate;
 
 			console.log('[URL] ' + ticketUrl);
 
@@ -346,7 +383,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					this.myDevice = value;
 					console.log('getDeviceInfo.then', value);
 				}).catch(error => {
-					console.error('getDeviceInfo', error);
+					this.logger.error('getDeviceInfo', error.message);
+					return EMPTY;
 				});
 		}
 	}
@@ -376,7 +414,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					console.log('[Last Response] doRecoverBadSectors');
 					console.log(response);
 					console.log('[End] Recover Bad Sectors');
-					this.enableViewResults = true;
+					this.hardwareScanService.setEnableViewResults(true);
 				});
 		}
 	}
@@ -464,12 +502,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		const dateString = year + '/' + monthString + '/' + day + ' ' + time[0];
 
 		const results = {
-			finalResultCode: this.finalResponse.finalResultCode,
+			finalResultCode: this.hardwareScanService.getFinalResultCode(),
 			status: HardwareScanTestResult[HardwareScanTestResult.Pass],
 			statusValue: HardwareScanTestResult.Pass,
 			statusToken: this.statusToken(HardwareScanTestResult.Pass),
-			date: this.finalResponse.startDate,
-			information: this.finalResponse.resultDescription,
+			date: this.hardwareScanService.getFinalResultStartDate(),
+			information: this.hardwareScanService.getFinalResultDescription(),
 			items: []
 		};
 

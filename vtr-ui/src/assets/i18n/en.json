@@ -373,7 +373,7 @@
 		"autoClose": {
 			"title": "Auto Close",
 			"addAppsButton": "Add",
-			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely, so always make sure you've saved your work.",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
 				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
@@ -392,13 +392,13 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
+			"introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "TURN ON",
-				"btnCancel": "NOT NOW"
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -802,6 +802,11 @@
 						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
 						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
 					},
+					"flipToBoot": {
+						"title": "Flip to boot",
+						"description": "This feature enables you to turn on your computer when you open the computer lid, just the same as you pressing the power button. ",
+						"tooltip": "This feature automatically starts the computer by openning the lid.  It is especially useful if you have set up the face log-in information in Windows Hello."
+					},
 					"or": "Or"
 				},
 				"otherSettings": {
@@ -1174,7 +1179,7 @@
 					"title": "FN key and Ctrl key swap",
 					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
 				},
-				"controlOptions":{
+				"controlOptions": {
 					"more": "MORE",
 					"control1": "TOUCHPAD CONTROLS",
 					"control2": "MOUSE CONTROLS"
@@ -1520,7 +1525,17 @@
 			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
 			"upgrade": "upgrade",
 			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial"
+			"startTrial": "Start Trial",
+			"inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+			"overviewTitle": "Overview of your Connected Home Security",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard"
 		},
 		"tour": {
 			"back": "Back",
@@ -1560,6 +1575,19 @@
 			"upgradedDetail2": "Your device ecosystem is currently being protected.",
 			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
 			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join Connected Home Security of your family",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTile": "You are about to launch the Connected Home Security web console...",
+			"goNow": "Go now",
+			"disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
 		}
 	},
 	"support": {
@@ -1575,6 +1603,7 @@
 			"statusWarrantyNotFound": "Warranty not found",
 			"yearDepotWarranty": "Y Depot Warranty",
 			"warrantyDetails": "Warranty Details:",
+			"warrantyDashboardDetails": "Warranty Details",
 			"startDate": "Start date: ",
 			"endDate": "End date: ",
 			"status": "Status: ",
@@ -1752,22 +1781,31 @@
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
 				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
-				"tryNow": "Try Now"
+				"tryNow": "Try Now",
+				"goToChs": "go to connected home security"
+			},
+			"homeStatus": {
+				"protected": "Protected",
+				"notProtected": "Not Protected"
 			},
 			"invitationcode": {
 				"button": "Enter invitation code",
 				"buttonDescribe": "You have already joined this device to an existing Connected Home Security account.",
 				"title": "Already have Connected Home Security?",
 				"titleDescribe": "Please ensure location permissions are enabled for Vantage in order to add your device to an existing Connected Home Account, and to use Connected Home Security.",
-				"enterCode": "Enter your connection code",
+				"enterCode": "Enter the connection code",
+				"joinChs": "Join Connected Home Security of your family",
+				"invitationCode": "Invitation code",
+				"connect": "CONNECTED",
 				"addHome": "Add Home",
 				"ok": "OK",
 				"continue": "CONTINUE",
-				"cancel": "Cancel",
+				"cancel": "CANCEL",
 				"validateCode": "VALIDATE CODE",
-				"success": "Successfully connected",
+				"success": "Successfully joined your CHS family!",
 				"canUse": "You can now start using Connected Home Security",
 				"tryAgain": "Incorrect code, please try again!",
+				"fail": "Incorrect code entered!",
 				"activationCode": "ACTIVATION CODE"
 			},
 			"securityhealth": {
@@ -2295,6 +2333,31 @@
 		"Note": "Note: ",
 		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
 	},
+	"modernPreload": {
+		"cancel": "Cancel",
+		"close": "Close",
+		"download": "Download",
+		"downloadAvailable": "Download Available",
+		"downloadComplete": "Download Complete",
+		"downloading": "Downloading...",
+		"failedDownload": "Failed Download",
+		"failedInstall": "Failed Install",
+		"installed": "Installed",
+		"restartDownload": "Restart download",
+		"retry": "Retry",
+		"skip": "Skip",
+		"noteDownloading": "Note: After clicking Download, you may get a prompt from Windows to allow us to install the software on your device. Once finished installing your apps will show up automatically on your desktop or start menu.<br /><br />You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage during installation.",
+		"noteFailedDownload": "Alert: Something went wrong during the download or installation. Please make sure you are connected to the internet and retry. Remember to keep Vantage open while we install your software. You may close the My Software page and continue to explore Vantage or minimize Vantage while we complete your software installation.",
+		"noteDownloadComplete": "Note: After clicking Download, you may get a prompt from Windows to allow us to install the software on your device. Once finished installing your apps will show up automatically on your desktop or start menu.<br /><br />You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage during installation.",
+		"noteDownloadAvailable": "Note: After clicking Download, you may get a prompt from Windows to allow us to install the software on your device. Once finished installing your apps will show up automatically on your desktop or start menu.<br /><br />You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage during installation.",
+		"sizeText": "Size",
+		"versionText": "Version",
+		"softwareDescription": "Click download below to redeem software that was purchased with your device. If at any time you need to download your software again, you can do so by clicking the My Software button in the Vantage menu.",
+		"title": "My Software",
+		"loadingDescription": "Please wait while we prepare a list of the software that was included in the purchase of your device.",
+		"shortDescription": "Download and install software that was included in the purchase of your device.",
+		"errorDescription": "<h2>Sorry, there was a problem retrieving the software download information</h2>Try clicking on the \"Retry\" button below or try again later by clicking on the \"My Software\" button in the Vantage menu."
+	},
 	"hardwareScan": {
 		"name": "Hardware Scan",
 		"title": "Perform a hardware scan",
@@ -2372,7 +2435,8 @@
 			"scheduleIntervalLimit": "Another scan was already scheduled within a ten minute time span. Please choose another time.",
 			"error": "Error",
 			"delete": "Delete",
-			"warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode."
+			"warningBatterySaver": "Note: Scheduled Scans will not perform in Battery Saver mode.",
+			"information": "Your scan has been scheduled and will run in the background on the following date:"
 		},
 		"recoverBadSectors": {
 			"title": "Recover Bad Sectors",

@@ -7,20 +7,37 @@ import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/m
 import { EventTypes, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { ModalErrorMessageComponent } from 'src/app/components/modal/modal-error-message/modal-error-message.component';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { ModalWifiSecurityInvitationComponent } from 'src/app/components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
+import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
 
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DialogService {
-	constructor(private commonService: CommonService,
+	constructor(
+		private commonService: CommonService,
 		public modalService: NgbModal)  { }
 
+	openInvitationCodeDialog() {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
+			const modal = this.modalService.open(ModalWifiSecurityInvitationComponent,
+			{
+				backdrop: 'static',
+				windowClass: 'wifi-security-location-modal'
+			});
+		}
+	}
+
 	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity) {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
-			}
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 			const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
 			{
@@ -43,10 +60,10 @@ export class DialogService {
 	}
 
 	wifiSecurityErrorMessageDialog() {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
-			}
 			const showdialog = this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
 			if (showdialog) {
 				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
@@ -64,10 +81,10 @@ export class DialogService {
 	}
 
 	homeProtectionOpenLocationDialog(wifiSecurity: WifiSecurity) {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
-			}
 			const modal = this.modalService.open(ModalHomeProtectionLocationNoticeComponent,
 			{
 				backdrop: 'static'
@@ -89,14 +106,14 @@ export class DialogService {
 	}
 
 	homeSecurityPluginMissingDialog() {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
-			}
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
 				size: 'lg',
-				windowClass: 'wifi-security-error-modal'
+				windowClass: 'home-security-plugin-missing-modal'
 			});
 			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
 			errorMessageModal.componentInstance.description = 'security.wifisecurity.errorMessage.bodyText';
@@ -109,14 +126,14 @@ export class DialogService {
 	}
 
 	homeSecurityOfflineDialog() {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
-			}
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
 				size: 'lg',
-				windowClass: 'wifi-security-error-modal'
+				windowClass: 'home-security-offline-modal'
 			});
 			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
 			errorMessageModal.componentInstance.description = 'security.wifisecurity.errorMessage.offlineText';
@@ -126,14 +143,14 @@ export class DialogService {
 	}
 
 	homeSecurityAccountDialog() {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
-			}
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
 				size: 'lg',
-				windowClass: 'wifi-security-error-modal'
+				windowClass: 'home-security-error-modal'
 			});
 			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
 			errorMessageModal.componentInstance.description = 'security.wifisecurity.errorMessage.accountText';
@@ -143,10 +160,10 @@ export class DialogService {
 	}
 
 	openCHSPermissionModal(): NgbModalRef {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false)) {
-			if (this.modalService.hasOpenModals()) {
-				return;
-			}
 			this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false);
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
 				backdrop: 'static',
@@ -156,6 +173,43 @@ export class DialogService {
 			});
 			welcomeModal.componentInstance.switchPage = 2;
 			return welcomeModal;
+		}
+	}
+
+	openWelcomeModal(showWelcome): NgbModalRef {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, showWelcome + 1);
+
+			if (showWelcome === 1) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+			}
+
+			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'Welcome-container-Modal'
+			});
+			return welcomeModal;
+		}
+	}
+
+	homeSecurityTrialModal(switchPage): NgbModalRef {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
+
+			const trialModal = this.modalService.open(ModalChsStartTrialContainerComponent, {
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'trial-container-Modal'
+			});
+			trialModal.componentInstance.switchPage = switchPage;
+			return trialModal;
 		}
 	}
 }

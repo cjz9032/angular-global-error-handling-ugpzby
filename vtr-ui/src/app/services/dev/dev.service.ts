@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable()
 export class DevService {
 
-	log = 'v0.0.6';
+	log = '';
 
-	constructor() { }
+	constructor(private logger: LoggerService) { }
 
 	writeLog(...args) {
-		console.log('DEV LOG', args);
 		const self = this;
 		self.log += ' \n';
 		args.forEach(arg => {
@@ -18,5 +18,6 @@ export class DevService {
 				self.log += arg + ' ';
 			}
 		});
+		this.logger.info('DevService.writeLog', this.log);
 	}
 }

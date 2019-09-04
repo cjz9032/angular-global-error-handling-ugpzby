@@ -802,6 +802,11 @@
                         "description": "Schakel deze functie in om de computer sneller te herstellen als u de klep van uw computer vaak opent en sluit.",
                         "tooltip": "Door deze functie herstelt de computer sneller als u de klep van uw computer vaak opent en sluit. Als deze functie is ingeschakeld, wordt de modus voor laag energieverbruik ingeschakeld als u de klep sluit, maar meteen weer hersteld als u de klep binnen 15 minuten nadat u de klep sloot weer opent. Deze functie zorgt er ook voor dat uw notebook lopende activiteiten (zoals het versturen van e-mail of het downloaden van een bestand) probeert af te ronden voordat de slaapstand wordt geactiveerd."
                     },
+					"flipToBoot": {
+						"title": "Opstarten door open te klappen",
+						"description": "Met deze functie kunt u de computer inschakelen als u de klep van de computer opent alsof u op de aan/uit-knop drukt. ",
+						"tooltip": "Met deze functie start de computer automatisch door het openen van de klep.  Dit is vooral handig als u gezichtsherkenning om aan te melden hebt ingesteld in Windows Hello."
+					},
                     "or": "Of"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Invoer & bureau-accessoires",
                 "subtitle": "Instellingen voor bureau-accessoires en invoer",
-                "description": "Lenovo intelligente detectie combineert verschillende sensoren op uw computer om uw activiteiten te detecteren en de instellingen voor optimaal energiebeheer aan te passen",
+                "description": "In dit gedeelte kun je de toetsenbord- en muisfuncties instellen die je het meest gebruikt. Ontdek hier meer functies.",
                 "inputAccessory": {
                     "title": "Intelligent toetsenbord",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1579,7 @@
             "statusWarrantyNotFound": "Garantie niet gevonden",
             "yearDepotWarranty": "Jr depotgarantie",
             "warrantyDetails": "Garantiedetails:",
+            "warrantyDashboardDetails": "Garantiedetails",
             "startDate": "Begindatum: ",
             "endDate": "Einddatum: ",
             "status": "Status: ",
@@ -2293,6 +2299,31 @@
         "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
+    },
+    "modernPreload": {
+        "cancel": "Annuleren",
+        "close": "Sluiten",
+        "download": "Downloaden",
+        "downloadAvailable": "Download beschikbaar",
+        "downloadComplete": "Download voltooid",
+        "downloading": "Bezig met downloaden...",
+        "failedDownload": "Download mislukt",
+        "failedInstall": "Installatie mislukt",
+        "installed": "Geïnstalleerd",
+        "restartDownload": "Download opnieuw starten",
+        "retry": "Opnieuw proberen",
+        "skip": "Overslaan",
+        "noteDownloading": "Opmerking: Wanneer u op Downloaden klikt, kan er een prompt van Windows verschijnen om ons toe te staan de software op uw apparaat te installeren. Als de installatie is voltooid, worden uw apps automatisch weergegeven op het bureaublad of in het startmenu.<br /><br />U kunt de pagina Mijn software sluiten en doorgaan met het gebruik van Lenovo Vantage. Sluit Lenovo Vantage niet tijdens installatie.",
+        "noteFailedDownload": "Waarschuwing: Er is iets misgegaan tijdens het downloaden of installeren. Zorg ervoor dat u bent verbonden met internet en probeer het opnieuw. Denk eraan om Vantage geopend te houden terwijl we uw software installeren. U kunt de pagina Mijn software sluiten en doorgaan met het verkennen van Vantage of Vantage minimaliseren terwijl we de installatie van uw software voltooien.",
+        "noteDownloadComplete": "Opmerking: Wanneer u op Downloaden klikt, kan er een prompt van Windows verschijnen om ons toe te staan de software op uw apparaat te installeren. Als de installatie is voltooid, worden uw apps automatisch weergegeven op het bureaublad of in het startmenu.<br /><br />U kunt de pagina Mijn software sluiten en doorgaan met het gebruik van Lenovo Vantage. Sluit Lenovo Vantage niet tijdens installatie.",
+        "noteDownloadAvailable": "Opmerking: Wanneer u op Downloaden klikt, kan er een prompt van Windows verschijnen om ons toe te staan de software op uw apparaat te installeren. Als de installatie is voltooid, worden uw apps automatisch weergegeven op het bureaublad of in het startmenu.<br /><br />U kunt de pagina Mijn software sluiten en doorgaan met het gebruik van Lenovo Vantage. Sluit Lenovo Vantage niet tijdens installatie.",
+        "sizeText": "Grootte",
+        "versionText": "Versie",
+        "softwareDescription": "Klik hieronder op de downloadknop om software te gebruiken die bij uw apparaat is aangeschaft. Als u uw software opnieuw wilt downloaden, kunt u dit doen door te klikken op de knop Mijn software in het menu Vantage.",
+        "title": "Mijn software",
+        "loadingDescription": "Een ogenblik geduld. We maken een lijst met de software die was inbegrepen bij de aanschaf van uw apparaat.",
+        "shortDescription": "Download en installeer software die was inbegrepen bij de aanschaf van uw apparaat.",
+        "errorDescription": "<h2>Er is een probleem opgetreden bij het ophalen van de informatie voor het downloaden van software</h2>Klik hieronder op de knop 'Opnieuw' of probeer het later opnieuw door te klikken op de knop 'Mijn software' in het menu Vantage."
     },
     "hardwareScan": {
         "name": "Hardwarescan",

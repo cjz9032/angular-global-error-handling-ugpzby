@@ -65,7 +65,6 @@ export class WifiHomeViewModel {
 									this.isLWSEnabled = false;
 								}
 							}, (error) => {
-								console.log('no permission');
 							});
 						}
 					}
@@ -92,7 +91,7 @@ export class WifiHomeViewModel {
 					} else {
 						this.hasMore = false;
 					}
-					this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+					this.historys = wifiSecurity.wifiHistory.slice(0, 4);
 					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				}
 				this.historys = this.mappingHistory(this.historys);
@@ -131,7 +130,7 @@ export class WifiHomeViewModel {
 			} else {
 				this.hasMore = false;
 			}
-			this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+			this.historys = wifiSecurity.wifiHistory.slice(0, 4);
 			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 			this.historys = this.mappingHistory(this.historys);
 		} else if (cacheWifiSecurityHistory) {
@@ -142,7 +141,7 @@ export class WifiHomeViewModel {
 			} else {
 				this.hasMore = false;
 			}
-			this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+			this.historys = cacheWifiSecurityHistory.slice(0, 4);
 			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 			this.historys = this.mappingHistory(this.historys);
 		}
@@ -173,8 +172,6 @@ export class WifiHomeViewModel {
 			i = item;
 			if (i.info.indexOf('Connected') === -1) {
 				const info = i.info.replace(/T/g, ' ');
-				// const connect = 'security.wifisecurity.container.connect';
-				// const information = connect + info;
 				i.info = info;
 			}
 			Historys.push(i);
@@ -185,11 +182,11 @@ export class WifiHomeViewModel {
 
 export class SecurityHealthViewModel {
 	isLWSEnabled: boolean;
-	homeDevicePosture: Array<DevicePostureDetail> = [];
+	homeDevicePosture: DevicePostureDetail[] = [];
 
 	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, public translate: TranslateService, private ngZone: NgZone) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture)
+		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture);
 		if (wifiSecurity && wifiSecurity.state) {
 			if (wifiSecurity.isLocationServiceOn !== undefined) {
 				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
@@ -199,7 +196,6 @@ export class SecurityHealthViewModel {
 			if (wifiSecurity && wifiSecurity.isLocationServiceOn !== undefined) {
 				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
 			}
-			// this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
 		}
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
 			if (value) {

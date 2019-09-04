@@ -5,7 +5,7 @@ import { MacroKeyMessageData } from 'src/app/enums/macrokey-message-data.enum';
 @Component({
 	selector: 'vtr-ui-macrokey-details',
 	templateUrl: './ui-macrokey-details.component.html',
-	styleUrls: [ './ui-macrokey-details.component.scss' ]
+	styleUrls: ['./ui-macrokey-details.component.scss']
 })
 export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	@Input() number;
@@ -27,13 +27,13 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		metricsItemPopup: ''
 	};
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit() {
 		const that = this;
 		document.addEventListener(
 			'visibilitychange',
-			function() {
+			function () {
 				if (document.hidden) {
 					if (that.recording) {
 						that.toggleRecording(true);
@@ -64,8 +64,6 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	recordsDelete(records) {
 		records = records || [];
 		records.forEach((record: any, ri: number) => {
-			console.log(record);
-			console.log(ri, 'Index');
 		});
 	}
 

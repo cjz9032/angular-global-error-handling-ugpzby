@@ -802,6 +802,11 @@
                         "description": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor a funkció engedélyezésével gyorsabbá tehető a visszatérés.",
                         "tooltip": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor ezzel a funkcióval gyorsabbá tehető a visszatérés. Ha engedélyezi a funkciót, akkor a számítógép a képernyő lehajtásakor alacsony energiafogyasztási állapotba lép, de azonnal visszatér, ha a képernyő lecsukásától számított 15 percen belül nyitja fel a képernyőt. A funkció használata esetén a notebook megpróbálja befejezni a függőben lévő tevékenységeket (például az e-mailek küldését vagy a fájlok letöltését) a rendszer működésének felfüggesztése előtt."
                     },
+					"flipToBoot": {
+						"title": "Rendszerindítás kinyitással",
+						"description": "Ez a funkció lehetővé teszi a számítógép bekapcsolását fedelének kinyitásával, ugyanúgy, mintha megnyomná a bekapcsoló gombot. ",
+						"tooltip": "Ez a funkció a fedél kinyitásakor automatikusan elindítja a számítógépet.  Különösen akkor hasznos, ha beállította az arcképpel történő bejelentkezést a Windows Hello segítségével."
+					},
                     "or": "Vagy"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Bevitel és kellékek",
                 "subtitle": "Bevitel és kellékek beállításai",
-                "description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket, és úgy módosítja a beállításokat, hogy az energiagazdálkodás optimális legyen",
+                "description": "Ez a szakasz lehetővé teszi a leggyakrabban használt billentyűzet- és egérfunkciók beállítását. Fedezzen fel további funkciókat itt.",
                 "inputAccessory": {
                     "title": "Intelligens billentyűzet",
                     "hiddenKeyboardFunctions": {
@@ -1574,6 +1579,7 @@
             "statusWarrantyNotFound": "A jótállás nem található",
             "yearDepotWarranty": "Y Depot-jótállás",
             "warrantyDetails": "Jótállás részletei:",
+            "warrantyDashboardDetails": "Jótállás részletei",
             "startDate": "Kezdő dátum: ",
             "endDate": "Záró dátum: ",
             "status": "Állapot: ",
@@ -2293,6 +2299,31 @@
         "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
         "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."
+    },
+    "modernPreload": {
+        "cancel": "Mégse",
+        "close": "Bezárás",
+        "download": "Letöltés",
+        "downloadAvailable": "Letölthető",
+        "downloadComplete": "A letöltés kész",
+        "downloading": "Letöltés...",
+        "failedDownload": "Sikertelen letöltés",
+        "failedInstall": "A telepítés sikertelen",
+        "installed": "Telepítve",
+        "restartDownload": "A letöltés újraindítása",
+        "retry": "Újrapróbálkozás",
+        "skip": "Kihagyás",
+        "noteDownloading": "Megjegyzés: A Letöltés elemre való kattintás után előfordulhat, hogy a Windows a szoftver eszközön történő telepítésének engedélyezését kéri. A telepítés befejeződése után az alkalmazások automatikusan megjelennek az asztalon vagy a Start menüben.<br /><br />Bezárhatja a Saját szoftver oldalt, és folytathatja a Lenovo Vantage használatát. A telepítés alatt ne zárja be a Lenovo Vantage-et.",
+        "noteFailedDownload": "Riasztás: Hiba történt a letöltés vagy a telepítés során. Ellenőrizze az internetkapcsolatot, és próbálja újra. Ügyeljen rá, hogy a Vantage meg legyen nyitva a szoftver telepítése során. A szoftver telepítése alatt bezárhatja a Saját szoftver oldalt, és folytathatja a Vantage használatát, illetve kis méretűre állíthatja a Vantage-et.",
+        "noteDownloadComplete": "Megjegyzés: A Letöltés elemre való kattintás után előfordulhat, hogy a Windows a szoftver eszközön történő telepítésének engedélyezését kéri. A telepítés befejeződése után az alkalmazások automatikusan megjelennek az asztalon vagy a Start menüben.<br /><br />Bezárhatja a Saját szoftver oldalt, és folytathatja a Lenovo Vantage használatát. A telepítés alatt ne zárja be a Lenovo Vantage-et.",
+        "noteDownloadAvailable": "Megjegyzés: A Letöltés elemre való kattintás után előfordulhat, hogy a Windows a szoftver eszközön történő telepítésének engedélyezését kéri. A telepítés befejeződése után az alkalmazások automatikusan megjelennek az asztalon vagy a Start menüben.<br /><br />Bezárhatja a Saját szoftver oldalt, és folytathatja a Lenovo Vantage használatát. A telepítés alatt ne zárja be a Lenovo Vantage-et.",
+        "sizeText": "Méret",
+        "versionText": "Változat",
+        "softwareDescription": "Az alábbi Letöltés elemre kattintva beválthatja az eszközzel vásárolt szoftvert. Ha a későbbiekben újra le szeretné tölteni a szoftvert, kattintson a Vantage menü Saját szoftver elemére.",
+        "title": "Saját szoftver",
+        "loadingDescription": "Kérjük, várja meg, amíg összeállítjuk az eszközzel együtt megvásárolt szoftverek listáját.",
+        "shortDescription": "Töltse le, és telepítse az eszközzel megvásárolt szoftvereket.",
+        "errorDescription": "<h2>Hiba történt a szoftverletöltési információk lekérése során</h2>Kattintson az alábbi „Újrapróbálkozás” gombra, vagy próbálkozzon később, a Vantage menü „Saját szoftver” gombjára kattintva."
     },
     "hardwareScan": {
         "name": "Hardvervizsgálat",
