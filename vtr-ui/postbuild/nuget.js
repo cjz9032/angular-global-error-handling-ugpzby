@@ -10,7 +10,7 @@ exec('git rev-parse --abbrev-ref HEAD', (error, stdout) => {
 
 	fs.writeFileSync(file,
 		fs.readFileSync(file, 'utf-8')
-			.split('\r\n')
+			.split('\n')
 			.map(line => {
 				console.log(`before : ${line}`);
 				if (line.includes('<id>')) {
@@ -22,7 +22,7 @@ exec('git rev-parse --abbrev-ref HEAD', (error, stdout) => {
 				console.log(`after  : ${line}`);
 				return line;
 			})
-			.join('\r\n'),
+			.join('\n'),
 		'utf-8');
 });
 
