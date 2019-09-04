@@ -802,6 +802,11 @@
                         "description": "Activați această caracteristica pentru a îmbunătăți timpul de reluare dacă deschideți și închideți frecvent capacul calculatorului.",
                         "tooltip": "Această caracteristică va îmbunătăţi timpul de reluare dacă deschideţi şi închideţi frecvent capacul calculatorului. Când este activată, calculatorul va trece în modul de alimentare redusă când închideţi capacul, dar va reveni imediat dacă redeschideţi capacul în decurs de 15 minute după ce l-aţi închis. Această caracteristică permite, de asemenea, notebookului să încerce să termine activităţile în aşteptare (cum ar fi, trimiterea e-mailului sau descărcarea unui fişier) înainte ca sistemul să se oprească."
                     },
+					"flipToBoot": {
+						"title": "Rotiţi pentru a porni",
+						"description": "Această caracteristică vă permite să porniţi computerul când deschideţi capacul acestuia, la fel ca atunci când apăsaţi butonul de alimentare. ",
+						"tooltip": "Această caracteristică porneşte automat computerul prin deschiderea capacului.  Este deosebit de utilă dacă aţi configurat informaţiile de conectare facială în Windows Hello."
+					},
                     "or": "Sau"
                 },
                 "otherSettings": {
@@ -1245,7 +1250,8 @@
                     "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
                     "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
                     "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
-                    "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată."
+                    "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
@@ -2295,6 +2301,31 @@
         "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
     },
+    "modernPreload": {
+        "cancel": "Anulare",
+        "close": "Închidere",
+        "download": "Descărcare",
+        "downloadAvailable": "Descărcare disponibilă",
+        "downloadComplete": "Descărcare finalizată",
+        "downloading": "Se descarcă...",
+        "failedDownload": "Descărcare nereuşită",
+        "failedInstall": "Instalare nereușită",
+        "installed": "Instalat",
+        "restartDownload": "Reporniți descărcarea",
+        "retry": "Reîncercaţi",
+        "skip": "Ignorare",
+        "noteDownloading": "Notă: după ce faceți clic pe descărcare, este posibil ca Windows să vă solicite permisiunea de a ne lăsa să instalăm software-ul pe dispozitiv. După finalizarea instalării aplicaţiilor, acestea se vor afişa automat pe desktop sau în meniul Start.<br /><br />Puteți închide pagina Software-ul meu și utiliza în continuare Lenovo Vantage. Nu închideți Lenovo Vantage în timpul instalării.",
+        "noteFailedDownload": "Alertă: a apărut o problemă în timpul descărcării sau instalării. Asigurați-vă că sunteți conectat la internet și încercați din nou. Țineți deschis Vantage în timpul instalării software-ului. Puteți închide pagina Software-ul meu și explora în continuare Vantage sau puteți minimiza Vantage până la finalizarea instalării software-ului.",
+        "noteDownloadComplete": "Notă: după ce faceți clic pe descărcare, este posibil ca Windows să vă solicite permisiunea de a ne lăsa să instalăm software-ul pe dispozitiv. După finalizarea instalării aplicaţiilor, acestea se vor afişa automat pe desktop sau în meniul Start.<br /><br />Puteți închide pagina Software-ul meu și utiliza în continuare Lenovo Vantage. Nu închideți Lenovo Vantage în timpul instalării.",
+        "noteDownloadAvailable": "Notă: după ce faceți clic pe descărcare, este posibil ca Windows să vă solicite permisiunea de a ne lăsa să instalăm software-ul pe dispozitiv. După finalizarea instalării aplicaţiilor, acestea se vor afişa automat pe desktop sau în meniul Start.<br /><br />Puteți închide pagina Software-ul meu și utiliza în continuare Lenovo Vantage. Nu închideți Lenovo Vantage în timpul instalării.",
+        "sizeText": "Dimensiune",
+        "versionText": "Versiune",
+        "softwareDescription": "Faceți clic pe descărcare mai jos pentru a vă valorifica software-ul care a fost achiziționat împreună cu dispozitivul. Dacă trebuie să descărcați software-ul din nou, puteți să faceți clic pe butonul Software-ul meu din meniul Vantage.",
+        "title": "Software-ul meu",
+        "loadingDescription": "Vă rugăm așteptați până când vom pregăti o listă a software-ului inclus în achiziția dispozitivului.",
+        "shortDescription": "Descărcați și instalați software-ul inclus în achiziția dispozitivului.",
+        "errorDescription": "<h2>A apărut o problemă la preluarea informațiilor de descărcare a software-ului</h2>Faceți clic pe butonul „Reîncercați” de mai jos sau încercați mai târziu făcând clic pe butonul „Software-ul meu” din meniul Vantage."
+    },
     "hardwareScan": {
         "name": "Scanare hardware",
         "title": "Efectuaţi o scanare hardware",
@@ -2364,7 +2395,7 @@
             "error": "Eroare",
             "delete": "Ştergere",
             "warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
-			"scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment."
+            "scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment."
         },
         "recoverBadSectors": {
             "title": "Recuperarea sectoarelor defecte",
@@ -2414,6 +2445,6 @@
         "attention": "Atenţie",
         "cancelTextPrompt": "Sigur anulaţi?",
         "cancelTextProgress": "Aşteptaţi anularea progresului",
-		"pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
+        "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
     }
 }

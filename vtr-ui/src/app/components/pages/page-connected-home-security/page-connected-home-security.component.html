@@ -18,11 +18,16 @@
 									[account]="account"
 									[common]="common">
 								</vtr-home-security-after-signup>
+								<div class="pt-5"
+									*ngIf="homeSecurityMockService.state === 'register'">
+									<img class="w-100 img" src="../../../../assets/images/connected-home-security/card-gamestore.png" alt="" srcset="">
+								</div>
 								<vtr-home-security-content *ngIf="homeSecurityMockService.state === 'notRegister'"
-									[page]="'homeSecurity'"
-									[data]="homeSecurityDevicePosture">
+									page="homeSecurity"
+									[location]="homeSecurityLocation"
+									[permission]="permission">
 								</vtr-home-security-content>
-                            </div>
+							</div>
                         </div>
                     </div>
                 </div>

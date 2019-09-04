@@ -18,7 +18,7 @@ const getLightingProfileById: any = {
 		{ lightPanelType: 64, lightEffectType: 2, lightColor: '4A9325' }
 	]
 };
-describe('UiLightingProfileComponent', () => {
+xdescribe('UiLightingProfileComponent', () => {
 	let component: UiLightingProfileComponent;
 	let fixture: ComponentFixture<UiLightingProfileComponent>;
 	gamingLightingServiceMock.isShellAvailable.and.returnValue(true);
@@ -219,13 +219,13 @@ describe('UiLightingProfileComponent', () => {
 	// 	component.currentProfileId = 1;
 	// 	gamingLightingServiceMock.getLightingCapabilities.and.returnValue(Promise.resolve(
 	// 		{
-	// 			"LightPanelType":[32], 
+	// 			"LightPanelType":[32],
 	// 			"LedType_Complex": [268435456],
 	// 			"LedType_simple":[268435456],
 	// 			"BrightAdjustLevel":4|0,
 	// 			"RGBfeature":255|0|0
 	// 		}
-	// 	));	
+	// 	));
 	// 	component.optionChangedRGBSide({ value: 2 }, {});
 	// 	tick(10);
 	// 	expect(component.showHideOverlaySide).toEqual(false);
