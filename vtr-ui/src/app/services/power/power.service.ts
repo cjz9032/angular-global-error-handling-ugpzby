@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from "./flipToBoot.interface";
 @Injectable({
 	providedIn: 'root'
 })
@@ -136,6 +137,20 @@ export class PowerService {
 		} catch (error) {
 			throw error;
 		}
+	}
+
+	public getFlipToBootCapability(): Promise<FlipToBootInterface> {
+		if (this.devicePowerIdeaNoteBook) {
+			return this.devicePowerIdeaNoteBook.flipToBoot.getFlipToBootCapability();
+		}
+		return undefined;
+	}
+
+	public setFlipToBootSettings(status: FlipToBootSetStatus): Promise<FlipToBootErrorStatusInterface> {
+		if (this.devicePowerIdeaNoteBook) {
+			return this.devicePowerIdeaNoteBook.flipToBoot.setFlipToBootSettings(status);
+		}
+		return undefined;
 	}
 
 	// End Express/Rapid Charging mode for IdeaNoteBook
