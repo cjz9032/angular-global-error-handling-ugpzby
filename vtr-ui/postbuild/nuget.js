@@ -13,7 +13,7 @@ exec('git rev-parse --abbrev-ref HEAD', (error, stdout) => {
 			.split('\r\n')
 			.map(line => {
 				if (line.includes('<id>')) {
-					return line.replace('</id>', ` (${branchName})</id>`);
+					return line.replace('</id>', `_(${branchName})</id>`);
 				}
 				if (line.includes('<version>')) {
 					return line.replace(/>.+</, `>${version}<`);
