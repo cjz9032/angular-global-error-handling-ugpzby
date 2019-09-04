@@ -46,6 +46,7 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
 	ConnectedHomeSecurityDevicePosture = '[LocalStorageKey] ConnectedHomeSecurityDevicePosture',
+	ConnectedHomeSecurityLocation = '[LocalStorageKey] ConnectedHomeSecurityLocation',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
 	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
 	NetworkBoosNeedToAskPopup = '[LocalStorageKey] NetworkBoosNeedToAskPopup',

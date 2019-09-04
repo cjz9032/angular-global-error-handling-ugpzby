@@ -114,6 +114,8 @@ export class SecurityAdvisorMockService {
 				good: '0'
 			}],
 			isLocationServiceOn: true,
+			isComputerPermissionOn: true,
+			isDevicePermissionOn: true,
 			isLWSPluginInstalled: true,
 			hasSystemPermissionShowed: true,
 			launchLocationPrivacy() {
