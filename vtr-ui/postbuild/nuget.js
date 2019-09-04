@@ -12,12 +12,14 @@ exec('git rev-parse --abbrev-ref HEAD', (error, stdout) => {
 		fs.readFileSync(file, 'utf-8')
 			.split('\r\n')
 			.map(line => {
+				console.log(`before : ${line}`);
 				if (line.includes('<id>')) {
 					return line.replace('</id>', `.${branchName}</id>`);
 				}
 				if (line.includes('<version>')) {
 					return line.replace(/>.+</, `>${version}<`);
 				}
+				console.log(`after  : ${line}`);
 				return line;
 			})
 			.join('\r\n'),
