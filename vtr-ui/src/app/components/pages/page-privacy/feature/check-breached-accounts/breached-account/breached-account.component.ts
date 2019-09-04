@@ -8,9 +8,10 @@ import { BreachedAccount } from '../../../common/services/breached-accounts.serv
 })
 export class BreachedAccountComponent implements AfterViewInit {
 	@Input() set breachedAccounts(breachedAccounts: BreachedAccount[]) {
-		const {breachedAccountsForShow, otherBreaches} = this.getBreachedAccountsForDisplay(breachedAccounts);
+		const {breachedAccountsForShow, otherBreaches, unverifyBreaches} = this.getBreachedAccountsForDisplay(breachedAccounts);
 		this.breachedAccountsForShow = breachedAccountsForShow;
 		this.otherBreaches = otherBreaches;
+		this.unverifyBreaches = unverifyBreaches;
 	}
 	@Input() openId = null;
 	@Input() isUserAuthorized = false;
@@ -20,6 +21,7 @@ export class BreachedAccountComponent implements AfterViewInit {
 
 	breachedAccountsForShow: BreachedAccount[] = [];
 	otherBreaches: BreachedAccount[] = [];
+	unverifyBreaches: BreachedAccount[] = [];
 
 	tryProductText = {
 		risk: 'With your email and passwords exposed, others have access to your personal information, which could lead to identity theft and financial fraud.',
@@ -60,8 +62,9 @@ export class BreachedAccountComponent implements AfterViewInit {
 	}
 
 	private getBreachedAccountsForDisplay(breachedAccounts: BreachedAccount[]) {
-		const breachedAccountsForShow = breachedAccounts.filter(x => x.domain !== 'n/a');
-		const otherBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
+		const breachedAccountsForShow = breachedAccounts.filter(x => x.domain !== 'n/a' && x.isEmailConfirmed);
+		const otherBreaches = breachedAccounts.filter(x => x.domain === 'n/a' && x.isEmailConfirmed);
+		const unverifyBreaches = breachedAccounts.filter(x => !x.isEmailConfirmed);
 
 		if (otherBreaches.length > 0) {
 			breachedAccountsForShow.push({
@@ -71,6 +74,6 @@ export class BreachedAccountComponent implements AfterViewInit {
 			});
 		}
 
-		return {breachedAccountsForShow, otherBreaches};
+		return {breachedAccountsForShow, otherBreaches, unverifyBreaches};
 	}
 }

@@ -39,7 +39,7 @@
 		<div class="d-flex sub-desc">
 			<div class="ml-0 mr-4 pl-0">
 				<vtr-ui-button *ngIf="!isLocationServiceOn"
-					id="chs-tour-btn-openLocation"
+					linkId="chs-tour-btn-openLocation"
 					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeOpenLocationButton"
@@ -50,7 +50,7 @@
 					[title]="'homeSecurity.tour.locationTitle' | translate"></vtr-ui-button>
 				<!-- show done button -->
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
-					id="chs-tour-location-done-btn"
+					linkId="chs-tour-location-done-btn"
 					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"
@@ -66,7 +66,7 @@
 		<div *ngIf="switchPage === 1"
 			class="row text-center align-items-center justify-content-center">
 			<div>
-				<vtr-ui-button id="chs-tour-btn-start"
+				<vtr-ui-button linkId="chs-tour-btn-start"
 					*ngIf="!isLocationServiceOn"
 					role="button"
 					metricsEvent="FeatureClick"
@@ -76,7 +76,7 @@
 					(click)="next()"
 					[title]="'tutorial.next' | translate"></vtr-ui-button>
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
-					id="chs-tour-location-done-btn"
+					linkId="chs-tour-location-done-btn"
 					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"

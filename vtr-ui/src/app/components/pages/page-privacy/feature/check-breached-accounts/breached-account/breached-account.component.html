@@ -78,6 +78,32 @@
 		</vtr-try-product-block>
 	</div>
 </div>
+<div class="breached-account breached-account--unverify" *ngIf="unverifyBreaches.length > 0">
+	<div class="breached-account__preview">
+		<div class="breached-account__image">
+			<img class="breached-account__img"
+				 src="/assets/images/privacy-tab/unverify.png"
+				 srcset="/assets/images/privacy-tab/unverify@2x.png 2x"
+				 alt="unverify icon">
+		</div>
+		<div class="breached-account__text">
+			<div class="breached-account__social breached-account__social--unverify">
+				<div class="breached-account__social-description">
+					<h4 class="breached-account__title"><span class="breached-account__title--red">{{unverifyBreaches.length}}</span> breached accounts — verify your email for details</h4>
+				</div>
+			</div>
+			<div class="breached-account__details" *ngIf="isFigleafReadyForCommunication">
+				<button class="breached-account__accordion-button breached-account__accordion-button--to-right"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'SeeInAppVerify'"
+						(click)="openFigleafEmit('')">
+					<span>See in App</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
 <div *ngIf="openId === null">
 	<vtr-try-product-block
 		[isFigleafReadyToCommunication]="isFigleafReadyForCommunication"

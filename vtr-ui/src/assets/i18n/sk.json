@@ -802,6 +802,11 @@
                         "description": "Zapnutím tejto funkcie skrátite čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača.",
                         "tooltip": "Táto funkcia skracuje čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača. Ak je zapnutá, počítač prejde do úsporného režimu po zatvorení obrazovky. Po otvorení obrazovky do 15 minút od zatvorenia sa však prevádzka obnoví okamžite. Táto funkcia umožňuje prenosnému počítaču pokúsiť sa dokončiť prebiehajúce aktivity (napríklad odosielanie e-mailu alebo preberanie súboru), skôr ako počítač prejde do režimu odstavenia."
                     },
+					"flipToBoot": {
+						"title": "Spustenie po vyklopení",
+						"description": "Táto funkcia umožňuje zapnúť počítač pri otvorení obrazovky počítača, tak ako pri stlačení tlačidla napájania. ",
+						"tooltip": "Táto funkcia automaticky spustí počítač pri otvorení obrazovky.  Je užitočná najmä vtedy, ak ste v službe Windows Hello nastavili informácie na prihlasovanie pomocou tváre."
+					},
                     "or": "Alebo"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Vstup a príslušenstvo",
                 "subtitle": "Nastavenia vstupu a príslušenstva",
-                "description": "Funkcia inteligentného snímania Lenovo prostredníctvom kombinácie rôznych senzorov v počítači zisťuje vaše aktivity a upravuje nastavenia týkajúce sa optimálnej správy napájania",
+                "description": "Táto časť umožňuje nastaviť najčastejšie používané funkcie klávesnice a myši. S ďalšími funkciami sa oboznámte tu.",
                 "inputAccessory": {
                     "title": "Inteligentná klávesnica",
                     "hiddenKeyboardFunctions": {
@@ -1575,6 +1580,7 @@
             "statusWarrantyNotFound": "Záruka sa nenašla",
             "yearDepotWarranty": "Ročná záruka s opravou v servisnom stredisku",
             "warrantyDetails": "Informácie o záruke:",
+            "warrantyDashboardDetails": "Informácie o záruke",
             "startDate": "Dátum začiatku: ",
             "endDate": "Dátum konca: ",
             "status": "Stav: ",
@@ -2294,6 +2300,31 @@
         "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
         "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
+    },
+    "modernPreload": {
+        "cancel": "Zrušiť",
+        "close": "Zatvoriť",
+        "download": "Prevziať",
+        "downloadAvailable": "K dispozícii na prevzatie",
+        "downloadComplete": "Preberanie je dokončené",
+        "downloading": "Preberá sa...",
+        "failedDownload": "Neúspešné preberanie",
+        "failedInstall": "Neúspešná inštalácia",
+        "installed": "Nainštalované",
+        "restartDownload": "Znova spustiť preberanie",
+        "retry": "Skúsiť znova",
+        "skip": "Preskočiť",
+        "noteDownloading": "Poznámka: Po kliknutí na tlačidlo Stiahnuť sa môže zobraziť výzva systému Windows na povolenie inštalácie softvéru do vášho zariadenia. Po dokončení inštalácie sa aplikácia automaticky zobrazí na pracovnej ploche alebo v ponuke Štart.<br /><br />Môžete zatvoriť stránku Môj softvér a pokračovať v používaní aplikácie Lenovo Vantage. Počas inštalácie nezatvárajte aplikáciu Lenovo Vantage.",
+        "noteFailedDownload": "Pozor: Počas sťahovania alebo inštalácie niečo zlyhalo. Uistite sa, že máte funkčné pripojenie na internet, a skúste to znova. Počas inštalácie softvéru nechajte aplikáciu Vantage otvorenú. Môžete zatvoriť stránku Môj softvér a pokračovať v používaní aplikácie Vantage alebo môžete minimalizovať aplikáciu Vantage, kým sa nedokončí inštalácia softvéru.",
+        "noteDownloadComplete": "Poznámka: Po kliknutí na tlačidlo Stiahnuť sa môže zobraziť výzva systému Windows na povolenie inštalácie softvéru do vášho zariadenia. Po dokončení inštalácie sa aplikácia automaticky zobrazí na pracovnej ploche alebo v ponuke Štart.<br /><br />Môžete zatvoriť stránku Môj softvér a pokračovať v používaní aplikácie Lenovo Vantage. Počas inštalácie nezatvárajte aplikáciu Lenovo Vantage.",
+        "noteDownloadAvailable": "Poznámka: Po kliknutí na tlačidlo Stiahnuť sa môže zobraziť výzva systému Windows na povolenie inštalácie softvéru do vášho zariadenia. Po dokončení inštalácie sa aplikácia automaticky zobrazí na pracovnej ploche alebo v ponuke Štart.<br /><br />Môžete zatvoriť stránku Môj softvér a pokračovať v používaní aplikácie Lenovo Vantage. Počas inštalácie nezatvárajte aplikáciu Lenovo Vantage.",
+        "sizeText": "Rozmery",
+        "versionText": "Verzia",
+        "softwareDescription": "Ak chcete používať softvér, ktorý ste kúpili spolu so zariadením, nižšie kliknite na tlačidlo Stiahnuť. Ak budete potrebovať znova stiahnuť softvér, môžete to urobiť kliknutím na tlačidlo „Môj softvér“ v ponuke aplikácie Vantage.",
+        "title": "Môj softvér",
+        "loadingDescription": "Počkajte, kým pripravíme zoznam softvéru, ktorý ste zakúpili spolu so zariadením.",
+        "shortDescription": "Stiahnite si a nainštalujte softvér, ktorý ste zakúpili spolu so zariadením.",
+        "errorDescription": "<h2>Ľutujeme, vyskytol sa problém pri načítavaní informácií o softvéri na stiahnutie</h2>Skúste kliknúť na tlačidlo „Skúsiť znova“ nižšie alebo to skúste znova neskôr kliknutím na tlačidlo „Môj softvér“ v ponuke aplikácie Vantage."
     },
     "hardwareScan": {
         "name": "Kontrola hardvéru",

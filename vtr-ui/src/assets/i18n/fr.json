@@ -802,6 +802,11 @@
                         "description": "Activez cette fonctionnalité pour améliorer la sortie du mode veille si vous ouvrez et rabattez fréquemment le capot de l'ordinateur.",
                         "tooltip": "Cette fonctionnalité améliorera la sortie du mode veille de votre ordinateur si vous ouvrez et rabattez fréquemment le capot de votre ordinateur. Lorsque cette fonctionnalité est activée, votre ordinateur se mettra en mode économie d'énergie lorsque vous fermez son capot, et sortira du mode veille instantanément si vous le réouvrez moins de 15 minutes après l'avoir fermé. Cette fonctionnalité permet également à votre ordinateur de tenter de terminer les activités en cours (par exemple, l'envoi d'un e-mail ou le téléchargement d'un fichier) avant que le système ne s'interrompe."
                     },
+					"flipToBoot": {
+						"title": "Retourner pour démarrer",
+						"description": "Cette fonction vous permet d'allumer l'ordinateur lorsque vous ouvrez le capot de l'ordinateur, exactement de la même manière que lorsque vous appuyez sur le bouton d'alimentation. ",
+						"tooltip": "Cette fonction démarre automatiquement l'ordinateur lorsque vous ouvrez le capot.  Cela s'avère particulièrement utile si vous avez configuré les informations de connexion avec la reconnaissance faciale dans Windows Hello."
+					},
                     "or": "Ou"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Saisie et accessoires",
                 "subtitle": "Paramètres de saisie et des accessoires",
-                "description": "Le capteur intelligent Lenovo combine plusieurs capteurs sur votre ordinateur afin de détecter vos activités et régler les paramètres pour une gestion de l'alimentation optimale",
+                "description": "Cette section vous permet de définir les fonctions du clavier et de la souris les plus fréquemment utilisées. Découvrez plus de fonctions ici.",
                 "inputAccessory": {
                     "title": "Clavier intelligent",
                     "hiddenKeyboardFunctions": {
@@ -1575,6 +1580,7 @@
             "statusWarrantyNotFound": "Impossible de trouver la garantie",
             "yearDepotWarranty": "Garantie dépôt Y",
             "warrantyDetails": "Détails de la garantie :",
+            "warrantyDashboardDetails": "Détails de la garantie",
             "startDate": "Date de début : ",
             "endDate": "Date de fin : ",
             "status": "Etat : ",
@@ -2294,6 +2300,31 @@
         "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
         "Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte."
+    },
+    "modernPreload": {
+        "cancel": "Annuler",
+        "close": "Fermer",
+        "download": "Télécharger",
+        "downloadAvailable": "Téléchargement disponible",
+        "downloadComplete": "Téléchargement terminé",
+        "downloading": "Téléchargement...",
+        "failedDownload": "Échec du téléchargement",
+        "failedInstall": "Échec de l'installation",
+        "installed": "Installé",
+        "restartDownload": "Recommencer le téléchargement",
+        "retry": "Réess.",
+        "skip": "Passer",
+        "noteDownloading": "Remarque : après avoir cliqué sur Télécharger, vous recevrez peut-être une invite de Windows pour nous permettre d'installer le logiciel sur votre périphérique. Une fois l'installation de vos applications terminée, celles-ci s'afficheront automatiquement sur votre bureau ou dans le menu Démarrer.<br /><br />Vous pouvez fermer la page Mon logiciel et continuer d'utiliser Lenovo Vantage. Ne fermez pas Lenovo Vantage pendant l'installation.",
+        "noteFailedDownload": "Alerte : une erreur s'est produite pendant le téléchargement ou l'installation. Assurez-vous que vous êtes connecté à Internet et réessayez. Veuillez garder Vantage ouvert pendant que nous installons le logiciel. Vous pouvez fermer la page Mon logiciel et continuer d'explorer Vantage ou réduire Vantage pendant que nous terminons l'installation de votre logiciel.",
+        "noteDownloadComplete": "Remarque : après avoir cliqué sur Télécharger, vous recevrez peut-être une invite de Windows pour nous permettre d'installer le logiciel sur votre périphérique. Une fois l'installation de vos applications terminée, celles-ci s'afficheront automatiquement sur votre bureau ou dans le menu Démarrer.<br /><br />Vous pouvez fermer la page Mon logiciel et continuer d'utiliser Lenovo Vantage. Ne fermez pas Lenovo Vantage pendant l'installation.",
+        "noteDownloadAvailable": "Remarque : après avoir cliqué sur Télécharger, vous recevrez peut-être une invite de Windows pour nous permettre d'installer le logiciel sur votre périphérique. Une fois l'installation de vos applications terminée, celles-ci s'afficheront automatiquement sur votre bureau ou dans le menu Démarrer.<br /><br />Vous pouvez fermer la page Mon logiciel et continuer d'utiliser Lenovo Vantage. Ne fermez pas Lenovo Vantage pendant l'installation.",
+        "sizeText": "Taille",
+        "versionText": "Version",
+        "softwareDescription": "Cliquez télécharger ci-dessous pour utiliser le logiciel que vous avez acheté avec votre appareil. Si à n'importe quel moment, vous avez besoin de télécharger à nouveau ce logiciel, vous pouvez effectuer cela en cliquant le bouton Mon logiciel dans le menu Vantage.",
+        "title": "Mon logiciel",
+        "loadingDescription": "Veuillez patienter pendant que nous préparons la liste des logiciels qui étaient inclus dans l'achat de votre appareil.",
+        "shortDescription": "Téléchargez et installez les logiciels qui sont inclus dans l'achat de votre appareil.",
+        "errorDescription": "<h2>Désolé, il y a eu un problème lors de la récupération des informations concernant le téléchargement du logiciel</h2>Essayez de cliquer sur le bouton « Réessayer » ci-dessous ou réessayez ultérieurement en cliquant sur le bouton « Mon logiciel » du menu Vantage."
     },
     "hardwareScan": {
         "name": "Analyse matérielle",

@@ -5,6 +5,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { UDKActionInfo, INPUT_TEXT, OPEN_WEB } from './UDKActionInfo';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 
 @Component({
@@ -31,7 +33,9 @@ export class UserDefinedKeyComponent implements OnInit {
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private translateService: TranslateService,
-		private commonService: CommonService) {
+		private logger: LoggerService,
+		private commonService: CommonService
+	) {
 		this.userDefinedKeyOptions = [
 			{
 				title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1'),
@@ -67,7 +71,7 @@ export class UserDefinedKeyComponent implements OnInit {
 				this.hasUDKCapability = false;
 			}
 		} catch (error) {
-			console.log('ngOnInit: ', error);
+			console.log('ngOnInit: ', error.message);
 		}
 	}
 
@@ -104,11 +108,13 @@ export class UserDefinedKeyComponent implements OnInit {
 						this.udkActionInfo = new UDKActionInfo(value);
 						this.initValues(this.udkActionInfo);
 					}).catch(error => {
-						console.error('keyboard getUDKTypeList error here', error);
+						this.logger.error('keyboard getUDKTypeList error here', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('keyboard getUDKTypeList error here' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -121,11 +127,13 @@ export class UserDefinedKeyComponent implements OnInit {
 						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
 						console.log('keyboard setUDKTypeList here -------------.>', value);
 					}).catch(error => {
-						console.error('keyboard setUDKTypeList error here', error);
+						this.logger.error('keyboard setUDKTypeList error here', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('keyboard setUDKTypeList error here', error.message);
+			return EMPTY;
 		}
 	}
 

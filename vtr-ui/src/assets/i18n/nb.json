@@ -802,6 +802,11 @@
                         "description": "Aktiver denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte.",
                         "tooltip": "Denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte. Når den er aktivert, går datamaskinen i en modus med lavt strømforbruk når du lukker lokket, men gjenopptar umiddelbart hvis du åpner lokket innen 15 minutter etter at du lukket det. Denne funksjonen gjør også at den bærbare datamaskinen forsøker å fullføre aktiviteter som venter (som å sende e-post eller laste ned en fil) før systemet går i hvilemodus."
                     },
+					"flipToBoot": {
+						"title": "Vend for å starte",
+						"description": "Med denne funksjonen kan du slå på datamaskinen når du åpner lokket, på samme måte som når du trykker på på-knappen. ",
+						"tooltip": "Denne funksjonen starter datamaskinen automatisk når du åpner lokket.  Dette er spesielt nyttig hvis du har aktivert ansiktspålogging i Windows Hello."
+					},
                     "or": "Eller"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Inndata og tilbehør",
                 "subtitle": "Innstillinger for inndata og tilbehør",
-                "description": "Lenovo Intelligent Sensing kombinerer de ulike sensorene på datamaskinen for å gjenkjenne aktivitetene dine og justere innstillingene for optimal strømstyring",
+                "description": "I denne delen kan du definere de mest brukte tastatur- og musefunksjonene. Utforsk flere funksjoner her.",
                 "inputAccessory": {
                     "title": "Smarttastatur",
                     "hiddenKeyboardFunctions": {
@@ -1575,6 +1580,7 @@
             "statusWarrantyNotFound": "Fant ikke garanti",
             "yearDepotWarranty": "års servicesentergaranti",
             "warrantyDetails": "Garantidetaljer:",
+            "warrantyDashboardDetails": "Garantidetaljer",
             "startDate": "Startdato: ",
             "endDate": "Sluttdato: ",
             "status": "Status: ",
@@ -2294,6 +2300,31 @@
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
+    },
+    "modernPreload": {
+        "cancel": "Avbryt",
+        "close": "Lukk",
+        "download": "Last ned",
+        "downloadAvailable": "En nedlasting er tilgjengelig",
+        "downloadComplete": "Nedlastingen er ferdig",
+        "downloading": "Laster ned...",
+        "failedDownload": "Mislykket nedlasting",
+        "failedInstall": "Installeringen mislyktes",
+        "installed": "Installert",
+        "restartDownload": "Start nedlastingen på nytt",
+        "retry": "Prøv igjen",
+        "skip": "Hopp over",
+        "noteDownloading": "Merk: Når du har klikket på Last ned, kan det hende du får en melding fra Windows som ber deg tillate at programvaren installeres på enheten. Når installasjonen er fullført, vises appene automatisk på skrivebordet eller Start-menyen.<br /><br />Du kan lukke siden Min programvare og fortsette å bruke Lenovo Vantage. Ikke lukk Lenovo Vantage under installasjonen.",
+        "noteFailedDownload": "Varsel: Noe gikk galt under nedlastingen eller installasjonen. Sjekk at du er tilkoblet Internett, og prøv på nytt. Ikke lukk Vantage mens programvaren installeres. Du kan lukke siden Min programvare og fortsette å utforske Vantage, eller du kan minimere Vantage mens installasjonen av programvaren fullføres.",
+        "noteDownloadComplete": "Merk: Når du har klikket på Last ned, kan det hende du får en melding fra Windows som ber deg tillate at programvaren installeres på enheten. Når installasjonen er fullført, vises appene automatisk på skrivebordet eller Start-menyen.<br /><br />Du kan lukke siden Min programvare og fortsette å bruke Lenovo Vantage. Ikke lukk Lenovo Vantage under installasjonen.",
+        "noteDownloadAvailable": "Merk: Når du har klikket på Last ned, kan det hende du får en melding fra Windows som ber deg tillate at programvaren installeres på enheten. Når installasjonen er fullført, vises appene automatisk på skrivebordet eller Start-menyen.<br /><br />Du kan lukke siden Min programvare og fortsette å bruke Lenovo Vantage. Ikke lukk Lenovo Vantage under installasjonen.",
+        "sizeText": "Størrelse",
+        "versionText": "Versjon",
+        "softwareDescription": "Klikk på nedlastingsalternativet under for å få programvaren som var inkludert i kjøpet av enheten. Hvis du noensinne må laste ned programvaren på nytt, kan du gjøre dette ved å klikke på knappen Min programvare på Vantage-menyen.",
+        "title": "Min programvare",
+        "loadingDescription": "Vent litt mens det lages en liste over programvaren som var inkludert i kjøpet av enheten.",
+        "shortDescription": "Last ned og installer programvare som var inkludert i kjøpet av enheten.",
+        "errorDescription": "<h2>Beklager, men informasjonen om nedlasting av programvare kunne ikke hentes</h2>Prøv å klikke på knappen Prøv igjen under, eller prøv på nytt senere ved å klikke på knappen Min programvare på Vantage-menyen."
     },
     "hardwareScan": {
         "errorNoOptionSelected": "Du må velge et alternativ.",

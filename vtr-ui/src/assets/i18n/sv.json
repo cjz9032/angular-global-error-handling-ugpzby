@@ -802,6 +802,11 @@
                         "description": "Aktivera denna funktion för att datorn ska starta snabbare om du ofta öppnar och stänger datorlocket.",
                         "tooltip": "Funktionen förkortar tiden det tar att återgå till arbetsläge om du ofta öppnar eller stänger datorlocket. När den är aktiverad försätts datorn i ett lågenergiläge när du stänger locket, men återgår direkt till arbetsläge om du öppnar locket igen inom 15 minuter. Funktionen gör även att din bärbara dator kan försöka avsluta pågående aktiviteter (som att skicka ett e-postmeddelande eller hämta en fil) innan systemet försätts i vänteläge."
                     },
+					"flipToBoot": {
+						"title": "Starta när locket öppnas",
+						"description": "Med hjälp av den här funktionen kan du slå på datorn genom att öppna locket, precis som när du trycker på strömbrytaren. ",
+						"tooltip": "Den här funktionen startar datorn automatiskt när locket öppnas.  Funktionen är särskilt användbar om du har ställt in biometrisk ansiktsigenkänning med Windows Hello."
+					},
                     "or": "Eller"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Inmatning och tillbehör",
                 "subtitle": "Inställningar för inmatning och tillbehör",
-                "description": "Lenovo Intelligent avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för optimalt energisparläge",
+                "description": "I detta avsnitt kan du ställa in de tangentbords- och musfunktioner du använder oftast. Se fler funktioner här.",
                 "inputAccessory": {
                     "title": "Intelligent tangentbord",
                     "hiddenKeyboardFunctions": {
@@ -1575,6 +1580,7 @@
             "statusWarrantyNotFound": "Garantin hittades inte",
             "yearDepotWarranty": "Verkstadsgaranti år",
             "warrantyDetails": "Garantiinformation:",
+            "warrantyDashboardDetails": "Garantiinformation",
             "startDate": "Startdatum: ",
             "endDate": "Slutdatum: ",
             "status": "Status: ",
@@ -2294,6 +2300,31 @@
         "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
         "Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
+    },
+    "modernPreload": {
+        "cancel": "Avbryt",
+        "close": "Stäng",
+        "download": "Hämta",
+        "downloadAvailable": "Hämtning tillgänglig",
+        "downloadComplete": "Hämtningen är klar",
+        "downloading": "Hämtar...",
+        "failedDownload": "Hämtningen misslyckades",
+        "failedInstall": "Installationen misslyckades",
+        "installed": "Installerad",
+        "restartDownload": "Starta om hämtning",
+        "retry": "Försök igen",
+        "skip": "Hoppa över",
+        "noteDownloading": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "noteFailedDownload": "Varning! Ett problem inträffade under hämtningen eller installationen. Kontrollera att datorn är ansluten till internet och försök igen. Kom ihåg att behålla Vantage öppet medan programvaran installeras. Du kan stänga sidan Min programvara och fortsätta använda Vantage, eller minimera Vantage medan installationen slutförs.",
+        "noteDownloadComplete": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "noteDownloadAvailable": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "sizeText": "Storlek",
+        "versionText": "Version",
+        "softwareDescription": "Klicka på Hämta nedan för att hämta programvara som inkluderades i köpet av din enhet. Om du behöver ladda ned programvaran igen vid ett senare tillfälle kan du göra detta genom att välja Min programvara på Vantage-menyn.",
+        "title": "MIn programvara",
+        "loadingDescription": "Vänta medan vi skapar en lista med programvara som var inkluderad i köpet av enheten.",
+        "shortDescription": "Hämta och installera programvara som var inkluderad i köpet av din enhet.",
+        "errorDescription": "<h2>Det gick inte att hämta information om nedladdning av programvara</h2>Prova att klicka på Försök igen nedan, eller gör ett nytt försök senare genom att klicka på Min programvara på Vantage-menyn."
     },
     "hardwareScan": {
         "name": "Maskinvarugenomsökning",

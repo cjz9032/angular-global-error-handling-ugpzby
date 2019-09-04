@@ -802,6 +802,11 @@
                         "description": "Omogočite to funkcijo in skrajšajte čas, potreben za preklop iz stanja pripravljenosti, če pogosto odpirate in zapirate pokrov računalnika.",
                         "tooltip": "Ta funkcija skrajša čas, potreben za preklop iz stanja pripravljenosti, če pogosto odpirate in zapirate pokrov računalnika. Ko je omogočena, bo računalnik preklopil v način majhne porabe, ko zaprete pokrov, vendar bo takoj spet na voljo, če pokrov spet odprete največ 15 minut potem, ko ste ga zaprli. S to funkcijo lahko prenosni računalnik konča dejavnosti, ki potekajo (na primer pošiljanje e-pošte in prenos datotek), preden sistem preklopi v stanje mirovanja."
                     },
+					"flipToBoot": {
+						"title": "Zagon z odpiranjem",
+						"description": "S to funkcijo lahko računalnik vklopite, ko odprete njegov pokrov, na enak način, kot če bi pritisnili gumb za vklop. ",
+						"tooltip": "Ta funkcija samodejno zažene računalnik, ko odprete pokrov.  To je zlasti uporabno, če ste v funkciji Windows Hello nastavili prijavo z obrazom."
+					},
                     "or": "Ali"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Vnašanje in pripomočki",
                 "subtitle": "Nastavitve vnašanja in pripomočkov",
-                "description": "Tehnologija Lenovo za pametno zaznavanje združuje različne senzorje v računalniku, ki zaznavajo vaše dejavnosti in prilagodijo nastavitve za optimalno upravljanje porabe energije",
+                "description": "V tem razdelku lahko nastavite najpogosteje uporabljane funkcije tipkovnice in miške. Tukaj raziščite več funkcij.",
                 "inputAccessory": {
                     "title": "Pametna tipkovnica",
                     "hiddenKeyboardFunctions": {
@@ -1575,6 +1580,7 @@
             "statusWarrantyNotFound": "Garancija ni bila najdena",
             "yearDepotWarranty": "-letna garancija s popravilom na servisu",
             "warrantyDetails": "Podrobnosti garancije:",
+            "warrantyDashboardDetails": "Podrobnosti garancije",
             "startDate": "Datum začetka: ",
             "endDate": "Datum konca: ",
             "status": "Stanje: ",
@@ -2294,6 +2300,31 @@
         "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
         "Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
+    },
+    "modernPreload": {
+        "cancel": "Prekliči",
+        "close": "Zapri",
+        "download": "Prenesi",
+        "downloadAvailable": "Prenos je na voljo",
+        "downloadComplete": "Prenos je končan",
+        "downloading": "Prenašanje ...",
+        "failedDownload": "Neuspel prenos",
+        "failedInstall": "Namestitev ni uspela",
+        "installed": "Nameščeno",
+        "restartDownload": "Znova začni prenos",
+        "retry": "Znova poskusi",
+        "skip": "Preskoči",
+        "noteDownloading": "Opomba: ko kliknete »Potrdi in prenesi«, se morda prikaže poziv sistema Windows, da nam dovolite namestitev programske opreme v vašo napravo. Po dokončani namestitvi bodo vaše aplikacije samodejno prikazane na namizju ali v začetnem meniju.<br /><br />Stran Moja programska oprema lahko zaprete in nadaljujete z uporabo Lenovo Vantage. Med namestitvijo ne zapirajte Lenovo Vantage.",
+        "noteFailedDownload": "Opozorilo: Med prenosom ali namestitvijo je prišlo do napake. Preverite, ali imate internetno povezavo in preskusite spet. Ne pozabite, da je Vantage odprt, ko namestimo programsko opremo. Stran Moj programska oprema lahko zaprete in nadaljujete z raziskovanjem Vantage ali minimiziranjem Vantage, medtem ko dokončamo namestitev programske opreme.",
+        "noteDownloadComplete": "Opomba: ko kliknete »Potrdi in prenesi«, se morda prikaže poziv sistema Windows, da nam dovolite namestitev programske opreme v vašo napravo. Po dokončani namestitvi bodo vaše aplikacije samodejno prikazane na namizju ali v začetnem meniju.<br /><br />Stran Moja programska oprema lahko zaprete in nadaljujete z uporabo Lenovo Vantage. Med namestitvijo ne zapirajte Lenovo Vantage.",
+        "noteDownloadAvailable": "Opomba: ko kliknete »Potrdi in prenesi«, se morda prikaže poziv sistema Windows, da nam dovolite namestitev programske opreme v vašo napravo. Po dokončani namestitvi bodo vaše aplikacije samodejno prikazane na namizju ali v začetnem meniju.<br /><br />Stran Moja programska oprema lahko zaprete in nadaljujete z uporabo Lenovo Vantage. Med namestitvijo ne zapirajte Lenovo Vantage.",
+        "sizeText": "Velikost",
+        "versionText": "Različica",
+        "softwareDescription": "Kliknite spodaj, da uporabite programsko opremo, ki je bila kupljena z vašo napravo. Če tega zdaj ne želite, lahko programsko opremo kadarkoli prenesete tako, da v meniju Lenovo Vantage izberete Moja programska oprema.",
+        "title": "Moja programska oprema",
+        "loadingDescription": "Počakajte, da pripravimo seznam programske opreme, ki je bila vključena v nakup vaše naprave.",
+        "shortDescription": "Prenesite in namestite programsko opremo, ki je bila vključena v nakup naprave.",
+        "errorDescription": "<h2>Pri pridobivanju informacij o prenosu programske opreme je prišlo do težave</h2>Poskusite klikniti spodnji gumb »Poskusi znova« ali poskusite znova pozneje, tako da kliknete gumb »Moja programska oprema« v meniju Vantage."
     },
     "hardwareScan": {
         "name": "Pregled strojne opreme",

@@ -802,6 +802,11 @@
                         "description": "Włącz tę funkcję, aby skrócić czas wznawiania, jeśli często otwierasz i zamykasz pokrywę komputera.",
                         "tooltip": "Ta funkcja skraca czas wznawiania, jeśli użytkownik często otwiera i zamyka pokrywę komputera. Gdy ta funkcja jest włączona, na komputerze jest uruchamiany tryb niskiego zużycia energii, jeśli zostanie zamknięta pokrywa, a jego praca jest natychmiast wznawiana po ponownym otwarciu pokrywy w ciągu 15 minut. Dzięki tej funkcji notebook może podjąć próbę dokończenia nieukończonych operacji (na przykład wysłanie wiadomości e-mail lub pobranie pliku) zanim praca systemu zostanie wstrzymana."
                     },
+					"flipToBoot": {
+						"title": "Odwróć, aby uruchomić",
+						"description": "Ta funkcja umożliwia włączenie komputera po otwarciu jego pokrywy, tak samo jak w przypadku naciśnięcia przycisku zasilania. ",
+						"tooltip": "Ta funkcja automatycznie uruchamia komputer po otwarciu pokrywy.  Jest to szczególnie przydatne, jeśli skonfigurowano dane logowania za pomocą twarzy w funkcji Windows Hello."
+					},
                     "or": "Lub"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Wprowadzanie i akcesoria",
                 "subtitle": "Ustawienia wprowadzania i akcesoriów",
-                "description": "Funkcja inteligentnej detekcji Lenovo łączy działanie różnych czujników w komputerze, co pozwala wykryć aktywność użytkownika i odpowiednio dostosować optymalne ustawienia zarządzania energią",
+                "description": "Ta sekcja umożliwia ustawienie najczęściej używanych funkcji klawiatury i myszy. Poznaj więcej funkcji tutaj.",
                 "inputAccessory": {
                     "title": "Inteligentna klawiatura",
                     "hiddenKeyboardFunctions": {
@@ -1575,6 +1580,7 @@
             "statusWarrantyNotFound": "Nie znaleziono gwarancji",
             "yearDepotWarranty": "Roczna gwarancja serwisu wysyłkowego",
             "warrantyDetails": "Szczegóły gwarancji:",
+            "warrantyDashboardDetails": "Szczegóły gwarancji",
             "startDate": "Data rozpoczęcia: ",
             "endDate": "Data zakończenia: ",
             "status": "Stan: ",
@@ -2294,6 +2300,31 @@
         "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
         "Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
+    },
+    "modernPreload": {
+        "cancel": "Anuluj",
+        "close": "Zamknij",
+        "download": "Pobierz",
+        "downloadAvailable": "Pobieranie dostępne",
+        "downloadComplete": "Pobieranie ukończone",
+        "downloading": "Trwa pobieranie...",
+        "failedDownload": "Niepowodzenie pobierania",
+        "failedInstall": "Instalacja nie powiodła się",
+        "installed": "Zainstalowane",
+        "restartDownload": "Rozpocznij pobieranie od początku",
+        "retry": "Spróbuj ponownie",
+        "skip": "Pomiń",
+        "noteDownloading": "Uwaga: po kliknięciu przycisku Pobierz może zostać wyświetlony monit z systemu Windows z prośbą o potwierdzenie zainstalowania oprogramowania na urządzeniu. Po zakończeniu instalacji aplikacje będą wyświetlane automatycznie na pulpicie lub w menu Start.<br /><br />Możesz zamknąć stronę Moje oprogramowanie i dalej korzystać z Lenovo Vantage. Nie zamykaj Lenovo Vantage podczas instalacji.",
+        "noteFailedDownload": "Uwaga: wystąpił błąd podczas pobierania lub instalacji. Upewnij się, że masz połączenie z Internetem i spróbuj ponownie. Nie zamykaj aplikacji Vantage podczas instalacji oprogramowania. Możesz zamknąć stronę Moje oprogramowanie i dalej korzystać z aplikacji Vantage lub zminimalizować aplikację Vantage i poczekać na zakończenie instalacji.",
+        "noteDownloadComplete": "Uwaga: po kliknięciu przycisku Pobierz może zostać wyświetlony monit z systemu Windows z prośbą o potwierdzenie zainstalowania oprogramowania na urządzeniu. Po zakończeniu instalacji aplikacje będą wyświetlane automatycznie na pulpicie lub w menu Start.<br /><br />Możesz zamknąć stronę Moje oprogramowanie i dalej korzystać z Lenovo Vantage. Nie zamykaj Lenovo Vantage podczas instalacji.",
+        "noteDownloadAvailable": "Uwaga: po kliknięciu przycisku Pobierz może zostać wyświetlony monit z systemu Windows z prośbą o potwierdzenie zainstalowania oprogramowania na urządzeniu. Po zakończeniu instalacji aplikacje będą wyświetlane automatycznie na pulpicie lub w menu Start.<br /><br />Możesz zamknąć stronę Moje oprogramowanie i dalej korzystać z Lenovo Vantage. Nie zamykaj Lenovo Vantage podczas instalacji.",
+        "sizeText": "Wymiary",
+        "versionText": "Wersja",
+        "softwareDescription": "Kliknij poniższy przycisk Pobierz, aby pobrać oprogramowanie zakupione wraz z urządzeniem. Możesz ponownie pobrać oprogramowanie w dowolnym momencie, wybierając opcję Moje oprogramowanie z menu aplikacji Vantage.",
+        "title": "Moje oprogramowanie",
+        "loadingDescription": "Czekaj, tworzymy listę oprogramowania zakupionego wraz z urządzeniem.",
+        "shortDescription": "Pobierz i zainstaluj oprogramowanie zakupione wraz z urządzeniem.",
+        "errorDescription": "<h2>Wystąpił błąd, nie można pozyskać informacji o oprogramowaniu do pobrania</h2>Spróbuj kliknąć przycisk „Ponów” lub spróbować ponownie później, klikając przycisk „Moje oprogramowanie” w menu aplikacji Vantage."
     },
     "hardwareScan": {
         "name": "Skanowanie sprzętu",

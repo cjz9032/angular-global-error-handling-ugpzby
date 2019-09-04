@@ -28,8 +28,9 @@ export class UiButtonComponent implements OnInit {
 	@Input() isRegular = false;
 	@Input() btnHeight = false;
 	@Input() isGradient = false;
+	@Input() isRed = false;
 	@Input() title: string;
-	@Input() linkId:any;
+	@Input() linkId: any;
 	@Input() routerPath: string;
 
 	constructor() { }

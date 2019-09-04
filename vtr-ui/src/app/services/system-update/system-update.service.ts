@@ -51,6 +51,7 @@ export class SystemUpdateService {
 	public isInstallationCompleted = false;
 	public isInstallationSuccess = false;
 	public isDownloadingCancel = false;
+	public isImcErrorOrEmptyResponse = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -182,13 +183,8 @@ export class SystemUpdateService {
 				this.processScheduleUpdate(response.payload, true);
 			}).then((response: ScheduleUpdateStatus) => {
 				console.log('getScheduleUpdateStatus response', response);
+				this.isImcErrorOrEmptyResponse = false;
 				this.processScheduleUpdate(response, false);
-			}).catch((error) => {
-				if (error && error.errorcode === 606) {
-					setTimeout(() => {
-						this.getScheduleUpdateStatus(canReportProgress);
-					}, 200);
-				}
 			});
 		}
 	}
@@ -502,6 +498,7 @@ export class SystemUpdateService {
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
+		this.isImcErrorOrEmptyResponse = false;
 		if (updates.length === 0) {
 			this.installedUpdates = [];
 			const payload = new AvailableUpdate();
@@ -555,7 +552,8 @@ export class SystemUpdateService {
 				// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
 				setTimeout(() => {
 					this.getScheduleUpdateStatus(true);
-				}, 200);
+				}, 2500);
+				this.isImcErrorOrEmptyResponse = true;
 			}
 		}).catch((error) => {
 			if (error &&
@@ -564,6 +562,7 @@ export class SystemUpdateService {
 				setTimeout(() => {
 					this.getScheduleUpdateStatus(true);
 				}, 200);
+				this.isImcErrorOrEmptyResponse = true;
 			}
 		});
 	}
@@ -688,11 +687,28 @@ export class SystemUpdateService {
 	public getUnIgnoredUpdatesForInstallAll(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
-				return !value.isIgnored || (value.isIgnored && value.isDependency);
+				if (!value.isIgnored) {
+					return true;
+				} else if (value.isDependency) {
+					return this.IsUpdateDependedByUnIgnoredPackage(updateList, value.dependedByPackages);
+				}
 			});
 			return updates;
 		}
 		return undefined;
+	}
+
+	private IsUpdateDependedByUnIgnoredPackage(updateList: Array<AvailableUpdateDetail>, dependedByPackages: string) {
+		let result = false;
+		const dependedPacks = dependedByPackages.split(',');
+		dependedPacks.forEach((pack) => {
+			updateList.forEach((update) => {
+				if (!update.isIgnored && update.packageID === pack) {
+					result = true;
+				}
+			});
+		});
+		return result;
 	}
 
 	public dateDiffInDays(date: string) {

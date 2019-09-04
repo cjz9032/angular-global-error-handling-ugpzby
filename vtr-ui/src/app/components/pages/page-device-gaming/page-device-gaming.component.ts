@@ -25,8 +25,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: ['./page-device-gaming.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
+	styleUrls: [ './page-device-gaming.component.scss' ],
+	providers: [ NgbModalConfig, NgbModal ]
 })
 export class PageDeviceGamingComponent implements OnInit {
 	public static allCapablitiyFlag = false;
@@ -59,7 +59,7 @@ export class PageDeviceGamingComponent implements OnInit {
 		private translate: TranslateService,
 		private loggerService: LoggerService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
-		vantageShellService: VantageShellService,
+		vantageShellService: VantageShellService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -68,9 +68,7 @@ export class PageDeviceGamingComponent implements OnInit {
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		console.log('Status of internet ================>', this.isOnline);
 		if (this.dashboardService.isShellAvailable) {
-			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
 		}
 
@@ -78,13 +76,10 @@ export class PageDeviceGamingComponent implements OnInit {
 			this.gamingAllCapabilitiesService
 				.getCapabilities()
 				.then((response) => {
-					console.log(`-------------------///////////////////////////////  From getCapabilities()----------------`);
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
 					PageDeviceGamingComponent.allCapablitiyFlag = true;
 				})
-				.catch((err) => {
-					console.log(`ERROR in appComponent getCapabilities()`, err);
-				});
+				.catch((err) => {});
 		}
 		this.setDefaultCMSContent();
 
@@ -104,7 +99,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			queryOptions = {
 				Page: 'dashboard',
 				Lang: lang,
-				GEO: 'US',
+				GEO: 'US'
 			};
 		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -184,13 +179,11 @@ export class PageDeviceGamingComponent implements OnInit {
 					this.fetchCmsContents('en');
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			(error) => {}
 		);
 	}
 
-	public onConnectivityClick($event: any) { }
+	public onConnectivityClick($event: any) {}
 
 	private setDefaultCMSContent() {
 		this.heroBannerItems = [
@@ -300,11 +293,8 @@ export class PageDeviceGamingComponent implements OnInit {
 			.getSystemInfo()
 			.then((value: any) => {
 				this.systemStatus = this.mapSystemInfoResponse(value);
-				console.log('getSystemInfo.then', value, this.systemStatus);
 			})
-			.catch((error) => {
-				console.error('getSystemInfo', error);
-			});
+			.catch((error) => {});
 	}
 
 	private getSecurityStatus() {
@@ -312,11 +302,8 @@ export class PageDeviceGamingComponent implements OnInit {
 			.getSecurityStatus()
 			.then((value: any) => {
 				this.securityStatus = this.mapSecurityStatusResponse(value);
-				console.log('getSecurityStatus.then', value);
 			})
-			.catch((error) => {
-				console.error('getSecurityStatus', error);
-			});
+			.catch((error) => {});
 	}
 
 	private mapSystemInfoResponse(response: any): Status[] {

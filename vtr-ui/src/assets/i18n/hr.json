@@ -802,6 +802,11 @@
                         "description": "Omogućite ovu značajku da biste skratiti vrijeme potrebno za nastavak rada ako često otvarate i zatvarate poklopac računala.",
                         "tooltip": "Ta će značajka skratiti vrijeme potrebno za nastavak rada ako često otvarate i zatvarate poklopac računala. Kad je omogućena, računalo će prilikom zatvaranja poklopca prijeći u način male potrošnje energije, ali će odmah nastaviti s radom ako poklopac otvorite u roku od 15 minuta od zatvaranja. Značajka prijenosnom računalu omogućuje da pokuša dovršiti aktivnosti koje su u tijeku (npr. slanje e-pošte ili preuzimanje datoteke) prije nego što se obustavi rad sustava."
                     },
+					"flipToBoot": {
+						"title": "Okreni za pokretanje",
+						"description": "Ova značajka omogućuje vam uključivanje računala kad otvorite poklopac računala, upravo kao kad pritisnete gumb za napajanje. ",
+						"tooltip": "Ova značajka automatski pokreće računalo otvaranjem poklopca.  Posebno je korisno ako ste postavili podatke za prijavu pomoću lica u sustavu Windows Hello."
+					},
                     "or": "Ili"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Unos i pomagala",
                 "subtitle": "Postavke unosa i pomagala",
-                "description": "Pametni senzori tvrtke Lenovo kombinacija su raznih senzora na računalu koji prate vašu aktivnost i prilagođavaju postavke radi optimalnog upravljanja potrošnjom energije",
+                "description": "Ovaj odjeljak omogućuje vam postavljanje najčešće korištenih funkcija tipkovnice i miša. Daljnje značajke istražite ovdje.",
                 "inputAccessory": {
                     "title": "Inteligentna tipkovnica",
                     "hiddenKeyboardFunctions": {
@@ -1575,6 +1580,7 @@
             "statusWarrantyNotFound": "Jamstvo nije pronađeno",
             "yearDepotWarranty": "Standardno jamstvo Y",
             "warrantyDetails": "Detalji o jamstvu:",
+            "warrantyDashboardDetails": "Detalji o jamstvu",
             "startDate": "Datum početka: ",
             "endDate": "Datum isteka: ",
             "status": "Stanje: ",
@@ -2294,6 +2300,31 @@
         "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
         "Note": "Napomena: ",
         "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu."
+    },
+    "modernPreload": {
+        "cancel": "Odustani",
+        "close": "Zatvori",
+        "download": "Preuzimanje",
+        "downloadAvailable": "Preuzimanje je dostupno",
+        "downloadComplete": "Preuzimanje je dovršeno",
+        "downloading": "Preuzimanje...",
+        "failedDownload": "Preuzimanje nije uspjelo",
+        "failedInstall": "Instalacija nije uspjela",
+        "installed": "Instalirano",
+        "restartDownload": "Ponovno pokreni preuzimanje",
+        "retry": "Pokušajte ponovno",
+        "skip": "Preskoči",
+        "noteDownloading": "Napomena: kada kliknete Preuzmi, sustav Windows možda će od vas zatražiti da nam dopustite instalaciju softvera na uređaj. Kada instalirate aplikacije, one će se automatski prikazivati na radnoj površini ili izborniku Start.<br /><br />Možete zatvoriti stranicu Moj softver i nastaviti koristiti Lenovo Vantage. Nemojte zatvarati Lenovo Vantage tijekom instalacije.",
+        "noteFailedDownload": "Upozorenje: Došlo je do problema tijekom preuzimanja ili instalacije. Provjerite da ste povezani na internet i pokušajte iznova. Vodite računa da Vantage bude otvoren dok instaliramo vaš softver. Možete zatvoriti stranicu Moj softver i nastaviti istraživati Vantage ili minimizirati Vantage dok dovršimo instalaciju vašeg softvera.",
+        "noteDownloadComplete": "Napomena: kada kliknete Preuzmi, sustav Windows možda će od vas zatražiti da nam dopustite instalaciju softvera na uređaj. Kada instalirate aplikacije, one će se automatski prikazivati na radnoj površini ili izborniku Start.<br /><br />Možete zatvoriti stranicu Moj softver i nastaviti koristiti Lenovo Vantage. Nemojte zatvarati Lenovo Vantage tijekom instalacije.",
+        "noteDownloadAvailable": "Napomena: kada kliknete Preuzmi, sustav Windows možda će od vas zatražiti da nam dopustite instalaciju softvera na uređaj. Kada instalirate aplikacije, one će se automatski prikazivati na radnoj površini ili izborniku Start.<br /><br />Možete zatvoriti stranicu Moj softver i nastaviti koristiti Lenovo Vantage. Nemojte zatvarati Lenovo Vantage tijekom instalacije.",
+        "sizeText": "Veličina",
+        "versionText": "Verzija",
+        "softwareDescription": "Kliknite preuzimanje u nastavku kako biste preuzeli softver kupljen s vašim uređajem. Ukoliko zatrebate iznova preuzeti svoj softver, možete to učiniti u bilo kojem trenutku klikom na gumb Moj softver na Vantage izborniku.",
+        "title": "Moj softver",
+        "loadingDescription": "Pričekajte dok pripremimo popis softvera uključenog uz kupnju uređaja.",
+        "shortDescription": "Preuzmite i instalirajte softver uključen uz kupnju vašeg uređaja.",
+        "errorDescription": "<h2>Nažalost, došlo je do problema u preuzimanju informacija o preuzimanju softvera</h2>Pokušajte kliknuti gumb „Pokušaj ponovo” u nastavku ili pokušajte kasnije klikom na gumb „Moj softver” u izborniku Vantage."
     },
     "hardwareScan": {
         "name": "Skeniranje hardvera",
