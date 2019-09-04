@@ -635,7 +635,6 @@
 		"deviceSettings": {
 			"helpful": "Helpful Content",
 			"batteryGauge": {
-				"title": "BATTERY GAUGE",
 				"subtitle": "Battery",
 				"hours": "hours",
 				"hour": "hour",
@@ -643,9 +642,7 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
-				"updating": "Updating",
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
-				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
