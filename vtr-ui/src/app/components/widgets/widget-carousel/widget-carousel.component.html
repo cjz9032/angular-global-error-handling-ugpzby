@@ -1,5 +1,6 @@
 <div class="vtr-widget-carousel"
-	#carouselContainer>
+	#carouselContainer
+	[style.height.px]="carouselContainer.clientWidth * 340 / 944">
 	<ngb-carousel *ngIf="carouselModel"
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">

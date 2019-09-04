@@ -6,21 +6,25 @@ const file = path.resolve('./postbuild/Tangram.Client.Experience.nuspec');
 
 version = `${version}.${process.argv[2]}`;
 exec('git rev-parse --abbrev-ref HEAD', (error, stdout) => {
-	const branchName = stdout.trim();
+	const branchName = stdout.trim().toLowerCase();
 
 	fs.writeFileSync(file,
 		fs.readFileSync(file, 'utf-8')
-			.split('\r\n')
+			.split('\n')
 			.map(line => {
 				if (line.includes('<id>')) {
-					return line.replace('</id>', `_(${branchName})</id>`);
+					console.log(`before : ${line}`);
+					line = line.replace('</id>', `.${branchName}</id>`);
+					console.log(`after  : ${line}`);
 				}
 				if (line.includes('<version>')) {
-					return line.replace(/>.+</, `>${version}<`);
+					console.log(`before : ${line}`);
+					line = line.replace(/>.+</, `>${version}<`);
+					console.log(`after  : ${line}`);
 				}
 				return line;
 			})
-			.join('\r\n'),
+			.join('\n'),
 		'utf-8');
 });
 
