@@ -1181,7 +1181,7 @@
 					"more": "MORE",
 					"control1": "TOUCHPAD CONTROLS",
 					"control2": "MOUSE CONTROLS",
-					"control3": "TRACKPOINT CONTROLS" 
+					"control3": "TRACKPOINT CONTROLS"
 				}
 			}
 		},
@@ -1482,7 +1482,7 @@
 			"fileNotFoundException": "File not found."
 		}
 	},
-	"smartPerformance" : {
+	"smartPerformance": {
 		"title": "Health & Support",
 		"back": "BACK"
 	},
