@@ -2,10 +2,10 @@
 	<nav class="navbar navbar-expand-xl pr-0">
 		<div *ngIf="!deviceService.isGaming && !isGamingHome"
 			class="navbar-brand pt-0">
-			<a vtrMetrics
+			<a vtrMetrics tabindex="1"
 				*ngIf="items.length>0"
 				id="menu-main-lnk-l-logo"
-				attr.aria-label="menu-main-lnk-l-logo"
+				aria-label="menu-main-lnk-l-logo"
 				routerLinkActive="link-active"
 				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent"
@@ -24,7 +24,8 @@
 				alt="L" />
 
 			<a id="menu-main-lnk-gaming-logo"
-				attr.aria-label="menu-main-lnk-gaming-logo"
+				aria-label="menu-main-lnk-gaming-logo"
+				tabindex="1"
 				*ngIf="!isGamingHome"
 				vtrMetrics
 				routerLinkActive="link-active"
@@ -77,6 +78,7 @@
 						<a class="nav-link {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
 							vtrMetrics
+							tabindex="1"
 							id="menu-main-nav-lnk-{{item.id}}"
 							attr.aria-label="menu-main-nav-lnk-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
@@ -85,6 +87,7 @@
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							(click)="onMenuItemClick(item)"
+							(keydown.enter)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon *ngIf="item.icon[0]!=='icomoon'"
@@ -106,6 +109,7 @@
 						<a class="nav-link dropdown-toggle {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
 							vtrMetrics
+							tabindex="1"
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							attr.aria-label="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
@@ -134,6 +138,7 @@
 							<span *ngFor="let subitem of item.subitems; let ii=index">
 								<a *ngIf="subitem.externallink"
 									vtrMetrics
+									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
 									attr.aria-label="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
 									routerLinkActive="link-active"
@@ -148,6 +153,7 @@
 									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 									vtrMetrics
+									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
 									attr.aria-label="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
 									routerLinkActive="link-active"
@@ -160,6 +166,7 @@
 									(click)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink  && subitem.path!=='support'"
 									vtrMetrics
+									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
 									attr.aria-label="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
 									routerLinkActive="link-active"
@@ -180,6 +187,7 @@
 						<a class="nav-link {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
 							vtrMetrics
+							tabindex="1"
 							id="menu-main-nav-lnk-{{item.id}}"
 							attr.aria-label="menu-main-nav-lnk-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
@@ -223,6 +231,7 @@
 							*ngIf="userService.isLenovoIdSupported()"
 							[ngClass]="{'dropdown-toggle': true}"
 							role="button"
+							tabindex="1"
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded="false"
@@ -240,6 +249,7 @@
 							</div>
 							<a *ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
 								vtrMetrics
+								tabindex="1"
 								id="menu-main-lnk-open-modern-preload"
 								attr.aria-label="menu-main-lnk-open-modern-preload"
 								[metricsEvent]="item.metricsEvent"
@@ -249,6 +259,7 @@
 								href="javascript:void(0)"
 								(click)="openModernPreloadModal()">{{ 'modernPreload.title' | translate }}</a>
 							<a vtrMetrics
+							tabindex="1"
 								id="menu-main-lnk-open-preference"
 								attr.aria-label="menu-main-lnk-open-preference"
 								[metricsEvent]="item.metricsEvent"
@@ -260,6 +271,7 @@
 								(click)="onMenuItemClick(item)">{{ 'settings.preferenceSettings' | translate }}</a>
 							<a *ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
+								tabindex="1"
 								id="menu-main-lnk-open-lenovoid-login"
 								attr.aria-label="menu-main-lnk-open-lenovoid-login"
 								[metricsEvent]="item.metricsEvent"
@@ -270,6 +282,7 @@
 								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
+								tabindex="1"
 								id="menu-main-lnk-open-lenovoid-unlock"
 								attr.aria-label="menu-main-lnk-open-lenovoid-unlock"
 								[metricsEvent]="item.metricsEvent"
@@ -280,6 +293,7 @@
 								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
 								vtrMetrics
+								tabindex="1"
 								id="menu-main-lnk-user-logout"
 								attr.aria-label="menu-main-lnk-user-logout"
 								[metricsEvent]="item.metricsEvent"

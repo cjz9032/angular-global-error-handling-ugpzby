@@ -1,7 +1,7 @@
 <div class="vtr-header-main">
-	<div class="back"
+	<div class="back" 
 		*ngIf="back && back.length>0">{{backarrow}}
-		<a vtrMetrics
+		<a vtrMetrics tabindex="1"
 			metricsEvent="FeatureClick"
 			metricsItem="back"
 			(click)="goBack()"
