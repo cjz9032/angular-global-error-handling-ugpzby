@@ -265,7 +265,7 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		hide: true,
+		hide: false,
 		subitems: []
 	},
 	{
@@ -516,7 +516,8 @@ export class ConfigService {
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
-			if (country.toLowerCase() !== 'us') {
+			const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en');
+			if (!showCHSMenu) {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
 			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);

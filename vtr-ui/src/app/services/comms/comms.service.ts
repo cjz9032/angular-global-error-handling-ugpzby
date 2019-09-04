@@ -38,8 +38,7 @@ export class CommsService {
 		const url = this.env.upeApiRoot + api;
 
 		const reqHeader = new HttpHeaders({
-			'Content-Type': 'application/json;charset=UTF-8',
-			'Access-Control-Allow-Origin': '*'
+			'Content-Type': 'application/json;charset=UTF-8'
 		});
 
 		this.devService.writeLog('CALL UPE API: ', url);
