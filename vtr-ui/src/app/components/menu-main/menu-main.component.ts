@@ -194,6 +194,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			.catch(() => {
 				this.showHWScanMenu = false;
 			});
+		this.openModernPreloadModal()
 	}
 
 	private loadMenuOptions(machineType: number) {

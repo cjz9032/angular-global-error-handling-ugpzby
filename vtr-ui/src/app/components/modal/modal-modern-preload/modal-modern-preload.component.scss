@@ -101,6 +101,14 @@
 			margin-bottom: 2rem;
 		}
 
+		.error-text {
+			
+			::ng-deep h2{
+				font-size: 2rem;
+				margin-bottom: 2rem;
+			}
+		}
+
 		.app-item {
 			display: flex;
 			margin-bottom: 3rem;
@@ -157,6 +165,9 @@
 						.downloading-text {
 							font-size: 1.4rem;
 							margin-bottom: 0.3rem;
+							span {
+								text-transform: lowercase;
+							}
 						}
 
 						.progress-box {
