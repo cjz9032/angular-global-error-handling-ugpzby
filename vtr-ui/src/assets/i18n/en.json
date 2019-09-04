@@ -1182,7 +1182,8 @@
 				"controlOptions": {
 					"more": "MORE",
 					"control1": "TOUCHPAD CONTROLS",
-					"control2": "MOUSE CONTROLS"
+					"control2": "MOUSE CONTROLS",
+					"control3": "TRACKPOINT CONTROLS" 
 				}
 			}
 		},
