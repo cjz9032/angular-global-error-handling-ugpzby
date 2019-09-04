@@ -9,6 +9,10 @@
 		.coronet-logo {
 			width: 10rem;
 		}
+		.heading {
+			font-size: 2.5rem;
+			font-weight: $weight_600;
+		}
 		.content-body {
 			background-color: $shade_extralight;
 			border-radius: $border_radius;
@@ -27,7 +31,9 @@
 		.tryNow-btn{
 			::ng-deep {
 				.button-box {
-					float: right;
+					@media #{$mediaquery_7} {
+						margin-top: 0;
+					}
 					.button {
 						max-width: 18rem;
 					}
