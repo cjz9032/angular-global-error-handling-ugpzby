@@ -408,7 +408,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	async getVantageToolBarCapability() {
 		await this.getVantageToolBarStatus();
-		this.hideBatteryLink();
+		this.hideOtherSettingsLink();
 	}
 
 	onUsbChargingStatusChange() {
@@ -875,11 +875,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				const featureStatus = await this.powerService.getVantageToolBarStatus();
 				this.logger.info('getVantageToolBarStatus.then', featureStatus);
 				this.vantageToolbarStatus = featureStatus;
-				this.hideOtherSettings();
+				this.hideOtherSettingsLink();
 			}
 		} catch (error) {
 			this.logger.error('getVantageToolBarStatus', error.message);
-			this.hideOtherSettings();
+			this.hideOtherSettingsLink();
 			return EMPTY;
 		}
 	}
@@ -907,7 +907,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		console.log('getStartMonitorCallBack', featureStatus);
 		this.vantageToolbarStatus = featureStatus;
 		this.commonService.setLocalStorageValue(LocalStorageKey.VantageToolbarCapability, featureStatus);
-		this.hideOtherSettings();
+		this.hideOtherSettingsLink();
 	}
 
 	public startMonitor() {
@@ -1114,7 +1114,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	hideOtherSettings() {
+	hideOtherSettingsLink() {
 		if (this.vantageToolbarStatus && !this.vantageToolbarStatus.available) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
 		}
