@@ -106,7 +106,11 @@
 			}
 		}
 	}
-
+	.container-fluid {
+		.img {
+			border-radius: $border_radius;
+		}
+	}
 	.article-card {
 		height: 200px;
 		border-radius: $border_radius;

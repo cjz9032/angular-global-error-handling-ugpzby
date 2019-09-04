@@ -48,7 +48,7 @@ library.add(faMapMarkerAlt);
 		PageConnectedHomeSecurityComponent,
 		UiChsStatusbarComponent,
 		DaysIntervalPipe,
-		HomeSecurityAfterSignupComponent,
+		HomeSecurityAfterSignupComponent
 	],
 	imports: [
 		CommonModule,

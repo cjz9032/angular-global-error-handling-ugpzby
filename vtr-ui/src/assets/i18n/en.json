@@ -1534,8 +1534,8 @@
 			"wifiNetworks": "Wi-fi networks",
 			"homeDevices": "Home devices",
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "DISCONNECT",
-			"goDashboard": "GO TO DASHBOARD"
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard"
 		},
 		"tour": {
 			"back": "Back",
@@ -1579,10 +1579,15 @@
 		"card": {
 			"startTrial": "Start Trial",
 			"startTrialTitle": "Create your Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security envirionment, and start protecting your home and family today.",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
 			"join": "join",
 			"joinTitle": "Join Connected Home Security of your family",
 			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTile": "You are about to launch the Connected Home Security web console...",
+			"goNow": "Go now",
+			"disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
 		}
 	},
 	"support": {
