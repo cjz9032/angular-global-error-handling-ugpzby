@@ -21,8 +21,6 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 
 

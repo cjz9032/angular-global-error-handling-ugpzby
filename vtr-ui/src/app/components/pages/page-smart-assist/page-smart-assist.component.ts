@@ -562,19 +562,4 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.getFacialRecognitionStatus();
 		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
 	}
-	initHPDSensorType() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.getHPDSensorType()
-					.then((type: number) => {
-						this.hpdSensorType = type;
-						console.log('getHPDSensorType: ', this.hpdSensorType);
-					}).catch(error => {
-						console.error('getHPDSensorType', error);
-					});
-			}
-		} catch (error) {
-			console.error('getHPDSensorType' + error.message);
-		}
-	}
 }
