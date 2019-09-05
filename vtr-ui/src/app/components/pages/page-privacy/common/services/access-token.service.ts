@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SafeStorageService } from './safe-storage.service';
 import { BehaviorSubject } from 'rxjs';
-import { getHashCode } from '../../utils/helpers';
+import { getSha1Hash, getSha256Hash } from '../../utils/helpers';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class AccessTokenService {
 	}
 
 	setAccessToken(accessToken) {
-		const hashForToken = getHashCode(accessToken).toString();
+		const hashForToken = getSha256Hash(accessToken).toString();
 		this.storageService.setItem('hashForToken', hashForToken);
 		this.safeStorageService.setPassword('figleaf-accessToken', accessToken);
 		this.accessTokenIsExist.next(!!accessToken);
@@ -26,7 +26,7 @@ export class AccessTokenService {
 
 	getAccessToken() {
 		const tokenFromSafeStorage = this.safeStorageService.getPassword('figleaf-accessToken');
-		const hashFromSafeStorage = getHashCode(tokenFromSafeStorage) ? getHashCode(tokenFromSafeStorage).toString() : '';
+		const hashFromSafeStorage = getSha256Hash(tokenFromSafeStorage) ? getSha256Hash(tokenFromSafeStorage).toString() : '';
 		const hashFromMainStorage = this.storageService.getItem('hashForToken');
 		const isEqualHash = hashFromMainStorage === hashFromSafeStorage;
 

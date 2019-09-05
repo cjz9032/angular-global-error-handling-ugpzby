@@ -6,9 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AccessTokenService } from '../../../common/services/access-token.service';
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 import { INVALID_TOKEN } from '../../../utils/error-codes';
-import { getHashCode } from '../../../utils/helpers';
+import { getSha1Hash } from '../../../utils/helpers';
 import { SafeStorageService } from '../../../common/services/safe-storage.service';
-import { PrivacyModule } from '../../../privacy.module';
 
 interface ConfirmationCodeValidationResponse {
 	status: string;
@@ -79,7 +78,7 @@ export class EmailScannerService {
 	}
 
 	scanNotifierEmit() {
-		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
+		this.storageService.setItem(USER_EMAIL_HASH, getSha1Hash(this._userEmail$.getValue()));
 		this.safeStorageService.setEmail(this._userEmail$.getValue());
 		this.scanNotifier.next(true);
 	}
