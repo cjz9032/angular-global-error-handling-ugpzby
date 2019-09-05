@@ -101,6 +101,12 @@
 	color: inherit;
 }
 
+.text-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 @media #{$mediaquery_4} {
 	.nmx-40 {
 		margin-left: -3.5rem !important;

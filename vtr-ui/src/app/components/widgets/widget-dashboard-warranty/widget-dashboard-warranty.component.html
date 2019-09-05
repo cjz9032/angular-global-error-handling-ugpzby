@@ -2,8 +2,7 @@
 	[ngClass]="{'in-warranty': item.info.status == 0, 'expired': item.info.status ==1, 'not-found': item.info.status == 2}">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col"
-				*ngIf="item.info.status >= 0">
+			<div class="col" *ngIf="item.info.status >= 0">
 				<div class="title">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
 				<div class="content">
 					<div class="sub-description">
@@ -27,15 +26,10 @@
 					</div>
 				</div>
 				<div class="button-box">
-					<a role="button"
-						id="support-view-warranty-options"
-						aria-label="support-view-warranty-options"
-						href="{{item.info.url}}"
-						target="_blank"
-						class="button"
-						vtrMetrics
-						metricsItem="ViewWarrantyOptionsButton"
-						metricsEvent="FeatureClick"
+					<a role="button" id="support-view-warranty-options" aria-label="support-view-warranty-options"
+						href="{{item.info.url}}" target="_blank" class="button"
+						title="{{'support.warranty.viewWarrantyOptions' | translate}}" vtrMetrics
+						metricsItem="ViewWarrantyOptionsButton" metricsEvent="FeatureClick"
 						metricsParent="{{pageParent}}">{{'support.warranty.viewWarrantyOptions' | translate}}</a>
 				</div>
 			</div>

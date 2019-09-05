@@ -1,0 +1,153 @@
+@import '../../../app.theme.scss';
+
+.vtr-ui-smart-performance {
+	.vtr-device-information {
+		box-shadow: $drop_shadow;
+		.offline-info-background {
+			border-radius: 0.5rem;
+			height: 100%;
+			width: 100%;
+			background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
+			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+			padding: 4rem 6rem;
+			h1 {
+				color: $light;
+				font-size: 3.5rem;
+				font-weight: $weight_light;
+			}
+			h3 {
+				font-size: 2rem;
+				color: $light;
+				opacity: 0.5;
+				line-height: 2;
+			}
+			fa-icon {
+				color: #7D5FEF;
+				font-size: 15rem;
+			}
+			.action-button {
+				border-radius: 2.5rem;
+				background: $gradient_main;
+				text-transform: uppercase;
+				padding: 0 5rem;
+				color: $light;
+				font-size: 1.5rem;
+				height: 5rem;
+				font-weight: $weight_medium;
+				line-height: 5rem;
+				text-align: center;
+				border: 0rem;
+				cursor: pointer;
+			}
+		}
+		.pc-performance-block {
+			padding: 3rem;
+			h1 {
+				font-size: 4rem;
+				font-weight: $weight_light;
+				color: $shade_darkest;
+				margin-bottom: 2rem;
+			}
+			h5 {
+				font-size: 2rem;
+				font-weight: $weight_light;
+				color: $shade_darkest;
+				line-height: 1;
+			}
+			.performance-slider-block {
+				margin: 2rem 0;
+				background: $shade_lightest;
+				width: 100%;
+				padding: 3.5rem 2rem;
+				.slider {
+					width: 100%;
+					height: 30px;
+					background: linear-gradient(to right, #d02928, #d73f26, #dd5124, #e26222, #e77222, #de7d15, #d48708, #c99000, #ad9500, #909700, #729816, #51982c);
+					border-radius: 20px;
+					position: relative;
+					.condition {
+						padding: 0 1.5rem;
+						font-size: 1.2rem;
+						text-transform: uppercase;
+						font-weight: $weight_regular;
+						.critical{
+							top: -18px;
+							color: #D02928;
+							position: absolute;
+						}
+						.well {
+							right: 10px;
+							color: #51982C;
+							position: absolute;
+							top: -18px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.warranty-box {
+		border-radius: $border_radius;
+		background-size: cover;
+		color: $light;
+		box-shadow: $drop_shadow;
+		padding: 4rem;
+		letter-spacing: 0;
+		&.expired {
+			background: url("../../../../assets/images/warranty-bg.png") no-repeat, linear-gradient(to left top, #F17F14, #ED4E04);
+		}
+
+		.title {
+			font-size: 2.5rem;
+			font-weight: $weight_bold;
+			text-transform: uppercase;
+		}
+
+		.sub-title {
+			font-size: 1.6rem;
+			font-weight: $weight_bold;
+			opacity: .8;
+			padding-bottom: 0.75rem;
+		}
+
+		.sub-description {
+			font-size: 1.5rem;
+			font-weight: $weight_medium;
+			opacity: .8;
+			line-height: 2.3rem;
+		}
+
+		.button {
+			text-transform: uppercase;
+			display: inline-block;
+			width: 100%;
+			height: 5rem;
+			line-height: 5rem;
+			border: none;
+			border-radius: 10rem;
+			background: $light;
+			padding: 0 3rem;
+			color: $main;
+			font-size: 1.5rem;
+			letter-spacing: 0.1rem;
+			font-weight: $weight_bold;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+			&:hover {
+				box-shadow: none;
+				background: $main_lightest;
+			}
+
+			&:focus {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+

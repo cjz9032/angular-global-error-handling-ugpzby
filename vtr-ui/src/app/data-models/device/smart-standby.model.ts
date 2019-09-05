@@ -1,6 +1,6 @@
 export class SmartStandby {
-	public isCapable: boolean = false;
-	public isEnabled: boolean = false;
-	public activeStartEnd: string = '9:00-18:00';
-	public daysOfWeekOff: string = 'tue,wed,thurs,fri,sat,sun';
+	public isCapable = false;
+	public isEnabled = false;
+	public activeStartEnd = '9:00-18:00';
+	public daysOfWeekOff = 'mon,tue,wed,thurs,fri,sat,sun';
 }

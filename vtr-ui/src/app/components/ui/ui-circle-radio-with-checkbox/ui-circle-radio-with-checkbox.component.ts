@@ -15,6 +15,8 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	@Input() checked: boolean;
 	@Input() disabled = false;
 	@Input() theme: string;
+	@Input() processIcon = false;
+	@Input() textId: string;
 
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon: boolean = false;
@@ -28,18 +30,22 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 		this.change.emit(event);
 	}
 
-	// getIconName(name: string) {
-	// 	if (name) {
-	// 		var arr = name.split(' ');
-	// 		var index = arr.indexOf("&");
-	// 		if (index !== -1) {
-	// 			arr.splice(index, 1);
-	// 		}
-	// 		return arr.join("").toLowerCase();
-	// 	}
-	// 	else {
-	// 		return "";
-	// 	}
-	// }
+	getIconName(name: string) {
+		if (this.processIcon) {
+			if (name) {
+				var arr = name.split(' ');
+				var index = arr.indexOf("&");
+				if (index !== -1) {
+					arr.splice(index, 1);
+				}
+				return arr.join("").toLowerCase();
+			}
+			else {
+				return "";
+			}
+		} else {
+			return name;
+		}
+	}
 
 }

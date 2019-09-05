@@ -50,16 +50,17 @@
 
 							<div class="row no-gutters"
 								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
-								<vtr-ui-circle-radio *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
-									theme="blue"
+								<vtr-ui-circle-radio-with-checkbox *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
+									[theme]="'blue'"
 									[radioId]="'radioDolbyMode' + dolbyMode | removeSpace"
 									[group]="radioGroupAutoDolbySettings"
 									[label]="dolbyMode | dolbyModesTranslation"
 									[value]='dolbyMode'
 									[checked]="dolbyMode == dolbyModeResponse.currentMode"
 									(change)="onDolbySeetingRadioChange($event)"
+									[processIcon]="true"
 									[textId]="'myDevice-settings-audio-automatic-dolby'">
-								</vtr-ui-circle-radio>
+								</vtr-ui-circle-radio-with-checkbox>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
@@ -214,7 +215,7 @@
 							[isLastChild]="true"
 							[switchId]="'audio-microphone-optimize'">
 							<div class="row no-gutters">
-								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
+								<vtr-ui-circle-radio-with-checkbox *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
 									[radioId]="'radioMicrophone' + optimizeMode | removeSpace"
 									[group]="radioOptimiseMicSettings"
 									[label]="optimizeMode | separatePascalCase"
@@ -223,8 +224,9 @@
 									[checked]="optimizeMode === microOptimizeModeResponse.current"
 									[disabled]="microphoneProperties.disableEffect"
 									(change)="onOptimizeModesRadioChange($event)"
+									[processIcon]="true"
 									[textId]="'myDevice-settings-audio-microphone-optimize'">
-								</vtr-ui-circle-radio>
+								</vtr-ui-circle-radio-with-checkbox>
 							</div>
 						</vtr-ui-row-switch>
 					</li>

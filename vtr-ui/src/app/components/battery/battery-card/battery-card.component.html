@@ -35,11 +35,6 @@
 		</div>
 	</ng-template>
 	<div class="container p-5 battery-panel-background">
-		<div class="battery-gauge-label text-uppercase"
-			id="myDevice-settings-batteryGauge-title"
-			attr.aria-label="myDevice-settings-batteryGauge-title">
-			{{'device.deviceSettings.batteryGauge.title' | translate}}
-		</div>
 		<div class="battery-health"
 			id="myDevice-settings-batteryGauge-subtitle"
 			attr.aria-label="myDevice-settings-batteryGauge-subtitle">
@@ -74,15 +69,18 @@
 			</div>
 			<div class='col battery-conditions-tips'>
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
-					[innerHTML]="batteryConditionNote | translate:param2" id="myDevice-settings-battery-condition-tip"
+					[innerHTML]="batteryConditionNote | translate:param2"
+					id="myDevice-settings-battery-condition-tip"
 					attr.aria-label="myDevice-settings-battery-condition-tip"></span>
 				<span
 					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error"
-					[innerHTML]="batteryConditionNote | translate" id="myDevice-settings-battery-condition-tip"
+					[innerHTML]="batteryConditionNote | translate"
+					id="myDevice-settings-battery-condition-tip"
 					attr.aria-label="myDevice-settings-battery-condition-tip"></span>
 				<a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError&&shortAcErrNote"
 					class="link-label"
-					(click)="showDetailTip(i)" id="myDevice-settings-batteryGauge-seeDetails-link"
+					(click)="showDetailTip(i)"
+					id="myDevice-settings-batteryGauge-seeDetails-link"
 					attr.aria-label="myDevice-settings-batteryGauge-seeDetails-link">{{'device.deviceSettings.batteryGauge.seeDetailsLink' | translate}}</a>
 			</div>
 
@@ -91,7 +89,7 @@
 			*ngIf="chargeThresholdInfo?.isOn">
 			<div class="row">
 				<p id="myDevice-settings-batteryGauge-threshold-note"
-				attr.aria-label="myDevice-settings-batteryGauge-threshold-note">
+					attr.aria-label="myDevice-settings-batteryGauge-threshold-note">
 					<span [innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate:param1"></span>
 				</p>
 			</div>
