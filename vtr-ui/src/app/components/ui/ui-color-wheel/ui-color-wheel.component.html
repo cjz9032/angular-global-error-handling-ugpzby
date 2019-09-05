@@ -1,27 +1,29 @@
 <div class="vtr-ui-color-wheel picker-container">
-	<div class="overlay" *ngIf="showOverlay" id="lighting_selecting_color_effect_msg" attr.aria-label="lighting_selecting_color_effect_msg">
-		<div  *ngIf="defaultLang !== 'ar'">
-				{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
+	<div class="overlay" *ngIf="showOverlay" id="lighting_selecting_color_effect_msg"
+		attr.aria-label="lighting_selecting_color_effect_msg">
+		<div *ngIf="defaultLang !== 'ar'">
+			{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
 		</div>
-		<div *ngIf="defaultLang === 'ar'" 	dir="rtl">
-				{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
+		<div *ngIf="defaultLang === 'ar'" dir="rtl">
+			{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="d-flex rgb-header">
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
-			<button vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick" class="btn enable-button"
-				[ngClass]="{'disable-button': btnStatus !== 'apply'}" [disabled]="btnStatus !== 'apply'"
-				(click)="onApplyColorEffect(backColor)" id="lighting_color_apply" attr.aria-label="lighting_color_apply">
-				<span *ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
-				<span *ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
+			<a vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick" class="btn enable-button"
+				[ngClass]="{'disable-button': btnStatus !== 'apply'}" (click)="onApplyColorEffect(backColor)"
+				id="lighting_color_apply" tabindex="1" attr.aria-label="Color {{ btnStatus }}" role="link">
+				<span
+					*ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
+				<span
+					*ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
 				<span *ngIf="btnStatus === 'loading'">
-					<fa-icon [icon]="['fal', 'circle-notch']"
-					 [spin]="true"></fa-icon>
+					<fa-icon [icon]="['fal', 'circle-notch']" [spin]="true"></fa-icon>
 				</span>
 				<!-- <vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner> -->
-			</button>
+			</a>
 		</div>
 	</div>
 
@@ -39,18 +41,21 @@
 					</div>
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text4.title' | translate}} </label>
-						<input id="rgb-r" attr.aria-label="rgb-r" type="number" maxlength="3" min="0" max="255" class="input-color"
-							[(ngModel)]="color[0]" (ngModelChange)='rgbChanged()' (keypress)="validateInput($event)">
+						<input id="rgb-r" attr.aria-label="rgb-r" type="number" maxlength="3" min="0" max="255"
+							class="input-color" [(ngModel)]="color[0]" (ngModelChange)='rgbChanged()'
+							(keypress)="validateInput($event)">
 					</div>
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text5.title' | translate}} </label>
-						<input id="rgb-g" attr.aria-label="rgb-g" type="number" maxlength="3" min="0" max="255" class="input-color"
-							[(ngModel)]="color[1]" (ngModelChange)='rgbChanged()'  (keypress)="validateInput($event)">
+						<input id="rgb-g" attr.aria-label="rgb-g" type="number" maxlength="3" min="0" max="255"
+							class="input-color" [(ngModel)]="color[1]" (ngModelChange)='rgbChanged()'
+							(keypress)="validateInput($event)">
 					</div>
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text6.title' | translate}} </label>
-						<input id="rgb-b" attr.aria-label="rgb-b" type="number" maxlength="3" min="0" max="255" class="input-color"
-							[(ngModel)]="color[2]" (ngModelChange)='rgbChanged()'  (keypress)="validateInput($event)">
+						<input id="rgb-b" attr.aria-label="rgb-b" type="number" maxlength="3" min="0" max="255"
+							class="input-color" [(ngModel)]="color[2]" (ngModelChange)='rgbChanged()'
+							(keypress)="validateInput($event)">
 					</div>
 				</div>
 			</div>
