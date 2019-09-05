@@ -255,11 +255,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			showItem = this.showHWScanMenu;
 		}
 
-		if (item.id === 'privacy') {
-			if (!this.deviceService.showPrivacy) {
-				showItem = false;
-			}
-		}
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
 		}
