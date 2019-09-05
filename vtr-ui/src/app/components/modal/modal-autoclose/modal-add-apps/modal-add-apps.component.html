@@ -46,7 +46,7 @@
                       ngbTooltip="{{item.processDescription}}">
                       {{item.processDescription}}</div>
                     <div class="btn-add-app mx-auto">
-                      <input type="checkbox" value="{{item.processDescription}}" (change)="addAppData($event)">
+                      <input type="checkbox" value="{{item.processDescription}}" (change)="addAppData($event)" vtrMetrics [metricsItem]="item.processDescription" metricsEvent="featureClick">
                       <div class="action"></div>
                     </div>
                   </li>
