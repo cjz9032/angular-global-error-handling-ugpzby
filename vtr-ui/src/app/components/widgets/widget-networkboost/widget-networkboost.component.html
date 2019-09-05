@@ -20,7 +20,7 @@
         <img *ngIf="app && app.iconName" [src]="app.iconName | sanitize : 'resourceUrl'"
           alt="{{app.processDescription}}" />
       </div>
-      <div placement="bottom" ngbTooltip="{{app.processDescription}}">
+      <div placement="bottom" [title]="app.processDescription">
         {{app.processDescription}}
       </div>
       <div class="remove-app" (click)="removeApp(app.processPath,i)">
