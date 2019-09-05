@@ -1,4 +1,4 @@
-<div class="macrokey-wrapper" [ngClass]="{'recording': recording && number}">
+<div tabindex="0" class="macrokey-wrapper" [ngClass]="{'recording': recording && number}">
 	<div class="header-component" *ngIf="number && !number.status">
 		<div class="title-main">
 			{{ 'gaming.macroKey.recording.title' | translate }} <span

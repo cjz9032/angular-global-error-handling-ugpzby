@@ -31,13 +31,13 @@
 					<div class="interval" [ngClass]="{'hide': ignoreInterval}">
 						{{ 'gaming.macroKey.details.recorded.list.header.col2' | translate }}</div>
 				</div>
-				<div class="record-list">
+				<div class="record-list" tabindex="0">
 					<ng-container *ngFor="let record of recordsList; let i = index;">
 						<div class="record-item" (mouseover)="hoveredPair = record.pairName"
 							(mouseleave)="hoveredPair = ''" [ngClass]="{paired: record.pairName === hoveredPair}"
 							id="macro_key_delete_key{{record.pairName}}"
 							attr.aria-label="macro key delete key {{record.pairName}}" vtrMetrics
-							[metricsItem]="'Macrokey_delete_key'" metricsEvent="featureClick" tabindex="0">
+							[metricsItem]="'Macrokey_delete_key'" metricsEvent="featureClick" tabindex="1">
 							<div class="pressing" *ngIf="record.status === 1">
 								<div class="key">
 									<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
@@ -124,7 +124,7 @@
 							id="delete---anticon" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
 					</g>
 				</svg>
-				<span tabindex="0">{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
+				<span tabindex="1">{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
 			</div>
 		</div>
 	</div>
