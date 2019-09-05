@@ -15,9 +15,10 @@
       </div>
       <div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
     </li>
-    <li *ngFor="let app of runningAppsList; let i = index">
+    <li *ngFor="let app of runningAppsList; let i = index"
+    (mouseover)="app.isHovered=true" (mouseout)="app.isHovered=false" [class]="app.isHovered ? 'runningList': ''">
       <div>
-        <img *ngIf="app && app.iconName" [src]="app.iconName | sanitize : 'resourceUrl'"
+        <img  [src]="app.iconName | sanitize : 'resourceUrl'"
           alt="{{app.processDescription}}" />
       </div>
       <div placement="bottom" ngbTooltip="{{app.processDescription}}">
