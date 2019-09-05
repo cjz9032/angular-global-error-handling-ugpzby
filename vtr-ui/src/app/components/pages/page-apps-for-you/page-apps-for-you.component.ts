@@ -85,7 +85,7 @@ export class PageAppsForYouComponent implements OnInit {
 					this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 					break;
 				case AppsForYouEnum.InstallAppResult:
-					if (notification.payload === 'InstallDone') {
+					if (notification.payload === 'InstallDone' || notification.payload === 'InstalledBefore') {
 						this.appDetails.showStatus = this.statusEnum.INSTALLED;
 						this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
 					} else if (notification.payload === 'NotFinished') {
@@ -107,11 +107,18 @@ export class PageAppsForYouComponent implements OnInit {
 		}
 	}
 
-	initAppDetails(appDetails: AppDetails) {
+	async initAppDetails(appDetails: AppDetails) {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
+		const installed = await this.systemUpdateBridge.getAppStatus(this.appGuid);
+		if (installed === 'InstalledBefore') {
+			this.appDetails.showStatus = this.statusEnum.INSTALLED;
+			this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+		} else {
+			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
+			this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+		}
 		this.appDetailsJson = JSON.stringify(this.appDetails);
-		this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 	}
 
 	async clickInstallButton() {
@@ -120,6 +127,7 @@ export class PageAppsForYouComponent implements OnInit {
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
 				const path =  await this.systemUpdateBridge.getLaunchPath(this.appGuid);
+				const result = await this.systemUpdateBridge.launchApp(path);
 				break;
 			case this.installButtonStatusEnum.INSTALL:
 			default:
