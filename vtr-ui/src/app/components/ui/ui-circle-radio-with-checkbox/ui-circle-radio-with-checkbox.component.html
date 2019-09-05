@@ -1,4 +1,8 @@
-<div class="vtr-ui-circle-radio-with-checkbox col-aut0 px-0">
+<div class="vtr-ui-circle-radio-with-checkbox col-aut0 px-0"
+	[ngClass]="{
+		'white-theme': theme === 'white',
+		'blue-theme': theme === 'blue'
+	}">
 	<div class="checkbox">
 		<input class="checkbox-custom"
 			id="{{radioId}}"
@@ -16,7 +20,7 @@
 		<label for="{{radioId}}"
 			class="checkbox-custom-label">
 			<div *ngIf="!hideIcon"
-				[ngClass]="'icomoon icomoon-'+value"></div>
+				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
 			<fa-layers [fixedWidth]="true"
 				*ngIf="checked">
 				<fa-icon class="icon-circle"
@@ -26,6 +30,11 @@
 			</fa-layers>
 
 		</label>
-		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']">{{label | capitalizeFirst}}</div>
+		<div
+			[ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
+			id="{{textId}}-{{value}}-label"
+			attr.aria-label="{{textId}}-{{value}}-label"
+
+		>{{label | capitalizeFirst}}</div>
 	</div>
 </div>

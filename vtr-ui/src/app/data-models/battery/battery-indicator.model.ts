@@ -4,7 +4,6 @@ class BatteryIndicator {
 	constructor() { }
 	public percent = 0;
 	public charging = false;
-	public voltageError = false;
 	public batteryNotDetected = false;
 	public expressCharging = false;
 	public hours = 0;

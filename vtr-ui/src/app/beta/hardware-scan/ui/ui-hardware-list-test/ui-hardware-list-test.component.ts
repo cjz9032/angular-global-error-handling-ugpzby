@@ -25,6 +25,7 @@ export class UiHardwareListTestComponent implements OnInit {
 			item.indeterminate = false;
 			item.tests.map(test => test.selected = true);
 		});
+		this.selectAny.emit();
 	}
 
 	public onDeselectAll() {

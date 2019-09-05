@@ -7,13 +7,21 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonService } from 'src/app/services/common/common.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
-describe('SmartStandbyComponent', () => {
+fdescribe('SmartStandbyComponent', () => {
 	let component: SmartStandbyComponent;
 	let fixture: ComponentFixture<SmartStandbyComponent>;
 	let powerService;
 	let commonService;
 	let debugElement;
+
+	const smartStandby = {
+		isCapable: true,
+		isEnabled: true,
+		activeStartEnd: '6:00-18:00',
+		daysOfWeekOff: 'mon,tue,wed,thurs,fri'
+	};
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -55,6 +63,43 @@ describe('SmartStandbyComponent', () => {
 		expect(component.initSmartStandby).toHaveBeenCalled();
 		expect(powerService.getSmartStandbyCapability).not.toHaveBeenCalled();
 	});
+
+	it('#initSmartStandby should call initDataFromCache and splitStartEndTime', () => {
+		spyOn(component, 'initDataFromCache');
+		spyOn(component, 'splitStartEndTime');
+		component.initSmartStandby();
+		expect(component.initDataFromCache).toHaveBeenCalled();
+		expect(component.splitStartEndTime).toHaveBeenCalled();
+	});
+
+	it('#initDataFromCache should get data from Cache and set isCapable to true', () => {
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
+		component.initDataFromCache();
+		expect(commonService.getLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, undefined);
+		expect(component.smartStandby.isCapable).toBeTruthy();
+		expect(component.smartStandby.isEnabled).toBeTruthy();
+		expect(component.smartStandby.activeStartEnd).toEqual('6:00-18:00');
+		expect(component.smartStandby.daysOfWeekOff).toEqual('mon,tue,wed,thurs,fri');
+	});
+
+	it('#initDataFromCache should get data from Cache and set isCapable to false', () => {
+		smartStandby.isCapable = false;
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
+		component.initDataFromCache();
+		expect(commonService.getLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, undefined);
+		expect(component.smartStandby.isCapable).toBeFalsy();
+	});
+
+	// it('#onSmartStandbyToggle should change value of smartStandby isEnabled', async () => {
+	// 	component.powerService.isShellAvailable = true;
+	// 	spyOn(powerService, 'setSmartStandbyEnabled').and.returnValue(Promise.resolve(0));
+	// 	spyOn(commonService, 'setLocalStorageValue');
+	// 	component.onSmartStandbyToggle({ switchValue: true });
+	// 	expect(powerService.setSmartStandbyEnabled).toHaveBeenCalledWith(true);
+	// 	expect(component.smartStandby.isEnabled).toBeTruthy();
+	// 	expect(component.cache.isEnabled).toBeTruthy();
+	// 	expect(commonService.setLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, smartStandby);
+	// });
 
 	it('#showSmartStandby should call initSmartStandby & set smartStandby capability to true', async () => {
 		component.powerService.isShellAvailable = true;

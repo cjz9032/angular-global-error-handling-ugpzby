@@ -373,7 +373,7 @@
 		"autoClose": {
 			"title": "Auto Close",
 			"addAppsButton": "Add",
-			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely, so always make sure you've saved your work.",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
 				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
@@ -392,13 +392,13 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
+			"introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "TURN ON",
-				"btnCancel": "NOT NOW"
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -635,7 +635,6 @@
 		"deviceSettings": {
 			"helpful": "Helpful Content",
 			"batteryGauge": {
-				"title": "BATTERY GAUGE",
 				"subtitle": "Battery",
 				"hours": "hours",
 				"hour": "hour",
@@ -643,9 +642,7 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
-				"updating": "Updating",
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
-				"voltageError": "Battery voltage incorrect",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
@@ -730,6 +727,7 @@
 					"subtitle": "Intelligent Cooling",
 					"subtitle1": "Battery & Quiet",
 					"description1": "When on, this feature dynamically adjusts thermal settings to your needs. It adjusts settings to keep the device cool and quiet while being held or idle. While the device is on a stable surface, it optimizes the performance. When off, you can manually set the thermal priority.",
+					"nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
 					"description13": "When on, this feature dynamically adjusts thermal settings to your needs. It adjusts settings to keep the device cool and quiet while being held or idle. While the device is on a stable surface, it optimizes the performance. When off, you can manually set the thermal priority.",
@@ -801,6 +799,11 @@
 						"title": "Easy Resume",
 						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
 						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+					},
+					"flipToBoot": {
+						"title": "Flip to boot",
+						"description": "This feature enables you to turn on your computer when you open the computer lid, just the same as you pressing the power button. ",
+						"tooltip": "This feature automatically starts the computer by openning the lid.  It is especially useful if you have set up the face log-in information in Windows Hello."
 					},
 					"or": "Or"
 				},
@@ -1174,10 +1177,11 @@
 					"title": "FN key and Ctrl key swap",
 					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
 				},
-				"controlOptions":{
+				"controlOptions": {
 					"more": "MORE",
 					"control1": "TOUCHPAD CONTROLS",
-					"control2": "MOUSE CONTROLS"
+					"control2": "MOUSE CONTROLS",
+					"control3": "TRACKPOINT CONTROLS"
 				}
 			}
 		},
@@ -1478,6 +1482,10 @@
 			"fileNotFoundException": "File not found."
 		}
 	},
+	"smartPerformance": {
+		"title": "Health & Support",
+		"back": "BACK"
+	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
 		"notification": {
@@ -1529,8 +1537,8 @@
 			"wifiNetworks": "Wi-fi networks",
 			"homeDevices": "Home devices",
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "DISCONNECT",
-			"goDashboard": "GO TO DASHBOARD"
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard"
 		},
 		"tour": {
 			"back": "Back",
@@ -1574,10 +1582,15 @@
 		"card": {
 			"startTrial": "Start Trial",
 			"startTrialTitle": "Create your Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security envirionment, and start protecting your home and family today.",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
 			"join": "join",
 			"joinTitle": "Join Connected Home Security of your family",
 			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTile": "You are about to launch the Connected Home Security web console...",
+			"goNow": "Go now",
+			"disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
 		}
 	},
 	"support": {
@@ -2322,6 +2335,31 @@
 		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
 		"Note": "Note: ",
 		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
+	},
+	"modernPreload": {
+		"cancel": "Cancel",
+		"close": "Close",
+		"download": "Download",
+		"downloadAvailable": "Download Available",
+		"downloadComplete": "Download Complete",
+		"downloading": "Downloading...",
+		"failedDownload": "Failed Download",
+		"failedInstall": "Failed Install",
+		"installed": "Installed",
+		"restartDownload": "Restart download",
+		"retry": "Retry",
+		"skip": "Skip",
+		"noteDownloading": "Note: After clicking Download, you may get a prompt from Windows to allow us to install the software on your device. Once finished installing your apps will show up automatically on your desktop or start menu.<br /><br />You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage during installation.",
+		"noteFailedDownload": "Alert: Something went wrong during the download or installation. Please make sure you are connected to the internet and retry. Remember to keep Vantage open while we install your software. You may close the My Software page and continue to explore Vantage or minimize Vantage while we complete your software installation.",
+		"noteDownloadComplete": "Note: After clicking Download, you may get a prompt from Windows to allow us to install the software on your device. Once finished installing your apps will show up automatically on your desktop or start menu.<br /><br />You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage during installation.",
+		"noteDownloadAvailable": "Note: After clicking Download, you may get a prompt from Windows to allow us to install the software on your device. Once finished installing your apps will show up automatically on your desktop or start menu.<br /><br />You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage during installation.",
+		"sizeText": "Size",
+		"versionText": "Version",
+		"softwareDescription": "Click download below to redeem software that was purchased with your device. If at any time you need to download your software again, you can do so by clicking the My Software button in the Vantage menu.",
+		"title": "My Software",
+		"loadingDescription": "Please wait while we prepare a list of the software that was included in the purchase of your device.",
+		"shortDescription": "Download and install software that was included in the purchase of your device.",
+		"errorDescription": "<h2>Sorry, there was a problem retrieving the software download information</h2>Try clicking on the \"Retry\" button below or try again later by clicking on the \"My Software\" button in the Vantage menu."
 	},
 	"hardwareScan": {
 		"name": "Hardware Scan",

@@ -16,6 +16,7 @@ import { SharedModule } from '../shared.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
+import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
 
 @NgModule({
 	declarations: [
@@ -32,6 +33,7 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent,
+		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent
 
 	],
@@ -63,6 +65,7 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent,
+		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent
 
 	]
