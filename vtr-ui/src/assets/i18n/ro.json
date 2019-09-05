@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Trebuie să alegeți un dispozitiv pentru rulare.",
         "errorNoOptionSelected": "Trebuie să selectați o opțiune.",
         "offline": "Acest dispozitiv rulează în modul offline; vă rugăm să vă conectați la internet",
+        "doNotSuspend": "Aceste teste trebuie să ruleze fără întreruperi! În timpul scanării, nu închideţi şi nu minimizaţi această aplicaţie, nu întrerupeţi şi nu opriţi computerul.",
         "customize": {
             "name": "Personalizare",
             "test": "Personalizare test",

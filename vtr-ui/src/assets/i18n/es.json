@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Debe seleccionar un dispositivo a ejecutar.",
         "errorNoOptionSelected": "Debe seleccionar una opción.",
         "offline": "Este dispositivo se está ejecutando en modalidad sin conexión, conecte a Internet",
+        "doNotSuspend": "¡Estas pruebas se deben ejecutar sin interrupciones! No cierre ni minimice esta aplicación, y no suspenda ni apague el equipo durante la exploración.",
         "customize": {
             "name": "Personalizar",
             "test": "Prueba de personalización",

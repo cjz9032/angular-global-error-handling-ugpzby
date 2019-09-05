@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Molimo vas da odaberete uređaj za pokretanje.",
         "errorNoOptionSelected": "Molimo, odaberite opciju.",
         "offline": "Uređaj radi u izvanmrežnom načinu rada, povežite internet",
+        "doNotSuspend": "Ovi se testovi moraju izvoditi bez prekida! Tijekom pregleda nemojte zatvarati ni minimizirati aplikaciju niti prebacivati računalo u stanje mirovanja ili ga isključivati.",
         "customize": {
             "name": "Prilagodba",
             "test": "Prilagodi test",

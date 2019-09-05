@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Musíte vybrat zařízení, které chcete spustit.",
         "errorNoOptionSelected": "Musíte vybrat některou z možností.",
         "offline": "Toto zařízení je v režimu offline. Připojte jej k internetu",
+        "doNotSuspend": "Tyto testy nesmí být přerušeny! Během kontroly nevypínejte ani neminimalizujte aplikaci, nevypínejte počítač ani jej neuveďte do režimu hibernace.",
         "customize": {
             "name": "Přizpůsobit",
             "test": "Přizpůsobit test",

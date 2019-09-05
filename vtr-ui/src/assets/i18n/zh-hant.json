@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "您必須選擇要執行的裝置。",
         "errorNoOptionSelected": "您必須選擇一個選項。",
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
+        "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",

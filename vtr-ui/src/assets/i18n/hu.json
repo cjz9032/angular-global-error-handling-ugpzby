@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Válasszon ki egy eszközt a futtatáshoz.",
         "errorNoOptionSelected": "Válasszon ki egy lehetőséget.",
         "offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
+        "doNotSuspend": "Ezeket a teszteket nem szabad megszakítani. Az ellenőrzés során ne állítsa kis méretűre és ne zárja be az alkalmazást, illetve ne függessze fel vagy kapcsolja ki a számítógépet.",
         "customize": {
             "name": "Személyre szabás",
             "test": "Teszt testreszabása",

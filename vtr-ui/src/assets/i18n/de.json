@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Sie müssen eine Einheit für die Durchführung auswählen.",
         "errorNoOptionSelected": "Bitte wählen Sie eine Option aus.",
         "offline": "Dieses Gerät läuft im Offline-Modus, bitte stellen Sie eine Internetverbindung her",
+        "doNotSuspend": "Diese Tests müssen ohne Unterbrechung ausgeführt werden! Während des Scans darf die App nicht geschlossen oder minimiert und der Computer weder angehalten noch heruntergefahren werden.",
         "customize": {
             "name": "Anpassen",
             "test": "Test anpassen",

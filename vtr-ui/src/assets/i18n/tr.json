@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Lütfen çalıştırmak istediğiniz cihazı seçin.",
         "errorNoOptionSelected": "Lütfen bir seçenek belirleyin.",
         "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
+        "doNotSuspend": "Bu testler kesintisiz çalıştırılmalıdır! Bu uygulamayı kapatmayın veya küçültmeyin ve tarama sırasında bilgisayarınızı uyku moduna almayın ya da kapatmayın.",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",

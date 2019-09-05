@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Vous devez choisir quel périphérique doit être exécuté.",
         "errorNoOptionSelected": "Vous devez sélectionner une option.",
         "offline": "Ce périphérique fonctionne en mode hors connexion. Veuillez vous connecter à Internet",
+        "doNotSuspend": "Ces tests doivent être exécutés sans interruption ! Ne fermez pas ou ne réduisez pas cette application, et n'interrompez pas ou n'éteignez pas votre ordinateur pendant l'analyse.",
         "customize": {
             "name": "Personnaliser",
             "test": "Personnaliser le test",

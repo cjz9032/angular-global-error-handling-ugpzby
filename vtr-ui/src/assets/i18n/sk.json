@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Vyžaduje sa, aby ste vybrali zariadenie, ktoré chcete spustiť.",
         "errorNoOptionSelected": "Musíte vybrať niektorú z možností.",
         "offline": "Toto zariadenie je v režime offline, pripojte ho k internetu",
+        "doNotSuspend": "Tieto testy musia prebiehať bez prerušenia. Počas kontroly nezatvárajte ani neminimalizujte aplikáciu a neodstavujte ani nevypínajte počítač.",
         "customize": {
             "name": "Prispôsobiť",
             "test": "Prispôsobiť test",

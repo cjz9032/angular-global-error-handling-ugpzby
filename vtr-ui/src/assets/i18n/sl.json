@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Izbrati morate napravo, ki jo želite zagnati.",
         "errorNoOptionSelected": "Izbrati morate eno od možnosti.",
         "offline": "Ta naprava deluje brez povezave, vzpostavite internetno povezavo",
+        "doNotSuspend": "Ti preskusi se morajo izvajati brez prekinitev. Med pregledom ne zapirajte ali minimizirajte te aplikacije in računalnika ne preklapljajte v stanje pripravljenosti ali ga izklapljajte.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagajanje preskusa",

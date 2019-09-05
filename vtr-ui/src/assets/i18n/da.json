@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Du skal vælge en enhed, der skal køres.",
         "errorNoOptionSelected": "Du skal vælge en indstilling.",
         "offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
+        "doNotSuspend": "Disse tests skal køres uden afbrydelser! Du må ikke lukke eller minimere denne app eller låse eller slukke din computer under søgningen.",
         "customize": {
             "name": "Tilpas",
             "test": "Tilpas test",

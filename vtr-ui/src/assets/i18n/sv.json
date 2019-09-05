@@ -2371,6 +2371,7 @@
         "errorDeviceChoose": "Du måste välja en enhet som ska köras.",
         "errorNoOptionSelected": "Du måste välja ett alternativ.",
         "offline": "Enheten körs offline. Anslut till internet",
+        "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",
