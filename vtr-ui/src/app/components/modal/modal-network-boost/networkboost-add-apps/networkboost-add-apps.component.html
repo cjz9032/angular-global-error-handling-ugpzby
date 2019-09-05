@@ -49,7 +49,7 @@
                       {{item.processDescription}}</div>
                     <div class="btn-add-app mx-auto">
                       <input type="checkbox" value="{{item.processPath}}" [(ngModel)]="item.isChedked"
-                      [disabled]="addedApps>=5 && !item.isChedked" (change)="onValueChange($event)">
+                      [disabled]="addedApps>=5 && !item.isChedked" (change)="onValueChange($event)" vtrMetrics [metricsItem]="item.processDescription" metricsEvent="featureClick">
                       <div class="action" [ngClass]="{isDisabled: addedApps>=5 && !item.isChedked}"></div>
                     </div>
                   </li>
