@@ -1,7 +1,7 @@
 <div class="modal-main-wrapper">
-    <div class="spinner-content h-100 d-flex align-items-center justify-content-center" *ngIf="loading">
-      <fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
-    </div>
+  <div class="spinner-content h-100 d-flex align-items-center justify-content-center" *ngIf="loading">
+    <fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
+  </div>
   <ui-popover-apps>
     <div class="modal-body vtr-modal-add-apps" *ngIf="!loading">
       <div class="modal-body">
@@ -45,7 +45,7 @@
                       <img [src]="item.iconName | sanitize : 'resourceUrl'">
 
                     </div>
-                    <div class="app-text-title" placement="bottom" container="body" ngbTooltip="{{item.processDescription}}">
+                    <div class="app-text-title" placement="bottom" container="body" [title]="item.processDescription">
                       {{item.processDescription}}</div>
                     <div class="btn-add-app mx-auto">
                       <input type="checkbox" value="{{item.processPath}}" [(ngModel)]="item.isChedked"
