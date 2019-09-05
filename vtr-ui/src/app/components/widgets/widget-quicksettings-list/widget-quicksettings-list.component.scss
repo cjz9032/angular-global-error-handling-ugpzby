@@ -70,7 +70,7 @@
 										color: $gaming_lightest;
 									}
 									@media #{$white-on-black} {
-										color: $gaming_darkest;
+										color: $gaming_lightest;
 									}
 									&::after{
 										content: '';
