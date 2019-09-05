@@ -42,8 +42,7 @@
                       <img [src]="item.iconName | sanitize : 'resourceUrl'">
 
                     </div>
-                    <div class="app-text-title" container="body" placement="bottom"
-                      ngbTooltip="{{item.processDescription}}">
+                    <div class="app-text-title" container="body" placement="bottom" [title]="item.processDescription">
                       {{item.processDescription}}</div>
                     <div class="btn-add-app mx-auto">
                       <input type="checkbox" value="{{item.processDescription}}" (change)="addAppData($event)" vtrMetrics [metricsItem]="item.processDescription" metricsEvent="featureClick">
