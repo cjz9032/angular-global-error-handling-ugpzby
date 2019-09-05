@@ -25,6 +25,9 @@
 
 			<p>
 				<button class="verify__button"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'BreachedAccountsVerifyEmailButton'"
 						(click)="verifyEmailClick()">{{isFigleafReadyForCommunication ? 'Verify email in app' : 'Verify email'}}</button>
 			</p>
 		</div>
