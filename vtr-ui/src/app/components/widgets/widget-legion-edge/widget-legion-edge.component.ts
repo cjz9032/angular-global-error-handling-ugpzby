@@ -264,6 +264,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		this.cacheAutoCloseFeature = this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
 		this.legionUpdate[3].isChecked = this.cacheAutoCloseFeature;
+		this.legionUpdate[2].isChecked = this.getNetworkBoostCacheStatus();
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit();
 	}
@@ -322,7 +323,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
 			if (networkBoostModeStatus !== undefined) {
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
-				this.SetNetworkBoostCacheStatus(networkBoostModeStatus);
+				this.setNetworkBoostCacheStatus(networkBoostModeStatus);
 				this.legionUpdate[2].isChecked = networkBoostModeStatus;
 			}
 		});
@@ -341,7 +342,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		try {
 			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
 			if (isStatusUpdated) {
-				this.SetNetworkBoostCacheStatus(status);
+				this.setNetworkBoostCacheStatus(status);
 				this.legionUpdate[2].isChecked = status;
 			}
 		} catch (err) {}
@@ -355,11 +356,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.AutoCloseStatus, autoCloseStatus);
 	}
 
-	public GetNetworkBoostCacheStatus() {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus);
+	public getNetworkBoostCacheStatus() {
+		return this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus, false);
 	}
 
-	public SetNetworkBoostCacheStatus(networkBoostStatus: boolean) {
+	public setNetworkBoostCacheStatus(networkBoostStatus: boolean) {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, networkBoostStatus);
 	}
 

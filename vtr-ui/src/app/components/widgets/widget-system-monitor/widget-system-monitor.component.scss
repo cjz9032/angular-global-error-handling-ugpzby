@@ -66,6 +66,12 @@
 					font-size: 1.8rem;
 					color: $gaming_info_link;
 					font-weight: bold;
+					@media #{$black-on-white} {
+						color: $high-contrast-grey;
+					}
+					@media #{$white-on-black} {
+						color: $high-contrast-grey;
+					}
 				}
 				.info-link {
 					color: $gaming_info_link;
