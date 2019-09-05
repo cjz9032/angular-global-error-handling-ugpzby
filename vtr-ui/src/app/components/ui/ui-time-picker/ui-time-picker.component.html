@@ -20,25 +20,29 @@
 							<div class="col align-items-center d-flex justify-content-between">
 
 								<div class="time-headings">
-									<p class="ml-5">
+									<p class="ml-5" id="smartStandby-{{linkId}}-hours"
+									attr.aria-label="smartStandby-{{linkId}}-hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
 									<span class="ml-5">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
-									<p class="mr-2">
+									<p class="mr-2" id="smartStandby-{{linkId}}-minutes"
+									attr.aria-label="smartStandby-{{linkId}}-minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
 									<span class="mr-2">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
-									<p class="mr-5">
+									<p class="mr-5" id="smartStandby-{{linkId}}-amPm"
+									attr.aria-label="smartStandby-{{linkId}}-amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
 									<span class="mr-5">{{amPms[amPm] | translate}}</span>
 								</div>
 
-								<div class="toggle-icon">
+								<div class="toggle-icon" id="smartStandby-{{linkId}}-dropDown-btn"
+									attr.aria-label="smartStandby-{{linkId}}-dropDown-btn">
 									<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 								</div>
 							</div>
@@ -54,7 +58,8 @@
 									<div class="hours-block pl-5 ml-5">
 
 										<div class="toggle-icon"
-											(click)="updateHours(false)">
+											(click)="updateHours(false)" id="smartStandby-{{linkId}}-hours-prev-btn"
+											attr.aria-label="smartStandby-{{linkId}}-hours-prev-btn">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
@@ -63,7 +68,8 @@
 										<span>{{hours[nextHour]}}</span>
 
 										<div class="toggle-icon"
-											(click)="updateHours(true)">
+											(click)="updateHours(true)" id="smartStandby-{{linkId}}-hours-next-btn"
+											attr.aria-label="smartStandby-{{linkId}}-hours-next-btn">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
@@ -71,7 +77,8 @@
 
 									<div class="minutes-block">
 										<div class="toggle-icon"
-											(click)="updateMinutes(false)">
+											(click)="updateMinutes(false)" id="smartStandby-{{linkId}}-minutes-prev-btn"
+											attr.aria-label="smartStandby-{{linkId}}-minutes-prev-btn">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
@@ -80,7 +87,8 @@
 										<span>{{minutes[nextMinute]}}</span>
 
 										<div class="toggle-icon"
-											(click)="updateMinutes(true)">
+											(click)="updateMinutes(true)" id="smartStandby-{{linkId}}-minutes-next-btn"
+											attr.aria-label="smartStandby-{{linkId}}-minutes-next	-btn">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
@@ -89,8 +97,8 @@
 										<span>
 											<label class="inline-block">
 												<input class="label-radio"
-													id="radio1"
-													attr.aria-label="radio1"
+													id="{{linkId}}-am-radio"
+													attr.aria-label="{{linkId}}-am-radio"
 													[name]="'ampmradio'+id"
 													type="radio"
 													value="0"
@@ -102,8 +110,8 @@
 										<span>
 											<label class="inline-block">
 												<input class="label-radio"
-													id="radio2"
-													attr.aria-label="radio2"
+												id="{{linkId}}-pm-radio"
+												attr.aria-label="{{linkId}}-pm-radio"
 													[name]="'ampmradio'+id"
 													type="radio"
 													value="1"
@@ -119,9 +127,11 @@
 						<div class="d-flex justify-content-end py-3">
 							<div class="select-close">
 								<fa-icon [icon]="['fal', 'check']"
-									(click)="setTimer()"></fa-icon>
+									(click)="setTimer()" id="smartStandby-{{linkId}}-done-icon"
+									attr.aria-label="smartStandby-{{linkId}}-done-icon"></fa-icon>
 								<fa-icon [icon]="['fal', 'times']"
-									(click)="clearSettings()"></fa-icon>
+									(click)="clearSettings()" id="smartStandby-{{linkId}}-close-icon"
+									attr.aria-label="smartStandby-{{linkId}}-close-icon"></fa-icon>
 							</div>
 						</div>
 					</div>

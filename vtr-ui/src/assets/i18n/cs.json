@@ -802,6 +802,11 @@
                         "description": "Aktivujte tuto funkci, zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko.",
                         "tooltip": "Tato funkce zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko. Je-li zapnuta, počítač po zavření víka přejde do režimu nízké spotřeby, v případě znovuotevření víka během 15 sekund od jeho zavření se však okamžitě vrátí k běžnému provozu. Kromě toho se díky ní notebook může pokusit dokončit započaté činnosti (například odeslání e-mailu nebo stahování souboru) ještě předtím, než přejde do pohotovostního režimu."
                     },
+					"flipToBoot": {
+						"title": "Překlopte a zavádějte",
+						"description": "Tato funkce umožňuje zapnout počítač při otevření víka počítače stejně jako po stisknutí tlačítka napájení. ",
+						"tooltip": "Tato funkce automaticky spustí počítač otevřením víka.  To je zvláště užitečné, pokud jste v systému Windows Hello nastavili přihlašovací údaje podle obličeje."
+					},
                     "or": "Nebo"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Vstup & Příslušenství",
                 "subtitle": "Vstup & Příslušenství – Nastavení",
-                "description": "Technologie inteligentní detekce Lenovo rozpoznává pomocí různých snímačů v počítači vaši aktuální činnost a přizpůsobuje podle ní řízení spotřeby",
+                "description": "Tato část umožňuje nastavit nejčastěji používané funkce klávesnice a myši. Prozkoumejte další funkce zde.",
                 "inputAccessory": {
                     "title": "Inteligentní klávesnice",
                     "hiddenKeyboardFunctions": {
@@ -1245,7 +1250,8 @@
                     "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát. Tato funkce však neshromažďuje žádné osobní údaje.",
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
-                    "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení."
+                    "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
@@ -1574,6 +1580,7 @@
             "statusWarrantyNotFound": "Záruka nebyla nalezena.",
             "yearDepotWarranty": "R záruky typu Depot",
             "warrantyDetails": "Podrobnosti o záruce:",
+            "warrantyDashboardDetails": "Podrobnosti o záruce",
             "startDate": "Datum zahájení: ",
             "endDate": "Datum ukončení: ",
             "status": "Stav: ",
@@ -2294,6 +2301,31 @@
         "Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
     },
+    "modernPreload": {
+        "cancel": "Storno",
+        "close": "Zavřít",
+        "download": "Stáhnout",
+        "downloadAvailable": "Stažení k dispozici",
+        "downloadComplete": "Stahování dokončeno",
+        "downloading": "Stahování...",
+        "failedDownload": "Stahování se nezdařilo.",
+        "failedInstall": "Neúspěšná instalace",
+        "installed": "Nainstalováno",
+        "restartDownload": "Spustit stahování znovu",
+        "retry": "Opakovat",
+        "skip": "Přeskočit",
+        "noteDownloading": "Poznámka: Po kliknutí na tlačítko Stáhnout se může zobrazit výzva systému Windows, aby bylo možné nainstalovat software do vašeho zařízení. Po dokončení instalace se aplikace automaticky zobrazí na ploše nebo v nabídce Start.<br /><br />Můžete zavřít stránku Můj software a pokračovat v používání programu Lenovo Vantage. Během instalace program Lenovo Vantage nezavírejte.",
+        "noteFailedDownload": "Upozornění: během stahování nebo instalace se něco pokazilo. Ujistěte se, že jste připojeni k internetu, a zkuste to znovu. Během instalace nezapomeňte nechat program Vantage otevřený. Stránku Můj software můžete zavřít a při dokončení instalace softwaru pokračovat v používání programu Vantage, který můžete případně také minimalizovat.",
+        "noteDownloadComplete": "Poznámka: Po kliknutí na tlačítko Stáhnout se může zobrazit výzva systému Windows, aby bylo možné nainstalovat software do vašeho zařízení. Po dokončení instalace se aplikace automaticky zobrazí na ploše nebo v nabídce Start.<br /><br />Můžete zavřít stránku Můj software a pokračovat v používání programu Lenovo Vantage. Během instalace program Lenovo Vantage nezavírejte.",
+        "noteDownloadAvailable": "Poznámka: Po kliknutí na tlačítko Stáhnout se může zobrazit výzva systému Windows, aby bylo možné nainstalovat software do vašeho zařízení. Po dokončení instalace se aplikace automaticky zobrazí na ploše nebo v nabídce Start.<br /><br />Můžete zavřít stránku Můj software a pokračovat v používání programu Lenovo Vantage. Během instalace program Lenovo Vantage nezavírejte.",
+        "sizeText": "Velikost",
+        "versionText": "Verze",
+        "softwareDescription": "Klepnutím na tlačítko Stáhnout níže můžete získat software zakoupený se zařízením. Pokud budete potřebovat stáhnout software znovu, můžete tak učinit kliknutím na tlačítko Můj software v nabídce Vantage.",
+        "title": "Můj software",
+        "loadingDescription": "Počkejte, než se připraví seznam softwaru, který byl zahrnut do nákupu vašeho zařízení.",
+        "shortDescription": "Stáhněte a nainstalujte software, který byl zahrnut do nákupu zařízení.",
+        "errorDescription": "<h2>Omlouváme se, při načítání informací o stahování softwaru došlo k potížím.</h2>Zkuste kliknout na tlačítko „Opakovat“ nebo akci opakujte později kliknutím na tlačítko „Můj software“ v nabídce Vantage."
+    },
     "hardwareScan": {
         "name": "Kontrola hardwaru",
         "title": "Spusťte kontrolu hardwaru",
@@ -2363,7 +2395,7 @@
             "error": "Chyba",
             "delete": "Odstranit",
             "warningBatterySaver": "Poznámka: Plánovaná skenování se neprovedou v režimu úspory baterie",
-			"scheduleIntervalLimit": "Další skenování bylo naplánováno již během deseti minut. Zvolte jiný čas."
+            "scheduleIntervalLimit": "Další skenování bylo naplánováno již během deseti minut. Zvolte jiný čas."
         },
         "recoverBadSectors": {
             "title": "Obnovit vadné sektory",
@@ -2413,6 +2445,6 @@
         "attention": "Upozornění",
         "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
         "cancelTextProgress": "Počkejte na dokončení procesu zrušení",
-		"pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je."
+        "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je."
     }
 }

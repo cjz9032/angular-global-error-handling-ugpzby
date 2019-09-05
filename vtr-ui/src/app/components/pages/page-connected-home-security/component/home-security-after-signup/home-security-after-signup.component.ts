@@ -2,6 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-security-account.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 
 @Component({
   selector: 'vtr-home-security-after-signup',
@@ -9,33 +13,44 @@ import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-secur
   styleUrls: ['./home-security-after-signup.component.scss']
 })
 export class HomeSecurityAfterSignupComponent implements OnInit {
-	// mock start
 	@Input() role: string;
 	@Input() lenovoID: string;
 	@Input() allDevices: HomeSecurityAllDevice;
 	@Input() account: HomeSecurityAccount;
 	@Input() common: HomeSecurityCommon;
-	// mock end
+	dialogService: DialogService;
+	chs: ConnectedHomeSecurity;
 
-	constructor( ) {	}
+	constructor(
+		dialogService: DialogService,
+		private vantageShellService: VantageShellService,
+		public homeSecurityMockService: HomeSecurityMockService
+	) {
+		this.dialogService = dialogService;
+		this.chs = vantageShellService.getConnectedHomeSecurity();
+		if (!this.chs) {
+			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
+		}
+	}
 
 	ngOnInit() {
-		// mock start
 		this.role = 'admin';
-		this.account.expiration = new Date();
-		this.account.standardTime = new Date();
-		this.lenovoID = 'lenovo@lenovo.com';
-		// mock end
-
 	}
+
 	switch(role) {
-		this.account.expiration = new Date();
-		this.account.standardTime = new Date();
 		if (role === 'user') {
 			this.role = 'admin';
 		} else {
 			this.role = 'user';
 		}
+	}
+
+	disconnect() {
+		this.dialogService.homeSecurityTrialModal(2);
+	}
+
+	openCornet(feature?: string) {
+		this.chs.visitWebConsole(feature);
 	}
 
 }

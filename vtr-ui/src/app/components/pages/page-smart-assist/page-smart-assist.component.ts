@@ -20,6 +20,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { throttle, throttleTime, debounce, debounceTime } from 'rxjs/operators';
 import { of, fromEvent } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -168,7 +169,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 			}
 		} catch (error) {
-			console.log('initVisibility', error);
+			console.log('initVisibility', error.message);
 		}
 	}
 
@@ -241,7 +242,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				}
 			})
-			.catch((error) => { console.log('APS ERROR------------------', error); });
+			.catch((error) => { console.log('APS ERROR------------------', error.message); });
 	}
 
 	private initIntelligentScreen() {
@@ -267,7 +268,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
 			}
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -288,7 +290,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.intelligentSecurity.isWindowsHelloRegistered = responses[5];
 			console.log('PageSmartAssistComponent.Promise.ZeroTouchLogin()', responses, this.intelligentSecurity);
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -317,7 +320,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
-			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error);
+			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error.message);
+			return EMPTY;
 		});
 	}
 
@@ -460,7 +464,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('fetchCMSContent error', error.message);
 			}
 		);
 	}
@@ -489,11 +493,29 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						}
 					}).catch(error => {
-						console.error('getVideoPauseResumeStatus.error', error);
+						this.logger.error('getVideoPauseResumeStatus.error', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error('getVideoPauseResumeStatus' + error.message);
+			this.logger.error('getVideoPauseResumeStatus' + error.message);
+			return EMPTY;
+		}
+	}
+
+	initHPDSensorType() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDSensorType()
+					.then((type: number) => {
+						this.hpdSensorType = type;
+						console.log('getHPDSensorType: ', this.hpdSensorType);
+					}).catch(error => {
+						console.error('getHPDSensorType', error);
+					});
+			}
+		} catch (error) {
+			console.error('getHPDSensorType' + error.message);
 		}
 	}
 

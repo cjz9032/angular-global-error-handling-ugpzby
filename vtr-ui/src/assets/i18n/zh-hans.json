@@ -802,6 +802,11 @@
                         "description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
                         "tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
                     },
+					"flipToBoot": {
+						"title": "翻转启动",
+						"description": "此功能可让您在打开计算机外盖时即开启计算机，就像按下电源按钮一样。",
+						"tooltip": "此功能是通过打开外盖来自动启动计算机。如果您已在 Windows Hello 中设置面部登录信息，此功能特别有用。"
+					},
                     "or": "或"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "输入和附件",
                 "subtitle": "输入和附件设置",
-                "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，并调整设置以实现最优电源管理",
+                "description": "本部分能够让您设置最常用的键盘和鼠标功能。在这里探索更多功能。",
                 "inputAccessory": {
                     "title": "智能键盘",
                     "hiddenKeyboardFunctions": {
@@ -1245,7 +1250,8 @@
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
-                    "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
+                    "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
@@ -1574,6 +1580,7 @@
             "statusWarrantyNotFound": "未找到保修信息",
             "yearDepotWarranty": "年维修站保修",
             "warrantyDetails": "保修详细信息：",
+            "warrantyDashboardDetails": "保修详细信息",
             "startDate": "开始日期：",
             "endDate": "结束日期：",
             "status": "状态：",
@@ -2294,6 +2301,31 @@
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"
     },
+    "modernPreload": {
+        "cancel": "取消",
+        "close": "关闭",
+        "download": "下载",
+        "downloadAvailable": "可下载",
+        "downloadComplete": "下载完成",
+        "downloading": "正在下载...",
+        "failedDownload": "下载失败",
+        "failedInstall": "安装失败",
+        "installed": "已安装",
+        "restartDownload": "重新开始下载",
+        "retry": "重试",
+        "skip": "跳过",
+        "noteDownloading": "注：单击“下载”后，Windows 可能会提示在设备上安装软件。安装完成后，应用程序会自动在桌面或“开始”菜单中显示。<br /><br />您可以关闭“我的软件”页面，然后继续使用 Lenovo Vantage。请勿在安装期间关闭 Lenovo Vantage。",
+        "noteFailedDownload": "警报：下载或安装过程中发生了问题。请确保您已连接到因特网并重试。在我们安装您的软件时，请记得保持 Vantage 开启。您可以关闭“我的软件”页面并继续探索 Vantage，或在我们完成您的软件安装时最小化 Vantage。",
+        "noteDownloadComplete": "注：单击“下载”后，Windows 可能会提示在设备上安装软件。安装完成后，应用程序会自动在桌面或“开始”菜单中显示。<br /><br />您可以关闭“我的软件”页面，然后继续使用 Lenovo Vantage。请勿在安装期间关闭 Lenovo Vantage。",
+        "noteDownloadAvailable": "注：单击“下载”后，Windows 可能会提示在设备上安装软件。安装完成后，应用程序会自动在桌面或“开始”菜单中显示。<br /><br />您可以关闭“我的软件”页面，然后继续使用 Lenovo Vantage。请勿在安装期间关闭 Lenovo Vantage。",
+        "sizeText": "大小",
+        "versionText": "版本",
+        "softwareDescription": "单击下方的下载以兑换购买设备时随附的软件。如果您需要再次下载软件，随时单击 Vantage 菜单中的“我的软件”按钮即可实现。",
+        "title": "我的软件",
+        "loadingDescription": "请稍候，我们正在准备您购买设备时随附的软件清单。",
+        "shortDescription": "下载并安装您购买设备时随附的软件。",
+        "errorDescription": "<h2>抱歉，检索软件下载信息时发生问题</h2>尝试单击下方的“重试”按钮，或稍后再尝试单击 Vantage 菜单中的“我的软件”按钮。"
+    },
     "hardwareScan": {
         "name": "硬件扫描",
         "title": "执行硬件扫描",
@@ -2363,7 +2395,7 @@
             "error": "错误",
             "delete": "删除",
             "warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行",
-			"scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
+            "scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
         },
         "recoverBadSectors": {
             "title": "恢复坏扇区",
@@ -2413,6 +2445,6 @@
         "attention": "注意",
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
-		"pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
+        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
     }
 }

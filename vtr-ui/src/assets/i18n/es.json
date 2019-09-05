@@ -802,6 +802,11 @@
                         "description": "Habilite esta función para mejorar el tiempo de reanudación, en caso de que abra y cierre frecuentemente la tapa del equipo.",
                         "tooltip": "Esta función mejorará el tiempo de reanudación, en caso de que abra y cierre frecuentemente la tapa del equipo. Cuando está habilitada, el equipo entrará a una modalidad de baja energía cuando cierre la tapa, pero se reanudará instantáneamente si la vuelve a abrir dentro de 15 minutos de haberla cerrado. Esta función también permite que el equipo portátil intente finalizar actividades pendientes (como enviar un correo electrónico o descargar un archivo) antes de que el sistema se suspenda."
                     },
+					"flipToBoot": {
+						"title": "Voltear para iniciar",
+						"description": "Esta característica le permite activar el sistema al abrir la tapa del equipo, exactamente igual que al presionar el botón de encendido. ",
+						"tooltip": "Esta característica inicia automáticamente el equipo al abrir la tapa.  Es especialmente útil si configuró la información de inicio de sesión del rostro en Windows Hello."
+					},
                     "or": "- O bien -"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Entrada y accesorios",
                 "subtitle": "Configuración de entrada y accesorios",
-                "description": "La detección inteligente de Lenovo combina diferentes sensores del equipo para detectar sus actividades y ajustar los valores para una administración óptima de la energía",
+                "description": "Esta sección le permite establecer las funciones del teclado y del mouse que se utilizan con más frecuencia. Explore más características aquí.",
                 "inputAccessory": {
                     "title": "Teclado inteligente",
                     "hiddenKeyboardFunctions": {
@@ -1245,7 +1250,8 @@
                     "description2": "La característica utiliza sensores y la cámara para detectar su presencia. Sin embargo, la característica NO recopila datos personales.",
                     "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
                     "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión sin interacción no funcionará.",
-                    "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático."
+                    "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
@@ -1574,6 +1580,7 @@
             "statusWarrantyNotFound": "No se encontró garantía",
             "yearDepotWarranty": "Garantía de depósito Y",
             "warrantyDetails": "Detalles de garantía:",
+            "warrantyDashboardDetails": "Detalles de garantía",
             "startDate": "Fecha de inicio: ",
             "endDate": "Fecha de término: ",
             "status": "Estado: ",
@@ -2294,6 +2301,31 @@
         "Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
     },
+    "modernPreload": {
+        "cancel": "Cancelar",
+        "close": "Cerrar",
+        "download": "Descargar",
+        "downloadAvailable": "Descarga disponible",
+        "downloadComplete": "Descarga completada",
+        "downloading": "Descargando...",
+        "failedDownload": "Error de descarga",
+        "failedInstall": "Fallo de la instalación",
+        "installed": "Instalado",
+        "restartDownload": "Volver a comenzar la descarga",
+        "retry": "Reint.",
+        "skip": "Omitir",
+        "noteDownloading": "Nota: después de hacer clic en Descargar, puede que reciba una solicitud de Windows para que nos autorice a instalar el software en su dispositivo. Una vez finalizada la instalación de las aplicaciones, estas aparecerán automáticamente en el escritorio o en el menú Inicio.<br /><br />Puede cerrar la página Mi software y continuar usando Lenovo Vantage. No cierre Lenovo Vantage durante la instalación.",
+        "noteFailedDownload": "Alerta: algo salió mal durante la descarga o instalación. Asegúrese de estar conectado a Internet y vuelva a intentarlo. Recuerde mantener Vantage abierto mientras que instalamos su software. Puede cerrar la página Mi software y continúe explorando Vantage o minimice Vantage mientras que completamos su instalación de software.",
+        "noteDownloadComplete": "Nota: después de hacer clic en Descargar, puede que reciba una solicitud de Windows para que nos autorice a instalar el software en su dispositivo. Una vez finalizada la instalación de las aplicaciones, estas aparecerán automáticamente en el escritorio o en el menú Inicio.<br /><br />Puede cerrar la página Mi software y continuar usando Lenovo Vantage. No cierre Lenovo Vantage durante la instalación.",
+        "noteDownloadAvailable": "Nota: después de hacer clic en Descargar, puede que reciba una solicitud de Windows para que nos autorice a instalar el software en su dispositivo. Una vez finalizada la instalación de las aplicaciones, estas aparecerán automáticamente en el escritorio o en el menú Inicio.<br /><br />Puede cerrar la página Mi software y continuar usando Lenovo Vantage. No cierre Lenovo Vantage durante la instalación.",
+        "sizeText": "Tamaño",
+        "versionText": "Versión",
+        "softwareDescription": "Haga clic en descargar a continuación para canjear el software que compró con su dispositivo. Si en cualquier momento necesita volver a descargar el software, puede hacerlo haciendo clic en el botón Mi software en el menú Vantage.",
+        "title": "Mi software",
+        "loadingDescription": "Espere mientras preparamos una lista del software que se incluyó en la compra de su dispositivo.",
+        "shortDescription": "Descargue e instale el software que se incluyó en la compra de su dispositivo.",
+        "errorDescription": "<h2>Lo sentimos, hubo un problema para recuperar la información de descarga de software</h2>Intente hacer clic en el botón “Reintentar” o vuelva a intentarlo más tarde pulsando el botón “Mi software” en el menú Vantage."
+    },
     "hardwareScan": {
         "name": "Exploración de hardware",
         "title": "Llevar a cabo una exploración de hardware",
@@ -2363,7 +2395,7 @@
             "error": "Error",
             "delete": "Eliminar",
             "warningBatterySaver": "Nota: los análisis planificados no se ejecutarán en la modalidad de ahorro de batería",
-			"scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento."
+            "scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento."
         },
         "recoverBadSectors": {
             "title": "Recuperar sectores incorrectos",
@@ -2413,6 +2445,6 @@
         "attention": "Atención",
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
-		"pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
+        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
     }
 }

@@ -730,7 +730,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.getNextUpdatedScanText();
 					break;
 				case NetworkStatus.Online:
-					if (this.isCheckingPluginStatus) {
+					if (this.isCheckingPluginStatus
+						|| this.systemUpdateService.isImcErrorOrEmptyResponse) {
 						this.getScheduleUpdateStatus(false);
 					}
 					this.isOnline = notification.payload.isOnline;

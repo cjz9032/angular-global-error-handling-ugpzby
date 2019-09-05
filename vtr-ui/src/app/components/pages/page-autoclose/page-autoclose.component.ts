@@ -92,7 +92,7 @@ export class PageAutocloseComponent implements OnInit {
 				this.showAppsModal = true;
 			}
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
@@ -101,11 +101,12 @@ export class PageAutocloseComponent implements OnInit {
 		try {
 			this.getNeedStatus = !status;
 		} catch (error) {
-			console.error(error.message);
 		}
 	}
 
 	initTurnOnAction() {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
@@ -161,7 +162,7 @@ export class PageAutocloseComponent implements OnInit {
 				}
 			});
 		} catch (error) {
-			console.error(error.message);
+			return undefined;
 		}
 	}
 
@@ -177,13 +178,10 @@ export class PageAutocloseComponent implements OnInit {
 		} catch (error) {
 			const noAppsRunning = this.runningList.length === 0 ? true : false;
 			this.loadingContent = { loading: false, noApps: noAppsRunning };
-			console.error(error.message);
 		}
 	}
 
 	public addAppDataToList(event: any) {
-		console.log(event.target.checked);
-		console.log(event.target.value);
 		if (event.target.checked) {
 			const addApp = event.target.value;
 			try {
@@ -193,7 +191,6 @@ export class PageAutocloseComponent implements OnInit {
 					}
 				});
 			} catch (error) {
-				console.error(error.message);
 			}
 		} else {
 			this.gamingAutoCloseService.delAppsAutoCloseList(event.target.value).then((response: boolean) => {
@@ -207,11 +204,13 @@ export class PageAutocloseComponent implements OnInit {
 
 	deleteAppFromList(appData: any) {
 		console.log(appData);
+		this.autoCloseAppList.splice(appData.index, 1);
 		this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
 			if (response) {
-				this.autoCloseAppList.splice(appData.index, 1);
 				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				this.refreshRunningList();
+			} else {
+				this.refreshAutoCloseList();
 			}
 		});
 	}

@@ -12,6 +12,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 const thinkpad = 1;
 const ideapad = 0;
 @Component({
@@ -43,6 +45,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	constructor(
 		public powerService: PowerService,
 		private translate: TranslateService,
+		private logger: LoggerService,
 		public commonService: CommonService,
 		public modalService: NgbModal) { }
 
@@ -68,18 +71,18 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	initDataFromCache() {
 		this.cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
 		if (this.cache) {
-			//init ui
+			// init ui
 			this.showIC = this.cache.showIC;
-			if (this.showIC == 0) {
+			if (this.showIC === 0) {
 				this.isPowerSmartSettingHidden.emit(true);
 				return;
 			}
-			this.captionText = this.cache.captionText != "" ? this.translate.instant(this.cache.captionText): "";
+			this.captionText = this.cache.captionText !== '' ? this.translate.instant(this.cache.captionText) : '';
 			this.showIntelligentCoolingToggle = this.cache.autoModeToggle.available;
 			this.enableIntelligentCoolingToggle = this.cache.autoModeToggle.status;
 			this.showIntelligentCoolingModes = this.cache.showIntelligentCoolingModes;
 			this.apsStatus = this.cache.apsState;
-			this.selectedModeText = this.cache.selectedModeText != "" ? this.translate.instant(this.cache.selectedModeText): "";
+			this.selectedModeText = this.cache.selectedModeText !== '' ? this.translate.instant(this.cache.selectedModeText) : '';
 			this.setPerformanceAndCool(this.cache.mode);
 
 		} else {
@@ -92,9 +95,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			LocalStorageKey.MachineFamilyName,
 			undefined
 		);
-		var isYogo730: boolean = false;
-		var regExForYoga730 = /YOGA 730/gi;
-		if (cacheMachineFamilyName && (cacheMachineFamilyName.search(regExForYoga730) != -1)) {
+		let isYogo730 = false;
+		const regExForYoga730 = /YOGA 730/gi;
+		if (cacheMachineFamilyName && (cacheMachineFamilyName.search(regExForYoga730) !== -1)) {
 			isYogo730 = true;
 			console.log('isYogo730: ', isYogo730);
 		}
@@ -151,7 +154,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			console.error('initPowerSmartSettingsForIdeaPad: ' + error.message);
+			this.logger.error('initPowerSmartSettingsForIdeaPad: ' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -162,6 +166,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
 					this.showIntelligentCoolingToggle = true;
 					this.showIC = response.itsVersion + this.add;
+					this.cache.showIC = this.showIC;
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description13');
 					this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.description13';
 					const currentMode = IntelligentCoolingModes.getModeForIdeaPadITS3(response.currentMode);
@@ -178,6 +183,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				} else if (response.itsVersion === 4) {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
 					this.showIntelligentCoolingToggle = false;
+					this.showIC = response.itsVersion + this.add;
+					this.cache.showIC = this.showIC;
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description14');
 					this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.description14';
 					const currentMode = IntelligentCoolingModes.getMode(response.currentMode);
@@ -186,7 +193,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			console.error('initPowerSmartSettingsUIForIdeaPad: ' + error.message);
+			this.logger.error('initPowerSmartSettingsUIForIdeaPad: ' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -202,11 +210,13 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('startMonitorForICIdeapad.then', value);
 					}).catch(error => {
-						console.error('startMonitorForICIdeapad', error);
+						this.logger.error('startMonitorForICIdeapad', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error('startMonitorForICIdeapad' + error.message);
+			this.logger.error('startMonitorForICIdeapad' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -217,22 +227,24 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					.then((value: boolean) => {
 						console.log('stopMonitorForICIdeapad', value);
 					}).catch(error => {
-						console.error('stopMonitorForICIdeapad', error);
+						this.logger.error('stopMonitorForICIdeapad', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error('stopMonitorForICIdeapad' + error.message);
+			this.logger.error('stopMonitorForICIdeapad' + error.message);
+			return EMPTY;
 		}
 	}
 
 	updateSelectedModeText(mode: IntelligentCoolingModes) {
-		let text = "";
+		let text = '';
 		switch (mode) {
 			case IntelligentCoolingModes.Cool:
 				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.quiteCool';
 				break;
 			case IntelligentCoolingModes.Performance:
-				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance'
+				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance';
 				break;
 			case IntelligentCoolingModes.BatterySaving:
 				text = 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving';
@@ -249,7 +261,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setITSModeForICIdeapad(value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('setPowerSmartSettingsForIdeaPad :: ' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -282,6 +295,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 							this.onIntelligentCoolingToggle(customEvent);
 						}
 					} else {
+						this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.nocqldesc');
+						this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.nocqldesc';
 						this.showIntelligentCoolingToggle = false;
 					}
 					this.setPerformanceAndCool(mode);
@@ -336,7 +351,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('initPowerSmartSettingsForThinkPad', error.message);
+			return EMPTY;
 		}
 	}
 
@@ -346,7 +362,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getDYTCRevision();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getDYTCRevision', error.message);
+			return new Promise((resolve) => { resolve(6); });
 		}
 	}
 	private setPerformanceAndCool(mode: IntelligentCoolingMode) {
@@ -391,7 +408,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getCQLCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getCQLCapability ::' + error.message);
+			return false;
 		}
 	}
 	private getTIOCapability() {
@@ -400,7 +418,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getTIOCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getTIOCapability', error.message);
+			return false;
 		}
 	}
 	private async setAutoModeSetting(event: any) {
@@ -420,11 +439,13 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						console.log('setAutoModeSetting.then', value);
 					})
 					.catch(error => {
-						console.error('setAutoModeSetting', error);
+						this.logger.error('setAutoModeSetting', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('setAutoModeSetting', error.message);
+			return EMPTY;
 		}
 	}
 	private async setManualModeSetting(mode: IntelligentCoolingMode) {
@@ -447,11 +468,13 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						this.setPerformanceAndCool(mode);
 					})
 					.catch(error => {
-						console.error('setManualModeSetting', error);
+						this.logger.error('setManualModeSetting', error.message);
+						return false;
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('setManualModeSetting', error.message);
+			return false;
 		}
 	}
 	private getManualModeSetting() {
@@ -460,7 +483,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getManualModeSetting();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getManualModeSetting', error.message);
+			return 'error';
 		}
 	}
 
@@ -471,7 +495,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getAPSState();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getAPSState', error.message);
+			return false;
 		}
 	}
 
@@ -481,7 +506,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyCQLCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getLegacyCQLCapability', error.message);
+			return false;
 		}
 	}
 	private getLegacyTIOCapability() {
@@ -490,7 +516,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyTIOCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getLegacyTIOCapability', error.message);
+			return 0;
 		}
 	}
 
@@ -500,7 +527,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyManualModeCapability();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getLegacyManualModeCapability', error.message);
+			return false;
 		}
 	}
 	private getLegacyAutoModeState() {
@@ -509,7 +537,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getLegacyAutoModeState();
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getLegacyAutoModeState', error.message);
+			return false;
 		}
 	}
 	private async getLegacyManualModeState() {
@@ -520,7 +549,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return mode1;
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getLegacyManualModeState', error.message);
+			return EMPTY;
 		}
 	}
 	private setLegacyAutoModeState(value: boolean) {
@@ -529,7 +559,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setLegacyAutoModeState(value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('setLegacyAutoModeState', error.message);
+			return EMPTY;
 		}
 	}
 	private setLegacyManualModeState(value: boolean) {
@@ -538,7 +569,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.setLegacyManualModeState(value);
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('setLegacyManualModeState', error.message);
+			return EMPTY;
 		}
 	}
 	// =============== End Legacy

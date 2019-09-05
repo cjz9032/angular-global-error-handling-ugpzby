@@ -17,6 +17,7 @@ import { MetricsModule } from 'src/app/directives/metrics.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { ModalZeroTouchLockFacialRecognitionComponent } from '../../components/modal/modal-zero-touch-lock-facial-recognition/modal-zero-touch-lock-facial-recognition.component';
+import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
 
 @NgModule({
 	declarations: [
@@ -34,6 +35,7 @@ import { ModalZeroTouchLockFacialRecognitionComponent } from '../../components/m
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalZeroTouchLockFacialRecognitionComponent,
+		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent
 
 	],
@@ -66,6 +68,7 @@ import { ModalZeroTouchLockFacialRecognitionComponent } from '../../components/m
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalZeroTouchLockFacialRecognitionComponent,
+		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent
 
 	]

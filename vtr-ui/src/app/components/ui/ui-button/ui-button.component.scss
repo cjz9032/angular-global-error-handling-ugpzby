@@ -36,8 +36,12 @@
 			text-transform: uppercase;
 		}
 
+		.text-capitalize {
+			text-transform: capitalize;
+		}
+
 		.disable {
-			background: gray;
+			background: $button_disable;
 		}
 
 		.fullWidth {
@@ -56,15 +60,16 @@
 		}
 
 		.btn-gradient {
-			-moz-animation: html-css 2s ease-out;
-			-webkit-animation: html-css 2s ease-out;
-			background-color: #2e62d9;
-			background-image: -webkit-gradient(linear, left top, left bottom, from(#2e62d9), to(#4980fc));
-			background-image: -webkit-linear-gradient(to right, #2e62d9, #4980fc);
-			background-image: -moz-linear-gradient(to right, #2e62d9, #4980fc);
-			background-image: -ms-linear-gradient(to right, #2e62d9, #4980fc);
-			background-image: -o-linear-gradient(to right, #2e62d9, #4980fc);
-			background-image: linear-gradient(to right, #2e62d9, #4980fc);
+			background-color: $button_gradient_start;
+			background-image: linear-gradient(to right, $button_gradient_start, $button_gradient_end);
+		}
+		.btn-red {
+			background: $light;
+			color: $danger_dark;
+			border: 0.1rem solid $danger_dark;
+			&:focus {
+				box-shadow: 0 0 0 0.2rem $button_red_shadow;
+			}
 		}
 		.btn-red {
 			background: $light;

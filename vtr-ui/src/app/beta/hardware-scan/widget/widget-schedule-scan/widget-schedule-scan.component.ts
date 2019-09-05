@@ -245,7 +245,6 @@ export class WidgetScheduleScanComponent implements OnInit {
 		if (scheduleScanRequest) {
 			console.log('[REQUEST] ScheduleScanRequest:');
 			console.log(JSON.stringify(scheduleScanRequest));
-
 			if (this.hardwareScanService) {
 				this.hardwareScanService.getScheduleScan(scheduleScanRequest)
 					.then((response) => {
@@ -278,7 +277,10 @@ export class WidgetScheduleScanComponent implements OnInit {
 									this.items.push({ name: req.nextExecutionDate, scanType: type, frequency: req.scheduleFrequency, date: dateString, time: req.scheduleTime, deleteReq: scheduleScanDelete });
 
 								}
-								const desc = this.translate.instant('hardwareScan.scheduledScan.information') + ' ' + dateString + ' ' + time;
+								const dateSplit = scheduleScanRequest.scheduleDate[0].split('/');
+								const dateSchedule = dateSplit[2] + '-' + dateSplit[0] + '-' + dateSplit[1];
+								const timeSchedule = this.formatTime(scheduleScanRequest.scheduleTime);
+								const desc = this.translate.instant('hardwareScan.scheduledScan.information') + ' ' + dateSchedule + ' ' + timeSchedule;
 								this.OnCollisionModal('', desc);
 							});
 						}
@@ -305,8 +307,8 @@ export class WidgetScheduleScanComponent implements OnInit {
 			hours = '12';
 			ampm = this.translate.instant('hardwareScan.am');
 		} else if (parseInt(hours, 10) > 12) {
-			const temp = parseInt(hours, 10) - 12;
-			hours = String(temp);
+			const temp = '0' + (parseInt(hours, 10) - 12);
+			hours = temp.substring(temp.length - 2, temp.length);
 		} else {
 			ampm = this.translate.instant('hardwareScan.am');
 		}

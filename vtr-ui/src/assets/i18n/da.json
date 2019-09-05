@@ -802,6 +802,11 @@
                         "description": "Aktiver denne funktion for at forbedre genoptagelsestiden, hvis du ofte åbner og lukker computerens låg.",
                         "tooltip": "Denne funktion forbedrer genoptagelsestiden, hvis du ofte åbner og lukker computerens låg. Når den er aktiveret, går computeren i en tilstand med lavt strømforbrug, når du lukker dens låg, men den genoptager driften med det samme, hvis du åbner låget inden for 15 minutter efter, du har lukket det. Denne funktion giver din notebook mulighed for at forsøge at udføre ventende aktiviteter (som f.eks. afsendelse af e-mail eller download af en fil), inden systemet går i dvale."
                     },
+					"flipToBoot": {
+						"title": "Åbn og start",
+						"description": "Denne funktion giver dig mulighed for at tænde computeren, når du åbner computerens låg, nøjagtigt som når du trykker på tænd/sluk-knappen. ",
+						"tooltip": "Denne funktion starter automatisk computeren, når låget åbnes.  Det er især nyttigt, hvis du har angivet oplysninger om ansigts-logon i Windows Hello."
+					},
                     "or": "Eller"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "Input og tilbehør",
                 "subtitle": "Indstillinger for input og tilbehør",
-                "description": "Lenovo Intelligent registrering kombinerer forskellige sensorer på computeren til at registrere dine aktiviteter og justere indstillinger, så du får den optimale strømstyring",
+                "description": "I denne sektion kan du indstille de hyppigst anvendte tastatur- og musefunktioner. Udforsk flere funktioner her.",
                 "inputAccessory": {
                     "title": "Intelligent tastatur",
                     "hiddenKeyboardFunctions": {
@@ -1245,7 +1250,8 @@
                     "description2": "Funktionen bruger sensorer og kameraet til at registrere din tilstedeværelse. Men funktionen indsamler IKKE personlige data.",
                     "description3": "1. Hvis din computer er i Telt-, Tablet- eller Støtte-tilstand, fungerer disse funktioner muligvis ikke korrekt.",
                     "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Logon uden berøring fungerer ikke.",
-                    "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon."
+                    "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
@@ -1574,6 +1580,7 @@
             "statusWarrantyNotFound": "Garantien blev ikke fundet",
             "yearDepotWarranty": "Garanti på Y-deponering",
             "warrantyDetails": "Garantioplysninger:",
+            "warrantyDashboardDetails": "Garantioplysninger",
             "startDate": "Startdato: ",
             "endDate": "Slutdato: ",
             "status": "Status: ",
@@ -2294,6 +2301,31 @@
         "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
     },
+    "modernPreload": {
+        "cancel": "Annuller",
+        "close": "Luk",
+        "download": "Download",
+        "downloadAvailable": "Download tilgængelig",
+        "downloadComplete": "Download fuldført",
+        "downloading": "Downloader...",
+        "failedDownload": "Download mislykkedes",
+        "failedInstall": "Installation mislykkedes",
+        "installed": "Installeret",
+        "restartDownload": "Start download igen",
+        "retry": "Prøv igen",
+        "skip": "Ignorér",
+        "noteDownloading": "Bemærk: Når du klikker på Download, får du muligvis en meddelelse fra Windows om at give os tilladelse til at installere programmet på din enhed. Når du er færdig med at installere, vises dine apps automatisk på skrivebordet eller i startmenuen.<br /><br />Du kan lukke siden Min software og fortsætte med at bruge Lenovo Vantage. Luk ikke Lenovo Vantage under installation.",
+        "noteFailedDownload": "Besked: Der gik noget galt under download eller installation. Kontrollér, at du har forbindelse til internettet, og prøv igen. Husk at holde Vantage åben, mens vi installerer din software. Du kan lukke siden Min software og fortsætte med at udforske Vantage eller minimere Vantage, mens vi fuldfører softwareinstallationen.",
+        "noteDownloadComplete": "Bemærk: Når du klikker på Download, får du muligvis en meddelelse fra Windows om at give os tilladelse til at installere programmet på din enhed. Når du er færdig med at installere, vises dine apps automatisk på skrivebordet eller i startmenuen.<br /><br />Du kan lukke siden Min software og fortsætte med at bruge Lenovo Vantage. Luk ikke Lenovo Vantage under installation.",
+        "noteDownloadAvailable": "Bemærk: Når du klikker på Download, får du muligvis en meddelelse fra Windows om at give os tilladelse til at installere programmet på din enhed. Når du er færdig med at installere, vises dine apps automatisk på skrivebordet eller i startmenuen.<br /><br />Du kan lukke siden Min software og fortsætte med at bruge Lenovo Vantage. Luk ikke Lenovo Vantage under installation.",
+        "sizeText": "Størrelse",
+        "versionText": "Version",
+        "softwareDescription": "Klik på download nedenfor for at indløse software, der er købt med din enhed. Hvis du på et tidspunkt får brug for at downloade softwaren igen, kan du gøre det ved at klikke på knappen Min software i Lenovo Vantage-menuen.",
+        "title": "Min software",
+        "loadingDescription": "Vent, mens vi forbereder en list over den software, der fulgte med, da du købte din enhed.",
+        "shortDescription": "Download og installer software, der fulgte med, da du købte din enhed.",
+        "errorDescription": "<h2>Der er desværre problemer med at hente downloadoplysningerne om softwaren</h2>Prøv at klikke på knappen \"Prøv igen\" nedenfor, eller prøv igen senere ved at klikke på knappen \"Min software\" i Vantage-menuen."
+    },
     "hardwareScan": {
         "name": "Hardwaresøgning",
         "title": "Udfør en hardwaresøgning",
@@ -2363,7 +2395,7 @@
             "error": "Fejl",
             "delete": "Slet",
             "warningBatterySaver": "Bemærk: Planlagte scanninger kører ikke i strømsparetilstand",
-			"scheduleIntervalLimit": "Der er allerede planlagt en anden søgning inden for en ti minutters tidsperiode. Vælg et andet klokkeslæt."
+            "scheduleIntervalLimit": "Der er allerede planlagt en anden søgning inden for en ti minutters tidsperiode. Vælg et andet klokkeslæt."
         },
         "recoverBadSectors": {
             "title": "Retablering af dårlige sektorer",
@@ -2413,6 +2445,6 @@
         "attention": "Advarsel!",
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
-		"pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den."
+        "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den."
     }
 }

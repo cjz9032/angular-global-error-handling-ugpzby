@@ -802,6 +802,11 @@
                         "description": "如果您需要頻繁地打開及闔上電腦機蓋，請啟用此功能以改善電腦恢復作業的時間。",
                         "tooltip": "如果您需要頻繁地打開、闔上電腦機蓋，此功能將改善電腦恢復作業的時間。啟用時，您的電腦將在您闔上其機蓋時進入省電模式，但是如果您在闔上機蓋後的 15 分鐘內打開機蓋，電腦將立即恢復正常作業。此功能也可讓您的筆記型電腦嘗試完成擱置中的活動（例如傳送電子郵件或下載檔案），然後再使系統暫停。"
                     },
+					"flipToBoot": {
+						"title": "翻轉開機",
+						"description": "此功能可讓在您打開電腦機蓋時即開啟電腦，就像按下電源按鈕一樣。",
+						"tooltip": "此功能是透過打開機蓋來自動啟動電腦。如果您已在 Windows Hello 中設定臉部登入資訊，此功能特別有用。"
+					},
                     "or": "或"
                 },
                 "otherSettings": {
@@ -1082,7 +1087,7 @@
             "inputAccessories": {
                 "title": "輸入和配件",
                 "subtitle": "輸入和配件設定",
-                "description": "Lenovo 智慧型感應會結合您電腦上的各種感應器來偵測您的活動，並調整最佳電源管理的設定",
+                "description": "您可使用本節內容設定最常用的鍵盤和滑鼠功能。從這裡探索更多功能。",
                 "inputAccessory": {
                     "title": "智慧型鍵盤",
                     "hiddenKeyboardFunctions": {
@@ -1245,7 +1250,8 @@
                     "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
-                    "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。"
+                    "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
@@ -1574,6 +1580,7 @@
             "statusWarrantyNotFound": "找不到保固",
             "yearDepotWarranty": "年到府取件保固",
             "warrantyDetails": "保固詳細資料：",
+            "warrantyDashboardDetails": "保固詳細資料",
             "startDate": "開始日期：",
             "endDate": "結束日：",
             "status": "狀態：",
@@ -2294,6 +2301,31 @@
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
     },
+    "modernPreload": {
+        "cancel": "取消",
+        "close": "關閉",
+        "download": "下載",
+        "downloadAvailable": "可下載",
+        "downloadComplete": "下載完成",
+        "downloading": "正在下載...",
+        "failedDownload": "下載失敗",
+        "failedInstall": "安裝失敗",
+        "installed": "已安裝",
+        "restartDownload": "重新開始下載",
+        "retry": "重試",
+        "skip": "跳過",
+        "noteDownloading": "注意：按一下「下載」之後，便會出現來自 Windows 的提示，允許我們在您的裝置上安裝軟體。完成安裝後，您的應用程式將自動在桌面或「開始」功能表上顯示。<br /><br />您可以關閉「我的軟體」頁面，然後繼續使用 Lenovo Vantage。安裝期間請勿關閉 Lenovo Vantage。",
+        "noteFailedDownload": "警告：下載或安裝期間出了問題。請確定您已連接至網際網路，然後重試。當我們安裝您的軟體時，請記得保持 Vantage 的開啟。您可以關閉「我的軟體」頁面並繼續探索 Vantage，或在我們完成您的軟體安裝時最小化 Vantage。",
+        "noteDownloadComplete": "注意：按一下「下載」之後，便會出現來自 Windows 的提示，允許我們在您的裝置上安裝軟體。完成安裝後，您的應用程式將自動在桌面或「開始」功能表上顯示。<br /><br />您可以關閉「我的軟體」頁面，然後繼續使用 Lenovo Vantage。安裝期間請勿關閉 Lenovo Vantage。",
+        "noteDownloadAvailable": "注意：按一下「下載」之後，便會出現來自 Windows 的提示，允許我們在您的裝置上安裝軟體。完成安裝後，您的應用程式將自動在桌面或「開始」功能表上顯示。<br /><br />您可以關閉「我的軟體」頁面，然後繼續使用 Lenovo Vantage。安裝期間請勿關閉 Lenovo Vantage。",
+        "sizeText": "大小",
+        "versionText": "版本",
+        "softwareDescription": "按一下下方的下載，以兌換購買裝置時隨附的軟體。如果您需要再次下載軟體，隨時按一下 Vantage 功能表中的「我的軟體」按鈕即可下載。",
+        "title": "我的軟體",
+        "loadingDescription": "請稍候，我們正在準備購買裝置時所附的軟體清單。",
+        "shortDescription": "下載並安裝購買裝置時所附的軟體。",
+        "errorDescription": "<h2>抱歉，擷取軟體下載資訊時發生問題</h2>嘗試按一下下方的「重試」按鈕，或稍後再嘗試按一下 Vantage 功能表中的「我的軟體」按鈕。"
+    },
     "hardwareScan": {
         "name": "硬體掃描",
         "title": "執行硬體掃描",
@@ -2363,7 +2395,7 @@
             "error": "錯誤",
             "delete": "刪除",
             "warningBatterySaver": "附註：「排程掃描」不會在「省電功能」模式下執行",
-			"scheduleIntervalLimit": "另一次掃描已排程在十分鐘內進行。請選擇其他時間。"
+            "scheduleIntervalLimit": "另一次掃描已排程在十分鐘內進行。請選擇其他時間。"
         },
         "recoverBadSectors": {
             "title": "回復錯誤磁區",
@@ -2413,6 +2445,6 @@
         "attention": "請注意",
         "cancelTextPrompt": "您確定要取消嗎？",
         "cancelTextProgress": "請等待取消進度",
-		"pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。"
+        "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。"
     }
 }

@@ -273,18 +273,17 @@ xdescribe('PageAutocloseComponent', () => {
 		})
 	);
 
-	it(
-		'should not remove a app',
-		fakeAsync(() => {
-			component.autoCloseAppList = sampleAutoCloseList.processList;
-			fixture.detectChanges();
-			gamingAutoCloseServiceMock.delAppsAutoCloseList.and.returnValue(Promise.resolve(false));
-			component.deleteAppFromList('Google Chrome');
-			tick(20);
-			expect(component.autoCloseAppList).toBeDefined();
-			expect(component.autoCloseAppList.length).toEqual(4);
-		})
-	);
+	// it('should not remove a app',
+	// 	fakeAsync(() => {
+	// 		component.autoCloseAppList = sampleAutoCloseList.processList;
+	// 		fixture.detectChanges();
+	// 		gamingAutoCloseServiceMock.delAppsAutoCloseList.and.returnValue(Promise.resolve(false));
+	// 		component.deleteAppFromList('Google Chrome');
+	// 		tick(20);
+	// 		expect(component.autoCloseAppList).toBeDefined();
+	// 		expect(component.autoCloseAppList.length).toEqual(4);
+	// 	})
+	// );
 
 	it(
 		'toggleStatus should change change when jsbridge returns true',

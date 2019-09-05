@@ -31,8 +31,6 @@ class BatteryDetail {
 	public designVoltage: number;
 	public firmwareVersion: string;
 	public fruPart: string;
-	public isVoltageError: boolean;
-	public isExpressCharging: boolean;
 	public batteryHealth: number;
 	public batteryCondition: string[];
 	// #end region
