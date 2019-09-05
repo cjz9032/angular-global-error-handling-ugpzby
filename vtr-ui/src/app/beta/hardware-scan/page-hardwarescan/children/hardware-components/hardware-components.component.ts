@@ -469,7 +469,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				}
 			}
 
-			this.batteryMessage += '\n' + this.translate.instant('hardwareScan.doNotSuspend') ;
+			if(this.batteryMessage !== ''){
+				this.batteryMessage += '\n';
+			}
+			this.batteryMessage += this.translate.instant('hardwareScan.doNotSuspend') ;
 
 			if (this.batteryMessage !== '') {
 				const modal: NgbModalRef = this.modalService.open(ModalScheduleScanCollisionComponent, {
