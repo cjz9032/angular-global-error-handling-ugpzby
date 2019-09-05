@@ -802,6 +802,11 @@
                         "description": "Aktivera denna funktion för att datorn ska starta snabbare om du ofta öppnar och stänger datorlocket.",
                         "tooltip": "Funktionen förkortar tiden det tar att återgå till arbetsläge om du ofta öppnar eller stänger datorlocket. När den är aktiverad försätts datorn i ett lågenergiläge när du stänger locket, men återgår direkt till arbetsläge om du öppnar locket igen inom 15 minuter. Funktionen gör även att din bärbara dator kan försöka avsluta pågående aktiviteter (som att skicka ett e-postmeddelande eller hämta en fil) innan systemet försätts i vänteläge."
                     },
+					"flipToBoot": {
+						"title": "Starta när locket öppnas",
+						"description": "Med hjälp av den här funktionen kan du slå på datorn genom att öppna locket, precis som när du trycker på strömbrytaren. ",
+						"tooltip": "Den här funktionen startar datorn automatiskt när locket öppnas.  Funktionen är särskilt användbar om du har ställt in biometrisk ansiktsigenkänning med Windows Hello."
+					},
                     "or": "Eller"
                 },
                 "otherSettings": {
@@ -1245,7 +1250,8 @@
                     "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro. Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
                     "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
                     "description4": "2. Om datorn är i viloläge eller avstängd. Beröringsfri inloggning fungerar inte.",
-                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning."
+                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
@@ -2295,6 +2301,31 @@
         "Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
     },
+    "modernPreload": {
+        "cancel": "Avbryt",
+        "close": "Stäng",
+        "download": "Hämta",
+        "downloadAvailable": "Hämtning tillgänglig",
+        "downloadComplete": "Hämtningen är klar",
+        "downloading": "Hämtar...",
+        "failedDownload": "Hämtningen misslyckades",
+        "failedInstall": "Installationen misslyckades",
+        "installed": "Installerad",
+        "restartDownload": "Starta om hämtning",
+        "retry": "Försök igen",
+        "skip": "Hoppa över",
+        "noteDownloading": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "noteFailedDownload": "Varning! Ett problem inträffade under hämtningen eller installationen. Kontrollera att datorn är ansluten till internet och försök igen. Kom ihåg att behålla Vantage öppet medan programvaran installeras. Du kan stänga sidan Min programvara och fortsätta använda Vantage, eller minimera Vantage medan installationen slutförs.",
+        "noteDownloadComplete": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "noteDownloadAvailable": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "sizeText": "Storlek",
+        "versionText": "Version",
+        "softwareDescription": "Klicka på Hämta nedan för att hämta programvara som inkluderades i köpet av din enhet. Om du behöver ladda ned programvaran igen vid ett senare tillfälle kan du göra detta genom att välja Min programvara på Vantage-menyn.",
+        "title": "MIn programvara",
+        "loadingDescription": "Vänta medan vi skapar en lista med programvara som var inkluderad i köpet av enheten.",
+        "shortDescription": "Hämta och installera programvara som var inkluderad i köpet av din enhet.",
+        "errorDescription": "<h2>Det gick inte att hämta information om nedladdning av programvara</h2>Prova att klicka på Försök igen nedan, eller gör ett nytt försök senare genom att klicka på Min programvara på Vantage-menyn."
+    },
     "hardwareScan": {
         "name": "Maskinvarugenomsökning",
         "title": "Kör en maskinvarugenomsökning",
@@ -2364,7 +2395,7 @@
             "error": "Fel",
             "delete": "Ta bort",
             "warningBatterySaver": "Obs! Schemalagda sökningar fungerar inte i batterisparläge",
-			"scheduleIntervalLimit": "En annan genomsökning är schemalagd inom tio minuter. Välj en annan tid."
+            "scheduleIntervalLimit": "En annan genomsökning är schemalagd inom tio minuter. Välj en annan tid."
         },
         "recoverBadSectors": {
             "title": "Återställa skadade sektorer",
@@ -2414,6 +2445,6 @@
         "attention": "Viktigt",
         "cancelTextPrompt": "Vill du verkligen avbryta?",
         "cancelTextProgress": "Vänta tills allt har avbrutits",
-		"pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den."
+        "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den."
     }
 }
