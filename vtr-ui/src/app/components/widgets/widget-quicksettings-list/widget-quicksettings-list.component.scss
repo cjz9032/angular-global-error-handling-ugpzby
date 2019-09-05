@@ -66,6 +66,12 @@
 									color: $gaming_grey_lightest;
 									line-height: 3.2rem;
 									position: relative;
+									@media #{$black-on-white} {
+										color: $gaming_lightest;
+									}
+									@media #{$white-on-black} {
+										color: $gaming_darkest;
+									}
 									&::after{
 										content: '';
 										position: absolute;
@@ -75,8 +81,13 @@
 										background: $screen_dark_20;
 										transition: all .3s ease-in;
 										right: 0;
-										//top: -0.4rem;
 										opacity: 0;
+										@media #{$black-on-white} {
+											background: $screen_dark_20;
+										}
+										@media #{$white-on-black} {
+											background: $gaming_white60;
+										}
 									}
 								}
 								&:hover .icon::after {
@@ -103,6 +114,12 @@
 									width: 1.8rem;
 									margin-top: 0.1rem;
 									transition: all .2s ease-in;
+									@media #{$black-on-white} {
+										background: $gaming_darkest;
+									}
+									@media #{$white-on-black} {
+										background: $gaming_lightest;
+									}
 								}
 							}
 							&.wifi-checked + .switch {
@@ -112,6 +129,12 @@
 									background: $gaming_lightest;
 									transition: all .2s ease-in;
 									left: 3.2rem;
+									@media #{$black-on-white} {
+										background: $gaming_darkest;
+									}
+									@media #{$white-on-black} {
+										background: $gaming_lightest;
+									}
 								}
 							}
 						}
