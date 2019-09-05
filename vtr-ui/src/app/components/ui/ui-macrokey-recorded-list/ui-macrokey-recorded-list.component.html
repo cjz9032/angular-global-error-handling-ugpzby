@@ -36,7 +36,7 @@
 						<div class="record-item" (mouseover)="hoveredPair = record.pairName"
 							(mouseleave)="hoveredPair = ''" [ngClass]="{paired: record.pairName === hoveredPair}"
 							id="macro_key_delete_key{{record.pairName}}"
-							attr.aria-label="macro_key_delete_key{{record.pairName}}" vtrMetrics
+							attr.aria-label="macro key delete key {{record.pairName}}" vtrMetrics
 							[metricsItem]="'Macrokey_delete_key'" metricsEvent="featureClick" tabindex="0">
 							<div class="pressing" *ngIf="record.status === 1">
 								<div class="key">

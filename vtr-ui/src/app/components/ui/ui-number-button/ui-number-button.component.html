@@ -16,13 +16,15 @@
 			<span *ngIf="selectedNumber"><span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span> {{ selectedNumber.key | translate }}</span>
 		</div>
 	</div>
-	<ul [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
+	<ul role="list" [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
 		<ng-container *ngFor="let number of numbers; index as i">
-			<li [ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}" id="macrokey_numpad-{{number.key}}" attr.aria-label="macrokey_numpad-{{number.key}}"  (click)="numberClicked(number)" vtrMetrics
-			[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick" [metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}" tabindex="0">
+			<li role="listitem" [ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}" id="macrokey_numpad-{{number.key}}" attr.aria-label="macrokey_numpad-{{number.key}}"  (click)="numberClicked(number)" vtrMetrics
+			[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick" [metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}" tabindex="'+i+'">
+				<a href="javascript:void(0)" role="link"  tabindex="0" attr.aria-label="macrokey numpad {{number.key}}">
 				<div>
 					{{ number.key | translate }}
 				</div>
+				</a>
 			</li>
 		</ng-container>
 	</ul>
