@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Hasznos tartalom",
             "batteryGauge": {
-                "title": "AKKUMULÁTORMÉRŐ",
                 "subtitle": "Akkumulátorállapot",
                 "hours": "óra",
                 "hour": "óra",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
                     "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert."
                 },
-                "updating": "Frissítés",
-                "voltageError": "Helytelen akkumulátorfeszültség",
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
                 "seeDetailsLink": "Részletek megtekintése"
@@ -788,7 +785,8 @@
                             "battery&Quite": "AKKUMULÁTOR ÉS CSENDES MŰKÖDÉS"
                         }
                     },
-                    "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani"
+                    "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Energiagazdálkodási beállítások",
@@ -802,11 +800,11 @@
                         "description": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor a funkció engedélyezésével gyorsabbá tehető a visszatérés.",
                         "tooltip": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor ezzel a funkcióval gyorsabbá tehető a visszatérés. Ha engedélyezi a funkciót, akkor a számítógép a képernyő lehajtásakor alacsony energiafogyasztási állapotba lép, de azonnal visszatér, ha a képernyő lecsukásától számított 15 percen belül nyitja fel a képernyőt. A funkció használata esetén a notebook megpróbálja befejezni a függőben lévő tevékenységeket (például az e-mailek küldését vagy a fájlok letöltését) a rendszer működésének felfüggesztése előtt."
                     },
-					"flipToBoot": {
-						"title": "Rendszerindítás kinyitással",
-						"description": "Ez a funkció lehetővé teszi a számítógép bekapcsolását fedelének kinyitásával, ugyanúgy, mintha megnyomná a bekapcsoló gombot. ",
-						"tooltip": "Ez a funkció a fedél kinyitásakor automatikusan elindítja a számítógépet.  Különösen akkor hasznos, ha beállította az arcképpel történő bejelentkezést a Windows Hello segítségével."
-					},
+                    "flipToBoot": {
+                        "title": "Rendszerindítás kinyitással",
+                        "description": "Ez a funkció lehetővé teszi a számítógép bekapcsolását fedelének kinyitásával, ugyanúgy, mintha megnyomná a bekapcsoló gombot. ",
+                        "tooltip": "Ez a funkció a fedél kinyitásakor automatikusan elindítja a számítógépet.  Különösen akkor hasznos, ha beállította az arcképpel történő bejelentkezést a Windows Hello segítségével."
+                    },
                     "or": "Vagy"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Billentyűzet felső sorának funkciója",
+                        "showAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK MEGJELENÍTÉSE",
+                        "hideAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK ELREJTÉSE",
+                        "description": "A billentyűzet felső sorában a következő két funkció található. Válassza ki a kívántat:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "A fenti két funkció között az Fn+Esc billentyűkombinációval lehet váltani.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "SPECIÁLIS FUNKCIÓ",
+                                "fnKey": "F1–F12 FUNKCIÓ"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Az alapértelmezett elsődleges funkció megfordítása",
+                            "description": "Bekapcsolt állapotban az alapértelmezett elsődleges funkció a gyári beállításokról az ellenkezőre változik. A módosítások életbe lépéséhez indítsa újra a számítógépet."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Az Fn billentyűkombinációk használata",
+                            "description": "A Normál módszer használatával az Fn billentyűkombinációk használatához meg kell nyomni az Fn+funkcióbillentyűt. Ha az Fn beragadó billentyűs módszert választja, az Fn gomb a megnyomáskor az adott helyzetben marad (nem kell lenyomva tartani a billentyűt). Ezután megnyomhatja a kívánt funkcióbillentyűt. A művelet egyenértékű azzal, mintha a funkcióbillentyűt és az Fn gombot egyszerre nyomná meg.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Normál módszer",
+                                "fnKeyMehod": "Fn beragadó billentyűs módszer"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Ha kétszer nyomja meg az Fn billentyűt, akkor az Fn billentyű lenyomott helyzetben marad, amíg ismét meg nem nyomja. Az Fn billentyű rögzítésekor az Fn zárolás jelzése bekapcsol. A nem alapértelmezett funkció használatához nyomja meg közvetlenül a kívánt funkcióbillentyűt."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "A számítógép újraindítása",
+                            "description": "Az alapértelmezett felső sor funkciója módosításának érvénybe léptetéséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
+                            "reboot": "ÚJRAINDÍTÁS",
+                            "cancel": "NE MOST"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "TOVÁBBIAK",
+                    "control1": "ÉRINTŐFELÜLET VEZÉRLŐELEMEI",
+                    "control2": "EGÉR VEZÉRLŐELEMEI",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Próbaverzió lejárt - Bővítés az összes eszköz védelmére",
             "upgrade": "frissítés",
             "freeTrial": "Az összes eszköz védelme - Ingyenes 30 napos próbaváltozat",
-            "startTrial": "Próbaidőszak megkezdése"
+            "startTrial": "Próbaidőszak megkezdése",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Vissza",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "Az eszköz ökoszisztémája jelenleg védett.",
             "localAccountDetail2": "Az ingyenes 30 napos próbaidőszak megkezdéséhez kattintson az alábbi gombra.",
             "alreadyHaveAccount": "Már van aktiválási kódja?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "A nem biztonságos eszközök és hálózatok rosszindulatú programokat terjeszthetnek, lehetővé tehetik a személyi adatokkal való visszaélést, illetve a magánjellegű és pénzügyi adatok illetéktelen személyek kezébe kerülését. A funkció aktiválásával csökken annak a kockázata, hogy támadók hozzáférhetnek az eszközhöz és az Ön otthoni hálózatához",
                 "subtitle": "Nyugodt lehet",
                 "subtitleDescribe": "A Biztonsági rendszer csatlakoztatott otthonhoz riasztást küld, ha biztonsági rést észlel az eszköz vagy az otthoni hálózat esetében, illetve ha Ön esetlegesen rosszindulatú hálózathoz próbál csatlakozni. A Biztonsági rendszer csatlakoztatott otthonhoz szolgáltatásról <tag>itt</tag> tudhat meg többet.",
-                "tryNow": "Próbálja ki"
+                "tryNow": "Próbálja ki",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Meghívó kód küldése",
@@ -1774,7 +1797,11 @@
                 "success": "A csatlakozás sikerült",
                 "canUse": "Megkezdheti a Biztonsági rendszer csatlakoztatott otthonhoz használatát",
                 "tryAgain": "A kód helytelen, próbálkozzon újra!",
-                "activationCode": "AKTIVÁCIÓS KÓD"
+                "activationCode": "AKTIVÁCIÓS KÓD",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Biztonsági állapot",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Ezekről az összetevőkről <tag>itt</tag> talál további információt.",
                 "peaceOfMind": "Nyugodtan szeretné használni az eszközt?",
                 "button": "A Biztonságos WiFi engedélyezése"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2396,7 +2427,8 @@
             "error": "Hiba",
             "delete": "Törlés",
             "warningBatterySaver": "Megjegyzés: Az ütemezett vizsgálatok energiatakarékos módban nem működnek",
-            "scheduleIntervalLimit": "Egy újabb vizsgálat már be van ütemezve tíz perces időtartamon belül. Válasszon másik időpontot."
+            "scheduleIntervalLimit": "Egy újabb vizsgálat már be van ütemezve tíz perces időtartamon belül. Válasszon másik időpontot.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Hibás szektorok helyreállítása",
@@ -2447,5 +2479,9 @@
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
         "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

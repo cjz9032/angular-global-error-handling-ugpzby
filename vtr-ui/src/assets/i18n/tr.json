@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Faydalı İçerik",
             "batteryGauge": {
-                "title": "PİL GÖSTERGESİ",
                 "subtitle": "Pil durumu",
                 "hours": "saat",
                 "hour": "saat",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın."
                 },
-                "updating": "Güncelleniyor",
-                "voltageError": "Pil voltajı yanlış",
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
                 "seeDetailsLink": "Ayrıntıları görün"
@@ -788,7 +785,8 @@
                             "battery&Quite": "PİL VE SESSİZ"
                         }
                     },
-                    "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir"
+                    "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Güç Ayarları",
@@ -802,11 +800,11 @@
                         "description": "Bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini iyileştirmek için bu özelliği etkinleştirin.",
                         "tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini geliştirir. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
                     },
-					"flipToBoot": {
-						"title": "Kapağı açınca önyükle",
-						"description": "Bu özellik, bilgisayarın kapağını açtığınızda, güç düğmesine bastığınız zaman olduğu gibi bilgisayarınızı açabilmenizi sağlar. ",
-						"tooltip": "Bu özellik, kapağı açıldığında bilgisayarı otomatik olarak başlatır.  Özellikle Windows Hello'da yüzünüzü kullanarak oturum açma bilgilerini ayarlarsanız faydalı olur."
-					},
+                    "flipToBoot": {
+                        "title": "Kapağı açınca önyükle",
+                        "description": "Bu özellik, bilgisayarın kapağını açtığınızda, güç düğmesine bastığınız zaman olduğu gibi bilgisayarınızı açabilmenizi sağlar. ",
+                        "tooltip": "Bu özellik, kapağı açıldığında bilgisayarı otomatik olarak başlatır.  Özellikle Windows Hello'da yüzünüzü kullanarak oturum açma bilgilerini ayarlarsanız faydalı olur."
+                    },
                     "or": "Ya da"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Klavye üst sırası işlevi",
+                        "showAdvSettings": "GELİŞMİŞ AYARLARI GÖSTER",
+                        "hideAdvSettings": "GELİŞMİŞ AYARLARI GİZLE",
+                        "description": "Klavyenin üst sırası aşağıdaki iki işlevi sağlar. İstediğiniz işlevi seçin:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Yukarıdaki iki işlev arasında geçiş yapmak için Fn+Esc tuşlarına basın.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "ÖZEL İŞLEV",
+                                "fnKey": "F1-F12 İŞLEVİ"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Varsayılan birincil işlevi tersine çevirme",
+                            "description": "Bu ayar açık olduğunda, varsayılan birincil işlev fabrika ayarlarından diğer işleve değiştirilir. Değişikliklerin geçerli hale gelmesi için bilgisayarınızı yeniden başlatın."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Fn tuş bileşimleri nasıl kullanılır?",
+                            "description": "Normal yöntem ile Fn tuş bileşimlerini kullanmak için Fn+işlev tuşlarına basmanız gerekir. Fn Yapışkan tuş yöntemi ile sürekli basılı tutmak yerine Fn tuşuna bir kez basarak, tuşu basılı durumda tutabilirsiniz. Ardından, istediğiniz işlev tuşuna basın. Bu işlem, işlev tuşuna Fn tuşuyla aynı anda basmakla eşdeğerdir.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Normal yöntem",
+                                "fnKeyMehod": "Fn Yapışkan Tuş yöntemi"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Fn tuşuna iki kez bastığınızda, tekrar basılıncaya kadar Fn tuşu basılı konumda kilitli kalır. Fn tuşu kilitlendiğinde, Fn Kilidi göstergesi yanar. Varsayılan dışındaki işlevi başlatmak için doğrudan istediğiniz işlev tuşuna basabilirsiniz."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Bilgisayarı yeniden başlatın",
+                            "description": "Varsayılan üst sıra işlevlerinde değişiklik yapılması bilgisayarınızın yeniden başlatmanızı gerektirir. Yeniden başlatmak istediğinizden emin misiniz?",
+                            "reboot": "YENİDEN YÜKLE",
+                            "cancel": "ŞİMDİ DEĞİL"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "DAHA FAZLA",
+                    "control1": "TOUCHPAD DENETİMLERİ",
+                    "control2": "FARE DENETİMLERİ",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
             "upgrade": "yükselt",
             "freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
-            "startTrial": "Deneme Süresini Başlat"
+            "startTrial": "Deneme Süresini Başlat",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Geri",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "Cihaz ekosisteminiz şu anda korunuyor.",
             "localAccountDetail2": "30 günlük ücretsiz deneme sürenizi başlatmak için aşağıdaki düğmeye tıklayın.",
             "alreadyHaveAccount": "Etkinleştirme kodunuz zaten var mı?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "Güvenilmez cihazlar ve ağlar kötü amaçlı yazılımları bulaştırabilir, kimlik hırsızlığına yol açabilir, özel ve finansal bilgileri sızdırabilir. Saldırganların cihazınıza ve ev ağınıza erişme riskini azaltmak için bu özelliği etkinleştirin",
                 "subtitle": "İçiniz Rahat Olsun",
                 "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. Bağlı Ev Güvenliği hakkında daha fazla bilgiye <tag>buradan</tag> ulaşabilirsiniz.",
-                "tryNow": "Şimdi Deneyin"
+                "tryNow": "Şimdi Deneyin",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Davet kodunu girin",
@@ -1774,7 +1797,11 @@
                 "success": "Başarıyla bağlandı",
                 "canUse": "Şimdi Bağlı Ev Güvenliği'ni kullanmaya başlayabilirsiniz",
                 "tryAgain": "Kod hatalı, lütfen yeniden deneyin!",
-                "activationCode": "ETKİNLEŞTİRME KODU"
+                "activationCode": "ETKİNLEŞTİRME KODU",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Güvenlik Durumu",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Bu bileşenlerin her biri hakkında daha fazla bilgiyi <tag>burada</tag> bulabilirsiniz.",
                 "peaceOfMind": "Daha huzurlu olmak ister misiniz?",
                 "button": "Wifi güvenliğini etkinleştirin"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2396,7 +2427,8 @@
             "error": "Hata",
             "delete": "Sil",
             "warningBatterySaver": "Not: Pil Tasarrufu kipinde Zamanlanmış Taramalar gerçekleştirilmez",
-            "scheduleIntervalLimit": "On dakikalık zaman dilimi içinde başka bir tarama zaten zamanlandı. Lütfen başka bir zaman seçin."
+            "scheduleIntervalLimit": "On dakikalık zaman dilimi içinde başka bir tarama zaten zamanlandı. Lütfen başka bir zaman seçin.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Bozuk Kesimleri Kurtar",
@@ -2447,5 +2479,9 @@
         "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
         "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

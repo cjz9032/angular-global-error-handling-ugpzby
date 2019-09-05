@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Pomocna treść",
             "batteryGauge": {
-                "title": "WSKAŹNIK STANU AKUMULATORA",
                 "subtitle": "Kondycja akumulatora",
                 "hours": "godzin(y)",
                 "hour": "godzina",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>Zasilacz nie jest obsługiwany.</b> Komputer Lenovo nie obsługuje tego zasilacza. Może on spowodować nagłe zamknięcie. Podłącz odpowiedni zasilacz.",
                     "LimitedACAdapterSupportDetail": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz."
                 },
-                "updating": "Aktualizowanie",
-                "voltageError": "Nieprawidłowe napięcie akumulatora",
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",
                 "seeDetailsLink": "Zobacz szczegóły"
@@ -788,7 +785,8 @@
                             "battery&Quite": "AKUMULATOR I CICHA PRACA"
                         }
                     },
-                    "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows"
+                    "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Ustawienia zasilania",
@@ -802,11 +800,11 @@
                         "description": "Włącz tę funkcję, aby skrócić czas wznawiania, jeśli często otwierasz i zamykasz pokrywę komputera.",
                         "tooltip": "Ta funkcja skraca czas wznawiania, jeśli użytkownik często otwiera i zamyka pokrywę komputera. Gdy ta funkcja jest włączona, na komputerze jest uruchamiany tryb niskiego zużycia energii, jeśli zostanie zamknięta pokrywa, a jego praca jest natychmiast wznawiana po ponownym otwarciu pokrywy w ciągu 15 minut. Dzięki tej funkcji notebook może podjąć próbę dokończenia nieukończonych operacji (na przykład wysłanie wiadomości e-mail lub pobranie pliku) zanim praca systemu zostanie wstrzymana."
                     },
-					"flipToBoot": {
-						"title": "Odwróć, aby uruchomić",
-						"description": "Ta funkcja umożliwia włączenie komputera po otwarciu jego pokrywy, tak samo jak w przypadku naciśnięcia przycisku zasilania. ",
-						"tooltip": "Ta funkcja automatycznie uruchamia komputer po otwarciu pokrywy.  Jest to szczególnie przydatne, jeśli skonfigurowano dane logowania za pomocą twarzy w funkcji Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Odwróć, aby uruchomić",
+                        "description": "Ta funkcja umożliwia włączenie komputera po otwarciu jego pokrywy, tak samo jak w przypadku naciśnięcia przycisku zasilania. ",
+                        "tooltip": "Ta funkcja automatycznie uruchamia komputer po otwarciu pokrywy.  Jest to szczególnie przydatne, jeśli skonfigurowano dane logowania za pomocą twarzy w funkcji Windows Hello."
+                    },
                     "or": "Lub"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Funkcja klawisza z górnego wiersza klawiatury",
+                        "showAdvSettings": "POKAŻ USTAWIENIA ZAAWANSOWANE",
+                        "hideAdvSettings": "UKRYJ USTAWIENIA ZAAWANSOWANE",
+                        "description": "Górny rząd klawiatury zapewnia dwie następujące funkcje. Wybierz jedną z nich:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Aby przełączyć dwie powyższe funkcje, naciśnij klawisze Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "FUNKCJA SPECJALNA",
+                                "fnKey": "FUNKCJE KLAWISZY F1-F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Odwrócenie domyślnej funkcji podstawowej",
+                            "description": "Po włączeniu domyślna funkcja podstawowa zostanie zmieniona z ustawień fabrycznych na odwrotną. Aby zmiany zostały wprowadzone, należy uruchomić ponownie komputer."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Jak używać kombinacji z klawiszem Fn",
+                            "description": "W przypadku metody normalnej, aby użyć kombinacji klawiszy Fn, należy nacisnąć Fn+klawisze funkcyjne. W przypadku wybrania metody z Fn jako klawiszem trwałym wystarczy nacisnąć klawisz Fn (zamiast naciskać i przytrzymywać), aby pozostał w pozycji wciśnięcia. Następnie można nacisnąć żądany klawisz funkcyjny. Ta czynność jest równoważna naciśnięciu klawisza funkcji jednocześnie z klawiszem Fn.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Metoda normalna",
+                                "fnKeyMehod": "Metoda z Fn jako klawiszem trwałym"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Dwukrotne naciśnięcie klawisza Fn pozostawia go w tej pozycji do czasu jego ponownego naciśnięcia. Wskaźnik blokady klawisza Fn jest włączony, gdy przycisk Fn jest wciśnięty. Możesz bezpośrednio nacisnąć żądany klawisz funkcji, a zostanie uruchomiona funkcja inna niż domyślna."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Uruchom ponownie komputer",
+                            "description": "Aby zmiana funkcji klawisza z górnego wiersza zaczęła obowiązywać, należy ponownie uruchomić komputer. Czy na pewno chcesz uruchomić ponownie?",
+                            "reboot": "URUCHOM PONOWNIE",
+                            "cancel": "NIE TERAZ"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "WIĘCEJ",
+                    "control1": "PRZYCISKI PANELU DOTYKOWEGO",
+                    "control2": "PRZYCISKI MYSZY",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Wersja próbna wygasła - Uaktualnij, aby chronić wszystkie urządzenia",
             "upgrade": "uaktualnij",
             "freeTrial": "Chroń wszystkie urządzenia - Bezpłatna 30-dniowa wersja próbna",
-            "startTrial": "Rozpocznij okres próbny"
+            "startTrial": "Rozpocznij okres próbny",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Wstecz",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "Twój ekosystem urządzenia jest obecnie chroniony.",
             "localAccountDetail2": "Kliknij poniższy przycisk, aby rozpocząć bezpłatną 30-dniową wersję próbną.",
             "alreadyHaveAccount": "Masz już kod aktywacyjny?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "Niebezpieczne urządzenia i sieci mogą wprowadzać złośliwe oprogramowanie, prowadzić do kradzieży tożsamości oraz wyciekać prywatne i finansowe informacje. Włącz tę funkcję, aby ograniczyć ryzyko, że Twoje urządzenie i sieć domowa staną się celem napastników",
                 "subtitle": "Spokojny sen",
                 "subtitleDescribe": "Bezpieczny Dom wyśle zawiadomienie, jeśli wykryje lukę w Twoim urządzeniu lub sieci domowej, lub jeśli zostaniesz połączony z potencjalnie złośliwą siecią. Dowiedz się więcej o funkcji Bezpieczny Dom <tag>tutaj</tag>.",
-                "tryNow": "„Wypróbuj teraz”"
+                "tryNow": "„Wypróbuj teraz”",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Wprowadź kod zaproszenia",
@@ -1774,7 +1797,11 @@
                 "success": "Połączono pomyślnie",
                 "canUse": "Teraz możesz zacząć korzystać z funkcji Bezpieczny Dom",
                 "tryAgain": "Hasło jest niepoprawne, spróbuj ponownie!",
-                "activationCode": "KOD AKTYWACYJNY"
+                "activationCode": "KOD AKTYWACYJNY",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Bezpieczeństwo",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Dowiedz się więcej o każdym z tych <tag>komponentów</tag>tutaj.",
                 "peaceOfMind": "Chcesz więcej spokoju?",
                 "button": "Włącz funkcję Bezpieczeństwo Wi-Fi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2396,7 +2427,8 @@
             "error": "Błąd",
             "delete": "Usuń",
             "warningBatterySaver": "Uwaga: zaplanowane skanowania nie zostaną wykonane w trybie oszczędzania baterii",
-            "scheduleIntervalLimit": "Kolejne skanowanie zaplanowano już w ciągu dziesięciu minut. Wybierz inną godzinę."
+            "scheduleIntervalLimit": "Kolejne skanowanie zaplanowano już w ciągu dziesięciu minut. Wybierz inną godzinę.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Odzyskaj uszkodzone sektory",
@@ -2447,5 +2479,9 @@
         "cancelTextPrompt": "Czy na pewno chcesz anulować?",
         "cancelTextProgress": "Poczekaj na anulowanie postępu",
         "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

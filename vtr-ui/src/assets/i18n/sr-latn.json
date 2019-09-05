@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Korisni sadržaj",
             "batteryGauge": {
-                "title": "POKAZIVAČ NAPUNJENOSTI BATERIJE",
                 "subtitle": "Ispravnost baterije",
                 "hours": "sati",
                 "hour": "sat",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>Adapter za naizmeničnu struju nije podržan.</b> Vaš Lenovo računar ne podržava ovaj adapter za naizmeničnu struju. To može izazvati iznenadno isključivanje. Priključite ispravan adapter za naizmeničnu struju.",
                     "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju."
                 },
-                "updating": "Ažuriranje",
-                "voltageError": "Netačan napon baterije",
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
                 "seeDetailsLink": "Pogledajte detalje"
@@ -788,7 +785,8 @@
                             "battery&Quite": "BATERIJA I TIŠINA"
                         }
                     },
-                    "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows"
+                    "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Postavke napajanja",
@@ -802,11 +800,11 @@
                         "description": "Omogućite ovu funkciju da biste poboljšali vreme nastavka rada ako često otvarate i zatvarate poklopac računara.",
                         "tooltip": "Ova funkcija će poboljšati vreme nastavka rada ako često otvarate i zatvarate poklopac računara. Kada je omogućite, računar će ući u režim slabog napajanja kada zatvorite njegov poklopac, ali će nastaviti odmah ako ponovo otvorite poklopac u roku od 15 minuta od zatvaranja. Ova funkcija takođe dozvoljava vašem prenosivom računaru da pokuša za završi aktivnosti na čekanju (kao što je slanje e-poruke ili preuzimanje datoteke) pre nego što sistem pređe u režim privremenog obustavljanja."
                     },
-					"flipToBoot": {
-						"title": "Otvori za pokretanje sistema",
-						"description": "Ova funkcija vam omogućava da uključite računar kada otvorite poklopac računara, isto baš kao i da ste pritisli dugme za napajanje. ",
-						"tooltip": "Ova funkcija automatski pokreće računar otvaranjem poklopca.  Posebno je korisna ako ste podesili informacije za prijavljivanje pomoću lica u sistemu Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Otvori za pokretanje sistema",
+                        "description": "Ova funkcija vam omogućava da uključite računar kada otvorite poklopac računara, isto baš kao i da ste pritisli dugme za napajanje. ",
+                        "tooltip": "Ova funkcija automatski pokreće računar otvaranjem poklopca.  Posebno je korisna ako ste podesili informacije za prijavljivanje pomoću lica u sistemu Windows Hello."
+                    },
                     "or": "Ili"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Funkcija gornjeg reda tastature",
+                        "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
+                        "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE",
+                        "description": "Gornji red tastature pruža sledeće dve funkcije. Izaberite onu koju želite:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Za prelazak sa jedne na drugu gorenavedenu funkciju, pritisnite tastere Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "SPECIJALNA FUNKCIJA",
+                                "fnKey": "FUNKCIJA TASTERA F1–F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Storniranje podrazumevane primarne funkcije",
+                            "description": "Kada je uključena, podrazumevana primarna funkcija će biti promenjena iz fabričkih postavki na suprotno. Ponovo pokrenite računar da bi se promene primenile."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Kako da koristite kombinacije tastera Fn",
+                            "description": "Koristeći normalni metod, da biste koristili kombinacije tastera Fn, potrebno je da pritisnete taster Fn+funkcijski taster. Metodom lepljivog tastera Fn, možete da pritisnete (umesto da pritisnete i zadržite) taster Fn kako biste ga zadržali u tom stanju. Zatim pritisnite željeni funkcijski taster. Ova radnja je jednaka istovremenom pritiskanju funkcijskog tastera i Fn tastera.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Normalni metod",
+                                "fnKeyMehod": "Metod lepljivog tastera Fn"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Kada Fn taster pritisnete dva puta, Fn taster ostaje zaključan u pritisnutom stanju sve dok ga ponovo ne pritisnete. Kada je taster Fn zaključan, indikator Fn Lock je uključen. Možete direktno da pritisnete željeni funkcijski taster da biste pokrenuli nepodrazumevanu funkciju."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Ponovo pokrenite računar",
+                            "description": "Za promenu podrazumevane funkcije gornjeg reda potrebno je da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?",
+                            "reboot": "PONOVO POKRENI",
+                            "cancel": "NE SAD"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "VIŠE",
+                    "control1": "KONTROLE DODIRNE TABLE",
+                    "control2": "KONTROLE MIŠA",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Probna verzija je istekla - Nadogradite da biste zaštitili sve uređaje",
             "upgrade": "nadogradnja",
             "freeTrial": "Zaštitite sve uređaje - Besplatni tridesetodnevni probni period",
-            "startTrial": "Započnite probni period"
+            "startTrial": "Započnite probni period",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Nazad",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "Ekosistem vaših uređaja je trenutno zaštićen.",
             "localAccountDetail2": "Kliknite na dugme ispod i započnite vaš tridesetodnevni probni period.",
             "alreadyHaveAccount": "Već imate kod za aktivaciju?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "Uređaji i mreže koji nisu bezbedni mogu uvesti malver, dovesti do krađe identiteta i curenja privatnih i finansijskih informacija. Omogućite ovu funkciju da biste umanjili rizik od izlaganja računara i kućne mreže napadačima",
                 "subtitle": "Postizanje sigurnosti",
                 "subtitleDescribe": "Povezana kućna bezbednost će vam poslati obaveštenje ako otkrije ranjivost u uređaju ili kućnoj mreži ili ako ste povezani sa potencijalno zlonamernom mrežom. Saznajte još više o povezanoj kućnoj bezbednosti <tag>ovde</tag>.",
-                "tryNow": "Isprobajte odmah"
+                "tryNow": "Isprobajte odmah",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Unesite kôd poziva",
@@ -1774,7 +1797,11 @@
                 "success": "Uspešno je povezano",
                 "canUse": "Sada možete početi da koristite povezanu kućnu bezbednost",
                 "tryAgain": "Kod je pogrešan. Pokušajte ponovo!",
-                "activationCode": "KOD ZA AKTIVACIJU"
+                "activationCode": "KOD ZA AKTIVACIJU",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Stanje bezbednosti",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Saznajte više o svakoj od ovih komponenti <tag>ovde</tag>.",
                 "peaceOfMind": "Želite li više mira?",
                 "button": "Omogući WiFi bezbednost"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2396,7 +2427,8 @@
             "error": "Greška",
             "delete": "Izbriši",
             "warningBatterySaver": "Napomena: Zakazana skeniranja se neće obaviti u režimu uštede baterije",
-            "scheduleIntervalLimit": "Drugo skeniranje je već planirano unutar vremenskog perioda od deset minuta. Odaberite neko drugo vreme."
+            "scheduleIntervalLimit": "Drugo skeniranje je već planirano unutar vremenskog perioda od deset minuta. Odaberite neko drugo vreme.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Oporavi neispravne sektore",
@@ -2447,5 +2479,9 @@
         "cancelTextPrompt": "Želite li zaista da otkažete?",
         "cancelTextProgress": "Sačekajte otkazivanje",
         "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

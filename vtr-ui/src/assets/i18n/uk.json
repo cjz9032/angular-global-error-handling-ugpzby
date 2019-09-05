@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Корисний вміст",
             "batteryGauge": {
-                "title": "ВОЛЬТМЕТР АКУМУЛЯТОРА",
                 "subtitle": "Стан акумулятора",
                 "hours": "години",
                 "hour": "година",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму."
                 },
-                "updating": "Оновлення",
-                "voltageError": "Неправильна напруга акумулятора",
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%.",
                 "seeDetailsLink": "Показати відомості"
@@ -788,7 +785,8 @@
                             "battery&Quite": "АКУМУЛЯТОР І ТИША"
                         }
                     },
-                    "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows"
+                    "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Настройки живлення",
@@ -802,11 +800,11 @@
                         "description": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте та закриваєте кришку комп'ютера.",
                         "tooltip": "Використання цієї функції зменшить час відновлення роботи, якщо ви часто відкриваєте і закриваєте кришку комп'ютера. Якщо функція ввімкнена, комп'ютер перейде в режим низького споживання електроенергії після закриття кришки і миттєво відновить звичний робочий стан у разі відкриття кришки протягом 15 хвилин після її закриття. Ця функція також дозволяє ноутбуку завершити активні задачі (наприклад, відправку електронного листа або завантаження файлу), перш ніж система призупинить роботу."
                     },
-					"flipToBoot": {
-						"title": "Завантаження відкриттям",
-						"description": "За допомогою цієї функції можна вмикати комп'ютер, коли ви відкриваєте кришку так само, як коли натискаєте кнопку живлення. ",
-						"tooltip": "Ця функція автоматично запускає комп'ютер, коли ви відкриваєте кришку.  Це особливо зручно, якщо ви налаштували вхід за розпізнаванням обличчя у Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Завантаження відкриттям",
+                        "description": "За допомогою цієї функції можна вмикати комп'ютер, коли ви відкриваєте кришку так само, як коли натискаєте кнопку живлення. ",
+                        "tooltip": "Ця функція автоматично запускає комп'ютер, коли ви відкриваєте кришку.  Це особливо зручно, якщо ви налаштували вхід за розпізнаванням обличчя у Windows Hello."
+                    },
                     "or": "Або"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Режим роботи верхнього рядка клавіатури",
+                        "showAdvSettings": "ПОКАЗАТИ ДОДАТКОВІ НАСТРОЙКИ",
+                        "hideAdvSettings": "ПРИХОВАТИ ДОДАТКОВІ НАСТРОЙКИ",
+                        "description": "Верхній рядок клавіатури працює в двох режимах. Виберіть потрібний:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Щоб переключити два режими, натискайте Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "СПЕЦІАЛЬНИЙ РЕЖИМ",
+                                "fnKey": "РЕЖИМ F1-F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Скасування стандартного основного режиму",
+                            "description": "Якщо ввімкнути, основний режим буде змінено зі стандартного на протилежний. Перезавантажте комп’ютер, щоб застосувати зміни."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Використання комбінації клавіш з Fn",
+                            "description": "У звичайному режимі для використання комбінації клавіш з Fn необхідно натискати Fn+функціональні клавіші. У режимі западання клавіші Fn достатньо один раз натиснути її (замість того, щоб натиснути й утримувати її), щоб утримувати клавішу Fn натиснутою. Потім натисніть потрібну функціональну клавішу. Ця дія еквівалентна натисканню функціональної клавіші одночасно з клавішею Fn.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Звичайний режим",
+                                "fnKeyMehod": "Режим западання клавіші Fn"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Якщо двічі натиснути клавішу Fn, клавіша Fn блокується в натиснутому стані, поки ви не натиснете її знову. Коли клавішу Fn заблоковано, індикатор Fn Lock увімкнуто. Щоб увімкнути нестандартну функцію, ви можете натиснути потрібну функціональну клавішу напряму."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Перезавантажте комп'ютер",
+                            "description": "Якщо змінити режим роботи верхнього рядка, потрібно перезавантажити комп'ютер. Готові перезавантажити?",
+                            "reboot": "ПЕРЕЗАВАНТАЖИТИ",
+                            "cancel": "НЕ ЗАРАЗ"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "ДОКЛАДНІШЕ",
+                    "control1": "ЕЛЕМЕНТИ КЕРУВАННЯ СЕНСОРНОЇ ПАНЕЛІ",
+                    "control2": "ЕЛЕМЕНТИ КЕРУВАННЯ МИШІ",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Термін дії пробної версії закінчився - Передплатіть, щоб захистити всі свої пристрої",
             "upgrade": "передплатити",
             "freeTrial": "Захистіть всі свої пристрої - Безкоштовна 30-денна ознайомлювальна версія",
-            "startTrial": "Почати ознайомлення"
+            "startTrial": "Почати ознайомлення",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Назад",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "Ваша екосистема пристроїв захищена.",
             "localAccountDetail2": "Натисніть кнопку нижче, щоб розпочати 30 днів безкоштовного ознайомлення.",
             "alreadyHaveAccount": "Уже маєте код активації?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "Небезпечні пристрої та мережі можуть розповсюджувати шкідливі програми, призводити до крадіжок ідентифікаційних даних, а також витоків приватної та фінансової інформації. Увімкніть цю функцію, щоб зменшити ризик зламу комп'ютера та домашньої мережі зловмисниками",
                 "subtitle": "Повний спокій",
                 "subtitleDescribe": "Функція \"Безпека підключеного дому\" надішле вам сповіщення, якщо буде виявлено вразливість пристрою або домашньої мережі, або якщо пристрій буде підключено до потенційно шкідливої мережі. Дізнайтеся більше про Безпеку підключеного дому <tag>тут</tag>.",
-                "tryNow": "Спробувати зараз"
+                "tryNow": "Спробувати зараз",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Введіть код запрошення",
@@ -1774,7 +1797,11 @@
                 "success": "Успішно підключено",
                 "canUse": "Тепер можна почати користуватися функцією \"Безпека підключеного дому\"",
                 "tryAgain": "Неправильний код, повторіть спробу.",
-                "activationCode": "КОД АКТИВАЦІЇ"
+                "activationCode": "КОД АКТИВАЦІЇ",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Стан безпеки",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Дізнайтеся більше про кожен із цих компонентів <tag>тут</tag>.",
                 "peaceOfMind": "Хочете почуватися в повній безпеці?",
                 "button": "Увімкніть Безпеку WiFi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2396,7 +2427,8 @@
             "error": "Помилка",
             "delete": "Видалити",
             "warningBatterySaver": "Примітка. Планові сканування не виконуватимуться в режимі економії заряду акумулятора",
-            "scheduleIntervalLimit": "У наступні десять хвилин заплановано інше сканування. Виберіть інший час."
+            "scheduleIntervalLimit": "У наступні десять хвилин заплановано інше сканування. Виберіть інший час.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Відновлення пошкоджених секторів",
@@ -2447,5 +2479,9 @@
         "cancelTextPrompt": "Скасувати?",
         "cancelTextProgress": "Дочекайтеся завершення скасування",
         "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

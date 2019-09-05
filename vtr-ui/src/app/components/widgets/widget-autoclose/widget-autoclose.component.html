@@ -19,7 +19,7 @@
       <div>
         <img src="{{app.iconName}}" alt="{{app.processDescription}}" />
       </div>
-      <div placement="bottom" container="body" ngbTooltip="{{app.processDescription}}">
+      <div placement="bottom" container="body" [title]="app.processDescription">
         {{app.processDescription}}
       </div>
       <div class="remove-app" (click)="removeApp(app.processDescription,i)">
