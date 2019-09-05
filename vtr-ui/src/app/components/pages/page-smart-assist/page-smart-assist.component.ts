@@ -185,7 +185,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.intelligentSecurity.isZeroTouchLoginVisible = false;
 		this.intelligentSecurity.isIntelligentSecuritySupported = false;
 		this.intelligentSecurity.isWindowsHelloRegistered = false;
-		this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = true;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = false;
 		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;
 		this.intelligentSecurity.facilRecognitionCameraAccess= true;
 		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
