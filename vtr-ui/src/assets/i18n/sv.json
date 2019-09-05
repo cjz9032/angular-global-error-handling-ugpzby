@@ -1250,7 +1250,8 @@
                     "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro. Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
                     "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
                     "description4": "2. Om datorn är i viloläge eller avstängd. Beröringsfri inloggning fungerar inte.",
-                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning."
+                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
@@ -2394,7 +2395,7 @@
             "error": "Fel",
             "delete": "Ta bort",
             "warningBatterySaver": "Obs! Schemalagda sökningar fungerar inte i batterisparläge",
-			"scheduleIntervalLimit": "En annan genomsökning är schemalagd inom tio minuter. Välj en annan tid."
+            "scheduleIntervalLimit": "En annan genomsökning är schemalagd inom tio minuter. Välj en annan tid."
         },
         "recoverBadSectors": {
             "title": "Återställa skadade sektorer",
@@ -2444,6 +2445,6 @@
         "attention": "Viktigt",
         "cancelTextPrompt": "Vill du verkligen avbryta?",
         "cancelTextProgress": "Vänta tills allt har avbrutits",
-		"pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den."
+        "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den."
     }
 }

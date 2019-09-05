@@ -1250,7 +1250,8 @@
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
                     "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
-                    "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement."
+                    "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
@@ -2394,7 +2395,7 @@
             "error": "Erreur",
             "delete": "Supprimer",
             "warningBatterySaver": "Remarque : les analyses planifiées ne sont pas effectuées en mode économiseur de batterie",
-			"scheduleIntervalLimit": "Une autre analyse a déjà été planifiée dans une période de dix minutes. Veuillez choisir un autre moment."
+            "scheduleIntervalLimit": "Une autre analyse a déjà été planifiée dans une période de dix minutes. Veuillez choisir un autre moment."
         },
         "recoverBadSectors": {
             "title": "Récupérer les secteurs incorrects",
@@ -2444,6 +2445,6 @@
         "attention": "Attention",
         "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
-		"pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau."
+        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau."
     }
 }

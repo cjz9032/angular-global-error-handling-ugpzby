@@ -1250,7 +1250,8 @@
                     "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
                     "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
                     "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
-                    "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată."
+                    "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
@@ -2394,7 +2395,7 @@
             "error": "Eroare",
             "delete": "Ştergere",
             "warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
-			"scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment."
+            "scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment."
         },
         "recoverBadSectors": {
             "title": "Recuperarea sectoarelor defecte",
@@ -2444,6 +2445,6 @@
         "attention": "Atenţie",
         "cancelTextPrompt": "Sigur anulaţi?",
         "cancelTextProgress": "Aşteptaţi anularea progresului",
-		"pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
+        "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
     }
 }

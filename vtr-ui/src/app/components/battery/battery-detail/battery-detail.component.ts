@@ -36,7 +36,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		public translate: TranslateService) {
 	}
 
-	private onNotification(notification: AppNotification) {
+	onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
 				case BatteryInformation.BatteryInfo:
@@ -120,7 +120,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		}
 		return true;
 	}
-
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
