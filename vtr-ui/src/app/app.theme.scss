@@ -87,6 +87,9 @@ $blue-dark: #24536d;
 $light-grey: #788590;
 $border_light: #F8D5D5;
 $text_light: #FEF8F8;
+$button_disable: #808080;
+$button_gradient_start: #2e62d9;
+$button_gradient_end: #4980fc;
 
 $light: #fff;
 $dark: #000;
@@ -104,6 +107,7 @@ $screen_dark_20: rgba(0, 0, 0, 0.2);
 $screen_dark_30: rgba(0, 0, 0, 0.3);
 $screen_dark_50: rgba(0, 0, 0, 0.5);
 $screen_dark_70: rgba(0, 0, 0, 0.7);
+$button_red_shadow: rgba(237, 88, 73, 0.25);
 
 $screen_light_15: rgba(255, 255, 255, 0.15);
 
@@ -290,8 +294,8 @@ $large-screen-1: "only screen and (min-width : 1200px) and (max-width : 1366px)"
 $large-screen: "only screen and (min-width : 1200px)";
 
 /*large screen */
-$mediaquery_XL100X: "only screen and (min-width: 1600px) and (max-width : 3840px) and (max-resolution: 100dpi)";
-$mediaquery_XXL350X: "only screen and (min-width: 1920px) and (max-width : 3840px) and (min-resolution: 100dpi) and (max-resolution: 350dpi)";
+$mediaquery_XL100X: "only screen and (min-width: 1601px) and (max-width : 4000px) and (max-resolution: 100dpi)";
+$mediaquery_XXL350X: "only screen and (min-width: 1601px) and (max-width : 4000px) and (min-resolution: 100dpi) and (max-resolution: 350dpi)";
 
 /*media query for high contrast mode*/
 $high-contrast-grey: #c0c0c0;

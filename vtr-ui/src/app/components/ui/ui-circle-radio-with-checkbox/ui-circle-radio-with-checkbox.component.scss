@@ -1,83 +1,88 @@
 @import './../../../app.theme';
 
-.vtr-ui-circle-radio-with-checkbox {
-	margin-right: 1.5rem;
-	.checkbox {
+@mixin theme($name, $background, $foreground) {
+	.vtr-ui-circle-radio-with-checkbox.#{$name} {
+		margin-right: 1.5rem;
+		.checkbox {
 
-		position: relative;
-		height: 12rem;
-		width: 14rem;
-	}
+			position: relative;
+			height: 12rem;
+			width: 14rem;
+		}
 
-	.checkbox-custom {
-		opacity: 0;
-		position: absolute;
-	}
+		.checkbox-custom {
+			opacity: 0;
+			position: absolute;
+		}
 
-	.checkbox-custom+.checkbox-custom-label>.icomoon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		font-size: 3rem;
-		transform: translate(-50%, -50%);
-		margin: 0;
-	}
+		.checkbox-custom+.checkbox-custom-label>.icomoon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			font-size: 3rem;
+			transform: translate(-50%, -50%);
+			margin: 0;
+		}
 
-	.checkbox-custom+.checkbox-custom-label>.icomoon::before {
-		color: $light;
-	}
+		.checkbox-custom+.checkbox-custom-label>.icomoon::before {
+			color: $background;
+		}
 
-	.checkbox-custom:checked+.checkbox-custom-label>.icomoon::before {
-		color: $main;
+		.checkbox-custom:checked+.checkbox-custom-label>.icomoon::before {
+			color: $foreground;
 
-	}
-
-
-	.checkbox-custom+.checkbox-custom-label {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		background: $main;
-		border: 0.1rem solid $shade_lighter;
-		display: inline-block;
-		vertical-align: middle;
-		width: 6rem;
-		height: 6rem;
-		border-radius: 50%;
-	}
+		}
 
 
-	.title {
-		position: absolute;
-		bottom: 4px;
-		left: 0;
-		right: 0;
-		font-weight: $weight_bold;
-		font-size: $caption;
-		color: $shade_light;
-		//top: 75px;
-		white-space: nowrap;
-	}
-
-	.checkbox-custom:checked+.checkbox-custom-label {
-		background-color: $light;
-	}
+		.checkbox-custom+.checkbox-custom-label {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: $foreground;
+			border: 0.1rem solid $shade_lighter;
+			display: inline-block;
+			vertical-align: middle;
+			width: 6rem;
+			height: 6rem;
+			border-radius: 50%;
+		}
 
 
-	.check-circle{
-		position: absolute;
-		right: -2.5rem;
-		top: 0.5rem;
-		color: $light;
-		font-size: 2rem;
-	}
+		.title {
+			position: absolute;
+			bottom: 4px;
+			left: 0;
+			right: 0;
+			font-weight: $weight_bold;
+			font-size: $caption;
+			color: $shade_light;
+			//top: 75px;
+			white-space: nowrap;
+		}
 
-	.icon-circle{
-		position: absolute;
-		right: -2.5rem;
-		top: 0.5rem;
-		color: $main;
-		font-size: 2rem;
+		.checkbox-custom:checked+.checkbox-custom-label {
+			background-color: $background;
+		}
+
+
+		.check-circle{
+			position: absolute;
+			right: -2.5rem;
+			top: 0.5rem;
+			color: $light;
+			font-size: 2rem;
+		}
+
+		.icon-circle{
+			position: absolute;
+			right: -2.5rem;
+			top: 0.5rem;
+			color: $main;
+			font-size: 2rem;
+		}
 	}
 }
+
+@include theme(white-theme, $main, $light);
+@include theme(blue-theme, $light, $main);

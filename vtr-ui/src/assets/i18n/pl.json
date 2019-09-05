@@ -802,6 +802,11 @@
                         "description": "Włącz tę funkcję, aby skrócić czas wznawiania, jeśli często otwierasz i zamykasz pokrywę komputera.",
                         "tooltip": "Ta funkcja skraca czas wznawiania, jeśli użytkownik często otwiera i zamyka pokrywę komputera. Gdy ta funkcja jest włączona, na komputerze jest uruchamiany tryb niskiego zużycia energii, jeśli zostanie zamknięta pokrywa, a jego praca jest natychmiast wznawiana po ponownym otwarciu pokrywy w ciągu 15 minut. Dzięki tej funkcji notebook może podjąć próbę dokończenia nieukończonych operacji (na przykład wysłanie wiadomości e-mail lub pobranie pliku) zanim praca systemu zostanie wstrzymana."
                     },
+					"flipToBoot": {
+						"title": "Odwróć, aby uruchomić",
+						"description": "Ta funkcja umożliwia włączenie komputera po otwarciu jego pokrywy, tak samo jak w przypadku naciśnięcia przycisku zasilania. ",
+						"tooltip": "Ta funkcja automatycznie uruchamia komputer po otwarciu pokrywy.  Jest to szczególnie przydatne, jeśli skonfigurowano dane logowania za pomocą twarzy w funkcji Windows Hello."
+					},
                     "or": "Lub"
                 },
                 "otherSettings": {
@@ -1245,7 +1250,8 @@
                     "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności. Jednak ta funkcja NIE zbiera żadnych danych osobowych.",
                     "description3": "1. Funkcja może nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
                     "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony. Logowanie bez dotyku nie będzie działać.",
-                    "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta, tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania."
+                    "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta, tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Przejdź do ustawień funkcji Windows Hello",
@@ -2389,7 +2395,7 @@
             "error": "Błąd",
             "delete": "Usuń",
             "warningBatterySaver": "Uwaga: zaplanowane skanowania nie zostaną wykonane w trybie oszczędzania baterii",
-			"scheduleIntervalLimit": "Kolejne skanowanie zaplanowano już w ciągu dziesięciu minut. Wybierz inną godzinę."
+            "scheduleIntervalLimit": "Kolejne skanowanie zaplanowano już w ciągu dziesięciu minut. Wybierz inną godzinę."
         },
         "recoverBadSectors": {
             "title": "Odzyskaj uszkodzone sektory",
@@ -2439,6 +2445,6 @@
         "attention": "Uwaga",
         "cancelTextPrompt": "Czy na pewno chcesz anulować?",
         "cancelTextProgress": "Poczekaj na anulowanie postępu",
-		"pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować."
+        "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować."
     }
 }

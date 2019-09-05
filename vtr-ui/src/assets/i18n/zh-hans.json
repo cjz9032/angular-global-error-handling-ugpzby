@@ -802,6 +802,11 @@
                         "description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
                         "tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
                     },
+					"flipToBoot": {
+						"title": "翻转启动",
+						"description": "此功能可让您在打开计算机外盖时即开启计算机，就像按下电源按钮一样。",
+						"tooltip": "此功能是通过打开外盖来自动启动计算机。如果您已在 Windows Hello 中设置面部登录信息，此功能特别有用。"
+					},
                     "or": "或"
                 },
                 "otherSettings": {
@@ -1245,7 +1250,8 @@
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
-                    "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
+                    "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
@@ -2389,7 +2395,7 @@
             "error": "错误",
             "delete": "删除",
             "warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行",
-			"scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
+            "scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
         },
         "recoverBadSectors": {
             "title": "恢复坏扇区",
@@ -2439,6 +2445,6 @@
         "attention": "注意",
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
-		"pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
+        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
     }
 }

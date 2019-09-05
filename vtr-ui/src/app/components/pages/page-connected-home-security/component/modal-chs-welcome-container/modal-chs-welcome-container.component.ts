@@ -10,6 +10,8 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
@@ -29,7 +31,8 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private commonService: CommonService
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
@@ -102,6 +105,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 							}
 							this.permission.requestPermission('geoLocatorStatus').then((status) => {
 								this.isLocationServiceOn = status;
+								if (status) {
+									this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+								}
 							});
 						});
 					} else {

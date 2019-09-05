@@ -21,7 +21,7 @@ import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.compone
 	styleUrls: ['./ui-row-switch.component.scss'],
 	exportAs: 'uiRowSwitch'
 })
-export class UiRowSwitchComponent extends BaseComponent {
+export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	@ViewChild('childContent', { static: false }) childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
@@ -61,9 +61,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	// private tooltip: NgbTooltip;
 
 	constructor(
-		public modalService: NgbModal
-		, private deviceService: DeviceService
-		, private translate: TranslateService,
+		public modalService: NgbModal, private deviceService: DeviceService, private translate: TranslateService,
 	) { super(); }
 
 

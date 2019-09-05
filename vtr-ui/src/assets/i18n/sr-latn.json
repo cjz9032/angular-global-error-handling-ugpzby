@@ -802,6 +802,11 @@
                         "description": "Omogućite ovu funkciju da biste poboljšali vreme nastavka rada ako često otvarate i zatvarate poklopac računara.",
                         "tooltip": "Ova funkcija će poboljšati vreme nastavka rada ako često otvarate i zatvarate poklopac računara. Kada je omogućite, računar će ući u režim slabog napajanja kada zatvorite njegov poklopac, ali će nastaviti odmah ako ponovo otvorite poklopac u roku od 15 minuta od zatvaranja. Ova funkcija takođe dozvoljava vašem prenosivom računaru da pokuša za završi aktivnosti na čekanju (kao što je slanje e-poruke ili preuzimanje datoteke) pre nego što sistem pređe u režim privremenog obustavljanja."
                     },
+					"flipToBoot": {
+						"title": "Otvori za pokretanje sistema",
+						"description": "Ova funkcija vam omogućava da uključite računar kada otvorite poklopac računara, isto baš kao i da ste pritisli dugme za napajanje. ",
+						"tooltip": "Ova funkcija automatski pokreće računar otvaranjem poklopca.  Posebno je korisna ako ste podesili informacije za prijavljivanje pomoću lica u sistemu Windows Hello."
+					},
                     "or": "Ili"
                 },
                 "otherSettings": {
@@ -1245,7 +1250,8 @@
                     "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo. Međutim, funkcija NE prikuplja, nikakve lične podatke.",
                     "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
                     "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Bezdodirno prijavljivanje neće raditi.",
-                    "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje."
+                    "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje.",
+                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sistema Windows Hello",
@@ -2389,7 +2395,7 @@
             "error": "Greška",
             "delete": "Izbriši",
             "warningBatterySaver": "Napomena: Zakazana skeniranja se neće obaviti u režimu uštede baterije",
-			"scheduleIntervalLimit": "Drugo skeniranje je već planirano unutar vremenskog perioda od deset minuta. Odaberite neko drugo vreme."
+            "scheduleIntervalLimit": "Drugo skeniranje je već planirano unutar vremenskog perioda od deset minuta. Odaberite neko drugo vreme."
         },
         "recoverBadSectors": {
             "title": "Oporavi neispravne sektore",
@@ -2439,6 +2445,6 @@
         "attention": "Pažnja",
         "cancelTextPrompt": "Želite li zaista da otkažete?",
         "cancelTextProgress": "Sačekajte otkazivanje",
-		"pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga."
+        "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga."
     }
 }

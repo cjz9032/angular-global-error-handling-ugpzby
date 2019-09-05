@@ -687,11 +687,28 @@ export class SystemUpdateService {
 	public getUnIgnoredUpdatesForInstallAll(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
-				return !value.isIgnored || (value.isIgnored && value.isDependency);
+				if (!value.isIgnored) {
+					return true;
+				} else if (value.isDependency) {
+					return this.IsUpdateDependedByUnIgnoredPackage(updateList, value.dependedByPackages);
+				}
 			});
 			return updates;
 		}
 		return undefined;
+	}
+
+	private IsUpdateDependedByUnIgnoredPackage(updateList: Array<AvailableUpdateDetail>, dependedByPackages: string) {
+		let result = false;
+		const dependedPacks = dependedByPackages.split(',');
+		dependedPacks.forEach((pack) => {
+			updateList.forEach((update) => {
+				if (!update.isIgnored && update.packageID === pack) {
+					result = true;
+				}
+			});
+		});
+		return result;
 	}
 
 	public dateDiffInDays(date: string) {
