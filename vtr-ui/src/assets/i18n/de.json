@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Hilfreiche Inhalte",
             "batteryGauge": {
-                "title": "AKKUZUSTANDSANZEIGER",
                 "subtitle": "Akkuzustand",
                 "hours": "Stunden",
                 "hour": "Stunde",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
                     "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an."
                 },
-                "updating": "Aktualisierung",
-                "voltageError": "Akkuspannung falsch",
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",
                 "seeDetailsLink": "Details anzeigen"
@@ -788,7 +785,8 @@
                             "battery&Quite": "AKKU UND LEISE"
                         }
                     },
-                    "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden"
+                    "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Einstellungen für Energieversorgung",
@@ -802,11 +800,11 @@
                         "description": "Aktivieren Sie diese Funktion, um die Aktivierungszeit zu verkürzen, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen.",
                         "tooltip": "Mit dieser Funktion wird die Aktivierungszeit verkürzt, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen. Ist diese Funktion aktiviert, wird der Computer beim Schließen der Abdeckung in einen Modus mit niedrigen Stromverbrauch versetzt, ist aber sofort wieder einsatzbereit, wenn Sie die Abdeckung innerhalb von 15 Minuten wieder öffnen. Bei dieser Funktion führt Ihr Notebook außerdem noch nicht abgeschlossene Aktivitäten zu Ende (wie das Senden einer E-Mail oder das Herunterladen einer Datei), bevor das System in den Energiesparmodus übergeht."
                     },
-					"flipToBoot": {
-						"title": "Beim Aufklappen einschalten",
-						"description": "Mit dieser Funktion wird der Computer eingeschaltet, wenn Sie den Deckel öffnen – so, als hätten Sie auf den Netzschalter gedrückt. ",
-						"tooltip": "Mit dieser Funktion startet der Computer beim Öffnen des Deckels.  Sie ist besonders nützlich, wenn Sie Anmeldedaten zur Gesichtserkennung über Windows Hello hinterlegt haben."
-					},
+                    "flipToBoot": {
+                        "title": "Beim Aufklappen einschalten",
+                        "description": "Mit dieser Funktion wird der Computer eingeschaltet, wenn Sie den Deckel öffnen – so, als hätten Sie auf den Netzschalter gedrückt. ",
+                        "tooltip": "Mit dieser Funktion startet der Computer beim Öffnen des Deckels.  Sie ist besonders nützlich, wenn Sie Anmeldedaten zur Gesichtserkennung über Windows Hello hinterlegt haben."
+                    },
                     "or": "Oder"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Funktion der oberen Tastaturreihe",
+                        "showAdvSettings": "ERWEITERTE EINSTELLUNGEN ANZEIGEN",
+                        "hideAdvSettings": "ERWEITERTE EINSTELLUNGEN AUSBLENDEN",
+                        "description": "Die obere Tastaturreihe stellt die folgenden zwei Funktionen zur Verfügung: Wählen Sie die gewünschte aus:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Um zwischen den zwei Funktionen zu wechseln, drücken Sie Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "SONDERFUNKTION",
+                                "fnKey": "F1-F12 FUNKTION"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Umkehrung der primären Standardfunktion",
+                            "description": "Wenn diese Option eingeschaltet ist, wird die primäre Standardfunktion von den Werkseinstellungen auf die entgegengesetzte Einstellung geändert. Starten Sie den Computer neu, damit die Änderungen wirksam werden."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "So verwenden Sie Fn-Tastenkombinationen",
+                            "description": "Bei der normalen Methode müssen Sie zur Verwendung der Fn-Tastenkombinationen die Fn+Funktionstasten drücken. Mit der Fn-Sticky-Tasten-Methode können Sie die Fn-Taste drücken (anstatt sie zu drücken und zu halten), um sie in einem gedrückten Zustand zu halten. Drücken Sie anschließend die gewünschte Funktionstaste. Die Aktion entspricht dem gleichzeitigen Drücken der Funktionstaste und der Fn-Taste.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Normale Methode",
+                                "fnKeyMehod": "Fn-Sticky-Tasten-Methode"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Wenn Sie die Fn-Taste zweimal drücken, bleibt die Fn-Taste im gedrückten Zustand gesperrt, bis Sie sie erneut drücken. Wenn die Fn-Taste gesperrt ist, wird die Fn-Lock-Anzeige eingeschaltet. Sie können die gewünschte Funktionstaste direkt drücken, um die Nicht-Standardfunktion zu aktivieren."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Computer neu starten",
+                            "description": "Nach Ändern der Standardfunktion der oberen Reihe müssen Sie Ihren Computer neu starten. Möchten Sie wirklich neu starten?",
+                            "reboot": "NEU STARTEN",
+                            "cancel": "NICHT JETZT"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "MEHR",
+                    "control1": "TOUCHPAD-STEUERUNG",
+                    "control2": "MAUS-STEUERUNG",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Testversion abgelaufen - Upgrade zum Schutz all Ihrer Geräte",
             "upgrade": "Upgrade",
             "freeTrial": "Schützen Sie all Ihre Geräte - Kostenlos für 30 Tage testen",
-            "startTrial": "Testversion starten"
+            "startTrial": "Testversion starten",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Zurück",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "Ihr Geräte-Ökosystem ist derzeit geschützt.",
             "localAccountDetail2": "Klicken Sie auf die Schaltfläche unten, um Ihre kostenlose 30-Tage-Testversion zu starten.",
             "alreadyHaveAccount": "Sie haben bereits einen Aktivierungscode?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "Unsichere Geräte und Netzwerke können Malware einschleusen, zu Identitätsdiebstahl führen und private sowie finanzielle Informationen preisgeben. Aktivieren Sie diese Funktion, um das Risiko zu verringern, dass Ihr Gerät und Ihr privates Netzwerk Angreifern ausgesetzt werden.",
                 "subtitle": "Immer auf Nummer sicher",
                 "subtitleDescribe": "Die Funktion \"Sicherheit für das verbundene Zuhause\" sendet Ihnen eine Warnung, wenn sie eine angreifbare Stelle in Ihrem Gerät oder privaten Netzwerk erkennt oder wenn Sie sich mit einem potenziell zerstörerischen Netzwerk verbinden. Erfahren Sie <tag>hier</tag> noch mehr über Connected Home Security.",
-                "tryNow": "Jetzt testen"
+                "tryNow": "Jetzt testen",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Einladungscode eingeben",
@@ -1774,7 +1797,11 @@
                 "success": "Verbindung erfolgreich hergestellt",
                 "canUse": "Profitieren Sie jetzt von der Funktion \"Sicherheit für das verbundene Zuhause\"",
                 "tryAgain": "Der Code ist falsch, versuchen Sie es erneut.",
-                "activationCode": "AKTIVIERUNGSCODE"
+                "activationCode": "AKTIVIERUNGSCODE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Sicherheitszustand",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Weitere Informationen über jede dieser Komponenten finden Sie <tag>hier</tag>.",
                 "peaceOfMind": "Sie möchten auf Nummer sicher gehen?",
                 "button": "WiFi-Sicherheit aktivieren"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2395,7 +2426,8 @@
             "error": "Fehler",
             "delete": "Löschen",
             "warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
-            "scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus."
+            "scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Wiederherstellung von fehlerhaften Sektoren",
@@ -2446,5 +2478,9 @@
         "cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?",
         "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist",
         "pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

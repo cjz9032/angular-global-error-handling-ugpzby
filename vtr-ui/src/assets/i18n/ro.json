@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Conținut util",
             "batteryGauge": {
-                "title": "INDICATOR BATERIE",
                 "subtitle": "Funcţionare baterie",
                 "hours": "ore",
                 "hour": "oră",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit."
                 },
-                "updating": "Actualizare",
-                "voltageError": "Tensiunea bateriei este incorectă",
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
                 "seeDetailsLink": "Vedeți detaliile"
@@ -788,7 +785,8 @@
                             "battery&Quite": "MODUL BATERIE ȘI SILENȚIOS"
                         }
                     },
-                    "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows"
+                    "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -802,11 +800,11 @@
                         "description": "Activați această caracteristica pentru a îmbunătăți timpul de reluare dacă deschideți și închideți frecvent capacul calculatorului.",
                         "tooltip": "Această caracteristică va îmbunătăţi timpul de reluare dacă deschideţi şi închideţi frecvent capacul calculatorului. Când este activată, calculatorul va trece în modul de alimentare redusă când închideţi capacul, dar va reveni imediat dacă redeschideţi capacul în decurs de 15 minute după ce l-aţi închis. Această caracteristică permite, de asemenea, notebookului să încerce să termine activităţile în aşteptare (cum ar fi, trimiterea e-mailului sau descărcarea unui fişier) înainte ca sistemul să se oprească."
                     },
-					"flipToBoot": {
-						"title": "Rotiţi pentru a porni",
-						"description": "Această caracteristică vă permite să porniţi computerul când deschideţi capacul acestuia, la fel ca atunci când apăsaţi butonul de alimentare. ",
-						"tooltip": "Această caracteristică porneşte automat computerul prin deschiderea capacului.  Este deosebit de utilă dacă aţi configurat informaţiile de conectare facială în Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Rotiţi pentru a porni",
+                        "description": "Această caracteristică vă permite să porniţi computerul când deschideţi capacul acestuia, la fel ca atunci când apăsaţi butonul de alimentare. ",
+                        "tooltip": "Această caracteristică porneşte automat computerul prin deschiderea capacului.  Este deosebit de utilă dacă aţi configurat informaţiile de conectare facială în Windows Hello."
+                    },
                     "or": "Sau"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Funcția rândului de sus a tastaturii",
+                        "showAdvSettings": "AFIȘAȚI SETĂRILE AVANSATE",
+                        "hideAdvSettings": "ASCUNDEȚI SETĂRILE AVANSATE",
+                        "description": "Rândul de sus al tastaturii oferă următoarele două funcții. Selectați-o pe cea dorită:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Pentru a comuta între cele două funcții menționate mai sus, apăsați pe Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "FUNCȚIE SPECIALĂ",
+                                "fnKey": "FUNCȚIE F1-F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Inversarea funcției primare implicite",
+                            "description": "Când este activată, funcția primară implicită va fi modificată de la setările din fabrică la funcționalitatea opusă. Pentru ca modificările să aibă efect, trebuie să reporniți computerul."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Utilizarea combinaţiilor tastei Fn",
+                            "description": "Folosind Metoda normală, pentru a utiliza combinațiile de taste Fn, trebuie să apăsați Fn+tastele funcționale. Cu Metoda tastei adezive Fn, puteți să apăsați scurt tasta Fn (în loc să o apăsați continuu) pentru a o menține în starea apăsată. Apoi, apăsați tasta funcțională dorită. Acţiunea este echivalentă cu apăsarea simultană a tastei Fn și a tastei funcționale.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Metoda normală",
+                                "fnKeyMehod": "Metoda tastei adezive Fn"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Dacă apăsați tasta Fn de două ori, tasta Fn este păstrată în starea apăsată până când apăsați tasta Fn din nou. Când tasta Fn este blocată, indicatorul Fn Lock este aprins. Puteți apăsa direct pe tasta funcțională dorită pentru a iniția funcția care nu este implicită."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Reporniţi computerul",
+                            "description": "Pentru ca schimbarea funcției implicite a rândului de sus să aibă efect, computerul trebuie repornit. Sigur reporniți?",
+                            "reboot": "REPORNIȚI",
+                            "cancel": "NU ACUM"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "MAI MULTE",
+                    "control1": "ELEMENTE DE CONTROL TOUCHPAD",
+                    "control2": "ELEMENTE DE CONTROL MOUSE",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
             "upgrade": "upgrade",
             "freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
-            "startTrial": "Începeți perioada de probă"
+            "startTrial": "Începeți perioada de probă",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Înapoi",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "Ecosistemul dispozitivului este protejat momentan.",
             "localAccountDetail2": "Dați clic pe butonul de mai jos pentru a începe perioada de probă gratuită de 30 de zile.",
             "alreadyHaveAccount": "Aveți deja un cod de activare?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "Dispozitivele și rețelele nesigure pot introduce programe rău-intenționate, pot conduce la furtul de identitate și la scurgeri de date private și financiare. Activați această funcție pentru a reduce riscul de expunere a dispozitivului și rețelei dvs. la atacuri",
                 "subtitle": "Liniştea minţii",
                 "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați mai multe despre Securitate conectată, la domiciliu <tag>aici</tag>.",
-                "tryNow": "Încercați acum"
+                "tryNow": "Încercați acum",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Introduceți codul invitației",
@@ -1774,7 +1797,11 @@
                 "success": "Conectat cu succes",
                 "canUse": "Acum puteți începe să utilizați securitatea conectată, la domiciliu",
                 "tryAgain": "Parola este incorectă. Vă rugăm să încercați din nou!",
-                "activationCode": "COD DE ACTIVARE"
+                "activationCode": "COD DE ACTIVARE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Sănătatea securității",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Aflați mai multe despre fiecare dintre aceste componente <tag>aici</tag>.",
                 "peaceOfMind": "Vreți mai multă liniște sufletească?",
                 "button": "Activare securitate WiFi."
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2395,7 +2426,8 @@
             "error": "Eroare",
             "delete": "Ştergere",
             "warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
-            "scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment."
+            "scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Recuperarea sectoarelor defecte",
@@ -2446,5 +2478,9 @@
         "cancelTextPrompt": "Sigur anulaţi?",
         "cancelTextProgress": "Aşteptaţi anularea progresului",
         "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

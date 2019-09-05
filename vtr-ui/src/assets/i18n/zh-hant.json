@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "實用內容",
             "batteryGauge": {
-                "title": "電池計量器",
                 "subtitle": "電池性能",
                 "hours": "小時",
                 "hour": "時",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
                     "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。"
                 },
-                "updating": "正在更新",
-                "voltageError": "電池電壓不正確",
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
                 "seeDetailsLink": "查看詳細資料"
@@ -788,7 +785,8 @@
                             "battery&Quite": "電池與安靜"
                         }
                     },
-                    "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作"
+                    "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -802,11 +800,11 @@
                         "description": "如果您需要頻繁地打開及闔上電腦機蓋，請啟用此功能以改善電腦恢復作業的時間。",
                         "tooltip": "如果您需要頻繁地打開、闔上電腦機蓋，此功能將改善電腦恢復作業的時間。啟用時，您的電腦將在您闔上其機蓋時進入省電模式，但是如果您在闔上機蓋後的 15 分鐘內打開機蓋，電腦將立即恢復正常作業。此功能也可讓您的筆記型電腦嘗試完成擱置中的活動（例如傳送電子郵件或下載檔案），然後再使系統暫停。"
                     },
-					"flipToBoot": {
-						"title": "翻轉開機",
-						"description": "此功能可讓在您打開電腦機蓋時即開啟電腦，就像按下電源按鈕一樣。",
-						"tooltip": "此功能是透過打開機蓋來自動啟動電腦。如果您已在 Windows Hello 中設定臉部登入資訊，此功能特別有用。"
-					},
+                    "flipToBoot": {
+                        "title": "翻轉開機",
+                        "description": "此功能可讓在您打開電腦機蓋時即開啟電腦，就像按下電源按鈕一樣。",
+                        "tooltip": "此功能是透過打開機蓋來自動啟動電腦。如果您已在 Windows Hello 中設定臉部登入資訊，此功能特別有用。"
+                    },
                     "or": "或"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "鍵盤最上面一排功能",
+                        "showAdvSettings": "顯示進階設定",
+                        "hideAdvSettings": "隱藏進階設定",
+                        "description": "鍵盤的最上面一排提供下列兩個功能。選取您要的功能：",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "如果要切換上述兩個功能，請按下 Fn+Esc。",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "特殊功能",
+                                "fnKey": "F1-F12 功能"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "反轉預設的主要功能",
+                            "description": "啟用時，預設的主要功能會從原廠預設值變更為相反的功能。請重新啟動您的電腦以便使變更生效。"
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "如何使用 Fn 組合鍵",
+                            "description": "使用一般方法時，若要使用 Fn 按鍵組合，您需要按 Fn+功能鍵。透過 Fn 相黏鍵方法，您可以按下（代替按住不放）Fn 鍵來讓它保持按住狀態。然後按下所需的功能鍵。此動作相當於同時按下功能鍵與 Fn 鍵。",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "一般方法",
+                                "fnKeyMehod": "Fn 相黏鍵方法"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "當您按兩次 Fn 鍵時，Fn 鍵會鎖定在按住的狀態，直到您再次按下它為止。當 Fn 鍵鎖定時，Fn Lock 指示燈會開啟。您可以按下所需的功能鍵，直接啟動非預設功能。"
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "重新啟動電腦",
+                            "description": "如果變更最上面一排的預設功能，您必須重新啟動電腦。您確定要重新啟動嗎？",
+                            "reboot": "重新開機",
+                            "cancel": "現在不要"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "其他資訊",
+                    "control1": "觸控板控制項",
+                    "control2": "滑鼠控制項",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "試用已過期 - 升級以保護您的全部裝置",
             "upgrade": "升級",
             "freeTrial": "保護您的全部裝置 - 30 天免費試用版",
-            "startTrial": "開始試用"
+            "startTrial": "開始試用",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "上一頁",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "您的裝置生態系統目前正受到保護。",
             "localAccountDetail2": "按下面的按鈕，開始免費試用 30 天。",
             "alreadyHaveAccount": "已經有啟動碼了嗎？"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "不安全的裝置和網路可能會引入惡意軟體，導致身分遭盜用，並洩露隱私和財務資訊。請啟用此功能以降低讓您的裝置和家庭網路遭受攻擊的風險",
                 "subtitle": "安心保障",
                 "subtitleDescribe": "如果連線家庭安全性偵測到裝置或家庭網路有漏洞，或是如果您連線至潛在的惡意網路，將會向您傳送警示。<tag>這裡</tag>還可進一步瞭解連線家庭安全性。",
-                "tryNow": "立即試用"
+                "tryNow": "立即試用",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "輸入邀請代碼",
@@ -1774,7 +1797,11 @@
                 "success": "已成功連線",
                 "canUse": "您現在可以開始使用連線家庭安全性",
                 "tryAgain": "代碼不正確，請重試！",
-                "activationCode": "啟動代碼"
+                "activationCode": "啟動代碼",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "安全性健康情況",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "在<tag>這裡</tag>分別深入瞭解這些元件。",
                 "peaceOfMind": "您希望更安心嗎？",
                 "button": "啟用 WiFi 安全性"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2395,7 +2426,8 @@
             "error": "錯誤",
             "delete": "刪除",
             "warningBatterySaver": "附註：「排程掃描」不會在「省電功能」模式下執行",
-            "scheduleIntervalLimit": "另一次掃描已排程在十分鐘內進行。請選擇其他時間。"
+            "scheduleIntervalLimit": "另一次掃描已排程在十分鐘內進行。請選擇其他時間。",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "回復錯誤磁區",
@@ -2446,5 +2478,9 @@
         "cancelTextPrompt": "您確定要取消嗎？",
         "cancelTextProgress": "請等待取消進度",
         "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }
