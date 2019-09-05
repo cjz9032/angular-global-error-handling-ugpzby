@@ -133,12 +133,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	/**
 	 * gets battery details from js bridge
 	 */
-	private getBatteryDetails() {
+	public getBatteryDetails() {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
 				console.log('getBatteryDetails', response);
 				this.isLoading = false;
-				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 				this.updateBatteryDetails();
@@ -215,18 +214,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * sends notification to threshold section in case of update in remaining percentages & thresholdInfo
 	 * for displaying warning note
 	 */
-	private sendThresholdWarning() {
+	public sendThresholdWarning() {
 		if (this.chargeThresholdInfo && this.remainingPercentages
 			&& this.remainingPercentages.length > 0) {
 			this.batteryIndicator.isChargeThresholdOn = this.chargeThresholdInfo.isOn;
 			if (this.chargeThresholdInfo.isOn) {
-				if (this.chargeThresholdInfo.stopValue1 &&
+				if ((this.chargeThresholdInfo.stopValue1 &&
 					this.remainingPercentages[0] &&
-					this.remainingPercentages[0] > this.chargeThresholdInfo.stopValue1) {
-					this.commonService.sendNotification('ThresholdWarningNote', true);
-				} else if (this.chargeThresholdInfo.stopValue2 &&
-					this.remainingPercentages[1] &&
-					this.remainingPercentages[1] > this.chargeThresholdInfo.stopValue2) {
+					this.remainingPercentages[0] > this.chargeThresholdInfo.stopValue1)
+					|| (this.chargeThresholdInfo.stopValue2 &&
+						this.remainingPercentages[1] &&
+						this.remainingPercentages[1] > this.chargeThresholdInfo.stopValue2)) {
 					this.commonService.sendNotification('ThresholdWarningNote', true);
 				} else {
 					this.commonService.sendNotification('ThresholdWarningNote', false);

@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiSmartPerformanceComponent } from './ui-smart-performance.component';
-import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { TranslateStore } from '@ngx-translate/core';
 
