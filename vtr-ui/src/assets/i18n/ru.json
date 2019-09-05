@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Полезные материалы",
             "batteryGauge": {
-                "title": "ИНДИКАТОР АККУМУЛЯТОРА",
                 "subtitle": "Состояние аккумулятора",
                 "hours": "часы",
                 "hour": "час",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>Адаптер электропитания не поддерживается.</b> Ваш компьютер Lenovo не поддерживает этот адаптер электропитания. Он может вызвать внезапное отключение. Подключите правильный адаптер электропитания.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер электропитания не может обеспечить достаточное питание</b> вашему компьютеру Lenovo, что отразится на производительности системы и скорости зарядки. Подключите правильный адаптер электропитания."
                 },
-                "updating": "Обновление",
-                "voltageError": "Неправильное напряжение аккумулятора",
                 "batteryNotDetected": "Аккумулятор не найден",
                 "thresholdNote": "<b>Примечание.</b> Для увеличения срока службы аккумулятора вы установили прекращение зарядки аккумулятора при заряде {{value}}%.",
                 "seeDetailsLink": "См. подробные сведения"
@@ -788,7 +785,8 @@
                             "battery&Quite": "ТИХАЯ РАБОТА ОТ АККУМУЛЯТОРА"
                         }
                     },
-                    "description5": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора. Эта функция может работать в трех режимах: тихий режим, сбалансированный режим и режим производительности. Сейчас управлять этой функцией можно с помощью ползунка выбора режима питания Windows"
+                    "description5": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора. Эта функция может работать в трех режимах: тихий режим, сбалансированный режим и режим производительности. Сейчас управлять этой функцией можно с помощью ползунка выбора режима питания Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Параметры питания",
@@ -802,11 +800,11 @@
                         "description": "Включите эту функцию, чтобы сократить время возобновления работы при частом открытии и закрытии крышки компьютера.",
                         "tooltip": "Эта функция сокращает время возобновления работы при частом открытии и закрытии крышки компьютера. Когда эта функция включена, компьютер переходит в режим низкого энергопотребления при закрытии крышки, но мгновенно возвращается в обычный режим, если открыть крышку в течение 15 минут после ее закрытия. Кроме того, данная функция предоставляет ноутбуку возможность завершить текущие операции (например, отправку сообщения электронной почты или загрузку файла) перед переходом системы в режим ожидания."
                     },
-					"flipToBoot": {
-						"title": "Загрузка открытием крышки",
-						"description": "Эта функция позволяет включать компьютер, когда вы открываете крышку, точно так же, как при нажатии кнопки питания. ",
-						"tooltip": "Эта функция автоматически запускает компьютер, когда вы открываете крышку.  Она особенно полезна, если вы настроили в Windows Hello вход в систему по распознаванию лица."
-					},
+                    "flipToBoot": {
+                        "title": "Загрузка открытием крышки",
+                        "description": "Эта функция позволяет включать компьютер, когда вы открываете крышку, точно так же, как при нажатии кнопки питания. ",
+                        "tooltip": "Эта функция автоматически запускает компьютер, когда вы открываете крышку.  Она особенно полезна, если вы настроили в Windows Hello вход в систему по распознаванию лица."
+                    },
                     "or": "Или"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Функция верхнего ряда клавиатуры",
+                        "showAdvSettings": "ПОКАЗАТЬ ДОПОЛНИТЕЛЬНЫЕ ПАРАМЕТРЫ",
+                        "hideAdvSettings": "СКРЫТЬ ДОПОЛНИТЕЛЬНЫЕ ПАРАМЕТРЫ",
+                        "description": "Верхний ряд клавиатуры поддерживает следующие две функции. Выберите нужную функцию:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Чтобы поменять местами две функции, нажмите клавиши Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "СПЕЦИАЛЬНАЯ ФУНКЦИЯ",
+                                "fnKey": "ФУНКЦИИ F1–F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Отмена основной функции по умолчанию",
+                            "description": "Если включена, основная функция по умолчанию будет изменена с заводских настроек на противоположные. Перезагрузите компьютер, чтобы эти изменения вступили в силу."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Использование комбинаций с клавишей Fn",
+                            "description": "При использовании стандартного метода, чтобы использовать комбинации клавиш Fn, необходимо нажать функциональные клавиши Fn+. Если используется метод с использованием залипающей клавиши Fn, можно нажать клавишу Fn (вместо того, чтобы нажать и удерживать), чтобы зафиксировать ее в нажатом состоянии. Затем нажмите требуемую функциональную клавишу. Данное действие аналогично одновременному нажатию Fn и требуемой функциональной клавиши.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Стандартный метод",
+                                "fnKeyMehod": "Метод с использованием залипающей клавиши Fn"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Двойное нажатие Fn включает режим ее удержания до повторного нажатия. Если клавиша Fn заблокирована, горит индикатор Fn Lock. Можно непосредственно нажать требуемую функциональную клавишу, чтобы включить функцию, отличную от функции по умолчанию."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Перезапуск компьютера",
+                            "description": "Для вступления в силу изменения функции верхнего ряда по умолчанию требуется перезапустить компьютер. Перезапустить?",
+                            "reboot": "ПЕРЕЗАГРУЗИТЬ",
+                            "cancel": "НЕ СЕЙЧАС"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "ДОПОЛНИТЕЛЬНО",
+                    "control1": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ СЕНСОРНОЙ ПАНЕЛИ",
+                    "control2": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ МЫШИ",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Срок действия пробной подписки истек - Выполните обновление для защиты всех устройств",
             "upgrade": "обновить",
             "freeTrial": "Защитите все устройства - Бесплатная 30-дневная пробная версия",
-            "startTrial": "Начать пробный период"
+            "startTrial": "Начать пробный период",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Задняя",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "В настоящее время экосистема устройства защищена.",
             "localAccountDetail2": "Нажмите кнопку ниже, чтобы начать бесплатную 30-дневную пробную версию.",
             "alreadyHaveAccount": "Уже есть код активации?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "Небезопасные устройства и сети могут быть носителями вредоносных программ, привести к краже личных данных, а также вызвать утечку персональных и финансовых сведений. Включите эту функцию, чтобы снизить риск воздействия злоумышленников на ваши устройство и домашнюю сеть",
                 "subtitle": "Спокойствие",
                 "subtitleDescribe": "Функция обеспечения безопасности устройств в домашней сети отправит вам уведомление, если в вашем устройстве или домашней сети будет обнаружена уязвимость, а также если вы подключитесь к потенциально вредоносной сети. Узнайте больше о безопасности устройств в домашней сети <tag>здесь</tag>.",
-                "tryNow": "Попробовать сейчас"
+                "tryNow": "Попробовать сейчас",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Ввести код приглашения",
@@ -1774,7 +1797,11 @@
                 "success": "Подключено",
                 "canUse": "Теперь вы можете использовать функцию обеспечения безопасности устройств в домашней сети",
                 "tryAgain": "Неправильный код, повторите попытку.",
-                "activationCode": "КОД АКТИВАЦИИ"
+                "activationCode": "КОД АКТИВАЦИИ",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Состояние системы безопасности",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Узнайте подробнее о каждом из этих компонентов <tag>здесь</tag>.",
                 "peaceOfMind": "Хотите меньше переживать?",
                 "button": "Включить функцию обеспечения безопасности WiFi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2395,7 +2426,8 @@
             "error": "Ошибка",
             "delete": "Удалить",
             "warningBatterySaver": "Примечание. Запланированные проверки не будут выполняться в режиме экономии заряда",
-            "scheduleIntervalLimit": "Еще одна проверка уже была назначена в пределах десятиминутного интервала. Выберите другое время."
+            "scheduleIntervalLimit": "Еще одна проверка уже была назначена в пределах десятиминутного интервала. Выберите другое время.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Восстановление поврежденных секторов",
@@ -2446,5 +2478,9 @@
         "cancelTextPrompt": "Действительно отменить?",
         "cancelTextProgress": "Дождитесь отмены",
         "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

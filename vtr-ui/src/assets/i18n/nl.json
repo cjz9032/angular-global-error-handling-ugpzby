@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Nuttige inhoud",
             "batteryGauge": {
-                "title": "BATTERIJMETER",
                 "subtitle": "Batterijconditie",
                 "hours": "uur",
                 "hour": "uur",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
                     "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan."
                 },
-                "updating": "Bezig met updaten",
-                "voltageError": "Batterijspanning onjuist",
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
                 "seeDetailsLink": "Bekijk meer informatie"
@@ -788,7 +785,8 @@
                             "battery&Quite": "BATTERIJ EN STILLE MODUS"
                         }
                     },
-                    "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows"
+                    "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Energie-instellingen",
@@ -802,11 +800,11 @@
                         "description": "Schakel deze functie in om de computer sneller te herstellen als u de klep van uw computer vaak opent en sluit.",
                         "tooltip": "Door deze functie herstelt de computer sneller als u de klep van uw computer vaak opent en sluit. Als deze functie is ingeschakeld, wordt de modus voor laag energieverbruik ingeschakeld als u de klep sluit, maar meteen weer hersteld als u de klep binnen 15 minuten nadat u de klep sloot weer opent. Deze functie zorgt er ook voor dat uw notebook lopende activiteiten (zoals het versturen van e-mail of het downloaden van een bestand) probeert af te ronden voordat de slaapstand wordt geactiveerd."
                     },
-					"flipToBoot": {
-						"title": "Opstarten door open te klappen",
-						"description": "Met deze functie kunt u de computer inschakelen als u de klep van de computer opent alsof u op de aan/uit-knop drukt. ",
-						"tooltip": "Met deze functie start de computer automatisch door het openen van de klep.  Dit is vooral handig als u gezichtsherkenning om aan te melden hebt ingesteld in Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Opstarten door open te klappen",
+                        "description": "Met deze functie kunt u de computer inschakelen als u de klep van de computer opent alsof u op de aan/uit-knop drukt. ",
+                        "tooltip": "Met deze functie start de computer automatisch door het openen van de klep.  Dit is vooral handig als u gezichtsherkenning om aan te melden hebt ingesteld in Windows Hello."
+                    },
                     "or": "Of"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Functie van bovenste rij toetsenbord",
+                        "showAdvSettings": "GEAVANCEERDE INSTELLINGEN TONEN",
+                        "hideAdvSettings": "GEAVANCEERDE INSTELLINGEN VERBERGEN",
+                        "description": "De bovenste rij van het toetsenbord heeft de volgende twee functies. Selecteer de functie die u wilt:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Druk op Fn+Esc om de bovenstaande twee functies te wisselen.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "SPECIALE FUNCTIE",
+                                "fnKey": "F1-F12-FUNCTIE"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "De primaire standaardfunctie omdraaien",
+                            "description": "Als deze is ingeschakeld, wordt de primaire functie gewijzigd van fabrieksinstellingen naar het tegenovergestelde. U moet het systeem opnieuw opstarten om deze wijziging te activeren."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "De Fn-toetsencombinaties gebruiken",
+                            "description": "Als u gebruikmaakt van de normale methode, moet u op Fn+functietoetsen drukken om de Fn-toetsencombinatie te gebruiken. Met de Fn-plaktoetsenmethode kunt u de Fn-toets indrukken (in plaats van de toets ingedrukt te houden) om de ingedrukte stand van de toets te behouden. Druk vervolgens op de gewenste functietoets. Deze actie is gelijk aan het gelijktijdig indrukken van de vereiste functietoets en de Fn-toets.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Normale methode",
+                                "fnKeyMehod": "Fn-plaktoetsenmethode"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Als u tweemaal op de Fn-toets drukt, blijft de Fn-toets in de ingeschakelde toestand totdat u weer op de Fn-toets drukt. Als de Fn-toets vergrendeld is, brandt de indicator voor de Fn-toets. U kunt de gewenste functietoets direct indrukken om de niet-standaardfunctie te gebruiken."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Start de computer opnieuw op",
+                            "description": "Als u de standaardfunctie van de bovenste rij wijzigt, moet u uw computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
+                            "reboot": "OPNIEUW OPSTARTEN",
+                            "cancel": "NIET NU"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "MEER",
+                    "control1": "TOUCHPAD-BEDIENING",
+                    "control2": "MUISBEDIENING",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,17 @@
             "trialExpired": "Proefperiode verlopen - Upgrade uitvoeren om al uw apparaten te beschermen",
             "upgrade": "Upgraden",
             "freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
-            "startTrial": "Proefperiode starten"
+            "startTrial": "Proefperiode starten",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard"
         },
         "tour": {
             "back": "Terug",
@@ -1565,6 +1574,19 @@
             "upgradedDetail2": "Het ecosysteem van het apparaat is momenteel beveiligd.",
             "localAccountDetail2": "Klik op de onderstaande knop om de gratis proefperiode van 30 dagen te starten.",
             "alreadyHaveAccount": "Heeft u al een activeringscode?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1780,8 @@
                 "describe": "Onveilige apparaten en netwerken kunnen malware binnenbrengen, diefstal van identiteit mogelijk maken en persoonlijke en financiële informatie doen lekken. Schakel deze functie in om het risico te verkleinen dat uw apparaat en uw thuiswerk toegankelijk zijn voor aanvallers.",
                 "subtitle": "Geen zorgen meer",
                 "subtitleDescribe": "Connected Home-beveiliging stuurt u een waarschuwing als er een beveiligingsprobleem in uw apparaat of thuisnetwerk is gedetecteerd of als u bent verbonden met een mogelijk schadelijk netwerk. Leer meer over Connected Home Security <tag>hier</tag>.",
-                "tryNow": "Probeer het nu"
+                "tryNow": "Probeer het nu",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Voer uw uitnodigingscode in",
@@ -1774,7 +1797,11 @@
                 "success": "Verbinding geslaagd",
                 "canUse": "U kunt Connected Home-beveiliging nu gaan gebruiken",
                 "tryAgain": "Onjuiste code. Probeer het nog eens.",
-                "activationCode": "ACTIVERINGSCODE"
+                "activationCode": "ACTIVERINGSCODE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Beveiligingsstatus",
@@ -1793,6 +1820,10 @@
                 "learnMoreAboutSecurityHealth": "Klik <tag>hier</tag> voor meer informatie over elk van deze onderdelen.",
                 "peaceOfMind": "Wilt u minder zorgen?",
                 "button": "WiFi-beveiliging inschakelen"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2395,7 +2426,8 @@
             "error": "Fout",
             "delete": "Verwijderen",
             "warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
-            "scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip."
+            "scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Slechte sectoren herstellen",
@@ -2446,5 +2478,9 @@
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
         "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }
