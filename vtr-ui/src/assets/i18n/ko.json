@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "깜빡이는 수준"
+                },
+                "default": {
+                    "title": "기본값으로 설정"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "네트워크 향상에 앱 추가",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "최대 5개의 앱을 추가할 수 있습니다",
+                    "part2": "/",
+                    "part3": "추가됨"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "모든 장치 보호 - 30일 무료 평가판",
             "startTrial": "평가판 시작",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "뒤로",

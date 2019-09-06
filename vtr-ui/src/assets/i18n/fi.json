@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM-muistin ylikellotus",
                     "popup": {
                         "text": "Muutos tulee voimaan, kun tietokone on käynnistetty uudelleen.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Ajurin asennus vaaditaan",
                         "text": "Aktivoi RAM-muistin ylikellotus asentamalla ajuri (uudelleenkäynnistys vaaditaan)",
-                        "button": "Asenna",
-                        "link": "peruuta",
+                        "button": "ASENNA",
+                        "link": "PERUUTA",
                         "networkBoostText": "Sinun on asennettava Verkon tehostuksen ajuri, jotta se toimii",
                         "hybridModeText": "Sinun on asennettava Hybriditilan ajuri, jotta se toimii",
                         "cpuOverclockText": "Aktivoi CPU-ylikellotus asentamalla ajuri (uudelleenkäynnistys vaaditaan)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Ajurin asennus vaaditaan",
                         "text": "Aktivoi valaistus asentamalla ajuri (uudelleenkäynnistys vaaditaan)",
-                        "button": "Asenna",
-                        "link": "peruuta"
+                        "button": "ASENNA",
+                        "link": "PERUUTA"
                     },
                     "lightingColorMessage": {
                         "text": "Värien valinta ei ole käytettävissä tässä tehosteessa."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MAKRONÄPPÄIN KOHTEELLE ",
                     "deleteKey": "Delete",
-                    "clear": "Tyhjennä",
+                    "clear": "TYHJENNÄ",
                     "intervalStatus": {
                         "keep": {
                             "title": "Pidä viive",
@@ -228,8 +228,8 @@
                     "body": "Tallennus aikakatkaistaan, jos syöte on pysäytetty yli 10 sekunnin ajaksi."
                 },
                 "confirmButton": {
-                    "btnClear": "Tyhjennä",
-                    "btnCancel": "Peruuta"
+                    "btnClear": "TYHJENNÄ",
+                    "btnCancel": "PERUUTA"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Vilkunnan nopeus"
+                },
+                "default": {
+                    "title": "MÄÄRITÄ OLETUKSEKSI"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Lisää sovelluksia verkon tehostukseen",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Voit lisätä enintään 5 tehostettavaa lisäsovellusta",
+                    "part2": "/",
+                    "part3": "lisätty"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "Suojaa kaikki laitteesi - Maksuton 30 päivän kokeiluversio",
             "startTrial": "Aloita kokeilu",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Edellinen",

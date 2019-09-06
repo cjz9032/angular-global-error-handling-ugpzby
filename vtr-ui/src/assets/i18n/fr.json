@@ -39,13 +39,13 @@
                     "ramOverlock": "Overclocking RAM",
                     "popup": {
                         "text": "La modification prendra effet après le redémarrage de l'ordinateur.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Installation du pilote requise",
                         "text": "Installer le pilote pour activer l'Overclocking RAM (redémarrage obligatoire)",
-                        "button": "Installer",
-                        "link": "annuler",
+                        "button": "INSTALLER",
+                        "link": "ANNULER",
                         "networkBoostText": "Vous devez installer le pilote pour l'amélioration réseau afin de l'activer",
                         "hybridModeText": "Vous devez installer le pilote pour le mode hybride afin de l'activer",
                         "cpuOverclockText": "Installer le pilote pour activer l'Overclocking UC (redémarrage obligatoire)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Installation du pilote requise",
                         "text": "Installer le pilote pour activer l'éclairage (redémarrage obligatoire)",
-                        "button": "Installer",
-                        "link": "annuler"
+                        "button": "INSTALLER",
+                        "link": "ANNULER"
                     },
                     "lightingColorMessage": {
                         "text": "Sélection de la couleur non disponible pour cet effet."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "TOUCHE MACRO POUR ",
                     "deleteKey": "Touche Suppr",
-                    "clear": "Effacer",
+                    "clear": "EFFACER",
                     "intervalStatus": {
                         "keep": {
                             "title": "Conserver un retard",
@@ -228,8 +228,8 @@
                     "body": "L'enregistrement expirera si la saisie s'est arrêtée pendant plus de 10 secondes."
                 },
                 "confirmButton": {
-                    "btnClear": "Effacer",
-                    "btnCancel": "Annuler"
+                    "btnClear": "EFFACER",
+                    "btnCancel": "ANNULER"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Niveau de clignotement"
+                },
+                "default": {
+                    "title": "RÉINITIALISER LA CONFIGURATION PAR DÉFAUT"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Ajouter des applications à l'amélioration réseau",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Vous pouvez ajouter un maximum de 5 applications à améliorer",
+                    "part2": "sur",
+                    "part3": "ajoutés récemment"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "Protéger tous vos périphériques - Version d'évaluation gratuite de 30 jours",
             "startTrial": "Lancer la version d'évaluation",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Retour",

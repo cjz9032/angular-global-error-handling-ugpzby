@@ -39,13 +39,13 @@
                     "ramOverlock": "Overclock della RAM",
                     "popup": {
                         "text": "La modifica sarà effettiva dopo il riavvio del computer.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Installazione driver richiesta",
                         "text": "Installare il driver per attivare l'overclock della RAM (riavvio richiesto)",
-                        "button": "Installa",
-                        "link": "annulla",
+                        "button": "INSTALLA",
+                        "link": "ANNULLA",
                         "networkBoostText": "È necessario installare il driver per rendere effettivo Ottimizzazione rete",
                         "hybridModeText": "È necessario installare il driver per rendere effettiva la Modalità ibrida",
                         "cpuOverclockText": "Installare il driver per attivare l'overclock della CPU (riavvio richiesto)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Installazione driver richiesta",
                         "text": "Installare il driver per attivare l'illuminazione (riavvio richiesto)",
-                        "button": "Installa",
-                        "link": "annulla"
+                        "button": "INSTALLA",
+                        "link": "ANNULLA"
                     },
                     "lightingColorMessage": {
                         "text": "Scelta del colore non disponibile per questo effetto."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "TASTO MACRO PER ",
                     "deleteKey": "Canc",
-                    "clear": "Cancella",
+                    "clear": "CANCELLA",
                     "intervalStatus": {
                         "keep": {
                             "title": "Mantieni ritardo",
@@ -228,8 +228,8 @@
                     "body": "La registrazione andrà in timeout se l'input verrà interrotto per più di 10 secondi."
                 },
                 "confirmButton": {
-                    "btnClear": "Cancella",
-                    "btnCancel": "Annulla"
+                    "btnClear": "CANCELLA",
+                    "btnCancel": "ANNULLA"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Livello di intermittenza"
+                },
+                "default": {
+                    "title": "IMPOSTA SU VALORE PREDEFINITO"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Aggiungi app a Potenziamento rete",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Puoi aggiungere fino a 5 app",
+                    "part2": "di",
+                    "part3": "aggiunte"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "Proteggi tutti i dispositivi - Versione di prova gratuita per 30 giorni",
             "startTrial": "Avvia versione di prova",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Indietro",

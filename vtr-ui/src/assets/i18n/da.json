@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM-overclocking",
                     "popup": {
                         "text": "Ændringen træder i kraft, når computeren genstartes.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Kræver installation af driver",
                         "text": "Installer driver for at aktivere RAM-overclocking (genstart nødvendig)",
-                        "button": "Installér",
-                        "link": "annuller",
+                        "button": "INSTALLER",
+                        "link": "ANNULLER",
                         "networkBoostText": "Du skal installere driver til Netværksforstærkning for at gøre det effektivt",
                         "hybridModeText": "Du skal installere driver til Hybridtilstand for at gøre det effektivt",
                         "cpuOverclockText": "Installer driver for at aktivere CPU-overclocking (genstart nødvendig)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Kræver installation af driver",
                         "text": "Installer driver for at aktivere lysforhold (genstart nødvendig)",
-                        "button": "Installér",
-                        "link": "annuller"
+                        "button": "INSTALLER",
+                        "link": "ANNULLER"
                     },
                     "lightingColorMessage": {
                         "text": "Valg af farve er ikke tilgængelig for denne effekt."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MAKRO-TAST FOR ",
                     "deleteKey": "Delete",
-                    "clear": "Ryd",
+                    "clear": "RYD",
                     "intervalStatus": {
                         "keep": {
                             "title": "Behold forsinkelse",
@@ -228,8 +228,8 @@
                     "body": "Optagelsen får timeout, hvis der ikke foretages input i mere end 10 sekunder."
                 },
                 "confirmButton": {
-                    "btnClear": "Ryd",
-                    "btnCancel": "Annuller"
+                    "btnClear": "RYD",
+                    "btnCancel": "ANNULLER"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Blinkeniveau"
+                },
+                "default": {
+                    "title": "INDSTIL TIL STANDARDINDSTILLINGER"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Føj apps til Netværksforstærkning",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Du kan tilføje op til 5 yderligere apps",
+                    "part2": "af",
+                    "part3": "tilføjet"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "Beskyt alle dine enheder - Gratis 30-dages prøveperiode",
             "startTrial": "Start prøveperiode",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Tilbage",

@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "مستوى الوميض"
+                },
+                "default": {
+                    "title": "تعيين إلى الإعدادات الافتراضية"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "إضافة تطبيقات إلى تعزيز الشبكة",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "يمكنك إضافة 5 تطبيقات أخرى للتعزيز",
+                    "part2": "من",
+                    "part3": "المضافة"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "إصدار تجريبي مجاني لمدة 30 يومًا - حماية جميع أجهزتك",
             "startTrial": "بدء الإصدار التجريبي",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "السابق‬",

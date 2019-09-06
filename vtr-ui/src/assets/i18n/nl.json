@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM overklok",
                     "popup": {
                         "text": "De wijziging zal effectief zijn nadat u de computer opnieuw hebt opgestart.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Installatie van stuurprogramma vereist",
                         "text": "Stuurprogramma installeren om RAM overklokken te activeren (opnieuw opstarten vereist)",
-                        "button": "Installeer",
-                        "link": "annuleren",
+                        "button": "INSTALLEREN",
+                        "link": "ANNULEREN",
                         "networkBoostText": "U moet een stuurprogramma installeren om het netwerk te kunnen verbeteren",
                         "hybridModeText": "U hebt het stuurprogramma voor de hybride modus installeren om het effectief te maken",
                         "cpuOverclockText": "Stuurprogramma installeren om CPU overklokken te activeren (opnieuw opstarten vereist)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Installatie van stuurprogramma vereist",
                         "text": "Stuurprogramma installeren om verlichting te activeren (opnieuw opstarten vereist)",
-                        "button": "Installeer",
-                        "link": "annuleren"
+                        "button": "INSTALLEREN",
+                        "link": "ANNULEREN"
                     },
                     "lightingColorMessage": {
                         "text": "Het selecteren van kleur is niet beschikbaar voor dit effect."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MACRO SLEUTEL VOOR ",
                     "deleteKey": "Delete",
-                    "clear": "Leegmaken",
+                    "clear": "WISSEN",
                     "intervalStatus": {
                         "keep": {
                             "title": "Vertraging behouden",
@@ -228,8 +228,8 @@
                     "body": "Als de invoer langer dan 10 seconden gestopt is, wordt er een time-out voor de opname uitgevoerd."
                 },
                 "confirmButton": {
-                    "btnClear": "Leegmaken",
-                    "btnCancel": "Annuleren"
+                    "btnClear": "WISSEN",
+                    "btnCancel": "ANNULEREN"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Knipperniveau"
+                },
+                "default": {
+                    "title": "ALS STANDAARD INSTELLEN"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Apps toevoegen aan netwerkboost",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Voeg maximaal 5 extra apps toe",
+                    "part2": "van",
+                    "part3": "toegevoegd"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
             "startTrial": "Proefperiode starten",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Terug",
