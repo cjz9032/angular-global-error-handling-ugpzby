@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "רמת מצמוץ"
+                },
+                "default": {
+                    "title": "איפוס לברירת המחדל"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "הוספת אפליקציות ל\"האצת רשת\"",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "ניתן להוסיף עד 5 יישומים נוספים להאצה",
+                    "part2": "מתוך",
+                    "part3": "נוסף"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "הגנו על כל המכשירים - יסיון חינם למשך 30 יוםנ",
             "startTrial": "התחלת תקופת ניסיון",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "אחורית",
@@ -2402,6 +2406,7 @@
         "errorDeviceChoose": "יש לבחור מכשיר להפעלה.",
         "errorNoOptionSelected": "יש לבחור אפשרות.",
         "offline": "המכשיר פועל במצב לא מקוון, יש לחבר אותו לאינטרנט",
+        "doNotSuspend": "יש לאפשר לבדיקות האלה להתבצע ללא הפרעה! אין לסגור או לצמצם את היישום הזה, ואין להשהות או לכבות את המחשב בזמן הסריקה.",
         "customize": {
             "name": "התאמה אישית",
             "test": "התאמה אישית של הבדיקה",

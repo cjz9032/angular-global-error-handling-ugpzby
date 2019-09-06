@@ -1526,7 +1526,6 @@
             "freeTrial": "保護您的全部裝置 - 30 天免費試用版",
             "startTrial": "開始試用",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1533,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "上一頁",
@@ -2402,6 +2403,7 @@
         "errorDeviceChoose": "您必須選擇要執行的裝置。",
         "errorNoOptionSelected": "您必須選擇一個選項。",
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
+        "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",

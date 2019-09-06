@@ -44,8 +44,8 @@
                     "driverPopup": {
                         "headerText": "Απαιτείται εγκατάσταση του προγράμματος οδήγησης",
                         "text": "Εγκαταστήστε το πρόγραμμα οδήγησης για να ενεργοποιήσετε τη λειτουργία Υπερχρονισμού RAM (Απαιτείται επανεκκίνηση)",
-                        "button": "Εγκατάσταση",
-                        "link": "άκυρο",
+                        "button": "ΕΓΚΑΤΑΣΤΑΣΗ",
+                        "link": "ΑΚΥΡΟ",
                         "networkBoostText": "Χρειάζεται να εγκαταστήσετε το πρόγραμμα οδήγησης για την Ενίσχυση δικτύου, ώστε να καταστεί αποτελεσματική",
                         "hybridModeText": "Χρειάζεται να εγκαταστήσετε το πρόγραμμα οδήγησης για την Υβριδική λειτουργία, ώστε να καταστεί αποτελεσματική",
                         "cpuOverclockText": "Εγκαταστήστε το πρόγραμμα οδήγησης για να ενεργοποιήσετε τη λειτουργία Υπερχρονισμού CPU (Απαιτείται επανεκκίνηση)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Απαιτείται εγκατάσταση του προγράμματος οδήγησης",
                         "text": "Εγκαταστήστε το πρόγραμμα οδήγησης για να ενεργοποιήσετε τον φωτισμό (Απαιτείται επανεκκίνηση)",
-                        "button": "Εγκατάσταση",
-                        "link": "άκυρο"
+                        "button": "ΕΓΚΑΤΑΣΤΑΣΗ",
+                        "link": "ΑΚΥΡΟ"
                     },
                     "lightingColorMessage": {
                         "text": "Η επιλογή χρώματος δεν είναι διαθέσιμη για τον σκοπό αυτό."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "ΠΛΗΚΤΡΟ ΜΑΚΡΟΕΝΤΟΛΗΣ ΓΙΑ ",
                     "deleteKey": "Delete",
-                    "clear": "Εκκαθ.",
+                    "clear": "ΕΚΚΑΘΑΡΙΣΗ",
                     "intervalStatus": {
                         "keep": {
                             "title": "Διατήρηση καθυστέρησης",
@@ -228,8 +228,8 @@
                     "body": "Η εγγραφή θα λήξει, εάν η εισαγωγή διακοπεί για περισσότερο από 10 δευτερόλεπτα."
                 },
                 "confirmButton": {
-                    "btnClear": "Εκκαθ.",
-                    "btnCancel": "Άκυρο"
+                    "btnClear": "ΕΚΚΑΘΑΡΙΣΗ",
+                    "btnCancel": "ΑΚΥΡΟ"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Επίπεδο λειτουργίας αναλαμπών"
+                },
+                "default": {
+                    "title": "ΟΡΙΣΜΟΣ ΣΤΙΣ ΠΡΟΕΠΙΛΕΓΜΕΝΕΣ ΡΥΘΜΙΣΕΙΣ"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Προσθήκη εφαρμογών στην Ενίσχυση δικτύου",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Δυνατότητα προσθήκης έως 5 εφαρμογών επιπλέον για ενίσχυση",
+                    "part2": "από",
+                    "part3": "προστέθηκε"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "Προστατεύστε όλες τις συσκευές σας - Δωρεάν περίοδος δοκιμής 30 ημερών",
             "startTrial": "Έναρξη δοκιμής",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Πίσω",
@@ -2402,6 +2406,7 @@
         "errorDeviceChoose": "Απαιτείται επιλογή μιας συσκευή για εκτέλεση.",
         "errorNoOptionSelected": "Απαιτείται να ορίσετε μια επιλογή.",
         "offline": "Αυτή η συσκευή εκτελεί λειτουργία χωρίς σύνδεση, παρακαλούμε συνδεθείτε στο Internet",
+        "doNotSuspend": "Αυτές οι δοκιμές πρέπει να εκτελεστούν χωρίς διακοπή! Μην κλείσετε ή ελαχιστοποιήσετε αυτήν την εφαρμογή και μην θέσετε σε κατάσταση αναστολής λειτουργίας ή απενεργοποιήσετε τον υπολογιστή σας στη διάρκεια της σάρωσης.",
         "customize": {
             "name": "Προσαρμογή",
             "test": "Προσαρμογή δοκιμής",

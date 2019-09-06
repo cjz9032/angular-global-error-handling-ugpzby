@@ -1526,7 +1526,6 @@
             "freeTrial": "Beskytt alle enhetene dine - Gratis 30-dagers prøveperiode",
             "startTrial": "Start prøveperiode",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1533,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Tilbake",
@@ -2402,6 +2403,7 @@
         "warning": "Advarsel",
         "errorResult": "Du må velge en test for å kjøre den.",
         "offline": "Denne enheten kjører i frakoblet modus, så koble den til Internett",
+        "doNotSuspend": "Disse testene må kjøre uavbrutt! Ikke lukk eller minimer denne appen, og ikke utsett eller slå av datamaskinen under skanningen.",
         "battery": {
             "title": "Aktiver batteriladeterskel",
             "description": "Aktiverer du egendefinert batterilading, vil selve batteriet generelt sett vare lenger når du bruker denne enheten. Å ikke lade batteriet helt opp vil imidlertid gi kortere brukstid. For å aktivere denne funksjonen helt må du ta ut støpselet til datamaskinen og la batteriet lades helt ut eller til under terskelen for ladestopp.",
