@@ -22,9 +22,11 @@
 				{{ selectedNumber.key | translate }}</span>
 		</div>
 	</div>
-	<ul role="list" tabindex="0" [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
+	<ul role="list" tabindex="0"
+		[ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
 		<ng-container *ngFor="let number of numbers; index as i">
-			<li role="listitem" [ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}"
+			<li role="listitem"
+				[ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}"
 				id="macrokey_numpad-{{number.key}}" attr.aria-label="macrokey_numpad-{{number.key}}"
 				(click)="numberClicked(number)" vtrMetrics [metricsItem]="'macrokey_numpad-'+number.key"
 				metricsEvent="featureClick" [metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}"
