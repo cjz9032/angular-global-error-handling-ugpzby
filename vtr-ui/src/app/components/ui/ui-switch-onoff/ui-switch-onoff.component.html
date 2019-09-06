@@ -30,16 +30,16 @@
 
 			<span class="switch {{ size }}"
 				id="{{onOffSwitchId+'_sizeStopProp'}}"
-				role="switch"
+				
 				(click)="stopPropagation($event);"> <small></small> </span>
 			<div *ngIf="!value"
 				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
-				role="switch"
+			
 				(click)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
 				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
-				role="switch"
+				
 				(click)="stopPropagation($event);"
 				class="switch-label on-label">{{'common.ui.on' | translate}}</div>
 		</label>

@@ -31,8 +31,7 @@
 												<div class="container-fluid">
 													<div class="row">
 														<div class="col-sm-12">
-                              <vtr-ui-switch-onoff [value]="toggleStatus" (toggle)="setNetworkBoostStatus($event)" 
-                              vtrMetrics metricsEvent="featureClick">
+                              <vtr-ui-switch-onoff [value]="toggleStatus" (toggle)="setNetworkBoostStatus($event)">
 															</vtr-ui-switch-onoff>
 															<p class="intro-text">{{'gaming.networkBoost.introLine' | translate}}</p>
                               <vtr-widget-networkboost [changeNum]="changeListNum" (actionModal)="openTargetModal()"
@@ -56,7 +55,7 @@
 										<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
 											[img]="cardContentPositionA.FeatureImage" [title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName" [action]="cardContentPositionA.Action"
-                      [actionType]="cardContentPositionA.ActionType" [actionLink]="cardContentPositionA.ActionLink" 
+                      [actionType]="cardContentPositionA.ActionType" [actionLink]="cardContentPositionA.ActionLink"
                       [type]="'article'" [ratioX]="4" [ratioY]="4">
 										</vtr-container-card>
 									</div>
@@ -88,6 +87,6 @@
 	(actionTurnOn)="initTurnOnAction($event)">
 </vtr-networkboost-turn-on>
 
-<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount" 
+<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount"
 (closeAddAppsModal)="modalCloseAddApps($event)">
 </vtr-networkboost-add-apps>

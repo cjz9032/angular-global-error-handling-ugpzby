@@ -27,6 +27,7 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 	ngOnChanges(changes: any) {
 		if (this.loading) {
 			this.loading = this.loaderData.loading;
+			this.loadingNoApps = this.loaderData.noApps;
 		}
 	}
 
