@@ -29,35 +29,40 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.description',
-			id: 'macro key settings repeat1',
+			id: 'macro_key_settings_repeat1',
+			label: 'no repeat',
 			value: MacroKeyRepeat.Repeat1
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.description',
-			id: 'macro key settings repeat2',
+			id: 'macro_key_settings_repeat2',
+			label: 'repeat 2',
 			value: MacroKeyRepeat.Repeat2
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.description',
-			id: 'macro key settings repeat3',
+			id: 'macro_key_settings_repeat3',
+			label: 'repeat 3',
 			value: MacroKeyRepeat.Repeat3
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.description',
-			id: 'macro key settings repeat4',
+			id: 'macro_key_settings_repeat4',
+			label: 'repeat 4',
 			value: MacroKeyRepeat.Repeat4
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.description',
-			id: 'macro key settings repeat5',
+			id: 'macro_key_settings_repeat5',
+			label: 'repeat 5',
 			value: MacroKeyRepeat.Repeat5
 		},
 		{
@@ -65,34 +70,39 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.description',
 			id: 'macro_key_settings_repeat6',
+			label: 'repeat 6',
 			value: MacroKeyRepeat.Repeat6
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.description',
-			id: 'macro key settings repeat7',
+			id: 'macro_key_settings_repeat7',
+			label: 'repeat 7',
 			value: MacroKeyRepeat.Repeat7
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.description',
-			id: 'macro key settings repeat8',
+			id: 'macro_key_settings_repeat8',
+			label: 'repeat 8',
 			value: MacroKeyRepeat.Repeat8
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.description',
-			id: 'macro key settings repeat9',
+			id: 'macro_key_settings_repeat9',
+			label: 'repeat 9',
 			value: MacroKeyRepeat.Repeat9
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.description',
-			id: 'macro key settings repeat10',
+			id: 'macro_key_settings_repeat10',
+			label: 'repeat 10',
 			value: MacroKeyRepeat.Repeat10
 		}
 	];
@@ -102,14 +112,16 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			title: 'gaming.macroKey.details.recorded.intervalStatus.keep.title',
 			name: 'gaming.macroKey.details.recorded.intervalStatus.keep.title',
 			description: 'gaming.macroKey.details.recorded.intervalStatus.keep.description',
-			id: 'macro key settings keepdelay',
+			id: 'macro_key_settings_keepdelay',
+			label: 'keep delay',
 			value: MacroKeyInterval.KeepInterval
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.intervalStatus.ignore.title',
 			name: 'gaming.macroKey.details.recorded.intervalStatus.ignore.title',
 			description: 'gaming.macroKey.details.recorded.intervalStatus.ignore.description',
-			id: 'macro key settings ignoredelay',
+			id: 'macro_key_settings_ignoredelay',
+			label: 'ignore delay',
 			value: MacroKeyInterval.IgnoreInterval
 		}
 	];
