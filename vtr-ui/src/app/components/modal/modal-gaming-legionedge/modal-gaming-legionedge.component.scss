@@ -36,6 +36,12 @@
 	.modal-body {
 		padding: 0 4rem 3rem 4rem;
 		width: 100%;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $gaming_darkest;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $gaming_darkest;
+		}
 		.innerContent{
 			width: 100%;
 			background: $gaming_Darkslate_blue;
