@@ -260,8 +260,8 @@ describe('WidgetLegionEdgeComponent', () => {
 		let networkBoostStatusPromisedData: boolean;
 		const uiNetworkBoostStatusValue = component.legionUpdate[3].isChecked;
 		component.setNetworkBoostStatus(uiNetworkBoostStatusValue);
-		component.SetNetworkBoostCacheStatus(uiNetworkBoostStatusValue);
-		const cacheNetworkBoostStatusValue = component.GetNetworkBoostCacheStatus();
+		component.setNetworkBoostCacheStatus(uiNetworkBoostStatusValue);
+		const cacheNetworkBoostStatusValue = component.getNetworkBoostCacheStatus();
 		networkBoostServiceMock.getNetworkBoostStatus.and.returnValue(Promise.resolve(uiNetworkBoostStatusValue));
 		networkBoostServiceMock.getNetworkBoostStatus().then((response: any) => {
 			networkBoostStatusPromisedData = response;
