@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Užitočný obsah",
             "batteryGauge": {
-                "title": "UKAZOVATEĽ BATÉRIE",
                 "subtitle": "Stav batérie",
                 "hours": "hodiny",
                 "hour": "hodina",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>Napájací adaptér nie je podporovaný.</b> Počítač Lenovo nepodporuje tento napájací adaptér. Môže to spôsobiť náhle vypnutie. Pripojte správny napájací adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájací adaptér nedokáže poskytnúť dostatok energie</b> pre počítač Lenovo, čo ovplyvní výkon systému a rýchlosť nabíjania. Znova pripojte správny napájací adaptér."
                 },
-                "updating": "Aktualizácia",
-                "voltageError": "Nesprávne napätie batérie",
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{value}}%.",
                 "seeDetailsLink": "Zobraziť podrobnosti"
@@ -788,7 +785,8 @@
                             "battery&Quite": "BATÉRIA A TICHÝ"
                         }
                     },
-                    "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows"
+                    "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Nastavenia napájania",
@@ -802,11 +800,11 @@
                         "description": "Zapnutím tejto funkcie skrátite čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača.",
                         "tooltip": "Táto funkcia skracuje čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača. Ak je zapnutá, počítač prejde do úsporného režimu po zatvorení obrazovky. Po otvorení obrazovky do 15 minút od zatvorenia sa však prevádzka obnoví okamžite. Táto funkcia umožňuje prenosnému počítaču pokúsiť sa dokončiť prebiehajúce aktivity (napríklad odosielanie e-mailu alebo preberanie súboru), skôr ako počítač prejde do režimu odstavenia."
                     },
-					"flipToBoot": {
-						"title": "Spustenie po vyklopení",
-						"description": "Táto funkcia umožňuje zapnúť počítač pri otvorení obrazovky počítača, tak ako pri stlačení tlačidla napájania. ",
-						"tooltip": "Táto funkcia automaticky spustí počítač pri otvorení obrazovky.  Je užitočná najmä vtedy, ak ste v službe Windows Hello nastavili informácie na prihlasovanie pomocou tváre."
-					},
+                    "flipToBoot": {
+                        "title": "Spustenie po vyklopení",
+                        "description": "Táto funkcia umožňuje zapnúť počítač pri otvorení obrazovky počítača, tak ako pri stlačení tlačidla napájania. ",
+                        "tooltip": "Táto funkcia automaticky spustí počítač pri otvorení obrazovky.  Je užitočná najmä vtedy, ak ste v službe Windows Hello nastavili informácie na prihlasovanie pomocou tváre."
+                    },
                     "or": "Alebo"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Funkcia horného riadka klávesnice",
+                        "showAdvSettings": "ZOBRAZIŤ ROZŠÍRENÉ NASTAVENIA",
+                        "hideAdvSettings": "SKRYŤ ROZŠÍRENÉ NASTAVENIA",
+                        "description": "Horný riadok klávesnice prináša tieto dve funkcie. Vyberte si tú, ktorú požadujete:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Ak chcete prepnúť medzi dvoma spôsobmi fungovania uvedenými vyššie, stlačte klávesy Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "ŠPECIÁLNA FUNKCIA",
+                                "fnKey": "FUNKCIE KLÁVESOV F1 – F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Zmena predvolenej primárnej funkcie",
+                            "description": "Ak je táto možnosť zapnutá, predvolená primárna funkcia sa zmení z továrenských nastavení na opačné nastavenie. Tieto zmeny sa prejavia až po reštartovaní počítača."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Ako používať kombinácie klávesu Fn",
+                            "description": "Ak chcete používať kombinácie klávesov Fn normálnym spôsobom, musíte stlačiť klávesy Fn spolu s klávesmi príslušnej funkcie. Používanie klávesu Fn s funkciou Jedným prstom umožňuje po stlačení klávesu Fn (namiesto stlačenia a podržania) zachovať tento kláves v stlačenom stave. Potom stlačte požadovaný funkčný kláves. Táto akcia zodpovedá súčasnému stlačeniu funkčného klávesu a klávesu Fn.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Normálny spôsob",
+                                "fnKeyMehod": "Spôsob s klávesom Fn s funkciou Jedným prstom"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Keď stlačíte kláves Fn dvakrát, zaistí sa v stlačenom stave, kým ho znova nestlačíte. Keď je tlačidlo Fn zaistené, rozsvieti sa indikátor funkcie Fn Lock. Ak chcete vykonať inú než predvolenú funkciu, môžete priamo stlačiť požadovaný funkčný kláves."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Reštartovanie počítača",
+                            "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
+                            "reboot": "REŠTARTOVAŤ",
+                            "cancel": "TERAZ NIE"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "VIAC",
+                    "control1": "OVLÁDACIE PRVKY DOTYKOVÉHO PANELA",
+                    "control2": "OVLÁDACIE PRVKY MYŠI",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1524,18 @@
             "trialExpired": "Platnosť skúšobnej verzie uplynula - Inovujte na ochranu všetkých zariadení",
             "upgrade": "inovovať",
             "freeTrial": "Chráňte všetky svoje zariadenia - Bezplatná 30-dňová skúšobná verzia",
-            "startTrial": "Spustiť skúšobnú verziu"
+            "startTrial": "Spustiť skúšobnú verziu",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Naspäť",
@@ -1565,6 +1575,19 @@
             "upgradedDetail2": "Ekosystém vášho zariadenia je aktuálne chránený.",
             "localAccountDetail2": "Kliknutím na tlačidlo nižšie spustite svoju bezplatnú 30-dňovú skúšobnú verziu.",
             "alreadyHaveAccount": "Už máte aktivačný kód?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1781,8 @@
                 "describe": "Nebezpečné zariadenia a siete môžu zavádzať malvér, zapríčiniť krádež identity a únik súkromných a finančných informácií. Povolením tejto služby znížite riziko ohrozenia svojho zariadenia a domácej siete útokmi iných osôb",
                 "subtitle": "Pokoj v duši",
                 "subtitleDescribe": "Služba Zabezpečenie prepojenej domácnosti vám odošle varovanie, ak odhalí zraniteľnosť zariadenia alebo domácej siete, prípadne ak ste pripojení k potenciálne škodlivej sieti. Ďalšie informácie o zabezpečení pripojenej domácnosti získate <tag>tu</tag>.",
-                "tryNow": "Vyskúšať teraz"
+                "tryNow": "Vyskúšať teraz",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Zadajte pozývací kód",
@@ -1774,7 +1798,11 @@
                 "success": "Úspešne pripojené",
                 "canUse": "Teraz môžete začať používať službu Zabezpečenie prepojenej domácnosti",
                 "tryAgain": "Nesprávny kód, skúste to znova.",
-                "activationCode": "AKTIVAČNÝ KÓD"
+                "activationCode": "AKTIVAČNÝ KÓD",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Stav zabezpečenia",
@@ -1793,6 +1821,10 @@
                 "learnMoreAboutSecurityHealth": "Ďalšie informácie o každej z týchto súčastí nájdete <tag>tu</tag>.",
                 "peaceOfMind": "Chcete viac pokoja?",
                 "button": "Zapnúť zabezpečenie WiFi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2371,6 +2403,7 @@
         "errorDeviceChoose": "Vyžaduje sa, aby ste vybrali zariadenie, ktoré chcete spustiť.",
         "errorNoOptionSelected": "Musíte vybrať niektorú z možností.",
         "offline": "Toto zariadenie je v režime offline, pripojte ho k internetu",
+        "doNotSuspend": "Tieto testy musia prebiehať bez prerušenia. Počas kontroly nezatvárajte ani neminimalizujte aplikáciu a neodstavujte ani nevypínajte počítač.",
         "customize": {
             "name": "Prispôsobiť",
             "test": "Prispôsobiť test",
@@ -2395,7 +2428,8 @@
             "error": "Chyba",
             "delete": "Odstrániť",
             "warningBatterySaver": "Poznámka: Plánované snímania sa nevykonajú v režime Šetrič batérie",
-            "scheduleIntervalLimit": "V rámci desaťminútového časového rozpätia už je naplánovaná iná kontrola. Vyberte iný čas."
+            "scheduleIntervalLimit": "V rámci desaťminútového časového rozpätia už je naplánovaná iná kontrola. Vyberte iný čas.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Obnoviť chybné sektory",
@@ -2446,5 +2480,9 @@
         "cancelTextPrompt": "Naozaj chcete vykonať zrušenie?",
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
         "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

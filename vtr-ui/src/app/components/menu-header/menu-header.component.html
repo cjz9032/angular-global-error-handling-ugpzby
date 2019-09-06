@@ -1,6 +1,6 @@
 <div class="vtr-menu-header">
 	<ng-container *ngFor="let tab of menuItems; let i=index;">
-		<div class="menu-header-tab {{tab.prop}}"
+		<div class="menu-header-tab {{tab.prop}}" tabindex="1"
 		routerLink="/{{tab.path}}"
 		routerLinkActive="active"
 		id="myDevice-settings-header-menu-{{tab.icon}}"

@@ -31,6 +31,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(true, true);
 	private notificationSubscription: Subscription;
+	public isOnline: any = true;
 	public quickSettingsWidget = [
 		{
 			tooltipText: 'MICROPHONE',
@@ -66,6 +67,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 		if (welcomeTutorial && welcomeTutorial.page === 2) {
+			this.initFeatures();
+		}
+		this.isOnline = this.commonService.isOnline;
+
+		if (!this.isOnline) {
 			this.initFeatures();
 		}
 	}

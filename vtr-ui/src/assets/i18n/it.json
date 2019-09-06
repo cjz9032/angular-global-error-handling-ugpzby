@@ -39,13 +39,13 @@
                     "ramOverlock": "Overclock della RAM",
                     "popup": {
                         "text": "La modifica sarà effettiva dopo il riavvio del computer.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Installazione driver richiesta",
                         "text": "Installare il driver per attivare l'overclock della RAM (riavvio richiesto)",
-                        "button": "Installa",
-                        "link": "annulla",
+                        "button": "INSTALLA",
+                        "link": "ANNULLA",
                         "networkBoostText": "È necessario installare il driver per rendere effettivo Ottimizzazione rete",
                         "hybridModeText": "È necessario installare il driver per rendere effettiva la Modalità ibrida",
                         "cpuOverclockText": "Installare il driver per attivare l'overclock della CPU (riavvio richiesto)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Installazione driver richiesta",
                         "text": "Installare il driver per attivare l'illuminazione (riavvio richiesto)",
-                        "button": "Installa",
-                        "link": "annulla"
+                        "button": "INSTALLA",
+                        "link": "ANNULLA"
                     },
                     "lightingColorMessage": {
                         "text": "Scelta del colore non disponibile per questo effetto."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "TASTO MACRO PER ",
                     "deleteKey": "Canc",
-                    "clear": "Cancella",
+                    "clear": "CANCELLA",
                     "intervalStatus": {
                         "keep": {
                             "title": "Mantieni ritardo",
@@ -228,8 +228,8 @@
                     "body": "La registrazione andrà in timeout se l'input verrà interrotto per più di 10 secondi."
                 },
                 "confirmButton": {
-                    "btnClear": "Cancella",
-                    "btnCancel": "Annulla"
+                    "btnClear": "CANCELLA",
+                    "btnCancel": "ANNULLA"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Livello di intermittenza"
+                },
+                "default": {
+                    "title": "IMPOSTA SU VALORE PREDEFINITO"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Aggiungi app a Potenziamento rete",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Puoi aggiungere fino a 5 app",
+                    "part2": "di",
+                    "part3": "aggiunte"
                 }
             }
         }
@@ -635,7 +638,6 @@
         "deviceSettings": {
             "helpful": "Contenuto utile",
             "batteryGauge": {
-                "title": "INDICATORE BATTERIA",
                 "subtitle": "Durata batteria",
                 "hours": "ore",
                 "hour": "ora",
@@ -709,8 +711,6 @@
                     "NotSupportACAdapterDetail": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
                     "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato."
                 },
-                "updating": "Aggiornamento",
-                "voltageError": "Tensione batteria non corretta",
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> per estenderne la durata, la batteria è stata impostata per interromperne la ricarica al {{value}}%.",
                 "seeDetailsLink": "Visualizza dettagli"
@@ -788,7 +788,8 @@
                             "battery&Quite": "BATTERIA E SILENZIO"
                         }
                     },
-                    "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows"
+                    "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Impostazioni energetiche",
@@ -802,11 +803,11 @@
                         "description": "Abilitare questa funzione per migliorare il tempo di ripresa se si apre e chiude di frequente il coperchio del computer.",
                         "tooltip": "Questa funzione migliorerà il tempo di ripresa se si apre e chiude di frequente il coperchio del computer. Quando abilitata, il computer entrerà in modalità di risparmio energia quando si chiude il coperchio, ma riprenderà immediatamente se si riapre il coperchio entro 15 minuti dalla chiusura. Questa funzione consente anche al notebook di tentare di finire le attività in sospeso (come l'invio di e-mail o il download di un file) prima che il sistema entri in sospensione."
                     },
-					"flipToBoot": {
-						"title": "Capovolgi per l'avvio",
-						"description": "Questa funzione consente di accendere il computer all'apertura del relativo coperchio, proprio come se si stesse premendo il pulsante di alimentazione. ",
-						"tooltip": "Questa funzione avvia automaticamente il computer all'apertura del coperchio.  È particolarmente utile se sono state impostate le informazioni di accesso tramite riconoscimento facciale in Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Capovolgi per l'avvio",
+                        "description": "Questa funzione consente di accendere il computer all'apertura del relativo coperchio, proprio come se si stesse premendo il pulsante di alimentazione. ",
+                        "tooltip": "Questa funzione avvia automaticamente il computer all'apertura del coperchio.  È particolarmente utile se sono state impostate le informazioni di accesso tramite riconoscimento facciale in Windows Hello."
+                    },
                     "or": "Oppure"
                 },
                 "otherSettings": {
@@ -1120,35 +1121,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Funzione riga superiore tastiera",
+                        "showAdvSettings": "MOSTRA IMPOSTAZIONI AVANZATE",
+                        "hideAdvSettings": "NASCONDI IMPOSTAZIONI AVANZATE",
+                        "description": "La riga superiore della tastiera fornisce le due funzioni seguenti. Selezionare la funzione desiderata:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Per attivare le due funzioni riportate sopra, premere Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "FUNZIONE SPECIALE",
+                                "fnKey": "FUNZIONE F1-F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Inversione della funzione primaria predefinita",
+                            "description": "Se attivata, le impostazioni di fabbrica della funzione primaria predefinita vengono invertite. Riavviare il computer per rendere le modifiche."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Modalità di utilizzo delle combinazioni di tasti Fn",
+                            "description": "Utilizzando il metodo normale è necessario premere i tasti Fn+funzione per utilizzare le combinazioni di tasti Fn. Con il metodo tasto permanente Fn, è possibile premere (anziché tenere premuto) il tasto Fn per tenerlo in una condizione di pressione. Premere quindi il tasto funzione desiderato. L'azione equivale a tenere premuto il tasto funzione e il tasto Fn contemporaneamente.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Metodo normale",
+                                "fnKeyMehod": "Metodo tasto permanente Fn"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Se premuto due volte, il tasto Fn viene bloccato nella condizione di pressione finché non viene premuto nuovamente. Quando il tasto Fn è bloccato, l'indicatore Fn Lock è acceso. È possibile premere direttamente il tasto funzione desiderato per avviare la funzione non predefinita."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Riavviare il computer",
+                            "description": "La modifica della funzione della riga superiore richiede il riavvio del computer. Riavviare?",
+                            "reboot": "RIAVVIA",
+                            "cancel": "NON ORA"
                         }
                     }
                 },
@@ -1180,9 +1181,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "ALTRO",
+                    "control1": "CONTROLLI TOUCHPAD",
+                    "control2": "CONTROLLI MOUSE",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1527,18 @@
             "trialExpired": "Versione di valutazione scaduta - Aggiorna per proteggere tutti i dispositivi",
             "upgrade": "aggiorna",
             "freeTrial": "Proteggi tutti i dispositivi - Versione di prova gratuita per 30 giorni",
-            "startTrial": "Avvia versione di prova"
+            "startTrial": "Avvia versione di prova",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Indietro",
@@ -1565,6 +1578,19 @@
             "upgradedDetail2": "L'ecosistema del dispositivo è attualmente protetto.",
             "localAccountDetail2": "Fai clic sul seguente pulsante per avviare la prova gratuita per 30 giorni.",
             "alreadyHaveAccount": "Hai già un codice di attivazione?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1784,8 @@
                 "describe": "Le reti e i dispositivi non sicuri possono introdurre malware, causare furti di identità e provocare la perdita di informazioni private e finanziarie. Abilita questa funzione per ridurre il rischio di esporre il dispositivo in uso e la rete domestica agli autori di un attacco",
                 "subtitle": "Protezione garantita",
                 "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili <tag>qui</tag>.",
-                "tryNow": "Provalo ora"
+                "tryNow": "Provalo ora",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Immettere il codice invito",
@@ -1774,7 +1801,11 @@
                 "success": "Connessione riuscita",
                 "canUse": "È ora possibile iniziare a utilizzare Protezione abitazione connessa",
                 "tryAgain": "Il codice non è corretto, riprova.",
-                "activationCode": "CODICE DI ATTIVAZIONE"
+                "activationCode": "CODICE DI ATTIVAZIONE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Integrità protezione",
@@ -1793,6 +1824,10 @@
                 "learnMoreAboutSecurityHealth": "Ulteriori informazioni su questi componenti sono disponibili <tag>qui</tag>.",
                 "peaceOfMind": "Vuoi maggiore sicurezza e tranquillità?",
                 "button": "Abilita sicurezza Wifi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2371,6 +2406,7 @@
         "errorDeviceChoose": "Selezionare un dispositivo per eseguire la scansione.",
         "errorNoOptionSelected": "Selezionare un'opzione.",
         "offline": "Questo dispositivo è in esecuzione in modalità offline, connettersi a Internet",
+        "doNotSuspend": "Questi test devono essere eseguiti senza interruzioni. Non chiudere o ridurre a icona l'applicazione e non sospendere o spegnere il computer durante la scansione.",
         "customize": {
             "name": "Personalizza",
             "test": "Personalizza test",
@@ -2395,7 +2431,8 @@
             "error": "Errore",
             "delete": "Elimina",
             "warningBatterySaver": "Nota: le scansioni pianificate non verranno eseguite in modalità risparmio batteria",
-            "scheduleIntervalLimit": "Un'altra scansione è stata già pianificata in un intervallo di tempo di dieci minuti. Selezionare un altro orario."
+            "scheduleIntervalLimit": "Un'altra scansione è stata già pianificata in un intervallo di tempo di dieci minuti. Selezionare un altro orario.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Ripristina settori danneggiati",
@@ -2446,5 +2483,9 @@
         "cancelTextPrompt": "Annullare l'operazione?",
         "cancelTextProgress": "Attendere l'annullamento dell'operazione",
         "pluginNotUpdate": "La scansione hardware non è disponibile perché è obsoleta. Eseguire l'aggiornamento."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

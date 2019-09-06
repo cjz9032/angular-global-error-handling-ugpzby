@@ -39,13 +39,13 @@
                     "ramOverlock": "Overclocking RAM",
                     "popup": {
                         "text": "La modification prendra effet après le redémarrage de l'ordinateur.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Installation du pilote requise",
                         "text": "Installer le pilote pour activer l'Overclocking RAM (redémarrage obligatoire)",
-                        "button": "Installer",
-                        "link": "annuler",
+                        "button": "INSTALLER",
+                        "link": "ANNULER",
                         "networkBoostText": "Vous devez installer le pilote pour l'amélioration réseau afin de l'activer",
                         "hybridModeText": "Vous devez installer le pilote pour le mode hybride afin de l'activer",
                         "cpuOverclockText": "Installer le pilote pour activer l'Overclocking UC (redémarrage obligatoire)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Installation du pilote requise",
                         "text": "Installer le pilote pour activer l'éclairage (redémarrage obligatoire)",
-                        "button": "Installer",
-                        "link": "annuler"
+                        "button": "INSTALLER",
+                        "link": "ANNULER"
                     },
                     "lightingColorMessage": {
                         "text": "Sélection de la couleur non disponible pour cet effet."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "TOUCHE MACRO POUR ",
                     "deleteKey": "Touche Suppr",
-                    "clear": "Effacer",
+                    "clear": "EFFACER",
                     "intervalStatus": {
                         "keep": {
                             "title": "Conserver un retard",
@@ -228,8 +228,8 @@
                     "body": "L'enregistrement expirera si la saisie s'est arrêtée pendant plus de 10 secondes."
                 },
                 "confirmButton": {
-                    "btnClear": "Effacer",
-                    "btnCancel": "Annuler"
+                    "btnClear": "EFFACER",
+                    "btnCancel": "ANNULER"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Niveau de clignotement"
+                },
+                "default": {
+                    "title": "RÉINITIALISER LA CONFIGURATION PAR DÉFAUT"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Ajouter des applications à l'amélioration réseau",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Vous pouvez ajouter un maximum de 5 applications à améliorer",
+                    "part2": "sur",
+                    "part3": "ajoutés récemment"
                 }
             }
         }
@@ -635,7 +638,6 @@
         "deviceSettings": {
             "helpful": "Contenu utile",
             "batteryGauge": {
-                "title": "JAUGE DE LA BATTERIE",
                 "subtitle": "Etat de la batterie",
                 "hours": "heures",
                 "hour": "heure",
@@ -709,8 +711,6 @@
                     "NotSupportACAdapterDetail": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
                     "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat."
                 },
-                "updating": "Mise à jour",
-                "voltageError": "Tension de la batterie incorrecte",
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
                 "seeDetailsLink": "Voir les détails"
@@ -788,7 +788,8 @@
                             "battery&Quite": "BATTERIE ET SILENCE"
                         }
                     },
-                    "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows"
+                    "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Paramètres d'alimentation",
@@ -802,11 +803,11 @@
                         "description": "Activez cette fonctionnalité pour améliorer la sortie du mode veille si vous ouvrez et rabattez fréquemment le capot de l'ordinateur.",
                         "tooltip": "Cette fonctionnalité améliorera la sortie du mode veille de votre ordinateur si vous ouvrez et rabattez fréquemment le capot de votre ordinateur. Lorsque cette fonctionnalité est activée, votre ordinateur se mettra en mode économie d'énergie lorsque vous fermez son capot, et sortira du mode veille instantanément si vous le réouvrez moins de 15 minutes après l'avoir fermé. Cette fonctionnalité permet également à votre ordinateur de tenter de terminer les activités en cours (par exemple, l'envoi d'un e-mail ou le téléchargement d'un fichier) avant que le système ne s'interrompe."
                     },
-					"flipToBoot": {
-						"title": "Retourner pour démarrer",
-						"description": "Cette fonction vous permet d'allumer l'ordinateur lorsque vous ouvrez le capot de l'ordinateur, exactement de la même manière que lorsque vous appuyez sur le bouton d'alimentation. ",
-						"tooltip": "Cette fonction démarre automatiquement l'ordinateur lorsque vous ouvrez le capot.  Cela s'avère particulièrement utile si vous avez configuré les informations de connexion avec la reconnaissance faciale dans Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Retourner pour démarrer",
+                        "description": "Cette fonction vous permet d'allumer l'ordinateur lorsque vous ouvrez le capot de l'ordinateur, exactement de la même manière que lorsque vous appuyez sur le bouton d'alimentation. ",
+                        "tooltip": "Cette fonction démarre automatiquement l'ordinateur lorsque vous ouvrez le capot.  Cela s'avère particulièrement utile si vous avez configuré les informations de connexion avec la reconnaissance faciale dans Windows Hello."
+                    },
                     "or": "Ou"
                 },
                 "otherSettings": {
@@ -1120,35 +1121,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Fonction de la rangée supérieure du clavier",
+                        "showAdvSettings": "AFFICHER LES PARAMÈTRES AVANCÉS",
+                        "hideAdvSettings": "MASQUER LES PARAMÈTRES AVANCÉS",
+                        "description": "La rangée supérieure du clavier comporte les deux fonctions suivantes. Sélectionnez celle que vous souhaitez :",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Pour basculer entre les deux fonctions susmentionnées, appuyez sur Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "FONCTION SPÉCIALE",
+                                "fnKey": "FONCTION F1-F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Inversion de la fonction principale par défaut",
+                            "description": "Lorsque cette option est activée, la fonction principale par défaut passe des paramètres d'usine à la valeur opposée. Redémarrez votre ordinateur pour que les modifications prennent effet."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Comment utiliser les combinaisons de touches Fn",
+                            "description": "À l'aide de la méthode normale, pour utiliser la combinaison de touches Fn, vous devez appuyer sur les touches Fn+touches de fonction. Avec la méthode touche Fn rémanente, vous pouvez appuyer (au lieu d'appuyer sur la touche de façon prolongée) sur la touche Fn pour la maintenir enfoncée. Appuyez ensuite sur la touche de fonction souhaitée. Cela revient à appuyer simultanément sur la touche de fonction et la touche Fn.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Méthode normale",
+                                "fnKeyMehod": "Méthode touche Fn rémanente"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Lorsque vous appuyez deux fois sur la touche Fn, celle-ci est verrouillée jusqu'à ce que vous appuyiez de nouveau dessus. Lorsque la touche Fn est verrouillée, l'indicateur de verrouillage Fn est allumé. Vous pouvez appuyer directement sur la touche de fonction souhaitée pour lancer la fonction autre que celle par défaut."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Redémarrez l'ordinateur",
+                            "description": "Si vous modifiez la fonction par défaut de la rangée supérieure, vous devez redémarrer l'ordinateur. Voulez-vous vraiment redémarrer ?",
+                            "reboot": "REDÉMARRER",
+                            "cancel": "PAS MAINTENANT"
                         }
                     }
                 },
@@ -1180,9 +1181,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "PLUS",
+                    "control1": "CONTRÔLES DU PAVÉ TACTILE",
+                    "control2": "CONTRÔLE DE LA SOURIS",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1527,18 @@
             "trialExpired": "Version d'évaluation expirée - Mettre à niveau pour protéger tous vos périphériques",
             "upgrade": "mettre à jour",
             "freeTrial": "Protéger tous vos périphériques - Version d'évaluation gratuite de 30 jours",
-            "startTrial": "Lancer la version d'évaluation"
+            "startTrial": "Lancer la version d'évaluation",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Retour",
@@ -1565,6 +1578,19 @@
             "upgradedDetail2": "L'écosystème de l'appareil est actuellement protégé.",
             "localAccountDetail2": "Cliquez sur le bouton ci-dessous pour lancer votre version d'évaluation gratuite de 30 jours.",
             "alreadyHaveAccount": "Vous disposez déjà d'un code d'activation ?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1784,8 @@
                 "describe": "Les réseaux et les périphériques non sécurisés peuvent laisser entrer des logiciels malveillants, favoriser le vol d'identité et provoquer la perte d'informations confidentielles et financières. Activez cette fonctionnalité pour réduire le risque que votre ordinateur et votre réseau domestique soient exposés à des pirates informatiques",
                 "subtitle": "Tranquillité d'esprit",
                 "subtitleDescribe": "La Sécurité domestique connectée vous enverra une alerte si elle détecte une vulnérabilité dans votre périphérique ou votre réseau domestique ou si vous êtes connecté à un réseau potentiellement malveillant. En savoir plus sur la Sécurité domestique connectée <tag>ici</tag>.",
-                "tryNow": "Essayer maintenant"
+                "tryNow": "Essayer maintenant",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Entrer le code d'invitation",
@@ -1774,7 +1801,11 @@
                 "success": "Connecté",
                 "canUse": "Vous pouvez maintenant commencer à utiliser la Sécurité domestique connectée",
                 "tryAgain": "Code incorrect, veuillez réessayer !",
-                "activationCode": "CODE D'ACTIVATION"
+                "activationCode": "CODE D'ACTIVATION",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "État de santé de la sécurité",
@@ -1793,6 +1824,10 @@
                 "learnMoreAboutSecurityHealth": "En savoir plus sur chacun de ces composants <tag>ici</tag>.",
                 "peaceOfMind": "Voulez-vous avoir l'esprit plus tranquille ?",
                 "button": "Activer la sécurité WiFi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2371,6 +2406,7 @@
         "errorDeviceChoose": "Vous devez choisir quel périphérique doit être exécuté.",
         "errorNoOptionSelected": "Vous devez sélectionner une option.",
         "offline": "Ce périphérique fonctionne en mode hors connexion. Veuillez vous connecter à Internet",
+        "doNotSuspend": "Ces tests doivent être exécutés sans interruption ! Ne fermez pas ou ne réduisez pas cette application, et n'interrompez pas ou n'éteignez pas votre ordinateur pendant l'analyse.",
         "customize": {
             "name": "Personnaliser",
             "test": "Personnaliser le test",
@@ -2395,7 +2431,8 @@
             "error": "Erreur",
             "delete": "Supprimer",
             "warningBatterySaver": "Remarque : les analyses planifiées ne sont pas effectuées en mode économiseur de batterie",
-            "scheduleIntervalLimit": "Une autre analyse a déjà été planifiée dans une période de dix minutes. Veuillez choisir un autre moment."
+            "scheduleIntervalLimit": "Une autre analyse a déjà été planifiée dans une période de dix minutes. Veuillez choisir un autre moment.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Récupérer les secteurs incorrects",
@@ -2446,5 +2483,9 @@
         "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
         "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }
