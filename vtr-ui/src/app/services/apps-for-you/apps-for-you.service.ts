@@ -63,9 +63,11 @@ export class AppsForYouService {
 	private cancelToken = undefined;
 	private isCancelInstall = false;
 	private cmsAppDetails: any;
+	private culture: any;
 	systemUpdateBridge: any;
 
 	private initialize() {
+		this.culture = window.navigator.languages[0];
 		let machineInfo = this.deviceService.getMachineInfoSync();
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
@@ -83,17 +85,25 @@ export class AppsForYouService {
 		if (this.isInitialized && !this.cmsAppDetails) {
 			// TODO: obtain app id by code
 			const appId = '030B3E7E-9235-4A44-823A-8D02B7A6F30F';
-			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: 'en' })])
+			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.culture })])
 				.then((response) => {
 					this.cmsAppDetails = response[0];
-					this.logService.info('AppsForYouService.getAppDetails cms response.', JSON.stringify(this.cmsAppDetails));
-					const appDetails: AppDetails = this.serializeCMSAppDetails(this.cmsAppDetails);
-					this.commonService.sendNotification(AppsForYouEnum.GetAppDetailsRespond, appDetails);
+					this.handleGetAppDetailsResponse(this.cmsAppDetails);
 				})
 				.catch((error) => {
 					this.logService.error('AppsForYouService.getAppDetails error.', JSON.stringify(error));
 					this.commonService.sendNotification(AppsForYouEnum.CommonException, error);
 				});
+		} else if (this.cmsAppDetails) {
+			this.handleGetAppDetailsResponse(this.cmsAppDetails);
+		}
+	}
+
+	private handleGetAppDetailsResponse(cmsAppDetails: any) {
+		if (cmsAppDetails) {
+			this.logService.info('AppsForYouService.handleGetAppDetailsResponse response.', JSON.stringify(cmsAppDetails));
+			const appDetails: AppDetails = this.serializeCMSAppDetails(this.cmsAppDetails);
+			this.commonService.sendNotification(AppsForYouEnum.GetAppDetailsRespond, appDetails);
 		}
 	}
 
