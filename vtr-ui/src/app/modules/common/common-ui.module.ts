@@ -24,6 +24,7 @@ import { UiSwitchOnoffComponent } from 'src/app/components/ui/ui-switch-onoff/ui
 import { UiSwitchTristateComponent } from 'src/app/components/ui/ui-switch-tristate/ui-switch-tristate.component';
 import { UiTimePickerComponent } from 'src/app/components/ui/ui-time-picker/ui-time-picker.component';
 import { UiTooltipsComponent } from 'src/app/components/ui/ui-tooltips/ui-tooltips.component';
+import { UiToggleComponent } from 'src/app/components/ui/ui-toggle/ui-toggle.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -68,7 +69,8 @@ library.add(faChevronUp);
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
-		UiTooltipsComponent
+		UiTooltipsComponent,
+		UiToggleComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -93,7 +95,8 @@ library.add(faChevronUp);
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
 		MetricsModule,
-		UiTooltipsComponent
+		UiTooltipsComponent,
+		UiToggleComponent
 	],
 	imports: [
 		CommonModule,
