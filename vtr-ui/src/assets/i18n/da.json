@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM-overclocking",
                     "popup": {
                         "text": "Ændringen træder i kraft, når computeren genstartes.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Kræver installation af driver",
                         "text": "Installer driver for at aktivere RAM-overclocking (genstart nødvendig)",
-                        "button": "Installér",
-                        "link": "annuller",
+                        "button": "INSTALLER",
+                        "link": "ANNULLER",
                         "networkBoostText": "Du skal installere driver til Netværksforstærkning for at gøre det effektivt",
                         "hybridModeText": "Du skal installere driver til Hybridtilstand for at gøre det effektivt",
                         "cpuOverclockText": "Installer driver for at aktivere CPU-overclocking (genstart nødvendig)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Kræver installation af driver",
                         "text": "Installer driver for at aktivere lysforhold (genstart nødvendig)",
-                        "button": "Installér",
-                        "link": "annuller"
+                        "button": "INSTALLER",
+                        "link": "ANNULLER"
                     },
                     "lightingColorMessage": {
                         "text": "Valg af farve er ikke tilgængelig for denne effekt."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MAKRO-TAST FOR ",
                     "deleteKey": "Delete",
-                    "clear": "Ryd",
+                    "clear": "RYD",
                     "intervalStatus": {
                         "keep": {
                             "title": "Behold forsinkelse",
@@ -228,8 +228,8 @@
                     "body": "Optagelsen får timeout, hvis der ikke foretages input i mere end 10 sekunder."
                 },
                 "confirmButton": {
-                    "btnClear": "Ryd",
-                    "btnCancel": "Annuller"
+                    "btnClear": "RYD",
+                    "btnCancel": "ANNULLER"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Blinkeniveau"
+                },
+                "default": {
+                    "title": "INDSTIL TIL STANDARDINDSTILLINGER"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Føj apps til Netværksforstærkning",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Du kan tilføje op til 5 yderligere apps",
+                    "part2": "af",
+                    "part3": "tilføjet"
                 }
             }
         }
@@ -635,7 +638,6 @@
         "deviceSettings": {
             "helpful": "Nyttigt indhold",
             "batteryGauge": {
-                "title": "BATTERIMÅLER",
                 "subtitle": "Batterilevetid",
                 "hours": "timer",
                 "hour": "time",
@@ -709,8 +711,6 @@
                     "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter."
                 },
-                "updating": "Opdaterer",
-                "voltageError": "Forkert batterispænding",
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
                 "seeDetailsLink": "Flere oplysninger"
@@ -788,7 +788,8 @@
                             "battery&Quite": "BATTERI OG STILLE"
                         }
                     },
-                    "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows"
+                    "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "Strømindstillinger",
@@ -802,11 +803,11 @@
                         "description": "Aktiver denne funktion for at forbedre genoptagelsestiden, hvis du ofte åbner og lukker computerens låg.",
                         "tooltip": "Denne funktion forbedrer genoptagelsestiden, hvis du ofte åbner og lukker computerens låg. Når den er aktiveret, går computeren i en tilstand med lavt strømforbrug, når du lukker dens låg, men den genoptager driften med det samme, hvis du åbner låget inden for 15 minutter efter, du har lukket det. Denne funktion giver din notebook mulighed for at forsøge at udføre ventende aktiviteter (som f.eks. afsendelse af e-mail eller download af en fil), inden systemet går i dvale."
                     },
-					"flipToBoot": {
-						"title": "Åbn og start",
-						"description": "Denne funktion giver dig mulighed for at tænde computeren, når du åbner computerens låg, nøjagtigt som når du trykker på tænd/sluk-knappen. ",
-						"tooltip": "Denne funktion starter automatisk computeren, når låget åbnes.  Det er især nyttigt, hvis du har angivet oplysninger om ansigts-logon i Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Åbn og start",
+                        "description": "Denne funktion giver dig mulighed for at tænde computeren, når du åbner computerens låg, nøjagtigt som når du trykker på tænd/sluk-knappen. ",
+                        "tooltip": "Denne funktion starter automatisk computeren, når låget åbnes.  Det er især nyttigt, hvis du har angivet oplysninger om ansigts-logon i Windows Hello."
+                    },
                     "or": "Eller"
                 },
                 "otherSettings": {
@@ -1120,35 +1121,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Funktioner på øverste række på tastatur",
+                        "showAdvSettings": "VIS UDVIDEDE INDSTILLINGER",
+                        "hideAdvSettings": "SKJUL UDVIDEDE INDSTILLINGER",
+                        "description": "Den øverste række på tastaturet har følgende to funktioner. Vælg den, du vil bruge:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Tryk på Fn+Esc, hvis du vil skifte mellem de to ovennævnte funktioner.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "SÆRLIG FUNKTION",
+                                "fnKey": "F1-F12-FUNKTION"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Byt om på den primære standardfunktion",
+                            "description": "Når denne er aktiveret, ændres den primære standardfunktion fra fabriksindstillingerne til det modsatte. Genstart computeren for at få disse ændringer til at træde i kraft."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Sådan bruges Fn-tastkombinationer",
+                            "description": "Når du bruger metoden Normal, skal du trykke på FN+funktionstasterne for at bruge FN-tastekombinationerne. Med metoden Fn-hængende tast kan du trykke på Fn (i stedet for at holde den trykket ned) for at bevare den trykket ned. Tryk herefter på den ønskede funktionstast. Det svarer til at trykke på funktionstasten samtidig med Fn-tasten.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Normal metode",
+                                "fnKeyMehod": "Fn-hængende tast-metode"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Når du trykker to gange på Fn-tasten, låses Fn-tasten i nedtrykket tilstand, indtil du trykker på den igen. Når Fn-tasten er låst, er Fn Lock-indikatoren tændt. Du kan trykke direkte på den ønskede funktionstast for at starte ikke-standardfunktionen."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Genstart computer",
+                            "description": "Ændring af standardfunktionen for øverste række kræver, at du genstarter computeren. Er du sikker på, du vil genstarte?",
+                            "reboot": "GENSTART",
+                            "cancel": "IKKE NU"
                         }
                     }
                 },
@@ -1180,9 +1181,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "FLERE",
+                    "control1": "KONTROLELEMENTER PÅ NAVIGATIONSPLADE",
+                    "control2": "KONTROLELEMENTER PÅ MUS",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1527,18 @@
             "trialExpired": "Prøveversion er udløbet - Opgrader for at beskytte alle dine enheder",
             "upgrade": "opgrader",
             "freeTrial": "Beskyt alle dine enheder - Gratis 30-dages prøveperiode",
-            "startTrial": "Start prøveperiode"
+            "startTrial": "Start prøveperiode",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Tilbage",
@@ -1565,6 +1578,19 @@
             "upgradedDetail2": "Din enheds økosystem er beskyttet i øjeblikket.",
             "localAccountDetail2": "Klik på knappen nedenfor for at starte den gratis prøveperiode på 30 dage.",
             "alreadyHaveAccount": "Har du allerede en aktiveringskode?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1784,8 @@
                 "describe": "Usikre enheder og netværk kan introducere skadelig software, føre til identitetstyveri og lække personlige og økonomiske oplysninger. Aktivér denne indstilling for at reducere risikoen for, at din enhed og dit hjemmenetværk bliver udsat for angreb",
                 "subtitle": "Få ro i sindet",
                 "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security <tag>her</tag>.",
-                "tryNow": "Prøv nu"
+                "tryNow": "Prøv nu",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Indtast invitationskode",
@@ -1774,7 +1801,11 @@
                 "success": "Forbindelsen blev oprettet",
                 "canUse": "Nu kan du begynde at bruge Tilsluttet Home Security",
                 "tryAgain": "Forkert adgangskode, prøv igen!",
-                "activationCode": "AKTIVERINGSKODE"
+                "activationCode": "AKTIVERINGSKODE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Sikkerhedssundhed",
@@ -1793,6 +1824,10 @@
                 "learnMoreAboutSecurityHealth": "Få flere oplysninger om hver af disse komponenter <tag>her</tag>.",
                 "peaceOfMind": "Vil du have ro i sindet?",
                 "button": "Aktivér Wi-Fi-sikkerhed"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2371,6 +2406,7 @@
         "errorDeviceChoose": "Du skal vælge en enhed, der skal køres.",
         "errorNoOptionSelected": "Du skal vælge en indstilling.",
         "offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
+        "doNotSuspend": "Disse tests skal køres uden afbrydelser! Du må ikke lukke eller minimere denne app eller låse eller slukke din computer under søgningen.",
         "customize": {
             "name": "Tilpas",
             "test": "Tilpas test",
@@ -2395,7 +2431,8 @@
             "error": "Fejl",
             "delete": "Slet",
             "warningBatterySaver": "Bemærk: Planlagte scanninger kører ikke i strømsparetilstand",
-            "scheduleIntervalLimit": "Der er allerede planlagt en anden søgning inden for en ti minutters tidsperiode. Vælg et andet klokkeslæt."
+            "scheduleIntervalLimit": "Der er allerede planlagt en anden søgning inden for en ti minutters tidsperiode. Vælg et andet klokkeslæt.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Retablering af dårlige sektorer",
@@ -2446,5 +2483,9 @@
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
         "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

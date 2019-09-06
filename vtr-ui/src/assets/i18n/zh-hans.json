@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "帮助内容",
             "batteryGauge": {
-                "title": "电池量表",
                 "subtitle": "电池运行状况",
                 "hours": "小时",
                 "hour": "小时",
@@ -643,8 +642,6 @@
                 "minute": "分",
                 "charge": "充满电所需的时间",
                 "button": "查看电池详细信息",
-                "updating": "正在更新",
-                "voltageError": "电池电压不正确",
                 "batteryNotDetected": "未检测到电池",
                 "details": {
                     "title": "电池详细信息",
@@ -788,7 +785,8 @@
                             "extremeCooling": "极致性能",
                             "battery&Quite": "电池和安静状态"
                         }
-                    }
+                    },
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "电源设置",
@@ -802,11 +800,11 @@
                         "description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
                         "tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
                     },
-					"flipToBoot": {
-						"title": "翻转启动",
-						"description": "此功能可让您在打开计算机外盖时即开启计算机，就像按下电源按钮一样。",
-						"tooltip": "此功能是通过打开外盖来自动启动计算机。如果您已在 Windows Hello 中设置面部登录信息，此功能特别有用。"
-					},
+                    "flipToBoot": {
+                        "title": "翻转启动",
+                        "description": "此功能可让您在打开计算机外盖时即开启计算机，就像按下电源按钮一样。",
+                        "tooltip": "此功能是通过打开外盖来自动启动计算机。如果您已在 Windows Hello 中设置面部登录信息，此功能特别有用。"
+                    },
                     "or": "或"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "键盘首行功能",
+                        "showAdvSettings": "显示高级设置",
+                        "hideAdvSettings": "隐藏高级设置",
+                        "description": "键盘的首行提供以下两项功能。选择您需要的功能：",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "要切换上述两个功能，请按 Fn+Esc。",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "特殊功能",
+                                "fnKey": "F1-F12 键的功能"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "反转缺省主要功能",
+                            "description": "启用时，缺省主要功能将更改为与出厂设置相反的功能。重新启动计算机使更改生效。"
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "如何使用 Fn 组合键",
+                            "description": "如果使用正常方法，需要按 Fn+功能键才能使用 Fn 组合键。而使用 Fn 粘滞键方法，您可以按（并非按住不放）Fn 键，使其保持按下状态。然后按所需的功能键。该操作与同时按功能键和 Fn 键等效。",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "正常方法",
+                                "fnKeyMehod": "Fn 粘滞键方法"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "如果按两次 Fn 键，Fn 键将锁定在按下状态，直至再次按该键。Fn 键锁定后，Fn 锁指示灯点亮。您可以直接按所需的功能键以启动非缺省功能。"
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "重新启动计算机",
+                            "description": "更改首行的缺省功能后，您需要重新启动计算机。是否确实要重新启动？",
+                            "reboot": "重新启动",
+                            "cancel": "暂不"
                         }
                     },
                     "VoipHotkeys": {
@@ -1187,9 +1185,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "更多",
+                    "control1": "触摸板控制",
+                    "control2": "鼠标控制",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1532,7 +1531,18 @@
             "trialExpired": "试用已到期 - 升级以保护您的所有设备",
             "upgrade": "升级",
             "freeTrial": "保护您的所有设备 - 30 天的免费试用期",
-            "startTrial": "开始试用"
+            "startTrial": "开始试用",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "上一步",
@@ -1572,6 +1582,19 @@
             "upgradedDetail2": "您的设备生态系统当前正受保护。",
             "localAccountDetail2": "点击下面的按钮开始 30 天的免费试用。",
             "alreadyHaveAccount": "已有激活码？"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1765,7 +1788,8 @@
                 "describe": "不安全设备和网络可能引入恶意软件、导致身份信息被盗以及泄露个人和财务信息。启用此功能以降低将设备和家庭网络曝露给攻击者的风险",
                 "subtitle": "高枕无忧",
                 "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，“互联家庭网络安全性”功能会向您发送警报。可在<tag>此处</tag>了解有关互联家庭网络安全性的更多信息。",
-                "tryNow": "立即试用"
+                "tryNow": "立即试用",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "输入邀请码",
@@ -1781,7 +1805,11 @@
                 "success": "已成功连接",
                 "canUse": "现在即可开始使用互联家庭网络安全顾问",
                 "tryAgain": "代码有误，请重试！",
-                "activationCode": "激活码"
+                "activationCode": "激活码",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "安全性状况",
@@ -1800,6 +1828,10 @@
                 "learnMoreAboutSecurityHealth": "在<tag>此处</tag>了解这些组件各自的详细信息。",
                 "peaceOfMind": "想更加放心吗？",
                 "button": "启用 WiFi 安全"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2378,6 +2410,7 @@
         "errorDeviceChoose": "请选择要运行的设备。",
         "errorNoOptionSelected": "请选择一个选项。",
         "offline": "此设备正在脱机模式下运行，请连接因特网",
+        "doNotSuspend": "请勿中断上述测试！请勿关闭或最小化此应用程序；扫描过程中请勿挂起或关闭计算机。",
         "customize": {
             "name": "定制",
             "test": "定制测试",
@@ -2402,7 +2435,8 @@
             "error": "错误",
             "delete": "删除",
             "warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行",
-            "scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。"
+            "scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "恢复坏扇区",
@@ -2453,5 +2487,9 @@
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
         "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }
