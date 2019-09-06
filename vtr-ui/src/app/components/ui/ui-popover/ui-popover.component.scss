@@ -97,5 +97,11 @@ ui-popover {
 	}
 	#restart_popup{
 		color: $gaming_darkest;
+		@media #{$black-on-white} {
+			display: none;
+		}
+		@media #{$white-on-black} {
+			display: none;
+		}
 	}
 }

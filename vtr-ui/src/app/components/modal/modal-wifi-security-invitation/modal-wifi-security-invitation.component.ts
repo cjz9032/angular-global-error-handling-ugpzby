@@ -20,6 +20,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	startJoin = false;
 	joinSuccess = false;
 	joinFailed = false;
+	joinResult = true;
 
 	constructor(public activeModal: NgbActiveModal, vantageShellService: VantageShellService) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -56,6 +57,15 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 						}, 3000);
 					} else {
 						this.joinFailed = true;
+
+						this.joinResult = !this.joinResult;
+						this.joinFailed = !this.joinResult;
+						this.joinSuccess = this.joinResult;
+						if (this.joinResult) {
+							setTimeout(() => {
+								this.closeModal();
+							}, 3000);
+						}
 					}
 				});
 		} else {
