@@ -60,6 +60,7 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 			const dataToSendOnPageView = {
 				PageContext: this.pageContext,
 				PageDuration: this.pageDuration,
+				ItemParm: this.metricsParam,
 			};
 
 			this.analyticsService.sendPageViewData(dataToSendOnPageView, this.customPageName, this.metricsEvent);
