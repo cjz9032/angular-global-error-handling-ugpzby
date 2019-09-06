@@ -2428,7 +2428,7 @@
             "delete": "Ta bort",
             "warningBatterySaver": "Obs! Schemalagda sökningar fungerar inte i batterisparläge",
             "scheduleIntervalLimit": "En annan genomsökning är schemalagd inom tio minuter. Välj en annan tid.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Genomsökningen har schemalagts och kommer att köras i bakgrunden följande datum:"
         },
         "recoverBadSectors": {
             "title": "Återställa skadade sektorer",

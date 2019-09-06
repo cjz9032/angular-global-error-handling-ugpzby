@@ -2428,7 +2428,7 @@
             "delete": "削除",
             "warningBatterySaver": "注: スケジュール・スキャンは、バッテリー節約モードでは実行されません",
             "scheduleIntervalLimit": "10分以内に別のスキャンが既にスケジュールされています。別の時間を選択してください。",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "スキャンがスケジュールされました。次の日にバックグラウンドで実行されます。"
         },
         "recoverBadSectors": {
             "title": "不良セクターの復元",

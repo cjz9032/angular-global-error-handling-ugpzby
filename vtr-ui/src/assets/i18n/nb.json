@@ -2433,7 +2433,7 @@
             "delete": "Slett",
             "warningBatterySaver": "Merk: Planlagte skanninger vil ikke bli utført i batterisparingsmodus",
             "scheduleIntervalLimit": "En ny skanning var allerede planlagt innenfor en periode på ti minutter. Velg en annen tid.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Søket er planlagt og kommer til å kjøre i bakgrunnen på denne datoen:"
         },
         "recoverBadSectors": {
             "title": "Gjenopprett skadde sektorer",

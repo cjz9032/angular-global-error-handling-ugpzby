@@ -2428,7 +2428,7 @@
             "delete": "Удалить",
             "warningBatterySaver": "Примечание. Запланированные проверки не будут выполняться в режиме экономии заряда",
             "scheduleIntervalLimit": "Еще одна проверка уже была назначена в пределах десятиминутного интервала. Выберите другое время.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Запланировано сканирование вашей системы, которое пройдет в фоновом режиме в следующую дату:"
         },
         "recoverBadSectors": {
             "title": "Восстановление поврежденных секторов",

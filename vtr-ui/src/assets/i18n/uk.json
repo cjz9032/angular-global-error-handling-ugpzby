@@ -2428,7 +2428,7 @@
             "delete": "Видалити",
             "warningBatterySaver": "Примітка. Планові сканування не виконуватимуться в режимі економії заряду акумулятора",
             "scheduleIntervalLimit": "У наступні десять хвилин заплановано інше сканування. Виберіть інший час.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Сканування заплановано та буде виконано у фоновому режимі в таку дату:"
         },
         "recoverBadSectors": {
             "title": "Відновлення пошкоджених секторів",
