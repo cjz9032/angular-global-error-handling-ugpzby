@@ -64,7 +64,7 @@
 				margin: 0.5rem;
 				cursor: pointer;
 			}
-			&:hover:not(:first-child) {
+			&.runningList:hover {
 				background: $gaming_light_02;
 				border-radius: 0.5rem;
 				.remove-app {

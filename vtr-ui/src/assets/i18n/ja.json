@@ -39,7 +39,7 @@
                     "ramOverlock": "RAM クロックアップ",
                     "popup": {
                         "text": "コンピューターを再起動すると、変更内容が有効になります。",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "ドライバーのインストールが必要です",
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "点滅レベル"
+                },
+                "default": {
+                    "title": "デフォルトに設定"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "ネットワーク・ブーストにアプリを追加",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "最大 5 つのアプリを追加してブーストできます",
+                    "part2": "の",
+                    "part3": "追加された"
                 }
             }
         }
@@ -635,7 +638,6 @@
         "deviceSettings": {
             "helpful": "役に立つコンテンツ",
             "batteryGauge": {
-                "title": "バッテリー・ゲージ",
                 "subtitle": "バッテリー状態",
                 "hours": "時間",
                 "hour": "時",
@@ -709,8 +711,6 @@
                     "NotSupportACAdapterDetail": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
                     "LimitedACAdapterSupportDetail": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。"
                 },
-                "updating": "更新中",
-                "voltageError": "誤ったバッテリー電圧",
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
                 "seeDetailsLink": "詳細を見る"
@@ -788,7 +788,8 @@
                             "battery&Quite": "バッテリー & 静音"
                         }
                     },
-                    "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています"
+                    "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています",
+                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -802,11 +803,11 @@
                         "description": "この機能を有効にして、コンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。",
                         "tooltip": "この機能はコンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。有効にすると、ふたを閉めたときコンピューターは低電力モードになりますが、15 分以内に再度ふたを開けるとすぐに再開します。また、この機能により、ノートブックはシステムが一時停止になる前に保留中の操作 (メールの送信やファイルのダウンロードなど) を完了させることができます。"
                     },
-					"flipToBoot": {
-						"title": "開いてブート",
-						"description": "この機能により、コンピューターのふたを開くだけで、電源ボタンを押すのと同じようにコンピューターの電源を入れることができます。",
-						"tooltip": "この機能は、ふたを開くことでコンピューターを自動的に起動します。Windows Hello で顔認証のログイン情報を設定すれば、特に便利です。"
-					},
+                    "flipToBoot": {
+                        "title": "開いてブート",
+                        "description": "この機能により、コンピューターのふたを開くだけで、電源ボタンを押すのと同じようにコンピューターの電源を入れることができます。",
+                        "tooltip": "この機能は、ふたを開くことでコンピューターを自動的に起動します。Windows Hello で顔認証のログイン情報を設定すれば、特に便利です。"
+                    },
                     "or": "または"
                 },
                 "otherSettings": {
@@ -1120,35 +1121,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "キーボードの最上部行の機能",
+                        "showAdvSettings": "詳細設定を表示する",
+                        "hideAdvSettings": "詳細設定を非表示にする",
+                        "description": "キーボードの一番上の行には、次の 2 つの機能があります。使用するものを選択してください:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "上記の 2 つの機能を切り替えるには、Fn+Esc を押します。",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "特殊機能",
+                                "fnKey": "F1 ～ F12 機能"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "デフォルトの主要機能を逆にする",
+                            "description": "オンの場合、デフォルトのプライマリ機能は工場出荷時の設定とは逆に変更されます。これらの変更を有効にするには、コンピューターを再起動してください。"
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Fn キーとの組み合わせの使用",
+                            "description": "通常の方法を使用して、Fn キーの組み合わせを使用するには、Fn+ファンクション・キーを押す必要があります。Fn Sticky キーの方法を使用すると、Fn キーを押すことで (押したままにしなくても) キーが押された状態を維持できます。その後、目的のファンクション・キーを押します。この操作は、Fn キーと同時にファンクション・キーを押す場合と同様です。",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "通常の方法",
+                                "fnKeyMehod": "Fn Sticky キーを使用した方法"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Fn キーを 2 回押すと、Fn キーをもう一度押すまで、Fn キーは押された状態でロックされます。Fn キーがロックされているときは、Fn Lock インジケーターが点灯します。目的のファンクション・キーを直接押して、デフォルトではない機能を起動できます。"
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "コンピューターを再起動する",
+                            "description": "最上部の行の機能を変更するには、コンピューターを再起動する必要があります。再起動しますか?",
+                            "reboot": "リブート",
+                            "cancel": "今はしない"
                         }
                     }
                 },
@@ -1180,9 +1181,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "詳細",
+                    "control1": "タッチパッド・コントロール",
+                    "control2": "マウス・コントロール",
+                    "control3": "TRACKPOINT CONTROLS"
                 }
             }
         },
@@ -1525,7 +1527,18 @@
             "trialExpired": "試用期限切れ - アップグレードして、すべてのデバイスを保護する",
             "upgrade": "アップグレード",
             "freeTrial": "すべてのデバイスを保護する - 30 日間無料トライアル",
-            "startTrial": "トライアルを開始する"
+            "startTrial": "トライアルを開始する",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "戻る",
@@ -1565,6 +1578,19 @@
             "upgradedDetail2": "デバイス・エコシステムは現在保護されています。",
             "localAccountDetail2": "下のボタンをクリックして 30 日間の無料トライアルを開始する。",
             "alreadyHaveAccount": "アクティベーション・コードをすでにお持ちですか？"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1758,7 +1784,8 @@
                 "describe": "安全でないデバイスやネットワークでは、マルウェアが侵入し、個人情報の盗難、プライベート情報や財務情報の漏えいが生じる可能性があります。この機能を有効にして、デバイスとホーム・ネットワークを攻撃者に晒してしまうリスクを軽減してください",
                 "subtitle": "安心を手に入れる",
                 "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーについての詳細は、<tag>ここで</tag>ご確認ください。",
-                "tryNow": "今すぐ試してみる"
+                "tryNow": "今すぐ試してみる",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "招待コードの入力",
@@ -1774,7 +1801,11 @@
                 "success": "接続に成功しました",
                 "canUse": "これで、接続ホーム・セキュリティーの使用を開始できます",
                 "tryAgain": "コードが間違っています。再試行してください!",
-                "activationCode": "アクティベーション・コード"
+                "activationCode": "アクティベーション・コード",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "セキュリティーの健全性",
@@ -1793,6 +1824,10 @@
                 "learnMoreAboutSecurityHealth": "各コンポーネントの詳細については、<tag>こちらを参照してください</tag>。",
                 "peaceOfMind": "より確実な安心をお求めですか?",
                 "button": "WiFi セキュリティーを有効にする"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -2371,6 +2406,7 @@
         "errorDeviceChoose": "使用するデバイスを選択する必要があります。",
         "errorNoOptionSelected": "オプションを選択する必要があります。",
         "offline": "このデバイスはオフラインモードです。インターネットに接続してください",
+        "doNotSuspend": "これらのテストは中断しないで実行する必要があります。このアプリを閉じたり最小化したりしないでください。スキャン中にコンピューターを休止状態またはオフにしないでください。",
         "customize": {
             "name": "カスタマイズ",
             "test": "テストをカスタマイズ",
@@ -2395,7 +2431,8 @@
             "error": "エラー",
             "delete": "削除",
             "warningBatterySaver": "注: スケジュール・スキャンは、バッテリー節約モードでは実行されません",
-            "scheduleIntervalLimit": "10分以内に別のスキャンが既にスケジュールされています。別の時間を選択してください。"
+            "scheduleIntervalLimit": "10分以内に別のスキャンが既にスケジュールされています。別の時間を選択してください。",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "不良セクターの復元",
@@ -2446,5 +2483,9 @@
         "cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
         "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }
