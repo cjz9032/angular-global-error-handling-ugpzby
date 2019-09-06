@@ -39,13 +39,13 @@
                     "ramOverlock": "Overclock RAM-a",
                     "popup": {
                         "text": "Izmjena će se primijeniti nakon ponovnog pokretanja računala.",
-                        "button": "u redu"
+                        "button": "U redu"
                     },
                     "driverPopup": {
                         "headerText": "Potrebna je instalacija upravljačkog programa",
                         "text": "Instalirajte upravljački program da biste aktivirali RAM Overclock (potrebno je ponovno pokretanje)",
-                        "button": "Instaliranje",
-                        "link": "odustani",
+                        "button": "INSTALIRAJ",
+                        "link": "ODUSTANI",
                         "networkBoostText": "Morate instalirati upravljački program za Network Boost kako bi bio učinkovit",
                         "hybridModeText": "Morate instalirati upravljački program za Hibridni način kako bi bio učinkovit",
                         "cpuOverclockText": "Instalirajte upravljački program da biste aktivirali CPU Overclock (potrebno je ponovno pokretanje)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Potrebna je instalacija upravljačkog programa",
                         "text": "Instalirajte upravljački program da biste aktivirali rasvjetu (potrebno je ponovno pokretanje)",
-                        "button": "Instaliranje",
-                        "link": "odustani"
+                        "button": "INSTALIRAJ",
+                        "link": "ODUSTANI"
                     },
                     "lightingColorMessage": {
                         "text": "Odabir boje nije dostupan za ovaj efekt."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MAKRO TIPKA ZA ",
                     "deleteKey": "Brisanja",
-                    "clear": "Obriši",
+                    "clear": "OČISTI",
                     "intervalStatus": {
                         "keep": {
                             "title": "Zadrži odgodu",
@@ -228,8 +228,8 @@
                     "body": "Snimanje će se prekinuti ako nema unosa dulje od 10 sekundi."
                 },
                 "confirmButton": {
-                    "btnClear": "Obriši",
-                    "btnCancel": "Odustani"
+                    "btnClear": "OČISTI",
+                    "btnCancel": "ODUSTANI"
                 },
                 "btnOk": "U redu"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Razina treptanja"
+                },
+                "default": {
+                    "title": "POSTAVI NA ZADANO"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Dodaj aplikacije u Ubrzanje mreže",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Možete dodati do 5 dodatnih aplikacija za poboljšanje",
+                    "part2": "od",
+                    "part3": "dodano"
                 }
             }
         }

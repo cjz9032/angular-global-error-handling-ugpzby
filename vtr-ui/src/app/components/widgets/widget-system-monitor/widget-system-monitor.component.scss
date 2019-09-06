@@ -80,6 +80,14 @@
 						color: $gaming_info_link_hover;
 						border-color: $gaming_info_link_hover;
 						text-decoration: none;
+						@media #{$black-on-white}{
+							color: $gaming_darkest;
+							border-color: $gaming_darkest;
+						}
+						@media #{$white-on-black}{
+							color: $gaming_lightest;
+							border-color: $gaming_lightest;
+						}
 					}
 				}
 			}
