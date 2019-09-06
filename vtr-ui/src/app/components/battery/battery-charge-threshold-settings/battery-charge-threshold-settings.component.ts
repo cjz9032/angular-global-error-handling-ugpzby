@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef,Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 
 @Component({
@@ -12,7 +12,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() stop = '';
 	@Input() checkboxText = '';
 	@Input() type = 'primary';
-	@Input() displayNoteOnly: boolean = this.displayNoteOnly || false;
+	@Input() displayNoteOnly = false;
 	@Input() showWarningMsg: any;
 	@Input() startAtChargeOptions: any;
 	@Input() stopAtChargeOptions: any;
@@ -21,7 +21,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() isCheckedAuto: any;
 	@Output() sendBatteryDetails = new EventEmitter();
 	@Output() autoChecked = new EventEmitter<boolean>();
-	@Input() textId='';
+	@Input() textId = '';
 
 
 
@@ -36,21 +36,15 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 	constructor() { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onChargeChange(id: string, newCharge: number, event: Event) {
-		 //console.log('onChargeChange' + event.target + '\n' + id + '\n' + newCharge);
-		 //console.log(event)
-
-
 		if (id === this.startChargeInput) {
 			if (this.selectedStartAtCharge !== newCharge) {
-				// console.log('values got changed for selectedStartAtCharge ');
 				this.selectedStartAtCharge = newCharge;
 			}
 		} else {
 			if (this.selectedStopAtCharge !== newCharge) {
-				// console.log('values got changed for selectedStopAtCharge ');
 				this.selectedStopAtCharge = newCharge;
 
 				if (this.isCheckedAuto) {
@@ -59,36 +53,30 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			}
 
 		}
-		//console.log('###############################', this.isCheckedAuto);
-		if(!this.isCheckedAuto){
-		this.selectedOptionsData = {
-			startValue : this.selectedStartAtCharge,
-			stopValue : this.selectedStopAtCharge,
-			checkBoxValue: this.isCheckedAuto
+		if (!this.isCheckedAuto) {
+			this.selectedOptionsData = {
+				startValue: this.selectedStartAtCharge,
+				stopValue: this.selectedStopAtCharge,
+				checkBoxValue: this.isCheckedAuto
+			};
+			this.sendBatteryDetails.emit(this.selectedOptionsData);
+		} else {
+			this.toggleAutoChargeSettings(true);
 		}
-		this.sendBatteryDetails.emit(this.selectedOptionsData)
-	}else {
-		this.toggleAutoChargeSettings(true);
-	}
 
 	}
 
 	autoStartStopAtCharge() {
-	this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
-		// this.selectedStartAtCharge =  5;
-}
+		this.selectedStartAtCharge = this.selectedStopAtCharge - 5;
+	}
 
 	public toggleAutoChargeSettings(event: any) {
-		// console.log('toggleAutoSettings------>', event);
-		// if(event){
-			this.autoStartStopAtCharge();
-			this.selectedOptionsData = {
-				startValue : this.selectedStartAtCharge,
-				stopValue : this.selectedStopAtCharge,
-				checkBoxValue: this.isCheckedAuto
-			}
-			this.autoChecked.emit(this.selectedOptionsData)
-		// }	
-
+		this.autoStartStopAtCharge();
+		this.selectedOptionsData = {
+			startValue: this.selectedStartAtCharge,
+			stopValue: this.selectedStopAtCharge,
+			checkBoxValue: this.isCheckedAuto
+		};
+		this.autoChecked.emit(this.selectedOptionsData);
 	}
 }

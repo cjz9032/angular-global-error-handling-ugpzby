@@ -718,10 +718,6 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((featureStatus: FeatureStatus) => {
 					console.log('cameraPrivacyModeStatus.then', featureStatus);
 					this.cameraPrivacyModeStatus = featureStatus;
-					if (!this.cameraPrivacyModeStatus.available) {
-						// on desktop machine, camera section need to hide, so it's Jump to Setting link also need to remove
-						this.headerMenuItems.pop();
-					}
 				})
 				.catch(error => {
 					this.logger.error('getCameraStatus', error.message);

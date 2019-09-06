@@ -13,6 +13,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { BatteryQuality } from 'src/app/enums/battery-conditions.enum';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 describe('BatteryCardComponent', () => {
 	let component: BatteryCardComponent;
@@ -206,12 +207,11 @@ describe('BatteryCardComponent', () => {
 
 		expect(component.initBatteryInformation).toHaveBeenCalled();
 
-		expect(component.remainingPercentages).toEqual([75]);
+		expect(component.remainingPercentages).toEqual([component.batteryInfo[0].remainingPercent]);
 		expect(component.sendThresholdWarning).toHaveBeenCalled();
-		expect(component.batteryHealth).toEqual(0);
+		expect(component.batteryHealth).toEqual(component.batteryInfo[0].batteryHealth);
 		expect(component.batteryIndicator.batteryNotDetected).toBeFalsy();
-		expect(component.isBatteryDetailsBtnDisabled).toBeFalsy();
-		// expect(component.batteryIndicator.percent).toEqual(75);
+		expect(component.batteryIndicator.percent).toEqual(component.batteryGauge.percentage);
 		expect(component.batteryIndicator.charging).toBeFalsy();
 		expect(component.batteryIndicator.timeText).toEqual('timeRemaining');
 		expect(component.batteryIndicator.expressCharging).toBeFalsy();
@@ -279,12 +279,44 @@ describe('BatteryCardComponent', () => {
 		expect(component.flag).toBeFalsy();
 	});
 
-	it('#getBatteryCondition should call setConditionTips', () => {
+	it('#getBatteryCondition should set conditions and call setConditionTips', () => {
+		// Normal condition
 		component.batteryInfo = info.batteryInformation;
 		component.batteryGauge = info.batteryIndicatorInfo;
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(1);
 		spyOn(component, 'setConditionTips');
 		component.getBatteryCondition();
+		expect(commonService.getLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.MachineType);
+		expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0)]);
 		expect(component.setConditionTips).toHaveBeenCalled();
+
+		component.batteryHealth = 1;
+		component.getBatteryCondition();
+		expect(component.batteryConditions).toEqual([new BatteryConditionModel(17, 1)]);
+
+		// Limited AC adapter status
+		component.batteryHealth = 0;
+		component.batteryGauge.acAdapterStatus = 'Limited';
+		component.getBatteryCondition();
+		expect(component.batteryConditions).toEqual([new BatteryConditionModel(16, 3), new BatteryConditionModel(0, 0)]);
+
+		// Not Supported AC adapter status
+		component.batteryGauge.acAdapterStatus = 'NotSupported';
+		component.getBatteryCondition();
+		expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3), new BatteryConditionModel(0, 0)]);
+
+		// all thinkPad conditions
+		component.batteryGauge.acAdapterStatus = 'Supported';
+		component.batteryInfo[0].batteryCondition = ['HardwareAuthenticationError', 'HighTemperature', 'TrickleCharge', 'OverheatedBattery', 'PermanentError'];
+		component.getBatteryCondition();
+		expect(component.batteryConditions.length).toEqual(5);
+
+		// power driver missing
+		component.batteryInfo = undefined;
+		component.batteryGauge.isPowerDriverMissing = true;
+		component.batteryIndicator.batteryNotDetected = false;
+		component.getBatteryCondition();
+		expect(component.batteryConditions).toEqual([new BatteryConditionModel(14, 2)]);
 	});
 
 	it('#setConditionTips should get condition tips array ', () => {

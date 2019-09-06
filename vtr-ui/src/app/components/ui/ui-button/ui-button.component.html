@@ -1,7 +1,7 @@
 <div class="vtr-ui-button">
 	<div class="button-box"
 		*ngIf="label">
-		<button *ngIf="alreadyJoinGroup !== 'joined'"
+		<a href="javascript:void(0)" *ngIf="alreadyJoinGroup !== 'joined'"
 			title="{{tooltip?label:''}}"
 			[disabled]="isDisabled"
 			type="button"
@@ -19,6 +19,8 @@
 			[metricsItemID]="metricsItemID"
 			[metricsItemCategory]="metricsItemCategory"
 			[metricsParent]="metricsParent"
+			attr.aria-label="{{label}}"
+			role="link"
 			[ngClass]="{'fullWidth': isFullWidth === true,
 						'halfWidth': isHalfWidth,
 						'text-upper-case': upperCaseLabel,
@@ -26,8 +28,8 @@
 						'min-height': btnHeight,
 						'btn-gradient': isGradient,
 						'btn-red': isRed}"
-			(click)="onClickButton($event)">{{label}} </button>
-		<button *ngIf="alreadyJoinGroup === 'joined'"
+			(click)="onClickButton($event)">{{label}} </a>
+		<a href="javascript:void(0)" *ngIf="alreadyJoinGroup === 'joined'"
 			title="{{tooltip?label:''}}"
 			type="button"
 			class="button disable"
@@ -46,6 +48,8 @@
 			[metricsItemCategory]="metricsItemCategory"
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
-			(click)="onClickButton($event)">{{label}} </button>
+			attr.aria-label="{{label}}"
+			role="link"
+			(click)="onClickButton($event)">{{label}} </a>
 	</div>
 </div>
