@@ -39,13 +39,13 @@
                     "ramOverlock": "Przetaktowywanie pamięci RAM",
                     "popup": {
                         "text": "Zmiana zostanie zastosowana po ponownym uruchomieniu komputera.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Wymagana instalacja sterownika",
                         "text": "Zainstaluj sterownik, aby aktywować przetaktowywanie pamięci RAM (wymagane ponowne uruchomienie)",
-                        "button": "Zainstaluj",
-                        "link": "anuluj",
+                        "button": "ZAINSTALUJ",
+                        "link": "ANULUJ",
                         "networkBoostText": "Aby wspomaganie sieci było skuteczne, należy zainstalować sterownik",
                         "hybridModeText": "Aby tryb hybrydowy był skuteczny, należy zainstalować sterownik",
                         "cpuOverclockText": "Zainstaluj sterownik, aby aktywować przetaktowywanie CPU (wymagane ponowne uruchomienie)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Wymagana instalacja sterownika",
                         "text": "Zainstaluj sterownik, aby aktywować oświetlenie (wymagane ponowne uruchomienie)",
-                        "button": "Zainstaluj",
-                        "link": "anuluj"
+                        "button": "ZAINSTALUJ",
+                        "link": "ANULUJ"
                     },
                     "lightingColorMessage": {
                         "text": "Wybór koloru jest niedostępny dla tego efektu."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "KLAWISZ MAKR DLA ",
                     "deleteKey": "Usuń",
-                    "clear": "Wyczyść",
+                    "clear": "WYCZYŚĆ",
                     "intervalStatus": {
                         "keep": {
                             "title": "Zachowaj opóźnienie",
@@ -228,8 +228,8 @@
                     "body": "Limit na nagrywanie zostanie przekroczony po 10 sekundach od zatrzymania czynności."
                 },
                 "confirmButton": {
-                    "btnClear": "Wyczyść",
-                    "btnCancel": "Anuluj"
+                    "btnClear": "WYCZYŚĆ",
+                    "btnCancel": "ANULUJ"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Poziom migania"
+                },
+                "default": {
+                    "title": "RESETUJ DO USTAWIEŃ DOMYŚLNYCH"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Dodaj aplikacje do Wspomagania sieci",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Możesz dodać 5 aplikacji",
+                    "part2": "z",
+                    "part3": "dodano"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "Chroń wszystkie urządzenia - Bezpłatna 30-dniowa wersja próbna",
             "startTrial": "Rozpocznij okres próbny",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Wstecz",
@@ -2402,6 +2406,7 @@
         "errorDeviceChoose": "Wybierz urządzenie do wykonania.",
         "errorNoOptionSelected": "Wybierz opcję.",
         "offline": "To urządzenie działa w trybie offline, połącz je z Internetem",
+        "doNotSuspend": "Nie można przerywać wykonywania tych testów! Podczas skanowania nie zamykaj ani nie minimalizuj tej aplikacji, i nie wstrzymuj ani nie wyłączaj komputera.",
         "customize": {
             "name": "Dostosuj",
             "test": "Dostosuj test",

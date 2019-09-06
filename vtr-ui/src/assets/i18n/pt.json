@@ -39,13 +39,13 @@
                     "ramOverlock": "Overclock da RAM",
                     "popup": {
                         "text": "A alteração será aplicada após reiniciar o computador.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Necessária Instalação de Controlador",
                         "text": "Instalar controlador para ativar o Overclock da RAM (Reinicialização Necessária)",
-                        "button": "Instalar",
-                        "link": "cancelar",
+                        "button": "INSTALAR",
+                        "link": "CANCELAR",
                         "networkBoostText": "Para tornar o Reforço da Rede efetivo, é necessário instalar o controlador",
                         "hybridModeText": "Para tornar o Modo Híbrido efetivo, é necessário instalar o controlador",
                         "cpuOverclockText": "Instalar controlador para ativar o Overclock da CPU (Reinicialização Necessária)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Necessária Instalação de Controlador",
                         "text": "Instalar controlador para ativar a iluminação (Reinicialização Necessária)",
-                        "button": "Instalar",
-                        "link": "cancelar"
+                        "button": "INSTALAR",
+                        "link": "CANCELAR"
                     },
                     "lightingColorMessage": {
                         "text": "A seleção de cor não está disponível para este efeito."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "TECLA DE MACRO PARA ",
                     "deleteKey": "Delete",
-                    "clear": "Limpar",
+                    "clear": "LIMPAR",
                     "intervalStatus": {
                         "keep": {
                             "title": "Manter Atraso",
@@ -228,8 +228,8 @@
                     "body": "O tempo de gravação expirará se a introdução parar durante mais de 10 segundos."
                 },
                 "confirmButton": {
-                    "btnClear": "Limpar",
-                    "btnCancel": "Cancelar"
+                    "btnClear": "LIMPAR",
+                    "btnCancel": "CANCELAR"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Nível de Intermitência"
+                },
+                "default": {
+                    "title": "UTILIZAR PREDEFINIÇÃO"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Adicionar aplicações ao Reforço da Rede",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Pode adicionar até 5 aplicações adicionais para reforçar",
+                    "part2": "de",
+                    "part3": "adicionadas"
                 }
             }
         }
@@ -1526,7 +1529,6 @@
             "freeTrial": "Proteger todos os dispositivos - Versão de avaliação gratuita de 30 dias",
             "startTrial": "Iniciar versão de avaliação",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1536,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Retroceder",
@@ -2402,6 +2406,7 @@
         "errorDeviceChoose": "É necessário escolher um dispositivo a executar.",
         "errorNoOptionSelected": "É necessário selecionar uma opção.",
         "offline": "Este dispositivo está a funcionar no modo offline. Estabeleça ligação à Internet",
+        "doNotSuspend": "Estes testes têm de ser executados sem interrupção! Não feche nem minimize esta aplicação e não suspenda ou desligue o computador durante a verificação.",
         "customize": {
             "name": "Personalizar",
             "test": "Personalizar teste",

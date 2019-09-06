@@ -1526,7 +1526,6 @@
             "freeTrial": "保护您的所有设备 - 30 天的免费试用期",
             "startTrial": "开始试用",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1533,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "上一步",
@@ -2402,6 +2403,7 @@
         "errorDeviceChoose": "请选择要运行的设备。",
         "errorNoOptionSelected": "请选择一个选项。",
         "offline": "此设备正在脱机模式下运行，请连接因特网",
+        "doNotSuspend": "请勿中断上述测试！请勿关闭或最小化此应用程序；扫描过程中请勿挂起或关闭计算机。",
         "customize": {
             "name": "定制",
             "test": "定制测试",
