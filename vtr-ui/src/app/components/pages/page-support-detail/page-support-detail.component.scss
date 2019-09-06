@@ -110,6 +110,61 @@
         text-align: center;
         text-transform: uppercase;
       }
+
+
+      //FAQ
+      .description-container ::ng-deep {
+        .faqInFs4Fb {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        
+        .faqInMb7 {
+            margin-bottom: 7rem;
+        }
+        
+        .faqInFs3Fb {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        
+        .faqInFb {
+            font-weight: bold;
+        }
+        
+        /*Q2*/
+        .faqInFs25Fb {
+            font-size:2.5rem;
+            font-weight:bold;
+        }
+        .faqInFs25FbP5 {
+            font-size:2.5rem;
+            font-weight:bold;
+            padding:5px 0;
+        }
+        .faqInFs25FbP10 {
+            font-size:2.5rem;
+            font-weight:bold;
+            padding:10px 0;
+        }
+        .faqInP5 {
+            padding:5px 0;
+        }
+        .faqInP10 {
+            padding:10px 0;
+        }
+        .faqInFbTdP10 {
+            text-decoration: underline;
+            padding:10px 0;
+            font-weight: bold;
+        }
+        .faqInFbTd {
+            text-decoration: underline;
+            font-weight: bold;
+        }        
+      }
+
+
     }
 
     .mn-6 {
