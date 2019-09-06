@@ -39,7 +39,7 @@
                     "ramOverlock": "Přetaktování RAM",
                     "popup": {
                         "text": "Změny se projeví po restartování počítače.",
-                        "button": "ok"
+                        "button": "U redu"
                     },
                     "driverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
@@ -47,14 +47,14 @@
                         "networkBoostText": "Aby bylo možné použít posílení sítě, je třeba nainstalovat ovladač",
                         "hybridModeText": "Aby bylo možné použít hybridní režim, je třeba nainstalovat ovladač",
                         "cpuOverclockText": "Chcete-li aktivovat přetaktování CPU, nainstalujte ovladač (vyžaduje restartování)",
-                        "button": "Nainstalujte si",
-                        "link": "storno"
+                        "button": "NAINSTALOVAT",
+                        "link": "STORNO"
                     },
                     "lightingDriverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
                         "text": "Chcete-li aktivovat osvětlení, nainstalujte ovladač (vyžaduje restartování)",
-                        "button": "Nainstalujte si",
-                        "link": "storno"
+                        "button": "NAINSTALOVAT",
+                        "link": "STORNO"
                     },
                     "lightingColorMessage": {
                         "text": "Výběr barvy není u tohoto efektu k dispozici."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "KLÁVESA MAKRA PRO ",
                     "deleteKey": "Delete",
-                    "clear": "Vymazat",
+                    "clear": "VYMAZAT",
                     "intervalStatus": {
                         "keep": {
                             "title": "Udržet zpoždění",
@@ -228,8 +228,8 @@
                     "body": "Čas záznamu vyprší, pokud se vstup na více než 10 sekund zastaví."
                 },
                 "confirmButton": {
-                    "btnClear": "Vymazat",
-                    "btnCancel": "Storno"
+                    "btnClear": "VYMAZAT",
+                    "btnCancel": "STORNO"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Úroveň blikání"
+                },
+                "default": {
+                    "title": "NASTAVIT NA VÝCHOZÍ NASTAVENÍ"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Přidat aplikace ke zvýšení výkonu sítě",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "K urychlení lze přidat až 5 dalších aplikací",
+                    "part2": "z",
+                    "part3": "přidáno"
                 }
             }
         }

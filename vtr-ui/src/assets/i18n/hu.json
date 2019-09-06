@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM-túlpörgetés",
                     "popup": {
                         "text": "A módosítás a számítógép újraindulása után lép érvénybe.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Illesztőprogram telepítése szükséges",
                         "text": "Telepítse az illesztőprogramot a RAM-túlpörgetés aktiválásához (újraindítás szükséges)",
-                        "button": "Telepítse",
-                        "link": "mégse",
+                        "button": "TELEPÍTÉS",
+                        "link": "MÉGSE",
                         "networkBoostText": "A Hálózat erősítése funkció működéséhez telepíteni kell az illesztőprogramját",
                         "hybridModeText": "A Hibrid mód működéséhez telepíteni kell az illesztőprogramját",
                         "cpuOverclockText": "Telepítse az illesztőprogramot a CPU-túlpörgetés aktiválásához (újraindítás szükséges)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Illesztőprogram telepítése szükséges",
                         "text": "Telepítse az illesztőprogramot a világítás aktiválásához (újraindítás szükséges)",
-                        "button": "Telepítse",
-                        "link": "mégse"
+                        "button": "TELEPÍTÉS",
+                        "link": "MÉGSE"
                     },
                     "lightingColorMessage": {
                         "text": "Ehhez az effektushoz nem lehet színt választani."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MAKRÓBILLENTYŰ EHHEZ ",
                     "deleteKey": "Törlése",
-                    "clear": "Törlés",
+                    "clear": "TÖRLÉS",
                     "intervalStatus": {
                         "keep": {
                             "title": "Késleltetés megtartása",
@@ -228,8 +228,8 @@
                     "body": "A rögzítés időkorlátja lejár, ha 10 másodpercnél tovább szünetel a bevitel."
                 },
                 "confirmButton": {
-                    "btnClear": "Törlés",
-                    "btnCancel": "Mégse"
+                    "btnClear": "TÖRLÉS",
+                    "btnCancel": "MÉGSE"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Villogás sebessége"
+                },
+                "default": {
+                    "title": "ALAPÉRTELMEZETT"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Alkalmazások hozzáadása a Hálózat erősítése szolgáltatáshoz",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "További 5 gyorsítandó alkalmazást adhat hozzá",
+                    "part2": "/",
+                    "part3": "hozzáadva"
                 }
             }
         }

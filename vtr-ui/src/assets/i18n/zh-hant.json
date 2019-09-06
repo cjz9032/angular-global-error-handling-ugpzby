@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "閃爍等級"
+                },
+                "default": {
+                    "title": "設為預設"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "將應用程式新增至「網路加速」",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "您最多可以新增 5 個要開啟的其他應用程式",
+                    "part2": "/",
+                    "part3": "已新增"
                 }
             }
         }

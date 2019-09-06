@@ -29,6 +29,12 @@ ui-popover-turn-on {
 	@media #{$medium-screen} {
 		max-width: 50rem;
 	}
+	@media #{$black-on-white}{
+		border:0.1rem solid $dark;
+		}
+		@media #{$white-on-black}{
+		border:0.1rem solid $light;
+		}
 }
 
 ::ng-deep .turn-on-modal-container {

@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM-overklokking",
                     "popup": {
                         "text": "Endringen vil være effektive etter at du har startet maskinen på nytt.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Installasjon av driver er påkrevd",
                         "text": "Installer driveren for å aktivere RAM-overklokking (krever omstart)",
-                        "button": "Installer",
-                        "link": "avbryt",
+                        "button": "INSTALLER",
+                        "link": "AVBRYT",
                         "networkBoostText": "Du må installere driveren for nettverks-forbedring for å kunne aktivere den",
                         "hybridModeText": "Du må installere driveren for hybrid-modus for å kunne aktivere den",
                         "cpuOverclockText": "Installer driveren for å aktivere CPU-overklokking (krever omstart)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Installasjon av driver er påkrevd",
                         "text": "Installer driveren for å aktivere belysning (krever omstart)",
-                        "button": "Installer",
-                        "link": "avbryt"
+                        "button": "INSTALLER",
+                        "link": "AVBRYT"
                     },
                     "lightingColorMessage": {
                         "text": "Valg av farge er ikke tilgjengelig for denne effekten."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MAKROTAST FOR ",
                     "deleteKey": "Slett",
-                    "clear": "Nullstill",
+                    "clear": "FJERN",
                     "intervalStatus": {
                         "keep": {
                             "title": "Behold forsinkelse",
@@ -228,8 +228,8 @@
                     "body": "Innspillingen blir tidsavbrutt hvis inndata stopper i mer enn ti sekunder."
                 },
                 "confirmButton": {
-                    "btnClear": "Nullstill",
-                    "btnCancel": "Avbryt"
+                    "btnClear": "FJERN",
+                    "btnCancel": "AVBRYT"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Blinkenivå"
+                },
+                "default": {
+                    "title": "SETT TIL STANDARD"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Legg apper til i nettverksforbedring",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Du kan legge til opptil fem apper til som du vil gi et løft",
+                    "part2": "av",
+                    "part3": "lagt til"
                 }
             }
         }

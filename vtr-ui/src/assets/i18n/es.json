@@ -39,13 +39,13 @@
                     "ramOverlock": "Aceleración de RAM",
                     "popup": {
                         "text": "El cambio surtirá efecto después de reiniciar el sistema.",
-                        "button": "aceptar"
+                        "button": "Aceptar"
                     },
                     "driverPopup": {
                         "headerText": "Se requiere instalar el controlador",
                         "text": "Instale el controlador para activar la aceleración de memoria RAM (es necesario reiniciar)",
-                        "button": "Instalar",
-                        "link": "cancelar",
+                        "button": "INSTALAR",
+                        "link": "CANCELAR",
                         "networkBoostText": "Necesita instalar un controlador para que la Mejora de red sea eficaz",
                         "hybridModeText": "Necesita instalar un controlador para que el Modo híbrido sea eficaz",
                         "cpuOverclockText": "Instale el controlador para activar la aceleración de memoria CPU (es necesario reiniciar)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Se requiere instalar el controlador",
                         "text": "Instale el controlador para activar la iluminación (es necesario reiniciar)",
-                        "button": "Instalar",
-                        "link": "cancelar"
+                        "button": "INSTALAR",
+                        "link": "CANCELAR"
                     },
                     "lightingColorMessage": {
                         "text": "Selección de color no disponible para este efecto."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "TECLA DE MACRO PARA ",
                     "deleteKey": "Eliminar",
-                    "clear": "Borrar",
+                    "clear": "BORRAR",
                     "intervalStatus": {
                         "keep": {
                             "title": "Conservar retraso",
@@ -228,8 +228,8 @@
                     "body": "La grabación excederá el tiempo de espera si la entrada se detiene durante más de 10 segundos."
                 },
                 "confirmButton": {
-                    "btnClear": "Borrar",
-                    "btnCancel": "Cancelar"
+                    "btnClear": "BORRAR",
+                    "btnCancel": "CANCELAR"
                 },
                 "btnOk": "Aceptar"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Nivel de parpadeo"
+                },
+                "default": {
+                    "title": "ESTABLECER EN VALORES PREDETERMINADOS"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Agregue aplicaciones a Potenciamiento en red",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Se puede agregar hasta 5 aplicaciones adicionales para beneficiarse del potenciamiento",
+                    "part2": "de",
+                    "part3": "agregado"
                 }
             }
         }

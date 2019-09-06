@@ -44,8 +44,8 @@
                     "driverPopup": {
                         "headerText": "Instalação do driver necessária",
                         "text": "Instale o driver para ativar o overclock da RAM (é necessário reinicializar)",
-                        "button": "Instalar",
-                        "link": "cancelar",
+                        "button": "INSTALAR",
+                        "link": "CANCELAR",
                         "networkBoostText": "Você precisa instalar o driver para o Aumento da rede ser aplicado",
                         "hybridModeText": "Você precisa instalar o driver para o Modo híbrido ser aplicado",
                         "cpuOverclockText": "Instale o driver para ativar o overclock da CPU (é necessário reinicializar)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Instalação do driver necessária",
                         "text": "Instale o driver para ativar a iluminação (é necessário reinicializar)",
-                        "button": "Instalar",
-                        "link": "cancelar"
+                        "button": "INSTALAR",
+                        "link": "CANCELAR"
                     },
                     "lightingColorMessage": {
                         "text": "Seleção de cor não disponível para este efeito."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "TECLA MACRO PARA ",
                     "deleteKey": "Delete",
-                    "clear": "Limpar",
+                    "clear": "LIMPAR",
                     "intervalStatus": {
                         "keep": {
                             "title": "Manter o atraso",
@@ -228,8 +228,8 @@
                     "body": "A gravação excederá o tempo limite se a entrada parar por mais de 10 segundos."
                 },
                 "confirmButton": {
-                    "btnClear": "Limpar",
-                    "btnCancel": "Cancelar"
+                    "btnClear": "LIMPAR",
+                    "btnCancel": "CANCELAR"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Nível de piscamento"
+                },
+                "default": {
+                    "title": "DEFINIR COMO PADRÃO"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Adicionar aplicativos para Aumento da rede",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Adicione até 5 aplicativos adicionais para aumentar",
+                    "part2": "de",
+                    "part3": "adicionado"
                 }
             }
         }

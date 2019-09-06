@@ -44,8 +44,8 @@
                     "driverPopup": {
                         "headerText": "Potrebna je namestitev gonilnika",
                         "text": "Namestite gonilnik, da aktivirate zvišanje takta pomnilnika RAM (potreben je vnovični zagon)",
-                        "button": "Namestitev",
-                        "link": "Prekliči",
+                        "button": "NAMESTI",
+                        "link": "PREKLIČI",
                         "networkBoostText": "Za učinkovito delovanje morate namestiti gonilnik za omrežno pospešitev",
                         "hybridModeText": "Za učinkovito delovanje morate namestiti gonilnik za hibridni način",
                         "cpuOverclockText": "Namestite gonilnik, da aktivirate zvišanje takta CPE (potreben je vnovični zagon)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Potrebna je namestitev gonilnika",
                         "text": "Namestite gonilnik, da aktivirate osvetlitev (potreben je vnovični zagon)",
-                        "button": "Namestitev",
-                        "link": "Prekliči"
+                        "button": "NAMESTI",
+                        "link": "PREKLIČI"
                     },
                     "lightingColorMessage": {
                         "text": "Izbira barve ni na voljo pri tem učinku."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MAKRO TIPKA ZA ",
                     "deleteKey": "Delete",
-                    "clear": "Izbriši",
+                    "clear": "IZBRIŠI",
                     "intervalStatus": {
                         "keep": {
                             "title": "Ohrani časovni zamik",
@@ -228,8 +228,8 @@
                     "body": "Snemanje se bo prekinilo, če več kot 10 sekund ne izvedete nobenega vnosa."
                 },
                 "confirmButton": {
-                    "btnClear": "Izbriši",
-                    "btnCancel": "Prekliči"
+                    "btnClear": "IZBRIŠI",
+                    "btnCancel": "PREKLIČI"
                 },
                 "btnOk": "V redu"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Hitrost utripanja"
+                },
+                "default": {
+                    "title": "NASTAVI NA PRIVZETE NASTAVITVE"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Dodaj aplikacije v omrežno pospešitev",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Dodate lahko največ 5 aplikacij za pospešitev",
+                    "part2": "od",
+                    "part3": "dodano"
                 }
             }
         }

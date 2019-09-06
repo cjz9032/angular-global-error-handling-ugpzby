@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "闪烁级别"
+                },
+                "default": {
+                    "title": "设为缺省设置"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "将应用添加到网络增强",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "最多可添加 5 个要加速的应用",
+                    "part2": "/",
+                    "part3": "添加"
                 }
             }
         }

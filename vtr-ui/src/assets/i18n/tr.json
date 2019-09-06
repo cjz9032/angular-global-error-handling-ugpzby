@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM Hız Aşırtma",
                     "popup": {
                         "text": "Değişiklik, bilgisayar yeniden başlatıldıktan sonra etkili olacaktır.",
-                        "button": "tamam"
+                        "button": "TAMAM"
                     },
                     "driverPopup": {
                         "headerText": "Sürücü Kurulumu Gerekli",
                         "text": "RAM Hız Aşırtmayı etkinleştirmek için sürücüyü yükleyin (Yeniden Yükleme Gerekir)",
-                        "button": "Kur",
-                        "link": "iptal",
+                        "button": "YÜKLE",
+                        "link": "İPTAL",
                         "networkBoostText": "Etkili hale getirmek için Ağ Yükseltme sürücüsünü yüklemeniz gerekir",
                         "hybridModeText": "Etkili hale getirmek için Hibrit Kipi sürücüsünü yüklemeniz gerekir",
                         "cpuOverclockText": "CPU Hız Aşırtmayı etkinleştirmek için sürücüyü yükleyin (Yeniden Yükleme Gerekir)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Sürücü Kurulumu Gerekli",
                         "text": "Aydınlatmayı etkinleştirmek için sürücüyü yükleyin (Yeniden Yükleme Gerekir)",
-                        "button": "Kur",
-                        "link": "iptal"
+                        "button": "YÜKLE",
+                        "link": "İPTAL"
                     },
                     "lightingColorMessage": {
                         "text": "Bu efekt için renk seçimi yapılamıyor."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "ŞUNUN MAKRO TUŞU ",
                     "deleteKey": "Sil",
-                    "clear": "Temizle",
+                    "clear": "TEMİZLE",
                     "intervalStatus": {
                         "keep": {
                             "title": "Gecikmeyi Koru",
@@ -228,8 +228,8 @@
                     "body": "Giriş 10 saniyeden uzun süre durursa kayıt zaman aşımına uğrar."
                 },
                 "confirmButton": {
-                    "btnClear": "Temizle",
-                    "btnCancel": "İptal"
+                    "btnClear": "TEMİZLE",
+                    "btnCancel": "İPTAL"
                 },
                 "btnOk": "TAMAM"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Yanıp Sönme Düzeyi"
+                },
+                "default": {
+                    "title": "VARSAYILANA AYARLA"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Ağ Yükseltme'ye uygulama ekle",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Yükseltme için en fazla 5 uygulama daha ekleyebilirsiniz",
+                    "part2": "/",
+                    "part3": "eklendi"
                 }
             }
         }
