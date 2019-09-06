@@ -7,6 +7,21 @@ import { CMSService } from '../cms/cms.service';
 import { LoggerService } from '../logger/logger.service';
 import { AppItem } from '../modern-preload/modern-preload.service';
 
+export class Category {
+	id: string; 	// app category id
+	title: string; 	// app category title
+}
+
+export class Installtype {
+	id: string; 	// app install type id
+	title: string; 	// app install type i.e., Desktop or Windows Store app or Web App
+}
+
+export class Recommendation {
+	id: string; 	// app recommendation id
+	title: string; 	// app recommendation title
+}
+
 export class AppDetails {
 	id: string;
 	title: string;
@@ -22,25 +37,16 @@ export class AppDetails {
 	recommendations: Recommendation[];
 	screenshots: []; 	// ["{app screenshot1}",  "{app screenshot2}"],
 	by: string; 		// app manufacturer name
-	updated: Date; 		// app updated date
+	updated: string; 	// app updated date
 	type: string;
 	filters: [];
+	showAdditionalInfo: boolean;
 	showStatus: number;
-}
-
-export class Category {
-	id: string; 	// app category id
-	title: string; 	// app category title
-}
-
-export class Installtype {
-	id: string; 	// app install type id
-	title: string; 	// app install type i.e., Desktop or Windows Store app or Web App
-}
-
-export class Recommendation {
-	id: string; 	// app recommendation id
-	title: string; 	// app recommendation title
+	constructor() {
+		this.category = new Category();
+		this.installtype = new Installtype();
+		this.recommendations =  Array(new Recommendation());
+	}
 }
 
 @Injectable({
@@ -117,19 +123,36 @@ export class AppsForYouService {
 		appDetails.description = detailFromCMS.Description;
 
 		// Screenshots
-		appDetails.screenshots = Object.assign({}, detailFromCMS.Screenshots);
+		appDetails.screenshots = Object.assign([], detailFromCMS.Screenshots);
+
+		// Video
+		appDetails.videourl = detailFromCMS.VideoURL;
 
 		// Additional Information
 		appDetails.by = detailFromCMS.By;
-		appDetails.updated = detailFromCMS.Updated;
-		// TODO: fix undefined in nest object
-		// appDetails.installtype.id = detailFromCMS.InstallType.Id;
-		// appDetails.installtype.title = detailFromCMS.InstallType.Title;
-		// appDetails.category.id = detailFromCMS.Category.Id;
-		// appDetails.category.title = detailFromCMS.Category.Title;
+		const dateString = detailFromCMS.Updated;
+		if (dateString && dateString.length >= 8) {
+			appDetails.updated =  dateString.substr(4, 2) + '-' +  dateString.substr(6, 2) + '-' + dateString.substr(0, 4);
+		} else {
+			appDetails.updated = '';
+		}
+		appDetails.installtype.id = detailFromCMS.InstallType.Id;
+		appDetails.installtype.title = detailFromCMS.InstallType.Title;
+		appDetails.category.id = detailFromCMS.Category.Id;
+		appDetails.category.title = detailFromCMS.Category.Title;
 
 		// Legal Agreement
 		appDetails.privacyurl = detailFromCMS.PrivacyURL;
+
+		if (appDetails.by === '' &&
+			appDetails.updated === '' &&
+			appDetails.installtype.title === ''	&&
+			appDetails.category.title === '' &&
+			appDetails.privacyurl === '') {
+			appDetails.showAdditionalInfo = false;
+		} else {
+			appDetails.showAdditionalInfo = true;
+		}
 
 		return appDetails;
 	}
