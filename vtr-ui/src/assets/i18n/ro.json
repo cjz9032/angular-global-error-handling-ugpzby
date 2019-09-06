@@ -44,8 +44,8 @@
                     "driverPopup": {
                         "headerText": "Instalarea driverului este obligatorie",
                         "text": "Instalați driverul pentru a activa suprasolicitarea RAM (este necesară repornirea)",
-                        "button": "Instalare",
-                        "link": "anulare",
+                        "button": "INSTALARE",
+                        "link": "ANULARE",
                         "networkBoostText": "Trebuie să instalați driverul pentru stimularea rețelei, pentru ca aceasta să fie mai eficientă",
                         "hybridModeText": "Trebuie să instalați driverul pentru modul hibrid, pentru ca acesta să fie mai eficient",
                         "cpuOverclockText": "Instalați driverul pentru a activa suprasolicitarea CPU (este necesară repornirea)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Instalarea driverului este obligatorie",
                         "text": "Instalați driverul pentru a activa funcția de iluminat (este necesară repornirea)",
-                        "button": "Instalare",
-                        "link": "anulare"
+                        "button": "INSTALARE",
+                        "link": "ANULARE"
                     },
                     "lightingColorMessage": {
                         "text": "Selectarea culorii nu este disponibilă pentru acest efect."
@@ -93,7 +93,7 @@
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
                 },
                 "systemStatus": {
-                    "info": "INFORMAȚII"
+                    "info": "INFORMAŢII"
                 },
                 "quickSettingstitle": {
                     "title": "Setări rapide"
@@ -136,18 +136,18 @@
                     "line3": "opriți înregistrarea după ce terminați de scris"
                 },
                 "buttons": {
-                    "start": "PORNIȚI ÎNRREGISTRAREA",
-                    "stop": "OPRIȚI ÎNREGISTRAREA",
+                    "start": "PORNIRE ÎNREGISTRARE",
+                    "stop": "OPRIRE ÎNREGISTRARE",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "ÎNCEPEȚI SĂ SCRIEȚI",
+                    "title": "ÎNCEPEŢI SĂ SCRIEŢI",
                     "description": "Pot fi înregistrare 20 de intrări în 20 de secunde."
                 },
                 "recorded": {
                     "title": "TASTĂ MACRO PENTRU ",
                     "deleteKey": "Ștergeți",
-                    "clear": "Ştergere",
+                    "clear": "ŞTERGERE",
                     "intervalStatus": {
                         "keep": {
                             "title": "Păstrați întârzierea",
@@ -228,8 +228,8 @@
                     "body": "Înregistrarea va expira dacă au trecut mai mult de 10 secunde de la ultima intrare."
                 },
                 "confirmButton": {
-                    "btnClear": "Ştergere",
-                    "btnCancel": "Anulare"
+                    "btnClear": "ŞTERGERE",
+                    "btnCancel": "ANULARE"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Nivel clipire"
+                },
+                "default": {
+                    "title": "SETARE CA IMPLICIT"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Adăugați aplicații la stimularea rețelei",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Adăugaţi max. 5 aplicaţii pentru stimulare",
+                    "part2": "din",
+                    "part3": "adăugat(e)"
                 }
             }
         }
