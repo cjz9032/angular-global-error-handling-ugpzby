@@ -39,13 +39,13 @@
                     "ramOverlock": "Pretaktovanie RAM",
                     "popup": {
                         "text": "Zmena sa prejaví po reštartovaní počítača.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Vyžaduje sa inštalácia ovládača",
                         "text": "Pretaktovanie RAM sa aktivuje po nainštalovaní ovládača (vyžaduje sa reštartovanie)",
-                        "button": "Nainštalovať",
-                        "link": "zrušiť",
+                        "button": "INŠTALOVAŤ",
+                        "link": "ZRUŠIŤ",
                         "networkBoostText": "Musíte nainštalovať ovládač, aby sa vykonalo zvýšenie výkonu siete",
                         "hybridModeText": "Musíte nainštalovať ovládač, aby sa aktivoval hybridný režim",
                         "cpuOverclockText": "Pretaktovanie CPU sa aktivuje po nainštalovaní ovládača (vyžaduje sa reštartovanie)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Vyžaduje sa inštalácia ovládača",
                         "text": "Osvetlenie sa aktivuje po nainštalovaní ovládača (vyžaduje sa reštartovanie)",
-                        "button": "Nainštalovať",
-                        "link": "zrušiť"
+                        "button": "INŠTALOVAŤ",
+                        "link": "ZRUŠIŤ"
                     },
                     "lightingColorMessage": {
                         "text": "Výber farby nie je pre tento efekt k dispozícii."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "KLÁVES MAKRA PRE ",
                     "deleteKey": "Delete",
-                    "clear": "Zmazať",
+                    "clear": "ZMAZAŤ",
                     "intervalStatus": {
                         "keep": {
                             "title": "Zachovať oneskorenie",
@@ -228,8 +228,8 @@
                     "body": "Časový limit nahrávania uplynie, ak sa v priebehu viac než 10 sekúnd nevykoná žiadny vstup."
                 },
                 "confirmButton": {
-                    "btnClear": "Zmazať",
-                    "btnCancel": "Zrušiť"
+                    "btnClear": "ZMAZAŤ",
+                    "btnCancel": "ZRUŠIŤ"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Úroveň blikania"
+                },
+                "default": {
+                    "title": "OBNOVIŤ PREDVOLENÉ"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Pridať aplikácie na zvýšenie výkonu siete",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Možno pridať až 5 apl. na zvýšenie výkonu",
+                    "part2": "z",
+                    "part3": "pridané/pridaných"
                 }
             }
         }

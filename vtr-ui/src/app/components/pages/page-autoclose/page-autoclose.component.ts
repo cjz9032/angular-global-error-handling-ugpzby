@@ -80,6 +80,7 @@ export class PageAutocloseComponent implements OnInit {
 
 	openTargetModal() {
 		try {
+			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 			this.hiddenScroll(true);
 			if (this.toggleStatus) {
@@ -98,6 +99,7 @@ export class PageAutocloseComponent implements OnInit {
 		const status = event.target.checked;
 		try {
 			this.getNeedStatus = !status;
+			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
 		} catch (error) {
 		}
 	}
@@ -120,6 +122,7 @@ export class PageAutocloseComponent implements OnInit {
 	modalCloseTurnOn(action: boolean) {
 		this.showTurnOnModal = action;
 		this.hiddenScroll(false);
+		this.showAppsModal = true;
 	}
 
 	modalCloseAddApps(action: boolean) {

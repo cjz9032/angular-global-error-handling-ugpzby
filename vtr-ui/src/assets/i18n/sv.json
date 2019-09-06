@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM-överklockning",
                     "popup": {
                         "text": "Ändringen får effekt när datorn startas om.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Drivrutinsinstallation krävs",
                         "text": "Installera drivrutin för att aktivera RAM-överklockning (omstart krävs)",
-                        "button": "Installera",
-                        "link": "avbryt",
+                        "button": "INSTALLERA",
+                        "link": "AVBRYT",
                         "networkBoostText": "Du måste installera en drivrutin för att använda Nätverksprestanda",
                         "hybridModeText": "Du måste installera en drivrutin för att använda Hybridläge",
                         "cpuOverclockText": "Installera drivrutin för att aktivera CPU-överklockning (omstart krävs)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Drivrutinsinstallation krävs",
                         "text": "Installera drivrutin för att aktivera belysning (omstart krävs)",
-                        "button": "Installera",
-                        "link": "avbryt"
+                        "button": "INSTALLERA",
+                        "link": "AVBRYT"
                     },
                     "lightingColorMessage": {
                         "text": "Det går inte att välja färg med denna effekt."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MAKROTANGENT FÖR ",
                     "deleteKey": "Delete",
-                    "clear": "Radera",
+                    "clear": "RENSA",
                     "intervalStatus": {
                         "keep": {
                             "title": "Behåll fördröjning",
@@ -228,8 +228,8 @@
                     "body": "Inspelningen stoppas efter 10 sekunders inaktivitet."
                 },
                 "confirmButton": {
-                    "btnClear": "Radera",
-                    "btnCancel": "Avbryt"
+                    "btnClear": "RENSA",
+                    "btnCancel": "AVBRYT"
                 },
                 "btnOk": "OK"
             },
@@ -294,6 +294,9 @@
                 },
                 "option5": {
                     "title": "Blinkningshastighet"
+                },
+                "default": {
+                    "title": "ANGE SOM STANDARD"
                 }
             },
             "profile": {
@@ -403,9 +406,9 @@
             "modalAddApps": {
                 "title": "Lägg till appar i Nätverksprestanda",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Lägg till upp till 5 appar",
+                    "part2": "av",
+                    "part3": "har lagts till"
                 }
             }
         }
