@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { delayWhen, filter, take, takeUntil } from 'rxjs/operators';
+import { delayWhen, filter, first, startWith, take, takeUntil } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
@@ -47,6 +47,10 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.breachedAccountsService.getNewBreachedAccounts();
+
+		this.userEmail$.pipe(first()).subscribe((userEmail) => {
+			this.updateTextForHeader(userEmail);
+		});
 
 		this.userEmail$.pipe(
 			delayWhen(() => this.emailScannerService.loadingStatusChanged$.pipe(filter((isLoad) => !isLoad))),

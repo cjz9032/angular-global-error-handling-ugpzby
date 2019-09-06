@@ -3,7 +3,6 @@ import { coefficients } from './coefficients';
 import { catchError, filter, map, startWith } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../../../userDataStatuses';
 import { of } from 'rxjs';
-import { FigleafOverviewService, FigleafSettings } from '../../../../common/services/figleaf-overview.service';
 import { AppStatusesService } from '../../../../common/services/app-statuses/app-statuses.service';
 import { ScoreCalculate } from './score-calculate.interface';
 
