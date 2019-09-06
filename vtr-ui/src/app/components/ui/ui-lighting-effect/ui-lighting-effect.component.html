@@ -1,6 +1,7 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()" tabindex="1">
+		<a class="dropdown-toggle" id="gaming-drop" href="javascript:void(0)" (click)="toggleOptions()"
+			attr.aria-label="{{selectedOption.label}}" role="link">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</a>
@@ -11,8 +12,8 @@
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
 						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.id"
 						metricsParam="{{option.id}}" metricsValue="{{option.value}}" metricsEvent="featureClick"
-						id="{{option.id}}" attr.aria-label="{{option.id}}">
-						<a class="dropdown-item" attr.aria-label="{{option.label}}" tabindex="{{i}}" role="link">
+						id="{{option.id}}">
+						<a class="dropdown-item" href="javascript:void(0)" (click)="optionSelected(option)" role="link">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
 						</a>
 					</li>
