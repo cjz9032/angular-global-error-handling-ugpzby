@@ -1526,7 +1526,6 @@
             "freeTrial": "Skydda alla dina enheter - 30 dagars kostnadsfri provprenumeration",
             "startTrial": "Starta provprenumeration",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1533,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Bakåt",
@@ -2402,6 +2403,7 @@
         "errorDeviceChoose": "Du måste välja en enhet som ska köras.",
         "errorNoOptionSelected": "Du måste välja ett alternativ.",
         "offline": "Enheten körs offline. Anslut till internet",
+        "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",

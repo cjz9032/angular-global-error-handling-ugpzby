@@ -1526,7 +1526,6 @@
             "freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
             "startTrial": "Deneme Süresini Başlat",
             "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "overviewTitle": "Overview of your Connected Home Security",
             "familyMembers": "Family members",
             "places": "Places",
             "personalDevices": "Personal devices",
@@ -1534,7 +1533,9 @@
             "homeDevices": "Home devices",
             "disconnectDevice": "Disconnect this device from Connected Home Security",
             "disconnect": "disconnect",
-            "goDashboard": "go to dashboard"
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
         },
         "tour": {
             "back": "Geri",
@@ -2402,6 +2403,7 @@
         "errorDeviceChoose": "Lütfen çalıştırmak istediğiniz cihazı seçin.",
         "errorNoOptionSelected": "Lütfen bir seçenek belirleyin.",
         "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
+        "doNotSuspend": "Bu testler kesintisiz çalıştırılmalıdır! Bu uygulamayı kapatmayın veya küçültmeyin ve tarama sırasında bilgisayarınızı uyku moduna almayın ya da kapatmayın.",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",
