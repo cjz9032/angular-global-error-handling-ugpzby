@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module';
@@ -24,7 +24,6 @@ import { StatusTransformPipe } from 'src/app/pipe/ui-security-statusbar/status-t
 import { IconClassPipe } from 'src/app/pipe/ui-security-statusbar/icon-class.pipe';
 import { DateClassPipe } from 'src/app/pipe/security-antivirus/date-class.pipe';
 import { SubTransformPipe } from 'src/app/pipe/security-antivirus/sub-transform.pipe';
-import { LinkStatusDirective } from 'src/app/directives/link-status.directive';
 import { IconNamePipe } from 'src/app/pipe/ui-security-statusbar/icon-name.pipe';
 import { SharedModule } from '../shared.module';
 import { CommonUiModule } from '../common/common-ui.module';
@@ -48,6 +47,9 @@ import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { CommonModalModule } from '../common/common-modal.module';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { WidgetAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-antivirus/widget-antivirus.component';
+import { WidgetMcafeeStateComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-mcafee-state/widget-mcafee-state.component';
+import { WidgetMcafeeMetricComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-mcafee-metric/widget-mcafee-metric.component';
 
 library.add(faCircle);
 library.add(faCheck);
@@ -86,6 +88,9 @@ library.add(faChevronUp);
 		StatusTransformPipe,
 		PipeInstallPipe,
 		IconNamePipe,
+		WidgetAntivirusComponent,
+		WidgetMcafeeStateComponent,
+		WidgetMcafeeMetricComponent,
 	],
 	imports: [
 		CommonModule,
@@ -104,6 +109,9 @@ library.add(faChevronUp);
 	],
 	providers: [
 		DialogService
+	],
+	schemas: [
+		CUSTOM_ELEMENTS_SCHEMA
 	]
 })
 export class SecurityAdvisorModule { }
