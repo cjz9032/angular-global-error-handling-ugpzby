@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { combineLatest } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, share, startWith } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, share, shareReplay, startWith } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
@@ -23,7 +23,8 @@ export class BreachedAccountsFacadeService {
 			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				})
-			)
+			),
+			shareReplay(1)
 		);
 	isAccountVerify$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
@@ -91,8 +92,10 @@ export class BreachedAccountsFacadeService {
 		this.isFigleafReadyForCommunication$,
 		this.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$
 	]).pipe(
-		map(([breachedAccountWereScanned, isAccountVerify, breachedAccountsCount,  isFigleafReadyForCommunication, isBreachedFoundAndUserNotAuthorizedWithoutFigleaf]) => (
+		debounceTime(200),
+		map(([breachedAccountWereScanned, isAccountVerify, breachedAccountsCount, isFigleafReadyForCommunication, isBreachedFoundAndUserNotAuthorizedWithoutFigleaf]) => (
 			(breachedAccountWereScanned && !isAccountVerify && isFigleafReadyForCommunication && breachedAccountsCount > 0) || isBreachedFoundAndUserNotAuthorizedWithoutFigleaf
-		))
+		)),
+		shareReplay(1)
 	);
 }

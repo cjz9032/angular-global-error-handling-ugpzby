@@ -41,7 +41,7 @@
 
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
 		<vtr-email-scanner
-			*ngIf="isUndefinedWithoutFigleafState$ | async"
+			*ngIf="(isUndefinedWithoutFigleafState$ | async)"
 			[scanCounter]="scanCounter$ | async"
 			[emailWasScanned]="breachedAccountWereScanned$ | async">
 		</vtr-email-scanner>
