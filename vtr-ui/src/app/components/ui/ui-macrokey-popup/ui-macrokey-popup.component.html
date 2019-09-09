@@ -17,9 +17,9 @@
 				<p>{{modalContent.bodyText | translate}}</p>
 			</div>
 			<hr>
-			<div class="row" tabindex="0">
+			<div class="row">
 				<div *ngIf="modalContent.btnConfirm">
-					<a href="javascript:void(0)" tabindex="1" role="link" class="btn enable-button"
+					<a href="javascript:void(0)" tabindex="0" role="link" class="btn enable-button"
 						(click)="submitAction(true)" id="macrokey_popup_clear" attr.aria-label="clear"
 						vtrMetrics [metricsItem]="'macrokey_popup_clear'"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</a>
@@ -29,7 +29,7 @@
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</a>
 				</div>
 				<div *ngIf="!modalContent.btnConfirm">
-					<a href="javascript:void(0)" tabindex="1" attr.aria-label="ok" role="link" class="btn enable-button" (click)="submitAction(true)"
+					<a href="javascript:void(0)" tabindex="0" attr.aria-label="ok" role="link" class="btn enable-button" (click)="submitAction(true)"
 						id="{{modalContent.metricsItemId}}" attr.aria-label="{{modalContent.metricsItemId}}" vtrMetrics
 						[metricsItem]="modalContent.metricsItemId"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.btnOk' | translate}}</a>

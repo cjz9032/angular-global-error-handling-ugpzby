@@ -31,7 +31,7 @@
 					<div class="interval" [ngClass]="{'hide': ignoreInterval}">
 						{{ 'gaming.macroKey.details.recorded.list.header.col2' | translate }}</div>
 				</div>
-				<div class="record-list" tabindex="0">
+				<div class="record-list">
 					<ng-container *ngFor="let record of recordsList; let i = index;">
 						<div class="record-item" (mouseover)="hoveredPair = record.pairName"
 							(mouseleave)="hoveredPair = ''" [ngClass]="{paired: record.pairName === hoveredPair}"
@@ -69,7 +69,7 @@
 									{{ record.interval + ' ms' | translate }}
 								</div>
 							</div>
-							<a href="javascript:void(0)" (click)="recordDelete(record, i)" role="link" tabindex="0"
+							<a href="javascript:void(0)" (click)="recordDelete(record, i)" role="link" tabindex="1"
 								attr.aria-label="clear records">
 								<div class="delete-button" *ngIf="!recordingStatus" (click)="recordDelete(record, i)">
 									<svg width="18px" height="18px" viewBox="0 0 20 20" version="1.1"
@@ -124,7 +124,7 @@
 								id="delete---anticon" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
 						</g>
 					</svg>
-					<span tabindex="1">{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
+					<span>{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
 				</div>
 			</a>
 		</div>
