@@ -72,12 +72,12 @@
             <vtr-ui-rounded-rectangle-radio [radioId]="'nMehod_show'" [group]="'topRowKeys'" name="nMehod_show"
               [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod' | translate"
               [value]="false" [checked]="!topRowKeyObj.stickyFunStatus" (change)="onChangeKeyType(false)"
-              [disabled]="false">
+              [isLarge]= "true" [disabled]="false">
             </vtr-ui-rounded-rectangle-radio>
             <vtr-ui-rounded-rectangle-radio [radioId]="'fnKeyMehod_show'" [group]="'topRowKeys'" name="fnKeyMehod_show"
               [label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod' | translate"
               [value]="true" [checked]="topRowKeyObj.stickyFunStatus" (change)="onChangeKeyType(true)"
-              [disabled]="false">
+              [isLarge]= "true" [disabled]="false">
             </vtr-ui-rounded-rectangle-radio>
             <div class="caption mt-3" *ngIf="topRowKeyObj.stickyFunStatus">
               <vtr-widget-permission-note
