@@ -278,6 +278,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
+		if (this.gamingCapabilities.fbnetFilter) {
+			this.legionUpdate[2].readonly = false;
+		}
 		if (!gamingStatus.xtuService) {
 			this.drop.hideDropDown = true;
 		} else {
