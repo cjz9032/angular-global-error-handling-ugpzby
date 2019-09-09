@@ -1,16 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ScoreCalculate } from './score-calculate.interface';
-import {
-	catchError,
-	debounceTime,
-	distinctUntilChanged,
-	filter,
-	map,
-	startWith,
-	switchMap,
-	switchMapTo,
-	take
-} from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, map, startWith, switchMap, take } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../../../userDataStatuses';
 import { coefficients } from './coefficients';
 import { of } from 'rxjs';
