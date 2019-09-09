@@ -1,6 +1,16 @@
 import { Injectable } from '@angular/core';
 import { ScoreCalculate } from './score-calculate.interface';
-import { catchError, distinctUntilChanged, filter, map, startWith, switchMap, switchMapTo, take } from 'rxjs/operators';
+import {
+	catchError,
+	debounceTime,
+	distinctUntilChanged,
+	filter,
+	map,
+	startWith,
+	switchMap,
+	switchMapTo,
+	take
+} from 'rxjs/operators';
 import { FeaturesStatuses } from '../../../../userDataStatuses';
 import { coefficients } from './coefficients';
 import { of } from 'rxjs';
@@ -19,10 +29,10 @@ export class ScoreForVulnerablePasswordsService implements ScoreCalculate {
 	}
 
 	private ammountPasswordFromBrowser$ = this.appStatusesService.globalStatus$.pipe(
+		distinctUntilChanged((prev, current) => prev.nonPrivatePasswordResult !== current.nonPrivatePasswordResult),
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
-		distinctUntilChanged(),
 		filter(Boolean),
 		switchMap(() => this.browserAccountsService.installedBrowsersData.pipe(
 			map((installedBrowsersData) => {
