@@ -62,16 +62,4 @@ export class SafeStorageService {
 	getEmail() {
 		return this.getPassword('figleaf-userEmail');
 	}
-
-	setScanCounter(count: number) {
-		this.setPassword('figleaf-scanCounter', count);
-	}
-
-	getScanCounter(): number {
-		return Number(this.getPassword('figleaf-scanCounter'));
-	}
-
-	removeScanCounter() {
-		return this.removePassword('figleaf-scanCounter');
-	}
 }

@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { SafeStorageService } from '../../../common/services/safe-storage.service';
+import { StorageService } from '../../../common/services/storage.service';
+
+const SCAN_STORAGE_NAME = 'scanCounter';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class ScanCounterService {
-	private scanCounter = new BehaviorSubject<number>(this.safeStorageService.getScanCounter());
+	private scanCounter = new BehaviorSubject<number>(Number(this.storageService.getItem(SCAN_STORAGE_NAME)));
 
 	constructor(
-		private safeStorageService: SafeStorageService
+		private storageService: StorageService
 	) {
-		this.safeStorageService.removeScanCounter();
 	}
 
 	setNewScan() {
-		const newCounter = this.safeStorageService.getScanCounter() ? this.safeStorageService.getScanCounter() + 1 : 1;
-		this.safeStorageService.setScanCounter(newCounter);
+		const newCounter = Number(this.storageService.getItem(SCAN_STORAGE_NAME)) ? Number(this.storageService.getItem(SCAN_STORAGE_NAME)) + 1 : 1;
+		this.storageService.setItem(SCAN_STORAGE_NAME, newCounter.toString());
 		this.scanCounter.next(newCounter);
 	}
 

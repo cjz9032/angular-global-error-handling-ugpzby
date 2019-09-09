@@ -11,7 +11,8 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { BreachedOtherDescriptionComponent } from './breached-other-description/breached-other-description.component';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
-
+import { ScanLimitPitchComponent } from './email-scanner/scan-limit-pitch/scan-limit-pitch.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 		ConfirmationComponent,
 		BreachedOtherDescriptionComponent,
 		VerifyEmailComponent,
+		ScanLimitPitchComponent,
 	],
 	exports: [
 		EmailScannerComponent,
@@ -40,7 +42,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 		ReactiveFormsModule,
 		FormsModule,
 		VtrCommonModule,
-		AppSearchModule
+		AppSearchModule,
+		RouterModule
 	],
 })
 export class CheckBreachedAccountsModule {
