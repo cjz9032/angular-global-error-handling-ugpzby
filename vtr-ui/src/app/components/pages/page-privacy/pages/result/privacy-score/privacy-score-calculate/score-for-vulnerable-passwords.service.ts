@@ -19,7 +19,7 @@ export class ScoreForVulnerablePasswordsService implements ScoreCalculate {
 	}
 
 	private ammountPasswordFromBrowser$ = this.appStatusesService.globalStatus$.pipe(
-		distinctUntilChanged((prev, current) => prev.nonPrivatePasswordResult !== current.nonPrivatePasswordResult),
+		distinctUntilChanged((prev, current) => prev.nonPrivatePasswordResult === current.nonPrivatePasswordResult),
 		map((userDataStatus) =>
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
 			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
