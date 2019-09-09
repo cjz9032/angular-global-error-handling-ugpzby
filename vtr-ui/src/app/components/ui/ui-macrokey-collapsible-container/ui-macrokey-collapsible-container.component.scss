@@ -38,7 +38,13 @@
 	}
 	.gaming-dropdown-menu {
 		width: 100%;
-		background-color: $gaming_shade;
+		background-color: $gaming_shade;	
+		@media #{$black-on-white}{
+			border:0.1rem solid $dark;
+			}
+		@media #{$white-on-black}{
+			border:0.1rem solid $light;
+			}	
 		border: none;
 		border-radius: 0.8rem;
 		position: absolute;
@@ -72,6 +78,12 @@
 				}
 				&:hover {
 					background: $gaming_hover;
+					@media #{$black-on-white}{
+						background-color:$high-contrast-grey;					
+						}
+					@media #{$white-on-black}{
+						background-color:$high-contrast-grey;						
+						}
 				}
 			}
 			&.selected {
