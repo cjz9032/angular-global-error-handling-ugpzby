@@ -9,6 +9,7 @@ import { CountNumberOfIssuesService } from '../../common/services/count-number-o
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { SafeStorageService } from '../../common/services/safe-storage.service';
 import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
+import { ScanCounterService } from '../../feature/check-breached-accounts/services/scan-counter.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -48,6 +49,8 @@ export class BreachedAccountsFacadeService {
 		filter(Boolean),
 	);
 
+	scanCounter$ = this.scanCounterService.getScanCounter();
+
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private breachedAccountsService: BreachedAccountsService,
@@ -55,7 +58,8 @@ export class BreachedAccountsFacadeService {
 		private appStatusesService: AppStatusesService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private emailScannerService: EmailScannerService,
-		private safeStorageService: SafeStorageService
+		private safeStorageService: SafeStorageService,
+		private scanCounterService: ScanCounterService
 	) {
 	}
 

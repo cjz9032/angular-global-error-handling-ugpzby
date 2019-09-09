@@ -14,7 +14,7 @@ export class SafeStorageService {
 	constructor() {
 	}
 
-	setPassword(username, password) {
+	private setPassword(username, password) {
 		const credentials = new this.windows.Security.Credentials.PasswordCredential();
 		credentials.resource = RESOURCE;
 		credentials.userName = username;
@@ -22,8 +22,8 @@ export class SafeStorageService {
 		this.vault.add(credentials);
 	}
 
-	getPassword(username) {
-		var password: string;
+	private getPassword(username) {
+		let password: string;
 		try {
 			password = this.vault.retrieve(RESOURCE, username).password;
 		} catch (error) {
@@ -32,7 +32,7 @@ export class SafeStorageService {
 		return password;
 	}
 
-	removePassword(username) {
+	private removePassword(username) {
 		try {
 			const credential = this.vault.retrieve(RESOURCE, username);
 			if (credential) {
@@ -43,11 +43,35 @@ export class SafeStorageService {
 		}
 	}
 
+	setAccessToken(accessToken) {
+		this.setPassword('figleaf-accessToken', accessToken);
+	}
+
+	getAccessToken() {
+		return this.getPassword('figleaf-accessToken');
+	}
+
+	removeAccessToken() {
+		return this.removePassword('figleaf-accessToken');
+	}
+
 	setEmail(email) {
 		this.setPassword('figleaf-userEmail', email);
 	}
 
 	getEmail() {
 		return this.getPassword('figleaf-userEmail');
+	}
+
+	setScanCounter(count: number) {
+		this.setPassword('figleaf-scanCounter', count);
+	}
+
+	getScanCounter(): number {
+		return Number(this.getPassword('figleaf-scanCounter'));
+	}
+
+	removeScanCounter() {
+		return this.removePassword('figleaf-scanCounter');
 	}
 }

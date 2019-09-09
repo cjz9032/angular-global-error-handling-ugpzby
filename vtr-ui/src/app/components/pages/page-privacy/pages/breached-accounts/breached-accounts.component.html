@@ -13,15 +13,6 @@
 		</vtr-feature-header>
 
 		<button class="breaches-page__button"
-				*ngIf="isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async"
-				vtrSendAnalytics
-				[metricsEvent]="'ItemClick'"
-				[metricsItem]="'BreachedAccountsVerifyEmailButton'"
-				(click)="startVerify()">
-			Verify email
-		</button>
-
-		<button class="breaches-page__button"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
 				vtrSendAnalytics
 				[metricsEvent]="'ItemClick'"
@@ -51,7 +42,7 @@
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
 		<vtr-email-scanner
 			*ngIf="isUndefinedWithoutFigleafState$ | async"
-			[userEmail]="userEmail$ | async"
+			[scanCounter]="scanCounter$ | async"
 			[emailWasScanned]="breachedAccountWereScanned$ | async">
 		</vtr-email-scanner>
 		<vtr-breached-account
@@ -60,8 +51,7 @@
 			[breachedAccounts]="(breachedAccounts$ | async)"
 			[isUserAuthorized]="isUserAuthorized$ | async"
 			[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
-			(openFigleaf)="openFigleafByUrl($event)"
-			(verifyClick)="startVerify()">
+			(openFigleaf)="openFigleafByUrl($event)">
 		</vtr-breached-account>
 
 		<vtr-verify-email
@@ -74,9 +64,3 @@
 
 	</div>
 </section>
-
-<vtr-common-popup [popUpId]="confirmationPopupName">
-	<ng-template>
-		<vtr-confirmation-popup [popupId]="confirmationPopupName"></vtr-confirmation-popup>
-	</ng-template>
-</vtr-common-popup>

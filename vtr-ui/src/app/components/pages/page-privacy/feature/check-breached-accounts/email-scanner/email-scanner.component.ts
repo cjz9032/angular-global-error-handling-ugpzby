@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class EmailScannerComponent {
-	@Input() userEmail: string;
+	@Input() scanCounter: number;
 	@Input() emailWasScanned = false;
 
 	showEmailScanner() {

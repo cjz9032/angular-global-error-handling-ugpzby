@@ -4,8 +4,6 @@ import { EmailScannerComponent } from './email-scanner/email-scanner.component';
 import { CheckBreachesFormComponent } from './check-breaches/check-breaches-form.component';
 import { ScanStepsComponent } from './scan-steps/scan-steps.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ConfirmationPopupComponent } from './confirmation-popup/confirmation-popup.component';
-import { EmailScannerService } from './services/email-scanner.service';
 import { VtrCommonModule } from '../../common/vtr-common.module';
 import { BreachedAccountComponent } from './breached-account/breached-account.component';
 import { BreachedDescriptionComponent } from './breached-description/breached-description.component';
@@ -20,7 +18,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 		EmailScannerComponent,
 		CheckBreachesFormComponent,
 		ScanStepsComponent,
-		ConfirmationPopupComponent,
+		ConfirmationComponent,
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
@@ -34,7 +32,6 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
-		ConfirmationPopupComponent,
 		BreachedOtherDescriptionComponent,
 		VerifyEmailComponent
 	],

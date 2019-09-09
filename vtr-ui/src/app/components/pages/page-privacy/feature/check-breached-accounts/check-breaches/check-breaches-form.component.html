@@ -2,10 +2,10 @@
     <form class="check-breaches__form" [formGroup]="emailForm" (submit)="handleEmailScan()">
         <div class="check-breaches__input-wrapper"
              [ngClass]="{
-             	'check-breaches__input-wrapper--small': size === 'small',
+             	'check-breaches__input-wrapper--small': strategy === 'small',
 			 	'check-breaches__input-wrapper--focused': isFormFocused,
 			 	'check-breaches__input-wrapper--validation-error': emailWasSubmitted && emailForm.dirty && emailForm.touched && emailForm.invalid,
-			 	'check-breaches__input-wrapper--server-error': (serverError$ | async) && size !== 'small'
+			 	'check-breaches__input-wrapper--server-error': (serverError$ | async) && strategy !== 'small'
 			 }">
             <div class="check-breaches__input-with-id">
                 <input class="check-breaches__input" type="text"
@@ -43,7 +43,7 @@
             <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Please enter a valid email address.</p>
         </div>
-        <div *ngIf="(serverError$ | async) && size !== 'small'" class="check-error check-error--server">
+        <div *ngIf="(serverError$ | async) && strategy !== 'small'" class="check-error check-error--server">
             <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Sorry, the server is not available at the moment. Please try again later.</p>
         </div>

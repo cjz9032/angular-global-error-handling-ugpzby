@@ -13,6 +13,7 @@ import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../../common/services/analytics/task-action-with-timeout.service';
+import { ScanCounterService } from '../services/scan-counter.service';
 
 interface UserProfile {
 	addressList: string[];
@@ -31,7 +32,7 @@ interface UserProfile {
 	styleUrls: ['./check-breaches-form.component.scss'],
 })
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
-	@Input() size: 'default' | 'small' = 'default';
+	@Input() strategy: 'default' | 'emitEmail' = 'default';
 	@Output() userEmail = new EventEmitter<string>();
 
 	emailForm = this.formBuilder.group({
@@ -47,11 +48,11 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	constructor(
 		private formBuilder: FormBuilder,
 		private emailScannerService: EmailScannerService,
-		private commonPopupService: CommonPopupService,
 		private userService: UserService,
 		private breachedAccountsService: BreachedAccountsService,
 		private cdr: ChangeDetectorRef,
-		private taskActionWithTimeoutService: TaskActionWithTimeoutService
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
+		private scanCounterService: ScanCounterService
 	) {
 	}
 
@@ -99,7 +100,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		const userEmail = this.emailForm.value.email;
 
 		this.emailScannerService.setUserEmail(userEmail);
-		this.size === 'default' ? this.setScanBreachedAccounts() : this.userEmail.emit(userEmail);
+		this.strategy === 'default' ? this.setScanBreachedAccounts() : this.userEmail.emit(userEmail);
 	}
 
 	private handleStartTyping() {
@@ -121,6 +122,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 	private setScanBreachedAccounts() {
 		this.emailScannerService.scanNotifierEmit();
+		this.scanCounterService.setNewScan();
 		this.taskActionWithTimeoutService.startAction(TasksName.scanBreachesAction);
 	}
 

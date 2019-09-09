@@ -23,8 +23,8 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	breachedAccountWereScanned$ = this.breachedAccountsFacadeService.breachedAccountWereScanned$;
 	isUndefinedWithoutFigleafState$ = this.breachedAccountsFacadeService.isUndefinedWithoutFigleafState$;
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = this.breachedAccountsFacadeService.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$;
+	scanCounter$ = this.breachedAccountsFacadeService.scanCounter$;
 
-	confirmationPopupName = 'confirmationPopup';
 	textForFeatureHeader = {
 		title: 'Check email for breaches',
 		figleafTitle: 'Lenovo Privacy Essentials by FigLeaf watches out for breaches',
