@@ -491,14 +491,13 @@ export class HardwareScanService {
 	public async initLoadingModules(culture) {
 		this.hasItemsToRecoverBadSectors = false;
 		this.getAllItems(culture).then(() => {
-			// Recover is hidden because CLI is under approval on SSRB - SR-2087 -->
-			// this.getItemsToRecoverBadSectors().then((response) => {
-			// 	this.devicesToRecoverBadSectors = response.categoryList[0];
-			// 	console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
-			// 	if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
-			// 		this.hasItemsToRecoverBadSectors = true;
-			// 	}
-			// });
+			this.getItemsToRecoverBadSectors().then((response) => {
+				this.devicesToRecoverBadSectors = response.categoryList[0];
+				console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
+				if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
+					this.hasItemsToRecoverBadSectors = true;
+				}
+			});
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
 		});

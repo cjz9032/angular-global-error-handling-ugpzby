@@ -153,10 +153,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		}
 		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
-		if (this.wifiSecurity && this.devicePosture && this.devicePosture.value.length > 0) {
-			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.wifiSecurity, this.devicePosture, this.translateService);
+		if (this.devicePosture && this.devicePosture.value.length > 0) {
+			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.devicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
-				isLocationServiceOn: this.homeSecurityDevicePosture.isLocationServiceOn,
 				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
 			});
 		} else if (cacheDevicePosture) {
@@ -192,9 +191,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 		this.chs.on(EventTypes.devicePostureEvent, (devicePosture) => {
 			if (devicePosture && devicePosture.value.length > 0) {
-				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.wifiSecurity, devicePosture, this.translateService);
+				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(devicePosture, this.translateService);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
-					isLocationServiceOn: this.homeSecurityDevicePosture.isLocationServiceOn,
 					homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
 				});
 			}
@@ -225,11 +223,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 					}
 				}, 0);
 			}
-			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.wifiSecurity, this.devicePosture, this.translateService);
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
-				isLocationServiceOn: this.homeSecurityDevicePosture.isLocationServiceOn,
-				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
-			});
 			this.homeSecurityLocation = new HomeSecurityLocation(this.wifiSecurity);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.homeSecurityLocation);
 		});

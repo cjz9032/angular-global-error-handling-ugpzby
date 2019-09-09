@@ -6,6 +6,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
+import { CHSAccountState } from '@lenovo/tan-client-bridge';
 
 @Component({
   selector: 'vtr-home-security-after-signup',
@@ -13,13 +14,12 @@ import { HomeSecurityMockService } from 'src/app/services/home-security/home-sec
   styleUrls: ['./home-security-after-signup.component.scss']
 })
 export class HomeSecurityAfterSignupComponent implements OnInit {
-	@Input() role: string;
-	@Input() lenovoID: string;
 	@Input() allDevices: HomeSecurityAllDevice;
 	@Input() account: HomeSecurityAccount;
 	@Input() common: HomeSecurityCommon;
+	expirationDay: number;
 	dialogService: DialogService;
-	chs: ConnectedHomeSecurity;
+	chs: any;
 
 	constructor(
 		dialogService: DialogService,
@@ -27,21 +27,36 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 		public homeSecurityMockService: HomeSecurityMockService
 	) {
 		this.dialogService = dialogService;
-		this.chs = vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
 	}
 
 	ngOnInit() {
-		this.role = 'admin';
+		this.expirationDay = this.chs.account.expirationDay;
 	}
 
 	switch(role) {
 		if (role === 'user') {
-			this.role = 'admin';
+			this.chs.account.role = 'admin';
+			if (this.chs.account.state === CHSAccountState.trial) {
+				this.chs.account.state = CHSAccountState.trialExpired;
+				this.expirationDay = 0;
+			} else if (this.chs.account.state === CHSAccountState.trialExpired) {
+				this.chs.account.state = CHSAccountState.standard;
+				this.expirationDay = 50;
+			} else if (this.chs.account.state === CHSAccountState.standard && this.expirationDay === 50) {
+				this.chs.account.state = CHSAccountState.standard;
+				this.expirationDay = 30;
+			} else if (this.chs.account.state === CHSAccountState.standard) {
+				this.chs.account.state = CHSAccountState.standardExpired;
+				this.expirationDay = 0;
+			} else {
+				this.chs.account.state = CHSAccountState.trial;
+				this.expirationDay = 10;
+			}
 		} else {
-			this.role = 'user';
+			this.chs.account.role = 'user';
 		}
 	}
 
@@ -51,6 +66,14 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 
 	openCornet(feature?: string) {
 		this.chs.visitWebConsole(feature);
+	}
+
+	isMoreThen30(num: number): boolean {
+		if (num > 30) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
