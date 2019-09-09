@@ -1,12 +1,12 @@
-<div class="check-breaches" *ngIf="!emailWasScanned && scanCounter < 2">
+<div class="check-breaches" *ngIf="!emailWasScanned && scanCounter < scanCounterLimit">
 	<vtr-check-breaches-form></vtr-check-breaches-form>
 </div>
 
 <button class="check-breaches__preview-link"
 		(click)="showEmailScanner()"
 		vtrOfflineMode
-		*ngIf="emailWasScanned && scanCounter < 2">
+		*ngIf="emailWasScanned && scanCounter < scanCounterLimit">
 	<span>Check another email</span>
 </button>
 
-<vtr-scan-limit-pitch *ngIf="scanCounter >= 2"></vtr-scan-limit-pitch>
+<vtr-scan-limit-pitch *ngIf="scanCounter >= scanCounterLimit"></vtr-scan-limit-pitch>
