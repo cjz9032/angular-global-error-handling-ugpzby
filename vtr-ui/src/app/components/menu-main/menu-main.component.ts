@@ -358,12 +358,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.smartAssist.getIntelligentScreenVisibility(),
 						this.smartAssist.getAPSCapability(),
 						this.smartAssist.getSensorStatus(),
-						this.smartAssist.getHDDStatus()
+						this.smartAssist.getHDDStatus(),
+						this.smartAssist.getSuperResolutionStatus()
 					]).then((responses: any[]) => {
 						this.logger.error('inside Promise.all THEN JS Bridge call', responses);
 
 						console.log('showSmartAssist.Promise.all()', responses);
-						console.log('Smart Assist Expressions', responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && (responses[7] > 0)));
+						console.log('Smart Assist Expressions', responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && (responses[7] > 0)) || responses[8].available);
 						// cache smart assist capability
 						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
 						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
@@ -371,11 +372,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						smartAssistCapability.isIntelligentMediaSupported = responses[3];
 						smartAssistCapability.isIntelligentScreenSupported = responses[4];
 						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && (responses[7] > 0));
+						smartAssistCapability.isSuperResolutionSupported = responses[8];
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
 						this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
 
 						const isAvailable =
-							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0));
+							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0)) || responses[8].available;
 						// const isAvailable = true;
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
 
