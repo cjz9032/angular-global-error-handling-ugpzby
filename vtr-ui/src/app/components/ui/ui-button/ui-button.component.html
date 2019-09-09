@@ -19,8 +19,6 @@
 			[metricsItemID]="metricsItemID"
 			[metricsItemCategory]="metricsItemCategory"
 			[metricsParent]="metricsParent"
-			attr.aria-label="{{label}}"
-			role="link"
 			[ngClass]="{'fullWidth': isFullWidth === true,
 						'halfWidth': isHalfWidth,
 						'text-upper-case': upperCaseLabel,
@@ -48,8 +46,6 @@
 			[metricsItemCategory]="metricsItemCategory"
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
-			attr.aria-label="{{label}}"
-			role="link"
 			(click)="onClickButton($event)">{{label}} </button>
 	</div>
 </div>
