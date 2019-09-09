@@ -3,7 +3,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map, mapTo, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { EmailScannerService } from '../services/email-scanner.service';
-import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { from, merge } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateEmail } from '../../../utils/helpers';
@@ -13,7 +12,6 @@ import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../../common/services/analytics/task-action-with-timeout.service';
-import { ScanCounterService } from '../services/scan-counter.service';
 
 interface UserProfile {
 	addressList: string[];
@@ -51,8 +49,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		private userService: UserService,
 		private breachedAccountsService: BreachedAccountsService,
 		private cdr: ChangeDetectorRef,
-		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
-		private scanCounterService: ScanCounterService
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
 	}
 
@@ -122,7 +119,6 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 	private setScanBreachedAccounts() {
 		this.emailScannerService.scanNotifierEmit();
-		this.scanCounterService.setNewScan();
 		this.taskActionWithTimeoutService.startAction(TasksName.scanBreachesAction);
 	}
 

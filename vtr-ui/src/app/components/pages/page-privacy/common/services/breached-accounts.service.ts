@@ -15,6 +15,7 @@ import { EmailScannerService, ErrorNames } from '../../feature/check-breached-ac
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
 import { UpdateTriggersService } from './update-triggers.service';
+import { ScanCounterService } from './scan-counter.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -56,6 +57,7 @@ export class BreachedAccountsService implements OnDestroy {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private updateTriggersService: UpdateTriggersService,
+		private scanCounterService: ScanCounterService,
 		private emailScannerService: EmailScannerService) {
 		this.getBreachedAccounts();
 	}
@@ -114,6 +116,7 @@ export class BreachedAccountsService implements OnDestroy {
 
 	private getBreachedAccountsFromBackend() {
 		return this.emailScannerService.getBreachedAccounts().pipe(
+			tap(() => this.scanCounterService.setNewScan()),
 			catchError((error) => this.handleError(error))
 		);
 	}
