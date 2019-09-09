@@ -1,246 +1,302 @@
-@import "../../../app.theme";
+@import "../../../app.theme.scss";
 
 .vtr-page-security-antivirus {
-	::ng-deep .vtr-widget-offline-info {
-		margin-top: $shift_up_small;
-	}
+  ::ng-deep .vtr-widget-offline-info {
+    margin-top: $shift_up_small;
+  }
 
-	.mt-minus {
-		margin-top: $shift_up_small;
-	}
+  .mt-minus {
+    margin-top: $shift_up_small;
+  }
 
-	.windows-logo {
-		width: 10rem;
-		padding-top: 1rem;
-	}
-	.mcafee-logo {
-		width: 10rem;
-		padding-top: 1rem;
-	}
+  .windows-logo {
+    width: 10rem;
+    padding-top: 0.9rem;
+  }
+  .mcafee-logo {
+    width: 10rem;
+    padding-top: 0.7rem;
+  }
 
-	.footer {
-		.title {
-			color: $main_dark;
-			font-size: 3rem;
-			font-weight: $weight_bold;
-			line-height: 2.9rem;
-		}
+  .footer {
+    .title {
+      color: $main_dark;
+      font-size: 3rem;
+      font-weight: $weight_bold;
+      line-height: 2.9rem;
+    }
 
-		.subtitle {
-			color: $highlight;
-			font-size: 1.6rem;
-			font-weight: $weight_light;
-			line-height: 2.3rem;
-			text-decoration: underline;
-		}
+    .subtitle {
+      color: $highlight;
+      font-size: 1.6rem;
+      font-weight: $weight_light;
+      line-height: 2.3rem;
+      text-decoration: underline;
+    }
 
-		.text-regular {
-			font-size: 1.6rem;
-		}
+    .text-regular {
+      font-size: 1.6rem;
+    }
 
-		.read-more-text {
-			font-size: 1.4rem;
-		}
+    .read-more-text {
+      font-size: 1.4rem;
+    }
 
-		.mcafee-logo {
-			width: 14rem;
-			padding-top: 1rem;
-		}
+    .mcafee-logo {
+      width: 14rem;
+      padding-top: 1rem;
+    }
 
-		a {
-			text-decoration: underline;
-		}
-	}
+    a {
+      text-decoration: underline;
+    }
+  }
 
-	.divider {
-		margin: 3.4rem 0;
-		height: 0.2rem;
-		background-color: $shade_lighter;
-	}
+  .divider {
+    margin: 2rem 0 1rem 0;
+    height: 0.2rem;
+    background-color: $shade_lighter;
+  }
 
-	.mt-60 {
-		margin-top: 60px;
-	}
+  .mt-60 {
+    margin-top: 60px;
+  }
 
-	.header {
-		.rounded-card-with-shadow {
-			box-shadow: $drop_shadow;
-			border-radius: $border_radius;
-			background: $main_darkest;
+  .header {
+    .rounded-card-with-shadow {
+      box-shadow: $drop_shadow;
+      border-radius: $border_radius;
+      background: $main_darkest;
 
-			.title {
-				color: $light;
-				font-size: 2.5rem;
-				font-weight: $weight_medium;
-				line-height: 2.9rem;
-			}
-
-			.subtitle {
-				color: $light;
-				font-size: 1.4rem;
-				line-height: 2.1rem;
-			}
-
-			.text {
-				font-size: 1.5rem;
-				line-height: 2.1rem;
-			}
-
-			.date {
-				color: $go_dark;
-				font-size: 1.6rem;
-				font-weight: $weight_medium;
-				line-height: 3rem;
-      		}
-		}
-	}
-
-	.subheader {
-		.rounded-card-with-shadow {
-			box-shadow: $drop_shadow;
-			border-radius: $border_radius;
-			background: $light;
-
-			.list-group {
-				border-radius: $border_radius;
-
-				.list-group-item {
-					background: $shade_extralight;
-				}
-
-				.text {
-					color: $screen_dark_70;
-					padding: 2rem 0;
-					font-size: 1.4rem;
-					font-weight: $weight_medium;
-					letter-spacing: 0.89px;
-					line-height: 2.3rem;
-				}
-			}
-
-			.title {
-				color: $screen_dark_70;
-				font-size: 2.5rem;
-				font-weight: $weight_regular;
-				line-height: 2.9rem;
-			}
-
-			.subtitle {
-				color: $main_shade;
-				font-size: 1.5rem;
-				font-weight: $weight_regular;
-				line-height: 2.3rem;
-			}
-
-			.text {
-				font-size: 1.5rem;
-				line-height: 2.1rem;
-			}
-
-			.date {
-				color: $go_dark;
-				font-size: 1.6rem;
-				font-weight: $weight_bold;
-				line-height: 3rem;
+      .title {
+        color: $light;
+        font-size: 2.5rem;
+        font-weight: $weight_medium;
+        line-height: 2.9rem;
       }
 
-      .stopdate{
+      .subtitle {
+        color: $light;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+      }
+
+      .text {
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+      }
+
+      .date {
+        color: $go_dark;
+        font-size: 1.6rem;
+        font-weight: $weight_medium;
+        line-height: 3rem;
+      }
+    }
+  }
+
+  .subheader {
+    .rounded-card-with-shadow {
+      box-shadow: $drop_shadow;
+      border-radius: $border_radius;
+      background: $light;
+
+      .list-group {
+        border-radius: $border_radius;
+
+        .list-group-item {
+          background: $shade_extralight;
+        }
+
+        .text {
+          color: $screen_dark_70;
+          padding: 2rem 0;
+          font-size: 1.4rem;
+          font-weight: $weight_medium;
+          letter-spacing: 0.89px;
+          line-height: 2.3rem;
+        }
+      }
+
+      .title {
+        color: $screen_dark_70;
+        font-size: 2rem;
+        font-weight: $weight_regular;
+        line-height: 2.9rem;
+      }
+
+      .subtitle {
+        color: $main_shade;
+        font-size: 1.5rem;
+        font-weight: $weight_regular;
+        line-height: 2.3rem;
+      }
+
+      .content {
+        color: $shade_darkest;
+        font-size: 1.5rem;
+        font-weight: $weight_regular;
+        line-height: 2.3rem;
+      }
+
+      .text {
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+      }
+
+      .date {
+        color: $go_dark;
+        font-size: 1.6rem;
+        font-weight: $weight_bold;
+        line-height: 3rem;
+      }
+
+      .stopdate {
         color: $stop_dark;
-				font-size: 1.6rem;
-				font-weight: $weight_bold;
-				line-height: 3rem;
+        font-size: 1.6rem;
+        font-weight: $weight_bold;
+        line-height: 3rem;
       }
-		}
-	}
 
-	.description {
-		margin-top: 5rem;
+      .height-line {
+        width: 0.01rem;
+        margin: 0 0.5rem;
+        background-color: $shade_darker;
+        height: 2.8rem;
+      }
 
-		.title {
-			color: $main_dark;
-			font-size: 3.5rem;
-			font-weight: $weight_medium;
-			line-height: 4.2rem;
-		}
-		.top-benefits-desc{
-			font-size: 1.5rem;
-			font-weight: $weight_light;
-			color: $main_shade;
-			padding: 1rem 1rem 1rem 0;
-		}
+      button {
+        min-height: 3rem;
+        border-radius: 3rem;
+        min-width: 12rem;
+        background: $gradient_main;
+        border: none;
+        color: $light;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        // cursor: pointer;
+        padding: 0 2.5rem;
+        // max-width: 33rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        letter-spacing: 0;
 
-		.subtitle {
-			color: $main_shade;
-			font-size: 1.4rem;
-			font-weight: $weight_light;
-			line-height: 2.3rem;
-		}
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
 
-		.inner-body {
-			.title {
-				color: $main_dark;
-				font-size: 1.4rem;
-				font-weight: $weight_black;
-				letter-spacing: 0.89px;
-				line-height: 2.3rem;
-				text-transform: uppercase;
-			}
+      .divider {
+        margin: 1rem 0 2rem 0;
+        height: 0.2rem;
+        background-color: $shade_lighter;
+      }
 
-			.subtitle {
-				color: $main_shade;
-				font-size: 1.4rem;
-				font-weight: $weight_light;
-				line-height: 2.3rem;
-			}
-		}
-	}
+      .sub-font {
+        padding: 2rem 4rem 2rem 2rem;
+        color: $main_darker;
+      }
+    }
+  }
 
-	.body {
-		.title {
-			color: $screen_dark_70;
-			font-size: 3.5rem;
-			font-weight: $weight_regular;
-			line-height: 4.2rem;
-		}
+  .description {
+    margin-top: 5rem;
+    box-shadow: $drop_shadow;
+    border-radius: $border_radius;
+    background: $light;
 
-		.subtitle {
-			color: $screen_dark_70;
-			font-size: 2.5rem;
-			font-weight: $weight_bold;
-			line-height: 2.9rem;
-		}
+    .title {
+      color: $main_dark;
+      font-size: 2.5rem;
+      font-weight: $weight_bold;
+      line-height: 4.2rem;
+      text-align: center;
+    }
+    .height {
+      height: 8rem;
+    }
 
-		.text {
-			color: $main_shade;
-			font-size: 1.5rem;
-			font-weight: $weight_regular;
-			line-height: 2.3rem;
-		}
-	}
+    .subtitle {
+      color: $main_shade;
+      font-size: 1.4rem;
+      font-weight: $weight_light;
+      line-height: 2.3rem;
+    }
 
-	.antivirus-block {
-		margin-top: 4rem;
+    .inner-body {
+      padding: 4rem 2rem;
+      .title {
+        color: $main_darker;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 2.3rem;
+        text-align: left;
+      }
 
-		ul.list-unstyled {
-			li {
-				.col-auto {
-					padding-left: .8rem;
-				}
-			}
-		}
-	}
+      .logo {
+        height: 6rem;
+      }
 
-	.badge {
-		font-weight: normal;
-		font-size: 69%;
-	}
+      .subtitle {
+        color: $main_darker;
+        font-size: 1.4rem;
+        font-weight: $weight_light;
+        line-height: 2.3rem;
+      }
+    }
+  }
 
-	.dashlane-side-left-img{
-		width: 90%;
-	}
-	.vtr-page-right-column{
-		@media #{$mediaquery_X5} {
-			padding: 4rem 4rem 4rem 8.5rem;
-		}
-	}
+  .body {
+    .title {
+      color: $screen_dark_70;
+      font-size: 3.5rem;
+      font-weight: $weight_regular;
+      line-height: 4.2rem;
+    }
+
+    .subtitle {
+      color: $screen_dark_70;
+      font-size: 2.5rem;
+      font-weight: $weight_bold;
+      line-height: 2.9rem;
+    }
+
+    .text {
+      color: $main_shade;
+      font-size: 1.5rem;
+      font-weight: $weight_regular;
+      line-height: 2.3rem;
+    }
+  }
+
+  .antivirus-block {
+    margin-top: 4rem;
+
+    ul.list-unstyled {
+      li {
+        .col-auto {
+          padding-left: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .badge {
+    font-weight: normal;
+    font-size: 69%;
+  }
+
+  .dashlane-side-left-img {
+    width: 90%;
+  }
+  .vtr-page-right-column {
+    @media #{$mediaquery_X5} {
+      padding: 4rem 4rem 4rem 8.5rem;
+    }
+  }
 }
