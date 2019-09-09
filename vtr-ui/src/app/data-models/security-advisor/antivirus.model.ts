@@ -12,27 +12,10 @@ export class AntiVirusViewModel {
 		registered: false,
 		trialUrl: 'unknown',
 		features: [],
-		metrics: [{
-			name: 'file',
-			id: 1,
-			value: 325
-		}, {
-			name: 'file',
-			id: 2,
-			value: 6923
-		}, {
-			name: 'file',
-			id: 4,
-			value: 786
-		}, {
-			name: 'file',
-			id: 6,
-			value: 12
-		}],
 		firewallStatus: false,
 		status: false,
 		enabled: false,
-		metrics: undefined,
+		metrics: [],
 		launch() { return Promise.resolve(true); }
 	};
 	windowsDefender: WindowsDefender = {
