@@ -2432,7 +2432,7 @@
             "delete": "删除",
             "warningBatterySaver": "注意：“计划的扫描”不会在“省电”模式下执行",
             "scheduleIntervalLimit": "另一次扫描已安排在十分钟内进行。请选择其他时间。",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "已安排好您的扫描，其将在以下日期于后台运行："
         },
         "recoverBadSectors": {
             "title": "恢复坏扇区",

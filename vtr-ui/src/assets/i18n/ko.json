@@ -2429,7 +2429,7 @@
             "delete": "삭제",
             "warningBatterySaver": "참고: 예약된 검사는 배터리 절약 모드에서 수행되지 않음",
             "scheduleIntervalLimit": "다른 스캔이 이미 10분 시간 범위 내에 예약되었습니다. 다른 시간을 선택하십시오.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "검사가 예약되었으며 다음 날짜에 백그라운드에서 실행됩니다."
         },
         "recoverBadSectors": {
             "title": "불량 섹터 복구",

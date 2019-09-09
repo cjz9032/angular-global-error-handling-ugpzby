@@ -2432,7 +2432,7 @@
             "delete": "Izbriši",
             "warningBatterySaver": "Napomena: Zakazana skeniranja se neće obaviti u režimu uštede baterije",
             "scheduleIntervalLimit": "Drugo skeniranje je već planirano unutar vremenskog perioda od deset minuta. Odaberite neko drugo vreme.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Vaše skeniranje je zakazano i pokrenut će se pozadini sljedećeg datuma:"
         },
         "recoverBadSectors": {
             "title": "Oporavi neispravne sektore",

@@ -2429,7 +2429,7 @@
             "delete": "حذف",
             "warningBatterySaver": "ملاحظة: لن يتم إجراء عمليات الفحص المجدولة في وضع توفير البطارية",
             "scheduleIntervalLimit": "كان من المقرر بالفعل إجراء مسح آخر في غضون فترة زمنية عشر دقائق. الرجاء اختيار وقت آخر.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "تمت جدولة فحصك وسيتم تشغيله في الخلفية في التاريخ التالي:"
         },
         "recoverBadSectors": {
             "title": "استعادة القطاعات المصابة",

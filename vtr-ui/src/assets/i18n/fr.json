@@ -2429,7 +2429,7 @@
             "delete": "Supprimer",
             "warningBatterySaver": "Remarque : les analyses planifiées ne sont pas effectuées en mode économiseur de batterie",
             "scheduleIntervalLimit": "Une autre analyse a déjà été planifiée dans une période de dix minutes. Veuillez choisir un autre moment.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Votre analyse a été planifiée et s'exécutera en arrière-plan à la date suivante :"
         },
         "recoverBadSectors": {
             "title": "Récupérer les secteurs incorrects",

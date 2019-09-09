@@ -2429,7 +2429,7 @@
             "delete": "מחק",
             "warningBatterySaver": "הערה: סריקות מתוזמנות לא יבוצעו במצב חיסכון בסוללה",
             "scheduleIntervalLimit": "סריקה נוספת כבר נקבעה בטווח זמן של עשר דקות. בחר זמן אחר.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "הסריקה שלכם תוכננה והיא תפעל ברקע בתאריך הבא:"
         },
         "recoverBadSectors": {
             "title": "שחזור סקטורים פגומים",

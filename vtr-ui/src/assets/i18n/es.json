@@ -2432,7 +2432,7 @@
             "delete": "Eliminar",
             "warningBatterySaver": "Nota: los análisis planificados no se ejecutarán en la modalidad de ahorro de batería",
             "scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Su escaneo se programó y se realizará en segundo plano en la siguiente fecha:"
         },
         "recoverBadSectors": {
             "title": "Recuperar sectores incorrectos",

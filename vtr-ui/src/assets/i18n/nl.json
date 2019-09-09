@@ -2429,7 +2429,7 @@
             "delete": "Verwijderen",
             "warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
             "scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Uw scan is gepland en wordt op de volgende datum op de achtergrond uitgevoerd:"
         },
         "recoverBadSectors": {
             "title": "Slechte sectoren herstellen",

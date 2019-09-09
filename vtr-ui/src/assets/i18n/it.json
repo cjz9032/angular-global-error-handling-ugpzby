@@ -2429,7 +2429,7 @@
             "delete": "Elimina",
             "warningBatterySaver": "Nota: le scansioni pianificate non verranno eseguite in modalità risparmio batteria",
             "scheduleIntervalLimit": "Un'altra scansione è stata già pianificata in un intervallo di tempo di dieci minuti. Selezionare un altro orario.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "La scansione è stata pianificata e verrà eseguita in background nella seguente data:"
         },
         "recoverBadSectors": {
             "title": "Ripristina settori danneggiati",
