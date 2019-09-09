@@ -9,11 +9,13 @@ export class HomeSecurityMockService {
 
 	private connectedHomeSecurity: any = {
 		account: {
-			state: CHSAccountState.local,
+			state: CHSAccountState.trial,
+			role: 'admin',
 			serverTimeUTC: new Date(),
-			expiration: new Date('apr 15, 2020'),
+			expiration: new Date('sep 15, 2019'),
+			expirationDay: 10,
 			lenovoId: {
-				email: 'email',
+				email: 'lenovo@lenovo.com',
 				loggedIn: false
 			},
 			consoleUrl: ''

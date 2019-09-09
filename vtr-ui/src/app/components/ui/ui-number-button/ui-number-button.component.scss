@@ -73,6 +73,10 @@
 			line-height: 4.8rem;
 			margin-bottom: 1.2rem;
 			margin-right: 0.8rem;
+			a {
+				color: $gaming_dark;
+				text-decoration: none;
+			}
 			&:nth-child(3) {
 				margin-right: 0;
 			}
@@ -84,6 +88,9 @@
 			}
 			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover;
 			&.selected {
+				a{
+					color: $gaming_lightest;
+				}
 				opacity: 1;
 				color: $gaming_lightest;
 				@media #{$black-on-white}{

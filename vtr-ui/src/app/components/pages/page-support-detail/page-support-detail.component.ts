@@ -3,7 +3,7 @@ import { QaService } from "../../../services/qa/qa.service";
 import { QA } from "../../../data-models/qa/qa.model";
 import { ActivatedRoute } from "@angular/router";
 import { TranslateService } from '@ngx-translate/core';
-import {DomSanitizer} from '@angular/platform-browser' //VAN-6426, Sanitization Exception 
+//import {DomSanitizer} from '@angular/platform-browser' //VAN-6426, Sanitization Exception
 
 @Component({
 	selector: 'vtr-page-support-detail',
@@ -31,8 +31,7 @@ export class PageSupportDetailComponent implements OnInit {
 
 	constructor(public qaService: QaService,
 		private translate: TranslateService,
-		private activateRoute: ActivatedRoute,
-		private sanitizer: DomSanitizer) {
+		private activateRoute: ActivatedRoute) {
 		
 		/*		
 		qaService.setTranslationService(this.translate);
@@ -77,9 +76,9 @@ export class PageSupportDetailComponent implements OnInit {
 	ngOnInit() {}
 
 	//VAN-6426, Sanitization Exception, internal content
-	getSafeDescription(html:any) {
+	/*getSafeDescription(html:any) {
         return this.sanitizer.bypassSecurityTrustHtml(html);
-	}
+	}*/
 
 
 	//VAN-5872, server switch feature

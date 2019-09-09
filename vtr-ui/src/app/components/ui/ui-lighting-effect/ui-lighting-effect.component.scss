@@ -110,6 +110,11 @@
 		}
 	}
 }
+.dropdown-item {
+	&:focus {
+		background: $gaming_hover;
+	}
+}
 ::ng-deep ngb-tooltip-window.tooltip {
 	top: 1.5rem !important;
 	.arrow {

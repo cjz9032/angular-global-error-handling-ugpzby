@@ -81,10 +81,26 @@
 				box-sizing: border-box;
 				padding: 0.6rem;
 			}
-			.input-color {
+				.input-color {
 				border-radius: 0.5rem;
 				&#rgb-rgb {
 					margin-left: 1.2rem;
+				}
+				@media #{$black-on-white}{
+					border:0.1rem solid $gaming_darkest;
+				}
+				@media #{$white-on-black}{
+					border:0.1rem solid $gaming_lightest;
+				}
+				&#rgb-rgb{
+					@media #{$black-on-white}{
+						border: $high-contrast-grey;
+						border:0.1rem solid $dark;
+					}
+					@media #{$white-on-black}{
+						background: $high-contrast-grey;
+						border:0.1rem solid $light;
+					}
 				}
 			}
 		}
