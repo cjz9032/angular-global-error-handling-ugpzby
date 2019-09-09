@@ -1,7 +1,7 @@
 <div class="vtr-ui-button">
 	<div class="button-box"
 		*ngIf="label">
-		<a href="javascript:void(0)" *ngIf="alreadyJoinGroup !== 'joined'"
+		<button *ngIf="alreadyJoinGroup !== 'joined'"
 			title="{{tooltip?label:''}}"
 			[disabled]="isDisabled"
 			type="button"
@@ -28,8 +28,8 @@
 						'min-height': btnHeight,
 						'btn-gradient': isGradient,
 						'btn-red': isRed}"
-			(click)="onClickButton($event)">{{label}} </a>
-		<a href="javascript:void(0)" *ngIf="alreadyJoinGroup === 'joined'"
+			(click)="onClickButton($event)">{{label}} </button>
+		<button *ngIf="alreadyJoinGroup === 'joined'"
 			title="{{tooltip?label:''}}"
 			type="button"
 			class="button disable"
@@ -50,6 +50,6 @@
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			attr.aria-label="{{label}}"
 			role="link"
-			(click)="onClickButton($event)">{{label}} </a>
+			(click)="onClickButton($event)">{{label}} </button>
 	</div>
 </div>
