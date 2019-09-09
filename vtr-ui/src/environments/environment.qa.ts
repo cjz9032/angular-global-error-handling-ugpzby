@@ -1,6 +1,7 @@
+import { IEnvironment } from './environment-base';
 import packageFile from '../../package.json';
 
-export const environment = {
+export const environment: IEnvironment = {
 	production: true,
 	cmsApiRoot: 'https://vantage.csw.lenovo.com',
 	upeApiRoot: 'https://portal.naea1.uds.lenovo.com',
