@@ -195,17 +195,20 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	public sendAppLaunchMetric(lauchType: string) {
 		this.timerService.start();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, lauchType, null, 0));
+		const stub = this.vantageShellService.getVantageStub();
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0));
 	}
 
 	public sendAppResumeMetric() {
 		this.timerService.start(); // restart timer
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, null, null, 0));
+		const stub = this.vantageShellService.getVantageStub();
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0));
 	}
 
 	public sendAppSuspendMetric() {
 		const duration = this.timerService.stop();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, null, null, duration));
+		const stub = this.vantageShellService.getVantageStub();
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration));
 	}
 
 	openWelcomeModal(page: number) {

@@ -1,6 +1,14 @@
 @import "../../../app.theme.scss";
 
 .select-box {
+	@media #{$black-on-white} {
+		background-color:transparent;
+		border: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		background-color: transparent;
+		border: 0.1rem solid $light;
+	}
 	&:hover {
 		.dropdown-menu {
 			display: none;
@@ -51,20 +59,18 @@
 	.gaming-dropdown-menu {
 		width: 100%;
 		background-color: $gaming_shade;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;			
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+		}
 		border: none;
 		border-radius: 0.8rem;
 		position: absolute;
 		overflow: hidden;
 		z-index: 10;
-		top: 3.5rem;
-		@media #{$black-on-white} {
-			background-color: $high-contrast-grey;
-			border: 0.1rem solid $dark;
-		}
-		@media #{$white-on-black} {
-			background-color: $high-contrast-grey;
-			border: 0.1rem solid $light;
-		}
+		top: 3.5rem;		
 		li {
 			list-style: none;
 			.dropdown-item {
@@ -86,6 +92,14 @@
 				}
 				&:hover {
 					background: $gaming_hover;
+					@media #{$black-on-white} {
+						background-color: $high-contrast-grey;
+						border: 0.1rem solid $dark;
+					}
+					@media #{$white-on-black} {
+						background-color: $high-contrast-grey;
+						border: 0.1rem solid $light;
+					}
 				}
 			}
 			&.selected {
@@ -108,6 +122,11 @@
 				color: $main_lightest;
 			}
 		}
+	}
+}
+.dropdown-item {
+	&:focus {
+		background: $gaming_hover;
 	}
 }
 ::ng-deep ngb-tooltip-window.tooltip {
