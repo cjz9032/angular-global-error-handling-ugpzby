@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { delayWhen, filter, first, startWith, take, takeUntil } from 'rxjs/operators';
+import { delayWhen, filter, first, skip, startWith, take, takeUntil } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { BreachedAccountsFacadeService } from './breached-accounts-facade.service';
+import { combineLatest } from 'rxjs';
 
 @Component({
 	// selector: 'app-admin',
@@ -48,14 +49,13 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.breachedAccountsService.getNewBreachedAccounts();
 
-		this.userEmail$.pipe(first()).subscribe((userEmail) => {
-			this.updateTextForHeader(userEmail);
-		});
-
-		this.userEmail$.pipe(
-			delayWhen(() => this.emailScannerService.loadingStatusChanged$.pipe(filter((isLoad) => !isLoad))),
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((userEmail) => {
+		combineLatest([
+			this.userEmail$,
+			this.emailScannerService.loadingStatusChanged$.pipe(startWith(false))
+		]).pipe(
+			filter(([_, isLoad]) => !isLoad),
+			takeUntil(instanceDestroyed(this))
+		).subscribe(([userEmail]) => {
 			this.updateTextForHeader(userEmail);
 		});
 	}
