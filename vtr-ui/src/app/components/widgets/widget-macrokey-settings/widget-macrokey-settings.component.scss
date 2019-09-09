@@ -565,6 +565,12 @@
 	}
 	.select-wrapper {
 		background: $gaming_hover;
+		@media #{$black-on-white}{
+			border:0.1rem solid $dark;
+			}
+		@media #{$white-on-black}{
+			border:0.1rem solid $light;
+			}
 		border-radius: 0.8rem;
 		padding-bottom: 1.4rem;
 		margin: 1rem 0;
