@@ -19,6 +19,12 @@ ui-popover {
 	@media #{$mediaquery_X31} {
 		width: 48rem;
 	}
+	@media #{$black-on-white} {
+		background: $high-contrast-grey;
+	}
+	@media #{$white-on-black} {
+		background: $high-contrast-grey;
+	}
 	&::after {
 		content: "";
 		position: absolute;
@@ -30,6 +36,14 @@ ui-popover {
 		top: calc(50% - 1.5rem);
 		right: -1.2rem;
 		transform: rotate(-45deg);
+		@media #{$black-on-white} {
+			border-bottom: 3rem solid $high-contrast-grey;
+			border-left: 3rem solid transparent;
+		}
+		@media #{$white-on-black} {
+			border-bottom: 3rem solid $high-contrast-grey;
+			border-left: 3rem solid transparent;
+		}
 	}
 	.vtr-ui-popover {
 		&.modal-body {
@@ -79,6 +93,15 @@ ui-popover {
 			margin-left: 3rem;
 			border-bottom: 2px solid $main;
 			cursor: pointer;
+		}
+	}
+	#restart_popup{
+		color: $gaming_darkest;
+		@media #{$black-on-white} {
+			display: none;
+		}
+		@media #{$white-on-black} {
+			display: none;
 		}
 	}
 }

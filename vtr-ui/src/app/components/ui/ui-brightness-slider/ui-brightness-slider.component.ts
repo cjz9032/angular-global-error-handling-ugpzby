@@ -1,17 +1,10 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter,
-	AfterContentChecked
-} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterContentChecked } from '@angular/core';
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 
 @Component({
 	selector: 'vtr-ui-brightness-slider',
 	templateUrl: './ui-brightness-slider.component.html',
-	styleUrls: ['./ui-brightness-slider.component.scss']
+	styleUrls: [ './ui-brightness-slider.component.scss' ]
 })
 export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked {
 	@Input() lightingData: any;
@@ -32,7 +25,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() setLightingBrightness: EventEmitter<ChangeContext> = new EventEmitter();
 
-	constructor() { }
+	constructor() {}
 
 	ngAfterContentChecked() {
 		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
@@ -49,7 +42,8 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			stepsArray: this.stepsArray,
 			floor: this.minValue, // min value
 			ceil: this.maxValue, // max value
-			step: this.step // value to change on each slide, default is 1
+			step: this.step, // value to change on each slide, default is 1
+			ariaLabel: 'Brightness'
 		};
 	}
 
@@ -60,7 +54,6 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 */
 	public onValueChange($event: ChangeContext) {
 		this.setLightingBrightness.emit($event);
-
 	}
 
 	/**
@@ -71,7 +64,5 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 		this.change.emit($event);
 	}
 
-	public onSliderChanged(event: any) {
-	}
+	public onSliderChanged(event: any) {}
 }
-

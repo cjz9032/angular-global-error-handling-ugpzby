@@ -46,6 +46,7 @@ window.addEventListener('focus',()=>{
 			PageDuration: this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`),
 			PageContext: this.pageContext,
 		};
+		console.log('Deactivate : ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
 		this.previousPageName = activatedRouteSnapshot.data.pageName;
 		this.metrics.sendAsync(data);
 		return true;

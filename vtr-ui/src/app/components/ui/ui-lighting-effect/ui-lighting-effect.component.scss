@@ -37,6 +37,12 @@
 			position: relative;
 			font-size: 2.2rem;
 			top: 0px !important;
+			@media #{$black-on-white} {
+				color: $high-contrast-grey;
+			}
+			@media #{$white-on-black} {
+				color: $high-contrast-grey;
+			}
 		}
 		&::after {
 			display: none;
@@ -102,6 +108,11 @@
 				color: $main_lightest;
 			}
 		}
+	}
+}
+.dropdown-item {
+	&:focus {
+		background: $gaming_hover;
 	}
 }
 ::ng-deep ngb-tooltip-window.tooltip {
