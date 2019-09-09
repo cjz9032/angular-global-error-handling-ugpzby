@@ -150,7 +150,7 @@ export class EmailScannerService {
 		);
 	}
 
-	getBreachedAccountsByEmailWithToken() {
+	private getBreachedAccountsByEmailWithToken() {
 		const accessToken = this.accessTokenService.getAccessToken();
 		if (accessToken) {
 			const headers = new HttpHeaders({
@@ -165,7 +165,7 @@ export class EmailScannerService {
 		}
 	}
 
-	getBreachedAccountsWithoutToken() {
+	private getBreachedAccountsWithoutToken() {
 		let response: Observable<never | BreachedAccountsFromServerResponse> = EMPTY;
 		const SHA1HashFromEmail = this.storageService.getItem(USER_EMAIL_HASH);
 

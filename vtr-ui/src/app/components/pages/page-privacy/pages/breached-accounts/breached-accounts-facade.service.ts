@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { combineLatest } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, share, startWith } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
@@ -46,6 +46,7 @@ export class BreachedAccountsFacadeService {
 	userEmail$ = this.emailScannerService.userEmail$.pipe(
 		startWith(this.safeStorageService.getEmail()),
 		filter(Boolean),
+		share()
 	);
 
 	constructor(
