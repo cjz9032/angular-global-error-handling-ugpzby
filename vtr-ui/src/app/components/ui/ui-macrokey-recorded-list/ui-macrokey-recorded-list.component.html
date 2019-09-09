@@ -36,7 +36,7 @@
 						<div class="record-item" (mouseover)="hoveredPair = record.pairName"
 							(mouseleave)="hoveredPair = ''" [ngClass]="{paired: record.pairName === hoveredPair}"
 							id="macro_key_delete_key{{record.pairName}}" attr.aria-label="{{record.pairName}}"
-							vtrMetrics [metricsItem]="'Macrokey_delete_key'" metricsEvent="featureClick" tabindex="1">
+							vtrMetrics [metricsItem]="'Macrokey_delete_key'" metricsEvent="featureClick">
 							<div class="pressing" *ngIf="record.status === 1">
 								<div class="key">
 									<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
@@ -69,8 +69,6 @@
 									{{ record.interval + ' ms' | translate }}
 								</div>
 							</div>
-							<a href="javascript:void(0)" (click)="recordDelete(record, i)" role="link" tabindex="1"
-								attr.aria-label="clear records">
 								<div class="delete-button" *ngIf="!recordingStatus" (click)="recordDelete(record, i)">
 									<svg width="18px" height="18px" viewBox="0 0 20 20" version="1.1"
 										xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -92,7 +90,6 @@
 									</svg>
 									{{ 'gaming.macroKey.details.recorded.deleteKey' | translate }}
 								</div>
-							</a>
 						</div>
 					</ng-container>
 				</div>
