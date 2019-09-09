@@ -1,8 +1,8 @@
 import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
-
-export class AntiVirusviewModel {
+import * as phoenix from '@lenovo/tan-client-bridge';
+export class AntiVirusViewModel {
 	currentPage = 'windows';
 	mcafeeInstall: boolean;
 	mcafee: McAfeeInfo = {
@@ -12,6 +12,23 @@ export class AntiVirusviewModel {
 		registered: false,
 		trialUrl: 'unknown',
 		features: [],
+		metrics: [{
+			name: 'file',
+			id: 1,
+			value: 325
+		}, {
+			name: 'file',
+			id: 2,
+			value: 6923
+		}, {
+			name: 'file',
+			id: 4,
+			value: 786
+		}, {
+			name: 'file',
+			id: 6,
+			value: 12
+		}],
 		firewallStatus: false,
 		status: false,
 		enabled: false,
@@ -27,7 +44,8 @@ export class AntiVirusviewModel {
 		status: false,
 		name: 'unknown',
 	};
-	otherFirewall: OtherInfo;
+	metricsList: Array<any> = [];
+	otherFirewall: OtherInfo ;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
@@ -39,8 +57,7 @@ export class AntiVirusviewModel {
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
 
-
-	constructor(public antiVirus: Antivirus, private commonService: CommonService) {
+	constructor(antiVirus: phoenix.Antivirus, private commonService: CommonService) {
 		const cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		if (cacheCurrentPage) {
 			this.currentPage = cacheCurrentPage;
@@ -65,6 +82,10 @@ export class AntiVirusviewModel {
 		if (cacheMcafeeStatusList) {
 			this.mcafeestatusList = cacheMcafeeStatusList;
 		}
+		const cacheMcafeeMetricsList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList);
+		if (cacheMcafeeMetricsList) {
+			this.metricsList = cacheMcafeeMetricsList;
+		}
 		const cacheWindowsList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList);
 		if (cacheWindowsList) {
 			this.windowsDefenderstatusList = cacheWindowsList;
@@ -80,10 +101,10 @@ export class AntiVirusviewModel {
 	}
 
 	antiVirusPage(antiVirus: Antivirus) {
-		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled)) {
+		if (antiVirus.mcafee && antiVirus.mcafee.enabled) {
 			this.currentPage = 'mcafee';
 			this.mcafeeInstall = true;
-		} else if (antiVirus.others) {
+		} else if (antiVirus.others && antiVirus.others.enabled) {
 			if (antiVirus.mcafee) {
 				this.mcafeeInstall = true;
 			} else { this.mcafeeInstall = false; }
