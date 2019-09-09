@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "Válasszon ki egy lehetőséget.",
         "offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
         "doNotSuspend": "Ezeket a teszteket nem szabad megszakítani. Az ellenőrzés során ne állítsa kis méretűre és ne zárja be az alkalmazást, illetve ne függessze fel vagy kapcsolja ki a számítógépet.",
+        "doNotUse": "Kérjük, a teszt befejeződéséig ne használja a számítógépet",
         "customize": {
             "name": "Személyre szabás",
             "test": "Teszt testreszabása",

@@ -2404,6 +2404,7 @@
         "errorNoOptionSelected": "É necessário selecionar uma opção.",
         "offline": "Este dispositivo está a funcionar no modo offline. Estabeleça ligação à Internet",
         "doNotSuspend": "Estes testes têm de ser executados sem interrupção! Não feche nem minimize esta aplicação e não suspenda ou desligue o computador durante a verificação.",
+        "doNotUse": "Procure não utilizar o computador até à conclusão do teste",
         "customize": {
             "name": "Personalizar",
             "test": "Personalizar teste",

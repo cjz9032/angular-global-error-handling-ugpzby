@@ -2404,6 +2404,7 @@
         "errorNoOptionSelected": "Selezionare un'opzione.",
         "offline": "Questo dispositivo è in esecuzione in modalità offline, connettersi a Internet",
         "doNotSuspend": "Questi test devono essere eseguiti senza interruzioni. Non chiudere o ridurre a icona l'applicazione e non sospendere o spegnere il computer durante la scansione.",
+        "doNotUse": "Non utilizzare il computer fino al completamento del test",
         "customize": {
             "name": "Personalizza",
             "test": "Personalizza test",
