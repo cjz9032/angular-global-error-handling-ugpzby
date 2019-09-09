@@ -8,13 +8,14 @@ export class AntiVirusviewModel {
 	mcafee: McAfeeInfo = {
 		localName: 'McAfee LiveSafe',
 		subscription: 'unknown',
-		expireAt: new Date,
+		expireAt: new Date(),
 		registered: false,
-		trailUrl: 'unknown',
+		trialUrl: 'unknown',
 		features: [],
 		firewallStatus: false,
 		status: false,
 		enabled: false,
+		metrics: undefined,
 		launch() { return Promise.resolve(true); }
 	};
 	windowsDefender: WindowsDefender = {
@@ -26,7 +27,7 @@ export class AntiVirusviewModel {
 		status: false,
 		name: 'unknown',
 	};
-	otherFirewall: OtherInfo ;
+	otherFirewall: OtherInfo;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
