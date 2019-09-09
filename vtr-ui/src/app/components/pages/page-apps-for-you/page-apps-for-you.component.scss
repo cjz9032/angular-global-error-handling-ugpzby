@@ -2,50 +2,78 @@
 
 .vtr-page-apps-for-you {
 	.vtr-page-content {
-
 		background: $shade_lightest;
+		min-height: calc(-31.5rem + 100vh);
+		padding: 0 $padding_side;
 
-		.img-con {
-			height: 10rem;
-			display: flex;
-			justify-content: center;
+		@media #{$mediaquery_X4} {
+			padding: 0 5rem;
 		}
 
-		.app-spinner {
-			position: absolute;
-			text-align: center;
-			margin-top: -50px;
-			margin-bottom: -16px;
-		}
-		
-		.app-spinner-img {
-			max-width: 100px;
-			max-height: 100px;
-		}
-		
-		.quick-assess-item {
-			width: 25%;
-			padding: 1.2rem;
-			text-decoration: none;
+		.apps-header {
+			margin-top: -5.3125rem;
+			box-shadow: $drop_shadow;
+			border-radius: $border_radius;
+			background-color: $light;
+			padding: 4rem;
+			height: 20rem;
+			margin-bottom: 4rem;
 
-			.item-con {
-				padding: 1.2rem 1rem 2.4rem;
-				width: 100%;
-				border: 1px solid #ECF0F1;
-				border-radius: 5px;
-				background: linear-gradient(180deg, #FBFCFC 0%, #F5F7F8 100%);
+			.logo-con {
+				display: flex;
+				align-items: center;
+				height: 100%;
+
+				.img-logo {
+					width: 10rem;
+					max-width: 100%;
+				}
+			}
+
+			.app-name {
 				display: flex;
 				flex-flow: column;
 				justify-content: center;
-				text-align: center;
-				cursor: pointer;
+				padding-left: 1rem;
 
-				.item-button {
-					width: 86%;
+				.app-title {
+					font-size: 2rem;
+				}
+
+				.app-price {
+					font-size: 1.4rem;
+					opacity: .8;
+				}
+			}
+
+			.app-spinner {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.spinner-border {
+					width: 5rem;
+					height: 5rem;
+				}
+			}
+
+
+			.btn-content {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				.btn-install {
+					display: block;
+					width: 100%;
+					max-width: 25rem;
 					padding: 0 2rem;
-					margin-left: 7%;
-					height: 4rem;
-					line-height: 4rem;
+					height: 5rem;
+					line-height: 5rem;
 					border-radius: 10rem;
 					background: $gradient_main;
 					color: $light;
@@ -58,6 +86,158 @@
 					text-overflow: ellipsis;
 					cursor: pointer;
 				}
+			}
+		}
+
+		.apps-content {
+			box-shadow: $drop_shadow;
+			border-radius: $border_radius;
+			background-color: $light;
+			padding: 4rem;
+			min-height: 20rem;
+			font-size: 1.8rem;
+			margin-bottom: 4rem;
+
+			.title {
+				color: $main;
+				font-size: 2.4rem;
+				font-weight: $weight_600;
+			}
+
+			.sub-title {
+				font-weight: $weight_600;
+			}
+
+
+
+			.description-con {
+				width: 100%;
+			}
+
+			.screenshot-con {
+				width: 100%;
+
+				.screenshot-slider {
+					width: 100%;
+					padding-top: 0.8rem;
+					position: relative;
+
+					.image-content {
+						position: relative;
+						width: 100%;
+						overflow: hidden;
+
+						.screenshot-img {
+							position: absolute;
+							width: 32%;
+							top: 0;
+							transition: left .3s;
+							cursor: pointer;
+							&.position-0 {
+								left: -34%;
+							}
+
+							&.position-1 {
+								left: 0;
+							}
+
+							&.position-2 {
+								left: 34%;
+							}
+
+							&.position-3 {
+								left: 68%;
+							}
+
+							&.position-4 {
+								left: 102%;
+							}
+
+							&.position-5,
+							&.position-6,
+							&.position-7,
+							&.position-8,
+							&.position-9,
+							&.position-10,
+							&.position-11,
+							&.position-12 {
+								left: 102%;
+							}
+
+							img {
+								width: 100%;
+							}
+						}
+					}
+
+					.arrow-content {
+						.arrow {
+							position: absolute;
+							top: 50%;
+							margin-top: -4rem;
+							width: 3rem;
+							height: 8rem;
+							font-size: 4rem;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							cursor: pointer;
+							opacity: .5;
+						}
+
+						.left-arrow {
+							left: 1rem;
+						}
+
+						.right-arrow {
+							right: 1rem;
+						}
+					}
+
+					&:hover {
+						.arrow-content {
+							.arrow {
+								opacity: .8;
+
+								&:hover {
+									opacity: 1;
+									color: $main;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.information-con {
+				width: 100%;
+
+				.info-item {
+					margin-bottom: 2rem;
+				}
+
+
+				.legal-agreement {
+					color: $main;
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		.loading-content {
+			width: 100%;
+			height: 50vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.spinner-border {
+				width: 10rem;
+				height: 10rem;
 			}
 		}
 	}

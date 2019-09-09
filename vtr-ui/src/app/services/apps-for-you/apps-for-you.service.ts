@@ -126,7 +126,7 @@ export class AppsForYouService {
 		appDetails.screenshots = Object.assign([], detailFromCMS.Screenshots);
 
 		// Video
-		appDetails.videourl = detailFromCMS.VideoURL;
+		appDetails.videourl = detailFromCMS.VideoUrl;
 
 		// Additional Information
 		appDetails.by = detailFromCMS.By;

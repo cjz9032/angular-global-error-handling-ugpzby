@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -8,22 +8,24 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { AppsForYouService, AppDetails } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { delay } from 'rxjs/operators';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
 
 @Component({
 	selector: 'vtr-page-apps-for-you',
 	templateUrl: './page-apps-for-you.component.html',
 	styleUrls: ['./page-apps-for-you.component.scss']
 })
-export class PageAppsForYouComponent implements OnInit {
+export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	title = 'Lenovo Migration Assistant';
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	backId = 'apps-for-you-page-btn-back';
-	isCategoryArticlesShow: true;
+
 	systemUpdateBridge: any;
 	appDetails: AppDetails;
-	appDetailsJson: any;	// For Debug
 	errorMessage: any;
 	installButtonStatus: number;
 	public appGuid: any;
@@ -44,12 +46,54 @@ export class PageAppsForYouComponent implements OnInit {
 		FAILED_INSTALL: -1,
 	};
 
+	mockScreenShots = [
+		{
+			id: 'apps-for-you-screenshot-1',
+			imageUrl: 'assets/images/apps-for-you/screenshot1(1).png',
+			position: 1,
+			isRepeat: false,
+			show: 'show',
+		},
+		{
+			id: 'apps-for-you-screenshot-2',
+			imageUrl: 'assets/images/apps-for-you/screenshot2[1].png',
+			position: 2,
+			isRepeat: false,
+			show: 'show',
+		},
+		{
+			id: 'apps-for-you-screenshot-3',
+			imageUrl: 'assets/images/apps-for-you/screenshot3-3.png',
+			position: 3,
+			isRepeat: false,
+			show: 'show',
+		},
+		{
+			id: 'apps-for-you-screenshot-4',
+			imageUrl: 'assets/images/apps-for-you/screenshot2[1].png',
+			position: 4,
+			isRepeat: false,
+			show: 'show',
+		},
+		// {
+		// 	id: 'apps-for-you-screenshot-5',
+		// 	imageUrl: 'assets/images/apps-for-you/screenshot3-3.png',
+		// 	position: 5,
+		// 	isRepeat: false,
+		// 	show: 'show',
+		// },
+	];
+	screenshotInterval: any;
+	showArrows = false;
+	arrowClickable = true;
+
 	constructor(
 		private route: ActivatedRoute,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
 		private shellService: VantageShellService,
-		private appsForYouService: AppsForYouService
+		public modalService: NgbModal,
+		private appsForYouService: AppsForYouService,
 	) {
 		// TODO: pass appGuid in route link
 		this.appGuid = 'FCF9F618-10F4-4230-99DD-F9B1CCB316AF'; // this.route.queryParams;
@@ -64,6 +108,70 @@ export class PageAppsForYouComponent implements OnInit {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+		if (this.mockScreenShots.length > 3) {
+			this.showArrows = true;
+			this.startScreenshotAutoSwipe();
+		}
+	}
+
+	ngOnDestroy() {
+		clearInterval(this.screenshotInterval);
+	}
+
+	startScreenshotAutoSwipe() {
+		this.screenshotInterval = setInterval(() => {
+			this.swipeRightToLeft();
+		}, 3000);
+	}
+
+	clickRightArrow() {
+		clearInterval(this.screenshotInterval);
+		this.swipeRightToLeft();
+		this.startScreenshotAutoSwipe();
+	}
+
+	clickLeftArrow() {
+		clearInterval(this.screenshotInterval);
+		this.swipeLeftToRight();
+		// this.startScreenshotAutoSwipe();
+	}
+
+	swipeRightToLeft() {
+		if (!this.arrowClickable) { return false; }
+		this.arrowClickable = false;
+		const screenshotNumber = this.mockScreenShots.length;
+		const preScreenShotIndex = this.mockScreenShots.findIndex(m => m.position === 0);
+		if (preScreenShotIndex > -1) {
+			const temp = JSON.parse(JSON.stringify(this.mockScreenShots[preScreenShotIndex]));
+			this.mockScreenShots.splice(preScreenShotIndex, 1);
+			temp.position = screenshotNumber;
+			this.mockScreenShots.push(temp);
+		}
+		setTimeout(() => {
+			this.mockScreenShots.forEach(ss => {
+				ss.position--;
+			});
+			this.arrowClickable = true;
+		}, 20);
+	}
+	swipeLeftToRight() {
+		if (!this.arrowClickable) { return false; }
+		this.arrowClickable = false;
+		const screenshotNumber = this.mockScreenShots.length;
+		const lastScreenShotIndex = this.mockScreenShots.findIndex(m => m.position === screenshotNumber);
+		if (lastScreenShotIndex > -1) {
+			const temp = JSON.parse(JSON.stringify(this.mockScreenShots[lastScreenShotIndex]));
+			this.mockScreenShots.splice(lastScreenShotIndex, 1);
+			temp.position = 0;
+			this.mockScreenShots.push(temp);
+		}
+		const timeout = setTimeout(() => {
+			this.mockScreenShots.forEach(ss => {
+				ss.position++;
+			});
+			this.arrowClickable = true;
+			clearTimeout(timeout);
+		}, 20);
 	}
 
 	onNotification(notification: AppNotification) {
@@ -118,7 +226,6 @@ export class PageAppsForYouComponent implements OnInit {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 		}
-		this.appDetailsJson = JSON.stringify(this.appDetails);
 	}
 
 	async clickInstallButton() {
@@ -126,7 +233,7 @@ export class PageAppsForYouComponent implements OnInit {
 			case this.installButtonStatusEnum.SEEMORE:
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
-				const path =  await this.systemUpdateBridge.getLaunchPath(this.appGuid);
+				const path = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
 				const result = await this.systemUpdateBridge.launchApp(path);
 				break;
 			case this.installButtonStatusEnum.INSTALL:
@@ -137,8 +244,21 @@ export class PageAppsForYouComponent implements OnInit {
 		}
 	}
 
-	onInnerBack() {
-
+	openScreenshotModal(imgUrl: string) {
+		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalAppsForYouScreenshotComponent, {
+			backdrop: true,
+			size: 'lg',
+			centered: true,
+			windowClass: 'apps-for-you-dialog',
+			keyboard: false,
+			beforeDismiss: () => {
+				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
+					modernPreloadModal.componentInstance.onBeforeDismiss();
+				}
+				return true;
+			}
+		});
+		modernPreloadModal.componentInstance.image = imgUrl;
 	}
 
 	copyObjectArray(obj: any) {
