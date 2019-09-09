@@ -2429,7 +2429,7 @@
             "delete": "Διαγραφή",
             "warningBatterySaver": "Σημείωση: Οι προγραμματισμένες σαρώσεις δεν θα εκτελεστούν στη λειτουργία εξοικονόμησης μπαταρίας",
             "scheduleIntervalLimit": "Μια άλλη σάρωση είχε ήδη προγραμματιστεί εντός χρονικού διαστήματος δέκα λεπτών. Επιλέξτε μια άλλη ώρα.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Η σάρωση έχει προγραμματιστεί και θα εκτελεστεί στο παρασκήνιο την ακόλουθη ημερομηνία:"
         },
         "recoverBadSectors": {
             "title": "Αποκατάσταση κατεστραμμένων τομέων",

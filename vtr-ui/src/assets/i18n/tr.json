@@ -2432,7 +2432,7 @@
             "delete": "Sil",
             "warningBatterySaver": "Not: Pil Tasarrufu kipinde Zamanlanmış Taramalar gerçekleştirilmez",
             "scheduleIntervalLimit": "On dakikalık zaman dilimi içinde başka bir tarama zaten zamanlandı. Lütfen başka bir zaman seçin.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Taramanız zamanlandı ve aşağıdaki tarihte arka planda çalışacak:"
         },
         "recoverBadSectors": {
             "title": "Bozuk Kesimleri Kurtar",

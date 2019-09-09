@@ -8,7 +8,7 @@ import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
+	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
 })
 export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
 	@Input() number: any;
@@ -30,6 +30,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.description',
 			id: 'macro_key_settings_repeat1',
+			label: 'no repeat',
 			value: MacroKeyRepeat.Repeat1
 		},
 		{
@@ -37,6 +38,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.description',
 			id: 'macro_key_settings_repeat2',
+			label: 'repeat 2',
 			value: MacroKeyRepeat.Repeat2
 		},
 		{
@@ -44,6 +46,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.description',
 			id: 'macro_key_settings_repeat3',
+			label: 'repeat 3',
 			value: MacroKeyRepeat.Repeat3
 		},
 		{
@@ -51,6 +54,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.description',
 			id: 'macro_key_settings_repeat4',
+			label: 'repeat 4',
 			value: MacroKeyRepeat.Repeat4
 		},
 		{
@@ -58,6 +62,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.description',
 			id: 'macro_key_settings_repeat5',
+			label: 'repeat 5',
 			value: MacroKeyRepeat.Repeat5
 		},
 		{
@@ -65,6 +70,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.description',
 			id: 'macro_key_settings_repeat6',
+			label: 'repeat 6',
 			value: MacroKeyRepeat.Repeat6
 		},
 		{
@@ -72,6 +78,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.description',
 			id: 'macro_key_settings_repeat7',
+			label: 'repeat 7',
 			value: MacroKeyRepeat.Repeat7
 		},
 		{
@@ -79,6 +86,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.description',
 			id: 'macro_key_settings_repeat8',
+			label: 'repeat 8',
 			value: MacroKeyRepeat.Repeat8
 		},
 		{
@@ -86,6 +94,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.description',
 			id: 'macro_key_settings_repeat9',
+			label: 'repeat 9',
 			value: MacroKeyRepeat.Repeat9
 		},
 		{
@@ -93,6 +102,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.description',
 			id: 'macro_key_settings_repeat10',
+			label: 'repeat 10',
 			value: MacroKeyRepeat.Repeat10
 		}
 	];
@@ -103,6 +113,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.intervalStatus.keep.title',
 			description: 'gaming.macroKey.details.recorded.intervalStatus.keep.description',
 			id: 'macro_key_settings_keepdelay',
+			label: 'keep delay',
 			value: MacroKeyInterval.KeepInterval
 		},
 		{
@@ -110,6 +121,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			name: 'gaming.macroKey.details.recorded.intervalStatus.ignore.title',
 			description: 'gaming.macroKey.details.recorded.intervalStatus.ignore.description',
 			id: 'macro_key_settings_ignoredelay',
+			label: 'ignore delay',
 			value: MacroKeyInterval.IgnoreInterval
 		}
 	];
@@ -123,9 +135,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		btnConfirm: true
 	};
 
-	constructor(private macrokeyService: MacrokeyService) {}
+	constructor(private macrokeyService: MacrokeyService) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	recordDelete(record, i) {
 		const remainingInputs = this.recordsData.inputs.filter(

@@ -2429,7 +2429,7 @@
             "delete": "Eliminar",
             "warningBatterySaver": "Nota: as Verificações Programadas não serão executadas no modo Poupança de Bateria",
             "scheduleIntervalLimit": "Já estava agendada outra verificação no período de dez minutos. Escolha outra hora.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "A verificação foi agendada e será executada em segundo plano na seguinte data:"
         },
         "recoverBadSectors": {
             "title": "Recuperar setores danificados",

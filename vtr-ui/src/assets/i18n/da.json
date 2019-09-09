@@ -2429,7 +2429,7 @@
             "delete": "Slet",
             "warningBatterySaver": "Bemærk: Planlagte scanninger kører ikke i strømsparetilstand",
             "scheduleIntervalLimit": "Der er allerede planlagt en anden søgning inden for en ti minutters tidsperiode. Vælg et andet klokkeslæt.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Din scanning er planlagt og vil blive udført i baggrunden på følgende dato:"
         },
         "recoverBadSectors": {
             "title": "Retablering af dårlige sektorer",
