@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "Molimo, odaberite opciju.",
         "offline": "Uređaj radi u izvanmrežnom načinu rada, povežite internet",
         "doNotSuspend": "Ovi se testovi moraju izvoditi bez prekida! Tijekom pregleda nemojte zatvarati ni minimizirati aplikaciju niti prebacivati računalo u stanje mirovanja ili ga isključivati.",
+        "doNotUse": "Nemojte koristiti računalo dok se ovaj test ne dovrši",
         "customize": {
             "name": "Prilagodba",
             "test": "Prilagodi test",
@@ -2432,7 +2433,7 @@
             "delete": "Izbriši",
             "warningBatterySaver": "Napomena: Zakazani pregledi se neće izvoditi u načinu rada za uštedu baterije",
             "scheduleIntervalLimit": "Još jedno skeniranje već je zakazano u roku manjem od deset minuta. Odaberite drugo vrijeme.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Vaše skeniranje je zakazano i pokrenut će se pozadini sljedećeg datuma:"
         },
         "recoverBadSectors": {
             "title": "Oporavak neispravnih sektora",

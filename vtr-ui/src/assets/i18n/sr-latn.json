@@ -374,37 +374,37 @@
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "addAppsButton": "Add",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
-            "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+            "title": "Automatsko zatvaranje",
+			"addAppsButton": "Dodaj",
+			"introLine": "Dodajte apl. koje žel. da zatv. kad pokr. igru. To će osloboditi neiskorišćene resurse radi povećanja performansi u igri. NAPOMENA: Ova funkcija u potpunosti zatvara aplikaciju. Zato uvek vodite računa da ste sačuvali svoj rad.",
+			"modalTurnAutoClose": {
+				"title": "Želite da uključite Automatsko zatvaranje?",
+				"body": "Aplikacije koje ste dodali će biti zatvorene kada igrate, da oslobodite resurse za igru.",
+				"checkedTitle": "Ne pitaj ponovo",
+				"btnConfirm": "Uključi",
+				"btnCancel": "Ne sad"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Dodavanje aplikacija u Automatsko zatvaranje",
+				"body": "Samo trenutno pokrenute aplikacije prikazaće se na listi u nastavku."
             },
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Nema pokrenutih aplikacija za dodavanje",
+				"body": "Prikazaće se samo aplikacije koje su trenutno pokrenute. Pokrenite aplikaciju koju želite da dodate i vratite se."
             }
         },
         "networkBoost": {
-            "title": "Networkboost",
-            "introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, like Twitch or Dsicard. It's recommended that you add them below so that they will also recieve priority on your network.",
-            "modalTurn": {
-                "title": "Turn on Network Boost ?",
-                "body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+            "title": "Pojačanje mreže",
+            "introLine": "Omogućavanje Pojačanja mreže automatski postavlja prioritet igara na najviši nivo u mreži i povećava brzinu. Ako koristite aplikacije dok igrate, npr. Twitch ili Discord, preporučujemo da ih dodate u listu u nastavku kako bi takođe imale prioritet u vašoj mreži.",
+            "modalTurn": {
+                "title": "Želite da uključite Pojačanje mreže?",
+                "body": "Želite da uključite Pojačanje mreže? Aplikacije koje ste dodali deliće više mreže kada su pokrenute.",
+                "checkedTitle": "Ne pitaj ponovo",
+                "btnConfirm": "Uključi",
+                "btnCancel": "Ne sad"
             },
             "modalAddApps": {
-                "title": "Add apps to Network Boost",
+                "title": "Dodavanje aplikacija u Pojačanje mreže",
                 "body": {
                     "part1": "Možete dodati do 5 dod. aplik. za pojačanje",
                     "part2": "od",
@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "Morate da izaberete neku opciju.",
         "offline": "Uređaj radi u režimu van mreže, povežite internet",
         "doNotSuspend": "Ovi testovi moraju da rade bez prekida! Nemojte zatvarati niti umanjivati ovu aplikaciju i nemojte suspendovati niti isključiti računar tokom skeniranja.",
+        "doNotUse": "Nemojte da koristite računar dok se test ne završi",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagodite test",
@@ -2432,7 +2433,7 @@
             "delete": "Izbriši",
             "warningBatterySaver": "Napomena: Zakazana skeniranja se neće obaviti u režimu uštede baterije",
             "scheduleIntervalLimit": "Drugo skeniranje je već planirano unutar vremenskog perioda od deset minuta. Odaberite neko drugo vreme.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Vaše skeniranje je zakazano i pokrenut će se pozadini sljedećeg datuma:"
         },
         "recoverBadSectors": {
             "title": "Oporavi neispravne sektore",

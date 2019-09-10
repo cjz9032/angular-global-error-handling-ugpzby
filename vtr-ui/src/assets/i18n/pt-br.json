@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "É necessário selecionar uma opção.",
         "offline": "Este dispositivo está em execução no modo offline, conecte-se à Internet",
         "doNotSuspend": "Estes testes devem ser executados de forma ininterrupta. Não feche ou minimize este aplicativo, nem suspenda ou desligue o computador durante a verificação.",
+        "doNotUse": "Não use seu computador até que este teste seja concluído",
         "customize": {
             "name": "Personalizar",
             "test": "Personalizar Teste",
@@ -2432,7 +2433,7 @@
             "delete": "Excluir",
             "warningBatterySaver": "Nota: as Varreduras planejadas não serão executadas no modo Economizador de bateria",
             "scheduleIntervalLimit": "Outra verificação já estava agendada dentro de um intervalo de dez minutos. Escolha outra hora.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Sua verificação foi agendada e será executada em segundo plano na seguinte data:"
         },
         "recoverBadSectors": {
             "title": "Recuperar setores ruins",

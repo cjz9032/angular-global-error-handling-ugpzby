@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "Musíte vybrať niektorú z možností.",
         "offline": "Toto zariadenie je v režime offline, pripojte ho k internetu",
         "doNotSuspend": "Tieto testy musia prebiehať bez prerušenia. Počas kontroly nezatvárajte ani neminimalizujte aplikáciu a neodstavujte ani nevypínajte počítač.",
+        "doNotUse": "Počítač nepoužívajte, kým sa test nedokončí",
         "customize": {
             "name": "Prispôsobiť",
             "test": "Prispôsobiť test",
@@ -2432,7 +2433,7 @@
             "delete": "Odstrániť",
             "warningBatterySaver": "Poznámka: Plánované snímania sa nevykonajú v režime Šetrič batérie",
             "scheduleIntervalLimit": "V rámci desaťminútového časového rozpätia už je naplánovaná iná kontrola. Vyberte iný čas.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Kontrola bola naplánovaná a spustí sa na pozadí k nasledujúcemu dátumu:"
         },
         "recoverBadSectors": {
             "title": "Obnoviť chybné sektory",

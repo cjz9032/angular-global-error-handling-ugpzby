@@ -2404,6 +2404,7 @@
         "errorNoOptionSelected": "원하는 옵션을 선택하십시오.",
         "offline": "이 장치가 오프 라인 모드에서 실행 중입니다. 인터넷에 연결하십시오",
         "doNotSuspend": "이러한 테스트는 중단 없이 실행되어야 합니다! 이 앱을 닫거나 최소화하면 안 되며 스캔 중에는 컴퓨터를 절전 모드로 전환하거나 꺼서는 안 됩니다.",
+        "doNotUse": "이 테스트가 완료될 때까지 컴퓨터 사용을 삼가 주십시오.",
         "customize": {
             "name": "사용자 정의",
             "test": "테스트 사용자 지정",
@@ -2429,7 +2430,7 @@
             "delete": "삭제",
             "warningBatterySaver": "참고: 예약된 검사는 배터리 절약 모드에서 수행되지 않음",
             "scheduleIntervalLimit": "다른 스캔이 이미 10분 시간 범위 내에 예약되었습니다. 다른 시간을 선택하십시오.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "검사가 예약되었으며 다음 날짜에 백그라운드에서 실행됩니다."
         },
         "recoverBadSectors": {
             "title": "불량 섹터 복구",

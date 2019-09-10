@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "Du måste välja ett alternativ.",
         "offline": "Enheten körs offline. Anslut till internet",
         "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
+        "doNotUse": "Använd inte datorn förrän testet har slutförts",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",
@@ -2432,7 +2433,7 @@
             "delete": "Ta bort",
             "warningBatterySaver": "Obs! Schemalagda sökningar fungerar inte i batterisparläge",
             "scheduleIntervalLimit": "En annan genomsökning är schemalagd inom tio minuter. Välj en annan tid.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Genomsökningen har schemalagts och kommer att köras i bakgrunden följande datum:"
         },
         "recoverBadSectors": {
             "title": "Återställa skadade sektorer",

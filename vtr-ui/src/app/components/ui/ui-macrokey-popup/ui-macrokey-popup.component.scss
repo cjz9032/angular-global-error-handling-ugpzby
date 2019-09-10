@@ -20,6 +20,12 @@ ui-popover {
 	top: 25%;
 	left: 0;
 	margin: auto;
+	@media #{$black-on-white}{
+		border:0.1rem solid $dark;
+		}
+	@media #{$white-on-black}{
+		border:0.1rem solid $light;
+		}
 	@media #{$small-screen} {
 		max-width: 45rem;
 	}

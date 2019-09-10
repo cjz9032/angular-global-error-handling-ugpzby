@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "您必須選擇一個選項。",
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
         "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
+        "doNotUse": "在這項測試完成之前，請勿使用您的電腦",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",
@@ -2432,7 +2433,7 @@
             "delete": "刪除",
             "warningBatterySaver": "附註：「排程掃描」不會在「省電功能」模式下執行",
             "scheduleIntervalLimit": "另一次掃描已排程在十分鐘內進行。請選擇其他時間。",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "您的掃描已排定，將在下列日期於背景執行："
         },
         "recoverBadSectors": {
             "title": "回復錯誤磁區",

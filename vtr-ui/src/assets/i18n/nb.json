@@ -2407,6 +2407,7 @@
         "errorResult": "Du må velge en test for å kjøre den.",
         "offline": "Denne enheten kjører i frakoblet modus, så koble den til Internett",
         "doNotSuspend": "Disse testene må kjøre uavbrutt! Ikke lukk eller minimer denne appen, og ikke utsett eller slå av datamaskinen under skanningen.",
+        "doNotUse": "Avstå fra å bruke datamaskinen før denne testen er fullført",
         "battery": {
             "title": "Aktiver batteriladeterskel",
             "description": "Aktiverer du egendefinert batterilading, vil selve batteriet generelt sett vare lenger når du bruker denne enheten. Å ikke lade batteriet helt opp vil imidlertid gi kortere brukstid. For å aktivere denne funksjonen helt må du ta ut støpselet til datamaskinen og la batteriet lades helt ut eller til under terskelen for ladestopp.",
@@ -2437,7 +2438,7 @@
             "delete": "Slett",
             "warningBatterySaver": "Merk: Planlagte skanninger vil ikke bli utført i batterisparingsmodus",
             "scheduleIntervalLimit": "En ny skanning var allerede planlagt innenfor en periode på ti minutter. Velg en annen tid.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Søket er planlagt og kommer til å kjøre i bakgrunnen på denne datoen:"
         },
         "recoverBadSectors": {
             "title": "Gjenopprett skadde sektorer",

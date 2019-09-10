@@ -24,12 +24,12 @@
 	</div>
 	<ul [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
 		<ng-container *ngFor="let number of numbers; index as i">
-			<li role="menuitem"
+			<li role="link"
 				[ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}"
 				id="macrokey_numpad-{{number.key}}" (click)="numberClicked(number)" vtrMetrics
 				[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick"
-				[metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}" tabindex="1">
-				<a href="javascript:void(0)" (click)="numberClicked(number)" role="link"
+				[metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}">
+				<a href="javascript:void(0)" (click)="numberClicked(number)" role="link" tabindex="1"
 					attr.aria-label="{{number.key}} {{selectedNumber && number.key === selectedNumber.key && 'selected' || '' }}">
 					<div>
 						{{ number.key | translate }}

@@ -2404,6 +2404,7 @@
         "errorNoOptionSelected": "Selecteer een optie.",
         "offline": "Op dit apparaat wordt de offline stand uitgevoerd. Maak verbinding met internet",
         "doNotSuspend": "Deze tests moeten zonder onderbreking worden uitgevoerd! Sluit of minimaliseer deze app niet, laat de computer niet in de slaapstand gaan en zet de computer niet uit tijdens de scan.",
+        "doNotUse": "Gebruik de computer pas weer wanneer deze test is voltooid",
         "customize": {
             "name": "Aanpassen",
             "test": "Test aanpassen",
@@ -2429,7 +2430,7 @@
             "delete": "Verwijderen",
             "warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
             "scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Uw scan is gepland en wordt op de volgende datum op de achtergrond uitgevoerd:"
         },
         "recoverBadSectors": {
             "title": "Slechte sectoren herstellen",

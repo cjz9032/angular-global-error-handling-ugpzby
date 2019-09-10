@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "Debe seleccionar una opción.",
         "offline": "Este dispositivo se está ejecutando en modalidad sin conexión, conecte a Internet",
         "doNotSuspend": "¡Estas pruebas se deben ejecutar sin interrupciones! No cierre ni minimice esta aplicación, y no suspenda ni apague el equipo durante la exploración.",
+        "doNotUse": "No utilice el equipo hasta que se complete esta prueba",
         "customize": {
             "name": "Personalizar",
             "test": "Prueba de personalización",
@@ -2432,7 +2433,7 @@
             "delete": "Eliminar",
             "warningBatterySaver": "Nota: los análisis planificados no se ejecutarán en la modalidad de ahorro de batería",
             "scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Su escaneo se programó y se realizará en segundo plano en la siguiente fecha:"
         },
         "recoverBadSectors": {
             "title": "Recuperar sectores incorrectos",

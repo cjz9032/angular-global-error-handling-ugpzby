@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "Izbrati morate eno od možnosti.",
         "offline": "Ta naprava deluje brez povezave, vzpostavite internetno povezavo",
         "doNotSuspend": "Ti preskusi se morajo izvajati brez prekinitev. Med pregledom ne zapirajte ali minimizirajte te aplikacije in računalnika ne preklapljajte v stanje pripravljenosti ali ga izklapljajte.",
+        "doNotUse": "Računalnika ne uporabljajte, dokler se ne dokonča ta preskus.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagajanje preskusa",
@@ -2432,7 +2433,7 @@
             "delete": "Izbriši",
             "warningBatterySaver": "Opomba: načrtovani pregledi se ne bodo izvedli v načinu varčevanja z baterijo",
             "scheduleIntervalLimit": "V obdobju desetih minut je že bil načrtovan drug pregled. Izberite drugo uro.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Pregled je načrtovan in se bo v ozadju izvedel na ta datum:"
         },
         "recoverBadSectors": {
             "title": "Obnovitev poškodovanih sektorjev",

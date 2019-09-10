@@ -2404,6 +2404,7 @@
         "errorNoOptionSelected": "Wybierz opcję.",
         "offline": "To urządzenie działa w trybie offline, połącz je z Internetem",
         "doNotSuspend": "Nie można przerywać wykonywania tych testów! Podczas skanowania nie zamykaj ani nie minimalizuj tej aplikacji, i nie wstrzymuj ani nie wyłączaj komputera.",
+        "doNotUse": "Nie używaj komputera aż do zakończenia testu",
         "customize": {
             "name": "Dostosuj",
             "test": "Dostosuj test",
@@ -2429,7 +2430,7 @@
             "delete": "Usuń",
             "warningBatterySaver": "Uwaga: zaplanowane skanowania nie zostaną wykonane w trybie oszczędzania baterii",
             "scheduleIntervalLimit": "Kolejne skanowanie zaplanowano już w ciągu dziesięciu minut. Wybierz inną godzinę.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Skanowanie zostało zaplanowane i będzie przeprowadzone w tle w następującym terminie:"
         },
         "recoverBadSectors": {
             "title": "Odzyskaj uszkodzone sektory",

@@ -2404,6 +2404,7 @@
         "errorNoOptionSelected": "Valitse oikea vaihtoehto.",
         "offline": "Tämä laite toimii offline-tilassa, muodosta Internet-yhteys",
         "doNotSuspend": "Näiden testien suoritus ei saa keskeytyä. Älä sulje tai pienennä tätä sovellusta. Älä siirrä tietokonetta keskeytystilaan tai katkaise tietokoneen virtaa tarkistuksen aikana.",
+        "doNotUse": "Älä käytä tietokonetta, kunnes tämä testi on valmis",
         "customize": {
             "name": "Mukautus",
             "test": "Mukauta testiä",
@@ -2429,7 +2430,7 @@
             "delete": "Poista",
             "warningBatterySaver": "Huomautus: Ajoitettuja tarkistuksia ei suoriteta virransäästötilassa",
             "scheduleIntervalLimit": "Toinen tarkistus on jo ajoitettu tapahtuvaksi kymmenen minuutin ajanjakson kuluessa. Valitse toinen aika.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Tarkistus on ajoitettu, ja se suoritetaan taustalla seuraavana päivänä:"
         },
         "recoverBadSectors": {
             "title": "Korjaa vialliset sektorit",

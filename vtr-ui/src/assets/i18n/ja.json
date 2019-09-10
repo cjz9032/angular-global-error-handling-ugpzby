@@ -2404,6 +2404,7 @@
         "errorNoOptionSelected": "オプションを選択する必要があります。",
         "offline": "このデバイスはオフラインモードです。インターネットに接続してください",
         "doNotSuspend": "これらのテストは中断しないで実行する必要があります。このアプリを閉じたり最小化したりしないでください。スキャン中にコンピューターを休止状態またはオフにしないでください。",
+        "doNotUse": "このテストが終了するまでコンピューターの使用を避けてください",
         "customize": {
             "name": "カスタマイズ",
             "test": "テストをカスタマイズ",
@@ -2429,7 +2430,7 @@
             "delete": "削除",
             "warningBatterySaver": "注: スケジュール・スキャンは、バッテリー節約モードでは実行されません",
             "scheduleIntervalLimit": "10分以内に別のスキャンが既にスケジュールされています。別の時間を選択してください。",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "スキャンがスケジュールされました。次の日にバックグラウンドで実行されます。"
         },
         "recoverBadSectors": {
             "title": "不良セクターの復元",

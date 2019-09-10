@@ -2407,6 +2407,7 @@
         "errorNoOptionSelected": "Válasszon ki egy lehetőséget.",
         "offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
         "doNotSuspend": "Ezeket a teszteket nem szabad megszakítani. Az ellenőrzés során ne állítsa kis méretűre és ne zárja be az alkalmazást, illetve ne függessze fel vagy kapcsolja ki a számítógépet.",
+        "doNotUse": "Kérjük, a teszt befejeződéséig ne használja a számítógépet",
         "customize": {
             "name": "Személyre szabás",
             "test": "Teszt testreszabása",
@@ -2432,7 +2433,7 @@
             "delete": "Törlés",
             "warningBatterySaver": "Megjegyzés: Az ütemezett vizsgálatok energiatakarékos módban nem működnek",
             "scheduleIntervalLimit": "Egy újabb vizsgálat már be van ütemezve tíz perces időtartamon belül. Válasszon másik időpontot.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "A tervezett ellenőrzés a háttérben fog lefutni az alábbi időpontban:"
         },
         "recoverBadSectors": {
             "title": "Hibás szektorok helyreállítása",
