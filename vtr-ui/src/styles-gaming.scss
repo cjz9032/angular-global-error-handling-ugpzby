@@ -369,6 +369,10 @@
 							}
 						}
 					}
+					.vtr-widget-permission-note{
+						background: $gaming-Darkslate-blue;
+						border: none;
+					}
 				}
 
 				.vtr-container-collapsible.white-theme {
@@ -378,6 +382,9 @@
 						.card-header {
 							.header {
 								color: $gaming_lightest !important;
+							}
+							#audio-microphone-collapse-card-title {
+								color: $gaming_light_blue !important;
 							}
 
 							.collapse-control {
@@ -403,7 +410,18 @@
 									.caption {
 										color: $gaming_grey_lightest;
 									}
+									.permission-note{
+										background: $gaming-Darkslate-blue;
+										border: none;
+										.note-icon {
+											color: $gaming_grey_lightest;
+										}
+										#camera-privacy-mode-note, #device-settings-camera-privacy-note {
+											color: $gaming_grey_lightest;
+										}
+									}
 								}
+								
 							}
 						}
 					}
