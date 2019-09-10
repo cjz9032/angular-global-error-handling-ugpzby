@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”."
                 },
                 "powerSettings": {
                     "title": "Valores de energía",
@@ -1181,7 +1181,7 @@
                     "more": "MÁS",
                     "control1": "CONTROLES DEL ÁREA TÁCTIL",
                     "control2": "CONTROLES DE MOUSE",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "CONTROLES DE TRACKPOINT"
                 }
             }
         },
@@ -1698,7 +1698,8 @@
                 "disabled": "DESHABILITADO",
                 "enableVirusScan": "HABILITAR EXPLORACIÓN ANTIVIRUS",
                 "enablenFirewall": "HABILITAR CORTAFUEGOS",
-                "enableFirewall": "HABILITAR CORTAFUEGOS"
+                "enableFirewall": "HABILITAR CORTAFUEGOS",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Sin protección óptima",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Actualmente está usando la protección McAfee LiveSafe",
-                "valid": "Válido hasta",
-                "upgrade": "Actualizar ahora",
                 "launch": "INICIAR McAfee",
                 "getMacfee": "OBTENER McAfee",
                 "topBenefits": "Beneficios principales de McAfee LiveSafe",
                 "awardTitle": "Antivirus galardonado",
                 "awardSubtitle": "Bloquea virus, malware, ransomware, spyware, programas no deseados y más en su PC.",
-                "encryptedTitle": "Almacenamiento cifrado",
-                "encryptedSubtitle": "Mantenga la privacidad de los archivos confidenciales al almacenarlos en su PC con un cifrado de 128 bits.",
-                "identityTitle": "Protección contra suplantación de identidad",
-                "identitySubtitle": "Hágase cargo de la protección de su identidad en caso de robos y fraudes.",
                 "supportTitle": "Soporte para el cliente GRATUITO",
                 "supportSubtitle": "Le entrega cobertura telefónica, por chat o en línea por toda la duración de su suscripción.",
-                "antiTitle": "Antispam",
-                "antiSubtitle": "Bloquea mensajes peligrosos antes de que lleguen a su bandeja de entrada al retirar correos electrónicos que puedan incluir enlaces peligrosos y virus.",
-                "virusTitle": "Compromiso de protección antivirus",
-                "virusSubtitle": "Le proporciona la confianza de que, en caso de que su PC se infecte con un virus, un experto de McAfee accederá de forma remota a su equipo para eliminarlo.",
-                "parentalTitle": "Controles parentales",
-                "parentalSubtitle": "Bloquee los sitios web y los resultados de búsqueda que no desea que sus hijos vean. Esto también le permite establecer límites de tiempo en línea.",
-                "license": "Licencia válida hasta",
-                "trial": "Versión de prueba válida hasta"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "le ofrece protección básica para su dispositivo"

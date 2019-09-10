@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора. Эта функция может работать в трех режимах: тихий режим, сбалансированный режим и режим производительности. Сейчас управлять этой функцией можно с помощью ползунка выбора режима питания Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Интеллектуальное охлаждение позволяет регулировать производительность и температуру системы. В режиме \"Производительность\" оптимизируется производительность системы. В \"Тихий режим\" режиме поддерживается более низкая температура системы, она работает тише."
                 },
                 "powerSettings": {
                     "title": "Параметры питания",
@@ -1181,7 +1181,7 @@
                     "more": "ДОПОЛНИТЕЛЬНО",
                     "control1": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ СЕНСОРНОЙ ПАНЕЛИ",
                     "control2": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ МЫШИ",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT"
                 }
             }
         },
@@ -1698,7 +1698,8 @@
                 "disabled": "ВЫКЛЮЧЕНО",
                 "enableVirusScan": "ВКЛЮЧИТЬ ПРОВЕРКУ НАЛИЧИЯ ВИРУСОВ",
                 "enablenFirewall": "ВКЛЮЧИТЬ БРАНДМАУЭР",
-                "enableFirewall": "ВКЛЮЧИТЬ БРАНДМАУЭР"
+                "enableFirewall": "ВКЛЮЧИТЬ БРАНДМАУЭР",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Недостаточный уровень защиты",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "На данный момент безопасность вашего устройства обеспечивает McAfee LiveSafe",
-                "valid": "Действует до",
-                "upgrade": "Перейти прямо сейчас",
                 "launch": "ЗАПУСТИТЬ McAfee",
                 "getMacfee": "ПОЛУЧИТЬ McAfee",
                 "topBenefits": "Основные преимущества McAfee LiveSafe",
                 "awardTitle": "Отмеченная наградами антивирусная программа",
                 "awardSubtitle": "Блокирует вирусы, вредоносные программы, программы-вымогатели, программы-шпионы, нежелательные программы и многое другое на вашем ПК.",
-                "encryptedTitle": "Зашифрованное хранилище",
-                "encryptedSubtitle": "Скройте конфиденциальные файлы, сохранив их на своем компьютере с 128-битным шифрованием.",
-                "identityTitle": "Защита от кражи личных данных",
-                "identitySubtitle": "Защитите свою личность от краж и мошенничества.",
                 "supportTitle": "БЕСПЛАТНАЯ поддержка клиентов",
                 "supportSubtitle": "Вам предоставляется поддержка по телефону, в чате и Интернете на протяжении всего срока вашей подписки.",
-                "antiTitle": "Защита от спама",
-                "antiSubtitle": "Блокирует опасные сообщения до того, как они попадут в ваш почтовый ящик, удаляя сообщения электронной почты, которые могут содержать опасные ссылки и вирусы.",
-                "virusTitle": "Обязательство по защите от вирусов",
-                "virusSubtitle": "Обеспечивает уверенность в том, что в случае заражения вашего ПК вирусом эксперт McAfee осуществит удаленный доступ к вашему компьютеру и удалит вирус.",
-                "parentalTitle": "Инструменты родительского контроля",
-                "parentalSubtitle": "Блокирует нежелательные для ребенка веб-сайты и результаты поиска. Кроме того, вы можете ограничить время, которое ваши дети проводят в Интернете.",
-                "license": "Лицензия действует до",
-                "trial": "Пробная версия действует до"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "обеспечивает базовую защиту вашего устройства"
