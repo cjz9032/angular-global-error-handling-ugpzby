@@ -63,7 +63,7 @@
 			(verifyEmailEmit)="startVerify()">
 		</vtr-verify-email>
 
-		<div class="breached-accounts__clear-data-wrapper" *ngIf="userEmail$ | async">
+		<div class="breached-accounts__clear-data-wrapper" *ngIf="(userEmail$ | async) && !(isFigleafReadyForCommunication$ | async)">
 			<vtr-clear-data-tooltip [feature]="breachedFeatureName"></vtr-clear-data-tooltip>
 		</div>
 

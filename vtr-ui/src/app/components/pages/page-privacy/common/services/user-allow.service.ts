@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class UserAllowService {
 	allowToShow = new BehaviorSubject(JSON.parse(this.storageService.getItem(ALLOW_MAP__NAME)) || {
 		trackingMap: false,
+		consentForVulnerablePassword: false
 	});
 
 	constructor(private storageService: StorageService) {
@@ -15,6 +16,11 @@ export class UserAllowService {
 
 	setShowTrackingMap(allow: boolean) {
 		this.allowToShow.next({...this.allowToShow.getValue(), trackingMap: allow});
+		this.saveToStorage(this.allowToShow.value);
+	}
+
+	setConsentForVulnerablePassword(allow: boolean) {
+		this.allowToShow.next({...this.allowToShow.getValue(), consentForVulnerablePassword: allow});
 		this.saveToStorage(this.allowToShow.value);
 	}
 

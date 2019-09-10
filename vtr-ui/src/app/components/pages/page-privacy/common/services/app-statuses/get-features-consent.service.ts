@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { featuresResult } from './app-statuses.service';
-import { CONSENT_NAME, StorageService, USER_EMAIL_HASH } from '../storage.service';
+import { StorageService, USER_EMAIL_HASH } from '../storage.service';
 import { AccessTokenService } from '../access-token.service';
 import { UserAllowService } from '../user-allow.service';
 
@@ -33,7 +33,7 @@ export class GetFeaturesConsentService {
 	}
 
 	private getNonPrivatePasswordConsent(): boolean {
-		return Boolean(this.storageService.getItem(CONSENT_NAME));
+		return Boolean(this.userAllowService.allowToShow.getValue().consentForVulnerablePassword);
 	}
 
 
