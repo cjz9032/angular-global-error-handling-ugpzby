@@ -10,14 +10,14 @@ import { faSellcast } from '@fortawesome/free-brands-svg-icons';
 })
 export class UiToggleComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
-	@Input() value: boolean=true;
+	@Input() value = true;
 	@Input() onOffSwitchId: string;
 	@Input() notChange = false;
-	@Input() toggleId :any;
+	@Input() toggleId: any;
 	uiSubscription: Subscription;
 
 
-	
+
 	constructor(
 		public commonService: CommonService
 	) { }
@@ -44,14 +44,12 @@ export class UiToggleComponent implements OnInit, OnDestroy {
 	 * this function is to send the change event for the notChange = true types.
 	 */
 	sendChangeEvent($event) {
-		// console.log('this.value-----------------------',$event,$event.target,$event.target.value);
 		if (!this.notChange) {
 			this.value = !this.value;
 		}
-		$event.target.value = this.value;
-		$event.target.checked = $event.target.value;
-		$event.switchValue = $event.target.value;
-		// console.log('this.value-----------------------222',$event.target.value);
+		$event.target.value = Boolean(this.value);
+		$event.target.checked = Boolean($event.target.value);
+		$event.switchValue = Boolean($event.target.value);
 		this.toggle.emit($event);
 	}
 
