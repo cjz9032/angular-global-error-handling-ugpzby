@@ -13,8 +13,10 @@
 		height: 4rem;
 		margin-top: 1.6rem;
 		margin-right: 0.7rem;
-		a{
+		button{
 			display: inline-block;
+			border: none;
+			background: none;
 		}
 		.icon {
 			background: $gaming_icon_gradient;
