@@ -13,6 +13,9 @@
 		height: 4rem;
 		margin-top: 1.6rem;
 		margin-right: 0.7rem;
+		a{
+			display: inline-block;
+		}
 		.icon {
 			background: $gaming_icon_gradient;
 			-webkit-background-clip: text;

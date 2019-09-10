@@ -11,6 +11,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, 
 export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	@Input() public options;
+	@Input() ariaLabel:any;
 	@Output() public change = new EventEmitter<any>();
 	@Output() showDropDown = new EventEmitter();
 	public showOptions = false;
@@ -84,6 +85,13 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 					this.showOptions = false;
 				}
 			}
+		}
+	}
+	public keyupTabFn(event,i) {
+		console.log('event.keyCode=======',event.keyCode,'this.options.dropOptions.length==',this.options.dropOptions.length-1,i)
+		if((this.options.dropOptions.length-1) === i) {
+			if(event.keyCode === 9) this.showOptions = false;
+			
 		}
 	}
 }
