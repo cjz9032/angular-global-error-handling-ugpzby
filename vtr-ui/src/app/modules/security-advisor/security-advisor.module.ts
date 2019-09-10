@@ -6,12 +6,11 @@ import { PageSecurityComponent } from 'src/app/components/pages/page-security/pa
 import { PageSecurityAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/page-security-antivirus.component';
 import { AdvisorWifiSecurityComponent } from 'src/app/components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
 import { WifiSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
+import { HomeSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/home-security/home-security.component';
 import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
 import { PageSecurityWindowsHelloComponent } from 'src/app/components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
-import { ConnectedHomeMyHomeComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
-import { ConnectedHomeComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home/connected-home.component';
 import { ConnectedHomeStatusComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home-status/connected-home-status.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetMcafeeComponent } from 'src/app/components/widgets/widget-mcafee/widget-mcafee.component';
@@ -34,7 +33,6 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
-import { HomeSecurityShareModule } from '../home-security-share/home-security-share.module';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
@@ -68,8 +66,7 @@ library.add(faChevronUp);
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		WifiSecurityComponent,
-		ConnectedHomeComponent,
-		ConnectedHomeMyHomeComponent,
+		HomeSecurityComponent,
 		ConnectedHomeStatusComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,
@@ -104,8 +101,7 @@ library.add(faChevronUp);
 		HeaderMainModule,
 		WidgetOfflineModule,
 		UiListChevronModule,
-		CommonModalModule,
-		HomeSecurityShareModule
+		CommonModalModule
 	],
 	providers: [
 		DialogService
