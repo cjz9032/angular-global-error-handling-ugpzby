@@ -343,12 +343,18 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public async setNetworkBoostStatus(status: any) {
 		try {
+			console.log('STATUSOFNB', status);
 			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
 			if (isStatusUpdated) {
 				this.setNetworkBoostCacheStatus(status);
 				this.legionUpdate[2].isChecked = status;
+			} else {
+				this.legionUpdate[2].isChecked = !status;
+				console.log('NETWORKBOOST status is not updated from JS Bridge');
 			}
-		} catch (err) {}
+		} catch (err) {
+			console.log(`ERROR in setNetworkBoostStatus()`, err);
+		}
 	}
 
 	public getAutoCloseCacheStatus() {
