@@ -2409,6 +2409,7 @@
         "errorNoOptionSelected": "Morate da izaberete neku opciju.",
         "offline": "Uređaj radi u režimu van mreže, povežite internet",
         "doNotSuspend": "Ovi testovi moraju da rade bez prekida! Nemojte zatvarati niti umanjivati ovu aplikaciju i nemojte suspendovati niti isključiti računar tokom skeniranja.",
+        "doNotUse": "Nemojte da koristite računar dok se test ne završi",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagodite test",

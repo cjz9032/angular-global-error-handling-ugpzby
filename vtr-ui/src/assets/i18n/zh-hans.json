@@ -2409,6 +2409,7 @@
         "errorNoOptionSelected": "请选择一个选项。",
         "offline": "此设备正在脱机模式下运行，请连接因特网",
         "doNotSuspend": "请勿中断上述测试！请勿关闭或最小化此应用程序；扫描过程中请勿挂起或关闭计算机。",
+        "doNotUse": "在此测试完成前，请不要使用计算机",
         "customize": {
             "name": "定制",
             "test": "定制测试",

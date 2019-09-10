@@ -108,10 +108,10 @@
 										top: -0.4rem;
 										opacity: 0;
 										@media #{$black-on-white} {
-											background: $screen_dark_20;
+											background: transparent;
 										}
 										@media #{$white-on-black} {
-											background: $gaming_white60;
+											background: transparent;
 										}
 									}
 								}
