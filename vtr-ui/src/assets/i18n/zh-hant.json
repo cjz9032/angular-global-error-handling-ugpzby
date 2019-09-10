@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "閃爍等級"
-                },
-                "default": {
-                    "title": "設為預設"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。"
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -1184,7 +1181,7 @@
                     "more": "其他資訊",
                     "control1": "觸控板控制項",
                     "control2": "滑鼠控制項",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT 控制項"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4.電腦如已啟用飛航模式，這些功能將會停用。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "上一頁",
@@ -1696,7 +1698,8 @@
                 "disabled": "已停用",
                 "enableVirusScan": "啟用病毒掃描",
                 "enablenFirewall": "啟用防火牆",
-                "enableFirewall": "啟用防火牆"
+                "enableFirewall": "啟用防火牆",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "未受到最佳保護",
@@ -1708,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "您目前受到 McAfee LiveSafe 的保護",
-                "valid": "有效期限",
-                "upgrade": "立即升級",
                 "launch": "啟動 McAfee",
                 "getMacfee": "取得 McAfee",
                 "topBenefits": "McAfee LiveSafe 的主要優勢",
                 "awardTitle": "獲獎肯定的防毒軟體",
                 "awardSubtitle": "在 PC 上防堵病毒、惡意軟體、勒索軟體、間諜軟體、垃圾程式等。",
-                "encryptedTitle": "加密儲存",
-                "encryptedSubtitle": "使用 128 位元加密將機密檔案儲存在您的 PC 上，以保持機密檔案的隱私。",
-                "identityTitle": "身分盜用保護",
-                "identitySubtitle": "負責保護您的身分，避免遭到盜用或詐騙。",
                 "supportTitle": "免費客戶支援",
                 "supportSubtitle": "在訂閱期間，獲得電話、交談式或線上支援。",
-                "antiTitle": "反垃圾郵件",
-                "antiSubtitle": "藉由移除可能包含危險連結和病毒的電子郵件，阻止危險郵件到達您的收件匣。",
-                "virusTitle": "病毒防護承諾",
-                "virusSubtitle": "當 PC 出現病毒時，McAfee 專家將遠端存取您的電腦以移除病毒，消除您的後顧之憂。",
-                "parentalTitle": "家長監護",
-                "parentalSubtitle": "防堵不希望讓孩子看到的網站和搜尋結果。此外，還可讓您設定孩子上網的時間長度限制。",
-                "license": "授權有效期限",
-                "trial": "試用有效期限"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "為您的裝置提供基本保護"

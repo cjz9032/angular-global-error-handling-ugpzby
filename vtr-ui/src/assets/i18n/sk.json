@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Úroveň blikania"
-                },
-                "default": {
-                    "title": "OBNOVIŤ PREDVOLENÉ"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší."
                 },
                 "powerSettings": {
                     "title": "Nastavenia napájania",
@@ -1184,7 +1181,7 @@
                     "more": "VIAC",
                     "control1": "OVLÁDACIE PRVKY DOTYKOVÉHO PANELA",
                     "control2": "OVLÁDACIE PRVKY MYŠI",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "OVLÁDACIE PRVKY TRACKPOINT"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
                     "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Bezdotykové prihlásenie nebude fungovať.",
                     "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Ak je v počítači povolený režim Lietadlo, tieto funkcie sú vypnuté."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Prejsť na nastavenia služby Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Naspäť",
@@ -1696,7 +1698,8 @@
                 "disabled": "VYPNUTÉ",
                 "enableVirusScan": "ZAPNÚŤ KONTROLU VÍRUSOV",
                 "enablenFirewall": "ZAPNÚŤ BRÁNU FIREWALL",
-                "enableFirewall": "ZAPNÚŤ BRÁNU FIREWALL"
+                "enableFirewall": "ZAPNÚŤ BRÁNU FIREWALL",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Nechránené optimálne",
@@ -1708,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "V súčasnosti ste chránení programom McAfee LiveSafe",
-                "valid": "Platné do",
-                "upgrade": "Inovovať teraz",
                 "launch": "SPUSTIŤ McAfee",
                 "getMacfee": "ZÍSKAŤ McAfee",
                 "topBenefits": "Najväčšie výhody programu McAfee LiveSafe",
                 "awardTitle": "Oceňovaný antivírus",
                 "awardSubtitle": "Blokuje vírusy, malvér, ransomware, spyware, nežiaduce programy a ďalšie položky v počítači.",
-                "encryptedTitle": "Šifrovaný ukladací priestor",
-                "encryptedSubtitle": "Uložte si citlivé súbory do počítača pomocou 128-bitového šifrovania, aby zostali súkromné.",
-                "identityTitle": "Ochrana pred krádežou identity",
-                "identitySubtitle": "Postarajte sa o ochranu svojej identity pred krádežou a podvodom.",
                 "supportTitle": "Technická podpora zákazníkov ZDARMA",
                 "supportSubtitle": "Po dobu trvania predplatného sa o vás postaráme prostredníctvom telefónu, chatu alebo online.",
-                "antiTitle": "Ochrana proti nevyžiadanej pošte",
-                "antiSubtitle": "Blokuje nebezpečné správy a odstraňuje e-maily, ktoré môžu obsahovať rizikové prepojenia a vírusy, skôr než sa dostanú do vašej schránky.",
-                "virusTitle": "Záruka ochrany proti vírusom",
-                "virusSubtitle": "Poskytuje istotu, že v prípade napadnutia počítača vírusom vám odborník spoločnosti McAfee pomôže vírus odstrániť pomocou diaľkového prístupu k počítaču.",
-                "parentalTitle": "Rodičovská kontrola",
-                "parentalSubtitle": "Blokuje webové stránky a výsledky vyhľadávania, ktoré nechcete ukázať deťom. Navyše umožňuje nastaviť limity, koľko času môžu stráviť na internete.",
-                "license": "Licencia platí do",
-                "trial": "Skúšobná verzia platí do"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "vám ponúka základnú ochranu zariadenia"

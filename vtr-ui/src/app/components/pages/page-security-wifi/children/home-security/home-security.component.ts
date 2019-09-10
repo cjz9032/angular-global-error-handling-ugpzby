@@ -1,43 +1,25 @@
-import { Component, Input, EventEmitter, OnInit } from '@angular/core';
-import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import { Component, Input } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
-	selector: 'vtr-connected-home',
-	templateUrl: './connected-home.component.html',
-	styleUrls: ['./connected-home.component.scss']
+	selector: 'vtr-home-security',
+	templateUrl: './home-security.component.html',
+	styleUrls: ['./home-security.component.scss']
 })
-export class ConnectedHomeComponent implements OnInit {
-
-	@Input() data: WifiHomeViewModel;
-	@Input() isShowInvitationCode: boolean;
-	emitter = new EventEmitter();
-	showDescribe = false;
+export class HomeSecurityComponent {
 	peaceOfMindArticleId = '988BE19B75554E09B5A914D5F803C3F3';
 	peaceOfMindArticleCategory: string;
-	isChsExist: boolean;
 
 
 	constructor(
 		public dialogService: DialogService,
 		public modalService: NgbModal,
 		private cmsService: CMSService,
-		private localInfoService: LocalInfoService
 	) {
 		this.fetchCMSArticles();
-	}
-
-	ngOnInit() {
-		this.localInfoService.getLocalInfo().then(result => {
-			this.isChsExist = false;
-			if (result.GEO === 'us') { this.isChsExist = true; }
-		}).catch(e => {
-			this.isChsExist = false;
-		});
 	}
 
 	fetchCMSArticles() {

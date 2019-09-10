@@ -266,7 +266,12 @@ export class ConfigService {
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
 		hide: false,
-		subitems: []
+		subitems: [],
+		pre: [
+			'assets/images/placeholder-800X800.png',
+			'assets/images/connected-home-security/welcome-chs-logo.png',
+			'assets/icons/Close.svg'
+		]
 	},
 	{
 		id: 'user',
@@ -445,7 +450,12 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		subitems: []
+		subitems: [],
+		pre: [
+			'assets/images/placeholder-800X800.png',
+			'assets/images/connected-home-security/welcome-chs-logo.png',
+			'assets/icons/Close.svg'
+		]
 	},
 	{
 		id: 'user',

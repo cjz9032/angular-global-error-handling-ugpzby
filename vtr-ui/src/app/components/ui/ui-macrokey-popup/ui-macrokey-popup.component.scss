@@ -91,3 +91,15 @@ ui-popover {
 		cursor: pointer;
 	}
 }
+
+::ng-deep {
+	.vtr-menu-main{
+		z-index: 1 !important;
+	}
+   .vtr-page-content{
+		z-index: unset !important;
+	}
+   .modal-main-wrapper {
+		z-index: 2 !important;
+    }
+}

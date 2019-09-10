@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。"
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -1181,7 +1181,7 @@
                     "more": "詳細",
                     "control1": "タッチパッド・コントロール",
                     "control2": "マウス・コントロール",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT 制御"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
                     "description4": "2. コンピューターが休止状態またはオフであるとき、タッチレスログインは機能しません。",
                     "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4.コンピューターで機内モードを有効にすると、これらの機能は無効になります。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 設定に移動",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "戻る",
@@ -1693,7 +1698,8 @@
                 "disabled": "無効",
                 "enableVirusScan": "ウイルス・スキャンを有効にする",
                 "enablenFirewall": "ファイアウォールを有効にする",
-                "enableFirewall": "ファイアウォールを有効にする"
+                "enableFirewall": "ファイアウォールを有効にする",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "最適に保護されていません",
@@ -1705,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "現在、McAfee LiveSafe によって保護されています",
-                "valid": "有効期限:",
-                "upgrade": "今すぐアップグレード",
                 "launch": "McAfee を起動する",
                 "getMacfee": "McAfee を入手する",
                 "topBenefits": "McAfee LiveSafe の最も重要なメリット",
                 "awardTitle": "受賞歴のあるウイルス対策",
                 "awardSubtitle": "ウイルス、マルウェア、ランサムウェア、スパイウェア、不要なプログラムなどを PC 上でブロックします。",
-                "encryptedTitle": "暗号化ストレージ",
-                "encryptedSubtitle": "128ビット暗号化を使用して PC に保存することで、機密性の高いファイルを秘密の状態にします。",
-                "identityTitle": "個人情報の盗難保護",
-                "identitySubtitle": "盗難や詐欺から個人情報を自分自身で守りましょう。",
                 "supportTitle": "無料のカスタマー・サポート",
                 "supportSubtitle": "電話、チャット、またはサブスクリプション期間中のオンラインで生活をカバーできていますか。",
-                "antiTitle": "スパム対策",
-                "antiSubtitle": "危険なリンクやウイルスを含む可能性のあるメールを削除して、危険なメッセージが受信トレイに届かないようにブロックします。",
-                "virusTitle": "ウィルス保護の誓約",
-                "virusSubtitle": "PC がウイルスに感染した場合、McAfee の専門家がコンピューターにリモートからアクセスしてウイルスを駆除してくれるという安心を与えてくれます。",
-                "parentalTitle": "保護者による制限",
-                "parentalSubtitle": "子供に見せたくない Web サイトや検索結果をブロックします。また、オンラインで費やす時間の限度を設定することもできます。",
-                "license": "ライセンス有効期限",
-                "trial": "試用版有効期限"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "は、デバイスに基本的な保護機能を提供します"

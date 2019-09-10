@@ -48,16 +48,6 @@
 					[upperCaseLabel]=false
 					[label]="'homeSecurity.tour.locationTitle' | translate"
 					[title]="'homeSecurity.tour.locationTitle' | translate"></vtr-ui-button>
-				<!-- show done button -->
-				<vtr-ui-button *ngIf="isLocationServiceOn === true"
-					linkId="chs-tour-location-done-btn"
-					role="button"
-					metricsEvent="FeatureClick"
-					metricsItem="CHSWelcomeDoneButton"
-					metricsParent="{{metricsParent}}"
-					(click)="closeModal()"
-					[label]="'homeSecurity.tour.done' | translate"
-					[title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
 			</div>
 		</div>
 	</div>

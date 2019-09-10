@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Blinkenivå"
-                },
-                "default": {
-                    "title": "SETT TIL STANDARD"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig»."
                 },
                 "powerSettings": {
                     "title": "Strøminnstillinger",
@@ -1184,7 +1181,7 @@
                     "more": "MER",
                     "control1": "PEKEPLATEKONTROLLER",
                     "control2": "MUSEKONTROLLER",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT-KONTROLLER"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
                     "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Tilbake",
@@ -1696,7 +1698,8 @@
                 "disabled": "DEAKTIVERT",
                 "enableVirusScan": "AKTIVER VIRUSSØK",
                 "enablenFirewall": "AKTIVER BRANNMUR",
-                "enableFirewall": "AKTIVER BRANNMUR"
+                "enableFirewall": "AKTIVER BRANNMUR",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Ikke optimalt beskyttet",
@@ -1708,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Du er for øyeblikket beskyttet av McAfee LiveSafe",
-                "valid": "Gyldig til",
-                "upgrade": "Oppgrader nå",
                 "launch": "START McAfee",
                 "getMacfee": "Få tak i McAfee",
                 "topBenefits": "De beste fordelene til McAfee LiveSafe",
                 "awardTitle": "Prisvinnende antivirus",
                 "awardSubtitle": "Blokkerer virus, skadelig programvare, spionvare, uønskede program og mye mer på PC-en din.",
-                "encryptedTitle": "Kryptert lagring",
-                "encryptedSubtitle": "Beskytt sensitive filer ved å lagre dem med 128-biters kryptering på PC-en.",
-                "identityTitle": "Beskyttelse mot identitetstyveri",
-                "identitySubtitle": "Ta kontrollen, og beskytt identiteten din mot tyveri og svindel.",
                 "supportTitle": "GRATIS kundestøtte",
                 "supportSubtitle": "Du er dekket via telefon, chatting eller via nettet så lenge du abonnerer.",
-                "antiTitle": "Antispam",
-                "antiSubtitle": "Blokkerer skadelige meldinger før de når innboksen din ved å fjerne e-post som kan inneholde farlige koblinger eller virus.",
-                "virusTitle": "Løfte om virusbeskyttelse",
-                "virusSubtitle": "Gir deg trygghet for at hvis PC-en din får et virus, vil en McAfee-ekspert kunne fjerne det fra datamaskinen din fra utsiden.",
-                "parentalTitle": "Tilgangskontroll",
-                "parentalSubtitle": "Blokkerer nettsider og søkeresultater som du ikke vil at barna dine skal se. Lar deg også sette grenser for hvor mye tid de bruker på nettet.",
-                "license": "Lisens gyldig til",
-                "trial": "Prøveversjon gyldig til"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "gir grunnleggende beskyttelse for enheten din"

@@ -1,5 +1,5 @@
-<div class="vtr-ui-rectangle-radio" [ngClass]= "disabled ? 'disabled-class': ' '">
-	<input id="{{radioId}}"
+<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled}">
+		<input id="{{radioId}}"
 		name="{{group}}"
 		type="radio"
 		[value]="value"

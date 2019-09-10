@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Nível de piscamento"
-                },
-                "default": {
-                    "title": "DEFINIR COMO PADRÃO"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "O Resfriamento inteligente ajusta a velocidade do ventilador, o desempenho máximo e gerencia a duração da bateria. Este recurso possui 3 modos (modo Silencioso, Equilibrado e de Desempenho) e agora pode ser acessado pelo controle deslizante de energia de desempenho do Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "O Resfriamento Inteligente permite ajustar o desempenho do sistema e a temperatura térmica. No modo \"Desempenho\", ele otimiza o desempenho do sistema. Enquanto ajuda a manter o sistema mais frio ou mais silencioso no modo \"Refrigerado e silencioso\"."
                 },
                 "powerSettings": {
                     "title": "Configurações de energia",
@@ -1184,7 +1181,7 @@
                     "more": "MAIS",
                     "control1": "CONTROLES DO TOUCHPAD",
                     "control2": "CONTROLES DO MOUSE",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "CONTROLES DE TRACKPOINT"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Se o computador estiver no modo de tenda, de tablet ou de base, esses recursos podem não funcionar devidamente.",
                     "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O Login sem toques não funcionará.",
                     "description5": "3. Ajuste a tela do computador em um ângulo adequado para que a câmara IR possa reconhecer o seu rosto para fazer login automático.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Se o Modo avião estiver ativado no seu computador, esses recursos são desativados."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ir para as configurações do Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Voltar",
@@ -1696,7 +1698,8 @@
                 "disabled": "DESATIVADO",
                 "enableVirusScan": "ATIVAR VERIFICAÇÃO DE VÍRUS",
                 "enablenFirewall": "ATIVAR FIREWALL",
-                "enableFirewall": "ATIVAR FIREWALL"
+                "enableFirewall": "ATIVAR FIREWALL",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Não protegido de forma otimizada",
@@ -1708,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "No momento você está protegido pelo McAfee LiveSafe",
-                "valid": "Válido até",
-                "upgrade": "Atualizar agora",
                 "launch": "ATIVAR O McAfee",
                 "getMacfee": "OBTER O McAfee",
                 "topBenefits": "O melhor do McAfee LiveSafe",
                 "awardTitle": "Antivírus premiado",
                 "awardSubtitle": "Bloqueia vírus, malware, ransomware, spyware, programas indesejados e outros perigos.",
-                "encryptedTitle": "Armazenamento criptografado",
-                "encryptedSubtitle": "Mantenha privado os arquivos confidenciais armazenando-os no seu PC com a criptografia de 128 bits.",
-                "identityTitle": "Proteção contra roubo de identidade",
-                "identitySubtitle": "Encarregue-se da proteção da sua identidade contra roubo e fraude.",
                 "supportTitle": "Atendimento GRATUITO ao cliente",
                 "supportSubtitle": "Cobertura por telefone, chat ou on-line para o período de sua assinatura.",
-                "antiTitle": "Anti-spam",
-                "antiSubtitle": "Bloqueie mensagens perigosas antes que cheguem à caixa de entrada, removendo e-mails que contenham links perigosos e vírus.",
-                "virusTitle": "Garantia de proteção",
-                "virusSubtitle": "Garante que no caso de ataque de vírus, um especialista da McAfee acessará remotamente seu computador para eliminar o problema.",
-                "parentalTitle": "Controles dos pais",
-                "parentalSubtitle": "Bloqueie websites e resultados de pesquisa que seus filhos não devem visualizar. Defina limites para o tempo gasto on-line.",
-                "license": "Licença válida até",
-                "trial": "Versão de avaliação válida até"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "oferece proteção básica para seu dispositivo"

@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Intelligent koelen maakt het mogelijk om de systeemprestatie en de thermische temperatuur aan te passen. In de \"Prestatie\"-modus wordt de systeemprestatie geoptimaliseerd. Tegelijkertijd blijft het systeem koeler en stiller in de modus \"Koel & stil\"."
                 },
                 "powerSettings": {
                     "title": "Energie-instellingen",
@@ -1181,7 +1181,7 @@
                     "more": "MEER",
                     "control1": "TOUCHPAD-BEDIENING",
                     "control2": "MUISBEDIENING",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT-BESTURINGSELEMENTEN"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
                     "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Terug",
@@ -1693,7 +1698,8 @@
                 "disabled": "UITGESCHAKELD",
                 "enableVirusScan": "VIRUSSCAN INSCHAKELEN",
                 "enablenFirewall": "FIREWALL INSCHAKELEN",
-                "enableFirewall": "FIREWALL INSCHAKELEN"
+                "enableFirewall": "FIREWALL INSCHAKELEN",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Niet optimaal beveiligd",
@@ -1705,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "U wordt op dit moment beveiligd door McAfee LiveSafe.",
-                "valid": "Geldig tot",
-                "upgrade": "Nu upgraden",
                 "launch": "McAfee STARTEN",
                 "getMacfee": "McAfee DOWNLOADEN",
                 "topBenefits": "De belangrijkste voordelen van McAfee LiveSafe",
                 "awardTitle": "Bekroonde Antivirus",
                 "awardSubtitle": "Blokkeert virussen, malware, ransomware, spyware, ongewenste programma's en meer op uw pc.",
-                "encryptedTitle": "Versleutelde opslag",
-                "encryptedSubtitle": "Houdt gevoelige bestanden privé door ze op uw pc te slaan met 128-bits versleuteling.",
-                "identityTitle": "Bescherming tegen diefstal van identiteit",
-                "identitySubtitle": "Neem de verantwoordelijkheid voor de bescherming van uw identiteit tegen diefstal en fraude.",
                 "supportTitle": "GRATIS klantondersteuning",
                 "supportSubtitle": "U bent voor de duur van uw abonnement gedekt via de telefoon, chatten of online.",
-                "antiTitle": "Antispam",
-                "antiSubtitle": "Houdt gevaarlijke berichten tegen voordat ze uw inbox bereiken door e-mails te verwijderen die risicovolle links en virussen kunnen bevatten.",
-                "virusTitle": "De toezegging van bescherming tegen virussen",
-                "virusSubtitle": "Geeft u het vertrouwen dat als uw pc een virus binnenhaalt, een expert van McAfee extern toegang tot uw computer tot stand brengt om dit virus te verwijderen.",
-                "parentalTitle": "Ouderlijk toezicht",
-                "parentalSubtitle": "Blokkeer websites en zoekresultaten waarvan u vindt dat uw kinderen die niet mogen zien. Ook kunt u limieten instellen voor de tijd dat ze online zijn.",
-                "license": "Licentie geldig tot",
-                "trial": "Proefversie geldig tot"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "biedt basisbeveiliging voor uw apparaat"
