@@ -1,15 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { EMPTY, merge, Observable, ReplaySubject, Subject } from 'rxjs';
-import {
-	catchError,
-	debounceTime,
-	distinctUntilChanged,
-	map, mapTo,
-	switchMap,
-	switchMapTo,
-	take,
-	takeUntil, tap, withLatestFrom
-} from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, map, switchMap, take, takeUntil, tap } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
