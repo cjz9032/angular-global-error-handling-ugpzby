@@ -28,6 +28,7 @@
 }
 .link-text {
     font-size: $caption;
+    font-weight: $weight_bold;
     text-decoration: underline;
     letter-spacing: 0.05rem;
     color: $menu_hover;

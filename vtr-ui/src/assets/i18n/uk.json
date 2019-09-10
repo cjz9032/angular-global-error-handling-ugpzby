@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Рівень блимання"
-                },
-                "default": {
-                    "title": "СКИНУТИ ДО ПАРАМЕТРІВ ЗА ЗАМОВЧУВАННЯМ"
                 }
             },
             "profile": {
@@ -1253,7 +1250,7 @@
                     "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
                     "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Назад",

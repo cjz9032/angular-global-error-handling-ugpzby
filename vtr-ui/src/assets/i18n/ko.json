@@ -1250,7 +1250,7 @@
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
                     "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "뒤로",
