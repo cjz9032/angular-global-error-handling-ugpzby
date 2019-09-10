@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur."
                 },
                 "powerSettings": {
                     "title": "Güç Ayarları",
@@ -1181,7 +1181,7 @@
                     "more": "DAHA FAZLA",
                     "control1": "TOUCHPAD DENETİMLERİ",
                     "control2": "FARE DENETİMLERİ",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT KONTROLLERİ"
                 }
             }
         },
@@ -1698,7 +1698,8 @@
                 "disabled": "DEVRE DIŞI",
                 "enableVirusScan": "VİRÜS TARAMASINI ETKİNLEŞTİR",
                 "enablenFirewall": "GÜVENLİK DUVARINI ETKİNLEŞTİR",
-                "enableFirewall": "GÜVENLİK DUVARINI ETKİNLEŞTİR"
+                "enableFirewall": "GÜVENLİK DUVARINI ETKİNLEŞTİR",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "En İyi Şekilde Korunmuyor",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Şu anda McAfee LiveSafe tarafından korunuyorsunuz",
-                "valid": "Son Geçerlilik Tarihi:",
-                "upgrade": "Şimdi Yükseltin",
                 "launch": "McAfee'yi BAŞLATIN",
                 "getMacfee": "McAfee'yi EDİNİN",
                 "topBenefits": "McAfee LiveSafe'in Başlıca Avantajları",
                 "awardTitle": "Ödüllü Virüsten Koruma Yazılımı",
                 "awardSubtitle": "Bilgisayarınızda virüsleri, kötü amaçlı yazılımları, fidye yazılımlarını, casus yazılımları, istenmeyen programları ve çok daha fazlasını engelleyin.",
-                "encryptedTitle": "Şifreli Depolama",
-                "encryptedSubtitle": "Hassas dosyaları 128-bit şifreleme ile PC'nizde depolayarak güvenliğini sağlayın.",
-                "identityTitle": "Kimlik hırsızlığı koruması",
-                "identitySubtitle": "Kimliğinizi hırsızlığa ve dolandırıcılığa karşı korumaya dikkat edin.",
                 "supportTitle": "ÜCRETSİZ Müşteri Desteği",
                 "supportSubtitle": "Aboneliğiniz boyunca telefonla, sohbet yoluyla veya çevrimiçi olarak yanınızdadır.",
-                "antiTitle": "İstenmeyen Posta Önleme",
-                "antiSubtitle": "Riskli bağlantılar ve virüsler içerebilecek e-postaları temizleyerek tehlikeli iletileri gelen kutunuza gelmeden engeller.",
-                "virusTitle": "Virüsten koruma taahhüdü",
-                "virusSubtitle": "Bilgisayarınıza virüs bulaşması halinde bir McAfee uzmanının virüsü temizlemek için uzaktan bilgisayarınıza erişim sağlayacağından emin olabilirsiniz.",
-                "parentalTitle": "Ebeveyn denetimleri",
-                "parentalSubtitle": "Çocuklarınızın görmesini istemediğiniz web sitelerini ve arama sonuçlarını engelleyin. Ayrıca çevrimiçi geçirecekleri zaman için sınırlamalar ayarlamanızı sağlar.",
-                "license": "Lisans Son Geçerlilik Tarihi:",
-                "trial": "Deneme Sürümü Son Geçerlilik Tarihi:"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "cihazınız için temel koruma sunar"

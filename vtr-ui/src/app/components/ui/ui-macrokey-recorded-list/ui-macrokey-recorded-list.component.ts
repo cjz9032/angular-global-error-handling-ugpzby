@@ -132,6 +132,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.clearMacrokey.title',
 		bodyText: '',
+		metricsItemClose: 'close dialog',
 		btnConfirm: true
 	};
 
