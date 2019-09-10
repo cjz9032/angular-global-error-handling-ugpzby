@@ -1250,7 +1250,7 @@
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
                     "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. إذا تم تمكين وضع الطائرة على جهاز الكمبيوتر الخاص بك، يتم تعطيل هذه الميزات."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "السابق‬",
@@ -2404,6 +2409,7 @@
         "errorNoOptionSelected": "رجاءً، أنت بحاجة لتحديد خيار.",
         "offline": "هذا الجهاز يعمل في وضع عدم الاتصال، يرجى الاتصال بالإنترنت",
         "doNotSuspend": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة! لا تعمل على إغلاق هذا التطبيق أو تصغيره، ولا توقف عمل الكمبيوتر بشكل مؤقت أو توقف تشغيله أثناء إجراء عملية الفحص.",
+        "doNotUse": "يُرجى الامتناع عن استخدام الكمبيوتر حتى اكتمال هذا الاختبار",
         "customize": {
             "name": "تخصيص",
             "test": "تخصيص اختبار",

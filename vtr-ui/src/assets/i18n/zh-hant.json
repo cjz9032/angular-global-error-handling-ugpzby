@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "閃爍等級"
-                },
-                "default": {
-                    "title": "設為預設"
                 }
             },
             "profile": {
@@ -1253,7 +1250,7 @@
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4.電腦如已啟用飛航模式，這些功能將會停用。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "上一頁",
@@ -2407,6 +2409,7 @@
         "errorNoOptionSelected": "您必須選擇一個選項。",
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
         "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
+        "doNotUse": "在這項測試完成之前，請勿使用您的電腦",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",
