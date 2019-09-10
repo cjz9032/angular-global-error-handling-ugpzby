@@ -350,7 +350,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.legionUpdate[2].isChecked = status;
 			} else {
 				this.legionUpdate[2].isChecked = !status;
-				console.log('NETWORKBOOST status is not updated from JS Bridge');
+				console.log('NETWORKBOOST status is not updated from JS Bridge', isStatusUpdated);
 			}
 		} catch (err) {
 			console.log(`ERROR in setNetworkBoostStatus()`, err);
