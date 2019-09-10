@@ -527,6 +527,34 @@
 						}
 					}
 				}
+				.vtr-hardware-components{
+					.hardware-scan-items{
+						background: $dark_cell;
+						.header{
+							.heading1{
+								color: $gaming_info_link;
+							}
+						}
+						.hardware-lists-container {
+                            vtr-ui-hardware-list{
+                                .vtr-ui-list-hardware {
+                                    .list-group{
+                                        .list-group-item{
+                                            background-color: $gaming-Darkslate-blue;
+                                            border: 0.1rem solid $screen_dark_15;
+                                            .title {
+                                                color: $gaming_lightest;
+                                            }
+                                            .subtitle {
+                                                color: $gaming_grey_lightest;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+					}
+				}
 			}
 
 			.vtr-page-right-column {
