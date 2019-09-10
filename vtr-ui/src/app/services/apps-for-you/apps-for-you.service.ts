@@ -87,10 +87,18 @@ export class AppsForYouService {
 		}
 	}
 
-	getAppDetails() {
+	getAppDetails(appGuid) {
 		if (this.isInitialized && !this.cmsAppDetails) {
-			// TODO: obtain app id by code
-			const appId = '030B3E7E-9235-4A44-823A-8D02B7A6F30F';
+			let appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
+			switch (appGuid) {
+				case AppsForYouEnum.AppGuidAdobeCreativeCloud:
+					appId = AppsForYouEnum.AppSiteCoreIdAdobeCreativeCloud;
+					break;
+				case AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant:
+				default:
+					appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
+					break;
+			}
 			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.culture })])
 				.then((response) => {
 					this.cmsAppDetails = response[0];

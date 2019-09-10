@@ -45,7 +45,7 @@ const routes: Routes = [
 		loadChildren: './support/support.module#SupportModule'
 	},
 	{
-		path: 'apps-for-you',
+		path: 'apps-for-you/:id',
 		loadChildren: './apps-for-you/apps-for-you.module#AppsForYouModule'
 	},
 	{

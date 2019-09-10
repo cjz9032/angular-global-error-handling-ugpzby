@@ -26,6 +26,7 @@ import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { EMPTY } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
+import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -56,6 +57,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
+
+	get appsForYouEnum() { return AppsForYouEnum; }
 
 	constructor(
 		private router: Router,

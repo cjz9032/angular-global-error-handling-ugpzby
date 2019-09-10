@@ -95,14 +95,15 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal,
 		private appsForYouService: AppsForYouService,
 	) {
-		// TODO: pass appGuid in route link
-		this.appGuid = 'FCF9F618-10F4-4230-99DD-F9B1CCB316AF'; // this.route.queryParams;
 		this.isOnline = this.commonService.isOnline;
 		this.systemUpdateBridge = shellService.getSystemUpdate();
+		this.route.params.subscribe((params) => {
+			this.appGuid = params.id;
+			this.appsForYouService.getAppDetails(this.appGuid);
+		});
 	}
 
 	ngOnInit() {
-		this.appsForYouService.getAppDetails();
 		this.errorMessage = '';
 		this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -233,8 +234,14 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			case this.installButtonStatusEnum.SEEMORE:
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
-				const path = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
-				const result = await this.systemUpdateBridge.launchApp(path);
+				const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
+				const paths = launchPath.split('|');
+				for (const path of paths) {
+					const result = await this.systemUpdateBridge.launchApp(path);
+					if (result) {
+						break;
+					}
+				}
 				break;
 			case this.installButtonStatusEnum.INSTALL:
 			default:
