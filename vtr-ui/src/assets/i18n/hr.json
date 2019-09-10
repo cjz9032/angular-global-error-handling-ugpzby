@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije. Ova značajka ima 3 načina rada (tihi način rada, balansirani način i način performansi), a sada je dostupna putem klizača napajanja sustava Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Inteligentno hlađenje vam omogućava podešavanje performansi sustava i temperature zagrijavanja. U načinu \"Performanse\" optimizira performanse sustava. Isto tako, u načinu \"Hladno i tiho\" pomaže u održavanju hladnijeg ili tišeg rada sustava."
                 },
                 "powerSettings": {
                     "title": "Postavke napajanja",
@@ -1181,7 +1181,7 @@
                     "more": "DODATNO",
                     "control1": "KONTROLE DODIRNE PLOČICE",
                     "control2": "KONTROLE MIŠA",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT KONTROLE"
                 }
             }
         },
@@ -1698,7 +1698,8 @@
                 "disabled": "ONEMOGUĆENO",
                 "enableVirusScan": "OMOGUĆI TRAŽENJE VIRUSA",
                 "enablenFirewall": "OMOGUĆI VATROZID",
-                "enableFirewall": "OMOGUĆI VATROZID"
+                "enableFirewall": "OMOGUĆI VATROZID",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Niste optimalno zaštićeni",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Trenutačno vas štiti McAfee LiveSafe",
-                "valid": "Vrijedi do",
-                "upgrade": "Nadogradite odmah",
                 "launch": "POKRENI McAfee",
                 "getMacfee": "NABAVI McAfee",
                 "topBenefits": "Najveće prednosti programa McAfee LiveSafe",
                 "awardTitle": "Nagrađivana protuvirusna zaštita",
                 "awardSubtitle": "Blokira viruse, zlonamjerne, ucjenjivačke, špijunske i neželjene programe te više na vašem računalu.",
-                "encryptedTitle": "Šifrirana pohrana",
-                "encryptedSubtitle": "Čuvajte osjetljive datoteke njihovim pohranjivanjem na računalo sa 128-bitnim šifriranjem.",
-                "identityTitle": "Zaštita od krađe identiteta",
-                "identitySubtitle": "Preuzmite odgovornost za zaštitu svojeg identiteta od krađe i prijevare.",
                 "supportTitle": "BESPLATNA podrška za korisnike",
                 "supportSubtitle": "Pruža pokrivenost telefonom, razgovorom ili putem interneta tijekom trajanja pretplate.",
-                "antiTitle": "Zaštita od neželjene pošte",
-                "antiSubtitle": "Blokira opasne poruke prije nego što dođu u vašu ulaznu poštu uklanjanjem poruka e-pošte koje mogu obuhvaćati rizične veze i viruse.",
-                "virusTitle": "Jamstvo zaštite od virusa",
-                "virusSubtitle": "Ako se računalo zarazi virusom, stručnjak tvrtke McAfee daljinski će pristupiti računalu i ukloniti virus.",
-                "parentalTitle": "Roditeljski nadzor",
-                "parentalSubtitle": "Blokirajte web-mjesta i rezultate pretraživanja koja ne želite da ih vaša djeca vide. Omogućuje vam i postavljanje vremenskog ograničenja korištenja interneta.",
-                "license": "Licenca vrijedi do",
-                "trial": "Probna verzija vrijedi do"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"

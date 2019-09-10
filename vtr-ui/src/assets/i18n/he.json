@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\"."
                 },
                 "powerSettings": {
                     "title": "הגדרות צריכת חשמל",
@@ -1181,7 +1181,7 @@
                     "more": "עוד",
                     "control1": "בקרי משטח מגע",
                     "control2": "בקרי עכבר",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "בקרי TRACKPOINT"
                 }
             }
         },
@@ -1698,7 +1698,8 @@
                 "disabled": "מושבת",
                 "enableVirusScan": "הפעלת סריקת וירוסים",
                 "enablenFirewall": "הפעלת חומת אש",
-                "enableFirewall": "הפעלת חומת אש"
+                "enableFirewall": "הפעלת חומת אש",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "ללא הגנה אופטימלית",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "כרגע אתם מוגנים על-ידי McAfee LiveSafe",
-                "valid": "בתוקף עד",
-                "upgrade": "שדרגו כעת",
                 "launch": "הפעלת McAfee",
                 "getMacfee": "רכישת McAfee",
                 "topBenefits": "היתרונות המרכזיים של McAfee LiveSafe",
                 "awardTitle": "אנטי-וירוס עטור פרסים",
                 "awardSubtitle": "חוסם וירוסים, תוכנות זדוניות, תוכנות כופר, תוכנות ריגול, תוכניות לא רצויות ועוד במחשבכם.",
-                "encryptedTitle": "אחסון מוצפן",
-                "encryptedSubtitle": "שמרו על הפרטיות של קבצים רגישים על-ידי אחסונם במחשב שלכם באמצעות הצפנת 128 סיביות.",
-                "identityTitle": "הגנה מפני גניבת זהות",
-                "identitySubtitle": "קחו אחריות על ההגנה על זהותכם מפני גניבה והונאה.",
                 "supportTitle": "תמיכה בלקוחות ללא תשלום",
                 "supportSubtitle": "תוכלו לקבל תמיכה באמצעות טלפון, באמצעות צ'אט או באתר אינטרנט לתקופת המנוי שלכם.",
-                "antiTitle": "אנטי-ספאם",
-                "antiSubtitle": "חוסם הודעות מסוכנות לפני שהן מגיעות לתיבת הדואר הנכנס שלכם על ידי הסרת הודעות דואר אלקטרוני שעשויות לכלול קישורים מסוכנים ווירוסים.",
-                "virusTitle": "הבטחת הגנה מפני וירוסים",
-                "virusSubtitle": "מקנה לך את הביטחון שאם וירוס יחדור למחשב, מומחה McAfee ייגש מרחוק למחשב ויסיר אותו.",
-                "parentalTitle": "בקרות הורים",
-                "parentalSubtitle": "תוכלו לחסום אתרי אינטרנט ותוצאות חיפוש שאינכם רוצים שילדכם יצפו בהם. ניתן גם להגדיר מגבלות על משך הזמן שבו הם גולשים באינטרנט.",
-                "license": "הרישיון בתוקף עד",
-                "trial": "גרסת הניסיון בתוקף עד"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "מציע הגנה בסיסית להתקן שלכם"
