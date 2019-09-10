@@ -393,18 +393,18 @@
 				"body": "Prikazaće se samo aplikacije koje su trenutno pokrenute. Pokrenite aplikaciju koju želite da dodate i vratite se."
             }
         },
-        "networkBoost": {
-            "title": "Pojačanje mreže",
-            "introLine": "Omogućavanje Pojačanja mreže automatski postavlja prioritet igara na najviši nivo u mreži i povećava brzinu. Ako koristite aplikacije dok igrate, npr. Twitch ili Discord, preporučujemo da ih dodate u listu u nastavku kako bi takođe imale prioritet u vašoj mreži.",
-            "modalTurn": {
-                "title": "Želite da uključite Pojačanje mreže?",
-                "body": "Želite da uključite Pojačanje mreže? Aplikacije koje ste dodali deliće više mreže kada su pokrenute.",
-                "checkedTitle": "Ne pitaj ponovo",
-                "btnConfirm": "Uključi",
-                "btnCancel": "Ne sad"
+       "networkBoost": {
+            "title": "Pojačanje mreže",
+            "introLine": "Omogućavanje Pojačanja mreže automatski postavlja prioritet igara na najviši nivo u mreži i povećava brzinu. Ako koristite aplikacije dok igrate, npr. Twitch ili Discord, preporučujemo da ih dodate u listu u nastavku kako bi takođe imale prioritet u vašoj mreži.",
+            "modalTurn": {
+                "title": "Želite da uključite Pojačanje mreže?",
+                "body": "Želite da uključite Pojačanje mreže? Aplikacije koje ste dodali deliće više mreže kada su pokrenute.",
+                "checkedTitle": "Ne pitaj ponovo",
+                "btnConfirm": "Uključi",
+                "btnCancel": "Ne sad"
             },
             "modalAddApps": {
-                "title": "Dodavanje aplikacija u Pojačanje mreže",
+                "title": "Dodavanje aplikacija u Pojačanje mreže",
                 "body": {
                     "part1": "Možete dodati do 5 dod. aplik. za pojačanje",
                     "part2": "od",
