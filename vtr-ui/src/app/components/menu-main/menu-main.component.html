@@ -248,6 +248,7 @@
 							[metricsParent]="item.metricsParent"
 							metricsItem="LenovoMigrationAssistantButton"
 							[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidLenovoMigrationAssistant]"
+							(click)="updateUnreadCount(item, $event)"
 							href="javascript:void(0)">Lenovo Migration Assistant</a>
 							<a *ngIf="commonService.isOnline && !deviceService.isSMode && !deviceService.isGaming && modernPreloadService.IsEntitled"
 								vtrMetrics

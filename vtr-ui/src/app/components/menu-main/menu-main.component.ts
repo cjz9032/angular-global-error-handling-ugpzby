@@ -58,6 +58,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	currentUrl: string;
 	isSMode: boolean;
 
+	UnreadCount = {
+		totalMessage: 2,
+		lmaClicked: false,
+		adobeClicked: false
+	};
+
 	get appsForYouEnum() { return AppsForYouEnum; }
 
 	constructor(
@@ -206,6 +212,20 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 		if (machineType === 1) {
 			this.initInputAccessories();
+		}
+	}
+
+	private updateUnreadCount(item, event?) {
+		if (item.id === 'user') {
+			const target = event.target || event.srcElement || event.currentTarget;
+			const idAttr = target.attributes.id;
+			const id = idAttr.nodeValue;
+			if (id === 'menu-main-lnk-open-lma') {
+				if (this.UnreadCount.totalMessage > 0) {
+					this.UnreadCount.totalMessage -= 1;
+				}
+				this.UnreadCount.lmaClicked = true;
+			}
 		}
 	}
 
