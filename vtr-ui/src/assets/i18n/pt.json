@@ -1250,7 +1250,7 @@
                     "description3": "1. Se o computador estiver no modo Tenda, Tablet ou Suporte, estas funcionalidades poderão não funcionar corretamente.",
                     "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O login sem toques não funcionará.",
                     "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Se o Modo de avião estiver ativo no computador, estas funcionalidades estão desativadas."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vá para as definições Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Retroceder",

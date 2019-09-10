@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Yanıp Sönme Düzeyi"
-                },
-                "default": {
-                    "title": "VARSAYILANA AYARLA"
                 }
             },
             "profile": {
@@ -1253,7 +1250,7 @@
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
                     "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Sıfır Dokunma ile Oturum Açma kullanılamaz.",
                     "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Geri",
