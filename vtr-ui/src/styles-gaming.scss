@@ -650,6 +650,16 @@
 						}
 					}
 				}
+
+				.vtr-widget-schedule-scan{
+					background: $dark_cell;
+					.title {
+						color: $gaming_lightest;
+					}
+					.description {
+						color: $gaming_grey_lightest;
+					}
+				}
 			}
 
 			.tooltip-click.tooltip {
