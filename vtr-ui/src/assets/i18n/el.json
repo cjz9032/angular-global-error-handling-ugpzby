@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Η λειτουργία Έξυπνης ψύξης ρυθμίζει την ταχύτητα του ανεμιστήρα, τη μέγιστη απόδοση και διαχειρίζεται τη διάρκεια της μπαταρίας. Αυτή η δυνατότητα έχει 3 λειτουργίες (Αθόρυβη, Ισορροπημένη και Απόδοση) και είναι πλέον προσβάσιμη από το ρυθμιστικό ισχύος απόδοσης των Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Η έξυπνη ψύξη σας δίνει τη δυνατότητα να ρυθμίσετε την απόδοση του συστήματος και τη θερμική θερμοκρασία. Στη λειτουργία \"Απόδοση\", βελτιστοποιεί την απόδοση του συστήματος. Ενώ βοηθά να διατηρήσετε το σύστημα πιο δροσερό ή πιο αθόρυβο στη λειτουργία \"Κρύο και αθόρυβο\"."
                 },
                 "powerSettings": {
                     "title": "Ρυθμίσεις ενέργειας",
@@ -1181,7 +1181,7 @@
                     "more": "ΠΕΡΙΣΣΟΤΕΡΑ",
                     "control1": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΛΗΚΤΡΟΛΟΓΙΟΥ ΑΦΗΣ",
                     "control2": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΟΝΤΙΚΙΟΥ",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "ΧΕΙΡΙΣΤΗΡΙΑ TRACKPOINT"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. Εάν ο υπολογιστής σας είναι σε λειτουργία σκηνής, tablet ή ανάκλισης, οι δυνατότητες αυτές ενδέχεται να μη λειτουργούν σωστά.",
                     "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η σύνδεση χωρίς αφή δεν θα λειτουργήσει.",
                     "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Μετάβαση στις Ρυθμίσεις του Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Πίσω",
@@ -1693,7 +1698,8 @@
                 "disabled": "ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
                 "enableVirusScan": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΣΑΡΩΣΗΣ ΓΙΑ ΙΟΥΣ",
                 "enablenFirewall": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΤΕΙΧΟΥΣ ΠΡΟΣΤΑΣΙΑΣ",
-                "enableFirewall": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΤΕΙΧΟΥΣ ΠΡΟΣΤΑΣΙΑΣ"
+                "enableFirewall": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΤΕΙΧΟΥΣ ΠΡΟΣΤΑΣΙΑΣ",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Χωρίς βέλτιστη προστασία",
@@ -1705,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Προς το παρόν, προστατεύεστε με το McAfee LiveSafe",
-                "valid": "Ισχύει έως",
-                "upgrade": "Αναβάθμιση τώρα",
                 "launch": "ΕΚΚΙΝΗΣΗ McAfee",
                 "getMacfee": "ΑΠΟΚΤΗΣΗ ΤΟΥ McAfee",
                 "topBenefits": "Κορυφαία πλεονεκτήματα του McAfee LiveSafe",
                 "awardTitle": "Βραβευμένο λογισμικό προστασίας από ιούς",
                 "awardSubtitle": "Μπλοκάρει ιούς, malware, ransomware, spyware, ανεπιθύμητα προγράμματα και πολλά άλλα στον υπολογιστή σας.",
-                "encryptedTitle": "Κρυπτογραφημένος χώρος αποθήκευσης",
-                "encryptedSubtitle": "Κρατήστε τα ευαίσθητα αρχεία ιδιωτικά, αποθηκεύοντας τα στον υπολογιστή σας με κρυπτογράφηση 128 bit.",
-                "identityTitle": "Προστασία από υποκλοπή ταυτότητας",
-                "identitySubtitle": "Πάρτε την ευθύνη για την προστασία της ταυτότητάς σας από υποκλοπή και απάτη.",
                 "supportTitle": "ΔΩΡΕΑΝ υποστήριξη πελατών",
                 "supportSubtitle": "Σας παρέχει κάλυψη μέσω τηλεφώνου, συνομιλίας (chat) ή online καθ' όλη τη διάρκεια της συνδρομής σας.",
-                "antiTitle": "Προστασία από ανεπιθύμητη αλληλογραφία",
-                "antiSubtitle": "Αποκλείει τα επικίνδυνα μηνύματα πριν φθάσουν στα Εισερχόμενά σας, αφαιρώντας τα email τα οποία ενδέχεται να περιέχουν επικίνδυνους συνδέσμους και ιούς.",
-                "virusTitle": "Υπόσχεση προστασίας από ιούς",
-                "virusSubtitle": "Σας παρέχει τη βεβαιότητα ότι σε περίπτωση μόλυνσης του υπολογιστή σας από ιό, ένας εμπειρογνώμονας της McAfee θα αποκτήσει απομακρυσμένη πρόσβαση στον υπολογιστή σας για να τον αφαιρέσει.",
-                "parentalTitle": "Γονικοί έλεγχοι",
-                "parentalSubtitle": "Αποκλείει δικτυακούς τόπους και αποτελέσματα αναζήτησης που δεν θέλετε να βλέπουν τα παιδιά σας. Επιπλέον, σας αφήνει να καθορίσετε τα όρια για πόσο χρόνο ξοδεύουν σε σύνδεση (online).",
-                "license": "Ισχύς αδείας έως",
-                "trial": "Ισχύς δοκιμαστικής έκδοσης έως"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "σάς προσφέρει βασική προστασία για τη συσκευή σας"

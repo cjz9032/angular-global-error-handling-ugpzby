@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\"."
                 },
                 "powerSettings": {
                     "title": "إعدادات الطاقة",
@@ -1181,7 +1181,7 @@
                     "more": "المزيد",
                     "control1": "إعدادات تحكم لوحة اللمس",
                     "control2": "إعدادات تحكم الماوس",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "إعدادات تحكم TRACKPOINT"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
                     "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. إذا تم تمكين وضع الطائرة على جهاز الكمبيوتر الخاص بك، يتم تعطيل هذه الميزات."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "السابق‬",
@@ -1693,7 +1698,8 @@
                 "disabled": "معطل",
                 "enableVirusScan": "تمكين فحص الفيروسات",
                 "enablenFirewall": "تمكين جدار الحماية",
-                "enableFirewall": "تمكين جدار الحماية"
+                "enableFirewall": "تمكين جدار الحماية",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "غير محمي بشكل مثالي",
@@ -1705,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "أنت محمي في الوقت الحالي بواسطة McAfee LiveSafe",
-                "valid": "صالح حتى",
-                "upgrade": "الترقية الآن",
                 "launch": "تشغيل McAfee",
                 "getMacfee": "الحصول على McAfee",
                 "topBenefits": "أهم فوائد McAfee LiveSafe",
                 "awardTitle": "برنامج مكافحة الفيروسات الحائز على جوائز",
                 "awardSubtitle": "يعمل على حظر الفيروسات والبرامج الضارة وبرامج الفدية والبرامج غير المرغوب فيها والمزيد على جهاز الكمبيوتر الشخصي.",
-                "encryptedTitle": "التخزين المشفر",
-                "encryptedSubtitle": "حافظ على سرية ملفاتك الخاصة عن طريق تخزينها علي الكمبيوتر الخاص بك باستخدام تشفير 128 بت.",
-                "identityTitle": "الحماية من سرقة الهوية",
-                "identitySubtitle": "تولي مهمة حماية هويتك من السرقة والاحتيال.",
                 "supportTitle": "دعم عملاء مجاني",
                 "supportSubtitle": "هل تم التواصل معك عبر الهاتف أو الدردشة أو عبر الإنترنت طول فترة اشتراكك؟",
-                "antiTitle": "مكافحة البريد العشوائي",
-                "antiSubtitle": "يقوم بحظر الرسائل الخطرة قبل أن تصل إلى علبة الوارد من خلال إزالة رسائل البريد الإلكتروني التي قد تحتوي على ارتباطات وفيروسات خطرة.",
-                "virusTitle": "تعهد الحماية من الفيروسات",
-                "virusSubtitle": "تضمن لك أنه عندما يصل فيروس إلى جهاز الكمبيوتر، فسيقوم خبير McAfee بالوصول إلى جهاز الكمبيوتر عن بُعد لإزالته.",
-                "parentalTitle": "الرقابة الأبوية",
-                "parentalSubtitle": "حظر مواقع الويب ونتائج البحث التي لا تود أن يراها أطفالك. كما تتيح لك تعيين حدود الوقت الذي يقضونه على الإنترنت.",
-                "license": "الترخيص صالح حتى",
-                "trial": "الإصدار التجريبي صالح حتى"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "يقدم لك الحماية الأساسية لجهازك"

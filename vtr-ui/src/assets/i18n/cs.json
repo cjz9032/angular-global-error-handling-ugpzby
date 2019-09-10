@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Úroveň blikání"
-                },
-                "default": {
-                    "title": "NASTAVIT NA VÝCHOZÍ NASTAVENÍ"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší."
                 },
                 "powerSettings": {
                     "title": "Nastavení napájení",
@@ -1184,7 +1181,7 @@
                     "more": "DALŠÍ",
                     "control1": "OVLÁDÁNÍ DOTYKOVÉ PLOŠKY",
                     "control2": "OVLÁDÁNÍ MYŠI",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "OVLÁDÁNÍ TRACKPOINT"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Pokud je v počítači povolen režim letadlo, tyto funkce jsou deaktivovány."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Zpět",
@@ -1696,7 +1698,8 @@
                 "disabled": "ZAKÁZÁNO",
                 "enableVirusScan": "POVOLIT VYHLEDÁVÁNÍ VIRŮ",
                 "enablenFirewall": "POVOLIT BRÁNU FIREWALL",
-                "enableFirewall": "POVOLIT BRÁNU FIREWALL"
+                "enableFirewall": "POVOLIT BRÁNU FIREWALL",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Ochrana není optimální",
@@ -1708,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Nyní vás chrání McAfee LiveSafe",
-                "valid": "Platnost do",
-                "upgrade": "Aktualizovat",
                 "launch": "SPUSTIT McAfee",
                 "getMacfee": "ZÍSKAT McAfee",
                 "topBenefits": "Hlavní výhody programu McAfee LiveSafe",
                 "awardTitle": "Oceňovaný antivirus",
                 "awardSubtitle": "Blokuje viry, malware, ransomware, spyware, nežádoucí aplikace a další programy ve vašem počítači.",
-                "encryptedTitle": "Šifrované úložiště",
-                "encryptedSubtitle": "Díky 128bitovému šifrování zůstanou citlivé soubory ve vašem počítači uchovány v tajnosti.",
-                "identityTitle": "Ochrana proti krádeži identity",
-                "identitySubtitle": "Převezměte kontrolu nad ochranou své identity před její krádeží nebo zneužitím.",
                 "supportTitle": "BEZPLATNÁ zákaznická podpora",
                 "supportSubtitle": "Po dobu trvání předplatného se o vás postaráme prostřednictvím telefonu, chatu nebo online.",
-                "antiTitle": "Ochrana proti nevyžádané poště",
-                "antiSubtitle": "Blokuje nebezpečné zprávy a odstraňuje e-maily, které mohou obsahovat rizikové odkazy a viry, ještě než se dostanou do vaší schránky.",
-                "virusTitle": "Záruka antivirové ochrany",
-                "virusSubtitle": "Poskytuje jistotu, že v případě napadení počítače virem vám odborník společnosti McAfee pomůže virus odstranit přes vzdálenou plochu.",
-                "parentalTitle": "Rodičovská kontrola",
-                "parentalSubtitle": "Blokuje webové stránky a výsledky hledání, které nechcete ukázat dětem. Také umožňuje nastavit limity, kolik času mohou trávit na internetu.",
-                "license": "Licence platí do",
-                "trial": "Zkušební verze platí do"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "nabízí základní ochranu zařízení"

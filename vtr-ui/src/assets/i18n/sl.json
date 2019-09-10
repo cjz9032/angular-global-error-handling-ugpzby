@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Hitrost utripanja"
-                },
-                "default": {
-                    "title": "NASTAVI NA PRIVZETE NASTAVITVE"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije. Ta funkcija ima 3 načine (tihi način, uravnotežen način in način učinkovitosti delovanja) in je zdaj dostopna z drsnikom za zmogljivost sistema Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Pametno hlajenje omogoča prilagajanje učinkovitosti delovanja in temperature sistema. V načinu »Učinkovitost delovanja« optimizira učinkovitost delovanja sistema. V načinu »Hladno in tiho« poskrbi za hladnejše in tišje delovanje sistema."
                 },
                 "powerSettings": {
                     "title": "Nastavitve napajanja",
@@ -1184,7 +1181,7 @@
                     "more": "VEČ",
                     "control1": "KONTROLNIKI SLEDILNE PLOŠČICE",
                     "control2": "KONTROLNIKI MIŠKE",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "KONTROLNIKI TRACKPOINT"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stanja, te funkcije morda ne bodo pravilno delovale.",
                     "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen. Prijava brez dotika ne bo delovala.",
                     "description5": "3. Prilagodite zaslon računalnika na primeren kot, tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Odprite nastavitve Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Nazaj",
@@ -1696,7 +1698,8 @@
                 "disabled": "ONEMOGOČEN",
                 "enableVirusScan": "OMOGOČI SKENIRANJE VIRUSA",
                 "enablenFirewall": "OMOGOČITE POŽARNI ZID",
-                "enableFirewall": "OMOGOČITE POŽARNI ZID"
+                "enableFirewall": "OMOGOČITE POŽARNI ZID",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Nije optimalno zaščiten",
@@ -1708,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Trenutno ste zaščiteni s programom McAfee LiveSafe",
-                "valid": "Veljaven do",
-                "upgrade": "Nadgradite že zdaj",
                 "launch": "ZAŽENITE McAfee",
                 "getMacfee": "PRIDOBITE McAfee",
                 "topBenefits": "Glavne prednosti storitve McAfee LiveSafe",
                 "awardTitle": "Nagrajena protivirusna zaščita",
                 "awardSubtitle": "V računalniku blokira viruse, zlonamerno, izsiljevalsko in vohunsko programsko opremo, neželene programe in drugo.",
-                "encryptedTitle": "Šifrirana shramba",
-                "encryptedSubtitle": "Občutljive datoteke zavarujte tako, da jih shranite v računalnik s 128-bitnim šifriranjem.",
-                "identityTitle": "Zaščita pred krajo identitete",
-                "identitySubtitle": "Prevzemite nadzor nad zaščito svoje identitete pred krajami in goljufijami.",
                 "supportTitle": "BREZPLAČNA podpora strankam",
                 "supportSubtitle": "Med celotnim obdobjem trajanja naročnine je na voljo po telefonu, klepetu ali v spletu.",
-                "antiTitle": "Zaščita pred neželeno e-pošto",
-                "antiSubtitle": "Blokira nevarna sporočila, preden dosežejo vaš nabiralnik, in sicer tako, da odstrani e-poštna sporočila, ki bi lahko vsebovala tvegane povezave ali viruse.",
-                "virusTitle": "Obljuba glede virusne zaščite",
-                "virusSubtitle": "Ponuja zagotovilo, da bo McAfeejev strokovnjak v primeru okužbe računalnika na daljavo dostopal do vašega računalnika in odstranil virus.",
-                "parentalTitle": "Starševski nadzor",
-                "parentalSubtitle": "Blokirajte spletna mesta in rezultate iskanja, za katere ne želite, da jih otroci vidijo. Omogoča tudi nastavitev omejitve časa, ki ga otroci preživijo v internetu.",
-                "license": "Licenca velja do",
-                "trial": "Preskušanje velja do"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "ponuja osnovno zaščito za vašo napravo"

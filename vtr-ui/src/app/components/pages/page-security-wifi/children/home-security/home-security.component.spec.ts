@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConnectedHomeComponent } from './connected-home.component';
+import { HomeSecurityComponent } from './home-security.component';
 
-describe('ConnectedHomeComponent', () => {
+describe('HomeSecurityComponent', () => {
 	// let component: ConnectedHomeComponent;
 	// let fixture: ComponentFixture<ConnectedHomeComponent>;
 
