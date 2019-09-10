@@ -1,15 +1,15 @@
-<div class="modal-main-wrapper" tabindex="-1">
+<div class="modal-main-wrapper">
 	<ui-popover>
 
 		<div class="modal-body vtr-ui-macrokey-popup" [id]="modalContent.metricsItemPopup || 'macrokey_popup_close'"
 			attr.aria-label="modalContent.metricsItemPopup || 'macrokey_popup_close'">
 			<div class="row justify-content-end">
 				<div class="btn-close">
-					<button type="button" class="close" aria-hidden="true" (click)="submitAction(false)"
-						id="{{modalContent.metricsItemClose}}" attr.aria-label="{{modalContent.metricsItemClose}}"
+					<a href="javascript:void(0)" role="link" (keyup.enter)="submitAction(false)" tabindex="1" type="button" class="close" aria-hidden="true" (click)="submitAction(false)"
+						id="{{modalContent.metricsItemClose}}" attr.aria-label="{{modalContent.metricsItemClose}}" 
 						vtrMetrics [metricsItem]="'macrokey_popup_close'" metricsEvent="featureClick">
-						<fa-icon  tabindex="1" (keyup.enter)="submitAction(false)" [icon]="['fal', 'times']"></fa-icon>
-					</button>
+						<fa-icon  [icon]="['fal', 'times']"></fa-icon>
+					</a>
 				</div>
 			</div>
 			<div class="content-body">
@@ -29,7 +29,7 @@
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</a>
 				</div>
 				<div *ngIf="!modalContent.btnConfirm">
-					<a href="javascript:void(0)" tabindex="1" attr.aria-label="ok" role="link" class="btn enable-button" (click)="submitAction(true)"
+					<a href="javascript:void(0)" tabindex="1" role="link" class="btn enable-button" (click)="submitAction(true)"
 						id="{{modalContent.metricsItemId}}" attr.aria-label="{{modalContent.metricsItemId}}" vtrMetrics
 						[metricsItem]="modalContent.metricsItemId"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.btnOk' | translate}}</a>

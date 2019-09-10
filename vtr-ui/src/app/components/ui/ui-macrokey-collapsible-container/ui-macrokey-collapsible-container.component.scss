@@ -85,6 +85,9 @@
 						background-color:$high-contrast-grey;						
 						}
 				}
+				&:focus {
+					background: $gaming_hover;
+				}
 			}
 			&.selected {
 				.dropdown-item {
