@@ -39,7 +39,7 @@
 		background-image: $gaming_lighting_gradient;
 		z-index: -1;
 	}
-	.inner-toggle{
+	.inner-toggle {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -47,46 +47,48 @@
 		height: 100%;
 		position: relative;
 	}
-    input {
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        & ~ label {
-            color: $gaming;
-            font-size: 1.8rem;
-            width: 25%;
-            height: 4.2rem;
-            border-radius: 4.2rem;
-            margin: 0.4rem 0.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
+	input {
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 5rem;
+		& ~ label {
+			color: $gaming;
+			font-size: 1.8rem;
+			width: 25%;
+			height: 4.2rem;
+			border-radius: 4.2rem;
+			margin: 0.4rem 0.2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			z-index: 1;
 			cursor: pointer;
-			.num{
+			.num {
 				display: none;
 			}
-            @media #{$small-screen}{
-                white-space: nowrap;
-                overflow: hidden;
-                //letter-spacing: 2rem;
-                //text-indent: -20rem;
-                &#off{
-                    letter-spacing: 0;
-                    text-indent: 0;
+			@media #{$small-screen} {
+				white-space: nowrap;
+				overflow: hidden;
+				//letter-spacing: 2rem;
+				//text-indent: -20rem;
+				&#off {
+					letter-spacing: 0;
+					text-indent: 0;
 				}
-				&>span:nth-child(1){
-					display:none;
+				& > span:nth-child(1) {
+					display: none;
 				}
-				.num{
+				.num {
 					display: block;
 				}
-            }
-        }
-    }
+			}
+		}
+	}
 
 	.toggle {
 		position: absolute;
