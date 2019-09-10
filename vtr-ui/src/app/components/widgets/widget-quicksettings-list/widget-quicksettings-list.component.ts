@@ -114,6 +114,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				name: 'gaming.dashboard.device.quickSettings.status.performance',
 				description: 'gaming.dashboard.device.quickSettings.statusText.perText',
 				id: 'thermal mode performance',
+				ariaLabel: 'performance',
 				value: 3
 			},
 			{
@@ -121,6 +122,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				name: 'gaming.dashboard.device.quickSettings.status.balance',
 				description: 'gaming.dashboard.device.quickSettings.statusText.balText',
 				id: 'thermal mode balance',
+				ariaLabel: 'balance',
 				value: 2
 			},
 			{
@@ -128,6 +130,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				name: 'gaming.dashboard.device.quickSettings.status.quiet',
 				description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
 				id: 'thermal mode quiet',
+				ariaLabel: 'quiet',
 				value: 1
 			}
 		]

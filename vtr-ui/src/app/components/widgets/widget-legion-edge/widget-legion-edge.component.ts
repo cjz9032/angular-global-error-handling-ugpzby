@@ -75,7 +75,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			readonly: true,
 			id: 'legionedge ramoverlock',
-			ariaLabel: 'ram overlock subpage',
+			ariaLabel: 'ram overlock',
 			type: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			settings: ''
 		},
@@ -98,7 +98,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			readonly: true,
 			id: 'legionedge networkboost',
-			ariaLabel: 'network boost subpage',
+			ariaLabel: 'network boost',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',
 			canNavigate: true,
@@ -121,7 +121,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			id: 'legionedge autoclose',
-			ariaLabel: 'auto close subpage',
+			ariaLabel: 'auto close',
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose',
 			canNavigate: true,
@@ -146,7 +146,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			readonly: true,
 			id: 'legionedge hybridmode',
-			ariaLabel: 'hybrid mode subpage',
+			ariaLabel: 'hybrid mode',
 			type: 'gaming.dashboard.device.legionEdge.hybridMode',
 			settings: ''
 		},
@@ -167,7 +167,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: true,
 			tooltipText: '',
 			id: 'legionedge touchpadlock',
-			ariaLabel: 'touchpadlock subpage',
+			ariaLabel: 'touchpadlock',
 			type: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			settings: ''
 		}
@@ -183,6 +183,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
 				id: 'cpu overclock on',
+				ariaLabel:'on',
 				value: 1
 			},
 			{
@@ -190,6 +191,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
 				id: 'cpu overclock when gaming',
+				ariaLabel:'when gaming',
 				value: 2
 			},
 			{
@@ -197,6 +199,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.off',
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
 				id: 'cpu overclock off',
+				ariaLabel:'off',
 				value: 3
 			}
 		]
