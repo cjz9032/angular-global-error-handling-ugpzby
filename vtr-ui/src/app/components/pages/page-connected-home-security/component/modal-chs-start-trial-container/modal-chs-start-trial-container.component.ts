@@ -12,12 +12,9 @@ import { take } from 'rxjs/operators';
 	styleUrls: ['./modal-chs-start-trial-container.component.scss']
 })
 export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
-	permission: any;
 	chs: Phoenix.ConnectedHomeSecurity;
-	url = 'ms-settings:privacy-location';
 	metricsParent = 'ConnectedHomeSecurity';
 	switchPage = 1;
-	locationCallback;
 	countdownNumber = 3;
 	subscribe: Subscription;
 
@@ -25,15 +22,14 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
 		public homeSecurityMockService: HomeSecurityMockService,
-	) {
-		this.chs = vantageShellService.getConnectedHomeSecurity();
+	) {	}
+
+	ngOnInit() {
+		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
-		this.permission = vantageShellService.getPermission();
-	}
 
-	ngOnInit() {
 		if (this.switchPage === 1) {
 			this.countdown();
 		}
