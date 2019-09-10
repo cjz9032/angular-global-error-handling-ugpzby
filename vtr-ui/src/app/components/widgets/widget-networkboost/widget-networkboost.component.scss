@@ -1,6 +1,12 @@
 @import "../../../app.theme.scss";
 .isdisabled {
   background-color: $gaming_darker !important;
+  @media #{$black-on-white}{
+	  opacity: 0.15;
+  }
+  @media #{$white-on-black}{
+	opacity: 0.15;
+}
 }
 .autoclose-wrapper {
   background: $gaming_darkest;

@@ -2404,6 +2404,7 @@
         "errorNoOptionSelected": "Valitse oikea vaihtoehto.",
         "offline": "Tämä laite toimii offline-tilassa, muodosta Internet-yhteys",
         "doNotSuspend": "Näiden testien suoritus ei saa keskeytyä. Älä sulje tai pienennä tätä sovellusta. Älä siirrä tietokonetta keskeytystilaan tai katkaise tietokoneen virtaa tarkistuksen aikana.",
+        "doNotUse": "Älä käytä tietokonetta, kunnes tämä testi on valmis",
         "customize": {
             "name": "Mukautus",
             "test": "Mukauta testiä",
