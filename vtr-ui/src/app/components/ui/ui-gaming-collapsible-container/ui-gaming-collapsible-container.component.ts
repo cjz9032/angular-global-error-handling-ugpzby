@@ -33,7 +33,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	public getCurrentOption() {
 		this.options.dropOptions.forEach((option: any) => {
 			if (option.value === this.options.curSelected) {
-				this.currentOption = option.name;
+				this.currentOption = option.id;
 				this.currentDescription = option.description;
 			}
 		});
@@ -52,14 +52,14 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	}
 
 	public setDefaultOption(option) {
-		this.currentOption = option.name;
+		this.currentOption = option.id;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
 	}
 
 	public optionSelected(option) {
-		this.currentOption = option.name;
+		this.currentOption = option.id;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
