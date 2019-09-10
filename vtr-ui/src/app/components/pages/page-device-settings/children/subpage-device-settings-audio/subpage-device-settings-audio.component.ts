@@ -35,6 +35,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	autoDolbyFeatureLoader = true;
 	isDTmachine = false;
 	private notificationSubscription: Subscription;
+	public readonly helpIcon = ['far', 'question-circle'];
+	public automaticDolbyHelpIcon = [];
 
 	constructor(
 		private audioService: AudioService,
@@ -178,6 +180,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 					.then((dolbyFeature: FeatureStatus) => {
 						this.autoDolbyFeatureStatus = dolbyFeature;
 						this.autoDolbyFeatureLoader = false;
+						this.automaticDolbyHelpIcon = (this.autoDolbyFeatureStatus.available) ? this.helpIcon : [];
 						console.log('getDolbyFeatureStatus:', dolbyFeature);
 					}).catch(error => {
 						this.logger.error('getDolbyFeatureStatus', error.message);
