@@ -44,15 +44,15 @@ export class UiToggleComponent implements OnInit, OnDestroy {
 	 * this function is to send the change event for the notChange = true types.
 	 */
 	sendChangeEvent($event) {
-		console.log('this.value-----------------------',$event,$event.target,$event.target.value);
+		// console.log('this.value-----------------------',$event,$event.target,$event.target.value);
 		if (!this.notChange) {
 			this.value = !this.value;
 		}
-		
 		$event.target.value = this.value;
-		console.log('this.value-----------------------222',$event.target.value);
+		$event.target.checked = $event.target.value;
+		$event.switchValue = $event.target.value;
+		// console.log('this.value-----------------------222',$event.target.value);
 		this.toggle.emit($event);
-		return false;
 	}
 
 	stopPropagation(event) {
