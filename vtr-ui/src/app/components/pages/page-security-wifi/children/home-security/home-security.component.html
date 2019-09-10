@@ -1,4 +1,4 @@
-<div class="vtr-connected-home">
+<div class="vtr-home-security">
 	<div class="container-fluid p-40">
 		<div class="row">
 			<div class="col">
@@ -102,20 +102,28 @@
 		</div>
 
 		<div class="row">
-			<div class="col">
-				<div class="peace-of-mind">
-					<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
-					<div class="text-regular" *vtrTranslate="'security.homeprotection.homesecurity.subtitleDescribe' | translate">
-						<a vtrMetrics  id="sa-ws-lnk-CHS-here"
-							metricsEvent="ArticleClick"
-							metricsItem="learnMoreAboutSecurityHealth"
-							metricsItemPosition="1"
-							metricsPageNumber="1"
-							[metricsItemID]="peaceOfMindArticleId"
-							[metricsItemCategory]="peaceOfMindArticleCategory"
-							href="javascript:void(0)"
-							(click)="openPeaceOfMindArticle()"
-							target="_blank"></a>
+			<div class="col-12">
+				<div class="peace-of-mind row">
+					<div class="col-auto pl-0 invisible">
+						<div class="bullet-icon">
+							<div class="icon-bkg ">
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
+						<div class="text-regular" *vtrTranslate="'security.homeprotection.homesecurity.subtitleDescribe' | translate">
+							<a vtrMetrics  id="sa-ws-lnk-CHS-here"
+								metricsEvent="ArticleClick"
+								metricsItem="learnMoreAboutSecurityHealth"
+								metricsItemPosition="1"
+								metricsPageNumber="1"
+								[metricsItemID]="peaceOfMindArticleId"
+								[metricsItemCategory]="peaceOfMindArticleCategory"
+								href="javascript:void(0)"
+								(click)="openPeaceOfMindArticle()"
+								target="_blank"></a>
+						</div>
 					</div>
 				</div>
 			</div>
