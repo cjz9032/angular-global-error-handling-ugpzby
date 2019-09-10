@@ -52,7 +52,7 @@ export class SafeStorageService {
 	}
 
 	removeAccessToken() {
-		return this.removePassword('figleaf-accessToken');
+		this.removePassword('figleaf-accessToken');
 	}
 
 	setEmail(email) {
@@ -61,5 +61,9 @@ export class SafeStorageService {
 
 	getEmail() {
 		return this.getPassword('figleaf-userEmail');
+	}
+
+	removeEmail() {
+		this.removePassword('figleaf-userEmail');
 	}
 }

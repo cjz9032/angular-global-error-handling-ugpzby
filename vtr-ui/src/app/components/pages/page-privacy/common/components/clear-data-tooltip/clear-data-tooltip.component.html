@@ -1,0 +1,11 @@
+<vtr-tooltip [showStrategy]="'click'">
+	<ng-template #tooltipText>
+		<span class="clear-data__tooltip-text">Clear my breaches results</span>
+	</ng-template>
+	<ng-template #tooltipContext>
+		<div class="clear-data__tooltip-context">
+			<button (click)="clearData()">Yes</button>
+			<button>Not now</button>
+		</div>
+	</ng-template>
+</vtr-tooltip>

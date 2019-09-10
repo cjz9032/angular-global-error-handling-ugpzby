@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SafeStorageService } from './safe-storage.service';
 import { BehaviorSubject } from 'rxjs';
 import { getSha1Hash, getSha256Hash } from '../../utils/helpers';
-import { StorageService } from './storage.service';
+import { StorageService, HASH_FOR_TOKEN_NAME } from './storage.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -19,7 +19,7 @@ export class AccessTokenService {
 
 	setAccessToken(accessToken) {
 		const hashForToken = getSha256Hash(accessToken).toString();
-		this.storageService.setItem('hashForToken', hashForToken);
+		this.storageService.setItem(HASH_FOR_TOKEN_NAME, hashForToken);
 		this.safeStorageService.setAccessToken(accessToken);
 		this.accessTokenIsExist.next(!!accessToken);
 	}
@@ -27,7 +27,7 @@ export class AccessTokenService {
 	getAccessToken() {
 		const tokenFromSafeStorage = this.safeStorageService.getAccessToken();
 		const hashFromSafeStorage = getSha256Hash(tokenFromSafeStorage) ? getSha256Hash(tokenFromSafeStorage).toString() : '';
-		const hashFromMainStorage = this.storageService.getItem('hashForToken');
+		const hashFromMainStorage = this.storageService.getItem(HASH_FOR_TOKEN_NAME);
 		const isEqualHash = hashFromMainStorage === hashFromSafeStorage;
 
 		return isEqualHash ? tokenFromSafeStorage : null;
@@ -35,7 +35,7 @@ export class AccessTokenService {
 
 	removeAccessToken() {
 		this.accessTokenIsExist.next(false);
-		this.storageService.removeItem('hashForToken');
+		this.storageService.removeItem(HASH_FOR_TOKEN_NAME);
 		this.safeStorageService.removeAccessToken();
 	}
 }

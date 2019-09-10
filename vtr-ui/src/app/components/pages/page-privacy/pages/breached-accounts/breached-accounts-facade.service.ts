@@ -19,7 +19,7 @@ export class BreachedAccountsFacadeService {
 	breachedAccounts$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
 			debounceTime(100),
-			filter((breachedAccounts) => breachedAccounts.error === null && !breachedAccounts.reset),
+			filter((breachedAccounts) => breachedAccounts.error === null),
 			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				})
@@ -37,7 +37,7 @@ export class BreachedAccountsFacadeService {
 			map((breachedAccounts) => breachedAccounts.length > 0)
 		);
 	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
-	breachedAccountWereScanned$ = this.appStatusesService.globalStatus$.pipe(
+	breachedAccountWasScanned$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.undefined &&
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.error),
@@ -46,9 +46,7 @@ export class BreachedAccountsFacadeService {
 	breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
 
 	userEmail$ = this.emailScannerService.userEmail$.pipe(
-		startWith(this.safeStorageService.getEmail()),
-		filter(Boolean),
-		share()
+		startWith(this.safeStorageService.getEmail())
 	);
 
 	scanCounter$ = this.scanCounterService.getScanCounter();
@@ -75,7 +73,7 @@ export class BreachedAccountsFacadeService {
 	);
 
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = combineLatest([
-		this.breachedAccountWereScanned$,
+		this.breachedAccountWasScanned$,
 		this.breachedAccountsCount$,
 		this.isUserAuthorized$,
 		this.isFigleafReadyForCommunication$
@@ -86,7 +84,7 @@ export class BreachedAccountsFacadeService {
 	);
 
 	isShowVerifyBlock$ = combineLatest([
-		this.breachedAccountWereScanned$,
+		this.breachedAccountWasScanned$,
 		this.isAccountVerify$,
 		this.breachedAccountsCount$,
 		this.isFigleafReadyForCommunication$,

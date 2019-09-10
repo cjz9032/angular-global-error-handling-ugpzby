@@ -1,0 +1,10 @@
+.clear-data {
+	&__tooltip-text {
+		color: #BBC6C9;
+		font-size: 1.4rem;
+
+		&:hover {
+			color: #4A81FD;
+		}
+	}
+}

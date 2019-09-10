@@ -7,6 +7,7 @@ import { VantageCommunicationService } from '../../common/services/vantage-commu
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { BreachedAccountsFacadeService } from './breached-accounts-facade.service';
 import { combineLatest } from 'rxjs';
+import { Features } from '../../common/components/nav-tabs/nav-tabs.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -14,6 +15,7 @@ import { combineLatest } from 'rxjs';
 	styleUrls: ['./breached-accounts.component.scss']
 })
 export class BreachedAccountsComponent implements OnInit, OnDestroy {
+	breachedFeatureName = Features.breaches;
 	breachedAccounts$ = this.breachedAccountsFacadeService.breachedAccounts$;
 	isAccountVerify$ = this.breachedAccountsFacadeService.isAccountVerify$;
 	isShowVerifyBlock$ = this.breachedAccountsFacadeService.isShowVerifyBlock$;
@@ -21,7 +23,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	isUserAuthorized$ = this.breachedAccountsFacadeService.isUserAuthorized$;
 	breachedAccountsCount$ = this.breachedAccountsFacadeService.breachedAccountsCount$;
 	userEmail$ = this.breachedAccountsFacadeService.userEmail$;
-	breachedAccountWereScanned$ = this.breachedAccountsFacadeService.breachedAccountWereScanned$;
+	breachedAccountWasScanned$ = this.breachedAccountsFacadeService.breachedAccountWasScanned$;
 	isUndefinedWithoutFigleafState$ = this.breachedAccountsFacadeService.isUndefinedWithoutFigleafState$;
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = this.breachedAccountsFacadeService.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$;
 	scanCounter$ = this.breachedAccountsFacadeService.scanCounter$;

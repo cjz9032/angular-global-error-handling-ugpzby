@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, Observable, of, Subject, throwError } from 'rxjs';
 import { catchError, switchMap, tap } from 'rxjs/operators';
-import { StorageService } from '../../../common/services/storage.service';
+import { StorageService, USER_EMAIL_HASH } from '../../../common/services/storage.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AccessTokenService } from '../../../common/services/access-token.service';
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
@@ -45,7 +45,7 @@ export enum ErrorNames {
 	noAccessToken = 'noAccessToken'
 }
 
-export const USER_EMAIL_HASH = 'privacy-user-email-hash';
+
 
 @Injectable({
 	providedIn: 'root'
@@ -75,6 +75,11 @@ export class EmailScannerService {
 	setUserEmail(userEmail) {
 		this._userEmail$.next(userEmail);
 		this.safeStorageService.setEmail(userEmail);
+	}
+
+	removeUserEmail() {
+		this._userEmail$.next('');
+		this.safeStorageService.removeEmail();
 	}
 
 	scanNotifierEmit() {

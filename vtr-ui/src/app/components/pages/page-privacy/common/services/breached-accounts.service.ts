@@ -65,7 +65,9 @@ export class BreachedAccountsService implements OnDestroy {
 				tap((isFigleafReadyForCommunication) => this.resetBreachedAccounts(isFigleafReadyForCommunication)),
 				distinctUntilChanged()
 			),
-			this.getNewBreachedAccounts$.asObservable().pipe(distinctUntilChanged()),
+			this.getNewBreachedAccounts$.asObservable().pipe(
+				tap(() => this.resetBreachedAccounts(false)),
+			),
 			this.updateTriggersService.shouldUpdate$,
 		).pipe(
 			debounceTime(200),

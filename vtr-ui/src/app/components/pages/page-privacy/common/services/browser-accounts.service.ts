@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, merge, of, Subject } from 'rxjs';
 import { catchError, map, switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { StorageService } from './storage.service';
+import { CONSENT_NAME, StorageService } from './storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
 import { convertBrowserNameToBrowserData } from '../../utils/helpers';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
@@ -24,7 +24,7 @@ export interface InstalledBrowserDataState {
 	providedIn: 'root'
 })
 export class BrowserAccountsService {
-	isConsentGiven$ = new BehaviorSubject(!!this.storageService.getItem('isConsentGiven'));
+	isConsentGiven$ = new BehaviorSubject(!!this.storageService.getItem(CONSENT_NAME));
 
 	installedBrowsersData$ = new BehaviorSubject<InstalledBrowserDataState>({browserData: [], error: null});
 	installedBrowsersData = this.installedBrowsersData$.asObservable();
@@ -64,7 +64,7 @@ export class BrowserAccountsService {
 	}
 
 	giveConcent() {
-		this.storageService.setItem('isConsentGiven', 'true');
+		this.storageService.setItem(CONSENT_NAME, 'true');
 		this.isConsentGiven$.next(true);
 		this.updateBrowsersData();
 	}

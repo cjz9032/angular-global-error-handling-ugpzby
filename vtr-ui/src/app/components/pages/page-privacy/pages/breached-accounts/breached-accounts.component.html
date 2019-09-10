@@ -6,7 +6,7 @@
 		<vtr-feature-header
 			class="breaches-page__feature-header"
 			[texts]="textForFeatureHeader"
-			[isFeatureWasScanned]="breachedAccountWereScanned$ | async"
+			[isFeatureWasScanned]="breachedAccountWasScanned$ | async"
 			[countOfIssue]="breachedAccountsCount$ | async"
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
 			<span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breached accounts found
@@ -41,9 +41,10 @@
 
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
 		<vtr-email-scanner
+			class="breached-accounts__email-scanner"
 			*ngIf="(isUndefinedWithoutFigleafState$ | async)"
 			[scanCounter]="scanCounter$ | async"
-			[emailWasScanned]="breachedAccountWereScanned$ | async">
+			[emailWasScanned]="breachedAccountWasScanned$ | async">
 		</vtr-email-scanner>
 		<vtr-breached-account
 			*ngIf="(((isAccountVerify$ | async) && (isFigleafReadyForCommunication$ | async))
@@ -61,6 +62,10 @@
 			[breachedAccountsLength]="(breachedAccounts$ | async)?.length"
 			(verifyEmailEmit)="startVerify()">
 		</vtr-verify-email>
+
+		<div class="breached-accounts__clear-data-wrapper" *ngIf="userEmail$ | async">
+			<vtr-clear-data-tooltip [feature]="breachedFeatureName"></vtr-clear-data-tooltip>
+		</div>
 
 	</div>
 </section>
