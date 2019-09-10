@@ -5,6 +5,7 @@ import { ModalLicenseComponent } from '../../modal/modal-license/modal-license.c
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { CommonService } from 'src/app/services/common/common.service';
 
 declare var Windows;
 @Component({
@@ -25,11 +26,13 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		public modalService: NgbModal,
 		private translate: TranslateService,
 		private shellService: VantageShellService,
+		private commonService: CommonService
 	) {
 		this.userGuide = shellService.getUserGuide();
 		if (this.userGuide) {
 			this.userGuide.refresh();
 		}
+		this.commonService = commonService;
 	}
 
 	ngOnInit() {
@@ -107,7 +110,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 
 	launchUserGuide() {
 		if (this.userGuide) {
-			this.userGuide.launch(true);
+			this.userGuide.launch(this.commonService.isOnline, true);
 		}
 	}
 

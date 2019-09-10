@@ -3,6 +3,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal-find-us.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
+import { CommonService } from '../common/common.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,12 +22,14 @@ export class SupportService {
 
 	constructor(
 		private shellService: VantageShellService,
+		private commonService: CommonService,
 		private modalService: NgbModal,
 	) {
 		this.sysinfo = shellService.getSysinfo();
 		this.warranty = shellService.getWarranty();
 		this.metrics = shellService.getMetrics();
 		this.userGuide = shellService.getUserGuide();
+		this.commonService = commonService;
 		this.warrantyData = {
 			info: {
 				status: -1,
@@ -132,7 +135,7 @@ export class SupportService {
 
 	launchUserGuide(launchPDF?: boolean) {
 		if (this.userGuide) {
-			this.userGuide.launch(launchPDF);
+			this.userGuide.launchUg(this.commonService.isOnline, launchPDF);
 		}
 	}
 }
