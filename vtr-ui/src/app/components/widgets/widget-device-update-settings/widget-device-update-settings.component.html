@@ -29,7 +29,7 @@
 												*ngIf="item.isCollapsible" (change)="optionChanged($event,item)"
 												(showDropDown)="showDropDown.emit(item)">
 											</vtr-ui-gaming-collapsible-container>
-											<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel" vtrMetrics
+											<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel" vtrMetrics href="javascript:void();"
 												[metricsItem]="item.settings" metricsEvent="featureClick"
 												(click)="navigateToLink(item)" (keydown.enter)="navigateToLink(item)" *ngIf="item.isCustomizable"
 												class="customizable"  tabindex="1">
