@@ -5,8 +5,8 @@
 				<img class="gaming-header-image" src="./../../../../assets/images/gaming/legionEdge.png" />
 				<div class="help-box" >
 					<a (click)="openModal()" id="legion_edge_help"
-					 tabindex="1" (keyup.enter)="openModal()" aria-label="legion edge help"  
-					>
+					vtrMetrics [metricsItem]="'legion_edge_help'" metricsEvent="featureClick"
+					 tabindex="1" (keyup.enter)="openModal()" aria-label="Help Button" >
 						<!-- <i class="icon icon-question" ></i> -->
 						<fa-icon class="icon" [icon]="['fal', 'question-circle']"></fa-icon>
 				</a>

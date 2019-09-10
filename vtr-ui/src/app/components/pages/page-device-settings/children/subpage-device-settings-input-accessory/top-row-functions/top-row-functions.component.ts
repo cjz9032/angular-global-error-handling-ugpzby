@@ -42,7 +42,9 @@ export class TopRowFunctionsComponent implements OnInit {
 					};
 					this.getAllStatuses();
 					this.topRowFunInterval = setInterval(() => {
-						this.getAllStatuses();
+						if (!this.topRowKeyObj.stickyFunStatus) {
+							this.getAllStatuses();
+						}
 					}, 30000);
 				});
 			}
@@ -82,8 +84,8 @@ export class TopRowFunctionsComponent implements OnInit {
 	}
 
 	public onChangeFunType(value: boolean) {
-		console.log('set funlock req here ------------->', value);
 		this.keyboardService.setFnLock(value).then(res => {
+			this.getAllStatuses();
 		});
 	}
 	public onChangeKeyType(value: boolean) {
