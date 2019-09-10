@@ -26,6 +26,12 @@
 			text-align: center;
 		}
 
+		vtr-ui-list-chevron ::ng-deep {
+			a.disabled {
+				pointer-events: auto;
+			}
+		}
+
 		.home-security {
 			color: $main_darker;
 			font-size: 2rem;

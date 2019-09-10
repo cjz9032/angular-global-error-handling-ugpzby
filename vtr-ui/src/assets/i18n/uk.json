@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи."
                 },
                 "powerSettings": {
                     "title": "Настройки живлення",
@@ -1181,7 +1181,7 @@
                     "more": "ДОКЛАДНІШЕ",
                     "control1": "ЕЛЕМЕНТИ КЕРУВАННЯ СЕНСОРНОЇ ПАНЕЛІ",
                     "control2": "ЕЛЕМЕНТИ КЕРУВАННЯ МИШІ",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "ЕЛЕМЕНТИ КЕРУВАННЯ TRACKPOINT"
                 }
             }
         },
@@ -1698,7 +1698,8 @@
                 "disabled": "ВИМКНУТО",
                 "enableVirusScan": "УВІМКНУТИ ПЕРЕВІРКУ НА ВІРУСИ",
                 "enablenFirewall": "УВІМКНУТИ БРАНДМАУЕР",
-                "enableFirewall": "УВІМКНУТИ БРАНДМАУЕР"
+                "enableFirewall": "УВІМКНУТИ БРАНДМАУЕР",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Не оптимальний захист",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Наразі ваш пристрій захищає McAfee LiveSafe",
-                "valid": "Дійсно до",
-                "upgrade": "Оновити зараз",
                 "launch": "ЗАПУСТИТИ McAfee",
                 "getMacfee": "ОТРИМАТИ McAfee",
                 "topBenefits": "Основні переваги McAfee LiveSafe",
                 "awardTitle": "Відзначений нагородами антивірус",
                 "awardSubtitle": "Захищає ваш комп'ютер, блокуючи віруси, зловмисне програмне забезпечення, програми з вимогами викупу, шпіонські й небажані програми та багато іншого.",
-                "encryptedTitle": "Шифроване зберігання",
-                "encryptedSubtitle": "Захистіть збережені на комп'ютері конфіденційні файли 128-бітним шифруванням.",
-                "identityTitle": "Захист ідентичності від крадіжки",
-                "identitySubtitle": "Захистіть свою ідентичність від крадіжки або шахрайських дій.",
                 "supportTitle": "БЕЗКОШТОВНА підтримка клієнтів",
                 "supportSubtitle": "Отримуйте необхідну допомогу по телефону, у чаті або онлайн протягом усього терміну підписки.",
-                "antiTitle": "Захист від спаму",
-                "antiSubtitle": "Блокує небезпечні повідомлення ще до отримання, видаляючи листи з небезпечними посиланнями й вірусами.",
-                "virusTitle": "Обіцянка щодо захисту від вірусів",
-                "virusSubtitle": "Навіть якщо ваш комп'ютер буде заражено вірусом, експерт McAfee віддалено підключиться до нього й видалить вірус.",
-                "parentalTitle": "Батьківський контроль",
-                "parentalSubtitle": "Блокує веб-сайти й результати пошуку, які не мають бачити ваші діти. Крім того, дає змогу обмежити час, який діти проведуть в Інтернеті.",
-                "license": "Ліцензія дійсна до",
-                "trial": "Пробна версія дійсна до"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "забезпечує базовий захист вашого пристрою"

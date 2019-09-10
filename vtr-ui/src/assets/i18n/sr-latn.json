@@ -1,586 +1,177 @@
 {
-    "gaming": {
-        "dashboard": {
-            "device": {
-                "quickSettings": {
-                    "title": "Toplotni režim",
-                    "status": {
-                        "performance": "Performanse",
-                        "balance": "Ujednačeno",
-                        "quiet": "Tiho",
-                        "performanceUid": "thermal_mode_performance",
-                        "balanceUid": "thermal_mode_balance",
-                        "quietUid": "thermal_mode_quiet"
-                    },
-                    "statusText": {
-                        "perText": "Veća iskoriš. CPU, veća brzina vent.",
-                        "balText": "Normalna iskoriš. CPU i brzina vent.",
-                        "quietText": "Manja iskoriš. CPU, manja brz. vent."
-                    },
-                    "wifiSecurity": "WiFi bezbednost",
-                    "dolby": "Dolby",
-                    "rapidCharge": "Brzo punjenje"
-                },
-                "legionEdge": {
-                    "title": "Overklok procesora",
-                    "status": {
-                        "alwayson": "Uključeno",
-                        "whenGaming": "Kada igrate",
-                        "off": "Isključeno",
-                        "alwaysonUid": "cpu_overclock_on",
-                        "whenGamingUid": "cpu_overclock_when_gaming",
-                        "offUid": "cpu_overclock_off"
-                    },
-                    "statusText": {
-                        "onText": "Overkloking procesora će biti aktiviran",
-                        "gamingText": "Overkloking procesora će biti aktiviran automatski tokom pokretanja igre",
-                        "offText": "Overkloking procesora će biti onemogućen"
-                    },
-                    "ramOverlock": "Overklok RAM memorije",
-                    "popup": {
-                        "text": "Izmena će biti primenjena nakon ponovnog pokretanja računara.",
-                        "button": "U redu"
-                    },
-                    "driverPopup": {
-                        "headerText": "Potrebno je instaliranje upravljačkog programa",
-                        "text": "Instalirajte upravljački program za aktiviranje overkloka RAM memorije (potrebno je ponovno pokretanje)",
-                        "button": "INSTALIRAJ",
-                        "link": "OTKAŽI",
-                        "networkBoostText": "Potrebno je da instalirate upravljački program za pojačanje mreže kako biste tu funkciju primenili",
-                        "hybridModeText": "Potrebno je da instalirate upravljački program za hibridni režim kako biste ga primenili",
-                        "cpuOverclockText": "Instalirajte upravljački program za aktiviranje overkloka procesora (potrebno je ponovno pokretanje)"
-                    },
-                    "autoClose": "Automatsko zatvaranje",
-                    "networkBoost": "Pojačanje mreže",
-                    "hybridMode": "Hibridni režim",
-                    "touchpadLock": "Zaključ. dodirne table",
-                    "lightingDriverPopup": {
-                        "headerText": "Potrebno je instaliranje upravljačkog programa",
-                        "text": "Instalirajte upravljački program za aktiviranje osvetljenja (potrebno je ponovno pokretanje)",
-                        "button": "INSTALIRAJ",
-                        "link": "OTKAŽI"
-                    },
-                    "lightingColorMessage": {
-                        "text": "Izbor boje nije dostupan za ovaj efekat."
-                    }
-                },
-                "systemTools": {
-                    "power": "Napajanje",
-                    "media": "Mediji",
-                    "macroKey": "Taster makroa",
-                    "hardwareScan": "Skeniranje hardvera",
-                    "systemUpdate": "Ažuriranje sistema",
-                    "header": "Sistemske alatke"
-                },
-                "lighting": {
-                    "title": "Prilagođavanje osvetljenja",
-                    "header": "Munja"
-                },
-                "legionEdgeModal": {
-                    "line1": "Uz Vantage Edge, vaše postavke će automatski biti podešene na osnovu upotrebe. \n Maksimalan učinak pri igrama, duži vek trajanja baterije kada ne igrate.",
-                    "line2": "<b>Prikaz upravljanja funkcijama</b> <br> Neke funkcije nisu dostupne na svim uređajima",
-                    "line3": "<b>Overkloking procesora </b><br> Povećajte maksimalnu brzinu procesora",
-                    "line4": "<b>Overkloking RAM memorije </b><br> Povećajte maksimalnu brzinu memorije",
-                    "line5": "<b>Pojačanje mreže </b><br> Odredite prioritet mrežnog saobraćaja za igru koju igrate",
-                    "line6": "<b>Dolby </b><br> Podesite vaš zvuk specifično za igru sa Dolby tehnologijom",
-                    "line7": "<b>Hibridni režim </b><br> Onemogućite napredne GPU postavke kada ne igrate za povećanje performansi baterije",
-                    "line8": "<b>Brzo punjenje </b><br> Igrajte igre u pokretu duže uz brže punjenje baterije",
-                    "line9": "<b>Zaključ. dodirne table </b><br> Sprečite pogrešne unose onemogućavanjem dodirne table prilikom igranja",
-                    "line10": "<b>Automatsko zatvaranje </b><br> Obrišite procese koji nisu potrebni za igranje pre nego što počnete kako biste maksimalno iskoristili dostupne sistemske resurse",
-                    "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja"
-                },
-                "systemInfo": {
-                    "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
-                },
-                "systemStatus": {
-                    "info": "INFORMACIJE"
-                },
-                "quickSettingstitle": {
-                    "title": "Brze postavke"
-                }
-            }
-        },
-        "common": {
-            "menu": {
-                "support": {
-                    "title": "Podrška",
-                    "sub1": "Podrška",
-                    "sub2": "Facebook",
-                    "sub3": "Instagram"
-                }
-            }
-        },
-        "macroKey": {
-            "title": "Taster makroa",
-            "introLine": "Možete snimiti niz pritisaka tastera i koristiti ih u igrama ili pri drugim radnjama.",
-            "status": {
-                "on": {
-                    "title": "Uključeno",
-                    "description": "Uvek omogućeno"
-                },
-                "whileGaming": {
-                    "title": "Taster makroa je omogućen samo tokom igranja",
-                    "description": "Biće omogućen kada igrate, a zadržava funkciju numeričkog tastera kad ne igrate."
-                },
-                "off": {
-                    "title": "Isključeno",
-                    "description": "Uvek isključeno"
-                }
-            },
-            "details": {
-                "intro": {
-                    "noNumber": "IZABERITE TASTER MAKROA",
-                    "title": "KREIRAJ TASTER MAKROA ZA",
-                    "line1": "kliknite na dugme za početak snimanja u nastavku",
-                    "line2": "otkucajte taster makroa",
-                    "line3": "zaustavite snimanje kada završite kucanje"
-                },
-                "buttons": {
-                    "start": "POČNI SNIMANJE",
-                    "stop": "ZAUSTAVI SNIMANJE",
-                    "numberPrefix": "NUM"
-                },
-                "recording": {
-                    "title": "POČNITE DA KUCATE",
-                    "description": "Možete snimiti 20 unosa u roku od 20 sekundi."
-                },
-                "recorded": {
-                    "title": "TASTER MAKROA ZA ",
-                    "deleteKey": "Izbriši",
-                    "clear": "OBRIŠI",
-                    "intervalStatus": {
-                        "keep": {
-                            "title": "Nastavi odlaganje",
-                            "description": "Intervali pritisaka tastera čuvaju se i primenjuju kada koristite ovaj taster makroa."
-                        },
-                        "ignore": {
-                            "title": "Zanemari odlaganje",
-                            "description": "Intervali pritisaka tastera biće zanemareni."
-                        }
-                    },
-                    "repeatStatus": {
-                        "repeat1": {
-                            "title": "Bez ponavljanja",
-                            "description": "Bez ponavljanja"
-                        },
-                        "repeat2": {
-                            "title": "Ponovi 2 puta",
-                            "description": "Ponavlja 2 puta"
-                        },
-                        "repeat3": {
-                            "title": "Ponovi 3 puta",
-                            "description": "Ponavlja 3 puta"
-                        },
-                        "repeat4": {
-                            "title": "Ponovi 4 puta",
-                            "description": "Ponavlja 4 puta"
-                        },
-                        "repeat5": {
-                            "title": "Ponovi 5 puta",
-                            "description": "Ponavlja 5 puta"
-                        },
-                        "repeat6": {
-                            "title": "Ponovi 6 puta",
-                            "description": "Ponavlja 6 puta"
-                        },
-                        "repeat7": {
-                            "title": "Ponovi 7 puta",
-                            "description": "Ponavlja 7 puta"
-                        },
-                        "repeat8": {
-                            "title": "Ponovi 8 puta",
-                            "description": "Ponavlja 8 puta"
-                        },
-                        "repeat9": {
-                            "title": "Ponovi 9 puta",
-                            "description": "Ponavlja 9 puta"
-                        },
-                        "repeat10": {
-                            "title": "Ponovi 10 puta",
-                            "description": "Ponavlja 10 puta"
-                        }
-                    },
-                    "list": {
-                        "header": {
-                            "col1": "Radnja tastera",
-                            "col2": "Interval"
-                        },
-                        "footer": {
-                            "title": "Sledeći unos.."
-                        }
-                    }
-                }
-            },
-            "popupContent": {
-                "clearMacrokey": {
-                    "title": "Želite li zaista da obrišete ovaj taster makroa?"
-                },
-                "timeoutRecording": {
-                    "title": "Istek vremena za snimanje.",
-                    "body": "Vreme za snimanje će isteći ako nema unosa u roku od 20 sekundi."
-                },
-                "maximumInput": {
-                    "title": "Dostignut je maksimalni unos.",
-                    "body": "Taster za makro može uskladištiti najviše 20 unosa."
-                },
-                "inputStopped": {
-                    "title": "Istek vremena za snimanje.",
-                    "body": "Vreme za snimanje će isteći ako je unos zaustavljen duže od 10 sekundi."
-                },
-                "confirmButton": {
-                    "btnClear": "OBRIŠI",
-                    "btnCancel": "OTKAŽI"
-                },
-                "btnOk": "U redu"
-            },
-            "recording": {
-                "title": "Snimanje tastera makroa za"
-            }
-        },
-        "lightingProfile": {
-            "title": "Munja",
-            "effect": {
-                "option1": {
-                    "title": "Uključeno"
-                },
-                "option2": {
-                    "title": "Treperenja"
-                },
-                "option3": {
-                    "title": "Dah"
-                },
-                "option4": {
-                    "title": "Talas"
-                },
-                "option5": {
-                    "title": "Umekšano"
-                },
-                "option6": {
-                    "title": "Temperatura centralnog procesora"
-                },
-                "option7": {
-                    "title": "Iskorišćenost procesora (CPU)"
-                },
-                "option8": {
-                    "title": "Isključeno"
-                },
-                "apply": {
-                    "title": "PRIMENI"
-                },
-                "applied": {
-                    "title": "PRIMENJENO"
-                }
-            },
-            "brightness": {
-                "text1": {
-                    "title": "*Postavka svetline se ne primenjuje na "
-                },
-                "text2": {
-                    "title": " efekat"
-                }
-            },
-            "lightingSingleLightingOption": {
-                "option1": {
-                    "title": "Uvek uključeno"
-                },
-                "option2": {
-                    "title": "Brzo treptanje"
-                },
-                "option3": {
-                    "title": "Srednje brzo treptanje"
-                },
-                "option4": {
-                    "title": "Sporo treptanje"
-                },
-                "option5": {
-                    "title": "Nivo treptanja"
-                }
-            },
-            "profile": {
-                "text1": {
-                    "title": "Osvetljenje je trenutno isključeno. Izaberite gornju karticu profila da biste je uključili i prilagodili."
-                },
-                "text2": {
-                    "title": "efekat"
-                },
-                "text3": {
-                    "title": "Efekat"
-                }
-            },
-            "button": {
-                "default": {
-                    "title": "Postavi na podrazumevane postavke"
-                }
-            },
-            "profileheading": {
-                "text1": {
-                    "title": "Off"
-                },
-                "text2": {
-                    "title": "Profil 1"
-                },
-                "text3": {
-                    "title": "Profil 2"
-                },
-                "text4": {
-                    "title": "Profil 3"
-                }
-            },
-            "lightingProfileHeading": {
-                "text1": {
-                    "title": "Off"
-                },
-                "text2": {
-                    "title": 1
-                },
-                "text3": {
-                    "title": 2
-                },
-                "text4": {
-                    "title": 3
-                },
-                "Customize": {
-                    "title": "Prilagodi"
-                },
-                "heading": {
-                    "title": "Izaberite profil:"
-                }
-            },
-            "colourwheel": {
-                "text1": {
-                    "title": "Izbor boje nije dostupan za ovaj efekat."
-                },
-                "text2": {
-                    "title": "PRIMENI"
-                },
-                "text3": {
-                    "title": "PRIMENJENO"
-                },
-                "text4": {
-                    "title": "R:"
-                },
-                "text5": {
-                    "title": "G:"
-                },
-                "text6": {
-                    "title": "B:"
-                },
-                "text7": {
-                    "title": "Boja"
-                }
-            }
-        },
-        "autoClose": {
-            "title": "Automatsko zatvaranje",
-			"addAppsButton": "Dodaj",
-			"introLine": "Dodajte apl. koje žel. da zatv. kad pokr. igru. To će osloboditi neiskorišćene resurse radi povećanja performansi u igri. NAPOMENA: Ova funkcija u potpunosti zatvara aplikaciju. Zato uvek vodite računa da ste sačuvali svoj rad.",
-			"modalTurnAutoClose": {
-				"title": "Želite da uključite Automatsko zatvaranje?",
-				"body": "Aplikacije koje ste dodali će biti zatvorene kada igrate, da oslobodite resurse za igru.",
-				"checkedTitle": "Ne pitaj ponovo",
-				"btnConfirm": "Uključi",
-				"btnCancel": "Ne sad"
-            },
-            "modalAddApps": {
-                "title": "Dodavanje aplikacija u Automatsko zatvaranje",
-				"body": "Samo trenutno pokrenute aplikacije prikazaće se na listi u nastavku."
-            },
-            "noRunningApps": {
-                "title": "Nema pokrenutih aplikacija za dodavanje",
-				"body": "Prikazaće se samo aplikacije koje su trenutno pokrenute. Pokrenite aplikaciju koju želite da dodate i vratite se."
-            }
-        },
-       "networkBoost": {
-            "title": "Pojačanje mreže",
-            "introLine": "Omogućavanje Pojačanja mreže automatski postavlja prioritet igara na najviši nivo u mreži i povećava brzinu. Ako koristite aplikacije dok igrate, npr. Twitch ili Discord, preporučujemo da ih dodate u listu u nastavku kako bi takođe imale prioritet u vašoj mreži.",
-            "modalTurn": {
-                "title": "Želite da uključite Pojačanje mreže?",
-                "body": "Želite da uključite Pojačanje mreže? Aplikacije koje ste dodali deliće više mreže kada su pokrenute.",
-                "checkedTitle": "Ne pitaj ponovo",
-                "btnConfirm": "Uključi",
-                "btnCancel": "Ne sad"
-            },
-            "modalAddApps": {
-                "title": "Dodavanje aplikacija u Pojačanje mreže",
-                "body": {
-                    "part1": "Možete dodati do 5 dod. aplik. za pojačanje",
-                    "part2": "od",
-                    "part3": "dodato"
-                }
-            }
-        }
-    },
-    "common": {
-        "menu": {
-            "dashboard": "Kontrolna tabla",
-            "device": {
-                "title": "Uređaj",
-                "sub1": "Moj uređaj",
-                "sub2": "Moje postavke uređaja",
-                "sub3": "Ažuriranje sistema",
-                "sub4": "Pametna pomoć"
-            },
-            "security": {
-                "title": "Bezbednost",
-                "sub1": "Moja bezbednost",
-                "sub2": "Antivirusni program",
-                "sub3": "WiFi bezbednost",
-                "sub4": "Ispravnost lozinke",
-                "sub5": "Zaštita na internetu",
-                "sub6": "Windows Hello"
-            },
-            "support": "Podrška",
-            "homeSecurity": "Povezana kućna bezbednost",
-            "privacy": "Privatnost",
-            "beta": {
-                "title": "beta"
-            }
-        },
-        "securityAdvisor": {
-            "title": "Savetnik za bezb.",
-            "subtitle": "PROVERITE DA LI JE UREĐAJ ZAŠTIĆEN.",
-            "antiVirus": "Antivirusni program",
-            "wifi": "WiFi bezbednost",
-            "pswdMgr": "Password Manager",
-            "vpn": "VPN",
-            "windowsHello": "Windows Hello",
-            "enabled": "OMOGUĆENO",
-            "disabled": "ONEMOGUĆENO",
-            "partiallyProtected": "DELIMIČNO ZAŠTIĆEN",
-            "installed": "INSTALIRAN",
-            "notInstalled": "NIJE INSTALIRAN",
-            "loading": "Učitavanje",
-            "installing": "INSTALIRA SE",
-            "notFound": "NIJE PRONAĐEN",
-            "registered": "REGISTROVAN",
-            "notRegistered": "NIJE REGISTROVAN"
-        },
-        "qAndA": {
-            "title": "Pitanja i odgovori za vaš stroj",
-            "subtitle": "Nađite neke korisne savjete za svoj uređaj.",
-            "question1": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
-            "question2": "Kako da osvežite računar",
-            "question3": "Kako da saznate CPU mašine",
-            "question4": "Proverite iskorišćenost baterije mašine",
-            "question5": "Korišćenje računara kao tableta",
-            "question6": "Upoznajte Cortana, vašeg ličnog pomoćnika"
-        },
-        "ui": {
-            "back": "NAZAD",
-            "on": "ON",
-            "off": "OFF",
-            "collapse": "Skupi",
-            "expand": "Raširi",
-            "loader": "Status <br> preuzimanja",
-            "loading": "Učitavanje..."
-        }
-    },
-    "privacy": {
-        "headerMain": {
-            "title": "Privatnost"
-        }
-    },
-    "tutorial": {
-        "almostThere": "Još samo malo!",
-        "para1": "Samo još nekoliko dugmadi treba da se pritisne pre poletanja.",
-        "para2": "Pre nego što vam pružimo najbolji doživljaj, postoji još nekoliko sitnica koje treba da podesite.",
-        "personalise": "POČNITE SA PERSONALIZACIJOM",
-        "howIsitUsed": "Kako ćete ga koristiti?",
-        "howMachinUsed": "Kliknite na jednu od ovih upotreba da biste nam rekli kako ćete koristiti ovaj računar.",
-        "business": "POSAO",
-        "personal": "LIČNA",
-        "custom": "PRILAGOĐENA",
-        "skip": "PRESKOČI",
-        "next": "SLEDEĆE",
-        "interests": "Kakva su vaša interesovanja?",
-        "howOnesMachinUsed": "Kliknite na jednu od ovih upotreba da biste nam rekli kako ćete koristiti ovaj računar.",
-        "games": "IGRE",
-        "news": "VESTI",
-        "entertainment": "ZABAVA",
-        "arts": "UMETNOST",
-        "politics": "POLITIKA",
-        "sports": "SPORT",
-        "regionalNews": "REGIONALNE VESTI",
-        "technology": "TEHNOLOGIJA"
-    },
-    "dashboard": {
-        "headerMain": {
-            "title": "Danas izgledate puni energije "
-        },
-        "offlineInfo": {
-            "title": "Nije otkrivena veza sa internetom",
-            "subtitle": "Saznajte više kako da rešite probleme sa vezom u našem članku",
-            "buttonText": "Pronađite podršku"
-        },
-        "feedback": {
-            "title": "Pružite povratne informacije",
-            "subtitle": "Recite nam šta mislite o Vantage.",
-            "button": "Pružite povratne informacije",
-            "form": {
-                "email": "Email (optional)",
-                "comments": "Komentari...",
-                "button": "Submit",
-                "addScreenshot": "Add ScreenShot",
-                "messages": {
-                    "feedbackSuccess": "Hvala nam na povratnim informacijama!"
-                },
-                "question1": "Da li vam se dopada novi stil Vantage-a?",
-                "question2": "Da li mislite da je učinak prihvatljiv?",
-                "question3": "Da li ćete u budućnosti češće koristiti aplikaciju?",
-                "yes": "Da",
-                "no": "Ne",
-                "tips1": "Ostavite dodatne komentare",
-                "sendFeedback": "Pošaljite povratne informacije",
-                "submitScreenShot": "Pošaljite snimak ekrana"
-            }
-        },
-        "quickSettings": {
-            "title": "Vaše brze postavke",
-            "microphone": "Mikrofon",
-            "cameraPrivacy": "Kamera",
-            "eyeCareMode": "Zaštita vida",
-            "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage nema pristup kameri i mikrofonu.",
-                "accessUrl": "Idite na postavke operativnog sistema Windows da biste dali pristup",
-                "microphoneNote": "Lenovo Vantage nema pristup mikrofonu.",
-                "cameraPrivacyNote": "Lenovo Vantage nema pristup kameri."
-            }
-        },
-        "systemStatus": {
-            "title": "Status sistema",
-            "subtitle": "BRZO BUDITE U TOKU SA STATUSOM UREĐAJA.",
-            "memory": {
-                "title": "Memorija",
-                "detail": {
-                    "notFound": "Memorija nije pronađena",
-                    "of": "od"
-                }
-            },
-            "diskSpace": {
-                "title": "Prostor na disku",
-                "detail": {
-                    "notFound": "Disk nije pronađen",
-                    "of": "od"
-                }
-            },
-            "warranty": {
-                "title": "Garancija",
-                "detail": {
-                    "notFound": "Garancija nije pronađena",
-                    "until": "Do",
-                    "expiredOn": "Garancija je istekla",
-                    "notAvailable": "Garancija nije dostupna"
-                }
-            },
-            "systemUpdate": {
-                "title": "Ažuriranje sistema",
-                "detail": {
-                    "update": "Ažuriraj"
-                }
-            }
-        }
-    },
     "device": {
+        "smartAssist": {
+            "intelligentSecurity": {
+                "note": {
+                    "description6": "4. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene.",
+                    "description1": "Ova funkcija se oslanja na sistem Windows Hello. Uverite se da je prepoznavanje lica uključeno u postavkama operativnog sistema Windows.",
+                    "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo. Međutim, funkcija NE prikuplja, nikakve lične podatke.",
+                    "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
+                    "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Bezdodirno prijavljivanje neće raditi.",
+                    "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje."
+                },
+                "title": "Inteligentna bezbednost",
+                "readMore": "Pročitajte više",
+                "HumanPresenceDetection": {
+                    "title": "Detekcija ljudskog prisustva",
+                    "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskog prisustva."
+                },
+                "humanPresenceDetection": {
+                    "title": "Osetljivost na ljudsko prisustvo",
+                    "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskih prisustva."
+                },
+                "zeroTouchLogin": {
+                    "title": "Bezdodirno prijavljivanje",
+                    "caption": "Ova funkcija automatski otključava ili budi računar kada ste ispred njega ili mu prilazite.",
+                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                },
+                "zeroTouchLock": {
+                    "title": "Zero Touch zaključavanje",
+                    "caption": "Ova funkcija zatamnjuje ekran i zaključava računar kada se ne otkrije prisustvo korisnika. To može smanjiti šanse neovlašćenog pristupa računaru kada ostavite računar otključan i bez nadzora. Takođe, umanjuje potrošnju struje tako što stavlja sistem u moderno stanje pripravnosti kada vaše prisustvo nije otkriveno.",
+                    "autoScreenLockTimer": {
+                        "title": "TAJMER AUTOMATSKOG ZAKLJUČAVANJA EKRANA",
+                        "radioButton": {
+                            "fast": "Brzo",
+                            "medium": "Srednje",
+                            "slow": "Sporo"
+                        },
+                        "toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno. Međutim, na vreme kada će ekran biti zaključan utiče i stvarni korisnički scenario, mogućnosti senzora i postavke vremenskog ograničenja ekrana operativnog sistema Windows. Zato vam preporučujemo da smesta zaključate sistem pred odlazak."
+                    }
+                },
+                "distanceSensitivityAdjusting": {
+                    "title": "PODEŠAVANJE OSETLJIVOSTI NA RAZDALJINU",
+                    "caption": "Automatsko podešavanje razdaljine će automatski ažurirati rastojanje za detekciju putem mehanizma veštačke inteligencije.",
+                    "options": {
+                        "near": "Blizu",
+                        "far": "Daleko"
+                    },
+                    "tooltipcontent": {
+                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
+                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "list": {
+                            "line1": "Near: 0 – 0.42 meters (17 inches)",
+                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
+                            "line3": "Far: 0 – 1.20 meters (47 inches)",
+                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
+                            "line5": "The recommended detection distance is within 0.60 meters."
+                        }
+                    }
+                },
+                "WindowsLink": {
+                    "goToWindowsHello": "Idite na postavke sistema Windows Hello",
+                    "screenTimeoutSettings": "Idite na postavke vremena čekanja za ekran"
+                },
+                "resetToDefault": "Poništi"
+            },
+            "title": "Pametna pomoć",
+            "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti, prilagodile postavke za optimalno upravljanje napajanjem i zaštitila vaša privatnost.",
+            "jumpTo": {
+                "title": "PRELAZAK NA POSTAVKE",
+                "security": "Bezbednost",
+                "screen": "Ekran",
+                "media": "Mediji",
+                "voice": "Glas",
+                "APS": "APS"
+            },
+            "intelligentScreen": {
+                "title": "Inteligentni ekran",
+                "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti i prilagodile postavke za upravljanje napajanjem. Na primer, ono će zatamneti ekran ako otkrije da hodate, ali ga neće zatamneti ako otkrije da čitate.",
+                "autoScreenOff": {
+                    "title": "Automatsko isključivanje ekrana",
+                    "caption": "Automatski isključuje ekran kada se okrene nadole ili tokom šetnje.",
+                    "note": "Ova funkcija nije dostupna ako su postavke plana napajanja podešene na „never turn off the screen on battery“ (nikada ne isključuj ekran prilikom napajanja sa baterije) u odeljku Sistem („System section“) u okviru Windows Settings (Windows postavke). Izaberite neku vrednost koja nije „Never“ (nikada) da biste omogućili ovu funkciju.",
+                    "windowsLink": "Idi na Postavke za napajanje i stanje spavanja u Windows postavkama"
+                },
+                "keepMyDisplay": {
+                    "title": "Zadrži moj ekran",
+                    "caption": "Drži moj ekran uključenim kada čitam ili pregledam.",
+                    "displaySlider": {
+                        "title": "Broj minuta pre zatamnjivanja ekrana prilikom pregledanja",
+                        "startTime": "0 minuta",
+                        "endTime": "60 minuta"
+                    }
+                }
+            },
+            "activeProtectionSystem": {
+                "title": "Active Protection System",
+                "description": "Active Protection System je autonomna funkcija koja vam pomaže da zaštitite hard disk od oštećenja nastalog usled jakog fizičkog potresa i vibracije. Ona neprekidno nadgleda kretanje vašeg računara i privremeno zaustavlja hard disk kada se predvidi pad sistema ili sličan događaj koji može da prouzrokuje oštećenje.",
+                "activeProtection": {
+                    "title": "Active Protection",
+                    "caption": "Promenite osetljivost. U režimu niske osetljivosti, samo će jači udarci aktivirati zaštitu",
+                    "checkbox": "Ignoriši ponovljene udarce poput onih u vozu ili u kolima"
+                },
+                "manualActiveProtectionSuspension": {
+                    "title": "Ručno obustavljanje funkcije Active Protection",
+                    "caption": "Dozvoli mi da ručno obustavim funkciju Active Protection System",
+                    "dropdown-title": "Obustavi je za",
+                    "button": "Obustavi je odmah"
+                },
+                "advanced": {
+                    "description": "Radi boljeg pristupa hard disku tokom korišćenja tablet uređaja, obustavite funkciju Active Protection System kada se detektuju sledeće aktivnosti",
+                    "pen": {
+                        "title": "Unos olovkom",
+                        "description": "Tokom korišćenja režima Unos olovkom, omogući APS kada unos olovkom nije u opsegu u trajanju od"
+                    },
+                    "touch": {
+                        "title": "Unos dodirom",
+                        "description": "Kada se koristi režim Unos dodirom, omogući APS kada unos dodirom nije detektovan"
+                    },
+                    "hand": {
+                        "title": "Osećaj rastojanja ruku na ivicama računara",
+                        "description": "Kada je omogućen tablet režim, omogući APS kada ruka nije detektovana"
+                    },
+                    "more": "VIŠE",
+                    "advanced-settings": "NAPREDNE POSTAVKE",
+                    "hide": "SAKRI NAPREDNE POSTAVKE"
+                },
+                "APS": {
+                    "more": "VIŠE",
+                    "advancedSettings": "NAPREDNE POSTAVKE",
+                    "hideAdvancedSettings": "SAKRI NAPREDNE POSTAVKE",
+                    "lowSensitivity": "Niska osetljivost",
+                    "mediumSensitivity": "Srednja osetljivost",
+                    "highSensitivity": "Visoka osetljivost"
+                }
+            },
+            "intelligentMedia": {
+                "heading": "Inteligentni mediji",
+                "title": "Zero Touch reprodukcija video snimaka",
+                "desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",
+                "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
+            },
+            "voice": {
+                "title": "Glas",
+                "description": "Lenovo Voice pomaže da konvertujete glas u tekst pomoću funkcije Glasa u tekst i pomoću funkcije Prevod obezbeđuje prevod iz glasa u tekst u realnom vremenu.",
+                "installBtnText": "Instaliraj",
+                "launchBtnText": "Pokreni",
+                "voiceToText": {
+                    "title": "Glas u tekst",
+                    "caption": "Ova funkcija vam pomaže da konvertujete glas u tekst."
+                },
+                "translation": {
+                    "title": "Prevod",
+                    "caption": "Ova funkcija obezbeđuje prevod u realnom vremenu za glas. Prevedeni sadržaj je prikazan kao tekst. Možete da odaberete izvorni i ciljni jezik prema vašim potrebama."
+                },
+                "modalPopUp": {
+                    "heading": "Prvi koraci:",
+                    "point1": "Uverite se da je ikona Lenovo Voice prikazana u Windows sistemskoj paleti.",
+                    "point2": "Otvorite datoteku gde želite da snimite konvertovani tekst.",
+                    "point3": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Voice to text (Glas u tekst).",
+                    "point4": "Izaberite željeni jezik i kliknite na ikonu mikrofona za početak.",
+                    "point5": "Stavite kursor gde želite da uredite i počnite da govorite.",
+                    "point6": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Translate (Prevedi).",
+                    "point7": "Izaberite željeni izvorni i ciljni jezik.",
+                    "point8": "U zavisnosti od vaših potreba, podesite unos glasa sa Zvučnika ili Mikrofona.",
+                    "point9": "Kliknite na ikonu mikrofona da biste započeli sa govorom",
+                    "closeText": "zatvori"
+                },
+                "modalInstallationFailed": {
+                    "btnText": "u redu",
+                    "title": "Instaliranje nije uspelo",
+                    "desc": "Pokušajte ponovo kasnije da biste koristili Lenovo Voice."
+                }
+            }
+        },
         "myDevice": {
             "title": "Moj uređaj",
             "subtitle": "Status mog uređaja",
@@ -786,7 +377,7 @@
                         }
                     },
                     "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“"
                 },
                 "powerSettings": {
                     "title": "Postavke napajanja",
@@ -1181,179 +772,588 @@
                     "more": "VIŠE",
                     "control1": "KONTROLE DODIRNE TABLE",
                     "control2": "KONTROLE MIŠA",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "KONTROLE ZA TRACKPOINT"
+                }
+            }
+        }
+    },
+    "gaming": {
+        "dashboard": {
+            "device": {
+                "quickSettings": {
+                    "title": "Toplotni režim",
+                    "status": {
+                        "performance": "Performanse",
+                        "balance": "Ujednačeno",
+                        "quiet": "Tiho",
+                        "performanceUid": "thermal_mode_performance",
+                        "balanceUid": "thermal_mode_balance",
+                        "quietUid": "thermal_mode_quiet"
+                    },
+                    "statusText": {
+                        "perText": "Veća iskoriš. CPU, veća brzina vent.",
+                        "balText": "Normalna iskoriš. CPU i brzina vent.",
+                        "quietText": "Manja iskoriš. CPU, manja brz. vent."
+                    },
+                    "wifiSecurity": "WiFi bezbednost",
+                    "dolby": "Dolby",
+                    "rapidCharge": "Brzo punjenje"
+                },
+                "legionEdge": {
+                    "title": "Overklok procesora",
+                    "status": {
+                        "alwayson": "Uključeno",
+                        "whenGaming": "Kada igrate",
+                        "off": "Isključeno",
+                        "alwaysonUid": "cpu_overclock_on",
+                        "whenGamingUid": "cpu_overclock_when_gaming",
+                        "offUid": "cpu_overclock_off"
+                    },
+                    "statusText": {
+                        "onText": "Overkloking procesora će biti aktiviran",
+                        "gamingText": "Overkloking procesora će biti aktiviran automatski tokom pokretanja igre",
+                        "offText": "Overkloking procesora će biti onemogućen"
+                    },
+                    "ramOverlock": "Overklok RAM memorije",
+                    "popup": {
+                        "text": "Izmena će biti primenjena nakon ponovnog pokretanja računara.",
+                        "button": "U redu"
+                    },
+                    "driverPopup": {
+                        "headerText": "Potrebno je instaliranje upravljačkog programa",
+                        "text": "Instalirajte upravljački program za aktiviranje overkloka RAM memorije (potrebno je ponovno pokretanje)",
+                        "button": "INSTALIRAJ",
+                        "link": "OTKAŽI",
+                        "networkBoostText": "Potrebno je da instalirate upravljački program za pojačanje mreže kako biste tu funkciju primenili",
+                        "hybridModeText": "Potrebno je da instalirate upravljački program za hibridni režim kako biste ga primenili",
+                        "cpuOverclockText": "Instalirajte upravljački program za aktiviranje overkloka procesora (potrebno je ponovno pokretanje)"
+                    },
+                    "autoClose": "Automatsko zatvaranje",
+                    "networkBoost": "Pojačanje mreže",
+                    "hybridMode": "Hibridni režim",
+                    "touchpadLock": "Zaključ. dodirne table",
+                    "lightingDriverPopup": {
+                        "headerText": "Potrebno je instaliranje upravljačkog programa",
+                        "text": "Instalirajte upravljački program za aktiviranje osvetljenja (potrebno je ponovno pokretanje)",
+                        "button": "INSTALIRAJ",
+                        "link": "OTKAŽI"
+                    },
+                    "lightingColorMessage": {
+                        "text": "Izbor boje nije dostupan za ovaj efekat."
+                    }
+                },
+                "systemTools": {
+                    "power": "Napajanje",
+                    "media": "Mediji",
+                    "macroKey": "Taster makroa",
+                    "hardwareScan": "Skeniranje hardvera",
+                    "systemUpdate": "Ažuriranje sistema",
+                    "header": "Sistemske alatke"
+                },
+                "lighting": {
+                    "title": "Prilagođavanje osvetljenja",
+                    "header": "Munja"
+                },
+                "legionEdgeModal": {
+                    "line1": "Uz Vantage Edge, vaše postavke će automatski biti podešene na osnovu upotrebe. \n Maksimalan učinak pri igrama, duži vek trajanja baterije kada ne igrate.",
+                    "line2": "<b>Prikaz upravljanja funkcijama</b> <br> Neke funkcije nisu dostupne na svim uređajima",
+                    "line3": "<b>Overkloking procesora </b><br> Povećajte maksimalnu brzinu procesora",
+                    "line4": "<b>Overkloking RAM memorije </b><br> Povećajte maksimalnu brzinu memorije",
+                    "line5": "<b>Pojačanje mreže </b><br> Odredite prioritet mrežnog saobraćaja za igru koju igrate",
+                    "line6": "<b>Dolby </b><br> Podesite vaš zvuk specifično za igru sa Dolby tehnologijom",
+                    "line7": "<b>Hibridni režim </b><br> Onemogućite napredne GPU postavke kada ne igrate za povećanje performansi baterije",
+                    "line8": "<b>Brzo punjenje </b><br> Igrajte igre u pokretu duže uz brže punjenje baterije",
+                    "line9": "<b>Zaključ. dodirne table </b><br> Sprečite pogrešne unose onemogućavanjem dodirne table prilikom igranja",
+                    "line10": "<b>Automatsko zatvaranje </b><br> Obrišite procese koji nisu potrebni za igranje pre nego što počnete kako biste maksimalno iskoristili dostupne sistemske resurse",
+                    "line11": "<b>Toplotni režim </b><br> Postavite željeni profil uređaja za kontrolu brzine ventilatora i hlađenja"
+                },
+                "systemInfo": {
+                    "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
+                },
+                "systemStatus": {
+                    "info": "INFORMACIJE"
+                },
+                "quickSettingstitle": {
+                    "title": "Brze postavke"
                 }
             }
         },
-        "smartAssist": {
-            "title": "Pametna pomoć",
-            "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti, prilagodile postavke za optimalno upravljanje napajanjem i zaštitila vaša privatnost.",
-            "jumpTo": {
-                "title": "PRELAZAK NA POSTAVKE",
-                "security": "Bezbednost",
-                "screen": "Ekran",
-                "media": "Mediji",
-                "voice": "Glas",
-                "APS": "APS"
+        "common": {
+            "menu": {
+                "support": {
+                    "title": "Podrška",
+                    "sub1": "Podrška",
+                    "sub2": "Facebook",
+                    "sub3": "Instagram"
+                }
+            }
+        },
+        "macroKey": {
+            "title": "Taster makroa",
+            "introLine": "Možete snimiti niz pritisaka tastera i koristiti ih u igrama ili pri drugim radnjama.",
+            "status": {
+                "on": {
+                    "title": "Uključeno",
+                    "description": "Uvek omogućeno"
+                },
+                "whileGaming": {
+                    "title": "Taster makroa je omogućen samo tokom igranja",
+                    "description": "Biće omogućen kada igrate, a zadržava funkciju numeričkog tastera kad ne igrate."
+                },
+                "off": {
+                    "title": "Isključeno",
+                    "description": "Uvek isključeno"
+                }
             },
-            "intelligentSecurity": {
-                "title": "Inteligentna bezbednost",
-                "readMore": "Pročitajte više",
-                "HumanPresenceDetection": {
-                    "title": "Detekcija ljudskog prisustva",
-                    "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskog prisustva."
+            "details": {
+                "intro": {
+                    "noNumber": "IZABERITE TASTER MAKROA",
+                    "title": "KREIRAJ TASTER MAKROA ZA",
+                    "line1": "kliknite na dugme za početak snimanja u nastavku",
+                    "line2": "otkucajte taster makroa",
+                    "line3": "zaustavite snimanje kada završite kucanje"
                 },
-                "humanPresenceDetection": {
-                    "title": "Osetljivost na ljudsko prisustvo",
-                    "tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskih prisustva."
+                "buttons": {
+                    "start": "POČNI SNIMANJE",
+                    "stop": "ZAUSTAVI SNIMANJE",
+                    "numberPrefix": "NUM"
                 },
-                "zeroTouchLogin": {
-                    "title": "Bezdodirno prijavljivanje",
-                    "caption": "Ova funkcija automatski otključava ili budi računar kada ste ispred njega ili mu prilazite.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                "recording": {
+                    "title": "POČNITE DA KUCATE",
+                    "description": "Možete snimiti 20 unosa u roku od 20 sekundi."
                 },
-                "zeroTouchLock": {
-                    "title": "Zero Touch zaključavanje",
-                    "caption": "Ova funkcija zatamnjuje ekran i zaključava računar kada se ne otkrije prisustvo korisnika. To može smanjiti šanse neovlašćenog pristupa računaru kada ostavite računar otključan i bez nadzora. Takođe, umanjuje potrošnju struje tako što stavlja sistem u moderno stanje pripravnosti kada vaše prisustvo nije otkriveno.",
-                    "autoScreenLockTimer": {
-                        "title": "TAJMER AUTOMATSKOG ZAKLJUČAVANJA EKRANA",
-                        "radioButton": {
-                            "fast": "Brzo",
-                            "medium": "Srednje",
-                            "slow": "Sporo"
+                "recorded": {
+                    "title": "TASTER MAKROA ZA ",
+                    "deleteKey": "Izbriši",
+                    "clear": "OBRIŠI",
+                    "intervalStatus": {
+                        "keep": {
+                            "title": "Nastavi odlaganje",
+                            "description": "Intervali pritisaka tastera čuvaju se i primenjuju kada koristite ovaj taster makroa."
                         },
-                        "toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno. Međutim, na vreme kada će ekran biti zaključan utiče i stvarni korisnički scenario, mogućnosti senzora i postavke vremenskog ograničenja ekrana operativnog sistema Windows. Zato vam preporučujemo da smesta zaključate sistem pred odlazak."
-                    }
-                },
-                "distanceSensitivityAdjusting": {
-                    "title": "PODEŠAVANJE OSETLJIVOSTI NA RAZDALJINU",
-                    "caption": "Automatsko podešavanje razdaljine će automatski ažurirati rastojanje za detekciju putem mehanizma veštačke inteligencije.",
-                    "options": {
-                        "near": "Blizu",
-                        "far": "Daleko"
+                        "ignore": {
+                            "title": "Zanemari odlaganje",
+                            "description": "Intervali pritisaka tastera biće zanemareni."
+                        }
                     },
-                    "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
-                        "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                    "repeatStatus": {
+                        "repeat1": {
+                            "title": "Bez ponavljanja",
+                            "description": "Bez ponavljanja"
+                        },
+                        "repeat2": {
+                            "title": "Ponovi 2 puta",
+                            "description": "Ponavlja 2 puta"
+                        },
+                        "repeat3": {
+                            "title": "Ponovi 3 puta",
+                            "description": "Ponavlja 3 puta"
+                        },
+                        "repeat4": {
+                            "title": "Ponovi 4 puta",
+                            "description": "Ponavlja 4 puta"
+                        },
+                        "repeat5": {
+                            "title": "Ponovi 5 puta",
+                            "description": "Ponavlja 5 puta"
+                        },
+                        "repeat6": {
+                            "title": "Ponovi 6 puta",
+                            "description": "Ponavlja 6 puta"
+                        },
+                        "repeat7": {
+                            "title": "Ponovi 7 puta",
+                            "description": "Ponavlja 7 puta"
+                        },
+                        "repeat8": {
+                            "title": "Ponovi 8 puta",
+                            "description": "Ponavlja 8 puta"
+                        },
+                        "repeat9": {
+                            "title": "Ponovi 9 puta",
+                            "description": "Ponavlja 9 puta"
+                        },
+                        "repeat10": {
+                            "title": "Ponovi 10 puta",
+                            "description": "Ponavlja 10 puta"
+                        }
+                    },
+                    "list": {
+                        "header": {
+                            "col1": "Radnja tastera",
+                            "col2": "Interval"
+                        },
+                        "footer": {
+                            "title": "Sledeći unos.."
                         }
                     }
-                },
-                "note": {
-                    "description1": "Ova funkcija se oslanja na sistem Windows Hello. Uverite se da je prepoznavanje lica uključeno u postavkama operativnog sistema Windows.",
-                    "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo. Međutim, funkcija NE prikuplja, nikakve lične podatke.",
-                    "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
-                    "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Bezdodirno prijavljivanje neće raditi.",
-                    "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje.",
-                    "description6": "4. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene."
-                },
-                "WindowsLink": {
-                    "goToWindowsHello": "Idite na postavke sistema Windows Hello",
-                    "screenTimeoutSettings": "Idite na postavke vremena čekanja za ekran"
-                },
-                "resetToDefault": "Poništi"
-            },
-            "intelligentScreen": {
-                "title": "Inteligentni ekran",
-                "description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti i prilagodile postavke za upravljanje napajanjem. Na primer, ono će zatamneti ekran ako otkrije da hodate, ali ga neće zatamneti ako otkrije da čitate.",
-                "autoScreenOff": {
-                    "title": "Automatsko isključivanje ekrana",
-                    "caption": "Automatski isključuje ekran kada se okrene nadole ili tokom šetnje.",
-                    "note": "Ova funkcija nije dostupna ako su postavke plana napajanja podešene na „never turn off the screen on battery“ (nikada ne isključuj ekran prilikom napajanja sa baterije) u odeljku Sistem („System section“) u okviru Windows Settings (Windows postavke). Izaberite neku vrednost koja nije „Never“ (nikada) da biste omogućili ovu funkciju.",
-                    "windowsLink": "Idi na Postavke za napajanje i stanje spavanja u Windows postavkama"
-                },
-                "keepMyDisplay": {
-                    "title": "Zadrži moj ekran",
-                    "caption": "Drži moj ekran uključenim kada čitam ili pregledam.",
-                    "displaySlider": {
-                        "title": "Broj minuta pre zatamnjivanja ekrana prilikom pregledanja",
-                        "startTime": "0 minuta",
-                        "endTime": "60 minuta"
-                    }
                 }
             },
-            "activeProtectionSystem": {
-                "title": "Active Protection System",
-                "description": "Active Protection System je autonomna funkcija koja vam pomaže da zaštitite hard disk od oštećenja nastalog usled jakog fizičkog potresa i vibracije. Ona neprekidno nadgleda kretanje vašeg računara i privremeno zaustavlja hard disk kada se predvidi pad sistema ili sličan događaj koji može da prouzrokuje oštećenje.",
-                "activeProtection": {
-                    "title": "Active Protection",
-                    "caption": "Promenite osetljivost. U režimu niske osetljivosti, samo će jači udarci aktivirati zaštitu",
-                    "checkbox": "Ignoriši ponovljene udarce poput onih u vozu ili u kolima"
+            "popupContent": {
+                "clearMacrokey": {
+                    "title": "Želite li zaista da obrišete ovaj taster makroa?"
                 },
-                "manualActiveProtectionSuspension": {
-                    "title": "Ručno obustavljanje funkcije Active Protection",
-                    "caption": "Dozvoli mi da ručno obustavim funkciju Active Protection System",
-                    "dropdown-title": "Obustavi je za",
-                    "button": "Obustavi je odmah"
+                "timeoutRecording": {
+                    "title": "Istek vremena za snimanje.",
+                    "body": "Vreme za snimanje će isteći ako nema unosa u roku od 20 sekundi."
                 },
-                "advanced": {
-                    "description": "Radi boljeg pristupa hard disku tokom korišćenja tablet uređaja, obustavite funkciju Active Protection System kada se detektuju sledeće aktivnosti",
-                    "pen": {
-                        "title": "Unos olovkom",
-                        "description": "Tokom korišćenja režima Unos olovkom, omogući APS kada unos olovkom nije u opsegu u trajanju od"
-                    },
-                    "touch": {
-                        "title": "Unos dodirom",
-                        "description": "Kada se koristi režim Unos dodirom, omogući APS kada unos dodirom nije detektovan"
-                    },
-                    "hand": {
-                        "title": "Osećaj rastojanja ruku na ivicama računara",
-                        "description": "Kada je omogućen tablet režim, omogući APS kada ruka nije detektovana"
-                    },
-                    "more": "VIŠE",
-                    "advanced-settings": "NAPREDNE POSTAVKE",
-                    "hide": "SAKRI NAPREDNE POSTAVKE"
+                "maximumInput": {
+                    "title": "Dostignut je maksimalni unos.",
+                    "body": "Taster za makro može uskladištiti najviše 20 unosa."
                 },
-                "APS": {
-                    "more": "VIŠE",
-                    "advancedSettings": "NAPREDNE POSTAVKE",
-                    "hideAdvancedSettings": "SAKRI NAPREDNE POSTAVKE",
-                    "lowSensitivity": "Niska osetljivost",
-                    "mediumSensitivity": "Srednja osetljivost",
-                    "highSensitivity": "Visoka osetljivost"
+                "inputStopped": {
+                    "title": "Istek vremena za snimanje.",
+                    "body": "Vreme za snimanje će isteći ako je unos zaustavljen duže od 10 sekundi."
+                },
+                "confirmButton": {
+                    "btnClear": "OBRIŠI",
+                    "btnCancel": "OTKAŽI"
+                },
+                "btnOk": "U redu"
+            },
+            "recording": {
+                "title": "Snimanje tastera makroa za"
+            }
+        },
+        "lightingProfile": {
+            "title": "Munja",
+            "effect": {
+                "option1": {
+                    "title": "Uključeno"
+                },
+                "option2": {
+                    "title": "Treperenja"
+                },
+                "option3": {
+                    "title": "Dah"
+                },
+                "option4": {
+                    "title": "Talas"
+                },
+                "option5": {
+                    "title": "Umekšano"
+                },
+                "option6": {
+                    "title": "Temperatura centralnog procesora"
+                },
+                "option7": {
+                    "title": "Iskorišćenost procesora (CPU)"
+                },
+                "option8": {
+                    "title": "Isključeno"
+                },
+                "apply": {
+                    "title": "PRIMENI"
+                },
+                "applied": {
+                    "title": "PRIMENJENO"
                 }
             },
-            "intelligentMedia": {
-                "heading": "Inteligentni mediji",
-                "title": "Zero Touch reprodukcija video snimaka",
-                "desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",
-                "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
+            "brightness": {
+                "text1": {
+                    "title": "*Postavka svetline se ne primenjuje na "
+                },
+                "text2": {
+                    "title": " efekat"
+                }
             },
-            "voice": {
-                "title": "Glas",
-                "description": "Lenovo Voice pomaže da konvertujete glas u tekst pomoću funkcije Glasa u tekst i pomoću funkcije Prevod obezbeđuje prevod iz glasa u tekst u realnom vremenu.",
-                "installBtnText": "Instaliraj",
-                "launchBtnText": "Pokreni",
-                "voiceToText": {
-                    "title": "Glas u tekst",
-                    "caption": "Ova funkcija vam pomaže da konvertujete glas u tekst."
+            "lightingSingleLightingOption": {
+                "option1": {
+                    "title": "Uvek uključeno"
                 },
-                "translation": {
-                    "title": "Prevod",
-                    "caption": "Ova funkcija obezbeđuje prevod u realnom vremenu za glas. Prevedeni sadržaj je prikazan kao tekst. Možete da odaberete izvorni i ciljni jezik prema vašim potrebama."
+                "option2": {
+                    "title": "Brzo treptanje"
                 },
-                "modalPopUp": {
-                    "heading": "Prvi koraci:",
-                    "point1": "Uverite se da je ikona Lenovo Voice prikazana u Windows sistemskoj paleti.",
-                    "point2": "Otvorite datoteku gde želite da snimite konvertovani tekst.",
-                    "point3": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Voice to text (Glas u tekst).",
-                    "point4": "Izaberite željeni jezik i kliknite na ikonu mikrofona za početak.",
-                    "point5": "Stavite kursor gde želite da uredite i počnite da govorite.",
-                    "point6": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Translate (Prevedi).",
-                    "point7": "Izaberite željeni izvorni i ciljni jezik.",
-                    "point8": "U zavisnosti od vaših potreba, podesite unos glasa sa Zvučnika ili Mikrofona.",
-                    "point9": "Kliknite na ikonu mikrofona da biste započeli sa govorom",
-                    "closeText": "zatvori"
+                "option3": {
+                    "title": "Srednje brzo treptanje"
                 },
-                "modalInstallationFailed": {
-                    "btnText": "u redu",
-                    "title": "Instaliranje nije uspelo",
-                    "desc": "Pokušajte ponovo kasnije da biste koristili Lenovo Voice."
+                "option4": {
+                    "title": "Sporo treptanje"
+                },
+                "option5": {
+                    "title": "Nivo treptanja"
+                }
+            },
+            "profile": {
+                "text1": {
+                    "title": "Osvetljenje je trenutno isključeno. Izaberite gornju karticu profila da biste je uključili i prilagodili."
+                },
+                "text2": {
+                    "title": "efekat"
+                },
+                "text3": {
+                    "title": "Efekat"
+                }
+            },
+            "button": {
+                "default": {
+                    "title": "Postavi na podrazumevane postavke"
+                }
+            },
+            "profileheading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": "Profil 1"
+                },
+                "text3": {
+                    "title": "Profil 2"
+                },
+                "text4": {
+                    "title": "Profil 3"
+                }
+            },
+            "lightingProfileHeading": {
+                "text1": {
+                    "title": "Off"
+                },
+                "text2": {
+                    "title": 1
+                },
+                "text3": {
+                    "title": 2
+                },
+                "text4": {
+                    "title": 3
+                },
+                "Customize": {
+                    "title": "Prilagodi"
+                },
+                "heading": {
+                    "title": "Izaberite profil:"
+                }
+            },
+            "colourwheel": {
+                "text1": {
+                    "title": "Izbor boje nije dostupan za ovaj efekat."
+                },
+                "text2": {
+                    "title": "PRIMENI"
+                },
+                "text3": {
+                    "title": "PRIMENJENO"
+                },
+                "text4": {
+                    "title": "R:"
+                },
+                "text5": {
+                    "title": "G:"
+                },
+                "text6": {
+                    "title": "B:"
+                },
+                "text7": {
+                    "title": "Boja"
+                }
+            }
+        },
+        "autoClose": {
+            "title": "Automatsko zatvaranje",
+            "addAppsButton": "Dodaj",
+            "introLine": "Dodajte apl. koje žel. da zatv. kad pokr. igru. To će osloboditi neiskorišćene resurse radi povećanja performansi u igri. NAPOMENA: Ova funkcija u potpunosti zatvara aplikaciju. Zato uvek vodite računa da ste sačuvali svoj rad.",
+            "modalTurnAutoClose": {
+                "title": "Želite da uključite Automatsko zatvaranje?",
+                "body": "Aplikacije koje ste dodali će biti zatvorene kada igrate, da oslobodite resurse za igru.",
+                "checkedTitle": "Ne pitaj ponovo",
+                "btnConfirm": "Uključi",
+                "btnCancel": "Ne sad"
+            },
+            "modalAddApps": {
+                "title": "Dodavanje aplikacija u Automatsko zatvaranje",
+                "body": "Samo trenutno pokrenute aplikacije prikazaće se na listi u nastavku."
+            },
+            "noRunningApps": {
+                "title": "Nema pokrenutih aplikacija za dodavanje",
+                "body": "Prikazaće se samo aplikacije koje su trenutno pokrenute. Pokrenite aplikaciju koju želite da dodate i vratite se."
+            }
+        },
+        "networkBoost": {
+            "title": "Pojačanje mreže",
+            "introLine": "Omogućavanje Pojačanja mreže automatski postavlja prioritet igara na najviši nivo u mreži i povećava brzinu. Ako koristite aplikacije dok igrate, npr. Twitch ili Discord, preporučujemo da ih dodate u listu u nastavku kako bi takođe imale prioritet u vašoj mreži.",
+            "modalTurn": {
+                "title": "Želite da uključite Pojačanje mreže?",
+                "body": "Želite da uključite Pojačanje mreže? Aplikacije koje ste dodali deliće više mreže kada su pokrenute.",
+                "checkedTitle": "Ne pitaj ponovo",
+                "btnConfirm": "Uključi",
+                "btnCancel": "Ne sad"
+            },
+            "modalAddApps": {
+                "title": "Dodavanje aplikacija u Pojačanje mreže",
+                "body": {
+                    "part1": "Možete dodati do 5 dod. aplik. za pojačanje",
+                    "part2": "od",
+                    "part3": "dodato"
+                }
+            }
+        }
+    },
+    "common": {
+        "menu": {
+            "dashboard": "Kontrolna tabla",
+            "device": {
+                "title": "Uređaj",
+                "sub1": "Moj uređaj",
+                "sub2": "Moje postavke uređaja",
+                "sub3": "Ažuriranje sistema",
+                "sub4": "Pametna pomoć"
+            },
+            "security": {
+                "title": "Bezbednost",
+                "sub1": "Moja bezbednost",
+                "sub2": "Antivirusni program",
+                "sub3": "WiFi bezbednost",
+                "sub4": "Ispravnost lozinke",
+                "sub5": "Zaštita na internetu",
+                "sub6": "Windows Hello"
+            },
+            "support": "Podrška",
+            "homeSecurity": "Povezana kućna bezbednost",
+            "privacy": "Privatnost",
+            "beta": {
+                "title": "beta"
+            }
+        },
+        "securityAdvisor": {
+            "title": "Savetnik za bezb.",
+            "subtitle": "PROVERITE DA LI JE UREĐAJ ZAŠTIĆEN.",
+            "antiVirus": "Antivirusni program",
+            "wifi": "WiFi bezbednost",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
+            "windowsHello": "Windows Hello",
+            "enabled": "OMOGUĆENO",
+            "disabled": "ONEMOGUĆENO",
+            "partiallyProtected": "DELIMIČNO ZAŠTIĆEN",
+            "installed": "INSTALIRAN",
+            "notInstalled": "NIJE INSTALIRAN",
+            "loading": "Učitavanje",
+            "installing": "INSTALIRA SE",
+            "notFound": "NIJE PRONAĐEN",
+            "registered": "REGISTROVAN",
+            "notRegistered": "NIJE REGISTROVAN"
+        },
+        "qAndA": {
+            "title": "Pitanja i odgovori za vaš stroj",
+            "subtitle": "Nađite neke korisne savjete za svoj uređaj.",
+            "question1": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
+            "question2": "Kako da osvežite računar",
+            "question3": "Kako da saznate CPU mašine",
+            "question4": "Proverite iskorišćenost baterije mašine",
+            "question5": "Korišćenje računara kao tableta",
+            "question6": "Upoznajte Cortana, vašeg ličnog pomoćnika"
+        },
+        "ui": {
+            "back": "NAZAD",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Skupi",
+            "expand": "Raširi",
+            "loader": "Status <br> preuzimanja",
+            "loading": "Učitavanje..."
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "Privatnost"
+        }
+    },
+    "tutorial": {
+        "almostThere": "Još samo malo!",
+        "para1": "Samo još nekoliko dugmadi treba da se pritisne pre poletanja.",
+        "para2": "Pre nego što vam pružimo najbolji doživljaj, postoji još nekoliko sitnica koje treba da podesite.",
+        "personalise": "POČNITE SA PERSONALIZACIJOM",
+        "howIsitUsed": "Kako ćete ga koristiti?",
+        "howMachinUsed": "Kliknite na jednu od ovih upotreba da biste nam rekli kako ćete koristiti ovaj računar.",
+        "business": "POSAO",
+        "personal": "LIČNA",
+        "custom": "PRILAGOĐENA",
+        "skip": "PRESKOČI",
+        "next": "SLEDEĆE",
+        "interests": "Kakva su vaša interesovanja?",
+        "howOnesMachinUsed": "Kliknite na jednu od ovih upotreba da biste nam rekli kako ćete koristiti ovaj računar.",
+        "games": "IGRE",
+        "news": "VESTI",
+        "entertainment": "ZABAVA",
+        "arts": "UMETNOST",
+        "politics": "POLITIKA",
+        "sports": "SPORT",
+        "regionalNews": "REGIONALNE VESTI",
+        "technology": "TEHNOLOGIJA"
+    },
+    "dashboard": {
+        "headerMain": {
+            "title": "Danas izgledate puni energije "
+        },
+        "offlineInfo": {
+            "title": "Nije otkrivena veza sa internetom",
+            "subtitle": "Saznajte više kako da rešite probleme sa vezom u našem članku",
+            "buttonText": "Pronađite podršku"
+        },
+        "feedback": {
+            "title": "Pružite povratne informacije",
+            "subtitle": "Recite nam šta mislite o Vantage.",
+            "button": "Pružite povratne informacije",
+            "form": {
+                "email": "Email (optional)",
+                "comments": "Komentari...",
+                "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
+                "messages": {
+                    "feedbackSuccess": "Hvala nam na povratnim informacijama!"
+                },
+                "question1": "Da li vam se dopada novi stil Vantage-a?",
+                "question2": "Da li mislite da je učinak prihvatljiv?",
+                "question3": "Da li ćete u budućnosti češće koristiti aplikaciju?",
+                "yes": "Da",
+                "no": "Ne",
+                "tips1": "Ostavite dodatne komentare",
+                "sendFeedback": "Pošaljite povratne informacije",
+                "submitScreenShot": "Pošaljite snimak ekrana"
+            }
+        },
+        "quickSettings": {
+            "title": "Vaše brze postavke",
+            "microphone": "Mikrofon",
+            "cameraPrivacy": "Kamera",
+            "eyeCareMode": "Zaštita vida",
+            "note": {
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage nema pristup kameri i mikrofonu.",
+                "accessUrl": "Idite na postavke operativnog sistema Windows da biste dali pristup",
+                "microphoneNote": "Lenovo Vantage nema pristup mikrofonu.",
+                "cameraPrivacyNote": "Lenovo Vantage nema pristup kameri."
+            }
+        },
+        "systemStatus": {
+            "title": "Status sistema",
+            "subtitle": "BRZO BUDITE U TOKU SA STATUSOM UREĐAJA.",
+            "memory": {
+                "title": "Memorija",
+                "detail": {
+                    "notFound": "Memorija nije pronađena",
+                    "of": "od"
+                }
+            },
+            "diskSpace": {
+                "title": "Prostor na disku",
+                "detail": {
+                    "notFound": "Disk nije pronađen",
+                    "of": "od"
+                }
+            },
+            "warranty": {
+                "title": "Garancija",
+                "detail": {
+                    "notFound": "Garancija nije pronađena",
+                    "until": "Do",
+                    "expiredOn": "Garancija je istekla",
+                    "notAvailable": "Garancija nije dostupna"
+                }
+            },
+            "systemUpdate": {
+                "title": "Ažuriranje sistema",
+                "detail": {
+                    "update": "Ažuriraj"
                 }
             }
         }
@@ -1698,7 +1698,8 @@
                 "disabled": "ONEMOGUĆENO",
                 "enableVirusScan": "OMOGUĆI SKENIRANJE VIRUSA",
                 "enablenFirewall": "OMOGUĆI ZAŠTITNI ZID",
-                "enableFirewall": "OMOGUĆI ZAŠTITNI ZID"
+                "enableFirewall": "OMOGUĆI ZAŠTITNI ZID",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Niste optimalno zaštićeni",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Trenutno vas štiti McAfee LiveSafe",
-                "valid": "Važi do",
-                "upgrade": "Nadogradite odmah",
                 "launch": "POKRENI McAfee",
                 "getMacfee": "NABAVITE McAfee",
                 "topBenefits": "Najvažnije prednosti aplikacije McAfee LiveSafe",
                 "awardTitle": "Nagrađivani antivirus",
                 "awardSubtitle": "Blokira viruse, malver, softver za ucenjivanje, špijunski softver, neželjeni program i još mnogo toga na računaru.",
-                "encryptedTitle": "Šifrovano skladište",
-                "encryptedSubtitle": "Neka osetljive datoteke ostanu privatne tako što ćete ih skladištiti na računaru sa 128-bitnim šifrovanjem.",
-                "identityTitle": "Identifikovanje zaštite od krađe",
-                "identitySubtitle": "Preuzmite odgovornost za zaštitu identiteta od krađe i prevare.",
                 "supportTitle": "BESPLATNA korisnička podrška",
                 "supportSubtitle": "Pokriveni ste telefonom, ćaskanjem ili na mreži tokom važenja vaše pretplate.",
-                "antiTitle": "Anti-spam",
-                "antiSubtitle": "Blokira opasne poruke pre nego što stignu do prijemnog poštanskog sandučeta uklanjanjem e-poruka koje možda sadrže rizične veze i viruse.",
-                "virusTitle": "Obećanje o zaštiti od virusa",
-                "virusSubtitle": "Pruža vam uverenje da će u slučaju da vaš računar dobije virus, stručnjak kompanije McAfee daljinski pristupiti vašem računaru da ga ukloni.",
-                "parentalTitle": "Roditeljski nadzor",
-                "parentalSubtitle": "Blokirajte veb lokacije i rezultate pretrage koje ne želite da vaša deca vide. Takođe vam omogućava da postavite ograničenja koliko vremena provode na mreži.",
-                "license": "Licenca važi do",
-                "trial": "Probna verzija važi do"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"

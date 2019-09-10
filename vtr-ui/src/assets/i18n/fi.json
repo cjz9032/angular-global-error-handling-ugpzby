@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa."
                 },
                 "powerSettings": {
                     "title": "Virta-asetukset",
@@ -1181,7 +1181,7 @@
                     "more": "ENEMMÄN",
                     "control1": "KOSKETUSLEVYN OHJAIMET",
                     "control2": "HIIRITOIMINNOT",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT-TOIMINNOT"
                 }
             }
         },
@@ -1698,7 +1698,8 @@
                 "disabled": "POISSA KÄYTÖSTÄ",
                 "enableVirusScan": "OTA VIRUSTARKISTUS KÄYTTÖÖN",
                 "enablenFirewall": "OTA PALOMUURI KÄYTTÖÖN",
-                "enableFirewall": "OTA PALOMUURI KÄYTTÖÖN"
+                "enableFirewall": "OTA PALOMUURI KÄYTTÖÖN",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Ei parasta suojausta",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Laitteesi suojaa tällä hetkellä McAfee LiveSafe",
-                "valid": "Voimassaoloaika päättyy",
-                "upgrade": "Päivitä nyt",
                 "launch": "KÄYNNISTÄ McAfee",
                 "getMacfee": "HANKI McAfee",
                 "topBenefits": "McAfee LiveSafen parhaat edut",
                 "awardTitle": "Palkittu virustentorjuntaohjelmisto",
                 "awardSubtitle": "Estää esimerkiksi viruksia, haittaohjelmia, kiristysohjelmia ja ei-toivottuja ohjelmia tietokoneessa.",
-                "encryptedTitle": "Salattu tallennustila",
-                "encryptedSubtitle": "Pidä luottamukselliset tiedostot yksityisinä tallentamalla ne tietokoneeseen 128-bittisen salauksen avulla.",
-                "identityTitle": "Identiteettivarkauksien suojaus",
-                "identitySubtitle": "Huolehdi siitä, ettei kukaan voi varastaa identiteettiäsi tai käyttää sitä petollisiin tarkoituksiin.",
                 "supportTitle": "MAKSUTON asiakastuki",
                 "supportSubtitle": "Auttaa puhelimitse, chatin kautta tai verkossa tilauksen voimassaolon ajan.",
-                "antiTitle": "Anti-Spam",
-                "antiSubtitle": "Estää vaaralliset viestit ennen niiden saapumista Saapuneet-kansioon poistamalla sähköpostiviestit, joissa voi olla vaarallisia linkkejä ja viruksia.",
-                "virusTitle": "Virustentorjuntasitoumus",
-                "virusSubtitle": "Antaa sitoumuksen siitä, että vaikka tietokoneeseen pääsee virus, McAfee-asiantuntija poistaa viruksen etäyhteyden kautta.",
-                "parentalTitle": "Käytönvalvonta",
-                "parentalSubtitle": "Estää verkkosivustot ja hakutulokset, joita et halua lasten näkevän. Voit myös määrittää rajoituksia sille, miten kauan lapset voivat viettää aikaa Internetissä.",
-                "license": "Lisenssin viimeinen voimassaolopäivä",
-                "trial": "Kokeiluversion viimeinen voimassaolopäivä"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "tarjoaa laitteellesi perustason suojauksen"

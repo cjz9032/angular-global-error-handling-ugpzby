@@ -102,11 +102,13 @@
 
 		.joinGroupSuccess{
 			height: 14rem;
-			line-height: 14rem;
+			justify-content: center;
+			align-items: center;
 		}
 		.success{
 			font-weight: $weight_bold;
 			font-size: 2.5rem;
+			line-height: 3.5rem;
 		}
 		.successIcon{
 			color:$go_dark;
