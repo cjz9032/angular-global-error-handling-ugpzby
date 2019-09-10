@@ -1,6 +1,6 @@
 <div class="select-box" [ngClass]="{'disabled': isRecording}">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop"
+		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()"
 			title="{{ selectedOption.name | translate }}">
 			<span *ngIf="selectedOption" attr.aria-label="{{selectedOption.name | translate}}"  tabindex="1">{{ selectedOption.name | translate }}</span>
 			<fa-icon (click)="toggleOptions()" aria-label="expand"
