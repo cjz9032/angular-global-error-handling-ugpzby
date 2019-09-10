@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios."
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -1181,7 +1181,7 @@
                     "more": "MAI MULTE",
                     "control1": "ELEMENTE DE CONTROL TOUCHPAD",
                     "control2": "ELEMENTE DE CONTROL MOUSE",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "ELEMENTE DE CONTROL TRACKPOINT"
                 }
             }
         },
@@ -1698,7 +1698,8 @@
                 "disabled": "DEZACTIVAT",
                 "enableVirusScan": "ACTIVARE SCANARE VIRUȘI",
                 "enablenFirewall": "ACTIVARE PARAVAN DE PROTECȚIE",
-                "enableFirewall": "ACTIVARE PARAVAN DE PROTECȚIE"
+                "enableFirewall": "ACTIVARE PARAVAN DE PROTECȚIE",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
             },
             "windowsDefender": {
                 "optimallyProtected": "Nu este protejat în mod optim",
@@ -1710,27 +1711,40 @@
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "La ora actuală, sunteți protejat de McAfee LiveSafe",
-                "valid": "Valabil până la",
-                "upgrade": "Faceți upgrade acum",
                 "launch": "LANSAȚI McAfee",
                 "getMacfee": "OBȚINEȚI McAfee",
                 "topBenefits": "Cele mai importante avantaje ale McAfee LiveSafe",
                 "awardTitle": "Antivirus premiat",
                 "awardSubtitle": "Blochează viruși, programe de tip malware, ransomware, spyware, programe nedorite și multe altele pe computerul dvs.",
-                "encryptedTitle": "Stocare criptată",
-                "encryptedSubtitle": "Păstraţi fişierele sensibile private stocându-le pe PC, cu criptare pe 128 de biţi.",
-                "identityTitle": "Protecție împotriva furtului de identitate",
-                "identitySubtitle": "Protejaţi-vă singur identitatea împotriva furtului şi fraudei.",
                 "supportTitle": "Asistenţă pentru clienţi gratuită",
                 "supportSubtitle": "Primiţi asistenţă prin telefon, prin chat sau online pe toată durata abonamentului.",
-                "antiTitle": "Anti-spam",
-                "antiSubtitle": "Blochează mesajele periculoase înainte de a ajunge în Inbox, eliminând e-mailurile care pot include linkuri riscante şi viruşi.",
-                "virusTitle": "Angajament de protecție împotriva virușilor",
-                "virusSubtitle": "Vă oferă siguranţa că, în cazul în care PC-ul este infectat de un virus, un expert McAfee va accesa de la distanţă computerul pentru a-l elimina.",
-                "parentalTitle": "Control parental",
-                "parentalSubtitle": "Blochează site-urile web şi rezultatele căutărilor pe care nu doriţi să le vadă copiii dumneavoastră. De asemenea, vă permite să setaţi limite pentru timpul petrecut online.",
-                "license": "Licență valabilă până la",
-                "trial": "Perioadă de încercare valabilă până la"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "vă oferă protecție de bază pentru dispozitivul dvs."
