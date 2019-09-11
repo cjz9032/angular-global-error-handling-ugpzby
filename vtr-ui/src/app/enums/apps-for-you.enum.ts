@@ -14,5 +14,8 @@ export enum AppsForYouEnum {
 	AppGuidAdobeCreativeCloud = '1430171F-68BC-4920-9D6B-90C73B949914',
 	AppSiteCoreIdAdobeCreativeCloud = 'CBBC51B3-ABDD-475E-9C87-55226D6AAD35',
 	AppSiteCoreIdAdobeCreativeCloudSMB = 'B4303CDA-E612-4798-8D09-583C9CFFFDF1',
-	SeeMoreUrlAdobeCreativeCloud = 'https://www.adobepartneroffer.com/'
+	SeeMoreUrlAdobeCreativeCloud = 'https://www.adobepartneroffer.com/[SerialNumber]',
+	AppTypeDesktop = 'Desktop App',
+	AppTypeWindowStore = 'Windows Store App',
+	AppTypeWeb = 'Web App'
 }

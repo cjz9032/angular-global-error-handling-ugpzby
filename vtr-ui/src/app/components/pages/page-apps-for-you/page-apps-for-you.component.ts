@@ -219,19 +219,27 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	async initAppDetails(appDetails: AppDetails) {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
-		const installed = await this.systemUpdateBridge.getAppStatus(this.appGuid);
-		if (installed === 'InstalledBefore') {
-			this.appDetails.showStatus = this.statusEnum.INSTALLED;
-			this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
-		} else {
+		if (appDetails.installtype.title === AppsForYouEnum.AppTypeWeb) {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
-			this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
+		} else if (appDetails.installtype.title === AppsForYouEnum.AppTypeDesktop) {
+			const installed = await this.systemUpdateBridge.getAppStatus(this.appGuid);
+			if (installed === 'InstalledBefore') {
+				this.appDetails.showStatus = this.statusEnum.INSTALLED;
+				this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+			} else {
+				this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
+				this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+			}
+		} else {
+			// TODO: Should be Windows Store App
 		}
 	}
 
 	async clickInstallButton() {
 		switch (this.installButtonStatus) {
 			case this.installButtonStatusEnum.SEEMORE:
+				this.appsForYouService.openSeeMoreUrl(this.appDetails.downloadlink);
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
 				const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);

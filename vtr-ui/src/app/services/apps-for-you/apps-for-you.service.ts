@@ -32,7 +32,7 @@ export class AppDetails {
 	pfn: string;			// app pfn
 	url: string; 			// app url
 	installtype: Installtype;
-	downloadlink: string;	// app download link
+	downloadlink: string;	// app download link (see more url)
 	videourl: string; 		// app video url
 	recommendations: Recommendation[];
 	screenshots: []; 	// ["{app screenshot1}",  "{app screenshot2}"],
@@ -68,8 +68,10 @@ export class AppsForYouService {
 	private isInitialized = false;
 	private cancelToken = undefined;
 	private isCancelInstall = false;
+	private cmsAppDetailsArray = [];	// Cached app details
 	private cmsAppDetails: any;
 	private culture: any;
+	private serialNumber: string;
 	systemUpdateBridge: any;
 
 	private initialize() {
@@ -78,16 +80,18 @@ export class AppsForYouService {
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
 				machineInfo = info;
-				// TODO: use machineInfo.serialnumber
+				this.serialNumber = machineInfo.serialnumber;
 				this.isInitialized = true;
 			});
 		} else {
-			// TODO: use machineInfo.serialnumber
+			this.serialNumber = machineInfo.serialnumber;
 			this.isInitialized = true;
 		}
 	}
 
 	getAppDetails(appGuid) {
+		const findItem = this.cmsAppDetailsArray.find(item => item.key === appGuid);
+		this.cmsAppDetails = findItem ? findItem.value : undefined;
 		if (this.isInitialized && !this.cmsAppDetails) {
 			let appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 			switch (appGuid) {
@@ -102,6 +106,24 @@ export class AppsForYouService {
 			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.culture })])
 				.then((response) => {
 					this.cmsAppDetails = response[0];
+					////////////////////////////////////////////////////////////////////////
+					// TODO: Mock data, please remove before release
+					switch (appGuid) {
+						case AppsForYouEnum.AppGuidAdobeCreativeCloud:
+							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeWeb;
+							break;
+						case AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant:
+						default:
+							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeDesktop;
+							break;
+					}
+					////////////////////////////////////////////////////////////////////////
+					if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
+						this.cmsAppDetailsArray.push({
+							key: appGuid,
+							value: this.cmsAppDetails
+						});
+					}
 					this.handleGetAppDetailsResponse(this.cmsAppDetails);
 				})
 				.catch((error) => {
@@ -135,6 +157,9 @@ export class AppsForYouService {
 
 		// Video
 		appDetails.videourl = detailFromCMS.VideoUrl;
+
+		// See More Url
+		appDetails.downloadlink = detailFromCMS.DownloadLink;
 
 		// Additional Information
 		appDetails.by = detailFromCMS.By;
@@ -176,6 +201,14 @@ export class AppsForYouService {
 				  });
 				this.commonService.sendNotification(AppsForYouEnum.InstallAppResult, result);
 			}
+		}
+	}
+
+	public openSeeMoreUrl() {
+		// Open new window with default browser to browse external link
+		if (window && this.serialNumber) {
+			const url = AppsForYouEnum.SeeMoreUrlAdobeCreativeCloud.replace('[SerialNumber]', this.serialNumber);
+			window.open(url);
 		}
 	}
 
