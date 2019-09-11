@@ -41,7 +41,7 @@ export class BrowserAccountsService {
 		this.getInstalledBrowsersDefaultData();
 	}
 
-	getInstalledBrowsersDefaultData() {
+	private getInstalledBrowsersDefaultData() {
 		merge(
 			this.updateTriggersService.shouldUpdate$,
 			this.updateBrowsersData$.asObservable(),
@@ -72,7 +72,7 @@ export class BrowserAccountsService {
 		this.updateBrowsersData();
 	}
 
-	concatPasswords(browserData: InstalledBrowser[]) {
+	private concatPasswords(browserData: InstalledBrowser[]) {
 		const isConsentGiven = this.userAllowService.allowToShow.getValue().consentForVulnerablePassword;
 
 		if (isConsentGiven) {

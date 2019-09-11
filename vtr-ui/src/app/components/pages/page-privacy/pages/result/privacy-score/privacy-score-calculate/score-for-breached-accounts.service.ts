@@ -5,6 +5,8 @@ import { catchError, filter, map, startWith } from 'rxjs/operators';
 import { coefficients } from './coefficients';
 import { CountNumberOfIssuesService } from '../../../../common/services/count-number-of-issues.service';
 import { ScoreCalculate } from './score-calculate.interface';
+import { AppStatusesService } from '../../../../common/services/app-statuses/app-statuses.service';
+import { FeaturesStatuses } from '../../../../userDataStatuses';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,7 +15,8 @@ export class ScoreForBreachedAccountsService implements ScoreCalculate {
 
 	constructor(
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
-		private breachedAccountsService: BreachedAccountsService
+		private breachedAccountsService: BreachedAccountsService,
+		private appStatusesService: AppStatusesService
 	) {
 	}
 
@@ -40,11 +43,16 @@ export class ScoreForBreachedAccountsService implements ScoreCalculate {
 	getScore() {
 		const defaultValue = (coefficients.breachedAccounts * coefficients.withoutScan) as number;
 
-		return this.scoreFromBreachedAccount$.pipe(
-			startWith(defaultValue),
-			catchError((err) => {
-				return of(defaultValue);
+		return combineLatest([
+			this.appStatusesService.globalStatus$,
+			this.scoreFromBreachedAccount$
+		]).pipe(
+			map(([globalStatus, response]) => {
+				const isExist = globalStatus.breachedAccountsResult !== FeaturesStatuses.undefined && globalStatus.breachedAccountsResult !== FeaturesStatuses.error;
+				return isExist ? response : defaultValue;
 			}),
+			startWith(defaultValue),
+			catchError((err) => of(defaultValue)),
 		);
 	}
 

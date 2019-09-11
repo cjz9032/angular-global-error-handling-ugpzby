@@ -14,6 +14,21 @@ export class ClearDataService {
 		[Features.trackers]: this.clearTrackersService.clearData.bind(this.clearTrackersService),
 	};
 
+	private texts: {[feature in Features]: {text: string, content: string}} = {
+		[Features.breaches]: {
+			text: 'Clear my breach results',
+			content: 'Are you sure you want to clear the information about found breaches?'
+		},
+		[Features.trackers]: {
+			text: 'Clear my tracking tools results',
+			content: 'Are you sure you want to clear the information about found tracking tools?'
+		},
+		[Features.passwords]: {
+			text: 'Clear my vulnerable passwords results',
+			content: 'Are you sure you want to clear the information about found vulnerable passwords?'
+		},
+	};
+
 	constructor(
 		private clearBreachesService: ClearBreachesService,
 		private clearTrackersService: ClearTrackersService,
@@ -22,5 +37,9 @@ export class ClearDataService {
 
 	clearData(feature: Features) {
 		this.strategy[feature]();
+	}
+
+	getText(feature: Features) {
+		return this.texts[feature];
 	}
 }

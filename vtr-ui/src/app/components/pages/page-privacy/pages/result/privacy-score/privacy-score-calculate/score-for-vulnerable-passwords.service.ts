@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ScoreCalculate } from './score-calculate.interface';
-import { catchError, distinctUntilChanged, filter, map, startWith, withLatestFrom } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, map, skip, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../../../userDataStatuses';
 import { coefficients } from './coefficients';
-import { of } from 'rxjs';
+import { combineLatest, of } from 'rxjs';
 import { BrowserAccountsService } from '../../../../common/services/browser-accounts.service';
 import { AppStatusesService } from '../../../../common/services/app-statuses/app-statuses.service';
 
@@ -18,32 +18,31 @@ export class ScoreForVulnerablePasswordsService implements ScoreCalculate {
 	) {
 	}
 
-	private ammountPasswordFromBrowser$ = this.appStatusesService.globalStatus$.pipe(
-		map((userDataStatus) =>
-			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
-			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
-		filter(Boolean),
-		withLatestFrom(this.browserAccountsService.installedBrowsersData),
-		map(([_, installedBrowsersData]) => {
-				return installedBrowsersData.browserData.reduce((acc, curr) => {
-					acc += curr.accountsCount;
-					return acc;
-				}, 0);
-			}
-		),
-		distinctUntilChanged()
-	);
+	private ammountPasswordFromBrowser$ = this.browserAccountsService.installedBrowsersData
+		.pipe(
+			map((installedBrowsersData) => {
+					return installedBrowsersData.browserData.reduce((acc, curr) => {
+						acc += curr.accountsCount;
+						return acc;
+					}, 0);
+				}
+			),
+			distinctUntilChanged()
+		);
 
 	getScore() {
 		const defaultValue = (coefficients.nonPrivatelyStoredPasswords * coefficients.withoutScan) as number;
 
-		return this.ammountPasswordFromBrowser$.pipe(
-			map((response) => this.getRange(response)),
-			map((range) => Number(range) * coefficients.nonPrivatelyStoredPasswords),
-			startWith(defaultValue),
-			catchError((err) => {
-				return of(defaultValue);
+		return combineLatest([
+			this.appStatusesService.globalStatus$,
+			this.ammountPasswordFromBrowser$
+		]).pipe(
+			map(([globalStatus, response]) => {
+				const isExist = globalStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined && globalStatus.nonPrivatePasswordResult !== FeaturesStatuses.error;
+				return isExist ? this.getRange(response) * coefficients.nonPrivatelyStoredPasswords : defaultValue;
 			}),
+			startWith(defaultValue),
+			catchError((err) => of(defaultValue)),
 		);
 	}
 
