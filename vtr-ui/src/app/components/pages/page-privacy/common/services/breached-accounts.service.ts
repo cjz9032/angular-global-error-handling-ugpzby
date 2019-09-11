@@ -5,7 +5,7 @@ import {
 	debounceTime,
 	distinctUntilChanged,
 	filter,
-	map,
+	map, pairwise,
 	switchMap,
 	take,
 	takeUntil,
@@ -79,7 +79,12 @@ export class BreachedAccountsService implements OnDestroy {
 				tap(() => this.resetBreachedAccounts(false)),
 			),
 			this.updateTriggersService.shouldUpdate$.pipe(
-				switchMap(() => this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
+				switchMap(() => this.communicationWithFigleafService.isFigleafReadyForCommunication$
+					.pipe(
+						pairwise(),
+						map(([prev, current]) => prev === true ? true : current),
+						take(1))
+				),
 				filter((isFigleafReadyForCommunication) => isFigleafReadyForCommunication),
 			),
 		).pipe(
