@@ -36,7 +36,6 @@
 							[enableBrightCondition1] = "enableBrightCondition" [selectedValue]="frontSelectedValue"
 							[showDescription]="showHideDescription" (change)="optionChangedRGBTop($event, null)">
 						</vtr-ui-lighting-effect>
-
 						<vtr-ui-color-wheel *ngIf="profileRGBFeature===255" [showOverlay]="showHideOverlay"
 							[inHEX]="inHex1" [defaultLang]="defaultLanguage" [btnStatus]="applyBtnStatus1"
 							(colorEffectChanged)="colorEffectChangedFront($event)"
@@ -76,15 +75,14 @@
 		</div>
 	</div>
 	<div *ngIf="!isProfileOff && profileRGBFeature===255" class="footer-part d-flex flex-row-reverse">
-		<a *ngIf="defaultLanguage !== 'ar' " id="gaming_lighting_setdefault_profile_{{currentProfileId}}"
-			attr.aria-label="gaming_lighting_setdefault_profile_{{currentProfileId}}" vtrMetrics
-			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick" href="javascript:void(0);"
-			class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+		<button *ngIf="defaultLanguage !== 'ar' " id="gaming_lighting_setdefault_profile_{{currentProfileId}}"
+			aria-label="set to default" vtrMetrics tabindex="0"
 			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
-			attr.aria-label="gaming_lighting_setdefault_profile" href="javascript:void(0);" class="link"
-			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
-
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</button>
+		<button id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			aria-label="set to default" class="link"  tabindex="0"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</button>
 	</div>
 </div>

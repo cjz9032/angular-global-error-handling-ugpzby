@@ -89,6 +89,12 @@ export class UiLightingEffectComponent implements OnInit {
 		// 	}
 
 		// }
-
+	}
+	public keyupTabFn(event,i) {
+		if(event.keyCode === 9) {
+			if((this.options.dropOptions.length-1) === i) {
+				this.showOptions = false;
+			}
+		}
 	}
 }
