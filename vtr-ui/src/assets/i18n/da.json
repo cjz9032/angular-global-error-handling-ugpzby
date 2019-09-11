@@ -2348,7 +2348,9 @@
         "actionTriggeredDescription": "Beskeder, der er udløst af brugerens valg af indstillinger, f.eks. automatisk installation af vigtige/anbefalede opdateringer.",
         "OtherSettings": "Andre indstillinger",
         "usageStatistics": "Brugsstatistikker",
-        "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
+		"usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Deler statistiske data med Lenovo for at forbedre pålideligheden, designet og optimeringen af funktioner på computeren.",
         "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
     },

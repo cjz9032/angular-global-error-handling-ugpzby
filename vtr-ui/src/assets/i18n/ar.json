@@ -2348,7 +2348,9 @@
         "actionTriggeredDescription": "الرسائل التي يتم تشغيلها عن طريق اختيار المستخدم للإعدادات مثل تثبيت التحديثات الهامة / الموصى بها تلقائيًا.",
         "OtherSettings": "إعدادات أخرى",
         "usageStatistics": "إحصائيات الاستخدام",
-        "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
+		"usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
     },
