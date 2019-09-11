@@ -231,6 +231,7 @@
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
 							</div>
+							<span class="unread-count-tag" *ngIf="UnreadCount.totalMessage">{{UnreadCount.totalMessage}}</span>
 						</a>
 						<div class="dropdown-menu {{item.id}} dropdown-menu-id"
 							id="navbarDropdownMenu"
@@ -239,7 +240,7 @@
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
-							<a class="dropdown-item link"
+							<a class="dropdown-item link link-lma"
 							vtrMetrics
 							id="menu-main-lnk-open-lma"
 							attr.aria-label="menu-main-lnk-open-lma"
@@ -249,7 +250,10 @@
 							metricsItem="LenovoMigrationAssistantButton"
 							[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidLenovoMigrationAssistant]"
 							(click)="updateUnreadCount(item, $event)"
-							href="javascript:void(0)">Lenovo Migration Assistant</a>
+							href="javascript:void(0)">
+								Lenovo Migration Assistant
+								<span class="unread-tag" *ngIf="!UnreadCount.lmaClicked"></span>
+							</a>
 							<a *ngIf="commonService.isOnline && !deviceService.isSMode && !deviceService.isGaming && modernPreloadService.IsEntitled"
 								vtrMetrics
 								id="menu-main-lnk-open-modern-preload"

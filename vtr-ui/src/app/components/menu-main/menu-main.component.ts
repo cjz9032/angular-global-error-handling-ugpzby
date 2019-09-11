@@ -215,7 +215,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	private updateUnreadCount(item, event?) {
+	updateUnreadCount(item, event?) {
 		if (item.id === 'user') {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
