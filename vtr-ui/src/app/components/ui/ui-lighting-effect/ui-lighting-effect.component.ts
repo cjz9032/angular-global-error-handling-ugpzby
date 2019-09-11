@@ -89,6 +89,18 @@ export class UiLightingEffectComponent implements OnInit {
 		// 	}
 
 		// }
-
+	}
+	public keyupTabFn(event,i) {
+		if(event.keyCode === 9) {
+			if(event.shiftKey) {
+				if(i === 0) {
+					this.showOptions = false
+					// document.getElementById("gaming-drop").focus();
+				}
+			} else if((this.options.dropOptions.length-1) === i) {
+				this.showOptions = false;
+				// document.getElementById("gaming-drop").focus();
+			}
+		}
 	}
 }
