@@ -2348,7 +2348,9 @@
         "actionTriggeredDescription": "Käyttäjän asetusvalintojen avulla käynnistämät sanomat, kuten tärkeiden tai suositeltujen päivitysten automaattinen asennus.",
         "OtherSettings": "Muut asetukset",
         "usageStatistics": "Käyttötilastot",
-        "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
+		"usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
         "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     },

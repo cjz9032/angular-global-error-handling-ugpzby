@@ -47,9 +47,9 @@ export class UiToggleComponent implements OnInit, OnDestroy {
 		if (!this.notChange) {
 			this.value = !this.value;
 		}
-		$event.target.value = Boolean(this.value);
-		$event.target.checked = Boolean($event.target.value);
-		$event.switchValue = Boolean($event.target.value);
+		$event.target.value = this.value;
+		$event.target.checked = $event.target.value === 'false' ? false : true;
+		$event.switchValue = $event.target.value === 'false' ? false : true;
 		this.toggle.emit($event);
 	}
 

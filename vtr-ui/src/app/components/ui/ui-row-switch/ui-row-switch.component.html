@@ -15,16 +15,17 @@
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
 							<div class="left-icon-block">
-								<fa-icon *ngIf="leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
+								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
 									[icon]="leftIcon"></fa-icon>
-								<svg-icon *ngIf="leftIcon[0]==='svg'"
+								<svg-icon *ngIf="!isAdminRequired && leftIcon[0]==='svg'"
 									[applyCss]="true"
 									[stretch]="true"
 									class="left-icon-svg svg-inline--fa fa-w-20  ng-fa-icon"
 									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
-								<span *ngIf="leftIcon[0]==='icomoon'"
+								<span *ngIf="!isAdminRequired && leftIcon[0]==='icomoon'"
 									[ngClass]="'icomoon '+leftIcon[1]"></span>
+								<img *ngIf="isAdminRequired" class="adminLogo"/>
 							</div>
 						</div>
 						<div class="col">
@@ -74,7 +75,7 @@
 						(toggle)="onOnOffChange($event)"
 						[showLoader]="showLoaderState"
 						[theme]="theme"
-						[isSwitchDisable] ="isDisabled"						
+						[isSwitchDisable] ="isDisabled"
 						id="{{switchId}}-onOffButton"
 						aria-label="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
 				</div>
@@ -131,7 +132,7 @@
 					<fa-icon vtrMetrics
 						metricsEvent="FeatureClick"
 						metricsParent="Device.SmartAssist"
-						metricsItem="{{metricsParent}}HelpIcon" 
+						metricsItem="{{metricsParent}}HelpIcon"
 						id="{{switchId+ '_voice_right_icon'}}"
 						attr.aria-label="{{switchId+ '_voice_right_icon'}}"
 						class="right-icon"

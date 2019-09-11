@@ -2348,7 +2348,9 @@
         "actionTriggeredDescription": "중요/권장 업데이트 자동 설치와 같은 사용자 선택 설정에 의해 트리거된 메시지.",
         "OtherSettings": "기타 설정",
         "usageStatistics": "사용 현황 통계",
-        "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
+		"usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
         "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."
     },
