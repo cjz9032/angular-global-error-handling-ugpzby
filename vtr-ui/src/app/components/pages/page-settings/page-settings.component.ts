@@ -20,9 +20,11 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	toggleMarketing = false;
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
+	toggleDeviceStatistics = false;
 
 	isMessageSettings = false;
 	isToggleUsageStatistics = false;
+	isToggleDeviceStatistics = false;
 
 	valueToBoolean = [false, true, false];
 
@@ -44,9 +46,13 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	otherSettings = [
 		{
 			leftImageSource: ['fal', 'shoe-prints'],
+		},
+		{
+			leftImageSource: ['fal', 'shoe-prints'],
 		}
 	];
 	metrics: any;
+	metricsPreference: any;
 
 	constructor(
 		private shellService: VantageShellService,
@@ -57,6 +63,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
+		this.metricsPreference = shellService.getMetricPreferencePlugin();
 		shellService.getMetricsPolicy((result)=>{
 			this.metrics.metricsEnabled = result;
 			this.toggleUsageStatistics = this.metrics.metricsEnabled;
@@ -93,7 +100,31 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.toggleUsageStatistics = this.metrics.metricsEnabled;
 			this.isToggleUsageStatistics = true;
 		}
+		if (this.settingsService.isDeviceStatisticsSupported) {
+			this.toggleDeviceStatistics = this.settingsService.toggleDeviceStatistics;
+			this.isToggleDeviceStatistics = this.settingsService.isDeviceStatisticsSupported;
+		} else {
+			this.getDeviceStatisticsPreference();
+		}
 	}
+	private getDeviceStatisticsPreference() {
+		if (this.metricsPreference) {
+			this.metricsPreference.getAppMetricCollectionSetting('en', 'com.lenovo.LDI').then((response) => {
+				if (response && response.app && response.app.metricCollectionState === 'On') {
+					this.toggleDeviceStatistics = true;
+					this.isToggleDeviceStatistics = true;
+				}
+				else if (response && response.app && response.app.metricCollectionState === 'Off') {
+					this.toggleDeviceStatistics = false;
+					this.isToggleDeviceStatistics = true;
+				}
+				else {
+					this.isToggleDeviceStatistics = false;
+				}
+			});
+		}
+	}
+
 	getPreferenceSettingsValue() {
 		if (this.preferenceSettings) {
 			this.preferenceSettings.getMessagingPreference('en').then((messageSettings: any) => {
@@ -162,6 +193,22 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		}
 		this.sendSettingMetrics('SettingActionTriggered', event.switchValue);
 	}
+
+	onToggleOfDeviceMetricStatistics(event: any) {
+		this.toggleDeviceStatistics = event.switchValue;
+		this.settingsService.toggleDeviceStatistics = event.switchValue;
+		const expectedMetricCollectionState = this.toggleDeviceStatistics ? 'On' : 'Off';
+		if (this.metricsPreference) {
+			this.metricsPreference.setAppMetricCollectionSettings('en', 'com.lenovo.LDI', this.toggleDeviceStatistics).then((result: any) => {
+				if (!result || !result.app || result.app.metricCollectionState !== expectedMetricCollectionState) {
+					this.toggleDeviceStatistics = !event.switchValue;
+					this.settingsService.toggleDeviceStatistics = !event.switchValue;
+				}
+			});
+		}
+		this.sendSettingMetrics('SettingDeviceStatistics', event.switchValue);
+	}
+
 	onToggleOfUsageStatistics(event: any) {
 		this.toggleUsageStatistics = event.switchValue;
 		this.settingsService.toggleUsageStatistics = event.switchValue;

@@ -18,6 +18,7 @@ export class HeaderMainComponent implements OnInit {
 	@Input() menuItems: any[];
 	@Input() parentPath: string;
 	@Input() backId: string;
+	@Input() ariaLabel: string;
 	@Input() isInnerBack = false;
 	@Output() innerBack = new EventEmitter();
 	@Input() textId: string;
