@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Virüsten Koruma",
                 "back": "GERİ",
-                "why": "Neden McAfee?",
                 "recommends": "Lenovo, McAfee'nin tüm cihazlarınızı korumasını önerir:",
                 "award": "Fidye yazılımları ve kötü amaçlı yazılımlar da dahil olmak üzere en yeni çevrimiçi tehditlere karşı ödüllü koruma",
-                "dedicated": "Defender ve diğer önde gelen AV sağlayıcılarını sürekli olarak geride bırakan özel güvenlik",
-                "deviceToCloud": "Bilgisayarınızı yavaşlatmayan cihazdan buluta teknolojisi",
-                "poweredBy": "McAfee Tarafından Desteklenmektedir",
-                "privacyTerms": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin",
                 "mcafeePremium": "McAfee Premium Koruma",
                 "protectedBy": "Şu anda {{protectedName}} tarafından korunmaktasınız. Ancak McAfee LiveSafe ile daha da iyi korunabilirsiniz.",
                 "virusScan": "VİRÜS TARAMASI",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "VİRÜS TARAMASINI ETKİNLEŞTİR",
                 "enablenFirewall": "GÜVENLİK DUVARINI ETKİNLEŞTİR",
                 "enableFirewall": "GÜVENLİK DUVARINI ETKİNLEŞTİR",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "En İyi Şekilde Korunmuyor",
-                "subtitle": "Şu anda Windows Defender tarafından korunuyorsunuz.Ancak, McAfee LiveSafe ile daha iyi korunabilirsiniz. Aşağıdan daha fazla bilgi edinin.",
-                "learnMore": "McAfee HAKKINDA DAHA FAZLA BİLGİ EDİNİN",
-                "windowsProtected": "Windows Defender temel koruması",
-                "windowsSubtitle": "Windows Defender, cihazınız için temel koruma sunar"
+                "windowsSubtitle": "Windows Defender, cihazınız için temel koruma sunar",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",

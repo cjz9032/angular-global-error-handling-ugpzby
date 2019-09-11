@@ -57,6 +57,12 @@ ui-popover {
 			font-size: 3rem;
 			color: $main;
 			display: block !important;
+			@media #{$black-on-white} {
+				color: $gaming_darkest;
+			}
+			@media #{$white-on-black} {
+				color: $gaming_darkest;
+			}
 		}
 
 		h1 {
@@ -97,6 +103,14 @@ ui-popover {
 	}
 	#restart_popup{
 		color: $gaming_darkest;
+		@media #{$black-on-white} {
+			display: none;
+		}
+		@media #{$white-on-black} {
+			display: none;
+		}
+	}
+	#popup_close{
 		@media #{$black-on-white} {
 			display: none;
 		}
