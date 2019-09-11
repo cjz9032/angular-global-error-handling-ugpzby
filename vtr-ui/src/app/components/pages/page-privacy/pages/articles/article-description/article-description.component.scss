@@ -19,6 +19,10 @@
 ::ng-deep .article {
 	width: 100%;
 
+	a {
+		text-decoration: underline;
+	}
+
 	p {
 		color: #647683;
 		font-size: 1.8rem;
