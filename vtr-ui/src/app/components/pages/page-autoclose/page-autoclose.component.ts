@@ -141,11 +141,12 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	toggleAutoClose(event: any) {
-		this.setAutoCloseStatus(event.value);
+		let status = event.target.value;
+		this.setAutoCloseStatus(status);
 	}
 
 	setAutoCloseStatus(status: boolean) {
-		this.gamingAutoCloseService.setAutoCloseStatus(status).then((response: boolean) => {
+		this.gamingAutoCloseService.setAutoCloseStatus(Boolean(status)).then((response: boolean) => {
 			if (response) {
 				this.gamingAutoCloseService.setAutoCloseStatusCache(status);
 				this.toggleStatus = status;
