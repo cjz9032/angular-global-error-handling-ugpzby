@@ -1,29 +1,38 @@
 @import "../../../app.theme.scss";
 
 .vtr-ui-brightness-slider {
-    .ng5-slider{
-        margin: 0;
-        margin-top: 2.3rem;
-        ::ng-deep {
-            &.ng5-slider-bubble {
-                display: none;
-            }
-            &.ng5-slider-selection {
-                background: $gaming_lighting_gradient;
-            }
-            &.ng5-slider-pointer {
-                background-image: url('../../../../assets/gaming-icons/Brightness@2x.png');
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-size: 100%;
-                height: 3rem;
-                width: 3rem;
-                top: -1.3rem;
-                border-radius: 50%;
-                &::after{
-                    background:none;
-                }
-            }
-        }
-    }
+	#sliderDetailsEle {
+		position: absolute;
+		width: 0 !important;
+		height: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		border: none !important;
+		outline: none !important;
+	}
+	.ng5-slider {
+		margin: 0;
+		margin-top: 2.3rem;
+		::ng-deep {
+			&.ng5-slider-bubble {
+				display: none;
+			}
+			&.ng5-slider-selection {
+				background: $gaming_lighting_gradient;
+			}
+			&.ng5-slider-pointer {
+				background-image: url('../../../../assets/gaming-icons/Brightness@2x.png');
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 100%;
+				height: 3rem;
+				width: 3rem;
+				top: -1.3rem;
+				border-radius: 50%;
+				&::after {
+					background: none;
+				}
+			}
+		}
+	}
 }

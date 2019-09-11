@@ -1,9 +1,9 @@
 <div class="vtr-page-lightingcustomize vtr-page container-fluid">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"
-				[title]="'gaming.lightingProfile.title' | translate"></vtr-header-main>
+			<vtr-header-main [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
+				[ariaLabel]="'Back to dashboard'" [title]="'gaming.lightingProfile.title' | translate">
+			</vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -15,7 +15,8 @@
 							<div class="container-fluid">
 								<div class="row mb-60">
 									<div class="col col-12 px-40">
-										<vtr-ui-lighting-profile [currentProfileId]="currentProfileId"></vtr-ui-lighting-profile>
+										<vtr-ui-lighting-profile [currentProfileId]="currentProfileId">
+										</vtr-ui-lighting-profile>
 									</div>
 								</div>
 							</div>
@@ -27,18 +28,14 @@
 								<div class="row">
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
 										<div class="tryMcAfee card">
-											<vtr-container-card order="1"
-												[itemID]="cardContentPositionA.Id"
+											<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
 												[img]="cardContentPositionA.FeatureImage"
 												[title]="cardContentPositionA.Title"
 												[logoText]="cardContentPositionA.BrandName"
 												[action]="cardContentPositionA.Action"
 												[actionType]="cardContentPositionA.ActionType"
-												[actionLink]="cardContentPositionA.ActionLink"
-												[type]="'article'"
-												[ratioX]="4"
-												[ratioY]="4"
-												id="lighting_customize_crm_card_A"
+												[actionLink]="cardContentPositionA.ActionLink" [type]="'article'"
+												[ratioX]="4" [ratioY]="4" id="lighting_customize_crm_card_A"
 												aria-label="lighting_customize_crm_card_A">
 											</vtr-container-card>
 										</div>
@@ -46,19 +43,15 @@
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
 										<div class="manage-pass card">
-											<vtr-container-card order="2"
-												[itemID]="cardContentPositionB.id"
+											<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
 												[img]="cardContentPositionB.FeatureImage"
 												[caption]="cardContentPositionB.Description"
 												[title]="cardContentPositionB.Title"
 												[logoText]="cardContentPositionB.BrandName"
 												[action]="cardContentPositionB.Action"
 												[actionType]="cardContentPositionB.ActionType"
-												[actionLink]="cardContentPositionB.ActionLink"
-												[type]="'corner'"
-												[ratioX]="4"
-												[ratioY]="2"
-												[cornerShift]="'large'"
+												[actionLink]="cardContentPositionB.ActionLink" [type]="'corner'"
+												[ratioX]="4" [ratioY]="2" [cornerShift]="'large'"
 												id="lighting_customize_crm_card_B"
 												aria-label="lighting_customize_crm_card_B">
 											</vtr-container-card>

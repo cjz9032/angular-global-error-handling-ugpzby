@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -49,58 +50,48 @@ export class PageSupportComponent implements OnInit {
 				metricsParent: 'Page.Support'
 			}
 		],
-		needHelp: [
-			{
-				icon: ['fal', 'comment-alt'],
-				title: 'support.needHelp.listLenovoCommunity',
-				url: 'https://community.lenovo.com',
-				metricsItem: 'NeedHelp.LenovoCommunityButton',
-				metricsEvent: 'FeatureClick',
-				metricsParent: 'Page.Support'
-			},
-			{
-				icon: ['fal', 'share-alt'],
-				title: 'support.needHelp.listContactCustomerService',
-				url: 'https://support.lenovo.com/',
-				metricsItem: 'NeedHelp.ContactCustomerServiceButton',
-				metricsEvent: 'FeatureClick',
-				metricsParent: 'Page.Support'
-			},
-			{
-				icon: ['fal', 'heart'],
-				title: 'support.needHelp.listFindUs',
-				clickItem: 'findUs',
-				metricsItem: 'NeedHelp.FindUsButton',
-				metricsEvent: 'FeatureClick',
-				metricsParent: 'Page.Support'
-			}
-		],
-		quicklinks: [
-			{
-				icon: ['fal', 'ticket-alt'],
-				title: 'support.quicklinks.listETicket',
-				url: 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
-				metricsItem: 'Quicklinks.E-ticketButton',
-				metricsEvent: 'FeatureClick',
-				metricsParent: 'Page.Support'
-			},
-			{
-				icon: ['fal', 'briefcase'],
-				title: 'support.quicklinks.listServiceProvider',
-				url: 'https://www.lenovo.com/us/en/ordersupport/',
-				metricsItem: 'Quicklinks.ServiceProviderButton',
-				metricsEvent: 'FeatureClick',
-				metricsParent: 'Page.Support'
-			},
-			{
-				iconPath: 'assets/images/support/svg_icon_about_us.svg',
-				title: 'support.quicklinks.listAboutLenovoVantage',
-				clickItem: 'about',
-				metricsItem: 'Quicklinks.AboutLenovoVantageButton',
-				metricsEvent: 'FeatureClick',
-				metricsParent: 'Page.Support'
-			}
-		],
+		needHelp: [],
+		quicklinks: [],
+	};
+	listLenovoCommunity = {
+		icon: ['fal', 'comment-alt'],
+		title: 'support.needHelp.listLenovoCommunity',
+		url: 'https://community.lenovo.com',
+		metricsItem: 'NeedHelp.LenovoCommunityButton',
+		metricsEvent: 'FeatureClick',
+		metricsParent: 'Page.Support'
+	};
+	listContactCustomerService = {
+		icon: ['fal', 'share-alt'],
+		title: 'support.needHelp.listContactCustomerService',
+		url: 'https://support.lenovo.com/contactus?serialnumber=',
+		metricsItem: 'NeedHelp.ContactCustomerServiceButton',
+		metricsEvent: 'FeatureClick',
+		metricsParent: 'Page.Support'
+	};
+	listFindUs = {
+		icon: ['fal', 'heart'],
+		title: 'support.needHelp.listFindUs',
+		clickItem: 'findUs',
+		metricsItem: 'NeedHelp.FindUsButton',
+		metricsEvent: 'FeatureClick',
+		metricsParent: 'Page.Support'
+	};
+	listServiceProvider = {
+		icon: ['fal', 'briefcase'],
+		title: 'support.quicklinks.listServiceProvider',
+		url: 'https://www.lenovo.com/us/en/ordersupport/',
+		metricsItem: 'Quicklinks.ServiceProviderButton',
+		metricsEvent: 'FeatureClick',
+		metricsParent: 'Page.Support'
+	};
+	listAboutLenovoVantage = {
+		iconPath: 'assets/images/support/svg_icon_about_us.svg',
+		title: 'support.quicklinks.listAboutLenovoVantage',
+		clickItem: 'about',
+		metricsItem: 'Quicklinks.AboutLenovoVantageButton',
+		metricsEvent: 'FeatureClick',
+		metricsParent: 'Page.Support'
 	};
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',
@@ -116,6 +107,7 @@ export class PageSupportComponent implements OnInit {
 		public mockService: MockService,
 		public supportService: SupportService,
 		public deviceService: DeviceService,
+		public localInfoService: LocalInfoService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
@@ -132,6 +124,7 @@ export class PageSupportComponent implements OnInit {
 
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
+		this.setShowList();
 	}
 
 	onNotification(notification: AppNotification) {
@@ -171,6 +164,18 @@ export class PageSupportComponent implements OnInit {
 		}
 	}
 
+	setShowList() {
+		this.supportDatas.needHelp.push(
+			this.listLenovoCommunity,
+			this.listFindUs,
+		);
+		this.supportService.getSerialnumber().then(sn => {
+			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
+			this.supportDatas.needHelp.splice(1, 0, this.listContactCustomerService);
+		});
+		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
+	}
+
 	getWarrantyInfo(online: boolean) {
 		this.supportService.getWarrantyInfo(online);
 	}
@@ -183,7 +188,7 @@ export class PageSupportComponent implements OnInit {
 			Page: 'support'
 		};
 		if (lang) {
-			Object.assign(queryOptions, {Lang: lang, GEO: 'US'});
+			Object.assign(queryOptions, { Lang: lang, GEO: 'US' });
 		}
 
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -219,7 +224,7 @@ export class PageSupportComponent implements OnInit {
 
 		const queryOptions = {};
 		if (lang) {
-			Object.assign(queryOptions, {Lang: lang});
+			Object.assign(queryOptions, { Lang: lang });
 		}
 
 		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
@@ -266,7 +271,7 @@ export class PageSupportComponent implements OnInit {
 			category: categoryId,
 		};
 		if (lang) {
-			Object.assign(queryOptions, {Lang: lang});
+			Object.assign(queryOptions, { Lang: lang });
 		}
 
 		this.cmsService.fetchCMSArticles(queryOptions, true).then(
