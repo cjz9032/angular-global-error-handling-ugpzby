@@ -1,6 +1,16 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { EMPTY, merge, Observable, ReplaySubject, Subject } from 'rxjs';
-import { catchError, debounceTime, distinctUntilChanged, map, switchMap, take, takeUntil, tap } from 'rxjs/operators';
+import {
+	catchError,
+	debounceTime,
+	distinctUntilChanged,
+	filter,
+	map,
+	switchMap,
+	take,
+	takeUntil,
+	tap
+} from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
@@ -68,7 +78,10 @@ export class BreachedAccountsService implements OnDestroy {
 			this.getNewBreachedAccounts$.asObservable().pipe(
 				tap(() => this.resetBreachedAccounts(false)),
 			),
-			this.updateTriggersService.shouldUpdate$,
+			this.updateTriggersService.shouldUpdate$.pipe(
+				switchMap(() => this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
+				filter((isFigleafReadyForCommunication) => isFigleafReadyForCommunication),
+			),
 		).pipe(
 			debounceTime(200),
 			switchMap((mergeValue) => this.getBreachedAccountsFromDifferentSource().pipe(
@@ -76,8 +89,8 @@ export class BreachedAccountsService implements OnDestroy {
 			),
 			catchError((error) => this.handleError(error)),
 			takeUntil(instanceDestroyed(this))
-		).subscribe(([mergeValue, response]: [any, BreachedAccount[]]) => {
-			this.onGetBreachedAccounts.next({breaches: response, error: null});
+		).subscribe(([mergeValue, breaches]: [any, BreachedAccount[]]) => {
+			this.onGetBreachedAccounts.next({breaches, error: null});
 			this.sendTaskAcrion();
 
 			if (mergeValue && mergeValue.type && mergeValue.type === 'scanNotifier') {
