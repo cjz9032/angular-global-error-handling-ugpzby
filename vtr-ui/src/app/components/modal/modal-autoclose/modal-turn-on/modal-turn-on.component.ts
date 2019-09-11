@@ -8,6 +8,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 })
 export class ModalTurnOnComponent implements OnInit {
   setAutoClose: any;
+  public isChecked :any;
   constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 
   @Input() showTurnOnModal: boolean;
@@ -18,8 +19,13 @@ export class ModalTurnOnComponent implements OnInit {
   ngOnInit() {
   }
 
-  setAksAgain(event: any) {
-    this.actionNeedAsk.emit(event);
+  // setAksAgain(event: any) {
+  //   this.actionNeedAsk.emit(event);
+  // }
+
+  setAksAgainbtn(){
+     this.isChecked =!this.isChecked;
+     this.actionNeedAsk.emit(this.isChecked);
   }
 
   turnOnAction(isConfirm: boolean) {
@@ -32,6 +38,13 @@ export class ModalTurnOnComponent implements OnInit {
 
   closeModal(action: boolean) {
     this.closeTurnOnModal.emit(action);
+  }
+
+  keydownFn(event){
+    if(event.which === 9){
+      let txt = document.getElementById("close");
+      txt.focus();
+    }
   }
 
 }

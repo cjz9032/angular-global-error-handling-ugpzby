@@ -96,7 +96,7 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	doNotShowAction(event: any) {
-		const status = event.target.checked;
+		const status = event;
 		try {
 			this.getNeedStatus = !status;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
