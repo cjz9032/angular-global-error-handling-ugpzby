@@ -1,9 +1,9 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()" (keydown.enter)="toggleOptions()" tabindex="0" attr.aria-label="{{selectedOption.label}}"
-			role="link">
+		<a class="dropdown-toggle" id="gaming-drop" href="javascript:void(0)" (click)="toggleOptions()"
+			attr.aria-label="{{selectedOption.label}}" role="link">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
-			<fa-icon aria-label="expand" tabindex="0" class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
+			<fa-icon aria-label="expand" role="link" class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</a>
 		<ng-container *ngIf="showOptions">
 			<div class="gaming-dropdown-menu" #dropdownLightingEle>
