@@ -40,6 +40,14 @@
 			border-bottom: 0.1rem solid $light;
 		}
 	}
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+		&:focus {
+			text-decoration: none;
+		}
+	}
 	.forward-link {
 		float: right;
 		margin-top: 3.5rem;
