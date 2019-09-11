@@ -2356,7 +2356,9 @@
         "actionTriggeredDescription": "使用者選取設定（例如自動安裝重要/建議的更新）所觸發的訊息。",
         "OtherSettings": "其他設定",
         "usageStatistics": "使用情形統計資料",
-        "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
+		"usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "與 Lenovo 共用統計資料，協助我們提升您電腦功能的可靠性、設計和最佳化。",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
     },

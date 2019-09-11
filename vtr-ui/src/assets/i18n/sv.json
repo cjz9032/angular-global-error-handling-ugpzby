@@ -2356,7 +2356,9 @@
         "actionTriggeredDescription": "Meddelanden som utgår från dina inställningar, till exempel viktiga automatiska installationer eller rekommenderade uppdateringar.",
         "OtherSettings": "Andra inställningar",
         "usageStatistics": "Användningsstatistik",
-        "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
+		"usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Delar statistiska data med Lenovo för att förbättra tillförlitlighet och design, och för att optimera funktioner på din dator.",
         "Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
     },

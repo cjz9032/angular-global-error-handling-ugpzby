@@ -2356,7 +2356,9 @@
         "actionTriggeredDescription": "Повідомлення, пов’язані з вибором автоматичної інсталяції критично важливих або рекомендованих оновлень.",
         "OtherSettings": "Інші настройки",
         "usageStatistics": "Статистика використання",
-        "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
+		"usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Передає статистичні дані до компанії Lenovo, щоб покращити надійність, дизайн і оптимізувати функції на вашому комп'ютері.",
         "Note": "Примітка. ",
         "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."
     },

@@ -2356,7 +2356,9 @@
         "actionTriggeredDescription": "Wiadomości uruchamiane przez ustawienia użytkownika, takie jak automatyczne instalowanie krytycznych lub zalecanych aktualizacji.",
         "OtherSettings": "Inne ustawienia",
         "usageStatistics": "Statystyki użytkowania",
-        "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
+		"usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
         "Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
     },

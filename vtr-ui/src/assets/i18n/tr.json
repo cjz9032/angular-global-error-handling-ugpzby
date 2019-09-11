@@ -2356,7 +2356,9 @@
         "actionTriggeredDescription": "Kullanıcının kritik/önerilen güncellemeleri otomatik olarak yükleme gibi ayarları seçmesiyle tetiklenen iletiler.",
         "OtherSettings": "Diğer ayarlar",
         "usageStatistics": "Kullanım İstatistikleri",
-        "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
+		"usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Bilgisayarınızdaki özelliklerin güvenilirliğinin, tasarımının ve iyileştirilmesinin gelişimine yardımcı olmak için Lenovo ile istatiksel veri paylaşır.",
         "Note": "Not: ",
         "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir."
     },

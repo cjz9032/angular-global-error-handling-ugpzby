@@ -2356,7 +2356,9 @@
         "actionTriggeredDescription": "Meldinger som utløses av at man velger innstillinger som automatisk installasjon av kritiske/anbefalte oppdateringer.",
         "OtherSettings": "Andre innstillinger",
         "usageStatistics": "Statistikk over bruk",
-        "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
+		"usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
     },

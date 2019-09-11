@@ -2356,7 +2356,9 @@
         "actionTriggeredDescription": "A felhasználó megadott beállításai által aktivált üzenetek – például a kritikus/javasolt frissítések automatikus telepítése.",
         "OtherSettings": "Egyéb beállítások",
         "usageStatistics": "Használati statisztikák",
-        "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
+		"usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Statisztikai adatokat oszt meg a Lenovóval, így segíti a számítógép-funkciók tervezését, optimalizálását és megbízhatóbbá tételét.",
         "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."
     },

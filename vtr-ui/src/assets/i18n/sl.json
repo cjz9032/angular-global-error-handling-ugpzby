@@ -2356,7 +2356,9 @@
         "actionTriggeredDescription": "Sporočila, ki jih sproži uporabnik, ko izbere nastavitve, kot je samodejna namestitev nujnih/priporočenih posodobitev.",
         "OtherSettings": "Druge nastavitve",
         "usageStatistics": "Statistični podatki o uporabi",
-        "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
+		"usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
         "Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
     },
