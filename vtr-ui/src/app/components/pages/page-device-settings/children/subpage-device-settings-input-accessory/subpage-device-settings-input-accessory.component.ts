@@ -6,7 +6,7 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SupportedAppEnum, VoipErrorCodeEnum } from '../../../../../services/input-accessories/voip.enum';
-import { VoipAppListInterface, VoipResponseInterface } from '../../../../../services/input-accessories/voip.interface';
+import { VoipAppInterface, VoipResponseInterface } from '../../../../../services/input-accessories/voip.interface';
 import { EMPTY } from 'rxjs';
 
 @Component({
@@ -32,8 +32,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public isTouchPadVisible = false;
 	public isMouseVisible = false;
 
-	public selectedApp: number | string = '';
-	public installedApps: VoipAppListInterface[] = [];
+	public selectedApp: VoipAppInterface;
+	public installedApps: VoipAppInterface[] = [];
 	public showVoipHotkeysSection = false;
 	public isAppInstalled = false;
 	voipAppName = ['Skype For Business', 'Microsoft Teams'];
@@ -80,14 +80,17 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			});
 	}
 
-	setVoipHotkeysSettings($event: SupportedAppEnum) {
+	setVoipHotkeysSettings(app: VoipAppInterface) {
 		const prev = this.selectedApp;
-		this.selectedApp = $event;
-		this.keyboardService.SetVoipHotkeysSettings($event)
-			.then(res => {
-				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED) {
+		this.selectedApp = app;
+		this.keyboardService.SetVoipHotkeysSettings(app.appName)
+			.then(VoipResponse => {
+				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
 					this.selectedApp = prev;
+					this.selectedApp.isSelected = true;
+					return VoipResponse;
 				}
+				this.installedApps = VoipResponse.appList;
 			})
 			.catch(error => {
 				console.log('setVoipHotkeysSettings error', error);
