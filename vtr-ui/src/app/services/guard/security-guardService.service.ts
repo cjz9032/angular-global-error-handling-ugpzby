@@ -2,7 +2,7 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
 	providedIn: 'root',
@@ -14,27 +14,28 @@ export class GuardService {
 	previousPageName = '';
 	duration = 0;
 
-	constructor(private shellService: VantageShellService,
+	constructor(
+		shellService: VantageShellService,
 		private commonService: CommonService) {
 
-	this.metrics = shellService.getMetrics();
-	window.addEventListener('blur',()=>{
-	this.duration =this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`);
+		this.metrics = shellService.getMetrics();
+		window.addEventListener('blur', () => {
+			this.duration = this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10);
 
-})
-window.addEventListener('focus',()=>{
-	this.interTime=Date.now();
+		});
+		window.addEventListener('focus', () => {
+			this.interTime = Date.now();
 
-})
+		});
 
-}
+	}
 
 	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 		this.interTime = Date.now();
 		return true;
 	}
 
-	canDeactivate(component: Object, activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+	canDeactivate(component: object, activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 		this.pageContext = activatedRouteSnapshot.data.pageContent;
 		if (this.pageContext && this.pageContext.indexOf('[LocalStorageKey]') !== -1) {
 			this.pageContext = this.commonService.getLocalStorageValue(this.pageContext);
@@ -43,7 +44,7 @@ window.addEventListener('focus',()=>{
 		const data = {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
-			PageDuration: this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`),
+			PageDuration: this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10),
 			PageContext: this.pageContext,
 		};
 		console.log('Deactivate : ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);
