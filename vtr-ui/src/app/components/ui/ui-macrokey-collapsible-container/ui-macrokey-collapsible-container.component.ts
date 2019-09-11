@@ -86,4 +86,12 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 			}
 		}
 	}
+
+	keydownFn(event,i){
+		if(i === this.options.length-1){
+			if(event.keyCode === 9){
+				this.showOptions = false;
+			}
+		}
+	}
 }

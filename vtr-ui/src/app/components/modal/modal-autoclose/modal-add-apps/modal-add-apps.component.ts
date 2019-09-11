@@ -15,6 +15,7 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 	@Output() addAppToList = new EventEmitter<boolean>();
 	public loading = true;
 	public loadingNoApps = false;
+	public isChecked :any = [];
 	constructor() { }
 
 	ngOnInit() {
@@ -29,14 +30,30 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 			this.loading = this.loaderData.loading;
 			this.loadingNoApps = this.loaderData.noApps;
 		}
+		this.runningListData.push({"iconName":"","processDescription":""})
 	}
 
-	addAppData(event: any) {
-		this.addAppToList.emit(event);
-	}
+	// addAppData(event: any) {
+	// 	this.addAppToList.emit(event);
+	// }
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
+	}
+	addAppDatabtn(event,i){
+		this.isChecked[i] = !this.isChecked[i];
+		let jsonVal :any = {target:{"checked":this.isChecked[i],"value":event.target.value}};
+		this.addAppToList.emit(jsonVal);
+	}
+
+	runappKeyup(event,index){
+		if(event.which === 9){
+			if(index === this.runningListData.length-1){
+				let txt1 = document.getElementById("close");
+				txt1.focus();
+	    	}
+		}
+		
 	}
 
 }

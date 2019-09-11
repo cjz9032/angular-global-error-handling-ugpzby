@@ -17,4 +17,13 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	submitAction(isConfirm: boolean = false) {
 		this.action.emit(isConfirm);
 	}
+
+	keydownFn(event){
+		console.log("event---keydown--------------->",event);
+		if(event.which === 9){
+			console.log("23333333333333334444444444444444444444")
+			let txt1 = document.getElementById("close");
+			txt1.focus();
+		}
+	}
 }
