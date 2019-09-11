@@ -2348,7 +2348,9 @@
         "actionTriggeredDescription": "Messaggi attivati dalle impostazioni selezionate dall'utente, come l'installazione automatica degli aggiornamenti critici/consigliati.",
         "OtherSettings": "Altre impostazioni",
         "usageStatistics": "Statistiche utilizzo",
-        "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
+		"usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."
     },

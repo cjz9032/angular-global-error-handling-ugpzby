@@ -2348,7 +2348,9 @@
         "actionTriggeredDescription": "Nachrichten, die durch die Auswahl von Einstellungen ausgelöst werden, wie z. B. die automatische Installation kritischer/empfohlener Updates.",
         "OtherSettings": "Weitere Einstellungen",
         "usageStatistics": "Verwendungsstatistiken",
-        "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
+		"usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Sendet statistische Daten an Lenovo, um die Zuverlässigkeit und das Design Ihres Computers zu verbessern und seine Funktionalität zu optimieren.",
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden."
     },

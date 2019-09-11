@@ -2348,7 +2348,9 @@
         "actionTriggeredDescription": "הודעות המופעלות על ידי בחירת הגדרות של המשתמש, כגון עדכונים קריטיים/מומלצים של התקנה אוטומטית.",
         "OtherSettings": "הגדרות נוספות",
         "usageStatistics": "סטטיסטיקת שימוש",
-        "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
+		"usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה."
     },
