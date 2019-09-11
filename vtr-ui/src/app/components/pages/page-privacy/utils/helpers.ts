@@ -1,7 +1,7 @@
 import { BrowserListType } from '../common/services/vantage-communication.service';
 import { AppStatuses, FeaturesStatuses } from '../userDataStatuses';
 import { sha256 } from 'js-sha256';
-import * as sha1 from 'sha1';
+import * as sha1 from 'js-sha1';
 
 export function returnUniqueElementsInArray<T>(arr: T[]): T[] {
 	return Array.from(new Set<T>(arr));
