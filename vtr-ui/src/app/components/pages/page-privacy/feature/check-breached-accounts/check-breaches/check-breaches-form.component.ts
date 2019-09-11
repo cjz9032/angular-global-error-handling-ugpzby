@@ -5,7 +5,7 @@ import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance
 import { EmailScannerService } from '../services/email-scanner.service';
 import { from, merge } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
-import { validateEmail } from '../../../utils/helpers';
+import { validateAllFormFields, validateEmail } from '../../../utils/helpers';
 import { EMAIL_REGEXP } from '../../../utils/form-validators';
 import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 import {
@@ -90,6 +90,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 	handleEmailScan() {
 		this.emailWasSubmitted = true;
+		validateAllFormFields(this.emailForm);
 		if (this.emailForm.invalid) {
 			return;
 		}

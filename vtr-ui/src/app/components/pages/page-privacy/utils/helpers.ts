@@ -2,6 +2,7 @@ import { BrowserListType } from '../common/services/vantage-communication.servic
 import { AppStatuses, FeaturesStatuses } from '../userDataStatuses';
 import { sha256 } from 'js-sha256';
 import * as sha1 from 'js-sha1';
+import { FormControl, FormGroup } from '@angular/forms';
 
 export function returnUniqueElementsInArray<T>(arr: T[]): T[] {
 	return Array.from(new Set<T>(arr));
@@ -82,4 +83,16 @@ export const pipe = (...functions) => args => functions.reduce((arg, fn) => fn(a
 
 export function DifferenceInDays(firstDate, secondDate) {
 	return Math.round((secondDate - firstDate) / (1000 * 60 * 60 * 24));
+}
+
+export function validateAllFormFields(formGroup: FormGroup) {
+	Object.keys(formGroup.controls).forEach(field => {
+		const control = formGroup.get(field);
+		if (control instanceof FormControl) {
+			control.markAsTouched();
+			control.markAsDirty();
+		} else if (control instanceof FormGroup) {
+			this.validateAllFormFields(control);
+		}
+	});
 }
