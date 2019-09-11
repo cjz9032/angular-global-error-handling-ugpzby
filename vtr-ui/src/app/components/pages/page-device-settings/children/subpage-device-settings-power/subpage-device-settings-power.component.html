@@ -214,9 +214,10 @@
 							</div>
 							<div class="row">
 								<div class="col px-20">
-									<div class="auto-set-checkbox"
+									<div class="auto-set-checkbox custom-checkbox"
 										*ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
+											class="custom-control-input"
 											attr.aria-label="cb-always-on-usb"
 											type="checkbox"
 											name="always-on-usb-checkbox-id"
@@ -224,6 +225,7 @@
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
 											checked="" />
+											<span class="checkmark"></span>
 										<label for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
