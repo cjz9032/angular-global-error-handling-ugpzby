@@ -172,5 +172,8 @@ export enum LocalStorageKey {
 	ExpressChargingCapability = '[LocalStorageKey] ExpressChargingCapability',
 	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability',
 	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
-	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability'
+	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability',
+
+	// Apps For You storage key
+	UnreadMessageCount = '[LocalStorageKey] UnreadMessageCount'
 }

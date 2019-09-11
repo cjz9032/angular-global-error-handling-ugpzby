@@ -58,10 +58,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	currentUrl: string;
 	isSMode: boolean;
 
-	UnreadCount = {
+	UnreadMessageCount = {
 		totalMessage: 2,
-		lmaClicked: false,
-		adobeClicked: false
+		lmaMenuClicked: false,
+		adobeMenuClicked: false
 	};
 
 	get appsForYouEnum() { return AppsForYouEnum; }
@@ -193,6 +193,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
+		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
+			LocalStorageKey.UnreadMessageCount,
+			undefined
+		);
+		if (cacheUnreadMessageCount) {
+			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
+			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
+			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
+		}
+
 		this.hardwareScanService.getPluginInfo()
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
@@ -215,16 +225,27 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	updateUnreadCount(item, event?) {
+	updateUnreadMessageCount(item, event?) {
 		if (item.id === 'user') {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
 			const id = idAttr.nodeValue;
+			let needUpdateLocalStorage = false;
 			if (id === 'menu-main-lnk-open-lma') {
-				if (this.UnreadCount.totalMessage > 0) {
-					this.UnreadCount.totalMessage -= 1;
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
 				}
-				this.UnreadCount.lmaClicked = true;
+				this.UnreadMessageCount.lmaMenuClicked = true;
+				needUpdateLocalStorage = true;
+			} else if (id === 'menu-main-lnk-open-adobe') {
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
+				}
+				this.UnreadMessageCount.adobeMenuClicked = true;
+				needUpdateLocalStorage = true;
+			}
+			if (needUpdateLocalStorage) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
 			}
 		}
 	}
