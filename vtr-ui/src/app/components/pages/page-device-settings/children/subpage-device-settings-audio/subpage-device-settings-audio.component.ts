@@ -37,6 +37,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	private notificationSubscription: Subscription;
 	public readonly helpIcon = ['far', 'question-circle'];
 	public automaticDolbyHelpIcon = [];
+	public isOnline: any = true;
+
 
 	constructor(
 		private audioService: AudioService,
@@ -50,10 +52,16 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
-		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (welcomeTutorial && welcomeTutorial.page === 2) {
-			this.initFeatures();
+
+		this.isOnline = this.commonService.isOnline;
+		if (this.isOnline) {
+			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+			if (welcomeTutorial && welcomeTutorial.page === 2) {
+				this.initFeatures();
+			}
+		} else {
+				this.initFeatures();
 		}
 
 	}
