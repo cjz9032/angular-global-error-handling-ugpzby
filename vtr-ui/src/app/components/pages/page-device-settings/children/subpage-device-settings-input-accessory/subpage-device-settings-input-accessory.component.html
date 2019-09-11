@@ -77,7 +77,7 @@
 						*ngIf="machineType == 1">
 						<vtr-top-row-functions></vtr-top-row-functions>
 					</li>
-					<li class="pt-3 voip">
+					<li class="pt-3 voip" *ngIf="showVoipHotkeysSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.title' | translate"
 							componentName="Input Accessories"

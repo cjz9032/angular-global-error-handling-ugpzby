@@ -34,7 +34,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
 	public selectedApp: number | string = '';
 	public installedApps: VoipAppListInterface[] = [];
-	public showVoiphotkeysSection = false;
+	public showVoipHotkeysSection = false;
 	public isAppInstalled = false;
 	voipAppName = ['Skype For Business', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
@@ -60,28 +60,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 
 	getVoipHotkeysSettings() {
-		// this.keyboardService.GetVoipHotkeysSettings()
-		Promise.resolve<VoipResponseInterface>({
-			errorCode: VoipErrorCodeEnum.SUCCEED,
-			capability: true,
-			appList: [
-				{
-					appName: 0,
-					isAppInstalled: true,
-					isSelected: true
-				},
-				{
-					appName: 1,
-					isAppInstalled: true,
-					isSelected: false
-				}
-			]
-		})
+		this.keyboardService.GetVoipHotkeysSettings()
 			.then(res => {
 				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED || !res.capability) {
 					return res;
 				}
-				this.showVoiphotkeysSection = true;
+				this.showVoipHotkeysSection = true;
 				res.appList.forEach(element => {
 					if (element.isAppInstalled) {
 						this.isAppInstalled = true;
