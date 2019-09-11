@@ -307,7 +307,11 @@ export class WidgetScheduleScanComponent implements OnInit {
 			const temp = '0' + (parseInt(hours, 10) - 12);
 			hours = temp.substring(temp.length - 2, temp.length);
 		} else {
-			ampm = this.translate.instant('hardwareScan.am');
+			if(parseInt(hours,10) === 12){
+				ampm = this.translate.instant('hardwareScan.pm');
+			}else{
+				ampm = this.translate.instant('hardwareScan.am');
+			}	
 		}
 
 		return hours + ':' + minute + ' ' + ampm;
