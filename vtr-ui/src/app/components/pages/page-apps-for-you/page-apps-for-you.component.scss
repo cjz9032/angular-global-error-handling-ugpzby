@@ -66,6 +66,7 @@
 				display: flex;
 				justify-content: flex-end;
 				align-items: center;
+				position: relative;
 
 				.btn-install {
 					display: block;
@@ -85,6 +86,21 @@
 					white-space: nowrap;
 					text-overflow: ellipsis;
 					cursor: pointer;
+				}
+
+				.error-message {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					margin-top: 3.5rem;
+					height: 6rem;
+					padding-right: 0.5rem;
+					line-height: 2rem;
+					overflow: hidden;
+					width: 100%;
+					font-size: 1.6rem;
+					color: $danger_dark;
+					text-align: right;
 				}
 			}
 		}
