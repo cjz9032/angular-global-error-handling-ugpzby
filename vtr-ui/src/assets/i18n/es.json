@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ATRÁS",
-                "why": "¿Porqué McAfee?",
                 "recommends": "Lenovo le recomienda McAfee para proteger todos los dispositivos con:",
                 "award": "Protección galardonada contra las últimas amenazas en línea, que incluyen ransomware y malware",
-                "dedicated": "Seguridad dedicada que supera constantemente a Defender y a otros proveedores de antivirus líderes",
-                "deviceToCloud": "Tecnología de dispositivo a la nube que no ralentizará su PC",
-                "poweredBy": "Con tecnología McAfee",
-                "privacyTerms": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>",
                 "mcafeePremium": "Protección McAfee Premium",
                 "protectedBy": "Actualmente está protegido por {{protectedName}}. Sin embargo, podría estar mejor protegido con McAfee LiveSafe.",
                 "virusScan": "EXPLORACIÓN DE ANTIVIRUS",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "HABILITAR EXPLORACIÓN ANTIVIRUS",
                 "enablenFirewall": "HABILITAR CORTAFUEGOS",
                 "enableFirewall": "HABILITAR CORTAFUEGOS",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Sin protección óptima",
-                "subtitle": "Que está siendo protegido por Windows Defender.Sin embargo, podría ser mejor protegido con McAfee LiveSafe. Obtenga más información a continuación.",
-                "learnMore": "OBTENER MÁS INFORMACIÓN ACERCA DE McAfee",
-                "windowsProtected": "Protección básica de Windows Defender",
-                "windowsSubtitle": "Windows Defender ofrece protección básica para su dispositivo"
+                "windowsSubtitle": "Windows Defender ofrece protección básica para su dispositivo",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2348,7 +2356,9 @@
         "actionTriggeredDescription": "Mensajes desencadenados por el usuario seleccionando valores como la instalación automática de las actualizaciones críticas/recomendadas.",
         "OtherSettings": "Otros valores",
         "usageStatistics": "Estadísticas de uso",
-        "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
+		"usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
         "Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
     },

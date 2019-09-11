@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TERUG",
-                "why": "Waarom McAfee?",
                 "recommends": "Lenovo beveelt McAfee aan voor de beveiliging van al uw apparaten met:",
                 "award": "Bekroonde bescherming tegen de nieuwste online bedreigingen, ransomware en malware",
-                "dedicated": "Speciale beveiliging die het consequent beter doet dan Defender en andere toonaangevende antivirusleveranciers",
-                "deviceToCloud": "Apparaat-naar-cloudtechnologie die uw pc niet vertraagt",
-                "poweredBy": "Powered By McAfee",
-                "privacyTerms": "Meer informatie over het <tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
                 "mcafeePremium": "McAfee Premium-bescherming",
                 "protectedBy": "U wordt op dit moment beveiligd door {{protectedName}}. U kunt echter beter worden beveiligd door McAfee LiveSafe.",
                 "virusScan": "VIRUSSCAN",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "VIRUSSCAN INSCHAKELEN",
                 "enablenFirewall": "FIREWALL INSCHAKELEN",
                 "enableFirewall": "FIREWALL INSCHAKELEN",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Niet optimaal beveiligd",
-                "subtitle": "U wordt op dit moment wordt beschermd door Windows Defender.U kunt echter beter worden beschermd door McAfee LiveSafe. Zie hieronder voor meer informatie.",
-                "learnMore": "MEER INFORMATIE OVER McAfee",
-                "windowsProtected": "Windows Defender-basisbeveiliging",
-                "windowsSubtitle": "Windows Defender biedt basisbeveiliging voor uw apparaat"
+                "windowsSubtitle": "Windows Defender biedt basisbeveiliging voor uw apparaat",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2348,7 +2356,9 @@
         "actionTriggeredDescription": "Berichten die door de gebruiker zijn geactiveerd door het selecteren van instellingen, zoals het automatisch installeren van essentiële/aanbevolen updates.",
         "OtherSettings": "Overige instellingen",
         "usageStatistics": "Gebruiksstatistieken",
-        "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
+		"usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
     },

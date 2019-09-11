@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZURÜCK",
-                "why": "Warum McAfee?",
                 "recommends": "Lenovo empfiehlt McAfee für den Schutz Ihrer Geräte:",
                 "award": "Preisgekrönter Schutz vor den neuesten Onlinebedrohungen, einschließlich Ransomware und Malware",
-                "dedicated": "Dedizierte Sicherheit, die Defender und andere führende Anbieter von Virenschutzsoftware regelmäßig übertritt",
-                "deviceToCloud": "Geräte-zu-Cloud-Technologie, die Ihren PC nicht ausbremst",
-                "poweredBy": "Unterstützt von McAfee",
-                "privacyTerms": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
                 "mcafeePremium": "McAfee Premium-Schutz",
                 "protectedBy": "Sie werden derzeit von {{protectedName}} geschützt. McAfee LiveSafe bietet jedoch einen besseren Schutz.",
                 "virusScan": "VIREN-SCAN",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "VIREN-SCAN AKTIVIEREN",
                 "enablenFirewall": "FIREWALL AKTIVIEREN",
                 "enableFirewall": "FIREWALL AKTIVIEREN",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Nicht optimal geschützt",
-                "subtitle": "Sie sind derzeit durch Windows Defender geschützt.Mit McAfee LiveSafe können Sie sich jedoch noch besser schützen. Erfahren Sie unten mehr.",
-                "learnMore": "ERFAHREN SIE MEHR ÜBER McAfee",
-                "windowsProtected": "Windows Defender Basisschutz",
-                "windowsSubtitle": "Windows Defender bietet einen Basisschutz für Ihr Gerät"
+                "windowsSubtitle": "Windows Defender bietet einen Basisschutz für Ihr Gerät",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2348,7 +2356,9 @@
         "actionTriggeredDescription": "Nachrichten, die durch die Auswahl von Einstellungen ausgelöst werden, wie z. B. die automatische Installation kritischer/empfohlener Updates.",
         "OtherSettings": "Weitere Einstellungen",
         "usageStatistics": "Verwendungsstatistiken",
-        "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
+		"usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Sendet statistische Daten an Lenovo, um die Zuverlässigkeit und das Design Ihres Computers zu verbessern und seine Funktionalität zu optimieren.",
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden."
     },

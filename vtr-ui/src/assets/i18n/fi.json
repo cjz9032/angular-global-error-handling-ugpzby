@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Virustentorjunta",
                 "back": "EDELLINEN",
-                "why": "Miksi McAfee?",
                 "recommends": "Lenovo suosittelee McAfeeta kaikkien laitteiden suojaamiseen:",
                 "award": "Palkittu suojaus uusimpia verkkouhkia, kuten kiristysohjelmia ja haittaohjelmia, vastaan",
-                "dedicated": "Erityissuojaus, joka suoriutuu jatkuvasti Defenderiä ja muita johtavia virustentorjuntaohjelmia paremmin",
-                "deviceToCloud": "Laite pilviteknologiaan, joka ei hidasta tietokonetta",
-                "poweredBy": "McAfeen tarjoama",
-                "privacyTerms": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
                 "mcafeePremium": "McAfee Premium -suojaus",
                 "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
                 "virusScan": "VIRUSTARKISTUS",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "OTA VIRUSTARKISTUS KÄYTTÖÖN",
                 "enablenFirewall": "OTA PALOMUURI KÄYTTÖÖN",
                 "enableFirewall": "OTA PALOMUURI KÄYTTÖÖN",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Ei parasta suojausta",
-                "subtitle": "Laitteesi suojaa tällä hetkellä Windows Defender.Voisit saada paremman suojauksen McAfee LiveSafe -palvelulla. Lisätietoja on alla.",
-                "learnMore": "LUE LISÄÄ McAfee:sta",
-                "windowsProtected": "Windows Defenderin perustason suojaus",
-                "windowsSubtitle": "Windows Defender tarjoaa laitteellesi perustason suojauksen"
+                "windowsSubtitle": "Windows Defender tarjoaa laitteellesi perustason suojauksen",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2348,7 +2356,9 @@
         "actionTriggeredDescription": "Käyttäjän asetusvalintojen avulla käynnistämät sanomat, kuten tärkeiden tai suositeltujen päivitysten automaattinen asennus.",
         "OtherSettings": "Muut asetukset",
         "usageStatistics": "Käyttötilastot",
-        "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
+		"usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
         "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     },

@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Antywirus",
                 "back": "WSTECZ",
-                "why": "Dlaczego McAfee?",
                 "recommends": "Lenovo zaleca firmie McAfee ochronę wszystkich urządzeń za pomocą:",
                 "award": "Nagradzana ochrona przed najnowszymi zagrożeniami internetowymi, w tym oprogramowaniem ransomware i malware",
-                "dedicated": "Wyspecjalizowane zabezpieczenie, które konsekwentnie przewyższa Defender i innych wiodących dostawców AV",
-                "deviceToCloud": "Urządzenie z technologią chmury, która nie spowalnia komputera",
-                "poweredBy": "Zasilany przez McAfee",
-                "privacyTerms": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
                 "mcafeePremium": "Ochrona McAfee Premium",
                 "protectedBy": "Obecnie korzystasz z ochrony oprogramowania {{protectedName}}. Program McAfee LiveSafe może jednak zapewnić lepszą ochronę.",
                 "virusScan": "SKANOWANIE ANTYWIRUSOWE",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "WŁĄCZ SKANOWANIE ANTYWIRUSOWE",
                 "enablenFirewall": "WŁĄCZ ZAPORĘ",
                 "enableFirewall": "WŁĄCZ ZAPORĘ",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Brak optymalnej ochrony",
-                "subtitle": "Obecnie jesteś chroniony przez Windows Defender.Jednak możesz być lepiej chroniony dzięki McAfee LiveSafe. Dowiedz się więcej poniżej.",
-                "learnMore": "DOWIEDZ SIĘ WIĘCEJ O McAfee",
-                "windowsProtected": "Podstawowa ochrona systemu Windows Defender",
-                "windowsSubtitle": "Windows Defender oferuje podstawową ochronę urządzenia"
+                "windowsSubtitle": "Windows Defender oferuje podstawową ochronę urządzenia",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2348,7 +2356,9 @@
         "actionTriggeredDescription": "Wiadomości uruchamiane przez ustawienia użytkownika, takie jak automatyczne instalowanie krytycznych lub zalecanych aktualizacji.",
         "OtherSettings": "Inne ustawienia",
         "usageStatistics": "Statystyki użytkowania",
-        "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
+		"usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
         "Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
     },

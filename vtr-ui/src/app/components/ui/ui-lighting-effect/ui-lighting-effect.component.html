@@ -3,17 +3,18 @@
 		<a class="dropdown-toggle" id="gaming-drop" href="javascript:void(0)" (click)="toggleOptions()"
 			attr.aria-label="{{selectedOption.label}}" role="link">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
-			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
+			<fa-icon aria-label="expand" role="link" class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</a>
 		<ng-container *ngIf="showOptions">
-			<div class="gaming-dropdown-menu">
+			<div class="gaming-dropdown-menu" #dropdownLightingEle>
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }"
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
 						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.id"
 						metricsParam="{{option.id}}" metricsValue="{{option.value}}" metricsEvent="featureClick"
-						id="{{option.id}}">
-						<a class="dropdown-item" href="javascript:void(0)" (click)="optionSelected(option)" role="link">
+						id="{{option.id}}" (focusout)="itemsFocused()">
+						<a class="dropdown-item" href="javascript:void(0)" attr.aria-label="Select {{ option.label }}"
+							(click)="optionSelected(option)" role="link">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
 						</a>
 					</li>

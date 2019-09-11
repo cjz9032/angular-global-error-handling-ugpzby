@@ -13,6 +13,7 @@ export class SupportService {
 	private warranty: any;
 	metrics: any;
 	userGuide: any;
+	sn: string;
 	metricsDatas = {
 		viewOrder: 1,
 		pageNumber: 1,
@@ -49,6 +50,14 @@ export class SupportService {
 		return undefined;
 	}
 
+	async getSerialnumber(): Promise<any> {
+		if (!this.sn) {
+			const machineInfo = await this.getMachineInfo();
+			this.sn = machineInfo.serialnumber;
+		}
+		return this.sn;
+	}
+
 	public getWarranty(serialnumber: string): Promise<any> {
 		if (this.warranty) {
 			return this.warranty.getWarrantyInformation(serialnumber);
@@ -66,6 +75,7 @@ export class SupportService {
 				if (machineInfo) {
 					// machineInfo.serialnumber = 'R90HTPEU';
 					// 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' machineInfo.serialnumber
+					if (machineInfo.serialnumber) { this.sn = machineInfo.serialnumber; }
 					this.getWarranty(machineInfo.serialnumber).then((result) => {
 						if (result) {
 							this.warrantyData.info = result;

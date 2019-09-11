@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Antivírus",
                 "back": "SPÄŤ",
-                "why": "Prečo McAfee?",
                 "recommends": "Spoločnosť Lenovo odporúča aplikáciu McAfee na ochranu všetkých vašich zariadení pomocou:",
                 "award": "oceňovanej ochrany pred najnovšími online hrozbami vrátane ransomware a malvéru",
-                "dedicated": "Špecializované zabezpečenie, ktoré jednoznačne prekonáva aplikáciu Defender a ostatných popredných poskytovateľov anti-vírusových riešení",
-                "deviceToCloud": "Technológia prepojenia zariadenia so službou cloud, ktorá nespomalí váš počítač",
-                "poweredBy": "Využíva technológiu McAfee",
-                "privacyTerms": "Prečítajte si viac o <tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
                 "mcafeePremium": "Prémiová ochrana McAfee",
                 "protectedBy": "V súčasnosti ste chránení programom {{protectedName}}. Môžete však byť chránení lepšie pomocou programu McAfee LiveSafe.",
                 "virusScan": "KONTROLA VÍRUSOV",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "ZAPNÚŤ KONTROLU VÍRUSOV",
                 "enablenFirewall": "ZAPNÚŤ BRÁNU FIREWALL",
                 "enableFirewall": "ZAPNÚŤ BRÁNU FIREWALL",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Nechránené optimálne",
-                "subtitle": "Práve ste chránení programom Windows Defender.Môžete byť však lepšie chránení programom McAfee LiveSafe. Ďalšie informácie získate nižšie.",
-                "learnMore": "ĎALŠIE INFORMÁCIE O SPOLOČNOSTI McAfee",
-                "windowsProtected": "Základná ochrana programom Windows Defender",
-                "windowsSubtitle": "Program Windows Defender ponúka základnú ochranu zariadenia"
+                "windowsSubtitle": "Program Windows Defender ponúka základnú ochranu zariadenia",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2348,7 +2356,9 @@
         "actionTriggeredDescription": "Správy aktivované nastaveniami používateľa, ako je napríklad automatická inštalácia kritických/odporúčaných aktualizácií.",
         "OtherSettings": "Ďalšie nastavenia",
         "usageStatistics": "Štatistika používania",
-        "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
+		"usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
         "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
     },

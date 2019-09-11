@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ÎNAPOI",
-                "why": "De ce McAfee?",
                 "recommends": "Lenovo recomandă McAfee pentru a vă proteja toate dispozitivele cu:",
                 "award": "protecția premiată de la cele mai recente amenințări online, inclusiv ransomware și malware",
-                "dedicated": "Securitate dedicată care depășește în mod constant performanța Defender-ului și a altor furnizori principali de programe antivirus",
-                "deviceToCloud": "Tehnologie „de la dispozitiv la cloud”, care nu vă va încetini PC-ul",
-                "poweredBy": "Dezvoltat de McAfee",
-                "privacyTerms": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
                 "mcafeePremium": "Protecție premium de la McAfee",
                 "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",
                 "virusScan": "SCANARE VIRUȘI",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "ACTIVARE SCANARE VIRUȘI",
                 "enablenFirewall": "ACTIVARE PARAVAN DE PROTECȚIE",
                 "enableFirewall": "ACTIVARE PARAVAN DE PROTECȚIE",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Nu este protejat în mod optim",
-                "subtitle": "La ora actuală, sunteți protejat de Windows Defender.Totuși, ați putea fi mai bine protejat cu McAfee LiveSafe. Aflaţi mai multe mai jos.",
-                "learnMore": "AFLAȚI MAI MULTE DESPRE McAfee",
-                "windowsProtected": "Protecție de bază Windows Defender",
-                "windowsSubtitle": "Windows Defender oferă protecție de bază pentru dispozitivul dvs."
+                "windowsSubtitle": "Windows Defender oferă protecție de bază pentru dispozitivul dvs.",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2348,7 +2356,9 @@
         "actionTriggeredDescription": "Mesaje declanșate de setările alese de utilizator, precum instalarea automată a actualizărilor critice/recomandate.",
         "OtherSettings": "Alte setări",
         "usageStatistics": "Statistici utilizare",
-        "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
+		"usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
         "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
     },

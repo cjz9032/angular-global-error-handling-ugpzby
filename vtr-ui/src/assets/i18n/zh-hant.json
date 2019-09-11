@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "防毒",
                 "back": "上一步",
-                "why": "為何選擇 McAfee？",
                 "recommends": "Lenovo 建議使用 McAfee 來保護您所有的裝置，因其具備下列優點：",
                 "award": "針對最新的線上威脅提供獲獎肯定的保護，包括勒索軟體和惡意軟體",
-                "dedicated": "始終優於 Defender 和其他頂尖 AV 提供者的專用安全性",
-                "deviceToCloud": "無損及電腦速度的裝置對雲端技術",
-                "poweredBy": "搭載 McAfee",
-                "privacyTerms": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>",
                 "mcafeePremium": "McAfee 特級保護",
                 "protectedBy": "您目前受到 {{protectedName}} 的保護。但是，您可以透過 McAfee LiveSafe 獲得更好的保護。",
                 "virusScan": "病毒掃描",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "啟用病毒掃描",
                 "enablenFirewall": "啟用防火牆",
                 "enableFirewall": "啟用防火牆",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "未受到最佳保護",
-                "subtitle": "您目前正受到 Windows Defender 的保護。不過，您可以透過 McAfee LiveSafe 獲得更佳的保護。透過下方內容進一步瞭解。",
-                "learnMore": "進一步瞭解 McAfee",
-                "windowsProtected": "Windows Defender 基本保護",
-                "windowsSubtitle": "Windows Defender 為您的裝置提供基本保護"
+                "windowsSubtitle": "Windows Defender 為您的裝置提供基本保護",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2348,7 +2356,9 @@
         "actionTriggeredDescription": "使用者選取設定（例如自動安裝重要/建議的更新）所觸發的訊息。",
         "OtherSettings": "其他設定",
         "usageStatistics": "使用情形統計資料",
-        "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
+		"usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "與 Lenovo 共用統計資料，協助我們提升您電腦功能的可靠性、設計和最佳化。",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
     },

@@ -28,6 +28,12 @@
 							width: 1.8rem;
 							margin-top: 0.1rem;
 							transition: all 0.2s ease-in;
+							@media #{$black-on-white} {
+								background: $gaming_darkest;
+							}
+							@media #{$white-on-black} {
+								background: $gaming_lightest;
+							}
 						}
 					}
 					&.wifi-checked + .switch {
