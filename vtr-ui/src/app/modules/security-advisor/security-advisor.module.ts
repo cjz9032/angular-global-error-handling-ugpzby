@@ -48,6 +48,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WidgetAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-antivirus/widget-antivirus.component';
 import { WidgetMcafeeStateComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-mcafee-state/widget-mcafee-state.component';
 import { WidgetMcafeeMetricComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-mcafee-metric/widget-mcafee-metric.component';
+import { WidgetCommonAntivirusComponent } from '../../components/pages/page-security-antivirus/widget/widget-common-antivirus/widget-common-antivirus.component';
 
 library.add(faCircle);
 library.add(faCheck);
@@ -88,6 +89,7 @@ library.add(faChevronUp);
 		WidgetAntivirusComponent,
 		WidgetMcafeeStateComponent,
 		WidgetMcafeeMetricComponent,
+		WidgetCommonAntivirusComponent,
 	],
 	imports: [
 		CommonModule,
