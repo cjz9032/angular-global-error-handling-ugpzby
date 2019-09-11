@@ -82,7 +82,7 @@
 							vtrMetrics
 							tabindex="1"
 							id="menu-main-nav-lnk-{{item.id}}"
-							attr.aria-label="{{item.label | translate}}"
+							[attr.aria-label]="item.id"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
 							[metricsItem]="item.metricsItem"
@@ -113,7 +113,7 @@
 							vtrMetrics
 							tabindex="1"
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
-							attr.aria-label="{{item.label | translate}}"
+							[attr.aria-label]="item.id"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
 							[metricsItem]="item.metricsItem"
@@ -121,8 +121,6 @@
 							routerLinkActive="active"
 							id="navbarDropdown"
 							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
 							(click)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">

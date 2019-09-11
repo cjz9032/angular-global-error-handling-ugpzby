@@ -43,6 +43,7 @@ export class GamingAllCapabilitiesService {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ledDriver, capabilities.ledDriver);
 		this.commonService.setLocalStorageValue(LocalStorageKey.fbNetFilter, capabilities.fbnetFilter);
 		this.commonService.sendGamingCapabilitiesNotification(Gaming.GamingCapabilities, capabilities);
+		this.commonService.setLocalStorageValue(LocalStorageKey.winKeyLockFeature, capabilities.winKeyLockFeature);
 	}
 
 	getCapabilityFromCache(storageKey: any) {
