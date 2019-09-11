@@ -32,6 +32,12 @@
 			background: #fbfdff;
 			left: 3.2rem;
 		}
+		@media #{$black-on-white} {
+			background: $gaming_darkest;
+		}
+		@media #{$white-on-black} {
+			background: $gaming_lightest;
+		}
 	}
 	.switch-label {
 		border: none;
