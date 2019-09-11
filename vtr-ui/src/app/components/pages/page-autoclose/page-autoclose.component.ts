@@ -141,7 +141,7 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	toggleAutoClose(event: any) {
-		this.setAutoCloseStatus(event.switchValue);
+		this.setAutoCloseStatus(event.value);
 	}
 
 	setAutoCloseStatus(status: boolean) {
