@@ -38,14 +38,16 @@
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 							<div class="row">
 								<div class="col px-20">
-									<div class="auto-set-checkbox">
+									<div class="auto-set-checkbox custom-checkbox">
 										<input id="cb-airplane-mode"
+											class="custom-control-input"
 											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
 											name="airplane-mode-checkbox-id"
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
 											checked="" />
+										<span class="checkmark"></span>
 										<label for="cb-airplane-mode">
 											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 										</label>
