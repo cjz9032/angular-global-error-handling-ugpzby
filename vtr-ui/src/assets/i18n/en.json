@@ -1694,7 +1694,7 @@
 				"performance": "Rock-solid performance",
 				"performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
 				"Blazing": "Blazing-fast speed",
-				"BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience",		
+				"BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience",
 				"privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
 				"mcafeePremium": "McAfee Premium Protection",
 				"protectedBy": "You are currently protected by {{protectedName}}. However, you could be better protected with McAfee LiveSafe",
@@ -2361,6 +2361,8 @@
 		"OtherSettings": "Other settings",
 		"usageStatistics": "Usage Statistics",
 		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Shares statistical data with Lenovo to help improve the reliability, design, and optimization of features on your computer.",
 		"Note": "Note: ",
 		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
 	},
