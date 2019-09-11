@@ -20,9 +20,12 @@
 												<div class="container-fluid">
 													<div class="row">
 														<div class="col-sm-12">
-															<vtr-ui-switch-onoff [value]="toggleStatus"
+															<!-- <vtr-ui-switch-onoff [value]="toggleStatus"
 																(toggle)="toggleAutoClose($event)">
-															</vtr-ui-switch-onoff>
+															</vtr-ui-switch-onoff> -->
+															<vtr-ui-toggle (toggle)="toggleAutoClose($event)" [value]="toggleStatus"
+															[toggleId]="'autoClose Sub page'">
+															</vtr-ui-toggle>
 															<p class="intro-text">
 																{{'gaming.autoClose.introLine' | translate}}</p>
 															<vtr-widget-autoclose [appListData]="autoCloseAppList"
