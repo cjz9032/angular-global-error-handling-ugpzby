@@ -1,44 +1,23 @@
-<div class="vtr-widget-mcafee mt-60">
-	<div class="row">
+<div class="vtr-widget-mcafee mt-60 row justify-content-between">
+	<div class="col-8 px-0">
 		<div class="col-auto px-0 mr-auto">
 			<div class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</div>
 		</div>
-		<div class="col-auto px-0">
-			<img class="mcafee-logo"
-				[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
+		<div class="subtitle">
+			{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
 		</div>
 	</div>
-	<div class="subtitle pb-5">
-		{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
-	</div>
-
-	<vtr-ui-security-statusbar [statusList]="statusList | statusTransform">
-	</vtr-ui-security-statusbar>
-
-	<div class="row justify-content-end">
-		<div class="col-auto py-5">
-			<vtr-ui-button
-				[metricsItem]="'launchMcafee'"
-				(onClick)="mcafee.launch()"
-				[label]="'security.antivirus.mcafee.launch' | translate"
-				[title]="'security.antivirus.mcafee.launch' | translate"
-				[upperCaseLabel]="false"
-				*ngIf="install"
-				[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
-			<a class="d-block"
-				[ngClass]="{'unclickable': !isOnline}"
-				href="{{urlGetMcAfee}}"
-				target="_blank">
-				<vtr-ui-button
-					metricsEvent="FeatureClick"
-					metricsItem="getMcafee"
-					[label]="'security.antivirus.mcafee.getMacfee' | translate"
-					[title]="'security.antivirus.mcafee.getMacfee' | translate"
-					[upperCaseLabel]="false"
-					[isDisabled]="!isOnline"
-					*ngIf="!install"
-					[linkId]="'sa-av-btn-visitmcafee'"></vtr-ui-button>
-			</a>
-		</div>
+	<div class="col-auto px-0 align-self-center">
+		<vtr-ui-button [metricsItem]="'launchMcafee'" 
+			(onClick)="common.launch()"
+			[label]="'security.antivirus.mcafee.launch' | translate"
+			[title]="'security.antivirus.mcafee.launch' | translate" [upperCaseLabel]="false" *ngIf="install"
+			[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
+		<a *ngIf="!install" [ngClass]="{'unclickable': !isOnline}" href="{{urlGetMcAfee}}" target="_blank">
+			<vtr-ui-button metricsEvent="FeatureClick" metricsItem="getMcafee"
+				[label]="'security.antivirus.mcafee.getMacfee' | translate"
+				[title]="'security.antivirus.mcafee.getMacfee' | translate" [upperCaseLabel]="false"
+				[isDisabled]="!isOnline" [linkId]="'sa-av-btn-visitmcafee'"></vtr-ui-button>
+		</a>
 	</div>
 </div>
