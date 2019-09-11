@@ -14,6 +14,7 @@ export class UiRoundedRectangleRadioComponent implements OnInit {
 	@Input() checked = false;
 	@Input() disabled = false;
 	@Input() name: string;
+	@Input() isLarge = false;
 
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon = false;

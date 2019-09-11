@@ -1,6 +1,7 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()" tabindex="0">
+		<a class="dropdown-toggle" id="gaming-drop" href="javascript:void(0)" (click)="toggleOptions()"
+			attr.aria-label="{{selectedOption.label}}" role="link">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</a>
@@ -11,8 +12,8 @@
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
 						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.id"
 						metricsParam="{{option.id}}" metricsValue="{{option.value}}" metricsEvent="featureClick"
-						id="{{option.id}}" attr.aria-label="{{option.id}}">
-						<a class="dropdown-item">
+						id="{{option.id}}">
+						<a class="dropdown-item" href="javascript:void(0)" (click)="optionSelected(option)" role="link">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
 						</a>
 					</li>
@@ -23,13 +24,16 @@
 			</div>
 		</ng-container>
 	</div>
-	<p class="brightCondition" ngbTooltip="{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}	{{'gaming.lightingProfile.brightness.text2.title' | translate}}"  *ngIf="enableBrightCondition1" id="lighting_brightness_setting_msg" attr.aria-label="lighting_brightness_setting_msg">
-		<span *ngIf="defaultLang === 'ar'" 	dir="rtl">
-				{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
-				{{'gaming.lightingProfile.brightness.text2.title' | translate}}
+	<p class="brightCondition"
+		ngbTooltip="{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}	{{'gaming.lightingProfile.brightness.text2.title' | translate}}"
+		 *ngIf="enableBrightCondition1" id="lighting_brightness_setting_msg"
+		attr.aria-label="lighting_brightness_setting_msg">
+		<span *ngIf="defaultLang === 'ar'" dir="rtl">
+			{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+			{{'gaming.lightingProfile.brightness.text2.title' | translate}}
 		</span>
-		<span *ngIf="defaultLang !== 'ar'" >
-				{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
-				{{'gaming.lightingProfile.brightness.text2.title' | translate}}
-		</span>		</p>
+		<span *ngIf="defaultLang !== 'ar'">
+			{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+			{{'gaming.lightingProfile.brightness.text2.title' | translate}}
+		</span> </p>
 </div>

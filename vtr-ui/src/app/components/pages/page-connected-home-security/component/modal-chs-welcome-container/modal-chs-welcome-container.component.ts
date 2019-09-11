@@ -33,15 +33,15 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		public homeSecurityMockService: HomeSecurityMockService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService
-	) {
-		this.chs = vantageShellService.getConnectedHomeSecurity();
+	) {	}
+
+	ngOnInit() {
+		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
-		this.permission = vantageShellService.getPermission();
-	}
+		this.permission = this.vantageShellService.getPermission();
 
-	ngOnInit() {
 		switch (this.switchPage) {
 			case 2:
 				this.showPageLocation = true;
@@ -94,6 +94,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	public openLocation($event: any) {
+		this.closeModal();
 		this.permission.isComputerPermissionOn().then((result) => {
 			if (result) {
 				this.permission.getIsDevicePermissionOn().then((response) => {

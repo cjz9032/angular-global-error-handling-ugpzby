@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.179",
+	"version": "1.0.183",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -18,7 +18,8 @@
 		"stats": "ng build --prod --stats-json",
 		"analyze": "webpack-bundle-analyzer dist/vtr-ui/stats.json",
 		"dev-stats": "ng build --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
-		"source": "ng build --prod & source-map-explorer 'dist/vtr-ui/*.js'"
+		"source": "ng build -c=dev & source-map-explorer 'dist/vtr-ui/*.js'",
+		"build:dev": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng build -c=dev"
 	},
 	"private": true,
 	"dependencies": {
@@ -52,7 +53,7 @@
 		"js-sha512": "^0.8.0",
 		"lodash": "^4.17.15",
 		"mitt": "^1.1.3",
-		"ng5-slider": "1.1.14",
+		"ng5-slider": "1.2.4",
 		"ngx-color-picker": "^8.0.0",
 		"ngx-cookie-service": "^2.1.0",
 		"popper.js": "^1.15.0",

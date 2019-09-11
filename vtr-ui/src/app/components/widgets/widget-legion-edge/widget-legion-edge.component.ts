@@ -278,6 +278,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
+		if (this.gamingCapabilities.fbnetFilter) {
+			this.legionUpdate[2].readonly = false;
+		}
 		if (!gamingStatus.xtuService) {
 			this.drop.hideDropDown = true;
 		} else {
@@ -340,12 +343,18 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public async setNetworkBoostStatus(status: any) {
 		try {
+			console.log('STATUSOFNB', status);
 			const isStatusUpdated = await this.gamingNetworkBoostService.setNetworkBoostStatus(status);
 			if (isStatusUpdated) {
 				this.setNetworkBoostCacheStatus(status);
 				this.legionUpdate[2].isChecked = status;
+			} else {
+				this.legionUpdate[2].isChecked = !status;
+				console.log('NETWORKBOOST status is not updated from JS Bridge', isStatusUpdated);
 			}
-		} catch (err) {}
+		} catch (err) {
+			console.log(`ERROR in setNetworkBoostStatus()`, err);
+		}
 	}
 
 	public getAutoCloseCacheStatus() {

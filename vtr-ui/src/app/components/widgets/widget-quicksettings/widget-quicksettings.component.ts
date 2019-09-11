@@ -64,15 +64,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
-		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
-		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (welcomeTutorial && welcomeTutorial.page === 2) {
-			this.initFeatures();
-		}
 		this.isOnline = this.commonService.isOnline;
-
-		if (!this.isOnline) {
-			this.initFeatures();
+		if (this.isOnline) {
+			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+			if (welcomeTutorial && welcomeTutorial.page === 2) {
+				this.initFeatures();
+			}
+		} else {
+				this.initFeatures();
 		}
 	}
 

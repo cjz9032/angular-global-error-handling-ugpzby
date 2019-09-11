@@ -20,6 +20,12 @@ ui-popover {
 	top: 25%;
 	left: 0;
 	margin: auto;
+	@media #{$black-on-white}{
+		border:0.1rem solid $dark;
+		}
+	@media #{$white-on-black}{
+		border:0.1rem solid $light;
+		}
 	@media #{$small-screen} {
 		max-width: 45rem;
 	}
@@ -84,4 +90,16 @@ ui-popover {
 		border-bottom: 2px solid $main;
 		cursor: pointer;
 	}
+}
+
+::ng-deep {
+	.vtr-menu-main{
+		z-index: 1 !important;
+	}
+   .vtr-page-content{
+		z-index: unset !important;
+	}
+   .modal-main-wrapper {
+		z-index: 2 !important;
+    }
 }

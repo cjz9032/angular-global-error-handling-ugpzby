@@ -1,5 +1,5 @@
 <div class="vtr-ui-rounded-rectangle-radio"
-	[ngClass]="{'border-blue':checked, 'border-grey':!checked}">
+	[ngClass]="{'border-blue':checked, 'border-grey':!checked, 'large-width': isLarge}">
 	<input id="{{radioId}}"
 		attr.aria-label="{{radioId}}"
 		name="{{group}}"
