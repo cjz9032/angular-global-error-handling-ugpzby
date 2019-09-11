@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "病毒防护",
                 "back": "返回",
-                "why": "为什么选择 McAfee？",
                 "recommends": "Lenovo 建议您采用 McAfee 来保护您的所有设备，它具备如下优势：",
                 "award": "对包括勒索软件和恶意软件在内的最新网络威胁的防护能力屡获殊荣",
-                "dedicated": "一贯优于 Defender 和其他领先型 AV 供应商的专用安全顾问",
-                "deviceToCloud": "采用了不会减慢电脑运行速度的设备到云技术",
-                "poweredBy": "McAfee 出品",
-                "privacyTerms": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息",
                 "mcafeePremium": "McAfee 高级保护",
                 "protectedBy": "您目前受到 {{protectedName}} 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。",
                 "virusScan": "病毒扫描",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "启用病毒扫描",
                 "enablenFirewall": "启用防火墙",
                 "enableFirewall": "启用防火墙",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "未受最佳保护",
-                "subtitle": "您当前正受到 Windows Defender 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。通过以下内容了解更多信息。",
-                "learnMore": "了解 McAfee 的更多信息",
-                "windowsProtected": "Windows Defender 基本保护",
-                "windowsSubtitle": "Windows Defender 为您的设备提供基本保护"
+                "windowsSubtitle": "Windows Defender 为您的设备提供基本保护",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",

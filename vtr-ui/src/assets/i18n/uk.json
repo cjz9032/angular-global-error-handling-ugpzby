@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Антивірус",
                 "back": "НАЗАД",
-                "why": "Переваги McAfee",
                 "recommends": "Lenovo рекомендує захищати всі ваші пристрої за допомогою McAfee.",
                 "award": "Відзначений нагородами захист від останніх загроз, зокрема програм із вимогами викупу та зловмисного програмного забезпечення",
-                "dedicated": "Спеціальний захист, незмінно кращий за Defender і продукти інших провідних постачальників антивірусних програм",
-                "deviceToCloud": "Технологія \"пристрій-хмара\", яка не сповільнює роботу комп'ютера",
-                "poweredBy": "Технології McAfee",
-                "privacyTerms": "Дізнайтеся більше про <tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
                 "mcafeePremium": "Захист McAfee преміум-класу",
                 "protectedBy": "Наразі вас захищає {{protectedName}}. Однак McAfee LiveSafe захистить вас краще.",
                 "virusScan": "ПЕРЕВІРКА НА ВІРУСИ",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "УВІМКНУТИ ПЕРЕВІРКУ НА ВІРУСИ",
                 "enablenFirewall": "УВІМКНУТИ БРАНДМАУЕР",
                 "enableFirewall": "УВІМКНУТИ БРАНДМАУЕР",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Не оптимальний захист",
-                "subtitle": "Наразі ваш пристрій захищено за допомогою Windows Defender.Однак ви можете скористатися покращеним захистом McAfee LiveSafe. Дізнайтеся більше нижче.",
-                "learnMore": "ДІЗНАЙТЕСЯ БІЛЬШЕ ПРО McAfee",
-                "windowsProtected": "Базовий захист Windows Defender",
-                "windowsSubtitle": "Windows Defender забезпечує базовий захист вашого пристрою"
+                "windowsSubtitle": "Windows Defender забезпечує базовий захист вашого пристрою",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",

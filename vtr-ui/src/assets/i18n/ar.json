@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "مكافحة الفيروسات",
                 "back": "السابق",
-                "why": "لماذا اختيار McAfee؟",
                 "recommends": "توصي Lenovo باستخدام McAfee لحماية جميع أجهزتك عبر الميزات التالية:",
                 "award": "حماية حائزة على الجوائز من أحدث التهديدات عبر الإنترنت، والتي تشمل برامج الفدية والبرامج الضارة",
-                "dedicated": "أمان مخصص يتفوق باستمرار على Defender وغيره من أبرز موفري برامج مكافحة الفيروسات",
-                "deviceToCloud": "تقنية الانتقال من الجهاز إلى السحابة التي لن تسبب أي بطء في الكمبيوتر الشخصي",
-                "poweredBy": "مشغّل بواسطة McAfee",
-                "privacyTerms": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
                 "mcafeePremium": "حماية ممتازة بواسطة McAfee",
                 "protectedBy": "أنت محمي في الوقت الحالي من خلال {{protectedName}}. ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe.",
                 "virusScan": "فحص الفيروسات",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "تمكين فحص الفيروسات",
                 "enablenFirewall": "تمكين جدار الحماية",
                 "enableFirewall": "تمكين جدار الحماية",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "غير محمي بشكل مثالي",
-                "subtitle": "أنت محمي حاليًا بواسطة Windows Defender.ومع ذلك، يمكنك أن تكون محميًا بشكل أفضل مع McAfee LiveSafe. اعرف المزيد أدناه.",
-                "learnMore": "معرفة المزيد عن McAfee",
-                "windowsProtected": "الحماية الأساسية من Windows Defender",
-                "windowsSubtitle": "يقدم Windows Defender الحماية الأساسية لجهازك"
+                "windowsSubtitle": "يقدم Windows Defender الحماية الأساسية لجهازك",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",

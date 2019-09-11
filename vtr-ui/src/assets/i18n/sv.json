@@ -1684,13 +1684,8 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILLBAKA",
-                "why": "Varför McAfee?",
                 "recommends": "Lenovo rekommenderar McAfee för att skydda alla dina enheter med",
                 "award": "prisbelönt skydd mot de senaste onlinehoten, inräknat ransomware och skadlig programvara",
-                "dedicated": "specialanpassade säkerhetsfunktioner som kontinuerligt ger bättre resultat än Defender och andra ledande antivirusprogram",
-                "deviceToCloud": "enhet-till-moln-teknik som inte gör din dator långsammare",
-                "poweredBy": "Från McAfee",
-                "privacyTerms": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
                 "mcafeePremium": "McAfee premiumskydd",
                 "protectedBy": "Du skyddas för närvarande med {{protectedName}}. Men du kan få ett bättre skydd med McAfee LiveSafe.",
                 "virusScan": "VIRUSKONTROLL",
@@ -1699,14 +1694,27 @@
                 "enableVirusScan": "AKTIVERA VIRUSKONTROLL",
                 "enablenFirewall": "AKTIVERA BRANDVÄGG",
                 "enableFirewall": "AKTIVERA BRANDVÄGG",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Inte optimalt skyddad",
-                "subtitle": "Du skyddas för närvarande med Windows Defender.Men du kan få ett bättre skydd med McAfee LiveSafe. Läs mer nedan.",
-                "learnMore": "LÄS MER OM McAfee",
-                "windowsProtected": "Windows Defender grundskydd",
-                "windowsSubtitle": "Windows Defender ger ett grundskydd av din enhet"
+                "windowsSubtitle": "Windows Defender ger ett grundskydd av din enhet",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
