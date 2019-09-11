@@ -2348,7 +2348,9 @@
         "actionTriggeredDescription": "Správy aktivované nastaveniami používateľa, ako je napríklad automatická inštalácia kritických/odporúčaných aktualizácií.",
         "OtherSettings": "Ďalšie nastavenia",
         "usageStatistics": "Štatistika používania",
-        "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
+		"usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
         "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
     },

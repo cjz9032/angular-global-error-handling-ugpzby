@@ -55,6 +55,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	@Input() toolTipStatus = false;
 	@Input() isDisabled = false;
 	@Input() metricsParent = '';
+	@Input() isAdminRequired = false;
 	public contentExpand = false;
 
 
