@@ -56,7 +56,7 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 		if (this.showOptions && !this.isItemsFocused) {
 			this.intervalObj = setInterval(() => {
 				if (this.dropdownEle) {
-					if (this.dropdownEle.nativeElement.querySelectorAll('a:focus').length === 0) {
+					if (this.dropdownEle.nativeElement.querySelectorAll('li:focus').length === 0) {
 						this.showOptions = false;
 						this.isItemsFocused = false;
 						clearInterval(this.intervalObj);
@@ -97,6 +97,14 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 		}
 	}
 
+	keydownFn(event, i) {
+		if (i === this.options.length - 1) {
+			if (event.keyCode === 9) {
+				this.showOptions = false;
+			}
+		}
+	}
+
 	ngOnChanges(changes) {
 		if (!isUndefined(this.options)) {
 			if (!isUndefined(this.options)) {
@@ -109,3 +117,4 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 		}
 	}
 }
+

@@ -85,7 +85,6 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 	runappKeyup(event,index){
 		if(event.which === 9){
 			if(index === this.runningList.length-1){
-				console.log("¾Û½¹------------------")
 				let txt1 = document.getElementById("close");
 				txt1.focus();
 			}
