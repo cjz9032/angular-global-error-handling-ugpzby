@@ -185,6 +185,7 @@
 						<div class="search-nav-item-mask" *ngIf="showSearchBox" (click)="onClickSearchMask()"></div>
 						<a class="nav-link {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
+							[class.search-active] = "showSearchBox"
 							vtrMetrics
 							tabindex="1"
 							id="menu-main-nav-lnk-{{item.id}}"
