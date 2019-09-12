@@ -16,6 +16,8 @@ export class ModalAddAppsComponent implements OnInit {
 	public loadingNoApps = false;
 	runningList: any = [];
 	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
+	public statusitem;
+	//constructor() { }
 
 	ngOnInit() {
 		this.refreshRunningList();
@@ -37,6 +39,7 @@ export class ModalAddAppsComponent implements OnInit {
 	}
 
 	addAppData(event: any) {
+		this.statusitem = event.target.checked;
 		this.addAppToList.emit(event);
 	}
 

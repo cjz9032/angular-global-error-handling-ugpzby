@@ -102,7 +102,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',
 			canNavigate: true,
-			settings: 'legion_edge_networkboost_gearicon',
+			settings: 'legion_edge_networkboost_gear',
 		},
 		{
 			readMoreText: '',
@@ -125,7 +125,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose',
 			canNavigate: true,
-			settings: 'legion_edge_autoclose_gearicon'
+			settings: 'legion_edge_autoclose_gear'
 		},
 		{
 			readMoreText: '',
@@ -184,6 +184,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
 				id: 'cpu overclock on',
 				ariaLabel:'on',
+				metricitem: 'cpu_overclock_on',
 				value: 1
 			},
 			{
@@ -192,6 +193,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
 				id: 'cpu overclock when gaming',
 				ariaLabel:'when gaming',
+				metricitem: 'cpu_overclock_when_gaming',
 				value: 2
 			},
 			{
@@ -200,6 +202,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
 				id: 'cpu overclock off',
 				ariaLabel:'off',
+				metricitem: 'cpu_overclock_off',
 				value: 3
 			}
 		]

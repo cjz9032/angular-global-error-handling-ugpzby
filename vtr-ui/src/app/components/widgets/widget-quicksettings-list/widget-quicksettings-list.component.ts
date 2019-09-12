@@ -101,7 +101,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			id: 'quicksettings dolby',
 			ariaLabel: 'dolby',
 			type: 'gaming.dashboard.device.quickSettings.dolby',
-			settings: 'quicksettings dolby gear'
+			settings: 'quicksettings_dolby_gear'
 		}
 	];
 
@@ -115,6 +115,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				description: 'gaming.dashboard.device.quickSettings.statusText.perText',
 				id: 'thermal mode performance',
 				ariaLabel: 'performance',
+				metricitem: 'thermalmode_performance',
 				value: 3
 			},
 			{
@@ -123,6 +124,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				description: 'gaming.dashboard.device.quickSettings.statusText.balText',
 				id: 'thermal mode balance',
 				ariaLabel: 'balance',
+				metricitem: 'thermalmode_balance',
 				value: 2
 			},
 			{
@@ -131,6 +133,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
 				id: 'thermal mode quiet',
 				ariaLabel: 'quiet',
+				metricitem: 'thermalmode_quiet',
 				value: 1
 			}
 		]
