@@ -36,12 +36,14 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private cmsService: CMSService,
 		private modalService: NgbModal,
-		vantageShellService: VantageShellService,
+		public vantageShellService: VantageShellService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
-	) {
-		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+	) {	}
+
+	ngOnInit() {
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
@@ -63,9 +65,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
 		});
 		this.fetchCMSArticles();
-	}
 
-	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);

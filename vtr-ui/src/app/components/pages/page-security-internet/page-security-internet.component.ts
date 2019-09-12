@@ -31,12 +31,14 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		vantageShellService: VantageShellService,
+		public vantageShellService: VantageShellService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
-	) {
-		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+	) {	}
+
+	ngOnInit() {
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
@@ -58,9 +60,7 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
 		});
 		this.fetchCMSArticles();
-	}
 
-	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);

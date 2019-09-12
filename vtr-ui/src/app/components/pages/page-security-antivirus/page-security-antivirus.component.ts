@@ -59,8 +59,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
-	) {
-	}
+	) {	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
