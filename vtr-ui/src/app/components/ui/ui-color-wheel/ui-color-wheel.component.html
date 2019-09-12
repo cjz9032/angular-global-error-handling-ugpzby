@@ -12,10 +12,10 @@
 	<div class="row">
 		<div class="d-flex rgb-header">
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
-			<a vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick" class="btn enable-button"
-				[ngClass]="{'disable-button': btnStatus !== 'apply'}" (click)="onApplyColorEffect(backColor)"
-				id="lighting_color_apply" [attr.aria-label]="'Color settings '+btnStatus"
-				[tabindex]="showOverlay?'-1':'0'" role="link">
+			<button vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick"
+				class="btn enable-button" [ngClass]="{'disable-button': btnStatus !== 'apply'}"
+				(click)="onApplyColorEffect(backColor)" id="lighting_color_apply"
+				[attr.aria-label]="'Color settings '+btnStatus" [tabindex]="showOverlay?'-1':'0'">
 				<span
 					*ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
 				<span
@@ -24,7 +24,7 @@
 					<fa-icon [icon]="['fal', 'circle-notch']" [spin]="true"></fa-icon>
 				</span>
 				<!-- <vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner> -->
-			</a>
+			</button>
 		</div>
 	</div>
 
