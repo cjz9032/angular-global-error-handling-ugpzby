@@ -23,40 +23,6 @@
     padding-top: 0.7rem;
   }
 
-  .footer {
-    .title {
-      color: $main_dark;
-      font-size: 3rem;
-      font-weight: $weight_bold;
-      line-height: 2.9rem;
-    }
-
-    .subtitle {
-      color: $highlight;
-      font-size: 1.6rem;
-      font-weight: $weight_light;
-      line-height: 2.3rem;
-      text-decoration: underline;
-    }
-
-    .text-regular {
-      font-size: 1.6rem;
-    }
-
-    .read-more-text {
-      font-size: 1.4rem;
-    }
-
-    .mcafee-logo {
-      width: 14rem;
-      padding-top: 1rem;
-    }
-
-    a {
-      text-decoration: underline;
-    }
-  }
-
   .divider {
     margin: 2rem 0 1rem 0;
     height: 0.1rem;
@@ -122,23 +88,6 @@
       box-shadow: $drop_shadow;
       border-radius: $border_radius;
       background: $light;
-
-      .list-group {
-        border-radius: $border_radius;
-
-        .list-group-item {
-          background: $shade_extralight;
-        }
-
-        .text {
-          color: $screen_dark_70;
-          padding: 2rem 0;
-          font-size: 1.4rem;
-          font-weight: $weight_medium;
-          letter-spacing: 0.89px;
-          line-height: 2.3rem;
-        }
-      }
 
       .title {
         color: $shade_darkest;
@@ -215,6 +164,10 @@
         margin: 1rem 0 2rem 0;
         height: 0.1rem;
         background-color: $light-grey;
+      }
+
+      a {
+        text-decoration: underline;
       }
 
       .sub-font {

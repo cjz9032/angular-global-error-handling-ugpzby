@@ -4,47 +4,43 @@
 			<img class="coronet-logo"
 				[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" />
 		</div>
-		<div>
-			<vtr-ui-button
-				(click)="switch(chs?.account?.role)"
-				label="switch account role">
-			</vtr-ui-button>
-		</div>
-		<div *ngIf="chs?.account?.role === 'admin'" class="row content-body mb-4 justify-content-between">
+		<div *ngIf="account?.role === 'admin'" class="row content-body mb-4 justify-content-between">
 			<div class="d-flex flex-column justify-content-center p-4 col-12 col-sm-12 col-md-9">
-				<ng-container *ngIf="chs?.account?.state === 'trial'">
+				<ng-container *ngIf="account?.state === 'trial'">
 					<p class="m-0 pl-0"
-						*vtrTranslate="'homeSecurity.overview.inTrialDetail' | translate: {remainingDay: expirationDay }">
+						*vtrTranslate="'homeSecurity.overview.inTrialDetail' | translate: {remainingDay: account?.expirationDay }">
 						<a class="red"></a>
 					</p>
 				</ng-container>
-				<p class="m-0 pl-0" *ngIf="chs?.account?.state === 'trialExpired'">
-					{{'homeSecurity.overview.trialExpiredDetail' | translate}}
+				<p class="m-0 pl-0" *ngIf="account?.state === 'trialExpired'"
+					[innerHTML]="'homeSecurity.overview.trialExpiredDetail' | translate">
 				</p>
-				<ng-container *ngIf="chs?.account?.state == 'standard'">
+				<ng-container *ngIf="account?.state == 'standard'">
 					<p class="m-0 pl-0"
-						*vtrTranslate="'homeSecurity.overview.inSubscriptionDetail' | translate: {remainingDay: expirationDay }">
+						*vtrTranslate="'homeSecurity.overview.inSubscriptionDetail' | translate: {remainingDay: account?.expirationDay }">
 						<a class="red"></a>
 					</p>
 				</ng-container>
-				<p class="m-0 pl-0" *ngIf="chs?.account?.state === 'standardExpired'">
-						{{'homeSecurity.overview.subscriptionExpiredDetail' | translate}}
-					</p>
-				<p class="m-0 pl-0"><span>Lenovo ID: </span><span [innerHTML]="chs?.account?.lenovoId?.email"></span></p>
+				<p class="m-0 pl-0" *ngIf="account?.state === 'standardExpired'"
+					[innerHTML]="'homeSecurity.overview.subscriptionExpiredDetail' | translate">
+				</p>
+				<p class="m-0 pl-0"><span>Lenovo ID: </span><span [innerHTML]="account?.lenovoId"></span></p>
 			</div>
 			<div class="d-flex align-items-center pr-4 tryNow-btn">
-				<vtr-ui-button *ngIf="chs?.account?.state === 'trial' || chs?.account?.state === 'trialExpired' || chs?.account?.state === 'standardExpired'"
+				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"
+					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
 					[title]="'hardwareScan.buy' | translate"
 					[label]="'hardwareScan.buy' | translate">
 				</vtr-ui-button>
-				<vtr-ui-button *ngIf="chs?.account?.state === 'standard' && !isMoreThen30(expirationDay)"
+				<vtr-ui-button *ngIf="(account?.state === 'standard' && !isMoreThen30Day(account?.expirationDay)) || account?.state === 'standardExpired'"
 					metricsItem="renew"
 					metricsEvent="featureClick"
+					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
@@ -52,8 +48,9 @@
 					[label]="'homeSecurity.ecosystem.renew' | translate">
 				</vtr-ui-button>
 				<vtr-ui-button
-					metricsItem="extendNow" *ngIf="chs?.account?.state === 'standard' && isMoreThen30(expirationDay)"
+					metricsItem="extendNow" *ngIf="account?.state === 'standard' && isMoreThen30Day(account?.expirationDay)"
 					metricsEvent="featureClick"
+					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
@@ -64,18 +61,18 @@
 		</div>
 		<div class="row content-body mb-4">
 			<div class="container-fluid sub-container p-4">
-				<div *ngIf="chs?.account?.role === 'admin'" class="row heading mb-4" [innerHTML]="'homeSecurity.overview.overviewTitleAdmin' | translate"></div>
-				<div *ngIf="chs?.account?.role === 'user'" class="row heading mb-4" [innerHTML]="'homeSecurity.overview.overviewTitleUser' | translate"></div>
+				<div *ngIf="overviewTitle" class="row heading mb-4" [innerHTML]="overviewTitle | translate"></div>
 				<div class="row container-fluid home-card mb-4">
 					<vtr-home-security-all-devices [allDevices]="allDevices" class="container-fluid">
 					</vtr-home-security-all-devices>
 				</div>
-				<div *ngIf="chs?.account?.role === 'admin'" class="d-flex justify-content-end">
+				<div *ngIf="account?.role === 'admin'" class="d-flex justify-content-end">
 					<vtr-ui-button
 						metricsItem="goToDashboard"
 						metricsEvent="featureClick"
-						(click)="common.openCornet('login')"
-						[isDisabled]="!common?.connectedHomeSecurity?.account?.consoleUrl"
+						metricsParent="{{metricsParent}}"
+						(click)="common.openCornet()"
+						[isDisabled]="!common?.connectedHomeSecurity"
 						linkId="chs-btn-goToDashboard"
 						[title]="'homeSecurity.overview.goDashboard' | translate"
 						[label]="'homeSecurity.overview.goDashboard' | translate">
@@ -83,7 +80,7 @@
 				</div>
 			</div>
 		</div>
-		<div *ngIf="chs?.account?.role === 'user'" class="row content-body justify-content-between">
+		<div *ngIf="account?.role === 'user'" class="row content-body justify-content-between">
 				<div class="d-flex flex-column justify-content-center p-4">
 					<p class="m-0" [innerHTML]="'homeSecurity.overview.disconnectDevice' | translate"></p>
 				</div>
@@ -91,8 +88,9 @@
 					<vtr-ui-button
 						metricsItem="disconnect"
 						metricsEvent="featureClick"
+						metricsParent="{{metricsParent}}"
 						(click)="disconnect()"
-						[isDisabled]="!common?.connectedHomeSecurity?.account?.consoleUrl"
+						[isDisabled]="!common?.connectedHomeSecurity"
 						linkId="chs-btn-disconnect"
 						[isRed]="true"
 						[title]="'homeSecurity.overview.disconnect' | translate"
