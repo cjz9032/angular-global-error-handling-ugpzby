@@ -113,7 +113,7 @@ export class GamingAutoCloseService {
   }
 
   getAutoCloseStatusCache() {
-    return this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
+     return this.commonService.getLocalStorageValue(LocalStorageKey.AutoCloseStatus);
   }
 
   // Need to ask status changes

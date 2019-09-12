@@ -142,16 +142,19 @@ export class PageAutocloseComponent implements OnInit {
 
 	toggleAutoClose(event: any) {
 		let status = event.target.value;
+		console.log("status 传值--------------》",status);
 		this.setAutoCloseStatus(status);
 	}
 
-	setAutoCloseStatus(status: boolean) {
-		this.gamingAutoCloseService.setAutoCloseStatus(Boolean(status)).then((response: boolean) => {
-			if (response) {
-				this.gamingAutoCloseService.setAutoCloseStatusCache(status);
+	public async setAutoCloseStatus(status: any) {
+		try {
+			status = status === "false" ? false : true;
+			const isStatusUpdated = await this.gamingAutoCloseService.setAutoCloseStatus(status);
+			if (isStatusUpdated) {
 				this.toggleStatus = status;
+				this.gamingAutoCloseService.setAutoCloseStatusCache(status);
 			}
-		});
+		} catch (err) {}
 	}
 
 	public refreshAutoCloseList() {

@@ -169,7 +169,7 @@ export class PageNetworkboostComponent implements OnInit {
 
 	async setNetworkBoostStatus(event: any) {
 		try {
-			this.toggleStatus = Boolean(event.switchValue);
+			this.toggleStatus = event.switchValue === "false"?false:true;
 			await this.networkBoostService.setNetworkBoostStatus(
 				this.toggleStatus
 			);
