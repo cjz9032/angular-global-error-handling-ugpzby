@@ -142,7 +142,6 @@ export class PageAutocloseComponent implements OnInit {
 
 	toggleAutoClose(event: any) {
 		let status = event.target.value;
-		console.log("status 传值--------------》",status);
 		this.setAutoCloseStatus(status);
 	}
 

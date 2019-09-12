@@ -30,7 +30,6 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 			this.loading = this.loaderData.loading;
 			this.loadingNoApps = this.loaderData.noApps;
 		}
-		this.runningListData.push({"iconName":"","processDescription":""})
 	}
 
 	// addAppData(event: any) {
@@ -53,7 +52,6 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 				txt1.focus();
 	    	}
 		}
-		
 	}
 
 }
