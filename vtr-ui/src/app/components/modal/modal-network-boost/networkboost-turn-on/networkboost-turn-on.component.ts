@@ -11,6 +11,7 @@ export class NetworkboostTurnOnComponent implements OnInit {
   addAppsList: string;
   statusAskAgain: boolean;
   setAutoClose: any;
+  public isChecked:any;
   constructor() { }
 
   @Input() showTurnOnModal: boolean;
@@ -22,8 +23,9 @@ export class NetworkboostTurnOnComponent implements OnInit {
   ngOnInit() {
   }
 
-  async setAksAgain(event: any) {
-    this.statusAskAgain = event.target.checked;
+  async setAksAgain() {
+    this.isChecked = !this.isChecked;
+    this.statusAskAgain = this.isChecked;
   }
 
   turnOnAction(isConfirm: boolean) {
@@ -44,5 +46,12 @@ export class NetworkboostTurnOnComponent implements OnInit {
 
   closeModal(action: boolean) {
     this.closeTurnOnModal.emit(action);
+  }
+
+  keydownFn(event){
+    if(event.which === 9){
+      let txt = document.getElementById("close");
+      txt.focus();
+    }
   }
 }

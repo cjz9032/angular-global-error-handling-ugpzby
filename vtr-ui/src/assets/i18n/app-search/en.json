@@ -344,9 +344,9 @@
 			"gamingSupport": false,
 			"search-password-protection": {
 				"icon": ["fal","lock"],
-				"desc": "Password Protection",
+				"desc": "Password Health",
 				"tags": [
-					"password protection",
+					"password Health",
 					"dashlane"
 				],
 				"relevantTags": [
@@ -457,14 +457,6 @@
 				"desc": "Enable/disable usage statistics",
 				"tags": [
 					"usage statistics"
-				],
-				"relevantTags": ["preference", "privacy", "setting"]
-			},
-			"search-preference-toolbar": {
-				"icon": ["fal","wrench"],
-				"desc": "Toolbar",
-				"tags": [
-					"Toolbar", "quick asscess"
 				],
 				"relevantTags": ["preference", "privacy", "setting"]
 			}
