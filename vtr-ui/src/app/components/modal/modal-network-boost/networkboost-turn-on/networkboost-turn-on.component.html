@@ -29,7 +29,7 @@
               tabindex="1" aria-label="modal Turn networkBoost Confirm" (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
             <a (click)="notNowAction(false)"
               class="cancel-link active"
-              tabindex="1" aria-label="modal Turn networkBoost Cancel" (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+              tabindex="1" aria-label="modal Turn networkBoost Cancel" role="button" (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
           </div>
         </div>
       </div>
