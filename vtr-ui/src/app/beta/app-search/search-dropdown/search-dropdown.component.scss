@@ -73,7 +73,6 @@ $line_height: 2.0rem;
 			height: 100%;
 			width: $clean_icon_size + 3rem;
 			@extend .flex-all-center;
-			cursor: pointer;
 
 			&::before,
 			&::after {
@@ -98,6 +97,7 @@ $line_height: 2.0rem;
 			}
 
 			&.active{
+				cursor: pointer;
 				&::before,
 				&::after {
 					background: rgb(102, 116, 129);
@@ -130,6 +130,7 @@ $line_height: 2.0rem;
 		ul {
 			padding-left: 0;
 			margin-left: 0;
+			margin-bottom: 0;
 			width: 100%;
 			list-style-type: none;
 

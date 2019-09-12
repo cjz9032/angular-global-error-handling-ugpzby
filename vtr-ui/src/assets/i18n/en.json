@@ -1688,22 +1688,23 @@
 			"common": {
 				"title": "Anti-Virus",
 				"back": "BACK",
-				"recommends": "Lenovo recommends <b>McAfee</b> to protect all your devices",
+				"recommends": "Why Lenovo recommends <b>McAfee</b> to protect all your devices",
 				"award": "Award-winning antivirus",
 				"awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
 				"performance": "Rock-solid performance",
 				"performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
 				"Blazing": "Blazing-fast speed",
 				"BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience",
-				"privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+				"privacyTerms": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
 				"mcafeePremium": "McAfee LiveSafe Protection",
 				"protectedBy": "You are currently protected by {{protectedName}}. However, you could be better protected with McAfee LiveSafe",
 				"virusScan": "VIRUS SCAN",
 				"firewall": "FIREWALL",
-				"disabled": "DISABLED"
+				"disabled": "DISABLED",
+				"notAvailable": "NOT AVAILABLE"
 			},
 			"windowsDefender": {
-				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to off you award-winning security so can <b>protect what matters.</b>",
+				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so can <b>protect what matters.</b>",
 				"topTip": "Top Tips for online safety",
 				"topContent": "Learn how you can defend against today's biggest online threats",
 				"view": "VIEW TIPS",
@@ -1711,7 +1712,7 @@
 				"buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
 				"onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
 				"virus": "Virus protection",
-				"homeNetwork": "Home netWork protection",
+				"homeNetwork": "Home network protection",
 				"private": "Private,anonymous browsing",
 				"everyDevice": "Every-device protection",
 				"password": "Password manager",
@@ -1720,7 +1721,7 @@
 			"mcafee": {
 				"title": "Antivirus",
 				"trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
-				"subtitle" :"You’re currently protected by McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
+				"subtitle": "You’re currently protected by McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
 				"discount": "100% money back guarantee",
 				"trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
 				"subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
@@ -1733,10 +1734,10 @@
 				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
 				"networkTitle": "Home network protection",
 				"networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
-				"passwordTitle":"Password manager",
-				"passwordSubtitle":"Security store and manage all your online passwords in a single location",
-				"onlineTitle":"Online privacy",
-				"onlineSubtitle":"Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+				"passwordTitle": "Password manager",
+				"passwordSubtitle": "Security store and manage all your online passwords in a single location",
+				"onlineTitle": "Online privacy",
+				"onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
 				"supportTitle": "Free, 24/7 expert technical support ",
 				"supportSubtitle": "Get around-the-clock assistance and peace of mind from our dedicated security team",
 				"register": "McAfee Registration",
@@ -1765,8 +1766,8 @@
 				"back": "BACK"
 			},
 			"container": {
-				"title": "Lenovo Wifi Security",
-				"name": "WIFI SECURITY",
+				"title": "Lenovo Wi-fi Security",
+				"name": "WI-FI SECURITY",
 				"enable": "ENABLED",
 				"disable": "DISABLED",
 				"less": "Less info",
@@ -2510,6 +2511,40 @@
 			"title": "Enable Battery Charge Threshold",
 			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
 			"enable": "Enable"
+		}
+	},
+	"appsForYou": {
+		"common": {
+			"errorMessage": {
+				"installationFailed": "Installation failed. Please try again.",
+				"networkError": "Network Error.",
+				"installationCancelled": "Installation Cancelled."
+			}
+		},
+		"menuText": {
+			"adobeRedemption": "Adobe Redemption",
+			"lenovoMigrationAssistant": "Lenovo Migration Assistant"
+		},
+		"appDetails": {
+			"installButton": {
+				"install": "Install",
+				"installing": "Installing",
+				"installed": "Installed",
+				"launch": "Launch",
+				"seeMore": "See More"
+			},
+			"fieldName": {
+				"description": "Description",
+				"screenshots": "Screenshots",
+				"additionalInformation": "Additional Information",
+				"by": "By:",
+				"updated": "Updated:",
+				"type": "Type:",
+				"category": "Category:",
+				"legalAgreement": "Legal Agreement",
+				"readMore": "Read More",
+				"readLess": "Read Less"
+			}
 		}
 	}
 }

@@ -52,7 +52,7 @@
       text-align: center;
       color: $light;
       overflow: hidden;
-      
+
       .menu-main-logo {
         display: block;
         width: 100%;
@@ -164,7 +164,11 @@
             @media #{$mediaquery_6} {
               line-height: calc(#{$menu_height} - 0.5rem);
             }
-
+			&.search-active {
+                .fa-icon {
+                  color: $main;
+                }
+            }
             &.active {
               border-bottom: $menu_hover solid 0.5rem;
               @media #{$black-on-white} {
