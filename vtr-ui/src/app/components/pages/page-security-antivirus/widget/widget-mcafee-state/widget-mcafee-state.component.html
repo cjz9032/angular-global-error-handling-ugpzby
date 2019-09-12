@@ -42,17 +42,17 @@
         </div>
         <div class="col-auto px-0 ml-auto">
           <h3 class="mb-1"><span class="text-uppercase text-color"
-              title="{{list.status | statusText | translate | uppercase}}"
-              [innerHTML]="list.status | statusText | translate">
+              title="{{'security.antivirus.common.notAvailable' | translate}}"
+              [innerHTML]="'security.antivirus.common.notAvailable' | translate">
           </span></h3>
         </div>
       </div>
     </li>
     <li *ngIf="!windowsDefender" class="row justify-content-center">
-        <button (click)="common.launch()" title="{{'security.antivirus.mcafee.launch' | translate}}">{{'security.antivirus.mcafee.launch' | translate}}</button>
+        <button class="font-weight-bold" (click)="common.launch()" title="{{'security.antivirus.mcafee.launch' | translate}}">{{'security.antivirus.mcafee.launch' | translate}}</button>
     </li>
     <li *ngIf="windowsDefender" class="row justify-content-center">
-      <button [ngClass]="{'visible': !url}" title="{{'security.antivirus.windowsDefender.buyNow'}}">
+      <button [ngClass]="{'visible': !url}" title="{{'security.antivirus.windowsDefender.buyNow' | translate}}">
         <a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
           metricsItem="subscribe" metricsParent="security.antivirus"
           href="{{url}}" target="_blank"

@@ -22,7 +22,7 @@ export class TaskAction extends BaseModel {
 }
 
 export class AppAction extends BaseModel {
-	constructor(actionType: string, launchType: string, launchParms: string, duration: number) {
+	constructor(actionType: string, launchParms: string, launchType: string, duration: number) {
 		super();
 		this.ItemType = metricsConst.MetricEvent.AppAction;
 		this.ActionType = actionType;

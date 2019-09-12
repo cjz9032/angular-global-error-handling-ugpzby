@@ -18,21 +18,25 @@
       margin-top: 3rem;
 
       img{
-        height: 30rem;
+        width: 100%;
       } 
 
       .inner-body {
         padding: 1.5rem 2rem;
         .title {
           color: $main_darker;
-          font-size: 1.4rem;
-          font-weight: 600;
+          font-size: 1.5rem;
+          font-weight: $weight_bold;
           line-height: 2.3rem;
           text-align: left;
         }
   
         .logo{
           height: 5rem;
+        }
+
+        .last-logo{
+          height: 2.5rem;
         }
 
         .height-line{

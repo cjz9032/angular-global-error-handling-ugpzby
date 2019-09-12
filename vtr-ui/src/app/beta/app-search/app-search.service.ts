@@ -18,6 +18,15 @@ export class AppSearchService {
 	private loaded = false;
 	private isBetaUserPromise: any;
 	private betaRoutes = [];
+	public searchText = '';
+	public searchResults = [
+		/*{
+			icon: ['fal', 'search'],
+			text: 'Suggested search Item',
+			route: '/dashboard',
+			Id: 'vtrAppSearchScroll',
+		}*/
+	];
 	private searchDB = {
 		features: {
 			tags: {},
@@ -155,6 +164,7 @@ export class AppSearchService {
 		const resultSet = {};
 
 		if (!keywords) {
+			this.searchResults = resultList;
 			return resultList;
 		}
 
@@ -195,6 +205,7 @@ export class AppSearchService {
 			}
 		);
 
+		this.searchResults = resultList;
 		return resultList;
 	}
 
