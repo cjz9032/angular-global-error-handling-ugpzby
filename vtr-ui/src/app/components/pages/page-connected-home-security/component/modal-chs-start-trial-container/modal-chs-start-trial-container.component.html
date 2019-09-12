@@ -25,7 +25,7 @@
 				metricsItem="CHSTrialGoNowButton"
 				metricsParent="{{metricsParent}}"
 				(click)="openCornet()"
-				[isDisabled]="!chs?.account?.consoleUrl"
+				[isLoading]="loading"
 				[label]="'homeSecurity.modal.goNow' | translate"
 				[title]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
 			<vtr-ui-button
@@ -59,6 +59,7 @@
 				metricsItem="CHSDisconnectButton"
 				metricsParent="{{metricsParent}}"
 				(click)="disconnect()"
+				[isLoading]="loading"
 				[label]="'homeSecurity.overview.disconnect' | translate"
 				[title]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
 		</div>

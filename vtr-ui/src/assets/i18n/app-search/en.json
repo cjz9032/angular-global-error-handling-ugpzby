@@ -290,7 +290,7 @@
 			"armSupport": false,
 			"smodeSupport": false,
 			"gamingSupport": false,
-			"search-anti-virus": {
+			"search-security-status": {
 				"offlineSupport": false,
 				"icon": ["fal","lock"],
 				"desc": "Security Status",
