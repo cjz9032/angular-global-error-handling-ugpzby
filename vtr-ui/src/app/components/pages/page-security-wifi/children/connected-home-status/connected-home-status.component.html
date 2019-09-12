@@ -5,12 +5,12 @@
 			<h3 class="chsStatus">
 				<span class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3 text-uppercase"
 					title="{{'security.homeprotection.homeStatus.protected' | translate}}"
-					*ngIf="badgeStatus">
+					*ngIf="homeSecurity?.account?.state !== 'local'">
 					{{'security.homeprotection.homeStatus.protected' | translate}}
 				</span>
 				<span class="badge badge-pill badge-danger line-height-2-5 p-0 pl-3 pr-3 text-uppercase"
 					title="{{'security.homeprotection.homeStatus.notProtected' | translate}}"
-					*ngIf="!badgeStatus">
+					*ngIf="homeSecurity?.account?.state === 'local'">
 					{{'security.homeprotection.homeStatus.notProtected' | translate}}
 				</span>
 			</h3>
@@ -22,12 +22,6 @@
 				[linkId]="'sa-ws-btn-goToChs'"
 				[label]="'security.homeprotection.homesecurity.goToChs' | translate"
 				[title]="'security.homeprotection.homesecurity.goToChs' | translate">
-			</vtr-ui-button>
-			<vtr-ui-button
-				[linkId]="'sa-ws-btn-switch'"
-				[label]="'switch'"
-				[title]="'switch'"
-				(onClick)="switchBadge()">
 			</vtr-ui-button>
 		</div>
 	</div>
