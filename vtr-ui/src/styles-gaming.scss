@@ -393,7 +393,7 @@
 								height: 1.6rem;
 								width: 1.6rem;
 								pointer-events: none;
-								background-color: $gaming-Darkslate-blue;
+								background-color: $gaming_light_blue;
 								border: 0.2rem solid $screen_light_15;
 								&::after {
 									content: "";
@@ -916,4 +916,21 @@
 button:focus,
 *:focus {
 	outline: 0;
+}
+//added by Ram
+.feature-note {
+	background-color: $gaming-Darkslate-blue!important;
+	border: none!important;
+	border-radius:$border_radius;
+	p {
+		font-size: 1.5rem;
+		color: $alt!important;
+	}
+}
+.permission-note {
+	border-radius:$border_radius;
+	p {
+		font-size: 1.5rem;
+		color: $alt!important;
+	}
 }
