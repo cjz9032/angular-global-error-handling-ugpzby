@@ -72,6 +72,12 @@ ui-popover-turn-on {
 				background-repeat: no-repeat;
 				background-size: 100% auto;
 				background-color: $gaming_light_blue;
+				@media #{$black-on-white} {
+					background-color: $gaming_light_blue;
+				}
+				@media #{$white-on-black} {
+					background-color: $gaming_light_blue;
+				}
 			}
 		}
 		.status-text {

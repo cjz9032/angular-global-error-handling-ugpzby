@@ -54,7 +54,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			id: 'legionedge cpuoverlock',
-			ariaLabel: 'legionedge cpuoverlock',
+			ariaLabel: 'cpu overlock',
 			type: 'gaming.dashboard.device.legionEdge.title'
 		},
 		{
@@ -75,7 +75,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			readonly: true,
 			id: 'legionedge ramoverlock',
-			ariaLabel: 'legionedge ramoverlock',
+			ariaLabel: 'ram overlock',
 			type: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			settings: ''
 		},
@@ -98,11 +98,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			readonly: true,
 			id: 'legionedge networkboost',
-			ariaLabel: 'legionedge networkboost',
+			ariaLabel: 'network boost',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost',
 			canNavigate: true,
-			settings: 'legion_edge_networkboost_gearicon'
+			settings: 'legion_edge_networkboost_gear',
 		},
 		{
 			readMoreText: '',
@@ -121,11 +121,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: false,
 			tooltipText: '',
 			id: 'legionedge autoclose',
-			ariaLabel: 'legionedge autoclose',
+			ariaLabel: 'auto close',
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose',
 			canNavigate: true,
-			settings: 'legion_edge_autoclose_gearicon'
+			settings: 'legion_edge_autoclose_gear'
 		},
 		{
 			readMoreText: '',
@@ -146,7 +146,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			tooltipText: '',
 			readonly: true,
 			id: 'legionedge hybridmode',
-			ariaLabel: 'legionedge hybridmode',
+			ariaLabel: 'hybrid mode',
 			type: 'gaming.dashboard.device.legionEdge.hybridMode',
 			settings: ''
 		},
@@ -167,7 +167,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: true,
 			tooltipText: '',
 			id: 'legionedge touchpadlock',
-			ariaLabel: 'legionedge touchpadlock',
+			ariaLabel: 'touchpadlock',
 			type: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			settings: ''
 		}
@@ -183,6 +183,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
 				id: 'cpu overclock on',
+				ariaLabel:'on',
+				metricitem: 'cpu_overclock_on',
 				value: 1
 			},
 			{
@@ -190,6 +192,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
 				id: 'cpu overclock when gaming',
+				ariaLabel:'when gaming',
+				metricitem: 'cpu_overclock_when_gaming',
 				value: 2
 			},
 			{
@@ -197,6 +201,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.off',
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
 				id: 'cpu overclock off',
+				ariaLabel:'off',
+				metricitem: 'cpu_overclock_off',
 				value: 3
 			}
 		]
@@ -307,7 +313,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 
 		if (gamingStatus.networkBoostFeature) {
-			// this.legionUpdate[2].readonly = false;
+			this.legionUpdate[2].readonly = false;
 			this.renderNetworkBoostStatus();
 		}
 	}
@@ -324,6 +330,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public renderNetworkBoostStatus() {
 		this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
+			console.log('networkBoostModeStatus--------------------------',networkBoostModeStatus)
 			if (networkBoostModeStatus !== undefined) {
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
 				this.setNetworkBoostCacheStatus(networkBoostModeStatus);
@@ -493,6 +500,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public async toggleOnOffRamOCStatus($event) {
 		const { name, checked } = $event.target;
+		let status = $event.target.value;
+		status = status === "false" ? false : true;
 		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
@@ -501,33 +510,33 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.legionUpdate[1].isPopup = $event;
 			}
 			this.gamingSystemUpdateService
-				.setRamOCStatus($event.switchValue)
+				.setRamOCStatus(!status)
 				.then((value: boolean) => {})
 				.catch((error) => {});
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.legionUpdate[4].isPopup = $event;
 			this.gamingHybridModeService
-				.setHybridModeStatus($event.switchValue)
+				.setHybridModeStatus(!status)
 				.then((value: boolean) => {})
 				.catch((error) => {});
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
-			this.TouchpadLockStatusObj.touchpadLockStatus = $event.switchValue;
+			this.TouchpadLockStatusObj.touchpadLockStatus = status;
 			this.gamingKeyLockService
-				.setKeyLockStatus($event.switchValue)
+				.setKeyLockStatus(status)
 				.then((value: boolean) => {
 					if (value) {
-						this.SetTouchpadLockCacheStatus($event.switchValue);
+						this.SetTouchpadLockCacheStatus(status);
 					} else {
-						this.TouchpadLockStatusObj.touchpadLockStatus = !$event.switchValue;
+						this.TouchpadLockStatusObj.touchpadLockStatus = !status;
 					}
 				})
 				.catch((error) => {});
 		}
 
 		if (name === 'gaming.dashboard.device.legionEdge.autoClose') {
-			await this.setAutoCloseStatus($event.switchValue);
+			await this.setAutoCloseStatus(status);
 		}
 
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
@@ -535,8 +544,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			if (!this.gamingCapabilities.fbnetFilter) {
 				this.legionUpdate[2].isDriverPopup = $event;
 			} else {
-				// 	this.legionUpdate[2].isPopup = $event;
-				await this.setNetworkBoostStatus($event.switchValue);
+				await this.setNetworkBoostStatus(status);
 			}
 		}
 	}

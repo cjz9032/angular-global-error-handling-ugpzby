@@ -33,11 +33,13 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private guard: GuardService,
 
-		vantageShellService: VantageShellService,
+		public vantageShellService: VantageShellService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private router: Router
-	) {
-		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+	) {	}
+
+	ngOnInit() {
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
@@ -51,9 +53,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 			this.updateStatus();
 		});
 		this.fetchCMSArticles();
-	}
 
-	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});

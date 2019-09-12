@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -37,6 +38,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	private notificationSubscription: Subscription;
 	public readonly helpIcon = ['far', 'question-circle'];
 	public automaticDolbyHelpIcon = [];
+	public isOnline: any = true;
+
+
+	public dolbyAudioToggleCache: DolbyAudioToggleCapability;
 
 	constructor(
 		private audioService: AudioService,
@@ -50,16 +55,23 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
-		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (welcomeTutorial && welcomeTutorial.page === 2) {
-			this.initFeatures();
+
+		this.isOnline = this.commonService.isOnline;
+		if (this.isOnline) {
+			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+			if (welcomeTutorial && welcomeTutorial.page === 2) {
+				this.initFeatures();
+			}
+		} else {
+				this.initFeatures();
 		}
 
 	}
 
 	private initFeatures() {
 		this.initMockData();
+		this.initDolbyAudioFromCache();
 		this.getMicrophoneSettings();
 		this.getDolbyFeatureStatus();
 		this.getDolbyModesStatus();
@@ -74,6 +86,27 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 		this.stopMonitor();
 		this.stopMonitorForDolby();
+	}
+
+	initDolbyAudioFromCache() {
+		try {
+			this.dolbyAudioToggleCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
+			if (this.dolbyAudioToggleCache !== undefined) {
+				this.autoDolbyFeatureStatus.available = this.dolbyAudioToggleCache.available;
+				this.autoDolbyFeatureStatus.status = this.dolbyAudioToggleCache.status;
+				this.autoDolbyFeatureLoader = this.dolbyAudioToggleCache.loader;
+				this.automaticDolbyHelpIcon = this.dolbyAudioToggleCache.icon;
+			} else {
+				this.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
+				this.dolbyAudioToggleCache.available = this.autoDolbyFeatureStatus.available;
+				this.dolbyAudioToggleCache.status = this.autoDolbyFeatureStatus.status;
+				this.dolbyAudioToggleCache.loader = this.autoDolbyFeatureLoader;
+				this.dolbyAudioToggleCache.icon = this.automaticDolbyHelpIcon;
+				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+			}
+		} catch (error) {
+			console.log('initExpressChargingFromCache', error);
+		}
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -151,6 +184,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	onAutomaticDolbyAudioToggleOnOff(event) {
 		try {
 			this.autoDolbyFeatureStatus.status = event.switchValue;
+
+			this.dolbyAudioToggleCache.status = this.autoDolbyFeatureStatus.status;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+
 			if (this.autoDolbyFeatureStatus.status && !this.autoDolbyFeatureStatus.available) {
 				// TODO: Make switch off as Automatic Dolby Audio feature is unavailable
 			}
@@ -174,6 +211,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.isDTmachine) {
 				this.autoDolbyFeatureStatus.available = false;
 				this.autoDolbyFeatureLoader = false;
+
+				this.dolbyAudioToggleCache.available = this.autoDolbyFeatureStatus.available;
+				this.dolbyAudioToggleCache.loader = this.autoDolbyFeatureLoader;
+				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 			}
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyFeatureStatus()
@@ -181,17 +222,34 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.autoDolbyFeatureStatus = dolbyFeature;
 						this.autoDolbyFeatureLoader = false;
 						this.automaticDolbyHelpIcon = (this.autoDolbyFeatureStatus.available) ? this.helpIcon : [];
+
+						this.dolbyAudioToggleCache.available = this.autoDolbyFeatureStatus.available;
+						this.dolbyAudioToggleCache.status = this.autoDolbyFeatureStatus.status;
+						this.dolbyAudioToggleCache.loader = this.autoDolbyFeatureLoader;
+						this.dolbyAudioToggleCache.icon = this.automaticDolbyHelpIcon;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+
 						console.log('getDolbyFeatureStatus:', dolbyFeature);
 					}).catch(error => {
 						this.logger.error('getDolbyFeatureStatus', error.message);
 						this.autoDolbyFeatureLoader = false;
 						this.autoDolbyFeatureStatus.available = false;
+
+						this.dolbyAudioToggleCache.available = this.autoDolbyFeatureStatus.available;
+						this.dolbyAudioToggleCache.loader = this.autoDolbyFeatureLoader;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 						return EMPTY;
 					});
 			}
 		} catch (error) {
 			this.autoDolbyFeatureLoader = false;
 			this.autoDolbyFeatureStatus.available = false;
+
+			this.dolbyAudioToggleCache.available = this.autoDolbyFeatureStatus.available;
+			this.dolbyAudioToggleCache.loader = this.autoDolbyFeatureLoader;
+			this.dolbyAudioToggleCache.icon = this.automaticDolbyHelpIcon;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
+
 			this.logger.error('getDolbyFeatureStatus' + error.message);
 			return EMPTY;
 		}

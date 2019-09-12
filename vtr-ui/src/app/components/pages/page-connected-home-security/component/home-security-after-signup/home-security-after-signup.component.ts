@@ -17,46 +17,19 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 	@Input() allDevices: HomeSecurityAllDevice;
 	@Input() account: HomeSecurityAccount;
 	@Input() common: HomeSecurityCommon;
-	expirationDay: number;
-	dialogService: DialogService;
-	chs: any;
-
+	overviewTitle: string;
+	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
-		dialogService: DialogService,
-		private vantageShellService: VantageShellService,
-		public homeSecurityMockService: HomeSecurityMockService
-	) {
-		this.dialogService = dialogService;
-		if (!this.chs) {
-			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
-		}
-	}
+		public dialogService: DialogService
+	) {	}
 
 	ngOnInit() {
-		this.expirationDay = this.chs.account.expirationDay;
-	}
-
-	switch(role) {
-		if (role === 'user') {
-			this.chs.account.role = 'admin';
-			if (this.chs.account.state === CHSAccountState.trial) {
-				this.chs.account.state = CHSAccountState.trialExpired;
-				this.expirationDay = 0;
-			} else if (this.chs.account.state === CHSAccountState.trialExpired) {
-				this.chs.account.state = CHSAccountState.standard;
-				this.expirationDay = 50;
-			} else if (this.chs.account.state === CHSAccountState.standard && this.expirationDay === 50) {
-				this.chs.account.state = CHSAccountState.standard;
-				this.expirationDay = 30;
-			} else if (this.chs.account.state === CHSAccountState.standard) {
-				this.chs.account.state = CHSAccountState.standardExpired;
-				this.expirationDay = 0;
+		if (this.account && this.account.role) {
+			if (this.account.role === 'admin') {
+				this.overviewTitle = 'homeSecurity.overview.overviewTitleAdmin';
 			} else {
-				this.chs.account.state = CHSAccountState.trial;
-				this.expirationDay = 10;
+				this.overviewTitle = 'homeSecurity.overview.overviewTitleUser';
 			}
-		} else {
-			this.chs.account.role = 'user';
 		}
 	}
 
@@ -64,11 +37,11 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 		this.dialogService.homeSecurityTrialModal(2);
 	}
 
-	openCornet(feature?: string) {
-		this.chs.visitWebConsole(feature);
+	openCornet() {
+		this.common.openCornet();
 	}
 
-	isMoreThen30(num: number): boolean {
+	isMoreThen30Day(num: number): boolean {
 		if (num > 30) {
 			return true;
 		} else {

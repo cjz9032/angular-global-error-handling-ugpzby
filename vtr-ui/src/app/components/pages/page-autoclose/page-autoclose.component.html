@@ -27,7 +27,6 @@
 																{{'gaming.autoClose.introLine' | translate}}</p>
 															<vtr-widget-autoclose [appListData]="autoCloseAppList"
 																(actionModal)="openTargetModal()"
-																(initRunningList)="refreshRunningList()"
 																(removeFromList)="deleteAppFromList($event)">
 															</vtr-widget-autoclose>
 														</div>
@@ -83,6 +82,6 @@
 	(actionTurnOn)="showTurnOnModal=false;initTurnOnAction()">
 </vtr-modal-turn-on>
 
-<vtr-modal-add-apps *ngIf="showAppsModal" [loaderData]="loadingContent" [runningListData]="runningList"
+<vtr-modal-add-apps *ngIf="showAppsModal"
 	(addAppToList)="addAppDataToList($event)" (closeAddAppsModal)="modalCloseAddApps($event)">
 </vtr-modal-add-apps>

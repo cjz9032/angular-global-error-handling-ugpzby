@@ -37,7 +37,7 @@
               </div>
               <div class="app-add-container">
                 <ul class="app-list d-flex flex-wrap">
-                  <li *ngFor="let item of runningListData; let i= index">
+                  <li *ngFor="let item of runningList; let i= index">
                     <div>
                       <img [src]="item.iconName | sanitize : 'resourceUrl'">
 
@@ -45,7 +45,7 @@
                     <div class="app-text-title" container="body" placement="bottom" [title]="item.processDescription">
                       {{item.processDescription}}</div>
                     <div class="btn-add-app mx-auto">
-                      <input type="checkbox" value="{{item.processDescription}}" (change)="addAppData($event)" vtrMetrics [metricsItem]="item.processDescription" metricsEvent="featureClick">
+                      <input type="checkbox" value="{{item.processDescription}}" (change)="addAppData($event)" vtrMetrics [metricsItem]="statusitem ? item.processDescription : ''" [metricsEvent]=" !statusitem ? '' :'featureClick'">
                       <div class="action"></div>
                     </div>
                   </li>

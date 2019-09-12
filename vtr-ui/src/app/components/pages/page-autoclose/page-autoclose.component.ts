@@ -16,9 +16,6 @@ export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal: boolean = false;
 	public showAppsModal: boolean = false;
 	public autoCloseAppList: any;
-	public loadingContent: any;
-	// Running list
-	runningList: any = [];
 	// Toggle status
 	toggleStatus: boolean;
 	needToAsk: any;
@@ -73,7 +70,6 @@ export class PageAutocloseComponent implements OnInit {
 
 		// AutoClose Init
 		this.refreshAutoCloseList();
-		this.refreshRunningList();
 		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
 		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 	}
@@ -128,8 +124,6 @@ export class PageAutocloseComponent implements OnInit {
 	modalCloseAddApps(action: boolean) {
 		this.showAppsModal = action;
 		this.hiddenScroll(false);
-		this.refreshRunningList();
-		this.refreshRunningList();
 	}
 
 	hiddenScroll(action: boolean) {
@@ -160,25 +154,12 @@ export class PageAutocloseComponent implements OnInit {
 				if (!isUndefined(appList.processList)) {
 					this.autoCloseAppList = appList.processList;
 					this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
+					console.log('get Auto close List', appList.processList);
+					console.log('Total Auto close List Apps', appList.processList.length);
 				}
 			});
 		} catch (error) {
 			return undefined;
-		}
-	}
-
-	async refreshRunningList() {
-		try {
-			await this.gamingAutoCloseService.getAppsAutoCloseRunningList().then((list: any) => {
-				if (!isUndefined(list.processList)) {
-					this.runningList = list.processList;
-					const noAppsRunning = this.runningList.length === 0 ? true : false;
-					this.loadingContent = { loading: false, noApps: noAppsRunning };
-				}
-			});
-		} catch (error) {
-			const noAppsRunning = this.runningList.length === 0 ? true : false;
-			this.loadingContent = { loading: false, noApps: noAppsRunning };
 		}
 	}
 
@@ -203,16 +184,16 @@ export class PageAutocloseComponent implements OnInit {
 		}
 	}
 
-	deleteAppFromList(appData: any) {
-		console.log(appData);
-		this.autoCloseAppList.splice(appData.index, 1);
-		this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
-			if (response) {
-				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
-				this.refreshRunningList();
-			} else {
-				this.refreshAutoCloseList();
-			}
-		});
+	async deleteAppFromList(appData: any) {
+		try {
+			// this.autoCloseAppList.splice(appData.index, 1);
+			await this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
+				if (response) {
+					this.refreshAutoCloseList();
+					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
+				}
+			});
+		} catch (err) {
+		}
 	}
 }

@@ -24,7 +24,8 @@
 							</div>
 						</div>
 						<div class="connected-home-status" *ngIf="region === 'us' && language === 'en'">
-							<vtr-connected-home-status></vtr-connected-home-status>
+							<vtr-connected-home-status
+								[homeSecurity]="homeSecurity"></vtr-connected-home-status>
 						</div>
 						<div id="home-security" *ngIf="region === 'us' && language === 'en'"
 							class="connected-home-container">

@@ -8,12 +8,15 @@ import { faSellcast } from '@fortawesome/free-brands-svg-icons';
 	templateUrl: './ui-toggle.component.html',
 	styleUrls: ['./ui-toggle.component.scss']
 })
-export class UiToggleComponent implements OnInit, OnDestroy {
+export class UiToggleComponent implements OnInit, OnDestroy  {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value = true;
 	@Input() onOffSwitchId: string;
 	@Input() notChange = false;
-	@Input() toggleId: any;
+	@Input() toggleId :any;
+	public currentEvent:any;
+	public disabled = true;
+	public timer = 0;
 	uiSubscription: Subscription;
 
 
@@ -30,7 +33,6 @@ export class UiToggleComponent implements OnInit, OnDestroy {
 			}
 		});
 	}
-
 	ngOnDestroy() {
 		if (this.uiSubscription) {
 			this.uiSubscription.unsubscribe();
@@ -44,12 +46,25 @@ export class UiToggleComponent implements OnInit, OnDestroy {
 	 * this function is to send the change event for the notChange = true types.
 	 */
 	sendChangeEvent($event) {
+		this.currentEvent = $event;
+		if(!this.disabled) {return;}
+		
+		let setIntervalTimer = setInterval(()=> {
+			this.disabled = false;
+			this.timer++;
+			if(this.timer >= 50){
+				this.disabled = true;
+				this.timer = 0;
+				clearInterval(setIntervalTimer);
+			}
+		},1)
+		console.log('this.value-----------------------',$event,$event.target,$event.target.value);
 		if (!this.notChange) {
 			this.value = !this.value;
 		}
-		$event.target.value = Boolean(this.value);
-		$event.target.checked = Boolean($event.target.value);
-		$event.switchValue = Boolean($event.target.value);
+		$event.target.value = this.value;
+		$event.target.checked = $event.target.value === 'false' ? false : true;
+		$event.switchValue = $event.target.value === 'false' ? false : true;
 		this.toggle.emit($event);
 	}
 

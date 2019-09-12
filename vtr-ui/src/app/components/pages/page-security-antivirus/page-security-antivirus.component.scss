@@ -5,6 +5,10 @@
     margin-top: $shift_up_small;
   }
 
+  .img-fluid {
+    width: 10rem;
+  }
+
   .mt-minus {
     margin-top: $shift_up_small;
   }
@@ -13,49 +17,16 @@
     width: 10rem;
     padding-top: 0.9rem;
   }
+
   .mcafee-logo {
     width: 10rem;
     padding-top: 0.7rem;
   }
 
-  .footer {
-    .title {
-      color: $main_dark;
-      font-size: 3rem;
-      font-weight: $weight_bold;
-      line-height: 2.9rem;
-    }
-
-    .subtitle {
-      color: $highlight;
-      font-size: 1.6rem;
-      font-weight: $weight_light;
-      line-height: 2.3rem;
-      text-decoration: underline;
-    }
-
-    .text-regular {
-      font-size: 1.6rem;
-    }
-
-    .read-more-text {
-      font-size: 1.4rem;
-    }
-
-    .mcafee-logo {
-      width: 14rem;
-      padding-top: 1rem;
-    }
-
-    a {
-      text-decoration: underline;
-    }
-  }
-
   .divider {
     margin: 2rem 0 1rem 0;
-    height: 0.2rem;
-    background-color: $shade_lighter;
+    height: 0.1rem;
+    background-color: $light-grey;
   }
 
   .mt-60 {
@@ -69,9 +40,9 @@
       background: $main_darkest;
 
       .title {
-        color: $light;
-        font-size: 2.5rem;
-        font-weight: $weight_medium;
+        color: $shade_darkest;
+        font-size: 1.6rem;
+        font-weight: 600;
         line-height: 2.9rem;
       }
 
@@ -79,6 +50,10 @@
         color: $light;
         font-size: 1.4rem;
         line-height: 2.1rem;
+      }
+
+      .font{
+        color: $shade_darkest;
       }
 
       .text {
@@ -92,6 +67,19 @@
         font-weight: $weight_medium;
         line-height: 3rem;
       }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    .b-border {
+      border: 0.1rem solid #27ADD7;
+      box-shadow: none;
+    }
+
+    .flex-bas{
+      flex-basis: 30%;
     }
   }
 
@@ -101,32 +89,21 @@
       border-radius: $border_radius;
       background: $light;
 
-      .list-group {
-        border-radius: $border_radius;
-
-        .list-group-item {
-          background: $shade_extralight;
-        }
-
-        .text {
-          color: $screen_dark_70;
-          padding: 2rem 0;
-          font-size: 1.4rem;
-          font-weight: $weight_medium;
-          letter-spacing: 0.89px;
-          line-height: 2.3rem;
-        }
+      .title {
+        color: $shade_darkest;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 3rem;
       }
 
-      .title {
-        color: $screen_dark_70;
-        font-size: 2rem;
+      .title-normal{
+        font-size: 2.5rem;
         font-weight: $weight_regular;
-        line-height: 2.9rem;
+        color: $screen_dark_70;
       }
 
       .subtitle {
-        color: $main_shade;
+        color: $shade_darkest;
         font-size: 1.5rem;
         font-weight: $weight_regular;
         line-height: 2.3rem;
@@ -177,9 +154,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        // cursor: pointer;
         padding: 0 2.5rem;
-        // max-width: 33rem;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -193,8 +168,12 @@
 
       .divider {
         margin: 1rem 0 2rem 0;
-        height: 0.2rem;
-        background-color: $shade_lighter;
+        height: 0.1rem;
+        background-color: $light-grey;
+      }
+
+      a {
+        text-decoration: underline;
       }
 
       .sub-font {
@@ -202,6 +181,37 @@
         color: $main_darker;
       }
     }
+
+    .defender-part {
+      flex-basis: 47%;
+      padding-bottom: 2rem !important;
+
+      .subtitle {
+        color: $main_darker;
+        font-size: 1.4rem;
+        font-weight: $weight_medium;
+        line-height: 2.3rem;
+      }
+    
+      img {
+        margin-right: 1rem;
+      }
+
+      button {
+        border: 0.1rem solid $main;
+        background: white;
+        
+        a{
+          color: $main;
+        }
+      }
+    }
+
+    .s-border {
+      border: 0.1rem solid $shade_lighter;
+      box-shadow: none;
+    }
+
   }
 
   .description {
