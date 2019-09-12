@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { Subject } from 'rxjs';
 
-
 @Component({
 	selector: 'vtr-search-dropdown',
 	templateUrl: './search-dropdown.component.html',
@@ -15,16 +14,8 @@ export class SearchDropdownComponent implements AfterViewInit {
 
 	private searchTimer: any;
 	public searchTips = 'Search Query';
-	public searchResults = [
-		/*{
-			icon: ['fal', 'search'],
-			text: 'Suggested search Item',
-			route: '/dashboard',
-			Id: 'vtrAppSearchScroll',
-		}*/
-	];
 	constructor(
-		private searchService: AppSearchService
+		public searchService: AppSearchService
 	) {
 	}
 
@@ -49,8 +40,7 @@ export class SearchDropdownComponent implements AfterViewInit {
 	}
 
 	onCleanClick() {
-		this.searchInput.nativeElement.value = '';
-		this.onTextChange('');
+		this.searchService.searchText = '';
 	}
 
 	onTextChange(keywords: string) {
@@ -60,10 +50,7 @@ export class SearchDropdownComponent implements AfterViewInit {
 
 		this.searchTimer = setTimeout(() => {
 			this.searchTimer = null;
-			const result = this.searchService.search(keywords);
-			if (result) {
-				this.searchResults = result;
-			}
+			this.searchService.search(keywords);
 		}, 100);
 	}
 }

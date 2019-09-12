@@ -374,7 +374,7 @@
 						border: none;
 					}
 					&.subpage-device-settings-power{
-						.auto-set-checkbox.custom-checkbox{
+						.auto-set-checkbox.custom-checkbox-gaming{
 							.custom-control-input{
 								position: absolute;
 								opacity: 0;
@@ -434,6 +434,10 @@
 										color: $gaming_grey_lightest;
 									}
 								}
+							}
+							.row-seperator{
+								height: 0.1rem;
+								background-color: $screen_dark_20;
 							}
 						}
 					}
@@ -624,7 +628,7 @@
 						}
 					}
 				}
-				.vtr-hardware-components{
+				.vtr-hardware-components{					
 					.hardware-scan-items{
 						background: $dark_cell;
 						.header{
@@ -650,6 +654,15 @@
                                 }
                             }
                         }
+					}
+				}
+				.vtr-widget-hardware-scan {
+					.hardwarescan-background {
+						.cancel-check {
+							.cancel-check-text{
+							color: $gaming_light_blue !important;
+							}
+						}
 					}
 				}
 			}
@@ -784,6 +797,13 @@
 						}
 						.battery-conditions-tips{
 							color: $gaming_grey_lightest;
+						}
+						.feature-note  {
+							background: $gaming-Darkslate-blue;
+							border: none;
+							p {
+								color: $gaming_lightest !important;
+							}
 						}
 					}
 				}

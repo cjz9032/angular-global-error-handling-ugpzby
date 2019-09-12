@@ -49,6 +49,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	notificationSubscription: Subscription;
 	region = 'us';
 	language = 'en';
+	intervalId: number;
+	interval = 15000;
 
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -104,6 +106,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			});
 		}
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams.isShowMore;
+		this.pullCHS();
 	}
 
 	ngAfterViewInit() {
@@ -119,6 +122,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (this.wifiSecurity) {
 			this.wifiSecurity.refresh().catch((err) => this.handleError(err));
 		}
+		if (!this.intervalId) {
+			this.pullCHS();
+		}
 	}
 
 	ngOnDestroy() {
@@ -132,6 +138,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+		window.clearInterval(this.intervalId);
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
@@ -221,5 +228,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (err && err instanceof PluginMissingError) {
 			this.dialogService.wifiSecurityErrorMessageDialog();
 		}
+	}
+
+	private pullCHS(): void {
+		this.intervalId = window.setInterval(() => {
+			this.homeSecurity.refresh().then(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+			}).catch((err: Error) => this.handleError(err));
+		}, this.interval);
 	}
 }
