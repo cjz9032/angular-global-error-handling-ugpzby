@@ -110,10 +110,12 @@ export class AppsForYouService {
 					// TODO: Mock data, please remove before release
 					switch (appGuid) {
 						case AppsForYouEnum.AppGuidAdobeCreativeCloud:
+							this.cmsAppDetails.Title = 'Adobe Creative Cloud Photography Plan (20GB)';
 							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeWeb;
 							break;
 						case AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant:
 						default:
+							this.cmsAppDetails.Title = 'Lenovo Migration Assistant';
 							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeDesktop;
 							break;
 					}

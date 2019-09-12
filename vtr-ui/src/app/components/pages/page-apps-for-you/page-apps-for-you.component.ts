@@ -219,6 +219,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	async initAppDetails(appDetails: AppDetails) {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
+		this.title = appDetails.title;
 		if (appDetails.installtype.title === AppsForYouEnum.AppTypeWeb) {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
@@ -239,7 +240,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	async clickInstallButton() {
 		switch (this.installButtonStatus) {
 			case this.installButtonStatusEnum.SEEMORE:
-				this.appsForYouService.openSeeMoreUrl(this.appDetails.downloadlink);
+				this.appsForYouService.openSeeMoreUrl();
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
 				const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
