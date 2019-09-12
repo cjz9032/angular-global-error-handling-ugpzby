@@ -15,6 +15,7 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 	@Output() addAppToList = new EventEmitter<boolean>();
 	public loading = true;
 	public loadingNoApps = false;
+	public statusitem;
 	constructor() { }
 
 	ngOnInit() {
@@ -32,6 +33,7 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 	}
 
 	addAppData(event: any) {
+		this.statusitem = event.target.checked;
 		this.addAppToList.emit(event);
 	}
 
