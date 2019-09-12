@@ -17,5 +17,6 @@ export enum AppsForYouEnum {
 	SeeMoreUrlAdobeCreativeCloud = 'https://www.adobepartneroffer.com/[SerialNumber]',
 	AppTypeDesktop = 'Desktop App',
 	AppTypeWindowStore = 'Windows Store App',
-	AppTypeWeb = 'Web App'
+	AppTypeWeb = 'Web App',
+	AdobeFamilyNameFilter = 'Yoga A940-271CB'
 }

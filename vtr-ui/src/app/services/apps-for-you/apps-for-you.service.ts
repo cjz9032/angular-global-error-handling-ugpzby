@@ -5,7 +5,7 @@ import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { DeviceService } from '../device/device.service';
 import { CMSService } from '../cms/cms.service';
 import { LoggerService } from '../logger/logger.service';
-import { AppItem } from '../modern-preload/modern-preload.service';
+import { LocalInfoService } from '../local-info/local-info.service';
 
 export class Category {
 	id: string; 	// app category id
@@ -59,7 +59,8 @@ export class AppsForYouService {
 		private cmsService: CMSService,
 		private deviceService: DeviceService,
 		private commonService: CommonService,
-		private logService: LoggerService
+		private logService: LoggerService,
+		private localInfoService: LocalInfoService,
 	) {
 		this.initialize();
 		this.systemUpdateBridge = vantageShellService.getSystemUpdate();
@@ -72,6 +73,8 @@ export class AppsForYouService {
 	private cmsAppDetails: any;
 	private culture: any;
 	private serialNumber: string;
+	private familyName: string;
+	private localInfo: any;
 	systemUpdateBridge: any;
 
 	private initialize() {
@@ -81,12 +84,19 @@ export class AppsForYouService {
 			this.deviceService.getMachineInfo().then((info) => {
 				machineInfo = info;
 				this.serialNumber = machineInfo.serialnumber;
+				this.familyName = machineInfo.familyName;
 				this.isInitialized = true;
 			});
 		} else {
 			this.serialNumber = machineInfo.serialnumber;
+			this.familyName = machineInfo.familyName;
 			this.isInitialized = true;
 		}
+		this.localInfoService.getLocalInfo().then(result => {
+			this.localInfo = result;
+		}).catch(e => {
+			console.log(e);
+		});
 	}
 
 	getAppDetails(appGuid) {
@@ -211,6 +221,17 @@ export class AppsForYouService {
 		if (window && this.serialNumber) {
 			const url = AppsForYouEnum.SeeMoreUrlAdobeCreativeCloud.replace('[SerialNumber]', this.serialNumber);
 			window.open(url);
+		}
+	}
+
+	// Wether or not to show 'adobe redemption' in user drop down menu
+	public showAdobeMenu() {
+		if (this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
+			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 &&
+			this.localInfo.indexOf('SMB') !== -1 && this.localInfo.indexOf('consumer') !== -1)  {
+			return true;
+		} else {
+			return false;
 		}
 	}
 

@@ -28,6 +28,7 @@ import { EMPTY } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -61,7 +62,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	isSMode: boolean;
 
 	UnreadMessageCount = {
-		totalMessage: 2,
+		totalMessage: 0,
 		lmaMenuClicked: false,
 		adobeMenuClicked: false
 	};
@@ -88,6 +89,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
+		public appsForYouService: AppsForYouService
 
 	) {
 		localInfoService
@@ -211,6 +213,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
 			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
 			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
+		} else {
+			if (this.appsForYouService.showAdobeMenu()) {
+				this.UnreadMessageCount.totalMessage = 2;
+			} else {
+				this.UnreadMessageCount.totalMessage = 1;
+			}
 		}
 
 		this.hardwareScanService.getPluginInfo()

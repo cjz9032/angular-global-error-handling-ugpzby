@@ -262,7 +262,8 @@
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
 								<span class="unread-tag" *ngIf="!UnreadMessageCount.lmaMenuClicked"></span>
 							</a>
-							<a class="dropdown-item link link-lma"
+							<a *ngIf="appsForYouService.showAdobeMenu()"
+							class="dropdown-item link link-lma"
 							vtrMetrics
 							id="menu-main-lnk-open-adobe"
 							attr.aria-label="menu-main-lnk-open-adobe"
