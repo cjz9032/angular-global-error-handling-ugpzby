@@ -3,8 +3,7 @@ import {
 } from '@angular/core';
 import {
 	SecurityAdvisor,
-	EventTypes,
-	HomeProtectionDeviceInfo
+	EventTypes
 } from '@lenovo/tan-client-bridge';
 import mitt from 'mitt';
 
@@ -151,36 +150,6 @@ export class SecurityAdvisorMockService {
 				return Promise.all([p1, p2]);
 			},
 			cancelGetWifiSecurityState() {}
-		},
-		homeProtection: {
-			mitt: new mitt(),
-			chsConsoleUrl: 'string',
-			status: 'joined',
-			familyId: 'string',
-			nickName: 'string',
-			imageUrl: 'string',
-			launchConsole() {
-				return Promise.resolve(true);
-			},
-			joinGroupBy(code: string) {
-				return Promise.resolve(true);
-			},
-			quitFromGroup() {
-				return Promise.resolve(true);
-			},
-			updateActivateDeviceState(res: HomeProtectionDeviceInfo): void {},
-			getActivateDeviceState(callback: Function): void {},
-			on(type, handler) {
-				return this;
-			},
-			off() {
-				return this;
-			},
-			refresh() {
-				let p1 = new Promise((resolve) => {});
-				let p2 = new Promise((resolve) => {});
-				return Promise.all([p1, p2]);
-			}
 		},
 		setScoreRegistry() {
 			return Promise.resolve(true);

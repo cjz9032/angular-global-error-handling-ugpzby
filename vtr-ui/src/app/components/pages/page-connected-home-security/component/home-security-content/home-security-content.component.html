@@ -3,10 +3,8 @@
 		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading">{{'security.homeprotection.homesecurity.title' | translate}}</div>
-					<div class="text-regular">
-						{{'security.homeprotection.homesecurity.titleDescription' | translate}}
-					</div>
+					<div class="heading" [innerHTML]="'security.homeprotection.homesecurity.title' | translate"></div>
+					<div class="text-regular" [innerHTML]="'security.homeprotection.homesecurity.titleDescription' | translate"></div>
 				</div>
 			</div>
 		</div>
@@ -33,9 +31,7 @@
 									</div>
 								</div>
 								<div class="col">
-									<div class="text-regular">
-										{{'security.homeprotection.homesecurity.homeSecurityAffect1' | translate}}
-									</div>
+									<div class="text-regular" [innerHTML]="'security.homeprotection.homesecurity.homeSecurityAffect1' | translate"></div>
 								</div>
 							</div>
 						</div>
@@ -52,9 +48,7 @@
 									</div>
 								</div>
 								<div class="col">
-									<div class="text-regular">
-										{{'security.homeprotection.homesecurity.homeSecurityAffect2' | translate}}
-									</div>
+									<div class="text-regular" [innerHTML]="'security.homeprotection.homesecurity.homeSecurityAffect2' | translate"></div>
 								</div>
 							</div>
 						</div>
@@ -71,10 +65,7 @@
 									</div>
 								</div>
 								<div class="col">
-									<div class="text-regular">
-										{{'security.homeprotection.homesecurity.homeSecurityAffect3' | translate}}
-									</div>
-
+									<div class="text-regular" [innerHTML]="'security.homeprotection.homesecurity.homeSecurityAffect3' | translate"></div>
 								</div>
 							</div>
 						</div>
@@ -90,9 +81,7 @@
 									</div>
 								</div>
 								<div class="col">
-									<div class="text-regular">
-										{{'security.homeprotection.homesecurity.describe' | translate}}
-									</div>
+									<div class="text-regular" [innerHTML]="'security.homeprotection.homesecurity.describe' | translate"></div>
 								</div>
 							</div>
 						</div>
@@ -111,7 +100,7 @@
 						</div>
 					</div>
 					<div class="col">
-						<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
+						<div class="sub-heading" [innerHTML]="'security.homeprotection.homesecurity.subtitle' | translate"></div>
 						<div class="text-regular" *vtrTranslate="'security.homeprotection.homesecurity.subtitleDescribe' | translate">
 							<a vtrMetrics  id="sa-ws-lnk-CHS-here"
 								metricsEvent="ArticleClick"
@@ -131,8 +120,8 @@
 		<div class="divider" *ngIf="page === 'homeSecurity'"></div>
 		<div class="home-security-card row" *ngIf="page === 'homeSecurity'">
 			<vtr-home-security-card
-			[location]="location"
-			[permission]="permission"
+				[location]="location"
+				[permission]="permission"
 			></vtr-home-security-card>
 		</div>
 	</div>

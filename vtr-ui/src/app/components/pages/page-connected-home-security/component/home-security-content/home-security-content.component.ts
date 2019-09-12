@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
@@ -10,7 +10,7 @@ import { HomeSecurityLocation } from 'src/app/data-models/home-security/home-sec
 	templateUrl: './home-security-content.component.html',
 	styleUrls: ['./home-security-content.component.scss']
 })
-export class HomeSecurityContentComponent {
+export class HomeSecurityContentComponent implements OnInit {
 	@Input() page: string;
 	@Input() location: HomeSecurityLocation;
 	@Input() permission: any;
@@ -22,7 +22,9 @@ export class HomeSecurityContentComponent {
 		public dialogService: DialogService,
 		public modalService: NgbModal,
 		private cmsService: CMSService,
-	) {
+	) {	}
+
+	ngOnInit(): void {
 		this.fetchCMSArticles();
 	}
 

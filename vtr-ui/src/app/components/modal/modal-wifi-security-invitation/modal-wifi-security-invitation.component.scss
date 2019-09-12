@@ -136,4 +136,8 @@
 			background-color: $text_light;
 		}
 	}
+
+	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+		color: $shade_light;
+	}
 }

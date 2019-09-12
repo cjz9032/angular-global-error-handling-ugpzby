@@ -36,13 +36,6 @@ export class WidgetMcafeeComponent implements OnInit {
 		['tr', 'Tr-TR'],
 		['*', 'En-US'],
 	]);
-	statusList = [{
-		status: 'disabled',
-		title: 'security.antivirus.common.virusScan',
-	}, {
-		status: 'disabled',
-		title: 'security.antivirus.common.firewall',
-	}];
 
 	constructor(
 		public translate: TranslateService,
