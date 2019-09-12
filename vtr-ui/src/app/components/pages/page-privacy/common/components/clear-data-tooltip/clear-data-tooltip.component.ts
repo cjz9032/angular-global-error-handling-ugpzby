@@ -2,7 +2,6 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { Features } from '../nav-tabs/nav-tabs.service';
 import { ClearDataService } from './clear-data.service';
 import { TooltipComponent } from '../tooltip/tooltip.component';
-import { BreachedAccount } from '../../services/breached-accounts.service';
 
 @Component({
 	selector: 'vtr-clear-data-tooltip',

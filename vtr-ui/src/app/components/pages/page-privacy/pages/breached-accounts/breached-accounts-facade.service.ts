@@ -45,9 +45,7 @@ export class BreachedAccountsFacadeService {
 	);
 	breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
 
-	userEmail$ = this.emailScannerService.userEmail$.pipe(
-		startWith(this.safeStorageService.getEmail())
-	);
+	userEmail$ = this.emailScannerService.userEmail$;
 
 	scanCounter$ = this.scanCounterService.getScanCounter();
 

@@ -51,7 +51,7 @@ export enum ErrorNames {
 	providedIn: 'root'
 })
 export class EmailScannerService {
-	private _userEmail$ = new BehaviorSubject<string>('');
+	private _userEmail$ = new BehaviorSubject<string>(this.safeStorageService.getEmail() || '');
 	userEmail$ = this._userEmail$.asObservable();
 
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();

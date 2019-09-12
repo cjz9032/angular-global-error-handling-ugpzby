@@ -24,6 +24,6 @@ export class ClearBreachesService implements ClearData {
 		this.storageService.removeItem(HASH_FOR_TOKEN_NAME);
 		this.storageService.removeItem(USER_EMAIL_HASH);
 
-		this.breachedAccountsService.getNewBreachedAccounts();
+		this.breachedAccountsService.resetBreachedAccounts(false);
 	}
 }

@@ -75,9 +75,7 @@ export class BreachedAccountsService implements OnDestroy {
 				tap((isFigleafReadyForCommunication) => this.resetBreachedAccounts(isFigleafReadyForCommunication)),
 				distinctUntilChanged()
 			),
-			this.getNewBreachedAccounts$.asObservable().pipe(
-				tap(() => this.resetBreachedAccounts(false)),
-			),
+			this.getNewBreachedAccounts$,
 			this.updateTriggersService.shouldUpdate$.pipe(
 				switchMap(() => this.communicationWithFigleafService.isFigleafReadyForCommunication$
 					.pipe(
@@ -136,7 +134,7 @@ export class BreachedAccountsService implements OnDestroy {
 		return EMPTY;
 	}
 
-	private resetBreachedAccounts(isFigleafReadyForCommunication) {
+	resetBreachedAccounts(isFigleafReadyForCommunication) {
 		if (!isFigleafReadyForCommunication) {
 			this.onGetBreachedAccounts.next({breaches: [], error: null, reset: true});
 		}
