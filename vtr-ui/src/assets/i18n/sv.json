@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Blinkningshastighet"
-                },
-                "default": {
-                    "title": "ANGE SOM STANDARD"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”."
                 },
                 "powerSettings": {
                     "title": "Ströminställningar",
@@ -1184,7 +1181,7 @@
                     "more": "MER",
                     "control1": "HANTERING AV STYRPLATTA",
                     "control2": "HANTERING AV MUS",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT-KONTROLLER"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
                     "description4": "2. Om datorn är i viloläge eller avstängd. Beröringsfri inloggning fungerar inte.",
                     "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Bakåt",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILLBAKA",
-                "why": "Varför McAfee?",
-                "recommends": "Lenovo rekommenderar McAfee för att skydda alla dina enheter med",
-                "award": "prisbelönt skydd mot de senaste onlinehoten, inräknat ransomware och skadlig programvara",
-                "dedicated": "specialanpassade säkerhetsfunktioner som kontinuerligt ger bättre resultat än Defender och andra ledande antivirusprogram",
-                "deviceToCloud": "enhet-till-moln-teknik som inte gör din dator långsammare",
-                "poweredBy": "Från McAfee",
-                "privacyTerms": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
-                "mcafeePremium": "McAfee premiumskydd",
+                "recommends": "Lenovo rekommenderar <b>McAfee<b> för att skydda alla dina enheter",
+                "award": "Prisbelönt antivirusprogram",
+                "mcafeePremium": "McAfee LiveSafe-skydd",
                 "protectedBy": "Du skyddas för närvarande med {{protectedName}}. Men du kan få ett bättre skydd med McAfee LiveSafe.",
                 "virusScan": "VIRUSKONTROLL",
                 "firewall": "BRANDVÄGG",
                 "disabled": "INAKTIVERAD",
-                "enableVirusScan": "AKTIVERA VIRUSKONTROLL",
-                "enablenFirewall": "AKTIVERA BRANDVÄGG",
-                "enableFirewall": "AKTIVERA BRANDVÄGG"
+                "awardText": "Skydda din nya Lenovo-dator med ett testat och beprövat skydd mot onlinehot",
+                "performance": "Stabil prestanda",
+                "performanceText": "Konsekvent, exakt och tillförlitligt antivirusprogram som du kan lita på",
+                "Blazing": "Blixtsnabb hastighet",
+                "BlazingText": "Optimerat antivirusprogram som inte saktar ned eller stör din Lenovo Vantage-upplevelse",
+                "privacyTerms": "/   <tag>Sekretesspolicy</tag>  |  <tag>Användarvillkor</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Inte optimalt skyddad",
-                "subtitle": "Du skyddas för närvarande med Windows Defender.Men du kan få ett bättre skydd med McAfee LiveSafe. Läs mer nedan.",
-                "learnMore": "LÄS MER OM McAfee",
-                "windowsProtected": "Windows Defender grundskydd",
-                "windowsSubtitle": "Windows Defender ger ett grundskydd av din enhet"
+                "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt</b>.",
+                "windowsSubtitle": "Windows Defender grundskydd",
+                "topTip": "Bästa tipsen för säkerhet online",
+                "topContent": "Se hur du kan försvara dig mot dagens största onlinehot",
+                "view": "SE TIPS",
+                "buyNow": "Köp nu",
+                "buy": "Köp, ladda ned och installera McAfee virusskydd i dag för att dra nytta av dessa säkerhetsfunktioner i bankklass",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Skydd av hemnätverk",
+                "private": "Privat och anonym surfning",
+                "everyDevice": "Skydd av alla enheter",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Du skyddas för närvarande med McAfee LiveSafe",
-                "valid": "Giltig till",
-                "upgrade": "Uppgradera nu",
-                "launch": "STARTA McAfee",
-                "getMacfee": "KÖP McAfee",
-                "topBenefits": "Största fördelarna med McAfee LiveSafe",
+                "title": "Antivirus",
+                "subtitle": "Du skyddas för närvarande av McAfee LiveSafe – endast {{remainingDays}} dagar kvar! Prenumerera nu för att förlänga ditt skydd.",
+                "launch": "Starta McAfee",
+                "getMacfee": "Köp McAfee",
+                "topBenefits": "Varför <b>Lenovo rekommenderar McAfee</b> för att skydda alla dina enheter",
                 "awardTitle": "Prisbelönt antivirusprogram",
-                "awardSubtitle": "Blockerar virus, skadlig programvara, ransomware, spionprogram, oönskade program och annat på din dator.",
-                "encryptedTitle": "Krypterad lagring",
-                "encryptedSubtitle": "Skydda känsliga filer genom att lagra dem på datorn med 128-bitars kryptering.",
-                "identityTitle": "Skydd mot identitetsstöld",
-                "identitySubtitle": "Vidta åtgärder för att skydda din identitet mot stöld och bedrägeri.",
-                "supportTitle": "GRATIS kundsupport",
-                "supportSubtitle": "Du har tillgång till support via telefon, chatt och online under hela din prenumeration.",
-                "antiTitle": "Skräppostfilter",
-                "antiSubtitle": "Blockerar farliga meddelanden innan de når din inkorg genom att ta bort e-post som kan innehålla riskabla länkar och virus.",
-                "virusTitle": "Löfte om virusskydd",
-                "virusSubtitle": "Om din dator smittas av virus kan en McAfee-expert ta bort det via fjärråtkomst till din dator.",
-                "parentalTitle": "Föräldrakontroller",
-                "parentalSubtitle": "Blockerar webbplatser och sökresultat som du inte vill att barnen ska se. Du kan också ange gränser för hur länge de får vara online.",
-                "license": "Licensen är giltig till",
-                "trial": "Provversionen är giltig till"
+                "awardSubtitle": "Förhindra att din dator smittas av virus, skadlig kod och ransomware.",
+                "supportTitle": "Teknisk expertsupport utan kostnad dygnet runt ",
+                "supportSubtitle": "Vårt specialutbildade säkerhetsteam ger dig sinnesro och hjälp dygnet runt",
+                "trialSubtitle": "Du skyddas för närvarande med en 30-dagars provprenumeration på McAfee LiveSafe – endast {{remainingDays}} dagar kvar! Prenumerera nu för att förlänga ditt skydd.",
+                "discount": "100 % pengarna tillbaka-garanti",
+                "trialSubscribe": "Provprenumerationen upphör om {{remainingDays}} dagar – PRENUMERERA NU",
+                "subscribe": "Prenumerationen upphör om {{remainingDays}} dagar – PRENUMERERA NU",
+                "MultiTitle": "Skydd av flera enheter",
+                "MultiSubtitle": "Skydda alla dina enheter – datorer, mobiler och surfplattor – perfekt för familjer ",
+                "networkTitle": "Skydd av hemnätverk",
+                "networkSubtitle": "Skydda din brandvägg och hindra hackare från att komma åt ditt hemnätverk",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Lagra och hantera alla dina onlinelösenord på en enda säker plats",
+                "onlineTitle": "Sekretess online",
+                "onlineSubtitle": "Anslut med kryptering i bankklass för att skydda alla dina onlineaktiviteter, också i offentliga Wi-Fi-nätverk och öppna nätverk ",
+                "register": "McAfee-registrering",
+                "virusScan": "Virusgenomsökning",
+                "firewall": "Personlig brandvägg",
+                "antiSpam": "McAfee skräppostfilter",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee sårbarhetssökning ",
+                "report": "Din hotskyddsrapport ",
+                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det.",
+                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det.",
+                "subscribeNow": "Prenumerera nu",
+                "fileScan": "Filer skannade",
+                "Viruses": "Virus eliminerade",
+                "blocked": "Skadliga anslutningar blockerade",
+                "shredded": "Filer strimlade",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "ger ett grundskydd av din enhet"
@@ -2333,6 +2355,8 @@
         "OtherSettings": "Andra inställningar",
         "usageStatistics": "Användningsstatistik",
         "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Delar statistiska data med Lenovo för att förbättra tillförlitlighet och design, och för att optimera funktioner på din dator.",
         "Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
     },
@@ -2407,6 +2431,7 @@
         "errorNoOptionSelected": "Du måste välja ett alternativ.",
         "offline": "Enheten körs offline. Anslut till internet",
         "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
+        "doNotUse": "Använd inte datorn förrän testet har slutförts",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installationen misslyckades. Försök igen.",
+                "networkError": "Nätverksfel.",
+                "installationCancelled": "Installationen avbröts."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-inlösen",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installera",
+                "installing": "Installerar",
+                "installed": "Installerad",
+                "launch": "Starta",
+                "seeMore": "Mer information"
+            },
+            "fieldName": {
+                "description": "Beskrivning",
+                "screenshots": "Skärmbilder",
+                "additionalInformation": "Mer information",
+                "by": "Av:",
+                "updated": "Uppdaterad:",
+                "type": "Typ:",
+                "category": "Kategori:",
+                "legalAgreement": "Avtal",
+                "readMore": "Läs mer",
+                "readLess": "Läs mindre"
+            }
+        }
     }
 }

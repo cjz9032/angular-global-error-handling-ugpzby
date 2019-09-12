@@ -12,6 +12,7 @@ export enum LocalStorageKey {
 	SecurityOtherAntiVirus = '[LocalStorageKey] SecurityOtherAntiVirus',
 	SecurityOtherFirewall = '[LocalStorageKey] SecurityOtherFirewall',
 	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
+	SecurityMcAfeeMetricList = '[LocalStorageKey] SecurityMcAfeeMetricList',
 	SecurityWindowsDefenderStatusList = '[LocalStorageKey] SecurityWindowsDefenderStatusList',
 	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
 	SecurityOthersFirewallStatusList = '[LocalStorageKey] SecurityOthersFirewallStatusList',
@@ -172,5 +173,7 @@ export enum LocalStorageKey {
 	ExpressChargingCapability = '[LocalStorageKey] ExpressChargingCapability',
 	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability',
 	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
-	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability'
+	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability',
+	SmartAssistCache = '[LocalStorageKey] SmartAssistCache',
+	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache'
 }

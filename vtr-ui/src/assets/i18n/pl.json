@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”."
                 },
                 "powerSettings": {
                     "title": "Ustawienia zasilania",
@@ -1181,7 +1181,7 @@
                     "more": "WIĘCEJ",
                     "control1": "PRZYCISKI PANELU DOTYKOWEGO",
                     "control2": "PRZYCISKI MYSZY",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "PRZYCISKI TRACKPOINTA"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. Funkcja może nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
                     "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony. Logowanie bez dotyku nie będzie działać.",
                     "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta, tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Jeśli tryb samolotowy komputera jest włączony, te funkcje są wyłączone."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Przejdź do ustawień funkcji Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Wstecz",
@@ -1679,53 +1684,73 @@
             "common": {
                 "title": "Antywirus",
                 "back": "WSTECZ",
-                "why": "Dlaczego McAfee?",
-                "recommends": "Lenovo zaleca firmie McAfee ochronę wszystkich urządzeń za pomocą:",
-                "award": "Nagradzana ochrona przed najnowszymi zagrożeniami internetowymi, w tym oprogramowaniem ransomware i malware",
-                "dedicated": "Wyspecjalizowane zabezpieczenie, które konsekwentnie przewyższa Defender i innych wiodących dostawców AV",
-                "deviceToCloud": "Urządzenie z technologią chmury, która nie spowalnia komputera",
-                "poweredBy": "Zasilany przez McAfee",
-                "privacyTerms": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
-                "mcafeePremium": "Ochrona McAfee Premium",
+                "recommends": "W celu ochrony wszystkich urządzeń Lenovo zaleca <b>McAfee<b>",
+                "award": "Nagradzane oprogramowanie antywirusowe",
+                "mcafeePremium": "Ochrona McAfee LiveSafe",
                 "protectedBy": "Obecnie korzystasz z ochrony oprogramowania {{protectedName}}. Program McAfee LiveSafe może jednak zapewnić lepszą ochronę.",
                 "virusScan": "SKANOWANIE ANTYWIRUSOWE",
                 "firewall": "ZAPORA",
                 "disabled": "WYŁĄCZONO",
-                "enableVirusScan": "WŁĄCZ SKANOWANIE ANTYWIRUSOWE",
-                "enablenFirewall": "WŁĄCZ ZAPORĘ",
-                "enableFirewall": "WŁĄCZ ZAPORĘ"
+                "awardText": "Chroń swój nowy komputer Lenovo dzięki przetestowanemu i sprawdzonemu zabezpieczeniu przed zagrożeniami internetowymi",
+                "performance": "Doskonała wydajność",
+                "performanceText": "Spójny, precyzyjny i niezawodny program antywirusowy, o którym wiesz, że zapewni ci bezpieczeństwo",
+                "Blazing": "Błyskawiczna prędkość",
+                "BlazingText": "Zoptymalizowany program antywirusowy, który nie spowalnia ani nie zakłóca pracy Lenovo Vantage",
+                "privacyTerms": "/   <tag>Polityka prywatności</tag>  |  <tag>Warunki świadczenia usług</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Brak optymalnej ochrony",
-                "subtitle": "Obecnie jesteś chroniony przez Windows Defender.Jednak możesz być lepiej chroniony dzięki McAfee LiveSafe. Dowiedz się więcej poniżej.",
-                "learnMore": "DOWIEDZ SIĘ WIĘCEJ O McAfee",
-                "windowsProtected": "Podstawowa ochrona systemu Windows Defender",
-                "windowsSubtitle": "Windows Defender oferuje podstawową ochronę urządzenia"
+                "optimallyProtected": "Wydaje się, że obecnie korzystasz z programu Windows Defender. Nie jest to zły wybór, jednak by zapewnić najwyższy poziom zabezpieczenia przed ransomware, złośliwym oprogramowaniem i wirusami połączyliśmy siły z <b>McAfee</b> aby zaoferować ci wielokrotnie nagradzany program, który pomaga <b>chronić to, co jest ważne.</b>",
+                "windowsSubtitle": "Podstawowa ochrona Windows Defender",
+                "topTip": "Najważniejsze wskazówki w zakresie bezpieczeństwa w sieci",
+                "topContent": "Dowiedz się, jak możesz się bronić przed największymi współczesnymi zagrożeniami internetowymi",
+                "view": "ZAPOZNAJ SIĘ ZE WSKAZÓWKAMI",
+                "buyNow": "Kup teraz",
+                "buy": "Już dziś kup, pobierz i zainstaluj program antywirusowy McAfee, aby korzystać z zabezpieczeń stosowanych przez banki",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Ochrona sieci domowej",
+                "private": "Prywatne i anonimowe przeglądanie stron",
+                "everyDevice": "Ochrona każdego urządzenia",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Obecnie korzystasz z ochrony McAfee LiveSafe",
-                "valid": "Ważne do",
-                "upgrade": "Uaktualnij teraz",
+                "title": "Oprogramowanie antywirusowe",
+                "subtitle": "Obecnie jesteś chroniony dzięki McAfee LiveSafe – pozostało już tylko {{remainingDays}} dni! Subskrybuj już teraz, aby przedłużyć swoją ochronę.",
                 "launch": "Uruchom program McAfee",
                 "getMacfee": "Pobierz program McAfee",
-                "topBenefits": "Najważniejsze zalety oprogramowania McAfee LiveSafe",
-                "awardTitle": "Nagradzany antywirus",
-                "awardSubtitle": "Blokuje wirusy, szkodliwe oprogramowanie, programy typu ransomware i spyware, niechciane aplikacje i inne zagrożenia dla komputera.",
-                "encryptedTitle": "Szyfrowany magazyn",
-                "encryptedSubtitle": "Zachowaj prywatność poufnych plików, przechowując je na komputerze chronionym 128-bitowym szyfrowaniem.",
-                "identityTitle": "Ochrona przed kradzieżą tożsamości",
-                "identitySubtitle": "Przejmij kontrolę nad ochroną swojej tożsamości przed kradzieżą i oszustwami.",
-                "supportTitle": "BEZPŁATNE wsparcie dla klientów",
-                "supportSubtitle": "Pomoc techniczna przez telefon, czat i zasoby internetowe przez cały okres subskrypcji.",
-                "antiTitle": "Antyspam",
-                "antiSubtitle": "Blokuje niebezpieczne wiadomości e-mail jeszcze zanim trafią one do Twojej skrzynki, usuwając wszelkie wiadomości, które mogą zawierać niebezpieczne łącza i wirusy.",
-                "virusTitle": "Gwarancja ochrony antywirusowej",
-                "virusSubtitle": "Nie musisz się już o nic martwić — jeśli Twój komputer złapie wirusa, specjalista z firmy McAfee usunie infekcję, korzystając z dostępu zdalnego.",
-                "parentalTitle": "Kontrola rodzicielska",
-                "parentalSubtitle": "Blokuj strony internetowe i wyniki wyszukiwania, których nie powinny widzieć Twoje dzieci. Możesz też ustawiać limity czasu spędzanego przez dzieci w Internecie.",
-                "license": "Licencja ważna do",
-                "trial": "Okres próbny ważny do"
+                "topBenefits": "Dlaczego <b>Lenovo zaleca McAfee</b> w celu ochrony wszystkich twoich urządzeń",
+                "awardTitle": "Nagradzane oprogramowanie antywirusowe",
+                "awardSubtitle": "Zapobiega zainfekowaniu komputera przez wirusy, złośliwe oprogramowanie i ransomware.",
+                "supportTitle": "Bezpłatne specjalistyczne wsparcie techniczne 24/7 ",
+                "supportSubtitle": "Możesz skorzystać z całodobowej pomocy, a dzięki naszemu wyspecjalizowanemu zespołowi ds. bezpieczeństwa śpisz spokojnie",
+                "trialSubtitle": "Obecnie jesteś chroniony dzięki 30-dniowej wersji próbnej McAfee LiveSafe – pozostało już tylko {{remainingDays}} dni! Subskrybuj już teraz, aby przedłużyć swoją ochronę.",
+                "discount": "100% gwarancja zwrotu pieniędzy",
+                "trialSubscribe": "Wersja próbna wygasa za {{remainingDays}} dni – SUBSKRYBUJ TERAZ",
+                "subscribe": "Subskrypcja wygasa za {{remainingDays}} dni – SUBSKRYBUJ TERAZ",
+                "MultiTitle": "Ochrona wszystkich urządzeń",
+                "MultiSubtitle": "Chroni wszystkie twoje urządzenia – komputery, telefony i tablety – doskonałe rozwiązanie dla całej rodziny ",
+                "networkTitle": "Ochrona sieci domowej",
+                "networkSubtitle": "Wzmocnij firewall i powstrzymaj hakerów przed dostępem do sieci domowej",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "W jednym miejscu zabezpiecz przechowywane hasła internetowe i nimi zarządzaj",
+                "onlineTitle": "Prywatność w Internecie",
+                "onlineSubtitle": "Łącz się za pomocą szyfrowania, takiego jak stosowane przez banki, i zabezpiecz wszystkie swoje działania w sieci, nawet w przypadku korzystania z publicznego Wi-Fi lub otwartych sieci ",
+                "register": "Rejestracja McAfee",
+                "virusScan": "Skanowanie antywirusowe",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "Skaner podatności McAfee ",
+                "report": "Twój raport zabezpieczeń ",
+                "trialContent": "W pełni wykorzystujesz wersję próbną programu antywirusowego McAfee. Ale do wygaśnięcia okresu próbnego pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj.",
+                "subscribeContent": "W pełni wykorzystujesz program antywirusowy McAfee. Ale do wygaśnięcia subskrypcji pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj.",
+                "subscribeNow": "Subskrybuj teraz",
+                "fileScan": "Przeskanowane pliki",
+                "Viruses": "Usunięte wirusy",
+                "blocked": "Zablokowane nieprawidłowe połączenia",
+                "shredded": "Bezpiecznie zniszczone pliki",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "oferuje podstawową ochronę urządzenia"
@@ -2330,6 +2355,8 @@
         "OtherSettings": "Inne ustawienia",
         "usageStatistics": "Statystyki użytkowania",
         "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
         "Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
     },
@@ -2404,6 +2431,7 @@
         "errorNoOptionSelected": "Wybierz opcję.",
         "offline": "To urządzenie działa w trybie offline, połącz je z Internetem",
         "doNotSuspend": "Nie można przerywać wykonywania tych testów! Podczas skanowania nie zamykaj ani nie minimalizuj tej aplikacji, i nie wstrzymuj ani nie wyłączaj komputera.",
+        "doNotUse": "Nie używaj komputera aż do zakończenia testu",
         "customize": {
             "name": "Dostosuj",
             "test": "Dostosuj test",
@@ -2484,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalacja nie powiodła się. Spróbuj ponownie.",
+                "networkError": "Błąd sieci.",
+                "installationCancelled": "Instalacja anulowana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Aktywacja Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Zainstaluj",
+                "installing": "Instalowanie",
+                "installed": "Zainstalowane",
+                "launch": "Uruchom",
+                "seeMore": "Zobacz więcej"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Zrzuty ekranu",
+                "additionalInformation": "Dodatkowe informacje",
+                "by": "Autor:",
+                "updated": "Zaktualizowano:",
+                "type": "Typ:",
+                "category": "Kategoria:",
+                "legalAgreement": "Umowa prawna",
+                "readMore": "Dowiedz się więcej",
+                "readLess": "Czytaj mniej"
+            }
+        }
     }
 }

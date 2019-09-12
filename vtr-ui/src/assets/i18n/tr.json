@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Yanıp Sönme Düzeyi"
-                },
-                "default": {
-                    "title": "VARSAYILANA AYARLA"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur."
                 },
                 "powerSettings": {
                     "title": "Güç Ayarları",
@@ -1184,7 +1181,7 @@
                     "more": "DAHA FAZLA",
                     "control1": "TOUCHPAD DENETİMLERİ",
                     "control2": "FARE DENETİMLERİ",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT KONTROLLERİ"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
                     "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Sıfır Dokunma ile Oturum Açma kullanılamaz.",
                     "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Geri",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "Virüsten Koruma",
                 "back": "GERİ",
-                "why": "Neden McAfee?",
-                "recommends": "Lenovo, McAfee'nin tüm cihazlarınızı korumasını önerir:",
-                "award": "Fidye yazılımları ve kötü amaçlı yazılımlar da dahil olmak üzere en yeni çevrimiçi tehditlere karşı ödüllü koruma",
-                "dedicated": "Defender ve diğer önde gelen AV sağlayıcılarını sürekli olarak geride bırakan özel güvenlik",
-                "deviceToCloud": "Bilgisayarınızı yavaşlatmayan cihazdan buluta teknolojisi",
-                "poweredBy": "McAfee Tarafından Desteklenmektedir",
-                "privacyTerms": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin",
-                "mcafeePremium": "McAfee Premium Koruma",
+                "recommends": "Lenovo, <b>McAfee<b>'nin tüm cihazlarınızı korumasını önerir",
+                "award": "Ödüllü virüsten koruma yazılımı",
+                "mcafeePremium": "McAfee LiveSafe Koruma",
                 "protectedBy": "Şu anda {{protectedName}} tarafından korunmaktasınız. Ancak McAfee LiveSafe ile daha da iyi korunabilirsiniz.",
                 "virusScan": "VİRÜS TARAMASI",
                 "firewall": "GÜVENLİK DUVARI",
                 "disabled": "DEVRE DIŞI",
-                "enableVirusScan": "VİRÜS TARAMASINI ETKİNLEŞTİR",
-                "enablenFirewall": "GÜVENLİK DUVARINI ETKİNLEŞTİR",
-                "enableFirewall": "GÜVENLİK DUVARINI ETKİNLEŞTİR"
+                "awardText": "Yeni Lenovo bilgisayarınızı çevrimiçi tehditlere karşı test edilmiş, kanıtlanmış araçlarla koruyun",
+                "performance": "Çok sağlam performans",
+                "performanceText": "Tutarlı, hassas ve güvenilir virüsten koruma yazılımıyla güvenliğinizi sağlayın",
+                "Blazing": "Yıldırım hızında",
+                "BlazingText": "Lenovo Vantage deneyiminizi yavaşlatmayacak veya kesintiye uğratmayacak şekilde iyileştirilmiş virüsten koruma yazılımı",
+                "privacyTerms": "/   <tag>Gizlilik İlkesi</tag>  |  <tag>Hizmet Koşulları</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "En İyi Şekilde Korunmuyor",
-                "subtitle": "Şu anda Windows Defender tarafından korunuyorsunuz.Ancak, McAfee LiveSafe ile daha iyi korunabilirsiniz. Aşağıdan daha fazla bilgi edinin.",
-                "learnMore": "McAfee HAKKINDA DAHA FAZLA BİLGİ EDİNİN",
-                "windowsProtected": "Windows Defender temel koruması",
-                "windowsSubtitle": "Windows Defender, cihazınız için temel koruma sunar"
+                "optimallyProtected": "Şu anda Windows Defender kullandığınız görülüyor. Kötü bir seçim değil ancak fidye yazılımlarına, kötü amaçlı yazılımlara ve virüslere karşı nihai koruma sağlamak üzere, <b>önemli olan içeriğinizi koruyabilmeniz için</b> <b>McAfee</b> ile birlikte size ödüllü bir güvenlik çözümü sunuyoruz.",
+                "windowsSubtitle": "Windows Defender Temel Koruması",
+                "topTip": "Çevrimiçi güvenlik için en iyi ipuçları",
+                "topContent": "Günümüzün en büyük çevrimiçi tehditlerine karşı nasıl korunabileceğinizi öğrenin",
+                "view": "İPUÇLARINI GÖRÜN",
+                "buyNow": "Şimdi Satın Al",
+                "buy": "Banka düzeyinde güvenlik özelliklerinden yararlanmak için McAfee virüsten koruma yazılımını hemen satın alın, indirin ve yükleyin",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Ev ağı koruması",
+                "private": "Özel, anonim gezinme",
+                "everyDevice": "Her cihazda koruma",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Şu anda McAfee LiveSafe tarafından korunuyorsunuz",
-                "valid": "Son Geçerlilik Tarihi:",
-                "upgrade": "Şimdi Yükseltin",
-                "launch": "McAfee'yi BAŞLATIN",
-                "getMacfee": "McAfee'yi EDİNİN",
-                "topBenefits": "McAfee LiveSafe'in Başlıca Avantajları",
+                "title": "Virüsten Koruma",
+                "subtitle": "Şu anda McAfee LiveSafe tarafından korunuyorsunuz – yalnızca {{remainingDays}} gün kaldı! Korunma süresini uzatmak için hemen abone olun.",
+                "launch": "McAfee'yi Başlat",
+                "getMacfee": "McAfee'yi Edinin",
+                "topBenefits": "<b>Lenovo tüm cihazlarınızı korumak için neden McAfee</b>'yi öneriyor",
                 "awardTitle": "Ödüllü Virüsten Koruma Yazılımı",
-                "awardSubtitle": "Bilgisayarınızda virüsleri, kötü amaçlı yazılımları, fidye yazılımlarını, casus yazılımları, istenmeyen programları ve çok daha fazlasını engelleyin.",
-                "encryptedTitle": "Şifreli Depolama",
-                "encryptedSubtitle": "Hassas dosyaları 128-bit şifreleme ile PC'nizde depolayarak güvenliğini sağlayın.",
-                "identityTitle": "Kimlik hırsızlığı koruması",
-                "identitySubtitle": "Kimliğinizi hırsızlığa ve dolandırıcılığa karşı korumaya dikkat edin.",
-                "supportTitle": "ÜCRETSİZ Müşteri Desteği",
-                "supportSubtitle": "Aboneliğiniz boyunca telefonla, sohbet yoluyla veya çevrimiçi olarak yanınızdadır.",
-                "antiTitle": "İstenmeyen Posta Önleme",
-                "antiSubtitle": "Riskli bağlantılar ve virüsler içerebilecek e-postaları temizleyerek tehlikeli iletileri gelen kutunuza gelmeden engeller.",
-                "virusTitle": "Virüsten koruma taahhüdü",
-                "virusSubtitle": "Bilgisayarınıza virüs bulaşması halinde bir McAfee uzmanının virüsü temizlemek için uzaktan bilgisayarınıza erişim sağlayacağından emin olabilirsiniz.",
-                "parentalTitle": "Ebeveyn denetimleri",
-                "parentalSubtitle": "Çocuklarınızın görmesini istemediğiniz web sitelerini ve arama sonuçlarını engelleyin. Ayrıca çevrimiçi geçirecekleri zaman için sınırlamalar ayarlamanızı sağlar.",
-                "license": "Lisans Son Geçerlilik Tarihi:",
-                "trial": "Deneme Sürümü Son Geçerlilik Tarihi:"
+                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin.",
+                "supportTitle": "Uzmanlardan 7/24 ücretsiz teknik destek ",
+                "supportSubtitle": "Özel güvenlik ekibimizden gün boyu yardım alın ve içiniz rahat etsin",
+                "trialSubtitle": "Şu anda McAfee LiveSafe'in 30 günlük ücretsiz deneme sürümü tarafından korunuyorsunuz – yalnızca {{remainingDays}} gün kaldı! Korunma süresini uzatmak için hemen abone olun.",
+                "discount": "%100 para iade garantisi",
+                "trialSubscribe": "Deneme sürümü {{remainingDays}} gün içinde sona eriyor — ŞİMDİ ABONE OLUN",
+                "subscribe": "Abonelik {{remainingDays}} gün içinde sona eriyor — ŞİMDİ ABONE OLUN",
+                "MultiTitle": "Çok sayıda cihazda koruma",
+                "MultiSubtitle": "Sahip olduğunuz tüm cihazları, bilgisayarları, telefonları ve tabletleri koruyun – aileler için ideal ",
+                "networkTitle": "Ev ağı koruması",
+                "networkSubtitle": "Güvenlik duvarınızın güvenliğini sağlayın ve bilgisayar korsanlarının ev ağınıza erişmesini engelleyin",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Tüm çevrimiçi parolalarınızı tek bir yerde güvenle saklayın ve yönetin",
+                "onlineTitle": "Çevrimiçi gizlilik",
+                "onlineSubtitle": "Genel Wi-Fi veya açık ağlarda bile tüm çevrimiçi etkinliklerinizin güvenliğini sağlamaya yardımcı olması için banka düzeyinde şifrelemeyle bağlanın ",
+                "register": "McAfee Kaydı",
+                "virusScan": "Virüs Taraması",
+                "firewall": "Kişisel Güvenlik Duvarı",
+                "antiSpam": "McAfee İstenmeyen Posta Önleme",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Güvenlik Açığı Tarayıcısı ",
+                "report": "Tehdit Koruma Raporunuz ",
+                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.",
+                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.",
+                "subscribeNow": "Şimdi Abone Ol",
+                "fileScan": "Dosya tarandı",
+                "Viruses": "Virüs Temizlendi",
+                "blocked": "Kötü bağlantı engellendi",
+                "shredded": "Dosya Güvenle İmha Edildi",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "cihazınız için temel koruma sunar"
@@ -2333,6 +2355,8 @@
         "OtherSettings": "Diğer ayarlar",
         "usageStatistics": "Kullanım İstatistikleri",
         "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Bilgisayarınızdaki özelliklerin güvenilirliğinin, tasarımının ve iyileştirilmesinin gelişimine yardımcı olmak için Lenovo ile istatiksel veri paylaşır.",
         "Note": "Not: ",
         "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir."
     },
@@ -2407,6 +2431,7 @@
         "errorNoOptionSelected": "Lütfen bir seçenek belirleyin.",
         "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
         "doNotSuspend": "Bu testler kesintisiz çalıştırılmalıdır! Bu uygulamayı kapatmayın veya küçültmeyin ve tarama sırasında bilgisayarınızı uyku moduna almayın ya da kapatmayın.",
+        "doNotUse": "Test tamamlanana kadar lütfen bilgisayarınızı kullanmaktan kaçının",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Yüklenemedi. Lütfen tekrar deneyin.",
+                "networkError": "Ağ Hatası.",
+                "installationCancelled": "Kurulum İptal Edildi."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Kullanma",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Kur",
+                "installing": "Kurma",
+                "installed": "Kurulu",
+                "launch": "Başlat",
+                "seeMore": "Daha Fazla"
+            },
+            "fieldName": {
+                "description": "Açıklama",
+                "screenshots": "Ekran görüntüleri",
+                "additionalInformation": "Ek Bilgi",
+                "by": "Ölçüt:",
+                "updated": "Güncelleme:",
+                "type": "Tip:",
+                "category": "Kategori:",
+                "legalAgreement": "Yasal Sözleşme",
+                "readMore": "Okumaya Devam Et",
+                "readLess": "Okumayı Daralt"
+            }
+        }
     }
 }

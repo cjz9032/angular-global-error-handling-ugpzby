@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Nivel clipire"
-                },
-                "default": {
-                    "title": "SETARE CA IMPLICIT"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios."
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -1184,7 +1181,7 @@
                     "more": "MAI MULTE",
                     "control1": "ELEMENTE DE CONTROL TOUCHPAD",
                     "control2": "ELEMENTE DE CONTROL MOUSE",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "ELEMENTE DE CONTROL TRACKPOINT"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
                     "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
                     "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Dacă Modul avion este activat pe computer, aceste caracteristici sunt dezactivate."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Înapoi",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ÎNAPOI",
-                "why": "De ce McAfee?",
-                "recommends": "Lenovo recomandă McAfee pentru a vă proteja toate dispozitivele cu:",
-                "award": "protecția premiată de la cele mai recente amenințări online, inclusiv ransomware și malware",
-                "dedicated": "Securitate dedicată care depășește în mod constant performanța Defender-ului și a altor furnizori principali de programe antivirus",
-                "deviceToCloud": "Tehnologie „de la dispozitiv la cloud”, care nu vă va încetini PC-ul",
-                "poweredBy": "Dezvoltat de McAfee",
-                "privacyTerms": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
-                "mcafeePremium": "Protecție premium de la McAfee",
+                "recommends": "Lenovo recomandă <b>McAfee<b> pentru a vă proteja toate dispozitivele",
+                "award": "Antivirus premiat",
+                "mcafeePremium": "Protecție McAfee LiveSafe",
                 "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",
                 "virusScan": "SCANARE VIRUȘI",
                 "firewall": "PARAVAN DE PROTECȚIE",
                 "disabled": "DEZACTIVAT",
-                "enableVirusScan": "ACTIVARE SCANARE VIRUȘI",
-                "enablenFirewall": "ACTIVARE PARAVAN DE PROTECȚIE",
-                "enableFirewall": "ACTIVARE PARAVAN DE PROTECȚIE"
+                "awardText": "Apărați-vă noul PC Lenovo cu o protecție dovedită, testată împotriva amenințărilor online",
+                "performance": "Performanțe ultrarobuste",
+                "performanceText": "Antivirus consecvent, precis și fiabil pe care vă puteți baza ca să fiți în siguranță",
+                "Blazing": "Viteză ultrarapidă",
+                "BlazingText": "Antivirus optimizat care nu va încetini sau întrerupe experiența dvs. Lenovo Vantage",
+                "privacyTerms": "/   <tag>Politica de confidențialitate</tag>  |  <tag>Termeni de utilizare a serviciului</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Nu este protejat în mod optim",
-                "subtitle": "La ora actuală, sunteți protejat de Windows Defender.Totuși, ați putea fi mai bine protejat cu McAfee LiveSafe. Aflaţi mai multe mai jos.",
-                "learnMore": "AFLAȚI MAI MULTE DESPRE McAfee",
-                "windowsProtected": "Protecție de bază Windows Defender",
-                "windowsSubtitle": "Windows Defender oferă protecție de bază pentru dispozitivul dvs."
+                "optimallyProtected": "Se pare că folosiți acum Windows Defender. Nu este o alegere rea, însă, pentru o securitate maximă împotriva ransomware, malware și a virușilor, am făcut echipă cu <b>McAfee</b> pentru a vă oferi securitate premiată ca să puteți <b>proteja ceea ce contează.</b>",
+                "windowsSubtitle": "Protecție de bază Windows Defender",
+                "topTip": "Sfaturi importante pentru securitatea online",
+                "topContent": "Aflați cum vă puteți apăra împotriva celor mai mari amenințări online din prezent",
+                "view": "VIZUALIZAȚI SFATURILE",
+                "buyNow": "Cumpărați acum",
+                "buy": "Cumpărați, descărcați și instalați protecția antivirus McAfee astăzi, pentru a profita de aceste funcții de securitate similare celor folosite în mediul bancar",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Protecția rețelei de domiciliu",
+                "private": "Navigare anonimă, privată",
+                "everyDevice": "Protecție pe fiecare dispozitiv",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "La ora actuală, sunteți protejat de McAfee LiveSafe",
-                "valid": "Valabil până la",
-                "upgrade": "Faceți upgrade acum",
-                "launch": "LANSAȚI McAfee",
-                "getMacfee": "OBȚINEȚI McAfee",
-                "topBenefits": "Cele mai importante avantaje ale McAfee LiveSafe",
+                "title": "Antivirus",
+                "subtitle": "Sunteți protejat în prezent de McAfee LiveSafe – au mai rămas {{remainingDays}} zile! Abonați-vă acum pentru a prelungi protecția.",
+                "launch": "Lansare McAfee",
+                "getMacfee": "Obțineți McAfee",
+                "topBenefits": "De ce <b>Lenovo recomandă McAfee</b> pentru a vă proteja toate dispozitivele",
                 "awardTitle": "Antivirus premiat",
-                "awardSubtitle": "Blochează viruși, programe de tip malware, ransomware, spyware, programe nedorite și multe altele pe computerul dvs.",
-                "encryptedTitle": "Stocare criptată",
-                "encryptedSubtitle": "Păstraţi fişierele sensibile private stocându-le pe PC, cu criptare pe 128 de biţi.",
-                "identityTitle": "Protecție împotriva furtului de identitate",
-                "identitySubtitle": "Protejaţi-vă singur identitatea împotriva furtului şi fraudei.",
-                "supportTitle": "Asistenţă pentru clienţi gratuită",
-                "supportSubtitle": "Primiţi asistenţă prin telefon, prin chat sau online pe toată durata abonamentului.",
-                "antiTitle": "Anti-spam",
-                "antiSubtitle": "Blochează mesajele periculoase înainte de a ajunge în Inbox, eliminând e-mailurile care pot include linkuri riscante şi viruşi.",
-                "virusTitle": "Angajament de protecție împotriva virușilor",
-                "virusSubtitle": "Vă oferă siguranţa că, în cazul în care PC-ul este infectat de un virus, un expert McAfee va accesa de la distanţă computerul pentru a-l elimina.",
-                "parentalTitle": "Control parental",
-                "parentalSubtitle": "Blochează site-urile web şi rezultatele căutărilor pe care nu doriţi să le vadă copiii dumneavoastră. De asemenea, vă permite să setaţi limite pentru timpul petrecut online.",
-                "license": "Licență valabilă până la",
-                "trial": "Perioadă de încercare valabilă până la"
+                "awardSubtitle": "Împiedicați virușii, malware-ul și ransomware-ul să vă infecteze PC-ul.",
+                "supportTitle": "Asistență tehnică expert 24/7, gratuită ",
+                "supportSubtitle": "Beneficiați de asistență non-stop și de un plus de siguranță din partea echipei noastre dedicate de securitate",
+                "trialSubtitle": "Sunteți protejat în prezent de o versiune de încercare McAfee LiveSafe de 30 de zile – au mai rămas {{remainingDays}} zile! Abonați-vă acum pentru a prelungi protecția.",
+                "discount": "Garanție de returnare a banilor 100%",
+                "trialSubscribe": "Versiunea de încercare se încheie în {{remainingDays}} zile — ABONAȚI-VĂ ACUM",
+                "subscribe": "Abonamentul se încheie în {{remainingDays}} zile — ABONAȚI-VĂ ACUM",
+                "MultiTitle": "Protecție pe mai multe dispozitive",
+                "MultiSubtitle": "Protejați fiecare dispozitiv pe care îl dețineți – PC-uri, telefoane și tablete – perfect pentru familii ",
+                "networkTitle": "Protecția rețelei de domiciliu",
+                "networkSubtitle": "Securizați-vă paravanul de protecție și blocați hackerii care vor să vă acceseze rețeaua de domiciliu",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Păstrați și gestionați în siguranță toate parolele într-un singur loc",
+                "onlineTitle": "Confidențialitate online",
+                "onlineSubtitle": "Conectați-vă cu criptare de clasă bancară pentru a vă securiza toate activitățile online, chiar și în rețele deschise sau Wi-Fi publice ",
+                "register": "Înregistrare McAfee",
+                "virusScan": "Scanare viruşi",
+                "firewall": "Paravan de protecție personal",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Raportul dvs. de protecție împotriva amenințărilor ",
+                "trialContent": "Ați folosit cu succes versiunea de încercare a antivirusului McAfee. Însă au mai rămas {{remainingDays}} zile până când versiunea de încercare expiră, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.",
+                "subscribeContent": "Ați folosit cu succes McAfee. Însă au mai rămas {{remainingDays}} zile, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.",
+                "subscribeNow": "Abonați-vă acum",
+                "fileScan": "Fișiere scanate",
+                "Viruses": "Viruși eliminați",
+                "blocked": "Conexiuni nocive blocate",
+                "shredded": "Fișiere eliminate în sguranță",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "vă oferă protecție de bază pentru dispozitivul dvs."
@@ -2333,6 +2355,8 @@
         "OtherSettings": "Alte setări",
         "usageStatistics": "Statistici utilizare",
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
         "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
     },
@@ -2407,6 +2431,7 @@
         "errorNoOptionSelected": "Trebuie să selectați o opțiune.",
         "offline": "Acest dispozitiv rulează în modul offline; vă rugăm să vă conectați la internet",
         "doNotSuspend": "Aceste teste trebuie să ruleze fără întreruperi! În timpul scanării, nu închideţi şi nu minimizaţi această aplicaţie, nu întrerupeţi şi nu opriţi computerul.",
+        "doNotUse": "Nu utilizaţi computerul înainte de finalizarea acestui test",
         "customize": {
             "name": "Personalizare",
             "test": "Personalizare test",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
+                "networkError": "Eroare de rețea.",
+                "installationCancelled": "Instalare anulată."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Rambursare Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instalare",
+                "installing": "Instalare în curs",
+                "installed": "Instalat",
+                "launch": "Lansare",
+                "seeMore": "Vedeţi mai multe"
+            },
+            "fieldName": {
+                "description": "Descriere",
+                "screenshots": "Capturi de ecran",
+                "additionalInformation": "Informaţii suplimentare",
+                "by": "De:",
+                "updated": "Actualizată:",
+                "type": "Tip:",
+                "category": "Categorie:",
+                "legalAgreement": "Acord juridic",
+                "readMore": "Citiţi mai mult",
+                "readLess": "Citiţi maI puţin"
+            }
+        }
     }
 }

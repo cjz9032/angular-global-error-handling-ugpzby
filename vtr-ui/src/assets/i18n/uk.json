@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Рівень блимання"
-                },
-                "default": {
-                    "title": "СКИНУТИ ДО ПАРАМЕТРІВ ЗА ЗАМОВЧУВАННЯМ"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи."
                 },
                 "powerSettings": {
                     "title": "Настройки живлення",
@@ -1184,7 +1181,7 @@
                     "more": "ДОКЛАДНІШЕ",
                     "control1": "ЕЛЕМЕНТИ КЕРУВАННЯ СЕНСОРНОЇ ПАНЕЛІ",
                     "control2": "ЕЛЕМЕНТИ КЕРУВАННЯ МИШІ",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "ЕЛЕМЕНТИ КЕРУВАННЯ TRACKPOINT"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
                     "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Назад",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "Антивірус",
                 "back": "НАЗАД",
-                "why": "Переваги McAfee",
-                "recommends": "Lenovo рекомендує захищати всі ваші пристрої за допомогою McAfee.",
-                "award": "Відзначений нагородами захист від останніх загроз, зокрема програм із вимогами викупу та зловмисного програмного забезпечення",
-                "dedicated": "Спеціальний захист, незмінно кращий за Defender і продукти інших провідних постачальників антивірусних програм",
-                "deviceToCloud": "Технологія \"пристрій-хмара\", яка не сповільнює роботу комп'ютера",
-                "poweredBy": "Технології McAfee",
-                "privacyTerms": "Дізнайтеся більше про <tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
-                "mcafeePremium": "Захист McAfee преміум-класу",
+                "recommends": "Lenovo рекомендує <b>McAfee<b> для захисту всіх ваших пристроїв",
+                "award": "Відзначений нагородами антивірус",
+                "mcafeePremium": "Захист McAfee LiveSafe",
                 "protectedBy": "Наразі вас захищає {{protectedName}}. Однак McAfee LiveSafe захистить вас краще.",
                 "virusScan": "ПЕРЕВІРКА НА ВІРУСИ",
                 "firewall": "БРАНДМАУЕР",
                 "disabled": "ВИМКНУТО",
-                "enableVirusScan": "УВІМКНУТИ ПЕРЕВІРКУ НА ВІРУСИ",
-                "enablenFirewall": "УВІМКНУТИ БРАНДМАУЕР",
-                "enableFirewall": "УВІМКНУТИ БРАНДМАУЕР"
+                "awardText": "Захистіть свій новий комп'ютер Lenovo перевіреним засобом захисту від онлайн-загроз",
+                "performance": "Надійна результативність",
+                "performanceText": "Стабільний, точний і надійний антивірус, на який можна покластися",
+                "Blazing": "Блискавична швидкість",
+                "BlazingText": "Оптимізований антивірус, який не вповільнює та не перешкоджає роботі Lenovo Vantage",
+                "privacyTerms": "/   <tag>Політика конфіденційності</tag>  |  <tag>Умови обслуговування</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Не оптимальний захист",
-                "subtitle": "Наразі ваш пристрій захищено за допомогою Windows Defender.Однак ви можете скористатися покращеним захистом McAfee LiveSafe. Дізнайтеся більше нижче.",
-                "learnMore": "ДІЗНАЙТЕСЯ БІЛЬШЕ ПРО McAfee",
-                "windowsProtected": "Базовий захист Windows Defender",
-                "windowsSubtitle": "Windows Defender забезпечує базовий захист вашого пристрою"
+                "optimallyProtected": "Схоже, ви використовуєте Захисник Windows. Непоганий вибір, але для максимальної безпеки від програм-шифрувальників із вимогою викупу, зловмисного ПЗ і вірусів, ми об'єднали зусилля з <b>McAfee</b>, щоб запропонувати вам передову безпеку для <b>захисту всього найважливішого</b>.",
+                "windowsSubtitle": "Базовий захист Захисника Windows",
+                "topTip": "Основні поради щодо безпеки в Інтернеті",
+                "topContent": "Дізнайтеся, як ви можете захиститися від найбільших сучасних онлайн-загроз",
+                "view": "ПЕРЕГЛЯНУТИ ПОРАДИ",
+                "buyNow": "Придбати зараз",
+                "buy": "Придбайте, завантажте та інсталюйте антивірус McAfee, щоб отримати безпеку банківського рівня",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Захист домашньої мережі",
+                "private": "Приватний і анонімний перегляд веб-сторінок",
+                "everyDevice": "Захист кожного пристрою",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Наразі ваш пристрій захищає McAfee LiveSafe",
-                "valid": "Дійсно до",
-                "upgrade": "Оновити зараз",
-                "launch": "ЗАПУСТИТИ McAfee",
-                "getMacfee": "ОТРИМАТИ McAfee",
-                "topBenefits": "Основні переваги McAfee LiveSafe",
+                "title": "Антивірус",
+                "subtitle": "Наразі вас захищає McAfee LiveSafe – залишилося лише {{remainingDays}} дн.! Передплатіть зараз, щоб подовжити захист.",
+                "launch": "Запустити McAfee",
+                "getMacfee": "Отримайте McAfee",
+                "topBenefits": "Чому <b>Lenovo рекомендує McAfee</b> для захисту всіх ваших пристроїв",
                 "awardTitle": "Відзначений нагородами антивірус",
-                "awardSubtitle": "Захищає ваш комп'ютер, блокуючи віруси, зловмисне програмне забезпечення, програми з вимогами викупу, шпіонські й небажані програми та багато іншого.",
-                "encryptedTitle": "Шифроване зберігання",
-                "encryptedSubtitle": "Захистіть збережені на комп'ютері конфіденційні файли 128-бітним шифруванням.",
-                "identityTitle": "Захист ідентичності від крадіжки",
-                "identitySubtitle": "Захистіть свою ідентичність від крадіжки або шахрайських дій.",
-                "supportTitle": "БЕЗКОШТОВНА підтримка клієнтів",
-                "supportSubtitle": "Отримуйте необхідну допомогу по телефону, у чаті або онлайн протягом усього терміну підписки.",
-                "antiTitle": "Захист від спаму",
-                "antiSubtitle": "Блокує небезпечні повідомлення ще до отримання, видаляючи листи з небезпечними посиланнями й вірусами.",
-                "virusTitle": "Обіцянка щодо захисту від вірусів",
-                "virusSubtitle": "Навіть якщо ваш комп'ютер буде заражено вірусом, експерт McAfee віддалено підключиться до нього й видалить вірус.",
-                "parentalTitle": "Батьківський контроль",
-                "parentalSubtitle": "Блокує веб-сайти й результати пошуку, які не мають бачити ваші діти. Крім того, дає змогу обмежити час, який діти проведуть в Інтернеті.",
-                "license": "Ліцензія дійсна до",
-                "trial": "Пробна версія дійсна до"
+                "awardSubtitle": "Вбережіть свій ПК від зараження вірусами, зловмисним ПЗ і програмами-шифрувальниками з вимогою викупу.",
+                "supportTitle": "Безкоштовна, цілодобова технічна підтримка від експертів ",
+                "supportSubtitle": "Отримайте цілодобову допомогу від нашої виділеної команди з безпеки",
+                "trialSubtitle": "Наразі вас захищає 30-денна ознайомлювальна версія McAfee LiveSafe – залишилося лише {{remainingDays}} дн.! Передплатіть зараз, щоб подовжити захист.",
+                "discount": "100-відсоткова гарантія повернення грошей",
+                "trialSubscribe": "Ознайомлювальний період завершується через {{remainingDays}} дн. – ПЕРЕДПЛАТІТЬ ЗАРАЗ",
+                "subscribe": "Передплата завершується через {{remainingDays}} дн. – ПЕРЕДПЛАТІТЬ ЗАРАЗ",
+                "MultiTitle": "Захист багатьох пристроїв",
+                "MultiSubtitle": "Захистіть кожен свій пристрій – ПК, телефони та планшети – ідеально підходить для сімей ",
+                "networkTitle": "Захист домашньої мережі",
+                "networkSubtitle": "Увімкніть брандмауер і тримайте хакерів подалі від своєї домашньої мережі",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Безпечно зберігайте та впорядковуйте всі паролі від веб-сайтів в одній програмі",
+                "onlineTitle": "Конфіденційність в Інтернеті",
+                "onlineSubtitle": "Шифруйте всі свої дії в мережі з надійністю банківського рівня, навіть у громадських або відкритих мережах Wi-Fi ",
+                "register": "Реєстрація в McAfee",
+                "virusScan": "Пошук вірусів",
+                "firewall": "Особистий брандмауер",
+                "antiSpam": "Антиспам McAfee",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "Сканер вразливостей McAfee ",
+                "report": "Ваш звіт про захист від загроз ",
+                "trialContent": "Випробувальна версія антивірусу McAfee активно допомагає вам. Але до завершення ознайомлювального періоду залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте.",
+                "subscribeContent": "McAfee активно допомагає вам. Але до завершення передплати залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте.",
+                "subscribeNow": "Передплатіть зараз",
+                "fileScan": "Файли відскановано",
+                "Viruses": "Віруси видалено",
+                "blocked": "Небезпечне підключення заблоковано",
+                "shredded": "Файли успішно й безповоротно видалено",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "забезпечує базовий захист вашого пристрою"
@@ -2333,6 +2355,8 @@
         "OtherSettings": "Інші настройки",
         "usageStatistics": "Статистика використання",
         "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Передає статистичні дані до компанії Lenovo, щоб покращити надійність, дизайн і оптимізувати функції на вашому комп'ютері.",
         "Note": "Примітка. ",
         "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."
     },
@@ -2407,6 +2431,7 @@
         "errorDeviceChoose": "Виберіть пристрій.",
         "errorNoOptionSelected": "Виберіть варіант.",
         "doNotSuspend": "Ці перевірки не можна переривати! Не закривайте та не згортайте вікно цієї програми, а також не переводьте комп’ютер у режим сну й не вимикайте його під час сканування.",
+        "doNotUse": "Не користуйтеся комп’ютером, доки перевірку не буде завершено",
         "customize": {
             "name": "Настроїти",
             "test": "Настроювання тесту",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Не вдалося встановити. Спробуйте ще раз.",
+                "networkError": "Помилка мережі.",
+                "installationCancelled": "Інсталяцію скасовано."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Активація Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Встановити",
+                "installing": "Інсталяція",
+                "installed": "Установлено",
+                "launch": "Запустити",
+                "seeMore": "Додаткова інформація"
+            },
+            "fieldName": {
+                "description": "Опис",
+                "screenshots": "Знімки екрана",
+                "additionalInformation": "Додаткова інформація",
+                "by": "Автор:",
+                "updated": "Оновлено:",
+                "type": "Тип:",
+                "category": "Категорія:",
+                "legalAgreement": "Юридична угода",
+                "readMore": "Розгорнути",
+                "readLess": "Згорнути"
+            }
+        }
     }
 }

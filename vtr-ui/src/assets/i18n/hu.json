@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Villogás sebessége"
-                },
-                "default": {
-                    "title": "ALAPÉRTELMEZETT"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen."
                 },
                 "powerSettings": {
                     "title": "Energiagazdálkodási beállítások",
@@ -1184,7 +1181,7 @@
                     "more": "TOVÁBBIAK",
                     "control1": "ÉRINTŐFELÜLET VEZÉRLŐELEMEI",
                     "control2": "EGÉR VEZÉRLŐELEMEI",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT-VEZÉRLŐK"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Ha a repülőgépes üzemmód engedélyezve van a számítógépen, ezek a funkciók nem működnek."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Vissza",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "Vírusirtó",
                 "back": "VISSZA",
-                "why": "Miért a McAfee?",
-                "recommends": "A Lenovo a McAfee-termékek használatát javasolja, amelyekkel a következőképpen védhetők az eszközök:",
-                "award": "Díjnyertes szolgáltatások biztosítanak védelmet a legújabb online fenyegetésektől, például a zsarolóvírusoktól és a rosszindulatú programoktól",
-                "dedicated": "Olyan biztonsági szolgáltatások, amelyek hatékonyabb védelmet biztosítanak, mint a Defender és más víruskereső programokat készítő vezető cégek termékei",
-                "deviceToCloud": "Olyan, az eszközöket a felhővel összekapcsoló technológia, amely nem lassítja le a számítógépet",
-                "poweredBy": "A McAfee technológiája",
-                "privacyTerms": "További információ az <tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag> között található",
-                "mcafeePremium": "Prémium verziójú védelmi szolgáltatása a McAfee-től",
+                "recommends": "A Lenovo a <b>McAfee<b> termékek használatát javasolja az összes eszköz védelméhez",
+                "award": "Díjnyertes vírusirtó",
+                "mcafeePremium": "McAfee LiveSafe védelem",
                 "protectedBy": "Önt jelenleg a(z) {{protectedName}} védi. A McAfee LiveSafe azonban hatékonyabb védelmet nyújthat.",
                 "virusScan": "VÍRUSKERESÉS",
                 "firewall": "TŰZFAL",
                 "disabled": "LETILTOTT",
-                "enableVirusScan": "VÍRUSKERESÉS ENGEDÉLYEZÉSE",
-                "enablenFirewall": "TŰZFAL ENGEDÉLYEZÉSE",
-                "enableFirewall": "TŰZFAL ENGEDÉLYEZÉSE"
+                "awardText": "Védje meg új Lenovo PC-jét az online fenyegetések elleni tesztelt, bevált védelemmel",
+                "performance": "Sziklaszilárd teljesítmény",
+                "performanceText": "Állandó, pontos és megbízható vírusirtó – számíthat rá, hogy megóvja biztonságát",
+                "Blazing": "Villámgyors sebesség",
+                "BlazingText": "Optimalizált vírusirtó, amely nem lassítja és nem szakítja meg a Lenovo Vantage kínálta élményt",
+                "privacyTerms": "/   <tag>Adatvédelmi irányelvek</tag>  |  <tag>Használati feltételek</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "A védelem nem optimális",
-                "subtitle": "Jelenleg a következő rendszer biztosítja a védelmét: Windows Defender.A McAfee LiveSafe azonban hatékonyabb védelmet nyújthat. Alul található további információ.",
-                "learnMore": "TOVÁBBI INFORMÁCIÓ a McAfee-ről",
-                "windowsProtected": "Windows Defender – alapvédelem",
-                "windowsSubtitle": "A Windows Defender alapszintű védelmet biztosít az eszköz számára"
+                "optimallyProtected": "Úgy tűnik, hogy jelenleg a Windows Defender alkalmazást használja. Nem rossz választás, de a zsarolóprogramok, rosszindulatú programok és a vírusok elleni felülmúlhatatlan biztonság érdekében összefogtunk a <b>McAfee</b>-vel, így díjnyertes biztonságot kínálunk, hogy <b>megóvhassa, ami számít</b>.",
+                "windowsSubtitle": "Windows Defender – alapvédelem",
+                "topTip": "Legfontosabb online biztonsági tippek",
+                "topContent": "Sajátítsa el, hogyan védekezhet napjaink legjelentősebb online fenyegetései ellen",
+                "view": "TIPPEK MEGTEKINTÉSE",
+                "buyNow": "Vásárlás",
+                "buy": "Vásárolja meg, töltse le és telepítse a McAfee vírusvédelmet még ma, hogy kihasználhassa ezeket a banki minőségű biztonsági funkciókat",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Otthoni hálózat védelme",
+                "private": "Privát, névtelen böngészés",
+                "everyDevice": "Minden eszköz védelme",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Jelenleg a következő rendszer biztosítja a védelmét: McAfee LiveSafe",
-                "valid": "A következő időpontig érvényes",
-                "upgrade": "Frissítsen most",
-                "launch": "A McAfee INDÍTÁSA",
-                "getMacfee": "A McAfee BESZERZÉSE",
-                "topBenefits": "A McAfee LiveSafe fő előnyei",
+                "title": "Vírusirtó",
+                "subtitle": "Jelenleg a McAfee LiveSafe védi – csak {{remainingDays}} nap van hátra! Iratkozzon fel most, hogy kibővítse védelmét.",
+                "launch": "McAfee indítása",
+                "getMacfee": "A McAfee beszerzése",
+                "topBenefits": "Miért <b>javasolja a Lenovo a McAfee-t</b> az összes eszköz védelmére",
                 "awardTitle": "Díjnyertes vírusirtó",
-                "awardSubtitle": "Blokkolja a vírusokat, a rosszindulatú programokat, a zsarolóvírusokat, a kémprogramokat, a nem kívánt szoftvereket és sok egyebet.",
-                "encryptedTitle": "Titkosított tárhely",
-                "encryptedSubtitle": "Védje meg a bizalmas fájlokat, és használjon hozzájuk 128 bites titkosítást a számítógépen.",
-                "identityTitle": "Védelem a személyi adatokkal való visszaéléssel szemben",
-                "identitySubtitle": "Előzze meg a személyazonossága ellopását és védekezzen a csalókkal szemben.",
-                "supportTitle": "INGYENES ügyfélszolgálat",
-                "supportSubtitle": "Elérhető telefonon, chaten, vagy webes felületen az előfizetés időtartama alatt.",
-                "antiTitle": "Levélszemétszűrő",
-                "antiSubtitle": "Letiltja a veszélyes üzeneteket, mielőtt elérnék az Ön postafiókját, és eltávolítva azokat az e-maileket, amelyek veszélyes linkeket és vírusokat tartalmazhatnak.",
-                "virusTitle": "Vírusvédelmi vállalásunk",
-                "virusSubtitle": "Nyugodt lehet, mert abban az esetben, ha a számítógépe vírusos lesz, a McAfee szakértője távolról hozzáfér, és eltávolítja a vírust.",
-                "parentalTitle": "Szülői felügyelet",
-                "parentalSubtitle": "Blokkolja azokat a weboldalakat és keresési eredményeket, amelyeket nem szeretne megmutatni gyermekének. Ezenkívül korlátozhatja a gyermekei által online töltött időt.",
-                "license": "A licenc a következő időpontig érvényes",
-                "trial": "A próbaverzió a következő időpontig érvényes"
+                "awardSubtitle": "Megakadályozza, hogy a vírusok, a rosszindulatú programokat és a zsarolóprogramok a számítógépet megfertőzzék.",
+                "supportTitle": "Ingyenes, éjjel-nappali szakértői műszaki támogatás ",
+                "supportSubtitle": "Éjjel-nappal segítséget és lelki nyugalmat kínál elkötelezett biztonsági csapatunk",
+                "trialSubtitle": "Jelenleg a McAfee LiveSafe 30 napos próbaverziója védi – csak {{remainingDays}} nap van hátra! Iratkozzon fel most, hogy kibővítse védelmét.",
+                "discount": "100%-os pénzvisszafizetési garancia",
+                "trialSubscribe": "A próbaidőszak {{remainingDays}} nap múlva véget ér – IRATKOZZON FEL MOST",
+                "subscribe": "Az előfizetés {{remainingDays}} nap múlva véget ér – IRATKOZZON FEL MOST",
+                "MultiTitle": "Több eszköz védelme",
+                "MultiSubtitle": "Védi az összes tulajdonában lévő eszközt – számítógépeket, telefonokat és táblagépeket: tökéletes családok számára ",
+                "networkTitle": "Otthoni hálózat védelme",
+                "networkSubtitle": "Biztosítja a tűzfalat, és megakadályozza a hackereket az otthoni hálózat elérésében",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Az összes online jelszó biztonságos tárolása és kezelése egyetlen helyen",
+                "onlineTitle": "Online adatvédelem",
+                "onlineSubtitle": "Csatlakozás banki szintű titkosításhoz, hogy minden online tevékenységet biztonságban tartson, akár nyilvános Wi-Fi-n és nyílt hálózatokon is ",
+                "register": "McAfee regisztráció",
+                "virusScan": "Víruskeresés",
+                "firewall": "Személyes tűzfal",
+                "antiSpam": "McAfee Levélszemétszűrő",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Sebezhetőségkereső ",
+                "report": "A fenyegetésvédelmi jelentés ",
+                "trialContent": "Jól kiaknázta a McAfee vírusirtó próbaverzióját. Azonban már csak {{remainingDays}} nap van hátra a próbaidőszak lejáratáig, így fennáll annak kockázata, hogy a számítógép sebezhetővé válik. Ne kockáztasson.",
+                "subscribeContent": "Jól kiaknázta a McAfee-t. Azonban már csak {{remainingDays}} nap van hátra, így fennáll annak kockázata, hogy a számítógép sebezhetővé válik. Ne kockáztasson.",
+                "subscribeNow": "Feliratkozás",
+                "fileScan": "Megvizsgált fájlok",
+                "Viruses": "Kiküszöbölt vírusok",
+                "blocked": "Blokkolt rossz kapcsolatok",
+                "shredded": "Biztonságosan megsemmisített fájlok",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "alapszintű védelmet biztosít az eszköz számára"
@@ -2333,6 +2355,8 @@
         "OtherSettings": "Egyéb beállítások",
         "usageStatistics": "Használati statisztikák",
         "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Statisztikai adatokat oszt meg a Lenovóval, így segíti a számítógép-funkciók tervezését, optimalizálását és megbízhatóbbá tételét.",
         "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."
     },
@@ -2407,6 +2431,7 @@
         "errorNoOptionSelected": "Válasszon ki egy lehetőséget.",
         "offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
         "doNotSuspend": "Ezeket a teszteket nem szabad megszakítani. Az ellenőrzés során ne állítsa kis méretűre és ne zárja be az alkalmazást, illetve ne függessze fel vagy kapcsolja ki a számítógépet.",
+        "doNotUse": "Kérjük, a teszt befejeződéséig ne használja a számítógépet",
         "customize": {
             "name": "Személyre szabás",
             "test": "Teszt testreszabása",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "A telepítés sikertelen. Kérjük, próbálja meg újra!",
+                "networkError": "Hálózati hiba.",
+                "installationCancelled": "A telepítés megszakítva."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe beváltás",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Telepítse",
+                "installing": "Telepítés",
+                "installed": "Telepítve",
+                "launch": "Indítás",
+                "seeMore": "Továbbiak megtekintése"
+            },
+            "fieldName": {
+                "description": "Leírás",
+                "screenshots": "Képernyőképek",
+                "additionalInformation": "További információk",
+                "by": "Következőtől:",
+                "updated": "Frissítette:",
+                "type": "Típus:",
+                "category": "Kategória:",
+                "legalAgreement": "Jogi megállapodás",
+                "readMore": "Továbbiak",
+                "readLess": "Kevesebb"
+            }
+        }
     }
 }

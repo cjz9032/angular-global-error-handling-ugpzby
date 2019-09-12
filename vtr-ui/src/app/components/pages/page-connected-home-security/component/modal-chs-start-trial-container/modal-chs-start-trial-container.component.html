@@ -14,9 +14,7 @@
 	</div>
 	<!-- start of page 1-->
 	<div class="page page-one" *ngIf="switchPage === 1">
-		<p class="description">
-			{{'homeSecurity.modal.countdownTile' | translate}}
-		</p>
+		<p class="description" [innerHTML]="'homeSecurity.modal.countdownTile' | translate"></p>
 		<div class="countdown text-center">
 			<span class="number" [innerHTML]="countdownNumber"></span>
 		</div>
@@ -26,7 +24,8 @@
 				metricsEvent="FeatureClick"
 				metricsItem="CHSTrialGoNowButton"
 				metricsParent="{{metricsParent}}"
-				(click)="openCornet('login')"
+				(click)="openCornet()"
+				[isLoading]="loading"
 				[label]="'homeSecurity.modal.goNow' | translate"
 				[title]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
 			<vtr-ui-button
@@ -43,9 +42,7 @@
 	<!-- end of page1-->
 	<!-- start of page 2-->
 	<div class="page page-two" *ngIf="switchPage === 2">
-		<p class="description mb-5">
-			{{'homeSecurity.modal.disconnectedTitle' | translate}}
-		</p>
+		<p class="description mb-5" [innerHTML]="'homeSecurity.modal.disconnectedTitle' | translate"></p>
 		<div class="btn-group d-flex justify-content-between">
 			<vtr-ui-button
 				linkId="chs-modal-btn-cancel"
@@ -62,6 +59,7 @@
 				metricsItem="CHSDisconnectButton"
 				metricsParent="{{metricsParent}}"
 				(click)="disconnect()"
+				[isLoading]="loading"
 				[label]="'homeSecurity.overview.disconnect' | translate"
 				[title]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
 		</div>

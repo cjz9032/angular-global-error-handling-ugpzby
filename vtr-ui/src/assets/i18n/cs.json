@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Úroveň blikání"
-                },
-                "default": {
-                    "title": "NASTAVIT NA VÝCHOZÍ NASTAVENÍ"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší."
                 },
                 "powerSettings": {
                     "title": "Nastavení napájení",
@@ -1184,7 +1181,7 @@
                     "more": "DALŠÍ",
                     "control1": "OVLÁDÁNÍ DOTYKOVÉ PLOŠKY",
                     "control2": "OVLÁDÁNÍ MYŠI",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "OVLÁDÁNÍ TRACKPOINT"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Pokud je v počítači povolen režim letadlo, tyto funkce jsou deaktivovány."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Zpět",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZPĚT",
-                "why": "Proč McAfee?",
-                "recommends": "Lenovo doporučuje společnost McAfee, která do všech vašich zařízení přinese:",
-                "award": "oceňovanou ochranu před nejnovějšími internetovými hrozbami, včetně ransomwaru a malwaru",
-                "dedicated": "specializované zabezpečení, které dlouhodobě překonává aplikaci Defender a jiná antivirová řešení předních poskytovatelů",
-                "deviceToCloud": "technologii zařízení-cloud, která nezpomalí váš počítač",
-                "poweredBy": "Používá technologii McAfee",
-                "privacyTerms": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
-                "mcafeePremium": "Prémiová ochrana McAfee",
+                "recommends": "Lenovo doporučuje software <b>McAfee<b> na ochranu všech vašich zařízení",
+                "award": "Oceňovaný antivirus",
+                "mcafeePremium": "Ochrana McAfee LiveSafe",
                 "protectedBy": "Nyní vás chrání program {{protectedName}}. Můžete se však chránit lépe pomocí programu McAfee LiveSafe.",
                 "virusScan": "VYHLEDÁVÁNÍ VIRŮ",
                 "firewall": "FIREWALL",
                 "disabled": "ZAKÁZÁNO",
-                "enableVirusScan": "POVOLIT VYHLEDÁVÁNÍ VIRŮ",
-                "enablenFirewall": "POVOLIT BRÁNU FIREWALL",
-                "enableFirewall": "POVOLIT BRÁNU FIREWALL"
+                "awardText": "Chraňte svůj nový počítač Lenovo pomocí ověřené a prověřené ochrany před online hrozbami",
+                "performance": "Výkon pevný jako skála",
+                "performanceText": "Konzistentní, přesný a spolehlivý antivirový program, na který se můžete spolehnout",
+                "Blazing": "Blesková rychlost",
+                "BlazingText": "Optimalizovaný antivirový program, který nezpomalí ani nepřeruší vaše prostředí Lenovo Vantage",
+                "privacyTerms": "/   <tag>Zásady ochrany osobních údajů</tag>  |  <tag>Podmínky služby</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Ochrana není optimální",
-                "subtitle": "Momentálně vás chrání Windows Defender.Můžete se však chránit lépe pomocí McAfee LiveSafe. Další informace najdete níže.",
-                "learnMore": "DALŠÍ INFORMACE O McAfee",
-                "windowsProtected": "Základní ochrana Windows Defender",
-                "windowsSubtitle": "Windows Defender nabízí základní ochranu zařízení"
+                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom vám mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
+                "windowsSubtitle": "Základní ochrana Windows Defender",
+                "topTip": "Nejlepší tipy pro online bezpečnost",
+                "topContent": "Naučte se, jak se můžete bránit proti současným největším online hrozbám",
+                "view": "ZOBRAZIT TIPY",
+                "buyNow": "Koupit nyní",
+                "buy": "Kupte si, stáhněte a instalujte antivirovou ochranu McAfee ještě dnes, abyste mohli využívat tyto funkce špičkového zabezpečení",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Ochrana domácí sítě",
+                "private": "Soukromé, anonymní prohlížení",
+                "everyDevice": "Ochrana všech zařízení",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Nyní vás chrání McAfee LiveSafe",
-                "valid": "Platnost do",
-                "upgrade": "Aktualizovat",
-                "launch": "SPUSTIT McAfee",
-                "getMacfee": "ZÍSKAT McAfee",
-                "topBenefits": "Hlavní výhody programu McAfee LiveSafe",
+                "title": "Antivirus",
+                "subtitle": "Momentálně jste chráněni verzí McAfee LiveSafe – počet zbývajících dnů jen {{remainingDays}}! Chcete-li rozšířit svou ochranu, přihlaste se k odběru nyní.",
+                "launch": "Spustit antivirus McAfee",
+                "getMacfee": "Získat program McAfee",
+                "topBenefits": "Proč <b>Lenovo doporučuje software McAfee</b> na ochranu všech vašich zařízení",
                 "awardTitle": "Oceňovaný antivirus",
-                "awardSubtitle": "Blokuje viry, malware, ransomware, spyware, nežádoucí aplikace a další programy ve vašem počítači.",
-                "encryptedTitle": "Šifrované úložiště",
-                "encryptedSubtitle": "Díky 128bitovému šifrování zůstanou citlivé soubory ve vašem počítači uchovány v tajnosti.",
-                "identityTitle": "Ochrana proti krádeži identity",
-                "identitySubtitle": "Převezměte kontrolu nad ochranou své identity před její krádeží nebo zneužitím.",
-                "supportTitle": "BEZPLATNÁ zákaznická podpora",
-                "supportSubtitle": "Po dobu trvání předplatného se o vás postaráme prostřednictvím telefonu, chatu nebo online.",
-                "antiTitle": "Ochrana proti nevyžádané poště",
-                "antiSubtitle": "Blokuje nebezpečné zprávy a odstraňuje e-maily, které mohou obsahovat rizikové odkazy a viry, ještě než se dostanou do vaší schránky.",
-                "virusTitle": "Záruka antivirové ochrany",
-                "virusSubtitle": "Poskytuje jistotu, že v případě napadení počítače virem vám odborník společnosti McAfee pomůže virus odstranit přes vzdálenou plochu.",
-                "parentalTitle": "Rodičovská kontrola",
-                "parentalSubtitle": "Blokuje webové stránky a výsledky hledání, které nechcete ukázat dětem. Také umožňuje nastavit limity, kolik času mohou trávit na internetu.",
-                "license": "Licence platí do",
-                "trial": "Zkušební verze platí do"
+                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem.",
+                "supportTitle": "Zdarma, nepřetržitá odborná technická podpora ",
+                "supportSubtitle": "Získejte nepřetržitou asistenci a klid v duši díky našemu specializovanému bezpečnostnímu týmu",
+                "trialSubtitle": "Momentálně jste chráněni pouze 30denní zkušební verzí McAfee LiveSafe – počet zbývajících dnů jen {{remainingDays}}! Chcete-li rozšířit svou ochranu, přihlaste se k odběru nyní.",
+                "discount": "100% záruka vrácení peněz",
+                "trialSubscribe": "Zkušební verze končí za {{remainingDays}} dny - PŘIHLÁSIT SE NYNÍ",
+                "subscribe": "Přihlášení končí za {{remainingDays}} dny – PŘIHLÁSIT SE NYNÍ",
+                "MultiTitle": "Ochrana více zařízení",
+                "MultiSubtitle": "Chraňte každé zařízení, které vlastníte - počítače, telefony a tablety - ideální pro rodiny s dětmi ",
+                "networkTitle": "Ochrana domácí sítě",
+                "networkSubtitle": "Zabezpečte svůj firewall a zabraňte hackerům v přístupu k domácí síti",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Zabezpečení ukládá a spravuje všechna vaše hesla online na jednom místě",
+                "onlineTitle": "Soukromí online",
+                "onlineSubtitle": "Připojujte se s šifrováním na úrovni banky a zajistěte si tak všechny své online aktivity, a to i ve veřejných sítích Wi-Fi nebo v otevřených sítích ",
+                "register": "Registrace McAfee",
+                "virusScan": "Antivirová kontrola",
+                "firewall": "Osobní Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Vaše zpráva o ochraně před hrozbami ",
+                "trialContent": "Používali jste zkušební verzi antiviru McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, riskujete tak budoucí zranitelnost svého počítače. Neriskujte to.",
+                "subscribeContent": "Používali jste software McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, a tak riskujete tak budoucí zranitelnost svého počítače. Neriskujte to.",
+                "subscribeNow": "Zapsat nyní",
+                "fileScan": "Prohledané soubory",
+                "Viruses": "Odstraněné viry",
+                "blocked": "Blokovaná špatná připojení",
+                "shredded": "Soubory bezpečně skartovány",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "nabízí základní ochranu zařízení"
@@ -2333,6 +2355,8 @@
         "OtherSettings": "Další nastavení",
         "usageStatistics": "Statistiky využití",
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
         "Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
     },
@@ -2407,6 +2431,7 @@
         "errorNoOptionSelected": "Musíte vybrat některou z možností.",
         "offline": "Toto zařízení je v režimu offline. Připojte jej k internetu",
         "doNotSuspend": "Tyto testy nesmí být přerušeny! Během kontroly nevypínejte ani neminimalizujte aplikaci, nevypínejte počítač ani jej neuveďte do režimu hibernace.",
+        "doNotUse": "V průběhu testu nepoužívejte počítač",
         "customize": {
             "name": "Přizpůsobit",
             "test": "Přizpůsobit test",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalace se nezdařila. Zkuste akci opakovat.",
+                "networkError": "Chyba sítě.",
+                "installationCancelled": "Instalace zrušena."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Kompenzace Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Nainstalujte si",
+                "installing": "Instalace",
+                "installed": "Nainstalováno",
+                "launch": "Spustit",
+                "seeMore": "Další informace"
+            },
+            "fieldName": {
+                "description": "Popis",
+                "screenshots": "Snímky obrazovky",
+                "additionalInformation": "Další informace",
+                "by": "Od:",
+                "updated": "Aktualizováno:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Právní ujednání",
+                "readMore": "Další informace",
+                "readLess": "Méně informací"
+            }
+        }
     }
 }

@@ -50,10 +50,6 @@
                         "hybridModeText": "Potrebno je da instalirate upravljački program za hibridni režim kako biste ga primenili",
                         "cpuOverclockText": "Instalirajte upravljački program za aktiviranje overkloka procesora (potrebno je ponovno pokretanje)"
                     },
-                    "autoClose": "Automatsko zatvaranje",
-                    "networkBoost": "Pojačanje mreže",
-                    "hybridMode": "Hibridni režim",
-                    "touchpadLock": "Zaključ. dodirne table",
                     "lightingDriverPopup": {
                         "headerText": "Potrebno je instaliranje upravljačkog programa",
                         "text": "Instalirajte upravljački program za aktiviranje osvetljenja (potrebno je ponovno pokretanje)",
@@ -62,7 +58,11 @@
                     },
                     "lightingColorMessage": {
                         "text": "Izbor boje nije dostupan za ovaj efekat."
-                    }
+                    },
+                    "autoClose": "Automatsko zatvaranje",
+                    "networkBoost": "Pojačanje mreže",
+                    "hybridMode": "Hibridni režim",
+                    "touchpadLock": "Zaključ. dodirne table"
                 },
                 "systemTools": {
                     "power": "Napajanje",
@@ -71,6 +71,9 @@
                     "hardwareScan": "Skeniranje hardvera",
                     "systemUpdate": "Ažuriranje sistema",
                     "header": "Sistemske alatke"
+                },
+                "systemStatus": {
+                    "info": "INFORMACIJE"
                 },
                 "lighting": {
                     "title": "Prilagođavanje osvetljenja",
@@ -91,9 +94,6 @@
                 },
                 "systemInfo": {
                     "systenTooltip": "Zadržite pokazivač na procesoru (CPU) / GPU / RAM i različitim diskovima da biste prikazali njihove opise, uključujući podatke o proizvodnji i modelu"
-                },
-                "systemStatus": {
-                    "info": "INFORMACIJE"
                 },
                 "quickSettingstitle": {
                     "title": "Brze postavke"
@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Nivo treptanja"
-                },
-                "default": {
-                    "title": "POSTAVI NA PODRAZUMEVANE VREDNOSTI"
                 }
             },
             "profile": {
@@ -375,36 +372,36 @@
         },
         "autoClose": {
             "title": "Automatsko zatvaranje",
-			"addAppsButton": "Dodaj",
-			"introLine": "Dodajte apl. koje žel. da zatv. kad pokr. igru. To će osloboditi neiskorišćene resurse radi povećanja performansi u igri. NAPOMENA: Ova funkcija u potpunosti zatvara aplikaciju. Zato uvek vodite računa da ste sačuvali svoj rad.",
-			"modalTurnAutoClose": {
-				"title": "Želite da uključite Automatsko zatvaranje?",
-				"body": "Aplikacije koje ste dodali će biti zatvorene kada igrate, da oslobodite resurse za igru.",
-				"checkedTitle": "Ne pitaj ponovo",
-				"btnConfirm": "Uključi",
-				"btnCancel": "Ne sad"
+            "introLine": "Dodajte apl. koje žel. da zatv. kad pokr. igru. To će osloboditi neiskorišćene resurse radi povećanja performansi u igri. NAPOMENA: Ova funkcija u potpunosti zatvara aplikaciju. Zato uvek vodite računa da ste sačuvali svoj rad.",
+            "modalTurnAutoClose": {
+                "title": "Želite da uključite Automatsko zatvaranje?",
+                "body": "Aplikacije koje ste dodali će biti zatvorene kada igrate, da oslobodite resurse za igru.",
+                "checkedTitle": "Ne pitaj ponovo",
+                "btnConfirm": "Uključi",
+                "btnCancel": "Ne sad"
             },
             "modalAddApps": {
                 "title": "Dodavanje aplikacija u Automatsko zatvaranje",
-				"body": "Samo trenutno pokrenute aplikacije prikazaće se na listi u nastavku."
+                "body": "Samo trenutno pokrenute aplikacije prikazaće se na listi u nastavku."
             },
+            "addAppsButton": "Dodaj",
             "noRunningApps": {
                 "title": "Nema pokrenutih aplikacija za dodavanje",
-				"body": "Prikazaće se samo aplikacije koje su trenutno pokrenute. Pokrenite aplikaciju koju želite da dodate i vratite se."
+                "body": "Prikazaće se samo aplikacije koje su trenutno pokrenute. Pokrenite aplikaciju koju želite da dodate i vratite se."
             }
         },
         "networkBoost": {
-            "title": "Pojačanje mreže",
-            "introLine": "Omogućavanje Pojačanja mreže automatski postavlja prioritet igara na najviši nivo u mreži i povećava brzinu. Ako koristite aplikacije dok igrate, npr. Twitch ili Discord, preporučujemo da ih dodate u listu u nastavku kako bi takođe imale prioritet u vašoj mreži.",
-            "modalTurn": {
-                "title": "Želite da uključite Pojačanje mreže?",
-                "body": "Želite da uključite Pojačanje mreže? Aplikacije koje ste dodali deliće više mreže kada su pokrenute.",
-                "checkedTitle": "Ne pitaj ponovo",
-                "btnConfirm": "Uključi",
-                "btnCancel": "Ne sad"
+            "title": "Pojačanje mreže",
+            "introLine": "Omogućavanje Pojačanja mreže automatski postavlja prioritet igara na najviši nivo u mreži i povećava brzinu. Ako koristite aplikacije dok igrate, npr. Twitch ili Discord, preporučujemo da ih dodate u listu u nastavku kako bi takođe imale prioritet u vašoj mreži.",
+            "modalTurn": {
+                "title": "Želite da uključite Pojačanje mreže?",
+                "body": "Želite da uključite Pojačanje mreže? Aplikacije koje ste dodali deliće više mreže kada su pokrenute.",
+                "checkedTitle": "Ne pitaj ponovo",
+                "btnConfirm": "Uključi",
+                "btnCancel": "Ne sad"
             },
             "modalAddApps": {
-                "title": "Dodavanje aplikacija u Pojačanje mreže",
+                "title": "Dodavanje aplikacija u Pojačanje mreže",
                 "body": {
                     "part1": "Možete dodati do 5 dod. aplik. za pojačanje",
                     "part2": "od",
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“"
                 },
                 "powerSettings": {
                     "title": "Postavke napajanja",
@@ -1122,8 +1119,6 @@
                     },
                     "topRowFunctions": {
                         "title": "Funkcija gornjeg reda tastature",
-                        "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
-                        "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE",
                         "description": "Gornji red tastature pruža sledeće dve funkcije. Izaberite onu koju želite:",
                         "subSection": {
                             "description": "Za prelazak sa jedne na drugu gorenavedenu funkciju, pritisnite tastere Fn+Esc.",
@@ -1150,7 +1145,9 @@
                             "description": "Za promenu podrazumevane funkcije gornjeg reda potrebno je da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?",
                             "reboot": "PONOVO POKRENI",
                             "cancel": "NE SAD"
-                        }
+                        },
+                        "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
+                        "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE"
                     }
                 },
                 "userDefinedKey": {
@@ -1184,7 +1181,7 @@
                     "more": "VIŠE",
                     "control1": "KONTROLE DODIRNE TABLE",
                     "control2": "KONTROLE MIŠA",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "KONTROLE ZA TRACKPOINT"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
                     "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Bezdodirno prijavljivanje neće raditi.",
                     "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sistema Windows Hello",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Nazad",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "Antivirusni program",
                 "back": "NAZAD",
-                "why": "Zašto McAfee?",
-                "recommends": "Lenovo preporučuje McAfee za zaštitu svih uređaja sa:",
-                "award": "Nagrađenom zaštitom od najnovijih pretnji na mreži, softvera za ucenjivanje i malvera",
-                "dedicated": "Specijalizovanim bezbednosnim alatom koji uvek nadmašuje Defender i druge vodeće proizvođače antivirusnih softvera",
-                "deviceToCloud": "Tehnologijom koja štiti sve od uređaja do oblaka i ne usporava računar",
-                "poweredBy": "Obezbeđuje McAfee",
-                "privacyTerms": "Pročitajte više o <tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
-                "mcafeePremium": "Vrhunska zaštita McAfee",
+                "recommends": "Lenovo preporučuje <b>McAfee<b> za zaštitu svih vaših uređaja",
+                "award": "Nagrađivani antivirus",
+                "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, možete da budete bolje zaštićeni pomoću usluge McAfee LiveSafe.",
                 "virusScan": "SKENIRANJE VIRUSA",
                 "firewall": "ZAŠTITNI ZID",
                 "disabled": "ONEMOGUĆENO",
-                "enableVirusScan": "OMOGUĆI SKENIRANJE VIRUSA",
-                "enablenFirewall": "OMOGUĆI ZAŠTITNI ZID",
-                "enableFirewall": "OMOGUĆI ZAŠTITNI ZID"
+                "awardText": "Zaštitite vaš novi Lenovo računar sa isprobanom, dokazanom zaštitom od pretnji na mreži",
+                "performance": "Neprobojan učinak",
+                "performanceText": "Dosledan, precizan i pouzdan antivirus na koji možete računati da će vas čuvati",
+                "Blazing": "Brzina munje",
+                "BlazingText": "Optimizovan antivirus koji neće usporiti ili prekinuti vaše iskustvo korišćenja programa Lenovo Vantage",
+                "privacyTerms": "/   <tag>Politika privatnosti</tag>  |  <tag>Uslovi korišćenja usluge</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Niste optimalno zaštićeni",
-                "subtitle": "Trenutno vas štiti Windows Defender.Međutim, mogli biste da budete bolje zaštićeni pomoću programa McAfee LiveSafe. Saznajte više u nastavku.",
-                "learnMore": "SAZNAJTE VIŠE O programima McAfee",
-                "windowsProtected": "Osnovna zaštita s pomoću programa Windows Defender",
-                "windowsSubtitle": "Windows Defender pruža osnovnu zaštitu za vaš uređaj"
+                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa, udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i bili u mogućnosti da <b>zaštitimo ono što je važno.</b>",
+                "windowsSubtitle": "Osnovna zaštita pomoću programa Windows zaštitnik",
+                "topTip": "Najbolji saveti za bezbednost na mreži",
+                "topContent": "Naučite kako možete da se odbranite od najvećih pretnji na mreži današnjice",
+                "view": "PRIKAŽI SAVETE",
+                "buyNow": "Kupi odmah",
+                "buy": "Kupite, preuzmite i instalirajte McAfee zaštitu od virusa danas da biste iskoristili prednosti ovih bezbednosnih funkcija bankovnog nivoa",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Zaštita kućne mreže",
+                "private": "Privatno, anonimno pregledanje",
+                "everyDevice": "Zaštita svakog uređaja",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Trenutno vas štiti McAfee LiveSafe",
-                "valid": "Važi do",
-                "upgrade": "Nadogradite odmah",
-                "launch": "POKRENI McAfee",
-                "getMacfee": "NABAVITE McAfee",
-                "topBenefits": "Najvažnije prednosti aplikacije McAfee LiveSafe",
+                "title": "Antivirusni program",
+                "subtitle": "Trenutno ste zaštićeni proizvodom McAfee LiveSafe – preostalo je samo {{remainingDays}} dana! Pretplatite se odmah da biste produžili zaštitu.",
+                "launch": "Pokreni McAfee",
+                "getMacfee": "Nabavite McAfee",
+                "topBenefits": "Zbog čega <b>Lenovo preporučuje McAfee</b> za zaštitu svih vaših uređaja",
                 "awardTitle": "Nagrađivani antivirus",
-                "awardSubtitle": "Blokira viruse, malver, softver za ucenjivanje, špijunski softver, neželjeni program i još mnogo toga na računaru.",
-                "encryptedTitle": "Šifrovano skladište",
-                "encryptedSubtitle": "Neka osetljive datoteke ostanu privatne tako što ćete ih skladištiti na računaru sa 128-bitnim šifrovanjem.",
-                "identityTitle": "Identifikovanje zaštite od krađe",
-                "identitySubtitle": "Preuzmite odgovornost za zaštitu identiteta od krađe i prevare.",
-                "supportTitle": "BESPLATNA korisnička podrška",
-                "supportSubtitle": "Pokriveni ste telefonom, ćaskanjem ili na mreži tokom važenja vaše pretplate.",
-                "antiTitle": "Anti-spam",
-                "antiSubtitle": "Blokira opasne poruke pre nego što stignu do prijemnog poštanskog sandučeta uklanjanjem e-poruka koje možda sadrže rizične veze i viruse.",
-                "virusTitle": "Obećanje o zaštiti od virusa",
-                "virusSubtitle": "Pruža vam uverenje da će u slučaju da vaš računar dobije virus, stručnjak kompanije McAfee daljinski pristupiti vašem računaru da ga ukloni.",
-                "parentalTitle": "Roditeljski nadzor",
-                "parentalSubtitle": "Blokirajte veb lokacije i rezultate pretrage koje ne želite da vaša deca vide. Takođe vam omogućava da postavite ograničenja koliko vremena provode na mreži.",
-                "license": "Licenca važi do",
-                "trial": "Probna verzija važi do"
+                "awardSubtitle": "Sprečite da virusi, malver i softver za ucenjivanje zaraze vaš računar.",
+                "supportTitle": "Besplatna, neprekidna stručna tehnička podrška ",
+                "supportSubtitle": "Dobijte pomoć i budite spokojni u bilo koje doba dana ili noći zahvaljujući našem posvećenom timu za bezbednost",
+                "trialSubtitle": "Trenutno ste zaštićeni 30-dnevnom probnom verzijom proizvoda McAfee LiveSafe – preostalo je samo {{remainingDays}} dana! Pretplatite se odmah da biste produžili zaštitu.",
+                "discount": "100% garancija povratka novca",
+                "trialSubscribe": "Probna verzija se završava za {{remainingDays}} dana – PRETPLATITE SE ODMAH",
+                "subscribe": "Pretplata se završava za {{remainingDays}} dana – PRETPLATITE SE ODMAH",
+                "MultiTitle": "Zaštita više uređaja",
+                "MultiSubtitle": "Zaštitite svaki uređaj koji posedujete – računare, telefone i tablete – savršeno za porodice ",
+                "networkTitle": "Zaštita kućne mreže",
+                "networkSubtitle": "Osigurajte zaštitni zid i blokirajte hakerima pristup vašoj kućnoj mreži",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Bezbedno skladištite i upravljajte svim lozinkama na mreži na jednoj lokaciji",
+                "onlineTitle": "Privatnosti na mreži",
+                "onlineSubtitle": "Povežite se sa šifrovanjem bankovnog nivoa da biste doprineli bezbednosti svih vaših aktivnosti na mreži, čak i na javnim Wi-Fi ili otvorenim mrežama ",
+                "register": "McAfee registracija",
+                "virusScan": "Skeniranje virusa",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee skener ranjivosti ",
+                "report": "Vaš izveštaj o zaštiti od pretnji ",
+                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.",
+                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.",
+                "subscribeNow": "Pretplatite se sada",
+                "fileScan": "Skenirane datoteke",
+                "Viruses": "Eliminisano virusa",
+                "blocked": "Blokirane loše veze",
+                "shredded": "Bezbedno uništene datoteke",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"
@@ -2333,6 +2355,8 @@
         "OtherSettings": "Ostale postavke",
         "usageStatistics": "Statistika korišćenja",
         "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
         "Note": "Napomena: ",
         "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju."
     },
@@ -2407,6 +2431,7 @@
         "errorNoOptionSelected": "Morate da izaberete neku opciju.",
         "offline": "Uređaj radi u režimu van mreže, povežite internet",
         "doNotSuspend": "Ovi testovi moraju da rade bez prekida! Nemojte zatvarati niti umanjivati ovu aplikaciju i nemojte suspendovati niti isključiti računar tokom skeniranja.",
+        "doNotUse": "Nemojte da koristite računar dok se test ne završi",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagodite test",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalacija nije uspela. Pokušajte ponovo.",
+                "networkError": "Greška mreže.",
+                "installationCancelled": "Instalacija je otkazana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Otkup Adobe proizvoda",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instaliraj",
+                "installing": "Instaliranje",
+                "installed": "Instalirano",
+                "launch": "Pokreni",
+                "seeMore": "Pogledajte još"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Snimci ekrana",
+                "additionalInformation": "Dodatne informacije",
+                "by": "Obezbeđuje:",
+                "updated": "Ažurirano:",
+                "type": "Tip:",
+                "category": "Kategorija:",
+                "legalAgreement": "Pravni sporazum",
+                "readMore": "Pročitaj više",
+                "readLess": "Pročitaj manje"
+            }
+        }
     }
 }

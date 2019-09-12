@@ -38,14 +38,16 @@
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 							<div class="row">
 								<div class="col px-20">
-									<div class="auto-set-checkbox">
+									<div class="auto-set-checkbox custom-checkbox-gaming">
 										<input id="cb-airplane-mode"
+											class="custom-control-input"
 											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
 											name="airplane-mode-checkbox-id"
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
 											checked="" />
+										<span class="checkmark"></span>
 										<label for="cb-airplane-mode">
 											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 										</label>
@@ -212,9 +214,10 @@
 							</div>
 							<div class="row">
 								<div class="col px-20">
-									<div class="auto-set-checkbox"
+									<div class="auto-set-checkbox custom-checkbox-gaming"
 										*ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
+											class="custom-control-input"
 											attr.aria-label="cb-always-on-usb"
 											type="checkbox"
 											name="always-on-usb-checkbox-id"
@@ -222,6 +225,7 @@
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
 											checked="" />
+											<span class="checkmark"></span>
 										<label for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>

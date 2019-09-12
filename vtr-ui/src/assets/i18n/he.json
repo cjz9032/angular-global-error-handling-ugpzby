@@ -392,7 +392,7 @@
         },
         "networkBoost": {
             "title": "שיפור הרשת",
-            "introLine": "הפעלת \"האצת רשת\" תקבע באופן אוטומטי את העדיפות של משחקים לרמה הגבוהה ביותר ברשת שלכם ותמקסם את המהירות. אם אתם משתמשים באפליקציות כלשהן תוך כדי משחק, כמו Twitch או Discord, מומלץ להוסיף אותן לרשימה הבאה כך שגם הן יקבלו עדיפות ברשת שלכם.",
+            "introLine": "הפעלה של \"האצת רשת\" תביא למתן עדיפות גבוהה יותר למשחקים ברשת ולהשגת המהירות המרבית האפשרית. אם אתם משתמשים באפליקציות כלשהן תוך כדי משחק, מומלץ להוסיף אותן לרשימה הבאה כדי שגם הן יקבלו עדיפות גבוהה יותר ברשת שלכם.",
             "modalTurn": {
                 "title": "להפעיל את \"האצת רשת\"?",
                 "body": "להפעיל את \"האצת רשת\"? אפליקציות שהוספתם ישתפו יותר משאבי רשת כשהן פועלות.",
@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\"."
                 },
                 "powerSettings": {
                     "title": "הגדרות צריכת חשמל",
@@ -1181,7 +1181,7 @@
                     "more": "עוד",
                     "control1": "בקרי משטח מגע",
                     "control2": "בקרי עכבר",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "בקרי TRACKPOINT"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. אם המחשב נמצא במצב אוהל, לוח או מעמד, ייתכן שתכונות אלה לא יפעלו כראוי.",
                     "description4": "2. אם המחשב במצב שינה או כבוי. כניסה ללא מגע לא תעבוד.",
                     "description5": "3. כווננו את מסך המחשב לזווית מתאימה כך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לצורך כניסה אוטומטית.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. אם מצב טיסה מופעל במחשב, כל התכונות האלה מושבתות."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "מעבר אל הגדרות Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "אחורית",
@@ -1679,53 +1684,73 @@
             "common": {
                 "title": "אנטי-וירוס",
                 "back": "חזרה",
-                "why": "מדוע McAfee?",
-                "recommends": "Lenovo ממליצה על McAfee לצורך הגנה על כל המכשירים שלכם עם:",
-                "award": "כלי שזכה לפרסים רבים, המיועד להגנה מפני האיומים הדיגיטליים העדכניים ביותר, כולל רוגלות ותוכנות זדוניות",
-                "dedicated": "אבטחה ייעודית עם ביצועים שעולים על אלו של Defender ושל ספקי אנטי-וירוס מובילים אחרים",
-                "deviceToCloud": "טכנולוגיה מסוג מכשיר-לענן שלא משפיעה על ביצועי המחשב שלכם",
-                "poweredBy": "מופעל על-ידי McAfee",
-                "privacyTerms": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
-                "mcafeePremium": "הגנת פרימיום של McAfee",
+                "recommends": "Lenovo ממליצה על <b>McAfee<b> לצורך הגנה על כל המכשירים שלכם",
+                "award": "אנטי-וירוס עטור פרסים",
+                "mcafeePremium": "ההגנה של McAfee LiveSafe",
                 "protectedBy": "כרגע אתם מוגנים על-ידי {{protectedName}}. עם זאת, התוכנה McAfee LiveSafe יכולה לספק הגנה טובה יותר. ",
                 "virusScan": "סריקת וירוסים",
                 "firewall": "חומת אש",
                 "disabled": "מושבת",
-                "enableVirusScan": "הפעלת סריקת וירוסים",
-                "enablenFirewall": "הפעלת חומת אש",
-                "enableFirewall": "הפעלת חומת אש"
+                "awardText": "הגנו על מחשב Lenovo החדש שלכם עם הגנה מוכחת מפני איומים מקוונים",
+                "performance": "ביצועים מצוינים",
+                "performanceText": "אנטי-וירוס עקבי, מדויק ואמין שניתן לסמוך עליו ושיכול לעזור לכם לשמור על בטיחותכם",
+                "Blazing": "מהירות שאין כמוה",
+                "BlazingText": "אנטי-וירוס משופר שלא יאט או יפריע לחווית Lenovo Vantage שלכם",
+                "privacyTerms": "/   <tag>מדיניות פרטיות</tag>  |  <tag>תנאי השירות</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "ללא הגנה אופטימלית",
-                "subtitle": "אתם מוגנים כרגע על-ידי Windows Defender.עם זאת, McAfee LiveSafe יכול לספק לכם הגנה טובה יותר. ניתן לקבל מידע נוסף למטה.",
-                "learnMore": "מידע נוסף על McAfee",
-                "windowsProtected": "הגנה בסיסית של Windows Defender",
-                "windowsSubtitle": "Windows Defender מציע הגנה בסיסית להתקן שלכם"
+                "optimallyProtected": "נראה שאתם משתמשים כרגע ב-Windows Defender. בחירה לא רעה, אך למען הבטיחות האולטימטיבית נגד תוכנות כופר, תוכנות זדוניות ווירוסים, התחברנו אל <b>McAfee</b> כדי להעניק לכם אבטחה עטורת פרסים כך שתוכלו <b>להגן על מה שחשוב.</b>",
+                "windowsSubtitle": "הגנה בסיסית של Windows Defender",
+                "topTip": "טיפים מובילים לבטיחות ברשת",
+                "topContent": "כיצד תוכלו להתגונן מפני האיומים המקוונים הגדולים ביותר של ימינו",
+                "view": "טיפים לצפייה",
+                "buyNow": "קנו עכשיו",
+                "buy": "קנו, הורידו והתקינו את ההגנה של McAfee מפני וירוסים עוד היום כדי לנצל את תכונות האבטחה הללו ברמה בנקאית",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "הגנה על הרשת הביתית",
+                "private": "גלישה פרטית, אנונימית",
+                "everyDevice": "הגנה מכל מכשיר",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "כרגע אתם מוגנים על-ידי McAfee LiveSafe",
-                "valid": "בתוקף עד",
-                "upgrade": "שדרגו כעת",
+                "title": "אנטי וירוס",
+                "subtitle": "אתם מוגנים כרגע על ידי McAfee LiveSafe - נותרו {{remainingDays}} ימים בלבד! הירשמו עכשיו כדי להאריך את תקופת ההגנה שלכם.",
                 "launch": "הפעלת McAfee",
-                "getMacfee": "רכישת McAfee",
-                "topBenefits": "היתרונות המרכזיים של McAfee LiveSafe",
+                "getMacfee": "קבלו את McAfee",
+                "topBenefits": "מדוע <b>Lenovo ממליצה על McAfee</b> לצורך הגנה על כל המכשירים שלכם",
                 "awardTitle": "אנטי-וירוס עטור פרסים",
-                "awardSubtitle": "חוסם וירוסים, תוכנות זדוניות, תוכנות כופר, תוכנות ריגול, תוכניות לא רצויות ועוד במחשבכם.",
-                "encryptedTitle": "אחסון מוצפן",
-                "encryptedSubtitle": "שמרו על הפרטיות של קבצים רגישים על-ידי אחסונם במחשב שלכם באמצעות הצפנת 128 סיביות.",
-                "identityTitle": "הגנה מפני גניבת זהות",
-                "identitySubtitle": "קחו אחריות על ההגנה על זהותכם מפני גניבה והונאה.",
-                "supportTitle": "תמיכה בלקוחות ללא תשלום",
-                "supportSubtitle": "תוכלו לקבל תמיכה באמצעות טלפון, באמצעות צ'אט או באתר אינטרנט לתקופת המנוי שלכם.",
-                "antiTitle": "אנטי-ספאם",
-                "antiSubtitle": "חוסם הודעות מסוכנות לפני שהן מגיעות לתיבת הדואר הנכנס שלכם על ידי הסרת הודעות דואר אלקטרוני שעשויות לכלול קישורים מסוכנים ווירוסים.",
-                "virusTitle": "הבטחת הגנה מפני וירוסים",
-                "virusSubtitle": "מקנה לך את הביטחון שאם וירוס יחדור למחשב, מומחה McAfee ייגש מרחוק למחשב ויסיר אותו.",
-                "parentalTitle": "בקרות הורים",
-                "parentalSubtitle": "תוכלו לחסום אתרי אינטרנט ותוצאות חיפוש שאינכם רוצים שילדכם יצפו בהם. ניתן גם להגדיר מגבלות על משך הזמן שבו הם גולשים באינטרנט.",
-                "license": "הרישיון בתוקף עד",
-                "trial": "גרסת הניסיון בתוקף עד"
+                "awardSubtitle": "מונע כניסת וירוסים, תוכנות זדוניות ותוכנות כופר במחשב שלכם.",
+                "supportTitle": "תמיכה טכנית בחינם, 24/7 ",
+                "supportSubtitle": "הודות לצוות האבטחה המסור שלנו ניתן לקבל סיוע מסביב לשעון וליהנות משקט נפשי",
+                "trialSubtitle": "אתם מוגנים כרגע על ידי גרסת ניסיון ל- 30 יום של McAfee LiveSafe - נותרו {{remainingDays}} ימים בלבד! הירשמו עכשיו כדי להאריך את תקופת ההגנה שלכם.",
+                "discount": "100% החזר כספי מובטח",
+                "trialSubscribe": "גרסת הניסיון מסתיימת בעוד {{remainingDays}} ימים - הירשמו עכשיו",
+                "subscribe": "הרישום מסתיים בעוד {{remainingDays}} ימים - הירשמו עכשיו",
+                "MultiTitle": "הגנה על מכשירים רבים",
+                "MultiSubtitle": "הגנה על כל מכשיר שבבעלותכם - מחשבים, טלפונים וטאבלטים - מתאים במיוחד למשפחות ",
+                "networkTitle": "הגנה על הרשת הביתית",
+                "networkSubtitle": "מחזק את חומת האש וחוסם גישה של האקרים לרשת הביתית שלכם",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "שומר ומנהל את כל הסיסמאות המקוונות שלכם במיקום יחיד",
+                "onlineTitle": "פרטיות באינטרנט",
+                "onlineSubtitle": "התחברו להצפנה ברמה בנקאית שעוזרת לאבטח את כל הפעילויות המקוונות שלכם, אפילו ברשת Wi-Fi ציבורית או ברשתות פתוחות ",
+                "register": "רישום McAfee",
+                "virusScan": "בדיקת וירוסים",
+                "firewall": "חומת אש אישית",
+                "antiSpam": "אנטי-ספאם של McAfee",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "סורק פגיעויות של McAfee ",
+                "report": "דוח הגנה מפני איומים ",
+                "trialContent": "נהניתם מגרסת הניסיון של האנטי-וירוס של McAfee. אבל נותרו רק {{remainingDays}} ימים עד תום תקופת הניסיון, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן.",
+                "subscribeContent": "נהניתם מגרסת הניסיון של McAfee. אבל נותרו רק {{remainingDays}} ימים, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן.",
+                "subscribeNow": "הירשמו כעת",
+                "fileScan": "קבצים שנסרקו",
+                "Viruses": "וירוסים הושמדו",
+                "blocked": "חיבורים מסוכנים נחסמו",
+                "shredded": "קבצים נגרסו בבטחה",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "מציע הגנה בסיסית להתקן שלכם"
@@ -2330,6 +2355,8 @@
         "OtherSettings": "הגדרות נוספות",
         "usageStatistics": "סטטיסטיקת שימוש",
         "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה."
     },
@@ -2404,6 +2431,7 @@
         "errorNoOptionSelected": "יש לבחור אפשרות.",
         "offline": "המכשיר פועל במצב לא מקוון, יש לחבר אותו לאינטרנט",
         "doNotSuspend": "יש לאפשר לבדיקות האלה להתבצע ללא הפרעה! אין לסגור או לצמצם את היישום הזה, ואין להשהות או לכבות את המחשב בזמן הסריקה.",
+        "doNotUse": "הימנעו משימוש במחשב שלכם עד לסיום הבדיקה",
         "customize": {
             "name": "התאמה אישית",
             "test": "התאמה אישית של הבדיקה",
@@ -2484,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "ההתקנה נכשלה. נסו שוב.",
+                "networkError": "שגיאת רשת.",
+                "installationCancelled": "ההתקנה בוטלה."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "קודי מימוש של Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "התקן",
+                "installing": "התקנה",
+                "installed": "מותקן",
+                "launch": "הפעלה",
+                "seeMore": "פרטים נוספים"
+            },
+            "fieldName": {
+                "description": "תיאור",
+                "screenshots": "צילומי מסך",
+                "additionalInformation": "מידע נוסף",
+                "by": "עד:",
+                "updated": "עודכן:",
+                "type": "סוג:",
+                "category": "קטגוריה:",
+                "legalAgreement": "הסכם משפטי",
+                "readMore": "פרטים נוספים",
+                "readLess": "פחות מידע"
+            }
+        }
     }
 }

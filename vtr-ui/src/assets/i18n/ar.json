@@ -392,7 +392,7 @@
         },
         "networkBoost": {
             "title": "تعزيز الشبكة",
-            "introLine": "تعزيز الشبكة يعيّن أولوية الألعاب إلى أعلى مستوى في شبكتك، يزيد السرعة إلى أقصى حد. إذا كنت تستخدم تطبيقًا أثناء اللعب، مثل Twitch أو Discord، فمن المستحسن أن تضيفه أدناه لكي يتلقى هو أيضًا الأولوية على شبكتك.",
+            "introLine": "تعزيز الشبكة يعيّن أولوية الألعاب إلى أعلى مستوى في شبكتك، يزيد السرعة إلى أقصى حد. إذا كنت تستخدم أي تطبيقات أثناء اللعب، فمن المستحسن أن تضيفها إلى القائمة أدناه لكي تتلقى هي أيضًا الأولوية على شبكتك.",
             "modalTurn": {
                 "title": "هل تريد تشغيل تعزيز الشبكة؟",
                 "body": "هل تريد تشغيل تعزيز الشبكة؟ ستشارك التطبيقات التي أضفتها المزيد من الشبكات عند تشغيلها.",
@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\"."
                 },
                 "powerSettings": {
                     "title": "إعدادات الطاقة",
@@ -1181,7 +1181,7 @@
                     "more": "المزيد",
                     "control1": "إعدادات تحكم لوحة اللمس",
                     "control2": "إعدادات تحكم الماوس",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "إعدادات تحكم TRACKPOINT"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
                     "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. إذا تم تمكين وضع الطائرة على جهاز الكمبيوتر الخاص بك، يتم تعطيل هذه الميزات."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "السابق‬",
@@ -1679,53 +1684,73 @@
             "common": {
                 "title": "مكافحة الفيروسات",
                 "back": "السابق",
-                "why": "لماذا اختيار McAfee؟",
-                "recommends": "توصي Lenovo باستخدام McAfee لحماية جميع أجهزتك عبر الميزات التالية:",
-                "award": "حماية حائزة على الجوائز من أحدث التهديدات عبر الإنترنت، والتي تشمل برامج الفدية والبرامج الضارة",
-                "dedicated": "أمان مخصص يتفوق باستمرار على Defender وغيره من أبرز موفري برامج مكافحة الفيروسات",
-                "deviceToCloud": "تقنية الانتقال من الجهاز إلى السحابة التي لن تسبب أي بطء في الكمبيوتر الشخصي",
-                "poweredBy": "مشغّل بواسطة McAfee",
-                "privacyTerms": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
-                "mcafeePremium": "حماية ممتازة بواسطة McAfee",
+                "recommends": "توصي Lenovo باستخدام <b>McAfee<b> لحماية جميع أجهزتك",
+                "award": "برنامج مكافحة الفيروسات الحائز على جوائز",
+                "mcafeePremium": "حماية McAfee LiveSafe",
                 "protectedBy": "أنت محمي في الوقت الحالي من خلال {{protectedName}}. ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe.",
                 "virusScan": "فحص الفيروسات",
                 "firewall": "جدار الحماية",
                 "disabled": "معطل",
-                "enableVirusScan": "تمكين فحص الفيروسات",
-                "enablenFirewall": "تمكين جدار الحماية",
-                "enableFirewall": "تمكين جدار الحماية"
+                "awardText": "تمكن من حماية الكمبيوتر الجديد من Lenovo بواسطة ميزة الحماية من التهديدات عبر الإنترنت المثبتة الفعالية والتي خضعت للاختبارات",
+                "performance": "أداء ثابت",
+                "performanceText": "برنامج للحماية من الفيروسات متناسق ودقيق وموثوق يمكنك الاعتماد عليه للمساعدة في الحفاظ على سلامتك",
+                "Blazing": "سرعة فائقة",
+                "BlazingText": "برنامج مكافحة الفيروسات المحسن الذي لن يتسبب في إبطاء أو مقاطعة تجربة Lenovo Vantage",
+                "privacyTerms": "/   <tag>سياسة الخصوصية</tag>  |  <tag>شروط الخدمة</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "غير محمي بشكل مثالي",
-                "subtitle": "أنت محمي حاليًا بواسطة Windows Defender.ومع ذلك، يمكنك أن تكون محميًا بشكل أفضل مع McAfee LiveSafe. اعرف المزيد أدناه.",
-                "learnMore": "معرفة المزيد عن McAfee",
-                "windowsProtected": "الحماية الأساسية من Windows Defender",
-                "windowsSubtitle": "يقدم Windows Defender الحماية الأساسية لجهازك"
+                "optimallyProtected": "يبدو أنك تستخدم Windows Defender في الوقت الحالي. هذا الخيار ليس سيئًا، ولكن من أجل تأمين السلامة المطلقة ضد برامج الفدية والبرامج الضارة والفيروسات، قمنا بالتعاون مع شركة <b>McAfee</b> لكي نقدم لك برنامج أمان حائز على جوائز لتمكينك من <b>حماية كل الأشياء المهمة.</b>",
+                "windowsSubtitle": "الحماية الأساسية من Windows Defender",
+                "topTip": "أهم النصائح لتوفير السلامة عبر الإنترنت",
+                "topContent": "تعرف على طرق الدفاع لمواجهة أهم التهديدات عبر الإنترنت في الوقت الحالي",
+                "view": "عرض النصائح",
+                "buyNow": "شراء الآن",
+                "buy": "بادر اليوم إلى شراء برنامج الحماية من الفيروسات من McAfee وتنزيله وتثبيته للاستفادة من ميزات الأمان هذه على مستوى البنوك",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "حماية الشبكة المنزلية",
+                "private": "الاستعراض الخاص والمجهول الهوية",
+                "everyDevice": "حماية لكل الأجهزة",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "أنت محمي في الوقت الحالي بواسطة McAfee LiveSafe",
-                "valid": "صالح حتى",
-                "upgrade": "الترقية الآن",
+                "title": "مكافحة الفيروسات",
+                "subtitle": "أنت محمي حاليًا من خلال McAfee LiveSafe – فقط {{remainingDays}} أيام متبقية! اشترك الآن لتمديد فترة حمايتك.",
                 "launch": "تشغيل McAfee",
-                "getMacfee": "الحصول على McAfee",
-                "topBenefits": "أهم فوائد McAfee LiveSafe",
+                "getMacfee": "احصل على McAfee",
+                "topBenefits": "لماذا <b>تنصح Lenovo باستخدام منتجات McAfee</b> لحماية جميع أجهزتك",
                 "awardTitle": "برنامج مكافحة الفيروسات الحائز على جوائز",
-                "awardSubtitle": "يعمل على حظر الفيروسات والبرامج الضارة وبرامج الفدية والبرامج غير المرغوب فيها والمزيد على جهاز الكمبيوتر الشخصي.",
-                "encryptedTitle": "التخزين المشفر",
-                "encryptedSubtitle": "حافظ على سرية ملفاتك الخاصة عن طريق تخزينها علي الكمبيوتر الخاص بك باستخدام تشفير 128 بت.",
-                "identityTitle": "الحماية من سرقة الهوية",
-                "identitySubtitle": "تولي مهمة حماية هويتك من السرقة والاحتيال.",
-                "supportTitle": "دعم عملاء مجاني",
-                "supportSubtitle": "هل تم التواصل معك عبر الهاتف أو الدردشة أو عبر الإنترنت طول فترة اشتراكك؟",
-                "antiTitle": "مكافحة البريد العشوائي",
-                "antiSubtitle": "يقوم بحظر الرسائل الخطرة قبل أن تصل إلى علبة الوارد من خلال إزالة رسائل البريد الإلكتروني التي قد تحتوي على ارتباطات وفيروسات خطرة.",
-                "virusTitle": "تعهد الحماية من الفيروسات",
-                "virusSubtitle": "تضمن لك أنه عندما يصل فيروس إلى جهاز الكمبيوتر، فسيقوم خبير McAfee بالوصول إلى جهاز الكمبيوتر عن بُعد لإزالته.",
-                "parentalTitle": "الرقابة الأبوية",
-                "parentalSubtitle": "حظر مواقع الويب ونتائج البحث التي لا تود أن يراها أطفالك. كما تتيح لك تعيين حدود الوقت الذي يقضونه على الإنترنت.",
-                "license": "الترخيص صالح حتى",
-                "trial": "الإصدار التجريبي صالح حتى"
+                "awardSubtitle": "منع الفيروسات والبرامج الضارة وبرامج الفدية من إصابة جهاز الكمبيوتر.",
+                "supportTitle": "دعم تقني مجاني يوفره خبراء على مدار الساعة وطيلة أيام الأسبوع ",
+                "supportSubtitle": "احصل على المساعدة وراحة البال على مدار الساعة من فريقنا الأمني المخصص",
+                "trialSubtitle": "أنت محمي حاليًا من خلال إصدار تجريبي مدته 30 يومًا من McAfee LiveSafe – فقط {{remainingDays}} أيام متبقية! اشترك الآن لتمديد فترة حمايتك.",
+                "discount": "ضمان استعادة الاموال بنسبة 100%",
+                "trialSubscribe": "ينتهي الإصدار التجريبي في غضون {{remainingDays}} من الأيام — اشترك الآن",
+                "subscribe": "ينتهي الاشتراك في غضون {{remainingDays}} من الأيام — اشترك الآن",
+                "MultiTitle": "حماية أجهزة متعددة",
+                "MultiSubtitle": "حماية كل جهاز تملكه - أجهزة الكمبيوتر والهواتف والأجهزة اللوحية - مثالي للعائلات ",
+                "networkTitle": "حماية الشبكة المنزلية",
+                "networkSubtitle": "تأمين جدار الحماية ومنع المتسللين من الوصول إلى الشبكة المنزلية",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "تخزين وإدارة كلمات المرور عبر الإنترنت في مكان واحد",
+                "onlineTitle": "الخصوصية عبر الانترنت",
+                "onlineSubtitle": "الاتصال من خلال تشفير على مستوى البنوك للمساعدة في حماية جميع أنشطتك عبر الإنترنت، حتى على شبكة Wi-Fi العامة أو الشبكات المفتوحة ",
+                "register": "تسجيل McAfee",
+                "virusScan": "الفحص بحثًا عن فيروسات",
+                "firewall": "جدار حماية شخصي",
+                "antiSpam": "مكافحة البريد العشوائي من McAfee",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "برنامج الفحص بحثًا عن الثغرات الأمنية من McAfee ",
+                "report": "تقرير الحماية من التهديدات ",
+                "trialContent": "لقد استخدمت الإصدار التجريبي من برنامج مكافحة الفيروسات من McAfee على نحو جيد. ولكن صلاحية الإصدار التجريبي تنتهي في غضون {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة.",
+                "subscribeContent": "لقد استخدمت McAfee على نحو جيد. ولكن عدد الأيام المتبقية لهذا الإصدار التجريبي ليس سوى {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة.",
+                "subscribeNow": "الاشتراك الآن",
+                "fileScan": "فحص الملفات",
+                "Viruses": "القضاء على الفيروسات",
+                "blocked": "حظر الاتصالات السيئة",
+                "shredded": "حذف الملفات بطريقة آمنة",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "يقدم لك الحماية الأساسية لجهازك"
@@ -2330,6 +2355,8 @@
         "OtherSettings": "إعدادات أخرى",
         "usageStatistics": "إحصائيات الاستخدام",
         "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
     },
@@ -2404,6 +2431,7 @@
         "errorNoOptionSelected": "رجاءً، أنت بحاجة لتحديد خيار.",
         "offline": "هذا الجهاز يعمل في وضع عدم الاتصال، يرجى الاتصال بالإنترنت",
         "doNotSuspend": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة! لا تعمل على إغلاق هذا التطبيق أو تصغيره، ولا توقف عمل الكمبيوتر بشكل مؤقت أو توقف تشغيله أثناء إجراء عملية الفحص.",
+        "doNotUse": "يُرجى الامتناع عن استخدام الكمبيوتر حتى اكتمال هذا الاختبار",
         "customize": {
             "name": "تخصيص",
             "test": "تخصيص اختبار",
@@ -2484,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "فشل التثبيت. حاول من جديد.",
+                "networkError": "خطأ في الشبكة.",
+                "installationCancelled": "تم إلغاء التثبيت."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "استرداد Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "تثبيت",
+                "installing": "جارِ التثبيت",
+                "installed": "مثبت",
+                "launch": "اطلاق",
+                "seeMore": "رؤية المزيد"
+            },
+            "fieldName": {
+                "description": "الوصف",
+                "screenshots": "لقطات الشاشة",
+                "additionalInformation": "مزيد من المعلومات",
+                "by": "حسب:",
+                "updated": "تم التحديث:",
+                "type": "النوع:",
+                "category": "الفئة:",
+                "legalAgreement": "الاتفاقية القانونية",
+                "readMore": "اقرأ أكثر",
+                "readLess": "اقرأ أقل"
+            }
+        }
     }
 }

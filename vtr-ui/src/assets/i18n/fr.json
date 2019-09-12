@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux."
                 },
                 "powerSettings": {
                     "title": "Paramètres d'alimentation",
@@ -1181,7 +1181,7 @@
                     "more": "PLUS",
                     "control1": "CONTRÔLES DU PAVÉ TACTILE",
                     "control2": "CONTRÔLE DE LA SOURIS",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "PARAMÈTRES TRACKPOINT"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
                     "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Retour",
@@ -1679,53 +1684,73 @@
             "common": {
                 "title": "Antivirus",
                 "back": "RETOUR",
-                "why": "Pourquoi McAfee ?",
-                "recommends": "Lenovo vous recommande McAfee pour protéger tous vos périphériques avec :",
-                "award": "Protection primée contre les menaces en ligne les plus récentes, y compris les rançongiciels et les logiciels malveillants",
-                "dedicated": "Sécurité dédiée qui offre systématiquement des meilleures performances que Defender et les autres principaux fournisseurs d'antivirus",
-                "deviceToCloud": "Une technologie périphérique vers le cloud qui ne ralentira pas votre PC",
-                "poweredBy": "Protégé par McAfee",
-                "privacyTerms": "Pour en savoir plus, lisez la <tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
-                "mcafeePremium": "Protection McAfee Premium",
+                "recommends": "Lenovo vous recommande <b>McAfee<b> pour protéger tous vos périphériques",
+                "award": "Logiciel antivirus primé",
+                "mcafeePremium": "Protection McAfee LiveSafe",
                 "protectedBy": "Vous êtes actuellement protégé par {{protectedName}}. Toutefois, vous pourriez être encore mieux protégé avec McAfee LiveSafe.",
                 "virusScan": "RECHERCHE DE VIRUS",
                 "firewall": "PARE-FEU",
                 "disabled": "DÉSACTIVÉ",
-                "enableVirusScan": "ACTIVER LA RECHERCHE DE VIRUS",
-                "enablenFirewall": "ACTIVER LE PARE-FEU",
-                "enableFirewall": "ACTIVER LE PARE-FEU"
+                "awardText": "Protégez votre nouveau PC Lenovo avec une protection testée et éprouvée contre les menaces en ligne",
+                "performance": "Des performances excpetionnelles",
+                "performanceText": "Antivirus constant, précis et fiable sur lequel vous pouvez compter pour vous protéger",
+                "Blazing": "Vitesse fulgurante",
+                "BlazingText": "Antivirus optimisé qui ne ralentira pas ou n'interrompra pas votre expérience Lenovo Vantage",
+                "privacyTerms": "/   <tag>Politique de confidentialité</tag>  |  <tag>Conditions générales</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Non protégé de manière optimale",
-                "subtitle": "Vous êtes actuellement protégé par Windows Defender.Cependant, vous pourriez être mieux protégé avec McAfee LiveSafe. Apprenez-en davantage ci-après.",
-                "learnMore": "EN SAVOIR PLUS SUR McAfee",
-                "windowsProtected": "Protection de base Windows Defender",
-                "windowsSubtitle": "Windows Defender vous offre une protection de base pour votre périphérique"
+                "optimallyProtected": "Il semble que vous utilisez actuellement Windows Defender. Ceci n'est pas un mauvais choix, mais pour la sécurité ultime contre les rançongiciels, les logiciels malveillants et les virus, nous nous sommes associés avec <b>McAfee</b> pour vous offrir la sécurité primée et ainsi <b>protéger ce qui compte.</b>",
+                "windowsSubtitle": "Protection de base Windows Defender",
+                "topTip": "Les conseils indispensables pour la sécurité en ligne",
+                "topContent": "Découvrez comment vous pouvez vous défendre contre les plus grandes menaces en ligne d'aujourd'hui",
+                "view": "AFFICHER LES CONSEILS",
+                "buyNow": "Acheter maintenant",
+                "buy": "Achetez, téléchargez et installez la protection antivirus McAfee aujourd'hui pour profiter de caractéristiques de sécurité de niveau bancaire",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Protection du réseau domestique",
+                "private": "Navigation privée et anonyme",
+                "everyDevice": "Protection de tous les appareils",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Vous êtes actuellement protégé par McAfee LiveSafe",
-                "valid": "Valable jusqu'au",
-                "upgrade": "Mettre à niveau maintenant",
-                "launch": "LANCER McAfee",
-                "getMacfee": "OBTENIR McAfee",
-                "topBenefits": "Avantages essentiels de McAfee LiveSafe",
+                "title": "Antivirus",
+                "subtitle": "Vous êtes actuellement protégé par McAfee LiveSafe qui expire dans {{remainingDays}} jours ! Abonnez-vous dès maintenant pour étendre votre protection.",
+                "launch": "Lancer McAfee",
+                "getMacfee": "Télécharger McAfee",
+                "topBenefits": "Pourquoi <b>Lenovo recommande McAfee</b> pour protéger tous vos périphériques",
                 "awardTitle": "Logiciel antivirus primé",
-                "awardSubtitle": "Bloque les virus, les logiciels malveillants, les rançongiciels, les logiciels espions, les programmes indésirables et bien plus encore sur votre PC.",
-                "encryptedTitle": "Stockage chiffré",
-                "encryptedSubtitle": "Préservez la confidentialité de vos fichiers privés en les stockant sur votre PC avec le chiffrement 128 bits.",
-                "identityTitle": "Protection contre le vol d'identité",
-                "identitySubtitle": "Protégez votre identité contre le vol et la fraude.",
-                "supportTitle": "Service client GRATUIT",
-                "supportSubtitle": "Assistance par téléphone, par chat ou en ligne durant toute la durée de votre abonnement.",
-                "antiTitle": "Logiciel anti-spam",
-                "antiSubtitle": "Bloque les messages dangereux avant qu'ils ne parviennent à votre boîte de réception en supprimant les e-mails susceptibles de contenir des liens risqués ou des virus.",
-                "virusTitle": "Virus protection pledge",
-                "virusSubtitle": "Vous offre l'assurance qu'en cas d'infection de votre PC par un virus, un expert McAfee accédera à distance à votre ordinateur pour le supprimer.",
-                "parentalTitle": "Contrôles parentaux",
-                "parentalSubtitle": "Permet de bloquer des sites Web et des résultats de recherche que vous ne souhaitez pas que vos enfants voient. Vous permet également de définir des limites de temps passé en ligne.",
-                "license": "Licence valide jusqu'au",
-                "trial": "Version d'évaluation valable jusqu'au"
+                "awardSubtitle": "Empêchez les virus, les logiciels malveillants et les rançongiciels d'infecter votre PC.",
+                "supportTitle": "Soutien technique d'expert gratuit, 24h/24 et 7j/7 ",
+                "supportSubtitle": "Obtenez une assistance et une tranquillité d'esprit 24 heures sur 24 grâce à notre équipe de sécurité dédiée",
+                "trialSubtitle": "Vous êtes actuellement protégé par une version d'essai de 30 jours de McAfee LiveSafe qui expire dans {{remainingDays}} jours ! Abonnez-vous dès maintenant pour étendre votre protection.",
+                "discount": "Remboursement garanti à 100 %",
+                "trialSubscribe": "La version d'essaie expire dans {{remainingDays}} jours — ABONNEZ-VOUS MAINTENANT",
+                "subscribe": "L'abonnement expire dans {{remainingDays}} jours — ABONNEZ-VOUS MAINTENANT",
+                "MultiTitle": "Protection de plusieurs appareils",
+                "MultiSubtitle": "Protégez tous les appareils que vous possédez : PC, téléphones et tablettes. Une solution parfaite pour les familles ",
+                "networkTitle": "Protection du réseau domestique",
+                "networkSubtitle": "Sécurisez votre pare-feu et empêchez les pirates d'accéder à votre réseau domestique",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Sauvegardez et gérez de façon sécurisée tous vos mots de passe en ligne en un seul endroit",
+                "onlineTitle": "Confidentialité en ligne",
+                "onlineSubtitle": "Connectez-vous avec un chiffrement de niveau bancaire pour sécuriser toutes vos activités en ligne, même sur les réseaux Wi-Fi ou ouverts publics ",
+                "register": "Inscription McAfee",
+                "virusScan": "Recherche de virus",
+                "firewall": "Pare-feu personnel",
+                "antiSpam": "Anti-Spam McAfee",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "Analyse des vulnérabilités McAfee ",
+                "report": "Votre rapport sur la protection des menaces ",
+                "trialContent": "Vous avez utilisé la version d'évaluation de l'antivirus McAfee à bon escient. Mais dans {{remainingDays}} jours, votre version d'évalution expire et vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.",
+                "subscribeContent": "Vous avez utilisé McAfee à bon escient. Mais dans {{remainingDays}} jours, vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.",
+                "subscribeNow": "S'abonner maintenant",
+                "fileScan": "Fichiers analysés",
+                "Viruses": "Virus éliminés",
+                "blocked": "Mauvaises connexions bloquées",
+                "shredded": "Fichiers détruits en toute sécurité",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "vous offre une protection de base pour votre périphérique"
@@ -2330,6 +2355,8 @@
         "OtherSettings": "Autres paramètres",
         "usageStatistics": "Statistiques d'utilisation",
         "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Partage des données statistiques avec Lenovo afin d'améliorer la fiabilité, le concept et l'optimisation des fonctionnalités de votre ordinateur.",
         "Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte."
     },
@@ -2404,6 +2431,7 @@
         "errorNoOptionSelected": "Vous devez sélectionner une option.",
         "offline": "Ce périphérique fonctionne en mode hors connexion. Veuillez vous connecter à Internet",
         "doNotSuspend": "Ces tests doivent être exécutés sans interruption ! Ne fermez pas ou ne réduisez pas cette application, et n'interrompez pas ou n'éteignez pas votre ordinateur pendant l'analyse.",
+        "doNotUse": "N'utilisez pas votre ordinateur tant que le test n'est pas terminé",
         "customize": {
             "name": "Personnaliser",
             "test": "Personnaliser le test",
@@ -2484,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Échec de l'installation. Faites une nouvelle tentative.",
+                "networkError": "Erreur réseau.",
+                "installationCancelled": "L'installation a été annulée."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Remboursement Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installation en cours",
+                "installed": "Installé",
+                "launch": "Lancer",
+                "seeMore": "En savoir plus"
+            },
+            "fieldName": {
+                "description": "Description",
+                "screenshots": "Captures d'écran",
+                "additionalInformation": "Informations supplémentaires",
+                "by": "Par :",
+                "updated": "Dernière mise à jour :",
+                "type": "Type :",
+                "category": "Catégorie :",
+                "legalAgreement": "Accord juridique",
+                "readMore": "Afficher plus",
+                "readLess": "Afficher moins"
+            }
+        }
     }
 }

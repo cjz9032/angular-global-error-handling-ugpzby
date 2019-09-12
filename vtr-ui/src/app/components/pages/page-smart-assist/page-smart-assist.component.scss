@@ -83,6 +83,8 @@
 		h3 {
 			font-weight: $weight_bold;
 			color: $main_darker;
+			margin-top: 0.2rem;
+			letter-spacing: 0.05rem;
 		}
 		fa-icon {
 			font-size: 1.8rem;
@@ -149,8 +151,13 @@
 		border-bottom: 0.1rem solid $shade_lighter;
 	}
 	.bold-title {
-		::ng-deep .vtr-ui-switch-row.white-theme .title {
-			font-weight: 700;
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			padding: 0 0.7rem 0;
+			.title {
+				font-weight: 700;
+				font-size: 1.8rem;
+				// letter-spacing: 0rem;
+			}
 		}
 	}
 	.margin-left-5 {
@@ -183,4 +190,3 @@
 		margin-top: -6rem;
 	}
 }
-

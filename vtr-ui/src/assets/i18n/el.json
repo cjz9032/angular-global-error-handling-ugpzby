@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Η λειτουργία Έξυπνης ψύξης ρυθμίζει την ταχύτητα του ανεμιστήρα, τη μέγιστη απόδοση και διαχειρίζεται τη διάρκεια της μπαταρίας. Αυτή η δυνατότητα έχει 3 λειτουργίες (Αθόρυβη, Ισορροπημένη και Απόδοση) και είναι πλέον προσβάσιμη από το ρυθμιστικό ισχύος απόδοσης των Windows",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Η έξυπνη ψύξη σας δίνει τη δυνατότητα να ρυθμίσετε την απόδοση του συστήματος και τη θερμική θερμοκρασία. Στη λειτουργία \"Απόδοση\", βελτιστοποιεί την απόδοση του συστήματος. Ενώ βοηθά να διατηρήσετε το σύστημα πιο δροσερό ή πιο αθόρυβο στη λειτουργία \"Κρύο και αθόρυβο\"."
                 },
                 "powerSettings": {
                     "title": "Ρυθμίσεις ενέργειας",
@@ -1181,7 +1181,7 @@
                     "more": "ΠΕΡΙΣΣΟΤΕΡΑ",
                     "control1": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΛΗΚΤΡΟΛΟΓΙΟΥ ΑΦΗΣ",
                     "control2": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΟΝΤΙΚΙΟΥ",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "ΧΕΙΡΙΣΤΗΡΙΑ TRACKPOINT"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. Εάν ο υπολογιστής σας είναι σε λειτουργία σκηνής, tablet ή ανάκλισης, οι δυνατότητες αυτές ενδέχεται να μη λειτουργούν σωστά.",
                     "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η σύνδεση χωρίς αφή δεν θα λειτουργήσει.",
                     "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Μετάβαση στις Ρυθμίσεις του Windows Hello",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Πίσω",
@@ -1679,53 +1684,73 @@
             "common": {
                 "title": "Προστασία από ιούς",
                 "back": "ΠΙΣΩ",
-                "why": "Γιατί το McAfee;",
-                "recommends": "Η Lenovo συνιστά τη McAfee για την προστασία όλων των συσκευών σας με:",
-                "award": "Βραβευμένη προστασία από τις τελευταίες ηλεκτρονικές απειλές, συμπεριλαμβανομένων των ransomware και malware",
-                "dedicated": "Αποκλειστική ασφάλεια που υπερβαίνει συνεχώς σε επιδόσεις το Defender και άλλους κορυφαίους παρόχους AV",
-                "deviceToCloud": "Τεχνολογία συσκευής σε cloud που δεν θα επιβραδύνει τον υπολογιστή σας",
-                "poweredBy": "Υποστηρίζεται από την McAfee",
-                "privacyTerms": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>",
-                "mcafeePremium": "Προστασία ανώτερης αξίας με το McAfee",
+                "recommends": "Η Lenovo συνιστά το <b>McAfee<b> για την προστασία όλων των συσκευών σας",
+                "award": "Βραβευμένο λογισμικό προστασίας από ιούς",
+                "mcafeePremium": "Προστασία McAfee LiveSafe",
                 "protectedBy": "Προς το παρόν, προστατεύεστε με το {{protectedName}}. Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe.",
                 "virusScan": "ΣΑΡΩΣΗ ΓΙΑ ΙΟΥΣ",
                 "firewall": "ΤΕΙΧΟΣ ΠΡΟΣΤΑΣΙΑΣ",
                 "disabled": "ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
-                "enableVirusScan": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΣΑΡΩΣΗΣ ΓΙΑ ΙΟΥΣ",
-                "enablenFirewall": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΤΕΙΧΟΥΣ ΠΡΟΣΤΑΣΙΑΣ",
-                "enableFirewall": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΤΕΙΧΟΥΣ ΠΡΟΣΤΑΣΙΑΣ"
+                "awardText": "Προστατεύστε τον νέο υπολογιστή σας Lenovo με δοκιμασμένη, αποδεδειγμένη προστασία από τις online απειλές",
+                "performance": "Στιβαρή απόδοση",
+                "performanceText": "Συνεπές, ακριβές και αξιόπιστο λογισμικό προστασίας από ιούς στο οποίο μπορείτε να βασίζεστε ότι θα σας βοηθήσει να παραμείνετε ασφαλείς",
+                "Blazing": "Φοβερή ταχύτητα",
+                "BlazingText": "Βελτιστοποιημένο λογισμικό προστασίας από ιούς που δεν θα επιβραδύνει ή θα διακόψει την εμπειρία του Lenovo Vantage",
+                "privacyTerms": "/   <tag>Πολιτική απορρήτου</tag>  |  <tag>Όροι παροχής υπηρεσίας</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Χωρίς βέλτιστη προστασία",
-                "subtitle": "Προς το παρόν προστατεύεστε από το Windows Defender.Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe. Μάθετε περισσότερα παρακάτω.",
-                "learnMore": "ΜΑΘΕΤΕ ΠΕΡΙΣΣΟΤΕΡΑ ΓΙΑ ΤΟ McAfee",
-                "windowsProtected": "Βασική προστασία του Windows Defender",
-                "windowsSubtitle": "Το Windows Defender προσφέρει βασική προστασία για τη συσκευή σας"
+                "optimallyProtected": "Φαίνεται ότι αυτήν την περίοδο χρησιμοποιείτε το Windows Defender. Δεν είναι κακή επιλογή, αλλά για την απόλυτη ασφάλεια από τα ransomware, το κακόβουλο λογισμικό και τους ιούς, έχουμε συνεργαστεί με τη <b>McAfee</b> για να σας προσφέρουμε βραβευμένη ασφάλεια έτσι ώστε να μπορείτε <b>να προστατεύσετε αυτό που έχει σημασία.</b>",
+                "windowsSubtitle": "Βασική προστασία του Windows Defender",
+                "topTip": "Κορυφαίες συμβουλές για την ασφάλεια στο διαδίκτυο",
+                "topContent": "Μάθετε πώς μπορείτε να αμυνθείτε από τις μεγαλύτερες online απειλές σήμερα",
+                "view": "ΔΕΙΤΕ ΣΥΜΒΟΥΛΕΣ",
+                "buyNow": "Αγορά τώρα",
+                "buy": "Αγοράστε, κατεβάστε και εγκαταστήστε την προστασία από ιούς McAfee σήμερα για να επωφεληθείτε από αυτές τις δυνατότητες ασφάλειας επιπέδου τράπεζας",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Προστασία οικιακού δικτύου",
+                "private": "Ιδιωτική, ανώνυμη περιήγηση",
+                "everyDevice": "Προστασία κάθε συσκευής",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Προς το παρόν, προστατεύεστε με το McAfee LiveSafe",
-                "valid": "Ισχύει έως",
-                "upgrade": "Αναβάθμιση τώρα",
-                "launch": "ΕΚΚΙΝΗΣΗ McAfee",
-                "getMacfee": "ΑΠΟΚΤΗΣΗ ΤΟΥ McAfee",
-                "topBenefits": "Κορυφαία πλεονεκτήματα του McAfee LiveSafe",
+                "title": "Αντιμετώπιση ιών",
+                "subtitle": "Αυτήν τη στιγμή προστατεύεστε από το McAfee LiveSafe - απομένουν μόνο {{remainingDays}} μέρες! Εγγραφείτε τώρα για να παρατείνετε την προστασία σας.",
+                "launch": "Εκκίνηση McAfee",
+                "getMacfee": "Αποκτήστε το McAfee",
+                "topBenefits": "Γιατί <b>η Lenovo συνιστά το McAfee</b> για την προστασία όλων των συσκευών σας",
                 "awardTitle": "Βραβευμένο λογισμικό προστασίας από ιούς",
-                "awardSubtitle": "Μπλοκάρει ιούς, malware, ransomware, spyware, ανεπιθύμητα προγράμματα και πολλά άλλα στον υπολογιστή σας.",
-                "encryptedTitle": "Κρυπτογραφημένος χώρος αποθήκευσης",
-                "encryptedSubtitle": "Κρατήστε τα ευαίσθητα αρχεία ιδιωτικά, αποθηκεύοντας τα στον υπολογιστή σας με κρυπτογράφηση 128 bit.",
-                "identityTitle": "Προστασία από υποκλοπή ταυτότητας",
-                "identitySubtitle": "Πάρτε την ευθύνη για την προστασία της ταυτότητάς σας από υποκλοπή και απάτη.",
-                "supportTitle": "ΔΩΡΕΑΝ υποστήριξη πελατών",
-                "supportSubtitle": "Σας παρέχει κάλυψη μέσω τηλεφώνου, συνομιλίας (chat) ή online καθ' όλη τη διάρκεια της συνδρομής σας.",
-                "antiTitle": "Προστασία από ανεπιθύμητη αλληλογραφία",
-                "antiSubtitle": "Αποκλείει τα επικίνδυνα μηνύματα πριν φθάσουν στα Εισερχόμενά σας, αφαιρώντας τα email τα οποία ενδέχεται να περιέχουν επικίνδυνους συνδέσμους και ιούς.",
-                "virusTitle": "Υπόσχεση προστασίας από ιούς",
-                "virusSubtitle": "Σας παρέχει τη βεβαιότητα ότι σε περίπτωση μόλυνσης του υπολογιστή σας από ιό, ένας εμπειρογνώμονας της McAfee θα αποκτήσει απομακρυσμένη πρόσβαση στον υπολογιστή σας για να τον αφαιρέσει.",
-                "parentalTitle": "Γονικοί έλεγχοι",
-                "parentalSubtitle": "Αποκλείει δικτυακούς τόπους και αποτελέσματα αναζήτησης που δεν θέλετε να βλέπουν τα παιδιά σας. Επιπλέον, σας αφήνει να καθορίσετε τα όρια για πόσο χρόνο ξοδεύουν σε σύνδεση (online).",
-                "license": "Ισχύς αδείας έως",
-                "trial": "Ισχύς δοκιμαστικής έκδοσης έως"
+                "awardSubtitle": "Αποτρέψτε τους ιούς, το κακόβουλο λογισμικό και τα ransomware να μολύνουν τον υπολογιστή σας.",
+                "supportTitle": "Δωρεάν τεχνική υποστήριξη 24 ώρες το 24ωρο και 7 ημέρες την εβδομάδα ",
+                "supportSubtitle": "Λάβετε βοήθεια όλο το εικοσιτετράωρο και σιγουριά από την ειδική ομάδα ασφαλείας μας",
+                "trialSubtitle": "Αυτήν τη στιγμή προστατεύεστε από δοκιμαστική έκδοση 30 ημερών του McAfee LiveSafe - απομένουν μόνο {{remainingDays}} μέρες! Εγγραφείτε τώρα για να παρατείνετε την προστασία σας.",
+                "discount": "Εγγύηση 100% επιστροφής χρημάτων",
+                "trialSubscribe": "Η δοκιμή λήγει σε {{remainingDays}} ημέρες - ΕΓΓΡΑΦΕΙΤΕ ΤΩΡΑ",
+                "subscribe": "Η συνδρομή λήγει σε {{remainingDays}} ημέρες - ΕΓΓΡΑΦΕΙΤΕ ΤΩΡΑ",
+                "MultiTitle": "Προστασία πολλαπλών συσκευών",
+                "MultiSubtitle": "Προστατέψτε κάθε συσκευή που διαθέτετε - υπολογιστές, τηλέφωνα και tablet - τέλειο για οικογένειες ",
+                "networkTitle": "Προστασία οικιακού δικτύου",
+                "networkSubtitle": "Ασφαλίστε το τείχος προστασίας και αποκλείστε την πρόσβαση των χάκερ στο οικιακό σας δίκτυο",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Αποθηκεύστε και διαχειριστείτε με ασφάλεια όλους τους κωδικούς σας στο διαδίκτυο σε μία και μόνο τοποθεσία",
+                "onlineTitle": "Ηλεκτρονικό απόρρητο",
+                "onlineSubtitle": "Συνδεθείτε με κρυπτογράφηση επιπέδου τράπεζας για να διασφαλίσετε όλες τις δραστηριότητές σας στο διαδίκτυο, ακόμα και σε δημόσια δίκτυα Wi-Fi ή ανοιχτά δίκτυα ",
+                "register": "Εγγραφή στο McAfee",
+                "virusScan": "Σάρωση για ιούς",
+                "firewall": "Προσωπικό τείχος προστασίας",
+                "antiSpam": "Προστασία από ανεπιθύμητη αλληλογραφία McAfee",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "Σαρωτής ευπάθειας McAfee ",
+                "report": "Η Έκθεση Προστασίας από Απειλές σας ",
+                "trialContent": "Αξιοποιήσατε σωστά τη δοκιμή του λογισμικού προστασίας από ιούς McAfee. Αλλά με μόλις {{remainingDays}} ημέρες μέχρι τη λήξη της δοκιμής σας, κινδυνεύετε να αφήσετε τον υπολογιστή σας ευάλωτο. Μην ρισκάρετε.",
+                "subscribeContent": "Αξιοποιήσατε σωστά το McAfee. Αλλά με μόλις {{remainingDays}} ημέρες να απομένουν, κινδυνεύετε να αφήσετε τον υπολογιστή σας ευάλωτο. Μην ρισκάρετε.",
+                "subscribeNow": "Εγγραφή τώρα για συνδρομή",
+                "fileScan": "Αρχεία που έχουν σαρωθεί",
+                "Viruses": "Ιοί που έχουν εξαλειφθεί",
+                "blocked": "Κακές συνδέσεις που αποκλείστηκαν",
+                "shredded": "Αρχεία που καταστράφηκαν με ασφάλεια",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "σάς προσφέρει βασική προστασία για τη συσκευή σας"
@@ -2330,6 +2355,8 @@
         "OtherSettings": "Άλλες ρυθμίσεις",
         "usageStatistics": "Στατιστικά χρήσης",
         "usageStatisticsDescription": "Να αποστέλλονται ανώνυμα στατιστικά χρήσης στη Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Κάνει κοινή χρήση στατιστικών δεδομένων με τη Lenovo προκειμένου να βελτιωθεί η αξιοπιστία και ο σχεδιασμός και να βελτιστοποιηθούν οι δυνατότητες του υπολογιστή σας.",
         "Note": "Σημείωση: ",
         "settingsNotes": "για να τεθούν σε ισχύ όλες οι ρυθμίσεις σε αυτήν τη σελίδα, απαιτείται επανεκκίνηση της εφαρμογής από τον χρήστη."
     },
@@ -2404,6 +2431,7 @@
         "errorNoOptionSelected": "Απαιτείται να ορίσετε μια επιλογή.",
         "offline": "Αυτή η συσκευή εκτελεί λειτουργία χωρίς σύνδεση, παρακαλούμε συνδεθείτε στο Internet",
         "doNotSuspend": "Αυτές οι δοκιμές πρέπει να εκτελεστούν χωρίς διακοπή! Μην κλείσετε ή ελαχιστοποιήσετε αυτήν την εφαρμογή και μην θέσετε σε κατάσταση αναστολής λειτουργίας ή απενεργοποιήσετε τον υπολογιστή σας στη διάρκεια της σάρωσης.",
+        "doNotUse": "Αποφύγετε τη χρήση του υπολογιστή σας έως ότου ολοκληρωθεί αυτή η δοκιμή",
         "customize": {
             "name": "Προσαρμογή",
             "test": "Προσαρμογή δοκιμής",
@@ -2484,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Η εγκατάσταση απέτυχε. Προσπαθήστε ξανά.",
+                "networkError": "Σφάλμα δικτύου.",
+                "installationCancelled": "Η εγκατάσταση ακυρώθηκε."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Εξαργύρωση Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Εγκατάσταση",
+                "installing": "Εγκατάσταση",
+                "installed": "Εγκαταστάθηκε",
+                "launch": "Εκκίνηση",
+                "seeMore": "Δείτε περισσότερα"
+            },
+            "fieldName": {
+                "description": "Περιγραφή",
+                "screenshots": "Στιγμιότυπα οθόνης",
+                "additionalInformation": "Πρόσθετες πληροφορίες",
+                "by": "Ανά:",
+                "updated": "Ενημερώθηκε:",
+                "type": "Τύπος:",
+                "category": "Κατηγορία:",
+                "legalAgreement": "Νομική συμφωνία",
+                "readMore": "Διαβάστε περισσότερα",
+                "readLess": "Διαβάστε λιγότερα"
+            }
+        }
     }
 }

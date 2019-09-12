@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "閃爍等級"
-                },
-                "default": {
-                    "title": "設為預設"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。"
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -1184,7 +1181,7 @@
                     "more": "其他資訊",
                     "control1": "觸控板控制項",
                     "control2": "滑鼠控制項",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT 控制項"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. 電腦如已啟用飛航模式，這些功能將會停用。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "上一頁",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "防毒",
                 "back": "上一步",
-                "why": "為何選擇 McAfee？",
-                "recommends": "Lenovo 建議使用 McAfee 來保護您所有的裝置，因其具備下列優點：",
-                "award": "針對最新的線上威脅提供獲獎肯定的保護，包括勒索軟體和惡意軟體",
-                "dedicated": "始終優於 Defender 和其他頂尖 AV 提供者的專用安全性",
-                "deviceToCloud": "無損及電腦速度的裝置對雲端技術",
-                "poweredBy": "搭載 McAfee",
-                "privacyTerms": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>",
-                "mcafeePremium": "McAfee 特級保護",
+                "recommends": "Lenovo 建議使用 <b>McAfee<b> 來保護您所有的裝置",
+                "award": "獲獎肯定的防毒軟體",
+                "mcafeePremium": "McAfee LiveSafe 保護",
                 "protectedBy": "您目前受到 {{protectedName}} 的保護。但是，您可以透過 McAfee LiveSafe 獲得更好的保護。",
                 "virusScan": "病毒掃描",
                 "firewall": "防火牆",
                 "disabled": "已停用",
-                "enableVirusScan": "啟用病毒掃描",
-                "enablenFirewall": "啟用防火牆",
-                "enableFirewall": "啟用防火牆"
+                "awardText": "使用通過測試、經證實可抵禦線上威脅的防護來保衛您的新 Lenovo 電腦",
+                "performance": "堅如磐石的表現",
+                "performanceText": "一致、精確、可靠的防毒軟體，您可以信賴它來協助您確保安全",
+                "Blazing": "極快的速度",
+                "BlazingText": "最佳化的防毒軟體，不會減慢或中斷您的 Lenovo Vantage 體驗",
+                "privacyTerms": "/   <tag>隱私權政策</tag>  |  <tag>服務條款</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "未受到最佳保護",
-                "subtitle": "您目前正受到 Windows Defender 的保護。不過，您可以透過 McAfee LiveSafe 獲得更佳的保護。透過下方內容進一步瞭解。",
-                "learnMore": "進一步瞭解 McAfee",
-                "windowsProtected": "Windows Defender 基本保護",
-                "windowsSubtitle": "Windows Defender 為您的裝置提供基本保護"
+                "optimallyProtected": "看起來您目前正在使用 Windows Defender。這個選擇也不錯，但為了終極抵禦勒索軟體、惡意軟體和病毒，我們與 <b>McAfee</b> 聯手提供獲獎肯定的安全保護，以便<b>保護珍貴的事物</b>。",
+                "windowsSubtitle": "Windows Defender 基本保護",
+                "topTip": "線上安全的關鍵要訣",
+                "topContent": "了解如何抵禦當今最大的線上威脅",
+                "view": "查看要訣",
+                "buyNow": "立即購買",
+                "buy": "立即購買、下載和安裝 McAfee 防毒保護，以運用這些銀行級安全功能",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "家用網路保護",
+                "private": "私密、匿名瀏覽",
+                "everyDevice": "每個裝置的保護",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "您目前受到 McAfee LiveSafe 的保護",
-                "valid": "有效期限",
-                "upgrade": "立即升級",
+                "title": "防毒軟體",
+                "subtitle": "您目前受到 McAfee LiveSafe 的保護 - 還剩下 {{remainingDays}} 天！立即訂閱以延長您的保護。",
                 "launch": "啟動 McAfee",
                 "getMacfee": "取得 McAfee",
-                "topBenefits": "McAfee LiveSafe 的主要優勢",
+                "topBenefits": "為何 <b>Lenovo 建議使用 McAfee</b> 來保護您所有的裝置",
                 "awardTitle": "獲獎肯定的防毒軟體",
-                "awardSubtitle": "在 PC 上防堵病毒、惡意軟體、勒索軟體、間諜軟體、垃圾程式等。",
-                "encryptedTitle": "加密儲存",
-                "encryptedSubtitle": "使用 128 位元加密將機密檔案儲存在您的 PC 上，以保持機密檔案的隱私。",
-                "identityTitle": "身分盜用保護",
-                "identitySubtitle": "負責保護您的身分，避免遭到盜用或詐騙。",
-                "supportTitle": "免費客戶支援",
-                "supportSubtitle": "在訂閱期間，獲得電話、交談式或線上支援。",
-                "antiTitle": "反垃圾郵件",
-                "antiSubtitle": "藉由移除可能包含危險連結和病毒的電子郵件，阻止危險郵件到達您的收件匣。",
-                "virusTitle": "病毒防護承諾",
-                "virusSubtitle": "當 PC 出現病毒時，McAfee 專家將遠端存取您的電腦以移除病毒，消除您的後顧之憂。",
-                "parentalTitle": "家長監護",
-                "parentalSubtitle": "防堵不希望讓孩子看到的網站和搜尋結果。此外，還可讓您設定孩子上網的時間長度限制。",
-                "license": "授權有效期限",
-                "trial": "試用有效期限"
+                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦。",
+                "supportTitle": "免費、全天候的技術支援",
+                "supportSubtitle": "我們的專業安全團隊為您提供全天候的幫助，讓您高枕無憂",
+                "trialSubtitle": "您目前僅受 McAfee LiveSafe 30 天試用版的保護 - 還剩下 {{remainingDays}} 天！立即訂閱以延長您的保護。",
+                "discount": "100% 退費保證",
+                "trialSubscribe": "試用版將於 {{remainingDays}} 天後結束 - 立即訂閱",
+                "subscribe": "訂閱將於 {{remainingDays}} 天後結束 - 立即訂閱",
+                "MultiTitle": "多裝置保護",
+                "MultiSubtitle": "保護您擁有的每台裝置 - 電腦、手機和平板電腦 - 非常適合家庭使用",
+                "networkTitle": "家用網路保護",
+                "networkSubtitle": "保護您的防火牆並阻止駭客存取您的家用網路",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "在單一位置安全性儲存和管理您的所有線上密碼",
+                "onlineTitle": "線上隱私",
+                "onlineSubtitle": "透過銀行級加密進行連線，協助保護您的所有線上活動，即使在公用 Wi-Fi 或開放式網路上也是如此",
+                "register": "McAfee 註冊",
+                "virusScan": "病毒掃描",
+                "firewall": "個人防火牆",
+                "antiSpam": "McAfee 反垃圾郵件",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee 漏洞掃描程式",
+                "report": "您的威脅防護報告",
+                "trialContent": "您一直在充分運用 McAfee 防毒軟體試用版。但試用期只剩 {{remainingDays}} 天就要結束，您即將面臨讓電腦容易遭受攻擊的風險。切勿冒險。",
+                "subscribeContent": "您一直在充分運用 McAfee。但只剩 {{remainingDays}} 天，您就要面臨讓電腦容易遭受攻擊的風險。切勿冒險。",
+                "subscribeNow": "立即訂閱",
+                "fileScan": "掃描的檔案",
+                "Viruses": "消除的病毒",
+                "blocked": "封鎖的錯誤連線",
+                "shredded": "安全粉碎的檔案",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "為您的裝置提供基本保護"
@@ -2333,6 +2355,8 @@
         "OtherSettings": "其他設定",
         "usageStatistics": "使用情形統計資料",
         "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "與 Lenovo 共用統計資料，協助我們提升您電腦功能的可靠性、設計和最佳化。",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
     },
@@ -2407,6 +2431,7 @@
         "errorNoOptionSelected": "您必須選擇一個選項。",
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
         "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
+        "doNotUse": "在這項測試完成之前，請勿使用您的電腦",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安裝失敗。請再試一次。",
+                "networkError": "網路錯誤。",
+                "installationCancelled": "安裝作業已取消。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兌換",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安裝",
+                "installing": "安裝",
+                "installed": "已安裝",
+                "launch": "啟動",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "說明",
+                "screenshots": "螢幕擷取畫面",
+                "additionalInformation": "其他資訊",
+                "by": "提供者：",
+                "updated": "更新時間：",
+                "type": "類型：",
+                "category": "類別：",
+                "legalAgreement": "法律協議",
+                "readMore": "較多內容",
+                "readLess": "較少內容"
+            }
+        }
     }
 }

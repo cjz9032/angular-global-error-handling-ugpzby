@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BetaComponentComponent } from './beta-component.component';
+import { TranslationModule } from 'src/app/modules/translation.module';
 
 xdescribe('BetaComponentComponent', () => {
   let component: BetaComponentComponent;
@@ -8,7 +9,8 @@ xdescribe('BetaComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BetaComponentComponent ]
+      declarations: [ BetaComponentComponent ],
+      imports:[TranslationModule]
     })
     .compileComponents();
   }));

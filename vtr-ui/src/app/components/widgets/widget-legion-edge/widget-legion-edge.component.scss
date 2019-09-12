@@ -13,6 +13,11 @@
 		height: 4rem;
 		margin-top: 1.6rem;
 		margin-right: 0.7rem;
+		button{
+			display: inline-block;
+			border: none;
+			background: none;
+		}
 		.icon {
 			background: $gaming_icon_gradient;
 			-webkit-background-clip: text;
@@ -108,10 +113,10 @@
 										top: -0.4rem;
 										opacity: 0;
 										@media #{$black-on-white} {
-											background: $screen_dark_20;
+											background: transparent;
 										}
 										@media #{$white-on-black} {
-											background: $gaming_white60;
+											background: transparent;
 										}
 									}
 								}

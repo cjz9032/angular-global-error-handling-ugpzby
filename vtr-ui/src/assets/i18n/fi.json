@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa."
                 },
                 "powerSettings": {
                     "title": "Virta-asetukset",
@@ -1181,7 +1181,7 @@
                     "more": "ENEMMÄN",
                     "control1": "KOSKETUSLEVYN OHJAIMET",
                     "control2": "HIIRITOIMINNOT",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT-TOIMINNOT"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
                     "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä ominaisuudet ovat poissa käytöstä."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Edellinen",
@@ -1679,53 +1684,73 @@
             "common": {
                 "title": "Virustentorjunta",
                 "back": "EDELLINEN",
-                "why": "Miksi McAfee?",
-                "recommends": "Lenovo suosittelee McAfeeta kaikkien laitteiden suojaamiseen:",
-                "award": "Palkittu suojaus uusimpia verkkouhkia, kuten kiristysohjelmia ja haittaohjelmia, vastaan",
-                "dedicated": "Erityissuojaus, joka suoriutuu jatkuvasti Defenderiä ja muita johtavia virustentorjuntaohjelmia paremmin",
-                "deviceToCloud": "Laite pilviteknologiaan, joka ei hidasta tietokonetta",
-                "poweredBy": "McAfeen tarjoama",
-                "privacyTerms": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
-                "mcafeePremium": "McAfee Premium -suojaus",
+                "recommends": "Lenovo suosittelee <b>McAfeeta<b> kaikkien laitteiden suojaamiseen",
+                "award": "Palkittu virustentorjuntaohjelmisto",
+                "mcafeePremium": "McAfee LiveSafe -suojaus",
                 "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
                 "virusScan": "VIRUSTARKISTUS",
                 "firewall": "PALOMUURI",
                 "disabled": "POISSA KÄYTÖSTÄ",
-                "enableVirusScan": "OTA VIRUSTARKISTUS KÄYTTÖÖN",
-                "enablenFirewall": "OTA PALOMUURI KÄYTTÖÖN",
-                "enableFirewall": "OTA PALOMUURI KÄYTTÖÖN"
+                "awardText": "Suojaa uusi Lenovo-tietokoneesi testatulla, todistetulla suojauksella verkkouhkia vastaan",
+                "performance": "Väkevää suorituskykyä",
+                "performanceText": "Johdonmukaisen tarkka ja luotettava virustentorjunta, jonka voit luottaa pitävän sinut turvassa",
+                "Blazing": "Salamannopea",
+                "BlazingText": "Optimoitu virustentorjunta, joka ei hidasta tai keskeytä Lenovo Vantage -kokemustasi",
+                "privacyTerms": "/   <tag>Tietosuojakäytäntö</tag>  |  <tag>Palveluehdot</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Ei parasta suojausta",
-                "subtitle": "Laitteesi suojaa tällä hetkellä Windows Defender.Voisit saada paremman suojauksen McAfee LiveSafe -palvelulla. Lisätietoja on alla.",
-                "learnMore": "LUE LISÄÄ McAfee:sta",
-                "windowsProtected": "Windows Defenderin perustason suojaus",
-                "windowsSubtitle": "Windows Defender tarjoaa laitteellesi perustason suojauksen"
+                "optimallyProtected": "Näyttää siltä, että käytät tällä hetkellä Windows Defenderiä. Se ei ole huono valinta, mutta tarjotaksemme äärimmäisen hyvää suojausta kiristysohjelmia, haittaohjelmia ja viruksia vastaan, olemme yhdistäneet voimamme <b>McAfeen</b> kanssa. Yhdessä voimme tarjota sinulla palkittua suojausta niin, että voit <b>suojata tärkeät tietosi.</b>",
+                "windowsSubtitle": "Windows Defenderin perustason suojaus",
+                "topTip": "Parhaat vinkit verkkoturvallisuuteen",
+                "topContent": "Lue lisää siitä, miten voit suojautua nykypäivän suurimmilta verkkouhilta",
+                "view": "KATSO VINKKEJÄ",
+                "buyNow": "Tee ostoksia",
+                "buy": "Osta, lataa ja asenna McAfee-virussuojaus tänään, jotta voit hyödyntää näitä pankkialan tason suojausominaisuuksia",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Kotiverkon suojaus",
+                "private": "Yksityinen, anonyymi selaaminen",
+                "everyDevice": "Jokaisen laitteen suojaus",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Laitteesi suojaa tällä hetkellä McAfee LiveSafe",
-                "valid": "Voimassaoloaika päättyy",
-                "upgrade": "Päivitä nyt",
-                "launch": "KÄYNNISTÄ McAfee",
-                "getMacfee": "HANKI McAfee",
-                "topBenefits": "McAfee LiveSafen parhaat edut",
+                "title": "Virustentorjunta",
+                "subtitle": "Olet tällä hetkellä suojattuna McAfee LiveSafellä – vain {{remainingDays}} päivää jäljellä! Tilaa nyt, jos haluat laajentaa suojausta.",
+                "launch": "Käynnistä McAfee",
+                "getMacfee": "Hanki McAfee nyt",
+                "topBenefits": "Näistä syistä <b>Lenovo suosittelee McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "awardTitle": "Palkittu virustentorjuntaohjelmisto",
-                "awardSubtitle": "Estää esimerkiksi viruksia, haittaohjelmia, kiristysohjelmia ja ei-toivottuja ohjelmia tietokoneessa.",
-                "encryptedTitle": "Salattu tallennustila",
-                "encryptedSubtitle": "Pidä luottamukselliset tiedostot yksityisinä tallentamalla ne tietokoneeseen 128-bittisen salauksen avulla.",
-                "identityTitle": "Identiteettivarkauksien suojaus",
-                "identitySubtitle": "Huolehdi siitä, ettei kukaan voi varastaa identiteettiäsi tai käyttää sitä petollisiin tarkoituksiin.",
-                "supportTitle": "MAKSUTON asiakastuki",
-                "supportSubtitle": "Auttaa puhelimitse, chatin kautta tai verkossa tilauksen voimassaolon ajan.",
-                "antiTitle": "Anti-Spam",
-                "antiSubtitle": "Estää vaaralliset viestit ennen niiden saapumista Saapuneet-kansioon poistamalla sähköpostiviestit, joissa voi olla vaarallisia linkkejä ja viruksia.",
-                "virusTitle": "Virustentorjuntasitoumus",
-                "virusSubtitle": "Antaa sitoumuksen siitä, että vaikka tietokoneeseen pääsee virus, McAfee-asiantuntija poistaa viruksen etäyhteyden kautta.",
-                "parentalTitle": "Käytönvalvonta",
-                "parentalSubtitle": "Estää verkkosivustot ja hakutulokset, joita et halua lasten näkevän. Voit myös määrittää rajoituksia sille, miten kauan lapset voivat viettää aikaa Internetissä.",
-                "license": "Lisenssin viimeinen voimassaolopäivä",
-                "trial": "Kokeiluversion viimeinen voimassaolopäivä"
+                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi.",
+                "supportTitle": "Ilmainen 24/7 asiantunteva tekninen tuki ",
+                "supportSubtitle": "Saat apua ja mielenrauhaa ympäri vuorokauden erikoistuneelta tietoturvatiimiltämme",
+                "trialSubtitle": "Olet tällä hetkellä suojattuna McAfee LiveSafen 30 päivän kokeiluversiolla – vain {{remainingDays}} päivää jäljellä! Tilaa nyt, jos haluat laajentaa suojausta.",
+                "discount": "100 %:n maksun palautustakuu",
+                "trialSubscribe": "Kokeilu päättyy {{remainingDays}} päivän kuluttua – TILAA NYT",
+                "subscribe": "Tilaus päättyy {{remainingDays}} päivän kuluttua – TILAA NYT",
+                "MultiTitle": "Usean laitteen suojaus",
+                "MultiSubtitle": "Suojaa jokainen omistamasi laite – tietokoneet, puhelimet ja tabletit – sopii täydellisesti perheille ",
+                "networkTitle": "Kotiverkon suojaus",
+                "networkSubtitle": "Suojaa palomuurisi ja estä hakkereita käyttämästä kotiverkkoasi",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Säilytä ja hallitse turvallisesti kaikkia verkkosalasanojasi yhdessä paikassa",
+                "onlineTitle": "Yksityisyys verkossa",
+                "onlineSubtitle": "Muodosta yhteys pankkitason salaukseen, joka auttaa turvaamaan kaikki verkkotoimintasi, jopa julkisissa Wi-Fi-verkoissa tai avoimissa verkoissa ",
+                "register": "McAfee-rekisteröinti",
+                "virusScan": "VirusScan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Uhkien torjunta -raporttisi ",
+                "trialContent": "Olet hyödyntänyt McAfeen virustentorjunnan kokeiluversiosi hyvin. Sinulla on kuitenkin vain {{remainingDays}} päivää jäljellä siihen, kun kokeilujaksosi päättyy, ja vaarana on, että tietokoneesi jää haavoittuvaksi. Älä ota riskiä.",
+                "subscribeContent": "Olet hyödyntänyt McAfee-ohjelman kokeiluversion hyvin. Kokeiluversion on kuitenkin voimassa enää vain {{remainingDays}} päivää, ja vaarana on, että tietokoneesi tulee haavoittuvaksi. Älä ota riskiä.",
+                "subscribeNow": "Tilaa nyt",
+                "fileScan": "Skannattuja tiedostoja",
+                "Viruses": "Poistettuja viruksia",
+                "blocked": "Estettyjä huonoja yhteyksiä",
+                "shredded": "Turvallisesti silputtuja tiedostoja",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "tarjoaa laitteellesi perustason suojauksen"
@@ -2330,6 +2355,8 @@
         "OtherSettings": "Muut asetukset",
         "usageStatistics": "Käyttötilastot",
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
         "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     },
@@ -2404,6 +2431,7 @@
         "errorNoOptionSelected": "Valitse oikea vaihtoehto.",
         "offline": "Tämä laite toimii offline-tilassa, muodosta Internet-yhteys",
         "doNotSuspend": "Näiden testien suoritus ei saa keskeytyä. Älä sulje tai pienennä tätä sovellusta. Älä siirrä tietokonetta keskeytystilaan tai katkaise tietokoneen virtaa tarkistuksen aikana.",
+        "doNotUse": "Älä käytä tietokonetta, kunnes tämä testi on valmis",
         "customize": {
             "name": "Mukautus",
             "test": "Mukauta testiä",
@@ -2484,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
+                "networkError": "Verkkovirhe.",
+                "installationCancelled": "Asennus on peruutettu."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adoben lunastus",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Asenna",
+                "installing": "Asentaminen",
+                "installed": "Asennettu",
+                "launch": "Aloita",
+                "seeMore": "Näytä lisää"
+            },
+            "fieldName": {
+                "description": "Kuvaus",
+                "screenshots": "Näyttökuvat",
+                "additionalInformation": "Lisätietoja",
+                "by": "Tekijä:",
+                "updated": "Päivitetty:",
+                "type": "Tyyppi:",
+                "category": "Luokka:",
+                "legalAgreement": "Laillinen sopimus",
+                "readMore": "Lue enemmän",
+                "readLess": "Lue vähemmän"
+            }
+        }
     }
 }

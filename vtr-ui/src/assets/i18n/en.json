@@ -1544,7 +1544,7 @@
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
 			"disconnect": "disconnect",
 			"goDashboard": "go to dashboard",
-			"extendNow": "extend now"
+			"extendNow": "extend"
 		},
 		"tour": {
 			"back": "Back",
@@ -1587,10 +1587,10 @@
 		},
 		"card": {
 			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your Connected Home Security",
+			"startTrialTitle": "Create your own Connected Home Security",
 			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
 			"join": "join",
-			"joinTitle": "Join Connected Home Security of your family",
+			"joinTitle": "Join your family's Connected Home Security",
 			"joinDescription": "Become a part of your family security group."
 		},
 		"modal": {
@@ -1688,53 +1688,73 @@
 			"common": {
 				"title": "Anti-Virus",
 				"back": "BACK",
-				"why": "Why McAfee ?",
-				"recommends": "Lenovo recommends McAfee to protect all your devices with:",
-				"award": "Award winning protection from the latest online threats including ransomware and malware",
-				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
-				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
-				"poweredBy": "Powered By McAfee",
-				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-				"mcafeePremium": "McAfee Premium Protection",
+				"recommends": "Why Lenovo recommends <b>McAfee</b> to protect all your devices",
+				"award": "Award-winning antivirus",
+				"awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+				"performance": "Rock-solid performance",
+				"performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+				"Blazing": "Blazing-fast speed",
+				"BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience",
+				"privacyTerms": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+				"mcafeePremium": "McAfee LiveSafe Protection",
 				"protectedBy": "You are currently protected by {{protectedName}}. However, you could be better protected with McAfee LiveSafe",
 				"virusScan": "VIRUS SCAN",
 				"firewall": "FIREWALL",
 				"disabled": "DISABLED",
-				"enableVirusScan": "ENABLE VIRUS SCAN",
-				"enablenFirewall": "Enable firewall",
-				"enableFirewall": "ENABLE FIREWALL"
+				"notAvailable": "NOT AVAILABLE"
 			},
 			"windowsDefender": {
-				"optimallyProtected": "Not Optimally Protected",
-				"subtitle": "You are currently being protected by Windows Defender. However, you could be better protected with McAfee LiveSafe. Learn more below.",
-				"learnMore": "LEARN MORE ABOUT McAfee",
-				"windowsProtected": "Windows Defender basic protection",
-				"windowsSubtitle": "Windows defender offers basic protection for your device"
+				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so can <b>protect what matters.</b>",
+				"topTip": "Top Tips for online safety",
+				"topContent": "Learn how you can defend against today's biggest online threats",
+				"view": "VIEW TIPS",
+				"buyNow": "Buy Now",
+				"buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+				"onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+				"virus": "Virus protection",
+				"homeNetwork": "Home network protection",
+				"private": "Private,anonymous browsing",
+				"everyDevice": "Every-device protection",
+				"password": "Password manager",
+				"windowsSubtitle": "Windows Defender Basic Protection"
 			},
 			"mcafee": {
-				"title": "McAfee LiveSafe",
-				"subtitle": "You are currently protected by McAfee LiveSafe",
-				"valid": "Valid Until",
-				"upgrade": "Upgrade Now",
-				"launch": "LAUNCH McAfee",
-				"getMacfee": "GET McAfee",
-				"topBenefits": "Top Benefits of McAfee LiveSafe",
+				"title": "Antivirus",
+				"trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
+				"subtitle": "You’re currently protected by McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
+				"discount": "100% money back guarantee",
+				"trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+				"subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+				"launch": "Launch McAfee",
+				"getMacfee": "Get McAfee",
+				"topBenefits": "Why <b>Lenovo recommends McAfee</b> to protect all your devices",
 				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Blocks viruses, malware, ransomware, spyware, unwanted program and more on your PC.",
-				"encryptedTitle": "Encrypted Storage",
-				"encryptedSubtitle": "Keep sensitive files private by storing them on your PC with 128-bit encryption.",
-				"identityTitle": "Identity theft protection",
-				"identitySubtitle": "Take charge of protecting your identity from theft and fraud.",
-				"supportTitle": "FREE Customer Support",
-				"supportSubtitle": "Has you covered by phone, by chat, or online for the life of your subscription.",
-				"antiTitle": "Anti-Spam",
-				"antiSubtitle": "Blocks dangerous messages before they reach your inbox by removing emails that may include risky links and viruses.",
-				"virusTitle": "Virus protection pledge",
-				"virusSubtitle": "Provides you with the confidence that in the event your PC gets a virus, a McAfee expert will remotely access your computer to remove it.",
-				"parentalTitle": "Parental controls",
-				"parentalSubtitle": "Block web sites and search results you don’t want your kids to see. Also lets you set limits for how much time they spend online.",
-				"license": "License Valid until",
-				"trial": "Trial Valid until"
+				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC.",
+				"MultiTitle": "Multi-device protection",
+				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+				"networkTitle": "Home network protection",
+				"networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+				"passwordTitle": "Password manager",
+				"passwordSubtitle": "Security store and manage all your online passwords in a single location",
+				"onlineTitle": "Online privacy",
+				"onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+				"supportTitle": "Free, 24/7 expert technical support ",
+				"supportSubtitle": "Get around-the-clock assistance and peace of mind from our dedicated security team",
+				"register": "McAfee Registration",
+				"virusScan": "Virus Scan",
+				"firewall": "Personal Firewall",
+				"antiSpam": "McAfee Anti-Spam",
+				"quickClean": "McAfee QuickClean",
+				"vulnerability": "McAfee Vulnerability Scanner ",
+				"report": "Your Threat Protection Report ",
+				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+				"subscribeNow": "Subscribe Now",
+				"fileScan": "Files scanned",
+				"Viruses": "Viruses Eliminated",
+				"blocked": "Bad connections blocked",
+				"shredded": "Files Safely Shredded",
+				"startFileScan": "Start files scan"
 			},
 			"others": {
 				"othersProtection": "offers you basic protection for your device"
@@ -1746,8 +1766,8 @@
 				"back": "BACK"
 			},
 			"container": {
-				"title": "Lenovo Wifi Security",
-				"name": "WIFI SECURITY",
+				"title": "Lenovo Wi-fi Security",
+				"name": "WI-FI SECURITY",
 				"enable": "ENABLED",
 				"disable": "DISABLED",
 				"less": "Less info",
@@ -2339,6 +2359,8 @@
 		"OtherSettings": "Other settings",
 		"usageStatistics": "Usage Statistics",
 		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Shares statistical data with Lenovo to help improve the reliability, design, and optimization of features on your computer.",
 		"Note": "Note: ",
 		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
 	},
@@ -2421,6 +2443,7 @@
 		"cancelTextProgress": "Please wait for cancel progress",
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
+		"doNotUse": "Please refrain from using your computer until this test completes",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",
@@ -2488,6 +2511,40 @@
 			"title": "Enable Battery Charge Threshold",
 			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
 			"enable": "Enable"
+		}
+	},
+	"appsForYou": {
+		"common": {
+			"errorMessage": {
+				"installationFailed": "Installation failed. Please try again.",
+				"networkError": "Network Error.",
+				"installationCancelled": "Installation Cancelled."
+			}
+		},
+		"menuText": {
+			"adobeRedemption": "Adobe Redemption",
+			"lenovoMigrationAssistant": "Lenovo Migration Assistant"
+		},
+		"appDetails": {
+			"installButton": {
+				"install": "Install",
+				"installing": "Installing",
+				"installed": "Installed",
+				"launch": "Launch",
+				"seeMore": "See More"
+			},
+			"fieldName": {
+				"description": "Description",
+				"screenshots": "Screenshots",
+				"additionalInformation": "Additional Information",
+				"by": "By:",
+				"updated": "Updated:",
+				"type": "Type:",
+				"category": "Category:",
+				"legalAgreement": "Legal Agreement",
+				"readMore": "Read More",
+				"readLess": "Read Less"
+			}
 		}
 	}
 }

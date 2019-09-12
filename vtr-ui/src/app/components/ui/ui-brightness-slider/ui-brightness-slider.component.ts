@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterContentChecked } from '@angular/core';
-import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
+import { Options, ChangeContext, ValueToPositionFunction, PointerType } from 'ng5-slider';
 
 @Component({
 	selector: 'vtr-ui-brightness-slider',
@@ -24,6 +24,8 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() manualRefresh = new EventEmitter<void>();
 	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() setLightingBrightness: EventEmitter<ChangeContext> = new EventEmitter();
+	triggerFocus: EventEmitter<PointerType> = new EventEmitter<PointerType>();
+	pointerType: any = PointerType;
 
 	constructor() {}
 
@@ -54,6 +56,11 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 */
 	public onValueChange($event: ChangeContext) {
 		this.setLightingBrightness.emit($event);
+		setTimeout(() => {
+			const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
+			element.focus();
+			this.triggerFocus.emit(PointerType.Min);
+		}, 500);
 	}
 
 	/**
@@ -62,6 +69,11 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 */
 	public onChange($event: ChangeContext) {
 		this.change.emit($event);
+		setTimeout(() => {
+			const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
+			element.focus();
+			this.triggerFocus.emit(PointerType.Min);
+		}, 500);
 	}
 
 	public onSliderChanged(event: any) {}

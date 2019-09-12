@@ -160,6 +160,8 @@ export class PageAutocloseComponent implements OnInit {
 				if (!isUndefined(appList.processList)) {
 					this.autoCloseAppList = appList.processList;
 					this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
+					console.log('get Auto close List', appList.processList);
+					console.log('Total Auto close List Apps', appList.processList.length);
 				}
 			});
 		} catch (error) {
@@ -174,6 +176,9 @@ export class PageAutocloseComponent implements OnInit {
 					this.runningList = list.processList;
 					const noAppsRunning = this.runningList.length === 0 ? true : false;
 					this.loadingContent = { loading: false, noApps: noAppsRunning };
+					console.log('get Running List', list.processList);
+					console.log('Total Running List Apps', list.processList.length);
+
 				}
 			});
 		} catch (error) {

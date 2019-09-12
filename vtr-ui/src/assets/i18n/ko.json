@@ -786,7 +786,7 @@
                         }
                     },
                     "description5": "지능형 냉각 기능은 팬 속도 및 최대 성능을 조정하고 배터리 수명을 관리합니다. 이 기능에는 3 가지 모드(자동 모드, 균형 모드 및 성능 모드)가 있으며, 이제 Windows 성능 전원 슬라이더를 사용하여 액세스할 수 있음",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "지능형 냉각 기능을 사용해 시스템 성능과 열 온도를 조정할 수 있습니다. \"성능\" 모드에서는 시스템 성능을 최적화합니다. 반면에 \"냉각 및 저소음\" 모드에서 시스템을 냉각하고 소음을 줄이는 데 도움이 됩니다."
                 },
                 "powerSettings": {
                     "title": "전원 설정",
@@ -1181,7 +1181,7 @@
                     "more": "자세히",
                     "control1": "터치패드 제어",
                     "control2": "마우스 제어",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT 제어"
                 }
             }
         },
@@ -1250,7 +1250,7 @@
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
                     "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
@@ -1535,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "뒤로",
@@ -1679,53 +1684,73 @@
             "common": {
                 "title": "바이러스 백신",
                 "back": "뒤로",
-                "why": "왜 McAfee입니까?",
-                "recommends": "Lenovo는 McAfee에서 다음을 사용하여 모든 장치를 보호할 것을 권장합니다.",
-                "award": "랜섬웨어 및 맬웨어를 포함한 최신 온라인 위협으로부터 수상 경력에 빛나는 보호",
-                "dedicated": "Defender 및 기타 주요 AV 공급자보다 일관되게 우수한 보안 기능 제공",
-                "deviceToCloud": "PC 속도를 늦추지 않는 장치-클라우드 기술",
-                "poweredBy": "McAfee로 실행",
-                "privacyTerms": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>에 대해 자세히 읽기",
-                "mcafeePremium": "McAfee 프리미엄 보호",
+                "recommends": "Lenovo는 <b>McAfee<b>에서 모든 장치를 보호할 것을 권장합니다",
+                "award": "수상 경력에 빛나는 안티바이러스",
+                "mcafeePremium": "McAfee LiveSafe 보호",
                 "protectedBy": "현재 {{protectedName}}(으)로 보호되고 있습니다. 그러나 McAfee LiveSafe를 사용하면 더 효과적으로 보호 받을 수 있습니다.",
                 "virusScan": "바이러스 검색",
                 "firewall": "방화벽",
                 "disabled": "사용 안 함",
-                "enableVirusScan": "바이러스 검색 사용",
-                "enablenFirewall": "방화벽 사용",
-                "enableFirewall": "방화벽 사용"
+                "awardText": "온라인 위협에 대해 테스트되고 검증된 보호 기능으로 새로운 Lenovo PC 보호",
+                "performance": "견고한 성능",
+                "performanceText": "일관되고 정확하며 신뢰할 수 있는 안티바이러스를 사용하여 안전 유지",
+                "Blazing": "빠른 속도",
+                "BlazingText": "Lenovo Vantage 환경을 느리게 하거나 방해하지 않는 최적화된 안티바이러스",
+                "privacyTerms": "/   <tag>개인정보보호정책</tag>  |  <tag>서비스 약관</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "최적으로 보호되지 않음",
-                "subtitle": "현재 Windows Defender의 보호를 받고 있습니다.하지만 McAfee LiveSafe를 사용하면 더욱 효과적으로 보호를 받을 수 있습니다. 아래에서 자세히 알아보십시오.",
-                "learnMore": "McAfee에 대해 자세히 알아보기",
-                "windowsProtected": "Windows Defender 기본 보호",
-                "windowsSubtitle": "Windows defender는 장치에 대한 기본적인 보호 제공"
+                "optimallyProtected": "현재 Windows Defender를 사용 중인 것 같습니다. 나쁜 선택은 아니지만 Lenovo는 랜섬웨어, 멀웨어 및 바이러스에 대한 궁극적인 안전을 위해 탁월한 보안 기능을 제공하는 <b>McAfee</b>와 협력하여 <b>중요 항목을 보호</b>할 수 있습니다.",
+                "windowsSubtitle": "Windows Defender 기본 보호",
+                "topTip": "온라인 안전을 위한 최고의 팁",
+                "topContent": "가장 큰 최신 온라인 위협에 방어하는 방법 알아보기",
+                "view": "팁 보기",
+                "buyNow": "바로 구매",
+                "buy": "이러한 은행급 보안 기능을 활용하려면 지금 McAfee 바이러스 보호 기능을 구입, 다운로드 및 설치",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "홈 네트워크 보호",
+                "private": "비공개, 익명 검색",
+                "everyDevice": "모든 장치 보호",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "현재 McAfee LiveSafe의 보호를 받고 있음",
-                "valid": "유효 기한",
-                "upgrade": "지금 업그레이드",
+                "title": "안티바이러스",
+                "subtitle": "현재 McAfee LiveSafe 사용 중 - {{remainingDays}}일 남았습니다. 지금 가입하여 보호를 확장하십시오.",
                 "launch": "McAfee 실행",
                 "getMacfee": "McAfee 가져오기",
-                "topBenefits": "McAfee LiveSafe의 주요 이점",
+                "topBenefits": "장치 보호를 위해 <b>Lenovo가 McAfee를 권장</b>하는 이유",
                 "awardTitle": "수상 경력에 빛나는 바이러스 백신",
-                "awardSubtitle": "PC에서 바이러스, 맬웨어, 랜섬웨어, 스파이웨어, 원하지 않는 프로그램 등을 차단합니다.",
-                "encryptedTitle": "암호화된 저장 장치",
-                "encryptedSubtitle": "128비트 암호화로 PC에 저장하여 중요한 파일을 보호합니다.",
-                "identityTitle": "ID 도난 보호",
-                "identitySubtitle": "도난과 사기로부터 ID를 보호하는 일을 담당합니다.",
-                "supportTitle": "무료 고객 지원",
-                "supportSubtitle": "구독 기간 동안 전화, 채팅 또는 온라인으로 서비스를 제공합니다.",
-                "antiTitle": "스팸 방지",
-                "antiSubtitle": "위험한 링크와 바이러스가 포함될 수 있는 이메일을 제거하여 위험한 메시지가 받은 편지함에 도착하기 전에 차단합니다.",
-                "virusTitle": "바이러스 보호 계획",
-                "virusSubtitle": "PC에 바이러스가 발생한 경우 McAfee 전문가가 사용자 컴퓨터에 원격으로 액세스하여 제거해 주므로 안심하고 사용할 수 있습니다.",
-                "parentalTitle": "유해 컨텐츠 차단",
-                "parentalSubtitle": "자녀가 보지 못하도록 웹 사이트와 검색 결과를 차단합니다. 또한 온라인에서 보내는 시간에 대한 제한도 설정할 수 있습니다.",
-                "license": "라이센스 유효 기한",
-                "trial": "평가판 유효 기한"
+                "awardSubtitle": "바이러스, 멀웨어 및 랜섬웨어로부터 PC가 감염되는 것을 방지합니다.",
+                "supportTitle": "무료, 24/7 전문가 기술 지원 ",
+                "supportSubtitle": "전담 보안 팀에서 상시 지원하여 안심하고 사용",
+                "trialSubtitle": "현재 McAfee LiveSafe 30일 평가판 사용 중 - {{remainingDays}}일 남았습니다. 지금 가입하여 보호를 확장하십시오.",
+                "discount": "100% 환불 보증",
+                "trialSubscribe": "평가판은 {{remainingDays}}일 내 종료 - 지금 가입",
+                "subscribe": "구독은 {{remainingDays}}일 내 종료 - 지금 가입",
+                "MultiTitle": "다중 장치 보호",
+                "MultiSubtitle": "PC, 휴대폰 및 태블릿 등 소유하는 모든 장치 보호 - 가족에게 적합 ",
+                "networkTitle": "홈 네트워크 보호",
+                "networkSubtitle": "방화벽을 보호하고 해커가 홈 네트워크에 액세스하지 못하도록 차단",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "보안 기능은 모든 온라인 암호를 한 위치에서 저장하고 관리",
+                "onlineTitle": "온라인 개인정보보호",
+                "onlineSubtitle": "은행급 암호화와 연결하여 공용 Wi-Fi 또는 개방형 네트워크에서도 모든 온라인 활동 보호 ",
+                "register": "McAfee 등록",
+                "virusScan": "바이러스 검색",
+                "firewall": "개인 방화벽",
+                "antiSpam": "McAfee 안티스팸",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee 취약성 스캐너 ",
+                "report": "위협 보호 보고서 ",
+                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.",
+                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.",
+                "subscribeNow": "지금 구독",
+                "fileScan": "파일 스캔함",
+                "Viruses": "바이러스 제거됨",
+                "blocked": "잘못된 연결이 차단됨",
+                "shredded": "안전하게 파일 제거",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "장치에 대한 기본적인 보호 제공"
@@ -2330,6 +2355,8 @@
         "OtherSettings": "기타 설정",
         "usageStatistics": "사용 현황 통계",
         "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
         "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."
     },
@@ -2404,6 +2431,7 @@
         "errorNoOptionSelected": "원하는 옵션을 선택하십시오.",
         "offline": "이 장치가 오프 라인 모드에서 실행 중입니다. 인터넷에 연결하십시오",
         "doNotSuspend": "이러한 테스트는 중단 없이 실행되어야 합니다! 이 앱을 닫거나 최소화하면 안 되며 스캔 중에는 컴퓨터를 절전 모드로 전환하거나 꺼서는 안 됩니다.",
+        "doNotUse": "이 테스트가 완료될 때까지 컴퓨터 사용을 삼가 주십시오.",
         "customize": {
             "name": "사용자 정의",
             "test": "테스트 사용자 지정",
@@ -2484,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "설치에 실패했습니다. 다시 시도하십시오.",
+                "networkError": "네트워크 오류가 발생했습니다.",
+                "installationCancelled": "설치가 취소되었습니다."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 상환",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "설치",
+                "installing": "설치",
+                "installed": "설치됨",
+                "launch": "시작",
+                "seeMore": "자세한 정보"
+            },
+            "fieldName": {
+                "description": "설명",
+                "screenshots": "스크린샷",
+                "additionalInformation": "추가 정보",
+                "by": "개발자:",
+                "updated": "업데이트 날짜:",
+                "type": "유형:",
+                "category": "범주:",
+                "legalAgreement": "합법적 계약",
+                "readMore": "자세히 읽기",
+                "readLess": "간단하게 읽기"
+            }
+        }
     }
 }

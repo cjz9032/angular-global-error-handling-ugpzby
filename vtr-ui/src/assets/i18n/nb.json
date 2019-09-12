@@ -294,9 +294,6 @@
                 },
                 "option5": {
                     "title": "Blinkenivå"
-                },
-                "default": {
-                    "title": "SETT TIL STANDARD"
                 }
             },
             "profile": {
@@ -789,7 +786,7 @@
                         }
                     },
                     "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
-                    "nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode."
+                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig»."
                 },
                 "powerSettings": {
                     "title": "Strøminnstillinger",
@@ -1184,7 +1181,7 @@
                     "more": "MER",
                     "control1": "PEKEPLATEKONTROLLER",
                     "control2": "MUSEKONTROLLER",
-                    "control3": "TRACKPOINT CONTROLS"
+                    "control3": "TRACKPOINT-KONTROLLER"
                 }
             }
         },
@@ -1253,7 +1250,7 @@
                     "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
                     "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
@@ -1538,7 +1535,12 @@
             "disconnect": "disconnect",
             "goDashboard": "go to dashboard",
             "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family"
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Tilbake",
@@ -1682,53 +1684,73 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "why": "Hvorfor McAfee?",
-                "recommends": "Lenovo anbefaler å beskytte alle enhetene dine med McAfee, som gir deg følgende:",
-                "award": "Prisbelønt beskyttelse mot de nyeste truslene på nettet, inkludert løsepengevirus og skadelig programvare",
-                "dedicated": "Dedikert sikkerhet som gjennomgående gir bedre resultater enn Defender og andre ledende antivirusleverandører",
-                "deviceToCloud": "Skyteknologi som ikke gjør PC-en tregere",
-                "poweredBy": "Leveres av McAfee",
-                "privacyTerms": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
-                "mcafeePremium": "McAfee Premium-beskyttelse",
+                "recommends": "Lenovo anbefaler at du beskytter alle enhetene med <b>McAfee<b>",
+                "award": "Prisbelønt antivirus",
+                "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
                 "virusScan": "VIRUSSØK",
                 "firewall": "BRANNMUR",
                 "disabled": "DEAKTIVERT",
-                "enableVirusScan": "AKTIVER VIRUSSØK",
-                "enablenFirewall": "AKTIVER BRANNMUR",
-                "enableFirewall": "AKTIVER BRANNMUR"
+                "awardText": "Beskytt den nye Lenovo-PC-en mot trusler på nettet med testet og anerkjent beskyttelse",
+                "performance": "Bunnsolide resultater",
+                "performanceText": "Stabil, presis og pålitelig antivirus som holder deg trygg",
+                "Blazing": "Lynrask ytelse",
+                "BlazingText": "Optimalisert antivirus som verken avbryter eller reduserer hastigheten på Lenovo Vantage-opplevelsen",
+                "privacyTerms": "/   <tag>Personvernpolicy</tag>  |  <tag>Vilkår for bruk</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Ikke optimalt beskyttet",
-                "subtitle": "Du blir for øyeblikket beskyttet av Windows Defender.Du kan imidlertid beskyttes bedre med McAfee LiveSafe. Finn ut mer nedenfor.",
-                "learnMore": "FINN UT MER OM McAfee",
-                "windowsProtected": "Windows Defender grunnleggende beskyttelse",
-                "windowsSubtitle": "Windows defender gir grunnleggende beskyttelse for enheten din"
+                "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Dette er ikke et dårlig valg, men vi tilbyr prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus i samarbeid med <b>McAfee</b>, slik at du kan <b>beskytte dine dyrebare data</b>.",
+                "windowsSubtitle": "Grunnleggende beskyttelse med Windows Defender",
+                "topTip": "Topptips for nettsikkerhet",
+                "topContent": "Finn ut hvordan du kan forsvare deg mot de største truslene på nettet",
+                "view": "VIS TIPS",
+                "buyNow": "Kjøp nå",
+                "buy": "Kjøp, last ned og installer McAfee-virusbeskyttelse i dag for å dra nytte av sikkerhetsfunksjoner på banknivå",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Beskyttelse av hjemmenettverk",
+                "private": "Privat, anonym surfing",
+                "everyDevice": "Beskyttelse av alle enheter",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Du er for øyeblikket beskyttet av McAfee LiveSafe",
-                "valid": "Gyldig til",
-                "upgrade": "Oppgrader nå",
-                "launch": "START McAfee",
-                "getMacfee": "Få tak i McAfee",
-                "topBenefits": "De beste fordelene til McAfee LiveSafe",
-                "awardTitle": "Prisvinnende antivirus",
-                "awardSubtitle": "Blokkerer virus, skadelig programvare, spionvare, uønskede program og mye mer på PC-en din.",
-                "encryptedTitle": "Kryptert lagring",
-                "encryptedSubtitle": "Beskytt sensitive filer ved å lagre dem med 128-biters kryptering på PC-en.",
-                "identityTitle": "Beskyttelse mot identitetstyveri",
-                "identitySubtitle": "Ta kontrollen, og beskytt identiteten din mot tyveri og svindel.",
-                "supportTitle": "GRATIS kundestøtte",
-                "supportSubtitle": "Du er dekket via telefon, chatting eller via nettet så lenge du abonnerer.",
-                "antiTitle": "Antispam",
-                "antiSubtitle": "Blokkerer skadelige meldinger før de når innboksen din ved å fjerne e-post som kan inneholde farlige koblinger eller virus.",
-                "virusTitle": "Løfte om virusbeskyttelse",
-                "virusSubtitle": "Gir deg trygghet for at hvis PC-en din får et virus, vil en McAfee-ekspert kunne fjerne det fra datamaskinen din fra utsiden.",
-                "parentalTitle": "Tilgangskontroll",
-                "parentalSubtitle": "Blokkerer nettsider og søkeresultater som du ikke vil at barna dine skal se. Lar deg også sette grenser for hvor mye tid de bruker på nettet.",
-                "license": "Lisens gyldig til",
-                "trial": "Prøveversjon gyldig til"
+                "title": "Antivirus",
+                "subtitle": "Du beskyttes nå av McAfee LiveSafe – bare {{remainingDays}} dager igjen! Abonner nå for å forlenge beskyttelsen.",
+                "launch": "Start McAfee",
+                "getMacfee": "Skaff deg McAfee",
+                "topBenefits": "Hvorfor <b>Lenovo anbefaler McAfee</b> til å beskytte alle enhetene dine",
+                "awardTitle": "Prisbelønt antivirus",
+                "awardSubtitle": "Beskytt PC-en mot virus, skadelig programvare og løsepengevirus.",
+                "supportTitle": "Gratis teknisk støtte døgnet rundt fra eksperter ",
+                "supportSubtitle": "Få hjelp og sinnsro døgnet rundt fra det dedikerte sikkerhetsteamet vårt",
+                "trialSubtitle": "Du beskyttes nå av en 30-dagers prøveversjon av McAfee LiveSafe – bare {{remainingDays}} dager igjen! Abonner nå for å forlenge beskyttelsen.",
+                "discount": "Få pengene tilbake hvis du ikke er fornøyd",
+                "trialSubscribe": "Prøveversjonen slutter om {{remainingDays}} dager – ABONNER NÅ",
+                "subscribe": "Abonnementet slutter om {{remainingDays}} dager – ABONNER NÅ",
+                "MultiTitle": "Beskyttelse av flere enheter",
+                "MultiSubtitle": "Beskytt alle enhetene dine – PC-er, telefoner og nettbrett – perfekt for familier ",
+                "networkTitle": "Beskyttelse av hjemmenettverk",
+                "networkSubtitle": "Sikre brannmuren og beskytt hjemmenettverket mot hackere",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Sikker oppbevaring og administrasjon av alle passordene på ett sted",
+                "onlineTitle": "Personvern på nettet",
+                "onlineSubtitle": "Koble til med kryptering på banknivå for å sikre alle aktivitetene på nettet, selv på offentlige Wi-Fi-nettverk eller åpne nettverk ",
+                "register": "Registrering for McAfee",
+                "virusScan": "Virusskanning",
+                "firewall": "Personlig brannmur",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Sårbarhetsskanner ",
+                "report": "Rapport om trusselbeskyttelse ",
+                "trialContent": "Du har gjort god bruk av prøveversjonen av McAfee-antivirusprogramvaren. Nå er det imidlertid bare {{remainingDays}} dager igjen til prøveversjonen utløper, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.",
+                "subscribeContent": "Du har gjort god bruk av McAfee. Nå er det imidlertid bare {{remainingDays}} dager igjen, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.",
+                "subscribeNow": "Abonner nå",
+                "fileScan": "Skannede filer",
+                "Viruses": "Fjernede virus",
+                "blocked": "Ugyldige tilkoblinger blokkert",
+                "shredded": "Filer trygt makulert",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "gir grunnleggende beskyttelse for enheten din"
@@ -2333,6 +2355,8 @@
         "OtherSettings": "Andre innstillinger",
         "usageStatistics": "Statistikk over bruk",
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
     },
@@ -2407,6 +2431,7 @@
         "errorResult": "Du må velge en test for å kjøre den.",
         "offline": "Denne enheten kjører i frakoblet modus, så koble den til Internett",
         "doNotSuspend": "Disse testene må kjøre uavbrutt! Ikke lukk eller minimer denne appen, og ikke utsett eller slå av datamaskinen under skanningen.",
+        "doNotUse": "Avstå fra å bruke datamaskinen før denne testen er fullført",
         "battery": {
             "title": "Aktiver batteriladeterskel",
             "description": "Aktiverer du egendefinert batterilading, vil selve batteriet generelt sett vare lenger når du bruker denne enheten. Å ikke lade batteriet helt opp vil imidlertid gi kortere brukstid. For å aktivere denne funksjonen helt må du ta ut støpselet til datamaskinen og la batteriet lades helt ut eller til under terskelen for ladestopp.",
@@ -2487,5 +2512,39 @@
     "smartPerformance": {
         "title": "Health & Support",
         "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
+                "networkError": "Nettverksfeil.",
+                "installationCancelled": "Installasjonen er avbrutt."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-innløsning",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installerer",
+                "installed": "Installert",
+                "launch": "Start",
+                "seeMore": "Se mer"
+            },
+            "fieldName": {
+                "description": "Beskrivelse",
+                "screenshots": "Skjermbilder",
+                "additionalInformation": "Tilleggsinformasjon",
+                "by": "Av:",
+                "updated": "Oppdatert:",
+                "type": "Type:",
+                "category": "Kategori:",
+                "legalAgreement": "Juridisk avtale",
+                "readMore": "Les mer",
+                "readLess": "Les mindre"
+            }
+        }
     }
 }
