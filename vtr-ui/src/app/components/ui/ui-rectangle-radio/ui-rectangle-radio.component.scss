@@ -9,6 +9,7 @@
 	width: 15rem;
 	height: 15rem;
 	border-radius: $border_radius_sm;
+	
 	label {
 		box-sizing: border-box;
 		padding: 0rem;
@@ -58,15 +59,15 @@
 			font-size: 1.3rem;
 			font-weight: bold;
 			word-wrap: break-word;
-			// word-break: break-all;
+			word-break: break-all;
 			padding-right: 1rem;
 			text-transform: uppercase;
 		}
 		.icomoon{
 			position:absolute;
-			bottom:1rem;
+			bottom:0.5rem;
 			right:1.5rem;
-			font-size:4.2rem;
+			font-size:2rem;
 		}
 
 		fa-icon.icon {
@@ -97,10 +98,19 @@
 	input {
 		position: absolute;
 		visibility: hidden;
+	}&.border-blue {
+		border: 0.3rem solid $main;
+		// transition: all 50ms ease-in;
+	}
+	&.border-grey {
+		border: 0.3rem solid $shade_lightest;
+		// transition: all 50ms ease-in;
 	}
 }
 .disabled-class{
 	opacity: 0.7;
+	border: 0.3rem solid $light-grey;
+
 	label {	
 		&:after, &:before {
 			border-color: $light-grey;
@@ -115,6 +125,6 @@
 }
 .icomoon-Special-function, .icomoon-F1-F12-funciton {
 	&:before {
-		font-size: $title
+		font-size: $svg_icon
 	}
 }

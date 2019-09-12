@@ -1,20 +1,21 @@
 <div class="select-box" [ngClass]="{'disabled': isRecording}">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" attr.aria-label="gaming-drop" (click)="toggleOptions()"
-			title="{{ selectedOption.name | translate }}"  tabindex="0">
-			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
-			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
+		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()" (keydown.enter)="toggleOptions()"
+			title="{{ selectedOption.name | translate }}">
+			<span *ngIf="selectedOption" attr.aria-label="{{selectedOption.name | translate}}"
+				tabindex="1">{{ selectedOption.name | translate }}</span>
+			<fa-icon aria-label="expand" tabindex="1" class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</a>
 		<ng-container *ngIf="showOptions">
-			<div class="gaming-dropdown-menu">
+			<div class="gaming-dropdown-menu" #dropdownLightingEle>
 				<ul>
 					<li *ngFor="let option of options; index as i"
 						[ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }" vtrMetrics
 						[metricsItem]="option.id" metricsEvent="featureClick" metricsParam="{{option.id}}"
 						metricsValue="{{option.value}}" (click)="optionSelected(option)"
-						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)"
-						id="{{option.id}}" attr.aria-label="{{option.id}}">
-						<a class="dropdown-item">
+						(keydown.enter)="optionSelected(option)" (mouseenter)="changeDescription(option)"
+						(mouseleave)="resetDescription(option)" id="{{option.id}}" (focusout)="itemsFocused()">
+						<a class="dropdown-item" attr.aria-label="{{option.label}}" tabindex="1">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
 						</a>
 					</li>

@@ -80,6 +80,7 @@ export class PageAutocloseComponent implements OnInit {
 
 	openTargetModal() {
 		try {
+			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 			this.hiddenScroll(true);
 			if (this.toggleStatus) {
@@ -98,6 +99,7 @@ export class PageAutocloseComponent implements OnInit {
 		const status = event.target.checked;
 		try {
 			this.getNeedStatus = !status;
+			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
 		} catch (error) {
 		}
 	}
@@ -120,6 +122,7 @@ export class PageAutocloseComponent implements OnInit {
 	modalCloseTurnOn(action: boolean) {
 		this.showTurnOnModal = action;
 		this.hiddenScroll(false);
+		this.showAppsModal = true;
 	}
 
 	modalCloseAddApps(action: boolean) {
@@ -157,6 +160,8 @@ export class PageAutocloseComponent implements OnInit {
 				if (!isUndefined(appList.processList)) {
 					this.autoCloseAppList = appList.processList;
 					this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
+					console.log('get Auto close List', appList.processList);
+					console.log('Total Auto close List Apps', appList.processList.length);
 				}
 			});
 		} catch (error) {
@@ -171,6 +176,9 @@ export class PageAutocloseComponent implements OnInit {
 					this.runningList = list.processList;
 					const noAppsRunning = this.runningList.length === 0 ? true : false;
 					this.loadingContent = { loading: false, noApps: noAppsRunning };
+					console.log('get Running List', list.processList);
+					console.log('Total Running List Apps', list.processList.length);
+
 				}
 			});
 		} catch (error) {

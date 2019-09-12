@@ -39,13 +39,13 @@
                     "ramOverlock": "Aceleración de RAM",
                     "popup": {
                         "text": "El cambio surtirá efecto después de reiniciar el sistema.",
-                        "button": "aceptar"
+                        "button": "Aceptar"
                     },
                     "driverPopup": {
                         "headerText": "Se requiere instalar el controlador",
                         "text": "Instale el controlador para activar la aceleración de memoria RAM (es necesario reiniciar)",
-                        "button": "Instalar",
-                        "link": "cancelar",
+                        "button": "INSTALAR",
+                        "link": "CANCELAR",
                         "networkBoostText": "Necesita instalar un controlador para que la Mejora de red sea eficaz",
                         "hybridModeText": "Necesita instalar un controlador para que el Modo híbrido sea eficaz",
                         "cpuOverclockText": "Instale el controlador para activar la aceleración de memoria CPU (es necesario reiniciar)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Se requiere instalar el controlador",
                         "text": "Instale el controlador para activar la iluminación (es necesario reiniciar)",
-                        "button": "Instalar",
-                        "link": "cancelar"
+                        "button": "INSTALAR",
+                        "link": "CANCELAR"
                     },
                     "lightingColorMessage": {
                         "text": "Selección de color no disponible para este efecto."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "TECLA DE MACRO PARA ",
                     "deleteKey": "Eliminar",
-                    "clear": "Borrar",
+                    "clear": "BORRAR",
                     "intervalStatus": {
                         "keep": {
                             "title": "Conservar retraso",
@@ -228,8 +228,8 @@
                     "body": "La grabación excederá el tiempo de espera si la entrada se detiene durante más de 10 segundos."
                 },
                 "confirmButton": {
-                    "btnClear": "Borrar",
-                    "btnCancel": "Cancelar"
+                    "btnClear": "BORRAR",
+                    "btnCancel": "CANCELAR"
                 },
                 "btnOk": "Aceptar"
             },
@@ -403,9 +403,9 @@
             "modalAddApps": {
                 "title": "Agregue aplicaciones a Potenciamiento en red",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Se puede agregar hasta 5 aplicaciones adicionales para beneficiarse del potenciamiento",
+                    "part2": "de",
+                    "part3": "agregado"
                 }
             }
         }
@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Contenido útil",
             "batteryGauge": {
-                "title": "INDICADOR DE BATERÍA",
                 "subtitle": "Estado de batería",
                 "hours": "horas",
                 "hour": "hora",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>El adaptador de CA no es compatible.</b> Su sistema Lenovo no admite este adaptador de CA. Puede que se apague repentinamente. Conecte un adaptador de CA correcto.",
                     "LimitedACAdapterSupportDetail": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto."
                 },
-                "updating": "Actualizando",
-                "voltageError": "Voltaje de batería incorrecto",
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
                 "seeDetailsLink": "Ver detalles"
@@ -788,7 +785,8 @@
                             "battery&Quite": "BATERÍA Y SILENCIOSA"
                         }
                     },
-                    "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows"
+                    "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows",
+                    "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”."
                 },
                 "powerSettings": {
                     "title": "Valores de energía",
@@ -802,11 +800,11 @@
                         "description": "Habilite esta función para mejorar el tiempo de reanudación, en caso de que abra y cierre frecuentemente la tapa del equipo.",
                         "tooltip": "Esta función mejorará el tiempo de reanudación, en caso de que abra y cierre frecuentemente la tapa del equipo. Cuando está habilitada, el equipo entrará a una modalidad de baja energía cuando cierre la tapa, pero se reanudará instantáneamente si la vuelve a abrir dentro de 15 minutos de haberla cerrado. Esta función también permite que el equipo portátil intente finalizar actividades pendientes (como enviar un correo electrónico o descargar un archivo) antes de que el sistema se suspenda."
                     },
-					"flipToBoot": {
-						"title": "Voltear para iniciar",
-						"description": "Esta característica le permite activar el sistema al abrir la tapa del equipo, exactamente igual que al presionar el botón de encendido. ",
-						"tooltip": "Esta característica inicia automáticamente el equipo al abrir la tapa.  Es especialmente útil si configuró la información de inicio de sesión del rostro en Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Voltear para iniciar",
+                        "description": "Esta característica le permite activar el sistema al abrir la tapa del equipo, exactamente igual que al presionar el botón de encendido. ",
+                        "tooltip": "Esta característica inicia automáticamente el equipo al abrir la tapa.  Es especialmente útil si configuró la información de inicio de sesión del rostro en Windows Hello."
+                    },
                     "or": "- O bien -"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Función de la fila superior del teclado",
+                        "showAdvSettings": "MOSTRAR OPCIONES AVANZADAS",
+                        "hideAdvSettings": "OCULTAR OPCIONES AVANZADAS",
+                        "description": "La fila superior del teclado proporciona las dos funciones siguientes. Seleccione el que desea:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Para cambiar las dos funciones anteriores, presione Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "FUNCIÓN ESPECIAL",
+                                "fnKey": "FUNCIÓN F1-F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Revertir la función principal predeterminada",
+                            "description": "Cuando está activado, la función primaria predeterminada se cambiará de los valores de fábrica a los opuestos. Reinicie su equipo para que los cambios entren en efecto."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Cómo usar las combinaciones de teclas Fn",
+                            "description": "Utilizando el método normal, para utilizar las combinaciones de teclas Fn, debe presionar las teclas de función Fn+. Con el método de la tecla Fn Sticky, puede presionar la tecla Fn (en lugar de mantener presionada una tecla) para mantenerla en una condición presionada. A continuación presione la tecla de función deseada. La acción es equivalente a presionar la tecla de función simultáneamente con la tecla Fn.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Método normal",
+                                "fnKeyMehod": "Método de Tecla Fn Sticky"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Cuando presiona la tecla Fn dos veces, la tecla Fn se bloquea en condición pulsada hasta que vuelva a pulsarla. Cuando la tecla Fn está bloqueada, se enciende el indicador de bloqueo Fn. Puede presionar la tecla de función deseada directamente para iniciar la función no predeterminada."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Reinicie el equipo",
+                            "description": "Cambiar la función de fila superior predeterminada requiere que reinicie su equipo. ¿Está seguro de que desea reiniciar?",
+                            "reboot": "REINICIAR",
+                            "cancel": "NO AHORA"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "MÁS",
+                    "control1": "CONTROLES DEL ÁREA TÁCTIL",
+                    "control2": "CONTROLES DE MOUSE",
+                    "control3": "CONTROLES DE TRACKPOINT"
                 }
             }
         },
@@ -1251,7 +1250,7 @@
                     "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
                     "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión sin interacción no funcionará.",
                     "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Si el Modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
@@ -1525,7 +1524,23 @@
             "trialExpired": "Prueba caducada - Actualice para proteger todos sus dispositivos",
             "upgrade": "actualizar",
             "freeTrial": "Proteger todos sus dispositivos - Prueba gratuita durante 30 días",
-            "startTrial": "Iniciar prueba"
+            "startTrial": "Iniciar prueba",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Anterior",
@@ -1565,6 +1580,19 @@
             "upgradedDetail2": "El ecosistema del dispositivo está actualmente protegido.",
             "localAccountDetail2": "Presione el siguiente botón para iniciar su versión gratuita de 30 días de prueba.",
             "alreadyHaveAccount": "¿Ya tiene un código de activación?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1656,13 +1684,8 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ATRÁS",
-                "why": "¿Porqué McAfee?",
                 "recommends": "Lenovo le recomienda McAfee para proteger todos los dispositivos con:",
                 "award": "Protección galardonada contra las últimas amenazas en línea, que incluyen ransomware y malware",
-                "dedicated": "Seguridad dedicada que supera constantemente a Defender y a otros proveedores de antivirus líderes",
-                "deviceToCloud": "Tecnología de dispositivo a la nube que no ralentizará su PC",
-                "poweredBy": "Con tecnología McAfee",
-                "privacyTerms": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>",
                 "mcafeePremium": "Protección McAfee Premium",
                 "protectedBy": "Actualmente está protegido por {{protectedName}}. Sin embargo, podría estar mejor protegido con McAfee LiveSafe.",
                 "virusScan": "EXPLORACIÓN DE ANTIVIRUS",
@@ -1670,39 +1693,66 @@
                 "disabled": "DESHABILITADO",
                 "enableVirusScan": "HABILITAR EXPLORACIÓN ANTIVIRUS",
                 "enablenFirewall": "HABILITAR CORTAFUEGOS",
-                "enableFirewall": "HABILITAR CORTAFUEGOS"
+                "enableFirewall": "HABILITAR CORTAFUEGOS",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Sin protección óptima",
-                "subtitle": "Que está siendo protegido por Windows Defender.Sin embargo, podría ser mejor protegido con McAfee LiveSafe. Obtenga más información a continuación.",
-                "learnMore": "OBTENER MÁS INFORMACIÓN ACERCA DE McAfee",
-                "windowsProtected": "Protección básica de Windows Defender",
-                "windowsSubtitle": "Windows Defender ofrece protección básica para su dispositivo"
+                "windowsSubtitle": "Windows Defender ofrece protección básica para su dispositivo",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "Actualmente está usando la protección McAfee LiveSafe",
-                "valid": "Válido hasta",
-                "upgrade": "Actualizar ahora",
                 "launch": "INICIAR McAfee",
                 "getMacfee": "OBTENER McAfee",
                 "topBenefits": "Beneficios principales de McAfee LiveSafe",
                 "awardTitle": "Antivirus galardonado",
                 "awardSubtitle": "Bloquea virus, malware, ransomware, spyware, programas no deseados y más en su PC.",
-                "encryptedTitle": "Almacenamiento cifrado",
-                "encryptedSubtitle": "Mantenga la privacidad de los archivos confidenciales al almacenarlos en su PC con un cifrado de 128 bits.",
-                "identityTitle": "Protección contra suplantación de identidad",
-                "identitySubtitle": "Hágase cargo de la protección de su identidad en caso de robos y fraudes.",
                 "supportTitle": "Soporte para el cliente GRATUITO",
                 "supportSubtitle": "Le entrega cobertura telefónica, por chat o en línea por toda la duración de su suscripción.",
-                "antiTitle": "Antispam",
-                "antiSubtitle": "Bloquea mensajes peligrosos antes de que lleguen a su bandeja de entrada al retirar correos electrónicos que puedan incluir enlaces peligrosos y virus.",
-                "virusTitle": "Compromiso de protección antivirus",
-                "virusSubtitle": "Le proporciona la confianza de que, en caso de que su PC se infecte con un virus, un experto de McAfee accederá de forma remota a su equipo para eliminarlo.",
-                "parentalTitle": "Controles parentales",
-                "parentalSubtitle": "Bloquee los sitios web y los resultados de búsqueda que no desea que sus hijos vean. Esto también le permite establecer límites de tiempo en línea.",
-                "license": "Licencia válida hasta",
-                "trial": "Versión de prueba válida hasta"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "le ofrece protección básica para su dispositivo"
@@ -1758,7 +1808,8 @@
                 "describe": "Las redes y los dispositivos no seguros pueden introducir malware, llevar a la suplantación de identidad y producir la pérdida de información privada y financiera. Active esta característica para reducir el riesgo de exponer su dispositivo y la red de su hogar a los atacantes",
                 "subtitle": "Serenidad",
                 "subtitleDescribe": "La Seguridad de hogar conectado enviará un aviso si detecta una vulnerabilidad en su dispositivo o red doméstica o si está conectado a una red posiblemente malintencionada. Obtenga más información acerca de la Seguridad de hogar conectado <tag>aquí</tag>.",
-                "tryNow": "Probar ahora"
+                "tryNow": "Probar ahora",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Introduzca código de invitación",
@@ -1774,7 +1825,11 @@
                 "success": "Se conectó correctamente",
                 "canUse": "Ahora puede comenzar a utilizar la Seguridad de hogar conectado",
                 "tryAgain": "Código incorrecto, ¡inténtelo de nuevo!",
-                "activationCode": "CÓDIGO DE ACTIVACIÓN"
+                "activationCode": "CÓDIGO DE ACTIVACIÓN",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Estado de seguridad",
@@ -1793,6 +1848,10 @@
                 "learnMoreAboutSecurityHealth": "Obtener más información acerca de cada uno de estos componentes <tag>aquí</tag>.",
                 "peaceOfMind": "¿Desea más tranquilidad?",
                 "button": "Habilitar seguridad de Wi-Fi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1904,7 +1963,7 @@
         },
         "question1": {
             "title": "Cree copias de seguridad y restaure sus archivos",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Cree copias de seguridad y restaure sus archivos    </div>    <hr />    <div style='margin-bottom:7rem;'>        Siempre es bueno tener una copia de seguridad. Guarde copias de los archivos en otra unidad en caso de que algo le suceda a los originales.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Configure la copia de seguridad    </div>    <hr />    <div class='mb-5'>        Seleccione el botón <span style='font-weight:bold'>Inicio</span>, seleccione <span style='font-weight:bold'>Configuración</span> > <span style='font-weight:bold'>Actualización y seguridad</span> > <span style='font-weight:bold'>Copia de seguridad</span> > <span style='font-weight:bold'>agregar</span> una unidad y luego seleccione una unidad externa o una ubicación de red para sus copias de seguridad.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Todo listo. Cada una hora, realizaremos una copia de seguridad de todos los datos de la carpeta de usuario (C:\\\\Users\\\\username). Para cambiar de cuáles archivos se realizará una copia de seguridad o la frecuencia con la que se realizarán, vaya a <span style='font-weight:bold;'>Más opciones</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Restaure sus archivos    </div>    <div class='mb-5'>        Si le falta un archivo o carpeta importante, aquí le mostramos cómo recuperarlo:    </div>    <div>        <div class='mb-3'>1. Escriba <span style='font-weight:bold;'>Restaurar archivos</span> en el recuadro de búsqueda de la barra de tareas y seleccione <span class='font-weight:bold'> Restaurar los archivos con el historial de archivos</span>.</div>        <div class='mb-3'>2. Busque el archivo que necesita y luego utilice las flechas para ver todas sus versiones</div>        <div class='mb-3'>3. Cuando encuentre la versión que desea, seleccione <span style='font-weight:bold'>Restaurar</span> para guardarla en su ubicación original. Para guardarla en un lugar diferente, mantenga presionado (o presione con el botón derecho) <span style='font-weight:bold'>Restaurar</span>, seleccione <span style='font-weight:bold'>Restaurar en</span> y luego elija una nueva ubicación.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Cree copias de seguridad y restaure sus archivos    </div>    <hr />    <div class='faqInMb7'>        Siempre es bueno tener una copia de seguridad. Guarde copias de los archivos en otra unidad en caso de que algo le suceda a los originales.    </div>    <div class='faqInFs3Fb'>        Configure la copia de seguridad    </div>    <hr />    <div class='mb-5'>        Seleccione el botón <span class='faqInFb'>Inicio</span>, seleccione <span class='faqInFb'>Configuración</span> > <span class='faqInFb'>Actualización y seguridad</span> > <span class='faqInFb'>Copia de seguridad</span> > <span class='faqInFb'>agregar</span> una unidad y luego seleccione una unidad externa o una ubicación de red para sus copias de seguridad.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Todo listo. Cada una hora, realizaremos una copia de seguridad de todos los datos de la carpeta de usuario (C:\\\\Users\\\\username). Para cambiar de cuáles archivos se realizará una copia de seguridad o la frecuencia con la que se realizarán, vaya a <span class='faqInFb'>Más opciones</span>.    </div>    <div class='faqInFs3Fb'>        Restaure sus archivos    </div>    <div class='mb-5'>        Si le falta un archivo o carpeta importante, aquí le mostramos cómo recuperarlo:    </div>    <div>        <div class='mb-3'>1. Escriba <span class='faqInFb'>Restaurar archivos</span> en el recuadro de búsqueda de la barra de tareas y seleccione <span class='faqInFb'> Restaurar los archivos con el historial de archivos</span>.</div>        <div class='mb-3'>2. Busque el archivo que necesita y luego utilice las flechas para ver todas sus versiones</div>        <div class='mb-3'>3. Cuando encuentre la versión que desea, seleccione <span class='faqInFb'>Restaurar</span> para guardarla en su ubicación original. Para guardarla en un lugar diferente, mantenga presionado (o presione con el botón derecho) <span class='faqInFb'>Restaurar</span>, seleccione <span class='faqInFb'>Restaurar en</span> y luego elija una nueva ubicación.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1945,7 +2004,7 @@
         },
         "question2": {
             "title": "Cómo renovar su equipo",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Cómo renovar su equipo    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Síntoma    </div>    <div style='padding:5px 0;'>        Si el equipo no funciona tan bien como antes y no sabe por qué, puede restaurar el equipo sin eliminar ninguno de los archivos personales o cambiar la configuración. Windows puede “restaurar” el equipo para que sea más similar a una instalación nueva sin eliminar los archivos personales.    </div>    <div style='padding:5px 0;'>        Al restaurar el equipo, esto es lo que ocurrirá: los archivos y las configuraciones personalizadas no cambiarán    </div>    <div style='padding:5px 0;'>        <ul>            <li>La configuración de su equipo se devolverá a los valores predeterminados</li>            <li>Las aplicaciones de la tienda Windows se mantendrán</li>            <li>Las aplicaciones que instaló desde un disco o sitio web se eliminarán</li>            <li>Se guardará una lista de archivos eliminados en el escritorio</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Marcas afectadas    </div>    <div>        <ul>            <li>Todos los equipos de escritorio y portátiles</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Sistema operativo    </div>    <div>        <ul>            <li>Windows 8, 8.1 y 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Solución    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Toque o haga clic en <span style='font-weight:bold;'> Configuración </span>                    </li>                    <li style='padding:5px 0;'>                        Toque o haga clic en <span style='font-weight:bold;'> Actualización y recuperación</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Toque o haga clic en <span style='font-weight:bold;'> Recuperación</span></div>                        <div style='padding:5px 0'>En Restaurar PC sin modificar los archivos, toque o haga clic en <span style='font-weight:bold;'> Comenzar.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Haga clic en <span style='font-weight:bold;'> “Siguiente”</span>.                    </li>                    <li style='padding:5px 0;'>                        Haga clic en <span style='font-weight:bold;'> “Restaurar” </span>para iniciar el proceso de restauración.                    </li>                    <li style='padding:5px 0;'>                        Una vez finalizado el proceso de restauración, puede buscar una lista de aplicaciones eliminadas en el escritorio                    </li>                    <li style='padding:5px 0;'>                        Puede encontrar las aplicaciones eliminadas mientras restaura el sistema                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Busque <span style='font-weight:bold;'> restaurar </span>en la herramienta de búsqueda disponible en el menú Inicio,</li>                    <li style='padding:5px 0;'>                        <div>Presione <span style='font-weight:bold;'> “Restaurar PC sin modificar los archivos”</span> en los resultados de la búsqueda tal como se muestra a continuación.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Presione el botón <span style='font-weight:bold;'> Comenzar </span> justo debajo del encabezado<span style='font-weight:bold;'> “Restaurar PC sin modificar los archivos”</span> para empezar a restaurar su PC con Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Información adicional    </div>    <div>        En la mayoría de los casos, una vez que empiece a restaurar el PC, finalizará solo. Sin embargo, si Windows necesita archivos faltantes, se le solicitará que inserte los soportes de recuperación, que normalmente son un disco DVD o una unidad pendrive. Si esto sucede, lo que necesita dependerá de su PC.    </div>    <div style='padding:10px 0'>        Si actualizó su PC a Windows 8.1 o a Windows RT 8.1 con un DVD, utilice ese disco. Si no tiene soportes de medios de Windows 8.1 o Windows RT 8.1, póngase en contacto con soporte de Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Cómo renovar su equipo    </div>    <hr>    <div class='faqInFs25FbP5'>        Síntoma    </div>    <div class='faqInP5'>        Si el equipo no funciona tan bien como antes y no sabe por qué, puede restaurar el equipo sin eliminar ninguno de los archivos personales o cambiar la configuración. Windows puede “restaurar” el equipo para que sea más similar a una instalación nueva sin eliminar los archivos personales.    </div>    <div class='faqInP5'>        Al restaurar el equipo, esto es lo que ocurrirá: los archivos y las configuraciones personalizadas no cambiarán    </div>    <div class='faqInP5'>        <ul>            <li>La configuración de su equipo se devolverá a los valores predeterminados</li>            <li>Las aplicaciones de la tienda Windows se mantendrán</li>            <li>Las aplicaciones que instaló desde un disco o sitio web se eliminarán</li>            <li>Se guardará una lista de archivos eliminados en el escritorio</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Marcas afectadas    </div>    <div>        <ul>            <li>Todos los equipos de escritorio y portátiles</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Sistema operativo    </div>    <div>        <ul>            <li>Windows 8, 8.1 y 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Solución    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Toque o haga clic en <span class='faqInFb'> Configuración </span>                    </li>                    <li class='faqInP5'>                        Toque o haga clic en <span class='faqInFb'> Actualización y recuperación</span>                    </li>                    <li class='faqInP5'>                        <div>Toque o haga clic en <span class='faqInFb'> Recuperación</span></div>                        <div class='faqInP5'>En Restaurar PC sin modificar los archivos, toque o haga clic en <span class='faqInFb'> Comenzar.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Haga clic en <span class='faqInFb'> “Siguiente”</span>.                    </li>                    <li class='faqInP5'>                        Haga clic en <span class='faqInFb'> “Restaurar” </span>para iniciar el proceso de restauración.                    </li>                    <li class='faqInP5'>                        Una vez finalizado el proceso de restauración, puede buscar una lista de aplicaciones eliminadas en el escritorio                    </li>                    <li class='faqInP5'>                        Puede encontrar las aplicaciones eliminadas mientras restaura el sistema                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Busque <span class='faqInFb'> restaurar </span>en la herramienta de búsqueda disponible en el menú Inicio,</li>                    <li class='faqInP5'>                        <div>Presione <span class='faqInFb'> “Restaurar PC sin modificar los archivos”</span> en los resultados de la búsqueda tal como se muestra a continuación.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Presione el botón <span class='faqInFb'> Comenzar </span> justo debajo del encabezado<span class='faqInFb'> “Restaurar PC sin modificar los archivos”</span> para empezar a restaurar su PC con Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Información adicional    </div>    <div>        En la mayoría de los casos, una vez que empiece a restaurar el PC, finalizará solo. Sin embargo, si Windows necesita archivos faltantes, se le solicitará que inserte los soportes de recuperación, que normalmente son un disco DVD o una unidad pendrive. Si esto sucede, lo que necesita dependerá de su PC.    </div>    <div class='faqInP10'>        Si actualizó su PC a Windows 8.1 o a Windows RT 8.1 con un DVD, utilice ese disco. Si no tiene soportes de medios de Windows 8.1 o Windows RT 8.1, póngase en contacto con soporte de Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2019,7 +2078,7 @@
         },
         "question3": {
             "title": "Cómo conocer la CPU de su equipo",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Cómo conocer la CPU de su equipo</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Síntoma</h3><p>Los términos 32 bits y 64 bits hacen referencia a la forma en la que el procesador de sistema (también denominado CPU) gestiona la información. La versión 64 bits de Windows gestiona grandes cantidades de memoria de acceso aleatorio (RAM) de una forma más eficaz que un sistema de 32 bits.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Marcas afectadas</h3><p>El síntoma anterior está asociado, pero sin limitarse a, a los siguientes sistemas:</p><ul>    <li>Todos los equipos de escritorio y portátiles</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistema operativo</h3><ul>    <li>Windows 7, 8 y 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solución</h3><p><strong><u>Windows 7 o Vista</u></strong></p><ol>    <li>Para abrir sistema, haga clic en el <strong>Botón de inicio </strong>Imagen del <strong>botón de inicio,</strong> haga clic con el botón secundario del mouse en Equipo y luego haga clic en Propiedades  </li>    <li>En Sistema, puede ver el tipo de sistema.</li></ol><p><strong><u>Windows 8 y Windows 10</u></strong></p><p><strong>Método 1:</strong> ver la ventana del sistema en el panel de control</p><ol>    <li>Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong></li>    <li>Escriba <strong>sistema</strong> en el cuadro de búsqueda y luego presione o haga clic en <strong>Configuración.</strong></li>    <li>Toque o haga clic en <strong>Sistema</strong></li>    <li>Si está ejecutando una versión de 64 bits de Windows 8, se mostrará el <strong>Sistema operativo de 64 bits</strong> en el campo Tipo de sistema bajo el encabezado Sistema. Si está ejecutando una versión de 32<strong> bits de Windows</strong> <strong>8, se mostrará el Sistema operativo de</strong> <strong>32 bits</strong> en el campo Tipo de sistema bajo el encabezado Sistema.<br />  </li></ol><p><strong>Método 2</strong>: ver la ventana de Información del sistema</p><ol>    <li>Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong></li>    <li>En el cuadro de búsqueda, escriba <strong>información del sistema</strong></li>    <li>Toque o haga clic en<strong> Sistema</strong>, toque o haga clic en <strong>Información de sistema</strong> y luego haga clic en <strong>Resumen del sistema.</strong></li>    <li>Si está ejecutando una versión de <strong>64 bits </strong>de Windows 8<strong>, </strong>el PC basado en x64 se visualiza en el campo <strong>Tipo de sistema</strong> en el encabezado del Elemento. <br /><br /> Si está ejecutando una versión <strong>32 bits</strong> de Windows 8, el PC basado en x86 aparece en el campo <strong>Tipo de sistema</strong> en el encabezado del elemento.  </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Cómo conocer la CPU de su equipo</div><hr><h3 class='faqInFs25FbP10'>Síntoma</h3><p>Los términos 32 bits y 64 bits hacen referencia a la forma en la que el procesador de sistema (también denominado CPU) gestiona la información. La versión 64 bits de Windows gestiona grandes cantidades de memoria de acceso aleatorio (RAM) de una forma más eficaz que un sistema de 32 bits.</p><h3 class='faqInFs25FbP10'>Marcas afectadas</h3><p>El síntoma anterior está asociado, pero sin limitarse a, a los siguientes sistemas:</p><ul>    <li>Todos los equipos de escritorio y portátiles</li></ul><h3 class='faqInFs25FbP10'>Sistema operativo</h3><ul>    <li>Windows 7, 8 y 10</li></ul><h3 class='faqInFs25FbP10'>Solución</h3><p><strong><u>Windows 7 o Vista</u></strong></p><ol>    <li>Para abrir sistema, haga clic en el <strong>Botón de inicio </strong>Imagen del <strong>botón de inicio,</strong> haga clic con el botón secundario del mouse en Equipo y luego haga clic en Propiedades  </li>    <li>En Sistema, puede ver el tipo de sistema.</li></ol><p><strong><u>Windows 8 y Windows 10</u></strong></p><p><strong>Método 1:</strong> ver la ventana del sistema en el panel de control</p><ol>    <li>Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong></li>    <li>Escriba <strong>sistema</strong> en el cuadro de búsqueda y luego presione o haga clic en <strong>Configuración.</strong></li>    <li>Toque o haga clic en <strong>Sistema</strong></li>    <li>Si está ejecutando una versión de 64 bits de Windows 8, se mostrará el <strong>Sistema operativo de 64 bits</strong> en el campo Tipo de sistema bajo el encabezado Sistema. Si está ejecutando una versión de 32<strong> bits de Windows</strong> <strong>8, se mostrará el Sistema operativo de</strong> <strong>32 bits</strong> en el campo Tipo de sistema bajo el encabezado Sistema.<br />  </li></ol><p><strong>Método 2</strong>: ver la ventana de Información del sistema</p><ol>    <li>Deslice rápidamente desde el borde derecho de la pantalla hacia el centro y luego toque <strong>Buscar</strong>. O bien, si está utilizando un mouse, apunte a la esquina inferior derecha de la pantalla y luego haga clic en <strong>Buscar.</strong></li>    <li>En el cuadro de búsqueda, escriba <strong>información del sistema</strong></li>    <li>Toque o haga clic en<strong> Sistema</strong>, toque o haga clic en <strong>Información de sistema</strong> y luego haga clic en <strong>Resumen del sistema.</strong></li>    <li>Si está ejecutando una versión de <strong>64 bits </strong>de Windows 8<strong>, </strong>el PC basado en x64 se visualiza en el campo <strong>Tipo de sistema</strong> en el encabezado del Elemento. <br /><br /> Si está ejecutando una versión <strong>32 bits</strong> de Windows 8, el PC basado en x86 aparece en el campo <strong>Tipo de sistema</strong> en el encabezado del elemento.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2108,7 +2167,7 @@
         },
         "question4": {
             "title": "Compruebe el uso de la batería de su equipo",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Compruebe el uso de la batería de su equipo</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Síntoma</h3><p>Windows 10 incluye una nueva pantalla “<strong>uso de batería”</strong> que le muestra lo que está agotando la potencia de su equipo portátil. Esto significa que le dirá exactamente qué aplicaciones, tanto de escritorio como “universales” de Windows 10, están utilizando demasiada energía.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Marcas afectadas</h3><ul>    <li>Equipos portátiles Lenovo, sistemas de escritorio</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistemas afectados</h3><ul>    <li>Todo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistema operativo</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solución</h3><p>Esta característica es nueva en Windows 10, necesitamos encontrar esta característica primero, ya que no está almacenada en su vista de <strong>panel de control </strong>tradicional, esta característica se encuentra en la nueva aplicación de <strong>“Configuración”</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Busque la pantalla uso de la batería</h3></p><p>1. Haga clic o toque la opción <strong>“Configuración</strong>” en el menú Inicio</p><p>2. En <strong>Configuración </strong> seleccione <strong>“Sistema”</strong>y luego seleccione <strong>“Ahorro de batería”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Haga clic o toque el enlace <strong>“Uso de batería”</strong> bajo este encabezado para ver más detalles. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analice su uso de energía</h3><p>4 Puede cambiar para hacer que la batería utilice la pantalla para mostrar el uso de la batería desde las últimas 24 horas hasta las últimas 48 horas o desde la semana pasada</p><p>5 Porcentajes de <strong>“Sistema”,</strong> “<strong>Pantalla</strong>” y “<strong>Wi-Fi”</strong>. Esto muestra cuánta batería han utilizado los procesos del sistema, la pantalla.</p><p>6 Las opciones <strong>“En uso”</strong> y <strong>“En segundo plano”</strong> muestran la cantidad de energía que usan las aplicaciones mientras las está utilizando, en comparación con las aplicaciones que se ejecutan en segundo plano.</p><p>7 Si las aplicaciones usan energía en segundo plano, puede hacer clic o tocar el enlace <strong>“Cambiar los valores de aplicación en segundo plano” </strong>y configurar las aplicaciones para que no se ejecuten en segundo plano. Esto solo funciona para las aplicaciones universales de Windows 10.</p><p>8 Desplácese hacia abajo y verá una lista de aplicaciones, esto se considera la sección más útil de esta característica. Se mostrará una lista de las aplicaciones que han usado batería en ese período y se le mostrará el porcentaje del poder de la batería que cada aplicación haya utilizado</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Compruebe el uso de la batería de su equipo</div><hr><h3 class='faqInFs25FbP10'>Síntoma</h3><p>Windows 10 incluye una nueva pantalla “<strong>uso de batería”</strong> que le muestra lo que está agotando la potencia de su equipo portátil. Esto significa que le dirá exactamente qué aplicaciones, tanto de escritorio como “universales” de Windows 10, están utilizando demasiada energía.</p><h3 class='faqInFs25FbP10'>Marcas afectadas</h3><ul>    <li>Equipos portátiles Lenovo, sistemas de escritorio</li></ul><h3 class='faqInFs25FbP10'>Sistemas afectados</h3><ul>    <li>Todo</li></ul><h3 class='faqInFs25FbP10'>Sistema operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Solución</h3><p>Esta característica es nueva en Windows 10, necesitamos encontrar esta característica primero, ya que no está almacenada en su vista de <strong>panel de control </strong>tradicional, esta característica se encuentra en la nueva aplicación de <strong>“Configuración”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Busque la pantalla uso de la batería</h3></p><p>1. Haga clic o toque la opción <strong>“Configuración</strong>” en el menú Inicio</p><p>2. En <strong>Configuración </strong> seleccione <strong>“Sistema”</strong>y luego seleccione <strong>“Ahorro de batería”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Haga clic o toque el enlace <strong>“Uso de batería”</strong> bajo este encabezado para ver más detalles. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analice su uso de energía</h3><p>4 Puede cambiar para hacer que la batería utilice la pantalla para mostrar el uso de la batería desde las últimas 24 horas hasta las últimas 48 horas o desde la semana pasada</p><p>5 Porcentajes de <strong>“Sistema”,</strong> “<strong>Pantalla</strong>” y “<strong>Wi-Fi”</strong>. Esto muestra cuánta batería han utilizado los procesos del sistema, la pantalla.</p><p>6 Las opciones <strong>“En uso”</strong> y <strong>“En segundo plano”</strong> muestran la cantidad de energía que usan las aplicaciones mientras las está utilizando, en comparación con las aplicaciones que se ejecutan en segundo plano.</p><p>7 Si las aplicaciones usan energía en segundo plano, puede hacer clic o tocar el enlace <strong>“Cambiar los valores de aplicación en segundo plano” </strong>y configurar las aplicaciones para que no se ejecuten en segundo plano. Esto solo funciona para las aplicaciones universales de Windows 10.</p><p>8 Desplácese hacia abajo y verá una lista de aplicaciones, esto se considera la sección más útil de esta característica. Se mostrará una lista de las aplicaciones que han usado batería en ese período y se le mostrará el porcentaje del poder de la batería que cada aplicación haya utilizado</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2176,7 +2235,7 @@
         },
         "question5": {
             "title": "Use su equipo como una tableta",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Use su equipo como una tableta</div><hr><p>La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use la modalidad de tableta</h3><p>Para activar la modalidad de tableta, seleccione <strong>Centro de actividades</strong> en la barra de tareas y luego seleccione <strong>Modalidad de tableta</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Nota</h3><p>Para averiguar si el dispositivo puede activar automáticamente la modalidad de tableta, busque el dispositivo en el sitio web del fabricante. La compatibilidad con esta característica depende del hardware, del controlador instalado y de la forma en la que el fabricante configuró el dispositivo. </p><p> </p><p>En la modalidad de tableta, las aplicaciones abren la pantalla completa, lo que proporciona más espacio para trabajar. Para cerrar una aplicación, arrástrela a la parte inferior de la pantalla.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Consejo</h3><p>La barra de tareas está disponible cuando el equipo está en modalidad de tableta, pero puede ocultarla si desea disponer de más espacio en la pantalla. Seleccione el botón <strong>Inicio</strong>, seleccione <strong>Configuración </strong>> <strong>Sistema </strong>> <strong> Modalidad de tableta </strong>, luego active <strong>Ocultar barra de tareas automáticamente en modo de tableta</strong>. Para ver la barra de tareas oculta, deslice el dedo hacia arriba desde la parte inferior de la pantalla o utilice el mouse para situarse allí.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Utilizar dos aplicaciones simultáneamente</h3><p>Para utilizar dos aplicaciones en paralelo en modalidad de tableta, arrastre una aplicación abierta hacia abajo y hacia el lado. Verá dónde se ajustará y verá cualquier aplicación abierta junto a ella.</p><p>En esta vista también puede:</p><ul>    <li>Utilice el borde compartido entre dos aplicaciones ajustadas para cambiar el tamaño de ambas aplicaciones al mismo tiempo.</li>    <li>Abra una nueva aplicación desde la vista de tarea: seleccione <strong>Vista de tareas</strong> en la barra de tareas, seleccione una aplicación y luego arrástrela a un lado para ajustarla a la pantalla dividida.</li>    <li>Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Use su equipo como una tableta</div><hr><p>La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.</p><h3 class='faqInFs25FbP10'>Use la modalidad de tableta</h3><p>Para activar la modalidad de tableta, seleccione <strong>Centro de actividades</strong> en la barra de tareas y luego seleccione <strong>Modalidad de tableta</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para averiguar si el dispositivo puede activar automáticamente la modalidad de tableta, busque el dispositivo en el sitio web del fabricante. La compatibilidad con esta característica depende del hardware, del controlador instalado y de la forma en la que el fabricante configuró el dispositivo. </p><p> </p><p>En la modalidad de tableta, las aplicaciones abren la pantalla completa, lo que proporciona más espacio para trabajar. Para cerrar una aplicación, arrástrela a la parte inferior de la pantalla.</p><p> </p><h3 class='faqInFs25FbP10'>Consejo</h3><p>La barra de tareas está disponible cuando el equipo está en modalidad de tableta, pero puede ocultarla si desea disponer de más espacio en la pantalla. Seleccione el botón <strong>Inicio</strong>, seleccione <strong>Configuración </strong>> <strong>Sistema </strong>> <strong> Modalidad de tableta </strong>, luego active <strong>Ocultar barra de tareas automáticamente en modo de tableta</strong>. Para ver la barra de tareas oculta, deslice el dedo hacia arriba desde la parte inferior de la pantalla o utilice el mouse para situarse allí.</p><h3 class='faqInFs25FbP10'>Utilizar dos aplicaciones simultáneamente</h3><p>Para utilizar dos aplicaciones en paralelo en modalidad de tableta, arrastre una aplicación abierta hacia abajo y hacia el lado. Verá dónde se ajustará y verá cualquier aplicación abierta junto a ella.</p><p>En esta vista también puede:</p><ul>    <li>Utilice el borde compartido entre dos aplicaciones ajustadas para cambiar el tamaño de ambas aplicaciones al mismo tiempo.</li>    <li>Abra una nueva aplicación desde la vista de tarea: seleccione <strong>Vista de tareas</strong> en la barra de tareas, seleccione una aplicación y luego arrástrela a un lado para ajustarla a la pantalla dividida.</li>    <li>Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2216,7 +2275,7 @@
         },
         "question6": {
             "title": "Conozca Cortana, su asistente personal",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Conozca Cortana, su asistente personal</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>¿Qué es Cortana?</h3><hr /><p>Cortana es su agente digital. Ella le ayudará a realizar las tareas.</p><p>Cuanto más utilice Cortana, más personalizada será su experiencia.</p><p>Para empezar, escriba una pregunta en el recuadro de búsqueda o seleccione el micrófono y hable con Cortana. (El tecleo funciona para todos los tipos de equipos, pero necesita un micrófono para la conversación.)</p><p>Si no está seguro de lo que debe decir, verá sugerencias en la pantalla de bloqueo y en la Página principal de Cortana cuando seleccione el recuadro de búsqueda en la barra de tareas.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Inicio 2. Equipo portátil 3. Valores 4. Informar</li></ol><p>Estas son algunas de las cosas que Cortana puede hacer por usted:</p><ul>    <li>Proporcionar avisos basados en la hora, lugares o personas.</li>    <li>Realizar un seguimiento de paquetes, equipos, intereses y vuelos.</li>    <li>Enviar mensajes de correo electrónico y textos.</li>    <li>Administrar su calendario y mantenerlo al día.</li>    <li>Crear y gestionar listas.</li>    <li>Charlar y jugar.</li>    <li>Buscar hechos, archivos, lugares e información.</li>    <li>Abrir cualquier aplicación en el sistema.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Intente lo siguiente: establecer un aviso</h3><hr /><p>Una de las cosas que puede hacer Cortana es proporcionarle recordatorios. Ella puede recordarle que haga las cosas según la hora, los lugares o incluso para personas.</p><p>Por ejemplo, escriba o diga “Recordarme felicitar a Tanya la próxima vez que me llame”.</p><p>El aviso aparecerá cuando reciba una llamada de Tanya.</p><p>Extra: si tiene un teléfono Windows o Cortana para iPhone o Android, puede configurar Cortana para sincronizar notificaciones entre su equipo y el teléfono.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>¿Hola Cortana?</h3><hr /><p>Establece Cortana para escucharle cada vez que diga “Hola Cortana”. Seleccione el recuadro de búsqueda en la barra de tareas para abrir la página inicial de Cortana. A continuación, seleccione <strong>Configuración</strong> y active <strong>Permitir que Cortana responda a “Hola Cortana”.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Nota</p><p>Cortana solo está disponible en ciertos países/regiones y es posible que algunas características de Cortana no estén disponibles en todos los lugares.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Conozca Cortana, su asistente personal</div><hr><h3 class='faqInFs25FbP10'>¿Qué es Cortana?</h3><hr /><p>Cortana es su agente digital. Ella le ayudará a realizar las tareas.</p><p>Cuanto más utilice Cortana, más personalizada será su experiencia.</p><p>Para empezar, escriba una pregunta en el recuadro de búsqueda o seleccione el micrófono y hable con Cortana. (El tecleo funciona para todos los tipos de equipos, pero necesita un micrófono para la conversación.)</p><p>Si no está seguro de lo que debe decir, verá sugerencias en la pantalla de bloqueo y en la Página principal de Cortana cuando seleccione el recuadro de búsqueda en la barra de tareas.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Inicio 2. Equipo portátil 3. Valores 4. Informar</li></ol><p>Estas son algunas de las cosas que Cortana puede hacer por usted:</p><ul>    <li>Proporcionar avisos basados en la hora, lugares o personas.</li>    <li>Realizar un seguimiento de paquetes, equipos, intereses y vuelos.</li>    <li>Enviar mensajes de correo electrónico y textos.</li>    <li>Administrar su calendario y mantenerlo al día.</li>    <li>Crear y gestionar listas.</li>    <li>Charlar y jugar.</li>    <li>Buscar hechos, archivos, lugares e información.</li>    <li>Abrir cualquier aplicación en el sistema.</li></ul><h3 class='faqInFs25FbP10'>Intente lo siguiente: establecer un aviso</h3><hr /><p>Una de las cosas que puede hacer Cortana es proporcionarle recordatorios. Ella puede recordarle que haga las cosas según la hora, los lugares o incluso para personas.</p><p>Por ejemplo, escriba o diga “Recordarme felicitar a Tanya la próxima vez que me llame”.</p><p>El aviso aparecerá cuando reciba una llamada de Tanya.</p><p>Extra: si tiene un teléfono Windows o Cortana para iPhone o Android, puede configurar Cortana para sincronizar notificaciones entre su equipo y el teléfono.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>¿Hola Cortana?</h3><hr /><p>Establece Cortana para escucharle cada vez que diga “Hola Cortana”. Seleccione el recuadro de búsqueda en la barra de tareas para abrir la página inicial de Cortana. A continuación, seleccione <strong>Configuración</strong> y active <strong>Permitir que Cortana responda a “Hola Cortana”.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Nota</p><p>Cortana solo está disponible en ciertos países/regiones y es posible que algunas características de Cortana no estén disponibles en todos los lugares.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2297,7 +2356,9 @@
         "actionTriggeredDescription": "Mensajes desencadenados por el usuario seleccionando valores como la instalación automática de las actualizaciones críticas/recomendadas.",
         "OtherSettings": "Otros valores",
         "usageStatistics": "Estadísticas de uso",
-        "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
+		"usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
         "Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
     },
@@ -2371,6 +2432,8 @@
         "errorDeviceChoose": "Debe seleccionar un dispositivo a ejecutar.",
         "errorNoOptionSelected": "Debe seleccionar una opción.",
         "offline": "Este dispositivo se está ejecutando en modalidad sin conexión, conecte a Internet",
+        "doNotSuspend": "¡Estas pruebas se deben ejecutar sin interrupciones! No cierre ni minimice esta aplicación, y no suspenda ni apague el equipo durante la exploración.",
+        "doNotUse": "No utilice el equipo hasta que se complete esta prueba",
         "customize": {
             "name": "Personalizar",
             "test": "Prueba de personalización",
@@ -2395,7 +2458,8 @@
             "error": "Error",
             "delete": "Eliminar",
             "warningBatterySaver": "Nota: los análisis planificados no se ejecutarán en la modalidad de ahorro de batería",
-            "scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento."
+            "scheduleIntervalLimit": "Ya se programó otro análisis en un período de diez minutos. Elija otro momento.",
+            "information": "Su escaneo se programó y se realizará en segundo plano en la siguiente fecha:"
         },
         "recoverBadSectors": {
             "title": "Recuperar sectores incorrectos",
@@ -2446,5 +2510,9 @@
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
         "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

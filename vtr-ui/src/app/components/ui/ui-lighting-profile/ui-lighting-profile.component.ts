@@ -72,30 +72,35 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option8.title',
 						name: 'gaming.lightingProfile.effect.option8.title',
 						id: 'lighting_front_effect_off',
+						label: 'front off',
 						value: 268435456
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option1.title',
 						name: 'gaming.lightingProfile.effect.option1.title',
 						id: 'lighting_front_effect_on',
+						label: 'front on',
 						value: 1
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option2.title',
 						name: 'gaming.lightingProfile.effect.option2.title',
 						id: 'lighting_front_effect_flicker',
+						label: 'front flicker',
 						value: 2
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option3.title',
 						name: 'gaming.lightingProfile.effect.option3.title',
 						id: 'lighting_front_effect_breath',
+						label: 'front breath',
 						value: 4
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option4.title',
 						name: 'gaming.lightingProfile.effect.option4.title',
 						id: 'lighting_front_effect_wave',
+						label: 'front wave',
 						value: 8
 					},
 					// {
@@ -107,18 +112,21 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
 						id: 'lighting_front_effect_smooth',
+						label: 'front smooth',
 						value: 32
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option6.title',
 						name: 'gaming.lightingProfile.effect.option6.title',
 						id: 'lighting_front_effect_cpu_temperature',
+						label: 'front cpu temperature',
 						value: 64
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option7.title',
 						name: 'gaming.lightingProfile.effect.option7.title',
 						id: 'lighting_front_effect_cpu_utilization',
+						label: 'front cpu utilization',
 						value: 128
 					}
 				]
@@ -131,30 +139,35 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option8.title',
 						name: 'gaming.lightingProfile.effect.option8.title',
 						id: 'lighting_side_effect_off',
+						label: 'side off',
 						value: 268435456
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option1.title',
 						name: 'gaming.lightingProfile.effect.option1.title',
 						id: 'lighting_side_effect_on',
+						label: 'side on',
 						value: 1
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option2.title',
 						name: 'gaming.lightingProfile.effect.option2.title',
 						id: 'lighting_side_effect_flicker',
+						label: 'side flicker',
 						value: 2
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option3.title',
 						name: 'gaming.lightingProfile.effect.option3.title',
 						id: 'lighting_side_effect_breath',
+						label: 'side breath',
 						value: 4
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option4.title',
 						name: 'gaming.lightingProfile.effect.option4.title',
 						id: 'lighting_side_effect_wave',
+						label: 'side wave',
 						value: 8
 					},
 					// {
@@ -166,18 +179,21 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
 						id: 'lighting_side_effect_smooth',
+						label: 'side smooth',
 						value: 32
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option6.title',
 						name: 'gaming.lightingProfile.effect.option6.title',
 						id: 'lighting_side_effect_cpu_temperature',
+						label: 'side cpu temperature',
 						value: 64
 					},
 					{
 						header: 'gaming.lightingProfile.effect.option7.title',
 						name: 'gaming.lightingProfile.effect.option7.title',
 						id: 'lighting_side_effect_cpu_utilization',
+						label: 'side cpu utilization',
 						value: 128
 					}
 				]

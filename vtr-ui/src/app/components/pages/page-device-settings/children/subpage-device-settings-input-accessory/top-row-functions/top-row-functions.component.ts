@@ -13,6 +13,8 @@ export class TopRowFunctionsComponent implements OnInit {
 
 	public topRowKeyObj: any = {};
 	public showAdvancedSection = false;
+	public topRowFunInterval: any;
+	public responseData: any[] = [];
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -31,21 +33,19 @@ export class TopRowFunctionsComponent implements OnInit {
 					this.keyboardService.getTopRowFnLockCapability(),
 					this.keyboardService.getTopRowFnStickKeyCapability(),
 					this.keyboardService.getTopRowPrimaryFunctionCapability(),
-				]).then((response: any[]) => {
+				]).then((res: any[]) => {
+					this.responseData = res;
 					this.topRowKeyObj = {
-						fnLockCap: response[0],
-						stickyFunCap: response[1],
-						primaryFunCap: response[2]
+						fnLockCap: this.responseData[0],
+						stickyFunCap: this.responseData[1],
+						primaryFunCap: this.responseData[2]
 					};
-					if (response[0]) {
-						this.getStatusOfFnLock();
-					}
-					if (response[1]) {
-						this.getStatusOfStickyFun();
-					}
-					if (response[2]) {
-						this.getStatusOfPrimaryFun();
-					}
+					this.getAllStatuses();
+					this.topRowFunInterval = setInterval(() => {
+						if (!this.topRowKeyObj.stickyFunStatus) {
+							this.getAllStatuses();
+						}
+					}, 30000);
 				});
 			}
 		} catch (error) {
@@ -54,6 +54,19 @@ export class TopRowFunctionsComponent implements OnInit {
 		}
 	}
 
+	public getAllStatuses() {
+		if (this.responseData && this.responseData.length > 0) {
+			if (this.responseData[0]) {
+				this.getStatusOfFnLock();
+			}
+			if (this.responseData[1]) {
+				this.getStatusOfStickyFun();
+			}
+			if (this.responseData[2]) {
+				this.getStatusOfPrimaryFun();
+			}
+		}
+	}
 	public getStatusOfFnLock() {
 		this.keyboardService.getFnLockStatus().then(res => {
 			this.topRowKeyObj.fnLockStatus = res;
@@ -71,8 +84,8 @@ export class TopRowFunctionsComponent implements OnInit {
 	}
 
 	public onChangeFunType(value: boolean) {
-		console.log('set funlock req here ------------->', value);
 		this.keyboardService.setFnLock(value).then(res => {
+			this.getAllStatuses();
 		});
 	}
 	public onChangeKeyType(value: boolean) {
@@ -86,5 +99,9 @@ export class TopRowFunctionsComponent implements OnInit {
 				this.systemUpdateService.restartWindows();
 			}
 		});
+	}
+
+	ngOnDestroy() {
+		clearTimeout(this.topRowFunInterval);
 	}
 }

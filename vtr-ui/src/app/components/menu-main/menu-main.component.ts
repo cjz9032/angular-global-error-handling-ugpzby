@@ -27,6 +27,7 @@ import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { EMPTY } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -48,6 +49,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	public locale: string;
 	public items: any = [];
 	public showSearchBox = false;
+	public showSearchMenu = false;
 
 	showMenu = false;
 	showHWScanMenu: boolean = false;
@@ -84,7 +86,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
-		private hardwareScanService: HardwareScanService
+		private hardwareScanService: HardwareScanService,
+		private translate: TranslateService,
+
 	) {
 		localInfoService
 			.getLocalInfo()
@@ -137,6 +141,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				} else {
 					this.isGamingHome = false;
 				}
+			}
+		});
+
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			if (event.lang === 'en') {
+				this.showSearchMenu = true;
 			}
 		});
 	}
@@ -267,6 +277,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	// }
 
 	toggleMenu(event) {
+		this.updateSearchBoxState(false);
 		this.showMenu = !this.showMenu;
 		event.stopPropagation();
 	}
@@ -299,11 +310,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			showItem = this.showHWScanMenu;
 		}
 
-		if (item.id === 'privacy') {
-			if (!this.deviceService.showPrivacy) {
-				showItem = false;
-			}
+		if (item.id === 'app-search') {
+			showItem = this.showSearchMenu;
 		}
+
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
 		}

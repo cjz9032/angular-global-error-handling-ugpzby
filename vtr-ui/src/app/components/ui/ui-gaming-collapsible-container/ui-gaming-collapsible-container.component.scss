@@ -44,6 +44,7 @@
         line-height: 5.5rem;
         position: relative;
         padding-left: 5rem;
+        
         .icon {
           position: absolute;
           left: 2rem;
@@ -56,7 +57,16 @@
         }
         &:hover {
           background: $gaming_hover;
+          @media #{$black-on-white}{
+            background: $high-contrast-grey;
+          }
+          @media #{$white-on-black}{
+            background: $high-contrast-grey;
+          }
         }
+         &:focus {
+          background: $gaming_hover;
+         }
       }
       &.selected {
         .dropdown-item {

@@ -5,43 +5,26 @@ import { ConnectedHomeSecurity, CHSAccountState, WinRT, EventTypes, CHSNotificat
 	providedIn: 'root',
 })
 export class HomeSecurityMockService {
-	public state = 'notRegister';
-
 	private connectedHomeSecurity: any = {
 		account: {
-			state: CHSAccountState.local,
+			state: CHSAccountState.trial,
+			role: 'admin',
+			lenovoId: 'lenovo@lenovo.com',
 			serverTimeUTC: new Date(),
-			expiration: new Date('apr 15, 2020'),
-			lenovoId: {
-				email: 'email',
-				loggedIn: false
-			},
-			consoleUrl: ''
+			expiration: new Date('sep 15, 2019'),
+			consoleUrl: '',
+			getConsoleUrl() {
+				return Promise.resolve('');
+			}
 		},
-		overview: {
-			myDevice: {
-				name: 'ThinkPad T470',
-				protected: true,
-			},
-			allDevices: [
-				{ type: 'familyMembers', count: 6 },
-				{ type: 'places', count: 7, icon: 2 },
-				{ type: 'personalDevices', count: 8 },
-				{ type: 'wifiNetworks', count: 2 },
-				{ type: 'homeDevices', count: 1 }
-			]
-		},
-		notifications: {
-			value: [
-				{ type: CHSNotificationType.connectedUnsafeNetwork, time: new Date(), content: { title: 'New device detected', content: 'ThinkPad T490s' } },
-				{ type: CHSNotificationType.unknownDeviceConnected, time: new Date('2019-6-18 6:33:00'), content: { title: 'New device detected', content: 'ThinkPad T490s' } },
-				{ type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: { title: 'Device disconnected', content: 'ThinkPad T490s' } },
-				{ type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: { title: 'Unsafe device detected', content: 'ThinkPad T490s' } },
-				{ type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: { title: 'Network unsafe', content: 'ThinkPad T490s' } },
-				{ type: CHSNotificationType.applianceDisconnected, time: new Date('2017-12-18 13:33:00'), content: { title: 'Device disconnected', content: 'ThinkPad T490s' } },
-				{ type: CHSNotificationType.vulnerableDeviceDetected, time: new Date('2018-6-18 13:33:00'), content: { title: 'Unsafe device detected', content: 'ThinkPad T490s' } },
-				{ type: CHSNotificationType.homeNetworkUnsafe, time: new Date('2019-6-17 13:33:00'), content: { title: 'Network unsafe', content: 'ThinkPad T490s' } },
-			]
+		deviceOverview: {
+			allDevicesCount: 0,
+			allDevicesProtected: true,
+			familyMembersCount: 2,
+			placesCount: 2,
+			personalDevicesCount: 1,
+			wifiNetworkCount: 3,
+			homeDevicesCount: 0
 		},
 		on(type, handler) {
 			this.mitt.on(type, handler);
@@ -51,10 +34,13 @@ export class HomeSecurityMockService {
 		refresh() {
 			return Promise.resolve([true]);
 		},
-		createAndGetAccount() {
-			this.account.state = CHSAccountState.trial;
+		joinAccount(code: string) {
 			this.mitt.emit(EventTypes.chsEvent, this.chs);
-			return Promise.resolve(true);
+			return Promise.resolve('success');
+		},
+ 		quitAccount() {
+			this.mitt.emit(EventTypes.chsEvent, this.chs);
+			return Promise.resolve('success');
 		},
 		purchase() {
 			WinRT.launchUri('https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows');
@@ -62,18 +48,9 @@ export class HomeSecurityMockService {
 			this.mitt.emit(EventTypes.chsEvent, this.chs);
 		},
 		visitWebConsole(feature: string) {
-			if (feature) {
-				WinRT.launchUri(`https://homesecurity.coro.net/${feature}`);
-			} else {
-				WinRT.launchUri(`https://homesecurity.coro.net/`);
-			}
-			if (feature === 'login') {
-				this.account.state = CHSAccountState.local;
-				this.mitt.emit(EventTypes.chsEvent, this.chs);
-			} else if (feature === 'profile') {
-				this.account.state = CHSAccountState.standard;
-				this.mitt.emit(EventTypes.chsEvent, this.chs);
-			}
+			WinRT.launchUri(`https://homesecurity.coro.net/`);
+			this.account.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+			this.mitt.emit(EventTypes.chsEvent, this.chs);
 		}
 	};
 

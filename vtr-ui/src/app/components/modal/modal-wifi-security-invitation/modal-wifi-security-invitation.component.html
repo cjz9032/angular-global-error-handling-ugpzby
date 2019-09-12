@@ -8,12 +8,9 @@
 	</p>
 	<div class="form-group code-input-group m-0" [ngClass]="[joinFailed | joinClass, joinSuccess | successClass]">
 		<input type="text" class="form-control" placeholder="{{'security.homeprotection.invitationcode.invitationCode' | translate}}" #code [disabled]="startJoin"
-			(keyup)="KeyPress($event);show()" (keyup.enter)="joinGroupBy(code.value)" maxlength="6">
+			(keyup)="KeyPress($event)" (keyup.enter)="joinGroupBy(code.value)" maxlength="6">
 	</div>
-
 	<div class="join-info pl-5 mb-3">
-		<div *ngIf="startJoin" class="spinner-border text-primary progress-spinner" role="status">
-		</div>
 		<div class="d-flex" [ngClass]="{'joinGroupSuccess':joinSuccess}">
 			<fa-icon *ngIf="joinSuccess" class="successIcon" [icon]="['fas', 'check']"></fa-icon>
 			<div class="success pl-3" *ngIf="joinSuccess" [innerHTML]="'security.homeprotection.invitationcode.success' | translate"></div>
@@ -33,6 +30,8 @@
 				*ngIf="!joinSuccess"
 				[innerHTML]="'security.homeprotection.invitationcode.connect' | translate">
 			</button>
+			<div *ngIf="startJoin" class="spinner-border text-primary progress-spinner" role="status">
+			</div>
 		</div>
 	</div>
 </div>

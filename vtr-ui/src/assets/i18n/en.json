@@ -373,21 +373,21 @@
 		"autoClose": {
 			"title": "Auto Close",
 			"addAppsButton": "Add",
-			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely, so always make sure you've saved your work.",
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize the gaming performance. NOTE: This feature closes the app completely. So always make sure that you've saved your work.",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
-				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
+				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "TURN ON",
 				"btnCancel": "NOT NOW"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
-				"body": "Only apps currently running will show in the list below."
+				"body": "Only apps currently running will be shown in the list below."
 			},
 			"noRunningApps": {
 				"title": "No Running Apps To Add",
-				"body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+				"body": "Only apps that are currently running will be shown. Please launch an app that you want to add and come back."
 			}
 		},
 		"networkBoost": {
@@ -397,8 +397,8 @@
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "Turn on",
-				"btnCancel": "Not now"
+				"btnConfirm": "TURN ON",
+				"btnCancel": "NOT NOW"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -1530,7 +1530,12 @@
 			"freeTrial": "Protect all of your devices - Free 30 day trial",
 			"startTrial": "Start Trial",
 			"inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+			"trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+			"subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
 			"overviewTitle": "Overview of your Connected Home Security",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
 			"familyMembers": "Family members",
 			"places": "Places",
 			"personalDevices": "Personal devices",
@@ -1538,7 +1543,8 @@
 			"homeDevices": "Home devices",
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
 			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard"
+			"goDashboard": "go to dashboard",
+			"extendNow": "extend"
 		},
 		"tour": {
 			"back": "Back",
@@ -1581,10 +1587,10 @@
 		},
 		"card": {
 			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your Connected Home Security",
+			"startTrialTitle": "Create your own Connected Home Security",
 			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
 			"join": "join",
-			"joinTitle": "Join Connected Home Security of your family",
+			"joinTitle": "Join your family's Connected Home Security",
 			"joinDescription": "Become a part of your family security group."
 		},
 		"modal": {
@@ -1682,53 +1688,72 @@
 			"common": {
 				"title": "Anti-Virus",
 				"back": "BACK",
-				"why": "Why McAfee ?",
-				"recommends": "Lenovo recommends McAfee to protect all your devices with:",
-				"award": "Award winning protection from the latest online threats including ransomware and malware",
-				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
-				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
-				"poweredBy": "Powered By McAfee",
-				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-				"mcafeePremium": "McAfee Premium Protection",
+				"recommends": "Lenovo recommends <b>McAfee</b> to protect all your devices",
+				"award": "Award-winning antivirus",
+				"awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+				"performance": "Rock-solid performance",
+				"performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+				"Blazing": "Blazing-fast speed",
+				"BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience",
+				"privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+				"mcafeePremium": "McAfee LiveSafe Protection",
 				"protectedBy": "You are currently protected by {{protectedName}}. However, you could be better protected with McAfee LiveSafe",
 				"virusScan": "VIRUS SCAN",
 				"firewall": "FIREWALL",
-				"disabled": "DISABLED",
-				"enableVirusScan": "ENABLE VIRUS SCAN",
-				"enablenFirewall": "Enable firewall",
-				"enableFirewall": "ENABLE FIREWALL"
+				"disabled": "DISABLED"
 			},
 			"windowsDefender": {
-				"optimallyProtected": "Not Optimally Protected",
-				"subtitle": "You are currently being protected by Windows Defender. However, you could be better protected with McAfee LiveSafe. Learn more below.",
-				"learnMore": "LEARN MORE ABOUT McAfee",
-				"windowsProtected": "Windows Defender basic protection",
-				"windowsSubtitle": "Windows defender offers basic protection for your device"
+				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to off you award-winning security so can <b>protect what matters.</b>",
+				"topTip": "Top Tips for online safety",
+				"topContent": "Learn how you can defend against today's biggest online threats",
+				"view": "VIEW TIPS",
+				"buyNow": "Buy Now",
+				"buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+				"onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+				"virus": "Virus protection",
+				"homeNetwork": "Home netWork protection",
+				"private": "Private,anonymous browsing",
+				"everyDevice": "Every-device protection",
+				"password": "Password manager",
+				"windowsSubtitle": "Windows Defender Basic Protection"
 			},
 			"mcafee": {
-				"title": "McAfee LiveSafe",
-				"subtitle": "You are currently protected by McAfee LiveSafe",
-				"valid": "Valid Until",
-				"upgrade": "Upgrade Now",
-				"launch": "LAUNCH McAfee",
-				"getMacfee": "GET McAfee",
-				"topBenefits": "Top Benefits of McAfee LiveSafe",
+				"title": "Antivirus",
+				"trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
+				"subtitle" :"You’re currently protected by McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
+				"discount": "100% money back guarantee",
+				"trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+				"subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+				"launch": "Launch McAfee",
+				"getMacfee": "Get McAfee",
+				"topBenefits": "Why <b>Lenovo recommends McAfee</b> to protect all your devices",
 				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Blocks viruses, malware, ransomware, spyware, unwanted program and more on your PC.",
-				"encryptedTitle": "Encrypted Storage",
-				"encryptedSubtitle": "Keep sensitive files private by storing them on your PC with 128-bit encryption.",
-				"identityTitle": "Identity theft protection",
-				"identitySubtitle": "Take charge of protecting your identity from theft and fraud.",
-				"supportTitle": "FREE Customer Support",
-				"supportSubtitle": "Has you covered by phone, by chat, or online for the life of your subscription.",
-				"antiTitle": "Anti-Spam",
-				"antiSubtitle": "Blocks dangerous messages before they reach your inbox by removing emails that may include risky links and viruses.",
-				"virusTitle": "Virus protection pledge",
-				"virusSubtitle": "Provides you with the confidence that in the event your PC gets a virus, a McAfee expert will remotely access your computer to remove it.",
-				"parentalTitle": "Parental controls",
-				"parentalSubtitle": "Block web sites and search results you don’t want your kids to see. Also lets you set limits for how much time they spend online.",
-				"license": "License Valid until",
-				"trial": "Trial Valid until"
+				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC.",
+				"MultiTitle": "Multi-device protection",
+				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+				"networkTitle": "Home network protection",
+				"networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+				"passwordTitle":"Password manager",
+				"passwordSubtitle":"Security store and manage all your online passwords in a single location",
+				"onlineTitle":"Online privacy",
+				"onlineSubtitle":"Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+				"supportTitle": "Free, 24/7 expert technical support ",
+				"supportSubtitle": "Get around-the-clock assistance and peace of mind from our dedicated security team",
+				"register": "McAfee Registration",
+				"virusScan": "Virus Scan",
+				"firewall": "Personal Firewall",
+				"antiSpam": "McAfee Anti-Spam",
+				"quickClean": "McAfee QuickClean",
+				"vulnerability": "McAfee Vulnerability Scanner ",
+				"report": "Your Threat Protection Report ",
+				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+				"subscribeNow": "Subscribe Now",
+				"fileScan": "Files scanned",
+				"Viruses": "Viruses Eliminated",
+				"blocked": "Bad connections blocked",
+				"shredded": "Files Safely Shredded",
+				"startFileScan": "Start files scan"
 			},
 			"others": {
 				"othersProtection": "offers you basic protection for your device"
@@ -1940,7 +1965,7 @@
 		},
 		"question1": {
 			"title": "Back up and restore your files",
-			"description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+			"description": "<div><div class='faqInFs4Fb'>Back up and restore your files</div><hr /><div class='faqInMb7'>It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.</div><div class='faqInFs3Fb'>Set up your backup</div><hr /><div class='mb-5'>Select the <span class='faqInFb'>Start</span> button, select <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> , and then choose an external drive or network location for your backups.</div><div class='mb-5'><img src='./../../../../assets/images/qa/1.1.png' /></div><div class='mb-5'>All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to <span class='faqInFb'>More options</span>.</div><div class='faqInFs3Fb'>Restore your files</div><div class='mb-5'>If you're missing an important file or folder, here's how to get it back:</div><div><div class='mb-3'>1. Type <span class='faqInFb'>Restore files</span> in the search box on the taskbar, and then select <span class='faqInFb'> Restore your files with File History</span>.</div><div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div><div class='mb-3'>3. When you find the version you want, select <span class='faqInFb'>Restore</span> to save it in its original location. To save it in a different place, press and hold (or right-click) <span class='faqInFb'>Restore</span>, select <span class='faqInFb'>Restore to</span>, and then choose a new location. </div></div></div>",
 			"para1": {
 				"line1": "It's always good to have a backup.",
 				"line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1981,7 +2006,7 @@
 		},
 		"question2": {
 			"title": "How to refresh your PC",
-			"description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+			"description": "<div><div class='faqInFs4Fb'>How to refresh your PC</div><hr><div class='faqInFs25FbP5'>Symptom</div><div class='faqInP5'>If your PC isn&rsquo;t performing as well as it once did, and you don&rsquo;t know why, you can refresh your PC without deleting any of your personal files orchanging your settings. Windows can &ldquo;refresh&rdquo; your PC so it&rsquo;s more like afresh install without deleting your personal files.</div><div class='faqInP5'>Refresh your PC, Here is what will happen: your files and personalizedsettings won&rsquo;t change</div><div class='faqInP5'><ul><li>Your PC settings will be changed back to its defaults</li><li>Apps from windows store will be kept</li><li>Apps you installed from disc or website will be removed</li><li>A list of removed files will be saved on your desktop</li></ul></div><div class='faqInFs25FbP10'>Affected Brands</div><div><ul><li>All Desktop and Laptops</li></ul></div><div class='faqInFs25FbP10'>Operation System</div><div><ul><li>Windows 8, 8.1 & 10</li></ul></div><div class='faqInFs25FbP10'>Solution</div><div><ul class='list-unstyled'><li><span class='faqInFbTdP10'>Windows 8/8.1</span><ol><li class='faqInP5'>Tap or click <span class='faqInFb'> Settings </span></li><li class='faqInP5'>Tap or click <span class='faqInFb'> Update and recovery</span></li><li class='faqInP5'><div>Tap or click <span class='faqInFb'> Recovery</span></div><div class='faqInP5'>Under Refresh your PC without affecting your files, tap or click<span class='faqInFb'> Get started.</span></div><div><img src='./../../../../assets/images/qa/2.1.png' /></div></li><li class='faqInP5'>Click <span class='faqInFb'> 'Next'</span>.</li><li class='faqInP5'>Click <span class='faqInFb'> 'Refresh' </span>to start the refresh process.</li><li class='faqInP5'>Once the refresh process is done, you can find a Removed Apps list on the desktop</li><li class='faqInP5'>You can find the removed apps while refreshing your system</li></ol> </li><li class='faqInP10'><span class='faqInFbTd'>Windows 10</span><ol><li class='faqInP5'> Search for <span class='faqInFb'> refresh </span>in the searchtool available in the Start menu,</li><li class='faqInP5'><div>Click on <span class='faqInFb'> 'Refresh your PC without affecting yourfiles'</span> in the search results as shown below.</div><div><img src='./../../../../assets/images/qa/2.2.jpg' /></div></li><li class='faqInP5'><div>Click on the<span class='faqInFb'> Get started </span>button just below the heading<span class='faqInFb'> 'Refresh your PC withoutaffecting your files'</span> to start refreshing your Windows 10 PC.</div><div><img src='./../../../../assets/images/qa/2.3.jpg' /></div></li></ol></li></ul></div><div class='faqInFs25Fb'>Additional Information</div><div>In most cases, once you start to refresh your PC, it&rsquo;ll finish on its own.However, if Windows needs missing files, you&rsquo;ll be asked to insert recoverymedia, which is typically a DVD disc or thumb drive. If that happens, whatyou&rsquo;ll need depends on your PC.</div><div class='faqInP10'>If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, usethat disc. If you don&rsquo;t have Windows 8.1 or Windows RT 8.1 media, contactMicrosoft Support.</div></div>",
 			"heading1": "Symptom",
 			"para1": {
 				"span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2055,7 +2080,7 @@
 		},
 		"question3": {
 			"title": "How to know your machine's CPU",
-			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>How to know your machine's CPU</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bitsystem.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n<li>All Desktop and Laptops</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul>\n<li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n<li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>right-clicking Computer, and then clicking Properties</li>\n<li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.Or, if you are using a mouse, point to the lower-right corner of the screen, and then click<strong>Search.</strong></li>\n<li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n<li>Tap or click <strong>System</strong></li>\n<li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>is displayed in the System type field under the System heading.If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong><strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br /> </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.Or, if you are using a mouse, point to the lower-right corner of the screen, and thenclick <strong>Search.</strong></li>\n<li>In the search box, type <strong>system information</strong></li>\n<li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and thenclick <strong>System Summary.</strong></li>\n<li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>x64-based PC is displayed in the <strong>System type</strong> field under the Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> fieldunder the Item heading.</li>\n</ol>\n<p> </p>",
 			"heading1": "Symptom",
 			"para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
 			"heading2": "Affected Brands",
@@ -2144,7 +2169,7 @@
 		},
 		"question4": {
 			"title": "Check your machine's battery use",
-			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operationg System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in yourtraditional <strong>control panel </strong>view, this feature is located in thenew <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or lastfrom last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applicationsrunning in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of thisfeature.It will display a list of the apps have used battery power in that period, and show you what percentage of yourbattery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
 			"heading1": "Symptom",
 			"para1": {
 				"span1": "Windows 10 includes a new",
@@ -2212,7 +2237,7 @@
 		},
 		"question5": {
 			"title": "Use your PC like a tablet",
-			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tabletmode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of thescreen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, andyou'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, thendrag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
 			"para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
 			"heading1": "Use tablet mode",
 			"para2": {
@@ -2252,7 +2277,7 @@
 		},
 		"question6": {
 			"title": "Get to know Cortona, your personal assistant",
-			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphoneand talk to Cortana. (Typingworks for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when youselect the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, oreven people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to syncnotifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say'Hey Cortana.' Select the search box on the taskbar to open Cortana home.Then select <strong>Settings</strong>and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
 			"heading1": "What is Cortana?",
 			"para1": "Cortana is your digital agent. She'll help you get things done.",
 			"para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2333,6 +2358,8 @@
 		"OtherSettings": "Other settings",
 		"usageStatistics": "Usage Statistics",
 		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Shares statistical data with Lenovo to help improve the reliability, design, and optimization of features on your computer.",
 		"Note": "Note: ",
 		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
 	},
@@ -2414,6 +2441,8 @@
 		"cancelTextPrompt": "Are you sure you would like to cancel?",
 		"cancelTextProgress": "Please wait for cancel progress",
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
+		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
+		"doNotUse": "Please refrain from using your computer until this test completes",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

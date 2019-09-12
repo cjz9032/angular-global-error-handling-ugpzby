@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM overklok",
                     "popup": {
                         "text": "De wijziging zal effectief zijn nadat u de computer opnieuw hebt opgestart.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Installatie van stuurprogramma vereist",
                         "text": "Stuurprogramma installeren om RAM overklokken te activeren (opnieuw opstarten vereist)",
-                        "button": "Installeer",
-                        "link": "annuleren",
+                        "button": "INSTALLEREN",
+                        "link": "ANNULEREN",
                         "networkBoostText": "U moet een stuurprogramma installeren om het netwerk te kunnen verbeteren",
                         "hybridModeText": "U hebt het stuurprogramma voor de hybride modus installeren om het effectief te maken",
                         "cpuOverclockText": "Stuurprogramma installeren om CPU overklokken te activeren (opnieuw opstarten vereist)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Installatie van stuurprogramma vereist",
                         "text": "Stuurprogramma installeren om verlichting te activeren (opnieuw opstarten vereist)",
-                        "button": "Installeer",
-                        "link": "annuleren"
+                        "button": "INSTALLEREN",
+                        "link": "ANNULEREN"
                     },
                     "lightingColorMessage": {
                         "text": "Het selecteren van kleur is niet beschikbaar voor dit effect."
@@ -147,7 +147,7 @@
                 "recorded": {
                     "title": "MACRO SLEUTEL VOOR ",
                     "deleteKey": "Delete",
-                    "clear": "Leegmaken",
+                    "clear": "WISSEN",
                     "intervalStatus": {
                         "keep": {
                             "title": "Vertraging behouden",
@@ -228,8 +228,8 @@
                     "body": "Als de invoer langer dan 10 seconden gestopt is, wordt er een time-out voor de opname uitgevoerd."
                 },
                 "confirmButton": {
-                    "btnClear": "Leegmaken",
-                    "btnCancel": "Annuleren"
+                    "btnClear": "WISSEN",
+                    "btnCancel": "ANNULEREN"
                 },
                 "btnOk": "OK"
             },
@@ -403,9 +403,9 @@
             "modalAddApps": {
                 "title": "Apps toevoegen aan netwerkboost",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Voeg maximaal 5 extra apps toe",
+                    "part2": "van",
+                    "part3": "toegevoegd"
                 }
             }
         }
@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Nuttige inhoud",
             "batteryGauge": {
-                "title": "BATTERIJMETER",
                 "subtitle": "Batterijconditie",
                 "hours": "uur",
                 "hour": "uur",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
                     "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan."
                 },
-                "updating": "Bezig met updaten",
-                "voltageError": "Batterijspanning onjuist",
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
                 "seeDetailsLink": "Bekijk meer informatie"
@@ -788,7 +785,8 @@
                             "battery&Quite": "BATTERIJ EN STILLE MODUS"
                         }
                     },
-                    "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows"
+                    "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows",
+                    "nocqldesc": "Intelligent koelen maakt het mogelijk om de systeemprestatie en de thermische temperatuur aan te passen. In de \"Prestatie\"-modus wordt de systeemprestatie geoptimaliseerd. Tegelijkertijd blijft het systeem koeler en stiller in de modus \"Koel & stil\"."
                 },
                 "powerSettings": {
                     "title": "Energie-instellingen",
@@ -802,11 +800,11 @@
                         "description": "Schakel deze functie in om de computer sneller te herstellen als u de klep van uw computer vaak opent en sluit.",
                         "tooltip": "Door deze functie herstelt de computer sneller als u de klep van uw computer vaak opent en sluit. Als deze functie is ingeschakeld, wordt de modus voor laag energieverbruik ingeschakeld als u de klep sluit, maar meteen weer hersteld als u de klep binnen 15 minuten nadat u de klep sloot weer opent. Deze functie zorgt er ook voor dat uw notebook lopende activiteiten (zoals het versturen van e-mail of het downloaden van een bestand) probeert af te ronden voordat de slaapstand wordt geactiveerd."
                     },
-					"flipToBoot": {
-						"title": "Opstarten door open te klappen",
-						"description": "Met deze functie kunt u de computer inschakelen als u de klep van de computer opent alsof u op de aan/uit-knop drukt. ",
-						"tooltip": "Met deze functie start de computer automatisch door het openen van de klep.  Dit is vooral handig als u gezichtsherkenning om aan te melden hebt ingesteld in Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Opstarten door open te klappen",
+                        "description": "Met deze functie kunt u de computer inschakelen als u de klep van de computer opent alsof u op de aan/uit-knop drukt. ",
+                        "tooltip": "Met deze functie start de computer automatisch door het openen van de klep.  Dit is vooral handig als u gezichtsherkenning om aan te melden hebt ingesteld in Windows Hello."
+                    },
                     "or": "Of"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Functie van bovenste rij toetsenbord",
+                        "showAdvSettings": "GEAVANCEERDE INSTELLINGEN TONEN",
+                        "hideAdvSettings": "GEAVANCEERDE INSTELLINGEN VERBERGEN",
+                        "description": "De bovenste rij van het toetsenbord heeft de volgende twee functies. Selecteer de functie die u wilt:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Druk op Fn+Esc om de bovenstaande twee functies te wisselen.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "SPECIALE FUNCTIE",
+                                "fnKey": "F1-F12-FUNCTIE"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "De primaire standaardfunctie omdraaien",
+                            "description": "Als deze is ingeschakeld, wordt de primaire functie gewijzigd van fabrieksinstellingen naar het tegenovergestelde. U moet het systeem opnieuw opstarten om deze wijziging te activeren."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "De Fn-toetsencombinaties gebruiken",
+                            "description": "Als u gebruikmaakt van de normale methode, moet u op Fn+functietoetsen drukken om de Fn-toetsencombinatie te gebruiken. Met de Fn-plaktoetsenmethode kunt u de Fn-toets indrukken (in plaats van de toets ingedrukt te houden) om de ingedrukte stand van de toets te behouden. Druk vervolgens op de gewenste functietoets. Deze actie is gelijk aan het gelijktijdig indrukken van de vereiste functietoets en de Fn-toets.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Normale methode",
+                                "fnKeyMehod": "Fn-plaktoetsenmethode"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Als u tweemaal op de Fn-toets drukt, blijft de Fn-toets in de ingeschakelde toestand totdat u weer op de Fn-toets drukt. Als de Fn-toets vergrendeld is, brandt de indicator voor de Fn-toets. U kunt de gewenste functietoets direct indrukken om de niet-standaardfunctie te gebruiken."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Start de computer opnieuw op",
+                            "description": "Als u de standaardfunctie van de bovenste rij wijzigt, moet u uw computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
+                            "reboot": "OPNIEUW OPSTARTEN",
+                            "cancel": "NIET NU"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "MEER",
+                    "control1": "TOUCHPAD-BEDIENING",
+                    "control2": "MUISBEDIENING",
+                    "control3": "TRACKPOINT-BESTURINGSELEMENTEN"
                 }
             }
         },
@@ -1251,7 +1250,7 @@
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
                     "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
@@ -1525,7 +1524,23 @@
             "trialExpired": "Proefperiode verlopen - Upgrade uitvoeren om al uw apparaten te beschermen",
             "upgrade": "Upgraden",
             "freeTrial": "Bescherm al uw apparaten - Gratis proefperiode van 30 dagen",
-            "startTrial": "Proefperiode starten"
+            "startTrial": "Proefperiode starten",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Terug",
@@ -1565,6 +1580,19 @@
             "upgradedDetail2": "Het ecosysteem van het apparaat is momenteel beveiligd.",
             "localAccountDetail2": "Klik op de onderstaande knop om de gratis proefperiode van 30 dagen te starten.",
             "alreadyHaveAccount": "Heeft u al een activeringscode?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1656,13 +1684,8 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TERUG",
-                "why": "Waarom McAfee?",
                 "recommends": "Lenovo beveelt McAfee aan voor de beveiliging van al uw apparaten met:",
                 "award": "Bekroonde bescherming tegen de nieuwste online bedreigingen, ransomware en malware",
-                "dedicated": "Speciale beveiliging die het consequent beter doet dan Defender en andere toonaangevende antivirusleveranciers",
-                "deviceToCloud": "Apparaat-naar-cloudtechnologie die uw pc niet vertraagt",
-                "poweredBy": "Powered By McAfee",
-                "privacyTerms": "Meer informatie over het <tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
                 "mcafeePremium": "McAfee Premium-bescherming",
                 "protectedBy": "U wordt op dit moment beveiligd door {{protectedName}}. U kunt echter beter worden beveiligd door McAfee LiveSafe.",
                 "virusScan": "VIRUSSCAN",
@@ -1670,39 +1693,66 @@
                 "disabled": "UITGESCHAKELD",
                 "enableVirusScan": "VIRUSSCAN INSCHAKELEN",
                 "enablenFirewall": "FIREWALL INSCHAKELEN",
-                "enableFirewall": "FIREWALL INSCHAKELEN"
+                "enableFirewall": "FIREWALL INSCHAKELEN",
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "Niet optimaal beveiligd",
-                "subtitle": "U wordt op dit moment wordt beschermd door Windows Defender.U kunt echter beter worden beschermd door McAfee LiveSafe. Zie hieronder voor meer informatie.",
-                "learnMore": "MEER INFORMATIE OVER McAfee",
-                "windowsProtected": "Windows Defender-basisbeveiliging",
-                "windowsSubtitle": "Windows Defender biedt basisbeveiliging voor uw apparaat"
+                "windowsSubtitle": "Windows Defender biedt basisbeveiliging voor uw apparaat",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
                 "subtitle": "U wordt op dit moment beveiligd door McAfee LiveSafe.",
-                "valid": "Geldig tot",
-                "upgrade": "Nu upgraden",
                 "launch": "McAfee STARTEN",
                 "getMacfee": "McAfee DOWNLOADEN",
                 "topBenefits": "De belangrijkste voordelen van McAfee LiveSafe",
                 "awardTitle": "Bekroonde Antivirus",
                 "awardSubtitle": "Blokkeert virussen, malware, ransomware, spyware, ongewenste programma's en meer op uw pc.",
-                "encryptedTitle": "Versleutelde opslag",
-                "encryptedSubtitle": "Houdt gevoelige bestanden privé door ze op uw pc te slaan met 128-bits versleuteling.",
-                "identityTitle": "Bescherming tegen diefstal van identiteit",
-                "identitySubtitle": "Neem de verantwoordelijkheid voor de bescherming van uw identiteit tegen diefstal en fraude.",
                 "supportTitle": "GRATIS klantondersteuning",
                 "supportSubtitle": "U bent voor de duur van uw abonnement gedekt via de telefoon, chatten of online.",
-                "antiTitle": "Antispam",
-                "antiSubtitle": "Houdt gevaarlijke berichten tegen voordat ze uw inbox bereiken door e-mails te verwijderen die risicovolle links en virussen kunnen bevatten.",
-                "virusTitle": "De toezegging van bescherming tegen virussen",
-                "virusSubtitle": "Geeft u het vertrouwen dat als uw pc een virus binnenhaalt, een expert van McAfee extern toegang tot uw computer tot stand brengt om dit virus te verwijderen.",
-                "parentalTitle": "Ouderlijk toezicht",
-                "parentalSubtitle": "Blokkeer websites en zoekresultaten waarvan u vindt dat uw kinderen die niet mogen zien. Ook kunt u limieten instellen voor de tijd dat ze online zijn.",
-                "license": "Licentie geldig tot",
-                "trial": "Proefversie geldig tot"
+                "trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+                "discount": "100% money back guarantee",
+                "trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",
+                "MultiTitle": "Multi-device protection",
+                "MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
+                "networkTitle": "Home network protection",
+                "networkSubtitle": "Secure your firewall and block hackers from accessing your home network",
+                "passwordTitle": "Password manager",
+                "passwordSubtitle": "Security store and manage all your online passwords in a single location",
+                "onlineTitle": "Online privacy",
+                "onlineSubtitle": "Connect with bank-grade encryption to help secure all your online activities, even on public Wi-Fi or open networks ",
+                "register": "McAfee Registration",
+                "virusScan": "Virus Scan",
+                "firewall": "Personal Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Your Threat Protection Report ",
+                "trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+                "subscribeNow": "Subscribe Now",
+                "fileScan": "Files scanned",
+                "Viruses": "Viruses Eliminated",
+                "blocked": "Bad connections blocked",
+                "shredded": "Files Safely Shredded",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "biedt basisbeveiliging voor uw apparaat"
@@ -1758,7 +1808,8 @@
                 "describe": "Onveilige apparaten en netwerken kunnen malware binnenbrengen, diefstal van identiteit mogelijk maken en persoonlijke en financiële informatie doen lekken. Schakel deze functie in om het risico te verkleinen dat uw apparaat en uw thuiswerk toegankelijk zijn voor aanvallers.",
                 "subtitle": "Geen zorgen meer",
                 "subtitleDescribe": "Connected Home-beveiliging stuurt u een waarschuwing als er een beveiligingsprobleem in uw apparaat of thuisnetwerk is gedetecteerd of als u bent verbonden met een mogelijk schadelijk netwerk. Leer meer over Connected Home Security <tag>hier</tag>.",
-                "tryNow": "Probeer het nu"
+                "tryNow": "Probeer het nu",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Voer uw uitnodigingscode in",
@@ -1774,7 +1825,11 @@
                 "success": "Verbinding geslaagd",
                 "canUse": "U kunt Connected Home-beveiliging nu gaan gebruiken",
                 "tryAgain": "Onjuiste code. Probeer het nog eens.",
-                "activationCode": "ACTIVERINGSCODE"
+                "activationCode": "ACTIVERINGSCODE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Beveiligingsstatus",
@@ -1793,6 +1848,10 @@
                 "learnMoreAboutSecurityHealth": "Klik <tag>hier</tag> voor meer informatie over elk van deze onderdelen.",
                 "peaceOfMind": "Wilt u minder zorgen?",
                 "button": "WiFi-beveiliging inschakelen"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1904,7 +1963,7 @@
         },
         "question1": {
             "title": "Back-ups maken en bestanden terugzetten",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Back-ups maken en bestanden terugzetten    </div>    <hr />    <div style='margin-bottom:7rem;'>        Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Uw back-up instellen    </div>    <hr />    <div class='mb-5'>        Selecteer de knop <span style='font-weight:bold'>Start</span>, selecteer <span style='font-weight:bold'>Instellingen</span> > <span style='font-weight:bold'>Bijwerken en beveiliging</span> > <span style='font-weight:bold'>Back-up</span> > <span style='font-weight:bold'>Een station toevoegen</span> en kies vervolgens een extern station of netwerklocatie voor uw back-ups.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\\\Users\\\\username). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar <span style='font-weight:bold;'>Meer opties</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Bestanden terugzetten    </div>    <div class='mb-5'>        Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:    </div>    <div>        <div class='mb-3'>1. Typ <span style='font-weight:bold;'>Bestanden terugzetten</span> in het zoekvak op de taakbalk en selecteer vervolgens <span class='font-weight:bold'>Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis</span>.</div>        <div class='mb-3'>2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien</div>        <div class='mb-3'>3. Wanneer u de gewenste versie hebt gevonden, selecteert u <span style='font-weight:bold'>Terugzetten</span> om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop <span style='font-weight:bold'>Terugzetten</span> ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u <span style='font-weight:bold'>Terugzetten naar</span> en kiest u vervolgens een nieuwe locatie.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Back-ups maken en bestanden terugzetten    </div>    <hr />    <div class='faqInMb7'>        Het is altijd verstandig om een back-up te hebben. Bewaar kopieën van uw bestanden op een ander station voor het geval er iets met de originelen gebeurt.    </div>    <div class='faqInFs3Fb'>        Uw back-up instellen    </div>    <hr />    <div class='mb-5'>        Selecteer de knop <span class='faqInFb'>Start</span>, selecteer <span class='faqInFb'>Instellingen</span> > <span class='faqInFb'>Bijwerken en beveiliging</span> > <span class='faqInFb'>Back-up</span> > <span class='faqInFb'>Een station toevoegen</span> en kies vervolgens een extern station of netwerklocatie voor uw back-ups.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Klaar. Elk uur maken we een back-up van de hele inhoud van uw gebruikersmap (C:\\\\Users\\\\username). Als u wilt wijzigen van welke bestanden een back-up wordt gemaakt of hoe vaak er een back-up wordt gemaakt, gaat u naar <span class='faqInFb'>Meer opties</span>.    </div>    <div class='faqInFs3Fb'>        Bestanden terugzetten    </div>    <div class='mb-5'>        Als een belangrijk bestand of belangrijke map ontbreekt, gaat u als volgt te werk om dit bestand of deze map te herstellen:    </div>    <div>        <div class='mb-3'>1. Typ <span class='faqInFb'>Bestanden terugzetten</span> in het zoekvak op de taakbalk en selecteer vervolgens <span class='faqInFb'>Bestanden vanuit een back-up terugzetten met Bestandsgeschiedenis</span>.</div>        <div class='mb-3'>2. Zoek het bestand dat u nodig hebt en gebruik vervolgens de pijlen om alle versies ervan te zien</div>        <div class='mb-3'>3. Wanneer u de gewenste versie hebt gevonden, selecteert u <span class='faqInFb'>Terugzetten</span> om het bestand op te slaan op de oorspronkelijke locatie. Als u het bestand op een andere locatie wilt opslaan, houdt u de knop <span class='faqInFb'>Terugzetten</span> ingedrukt (of klikt u erop met de rechtermuisknop), selecteert u <span class='faqInFb'>Terugzetten naar</span> en kiest u vervolgens een nieuwe locatie.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1945,7 +2004,7 @@
         },
         "question2": {
             "title": "Uw pc vernieuwen",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Uw pc vernieuwen    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Symptoom    </div>    <div style='padding:5px 0;'>        Als uw pc niet meer zo goed presteert als in het begin en u niet weet hoe dit komt, kunt u uw pc vernieuwen zonder persoonlijke bestanden te verwijderen of uw instellingen te wijzigen. Windows kan uw pc \\\"vernieuwen\\\", waarna deze meer als een nieuwe installatie is zonder dat uw persoonlijke bestanden zijn verwijderd.    </div>    <div style='padding:5px 0;'>        Dit is wat er gebeurt bij het vernieuwen van uw pc: uw bestanden en persoonlijke instellingen blijven ongewijzigd    </div>    <div style='padding:5px 0;'>        <ul>            <li>Uw pc-instellingen worden teruggezet op de standaardwaarden</li>            <li>Apps uit de Windows Store blijven behouden</li>            <li>Apps die u vanaf een schijf of website hebt geïnstalleerd, worden verwijderd</li>            <li>Er wordt een lijst met verwijderde bestanden op uw bureaublad opgeslagen</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Merken waarbij dit van toepassing is    </div>    <div>        <ul>            <li>Alle desktop en laptops</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Besturingssysteem    </div>    <div>        <ul>            <li>Windows 8, 8.1 en 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Oplossing    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Tik of klik op <span style='font-weight:bold;'>Instellingen</span>                    </li>                    <li style='padding:5px 0;'>                        Tik of klik op <span style='font-weight:bold;'>Bijwerken en herstellen</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Tik of klik op <span style='font-weight:bold;'>Systeemherstel</span></div>                        <div style='padding:5px 0'>Tik of klik onder Uw pc vernieuwen zonder dat dit invloed heeft op uw bestanden op <span style='font-weight:bold;'>Aan de slag</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Klik op <span style='font-weight:bold;'>\\\"Volgende\\\"</span>.                    </li>                    <li style='padding:5px 0;'>                        Klik op <span style='font-weight:bold;'>\\\"Vernieuwen\\\"</span> om het vernieuwingsproces te starten.                    </li>                    <li style='padding:5px 0;'>                        Zodra het vernieuwingsproces is voltooid, vindt u een lijst met verwijderde apps op het bureaublad                    </li>                    <li style='padding:5px 0;'>                        U vindt de verwijderde apps terwijl uw systeem wordt vernieuwd                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Zoek naar <span style='font-weight:bold;'>vernieuwen</span> in de zoekfunctie die beschikbaar is in het menu Start,</li>                    <li style='padding:5px 0;'>                        <div>Klik op <span style='font-weight:bold;'>\\\"Uw pc vernieuwen zonder dat dit invloed heeft op uw bestanden\\\"</span> in de zoekresultaten zoals hieronder weergegeven.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Klik op de knop <span style='font-weight:bold;'>Aan de slag</span> net onder de kop <span style='font-weight:bold;'>\\\"Uw pc vernieuwen zonder dat dit invloed heeft op uw bestanden\\\"</span> om het vernieuwen van uw Windows 10-pc te starten.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Aanvullende informatie    </div>    <div>        Zodra u begint met het vernieuwen van uw pc, wordt het proces in de meeste gevallen vanzelf voltooid. Als Windows echter ontbrekende bestanden nodig heeft, wordt u gevraagd om herstelmedia te plaatsen, meestal een dvd-schijf of USB-station. In dat geval hangt het van uw pc af wat u nodig hebt.    </div>    <div style='padding:10px 0'>        Als u een upgrade van uw pc naar Windows 8.1 of Windows RT 8.1 hebt uitgevoerd met een dvd, gebruikt u die schijf. Als u niet over Windows 8.1- of Windows RT 8.1-media beschikt, neemt u contact op met Microsoft-ondersteuning.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Uw pc vernieuwen    </div>    <hr>    <div class='faqInFs25FbP5'>        Symptoom    </div>    <div class='faqInP5'>        Als uw pc niet meer zo goed presteert als in het begin en u niet weet hoe dit komt, kunt u uw pc vernieuwen zonder persoonlijke bestanden te verwijderen of uw instellingen te wijzigen. Windows kan uw pc \\\"vernieuwen\\\", waarna deze meer als een nieuwe installatie is zonder dat uw persoonlijke bestanden zijn verwijderd.    </div>    <div class='faqInP5'>        Dit is wat er gebeurt bij het vernieuwen van uw pc: uw bestanden en persoonlijke instellingen blijven ongewijzigd    </div>    <div class='faqInP5'>        <ul>            <li>Uw pc-instellingen worden teruggezet op de standaardwaarden</li>            <li>Apps uit de Windows Store blijven behouden</li>            <li>Apps die u vanaf een schijf of website hebt geïnstalleerd, worden verwijderd</li>            <li>Er wordt een lijst met verwijderde bestanden op uw bureaublad opgeslagen</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Merken waarbij dit van toepassing is    </div>    <div>        <ul>            <li>Alle desktop en laptops</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Besturingssysteem    </div>    <div>        <ul>            <li>Windows 8, 8.1 en 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Oplossing    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Tik of klik op <span class='faqInFb'>Instellingen</span>                    </li>                    <li class='faqInP5'>                        Tik of klik op <span class='faqInFb'>Bijwerken en herstellen</span>                    </li>                    <li class='faqInP5'>                        <div>Tik of klik op <span class='faqInFb'>Systeemherstel</span></div>                        <div class='faqInP5'>Tik of klik onder Uw pc vernieuwen zonder dat dit invloed heeft op uw bestanden op <span class='faqInFb'>Aan de slag</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Klik op <span class='faqInFb'>\\\"Volgende\\\"</span>.                    </li>                    <li class='faqInP5'>                        Klik op <span class='faqInFb'>\\\"Vernieuwen\\\"</span> om het vernieuwingsproces te starten.                    </li>                    <li class='faqInP5'>                        Zodra het vernieuwingsproces is voltooid, vindt u een lijst met verwijderde apps op het bureaublad                    </li>                    <li class='faqInP5'>                        U vindt de verwijderde apps terwijl uw systeem wordt vernieuwd                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Zoek naar <span class='faqInFb'>vernieuwen</span> in de zoekfunctie die beschikbaar is in het menu Start,</li>                    <li class='faqInP5'>                        <div>Klik op <span class='faqInFb'>\\\"Uw pc vernieuwen zonder dat dit invloed heeft op uw bestanden\\\"</span> in de zoekresultaten zoals hieronder weergegeven.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Klik op de knop <span class='faqInFb'>Aan de slag</span> net onder de kop <span class='faqInFb'>\\\"Uw pc vernieuwen zonder dat dit invloed heeft op uw bestanden\\\"</span> om het vernieuwen van uw Windows 10-pc te starten.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Aanvullende informatie    </div>    <div>        Zodra u begint met het vernieuwen van uw pc, wordt het proces in de meeste gevallen vanzelf voltooid. Als Windows echter ontbrekende bestanden nodig heeft, wordt u gevraagd om herstelmedia te plaatsen, meestal een dvd-schijf of USB-station. In dat geval hangt het van uw pc af wat u nodig hebt.    </div>    <div class='faqInP10'>        Als u een upgrade van uw pc naar Windows 8.1 of Windows RT 8.1 hebt uitgevoerd met een dvd, gebruikt u die schijf. Als u niet over Windows 8.1- of Windows RT 8.1-media beschikt, neemt u contact op met Microsoft-ondersteuning.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2019,7 +2078,7 @@
         },
         "question3": {
             "title": "Weten welke CPU u hebt",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Weten welke CPU u hebt</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptoom</h3><p>De termen 32-bits en 64-bits verwijzen naar de manier waarop de processor van een computer (ook wel een CPU genoemd) informatie verwerkt. De 64-bits versie van Windows verwerkt veel RAM-geheugen (Random Access Memory) effectiever dan een 32-bits systeem.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Merken waarbij dit van toepassing is</h3><p>Het bovenstaande symptoom is van toepassing op, maar niet beperkt tot, de volgende systemen:</p><ul>    <li>Alle desktop en laptops</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Besturingssysteem</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Oplossing</h3><p><strong><u>Windows 7 of Vista</u></strong></p><ol>    <li>Open Systeem door op de <strong>knop Start</strong> (afbeelding van de <strong>knop Start</strong>) te klikken, met de rechtermuisknop op Computer te klikken en vervolgens op Eigenschappen te klikken  </li>    <li>U kunt onder Systeem het systeemtype bekijken.</li></ol><p><strong><u>Windows 8 en Windows 10</u></strong></p><p><strong>Methode 1:</strong> het venster Systeem in het Configuratiescherm weergeven</p><ol>    <li>Swipe naar binnen vanaf de rechterrand van het scherm en tik vervolgens op <strong>Zoeken</strong>. Als u een muis gebruikt, gaat u met de muisaanwijzer naar de rechterbenedenhoek van het scherm en klikt u vervolgens op <strong>Zoeken</strong>.</li>    <li>Typ <strong>systeem</strong> in het zoekvak en tik of klik op <strong>Instellingen</strong>.</li>    <li>Tik of klik op <strong>Systeem</strong></li>    <li>Als u een 64-bits versie van Windows 8 gebruikt, wordt <strong>64-bits besturingssysteem</strong> weergegeven in het veld Systeemtype onder de kop Systeem. Als u een <strong>32-bits versie van Windows 8</strong><strong></strong> gebruikt, wordt <strong>32-bits besturingssysteem</strong> weergegeven in het veld Systeemtype onder de kop Systeem.<br />  </li></ol><p><strong>Methode 2</strong>: het venster Systeeminformatie weergeven</p><ol>    <li>Swipe naar binnen vanaf de rechterrand van het scherm en tik vervolgens op <strong>Zoeken</strong>. Als u een muis gebruikt, gaat u met de muisaanwijzer naar de rechterbenedenhoek van het scherm en klikt u vervolgens op <strong>Zoeken</strong>.</li>    <li>Typ <strong>systeeminformatie</strong> in het zoekvak</li>    <li>Tik of klik op <strong>Systeem</strong>, tik of klik op <strong>Systeeminformatie</strong> en klik vervolgens op <strong>Systeemoverzicht</strong>.</li>    <li>Als u een <strong>64-bits</strong> versie van Windows 8 gebruikt, wordt <strong>Op x64 gebaseerde pc</strong> weergegeven in het veld <strong>Systeemtype</strong> onder de kop Item. <br /> <br /> Als u een <strong>32-bits</strong> versie van Windows 8 gebruikt, wordt Op x86 gebaseerde pc weergegeven in het veld <strong>Systeemtype</strong> onder de kop Item.  </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Weten welke CPU u hebt</div><hr><h3 class='faqInFs25FbP10'>Symptoom</h3><p>De termen 32-bits en 64-bits verwijzen naar de manier waarop de processor van een computer (ook wel een CPU genoemd) informatie verwerkt. De 64-bits versie van Windows verwerkt veel RAM-geheugen (Random Access Memory) effectiever dan een 32-bits systeem.</p><h3 class='faqInFs25FbP10'>Merken waarbij dit van toepassing is</h3><p>Het bovenstaande symptoom is van toepassing op, maar niet beperkt tot, de volgende systemen:</p><ul>    <li>Alle desktop en laptops</li></ul><h3 class='faqInFs25FbP10'>Besturingssysteem</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 class='faqInFs25FbP10'>Oplossing</h3><p><strong><u>Windows 7 of Vista</u></strong></p><ol>    <li>Open Systeem door op de <strong>knop Start</strong> (afbeelding van de <strong>knop Start</strong>) te klikken, met de rechtermuisknop op Computer te klikken en vervolgens op Eigenschappen te klikken  </li>    <li>U kunt onder Systeem het systeemtype bekijken.</li></ol><p><strong><u>Windows 8 en Windows 10</u></strong></p><p><strong>Methode 1:</strong> het venster Systeem in het Configuratiescherm weergeven</p><ol>    <li>Swipe naar binnen vanaf de rechterrand van het scherm en tik vervolgens op <strong>Zoeken</strong>. Als u een muis gebruikt, gaat u met de muisaanwijzer naar de rechterbenedenhoek van het scherm en klikt u vervolgens op <strong>Zoeken</strong>.</li>    <li>Typ <strong>systeem</strong> in het zoekvak en tik of klik op <strong>Instellingen</strong>.</li>    <li>Tik of klik op <strong>Systeem</strong></li>    <li>Als u een 64-bits versie van Windows 8 gebruikt, wordt <strong>64-bits besturingssysteem</strong> weergegeven in het veld Systeemtype onder de kop Systeem. Als u een <strong>32-bits versie van Windows 8</strong><strong></strong> gebruikt, wordt <strong>32-bits besturingssysteem</strong> weergegeven in het veld Systeemtype onder de kop Systeem.<br />  </li></ol><p><strong>Methode 2</strong>: het venster Systeeminformatie weergeven</p><ol>    <li>Swipe naar binnen vanaf de rechterrand van het scherm en tik vervolgens op <strong>Zoeken</strong>. Als u een muis gebruikt, gaat u met de muisaanwijzer naar de rechterbenedenhoek van het scherm en klikt u vervolgens op <strong>Zoeken</strong>.</li>    <li>Typ <strong>systeeminformatie</strong> in het zoekvak</li>    <li>Tik of klik op <strong>Systeem</strong>, tik of klik op <strong>Systeeminformatie</strong> en klik vervolgens op <strong>Systeemoverzicht</strong>.</li>    <li>Als u een <strong>64-bits</strong> versie van Windows 8 gebruikt, wordt <strong>Op x64 gebaseerde pc</strong> weergegeven in het veld <strong>Systeemtype</strong> onder de kop Item. <br /> <br /> Als u een <strong>32-bits</strong> versie van Windows 8 gebruikt, wordt Op x86 gebaseerde pc weergegeven in het veld <strong>Systeemtype</strong> onder de kop Item.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2108,7 +2167,7 @@
         },
         "question4": {
             "title": "Uw batterijgebruik controleren",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Uw batterijgebruik controleren</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptoom</h3><p>Windows 10 bevat een nieuw scherm <strong>\\\"Batterijgebruik\\\"</strong>, waar wordt weergegeven waardoor de batterij van uw laptop leegloopt. Dat betekent dat het u precies vertelt welke apps – zowel bureaublad-apps als \\\"universele\\\" apps in Windows 10 – te veel energie verbruiken.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Merken waarbij dit van toepassing is</h3><ul>    <li>Lenovo-laptops, -desktops</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Systemen waarbij dit van toepassing is</h3><ul>    <li>Alle</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Besturingssysteem</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Oplossing</h3><p>Deze functie is nieuw in Windows 10. Deze functie moet eerst worden gezocht, aangezien deze niet is opgeslagen in de traditionele weergave van het <strong>Configuratiescherm</strong>. Deze functie bevindt zich in de nieuwe app <strong>\\\"Instellingen\\\"</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Het scherm Batterijgebruik zoeken</h3></p><p>1. Klik of tik op de optie <strong>\\\"Instellingen\\\"</strong> in het menu Start</p><p>2. In <strong>Instellingen</strong> selecteert u <strong>\\\"Systeem\\\"</strong> en selecteert u vervolgens <strong>\\\"Batterijbesparing\\\".<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klik of tik op de koppeling <strong>\\\"Batterijgebruik\\\"</strong> onder deze kop voor meer informatie. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Uw energieverbruik analyseren</h3><p>4 U kunt het scherm over het batterijgebruik wijzigen om het batterijgebruik van de afgelopen 24 uur tot de afgelopen 48 uur of van de afgelopen week weer te geven</p><p>5 U ziet de percentages <strong>\\\"Systeem\\\"</strong>, <strong>\\\"Beeldscherm\\\"</strong> en <strong>\\\"Wi-Fi\\\"</strong>. Dit geeft weer hoeveel batterijvoeding is gebruikt door systeemprocessen en het beeldscherm.</p><p>6 De opties <strong>\\\"In gebruik\\\"</strong> en <strong>\\\"Achtergrond\\\"</strong> geven weer hoeveel energie wordt verbruikt door toepassingen terwijl u deze gebruikt en hoeveel door toepassingen die op de achtergrond worden uitgevoerd.</p><p>7 Als apps energie op de achtergrond verbruiken, kunt u op de koppeling <strong>\\\"Instellingen voor achtergrond-apps wijzigen\\\"</strong> klikken of tikken en apps zo configureren dat ze niet op de achtergrond worden uitgevoerd. Dit werkt alleen voor universele Windows 10-apps.</p><p>8 Schuif verder omlaag en u ziet een lijst met toepassingen. Dit wordt beschouwd als het nuttigste gedeelte van deze functie. Er wordt een lijst met apps weergegeven die batterijvoeding in die periode hebben gebruikt. Er wordt weergegeven welk percentage van uw batterijvoeding elke app heeft gebruikt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Uw batterijgebruik controleren</div><hr><h3 class='faqInFs25FbP10'>Symptoom</h3><p>Windows 10 bevat een nieuw scherm <strong>\\\"Batterijgebruik\\\"</strong>, waar wordt weergegeven waardoor de batterij van uw laptop leegloopt. Dat betekent dat het u precies vertelt welke apps – zowel bureaublad-apps als \\\"universele\\\" apps in Windows 10 – te veel energie verbruiken.</p><h3 class='faqInFs25FbP10'>Merken waarbij dit van toepassing is</h3><ul>    <li>Lenovo-laptops, -desktops</li></ul><h3 class='faqInFs25FbP10'>Systemen waarbij dit van toepassing is</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Besturingssysteem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Oplossing</h3><p>Deze functie is nieuw in Windows 10. Deze functie moet eerst worden gezocht, aangezien deze niet is opgeslagen in de traditionele weergave van het <strong>Configuratiescherm</strong>. Deze functie bevindt zich in de nieuwe app <strong>\\\"Instellingen\\\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Het scherm Batterijgebruik zoeken</h3></p><p>1. Klik of tik op de optie <strong>\\\"Instellingen\\\"</strong> in het menu Start</p><p>2. In <strong>Instellingen</strong> selecteert u <strong>\\\"Systeem\\\"</strong> en selecteert u vervolgens <strong>\\\"Batterijbesparing\\\".<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klik of tik op de koppeling <strong>\\\"Batterijgebruik\\\"</strong> onder deze kop voor meer informatie. </p><p> </p><h3 class='faqInFs25FbP10'>B. Uw energieverbruik analyseren</h3><p>4 U kunt het scherm over het batterijgebruik wijzigen om het batterijgebruik van de afgelopen 24 uur tot de afgelopen 48 uur of van de afgelopen week weer te geven</p><p>5 U ziet de percentages <strong>\\\"Systeem\\\"</strong>, <strong>\\\"Beeldscherm\\\"</strong> en <strong>\\\"Wi-Fi\\\"</strong>. Dit geeft weer hoeveel batterijvoeding is gebruikt door systeemprocessen en het beeldscherm.</p><p>6 De opties <strong>\\\"In gebruik\\\"</strong> en <strong>\\\"Achtergrond\\\"</strong> geven weer hoeveel energie wordt verbruikt door toepassingen terwijl u deze gebruikt en hoeveel door toepassingen die op de achtergrond worden uitgevoerd.</p><p>7 Als apps energie op de achtergrond verbruiken, kunt u op de koppeling <strong>\\\"Instellingen voor achtergrond-apps wijzigen\\\"</strong> klikken of tikken en apps zo configureren dat ze niet op de achtergrond worden uitgevoerd. Dit werkt alleen voor universele Windows 10-apps.</p><p>8 Schuif verder omlaag en u ziet een lijst met toepassingen. Dit wordt beschouwd als het nuttigste gedeelte van deze functie. Er wordt een lijst met apps weergegeven die batterijvoeding in die periode hebben gebruikt. Er wordt weergegeven welk percentage van uw batterijvoeding elke app heeft gebruikt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2176,7 +2235,7 @@
         },
         "question5": {
             "title": "Uw pc als tablet gebruiken",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Uw pc als tablet gebruiken</div><hr><p>In de tabletmodus is Windows intuïtiever en gemakkelijker te gebruiken wanneer u een aanraakapparaat hebt.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tabletmodus gebruiken</h3><p>Als u de tabletmodus wilt inschakelen, selecteert u <strong>Actiecentrum</strong> op de taakbalk en selecteert u vervolgens <strong>Tabletmodus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Opmerking</h3><p>Als u wilt weten of uw apparaat automatisch de tabletmodus kan inschakelen, zoekt u naar uw apparaat op de website van de fabrikant. Ondersteuning voor deze functie is afhankelijk van de hardware, het stuurprogramma dat is geïnstalleerd, en hoe het apparaat door de fabrikant is ingesteld. </p><p> </p><p>In de tabletmodus worden apps op het volledige scherm geopend, zodat u meer ruimte hebt om in te werken. Sleep een app naar de onderkant van het scherm om deze te sluiten.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3><p>De taakbalk is beschikbaar wanneer uw pc zich in de tabletmodus bevindt, maar u kunt deze desgewenst verbergen als u meer ruimte op het scherm wilt. Selecteer de knop <strong>Start</strong>, selecteer <strong>Instellingen</strong> > <strong>Systeem</strong> > <strong>Tabletmodus</strong> en schakel vervolgens <strong>De taakbalk automatisch verbergen in tabletmodus</strong> in. Als u de verborgen taakbalk wilt zien, swipet u omhoog vanaf de onderkant van het scherm of verplaatst u de muisaanwijzer naar de onderkant van het scherm.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Twee apps tegelijk gebruiken</h3><p>Als u twee apps naast elkaar in de tabletmodus wilt gebruiken, sleept u een geopende app omlaag en naar de zijkant. U ziet waar de app wordt vastgemaakt en u ziet alle geopende apps ernaast.</p><p>Er zijn nog meer dingen die u in deze weergave kunt doen:</p><ul>    <li>Gebruik de gedeelde rand tussen twee vastgemaakte apps om het formaat van beide apps tegelijk te wijzigen.</li>    <li>Open een nieuwe app vanuit de taakweergave: selecteer <strong>Taakweergave</strong> op de taakbalk, selecteer een app en sleep deze vervolgens naar één kant om deze in uw gesplitste venster vast te maken.</li>    <li>Gebruik de knop Vorige op de taakbalk om in een app terug te gaan of om een app te openen die u eerder hebt gebruikt.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Uw pc als tablet gebruiken</div><hr><p>In de tabletmodus is Windows intuïtiever en gemakkelijker te gebruiken wanneer u een aanraakapparaat hebt.</p><h3 class='faqInFs25FbP10'>Tabletmodus gebruiken</h3><p>Als u de tabletmodus wilt inschakelen, selecteert u <strong>Actiecentrum</strong> op de taakbalk en selecteert u vervolgens <strong>Tabletmodus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Opmerking</h3><p>Als u wilt weten of uw apparaat automatisch de tabletmodus kan inschakelen, zoekt u naar uw apparaat op de website van de fabrikant. Ondersteuning voor deze functie is afhankelijk van de hardware, het stuurprogramma dat is geïnstalleerd, en hoe het apparaat door de fabrikant is ingesteld. </p><p> </p><p>In de tabletmodus worden apps op het volledige scherm geopend, zodat u meer ruimte hebt om in te werken. Sleep een app naar de onderkant van het scherm om deze te sluiten.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>De taakbalk is beschikbaar wanneer uw pc zich in de tabletmodus bevindt, maar u kunt deze desgewenst verbergen als u meer ruimte op het scherm wilt. Selecteer de knop <strong>Start</strong>, selecteer <strong>Instellingen</strong> > <strong>Systeem</strong> > <strong>Tabletmodus</strong> en schakel vervolgens <strong>De taakbalk automatisch verbergen in tabletmodus</strong> in. Als u de verborgen taakbalk wilt zien, swipet u omhoog vanaf de onderkant van het scherm of verplaatst u de muisaanwijzer naar de onderkant van het scherm.</p><h3 class='faqInFs25FbP10'>Twee apps tegelijk gebruiken</h3><p>Als u twee apps naast elkaar in de tabletmodus wilt gebruiken, sleept u een geopende app omlaag en naar de zijkant. U ziet waar de app wordt vastgemaakt en u ziet alle geopende apps ernaast.</p><p>Er zijn nog meer dingen die u in deze weergave kunt doen:</p><ul>    <li>Gebruik de gedeelde rand tussen twee vastgemaakte apps om het formaat van beide apps tegelijk te wijzigen.</li>    <li>Open een nieuwe app vanuit de taakweergave: selecteer <strong>Taakweergave</strong> op de taakbalk, selecteer een app en sleep deze vervolgens naar één kant om deze in uw gesplitste venster vast te maken.</li>    <li>Gebruik de knop Vorige op de taakbalk om in een app terug te gaan of om een app te openen die u eerder hebt gebruikt.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2216,7 +2275,7 @@
         },
         "question6": {
             "title": "Kennismaken met Cortana, uw persoonlijke assistent",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Kennismaken met Cortana, uw persoonlijke assistent</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Wat is Cortana?</h3><hr /><p>Cortana is uw digitale helper. Ze helpt u om dingen voor elkaar te krijgen.</p><p>Hoe meer u Cortana gebruikt, hoe persoonlijker uw ervaring is.</p><p>Als u aan de slag wilt gaan, typt u een vraag in het zoekvak of selecteert u de microfoon en praat u met Cortana. (Typen werkt voor alle typen pc's, maar u hebt een microfoon nodig om te praten.)</p><p>Als u niet zeker weet wat u moet zeggen, ziet u suggesties op uw vergrendelingsscherm en in het beginscherm van Cortana wanneer u het zoekvak op de taakbalk selecteert.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Beginscherm 2. Notitieblok 3. Instellingen 4. Feedback</li></ol><p>Hier volgen enkele dingen die Cortana voor u kan doen:</p><ul>    <li>U ergens aan herinneren op basis van tijd, plaatsen of mensen.</li>    <li>Pakjes traceren en teams, interesses en vluchten volgen.</li>    <li>E-mails en tekstberichten verzenden.</li>    <li>Uw agenda beheren en u op de hoogte houden.</li>    <li>Lijsten maken en beheren.</li>    <li>Babbelen en spelletjes spelen.</li>    <li>Feiten, bestanden, plaatsen en info opzoeken.</li>    <li>Elke willekeurige app op uw systeem openen.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Probeer dit: een herinnering instellen</h3><hr /><p>Een van de dingen die Cortana kan doen, is u ergens aan herinneren. Ze kan u eraan herinneren om dingen te doen op basis van tijd, plaatsen of zelfs mensen.</p><p>Typ of zeg bijvoorbeeld \\\"Herinner mij eraan Tanya te feliciteren de volgende keer dat ze belt\\\".</p><p>De herinnering verschijnt wanneer u een oproep van Tanya ontvangt.</p><p>Extra bonus: als u een Windows Phone-telefoon of Cortana voor iPhone of Android hebt, kunt u Cortana instellen om meldingen tussen uw pc en telefoon te synchroniseren.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3><hr /><p>Stel in dat Cortana u hoort telkens als u \\\"Hey Cortana\\\" zegt. Selecteer het zoekvak op de taakbalk om het beginscherm van Cortana te openen. Selecteer vervolgens <strong>Instellingen</strong> en schakel <strong>Laat Cortana reageren op \\\"Hey Cortana\\\"</strong> in.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Opmerking</p><p>Cortana is alleen beschikbaar in bepaalde landen/regio's en sommige Cortana-functies zijn mogelijk niet overal beschikbaar.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kennismaken met Cortana, uw persoonlijke assistent</div><hr><h3 class='faqInFs25FbP10'>Wat is Cortana?</h3><hr /><p>Cortana is uw digitale helper. Ze helpt u om dingen voor elkaar te krijgen.</p><p>Hoe meer u Cortana gebruikt, hoe persoonlijker uw ervaring is.</p><p>Als u aan de slag wilt gaan, typt u een vraag in het zoekvak of selecteert u de microfoon en praat u met Cortana. (Typen werkt voor alle typen pc's, maar u hebt een microfoon nodig om te praten.)</p><p>Als u niet zeker weet wat u moet zeggen, ziet u suggesties op uw vergrendelingsscherm en in het beginscherm van Cortana wanneer u het zoekvak op de taakbalk selecteert.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Beginscherm 2. Notitieblok 3. Instellingen 4. Feedback</li></ol><p>Hier volgen enkele dingen die Cortana voor u kan doen:</p><ul>    <li>U ergens aan herinneren op basis van tijd, plaatsen of mensen.</li>    <li>Pakjes traceren en teams, interesses en vluchten volgen.</li>    <li>E-mails en tekstberichten verzenden.</li>    <li>Uw agenda beheren en u op de hoogte houden.</li>    <li>Lijsten maken en beheren.</li>    <li>Babbelen en spelletjes spelen.</li>    <li>Feiten, bestanden, plaatsen en info opzoeken.</li>    <li>Elke willekeurige app op uw systeem openen.</li></ul><h3 class='faqInFs25FbP10'>Probeer dit: een herinnering instellen</h3><hr /><p>Een van de dingen die Cortana kan doen, is u ergens aan herinneren. Ze kan u eraan herinneren om dingen te doen op basis van tijd, plaatsen of zelfs mensen.</p><p>Typ of zeg bijvoorbeeld \\\"Herinner mij eraan Tanya te feliciteren de volgende keer dat ze belt\\\".</p><p>De herinnering verschijnt wanneer u een oproep van Tanya ontvangt.</p><p>Extra bonus: als u een Windows Phone-telefoon of Cortana voor iPhone of Android hebt, kunt u Cortana instellen om meldingen tussen uw pc en telefoon te synchroniseren.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr /><p>Stel in dat Cortana u hoort telkens als u \\\"Hey Cortana\\\" zegt. Selecteer het zoekvak op de taakbalk om het beginscherm van Cortana te openen. Selecteer vervolgens <strong>Instellingen</strong> en schakel <strong>Laat Cortana reageren op \\\"Hey Cortana\\\"</strong> in.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Opmerking</p><p>Cortana is alleen beschikbaar in bepaalde landen/regio's en sommige Cortana-functies zijn mogelijk niet overal beschikbaar.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2297,7 +2356,9 @@
         "actionTriggeredDescription": "Berichten die door de gebruiker zijn geactiveerd door het selecteren van instellingen, zoals het automatisch installeren van essentiële/aanbevolen updates.",
         "OtherSettings": "Overige instellingen",
         "usageStatistics": "Gebruiksstatistieken",
-        "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
+		"usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
     },
@@ -2371,6 +2432,8 @@
         "errorDeviceChoose": "Kies een apparaat om uit te voeren.",
         "errorNoOptionSelected": "Selecteer een optie.",
         "offline": "Op dit apparaat wordt de offline stand uitgevoerd. Maak verbinding met internet",
+        "doNotSuspend": "Deze tests moeten zonder onderbreking worden uitgevoerd! Sluit of minimaliseer deze app niet, laat de computer niet in de slaapstand gaan en zet de computer niet uit tijdens de scan.",
+        "doNotUse": "Gebruik de computer pas weer wanneer deze test is voltooid",
         "customize": {
             "name": "Aanpassen",
             "test": "Test aanpassen",
@@ -2395,7 +2458,8 @@
             "error": "Fout",
             "delete": "Verwijderen",
             "warningBatterySaver": "Opmerking: geplande scans worden niet uitgevoerd als batterijbesparing is ingeschakeld",
-            "scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip."
+            "scheduleIntervalLimit": "Er is al een andere scan gepland binnen een tijdsbestek van tien minuten. Kies een ander tijdstip.",
+            "information": "Uw scan is gepland en wordt op de volgende datum op de achtergrond uitgevoerd:"
         },
         "recoverBadSectors": {
             "title": "Slechte sectoren herstellen",
@@ -2446,5 +2510,9 @@
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
         "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
     }
 }

@@ -6,6 +6,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
+import { CHSAccountState } from '@lenovo/tan-client-bridge';
 
 @Component({
   selector: 'vtr-home-security-after-signup',
@@ -13,35 +14,22 @@ import { HomeSecurityMockService } from 'src/app/services/home-security/home-sec
   styleUrls: ['./home-security-after-signup.component.scss']
 })
 export class HomeSecurityAfterSignupComponent implements OnInit {
-	@Input() role: string;
-	@Input() lenovoID: string;
 	@Input() allDevices: HomeSecurityAllDevice;
 	@Input() account: HomeSecurityAccount;
 	@Input() common: HomeSecurityCommon;
-	dialogService: DialogService;
-	chs: ConnectedHomeSecurity;
-
+	overviewTitle: string;
+	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
-		dialogService: DialogService,
-		private vantageShellService: VantageShellService,
-		public homeSecurityMockService: HomeSecurityMockService
-	) {
-		this.dialogService = dialogService;
-		this.chs = vantageShellService.getConnectedHomeSecurity();
-		if (!this.chs) {
-			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
-		}
-	}
+		public dialogService: DialogService
+	) {	}
 
 	ngOnInit() {
-		this.role = 'admin';
-	}
-
-	switch(role) {
-		if (role === 'user') {
-			this.role = 'admin';
-		} else {
-			this.role = 'user';
+		if (this.account && this.account.role) {
+			if (this.account.role === 'admin') {
+				this.overviewTitle = 'homeSecurity.overview.overviewTitleAdmin';
+			} else {
+				this.overviewTitle = 'homeSecurity.overview.overviewTitleUser';
+			}
 		}
 	}
 
@@ -49,8 +37,16 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 		this.dialogService.homeSecurityTrialModal(2);
 	}
 
-	openCornet(feature?: string) {
-		this.chs.visitWebConsole(feature);
+	openCornet() {
+		this.common.openCornet();
+	}
+
+	isMoreThen30Day(num: number): boolean {
+		if (num > 30) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }

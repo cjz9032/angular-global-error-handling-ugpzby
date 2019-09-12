@@ -1,24 +1,26 @@
 <div class="common-confirmation-modal">
-	<h1>{{ header | translate }} </h1>
+	<h1 id="modal_confirm_title">{{ header | translate }} </h1>
 	<div role="button"
 		vtrMetrics
 		metricsItem="btn.close "
 		metricsEvent="featureClick"
 		[metricsParent]="metricsParent"
+		id="modal_confirm_close"
+		role="button"
 		class="close-btn"
 		(click)="onCancelClick($event)">
 		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
 			alt=""
 			srcset="">
 	</div>
-	<p class="description">
+	<p class="description" id="modal_confirm_description" role="article">
 		{{ description | translate }}
 	</p>
 
 	<div class="packages"
 		*ngIf="packages!==undefined && packages.length>0">
 		<ul>
-			<li *ngFor="let package of packages">{{ package }}</li>
+			<li *ngFor="let package of packages" id="{{'modal_confirm_package_'+package}}">{{ package }}</li>
 		</ul>
 	</div>
 
@@ -30,6 +32,7 @@
 				metricsEvent="featureClick"
 				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button"
+				id="modal_confirm_ok"
 				(click)="onOkClick($event)">
 				{{OkText | translate}}
 			</button>
@@ -42,6 +45,7 @@
 				metricsEvent="featureClick"
 				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button-cancel"
+				id="modal_confirm_cancel"
 				(click)="onCancelClick($event)">
 				{{CancelText | translate}}
 			</div>

@@ -12,12 +12,9 @@ import { take } from 'rxjs/operators';
 	styleUrls: ['./modal-chs-start-trial-container.component.scss']
 })
 export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
-	permission: any;
 	chs: Phoenix.ConnectedHomeSecurity;
-	url = 'ms-settings:privacy-location';
 	metricsParent = 'ConnectedHomeSecurity';
 	switchPage = 1;
-	locationCallback;
 	countdownNumber = 3;
 	subscribe: Subscription;
 
@@ -25,16 +22,15 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
 		public homeSecurityMockService: HomeSecurityMockService,
-	) {
-		this.chs = vantageShellService.getConnectedHomeSecurity();
+	) {	}
+
+	ngOnInit() {
+		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
-		this.permission = vantageShellService.getPermission();
-	}
 
-	ngOnInit() {
-		if (this.switchPage === 1) {
+		if (this.switchPage === 1 && this.chs.account && this.chs.account.consoleUrl) {
 			this.countdown();
 		}
 	}
@@ -44,7 +40,13 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	}
 
 	disconnect() {
-
+		this.chs.quitAccount().then((response) => {
+			if (response === 'success') {
+				this.closeModal();
+			}
+		}).catch((err) => {
+			console.log(`disconnected error: ${err}`);
+		});
 	}
 
 	ngOnDestroy() {
@@ -53,8 +55,8 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	openCornet(feature?: string) {
-		this.chs.visitWebConsole(feature);
+	openCornet() {
+		this.chs.visitWebConsole();
 		this.closeModal();
 	}
 
@@ -64,8 +66,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		this.subscribe = takeNumbers.subscribe( x => {
 			this.countdownNumber = (3 - x - 1);
 			if (this.countdownNumber === 0) {
-				this.openCornet('login');
-				this.closeModal();
+				this.openCornet();
 			}
 		});
 	}

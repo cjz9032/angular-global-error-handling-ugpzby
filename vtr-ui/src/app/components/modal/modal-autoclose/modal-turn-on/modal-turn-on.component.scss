@@ -29,6 +29,12 @@ ui-popover-turn-on {
 	@media #{$medium-screen} {
 		max-width: 50rem;
 	}
+	@media #{$white-on-black} {
+		border:0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border:0.1rem solid $gaming_darkest;
+	} 
 }
 
 ::ng-deep .turn-on-modal-container {
@@ -66,6 +72,12 @@ ui-popover-turn-on {
 				background-repeat: no-repeat;
 				background-size: 100% auto;
 				background-color: $gaming_light_blue;
+				@media #{$black-on-white} {
+					background-color: $gaming_light_blue;
+				}
+				@media #{$white-on-black} {
+					background-color: $gaming_light_blue;
+				}
 			}
 		}
 		.status-text {

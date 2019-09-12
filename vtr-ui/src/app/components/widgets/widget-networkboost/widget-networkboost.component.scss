@@ -1,77 +1,97 @@
 @import "../../../app.theme.scss";
 .isdisabled {
-	background-color:  $gaming_darker !important;
+  background-color: $gaming_darker !important;
+  @media #{$black-on-white}{
+	  opacity: 0.15;
+  }
+  @media #{$white-on-black}{
+	opacity: 0.15;
+}
 }
 .autoclose-wrapper {
-	background: $gaming_darkest;
-	width: 100%;
-	min-height: 40rem;
-	border-radius: 0.8rem;
-	position: relative;
-	ul {
-		padding: 2rem;
-		li.add-icon {
-			div:nth-child(1) {
-				background: $gaming_white60;
-				line-height: 4.5rem;
-				cursor: pointer;
-				text-align: center;
-				border-radius: 0.3rem;
-				&:hover {
-					background: $gaming_white80;
-				}
-				&:active {
-					transform: scale(0.95);
-				}
-				
-			}
-		}
-		li {
-			list-style-type: none;
-			display: inline-block;
-			text-align: center;
-			vertical-align: top;
-			padding: 2rem 2rem;
-			position: relative;
-			margin-bottom: 3rem;
-			width: 20%;
-			@media #{$mediaquery_X22} {
-				width: 25%;
-			}
-			@media #{$mediaquery_X3} {
-				width: 33.3%;
-			}
-			div:nth-child(1) {
-				width: 4.5rem;
-				height: 4.5rem;
-				text-align: center;
-				margin: auto;
-			}
-			div:nth-child(2) {
-				font-size: 1.6rem;
-				margin-top: 0.5rem;
-				text-align: center;
-				height: 5rem;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			}
-			.remove-app {
-				opacity: 0;
-				transition: 0.3s ease all;
-				position: absolute;
-				top: 0;
-				right: 0;
-				margin: 0.5rem;
-				cursor: pointer;
-			}
-			&:hover:not(:first-child) {
-				background: $gaming_light_02;
-				border-radius: 0.5rem;
-				.remove-app {
-					opacity: 1;
-					transition: 0.3s ease all;
-				}
-			}
-		}
-	}
+  background: $gaming_darkest;
+  width: 100%;
+  min-height: 40rem;
+  border-radius: 0.8rem;
+  position: relative;
+  ul {
+    padding: 2rem;
+    li.add-icon {
+      div:nth-child(1) {
+        background: $gaming_white60;
+        line-height: 4.5rem;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 0.3rem;
+        @media #{$black-on-white} {
+          background-color: $high-contrast-grey;
+          border: 0.1rem solid $dark;
+        }
+        @media #{$white-on-black} {
+          background-color: $high-contrast-grey;
+          border: 0.1rem solid $light;
+        }
+        &:hover {
+          background: $gaming_white80;
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+    li {
+      list-style-type: none;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      padding: 2rem 2rem;
+      position: relative;
+      margin-bottom: 3rem;
+      width: 20%;
+      @media #{$mediaquery_X22} {
+        width: 25%;
+      }
+      @media #{$mediaquery_X3} {
+        width: 33.3%;
+      }
+      div:nth-child(1) {
+        width: 4.5rem;
+        height: 4.5rem;
+        text-align: center;
+        margin: auto;
+      }
+      div:nth-child(2) {
+        font-size: 1.6rem;
+        margin-top: 0.5rem;
+        text-align: center;
+        height: 5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .remove-app {
+        opacity: 0;
+        transition: 0.3s ease all;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0.5rem;
+        cursor: pointer;
+      }
+      &.runningList:hover {
+        background: $gaming_light_02;
+        border-radius: 0.5rem;
+        @media #{$black-on-white} {
+          background-color: $high-contrast-grey;
+        }
+        @media #{$white-on-black} {
+          background-color: $high-contrast-grey;
+        }
+        .remove-app {
+          opacity: 1;
+          transition: 0.3s ease all;
+        }
+      }
+    }
+  }
 }

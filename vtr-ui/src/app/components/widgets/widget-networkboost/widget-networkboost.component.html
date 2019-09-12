@@ -1,7 +1,10 @@
 <div class="autoclose-wrapper">
   <ul class="d-flex flex-wrap">
     <li class="add-icon">
-      <div (click)="openModal()" [ngClass]="{'isdisabled': runningAppsList && runningAppsList.length >=5}">
+      <div (click)="openModal()" 
+       [ngClass]="{'isdisabled': runningAppsList && runningAppsList.length >=5}"
+       (keyup.enter)="openModal()" [tabindex]="runningAppsList && runningAppsList.length >=5 ? -1 : 1"
+       aria-label="Add" role="button">
         <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>6.20pxIcon/add</title>
@@ -15,12 +18,13 @@
       </div>
       <div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
     </li>
-    <li *ngFor="let app of runningAppsList; let i = index">
+    <li *ngFor="let app of runningAppsList; let i = index"
+    (mouseover)="app.isHovered=true" (mouseout)="app.isHovered=false" [class]="app.isHovered ? 'runningList': ''">
       <div>
-        <img *ngIf="app && app.iconName" [src]="app.iconName | sanitize : 'resourceUrl'"
+        <img  [src]="app.iconName | sanitize : 'resourceUrl'"
           alt="{{app.processDescription}}" />
       </div>
-      <div placement="bottom" ngbTooltip="{{app.processDescription}}">
+      <div placement="bottom" [title]="app.processDescription">
         {{app.processDescription}}
       </div>
       <div class="remove-app" (click)="removeApp(app.processPath,i)">

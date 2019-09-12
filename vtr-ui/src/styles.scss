@@ -698,7 +698,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .feedback-modal {
 	.modal-dialog {
 		margin: 1.75rem auto;
-		overflow: auto;
 		width: 52rem;
 	}
 
@@ -706,6 +705,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		border-radius: 1rem;
 		background: none;
 		border: none;
+	}
+
+	.modal-dialog-centered {
+		height: calc(100% - 3.5rem);
+		min-height: auto;
 	}
 }
 

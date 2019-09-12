@@ -60,6 +60,9 @@
 			}
 		},
 		"/privacy/breaches": {
+			"armSupport": false,
+			"smodeSupport": false,
+			"gamingSupport": false,
 			"search-email-breach": {
 				"icon": ["fal", "user-shield"],
 				"desc": "Check email for breaches",
@@ -70,6 +73,9 @@
 			}
 		},
 		"/privacy/trackers": {
+			"armSupport": false,
+			"smodeSupport": false,
+			"gamingSupport": false,
 			"search-check-tracking": {
 				"icon": ["fal", "eye"],
 				"desc": "Check for tracking tools",
@@ -80,6 +86,9 @@
 			}
 		},
 		"/privacy/browser-accounts": {
+			"armSupport": false,
+			"smodeSupport": false,
+			"gamingSupport": false,
 			"search-vulnerable-passwords": {
 				"icon": ["fal", "lock"],
 				"desc": "Check for vulnerable passwords",
@@ -95,7 +104,7 @@
 				"icon": ["fal","laptop"],
 				"desc": "Prossesor Information",
 				"tags": [
-					"prossesor"
+					"prossesor", "cpu"
 				],
 				"relevantTags": ["system"]
 			},
@@ -103,7 +112,7 @@
 				"icon": ["fal","laptop"],
 				"desc": "Memory Information",
 				"tags": [
-					"Memory"
+					"Memory", "ram"
 				],
 				"relevantTags": ["system"]
 			},
@@ -111,7 +120,7 @@
 				"icon": ["fal","laptop"],
 				"desc": "Disk Information",
 				"tags": [
-					"Disk"
+					"Disk", "hdd", "SSD"
 				],
 				"relevantTags": ["system"]
 			}
@@ -244,7 +253,7 @@
 			"armSupport": false,
 			"smodeSupport": false,
 			"search-check-update": {
-				"onlineRequired": true,
+				"offlineSupport": false,
 				"icon": ["fal", "sync"],
 				"desc": "Check for system update",
 				"tags": [
@@ -277,18 +286,39 @@
 				"relevantTags": ["system update"]
 			}
 		},
+		"/security": {
+			"armSupport": false,
+			"smodeSupport": false,
+			"gamingSupport": false,
+			"search-anti-virus": {
+				"offlineSupport": false,
+				"icon": ["fal","lock"],
+				"desc": "Security Status",
+				"tags": [
+					"Security Status"
+				],
+				"relevantTags": [
+					"anti-virus",
+					"mcafee",
+					"defender",
+					"coronet",
+					"dashlane"
+				]
+			}
+		},
 		"/security/anti-virus": {
 			"armSupport": false,
 			"smodeSupport": false,
 			"gamingSupport": false,
 			"search-anti-virus": {
-				"onlineRequired": true,
+				"offlineSupport": false,
 				"icon": ["fal","lock"],
 				"desc": "System Protection",
 				"tags": [
 					"anti-virus",
 					"mcafee",
-					"defender"
+					"defender",
+					"firewall"
 				],
 				"relevantTags": [
 					"security"
@@ -314,9 +344,9 @@
 			"gamingSupport": false,
 			"search-password-protection": {
 				"icon": ["fal","lock"],
-				"desc": "Password Protection",
+				"desc": "Password Health",
 				"tags": [
-					"password protection",
+					"password Health",
 					"dashlane"
 				],
 				"relevantTags": [
@@ -345,7 +375,7 @@
 			"gamingSupport": false,
 			"search-windows-hello": {
 				"icon": ["fal","lock"],
-				"desc": "Setting For Windows Hello",
+				"desc": "Windows Hello",
 				"tags": [
 					"windows hello"
 				],
@@ -372,7 +402,7 @@
 			},
 			"search-lenovo-help": {
 				"icon": ["fal","wrench"],
-				"desc": "Get help from lenovo",
+				"desc": "need help?",
 				"tags": [
 					"lenovo community",
 					"customer service",
@@ -385,7 +415,7 @@
 			"search-lenovo-service": {
 				"icon": ["fal","wrench"],
 				"desc": "Lenovo Services",
-				"tags": ["services", "ticket"],
+				"tags": ["services", "ticket", "about"],
 				"relevantTags": [
 					"help", "support"
 				]
@@ -400,7 +430,7 @@
 				"tags": [
 					"app features", "subscription"
 				],
-				"relevantTags": ["preference"]
+				"relevantTags": ["preference", "setting"]
 			},
 			"search-preference-marketing": {
 				"armSupport": false,
@@ -408,19 +438,19 @@
 				"icon": ["fal","wrench"],
 				"desc": "subscribe promotion messages",
 				"tags": [
-					"promotion messages"
+					"promotion messages", "toast"
 				],
-				"relevantTags": ["preference"]
+				"relevantTags": ["preference", "setting"]
 			},
 			"search-preference-action-trigger": {
 				"armSupport": false,
 				"smodeSupport": false,
 				"icon": ["fal","wrench"],
-				"desc": "Enable/disable messages triggered",
+				"desc": "Enable/disable action triggered",
 				"tags": [
-					"messages triggered"
+					"action triggered"
 				],
-				"relevantTags": ["preference"]
+				"relevantTags": ["preference", "setting"]
 			},
 			"search-preference-statistics": {
 				"icon": ["fal","wrench"],
@@ -428,7 +458,7 @@
 				"tags": [
 					"usage statistics"
 				],
-				"relevantTags": ["preference", "privacy"]
+				"relevantTags": ["preference", "privacy", "setting"]
 			}
 		}
 	}

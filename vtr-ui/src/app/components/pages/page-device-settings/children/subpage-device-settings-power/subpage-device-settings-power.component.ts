@@ -2,10 +2,8 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, TemplateRef 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PowerService } from 'src/app/services/power/power.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
@@ -13,14 +11,13 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Subscription } from 'rxjs/internal/Subscription';
 import { BehaviorSubject } from 'rxjs';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
-import { fal } from '@fortawesome/pro-light-svg-icons';
 import {
 	FlipToBootCurrentModeEnum,
 	FlipToBootErrorCodeEnum,
 	FlipToBootSetStatusEnum,
 	FlipToBootSupportedEnum
 } from '../../../../../services/power/flipToBoot.enum';
-import { MetricService } from "../../../../../services/metric/metric.service";
+import { MetricService } from '../../../../../services/metric/metric.service';
 
 
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
@@ -210,7 +207,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	constructor(
 		public powerService: PowerService,
-		private deviceService: DeviceService,
 		private commonService: CommonService,
 		private logger: LoggerService,
 		public modalService: NgbModal,
