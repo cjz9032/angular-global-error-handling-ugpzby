@@ -385,6 +385,9 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		const metricsList = [];
 		const list = [];
 		let metricsFeature = metrics;
+		if (metricsFeature.length === 0) {
+			this.showMetricsList = false;
+		}
 		if (data) {
 			metricsFeature = data;
 		}
@@ -428,12 +431,14 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				}
 			);
 		});
-		for (let index = 1; index < 5; index++) {
-			const metricsInfor = metricsList.find(e => e.id === index).value;
-			list.push(metricsInfor);
-		}
-		if (list.filter(id => id > 0).length > 0) {
-			return list;
+		if (metricsFeature.length > 1) {
+			for (let index = 1; index < 5; index++) {
+				const metricsInfor = metricsList.find(e => e.id === index).value;
+				list.push(metricsInfor);
+			}
+			if (list.filter(id => id > 0).length > 0) {
+				return list;
+			}
 		}
 		this.showMetricButton = true;
 		return metricsList;
