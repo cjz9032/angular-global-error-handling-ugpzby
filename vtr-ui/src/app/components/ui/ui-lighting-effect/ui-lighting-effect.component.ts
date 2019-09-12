@@ -49,7 +49,7 @@ export class UiLightingEffectComponent implements OnInit {
 		if (this.showOptions && !this.isItemsFocused) {
 			this.intervalObj = setInterval(() => {
 				if (this.dropdownEle) {
-					if (this.dropdownEle.nativeElement.querySelectorAll('a:focus').length === 0) {
+					if (this.dropdownEle.nativeElement.querySelectorAll('li:focus').length === 0) {
 						this.showOptions = false;
 						this.isItemsFocused = false;
 						clearInterval(this.intervalObj);
