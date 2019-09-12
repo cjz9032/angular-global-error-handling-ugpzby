@@ -15,6 +15,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 	addAppsList: string;
 	statusAskAgain: boolean;
 	public isChecked:any = [];
+	public checkString = "Unchecked";
 	@Input() showAppsModal: boolean;
 	@Input() addedApps = 0;
 	maxAppsCount = 5;

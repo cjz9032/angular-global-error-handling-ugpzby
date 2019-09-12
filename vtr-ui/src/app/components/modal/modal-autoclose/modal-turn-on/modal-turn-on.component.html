@@ -27,7 +27,7 @@
             <button class="btn enable-button"
               (click)="turnOnAction(true)" tabindex="1" (keyup.enter)="turnOnAction(true)" aria-label="modal Turn AutoClose Confirm">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
             <a (click)="notNowAction($event)"
-              class="cancel-link active" tabindex="1" (keyup.enter)="notNowAction($event)" aria-label="modal Turn AutoClose Cancel" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+              class="cancel-link active" tabindex="1" (keyup.enter)="notNowAction($event)" role="button" aria-label="modal Turn AutoClose Cancel" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
           </div>
         </div>
       </div>
