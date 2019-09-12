@@ -27,9 +27,15 @@ export class HomeSecurityCardComponent implements OnInit {
 		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.openInvitationCodeDialog();
 		} else {
-			this.isShowCHSPermissionDialog(false).then((result) => {
+			this.isShowCHSPermissionDialog().then((result) => {
 				if (result) {
 					this.dialogService.openCHSPermissionModal();
+				} else {
+					this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+						if (status) {
+							this.dialogService.openInvitationCodeDialog();
+						}
+					});
 				}
 			});
 		}
@@ -41,24 +47,25 @@ export class HomeSecurityCardComponent implements OnInit {
 		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.homeSecurityTrialModal(1);
 		} else {
-			this.isShowCHSPermissionDialog(true).then((result) => {
+			this.isShowCHSPermissionDialog().then((result) => {
 				if (result) {
 					this.dialogService.openCHSPermissionModal();
+				} else {
+					this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+						if (status) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+							this.dialogService.homeSecurityTrialModal(1);
+						}
+					});
 				}
 			});
 		}
 	}
 
-	isShowCHSPermissionDialog(needTrial: boolean): Promise<boolean> {
+	isShowCHSPermissionDialog(): Promise<boolean> {
 		return this.permission.getSystemPermissionShowed().then((result) => {
 			if (!result) {
 				if (this.location && this.location.isDeviceServiceOn && this.location.isComputerServiceOn) {
-					this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
-						if (status && needTrial) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-							this.dialogService.homeSecurityTrialModal(1);
-						}
-					});
 					return false;
 				} else {
 					return true;
