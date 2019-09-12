@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { delayWhen, filter, first, skip, startWith, take, takeUntil } from 'rxjs/operators';
+import { delayWhen, filter, first, map, skip, startWith, take, takeUntil } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
@@ -8,6 +8,8 @@ import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-de
 import { BreachedAccountsFacadeService } from './breached-accounts-facade.service';
 import { combineLatest } from 'rxjs';
 import { Features } from '../../common/components/nav-tabs/nav-tabs.service';
+import { CommonService } from '../../../../../services/common/common.service';
+import { NetworkStatus } from '../../../../../enums/network-status.enum';
 
 @Component({
 	// selector: 'app-admin',
@@ -16,6 +18,8 @@ import { Features } from '../../common/components/nav-tabs/nav-tabs.service';
 })
 export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	breachedFeatureName = Features.breaches;
+	isOnline = this.commonService.isOnline;
+
 	breachedAccounts$ = this.breachedAccountsFacadeService.breachedAccounts$;
 	isAccountVerify$ = this.breachedAccountsFacadeService.isAccountVerify$;
 	isShowVerifyBlock$ = this.breachedAccountsFacadeService.isShowVerifyBlock$;
@@ -44,7 +48,8 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
 		private vantageCommunicationService: VantageCommunicationService,
-		private breachedAccountsFacadeService: BreachedAccountsFacadeService
+		private breachedAccountsFacadeService: BreachedAccountsFacadeService,
+		private commonService: CommonService
 	) {
 	}
 
@@ -60,6 +65,8 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 		).subscribe(([userEmail]) => {
 			this.updateTextForHeader(userEmail);
 		});
+
+		this.checkOnline();
 	}
 
 	ngOnDestroy() {
@@ -90,5 +97,15 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 			...this.textForFeatureHeader,
 			noIssuesTitle: `No breaches found for ${userEmail}`
 		};
+	}
+
+	private checkOnline() {
+		this.commonService.notification.pipe(
+			filter((notification) => notification.type === NetworkStatus.Online || notification.type === NetworkStatus.Offline),
+			map((notification) => notification.payload),
+			takeUntil(instanceDestroyed(this))
+		).subscribe((payload) => {
+			this.isOnline = payload.isOnline;
+		});
 	}
 }
