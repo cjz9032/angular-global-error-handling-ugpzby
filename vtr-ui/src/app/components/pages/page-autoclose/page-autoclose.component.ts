@@ -6,11 +6,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { isUndefined } from 'util';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: ['./page-autoclose.component.scss']
+	styleUrls: [ './page-autoclose.component.scss' ]
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal: boolean = false;
@@ -20,6 +23,7 @@ export class PageAutocloseComponent implements OnInit {
 	// Running list
 	runningList: any = [];
 	// Toggle status
+	isOnline = true;
 	toggleStatus: boolean;
 	needToAsk: any;
 	getNeedStatus: boolean;
@@ -35,9 +39,18 @@ export class PageAutocloseComponent implements OnInit {
 	};
 	backId = 'vtr-gaming-autoclose-btn-back';
 
-	constructor(private cmsService: CMSService, private gamingAutoCloseService: GamingAutoCloseService) { }
+	constructor(
+		private cmsService: CMSService,
+		private gamingAutoCloseService: GamingAutoCloseService,
+		private commonService: CommonService
+	) {}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
 		const queryOptions = {
 			Page: 'dashboard',
 			Lang: 'EN',
@@ -78,6 +91,18 @@ export class PageAutocloseComponent implements OnInit {
 		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (
+			notification &&
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
+		) {
+			this.isOnline = notification.payload.isOnline;
+		}
+		if (this.isOnline === undefined) {
+			this.isOnline = true;
+		}
+	}
+
 	openTargetModal() {
 		try {
 			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
@@ -100,8 +125,7 @@ export class PageAutocloseComponent implements OnInit {
 		try {
 			this.getNeedStatus = !status;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
-		} catch (error) {
-		}
+		} catch (error) {}
 	}
 
 	initTurnOnAction() {
@@ -128,7 +152,6 @@ export class PageAutocloseComponent implements OnInit {
 	modalCloseAddApps(action: boolean) {
 		this.showAppsModal = action;
 		this.hiddenScroll(false);
-		this.refreshRunningList();
 		this.refreshRunningList();
 	}
 
@@ -178,7 +201,6 @@ export class PageAutocloseComponent implements OnInit {
 					this.loadingContent = { loading: false, noApps: noAppsRunning };
 					console.log('get Running List', list.processList);
 					console.log('Total Running List Apps', list.processList.length);
-
 				}
 			});
 		} catch (error) {
@@ -196,8 +218,7 @@ export class PageAutocloseComponent implements OnInit {
 						this.refreshAutoCloseList();
 					}
 				});
-			} catch (error) {
-			}
+			} catch (error) {}
 		} else {
 			this.gamingAutoCloseService.delAppsAutoCloseList(event.target.value).then((response: boolean) => {
 				if (response) {

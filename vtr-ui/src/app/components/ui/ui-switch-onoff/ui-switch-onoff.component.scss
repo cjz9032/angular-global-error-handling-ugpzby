@@ -10,7 +10,7 @@
 	&.switch-disable {
 		opacity: 0.3;
 		cursor: pointer;
-		
+
 		.switch {
 			cursor: pointer;
 		}
@@ -23,11 +23,15 @@
 
 .checkbox input {
 	position: absolute;
-	left: -9999.9rem;
+	opacity: 0;
+	top: .4rem;
+	height: 2.6rem;
+	width: 5.4rem;
 }
 
 .checkbox label {
 	padding-left: 0;
+	position: relative;
 }
 
 .switch {
