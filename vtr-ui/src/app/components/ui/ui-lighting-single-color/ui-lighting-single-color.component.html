@@ -3,11 +3,11 @@
 	<ul class="lighting-list-option">
 		<li *ngFor="let option of options">
 			<label class="gaming-radio">{{option.name | translate}}
-				<input type="radio" name="price" id="gaming_lighting_singlecolor_blink{{option.id}}"
-					attr.aria-label="gaming_lighting_singlecolor_blink{{option.id}}" vtrMetrics
+				<input type="radio" name="price" id="gaming_lighting_singlecolor_blink{{option.id}}" vtrMetrics
 					[metricsItem]="'singlecolor_blink_option'+option.id" metricsEvent="featureClick" [metricsParam]="'singlecolor_blink_option'+option.id" metricsValue="{{option.id}}" (click)="getValue(option.id)"
-					[checked]="isChecked(option.id)" [value]=option.id>
-				<span class="checkmark"></span>
+					[checked]="isChecked(option.id)" [value]=option.id tabindex="-1">
+				<span class="checkmark"  tabindex="0" (keyup.enter)="getValue(option.id)" role="button"
+				 [attr.aria-label]="selectedOptionId === option.id ? 'selected' + option.option : option.option" ></span>
 			</label>
 		</li>
 	</ul>

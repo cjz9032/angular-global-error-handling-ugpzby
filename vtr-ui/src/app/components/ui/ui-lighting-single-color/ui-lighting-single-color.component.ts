@@ -10,7 +10,7 @@ import { isUndefined } from 'util';
 })
 export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	@Input() selectedOptionId: any;
-	selectedOption: Options = new Options(1, 'Always On');
+	selectedOption: Options = new Options(1, 'Always On','Always On');
 	@Output() public changeSingleColorOption = new EventEmitter<any>();
 	@Input() options: any;
 

@@ -275,10 +275,10 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	];
 	optionsSingleColor = [
-		new Options(1, 'gaming.lightingProfile.lightingSingleLightingOption.option1.title'),
-		new Options(2, 'gaming.lightingProfile.lightingSingleLightingOption.option2.title'),
-		new Options(3, 'gaming.lightingProfile.lightingSingleLightingOption.option3.title'),
-		new Options(4, 'gaming.lightingProfile.lightingSingleLightingOption.option4.title')
+		new Options(1, 'gaming.lightingProfile.lightingSingleLightingOption.option1.title','Always On'),
+		new Options(2, 'gaming.lightingProfile.lightingSingleLightingOption.option2.title','Fast Blink'),
+		new Options(3, 'gaming.lightingProfile.lightingSingleLightingOption.option3.title','Medium Blink'),
+		new Options(4, 'gaming.lightingProfile.lightingSingleLightingOption.option4.title','"Slow Blink')
 	];
 
 	public imagePath = './../../../../assets/images/gaming/lighting';
