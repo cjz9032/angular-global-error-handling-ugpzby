@@ -1,5 +1,5 @@
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes, WifiSecurity, HomeProtection, DeviceInfo } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, DeviceInfo } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,7 +19,6 @@ interface DevicePostureDetail {
 
 export class WifiHomeViewModel {
 	wifiSecurity: WifiSecurity;
-	homeProtection: HomeProtection;
 	isLWSEnabled: boolean;
 	allHistorys: Array<phoenix.WifiDetail>;
 	hasMore: boolean;
@@ -30,15 +29,12 @@ export class WifiHomeViewModel {
 
 	constructor(
 		wifiSecurity: phoenix.WifiSecurity,
-		homeProtection: phoenix.HomeProtection,
 		private commonService: CommonService,
 		private ngZone: NgZone,
 		private dialogService: DialogService
 		) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
-		const cacheWifiSecurityChsConsoleUrl = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl);
-		const cacheHomeStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
 			if (value) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
@@ -97,19 +93,6 @@ export class WifiHomeViewModel {
 				this.historys = this.mappingHistory(this.historys);
 			}
 		});
-		homeProtection.on(EventTypes.homeChsConsoleUrlEvent, (value) => {
-			if (value && value !== '') {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, value);
-				this.tryNowUrl = value;
-				this.tryNowEnable = true;
-			}
-		});
-		homeProtection.on(EventTypes.homeStatusEvent, (value) => {
-			if (value) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, value);
-				this.homeStatus = value;
-			}
-		});
 		this.wifiSecurity = wifiSecurity;
 		if (wifiSecurity && wifiSecurity.state) {
 			if (wifiSecurity.isLocationServiceOn !== undefined) {
@@ -145,20 +128,6 @@ export class WifiHomeViewModel {
 			commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 			this.historys = this.mappingHistory(this.historys);
 		}
-		if (homeProtection && homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {
-			this.tryNowEnable = true;
-			this.tryNowUrl = homeProtection.chsConsoleUrl;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, homeProtection.chsConsoleUrl);
-		} else if (cacheWifiSecurityChsConsoleUrl && cacheWifiSecurityChsConsoleUrl !== '') {
-			this.tryNowEnable = true;
-			this.tryNowUrl = cacheWifiSecurityChsConsoleUrl;
-		}
-		if (homeProtection && homeProtection.status) {
-			this.homeStatus = homeProtection.status;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, homeProtection.status);
-		} else if (cacheHomeStatus) {
-			this.homeStatus = cacheHomeStatus;
-		}
 	}
 
 	mappingHistory(historys: Array<phoenix.WifiDetail>): Array<phoenix.WifiDetail> {
@@ -184,9 +153,8 @@ export class SecurityHealthViewModel {
 	isLWSEnabled: boolean;
 	homeDevicePosture: DevicePostureDetail[] = [];
 
-	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, public translate: TranslateService, private ngZone: NgZone) {
+	constructor(wifiSecurity: phoenix.WifiSecurity, private commonService: CommonService, public translate: TranslateService, private ngZone: NgZone) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture);
 		if (wifiSecurity && wifiSecurity.state) {
 			if (wifiSecurity.isLocationServiceOn !== undefined) {
 				this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);

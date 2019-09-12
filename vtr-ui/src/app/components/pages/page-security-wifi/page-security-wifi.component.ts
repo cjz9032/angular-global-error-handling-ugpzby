@@ -25,13 +25,6 @@ interface WifiSecurityState {
 	isLWSPluginInstalled: boolean; // true,false
 }
 
-interface HomeProtectionDeviceInfo {
-	error: string;
-	familyId: string;
-	nickName: string;
-	imageUrl: string;
-}
-
 @Component({
 	selector: 'vtr-page-security-wifi',
 	templateUrl: './page-security-wifi.component.html',
@@ -46,7 +39,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
 	homeSecurity: phoenix.ConnectedHomeSecurity;
-	homeProtection: phoenix.HomeProtection;
 	isShowInvitationCode: boolean;
 	wifiHomeViewModel: WifiHomeViewModel;
 	securityHealthViewModel: SecurityHealthViewModel;
@@ -71,32 +63,24 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
-	) {
-		this.securityAdvisor = shellService.getSecurityAdvisor();
-		this.homeSecurity = shellService.getConnectedHomeSecurity();
+	) {	}
+
+	ngOnInit() {
+		this.securityAdvisor = this.shellService.getSecurityAdvisor();
+		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		this.homeProtection = this.securityAdvisor.homeProtection;
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone, this.dialogService);
-		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate, this.ngZone);
-		const cacheHomeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
-		if (this.homeProtection.status) {
-			this.isShowInvitationCode = !(this.homeProtection.status === 'joined');
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, this.homeProtection.status);
-		} else if (cacheHomeStatus) {
-			this.isShowInvitationCode = !(cacheHomeStatus === 'joined');
-		}
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
+		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.commonService, this.translate, this.ngZone);
 		this.wifiSecurity.on('cancelClick', () => {
 			this.cancelClick = true;
 		}).on('cancelClickFinish', () => {
 			this.cancelClick = false;
 		});
 		this.fetchCMSArticles();
-	}
 
-	ngOnInit() {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.language = result.Lang;
@@ -110,10 +94,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
-		if (this.homeProtection) {
-			this.homeProtection.refresh().catch((err) => this.handleError(err));
-		}
-
 		if (this.wifiSecurity) {
 			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
 				this.wifiSecurity.refresh().catch((err) => this.handleError(err));
@@ -139,9 +119,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (this.wifiSecurity) {
 			this.wifiSecurity.refresh().catch((err) => this.handleError(err));
 		}
-		if (this.homeProtection) {
-			this.homeProtection.refresh().catch((err) => this.handleError(err));
-		}
 	}
 
 	ngOnDestroy() {
@@ -164,22 +141,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}
 		if (value.isLocationServiceOn !== undefined) {
 			this.wifiSecurity.isLocationServiceOn = value.isLocationServiceOn;
-		}
-	}
-
-	ShowInvitationhandler(res: HomeProtectionDeviceInfo) {
-		if (res.error.toLowerCase() === 'success') {
-			if (res.familyId) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, 'joined');
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionFamilyId, res.familyId);
-				this.homeProtection.familyId = res.familyId;
-				this.homeProtection.status = 'joined';
-				this.isShowInvitationCode = false;
-			} else {
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, 'unjoined');
-				this.homeProtection.status = 'unjoined';
-				this.isShowInvitationCode = true;
-			}
 		}
 	}
 
