@@ -473,6 +473,22 @@ export class ConfigService {
 		subitems: []
 	}];
 
+	appSearch = {
+		id: 'app-search',
+		label: ' ',
+		beta: true,
+		path: '',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.app-search',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'search'],
+		forArm: false,
+		subitems: []
+	};
+
 	betaItem = [{
 		id: 'hardware-scan',
 		label: 'hardwareScan.name',
@@ -487,21 +503,7 @@ export class ConfigService {
 		icon: ['fal', 'flask'],
 		forArm: false,
 		subitems: []
-	}, {
-		id: 'app-search',
-		label: ' ',
-		beta: true,
-		path: '',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.app-search',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'search'],
-		forArm: false,
-		subitems: []
-	}];
+	}, this.appSearch];
 
 	getMenuItems(isGaming) {
 		if (isGaming) {
@@ -513,9 +515,13 @@ export class ConfigService {
 
 	getMenuItemsAsync(isGaming): Promise<any> {
 		return new Promise((resolve, reject) => {
+			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
 			const machineInfo = this.deviceService.getMachineInfoSync();
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
+				if (isBetaUser) {
+					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
+				}
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
@@ -529,7 +535,6 @@ export class ConfigService {
 			if (!showCHSMenu) {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
-			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 			}

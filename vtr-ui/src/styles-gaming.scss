@@ -628,7 +628,7 @@
 						}
 					}
 				}
-				.vtr-hardware-components{
+				.vtr-hardware-components{					
 					.hardware-scan-items{
 						background: $dark_cell;
 						.header{
@@ -654,6 +654,15 @@
                                 }
                             }
                         }
+					}
+				}
+				.vtr-widget-hardware-scan {
+					.hardwarescan-background {
+						.cancel-check {
+							.cancel-check-text{
+							color: $gaming_light_blue !important;
+							}
+						}
 					}
 				}
 			}
