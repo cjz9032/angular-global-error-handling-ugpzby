@@ -1766,8 +1766,8 @@
 				"back": "BACK"
 			},
 			"container": {
-				"title": "Lenovo Wifi Security",
-				"name": "WIFI SECURITY",
+				"title": "Lenovo Wi-fi Security",
+				"name": "WI-FI SECURITY",
 				"enable": "ENABLED",
 				"disable": "DISABLED",
 				"less": "Less info",
