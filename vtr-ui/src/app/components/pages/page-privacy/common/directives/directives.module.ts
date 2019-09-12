@@ -7,6 +7,7 @@ import { CutMultilineTextWithDotsDirective } from './cut-multiline-text-with-dot
 import { OpenSeePlansDirective } from './open-see-plans.directive';
 import { OpenLinkInBrowserDirective } from './open-link-in-browser.directive';
 import { ClickOutsideDirective } from './click-outside.directive';
+import { ImagePreloadDirective } from './image-preload.directive';
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,8 @@ import { ClickOutsideDirective } from './click-outside.directive';
 		CutMultilineTextWithDotsDirective,
 		OpenSeePlansDirective,
 		OpenLinkInBrowserDirective,
-		ClickOutsideDirective
+		ClickOutsideDirective,
+		ImagePreloadDirective
 	],
 	exports: [
 		NumbersOnlyDirective,
@@ -25,7 +27,8 @@ import { ClickOutsideDirective } from './click-outside.directive';
 		SendAnalyticsDirective,
 		CutMultilineTextWithDotsDirective,
 		OpenSeePlansDirective,
-		ClickOutsideDirective
+		ClickOutsideDirective,
+		ImagePreloadDirective
 	],
 	imports: [
 		CommonModule

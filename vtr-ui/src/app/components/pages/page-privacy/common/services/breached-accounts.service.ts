@@ -5,7 +5,7 @@ import {
 	debounceTime,
 	distinctUntilChanged,
 	filter,
-	map, pairwise, startWith,
+	map,
 	switchMap,
 	take,
 	takeUntil,
@@ -17,6 +17,8 @@ import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-de
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
 import { UpdateTriggersService } from './update-triggers.service';
 import { ScanCounterService } from './scan-counter.service';
+import { NetworkStatus } from '../../../../../enums/network-status.enum';
+import { CommonService } from '../../../../../services/common/common.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -59,6 +61,7 @@ export class BreachedAccountsService implements OnDestroy {
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private updateTriggersService: UpdateTriggersService,
 		private scanCounterService: ScanCounterService,
+		private commonService: CommonService,
 		private emailScannerService: EmailScannerService) {
 		this.getBreachedAccounts();
 	}
@@ -80,6 +83,9 @@ export class BreachedAccountsService implements OnDestroy {
 				switchMap(() => this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
 				filter((isFigleafReadyForCommunication) => isFigleafReadyForCommunication),
 			),
+			this.commonService.notification.pipe(
+				filter((notification) => notification.type === NetworkStatus.Online || notification.type === NetworkStatus.Offline)
+			)
 		).pipe(
 			debounceTime(200),
 			switchMap((mergeValue) => this.getBreachedAccountsFromDifferentSource().pipe(
