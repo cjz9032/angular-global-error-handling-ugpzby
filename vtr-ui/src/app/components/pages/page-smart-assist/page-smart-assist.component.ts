@@ -130,6 +130,12 @@ export class PageSmartAssistComponent implements OnInit {
 				this.hpdSensorType = this.smartAssistCache.hpdSensorType;
 			} else {
 				this.smartAssistCache = new SmartAssistCache();
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
+				this.smartAssistCache.intelligentMedia = this.intelligentMedia;
+				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
+				this.smartAssistCache.hpdSensorType = this.hpdSensorType;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
 		} catch (error) {
 			console.log('initDataFromCache', error);

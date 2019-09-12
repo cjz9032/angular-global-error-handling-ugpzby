@@ -1544,7 +1544,7 @@
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
 			"disconnect": "disconnect",
 			"goDashboard": "go to dashboard",
-			"extendNow": "extend now"
+			"extendNow": "extend"
 		},
 		"tour": {
 			"back": "Back",
@@ -1587,10 +1587,10 @@
 		},
 		"card": {
 			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your Connected Home Security",
+			"startTrialTitle": "Create your own Connected Home Security",
 			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
 			"join": "join",
-			"joinTitle": "Join Connected Home Security of your family",
+			"joinTitle": "Join your family's Connected Home Security",
 			"joinDescription": "Become a part of your family security group."
 		},
 		"modal": {
@@ -1696,14 +1696,11 @@
 				"Blazing": "Blazing-fast speed",
 				"BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience",
 				"privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
-				"mcafeePremium": "McAfee Premium Protection",
+				"mcafeePremium": "McAfee LiveSafe Protection",
 				"protectedBy": "You are currently protected by {{protectedName}}. However, you could be better protected with McAfee LiveSafe",
 				"virusScan": "VIRUS SCAN",
 				"firewall": "FIREWALL",
-				"disabled": "DISABLED",
-				"enableVirusScan": "ENABLE VIRUS SCAN",
-				"enablenFirewall": "Enable firewall",
-				"enableFirewall": "ENABLE FIREWALL"
+				"disabled": "DISABLED"
 			},
 			"windowsDefender": {
 				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to off you award-winning security so can <b>protect what matters.</b>",
@@ -1722,8 +1719,8 @@
 			},
 			"mcafee": {
 				"title": "Antivirus",
-				"trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
-				"subtitle" :"You’re currently protected by McAfee LiveSafe – only {{remainingDays}} days left! Subscribe now to extend your protection.",
+				"trialSubtitle": "You’re currently protected by a 30-day trial of McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
+				"subtitle" :"You’re currently protected by McAfee LiveSafe – <b>only {{remainingDays}} days left! Subscribe now</b> to extend your protection.",
 				"discount": "100% money back guarantee",
 				"trialSubscribe": "Trial ends in {{remainingDays}} days — SUBSCRIBE NOW",
 				"subscribe": "Subscribe ends in {{remainingDays}} days — SUBSCRIBE NOW",

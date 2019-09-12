@@ -30,7 +30,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
 
-		if (this.switchPage === 1) {
+		if (this.switchPage === 1 && this.chs.account && this.chs.account.consoleUrl) {
 			this.countdown();
 		}
 	}
@@ -40,7 +40,13 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	}
 
 	disconnect() {
-
+		this.chs.quitAccount().then((response) => {
+			if (response === 'success') {
+				this.closeModal();
+			}
+		}).catch((err) => {
+			console.log(`disconnected error: ${err}`);
+		});
 	}
 
 	ngOnDestroy() {
@@ -49,8 +55,8 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	openCornet(feature?: string) {
-		this.chs.visitWebConsole(feature);
+	openCornet() {
+		this.chs.visitWebConsole();
 		this.closeModal();
 	}
 
@@ -60,8 +66,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		this.subscribe = takeNumbers.subscribe( x => {
 			this.countdownNumber = (3 - x - 1);
 			if (this.countdownNumber === 0) {
-				this.openCornet('login');
-				this.closeModal();
+				this.openCornet();
 			}
 		});
 	}
