@@ -1697,13 +1697,8 @@
             "common": {
                 "title": "바이러스 백신",
                 "back": "뒤로",
-                "why": "왜 McAfee입니까?",
                 "recommends": "Lenovo는 McAfee에서 다음을 사용하여 모든 장치를 보호할 것을 권장합니다.",
                 "award": "랜섬웨어 및 맬웨어를 포함한 최신 온라인 위협으로부터 수상 경력에 빛나는 보호",
-                "dedicated": "Defender 및 기타 주요 AV 공급자보다 일관되게 우수한 보안 기능 제공",
-                "deviceToCloud": "PC 속도를 늦추지 않는 장치-클라우드 기술",
-                "poweredBy": "McAfee로 실행",
-                "privacyTerms": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>에 대해 자세히 읽기",
                 "mcafeePremium": "McAfee 프리미엄 보호",
                 "protectedBy": "현재 {{protectedName}}(으)로 보호되고 있습니다. 그러나 McAfee LiveSafe를 사용하면 더 효과적으로 보호 받을 수 있습니다.",
                 "virusScan": "바이러스 검색",
@@ -1712,14 +1707,27 @@
                 "enableVirusScan": "바이러스 검색 사용",
                 "enablenFirewall": "방화벽 사용",
                 "enableFirewall": "방화벽 사용",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "최적으로 보호되지 않음",
-                "subtitle": "현재 Windows Defender의 보호를 받고 있습니다.하지만 McAfee LiveSafe를 사용하면 더욱 효과적으로 보호를 받을 수 있습니다. 아래에서 자세히 알아보십시오.",
-                "learnMore": "McAfee에 대해 자세히 알아보기",
-                "windowsProtected": "Windows Defender 기본 보호",
-                "windowsSubtitle": "Windows defender는 장치에 대한 기본적인 보호 제공"
+                "windowsSubtitle": "Windows defender는 장치에 대한 기본적인 보호 제공",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2361,7 +2369,9 @@
         "actionTriggeredDescription": "중요/권장 업데이트 자동 설치와 같은 사용자 선택 설정에 의해 트리거된 메시지.",
         "OtherSettings": "기타 설정",
         "usageStatistics": "사용 현황 통계",
-        "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
+		"usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
         "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."
     },

@@ -23,57 +23,12 @@ export class HomeSecurityCommon {
 			this.isOnline = isOnline;
 	}
 
-	openCornet(feature?: string) {
-		this.connectedHomeSecurity.visitWebConsole(feature);
+	openCornet() {
+		this.connectedHomeSecurity.visitWebConsole();
 	}
 
 	upgrade() {
 		this.connectedHomeSecurity.purchase();
-	}
-
-	startTrial() {
-		let alreadyLoggedIn = this.connectedHomeSecurity.account.lenovoId.loggedIn;
-		if (alreadyLoggedIn) {
-			this.startTrialDisabled = true;
-			if (this.isOnline) {
-				this.connectedHomeSecurity.createAndGetAccount().then((result) => {
-					this.startTrialDisabled = result ;
-					if (!result) {
-						this.dialogService.homeSecurityAccountDialog();
-					}
-				}).catch((err: Error) => {
-					this.startTrialDisabled = false;
-					if (err instanceof LocationPermissionOffError) {
-						this.dialogService.openCHSPermissionModal();
-					} else {
-						this.dialogService.homeSecurityAccountDialog();
-					}
-				});
-			} else {
-				this.dialogService.homeSecurityOfflineDialog();
-				this.startTrialDisabled = false;
-			}
-		} else {
-			const callback = (loggedIn: boolean) => {
-				if (loggedIn && !alreadyLoggedIn) {
-					this.connectedHomeSecurity.createAndGetAccount().then((result) => {
-						this.startTrialDisabled = result ;
-					}).catch((err: Error) => {
-						this.startTrialDisabled = false;
-						if (err instanceof LocationPermissionOffError) {
-							this.dialogService.openCHSPermissionModal();
-						}
-					});
-					alreadyLoggedIn = true;
-				}
-			};
-			this.lenovoIdDialogService.openLenovoIdDialog('ConnectedHomeSecurity').then(() => {
-				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback);
-			}).catch(() => {
-				this.connectedHomeSecurity.off(EventTypes.lenovoIdStatusChange, callback);
-			});
-			this.connectedHomeSecurity.on(EventTypes.lenovoIdStatusChange, callback);
-		}
 	}
 
 	private onNotification(notification: AppNotification) {

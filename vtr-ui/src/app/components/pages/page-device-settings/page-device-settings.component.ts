@@ -60,6 +60,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	isDesktopMachine = true;
 	machineType: number;
 	private notificationSubscription: Subscription;
+	public isOnline: any = true;
 
 
 	constructor(
@@ -106,10 +107,15 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		});*/  // VAN-5872, server switch feature
 		this.initInputAccessories();
 
-		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
-		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (welcomeTutorial && welcomeTutorial.page === 2) {
-			this.getMicrophoneSettings();
+		this.isOnline = this.commonService.isOnline;
+		if (this.isOnline) {
+			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+			if (welcomeTutorial && welcomeTutorial.page === 2) {
+				this.getMicrophoneSettings();
+			}
+		} else {
+				this.getMicrophoneSettings();
 		}
 	}
 

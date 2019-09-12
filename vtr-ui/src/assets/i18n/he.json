@@ -392,7 +392,7 @@
         },
         "networkBoost": {
             "title": "שיפור הרשת",
-            "introLine": "הפעלת \"האצת רשת\" תקבע באופן אוטומטי את העדיפות של משחקים לרמה הגבוהה ביותר ברשת שלכם ותמקסם את המהירות. אם אתם משתמשים באפליקציות כלשהן תוך כדי משחק, כמו Twitch או Discord, מומלץ להוסיף אותן לרשימה הבאה כך שגם הן יקבלו עדיפות ברשת שלכם.",
+            "introLine": "הפעלה של \"האצת רשת\" תביא למתן עדיפות גבוהה יותר למשחקים ברשת ולהשגת המהירות המרבית האפשרית. אם אתם משתמשים באפליקציות כלשהן תוך כדי משחק, מומלץ להוסיף אותן לרשימה הבאה כדי שגם הן יקבלו עדיפות גבוהה יותר ברשת שלכם.",
             "modalTurn": {
                 "title": "להפעיל את \"האצת רשת\"?",
                 "body": "להפעיל את \"האצת רשת\"? אפליקציות שהוספתם ישתפו יותר משאבי רשת כשהן פועלות.",
@@ -1697,13 +1697,8 @@
             "common": {
                 "title": "אנטי-וירוס",
                 "back": "חזרה",
-                "why": "מדוע McAfee?",
                 "recommends": "Lenovo ממליצה על McAfee לצורך הגנה על כל המכשירים שלכם עם:",
                 "award": "כלי שזכה לפרסים רבים, המיועד להגנה מפני האיומים הדיגיטליים העדכניים ביותר, כולל רוגלות ותוכנות זדוניות",
-                "dedicated": "אבטחה ייעודית עם ביצועים שעולים על אלו של Defender ושל ספקי אנטי-וירוס מובילים אחרים",
-                "deviceToCloud": "טכנולוגיה מסוג מכשיר-לענן שלא משפיעה על ביצועי המחשב שלכם",
-                "poweredBy": "מופעל על-ידי McAfee",
-                "privacyTerms": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
                 "mcafeePremium": "הגנת פרימיום של McAfee",
                 "protectedBy": "כרגע אתם מוגנים על-ידי {{protectedName}}. עם זאת, התוכנה McAfee LiveSafe יכולה לספק הגנה טובה יותר. ",
                 "virusScan": "סריקת וירוסים",
@@ -1712,14 +1707,27 @@
                 "enableVirusScan": "הפעלת סריקת וירוסים",
                 "enablenFirewall": "הפעלת חומת אש",
                 "enableFirewall": "הפעלת חומת אש",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "ללא הגנה אופטימלית",
-                "subtitle": "אתם מוגנים כרגע על-ידי Windows Defender.עם זאת, McAfee LiveSafe יכול לספק לכם הגנה טובה יותר. ניתן לקבל מידע נוסף למטה.",
-                "learnMore": "מידע נוסף על McAfee",
-                "windowsProtected": "הגנה בסיסית של Windows Defender",
-                "windowsSubtitle": "Windows Defender מציע הגנה בסיסית להתקן שלכם"
+                "windowsSubtitle": "Windows Defender מציע הגנה בסיסית להתקן שלכם",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2361,7 +2369,9 @@
         "actionTriggeredDescription": "הודעות המופעלות על ידי בחירת הגדרות של המשתמש, כגון עדכונים קריטיים/מומלצים של התקנה אוטומטית.",
         "OtherSettings": "הגדרות נוספות",
         "usageStatistics": "סטטיסטיקת שימוש",
-        "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
+		"usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה."
     },

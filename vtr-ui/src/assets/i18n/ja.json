@@ -1697,13 +1697,8 @@
             "common": {
                 "title": "アンチウィルス",
                 "back": "戻る",
-                "why": "なぜ McAfee?",
                 "recommends": "Lenovo では、以下の機能を備えた McAfee を使用してすべてのデバイスを保護することを推奨しています。",
                 "award": "ランサムウェアやマルウェアなど、最新のオンラインの脅威からの受賞歴のある保護",
-                "dedicated": "Defender や他の主要 AV プロバイダーより常に高いパフォーマンスを発揮する専用セキュリティー",
-                "deviceToCloud": "PC のパフォーマンスを低下させないデバイス - クラウド間テクノロジー",
-                "poweredBy": "McAfee 搭載",
-                "privacyTerms": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>の詳細を読む",
                 "mcafeePremium": "McAfee プレミアムプロテクション",
                 "protectedBy": "現在、{{protectedName}} によって保護されています。ただし、McAfee LiveSafe を使用すると、より適切に保護される可能性があります。",
                 "virusScan": "ウイルス・スキャン",
@@ -1712,14 +1707,27 @@
                 "enableVirusScan": "ウイルス・スキャンを有効にする",
                 "enablenFirewall": "ファイアウォールを有効にする",
                 "enableFirewall": "ファイアウォールを有効にする",
-                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>"
+                "privacyTermsNew": "/   <tag>Privacy Policy</tag>  |  <tag>Terms of Service</tag>",
+                "awardText": "Shield your new Lenovo PC with tested, proven protection against online threats",
+                "performance": "Rock-solid performance",
+                "performanceText": "Consistent, precise, and reliable antivirus you can count on to help keep you safe",
+                "Blazing": "Blazing-fast speed",
+                "BlazingText": "Optimized antivirus that won’t slow down or interrupt your Lenovo Vantage experience"
             },
             "windowsDefender": {
                 "optimallyProtected": "最適に保護されていません",
-                "subtitle": "現在、Windows Defender によって保護されています。しかし、McAfee LiveSafe を使用すると、より適切に保護できます。下記のさらに詳しい説明を見る。",
-                "learnMore": "McAfee の詳細情報",
-                "windowsProtected": "Windows Defender 基本保護",
-                "windowsSubtitle": "Windows Defender は、デバイスに基本的な保護機能を提供します"
+                "windowsSubtitle": "Windows Defender は、デバイスに基本的な保護機能を提供します",
+                "topTip": "Top Tips for online safety",
+                "topContent": "Learn how you can defend against today's biggest online threats",
+                "view": "VIEW TIPS",
+                "buyNow": "Buy Now",
+                "buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Home netWork protection",
+                "private": "Private,anonymous browsing",
+                "everyDevice": "Every-device protection",
+                "password": "Password manager"
             },
             "mcafee": {
                 "title": "McAfee LiveSafe",
@@ -2361,7 +2369,9 @@
         "actionTriggeredDescription": "重要な/推奨される更新プログラムの自動インストールなど、ユーザーが選択した設定によってトリガーされるメッセージ。",
         "OtherSettings": "他の設定",
         "usageStatistics": "利用統計",
-        "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
+		"usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
+		"deviceStatistics": "Share statistic data with Lenovo",
+		"deviceStatisticsDescription": "統計データを Lenovo と共有し、ご使用のコンピューターの機能の信頼性、設計、最適化の改善に役立てます。",
         "Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
     },

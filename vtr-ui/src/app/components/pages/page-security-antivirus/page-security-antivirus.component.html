@@ -11,31 +11,34 @@
 				<div class="row">
 					<div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
 						<div *ngIf="viewModel?.currentPage ==='windows'">
-							<div *ngIf="isOnline" class="header mt-minus">
-								<div class="rounded-card-with-shadow p-5">
+							<div *ngIf="isOnline" class="header mt-minus row justify-content-between">
+								<div class="rounded-card-with-shadow py-4 pl-0 pr-4 col mr-5">
 									<div class="row" [vtrAppSearchScroller]="['search-anti-virus']">
-										<div class="col-auto align-self-center">
+										<div class="align-self-center">
 											<img class="img-fluid"
 												src="./../../../../assets/images/antivirus/protection.png" />
-
 										</div>
-										<div class="col">
-											<div class="title p-3">
-												{{'security.antivirus.windowsDefender.optimallyProtected' | translate}}
+										<div class="col align-self-center">
+											<div class="subtitle p-0"
+												[innerHTML]="'security.antivirus.windowsDefender.optimallyProtected' | translate">
 											</div>
-											<div class="subtitle p-3"
-												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate">
-											</div>
-											<div class="p-3">
-												<vtr-ui-button metricsItem="learnMoreAboutMcafee"
-													metricsEvent="ArticleClick" metricsItemPosition="2"
-													metricsPageNumber="1" [metricsItemID]="mcafeeArticleId"
-													[metricsItemCategory]="mcafeeArticleCategory"
-													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
-													[title]="'security.antivirus.windowsDefender.learnMore' | translate"
-													(onClick)="openArticle()" [isDisabled]="!isOnline"
-													[upperCaseLabel]=false [linkId]="'sa-av-btn-learnmore'">
-												</vtr-ui-button>
+										</div>
+									</div>
+								</div>
+								<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-4 row b-border">
+									<img class="align-self-center col-4"
+										[src]=" '../../../../assets/icons/SecurityAdvisor/Rock-solid.svg' | svgInline | async" />
+									<div class="align-self-center col-8 p-0">
+										<div class="title"
+											[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate"></div>
+										<div class="row">
+											<div class="subtitle font">
+												{{'security.antivirus.windowsDefender.topContent' | translate}}
+												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+												metricsItem="subscribe" metricsParent="security.antivirus"
+												href="javascript:void(0)" target="_blank"
+												(click)="openArticle()"
+												[innerHTML]="'security.antivirus.windowsDefender.view' | translate"></a>
 											</div>
 										</div>
 									</div>
@@ -44,128 +47,47 @@
 							<vtr-widget-offline-info *ngIf="!isOnline"
 								[title]="'dashboard.offlineInfo.title' | translate" [isSubtitleVisible]="false"
 								[isButtonVisible]="false"></vtr-widget-offline-info>
-							<div class="subheader antivirus-block">
-								<div class="rounded-card-with-shadow p-5 bg-white">
-									<div>
+							<div class="subheader antivirus-block row justify-content-between">
+								<div class="rounded-card-with-shadow p-5 bg-white defender-part">
+									<div class="row justify-content-between">
 										<div class="row">
-											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">
-													{{'security.antivirus.windowsDefender.windowsProtected' | translate}}
-												</div>
-											</div>
-											<div class="col-auto px-0">
-												<img class="windows-logo"
-													src="../../../../assets/images/windows-logo.png" />
+											<img class="mcafee-logo align-self-start"
+												[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
+											<div class="title"
+												[innerHTML]="'security.antivirus.mcafee.title' | translate">
 											</div>
 										</div>
-
-										<div class="subtitle pb-5">
-											{{'security.antivirus.windowsDefender.windowsSubtitle' | translate}}</div>
-
-										<vtr-ui-security-statusbar
-											[statusList]=" viewModel.windowsDefenderstatusList | statusTransform">
-										</vtr-ui-security-statusbar>
-
-									</div>
-									<vtr-widget-mcafee [install]="false" [isOnline]="isOnline"
-										[name]="'Windows Defender'"></vtr-widget-mcafee>
-								</div>
-							</div>
-							<div class="body antivirus-block">
-								<div>
-									<div class="title py-5">{{'security.antivirus.common.why' | translate}}</div>
-									<div class="row w-100">
-										<div class="col col-6 mt-20">
-											<div class="col">
-												<img class="dashlane-side-left-img"
-													src="./../../../../assets/images/antivirus/side.jpg" />
-											</div>
-										</div>
-										<div class="col col-6 mt-20">
-											<div class="col">
-												<div class="subtitle pb-5">
-													{{'security.antivirus.common.recommends' | translate}}</div>
-												<div>
-													<ul class="list-unstyled">
-														<li class="text pb-4">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']">
-																			</fa-icon>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	{{'security.antivirus.common.award' | translate}}
-																</div>
-															</div>
-														</li>
-														<li class="text pb-4">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']">
-																			</fa-icon>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	{{'security.antivirus.common.dedicated' | translate}}
-																</div>
-															</div>
-														</li>
-														<li class="text">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']">
-																			</fa-icon>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	{{'security.antivirus.common.deviceToCloud' | translate}}
-																</div>
-															</div>
-
-														</li>
-													</ul>
-												</div>
-											</div>
+										<div class="flex-column">
+											<button class="h-100"
+												title="{{'security.antivirus.windowsDefender.buyNow'}}">
+												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+													metricsItem="subscribe" metricsParent="security.antivirus"
+													href="{{viewModel.mcafee?.trialUrl}}" target="_blank"
+													[innerHTML]="'security.antivirus.windowsDefender.buyNow' | translate"></a>
+											</button>
 										</div>
 									</div>
+									<div class="divider"></div>
+									<div class="subtitle"
+										[innerHTML]="'security.antivirus.windowsDefender.buy' | translate"></div>
+									<vtr-widget-mcafee-state [windowsDefender]="true" [url]="viewModel.mcafee.trialUrl">
+									</vtr-widget-mcafee-state>
+									<div class="subtitle mt-5 text-center"
+										[innerHTML]="'security.antivirus.mcafee.discount' | translate"></div>
+								</div>
+								<div class="rounded-card-with-shadow p-5 bg-white defender-part s-border">
+									<div class="title"
+										[innerHTML]="'security.antivirus.windowsDefender.windowsSubtitle' | translate">
+									</div>
+									<div class="divider"></div>
+									<div class="subtitle"
+										[innerHTML]="'security.antivirus.windowsDefender.onlyBasic' | translate"></div>
+									<vtr-widget-mcafee-state [windowsDefender]="true"
+										[statusList]="viewModel.windowsDefenderstatusList | statusTransform">
+									</vtr-widget-mcafee-state>
 								</div>
 							</div>
-
-							<div class="divider"></div>
-							<div class="footer">
-								<div class="row">
-									<div class="col-auto mr-auto px-0">
-										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
-										<p class="text-regular mt-10"
-											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-
-											<a id="sa-av-link-privacypolicy" vtrMetrics metricsEvent="featureClick"
-												metricsItem="privacyPolicy" metricsParent="security.antivirus"
-												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-												target="_blank"></a>
-
-											<a id="sa-av-link-termsofservices" vtrMetrics metricsEvent="featureClick"
-												metricsItem="termsOfServices" metricsParent="security.antivirus"
-												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-												target="_blank"></a>
-										</p>
-									</div>
-									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo"
-											[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
-									</div>
-								</div>
-							</div>
+							<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
 						</div>
 
 						<div *ngIf="viewModel?.currentPage ==='mcafee'">
@@ -177,14 +99,13 @@
 									<div class="row">
 										<div *ngIf="showMetricsList" class="col-5 px-0">
 											<vtr-widget-mcafee-metric [metricsList]="viewModel.metricsList"
-											[showMetricButton]="showMetricButton"
-											[common]="common"></vtr-widget-mcafee-metric>
+												[showMetricButton]="showMetricButton" [common]="common">
+											</vtr-widget-mcafee-metric>
 											<div class="subtitle sub-font">
 												{{'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt} }}
 												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
 													metricsItem="subscribe" metricsParent="security.antivirus"
-													href="{{viewModel.mcafee?.trialUrl}}"
-													target="_blank"
+													href="{{viewModel.mcafee?.trialUrl}}" target="_blank"
 													[innerHTML]="'security.antivirus.mcafee.subscribeNow' | translate"></a>
 											</div>
 										</div>
@@ -194,17 +115,17 @@
 													<img class="mcafee-logo align-self-start"
 														[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
 													<div class="height-line"></div>
-													<div class="title" [innerHTML]="'security.antivirus.mcafee.title' | translate">
+													<div class="title"
+														[innerHTML]="'security.antivirus.mcafee.title' | translate">
 													</div>
 												</div>
 												<div class="flex-column">
 													<button
 														title="{{'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt} }}">
 														<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-														metricsItem="subscribe" metricsParent="security.antivirus"
-														href="{{viewModel.mcafee?.trialUrl}}"
-														target="_blank"
-														[innerHTML]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"></a>
+															metricsItem="subscribe" metricsParent="security.antivirus"
+															href="{{viewModel.mcafee?.trialUrl}}" target="_blank"
+															[innerHTML]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"></a>
 													</button>
 													<div class="subtitle text-center"
 														[innerHTML]="'security.antivirus.mcafee.discount' | translate">
@@ -213,7 +134,7 @@
 											</div>
 											<div>
 												<div class="divider"></div>
-												<div class="content" 
+												<div class="content"
 													[innerHTML]="'security.antivirus.mcafee.subtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
 												</div>
 												<vtr-widget-mcafee-state
@@ -273,100 +194,8 @@
 
 									</div>
 									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall" [isOnline]="isOnline"
-										[name]="viewModel.otherAntiVirus.name" [mcafee]="viewModel.mcafee">
-									</vtr-widget-mcafee>
-								</div>
-							</div>
-							<div class="body antivirus-block">
-								<div>
-									<div class="title py-5">{{'security.antivirus.common.why' | translate}}</div>
-									<div class="row w-100">
-										<div class="col col-6 mt-20">
-											<div class="col">
-												<img class="dashlane-side-left-img"
-													src="./../../../../assets/images/antivirus/side.jpg" />
-											</div>
-										</div>
-										<div class="col col-6 mt-20">
-											<div class="col">
-												<div class="subtitle pb-5">
-													{{'security.antivirus.common.recommends' | translate}}</div>
-												<div>
-													<ul class="list-unstyled">
-														<li class="text pb-4">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']">
-																			</fa-icon>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	{{'security.antivirus.common.award' | translate}}
-																</div>
-															</div>
-														</li>
-														<li class="text pb-4">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']">
-																			</fa-icon>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	{{'security.antivirus.common.dedicated' | translate}}
-																</div>
-															</div>
-														</li>
-														<li class="text">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']">
-																			</fa-icon>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	{{'security.antivirus.common.deviceToCloud' | translate}}
-																</div>
-															</div>
-
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="divider"></div>
-							<div class="footer">
-								<div class="row">
-									<div class="col-auto mr-auto px-0">
-										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
-										<p class="text-regular mt-10"
-											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a id="sa-av-link-privacypolicy" vtrMetrics metricsEvent="itemClick"
-												metricsItem="privacyPolicy" metricsParent="security.antivirus"
-												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-												target="_blank"></a>
-											<a id="sa-av-link-termsofservices" vtrMetrics metricsEvent="itemClick"
-												metricsItem="termsOfServices" metricsParent="security.antivirus"
-												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-												target="_blank"></a>
-										</p>
-									</div>
-									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo"
-											[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
-									</div>
+										[name]="viewModel.otherAntiVirus.name" [common]="common"></vtr-widget-mcafee>
+									<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
 								</div>
 							</div>
 						</div>

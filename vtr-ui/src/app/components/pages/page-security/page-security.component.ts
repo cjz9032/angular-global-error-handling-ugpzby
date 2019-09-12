@@ -16,9 +16,6 @@ import {
 	AntiVirusLandingViewModel
 } from '../../../data-models/security-advisor/antivirus-landing.model';
 import {
-	HomeProtectionLandingViewModel
-} from '../../../data-models/security-advisor/homeprotection-landing.model';
-import {
 	PasswordManagerLandingViewModel
 } from '../../../data-models/security-advisor/passwordmanager-landing.model';
 import {
@@ -68,12 +65,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	vpnLandingViewModel: VpnLandingViewModel;
 	windowsHelloLandingViewModel: WindowsHelloLandingViewModel;
 	wifiSecurityLandingViewModel: WifiSecurityLandingViewModel;
-	homeProtectionLandingViewModel: HomeProtectionLandingViewModel;
 	wifiHistory: Array<phoenix.WifiDetail>;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
-	homeProtection: phoenix.HomeProtection;
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
@@ -107,7 +102,14 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private guard: GuardService,
 		private router: Router,
 		private windowsHelloService: WindowsHelloService
-	) {
+	) {	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		this.refreshAll();
+	}
+
+	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
@@ -116,20 +118,12 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.antivirus = this.securityAdvisor.antivirus;
 		this.vpn = this.securityAdvisor.vpn;
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		this.homeProtection = this.securityAdvisor.homeProtection;
 
 		this.createViewModels();
 		this.score = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingScore, 0);
 		this.maliciousWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, 0);
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.refreshAll();
-	}
-
-	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
+
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -187,7 +181,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService);
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
 		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
-		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
