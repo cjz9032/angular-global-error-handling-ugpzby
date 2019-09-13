@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module';
 import { PageSecurityComponent } from 'src/app/components/pages/page-security/page-security.component';
 import { PageSecurityAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/page-security-antivirus.component';
-import { AdvisorWifiSecurityComponent } from 'src/app/components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
 import { WifiSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
 import { HomeSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/home-security/home-security.component';
 import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-security-password/page-security-password.component';
@@ -63,7 +62,6 @@ library.add(faChevronUp);
 @NgModule({
 	declarations: [
 		PageSecurityComponent,
-		AdvisorWifiSecurityComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		WifiSecurityComponent,

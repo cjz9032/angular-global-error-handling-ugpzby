@@ -278,7 +278,8 @@ export class WidgetScheduleScanComponent implements OnInit {
 								const dateSchedule = dateSplit[2] + '-' + dateSplit[0] + '-' + dateSplit[1];
 								const timeSchedule = this.formatTime(scheduleScanRequest.scheduleTime);
 								const desc = this.translate.instant('hardwareScan.scheduledScan.information') + ' ' + dateSchedule + ' ' + timeSchedule;
-								this.OnCollisionModal('', desc);
+								const title = this.translate.instant('hardwareScan.scheduledScan.name');
+								this.OnCollisionModal(title, desc);
 							});
 						}
 					});

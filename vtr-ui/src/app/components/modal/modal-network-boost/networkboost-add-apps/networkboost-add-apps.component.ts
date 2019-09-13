@@ -1,6 +1,6 @@
 import { CommonService } from 'src/app/services/common/common.service';
 import { NetworkBoostService } from './../../../../services/gaming/gaming-networkboost/networkboost.service';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter,OnChanges } from '@angular/core';
 import { isUndefined } from 'util';
 
 @Component({
@@ -8,12 +8,13 @@ import { isUndefined } from 'util';
 	templateUrl: './networkboost-add-apps.component.html',
 	styleUrls: ['./networkboost-add-apps.component.scss']
 })
-export class NetworkboostAddAppsComponent implements OnInit {
+export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 	loading = true;
 	runningList: any = [];
 	noAppsRunning = false;
 	addAppsList: string;
 	statusAskAgain: boolean;
+	public isChecked:any = [];
 	@Input() showAppsModal: boolean;
 	@Input() addedApps = 0;
 	maxAppsCount = 5;
@@ -24,10 +25,15 @@ export class NetworkboostAddAppsComponent implements OnInit {
 		this.refreshNetworkBoostList();
 	}
 
-	async onValueChange(event: any) {
+	ngOnChanges(changes:any){
+		this.runningList.push({"iconName":"","processDescription":"","processPath":""});
+	}
+
+	async onValueChange(event:any,i:number) {
+		this.isChecked[i] =!this.isChecked[i];
 		if (event && event.target) {
 			this.addAppsList = event.target.value;
-			if (event.target.checked) {
+			if (this.isChecked[i]) {
 				this.addAppToList(event.target.value);
 			} else {
 				this.removeApp(event.target.value);
@@ -75,5 +81,14 @@ export class NetworkboostAddAppsComponent implements OnInit {
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
+	}
+	runappKeyup(event,index){
+		if(event.which === 9){
+			if(index === this.runningList.length-1){
+				let txt1 = document.getElementById("close");
+				txt1.focus();
+			}
+		}
+		
 	}
 }

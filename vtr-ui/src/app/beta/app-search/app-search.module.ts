@@ -6,7 +6,7 @@ import { AppSearchScrollerDirective } from 'src/app/beta/app-search/app-search-s
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { AppSearchRoutingModule } from 'src/app/beta/app-search/app-search-routing.module';
-
+import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
@@ -66,7 +66,8 @@ library.add(faUsb);
 		CommonPipeModule,
 		CommonModule,
 		MetricsModule,
-		AppSearchRoutingModule
+		AppSearchRoutingModule,
+		FormsModule
 	],
 	exports: [
 		SearchDropdownComponent,

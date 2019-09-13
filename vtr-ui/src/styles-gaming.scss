@@ -374,7 +374,7 @@
 						border: none;
 					}
 					&.subpage-device-settings-power{
-						.auto-set-checkbox.custom-checkbox{
+						.auto-set-checkbox.custom-checkbox-gaming{
 							.custom-control-input{
 								position: absolute;
 								opacity: 0;
@@ -393,7 +393,7 @@
 								height: 1.6rem;
 								width: 1.6rem;
 								pointer-events: none;
-								background-color: $gaming-Darkslate-blue;
+								background-color: $gaming_light_blue;
 								border: 0.2rem solid $screen_light_15;
 								&::after {
 									content: "";
@@ -434,6 +434,10 @@
 										color: $gaming_grey_lightest;
 									}
 								}
+							}
+							.row-seperator{
+								height: 0.1rem;
+								background-color: $screen_dark_20;
 							}
 						}
 					}
@@ -624,7 +628,7 @@
 						}
 					}
 				}
-				.vtr-hardware-components{
+				.vtr-hardware-components{					
 					.hardware-scan-items{
 						background: $dark_cell;
 						.header{
@@ -648,8 +652,43 @@
                                         }
                                     }
                                 }
-                            }
+							}
+							vtr-widget-hardware-scan-item{
+								.vtr-widget-hardware-scan-item{
+									.title {
+										color: $gaming_lightest;
+									}
+									.subtitle {
+										color: $gaming_grey_lightest;
+									}
+								}
+								vtr-ui-hardware-list{
+									.vtr-ui-list-hardware {
+										.list-group{
+											.list-group-item{
+												background-color: $gaming-Darkslate-blue;
+												border: 0.1rem solid $screen_dark_15;
+												.title {
+													color: $gaming_lightest;
+												}
+												.subtitle {
+													color: $gaming_grey_lightest;
+												}
+											}
+										}
+									}
+								}
+							}
                         }
+					}
+				}
+				.vtr-widget-hardware-scan {
+					.hardwarescan-background {
+						.cancel-check {
+							.cancel-check-text{
+							color: $gaming_light_blue !important;
+							}
+						}
 					}
 				}
 			}
@@ -785,6 +824,13 @@
 						.battery-conditions-tips{
 							color: $gaming_grey_lightest;
 						}
+						.feature-note  {
+							background: $gaming-Darkslate-blue;
+							border: none;
+							p {
+								color: $gaming_lightest !important;
+							}
+						}
 					}
 				}
 				
@@ -889,6 +935,23 @@
 		clear: both;
 		margin-top: 2.2rem;
 	}
+	// //added by Ram
+	.feature-note {
+		background-color: $gaming-Darkslate-blue!important;
+		border: none!important;
+		border-radius:$border_radius;
+		p {
+			font-size: 1.5rem;
+			color: $alt!important;
+		}
+	}
+	.permission-note {
+		border-radius:$border_radius;
+		p {
+			font-size: 1.5rem;
+			color: $alt!important;
+		}
+	}
 }
 
 .gaming-help-modal {
@@ -917,3 +980,4 @@ button:focus,
 *:focus {
 	outline: 0;
 }
+

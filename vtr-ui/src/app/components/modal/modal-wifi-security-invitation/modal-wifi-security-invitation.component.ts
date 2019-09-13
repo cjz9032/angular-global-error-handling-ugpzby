@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
@@ -9,7 +10,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class ModalWifiSecurityInvitationComponent implements OnInit {
 
-	securityAdvisor: any;
+	chs: ConnectedHomeSecurity;
 
 	header = 'security.homeprotection.invitationcode.joinChs';
 	description = 'security.homeprotection.invitationcode.enterCode';
@@ -20,10 +21,9 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	startJoin = false;
 	joinSuccess = false;
 	joinFailed = false;
-	joinResult = true;
 
 	constructor(public activeModal: NgbActiveModal, vantageShellService: VantageShellService) {
-		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		this.chs = vantageShellService.getConnectedHomeSecurity();
 	}
 
 	ngOnInit() {
@@ -46,27 +46,21 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		this.startJoin = true;
 		this.joinSuccess = false;
 		this.joinFailed = false;
-		if (this.securityAdvisor) {
-			this.securityAdvisor.homeProtection.joinGroupBy(code)
-				.then((result) => {
+		if (this.chs) {
+			this.chs.joinAccount(code)
+				.then((response) => {
 					this.startJoin = false;
-					if (result) {
+					if (response.result === 'Success') {
 						this.joinSuccess = true;
 						setTimeout(() => {
 							this.closeModal();
 						}, 3000);
 					} else {
 						this.joinFailed = true;
-
-						this.joinResult = !this.joinResult;
-						this.joinFailed = !this.joinResult;
-						this.joinSuccess = this.joinResult;
-						if (this.joinResult) {
-							setTimeout(() => {
-								this.closeModal();
-							}, 3000);
-						}
 					}
+				}).catch((err) => {
+					this.startJoin = false;
+					this.joinFailed = true;
 				});
 		} else {
 			this.startJoin = false;
