@@ -63,17 +63,18 @@
 	</div>
 	<div class="footer-component text-center" *ngIf="number && !number.status">
 		<div class="start-button">
-			<a href="javascript:void(0)" id="gaming_macrokey_startrecording" tabindex="1"
-				attr.aria-label="START RECORDING" class="btn button text-uppercase min-height btn-gradient" vtrMetrics
-				[metricsItem]="'macrokey_start_recording'" metricsEvent="featureClick"
-				(click)="onStartClicked($event)">{{'gaming.macroKey.details.buttons.start' | translate}} </a>
+			<vtr-ui-button id="gaming_macrokey_startrecording" tabindex="1" aria-label="gaming macrokey startrecording"
+				metricsEvent="featureClick" [metricsItem]="'macrokey_start_recording'" role="button"
+				[label]="'gaming.macroKey.details.buttons.start' | translate" [btnHeight]=true [isGradient]=true
+				(onClick)="onStartClicked($event)" (keyup.enter)="onStartClicked($event)">
+			</vtr-ui-button>
 		</div>
 		<div class="stop-button">
-			<a href="javascript:void(0)" attr.aria-label="stop recording" id="gaming_macrokey_stoprecording"
-				tabindex="1" class="btn button text-uppercase min-height btn-gradient" vtrMetrics
-				[metricsItem]="'macrokey_stop_recording'" metricsEvent="featureClick"
-				(click)="onStopClicked($event)">{{'gaming.macroKey.details.buttons.stop' | translate}}
-			</a>
+			<vtr-ui-button id="gaming_macrokey_stoprecording" tabindex="1" aria-label="gaming macrokey stoprecording"
+				metricsEvent="featureClick" [metricsItem]="'macrokey_stop_recording'"
+				[label]="'gaming.macroKey.details.buttons.stop' | translate" [btnHeight]=true [isGradient]=true
+				(onClick)="onStopClicked($event)">
+			</vtr-ui-button>
 		</div>
 	</div>
 </div>
