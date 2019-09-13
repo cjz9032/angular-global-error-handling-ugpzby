@@ -1,14 +1,16 @@
 <div class="article-preview">
-	<img class="article-preview__image"
-		 (click)="openArticle.emit(article.ActionLink)"
-		 vtrOfflineMode
-		 vtrSendAnalytics
-		 [metricsEvent]="'ArticleClick'"
-		 [metricsItem]="'ArticlesReadMoreItem'"
-		 [metricsParam]="{'ArticleId': article.ActionLink}"
-		 [src]="article.FeatureImage"
-		 default="/assets/images/privacy-tab/offline-widget/article-offline.png"
-		 alt="{{article.Title}}">
+	<div [ngClass]="{'offline-image-overlay': !isOnline}">
+		<img class="article-preview__image"
+			 (click)="openArticle.emit(article.ActionLink)"
+			 vtrOfflineMode
+			 vtrSendAnalytics
+			 [metricsEvent]="'ArticleClick'"
+			 [metricsItem]="'ArticlesReadMoreItem'"
+			 [metricsParam]="{'ArticleId': article.ActionLink}"
+			 [src]="article.FeatureImage"
+			 default="/assets/images/privacy-tab/offline-widget/article-offline.png"
+			 alt="{{article.Title}}">
+	</div>
 	<div class="article-preview__description">
 		<h2 class="article-preview__title"
 			vtrCutMultilineTextWithDots [textToAppend]="article.Title"
