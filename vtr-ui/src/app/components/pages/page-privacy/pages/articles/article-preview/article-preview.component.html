@@ -7,8 +7,8 @@
 			 [metricsEvent]="'ArticleClick'"
 			 [metricsItem]="'ArticlesReadMoreItem'"
 			 [metricsParam]="{'ArticleId': article.ActionLink}"
-			 [src]="article.FeatureImage"
-			 default="/assets/images/privacy-tab/offline-widget/article-offline.png"
+			 [src]="isOnline ? article.FeatureImage : defaultSrc"
+			 default="{{defaultSrc}}"
 			 alt="{{article.Title}}">
 	</div>
 	<div class="article-preview__description">
@@ -16,7 +16,6 @@
 			vtrCutMultilineTextWithDots [textToAppend]="article.Title"
 			title="{{article.Title}}"
 			(click)="openArticle.emit(article.ActionLink)"
-			vtrOfflineMode
 			vtrSendAnalytics
 			[metricsEvent]="'ArticleClick'"
 			[metricsItem]="'ArticlesReadMoreItem'"

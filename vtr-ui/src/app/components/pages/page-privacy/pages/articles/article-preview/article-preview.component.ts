@@ -13,6 +13,7 @@ export class ArticlePreviewComponent implements OnInit, OnDestroy {
 	@Input() article;
 	@Output() openArticle = new EventEmitter<string>();
 
+	defaultSrc = '/assets/images/privacy-tab/offline-widget/article-offline.png';
 	isOnline = this.commonService.isOnline;
 
 	constructor(
