@@ -12,10 +12,10 @@
 				<ul>
 					<li *ngFor="let option of options; index as i"
 						[ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }" vtrMetrics
-						[metricsItem]="option.id" metricsEvent="featureClick" metricsParam="{{option.id}}"
+						[metricsItem]="option.metricitem" metricsEvent="featureClick" metricsParam="{{option.metricitem}}"
 						metricsValue="{{option.value}}" (click)="optionSelected(option)"
 						(keydown.enter)="optionSelected(option)" (mouseenter)="changeDescription(option)"
-						(mouseleave)="resetDescription(option)" (focusout)="itemsFocused()" 
+						(mouseleave)="resetDescription(option)" (focusout)="itemsFocused()"
 						tabindex="1" role="option" id="{{option.id}}"
 						(keydown)="keydownFn($event,i)"
 						[attr.aria-selected]="selectedOption && option.name === selectedOption.name?'true':'false'">

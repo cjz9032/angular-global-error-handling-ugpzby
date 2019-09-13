@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { HardwareScanService } from '../../services/hardware-scan/hardware-scan.service';
 
 
 @Component({
@@ -30,11 +31,18 @@ export class UiListScheduledScanComponent implements OnInit {
 	// private tooltip: NgbTooltip;
 
 	constructor(
-		public modalService: NgbModal, private deviceService: DeviceService
+		public modalService: NgbModal, 
+		private deviceService: DeviceService,
+		private hardwareScanService: HardwareScanService
 	) {}
 
 
 	ngOnInit() {
+	}
+
+	public disable() {
+		const isExecuting = !this.hardwareScanService.isScanDoneExecuting() && (this.hardwareScanService.isScanExecuting() || this.hardwareScanService.isRecoverExecuting());
+		return isExecuting;
 	}
 
 	public onEdit() {

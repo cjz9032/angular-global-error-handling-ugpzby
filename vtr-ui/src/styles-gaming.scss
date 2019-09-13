@@ -909,6 +909,23 @@
 		clear: both;
 		margin-top: 2.2rem;
 	}
+	// //added by Ram
+	.feature-note {
+		background-color: $gaming-Darkslate-blue!important;
+		border: none!important;
+		border-radius:$border_radius;
+		p {
+			font-size: 1.5rem;
+			color: $alt!important;
+		}
+	}
+	.permission-note {
+		border-radius:$border_radius;
+		p {
+			font-size: 1.5rem;
+			color: $alt!important;
+		}
+	}
 }
 
 .gaming-help-modal {
@@ -937,20 +954,4 @@ button:focus,
 *:focus {
 	outline: 0;
 }
-// //added by Ram
-// .feature-note {
-// 	background-color: $gaming-Darkslate-blue!important;
-// 	border: none!important;
-// 	border-radius:$border_radius;
-// 	p {
-// 		font-size: 1.5rem;
-// 		color: $alt!important;
-// 	}
-// }
-// .permission-note {
-// 	border-radius:$border_radius;
-// 	p {
-// 		font-size: 1.5rem;
-// 		color: $alt!important;
-// 	}
-// }
+
