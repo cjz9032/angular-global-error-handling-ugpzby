@@ -31,11 +31,11 @@
 														<div class="row">
 															<div class="col-sm-12">
 																<vtr-ui-switch-onoff [value]="toggleStatus"
-																	(toggle)="setNetworkBoostStatus($event)">
+																	(toggle)="setNetworkBoostStatus($event)" [ariaLabel]="'Network boost'">
 																</vtr-ui-switch-onoff>
 																<p class="intro-text">
 																	{{'gaming.networkBoost.introLine' | translate}}</p>
-																<vtr-widget-networkboost [changeNum]="changeListNum"
+																<vtr-widget-networkboost [modalStatus]="(showTurnOnModal || showAppsModal)" [changeNum]="changeListNum"
 																	(actionModal)="openTargetModal()"
 																	(addedApps)="appsCount = $event">
 																</vtr-widget-networkboost>
