@@ -14,7 +14,7 @@ export const VIDEO_POPUP_ID = 'videoPopupId';
 })
 export class VideoWidgetComponent implements OnInit, OnDestroy {
 	videoPopupId = VIDEO_POPUP_ID;
-	isOnline = this.commonService.isOnline || true;
+	isOnline = this.commonService.isOnline;
 
 	@Input() margin: 'top' | 'bottom' = 'top';
 
