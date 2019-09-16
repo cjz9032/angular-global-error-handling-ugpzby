@@ -10,8 +10,8 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 export class ModalAddAppsComponent implements OnInit {
 	statusAskAgain: boolean;
 	@Input() showAppsModal: boolean;
-	@Output() closeAddAppsModal = new EventEmitter<boolean>();
-	@Output() addAppToList = new EventEmitter<boolean>();
+	@Output() closeAddAppsModal = new EventEmitter<any>();
+	@Output() addAppToList = new EventEmitter<any>();
 	public loading = true;
 	public loadingNoApps = false;
 	runningList: any = [];
@@ -41,8 +41,8 @@ export class ModalAddAppsComponent implements OnInit {
 
 	addAppData(event: any, i) {
 		this.isChecked[i] = !this.isChecked[i];
-		this.statusitem = event.target.checked;
-		this.addAppToList.emit(event);
+		this.statusitem = this.isChecked[i];
+		this.addAppToList.emit({ checked: this.isChecked[i], app: event.target.value });
 	}
 
 	closeModal(action: boolean) {
