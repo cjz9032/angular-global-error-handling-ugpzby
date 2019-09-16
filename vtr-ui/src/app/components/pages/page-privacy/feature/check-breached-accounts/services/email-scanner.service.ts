@@ -51,7 +51,7 @@ export enum ErrorNames {
 	providedIn: 'root'
 })
 export class EmailScannerService {
-	private _userEmail$ = new BehaviorSubject<string>(this.safeStorageService.getEmail() || '');
+	private _userEmail$ = new BehaviorSubject<string>(this.getUserEmail());
 	userEmail$ = this._userEmail$.asObservable();
 
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
@@ -70,6 +70,12 @@ export class EmailScannerService {
 		private safeStorageService: SafeStorageService,
 		@Inject(PRIVACY_ENVIRONMENT) private environment
 	) {
+	}
+
+	private getUserEmail() {
+		const emailFromSafeStorage = this.safeStorageService.getEmail() || '';
+		const hashFromLocalStorage = this.storageService.getItem(USER_EMAIL_HASH);
+		return getSha1Hash(emailFromSafeStorage) === hashFromLocalStorage ? emailFromSafeStorage : '';
 	}
 
 	setUserEmail(userEmail) {
