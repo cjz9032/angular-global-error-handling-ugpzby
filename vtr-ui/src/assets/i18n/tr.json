@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Virüsten Koruma",
                 "back": "GERİ",
-                "recommends": "Lenovo, <b>McAfee<b>'nin tüm cihazlarınızı korumasını önerir",
+                "recommends": "Lenovo tüm cihazlarınızı korumak için neden <b>McAfee</b>'yi öneriyor",
                 "award": "Ödüllü virüsten koruma yazılımı",
                 "mcafeePremium": "McAfee LiveSafe Koruma",
                 "protectedBy": "Şu anda {{protectedName}} tarafından korunmaktasınız. Ancak McAfee LiveSafe ile daha da iyi korunabilirsiniz.",
