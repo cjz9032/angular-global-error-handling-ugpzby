@@ -13,16 +13,16 @@
                         <div class="vtr-page-shift-up">
                             <div class="container-fluid">
 								<vtr-home-security-after-signup
-									*ngIf="homeSecurityMockService.state === 'register'"
+									*ngIf="account?.state !== 'local'"
 									[allDevices]="allDevicesInfo"
 									[account]="account"
 									[common]="common">
 								</vtr-home-security-after-signup>
 								<div class="pt-5"
-									*ngIf="homeSecurityMockService.state === 'register'">
+									*ngIf="account?.state !== 'local'">
 									<img class="w-100 img" src="../../../../assets/images/connected-home-security/card-gamestore.png" alt="" srcset="">
 								</div>
-								<vtr-home-security-content *ngIf="homeSecurityMockService.state === 'notRegister'"
+								<vtr-home-security-content *ngIf="account?.state === 'local'"
 									page="homeSecurity"
 									[location]="homeSecurityLocation"
 									[permission]="permission">
@@ -44,7 +44,7 @@
 														{{'security.homeprotection.securityhealth.title' | translate}}
 													</div>
 													<div class="description"
-														*ngIf="homeSecurityDevicePosture?.isLocationServiceOn">
+														*ngIf="homeSecurityLocation?.isLocationServiceOn">
 														<span
 															*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
 															<a vtrMetrics
@@ -66,7 +66,7 @@
 											<div class="row">
 												<div class="col">
 													<!--Start of Security Health Advisor When LWS is enabled-->
-													<div *ngIf="homeSecurityDevicePosture?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length === 0"
+													<div *ngIf="homeSecurityLocation?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length === 0"
 														class="loading">
 														<div class="spinner-border text-primary progress-spinner"
 															role="status"></div>
@@ -76,13 +76,13 @@
 														metricsEvent="featureClick"
 														[chevronVisibility]='false'
 														[clickable]="false"
-														*ngIf="homeSecurityDevicePosture?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length > 0">
+														*ngIf="homeSecurityLocation?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length > 0">
 													</vtr-ui-list-chevron>
 													<!--end of Security Health Advisor When LWS is enabled-->
 
 													<!--Start of Security Health Advisor When LWS is disabled-->
 													<div class="security-health-disabled"
-														*ngIf="!homeSecurityDevicePosture?.isLocationServiceOn">
+														*ngIf="!homeSecurityLocation?.isLocationServiceOn">
 														<div class="security-health-disabled-list">
 															<div class="peace-of-mind">
 																{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
@@ -121,13 +121,6 @@
 									</vtr-container-card>
 								</div>
 							</div>
-							<vtr-ui-button
-								metricsEvent="featureClick"
-								metricsItem="startTrial"
-								[title]="'switch'"
-								[label]="'switch'"
-								(onClick)="switchState()">
-							</vtr-ui-button>
                         </div>
                     </div>
                 </div>

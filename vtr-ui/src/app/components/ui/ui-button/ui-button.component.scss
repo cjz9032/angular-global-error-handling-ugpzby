@@ -5,10 +5,15 @@
 
 	.button-box {
 		padding: 0.5rem;
+		position: relative;
 		@media #{$mediaquery_7} {
 			margin-top: 1.2rem;
 		}
-
+		.loadingIcon {
+			position: absolute;
+			left: 45%;
+			top: 40%;
+		}
 		.button {
 			@media #{$mediaquery_X4} {
 				min-width: 10rem;
@@ -44,6 +49,10 @@
 			background: $button_disable;
 		}
 
+		.loading {
+			opacity: 0.6;
+		}
+
 		.fullWidth {
 			width: 100%;
 		}
@@ -70,11 +79,6 @@
 			&:focus {
 				box-shadow: 0 0 0 0.2rem $button_red_shadow;
 			}
-		}
-		.btn-red {
-			background: $light;
-			color: $danger_dark;
-			border: 0.1rem solid $danger_dark;
 		}
 	}
 }

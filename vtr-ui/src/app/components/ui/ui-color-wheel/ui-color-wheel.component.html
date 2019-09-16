@@ -1,24 +1,27 @@
 <div class="vtr-ui-color-wheel picker-container">
-	<div class="overlay" *ngIf="showOverlay" id="lighting_selecting_color_effect_msg" attr.aria-label="lighting_selecting_color_effect_msg">
-		<div  *ngIf="defaultLang !== 'ar'">
-				{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
+	<div class="overlay" *ngIf="showOverlay" id="lighting_selecting_color_effect_msg"
+		attr.aria-label="lighting_selecting_color_effect_msg">
+		<div *ngIf="defaultLang !== 'ar'">
+			{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
 		</div>
-		<div *ngIf="defaultLang === 'ar'" 	dir="rtl">
-				{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
+		<div *ngIf="defaultLang === 'ar'" dir="rtl">
+			{{'gaming.dashboard.device.legionEdge.lightingColorMessage.text' | translate}}
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="d-flex rgb-header">
 			<h3 class="content-title">{{'gaming.lightingProfile.colourwheel.text7.title' | translate}}</h3>
-			<button vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick" class="btn enable-button"
-				[ngClass]="{'disable-button': btnStatus !== 'apply'}" [disabled]="btnStatus !== 'apply'"
-				(click)="onApplyColorEffect(backColor)" id="lighting_color_apply" attr.aria-label="lighting_color_apply">
-				<span *ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
-				<span *ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
+			<button vtrMetrics [metricsItem]="'lighting_color_apply'" metricsEvent="featureClick"
+				class="btn enable-button" [ngClass]="{'disable-button': btnStatus !== 'apply'}"
+				(click)="onApplyColorEffect(backColor)" id="lighting_color_apply"
+				[attr.aria-label]="'Color settings '+btnStatus" [tabindex]="showOverlay?'-1':'0'">
+				<span
+					*ngIf="btnStatus === 'apply'">{{'gaming.lightingProfile.colourwheel.text2.title' | translate}}</span>
+				<span
+					*ngIf="btnStatus === 'applied'">{{'gaming.lightingProfile.colourwheel.text3.title' | translate}}</span>
 				<span *ngIf="btnStatus === 'loading'">
-					<fa-icon [icon]="['fal', 'circle-notch']"
-					 [spin]="true"></fa-icon>
+					<fa-icon [icon]="['fal', 'circle-notch']" [spin]="true"></fa-icon>
 				</span>
 				<!-- <vtr-spinner *ngIf="btnStatus === 'loading'"></vtr-spinner> -->
 			</button>
@@ -34,23 +37,28 @@
 				<div class="color-codes">
 					<div class="form-group d-flex justify-content-end">
 
-						<input id="rgb-rgb" type="text" min="0" max="255" class="input-color"
+						<input id="rgb-rgb" type="text" tabindex="-1" disabled class="input-color"
 							[ngStyle]="{'background-color':  backColor }" readonly>
 					</div>
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text4.title' | translate}} </label>
-						<input id="rgb-r" attr.aria-label="rgb-r" type="number" maxlength="3" min="0" max="255" class="input-color"
-							[(ngModel)]="color[0]" (ngModelChange)='rgbChanged()' (keypress)="validateInput($event)">
+						<input id="rgb-r" role="textbox" [attr.aria-label]="'rgb red value'" type="number" maxlength="3"
+							min="0" max="255" class="input-color" [(ngModel)]="color[0]" (ngModelChange)='rgbChanged()'
+							(keypress)="validateInput($event)" [tabindex]="showOverlay?'-1':'0'">
 					</div>
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text5.title' | translate}} </label>
-						<input id="rgb-g" attr.aria-label="rgb-g" type="number" maxlength="3" min="0" max="255" class="input-color"
-							[(ngModel)]="color[1]" (ngModelChange)='rgbChanged()'  (keypress)="validateInput($event)">
+						<input id="rgb-g" role="textbox" [attr.aria-label]="'rgb green value'" type="number"
+							maxlength="3" min="0" max="255" class="input-color" [(ngModel)]="color[1]"
+							(ngModelChange)='rgbChanged()' (keypress)="validateInput($event)"
+							[tabindex]="showOverlay?'-1':'0'">
 					</div>
 					<div class="form-group d-flex justify-content-end">
 						<label>{{'gaming.lightingProfile.colourwheel.text6.title' | translate}} </label>
-						<input id="rgb-b" attr.aria-label="rgb-b" type="number" maxlength="3" min="0" max="255" class="input-color"
-							[(ngModel)]="color[2]" (ngModelChange)='rgbChanged()'  (keypress)="validateInput($event)">
+						<input id="rgb-b" role="textbox" [attr.aria-label]="'rgb blue value'" type="number"
+							maxlength="3" min="0" max="255" class="input-color" [(ngModel)]="color[2]"
+							(ngModelChange)='rgbChanged()' (keypress)="validateInput($event)"
+							[tabindex]="showOverlay?'-1':'0'">
 					</div>
 				</div>
 			</div>

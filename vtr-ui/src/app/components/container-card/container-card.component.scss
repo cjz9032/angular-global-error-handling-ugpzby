@@ -296,7 +296,6 @@
 					display: flex;
 					justify-content: flex-end;
 					align-items: center;
-					
 					.title {
 						color: $light;
 						max-width: 60%;
@@ -348,12 +347,10 @@
 			}
 
 			.content {
-				padding: 3rem 4rem;
-				height: 40%;
 				cursor: pointer;
-				@media #{$mediaquery_10} {
-					padding: 1.5rem 2rem;
-				}
+				width: 100%;
+				padding: 28 / 430 * 100% 40 / 430 * 100% 0;
+				height: 40%;
 
 				.title {
 					font-weight: $weight_light;
@@ -371,9 +368,9 @@
 
 				.read-more {
 					// position: absolute;
-					margin-top: 2rem;
+					// margin-top: 2rem;
 					// left: 4rem;
-					font-size: 1.3rem;
+					font-size: 1.4rem;
 					cursor: pointer;
 					text-transform: uppercase;
 
@@ -408,6 +405,7 @@
 			background-repeat: no-repeat;
 			a{
 				text-decoration: none;
+				width: 100%;
 			}
 		}
 

@@ -150,8 +150,6 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			activeStartEnd = this.smartStandbyStartTime + '-' + event;
 		}
 		this.smartStandby.activeStartEnd = activeStartEnd;
-		this.cache.activeStartEnd = activeStartEnd;
-		this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 		this.splitStartEndTime();
 		if (!this.showDiffNote) {
 			try {
@@ -162,6 +160,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							console.log('setSmartStandbyStartEndTime.then', value);
 							if (value === 0) {
 								console.log('smartStandbyStartEndTime is set successfully');
+								this.cache.activeStartEnd = activeStartEnd;
+								this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 							}
 						})
 						.catch(error => {
@@ -189,6 +189,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						console.log('setSmartStandbyDaysOfWeekOff.then', value);
 						if (value === 0) {
 							console.log('smartStandbyDaysOfWeekOff is set successfully');
+							this.cache.daysOfWeekOff = daysOfWeekOff;
+							this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 						}
 					})
 					.catch(error => {

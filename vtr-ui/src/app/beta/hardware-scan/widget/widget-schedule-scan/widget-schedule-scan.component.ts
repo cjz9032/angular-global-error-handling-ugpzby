@@ -281,7 +281,8 @@ export class WidgetScheduleScanComponent implements OnInit {
 								const dateSchedule = dateSplit[2] + '-' + dateSplit[0] + '-' + dateSplit[1];
 								const timeSchedule = this.formatTime(scheduleScanRequest.scheduleTime);
 								const desc = this.translate.instant('hardwareScan.scheduledScan.information') + ' ' + dateSchedule + ' ' + timeSchedule;
-								this.OnCollisionModal('', desc);
+								const title = this.translate.instant('hardwareScan.scheduledScan.name');
+								this.OnCollisionModal(title, desc);
 							});
 						}
 					});
@@ -310,7 +311,11 @@ export class WidgetScheduleScanComponent implements OnInit {
 			const temp = '0' + (parseInt(hours, 10) - 12);
 			hours = temp.substring(temp.length - 2, temp.length);
 		} else {
-			ampm = this.translate.instant('hardwareScan.am');
+			if(parseInt(hours,10) === 12){
+				ampm = this.translate.instant('hardwareScan.pm');
+			}else{
+				ampm = this.translate.instant('hardwareScan.am');
+			}	
 		}
 
 		return hours + ':' + minute + ' ' + ampm;

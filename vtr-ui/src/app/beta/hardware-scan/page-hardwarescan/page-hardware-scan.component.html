@@ -24,12 +24,13 @@
 				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row">
+							<!-- Schedule Scan feature will be implemented and fixed on Release 3.2 -->
+							<!-- <div class="row">
 								<div class="col col-12 cont mb-40" *ngIf="((isLoadingDone() || isScanDoneExecuting()) && !isRecoverInProgress() && !isRecoverExecuting()) && !getIsViewingRecoverLog()">
 									<vtr-widget-schedule-scan>
 									</vtr-widget-schedule-scan>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="row">
 								<div class="col col-12 mb-40">
@@ -48,8 +49,7 @@
 								</div>
 							</div>
 
-							<!-- Recover is hidden because CLI is under approval on SSRB - SR-2087 -->
-							<!-- <div class="row">
+							<div class="row">
 								<div class="col col-12 cont mb-40"
 									*ngIf="(hasDevicesToRecoverBadSectors() && !isRecoverInProgress() && isLoadingDone()) && !getIsViewingRecoverLog()">
 									<vtr-widget-recover-bad-sectors

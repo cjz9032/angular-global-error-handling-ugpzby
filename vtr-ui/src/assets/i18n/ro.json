@@ -44,8 +44,8 @@
                     "driverPopup": {
                         "headerText": "Instalarea driverului este obligatorie",
                         "text": "Instalați driverul pentru a activa suprasolicitarea RAM (este necesară repornirea)",
-                        "button": "Instalare",
-                        "link": "anulare",
+                        "button": "INSTALARE",
+                        "link": "ANULARE",
                         "networkBoostText": "Trebuie să instalați driverul pentru stimularea rețelei, pentru ca aceasta să fie mai eficientă",
                         "hybridModeText": "Trebuie să instalați driverul pentru modul hibrid, pentru ca acesta să fie mai eficient",
                         "cpuOverclockText": "Instalați driverul pentru a activa suprasolicitarea CPU (este necesară repornirea)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Instalarea driverului este obligatorie",
                         "text": "Instalați driverul pentru a activa funcția de iluminat (este necesară repornirea)",
-                        "button": "Instalare",
-                        "link": "anulare"
+                        "button": "INSTALARE",
+                        "link": "ANULARE"
                     },
                     "lightingColorMessage": {
                         "text": "Selectarea culorii nu este disponibilă pentru acest efect."
@@ -93,7 +93,7 @@
                     "systenTooltip": "Plasați cursorul pe CPU/GPU/RAM și pe alte drivere pentru a afișa descrierile acestora, inclusiv informațiile de fabricare și modelul"
                 },
                 "systemStatus": {
-                    "info": "INFORMAȚII"
+                    "info": "INFORMAŢII"
                 },
                 "quickSettingstitle": {
                     "title": "Setări rapide"
@@ -136,18 +136,18 @@
                     "line3": "opriți înregistrarea după ce terminați de scris"
                 },
                 "buttons": {
-                    "start": "PORNIȚI ÎNRREGISTRAREA",
-                    "stop": "OPRIȚI ÎNREGISTRAREA",
+                    "start": "PORNIRE ÎNREGISTRARE",
+                    "stop": "OPRIRE ÎNREGISTRARE",
                     "numberPrefix": "NUM"
                 },
                 "recording": {
-                    "title": "ÎNCEPEȚI SĂ SCRIEȚI",
+                    "title": "ÎNCEPEŢI SĂ SCRIEŢI",
                     "description": "Pot fi înregistrare 20 de intrări în 20 de secunde."
                 },
                 "recorded": {
                     "title": "TASTĂ MACRO PENTRU ",
                     "deleteKey": "Ștergeți",
-                    "clear": "Ştergere",
+                    "clear": "ŞTERGERE",
                     "intervalStatus": {
                         "keep": {
                             "title": "Păstrați întârzierea",
@@ -228,8 +228,8 @@
                     "body": "Înregistrarea va expira dacă au trecut mai mult de 10 secunde de la ultima intrare."
                 },
                 "confirmButton": {
-                    "btnClear": "Ştergere",
-                    "btnCancel": "Anulare"
+                    "btnClear": "ŞTERGERE",
+                    "btnCancel": "ANULARE"
                 },
                 "btnOk": "OK"
             },
@@ -403,9 +403,9 @@
             "modalAddApps": {
                 "title": "Adăugați aplicații la stimularea rețelei",
                 "body": {
-                    "part1": "You can add up to 5 additional apps to boost",
-                    "part2": "of",
-                    "part3": "added"
+                    "part1": "Adăugaţi max. 5 aplicaţii pentru stimulare",
+                    "part2": "din",
+                    "part3": "adăugat(e)"
                 }
             }
         }
@@ -635,7 +635,6 @@
         "deviceSettings": {
             "helpful": "Conținut util",
             "batteryGauge": {
-                "title": "INDICATOR BATERIE",
                 "subtitle": "Funcţionare baterie",
                 "hours": "ore",
                 "hour": "oră",
@@ -709,8 +708,6 @@
                     "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit."
                 },
-                "updating": "Actualizare",
-                "voltageError": "Tensiunea bateriei este incorectă",
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
                 "seeDetailsLink": "Vedeți detaliile"
@@ -788,7 +785,8 @@
                             "battery&Quite": "MODUL BATERIE ȘI SILENȚIOS"
                         }
                     },
-                    "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows"
+                    "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
+                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios."
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -802,11 +800,11 @@
                         "description": "Activați această caracteristica pentru a îmbunătăți timpul de reluare dacă deschideți și închideți frecvent capacul calculatorului.",
                         "tooltip": "Această caracteristică va îmbunătăţi timpul de reluare dacă deschideţi şi închideţi frecvent capacul calculatorului. Când este activată, calculatorul va trece în modul de alimentare redusă când închideţi capacul, dar va reveni imediat dacă redeschideţi capacul în decurs de 15 minute după ce l-aţi închis. Această caracteristică permite, de asemenea, notebookului să încerce să termine activităţile în aşteptare (cum ar fi, trimiterea e-mailului sau descărcarea unui fişier) înainte ca sistemul să se oprească."
                     },
-					"flipToBoot": {
-						"title": "Rotiţi pentru a porni",
-						"description": "Această caracteristică vă permite să porniţi computerul când deschideţi capacul acestuia, la fel ca atunci când apăsaţi butonul de alimentare. ",
-						"tooltip": "Această caracteristică porneşte automat computerul prin deschiderea capacului.  Este deosebit de utilă dacă aţi configurat informaţiile de conectare facială în Windows Hello."
-					},
+                    "flipToBoot": {
+                        "title": "Rotiţi pentru a porni",
+                        "description": "Această caracteristică vă permite să porniţi computerul când deschideţi capacul acestuia, la fel ca atunci când apăsaţi butonul de alimentare. ",
+                        "tooltip": "Această caracteristică porneşte automat computerul prin deschiderea capacului.  Este deosebit de utilă dacă aţi configurat informaţiile de conectare facială în Windows Hello."
+                    },
                     "or": "Sau"
                 },
                 "otherSettings": {
@@ -1120,35 +1118,35 @@
                         "image": ""
                     },
                     "topRowFunctions": {
-                        "title": "Keyboard top-row function",
-                        "showAdvSettings": "SHOW ADVANCED SETTINGS",
-                        "hideAdvSettings": "HIDE ADVANCED SETTINGS",
-                        "description": "The top row of the keyboard provides the following two functions. Select the one you want:",
+                        "title": "Funcția rândului de sus a tastaturii",
+                        "showAdvSettings": "AFIȘAȚI SETĂRILE AVANSATE",
+                        "hideAdvSettings": "ASCUNDEȚI SETĂRILE AVANSATE",
+                        "description": "Rândul de sus al tastaturii oferă următoarele două funcții. Selectați-o pe cea dorită:",
                         "subSection": {
-                            "description": "To switch the above two functions, press Fn+Esc.",
+                            "description": "Pentru a comuta între cele două funcții menționate mai sus, apăsați pe Fn+Esc.",
                             "radioButton": {
-                                "sFunKey": "SPECIAL FUNCTION",
-                                "fnKey": "F1-F12 FUNCTION"
+                                "sFunKey": "FUNCȚIE SPECIALĂ",
+                                "fnKey": "FUNCȚIE F1-F12"
                             }
                         },
                         "subSectionTwo": {
-                            "title": "Reversing the default primary function",
-                            "description": "When on, the default primary function will be changed from the factory settings to the opposite. Restart your computer to make the changes take effect."
+                            "title": "Inversarea funcției primare implicite",
+                            "description": "Când este activată, funcția primară implicită va fi modificată de la setările din fabrică la funcționalitatea opusă. Pentru ca modificările să aibă efect, trebuie să reporniți computerul."
                         },
                         "subSectionThree": {
-                            "title": "How to use Fn key combinations",
-                            "description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+                            "title": "Utilizarea combinaţiilor tastei Fn",
+                            "description": "Folosind Metoda normală, pentru a utiliza combinațiile de taste Fn, trebuie să apăsați Fn+tastele funcționale. Cu Metoda tastei adezive Fn, puteți să apăsați scurt tasta Fn (în loc să o apăsați continuu) pentru a o menține în starea apăsată. Apoi, apăsați tasta funcțională dorită. Acţiunea este echivalentă cu apăsarea simultană a tastei Fn și a tastei funcționale.",
                             "radioButton": {
-                                "nMehod": "Normal method",
-                                "fnKeyMehod": "Fn Sticky Key method"
+                                "nMehod": "Metoda normală",
+                                "fnKeyMehod": "Metoda tastei adezive Fn"
                             },
-                            "note": "When you press the Fn key twice, the Fn key is locked in the pressed condition until you press it again. When the Fn key is locked, the Fn Lock indicator is turned on. You can press the desired function key directly to initiate the non-default function."
+                            "note": "Dacă apăsați tasta Fn de două ori, tasta Fn este păstrată în starea apăsată până când apăsați tasta Fn din nou. Când tasta Fn este blocată, indicatorul Fn Lock este aprins. Puteți apăsa direct pe tasta funcțională dorită pentru a iniția funcția care nu este implicită."
                         },
                         "popup": {
-                            "title": "Restart computer",
-                            "description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
-                            "reboot": "REBOOT",
-                            "cancel": "NOT NOW"
+                            "title": "Reporniţi computerul",
+                            "description": "Pentru ca schimbarea funcției implicite a rândului de sus să aibă efect, computerul trebuie repornit. Sigur reporniți?",
+                            "reboot": "REPORNIȚI",
+                            "cancel": "NU ACUM"
                         }
                     }
                 },
@@ -1180,9 +1178,10 @@
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "more": "MAI MULTE",
+                    "control1": "ELEMENTE DE CONTROL TOUCHPAD",
+                    "control2": "ELEMENTE DE CONTROL MOUSE",
+                    "control3": "ELEMENTE DE CONTROL TRACKPOINT"
                 }
             }
         },
@@ -1251,7 +1250,7 @@
                     "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
                     "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
                     "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată.",
-                    "description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+                    "description6": "4. Dacă Modul avion este activat pe computer, aceste caracteristici sunt dezactivate."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
@@ -1525,7 +1524,23 @@
             "trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
             "upgrade": "upgrade",
             "freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
-            "startTrial": "Începeți perioada de probă"
+            "startTrial": "Începeți perioada de probă",
+            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+            "overviewTitle": "Overview of your Connected Home Security",
+            "extendNow": "extend now"
         },
         "tour": {
             "back": "Înapoi",
@@ -1565,6 +1580,19 @@
             "upgradedDetail2": "Ecosistemul dispozitivului este protejat momentan.",
             "localAccountDetail2": "Dați clic pe butonul de mai jos pentru a începe perioada de probă gratuită de 30 de zile.",
             "alreadyHaveAccount": "Aveți deja un cod de activare?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join Connected Home Security of your family",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTile": "You are about to launch the Connected Home Security web console...",
+            "goNow": "Go now",
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
         }
     },
     "support": {
@@ -1656,53 +1684,73 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ÎNAPOI",
-                "why": "De ce McAfee?",
-                "recommends": "Lenovo recomandă McAfee pentru a vă proteja toate dispozitivele cu:",
-                "award": "protecția premiată de la cele mai recente amenințări online, inclusiv ransomware și malware",
-                "dedicated": "Securitate dedicată care depășește în mod constant performanța Defender-ului și a altor furnizori principali de programe antivirus",
-                "deviceToCloud": "Tehnologie „de la dispozitiv la cloud”, care nu vă va încetini PC-ul",
-                "poweredBy": "Dezvoltat de McAfee",
-                "privacyTerms": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
-                "mcafeePremium": "Protecție premium de la McAfee",
+                "recommends": "Lenovo recomandă <b>McAfee<b> pentru a vă proteja toate dispozitivele",
+                "award": "Antivirus premiat",
+                "mcafeePremium": "Protecție McAfee LiveSafe",
                 "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",
                 "virusScan": "SCANARE VIRUȘI",
                 "firewall": "PARAVAN DE PROTECȚIE",
                 "disabled": "DEZACTIVAT",
-                "enableVirusScan": "ACTIVARE SCANARE VIRUȘI",
-                "enablenFirewall": "ACTIVARE PARAVAN DE PROTECȚIE",
-                "enableFirewall": "ACTIVARE PARAVAN DE PROTECȚIE"
+                "awardText": "Apărați-vă noul PC Lenovo cu o protecție dovedită, testată împotriva amenințărilor online",
+                "performance": "Performanțe ultrarobuste",
+                "performanceText": "Antivirus consecvent, precis și fiabil pe care vă puteți baza ca să fiți în siguranță",
+                "Blazing": "Viteză ultrarapidă",
+                "BlazingText": "Antivirus optimizat care nu va încetini sau întrerupe experiența dvs. Lenovo Vantage",
+                "privacyTerms": "/   <tag>Politica de confidențialitate</tag>  |  <tag>Termeni de utilizare a serviciului</tag>",
+                "notAvailable": "NOT AVAILABLE"
             },
             "windowsDefender": {
-                "optimallyProtected": "Nu este protejat în mod optim",
-                "subtitle": "La ora actuală, sunteți protejat de Windows Defender.Totuși, ați putea fi mai bine protejat cu McAfee LiveSafe. Aflaţi mai multe mai jos.",
-                "learnMore": "AFLAȚI MAI MULTE DESPRE McAfee",
-                "windowsProtected": "Protecție de bază Windows Defender",
-                "windowsSubtitle": "Windows Defender oferă protecție de bază pentru dispozitivul dvs."
+                "optimallyProtected": "Se pare că folosiți acum Windows Defender. Nu este o alegere rea, însă, pentru o securitate maximă împotriva ransomware, malware și a virușilor, am făcut echipă cu <b>McAfee</b> pentru a vă oferi securitate premiată ca să puteți <b>proteja ceea ce contează.</b>",
+                "windowsSubtitle": "Protecție de bază Windows Defender",
+                "topTip": "Sfaturi importante pentru securitatea online",
+                "topContent": "Aflați cum vă puteți apăra împotriva celor mai mari amenințări online din prezent",
+                "view": "VIZUALIZAȚI SFATURILE",
+                "buyNow": "Cumpărați acum",
+                "buy": "Cumpărați, descărcați și instalați protecția antivirus McAfee astăzi, pentru a profita de aceste funcții de securitate similare celor folosite în mediul bancar",
+                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
+                "virus": "Virus protection",
+                "homeNetwork": "Protecția rețelei de domiciliu",
+                "private": "Navigare anonimă, privată",
+                "everyDevice": "Protecție pe fiecare dispozitiv",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "La ora actuală, sunteți protejat de McAfee LiveSafe",
-                "valid": "Valabil până la",
-                "upgrade": "Faceți upgrade acum",
-                "launch": "LANSAȚI McAfee",
-                "getMacfee": "OBȚINEȚI McAfee",
-                "topBenefits": "Cele mai importante avantaje ale McAfee LiveSafe",
+                "title": "Antivirus",
+                "subtitle": "Sunteți protejat în prezent de McAfee LiveSafe – au mai rămas {{remainingDays}} zile! Abonați-vă acum pentru a prelungi protecția.",
+                "launch": "Lansare McAfee",
+                "getMacfee": "Obțineți McAfee",
+                "topBenefits": "De ce <b>Lenovo recomandă McAfee</b> pentru a vă proteja toate dispozitivele",
                 "awardTitle": "Antivirus premiat",
-                "awardSubtitle": "Blochează viruși, programe de tip malware, ransomware, spyware, programe nedorite și multe altele pe computerul dvs.",
-                "encryptedTitle": "Stocare criptată",
-                "encryptedSubtitle": "Păstraţi fişierele sensibile private stocându-le pe PC, cu criptare pe 128 de biţi.",
-                "identityTitle": "Protecție împotriva furtului de identitate",
-                "identitySubtitle": "Protejaţi-vă singur identitatea împotriva furtului şi fraudei.",
-                "supportTitle": "Asistenţă pentru clienţi gratuită",
-                "supportSubtitle": "Primiţi asistenţă prin telefon, prin chat sau online pe toată durata abonamentului.",
-                "antiTitle": "Anti-spam",
-                "antiSubtitle": "Blochează mesajele periculoase înainte de a ajunge în Inbox, eliminând e-mailurile care pot include linkuri riscante şi viruşi.",
-                "virusTitle": "Angajament de protecție împotriva virușilor",
-                "virusSubtitle": "Vă oferă siguranţa că, în cazul în care PC-ul este infectat de un virus, un expert McAfee va accesa de la distanţă computerul pentru a-l elimina.",
-                "parentalTitle": "Control parental",
-                "parentalSubtitle": "Blochează site-urile web şi rezultatele căutărilor pe care nu doriţi să le vadă copiii dumneavoastră. De asemenea, vă permite să setaţi limite pentru timpul petrecut online.",
-                "license": "Licență valabilă până la",
-                "trial": "Perioadă de încercare valabilă până la"
+                "awardSubtitle": "Împiedicați virușii, malware-ul și ransomware-ul să vă infecteze PC-ul.",
+                "supportTitle": "Asistență tehnică expert 24/7, gratuită ",
+                "supportSubtitle": "Beneficiați de asistență non-stop și de un plus de siguranță din partea echipei noastre dedicate de securitate",
+                "trialSubtitle": "Sunteți protejat în prezent de o versiune de încercare McAfee LiveSafe de 30 de zile – au mai rămas {{remainingDays}} zile! Abonați-vă acum pentru a prelungi protecția.",
+                "discount": "Garanție de returnare a banilor 100%",
+                "trialSubscribe": "Versiunea de încercare se încheie în {{remainingDays}} zile — ABONAȚI-VĂ ACUM",
+                "subscribe": "Abonamentul se încheie în {{remainingDays}} zile — ABONAȚI-VĂ ACUM",
+                "MultiTitle": "Protecție pe mai multe dispozitive",
+                "MultiSubtitle": "Protejați fiecare dispozitiv pe care îl dețineți – PC-uri, telefoane și tablete – perfect pentru familii ",
+                "networkTitle": "Protecția rețelei de domiciliu",
+                "networkSubtitle": "Securizați-vă paravanul de protecție și blocați hackerii care vor să vă acceseze rețeaua de domiciliu",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Păstrați și gestionați în siguranță toate parolele într-un singur loc",
+                "onlineTitle": "Confidențialitate online",
+                "onlineSubtitle": "Conectați-vă cu criptare de clasă bancară pentru a vă securiza toate activitățile online, chiar și în rețele deschise sau Wi-Fi publice ",
+                "register": "Înregistrare McAfee",
+                "virusScan": "Scanare viruşi",
+                "firewall": "Paravan de protecție personal",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Raportul dvs. de protecție împotriva amenințărilor ",
+                "trialContent": "Ați folosit cu succes versiunea de încercare a antivirusului McAfee. Însă au mai rămas {{remainingDays}} zile până când versiunea de încercare expiră, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.",
+                "subscribeContent": "Ați folosit cu succes McAfee. Însă au mai rămas {{remainingDays}} zile, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.",
+                "subscribeNow": "Abonați-vă acum",
+                "fileScan": "Fișiere scanate",
+                "Viruses": "Viruși eliminați",
+                "blocked": "Conexiuni nocive blocate",
+                "shredded": "Fișiere eliminate în sguranță",
+                "startFileScan": "Start files scan"
             },
             "others": {
                 "othersProtection": "vă oferă protecție de bază pentru dispozitivul dvs."
@@ -1758,7 +1806,8 @@
                 "describe": "Dispozitivele și rețelele nesigure pot introduce programe rău-intenționate, pot conduce la furtul de identitate și la scurgeri de date private și financiare. Activați această funcție pentru a reduce riscul de expunere a dispozitivului și rețelei dvs. la atacuri",
                 "subtitle": "Liniştea minţii",
                 "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați mai multe despre Securitate conectată, la domiciliu <tag>aici</tag>.",
-                "tryNow": "Încercați acum"
+                "tryNow": "Încercați acum",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Introduceți codul invitației",
@@ -1774,7 +1823,11 @@
                 "success": "Conectat cu succes",
                 "canUse": "Acum puteți începe să utilizați securitatea conectată, la domiciliu",
                 "tryAgain": "Parola este incorectă. Vă rugăm să încercați din nou!",
-                "activationCode": "COD DE ACTIVARE"
+                "activationCode": "COD DE ACTIVARE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!"
             },
             "securityhealth": {
                 "title": "Sănătatea securității",
@@ -1793,6 +1846,10 @@
                 "learnMoreAboutSecurityHealth": "Aflați mai multe despre fiecare dintre aceste componente <tag>aici</tag>.",
                 "peaceOfMind": "Vreți mai multă liniște sufletească?",
                 "button": "Activare securitate WiFi."
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1904,7 +1961,7 @@
         },
         "question1": {
             "title": "Copii de siguranță și restaurarea fișierelor",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div style='margin-bottom:7rem;'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span style='font-weight:bold'>Start</span>, selectați <span style='font-weight:bold'>Settings</span> > <span style='font-weight:bold'>Update & security</span> > <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\\\Users\\\\username). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span style='font-weight:bold;'>More options</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span style='font-weight:bold;'>Restore files</span> și apoi selectați <span class='font-weight:bold'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span style='font-weight:bold'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span style='font-weight:bold'>Restore</span>, selectați <span style='font-weight:bold'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Copii de siguranță și restaurarea fișierelor    </div>    <hr />    <div class='faqInMb7'>        Întotdeauna este bine să aveți o copie de siguranță. Păstrați copiile fișierelor pe o altă unitate, în cazul în care se întâmplă ceva cu cele originale.    </div>    <div class='faqInFs3Fb'>        Configurați-vă copiile de siguranță    </div>    <hr />    <div class='mb-5'>        Selectați butonul <span class='faqInFb'>Start</span>, selectați <span class='faqInFb'>Settings</span> > <span class='faqInFb'>Update & security</span> > <span class='faqInFb'>Backup</span> > <span class='faqInFb'>Add a drive</span> și apoi alegeți o unitate externă sau o locație din rețea pentru copiile de siguranță.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Totul este gata. Vom face copii de siguranță, la interval de o oră, pentru toate fișierele din folderul utilizatorului (C:\\\\Users\\\\username). Pentru a alege pentru ce fișiere sau la ce interval de timp se fac copiile de siguranță, accesați <span class='faqInFb'>More options</span>.    </div>    <div class='faqInFs3Fb'>        Restaurați-vă fișierele    </div>    <div class='mb-5'>        Dacă vă lipsește un fișier sau folder important, iată ce puteți face pentru a-l recupera:    </div>    <div>        <div class='mb-3'>1. În caseta de căutare din bara de activități, introduceți <span class='faqInFb'>Restore files</span> și apoi selectați <span class='faqInFb'> Restore your files with File History</span>.</div>        <div class='mb-3'>2. Căutați fișierul, apoi folosiți săgețile pentru a vedea toate versiunile acestuia</div>        <div class='mb-3'>3. Când găsiți versiunea pe care o doriți, selectați <span class='faqInFb'>Restore</span> pentru a o salva în locația originală. Pentru a o salva în altă locație țineți apăsat (sau dați clic dreapta pe) <span class='faqInFb'>Restore</span>, selectați <span class='faqInFb'>Restore to</span> și apoi alegeți o nouă locație.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1945,7 +2002,7 @@
         },
         "question2": {
             "title": "Cum să reîmprospătați PC-ul",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Cum să reîmprospătați PC-ul    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Simptom    </div>    <div style='padding:5px 0;'>        În cazul în care computerul dvs. nu mai funcționează la fel de bine și nu știți motivul, puteți să îl reîmprospătați fără să ștergeți fișiere personale sau să modificați setările. Windows vă poate „reîmprospăta” computerul, la fel ca după o instalare proaspătă, fără să șteargă fișierele personale.    </div>    <div style='padding:5px 0;'>        Iată ce se va întâmpla dacă vă reîmprospătați computerul: fișierele și setările personalizate nu se vor modifica    </div>    <div style='padding:5px 0;'>        <ul>            <li>Setările computerului vor reveni la valorile implicite</li>            <li>Aplicațiile din Windows Store vor fi păstrate</li>            <li>Aplicațiile pe care le-ați instalat de pe disc sau de pe un site web vor fi eliminate</li>            <li>Va fi salvată o listă cu fișierele eliminate pe desktop</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Mărci afectate    </div>    <div>        <ul>            <li>Toate desktopurile și laptopurile</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Sistem de operare    </div>    <div>        <ul>            <li>Windows 8, 8.1 și 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Soluție    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Atingeți sau dați clic pe <span style='font-weight:bold;'> Settings </span>                    </li>                    <li style='padding:5px 0;'>                        Atingeți sau dați clic pe <span style='font-weight:bold;'> Update and recovery</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Atingeți sau dați clic pe <span style='font-weight:bold;'> Recovery</span></div>                        <div style='padding:5px 0'>Sub Refresh your PC without affecting your files, atingeți sau dați clic pe <span style='font-weight:bold;'> Get started.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Dați clic pe <span style='font-weight:bold;'> „Next”</span>.                    </li>                    <li style='padding:5px 0;'>                        Dați clic pe <span style='font-weight:bold;'> „Refresh” </span>pentru a începe procesul de reîmprospătare.                    </li>                    <li style='padding:5px 0;'>                        După ce procesul de reîmprospătare s-a încheiat, puteți găsi o listă de aplicații eliminate pe desktop                    </li>                    <li style='padding:5px 0;'>                        Puteți găsi aplicațiile eliminate în timpul reîmprospătării sistemului                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Căutați <span style='font-weight:bold;'> refresh </span>în instrumentul de căutare disponibil în meniul Start,</li>                    <li style='padding:5px 0;'>                        <div>Dați clic pe <span style='font-weight:bold;'> „Refresh your PC without affecting your files”</span> din rezultatele căutării, după cum se arată mai jos.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Dați clic pe butonul <span style='font-weight:bold;'> Get started </span> de sub titlul<span style='font-weight:bold;'> „Refresh your PC without affecting your files”</span> pentru a începe reîmprospătarea PC-ului Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Informaţii suplimentare    </div>    <div>        În majoritatea cazurilor, după ce începeți reîmprospătarea PC-ului, aceasta se va încheia de la sine. Totuși, dacă Windows are nevoie de fișiere lipsă, vi se va solicita să introduceți un Recovery Media, care este în general un disc DVD sau o unitate USB. În acest caz, ceea ce veți avea nevoie depinde de PC-ul dvs.    </div>    <div style='padding:10px 0'>        Dacă ați făcut upgrade la Windows 8.1 sau Windows RT 8.1 folosind un DVD, utilizați acel disc. Dacă nu aveți o unitate Windows 8.1 sau Windows RT 8.1, contactați Asistența Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Cum să reîmprospătați PC-ul    </div>    <hr>    <div class='faqInFs25FbP5'>        Simptom    </div>    <div class='faqInP5'>        În cazul în care computerul dvs. nu mai funcționează la fel de bine și nu știți motivul, puteți să îl reîmprospătați fără să ștergeți fișiere personale sau să modificați setările. Windows vă poate „reîmprospăta” computerul, la fel ca după o instalare proaspătă, fără să șteargă fișierele personale.    </div>    <div class='faqInP5'>        Iată ce se va întâmpla dacă vă reîmprospătați computerul: fișierele și setările personalizate nu se vor modifica    </div>    <div class='faqInP5'>        <ul>            <li>Setările computerului vor reveni la valorile implicite</li>            <li>Aplicațiile din Windows Store vor fi păstrate</li>            <li>Aplicațiile pe care le-ați instalat de pe disc sau de pe un site web vor fi eliminate</li>            <li>Va fi salvată o listă cu fișierele eliminate pe desktop</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Mărci afectate    </div>    <div>        <ul>            <li>Toate desktopurile și laptopurile</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Sistem de operare    </div>    <div>        <ul>            <li>Windows 8, 8.1 și 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Soluție    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Atingeți sau dați clic pe <span class='faqInFb'> Settings </span>                    </li>                    <li class='faqInP5'>                        Atingeți sau dați clic pe <span class='faqInFb'> Update and recovery</span>                    </li>                    <li class='faqInP5'>                        <div>Atingeți sau dați clic pe <span class='faqInFb'> Recovery</span></div>                        <div class='faqInP5'>Sub Refresh your PC without affecting your files, atingeți sau dați clic pe <span class='faqInFb'> Get started.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Dați clic pe <span class='faqInFb'> „Next”</span>.                    </li>                    <li class='faqInP5'>                        Dați clic pe <span class='faqInFb'> „Refresh” </span>pentru a începe procesul de reîmprospătare.                    </li>                    <li class='faqInP5'>                        După ce procesul de reîmprospătare s-a încheiat, puteți găsi o listă de aplicații eliminate pe desktop                    </li>                    <li class='faqInP5'>                        Puteți găsi aplicațiile eliminate în timpul reîmprospătării sistemului                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Căutați <span class='faqInFb'> refresh </span>în instrumentul de căutare disponibil în meniul Start,</li>                    <li class='faqInP5'>                        <div>Dați clic pe <span class='faqInFb'> „Refresh your PC without affecting your files”</span> din rezultatele căutării, după cum se arată mai jos.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Dați clic pe butonul <span class='faqInFb'> Get started </span> de sub titlul<span class='faqInFb'> „Refresh your PC without affecting your files”</span> pentru a începe reîmprospătarea PC-ului Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Informaţii suplimentare    </div>    <div>        În majoritatea cazurilor, după ce începeți reîmprospătarea PC-ului, aceasta se va încheia de la sine. Totuși, dacă Windows are nevoie de fișiere lipsă, vi se va solicita să introduceți un Recovery Media, care este în general un disc DVD sau o unitate USB. În acest caz, ceea ce veți avea nevoie depinde de PC-ul dvs.    </div>    <div class='faqInP10'>        Dacă ați făcut upgrade la Windows 8.1 sau Windows RT 8.1 folosind un DVD, utilizați acel disc. Dacă nu aveți o unitate Windows 8.1 sau Windows RT 8.1, contactați Asistența Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2019,7 +2076,7 @@
         },
         "question3": {
             "title": "Cum să cunoașteți procesorul dispozitivului",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Cum să cunoașteți procesorul dispozitivului</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Simptom</h3><p>Termenii 32 de biți și 64 de biți se referă la modul în care procesorul unui computer (numit și CPU) gestionează informațiile. Versiunea pe 64 de biți a Windows gestionează cantități mari de memorie RAM mai eficient decât un sistem pe 32 de biți.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Mărci afectate</h3><p>Simptomul de mai sus este asociat cu, dar fără a se limita la următoarele sisteme:</p><ul>    <li>Toate desktopurile și laptopurile</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistem de operare</h3><ul>    <li>Windows 7, 8 și 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Soluție</h3><p><strong><u>Windows 7 sau Vista</u></strong></p><ol>    <li>Deschideți System dând clic pe imaginea <strong>Start button </strong>a <strong>Start button,</strong> apoi dând clic dreapta pe Computer, iar apoi dând clic pe Properties  </li>    <li>În System, puteți vedea tipul sistemului.</li></ol><p><strong><u>Windows 8 și Windows 10</u></strong></p><p><strong>Metoda 1:</strong> vizualizați fereastra System din Control Panel</p><ol>    <li>Treceți cu degetele de la marginea din dreapta a afișajului și atingeți <strong>Search</strong>. Sau, dacă folosiți un mouse, duceți indicatorul în colțul din dreapta-jos al ecranului, apoi dați clic pe <strong>Search.</strong></li>    <li>Introduceți <strong>system</strong> în caseta de căutare, iar apoi atingeți sau dați clic pe <strong>Settings.</strong></li>    <li>Atingeți sau dați clic pe <strong>System</strong></li>    <li>Dacă rulați o versiune pe 64 de biți a Windows 8, este afișat mesajul <strong>64-bit Operating System</strong> în câmpul System type, sub titlul System. Dacă rulați o versiune pe 32 <strong>de biți a Windows</strong> <strong>8,</strong> este afișat mesajul <strong>32-bit Operating </strong>System în câmpul System type, sub titlul System.<br />  </li></ol><p><strong>Metoda 2</strong>: vizualizați fereastra System Information</p><ol>    <li>Treceți cu degetele de la marginea din dreapta a afișajului și atingeți <strong>Search</strong>. Sau, dacă folosiți un mouse, duceți indicatorul în colțul din dreapta-jos al ecranului, apoi dați clic pe <strong>Search.</strong></li>    <li>În caseta de căutare, introduceți <strong>system information</strong></li>    <li>Atingeți sau dați clic pe<strong> System</strong>, atingeți sau dați clic pe <strong>System Information,</strong> iar apoi dați clic pe <strong>System Summary.</strong></li>    <li>Dacă rulați o versiune pe <strong>64 de biți </strong>a Windows 8<strong>, </strong> este afișat mesajul x64-based PC în câmpul <strong>System type</strong>, sub titlul Item. <br /> <br /> Dacă rulați o versiune pe<strong> 32 de biți</strong> a Windows 8, este afișat mesajul x86-based PC în câmpul <strong>System type</strong>, sub titlul Item.  </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Cum să cunoașteți procesorul dispozitivului</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Termenii 32 de biți și 64 de biți se referă la modul în care procesorul unui computer (numit și CPU) gestionează informațiile. Versiunea pe 64 de biți a Windows gestionează cantități mari de memorie RAM mai eficient decât un sistem pe 32 de biți.</p><h3 class='faqInFs25FbP10'>Mărci afectate</h3><p>Simptomul de mai sus este asociat cu, dar fără a se limita la următoarele sisteme:</p><ul>    <li>Toate desktopurile și laptopurile</li></ul><h3 class='faqInFs25FbP10'>Sistem de operare</h3><ul>    <li>Windows 7, 8 și 10</li></ul><h3 class='faqInFs25FbP10'>Soluție</h3><p><strong><u>Windows 7 sau Vista</u></strong></p><ol>    <li>Deschideți System dând clic pe imaginea <strong>Start button </strong>a <strong>Start button,</strong> apoi dând clic dreapta pe Computer, iar apoi dând clic pe Properties  </li>    <li>În System, puteți vedea tipul sistemului.</li></ol><p><strong><u>Windows 8 și Windows 10</u></strong></p><p><strong>Metoda 1:</strong> vizualizați fereastra System din Control Panel</p><ol>    <li>Treceți cu degetele de la marginea din dreapta a afișajului și atingeți <strong>Search</strong>. Sau, dacă folosiți un mouse, duceți indicatorul în colțul din dreapta-jos al ecranului, apoi dați clic pe <strong>Search.</strong></li>    <li>Introduceți <strong>system</strong> în caseta de căutare, iar apoi atingeți sau dați clic pe <strong>Settings.</strong></li>    <li>Atingeți sau dați clic pe <strong>System</strong></li>    <li>Dacă rulați o versiune pe 64 de biți a Windows 8, este afișat mesajul <strong>64-bit Operating System</strong> în câmpul System type, sub titlul System. Dacă rulați o versiune pe 32 <strong>de biți a Windows</strong> <strong>8,</strong> este afișat mesajul <strong>32-bit Operating </strong>System în câmpul System type, sub titlul System.<br />  </li></ol><p><strong>Metoda 2</strong>: vizualizați fereastra System Information</p><ol>    <li>Treceți cu degetele de la marginea din dreapta a afișajului și atingeți <strong>Search</strong>. Sau, dacă folosiți un mouse, duceți indicatorul în colțul din dreapta-jos al ecranului, apoi dați clic pe <strong>Search.</strong></li>    <li>În caseta de căutare, introduceți <strong>system information</strong></li>    <li>Atingeți sau dați clic pe<strong> System</strong>, atingeți sau dați clic pe <strong>System Information,</strong> iar apoi dați clic pe <strong>System Summary.</strong></li>    <li>Dacă rulați o versiune pe <strong>64 de biți </strong>a Windows 8<strong>, </strong> este afișat mesajul x64-based PC în câmpul <strong>System type</strong>, sub titlul Item. <br /> <br /> Dacă rulați o versiune pe<strong> 32 de biți</strong> a Windows 8, este afișat mesajul x86-based PC în câmpul <strong>System type</strong>, sub titlul Item.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2108,7 +2165,7 @@
         },
         "question4": {
             "title": "Verificați utilizarea bateriei dispozitivului",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Verificați utilizarea bateriei dispozitivului</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Simptom</h3><p>Windows 10 include un nou ecran „<strong>Battery Use”</strong> care vă arată ce utilizează bateria laptopului. Aceasta înseamnă că vă va spune exact ce aplicații (atât desktop, cât și aplicații „universale” Windows 10) utilizează prea multă energie.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Mărci afectate</h3><ul>    <li>Laptopuri, desktopuri Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sisteme afectate</h3><ul>    <li>Toate</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sistem de operare</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Soluție</h3><p>Această caracteristică este nouă în Windows 10. Întâi trebuie să găsim caracteristica, deoarece nu se află în vizualizarea tradițională <strong>Control Panel, </strong>ci în noua aplicație <strong>„Settings”</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Găsiți ecranul Battery Use</h3></p><p>1. Dați clic pe sau atingeți opțiunea <strong>„Settings</strong>” din meniul Start</p><p>2. În <strong>Settings </strong> selectați <strong>„System”</strong>și apoi selectați <strong>„Battery saver.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Dați clic pe sau atingeți linkul <strong>„Battery use”</strong> de sub acest titlu pentru a vedea mai multe detalii. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analizați utilizarea energiei</h3><p>4 Puteți modifica ecranul Battery Use pentru a afișa utilizarea bateriei din ultimele 24 de ore în ultimele 48 de ore sau ultima săptămână</p><p>5 Procentaje <strong>„System,”</strong> „<strong>Display,</strong>” și „ <strong>Wi-Fi”</strong>. Acestea arată cât de multă energie a bateriei a fost utilizată de procesele de sistem, de afișaj,</p><p>6 Opțiunile <strong>„In use”</strong> și <strong>„Background”</strong> arată cât de multă energie este utilizată de aplicații în timp ce le folosiți, în comparație cu aplicațiile care rulează în fundal.</p><p>7 Dacă aplicațiile utilizează energie în fundal, să dați clic pe sau să atingeți linkul <strong> „Change background app settings” </strong>și să configurați aplicațiile să nu mai ruleze în fundal. Aceasta funcționează doar pentru aplicațiile universale Windows 10.</p><p>8 Derulați mai jos și veți vedea o listă de aplicații. Aceasta este considerată cea mai utilă secțiune a caracteristicii. Aici sunt afișate aplicațiile care au utilizat energia bateriei în acea perioadă și vă arată ce procentaj din energia bateriei a fost utilizat de fiecare aplicație</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Verificați utilizarea bateriei dispozitivului</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 include un nou ecran „<strong>Battery Use”</strong> care vă arată ce utilizează bateria laptopului. Aceasta înseamnă că vă va spune exact ce aplicații (atât desktop, cât și aplicații „universale” Windows 10) utilizează prea multă energie.</p><h3 class='faqInFs25FbP10'>Mărci afectate</h3><ul>    <li>Laptopuri, desktopuri Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sisteme afectate</h3><ul>    <li>Toate</li></ul><h3 class='faqInFs25FbP10'>Sistem de operare</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Soluție</h3><p>Această caracteristică este nouă în Windows 10. Întâi trebuie să găsim caracteristica, deoarece nu se află în vizualizarea tradițională <strong>Control Panel, </strong>ci în noua aplicație <strong>„Settings”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Găsiți ecranul Battery Use</h3></p><p>1. Dați clic pe sau atingeți opțiunea <strong>„Settings</strong>” din meniul Start</p><p>2. În <strong>Settings </strong> selectați <strong>„System”</strong>și apoi selectați <strong>„Battery saver.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Dați clic pe sau atingeți linkul <strong>„Battery use”</strong> de sub acest titlu pentru a vedea mai multe detalii. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizați utilizarea energiei</h3><p>4 Puteți modifica ecranul Battery Use pentru a afișa utilizarea bateriei din ultimele 24 de ore în ultimele 48 de ore sau ultima săptămână</p><p>5 Procentaje <strong>„System,”</strong> „<strong>Display,</strong>” și „ <strong>Wi-Fi”</strong>. Acestea arată cât de multă energie a bateriei a fost utilizată de procesele de sistem, de afișaj,</p><p>6 Opțiunile <strong>„In use”</strong> și <strong>„Background”</strong> arată cât de multă energie este utilizată de aplicații în timp ce le folosiți, în comparație cu aplicațiile care rulează în fundal.</p><p>7 Dacă aplicațiile utilizează energie în fundal, să dați clic pe sau să atingeți linkul <strong> „Change background app settings” </strong>și să configurați aplicațiile să nu mai ruleze în fundal. Aceasta funcționează doar pentru aplicațiile universale Windows 10.</p><p>8 Derulați mai jos și veți vedea o listă de aplicații. Aceasta este considerată cea mai utilă secțiune a caracteristicii. Aici sunt afișate aplicațiile care au utilizat energia bateriei în acea perioadă și vă arată ce procentaj din energia bateriei a fost utilizat de fiecare aplicație</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2176,7 +2233,7 @@
         },
         "question5": {
             "title": "Folosiți PC-ul ca o tabletă",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Folosiți PC-ul ca o tabletă</div><hr><p>Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>modul Tabletă</h3><p>Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Notă</h3><p>Pentru a afla dacă dispozitivul dvs. poate activa automat modul Tabletă, căutați dispozitivul pe site-ul web al producătorului. Compatibilitatea cu această caracteristică depinde de hardware, de driverul instalat și de modul în care dispozitivul a fost configurat de producător. </p><p> </p><p>În modul Tabletă, aplicațiile se deschid în modul ecran complet, oferindu-vă mai mult spațiu de lucru. Pentru a închide o aplicație, trageți-o în partea de jos a ecranului.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Sfat</h3><p>Bara de activități este disponibilă când computerul este în modul Tabletă, dar o puteți ascunde dacă doriți mai mult spațiu pe ecran. Selectați butonul <strong>Start, </strong>selectați <strong>Settings </strong>> <strong>System </strong>> <strong> Tablet mode, </strong>apoi activați <strong>Automatically hide the taskbar in tablet mode</strong>. Pentru a vedea bara de activități ascunsă, glisați în sus de la marginea de jos a ecranului sau plasați mouse-ul în acea zonă.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Utilizați simultan două aplicații</h3><p>Pentru a utiliza două aplicații una lângă alta, trageți o aplicație deschisă în joi, iar apoi în lateral. Veți vedea unde se va alinia și veți vedea celelalte aplicații deschise lângă aceasta.</p><p>În această vizualizare, puteți și să:</p><ul>    <li>Utilizați marginea partajată dintre două aplicații aliniate pentru a redimensiona ambele aplicații simultan.</li>    <li>Deschideți o nouă aplicație din Task view &mdash; selectați <strong>Task view</strong> din bara de activități, selectați o aplicație, apoi trageți-o în lateral pentru a o alinia în ecranul divizat.</li>    <li>Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Folosiți PC-ul ca o tabletă</div><hr><p>Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.</p><h3 class='faqInFs25FbP10'>modul Tabletă</h3><p>Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Notă</h3><p>Pentru a afla dacă dispozitivul dvs. poate activa automat modul Tabletă, căutați dispozitivul pe site-ul web al producătorului. Compatibilitatea cu această caracteristică depinde de hardware, de driverul instalat și de modul în care dispozitivul a fost configurat de producător. </p><p> </p><p>În modul Tabletă, aplicațiile se deschid în modul ecran complet, oferindu-vă mai mult spațiu de lucru. Pentru a închide o aplicație, trageți-o în partea de jos a ecranului.</p><p> </p><h3 class='faqInFs25FbP10'>Sfat</h3><p>Bara de activități este disponibilă când computerul este în modul Tabletă, dar o puteți ascunde dacă doriți mai mult spațiu pe ecran. Selectați butonul <strong>Start, </strong>selectați <strong>Settings </strong>> <strong>System </strong>> <strong> Tablet mode, </strong>apoi activați <strong>Automatically hide the taskbar in tablet mode</strong>. Pentru a vedea bara de activități ascunsă, glisați în sus de la marginea de jos a ecranului sau plasați mouse-ul în acea zonă.</p><h3 class='faqInFs25FbP10'>Utilizați simultan două aplicații</h3><p>Pentru a utiliza două aplicații una lângă alta, trageți o aplicație deschisă în joi, iar apoi în lateral. Veți vedea unde se va alinia și veți vedea celelalte aplicații deschise lângă aceasta.</p><p>În această vizualizare, puteți și să:</p><ul>    <li>Utilizați marginea partajată dintre două aplicații aliniate pentru a redimensiona ambele aplicații simultan.</li>    <li>Deschideți o nouă aplicație din Task view &mdash; selectați <strong>Task view</strong> din bara de activități, selectați o aplicație, apoi trageți-o în lateral pentru a o alinia în ecranul divizat.</li>    <li>Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2216,7 +2273,7 @@
         },
         "question6": {
             "title": "Cunoașteți-o pe Cortana, asistentul personal",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Cunoașteți-o pe Cortana, asistentul personal</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ce este Cortana?</h3><hr /><p>Cortana este agentul dvs. digital. Ea vă va ajuta să faceți acțiuni.</p><p>Cu cât o utilizați mai mult Cortana, cu atât va fi mai personalizată experiența dvs.</p><p>Pentru a începe, tastați o întrebare în caseta de căutare sau selectați microfonul și vorbiți cu Cortana. (Tastarea funcționează pe toate tipurile de computere, însă aveți nevoie de un microfon pentru a vorbi.)</p><p>Dacă nu sunteți sigur(ă) ce să spuneți, veți vedea sugestii pe ecranul de blocare și pe pagina de pornire Cortana când selectați caseta de căutare din bara de activități.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Pagina de pornire 2. Blocnotes 3. Setări 4. Feedback</li></ol><p>Iată câteva lucruri pe care Cortana le poate face:</p><ul>    <li>Vă poate afișa mementouri în funcție de timp, locație sau persoane.</li>    <li>Poate urmări colete, echipe, interese și zboruri.</li>    <li>Poate trimite e-mailuri și mesaje SMS.</li>    <li>Poate gestiona calendarul și vă poate ține la curent.</li>    <li>Poate crea și gestiona liste.</li>    <li>Vă poate răspunde și puteți juca jocuri.</li>    <li>Poate găsi fapte, fișiere, locuri și informații.</li>    <li>Poate deschide orice aplicație din sistemul dvs.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Încercați această acțiune: setați un memento</h3><hr /><p>Unul dintre lucrurile pe care Cortana le poate face este să vă afișeze mementouri. Vă poate reaminti să faceți anumite lucruri în funcție de timp, loc sau chiar persoane.</p><p>De exemplu, tastați sau rostiți „Remind me to congratulate Tanya the next time she calls” („Reamintește-mi să o felicit pe Tanya data viitoare când sună”).</p><p>Mementoul va apărea când primiți un apel de la Tanya.</p><p>Suplimentar, dacă aveți un Windows Phone sau ați instalat Cortana pe iPhone sau Android, puteți sincroniza notificările Cortana între computer și telefon.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3><hr /><p>Setați Cortana să vă asculte de fiecare dată când rostiți „Hey Cortana”. Selectați caseta de căutare din bara de activități pentru a deschide pagina de pornire Cortana. Apoi selectați <strong>Settings</strong>  și activați <strong>Let Cortana respond to 'Hey Cortana'</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Notă</p><p>Cortana este disponibilă numai în anumite țări/regiuni, iar unele caracteristici Cortana ar putea să nu fie disponibile peste tot.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Cunoașteți-o pe Cortana, asistentul personal</div><hr><h3 class='faqInFs25FbP10'>Ce este Cortana?</h3><hr /><p>Cortana este agentul dvs. digital. Ea vă va ajuta să faceți acțiuni.</p><p>Cu cât o utilizați mai mult Cortana, cu atât va fi mai personalizată experiența dvs.</p><p>Pentru a începe, tastați o întrebare în caseta de căutare sau selectați microfonul și vorbiți cu Cortana. (Tastarea funcționează pe toate tipurile de computere, însă aveți nevoie de un microfon pentru a vorbi.)</p><p>Dacă nu sunteți sigur(ă) ce să spuneți, veți vedea sugestii pe ecranul de blocare și pe pagina de pornire Cortana când selectați caseta de căutare din bara de activități.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Pagina de pornire 2. Blocnotes 3. Setări 4. Feedback</li></ol><p>Iată câteva lucruri pe care Cortana le poate face:</p><ul>    <li>Vă poate afișa mementouri în funcție de timp, locație sau persoane.</li>    <li>Poate urmări colete, echipe, interese și zboruri.</li>    <li>Poate trimite e-mailuri și mesaje SMS.</li>    <li>Poate gestiona calendarul și vă poate ține la curent.</li>    <li>Poate crea și gestiona liste.</li>    <li>Vă poate răspunde și puteți juca jocuri.</li>    <li>Poate găsi fapte, fișiere, locuri și informații.</li>    <li>Poate deschide orice aplicație din sistemul dvs.</li></ul><h3 class='faqInFs25FbP10'>Încercați această acțiune: setați un memento</h3><hr /><p>Unul dintre lucrurile pe care Cortana le poate face este să vă afișeze mementouri. Vă poate reaminti să faceți anumite lucruri în funcție de timp, loc sau chiar persoane.</p><p>De exemplu, tastați sau rostiți „Remind me to congratulate Tanya the next time she calls” („Reamintește-mi să o felicit pe Tanya data viitoare când sună”).</p><p>Mementoul va apărea când primiți un apel de la Tanya.</p><p>Suplimentar, dacă aveți un Windows Phone sau ați instalat Cortana pe iPhone sau Android, puteți sincroniza notificările Cortana între computer și telefon.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr /><p>Setați Cortana să vă asculte de fiecare dată când rostiți „Hey Cortana”. Selectați caseta de căutare din bara de activități pentru a deschide pagina de pornire Cortana. Apoi selectați <strong>Settings</strong>  și activați <strong>Let Cortana respond to 'Hey Cortana'</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Notă</p><p>Cortana este disponibilă numai în anumite țări/regiuni, iar unele caracteristici Cortana ar putea să nu fie disponibile peste tot.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2298,6 +2355,8 @@
         "OtherSettings": "Alte setări",
         "usageStatistics": "Statistici utilizare",
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
+        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
         "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
     },
@@ -2371,6 +2430,8 @@
         "errorDeviceChoose": "Trebuie să alegeți un dispozitiv pentru rulare.",
         "errorNoOptionSelected": "Trebuie să selectați o opțiune.",
         "offline": "Acest dispozitiv rulează în modul offline; vă rugăm să vă conectați la internet",
+        "doNotSuspend": "Aceste teste trebuie să ruleze fără întreruperi! În timpul scanării, nu închideţi şi nu minimizaţi această aplicaţie, nu întrerupeţi şi nu opriţi computerul.",
+        "doNotUse": "Nu utilizaţi computerul înainte de finalizarea acestui test",
         "customize": {
             "name": "Personalizare",
             "test": "Personalizare test",
@@ -2395,7 +2456,8 @@
             "error": "Eroare",
             "delete": "Ştergere",
             "warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
-            "scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment."
+            "scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment.",
+            "information": "Your scan has been scheduled and will run in the background on the following date:"
         },
         "recoverBadSectors": {
             "title": "Recuperarea sectoarelor defecte",
@@ -2446,5 +2508,43 @@
         "cancelTextPrompt": "Sigur anulaţi?",
         "cancelTextProgress": "Aşteptaţi anularea progresului",
         "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
+                "networkError": "Eroare de rețea.",
+                "installationCancelled": "Instalare anulată."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Rambursare Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instalare",
+                "installing": "Instalare în curs",
+                "installed": "Instalat",
+                "launch": "Lansare",
+                "seeMore": "Vedeţi mai multe"
+            },
+            "fieldName": {
+                "description": "Descriere",
+                "screenshots": "Capturi de ecran",
+                "additionalInformation": "Informaţii suplimentare",
+                "by": "De:",
+                "updated": "Actualizată:",
+                "type": "Tip:",
+                "category": "Categorie:",
+                "legalAgreement": "Acord juridic",
+                "readMore": "Citiţi mai mult",
+                "readLess": "Citiţi maI puţin"
+            }
+        }
     }
 }

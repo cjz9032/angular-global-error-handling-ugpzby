@@ -18,7 +18,7 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
 	templateUrl: './widget-macrokey-settings.component.html',
-	styleUrls: [ './widget-macrokey-settings.component.scss' ]
+	styleUrls: ['./widget-macrokey-settings.component.scss']
 })
 export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyOptions: any = [
@@ -26,21 +26,27 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			title: 'gaming.macroKey.status.on.title',
 			name: 'gaming.macroKey.status.on.title',
 			description: 'gaming.macroKey.status.on.description',
-			id: 'macro_key_settings_on',
+			id: 'macro key settings on',
+			label: 'on',
+			metricitem: 'macrokey_settings_on',
 			value: 1
 		},
 		{
 			title: 'gaming.macroKey.status.whileGaming.title',
 			name: 'gaming.macroKey.status.whileGaming.title',
 			description: 'gaming.macroKey.status.whileGaming.description',
-			id: 'macro_key_settings_enabled_when_gaming',
+			id: 'macro key settings enabled when gaming',
+			label: 'macro key settings enabled when gaming',
+			metricitem: 'macrokey_settings_enabled_when_gaming',
 			value: 2
 		},
 		{
 			title: 'gaming.macroKey.status.off.title',
 			name: 'gaming.macroKey.status.off.title',
 			description: 'gaming.macroKey.status.off.description',
-			id: 'macro_key_settings_off',
+			id: 'macro key settings off',
+			label: 'macro key settings off',
+			metricitem: 'macrokey_settings_off',
 			value: 3
 		}
 	];
@@ -60,7 +66,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
@@ -140,7 +146,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	redirectBack() {
-		this.router.navigate([ '/device-gaming' ]);
+		this.router.navigate(['/device-gaming']);
 	}
 
 	onGamingMacroKeyInitializeEvent(macroKeyTypeEventResponse: any) {

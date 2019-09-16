@@ -63,6 +63,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	private Windows: any;
 	private DeviceInformation: any;
 	private DeviceClass: any;
+	public isOnline: any = true;
+
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -182,6 +184,16 @@ export class SubpageDeviceSettingsDisplayComponent
 				document.getElementById('camera').scrollIntoView();
 			},200);
 		})
+		this.isOnline = this.commonService.isOnline;
+		if (this.isOnline) {
+			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+			if (welcomeTutorial && welcomeTutorial.page === 2) {
+				this.initFeatures();
+			}
+		} else {
+				this.initFeatures();
+		}
 	}
 
 	initDataFromCache() {
@@ -736,10 +748,6 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((featureStatus: FeatureStatus) => {
 					console.log('cameraPrivacyModeStatus.then', featureStatus);
 					this.cameraPrivacyModeStatus = featureStatus;
-					if (!this.cameraPrivacyModeStatus.available) {
-						// on desktop machine, camera section need to hide, so it's Jump to Setting link also need to remove
-						this.headerMenuItems.pop();
-					}
 				})
 				.catch(error => {
 					this.logger.error('getCameraStatus', error.message);

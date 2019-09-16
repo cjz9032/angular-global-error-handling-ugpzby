@@ -5,6 +5,7 @@ import { HomeSecurityMockService } from 'src/app/services/home-security/home-sec
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { interval, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-modal-chs-start-trial-container',
@@ -12,30 +13,39 @@ import { take } from 'rxjs/operators';
 	styleUrls: ['./modal-chs-start-trial-container.component.scss']
 })
 export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
-	permission: any;
 	chs: Phoenix.ConnectedHomeSecurity;
-	url = 'ms-settings:privacy-location';
 	metricsParent = 'ConnectedHomeSecurity';
 	switchPage = 1;
-	locationCallback;
 	countdownNumber = 3;
 	subscribe: Subscription;
+	consoleUrlCallback;
+	loading = false;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
 		public homeSecurityMockService: HomeSecurityMockService,
-	) {
-		this.chs = vantageShellService.getConnectedHomeSecurity();
+	) {	}
+
+	ngOnInit() {
+		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
-		this.permission = vantageShellService.getPermission();
-	}
-
-	ngOnInit() {
+		this.consoleUrlCallback = (data) => {
+			if (data.account.consoleUrl) {
+				this.loading = false;
+				this.countdown();
+			}
+		};
 		if (this.switchPage === 1) {
-			this.countdown();
+			this.loading = true;
+			if (this.chs.account.consoleUrl) {
+				this.loading = false;
+				this.countdown();
+			} else {
+				this.chs.on(EventTypes.chsEvent, this.consoleUrlCallback);
+			}
 		}
 	}
 
@@ -44,17 +54,26 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	}
 
 	disconnect() {
-
+		this.loading = true;
+		this.chs.quitAccount().then((response) => {
+			if (response === 'success') {
+				this.closeModal();
+			}
+			this.loading = false;
+		}).catch((err) => {
+			console.log(`disconnected error: ${err}`);
+		});
 	}
 
 	ngOnDestroy() {
 		if (this.subscribe) {
 			this.subscribe.unsubscribe();
 		}
+		this.chs.off(EventTypes.chsEvent, this.consoleUrlCallback);
 	}
 
-	openCornet(feature?: string) {
-		this.chs.visitWebConsole(feature);
+	openCornet() {
+		this.chs.visitWebConsole();
 		this.closeModal();
 	}
 
@@ -64,8 +83,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		this.subscribe = takeNumbers.subscribe( x => {
 			this.countdownNumber = (3 - x - 1);
 			if (this.countdownNumber === 0) {
-				this.openCornet('login');
-				this.closeModal();
+				this.openCornet();
 			}
 		});
 	}

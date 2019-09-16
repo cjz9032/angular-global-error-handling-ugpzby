@@ -89,7 +89,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 				} else {
 					this.data.isLWSEnabled = false;
 				}
-				this.data.homeProtection.refresh();
 			}, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.data.wifiSecurity);
 			});

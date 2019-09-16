@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { isUndefined } from 'util';
+import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
 @Component({
 	selector: 'vtr-modal-add-apps',
@@ -8,29 +9,37 @@ import { isUndefined } from 'util';
 })
 export class ModalAddAppsComponent implements OnInit, OnChanges {
 	statusAskAgain: boolean;
-	@Input() loaderData: any = {};
 	@Input() showAppsModal: boolean;
-	@Input() runningListData: any[];
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
 	@Output() addAppToList = new EventEmitter<boolean>();
 	public loading = true;
 	public loadingNoApps = false;
-	constructor() { }
+	runningList: any = [];
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
+	public statusitem;
+	//constructor() { }
 
 	ngOnInit() {
-		if (!isUndefined(this.loaderData)) {
-			this.loading = this.loaderData.loading;
-			this.loadingNoApps = this.loaderData.noApps;
-		}
+		this.refreshRunningList();
 	}
 
-	ngOnChanges(changes: any) {
-		if (this.loading) {
-			this.loading = this.loaderData.loading;
+	async refreshRunningList() {
+		try {
+			const result: any = await this.gamingAutoCloseService.getAppsAutoCloseRunningList();
+			this.loading = false;
+			this.runningList = [];
+			if (result && !isUndefined(result.processList)) {
+				this.runningList = result.processList || [];
+			}
+			this.loadingNoApps = this.runningList.length === 0 ? true : false;
+		} catch (error) {
+			this.loading = false;
+			this.loadingNoApps = true;
 		}
 	}
 
 	addAppData(event: any) {
+		this.statusitem = event.target.checked;
 		this.addAppToList.emit(event);
 	}
 

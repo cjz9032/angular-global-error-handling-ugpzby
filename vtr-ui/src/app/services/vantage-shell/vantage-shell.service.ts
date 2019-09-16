@@ -892,16 +892,21 @@ export class VantageShellService {
 	}
 
 	public getVantageStub(): any {
-		let vanStub = {
+		const win = window as any;
+		return win.VantageStub || {
 			appStartTime: 0,
 			navigateTime: 0,
-			domloadedTime: 0
+			domloadedTime: 0,
+			launchParms: null,
+			launchType: null
 		};
+	}
 
-		if (this.shell && this.shell.VantageStub.instance) {
-			vanStub = this.shell.VantageStub.instance;
+	public getBetaUser(): any {
+		if (this.phoenix) {
+			return this.phoenix.betaUser;
 		}
-		return vanStub;
+		return undefined;
 	}
 
 	public getBetaUser(): any {

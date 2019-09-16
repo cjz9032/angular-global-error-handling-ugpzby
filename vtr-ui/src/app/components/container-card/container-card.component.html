@@ -300,14 +300,21 @@
 							</div>
 						</a>
 					</div>
-					<div class="row">
+					<div class="row w-100">
 						<div class="col col-12 content">
 							<div *ngIf="title"
 								class="title"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
+								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
+								[style.font-size.px]="containerCardArticle.clientWidth * 24 / 436"
+								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
+								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								attr.aria-label="{{containerCardId+'-title'}}"></div>
 							<div *ngIf="actionLink"
+								[style.font-size.px]="containerCardArticle.clientWidth * 14 / 436"
+								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
+								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								class="read-more">
 								<a [attr.href]="!actionLink ? null : actionLink"
 									id="{{containerCardId+'_read_more'}}"

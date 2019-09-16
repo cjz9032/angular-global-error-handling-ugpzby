@@ -10,7 +10,7 @@
 					<div class="type-icon">
 						<div class="type-scan">{{ typeScan }}</div>
 						<button class="type-button" (click)="onEdit()" vtrMetrics metricsEvent="FeatureClick"
-							metricsItem="btn.Edit.Schedule" metricsParent="Page.HardwareScan">
+							metricsItem="btn.Edit.Schedule" metricsParent="Page.HardwareScan" [disabled]="disable()">
 							<fa-icon class="right-icon" [icon]="['fas', 'angle-right']"></fa-icon>
 						</button>
 					</div>

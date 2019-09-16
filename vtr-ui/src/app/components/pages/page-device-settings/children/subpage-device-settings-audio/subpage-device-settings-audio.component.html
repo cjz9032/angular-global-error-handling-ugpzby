@@ -38,11 +38,11 @@
 							[caption]="''"
 							[isSwitchVisible]="autoDolbyFeatureStatus.available"
 							[leftIcon]="['icomoon', 'icomoon-LE-Dolby2x']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="automaticDolbyHelpIcon"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'blue'"
-							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.dolby.tooltip'|translate"
+							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.dolby.tooltip' | translate"
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
 							[isSwitchChecked]="autoDolbyFeatureStatus.status"
 							[showLoaderState]="autoDolbyFeatureLoader"
@@ -50,7 +50,8 @@
 
 							<div class="row no-gutters"
 								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
-								<vtr-ui-circle-radio-with-checkbox *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
+								<vtr-ui-circle-radio-with-checkbox
+									*ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
 									[theme]="'blue'"
 									[radioId]="'radioDolbyMode' + dolbyMode | removeSpace"
 									[group]="radioGroupAutoDolbySettings"
@@ -72,7 +73,7 @@
 							[caption]="''"
 							[isSwitchVisible]=true
 							[leftIcon]="['icomoon', 'icomoon-LE-Microphone-volume2x']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="helpIcon"
 							[readMoreText]="''"
 							[showChildContent]="false"
 							[theme]="'blue'"
@@ -115,7 +116,7 @@
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['fal', 'microphone']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="helpIcon"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
@@ -166,7 +167,7 @@
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['fal', 'keyboard']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="helpIcon"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
@@ -187,7 +188,7 @@
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['icomoon', 'icomoon-LE-Acoustic-echo-cancellation2x']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="helpIcon"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
@@ -215,7 +216,8 @@
 							[isLastChild]="true"
 							[switchId]="'audio-microphone-optimize'">
 							<div class="row no-gutters">
-								<vtr-ui-circle-radio-with-checkbox *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
+								<vtr-ui-circle-radio-with-checkbox
+									*ngFor="let optimizeMode of microOptimizeModeResponse.modes"
 									[radioId]="'radioMicrophone' + optimizeMode | removeSpace"
 									[group]="radioOptimiseMicSettings"
 									[label]="optimizeMode | separatePascalCase"

@@ -72,34 +72,44 @@ fdescribe('SmartStandbyComponent', () => {
 		expect(component.splitStartEndTime).toHaveBeenCalled();
 	});
 
-	it('#initDataFromCache should get data from Cache and set isCapable to true', () => {
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
-		component.initDataFromCache();
-		expect(commonService.getLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, undefined);
-		expect(component.smartStandby.isCapable).toBeTruthy();
-		expect(component.smartStandby.isEnabled).toBeTruthy();
-		expect(component.smartStandby.activeStartEnd).toEqual('6:00-18:00');
-		expect(component.smartStandby.daysOfWeekOff).toEqual('mon,tue,wed,thurs,fri');
+	it('#splitStartEndTime should split start and end time from activeStartEnd', () => {
+		component.smartStandby.activeStartEnd = '9:00-18:00';
+		spyOn(component, 'isStartEndTimeValid').and.callFake(() => {
+			component.showDiffNote = true;
+		});
+
+		component.splitStartEndTime();
+		expect(component.smartStandbyStartTime).toEqual('9:00');
+		expect(component.smartStandbyEndTime).toEqual('18:00');
+		expect(component.isStartEndTimeValid).toHaveBeenCalled();
+	});
+
+	it('#splitStartEndTime should set start and end time to 00:00', () => {
+		component.smartStandby.activeStartEnd = '';
+		component.splitStartEndTime();
+		expect(component.smartStandbyStartTime).toEqual('00:00');
+		expect(component.smartStandbyEndTime).toEqual('00:00');
 	});
 
 	it('#initDataFromCache should get data from Cache and set isCapable to false', () => {
-		smartStandby.isCapable = false;
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
+		const testSmartStandby = smartStandby;
+		testSmartStandby.isCapable = false;
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(testSmartStandby);
 		component.initDataFromCache();
 		expect(commonService.getLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, undefined);
 		expect(component.smartStandby.isCapable).toBeFalsy();
 	});
 
-	// it('#onSmartStandbyToggle should change value of smartStandby isEnabled', async () => {
-	// 	component.powerService.isShellAvailable = true;
-	// 	spyOn(powerService, 'setSmartStandbyEnabled').and.returnValue(Promise.resolve(0));
-	// 	spyOn(commonService, 'setLocalStorageValue');
-	// 	component.onSmartStandbyToggle({ switchValue: true });
-	// 	expect(powerService.setSmartStandbyEnabled).toHaveBeenCalledWith(true);
-	// 	expect(component.smartStandby.isEnabled).toBeTruthy();
-	// 	expect(component.cache.isEnabled).toBeTruthy();
-	// 	expect(commonService.setLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, smartStandby);
-	// });
+	it('#onSmartStandbyToggle should change value of smartStandby isEnabled', async () => {
+		component.powerService.isShellAvailable = true;
+		spyOn(powerService, 'setSmartStandbyEnabled').and.returnValue(Promise.resolve(0));
+		spyOn(commonService, 'setLocalStorageValue').and.callFake(() => { console.log('fake function call'); });
+		await component.onSmartStandbyToggle({ switchValue: true });
+		expect(powerService.setSmartStandbyEnabled).toHaveBeenCalledWith(true);
+		expect(component.smartStandby.isEnabled).toBeTruthy();
+		expect(component.cache.isEnabled).toBeTruthy();
+		expect(commonService.setLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, component.cache);
+	});
 
 	it('#showSmartStandby should call initSmartStandby & set smartStandby capability to true', async () => {
 		component.powerService.isShellAvailable = true;
@@ -145,5 +155,41 @@ fdescribe('SmartStandbyComponent', () => {
 		await component.setSmartStandbySection();
 		expect(powerService.getSmartStandbyEnabled).toHaveBeenCalled();
 		expect(component.smartStandby.isEnabled).toBeFalsy();
+	});
+
+	it('#onSetActiveStartEnd should set value of activeStartEnd', async () => {
+		component.powerService.isShellAvailable = true;
+		component.smartStandbyEndTime = '18:00';
+		spyOn(component, 'splitStartEndTime');
+		spyOn(powerService, 'setSmartStandbyActiveStartEnd').and.returnValue(Promise.resolve(0));
+		spyOn(commonService, 'setLocalStorageValue').and.callFake(() => { console.log('fake function call'); });
+		await component.onSetActiveStartEnd('9:00', true);
+		expect(powerService.setSmartStandbyActiveStartEnd).toHaveBeenCalledWith('9:00-18:00');
+		expect(component.cache.activeStartEnd).toEqual('9:00-18:00');
+		expect(commonService.setLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, component.cache);
+	});
+
+	it('#onSetDaysOfWeekOff should set value of daysOfWeekOff', async () => {
+		component.powerService.isShellAvailable = true;
+		spyOn(powerService, 'setSmartStandbyDaysOfWeekOff').and.returnValue(Promise.resolve(0));
+		spyOn(commonService, 'setLocalStorageValue').and.callFake(() => { console.log('fake function call'); });
+		await component.onSetDaysOfWeekOff('mon');
+		expect(powerService.setSmartStandbyDaysOfWeekOff).toHaveBeenCalledWith('mon');
+		expect(component.cache.daysOfWeekOff).toEqual('mon');
+		expect(commonService.setLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.SmartStandbyCapability, component.cache);
+	});
+
+	it('#isStartEndTimeValid should check for activeStartEnd validity and Hide difference warning note ', () => {
+		component.smartStandbyStartTime = '1:00';
+		component.smartStandbyEndTime = '20:00';
+		component.isStartEndTimeValid();
+		expect(component.showDiffNote).toBeFalsy();
+	});
+
+	it('#isStartEndTimeValid should check for activeStartEnd validity and Show difference warning note ', () => {
+		component.smartStandbyStartTime = '4:00';
+		component.smartStandbyEndTime = '1:00';
+		component.isStartEndTimeValid();
+		expect(component.showDiffNote).toBeTruthy();
 	});
 });

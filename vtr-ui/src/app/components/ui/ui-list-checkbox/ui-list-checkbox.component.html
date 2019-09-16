@@ -9,14 +9,14 @@
 					<div class="d-flex justify-content-between align-items-center w-100">
 						<div class="custom-control custom-checkbox update-checkbox">
 							<input type="checkbox"
-								id="{{ 'updateCheckbox_'  + item.packageID + '_' + randomNumber + i}}"
+								id="{{ 'updateCheckbox_'  + item.packageID }}"
 								[disabled]="item.isDependency"
 								class="custom-control-input"
 								[checked]="item.isSelected"
 								[name]="item.packageName"
 								(change)="onCheckChange($event)" />
 							<label class="custom-control-label "
-								for="{{ 'updateCheckbox_'  + item.packageID + '_' + randomNumber + i}}"
+								for="{{ 'updateCheckbox_'  + item.packageID }}"
 								id="{{'su_item_' + item.packageID}}" role="article">
 								<span class="update-title">
 									{{item.packageDesc}}</span>

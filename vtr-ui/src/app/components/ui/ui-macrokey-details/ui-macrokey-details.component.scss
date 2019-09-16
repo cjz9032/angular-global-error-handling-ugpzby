@@ -91,7 +91,33 @@
 		bottom: 0rem;
 		padding-bottom: 6rem;
 		.button {
-			font-weight: 500;
+			@media #{$mediaquery_X4} {
+				min-width: 10rem;
+			}
+			min-height: 6rem;
+			border-radius: 3rem;
+			min-width: 12rem;
+			background: $gradient_main;
+			border: none;
+			color: $light;
+			font-size: $body;
+			font-weight: $weight_bold;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			padding: 0 2.5rem;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			letter-spacing: 0.1rem;
+		}
+		.min-height {
+			min-height: 32px !important;
+		}
+
+		.btn-gradient {
+			background-color: $button_gradient_start;
+			background-image: linear-gradient(to right, $button_gradient_start, $button_gradient_end);
 		}
 		.stop-button {
 			display: none;
