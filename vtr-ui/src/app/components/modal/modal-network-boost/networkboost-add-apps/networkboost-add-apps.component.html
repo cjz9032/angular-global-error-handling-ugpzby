@@ -54,8 +54,8 @@
                       <div class="action" [ngClass]="{isDisabled: addedApps>=5 && !item.isChedked}"></div> -->
 
                       <button value="{{item.processPath}}" [ngClass]="{'checked': isChecked[i],'disabled':addedApps>=5 && !item.isChedked}"
-                       (click)="onValueChange($event,i)"
-					   vtrMetrics [metricsItem]="isChecked[i] ? '' : item.processDescription" [metricsEvent]="!isChecked[i] ? 'featureClick' : ''"
+                       (click)="onValueChange($event,i)" role="link"
+					            vtrMetrics [metricsItem]="isChecked[i] ? '' : item.processDescription" [metricsEvent]="!isChecked[i] ? 'featureClick' : ''"
                        tabindex="1" (keydown)="runappKeyup($event,i)" [disabled]="addedApps>=5 && !isChecked[i]"
                        [attr.aria-label] = "isChecked[i] ? item.processDescription+ 'checked' : item.processDescription+ 'Unchecked'" >
                       </button>

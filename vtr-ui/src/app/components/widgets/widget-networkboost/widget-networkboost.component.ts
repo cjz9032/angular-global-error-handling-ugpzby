@@ -15,7 +15,7 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 	@Input() changeNum: any = 0;
 	@Output() actionModal = new EventEmitter<any>();
 	@Output() addedApps = new EventEmitter<any>();
-
+	@Input() modalStatus = false;
 	public title: string;
 	public networkBoostStatus = false;
 	runningAppsList = [];
