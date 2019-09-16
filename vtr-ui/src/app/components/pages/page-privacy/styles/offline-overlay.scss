@@ -1,7 +1,6 @@
 .offline-image-overlay {
 	position: relative;
 	border-radius: 1rem 1rem 0 0;
-	overflow: hidden;
 	&:hover, &:active, &:focus, &:enabled {
 		&:before {
 			content: '';
@@ -11,6 +10,7 @@
 			height: 100%;
 			width: 100%;
 			background: rgba(0, 0, 0, 0.30);
+			border-radius: 1rem 1rem 0 0;
 		}
 		&:after {
 			content: 'Connect to the internet to use this feature';
@@ -25,6 +25,7 @@
 			font-size: 1.6rem;
 			width: 100%;
 			background: rgba(0, 0, 0, 0.20);
+			border-radius: 1rem 1rem 0 0;
 		}
 	}
 }
