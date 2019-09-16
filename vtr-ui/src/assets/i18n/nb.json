@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "recommends": "Lenovo anbefaler at du beskytter alle enhetene med <b>McAfee<b>",
+                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</Lenovo> til å beskytte alle enhetene dine",
                 "award": "Prisbelønt antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",

@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "アンチウィルス",
                 "back": "戻る",
-                "recommends": "Lenovo では、<b>McAfee<b> を使用してすべてのデバイスを保護することを推奨しています",
+                "recommends": "すべてのデバイスを保護するために Lenovo が <b>McAfee</b> を推奨している理由",
                 "award": "受賞歴のあるウイルス対策",
                 "mcafeePremium": "McAfee LiveSafe プロテクション",
                 "protectedBy": "現在、{{protectedName}} によって保護されています。ただし、McAfee LiveSafe を使用すると、より適切に保護される可能性があります。",
