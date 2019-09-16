@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ATRÁS",
-                "recommends": "Lenovo le recomienda <b>McAfee<b> para proteger todos los dispositivos",
+                "recommends": "Por qué Lenovo recomienda <b>McAfee</b> para proteger todos los dispositivos",
                 "award": "Antivirus galardonado",
                 "mcafeePremium": "Protección McAfee LiveSafe",
                 "protectedBy": "Actualmente está protegido por {{protectedName}}. Sin embargo, podría estar mejor protegido con McAfee LiveSafe.",

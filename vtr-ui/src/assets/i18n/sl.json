@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Protivirusna zaščita",
                 "back": "NAZAJ",
-                "recommends": "Lenovo priporoča <b>McAfee<b> za zaščito vseh naprav",
+                "recommends": "Zakaj Lenovo priporoča <b>McAfee</b> za zaščito vseh vaših naprav",
                 "award": "Nagrajena protivirusna zaščita",
                 "mcafeePremium": "Zaščita McAfee LiveSafe",
                 "protectedBy": "Trenutno ste zaščiteni s programom {{protectedName}}. Še bolje pa bi se lahko zaščitili s programom McAfee LiveSafe.",

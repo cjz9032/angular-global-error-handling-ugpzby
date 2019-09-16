@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ÎNAPOI",
-                "recommends": "Lenovo recomandă <b>McAfee<b> pentru a vă proteja toate dispozitivele",
+                "recommends": "De ce Lenovo recomandă <b>McAfee<b> pentru a vă proteja toate dispozitivele",
                 "award": "Antivirus premiat",
                 "mcafeePremium": "Protecție McAfee LiveSafe",
                 "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",

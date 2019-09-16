@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Virustentorjunta",
                 "back": "EDELLINEN",
-                "recommends": "Lenovo suosittelee <b>McAfeeta<b> kaikkien laitteiden suojaamiseen",
+                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfee</b>tä kaikkien laitteidesi suojaamiseen",
                 "award": "Palkittu virustentorjuntaohjelmisto",
                 "mcafeePremium": "McAfee LiveSafe -suojaus",
                 "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
