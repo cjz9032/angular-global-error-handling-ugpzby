@@ -2,7 +2,7 @@
 		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'">
 
-	<div class="breaches-page__header" *ngIf="!(isShowVerifyBlock$ | async) && (isOnline || (!isOnline && !(userEmail$ | async)))">
+	<div class="breaches-page__header" *ngIf="!(isShowVerifyBlock$ | async) && (isOnline || (!isOnline && !(userEmail$ | async) || (isFigleafReadyForCommunication$ | async)))">
 		<vtr-feature-header
 			class="breaches-page__feature-header"
 			[texts]="textForFeatureHeader"
@@ -40,7 +40,7 @@
 	</div>
 
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
-		<ng-container *ngIf="isOnline || (!isOnline && !(userEmail$ | async)); else offlineBlock" >
+		<ng-container *ngIf="isOnline || (!isOnline && !(userEmail$ | async)) || (isFigleafReadyForCommunication$ | async); else offlineBlock" >
 			<vtr-email-scanner
 				class="breached-accounts__email-scanner"
 				*ngIf="(isUndefinedWithoutFigleafState$ | async)"
