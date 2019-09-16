@@ -1250,7 +1250,7 @@
                     "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
                     "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión sin interacción no funcionará.",
                     "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático.",
-                    "description6": "4. Si el Modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán."
+                    "description6": "4. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
