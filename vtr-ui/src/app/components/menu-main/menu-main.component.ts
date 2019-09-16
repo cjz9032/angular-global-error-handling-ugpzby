@@ -506,13 +506,19 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	initInputAccessories() {
 		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
 			.then((responses: any[]) => {
-				const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
-				inputAccessoriesCapability.isUdkAvailable = responses[0];
-				inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-				this.commonService.setLocalStorageValue(
-					LocalStorageKey.InputAccessoriesCapability,
-					inputAccessoriesCapability
-				);
+				try {
+					let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+					if (inputAccessoriesCapability === undefined) {
+						inputAccessoriesCapability = new InputAccessoriesCapability();
+					}
+					inputAccessoriesCapability.isUdkAvailable = responses[0];
+					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
+						inputAccessoriesCapability
+					);
+				} catch (error) {
+					console.log('initInputAccessories', error);
+				}
 			})
 			.catch((error) => { });
 	}

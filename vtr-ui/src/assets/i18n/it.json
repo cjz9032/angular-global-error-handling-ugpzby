@@ -1250,7 +1250,7 @@
                     "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
                     "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico non funzionerà.",
                     "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico.",
-                    "description6": "4. Se Modalità aereo è abilitata sul computer, queste funzioni sono disabilitate."
+                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vai a Impostazioni di Windows Hello",
