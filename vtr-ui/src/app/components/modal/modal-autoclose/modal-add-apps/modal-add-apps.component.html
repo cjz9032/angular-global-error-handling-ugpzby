@@ -1,4 +1,4 @@
-<div class="modal-main-wrapper">
+<div class="modal-main-wrapper" id="close" tabindex="1" role="dialog">
 	<div class="spinner-content h-100 d-flex align-items-center justify-content-center" *ngIf="loading">
 		<fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
 	</div>
@@ -6,8 +6,8 @@
 		<div class="modal-body vtr-modal-add-apps">
 			<div class="modal-body">
 				<div class="top-header">
-					<button type="button" class="close" (click)="closeModal(false)" (keyup.enter)="closeModal(false)"
-						tabindex="1" role="button" [attr.aria-label]="'Close'">
+					<button type="button" class="close" (click)="closeModal(false)" tabindex="1" aria-label="Close"
+						(keyup.enter)="closeModal(false)">
 						<svg width="16px" height="16px" viewBox="0 0 12 11" version="1.1"
 							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<title>7601BE32-D46C-4CCD-85BB-EC869A0B24A8</title>
@@ -47,13 +47,14 @@
 											[title]="item.processDescription">
 											{{item.processDescription}}</div>
 										<div class="btn-add-app mx-auto">
-											<input type="checkbox" value="{{item.processDescription}}"
-												(change)="item.checked = !item.checked;addAppData($event)"
-												(keyup.enter)="item.checked = !item.checked;addAppData($event)"
-												tabindex="1" role="checkbox" [attr.aria-checked]="item.checked"
-												[attr.aria-label]="'add '+item.processDescription" vtrMetrics
-												[metricsItem]="item.processDescription" metricsEvent="featureClick">
-											<div class="action"></div>
+											<button value="{{item.processDescription}}"
+												[ngClass]="{'checked': isChecked[i]}" (click)="addAppData($event,i)"
+												vtrMetrics [metricsItem]="item.processDescription"
+												metricsEvent="featureClick" tabindex="1"
+												(keydown)="runappKeyup($event,i)" role="checkbox"
+												[attr.aria-checked]="isChecked[i]"
+												[attr.aria-label]="'Add '+item.processDescription">
+											</button>
 										</div>
 									</li>
 								</ul>
