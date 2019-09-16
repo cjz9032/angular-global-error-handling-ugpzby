@@ -2,7 +2,7 @@
 	position: relative;
 	border-radius: 1rem 1rem 0 0;
 	overflow: hidden;
-	&:hover {
+	&:hover, &:active, &:focus, &:enabled {
 		&:before {
 			content: '';
 			position: absolute;
