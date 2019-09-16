@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SafeStorageService } from './safe-storage.service';
 import { BehaviorSubject } from 'rxjs';
-import { getSha1Hash, getSha256Hash } from '../../utils/helpers';
+import { getSha256Hash } from '../../utils/helpers';
 import { StorageService, HASH_FOR_TOKEN_NAME } from './storage.service';
 
 @Injectable({
