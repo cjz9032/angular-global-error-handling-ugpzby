@@ -12,6 +12,12 @@
 	vertical-align: middle;
 	transition: all 0.2s ease-in;
 	margin-top: 0.5rem;
+	@media #{$white-on-black} {
+		background: #f2f2f2;
+	}
+	@media #{$black-on-white} {
+		background: #f2f2f2;
+	}
 	&.selected{
 		background: linear-gradient(90deg, #2fcc74, #33dfa6);
 	}
@@ -22,6 +28,14 @@
 		border-radius:10rem;
 		cursor: pointer;
 		background: #6d6d6d;
+		@media #{$white-on-black} {
+			background: #6d6d6d;
+			box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
+		}
+		@media #{$black-on-white} {
+			background: #6d6d6d;
+			box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
+		}
 		position: absolute;
 		left: 0.3rem;
 		top: 0.25rem;
@@ -46,20 +60,31 @@
 		text-transform: uppercase;
 		color: #fbfdff;
 		position: absolute;
-		top: 0.6rem;
+		top: 0.4rem;
 		width: 3.5rem;
-		left: 0.5rem;
+		left: 0.3rem;
 		text-align: center;
 		letter-spacing:0rem;
 		margin-top: -0.3rem;
 		visibility:visible;
 		background: none;
+		@media #{$black-on-white} {
+			left: 0.4rem;
+		}
+		@media #{$white-on-black} { 
+			left: 0.4rem;
+		}
 		&.off-label {
-			left: 2rem;
+			left: 1.7rem;
 			color: #6d6d6d;
+			@media #{$black-on-white} {
+				left: 1.7rem;
+			}
+			@media #{$white-on-black} { 
+				left: 1.7rem;
+			}
 		}
 	}
 }
-
 
 

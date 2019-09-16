@@ -28,6 +28,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			description: 'gaming.macroKey.status.on.description',
 			id: 'macro key settings on',
 			label: 'on',
+			metricitem: 'macrokey_settings_on',
 			value: 1
 		},
 		{
@@ -36,6 +37,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			description: 'gaming.macroKey.status.whileGaming.description',
 			id: 'macro key settings enabled when gaming',
 			label: 'macro key settings enabled when gaming',
+			metricitem: 'macrokey_settings_enabled_when_gaming',
 			value: 2
 		},
 		{
@@ -44,6 +46,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			description: 'gaming.macroKey.status.off.description',
 			id: 'macro key settings off',
 			label: 'macro key settings off',
+			metricitem: 'macrokey_settings_off',
 			value: 3
 		}
 	];

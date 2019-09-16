@@ -382,28 +382,31 @@
 								cursor: pointer;
 								height: 1.4rem;
 								width: 1.4rem;
-								&:checked ~ .checkmark::after{
-									display: block;
+								&:checked ~ .checkmark{
+									background-color: $gaming_light_blue;
+									&::after{
+										display: block;
+									}
 								}
 							}
 							.checkmark {
 								position: absolute;
-								top: 0.4rem;
+								top: 0.3rem;
 								left: 0;
-								height: 1.6rem;
-								width: 1.6rem;
+								height: 1.7rem;
+								width: 1.7rem;
 								pointer-events: none;
-								background-color: $gaming_light_blue;
+								background-color: $gaming_lightest;
 								border: 0.2rem solid $screen_light_15;
 								&::after {
 									content: "";
 									position: absolute;
 									display: none;
 									left: 0.4rem;
-									top: 0.2rem;
-									width: 0.5rem;
-									height: 0.8rem;
-									border: solid $gaming_grey_lightest;
+									top: 0.1rem;
+									width: 0.6rem;
+									height: 0.9rem;
+									border: solid $gaming_darkest;
 									border-width: 0 0.1rem 0.1rem 0;
 									-webkit-transform: rotate(45deg);
 									-ms-transform: rotate(45deg);
@@ -412,6 +415,7 @@
 							}
 							label {
 								color: $gaming_grey_lightest;
+								margin-left: 0.8rem;
 							}
 						}
 						.auto-detection-note{
@@ -652,7 +656,33 @@
                                         }
                                     }
                                 }
-                            }
+							}
+							vtr-widget-hardware-scan-item{
+								.vtr-widget-hardware-scan-item{
+									.title {
+										color: $gaming_lightest;
+									}
+									.subtitle {
+										color: $gaming_grey_lightest;
+									}
+								}
+								vtr-ui-hardware-list{
+									.vtr-ui-list-hardware {
+										.list-group{
+											.list-group-item{
+												background-color: $gaming-Darkslate-blue;
+												border: 0.1rem solid $screen_dark_15;
+												.title {
+													color: $gaming_lightest;
+												}
+												.subtitle {
+													color: $gaming_grey_lightest;
+												}
+											}
+										}
+									}
+								}
+							}
                         }
 					}
 				}
@@ -661,6 +691,7 @@
 						.cancel-check {
 							.cancel-check-text{
 							color: $gaming_light_blue !important;
+							padding-bottom: 0.4rem;
 							}
 						}
 					}
@@ -909,6 +940,23 @@
 		clear: both;
 		margin-top: 2.2rem;
 	}
+	// //added by Ram
+	.feature-note {
+		background-color: $gaming-Darkslate-blue!important;
+		border: none!important;
+		border-radius:$border_radius;
+		p {
+			font-size: 1.5rem;
+			color: $stop !important;
+		}
+	}
+	.permission-note {
+		border-radius:$border_radius;
+		p {
+			font-size: 1.5rem;
+			color: $stop!important;
+		}
+	}
 }
 
 .gaming-help-modal {
@@ -937,20 +985,4 @@ button:focus,
 *:focus {
 	outline: 0;
 }
-//added by Ram
-.feature-note {
-	background-color: $gaming-Darkslate-blue!important;
-	border: none!important;
-	border-radius:$border_radius;
-	p {
-		font-size: 1.5rem;
-		color: $alt!important;
-	}
-}
-.permission-note {
-	border-radius:$border_radius;
-	p {
-		font-size: 1.5rem;
-		color: $alt!important;
-	}
-}
+
