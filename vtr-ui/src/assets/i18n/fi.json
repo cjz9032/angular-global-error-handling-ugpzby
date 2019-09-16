@@ -1250,7 +1250,7 @@
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
                     "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
-                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä ominaisuudet ovat poissa käytöstä."
+                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",

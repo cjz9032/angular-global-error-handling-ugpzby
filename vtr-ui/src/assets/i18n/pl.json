@@ -1250,7 +1250,7 @@
                     "description3": "1. Funkcja może nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
                     "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony. Logowanie bez dotyku nie będzie działać.",
                     "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta, tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania.",
-                    "description6": "4. Jeśli tryb samolotowy komputera jest włączony, te funkcje są wyłączone."
+                    "description6": "4. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Przejdź do ustawień funkcji Windows Hello",

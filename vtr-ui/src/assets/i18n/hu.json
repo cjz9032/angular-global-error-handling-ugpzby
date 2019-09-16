@@ -1250,7 +1250,7 @@
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
-                    "description6": "4. Ha a repülőgépes üzemmód engedélyezve van a számítógépen, ezek a funkciók nem működnek."
+                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
