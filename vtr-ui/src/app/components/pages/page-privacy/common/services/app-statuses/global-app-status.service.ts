@@ -5,8 +5,6 @@ import { CommunicationWithFigleafService } from '../../../utils/communication-wi
 import { UserDataStateService } from './user-data-state.service';
 import { GetFeaturesConsentService } from './get-features-consent.service';
 
-export const MS_IN_DAY = 24 * 60 * 60 * 1000;
-
 @Injectable({
 	providedIn: 'root'
 })
