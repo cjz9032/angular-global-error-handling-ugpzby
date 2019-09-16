@@ -22,6 +22,10 @@
 		width: 18rem;
 		margin-right: 1rem;
 	}
+	@media #{$mediaquery_X42}{
+		width: 21rem;
+		margin-right: 1rem;
+	}
 	@media #{$mediaquery_X16} {
 		width: 16.5rem;
 		margin-right: 1rem;
