@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZPĚT",
-                "recommends": "Lenovo doporučuje software <b>McAfee<b> na ochranu všech vašich zařízení",
+                "recommends": "Proč Lenovo doporučuje software <b>McAfee<b> na ochranu všech vašich zařízení",
                 "award": "Oceňovaný antivirus",
                 "mcafeePremium": "Ochrana McAfee LiveSafe",
                 "protectedBy": "Nyní vás chrání program {{protectedName}}. Můžete se však chránit lépe pomocí programu McAfee LiveSafe.",
