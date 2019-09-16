@@ -23,6 +23,7 @@ ui-popover-apps {
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
+	touch-action: none;
 	@media #{$medium-screen} {
 		max-width: 80%;
 	}
@@ -56,6 +57,8 @@ ui-popover-apps {
 			padding: 1rem 4rem;
 			.running-apps {
 				padding-bottom: 1rem;
+				overflow-x: hidden;
+				touch-action: none;
 			}
 		}
 		.title-content {
@@ -77,6 +80,7 @@ ui-popover-apps {
 			padding: 3rem 4rem;
 			overflow-y: auto;
 			overflow-x: hidden;
+			touch-action: none;
 			max-height: 40rem;
 			@media #{$large-screen} {
 				min-height: 42rem;
@@ -90,6 +94,8 @@ ui-popover-apps {
 			.app-list {
 				padding: 0;
 				max-height: 100%;
+				overflow-x: hidden;
+				touch-action: none;
 				li {
 					list-style-type: none;
 					display: inline-block;
@@ -174,6 +180,8 @@ ui-popover-apps {
 		}
 		.no-running-app {
 			color: $light;
+			overflow-x: hidden;
+			touch-action: none;
 			.text-content {
 				padding-bottom: 3.4rem;
 				h3 {

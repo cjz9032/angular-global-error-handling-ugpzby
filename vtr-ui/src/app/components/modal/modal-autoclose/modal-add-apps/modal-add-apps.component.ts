@@ -27,12 +27,12 @@ export class ModalAddAppsComponent implements OnInit {
 	async refreshRunningList() {
 		try {
 			const result: any = await this.gamingAutoCloseService.getAppsAutoCloseRunningList();
-			this.loading = false;
 			this.runningList = [];
 			if (result && !isUndefined(result.processList)) {
 				this.runningList = result.processList || [];
 			}
 			this.loadingNoApps = this.runningList.length === 0 ? true : false;
+			this.loading = false;
 		} catch (error) {
 			this.loading = false;
 			this.loadingNoApps = true;
