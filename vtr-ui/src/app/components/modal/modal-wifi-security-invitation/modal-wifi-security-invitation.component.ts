@@ -12,7 +12,8 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 
 	chs: ConnectedHomeSecurity;
 
-	header = 'security.homeprotection.invitationcode.joinChs';
+	header = 'security.homeprotection.invitationcode.joinFamilyAccount';
+	headerDescription = 'security.homeprotection.invitationcode.joinChs';
 	description = 'security.homeprotection.invitationcode.enterCode';
 
 	OkText = 'security.homeprotection.invitationcode.continue';
@@ -21,6 +22,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	startJoin = false;
 	joinSuccess = false;
 	joinFailed = false;
+	isFocusIn = false;
 
 	constructor(public activeModal: NgbActiveModal, vantageShellService: VantageShellService) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
@@ -75,6 +77,16 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	show() {
 		const show: HTMLElement = document.querySelector('.activation');
 		show.style.visibility = 'visible';
+	}
+
+	focusIn() {
+		if (!this.joinFailed) {
+			this.isFocusIn = true;
+		}
+	}
+
+	focusOut() {
+		this.isFocusIn = false;
 	}
 
 }

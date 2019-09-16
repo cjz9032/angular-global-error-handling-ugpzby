@@ -1822,8 +1822,9 @@
 				"buttonDescribe": "You have already joined this device to an existing Connected Home Security account.",
 				"title": "Already have Connected Home Security?",
 				"titleDescribe": "Please ensure location permissions are enabled for Vantage in order to add your device to an existing Connected Home Account, and to use Connected Home Security.",
-				"enterCode": "Enter the connection code",
-				"joinChs": "Join Connected Home Security of your family",
+				"enterCode": "Enter the invitation code",
+				"joinFamilyAccount": "Join family account",
+				"joinChs": "join your family's Connected Home Security",
 				"invitationCode": "Invitation code",
 				"connect": "CONNECTED",
 				"addHome": "Add Home",
@@ -1831,11 +1832,12 @@
 				"continue": "CONTINUE",
 				"cancel": "CANCEL",
 				"validateCode": "VALIDATE CODE",
-				"success": "Successfully joined your CHS family!",
+				"success": "You have Successfully joined your family's Connected Home Security",
 				"canUse": "You can now start using Connected Home Security",
 				"tryAgain": "Incorrect code, please try again!",
 				"fail": "Incorrect code entered!",
-				"activationCode": "ACTIVATION CODE"
+				"activationCode": "ACTIVATION CODE",
+				"connecting": "Connecting..."
 			},
 			"securityhealth": {
 				"title": "Security Health",

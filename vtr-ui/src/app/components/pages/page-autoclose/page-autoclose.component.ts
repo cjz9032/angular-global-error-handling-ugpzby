@@ -188,17 +188,19 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	public addAppDataToList(event: any) {
-		if (event.target.checked) {
-			const addApp = event.target.value;
+		if (event.checked) {
+			const addApp = event.app;
 			try {
 				this.gamingAutoCloseService.addAppsAutoCloseList(addApp).then((success: any) => {
 					if (success) {
 						this.refreshAutoCloseList();
+						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 					}
 				});
 			} catch (error) {}
 		} else {
-			this.gamingAutoCloseService.delAppsAutoCloseList(event.target.value).then((response: boolean) => {
+			const remApp = event.app;
+			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
 				if (response) {
 					this.refreshAutoCloseList();
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
@@ -216,7 +218,6 @@ export class PageAutocloseComponent implements OnInit {
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				}
 			});
-		} catch (err) {
-		}
+		} catch (err) {}
 	}
 }
