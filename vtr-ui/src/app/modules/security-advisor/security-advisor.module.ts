@@ -32,7 +32,6 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
-import { HomeSecurityShareModule } from '../home-security-share/home-security-share.module';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
@@ -102,8 +101,7 @@ library.add(faChevronUp);
 		HeaderMainModule,
 		WidgetOfflineModule,
 		UiListChevronModule,
-		CommonModalModule,
-		HomeSecurityShareModule
+		CommonModalModule
 	],
 	providers: [
 		DialogService

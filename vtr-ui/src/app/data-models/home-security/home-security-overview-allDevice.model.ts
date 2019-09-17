@@ -46,7 +46,6 @@ export class HomeSecurityAllDevice {
 				}
 				this.allDevicesItem.push(new HomeSecurityAllDevicesItem({icon, type, count}, translateService));
 			}
-			this.allDevicesItem.push(new HomeSecurityAllDevicesItem({icon, type, count}, translateService));
-		});
+		}
 	}
 }

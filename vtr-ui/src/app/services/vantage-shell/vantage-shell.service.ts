@@ -909,13 +909,6 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getBetaUser(): any {
-		if (this.phoenix) {
-			return this.phoenix.betaUser;
-		}
-		return undefined;
-	}
-
 	// =================== Start Hardware Scan
 	public getHardwareScan(): any {
 		if (this.phoenix) {

@@ -7,7 +7,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 	templateUrl: './modal-add-apps.component.html',
 	styleUrls: ['./modal-add-apps.component.scss']
 })
-export class ModalAddAppsComponent implements OnInit, OnChanges {
+export class ModalAddAppsComponent implements OnInit {
 	statusAskAgain: boolean;
 	@Input() showAppsModal: boolean;
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
@@ -45,6 +45,15 @@ export class ModalAddAppsComponent implements OnInit, OnChanges {
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
+	}
+
+	runappKeyup(event, index) {
+		if (event.which === 9) {
+			if (index === this.runningList.length - 1) {
+				let txt1 = document.getElementById('close');
+				txt1.focus();
+			}
+		}
 	}
 
 }

@@ -407,12 +407,4 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}).catch((err: Error) => this.handleResponseError(err));
 		}, this.interval);
 	}
-
-	public switchState() {
-		if (this.homeSecurityMockService.state === 'notRegister') {
-			this.homeSecurityMockService.state = 'register';
-		} else {
-			this.homeSecurityMockService.state = 'notRegister';
-		}
-	}
 }

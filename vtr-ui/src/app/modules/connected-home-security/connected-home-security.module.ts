@@ -14,7 +14,6 @@ import { DialogService } from '../../services/dialog/dialog.service';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { HomeSecurityShareModule } from '../home-security-share/home-security-share.module';
 import { faWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
 import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 import { faExclamationCircle } from '@fortawesome/pro-light-svg-icons/faExclamationCircle';

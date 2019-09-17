@@ -55,6 +55,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private visibilityChange: any;
 	private Windows: any;
 	private windowsObj: any;
+	public hpdSensorType = 0;
 	smartAssistCache: SmartAssistCache;
 
 	headerMenuItems: PageAnchorLink[] = [
