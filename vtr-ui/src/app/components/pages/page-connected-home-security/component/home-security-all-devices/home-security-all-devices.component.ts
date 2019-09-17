@@ -15,7 +15,7 @@ export class HomeSecurityAllDevicesComponent implements OnInit {
 
 	pluginAvailable = true;
 	itemStatusIconClass = {
-		1: 'female',
+		1: 'user-friends',
 		2: 'home',
 		3: 'tv',
 		4: 'wifi',
