@@ -12,6 +12,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 
 	@Input() item: any;
 	@Input() index: any;
+	@Input() tabIndex: number;
 	@Input() articleType: string;
 	@ViewChild('articleItemDiv', { static: true }) articleItemDiv: any;
 

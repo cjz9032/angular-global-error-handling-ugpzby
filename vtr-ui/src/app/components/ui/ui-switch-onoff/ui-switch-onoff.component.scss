@@ -44,6 +44,9 @@
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	vertical-align: middle;
+	&:focus + .switch {
+		outline: $focus_outline_dark !important;
+	}
 }
 
 .switch,

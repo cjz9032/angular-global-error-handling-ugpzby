@@ -1,5 +1,6 @@
 @import "../../../../../app.theme.scss";
 .vtr-home-security-after-signup {
+	font-size: 1.8rem;
 	.content-container {
         box-shadow: $drop_shadow;
 		border-radius: $border_radius;
@@ -14,32 +15,31 @@
 			font-weight: $weight_600;
 		}
 		.content-body {
-			background-color: $shade_extralight;
+			background-color: $grey_lighter;
 			border-radius: $border_radius;
-			border: 0.1rem solid $shade_lighter;
-			font-size: 1.8rem;
-			color: $shade_darker;
+			border: 0.1rem solid $grey_light;
+			color: $shade_blue;
 			.red {
 				color: $danger_dark;
 			}
 		}
-		::ng-deep {
-			.button {
-				min-height: 4rem !important;
-			}
+	}
+	::ng-deep {
+		.button {
+			min-height: 4rem !important;
 		}
-		.tryNow-btn{
-			::ng-deep {
-				.button-box {
-					@media #{$mediaquery_7} {
-						margin-top: 0;
-					}
-					.button {
-						max-width: 18rem;
-					}
+	}
+	.common-btn{
+		::ng-deep {
+			.button-box {
+				@media #{$mediaquery_7} {
+					margin-top: 0;
+				}
+				.button {
+					max-width: 18rem;
 				}
 			}
 		}
-    }
+	}
 
 }

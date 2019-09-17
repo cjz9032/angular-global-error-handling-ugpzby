@@ -13,56 +13,64 @@
 		</div>
 	</div>
 	<!-- start of page 1-->
-	<div class="page page-one" *ngIf="switchPage === 1">
-		<p class="description" [innerHTML]="'homeSecurity.modal.countdownTile' | translate"></p>
-		<div class="countdown text-center">
+	<div class="page page-one" *ngIf="showWhichPage === 'trial'">
+		<p class="description" [innerHTML]="'homeSecurity.modal.countdownTitle' | translate"></p>
+		<p class="sub-desc" [innerHTML]="'homeSecurity.modal.countdownDesc' | translate"></p>
+		<div class="countdown text-center pb-5">
 			<span class="number" [innerHTML]="countdownNumber"></span>
 		</div>
-		<div class="btn-group d-flex justify-content-between">
+		<div class="d-flex align-items-center pt-5">
 			<vtr-ui-button
 				linkId="chs-trialModal-btn-countdownGoNow"
 				metricsEvent="FeatureClick"
 				metricsItem="CHSTrialGoNowButton"
 				metricsParent="{{metricsParent}}"
 				(click)="openCornet()"
-				[isLoading]="loading"
 				[label]="'homeSecurity.modal.goNow' | translate"
 				[title]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
-			<vtr-ui-button
-				linkId="chs-trialModal-btn-countdownCancel"
+			<button class="btn btn-default btn_cancel ml-4 pl-0 pr-0"
+				id="chs-trialModal-btn-countdownCancel"
 				metricsEvent="FeatureClick"
 				metricsItem="CHSTrialCountdownCancelButton"
-				metricsParent="{{metricsParent}}"
+				metricsParent="ConnectedHomeSecurity"
 				(click)="closeModal()"
-				[isRed]="true"
-				[label]="'security.wifisecurity.locationmodal.cancel' | translate"
-				[title]="'security.wifisecurity.locationmodal.cancel' | translate"></vtr-ui-button>
+				[title]="'security.wifisecurity.locationmodal.cancel' | translate"
+				[innerHTML]="'security.wifisecurity.locationmodal.cancel' | translate">
+			</button>
 		</div>
 	</div>
 	<!-- end of page1-->
 	<!-- start of page 2-->
-	<div class="page page-two" *ngIf="switchPage === 2">
-		<p class="description mb-5" [innerHTML]="'homeSecurity.modal.disconnectedTitle' | translate"></p>
-		<div class="btn-group d-flex justify-content-between">
-			<vtr-ui-button
-				linkId="chs-modal-btn-cancel"
-				metricsEvent="FeatureClick"
-				metricsItem="CHSTrialCancelButton"
-				metricsParent="{{metricsParent}}"
-				(click)="closeModal()"
-				[isRed]="true"
-				[label]="'security.wifisecurity.locationmodal.cancel' | translate"
-				[title]="'security.wifisecurity.locationmodal.cancel' | translate"></vtr-ui-button>
+	<div class="page page-two" *ngIf="showWhichPage === 'disconnect'">
+		<p class="description" [innerHTML]="'homeSecurity.modal.disconnectedTitle' | translate"></p>
+		<p class="sub-desc mb-5" [innerHTML]="'homeSecurity.modal.disconnectedDesc' | translate"></p>
+		<div class="btn-group pt-5 d-flex">
 			<vtr-ui-button
 				linkId="chs-modal-btn-disconnect"
 				metricsEvent="FeatureClick"
 				metricsItem="CHSDisconnectButton"
 				metricsParent="{{metricsParent}}"
+				buttonColor="red"
 				(click)="disconnect()"
-				[isLoading]="loading"
 				[label]="'homeSecurity.overview.disconnect' | translate"
 				[title]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
+			<vtr-ui-button
+				linkId="chs-modal-btn-cancel"
+				metricsEvent="FeatureClick"
+				metricsItem="CHSTrialCancelButton"
+				metricsParent="{{metricsParent}}"
+				buttonColor="gray"
+				(click)="closeModal()"
+				[label]="'security.wifisecurity.locationmodal.cancel' | translate"
+				[title]="'security.wifisecurity.locationmodal.cancel' | translate"></vtr-ui-button>
 		</div>
 	</div>
 	<!-- end of page2-->
+	<!-- start of page3-->
+	<div class="page page-three text-center" *ngIf="showWhichPage === 'loading'">
+		<div class="loadingIcon spinner-border text-primary progress-spinner" role="status">
+		</div>
+		<p class="pt-5 loading-text" [innerHTML]="loadingText | translate"></p>
+	</div>
+	<!-- end of page3-->
 </div>
