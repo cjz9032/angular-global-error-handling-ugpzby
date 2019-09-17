@@ -1,12 +1,12 @@
 import { CommonService } from 'src/app/services/common/common.service';
 import { NetworkBoostService } from './../../../../services/gaming/gaming-networkboost/networkboost.service';
-import { Component, OnInit, Input, Output, EventEmitter,OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-networkboost-add-apps',
 	templateUrl: './networkboost-add-apps.component.html',
-	styleUrls: ['./networkboost-add-apps.component.scss']
+	styleUrls: [ './networkboost-add-apps.component.scss' ]
 })
 export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 	loading = true;
@@ -14,7 +14,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 	noAppsRunning = false;
 	addAppsList: string;
 	statusAskAgain: boolean;
-	public isChecked:any = [];
+	public isChecked: any = [];
 	@Input() showAppsModal: boolean;
 	@Input() addedApps = 0;
 	maxAppsCount = 5;
@@ -25,12 +25,12 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 		this.refreshNetworkBoostList();
 	}
 
-	ngOnChanges(changes:any){
-		this.runningList.push({"iconName":"","processDescription":"","processPath":""});
+	ngOnChanges(changes: any) {
+		this.runningList.push({ iconName: '', processDescription: '', processPath: '' });
 	}
 
-	async onValueChange(event:any,i:number) {
-		this.isChecked[i] =!this.isChecked[i];
+	async onValueChange(event: any, i: number) {
+		this.isChecked[i] = !this.isChecked[i];
 		if (event && event.target) {
 			this.addAppsList = event.target.value;
 			if (this.isChecked[i]) {
@@ -43,9 +43,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 
 	async addAppToList(app) {
 		try {
-			const result = await this.networkBoostService.addProcessToNetworkBoost(
-				app
-			);
+			const result = await this.networkBoostService.addProcessToNetworkBoost(app);
 			if (result) {
 				this.addedApps += 1;
 			}
@@ -53,9 +51,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 	}
 	async removeApp(app) {
 		try {
-			const result = await this.networkBoostService.deleteProcessInNetBoost(
-				app
-			);
+			const result = await this.networkBoostService.deleteProcessInNetBoost(app);
 			if (result) {
 				this.addedApps -= 1;
 			}
@@ -82,14 +78,12 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
 	}
-	runappKeyup(event,index){
-		if(event.which === 9){
-			if(index === this.runningList.length-1){
-				console.log("¾Û½¹------------------")
-				let txt1 = document.getElementById("close");
+	runappKeyup(event, index) {
+		if (event.which === 9) {
+			if (index === this.runningList.length - 1) {
+				let txt1 = document.getElementById('close');
 				txt1.focus();
 			}
 		}
-		
 	}
 }

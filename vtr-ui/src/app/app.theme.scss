@@ -28,7 +28,7 @@ $gaming_green_gradient: linear-gradient(90deg, #2fcc74, #33dfa6);
 $gaming_switch_light: #f2f2f2;
 $gaming_switch_dark: #6d6d6d;
 $gaming-slate-blue: #30415a;
-$gaming-Darkslate-blue: #233043;
+$gaming-Darkslate-blue: #233043; //new code #222D45;//old --code #233043 changed by Ram according to Hongjuan
 $gaming_blue_grey_light: #425067;
 $gaming_grey_lightest: #aab0bc;
 $gaming_hover: #545f76;
@@ -84,9 +84,11 @@ $shade_lightest: #f1f1f1;
 $shade_extralight: #f6f8f8;
 $shade_blue: #34495e;
 $blue-dark: #24536d;
+$blue-light: #2955BC;
+$blue-lighter: #346CEF;
 $light-grey: #788590;
-$border_light: #F8D5D5;
-$text_light: #FEF8F8;
+$border_light: #f8d5d5;
+$text_light: #fef8f8;
 $button_disable: #808080;
 $button_gradient_start: #2e62d9;
 $button_gradient_end: #4980fc;
@@ -142,6 +144,7 @@ $gaming_hd_diameter_sm: 8rem;
 $gaming_hd_diameter_xs: 6rem;
 
 $gradient_main: linear-gradient(90deg, $main_gstart 0%, $main 100%);
+$blue_Gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
 
 $mediaquery_0: "only screen and (max-width : 3600px)";
 $mediaquery_1: "only screen and (max-width : 3000px)";

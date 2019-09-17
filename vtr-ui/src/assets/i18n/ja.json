@@ -1250,7 +1250,7 @@
                     "description3": "1. コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
                     "description4": "2. コンピューターが休止状態またはオフであるとき、タッチレスログインは機能しません。",
                     "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。",
-                    "description6": "4. コンピューターで機内モードを有効にすると、これらの機能は無効になります。"
+                    "description6": "4.お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 設定に移動",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "アンチウィルス",
                 "back": "戻る",
-                "recommends": "Lenovo では、<b>McAfee<b> を使用してすべてのデバイスを保護することを推奨しています",
+                "recommends": "すべてのデバイスを保護するために Lenovo が <b>McAfee</b> を推奨している理由",
                 "award": "受賞歴のあるウイルス対策",
                 "mcafeePremium": "McAfee LiveSafe プロテクション",
                 "protectedBy": "現在、{{protectedName}} によって保護されています。ただし、McAfee LiveSafe を使用すると、より適切に保護される可能性があります。",
