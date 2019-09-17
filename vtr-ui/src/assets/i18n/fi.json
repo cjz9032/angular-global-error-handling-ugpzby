@@ -1250,7 +1250,7 @@
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
                     "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
-                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä ominaisuudet ovat poissa käytöstä."
+                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Virustentorjunta",
                 "back": "EDELLINEN",
-                "recommends": "Lenovo suosittelee <b>McAfeeta<b> kaikkien laitteiden suojaamiseen",
+                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfee</b>tä kaikkien laitteidesi suojaamiseen",
                 "award": "Palkittu virustentorjuntaohjelmisto",
                 "mcafeePremium": "McAfee LiveSafe -suojaus",
                 "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Suojauksen kunto",

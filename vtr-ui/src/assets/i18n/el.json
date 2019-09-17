@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Προστασία από ιούς",
                 "back": "ΠΙΣΩ",
-                "recommends": "Η Lenovo συνιστά το <b>McAfee<b> για την προστασία όλων των συσκευών σας",
+                "recommends": "Γιατί η Lenovo συνιστά το <b>McAfee</η> για την προστασία όλων των συσκευών σας",
                 "award": "Βραβευμένο λογισμικό προστασίας από ιούς",
                 "mcafeePremium": "Προστασία McAfee LiveSafe",
                 "protectedBy": "Προς το παρόν, προστατεύεστε με το {{protectedName}}. Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Εύρυθμη λειτουργία ασφαλείας",

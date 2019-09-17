@@ -1250,7 +1250,7 @@
                     "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
                     "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión sin interacción no funcionará.",
                     "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático.",
-                    "description6": "4. Si el Modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán."
+                    "description6": "4. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ATRÁS",
-                "recommends": "Lenovo le recomienda <b>McAfee<b> para proteger todos los dispositivos",
+                "recommends": "Por qué Lenovo recomienda <b>McAfee</b> para proteger todos los dispositivos",
                 "award": "Antivirus galardonado",
                 "mcafeePremium": "Protección McAfee LiveSafe",
                 "protectedBy": "Actualmente está protegido por {{protectedName}}. Sin embargo, podría estar mejor protegido con McAfee LiveSafe.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Estado de seguridad",

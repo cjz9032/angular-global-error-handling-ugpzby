@@ -35,6 +35,9 @@
 		position: relative;
 		cursor: pointer;
 		z-index: 1;
+		&:focus {
+			outline: $focus_outline_light;
+		}
 		a {
 			color: #ffffff;
 			border-bottom: 0.1rem solid $light;

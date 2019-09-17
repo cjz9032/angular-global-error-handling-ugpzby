@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZURÜCK",
-                "recommends": "Lenovo empfiehlt <b>McAfee<b> für den Schutz Ihrer Geräte",
+                "recommends": "Warum Lenovo <b>McAfee</Lenovo> für den Schutz Ihrer Geräte empfiehlt",
                 "award": "Preisgekrönter Virenschutz",
                 "mcafeePremium": "McAfee LiveSafe-Schutz",
                 "protectedBy": "Sie werden derzeit von {{protectedName}} geschützt. McAfee LiveSafe bietet jedoch einen besseren Schutz.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Sicherheitszustand",

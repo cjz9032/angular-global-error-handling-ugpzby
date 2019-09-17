@@ -1250,7 +1250,7 @@
                     "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
                     "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Bezdotykové prihlásenie nebude fungovať.",
                     "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení.",
-                    "description6": "4. Ak je v počítači povolený režim Lietadlo, tieto funkcie sú vypnuté."
+                    "description6": "4. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Prejsť na nastavenia služby Windows Hello",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivírus",
                 "back": "SPÄŤ",
-                "recommends": "Spoločnosť Lenovo odporúča aplikáciu <b>McAfee<b> na ochranu všetkých vašich zariadení",
+                "recommends": "Prečo spoločnosť Lenovo odporúča aplikáciu <b>McAfee<b> na ochranu všetkých vašich zariadení",
                 "award": "Oceňovaný antivírus",
                 "mcafeePremium": "Ochrana McAfee LiveSafe",
                 "protectedBy": "V súčasnosti ste chránení programom {{protectedName}}. Môžete však byť chránení lepšie pomocou programu McAfee LiveSafe.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stav zabezpečenia",

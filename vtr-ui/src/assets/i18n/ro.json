@@ -1250,7 +1250,7 @@
                     "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
                     "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
                     "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată.",
-                    "description6": "4. Dacă Modul avion este activat pe computer, aceste caracteristici sunt dezactivate."
+                    "description6": "4. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ÎNAPOI",
-                "recommends": "Lenovo recomandă <b>McAfee<b> pentru a vă proteja toate dispozitivele",
+                "recommends": "De ce Lenovo recomandă <b>McAfee<b> pentru a vă proteja toate dispozitivele",
                 "award": "Antivirus premiat",
                 "mcafeePremium": "Protecție McAfee LiveSafe",
                 "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Sănătatea securității",

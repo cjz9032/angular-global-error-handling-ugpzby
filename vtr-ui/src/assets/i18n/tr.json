@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Virüsten Koruma",
                 "back": "GERİ",
-                "recommends": "Lenovo, <b>McAfee<b>'nin tüm cihazlarınızı korumasını önerir",
+                "recommends": "Lenovo tüm cihazlarınızı korumak için neden <b>McAfee</b>'yi öneriyor",
                 "award": "Ödüllü virüsten koruma yazılımı",
                 "mcafeePremium": "McAfee LiveSafe Koruma",
                 "protectedBy": "Şu anda {{protectedName}} tarafından korunmaktasınız. Ancak McAfee LiveSafe ile daha da iyi korunabilirsiniz.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Güvenlik Durumu",

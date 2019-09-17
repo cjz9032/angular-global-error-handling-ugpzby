@@ -1250,7 +1250,7 @@
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
-                    "description6": "4. 電腦如已啟用飛航模式，這些功能將會停用。"
+                    "description6": "4.如果您的電腦上已啟用飛航模式，這些功能都會停用。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "防毒",
                 "back": "上一步",
-                "recommends": "Lenovo 建議使用 <b>McAfee<b> 來保護您所有的裝置",
+                "recommends": "為何 Lenovo 建議使用 <b>McAfee<b> 來保護您所有的裝置",
                 "award": "獲獎肯定的防毒軟體",
                 "mcafeePremium": "McAfee LiveSafe 保護",
                 "protectedBy": "您目前受到 {{protectedName}} 的保護。但是，您可以透過 McAfee LiveSafe 獲得更好的保護。",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "安全性健康情況",

@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Антивірус",
                 "back": "НАЗАД",
-                "recommends": "Lenovo рекомендує <b>McAfee<b> для захисту всіх ваших пристроїв",
+                "recommends": "Чому Lenovo рекомендує <b>McAfee<b> для захисту всіх ваших пристроїв",
                 "award": "Відзначений нагородами антивірус",
                 "mcafeePremium": "Захист McAfee LiveSafe",
                 "protectedBy": "Наразі вас захищає {{protectedName}}. Однак McAfee LiveSafe захистить вас краще.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Стан безпеки",

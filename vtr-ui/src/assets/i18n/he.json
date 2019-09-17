@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "אנטי-וירוס",
                 "back": "חזרה",
-                "recommends": "Lenovo ממליצה על <b>McAfee<b> לצורך הגנה על כל המכשירים שלכם",
+                "recommends": "מדוע Lenovo ממליצה על <b>McAfee</b> לצורך הגנה על כל המכשירים שלכם",
                 "award": "אנטי-וירוס עטור פרסים",
                 "mcafeePremium": "ההגנה של McAfee LiveSafe",
                 "protectedBy": "כרגע אתם מוגנים על-ידי {{protectedName}}. עם זאת, התוכנה McAfee LiveSafe יכולה לספק הגנה טובה יותר. ",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "תקינות האבטחה",

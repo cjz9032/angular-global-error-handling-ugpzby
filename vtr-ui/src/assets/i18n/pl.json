@@ -1250,7 +1250,7 @@
                     "description3": "1. Funkcja może nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
                     "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony. Logowanie bez dotyku nie będzie działać.",
                     "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta, tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania.",
-                    "description6": "4. Jeśli tryb samolotowy komputera jest włączony, te funkcje są wyłączone."
+                    "description6": "4. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Przejdź do ustawień funkcji Windows Hello",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antywirus",
                 "back": "WSTECZ",
-                "recommends": "W celu ochrony wszystkich urządzeń Lenovo zaleca <b>McAfee<b>",
+                "recommends": "Dlaczego Lenovo zaleca <b>McAfee</Lenovo> w celu ochrony wszystkich twoich urządzeń",
                 "award": "Nagradzane oprogramowanie antywirusowe",
                 "mcafeePremium": "Ochrona McAfee LiveSafe",
                 "protectedBy": "Obecnie korzystasz z ochrony oprogramowania {{protectedName}}. Program McAfee LiveSafe może jednak zapewnić lepszą ochronę.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Bezpieczeństwo",

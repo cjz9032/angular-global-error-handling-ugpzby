@@ -18,8 +18,8 @@
 			</div>
 			<div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
 		</li>
-		<li *ngFor="let app of appListData; let i = index" [ngClass]="{'hovered': hoverEle == i}"
-			[title]="app.processDescription">
+		<li *ngFor="let app of appListData; let i = index" [ngClass]="{'hovered': app.isHovered}"
+    	(mouseover)="app.isHovered=true" (mouseout)="app.isHovered=false"  [title]="app.processDescription">
 			<div>
 				<img src="{{app.iconName}}" alt="{{app.processDescription}}" />
 			</div>
@@ -28,9 +28,9 @@
 			</div>
 			<div class="remove-app" (click)="removeApp(app.processDescription,i)"
 				(keydown.enter)="removeApp(app.processDescription,i)"
-				(keyup.enter)="removeApp(app.processDescription,i)" [tabindex]="modalStatus? '-1':'1'" role="button"
-				[attr.aria-label]="'Remove '+app.processDescription" role="button" (focus)="hoverEle = i"
-				(focusout)="hoverEle = -1">
+				(keyup.enter)="removeApp(app.processDescription,i)"  (focus)="app.isHovered=true" 
+				(focusout)="app.isHovered=false" [tabindex]="modalStatus? '-1':'1'" role="button"
+				attr.aria-label="{{'Remove '+ app.processDescription}}">
 				<svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
 					<title>6.20pxIcon/Close</title>

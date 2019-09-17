@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirusni program",
                 "back": "NAZAD",
-                "recommends": "Lenovo preporučuje <b>McAfee<b> za zaštitu svih vaših uređaja",
+                "recommends": "Zbog čega Lenovo preporučuje <b>McAfee<b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, možete da budete bolje zaštićeni pomoću usluge McAfee LiveSafe.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stanje bezbednosti",

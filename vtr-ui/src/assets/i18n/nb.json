@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "recommends": "Lenovo anbefaler at du beskytter alle enhetene med <b>McAfee<b>",
+                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</Lenovo> til å beskytte alle enhetene dine",
                 "award": "Prisbelønt antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Sikkerhetstilstand",

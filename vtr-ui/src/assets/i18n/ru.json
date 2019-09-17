@@ -1250,7 +1250,7 @@
                     "description3": "1. Если компьютер находится в режиме тента, планшета или консоли, эти функции могут работать неправильно.",
                     "description4": "2. Если компьютер находится в режиме гибернации или выключен. Функция бесконтактного входа не будет работать.",
                     "description5": "3. Подберите угол наклона экрана вашего компьютера таким образом, чтобы ИК-камера могла распознавать ваше лицо для автоматического входа в систему.",
-                    "description6": "4. Если на компьютере включен режим \"в самолете\", эти функции отключены."
+                    "description6": "4. Если в компьютере включен режим \"в самолете\", эти функции отключены."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейдите в раздел параметров Windows Hello",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Антивирусная программа",
                 "back": "НАЗАД",
-                "recommends": "Lenovo рекомендует <b>McAfee<b> для защиты всех ваших устройств",
+                "recommends": "Почему Lenovo рекомендует <b>McAfee<b> для защиты всех ваших устройств",
                 "award": "Отмеченная наградами антивирусная программа",
                 "mcafeePremium": "Защита McAfee LiveSafe",
                 "protectedBy": "В настоящее время вашу безопасность обеспечивает {{protectedName}}. Однако McAfee LiveSafe сможет защитить вас лучше.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Состояние системы безопасности",

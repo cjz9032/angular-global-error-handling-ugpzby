@@ -1250,7 +1250,7 @@
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
-                    "description6": "4. Ha a repülőgépes üzemmód engedélyezve van a számítógépen, ezek a funkciók nem működnek."
+                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Vírusirtó",
                 "back": "VISSZA",
-                "recommends": "A Lenovo a <b>McAfee<b> termékek használatát javasolja az összes eszköz védelméhez",
+                "recommends": "Miért javasolja a Lenovo a <b>McAfee-t</b> az összes eszköz védelmére",
                 "award": "Díjnyertes vírusirtó",
                 "mcafeePremium": "McAfee LiveSafe védelem",
                 "protectedBy": "Önt jelenleg a(z) {{protectedName}} védi. A McAfee LiveSafe azonban hatékonyabb védelmet nyújthat.",
@@ -1827,7 +1827,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Biztonsági állapot",
