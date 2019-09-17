@@ -91,7 +91,10 @@
 			true,
 			"tabs",
 			4
-		]
+		],
+		"no-unused-variable": true,
+		"no-duplicate-imports": true,
+		"no-duplicate-variable": true
 	},
 	"rulesDirectory": [
 		"codelyzer"
