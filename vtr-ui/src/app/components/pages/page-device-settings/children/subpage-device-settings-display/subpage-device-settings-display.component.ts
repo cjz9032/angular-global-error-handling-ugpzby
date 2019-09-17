@@ -182,7 +182,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log(`get queryParamMap for navigation from smart assist`)
 			setTimeout(() => {
 				document.getElementById('camera').scrollIntoView();
-			},200);
+			},500);
 		})
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
