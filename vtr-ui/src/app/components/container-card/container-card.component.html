@@ -272,6 +272,7 @@
 		[style.height.px]="containerCardArticle.clientWidth * ratio">
 		<div class="container-fluid">
 			<a *ngIf="isOnline"
+				class="article-content"
 				[attr.href]="!actionLink ? null : actionLink"
 				(click)="linkClicked(actionType, actionLink)"
 				metricsItemCategory="article"
@@ -284,11 +285,7 @@
 				rel="noopener">
 				<div class="row">
 					<div class="col col-12 image-container">
-						<a [attr.href]="!actionLink ? null : actionLink"
-							target="_blank"
-							rel="noopener"
-							id="{{containerCardId+'_card_image'}}"
-							class="card-image"
+						<div class="card-image"
 							[style.background-image]="'url(' + img + ')'">
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -298,7 +295,7 @@
 								<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
 								attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
 							</div>
-						</a>
+						</div>
 					</div>
 					<div class="row w-100">
 						<div class="col col-12 content">
@@ -316,13 +313,8 @@
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								class="read-more">
-								<a [attr.href]="!actionLink ? null : actionLink"
-									id="{{containerCardId+'_read_more'}}"
-									target="_blank"
-									rel="noopener">
-									<span class="link-label">{{action}}</span>
-									<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-								</a>
+								<span class="link-label">{{action}}</span>
+								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</div>
 						</div>
 					</div>
