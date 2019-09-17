@@ -46,7 +46,7 @@
 					</div>
 					<div class="item-right" *ngIf="item.result">
 						<div class="module-result-text"
-							[ngClass]="{'success': item.resultIcon === 2, 'failure': item.resultIcon === 3 || item.resultIcon === 4 || item.resultIcon === 5 || item.resultIcon === 6, noScanned: !item.resultIcon}">
+							[ngClass]="{'success': item.resultIcon === 2, 'failure': item.resultIcon === 3 || item.resultIcon === 4 || item.resultIcon === 5, noScanned: !item.resultIcon}">
 							{{item.statusToken}}</div>
 						<div class="module-result-icon">
 							<div [ngSwitch]="item.resultIcon">
