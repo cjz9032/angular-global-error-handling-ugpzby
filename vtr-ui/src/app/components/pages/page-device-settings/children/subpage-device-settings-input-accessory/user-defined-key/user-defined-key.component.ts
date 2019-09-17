@@ -28,6 +28,9 @@ export class UserDefinedKeyComponent implements OnInit {
 	public udkFormSubmitted = false;
 
 	userDefinedKeyOptions: any[] = [];
+	// VAN-8849 ::  fix - holds keys for dropdown nls text
+	userDefinedKeyOptionsTitleKeys: any[] = ['device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1', 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2', 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3'];
+	dropDownTitleKey = 'title';
 
 	public selectedValue: any;
 	constructor(
@@ -38,26 +41,66 @@ export class UserDefinedKeyComponent implements OnInit {
 	) {
 		this.userDefinedKeyOptions = [
 			{
-				title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1'),
+				// VAN-8849 ::  fix - nls loads very fast becoz of commenting above line
+				/* 	title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1'), */
 				value: 1,
 				path: '1',
 				actionType: ''
 			},
 			{
-				title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2'),
+				// VAN-8849 ::  fix - nls loads very fast becoz of commenting above line
+				/* 	title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2'), */
 				value: 2,
 				path: '2',
 				actionType: INPUT_TEXT.str
 			},
 			{
-				title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3'),
+				// VAN-8849 ::  fix - nls loads very fast becoz of commenting above line
+				/* title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3'), */
 				value: 3,
 				path: '3',
 				actionType: OPEN_WEB.str
 			}];
+
+		// VAN-8849 ::  fix :: @times of F11 on windows to opens vantage , the userDefinedKeyOptions NLS not loaded or translated.
+		for (let index = 0; index < this.userDefinedKeyOptionsTitleKeys.length; index++) {
+			const element = this.userDefinedKeyOptionsTitleKeys[index];
+			// subscribe current object source attributes  for the NLS loading
+			this.translateKeyToSourceObjectAttribute(element, this.userDefinedKeyOptions[index], this.dropDownTitleKey);
+			/* 	this.translateService.stream(element).subscribe((value) => {
+					// if (this.userDefinedKeyOptions[index] && this.userDefinedKeyOptions[index].title) {
+					this.userDefinedKeyOptions[index].title = value;
+					//}
+				}); */
+		}
+
 		this.selectedValue = this.userDefinedKeyOptions[0];
 	}
 
+	translateKeyToSourceObjectAttribute(
+		key: string,
+		sourceObject: any,
+		sourceAttribute?: string,
+		prependText?: string,
+		appendText?: string
+	) {
+
+		this.translateService.stream(key).subscribe((value) => {
+			// Update or create property sourceAttribute in  sourceObject , set its value to translated value
+			if (prependText) {
+				value = prependText + value;
+			}
+			if (appendText) {
+				value += appendText;
+			}
+			if (sourceAttribute) {
+				sourceObject[sourceAttribute] = value;
+			} else {
+				sourceObject = value;
+			}
+
+		});
+	}
 	ngOnInit() {
 		try {
 			this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);

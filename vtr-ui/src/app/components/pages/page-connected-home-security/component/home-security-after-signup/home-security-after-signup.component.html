@@ -1,10 +1,13 @@
 <div class="vtr-home-security-after-signup">
-	<div class="content-container p-40">
-		<div class="d-flex justify-content-end mb-4">
-			<img class="coronet-logo"
-				[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" />
+	<div *ngIf="account?.role === 'admin'" class="content-container p-40 mb-5">
+		<div class="d-flex justify-content-between mb-4">
+			<div [innerHTML]=""></div>
+			<div>
+				<img class="coronet-logo"
+					[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" />
+			</div>
 		</div>
-		<div *ngIf="account?.role === 'admin'" class="row content-body mb-4 justify-content-between">
+		<div class="row mb-4 justify-content-between">
 			<div class="d-flex flex-column justify-content-center p-4 col-12 col-sm-12 col-md-9">
 				<ng-container *ngIf="account?.state === 'trial'">
 					<p class="m-0 pl-0"
@@ -26,7 +29,7 @@
 				</p>
 				<p class="m-0 pl-0"><span>Lenovo ID: </span><span [innerHTML]="account?.lenovoId"></span></p>
 			</div>
-			<div class="d-flex align-items-center pr-4 tryNow-btn">
+			<div class="d-flex align-items-center pr-4 common-btn">
 				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"
@@ -59,44 +62,46 @@
 				</vtr-ui-button>
 			</div>
 		</div>
+	</div>
+	<div class="content-container p-40">
+		<div class="row heading mb-4" [innerHTML]="'homeSecurity.overview.overviewTitle' | translate"></div>
 		<div class="row content-body mb-4">
 			<div class="container-fluid sub-container p-4">
-				<div *ngIf="overviewTitle" class="row heading mb-4" [innerHTML]="overviewTitle | translate"></div>
 				<div class="row container-fluid home-card mb-4">
 					<vtr-home-security-all-devices [allDevices]="allDevices" class="container-fluid">
 					</vtr-home-security-all-devices>
 				</div>
-				<div *ngIf="account?.role === 'admin'" class="d-flex justify-content-end">
-					<vtr-ui-button
-						metricsItem="goToDashboard"
-						metricsEvent="featureClick"
-						metricsParent="{{metricsParent}}"
-						(click)="common.openCornet()"
-						[isDisabled]="!common?.connectedHomeSecurity"
-						linkId="chs-btn-goToDashboard"
-						[title]="'homeSecurity.overview.goDashboard' | translate"
-						[label]="'homeSecurity.overview.goDashboard' | translate">
-					</vtr-ui-button>
-				</div>
 			</div>
 		</div>
-		<div *ngIf="account?.role === 'user'" class="row content-body justify-content-between">
-				<div class="d-flex flex-column justify-content-center p-4">
-					<p class="m-0" [innerHTML]="'homeSecurity.overview.disconnectDevice' | translate"></p>
-				</div>
-				<div class="d-flex align-items-center pr-4 tryNow-btn">
-					<vtr-ui-button
-						metricsItem="disconnect"
-						metricsEvent="featureClick"
-						metricsParent="{{metricsParent}}"
-						(click)="disconnect()"
-						[isDisabled]="!common?.connectedHomeSecurity"
-						linkId="chs-btn-disconnect"
-						[isRed]="true"
-						[title]="'homeSecurity.overview.disconnect' | translate"
-						[label]="'homeSecurity.overview.disconnect' | translate">
-					</vtr-ui-button>
-				</div>
+		<div *ngIf="account?.role === 'admin'" class="d-flex justify-content-start">
+			<vtr-ui-button
+				metricsItem="goToDashboard"
+				metricsEvent="featureClick"
+				metricsParent="{{metricsParent}}"
+				(click)="common.openCornet()"
+				[isDisabled]="!common?.connectedHomeSecurity"
+				linkId="chs-btn-goToDashboard"
+				[title]="'homeSecurity.overview.goDashboard' | translate"
+				[label]="'homeSecurity.overview.goDashboard' | translate">
+			</vtr-ui-button>
+		</div>
+	</div>
+	<div *ngIf="account?.role === 'user'" class="p-40 mt-5">
+		<div class="d-flex flex-column justify-content-center pb-3">
+			<p class="m-0" [innerHTML]="'homeSecurity.overview.disconnectDevice' | translate"></p>
+		</div>
+		<div class="d-flex align-items-center pr-4 common-btn">
+			<vtr-ui-button
+				metricsItem="disconnect"
+				metricsEvent="featureClick"
+				metricsParent="{{metricsParent}}"
+				(click)="disconnect()"
+				[isDisabled]="!common?.connectedHomeSecurity"
+				linkId="chs-btn-disconnect"
+				buttonColor="red"
+				[title]="'homeSecurity.overview.disconnect' | translate"
+				[label]="'homeSecurity.overview.disconnect' | translate">
+			</vtr-ui-button>
 		</div>
 	</div>
 </div>
