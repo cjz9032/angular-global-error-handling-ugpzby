@@ -39,6 +39,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	voipAppName = ['Skype For Business', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
+	public inputAccessoriesCapability: InputAccessoriesCapability;
+
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private commonService: CommonService,
@@ -50,8 +52,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		this.getVoipHotkeysSettings();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
-			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-			this.keyboardCompatibility = inputAccessoriesCapability.isKeyboardMapAvailable;
+			this.initDataFromCache();
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
@@ -97,6 +98,29 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			});
 	}
 
+	initDataFromCache() {
+		this.initHiddenKbdFnFromCache();
+	}
+
+	initHiddenKbdFnFromCache() {
+		try {
+			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+			if (this.inputAccessoriesCapability !== undefined) {
+				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
+				if (this.inputAccessoriesCapability.image && this.inputAccessoriesCapability.image.length > 0) {
+					this.image = this.inputAccessoriesCapability.image;
+				}
+				if (this.inputAccessoriesCapability.additionalCapabilitiesObj) {
+					this.additionalCapabilitiesObj = this.inputAccessoriesCapability.additionalCapabilitiesObj;
+				}
+			} else {
+				this.inputAccessoriesCapability = new InputAccessoriesCapability();
+			}
+		} catch (error) {
+			console.log('initHiddenKbdFnFromCache', error);
+		}
+	}
+
 	// To get Keyboard Layout Name
 	public getKBDLayoutName() {
 		try {
@@ -123,6 +147,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetKBDMachineType().then((value: any) => {
 					this.getKeyboardMap(layOutName, value);
+					this.inputAccessoriesCapability.image = this.image;
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					this.getAdditionalCapabilities();
 				})
 					.catch(error => {
@@ -254,6 +280,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 							magnifier: response[2],
 							backLight: response[3],
 						};
+						this.inputAccessoriesCapability.additionalCapabilitiesObj = this.additionalCapabilitiesObj;
+						this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					}
 				});
 			}

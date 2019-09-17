@@ -1,5 +1,5 @@
 <vtr-page-layout
-	[pageTitle]="deviceService.isArm || !commonService.isOnline ? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
+	[pageTitle]="deviceService.isArm || !commonService.isOnline ||!userService.auth? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
 	[textId]="'dashboard'"
 	[pageCssClass]="'dashboard'">
 
@@ -172,7 +172,7 @@
 					</vtr-widget-security-status>
 				</div>
 			</div>
-			<div class="row no-gutters">
+			<div class="row no-gutters" [vtrAppSearchScroller]="['search-feedback']">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"

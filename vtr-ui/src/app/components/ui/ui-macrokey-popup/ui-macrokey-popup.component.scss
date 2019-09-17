@@ -7,6 +7,15 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: $screen_dark_50;
+
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+		&:focus {
+			text-decoration: none;
+		}
+	}
 }
 ui-popover {
 	position: absolute;
@@ -20,12 +29,12 @@ ui-popover {
 	top: 25%;
 	left: 0;
 	margin: auto;
-	@media #{$black-on-white}{
-		border:0.1rem solid $dark;
-		}
-	@media #{$white-on-black}{
-		border:0.1rem solid $light;
-		}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
 	@media #{$small-screen} {
 		max-width: 45rem;
 	}
@@ -87,19 +96,22 @@ ui-popover {
 		font-weight: $weight_600;
 		margin-top: 1.8rem;
 		margin-left: 3rem;
-		border-bottom: 2px solid $main;
+		border-bottom: 2px solid $btn_secondary_color;
 		cursor: pointer;
+		&:hover{
+				text-decoration: none;
+			}
 	}
 }
 
 ::ng-deep {
-	.vtr-menu-main{
+	.vtr-menu-main {
 		z-index: 1 !important;
 	}
-   .vtr-page-content{
+	.vtr-page-content {
 		z-index: unset !important;
 	}
-   .modal-main-wrapper {
+	.modal-main-wrapper {
 		z-index: 2 !important;
-    }
+	}
 }

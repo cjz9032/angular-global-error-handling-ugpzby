@@ -31,6 +31,8 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	mcafeeArticleId: string;
 	cardContentPositionA: any = {};
 	securityAdvisor: phoenix.SecurityAdvisor;
+	virus = 'security.antivirus.windowsDefender.virus';
+	homeNetwork = 'security.antivirus.windowsDefender.homeNetwork';
 	fireWall = 'security.antivirus.mcafee.firewall';
 	register = 'security.antivirus.mcafee.register';
 	virusScan = 'security.antivirus.mcafee.virusScan';
@@ -103,10 +105,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefender, this.viewModel.windowsDefender);
 			this.viewModel.windowsDefenderstatusList = [{
 				status: this.viewModel.windowsDefender.status,
-				title: this.virusScan,
+				title: this.virus,
 			}, {
 				status: this.viewModel.windowsDefender.firewallStatus,
-				title: this.fireWall,
+				title: this.homeNetwork,
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.viewModel.windowsDefenderstatusList);
 		}
@@ -168,10 +170,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.viewModel.windowsDefender.status = data;
 			this.viewModel.windowsDefenderstatusList = [{
 				status: this.viewModel.windowsDefender.status,
-				title: this.virusScan,
+				title: this.virus,
 			}, {
 				status: this.viewModel.windowsDefender.firewallStatus,
-				title: this.fireWall,
+				title: this.homeNetwork,
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.viewModel.windowsDefenderstatusList);
 			this.viewModel.antiVirusPage(this.antiVirus);
@@ -179,10 +181,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.viewModel.windowsDefender.firewallStatus = data;
 			this.viewModel.windowsDefenderstatusList = [{
 				status: this.viewModel.windowsDefender.status,
-				title: this.virusScan,
+				title: this.virus,
 			}, {
 				status: this.viewModel.windowsDefender.firewallStatus,
-				title: this.fireWall,
+				title: this.homeNetwork,
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.viewModel.windowsDefenderstatusList);
 			this.viewModel.antiVirusPage(this.antiVirus);

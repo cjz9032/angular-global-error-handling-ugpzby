@@ -11,6 +11,7 @@ import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, 
 export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	@Input() public options;
+	@Input() ariaLabel:any;
 	@Output() public change = new EventEmitter<any>();
 	@Output() showDropDown = new EventEmitter();
 	public showOptions = false;
@@ -32,7 +33,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	public getCurrentOption() {
 		this.options.dropOptions.forEach((option: any) => {
 			if (option.value === this.options.curSelected) {
-				this.currentOption = option.name;
+				this.currentOption = option.ariaLabel;
 				this.currentDescription = option.description;
 			}
 		});
@@ -51,14 +52,14 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	}
 
 	public setDefaultOption(option) {
-		this.currentOption = option.name;
+		this.currentOption = option.ariaLabel;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
 	}
 
 	public optionSelected(option) {
-		this.currentOption = option.name;
+		this.currentOption = option.ariaLabel;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
@@ -84,6 +85,12 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 					this.showOptions = false;
 				}
 			}
+		}
+	}
+	public keyupTabFn(event,i) {
+		console.log('event.keyCode=======',event.keyCode,'this.options.dropOptions.length==',this.options.dropOptions.length-1,i)
+		if((this.options.dropOptions.length-1) === i) {
+			if(event.keyCode === 9) this.showOptions = false;
 		}
 	}
 }

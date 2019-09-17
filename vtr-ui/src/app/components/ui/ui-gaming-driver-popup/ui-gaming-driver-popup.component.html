@@ -4,7 +4,7 @@
 			<div class="btn-close">
 			<a type="button" class="close" aria-hidden="true" (click)="close()"
 			tabindex="1" (keydown.enter)="close()"
-			 vtrMetrics [metricsItem]="'driverPopup_close'"
+			 vtrMetrics [metricsItem]="'driverpopup_close'"
 					metricsEvent="featureClick" id="gaming_driverPopup_close" aria-label="gaming_driverPopup_close" role="link" aria-labelledby="driver_popup_close">
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</a>
@@ -22,7 +22,7 @@
 				metricsEvent="featureClick"
 				(click)="systemUpdatePage()"  (keydown.enter)="systemUpdatePage()" id="gaming_driverPopup_install" aria-label="gaming_driverPopup_install" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</a>
 			<a (click)="close()" vtrMetrics tabindex="1"
-				[metricsItem]="'driverPopup_cancel'"
+				[metricsItem]="'driverpopup_cancel'"
 				metricsEvent="featureClick"  (keydown.enter)="close()"
 				class="cancel-link active" id="gaming_driverPopup_cancel" aria-label="gaming_driverPopup_cancel" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
 		</div>

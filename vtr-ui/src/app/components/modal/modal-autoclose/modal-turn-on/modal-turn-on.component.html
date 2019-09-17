@@ -1,35 +1,40 @@
 <div class="modal-main-wrapper">
-  <ui-popover-turn-on>
-    <div class="modal-body vtr-modal-turn-on">
-      <div class="modal-body">
-        <div class="row justify-content-end">
-          <div class="btn-close">
-            <button type="button" class="close" aria-hidden="true" (click)="closeModal(false)">
-              <fa-icon [icon]="['fal', 'times']"></fa-icon>
-            </button>
-          </div>
-        </div>
-        <div class="content-body">
-          <h1>{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }}</h1>
-          <p>{{ 'gaming.autoClose.modalTurnAutoClose.body' | translate }}</p>
-        </div>
-        <div class="check-asked">
-          <label for="askedBox">
-            <input type="checkbox" id="askedBox" (change)="setAksAgain($event)">
-            <div class="status-check"></div>
-            <div class="status-text">{{ 'gaming.autoClose.modalTurnAutoClose.checkedTitle' | translate }}</div>
-          </label>
-        </div>
-        <hr>
-        <div class="row">
-          <div>
-            <button class="btn enable-button"
-              (click)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
-            <a (click)="notNowAction($event)"
-              class="cancel-link active">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </ui-popover-turn-on>
+	<ui-popover-turn-on>
+		<div class="modal-body vtr-modal-turn-on">
+			<div class="modal-body">
+				<div class="row justify-content-end">
+					<div class="btn-close">
+						<button type="button" class="close" aria-hidden="true" (click)="closeModal(false)"
+							(keyup.enter)="closeModal(false)" tabindex="1" role="button" [attr.aria-label]="'Close'">
+							<fa-icon [icon]="['fal', 'times']"></fa-icon>
+						</button>
+					</div>
+				</div>
+				<div class="content-body">
+					<h1>{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }}</h1>
+					<p>{{ 'gaming.autoClose.modalTurnAutoClose.body' | translate }}</p>
+				</div>
+				<div class="check-asked">
+					<label for="askedBox">
+						<input type="checkbox" id="askedBox" (change)="setAksAgain($event)" tabindex="1" role="checkbox"
+							[attr.aria-label]="'Dont ask again'">
+						<div class="status-check"></div>
+						<div class="status-text">{{ 'gaming.autoClose.modalTurnAutoClose.checkedTitle' | translate }}
+						</div>
+					</label>
+				</div>
+				<hr>
+				<div class="row">
+					<div>
+						<button class="btn enable-button" (click)="turnOnAction(true)"
+							(keyup.enter)="turnOnAction(true)" tabindex="1" role="button"
+							[attr.aria-label]="'Turn on auto close'">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
+						<a (click)="notNowAction($event)" (keyup.enter)="notNowAction($event)"
+							class="cancel-link active" tabindex="1" role="button"
+							[attr.aria-label]="'Cancel'">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui-popover-turn-on>
 </div>
