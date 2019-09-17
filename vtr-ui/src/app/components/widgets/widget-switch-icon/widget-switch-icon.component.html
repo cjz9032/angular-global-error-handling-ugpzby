@@ -9,7 +9,7 @@
 	metricsEvent="featureClick"
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
-	<div class="switch-container"
+	<button class="switch-container"
 		[ngClass]="[value ? 'checked' : 'unchecked',disable ? 'disable-container' : '']" 
 		[id]="findId(value,disable)">
 		<div class="title" [ngClass]="{'disable-container' : disable}"
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</button>
 </div>
 
 <div class="vtr-widget-switch-icon"
