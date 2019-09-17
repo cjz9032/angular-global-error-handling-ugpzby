@@ -13,8 +13,8 @@ export class HomeSecurityMockService {
 			serverTimeUTC: new Date(),
 			expiration: new Date('sep 15, 2019'),
 			consoleUrl: '',
-			getConsoleUrl() {
-				return Promise.resolve('');
+			getCHSConsoleUrl() {
+				return Promise.resolve('https://chs.lenovo.com/');
 			}
 		},
 		deviceOverview: {

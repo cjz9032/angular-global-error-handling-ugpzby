@@ -1,17 +1,18 @@
 <div class="vtr-header-main">
-	<div class="back"
-		*ngIf="back && back.length>0">
+	<a class="back"
+		vtrMetrics
+		metricsEvent="FeatureClick"
+		metricsItem="back"
+		(click)="goBack()"
+		id="{{backId}}"
+		href="javascript:void();"
+		[attr.aria-label]="back" tabindex="1"
+		*ngIf="back && back.length > 0">
 		{{backarrow}}
-		<a vtrMetrics
-			metricsEvent="FeatureClick"
-			metricsItem="back"
-			(click)="goBack()"
-			id="{{backId}}"
-			href="javascript:void();"
-			[attr.aria-label]="back" tabindex="1">
+		<span>
 			{{back}}
-		</a>
-	</div>
+		</span>
+	</a>
 	<h1 class="title" id="{{textId}}-header-title" attr.aria-label="{{textId}}-header-title">{{title}}</h1>
 	<ng-content></ng-content>
 	<div *ngIf="forwardLink" class="forward-link">

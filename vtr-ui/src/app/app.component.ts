@@ -92,22 +92,11 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
-
-		window.addEventListener(
-			'online',
-			(e) => {
-				this.notifyNetworkState();
-			},
-			false
-		);
-
-		window.addEventListener(
-			'offline',
-			(e) => {
-				this.notifyNetworkState();
-			},
-			false
-		);
+		if (win.NetworkListener) {
+			win.NetworkListener.onnetworkchanged = (state) => {
+				this.notifyNetworkState(state);
+			};
+		}
 
 		document.addEventListener('visibilitychange', (e) => {
 			if (document.hidden) {
@@ -116,7 +105,13 @@ export class AppComponent implements OnInit, OnDestroy {
 				this.sendAppResumeMetric();
 			}
 		});
-		this.notifyNetworkState();
+
+
+		if (win.NetworkListener && win.NetworkListener.isInternetAccess()) {
+			this.notifyNetworkState(NetworkStatus.Available);
+		} else {
+			this.notifyNetworkState(NetworkStatus.Unavailable);
+		}
 	}
 
 	private launchWelcomeModal() {
@@ -355,12 +350,13 @@ export class AppComponent implements OnInit, OnDestroy {
 		} catch (error) { }
 	}
 
-	private notifyNetworkState() {
-		this.commonService.isOnline = navigator.onLine;
-		if (navigator.onLine) {
-			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
+	private notifyNetworkState(state) {
+		if (state && state.toString() === NetworkStatus.Available) {
+			this.commonService.isOnline = true;
+			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: true });
 		} else {
-			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
+			this.commonService.isOnline = false;
+			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: false });
 		}
 	}
 

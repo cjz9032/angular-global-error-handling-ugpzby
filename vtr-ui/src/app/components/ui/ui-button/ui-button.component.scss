@@ -73,11 +73,18 @@
 			background-image: linear-gradient(to right, $button_gradient_start, $button_gradient_end);
 		}
 		.btn-red {
-			background: $light;
-			color: $danger_dark;
-			border: 0.1rem solid $danger_dark;
+			background: $gradient_red;
+			color: $light;
 			&:focus {
 				box-shadow: 0 0 0 0.2rem $button_red_shadow;
+			}
+		}
+		.btn-gray {
+			background: $gradient_gray;
+			color: $shade_blue;
+			border: 0.1rem solid $grey_dark;
+			&:focus {
+				box-shadow: 0 0 0 0.2rem $text_light;
 			}
 		}
 	}
