@@ -274,6 +274,9 @@
 
 :host ::ng-deep {
 	vtr-ui-rectangle-radio {
+		.label {
+			word-wrap: normal;
+		}
 		.app-icon {
 			display: inline-block;
 			position: absolute;
