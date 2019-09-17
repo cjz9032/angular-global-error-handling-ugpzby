@@ -74,7 +74,7 @@ export class UserDataStateService {
 
 			if (isUserData) {
 				const trackersCount = Object.keys(trackingData.trackingData.trackers).length;
-				status = trackersCount ? FeaturesStatuses.exist : FeaturesStatuses.none;
+				status = trackersCount > 0 ? FeaturesStatuses.exist : FeaturesStatuses.none;
 			}
 
 			if (isFigleafReadyForCommunication && isTrackersBlocked) {

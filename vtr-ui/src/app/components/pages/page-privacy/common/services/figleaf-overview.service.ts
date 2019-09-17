@@ -27,7 +27,7 @@ export interface FigleafStatus {
 	appVersion: string;
 	licenseType: licenseTypes;
 	expirationDate: number;
-	daysToNotifyTrialExpired: number;
+	daysToExpiration: number;
 }
 
 export interface FigleafSettings {

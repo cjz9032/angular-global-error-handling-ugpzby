@@ -21,16 +21,19 @@
 	<div class="verify__block" *ngIf="!isShowConfrimation">
 		<div class="verify__wrapper">
 			<h3 class="verify__title"><span class="verify__title--red">{{breachedAccountsLength}}</span> breached accounts found</h3>
-			<p class="verify__text">To see breached accounts, verify your email so we can make sure it belongs to you.</p>
+			<p class="verify__text">To see breached accounts for <span class="verify__email--bold">{{userEmail}}</span>, verify your email so we can make sure it belongs to you.</p>
 
 			<p>
 				<button class="verify__button"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'BreachedAccountsVerifyEmailButton'"
 						(click)="verifyEmailClick()">{{isFigleafReadyForCommunication ? 'Verify email in app' : 'Verify email'}}</button>
 			</p>
 		</div>
 	</div>
 	<div class="verify__block verify__block--confirmation" *ngIf="isShowConfrimation">
-		<vtr-confirmation-popup></vtr-confirmation-popup>
+		<vtr-confirmation></vtr-confirmation>
 	</div>
 
 	<vtr-try-product-block

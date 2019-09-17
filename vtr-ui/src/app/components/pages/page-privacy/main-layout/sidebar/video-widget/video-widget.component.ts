@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonService } from '../../../../../../services/common/common.service';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
-import { filter, takeUntil } from 'rxjs/operators';
+import { filter, map, takeUntil } from 'rxjs/operators';
+import { NetworkStatus } from '../../../../../../enums/network-status.enum';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 
 export const VIDEO_POPUP_ID = 'videoPopupId';
@@ -9,12 +10,13 @@ export const VIDEO_POPUP_ID = 'videoPopupId';
 @Component({
 	selector: 'vtr-video-widget',
 	templateUrl: './video-widget.component.html',
-	styleUrls: ['./video-widget.component.scss']
+	styleUrls: ['./video-widget.component.scss'],
 })
 export class VideoWidgetComponent implements OnInit, OnDestroy {
 	videoPopupId = VIDEO_POPUP_ID;
+	isOnline = this.commonService.isOnline;
+
 	@Input() margin: 'top' | 'bottom' = 'top';
-	@Output() videoWatched$ = new EventEmitter<boolean>();
 
 	constructor(
 		private commonService: CommonService,
@@ -23,24 +25,27 @@ export class VideoWidgetComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.commonPopupService.getOpenState(this.videoPopupId)
-			.pipe(
-				takeUntil(instanceDestroyed(this)),
-				filter((state) => !state.isOpenState)
-			)
-			.subscribe(() => {
-				this.videoWatched$.emit(true);
-			});
+		this.checkOnline();
 	}
 
 	ngOnDestroy() {
 	}
 
 	openVideo() {
-		if (!this.commonService.isOnline) {
+		if (!this.isOnline) {
 			return;
 		}
 
 		this.commonPopupService.open(this.videoPopupId);
+	}
+
+	private checkOnline() {
+		this.commonService.notification.pipe(
+			filter((notification) => notification.type === NetworkStatus.Online || notification.type === NetworkStatus.Offline),
+			map((notification) => notification.payload),
+			takeUntil(instanceDestroyed(this))
+		).subscribe((payload) => {
+			this.isOnline = payload.isOnline;
+		});
 	}
 }
