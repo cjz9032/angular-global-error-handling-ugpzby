@@ -1,7 +1,7 @@
 <div class="vtr-widget-carousel"
 	#carouselContainer
 	[style.height.px]="carouselContainer.clientWidth * 340 / 944">
-	<ngb-carousel *ngIf="carouselModel"
+	<ngb-carousel tabindex="-1" *ngIf="carouselModel"
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"

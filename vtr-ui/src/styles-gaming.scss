@@ -1095,8 +1095,11 @@
 	}
 }
 
-button:focus,
-*:focus {
-	outline: 0;
+// hide by Bob Liu: VAN-8765
+.is-gaming {
+	button:focus,
+	*:focus {
+		outline: 0;
+	}
 }
 
