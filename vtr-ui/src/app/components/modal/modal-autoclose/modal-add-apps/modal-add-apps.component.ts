@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { isUndefined } from 'util';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
@@ -7,7 +7,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 	templateUrl: './modal-add-apps.component.html',
 	styleUrls: [ './modal-add-apps.component.scss' ]
 })
-export class ModalAddAppsComponent implements OnInit {
+export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	statusAskAgain: boolean;
 	@Input() showAppsModal: boolean;
 	@Output() closeAddAppsModal = new EventEmitter<any>();
@@ -22,6 +22,9 @@ export class ModalAddAppsComponent implements OnInit {
 
 	ngOnInit() {
 		this.refreshRunningList();
+	}
+	ngAfterViewInit() {
+		document.getElementById('close').focus();
 	}
 
 	async refreshRunningList() {

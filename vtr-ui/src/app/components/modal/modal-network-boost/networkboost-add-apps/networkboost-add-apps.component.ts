@@ -1,6 +1,6 @@
 import { CommonService } from 'src/app/services/common/common.service';
 import { NetworkBoostService } from './../../../../services/gaming/gaming-networkboost/networkboost.service';
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit } from '@angular/core';
 import { isUndefined } from 'util';
 
 @Component({
@@ -8,7 +8,7 @@ import { isUndefined } from 'util';
 	templateUrl: './networkboost-add-apps.component.html',
 	styleUrls: [ './networkboost-add-apps.component.scss' ]
 })
-export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
+export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterViewInit {
 	loading = true;
 	runningList: any = [];
 	noAppsRunning = false;
@@ -24,7 +24,9 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges {
 	ngOnInit() {
 		this.refreshNetworkBoostList();
 	}
-
+	ngAfterViewInit() {
+		document.getElementById('close').focus();
+	}
 	ngOnChanges(changes: any) {
 		this.runningList.push({ iconName: '', processDescription: '', processPath: '' });
 	}
