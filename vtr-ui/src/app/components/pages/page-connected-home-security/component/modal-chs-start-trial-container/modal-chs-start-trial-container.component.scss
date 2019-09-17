@@ -23,38 +23,56 @@
 		margin: 0 4rem 4rem 4rem;
 		border-bottom: none;
 		color: $main_dark;
-		.chs-logo {
-            border-bottom: 0.1rem solid $shade_extralight;
-            img {
-                height: 7rem;
-            }
-        }
         .description {
             font-size: 2.5rem;
             font-weight: $weight_bold;
             letter-spacing: 0;
 		}
-		.countdown {
-			span {
-				font-size: 5rem;
-			}
-		}
-        .sub-desc {
-            font-size: 2rem;
-			margin-bottom: 5rem;
+		.sub-desc {
+            font-size: 1.8rem;
+			margin-bottom: 2rem;
 			::ng-deep .button {
 				font-size: 2rem;
 			}
-        }
-        .modal-button {
-            background: $gradient_main;
-            border-radius: 5rem;
-            padding: 0 3rem;
-            height: 6rem;
-            font-size: 2rem;
-            color: $light;
-            font-weight: $weight_medium;
-        }
+		}
+		::ng-deep {
+			.button-box {
+				@media #{$mediaquery_7} {
+					margin-top: 0;
+				}
+			}
+		}
+		&.page-one {
+			.countdown {
+				border-bottom: 0.1rem solid $grey_light;
+				span {
+					font-size: 5rem;
+				}
+			}
+			.btn_cancel {
+				font-size: 2rem;
+				font-weight: bold;
+				color: $blueHyperLink;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+		&.page-two {
+			.btn-group {
+				border-top: 0.1rem solid $shade_extralight;
+			}
+		}
+		&.page-three {
+			.loadingIcon {
+				color: $blue-light;
+				width: 6rem;
+				height: 6rem;
+				border-width: 0.5rem;
+			}
+			.loading-text {
+				font-size: 2rem;
+			}
+		}
     }
 
 }

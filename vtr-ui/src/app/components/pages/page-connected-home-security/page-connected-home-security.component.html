@@ -18,15 +18,43 @@
 									[account]="account"
 									[common]="common">
 								</vtr-home-security-after-signup>
-								<div class="pt-5"
-									*ngIf="account?.state !== 'local'">
-									<img class="w-100 img" src="../../../../assets/images/connected-home-security/card-gamestore.png" alt="" srcset="">
-								</div>
 								<vtr-home-security-content *ngIf="account?.state === 'local'"
 									page="homeSecurity"
 									[location]="homeSecurityLocation"
 									[permission]="permission">
 								</vtr-home-security-content>
+								<div class="bottom-content d-none d-md-block">
+										<div class="pt-5"
+										*ngIf="account?.state !== 'local' && account?.role === 'user'">
+										<img class="w-100 img" src="../../../../assets/images/connected-home-security/card-gamestore.png" alt="" srcset="">
+									</div>
+									<div class="cutting-line"></div>
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<p class="subTitle mb-0" [innerHTML]="'homeSecurity.overview.poweredBy'  | translate"></p>
+											<p class="text-regular"
+												*vtrTranslate="'homeSecurity.overview.privacyPolicyAndTermsOfService' | translate">
+
+												<a id="chs-lnk-privacypolicy"
+													vtrMetrics
+													metricsEvent="featureClick"
+													metricsItem="privacyPolicy"
+													href=""
+													target="_blank"></a>
+												<a id="chs-lnk-termsofservices"
+													vtrMetrics
+													metricsEvent="featureClick"
+													metricsItem="termsOfServices"
+													href=""
+													target="_blank"></a>
+											</p>
+										</div>
+										<div>
+											<img class="coronet-logo"
+												[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" />
+										</div>
+									</div>
+								</div>
 							</div>
                         </div>
                     </div>
@@ -40,7 +68,7 @@
 										<div class="container-fluid">
 											<div class="row">
 												<div class="col">
-													<div class="title">
+													<div class="subTitle">
 														{{'security.homeprotection.securityhealth.title' | translate}}
 													</div>
 													<div class="description"
@@ -123,7 +151,39 @@
 							</div>
                         </div>
                     </div>
-                </div>
+				</div>
+				<div class="bottom-content d-block d-md-none">
+						<div class="pt-5"
+						*ngIf="account?.state !== 'local' && account?.role === 'user'">
+						<img class="w-100 img" src="../../../../assets/images/connected-home-security/card-gamestore.png" alt="" srcset="">
+					</div>
+					<div class="cutting-line"></div>
+					<div class="d-flex justify-content-between align-items-center">
+						<div>
+							<p class="subTitle mb-0" [innerHTML]="'homeSecurity.overview.poweredBy'  | translate"></p>
+							<p class="text-regular"
+								*vtrTranslate="'homeSecurity.overview.privacyPolicyAndTermsOfService' | translate">
+
+								<a id="chs-lnk-privacypolicy"
+									vtrMetrics
+									metricsEvent="featureClick"
+									metricsItem="privacyPolicy"
+									href=""
+									target="_blank"></a>
+								<a id="chs-lnk-termsofservices"
+									vtrMetrics
+									metricsEvent="featureClick"
+									metricsItem="termsOfServices"
+									href=""
+									target="_blank"></a>
+							</p>
+						</div>
+						<div>
+							<img class="coronet-logo"
+								[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" />
+						</div>
+					</div>
+				</div>
             </div>
         </div>
     </div>
