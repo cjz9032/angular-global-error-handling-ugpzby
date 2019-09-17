@@ -13,8 +13,8 @@
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
 						(mouseleave)="resetDescription(option)" (keydown.enter)="optionSelected(option)"
 						[attr.aria-selected]="option.value===options.curSelected?'true':'false'" role="option"
-						[attr.aria-label]="options.curSelected?option.label+' selected':option.label" tabindex="0"
-						(focusout)="itemsFocused()">
+						[attr.aria-label]="option.value===selectedOption.value?option.label+' selected':option.label+' unselected'"
+						tabindex="0" (focusout)="itemsFocused()">
 						<a class="dropdown-item" id="{{option.id}}" tabindex="-1" vtrMetrics
 							[metricsItem]="option.metricitem" metricsParam="{{option.metricitem}}"
 							metricsValue="{{option.value}}" metricsEvent="featureClick">
