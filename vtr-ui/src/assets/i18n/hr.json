@@ -1250,7 +1250,7 @@
                     "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
                     "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava neće raditi.",
                     "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave.",
-                    "description6": "4. Ako je način rada u zrakoplovu omogućen na vašem računalu, onemogućene su ove značajke."
+                    "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sustava Windows Hello",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Zaštita od virusa",
                 "back": "NATRAG",
-                "recommends": "Lenovo preporuča <b>McAfee<b> za zaštitu svih vaših uređaja",
+                "recommends": "Zašto tvrtka Lenovo preporuča <b>McAfee</tvrtka> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, McAfee LiveSafe bi vam mogao pružiti bolju zaštitu.",

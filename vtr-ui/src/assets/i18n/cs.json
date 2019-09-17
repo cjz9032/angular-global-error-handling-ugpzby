@@ -1250,7 +1250,7 @@
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
-                    "description6": "4. Pokud je v počítači povolen režim letadlo, tyto funkce jsou deaktivovány."
+                    "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZPĚT",
-                "recommends": "Lenovo doporučuje software <b>McAfee<b> na ochranu všech vašich zařízení",
+                "recommends": "Proč Lenovo doporučuje software <b>McAfee<b> na ochranu všech vašich zařízení",
                 "award": "Oceňovaný antivirus",
                 "mcafeePremium": "Ochrana McAfee LiveSafe",
                 "protectedBy": "Nyní vás chrání program {{protectedName}}. Můžete se však chránit lépe pomocí programu McAfee LiveSafe.",

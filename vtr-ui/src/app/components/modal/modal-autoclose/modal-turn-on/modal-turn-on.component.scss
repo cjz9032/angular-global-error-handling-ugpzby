@@ -137,6 +137,7 @@ ui-popover-turn-on {
 		&:hover {
 			color: $btn_primary_color;
 			border-bottom: 2px solid $btn_primary_color;
+			text-decoration: none;
 		}
 		&:active {
 			transform: scale(0.95);

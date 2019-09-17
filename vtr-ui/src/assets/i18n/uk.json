@@ -1684,7 +1684,7 @@
             "common": {
                 "title": "Антивірус",
                 "back": "НАЗАД",
-                "recommends": "Lenovo рекомендує <b>McAfee<b> для захисту всіх ваших пристроїв",
+                "recommends": "Чому Lenovo рекомендує <b>McAfee<b> для захисту всіх ваших пристроїв",
                 "award": "Відзначений нагородами антивірус",
                 "mcafeePremium": "Захист McAfee LiveSafe",
                 "protectedBy": "Наразі вас захищає {{protectedName}}. Однак McAfee LiveSafe захистить вас краще.",
