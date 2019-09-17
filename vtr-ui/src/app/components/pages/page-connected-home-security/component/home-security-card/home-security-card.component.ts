@@ -3,6 +3,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { HomeSecurityLocation } from 'src/app/data-models/home-security/home-security-location.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
 
 @Component({
 	selector: 'vtr-home-security-card',
@@ -45,7 +46,7 @@ export class HomeSecurityCardComponent implements OnInit {
 		if (!this.commonService.isOnline) {
 			this.dialogService.homeSecurityOfflineDialog();
 		} else if (this.location && this.location.isLocationServiceOn) {
-			this.dialogService.homeSecurityTrialModal(1);
+			this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
 		} else {
 			this.isShowCHSPermissionDialog().then((result) => {
 				if (result) {
@@ -54,7 +55,7 @@ export class HomeSecurityCardComponent implements OnInit {
 					this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 						if (status) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-							this.dialogService.homeSecurityTrialModal(1);
+							this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
 						}
 					});
 				}

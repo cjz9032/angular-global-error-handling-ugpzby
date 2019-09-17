@@ -6,7 +6,6 @@
 			metricsItem="closeCHSWelcomeModal"
 			metricsEvent="featureClick"
 			metricsParent="ConnectedHomeSecurity"
-			[ngClass]="{'invisible': isLocationServiceOn === true && showPageLocation === true}"
 			(click)="closeModal()">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""
@@ -38,7 +37,7 @@
 		</p>
 		<div class="d-flex sub-desc">
 			<div class="ml-0 mr-4 pl-0">
-				<vtr-ui-button *ngIf="!isLocationServiceOn"
+				<vtr-ui-button
 					linkId="chs-tour-btn-openLocation"
 					role="button"
 					metricsEvent="FeatureClick"
@@ -66,7 +65,7 @@
 					(click)="next()"
 					[title]="'tutorial.next' | translate"></vtr-ui-button>
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
-					linkId="chs-tour-location-done-btn"
+					linkId="chs-tour-btn-done"
 					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"

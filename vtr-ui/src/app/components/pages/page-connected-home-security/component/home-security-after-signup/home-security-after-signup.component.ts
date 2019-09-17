@@ -3,10 +3,7 @@ import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-se
 import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-security-account.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
-import { CHSAccountState } from '@lenovo/tan-client-bridge';
+import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
 
 @Component({
   selector: 'vtr-home-security-after-signup',
@@ -17,24 +14,15 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 	@Input() allDevices: HomeSecurityAllDevice;
 	@Input() account: HomeSecurityAccount;
 	@Input() common: HomeSecurityCommon;
-	overviewTitle: string;
 	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
 		public dialogService: DialogService
 	) {	}
 
-	ngOnInit() {
-		if (this.account && this.account.role) {
-			if (this.account.role === 'admin') {
-				this.overviewTitle = 'homeSecurity.overview.overviewTitleAdmin';
-			} else {
-				this.overviewTitle = 'homeSecurity.overview.overviewTitleUser';
-			}
-		}
-	}
+	ngOnInit() {	}
 
 	disconnect() {
-		this.dialogService.homeSecurityTrialModal(2);
+		this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.disconnect);
 	}
 
 	openCornet() {

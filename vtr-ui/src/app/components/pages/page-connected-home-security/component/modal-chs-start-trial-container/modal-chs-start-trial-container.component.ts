@@ -6,6 +6,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { interval, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
 
 @Component({
 	selector: 'vtr-modal-chs-start-trial-container',
@@ -15,11 +16,11 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	chs: Phoenix.ConnectedHomeSecurity;
 	metricsParent = 'ConnectedHomeSecurity';
-	switchPage = 1;
 	countdownNumber = 3;
 	subscribe: Subscription;
 	consoleUrlCallback;
-	loading = false;
+	showWhichPage: CHSTrialModalPage;
+	loadingText: string;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -34,14 +35,14 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		}
 		this.consoleUrlCallback = (data) => {
 			if (data.account.consoleUrl) {
-				this.loading = false;
+				this.showWhichPage = CHSTrialModalPage.trial;
 				this.countdown();
 			}
 		};
-		if (this.switchPage === 1) {
-			this.loading = true;
+		if (this.showWhichPage === CHSTrialModalPage.loading) {
+			this.loadingText = 'security.homeprotection.invitationcode.connecting';
 			if (this.chs.account.consoleUrl) {
-				this.loading = false;
+				this.showWhichPage = CHSTrialModalPage.trial;
 				this.countdown();
 			} else {
 				this.chs.on(EventTypes.chsEvent, this.consoleUrlCallback);
@@ -54,12 +55,12 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	}
 
 	disconnect() {
-		this.loading = true;
+		this.showWhichPage = CHSTrialModalPage.loading;
+		this.loadingText = 'homeSecurity.modal.disconnecting';
 		this.chs.quitAccount().then((response) => {
 			if (response === 'success') {
 				this.closeModal();
 			}
-			this.loading = false;
 		}).catch((err) => {
 			console.log(`disconnected error: ${err}`);
 		});
