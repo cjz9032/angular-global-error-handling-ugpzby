@@ -685,6 +685,34 @@
 							}
                         }
 					}
+					.hardware-lists-container{
+						.vtr-widget-hardware-scan-item{
+							.settings-container {
+								.vtr-ui-list-hardware{
+									.list-group{
+										.list-group-item{
+											&.details{
+												.table-bordered {
+													tr{
+														border: none !important;
+														td{
+															border: none !important;
+															border-top:0.1rem solid $screen_dark_15 !important;
+															color: $gaming_lightest !important;
+															width: 50% !important;
+															font-size: 1.4rem !important;
+															min-height: 5rem;
+															vertical-align: middle;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 				vtr-hardware-view-results {
 					.vtr-hardware-components{
@@ -703,6 +731,9 @@
 										}
 										.subtitle {
 											color: $gaming_grey_lightest;
+											.details {
+												color: $gaming_grey_lightest;
+											}
 										}
                                     }
                                 }
@@ -715,6 +746,9 @@
 								}
 								.subtitle {
 									color: $gaming_grey_lightest;
+									.details {
+										color: $gaming_grey_lightest;
+									}
 								}
 							}
 							vtr-ui-hardware-list{
@@ -728,6 +762,9 @@
 											}
 											.subtitle {
 												color: $gaming_grey_lightest;
+												.details {
+													color: $gaming_grey_lightest;
+												}
 											}
 										}
 									}
@@ -849,6 +886,33 @@
 					}
 					.description {
 						color: $gaming_grey_lightest;
+					}
+				}
+				.vtr-page-shift-up{
+					.vtr-widget-hardware-scan-status{
+						background: $dark_cell;
+						.title{
+							color: $gaming_lightest;
+						}
+						.description {
+							color: $gaming_grey_lightest;
+						}
+						vtr-ui-hardware-list{
+							.vtr-ui-list-hardware {
+								.list-group{
+									.list-group-item{
+										background-color: $gaming-Darkslate-blue;
+										border: 0.1rem solid $screen_dark_15;
+										.title {
+											color: $gaming_lightest;
+										}
+										.subtitle {
+											color: $gaming_grey_lightest;
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 				.vtr-battery-card{
