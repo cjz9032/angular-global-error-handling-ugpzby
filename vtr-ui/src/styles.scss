@@ -851,3 +851,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .is-android {
 	margin-top: 2rem !important;
 }
+
+*:focus {
+	outline: $focus_outline_dark;
+}

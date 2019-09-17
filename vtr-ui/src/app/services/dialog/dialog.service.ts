@@ -10,6 +10,7 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { ModalWifiSecurityInvitationComponent } from 'src/app/components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
+import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
 
 
 @Injectable({
@@ -197,7 +198,7 @@ export class DialogService {
 		}
 	}
 
-	homeSecurityTrialModal(switchPage): NgbModalRef {
+	homeSecurityTrialModal(showWhichPage: CHSTrialModalPage): NgbModalRef {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -208,7 +209,7 @@ export class DialogService {
 				centered: true,
 				windowClass: 'trial-container-Modal'
 			});
-			trialModal.componentInstance.switchPage = switchPage;
+			trialModal.componentInstance.showWhichPage = showWhichPage;
 			return trialModal;
 		}
 	}
