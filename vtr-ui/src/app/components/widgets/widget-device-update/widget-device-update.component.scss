@@ -50,6 +50,9 @@
 				text-align: center;
 				border: 0rem;
 				cursor: pointer;
+				&:focus {
+					outline: $focus_outline_light;
+				}
 			}
 
 			.action-button:disabled {

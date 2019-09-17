@@ -1,6 +1,11 @@
 @import "../../../app.theme.scss";
 
 .vtr-page-connected-home-security {
+	.subTitle {
+		color: $main_darker;
+		font-size: 2.4rem;
+		font-weight: $weight_600;
+	}
 	.vtr-security-health {
 		border-radius: $border_radius;
 		background-color: $light;
@@ -9,11 +14,6 @@
 
 		a {
 			text-decoration: underline;
-		}
-
-		.title {
-			color: $main_darker;
-			font-size: 2.5rem;
 		}
 
 		.description {
@@ -113,9 +113,24 @@
 			}
 		}
 	}
-	.container-fluid {
+	.bottom-content {
 		.img {
 			border-radius: $border_radius;
+		}
+		.coronet-logo {
+			width: 10rem;
+		}
+		.cutting-line {
+			border: 0.1rem solid $grey_light;
+			margin: 5rem 0 4rem 0;
+		}
+		.text-regular {
+			color: $main_shade;
+			font-size: 1.6rem;
+			font-weight: $weight_regular;
+			a {
+				text-decoration: underline;
+			}
 		}
 	}
 	.article-card {
@@ -160,6 +175,15 @@
         .vtr-page-right-column{
             margin-top: 6rem;
         }
-    }
+	}
+
+	@media #{$mediaquery_md} {
+		.bottom-content {
+			margin: 0 4rem 2rem;
+		}
+		.vtr-page-right-column{
+            padding: 0rem 4rem 0rem 4rem;
+        }
+	}
 
 }
