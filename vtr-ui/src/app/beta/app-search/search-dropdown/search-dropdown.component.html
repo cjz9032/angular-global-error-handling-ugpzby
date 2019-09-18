@@ -27,7 +27,7 @@
 				metricsParent="Search"
 				[metricsItem]="item.id"
 				[metricsParam]="searchService.searchText">
-				<a [routerLink]="item.route" class="item-block">
+				<a href="javascript:;" class="item-block">
 					<div class="item-icon">
 						<fa-icon *ngIf="item.icon.length" [icon]="item.icon"></fa-icon>
 						<fa-icon *ngIf="!item.icon.length" [icon]="['fal', 'gem']"></fa-icon>

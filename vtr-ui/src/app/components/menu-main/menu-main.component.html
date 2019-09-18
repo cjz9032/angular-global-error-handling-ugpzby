@@ -357,4 +357,7 @@
 		*ngIf="showSearchBox">
 		<vtr-search-dropdown></vtr-search-dropdown>
 	</div>
+	<div class="search-dropdown-sm" *ngIf="!showSearchBox && searchTips">
+		<vtr-search-tips [featureDesc]="searchTips"></vtr-search-tips>
+	</div>
 </div>
