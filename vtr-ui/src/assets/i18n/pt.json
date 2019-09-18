@@ -1712,8 +1712,8 @@
                 "view": "VER DICAS",
                 "buyNow": "Compre Agora",
                 "buy": "Compre, transfira e instale hoje mesmo a proteção antivírus da McAfee para aproveitar estes recursos de segurança de nível bancário",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Apenas tem proteção básica. Embora esteja protegido contra algumas ameaças online, poderá estar exposto a outras.",
+                "virus": "Proteção antivírus",
                 "homeNetwork": "Proteção de rede doméstica",
                 "private": "Navegação privada, anónima",
                 "everyDevice": "Proteção de todos os dispositivos",
@@ -1755,7 +1755,7 @@
                 "Viruses": "Vírus eliminados",
                 "blocked": "Más ligações bloqueadas",
                 "shredded": "Ficheiros destruídos com segurança",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Iniciar verificação de ficheiros"
             },
             "others": {
                 "othersProtection": "fornece proteção básica para o dispositivo"
@@ -2362,7 +2362,7 @@
         "OtherSettings": "Outras definições",
         "usageStatistics": "Estatísticas de utilização",
         "usageStatisticsDescription": "Enviar estatísticas de utilização anónimas para a Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Partilhar dados estatísticos com a Lenovo",
         "deviceStatisticsDescription": "Partilha dados estatísticos com a Lenovo para ajudar a melhorar a fiabilidade, o design e a otimização das funções no seu computador.",
         "Note": "Nota: ",
         "settingsNotes": "todas as definições nesta página irão necessitar que o utilizador reinicie esta aplicação para que tenham efeito."

@@ -1712,8 +1712,8 @@
                 "view": "查看提示",
                 "buyNow": "立刻购买",
                 "buy": "立即购买、下载和安装 McAfee 病毒防护软件，充分利用其中的各项银行级安全功能保护设备",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "此处仅提供基础防护。虽然可帮助你防范某些网络威胁，但你可能仍会受到其他威胁的侵害。",
+				"virus": "病毒防护",
                 "homeNetwork": "家庭网络保护",
                 "private": "私人匿名浏览",
                 "everyDevice": "单设备保护",
@@ -1755,7 +1755,7 @@
                 "Viruses": "已清除病毒",
                 "blocked": "已拦截恶意连接",
                 "shredded": "已安全粉碎文件",
-                "startFileScan": "Start files scan"
+                "startFileScan": "启动文件扫描"
             },
             "others": {
                 "othersProtection": "为您的设备提供基本保护"
@@ -2362,7 +2362,7 @@
         "OtherSettings": "其他设置",
         "usageStatistics": "使用情况统计信息",
         "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "与 Lenovo 共享统计数据",
         "deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"

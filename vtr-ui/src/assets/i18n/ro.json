@@ -1712,8 +1712,8 @@
                 "view": "VIZUALIZAȚI SFATURILE",
                 "buyNow": "Cumpărați acum",
                 "buy": "Cumpărați, descărcați și instalați protecția antivirus McAfee astăzi, pentru a profita de aceste funcții de securitate similare celor folosite în mediul bancar",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Doar funcţiile de bază aici. Deşi sunteţi protejat împotriva unor ameninţări online, puteţi fi totuşi expus faţă de altele.",
+                "virus": "Protecţie antivirus",
                 "homeNetwork": "Protecția rețelei de domiciliu",
                 "private": "Navigare anonimă, privată",
                 "everyDevice": "Protecție pe fiecare dispozitiv",
@@ -1755,7 +1755,7 @@
                 "Viruses": "Viruși eliminați",
                 "blocked": "Conexiuni nocive blocate",
                 "shredded": "Fișiere eliminate în sguranță",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Pornire scanare fişiere"
             },
             "others": {
                 "othersProtection": "vă oferă protecție de bază pentru dispozitivul dvs."
@@ -2362,7 +2362,7 @@
         "OtherSettings": "Alte setări",
         "usageStatistics": "Statistici utilizare",
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Partajare date statistice cu Lenovo",
         "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
         "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."

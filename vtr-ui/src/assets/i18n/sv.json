@@ -1712,8 +1712,8 @@
                 "view": "SE TIPS",
                 "buyNow": "Köp nu",
                 "buy": "Köp, ladda ned och installera McAfee virusskydd i dag för att dra nytta av dessa säkerhetsfunktioner i bankklass",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Endast grundläggande skydd. Du skyddas mot vissa onlinehot men kan fortfarande vara utsatt för andra.",
+                "virus": "Virusskydd",
                 "homeNetwork": "Skydd av hemnätverk",
                 "private": "Privat och anonym surfning",
                 "everyDevice": "Skydd av alla enheter",
@@ -1755,7 +1755,7 @@
                 "Viruses": "Virus eliminerade",
                 "blocked": "Skadliga anslutningar blockerade",
                 "shredded": "Filer strimlade",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Starta genomsökning av filer"
             },
             "others": {
                 "othersProtection": "ger ett grundskydd av din enhet"
@@ -2362,7 +2362,7 @@
         "OtherSettings": "Andra inställningar",
         "usageStatistics": "Användningsstatistik",
         "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Dela statistisk information med Lenovo",
         "deviceStatisticsDescription": "Delar statistiska data med Lenovo för att förbättra tillförlitlighet och design, och för att optimera funktioner på din dator.",
         "Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."

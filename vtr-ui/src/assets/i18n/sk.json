@@ -1712,8 +1712,8 @@
                 "view": "ZOBRAZIŤ TIPY",
                 "buyNow": "Kúpiť teraz",
                 "buy": "Kúpte, stiahnite a inštalujte si antivírusovú ochranu od spoločnosti McAfee ešte dnes, aby ste mohli využívať bezpečnostné funkcie na úrovni bánk",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "K dispozícii sú tu len základné funkcie. Hoci ste chránení pred niektorými online hrozbami, môžete byť naďalej vystavení iným.",
+                "virus": "Ochrana proti vírusom",
                 "homeNetwork": "Ochrana domácej siete",
                 "private": "Súkromné, anonymné prehliadanie",
                 "everyDevice": "Ochrana všetkých zariadení",
@@ -1755,7 +1755,7 @@
                 "Viruses": "Odstránené vírusy",
                 "blocked": "Zablokované chybné pripojenia",
                 "shredded": "Bezpečne skartované súbory",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Spustiť kontrolu súborov"
             },
             "others": {
                 "othersProtection": "vám ponúka základnú ochranu zariadenia"
@@ -2362,7 +2362,7 @@
         "OtherSettings": "Ďalšie nastavenia",
         "usageStatistics": "Štatistika používania",
         "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Zdieľať štatistické údaje so spoločnosťou Lenovo",
         "deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
         "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."

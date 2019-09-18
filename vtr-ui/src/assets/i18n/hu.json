@@ -1712,8 +1712,8 @@
                 "view": "TIPPEK MEGTEKINTÉSE",
                 "buyNow": "Vásárlás",
                 "buy": "Vásárolja meg, töltse le és telepítse a McAfee vírusvédelmet még ma, hogy kihasználhassa ezeket a banki minőségű biztonsági funkciókat",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Itt csak az alapok találhatók. Míg egyes online fenyegetések ellen védve van, továbbra is ki lehet téve másoknak.",
+                "virus": "Vírusvédelem",
                 "homeNetwork": "Otthoni hálózat védelme",
                 "private": "Privát, névtelen böngészés",
                 "everyDevice": "Minden eszköz védelme",
@@ -1755,7 +1755,7 @@
                 "Viruses": "Kiküszöbölt vírusok",
                 "blocked": "Blokkolt rossz kapcsolatok",
                 "shredded": "Biztonságosan megsemmisített fájlok",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Fájlok vizsgálatának megkezdése"
             },
             "others": {
                 "othersProtection": "alapszintű védelmet biztosít az eszköz számára"
@@ -2362,7 +2362,7 @@
         "OtherSettings": "Egyéb beállítások",
         "usageStatistics": "Használati statisztikák",
         "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Statisztikai adatok megosztása a Lenovóval",
         "deviceStatisticsDescription": "Statisztikai adatokat oszt meg a Lenovóval, így segíti a számítógép-funkciók tervezését, optimalizálását és megbízhatóbbá tételét.",
         "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."
