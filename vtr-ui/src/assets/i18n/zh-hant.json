@@ -1250,7 +1250,7 @@
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
-                    "description6": "4.如果您的電腦上已啟用飛航模式，這些功能都會停用。"
+                    "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
@@ -1540,7 +1540,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Powered by Cornet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "上一頁",
@@ -1590,9 +1592,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1707,8 +1712,8 @@
                 "view": "查看要訣",
                 "buyNow": "立即購買",
                 "buy": "立即購買、下載和安裝 McAfee 防毒保護，以運用這些銀行級安全功能",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "此處僅提供基本概念。雖然您可以抵禦部分的線上威脅，但仍然可能會遭受到其他威脅。",
+				"virus": "病毒防護",
                 "homeNetwork": "家用網路保護",
                 "private": "私密、匿名瀏覽",
                 "everyDevice": "每個裝置的保護",
@@ -1750,7 +1755,7 @@
                 "Viruses": "消除的病毒",
                 "blocked": "封鎖的錯誤連線",
                 "shredded": "安全粉碎的檔案",
-                "startFileScan": "Start files scan"
+                "startFileScan": "啟動檔案掃描"
             },
             "others": {
                 "othersProtection": "為您的裝置提供基本保護"
@@ -2357,7 +2362,7 @@
         "OtherSettings": "其他設定",
         "usageStatistics": "使用情形統計資料",
         "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "與 Lenovo 分享統計資料",
         "deviceStatisticsDescription": "與 Lenovo 共用統計資料，協助我們提升您電腦功能的可靠性、設計和最佳化。",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"

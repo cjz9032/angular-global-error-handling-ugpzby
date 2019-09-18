@@ -231,6 +231,13 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.systemUpdateService.getUpdateSchedule();
 		this.systemUpdateService.getUpdateHistory();
 		this.setUpdateTitle();
+		this.popRebootDialogIfNecessary();
+	}
+
+	popRebootDialogIfNecessary() {
+		if (this.systemUpdateService.isRebootRequiredDialogNeeded) {
+			this.checkRebootRequested();
+		}
 	}
 
 	getCashValue() {
@@ -887,6 +894,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					} else {
 						modalRef.close();
 					}
+					this.systemUpdateService.isRebootRequiredDialogNeeded = false;
 				}
 			);
 		}

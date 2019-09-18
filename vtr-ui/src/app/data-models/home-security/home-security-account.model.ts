@@ -20,6 +20,9 @@ export class HomeSecurityAccount {
 			}
 			if (chs.account.expiration && chs.account.serverTimeUTC) {
 				this.expirationDay = (chs.account.expiration.getTime() - chs.account.serverTimeUTC.getTime()) / 86400000;
+				if (this.expirationDay < 0) {
+					this.expirationDay = 0;
+				}
 			}
 			if (chs.account.lenovoId) {
 				this.lenovoId = chs.account.lenovoId;

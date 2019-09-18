@@ -1540,7 +1540,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Powered by Cornet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "Geri",
@@ -1590,9 +1592,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1707,8 +1712,8 @@
                 "view": "İPUÇLARINI GÖRÜN",
                 "buyNow": "Şimdi Satın Al",
                 "buy": "Banka düzeyinde güvenlik özelliklerinden yararlanmak için McAfee virüsten koruma yazılımını hemen satın alın, indirin ve yükleyin",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Burada yalnızca temel bilgiler belirtilmektedir. Bir yandan bazı çevrimiçi tehditlere karşı korunurken diğer yandan başka tehditlere açık olabilirsiniz.",
+                "virus": "Virüsten koruma",
                 "homeNetwork": "Ev ağı koruması",
                 "private": "Özel, anonim gezinme",
                 "everyDevice": "Her cihazda koruma",
@@ -1750,7 +1755,7 @@
                 "Viruses": "Virüs Temizlendi",
                 "blocked": "Kötü bağlantı engellendi",
                 "shredded": "Dosya Güvenle İmha Edildi",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Dosya taramasını başlat"
             },
             "others": {
                 "othersProtection": "cihazınız için temel koruma sunar"
@@ -2357,7 +2362,7 @@
         "OtherSettings": "Diğer ayarlar",
         "usageStatistics": "Kullanım İstatistikleri",
         "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "İstatistik verilerini Lenovo ile paylaş",
         "deviceStatisticsDescription": "Bilgisayarınızdaki özelliklerin güvenilirliğinin, tasarımının ve iyileştirilmesinin gelişimine yardımcı olmak için Lenovo ile istatiksel veri paylaşır.",
         "Note": "Not: ",
         "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir."

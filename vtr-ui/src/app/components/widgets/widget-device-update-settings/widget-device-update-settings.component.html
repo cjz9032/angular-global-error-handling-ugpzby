@@ -29,15 +29,15 @@
 												*ngIf="item.isCollapsible" (change)="optionChanged($event,item)"
 												(showDropDown)="showDropDown.emit(item)">
 											</vtr-ui-gaming-collapsible-container>
-											<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel" vtrMetrics href="javascript:void();"
+											<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel" vtrMetrics href="javascript:void(0);"
 												[metricsItem]="item.settings" metricsEvent="featureClick"
 												(click)="navigateToLink(item)" (keydown.enter)="navigateToLink(item)" *ngIf="item.isCustomizable"
-												class="customizable"  tabindex="1">
+												class="customizable"  tabindex="1" role="link">
 												<!-- <i class="icon icon-gear"></i> -->
 												<fa-icon class="icon" [icon]="['fal', 'cog']"></fa-icon>
 
 											</a>
-											<a   tabindex="-1" href="javascript:void();" *ngIf="item.isSwitchVisible"
+											<a   tabindex="-1" href="javascript:void(0);" *ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
 												<vtr-ui-toggle
 												[toggleId]="item.id" [name]="item.type" [onOffSwitchId]="item.name"
@@ -59,7 +59,7 @@
 													container="body" tooltipClass="vtr-tooltip">
 												</fa-icon>
 											</a>
-											<a href="javascript:void();" class="link-text" *ngIf="!item.isSwitchVisible"
+											<a href="javascript:void(0);" class="link-text" *ngIf="!item.isSwitchVisible"
 												(click)="onLinkClick(item.linkPath)">
 												{{item.linkText}}
 											</a>

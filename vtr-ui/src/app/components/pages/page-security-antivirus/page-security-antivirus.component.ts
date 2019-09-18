@@ -16,6 +16,8 @@ import { Router } from '@angular/router';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { McAfeeInfo, McafeeMetricsList } from '@lenovo/tan-client-bridge';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -60,7 +62,9 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
-		private router: Router
+		private router: Router,
+		private localInfoService: LocalInfoService,
+		public translate: TranslateService,
 	) {	}
 
 	ngOnInit() {
@@ -74,7 +78,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.common = new AntivirusCommon(this.antiVirus, this.isOnline);
+		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.translate);
 		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService);
 		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = Object.assign({}, {
@@ -194,10 +198,14 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		}).on(phoenix.EventTypes.avMcafeeSubscriptionEvent, (data) => {
 			this.viewModel.mcafee.subscription = data;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
+			this.viewModel.antiVirusPage(this.antiVirus);
 		}).on(phoenix.EventTypes.avMcafeeRegisteredEvent, (data) => {
 			this.viewModel.mcafeestatusList = this.updateRegister(this.viewModel.mcafeestatusList, data);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.viewModel.mcafeestatusList);
 			this.viewModel.antiVirusPage(this.antiVirus);
+		}).on(phoenix.EventTypes.avMcafeeMetricsEvent, (data) => {
+			this.viewModel.metricsList = this.getMcafeeMetric(this.viewModel.metricsList, data);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList, this.viewModel.metricsList);
 		});
 
 		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
@@ -387,11 +395,11 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		const metricsList = [];
 		const list = [];
 		let metricsFeature = metrics;
-		if (metricsFeature.length === 0) {
-			this.showMetricsList = false;
-		}
 		if (data) {
 			metricsFeature = data;
+		}
+		if (metricsFeature.length === 0) {
+			this.showMetricsList = false;
 		}
 		metricsFeature.forEach((e) => {
 			let value;
