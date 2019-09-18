@@ -87,6 +87,8 @@ export class DeviceService {
 		if (this.hypSettings) {
 			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
 				this.showPrivacy = (privacy === 'enabled');
+			}, (error) => {
+				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
 			});
 		}
 	}
