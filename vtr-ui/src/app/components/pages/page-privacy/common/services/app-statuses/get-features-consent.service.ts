@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { featuresResult } from './app-statuses.service';
-import { USER_EMAIL_HASH } from '../../../feature/check-breached-accounts/services/email-scanner.service';
-import { StorageService } from '../storage.service';
+import { StorageService, USER_EMAIL_HASH } from '../storage.service';
 import { AccessTokenService } from '../access-token.service';
 import { UserAllowService } from '../user-allow.service';
 
@@ -34,7 +33,7 @@ export class GetFeaturesConsentService {
 	}
 
 	private getNonPrivatePasswordConsent(): boolean {
-		return Boolean(this.storageService.getItem('isConsentGiven'));
+		return Boolean(this.userAllowService.allowToShow.getValue().consentForVulnerablePassword);
 	}
 
 

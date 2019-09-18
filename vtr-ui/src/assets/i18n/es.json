@@ -1540,7 +1540,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Powered by Cornet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "Anterior",
@@ -1590,9 +1592,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1707,8 +1712,8 @@
                 "view": "VER CONSEJOS",
                 "buyNow": "Comprar ahora",
                 "buy": "Compre, descargue e instale la protección contra virus de McAfee hoy para aprovechar estas funciones de seguridad de nivel bancario",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Solo los conceptos básicos aquí. Aunque esté protegido frente a algunas amenazas en línea, es posible que aún esté expuesto a otras.",
+                "virus": "Protección antivirus",
                 "homeNetwork": "Protección de red hogareña",
                 "private": "Navegación privada y anónima",
                 "everyDevice": "Protección para todos los dispositivos",
@@ -1750,7 +1755,7 @@
                 "Viruses": "Virus eliminados",
                 "blocked": "Conexiones maliciosas bloqueadas",
                 "shredded": "Archivos destruidos de forma segura",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Iniciar análisis de archivos"
             },
             "others": {
                 "othersProtection": "le ofrece protección básica para su dispositivo"
@@ -2357,7 +2362,7 @@
         "OtherSettings": "Otros valores",
         "usageStatistics": "Estadísticas de uso",
         "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Compartir datos estadísticos con Lenovo",
         "deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
         "Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."

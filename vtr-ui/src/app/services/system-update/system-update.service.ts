@@ -52,6 +52,7 @@ export class SystemUpdateService {
 	public isInstallationSuccess = false;
 	public isDownloadingCancel = false;
 	public isImcErrorOrEmptyResponse = false;
+	public isRebootRequiredDialogNeeded = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -253,6 +254,7 @@ export class SystemUpdateService {
 					this.isInstallationCompleted = true;
 					this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
 					this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
+					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstallationComplete, this.updateInfo);
 				}
 			} else if (response.checkForUpdatesResult) {
@@ -543,6 +545,7 @@ export class SystemUpdateService {
 							(rebootDelayUpdate) => payload.updateList.push(rebootDelayUpdate));
 					}
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 				} else {
 					this.isInstallationCompleted = false;

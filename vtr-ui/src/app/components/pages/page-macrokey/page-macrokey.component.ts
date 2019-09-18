@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-page-macrokey',
@@ -8,6 +10,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	styleUrls: ['./page-macrokey.component.scss']
 })
 export class PageMacrokeyComponent implements OnInit, OnDestroy {
+	isOnline = true;
 	cardContentPositionA: any = {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
 	};
@@ -17,13 +20,14 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	backId = 'vtr-gaming-macrokey-btn-back';
 	startDateTime: any = new Date();
 	metrics: any;
-	constructor(private cmsService: CMSService, private shellService: VantageShellService) {
+	constructor(private cmsService: CMSService, private shellService: VantageShellService,private commonService: CommonService) {
 		this.metrics = this.shellService.getMetrics();
 
 	}
 
 	ngOnInit() {
 		// TODO: Change the query params for macrokey subpage
+		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
 			Page: 'dashboard'
 		};

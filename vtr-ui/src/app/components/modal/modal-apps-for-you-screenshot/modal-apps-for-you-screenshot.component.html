@@ -1,0 +1,15 @@
+<div class="modal-body vtr-modal-apps-for-you-screenshot">
+	<div role="button" class="close-btn" aria-hidden="true" vtrMetrics metricsItem="ModernPreload.closeButton"
+		metricsEvent="FeatureClick" metricsParent="Modern Preload" id="modern-preload-close-button"
+		attr.aria-label="modern-preload-close-button" (click)="closeModal()">
+		<img [src]=" '/assets/icons/Close-white.svg' | svgInline | async" alt="" srcset="">
+	</div>
+	<div class="content">
+		<div class="image-content" *ngIf="image" #loadingImg [style.height.px]="loadingImg.clientWidth * 875 / 1400">
+			<img [src]="image" />
+		</div>
+		<div *ngIf="!image" class="spinner-content w-100 text-center">
+			<div class="spinner-border text-primary progress-spinner" role="status"></div>
+		</div>
+	</div>
+</div>
