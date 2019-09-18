@@ -1707,8 +1707,8 @@
                 "view": "ПЕРЕГЛЯНУТИ ПОРАДИ",
                 "buyNow": "Придбати зараз",
                 "buy": "Придбайте, завантажте та інсталюйте антивірус McAfee, щоб отримати безпеку банківського рівня",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Лише базовий захист. Хоча ви захищені від деяких онлайн-загроз, інші все ще можуть вас дістатися.",
+                "virus": "Захист від вірусів",
                 "homeNetwork": "Захист домашньої мережі",
                 "private": "Приватний і анонімний перегляд веб-сторінок",
                 "everyDevice": "Захист кожного пристрою",
@@ -1750,7 +1750,7 @@
                 "Viruses": "Віруси видалено",
                 "blocked": "Небезпечне підключення заблоковано",
                 "shredded": "Файли успішно й безповоротно видалено",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Розпочати сканування файлів"
             },
             "others": {
                 "othersProtection": "забезпечує базовий захист вашого пристрою"
@@ -2357,7 +2357,7 @@
         "OtherSettings": "Інші настройки",
         "usageStatistics": "Статистика використання",
         "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Поділіться статистичними даними з Lenovo",
         "deviceStatisticsDescription": "Передає статистичні дані до компанії Lenovo, щоб покращити надійність, дизайн і оптимізувати функції на вашому комп'ютері.",
         "Note": "Примітка. ",
         "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."

@@ -2,9 +2,9 @@ import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
 @Component({
-  selector: 'vtr-modal-turn-on',
-  templateUrl: './modal-turn-on.component.html',
-  styleUrls: ['./modal-turn-on.component.scss']
+	selector: 'vtr-modal-turn-on',
+	templateUrl: './modal-turn-on.component.html',
+	styleUrls: [ './modal-turn-on.component.scss' ]
 })
 export class ModalTurnOnComponent implements OnInit, AfterViewInit {
   setAutoClose: any;
@@ -24,13 +24,13 @@ export class ModalTurnOnComponent implements OnInit, AfterViewInit {
     this.actionNeedAsk.emit(event);
   }
 
-  turnOnAction(isConfirm: boolean) {
-    this.actionTurnOn.emit(isConfirm);
-  }
+	turnOnAction(isConfirm: boolean) {
+		this.actionTurnOn.emit(isConfirm);
+	}
 
-  notNowAction(event: any) {
-    this.actionNotNow.emit(event);
-  }
+	notNowAction(event: any) {
+		this.actionNotNow.emit(event);
+	}
 
   closeModal(action: boolean) {
     this.closeTurnOnModal.emit(action);
