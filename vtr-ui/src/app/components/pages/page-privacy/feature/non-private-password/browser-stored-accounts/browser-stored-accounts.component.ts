@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { InstalledBrowserDataState } from '../../../common/services/browser-accounts.service';
+import { Features } from '../../../common/components/nav-tabs/nav-tabs.service';
 
 @Component({
 	selector: 'vtr-browser-stored-accounts',
@@ -14,6 +15,8 @@ export class BrowserStoredAccountsComponent {
 	@Input() isNonPrivatePasswordWasScanned = false;
 	@Input() nonPrivatePasswordCount: number;
 	@Output() howToFixClick = new EventEmitter<string>();
+
+	passwordFeatureName = Features.passwords;
 
 	tryProductText = {
 		risk: 'The passwords in your browser can be easily accessed and misused by third-party apps, putting your personal information at risk.',
