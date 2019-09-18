@@ -1546,7 +1546,7 @@
 			"goDashboard": "go to dashboard",
 			"extendNow": "extend",
 			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 
 		},
 		"tour": {
