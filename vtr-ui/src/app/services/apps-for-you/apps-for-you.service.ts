@@ -84,12 +84,12 @@ export class AppsForYouService {
 			this.deviceService.getMachineInfo().then((info) => {
 				machineInfo = info;
 				this.serialNumber = machineInfo.serialnumber;
-				this.familyName = machineInfo.familyName;
+				this.familyName = machineInfo.family;
 				this.isInitialized = true;
 			});
 		} else {
 			this.serialNumber = machineInfo.serialnumber;
-			this.familyName = machineInfo.familyName;
+			this.familyName = machineInfo.family;
 			this.isInitialized = true;
 		}
 		this.localInfoService.getLocalInfo().then(result => {
@@ -228,7 +228,7 @@ export class AppsForYouService {
 	public showAdobeMenu() {
 		if (this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
 			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 &&
-			this.localInfo.indexOf('SMB') !== -1 && this.localInfo.indexOf('consumer') !== -1)  {
+			(this.localInfo.indexOf('SMB') !== -1 || this.localInfo.indexOf('consumer') !== -1))  {
 			return true;
 		} else {
 			return false;
