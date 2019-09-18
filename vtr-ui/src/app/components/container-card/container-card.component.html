@@ -252,13 +252,13 @@
 						</div>
 					</a>
 					<div *ngIf="!isOnline"
-						class="card-image default-cursor"
+						class="card-image default-cursor highlight-offline"
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
-							<div 
+							<div *ngIf="title"
 								class="title" id="{{containerCardId+'-title'}}"
 								attr.aria-label="{{containerCardId+'-title'}}"
-								[innerHtml]="'title'"></div>
+								[innerHtml]="title"></div>
 						</div>
 					</div>
 				</div>
