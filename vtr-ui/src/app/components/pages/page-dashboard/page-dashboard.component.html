@@ -13,8 +13,7 @@
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
 						[isSubtitleVisible]="false"
 						[isButtonVisible]="false"
-						id="dashboard-btn-connectivity"
-						(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
+						id="dashboard-btn-connectivity"></vtr-widget-offline-info>
 				</div>
 			</div>
 			<div class="row">
@@ -172,7 +171,8 @@
 					</vtr-widget-security-status>
 				</div>
 			</div>
-			<div class="row no-gutters" [vtrAppSearchScroller]="['search-feedback']">
+			<div class="row no-gutters"
+				[vtrAppSearchScroller]="['search-feedback']">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
