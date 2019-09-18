@@ -17,7 +17,11 @@ import { DevService } from '../dev/dev.service';
 })
 
 export class UPEService {
-	private readonly UPEAPIKey = 'UPEAPIKey';
+	private readonly CredNameUPEAPIKey = 'UPEAPIKey';
+	private readonly CredNameUPEUserID = 'UPEUserID';
+	private forceRegister = false;
+	private upeUserID = '';
+	private regRetryCount = 0;
 
 	constructor(
 		private commsService: CommsService,
@@ -26,7 +30,7 @@ export class UPEService {
 		private deviceService: DeviceService,
 		private devService: DevService
 	) {
-
+		this.upeUserID = this.getUPEUserID();
 	}
 
 	deviceFilter(filters) {
@@ -56,7 +60,7 @@ export class UPEService {
 			const win: any = window;
 			let cred = null;
 			if (win.VantageStub) {
-				cred = win.VantageStub.getCredential(this.UPEAPIKey);
+				cred = win.VantageStub.getCredential(this.CredNameUPEAPIKey);
 			}
 
 			if (!cred || forceReg) {
@@ -77,10 +81,10 @@ export class UPEService {
 
 	private generateAPIKey() {
 		const salt = environment.upeSharedKey;
-		const anonUserID = this.getUPEUserID(LocalStorageKey.UPEUserID);
+		const anonUserID = this.upeUserID;
 		const anonDeviceId = this.deviceService.getMachineInfoSync().deviceId;
 		const clientAgentId = environment.upeClientID;
-		const timeStamp = new Date().toISOString().replace(/[-:]/ig, '').replace(/\.\d+Z/ig, 'Z');
+		// const timeStamp = new Date().toISOString().replace(/[-:]/ig, '').replace(/\.\d+Z/ig, 'Z');
 
 		const upeConfig = {
 			salt,
@@ -94,8 +98,8 @@ export class UPEService {
 			if (win.VantageStub) {
 				win.VantageStub.onupeapikeyfound = (result) => {
 					this.registerDeviceToUPEServer(JSON.parse(result)).then((data: any) => {
-						if (data) {							
-							win.VantageStub.createCredential(this.UPEAPIKey, data);
+						if (data) {
+							win.VantageStub.createCredential(this.CredNameUPEAPIKey, data);
 							resolve(data);
 						} else {
 							console.log('register UPE Server failed.');
@@ -115,7 +119,7 @@ export class UPEService {
 	private registerDeviceToUPEServer(regData) {
 		const queryParams = {
 			identity: {
-				anonUserId: this.getUPEUserID(LocalStorageKey.UPEUserID),
+				anonUserId: this.upeUserID,
 				anonDeviceId: this.deviceService.getMachineInfoSync().deviceId,
 				clientAgentId: environment.upeClientID,
 				APIKey: regData.hash
@@ -137,18 +141,26 @@ export class UPEService {
 					reject(response.status + ' ' + response.statusText);
 				}
 			},
-				error => {
-					console.log('registerDeviceToUPEServer error', error);
-					reject('registerDeviceToUPEServer error');
-				});
+			error => {
+				console.log('registerDeviceToUPEServer error', error);
+				reject('registerDeviceToUPEServer error');
+			});
 		});
 	}
 
-	private getUPEUserID(IDKey) {
-		let uuid = this.commonService.getLocalStorageValue(IDKey);
-		if (!uuid) {
-			uuid = UUID.UUID();
-			this.commonService.setLocalStorageValue(IDKey, uuid);
+	private getUPEUserID() {
+		const win: any = window;
+		let uuid;
+		if (win.VantageStub) {
+			const cred = win.VantageStub.getCredential(this.CredNameUPEUserID);
+			if (cred) {
+				uuid = cred.password;
+				this.forceRegister = false;
+			} else {
+				uuid = UUID.UUID();
+				win.VantageStub.createCredential(this.CredNameUPEUserID, uuid);
+				this.forceRegister = true;
+			}
 		}
 		return uuid;
 	}
@@ -168,7 +180,7 @@ export class UPEService {
 	}
 
 	getUPEContent(params, subscriber) {
-		this.getUpeAPIKey(false).then((apiKey) => {
+		this.getUpeAPIKey(this.forceRegister).then((apiKey) => {
 			const queryParam = this.makeQueryParam(apiKey, params);
 			this.commsService.callUpeApi(
 				'/upe/recommendation/recommends', queryParam, {}
@@ -180,14 +192,19 @@ export class UPEService {
 					subscriber.error(response.status + ' ' + response.statusText);
 				}
 			},
-				(reason) => {
-					if (reason.status === 401) {
-						this.getUpeAPIKey(true);
+			(reason) => {
+				if (reason.status === 401) {
+					if (this.regRetryCount < 2) {
+						this.forceRegister = true;
+						this.getUPEContent(params, subscriber);
 					}
+					this.regRetryCount++;
+				}
+				if (reason.status !== 401 || this.regRetryCount >= 2) {
 					console.log('getUPEContent error', reason);
 					subscriber.error(reason);
 				}
-			);
+			});
 		});
 	}
 
@@ -195,7 +212,7 @@ export class UPEService {
 		const devID = this.deviceService.getMachineInfoSync().deviceId;
 		const queryParam = {
 			identity: {
-				anonUserId: this.getUPEUserID(LocalStorageKey.UPEUserID),
+				anonUserId: this.upeUserID,
 				anonDeviceId: devID,
 				clientAgentId: environment.upeClientID,
 				APIKey: apiKey,
