@@ -76,14 +76,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		public vantageShellService: VantageShellService,
 		public homeSecurityMockService: HomeSecurityMockService,
 		public devicePostureMockService: DevicePostureMockService,
+		public dialogService: DialogService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
-		private dialogService: DialogService,
 		private lenovoIdDialogService: LenovoIdDialogService,
 		private cmsService: CMSService,
-	) {	}
+	) {}
 
 	ngOnInit() {
 		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture();

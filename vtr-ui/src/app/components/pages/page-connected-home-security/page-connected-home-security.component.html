@@ -101,10 +101,18 @@
 													<!--Start of Security Health Advisor When LWS is disabled-->
 													<div class="security-health-disabled"
 														*ngIf="!homeSecurityLocation?.isLocationServiceOn">
-														<div class="security-health-disabled-list">
-															<div class="peace-of-mind">
-																{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
+														<div class="security-health-disabled-list d-flex flex-column align-items-center justify-content-center">
+															<div class="peace-of-mind mb-5" [innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
 															</div>
+															<vtr-ui-button
+																metricsItem="enableLocation"
+																metricsEvent="featureClick"
+																metricsParent="ConnectedHomeSecurity"
+																(click)="dialogService?.openCHSPermissionModal()"
+																linkId="chs-btn-enableLocation"
+																[title]="'security.homeprotection.securityhealth.button' | translate"
+																[label]="'security.homeprotection.securityhealth.button' | translate">
+															</vtr-ui-button>
 														</div>
 														<div class="coronet-section">
 															<div class="row">
