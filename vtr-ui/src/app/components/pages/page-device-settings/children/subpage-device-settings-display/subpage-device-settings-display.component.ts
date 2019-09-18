@@ -187,7 +187,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	initCameraPrivacyFromCache() {
-		const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+		const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 		if (privacy && privacy.available !== undefined) {
 			this.cameraPrivacyModeStatus.available = privacy.available;
 		}
