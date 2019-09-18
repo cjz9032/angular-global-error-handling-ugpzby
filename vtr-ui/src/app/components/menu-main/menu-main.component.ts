@@ -26,7 +26,9 @@ import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyId, AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 import { EMPTY } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
+import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -59,6 +61,14 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	currentUrl: string;
 	isSMode: boolean;
 
+	UnreadMessageCount = {
+		totalMessage: 0,
+		lmaMenuClicked: false,
+		adobeMenuClicked: false
+	};
+
+	get appsForYouEnum() { return AppsForYouEnum; }
+
 	constructor(
 		private router: Router,
 		public configService: ConfigService,
@@ -79,6 +89,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
+		public appsForYouService: AppsForYouService
 
 	) {
 		localInfoService
@@ -194,6 +205,22 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
+		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
+			LocalStorageKey.UnreadMessageCount,
+			undefined
+		);
+		if (cacheUnreadMessageCount) {
+			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
+			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
+			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
+		} else {
+			if (this.appsForYouService.showAdobeMenu()) {
+				this.UnreadMessageCount.totalMessage = 2;
+			} else {
+				this.UnreadMessageCount.totalMessage = 1;
+			}
+		}
+
 		this.hardwareScanService.getPluginInfo()
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
@@ -213,6 +240,31 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 		if (machineType === 1) {
 			this.initInputAccessories();
+		}
+	}
+
+	updateUnreadMessageCount(item, event?) {
+		if (item.id === 'user') {
+			const target = event.target || event.srcElement || event.currentTarget;
+			const idAttr = target.attributes.id;
+			const id = idAttr.nodeValue;
+			let needUpdateLocalStorage = false;
+			if (id === 'menu-main-lnk-open-lma') {
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
+				}
+				this.UnreadMessageCount.lmaMenuClicked = true;
+				needUpdateLocalStorage = true;
+			} else if (id === 'menu-main-lnk-open-adobe') {
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
+				}
+				this.UnreadMessageCount.adobeMenuClicked = true;
+				needUpdateLocalStorage = true;
+			}
+			if (needUpdateLocalStorage) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
+			}
 		}
 	}
 
