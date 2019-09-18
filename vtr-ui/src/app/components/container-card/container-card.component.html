@@ -255,10 +255,10 @@
 						class="card-image default-cursor"
 						[style.background-image]="'url(' + img + ')'">
 						<div class="inner-content">
-							<div *ngIf="title"
+							<div 
 								class="title" id="{{containerCardId+'-title'}}"
 								attr.aria-label="{{containerCardId+'-title'}}"
-								[innerHtml]="title"></div>
+								[innerHtml]="'title'"></div>
 						</div>
 					</div>
 				</div>
