@@ -149,6 +149,10 @@ export class UserDefinedKeyComponent implements OnInit {
 		console.log('submit called');
 	}
 	public onKeydown(event) {
-		event.preventDefault();
-	  }
+		console.log('event here --------------------->', event);
+		console.log('control key  here --------------------->', event.ctrlKey);
+		if ((event.ctrlKey && event.key === 'Enter') ||  event.key === 'Enter') {
+			event.preventDefault();
+		}
+	}
 }
