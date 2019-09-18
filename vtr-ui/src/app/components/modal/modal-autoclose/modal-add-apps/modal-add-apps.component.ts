@@ -22,6 +22,8 @@ export class ModalAddAppsComponent implements OnInit {
 
 	ngOnInit() {
 		this.refreshRunningList();
+		let txt1 = document.getElementById('close');
+		txt1.focus();
 	}
 
 	async refreshRunningList() {
