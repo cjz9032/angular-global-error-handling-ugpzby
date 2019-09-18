@@ -32,6 +32,9 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { WhySeeingTooltipComponent } from './why-seeing-tooltip/why-seeing-tooltip.component';
 import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 import { AppSearchModule} from 'src/app/beta/app-search/app-search.module';
+import { VideoComponent } from './video/video.component';
+import { ClearDataTooltipComponent } from './clear-data-tooltip/clear-data-tooltip.component';
+
 @NgModule({
 	declarations: [
 		SimpleLoaderComponent,
@@ -58,7 +61,9 @@ import { AppSearchModule} from 'src/app/beta/app-search/app-search.module';
 		SpinnerComponent,
 		TooltipComponent,
 		WhySeeingTooltipComponent,
-		OfflineModeComponent
+		OfflineModeComponent,
+		VideoComponent,
+		ClearDataTooltipComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -85,7 +90,9 @@ import { AppSearchModule} from 'src/app/beta/app-search/app-search.module';
 		SpinnerComponent,
 		TooltipComponent,
 		WhySeeingTooltipComponent,
-		OfflineModeComponent
+		OfflineModeComponent,
+		VideoComponent,
+		ClearDataTooltipComponent
 	],
 	imports: [
 		CommonModule,

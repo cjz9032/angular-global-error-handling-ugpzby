@@ -178,6 +178,7 @@
 						@media #{$mediaquery_6} {
 							line-height: calc(#{$menu_height} - 0.5rem);
 						}
+
 						&:focus {
 							outline: $focus_outline_light;
 						}
@@ -234,6 +235,21 @@
 								height: 4.6rem;
 								border-radius: 2.3rem;
 								background-color: $main_darker;
+							}
+
+							.unread-count-tag {
+								position: absolute;
+								left: 5rem;
+								top: 1.6rem;
+								background: #DB221F;
+								color: #ffffff;
+								width: 2rem;
+								height: 2rem;
+								font-size: 1.3rem;
+								border-radius: 50%;
+								display: flex;
+								justify-content: center;
+								align-items: center;
 							}
 						}
 					}
@@ -315,6 +331,22 @@
 							&.link-active {
 								color: $main;
 								font-weight: bold;
+							}
+
+							&.link-lma,
+							&.link-adobe {
+								position: relative;
+
+								.unread-tag {
+									position: absolute;
+									left: -0.5rem;
+									top: 50%;
+									margin-top: -0.3rem;
+									width: 0.8rem;
+									height: 0.8rem;
+									background: #DB221F;
+									border-radius: 50%;
+								}
 							}
 						}
 					}
@@ -461,6 +493,7 @@
 			//display: none;
 			font-size: 5rem;
 			color: $shade_light;
+
 			&:focus {
 				outline: $focus_outline_light;
 			}

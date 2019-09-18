@@ -3,10 +3,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map, mapTo, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { EmailScannerService } from '../services/email-scanner.service';
-import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { from, merge } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
-import { validateEmail } from '../../../utils/helpers';
+import { validateAllFormFields, validateEmail } from '../../../utils/helpers';
 import { EMAIL_REGEXP } from '../../../utils/form-validators';
 import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 import {
@@ -31,7 +30,7 @@ interface UserProfile {
 	styleUrls: ['./check-breaches-form.component.scss'],
 })
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
-	@Input() size: 'default' | 'small' = 'default';
+	@Input() strategy: 'default' | 'emitEmail' = 'default';
 	@Output() userEmail = new EventEmitter<string>();
 
 	emailForm = this.formBuilder.group({
@@ -47,7 +46,6 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	constructor(
 		private formBuilder: FormBuilder,
 		private emailScannerService: EmailScannerService,
-		private commonPopupService: CommonPopupService,
 		private userService: UserService,
 		private breachedAccountsService: BreachedAccountsService,
 		private cdr: ChangeDetectorRef,
@@ -92,6 +90,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 	handleEmailScan() {
 		this.emailWasSubmitted = true;
+		validateAllFormFields(this.emailForm);
 		if (this.emailForm.invalid) {
 			return;
 		}
@@ -99,7 +98,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		const userEmail = this.emailForm.value.email;
 
 		this.emailScannerService.setUserEmail(userEmail);
-		this.size === 'default' ? this.setScanBreachedAccounts() : this.userEmail.emit(userEmail);
+		this.strategy === 'default' ? this.setScanBreachedAccounts() : this.userEmail.emit(userEmail);
 	}
 
 	private handleStartTyping() {

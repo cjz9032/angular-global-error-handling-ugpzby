@@ -7,10 +7,17 @@
 
   .img-fluid {
     width: 10rem;
+    @media #{$mediaquery_md} {
+      width: 15rem;
+    }
   }
 
   .mt-minus {
     margin-top: $shift_up_small;
+    @media #{$mediaquery_md} {
+      margin-top: -30rem;
+      width: 80%;
+    }
   }
 
   .windows-logo {
@@ -73,9 +80,22 @@
       }
     }
 
+    .part-position {
+      @media #{$mediaquery_md} {
+        position: relative;
+        top: 34rem;
+       }
+    }
+
     .b-border {
       border: 0.1rem solid #27ADD7;
       box-shadow: none;
+    }
+
+    .md-none{
+      @media #{$mediaquery_md} {
+       display: none;
+      }
     }
 
     .flex-bas{
@@ -83,12 +103,25 @@
     }
   }
 
+  .mcafee {
+    @media #{$mediaquery_md} {
+      position: relative;
+      margin-top: 20rem;
+    }
+  }
+
   .subheader {
+    @media #{$mediaquery_md} {
+      flex-direction: column;
+    }
+
     .rounded-card-with-shadow {
       box-shadow: $drop_shadow;
       border-radius: $border_radius;
       background: $light;
-
+      @media #{$mediaquery_md} {
+        margin-bottom: 3rem;
+      }
       .title {
         color: $shade_darkest;
         font-size: 2rem;
@@ -170,6 +203,9 @@
         margin: 1rem 0 2rem 0;
         height: 0.1rem;
         background-color: $light-grey;
+        @media #{$mediaquery_md} {
+          margin: 2rem 0;
+        }
       }
 
       a {
@@ -179,11 +215,34 @@
       .sub-font {
         padding: 2rem 4rem 2rem 2rem;
         color: $main_darker;
+        @media #{$mediaquery_md} {
+          display: none;
+        }
+      }
+
+      .md-display {
+        @media #{$mediaquery_md} {
+          flex-direction: column;
+          position: relative;
+          margin-top: -15rem;
+        }
+      }
+
+      .md-margin {
+        @media #{$mediaquery_md} {
+          margin-top: 3rem;
+        }
       }
     }
 
     .defender-part {
       flex-basis: 47%;
+      @media #{$mediaquery_md} {
+        flex-basis: 0;
+        &:first-of-type {
+          padding-top: 34rem !important;
+        }
+      }
       padding-bottom: 2rem !important;
 
       .subtitle {
