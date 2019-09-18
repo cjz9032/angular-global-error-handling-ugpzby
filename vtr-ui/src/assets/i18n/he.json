@@ -1707,8 +1707,8 @@
                 "view": "טיפים לצפייה",
                 "buyNow": "קנו עכשיו",
                 "buy": "קנו, הורידו והתקינו את ההגנה של McAfee מפני וירוסים עוד היום כדי לנצל את תכונות האבטחה הללו ברמה בנקאית",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "רק היסודות כאן. אמנם אתם מוגנים מפני איומים מקוונים, אך אתם עלולים להיחשף לאיומים אחרים.",
+                "virus": "הגנה מפני וירוסים",
                 "homeNetwork": "הגנה על הרשת הביתית",
                 "private": "גלישה פרטית, אנונימית",
                 "everyDevice": "הגנה מכל מכשיר",
@@ -1750,7 +1750,7 @@
                 "Viruses": "וירוסים הושמדו",
                 "blocked": "חיבורים מסוכנים נחסמו",
                 "shredded": "קבצים נגרסו בבטחה",
-                "startFileScan": "Start files scan"
+                "startFileScan": "התחילו בסריקת קבצים"
             },
             "others": {
                 "othersProtection": "מציע הגנה בסיסית להתקן שלכם"
@@ -2357,7 +2357,7 @@
         "OtherSettings": "הגדרות נוספות",
         "usageStatistics": "סטטיסטיקת שימוש",
         "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "שתפו נתונים סטטיסטיים עם Lenovo",
         "deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה."

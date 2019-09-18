@@ -1707,8 +1707,8 @@
                 "view": "TIPS WEERGEVEN",
                 "buyNow": "Nu kopen",
                 "buy": "Koop, download en installeer vandaag nog McAfee-antivirusbescherming, om te profiteren van deze beveiligingsfuncties van bankkwaliteit",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Alleen de basisfuncties. Als u beschermd bent tegen bepaalde online dreigingen, is het mogelijk dat u nog steeds zichtbaar bent voor andere.",
+                "virus": "Antivirusbeveiliging",
                 "homeNetwork": "Beveiliging van je thuisnetwerk",
                 "private": "Privé en anoniem browsen",
                 "everyDevice": "Bescherming van elk apparaat",
@@ -1750,7 +1750,7 @@
                 "Viruses": "Uitgeschakelde virussen",
                 "blocked": "Geblokkeerde slechte verbindingen",
                 "shredded": "Veilig versnipperde bestanden",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Start bestanden scannen"
             },
             "others": {
                 "othersProtection": "biedt basisbeveiliging voor uw apparaat"
@@ -2357,7 +2357,7 @@
         "OtherSettings": "Overige instellingen",
         "usageStatistics": "Gebruiksstatistieken",
         "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Statistische gegevens delen met Lenovo",
         "deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
