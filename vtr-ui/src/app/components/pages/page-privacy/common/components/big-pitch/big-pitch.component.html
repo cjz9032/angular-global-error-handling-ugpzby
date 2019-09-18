@@ -91,6 +91,7 @@
 	<div class="pitch__description">
 		<p class="pitch__title" [ngPlural]="timeToExpires">
 			<ng-template ngPluralCase="=1">Subscription expires in {{timeToExpires}} day</ng-template>
+			<ng-template ngPluralCase="=0">Subscription expires today</ng-template>
 			<ng-template ngPluralCase="other">Subscription expires in {{timeToExpires}} days</ng-template>
 		</p>
 		<p class="pitch__text">Renew your subscription to get the most out of Lenovo Privacy Essentials by FigLeaf.</p>

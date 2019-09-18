@@ -13,6 +13,7 @@ import {
 	TasksName
 } from '../../common/services/analytics/task-action-with-timeout.service';
 import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
+import { Features } from '../../common/components/nav-tabs/nav-tabs.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -20,6 +21,7 @@ import { AppStatusesService } from '../../common/services/app-statuses/app-statu
 	styleUrls: ['./trackers.component.scss']
 })
 export class TrackersComponent implements OnInit {
+	trackersFeatureName = Features.trackers;
 	isConsentGiven$ = this.userAllowService.allowToShow.pipe(map((value) => value['trackingMap']));
 	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount.pipe(
 		map((issueCount) => (getDisplayedCountValueOfIssues(this.userDataStateService.websiteTrackersResult, issueCount)) || 0),
