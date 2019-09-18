@@ -100,6 +100,7 @@ export class UPEService {
 					this.registerDeviceToUPEServer(JSON.parse(result)).then((data: any) => {
 						if (data) {
 							win.VantageStub.createCredential(this.CredNameUPEAPIKey, data);
+							this.forceRegister = false;
 							resolve(data);
 						} else {
 							console.log('register UPE Server failed.');
