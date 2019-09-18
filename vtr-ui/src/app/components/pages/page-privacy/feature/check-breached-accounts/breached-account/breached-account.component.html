@@ -34,19 +34,6 @@
 			</div>
 
             <div class="breached-account__details">
-				<ng-container *ngIf="!isUserAuthorized && !isFigleafReadyForCommunication">
-					<span class="breached-account__details-text">
-						Verify your email for details
-					</span>
-					<button class="breached-account__preview-link"
-							(click)="verifyClickEmit()"
-							vtrSendAnalytics
-							[metricsEvent]="'ItemClick'"
-							[metricsItem]="'BreachedAccountsVerifyEmailLink'">
-						<span>Verify email</span>
-					</button>
-				</ng-container>
-
                 <button class="breached-account__accordion-button"
                         *ngIf="isUserAuthorized || isFigleafReadyForCommunication"
                         vtrSendAnalytics

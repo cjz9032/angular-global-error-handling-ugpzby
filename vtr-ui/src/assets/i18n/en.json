@@ -1533,7 +1533,7 @@
 			"trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
 			"inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
 			"subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-			"overviewTitle": "Overview of your Connected Home Security",
+			"overviewTitle": "Overview",
 			"overviewTitleAdmin": "Overview of your Connected Home Security",
 			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
 			"familyMembers": "Family members",
@@ -1544,7 +1544,10 @@
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
 			"disconnect": "disconnect",
 			"goDashboard": "go to dashboard",
-			"extendNow": "extend"
+			"extendNow": "extend",
+			"poweredBy": "Powered by Cornet",
+			"privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+
 		},
 		"tour": {
 			"back": "Back",
@@ -1594,9 +1597,12 @@
 			"joinDescription": "Become a part of your family security group."
 		},
 		"modal": {
-			"countdownTile": "You are about to launch the Connected Home Security web console...",
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
 			"goNow": "Go now",
-			"disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
 		}
 	},
 	"support": {
@@ -1826,7 +1832,7 @@
 				"joinFamilyAccount": "Join family account",
 				"joinChs": "join your family's Connected Home Security",
 				"invitationCode": "Invitation code",
-				"connect": "CONNECTED",
+				"connect": "CONNECT",
 				"addHome": "Add Home",
 				"ok": "OK",
 				"continue": "CONTINUE",

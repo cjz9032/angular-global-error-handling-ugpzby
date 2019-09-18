@@ -96,19 +96,17 @@
 		</div>
 
 		<div class="pt-4 text-center">
-			<button type="button"
-				vtrMetrics
+			<vtr-ui-button
 				metricsItem="See.Battery.Details"
 				metricsParent="Page.Settings"
-				metricsEvent="ItemClick"
-				class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
+				metricsEvent="FeatureClick"
+				[isFullWidth]="true"
 				(click)="showDetailModal(batteryDetail)"
 				[disabled]="isBatteryDetailsBtnDisabled"
 				id="myDevice-settings-battery-details-btn"
-				[title]="'device.deviceSettings.batteryGauge.button' | translate"
-				attr.aria-label="myDevice-settings-battery-details-btn">
-				{{'device.deviceSettings.batteryGauge.button' | translate }}
-			</button>
+				[linkId]="'myDevice-settings-battery-details-btn'"
+				[label]="'device.deviceSettings.batteryGauge.button' | translate"
+				aria-label="myDevice-settings-battery-details-btn"></vtr-ui-button>
 		</div>
 	</div>
 </div>

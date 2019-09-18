@@ -4,8 +4,6 @@ import { EmailScannerComponent } from './email-scanner/email-scanner.component';
 import { CheckBreachesFormComponent } from './check-breaches/check-breaches-form.component';
 import { ScanStepsComponent } from './scan-steps/scan-steps.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ConfirmationPopupComponent } from './confirmation-popup/confirmation-popup.component';
-import { EmailScannerService } from './services/email-scanner.service';
 import { VtrCommonModule } from '../../common/vtr-common.module';
 import { BreachedAccountComponent } from './breached-account/breached-account.component';
 import { BreachedDescriptionComponent } from './breached-description/breached-description.component';
@@ -13,19 +11,21 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { BreachedOtherDescriptionComponent } from './breached-other-description/breached-other-description.component';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
-
+import { ScanLimitPitchComponent } from './email-scanner/scan-limit-pitch/scan-limit-pitch.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
 		EmailScannerComponent,
 		CheckBreachesFormComponent,
 		ScanStepsComponent,
-		ConfirmationPopupComponent,
+		ConfirmationComponent,
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
 		BreachedOtherDescriptionComponent,
 		VerifyEmailComponent,
+		ScanLimitPitchComponent,
 	],
 	exports: [
 		EmailScannerComponent,
@@ -34,7 +34,6 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
-		ConfirmationPopupComponent,
 		BreachedOtherDescriptionComponent,
 		VerifyEmailComponent
 	],
@@ -43,7 +42,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 		ReactiveFormsModule,
 		FormsModule,
 		VtrCommonModule,
-		AppSearchModule
+		AppSearchModule,
+		RouterModule
 	],
 })
 export class CheckBreachedAccountsModule {

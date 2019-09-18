@@ -1,6 +1,12 @@
 @import "../../../styles/common-blocks";
 
+:host {
+	display: block;
+}
+
 .check-breaches {
+	width: 100%;
+
 	&__title {
 		@extend %subtitle;
 		margin: 0;
@@ -32,6 +38,10 @@
 		&:before {
 			display: none;
 		}
+	}
+
+	&__limit-pitch {
+		width: 100%;
 	}
 }
 

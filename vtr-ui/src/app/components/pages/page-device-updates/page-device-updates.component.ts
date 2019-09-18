@@ -4,7 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -23,6 +23,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -165,7 +166,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		private translate: TranslateService,
 		shellService: VantageShellService,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private router: Router
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
@@ -754,6 +756,17 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);
+					break;
+				case AdPolicyEvent.AdPolicyUpdatedEvent:
+					if (!payload.IsSystemUpdateEnabled) {
+						if (this.isUpdateCheckInProgress) {
+							this.onCancelUpdateCheck();
+						}
+						if (this.isUpdateDownloading) {
+							this.onCancelUpdateDownload();
+						}
+						this.router.navigateByUrl('/dashboard');
+					}
 					break;
 				default:
 					break;

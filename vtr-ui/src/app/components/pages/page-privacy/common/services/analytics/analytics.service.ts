@@ -9,6 +9,7 @@ import { AppStatusesService } from '../app-statuses/app-statuses.service';
 export enum ItemTypes {
 	TaskAction = 'TaskAction',
 	PageView = 'PageView',
+	ArticleView = 'ArticleView',
 	ItemClick = 'ItemClick',
 	ArticleClick = 'ArticleClick'
 }
@@ -58,11 +59,11 @@ export class AnalyticsService {
 		}
 	}
 
-	sendPageViewData(data: DataToSendOnPageView, customPageName: string) {
+	sendPageViewData(data: DataToSendOnPageView, customPageName: string, itemType) {
 		const dataToSend = {
 			...data,
 			PageName: customPageName || this.getPageName(),
-			ItemType: ItemTypes.PageView,
+			ItemType: itemType,
 		};
 		this.send(dataToSend);
 	}
