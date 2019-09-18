@@ -86,6 +86,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	) {	}
 
 	ngOnInit() {
+		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture();
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
 		this.devicePosture = this.vantageShellService.getDevicePosture();
 		if (this.vantageShellService.getSecurityAdvisor()) {
