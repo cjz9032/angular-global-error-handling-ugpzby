@@ -175,5 +175,8 @@ export enum LocalStorageKey {
 	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
 	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability',
 	SmartAssistCache = '[LocalStorageKey] SmartAssistCache',
-	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache'
+	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
+
+	// Ad policy local storage key
+	AdPolicyCache = '[LocalStorageKey] AdPolicyCache'
 }

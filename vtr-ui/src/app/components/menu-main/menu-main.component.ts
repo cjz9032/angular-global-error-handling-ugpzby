@@ -23,7 +23,7 @@ import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
+import { AdPolicyId, AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 import { EMPTY } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -339,10 +339,46 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				case NetworkStatus.Online:
 					this.modernPreloadService.getIsEntitled();
 					break;
+				case AdPolicyEvent.AdPolicyUpdatedEvent:
+					this.showSystemUpdates();
+					break;
 				default:
 					break;
 			}
 		}
+	}
+
+	showSystemUpdates() {
+		this.getMenuItems().then((items) => {
+			const device = items.find((item) => item.id === 'device');
+			if (device !== undefined) {
+				const su = device.subitems.find((item) => item.id === 'system-updates');
+				if (this.adPolicyService.IsSystemUpdateEnabled && !this.isSMode) {
+					if (!su) {
+						device.subitems.splice(2, 0, {
+							id: 'system-updates',
+							label: 'common.menu.device.sub3',
+							path: 'system-updates',
+							icon: '',
+							metricsEvent: 'itemClick',
+							metricsParent: 'navbar',
+							metricsItem: 'link.systemupdates',
+							routerLinkActiveOptions: {
+								exact: true
+							},
+							adPolicyId: AdPolicyId.SystemUpdate,
+							subitems: []
+						});
+					}
+				} else {
+					if (su) {
+						device.subitems = device.subitems.filter(
+							(item) => item.id !== 'system-updates'
+						);
+					}
+				}
+			}
+		});
 	}
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {
