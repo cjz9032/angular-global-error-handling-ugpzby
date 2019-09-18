@@ -116,6 +116,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		this.cache.autoModeToggle.available = this.showIntelligentCoolingToggle;
 		this.cache.autoModeToggle.status = this.enableIntelligentCoolingToggle;
 		this.cache.showIntelligentCoolingModes = this.showIntelligentCoolingModes;
+		this.cache.apsState = this.apsStatus;
 		this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 		this.setAutoModeSetting(event);
 	}
@@ -321,12 +322,11 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
 					console.log('DYTC 3.0 supported');
 					this.apsStatus = await this.getAPSState();
-					this.cache.apsState = this.apsStatus;
-
 					// Start of fix for VAN-6839, changing appStatus true , to fix for VAN-6839.
 					if (this.tIOCapability) {
 						this.apsStatus = true;
 					}
+					this.cache.apsState = this.apsStatus;
 					// end of fix for VAN-6839, changing appStatus true , to fix for VAN-6839.
 
 					if ((this.cQLCapability || this.tIOCapability) && this.apsStatus) {
@@ -397,6 +397,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		}
 		this.cache.mode = mode;
 		this.cache.showIC = this.showIC;
+		this.cache.apsState = this.apsStatus;
 		this.cache.autoModeToggle.available = this.showIntelligentCoolingToggle;
 		this.cache.autoModeToggle.status = this.enableIntelligentCoolingToggle;
 		this.cache.showIntelligentCoolingModes = this.showIntelligentCoolingModes;

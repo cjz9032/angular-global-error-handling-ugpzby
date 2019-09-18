@@ -1,10 +1,18 @@
-import { Directive, ElementRef, Input, AfterViewInit, HostListener, Inject, OnDestroy } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import {
+	AfterViewInit,
+	Directive,
+	ElementRef,
+	HostListener,
+	Input,
+	OnChanges,
+	OnDestroy,
+	SimpleChanges
+} from '@angular/core';
 
 @Directive({
 	selector: '[vtrCutMultilineTextWithDots]'
 })
-export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestroy {
+export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestroy, OnChanges {
 	@Input() textToAppend: string;
 	@Input() allowedLinesAmount?: number;
 	@Input() addShowMoreBtn?: boolean;
@@ -23,6 +31,12 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 
 	ngAfterViewInit() {
 		this.addCutText();
+	}
+
+	ngOnChanges(changes: SimpleChanges) {
+		if (changes.textToAppend) {
+			this.addCutText();
+		}
 	}
 
 	addCutText() {

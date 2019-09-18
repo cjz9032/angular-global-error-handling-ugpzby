@@ -33,16 +33,25 @@
 
     .inner-body {
       padding: 4rem 2rem;
+      @media #{$mediaquery_md} {
+        justify-content: center;
+      }
       .title {
         color: $main_darker;
         font-size: 1.5rem;
         font-weight: $weight_bold;
         line-height: 2.3rem;
         text-align: left;
+        @media #{$mediaquery_md} {
+          font-size: 1.8rem;
+        }
       }
 
       .logo{
         height: 6rem;
+        @media #{$mediaquery_md} {
+          height: 7.5rem;
+        }
       }
 
       .subtitle {
@@ -50,6 +59,9 @@
         font-size: 1.4rem;
         font-weight: 400;
         line-height: 2.3rem;
+        @media #{$mediaquery_md} {
+          font-size: 1.6rem;
+        }
       }
     }
   }

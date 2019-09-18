@@ -173,6 +173,13 @@ export enum LocalStorageKey {
 	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability',
 	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
 	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability',
+
+	// Apps For You storage key
+	UnreadMessageCount = '[LocalStorageKey] UnreadMessageCount',
+
 	SmartAssistCache = '[LocalStorageKey] SmartAssistCache',
-	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache'
+	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
+
+	// Ad policy local storage key
+	AdPolicyCache = '[LocalStorageKey] AdPolicyCache'
 }

@@ -1,8 +1,9 @@
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, UrlTree } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { AdPolicyService } from '../ad-policy/ad-policy.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -16,7 +17,9 @@ export class GuardService {
 
 	constructor(
 		shellService: VantageShellService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private router: Router,
+		private adPolicy: AdPolicyService) {
 
 		this.metrics = shellService.getMetrics();
 		window.addEventListener('blur', () => {
@@ -30,8 +33,12 @@ export class GuardService {
 
 	}
 
-	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean | UrlTree{
 		this.interTime = Date.now();
+		if (routerStateSnapshot.url.includes('system-updates') && !this.adPolicy.IsSystemUpdateEnabled)
+		{
+			return this.router.parseUrl('/dashboard');
+		}
 		return true;
 	}
 

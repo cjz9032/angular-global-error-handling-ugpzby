@@ -10,7 +10,7 @@ import { typeData } from '../../feature/tracking-map/services/tracking-map.inter
 })
 export class CountNumberOfIssuesService {
 	breachedAccountsCount = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
-		filter((breachedAccounts) => breachedAccounts.error === null),
+		filter((breachedAccounts) => breachedAccounts.error === null && !breachedAccounts.reset),
 		map((breachesState) => breachesState.breaches.length),
 		startWith(0),
 		shareReplay(1)

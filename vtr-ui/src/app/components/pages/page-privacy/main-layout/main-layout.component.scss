@@ -41,3 +41,9 @@
     box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
   }
 }
+
+.img-for-service-worker {
+	height: 1px;
+	width: 1px;
+	visibility: hidden;
+}
