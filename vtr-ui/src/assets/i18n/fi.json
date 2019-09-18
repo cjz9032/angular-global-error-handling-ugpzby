@@ -1707,8 +1707,8 @@
                 "view": "KATSO VINKKEJÄ",
                 "buyNow": "Tee ostoksia",
                 "buy": "Osta, lataa ja asenna McAfee-virussuojaus tänään, jotta voit hyödyntää näitä pankkialan tason suojausominaisuuksia",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Vain perusasiat tähän. Vaikka tietokoneesi on suojattu joitakin verkkouhkia vastaan, se voi edelleen olla alttiina muille uhkille.",
+                "virus": "Virustentorjunta",
                 "homeNetwork": "Kotiverkon suojaus",
                 "private": "Yksityinen, anonyymi selaaminen",
                 "everyDevice": "Jokaisen laitteen suojaus",
@@ -1750,7 +1750,7 @@
                 "Viruses": "Poistettuja viruksia",
                 "blocked": "Estettyjä huonoja yhteyksiä",
                 "shredded": "Turvallisesti silputtuja tiedostoja",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Aloita tiedostojen tarkistus"
             },
             "others": {
                 "othersProtection": "tarjoaa laitteellesi perustason suojauksen"
@@ -2357,7 +2357,7 @@
         "OtherSettings": "Muut asetukset",
         "usageStatistics": "Käyttötilastot",
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Jaa tilastotiedot Lenovolle",
         "deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
         "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."

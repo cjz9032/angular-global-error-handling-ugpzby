@@ -2,24 +2,15 @@
 		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'">
 
-	<div class="breaches-page__header" *ngIf="!(isShowVerifyBlock$ | async)">
+	<div class="breaches-page__header" *ngIf="!(isShowVerifyBlock$ | async) && (isOnline || (!isOnline && !(userEmail$ | async) || (isFigleafReadyForCommunication$ | async)))">
 		<vtr-feature-header
 			class="breaches-page__feature-header"
 			[texts]="textForFeatureHeader"
-			[isFeatureWasScanned]="breachedAccountWereScanned$ | async"
+			[isFeatureWasScanned]="breachedAccountWasScanned$ | async"
 			[countOfIssue]="breachedAccountsCount$ | async"
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
 			<span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breached accounts found
 		</vtr-feature-header>
-
-		<button class="breaches-page__button"
-				*ngIf="isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ | async"
-				vtrSendAnalytics
-				[metricsEvent]="'ItemClick'"
-				[metricsItem]="'BreachedAccountsVerifyEmailButton'"
-				(click)="startVerify()">
-			Verify email
-		</button>
 
 		<button class="breaches-page__button"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
@@ -49,34 +40,44 @@
 	</div>
 
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
-		<vtr-email-scanner
-			*ngIf="isUndefinedWithoutFigleafState$ | async"
-			[userEmail]="userEmail$ | async"
-			[emailWasScanned]="breachedAccountWereScanned$ | async">
-		</vtr-email-scanner>
-		<vtr-breached-account
-			*ngIf="(((isAccountVerify$ | async) && (isFigleafReadyForCommunication$ | async))
+		<ng-container *ngIf="isOnline || (!isOnline && !(userEmail$ | async)) || (isFigleafReadyForCommunication$ | async); else offlineBlock" >
+			<vtr-email-scanner
+				class="breached-accounts__email-scanner"
+				*ngIf="(isUndefinedWithoutFigleafState$ | async)"
+				[scanCounter]="scanCounter$ | async"
+				[emailWasScanned]="breachedAccountWasScanned$ | async">
+			</vtr-email-scanner>
+			<vtr-breached-account
+				*ngIf="(((isAccountVerify$ | async) && (isFigleafReadyForCommunication$ | async))
 					|| ((isUserAuthorized$ | async) && !(isFigleafReadyForCommunication$ | async)) && (breachedAccounts$ | async)?.length)"
-			[breachedAccounts]="(breachedAccounts$ | async)"
-			[isUserAuthorized]="isUserAuthorized$ | async"
-			[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
-			(openFigleaf)="openFigleafByUrl($event)"
-			(verifyClick)="startVerify()">
-		</vtr-breached-account>
+				[breachedAccounts]="(breachedAccounts$ | async)"
+				[isUserAuthorized]="isUserAuthorized$ | async"
+				[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
+				(openFigleaf)="openFigleafByUrl($event)">
+			</vtr-breached-account>
 
-		<vtr-verify-email
-			*ngIf="(isShowVerifyBlock$ | async)"
-			[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
-			[userEmail]="userEmail$ | async"
-			[breachedAccountsLength]="(breachedAccounts$ | async)?.length"
-			(verifyEmailEmit)="startVerify()">
-		</vtr-verify-email>
+			<vtr-verify-email
+				*ngIf="(isShowVerifyBlock$ | async)"
+				[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
+				[userEmail]="userEmail$ | async"
+				[breachedAccountsLength]="(breachedAccounts$ | async)?.length"
+				(verifyEmailEmit)="startVerify()">
+			</vtr-verify-email>
 
+			<div class="breached-accounts__clear-data-wrapper"
+				 *ngIf="(userEmail$ | async) && !(isFigleafReadyForCommunication$ | async)">
+				<vtr-clear-data-tooltip [feature]="breachedFeatureName"></vtr-clear-data-tooltip>
+			</div>
+		</ng-container>
+
+		<ng-template #offlineBlock>
+			<div class="breached-accounts__offline">
+				<img src="/assets/images/privacy-tab/offline-widget/offline-mode-grey.png"
+					 srcset="/assets/images/privacy-tab/offline-widget/offline-mode-grey@2x.png 2x"
+					 alt="offline-mode-grey">
+				<p class="breached-accounts__offline-title">Application is offline</p>
+				<p class="breached-accounts__offline-text">When you connect to the internet you can view your breaches scan results.</p>
+			</div>
+		</ng-template>
 	</div>
 </section>
-
-<vtr-common-popup [popUpId]="confirmationPopupName">
-	<ng-template>
-		<vtr-confirmation-popup [popupId]="confirmationPopupName"></vtr-confirmation-popup>
-	</ng-template>
-</vtr-common-popup>

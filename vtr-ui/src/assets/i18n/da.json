@@ -1707,8 +1707,8 @@
                 "view": "SE TIPS",
                 "buyNow": "Køb nu",
                 "buy": "Køb, download og installer McAfee-virusbeskyttelse i dag for at udnytte disse sikkerhedsfunktioner på bankniveau",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Her får du kun de grundlæggende funktioner. Selvom du er beskyttet mod visse onlinetrusler, kan du stadig være udsat for andre.",
+                "virus": "Virusbeskyttelse",
                 "homeNetwork": "Beskyttelse af hjemmenetværk",
                 "private": "Privat, anonym søgning på internettet",
                 "everyDevice": "Beskyttelse af alle enheder",
@@ -1750,7 +1750,7 @@
                 "Viruses": "Eliminerede virus",
                 "blocked": "Blokerede skadelige forbindelser",
                 "shredded": "Filer, der er sikkert fjernet",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Start filscanning"
             },
             "others": {
                 "othersProtection": "tilbyder grundlæggende beskyttelse af din enhed"
@@ -2357,7 +2357,7 @@
         "OtherSettings": "Andre indstillinger",
         "usageStatistics": "Brugsstatistikker",
         "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Deler statistiske data med Lenovo for at forbedre pålideligheden, designet og optimeringen af funktioner på computeren.",
         "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."

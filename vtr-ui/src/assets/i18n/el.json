@@ -1707,8 +1707,8 @@
                 "view": "ΔΕΙΤΕ ΣΥΜΒΟΥΛΕΣ",
                 "buyNow": "Αγορά τώρα",
                 "buy": "Αγοράστε, κατεβάστε και εγκαταστήστε την προστασία από ιούς McAfee σήμερα για να επωφεληθείτε από αυτές τις δυνατότητες ασφάλειας επιπέδου τράπεζας",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Μόνο τα βασικά εδώ. Ενώ είστε προστατευμένοι από ορισμένες online απειλές, ίσως παραμένετε εκτεθειμένοι σε άλλες.",
+                "virus": "Προστασία από ιούς",
                 "homeNetwork": "Προστασία οικιακού δικτύου",
                 "private": "Ιδιωτική, ανώνυμη περιήγηση",
                 "everyDevice": "Προστασία κάθε συσκευής",
@@ -1750,7 +1750,7 @@
                 "Viruses": "Ιοί που έχουν εξαλειφθεί",
                 "blocked": "Κακές συνδέσεις που αποκλείστηκαν",
                 "shredded": "Αρχεία που καταστράφηκαν με ασφάλεια",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Έναρξη σάρωσης αρχείων"
             },
             "others": {
                 "othersProtection": "σάς προσφέρει βασική προστασία για τη συσκευή σας"
@@ -2357,7 +2357,7 @@
         "OtherSettings": "Άλλες ρυθμίσεις",
         "usageStatistics": "Στατιστικά χρήσης",
         "usageStatisticsDescription": "Να αποστέλλονται ανώνυμα στατιστικά χρήσης στη Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Κοινοποίηση στατιστικών δεδομένων στη Lenovo",
         "deviceStatisticsDescription": "Κάνει κοινή χρήση στατιστικών δεδομένων με τη Lenovo προκειμένου να βελτιωθεί η αξιοπιστία και ο σχεδιασμός και να βελτιστοποιηθούν οι δυνατότητες του υπολογιστή σας.",
         "Note": "Σημείωση: ",
         "settingsNotes": "για να τεθούν σε ισχύ όλες οι ρυθμίσεις σε αυτήν τη σελίδα, απαιτείται επανεκκίνηση της εφαρμογής από τον χρήστη."
