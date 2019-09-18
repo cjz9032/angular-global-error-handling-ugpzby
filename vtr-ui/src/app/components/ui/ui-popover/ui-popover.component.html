@@ -14,7 +14,7 @@
 			<p></p>
 		</div>
 		<hr>
-		<div class="row">
+		<div class="row" (keydown)="runappKeyup($event)">
 			<a id="gaming_popup_ok" attr.aria-label="gaming_popup_ok" tabindex="1"
 				class="btn enable-button" vtrMetrics
 				[metricsItem]="'popover_ok'"

@@ -1,4 +1,4 @@
-<div class="modal-main-wrapper">
+<div class="modal-main-wrapper" id="closedialog" tabindex="1">
 	<ui-popover-turn-on>
 		<div class="modal-body vtr-modal-turn-on">
 			<div class="modal-body">
@@ -30,7 +30,7 @@
 							(keyup.enter)="turnOnAction(true)" tabindex="1" role="button"
 							[attr.aria-label]="'Turn on auto close'">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
 						<a (click)="notNowAction($event)" (keyup.enter)="notNowAction($event)"
-							class="cancel-link active" tabindex="1" role="button"
+							class="cancel-link active" tabindex="1" role="button" (keydown)="keydownFn($event)"
 							[attr.aria-label]="'Cancel'">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
 					</div>
 				</div>
