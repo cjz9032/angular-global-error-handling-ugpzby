@@ -1,0 +1,117 @@
+<div class="vtr-page-apps-for-you vtr-page">
+	<div class="row vtr-page-header">
+		<div class="col vtr-col">
+			<vtr-header-main [title]="title | translate" [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
+				[backId]="backId"></vtr-header-main>
+		</div>
+	</div>
+	<div class="row vtr-page-content">
+		<div class="col vtr-col">
+			<div class="container-fluid">
+				<div class="apps-header row no-gutters" *ngIf="appDetails">
+					<div class="col-2 logo-con">
+						<img class="img-logo"
+							[src]="'https://cms.csw.lenovo.com/-/media/Companion/Features/Apps-for-You/Lenovo-Migration-Assistant/LMA-icon.png?v=2196a92fc264402899bc6cadc31eb296'"
+							alt="Lenovo Migration Assistant" />
+					</div>
+					<div class="col-4 app-name">
+						<div class="app-title">{{ appDetails.title }}</div>
+						<div class="app-price">Free</div>
+					</div>
+					<div class="col-2">
+						<div class="spinner-content app-spinner" *ngIf="appDetails.showStatus == statusEnum.INSTALLING">
+							<div class="spinner-border text-primary progress-spinner" role="status"></div>
+						</div>
+					</div>
+					<div class="col-4 btn-content">
+						<a href="javascript:;" class="btn-install" (click)="clickInstallButton()"
+							[ngSwitch]="installButtonStatus">
+							<span class="item-button" *ngSwitchCase="installButtonStatusEnum.INSTALL">
+								Install
+							</span>
+							<span class="item-button" *ngSwitchCase="installButtonStatusEnum.INSTALLING">
+								Installing
+							</span>
+							<span class="item-button" *ngSwitchCase="installButtonStatusEnum.LAUNCH">
+								Launch
+							</span>
+							<span class="item-button" *ngSwitchCase="installButtonStatusEnum.SEEMORE">
+								See More
+							</span>
+						</a>
+						<div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+					</div>
+				</div>
+
+				<div class="apps-content row no-gutters" *ngIf="appDetails">
+					<div class="description-con mb-40" *ngIf="appDetails.description">
+						<div class="title mb-2">
+							Description
+						</div>
+						<div [innerHTML]="appDetails.description"></div>
+					</div>
+					<!-- <div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length"> -->
+					<div class="screenshot-con mb-40">
+						<div class="title mb-2">
+							Screenshots
+						</div>
+						<div class="screenshot-slider">
+							<div class="image-content" 
+								#appsForYouImageContent
+								[style.height.px]="appsForYouImageContent.clientWidth / 5">
+								<div *ngFor="let screenshot of mockScreenShots, let i = index"
+										class="screenshot-img position-{{screenshot.position}}"
+										id="{{screenshot.id}}"
+										(click)="openScreenshotModal(screenshot.imageUrl)"
+										>
+									<img [src]="screenshot.imageUrl" />
+								</div>
+							</div>
+							<div class="arrow-content" *ngIf="showArrows">
+								<div class="arrow left-arrow" (click)="clickLeftArrow()">
+									<fa-icon [icon]="['fal', 'chevron-left']"></fa-icon>
+								</div>
+								<div class="arrow right-arrow" (click)="clickRightArrow()">
+									<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="information-con">
+						<div class="title mb-2">
+							Additional Information
+						</div>
+						<div class="infomations row no-gutters" *ngIf="appDetails.showAdditionalInfo">
+							<div class="col-6 row no-gutters">
+								<div class="col-6 info-item" *ngIf="appDetails.by">
+									<div class="sub-title">By:</div>
+									<div [innerHTML]="appDetails.by"></div>
+								</div>
+								<div class="col-6 info-item" *ngIf="appDetails.updated">
+									<div class="sub-title">Updated:</div>
+									<div [innerHTML]="appDetails.updated"></div>
+								</div>
+								<div class="col-6 info-item" *ngIf="appDetails.installtype.title">
+									<div class="sub-title">Type:</div>
+									<div [innerHTML]="appDetails.installtype.title"></div>
+								</div>
+								<div class="col-6 info-item" *ngIf="appDetails.category.title">
+									<div class="sub-title">Category:</div>
+									<div [innerHTML]="appDetails.category.title"></div>
+								</div>
+								<div class="col-6 info-item" *ngIf="appDetails.privacyurl">
+									<a [href]="appDetails.privacyurl" target="_blank" class="legal-agreement">Legal Agreement</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="spinner-content app-spinner loading-content" *ngIf="!appDetails">
+					<div class="spinner-border text-primary progress-spinner" role="status"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
