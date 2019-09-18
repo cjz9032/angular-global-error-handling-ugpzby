@@ -2,6 +2,9 @@
 
 .vtr-common-antivirus{
     margin-top: 4rem;
+    @media #{$mediaquery_md} {
+      margin-top: 0rem;
+    }
     
     .title {
         color: $main_darkest;
@@ -12,6 +15,9 @@
     }
 
     .content {
+      @media #{$mediaquery_md} {
+        flex-direction: column;
+      }
       box-shadow: $drop_shadow;
       border-radius: $border_radius;
       background: $light;
@@ -21,11 +27,23 @@
         width: 100%;
       } 
 
+      .md-margin {
+        @media #{$mediaquery_md} {
+          margin:5rem 0rem;
+        }
+      }
+
       .inner-body {
         padding: 1.5rem 2rem;
+        @media #{$mediaquery_md} {
+          padding: 2.5rem 2rem;
+        }
         .title {
           color: $main_darker;
           font-size: 1.5rem;
+          @media #{$mediaquery_md} {
+            font-size: 2rem;
+          }
           font-weight: $weight_bold;
           line-height: 2.3rem;
           text-align: left;
@@ -33,10 +51,16 @@
   
         .logo{
           height: 5rem;
+          @media #{$mediaquery_md} {
+            height: 7.5rem;
+          }
         }
 
         .last-logo{
           height: 2.5rem;
+          @media #{$mediaquery_md} {
+            height: 3.5rem;
+          }
         }
 
         .height-line{
@@ -48,6 +72,9 @@
         .subtitle {
           color: $main_darker;
           font-size: 1.4rem;
+          @media #{$mediaquery_md} {
+            font-size: 1.6rem;
+          }
           font-weight: 400;
           line-height: 2.3rem;
         }
