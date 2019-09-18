@@ -65,6 +65,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	devicePostureArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	devicePostureArticleCategory: string;
 
+	cardContentPositionA: any = {
+		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png'
+	};
+	cardContentPositionB: any = {
+		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png'
+	};
+
 	constructor(
 		public vantageShellService: VantageShellService,
 		public homeSecurityMockService: HomeSecurityMockService,
@@ -347,6 +354,33 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	fetchCMSArticles() {
+		const queryOptions = {
+			Page: 'connected-home-security',
+			Lang: 'EN'
+		};
+
+		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+			const cardContentPositionA = this.cmsService.getOneCMSContent(
+				response,
+				'full-width-title-image-background',
+				'position-left-content-row-1'
+			)[0];
+			if (cardContentPositionA) {
+				this.cardContentPositionA = cardContentPositionA;
+			}
+
+			const cardContentPositionB = this.cmsService.getOneCMSContent(
+				response,
+				'inner-page-right-side-article-image-background',
+				'position-right-sidebar-row-1'
+			)[0];
+			if (cardContentPositionB) {
+				this.cardContentPositionB = cardContentPositionB;
+				if (this.cardContentPositionB.BrandName) {
+					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				}
+			}
+		});
 		this.cmsService.fetchCMSArticle(this.devicePostureArticleId, { Lang: 'EN' }).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.devicePostureArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
