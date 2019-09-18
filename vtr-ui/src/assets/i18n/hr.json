@@ -1707,8 +1707,8 @@
                 "view": "PREGLED SAVJETA",
                 "buyNow": "Kupite sada",
                 "buy": "Kupite, preuzmite i instalirajte McAfee zaštitu od virusa već danas kako biste iskoristili prednosti ovih sigurnosnih značajki",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Ovdje su samo osnove. Iako ste zaštićeni od nekih prijetnji na mreži, možda ćete i dalje biti izloženi drugima.",
+                "virus": "Zaštita od virusa",
                 "homeNetwork": "Zaštita kućne mreže",
                 "private": "Privatno, anonimno pregledavanje",
                 "everyDevice": "Zaštita na svakom uređaju",
@@ -1750,7 +1750,7 @@
                 "Viruses": "Virusi uklonjeni",
                 "blocked": "Loše veze blokirane",
                 "shredded": "Datoteke su sigurno uništene",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Pokrenite skeniranje datoteka"
             },
             "others": {
                 "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"
@@ -2357,7 +2357,7 @@
         "OtherSettings": "Ostale postavke",
         "usageStatistics": "Statistički podaci o upotrebi",
         "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Podijelite statističke podatke s tvrtkom Lenovo",
         "deviceStatisticsDescription": "Šalje statističke podatke tvrtki Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije značajki na računalu.",
         "Note": "Napomena: ",
         "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu."

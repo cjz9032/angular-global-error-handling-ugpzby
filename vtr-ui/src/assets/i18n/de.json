@@ -1707,8 +1707,8 @@
                 "view": "TIPPS ANZEIGEN",
                 "buyNow": "Jetzt kaufen",
                 "buy": "Sie können den McAfee-Virenschutz noch heute erwerben, herunterladen und installieren, um von diesen Sicherheitsfunktionen auf Bankenniveau zu profitieren",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Hier nur das Elementare. Auch wenn Sie vor einigen Onlinebedrohungen geschützt sind, sind Sie ggf. dennoch anderen Bedrohungen ausgesetzt.",
+                "virus": "Virenschutz",
                 "homeNetwork": "Schutz für private Netzwerke",
                 "private": "Privates, anonymes Surfen",
                 "everyDevice": "Schutz für alle Geräte",
@@ -1750,7 +1750,7 @@
                 "Viruses": "Viren eliminiert",
                 "blocked": "Unsichere Verbindungen blockiert",
                 "shredded": "Dateien sicher vernichtet",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Überprüfung der Dateien starten"
             },
             "others": {
                 "othersProtection": "bietet einen Basisschutz für Ihr Gerät"
@@ -2357,7 +2357,7 @@
         "OtherSettings": "Weitere Einstellungen",
         "usageStatistics": "Verwendungsstatistiken",
         "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Statistikdaten mit Lenovo teilen",
         "deviceStatisticsDescription": "Sendet statistische Daten an Lenovo, um die Zuverlässigkeit und das Design Ihres Computers zu verbessern und seine Funktionalität zu optimieren.",
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden."

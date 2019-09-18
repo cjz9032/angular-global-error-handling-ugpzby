@@ -1,5 +1,6 @@
 @import "../../../../../app.theme.scss";
 .vtr-home-security-after-signup {
+	color: $shade_blue;
 	font-size: 1.8rem;
 	.content-container {
         box-shadow: $drop_shadow;
@@ -7,8 +8,19 @@
 		background-color: $light;
         padding: 1.5rem;
 		width: 100%;
+		.subscription-title {
+			font-size: 2.5rem;
+			font-weight: $weight_600;
+		}
 		.coronet-logo {
 			width: 10rem;
+		}
+		.detail-container {
+			color: $shade_blue;
+			.red {
+				color: $button_red_start;
+				font-weight: $weight_600;
+			}
 		}
 		.heading {
 			font-size: 2.5rem;
@@ -18,10 +30,6 @@
 			background-color: $grey_lighter;
 			border-radius: $border_radius;
 			border: 0.1rem solid $grey_light;
-			color: $shade_blue;
-			.red {
-				color: $danger_dark;
-			}
 		}
 	}
 	::ng-deep {
@@ -40,6 +48,9 @@
 				}
 			}
 		}
+	}
+	.red {
+		color: $danger_dark;
 	}
 
 }
