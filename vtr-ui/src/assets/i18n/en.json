@@ -1710,7 +1710,7 @@
 				"notAvailable": "NOT AVAILABLE"
 			},
 			"windowsDefender": {
-				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so can <b>protect what matters.</b>",
+				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so you can <b>protect what matters.</b>",
 				"topTip": "Top Tips for online safety",
 				"topContent": "Learn how you can defend against today's biggest online threats",
 				"view": "VIEW TIPS",
@@ -1832,7 +1832,7 @@
 				"joinFamilyAccount": "Join family account",
 				"joinChs": "join your family's Connected Home Security",
 				"invitationCode": "Invitation code",
-				"connect": "CONNECTED",
+				"connect": "CONNECT",
 				"addHome": "Add Home",
 				"ok": "OK",
 				"continue": "CONTINUE",

@@ -125,7 +125,7 @@ export class AntiVirusLandingViewModel {
 			});
 		};
 		const setPage = (av) => {
-			if (av.mcafee && av.mcafee.enabled) {
+			if (av.mcafee && (av.mcafee.enabled || !av.others || !av.others.enabled) && av.mcafee.expireAt > 0) {
 				this.currentPage = 'mcafee';
 				setAntivirusStatus(
 					av.mcafee.status !== undefined ? av.mcafee.status : null,
@@ -133,7 +133,7 @@ export class AntiVirusLandingViewModel {
 					this.currentPage
 				);
 				this.imgUrl = '../../../../assets/images/mcafee_logo.svg';
-			} else if (av.others && av.others.enabled) {
+			} else if (av.others) {
 				this.currentPage = 'others';
 				setAntivirusStatus(
 					av.others.antiVirus.length > 0 ? av.others.antiVirus[0].status : null,

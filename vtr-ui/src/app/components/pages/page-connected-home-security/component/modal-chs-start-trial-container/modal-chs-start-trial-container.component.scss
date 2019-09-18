@@ -50,11 +50,12 @@
 				}
 			}
 			.btn_cancel {
-				font-size: 2rem;
-				font-weight: bold;
+				background: $light;
+				font-size: 1.5rem;
+				font-weight: $weight_bold;
 				color: $blueHyperLink;
-				text-decoration: underline;
-				cursor: pointer;
+				border-bottom: 0.1rem solid $blueHyperLink;
+				height: 3rem;
 			}
 		}
 		&.page-two {
