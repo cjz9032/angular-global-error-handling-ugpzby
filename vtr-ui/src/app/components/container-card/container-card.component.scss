@@ -348,6 +348,13 @@
 			.default-cursor {
 				cursor: default;
 			}
+			.highlight-offline {
+				.inner-content{
+					.title {
+						cursor: default;
+					}
+				}
+			}
 		}
 	}
 
