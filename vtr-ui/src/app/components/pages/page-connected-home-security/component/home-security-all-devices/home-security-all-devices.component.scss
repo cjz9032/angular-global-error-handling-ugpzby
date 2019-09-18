@@ -5,9 +5,9 @@
 		font-size: 4rem;
 	}
 	.blue {
-		color: $main_gstart;
-		fa-icon {
-			color: $main_gstart;
+		color: $blue-lighter;
+		.icomoon {
+			font-size: 4.8rem;
 		}
 	}
 
