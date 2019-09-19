@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { filter, map, takeUntil } from 'rxjs/operators';
+import { filter, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
@@ -8,6 +8,7 @@ import { Article, ArticlesService } from '../articles.service';
 import { combineLatest } from 'rxjs';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { CommonService } from '../../../../../../services/common/common.service';
+import { NetworkStatus } from '../../../../../../enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-article-sidebar',
@@ -27,7 +28,11 @@ export class ArticleSidebarComponent implements OnInit, OnDestroy {
 	) {	}
 
 	ngOnInit() {
-		this.setArticlePreview();
+		this.commonService.notification.pipe(
+			filter((notification) => !this.showedArticle && notification.type === NetworkStatus.Online),
+			switchMap(() => this.setArticlePreview()),
+			takeUntil(instanceDestroyed(this)),
+		).subscribe();
 
 		this.commonPopupService.getOpenState(this.articlePopupId)
 			.pipe(
@@ -55,7 +60,7 @@ export class ArticleSidebarComponent implements OnInit, OnDestroy {
 	}
 
 	private setArticlePreview() {
-		combineLatest(
+		return combineLatest(
 			[
 				this.routerChangeHandler.onChange$.pipe(
 					filter((currentPath) => this.articlesService.pagesSettings[currentPath]),
@@ -64,15 +69,15 @@ export class ArticleSidebarComponent implements OnInit, OnDestroy {
 				this.articlesService.getListOfArticles()
 			]
 		).pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe(([currentPageSettings, articles]) => {
-				if (currentPageSettings.visible) {
-					const randomIndex = Math.floor(SecureMath.random() * articles.length);
-					this.showedArticle = articles[randomIndex];
-				} else {
-					this.showedArticle = null;
+			tap(([currentPageSettings, articles]) => {
+					if (currentPageSettings.visible) {
+						const randomIndex = Math.floor(SecureMath.random() * articles.length);
+						this.showedArticle = articles[randomIndex];
+					} else {
+						this.showedArticle = null;
+					}
 				}
-			}
+			)
 		);
 	}
 }
