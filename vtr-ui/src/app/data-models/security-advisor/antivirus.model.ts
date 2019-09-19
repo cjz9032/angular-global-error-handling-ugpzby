@@ -8,7 +8,7 @@ export class AntiVirusViewModel {
 	mcafee: McAfeeInfo = {
 		localName: 'McAfee LiveSafe',
 		subscription: 'unknown',
-		expireAt: new Date(),
+		expireAt: 30,
 		registered: false,
 		trialUrl: 'unknown',
 		features: [],
@@ -27,7 +27,7 @@ export class AntiVirusViewModel {
 		status: false,
 		name: 'unknown',
 	};
-	metricsList: Array<any> = [];
+	metricsList: Array<any> = [0, 0, 0, 0];
 	otherFirewall: OtherInfo ;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
@@ -84,10 +84,10 @@ export class AntiVirusViewModel {
 	}
 
 	antiVirusPage(antiVirus: Antivirus) {
-		if (antiVirus.mcafee && antiVirus.mcafee.enabled) {
+		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
 			this.currentPage = 'mcafee';
 			this.mcafeeInstall = true;
-		} else if (antiVirus.others && antiVirus.others.enabled) {
+		} else if (antiVirus.others) {
 			if (antiVirus.mcafee) {
 				this.mcafeeInstall = true;
 			} else { this.mcafeeInstall = false; }

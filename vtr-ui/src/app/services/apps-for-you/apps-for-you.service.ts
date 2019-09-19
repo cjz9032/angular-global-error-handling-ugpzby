@@ -22,6 +22,14 @@ export class Recommendation {
 	title: string; 	// app recommendation title
 }
 
+export class Screenshot {
+	id: string;			// apps-for-you-screenshot-n
+	imageUrl: string;	// url of app screenshot-n
+	position: number;	// n
+	isRepeat: boolean;	// false
+	show: string;		// show
+}
+
 export class AppDetails {
 	id: string;
 	title: string;
@@ -35,7 +43,7 @@ export class AppDetails {
 	downloadlink: string;	// app download link (see more url)
 	videourl: string; 		// app video url
 	recommendations: Recommendation[];
-	screenshots: []; 	// ["{app screenshot1}",  "{app screenshot2}"],
+	screenshots: Screenshot[];
 	by: string; 		// app manufacturer name
 	updated: string; 	// app updated date
 	type: string;
@@ -45,6 +53,7 @@ export class AppDetails {
 	constructor() {
 		this.category = new Category();
 		this.installtype = new Installtype();
+		this.screenshots = Array(new Screenshot());
 		this.recommendations =  Array(new Recommendation());
 	}
 }
@@ -116,20 +125,6 @@ export class AppsForYouService {
 			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.culture })])
 				.then((response) => {
 					this.cmsAppDetails = response[0];
-					////////////////////////////////////////////////////////////////////////
-					// TODO: Mock data, please remove before release
-					switch (appGuid) {
-						case AppsForYouEnum.AppGuidAdobeCreativeCloud:
-							this.cmsAppDetails.Title = 'Adobe Creative Cloud Photography Plan (20GB)';
-							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeWeb;
-							break;
-						case AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant:
-						default:
-							this.cmsAppDetails.Title = 'Lenovo Migration Assistant';
-							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeDesktop;
-							break;
-					}
-					////////////////////////////////////////////////////////////////////////
 					if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
 						this.cmsAppDetailsArray.push({
 							key: appGuid,
@@ -165,7 +160,18 @@ export class AppsForYouService {
 		appDetails.description = detailFromCMS.Description;
 
 		// Screenshots
-		appDetails.screenshots = Object.assign([], detailFromCMS.Screenshots);
+		let n = 1;
+		appDetails.screenshots = [];
+		detailFromCMS.Screenshots.forEach((imageUrl: string) => {
+			const screenshot = new Screenshot();
+			screenshot.id = `apps-for-you-screenshot-${n}`;
+			screenshot.imageUrl = imageUrl;
+			screenshot.isRepeat = false;
+			screenshot.position = n;
+			screenshot.show = 'show';
+			appDetails.screenshots.push(screenshot);
+			n++;
+		});
 
 		// Video
 		appDetails.videourl = detailFromCMS.VideoUrl;
@@ -228,7 +234,7 @@ export class AppsForYouService {
 	public showAdobeMenu() {
 		if (this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
 			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 &&
-			(this.localInfo.indexOf('SMB') !== -1 || this.localInfo.indexOf('consumer') !== -1))  {
+			(this.localInfo.Segment.indexOf('SMB') !== -1 || this.localInfo.Segment.indexOf('Consumer') !== -1))  {
 			return true;
 		} else {
 			return false;

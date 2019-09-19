@@ -21,7 +21,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	consoleUrlCallback;
 	showWhichPage: CHSTrialModalPage;
 	loadingText: string;
-
+	currentConsoleUrl: string;
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
@@ -34,17 +34,17 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
 		}
 		this.consoleUrlCallback = (data) => {
-			if (data.account.consoleUrl) {
+			if (data.account.consoleUrl && !this.currentConsoleUrl) {
+				this.currentConsoleUrl = data.account.consoleUrl;
 				this.showWhichPage = CHSTrialModalPage.trial;
 				this.countdown();
 			}
 		};
 		if (this.showWhichPage === CHSTrialModalPage.loading) {
-			this.loadingText = 'security.homeprotection.invitationcode.connecting';
 			if (this.chs.account.consoleUrl) {
 				this.showWhichPage = CHSTrialModalPage.trial;
 				this.countdown();
-			} else {
+			} else if (!this.currentConsoleUrl) {
 				this.chs.on(EventTypes.chsEvent, this.consoleUrlCallback);
 			}
 		}

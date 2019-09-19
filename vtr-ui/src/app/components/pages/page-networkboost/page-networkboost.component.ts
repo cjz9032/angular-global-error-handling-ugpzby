@@ -174,15 +174,8 @@ export class PageNetworkboostComponent implements OnInit {
 				event.switchValue
 			);
 			if (!this.toggleStatus) {
-				if (
-					this.commonService.getLocalStorageValue(
-						LocalStorageKey.NetworkBoosNeedToAskPopup
-					) === 2
-				) {
-					this.commonService.setLocalStorageValue(
-						LocalStorageKey.NetworkBoosNeedToAskPopup,
-						1
-					);
+				if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
 				}
 			}
 			this.commonService.setLocalStorageValue(

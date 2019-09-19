@@ -1540,7 +1540,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "На основе Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "Задняя",
@@ -1590,9 +1592,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1684,7 +1689,7 @@
             "common": {
                 "title": "Антивирусная программа",
                 "back": "НАЗАД",
-                "recommends": "Почему Lenovo рекомендует <b>McAfee<b> для защиты всех ваших устройств",
+                "recommends": "Почему Lenovo рекомендует <b>McAfee</b> для защиты всех ваших устройств",
                 "award": "Отмеченная наградами антивирусная программа",
                 "mcafeePremium": "Защита McAfee LiveSafe",
                 "protectedBy": "В настоящее время вашу безопасность обеспечивает {{protectedName}}. Однако McAfee LiveSafe сможет защитить вас лучше.",
@@ -1707,8 +1712,8 @@
                 "view": "ПОСМОТРЕТЬ СОВЕТЫ",
                 "buyNow": "Купить сейчас",
                 "buy": "Приобретите, скачайте и установите антивирусную программу McAfee прямо сейчас, чтобы воспользоваться функциями обеспечения безопасности коммерческого уровня",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Здесь все самое необходимое. Несмотря на то что вы защищены от некоторых угроз в Интернете, перед некоторыми вы все равно беззащитны.",
+                "virus": "Защита от вирусов",
                 "homeNetwork": "Защита домашней сети",
                 "private": "Конфиденциальный, анонимный просмотр веб-страниц",
                 "everyDevice": "Защита каждого устройства",
@@ -1750,10 +1755,10 @@
                 "Viruses": "Уничтожено вирусов",
                 "blocked": "Заблокировано подозрительных подключений",
                 "shredded": "Безопасно уничтожено файлов",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Начать сканирование файлов"
             },
             "others": {
-                "othersProtection": "обеспечивает базовую защиту вашего устройства"
+                "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства"
             }
         },
         "wifisecurity": {
@@ -2357,7 +2362,7 @@
         "OtherSettings": "Другие параметры",
         "usageStatistics": "Статистика использования",
         "usageStatisticsDescription": "Отправлять анонимную статистику использования в компанию Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Поделиться статистическими данными с Lenovo",
         "deviceStatisticsDescription": "Отправляет статистические данные в компанию Lenovo, чтобы помочь ей повысить надежность и улучшить реализацию функций компьютера, а также оптимизировать их.",
         "Note": "Замечание: ",
         "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение."

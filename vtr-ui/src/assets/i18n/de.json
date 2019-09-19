@@ -1540,7 +1540,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Unterstützt von Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "Zurück",
@@ -1590,9 +1592,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1684,7 +1689,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZURÜCK",
-                "recommends": "Warum Lenovo <b>McAfee</Lenovo> für den Schutz Ihrer Geräte empfiehlt",
+                "recommends": "Warum Lenovo <b>McAfee</b> für den Schutz Ihrer Geräte empfiehlt",
                 "award": "Preisgekrönter Virenschutz",
                 "mcafeePremium": "McAfee LiveSafe-Schutz",
                 "protectedBy": "Sie werden derzeit von {{protectedName}} geschützt. McAfee LiveSafe bietet jedoch einen besseren Schutz.",
@@ -1707,8 +1712,8 @@
                 "view": "TIPPS ANZEIGEN",
                 "buyNow": "Jetzt kaufen",
                 "buy": "Sie können den McAfee-Virenschutz noch heute erwerben, herunterladen und installieren, um von diesen Sicherheitsfunktionen auf Bankenniveau zu profitieren",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Hier nur das Elementare. Auch wenn Sie vor einigen Onlinebedrohungen geschützt sind, sind Sie ggf. dennoch anderen Bedrohungen ausgesetzt.",
+                "virus": "Virenschutz",
                 "homeNetwork": "Schutz für private Netzwerke",
                 "private": "Privates, anonymes Surfen",
                 "everyDevice": "Schutz für alle Geräte",
@@ -1750,10 +1755,10 @@
                 "Viruses": "Viren eliminiert",
                 "blocked": "Unsichere Verbindungen blockiert",
                 "shredded": "Dateien sicher vernichtet",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Überprüfung der Dateien starten"
             },
             "others": {
-                "othersProtection": "bietet einen Basisschutz für Ihr Gerät"
+                "othersProtection": "{{protectedName}} bietet einen Basisschutz für Ihr Gerät"
             }
         },
         "wifisecurity": {
@@ -2357,7 +2362,7 @@
         "OtherSettings": "Weitere Einstellungen",
         "usageStatistics": "Verwendungsstatistiken",
         "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Statistikdaten mit Lenovo teilen",
         "deviceStatisticsDescription": "Sendet statistische Daten an Lenovo, um die Zuverlässigkeit und das Design Ihres Computers zu verbessern und seine Funktionalität zu optimieren.",
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden."

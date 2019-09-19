@@ -31,7 +31,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
-	styleUrls: [ './page-dashboard.component.scss' ]
+	styleUrls: ['./page-dashboard.component.scss']
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	submit = this.translate.instant('dashboard.feedback.form.button');
@@ -309,8 +309,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		});
 	}
-
-	public onConnectivityClick($event: any) { }
 
 	private getTileBSource() {
 		return new Promise((resolve) => {

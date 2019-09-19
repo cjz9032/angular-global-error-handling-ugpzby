@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'vtr-networkboost-turn-on',
   templateUrl: './networkboost-turn-on.component.html',
   styleUrls: ['./networkboost-turn-on.component.scss']
 })
-export class NetworkboostTurnOnComponent implements OnInit {
+export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
 
   runningList: any = {};
   addAppsList: string;
@@ -22,7 +22,9 @@ export class NetworkboostTurnOnComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  ngAfterViewInit() {
+    document.getElementById('close').focus();
+  }
   async setAksAgain() {
     this.isChecked = !this.isChecked;
     this.statusAskAgain = this.isChecked;
