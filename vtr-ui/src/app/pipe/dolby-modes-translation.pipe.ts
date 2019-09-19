@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Pipe({
 	name: 'dolbyModesTranslation',
-	pure: false
+	pure: true
 })
 export class DolbyModesTranslationPipe implements PipeTransform {
 	constructor(private translate: TranslateService) { }

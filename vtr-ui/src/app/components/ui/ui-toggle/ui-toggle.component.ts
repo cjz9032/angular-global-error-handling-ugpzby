@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CommonService } from '../../../services/common/common.service';
 import { faSellcast } from '@fortawesome/free-brands-svg-icons';
@@ -8,13 +8,14 @@ import { faSellcast } from '@fortawesome/free-brands-svg-icons';
 	templateUrl: './ui-toggle.component.html',
 	styleUrls: ['./ui-toggle.component.scss']
 })
-export class UiToggleComponent implements OnInit, OnDestroy  {
+export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value = true;
 	@Input() onOffSwitchId: string;
 	@Input() notChange = false;
-	@Input() toggleId :any;
-	public currentEvent:any;
+	@Input() toggleId: any;
+	@Input() focus = false;
+	public currentEvent: any;
 	public disabled = true;
 	public timer = 0;
 	uiSubscription: Subscription;
@@ -39,6 +40,12 @@ export class UiToggleComponent implements OnInit, OnDestroy  {
 		}
 	}
 
+	ngOnChanges(changes: SimpleChanges) {
+		console.log('focus changed', this.focus, changes, Boolean(changes.focus.previousValue) !== this.focus);
+		if (Boolean(changes.focus.previousValue) !== this.focus && this.focus) {
+			document.getElementById(this.onOffSwitchId + '_checkbox').focus();
+		}
+	}
 
 	/**
 	 *
@@ -47,18 +54,16 @@ export class UiToggleComponent implements OnInit, OnDestroy  {
 	 */
 	sendChangeEvent($event) {
 		this.currentEvent = $event;
-		if(!this.disabled) {return;}
-		
-		let setIntervalTimer = setInterval(()=> {
+		if (!this.disabled) { return; }
+		let setIntervalTimer = setInterval(() => {
 			this.disabled = false;
 			this.timer++;
-			if(this.timer >= 50){
+			if (this.timer >= 50) {
 				this.disabled = true;
 				this.timer = 0;
 				clearInterval(setIntervalTimer);
 			}
-		},1)
-		console.log('this.value-----------------------',$event,$event.target,$event.target.value);
+		}, 1)
 		if (!this.notChange) {
 			this.value = !this.value;
 		}

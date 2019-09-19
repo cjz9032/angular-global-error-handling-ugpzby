@@ -1,8 +1,10 @@
 <div class="select-box" [ngClass]="{'disabled': isRecording}">
 	<div class="dropdown">
 		<div class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()"
-			title="{{ selectedOption.name | translate }}" tabindex="1" name="dropdown" role="combobox"
-			[attr.aria-expanded]="showOptions" aria-haspopup="true" (keydown.enter)="toggleOptions()">
+			name="dropdown" role="combobox"
+			[attr.aria-label]="''+selectedOption.label" role="combobox"
+			[attr.aria-expanded]="showOptions" aria-haspopup="true" tabindex="1"
+			(keydown.enter)="toggleOptions()">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</div>
@@ -18,7 +20,8 @@
 						(mouseleave)="resetDescription(option)" (focusout)="itemsFocused()"
 						tabindex="1" role="option" id="{{option.id}}"
 						(keydown)="keydownFn($event,i)"
-						[attr.aria-selected]="selectedOption && option.name === selectedOption.name?'true':'false'">
+						[attr.aria-selected]="option.value===options.curSelected?'true':'false'" role="option"
+						[attr.aria-label]="option.value===selectedOption.value?option.label+' selected':option.label">
 						<a class="dropdown-item" tabindex="-1">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
 						</a>

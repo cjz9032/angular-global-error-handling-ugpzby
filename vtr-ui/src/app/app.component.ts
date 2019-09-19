@@ -27,6 +27,7 @@ import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
+import { AppUpdateService } from './services/app-update/app-update.service';
 
 declare var Windows;
 @Component({
@@ -57,6 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
+		private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -64,6 +66,9 @@ export class AppComponent implements OnInit, OnDestroy {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
+
+		// check for new version of experience
+		this.appUpdateService.checkForUpdates();
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -92,11 +97,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
-		if (win.NetworkListener) {
-			win.NetworkListener.onnetworkchanged = (state) => {
-				this.notifyNetworkState(state);
-			};
-		}
+
 
 		document.addEventListener('visibilitychange', (e) => {
 			if (document.hidden) {
@@ -107,10 +108,34 @@ export class AppComponent implements OnInit, OnDestroy {
 		});
 
 
-		if (win.NetworkListener && win.NetworkListener.isInternetAccess()) {
-			this.notifyNetworkState(NetworkStatus.Available);
+		this.addInternetListener();
+	}
+
+	private addInternetListener() {
+		const win: any = window;
+		if (win.NetworkListener) {
+			win.NetworkListener.onnetworkchanged = (state) => {
+				this.notifyNetworkState(state);
+			};
+
+			if ( win.NetworkListener.isInternetAccess()) {
+				this.notifyNetworkState(NetworkStatus.Available);
+			} else {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}
 		} else {
-			this.notifyNetworkState(NetworkStatus.Unavailable);
+			window.addEventListener('online', (e) => {
+				this.notifyNetworkState(NetworkStatus.Available);
+			}, false);
+			window.addEventListener('offline', (e) => {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}, false);
+
+			if (navigator.onLine) {
+				this.notifyNetworkState(NetworkStatus.Available);
+			} else {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}
 		}
 	}
 
@@ -225,6 +250,7 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
+		document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
 	}
 
 	ngOnInit() {

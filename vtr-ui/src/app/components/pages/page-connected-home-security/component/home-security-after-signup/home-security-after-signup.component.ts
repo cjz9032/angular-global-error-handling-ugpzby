@@ -4,6 +4,7 @@ import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-secu
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
   selector: 'vtr-home-security-after-signup',
@@ -16,13 +17,18 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 	@Input() common: HomeSecurityCommon;
 	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
-		public dialogService: DialogService
+		public dialogService: DialogService,
+		private commonService: CommonService
 	) {	}
 
 	ngOnInit() {	}
 
 	disconnect() {
-		this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.disconnect);
+		if (!this.commonService.isOnline) {
+			this.dialogService.homeSecurityOfflineDialog();
+		} else {
+			this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.disconnect);
+		}
 	}
 
 	openCornet() {

@@ -95,7 +95,7 @@
 							"namedChunks": true,
 							"aot": true,
 							"extractLicenses": false,
-							"vendorChunk": false,
+							"vendorChunk": true,
 							"buildOptimizer": true,
 							"budgets": [
 								{

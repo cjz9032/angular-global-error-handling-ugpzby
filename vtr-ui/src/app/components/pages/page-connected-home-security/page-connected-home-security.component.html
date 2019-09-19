@@ -23,37 +23,27 @@
 									[location]="homeSecurityLocation"
 									[permission]="permission">
 								</vtr-home-security-content>
-								<div class="bottom-content d-none d-md-block">
-										<div class="pt-5"
-										*ngIf="account?.state !== 'local' && account?.role === 'user'">
-										<img class="w-100 img" src="assets/images/connected-home-security/card-gamestore.png" alt="" srcset="">
-									</div>
+								<div class="article-card pt-5 col-12 mt-5"
+										*ngIf="account?.state !== 'local'">
+									<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
+										[img]="cardContentPositionA.FeatureImage"
+										[title]="cardContentPositionA.Title"
+										[logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionType]="cardContentPositionA.ActionType"
+										[actionLink]="cardContentPositionA.ActionLink" [type]="'article'"
+										[ratioX]="4" [ratioY]="4"
+										ariaLabel="chs-banner-bottom-article"
+										containerCardId="chs-banner-bottom-article">
+									</vtr-container-card>
+								</div>
+								<div class="bottom-content w-100 d-none d-md-block">
 									<div class="cutting-line"></div>
-									<div class="d-flex justify-content-between align-items-center">
-										<div>
-											<p class="subTitle mb-0" [innerHTML]="'homeSecurity.overview.poweredBy'  | translate"></p>
-											<p class="text-regular"
-												*vtrTranslate="'homeSecurity.overview.privacyPolicyAndTermsOfService' | translate">
-
-												<a id="chs-lnk-privacypolicy"
-													vtrMetrics
-													metricsEvent="featureClick"
-													metricsItem="privacyPolicy"
-													href=""
-													target="_blank"></a>
-												<a id="chs-lnk-termsofservices"
-													vtrMetrics
-													metricsEvent="featureClick"
-													metricsItem="termsOfServices"
-													href=""
-													target="_blank"></a>
-											</p>
-										</div>
-										<div>
-											<img class="coronet-logo"
-												[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" />
-										</div>
-									</div>
+									<vtr-widget-powered-by-info
+										[title]="'homeSecurity.overview.poweredBy'"
+										[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+										[imgUrl]="'assets/images/coronet-logo.svg'">
+									</vtr-widget-powered-by-info>
 								</div>
 							</div>
                         </div>
@@ -111,10 +101,19 @@
 													<!--Start of Security Health Advisor When LWS is disabled-->
 													<div class="security-health-disabled"
 														*ngIf="!homeSecurityLocation?.isLocationServiceOn">
-														<div class="security-health-disabled-list">
-															<div class="peace-of-mind">
-																{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
+														<div class="security-health-disabled-list d-flex flex-column align-items-center justify-content-center">
+															<div class="peace-of-mind mb-5" [innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
 															</div>
+															<vtr-ui-button
+																metricsItem="enableLocation"
+																metricsEvent="featureClick"
+																metricsParent="ConnectedHomeSecurity"
+																(click)="dialogService?.openCHSPermissionModal()"
+																[isDisabled]="homeSecurityLocation.isLoading"
+																linkId="chs-btn-enableLocation"
+																[title]="'security.homeprotection.securityhealth.button' | translate"
+																[label]="'security.homeprotection.securityhealth.button' | translate">
+															</vtr-ui-button>
 														</div>
 														<div class="coronet-section">
 															<div class="row">
@@ -138,51 +137,32 @@
 							</div>
 							<div class="row article-card">
 								<div class="col col-12">
-									<vtr-container-card
-										[ratioX]="4"
-										[ratioY]="2"
+									<vtr-container-card order="2" [itemID]="cardContentPositionB.Id"
+										[img]="cardContentPositionB.FeatureImage"
+										[title]="cardContentPositionB.Title"
+										[logoText]="cardContentPositionB.BrandName"
+										[action]="cardContentPositionB.Action"
+										[actionType]="cardContentPositionB.ActionType"
+										[actionLink]="cardContentPositionB.ActionLink" [type]="'article'"
+										[ratioX]="4" [ratioY]="4"
 										type="corner-article"
 										cornerShift="large"
-										order="1"
 										sideFlag="r"
-										[containerCardId]="'chs-modal-right-article'">
+										ariaLabel="chs-modal-right-article"
+										containerCardId="chs-modal-right-article">
 									</vtr-container-card>
 								</div>
 							</div>
                         </div>
                     </div>
 				</div>
-				<div class="bottom-content d-block d-md-none">
-						<div class="pt-5"
-						*ngIf="account?.state !== 'local' && account?.role === 'user'">
-						<img class="w-100 img" src="assets/images/connected-home-security/card-gamestore.png" alt="" srcset="">
-					</div>
+				<div class="bottom-content w-100 d-block d-md-none">
 					<div class="cutting-line"></div>
-					<div class="d-flex justify-content-between align-items-center">
-						<div>
-							<p class="subTitle mb-0" [innerHTML]="'homeSecurity.overview.poweredBy'  | translate"></p>
-							<p class="text-regular"
-								*vtrTranslate="'homeSecurity.overview.privacyPolicyAndTermsOfService' | translate">
-
-								<a id="chs-lnk-privacypolicy"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsItem="privacyPolicy"
-									href=""
-									target="_blank"></a>
-								<a id="chs-lnk-termsofservices"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsItem="termsOfServices"
-									href=""
-									target="_blank"></a>
-							</p>
-						</div>
-						<div>
-							<img class="coronet-logo"
-								[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" />
-						</div>
-					</div>
+					<vtr-widget-powered-by-info
+						[title]="'homeSecurity.overview.poweredBy'"
+						[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+						[imgUrl]="'assets/images/coronet-logo.svg'">
+					</vtr-widget-powered-by-info>
 				</div>
             </div>
         </div>

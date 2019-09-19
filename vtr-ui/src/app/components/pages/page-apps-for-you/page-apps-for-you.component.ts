@@ -19,7 +19,7 @@ import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-y
 })
 export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
-	title = 'Lenovo Migration Assistant';
+	title = '';
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	backId = 'apps-for-you-page-btn-back';
@@ -244,11 +244,13 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
 				const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
-				const paths = launchPath.split('|');
-				for (const path of paths) {
-					const result = await this.systemUpdateBridge.launchApp(path);
-					if (result) {
-						break;
+				if (launchPath) {
+					const paths = launchPath.split('|');
+					for (const path of paths) {
+						const result = await this.systemUpdateBridge.launchApp(path);
+						if (result) {
+							break;
+						}
 					}
 				}
 				break;

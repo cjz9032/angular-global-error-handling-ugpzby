@@ -160,7 +160,6 @@ export enum LocalStorageKey {
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
-	UPEUserID = '[LocalStorageKey] UPEUserID',
 	BetaUser = '[LocalStorageKey] BetaUser',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
 	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
@@ -182,5 +181,9 @@ export enum LocalStorageKey {
 	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
 
 	// Ad policy local storage key
-	AdPolicyCache = '[LocalStorageKey] AdPolicyCache'
+	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
+	// App Search
+	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
+	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+
 }
