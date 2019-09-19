@@ -1,17 +1,10 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter,
-	AfterContentChecked
-} from '@angular/core';
-import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
+import { Component, OnInit, Input, Output, EventEmitter, AfterContentChecked } from '@angular/core';
+import { Options, ChangeContext, ValueToPositionFunction, PointerType } from 'ng5-slider';
 
 @Component({
 	selector: 'vtr-ui-brightness-slider',
 	templateUrl: './ui-brightness-slider.component.html',
-	styleUrls: ['./ui-brightness-slider.component.scss']
+	styleUrls: [ './ui-brightness-slider.component.scss' ]
 })
 export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked {
 	@Input() lightingData: any;
@@ -31,8 +24,10 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() manualRefresh = new EventEmitter<void>();
 	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() setLightingBrightness: EventEmitter<ChangeContext> = new EventEmitter();
+	triggerFocus: EventEmitter<PointerType> = new EventEmitter<PointerType>();
+	pointerType: any = PointerType;
 
-	constructor() { }
+	constructor() {}
 
 	ngAfterContentChecked() {
 		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
@@ -49,7 +44,8 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			stepsArray: this.stepsArray,
 			floor: this.minValue, // min value
 			ceil: this.maxValue, // max value
-			step: this.step // value to change on each slide, default is 1
+			step: this.step, // value to change on each slide, default is 1
+			ariaLabel: 'Brightness'
 		};
 	}
 
@@ -60,7 +56,11 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 */
 	public onValueChange($event: ChangeContext) {
 		this.setLightingBrightness.emit($event);
-
+		// setTimeout(() => {
+		// 	const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
+		// 	element.focus();
+		// 	this.triggerFocus.emit(PointerType.Min);
+		// }, 500);
 	}
 
 	/**
@@ -69,9 +69,12 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 */
 	public onChange($event: ChangeContext) {
 		this.change.emit($event);
+		// setTimeout(() => {
+		// 	const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
+		// 	element.focus();
+		// 	this.triggerFocus.emit(PointerType.Min);
+		// }, 500);
 	}
 
-	public onSliderChanged(event: any) {
-	}
+	public onSliderChanged(event: any) {}
 }
-

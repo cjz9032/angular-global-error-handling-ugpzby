@@ -28,8 +28,10 @@ export class UiButtonComponent implements OnInit {
 	@Input() isRegular = false;
 	@Input() btnHeight = false;
 	@Input() isGradient = false;
+	@Input() isRed = false;
+	@Input() buttonColor: string;
 	@Input() title: string;
-	@Input() linkId:any;
+	@Input() linkId: any;
 	@Input() routerPath: string;
 
 	constructor() { }
@@ -37,6 +39,10 @@ export class UiButtonComponent implements OnInit {
 	onClickButton(event) {
 		event.target.blur();
 		this.onClick.emit(event);
+	}
+
+	getButtonColor(buttonColor) {
+		return `btn-${buttonColor}`;
 	}
 
 	ngOnInit() {

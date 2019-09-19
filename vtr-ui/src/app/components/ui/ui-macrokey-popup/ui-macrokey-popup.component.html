@@ -1,11 +1,12 @@
-<div class="modal-main-wrapper">
+<div class="modal-main-wrapper" id="close" tabindex="1">
 	<ui-popover>
 
-		<div class="modal-body vtr-ui-macrokey-popup" [id]="modalContent.metricsItemPopup || 'macrokey_popup_close'" attr.aria-label="modalContent.metricsItemPopup || 'macrokey_popup_close'">
+		<div class="modal-body vtr-ui-macrokey-popup">
 			<div class="row justify-content-end">
 				<div class="btn-close">
-					<button type="button" class="close" aria-hidden="true" (click)="submitAction(false)" id="{{modalContent.metricsItemClose}}" attr.aria-label="{{modalContent.metricsItemClose}}" vtrMetrics [metricsItem]="'macrokey_popup_close'"
-					metricsEvent="featureClick">
+					<button type="button" class="close" aria-hidden="true" (click)="submitAction(false)"
+						aria-label="close" vtrMetrics [metricsItem]="'macrokey_popup_close'" metricsEvent="featureClick"
+						tabindex="1" (keyup.enter)="submitAction(false)">
 						<fa-icon [icon]="['fal', 'times']"></fa-icon>
 					</button>
 				</div>
@@ -17,15 +18,21 @@
 			<hr>
 			<div class="row">
 				<div *ngIf="modalContent.btnConfirm">
-					<button class="btn enable-button"
-						(click)="submitAction(true)" id="macrokey_popup_clear" attr.aria-label="macrokey_popup_clear" vtrMetrics [metricsItem]="'macrokey_popup_clear'"
+					<button class="btn enable-button" (click)="submitAction(true)" id="macrokey_popup_clear"
+						aria-label="macrokey popup clear" vtrMetrics [metricsItem]="'macrokey_popup_clear'" tabindex="1"
+						(keyup.enter)="submitAction(true)"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
-					<a (click)="submitAction(false)"
-						class="cancel-link active" id="macrokey_popup_cancle" attr.aria-label="macrokey_popup_cancle" vtrMetrics [metricsItem]="'macrokey_popup_cancle'" metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</a>
+					<a (click)="submitAction(false)" tabindex="1" (keyup.enter)="submitAction(false)"
+						(keydown)="keydownFn($event)" class="cancel-link active" id="macrokey_popup_cancle"
+						aria-label="macrokey popup cancle" role="button" vtrMetrics
+						[metricsItem]="'macrokey_popup_cancle'"
+						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</a>
 				</div>
 				<div *ngIf="!modalContent.btnConfirm">
-					<button class="btn enable-button"
-						(click)="submitAction(true)" id="{{modalContent.metricsItemId}}" attr.aria-label="{{modalContent.metricsItemId}}" vtrMetrics [metricsItem]="modalContent.metricsItemId" metricsEvent="featureClick">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
+					<button class="btn enable-button" (click)="submitAction(true)" id="{{modalContent.metricsItemId}}"
+						aria-label="macrokey popup ok" vtrMetrics [metricsItem]="modalContent.metricsItemId"
+						metricsEvent="featureClick" tabindex="1" (keydown)="keydownFn($event)"
+						(keyup.enter)="submitAction(true)">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
 				</div>
 			</div>
 		</div>

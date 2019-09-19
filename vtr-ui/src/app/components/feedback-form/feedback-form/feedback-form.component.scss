@@ -73,7 +73,7 @@
 
 			label {
 				font-size: 1.6rem;
-				padding-left: 0.8rem;
+				padding-left: 2.8rem;
 				color: $shade_darkest;
 				position: relative;
 				margin-bottom: 0;
@@ -83,7 +83,7 @@
 					border-radius: 50%;
 					position: absolute;
 					top: .25rem;
-					left: -2rem;
+					left: 0;
 					display: block;
 					width: 2rem;
 					height: 2rem;
@@ -97,7 +97,7 @@
 					border-radius: 50%;
 					position: absolute;
 					top: .25rem;
-					left: -2rem;
+					left: 0;
 					display: block;
 					width: 2rem;
 					height: 2rem;
@@ -133,10 +133,10 @@
 		}
 
 		@media screen and (max-height: 600px) {
-				.user-comment {
-					height: 11rem;
-				}
+			.user-comment {
+				height: 11rem;
 			}
+		}
 
 		.button {
 			text-transform: uppercase;
@@ -155,7 +155,7 @@
 			display: inline-block;
 			cursor: pointer;
 			-webkit-appearance: initial;
-			max-width: 26rem;
+			max-width: 24rem;
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
@@ -183,7 +183,7 @@
 				background-clip: padding-box;
 				border-radius: 0.9rem;
 				box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-				max-width: 29rem;
+				max-width: 28rem;
 
 				.menu-pointer {
 					width: 1.4rem;
@@ -249,6 +249,7 @@
 			&::after {
 				display: none;
 			}
+
 		}
 	}
 
@@ -283,7 +284,7 @@
 			font-weight: $weight_light;
 			text-align: center;
 			letter-spacing: 0.1rem;
-      opacity: .5;
+			opacity: .5;
 		}
 	}
 

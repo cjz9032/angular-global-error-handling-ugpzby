@@ -8,15 +8,6 @@ $fill-color-15-24-stop: #fad961;
 $fill-color-25-100-start: #2ecc71;
 $fill-color-25-100-stop: #35e6b9;
 
-// $border-shadow-color-0-14: #fff7f1;
-// $border-color-0-14: #fee9df;
-
-// $border-shadow-color-15-24: #fffaeb;
-// $border-color-15-24: #f6eed7;
-
-// $border-shadow-color-25-100: #21c48a;
-// $border-color-25-100: #2ecc71;
-
 $border-shadow-color-0-14: rgba($stop_dark, 0.4);
 $border-color-0-14: rgba($stop_dark, 0.4);
 
@@ -231,12 +222,12 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					font-size: 1.5rem;
 				}
 			}
-			.remaining-text-detail {
-				font-size: 1rem !important;
-			}
 		}
 		.detail-battery {
 			left: -1rem !important;
+			.remaining-text {
+				font-size: 1rem !important;
+			}
 		}
 
 		.battery-charging {

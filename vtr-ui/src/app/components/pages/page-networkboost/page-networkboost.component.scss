@@ -28,6 +28,12 @@
 							width: 1.8rem;
 							margin-top: 0.1rem;
 							transition: all 0.2s ease-in;
+							@media #{$black-on-white} {
+								background: $gaming_darkest;
+							}
+							@media #{$white-on-black} {
+								background: $gaming_lightest;
+							}
 						}
 					}
 					&.wifi-checked + .switch {
@@ -144,8 +150,10 @@
 		padding: 2.4rem !important;
 		text-align: center;
 		background-color: #fff;
+		font-size: 1.5rem !important;
 		border-radius: 0.4rem;
 		color: $gaming_dark !important;
+		white-space: nowrap;
 		display: table;
 	}
 }

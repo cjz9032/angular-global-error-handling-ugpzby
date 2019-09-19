@@ -301,6 +301,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	font-family: "Segoe UI";
+	@media #{$mediaquery_xl} {
+		max-width: 20rem;
+	}
 
 	.tooltip-inner {
 		padding: 1.2rem;
@@ -499,6 +502,23 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.apps-for-you-dialog {
+	.modal-dialog {
+		max-width: 75%;
+		margin: 1rem auto 0;
+		overflow-y: initial !important;
+	}
+
+	.modal-dialog-centered {
+		min-height: calc(100vh - 2rem);
+	}
+
+	.modal-content {
+		background: none;
+		padding: 0;
+	}
+}
+
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
@@ -678,7 +698,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .feedback-modal {
 	.modal-dialog {
 		margin: 1.75rem auto;
-		overflow: auto;
 		width: 52rem;
 	}
 
@@ -686,6 +705,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		border-radius: 1rem;
 		background: none;
 		border: none;
+	}
+
+	.modal-dialog-centered {
+		height: calc(100% - 3.5rem);
+		min-height: auto;
 	}
 }
 
@@ -843,4 +867,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .is-android {
 	margin-top: 2rem !important;
+}
+
+button:focus, .button:focus {
+	outline: 0;
+	box-shadow: 0 0 0 0.4rem rgba(38,143,255,.5) !important;
 }

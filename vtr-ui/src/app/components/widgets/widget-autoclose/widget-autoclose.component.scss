@@ -9,10 +9,25 @@
 		padding: 2rem;
 		li.add-icon {
 			div:nth-child(1) {
-				background: $gaming_grey_lightest;
+				background: $gaming_white60;
 				line-height: 4.5rem;
 				cursor: pointer;
 				text-align: center;
+				border-radius: 0.3rem;
+				@media #{$black-on-white} {
+					background-color: $high-contrast-grey;
+					border: 0.1rem solid $dark;
+				}
+				@media #{$white-on-black} {
+					background-color: $high-contrast-grey;
+					border: 0.1rem solid $light;
+				}
+				&:hover {
+					background: $gaming_white80;
+				}
+				&:active {
+					transform: scale(0.95);
+				}
 			}
 		}
 		li {
@@ -42,7 +57,6 @@
 				text-align: center;
 				height: 5rem;
 				overflow: hidden;
-				max-width: 15rem;
 				text-overflow: ellipsis;
 			}
 			.remove-app {
@@ -55,6 +69,22 @@
 				cursor: pointer;
 			}
 			&:hover:not(:first-child) {
+				background: $gaming_light_02;
+				border-radius: 0.5rem;
+				@media #{$black-on-white} {
+					background-color: $high-contrast-grey;
+					border: 0.1rem solid $dark;
+				}
+				@media #{$white-on-black} {
+					background-color: $high-contrast-grey;
+					border: 0.1rem solid $light;
+				}
+				.remove-app {
+					opacity: 1;
+					transition: 0.3s ease all;
+				}
+			}
+			&.hovered {
 				background: $gaming_light_02;
 				border-radius: 0.5rem;
 				.remove-app {

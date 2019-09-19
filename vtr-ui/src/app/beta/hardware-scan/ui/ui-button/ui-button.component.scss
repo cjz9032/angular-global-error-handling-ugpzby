@@ -55,6 +55,10 @@
 			min-height: 32px !important;
 		}
 
+		.action-button-disable {
+			cursor: default;
+		}
+
 		.btn-gradient {
 			-moz-animation: html-css 2s ease-out;
 			-webkit-animation: html-css 2s ease-out;

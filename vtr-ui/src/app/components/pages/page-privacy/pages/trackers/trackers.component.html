@@ -45,10 +45,13 @@
 	<div>
 		<vtr-tracking-map [animate]="true"></vtr-tracking-map>
 		<vtr-try-product-block
-			*ngIf="(websiteTrackersCount$ | async)"
+			*ngIf="(websiteTrackersCount$ | async) && (isConsentGiven$ | async)"
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async"
 			[texts]="tryProductText">
 		</vtr-try-product-block>
+		<div class="trackers-page__clear-data-wrapper" *ngIf="(websiteTrackersCount$ | async) && (isConsentGiven$ | async)">
+			<vtr-clear-data-tooltip [feature]="trackersFeatureName"></vtr-clear-data-tooltip>
+		</div>
 	</div>
 
 </div>

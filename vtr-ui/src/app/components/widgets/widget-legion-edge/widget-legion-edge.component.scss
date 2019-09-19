@@ -13,6 +13,11 @@
 		height: 4rem;
 		margin-top: 1.6rem;
 		margin-right: 0.7rem;
+		button{
+			display: inline-block;
+			border: none;
+			background: none;
+		}
 		.icon {
 			background: $gaming_icon_gradient;
 			-webkit-background-clip: text;
@@ -21,6 +26,12 @@
 			font-size: 2.6rem;
 			cursor: pointer;
 			color: $gaming_light_blue;
+			@media #{$black-on-white}{
+				color: $high-contrast-grey;
+			}
+			@media #{$white-on-black}{
+				color: $high-contrast-grey;
+			}
 		}
 	}
 	.legionEdge-list-items {
@@ -84,6 +95,12 @@
 									color: $gaming_grey_lightest;
 									line-height: 2.4rem;
 									margin-left: 1.1rem;
+									@media #{$black-on-white} {
+										color: $gaming_lightest;
+									}
+									@media #{$white-on-black} {
+										color: $gaming_lightest;
+									}
 									&::after {
 										content: "";
 										position: absolute;
@@ -95,6 +112,12 @@
 										right: -0.6rem;
 										top: -0.4rem;
 										opacity: 0;
+										@media #{$black-on-white} {
+											background: transparent;
+										}
+										@media #{$white-on-black} {
+											background: transparent;
+										}
 									}
 								}
 								&:hover .icon::after {
@@ -121,6 +144,12 @@
 									width: 1.8rem;
 									margin-top: 0.1rem;
 									transition: all 0.2s ease-in;
+									@media #{$black-on-white} {
+										background: $gaming_darkest;
+									}
+									@media #{$white-on-black} {
+										background: $gaming_lightest;
+									}
 								}
 							}
 							&.wifi-checked + .switch {
@@ -130,6 +159,12 @@
 									background: $gaming_lightest;
 									transition: all 0.2s ease-in;
 									left: 3.2rem;
+									@media #{$black-on-white} {
+										background: $gaming_darkest;
+									}
+									@media #{$white-on-black} {
+										background: $gaming_lightest;
+									}
 								}
 							}
 						}

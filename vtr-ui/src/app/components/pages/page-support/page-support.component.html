@@ -51,6 +51,7 @@
 											<a href="javascript:;"
 												class="quick-assess-item col col-6 col-sm-3"
 												*ngFor="let category of articleCategories"
+												tabindex="1"
 												vtrMetrics
 												metricsItem="Support.CategoryClicked"
 												metricsEvent="featureClick"
@@ -181,6 +182,7 @@
 							<div class="container-fluid">
 
 								<div class="row"
+									[vtrAppSearchScroller]="['search-warranty']"
 									*ngIf="warrantyData && warrantyData.info && warrantyData.info.status >= 0">
 									<div class="col col-12 pb-60">
 										<vtr-widget-warranty [item]="warrantyData"
@@ -188,7 +190,8 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row"
+									[vtrAppSearchScroller]="['search-user-guide']" >
 									<div class="col col-12 pb-60">
 										<vtr-widget-support [title]="'support.documentation.title' | translate"
 											[description]="''"
@@ -197,7 +200,8 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row"
+									[vtrAppSearchScroller]="['search-lenovo-help']">
 									<div class="col col-12 pb-60">
 										<vtr-widget-support [title]="'support.needHelp.title' | translate"
 											[description]="'support.needHelp.description' | translate"
@@ -205,7 +209,8 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row"
+									[vtrAppSearchScroller]="['search-lenovo-service']">
 									<div class="col col-12 pb-60">
 										<!-- 	[description]="'support.quicklinks.description' | translate" -->
 										<vtr-widget-support [title]="'support.quicklinks.title' | translate"

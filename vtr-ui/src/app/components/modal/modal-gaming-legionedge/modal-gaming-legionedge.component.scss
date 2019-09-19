@@ -7,6 +7,12 @@
 		height: 7rem;
 		padding: 3rem 4rem;
 		border-bottom:none;
+		@media #{$black-on-white} {
+			background: $gaming_darkest;
+		}
+		@media #{$white-on-black} {
+			background: $gaming_darkest;
+		}
 		.modal-title {
 			img {
 				height: 3rem;
@@ -19,11 +25,23 @@
 			position: relative;
 			top: -2rem;
 			right: -3rem;
+			@media #{$black-on-white} {
+				color: $gaming_lightest;
+			}
+			@media #{$white-on-black} {
+				color: $gaming_lightest;
+			}
 		}
 	}
 	.modal-body {
 		padding: 0 4rem 3rem 4rem;
 		width: 100%;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $gaming_darkest;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $gaming_darkest;
+		}
 		.innerContent{
 			width: 100%;
 			background: $gaming_Darkslate_blue;

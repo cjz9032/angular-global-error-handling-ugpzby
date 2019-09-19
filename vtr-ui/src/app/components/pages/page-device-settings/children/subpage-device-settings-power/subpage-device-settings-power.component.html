@@ -1,33 +1,4 @@
 <div class="subpage-device-settings-power vtr-subpage">
-	<!-- <div class="btn-group btn-group-toggle"
-		ngbRadioGroup
-		style="margin-left:300px;margin-top:-150px;"
-		[(ngModel)]="value">
-		<label class="btn-primary"
-			ngbButtonLabel> 1
-			<input type="radio"
-				ngbButton
-				[value]="1" />
-		</label>
-		<label class="btn-primary"
-			ngbButtonLabel> 2
-			<input type="radio"
-				ngbButton
-				[value]="2" />
-		</label>
-		<label class="btn-primary"
-			ngbButtonLabel> 3
-			<input type="radio"
-				ngbButton
-				[value]="3" />
-		</label>
-		<label class="btn-primary"
-			ngbButtonLabel> 4
-			<input type="radio"
-				ngbButton
-				[value]="4" />
-		</label>
-	</div> -->
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
@@ -48,6 +19,7 @@
 		<div class="col-10 mx-auto ">
 
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
+				[vtrAppSearchScroller]="['search-airplane-mode', 'search-charge-threshold']"
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-batterySettings'">
 				<ul class="list-group list-group-flush">
@@ -66,14 +38,17 @@
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 							<div class="row">
 								<div class="col px-20">
-									<div class="auto-set-checkbox">
+									<div class="auto-set-checkbox custom-checkbox-gaming">
 										<input id="cb-airplane-mode"
+											class="custom-control-input"
 											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
+											tabindex="0"
 											name="airplane-mode-checkbox-id"
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
 											checked="" />
+										<span class="checkmark"></span>
 										<label for="cb-airplane-mode">
 											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 										</label>
@@ -121,7 +96,7 @@
 
 								</vtr-battery-charge-threshold-settings>
 
-								<vtr-battery-charge-threshold-settings *ngIf="responseData && responseData.length > 1"
+								<vtr-battery-charge-threshold-settings *ngIf="isSecondBatteryAvailable"
 									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title2' | translate"
 									[type]="'secondary'"
 									[start]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"
@@ -191,9 +166,25 @@
 		*ngIf="!isDesktopMachine && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
+				[vtrAppSearchScroller]="['search-usb-charging', 'search-easy-resume']"
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-powerSettings'">
 				<ul class="list-group list-group-flush">
+					<li *ngIf="showFlipToBootSection$ | async">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
+							[name]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
+							[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
+							[isSwitchVisible]=true
+							[isLastChild]=false
+							[isSwitchChecked]='toggleFlipToBootStatus'
+							[leftIcon]="['icomoon','icomoon-Flip-to-boot']"
+							[rightIcon]="['far', 'question-circle']"
+							[tooltipText]="'device.deviceSettings.power.powerSettings.flipToBoot.tooltip' | translate"
+							[switchId]="'ds-power-flipToBoot'"
+							(toggleOnOff)="onToggleOfFlipToBoot($event)">
+						</vtr-ui-row-switch>
+					</li>
 					<li class=""
 						*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
 						<vtr-ui-row-switch
@@ -224,17 +215,21 @@
 							</div>
 							<div class="row">
 								<div class="col px-20">
-									<div class="auto-set-checkbox"
+									<div class="auto-set-checkbox custom-checkbox-gaming"
 										*ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
+											class="custom-control-input"
 											attr.aria-label="cb-always-on-usb"
 											type="checkbox"
+											tabindex="-1"
 											name="always-on-usb-checkbox-id"
 											[disabled]="!toggleAlwaysOnUsbFlag"
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
 											checked="" />
-										<label for="cb-always-on-usb">
+											<span class="checkmark"></span>
+										<label for="cb-always-on-usb"
+											tabindex="0">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
 									</div>
@@ -268,6 +263,7 @@
 		*ngIf="vantageToolbarStatus.available">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
+				[vtrAppSearchScroller]="['search-vantage-toolbar']"
 				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-otherSettings'">

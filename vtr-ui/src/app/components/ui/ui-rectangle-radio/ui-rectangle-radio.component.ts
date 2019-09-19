@@ -12,7 +12,8 @@ export class UiRectangleRadioComponent implements OnInit {
 	@Input() tooltip: string;
 	@Input() value: string;
 	@Input() checked: boolean;
-	@Input() disabled = false;
+	@Input() disabled: boolean;
+	@Input() iconName: string;
 
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon: boolean = false;

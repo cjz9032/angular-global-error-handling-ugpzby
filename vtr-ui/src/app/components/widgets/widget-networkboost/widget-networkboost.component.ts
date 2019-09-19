@@ -15,7 +15,7 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 	@Input() changeNum: any = 0;
 	@Output() actionModal = new EventEmitter<any>();
 	@Output() addedApps = new EventEmitter<any>();
-
+	@Input() modalStatus = false;
 	public title: string;
 	public networkBoostStatus = false;
 	runningAppsList = [];
@@ -33,16 +33,21 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 		this.getNetworkBoostList();
 	}
 	public openModal() {
-		this.actionModal.emit();
+		if (this.runningAppsList && this.runningAppsList.length < 5) {
+			this.actionModal.emit();
+		}
 	}
 
-	async getNetworkBoostList() {
+	async getNetworkBoostList(doFocus = false) {
 		try {
 			const appList: any = await this.networkBoostService.getNetworkBoostList();
 			if (appList && !isUndefined(appList.processList)) {
 				this.runningAppsList = appList.processList;
 				this.sendAddedApps();
 				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostList, appList);
+			}
+			if (doFocus) {
+				document.getElementById('addButton').focus();
 			}
 		} catch (error) {
 		}
@@ -58,7 +63,7 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 	async removeApp(app: any, i: any) {
 		try {
 			const result = await this.networkBoostService.deleteProcessInNetBoost(app);
-			this.getNetworkBoostList();
+			this.getNetworkBoostList(true);
 		} catch (err) {
 		}
 	}

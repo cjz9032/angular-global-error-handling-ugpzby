@@ -1,5 +1,5 @@
 import { SupportService } from './../../../services/support/support.service';
-import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy, SecurityContext } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -26,11 +26,12 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
-	styleUrls: [ './page-dashboard.component.scss' ]
+	styleUrls: ['./page-dashboard.component.scss']
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	submit = this.translate.instant('dashboard.feedback.form.button');
@@ -76,7 +77,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
 		public supportService: SupportService,
-		private adPolicyService: AdPolicyService
+		private adPolicyService: AdPolicyService,
+		private sanitizer: DomSanitizer
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -115,7 +117,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.getSystemInfo();
 		}
 
-		this.setDefaultCMSContent();
+		this.getPreviousContent();
 		this.fetchContent();
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -174,21 +176,19 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 					if (response && response.length > 0) {
 						this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-						const heroBannerItems = this.cmsService
-							.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
-							.map((record, index) => {
-								return {
-									albumId: 1,
-									id: record.Id,
-									source: record.Title,
-									title: record.Description,
-									url: record.FeatureImage,
-									ActionLink: record.ActionLink,
-									ActionType: record.ActionType
-								};
-							});
+						const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+							return {
+								albumId: 1,
+								id: record.Id,
+								source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+								title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+								url: record.FeatureImage,
+								ActionLink: record.ActionLink
+							};
+						});
 						if (heroBannerItems && heroBannerItems.length) {
 							this.heroBannerItems = heroBannerItems;
+							this.dashboardService.heroBannerItems = heroBannerItems;
 						}
 
 						if (source === 'CMS') {
@@ -205,6 +205,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 									)[0];
 								}
 								cardContentPositionB.DataSource = 'cms';
+								this.dashboardService.cardContentPositionB = cardContentPositionB;
 							}
 						}
 
@@ -218,6 +219,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 							if (this.cardContentPositionC.BrandName) {
 								this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
 							}
+							this.dashboardService.cardContentPositionC = cardContentPositionC;
 						}
 
 						const cardContentPositionD = this.cmsService.getOneCMSContent(
@@ -227,6 +229,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						)[0];
 						if (cardContentPositionD) {
 							this.cardContentPositionD = cardContentPositionD;
+							this.dashboardService.cardContentPositionD = cardContentPositionD;
 						}
 
 						const cardContentPositionE = this.cmsService.getOneCMSContent(
@@ -236,6 +239,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						)[0];
 						if (cardContentPositionE) {
 							this.cardContentPositionE = cardContentPositionE;
+							this.dashboardService.cardContentPositionE = cardContentPositionE;
 						}
 
 						const cardContentPositionF = this.cmsService.getOneCMSContent(
@@ -245,6 +249,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						)[0];
 						if (cardContentPositionF) {
 							this.cardContentPositionF = cardContentPositionF;
+							this.dashboardService.cardContentPositionF = cardContentPositionF;
 						}
 					} else {
 						const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
@@ -273,6 +278,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 						}
 						cardContentPositionB.DataSource = 'upe';
+						this.dashboardService.cardContentPositionB = cardContentPositionB;
 					}
 				});
 			}
@@ -304,126 +310,28 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	public onConnectivityClick($event: any) {}
-
 	private getTileBSource() {
 		return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then(
-				(source) => {
-					if (source === 'UPE') {
-						resolve('UPE');
-					} else {
-						resolve('CMS');
-					}
-				},
-				() => {
+			this.hypService.getFeatureSetting('TileBSource').then((source) => {
+				if (source === 'UPE') {
+					resolve('UPE');
+				} else {
 					resolve('CMS');
 				}
-			);
+			}, () => {
+				resolve('CMS');
+			});
 		});
 	}
 
-	private setDefaultCMSContent() {
-		this.heroBannerItems = [
-			{
-				albumId: 1,
-				id: 1,
-				source: 'Vantage',
-				title: 'Welcome to the next generation of Lenovo Vantage!',
-				url: '/assets/cms-cache/Vantage3Hero-zone0.jpg',
-				ActionLink: null
-			}
-		];
-
-		this.cardContentPositionB = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: '/assets/cms-cache/Alexa4x3-zone1.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'half-width-title-description-link-image',
-			Position: 'position-B',
-			ExpirationDate: null,
-			Filters: null
-		};
-
-		this.cardContentPositionC = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: '/assets/cms-cache/Security4x3-zone2.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'half-width-title-description-link-image',
-			Position: 'position-C',
-			ExpirationDate: null,
-			Filters: null
-		};
-
-		this.cardContentPositionD = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: '/assets/cms-cache/Gamestore8x3-zone3.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'full-width-title-image-background',
-			Position: 'position-D',
-			ExpirationDate: null,
-			Filters: null
-		};
-
-		this.cardContentPositionE = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: '/assets/cms-cache/content-card-4x4-support.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'half-width-top-image-title-link',
-			Position: 'position-E',
-			ExpirationDate: null,
-			Filters: null
-		};
-
-		this.cardContentPositionF = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: '/assets/cms-cache/content-card-4x4-award.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'half-width-top-image-title-link',
-			Position: 'position-F',
-			ExpirationDate: null,
-			Filters: null
-		};
+	private getPreviousContent() {
+		this.heroBannerItems = this.dashboardService.heroBannerItems;
+		this.cardContentPositionA = this.dashboardService.cardContentPositionA;
+		this.cardContentPositionB = this.dashboardService.cardContentPositionB;
+		this.cardContentPositionC = this.dashboardService.cardContentPositionC;
+		this.cardContentPositionD = this.dashboardService.cardContentPositionD;
+		this.cardContentPositionE = this.dashboardService.cardContentPositionE;
+		this.cardContentPositionF = this.dashboardService.cardContentPositionF;
 	}
 
 	private setDefaultSystemStatus() {

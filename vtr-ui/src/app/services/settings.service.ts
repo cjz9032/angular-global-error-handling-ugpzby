@@ -10,10 +10,13 @@ export class SettingsService {
 	toggleMarketing = false;
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
+	toggleDeviceStatistics = false;
 
 	isMessageSettings = false;
+	isDeviceStatisticsSupported = false;
 
 	preferenceSettings: any;
+	metricsPreference: any;
 
 	valueToBoolean = [false, true, false];
 
@@ -21,6 +24,7 @@ export class SettingsService {
 		private shellService: VantageShellService,
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
+		this.metricsPreference = this.shellService.getMetricPreferencePlugin();
 	}
 
 	getPreferenceSettingsValue() {
@@ -31,6 +35,21 @@ export class SettingsService {
 					this.toggleMarketing = this.getMassageStettingValue(messageSettings, 'Marketing');
 					this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
 					this.isMessageSettings = true;
+				}
+			});
+		}
+		if (this.metricsPreference) {
+			this.metricsPreference.getAppMetricCollectionSetting('en', 'com.lenovo.LDI').then((response) => {
+				if (response && response.app && response.app.metricCollectionState === 'On') {
+					this.toggleDeviceStatistics = true;
+					this.isDeviceStatisticsSupported = true;
+				}
+				else if (response && response.app && response.app.metricCollectionState === 'Off') {
+					this.toggleDeviceStatistics = false;
+					this.isDeviceStatisticsSupported = true;
+				}
+				else {
+					this.isDeviceStatisticsSupported = false;
 				}
 			});
 		}

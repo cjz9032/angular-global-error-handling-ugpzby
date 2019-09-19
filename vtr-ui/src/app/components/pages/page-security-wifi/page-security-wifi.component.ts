@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } fro
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { DeviceInfo, PluginMissingError, EventTypes } from '@lenovo/tan-client-bridge';
+import { PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
@@ -17,24 +17,12 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-
-interface DevicePostureDetail {
-	status: number; // 1,2
-	title: string; // name
-	detail: string; // faied,passed
-}
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
 	isLocationServiceOn: boolean; // true,false
 	isLWSPluginInstalled: boolean; // true,false
-}
-
-interface HomeProtectionDeviceInfo {
-	error: string;
-	familyId: string;
-	nickName: string;
-	imageUrl: string;
 }
 
 @Component({
@@ -50,7 +38,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	wifiIsShowMore: boolean;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
-	homeProtection: phoenix.HomeProtection;
+	homeSecurity: phoenix.ConnectedHomeSecurity;
 	isShowInvitationCode: boolean;
 	wifiHomeViewModel: WifiHomeViewModel;
 	securityHealthViewModel: SecurityHealthViewModel;
@@ -59,6 +47,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	cancelClick = false;
 	isOnline = true;
 	notificationSubscription: Subscription;
+	region = 'us';
+	language = 'en';
+	intervalId: number;
+	interval = 15000;
 
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -68,71 +60,53 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
 		public translate: TranslateService,
+		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
-	) {
-		this.securityAdvisor = shellService.getSecurityAdvisor();
+	) {	}
+
+	ngOnInit() {
+		this.securityAdvisor = this.shellService.getSecurityAdvisor();
+		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		this.homeProtection = this.securityAdvisor.homeProtection;
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone, this.dialogService);
-		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate, this.ngZone);
-		const cacheHomeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
-		if (this.homeProtection.status) {
-			this.isShowInvitationCode = !(this.homeProtection.status === 'joined');
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, this.homeProtection.status);
-		} else if (cacheHomeStatus) {
-			this.isShowInvitationCode = !(cacheHomeStatus === 'joined');
-		}
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
+		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.commonService, this.translate, this.ngZone);
 		this.wifiSecurity.on('cancelClick', () => {
 			this.cancelClick = true;
 		}).on('cancelClickFinish', () => {
 			this.cancelClick = false;
 		});
 		this.fetchCMSArticles();
-	}
 
-	ngOnInit() {
+		this.localInfoService.getLocalInfo().then(result => {
+			this.region = result.GEO;
+			this.language = result.Lang;
+		}).catch(e => {
+			this.region = 'us';
+			this.language = 'en';
+		});
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
-		if (this.homeProtection) {
-			this.homeProtection.refresh().catch((err) => this.handleError(err));
-		}
-
 		if (this.wifiSecurity) {
 			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
 				this.wifiSecurity.refresh().catch((err) => this.handleError(err));
 				this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
 			}
-			if (this.wifiSecurity.isLocationServiceOn) {
-				if (this.homeProtection) {
-					this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, true);
-					this.homeProtection.getDevicePosture().catch((err) => this.handleError(err));
-				}
-			} else {
-				this.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (isLocationServiceOn) => {
-					if (!this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture)) {
-						if (isLocationServiceOn) {
-							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, true);
-							this.homeProtection.getDevicePosture().catch((err) => this.handleError(err));
-						}
-					}
-				});
-			}
-
 			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
 		}
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams.isShowMore;
+		this.pullCHS();
 	}
 
 	ngAfterViewInit() {
@@ -148,8 +122,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (this.wifiSecurity) {
 			this.wifiSecurity.refresh().catch((err) => this.handleError(err));
 		}
-		if (this.homeProtection) {
-			this.homeProtection.refresh().catch((err) => this.handleError(err));
+		if (!this.intervalId) {
+			this.pullCHS();
 		}
 	}
 
@@ -161,15 +135,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
-		if (this.homeProtection) {
-			if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture)) {
-				this.homeProtection.cancelGetDevicePosture();
-				this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityIsGetDevicePosture, false);
-			}
-		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+		window.clearInterval(this.intervalId);
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
@@ -179,29 +148,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}
 		if (value.isLocationServiceOn !== undefined) {
 			this.wifiSecurity.isLocationServiceOn = value.isLocationServiceOn;
-		}
-	}
-
-	ShowInvitationhandler(res: HomeProtectionDeviceInfo) {
-		if (res.error.toLowerCase() === 'success') {
-			if (res.familyId) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, 'joined');
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionFamilyId, res.familyId);
-				this.homeProtection.familyId = res.familyId;
-				this.homeProtection.status = 'joined';
-				this.isShowInvitationCode = false;
-			} else {
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, 'unjoined');
-				this.homeProtection.status = 'unjoined';
-				this.isShowInvitationCode = true;
-			}
-		}
-	}
-
-	startGetDevicePosture(res: Array<DeviceInfo>) {
-		if (res !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, res);
-			this.securityHealthViewModel.createHomeDevicePosture(res);
 		}
 	}
 
@@ -282,5 +228,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (err && err instanceof PluginMissingError) {
 			this.dialogService.wifiSecurityErrorMessageDialog();
 		}
+	}
+
+	private pullCHS(): void {
+		this.intervalId = window.setInterval(() => {
+			this.homeSecurity.refresh().then(() => {
+				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+			}).catch((err: Error) => this.handleError(err));
+		}, this.interval);
 	}
 }

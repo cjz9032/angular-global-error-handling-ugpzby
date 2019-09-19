@@ -1,25 +1,37 @@
 <div class="numbers-holder" [ngClass]="{'recording': recordingStatus}">
 	<div class="numpad-btn-wrapper">
-		<div class="numpad-btn" *ngIf="isNumberpad" (click)="isShowingPopup = !isShowingPopup">
-			<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<div class="numpad-btn" *ngIf="isNumberpad" (click)="isShowingPopup = !isShowingPopup" tabindex="1"
+			(keyup.enter)="isShowingPopup = !isShowingPopup" role="button" aria-label="macrokey numpad">
+			<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink">
 				<defs>
-					<linearGradient x1="7.98495338%" y1="-30.2571913%" x2="82.5571836%" y2="111.917578%" id="linearGradient-1">
+					<linearGradient x1="7.98495338%" y1="-30.2571913%" x2="82.5571836%" y2="111.917578%"
+						id="linearGradient-1">
 						<stop stop-color="#5AA4FF" offset="0%"></stop>
 						<stop stop-color="#0078FF" offset="80.1269222%"></stop>
 						<stop stop-color="#1C88FF" offset="100%"></stop>
 					</linearGradient>
 				</defs>
 				<g id="6.20pxIcon/numpad" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-					<path d="M3.75,1 L6.25,1 C6.52614237,1 6.75,1.22385763 6.75,1.5 L6.75,4 C6.75,4.27614237 6.52614237,4.5 6.25,4.5 L3.75,4.5 C3.47385763,4.5 3.25,4.27614237 3.25,4 L3.25,1.5 C3.25,1.22385763 3.47385763,1 3.75,1 Z M3.75,6 L6.25,6 C6.52614237,6 6.75,6.22385763 6.75,6.5 L6.75,9 C6.75,9.27614237 6.52614237,9.5 6.25,9.5 L3.75,9.5 C3.47385763,9.5 3.25,9.27614237 3.25,9 L3.25,6.5 C3.25,6.22385763 3.47385763,6 3.75,6 Z M3.75,11 L6.25,11 C6.52614237,11 6.75,11.2238576 6.75,11.5 L6.75,14 C6.75,14.2761424 6.52614237,14.5 6.25,14.5 L3.75,14.5 C3.47385763,14.5 3.25,14.2761424 3.25,14 L3.25,11.5 C3.25,11.2238576 3.47385763,11 3.75,11 Z M8.75,1 L11.25,1 C11.5261424,1 11.75,1.22385763 11.75,1.5 L11.75,4 C11.75,4.27614237 11.5261424,4.5 11.25,4.5 L8.75,4.5 C8.47385763,4.5 8.25,4.27614237 8.25,4 L8.25,1.5 C8.25,1.22385763 8.47385763,1 8.75,1 Z M8.75,6 L11.25,6 C11.5261424,6 11.75,6.22385763 11.75,6.5 L11.75,9 C11.75,9.27614237 11.5261424,9.5 11.25,9.5 L8.75,9.5 C8.47385763,9.5 8.25,9.27614237 8.25,9 L8.25,6.5 C8.25,6.22385763 8.47385763,6 8.75,6 Z M8.75,11 L11.25,11 C11.5261424,11 11.75,11.2238576 11.75,11.5 L11.75,14 C11.75,14.2761424 11.5261424,14.5 11.25,14.5 L8.75,14.5 C8.47385763,14.5 8.25,14.2761424 8.25,14 L8.25,11.5 C8.25,11.2238576 8.47385763,11 8.75,11 Z M8.75,16 L11.25,16 C11.5261424,16 11.75,16.2238576 11.75,16.5 L11.75,19 C11.75,19.2761424 11.5261424,19.5 11.25,19.5 L8.75,19.5 C8.47385763,19.5 8.25,19.2761424 8.25,19 L8.25,16.5 C8.25,16.2238576 8.47385763,16 8.75,16 Z M13.75,1 L16.25,1 C16.5261424,1 16.75,1.22385763 16.75,1.5 L16.75,4 C16.75,4.27614237 16.5261424,4.5 16.25,4.5 L13.75,4.5 C13.4738576,4.5 13.25,4.27614237 13.25,4 L13.25,1.5 C13.25,1.22385763 13.4738576,1 13.75,1 Z M13.75,6 L16.25,6 C16.5261424,6 16.75,6.22385763 16.75,6.5 L16.75,9 C16.75,9.27614237 16.5261424,9.5 16.25,9.5 L13.75,9.5 C13.4738576,9.5 13.25,9.27614237 13.25,9 L13.25,6.5 C13.25,6.22385763 13.4738576,6 13.75,6 Z M13.75,11 L16.25,11 C16.5261424,11 16.75,11.2238576 16.75,11.5 L16.75,14 C16.75,14.2761424 16.5261424,14.5 16.25,14.5 L13.75,14.5 C13.4738576,14.5 13.25,14.2761424 13.25,14 L13.25,11.5 C13.25,11.2238576 13.4738576,11 13.75,11 Z" id="Combined-Shape" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+					<path
+						d="M3.75,1 L6.25,1 C6.52614237,1 6.75,1.22385763 6.75,1.5 L6.75,4 C6.75,4.27614237 6.52614237,4.5 6.25,4.5 L3.75,4.5 C3.47385763,4.5 3.25,4.27614237 3.25,4 L3.25,1.5 C3.25,1.22385763 3.47385763,1 3.75,1 Z M3.75,6 L6.25,6 C6.52614237,6 6.75,6.22385763 6.75,6.5 L6.75,9 C6.75,9.27614237 6.52614237,9.5 6.25,9.5 L3.75,9.5 C3.47385763,9.5 3.25,9.27614237 3.25,9 L3.25,6.5 C3.25,6.22385763 3.47385763,6 3.75,6 Z M3.75,11 L6.25,11 C6.52614237,11 6.75,11.2238576 6.75,11.5 L6.75,14 C6.75,14.2761424 6.52614237,14.5 6.25,14.5 L3.75,14.5 C3.47385763,14.5 3.25,14.2761424 3.25,14 L3.25,11.5 C3.25,11.2238576 3.47385763,11 3.75,11 Z M8.75,1 L11.25,1 C11.5261424,1 11.75,1.22385763 11.75,1.5 L11.75,4 C11.75,4.27614237 11.5261424,4.5 11.25,4.5 L8.75,4.5 C8.47385763,4.5 8.25,4.27614237 8.25,4 L8.25,1.5 C8.25,1.22385763 8.47385763,1 8.75,1 Z M8.75,6 L11.25,6 C11.5261424,6 11.75,6.22385763 11.75,6.5 L11.75,9 C11.75,9.27614237 11.5261424,9.5 11.25,9.5 L8.75,9.5 C8.47385763,9.5 8.25,9.27614237 8.25,9 L8.25,6.5 C8.25,6.22385763 8.47385763,6 8.75,6 Z M8.75,11 L11.25,11 C11.5261424,11 11.75,11.2238576 11.75,11.5 L11.75,14 C11.75,14.2761424 11.5261424,14.5 11.25,14.5 L8.75,14.5 C8.47385763,14.5 8.25,14.2761424 8.25,14 L8.25,11.5 C8.25,11.2238576 8.47385763,11 8.75,11 Z M8.75,16 L11.25,16 C11.5261424,16 11.75,16.2238576 11.75,16.5 L11.75,19 C11.75,19.2761424 11.5261424,19.5 11.25,19.5 L8.75,19.5 C8.47385763,19.5 8.25,19.2761424 8.25,19 L8.25,16.5 C8.25,16.2238576 8.47385763,16 8.75,16 Z M13.75,1 L16.25,1 C16.5261424,1 16.75,1.22385763 16.75,1.5 L16.75,4 C16.75,4.27614237 16.5261424,4.5 16.25,4.5 L13.75,4.5 C13.4738576,4.5 13.25,4.27614237 13.25,4 L13.25,1.5 C13.25,1.22385763 13.4738576,1 13.75,1 Z M13.75,6 L16.25,6 C16.5261424,6 16.75,6.22385763 16.75,6.5 L16.75,9 C16.75,9.27614237 16.5261424,9.5 16.25,9.5 L13.75,9.5 C13.4738576,9.5 13.25,9.27614237 13.25,9 L13.25,6.5 C13.25,6.22385763 13.4738576,6 13.75,6 Z M13.75,11 L16.25,11 C16.5261424,11 16.75,11.2238576 16.75,11.5 L16.75,14 C16.75,14.2761424 16.5261424,14.5 16.25,14.5 L13.75,14.5 C13.4738576,14.5 13.25,14.2761424 13.25,14 L13.25,11.5 C13.25,11.2238576 13.4738576,11 13.75,11 Z"
+						id="Combined-Shape" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
 				</g>
 			</svg>
-			<span *ngIf="selectedNumber"><span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span> {{ selectedNumber.key | translate }}</span>
+			<span *ngIf="selectedNumber"><span
+					*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
+				{{ selectedNumber.key | translate }}</span>
 		</div>
 	</div>
 	<ul [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
 		<ng-container *ngFor="let number of numbers; index as i">
-			<li [ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}" id="macrokey_numpad-{{number.key}}" attr.aria-label="macrokey_numpad-{{number.key}}"  (click)="numberClicked(number)" vtrMetrics
-			[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick" [metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}">
+			<li [ngClass]="{'selected': selectedNumber && number.key === selectedNumber.key, 'macro-exists': number.status}"
+				id="macrokey_numpad-{{number.key}}" (click)="numberClicked(number)" vtrMetrics
+				[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick"
+				[metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}"
+				(keyup.enter)="numberClicked(number)" tabindex="1" role="button"
+				[attr.aria-label]="(selectedNumber && number.key === selectedNumber.key) ? 'selected macrokey numpad '+ number.key : 'macrokey numpad '+number.key"
+				role="button">
 				<div>
 					{{ number.key | translate }}
 				</div>

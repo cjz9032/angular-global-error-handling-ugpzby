@@ -5,6 +5,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { RoutersName } from '../../../privacy-routing-name';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { combineLatest } from 'rxjs';
+import { CommonService } from '../../../../../../services/common/common.service';
 
 @Component({
 	selector: 'vtr-article-single',
@@ -29,7 +30,8 @@ export class ArticleSingleComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private articlesService: ArticlesService,
-		private router: Router
+		private router: Router,
+		private commonService: CommonService
 	) {
 	}
 
@@ -37,6 +39,9 @@ export class ArticleSingleComponent implements OnInit {
 	}
 
 	openArticle(articleId) {
+		if (!this.commonService.isOnline) {
+			return;
+		}
 		this.router.navigate([`/${RoutersName.PRIVACY}/${RoutersName.ARTICLEDETAILS}`], {queryParams: {articleId}});
 	}
 

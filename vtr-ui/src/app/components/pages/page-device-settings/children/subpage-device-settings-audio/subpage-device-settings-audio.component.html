@@ -13,6 +13,7 @@
 		id="audio">
 		<div class="col-10 mx-auto">
 			<vtr-container-collapsible componentName="Audio SmartSettings"
+				[vtrAppSearchScroller]="['search-audio-smart']"
 				[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
 				[isCollapsed]="false"
 				[allowCollapse]="false"
@@ -37,11 +38,11 @@
 							[caption]="''"
 							[isSwitchVisible]="autoDolbyFeatureStatus.available"
 							[leftIcon]="['icomoon', 'icomoon-LE-Dolby2x']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="automaticDolbyHelpIcon"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'blue'"
-							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.dolby.tooltip'|translate"
+							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.dolby.tooltip' | translate"
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
 							[isSwitchChecked]="autoDolbyFeatureStatus.status"
 							[showLoaderState]="autoDolbyFeatureLoader"
@@ -49,16 +50,18 @@
 
 							<div class="row no-gutters"
 								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
-								<vtr-ui-circle-radio *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
-									theme="blue"
+								<vtr-ui-circle-radio-with-checkbox
+									*ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
+									[theme]="'blue'"
 									[radioId]="'radioDolbyMode' + dolbyMode | removeSpace"
 									[group]="radioGroupAutoDolbySettings"
 									[label]="dolbyMode | dolbyModesTranslation"
 									[value]='dolbyMode'
 									[checked]="dolbyMode == dolbyModeResponse.currentMode"
 									(change)="onDolbySeetingRadioChange($event)"
+									[processIcon]="true"
 									[textId]="'myDevice-settings-audio-automatic-dolby'">
-								</vtr-ui-circle-radio>
+								</vtr-ui-circle-radio-with-checkbox>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
@@ -70,7 +73,7 @@
 							[caption]="''"
 							[isSwitchVisible]=true
 							[leftIcon]="['icomoon', 'icomoon-LE-Microphone-volume2x']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="helpIcon"
 							[readMoreText]="''"
 							[showChildContent]="false"
 							[theme]="'blue'"
@@ -89,6 +92,7 @@
 		id="microphone">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="Microphone"
+				[vtrAppSearchScroller]="['search-microphone']"
 				[cardTitle]="'device.deviceSettings.audio.microphone.title' | translate"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
@@ -112,7 +116,7 @@
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['fal', 'microphone']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="helpIcon"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
@@ -163,7 +167,7 @@
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['fal', 'keyboard']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="helpIcon"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
@@ -184,7 +188,7 @@
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['icomoon', 'icomoon-LE-Acoustic-echo-cancellation2x']"
-							[rightIcon]="['far', 'question-circle']"
+							[rightIcon]="helpIcon"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
@@ -198,7 +202,7 @@
 					</li>
 
 					<li class=""
-						*ngIf="!isDTmachine">
+						*ngIf="!isDTmachine && microOptimizeModeResponse && microOptimizeModeResponse.modes.length > 0">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 							componentName="Optimize my microphone for"
 							[name]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
@@ -212,7 +216,8 @@
 							[isLastChild]="true"
 							[switchId]="'audio-microphone-optimize'">
 							<div class="row no-gutters">
-								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
+								<vtr-ui-circle-radio-with-checkbox
+									*ngFor="let optimizeMode of microOptimizeModeResponse.modes"
 									[radioId]="'radioMicrophone' + optimizeMode | removeSpace"
 									[group]="radioOptimiseMicSettings"
 									[label]="optimizeMode | separatePascalCase"
@@ -221,8 +226,9 @@
 									[checked]="optimizeMode === microOptimizeModeResponse.current"
 									[disabled]="microphoneProperties.disableEffect"
 									(change)="onOptimizeModesRadioChange($event)"
+									[processIcon]="true"
 									[textId]="'myDevice-settings-audio-microphone-optimize'">
-								</vtr-ui-circle-radio>
+								</vtr-ui-circle-radio-with-checkbox>
 							</div>
 						</vtr-ui-row-switch>
 					</li>

@@ -24,9 +24,10 @@
         border-bottom: 0.1rem solid $shade_lighter;
         margin: 0 4rem;
         .page-img {
-            padding: 1rem 5rem;
+            padding: 0rem 5rem;
             img {
-                width: 100%;
+				width: 100%;
+				max-height: 40rem;
             }
         }
         .page-title {
@@ -48,7 +49,7 @@
         }
 
     }
-    .page-four, .page-three{
+    .page-two{
         border-bottom: none;
         color: $main_dark;
         .description {
@@ -88,48 +89,4 @@
             cursor: pointer;
         }
     }
-    .chs-login-content {
-        margin-top: 2rem;
-        padding-bottom: 2rem;
-        .bullet-icon-check {
-            .icon-bkg {
-                width: 2.3rem;
-                height: 2.3rem;
-                fa-icon {
-                    font-size: 1.2rem;
-                    line-height: 1.7rem;
-                }
-            }
-        }
-        .text-regular {
-            color: $blue-dark;
-            font-size: 1.5rem;
-            .h4 {
-                font-weight: $weight_medium;
-            }
-            .h1 {
-                font-weight: $weight_bold;
-            }
-        }
-
-        ul {
-            .text {
-                color: $shade_darker;
-            }
-        }
-
-        img{
-            width: 25rem;
-        }
-
-	}
-	.loading {
-		top: 0;
-		opacity: 0.5;
-		background-color: $light;
-		.spinner-border {
-			width: 5rem;
-			height: 5rem;
-		}
-	}
 }

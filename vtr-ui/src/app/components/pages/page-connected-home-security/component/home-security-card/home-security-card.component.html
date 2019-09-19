@@ -1,0 +1,42 @@
+<div class="vtr-home-security-card container-fluid">
+	<div class="row content">
+		<div class="col-lg-6 col-12 container-fluid">
+			<div class="title">
+				<span [innerHTML]="'homeSecurity.card.startTrialTitle' | translate"></span>
+			</div>
+			<div class="description">
+				<span [innerHTML]="'homeSecurity.card.startTrialDescription' | translate"></span>
+			</div>
+			<div class="button-box">
+				<vtr-ui-button
+					metricsEvent="featureClick"
+					metricsItem="startTrial"
+					(click)="openTrialModal()"
+					[title]="'homeSecurity.card.startTrial' | translate"
+					[label]="'homeSecurity.card.startTrial' | translate"
+					[isDisabled]="location?.isLoading"
+					linkId="chs-card-btn-startTrial">
+				</vtr-ui-button>
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 container-fluid">
+			<div class="title">
+				<span [innerHTML]="'homeSecurity.card.joinTitle' | translate"></span>
+			</div>
+			<div class="description">
+				<span [innerHTML]="'homeSecurity.card.joinDescription' | translate"></span>
+			</div>
+			<div class="button-box">
+				<vtr-ui-button class="join"
+					metricsEvent="featureClick"
+					metricsItem="joinGroup"
+					[title]="'homeSecurity.card.join' | translate"
+					[label]="'homeSecurity.card.join' | translate"
+					[isDisabled]="location?.isLoading"
+					(onClick)="joinGroup()"
+					linkId="chs-card-btn-joinGroup">
+				</vtr-ui-button>
+			</div>
+		</div>
+	</div>
+</div>

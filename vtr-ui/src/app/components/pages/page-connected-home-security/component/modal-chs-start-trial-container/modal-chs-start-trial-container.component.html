@@ -1,0 +1,76 @@
+<div class="vtr-modal-chs-start-trial-container position-relative">
+	<div class="modal-header justify-content-end">
+		<div role="button" id="chs-trialModal-btn-close"
+			href="javascript:;"
+			class="close-btn"
+			metricsItem="closeCHSTrialModal"
+			metricsEvent="featureClick"
+			metricsParent="ConnectedHomeSecurity"
+			(click)="closeModal()">
+			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+				alt=""
+				srcset="">
+		</div>
+	</div>
+	<!-- start of page 1-->
+	<div class="page page-one" *ngIf="showWhichPage === 'trial'">
+		<p class="description" [innerHTML]="'homeSecurity.modal.countdownTitle' | translate"></p>
+		<p class="sub-desc" [innerHTML]="'homeSecurity.modal.countdownDesc' | translate"></p>
+		<div class="countdown text-center pb-5">
+			<span class="number" [innerHTML]="countdownNumber"></span>
+		</div>
+		<div class="d-flex align-items-center pt-5">
+			<vtr-ui-button
+				linkId="chs-trialModal-btn-countdownGoNow"
+				metricsEvent="FeatureClick"
+				metricsItem="CHSTrialGoNowButton"
+				metricsParent="{{metricsParent}}"
+				(click)="openCornet()"
+				[label]="'homeSecurity.modal.goNow' | translate"
+				[title]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
+			<button class="btn btn-default btn_cancel ml-4 pl-0 pr-0"
+				id="chs-trialModal-btn-countdownCancel"
+				metricsEvent="FeatureClick"
+				metricsItem="CHSTrialCountdownCancelButton"
+				metricsParent="ConnectedHomeSecurity"
+				(click)="closeModal()"
+				[title]="'security.wifisecurity.locationmodal.cancel' | translate"
+				[innerHTML]="'security.wifisecurity.locationmodal.cancel' | translate">
+			</button>
+		</div>
+	</div>
+	<!-- end of page1-->
+	<!-- start of page 2-->
+	<div class="page page-two" *ngIf="showWhichPage === 'disconnect'">
+		<p class="description" [innerHTML]="'homeSecurity.modal.disconnectedTitle' | translate"></p>
+		<p class="sub-desc mb-5" [innerHTML]="'homeSecurity.modal.disconnectedDesc' | translate"></p>
+		<div class="btn-group pt-5 d-flex">
+			<vtr-ui-button
+				linkId="chs-modal-btn-disconnect"
+				metricsEvent="FeatureClick"
+				metricsItem="CHSDisconnectButton"
+				metricsParent="{{metricsParent}}"
+				buttonColor="red"
+				(click)="disconnect()"
+				[label]="'homeSecurity.overview.disconnect' | translate"
+				[title]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
+			<vtr-ui-button
+				linkId="chs-modal-btn-cancel"
+				metricsEvent="FeatureClick"
+				metricsItem="CHSTrialCancelButton"
+				metricsParent="{{metricsParent}}"
+				buttonColor="gray"
+				(click)="closeModal()"
+				[label]="'security.wifisecurity.locationmodal.cancel' | translate"
+				[title]="'security.wifisecurity.locationmodal.cancel' | translate"></vtr-ui-button>
+		</div>
+	</div>
+	<!-- end of page2-->
+	<!-- start of page3-->
+	<div class="page page-three text-center" *ngIf="showWhichPage === 'loading'">
+		<div class="loadingIcon spinner-border text-primary progress-spinner" role="status">
+		</div>
+		<p class="pt-5 loading-text" *ngIf="loadingText" [innerHTML]="loadingText | translate"></p>
+	</div>
+	<!-- end of page3-->
+</div>

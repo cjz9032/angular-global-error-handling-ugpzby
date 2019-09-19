@@ -165,7 +165,21 @@ export class ConfigService {
 			},
 			adPolicyId: AdPolicyId.SystemUpdate,
 			subitems: []
-		}]
+		}
+		// {
+		// 		id: 'smart-performance',
+		// 		label: 'Smart performance',
+		// 		path: 'smart-performance',
+		// 		icon: '',
+		// 		metricsEvent: 'itemClick',
+		// 		metricsParent: 'navbar',
+		// 		metricsItem: '',
+		// 		routerLinkActiveOptions: {
+		// 			exact: true
+		// 		},
+		// 		subitems: []
+		// 	}
+		]
 	}, {
 		id: 'security',
 		label: 'common.menu.security.title',
@@ -251,8 +265,13 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		hide: true,
-		subitems: []
+		hide: false,
+		subitems: [],
+		pre: [
+			'assets/images/placeholder-800X800.png',
+			'assets/images/connected-home-security/welcome-chs-logo.png',
+			'assets/icons/Close.svg'
+		]
 	},
 	{
 		id: 'user',
@@ -431,8 +450,12 @@ export class ConfigService {
 		},
 		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
-		hide: true,
-		subitems: []
+		subitems: [],
+		pre: [
+			'assets/images/placeholder-800X800.png',
+			'assets/images/connected-home-security/welcome-chs-logo.png',
+			'assets/icons/Close.svg'
+		]
 	},
 	{
 		id: 'user',
@@ -450,7 +473,23 @@ export class ConfigService {
 		subitems: []
 	}];
 
-	betaItem = {
+	appSearch = {
+		id: 'app-search',
+		label: ' ',
+		beta: true,
+		path: '',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.app-search',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'search'],
+		forArm: false,
+		subitems: []
+	};
+
+	betaItem = [{
 		id: 'hardware-scan',
 		label: 'hardwareScan.name',
 		beta: true,
@@ -464,7 +503,7 @@ export class ConfigService {
 		icon: ['fal', 'flask'],
 		forArm: false,
 		subitems: []
-	};
+	}, this.appSearch];
 
 	getMenuItems(isGaming) {
 		if (isGaming) {
@@ -476,26 +515,29 @@ export class ConfigService {
 
 	getMenuItemsAsync(isGaming): Promise<any> {
 		return new Promise((resolve, reject) => {
+			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
 			const machineInfo = this.deviceService.getMachineInfoSync();
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
+				if (isBetaUser) {
+					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
+				}
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
-			const brand = machineInfo && machineInfo.brand ? machineInfo.brand : 'lenovo';
-			if (country.toLowerCase() === 'us' && locale.startsWith('en') && brand.toLowerCase() !== 'think') {
+			if (this.deviceService.showPrivacy) {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
-			if (country.toLowerCase() !== 'us') {
+			const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en');
+			if (!showCHSMenu) {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
-			// const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
-			// if (isBetaUser) {
-			// 	resultMenu.splice(resultMenu.length - 1, 0, this.betaItem);
-			// }
+			if (isBetaUser) {
+				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
+			}
 			resolve(resultMenu.filter(item => !item.hide));
 		});
 	}

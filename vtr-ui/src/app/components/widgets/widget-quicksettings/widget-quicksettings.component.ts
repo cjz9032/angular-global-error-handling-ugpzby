@@ -20,6 +20,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -31,6 +32,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(true, true);
 	private notificationSubscription: Subscription;
+	public isOnline: any = true;
 	public quickSettingsWidget = [
 		{
 			tooltipText: 'MICROPHONE',
@@ -45,6 +47,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			state: true
 		}
 	];
+	private Windows: any;
+	private windowsObj: any;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
@@ -54,7 +58,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private logger: LoggerService,
 		private deviceService: DeviceService,
-		private ngZone: NgZone) {
+		private ngZone: NgZone,
+		private vantageShellService: VantageShellService) {
+		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
+			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
+
+			this.windowsObj.addEventListener('accesschanged', () => {
+				this.getCameraPrivacyStatus();
+			});
+		}
 	}
 
 	ngOnInit() {
@@ -63,9 +77,14 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
-		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
-		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (welcomeTutorial && welcomeTutorial.page === 2) {
+		this.isOnline = this.commonService.isOnline;
+		if (this.isOnline) {
+			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+			if (welcomeTutorial && welcomeTutorial.page === 2) {
+				this.initFeatures();
+			}
+		} else {
 			this.initFeatures();
 		}
 	}
@@ -95,7 +114,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.stopMonitorForCamera();
 		this.deviceService.stopMicrophoneMonitor();
 		this.stopEyeCareMonitor();
-		this.displayService.stopMonitorForCameraPermission();
 	}
 
 	//#region private functions
@@ -128,7 +146,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	private initFeatures() {
 		this.getMicrophoneStatus();
-		this.displayService.startMonitorForCameraPermission();
 		this.getCameraPrivacyStatus();
 		this.initEyecaremodeSettings();
 		this.startEyeCareMonitor();

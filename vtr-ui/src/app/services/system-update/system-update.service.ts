@@ -52,6 +52,7 @@ export class SystemUpdateService {
 	public isInstallationSuccess = false;
 	public isDownloadingCancel = false;
 	public isImcErrorOrEmptyResponse = false;
+	public isRebootRequiredDialogNeeded = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -253,6 +254,7 @@ export class SystemUpdateService {
 					this.isInstallationCompleted = true;
 					this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
 					this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
+					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstallationComplete, this.updateInfo);
 				}
 			} else if (response.checkForUpdatesResult) {
@@ -543,6 +545,7 @@ export class SystemUpdateService {
 							(rebootDelayUpdate) => payload.updateList.push(rebootDelayUpdate));
 					}
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 				} else {
 					this.isInstallationCompleted = false;
@@ -687,11 +690,28 @@ export class SystemUpdateService {
 	public getUnIgnoredUpdatesForInstallAll(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
-				return !value.isIgnored || (value.isIgnored && value.isDependency);
+				if (!value.isIgnored) {
+					return true;
+				} else if (value.isDependency) {
+					return this.IsUpdateDependedByUnIgnoredPackage(updateList, value.dependedByPackages);
+				}
 			});
 			return updates;
 		}
 		return undefined;
+	}
+
+	private IsUpdateDependedByUnIgnoredPackage(updateList: Array<AvailableUpdateDetail>, dependedByPackages: string) {
+		let result = false;
+		const dependedPacks = dependedByPackages.split(',');
+		dependedPacks.forEach((pack) => {
+			updateList.forEach((update) => {
+				if (!update.isIgnored && update.packageID === pack) {
+					result = true;
+				}
+			});
+		});
+		return result;
 	}
 
 	public dateDiffInDays(date: string) {

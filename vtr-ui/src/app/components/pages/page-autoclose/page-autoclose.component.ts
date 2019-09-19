@@ -6,22 +6,24 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { isUndefined } from 'util';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: ['./page-autoclose.component.scss']
+	styleUrls: [ './page-autoclose.component.scss' ]
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal: boolean = false;
 	public showAppsModal: boolean = false;
 	public autoCloseAppList: any;
-	public loadingContent: any;
-	// Running list
-	runningList: any = [];
 	// Toggle status
+	isOnline = true;
 	toggleStatus: boolean;
 	needToAsk: any;
+	getNeedStatus: boolean;
 	autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
 	needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
 
@@ -34,9 +36,18 @@ export class PageAutocloseComponent implements OnInit {
 	};
 	backId = 'vtr-gaming-autoclose-btn-back';
 
-	constructor(private cmsService: CMSService, private gamingAutoCloseService: GamingAutoCloseService) { }
+	constructor(
+		private cmsService: CMSService,
+		private gamingAutoCloseService: GamingAutoCloseService,
+		private commonService: CommonService
+	) {}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
 		const queryOptions = {
 			Page: 'dashboard',
 			Lang: 'EN',
@@ -72,16 +83,25 @@ export class PageAutocloseComponent implements OnInit {
 
 		// AutoClose Init
 		this.refreshAutoCloseList();
-		this.refreshRunningList();
 		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
 		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (
+			notification &&
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
+		) {
+			this.isOnline = notification.payload.isOnline;
+		}
+		if (this.isOnline === undefined) {
+			this.isOnline = true;
+		}
+	}
+
 	openTargetModal() {
-		this.loadingContent.loading = true;
-		this.refreshAutoCloseList();
-		this.refreshRunningList();
 		try {
+			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 			this.hiddenScroll(true);
 			if (this.toggleStatus) {
@@ -99,19 +119,22 @@ export class PageAutocloseComponent implements OnInit {
 	doNotShowAction(event: any) {
 		const status = event.target.checked;
 		try {
-			this.gamingAutoCloseService.setNeedToAskStatusCache(!status);
-			this.needToAsk = !status;
-		} catch (error) {
-		}
+			this.getNeedStatus = !status;
+			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
+		} catch (error) {}
 	}
 
 	initTurnOnAction() {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
 
 	initNotNowAction(notNowStatus: boolean) {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
@@ -119,12 +142,12 @@ export class PageAutocloseComponent implements OnInit {
 	modalCloseTurnOn(action: boolean) {
 		this.showTurnOnModal = action;
 		this.hiddenScroll(false);
+		this.showAppsModal = true;
 	}
 
 	modalCloseAddApps(action: boolean) {
 		this.showAppsModal = action;
 		this.hiddenScroll(false);
-		this.refreshRunningList();
 	}
 
 	hiddenScroll(action: boolean) {
@@ -155,6 +178,8 @@ export class PageAutocloseComponent implements OnInit {
 				if (!isUndefined(appList.processList)) {
 					this.autoCloseAppList = appList.processList;
 					this.gamingAutoCloseService.setAutoCloseListCache(appList.processList);
+					console.log('get Auto close List', appList.processList);
+					console.log('Total Auto close List Apps', appList.processList.length);
 				}
 			});
 		} catch (error) {
@@ -162,41 +187,37 @@ export class PageAutocloseComponent implements OnInit {
 		}
 	}
 
-	public refreshRunningList() {
-		try {
-			this.gamingAutoCloseService.getAppsAutoCloseRunningList().then((list: any) => {
-				if (!isUndefined(list.processList)) {
-					this.runningList = list.processList;
-					const noAppsRunning = this.runningList.length === 0 ? true : false;
-					this.loadingContent = { loading: false, noApps: noAppsRunning };
-				}
-			});
-		} catch (error) {
-			const noAppsRunning = this.runningList.length === 0 ? true : false;
-			this.loadingContent = { loading: false, noApps: noAppsRunning };
-		}
-	}
-
 	public addAppDataToList(event: any) {
-		if (event.target.checked) {
-			const addApp = event.target.value;
+		if (event.checked) {
+			const addApp = event.app;
 			try {
 				this.gamingAutoCloseService.addAppsAutoCloseList(addApp).then((success: any) => {
 					if (success) {
 						this.refreshAutoCloseList();
+						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 					}
 				});
-			} catch (error) {
-			}
+			} catch (error) {}
+		} else {
+			const remApp = event.app;
+			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
+				if (response) {
+					this.refreshAutoCloseList();
+					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
+				}
+			});
 		}
 	}
 
-	deleteAppFromList(appData: any) {
-		this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
-			if (response) {
-				this.autoCloseAppList.splice(appData.index, 1);
-				this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
-			}
-		});
+	async deleteAppFromList(appData: any) {
+		try {
+			// this.autoCloseAppList.splice(appData.index, 1);
+			await this.gamingAutoCloseService.delAppsAutoCloseList(appData.name).then((response: boolean) => {
+				if (response) {
+					this.refreshAutoCloseList();
+					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
+				}
+			});
+		} catch (err) {}
 	}
 }

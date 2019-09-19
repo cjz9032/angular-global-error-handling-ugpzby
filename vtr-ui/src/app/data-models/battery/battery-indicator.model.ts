@@ -3,8 +3,7 @@ import { BatteryQuality } from 'src/app/enums/battery-conditions.enum';
 class BatteryIndicator {
 	constructor() { }
 	public percent = 0;
-	public charging: boolean;
-	public voltageError = false;
+	public charging = false;
 	public batteryNotDetected = false;
 	public expressCharging = false;
 	public hours = 0;

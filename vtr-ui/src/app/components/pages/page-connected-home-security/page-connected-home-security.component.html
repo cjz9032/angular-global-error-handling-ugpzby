@@ -12,38 +12,40 @@
                     <div class="vtr-subpage">
                         <div class="vtr-page-shift-up">
                             <div class="container-fluid">
-                                <div class="row mb-40 content-container p-40">
-                                    <div class="container-fluid">
-                                        <vtr-home-security-device
-                                            [device]="account?.device"
-											[allDevice]="account?.allDevice"
-											[common]="common"
-                                          ></vtr-home-security-device>
-                                    </div>
-                                </div>
-                                <div class="row content-container p-40">
-                                    <div class="container-fluid fix-height">
-                                        <div class="row title">{{'homeSecurity.overview.overviewBlockTitle' | translate}}</div>
-                                        <div class="container-fluid sub-container">
-                                            <div class="row sub-title mydevice-title">{{'homeSecurity.overview.myDevice' | translate}}</div>
-                                            <div class="row container-fluid h-50 device-card">
-                                                <vtr-home-security-my-device class="container-fluid"
-                                                    [homeSecurityOverviewMyDevice]="homeSecurityOverviewMyDevice">
-                                                </vtr-home-security-my-device>
-                                            </div>
-                                            <div class="row sub-title">{{'homeSecurity.overview.allDevices' | translate}}
-                                            </div>
-                                            <div class="row container-fluid home-card">
-												<vtr-home-security-all-devices class="container-fluid"
-													[common]="common"
-                                                    [allDevicesInfo]="allDevicesInfo"
-                                                    [account]="account">
-                                                </vtr-home-security-all-devices>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+								<vtr-home-security-after-signup
+									*ngIf="account?.state !== 'local'"
+									[allDevices]="allDevicesInfo"
+									[account]="account"
+									[common]="common">
+								</vtr-home-security-after-signup>
+								<vtr-home-security-content *ngIf="account?.state === 'local'"
+									page="homeSecurity"
+									[location]="homeSecurityLocation"
+									[permission]="permission">
+								</vtr-home-security-content>
+								<div class="article-card pt-5 col-12 mt-5"
+										*ngIf="account?.state !== 'local'">
+									<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
+										[img]="cardContentPositionA.FeatureImage"
+										[title]="cardContentPositionA.Title"
+										[logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionType]="cardContentPositionA.ActionType"
+										[actionLink]="cardContentPositionA.ActionLink" [type]="'article'"
+										[ratioX]="4" [ratioY]="4"
+										ariaLabel="chs-banner-bottom-article"
+										containerCardId="chs-banner-bottom-article">
+									</vtr-container-card>
+								</div>
+								<div class="bottom-content w-100 d-none d-md-block">
+									<div class="cutting-line"></div>
+									<vtr-widget-powered-by-info
+										[title]="'homeSecurity.overview.poweredBy'"
+										[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+										[imgUrl]="'assets/images/coronet-logo.svg'">
+									</vtr-widget-powered-by-info>
+								</div>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -52,24 +54,116 @@
                         <div class="container-fluid">
                             <div class="row mb-40">
                                 <div class="col col-12">
-									<vtr-home-security-account-status
-										[account]="account"
-                                        [common]="common">
-                                    </vtr-home-security-account-status>
+									<div class="vtr-security-health">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col">
+													<div class="subTitle">
+														{{'security.homeprotection.securityhealth.title' | translate}}
+													</div>
+													<div class="description"
+														*ngIf="homeSecurityLocation?.isLocationServiceOn">
+														<span
+															*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
+															<a vtrMetrics
+																id="chs-lnk-sh-learnmore"
+																metricsEvent="ArticleClick"
+																metricsItem="learnMoreAboutDevicePosture"
+																metricsItemPosition="3"
+																metricsPageNumber="1"
+																[metricsItemID]="devicePostureArticleId"
+																[metricsItemCategory]="devicePostureArticleCategory"
+																href="javascript:void(0)"
+																(click)="openDevicePostureArticle()"
+																target="_blank"></a>
+														</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col">
+													<!--Start of Security Health Advisor When LWS is enabled-->
+													<div *ngIf="homeSecurityLocation?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length === 0"
+														class="loading">
+														<div class="spinner-border text-primary progress-spinner"
+															role="status"></div>
+													</div>
+													<vtr-ui-list-chevron
+														[items]="homeSecurityDevicePosture.homeDevicePosture"
+														metricsEvent="featureClick"
+														[chevronVisibility]='false'
+														[clickable]="false"
+														*ngIf="homeSecurityLocation?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length > 0">
+													</vtr-ui-list-chevron>
+													<!--end of Security Health Advisor When LWS is enabled-->
+
+													<!--Start of Security Health Advisor When LWS is disabled-->
+													<div class="security-health-disabled"
+														*ngIf="!homeSecurityLocation?.isLocationServiceOn">
+														<div class="security-health-disabled-list d-flex flex-column align-items-center justify-content-center">
+															<div class="peace-of-mind mb-5" [innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
+															</div>
+															<vtr-ui-button
+																metricsItem="enableLocation"
+																metricsEvent="featureClick"
+																metricsParent="ConnectedHomeSecurity"
+																(click)="dialogService?.openCHSPermissionModal()"
+																[isDisabled]="homeSecurityLocation.isLoading"
+																linkId="chs-btn-enableLocation"
+																[title]="'security.homeprotection.securityhealth.button' | translate"
+																[label]="'security.homeprotection.securityhealth.button' | translate">
+															</vtr-ui-button>
+														</div>
+														<div class="coronet-section">
+															<div class="row">
+																<div class="col">
+																</div>
+																<div class="p-0">
+																	<div class="pull right">
+																		<img class="coronet_logo_teal"
+																			[src]="'assets/images/coronet-logo.svg' | svgInline | async"/>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<!--end of Security Health Advisor When LWS is disabled-->
+												</div>
+											</div>
+										</div>
+									</div>
                                 </div>
-                            </div>
-                            <div class="row mb-40">
-                                <div class="col col-12" [ngClass]="{'offline':!isOnline}">
-                                    <vtr-widget-questions [title]="'homeSecurity.notification.notifications' | translate"
-                                        [description]="'homeSecurity.notification.recent' | translate "
-                                        [items]="notificationItems?.notificationItem" [clickable]="false"
-                                        [chevronVisibility]=false>
-                                    </vtr-widget-questions>
-                                </div>
-                            </div>
+							</div>
+							<div class="row article-card">
+								<div class="col col-12">
+									<vtr-container-card order="2" [itemID]="cardContentPositionB.Id"
+										[img]="cardContentPositionB.FeatureImage"
+										[title]="cardContentPositionB.Title"
+										[logoText]="cardContentPositionB.BrandName"
+										[action]="cardContentPositionB.Action"
+										[actionType]="cardContentPositionB.ActionType"
+										[actionLink]="cardContentPositionB.ActionLink" [type]="'article'"
+										[ratioX]="4" [ratioY]="4"
+										type="corner-article"
+										cornerShift="large"
+										sideFlag="r"
+										ariaLabel="chs-modal-right-article"
+										containerCardId="chs-modal-right-article">
+									</vtr-container-card>
+								</div>
+							</div>
                         </div>
                     </div>
-                </div>
+				</div>
+				<div class="bottom-content w-100 d-block d-md-none">
+					<div class="cutting-line"></div>
+					<vtr-widget-powered-by-info
+						[title]="'homeSecurity.overview.poweredBy'"
+						[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+						[imgUrl]="'assets/images/coronet-logo.svg'">
+					</vtr-widget-powered-by-info>
+				</div>
             </div>
         </div>
     </div>

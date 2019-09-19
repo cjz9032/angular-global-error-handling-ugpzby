@@ -1,42 +1,70 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { isUndefined } from 'util';
+import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
 @Component({
 	selector: 'vtr-modal-add-apps',
 	templateUrl: './modal-add-apps.component.html',
-	styleUrls: ['./modal-add-apps.component.scss']
+	styleUrls: [ './modal-add-apps.component.scss' ]
 })
-export class ModalAddAppsComponent implements OnInit, OnChanges {
+export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	statusAskAgain: boolean;
-	@Input() loaderData: any;
 	@Input() showAppsModal: boolean;
-	@Input() runningListData: any[];
-	@Output() closeAddAppsModal = new EventEmitter<boolean>();
-	@Output() addAppToList = new EventEmitter<boolean>();
-	public loading: boolean;
-	public loadingNoApps: boolean;
-	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
+	@Output() closeAddAppsModal = new EventEmitter<any>();
+	@Output() addAppToList = new EventEmitter<any>();
+	public loading = true;
+	public loadingNoApps = false;
+	runningList: any = [];
+	public isChecked: any = [];
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
+	public statusitem;
+	//constructor() { }
 
 	ngOnInit() {
-		this.loading = this.loaderData.loading;
-		this.loadingNoApps = this.loaderData.noApps;
+		this.refreshRunningList();
+		document.getElementById('close').focus();
+	}
+	ngAfterViewInit() {
+		document.getElementById('close').focus();
 	}
 
-	addAppData(event: any) {
-		this.addAppToList.emit(event);
+	async refreshRunningList() {
+		try {
+			const result: any = await this.gamingAutoCloseService.getAppsAutoCloseRunningList();
+			this.runningList = [];
+			if (result && !isUndefined(result.processList)) {
+				this.runningList = result.processList || [];
+			}
+			this.loadingNoApps = this.runningList.length === 0 ? true : false;
+			this.loading = false;
+			setTimeout(() => {
+				document.getElementById('close').focus();
+			}, 100);
+		} catch (error) {
+			this.loading = false;
+			this.loadingNoApps = true;
+			setTimeout(() => {
+				document.getElementById('close').focus();
+			}, 100);
+		}
+	}
+
+	addAppData(event: any, i) {
+		this.isChecked[i] = !this.isChecked[i];
+		this.statusitem = this.isChecked[i];
+		this.addAppToList.emit({ checked: this.isChecked[i], app: event.target.value });
 	}
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
 	}
 
-	ngOnChanges(changes: any) {
-		if (this.loading) {
-			this.loading = this.loaderData.loading;
-		}
-		if (this.loadingNoApps) {
-			this.loadingNoApps = this.loaderData.noApps;
+	runappKeyup(event, index) {
+		if (event.which === 9) {
+			if (index === this.runningList.length - 1) {
+				let txt1 = document.getElementById('close');
+				txt1.focus();
+			}
 		}
 	}
 }

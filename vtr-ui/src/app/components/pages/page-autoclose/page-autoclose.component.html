@@ -1,8 +1,17 @@
 <div class="vtr-page-device-gaming vtr-page container-fluid macro-key-subpage">
+	<div class="row" *ngIf="!isOnline">
+		<div class="col col-12 px-40 pb-40">
+			<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+				[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+				[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
+				[isButtonVisible]="false" id="dashboard-btn-connectivity">
+			</vtr-widget-offline-info>
+		</div>
+	</div>
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [title]="'gaming.autoClose.title' | translate" [backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate" [backId]="backId">
+				[back]="'common.ui.back' | translate" [backId]="backId" [ariaLabel]="'Back to dashboard'">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -20,16 +29,16 @@
 												<div class="container-fluid">
 													<div class="row">
 														<div class="col-sm-12">
-															<vtr-ui-switch-onoff [value]="toggleStatus"
-																(toggle)="toggleAutoClose($event)" vtrMetrics
-																metricsEvent="featureClick">
-															</vtr-ui-switch-onoff>
+															<vtr-ui-toggle [toggleId]="'Auto close '"
+																(toggle)="toggleAutoClose($event)"
+																[value]="toggleStatus">
+															</vtr-ui-toggle>
 															<p class="intro-text">
 																{{'gaming.autoClose.introLine' | translate}}</p>
 															<vtr-widget-autoclose [appListData]="autoCloseAppList"
 																(actionModal)="openTargetModal()"
-																(initRunningList)="refreshRunningList()"
-																(removeFromList)="deleteAppFromList($event)">
+																(removeFromList)="deleteAppFromList($event)"
+																[modalStatus]="showAppsModal || showTurnOnModal">
 															</vtr-widget-autoclose>
 														</div>
 													</div>
@@ -84,6 +93,6 @@
 	(actionTurnOn)="showTurnOnModal=false;initTurnOnAction()">
 </vtr-modal-turn-on>
 
-<vtr-modal-add-apps *ngIf="showAppsModal" [loaderData]="loadingContent" [runningListData]="runningList"
-	(addAppToList)="addAppDataToList($event)" (closeAddAppsModal)="modalCloseAddApps($event)">
+<vtr-modal-add-apps *ngIf="showAppsModal" (addAppToList)="addAppDataToList($event)"
+	(closeAddAppsModal)="modalCloseAddApps($event)">
 </vtr-modal-add-apps>

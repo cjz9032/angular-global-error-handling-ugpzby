@@ -23,7 +23,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
 import { CommonPipeModule } from '../common/common-pipe.module';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
 
 @NgModule({
@@ -53,7 +55,8 @@ import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/wid
 		ReactiveFormsModule,
 		NgbModalModule,
 		CommonPipeModule,
-		PageLayoutModule
+		PageLayoutModule,
+		AppSearchModule
 	],
 	exports: [
 		MetricsModule,
@@ -65,6 +68,7 @@ import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/wid
 		FormsModule,
 		ReactiveFormsModule,
 		PageLayoutModule,
+		AppSearchModule,
 		WidgetDashboardWarrantyComponent
 	],
 	providers: [ MockService ],
@@ -75,5 +79,6 @@ export class HardwareDashboardModule {
 	constructor() {
 		library.add(faTimes);
 		library.add(faExclamationCircle);
+		library.add(faCheckCircle);
 	}
 }

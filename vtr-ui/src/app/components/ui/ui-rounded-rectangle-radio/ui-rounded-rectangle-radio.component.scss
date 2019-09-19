@@ -22,6 +22,10 @@
 		width: 18rem;
 		margin-right: 1rem;
 	}
+	@media #{$mediaquery_X42}{
+		width: 21rem;
+		margin-right: 1rem;
+	}
 	@media #{$mediaquery_X16} {
 		width: 16.5rem;
 		margin-right: 1rem;
@@ -51,7 +55,7 @@
 
 			// }
 			position: absolute;
-			top: 1.8rem;
+			top: 50%;
 			left: 6rem;
 			color: $main_darkest;
 			font-size: 1.5rem;
@@ -59,6 +63,7 @@
 			word-wrap: break-word;
 			word-break: break-all;
 			padding-right: 1rem;
+			transform: translateY(-50%);
 		}
 
 		.icon-circle {
@@ -106,4 +111,7 @@
 		border: 0.3rem solid $shade_lightest;
 		// transition: all 50ms ease-in;
 	}
+}
+.large-width {
+	width: 29rem;
 }

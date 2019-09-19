@@ -66,6 +66,12 @@
 					font-size: 1.8rem;
 					color: $gaming_info_link;
 					font-weight: bold;
+					@media #{$black-on-white} {
+						color: $high-contrast-grey;
+					}
+					@media #{$white-on-black} {
+						color: $high-contrast-grey;
+					}
 				}
 				.info-link {
 					color: $gaming_info_link;
@@ -74,6 +80,14 @@
 						color: $gaming_info_link_hover;
 						border-color: $gaming_info_link_hover;
 						text-decoration: none;
+						@media #{$black-on-white}{
+							color: $gaming_darkest;
+							border-color: $gaming_darkest;
+						}
+						@media #{$white-on-black}{
+							color: $gaming_lightest;
+							border-color: $gaming_lightest;
+						}
 					}
 				}
 			}
@@ -162,6 +176,12 @@
 					white-space: pre-wrap;
 					word-break: keep-all;
 					pointer-events: none;
+					@media #{$black-on-white}{
+						background-color: $high-contrast-grey;
+					}
+					@media #{$white-on-black}{
+						background-color: $high-contrast-grey;
+					}
 					&::after {
 						content: "";
 						position: absolute;
@@ -172,6 +192,15 @@
 						transform: rotate(45deg);
 						bottom: -1rem;
 						left: calc(50% - 1.5rem);
+						z-index: -1;
+						@media #{$black-on-white}{
+							border-bottom-color: $high-contrast-grey;
+							border-left-color: transparent;
+						}
+						@media #{$white-on-black}{
+							border-bottom-color: $high-contrast-grey;
+							border-left-color: transparent;
+						}
 					}
 					p {
 						font-size: 1.6rem;
@@ -282,6 +311,12 @@
 								left: 0;
 								width: 100%;
 								background-color: $gaming_darker;
+								@media #{$black-on-white}{
+									background-color: $high-contrast-grey;
+								}
+								@media #{$white-on-black}{
+									background-color: $high-contrast-grey;
+								}
 							}
 						}
 						.stack-label {
@@ -379,6 +414,12 @@
 								height: 27rem;
 								border-radius: 13.5rem 0 0 13.5rem;
 							}
+							@media #{$black-on-white}{
+								background-color: $high-contrast-grey;
+							}
+							@media #{$white-on-black}{
+								background-color: $high-contrast-grey;
+							}
 							.mask-ring {
 								width: 34.5rem;
 								height: 34.5rem;
@@ -389,6 +430,12 @@
 								@media #{$mediaquery_6} {
 									width: 27rem;
 									height: 27rem;
+								}
+								@media #{$black-on-white}{
+									background-color: $high-contrast-grey;
+								}
+								@media #{$white-on-black}{
+									background-color: $high-contrast-grey;
 								}
 							}
 						}
@@ -409,6 +456,12 @@
 									width: 13.5rem;
 									height: 27rem;
 									border-radius: 0 13.5rem 13.5rem 0;
+								}
+								@media #{$black-on-white}{
+									background-color: $high-contrast-grey;
+								}
+								@media #{$white-on-black}{
+									background-color: $high-contrast-grey;
 								}
 								.mask-ring {
 									left: -17.25rem;
@@ -682,12 +735,24 @@
 										border-radius: calc(0.94 * #{$gaming_hd_diameter_xs}) 0 0
 											calc(0.94 * #{$gaming_hd_diameter_xs});
 									}
+									@media #{$black-on-white}{
+										background-color: $high-contrast-grey;
+									}
+									@media #{$white-on-black}{
+										background-color: $high-contrast-grey;
+									}
 									.mask-ring {
 										width: 100%;
 										height: 100%;
 										position: absolute;
 										left: 0;
 										background-color: $gaming_hdd_ring;
+										@media #{$black-on-white}{
+											background-color: $high-contrast-grey;
+										}
+										@media #{$white-on-black}{
+											background-color: $high-contrast-grey;
+										}
 									}
 								}
 								&.right {

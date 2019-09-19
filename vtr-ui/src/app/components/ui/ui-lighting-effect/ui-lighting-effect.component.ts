@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter, ViewChild } from '@angular/core';
 import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-ui-lighting-effect',
 	templateUrl: './ui-lighting-effect.component.html',
-	styleUrls: ['./ui-lighting-effect.component.scss'],
+	styleUrls: [ './ui-lighting-effect.component.scss' ],
 	host: {
 		'(document:click)': 'generalClick($event)'
 	}
@@ -26,10 +26,14 @@ export class UiLightingEffectComponent implements OnInit {
 	@Input() effectOptionName: string;
 	public selectedOption: any;
 	@Input() defaultLang: any;
-	constructor(private elementRef: ElementRef) { }
+	@ViewChild('dropdownLightingEle', { static: false })
+	dropdownEle: ElementRef;
+	intervalObj: any;
+	isItemsFocused: boolean = false;
 
-	ngOnInit() {
-	}
+	constructor(private elementRef: ElementRef) {}
+
+	ngOnInit() {}
 
 	public toggleOptions() {
 		this.showOptions = !this.showOptions;
@@ -38,6 +42,22 @@ export class UiLightingEffectComponent implements OnInit {
 			this.buttonName = 'Hide';
 		} else {
 			this.buttonName = 'Show';
+		}
+	}
+
+	itemsFocused() {
+		if (this.showOptions && !this.isItemsFocused) {
+			this.intervalObj = setInterval(() => {
+				if (this.dropdownEle) {
+					if (this.dropdownEle.nativeElement.querySelectorAll('li:focus').length === 0) {
+						this.showOptions = false;
+						this.isItemsFocused = false;
+						clearInterval(this.intervalObj);
+					}
+				}
+			}, 100);
+
+			this.isItemsFocused = true;
 		}
 	}
 
@@ -54,6 +74,7 @@ export class UiLightingEffectComponent implements OnInit {
 
 		this.showOptions = false;
 		this.change.emit(option);
+		document.getElementById('');
 	}
 
 	public changeDescription(option) {
@@ -73,6 +94,7 @@ export class UiLightingEffectComponent implements OnInit {
 			}
 		}
 	}
+
 	ngOnChanges(changes) {
 		if (!isUndefined(this.options)) {
 			if (!isUndefined(this.options)) {
@@ -89,6 +111,5 @@ export class UiLightingEffectComponent implements OnInit {
 		// 	}
 
 		// }
-
 	}
 }

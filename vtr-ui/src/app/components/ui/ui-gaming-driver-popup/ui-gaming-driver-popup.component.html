@@ -2,27 +2,34 @@
 	<div class="modal-body vtr-ui-gaming-driver-popup">
 		<div class="row justify-content-end">
 			<div class="btn-close">
-				<button type="button" class="close" aria-hidden="true" (click)="close()" vtrMetrics [metricsItem]="'driverPopup_close'"
-					metricsEvent="featureClick" id="gaming_driverPopup_close" attr.aria-label="gaming_driverPopup_close">
+			<a type="button" class="close" aria-hidden="true" (click)="close()"
+			tabindex="1" (keydown.enter)="close()"
+			 vtrMetrics [metricsItem]="'driverpopup_close'"
+					metricsEvent="featureClick" id="gaming_driverPopup_close" aria-label="gaming driverPopup close" role="link" aria-labelledby="driver_popup_close">
 					<fa-icon [icon]="['fal', 'times']"></fa-icon>
-				</button>
+			</a>
 			</div>
 		</div>
-		<div class="content-body">
+		<div class="content-body" role="dialog" aria-labelledby="driver_popup" tabindex="0">
 			<h1>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</h1>
 			<p *ngIf="!isLightingText">{{popupText | translate}}</p>
 			<p *ngIf="isLightingText">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</p>
 		</div>
 		<hr>
 		<div class="row">
-			<button class="btn enable-button" vtrMetrics
+			<a class="btn enable-button" vtrMetrics tabindex="1"
 				[metricsItem]="'driverPopup_install'"
 				metricsEvent="featureClick"
-				(click)="systemUpdatePage()" id="gaming_driverPopup_install" attr.aria-label="gaming_driverPopup_install">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</button>
-			<a (click)="close()" vtrMetrics
-				[metricsItem]="'driverPopup_cancel'"
-				metricsEvent="featureClick"
-				class="cancel-link active" id="gaming_driverPopup_cancel" attr.aria-label="gaming_driverPopup_cancel">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
+				(click)="systemUpdatePage()"  (keydown.enter)="systemUpdatePage()"
+				 id="gaming_driverPopup_install" aria-label="gaming driverPopup install" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</a>
+			<a (click)="close()" vtrMetrics tabindex="1"
+				[metricsItem]="'driverpopup_cancel'"
+				metricsEvent="featureClick"  (keydown.enter)="close()"
+				(keyup)="runappKeyup($event)"
+				class="cancel-link active" id="gaming_driverPopup_cancel" aria-label="gaming driverPopup cancel" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
 		</div>
 	</div>
+	<span id="driver_popup" style="visibility: hidden;">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</span>
+	<span id="driver_popup_close" style="visibility: hidden;">close</span>
 </ui-gaming-driver-popup>
+

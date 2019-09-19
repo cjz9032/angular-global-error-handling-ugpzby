@@ -157,6 +157,9 @@
 						.downloading-text {
 							font-size: 1.4rem;
 							margin-bottom: 0.3rem;
+							span {
+								text-transform: lowercase;
+							}
 						}
 
 						.progress-box {
@@ -185,16 +188,20 @@
 
 			.btn-box {
 				width: 32rem;
-
+				max-width: 58%;
 			}
 
 			.btn-skip {
 				font-size: 1.6rem;
 				margin-right: 4rem;
 				text-decoration: underline;
+				max-width: 42%;
+				height: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 
 				&:hover {
-					// color: $main_dark;
 					text-decoration: none;
 				}
 			}

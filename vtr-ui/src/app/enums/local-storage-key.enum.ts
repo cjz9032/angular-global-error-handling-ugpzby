@@ -12,6 +12,7 @@ export enum LocalStorageKey {
 	SecurityOtherAntiVirus = '[LocalStorageKey] SecurityOtherAntiVirus',
 	SecurityOtherFirewall = '[LocalStorageKey] SecurityOtherFirewall',
 	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
+	SecurityMcAfeeMetricList = '[LocalStorageKey] SecurityMcAfeeMetricList',
 	SecurityWindowsDefenderStatusList = '[LocalStorageKey] SecurityWindowsDefenderStatusList',
 	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
 	SecurityOthersFirewallStatusList = '[LocalStorageKey] SecurityOthersFirewallStatusList',
@@ -28,7 +29,6 @@ export enum LocalStorageKey {
 	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
 	SecurityLandingScore = '[LocalStorageKey] SecurityLandingScore',
 	SecurityLandingMaliciousWifi = '[LocalStorageKey] SecurityLandingMaliciousWifi',
-	HomeProtectionDevicePosture = '[LocalStorageKey] HomeProtectionDevicePosture',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
 	LidFakeDeviceID = '[LocalStorageKey] LidFakeDeviceID',
@@ -46,6 +46,8 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
+	ConnectedHomeSecurityDevicePosture = '[LocalStorageKey] ConnectedHomeSecurityDevicePosture',
+	ConnectedHomeSecurityLocation = '[LocalStorageKey] ConnectedHomeSecurityLocation',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
 	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
 	NetworkBoosNeedToAskPopup = '[LocalStorageKey] NetworkBoosNeedToAskPopup',
@@ -158,7 +160,30 @@ export enum LocalStorageKey {
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
-	UPEUserID = '[LocalStorageKey] UPEUserID',
 	BetaUser = '[LocalStorageKey] BetaUser',
-	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability'
+	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
+	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
+	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
+	EasyResumeCapability = '[LocalStorageKey] EasyResumeCapability',
+	VantageToolbarCapability = '[LocalStorageKey] VantageToolbarCapability',
+	EnergyStarCapability = '[LocalStorageKey] EnergyStarCapability',
+	AirplanePowerModeCapability = '[LocalStorageKey] AirplanePowerModeCapability',
+	BatteryChargeThresholdCapability = '[LocalStorageKey] BatteryChargeThresholdCapability',
+	ExpressChargingCapability = '[LocalStorageKey] ExpressChargingCapability',
+	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability',
+	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
+	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability',
+
+	// Apps For You storage key
+	UnreadMessageCount = '[LocalStorageKey] UnreadMessageCount',
+
+	SmartAssistCache = '[LocalStorageKey] SmartAssistCache',
+	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
+
+	// Ad policy local storage key
+	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
+	// App Search
+	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
+	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+
 }

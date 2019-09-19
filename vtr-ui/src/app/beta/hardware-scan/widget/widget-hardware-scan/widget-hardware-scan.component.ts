@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, NgZone, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { HardwareScanService } from '../../services/hardware-scan/hardware-scan.service';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan',
@@ -21,6 +22,7 @@ export class WidgetHardwareScanComponent implements OnInit {
 	@Input() percent = 0;
 	@Input() showProgress = false;
 	@Input() disableQuickScan: boolean;
+	@Input() disableCancel: boolean;
 	@Input() tooltipInformation: any;
 	@Input() offlineText: string;
 	@Input() isOnline = true;
@@ -30,7 +32,7 @@ export class WidgetHardwareScanComponent implements OnInit {
 	@Output() checkCancel = new EventEmitter();
 	@Output() checkAnchor = new EventEmitter();
 
-	constructor(private translate: TranslateService) { }
+	constructor(private hardwareScanService: HardwareScanService,private translate: TranslateService) { }
 
 	ngOnInit() { }
 
@@ -46,5 +48,19 @@ export class WidgetHardwareScanComponent implements OnInit {
 	onCancel() {
 		this.showProgress = true;
 		this.checkCancel.emit();
+	}
+
+	public getFinalResultCode() {
+		if (this.hardwareScanService) {
+			return this.hardwareScanService.getFinalResultCode();
+		}
+		return '';
+	}
+
+	public getTooltipInformation() {
+		if (this.hardwareScanService) {
+			return this.hardwareScanService.getFinalResultDescription();
+		}
+		return '';
 	}
 }

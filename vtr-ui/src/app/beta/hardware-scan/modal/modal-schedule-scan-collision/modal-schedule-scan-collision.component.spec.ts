@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalScheduleScanCollisionComponent } from './modal-schedule-scan-collision.component';
 
-describe('ModalScheduleScanCollisionComponent', () => {
+xdescribe('ModalScheduleScanCollisionComponent', () => {
   let component: ModalScheduleScanCollisionComponent;
   let fixture: ComponentFixture<ModalScheduleScanCollisionComponent>;
 

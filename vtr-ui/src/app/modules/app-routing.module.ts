@@ -45,12 +45,20 @@ const routes: Routes = [
 		loadChildren: './support/support.module#SupportModule'
 	},
 	{
+		path: 'apps-for-you/:id',
+		loadChildren: './apps-for-you/apps-for-you.module#AppsForYouModule'
+	},
+	{
 		path: 'android',
 		loadChildren: './android/android-dashboard.module#AndroidDashboardModule'
 	},
 	{
 		path: 'beta',
 		loadChildren: '../beta/beta.module#BetaModule'
+	},
+	{
+		path: 'device/smart-performance',
+		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
 	},
 	{
 		path: '',
@@ -61,6 +69,8 @@ const routes: Routes = [
 		path: '**',
 		component: HomeComponent
 	}
+
+
 ];
 
 

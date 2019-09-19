@@ -16,6 +16,7 @@ import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
+import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -46,32 +47,39 @@ export class PageSmartAssistComponent implements OnInit {
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
+	public hpdSensorType = 0;
+	smartAssistCache: SmartAssistCache;
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
 			title: 'device.smartAssist.intelligentSecurity.title',
 			path: 'security',
-			sortOrder: 1
+			sortOrder: 1,
+			metricsItem: 'IntelligentSecurity'
 		},
 		{
 			title: 'device.smartAssist.intelligentScreen.title',
 			path: 'screen',
-			sortOrder: 2
+			sortOrder: 2,
+			metricsItem: 'IntelligentScreen'
 		},
 		{
 			title: 'device.smartAssist.intelligentMedia.heading',
 			path: 'media',
-			sortOrder: 3
+			sortOrder: 3,
+			metricsItem: 'IntelligentMedia'
 		},
 		{
 			title: 'device.smartAssist.activeProtectionSystem.title',
 			path: 'aps',
-			sortOrder: 4
+			sortOrder: 4,
+			metricsItem: 'ActiveProtectionSystem'
 		},
 		{
 			title: 'device.smartAssist.voice.title',
 			path: 'voice',
-			sortOrder: 5
+			sortOrder: 5,
+			metricsItem: 'Voice'
 		},
 
 	];
@@ -104,8 +112,33 @@ export class PageSmartAssistComponent implements OnInit {
 			this.initVisibility();
 			this.setIsThinkPad(this.machineType === 1);
 			this.setIntelligentSecurity();
+			this.initHPDSensorType();
 			this.setIntelligentScreen();
+			this.initDataFromCache();
 			this.initSmartAssist(true);
+		}
+	}
+
+	initDataFromCache() {
+		try {
+			this.smartAssistCache = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCache, undefined);
+			if (this.smartAssistCache !== undefined) {
+				this.intelligentSecurity = this.smartAssistCache.intelligentSecurity;
+				this.intelligentScreen = this.smartAssistCache.intelligentScreen;
+				this.intelligentMedia = this.smartAssistCache.intelligentMedia;
+				this.isAPSAvailable = this.smartAssistCache.isAPSAvailable;
+				this.hpdSensorType = this.smartAssistCache.hpdSensorType;
+			} else {
+				this.smartAssistCache = new SmartAssistCache();
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
+				this.smartAssistCache.intelligentMedia = this.intelligentMedia;
+				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
+				this.smartAssistCache.hpdSensorType = this.hpdSensorType;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			}
+		} catch (error) {
+			console.log('initDataFromCache', error);
 		}
 	}
 
@@ -145,6 +178,7 @@ export class PageSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.isZeroTouchLoginVisible = false;
 		this.intelligentSecurity.isIntelligentSecuritySupported = false;
 		this.intelligentSecurity.isWindowsHelloRegistered = false;
+		this.intelligentSecurity.isDistanceSensitivityVisible = false;
 	}
 
 	private setIntelligentScreen() {
@@ -170,17 +204,22 @@ export class PageSmartAssistComponent implements OnInit {
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
+
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 				this.initZeroTouchLock();
 				this.initZeroTouchLogin();
 			}
 			if (this.smartAssistCapability.isIntelligentMediaSupported && isFirstTimeLoad) {
 				this.intelligentMedia = this.smartAssistCapability.isIntelligentMediaSupported;
+				this.smartAssistCache.intelligentMedia = this.intelligentMedia;
 				this.getVideoPauseResumeStatus();
 			}
 			if (this.smartAssistCapability.isIntelligentScreenSupported) {
 				this.intelligentScreen.isIntelligentScreenVisible = true;
+				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 				this.initIntelligentScreen();
 			}
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
 	}
 
@@ -197,6 +236,8 @@ export class PageSmartAssistComponent implements OnInit {
 				if (!this.isAPSAvailable) {
 					this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'aps');
 				}
+				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			})
 			.catch((error) => { console.log('APS ERROR------------------', error.message); });
 	}
@@ -223,6 +264,9 @@ export class PageSmartAssistComponent implements OnInit {
 				this.smartAssistCapability.isIntelligentScreenSupported)) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'screen');
 			}
+
+			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
 			return EMPTY;
@@ -245,6 +289,8 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = responses[4];
 			this.intelligentSecurity.isWindowsHelloRegistered = responses[5];
 			console.log('PageSmartAssistComponent.Promise.ZeroTouchLogin()', responses, this.intelligentSecurity);
+			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.ZeroTouchLogin()', error.message);
 			return EMPTY;
@@ -273,6 +319,8 @@ export class PageSmartAssistComponent implements OnInit {
 			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
 			}
+			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			console.log('PageSmartAssistComponent.Promise.initZeroTouchLock()', responses, this.intelligentSecurity);
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error.message);
@@ -303,6 +351,9 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onHumanPresenceDetectStatusToggle($event: any) {
 		this.intelligentSecurity.isHPDEnabled = $event.switchValue;
+
+		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		// this.intelligentSecurityCopy = { ...this.intelligentSecurity };
 		// if (!this.intelligentSecurity.isHPDEnabled) {
 		// 	this.intelligentSecurity.isZeroTouchLoginEnabled = false;
@@ -322,6 +373,10 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onZeroTouchLoginStatusToggle(event: any) {
 		this.intelligentSecurity.isZeroTouchLoginEnabled = event.switchValue;
+
+		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 		this.smartAssist.setZeroTouchLoginStatus(this.intelligentSecurity.isZeroTouchLoginEnabled)
 			.then((isSuccess: boolean) => {
 				console.log('onZeroTouchLoginStatusToggle.setZeroTouchLoginStatus', isSuccess, this.intelligentSecurity.isZeroTouchLoginEnabled);
@@ -331,6 +386,10 @@ export class PageSmartAssistComponent implements OnInit {
 	public setZeroTouchLoginSensitivity(event: ChangeContext) {
 		console.log('setZeroTouchLoginSensitivity', event);
 		this.intelligentSecurity.zeroTouchLoginDistance = event.value;
+
+		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 		this.smartAssist.setZeroTouchLoginDistance(event.value)
 			.then((isSuccess: boolean) => {
 				console.log('setZeroTouchLoginSensitivity.setSelectedLockTimer', isSuccess, event.value);
@@ -340,6 +399,10 @@ export class PageSmartAssistComponent implements OnInit {
 	// this is invoked when auto lock feature is toggled
 	public onZeroTouchLockStatusToggle(event: any) {
 		this.intelligentSecurity.isZeroTouchLockEnabled = event.switchValue;
+
+		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 		this.smartAssist.setZeroTouchLockStatus(this.intelligentSecurity.isZeroTouchLockEnabled)
 			.then((isSuccess: boolean) => {
 				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess, this.intelligentSecurity.isZeroTouchLockEnabled);
@@ -348,6 +411,10 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onZeroTouchLockTimerChange(event: any, value: string) {
 		this.intelligentSecurity.autoScreenLockTimer = value;
+
+		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
 				console.log('onZeroTouchLockTimerChange.setSelectedLockTimer', isSuccess, value);
@@ -356,6 +423,10 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onDistanceSensitivityAdjustToggle(event: any) {
 		this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = event.switchValue;
+
+		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 		this.smartAssist.setZeroTouchLoginAdjustStatus(this.intelligentSecurity.isZeroTouchLoginAdjustEnabled)
 			.then((isSuccess: boolean) => {
 				console.log('onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus', isSuccess, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
@@ -364,6 +435,10 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onDisplayDimTimeChange($event: ChangeContext) {
 		this.intelligentScreen.readingOrBrowsingTime = $event.value;
+
+		this.smartAssistCache.intelligentScreen = this.intelligentScreen;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 		this.smartAssist.setReadingOrBrowsingTime($event.value)
 			.then((isSuccess: boolean) => {
 				console.log('onZeroTouchLockTimerChange.setSelectedLockTimer', isSuccess, $event.value);
@@ -381,6 +456,10 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onAutoScreenOffToggle(event) {
 		this.intelligentScreen.isAutoScreenOffEnabled = event.switchValue;
+
+		this.smartAssistCache.intelligentScreen = this.intelligentScreen;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 		this.smartAssist.setAutoScreenOffStatus(event.switchValue)
 			.then((isSuccess: boolean) => {
 				console.log('onAutoScreenOffToggle.setAutoScreenOffStatus', isSuccess, event.switchValue);
@@ -389,6 +468,10 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onKeepMyDisplayToggle(event) {
 		this.intelligentScreen.isReadingOrBrowsingEnabled = event.switchValue;
+
+		this.smartAssistCache.intelligentScreen = this.intelligentScreen;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+
 		this.smartAssist.setReadingOrBrowsingStatus(event.switchValue)
 			.then((isSuccess: boolean) => {
 				console.log('onKeepMyDisplayToggle.setReadingOrBrowsingStatus', isSuccess, event.switchValue);
@@ -439,6 +522,8 @@ export class PageSmartAssistComponent implements OnInit {
 						if (!response.available) {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
 						}
+						this.smartAssistCache.intelligentMedia = this.intelligentMedia;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 					}).catch(error => {
 						this.logger.error('getVideoPauseResumeStatus.error', error.message);
 						return EMPTY;
@@ -447,6 +532,24 @@ export class PageSmartAssistComponent implements OnInit {
 		} catch (error) {
 			this.logger.error('getVideoPauseResumeStatus' + error.message);
 			return EMPTY;
+		}
+	}
+
+	initHPDSensorType() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDSensorType()
+					.then((type: number) => {
+						this.hpdSensorType = type;
+						this.smartAssistCache.hpdSensorType = this.hpdSensorType;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+						console.log('getHPDSensorType: ', this.hpdSensorType);
+					}).catch(error => {
+						console.error('getHPDSensorType', error);
+					});
+			}
+		} catch (error) {
+			console.error('getHPDSensorType' + error.message);
 		}
 	}
 }

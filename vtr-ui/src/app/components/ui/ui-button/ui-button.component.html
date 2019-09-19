@@ -5,7 +5,7 @@
 			title="{{tooltip?label:''}}"
 			[disabled]="isDisabled"
 			type="button"
-			class="btn button"
+			class="button {{getButtonColor(buttonColor)}}"
 			vtrMetrics
 			[routerLink]="routerPath"
 			routerLinkActive="active"

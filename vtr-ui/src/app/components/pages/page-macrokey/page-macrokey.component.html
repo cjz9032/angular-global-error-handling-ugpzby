@@ -1,10 +1,17 @@
 <div class="vtr-page-device-gaming vtr-page container-fluid macro-key-subpage">
+		<div class="row" *ngIf="!isOnline">
+				<div class="col col-12 px-40 pb-40">
+					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
+						[isButtonVisible]="false" id="dashboard-btn-connectivity">
+					</vtr-widget-offline-info>
+				</div>
+			</div>
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="'gaming.macroKey.title' | translate"
-				[backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"
-				[backId]="backId">
+			<vtr-header-main [title]="'gaming.macroKey.title' | translate" [backarrow]="'&lt; '"
+				[back]="'common.ui.back' | translate" [backId]="backId" [ariaLabel]="'Back to dashboard'">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -28,40 +35,29 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<vtr-container-card order="1"
-											[itemID]="cardContentPositionA.Id"
+										<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
 											[img]="cardContentPositionA.FeatureImage"
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
 											[action]="cardContentPositionA.Action"
 											[actionType]="cardContentPositionA.ActionType"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'article'"
-											[ratioX]="4"
-											[ratioY]="4"
-											id="macro_key_crm_card_A"
-											aria-label="macro_key_crm_card_A"
-											[cardId]="'macro_key_crm_card'">
+											[actionLink]="cardContentPositionA.ActionLink" [type]="'article'"
+											[ratioX]="4" [ratioY]="4" id="macro_key_crm_card_A"
+											aria-label="macro_key_crm_card_A" [cardId]="'macro_key_crm_card'">
 										</vtr-container-card>
 									</div>
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<vtr-container-card order="2"
-											[itemID]="cardContentPositionB.id"
+										<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
 											[img]="cardContentPositionB.FeatureImage"
 											[caption]="cardContentPositionB.Description"
 											[title]="cardContentPositionB.Title"
 											[logoText]="cardContentPositionB.BrandName"
 											[action]="cardContentPositionB.Action"
 											[actionType]="cardContentPositionB.ActionType"
-											[actionLink]="cardContentPositionB.ActionLink"
-											[type]="'corner'"
-											[ratioX]="4"
-											[ratioY]="2"
-											[cornerShift]="'large'"
-											id="macro_key_crm_card_B"
-											aria-label="macro_key_crm_card_B"
-											[cardId]="'macro_key_crm_card'">
+											[actionLink]="cardContentPositionB.ActionLink" [type]="'corner'"
+											[ratioX]="4" [ratioY]="2" [cornerShift]="'large'" id="macro_key_crm_card_B"
+											aria-label="macro_key_crm_card_B" [cardId]="'macro_key_crm_card'">
 										</vtr-container-card>
 									</div>
 								</div>

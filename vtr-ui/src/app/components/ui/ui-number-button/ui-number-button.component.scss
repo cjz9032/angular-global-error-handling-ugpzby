@@ -73,6 +73,10 @@
 			line-height: 4.8rem;
 			margin-bottom: 1.2rem;
 			margin-right: 0.8rem;
+			a {
+				color: $gaming_dark;
+				text-decoration: none;
+			}
 			&:nth-child(3) {
 				margin-right: 0;
 			}
@@ -84,8 +88,19 @@
 			}
 			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover;
 			&.selected {
+				a{
+					color: $gaming_lightest;
+				}
 				opacity: 1;
 				color: $gaming_lightest;
+				@media #{$black-on-white}{	
+					background-color: $gaming_light_blue;				
+					border:0.1rem solid $dark;
+				}
+				@media #{$white-on-black}{	
+					background-color: $gaming_light_blue;				
+					border:0.1rem solid $light;
+				}				
 				background-color: $gaming_light_blue;
 				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart;
 				&.macro-exists {
@@ -93,6 +108,14 @@
 						position: relative;
 						&:after {
 							background-color: $gaming_lightest;
+							@media #{$black-on-white}{								
+								background-color: $light;
+								bottom: 0.4rem;
+							}
+							@media #{$white-on-black}{
+								background-color: $dark;
+								bottom: 0.4rem;
+							}	
 						}
 					}
 				}
@@ -110,7 +133,15 @@
 						border-radius: 0.5rem;
 						margin: auto;
 						left: 0px;
-						right: 0px;
+						right: 0px;	
+						@media #{$black-on-white}{								
+							background-color: $dark;
+							bottom: 0.4rem;
+						}
+						@media #{$white-on-black}{
+							background-color: $light;
+							bottom: 0.4rem;
+						}					
 					}
 				}
 			}

@@ -1,8 +1,14 @@
 <div class="vtr-ui-brightness-slider">
 	<ng5-slider [options]="options" (valueChange)="onValueChange($event)" (userChange)="onChange($event)"
-		[manualRefresh]="manualRefresh" [(value)]="lightingData" vtrMetrics [metricsItem]="'lighting_profile_brightness'" metricsEvent="featureClick" [id]="lightingBrightness" metricsParam="'lighting_profile_brightness'" metricsValue="{{lightingData}}" [attr.arial-label]="lightingBrightness"></ng5-slider>
+		[manualRefresh]="manualRefresh" [(value)]="lightingData" vtrMetrics
+		[metricsItem]="'lighting_profile_brightness'" metricsEvent="featureClick" [id]="lightingBrightness"
+		metricsParam="'lighting_profile_brightness'" metricsValue="{{lightingData}}" role="radiogroup"
+		[triggerFocus]="triggerFocus">
+	</ng5-slider>
 
-	<div class="row label" *ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">
+	<button type="button" id="sliderDetailsEle" tabindex="-1"></button>
+
+	<div class=" row label" *ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">
 		<div class="col">{{ minValueLegend }}</div>
 		<div class="col text-right">{{ maxValueLegend }}</div>
 	</div>

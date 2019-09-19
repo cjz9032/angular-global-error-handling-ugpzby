@@ -38,8 +38,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: false,
 			isChecked: false,
 			tooltipText: '',
-			id: 'quick_settings_thermalmode',
-			ariaLabel: 'quick_settings_thermalmode',
+			id: 'quicksettings thermalmode',
+			ariaLabel: 'thermal mode',
 			type: 'auto-updates',
 			settings: ''
 		},
@@ -58,8 +58,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id: 'quick_settings_repidcharge',
-			ariaLabel: 'quick_settings_repidcharge',
+			id: 'quicksettings repidcharge',
+			ariaLabel: 'repid charge',
 			type: 'gaming.dashboard.device.quickSettings.rapidCharge',
 			settings: ''
 		},
@@ -78,8 +78,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id: 'quick_settings_wifisecurity',
-			ariaLabel: 'quick_settings_wifisecurity',
+			id: 'quicksettings wifisecurity',
+			ariaLabel: 'wifi security',
 			type: 'auto-updates',
 			settings: ''
 		},
@@ -98,10 +98,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isSwitchVisible: true,
 			isChecked: false,
 			tooltipText: '',
-			id: 'quick_settings_dolby',
-			ariaLabel: 'quick_settings_dolby',
+			id: 'quicksettings dolby',
+			ariaLabel: 'dolby',
 			type: 'gaming.dashboard.device.quickSettings.dolby',
-			settings: 'quick_settings_dolby_gearicon'
+			settings: 'quicksettings_dolby_gear'
 		}
 	];
 
@@ -113,21 +113,27 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				header: 'gaming.dashboard.device.quickSettings.status.performance',
 				name: 'gaming.dashboard.device.quickSettings.status.performance',
 				description: 'gaming.dashboard.device.quickSettings.statusText.perText',
-				id: 'thermal_mode_performance',
+				id: 'thermal mode performance',
+				ariaLabel: 'performance',
+				metricitem: 'thermalmode_performance',
 				value: 3
 			},
 			{
 				header: 'gaming.dashboard.device.quickSettings.status.balance',
 				name: 'gaming.dashboard.device.quickSettings.status.balance',
 				description: 'gaming.dashboard.device.quickSettings.statusText.balText',
-				id: 'thermal_mode_balance',
+				id: 'thermal mode balance',
+				ariaLabel: 'balance',
+				metricitem: 'thermalmode_balance',
 				value: 2
 			},
 			{
 				header: 'gaming.dashboard.device.quickSettings.status.quiet',
 				name: 'gaming.dashboard.device.quickSettings.status.quiet',
 				description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
-				id: 'thermal_mode_quiet',
+				id: 'thermal mode quiet',
+				ariaLabel: 'quiet',
+				metricitem: 'thermalmode_quiet',
 				value: 1
 			}
 		]
@@ -303,10 +309,12 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	public onToggleStateChanged(event: any) {
 		const { name } = event.target;
+		let status = event.target.value;
+		status = status === "false" ? false : true;
 		if (name === 'gaming.dashboard.device.quickSettings.dolby') {
-			this.setDolbySettings(event.switchValue);
+			this.setDolbySettings(status);
 		} else if (name === 'gaming.dashboard.device.quickSettings.rapidCharge') {
-			this.setRapidChargeSettings(event.switchValue);
+			this.setRapidChargeSettings(status);
 		}
 	}
 	public async getDolbySettings() {

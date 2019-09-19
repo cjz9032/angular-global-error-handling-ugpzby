@@ -12,26 +12,19 @@
 			<div class="spinner-content w-100 text-center">
 				<div class="spinner-border text-primary progress-spinner" role="status"></div>
 			</div>
-			<div class="loading-text">Please wait while we prepare a list of the software that was included in the
-				purchase of your device.</div>
+			<div class="loading-text" [innerHTML]="'modernPreload.loadingDescription' | translate"></div>
 		</div>
 	</div>
 	<div class="content" *ngSwitchCase="PageNames.APP">
 		<div class="app-page">
 			<div class="landing-content">
 				<div class="title-box">
-					<div class="title">My Software</div>
-					<div class="sub-title">
-						Download and install software that was included in the purchase of your device.
-					</div>
+					<div class="title" [innerHTML]="'modernPreload.title' | translate"></div>
+					<div class="sub-title" [innerHTML]="'modernPreload.shortDescription' | translate"></div>
 				</div>
 			</div>
 			<div class="app-content">
-				<div class="description">
-					Click download below to redeem software that was purchased with your device.
-					If at any time you need to download your software again,
-					you can do so by clicking the My Software button in the Vantage menu.
-				</div>
+				<div class="description" [innerHTML]="'modernPreload.softwareDescription' | translate"></div>
 				<div class="row no-gutters" *ngIf="appList">
 					<div class="col-12 col-md-6 app-item" *ngFor="let app of appList">
 						<div class="custom-control custom-checkbox">
@@ -51,38 +44,33 @@
 							<div class="status-box download_available" *ngSwitchCase="statusEnum.NOT_INSTALL">
 								<img class="status-icon"
 									[src]="downloadIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text">Download Available</div>
+								<div class="status-text" [innerHTML]="'modernPreload.downloadAvailable' | translate"></div>
 							</div>
 							<div class="status-box download_complete" *ngSwitchCase="statusEnum.DOWNLOAD_COMPLETE">
 								<img class="status-icon"
 									[src]="successIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text">Download Complete</div>
+								<div class="status-text" [innerHTML]="'modernPreload.downloadComplete' | translate"></div>
 							</div>
-							<!-- <div class="status-box download_installing" *ngSwitchCase="statusEnum.INSTALLING">
-								<img class="status-icon"
-									[src]="successIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text">Installing</div>
-							</div> -->
 							<div class="status-box failed-install" *ngSwitchCase="statusEnum.FAILED_INSTALL">
 								<img class="status-icon"
 									[src]="errorIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text">Failed Install</div>
+								<div class="status-text" [innerHTML]="'modernPreload.failedInstall' | translate"></div>
 							</div>
 							<div class="status-box installed" *ngSwitchCase="statusEnum.INSTALLED">
 								<img class="status-icon"
 									[src]="successIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text">Installed</div>
+								<div class="status-text" [innerHTML]="'modernPreload.installed' | translate"></div>
 							</div>
 							<div class="status-box downloading" *ngSwitchCase="statusEnum.DOWNLOADING">
-								<div class="downloading-text">{{ app.progress }}% downloading</div>
+								<div class="downloading-text">{{ app.progress }}% <span [innerHTML]="'modernPreload.downloading' | translate"></span></div>
 								<div class="progress-box w-100">
 									<ngb-progressbar type="success" [value]="app.progress" [height]="'0.8rem'">
 									</ngb-progressbar>
 								</div>
 							</div>
 							<div>{{ app.company }}</div>
-							<div>Size: {{ app.size }}</div>
-							<div>Version: {{ app.version }}</div>
+							<div>{{'modernPreload.sizeText' | translate}}: {{ app.size }}</div>
+							<div>{{'modernPreload.versionText' | translate}}: {{ app.version }}</div>
 						</div>
 					</div>
 				</div>
@@ -91,46 +79,30 @@
 						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.DOWNLOAD"
 							(onClick)="installEntitledApp()" metricsEvent="FeatureClick" metricsParent="Modern Preload"
 							metricsItem="btn.Download" [isFullWidth]="true" [isDisabled]="checkedAppList.length === 0"
-							[label]="'Download'">
+							[label]="'modernPreload.download' | translate">
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.RESTART_DOWNLOAD"
 							(onClick)="installEntitledApp()" metricsEvent="FeatureClick" metricsParent="Modern Preload"
 							metricsItem="btn.RestartDownload" [isFullWidth]="true"
-							[isDisabled]="checkedAppList.length === 0" [label]="'Restart Download'">
+							[isDisabled]="checkedAppList.length === 0" [label]="'modernPreload.restartDownload' | translate">
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.DOWNLOADING" [isFullWidth]="true"
-							[isDisabled]="true" [label]="'Downloading...'">
+							[isDisabled]="true" [label]="'modernPreload.downloading' | translate">
 						</vtr-ui-button>
 					</div>
 					<a *ngIf="downloadButtonStatus !== downloadButtonStatusEnum.DOWNLOADING" vtrMetrics
 						metricsItem="ModernPreload.skipButton" metricsEvent="FeatureClick"
 						metricsParent="Modern Preload" id="modern-preload-skip-button"
 						attr.aria-label="modern-preload-skip-button" href="javascript:;" class="btn-skip"
-						(click)="closeModal()">
-						Skip
-					</a>
+						(click)="closeModal()" [innerHTML]="'modernPreload.skip' | translate"></a>
 					<a *ngIf="downloadButtonStatus === downloadButtonStatusEnum.DOWNLOADING" vtrMetrics
 						metricsItem="ModernPreload.CancelButton" metricsEvent="FeatureClick"
 						metricsParent="Modern Preload" id="modern-preload-cancel-button"
 						attr.aria-label="modern-preload-cancel-button" href="javascript:;" class="btn-skip"
-						(click)="cancel()">
-						Cancel
-					</a>
+						(click)="cancel()" [innerHTML]="'modernPreload.cancel' | translate"></a>
 				</div>
-				<div class="bottom-tips" *ngIf="!isAppInstallError">
-					<p>Note: After clicking Download, you may get a prompt from Windows to allow us to install the
-						software on your device. Once finished installing your apps will show up automatically on your
-						desktop or start menu.</p>
-					<p>You may close the My Software page and continue using Lenovo Vantage. Do not close Lenovo Vantage
-						during installation.</p>
-				</div>
-				<div class="bottom-tips" *ngIf="isAppInstallError">
-					<p>Alert: Something went wrong during the download or installation. Please make sure you are
-						connected to the internet and retry.
-						Remember to keep Vantage open while we install your software. You may close the My Software page
-						and continue to explore
-						Vantage or minimize Vantage while we complete your software installation.</p>
-				</div>
+				<div class="bottom-tips" *ngIf="!isAppInstallError" [innerHTML]="'modernPreload.noteDownloading' | translate"></div>
+				<div class="bottom-tips" *ngIf="isAppInstallError" [innerHTML]="'modernPreload.noteFailedDownload' | translate"></div>
 			</div>
 		</div>
 	</div>
@@ -138,10 +110,8 @@
 		<div class="app-page">
 			<div class="landing-content">
 				<div class="title-box">
-					<div class="title">My Software</div>
-					<div class="sub-title">
-						Download and install software that was included in the purchase of your device.
-					</div>
+					<div class="title" [innerHTML]="'modernPreload.title' | translate"></div>
+					<div class="sub-title" [innerHTML]="'modernPreload.shortDescription' | translate"></div>
 				</div>
 			</div>
 			<div class="error-content">
@@ -150,24 +120,19 @@
 						<img [src]="errorIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
 					</div>
 					<div class="error-box w-100 pt-2">
-						<div class="description mb-2">
-							Sorry, there was a problem retrieving the software download information.
-						</div>
-						<div class="bottom-tips mb-5">Try clicking on the "Retry" button below or try again later by
-							clicking on the "My Software" button in the Vantage menu.</div>
+						<div class="bottom-tips mb-5" [innerHTML]="'modernPreload.errorDescription' | translate"></div>
 						<div class="button-content mb-4">
 							<div class="btn-box mr-5">
 								<vtr-ui-button (onClick)="retry()" metricsEvent="FeatureClick"
 									metricsParent="Modern Preload" metricsItem="btn.Retry" [isFullWidth]="true"
-									[label]="'Retry'">
+									[label]="'modernPreload.retry' | translate">
 								</vtr-ui-button>
 							</div>
 							<a vtrMetrics metricsItem="ModernPreload.skipButton" metricsEvent="FeatureClick"
 								metricsParent="Modern Preload" id="modern-preload-skip-button"
 								attr.aria-label="modern-preload-skip-button" href="javascript:;" class="btn-skip"
-								(click)="closeModal()">
-								Skip
-							</a>
+								[title]="'modernPreload.skip' | translate"
+								(click)="closeModal()" [innerHTML]="'modernPreload.skip' | translate"></a>
 						</div>
 					</div>
 				</div>

@@ -1,12 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { UserService } from 'src/app/services/user/user.service';
-import { CommonService } from 'src/app/services/common/common.service';
 import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-security-account.model';
-import { CHSAccountState } from '@lenovo/tan-client-bridge';
-import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
+import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 
 @Component({
 	selector: 'vtr-home-security-all-devices',
@@ -16,18 +11,28 @@ import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-secur
 export class HomeSecurityAllDevicesComponent implements OnInit {
 	@Input() common: HomeSecurityCommon;
 	@Input() account: HomeSecurityAccount;
-	@Input() allDevicesInfo: HomeSecurityAllDevice;
+	@Input() allDevices: HomeSecurityAllDevice;
 
 	pluginAvailable = true;
+	itemStatusIconClass = {
+		1: 'familyMembers',
+		2: 'places',
+		3: 'personalDevice',
+		4: 'wifiNetworks',
+		5: 'homeDevices',
+	};
 
+	constructor() {	}
 
-	constructor(
-		public shellService: VantageShellService,
-		public modalService: NgbModal,
-		public userService: UserService,
-		public commonService: CommonService,
-	) {	}
+	ngOnInit() {	}
 
-	ngOnInit() {
+	getItemStatusIconClass(item) {
+		let itemStatIconClass;
+		if (item.icon !== undefined && item.icon !== '') {
+			if (this.itemStatusIconClass.hasOwnProperty(item.icon)) {
+				itemStatIconClass = this.itemStatusIconClass[item.icon];
+			}
+		}
+		return itemStatIconClass;
 	}
 }

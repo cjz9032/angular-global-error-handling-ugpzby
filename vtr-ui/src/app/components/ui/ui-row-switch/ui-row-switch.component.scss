@@ -12,6 +12,9 @@
 			// padding-right: 3rem;
 			padding-right: 0;
 			display: flex;
+			@media #{$mediaquery_X42}{
+			padding-left: 0
+			}
 			> div.right-align {
 				float: right;
 				::ng-deep span.switch {
@@ -56,6 +59,17 @@
 				margin-bottom: 0.3rem;
 				margin-right: -0.2rem;
 				vertical-align: -0.12em;
+			}
+
+			.adminLogo {
+				width: 2rem;
+				height: 2rem;
+				margin-top: 0.5rem;
+				display: inline-block;
+				background-repeat: no-repeat no-repeat;
+				pointer-events: none;
+				background-image: url("../../../../assets/images/UACLogo.png");
+				background-position: center;
 			}
 		}
 

@@ -6,7 +6,7 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Container } from 'inversify';
+import { Container, BindingScopeEnum } from 'inversify';
 
 declare var Windows;
 
@@ -25,7 +25,9 @@ export class VantageShellService {
 			this.setConsoleLogProxy();
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
-			this.phoenix = Phoenix.default(new Container(), {
+			this.phoenix = Phoenix.default(new Container({
+				defaultScope: BindingScopeEnum.Singleton
+			}), {
 				metricsBroker: metricClient,
 				hsaPowerBroker: powerClient,
 				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
@@ -54,6 +56,7 @@ export class VantageShellService {
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
 				Phoenix.Features.BetaUser,
+				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy
 			]);
 		} else {
@@ -169,6 +172,62 @@ export class VantageShellService {
 		return '';
 	}
 
+	private normalizeEventName(eventName) {
+		eventName = eventName.toLowerCase();
+		switch (eventName) {
+			case 'firstrun':
+				eventName = 'FirstRun';
+				break;
+			case 'apploaded':
+				eventName = 'AppLoaded';
+				break;
+			case 'articledisplay':
+				eventName = 'ArticleDisplay';
+				break;
+			case 'appaction':
+				eventName = 'AppAction';
+				break;
+			case 'getenvinfo':
+				eventName = 'GetEnvInfo';
+				break;
+			case 'pageview':
+				eventName = 'PageView';
+				break;
+			case 'featureclick':
+				eventName = 'FeatureClick';
+				break;
+			case 'itemclick':
+				eventName = 'ItemClick';
+				break;
+			case 'itemview':
+				eventName = 'ItemView';
+				break;
+			case 'articleclick':
+				eventName = 'ArticleClick';
+				break;
+			case 'docclick':
+				eventName = 'DocClick';
+				break;
+			case 'articleview':
+				eventName = 'ArticleView';
+				break;
+			case 'docview':
+				eventName = 'DocView';
+				break;
+			case 'taskaction':
+				eventName = 'TaskAction';
+				break;
+			case 'settingupdate':
+				eventName = 'SettingUpdate';
+				break;
+			case 'userfeedback':
+				eventName = 'UserFeedback';
+				break;
+		}
+
+		return eventName;
+	}
+
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
@@ -185,6 +244,7 @@ export class VantageShellService {
 					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
+				const that = this;
 				metricClient.isInit = true;
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
@@ -192,8 +252,17 @@ export class VantageShellService {
 					try {
 						// automatically fill the OnlineStatus for page view event
 						if (!data.OnlineStatus) {
-							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
+
+						const isBeta = that.commonService.getLocalStorageValue(
+							LocalStorageKey.BetaUser
+						);
+						if (isBeta) {
+							data.IsBetaUser = true;
+						}
+
+						data.ItemType = that.normalizeEventName(data.ItemType);
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
 						return Promise.resolve({
@@ -291,6 +360,13 @@ export class VantageShellService {
 	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
 		if (this.phoenix) {
 			return this.phoenix.connectedHomeSecurity;
+		}
+		return undefined;
+	}
+
+	public getDevicePosture(): Phoenix.DevicePosture {
+		if (this.phoenix) {
+			return this.phoenix.devicePosture;
 		}
 		return undefined;
 	}
@@ -818,16 +894,14 @@ export class VantageShellService {
 	}
 
 	public getVantageStub(): any {
-		let vanStub = {
+		const win = window as any;
+		return win.VantageStub || {
 			appStartTime: 0,
 			navigateTime: 0,
-			domloadedTime: 0
+			domloadedTime: 0,
+			launchParms: null,
+			launchType: null
 		};
-
-		if (this.shell && this.shell.VantageStub.instance) {
-			vanStub = this.shell.VantageStub.instance;
-		}
-		return vanStub;
 	}
 
 	public getBetaUser(): any {
@@ -845,4 +919,11 @@ export class VantageShellService {
 		return undefined;
 	}
 	// ==================== End Hardware Scan
+
+	public getMouseAndTouchPad(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.inputControlLinks;
+		}
+		return undefined;
+	}
 }

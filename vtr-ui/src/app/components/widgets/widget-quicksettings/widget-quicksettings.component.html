@@ -58,7 +58,7 @@
 		</div>
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
 			<div *ngIf="!microphoneStatus.permission && cameraStatus.permission"
-				class="row permission-note mt-5">
+				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
 						<fa-icon [icon]="['fas', 'exclamation-circle']"
@@ -82,7 +82,7 @@
 				</div>
 			</div>
 			<div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission"
-				class="row permission-note mt-5">
+				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
 						<fa-icon [icon]="['fas', 'exclamation-circle']"
@@ -106,7 +106,7 @@
 				</div>
 			</div>
 			<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading"
-				class="row permission-note mt-5">
+				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
 						<fa-icon [icon]="['fas', 'exclamation-circle']"
@@ -147,6 +147,17 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="text-right link-text text-uppercase mt-4">
+			<a class="nav-link"
+				vtrMetrics
+				id="qs-lnk-my-device-settings"
+				attr.aria-label="qs-lnk-my-device-settings"
+				[metricsEvent]="'FeatureClick'"
+				[metricsItem]="'MyDeviceSettings'"
+				routerLink="/device/device-settings">
+				{{'common.menu.device.sub2' | translate}}
+			</a>
 		</div>
 	</div>
 </div>

@@ -3,6 +3,7 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 
@@ -15,10 +16,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
 	title = 'device.deviceSettings.inputAccessories.title';
 	public shortcutKeys: any[] = [];
-	public privacyIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
-	public kbdBlIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
-	public merlynIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
-	public zoomIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
+	public privacyIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
+	public kbdBlIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
+	public merlynIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
+	public zoomIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
 
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
@@ -26,21 +27,48 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public keyboardCompatibility: boolean;
 	public switchValue = false;
 	public stickyFunStatus = false;
+	public isTouchPadVisible = false;
+	public isMouseVisible = false;
+
+	public inputAccessoriesCapability: InputAccessoriesCapability;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private commonService: CommonService,
-		private logger: LoggerService,
+		private logger: LoggerService
 	) { }
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
-			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-			this.keyboardCompatibility = inputAccessoriesCapability.isKeyboardMapAvailable;
+			this.initDataFromCache();
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+		}
+		this.getMouseAndTouchPadCapability();
+	}
+
+	initDataFromCache() {
+		this.initHiddenKbdFnFromCache();
+	}
+
+	initHiddenKbdFnFromCache() {
+		try {
+			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+			if (this.inputAccessoriesCapability !== undefined) {
+				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
+				if (this.inputAccessoriesCapability.image && this.inputAccessoriesCapability.image.length > 0) {
+					this.image = this.inputAccessoriesCapability.image;
+				}
+				if (this.inputAccessoriesCapability.additionalCapabilitiesObj) {
+					this.additionalCapabilitiesObj = this.inputAccessoriesCapability.additionalCapabilitiesObj;
+				}
+			} else {
+				this.inputAccessoriesCapability = new InputAccessoriesCapability();
+			}
+		} catch (error) {
+			console.log('initHiddenKbdFnFromCache', error);
 		}
 	}
 
@@ -70,6 +98,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetKBDMachineType().then((value: any) => {
 					this.getKeyboardMap(layOutName, value);
+					this.inputAccessoriesCapability.image = this.image;
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					this.getAdditionalCapabilities();
 				})
 					.catch(error => {
@@ -199,6 +229,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 							magnifier: response[2],
 							backLight: response[3],
 						};
+						this.inputAccessoriesCapability.additionalCapabilitiesObj = this.additionalCapabilitiesObj;
+						this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					}
 				});
 			}
@@ -209,5 +241,26 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 	fnCtrlKey(event) {
 		this.switchValue = event.switchValue;
+	}
+
+	public launchProtocol(protocol: string) {
+		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
+			WinRT.launchUri(protocol);
+		}
+	}
+
+	public getMouseAndTouchPadCapability() {
+		if (this.keyboardService.isShellAvailable) {
+			Promise.all([
+				this.keyboardService.getMouseCapability(),
+				this.keyboardService.getTouchPadCapability()
+			]).then((responses: any[]) => {
+				this.logger.info('SubpageDeviceSettingsInputAccessoryComponent: getMouseAndTouchPadCapability.response', responses);
+				this.isMouseVisible = responses[0];
+				this.isTouchPadVisible = responses[1];
+			}).catch((error) => {
+				this.logger.error('SubpageDeviceSettingsInputAccessoryComponent: error in getMouseAndTouchPadCapability.Promise.all()', error);
+			});
+		}
 	}
 }

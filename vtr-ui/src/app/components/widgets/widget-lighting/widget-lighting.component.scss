@@ -70,11 +70,22 @@
 			}
 
 			input {
+				width: 25%;
+				height: 4.2rem;
 				opacity: 0;
 				position: absolute;
 				left: 0;
 				margin: 0;
 				padding: 0;
+				&:nth-child(3){
+					left: 25%;
+				}
+				&:nth-child(5){
+					left: 50%;
+				}
+				&:nth-child(7){
+					left: 75%;
+				}
 				& ~ label {
 					color: $gaming;
 					font-size: 1.8rem;
@@ -189,6 +200,7 @@
 					}
 				}
 				.icon {
+					margin-top: -0.5rem;
 					margin-right: -0.5rem;
 					font-size: 2rem;
 					transition: all .2s ease-in-out;
@@ -196,11 +208,11 @@
 					padding: 0.6rem;
 					color: $gaming_grey_lightest;
 					vertical-align: middle;
-					height:3.2rem;
-					widows:3.3rem;
-					display:inline-block;
-					text-align:center;
-					line-height:1.2rem;
+					height: 3.2rem;
+					widows: 3.3rem;
+					display: inline-block;
+					text-align: center;
+					line-height: 1.2rem;
 				}
 			}
 		}

@@ -108,13 +108,13 @@
 					<div class="row"
 						*ngIf="!displayNoteOnly">
 						<div class="col px-20">
-							<div class="auto-set-checkbox">
-								<input type="checkbox"
+							<div class="auto-set-checkbox custom-checkbox-gaming">
+								<input type="checkbox" class="custom-control-input"
 									[id]="isCheckedAutoInput + randomNumber"
 									[name]="isCheckedAutoInput + randomNumber"
 									[(ngModel)]="isCheckedAuto"
 									(ngModelChange)='toggleAutoChargeSettings($event)'>
-
+									<span class="checkmark"></span>
 								<label [for]="isCheckedAutoInput + randomNumber">{{checkboxText}}</label>
 							</div>
 						</div>
