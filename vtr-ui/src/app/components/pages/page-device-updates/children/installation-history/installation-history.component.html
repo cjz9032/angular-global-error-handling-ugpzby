@@ -14,7 +14,7 @@
 											<div class="item-text">{{'systemUpdates.installationHistory.name' | translate}}</div>
 										</div>
 										<div class="col col-3 sort-order">
-											<a id="su_installation_update_sort_order"
+											<a id="su_installation_update_sort_order" role="link"
 												tabindex="0"
 												(click)="toggleSortOrder()">
 												<div class="sort-heading-text">{{'systemUpdates.installationHistory.sortByDate' | translate}}</div>
@@ -29,7 +29,7 @@
 									</div>
 								</div>
 							</li>
-							<li *ngFor="let item of installationHistory" id="su_history_item">
+							<li *ngFor="let item of installationHistory" id="{{'su_history_item_'+item.packageID}}">
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col col-11 item-text">
@@ -39,13 +39,13 @@
 														[ngClass]="{'light-title':item.lightTitle}">
 														<div class="icon-check" *ngIf="item.status.toLocaleLowerCase() === 'installed'">
 																<div class="icon-bg">
-																	<fa-icon id="{{'su_history_icon_'+item.packageID +':success'}}" attr.aria-label="{{item.packageID +':success'}}"
+																	<fa-icon id="{{'su_history_icon_success_'+item.packageID}}" role="article"
 																		[icon]="['fas', 'check']"></fa-icon>
 																</div>
 														</div>
 														<div class="icon-times" *ngIf="item.status.toLocaleLowerCase() === 'failed'">
 																<div class="icon-bg">
-																	<fa-icon id="{{'su_history_icon_'+item.packageID +':failure'" attr.aria-label="{{item.packageID +':failure'}}"
+																	<fa-icon id="{{'su_history_icon_failure_'+item.packageID}}" role="article"
 																		[icon]="['fas', 'times']"></fa-icon>
 																</div>
 														</div>
@@ -91,9 +91,8 @@
 											</div>
 										</div>
 										<div class="col col-1 text-right">
-											<div class="expand"  id="su_installation_update_expand"
-											aria-label="su_installation_update_expand" >
-												<a class="mr-1" href="javascript:;" (click)="toggleExpand(item.packageID)"
+											<div class="expand"  id="{{'su_installation_update_expand_'+item.packageID}}" role="button">
+												<a href="javascript:;" (click)="toggleExpand(item.packageID)"
 													tabindex="0">
 													<fa-icon *ngIf="expandedRecordId!==item.packageID"
 														[icon]="['fas', 'plus-circle']"></fa-icon>

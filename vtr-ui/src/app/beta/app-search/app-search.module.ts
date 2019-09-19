@@ -31,6 +31,7 @@ import { faNetworkWired } from '@fortawesome/pro-light-svg-icons/faNetworkWired'
 import { faWrench } from '@fortawesome/pro-light-svg-icons/faWrench';
 import { faGem } from '@fortawesome/pro-light-svg-icons/faGem';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
+import { SearchTipsComponent } from './search-tips/search-tips.component';
 
 library.add(faSearch);
 library.add(faTimes);
@@ -59,7 +60,8 @@ library.add(faUsb);
 @NgModule({
 	declarations: [
 		SearchDropdownComponent,
-		AppSearchScrollerDirective
+		AppSearchScrollerDirective,
+		SearchTipsComponent
 	],
 	imports: [
 		FontAwesomeModule,
@@ -71,7 +73,8 @@ library.add(faUsb);
 	],
 	exports: [
 		SearchDropdownComponent,
-		AppSearchScrollerDirective
+		AppSearchScrollerDirective,
+		SearchTipsComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA,
 		NO_ERRORS_SCHEMA]
