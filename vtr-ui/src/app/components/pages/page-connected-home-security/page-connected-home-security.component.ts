@@ -157,7 +157,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 		if (this.devicePosture && this.devicePosture.value.length > 0) {
-			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.devicePosture, this.translateService);
+			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.devicePosture, cacheDevicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
 				homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
 			});
@@ -194,7 +194,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 		this.chs.on(EventTypes.devicePostureEvent, (devicePosture) => {
 			if (devicePosture && devicePosture.value.length > 0) {
-				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(devicePosture, this.translateService);
+				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(devicePosture, cacheDevicePosture, this.translateService);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
 					homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
 				});
