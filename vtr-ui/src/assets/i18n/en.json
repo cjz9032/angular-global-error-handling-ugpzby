@@ -1767,7 +1767,7 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device"
 			}
 		},
 		"wifisecurity": {

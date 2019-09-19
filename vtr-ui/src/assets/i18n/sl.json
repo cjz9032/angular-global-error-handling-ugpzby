@@ -1758,7 +1758,7 @@
                 "startFileScan": "Zaženite pregledovanje datotek"
             },
             "others": {
-                "othersProtection": "ponuja osnovno zaščito za vašo napravo"
+                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo"
             }
         },
         "wifisecurity": {

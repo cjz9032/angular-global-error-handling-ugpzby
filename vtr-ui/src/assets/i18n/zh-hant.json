@@ -1689,10 +1689,10 @@
             "common": {
                 "title": "防毒",
                 "back": "上一步",
-                "recommends": "為何 Lenovo 建議使用 <b>McAfee<b> 來保護您所有的裝置",
+                "recommends": "為何 Lenovo 建議使用 <b>McAfee</b> 來保護您所有的裝置",
                 "award": "獲獎肯定的防毒軟體",
                 "mcafeePremium": "McAfee LiveSafe 保護",
-                "protectedBy": "您目前受到 {{protectedName}} 的保護。但是，您可以透過 McAfee LiveSafe 獲得更好的保護。",
+                "protectedBy": "您目前受到{{protectedName}}的保護。但是，您可以透過 McAfee LiveSafe 獲得更好的保護。",
                 "virusScan": "病毒掃描",
                 "firewall": "防火牆",
                 "disabled": "已停用",
@@ -1758,7 +1758,7 @@
                 "startFileScan": "啟動檔案掃描"
             },
             "others": {
-                "othersProtection": "為您的裝置提供基本保護"
+                "othersProtection": "{{protectedName}}為您的裝置提供基本保護"
             }
         },
         "wifisecurity": {

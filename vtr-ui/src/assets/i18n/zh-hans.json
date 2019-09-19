@@ -1689,10 +1689,10 @@
             "common": {
                 "title": "病毒防护",
                 "back": "返回",
-                "recommends": "Lenovo 为何建议您采用 <b>McAfee<b> 来保护您的所有设备",
+                "recommends": "Lenovo 为何建议您采用 <b>McAfee</b> 来保护您的所有设备",
                 "award": "屡获殊荣的反病毒软件",
                 "mcafeePremium": "McAfee LiveSafe 高级保护",
-                "protectedBy": "您目前受到 {{protectedName}} 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。",
+                "protectedBy": "您目前受到{{protectedName}}的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。",
                 "virusScan": "病毒扫描",
                 "firewall": "防火墙",
                 "disabled": "已禁用",
@@ -1758,7 +1758,7 @@
                 "startFileScan": "启动文件扫描"
             },
             "others": {
-                "othersProtection": "为您的设备提供基本保护"
+                "othersProtection": "{{protectedName}}为您的设备提供基本保护"
             }
         },
         "wifisecurity": {
