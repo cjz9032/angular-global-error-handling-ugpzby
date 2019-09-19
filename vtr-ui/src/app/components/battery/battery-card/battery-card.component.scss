@@ -97,6 +97,14 @@
 				color: #f17f14;
 			}
 		}
+		.normal-ACAdapter-condition {
+			.icomoon-ConditionACAdapterError {
+				&:before {
+					color: #30d487;
+				}
+			}
+		}
+
 		.icomoon-ConditionBadBattery {
 			&:before {
 				color: #e74c3c;
