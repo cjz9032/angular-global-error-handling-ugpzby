@@ -21,39 +21,37 @@
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
-				<div class="row">
-					<div *ngIf="item.Thumbnail"
-						class="image"
-						[style.background-image]="'url('+item.Thumbnail+')'">
-						<div *ngIf="item.Logo"
-							class="logo">
-							<span class="img"
-								*ngIf="item.Logo && item.Thumbnail">
-								<img src="{{item.Logo}}"
-									alt="{{item.LogoText}}">
-							</span>
-							<span *ngIf="item.LogoText"
-								class="text">{{item.LogoText}}</span>
-						</div>
+				<div *ngIf="item.Thumbnail"
+					class="image"
+					[style.background-image]="'url('+item.Thumbnail+')'">
+					<div *ngIf="item.Logo"
+						class="logo">
+						<span class="img"
+							*ngIf="item.Logo && item.Thumbnail">
+							<img src="{{item.Logo}}"
+								alt="{{item.LogoText}}">
+						</span>
+						<span *ngIf="item.LogoText"
+							class="text">{{item.LogoText}}</span>
 					</div>
-					<div *ngIf="item.Title"
-						class="col col-12 content">
-						<div href="javascript:;"
-							class="title"
-							[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
-							[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-							[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
-						<div class="logo-text">
-							<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
-						</div>
-						<div *ngIf="item.ReadMore && item.Thumbnail"
-							[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
-							[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
-							[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
-							class="read-more">
-							<span class="link-label">Read More</span>
-							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-						</div>
+				</div>
+				<div *ngIf="item.Title"
+					class="col col-12 content">
+					<div href="javascript:;"
+						class="title"
+						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+					<div class="logo-text">
+						<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
+					</div>
+					<div *ngIf="item.ReadMore && item.Thumbnail"
+						[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						class="read-more">
+						<span class="link-label">Read More</span>
+						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 					</div>
 				</div>
 			</a>
@@ -83,38 +81,36 @@
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
-				<div class="row">
-					<div *ngIf="item.FeatureImage"
-						class="image"
-						[style.background-image]="'url('+item.FeatureImage+')'">
-						<div *ngIf="item.BrandImage"
-							class="logo">
-							<span class="img"
-								*ngIf="item.BrandImage && item.FeatureImage">
-								<img src="{{item.BrandImage}}"
-									alt="{{item.BrandName}}">
-							</span>
-							<span *ngIf="item.BrandName"
-								class="text">{{item.BrandName}}</span>
-						</div>
+				<div *ngIf="item.FeatureImage"
+					class="image"
+					[style.background-image]="'url('+item.FeatureImage+')'">
+					<div *ngIf="item.BrandImage"
+						class="logo">
+						<span class="img"
+							*ngIf="item.BrandImage && item.FeatureImage">
+							<img src="{{item.BrandImage}}"
+								alt="{{item.BrandName}}">
+						</span>
+						<span *ngIf="item.BrandName"
+							class="text">{{item.BrandName}}</span>
 					</div>
-					<div *ngIf="item.Title"
-						class="col col-12 content">
-						<div class="title"
-							[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
-							[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-							[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
-						<div class="logo-text">
-							<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
-						</div>
-						<div *ngIf="item.ActionLink && item.FeatureImage && item.Action"
-							[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
-							[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
-							[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
-							class="read-more">
-							<span class="link-label">{{item.Action}}</span>
-							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-						</div>
+				</div>
+				<div *ngIf="item.Title"
+					class="col col-12 content">
+					<div class="title"
+						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+					<div class="logo-text">
+						<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
+					</div>
+					<div *ngIf="item.ActionLink && item.FeatureImage && item.Action"
+						[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						class="read-more">
+						<span class="link-label">{{item.Action}}</span>
+						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 					</div>
 				</div>
 			</a>
