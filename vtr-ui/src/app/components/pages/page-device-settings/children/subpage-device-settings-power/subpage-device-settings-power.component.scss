@@ -188,9 +188,6 @@
 			text-align: left;
 			padding-left: 2rem;
 		}
-		input:focus + .checkmark + label {
-			outline: $focus_outline_dark;
-		}
 	}
 	.energystar-container {
 		width: 100%;
