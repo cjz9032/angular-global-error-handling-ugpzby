@@ -216,7 +216,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 			this.page = this.PageNames.ERROR;
 		} else if (!this.isOnline && this.page === this.PageNames.APP && this.nowInstallingAppID !== '') {
 			const setApp = this.appList.find(a => a.appID === this.nowInstallingAppID);
-			if (setApp.showStatus === this.statusEnum.DOWNLOADING || 
+			if (setApp.showStatus === this.statusEnum.DOWNLOADING ||
 				setApp.showStatus === this.statusEnum.INSTALLING) {
 				this.cancel();
 				this.isAppInstallError = true;
