@@ -29,7 +29,8 @@ export class DialogService {
 			const modal = this.modalService.open(ModalWifiSecurityInvitationComponent,
 			{
 				backdrop: 'static',
-				windowClass: 'wifi-security-location-modal'
+				windowClass: 'wifi-security-location-modal',
+				centered: true
 			});
 		}
 	}

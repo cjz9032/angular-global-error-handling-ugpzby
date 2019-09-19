@@ -1842,7 +1842,7 @@
 				"continue": "CONTINUE",
 				"cancel": "CANCEL",
 				"validateCode": "VALIDATE CODE",
-				"success": "You have Successfully joined your family's Connected Home Security",
+				"success": "You have successfully joined your family's Connected Home Security",
 				"canUse": "You can now start using Connected Home Security",
 				"tryAgain": "Incorrect code, please try again!",
 				"fail": "Incorrect code entered!",
