@@ -59,4 +59,8 @@ export class SearchDropdownComponent implements AfterViewInit {
 			this.searchService.search(keywords);
 		}, 100);
 	}
+
+	onKeyDown(event) {
+		event.fromAppSearch = true;
+	}
 }
