@@ -4,23 +4,23 @@
 		{
 			"name": "app",
 			"installMode": "prefetch",
-			"updateMode": "prefetch",
 			"resources": {
 				"files": [
 					"/index.html",
 					"/*.css",
-					"/assets/cms-cache/**",
-					"/assets/i18n/**"
+					"/assets/i18n/**",
+					"/assets/cms-cache/**"
 				]
 			}
 		},
 		{
 			"name": "assets",
 			"installMode": "lazy",
-			"updateMode": "lazy",
+			"updateMode": "prefetch",
 			"resources": {
 				"files": [
 					"/assets/**",
+					"!/assets/i18n/**",
 					"!/assets/privacy-json/trackers.json"
 				],
 				"urls": [
@@ -41,7 +41,7 @@
 				"https://cms.csw.lenovo.com/**"
 			],
 			"cacheConfig": {
-				"maxSize": 10,
+				"maxSize": 50,
 				"maxAge": "24h",
 				"timeout": "5s",
 				"strategy": "freshness"
