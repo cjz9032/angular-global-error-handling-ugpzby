@@ -1542,7 +1542,11 @@
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
             "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Nazad",
@@ -1713,7 +1717,7 @@
                 "buyNow": "Kupi odmah",
                 "buy": "Kupite, preuzmite i instalirajte McAfee zaštitu od virusa danas da biste iskoristili prednosti ovih bezbednosnih funkcija bankovnog nivoa",
                 "onlyBasic": "Ovde se nalaze samo osnove. Iako ste zaštićeni od nekih pretnji na mreži, možda ste i dalje izloženi drugima.",
-				"virus": "Zaštita od virusa",
+                "virus": "Zaštita od virusa",
                 "homeNetwork": "Zaštita kućne mreže",
                 "private": "Privatno, anonimno pregledanje",
                 "everyDevice": "Zaštita svakog uređaja",

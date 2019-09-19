@@ -1542,7 +1542,11 @@
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
             "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "上一頁",
@@ -1713,7 +1717,7 @@
                 "buyNow": "立即購買",
                 "buy": "立即購買、下載和安裝 McAfee 防毒保護，以運用這些銀行級安全功能",
                 "onlyBasic": "此處僅提供基本概念。雖然您可以抵禦部分的線上威脅，但仍然可能會遭受到其他威脅。",
-				"virus": "病毒防護",
+                "virus": "病毒防護",
                 "homeNetwork": "家用網路保護",
                 "private": "私密、匿名瀏覽",
                 "everyDevice": "每個裝置的保護",

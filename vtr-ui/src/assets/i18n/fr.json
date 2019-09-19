@@ -1542,7 +1542,11 @@
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
             "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Retour",

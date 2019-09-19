@@ -1542,7 +1542,11 @@
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
             "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Voltar",
@@ -1713,7 +1717,7 @@
                 "buyNow": "Comprar Agora",
                 "buy": "Compre, baixe e instale a proteção antivírus McAfee hoje para aproveitar esses recursos de segurança de nível banco",
                 "onlyBasic": "Apenas os princípios básicos aqui. Enquanto você está protegido contra algumas ameaças on-line, ainda poderá estar exposto a outras.",
-				"virus": "Proteção antivírus",
+                "virus": "Proteção antivírus",
                 "homeNetwork": "Proteção de rede doméstica",
                 "private": "Navegação privada e anônima",
                 "everyDevice": "Proteção para todos os dispositivos",
