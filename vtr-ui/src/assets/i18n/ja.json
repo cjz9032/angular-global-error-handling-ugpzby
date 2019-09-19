@@ -1541,8 +1541,12 @@
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
-            "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "poweredBy": "Coronet 搭載",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "戻る",
@@ -1758,7 +1762,7 @@
                 "startFileScan": "ファイルのスキャンを開始"
             },
             "others": {
-                "othersProtection": "は、デバイスに基本的な保護機能を提供します"
+                "othersProtection": "{{protectedName}}は、デバイスに基本的な保護機能を提供します"
             }
         },
         "wifisecurity": {

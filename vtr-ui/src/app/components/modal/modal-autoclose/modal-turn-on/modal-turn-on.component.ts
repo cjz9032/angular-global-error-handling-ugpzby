@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 	templateUrl: './modal-turn-on.component.html',
 	styleUrls: [ './modal-turn-on.component.scss' ]
 })
-export class ModalTurnOnComponent implements OnInit {
+export class ModalTurnOnComponent implements OnInit, AfterViewInit {
 	setAutoClose: any;
 	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
 
@@ -15,12 +15,16 @@ export class ModalTurnOnComponent implements OnInit {
 	@Output() actionNotNow = new EventEmitter<boolean>();
 	@Output() closeTurnOnModal = new EventEmitter<boolean>();
 	@Output() actionNeedAsk = new EventEmitter<any>();
+	public isChecked: any;
 	ngOnInit() {
-		const dialogFocus = document.getElementById('closeDialog');
-		dialogFocus.focus();
+		document.getElementById('closedialog').focus();
+	}
+	ngAfterViewInit() {
+		document.getElementById('closedialog').focus();
 	}
 
 	setAksAgain(event: any) {
+		this.isChecked = !this.isChecked;
 		this.actionNeedAsk.emit(event);
 	}
 
@@ -36,10 +40,9 @@ export class ModalTurnOnComponent implements OnInit {
 		this.closeTurnOnModal.emit(action);
 	}
 
-	keyDownFn(event) {
+	keydownFn(event) {
 		if (event.which === 9) {
-			const dialogFocus = document.getElementById('closeDialog');
-			dialogFocus.focus();
+			document.getElementById('closedialog').focus();
 		}
 	}
 }

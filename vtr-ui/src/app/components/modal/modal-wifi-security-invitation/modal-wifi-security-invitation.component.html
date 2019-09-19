@@ -16,7 +16,7 @@
 		</div>
 		<div class="join-info">
 			<div class="d-flex flex-column" [ngClass]="{'joinGroupSuccess':joinSuccess}">
-				<div *ngIf="joinSuccess" class="successIcon">
+				<div *ngIf="joinSuccess" class="successIcon pb-5">
 					<img [src]=" 'assets/images/connected-home-security/success-join.svg' | svgInline | async">
 				</div>
 				<div class="success pl-3" *ngIf="joinSuccess" [innerHTML]="'security.homeprotection.invitationcode.success' | translate"></div>

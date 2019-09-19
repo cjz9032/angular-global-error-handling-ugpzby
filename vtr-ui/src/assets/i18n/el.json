@@ -1541,8 +1541,12 @@
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
-            "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "poweredBy": "Υποστηρίζεται από το Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Πίσω",
@@ -1689,7 +1693,7 @@
             "common": {
                 "title": "Προστασία από ιούς",
                 "back": "ΠΙΣΩ",
-                "recommends": "Γιατί η Lenovo συνιστά το <b>McAfee</η> για την προστασία όλων των συσκευών σας",
+                "recommends": "Γιατί η Lenovo συνιστά το <b>McAfee</b> για την προστασία όλων των συσκευών σας",
                 "award": "Βραβευμένο λογισμικό προστασίας από ιούς",
                 "mcafeePremium": "Προστασία McAfee LiveSafe",
                 "protectedBy": "Προς το παρόν, προστατεύεστε με το {{protectedName}}. Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe.",
@@ -1758,7 +1762,7 @@
                 "startFileScan": "Έναρξη σάρωσης αρχείων"
             },
             "others": {
-                "othersProtection": "σάς προσφέρει βασική προστασία για τη συσκευή σας"
+                "othersProtection": "{{protectedName}} σάς προσφέρει βασική προστασία για τη συσκευή σας"
             }
         },
         "wifisecurity": {

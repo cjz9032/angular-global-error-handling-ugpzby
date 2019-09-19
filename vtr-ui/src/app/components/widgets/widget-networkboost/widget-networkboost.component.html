@@ -1,7 +1,7 @@
 <div class="autoclose-wrapper">
   <ul class="d-flex flex-wrap">
     <li class="add-icon">
-      <div (click)="openModal()" role="link"
+      <div (click)="openModal()" role="link" id="addButton"
        [ngClass]="{'isdisabled': runningAppsList && runningAppsList.length >=5}"
        (keyup.enter)="openModal()" [tabindex]="runningAppsList && runningAppsList.length >=5 ? -1 : 1"
        aria-label="Add button">
@@ -27,7 +27,7 @@
          <div placement="bottom" [title]="app.processDescription">
               {{app.processDescription}}
             </div>
-			<div class="remove-app" (click)="removeApp(app.processPath,i)" role="area"
+			<div class="remove-app" id="{{'remove'+i}}" (click)="removeApp(app.processPath,i)" role="area"
 				(keyup.enter)="removeApp(app.processPath,i)"  (focus)="app.isHovered=true" (focusout)="app.isHovered=false" [tabindex]="modalStatus? '-1':'1'" role="button"
 				attr.aria-label="{{'Remove '+ app.processDescription}}" role="button" >
 				<svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"

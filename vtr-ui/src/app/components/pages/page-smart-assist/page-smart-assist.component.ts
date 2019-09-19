@@ -178,6 +178,7 @@ export class PageSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.isZeroTouchLoginVisible = false;
 		this.intelligentSecurity.isIntelligentSecuritySupported = false;
 		this.intelligentSecurity.isWindowsHelloRegistered = false;
+		this.intelligentSecurity.isDistanceSensitivityVisible = false;
 	}
 
 	private setIntelligentScreen() {

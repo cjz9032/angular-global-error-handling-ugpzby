@@ -888,6 +888,22 @@
 						color: $gaming_grey_lightest;
 					}
 				}
+				.vtr-recover-bad-sectors {
+					background: $dark_cell;
+					.header{
+						.heading1 {
+							color: $gaming_lightest;
+						}
+					}
+					.text-regular {
+						color: $gaming_grey_lightest;
+					}
+					.hardware-lists-container {
+						.heading {
+							color: $gaming_lightest;
+						}
+					}
+				}
 				.vtr-page-shift-up{
 					.vtr-widget-hardware-scan-status{
 						background: $dark_cell;
@@ -1097,7 +1113,7 @@
 
 // hide by Bob Liu: VAN-8765
 .is-gaming,.gaming-help-popup,.battery-modal-size {
-	button:focus,
+	button:focus,span:focus,
 	*:focus {
 		outline: 0 !important;
 	}

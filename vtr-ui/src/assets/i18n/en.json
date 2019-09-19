@@ -1767,7 +1767,7 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device"
 			}
 		},
 		"wifisecurity": {
@@ -1805,7 +1805,7 @@
 			"errorMessage": {
 				"headerText": "Error",
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
-				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect",
+				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
 				"closeText": "close"
 			}
@@ -1842,7 +1842,7 @@
 				"continue": "CONTINUE",
 				"cancel": "CANCEL",
 				"validateCode": "VALIDATE CODE",
-				"success": "You have Successfully joined your family's Connected Home Security",
+				"success": "You have successfully joined your family's Connected Home Security",
 				"canUse": "You can now start using Connected Home Security",
 				"tryAgain": "Incorrect code, please try again!",
 				"fail": "Incorrect code entered!",

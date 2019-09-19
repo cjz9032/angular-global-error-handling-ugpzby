@@ -1541,8 +1541,12 @@
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
-            "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "poweredBy": "مشغّلة بواسطة Coronet", 
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "السابق‬",
@@ -1689,7 +1693,7 @@
             "common": {
                 "title": "مكافحة الفيروسات",
                 "back": "السابق",
-                "recommends": "توصي Lenovo باستخدام <b>McAfee<b> لحماية جميع أجهزتك",
+                "recommends": "توصي Lenovo باستخدام <b>McAfee</b> لحماية جميع أجهزتك",
                 "award": "برنامج مكافحة الفيروسات الحائز على جوائز",
                 "mcafeePremium": "حماية McAfee LiveSafe",
                 "protectedBy": "أنت محمي في الوقت الحالي من خلال {{protectedName}}. ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe.",
@@ -1758,7 +1762,7 @@
                 "startFileScan": "بدء فحص الملفات"
             },
             "others": {
-                "othersProtection": "يقدم لك الحماية الأساسية لجهازك"
+                "othersProtection": "يقدم لك الحماية الأساسية لجهازك {{protectedName}}"
             }
         },
         "wifisecurity": {

@@ -1,13 +1,15 @@
 <div class="gaming-help-popup">
 	<div class="modal-header">
-		<div class="modal-title"><img tabindex="-1" class="gaming-header-image"
-				src="./../../../../assets/images/gaming/legionEdge.png" _ngcontent-c6=""></div>
-		<button type="button" class="close" (click)="closeModal()" aria-label="close">
+		<div class="modal-title" tabindex="-1">
+			<img tabindex="-1" class="gaming-header-image" src="./../../../../assets/images/gaming/legionEdge.png"
+				_ngcontent-c6="">
+			</div>
+		<button type="button" tabindex="1" class="close" (click)="closeModal()" aria-label="close">
 			<fa-icon [icon]="['fas', 'times']"></fa-icon>
 		</button>
 	</div>
 
-	<div class="modal-body">
+	<div class="modal-body" tabindex="-1">
 		<div class="innerContent">
 			<p [innerHTML]="'gaming.dashboard.device.legionEdgeModal.line1' | translate"></p>
 			<p [innerHTML]="'gaming.dashboard.device.legionEdgeModal.line2' | translate"></p>
