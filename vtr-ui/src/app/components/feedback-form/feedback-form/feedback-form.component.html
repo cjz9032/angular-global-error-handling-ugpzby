@@ -15,23 +15,27 @@
 				<div class="form-check form-check-inline">
 					<input class="form-check-input"
 						type="radio"
+						tabindex="-1"
 						[formControlName]="qa.name"
 						[name]="qa.name"
 						[id]="qa.idYes"
 						[attr.aria-label]="qa.idYes"
 						[value]="true">
 					<label class="form-check-label"
+						tabindex="0"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
 				<div class="form-check form-check-inline">
 					<input class="form-check-input"
 						type="radio"
+						tabindex="-1"
 						[formControlName]="qa.name"
 						[name]="qa.name"
 						[id]="qa.idNo"
 						[attr.aria-label]="qa.idNo"
 						[value]="false">
 					<label class="form-check-label"
+						tabindex="0"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="line"></div>
@@ -66,6 +70,7 @@
 					class="d-inline-block dropdown-content">
 					<div class="dropdown-btn"
 						id="feedback-dropdown"
+						tabindex="0"
 						attr.aria-label="feedback-dropdown" ngbDropdownToggle>
 						<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
 					</div>
@@ -74,13 +79,15 @@
 						aria-labelledby="feedback-dropdown">
 						<div class="menu-pointer"></div>
 						<div class="dropdown-item" ngbDropdownItem
+							tabindex="0"
 							vtrMetrics
 							id="modal-btn-submitScreeenshot"
-						  	attr.aria-label="modal-btn-submitScreeenshot"
+							attr.aria-label="modal-btn-submitScreeenshot"
 							metricsItem="btn.SubmitScreenShot"
 							metricsEvent="FeatureClick"
 							metricsParent="Dialog.Feedback"
 							title="{{'dashboard.feedback.form.submitScreenShot' | translate}}"
+							(keyup.enter)="goToMailUtility()"
 							(click)="goToMailUtility()">
 							{{'dashboard.feedback.form.submitScreenShot' | translate}}
 						</div>

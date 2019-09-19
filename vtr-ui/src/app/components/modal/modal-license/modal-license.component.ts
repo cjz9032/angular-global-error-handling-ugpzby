@@ -16,10 +16,11 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	url: string;
 	/** type will be 'html' or 'txt' */
 	type: string;
-	articleBody: SafeHtml = '<div class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>';
+	articleBody: SafeHtml = '';
 	licenseModalMetrics: any;
 	pageDuration: number;
 	metrics: any;
+	loading = true;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -34,9 +35,11 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
 			if (this.type === 'txt') {
+				this.loading = false;
 				const openSource = results.replace(/\< /g, '<').replace(/ \>/g, '>').replace(/\</g, '< ').replace(/\>/g, ' >');
 				this.articleBody = `<pre>${openSource}</pre>`;
 			} else {
+				this.loading = false;
 				this.setIframeUrl();
 			}
 		});
@@ -56,8 +59,8 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	}
 
 	setIframeUrl() {
-			const licenseAgreementIframe: any = document.getElementById('license-agreement-iframe');
-			licenseAgreementIframe.src = this.url;
+		const licenseAgreementIframe: any = document.getElementById('license-agreement-iframe');
+		licenseAgreementIframe.src = this.url;
 	}
 
 	sendMetricsAsync(data: any) {

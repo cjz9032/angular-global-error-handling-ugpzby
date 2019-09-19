@@ -1540,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Leveres av Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Tilbake",
@@ -1590,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1684,7 +1693,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</Lenovo> til å beskytte alle enhetene dine",
+                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</b> til å beskytte alle enhetene dine",
                 "award": "Prisbelønt antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
@@ -1707,8 +1716,8 @@
                 "view": "VIS TIPS",
                 "buyNow": "Kjøp nå",
                 "buy": "Kjøp, last ned og installer McAfee-virusbeskyttelse i dag for å dra nytte av sikkerhetsfunksjoner på banknivå",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Dette er bare det grunnleggende. Selv om du er beskyttet mot noen av truslene på nettet, kan du fremdeles være sårbar overfor andre.",
+                "virus": "Virusbeskyttelse",
                 "homeNetwork": "Beskyttelse av hjemmenettverk",
                 "private": "Privat, anonym surfing",
                 "everyDevice": "Beskyttelse av alle enheter",
@@ -1750,10 +1759,10 @@
                 "Viruses": "Fjernede virus",
                 "blocked": "Ugyldige tilkoblinger blokkert",
                 "shredded": "Filer trygt makulert",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Start filskanningen"
             },
             "others": {
-                "othersProtection": "gir grunnleggende beskyttelse for enheten din"
+                "othersProtection": "{{protectedName}} gir grunnleggende beskyttelse for enheten din"
             }
         },
         "wifisecurity": {
@@ -2357,7 +2366,7 @@
         "OtherSettings": "Andre innstillinger",
         "usageStatistics": "Statistikk over bruk",
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."

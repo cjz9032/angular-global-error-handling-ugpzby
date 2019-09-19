@@ -1540,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Coronet로 실행",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "뒤로",
@@ -1590,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1707,8 +1716,8 @@
                 "view": "팁 보기",
                 "buyNow": "바로 구매",
                 "buy": "이러한 은행급 보안 기능을 활용하려면 지금 McAfee 바이러스 보호 기능을 구입, 다운로드 및 설치",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "여기에는 기본 기능만 나와 있습니다. 일부 온라인 위협으로부터 보호되는 경우에도 다른 사용자에게 계속 노출될 수 있습니다.",
+                "virus": "바이러스 보호",
                 "homeNetwork": "홈 네트워크 보호",
                 "private": "비공개, 익명 검색",
                 "everyDevice": "모든 장치 보호",
@@ -1750,10 +1759,10 @@
                 "Viruses": "바이러스 제거됨",
                 "blocked": "잘못된 연결이 차단됨",
                 "shredded": "안전하게 파일 제거",
-                "startFileScan": "Start files scan"
+                "startFileScan": "파일 검사 시작"
             },
             "others": {
-                "othersProtection": "장치에 대한 기본적인 보호 제공"
+                "othersProtection": "{{protectedName}} 장치에 대한 기본적인 보호 제공"
             }
         },
         "wifisecurity": {
@@ -2357,7 +2366,7 @@
         "OtherSettings": "기타 설정",
         "usageStatistics": "사용 현황 통계",
         "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Lenovo와 통계 데이터 공유",
         "deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
         "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."

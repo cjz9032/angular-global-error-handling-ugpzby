@@ -30,8 +30,8 @@
 				</div>
 				<div *ngIf="!modalContent.btnConfirm">
 					<button class="btn enable-button" (click)="submitAction(true)" id="{{modalContent.metricsItemId}}"
-						aria-label="macrokey popup sure" vtrMetrics [metricsItem]="modalContent.metricsItemId"
-						metricsEvent="featureClick" tabindex="1"
+						aria-label="macrokey popup ok" vtrMetrics [metricsItem]="modalContent.metricsItemId"
+						metricsEvent="featureClick" tabindex="1" (keydown)="keydownFn($event)"
 						(keyup.enter)="submitAction(true)">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
 				</div>
 			</div>

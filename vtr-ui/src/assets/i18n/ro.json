@@ -1540,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Dezvoltat de Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Înapoi",
@@ -1590,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1684,7 +1693,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ÎNAPOI",
-                "recommends": "De ce Lenovo recomandă <b>McAfee<b> pentru a vă proteja toate dispozitivele",
+                "recommends": "De ce Lenovo recomandă <b>McAfee</b> pentru a vă proteja toate dispozitivele",
                 "award": "Antivirus premiat",
                 "mcafeePremium": "Protecție McAfee LiveSafe",
                 "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",
@@ -1707,8 +1716,8 @@
                 "view": "VIZUALIZAȚI SFATURILE",
                 "buyNow": "Cumpărați acum",
                 "buy": "Cumpărați, descărcați și instalați protecția antivirus McAfee astăzi, pentru a profita de aceste funcții de securitate similare celor folosite în mediul bancar",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Doar funcţiile de bază aici. Deşi sunteţi protejat împotriva unor ameninţări online, puteţi fi totuşi expus faţă de altele.",
+                "virus": "Protecţie antivirus",
                 "homeNetwork": "Protecția rețelei de domiciliu",
                 "private": "Navigare anonimă, privată",
                 "everyDevice": "Protecție pe fiecare dispozitiv",
@@ -1750,10 +1759,10 @@
                 "Viruses": "Viruși eliminați",
                 "blocked": "Conexiuni nocive blocate",
                 "shredded": "Fișiere eliminate în sguranță",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Pornire scanare fişiere"
             },
             "others": {
-                "othersProtection": "vă oferă protecție de bază pentru dispozitivul dvs."
+                "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs."
             }
         },
         "wifisecurity": {
@@ -2357,7 +2366,7 @@
         "OtherSettings": "Alte setări",
         "usageStatistics": "Statistici utilizare",
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Partajare date statistice cu Lenovo",
         "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
         "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."

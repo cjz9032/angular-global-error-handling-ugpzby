@@ -1540,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "A Coronet technológiája",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Vissza",
@@ -1590,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1684,7 +1693,7 @@
             "common": {
                 "title": "Vírusirtó",
                 "back": "VISSZA",
-                "recommends": "Miért javasolja a Lenovo a <b>McAfee-t</b> az összes eszköz védelmére",
+                "recommends": "Miért javasolja a Lenovo a <b>McAfee</b>-t az összes eszköz védelmére",
                 "award": "Díjnyertes vírusirtó",
                 "mcafeePremium": "McAfee LiveSafe védelem",
                 "protectedBy": "Önt jelenleg a(z) {{protectedName}} védi. A McAfee LiveSafe azonban hatékonyabb védelmet nyújthat.",
@@ -1707,8 +1716,8 @@
                 "view": "TIPPEK MEGTEKINTÉSE",
                 "buyNow": "Vásárlás",
                 "buy": "Vásárolja meg, töltse le és telepítse a McAfee vírusvédelmet még ma, hogy kihasználhassa ezeket a banki minőségű biztonsági funkciókat",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Itt csak az alapok találhatók. Míg egyes online fenyegetések ellen védve van, továbbra is ki lehet téve másoknak.",
+                "virus": "Vírusvédelem",
                 "homeNetwork": "Otthoni hálózat védelme",
                 "private": "Privát, névtelen böngészés",
                 "everyDevice": "Minden eszköz védelme",
@@ -1750,10 +1759,10 @@
                 "Viruses": "Kiküszöbölt vírusok",
                 "blocked": "Blokkolt rossz kapcsolatok",
                 "shredded": "Biztonságosan megsemmisített fájlok",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Fájlok vizsgálatának megkezdése"
             },
             "others": {
-                "othersProtection": "alapszintű védelmet biztosít az eszköz számára"
+                "othersProtection": "{{protectedName}} alapszintű védelmet biztosít az eszköz számára"
             }
         },
         "wifisecurity": {
@@ -2357,7 +2366,7 @@
         "OtherSettings": "Egyéb beállítások",
         "usageStatistics": "Használati statisztikák",
         "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Statisztikai adatok megosztása a Lenovóval",
         "deviceStatisticsDescription": "Statisztikai adatokat oszt meg a Lenovóval, így segíti a számítógép-funkciók tervezését, optimalizálását és megbízhatóbbá tételét.",
         "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."

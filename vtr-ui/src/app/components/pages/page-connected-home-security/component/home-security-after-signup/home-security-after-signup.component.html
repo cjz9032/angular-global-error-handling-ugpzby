@@ -1,35 +1,48 @@
 <div class="vtr-home-security-after-signup">
 	<div *ngIf="account?.role === 'admin'" class="content-container p-40 mb-5">
 		<div class="d-flex justify-content-between mb-4">
-			<div [innerHTML]=""></div>
+			<p class="subscription-title" *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
+				[innerHTML]="'homeSecurity.overview.trialTitle' | translate">
+			</p>
+			<p class="subscription-title" *ngIf="account?.state === 'standard' || account?.state === 'standardExpired'"
+				[innerHTML]="'homeSecurity.overview.subscriptionTitle' | translate">
+			</p>
 			<div>
 				<img class="coronet-logo"
 					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" />
 			</div>
 		</div>
-		<div class="row mb-4 justify-content-between">
-			<div class="d-flex flex-column justify-content-center p-4 col-12 col-sm-12 col-md-9">
-				<ng-container *ngIf="account?.state === 'trial'">
-					<p class="m-0 pl-0"
-						*vtrTranslate="'homeSecurity.overview.inTrialDetail' | translate: {remainingDay: account?.expirationDay }">
-						<a class="red"></a>
-					</p>
-				</ng-container>
+		<div class="row detail-container">
+			<div class="p-0 pb-5 col-12 col-sm-12 col-md-6">
+				<p class="m-0 pl-0" *ngIf="account?.state === 'trial'"
+					[innerHTML]="'homeSecurity.overview.inTrialDetail' | translate">
+				</p>
 				<p class="m-0 pl-0" *ngIf="account?.state === 'trialExpired'"
 					[innerHTML]="'homeSecurity.overview.trialExpiredDetail' | translate">
 				</p>
-				<ng-container *ngIf="account?.state == 'standard'">
-					<p class="m-0 pl-0"
-						*vtrTranslate="'homeSecurity.overview.inSubscriptionDetail' | translate: {remainingDay: account?.expirationDay }">
-						<a class="red"></a>
-					</p>
-				</ng-container>
+				<p class="m-0 pl-0" *ngIf="account?.state == 'standard'"
+					[innerHTML]="'homeSecurity.overview.inSubscriptionDetail' | translate">
+				</p>
 				<p class="m-0 pl-0" *ngIf="account?.state === 'standardExpired'"
 					[innerHTML]="'homeSecurity.overview.subscriptionExpiredDetail' | translate">
 				</p>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 p-0 pb-5">
+				<ng-container *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'">
+					<p class="m-0 pl-0"
+						*vtrTranslate="'homeSecurity.overview.trialPeriod' | translate: {remainingDay: account?.expirationDay }">
+						<a [ngClass]="{'red': !isMoreThen30Day(account?.expirationDay)}"></a>
+					</p>
+				</ng-container>
+				<ng-container *ngIf="account?.state === 'standard' || account?.state === 'standardExpired'">
+					<p class="m-0 pl-0"
+						*vtrTranslate="'homeSecurity.overview.subscriptionPeriod' | translate: {remainingDay: account?.expirationDay }">
+						<a [ngClass]="{'red': !isMoreThen30Day(account?.expirationDay)}"></a>
+					</p>
+				</ng-container>
 				<p class="m-0 pl-0"><span>Lenovo ID: </span><span [innerHTML]="account?.lenovoId"></span></p>
 			</div>
-			<div class="d-flex align-items-center pr-4 common-btn">
+			<div class="common-btn">
 				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"

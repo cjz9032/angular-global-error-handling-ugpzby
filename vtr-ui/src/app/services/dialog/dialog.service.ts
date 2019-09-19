@@ -29,7 +29,8 @@ export class DialogService {
 			const modal = this.modalService.open(ModalWifiSecurityInvitationComponent,
 			{
 				backdrop: 'static',
-				windowClass: 'wifi-security-location-modal'
+				windowClass: 'wifi-security-location-modal',
+				centered: true
 			});
 		}
 	}
@@ -114,6 +115,7 @@ export class DialogService {
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
 				size: 'lg',
+				centered: true,
 				windowClass: 'home-security-plugin-missing-modal'
 			});
 			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
@@ -134,6 +136,7 @@ export class DialogService {
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
 				size: 'lg',
+				centered: true,
 				windowClass: 'home-security-offline-modal'
 			});
 			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
