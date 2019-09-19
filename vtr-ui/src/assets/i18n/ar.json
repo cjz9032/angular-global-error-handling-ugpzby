@@ -1540,7 +1540,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Powered by Cornet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "السابق‬",
@@ -1590,9 +1592,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1707,8 +1712,8 @@
                 "view": "عرض النصائح",
                 "buyNow": "شراء الآن",
                 "buy": "بادر اليوم إلى شراء برنامج الحماية من الفيروسات من McAfee وتنزيله وتثبيته للاستفادة من ميزات الأمان هذه على مستوى البنوك",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "الأساسيات فقط هنا. على الرغم من أنك محمي ضد بعض التهديدات عبر الإنترنت ، فقد تظل عرضة للتهديدات الأخرى.",
+                "virus": "الحماية من الفيروسات",
                 "homeNetwork": "حماية الشبكة المنزلية",
                 "private": "الاستعراض الخاص والمجهول الهوية",
                 "everyDevice": "حماية لكل الأجهزة",
@@ -1750,7 +1755,7 @@
                 "Viruses": "القضاء على الفيروسات",
                 "blocked": "حظر الاتصالات السيئة",
                 "shredded": "حذف الملفات بطريقة آمنة",
-                "startFileScan": "Start files scan"
+                "startFileScan": "بدء فحص الملفات"
             },
             "others": {
                 "othersProtection": "يقدم لك الحماية الأساسية لجهازك"
@@ -2357,7 +2362,7 @@
         "OtherSettings": "إعدادات أخرى",
         "usageStatistics": "إحصائيات الاستخدام",
         "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
         "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."

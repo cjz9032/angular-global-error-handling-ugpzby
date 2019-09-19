@@ -1,7 +1,7 @@
 <div class="select-box" [ngClass]="{'disabled': isRecording}">
 	<div class="dropdown">
 		<div class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()"
-			title="{{ selectedOption.name | translate }}" tabindex="1" name="dropdown" role="combobox"
+			tabindex="1" name="dropdown" role="combobox"
 			[attr.aria-expanded]="showOptions" aria-haspopup="true" (keydown.enter)="toggleOptions()">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>

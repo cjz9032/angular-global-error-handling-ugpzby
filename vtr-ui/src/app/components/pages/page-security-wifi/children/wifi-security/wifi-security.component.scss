@@ -204,7 +204,15 @@
 		}
 	}
 	.col-check-use-state{
-		margin: auto
+		margin: auto;
+	}
+
+	.enable-wifi-security {
+		::ng-deep .button {
+			min-height: 4rem !important;
+			font-size: 1.5rem !important;
+			font-weight: $weight_600 !important;
+		}
 	}
 
 	.content {

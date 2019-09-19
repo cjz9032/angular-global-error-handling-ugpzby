@@ -8,9 +8,9 @@
 			"resources": {
 				"files": [
 					"/index.html",
+					"/*.css",
 					"/assets/cms-cache/**",
-					"/assets/i18n/**",
-					"/*.css"
+					"/assets/i18n/**"
 				]
 			}
 		},
