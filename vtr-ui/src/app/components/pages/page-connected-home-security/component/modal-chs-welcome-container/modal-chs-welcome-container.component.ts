@@ -47,8 +47,11 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.isLocationServiceOn = data;
-			if (data && this.switchPage === 2) {
-				this.closeModal();
+			if (data) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				if (this.switchPage === 2) {
+					this.closeModal();
+				}
 			} else {
 				this.showPageLocation = !this.isLocationServiceOn;
 			}
@@ -61,16 +64,12 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 
 	refreshPage() {
 		if (this.hasSystemPermissionShowed) {
-			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
-				this.isLocationServiceOn = status;
-			});
+			this.requestVantagePermission();
 		} else {
 			this.permission.getSystemPermissionShowed().then((response: boolean) => {
 				this.hasSystemPermissionShowed = response;
 				if (!response) { return; }
-				this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
-					this.isLocationServiceOn = status;
-				});
+				this.requestVantagePermission();
 			});
 		}
 	}
@@ -80,6 +79,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	next() {
+		this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 		if (this.isLocationServiceOn) {
 			this.closeModal();
 		} else {
@@ -99,12 +99,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 							if (res) {
 								WinRT.launchUri(this.url);
 							}
-							this.permission.requestPermission('geoLocatorStatus').then((status) => {
-								this.isLocationServiceOn = status;
-								if (status) {
-									this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-								}
-							});
+							this.requestVantagePermission();
 						});
 					} else {
 						WinRT.launchUri(this.url);
@@ -112,6 +107,15 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 				});
 			} else {
 				WinRT.launchUri(this.url);
+			}
+		});
+	}
+
+	requestVantagePermission() {
+		this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+			this.isLocationServiceOn = status;
+			if (status) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 		});
 	}
