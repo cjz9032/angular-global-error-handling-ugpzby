@@ -1689,7 +1689,7 @@
             "common": {
                 "title": "Antivirusni program",
                 "back": "NAZAD",
-                "recommends": "Zbog čega Lenovo preporučuje <b>McAfee<b> za zaštitu svih vaših uređaja",
+                "recommends": "Zbog čega Lenovo preporučuje <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, možete da budete bolje zaštićeni pomoću usluge McAfee LiveSafe.",
@@ -1758,7 +1758,7 @@
                 "startFileScan": "Započnite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
             }
         },
         "wifisecurity": {

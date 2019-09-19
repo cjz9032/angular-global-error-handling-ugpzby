@@ -11,7 +11,7 @@
 				<div class="row">
 					<div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
 						<div *ngIf="viewModel?.currentPage ==='windows'" class="windows row justify-content-center">
-							<div *ngIf="isOnline" class="header mt-minus row justify-content-between">
+							<div *ngIf="isOnline" class="header mt-minus row justify-content-between w-windows">
 								<div class="rounded-card-with-shadow py-4 pl-4 pl-md-0 pr-4 col mr-md-5 part-position">
 									<div class="d-flex flex-column flex-md-row" [vtrAppSearchScroller]="['search-anti-virus']">
 										<div class="align-self-center">
@@ -177,16 +177,16 @@
 									<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title title-normal pb-3">{{viewModel.otherAntiVirus?.name}}
+												<div class="title title-normal pb-3"
+												 [innerHTML]="viewModel.otherAntiVirus?.name">
 												</div>
 											</div>
 											<div class="col-auto px-0">
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">
-											{{viewModel.otherAntiVirus?.name}}
-											{{'security.antivirus.others.othersProtection' | translate}}
+										<div class="subtitle pb-5"
+											[innerHTML]="'security.antivirus.others.othersProtection' | translate:{protectedName: viewModel.otherAntiVirus.name}">
 										</div>
 
 										<vtr-ui-security-statusbar
@@ -197,16 +197,16 @@
 									<div *ngIf="viewModel.otherFirewall && viewModel.otherFirewall.name" class="pt-5">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title title-normal pb-3">{{viewModel.otherFirewall?.name}}
+												<div class="title title-normal pb-3"
+													[innerHTML]="viewModel.otherFirewall?.name">
 												</div>
 											</div>
 											<div class="col-auto px-0">
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">
-											{{viewModel.otherFirewall?.name}}
-											{{'security.antivirus.others.othersProtection' | translate}}
+										<div class="subtitle pb-5"
+											[innerHTML]="'security.antivirus.others.othersProtection' | translate:{protectedName: viewModel.otherFirewall.name}">
 										</div>
 
 										<vtr-ui-security-statusbar

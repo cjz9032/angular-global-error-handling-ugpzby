@@ -1689,7 +1689,7 @@
             "common": {
                 "title": "Vírusirtó",
                 "back": "VISSZA",
-                "recommends": "Miért javasolja a Lenovo a <b>McAfee-t</b> az összes eszköz védelmére",
+                "recommends": "Miért javasolja a Lenovo a <b>McAfee</b>-t az összes eszköz védelmére",
                 "award": "Díjnyertes vírusirtó",
                 "mcafeePremium": "McAfee LiveSafe védelem",
                 "protectedBy": "Önt jelenleg a(z) {{protectedName}} védi. A McAfee LiveSafe azonban hatékonyabb védelmet nyújthat.",
@@ -1758,7 +1758,7 @@
                 "startFileScan": "Fájlok vizsgálatának megkezdése"
             },
             "others": {
-                "othersProtection": "alapszintű védelmet biztosít az eszköz számára"
+                "othersProtection": "{{protectedName}} alapszintű védelmet biztosít az eszköz számára"
             }
         },
         "wifisecurity": {

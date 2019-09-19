@@ -1758,7 +1758,7 @@
                 "startFileScan": "Iniciar análisis de archivos"
             },
             "others": {
-                "othersProtection": "le ofrece protección básica para su dispositivo"
+                "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo"
             }
         },
         "wifisecurity": {

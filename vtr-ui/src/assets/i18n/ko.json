@@ -1758,7 +1758,7 @@
                 "startFileScan": "파일 검사 시작"
             },
             "others": {
-                "othersProtection": "장치에 대한 기본적인 보호 제공"
+                "othersProtection": "{{protectedName}} 장치에 대한 기본적인 보호 제공"
             }
         },
         "wifisecurity": {
