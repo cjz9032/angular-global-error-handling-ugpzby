@@ -4,6 +4,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, UrlTree } from '@a
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
+import { DeviceService } from '../device/device.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -19,7 +20,8 @@ export class GuardService {
 		shellService: VantageShellService,
 		private commonService: CommonService,
 		private router: Router,
-		private adPolicy: AdPolicyService) {
+		private adPolicy: AdPolicyService,
+		private deviceService: DeviceService) {
 
 		this.metrics = shellService.getMetrics();
 		window.addEventListener('blur', () => {
@@ -35,7 +37,9 @@ export class GuardService {
 
 	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean | UrlTree{
 		this.interTime = Date.now();
-		if (routerStateSnapshot.url.includes('system-updates') && !this.adPolicy.IsSystemUpdateEnabled)
+		if (routerStateSnapshot.url.includes('system-updates')
+		&& (!this.adPolicy.IsSystemUpdateEnabled
+			|| this.deviceService.isSMode))
 		{
 			return this.router.parseUrl('/dashboard');
 		}

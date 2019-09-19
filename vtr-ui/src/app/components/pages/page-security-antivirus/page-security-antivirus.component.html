@@ -32,8 +32,14 @@
 													<div class="row">
 														<div class="subtitle font">
 															{{'security.antivirus.windowsDefender.topContent' | translate}}
-															<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-																metricsItem="subscribe" metricsParent="security.antivirus"
+															<a vtrMetrics
+																id="sa-av-link-view"
+																metricsEvent="ArticleClick"
+																metricsItem="ViewTips"
+																metricsItemPosition="1"
+																metricsPageNumber="1"
+																[metricsItemID]="mcafeeArticleId"
+																[metricsItemCategory]="mcafeeArticleCategory"
 																href="javascript:void(0)" target="_blank" (click)="openArticle()"
 																[innerHTML]="'security.antivirus.windowsDefender.view' | translate"></a>
 														</div>
@@ -51,8 +57,14 @@
 										<div class="row">
 											<div class="subtitle font">
 												{{'security.antivirus.windowsDefender.topContent' | translate}}
-												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-													metricsItem="subscribe" metricsParent="security.antivirus"
+												<a 	vtrMetrics
+													id="sa-av-link-view"
+													metricsEvent="ArticleClick"
+													metricsItem="ViewTips"
+													metricsItemPosition="1"
+													metricsPageNumber="1"
+													[metricsItemID]="mcafeeArticleId"
+													[metricsItemCategory]="mcafeeArticleCategory"
 													href="javascript:void(0)" target="_blank" (click)="openArticle()"
 													[innerHTML]="'security.antivirus.windowsDefender.view' | translate"></a>
 											</div>
@@ -84,7 +96,7 @@
 									<div class="divider"></div>
 									<div class="subtitle"
 										[innerHTML]="'security.antivirus.windowsDefender.buy' | translate"></div>
-									<vtr-widget-mcafee-state [windowsDefender]="true" [url]="viewModel.mcafee.trialUrl">
+									<vtr-widget-mcafee-state [windowsDefender]="true" [url]="common.urlGetMcAfee">
 									</vtr-widget-mcafee-state>
 									<div class="subtitle mt-5 text-center"
 										[innerHTML]="'security.antivirus.mcafee.discount' | translate"></div>
