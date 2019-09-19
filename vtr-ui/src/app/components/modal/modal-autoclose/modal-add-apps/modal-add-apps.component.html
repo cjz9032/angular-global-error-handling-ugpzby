@@ -1,9 +1,9 @@
-<div class="modal-main-wrapper" id="close" tabindex="1"
-	attr.aria-label="{{'gaming.autoClose.modalAddApps.title' | translate }} window">
+<div class="modal-main-wrapper">
 	<div class="spinner-content h-100 d-flex align-items-center justify-content-center" *ngIf="loading">
 		<fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
 	</div>
-	<ui-popover-apps *ngIf="!loading">
+	<ui-popover-apps *ngIf="!loading" id="close" tabindex="1"
+		attr.aria-label="{{'gaming.autoClose.modalAddApps.title' | translate }} window">
 		<div class="modal-body vtr-modal-add-apps">
 			<div class="modal-body">
 				<div class="top-header">
