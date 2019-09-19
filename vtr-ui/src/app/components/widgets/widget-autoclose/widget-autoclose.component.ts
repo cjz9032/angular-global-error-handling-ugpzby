@@ -33,5 +33,6 @@ export class WidgetAutocloseComponent implements OnInit, OnChanges {
 
 	public removeApp(name: string, index: number) {
 		this.removeFromList.emit({ name, index });
+		document.getElementById('addAutoCloseAppBtn').focus();
 	}
 }
