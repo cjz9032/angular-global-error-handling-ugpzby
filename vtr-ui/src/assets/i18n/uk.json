@@ -1693,7 +1693,7 @@
             "common": {
                 "title": "Антивірус",
                 "back": "НАЗАД",
-                "recommends": "Чому Lenovo рекомендує <b>McAfee<b> для захисту всіх ваших пристроїв",
+                "recommends": "Чому Lenovo рекомендує <b>McAfee</b> для захисту всіх ваших пристроїв",
                 "award": "Відзначений нагородами антивірус",
                 "mcafeePremium": "Захист McAfee LiveSafe",
                 "protectedBy": "Наразі вас захищає {{protectedName}}. Однак McAfee LiveSafe захистить вас краще.",
@@ -1762,7 +1762,7 @@
                 "startFileScan": "Розпочати сканування файлів"
             },
             "others": {
-                "othersProtection": "забезпечує базовий захист вашого пристрою"
+                "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою"
             }
         },
         "wifisecurity": {

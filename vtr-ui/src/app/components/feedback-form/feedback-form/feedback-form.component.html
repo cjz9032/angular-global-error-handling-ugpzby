@@ -15,25 +15,27 @@
 				<div class="form-check form-check-inline">
 					<input class="form-check-input"
 						type="radio"
-						tabindex="0"
+						tabindex="-1"
 						[formControlName]="qa.name"
 						[name]="qa.name"
 						[id]="qa.idYes"
 						[attr.aria-label]="qa.idYes"
 						[value]="true">
 					<label class="form-check-label"
+						tabindex="0"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
 				<div class="form-check form-check-inline">
 					<input class="form-check-input"
 						type="radio"
-						tabindex="0"
+						tabindex="-1"
 						[formControlName]="qa.name"
 						[name]="qa.name"
 						[id]="qa.idNo"
 						[attr.aria-label]="qa.idNo"
 						[value]="false">
 					<label class="form-check-label"
+						tabindex="0"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="line"></div>

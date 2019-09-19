@@ -1693,7 +1693,7 @@
             "common": {
                 "title": "Антивирусная программа",
                 "back": "НАЗАД",
-                "recommends": "Почему Lenovo рекомендует <b>McAfee<b> для защиты всех ваших устройств",
+                "recommends": "Почему Lenovo рекомендует <b>McAfee</b> для защиты всех ваших устройств",
                 "award": "Отмеченная наградами антивирусная программа",
                 "mcafeePremium": "Защита McAfee LiveSafe",
                 "protectedBy": "В настоящее время вашу безопасность обеспечивает {{protectedName}}. Однако McAfee LiveSafe сможет защитить вас лучше.",
@@ -1762,7 +1762,7 @@
                 "startFileScan": "Начать сканирование файлов"
             },
             "others": {
-                "othersProtection": "обеспечивает базовую защиту вашего устройства"
+                "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства"
             }
         },
         "wifisecurity": {

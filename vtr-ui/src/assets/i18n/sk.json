@@ -1693,7 +1693,7 @@
             "common": {
                 "title": "Antivírus",
                 "back": "SPÄŤ",
-                "recommends": "Prečo spoločnosť Lenovo odporúča aplikáciu <b>McAfee<b> na ochranu všetkých vašich zariadení",
+                "recommends": "Prečo spoločnosť Lenovo odporúča aplikáciu <b>McAfee</b> na ochranu všetkých vašich zariadení",
                 "award": "Oceňovaný antivírus",
                 "mcafeePremium": "Ochrana McAfee LiveSafe",
                 "protectedBy": "V súčasnosti ste chránení programom {{protectedName}}. Môžete však byť chránení lepšie pomocou programu McAfee LiveSafe.",
@@ -1762,7 +1762,7 @@
                 "startFileScan": "Spustiť kontrolu súborov"
             },
             "others": {
-                "othersProtection": "vám ponúka základnú ochranu zariadenia"
+                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia"
             }
         },
         "wifisecurity": {

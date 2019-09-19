@@ -1693,7 +1693,7 @@
             "common": {
                 "title": "Zaštita od virusa",
                 "back": "NATRAG",
-                "recommends": "Zašto tvrtka Lenovo preporuča <b>McAfee</tvrtka> za zaštitu svih vaših uređaja",
+                "recommends": "Zašto tvrtka Lenovo preporuča <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, McAfee LiveSafe bi vam mogao pružiti bolju zaštitu.",
@@ -1762,7 +1762,7 @@
                 "startFileScan": "Pokrenite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
             }
         },
         "wifisecurity": {

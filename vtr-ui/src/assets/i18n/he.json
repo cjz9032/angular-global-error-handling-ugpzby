@@ -1762,7 +1762,7 @@
                 "startFileScan": "התחילו בסריקת קבצים"
             },
             "others": {
-                "othersProtection": "מציע הגנה בסיסית להתקן שלכם"
+                "othersProtection": "מציע הגנה בסיסית להתקן שלכם {{protectedName}}"
             }
         },
         "wifisecurity": {

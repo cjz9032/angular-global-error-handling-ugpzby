@@ -179,10 +179,6 @@
 							line-height: calc(#{$menu_height} - 0.5rem);
 						}
 
-						&:focus {
-							outline: $focus_outline_light;
-						}
-
 						&.search-active {
 							.fa-icon {
 								color: $main;
@@ -315,10 +311,6 @@
 							font-size: 1.5rem;
 							line-height: 2.2rem;
 							font-weight: $weight_medium;
-
-							&:focus {
-								outline: $focus_outline_light;
-							}
 
 							&.link {
 								text-decoration: underline;
@@ -493,10 +485,6 @@
 			//display: none;
 			font-size: 5rem;
 			color: $shade_light;
-
-			&:focus {
-				outline: $focus_outline_light;
-			}
 
 			@media #{$mediaquery_xl} {
 				display: block;

@@ -27,7 +27,7 @@ export class AntiVirusViewModel {
 		status: false,
 		name: 'unknown',
 	};
-	metricsList: Array<any> = [];
+	metricsList: Array<any> = [0, 0, 0, 0];
 	otherFirewall: OtherInfo ;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{

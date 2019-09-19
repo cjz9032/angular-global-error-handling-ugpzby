@@ -1693,7 +1693,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZURÜCK",
-                "recommends": "Warum Lenovo <b>McAfee</Lenovo> für den Schutz Ihrer Geräte empfiehlt",
+                "recommends": "Warum Lenovo <b>McAfee</b> für den Schutz Ihrer Geräte empfiehlt",
                 "award": "Preisgekrönter Virenschutz",
                 "mcafeePremium": "McAfee LiveSafe-Schutz",
                 "protectedBy": "Sie werden derzeit von {{protectedName}} geschützt. McAfee LiveSafe bietet jedoch einen besseren Schutz.",
@@ -1762,7 +1762,7 @@
                 "startFileScan": "Überprüfung der Dateien starten"
             },
             "others": {
-                "othersProtection": "bietet einen Basisschutz für Ihr Gerät"
+                "othersProtection": "{{protectedName}} bietet einen Basisschutz für Ihr Gerät"
             }
         },
         "wifisecurity": {

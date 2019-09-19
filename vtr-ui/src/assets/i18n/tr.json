@@ -1762,7 +1762,7 @@
                 "startFileScan": "Dosya taramasını başlat"
             },
             "others": {
-                "othersProtection": "cihazınız için temel koruma sunar"
+                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar"
             }
         },
         "wifisecurity": {

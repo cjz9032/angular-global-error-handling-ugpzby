@@ -1693,7 +1693,7 @@
             "common": {
                 "title": "Προστασία από ιούς",
                 "back": "ΠΙΣΩ",
-                "recommends": "Γιατί η Lenovo συνιστά το <b>McAfee</η> για την προστασία όλων των συσκευών σας",
+                "recommends": "Γιατί η Lenovo συνιστά το <b>McAfee</b> για την προστασία όλων των συσκευών σας",
                 "award": "Βραβευμένο λογισμικό προστασίας από ιούς",
                 "mcafeePremium": "Προστασία McAfee LiveSafe",
                 "protectedBy": "Προς το παρόν, προστατεύεστε με το {{protectedName}}. Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe.",
@@ -1762,7 +1762,7 @@
                 "startFileScan": "Έναρξη σάρωσης αρχείων"
             },
             "others": {
-                "othersProtection": "σάς προσφέρει βασική προστασία για τη συσκευή σας"
+                "othersProtection": "{{protectedName}} σάς προσφέρει βασική προστασία για τη συσκευή σας"
             }
         },
         "wifisecurity": {

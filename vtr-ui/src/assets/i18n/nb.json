@@ -1693,7 +1693,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</Lenovo> til å beskytte alle enhetene dine",
+                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</b> til å beskytte alle enhetene dine",
                 "award": "Prisbelønt antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
@@ -1762,7 +1762,7 @@
                 "startFileScan": "Start filskanningen"
             },
             "others": {
-                "othersProtection": "gir grunnleggende beskyttelse for enheten din"
+                "othersProtection": "{{protectedName}} gir grunnleggende beskyttelse for enheten din"
             }
         },
         "wifisecurity": {

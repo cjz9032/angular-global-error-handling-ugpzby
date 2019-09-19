@@ -1693,7 +1693,7 @@
             "common": {
                 "title": "مكافحة الفيروسات",
                 "back": "السابق",
-                "recommends": "توصي Lenovo باستخدام <b>McAfee<b> لحماية جميع أجهزتك",
+                "recommends": "توصي Lenovo باستخدام <b>McAfee</b> لحماية جميع أجهزتك",
                 "award": "برنامج مكافحة الفيروسات الحائز على جوائز",
                 "mcafeePremium": "حماية McAfee LiveSafe",
                 "protectedBy": "أنت محمي في الوقت الحالي من خلال {{protectedName}}. ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe.",
@@ -1762,7 +1762,7 @@
                 "startFileScan": "بدء فحص الملفات"
             },
             "others": {
-                "othersProtection": "يقدم لك الحماية الأساسية لجهازك"
+                "othersProtection": "يقدم لك الحماية الأساسية لجهازك {{protectedName}}"
             }
         },
         "wifisecurity": {

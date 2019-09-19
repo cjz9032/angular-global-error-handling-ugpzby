@@ -1762,7 +1762,7 @@
                 "startFileScan": "Aloita tiedostojen tarkistus"
             },
             "others": {
-                "othersProtection": "tarjoaa laitteellesi perustason suojauksen"
+                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen"
             }
         },
         "wifisecurity": {

@@ -14,8 +14,7 @@ export class AppSearchScrollerDirective implements AfterViewInit, OnDestroy {
 	) {
 	}
 
-	activeScroll() {
-		this.appSearchService.scrollAnchor = null;
+	scrollIntoView() {
 		this.elm.nativeElement.scrollIntoView(true);
 	}
 
@@ -25,12 +24,8 @@ export class AppSearchScrollerDirective implements AfterViewInit, OnDestroy {
 		}
 
 		this.appSearchService.registerAnchor(this.anchorIdArray, () => {
-			this.activeScroll();
+			this.scrollIntoView();
 		});
-
-		if (this.appSearchService.scrollAnchor && this.anchorIdArray.indexOf(this.appSearchService.scrollAnchor) !== -1) {
-			this.activeScroll();
-		}
 	}
 
 	ngOnDestroy() {
