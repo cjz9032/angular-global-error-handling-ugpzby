@@ -181,5 +181,7 @@ export enum LocalStorageKey {
 	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
 
 	// Ad policy local storage key
-	AdPolicyCache = '[LocalStorageKey] AdPolicyCache'
+	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
+	// App Search
+	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures'
 }

@@ -1,0 +1,23 @@
+@import '../search-dropdown/search-dropdown.component.scss';
+
+.search-tips {
+	width: $block_width;
+	color: $dark;
+	text-align: center;
+	background: $light;
+	box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+	border: 1px solid $menu_hover;
+	border-radius: 0.5rem;
+	padding-top: 0.5rem;
+
+	.title {
+		font-size: 2rem;
+		line-height: 2rem;
+		margin: 0.5rem 0;
+	}
+
+	.content {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+	}
+}

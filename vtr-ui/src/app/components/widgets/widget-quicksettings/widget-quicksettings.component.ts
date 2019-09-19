@@ -47,7 +47,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			state: true
 		}
 	];
-	private Windows:any;
+	private Windows: any;
 	private windowsObj: any;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
@@ -60,13 +60,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService) {
-			this.Windows = vantageShellService.getWindows();
-			this.windowsObj =  this.Windows.Devices.Enumeration.DeviceAccessInformation
-			.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
-	
+		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
+			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
+
 			this.windowsObj.addEventListener('accesschanged', () => {
 				this.getCameraPrivacyStatus();
 			});
+		}
 	}
 
 	ngOnInit() {
@@ -83,7 +85,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				this.initFeatures();
 			}
 		} else {
-				this.initFeatures();
+			this.initFeatures();
 		}
 	}
 
