@@ -16,7 +16,8 @@
 					<li [ngClass]="{ 'selected': option.value===options.curSelected }" (click)="optionSelected(option)" (keydown.enter)="optionSelected(option)"
 						(mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)" vtrMetrics
 						[metricsItem]="option.metricitem" metricsEvent="featureClick" metricsParam="{{option.metricitem}}" metricsValue="{{option.value}}"
-						(keydown)="keyupTabFn($event,i)" [attr.aria-selected]="option.value===options.curSelected?'true':'false'" role="option" tabindex="1" [attr.aria-label] = "option.ariaLabel">
+						(keydown)="keyupTabFn($event,i)" [attr.aria-selected]="option.value===options.curSelected?'true':'false'" role="option" tabindex="1"
+						 [attr.aria-label] = "option.ariaLabel">
 						<a class="dropdown-item" id="{{option.id}}" tabindex="-1">
 							<!-- <i class="icon icon-checkline"></i> -->
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>

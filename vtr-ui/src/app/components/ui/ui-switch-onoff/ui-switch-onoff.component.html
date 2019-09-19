@@ -6,7 +6,7 @@
 	</div>
 	<div *ngIf="!showLoader" class="checkbox" [ngClass]="{'switch-disable': isSwitchDisable}">
 		<label>
-			<input type="checkbox" id="{{onOffSwitchId+'_checkbox'}}" role="checkbox" tabindex="1" vtrMetrics
+			<input type="checkbox" id="{{onOffSwitchId+'_checkbox'}}" role="checkbox" tabindex="{{tabIndex}}" vtrMetrics
 				metricsEvent="featureClick" [metricsItem]="onOffSwitchId" [metricsValue]="!value" [name]="onOffSwitchId"
 				class="switch" [ngClass]="{'wifi-checked': value===true}" [value]="value" [checked]="value"
 				[disabled]="disabled" [readonly]="readonly" [attr.aria-label]="ariaLabel" (change)="onChange($event)"

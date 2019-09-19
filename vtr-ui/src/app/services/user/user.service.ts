@@ -22,7 +22,7 @@ export class UserService {
 	public auth = false;
 	public starter = false;
 	token = '';
-
+	public hasFirstName = true;
 	public firstName = 'User';
 	lastName = '';
 	initials = 'U';
@@ -238,6 +238,7 @@ export class UserService {
 	}
 
 	setName(firstName: string, lastName: string) {
+		this.hasFirstName = !!firstName;
 		if (!firstName && !lastName) {
 			this.translate.stream('lenovoId.user').subscribe((value) => {
 				this.firstName = value;

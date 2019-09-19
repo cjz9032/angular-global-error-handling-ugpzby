@@ -70,7 +70,7 @@
 	<div class="page page-three text-center" *ngIf="showWhichPage === 'loading'">
 		<div class="loadingIcon spinner-border text-primary progress-spinner" role="status">
 		</div>
-		<p class="pt-5 loading-text" [innerHTML]="loadingText | translate"></p>
+		<p class="pt-5 loading-text" *ngIf="loadingText" [innerHTML]="loadingText | translate"></p>
 	</div>
 	<!-- end of page3-->
 </div>

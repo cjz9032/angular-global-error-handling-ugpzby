@@ -13,7 +13,7 @@
 			[label]="'security.antivirus.mcafee.launch' | translate"
 			[title]="'security.antivirus.mcafee.launch' | translate" [upperCaseLabel]="false" *ngIf="install"
 			[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
-		<a *ngIf="!install" [ngClass]="{'unclickable': !isOnline}" href="{{urlGetMcAfee}}" target="_blank">
+		<a *ngIf="!install" [ngClass]="{'unclickable': !isOnline}" href="{{common.urlGetMcAfee}}" target="_blank">
 			<vtr-ui-button metricsEvent="FeatureClick" metricsItem="getMcafee"
 				[label]="'security.antivirus.mcafee.getMacfee' | translate"
 				[title]="'security.antivirus.mcafee.getMacfee' | translate" [upperCaseLabel]="false"

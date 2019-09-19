@@ -40,7 +40,6 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 			}
 		};
 		if (this.showWhichPage === CHSTrialModalPage.loading) {
-			this.loadingText = 'security.homeprotection.invitationcode.connecting';
 			if (this.chs.account.consoleUrl) {
 				this.showWhichPage = CHSTrialModalPage.trial;
 				this.countdown();

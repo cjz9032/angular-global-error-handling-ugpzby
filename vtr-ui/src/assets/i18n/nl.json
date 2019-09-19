@@ -1540,7 +1540,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Powered by Cornet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "Terug",
@@ -1590,9 +1592,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1707,8 +1712,8 @@
                 "view": "TIPS WEERGEVEN",
                 "buyNow": "Nu kopen",
                 "buy": "Koop, download en installeer vandaag nog McAfee-antivirusbescherming, om te profiteren van deze beveiligingsfuncties van bankkwaliteit",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Alleen de basisfuncties. Als u beschermd bent tegen bepaalde online dreigingen, is het mogelijk dat u nog steeds zichtbaar bent voor andere.",
+                "virus": "Antivirusbeveiliging",
                 "homeNetwork": "Beveiliging van je thuisnetwerk",
                 "private": "Privé en anoniem browsen",
                 "everyDevice": "Bescherming van elk apparaat",
@@ -1750,7 +1755,7 @@
                 "Viruses": "Uitgeschakelde virussen",
                 "blocked": "Geblokkeerde slechte verbindingen",
                 "shredded": "Veilig versnipperde bestanden",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Start bestanden scannen"
             },
             "others": {
                 "othersProtection": "biedt basisbeveiliging voor uw apparaat"
@@ -2357,7 +2362,7 @@
         "OtherSettings": "Overige instellingen",
         "usageStatistics": "Gebruiksstatistieken",
         "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Statistische gegevens delen met Lenovo",
         "deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
