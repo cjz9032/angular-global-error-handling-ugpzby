@@ -166,10 +166,10 @@ export class ActiveProtectionSystemComponent implements OnInit {
 
 	setAutoDisableSetting(event) {
 		console.log('Event value from checkbox', event);
-		const value = event;
+		const value = event.target.checked;
 		this.smartAssist
 			.setAutoDisableSetting(value)
-			.then(res => console.log('AUTO DISABLE CHECKBOX SET ---------------------------------', value, res));
+			.then(res => console.log('AUTO DISABLE CHECKBOX SET ---------------------------------', value));
 	}
 
 	setSnoozeSetting(event) {
