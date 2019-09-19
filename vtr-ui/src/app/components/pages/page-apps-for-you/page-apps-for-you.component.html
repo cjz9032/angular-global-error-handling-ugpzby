@@ -9,10 +9,10 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="apps-header row no-gutters" *ngIf="appDetails">
-					<div class="col-2 logo-con">
+					<div class="col-2 logo-con" *ngIf="appDetails.image">
 						<img class="img-logo"
-							[src]="'https://cms.csw.lenovo.com/-/media/Companion/Features/Apps-for-You/Lenovo-Migration-Assistant/LMA-icon.png?v=2196a92fc264402899bc6cadc31eb296'"
-							alt="Lenovo Migration Assistant" />
+							[src]="appDetails.image"
+							alt="" />
 					</div>
 					<div class="col-4 app-name">
 						<div class="app-title">{{ appDetails.title }}</div>
@@ -51,7 +51,7 @@
 						<div [innerHTML]="appDetails.description"></div>
 					</div>
 					<!-- <div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length"> -->
-					<div class="screenshot-con mb-40">
+					<div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length">
 						<div class="title mb-2">
 							Screenshots
 						</div>
@@ -59,7 +59,7 @@
 							<div class="image-content" 
 								#appsForYouImageContent
 								[style.height.px]="appsForYouImageContent.clientWidth / 5">
-								<div *ngFor="let screenshot of mockScreenShots, let i = index"
+								<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
 										class="screenshot-img position-{{screenshot.position}}"
 										id="{{screenshot.id}}"
 										(click)="openScreenshotModal(screenshot.imageUrl)"

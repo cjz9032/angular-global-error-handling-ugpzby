@@ -1540,7 +1540,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Fourni par Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "Retour",
@@ -1590,9 +1592,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1684,7 +1689,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "RETOUR",
-                "recommends": "Pourquoi Lenovo recommande <b>McAfee</Lenovo> pour protéger tous vos périphériques",
+                "recommends": "Pourquoi Lenovo recommande <b>McAfee</b> pour protéger tous vos périphériques",
                 "award": "Logiciel antivirus primé",
                 "mcafeePremium": "Protection McAfee LiveSafe",
                 "protectedBy": "Vous êtes actuellement protégé par {{protectedName}}. Toutefois, vous pourriez être encore mieux protégé avec McAfee LiveSafe.",
@@ -1707,8 +1712,8 @@
                 "view": "AFFICHER LES CONSEILS",
                 "buyNow": "Acheter maintenant",
                 "buy": "Achetez, téléchargez et installez la protection antivirus McAfee aujourd'hui pour profiter de caractéristiques de sécurité de niveau bancaire",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Uniquement les bases ici. Même si vous êtes protégé contre certaines menaces en ligne, vous pouvez rester exposé à d'autres.",
+                "virus": "Protection antivirus",
                 "homeNetwork": "Protection du réseau domestique",
                 "private": "Navigation privée et anonyme",
                 "everyDevice": "Protection de tous les appareils",
@@ -1750,10 +1755,10 @@
                 "Viruses": "Virus éliminés",
                 "blocked": "Mauvaises connexions bloquées",
                 "shredded": "Fichiers détruits en toute sécurité",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Démarrer l'analyse des fichiers"
             },
             "others": {
-                "othersProtection": "vous offre une protection de base pour votre périphérique"
+                "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique"
             }
         },
         "wifisecurity": {
@@ -2357,7 +2362,7 @@
         "OtherSettings": "Autres paramètres",
         "usageStatistics": "Statistiques d'utilisation",
         "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Partager des données statistiques avec Lenovo",
         "deviceStatisticsDescription": "Partage des données statistiques avec Lenovo afin d'améliorer la fiabilité, le concept et l'optimisation des fonctionnalités de votre ordinateur.",
         "Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte."

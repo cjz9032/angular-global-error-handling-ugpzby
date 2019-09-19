@@ -22,7 +22,7 @@
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
 				<div *ngIf="item.Thumbnail"
-					class="col col-12 image"
+					class="image"
 					[style.background-image]="'url('+item.Thumbnail+')'">
 					<div *ngIf="item.Logo"
 						class="logo">
@@ -82,7 +82,7 @@
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
 				<div *ngIf="item.FeatureImage"
-					class="col col-12 image"
+					class="image"
 					[style.background-image]="'url('+item.FeatureImage+')'">
 					<div *ngIf="item.BrandImage"
 						class="logo">

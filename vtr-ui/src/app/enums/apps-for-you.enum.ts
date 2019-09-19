@@ -18,5 +18,5 @@ export enum AppsForYouEnum {
 	AppTypeDesktop = 'Desktop App',
 	AppTypeWindowStore = 'Windows Store App',
 	AppTypeWeb = 'Web App',
-	AdobeFamilyNameFilter = 'Yoga A940-271CB'
+	AdobeFamilyNameFilter = 'Yoga A940-27ICB'
 }

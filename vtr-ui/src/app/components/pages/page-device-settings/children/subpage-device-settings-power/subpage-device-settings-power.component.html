@@ -221,14 +221,15 @@
 											class="custom-control-input"
 											attr.aria-label="cb-always-on-usb"
 											type="checkbox"
-											tabindex="0"
+											tabindex="-1"
 											name="always-on-usb-checkbox-id"
 											[disabled]="!toggleAlwaysOnUsbFlag"
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
 											checked="" />
 											<span class="checkmark"></span>
-										<label for="cb-always-on-usb">
+										<label for="cb-always-on-usb"
+											tabindex="0">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
 									</div>

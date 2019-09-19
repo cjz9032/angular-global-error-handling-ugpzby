@@ -46,7 +46,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	isOnline = true;
 	notificationSubscription: Subscription;
 	showMetricsList = true;
-	showMetricButton = false;
+	showMetricButton = true;
 	common: AntivirusCommon;
 
 	@HostListener('window:focus')
@@ -447,10 +447,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				list.push(metricsInfor);
 			}
 			if (list.filter(id => id > 0).length > 0) {
+				this.showMetricButton = false;
 				return list;
 			}
 		}
-		this.showMetricButton = true;
 		return metricsList;
 	}
 

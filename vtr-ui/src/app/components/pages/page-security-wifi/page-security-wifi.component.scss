@@ -117,6 +117,13 @@
 		}
 	}
 
+	.bottom-content {
+		.cutting-line {
+			border: 0.1rem solid $grey_light;
+			margin: 5rem 0 4rem 0;
+		}
+	}
+
 	vtr-ui-button {
 		::ng-deep .vtr-ui-button{
 			.button-box .button{
@@ -131,5 +138,14 @@
 				}
 			}
 		}
+	}
+
+	@media #{$mediaquery_md} {
+		.bottom-content {
+			margin: 0 4rem 2rem;
+		}
+		.vtr-page-right-column{
+            padding: 0rem 4rem 0rem 4rem;
+        }
 	}
 }

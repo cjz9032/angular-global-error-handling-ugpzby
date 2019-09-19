@@ -18,9 +18,7 @@
 				display: inline-block;
 			}
 		}
-		&:focus {
-			outline: $focus_outline_light;
-		}
+
 		.tab-label {
 			font-size: $title;
 			font-weight: $weight_600;
