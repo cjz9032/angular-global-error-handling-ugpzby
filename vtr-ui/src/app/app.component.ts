@@ -92,11 +92,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
-		if (win.NetworkListener) {
-			win.NetworkListener.onnetworkchanged = (state) => {
-				this.notifyNetworkState(state);
-			};
-		}
+
 
 		document.addEventListener('visibilitychange', (e) => {
 			if (document.hidden) {
@@ -107,10 +103,34 @@ export class AppComponent implements OnInit, OnDestroy {
 		});
 
 
-		if (win.NetworkListener && win.NetworkListener.isInternetAccess()) {
-			this.notifyNetworkState(NetworkStatus.Available);
+		this.addInternetListener();
+	}
+
+	private addInternetListener() {
+		const win: any = window;
+		if (win.NetworkListener) {
+			win.NetworkListener.onnetworkchanged = (state) => {
+				this.notifyNetworkState(state);
+			};
+
+			if ( win.NetworkListener.isInternetAccess()) {
+				this.notifyNetworkState(NetworkStatus.Available);
+			} else {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}
 		} else {
-			this.notifyNetworkState(NetworkStatus.Unavailable);
+			window.addEventListener('online', (e) => {
+				this.notifyNetworkState(NetworkStatus.Available);
+			}, false);
+			window.addEventListener('offline', (e) => {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}, false);
+
+			if (navigator.onLine) {
+				this.notifyNetworkState(NetworkStatus.Available);
+			} else {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}
 		}
 	}
 
