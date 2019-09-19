@@ -56,11 +56,11 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 */
 	public onValueChange($event: ChangeContext) {
 		this.setLightingBrightness.emit($event);
-		setTimeout(() => {
-			const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
-			element.focus();
-			this.triggerFocus.emit(PointerType.Min);
-		}, 500);
+		// setTimeout(() => {
+		// 	const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
+		// 	element.focus();
+		// 	this.triggerFocus.emit(PointerType.Min);
+		// }, 500);
 	}
 
 	/**
@@ -69,11 +69,11 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 */
 	public onChange($event: ChangeContext) {
 		this.change.emit($event);
-		setTimeout(() => {
-			const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
-			element.focus();
-			this.triggerFocus.emit(PointerType.Min);
-		}, 500);
+		// setTimeout(() => {
+		// 	const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
+		// 	element.focus();
+		// 	this.triggerFocus.emit(PointerType.Min);
+		// }, 500);
 	}
 
 	public onSliderChanged(event: any) {}
