@@ -5,7 +5,7 @@
 				<div class="heading">{{'security.wifisecurity.container.title' | translate}}</div>
 			</div>
 			<div class="pull right"><img class="coronet-logo"
-					[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" /></div>
+					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" /></div>
 		</div>
 		<div class="row mt-20 no-gutters">
 			<div class="col-12">
@@ -200,7 +200,7 @@
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-5 text-right col-check-use-state"
 				*ngIf="data.wifiSecurity.state==='never-used'">
-				<vtr-ui-button
+				<vtr-ui-button class="enable-wifi-security"
 					metricsItem="enableWifiSecurity"
 					metricsEvent="featureClick"
 					[linkId]="'sa-ws-btn-enablewifisecurity'"

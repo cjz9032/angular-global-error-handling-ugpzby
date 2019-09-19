@@ -1263,7 +1263,7 @@
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
                     "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
-                    "description6": "4.如果在计算机上启用飞行模式，则将禁用这些功能部件。"
+                    "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
@@ -1553,7 +1553,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Powered by Cornet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "上一步",
@@ -1603,9 +1605,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1720,8 +1725,8 @@
                 "view": "查看提示",
                 "buyNow": "立刻购买",
                 "buy": "立即购买、下载和安装 McAfee 病毒防护软件，充分利用其中的各项银行级安全功能保护设备",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "此处仅提供基础防护。虽然可帮助你防范某些网络威胁，但你可能仍会受到其他威胁的侵害。",
+				"virus": "病毒防护",
                 "homeNetwork": "家庭网络保护",
                 "private": "私人匿名浏览",
                 "everyDevice": "单设备保护",
@@ -1763,7 +1768,7 @@
                 "Viruses": "已清除病毒",
                 "blocked": "已拦截恶意连接",
                 "shredded": "已安全粉碎文件",
-                "startFileScan": "Start files scan"
+                "startFileScan": "启动文件扫描"
             },
             "others": {
                 "othersProtection": "为您的设备提供基本保护"
@@ -1840,7 +1845,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "安全性状况",
@@ -2368,7 +2375,7 @@
         "OtherSettings": "其他设置",
         "usageStatistics": "使用情况统计信息",
         "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "与 Lenovo 共享统计数据",
         "deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"

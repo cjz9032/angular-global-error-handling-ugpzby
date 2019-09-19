@@ -43,6 +43,7 @@
 											class="custom-control-input"
 											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
+											tabindex="0"
 											name="airplane-mode-checkbox-id"
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
@@ -220,6 +221,7 @@
 											class="custom-control-input"
 											attr.aria-label="cb-always-on-usb"
 											type="checkbox"
+											tabindex="0"
 											name="always-on-usb-checkbox-id"
 											[disabled]="!toggleAlwaysOnUsbFlag"
 											[(ngModel)]="usbChargingCheckboxFlag"

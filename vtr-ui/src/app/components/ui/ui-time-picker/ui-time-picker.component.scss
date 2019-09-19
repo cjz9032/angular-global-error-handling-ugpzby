@@ -16,8 +16,10 @@
 			margin: 0;
 			padding: 0;
 			@media #{$mediaquery_12} {
-
 				width: 80%;
+			}
+			@media #{$mediaquery_X42} {
+				width: 75%
 			}
 		}
 		.hours-block,

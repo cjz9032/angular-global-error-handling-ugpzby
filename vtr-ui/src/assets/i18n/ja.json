@@ -1263,7 +1263,7 @@
                     "description3": "1. コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
                     "description4": "2. コンピューターが休止状態またはオフであるとき、タッチレスログインは機能しません。",
                     "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。",
-                    "description6": "4.お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。"
+                    "description6": "4. お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 設定に移動",
@@ -1553,7 +1553,9 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Powered by Cornet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "tour": {
             "back": "戻る",
@@ -1603,9 +1605,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1720,8 +1725,8 @@
                 "view": "ヒントを見る",
                 "buyNow": "今すぐ購入する",
                 "buy": "McAfee ウイルス対策を今すぐ購入、ダウンロード、インストールして、このような銀行レベルのセキュリティ機能を活用しましょう",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "ここでは基本のみです。一部のオンラインの脅威から保護されていますが、他の脅威にさらされる可能性があります。",
+                "virus": "ウィルス保護",
                 "homeNetwork": "ホーム・ネットワーク保護",
                 "private": "プライベートな匿名ブラウジング",
                 "everyDevice": "あらゆるデバイスの保護",
@@ -1763,7 +1768,7 @@
                 "Viruses": "除去されたウイルス",
                 "blocked": "ブロックされた不正な接続",
                 "shredded": "安全にシュレッダー処理されたファイル",
-                "startFileScan": "Start files scan"
+                "startFileScan": "ファイルのスキャンを開始"
             },
             "others": {
                 "othersProtection": "は、デバイスに基本的な保護機能を提供します"
@@ -1840,7 +1845,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "セキュリティーの健全性",
@@ -2368,7 +2375,7 @@
         "OtherSettings": "他の設定",
         "usageStatistics": "利用統計",
         "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Lenovoと統計データを共有する",
         "deviceStatisticsDescription": "統計データを Lenovo と共有し、ご使用のコンピューターの機能の信頼性、設計、最適化の改善に役立てます。",
         "Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"

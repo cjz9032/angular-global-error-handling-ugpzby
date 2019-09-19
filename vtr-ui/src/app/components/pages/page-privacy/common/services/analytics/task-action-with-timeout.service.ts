@@ -10,7 +10,7 @@ export enum TasksName {
 	getTrackingDataAction = 'getTrackingDataAction'
 }
 
-export const STANDART_TIMEOUT_FOR_TASK = 120000;
+export const STANDARD_TIMEOUT_FOR_TASK = 120000;
 
 @Injectable({
 	providedIn: 'root'
@@ -28,10 +28,10 @@ export class TaskActionWithTimeoutService {
 	}
 
 	private getTaskDuration(timeStart) {
-		return(Date.now() - timeStart) / 1000;
+		return Math.round((Date.now() - timeStart) / 1000);
 	}
 
-	taskTimeWatcher(taskName: TasksName, due = STANDART_TIMEOUT_FOR_TASK): Observable<{TaskDuration: number, TaskResult?: string}> {
+	taskTimeWatcher(taskName: TasksName, due = STANDARD_TIMEOUT_FOR_TASK): Observable<{TaskDuration: number, TaskResult?: string}> {
 		return this.taskActionsStart$[taskName]
 			.pipe(
 				switchMap((startTime) => {

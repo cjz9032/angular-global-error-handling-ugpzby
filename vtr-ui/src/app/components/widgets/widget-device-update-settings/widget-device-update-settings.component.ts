@@ -26,7 +26,8 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		super();
 	}
 
-	public optionChanged(option: any, item: any) {
+	public optionChanged(option: any, item: any, id) {
+		this.currentFocus('cold' + id);
 		const gamingCollapsableContainerEvent = new GamingCollapsableContainerEvent(option, item);
 		this.optionSelected.emit(gamingCollapsableContainerEvent);
 	}
@@ -35,7 +36,13 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	}
 
 	ngOnInit() { }
-
+	currentFocus(id) {
+		console.log('-------------------------IDFORFOCUS', id);
+		const focElement = document.getElementById(id);
+		if (focElement) {
+			focElement.focus();
+		}
+	}
 	public onToggleOnOff($event: any) {
 		this.toggleOnOff.emit($event);
 	}
@@ -45,8 +52,14 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 			this.deviceService.launchUri(path);
 		}
 	}
-
-	public onClosed($event: any) {
+	updateFocus(i: any = false) {
+		if (i !== false && this.items[i]) {
+			this.items[i].focus = true;
+		}
+		setTimeout(() => { this.items[i].focus = false; }, 50);
+	}
+	public onClosed($event: any, i = false) {
+		this.updateFocus(i);
 		this.popupClosed.emit($event);
 	}
 

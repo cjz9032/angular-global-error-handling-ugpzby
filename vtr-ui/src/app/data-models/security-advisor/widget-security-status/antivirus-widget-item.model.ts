@@ -41,7 +41,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 		const others = antivirus.others;
 		let avStatus: boolean;
 		let fwStatus: boolean;
-		if (mcafee && (mcafee.enabled || !others || !others.enabled)) {
+		if (mcafee && (mcafee.enabled || !others || !others.enabled) && mcafee.expireAt > 0) {
 			avStatus = typeof mcafee.status === 'boolean' ? mcafee.status : false;
 			fwStatus = typeof mcafee.firewallStatus === 'boolean' ? mcafee.firewallStatus : false;
 		} else if (others) {

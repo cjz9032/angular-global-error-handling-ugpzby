@@ -1542,11 +1542,15 @@
 			"upgrade": "upgrade",
 			"freeTrial": "Protect all of your devices - Free 30 day trial",
 			"startTrial": "Start Trial",
-			"inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+			"trialTitle": "Trial",
+			"subscriptionTitle": "Subscription",
+			"inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep protecting your home and family",
 			"trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+			"inSubscriptionDetail": "You are currently protecting your home and family with Connected Home Security.",
 			"subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-			"overviewTitle": "Overview of your Connected Home Security",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+			"subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
 			"overviewTitleAdmin": "Overview of your Connected Home Security",
 			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
 			"familyMembers": "Family members",
@@ -1557,7 +1561,10 @@
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
 			"disconnect": "disconnect",
 			"goDashboard": "go to dashboard",
-			"extendNow": "extend"
+			"extendNow": "extend",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+
 		},
 		"tour": {
 			"back": "Back",
@@ -1607,9 +1614,12 @@
 			"joinDescription": "Become a part of your family security group."
 		},
 		"modal": {
-			"countdownTile": "You are about to launch the Connected Home Security web console...",
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
 			"goNow": "Go now",
-			"disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
 		}
 	},
 	"support": {
@@ -1717,7 +1727,7 @@
 				"notAvailable": "NOT AVAILABLE"
 			},
 			"windowsDefender": {
-				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so can <b>protect what matters.</b>",
+				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so you can <b>protect what matters.</b>",
 				"topTip": "Top Tips for online safety",
 				"topContent": "Learn how you can defend against today's biggest online threats",
 				"view": "VIEW TIPS",
@@ -1839,7 +1849,7 @@
 				"joinFamilyAccount": "Join family account",
 				"joinChs": "join your family's Connected Home Security",
 				"invitationCode": "Invitation code",
-				"connect": "CONNECTED",
+				"connect": "CONNECT",
 				"addHome": "Add Home",
 				"ok": "OK",
 				"continue": "CONTINUE",
@@ -1868,7 +1878,7 @@
 				"pass": "PASSED",
 				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here</tag>.",
 				"peaceOfMind": "Do you want more peace of mind?",
-				"button": "Enable Wifi security"
+				"button": "Enable Location"
 			}
 		},
 		"vpn": {

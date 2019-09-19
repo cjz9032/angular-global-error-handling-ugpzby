@@ -15,7 +15,7 @@ export class UiGamingDriverPopupComponent implements OnInit {
 
 	ngOnInit() {
 		if (!this.popupText || this.popupText.length < 2) {
-		this.popupText = 'gaming.dashboard.device.legionEdge.driverPopup.text';
+			this.popupText = 'gaming.dashboard.device.legionEdge.driverPopup.text';
 		}
 	}
 	close() {
@@ -27,5 +27,10 @@ export class UiGamingDriverPopupComponent implements OnInit {
 	systemUpdatePage() {
 		this.Router.navigate(["device/system-updates"]);
 	}
-
+	runappKeyup(event) {
+		if (event.which == 9) {
+			const focusElem = document.getElementById('gaming_driverPopup_close');
+			focusElem.focus();
+		}
+	}
 }

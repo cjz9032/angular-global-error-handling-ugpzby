@@ -12,6 +12,7 @@ import { WidgetRebootComponent } from 'src/app/components/widgets/widget-reboot/
 import { WidgetSupportComponent } from 'src/app/components/widgets/widget-support/widget-support.component';
 import { WidgetWarrantyComponent } from 'src/app/components/widgets/widget-warranty/widget-warranty.component';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
+import { WidgetPoweredByInfoComponent } from 'src/app/components/widgets/widget-powered-by-info/widget-powered-by-info.component';
 import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -20,22 +21,21 @@ import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 		WidgetDeviceUpdateComponent,
 		WidgetDeviceUpdateSettingsComponent,
 		WidgetPermissionNoteComponent,
-		// WidgetQuestionsComponent,
 		WidgetRebootComponent,
 		WidgetSupportComponent,
 		WidgetWarrantyComponent,
+		WidgetPoweredByInfoComponent
 	],
 	exports: [
 		WidgetDeviceComponent,
 		WidgetDeviceUpdateComponent,
 		WidgetDeviceUpdateSettingsComponent,
 		WidgetPermissionNoteComponent,
-		// WidgetQuestionsComponent,
 		WidgetRebootComponent,
 		WidgetSupportComponent,
 		WidgetWarrantyComponent,
 		NgbProgressbarModule,
-
+		WidgetPoweredByInfoComponent
 	],
 	imports: [
 		CommonModule,

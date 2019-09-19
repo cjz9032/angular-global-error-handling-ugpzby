@@ -20,7 +20,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 })
 export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit {
 	switchPage = 1;
-	isLenovoIdLogin: boolean;
 	url = 'ms-settings:privacy-location';
 	showPageLocation = false;
 	hasSystemPermissionShowed: boolean;
@@ -42,12 +41,8 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 		}
 		this.permission = this.vantageShellService.getPermission();
 
-		switch (this.switchPage) {
-			case 2:
-				this.showPageLocation = true;
-				break;
-			default:
-				break;
+		if (this.switchPage === 2) {
+			this.showPageLocation = true;
 		}
 
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
