@@ -1,4 +1,5 @@
-<div class="modal-main-wrapper" id="closedialog" tabindex="1">
+<div class="modal-main-wrapper" id="closedialog" tabindex="1"
+	attr.aria-label="{{ 'gaming.autoClose.modalTurnAutoClose.title' | translate }} window">
 	<ui-popover-turn-on>
 		<div class="modal-body vtr-modal-turn-on">
 			<div class="modal-body">
@@ -16,9 +17,9 @@
 				</div>
 				<div class="check-asked">
 					<label for="askedBox">
-						<input type="checkbox" id="askedBox" (change)="setAksAgain($event)" tabindex="1" role="checkbox"
-							[attr.aria-label]="'Dont ask again'">
-						<div class="status-check"></div>
+						<button class="ask-again" role="checkbox" [ngClass]="{'checked':isChecked}"
+							[attr.aria-checked]="isChecked" (click)="setAksAgain($event)" tabindex="1"
+							aria-label="Don't ask again"></button>
 						<div class="status-text">{{ 'gaming.autoClose.modalTurnAutoClose.checkedTitle' | translate }}
 						</div>
 					</label>
@@ -31,7 +32,7 @@
 							[attr.aria-label]="'Turn on auto close'">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
 						<a (click)="notNowAction($event)" (keyup.enter)="notNowAction($event)"
 							class="cancel-link active" tabindex="1" role="button" (keydown)="keydownFn($event)"
-							[attr.aria-label]="'Cancel'">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+							[attr.aria-label]="'Not now'">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
 					</div>
 				</div>
 			</div>
