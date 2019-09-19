@@ -427,7 +427,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			const device = items.find((item) => item.id === 'device');
 			if (device !== undefined) {
 				const su = device.subitems.find((item) => item.id === 'system-updates');
-				if (this.adPolicyService.IsSystemUpdateEnabled && !this.isSMode) {
+				if (this.adPolicyService.IsSystemUpdateEnabled && !this.deviceService.isSMode && !this.deviceService.isGaming) {
 					if (!su) {
 						device.subitems.splice(2, 0, {
 							id: 'system-updates',
