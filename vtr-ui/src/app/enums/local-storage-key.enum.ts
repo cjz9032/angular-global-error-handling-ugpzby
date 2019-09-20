@@ -183,5 +183,7 @@ export enum LocalStorageKey {
 	// Ad policy local storage key
 	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
 	// App Search
-	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures'
+	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
+	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+
 }

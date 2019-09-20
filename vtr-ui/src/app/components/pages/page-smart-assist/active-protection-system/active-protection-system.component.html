@@ -2,8 +2,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<p class="caption" id="smart-assist-active-protection-system-desc" 
-				attr.aria-label="smart-assist-active-protection-system-desc">
+				<p class="caption"
+					id="smart-assist-active-protection-system-desc"
+					attr.aria-label="smart-assist-active-protection-system-desc">
 					{{'device.smartAssist.activeProtectionSystem.description' | translate}}
 				</p>
 			</div>
@@ -40,11 +41,10 @@
 										vtrMetrics
 										metricsEvent="ItemClick"
 										metricsParent="Device.SmartAssist"
-										metricsItem="ActiveProtectionSystem.Sensitivity.Slider"
-										>
+										metricsItem="ActiveProtectionSystem.Sensitivity.Slider">
 									</vtr-ui-aps-slider>
 								</div>
-								<div class="checkbox">
+								<!-- <div class="checkbox">
 									<vtr-ui-checkbox [checkboxId]="'activeProtectionCheckbox'"
 										[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
 										[checked]="repeatShock"
@@ -56,8 +56,31 @@
 										metricsItem="ActiveProtectionSystem.AutoDisable"
 										[metricsValue]="repeatShock" >
 									</vtr-ui-checkbox>
-								</div>
+								</div> -->
 							</vtr-ui-row-switch>
+							<div class="custom-control custom-checkbox aps-checkbox">
+								<input id="aps-toggle-checkbox"
+									attr.aria-label="aps-toggle-checkbox"
+									type="checkbox"
+									class="custom-control-input"
+									[checked]="repeatShock"
+									(change)="setAutoDisableSetting($event)"
+									[disabled]="!apsStatus"
+									vtrMetrics
+									metricsEvent="ItemClick"
+									metricsParent="Device.SmartAssist"
+									metricsItem="ActiveProtectionSystem.AutoDisable"
+									[metricsValue]="repeatShock" />
+								<label class="custom-control-label"
+									for="aps-toggle-checkbox">
+									<span class="text-capitalize"
+										[ngClass]="{'disabled': !apsStatus}"
+										id="aps-toggle-checkbox-text"
+										attr.aria-label="aps-toggle-checkbox-text">
+										{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}
+									</span>
+								</label>
+							</div>
 						</div>
 					</li>
 
@@ -81,8 +104,9 @@
 							<div *ngIf="manualSnooze"
 								class="dropdown row">
 								<section class="col-sm-6">
-									<p class="text-uppercase"  id="smart-assist-manual-active-protection-system-desc" 
-									attr.aria-label="smart-assist-manual-active-protection-system-desc">
+									<p class="text-uppercase"
+										id="smart-assist-manual-active-protection-system-desc"
+										attr.aria-label="smart-assist-manual-active-protection-system-desc">
 										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
 									</p>
 									<vtr-ui-dropdown [dropDownId]="'manualSnoozeTimeDropDown'"
@@ -120,8 +144,9 @@
 					<!-- Advanced section -->
 					<li *ngIf="advanceAvailable && apsStatus"
 						class="advanced pt-3 keep-my-display-block auto-screen-off-block">
-						<h4 *ngIf="!advancedToggle" id="activeProtectionSystem-more"
-						attr.aria-label="activeProtectionSystem-more">
+						<h4 *ngIf="!advancedToggle"
+							id="activeProtectionSystem-more"
+							attr.aria-label="activeProtectionSystem-more">
 							{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
 						<a *ngIf="!advancedToggle"
 							id="activeProtectionSystem_advanced_settings_toggle"
@@ -131,7 +156,8 @@
 							</p>
 						</a>
 
-						<section *ngIf="advancedToggle" id="activeProtectionSystem_advanced_settings"
+						<section *ngIf="advancedToggle"
+							id="activeProtectionSystem_advanced_settings"
 							attr.aria-label="activeProtectionSystem_advanced_settings">
 							<h4>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
 							</h4>

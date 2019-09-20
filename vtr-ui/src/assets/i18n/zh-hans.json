@@ -1130,8 +1130,8 @@
                             }
                         },
                         "subSectionTwo": {
-                            "title": "反转缺省主要功能",
-                            "description": "启用时，缺省主要功能将更改为与出厂设置相反的功能。重新启动计算机使更改生效。"
+                            "title": "反转键盘首行默认功能",
+                            "description": "启用时，键盘首行功能将更改为与出厂设置相反的功能。重新启动计算机使更改生效。"
                         },
                         "subSectionThree": {
                             "title": "如何使用 Fn 组合键",
@@ -1542,7 +1542,11 @@
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
             "poweredBy": "Coronet 出品",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "上一步",
@@ -1713,7 +1717,7 @@
                 "buyNow": "立刻购买",
                 "buy": "立即购买、下载和安装 McAfee 病毒防护软件，充分利用其中的各项银行级安全功能保护设备",
                 "onlyBasic": "此处仅提供基础防护。虽然可帮助你防范某些网络威胁，但你可能仍会受到其他威胁的侵害。",
-				"virus": "病毒防护",
+                "virus": "病毒防护",
                 "homeNetwork": "家庭网络保护",
                 "private": "私人匿名浏览",
                 "everyDevice": "单设备保护",
