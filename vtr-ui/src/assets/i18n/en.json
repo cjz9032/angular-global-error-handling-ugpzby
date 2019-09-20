@@ -1818,10 +1818,10 @@
 			"homesecurity": {
 				"title": "Connected Home Security",
 				"titleDescription": "Connected Home Security keeps you safe in three ways:",
-				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised",
-				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe",
+				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised.",
+				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe.",
 				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
-				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
+				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers.",
 				"subtitle": "Peace of Mind",
 				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
 				"tryNow": "Try Now",

@@ -12,18 +12,18 @@
 		.container-fluid {
 			padding: 2rem;
 			.title {
-				color: $main_dark;
+				color: $shade_blue;
 				font-size: 2rem;
-				font-weight: 600;
-				height: 6rem;
+				font-weight: $weight_bold;
 				line-height: 3rem;
+				padding-bottom: 2rem;
 			}
 
 			.description {
-				color: $main_shade;
+				color: $shade_blue;
 				font-size: 1.6rem;
 				font-weight: 400;
-				height: 8rem;
+				height: 10rem;
 				margin-top: 0.5rem;
 				overflow: hidden;
 			}
@@ -31,13 +31,14 @@
 			vtr-ui-button{
 				display: inline-block;
 				::ng-deep .button{
-					min-height: 5rem;
-					min-width: 20rem;
+					min-height: 4rem;
+					padding: 0 3.5rem;
+					background: $blue_gradient;
 				}
 			}
 
 			.join::ng-deep .button{
-				border: 0.1rem solid $main;
+				border: 0.1rem solid $grey_dark;
 				background: $shade_extralight;
 				color: $main;
 			}
