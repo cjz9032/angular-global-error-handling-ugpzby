@@ -46,7 +46,6 @@
 				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"
-					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
@@ -56,7 +55,6 @@
 				<vtr-ui-button *ngIf="(account?.state === 'standard' && !isMoreThen30Day(account?.expirationDay)) || account?.state === 'standardExpired'"
 					metricsItem="renew"
 					metricsEvent="featureClick"
-					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
@@ -66,7 +64,6 @@
 				<vtr-ui-button
 					metricsItem="extendNow" *ngIf="account?.state === 'standard' && isMoreThen30Day(account?.expirationDay)"
 					metricsEvent="featureClick"
-					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
@@ -80,7 +77,7 @@
 		<div class="row heading mb-4" [innerHTML]="'homeSecurity.overview.overviewTitle' | translate"></div>
 		<div class="row content-body mb-4">
 			<div class="container-fluid sub-container p-4">
-				<div class="row container-fluid home-card mb-4">
+				<div class="row container-fluid home-card">
 					<vtr-home-security-all-devices [allDevices]="allDevices" class="container-fluid">
 					</vtr-home-security-all-devices>
 				</div>
@@ -90,7 +87,6 @@
 			<vtr-ui-button
 				metricsItem="goToDashboard"
 				metricsEvent="featureClick"
-				metricsParent="{{metricsParent}}"
 				(click)="common.openCornet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
@@ -107,7 +103,6 @@
 			<vtr-ui-button
 				metricsItem="disconnect"
 				metricsEvent="featureClick"
-				metricsParent="{{metricsParent}}"
 				(click)="disconnect()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-disconnect"

@@ -42,6 +42,7 @@ export class UiButtonComponent implements OnInit {
 	}
 
 	getButtonColor(buttonColor) {
+		if (!buttonColor) { return;	}
 		return `btn-${buttonColor}`;
 	}
 
