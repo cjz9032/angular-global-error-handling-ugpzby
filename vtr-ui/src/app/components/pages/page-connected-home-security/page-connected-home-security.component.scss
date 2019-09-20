@@ -30,6 +30,13 @@
 			a.disabled {
 				pointer-events: auto;
 			}
+			.chevron-list {
+				li.black {
+					.detail {
+						color: $black_light!important;
+					}
+				}
+			}
 		}
 
 		.home-security {
