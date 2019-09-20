@@ -276,6 +276,7 @@
 	vtr-ui-rectangle-radio {
 		.label {
 			word-wrap: normal;
+			word-break: normal!important;
 		}
 		.app-icon {
 			display: inline-block;
