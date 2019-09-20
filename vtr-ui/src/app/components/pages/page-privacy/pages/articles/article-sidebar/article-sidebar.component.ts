@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { filter, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
