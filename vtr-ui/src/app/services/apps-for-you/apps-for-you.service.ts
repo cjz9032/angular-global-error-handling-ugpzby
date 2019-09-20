@@ -80,14 +80,12 @@ export class AppsForYouService {
 	private isCancelInstall = false;
 	private cmsAppDetailsArray = [];	// Cached app details
 	private cmsAppDetails: any;
-	private culture: any;
 	private serialNumber: string;
 	private familyName: string;
 	private localInfo: any;
 	systemUpdateBridge: any;
 
 	private initialize() {
-		this.culture = window.navigator.languages[0];
 		let machineInfo = this.deviceService.getMachineInfoSync();
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
@@ -122,7 +120,7 @@ export class AppsForYouService {
 					appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 					break;
 			}
-			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.culture })])
+			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.localInfo.Lang })])
 				.then((response) => {
 					this.cmsAppDetails = response[0];
 					if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
