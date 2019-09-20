@@ -11,7 +11,7 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
   addAppsList: string;
   statusAskAgain: boolean;
   setAutoClose: any;
-  public isChecked:any;
+  public isChecked: any;
   constructor() { }
 
   @Input() showTurnOnModal: boolean;
@@ -21,9 +21,9 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
   @Output() actionNeedAsk = new EventEmitter<boolean>();
 
   ngOnInit() {
+    document.getElementById('nbTurnOnModal').focus();
   }
   ngAfterViewInit() {
-    document.getElementById('close').focus();
   }
   async setAksAgain() {
     this.isChecked = !this.isChecked;
@@ -33,9 +33,9 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
   turnOnAction(isConfirm: boolean) {
     let status = 0;
     if (this.statusAskAgain) {
-        status = 2;
+      status = 2;
     }
-    this.actionTurnOn.emit({isConfirm, askAgainStatus: status });
+    this.actionTurnOn.emit({ isConfirm, askAgainStatus: status });
   }
 
   notNowAction(event) {
@@ -43,17 +43,18 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
     if (this.statusAskAgain) {
       status = 1;
     }
-    this.actionNotNow.emit({askAgainStatus: status});
+    this.actionNotNow.emit({ askAgainStatus: status });
   }
 
   closeModal(action: boolean) {
     this.closeTurnOnModal.emit(action);
   }
 
-  keydownFn(event){
-    if(event.which === 9){
-      let txt = document.getElementById("close");
-      txt.focus();
+  keydownFn(event) {
+    if (event.which === 9) {
+      setTimeout(() => {
+        document.getElementById('closeButton').focus();
+      }, 2);
     }
   }
 }

@@ -8,7 +8,7 @@
 		</div>
 		<input type="text" #searchInput class="search-input"
 		[placeholder]="searchTips"
-		(ngModelChange)="onTextChange($event)" [(ngModel)]="searchService.searchText"/>
+		(ngModelChange)="onTextChange($event)" (keydown)="onKeyDown($event)" [(ngModel)]="searchService.searchText"/>
 		<div class="clean-button"
 			[class.active]="searchService.searchText"
 			vtrMetrics
