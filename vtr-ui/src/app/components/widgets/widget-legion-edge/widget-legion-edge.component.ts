@@ -147,6 +147,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			readonly: true,
 			id: 'legionedge hybridmode',
 			ariaLabel: 'hybrid mode',
+			descriptionLabel: 'hybrid mode window opened',
 			type: 'gaming.dashboard.device.legionEdge.hybridMode',
 			settings: ''
 		},
@@ -169,6 +170,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			id: 'legionedge touchpadlock',
 			ariaLabel: 'touchpadlock',
 			type: 'gaming.dashboard.device.legionEdge.touchpadLock',
+			descriptionLabel: 'Touchpad lock window opened',
 			settings: ''
 		}
 	];
@@ -485,16 +487,20 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public onPopupClosed($event) {
 		const name = $event.name;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.legionUpdate[1].isPopup = false;
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.legionUpdate[4].isPopup = false;
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.title') {
 			this.legionUpdate[0].isDriverPopup = false;
+			this.legionUpdate[0].isPopup = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.legionUpdate[2].isDriverPopup = false;
+			this.legionUpdate[2].isPopup = false;
 		}
 	}
 
