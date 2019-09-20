@@ -79,7 +79,7 @@
 		cursor: pointer;
 		-webkit-appearance: initial;
 		max-width: 26rem;
-		white-space: nowrap;
+		//white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
 		margin-top: 2rem;
@@ -93,6 +93,7 @@
 		button {
 			padding: 0.5rem 1rem;
 			height: 7rem;
+			width:100%;
 
 			&.btn-outline-shadow {
 				border: 1px solid $shade_lighter;
@@ -207,4 +208,8 @@
 
 div {
 	cursor: default;
+}
+
+.dropdown-toggle{
+	white-space: normal !important;
 }
