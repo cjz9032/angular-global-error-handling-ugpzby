@@ -55,8 +55,8 @@
                         </div>
                         <div class="container final-result-code" *ngIf="getFinalResultCode()">
                             <span class="result-code-value-text">{{finalResultCodeText}}:</span>
-                            <span class="result-code-complete-text"> {{getFinalResultCode()}}</span>
-                            <fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="getTooltipInformation()" [icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
+                            <span class="result-code-complete-text">{{getFinalResultCode()}}</span>
+                            <fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
                             </fa-icon>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
     </div>
 </div>
 <ng-template #tooltipFinalResultCode>
-    <div [innerHTML]="tooltipInformation"></div>
+    <div [innerHTML]="getTooltipInformation()"></div>
     <div class='button-box'>
         <a [attr.href]="'https://support.lenovo.com/contactus'" target="_blank"><button
 				class='btn button'>{{ lenovoSupport }}</button>
