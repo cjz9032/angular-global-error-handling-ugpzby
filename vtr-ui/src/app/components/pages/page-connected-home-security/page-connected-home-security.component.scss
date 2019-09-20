@@ -30,6 +30,13 @@
 			a.disabled {
 				pointer-events: auto;
 			}
+			.chevron-list {
+				li.black {
+					.detail {
+						color: $black_light!important;
+					}
+				}
+			}
 		}
 
 		.home-security {
@@ -62,6 +69,7 @@
 					max-width: 90%;
 					::ng-deep .button {
 						width: 100%;
+						background: $blue_gradient;
 					}
 				}
 			}

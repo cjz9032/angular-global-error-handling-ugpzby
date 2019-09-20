@@ -67,6 +67,8 @@
 			</span>
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 			</fa-icon> -->
+			<span class="unread-count-tag"
+				*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
 		</button>
 		<div class="collapse navbar-collapse"
 			*ngIf="!loadMenuItem.hideMenus"
@@ -259,7 +261,6 @@
 								vtrMetrics
 								id="menu-main-lnk-open-lma"
 								attr.aria-label="menu-main-lnk-open-lma"
-								routerLinkActive="link-active"
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoMigrationAssistantButton"
@@ -275,7 +276,6 @@
 								vtrMetrics
 								id="menu-main-lnk-open-adobe"
 								attr.aria-label="menu-main-lnk-open-adobe"
-								routerLinkActive="link-active"
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="AdobecRedemptionButton"

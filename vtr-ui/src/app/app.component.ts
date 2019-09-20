@@ -469,6 +469,11 @@ export class AppComponent implements OnInit, OnDestroy {
 	// Defect fix VAN-2988
 	@HostListener('window:keydown', ['$event'])
 	disableCtrlACV($event: KeyboardEvent) {
+		const eventSource = $event as any;
+		if (eventSource.fromAppSearch) {
+			return;	// allow copy and paste in search box
+		}
+
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 
 		if (

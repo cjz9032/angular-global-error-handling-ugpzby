@@ -98,6 +98,10 @@ $grey_dark: #667481;
 $grey_light: #e6eaeb;
 $grey_lighter: #F5F7F8;
 $blueHyperLink: #346CEF;
+$green_darker: #00893a;
+$green_dark: #008035;
+$green-light: #00a886;
+$black_light: #424b6c;
 
 $light: #fff;
 $dark: #000;
@@ -152,7 +156,8 @@ $gaming_hd_diameter_xs: 6rem;
 $gradient_main: linear-gradient(90deg, $main_gstart 0%, $main 100%);
 $gradient_red: linear-gradient(103deg, $button_red_start 0%, $button_red_end 100%);
 $gradient_gray: linear-gradient(90deg, $grey_lighter 0%, $light 100%);
-$blue_Gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
+$blue_gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
+$green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 
 $mediaquery_0: "only screen and (max-width : 3600px)";
 $mediaquery_1: "only screen and (max-width : 3000px)";

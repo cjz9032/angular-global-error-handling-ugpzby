@@ -6,12 +6,13 @@ import { isUndefined } from 'util';
 @Component({
 	selector: 'vtr-networkboost-add-apps',
 	templateUrl: './networkboost-add-apps.component.html',
-	styleUrls: [ './networkboost-add-apps.component.scss' ]
+	styleUrls: ['./networkboost-add-apps.component.scss']
 })
 export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterViewInit {
 	loading = true;
 	runningList: any = [];
 	noAppsRunning = false;
+	currentLength = 0;
 	addAppsList: string;
 	statusAskAgain: boolean;
 	public isChecked: any = [];
@@ -19,13 +20,13 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	@Input() addedApps = 0;
 	maxAppsCount = 5;
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
-	constructor(private networkBoostService: NetworkBoostService) {}
+	constructor(private networkBoostService: NetworkBoostService) { }
 
 	ngOnInit() {
 		this.refreshNetworkBoostList();
+		document.getElementById('nbAddApps').focus();
 	}
 	ngAfterViewInit() {
-		document.getElementById('close').focus();
 	}
 	ngOnChanges(changes: any) {
 		this.runningList.push({ iconName: '', processDescription: '', processPath: '' });
@@ -49,7 +50,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			if (result) {
 				this.addedApps += 1;
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 	async removeApp(app) {
 		try {
@@ -57,7 +58,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			if (result) {
 				this.addedApps -= 1;
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	async refreshNetworkBoostList() {
@@ -70,9 +71,15 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 				this.runningList = result.processList || [];
 			}
 			this.noAppsRunning = this.runningList.length === 0 ? true : false;
+			if (this.noAppsRunning) {
+				setTimeout(() => {
+					document.getElementById('noAppsRunning').focus();
+				}, 5);
+			}
 		} catch (error) {
 			this.loading = false;
 			this.noAppsRunning = true;
+			document.getElementById('noAppsRunning').focus();
 			console.log(`ERROR in refreshNetworkBoostList()`, error);
 		}
 	}
@@ -80,12 +87,40 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
 	}
-	runappKeyup(event, index) {
-		if (event.which === 9) {
-			if (index === this.runningList.length - 1 || this.runningList.length === 5) {
-				const txt1 = document.getElementById('close');
-				txt1.focus();
+	runappKeyup(event, i) {
+		if (event.which === 9 ){
+		if (i > this.currentLength) {
+			this.currentLength = i;
+		}
+		if (Number(this.addedApps) === 5) {
+			if (!this.checkApps(i)) {
+				this.focusClose();
+			}
+
+		} else {
+			if (i === this.runningList.length - 1) {
+				this.focusClose();
 			}
 		}
+	}
+	}
+
+	focusClose() {
+		setTimeout(() => {
+			document.getElementById('close').focus();
+
+		}, 2)
+	}
+	checkApps(i) {
+		let isShow = false;
+		this.runningList.forEach((e, index) => {
+			console.log(index);
+			if (this.isChecked[index] && index > i) {
+				console.log(index, i);
+				console.log(this.isChecked)
+				isShow = true;
+			}
+		});
+		return isShow;
 	}
 }

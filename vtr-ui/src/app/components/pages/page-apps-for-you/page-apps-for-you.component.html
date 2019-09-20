@@ -23,22 +23,25 @@
 							<div class="spinner-border text-primary progress-spinner" role="status"></div>
 						</div>
 					</div>
-					<div class="col-4 btn-content">
-						<a href="javascript:;" class="btn-install" (click)="clickInstallButton()"
-							[ngSwitch]="installButtonStatus">
-							<span class="item-button" *ngSwitchCase="installButtonStatusEnum.INSTALL">
-								Install
-							</span>
-							<span class="item-button" *ngSwitchCase="installButtonStatusEnum.INSTALLING">
-								Installing
-							</span>
-							<span class="item-button" *ngSwitchCase="installButtonStatusEnum.LAUNCH">
-								Launch
-							</span>
-							<span class="item-button" *ngSwitchCase="installButtonStatusEnum.SEEMORE">
-								See More
-							</span>
-						</a>
+					<div class="col-4 btn-content" [ngSwitch]="installButtonStatus">
+						<div class="btn-box">
+							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALL"
+								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
+								metricsItem="btn.Download" [isFullWidth]="true"
+								[label]="'Install'"></vtr-ui-button>
+							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALLING"
+								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
+								metricsItem="btn.Download" [isFullWidth]="true"
+								[label]="'Installing'"></vtr-ui-button>
+							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.LAUNCH"
+								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
+								metricsItem="btn.Download" [isFullWidth]="true"
+								[label]="'Launch'"></vtr-ui-button>
+							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.SEEMORE"
+								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
+								metricsItem="btn.Download" [isFullWidth]="true"
+								[label]="'See More'"></vtr-ui-button>
+						</div>
 						<div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
 					</div>
 				</div>
