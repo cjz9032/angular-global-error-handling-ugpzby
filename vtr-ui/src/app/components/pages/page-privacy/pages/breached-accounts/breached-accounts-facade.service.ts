@@ -36,16 +36,6 @@ export class BreachedAccountsFacadeService {
 			),
 			map((breachedAccounts) => breachedAccounts.length > 0)
 		);
-	isAccountVerify$ = this.breachedAccountsService.onGetBreachedAccounts$
-		.pipe(
-			debounceTime(100),
-			filter((breachedAccounts) => breachedAccounts.error === null),
-			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
-					return !(breach.hasOwnProperty('isEmailConfirmed') && breach.isEmailConfirmed === false);
-				})
-			),
-			map((breachedAccounts) => breachedAccounts.length > 0)
-		);
 	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
 	breachedAccountWasScanned$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
