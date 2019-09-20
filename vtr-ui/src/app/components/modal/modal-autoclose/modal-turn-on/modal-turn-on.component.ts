@@ -7,22 +7,26 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 	styleUrls: [ './modal-turn-on.component.scss' ]
 })
 export class ModalTurnOnComponent implements OnInit, AfterViewInit {
-  setAutoClose: any;
-  constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
+	setAutoClose: any;
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
 
-  @Input() showTurnOnModal: boolean;
-  @Output() actionTurnOn = new EventEmitter<boolean>();
-  @Output() actionNotNow = new EventEmitter<boolean>();
-  @Output() closeTurnOnModal = new EventEmitter<boolean>();
-  @Output() actionNeedAsk = new EventEmitter<any>();
-  ngOnInit() {
-  }
-  ngAfterViewInit() {
-    document.getElementById('closedialog').focus();
-  }
-  setAksAgain(event: any) {
-    this.actionNeedAsk.emit(event);
-  }
+	@Input() showTurnOnModal: boolean;
+	@Output() actionTurnOn = new EventEmitter<boolean>();
+	@Output() actionNotNow = new EventEmitter<boolean>();
+	@Output() closeTurnOnModal = new EventEmitter<boolean>();
+	@Output() actionNeedAsk = new EventEmitter<any>();
+	public isChecked: any;
+	ngOnInit() {
+		document.getElementById('closedialog').focus();
+	}
+	ngAfterViewInit() {
+		document.getElementById('closedialog').focus();
+	}
+
+	setAksAgain(event: any) {
+		this.isChecked = !this.isChecked;
+		this.actionNeedAsk.emit(event);
+	}
 
 	turnOnAction(isConfirm: boolean) {
 		this.actionTurnOn.emit(isConfirm);
@@ -32,12 +36,13 @@ export class ModalTurnOnComponent implements OnInit, AfterViewInit {
 		this.actionNotNow.emit(event);
 	}
 
-  closeModal(action: boolean) {
-    this.closeTurnOnModal.emit(action);
-  }
-  keydownFn(event) {
-    if (event.which === 9) {
-      document.getElementById('closedialog').focus();
-    }
-  }
+	closeModal(action: boolean) {
+		this.closeTurnOnModal.emit(action);
+	}
+
+	keydownFn(event) {
+		if (event.which === 9) {
+			document.getElementById('closedialog').focus();
+		}
+	}
 }
