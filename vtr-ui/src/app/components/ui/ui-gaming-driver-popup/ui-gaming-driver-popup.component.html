@@ -10,7 +10,7 @@
 			</a>
 			</div>
 		</div>
-		<div class="content-body" role="dialog" aria-labelledby="driver_popup" tabindex="0">
+		<div class="content-body" role="dialog" aria-labelledby="driver_popup" tabindex="-1">
 			<h1>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</h1>
 			<p *ngIf="!isLightingText">{{popupText | translate}}</p>
 			<p *ngIf="isLightingText">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</p>
@@ -21,7 +21,10 @@
 				[metricsItem]="'driverPopup_install'"
 				metricsEvent="featureClick"
 				(click)="systemUpdatePage()"  (keydown.enter)="systemUpdatePage()"
-				 id="gaming_driverPopup_install" aria-label="gaming driverPopup install" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</a>
+				 id="gaming_driverPopup_install" aria-label="gaming driverPopup install"
+				role="link">
+				{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}
+			</a>
 			<a (click)="close()" vtrMetrics tabindex="1"
 				[metricsItem]="'driverpopup_cancel'"
 				metricsEvent="featureClick"  (keydown.enter)="close()"
