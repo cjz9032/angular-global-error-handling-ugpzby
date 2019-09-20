@@ -160,7 +160,6 @@ export enum LocalStorageKey {
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
-	UPEUserID = '[LocalStorageKey] UPEUserID',
 	BetaUser = '[LocalStorageKey] BetaUser',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
 	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
@@ -174,6 +173,17 @@ export enum LocalStorageKey {
 	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability',
 	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
 	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability',
+
+	// Apps For You storage key
+	UnreadMessageCount = '[LocalStorageKey] UnreadMessageCount',
+
 	SmartAssistCache = '[LocalStorageKey] SmartAssistCache',
-	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache'
+	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
+
+	// Ad policy local storage key
+	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
+	// App Search
+	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
+	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+
 }

@@ -28,6 +28,7 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 	@HostBinding('style.background') background = null;
 	@HostBinding('style.color') color = null;
 	@HostBinding('style.borderColor') borderColor = null;
+	@HostBinding('style.opacity') opacity = null;
 
 	isOnline = this.commonService.isOnline;
 
@@ -63,13 +64,13 @@ export class OfflineModeComponent implements OnInit, OnDestroy {
 
 	private buttonDisabled(isOnline) {
 		this.isDisabled = isOnline ? null : true;
-		this.background = isOnline ? null : 'linear-gradient(270deg, #E2E2E2 0%, #C2C6CF 100%)';
-		this.borderColor = isOnline ? null : '#D8D8D8';
-		this.color = isOnline ? null : '#FFF';
+		this.background = isOnline ? null : '#E6EAEB';
+		this.borderColor = isOnline ? null : '#E6EAEB';
+		this.color = isOnline ? null : 'rgba(52, 73, 94, .5)';
 	}
 
 	private linkDisabled(isOnline) {
-		this.color = isOnline ? null : '#D8D8D8';
+		this.color = isOnline ? null : 'rgba(52, 73, 94, .5)';
 	}
 
 	private addDisabledClass(isOnline) {

@@ -49,4 +49,25 @@
 			display: none;
 		}
 	}
+
+	&__clear-data-wrapper {
+		width: 100%;
+		text-align: right;
+		padding-top: 2rem;
+	}
+
+	&__offline {
+		text-align: center;
+	}
+
+	&__offline-title {
+		@extend %subtitle;
+		margin-top: 2rem;
+		color: #34495E;
+	}
+
+	&__offline-text {
+		@extend %text-common;
+		margin-top: 2rem;
+	}
 }

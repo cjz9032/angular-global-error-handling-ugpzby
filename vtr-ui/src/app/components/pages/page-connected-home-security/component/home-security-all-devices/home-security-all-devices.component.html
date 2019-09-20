@@ -1,8 +1,12 @@
 <div class="vtr-home-security-all-devices container-fluid">
-	<div class="row justify-content-between no-gutters">
-		<div class="col-2 flex-column text-center" *ngFor="let item of allDevices.allDevicesItem">
-			<div class="icon-bkg blue">
-				<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
+	<div class="row">
+		<div class="col-12 col-md-6 row align-items-center pb-3" *ngFor="let item of allDevices.allDevicesItem">
+			<div class="icon-bkg blue col-2 col-md-3 p-0 text-center">
+				<span [ngClass]="['icomoon', 'icomoon-' + getItemStatusIconClass(item)]"></span>
+			</div>
+			<div class="col-10 col-md-9">
+				<div class="font-weight-bold blue" [innerHTML]="item.count"></div>
+				<div class="text-ellipsis"><span title="{{item.type}}" [innerHTML]="item.type"></span></div>
 			</div>
 			<div class="mb-2 text-ellipsis"><span title="{{item.type}}" [innerHTML]="item.type"></span></div>
 			<div class="mb-4"><span class="font-weight-bold blue" [innerHTML]="item.count"></span></div>

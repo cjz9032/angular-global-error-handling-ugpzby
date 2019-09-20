@@ -502,6 +502,23 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.apps-for-you-dialog {
+	.modal-dialog {
+		max-width: 75%;
+		margin: 1rem auto 0;
+		overflow-y: initial !important;
+	}
+
+	.modal-dialog-centered {
+		min-height: calc(100vh - 2rem);
+	}
+
+	.modal-content {
+		background: none;
+		padding: 0;
+	}
+}
+
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
@@ -872,4 +889,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background: $light;
 		padding: 4rem;
 	}
+button:focus, .button:focus {
+	outline: 0;
+	box-shadow: 0 0 0 0.4rem rgba(38,143,255,.5) !important;
 }

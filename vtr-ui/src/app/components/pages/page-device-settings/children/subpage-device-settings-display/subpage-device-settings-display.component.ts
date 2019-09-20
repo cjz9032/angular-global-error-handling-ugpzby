@@ -207,7 +207,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	initCameraPrivacyFromCache() {
-		const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+		const privacy = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
 		if (privacy && privacy.available !== undefined) {
 			this.cameraPrivacyModeStatus.available = privacy.available;
 		}
@@ -255,7 +255,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	private initFeatures() {
+	initFeatures()  {
 		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
 		this.getPrivacyGuardCapabilityStatus();
@@ -268,7 +268,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	async initCameraSection() {
 		this.isDTmachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.isAllInOneMachineFlag = await this.isAllInOneMachine();
-		if (this.isDTmachine && !this.isAllInOneMachineFlag) {
+		if (!this.isAllInOneMachineFlag) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'camera');
 		} else {
 			this.getCameraPrivacyModeStatus();

@@ -25,7 +25,7 @@ export interface DataKnowledge {
 	[key: string]: DataKnowledgeItem;
 }
 
-const DEFAULT_SITES_FAVICON = '/assets/images/privacy-tab/default.png';
+const DEFAULT_SITES_FAVICON = '/assets/images/privacy-tab/default-site.png';
 
 @Injectable({
 	providedIn: 'root'

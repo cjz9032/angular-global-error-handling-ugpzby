@@ -1223,17 +1223,6 @@
                             "slow": "Sporo"
                         },
                         "toolTipContent": "Odaberite željenu opciju za zaključavanje zaslona na brzini Brzo/Srednje/Sporo kada nije otkrivena vaša prisutnost. Međutim, na vrijeme kada će zaslon biti zaključan utječe i stvarni korisnički scenarij, mogućnost senzora i postavke isteka vremena za zaslon sustava Windows. Stoga vam preporučujemo da sustav odmah zaključate prije odlaska."
-                    },
-                    "facialRecognition": {
-                        "title": "PREPOZNAVANJE LICA",
-                        "caption": "Možete omogućiti značajku prepoznavanja lica i omogućiti joj pristup kameri. Ovaj alat snima vašu sliku kako bi točno prepoznao vašu nazočnost ili otkrio kada ste uređaj ostavili bez nadzora. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
-                        "checkBox": "Uključite kameru i omogućite ovu značajku",
-                        "note": {
-                            "permission": "Lenovo Vantage nema pristup kameri. Funkcija potvrdnog okvira ne radi.",
-                            "privacyMode": "Uključen je način rada kamere za zaštitu privatnosti Lenovo Vantage. Funkcija potvrdnog okvira ne radi.",
-                            "windowsLink": "Idite na postavke sustava Windows za omogućivanje pristupa",
-                            "privacyLink": "Idite na način rada kamere za zaštitu privatnosti kako biste ga isključili"
-                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1261,7 +1250,7 @@
                     "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
                     "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava neće raditi.",
                     "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave.",
-                    "description6": "4. Ako je način rada u zrakoplovu omogućen na vašem računalu, onemogućene su ove značajke."
+                    "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sustava Windows Hello",
@@ -1551,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Pokreće Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Natrag",
@@ -1601,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1695,7 +1693,7 @@
             "common": {
                 "title": "Zaštita od virusa",
                 "back": "NATRAG",
-                "recommends": "Lenovo preporuča <b>McAfee<b> za zaštitu svih vaših uređaja",
+                "recommends": "Zašto tvrtka Lenovo preporuča <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, McAfee LiveSafe bi vam mogao pružiti bolju zaštitu.",
@@ -1718,8 +1716,8 @@
                 "view": "PREGLED SAVJETA",
                 "buyNow": "Kupite sada",
                 "buy": "Kupite, preuzmite i instalirajte McAfee zaštitu od virusa već danas kako biste iskoristili prednosti ovih sigurnosnih značajki",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Ovdje su samo osnove. Iako ste zaštićeni od nekih prijetnji na mreži, možda ćete i dalje biti izloženi drugima.",
+                "virus": "Zaštita od virusa",
                 "homeNetwork": "Zaštita kućne mreže",
                 "private": "Privatno, anonimno pregledavanje",
                 "everyDevice": "Zaštita na svakom uređaju",
@@ -1761,10 +1759,10 @@
                 "Viruses": "Virusi uklonjeni",
                 "blocked": "Loše veze blokirane",
                 "shredded": "Datoteke su sigurno uništene",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Pokrenite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
             }
         },
         "wifisecurity": {
@@ -1838,7 +1836,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stanje sigurnosti",
@@ -2366,7 +2366,7 @@
         "OtherSettings": "Ostale postavke",
         "usageStatistics": "Statistički podaci o upotrebi",
         "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Podijelite statističke podatke s tvrtkom Lenovo",
         "deviceStatisticsDescription": "Šalje statističke podatke tvrtki Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije značajki na računalu.",
         "Note": "Napomena: ",
         "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu."

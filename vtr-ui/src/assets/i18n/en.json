@@ -1540,11 +1540,15 @@
 			"upgrade": "upgrade",
 			"freeTrial": "Protect all of your devices - Free 30 day trial",
 			"startTrial": "Start Trial",
-			"inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
+			"trialTitle": "Trial",
+			"subscriptionTitle": "Subscription",
+			"inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep protecting your home and family",
 			"trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
+			"inSubscriptionDetail": "You are currently protecting your home and family with Connected Home Security.",
 			"subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-			"overviewTitle": "Overview of your Connected Home Security",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+			"subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
 			"overviewTitleAdmin": "Overview of your Connected Home Security",
 			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
 			"familyMembers": "Family members",
@@ -1555,7 +1559,10 @@
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
 			"disconnect": "disconnect",
 			"goDashboard": "go to dashboard",
-			"extendNow": "extend"
+			"extendNow": "extend",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+
 		},
 		"tour": {
 			"back": "Back",
@@ -1605,9 +1612,12 @@
 			"joinDescription": "Become a part of your family security group."
 		},
 		"modal": {
-			"countdownTile": "You are about to launch the Connected Home Security web console...",
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
 			"goNow": "Go now",
-			"disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
 		}
 	},
 	"support": {
@@ -1715,7 +1725,7 @@
 				"notAvailable": "NOT AVAILABLE"
 			},
 			"windowsDefender": {
-				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so can <b>protect what matters.</b>",
+				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so you can <b>protect what matters.</b>",
 				"topTip": "Top Tips for online safety",
 				"topContent": "Learn how you can defend against today's biggest online threats",
 				"view": "VIEW TIPS",
@@ -1768,7 +1778,7 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device"
 			}
 		},
 		"wifisecurity": {
@@ -1806,7 +1816,7 @@
 			"errorMessage": {
 				"headerText": "Error",
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
-				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect",
+				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
 				"closeText": "close"
 			}
@@ -1833,20 +1843,22 @@
 				"buttonDescribe": "You have already joined this device to an existing Connected Home Security account.",
 				"title": "Already have Connected Home Security?",
 				"titleDescribe": "Please ensure location permissions are enabled for Vantage in order to add your device to an existing Connected Home Account, and to use Connected Home Security.",
-				"enterCode": "Enter the connection code",
-				"joinChs": "Join Connected Home Security of your family",
+				"enterCode": "Enter the invitation code",
+				"joinFamilyAccount": "Join family account",
+				"joinChs": "join your family's Connected Home Security",
 				"invitationCode": "Invitation code",
-				"connect": "CONNECTED",
+				"connect": "CONNECT",
 				"addHome": "Add Home",
 				"ok": "OK",
 				"continue": "CONTINUE",
 				"cancel": "CANCEL",
 				"validateCode": "VALIDATE CODE",
-				"success": "Successfully joined your CHS family!",
+				"success": "You have successfully joined your family's Connected Home Security",
 				"canUse": "You can now start using Connected Home Security",
 				"tryAgain": "Incorrect code, please try again!",
 				"fail": "Incorrect code entered!",
-				"activationCode": "ACTIVATION CODE"
+				"activationCode": "ACTIVATION CODE",
+				"connecting": "Connecting..."
 			},
 			"securityhealth": {
 				"title": "Security Health",
@@ -1864,7 +1876,7 @@
 				"pass": "PASSED",
 				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here</tag>.",
 				"peaceOfMind": "Do you want more peace of mind?",
-				"button": "Enable Wifi security"
+				"button": "Enable Location"
 			}
 		},
 		"vpn": {

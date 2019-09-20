@@ -183,7 +183,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
 				id: 'cpu overclock on',
-				ariaLabel:'on',
+				ariaLabel: 'on',
 				metricitem: 'cpu_overclock_on',
 				value: 1
 			},
@@ -192,7 +192,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
 				id: 'cpu overclock when gaming',
-				ariaLabel:'when gaming',
+				ariaLabel: 'when gaming',
 				metricitem: 'cpu_overclock_when_gaming',
 				value: 2
 			},
@@ -201,7 +201,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.off',
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
 				id: 'cpu overclock off',
-				ariaLabel:'off',
+				ariaLabel: 'off',
 				metricitem: 'cpu_overclock_off',
 				value: 3
 			}
@@ -209,9 +209,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	};
 	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
-	public cacheMemOCFeature: boolean = false;
-	public cacheHybridModeFeature: boolean = false;
-	public cacheAutoCloseFeature: boolean = false;
+	public cacheMemOCFeature = false;
+	public cacheHybridModeFeature = false;
+	public cacheAutoCloseFeature = false;
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -313,7 +313,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 
 		if (gamingStatus.networkBoostFeature) {
-			this.legionUpdate[2].readonly = false;
+			// this.legionUpdate[2].readonly = false;
 			this.renderNetworkBoostStatus();
 		}
 	}
@@ -330,7 +330,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public renderNetworkBoostStatus() {
 		this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
-			console.log('networkBoostModeStatus--------------------------',networkBoostModeStatus)
+			console.log('networkBoostModeStatus--------------------------', networkBoostModeStatus);
 			if (networkBoostModeStatus !== undefined) {
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
 				this.setNetworkBoostCacheStatus(networkBoostModeStatus);
@@ -501,7 +501,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public async toggleOnOffRamOCStatus($event) {
 		const { name, checked } = $event.target;
 		let status = $event.target.value;
-		status = status === "false" ? false : true;
+		status = status === 'false' ? false : status;
+		status = status === 'true' ? true : status;
 		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {

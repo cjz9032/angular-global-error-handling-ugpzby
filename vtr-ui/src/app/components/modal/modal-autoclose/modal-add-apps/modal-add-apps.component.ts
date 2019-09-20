@@ -1,46 +1,58 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { isUndefined } from 'util';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
 
 @Component({
 	selector: 'vtr-modal-add-apps',
 	templateUrl: './modal-add-apps.component.html',
-	styleUrls: ['./modal-add-apps.component.scss']
+	styleUrls: [ './modal-add-apps.component.scss' ]
 })
-export class ModalAddAppsComponent implements OnInit {
+export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	statusAskAgain: boolean;
 	@Input() showAppsModal: boolean;
-	@Output() closeAddAppsModal = new EventEmitter<boolean>();
-	@Output() addAppToList = new EventEmitter<boolean>();
+	@Output() closeAddAppsModal = new EventEmitter<any>();
+	@Output() addAppToList = new EventEmitter<any>();
 	public loading = true;
 	public loadingNoApps = false;
 	runningList: any = [];
-	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
+	public isChecked: any = [];
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
 	public statusitem;
 	//constructor() { }
 
 	ngOnInit() {
 		this.refreshRunningList();
+		document.getElementById('close').focus();
+	}
+	ngAfterViewInit() {
+		document.getElementById('close').focus();
 	}
 
 	async refreshRunningList() {
 		try {
 			const result: any = await this.gamingAutoCloseService.getAppsAutoCloseRunningList();
-			this.loading = false;
 			this.runningList = [];
 			if (result && !isUndefined(result.processList)) {
 				this.runningList = result.processList || [];
 			}
 			this.loadingNoApps = this.runningList.length === 0 ? true : false;
+			this.loading = false;
+			setTimeout(() => {
+				document.getElementById('close').focus();
+			}, 100);
 		} catch (error) {
 			this.loading = false;
 			this.loadingNoApps = true;
+			setTimeout(() => {
+				document.getElementById('close').focus();
+			}, 100);
 		}
 	}
 
-	addAppData(event: any) {
-		this.statusitem = event.target.checked;
-		this.addAppToList.emit(event);
+	addAppData(event: any, i) {
+		this.isChecked[i] = !this.isChecked[i];
+		this.statusitem = this.isChecked[i];
+		this.addAppToList.emit({ checked: this.isChecked[i], app: event.target.value });
 	}
 
 	closeModal(action: boolean) {
@@ -55,5 +67,4 @@ export class ModalAddAppsComponent implements OnInit {
 			}
 		}
 	}
-
 }

@@ -17,8 +17,9 @@
     }
 
     .text-color {
-      color: $good_dark;
+      color: $go_dark;
       font-size: 1.3rem;
+      font-weight: 600;
     }
   
     .text-d-color {
@@ -63,7 +64,7 @@
     list-style: none;
   }
 
-  button {
+  button,.button {
     height: 4rem;
     border-radius: 3rem;
     width: 30rem;
@@ -154,13 +155,11 @@
     }
   }
 
-  button {
+  .button{
     width: 22rem;
     background-color: $main;
-    a {
-      color: $light;
-      text-decoration: none;
-    }
+    color: $light;
+    text-decoration: none;  
   }
 
   .visible {

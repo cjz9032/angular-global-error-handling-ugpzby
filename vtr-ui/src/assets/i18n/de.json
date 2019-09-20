@@ -1223,17 +1223,6 @@
                             "slow": "Langsam"
                         },
                         "toolTipContent": "Wählen Sie die gewünschte Option aus, um die Anzeige mit einer schnellen, mittleren oder langsamen Geschwindigkeit zu sperren, wenn Ihre Anwesenheit nicht erkannt wird. Die Zeit, in der der Bildschirm gesperrt wird, wird jedoch auch durch das tatsächliche Benutzerszenario, die Sensorik und die Windows Bildschirmtimeout-Einstellungen beeinflusst. Wir empfehlen Ihnen daher dringend, Ihr System sofort zu sperren, bevor Sie es verlassen."
-                    },
-                    "facialRecognition": {
-                        "title": "GESICHTSERKENNUNG",
-                        "caption": "Sie können die Gesichtserkennungsfunktion aktivieren und ihr den Zugriff auf Ihre Kamera gestatten. Dieses Tool erfasst Ihr Bild, um präzise Ihre Anwesenheit festzustellen oder zu erkennen, wenn Sie Ihr Gerät unbeaufsichtigt lassen. Diese Daten werden lokal auf Ihrem Gerät verarbeitet. Lenovo greift nicht auf diese Daten zu und verwendet sie nicht.",
-                        "checkBox": "Die Kamera einschalten und diese Funktion aktivieren",
-                        "note": {
-                            "permission": "Lenovo Vantage hat keinen Zugriff auf die Kamera. Das Kontrollkästchen reagiert nicht.",
-                            "privacyMode": "Der Kamera-Datenschutzmodus der Lenovo Vantage ist aktiviert. Das Kontrollkästchen reagiert nicht.",
-                            "windowsLink": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren",
-                            "privacyLink": "Zum Kamera-Datenschutzmodus wechseln, um ihn auszuschalten"
-                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1551,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Unterstützt von Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Zurück",
@@ -1601,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1695,7 +1693,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZURÜCK",
-                "recommends": "Lenovo empfiehlt <b>McAfee<b> für den Schutz Ihrer Geräte",
+                "recommends": "Warum Lenovo <b>McAfee</b> für den Schutz Ihrer Geräte empfiehlt",
                 "award": "Preisgekrönter Virenschutz",
                 "mcafeePremium": "McAfee LiveSafe-Schutz",
                 "protectedBy": "Sie werden derzeit von {{protectedName}} geschützt. McAfee LiveSafe bietet jedoch einen besseren Schutz.",
@@ -1718,8 +1716,8 @@
                 "view": "TIPPS ANZEIGEN",
                 "buyNow": "Jetzt kaufen",
                 "buy": "Sie können den McAfee-Virenschutz noch heute erwerben, herunterladen und installieren, um von diesen Sicherheitsfunktionen auf Bankenniveau zu profitieren",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Hier nur das Elementare. Auch wenn Sie vor einigen Onlinebedrohungen geschützt sind, sind Sie ggf. dennoch anderen Bedrohungen ausgesetzt.",
+                "virus": "Virenschutz",
                 "homeNetwork": "Schutz für private Netzwerke",
                 "private": "Privates, anonymes Surfen",
                 "everyDevice": "Schutz für alle Geräte",
@@ -1761,10 +1759,10 @@
                 "Viruses": "Viren eliminiert",
                 "blocked": "Unsichere Verbindungen blockiert",
                 "shredded": "Dateien sicher vernichtet",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Überprüfung der Dateien starten"
             },
             "others": {
-                "othersProtection": "bietet einen Basisschutz für Ihr Gerät"
+                "othersProtection": "{{protectedName}} bietet einen Basisschutz für Ihr Gerät"
             }
         },
         "wifisecurity": {
@@ -1838,7 +1836,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Sicherheitszustand",
@@ -2366,7 +2366,7 @@
         "OtherSettings": "Weitere Einstellungen",
         "usageStatistics": "Verwendungsstatistiken",
         "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Statistikdaten mit Lenovo teilen",
         "deviceStatisticsDescription": "Sendet statistische Daten an Lenovo, um die Zuverlässigkeit und das Design Ihres Computers zu verbessern und seine Funktionalität zu optimieren.",
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden."

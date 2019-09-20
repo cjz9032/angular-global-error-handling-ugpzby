@@ -97,8 +97,28 @@ ui-popover {
 			font-weight: $weight_600;
 			margin-top: 1.8rem;
 			margin-left: 3rem;
-			border-bottom: 2px solid $main;
+			border-bottom: 2px solid $btn_secondary_color;
 			cursor: pointer;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+	#restart_popup{
+		color: $gaming_darkest;
+		@media #{$black-on-white} {
+			display: none;
+		}
+		@media #{$white-on-black} {
+			display: none;
+		}
+	}
+	#popup_close{
+		@media #{$black-on-white} {
+			display: none;
+		}
+		@media #{$white-on-black} {
+			display: none;
 		}
 	}
 	#restart_popup{

@@ -104,6 +104,7 @@
 					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}"
 						attr.aria-label="{{switchId+ '_tooltip_right_icon'}}"
 						class="right-icon"
+						tabindex="0"
 						triggers="click:blur"
 						placement="auto"
 						[ngbTooltip]="tooltipRef"
@@ -118,6 +119,7 @@
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
 						attr.aria-label="{{switchId+ '_smartTooltip_right_icon'}}"
 						class="right-icon"
+						tabindex="0"
 						triggers="click:blur"
 						placement="auto"
 						[ngbTooltip]="smartTooltipRef"
@@ -136,6 +138,7 @@
 						id="{{switchId+ '_voice_right_icon'}}"
 						attr.aria-label="{{switchId+ '_voice_right_icon'}}"
 						class="right-icon"
+						tabindex="0"
 						[icon]="rightIcon"
 						(click)="voicePopUp()"></fa-icon>
 				</div>
@@ -169,6 +172,7 @@
 			<div class="p-0 pl-2"
 				*ngIf="rightIcon.length > 0">
 				<fa-icon class="right-icon"
+					tabindex="0"
 					placement="auto"
 					[ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
 					[icon]="rightIcon"

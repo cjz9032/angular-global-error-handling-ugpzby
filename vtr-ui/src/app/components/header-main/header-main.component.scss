@@ -35,10 +35,21 @@
 		position: relative;
 		cursor: pointer;
 		z-index: 1;
+
 		a {
 			color: #ffffff;
 			border-bottom: 0.1rem solid $light;
 			color:  $light;
+		}
+
+		span {
+			text-decoration: underline;
+		}
+
+		&:hover {
+			span {
+				text-decoration: none;
+			}
 		}
 	}
 	a {

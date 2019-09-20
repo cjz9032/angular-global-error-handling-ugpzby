@@ -1,6 +1,7 @@
 <vtr-page-layout
-	[pageTitle]="deviceService.isArm || !commonService.isOnline ? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
-	[textId]="'dashboard'" [pageCssClass]="'dashboard'">
+	[pageTitle]="deviceService.isArm || !commonService.isOnline ||!userService.auth ||!userService.hasFirstName? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
+	[textId]="'dashboard'"
+	[pageCssClass]="'dashboard'">
 
 	<left-content>
 		<div class="container-fluid">
@@ -8,9 +9,10 @@
 				<div class="col col-12 px-40 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-						[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
-						[isButtonVisible]="false" id="dashboard-btn-connectivity"
-						(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+						[isSubtitleVisible]="false"
+						[isButtonVisible]="false"
+						id="dashboard-btn-connectivity"></vtr-widget-offline-info>
 				</div>
 			</div>
 			<div class="row">
@@ -163,7 +165,8 @@
 					</vtr-widget-security-status>
 				</div>
 			</div>
-			<div class="row no-gutters" [vtrAppSearchScroller]="['search-feedback']">
+			<div class="row no-gutters"
+				[vtrAppSearchScroller]="['search-feedback']">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"

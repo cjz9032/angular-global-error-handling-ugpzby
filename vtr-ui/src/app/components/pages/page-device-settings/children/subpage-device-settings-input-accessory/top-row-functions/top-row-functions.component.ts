@@ -1,29 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { TopRowFunctionsCapability } from 'src/app/data-models/device/top-row-functions-capability';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-top-row-functions',
 	templateUrl: './top-row-functions.component.html',
 	styleUrls: ['./top-row-functions.component.scss']
 })
-export class TopRowFunctionsComponent implements OnInit {
+export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 
-	public topRowKeyObj: any = {};
+	public topRowKeyObj: TopRowFunctionsCapability;
 	public showAdvancedSection = false;
 	public topRowFunInterval: any;
-	public responseData: any[] = [];
+	private isCacheFound = false;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		public systemUpdateService: SystemUpdateService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private commonService: CommonService
 	) { }
 
 	ngOnInit() {
+		this.topRowKeyObj = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, undefined);
+		if (this.topRowKeyObj) {
+			this.isCacheFound = true;
+			this.getAllStatuses();
+		} else {
+			this.topRowKeyObj = new TopRowFunctionsCapability();
+		}
+
 		this.getFunctionCapabilities();
+	}
+
+	ngOnDestroy() {
+		clearTimeout(this.topRowFunInterval);
+		// store in cache
+		this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
 	}
 
 	public getFunctionCapabilities() {
@@ -33,19 +51,14 @@ export class TopRowFunctionsComponent implements OnInit {
 					this.keyboardService.getTopRowFnLockCapability(),
 					this.keyboardService.getTopRowFnStickKeyCapability(),
 					this.keyboardService.getTopRowPrimaryFunctionCapability(),
-				]).then((res: any[]) => {
-					this.responseData = res;
-					this.topRowKeyObj = {
-						fnLockCap: this.responseData[0],
-						stickyFunCap: this.responseData[1],
-						primaryFunCap: this.responseData[2]
-					};
-					this.getAllStatuses();
-					this.topRowFunInterval = setInterval(() => {
-						if (!this.topRowKeyObj.stickyFunStatus) {
-							this.getAllStatuses();
-						}
-					}, 30000);
+				]).then((res: Array<boolean>) => {
+					this.topRowKeyObj.fnLockCap = res[0];
+					this.topRowKeyObj.stickyFunCap = res[1];
+					this.topRowKeyObj.primaryFunCap = res[2];
+					if (!this.isCacheFound) {
+						this.getAllStatuses();
+					}
+					this.setTopRowStatusCallback();
 				});
 			}
 		} catch (error) {
@@ -54,15 +67,23 @@ export class TopRowFunctionsComponent implements OnInit {
 		}
 	}
 
+	private setTopRowStatusCallback() {
+		this.topRowFunInterval = setInterval(() => {
+			if (!this.topRowKeyObj.stickyFunStatus) {
+				this.getAllStatuses();
+			}
+		}, 30000);
+	}
+
 	public getAllStatuses() {
-		if (this.responseData && this.responseData.length > 0) {
-			if (this.responseData[0]) {
+		if (this.topRowKeyObj) {
+			if (this.topRowKeyObj.fnLockCap) {
 				this.getStatusOfFnLock();
 			}
-			if (this.responseData[1]) {
+			if (this.topRowKeyObj.stickyFunCap) {
 				this.getStatusOfStickyFun();
 			}
-			if (this.responseData[2]) {
+			if (this.topRowKeyObj.primaryFunCap) {
 				this.getStatusOfPrimaryFun();
 			}
 		}
@@ -101,7 +122,4 @@ export class TopRowFunctionsComponent implements OnInit {
 		});
 	}
 
-	ngOnDestroy() {
-		clearTimeout(this.topRowFunInterval);
-	}
 }

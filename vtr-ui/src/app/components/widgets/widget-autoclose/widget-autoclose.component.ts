@@ -23,7 +23,6 @@ export class WidgetAutocloseComponent implements OnInit, OnChanges {
 
 	ngOnInit() {}
 
-	// Open Target Modal
 	public openAutoCloseModal() {
 		this.actionModal.emit();
 	}
@@ -32,9 +31,8 @@ export class WidgetAutocloseComponent implements OnInit, OnChanges {
 		console.log(changes);
 	}
 
-	// Remove App from Autoclose List
-
 	public removeApp(name: string, index: number) {
 		this.removeFromList.emit({ name, index });
+		document.getElementById('addAutoCloseAppBtn').focus();
 	}
 }

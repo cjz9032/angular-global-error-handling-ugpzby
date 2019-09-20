@@ -74,7 +74,6 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.taskObserverService.start();
 		this.widgetDataService.startWrite();
-		this.communicationWithFigleafService.connect();
 		this.routerChangeHandler.onChange$
 			.pipe(
 				takeUntil(instanceDestroyed(this)),

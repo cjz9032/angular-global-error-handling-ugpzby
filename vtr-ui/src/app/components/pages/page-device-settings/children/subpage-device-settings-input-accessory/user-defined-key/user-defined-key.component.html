@@ -29,7 +29,7 @@
 										ngbDropdownToggle
 										type="button" id="ip-userdefinedkey-dropdown-btn" attr.aria-label="ip-userdefinedkey-dropdown-btn">
 										<div class="row d-flex justify-content-between">
-											<div class="col-auto pl-1 pr-1">
+											<div class="col-11 pl-1 pr-1">
 												<div class="select-title"
 													id="ip-userdefinedkey-dropdown-title"
 													attr.aria-label="ip-userdefinedkey-dropdown-title">
@@ -119,8 +119,8 @@
 											<textarea class="form-control"
 												[(ngModel)]="description"
 												name="description"
-												required></textarea>
-										</div>
+												(keydown)="onKeydown($event)" required></textarea>
+										</div>										
 										<div class="col-12">
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"

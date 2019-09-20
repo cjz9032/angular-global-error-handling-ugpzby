@@ -1261,7 +1261,7 @@
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
-                    "description6": "4. Pokud je v počítači povolen režim letadlo, tyto funkce jsou deaktivovány."
+                    "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
@@ -1551,7 +1551,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Používá technologii Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Zpět",
@@ -1601,9 +1607,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1695,7 +1704,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZPĚT",
-                "recommends": "Lenovo doporučuje software <b>McAfee<b> na ochranu všech vašich zařízení",
+                "recommends": "Proč Lenovo doporučuje software <b>McAfee</b> na ochranu všech vašich zařízení",
                 "award": "Oceňovaný antivirus",
                 "mcafeePremium": "Ochrana McAfee LiveSafe",
                 "protectedBy": "Nyní vás chrání program {{protectedName}}. Můžete se však chránit lépe pomocí programu McAfee LiveSafe.",
@@ -1718,8 +1727,8 @@
                 "view": "ZOBRAZIT TIPY",
                 "buyNow": "Koupit nyní",
                 "buy": "Kupte si, stáhněte a instalujte antivirovou ochranu McAfee ještě dnes, abyste mohli využívat tyto funkce špičkového zabezpečení",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Zde pouze základy. I když jste chráněni před některými online hrozbami, můžete být jiným hrozbám stále vystaveni.",
+                "virus": "Antivirová ochrana",
                 "homeNetwork": "Ochrana domácí sítě",
                 "private": "Soukromé, anonymní prohlížení",
                 "everyDevice": "Ochrana všech zařízení",
@@ -1761,10 +1770,10 @@
                 "Viruses": "Odstraněné viry",
                 "blocked": "Blokovaná špatná připojení",
                 "shredded": "Soubory bezpečně skartovány",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Spusťte skenování souborů"
             },
             "others": {
-                "othersProtection": "nabízí základní ochranu zařízení"
+                "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení"
             }
         },
         "wifisecurity": {
@@ -1838,7 +1847,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stav zabezpečení",
@@ -2366,7 +2377,7 @@
         "OtherSettings": "Další nastavení",
         "usageStatistics": "Statistiky využití",
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Sdílejte statistická data se společností Lenovo",
         "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
         "Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."

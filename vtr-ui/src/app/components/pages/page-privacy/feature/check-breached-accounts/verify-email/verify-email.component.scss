@@ -36,6 +36,12 @@ $leftIndent: 7.5rem;
 		}
 	}
 
+	&__email {
+		&--bold {
+			font-weight: bold;
+		}
+	}
+
 	&__text {
 		@extend %text-common;
 		margin-top: 2rem;

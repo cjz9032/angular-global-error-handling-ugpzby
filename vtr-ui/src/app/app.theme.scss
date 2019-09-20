@@ -84,12 +84,20 @@ $shade_lightest: #f1f1f1;
 $shade_extralight: #f6f8f8;
 $shade_blue: #34495e;
 $blue-dark: #24536d;
+$blue-light: #2955BC;
+$blue-lighter: #346CEF;
 $light-grey: #788590;
 $border_light: #f8d5d5;
 $text_light: #fef8f8;
 $button_disable: #808080;
 $button_gradient_start: #2e62d9;
 $button_gradient_end: #4980fc;
+$button_red_start: #DB221F;
+$button_red_end: #FF5B4D;
+$grey_dark: #667481;
+$grey_light: #e6eaeb;
+$grey_lighter: #F5F7F8;
+$blueHyperLink: #346CEF;
 
 $light: #fff;
 $dark: #000;
@@ -142,6 +150,9 @@ $gaming_hd_diameter_sm: 8rem;
 $gaming_hd_diameter_xs: 6rem;
 
 $gradient_main: linear-gradient(90deg, $main_gstart 0%, $main 100%);
+$gradient_red: linear-gradient(103deg, $button_red_start 0%, $button_red_end 100%);
+$gradient_gray: linear-gradient(90deg, $grey_lighter 0%, $light 100%);
+$blue_Gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
 
 $mediaquery_0: "only screen and (max-width : 3600px)";
 $mediaquery_1: "only screen and (max-width : 3000px)";
@@ -281,8 +292,6 @@ $menu_height: 9rem;
 $header_height: 20.5rem;
 
 $modal_top_margin: 8rem;
-$grey_dark: #667481;
-$grey_light: #e6eaeb;
 
 /*media screen sizes for gaming*/
 $only-small-screen: "only screen and (max-width : 575.98px)";

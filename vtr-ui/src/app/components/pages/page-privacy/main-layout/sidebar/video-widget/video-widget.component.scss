@@ -1,4 +1,5 @@
 @import "../../../styles/common-blocks";
+@import "../../../styles/offline-overlay";
 
 .video-widget {
 	@extend %common-block-wrapper;
@@ -12,6 +13,7 @@
 
 	&__main-image {
 		width: 100%;
+		height: auto;
 		cursor: pointer;
 	}
 
@@ -21,25 +23,5 @@
 		line-height: 3.4rem;
 		padding: 0 2rem 2.6rem 2rem;
 		cursor: pointer;
-	}
-}
-
-.video {
-	&__wrapper {
-		display: flex;
-		align-items: center;
-		align-content: center;
-		justify-content: center;
-		padding: 2rem 0 0 0;
-	}
-
-	&__title {
-		color: #34495E;
-		font-size: 3.5rem;
-		line-height: 4.2rem;
-	}
-
-	&__iframe {
-		padding-top: 2rem;
 	}
 }

@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { ActivatedRoute } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -9,6 +11,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	styleUrls: ['./page-lightingcustomize.component.scss']
 })
 export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
+	isOnline = true;
 	public currentProfileId: any;
 	cardContentPositionA: any = {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
@@ -19,7 +22,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	startDateTime: any = new Date();
 	metrics: any;
 
-	constructor(private cmsService: CMSService, private route: ActivatedRoute, private shellService: VantageShellService) {
+	constructor(private cmsService: CMSService, private route: ActivatedRoute, private shellService: VantageShellService,private commonService: CommonService) {
 		this.metrics = this.shellService.getMetrics();
 
 		this.route.params.subscribe((params) => {
@@ -28,6 +31,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
 			Page: 'dashboard'
 		};

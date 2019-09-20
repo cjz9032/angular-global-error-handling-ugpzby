@@ -125,7 +125,7 @@ export class AntiVirusLandingViewModel {
 			});
 		};
 		const setPage = (av) => {
-			if (av.mcafee && (av.mcafee.enabled || !av.others || !av.others.enabled)) {
+			if (av.mcafee && (av.mcafee.enabled || !av.others || !av.others.enabled) && av.mcafee.expireAt > 0) {
 				this.currentPage = 'mcafee';
 				setAntivirusStatus(
 					av.mcafee.status !== undefined ? av.mcafee.status : null,

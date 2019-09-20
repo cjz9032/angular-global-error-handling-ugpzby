@@ -1223,17 +1223,6 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Selezionare l'opzione desiderata per bloccare lo schermo a una velocità Rapida/Media/Lenta quando non viene rilevata la propria presenza. Tuttavia, l'ora in cui lo schermo verrà bloccato è influenzata dallo scenario effettivo dell'utente, dalla capacità del sensore e dalle impostazioni del timeout dello schermo di Windows. Pertanto, si consiglia di bloccare immediatamente il sistema prima di uscire."
-                    },
-                    "facialRecognition": {
-                        "title": "RICONOSCIMENTO FACCIALE",
-                        "caption": "È possibile abilitare la funzione di riconoscimento facciale e consentire l'accesso alla fotocamera. Questo strumento acquisisce l'immagine per riconoscere con precisione l'utente o rilevare se il dispositivo viene lasciato incustodito. Questi dati vengono elaborati in locale sul dispositivo. Lenovo non accede a questi dati o li utilizza.",
-                        "checkBox": "Accendere la fotocamera e abilitare questa funzione",
-                        "note": {
-                            "permission": "Lenovo Vantage non ha accesso alla fotocamera. La casella di controllo non è disponibile.",
-                            "privacyMode": "La modalità privacy della fotocamera di Lenovo Vantage è attiva. La casella di controllo non è disponibile.",
-                            "windowsLink": "Accedere alle impostazioni di Windows per consentire l'accesso",
-                            "privacyLink": "Accedere alla modalità privacy della fotocamera per disattivarla"
-                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1261,7 +1250,7 @@
                     "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
                     "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico non funzionerà.",
                     "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico.",
-                    "description6": "4. Se Modalità aereo è abilitata sul computer, queste funzioni sono disabilitate."
+                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vai a Impostazioni di Windows Hello",
@@ -1551,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Basato su Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Indietro",
@@ -1601,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1695,7 +1693,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "INDIETRO",
-                "recommends": "Lenovo consiglia <b>McAfee<b> per proteggere tutti i tuoi dispositivi",
+                "recommends": "Perché Lenovo consiglia <b>McAfee</b> per proteggere tutti i tuoi dispositivi",
                 "award": "Antivirus premiato",
                 "mcafeePremium": "Protezione McAfee LiveSafe",
                 "protectedBy": "Attualmente è attiva la protezione di {{protectedName}}. Tuttavia, per una maggiore protezione ti consigliamo McAfee LiveSafe.",
@@ -1718,8 +1716,8 @@
                 "view": "VISUALIZZA SUGGERIMENTI",
                 "buyNow": "Acquista ora",
                 "buy": "Acquista, scarica e installa la protezione antivirus McAfee oggi stesso per sfruttare queste funzionalità di sicurezza bank-grade",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "In questa sezione sono disponibili solo le informazioni di base. Anche se sei protetto da alcune minacce online, potresti comunque essere vulnerabile ad altri virus.",
+                "virus": "Protezione da virus",
                 "homeNetwork": "Protezione Home netWork",
                 "private": "Navigazione privata e anonima",
                 "everyDevice": "Protezione per qualsiasi dispositivo",
@@ -1761,10 +1759,10 @@
                 "Viruses": "Virus eliminati",
                 "blocked": "Connessioni sospette bloccate",
                 "shredded": "File correttamente eliminati in modo definitivo",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Avvia scansione dei file"
             },
             "others": {
-                "othersProtection": "offre la protezione di base per il dispositivo"
+                "othersProtection": "{{protectedName}} offre la protezione di base per il dispositivo"
             }
         },
         "wifisecurity": {
@@ -1838,7 +1836,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Integrità protezione",
@@ -2366,7 +2366,7 @@
         "OtherSettings": "Altre impostazioni",
         "usageStatistics": "Statistiche utilizzo",
         "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Condividi i dati statistici con Lenovo",
         "deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."

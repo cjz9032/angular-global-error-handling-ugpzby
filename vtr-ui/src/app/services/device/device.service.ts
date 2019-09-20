@@ -87,6 +87,8 @@ export class DeviceService {
 		if (this.hypSettings) {
 			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
 				this.showPrivacy = (privacy === 'enabled');
+			}, (error) => {
+				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
 			});
 		}
 	}
@@ -104,6 +106,7 @@ export class DeviceService {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
+					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {

@@ -49,14 +49,16 @@
       </div>
     </li>
     <li *ngIf="!windowsDefender" class="row justify-content-center">
-        <button class="font-weight-bold" (click)="common.launch()" title="{{'security.antivirus.mcafee.launch' | translate}}">{{'security.antivirus.mcafee.launch' | translate}}</button>
+        <button  id="sa-av-button-launch-mcafee" vtrMetrics metricsEvent="itemClick"
+        metricsItem="launch mcafee" metricsParent="security.antivirus" class="font-weight-bold" (click)="common.launch()" title="{{'security.antivirus.mcafee.launch' | translate}}"
+        [innerHTML]="'security.antivirus.mcafee.launch' | translate"></button>
     </li>
     <li *ngIf="windowsDefender" class="row justify-content-center">
-      <button [ngClass]="{'visible': !url}" title="{{'security.antivirus.windowsDefender.buyNow' | translate}}">
-        <a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-          metricsItem="subscribe" metricsParent="security.antivirus"
-          href="{{url}}" target="_blank"
-          [innerHTML]="'security.antivirus.windowsDefender.buyNow' | translate"></a>
-      </button>
+      <a class="button d-flex align-items-center justify-content-center" [ngClass]="{'visible': !url}" 
+        id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+        metricsItem="subscribe" metricsParent="security.antivirus"
+        href="{{url}}" target="_blank"
+        title="{{'security.antivirus.windowsDefender.buyNow' | translate}}"
+        [innerHTML]="'security.antivirus.windowsDefender.buyNow' | translate"></a>
     </li>
 </ul>

@@ -214,6 +214,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;
 		this.intelligentSecurity.facilRecognitionCameraAccess= true;
 		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
+		this.intelligentSecurity.isDistanceSensitivityVisible = false;
 	}
 
 	private setIntelligentScreen() {

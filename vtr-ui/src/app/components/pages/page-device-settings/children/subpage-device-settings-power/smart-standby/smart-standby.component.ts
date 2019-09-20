@@ -150,6 +150,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			activeStartEnd = this.smartStandbyStartTime + '-' + event;
 		}
 		this.smartStandby.activeStartEnd = activeStartEnd;
+
 		this.splitStartEndTime();
 		if (!this.showDiffNote) {
 			try {

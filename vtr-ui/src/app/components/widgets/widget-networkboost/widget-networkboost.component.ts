@@ -38,13 +38,16 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 		}
 	}
 
-	async getNetworkBoostList() {
+	async getNetworkBoostList(doFocus = false) {
 		try {
 			const appList: any = await this.networkBoostService.getNetworkBoostList();
 			if (appList && !isUndefined(appList.processList)) {
 				this.runningAppsList = appList.processList;
 				this.sendAddedApps();
 				this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostList, appList);
+			}
+			if (doFocus) {
+				document.getElementById('addButton').focus();
 			}
 		} catch (error) {
 		}
@@ -60,7 +63,7 @@ export class WidgetNetworkboostComponent implements OnInit, OnChanges {
 	async removeApp(app: any, i: any) {
 		try {
 			const result = await this.networkBoostService.deleteProcessInNetBoost(app);
-			this.getNetworkBoostList();
+			this.getNetworkBoostList(true);
 		} catch (err) {
 		}
 	}

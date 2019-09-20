@@ -1223,17 +1223,6 @@
                             "slow": "Sporo"
                         },
                         "toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno. Međutim, na vreme kada će ekran biti zaključan utiče i stvarni korisnički scenario, mogućnosti senzora i postavke vremenskog ograničenja ekrana operativnog sistema Windows. Zato vam preporučujemo da smesta zaključate sistem pred odlazak."
-                    },
-                    "facialRecognition": {
-                        "title": "PREPOZNAVANJE LICA",
-                        "caption": "Možete da omogućite funkciju prepoznavanja lica i da joj dozvolite pristup kameri. Ova alatka snima vašu sliku kako bi tačno prepoznala vaše prisustvo ili otkrila kada ste uređaj ostavili bez nadzora. Ovi podaci se obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih koristi.",
-                        "checkBox": "Uključite kameru i omogućite ovu funkciju",
-                        "note": {
-                            "permission": "Lenovo Vantage nema pristup kameri. Funkcija polja za potvrdu ne radi.",
-                            "privacyMode": "Režim privatnosti kamere Lenovo Vantage je uključen. Funkcija polja za potvrdu ne radi.",
-                            "windowsLink": "Idite na postavke operativnog sistema Windows da biste dali pristup",
-                            "privacyLink": "Idite na režim privatnosti kamere da biste ga isključili"
-                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1551,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Obezbeđuje Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Nazad",
@@ -1601,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1695,7 +1693,7 @@
             "common": {
                 "title": "Antivirusni program",
                 "back": "NAZAD",
-                "recommends": "Lenovo preporučuje <b>McAfee<b> za zaštitu svih vaših uređaja",
+                "recommends": "Zbog čega Lenovo preporučuje <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, možete da budete bolje zaštićeni pomoću usluge McAfee LiveSafe.",
@@ -1718,8 +1716,8 @@
                 "view": "PRIKAŽI SAVETE",
                 "buyNow": "Kupi odmah",
                 "buy": "Kupite, preuzmite i instalirajte McAfee zaštitu od virusa danas da biste iskoristili prednosti ovih bezbednosnih funkcija bankovnog nivoa",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Ovde se nalaze samo osnove. Iako ste zaštićeni od nekih pretnji na mreži, možda ste i dalje izloženi drugima.",
+                "virus": "Zaštita od virusa",
                 "homeNetwork": "Zaštita kućne mreže",
                 "private": "Privatno, anonimno pregledanje",
                 "everyDevice": "Zaštita svakog uređaja",
@@ -1761,10 +1759,10 @@
                 "Viruses": "Eliminisano virusa",
                 "blocked": "Blokirane loše veze",
                 "shredded": "Bezbedno uništene datoteke",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Započnite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
             }
         },
         "wifisecurity": {
@@ -1838,7 +1836,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stanje bezbednosti",
@@ -2366,7 +2366,7 @@
         "OtherSettings": "Ostale postavke",
         "usageStatistics": "Statistika korišćenja",
         "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Podelite statističke podatke sa kompanijom Lenovo",
         "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
         "Note": "Napomena: ",
         "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju."

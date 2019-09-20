@@ -17,7 +17,7 @@
           <div for="asked">
             <!-- <input type="checkbox" id="askedBox" (change)="setAksAgain($event)">
             <div class="status-check"></div> -->
-            <button class="ask-again" [ngClass]="{'checked':isChecked}" (click)="setAksAgain()" tabindex="1"  aria-label = "Don't ask again"></button>
+            <button class="ask-again" role="checkbox" [ngClass]="{'checked':isChecked}" (click)="setAksAgain()" tabindex="1"  aria-label = "Don't ask again"></button>
             <div class="status-text">{{'gaming.networkBoost.modalTurn.checkedTitle' | translate }}</div>
           </div>
         </div>

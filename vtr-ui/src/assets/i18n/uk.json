@@ -1223,17 +1223,6 @@
                             "slow": "Повільний"
                         },
                         "toolTipContent": "Виберіть потрібний параметр, щоб заблокувати свій екран (швидко, помірно або повільно), коли вашу присутність не виявлено. Але на час блокування екрана також впливають фактичний сценарій користувача, можливості датчиків і настройки часу очікування екрана Windows. Тож ми наполегливо радимо негайно блокувати екран, перш ніж перервати роботу."
-                    },
-                    "facialRecognition": {
-                        "title": "РОЗПІЗНАВАННЯ ОБЛИЧЧЯ",
-                        "caption": "Ви можете ввімкнути функцію розпізнавання обличчя й надати їй доступ до камери. Цей інструмент робить ваші знімки, щоб точно розпізнавати вашу присутність або виявляти, коли ви залишили свій пристрій без нагляду. Ці дані обробляються локально на вашому пристрої. Lenovo не має доступу до них і не використовує їх.",
-                        "checkBox": "Увімкніть камеру й цю функцію",
-                        "note": {
-                            "permission": "Lenovo Vantage не надано доступ до камери. Функція прапорця не працюватиме.",
-                            "privacyMode": "У Lenovo Vantage увімкнуто режим конфіденційності камери. Функція прапорця не працюватиме.",
-                            "windowsLink": "Перейдіть до настройок Windows, щоб надати доступ",
-                            "privacyLink": "Перейдіть до режиму конфіденційності камери, щоб вимкнути її"
-                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1551,7 +1540,13 @@
             "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
+            "extendNow": "extend now",
+            "poweredBy": "Технології Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Назад",
@@ -1601,9 +1596,12 @@
             "joinDescription": "Become a part of your family security group."
         },
         "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
             "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
+            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     },
     "support": {
@@ -1695,7 +1693,7 @@
             "common": {
                 "title": "Антивірус",
                 "back": "НАЗАД",
-                "recommends": "Lenovo рекомендує <b>McAfee<b> для захисту всіх ваших пристроїв",
+                "recommends": "Чому Lenovo рекомендує <b>McAfee</b> для захисту всіх ваших пристроїв",
                 "award": "Відзначений нагородами антивірус",
                 "mcafeePremium": "Захист McAfee LiveSafe",
                 "protectedBy": "Наразі вас захищає {{protectedName}}. Однак McAfee LiveSafe захистить вас краще.",
@@ -1718,8 +1716,8 @@
                 "view": "ПЕРЕГЛЯНУТИ ПОРАДИ",
                 "buyNow": "Придбати зараз",
                 "buy": "Придбайте, завантажте та інсталюйте антивірус McAfee, щоб отримати безпеку банківського рівня",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Лише базовий захист. Хоча ви захищені від деяких онлайн-загроз, інші все ще можуть вас дістатися.",
+                "virus": "Захист від вірусів",
                 "homeNetwork": "Захист домашньої мережі",
                 "private": "Приватний і анонімний перегляд веб-сторінок",
                 "everyDevice": "Захист кожного пристрою",
@@ -1761,10 +1759,10 @@
                 "Viruses": "Віруси видалено",
                 "blocked": "Небезпечне підключення заблоковано",
                 "shredded": "Файли успішно й безповоротно видалено",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Розпочати сканування файлів"
             },
             "others": {
-                "othersProtection": "забезпечує базовий захист вашого пристрою"
+                "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою"
             }
         },
         "wifisecurity": {
@@ -1838,7 +1836,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Стан безпеки",
@@ -2366,7 +2366,7 @@
         "OtherSettings": "Інші настройки",
         "usageStatistics": "Статистика використання",
         "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Поділіться статистичними даними з Lenovo",
         "deviceStatisticsDescription": "Передає статистичні дані до компанії Lenovo, щоб покращити надійність, дизайн і оптимізувати функції на вашому комп'ютері.",
         "Note": "Примітка. ",
         "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { combineLatest } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, share, shareReplay, startWith } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
@@ -9,6 +9,7 @@ import { CountNumberOfIssuesService } from '../../common/services/count-number-o
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { SafeStorageService } from '../../common/services/safe-storage.service';
 import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
+import { ScanCounterService } from '../../common/services/scan-counter.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,7 +23,18 @@ export class BreachedAccountsFacadeService {
 			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				})
-			)
+			),
+			shareReplay(1)
+		);
+	isAccountVerify$ = this.breachedAccountsService.onGetBreachedAccounts$
+		.pipe(
+			debounceTime(100),
+			filter((breachedAccounts) => breachedAccounts.error === null && !breachedAccounts.reset),
+			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
+					return !(breach.hasOwnProperty('isEmailConfirmed') && breach.isEmailConfirmed === false);
+				})
+			),
+			map((breachedAccounts) => breachedAccounts.length > 0)
 		);
 	isAccountVerify$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
@@ -35,7 +47,7 @@ export class BreachedAccountsFacadeService {
 			map((breachedAccounts) => breachedAccounts.length > 0)
 		);
 	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
-	breachedAccountWereScanned$ = this.appStatusesService.globalStatus$.pipe(
+	breachedAccountWasScanned$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) =>
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.undefined &&
 			userDataStatus.breachedAccountsResult !== FeaturesStatuses.error),
@@ -43,10 +55,9 @@ export class BreachedAccountsFacadeService {
 	);
 	breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
 
-	userEmail$ = this.emailScannerService.userEmail$.pipe(
-		startWith(this.safeStorageService.getEmail()),
-		filter(Boolean),
-	);
+	userEmail$ = this.emailScannerService.userEmail$;
+
+	scanCounter$ = this.scanCounterService.getScanCounter();
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
@@ -55,7 +66,8 @@ export class BreachedAccountsFacadeService {
 		private appStatusesService: AppStatusesService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
 		private emailScannerService: EmailScannerService,
-		private safeStorageService: SafeStorageService
+		private safeStorageService: SafeStorageService,
+		private scanCounterService: ScanCounterService
 	) {
 	}
 
@@ -69,7 +81,7 @@ export class BreachedAccountsFacadeService {
 	);
 
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = combineLatest([
-		this.breachedAccountWereScanned$,
+		this.breachedAccountWasScanned$,
 		this.breachedAccountsCount$,
 		this.isUserAuthorized$,
 		this.isFigleafReadyForCommunication$
@@ -80,14 +92,16 @@ export class BreachedAccountsFacadeService {
 	);
 
 	isShowVerifyBlock$ = combineLatest([
-		this.breachedAccountWereScanned$,
+		this.breachedAccountWasScanned$,
 		this.isAccountVerify$,
 		this.breachedAccountsCount$,
 		this.isFigleafReadyForCommunication$,
 		this.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$
 	]).pipe(
-		map(([breachedAccountWereScanned, isAccountVerify, breachedAccountsCount,  isFigleafReadyForCommunication, isBreachedFoundAndUserNotAuthorizedWithoutFigleaf]) => (
+		debounceTime(200),
+		map(([breachedAccountWereScanned, isAccountVerify, breachedAccountsCount, isFigleafReadyForCommunication, isBreachedFoundAndUserNotAuthorizedWithoutFigleaf]) => (
 			(breachedAccountWereScanned && !isAccountVerify && isFigleafReadyForCommunication && breachedAccountsCount > 0) || isBreachedFoundAndUserNotAuthorizedWithoutFigleaf
-		))
+		)),
+		shareReplay(1)
 	);
 }

@@ -101,6 +101,18 @@ export class PageAutocloseComponent implements OnInit {
 		}
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (
+			notification &&
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
+		) {
+			this.isOnline = notification.payload.isOnline;
+		}
+		if (this.isOnline === undefined) {
+			this.isOnline = true;
+		}
+	}
+
 	openTargetModal() {
 		try {
 			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
@@ -190,17 +202,19 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	public addAppDataToList(event: any) {
-		if (event.target.checked) {
-			const addApp = event.target.value;
+		if (event.checked) {
+			const addApp = event.app;
 			try {
 				this.gamingAutoCloseService.addAppsAutoCloseList(addApp).then((success: any) => {
 					if (success) {
 						this.refreshAutoCloseList();
+						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 					}
 				});
 			} catch (error) {}
 		} else {
-			this.gamingAutoCloseService.delAppsAutoCloseList(event.target.value).then((response: boolean) => {
+			const remApp = event.app;
+			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
 				if (response) {
 					this.refreshAutoCloseList();
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
@@ -218,7 +232,6 @@ export class PageAutocloseComponent implements OnInit {
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				}
 			});
-		} catch (err) {
-		}
+		} catch (err) {}
 	}
 }

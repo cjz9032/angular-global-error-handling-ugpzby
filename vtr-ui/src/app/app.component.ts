@@ -27,6 +27,7 @@ import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
+import { AppUpdateService } from './services/app-update/app-update.service';
 
 declare var Windows;
 @Component({
@@ -57,6 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
+		private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -64,6 +66,9 @@ export class AppComponent implements OnInit, OnDestroy {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
+
+		// check for new version of experience
+		this.appUpdateService.checkForUpdates();
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -93,21 +98,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
 		//#endregion
 
-		window.addEventListener(
-			'online',
-			(e) => {
-				this.notifyNetworkState();
-			},
-			false
-		);
-
-		window.addEventListener(
-			'offline',
-			(e) => {
-				this.notifyNetworkState();
-			},
-			false
-		);
 
 		document.addEventListener('visibilitychange', (e) => {
 			if (document.hidden) {
@@ -116,7 +106,53 @@ export class AppComponent implements OnInit, OnDestroy {
 				this.sendAppResumeMetric();
 			}
 		});
-		this.notifyNetworkState();
+
+
+		this.addInternetListener();
+	}
+
+	private addInternetListener() {
+		const win: any = window;
+		if (win.NetworkListener) {
+			win.NetworkListener.onnetworkchanged = (state) => {
+				this.notifyNetworkState(state);
+			};
+
+			if ( win.NetworkListener.isInternetAccess()) {
+				this.notifyNetworkState(NetworkStatus.Available);
+			} else {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}
+		} else {
+			window.addEventListener('online', (e) => {
+				this.notifyNetworkState(NetworkStatus.Available);
+			}, false);
+			window.addEventListener('offline', (e) => {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}, false);
+
+			if (navigator.onLine) {
+				this.notifyNetworkState(NetworkStatus.Available);
+			} else {
+				this.notifyNetworkState(NetworkStatus.Unavailable);
+			}
+		}
+	}
+
+	private launchWelcomeModal() {
+		this.deviceService
+			.getIsARM()
+			.then((status: boolean) => {
+				if (!status || !this.deviceService.isAndroid) {
+					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					if (tutorial === undefined && navigator.onLine) {
+						this.openWelcomeModal(1);
+					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
+						this.openWelcomeModal(2);
+					}
+				}
+			})
+			.catch((error) => { });
 	}
 
 	private launchWelcomeModal() {
@@ -230,6 +266,7 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
+		document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
 	}
 
 	ngOnInit() {
@@ -355,12 +392,13 @@ export class AppComponent implements OnInit, OnDestroy {
 		} catch (error) { }
 	}
 
-	private notifyNetworkState() {
-		this.commonService.isOnline = navigator.onLine;
-		if (navigator.onLine) {
-			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
+	private notifyNetworkState(state) {
+		if (state && state.toString() === NetworkStatus.Available) {
+			this.commonService.isOnline = true;
+			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: true });
 		} else {
-			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
+			this.commonService.isOnline = false;
+			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: false });
 		}
 	}
 

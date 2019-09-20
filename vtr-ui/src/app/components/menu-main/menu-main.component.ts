@@ -23,10 +23,14 @@ import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
+import { AdPolicyId, AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 import { EMPTY } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
+import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -49,6 +53,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	public items: any = [];
 	public showSearchBox = false;
 	public showSearchMenu = false;
+	public searchTips = '';
+	private searchTipsTimeout: any;
+	private unsupportFeatureEvt: Observable<string>;
 
 	showMenu = false;
 	showHWScanMenu: boolean = false;
@@ -58,6 +65,14 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
+
+	UnreadMessageCount = {
+		totalMessage: 0,
+		lmaMenuClicked: false,
+		adobeMenuClicked: false
+	};
+
+	get appsForYouEnum() { return AppsForYouEnum; }
 
 	constructor(
 		private router: Router,
@@ -79,7 +94,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
-
+		public appsForYouService: AppsForYouService,
+		searchService: AppSearchService
 	) {
 		localInfoService
 			.getLocalInfo()
@@ -140,6 +156,18 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				this.showSearchMenu = true;
 			}
 		});
+
+		this.unsupportFeatureEvt = searchService.getUnsupportFeatureEvt();
+		this.unsupportFeatureEvt.subscribe(featureDesc => {
+			if (this.searchTipsTimeout) {
+				clearTimeout(this.searchTipsTimeout);
+			}
+			this.searchTips = featureDesc;
+			this.searchTipsTimeout = setTimeout(() => {
+				this.searchTips = '';
+				this.searchTipsTimeout = null;
+			}, 3000);
+		});
 	}
 
 	@HostListener('window: focus')
@@ -194,6 +222,22 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
+		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
+			LocalStorageKey.UnreadMessageCount,
+			undefined
+		);
+		if (cacheUnreadMessageCount) {
+			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
+			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
+			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
+		} else {
+			if (this.appsForYouService.showAdobeMenu()) {
+				this.UnreadMessageCount.totalMessage = 2;
+			} else {
+				this.UnreadMessageCount.totalMessage = 1;
+			}
+		}
+
 		this.hardwareScanService.getPluginInfo()
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
@@ -213,6 +257,31 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 		if (machineType === 1) {
 			this.initInputAccessories();
+		}
+	}
+
+	updateUnreadMessageCount(item, event?) {
+		if (item.id === 'user') {
+			const target = event.target || event.srcElement || event.currentTarget;
+			const idAttr = target.attributes.id;
+			const id = idAttr.nodeValue;
+			let needUpdateLocalStorage = false;
+			if (id === 'menu-main-lnk-open-lma') {
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
+				}
+				this.UnreadMessageCount.lmaMenuClicked = true;
+				needUpdateLocalStorage = true;
+			} else if (id === 'menu-main-lnk-open-adobe') {
+				if (this.UnreadMessageCount.totalMessage > 0) {
+					this.UnreadMessageCount.totalMessage--;
+				}
+				this.UnreadMessageCount.adobeMenuClicked = true;
+				needUpdateLocalStorage = true;
+			}
+			if (needUpdateLocalStorage) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
+			}
 		}
 	}
 
@@ -289,7 +358,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	updateSearchBoxState(isActive) {
+		this.searchTips = '';
 		this.showSearchBox = isActive;
+		if (isActive && this.searchTipsTimeout) {
+			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
+			this.searchTipsTimeout = null;
+		}
 	}
 
 	onMenuItemClick(item, event?) {
@@ -339,10 +413,46 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				case NetworkStatus.Online:
 					this.modernPreloadService.getIsEntitled();
 					break;
+				case AdPolicyEvent.AdPolicyUpdatedEvent:
+					this.showSystemUpdates();
+					break;
 				default:
 					break;
 			}
 		}
+	}
+
+	showSystemUpdates() {
+		this.getMenuItems().then((items) => {
+			const device = items.find((item) => item.id === 'device');
+			if (device !== undefined) {
+				const su = device.subitems.find((item) => item.id === 'system-updates');
+				if (this.adPolicyService.IsSystemUpdateEnabled && !this.deviceService.isSMode && !this.deviceService.isGaming) {
+					if (!su) {
+						device.subitems.splice(2, 0, {
+							id: 'system-updates',
+							label: 'common.menu.device.sub3',
+							path: 'system-updates',
+							icon: '',
+							metricsEvent: 'itemClick',
+							metricsParent: 'navbar',
+							metricsItem: 'link.systemupdates',
+							routerLinkActiveOptions: {
+								exact: true
+							},
+							adPolicyId: AdPolicyId.SystemUpdate,
+							subitems: []
+						});
+					}
+				} else {
+					if (su) {
+						device.subitems = device.subitems.filter(
+							(item) => item.id !== 'system-updates'
+						);
+					}
+				}
+			}
+		});
 	}
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {
@@ -506,13 +616,19 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	initInputAccessories() {
 		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
 			.then((responses: any[]) => {
-				const inputAccessoriesCapability: InputAccessoriesCapability = new InputAccessoriesCapability();
-				inputAccessoriesCapability.isUdkAvailable = responses[0];
-				inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-				this.commonService.setLocalStorageValue(
-					LocalStorageKey.InputAccessoriesCapability,
-					inputAccessoriesCapability
-				);
+				try {
+					let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+					if (inputAccessoriesCapability === undefined) {
+						inputAccessoriesCapability = new InputAccessoriesCapability();
+					}
+					inputAccessoriesCapability.isUdkAvailable = responses[0];
+					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
+						inputAccessoriesCapability
+					);
+				} catch (error) {
+					console.log('initInputAccessories', error);
+				}
 			})
 			.catch((error) => { });
 	}

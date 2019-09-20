@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.194](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.193...v1.0.194) (2019-09-19)
+
+
+
+## [1.0.193](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.192...v1.0.193) (2019-09-19)
+
+
+
+## [1.0.192](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.191...v1.0.192) (2019-09-19)
+
+
+
+## [1.0.191](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.190...v1.0.191) (2019-09-19)
+
+
+
+## [1.0.190](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.189...v1.0.190) (2019-09-18)
+
+
+
+## [1.0.189](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.188...v1.0.189) (2019-09-17)
+
+
+
+## [1.0.188](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.187...v1.0.188) (2019-09-17)
+
+
+
+## [1.0.187](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.186...v1.0.187) (2019-09-16)
+
+
+
 ## [1.0.186](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.185...v1.0.186) (2019-09-13)
 
 

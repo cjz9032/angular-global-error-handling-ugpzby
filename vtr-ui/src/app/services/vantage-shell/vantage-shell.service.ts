@@ -6,7 +6,9 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Container } from 'inversify';
+import { Container, BindingScopeEnum } from 'inversify';
+
+declare var Windows;
 
 declare var Windows;
 
@@ -25,7 +27,9 @@ export class VantageShellService {
 			this.setConsoleLogProxy();
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
-			this.phoenix = Phoenix.default(new Container(), {
+			this.phoenix = Phoenix.default(new Container({
+				defaultScope: BindingScopeEnum.Singleton
+			}), {
 				metricsBroker: metricClient,
 				hsaPowerBroker: powerClient,
 				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
