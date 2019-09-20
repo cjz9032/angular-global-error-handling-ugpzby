@@ -29,8 +29,9 @@
 				id="macrokey_numpad-{{number.key}}" (click)="numberClicked(number)" vtrMetrics
 				[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick"
 				[metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}"
-				(keyup.enter)="numberClicked(number)" tabindex="1" role="button"
-				[attr.aria-label]="'number '+ number.key+' is selected'">
+				(keyup.enter)="numberClicked(number)" tabindex="1"
+				[attr.aria-label]="(selectedNumber && number.key === selectedNumber.key) ? 'selected macrokey numpad '+ number.key : 'macrokey numpad '+number.key"
+				role="button">
 				<div>
 					{{ number.key | translate }}
 				</div>
