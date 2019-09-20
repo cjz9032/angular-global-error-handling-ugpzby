@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-apps-for-you',
@@ -94,6 +95,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		private shellService: VantageShellService,
 		public modalService: NgbModal,
 		private appsForYouService: AppsForYouService,
+		private translateService: TranslateService
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.systemUpdateBridge = shellService.getSystemUpdate();
@@ -198,14 +200,14 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 						this.appDetails.showStatus = this.statusEnum.INSTALLED;
 						this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
 					} else if (notification.payload === 'NotFinished') {
-						this.errorMessage = 'Installation failed. Please try again.';
+						this.errorMessage = this.translateService.instant('appsForYou.common.installationFailed');
 						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					} else if (notification.payload === 'InstallerRunning') {
 						this.appDetails.showStatus = this.statusEnum.INSTALLING;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 					} else {
-						this.errorMessage = 'Installation failed. Please try again.';
+						this.errorMessage = this.translateService.instant('appsForYou.common.installationFailed');
 						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					}

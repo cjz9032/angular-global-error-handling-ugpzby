@@ -28,19 +28,19 @@
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALL"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
 								metricsItem="btn.Download" [isFullWidth]="true"
-								[label]="'Install'"></vtr-ui-button>
+								[label]="'appsForYou.appDetails.installButton.install' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALLING"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
 								metricsItem="btn.Download" [isFullWidth]="true"
-								[label]="'Installing'"></vtr-ui-button>
+								[label]="'appsForYou.appDetails.installButton.installing' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.LAUNCH"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
 								metricsItem="btn.Download" [isFullWidth]="true"
-								[label]="'Launch'"></vtr-ui-button>
+								[label]="'appsForYou.appDetails.installButton.launch' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.SEEMORE"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
 								metricsItem="btn.Download" [isFullWidth]="true"
-								[label]="'See More'"></vtr-ui-button>
+								[label]="'appsForYou.appDetails.installButton.seeMore' | translate"></vtr-ui-button>
 						</div>
 						<div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
 					</div>
@@ -49,17 +49,17 @@
 				<div class="apps-content row no-gutters" *ngIf="appDetails">
 					<div class="description-con mb-40" *ngIf="appDetails.description">
 						<div class="title mb-2">
-							Description
+							{{'appsForYou.appDetails.fieldName.description' | translate}}
 						</div>
 						<div [innerHTML]="appDetails.description"></div>
 					</div>
 					<!-- <div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length"> -->
 					<div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length">
 						<div class="title mb-2">
-							Screenshots
+							{{'appsForYou.appDetails.fieldName.screenshots' | translate}}
 						</div>
 						<div class="screenshot-slider">
-							<div class="image-content" 
+							<div class="image-content"
 								#appsForYouImageContent
 								[style.height.px]="appsForYouImageContent.clientWidth / 5">
 								<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
@@ -82,28 +82,28 @@
 					</div>
 					<div class="information-con">
 						<div class="title mb-2">
-							Additional Information
+							{{'appsForYou.appDetails.fieldName.additionalInformation' | translate}}
 						</div>
 						<div class="infomations row no-gutters" *ngIf="appDetails.showAdditionalInfo">
 							<div class="col-6 row no-gutters">
 								<div class="col-6 info-item" *ngIf="appDetails.by">
-									<div class="sub-title">By:</div>
+									<div class="sub-title">{{'appsForYou.appDetails.fieldName.by' | translate}}</div>
 									<div [innerHTML]="appDetails.by"></div>
 								</div>
 								<div class="col-6 info-item" *ngIf="appDetails.updated">
-									<div class="sub-title">Updated:</div>
+									<div class="sub-title">{{'appsForYou.appDetails.fieldName.updated' | translate}}</div>
 									<div [innerHTML]="appDetails.updated"></div>
 								</div>
 								<div class="col-6 info-item" *ngIf="appDetails.installtype.title">
-									<div class="sub-title">Type:</div>
+									<div class="sub-title">{{'appsForYou.appDetails.fieldName.type' | translate}}</div>
 									<div [innerHTML]="appDetails.installtype.title"></div>
 								</div>
 								<div class="col-6 info-item" *ngIf="appDetails.category.title">
-									<div class="sub-title">Category:</div>
+									<div class="sub-title">{{'appsForYou.appDetails.fieldName.category' | translate}}</div>
 									<div [innerHTML]="appDetails.category.title"></div>
 								</div>
 								<div class="col-6 info-item" *ngIf="appDetails.privacyurl">
-									<a [href]="appDetails.privacyurl" target="_blank" class="legal-agreement">Legal Agreement</a>
+									<a [href]="appDetails.privacyurl" target="_blank" class="legal-agreement">{{'appsForYou.appDetails.fieldName.legalAgreement' | translate}}</a>
 								</div>
 							</div>
 						</div>
