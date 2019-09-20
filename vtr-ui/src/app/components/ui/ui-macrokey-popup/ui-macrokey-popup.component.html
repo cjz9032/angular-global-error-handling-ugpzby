@@ -1,6 +1,5 @@
-<div class="modal-main-wrapper" id="close" tabindex="1">
-	<ui-popover>
-
+<div class="modal-main-wrapper">
+	<ui-popover id="close" attr.aria-label = "{{modalContent.popupWindowTitle | translate}}" tabindex="1">
 		<div class="modal-body vtr-ui-macrokey-popup">
 			<div class="row justify-content-end">
 				<div class="btn-close">
@@ -23,9 +22,9 @@
 						(keyup.enter)="submitAction(true)"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
 					<a (click)="submitAction(false)" tabindex="1" (keyup.enter)="submitAction(false)"
-						(keydown)="keydownFn($event)" class="cancel-link active" id="macrokey_popup_cancle"
-						aria-label="macrokey popup cancle" role="button" vtrMetrics
-						[metricsItem]="'macrokey_popup_cancle'"
+						(keydown)="keydownFn($event)" class="cancel-link active" id="macrokey_popup_cancel"
+						aria-label="macrokey popup cancel" role="button" vtrMetrics
+						[metricsItem]="'macrokey_popup_cancel'"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</a>
 				</div>
 				<div *ngIf="!modalContent.btnConfirm">
