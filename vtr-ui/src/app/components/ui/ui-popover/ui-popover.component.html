@@ -1,27 +1,29 @@
-<ui-popover *ngIf="showMePartially">
+<ui-popover tabindex="1" id="gamingPopover" [attr.aria-label]="descriptionLabel + 'popup window opened'">
 	<div class="modal-body vtr-ui-popover" tabindex="-1" >
 		<div class="row justify-content-end">
 			<div class="btn-close">
 				<a type="button" class="close" aria-hidden="true"
 				tabindex="1"  (click)="close()" (keyup.enter)="close()" vtrMetrics
-					[metricsItem]="'popover_close'" metricsEvent="featureClick" id="gaming_popup_close" attr.aria-label="gaming_popup_close" role="link" aria-labelledby="popup_close">
+					[metricsItem]="'popover_close'" metricsEvent="featureClick" 
+					id="gamingPopupClose" attr.aria-label="gaming popup close" 
+					role="link" aria-labelledby="popup_close">
 					<fa-icon [icon]="['fal', 'times']" ></fa-icon>
 			</a>
 			</div>
 		</div>
-		<div class="content-body"  role="dialog" aria-labelledby="restart_popup">
+		<div class="content-body"  role="dialog" aria-labelledby="restart_popup" tabindex="-1">
 			<h1>{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</h1>
 			<p></p>
 		</div>
 		<hr>
-		<div class="row" (keydown)="runappKeyup($event)">
-			<a id="gaming_popup_ok" attr.aria-label="gaming_popup_ok" tabindex="1"
+		<div class="row" >
+			<a id="gaming_popup_ok" attr.aria-label="gaming popup ok" tabindex="1"
 				class="btn enable-button" vtrMetrics
 				[metricsItem]="'popover_ok'"
 				metricsEvent="featureClick"
 				(click)="close()" 
-				(keyup.enter)="close()"
-				 role="link">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</a>
+				(keyup.enter)="close()" (keydown)="runappKeyup($event)"
+				 role="button">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</a>
 		</div>
 	</div>
 	<span id="restart_popup" style="visibility: hidden;">{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</span>
