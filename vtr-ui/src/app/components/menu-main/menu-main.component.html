@@ -67,6 +67,8 @@
 			</span>
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 			</fa-icon> -->
+			<span class="unread-count-tag"
+				*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
 		</button>
 		<div class="collapse navbar-collapse"
 			*ngIf="!loadMenuItem.hideMenus"
