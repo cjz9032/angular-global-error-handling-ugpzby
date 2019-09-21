@@ -35,7 +35,8 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		INSTALL: 1,
 		INSTALLING: 2,
 		LAUNCH: 3,
-		SEEMORE: 4
+		SEEMORE: 4,
+		UNKNOWN: -1
 	};
 
 	statusEnum = {
@@ -44,7 +45,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		DOWNLOADING: 3,
 		DOWNLOAD_COMPLETE: 4,
 		INSTALLING: 5,
-		FAILED_INSTALL: -1,
+		FAILED_INSTALL: -1
 	};
 
 	mockScreenShots = [
@@ -107,7 +108,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.errorMessage = '';
-		this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+		this.installButtonStatus = this.installButtonStatusEnum.UNKNOWN;
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -119,6 +120,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		clearInterval(this.screenshotInterval);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	startScreenshotAutoSwipe() {
@@ -218,7 +222,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	async initAppDetails(appDetails: AppDetails) {
+	initAppDetails(appDetails: AppDetails) {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
 		this.title = appDetails.title;
@@ -226,17 +230,25 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
 		} else if (appDetails.installtype.title === AppsForYouEnum.AppTypeDesktop) {
-			const installed = await this.systemUpdateBridge.getAppStatus(this.appGuid);
-			if (installed === 'InstalledBefore') {
+			this.updateInstallButtonStatus();
+		} else {
+			// TODO: Should be Windows Store App
+		}
+	}
+
+	updateInstallButtonStatus() {
+		this.systemUpdateBridge.getAppStatus(this.appGuid).then(status => {
+			if (status === 'InstallDone' || status === 'InstalledBefore') {
 				this.appDetails.showStatus = this.statusEnum.INSTALLED;
 				this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+			} else if (status === 'InstallerRunning') {
+				this.appDetails.showStatus = this.statusEnum.INSTALLING;
+				this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 			} else {
 				this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 				this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 			}
-		} else {
-			// TODO: Should be Windows Store App
-		}
+		});
 	}
 
 	async clickInstallButton() {

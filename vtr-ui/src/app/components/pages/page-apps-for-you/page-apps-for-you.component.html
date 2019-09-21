@@ -26,18 +26,22 @@
 					<div class="col-4 btn-content" [ngSwitch]="installButtonStatus">
 						<div class="btn-box">
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALL"
+								[isDisabled]="isOnline === false"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
 								metricsItem="btn.Download" [isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.install' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALLING"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
-								metricsItem="btn.Download" [isFullWidth]="true"
+								metricsItem="btn.Download" 
+								[isDisabled]="true"
+								[isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.installing' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.LAUNCH"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
 								metricsItem="btn.Download" [isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.launch' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.SEEMORE"
+								[isDisabled]="isOnline === false"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
 								metricsItem="btn.Download" [isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.seeMore' | translate"></vtr-ui-button>

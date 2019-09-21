@@ -102,7 +102,7 @@ export class AppsForYouService {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
 		}).catch(e => {
-			console.log(e);
+			this.logService.error('AppsForYouService.initialize getLocalInfo error.', JSON.stringify(e));
 		});
 	}
 
@@ -120,9 +120,21 @@ export class AppsForYouService {
 					appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 					break;
 			}
-			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.localInfo.Lang })])
+			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.localInfo ? this.localInfo.Lang : 'en' })])
 				.then((response) => {
 					this.cmsAppDetails = response[0];
+					///////////////////////////////////////////////////////////
+					// TODO: Mock data, remove before release
+					switch (appGuid) {
+						case AppsForYouEnum.AppGuidAdobeCreativeCloud:
+							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeWeb;
+							break;
+						case AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant:
+						default:
+							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeDesktop;
+							break;
+					}
+					///////////////////////////////////////////////////////////
 					if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
 						this.cmsAppDetailsArray.push({
 							key: appGuid,
