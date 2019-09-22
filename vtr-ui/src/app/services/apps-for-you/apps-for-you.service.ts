@@ -120,7 +120,7 @@ export class AppsForYouService {
 					appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 					break;
 			}
-			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.localInfo ? this.localInfo.Lang : 'en' })])
+			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: 'en' })])
 				.then((response) => {
 					this.cmsAppDetails = response[0];
 					///////////////////////////////////////////////////////////
