@@ -228,12 +228,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private router: Router
 	) {}
 	ngOnInit() {
-		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapabilities) {
-				this.gamingCapabilities = response.payload;
-				this.legionEdgeInit();
-			}
-		});
+
 		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
@@ -275,6 +270,12 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[2].isChecked = this.getNetworkBoostCacheStatus();
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit();
+		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+			if (response.type === Gaming.GamingCapabilities) {
+				this.gamingCapabilities = response.payload;
+				this.legionEdgeInit();
+			}
+		});
 	}
 
 	legionEdgeInit() {
@@ -286,8 +287,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
-		if (this.gamingCapabilities.fbnetFilter) {
+		if (gamingStatus.fbnetFilter) {
 			this.legionUpdate[2].readonly = false;
+		} else {
+			this.legionUpdate[2].readonly = true;
 		}
 		if (!gamingStatus.xtuService) {
 			this.drop.hideDropDown = true;

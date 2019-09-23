@@ -1,6 +1,6 @@
 import { CommonService } from 'src/app/services/common/common.service';
 import { NetworkBoostService } from './../../../../services/gaming/gaming-networkboost/networkboost.service';
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit, OnDestroy } from '@angular/core';
 import { isUndefined } from 'util';
 
 @Component({
@@ -8,14 +8,16 @@ import { isUndefined } from 'util';
 	templateUrl: './networkboost-add-apps.component.html',
 	styleUrls: ['./networkboost-add-apps.component.scss']
 })
-export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterViewInit {
+export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 	loading = true;
 	runningList: any = [];
 	noAppsRunning = false;
 	currentLength = 0;
 	addAppsList: string;
+	ariaLabel = 'Networkboost add apps window opened';
 	statusAskAgain: boolean;
 	public isChecked: any = [];
+	noRunningInterval: any;
 	@Input() showAppsModal: boolean;
 	@Input() addedApps = 0;
 	maxAppsCount = 5;
@@ -24,12 +26,17 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 
 	ngOnInit() {
 		this.refreshNetworkBoostList();
-		document.getElementById('nbAddApps').focus();
+
 	}
 	ngAfterViewInit() {
 	}
 	ngOnChanges(changes: any) {
 		this.runningList.push({ iconName: '', processDescription: '', processPath: '' });
+	}
+	ngOnDestroy() {
+		if (this.noRunningInterval) {
+			clearInterval(this.noRunningInterval);
+		}
 	}
 
 	async onValueChange(event: any, i: number) {
@@ -68,12 +75,13 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			this.loading = false;
 			this.runningList = [];
 			if (result && !isUndefined(result.processList)) {
-				this.runningList = result.processList || [];
+				 this.runningList = result.processList || [];
 			}
 			this.noAppsRunning = this.runningList.length === 0 ? true : false;
 			if (this.noAppsRunning) {
+				this.ariaLabel = 'No running apps to add window';
 				setTimeout(() => {
-					document.getElementById('noAppsRunning').focus();
+					document.getElementById('nbAddApps').focus();
 				}, 5);
 			}
 		} catch (error) {
@@ -88,21 +96,21 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 		this.closeAddAppsModal.emit(action);
 	}
 	runappKeyup(event, i) {
-		if (event.which === 9 ){
-		if (i > this.currentLength) {
-			this.currentLength = i;
-		}
-		if (Number(this.addedApps) === 5) {
-			if (!this.checkApps(i)) {
-				this.focusClose();
+		if (event.which === 9) {
+			if (i > this.currentLength) {
+				this.currentLength = i;
 			}
+			if (Number(this.addedApps) === 5) {
+				if (!this.checkApps(i)) {
+					this.focusClose();
+				}
 
-		} else {
-			if (i === this.runningList.length - 1) {
-				this.focusClose();
+			} else {
+				if (i === this.runningList.length - 1) {
+					this.focusClose();
+				}
 			}
 		}
-	}
 	}
 
 	focusClose() {
@@ -122,5 +130,13 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			}
 		});
 		return isShow;
+	}
+
+	checkFocus(event) {
+		if (this.noAppsRunning && event.which === 9) {
+			this.noRunningInterval = setInterval(() => {
+				document.getElementById('close').focus();
+			}, 1);
+		}
 	}
 }
