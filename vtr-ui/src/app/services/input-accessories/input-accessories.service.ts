@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { VoipResponseInterface } from "./voip.interface";
+import { VoipResponse } from '../../data-models/input-accessories/voip.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -254,7 +254,7 @@ export class InputAccessoriesService {
 			if (this.mouseAndTouchPad) {
 				return this.mouseAndTouchPad.GetMouseCapability();
 			}
-			return this.booleanPromise(false);
+			return Promise.resolve(false);
 		} catch (error) {
 			throw new Error(error.message);
 		}
@@ -265,17 +265,14 @@ export class InputAccessoriesService {
 			if (this.mouseAndTouchPad) {
 				return this.mouseAndTouchPad.GetTouchpadCapability();
 			}
-			return this.booleanPromise(false);
+			return Promise.resolve(false);
 		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
 
-	private booleanPromise(value: boolean): Promise<boolean> {
-		return new Promise((resolve) => resolve(value));
-	}
-// Voiphotkeys Feature
-	public GetVoipHotkeysSettings(): Promise<VoipResponseInterface> {
+	// Voiphotkeys Feature
+	public getVoipHotkeysSettings(): Promise<VoipResponse> {
 		try {
 			if (this.voipHotkeys) {
 				return this.voipHotkeys.getVOIPHotkeysSettings();
@@ -286,7 +283,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public SetVoipHotkeysSettings(selectedApp: number): Promise<VoipResponseInterface> {
+	public setVoipHotkeysSettings(selectedApp: number): Promise<VoipResponse> {
 		try {
 			if (this.voipHotkeys) {
 				return this.voipHotkeys.setVOIPHotkeysSettings(selectedApp);

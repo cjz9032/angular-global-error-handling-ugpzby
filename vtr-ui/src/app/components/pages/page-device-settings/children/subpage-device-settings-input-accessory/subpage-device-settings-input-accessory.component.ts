@@ -5,8 +5,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SupportedAppEnum, VoipErrorCodeEnum } from '../../../../../services/input-accessories/voip.enum';
-import { VoipAppInterface, VoipResponseInterface } from '../../../../../services/input-accessories/voip.interface';
+import { SupportedAppEnum, VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
+import { VoipApp, VoipResponse } from '../../../../../data-models/input-accessories/voip.model';
 import { EMPTY } from 'rxjs';
 
 @Component({
@@ -32,8 +32,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public isTouchPadVisible = false;
 	public isMouseVisible = false;
 
-	public selectedApp: VoipAppInterface;
-	public installedApps: VoipAppInterface[] = [];
+	public selectedApp: VoipApp;
+	public installedApps: VoipApp[] = [];
 	public showVoipHotkeysSection = false;
 	public isAppInstalled = false;
 	voipAppName = ['Skype For Business', 'Microsoft Teams'];
@@ -61,7 +61,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 
 	getVoipHotkeysSettings() {
-		this.keyboardService.GetVoipHotkeysSettings()
+		this.keyboardService.getVoipHotkeysSettings()
 			.then(res => {
 				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED || !res.capability) {
 					return res;
@@ -81,10 +81,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			});
 	}
 
-	setVoipHotkeysSettings(app: VoipAppInterface) {
+	setVoipHotkeysSettings(app: VoipApp) {
 		const prev = this.selectedApp;
 		this.selectedApp = app;
-		this.keyboardService.SetVoipHotkeysSettings(app.appName)
+		this.keyboardService.setVoipHotkeysSettings(app.appName)
 			.then(VoipResponse => {
 				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
 					this.selectedApp = prev;

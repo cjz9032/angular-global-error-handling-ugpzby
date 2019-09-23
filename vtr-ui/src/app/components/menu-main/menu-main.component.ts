@@ -614,8 +614,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	initInputAccessories() {
-		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
-			.then((responses: any[]) => {
+		Promise.all([
+			this.keyboardService.GetUDKCapability(),
+			this.keyboardService.GetKeyboardMapCapability(),
+			this.keyboardService.getVoipHotkeysSettings()
+		])
+			.then((responses) => {
 				try {
 					let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 					if (inputAccessoriesCapability === undefined) {
@@ -623,6 +627,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+					inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
