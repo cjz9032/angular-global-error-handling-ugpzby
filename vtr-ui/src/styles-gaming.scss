@@ -857,6 +857,15 @@
 									color: $gaming_lightest;
 									border-bottom: 1px solid $screen_dark_15;
 								}
+
+								li {
+									a {
+										.title{
+											font-weight:$weight_regular !important;
+											font-size:1.6rem !important;
+										}
+									}
+								}
 							}
 						}
 					}
