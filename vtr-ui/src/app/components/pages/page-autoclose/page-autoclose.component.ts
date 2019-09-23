@@ -101,6 +101,18 @@ export class PageAutocloseComponent implements OnInit {
 		}
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (
+			notification &&
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
+		) {
+			this.isOnline = notification.payload.isOnline;
+		}
+		if (this.isOnline === undefined) {
+			this.isOnline = true;
+		}
+	}
+
 	openTargetModal() {
 		try {
 			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();

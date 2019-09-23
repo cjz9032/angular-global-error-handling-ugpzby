@@ -36,6 +36,12 @@ ui-popover-turn-on {
 		border: 0.1rem solid $gaming_darkest;
 	}
 	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
+	}
+	@media #{$white-on-black} {
 		border:0.1rem solid $light;
 	}
 	@media #{$black-on-white} {

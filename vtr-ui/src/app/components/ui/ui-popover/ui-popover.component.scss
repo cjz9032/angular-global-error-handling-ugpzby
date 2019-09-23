@@ -121,21 +121,4 @@ ui-popover {
 			display: none;
 		}
 	}
-	#restart_popup{
-		color: $gaming_darkest;
-		@media #{$black-on-white} {
-			display: none;
-		}
-		@media #{$white-on-black} {
-			display: none;
-		}
-	}
-	#popup_close{
-		@media #{$black-on-white} {
-			display: none;
-		}
-		@media #{$white-on-black} {
-			display: none;
-		}
-	}
 }

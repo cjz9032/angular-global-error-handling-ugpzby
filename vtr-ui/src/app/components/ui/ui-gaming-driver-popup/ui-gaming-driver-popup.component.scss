@@ -122,21 +122,4 @@ ui-gaming-driver-popup {
 			display: none;
 		}
 	}
-	#driver_popup{
-		color: $gaming_darkest;
-		@media #{$black-on-white} {
-			display: none;
-		}
-		@media #{$white-on-black} {
-			display: none;
-		}
-	}
-	#driver_popup_close{
-		@media #{$black-on-white} {
-			display: none;
-		}
-		@media #{$white-on-black} {
-			display: none;
-		}
-	}
 }

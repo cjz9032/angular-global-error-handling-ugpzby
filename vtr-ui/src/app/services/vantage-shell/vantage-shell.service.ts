@@ -10,8 +10,6 @@ import { Container, BindingScopeEnum } from 'inversify';
 
 declare var Windows;
 
-declare var Windows;
-
 @Injectable({
 	providedIn: 'root'
 })
