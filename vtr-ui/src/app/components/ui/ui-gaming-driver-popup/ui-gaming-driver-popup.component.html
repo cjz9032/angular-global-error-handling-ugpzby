@@ -1,10 +1,10 @@
 <ui-gaming-driver-popup id="gamingDriverPopup" tabindex="1"
- [attr.aria-label]="descriptionLabel +'drivepopup window opened'">
+ [attr.aria-label]="'Driver Install Required window'">
 	<div class="modal-body vtr-ui-gaming-driver-popup">
 		<div class="row justify-content-end">
 			<div class="btn-close">
 			<a type="button" class="close" aria-hidden="true" (click)="close()"
-			tabindex="1" (keydown.enter)="close()"
+			tabindex="1" (keyup.enter)="close()"
 			role="button"
 			 vtrMetrics [metricsItem]="'driverpopup_close'"
 					metricsEvent="featureClick" id="gaming-driverPopup-close" aria-label="gaming driverPopup close" role="link" aria-labelledby="driver_popup_close">
@@ -23,7 +23,7 @@
 				[metricsItem]="'driverPopup_install'"
 				metricsEvent="featureClick"
 				role="button"
-				(click)="systemUpdatePage()"  (keydown.enter)="systemUpdatePage()"
+				(click)="systemUpdatePage()"  (keyup.enter)="systemUpdatePage()"
 				 id="gaming_driverPopup_install" aria-label="gaming driverPopup install"
 				role="link">
 				{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}
@@ -31,7 +31,7 @@
 			<a (click)="close()" vtrMetrics tabindex="1"
 			role="button"
 				[metricsItem]="'driverpopup_cancel'"
-				metricsEvent="featureClick"  (keydown.enter)="close()"
+				metricsEvent="featureClick"  (keyup.enter)="close()"
 				(keydown)="runappKeyup($event)"
 				class="cancel-link active" id="gaming_driverPopup_cancel" aria-label="gaming driverPopup cancel" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
 		</div>
