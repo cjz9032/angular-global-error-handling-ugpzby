@@ -706,7 +706,8 @@
                     "OverheatedBattery": "Az akkumulátor <b>túl meleg</b>. Vegye ki a számítógépből, és hagyja lehűlni szobahőmérsékletre.",
                     "PermanentError": "Az akkumulátor <b>elhasználódott</b>. Az akkumulátor nem tölthető. Cserélje ki az akkumulátort.",
                     "NotSupportACAdapterDetail": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
-                    "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert."
+                    "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
