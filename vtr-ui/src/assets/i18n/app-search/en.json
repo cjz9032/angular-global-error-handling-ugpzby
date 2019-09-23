@@ -358,6 +358,7 @@
 			"armSupport": false,
 			"smodeSupport": false,
 			"gamingSupport": false,
+			"regionSupport": ["-", "cn"],
 			"search-internet-protection": {
 				"icon": ["fal", "network-wired"],
 				"desc": "Internet Protection",
