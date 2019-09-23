@@ -61,6 +61,6 @@ export class SearchDropdownComponent implements AfterViewInit {
 	}
 
 	onKeyDown(event) {
-		event.fromAppSearch = true;
+		event.enableCopyAndPaste = true;
 	}
 }
