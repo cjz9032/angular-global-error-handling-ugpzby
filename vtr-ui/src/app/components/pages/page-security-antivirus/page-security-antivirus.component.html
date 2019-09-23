@@ -30,8 +30,8 @@
 													<div class="title"
 														[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate"></div>
 													<div class="row">
-														<div class="subtitle font">
-															{{'security.antivirus.windowsDefender.topContent' | translate}}
+														<div *vtrTranslate="'security.antivirus.windowsDefender.topContent' | translate" 
+															class="subtitle subtitle-color">
 															<a vtrMetrics
 																id="sa-av-link-view"
 																metricsEvent="ArticleClick"
@@ -41,7 +41,7 @@
 																[metricsItemID]="mcafeeArticleId"
 																[metricsItemCategory]="mcafeeArticleCategory"
 																href="javascript:void(0)" target="_blank" (click)="openArticle()"
-																[innerHTML]="'security.antivirus.windowsDefender.view' | translate"></a>
+																></a>
 														</div>
 													</div>
 												</div>
@@ -55,28 +55,29 @@
 										<div class="title"
 											[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate"></div>
 										<div class="row">
-											<div class="subtitle font">
-												{{'security.antivirus.windowsDefender.topContent' | translate}}
-												<a 	vtrMetrics
-													id="sa-av-link-view"
-													metricsEvent="ArticleClick"
-													metricsItem="ViewTips"
-													metricsItemPosition="1"
-													metricsPageNumber="1"
-													[metricsItemID]="mcafeeArticleId"
-													[metricsItemCategory]="mcafeeArticleCategory"
-													href="javascript:void(0)" target="_blank" (click)="openArticle()"
-													[innerHTML]="'security.antivirus.windowsDefender.view' | translate"></a>
+											<div *vtrTranslate="'security.antivirus.windowsDefender.topContent' | translate" 
+												class="subtitle subtitle-color">
+													<a vtrMetrics
+														id="sa-av-link-view"
+														metricsEvent="ArticleClick"
+														metricsItem="ViewTips"
+														metricsItemPosition="1"
+														metricsPageNumber="1"
+														[metricsItemID]="mcafeeArticleId"
+														[metricsItemCategory]="mcafeeArticleCategory"
+														href="javascript:void(0)" target="_blank" (click)="openArticle()"
+													></a>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 							<vtr-widget-offline-info *ngIf="!isOnline"
-								[title]="'dashboard.offlineInfo.title' | translate" [isSubtitleVisible]="false"
-								[isButtonVisible]="false"></vtr-widget-offline-info>
+							[title]="'dashboard.offlineInfo.title' | translate" [isSubtitleVisible]="false"
+							[isButtonVisible]="false"></vtr-widget-offline-info>
 							<div class="subheader antivirus-block row justify-content-between">
-								<div class="rounded-card-with-shadow p-5 bg-white defender-part">
+								<div class="rounded-card-with-shadow p-5 bg-white defender-part"
+									[ngClass]="{'offline': !isOnline}">
 									<div class="row justify-content-between">
 										<div class="row">
 											<img class="mcafee-logo align-self-start"
@@ -87,6 +88,7 @@
 										</div>
 										<div class="flex-column">
 											<a class="button d-flex justify-content-center align-items-center" id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+												[ngClass]="{'offline': !isOnline}"
 												metricsItem="subscribe" metricsParent="security.antivirus"
 												href="{{common.urlGetMcAfee}}" target="_blank"
 												title="{{'security.antivirus.windowsDefender.buyNow' | translate}}"
@@ -127,12 +129,21 @@
 											<vtr-widget-mcafee-metric [metricsList]="viewModel.metricsList"
 												[showMetricButton]="showMetricButton" [common]="common">
 											</vtr-widget-mcafee-metric>
-											<div class="subtitle sub-font">
-												{{'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt} }}
-												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-													metricsItem="subscribe" metricsParent="security.antivirus"
-													href="{{viewModel.mcafee?.trialUrl}}" target="_blank"
-													[innerHTML]="'security.antivirus.mcafee.subscribeNow' | translate"></a>
+											<div *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'">
+												<p class="subtitle sub-font"
+													*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+													<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+														metricsItem="subscribe" metricsParent="security.antivirus"
+														href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
+												</p>
+											</div>
+											<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'">
+												<p class="subtitle sub-font"
+													*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+													<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+														metricsItem="subscribe" metricsParent="security.antivirus"
+														href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
+												</p>
 											</div>
 										</div>
 										<div class="col-md-7 col-12 px-0" [ngClass]="{'col-md-12': !showMetricsList}">
@@ -146,11 +157,22 @@
 													</div>
 												</div>
 												<div class="flex-column">
-													<a class="button d-flex align-items-center justify-content-center" id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+													<a *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
+														class="button d-flex align-items-center justify-content-center"
+														[ngClass]="{'offline': !isOnline}"
+														id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
 														metricsItem="subscribe" metricsParent="security.antivirus"
 														href="{{viewModel.mcafee?.trialUrl}}" target="_blank"
 														title="{{'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt} }}"
 														[innerHTML]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"></a>
+													<a *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
+														class="button d-flex align-items-center justify-content-center px-4"
+														[ngClass]="{'offline': !isOnline}"
+														id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+														metricsItem="subscribe" metricsParent="security.antivirus"
+														href="{{viewModel.mcafee?.trialUrl}}" target="_blank"
+														title="{{'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt} }}"
+														[innerHTML]="'security.antivirus.mcafee.subscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"></a>
 													<div class="subtitle text-center"
 														[innerHTML]="'security.antivirus.mcafee.discount' | translate">
 													</div>
@@ -158,7 +180,12 @@
 											</div>
 											<div>
 												<div class="divider"></div>
-												<div class="content"
+												<div  *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"  
+													class="content"
+													[innerHTML]="'security.antivirus.mcafee.trialSubtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
+												</div>
+												<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'" 
+													class="content"
 													[innerHTML]="'security.antivirus.mcafee.subtitle' | translate:{remainingDays: viewModel.mcafee.expireAt}">
 												</div>
 												<vtr-widget-mcafee-state
@@ -167,12 +194,23 @@
 												</vtr-widget-mcafee-state>
 											</div>
 										</div>
-										<div class="subtitle d-md-none md-margin">
-											{{'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt} }}
-											<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-												metricsItem="subscribe" metricsParent="security.antivirus"
-												href="{{viewModel.mcafee?.trialUrl}}" target="_blank"
-												[innerHTML]="'security.antivirus.mcafee.subscribeNow' | translate"></a>
+										<div *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
+											class="d-md-none md-margin">
+											<p class="subtitle sub-font"
+												*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+													metricsItem="subscribe" metricsParent="security.antivirus"
+													href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
+											</p>
+										</div>
+										<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
+											class="d-md-none md-margin">
+											<p class="subtitle sub-font"
+												*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
+													metricsItem="subscribe" metricsParent="security.antivirus"
+													href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
+											</p>
 										</div>
 									</div>
 								</div>
