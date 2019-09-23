@@ -24,7 +24,8 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		btnConfirm: false,
 		metricsItemId: '',
 		metricsItemClose: 'close dialog',
-		metricsItemPopup: ''
+		metricsItemPopup: '',
+		popupWindowTitle: '',
 	};
 
 	constructor() { }
@@ -75,7 +76,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				this.modalContent.metricsItemId = 'macrokey_10s_timeout_dialog_ok_button';
 				this.modalContent.metricsItemClose = 'close dialog';
 				this.modalContent.metricsItemPopup = 'macrokey_10s_timeout_popup';
-
+				this.modalContent.popupWindowTitle = '10 second time out window';
 
 				this.showModal = !this.showModal;
 				this.toggleRecording(true);
@@ -85,7 +86,8 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				this.modalContent.bodyText = 'gaming.macroKey.popupContent.timeoutRecording.body';
 				this.modalContent.metricsItemId = 'macrokey_20s_timeout_dialog_ok_button';
 				this.modalContent.metricsItemClose = 'close dialog';
-				this.modalContent.metricsItemPopup = 'macrokey_10s_timeout_popup';
+				this.modalContent.metricsItemPopup = 'macrokey_20s_timeout_popup';
+				this.modalContent.popupWindowTitle = '20 second time out window';
 				this.showModal = !this.showModal;
 				this.toggleRecording(true);
 			}
@@ -93,6 +95,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				this.modalContent.headerTitle = 'gaming.macroKey.popupContent.maximumInput.title';
 				this.modalContent.bodyText = 'gaming.macroKey.popupContent.maximumInput.body';
 				this.modalContent.metricsItemId = 'macrokey_maximum_input_dialog_ok_button';
+				this.modalContent.popupWindowTitle = 'Maximum Input Reached window';
 				this.modalContent.metricsItemClose = 'close dialog';
 				this.showModal = !this.showModal;
 				this.toggleRecording();

@@ -14,7 +14,7 @@
 					(click)="openTrialModal()"
 					[title]="'homeSecurity.card.startTrial' | translate"
 					[label]="'homeSecurity.card.startTrial' | translate"
-					[isDisabled]="location?.isLocationServiceOn === undefined"
+					[isDisabled]="location?.isLoading"
 					linkId="chs-card-btn-startTrial">
 				</vtr-ui-button>
 			</div>
@@ -32,7 +32,7 @@
 					metricsItem="joinGroup"
 					[title]="'homeSecurity.card.join' | translate"
 					[label]="'homeSecurity.card.join' | translate"
-					[isDisabled]="location?.isLocationServiceOn === undefined"
+					[isDisabled]="location?.isLoading"
 					(onClick)="joinGroup()"
 					linkId="chs-card-btn-joinGroup">
 				</vtr-ui-button>

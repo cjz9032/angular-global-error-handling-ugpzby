@@ -22,8 +22,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 
 	ngOnInit() {
 		this.refreshRunningList();
-		let txt1 = document.getElementById('close');
-		txt1.focus();
+		document.getElementById('close').focus();
 	}
 	ngAfterViewInit() {
 		document.getElementById('close').focus();
@@ -38,9 +37,15 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 			}
 			this.loadingNoApps = this.runningList.length === 0 ? true : false;
 			this.loading = false;
+			setTimeout(() => {
+				document.getElementById('close').focus();
+			}, 100);
 		} catch (error) {
 			this.loading = false;
 			this.loadingNoApps = true;
+			setTimeout(() => {
+				document.getElementById('close').focus();
+			}, 100);
 		}
 	}
 

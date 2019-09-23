@@ -284,17 +284,15 @@
 				target="_blank"
 				rel="noopener">
 				<div class="row">
-					<div class="col col-12 image-container">
-						<div class="card-image"
-							[style.background-image]="'url(' + img + ')'">
-							<div *ngIf="logo || logoText"
-								class="logo">
-								<span class="logo-img">
-									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-								</span>
-								<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-								attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
-							</div>
+					<div class="card-image"
+						[style.background-image]="'url(' + img + ')'">
+						<div *ngIf="logo || logoText"
+							class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+							<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
+							attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
 						</div>
 					</div>
 					<div class="row w-100">

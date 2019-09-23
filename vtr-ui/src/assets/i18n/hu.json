@@ -1554,8 +1554,12 @@
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
-            "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "poweredBy": "A Coronet technológiája",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Vissza",
@@ -1702,7 +1706,7 @@
             "common": {
                 "title": "Vírusirtó",
                 "back": "VISSZA",
-                "recommends": "Miért javasolja a Lenovo a <b>McAfee-t</b> az összes eszköz védelmére",
+                "recommends": "Miért javasolja a Lenovo a <b>McAfee</b>-t az összes eszköz védelmére",
                 "award": "Díjnyertes vírusirtó",
                 "mcafeePremium": "McAfee LiveSafe védelem",
                 "protectedBy": "Önt jelenleg a(z) {{protectedName}} védi. A McAfee LiveSafe azonban hatékonyabb védelmet nyújthat.",
@@ -1771,7 +1775,7 @@
                 "startFileScan": "Fájlok vizsgálatának megkezdése"
             },
             "others": {
-                "othersProtection": "alapszintű védelmet biztosít az eszköz számára"
+                "othersProtection": "{{protectedName}} alapszintű védelmet biztosít az eszköz számára"
             }
         },
         "wifisecurity": {

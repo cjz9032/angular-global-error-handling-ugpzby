@@ -1554,8 +1554,12 @@
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
-            "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "poweredBy": "Obezbeđuje Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Nazad",
@@ -1702,7 +1706,7 @@
             "common": {
                 "title": "Antivirusni program",
                 "back": "NAZAD",
-                "recommends": "Zbog čega Lenovo preporučuje <b>McAfee<b> za zaštitu svih vaših uređaja",
+                "recommends": "Zbog čega Lenovo preporučuje <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, možete da budete bolje zaštićeni pomoću usluge McAfee LiveSafe.",
@@ -1726,7 +1730,7 @@
                 "buyNow": "Kupi odmah",
                 "buy": "Kupite, preuzmite i instalirajte McAfee zaštitu od virusa danas da biste iskoristili prednosti ovih bezbednosnih funkcija bankovnog nivoa",
                 "onlyBasic": "Ovde se nalaze samo osnove. Iako ste zaštićeni od nekih pretnji na mreži, možda ste i dalje izloženi drugima.",
-				"virus": "Zaštita od virusa",
+                "virus": "Zaštita od virusa",
                 "homeNetwork": "Zaštita kućne mreže",
                 "private": "Privatno, anonimno pregledanje",
                 "everyDevice": "Zaštita svakog uređaja",
@@ -1771,7 +1775,7 @@
                 "startFileScan": "Započnite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
             }
         },
         "wifisecurity": {

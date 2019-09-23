@@ -109,6 +109,7 @@
 																metricsEvent="featureClick"
 																metricsParent="ConnectedHomeSecurity"
 																(click)="dialogService?.openCHSPermissionModal()"
+																[isDisabled]="homeSecurityLocation.isLoading"
 																linkId="chs-btn-enableLocation"
 																[title]="'security.homeprotection.securityhealth.button' | translate"
 																[label]="'security.homeprotection.securityhealth.button' | translate">

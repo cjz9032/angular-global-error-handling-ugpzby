@@ -74,7 +74,7 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3"
-						*ngIf="machineType == 1">
+						*ngIf="machineType === 1">
 						<vtr-top-row-functions></vtr-top-row-functions>
 					</li>
 					<li class="pt-3 voip" *ngIf="showVoipHotkeysSection">
@@ -173,11 +173,13 @@
 						</div>
 					</div>
 					<div class="row controls">
-						<div class="col-auto" *ngIf="isTouchPadVisible">
+						<div class="col-auto"
+							*ngIf="isTouchPadVisible">
 							<a
 								(click)='launchProtocol("ms-settings:devices-touchpad")'><span>{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}</span></a>
 						</div>
-						<div class="col-auto" *ngIf="isMouseVisible">
+						<div class="col-auto"
+							*ngIf="isMouseVisible">
 							<a *ngIf="machineType === 1;else otherMachine"
 								(click)='launchProtocol("ms-settings:mousetouchpad")'><span>{{'device.deviceSettings.inputAccessories.controlOptions.control3' | translate}}</span></a>
 							<ng-template #otherMachine><a

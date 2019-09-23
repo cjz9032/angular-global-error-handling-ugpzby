@@ -49,29 +49,10 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCi
 import { ModernPreloadModule } from './modern-preload/modern-preload.module';
 import { PageLayoutModule } from '../components/page-layout/page-layout.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-library.add(faCheck);
-library.add(faExclamation);
-library.add(faBolt);
-library.add(faChevronRight);
-library.add(faTimesCircle);
-library.add(faCaretUp);
-library.add(faCaretRight);
-library.add(faCaretDown);
-library.add(faPlusCircle);
-library.add(faMinusCircle);
-library.add(faChevronUp);
-library.add(faChevronDown);
-library.add(faCircleNotch);
-library.add(faBrowser);
-library.add(faGift);
-library.add(faCommentAltDots);
-library.add(faShoePrints);
-library.add(faWifiSlash);
-library.add(faFlask);
-library.add(faExclamationTriangle);
-library.add(faExclamationCircle);
-library.add(faQuestionCircle);
+import { environment } from 'src/environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
+import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
 
 @NgModule({
 	declarations: [
@@ -80,9 +61,12 @@ library.add(faQuestionCircle);
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
 		ModalServerSwitchComponent,
+		ModalAppUpdateAvailableComponent,
 	],
 	imports: [
 		BrowserModule,
+		AppRoutingModule,
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
@@ -91,7 +75,6 @@ library.add(faQuestionCircle);
 			},
 			isolate: false
 		}),
-		AppRoutingModule,
 		NavbarModule,
 		NgbModalModule,
 		NgbTooltipModule,
@@ -123,9 +106,36 @@ library.add(faQuestionCircle);
 	entryComponents: [
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
-		ModalServerSwitchComponent
+		ModalServerSwitchComponent,
+		ModalAppUpdateAvailableComponent,
 	],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+	constructor() {
+		library.add(faCheck);
+		library.add(faExclamation);
+		library.add(faBolt);
+		library.add(faChevronRight);
+		library.add(faTimesCircle);
+		library.add(faCaretUp);
+		library.add(faCaretRight);
+		library.add(faCaretDown);
+		library.add(faPlusCircle);
+		library.add(faMinusCircle);
+		library.add(faChevronUp);
+		library.add(faChevronDown);
+		library.add(faCircleNotch);
+		library.add(faBrowser);
+		library.add(faGift);
+		library.add(faCommentAltDots);
+		library.add(faShoePrints);
+		library.add(faWifiSlash);
+		library.add(faFlask);
+		library.add(faExclamationTriangle);
+		library.add(faExclamationCircle);
+		library.add(faQuestionCircle);
+		library.add(faCloudDownload);
+	}
+}

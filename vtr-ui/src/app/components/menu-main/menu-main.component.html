@@ -3,7 +3,7 @@
 		<div *ngIf="!deviceService.isGaming && !isGamingHome"
 			class="navbar-brand p-0">
 			<a vtrMetrics
-				*ngIf="items.length>0"
+				*ngIf="items && items.length>0"
 				class="menu-main-logo"
 				id="menu-main-lnk-l-logo"
 				aria-label="menu-main-lnk-l-logo"
@@ -11,14 +11,14 @@
 				routerLinkActive="link-active"
 				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent"
-				[metricsParent]="items[0].metricsParent"
+				[metricsParent]="'NavBar'"
 				[metricsItem]="items[0].metricsItem"
 				routerLink="/dashboard">
 				<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTYgMjU2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMjdBREQ3O30NCgkuc3Qxe2ZpbGw6IzIxMzA2NDt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxyZWN0IHk9IjAiIGNsYXNzPSJzdDAiIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2Ii8+DQoJPGc+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IDE5NC44LDE5NS41IAkJIi8+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDg4LjUsMzkuNiA4Ni4zLDM5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="
 					alt="L" />
 			</a>
 		</div>
-		<div *ngIf="deviceService.isGaming || loadMenuItem.hideMenus"
+		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem.hideMenus)"
 			class="navbar-brand pt-0">
 
 			<img *ngIf="isGamingHome"
@@ -33,7 +33,7 @@
 				routerLinkActive="link-active"
 				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent"
-				[metricsParent]="items[0].metricsParent"
+				[metricsParent]="'NavBar'"
 				[metricsItem]="items[0].metricsItem"
 				routerLink="/{{items[0].path}}">
 				<img src="../../../assets/images/gaming/gaming-logo-small.png"
@@ -52,7 +52,7 @@
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
 					<span *ngIf="machineFamilyName">{{machineFamilyName}}</span>
 					<vtr-ui-header-warranty *ngIf="machineFamilyName"
-						[pageParent]="items[0].metricsParent"></vtr-ui-header-warranty>
+						[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 				</div>
 			</span>
 
@@ -100,7 +100,8 @@
 							</div>
 
 							{{item.label | translate}}
-							<span *ngIf="item.beta" class="beta">Beta</span>
+							<span *ngIf="item.beta"
+								class="beta">Beta</span>
 						</a>
 					</li>
 					<li *ngIf="item.subitems.length>0
@@ -128,7 +129,8 @@
 									class="fa-icon"></fa-icon>
 							</div>
 							{{item.label | translate}}
-							<span *ngIf="item.beta" class="beta">Beta</span>
+							<span *ngIf="item.beta"
+								class="beta">Beta</span>
 						</a>
 						<div class="dropdown-menu"
 							aria-labelledby="navbarDropdown">
@@ -182,10 +184,12 @@
 					</li>
 					<li *ngIf="item.id==='app-search'&&showItem(item)"
 						class="nav-item search-nav-item">
-						<div class="search-nav-item-mask" *ngIf="showSearchBox" (click)="onClickSearchMask()"></div>
+						<div class="search-nav-item-mask"
+							*ngIf="showSearchBox"
+							(click)="onClickSearchMask()"></div>
 						<a class="nav-link {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
-							[class.search-active] = "showSearchBox"
+							[class.search-active]="showSearchBox"
 							vtrMetrics
 							tabindex="1"
 							id="menu-main-nav-lnk-{{item.id}}"
@@ -204,9 +208,11 @@
 							</div>
 
 							{{item.label | translate}}
-							<span *ngIf="item.beta" class="beta">Beta</span>
+							<span *ngIf="item.beta"
+								class="beta">Beta</span>
 						</a>
-						<div class="search-dropdown d-none d-md-block" *ngIf="showSearchBox">
+						<div class="search-dropdown d-none d-md-block"
+							*ngIf="showSearchBox">
 							<vtr-search-dropdown></vtr-search-dropdown>
 						</div>
 					</li>
@@ -239,7 +245,8 @@
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
 							</div>
-							<span class="unread-count-tag" *ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
+							<span class="unread-count-tag"
+								*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
 						</a>
 						<div class="dropdown-menu {{item.id}} dropdown-menu-id"
 							id="navbarDropdownMenu"
@@ -249,33 +256,35 @@
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
 							<a class="dropdown-item link link-lma"
-							vtrMetrics
-							id="menu-main-lnk-open-lma"
-							attr.aria-label="menu-main-lnk-open-lma"
-							routerLinkActive="link-active"
-							[metricsEvent]="item.metricsEvent"
-							[metricsParent]="item.metricsParent"
-							metricsItem="LenovoMigrationAssistantButton"
-							[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidLenovoMigrationAssistant]"
-							(click)="updateUnreadMessageCount(item, $event)"
-							href="javascript:void(0)">
+								vtrMetrics
+								id="menu-main-lnk-open-lma"
+								attr.aria-label="menu-main-lnk-open-lma"
+								routerLinkActive="link-active"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoMigrationAssistantButton"
+								[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidLenovoMigrationAssistant]"
+								(click)="updateUnreadMessageCount(item, $event)"
+								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
-								<span class="unread-tag" *ngIf="!UnreadMessageCount.lmaMenuClicked"></span>
+								<span class="unread-tag"
+									*ngIf="!UnreadMessageCount.lmaMenuClicked"></span>
 							</a>
 							<a *ngIf="appsForYouService.showAdobeMenu()"
-							class="dropdown-item link link-lma"
-							vtrMetrics
-							id="menu-main-lnk-open-adobe"
-							attr.aria-label="menu-main-lnk-open-adobe"
-							routerLinkActive="link-active"
-							[metricsEvent]="item.metricsEvent"
-							[metricsParent]="item.metricsParent"
-							metricsItem="AdobecRedemptionButton"
-							[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidAdobeCreativeCloud]"
-							(click)="updateUnreadMessageCount(item, $event)"
-							href="javascript:void(0)">
+								class="dropdown-item link link-lma"
+								vtrMetrics
+								id="menu-main-lnk-open-adobe"
+								attr.aria-label="menu-main-lnk-open-adobe"
+								routerLinkActive="link-active"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="AdobecRedemptionButton"
+								[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidAdobeCreativeCloud]"
+								(click)="updateUnreadMessageCount(item, $event)"
+								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.adobeRedemption' | translate }}
-								<span class="unread-tag" *ngIf="!UnreadMessageCount.adobeMenuClicked"></span>
+								<span class="unread-tag"
+									*ngIf="!UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a *ngIf="commonService.isOnline && !deviceService.isSMode && !deviceService.isGaming && modernPreloadService.IsEntitled"
 								vtrMetrics
@@ -289,7 +298,7 @@
 								href="javascript:void(0)"
 								(click)="openModernPreloadModal()">{{ 'modernPreload.title' | translate }}</a>
 							<a vtrMetrics
-							tabindex="1"
+								tabindex="1"
 								id="menu-main-lnk-open-preference"
 								attr.aria-label="menu-main-lnk-open-preference"
 								[metricsEvent]="item.metricsEvent"
@@ -344,7 +353,9 @@
 			</ul>
 		</div>
 	</nav>
-	<div class="search-dropdown-sm d-xl-none" *ngIf="showSearchBox">
+	<div class="search-dropdown-sm d-xl-none"
+		*ngIf="showSearchBox">
 		<vtr-search-dropdown></vtr-search-dropdown>
 	</div>
+	<vtr-search-tips [featureDesc]="searchTips" *ngIf="!showSearchBox && searchTips"></vtr-search-tips>
 </div>

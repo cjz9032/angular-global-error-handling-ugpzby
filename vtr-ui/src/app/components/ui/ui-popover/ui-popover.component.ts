@@ -12,7 +12,9 @@ export class UiPopoverComponent implements OnInit {
 
 	constructor() {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		document.getElementById('popover').focus();
+	}
 
 	close() {
 		this.showMePartially = !this.showMePartially;

@@ -700,6 +700,7 @@
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
+					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
@@ -1564,7 +1565,6 @@
 			"extendNow": "extend",
 			"poweredBy": "Powered by Coronet",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-
 		},
 		"tour": {
 			"back": "Back",
@@ -1780,7 +1780,7 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device"
 			}
 		},
 		"wifisecurity": {
@@ -1818,7 +1818,7 @@
 			"errorMessage": {
 				"headerText": "Error",
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
-				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect",
+				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
 				"closeText": "close"
 			}
@@ -1855,7 +1855,7 @@
 				"continue": "CONTINUE",
 				"cancel": "CANCEL",
 				"validateCode": "VALIDATE CODE",
-				"success": "You have Successfully joined your family's Connected Home Security",
+				"success": "You have successfully joined your family's Connected Home Security",
 				"canUse": "You can now start using Connected Home Security",
 				"tryAgain": "Incorrect code, please try again!",
 				"fail": "Incorrect code entered!",

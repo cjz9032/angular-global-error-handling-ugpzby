@@ -1554,8 +1554,12 @@
             "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
             "overviewTitle": "Overview of your Connected Home Security",
             "extendNow": "extend now",
-            "poweredBy": "Powered by Cornet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
+            "trialTitle": "Trial",
+            "subscriptionTitle": "Subscription",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
         },
         "tour": {
             "back": "Terug",
@@ -1702,7 +1706,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TERUG",
-                "recommends": "Waarom Lenovo <b>McAfee</Lenovo> aanbeveelt voor de beveiliging van al je apparaten",
+                "recommends": "Waarom Lenovo <b>McAfee</b> aanbeveelt voor de beveiliging van al je apparaten",
                 "award": "Bekroonde antivirus",
                 "mcafeePremium": "McAfee LiveSafe-bescherming",
                 "protectedBy": "U wordt op dit moment beveiligd door {{protectedName}}. U kunt echter beter worden beveiligd door McAfee LiveSafe.",
@@ -1771,7 +1775,7 @@
                 "startFileScan": "Start bestanden scannen"
             },
             "others": {
-                "othersProtection": "biedt basisbeveiliging voor uw apparaat"
+                "othersProtection": "{{protectedName}} biedt basisbeveiliging voor uw apparaat"
             }
         },
         "wifisecurity": {
