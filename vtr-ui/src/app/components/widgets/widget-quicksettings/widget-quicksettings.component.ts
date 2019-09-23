@@ -28,9 +28,9 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	styleUrls: ['./widget-quicksettings.component.scss']
 })
 export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
-	public cameraStatus = new FeatureStatus(true, true);
-	public microphoneStatus = new FeatureStatus(false, true);
-	public eyeCareModeStatus = new FeatureStatus(true, true);
+	public cameraStatus = new FeatureStatus(true, false);
+	public microphoneStatus = new FeatureStatus(false, false);
+	public eyeCareModeStatus = new FeatureStatus(true, false);
 	private notificationSubscription: Subscription;
 	public isOnline: any = true;
 	public quickSettingsWidget = [
