@@ -113,7 +113,11 @@ export class AppsForYouService {
 			let appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 			switch (appGuid) {
 				case AppsForYouEnum.AppGuidAdobeCreativeCloud:
-					appId = AppsForYouEnum.AppSiteCoreIdAdobeCreativeCloud;
+					if (this.localInfo && this.localInfo.Segment.indexOf('SMB') !== -1) {
+						appId = AppsForYouEnum.AppSiteCoreIdAdobeCreativeCloudSMB;
+					} else {
+						appId = AppsForYouEnum.AppSiteCoreIdAdobeCreativeCloud;
+					}
 					break;
 				case AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant:
 				default:
@@ -122,26 +126,16 @@ export class AppsForYouService {
 			}
 			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: 'en' })])
 				.then((response) => {
-					this.cmsAppDetails = response[0];
-					///////////////////////////////////////////////////////////
-					// TODO: Mock data, remove before release
-					switch (appGuid) {
-						case AppsForYouEnum.AppGuidAdobeCreativeCloud:
-							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeWeb;
-							break;
-						case AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant:
-						default:
-							this.cmsAppDetails.InstallType.Title = AppsForYouEnum.AppTypeDesktop;
-							break;
+					if (response.length >= 1 && response[0]) {
+						this.cmsAppDetails = response[0];
+						if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
+							this.cmsAppDetailsArray.push({
+								key: appGuid,
+								value: this.cmsAppDetails
+							});
+						}
+						this.handleGetAppDetailsResponse(this.cmsAppDetails);
 					}
-					///////////////////////////////////////////////////////////
-					if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
-						this.cmsAppDetailsArray.push({
-							key: appGuid,
-							value: this.cmsAppDetails
-						});
-					}
-					this.handleGetAppDetailsResponse(this.cmsAppDetails);
 				})
 				.catch((error) => {
 					this.logService.error('AppsForYouService.getAppDetails error.', JSON.stringify(error));

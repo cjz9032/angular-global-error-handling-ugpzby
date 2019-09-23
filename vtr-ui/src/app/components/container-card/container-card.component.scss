@@ -402,7 +402,7 @@
 					cursor: pointer;
 
 					&:hover {
-						text-decoration: none;
+						text-decoration: underline;
 					}
 
 					@media #{$mediaquery_7} {
@@ -422,7 +422,9 @@
 					color: $main;
 
 					&:hover {
-						text-decoration: none;
+						.link-label {
+							border-bottom: none;
+						}
 					}
 
 					.link-label {

@@ -204,14 +204,14 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 						this.appDetails.showStatus = this.statusEnum.INSTALLED;
 						this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
 					} else if (notification.payload === 'NotFinished') {
-						this.errorMessage = this.translateService.instant('appsForYou.common.installationFailed');
+						this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
 						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					} else if (notification.payload === 'InstallerRunning') {
 						this.appDetails.showStatus = this.statusEnum.INSTALLING;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 					} else {
-						this.errorMessage = this.translateService.instant('appsForYou.common.installationFailed');
+						this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
 						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					}
@@ -226,10 +226,11 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
 		this.title = appDetails.title;
-		if (appDetails.installtype.title === AppsForYouEnum.AppTypeWeb) {
+		if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1) {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
-		} else if (appDetails.installtype.title === AppsForYouEnum.AppTypeDesktop) {
+		} else if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeDesktop) !== -1
+			|| appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1) {
 			this.updateInstallButtonStatus();
 		} else {
 			// TODO: Should be Windows Store App
