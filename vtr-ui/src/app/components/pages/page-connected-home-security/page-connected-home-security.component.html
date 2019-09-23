@@ -106,10 +106,11 @@
 															<div class="peace-of-mind mb-5" [innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
 															</div>
 															<vtr-ui-button
+																[ngClass]="{'disable': homeSecurityLocation?.isLoading}"
 																metricsItem="enableLocationSecurityHealth"
 																metricsEvent="featureClick"
 																(click)="dialogService?.openCHSPermissionModal()"
-																[isDisabled]="homeSecurityLocation.isLoading"
+																[isDisabled]="homeSecurityLocation?.isLoading"
 																linkId="chs-btn-enableLocation"
 																[title]="'security.homeprotection.securityhealth.button' | translate"
 																[label]="'security.homeprotection.securityhealth.button' | translate">

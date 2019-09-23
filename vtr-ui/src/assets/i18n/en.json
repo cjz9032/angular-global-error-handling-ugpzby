@@ -806,7 +806,7 @@
 					"flipToBoot": {
 						"title": "Flip to boot",
 						"description": "This feature enables you to turn on your computer when you open the computer lid, just the same as you pressing the power button. ",
-						"tooltip": "This feature automatically starts the computer by openning the lid.  It is especially useful if you have set up the face log-in information in Windows Hello."
+						"tooltip": "This feature automatically starts the computer by opening the lid.  It is especially useful if you have set up the face log-in information in Windows Hello."
 					},
 					"or": "Or"
 				},
@@ -1285,8 +1285,8 @@
 				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
 				"activeProtection": {
 					"title": "Active Protection",
-					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection.",
-					"checkbox": "Ignore repetative shocks such as those of a train or a car"
+					"caption": "Change the sensitivity, in low sensitive mode, only harder shocks will activate protection.",
+					"checkbox": "Ignore repetitive shocks such as those of a train or a car"
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
@@ -1532,8 +1532,8 @@
 			"upgrade": "upgrade",
 			"freeTrial": "Protect all of your devices - Free 30 day trial",
 			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
+			"trialTitle": "Trial Period",
+			"subscriptionTitle": "Paid Subscription",
 			"inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
 			"trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
 			"inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",

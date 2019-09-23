@@ -95,14 +95,14 @@
 			</div>
 		</div>
 
-		<div class="pt-4 text-center">
-			<vtr-ui-button
-				metricsItem="See.Battery.Details"
+		<div class="pt-4 text-center"
+			[class.btn-disabled]="isBatteryDetailsBtnDisabled">
+			<vtr-ui-button metricsItem="See.Battery.Details"
 				metricsParent="Page.Settings"
 				metricsEvent="FeatureClick"
 				[isFullWidth]="true"
 				(click)="showDetailModal(batteryDetail)"
-				[disabled]="isBatteryDetailsBtnDisabled"
+				[isDisabled]="isBatteryDetailsBtnDisabled"
 				id="myDevice-settings-battery-details-btn"
 				[linkId]="'myDevice-settings-battery-details-btn'"
 				[label]="'device.deviceSettings.batteryGauge.button' | translate"
