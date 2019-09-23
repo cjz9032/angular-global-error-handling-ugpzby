@@ -277,20 +277,21 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	openScreenshotModal(imgUrl: string) {
-		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalAppsForYouScreenshotComponent, {
+		const screenshotModal: NgbModalRef = this.modalService.open(ModalAppsForYouScreenshotComponent, {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'apps-for-you-dialog',
 			keyboard: false,
 			beforeDismiss: () => {
-				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-					modernPreloadModal.componentInstance.onBeforeDismiss();
+				if (screenshotModal.componentInstance.onBeforeDismiss) {
+					screenshotModal.componentInstance.onBeforeDismiss();
 				}
 				return true;
 			}
 		});
-		modernPreloadModal.componentInstance.image = imgUrl;
+		screenshotModal.componentInstance.image = imgUrl;
+		setTimeout(() => { document.getElementById('apps-for-you-screenshot-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	copyObjectArray(obj: any) {

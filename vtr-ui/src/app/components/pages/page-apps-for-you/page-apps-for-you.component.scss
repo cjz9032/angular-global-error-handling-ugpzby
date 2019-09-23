@@ -134,6 +134,7 @@
 							top: 0;
 							transition: left .3s;
 							cursor: pointer;
+
 							&.position-0 {
 								left: -34%;
 							}
@@ -239,6 +240,20 @@
 			.spinner-border {
 				width: 10rem;
 				height: 10rem;
+			}
+		}
+	}
+}
+
+:host-context(.is-gaming) {
+	.vtr-page-apps-for-you {
+		.vtr-page-content {
+			background: $gaming_darkest;
+
+			.apps-header,
+			.apps-content {
+				background: $dark_cell;
+				color: $gaming_lightest;
 			}
 		}
 	}

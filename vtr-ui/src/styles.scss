@@ -514,8 +514,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 
 	.modal-content {
-		background: none;
-		padding: 0;
+		border-radius: 1rem;
+		background: $light;
+		padding: 3rem 0 0 4rem;
+		overflow: hidden;
 	}
 }
 
