@@ -826,8 +826,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 
 .Welcome-container-Modal {
-	.modal-content {
-		border-radius: $border_radius;
+	.modal-dialog {
+		max-width: 600px;
+		.modal-content {
+			border-radius: $border_radius;
+		}
 	}
 }
 

@@ -39,6 +39,8 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			disabled: this.enableSlider,
 			hideLimitLabels: true,
 			hidePointerLabels: true,
+			inputEventsInterval: 2000,
+			mouseEventsInterval: 100,
 			showTicks: this.stepsArray && this.stepsArray.length > 0,
 			customValueToPosition: this.legendPositionFunction,
 			stepsArray: this.stepsArray,
@@ -56,18 +58,6 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	 */
 	public onValueChange($event: ChangeContext) {
 		this.setLightingBrightness.emit($event);
-		// setTimeout(() => {
-		// 	const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
-		// 	element.focus();
-		// 	this.triggerFocus.emit(PointerType.Min);
-		// }, 500);
-	}
-
-	/**
-	 *  This event is fired when user changes slider value by dragging or by keyboard
-	 * @param $event event data from ng5-slider component
-	 */
-	public onChange($event: ChangeContext) {
 		this.change.emit($event);
 		// setTimeout(() => {
 		// 	const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;

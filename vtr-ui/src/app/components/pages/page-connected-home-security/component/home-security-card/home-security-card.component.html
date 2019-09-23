@@ -9,6 +9,7 @@
 			</div>
 			<div class="button-box">
 				<vtr-ui-button
+					[ngClass]="{'disable': location?.isLoading}"
 					metricsEvent="featureClick"
 					metricsItem="startTrial"
 					(click)="openTrialModal()"
@@ -28,6 +29,7 @@
 			</div>
 			<div class="button-box">
 				<vtr-ui-button class="join"
+					[ngClass]="{'disable': location?.isLoading}"
 					metricsEvent="featureClick"
 					metricsItem="joinGroup"
 					[title]="'homeSecurity.card.join' | translate"

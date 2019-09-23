@@ -470,7 +470,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	@HostListener('window:keydown', ['$event'])
 	disableCtrlACV($event: KeyboardEvent) {
 		const eventSource = $event as any;
-		if (eventSource.fromAppSearch) {
+		if (eventSource.enableCopyAndPaste) {
 			return;	// allow copy and paste in search box
 		}
 
