@@ -132,9 +132,7 @@
 											[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginEnabled"
 											(toggleOnOff)="onZeroTouchLoginStatusToggle($event)"
 											[theme]="'white'"
-											[disabled]="!intelligentSecurity.isHPDEnabled"
-											[rightIcon]="['far', 'question-circle']"
-											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
+											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
