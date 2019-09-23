@@ -10,7 +10,7 @@
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
 	<button class="switch-container"
-		[ngClass]="[value ? 'checked' : 'unchecked', disable ? 'disable-container' : '']"
+		[ngClass]="[(value && !isLoading) ? 'checked' : 'unchecked', disable ? 'disable-container' : '']"
 		[ngClass]="{'unchecked': isLoading}"
 		[id]="findId(value,disable)">
 		<div class="title"
