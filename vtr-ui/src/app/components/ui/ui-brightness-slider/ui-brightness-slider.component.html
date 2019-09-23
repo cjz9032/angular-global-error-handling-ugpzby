@@ -2,8 +2,7 @@
 	<ng5-slider [options]="options" (valueChange)="onValueChange($event)" (userChange)="onChange($event)"
 		[manualRefresh]="manualRefresh" [(value)]="lightingData" vtrMetrics
 		[metricsItem]="'lighting_profile_brightness'" metricsEvent="featureClick" [id]="lightingBrightness"
-		metricsParam="'lighting_profile_brightness'" metricsValue="{{lightingData}}" role="radiogroup"
-		[triggerFocus]="triggerFocus">
+		metricsParam="'lighting_profile_brightness'" metricsValue="{{lightingData}}" role="radiogroup">
 	</ng5-slider>
 
 	<button type="button" id="sliderDetailsEle" tabindex="-1"></button>

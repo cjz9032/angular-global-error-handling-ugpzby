@@ -1,10 +1,10 @@
-<div class="modal-main-wrapper" tabindex="1" id="close">
+<div class="modal-main-wrapper" tabindex="1" id="nbTurnOnModal" aria-label="Network boost turn on window opened">
   <ui-popover-turn-on>
     <div class="modal-body vtr-modal-turn-on">
       <div class="modal-body">
         <div class="row justify-content-end">
           <div class="btn-close">
-            <button type="button" class="close" aria-hidden="true" (click)="notNowAction(false)" tabindex="1" aria-label="Close" (keyup.enter)="notNowAction(false)">
+            <button type="button" class="close" id="closeButton" aria-hidden="true" (click)="notNowAction(false)" tabindex="1" aria-label="Close" (keyup.enter)="notNowAction(false)">
               <fa-icon [icon]="['fal', 'times']"></fa-icon>
             </button>
           </div>
@@ -17,7 +17,9 @@
           <div for="asked">
             <!-- <input type="checkbox" id="askedBox" (change)="setAksAgain($event)">
             <div class="status-check"></div> -->
-            <button class="ask-again" role="checkbox" [ngClass]="{'checked':isChecked}" (click)="setAksAgain()" tabindex="1"  aria-label = "Don't ask again"></button>
+            <button class="ask-again" role="checkbox"  [ngClass]="{'checked':isChecked}" (click)="setAksAgain()" tabindex="1"
+              attr.aria-label= "{{'Dont ask again'}}" [attr.aria-checked]="isChecked">
+            </button>
             <div class="status-text">{{'gaming.networkBoost.modalTurn.checkedTitle' | translate }}</div>
           </div>
         </div>
@@ -26,10 +28,12 @@
           <div>
             <button class="btn enable-button"
               (click)="turnOnAction(true)" 
-              tabindex="1" aria-label="modal Turn networkBoost Confirm" (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
+              tabindex="1" aria-label="modal Turn networkBoost turn on" 
+              (keyup.enter)="turnOnAction(true)">{{ 'gaming.autoClose.modalTurnAutoClose.btnConfirm' | translate}}</button>
             <a (click)="notNowAction(false)"
               class="cancel-link active"
-              tabindex="1" aria-label="modal Turn networkBoost Cancel" role="button" (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
+              tabindex="1" aria-label="modal Turn networkBoost not now" role="button"
+               (keyup.enter)="notNowAction(false)" (keydown)="keydownFn($event)">{{ 'gaming.autoClose.modalTurnAutoClose.btnCancel' | translate}}</a>
           </div>
         </div>
       </div>

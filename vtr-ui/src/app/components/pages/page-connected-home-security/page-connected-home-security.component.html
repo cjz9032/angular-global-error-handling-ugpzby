@@ -65,10 +65,9 @@
 														*ngIf="homeSecurityLocation?.isLocationServiceOn">
 														<span
 															*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
-															<a vtrMetrics
-																id="chs-lnk-sh-learnmore"
+															<a  id="chs-lnk-sh-learnmore"
+																vtrMetrics
 																metricsEvent="ArticleClick"
-																metricsItem="learnMoreAboutDevicePosture"
 																metricsItemPosition="3"
 																metricsPageNumber="1"
 																[metricsItemID]="devicePostureArticleId"
@@ -105,9 +104,8 @@
 															<div class="peace-of-mind mb-5" [innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
 															</div>
 															<vtr-ui-button
-																metricsItem="enableLocation"
+																metricsItem="enableLocationSecurityHealth"
 																metricsEvent="featureClick"
-																metricsParent="ConnectedHomeSecurity"
 																(click)="dialogService?.openCHSPermissionModal()"
 																[isDisabled]="homeSecurityLocation.isLoading"
 																linkId="chs-btn-enableLocation"

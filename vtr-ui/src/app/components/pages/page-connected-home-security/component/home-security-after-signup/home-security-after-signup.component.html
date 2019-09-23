@@ -14,59 +14,68 @@
 		</div>
 		<div class="row detail-container">
 			<div class="p-0 pb-5 col-12 col-sm-12 col-md-6">
-				<p class="m-0 pl-0" *ngIf="account?.state === 'trial'"
+				<p class="m-0 pl-0 pr-5" *ngIf="account?.state === 'trial'"
 					[innerHTML]="'homeSecurity.overview.inTrialDetail' | translate">
 				</p>
-				<p class="m-0 pl-0" *ngIf="account?.state === 'trialExpired'"
+				<p class="m-0 pl-0 pr-5" *ngIf="account?.state === 'trialExpired'"
 					[innerHTML]="'homeSecurity.overview.trialExpiredDetail' | translate">
 				</p>
-				<p class="m-0 pl-0" *ngIf="account?.state == 'standard'"
+				<p class="m-0 pl-0 pr-5" *ngIf="account?.state == 'standard'"
 					[innerHTML]="'homeSecurity.overview.inSubscriptionDetail' | translate">
 				</p>
-				<p class="m-0 pl-0" *ngIf="account?.state === 'standardExpired'"
+				<p class="m-0 pl-0 pr-5" *ngIf="account?.state === 'standardExpired'"
 					[innerHTML]="'homeSecurity.overview.subscriptionExpiredDetail' | translate">
 				</p>
 			</div>
 			<div class="col-12 col-sm-12 col-md-6 p-0 pb-5">
-				<ng-container *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'">
+				<ng-container *ngIf="account?.state === 'trial'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.trialPeriod' | translate: {remainingDay: account?.expirationDay }">
-						<a [ngClass]="{'red': !isMoreThen30Day(account?.expirationDay)}"></a>
+						<a [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
 					</p>
 				</ng-container>
-				<ng-container *ngIf="account?.state === 'standard' || account?.state === 'standardExpired'">
+				<ng-container *ngIf="account?.state === 'trialExpired'">
+					<p class="m-0 pl-0"
+						*vtrTranslate="'homeSecurity.overview.trialExpiredPeriod' | translate">
+						<a class="warning"></a>
+					</p>
+				</ng-container>
+				<ng-container *ngIf="account?.state === 'standard'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.subscriptionPeriod' | translate: {remainingDay: account?.expirationDay }">
-						<a [ngClass]="{'red': !isMoreThen30Day(account?.expirationDay)}"></a>
+						<a [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
+					</p>
+				</ng-container>
+				<ng-container *ngIf="account?.state === 'standardExpired'">
+					<p class="m-0 pl-0"
+						*vtrTranslate="'homeSecurity.overview.subscriptionExpiredPeriod' | translate">
+						<a class="warning"></a>
 					</p>
 				</ng-container>
 				<p class="m-0 pl-0"><span>Lenovo ID: </span><span [innerHTML]="account?.lenovoId"></span></p>
 			</div>
-			<div class="common-btn">
+			<div class="common-btn subscription-btn">
 				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"
-					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
-					[title]="'hardwareScan.buy' | translate"
-					[label]="'hardwareScan.buy' | translate">
+					[title]="'homeSecurity.overview.buyNow' | translate"
+					[label]="'homeSecurity.overview.buyNow' | translate">
 				</vtr-ui-button>
-				<vtr-ui-button *ngIf="(account?.state === 'standard' && !isMoreThen30Day(account?.expirationDay)) || account?.state === 'standardExpired'"
+				<vtr-ui-button *ngIf="account?.state === 'standardExpired'"
 					metricsItem="renew"
 					metricsEvent="featureClick"
-					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
-					[title]="'homeSecurity.ecosystem.renew' | translate"
-					[label]="'homeSecurity.ecosystem.renew' | translate">
+					[title]="'homeSecurity.overview.renewNow' | translate"
+					[label]="'homeSecurity.overview.renewNow' | translate">
 				</vtr-ui-button>
 				<vtr-ui-button
-					metricsItem="extendNow" *ngIf="account?.state === 'standard' && isMoreThen30Day(account?.expirationDay)"
+					metricsItem="extendNow" *ngIf="account?.state === 'standard'"
 					metricsEvent="featureClick"
-					metricsParent="{{metricsParent}}"
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
@@ -80,7 +89,7 @@
 		<div class="row heading mb-4" [innerHTML]="'homeSecurity.overview.overviewTitle' | translate"></div>
 		<div class="row content-body mb-4">
 			<div class="container-fluid sub-container p-4">
-				<div class="row container-fluid home-card mb-4">
+				<div class="row container-fluid home-card">
 					<vtr-home-security-all-devices [allDevices]="allDevices" class="container-fluid">
 					</vtr-home-security-all-devices>
 				</div>
@@ -90,7 +99,6 @@
 			<vtr-ui-button
 				metricsItem="goToDashboard"
 				metricsEvent="featureClick"
-				metricsParent="{{metricsParent}}"
 				(click)="common.openCornet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
@@ -107,7 +115,6 @@
 			<vtr-ui-button
 				metricsItem="disconnect"
 				metricsEvent="featureClick"
-				metricsParent="{{metricsParent}}"
 				(click)="disconnect()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-disconnect"

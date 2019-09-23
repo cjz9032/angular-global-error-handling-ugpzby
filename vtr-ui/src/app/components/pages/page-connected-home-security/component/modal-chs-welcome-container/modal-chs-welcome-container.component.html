@@ -3,9 +3,10 @@
 		<div role="button" id="chs-tour-btn-close"
 			href="javascript:;"
 			class="close-btn"
+			vtrMetrics
 			metricsItem="closeCHSWelcomeModal"
 			metricsEvent="featureClick"
-			metricsParent="ConnectedHomeSecurity"
+			metricsParent="{{metricsParent}}"
 			(click)="closeModal()">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""
