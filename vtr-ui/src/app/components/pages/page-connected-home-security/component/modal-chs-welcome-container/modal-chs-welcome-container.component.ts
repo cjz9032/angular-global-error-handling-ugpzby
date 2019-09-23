@@ -27,6 +27,13 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	chs: Phoenix.ConnectedHomeSecurity;
 	permission: any;
 	metricsParent = 'HomeSecurity';
+	welcomeDesc = [{
+		icon: 'personalDevice',
+		desc: 'homeSecurity.tour.welcomeDesc1'
+	}, {
+		icon: 'places',
+		desc: 'homeSecurity.tour.welcomeDesc2'
+	}];
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,
