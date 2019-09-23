@@ -39,8 +39,6 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			disabled: this.enableSlider,
 			hideLimitLabels: true,
 			hidePointerLabels: true,
-			inputEventsInterval: 2000,
-			mouseEventsInterval: 100,
 			showTicks: this.stepsArray && this.stepsArray.length > 0,
 			customValueToPosition: this.legendPositionFunction,
 			stepsArray: this.stepsArray,
