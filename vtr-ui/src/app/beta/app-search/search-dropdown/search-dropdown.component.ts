@@ -45,7 +45,8 @@ export class SearchDropdownComponent implements AfterViewInit {
 	}
 
 	onCleanClick() {
-		this.searchService.searchText = '';
+		this.searchInput.nativeElement.value = '';
+		this.onTextChange('');
 	}
 
 	onTextChange(keywords: string) {
@@ -57,5 +58,9 @@ export class SearchDropdownComponent implements AfterViewInit {
 			this.searchTimer = null;
 			this.searchService.search(keywords);
 		}, 100);
+	}
+
+	onKeyDown(event) {
+		event.fromAppSearch = true;
 	}
 }

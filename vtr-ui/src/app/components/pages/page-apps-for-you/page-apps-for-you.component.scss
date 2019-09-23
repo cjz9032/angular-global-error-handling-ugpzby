@@ -68,24 +68,9 @@
 				align-items: center;
 				position: relative;
 
-				.btn-install {
-					display: block;
+				.btn-box {
 					width: 100%;
 					max-width: 25rem;
-					padding: 0 2rem;
-					height: 5rem;
-					line-height: 5rem;
-					border-radius: 10rem;
-					background: $gradient_main;
-					color: $light;
-					font-size: 2rem;
-					letter-spacing: 0.1rem;
-					font-weight: $weight_600;
-					text-align: center;
-					overflow: hidden;
-					white-space: nowrap;
-					text-overflow: ellipsis;
-					cursor: pointer;
 				}
 
 				.error-message {
@@ -149,6 +134,7 @@
 							top: 0;
 							transition: left .3s;
 							cursor: pointer;
+
 							&.position-0 {
 								left: -34%;
 							}
@@ -254,6 +240,20 @@
 			.spinner-border {
 				width: 10rem;
 				height: 10rem;
+			}
+		}
+	}
+}
+
+:host-context(.is-gaming) {
+	.vtr-page-apps-for-you {
+		.vtr-page-content {
+			background: $gaming_darkest;
+
+			.apps-header,
+			.apps-content {
+				background: $dark_cell;
+				color: $gaming_lightest;
 			}
 		}
 	}

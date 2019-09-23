@@ -232,21 +232,6 @@
 								border-radius: 2.3rem;
 								background-color: $main_darker;
 							}
-
-							.unread-count-tag {
-								position: absolute;
-								left: 5rem;
-								top: 1.6rem;
-								background: #DB221F;
-								color: #ffffff;
-								width: 2rem;
-								height: 2rem;
-								font-size: 1.3rem;
-								border-radius: 50%;
-								display: flex;
-								justify-content: center;
-								align-items: center;
-							}
 						}
 					}
 
@@ -485,6 +470,8 @@
 			//display: none;
 			font-size: 5rem;
 			color: $shade_light;
+			padding: 0.25rem 1rem;
+			position: relative;
 
 			@media #{$mediaquery_xl} {
 				display: block;
@@ -498,6 +485,11 @@
 				fa-icon {
 					vertical-align: middle;
 				}
+			}
+
+			.unread-count-tag {
+				left: 5.4rem;
+				top: 1.2rem;
 			}
 		}
 
@@ -513,6 +505,22 @@
 			top: 0.3rem;
 		}
 	}
+}
+
+.unread-count-tag {
+	position: absolute;
+	left: 5rem;
+	top: 1.6rem;
+	background: #DB221F;
+	color: #ffffff;
+	width: 2rem;
+	height: 2rem;
+	font-size: 1.2rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: 0;
 }
 
 .search-dropdown-sm {

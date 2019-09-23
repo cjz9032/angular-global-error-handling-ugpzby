@@ -26,7 +26,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	isLocationServiceOn: boolean;
 	chs: Phoenix.ConnectedHomeSecurity;
 	permission: any;
-	metricsParent = 'ConnectedHomeSecurity';
+	metricsParent = 'HomeSecurity';
 	constructor(
 		public activeModal: NgbActiveModal,
 		public homeSecurityMockService: HomeSecurityMockService,

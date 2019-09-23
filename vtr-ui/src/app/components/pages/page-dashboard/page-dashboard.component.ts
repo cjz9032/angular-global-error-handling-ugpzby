@@ -86,8 +86,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
-
-		this.setDefaultSystemStatus();
+		this.deviceService.getMachineInfo().then(() => {
+			this.setDefaultSystemStatus();
+		});
 
 		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
 			this.submit = value;
@@ -149,7 +150,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
-
 		this.qaService.destroyChangeSubscribed();
 	}
 

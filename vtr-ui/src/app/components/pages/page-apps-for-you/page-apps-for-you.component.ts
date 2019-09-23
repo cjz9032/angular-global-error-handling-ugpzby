@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-apps-for-you',
@@ -34,7 +35,8 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		INSTALL: 1,
 		INSTALLING: 2,
 		LAUNCH: 3,
-		SEEMORE: 4
+		SEEMORE: 4,
+		UNKNOWN: -1
 	};
 
 	statusEnum = {
@@ -43,7 +45,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		DOWNLOADING: 3,
 		DOWNLOAD_COMPLETE: 4,
 		INSTALLING: 5,
-		FAILED_INSTALL: -1,
+		FAILED_INSTALL: -1
 	};
 
 	mockScreenShots = [
@@ -94,6 +96,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		private shellService: VantageShellService,
 		public modalService: NgbModal,
 		private appsForYouService: AppsForYouService,
+		private translateService: TranslateService
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.systemUpdateBridge = shellService.getSystemUpdate();
@@ -105,7 +108,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.errorMessage = '';
-		this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+		this.installButtonStatus = this.installButtonStatusEnum.UNKNOWN;
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -117,6 +120,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		clearInterval(this.screenshotInterval);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	startScreenshotAutoSwipe() {
@@ -198,14 +204,14 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 						this.appDetails.showStatus = this.statusEnum.INSTALLED;
 						this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
 					} else if (notification.payload === 'NotFinished') {
-						this.errorMessage = 'Installation failed. Please try again.';
+						this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
 						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					} else if (notification.payload === 'InstallerRunning') {
 						this.appDetails.showStatus = this.statusEnum.INSTALLING;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 					} else {
-						this.errorMessage = 'Installation failed. Please try again.';
+						this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
 						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					}
@@ -216,25 +222,34 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	async initAppDetails(appDetails: AppDetails) {
+	initAppDetails(appDetails: AppDetails) {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
 		this.title = appDetails.title;
-		if (appDetails.installtype.title === AppsForYouEnum.AppTypeWeb) {
+		if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1) {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
-		} else if (appDetails.installtype.title === AppsForYouEnum.AppTypeDesktop) {
-			const installed = await this.systemUpdateBridge.getAppStatus(this.appGuid);
-			if (installed === 'InstalledBefore') {
+		} else if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeDesktop) !== -1
+			|| appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1) {
+			this.updateInstallButtonStatus();
+		} else {
+			// TODO: Should be Windows Store App
+		}
+	}
+
+	updateInstallButtonStatus() {
+		this.systemUpdateBridge.getAppStatus(this.appGuid).then(status => {
+			if (status === 'InstallDone' || status === 'InstalledBefore') {
 				this.appDetails.showStatus = this.statusEnum.INSTALLED;
 				this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+			} else if (status === 'InstallerRunning') {
+				this.appDetails.showStatus = this.statusEnum.INSTALLING;
+				this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 			} else {
 				this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 				this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 			}
-		} else {
-			// TODO: Should be Windows Store App
-		}
+		});
 	}
 
 	async clickInstallButton() {
@@ -263,20 +278,21 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	openScreenshotModal(imgUrl: string) {
-		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalAppsForYouScreenshotComponent, {
+		const screenshotModal: NgbModalRef = this.modalService.open(ModalAppsForYouScreenshotComponent, {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'apps-for-you-dialog',
 			keyboard: false,
 			beforeDismiss: () => {
-				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-					modernPreloadModal.componentInstance.onBeforeDismiss();
+				if (screenshotModal.componentInstance.onBeforeDismiss) {
+					screenshotModal.componentInstance.onBeforeDismiss();
 				}
 				return true;
 			}
 		});
-		modernPreloadModal.componentInstance.image = imgUrl;
+		screenshotModal.componentInstance.image = imgUrl;
+		setTimeout(() => { document.getElementById('apps-for-you-screenshot-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	copyObjectArray(obj: any) {
