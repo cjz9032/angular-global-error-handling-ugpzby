@@ -268,9 +268,7 @@ export class ConfigService {
 		hide: false,
 		subitems: [],
 		pre: [
-			'assets/images/placeholder-800X800.png',
-			'assets/images/connected-home-security/welcome-chs-logo.png',
-			'assets/icons/Close.svg'
+			'assets/images/connected-home-security/welcome-slide1@2x.png',
 		]
 	},
 	{
@@ -452,9 +450,7 @@ export class ConfigService {
 		forArm: false,
 		subitems: [],
 		pre: [
-			'assets/images/placeholder-800X800.png',
-			'assets/images/connected-home-security/welcome-chs-logo.png',
-			'assets/icons/Close.svg'
+			'assets/images/connected-home-security/welcome-slide1@2x.png'
 		]
 	},
 	{
