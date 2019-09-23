@@ -806,7 +806,7 @@
 					"flipToBoot": {
 						"title": "Flip to boot",
 						"description": "This feature enables you to turn on your computer when you open the computer lid, just the same as you pressing the power button. ",
-						"tooltip": "This feature automatically starts the computer by openning the lid.  It is especially useful if you have set up the face log-in information in Windows Hello."
+						"tooltip": "This feature automatically starts the computer by opening the lid.  It is especially useful if you have set up the face log-in information in Windows Hello."
 					},
 					"or": "Or"
 				},
