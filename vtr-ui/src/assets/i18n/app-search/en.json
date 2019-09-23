@@ -398,7 +398,7 @@
 				"tags": [
 					"user guide"
 				],
-				"relevantTags": ["support", "QA"]
+				"relevantTags": ["support", "QA", "manual"]
 			},
 			"search-lenovo-help": {
 				"icon": ["fal","wrench"],

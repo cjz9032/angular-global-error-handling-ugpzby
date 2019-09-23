@@ -14,7 +14,6 @@ import { GuardService } from '../../../services/guard/security-guardService.serv
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { McAfeeInfo, McafeeMetricsList } from '@lenovo/tan-client-bridge';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -270,7 +269,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		articleDetailModal.componentInstance.articleId = this.mcafeeArticleId;
 	}
 
-	getMcafeeFeature(mcafee: McAfeeInfo, data?) {
+	getMcafeeFeature(mcafee: phoenix.McAfeeInfo, data?) {
 		const featureList = [{
 			status: mcafee.registered,
 			title: this.register,
@@ -391,7 +390,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		return featureList.splice(0, 0, registerList);
 	}
 
-	getMcafeeMetric(metrics: Array<McafeeMetricsList>, data?) {
+	getMcafeeMetric(metrics: Array<phoenix.McafeeMetricsList>, data?) {
 		const metricsList = [];
 		const list = [];
 		let metricsFeature = metrics;
