@@ -152,7 +152,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		});
 
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			if (event.lang === 'en') {
+			if (this.translate.currentLang === 'en') {
 				this.showSearchMenu = true;
 			}
 		});
