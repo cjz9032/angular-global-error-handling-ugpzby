@@ -97,8 +97,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
-
-
 		document.addEventListener('visibilitychange', (e) => {
 			if (document.hidden) {
 				this.sendAppSuspendMetric();
@@ -107,36 +105,23 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		});
 
+		window.addEventListener(
+			'online',
+			(e) => {
+				this.notifyNetworkState();
+			},
+			false
+		);
 
-		this.addInternetListener();
-	}
+		window.addEventListener(
+			'offline',
+			(e) => {
+				this.notifyNetworkState();
+			},
+			false
+		);
 
-	private addInternetListener() {
-		const win: any = window;
-		if (win.NetworkListener) {
-			win.NetworkListener.onnetworkchanged = (state) => {
-				this.notifyNetworkState(state);
-			};
-
-			if ( win.NetworkListener.isInternetAccess()) {
-				this.notifyNetworkState(NetworkStatus.Available);
-			} else {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}
-		} else {
-			window.addEventListener('online', (e) => {
-				this.notifyNetworkState(NetworkStatus.Available);
-			}, false);
-			window.addEventListener('offline', (e) => {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}, false);
-
-			if (navigator.onLine) {
-				this.notifyNetworkState(NetworkStatus.Available);
-			} else {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}
-		}
+		this.notifyNetworkState();
 	}
 
 	private launchWelcomeModal() {
@@ -376,13 +361,12 @@ export class AppComponent implements OnInit, OnDestroy {
 		} catch (error) { }
 	}
 
-	private notifyNetworkState(state) {
-		if (state && state.toString() === NetworkStatus.Available) {
-			this.commonService.isOnline = true;
-			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: true });
+	private notifyNetworkState() {
+		this.commonService.isOnline = navigator.onLine;
+		if (navigator.onLine) {
+			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
 		} else {
-			this.commonService.isOnline = false;
-			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: false });
+			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
 		}
 	}
 
