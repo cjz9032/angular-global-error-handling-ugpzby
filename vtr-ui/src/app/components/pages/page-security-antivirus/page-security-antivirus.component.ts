@@ -142,10 +142,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.viewModel.mcafeestatusList = this.getMcafeeFeature(this.viewModel.mcafee, data);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.viewModel.mcafeestatusList);
 			this.viewModel.antiVirusPage(this.antiVirus);
-		}).on(phoenix.EventTypes.avOthersEvent, () => {
-			if (this.antiVirus.others) {
-				if (this.antiVirus.others.firewall && this.antiVirus.others.firewall.length > 0) {
-					this.viewModel.otherFirewall = this.antiVirus.others.firewall[0];
+		}).on(phoenix.EventTypes.avOthersEvent, (data) => {
+			if (data) {
+				if (data.firewall && data.firewall.length > 0) {
+					this.viewModel.otherFirewall = data.firewall[0];
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, this.viewModel.otherFirewall);
 					this.viewModel.othersFirewallstatusList = [{
 						status: this.viewModel.otherFirewall.status,
@@ -156,8 +156,8 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, null);
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, null);
 				}
-				if (this.antiVirus.others.antiVirus && this.antiVirus.others.antiVirus.length > 0) {
-					this.viewModel.otherAntiVirus = this.antiVirus.others.antiVirus[0];
+				if (data.antiVirus && data.antiVirus.length > 0) {
+					this.viewModel.otherAntiVirus = data.antiVirus[0];
 					this.viewModel.othersAntistatusList = [{
 						status: this.viewModel.otherAntiVirus.status,
 						title: this.virusScan,

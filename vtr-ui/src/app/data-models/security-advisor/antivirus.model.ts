@@ -31,10 +31,10 @@ export class AntiVirusViewModel {
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
-		title: 'security.antivirus.common.virus',
+		title: 'security.antivirus.windowsDefender.virus',
 	}, {
 		status: this.windowsDefender.firewallStatus,
-		title: 'security.antivirus.common.homeNetwork',
+		title: 'security.antivirus.windowsDefender.homeNetwork',
 	}];
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
