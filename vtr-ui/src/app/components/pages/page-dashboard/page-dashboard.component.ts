@@ -39,9 +39,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public isOnline = true;
+	public brand;
 	private protocalAction: any;
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
+
 
 	warrantyData: { info: any; cache: boolean };
 
@@ -92,7 +94,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.deviceService.getMachineInfo().then(() => {
 			this.setDefaultSystemStatus();
 		});
-
+		this.brand = this.deviceService.getMachineInfoSync().brand;
 		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
 			this.submit = value;
 			this.feedbackButtonText = this.submit;
