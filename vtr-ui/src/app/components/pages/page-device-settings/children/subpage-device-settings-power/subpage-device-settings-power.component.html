@@ -13,7 +13,7 @@
 	<vtr-smart-standby *ngIf="!isDesktopMachine"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 	</vtr-smart-standby>
-	<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable"
+	<div *ngIf="!isPowerDriverMissing && (showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable)"
 		class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
@@ -163,7 +163,7 @@
 
 	<div class="row py-5"
 		id="power"
-		*ngIf="!isDesktopMachine && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
+		*ngIf="!isDesktopMachine && !isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[vtrAppSearchScroller]="['search-usb-charging', 'search-easy-resume']"
@@ -260,7 +260,7 @@
 
 	<div class="row py-5"
 		id="other"
-		*ngIf="vantageToolbarStatus.available">
+		*ngIf="!isPowerDriverMissing && vantageToolbarStatus.available">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				[vtrAppSearchScroller]="['search-vantage-toolbar']"
@@ -288,7 +288,7 @@
 	</div>
 
 	<div class="row py-5"
-		*ngIf="machineType === 1 && isEnergyStarProduct">
+		*ngIf="machineType === 1 && isEnergyStarProduct && !isPowerDriverMissing">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.energyStar.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
