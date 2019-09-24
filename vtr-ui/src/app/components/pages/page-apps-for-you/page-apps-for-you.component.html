@@ -18,12 +18,10 @@
 						<div class="app-title">{{ appDetails.title }}</div>
 						<div class="app-price">Free</div>
 					</div>
-					<div class="col-2">
+					<div class="col-6 btn-content" [ngSwitch]="installButtonStatus">
 						<div class="spinner-content app-spinner" *ngIf="appDetails.showStatus == statusEnum.INSTALLING">
 							<div class="spinner-border text-primary progress-spinner" role="status"></div>
 						</div>
-					</div>
-					<div class="col-4 btn-content" [ngSwitch]="installButtonStatus">
 						<div class="btn-box">
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALL"
 								[isDisabled]="isOnline === false"
