@@ -1231,7 +1231,8 @@
                     "caption": "Le réglage de distance automatique met à jour automatiquement la distance de détection via un moteur AI.",
                     "options": {
                         "near": "Proche",
-                        "far": "Éloigné"
+                        "far": "Éloigné",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
                     "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement.",
-                    "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées."
+                    "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
                     "screenTimeoutSettings": "Accédez aux paramètres de mise en veille de l'écran"
                 },
-                "resetToDefault": "Réinitialiser"
+                "resetToDefault": "Réinitialiser",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Écran intelligent",
