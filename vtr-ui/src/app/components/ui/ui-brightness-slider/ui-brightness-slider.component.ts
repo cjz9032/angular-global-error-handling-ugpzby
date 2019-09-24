@@ -49,20 +49,8 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 		};
 	}
 
-	/**
-	 * This event is fired when value property is changed programmatically.
-	 * Its two way binding event
-	 * @param $event event data from ng5-slider component
-	 */
-	public onValueChange($event: ChangeContext) {
-		this.setLightingBrightness.emit($event);
-		this.change.emit($event);
-		// setTimeout(() => {
-		// 	const element: HTMLElement = document.getElementById('sliderDetailsEle') as HTMLElement;
-		// 	element.focus();
-		// 	this.triggerFocus.emit(PointerType.Min);
-		// }, 500);
+	public dragEnd($event: any) {
+		this.setLightingBrightness.emit($event.value);
+		this.change.emit($event.value);
 	}
-
-	public onSliderChanged(event: any) {}
 }
