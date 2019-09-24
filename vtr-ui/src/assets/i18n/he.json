@@ -706,7 +706,8 @@
                     "OverheatedBattery": "הסוללה <b>חמה מדי</b>. הסירו אותה מהמחשב והניחו לה להתקרר לטמפרטורת החדר.",
                     "PermanentError": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.</span>",
-                    "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון."
+                    "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%.",
