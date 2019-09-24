@@ -6,7 +6,7 @@ import {
 } from 'src/app/services/device/device.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem} from 'src/assets/menu/menu.json';
+import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
 
 @Injectable({
 	providedIn: 'root'
@@ -66,27 +66,22 @@ export class ConfigService {
 	}
 
 	brandFilter(menu: Array<any>) {
-		let brandMenu = [];
-		let includeMenu = [];
-		let excludeMenu = [];
-		const brand: string = this.deviceService.getMachineInfoSync().brand;
-		if (brand) {
-			menu.forEach(element => {
-				if (element.brand) {
-					brandMenu = element.brand.split(',');
-					includeMenu = brandMenu.filter((e: string) => e.includes('+'));
-					excludeMenu = brandMenu.filter((e: string) => e.includes('-'));
-					if (!(includeMenu.includes(`+${brand}`) && excludeMenu.includes(`-${brand}`))) {
-						if (includeMenu.includes(`+${brand}`)) {
-							element.hide = false;
-						}
-						if (excludeMenu.includes(`-${brand}`)) {
-							element.hide = true;
-						}
-					}
-				 }
-			});
-		}
+		const machineInfo = this.deviceService.getMachineInfoSync();
+		if (!machineInfo) { return menu; }
+		const brand: string = machineInfo.brand;
+		if (!brand) { return menu; }
+		menu.forEach(element => {
+			if (element.hide) { return; }
+			if (element.brand) {
+				const mode = element.brand.charAt(0);
+				const brands = element.brand.substring(2, element.brand.length - 1).split(',');
+				if (mode === '+') {
+					element.hide = !brands.includes(brand);
+				} else if (mode === '-') {
+					element.hide = brands.includes(brand);
+				}
+			}
+		});
 		return menu;
 	}
 }

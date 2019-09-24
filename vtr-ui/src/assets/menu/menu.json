@@ -149,12 +149,11 @@
 		"label": "common.menu.security.title",
 		"path": "security",
 		"icon": ["fal", "lock"],
-		"brand": "-think",
+		"brand": "-[think]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
 		"forArm": false,
-		"hide": false,
 		"subitems": [{
 			"id": "security",
 			"label": "common.menu.security.sub1",
@@ -209,14 +208,13 @@
 		"label": "common.menu.security.sub3",
 		"path": "security/wifi-security",
 		"icon": ["fal", "lock"],
-		"brand": "+think",
+		"brand": "+[think]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.wifisecurity",
 		"routerLinkActiveOptions": {
 			"exact": true
 		},
-		"hide": true,
 		"subitems": []
 	}, {
 		"id": "support",
@@ -236,7 +234,7 @@
 		"id": "home-security",
 		"label": "common.menu.homeSecurity",
 		"path": "home-security",
-		"brand": "-think",
+		"brand": "-[think]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.homesecurity",
@@ -245,7 +243,6 @@
 		},
 		"icon": ["fal", "home-lg-alt"],
 		"forArm": false,
-		"hide": false,
 		"subitems": [],
 		"pre": [
 			"assets/images/connected-home-security/welcome-slide1@2x.png"
@@ -347,12 +344,11 @@
 		"label": "common.menu.security.title",
 		"path": "security",
 		"icon": ["fal", "lock"],
-		"brand": "-think",
+		"brand": "-[think]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
 		"forArm": false,
-		"hide": false,
 		"subitems": [{
 			"id": "security",
 			"label": "common.menu.security.sub1",
@@ -407,14 +403,13 @@
 		"label": "common.menu.security.sub3",
 		"path": "security/wifi-security",
 		"icon": ["fal", "lock"],
-		"brand": "+think",
+		"brand": "+[think]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.wifisecurity",
 		"routerLinkActiveOptions": {
 			"exact": true
 		},
-		"hide": true,
 		"subitems": []
 	}, {
 		"id": "support",
@@ -434,7 +429,7 @@
 		"id": "home-security",
 		"label": "common.menu.homeSecurity",
 		"path": "home-security",
-		"brand": "-think",
+		"brand": "-[think]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.homesecurity",
@@ -443,7 +438,6 @@
 		},
 		"icon": ["fal", "home-lg-alt"],
 		"forArm": false,
-		"hide": false,
 		"subitems": [],
 		"pre": [
 			"assets/images/connected-home-security/welcome-slide1@2x.png"
