@@ -18,6 +18,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	public isChecked: any = [];
 	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
 	public statusitem;
+	ariaLabel = 'Auto close add apps window opened';
 	//constructor() { }
 
 	ngOnInit() {
@@ -37,6 +38,11 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 			}
 			this.loadingNoApps = this.runningList.length === 0 ? true : false;
 			this.loading = false;
+			if (this.loadingNoApps) {
+				this.ariaLabel = 'No running apps to add window';
+			} else {
+				this.ariaLabel = 'Auto close add apps window opened';
+			}
 			setTimeout(() => {
 				document.getElementById('close').focus();
 			}, 100);

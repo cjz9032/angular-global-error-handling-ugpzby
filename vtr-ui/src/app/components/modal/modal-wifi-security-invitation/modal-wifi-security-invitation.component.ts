@@ -41,10 +41,6 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		e.target.value = value;
 	}
 
-	onKeyDown(e) {
-		e.enableCopyAndPaste = true;
-	}
-
 	joinGroupBy(code: any) {
 		if (!(code.length === 6)) {
 			return;
