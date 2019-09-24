@@ -257,7 +257,7 @@
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
-							<a *ngIf="!deviceService.isArm"
+							<a *ngIf="!deviceService.isArm && !deviceService.isSMode"
 								class="dropdown-item link link-lma"
 								vtrMetrics
 								id="menu-main-lnk-open-lma"
