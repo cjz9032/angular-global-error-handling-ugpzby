@@ -112,10 +112,6 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		if (this.mockScreenShots.length > 3) {
-			this.showArrows = true;
-			this.startScreenshotAutoSwipe();
-		}
 	}
 
 	ngOnDestroy() {
@@ -234,6 +230,10 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			this.updateInstallButtonStatus();
 		} else {
 			// TODO: Should be Windows Store App
+		}
+		if (this.appDetails.screenshots.length > 3) {
+			this.showArrows = true;
+			this.startScreenshotAutoSwipe();
 		}
 	}
 
