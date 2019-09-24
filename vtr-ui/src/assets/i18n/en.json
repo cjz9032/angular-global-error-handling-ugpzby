@@ -235,6 +235,18 @@
 			},
 			"recording": {
 				"title": "Recording Macro Key For"
+			},
+			"narrator": {
+				"backDashboard": "Back to dashboard",
+				"text1": "number",
+				"text2": "is selected",
+				"text3": "macrokey numpad",
+				"clearText": "macrokey clear records",
+				"macrokeySettings1": {
+					"option1": "on",
+					"option2": "macro key settings enabled when gaming",
+					"option3": "macro key settings off"
+				}
 			}
 		},
 		"lightingProfile": {
