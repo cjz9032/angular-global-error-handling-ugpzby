@@ -45,6 +45,7 @@
 						id="qs-{{switchId}}-switch-off"
 						attr.aria-label="qs-{{switchId}}-switch-off">
 						<span *ngIf="!disable">{{'common.ui.off' | translate}}</span>
+						<span *ngIf="disable">&nbsp;</span>
 					</div>
 					<div *ngIf="value && !isLoading"
 						class="switch-label on-label"
