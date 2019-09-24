@@ -57,9 +57,10 @@
 			</span>
 
 		</div>
-		<button id="menu-main-btn-navbar-toggler"
+		<a id="menu-main-btn-navbar-toggler"
 			aria-label="menu-main-btn-navbar-toggler"
 			class="navbar-toggler"
+			tabindex="1"
 			type="button"
 			(click)="toggleMenu($event)">
 			<span class="navbar-toggler-icon">
@@ -69,7 +70,7 @@
 			</fa-icon> -->
 			<span class="unread-count-tag"
 				*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
-		</button>
+		</a>
 		<div class="collapse navbar-collapse"
 			*ngIf="!loadMenuItem.hideMenus"
 			#menuTarget
