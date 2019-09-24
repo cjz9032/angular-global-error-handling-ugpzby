@@ -75,25 +75,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		});
 
 
-		if (vantageShellService.isShellAvailable) {
-			this.beta = vantageShellService.getBetaUser();
-			this.beta.getBetaUser().then((result) => {
-				if (!result) {
-					if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-						this.commonService.isBetaUser().then((data) => {
-							if (data === 0 || data === 3) {
-								this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-								this.beta.setBetaUser();
-							}
-						});
-					} else {
-						this.beta.setBetaUser();
-					}
-				} else {
-					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-				}
-			});
-		}
+		this.initIsBeta();
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
@@ -236,6 +218,38 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		);
 		document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+	}
+
+	private initIsBeta() {
+		if (this.vantageShellService.isShellAvailable) {
+			this.beta = this.vantageShellService.getBetaUser();
+			this.deviceService.getIsARM().then((status) => {
+				if (!status) {
+					this.beta.getBetaUser().then((result) => {
+						if (!result) {
+							if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+								this.commonService.isBetaUser().then((data) => {
+									if (data === 0 || data === 3) {
+										this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+										this.beta.setBetaUser();
+									}
+								});
+							} else {
+								this.beta.setBetaUser();
+							}
+						} else {
+							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+						}
+					});
+				} else if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+					this.commonService.isBetaUser().then((data) => {
+						if (data === 0 || data === 3) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+						}
+					});
+				}
+			});
+		}
 	}
 
 	ngOnInit() {
