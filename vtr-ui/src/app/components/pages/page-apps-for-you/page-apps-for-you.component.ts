@@ -255,7 +255,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	async clickInstallButton() {
 		switch (this.installButtonStatus) {
 			case this.installButtonStatusEnum.SEEMORE:
-				this.appsForYouService.openSeeMoreUrl();
+				this.appsForYouService.openSeeMoreUrl(this.appGuid, this.appDetails.downloadlink);
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
 				const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);

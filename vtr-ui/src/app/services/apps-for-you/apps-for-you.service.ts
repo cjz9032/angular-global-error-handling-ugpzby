@@ -124,7 +124,7 @@ export class AppsForYouService {
 					appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 					break;
 			}
-			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: 'en' })])
+			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.localInfo ? this.localInfo.Lang : 'en' })])
 				.then((response) => {
 					if (response.length >= 1 && response[0]) {
 						this.cmsAppDetails = response[0];
@@ -226,11 +226,17 @@ export class AppsForYouService {
 		}
 	}
 
-	public openSeeMoreUrl() {
+	public openSeeMoreUrl(appGuid: string, downloadlink: string) {
 		// Open new window with default browser to browse external link
-		if (window && this.serialNumber) {
-			const url = AppsForYouEnum.SeeMoreUrlAdobeCreativeCloud.replace('[SerialNumber]', this.serialNumber);
-			window.open(url);
+		if (appGuid === AppsForYouEnum.AppGuidAdobeCreativeCloud) {
+			if (window && this.serialNumber) {
+				const url = AppsForYouEnum.SeeMoreUrlAdobeCreativeCloud.replace('[SerialNumber]', this.serialNumber);
+				window.open(url);
+			}
+		} else {
+			if (window && downloadlink) {
+				window.open(downloadlink);
+			}
 		}
 	}
 
