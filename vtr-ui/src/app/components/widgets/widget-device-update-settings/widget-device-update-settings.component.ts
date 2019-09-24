@@ -62,6 +62,7 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		this.updateFocus(i);
 		if (i >= 0) {
 			this.items[i].isPopup = false;
+			this.items[i].isDriverPopup = false;
 		}
 		this.popupClosed.emit($event);
 	}
