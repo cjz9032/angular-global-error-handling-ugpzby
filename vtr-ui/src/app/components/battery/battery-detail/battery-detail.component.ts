@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ChangeDetectorRef, ViewRef } from '@angular/core';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
@@ -8,7 +7,6 @@ import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { ViewRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 @Component({
@@ -65,7 +63,13 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 						response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
 						response.detail[i].heading = response.detail.length > 1 ? headings[i] : '';
 						const id = response.detail[i].chargeStatus;
-						response.detail[i].chargeStatusString = this.translate.instant(this.batteryChargeStatus.getBatteryChargeStatus(id));
+
+						// response.detail[i].chargeStatusString = this.translate.instant(this.batteryChargeStatus.getBatteryChargeStatus(id));
+
+						this.translate.get(this.batteryChargeStatus.getBatteryChargeStatus(id)).subscribe((res: string) => {
+							response.detail[i].chargeStatusString = res;
+						});
+
 						if (response.detail[i].chargeStatus === this.batteryChargeStatus.NO_ACTIVITY.id
 							|| response.detail[i].chargeStatus === this.batteryChargeStatus.ERROR.id
 							|| response.detail[i].chargeStatus === this.batteryChargeStatus.NOT_INSTALLED.id) {
@@ -79,8 +83,12 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.remainingTime';
 						}
 						const chemistry: string = response.detail[i].deviceChemistry;
-						this.deviceChemistry[i] = this.translate.instant(
-							'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
+
+						this.translate.get('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase()).subscribe((res: string) => {
+							this.deviceChemistry[i] = res;
+						});
+						// this.deviceChemistry[i] = this.translate.instant(
+						// 	'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
 					}
 				}
 			}

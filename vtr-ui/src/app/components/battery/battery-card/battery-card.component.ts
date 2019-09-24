@@ -201,6 +201,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 
 		this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
+		this.commonService.sendNotification('IsPowerDriverMissing', this.isBatteryDetailsBtnDisabled);
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);

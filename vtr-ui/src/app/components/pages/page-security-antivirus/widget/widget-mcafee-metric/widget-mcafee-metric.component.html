@@ -15,11 +15,14 @@
               <div class="number" [innerHTML]="metricsList[0]"></div>
               <div class="subtitle" [innerHTML]="'security.antivirus.mcafee.fileScan' | translate"></div>
           </div>
-          <button *ngIf="showMetricButton" 
-            title="{{'security.antivirus.mcafee.launch' | translate}}"
+          <div class="col-8 row justify-content-center align-items-center">
+            <button *ngIf="showMetricButton" 
+            class="align-items-center"
+            title="{{'security.antivirus.mcafee.startFileScan' | translate}}"
             (click)="common.launch()"
             [innerHTML]="'security.antivirus.mcafee.startFileScan' | translate">
           </button>
+          </div>    
       </div>
       <div *ngIf="!showMetricButton" class="row inner no-gutters">
           <img class="logo col-2"

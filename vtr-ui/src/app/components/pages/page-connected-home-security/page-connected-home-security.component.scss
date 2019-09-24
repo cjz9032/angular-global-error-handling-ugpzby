@@ -30,6 +30,13 @@
 			a.disabled {
 				pointer-events: auto;
 			}
+			.chevron-list {
+				li.black {
+					.detail {
+						color: $black_light!important;
+					}
+				}
+			}
 		}
 
 		.home-security {
@@ -60,8 +67,12 @@
 
 				vtr-ui-button {
 					max-width: 90%;
+					&.disable {
+						opacity: 0.7;
+					}
 					::ng-deep .button {
 						width: 100%;
+						background: $blue_gradient;
 					}
 				}
 			}

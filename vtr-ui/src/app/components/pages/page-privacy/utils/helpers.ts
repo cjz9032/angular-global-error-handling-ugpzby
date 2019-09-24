@@ -16,7 +16,7 @@ export function validateEmail(email) {
 export function convertBrowserNameToBrowserData(browsers: BrowserListType[]) {
 	return browsers.map((browser) => ({
 		name: browser,
-		img: `/assets/images/privacy-tab/${browser}.svg`,
+		img: `/assets/images/privacy-tab/${browser}.png`,
 		value: browser
 	}));
 }

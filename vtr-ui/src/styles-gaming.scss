@@ -857,6 +857,15 @@
 									color: $gaming_lightest;
 									border-bottom: 1px solid $screen_dark_15;
 								}
+
+								li {
+									a {
+										.title{
+											font-weight:$weight_regular !important;
+											font-size:1.6rem !important;
+										}
+									}
+								}
 							}
 						}
 					}
@@ -888,22 +897,6 @@
 						color: $gaming_grey_lightest;
 					}
 				}
-				.vtr-recover-bad-sectors {
-					background: $dark_cell;
-					.header{
-						.heading1 {
-							color: $gaming_lightest;
-						}
-					}
-					.text-regular {
-						color: $gaming_grey_lightest;
-					}
-					.hardware-lists-container {
-						.heading {
-							color: $gaming_lightest;
-						}
-					}
-				}
 				.vtr-page-shift-up{
 					.vtr-widget-hardware-scan-status{
 						background: $dark_cell;
@@ -926,6 +919,22 @@
 											color: $gaming_grey_lightest;
 										}
 									}
+								}
+							}
+						}
+					}
+					vtr-widget-recover-bad-sectors{
+						.vtr-widget-device-recover-bad-sectors {
+							background: $dark_cell;
+							.title {
+								color: $gaming_lightest;
+							}
+							.description {
+								color: $gaming_grey_lightest;
+							}
+							.hardware-lists-container {
+								.heading {
+									color: $gaming_lightest;
 								}
 							}
 						}
@@ -1077,7 +1086,7 @@
 		border-radius:$border_radius;
 		p {
 			font-size: 1.5rem;
-			color: $stop !important;
+			color: $gaming_lightest !important;
 		}
 	}
 	.permission-note {
@@ -1116,6 +1125,7 @@
 	button:focus,span:focus,
 	*:focus {
 		outline: 0 !important;
+		box-shadow:none !important;
 	}
 }
 

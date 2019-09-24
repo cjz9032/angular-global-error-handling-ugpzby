@@ -39,10 +39,12 @@
 								</div>
 								<div class="bottom-content w-100 d-none d-md-block">
 									<div class="cutting-line"></div>
-									<vtr-widget-powered-by-info
+									<vtr-widget-powered-by-info hidden
 										[title]="'homeSecurity.overview.poweredBy'"
 										[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
-										[imgUrl]="'assets/images/coronet-logo.svg'">
+										[imgUrl]="'assets/images/coronet-logo.svg'"
+										privacyUrl="https://homesecurity.coro.net/"
+										termsUrl="https://homesecurity.coro.net/">
 									</vtr-widget-powered-by-info>
 								</div>
 							</div>
@@ -65,10 +67,9 @@
 														*ngIf="homeSecurityLocation?.isLocationServiceOn">
 														<span
 															*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
-															<a vtrMetrics
-																id="chs-lnk-sh-learnmore"
+															<a  id="chs-lnk-sh-learnmore"
+																vtrMetrics
 																metricsEvent="ArticleClick"
-																metricsItem="learnMoreAboutDevicePosture"
 																metricsItemPosition="3"
 																metricsPageNumber="1"
 																[metricsItemID]="devicePostureArticleId"
@@ -105,11 +106,11 @@
 															<div class="peace-of-mind mb-5" [innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
 															</div>
 															<vtr-ui-button
-																metricsItem="enableLocation"
+																[ngClass]="{'disable': homeSecurityLocation?.isLoading}"
+																metricsItem="enableLocationSecurityHealth"
 																metricsEvent="featureClick"
-																metricsParent="ConnectedHomeSecurity"
 																(click)="dialogService?.openCHSPermissionModal()"
-																[isDisabled]="homeSecurityLocation.isLoading"
+																[isDisabled]="homeSecurityLocation?.isLoading"
 																linkId="chs-btn-enableLocation"
 																[title]="'security.homeprotection.securityhealth.button' | translate"
 																[label]="'security.homeprotection.securityhealth.button' | translate">
@@ -158,9 +159,11 @@
 				</div>
 				<div class="bottom-content w-100 d-block d-md-none">
 					<div class="cutting-line"></div>
-					<vtr-widget-powered-by-info
+					<vtr-widget-powered-by-info hidden
 						[title]="'homeSecurity.overview.poweredBy'"
 						[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+						privacyUrl="https://homesecurity.coro.net/"
+						termsUrl="https://homesecurity.coro.net/"
 						[imgUrl]="'assets/images/coronet-logo.svg'">
 					</vtr-widget-powered-by-info>
 				</div>

@@ -15,7 +15,7 @@ import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.
 })
 export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	chs: Phoenix.ConnectedHomeSecurity;
-	metricsParent = 'ConnectedHomeSecurity';
+	metricsParent = 'HomeSecurity';
 	countdownNumber = 3;
 	subscribe: Subscription;
 	consoleUrlCallback;

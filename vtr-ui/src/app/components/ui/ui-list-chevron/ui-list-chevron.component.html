@@ -14,6 +14,7 @@
 				[metricsItemCategory]="item.category"
 				[metricsItemPosition]="blockPosition"
 				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -124,6 +125,7 @@
 				[metricsEvent]="metricsEvent"
 				(click)="launchSystemUri(item.path)"
 				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
 				*ngIf="item.isSystemLink!==undefined && item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">

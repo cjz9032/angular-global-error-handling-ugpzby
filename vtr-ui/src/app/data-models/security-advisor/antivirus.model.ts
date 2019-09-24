@@ -1,7 +1,6 @@
 import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
-import * as phoenix from '@lenovo/tan-client-bridge';
 export class AntiVirusViewModel {
 	currentPage = 'windows';
 	mcafeeInstall: boolean;
@@ -32,15 +31,15 @@ export class AntiVirusViewModel {
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
-		title: 'security.antivirus.common.virus',
+		title: 'security.antivirus.windowsDefender.virus',
 	}, {
 		status: this.windowsDefender.firewallStatus,
-		title: 'security.antivirus.common.homeNetwork',
+		title: 'security.antivirus.windowsDefender.homeNetwork',
 	}];
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
 
-	constructor(antiVirus: phoenix.Antivirus, private commonService: CommonService) {
+	constructor(antiVirus: Antivirus, private commonService: CommonService) {
 		const cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		if (cacheCurrentPage) {
 			this.currentPage = cacheCurrentPage;

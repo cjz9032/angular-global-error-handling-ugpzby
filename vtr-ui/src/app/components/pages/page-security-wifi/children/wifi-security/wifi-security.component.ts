@@ -165,6 +165,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			centered: true,
 			windowClass: 'Threat-Locator-Modal'
 		});
+		setTimeout(() => { document.getElementById('modal-threat-locator').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 		threatLocatorModal.result.then(() => {
 			this.locatorButtonDisable = false;
 		}).catch(() => {
