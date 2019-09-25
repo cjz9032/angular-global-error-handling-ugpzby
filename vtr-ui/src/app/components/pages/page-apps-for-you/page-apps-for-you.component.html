@@ -30,7 +30,7 @@
 								[label]="'appsForYou.appDetails.installButton.install' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALLING"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="Apps for you"
-								metricsItem="btn.Download" 
+								metricsItem="btn.Download"
 								[isDisabled]="true"
 								[isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.installing' | translate"></vtr-ui-button>
@@ -112,7 +112,7 @@
 					</div>
 				</div>
 
-				<div class="spinner-content app-spinner loading-content" *ngIf="!appDetails">
+				<div class="spinner-content app-spinner loading-content" *ngIf="!appDetails && isOnline">
 					<div class="spinner-border text-primary progress-spinner" role="status"></div>
 				</div>
 
