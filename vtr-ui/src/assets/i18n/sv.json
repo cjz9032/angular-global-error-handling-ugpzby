@@ -1231,7 +1231,8 @@
                     "caption": "Automatisk avståndsjustering uppdaterar automatiskt identifieringsavståndet via en AI-motor.",
                     "options": {
                         "near": "Nära",
-                        "far": "Långt bort"
+                        "far": "Långt bort",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
                     "description4": "2. Om datorn är i viloläge eller avstängd. Beröringsfri inloggning fungerar inte.",
                     "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning.",
-                    "description6": "4. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade."
+                    "description6": "4. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
                     "screenTimeoutSettings": "Öppna inställningarna för skärmens tidsgräns"
                 },
-                "resetToDefault": "Återställ"
+                "resetToDefault": "Återställ",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skärm",

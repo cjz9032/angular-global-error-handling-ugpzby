@@ -1231,7 +1231,8 @@
                     "caption": "自動距離調整は、AI エンジン経由で検出距離を自動更新します。",
                     "options": {
                         "near": "近い",
-                        "far": "遠い"
+                        "far": "遠い",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
                     "description4": "2. コンピューターが休止状態またはオフであるとき、タッチレスログインは機能しません。",
                     "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。",
-                    "description6": "4. お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。"
+                    "description6": "4. お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 設定に移動",
                     "screenTimeoutSettings": "画面のタイムアウト設定に移動します"
                 },
-                "resetToDefault": "リセット"
+                "resetToDefault": "リセット",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "インテリジェント・スクリーン",

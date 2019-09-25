@@ -1231,7 +1231,8 @@
                     "caption": "Samodejno prilagajanje razdalje samodejno posodobi razdaljo zaznavanja z uporabo umetne inteligence.",
                     "options": {
                         "near": "Blizu",
-                        "far": "Daleč"
+                        "far": "Daleč",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stanja, te funkcije morda ne bodo pravilno delovale.",
                     "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen. Prijava brez dotika ne bo delovala.",
                     "description5": "3. Prilagodite zaslon računalnika na primeren kot, tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo.",
-                    "description6": "4. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene."
+                    "description6": "4. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Odprite nastavitve Windows Hello",
                     "screenTimeoutSettings": "Odprite nastavitve časa za izklop zaslona"
                 },
-                "resetToDefault": "Ponastavitev"
+                "resetToDefault": "Ponastavitev",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentni zaslon",
