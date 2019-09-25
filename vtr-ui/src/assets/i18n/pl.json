@@ -706,7 +706,8 @@
                     "OverheatedBattery": "Akumulator jest <b>zbyt gorący</b>. Wyjmij go z komputera i schłodź do temperatury pokojowej.",
                     "PermanentError": "Akumulator <b>uległ awarii z powodu normalnego zużycia.</b> Nie można naładować akumulatora. Wymień baterię.",
                     "NotSupportACAdapterDetail": "<b>Zasilacz nie jest obsługiwany.</b> Komputer Lenovo nie obsługuje tego zasilacza. Może on spowodować nagłe zamknięcie. Podłącz odpowiedni zasilacz.",
-                    "LimitedACAdapterSupportDetail": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz."
+                    "LimitedACAdapterSupportDetail": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",

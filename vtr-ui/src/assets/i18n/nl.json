@@ -706,7 +706,8 @@
                     "OverheatedBattery": "De batterij is <b>te heet</b>. Verwijder hem uit de computer en laat hem afkoelen tot kamertemperatuur.",
                     "PermanentError": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
                     "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
-                    "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan."
+                    "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",

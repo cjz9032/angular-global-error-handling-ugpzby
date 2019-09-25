@@ -1136,7 +1136,7 @@
 						},
 						"subSectionThree": {
 							"title": "How to use Fn key combinations",
-							"description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+							"description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of pressing and holding) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
 							"radioButton": {
 								"nMehod": "Normal method",
 								"fnKeyMehod": "Fn Sticky Key method"
@@ -1226,11 +1226,15 @@
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
 					}
 				},
+				"sensitivityAdjusting": {
+					"title": "SENSITIVITY ADJUSTING"
+				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
 					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
+						"medium": "Medium",
 						"far": "Far"
 					},
 					"tooltipcontent": {
@@ -1251,7 +1255,8 @@
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
 					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Login will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
-					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
+					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},
 				"WindowsLink": {
 					"goToWindowsHello": "Go to Windows Hello Settings",
@@ -1323,7 +1328,7 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as 5KPlayer, and etc. support this feature."
 			},
 			"voice": {
 				"title": "Voice",

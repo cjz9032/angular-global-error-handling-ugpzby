@@ -706,7 +706,8 @@
                     "OverheatedBattery": "Baterija je <b>pregrejana</b>. Uklonite je iz računara i ohladite je do sobne temperature.",
                     "PermanentError": "Baterija je <b>otkazala usled normalnog trošenja.</b> Nije moguće napuniti bateriju. Zamenite bateriju.",
                     "NotSupportACAdapterDetail": "<b>Adapter za naizmeničnu struju nije podržan.</b> Vaš Lenovo računar ne podržava ovaj adapter za naizmeničnu struju. To može izazvati iznenadno isključivanje. Priključite ispravan adapter za naizmeničnu struju.",
-                    "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju."
+                    "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
