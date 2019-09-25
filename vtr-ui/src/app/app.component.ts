@@ -217,7 +217,7 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+		setTimeout(() => { document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	private initIsBeta() {
