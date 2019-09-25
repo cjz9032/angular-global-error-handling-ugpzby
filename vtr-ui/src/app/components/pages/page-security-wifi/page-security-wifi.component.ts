@@ -36,7 +36,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	backId = 'sa-ws-btn-back';
 	viewSecChkRoute = 'viewSecChkRoute';
 	cardContentPositionA: any = {};
-	wifiIsShowMore: boolean;
+	isShowHistory: boolean;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
 	homeSecurity: phoenix.ConnectedHomeSecurity;
@@ -111,7 +111,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
 		}
-		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams.isShowMore;
+		this.isShowHistory = this.activeRouter.snapshot.queryParams.isShowMore;
 		this.pullCHS();
 	}
 

@@ -79,7 +79,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			}
 			this.noAppsRunning = this.runningList.length === 0 ? true : false;
 			if (this.noAppsRunning) {
-				this.ariaLabel = 'No running apps to add window';
+				this.ariaLabel = 'No running Apps to add window';
 			} else {
 				this.ariaLabel = 'Networkboost add apps window opened';
 			}
