@@ -1231,7 +1231,8 @@
                     "caption": "Automatické nastavenie vzdialenosti automaticky aktualizuje vzdialenosť detekcie pomocou nástroja využívajúceho umelú inteligenciu.",
                     "options": {
                         "near": "Blízko",
-                        "far": "Ďaleko"
+                        "far": "Ďaleko",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
                     "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Bezdotykové prihlásenie nebude fungovať.",
                     "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení.",
-                    "description6": "4. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté."
+                    "description6": "4. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Prejsť na nastavenia služby Windows Hello",
                     "screenTimeoutSettings": "Prejdite na nastavenia časovača obrazovky"
                 },
-                "resetToDefault": "Obnoviť predvolené"
+                "resetToDefault": "Obnoviť predvolené",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentná obrazovka",

@@ -1231,7 +1231,8 @@
                     "caption": "Automatisk avstandsjustering vil automatisk oppdatere avstandsfølsomheten via en AI-motor.",
                     "options": {
                         "near": "Kort avstand",
-                        "far": "Lang avstand"
+                        "far": "Lang avstand",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
                     "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
-                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen."
+                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
                     "screenTimeoutSettings": "Gå til innstillingene for tidsutkobling av skjermen"
                 },
-                "resetToDefault": "Tilbakestill"
+                "resetToDefault": "Tilbakestill",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skjerm",

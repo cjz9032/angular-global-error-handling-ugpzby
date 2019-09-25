@@ -1231,7 +1231,8 @@
                     "caption": "O ajuste de distância automático atualizará automaticamente a distância de detecção por um mecanismo de IA.",
                     "options": {
                         "near": "Perto",
-                        "far": "Distante"
+                        "far": "Distante",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Se o computador estiver no modo de tenda, de tablet ou de base, esses recursos podem não funcionar devidamente.",
                     "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O Login sem toques não funcionará.",
                     "description5": "3. Ajuste a tela do computador em um ângulo adequado para que a câmara IR possa reconhecer o seu rosto para fazer login automático.",
-                    "description6": "4. Se o Modo avião estiver ativado no seu computador, esses recursos são desativados."
+                    "description6": "4. Se o Modo avião estiver ativado no seu computador, esses recursos são desativados.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ir para as configurações do Windows Hello",
                     "screenTimeoutSettings": "Vá para Configurações de tempo limite de tela"
                 },
-                "resetToDefault": "Reconfigurar"
+                "resetToDefault": "Reconfigurar",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Tela inteligente",

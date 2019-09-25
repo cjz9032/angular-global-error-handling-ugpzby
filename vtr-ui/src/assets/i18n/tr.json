@@ -1231,7 +1231,8 @@
                     "caption": "Otomatik Uzaklık Ayarı, algılama uzaklığını bir yapay zeka altyapısı aracılığıyla otomatik olarak günceller.",
                     "options": {
                         "near": "Yakın",
-                        "far": "Uzak"
+                        "far": "Uzak",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
                     "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Sıfır Dokunma ile Oturum Açma kullanılamaz.",
                     "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın.",
-                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır."
+                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
                     "screenTimeoutSettings": "Ekran zaman aşımı ayarlarına git"
                 },
-                "resetToDefault": "Sıfırla"
+                "resetToDefault": "Sıfırla",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Akıllı Ekran",
