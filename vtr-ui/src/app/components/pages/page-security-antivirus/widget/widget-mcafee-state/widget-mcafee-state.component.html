@@ -15,13 +15,16 @@
             <div class="spinner-border text-primary progress-spinner" role="status"></div>
           </div>
         </div>
-        <div class="col-8 text px-0 text-truncate" [title]="list.title | translate"
-        [innerHTML]="list.title | translate">
+        <div class="col-auto text px-0 text-truncate"
+        [ngClass]="{'col-8': !windowsDefender}"
+        [title]="list.title | translate"
+        [innerHTML]="list.title | translate | characterLimit:28">
         </div>
-        <div class="col-2 text-right px-0 ml-auto">
-		  <h3 class="text-truncate text-color"
-		  [ngClass]="{'text-d-color': list.status !== 'enabled' && list.status !== 'installed' }">
-			<span class="text-uppercase"
+        <div class="col-auto text-right px-0 ml-auto"
+            [ngClass]="{'col-2': !windowsDefender}">
+		     <h3 class="text-truncate text-color mb-0"
+		      [ngClass]="{'text-d-color': list.status !== 'enabled' && list.status !== 'installed' }">
+			    <span class="text-uppercase"
 				title="{{list.status | statusText | translate | uppercase}}"
 				[innerHTML]="list.status | statusText | translate">
 			</span>
@@ -39,7 +42,7 @@
           </div>
         </div>
         <div class="col-auto text px-0">
-          <div [innerHTML]="list.title | translate"></div>
+          <div [innerHTML]="list.title | translate | characterLimit:26"></div>
           <div class="divider"></div>
         </div>
         <div class="col-auto px-0 ml-auto">

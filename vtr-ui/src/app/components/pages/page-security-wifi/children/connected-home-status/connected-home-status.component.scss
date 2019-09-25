@@ -21,7 +21,7 @@
 	}
 
 	.card {
-		border-radius: 0.8rem;
+		border-radius: $border_radius;
 		.no-gutters {
 			height: 4.5rem;
 			width: 100%;
@@ -47,6 +47,7 @@
 		}
 
 		.card-header {
+			border-radius: $border_radius;
 			padding: 1.6rem 2.5rem;
 			background: $shade_extralight;
 			border: 0rem;
