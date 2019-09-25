@@ -1231,7 +1231,8 @@
                     "caption": "自動距離調整將會透過 AI 引擎自動更新偵測距離。",
                     "options": {
                         "near": "近",
-                        "far": "遠"
+                        "far": "遠",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
-                    "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。"
+                    "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
                     "screenTimeoutSettings": "前往螢幕逾時設定"
                 },
-                "resetToDefault": "重設"
+                "resetToDefault": "重設",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "智慧型螢幕",

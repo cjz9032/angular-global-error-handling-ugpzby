@@ -1231,7 +1231,8 @@
                     "caption": "De detectieafstand wordt via een AI-engine automatisch bijgewerkt.",
                     "options": {
                         "near": "Dichtbij",
-                        "far": "Ver"
+                        "far": "Ver",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
                     "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden.",
-                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld."
+                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
                     "screenTimeoutSettings": "Ga naar de instellingen voor de time-out van het beeldscherm"
                 },
-                "resetToDefault": "Resetten"
+                "resetToDefault": "Resetten",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent beeldscherm",

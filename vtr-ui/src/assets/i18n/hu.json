@@ -1231,7 +1231,8 @@
                     "caption": "Az Automatikus távolságkorrekció mesterséges intelligencia használatával automatikusan frissíti az érzékelési távolságot.",
                     "options": {
                         "near": "Közel",
-                        "far": "Távol"
+                        "far": "Távol",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
-                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók."
+                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
                     "screenTimeoutSettings": "Ugrás a képernyő időtúllépésének beállításaihoz"
                 },
-                "resetToDefault": "Visszaállítás"
+                "resetToDefault": "Visszaállítás",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligens képernyő",

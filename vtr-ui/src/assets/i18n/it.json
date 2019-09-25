@@ -1231,7 +1231,8 @@
                     "caption": "La regolazione automatica della sensibilità della distanza aggiornerà automaticamente la distanza di rilevamento tramite un motore AI.",
                     "options": {
                         "near": "Vicino",
-                        "far": "Lontano"
+                        "far": "Lontano",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
                     "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico non funzionerà.",
                     "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico.",
-                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók."
+                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vai a Impostazioni di Windows Hello",
                     "screenTimeoutSettings": "Accedi alle impostazioni di timeout dello schermo"
                 },
-                "resetToDefault": "Reimposta"
+                "resetToDefault": "Reimposta",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Schermo intelligente",

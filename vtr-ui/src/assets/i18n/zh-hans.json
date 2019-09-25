@@ -1231,7 +1231,8 @@
                     "caption": "自动距离调整将会通过人工智能引擎自动更新检测距离。",
                     "options": {
                         "near": "较近",
-                        "far": "较远"
+                        "far": "较远",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1251,13 +1252,17 @@
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
                     "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
-                    "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。"
+                    "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "重置"
+                "resetToDefault": "重置",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
