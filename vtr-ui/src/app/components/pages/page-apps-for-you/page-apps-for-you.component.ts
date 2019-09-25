@@ -30,6 +30,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	errorMessage: any;
 	installButtonStatus: number;
 	public appGuid: any;
+	metricsParent = '';
 
 	installButtonStatusEnum = {
 		INSTALL: 1,
@@ -103,6 +104,13 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		this.route.params.subscribe((params) => {
 			this.appGuid = params.id;
 			this.appsForYouService.getAppDetails(this.appGuid);
+			if (this.appGuid === AppsForYouEnum.AppGuidLenovoMigrationAssistant) {
+				this.metricsParent = 'AppsForYou.LMA';
+			} else if (this.appGuid === AppsForYouEnum.AppGuidAdobeCreativeCloud) {
+				this.metricsParent = 'AppsForYou.Adobe';
+			} else {
+				this.metricsParent = 'AppsForYou';
+			}
 		});
 	}
 
