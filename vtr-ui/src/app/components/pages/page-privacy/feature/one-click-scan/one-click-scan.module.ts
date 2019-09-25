@@ -6,11 +6,13 @@ import { ComponentsModule } from '../../common/components/components.module';
 import { CheckBreachedAccountsModule } from '../check-breached-accounts/check-breached-accounts.module';
 import { ScanningComponent } from './scanning/scanning.component';
 import { VtrCommonModule } from '../../common/vtr-common.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [OneClickScanComponent, EnterEmailComponent, ScanningComponent],
 	imports: [
 		CommonModule,
+		RouterModule,
 		ComponentsModule,
 		CheckBreachedAccountsModule,
 		VtrCommonModule
