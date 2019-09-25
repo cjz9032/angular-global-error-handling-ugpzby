@@ -2,7 +2,9 @@
 	<div *ngIf="!hide" class="back">{{backarrow}}
 		<a vtrMetrics metricsEvent="FeatureClick" metricsItem="Back.Button" (click)="goBack()" id="{{backId}}"
 			attr.aria-label="{{backId}}">
-			{{back}}
+			<span>
+				{{back}}
+			</span>
 		</a>
 	</div>
 	<h1 class="title" id="{{textId}}-header-title" attr.aria-label="{{textId}}-header-title">{{title}}</h1>

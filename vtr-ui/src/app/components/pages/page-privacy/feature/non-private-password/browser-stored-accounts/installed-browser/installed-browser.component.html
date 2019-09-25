@@ -74,6 +74,7 @@
 					<div class="browser-accounts__item browser-account" [class.browser-account--first]="i === 0">
 						<div class="browser-account__img-col">
 							<img [src]="(account.domain | sitesFavicon | async)"
+								 default="{{defaultIcon}}"
 								 alt="account stored in browser image"
 								 class="browser-account__img">
 						</div>

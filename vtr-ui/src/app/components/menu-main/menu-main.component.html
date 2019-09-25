@@ -57,9 +57,10 @@
 			</span>
 
 		</div>
-		<button id="menu-main-btn-navbar-toggler"
+		<a id="menu-main-btn-navbar-toggler"
 			aria-label="menu-main-btn-navbar-toggler"
 			class="navbar-toggler"
+			tabindex="1"
 			type="button"
 			(click)="toggleMenu($event)">
 			<span class="navbar-toggler-icon">
@@ -67,7 +68,9 @@
 			</span>
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 			</fa-icon> -->
-		</button>
+			<span class="unread-count-tag"
+				*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
+		</a>
 		<div class="collapse navbar-collapse"
 			*ngIf="!loadMenuItem.hideMenus"
 			#menuTarget
@@ -122,6 +125,8 @@
 							routerLinkActive="active"
 							id="navbarDropdown"
 							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
 							(click)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">
@@ -255,11 +260,11 @@
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
-							<a class="dropdown-item link link-lma"
+							<a *ngIf="appsForYouService.showLmaMenu()"
+								class="dropdown-item link link-lma"
 								vtrMetrics
 								id="menu-main-lnk-open-lma"
 								attr.aria-label="menu-main-lnk-open-lma"
-								routerLinkActive="link-active"
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoMigrationAssistantButton"
@@ -275,7 +280,6 @@
 								vtrMetrics
 								id="menu-main-lnk-open-adobe"
 								attr.aria-label="menu-main-lnk-open-adobe"
-								routerLinkActive="link-active"
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="AdobecRedemptionButton"

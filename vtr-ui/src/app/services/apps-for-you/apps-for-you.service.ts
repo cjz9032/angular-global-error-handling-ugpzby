@@ -80,14 +80,12 @@ export class AppsForYouService {
 	private isCancelInstall = false;
 	private cmsAppDetailsArray = [];	// Cached app details
 	private cmsAppDetails: any;
-	private culture: any;
 	private serialNumber: string;
 	private familyName: string;
 	private localInfo: any;
 	systemUpdateBridge: any;
 
 	private initialize() {
-		this.culture = window.navigator.languages[0];
 		let machineInfo = this.deviceService.getMachineInfoSync();
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
@@ -104,7 +102,7 @@ export class AppsForYouService {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
 		}).catch(e => {
-			console.log(e);
+			this.logService.error('AppsForYouService.initialize getLocalInfo error.', JSON.stringify(e));
 		});
 	}
 
@@ -115,23 +113,29 @@ export class AppsForYouService {
 			let appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 			switch (appGuid) {
 				case AppsForYouEnum.AppGuidAdobeCreativeCloud:
-					appId = AppsForYouEnum.AppSiteCoreIdAdobeCreativeCloud;
+					if (this.localInfo && this.localInfo.Segment.indexOf('SMB') !== -1) {
+						appId = AppsForYouEnum.AppSiteCoreIdAdobeCreativeCloudSMB;
+					} else {
+						appId = AppsForYouEnum.AppSiteCoreIdAdobeCreativeCloud;
+					}
 					break;
 				case AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant:
 				default:
 					appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 					break;
 			}
-			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.culture })])
+			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.localInfo ? this.localInfo.Lang : 'en' })])
 				.then((response) => {
-					this.cmsAppDetails = response[0];
-					if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
-						this.cmsAppDetailsArray.push({
-							key: appGuid,
-							value: this.cmsAppDetails
-						});
+					if (response.length >= 1 && response[0]) {
+						this.cmsAppDetails = response[0];
+						if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
+							this.cmsAppDetailsArray.push({
+								key: appGuid,
+								value: this.cmsAppDetails
+							});
+						}
+						this.handleGetAppDetailsResponse(this.cmsAppDetails);
 					}
-					this.handleGetAppDetailsResponse(this.cmsAppDetails);
 				})
 				.catch((error) => {
 					this.logService.error('AppsForYouService.getAppDetails error.', JSON.stringify(error));
@@ -222,11 +226,17 @@ export class AppsForYouService {
 		}
 	}
 
-	public openSeeMoreUrl() {
+	public openSeeMoreUrl(appGuid: string, downloadlink: string) {
 		// Open new window with default browser to browse external link
-		if (window && this.serialNumber) {
-			const url = AppsForYouEnum.SeeMoreUrlAdobeCreativeCloud.replace('[SerialNumber]', this.serialNumber);
-			window.open(url);
+		if (appGuid === AppsForYouEnum.AppGuidAdobeCreativeCloud) {
+			if (window && this.serialNumber) {
+				const url = AppsForYouEnum.SeeMoreUrlAdobeCreativeCloud.replace('[SerialNumber]', this.serialNumber);
+				window.open(url);
+			}
+		} else {
+			if (window && downloadlink) {
+				window.open(downloadlink);
+			}
 		}
 	}
 
@@ -235,6 +245,14 @@ export class AppsForYouService {
 		if (this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
 			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 &&
 			(this.localInfo.Segment.indexOf('SMB') !== -1 || this.localInfo.Segment.indexOf('Consumer') !== -1))  {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public showLmaMenu() {
+		if (!this.deviceService.isArm && !this.deviceService.isSMode) {
 			return true;
 		} else {
 			return false;

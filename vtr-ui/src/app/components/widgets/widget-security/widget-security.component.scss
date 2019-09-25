@@ -26,6 +26,11 @@
 				font-weight: $weight_bold;
 				background: $main_darker;
 
+				fa-icon {
+					font-size: 10rem;
+					line-height: 15.5rem;
+				}
+
 				span.percent {
 					font-size: 2.5rem;
 				}

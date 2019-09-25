@@ -1,63 +1,62 @@
 <div class="vtr-modal-chs-welcome-container position-relative">
-	<div class="modal-header justify-content-end">
-		<div role="button" id="chs-tour-btn-close"
-			href="javascript:;"
-			class="close-btn"
-			metricsItem="closeCHSWelcomeModal"
-			metricsEvent="featureClick"
-			metricsParent="ConnectedHomeSecurity"
-			(click)="closeModal()">
-			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
-				alt=""
-				srcset="">
-		</div>
-	</div>
 	<!-- start of page 1-->
 	<div class="page page-one" *ngIf="switchPage === 1">
 		<div class="text-center">
-			<div class="page-img">
-				<img src="assets/images/placeholder-800X800.png" alt="">
+			<div class="page-img mb-5">
+				<img src="assets/images/connected-home-security/welcome-slide1@2x.png" alt="">
 			</div>
-			<p class="page-title mb-3">{{'homeSecurity.tour.welcome1' | translate}}</p>
-			<p class="page-desc p-0">{{'homeSecurity.tour.welcomeDesc1' | translate}}</p>
-			<p class="page-desc font-weight-bold mb-0">{{'homeSecurity.tour.welcomeDescStart' | translate}}</p>
+			<p class="page-title text-uppercase mb-80" [innerHTML]="'homeSecurity.tour.welcomeTitle' | translate"></p>
+			<div class="row text-left">
+				<div class="col-8 row m-auto page-subtitle text-uppercase">
+					<div class="col-2"></div>
+					<div class="col-10" [innerHTML]="'homeSecurity.tour.welcomeSubTitle' | translate"></div>
+				</div>
+			</div>
+			<div *ngFor="let item of welcomeDesc" class="row text-left mb-3">
+				<div class="col-8 m-auto row page-desc" >
+					<div class="icon-bkg col-2 blue text-right pr-3">
+						<span [ngClass]="['icomoon', 'icomoon-' + item.icon]"></span>
+					</div>
+					<div class="col-10" [innerHTML]="item.desc | translate"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- end of page1-->
 	<!-- start of page 2-->
 	<div class="page page-two" *ngIf="switchPage === 2 && showPageLocation === true">
-		<div class="chs-logo w-100 pb-5">
-			<img src="assets/images/connected-home-security/welcome-chs-logo.png" alt="">
-		</div>
-		<p class="description">
-			{{'homeSecurity.tour.locationTitle' | translate}}
-		</p>
-		<p class="sub-desc">
-			{{'homeSecurity.tour.locationPermission' | translate}}
-		</p>
-		<div class="d-flex sub-desc">
-			<div class="ml-0 mr-4 pl-0">
-				<vtr-ui-button
-					linkId="chs-tour-btn-openLocation"
-					role="button"
-					metricsEvent="FeatureClick"
-					metricsItem="CHSWelcomeOpenLocationButton"
-					metricsParent="{{metricsParent}}"
-					(click)="openLocation($event)"
-					[upperCaseLabel]=false
-					[label]="'homeSecurity.tour.locationTitle' | translate"
-					[title]="'homeSecurity.tour.locationTitle' | translate"></vtr-ui-button>
-			</div>
+		<p class="description" [innerHTML]="'homeSecurity.tour.locationTitle' | translate"></p>
+		<p class="sub-desc" [innerHTML]="'homeSecurity.tour.locationPermission' | translate"></p>
+		<div class="d-flex justify-content-between">
+			<button class="modal-button allow-btn"
+				id="chs-tour-btn-openLocation"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsItem="CHSWelcomeOpenLocationButton"
+				metricsParent="{{metricsParent}}"
+				(click)="openLocation($event)"
+				[innerHTML]="'homeSecurity.tour.allow' | translate"
+				title="{{'homeSecurity.tour.allow' | translate}}">
+			</button>
+			<button class="modal-button cancel-btn"
+				id="chs-tour-btn-cancelLocation"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsItem="CHSWelcomeCancelLocationButton"
+				metricsParent="{{metricsParent}}"
+				(click)="closeModal()"
+				[innerHTML]="'homeSecurity.tour.notNow' | translate"
+				title="{{'homeSecurity.tour.notNow' | translate}}">
+			</button>
 		</div>
 	</div>
-	<!-- end of page4-->
+	<!-- end of page2-->
 	<div class="page-indicator">
 		<div *ngIf="switchPage === 1"
 			class="row text-center align-items-center justify-content-center">
 			<div>
 				<vtr-ui-button linkId="chs-tour-btn-start"
 					*ngIf="!isLocationServiceOn"
-					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeNextButton"
 					metricsParent="{{metricsParent}}"
@@ -66,7 +65,6 @@
 					[title]="'tutorial.next' | translate"></vtr-ui-button>
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
 					linkId="chs-tour-btn-done"
-					role="button"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"
 					metricsParent="{{metricsParent}}"

@@ -53,13 +53,17 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		}
 	}
 	updateFocus(i: any = false) {
-		if (i !== false && this.items[i]) {
+		if (i >= 0 && this.items[i]) {
 			this.items[i].focus = true;
 		}
 		setTimeout(() => { this.items[i].focus = false; }, 50);
 	}
-	public onClosed($event: any, i = false) {
+	public onClosed($event: any, i: any = false) {
 		this.updateFocus(i);
+		if (i >= 0) {
+			this.items[i].isPopup = false;
+			this.items[i].isDriverPopup = false;
+		}
 		this.popupClosed.emit($event);
 	}
 
