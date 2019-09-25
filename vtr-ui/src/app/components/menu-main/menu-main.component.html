@@ -57,9 +57,10 @@
 			</span>
 
 		</div>
-		<button id="menu-main-btn-navbar-toggler"
+		<a id="menu-main-btn-navbar-toggler"
 			aria-label="menu-main-btn-navbar-toggler"
 			class="navbar-toggler"
+			tabindex="1"
 			type="button"
 			(click)="toggleMenu($event)">
 			<span class="navbar-toggler-icon">
@@ -69,7 +70,7 @@
 			</fa-icon> -->
 			<span class="unread-count-tag"
 				*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
-		</button>
+		</a>
 		<div class="collapse navbar-collapse"
 			*ngIf="!loadMenuItem.hideMenus"
 			#menuTarget
@@ -124,6 +125,8 @@
 							routerLinkActive="active"
 							id="navbarDropdown"
 							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
 							(click)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">
@@ -257,7 +260,7 @@
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
-							<a *ngIf="!deviceService.isArm"
+							<a *ngIf="appsForYouService.showLmaMenu()"
 								class="dropdown-item link link-lma"
 								vtrMetrics
 								id="menu-main-lnk-open-lma"

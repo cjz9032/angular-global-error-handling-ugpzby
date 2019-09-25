@@ -472,6 +472,7 @@
 			color: $shade_light;
 			padding: 0.25rem 1rem;
 			position: relative;
+			text-align: center;
 
 			@media #{$mediaquery_xl} {
 				display: block;

@@ -490,6 +490,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public onPopupClosed($event) {
 		const name = $event.name;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.legionUpdate[1].isDriverPopup = false;
 			this.legionUpdate[1].isPopup = false;
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}

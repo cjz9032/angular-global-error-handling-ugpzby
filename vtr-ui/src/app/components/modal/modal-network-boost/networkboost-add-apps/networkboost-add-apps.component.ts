@@ -79,16 +79,19 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			}
 			this.noAppsRunning = this.runningList.length === 0 ? true : false;
 			if (this.noAppsRunning) {
-				this.ariaLabel = 'No running apps to add window';
-				setTimeout(() => {
-					document.getElementById('nbAddApps').focus();
-				}, 5);
+				this.ariaLabel = 'No running Apps to add window';
+			} else {
+				this.ariaLabel = 'Networkboost add apps window opened';
 			}
 		} catch (error) {
 			this.loading = false;
 			this.noAppsRunning = true;
-			document.getElementById('noAppsRunning').focus();
+			document.getElementById('nbAddApps').focus();
 			console.log(`ERROR in refreshNetworkBoostList()`, error);
+		} finally {
+			setTimeout(() => {
+				document.getElementById('nbAddApps').focus();
+			}, 2);
 		}
 	}
 

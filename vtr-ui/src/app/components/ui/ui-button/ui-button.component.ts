@@ -37,7 +37,6 @@ export class UiButtonComponent implements OnInit {
 	constructor() { }
 
 	onClickButton(event) {
-		event.target.blur();
 		this.onClick.emit(event);
 	}
 

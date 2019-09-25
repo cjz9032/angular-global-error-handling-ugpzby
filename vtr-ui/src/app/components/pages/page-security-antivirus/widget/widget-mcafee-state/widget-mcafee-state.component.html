@@ -15,15 +15,17 @@
             <div class="spinner-border text-primary progress-spinner" role="status"></div>
           </div>
         </div>
-        <div class="col-auto text px-0"
+        <div class="col-8 text px-0 text-truncate" [title]="list.title | translate"
         [innerHTML]="list.title | translate">
         </div>
-        <div class="col-auto px-0 ml-auto">
-          <h3><span class="text-uppercase text-color"
-              [ngClass]="{'text-d-color': list.status !== 'enabled' && list.status !== 'installed' }"
-              title="{{list.status | statusText | translate | uppercase}}"
-              [innerHTML]="list.status | statusText | translate">
-          </span></h3>
+        <div class="col-2 text-right px-0 ml-auto">
+		  <h3 class="text-truncate text-color"
+		  [ngClass]="{'text-d-color': list.status !== 'enabled' && list.status !== 'installed' }">
+			<span class="text-uppercase"
+				title="{{list.status | statusText | translate | uppercase}}"
+				[innerHTML]="list.status | statusText | translate">
+			</span>
+		  </h3>
         </div>
       </div>
     </li>
@@ -54,7 +56,8 @@
         [innerHTML]="'security.antivirus.mcafee.launch' | translate"></button>
     </li>
     <li *ngIf="windowsDefender" class="row justify-content-center">
-      <a class="button d-flex align-items-center justify-content-center" [ngClass]="{'visible': !url}" 
+      <a class="button d-flex align-items-center justify-content-center"
+        [ngClass]="{'visible': !url, 'unclickable': !isOnline}"
         id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
         metricsItem="subscribe" metricsParent="security.antivirus"
         href="{{url}}" target="_blank"

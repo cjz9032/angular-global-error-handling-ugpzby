@@ -47,8 +47,9 @@
 			}
 
 			.app-spinner {
-				width: 100%;
+				width: 6rem;
 				height: 100%;
+				margin-right: 1rem;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -71,6 +72,11 @@
 				.btn-box {
 					width: 100%;
 					max-width: 25rem;
+					::ng-deep {
+						.vtr-ui-button .button-box {
+							margin-top: 0;
+						}
+					}
 				}
 
 				.error-message {
@@ -218,14 +224,8 @@
 					margin-bottom: 2rem;
 				}
 
-
 				.legal-agreement {
-					color: $main;
 					text-decoration: underline;
-
-					&:hover {
-						text-decoration: none;
-					}
 				}
 			}
 		}

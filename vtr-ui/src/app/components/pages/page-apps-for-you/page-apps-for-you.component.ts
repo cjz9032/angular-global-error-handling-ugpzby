@@ -30,6 +30,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	errorMessage: any;
 	installButtonStatus: number;
 	public appGuid: any;
+	metricsParent = '';
 
 	installButtonStatusEnum = {
 		INSTALL: 1,
@@ -103,6 +104,13 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		this.route.params.subscribe((params) => {
 			this.appGuid = params.id;
 			this.appsForYouService.getAppDetails(this.appGuid);
+			if (this.appGuid === AppsForYouEnum.AppGuidLenovoMigrationAssistant) {
+				this.metricsParent = 'AppsForYou.LMA';
+			} else if (this.appGuid === AppsForYouEnum.AppGuidAdobeCreativeCloud) {
+				this.metricsParent = 'AppsForYou.Adobe';
+			} else {
+				this.metricsParent = 'AppsForYou';
+			}
 		});
 	}
 
@@ -112,10 +120,6 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		if (this.mockScreenShots.length > 3) {
-			this.showArrows = true;
-			this.startScreenshotAutoSwipe();
-		}
 	}
 
 	ngOnDestroy() {
@@ -235,6 +239,10 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		} else {
 			// TODO: Should be Windows Store App
 		}
+		if (this.appDetails.screenshots.length > 3) {
+			this.showArrows = true;
+			this.startScreenshotAutoSwipe();
+		}
 	}
 
 	updateInstallButtonStatus() {
@@ -255,7 +263,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	async clickInstallButton() {
 		switch (this.installButtonStatus) {
 			case this.installButtonStatusEnum.SEEMORE:
-				this.appsForYouService.openSeeMoreUrl();
+				this.appsForYouService.openSeeMoreUrl(this.appGuid, this.appDetails.downloadlink);
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
 				const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
