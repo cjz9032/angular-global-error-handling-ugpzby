@@ -13,7 +13,7 @@
 		Let’s see if your email was breached
 	</h2>
 
-	<ng-container *ngIf="(scanCounter$ | async) < 2; else scanLimitPitch">
+	<ng-container *ngIf="(scanCounter$ | async) < scanCounterLimit; else scanLimitPitch">
 		<div class="enter-email__text-block">
 			<p class="enter-email__text">
 				Lenovo Privacy Essentials by FigLeaf will check if your email address is on the dark web or in any known data breach.
