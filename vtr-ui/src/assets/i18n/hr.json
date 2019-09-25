@@ -1587,7 +1587,7 @@
                 "Blazing": "Nevjerojatna brzina",
                 "BlazingText": "Optimizirani antivirus koji neće usporiti ili prekinuti vaše Lenovo Vantage iskustvo",
                 "privacyTerms": "/   <tag>Pravila o privatnosti</tag>  |  <tag>Uvjeti pružanja usluge</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
                 "optimallyProtected": "Čini se da trenutno koristite Windows Defender. Nije loš izbor, ali za maksimalnu zaštitu protiv ucjenjivačkog softvera, zlonamjernog softvera i virusa, udružili smo se sa <b>McAfee</b> da bismo vam osigurali nagrađivanu sigurnost <b>kako biste mogli zaštiti ono što je važno.</b>",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee skener ranjivosti ",
                 "report": "Izvješće o zaštiti prijetnji ",
-                "trialContent": "Već ste dobro iskoristili svoje McAfee antivirusno probno razdoblje. No vaše probno razdoblje završava za {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati.<tag>Pretplatite se sada</tag>",
-                "subscribeContent": "Dobro ste iskoristili svoj McAfee. No preostalo je još svega {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati.<tag>Pretplatite se sada</tag>",
+                "trialContent": "Već ste dobro iskoristili svoje McAfee antivirusno probno razdoblje. No vaše probno razdoblje završava za {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati. <tag>Pretplatite se sada</tag>",
+                "subscribeContent": "Dobro ste iskoristili svoj McAfee. No preostalo je još svega {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati. <tag>Pretplatite se sada</tag>",
                 "subscribeNow": "Pretplatite se sada",
                 "fileScan": "Datoteke skenirane",
                 "Viruses": "Virusi uklonjeni",

@@ -1587,7 +1587,7 @@
                 "Blazing": "Velocidad ultrarrápida",
                 "BlazingText": "Antivirus optimizado que no ralentizará ni interrumpirá su experiencia Lenovo Vantage",
                 "privacyTerms": "/   <tag>Políticas de privacidad</tag>  |  <tag>Términos de servicio</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "No disponible"
             },
             "windowsDefender": {
                 "optimallyProtected": "Parece que actualmente usa Windows Defender. No es una mala elección, pero para la máxima seguridad contra ransomware, malware y virus, nos hemos asociado con <b>McAfee</b> para desactivar su seguridad galardonada para <b>proteger las cosas más importantes.</b>",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Su informe de protección contra amenazas ",
-                "trialContent": "Ha estado utilizando bien la versión de prueba del antivirus de McAfee. Pero con solo {{remainingDays}} días antes de que expire la versión de prueba, corre el riesgo de dejar a su sistema vulnerable. No se arriesgue.<tag>Suscribir ahora</tag>",
-                "subscribeContent": "Ha estado utilizando bien su McAfee. Pero con solo {{remainingDays}} días restantes, corre el riesgo de dejar a su sistema vulnerable. No se arriesgue.<tag>Suscribir ahora</tag>",
+                "trialContent": "Ha estado utilizando bien la versión de prueba del antivirus de McAfee. Pero con solo {{remainingDays}} días antes de que expire la versión de prueba, corre el riesgo de dejar a su sistema vulnerable. No se arriesgue. <tag>Suscribir ahora</tag>",
+                "subscribeContent": "Ha estado utilizando bien su McAfee. Pero con solo {{remainingDays}} días restantes, corre el riesgo de dejar a su sistema vulnerable. No se arriesgue. <tag>Suscribir ahora</tag>",
                 "subscribeNow": "Suscribir ahora",
                 "fileScan": "Archivos escaneados",
                 "Viruses": "Virus eliminados",

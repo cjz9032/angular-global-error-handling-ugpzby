@@ -1587,7 +1587,7 @@
                 "Blazing": "Viteză ultrarapidă",
                 "BlazingText": "Antivirus optimizat care nu va încetini sau întrerupe experiența dvs. Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politica de confidențialitate</tag>  |  <tag>Termeni de utilizare a serviciului</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nedisponibil"
             },
             "windowsDefender": {
                 "optimallyProtected": "Se pare că folosiți acum Windows Defender. Nu este o alegere rea, însă, pentru o securitate maximă împotriva ransomware, malware și a virușilor, am făcut echipă cu <b>McAfee</b> pentru a vă oferi securitate premiată ca să puteți <b>proteja ceea ce contează.</b>",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Raportul dvs. de protecție împotriva amenințărilor ",
-                "trialContent": "Ați folosit cu succes versiunea de încercare a antivirusului McAfee. Însă au mai rămas {{remainingDays}} zile până când versiunea de încercare expiră, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.<tag>Abonați-vă acum</tag>",
-                "subscribeContent": "Ați folosit cu succes McAfee. Însă au mai rămas {{remainingDays}} zile, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.<tag>Abonați-vă acum</tag>",
+                "trialContent": "Ați folosit cu succes versiunea de încercare a antivirusului McAfee. Însă au mai rămas {{remainingDays}} zile până când versiunea de încercare expiră, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați. <tag>Abonați-vă acum</tag>",
+                "subscribeContent": "Ați folosit cu succes McAfee. Însă au mai rămas {{remainingDays}} zile, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați. <tag>Abonați-vă acum</tag>",
                 "subscribeNow": "Abonați-vă acum",
                 "fileScan": "Fișiere scanate",
                 "Viruses": "Viruși eliminați",

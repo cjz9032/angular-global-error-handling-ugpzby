@@ -1587,7 +1587,7 @@
                 "Blazing": "Blesková rýchlosť",
                 "BlazingText": "Optimalizovaný antivírus, ktorý nespomalí ani nenaruší chod aplikácie Lenovo Vantage",
                 "privacyTerms": "/   <tag>Zásady ochrany osobných údajov</tag>  |  <tag>Podmienky poskytovania služby</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nie je k dispozícii"
             },
             "windowsDefender": {
                 "optimallyProtected": "Zdá sa, že momentálne používate program Windows Defender. Nie je to zlá voľba, ale v záujme maximálnej bezpečnosti proti ransomvéru, malvéru a vírusom sme sa spojili so spoločnosťou <b>McAfee</b>, aby sme vám mohli ponúknuť oceňované zabezpečenie a <b>ochrániť to, na čom záleží.</b>",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Kontrola slabých miest zabezpečenia McAfee ",
                 "report": "Vaša správa o ochrane pred hrozbami ",
-                "trialContent": "Skúšobné obdobie antivírovej ochrany McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však platnosť skúšobnej verzie uplynie a hrozí, že váš počítač zostane zraniteľný. Neriskujte to.<tag>Zaregistrovať</tag>",
-                "subscribeContent": "Aplikáciu McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však hrozí, že váš počítač zostane zraniteľný. Neriskujte to.<tag>Zaregistrovať</tag>",
+                "trialContent": "Skúšobné obdobie antivírovej ochrany McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však platnosť skúšobnej verzie uplynie a hrozí, že váš počítač zostane zraniteľný. Neriskujte to. <tag>Zaregistrovať</tag>",
+                "subscribeContent": "Aplikáciu McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však hrozí, že váš počítač zostane zraniteľný. Neriskujte to. <tag>Zaregistrovať</tag>",
                 "subscribeNow": "Zaregistrovať",
                 "fileScan": "Skontrolované súbory",
                 "Viruses": "Odstránené vírusy",

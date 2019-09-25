@@ -1587,7 +1587,7 @@
                 "Blazing": "Yıldırım hızında",
                 "BlazingText": "Lenovo Vantage deneyiminizi yavaşlatmayacak veya kesintiye uğratmayacak şekilde iyileştirilmiş virüsten koruma yazılımı",
                 "privacyTerms": "/   <tag>Gizlilik İlkesi</tag>  |  <tag>Hizmet Koşulları</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Kullanılamaz"
             },
             "windowsDefender": {
                 "optimallyProtected": "Şu anda Windows Defender kullandığınız görülüyor. Kötü bir seçim değil ancak fidye yazılımlarına, kötü amaçlı yazılımlara ve virüslere karşı nihai koruma sağlamak üzere, <b>önemli olan içeriğinizi koruyabilmeniz için</b> <b>McAfee</b> ile birlikte size ödüllü bir güvenlik çözümü sunuyoruz.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Güvenlik Açığı Tarayıcısı ",
                 "report": "Tehdit Koruma Raporunuz ",
-                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.<tag>Şimdi Abone Ol</tag>",
-                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.<tag>Şimdi Abone Ol</tag>",
+                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın. <tag>Şimdi Abone Ol</tag>",
+                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın. <tag>Şimdi Abone Ol</tag>",
                 "subscribeNow": "Şimdi Abone Ol",
                 "fileScan": "Dosya tarandı",
                 "Viruses": "Virüs Temizlendi",

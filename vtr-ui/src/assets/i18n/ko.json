@@ -1587,7 +1587,7 @@
                 "Blazing": "빠른 속도",
                 "BlazingText": "Lenovo Vantage 환경을 느리게 하거나 방해하지 않는 최적화된 안티바이러스",
                 "privacyTerms": "/   <tag>개인정보보호정책</tag>  |  <tag>서비스 약관</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "사용할 수 없음"
             },
             "windowsDefender": {
                 "optimallyProtected": "현재 Windows Defender를 사용 중인 것 같습니다. 나쁜 선택은 아니지만 Lenovo는 랜섬웨어, 멀웨어 및 바이러스에 대한 궁극적인 안전을 위해 탁월한 보안 기능을 제공하는 <b>McAfee</b>와 협력하여 <b>중요 항목을 보호</b>할 수 있습니다.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee 취약성 스캐너 ",
                 "report": "위협 보호 보고서 ",
-                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.<tag>지금 구독</tag>",
-                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.<tag>지금 구독</tag>",
+                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오. <tag>지금 구독</tag>",
+                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오. <tag>지금 구독</tag>",
                 "subscribeNow": "지금 구독",
                 "fileScan": "파일 스캔함",
                 "Viruses": "바이러스 제거됨",

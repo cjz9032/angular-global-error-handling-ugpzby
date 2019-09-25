@@ -1587,7 +1587,7 @@
                 "Blazing": "Velocidade incrivelmente rápida",
                 "BlazingText": "Antivírus otimizado que não torna lenta nem interrompe sua experiência com o Lenovo Vantage",
                 "privacyTerms": "/   <tag>Política de Privacidade</tag>  |  <tag>Termos de serviço</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Não Disponível"
             },
             "windowsDefender": {
                 "optimallyProtected": "Parece que você está usando o Windows Defender no momento. Não é uma má escolha, mas para a segurança máxima contra ransomware, malware e vírus, nos associamos ao <b>McAfee</b> para oferecer segurança premiada para <b>proteger o que importa.</b>",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Verificador de vulnerabilidade McAfee ",
                 "report": "Seu relatório de proteção contra ameaças ",
-                "trialContent": "Você está usando bem a sua avaliação de antivírus McAfee. Mas com apenas {{remainingDays}} dias restantes até o término da avaliação, você corre o risco de deixar o computador vulnerável. Não arrisque.<tag>Assinar Agora</tag>",
-                "subscribeContent": "Você está usando bem o seu McAfee. Mas com apenas {{remainingDays}} dias restantes, você corre o risco de deixar o computador vulnerável. Não arrisque.<tag>Assinar Agora</tag>",
+                "trialContent": "Você está usando bem a sua avaliação de antivírus McAfee. Mas com apenas {{remainingDays}} dias restantes até o término da avaliação, você corre o risco de deixar o computador vulnerável. Não arrisque. <tag>Assinar Agora</tag>",
+                "subscribeContent": "Você está usando bem o seu McAfee. Mas com apenas {{remainingDays}} dias restantes, você corre o risco de deixar o computador vulnerável. Não arrisque. <tag>Assinar Agora</tag>",
                 "subscribeNow": "Assinar Agora",
                 "fileScan": "Arquivos verificados",
                 "Viruses": "Vírus eliminados",
