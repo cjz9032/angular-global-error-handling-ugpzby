@@ -49,6 +49,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public isAPSAvailable = false;
 	public hpdSensorType = 0;
 	public sensitivityVisibility = false;
+	public sesnsitivityAdjustVal = 0;
 	smartAssistCache: SmartAssistCache;
 
 	headerMenuItems: PageAnchorLink[] = [
@@ -229,11 +230,11 @@ export class PageSmartAssistComponent implements OnInit {
 	public getHPDLeaveSensitivityVisibilityStatus() {
 		try {
 			this.smartAssist.getHPDLeaveSensitivityVisibility().then((value: any) => {
+				console.log('getHPDLeaveSensitivityVisibility value----->', value);
 				this.sensitivityVisibility = value;
 				if (this.sensitivityVisibility) {
 					this.getHPDLeaveSensitivityStatus();
 				}
-				this.setHPDLeaveSensitivitySetting(2);
 			});
 
 		} catch (error) {
@@ -245,6 +246,7 @@ export class PageSmartAssistComponent implements OnInit {
 	public getHPDLeaveSensitivityStatus() {
 		try {
 			this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
+				this.sesnsitivityAdjustVal = value;
 				console.log('getHPDLeaveSensitivity value----->', value);
 			});
 		} catch (error) {
@@ -255,7 +257,7 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public setHPDLeaveSensitivitySetting(event) {
 		try {
-			this.smartAssist.SetHPDLeaveSensitivitySetting(event).then((value: any) => {
+			this.smartAssist.SetHPDLeaveSensitivitySetting(event.value).then((value: any) => {
 				console.log('setHPDLeaveSensitivitySetting value----->', value);
 			});
 		} catch (error) {
