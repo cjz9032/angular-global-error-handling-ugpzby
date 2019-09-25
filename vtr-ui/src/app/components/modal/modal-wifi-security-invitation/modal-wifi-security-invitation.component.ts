@@ -57,7 +57,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		this.joinFailed = false;
 		const metricsData = {
 			ItemParent: this.metricsParent,
-			ItemName: '',
+			ItemName: this.metricsTranslateService.translate('CHSInvitationConnectFailed'),
 			ItemType: 'FeatureClick'
 		};
 		if (this.chs) {
@@ -67,25 +67,21 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 					if (response.result === 'Success') {
 						this.joinSuccess = true;
 						metricsData.ItemName = this.metricsTranslateService.translate('CHSInvitationConnectSuccess');
-						this.metrics.sendMetrics(metricsData);
 						setTimeout(() => {
 							this.closeModal();
 						}, 3000);
 					} else {
 						this.joinFailed = true;
-						metricsData.ItemName = this.metricsTranslateService.translate('CHSInvitationConnectFailed');
-						this.metrics.sendMetrics(metricsData);
 					}
 				}).catch((err) => {
 					this.startJoin = false;
 					this.joinFailed = true;
-					metricsData.ItemName = this.metricsTranslateService.translate('CHSInvitationConnectFailed');
+				}).finally(() => {
 					this.metrics.sendMetrics(metricsData);
 				});
 		} else {
 			this.startJoin = false;
 			this.joinFailed = true;
-			metricsData.ItemName = this.metricsTranslateService.translate('CHSInvitationConnectFailed');
 			this.metrics.sendMetrics(metricsData);
 		}
 	}
