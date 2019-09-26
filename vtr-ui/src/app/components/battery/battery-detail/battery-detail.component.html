@@ -87,7 +87,14 @@
 					</div>
 					<div *ngIf="isValid(model.remainingTime)"
 						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
-						{{ model.remainingTime | minutesToHourmin }}
+						<!-- {{ model.remainingTime | minutesToHourmin }} -->
+						<span *ngIf="isValid(remainingHours[i])">
+							{{remainingHours[i]}} {{hourText | translate}}
+						</span>
+						<span>
+							{{remainingMinutes[i]}} {{minutesText | translate}}
+						</span>
+
 					</div>
 					<div *ngIf="isValid(model.cycleCount)"
 						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">

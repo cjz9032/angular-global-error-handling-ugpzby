@@ -27,6 +27,12 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	batteryConditions: BatteryConditionModel[];
 	batteryChargeStatus = BatteryChargeStatus;
 
+	remainingHours: number[] = [];
+	remainingMinutes: number[] = [];
+
+	hourText: string;
+	minutesText: string;
+
 	constructor(
 		public shellServices: VantageShellService,
 		public commonService: CommonService,
@@ -76,6 +82,18 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 							/// if chargeStatus is 'No activity' | 'Error' | 'Not installed'
 							// remaining time will not be displayed
 							response.detail[i].remainingTime = undefined;
+						} else {
+							const totalMin = response.detail[i].remainingTime;
+							this.remainingHours.push(Math.trunc(totalMin / 60));
+							this.remainingMinutes.push(Math.trunc(totalMin % 60));
+
+							this.hourText = this.remainingHours[i] > 0 && this.remainingHours[i] < 2 ?
+								'device.deviceSettings.batteryGauge.hour' :
+								'device.deviceSettings.batteryGauge.hours';
+
+							this.minutesText = this.remainingMinutes[i] > 0 && this.remainingMinutes[i] < 2 ?
+								'device.deviceSettings.batteryGauge.minute' :
+								'device.deviceSettings.batteryGauge.minutes';
 						}
 						if (response.indicator.timeText === 'timeCompletion') {
 							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.chargeCompletionTime';
