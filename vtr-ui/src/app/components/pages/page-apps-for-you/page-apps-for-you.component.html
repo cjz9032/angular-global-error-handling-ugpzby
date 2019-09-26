@@ -7,7 +7,20 @@
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
-			<div class="container-fluid">
+			<div class="container-fluid" 
+				*ngIf="!isOnline">
+				<div class="row offline-content">
+					<div class="col col-12">
+						<vtr-widget-offline-info [isButtonVisible]="false"
+							[isSubtitleVisible]="false"
+							[title]="'dashboard.offlineInfo.title' | translate"
+							[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+							[buttonText]="'dashboard.offlineInfo.buttonText' | translate">
+						</vtr-widget-offline-info>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" *ngIf="isOnline">
 				<div class="apps-header row no-gutters" *ngIf="appDetails">
 					<div class="col-2 logo-con" *ngIf="appDetails.image">
 						<img class="img-logo"
@@ -115,7 +128,6 @@
 				<div class="spinner-content app-spinner loading-content" *ngIf="!appDetails && isOnline">
 					<div class="spinner-border text-primary progress-spinner" role="status"></div>
 				</div>
-
 			</div>
 		</div>
 	</div>
