@@ -9,7 +9,10 @@
 	</div>
 	<div *ngIf="!showLoader"
 		class="checkbox"
-		[ngClass]="{'switch-disable': isSwitchDisable}">
+		[ngClass]="{'switch-disable': isSwitchDisable}"
+		(keydown.enter)="onChange($event)"
+		[attr.aria-label]="ariaLabel"
+		role="checkbox">
 		<label class="pb-1 pl-1"
 			(click)="sendChangeEvent(toggle)"
 			(keydown.enter)="sendChangeEvent(toggle)"
@@ -31,18 +34,22 @@
 				[disabled]="disabled"
 				[readonly]="readonly"
 				[attr.aria-label]="ariaLabel"
-				(change)="onChange($event)" />
+				(change)="onChange($event)"
+				(keydown.enter)="onChange($event)" />
 			<span class="switch {{ size }}"
 				id="{{onOffSwitchId+'_sizeStopProp'}}"
-				(click)="stopPropagation($event);">
+				(click)="stopPropagation($event);"
+				(keydown.enter)="stopPropagation($event);">
 				<small></small> </span>
 			<div *ngIf="!value"
 				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
+				(keydown.enter)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
 				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
+				(keydown.enter)="stopPropagation($event);"
 				class="switch-label on-label">{{'common.ui.on' | translate}}</div>
 		</label>
 	</div>
