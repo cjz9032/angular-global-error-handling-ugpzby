@@ -1,0 +1,67 @@
+@import "../../../../../../app.theme.scss";
+
+.vtr-battery-gauge-reset {
+	.battery-text {
+		color: $main_darker;
+		font-size: 1.5rem;
+		font-weight: $weight_bold;
+		text-transform: uppercase;
+		margin: 1rem 0 0.5rem 0;
+	}
+	.no-max-width {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.caption {
+				max-width: none;
+			}
+		}
+	}
+
+	.battery-gauge-info {
+		font-size: $body;
+		max-width: 75rem;
+		background-color: $shade_lightest;
+		border: 1px solid $shade_lighter;
+
+		.label-text {
+			color: $shade_light;
+			margin: 0.2rem 0;
+		}
+		.label-value {
+			color: $main_dark;
+			margin: 0.2rem 0;
+		}
+		.battery-gauge-btn {
+			margin: 1.5rem 0;
+			padding-left: 1.5rem;
+			::ng-deep .vtr-ui-button {
+				.button-box {
+					.button {
+						padding: 0 15rem;
+					}
+				}
+			}
+		}
+
+		.stop-btn {
+			::ng-deep .vtr-ui-button {
+				.button-box {
+					.button {
+						background: linear-gradient(90deg, #ed4e04 0%, #f17f14 100%);
+						color: #fff;
+					}
+				}
+			}
+		}
+		.disabled-btn {
+			pointer-events: none;
+			::ng-deep .vtr-ui-button {
+				.button-box {
+					.button {
+						background: linear-gradient(90deg, #a6a6a6 0%, #f2f2f2 100%);
+						color: #595959;
+					}
+				}
+			}
+		}
+	}
+}

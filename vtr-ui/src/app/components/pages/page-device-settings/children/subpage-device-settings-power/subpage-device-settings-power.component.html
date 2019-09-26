@@ -8,11 +8,11 @@
 				[textId]="'myDevice-settings-power'"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
+	<!-- <vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
 	<vtr-smart-standby *ngIf="!isDesktopMachine"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
-	</vtr-smart-standby>
+	</vtr-smart-standby> -->
 	<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable"
 		class="row py-5"
 		id="battery">
@@ -23,7 +23,7 @@
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-batterySettings'">
 				<ul class="list-group list-group-flush">
-					<li class=""
+					<!-- <li class=""
 						*ngIf="showAirplanePowerModeSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
@@ -60,9 +60,9 @@
 								</div>
 							</div>
 						</vtr-ui-row-switch>
-					</li>
+					</li> -->
 
-					<!-- MVP 2 feature -->
+
 					<li class=""
 						*ngIf="machineType == 1 && isChargeThresholdAvailable">
 						<vtr-ui-row-switch
@@ -118,8 +118,12 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-
 					<li class=""
+						*ngIf="true">
+						<vtr-battery-gauge-reset></vtr-battery-gauge-reset>
+					</li>
+
+					<!-- <li class=""
 						*ngIf="expressChargingStatus.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
@@ -152,7 +156,7 @@
 							[switchId]="'ds-power-battery-conservationMode'"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
-					</li>
+					</li> -->
 
 				</ul>
 			</vtr-container-collapsible>
@@ -161,7 +165,7 @@
 
 
 
-	<div class="row py-5"
+	<!-- <div class="row py-5"
 		id="power"
 		*ngIf="!isDesktopMachine && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
 		<div class="col-10 mx-auto ">
@@ -227,7 +231,7 @@
 											[(ngModel)]="usbChargingCheckboxFlag"
 											(ngModelChange)='onUsbChargingStatusChange()'
 											checked="" />
-											<span class="checkmark"></span>
+										<span class="checkmark"></span>
 										<label for="cb-always-on-usb"
 											tabindex="0">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
@@ -307,6 +311,6 @@
 
 			</vtr-container-collapsible>
 		</div>
-	</div>
+	</div> -->
 
 </div>

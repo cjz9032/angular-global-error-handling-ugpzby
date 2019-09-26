@@ -220,24 +220,24 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 
-		this.getFlipToBootCapability();
+		// this.getFlipToBootCapability();
 
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
 		}
-		this.getBatteryAndPowerSettings(this.machineType);
-		this.startMonitor();
-		this.getVantageToolBarCapability();
+		// this.getBatteryAndPowerSettings(this.machineType);
+		// this.startMonitor();
+		// this.getVantageToolBarCapability();
 
-		this.getEnergyStarCapability();
+		// this.getEnergyStarCapability();
 
-		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
+		// this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
-		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.getBatteryCharge(notification);
-		});
+		// this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+		// 	this.getBatteryCharge(notification);
+		// });
 
 	}
 
@@ -375,9 +375,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.thresholdWarningSubscription.unsubscribe();
-		this.stopMonitor();
-		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
+		// this.thresholdWarningSubscription.unsubscribe();
+		// this.stopMonitor();
+		// this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
 	}
 
