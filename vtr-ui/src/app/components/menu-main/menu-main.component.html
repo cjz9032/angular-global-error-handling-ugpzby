@@ -62,7 +62,8 @@
 			class="navbar-toggler"
 			tabindex="1"
 			type="button"
-			(click)="toggleMenu($event)">
+			(click)="toggleMenu($event)"
+			(keydown.enter)="toggleMenu($event)">
 			<span class="navbar-toggler-icon">
 				<fa-icon [icon]="['fas', 'bars']"></fa-icon>
 			</span>
@@ -107,12 +108,14 @@
 								class="beta">Beta</span>
 						</a>
 					</li>
-					<li *ngIf="item.subitems.length>0
+					<li ngbDropdown
+						*ngIf="item.subitems.length>0
 						&&isCommomItem(item)
 						&&showItem(item)"
 						class="nav-item dropdown"
 						[ngClass]="{'active': isParentActive(item)}">
-						<a class="nav-link dropdown-toggle {{item.id}}"
+						<a ngbDropdownToggle
+							class="nav-link dropdown-toggle {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
 							vtrMetrics
 							tabindex="1"
@@ -123,11 +126,11 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
-							id="navbarDropdown"
 							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
+							attr.aria-haspopup="true"
+							attr.aria-expanded="false"
 							(click)="onMenuItemClick(item)"
+							(keydown.enter)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon [icon]="item.icon"
@@ -137,8 +140,9 @@
 							<span *ngIf="item.beta"
 								class="beta">Beta</span>
 						</a>
-						<div class="dropdown-menu"
-							aria-labelledby="navbarDropdown">
+						<div ngbDropdownMenu
+							class="dropdown-menu"
+							aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
@@ -156,7 +160,8 @@
 									target="_blank"
 									rel="noopener"
 									href="javascript:void(0)"
-									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
+									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
+									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 									vtrMetrics
 									tabindex="1"
@@ -169,7 +174,8 @@
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
 									routerLink="{{subitem.path}}"
-									(click)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
+									(click)="onMenuItemClick(subitem)"
+									(keydown.enter)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink  && subitem.path!=='support'"
 									vtrMetrics
 									tabindex="1"
@@ -182,7 +188,8 @@
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
 									routerLink="/{{item.path}}/{{subitem.path}}"
-									(click)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
+									(click)="onMenuItemClick(subitem)"
+									(keydown.enter)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
 							</span>
 
 						</div>
@@ -361,5 +368,6 @@
 		*ngIf="showSearchBox">
 		<vtr-search-dropdown></vtr-search-dropdown>
 	</div>
-	<vtr-search-tips [featureDesc]="searchTips" *ngIf="!showSearchBox && searchTips"></vtr-search-tips>
+	<vtr-search-tips [featureDesc]="searchTips"
+		*ngIf="!showSearchBox && searchTips"></vtr-search-tips>
 </div>
