@@ -118,6 +118,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.setIntelligentScreen();
 			this.initDataFromCache();
 			this.initSmartAssist(true);
+			this.getHPDLeaveSensitivityVisibilityStatus();
 		}
 	}
 
@@ -203,14 +204,12 @@ export class PageSmartAssistComponent implements OnInit {
 			this.initZeroTouchLogin();
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
-			this.getHPDLeaveSensitivityVisibilityStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
 
 				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 				this.initZeroTouchLock();
-				this.getHPDLeaveSensitivityVisibilityStatus();
 				this.initZeroTouchLogin();
 			}
 			if (this.smartAssistCapability.isIntelligentMediaSupported && isFirstTimeLoad) {
