@@ -38,19 +38,19 @@ export class UserDefinedKeyComponent implements OnInit {
 	) {
 		this.userDefinedKeyOptions = [
 			{
-				title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1'),
+				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option1',
 				value: 1,
 				path: '1',
 				actionType: ''
 			},
 			{
-				title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2'),
+				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option2',
 				value: 2,
 				path: '2',
 				actionType: INPUT_TEXT.str
 			},
 			{
-				title: this.translateService.instant('device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3'),
+				title: 'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.options.option3',
 				value: 3,
 				path: '3',
 				actionType: OPEN_WEB.str
@@ -149,7 +149,7 @@ export class UserDefinedKeyComponent implements OnInit {
 		console.log('submit called');
 	}
 	public onKeydown(event) {
-		if ((event.ctrlKey && event.key === 'Enter') ||  event.key === 'Enter') {
+		if ((event.ctrlKey && event.key === 'Enter') || event.key === 'Enter') {
 			event.preventDefault();
 		}
 	}
