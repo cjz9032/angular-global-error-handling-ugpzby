@@ -112,6 +112,7 @@
 						*ngIf="item.subitems.length>0
 						&&isCommomItem(item)
 						&&showItem(item)"
+						role="menu"
 						class="nav-item dropdown"
 						[ngClass]="{'active': isParentActive(item)}">
 						<a ngbDropdownToggle
@@ -131,6 +132,7 @@
 							attr.aria-expanded="false"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="onMenuItemClick(item)"
+							role="menuitem"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon [icon]="item.icon"
@@ -161,7 +163,8 @@
 									rel="noopener"
 									href="javascript:void(0)"
 									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
-									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
+									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
+									role="menuitem">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 									vtrMetrics
 									tabindex="1"
@@ -175,7 +178,8 @@
 									class="dropdown-item link"
 									routerLink="{{subitem.path}}"
 									(click)="onMenuItemClick(subitem)"
-									(keydown.enter)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
+									(keydown.enter)="onMenuItemClick(subitem)"
+									role="menuitem">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink  && subitem.path!=='support'"
 									vtrMetrics
 									tabindex="1"
@@ -189,7 +193,8 @@
 									class="dropdown-item link"
 									routerLink="/{{item.path}}/{{subitem.path}}"
 									(click)="onMenuItemClick(subitem)"
-									(keydown.enter)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
+									(keydown.enter)="onMenuItemClick(subitem)"
+									role="menuitem">{{subitem.label | translate}}</a>
 							</span>
 
 						</div>
