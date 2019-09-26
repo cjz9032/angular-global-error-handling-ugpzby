@@ -111,6 +111,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			} else {
 				this.metricsParent = 'AppsForYou';
 			}
+			this.route.snapshot.data.pageName = this.metricsParent;
 		});
 	}
 
