@@ -36,7 +36,7 @@
 						</div>
 						<div class="btn-box">
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALL"
-								[isDisabled]="isOnline === false"
+								[isDisabled]="!isOnline"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
 								metricsItem="btn.Install" [isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.install' | translate"></vtr-ui-button>
@@ -51,7 +51,7 @@
 								metricsItem="btn.Launch" [isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.launch' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.SEEMORE"
-								[isDisabled]="isOnline === false"
+								[isDisabled]="!isOnline"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
 								metricsItem="btn.SeeMore" [isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.seeMore' | translate"></vtr-ui-button>
