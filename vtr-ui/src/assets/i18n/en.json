@@ -244,7 +244,7 @@
 				"popupClear": "macrokey popup ok",
 				"popupCancel": "macrokey popup cancel",
 				"popupClose": "close",
-				"numbersSelectedNumpad":"selected macrokey numpad",
+				"numbersSelectedNumpad": "selected macrokey numpad",
 				"macrokeySettings1": {
 					"option1": "on",
 					"option2": "macro key settings enabled when gaming",
@@ -714,7 +714,7 @@
 				"condition": {
 					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
 					"Good": "<b>The battery is in good condition.</b>",
-					"Exhaustion": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery.",
+					"Exhaustion": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
