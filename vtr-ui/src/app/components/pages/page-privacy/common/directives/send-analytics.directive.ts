@@ -1,9 +1,13 @@
 import { Directive, ElementRef, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { GetParentForAnalyticsService } from '../services/get-parent-for-analytics.service';
 import { AnalyticsService, ItemTypes } from '../services/analytics/analytics.service';
+import { TimerService } from '../../../../../services/timer/timer.service';
 
 @Directive({
-	selector: '[vtrSendAnalytics]'
+	selector: '[vtrSendAnalytics]',
+	providers: [
+		TimerService
+	]
 })
 export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	private viewEvents = [ItemTypes.PageView, ItemTypes.ArticleView];
@@ -17,15 +21,11 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	@Input() metricsParent?: string; // ItemParent
 	@Input() customPageName?: string;
 
-	pageDuration: number;
-
-	private pageInitTime: number;
-	private pageDestroyTime: number;
-
 	constructor(
 		private el: ElementRef,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
 		private analyticsService: AnalyticsService,
+		private timerService: TimerService,
 	) {
 	}
 
@@ -48,18 +48,15 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		if (this.viewEvents.includes(this.metricsEvent as ItemTypes)) {
-			this.pageInitTime = +Date.now();
+			this.timerService.start();
 		}
 	}
 
 	ngOnDestroy() {
 		if (this.viewEvents.includes(this.metricsEvent as ItemTypes)) {
-			this.pageDestroyTime = +Date.now();
-			this.pageDuration = Math.round((this.pageDestroyTime - this.pageInitTime) / 1000);
-
 			const dataToSendOnPageView = {
 				PageContext: this.pageContext,
-				PageDuration: this.pageDuration,
+				PageDuration: this.timerService.stop(),
 				ItemParm: this.metricsParam,
 			};
 
