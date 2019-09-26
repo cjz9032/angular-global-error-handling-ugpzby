@@ -75,30 +75,10 @@ export class AppComponent implements OnInit, OnDestroy {
 		});
 
 
-		if (vantageShellService.isShellAvailable) {
-			this.beta = vantageShellService.getBetaUser();
-			this.beta.getBetaUser().then((result) => {
-				if (!result) {
-					if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-						this.commonService.isBetaUser().then((data) => {
-							if (data === 0 || data === 3) {
-								this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-								this.beta.setBetaUser();
-							}
-						});
-					} else {
-						this.beta.setBetaUser();
-					}
-				} else {
-					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-				}
-			});
-		}
+		this.initIsBeta();
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
-
-
 		document.addEventListener('visibilitychange', (e) => {
 			if (document.hidden) {
 				this.sendAppSuspendMetric();
@@ -107,36 +87,23 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		});
 
+		window.addEventListener(
+			'online',
+			(e) => {
+				this.notifyNetworkState();
+			},
+			false
+		);
 
-		this.addInternetListener();
-	}
+		window.addEventListener(
+			'offline',
+			(e) => {
+				this.notifyNetworkState();
+			},
+			false
+		);
 
-	private addInternetListener() {
-		const win: any = window;
-		if (win.NetworkListener) {
-			win.NetworkListener.onnetworkchanged = (state) => {
-				this.notifyNetworkState(state);
-			};
-
-			if ( win.NetworkListener.isInternetAccess()) {
-				this.notifyNetworkState(NetworkStatus.Available);
-			} else {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}
-		} else {
-			window.addEventListener('online', (e) => {
-				this.notifyNetworkState(NetworkStatus.Available);
-			}, false);
-			window.addEventListener('offline', (e) => {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}, false);
-
-			if (navigator.onLine) {
-				this.notifyNetworkState(NetworkStatus.Available);
-			} else {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}
-		}
+		this.notifyNetworkState();
 	}
 
 	private launchWelcomeModal() {
@@ -250,7 +217,39 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+		setTimeout(() => { document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+	}
+
+	private initIsBeta() {
+		if (this.vantageShellService.isShellAvailable) {
+			this.beta = this.vantageShellService.getBetaUser();
+			this.deviceService.getIsARM().then((status) => {
+				if (!status) {
+					this.beta.getBetaUser().then((result) => {
+						if (!result) {
+							if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+								this.commonService.isBetaUser().then((data) => {
+									if (data === 0 || data === 3) {
+										this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+										this.beta.setBetaUser();
+									}
+								});
+							} else {
+								this.beta.setBetaUser();
+							}
+						} else {
+							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+						}
+					});
+				} else if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+					this.commonService.isBetaUser().then((data) => {
+						if (data === 0 || data === 3) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+						}
+					});
+				}
+			});
+		}
 	}
 
 	ngOnInit() {
@@ -376,13 +375,12 @@ export class AppComponent implements OnInit, OnDestroy {
 		} catch (error) { }
 	}
 
-	private notifyNetworkState(state) {
-		if (state && state.toString() === NetworkStatus.Available) {
-			this.commonService.isOnline = true;
-			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: true });
+	private notifyNetworkState() {
+		this.commonService.isOnline = navigator.onLine;
+		if (navigator.onLine) {
+			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
 		} else {
-			this.commonService.isOnline = false;
-			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: false });
+			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
 		}
 	}
 
@@ -468,12 +466,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	// Defect fix VAN-2988
 	@HostListener('window:keydown', ['$event'])
-	disableCtrlACV($event: KeyboardEvent) {
+	disableCtrlA($event: KeyboardEvent) {
+
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 
 		if (
 			($event.ctrlKey || $event.metaKey) &&
-			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86) && !isPrivacyTab
+			($event.keyCode === 65) && !isPrivacyTab
 		) {
 			$event.stopPropagation();
 			$event.preventDefault();

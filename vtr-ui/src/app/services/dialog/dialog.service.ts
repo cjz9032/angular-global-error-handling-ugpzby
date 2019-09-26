@@ -171,7 +171,6 @@ export class DialogService {
 			this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false);
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
 				backdrop: 'static',
-				size: 'lg',
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
@@ -193,7 +192,6 @@ export class DialogService {
 
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
 				backdrop: 'static',
-				size: 'lg',
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});

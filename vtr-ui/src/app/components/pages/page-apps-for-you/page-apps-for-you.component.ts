@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-apps-for-you',
@@ -20,6 +21,7 @@ import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-y
 export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	title = '';
+	headerTitle = '';
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	backId = 'apps-for-you-page-btn-back';
@@ -29,12 +31,14 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	errorMessage: any;
 	installButtonStatus: number;
 	public appGuid: any;
+	metricsParent = '';
 
 	installButtonStatusEnum = {
 		INSTALL: 1,
 		INSTALLING: 2,
 		LAUNCH: 3,
-		SEEMORE: 4
+		SEEMORE: 4,
+		UNKNOWN: -1
 	};
 
 	statusEnum = {
@@ -43,46 +47,18 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		DOWNLOADING: 3,
 		DOWNLOAD_COMPLETE: 4,
 		INSTALLING: 5,
-		FAILED_INSTALL: -1,
+		FAILED_INSTALL: -1
 	};
 
-	mockScreenShots = [
-		{
-			id: 'apps-for-you-screenshot-1',
-			imageUrl: 'assets/images/apps-for-you/screenshot1(1).png',
-			position: 1,
-			isRepeat: false,
-			show: 'show',
-		},
-		{
-			id: 'apps-for-you-screenshot-2',
-			imageUrl: 'assets/images/apps-for-you/screenshot2[1].png',
-			position: 2,
-			isRepeat: false,
-			show: 'show',
-		},
-		{
-			id: 'apps-for-you-screenshot-3',
-			imageUrl: 'assets/images/apps-for-you/screenshot3-3.png',
-			position: 3,
-			isRepeat: false,
-			show: 'show',
-		},
-		{
-			id: 'apps-for-you-screenshot-4',
-			imageUrl: 'assets/images/apps-for-you/screenshot2[1].png',
-			position: 4,
-			isRepeat: false,
-			show: 'show',
-		},
-		// {
-		// 	id: 'apps-for-you-screenshot-5',
-		// 	imageUrl: 'assets/images/apps-for-you/screenshot3-3.png',
-		// 	position: 5,
-		// 	isRepeat: false,
-		// 	show: 'show',
-		// },
-	];
+	// mockScreenShots = [
+	// 	{
+	// 		id: 'apps-for-you-screenshot-1',
+	// 		imageUrl: 'assets/images/apps-for-you/screenshot1(1).png',
+	// 		position: 1,
+	// 		isRepeat: false,
+	// 		show: 'show',
+	// 	},
+	// ];
 	screenshotInterval: any;
 	showArrows = false;
 	arrowClickable = true;
@@ -94,29 +70,39 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		private shellService: VantageShellService,
 		public modalService: NgbModal,
 		private appsForYouService: AppsForYouService,
+		private translateService: TranslateService
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		this.route.params.subscribe((params) => {
 			this.appGuid = params.id;
 			this.appsForYouService.getAppDetails(this.appGuid);
+			if (this.appGuid === AppsForYouEnum.AppGuidLenovoMigrationAssistant) {
+				this.metricsParent = 'AppsForYou.LMA';
+				this.headerTitle = 'appsForYou.menuText.lenovoMigrationAssistant';
+			} else if (this.appGuid === AppsForYouEnum.AppGuidAdobeCreativeCloud) {
+				this.metricsParent = 'AppsForYou.Adobe';
+				this.headerTitle = 'appsForYou.menuText.adobeRedemption';
+			} else {
+				this.metricsParent = 'AppsForYou';
+			}
+			this.route.snapshot.data.pageName = this.metricsParent;
 		});
 	}
 
 	ngOnInit() {
 		this.errorMessage = '';
-		this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+		this.installButtonStatus = this.installButtonStatusEnum.UNKNOWN;
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		if (this.mockScreenShots.length > 3) {
-			this.showArrows = true;
-			this.startScreenshotAutoSwipe();
-		}
 	}
 
 	ngOnDestroy() {
 		clearInterval(this.screenshotInterval);
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	startScreenshotAutoSwipe() {
@@ -140,16 +126,16 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	swipeRightToLeft() {
 		if (!this.arrowClickable) { return false; }
 		this.arrowClickable = false;
-		const screenshotNumber = this.mockScreenShots.length;
-		const preScreenShotIndex = this.mockScreenShots.findIndex(m => m.position === 0);
+		const screenshotNumber = this.appDetails.screenshots.length;
+		const preScreenShotIndex = this.appDetails.screenshots.findIndex(m => m.position === 0);
 		if (preScreenShotIndex > -1) {
-			const temp = JSON.parse(JSON.stringify(this.mockScreenShots[preScreenShotIndex]));
-			this.mockScreenShots.splice(preScreenShotIndex, 1);
+			const temp = JSON.parse(JSON.stringify(this.appDetails.screenshots[preScreenShotIndex]));
+			this.appDetails.screenshots.splice(preScreenShotIndex, 1);
 			temp.position = screenshotNumber;
-			this.mockScreenShots.push(temp);
+			this.appDetails.screenshots.push(temp);
 		}
 		setTimeout(() => {
-			this.mockScreenShots.forEach(ss => {
+			this.appDetails.screenshots.forEach(ss => {
 				ss.position--;
 			});
 			this.arrowClickable = true;
@@ -158,16 +144,16 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	swipeLeftToRight() {
 		if (!this.arrowClickable) { return false; }
 		this.arrowClickable = false;
-		const screenshotNumber = this.mockScreenShots.length;
-		const lastScreenShotIndex = this.mockScreenShots.findIndex(m => m.position === screenshotNumber);
+		const screenshotNumber = this.appDetails.screenshots.length;
+		const lastScreenShotIndex = this.appDetails.screenshots.findIndex(m => m.position === screenshotNumber);
 		if (lastScreenShotIndex > -1) {
-			const temp = JSON.parse(JSON.stringify(this.mockScreenShots[lastScreenShotIndex]));
-			this.mockScreenShots.splice(lastScreenShotIndex, 1);
+			const temp = JSON.parse(JSON.stringify(this.appDetails.screenshots[lastScreenShotIndex]));
+			this.appDetails.screenshots.splice(lastScreenShotIndex, 1);
 			temp.position = 0;
-			this.mockScreenShots.push(temp);
+			this.appDetails.screenshots.push(temp);
 		}
 		const timeout = setTimeout(() => {
-			this.mockScreenShots.forEach(ss => {
+			this.appDetails.screenshots.forEach(ss => {
 				ss.position++;
 			});
 			this.arrowClickable = true;
@@ -198,14 +184,14 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 						this.appDetails.showStatus = this.statusEnum.INSTALLED;
 						this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
 					} else if (notification.payload === 'NotFinished') {
-						this.errorMessage = 'Installation failed. Please try again.';
+						this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
 						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					} else if (notification.payload === 'InstallerRunning') {
 						this.appDetails.showStatus = this.statusEnum.INSTALLING;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 					} else {
-						this.errorMessage = 'Installation failed. Please try again.';
+						this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
 						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					}
@@ -216,31 +202,44 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	async initAppDetails(appDetails: AppDetails) {
+	initAppDetails(appDetails: AppDetails) {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
 		this.title = appDetails.title;
-		if (appDetails.installtype.title === AppsForYouEnum.AppTypeWeb) {
+		if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1) {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
-		} else if (appDetails.installtype.title === AppsForYouEnum.AppTypeDesktop) {
-			const installed = await this.systemUpdateBridge.getAppStatus(this.appGuid);
-			if (installed === 'InstalledBefore') {
+		} else if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeDesktop) !== -1
+			|| appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1) {
+			this.updateInstallButtonStatus();
+		} else {
+			// TODO: Should be Windows Store App
+		}
+		if (this.appDetails.screenshots.length > 3) {
+			this.showArrows = true;
+			this.startScreenshotAutoSwipe();
+		}
+	}
+
+	updateInstallButtonStatus() {
+		this.systemUpdateBridge.getAppStatus(this.appGuid).then(status => {
+			if (status === 'InstallDone' || status === 'InstalledBefore') {
 				this.appDetails.showStatus = this.statusEnum.INSTALLED;
 				this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+			} else if (status === 'InstallerRunning') {
+				this.appDetails.showStatus = this.statusEnum.INSTALLING;
+				this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 			} else {
 				this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 				this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 			}
-		} else {
-			// TODO: Should be Windows Store App
-		}
+		});
 	}
 
 	async clickInstallButton() {
 		switch (this.installButtonStatus) {
 			case this.installButtonStatusEnum.SEEMORE:
-				this.appsForYouService.openSeeMoreUrl();
+				this.appsForYouService.openSeeMoreUrl(this.appGuid, this.appDetails.downloadlink);
 				break;
 			case this.installButtonStatusEnum.LAUNCH:
 				const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
@@ -263,20 +262,21 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	openScreenshotModal(imgUrl: string) {
-		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalAppsForYouScreenshotComponent, {
+		const screenshotModal: NgbModalRef = this.modalService.open(ModalAppsForYouScreenshotComponent, {
 			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'apps-for-you-dialog',
 			keyboard: false,
 			beforeDismiss: () => {
-				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-					modernPreloadModal.componentInstance.onBeforeDismiss();
+				if (screenshotModal.componentInstance.onBeforeDismiss) {
+					screenshotModal.componentInstance.onBeforeDismiss();
 				}
 				return true;
 			}
 		});
-		modernPreloadModal.componentInstance.image = imgUrl;
+		screenshotModal.componentInstance.image = imgUrl;
+		setTimeout(() => { document.getElementById('apps-for-you-screenshot-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	copyObjectArray(obj: any) {

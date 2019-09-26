@@ -3,7 +3,7 @@
 		<fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
 	</div>
 	<ui-popover-apps *ngIf="!loading" id="close" tabindex="1"
-		attr.aria-label="{{'gaming.autoClose.modalAddApps.title' | translate }} window">
+		attr.aria-label="{{ ariaLabel | translate }}">
 		<div class="modal-body vtr-modal-add-apps">
 			<div class="modal-body">
 				<div class="top-header">
@@ -61,7 +61,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="no-running-app" *ngIf="loadingNoApps && !loading">
+						<div class="no-running-app" *ngIf="loadingNoApps && !loading" role="dialog">
 							<div class="image-content d-flex justify-content-center">
 								<svg width="500px" height="300px" viewBox="0 0 500 300" version="1.1"
 									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
