@@ -235,6 +235,21 @@
 			},
 			"recording": {
 				"title": "Recording Macro Key For"
+			},
+			"narrator": {
+				"backDashboard": "Back to dashboard",
+				"macrokeyNumpad": "macrokey numpad",
+				"clearText": "macrokey clear records",
+				"popupOk": "macrokey popup clear",
+				"popupClear": "macrokey popup ok",
+				"popupCancel": "macrokey popup cancel",
+				"popupClose": "close",
+				"numbersSelectedNumpad":"selected macrokey numpad",
+				"macrokeySettings1": {
+					"option1": "on",
+					"option2": "macro key settings enabled when gaming",
+					"option3": "macro key settings off"
+				}
 			}
 		},
 		"lightingProfile": {
@@ -725,6 +740,7 @@
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
+					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
@@ -734,7 +750,7 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery."
+					"PermanentError": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one."
 				}
 			},
 			"power": {
@@ -1250,11 +1266,15 @@
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
 					}
 				},
+				"sensitivityAdjusting": {
+					"title": "SENSITIVITY ADJUSTING"
+				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
 					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
+						"medium": "Medium",
 						"far": "Far"
 					},
 					"tooltipcontent": {
@@ -1275,7 +1295,8 @@
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
 					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Login will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
-					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
+					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},
 				"WindowsLink": {
 					"goToWindowsHello": "Go to Windows Hello Settings",
@@ -1347,7 +1368,7 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as 5KPlayer, and etc. support this feature."
 			},
 			"voice": {
 				"title": "Voice",

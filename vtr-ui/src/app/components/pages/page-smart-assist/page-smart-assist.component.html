@@ -201,6 +201,28 @@
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
+											<h3 class="sensitivityTitle">{{'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate}}</h3>
+											<vtr-ui-range-slider [rangeSliderId]="'thinkpadDistanceSensitivity'"
+												[manualRefresh]="manualRefresh"
+												[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+												[minValue]="1"
+												[mediumValueLegend]= "'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
+												[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+												[maxValue]="3" [value]="">
+											</vtr-ui-range-slider>					
+											<div class="pt-3">
+											<div class="feature-note p-4">
+												<div class="row blur">					
+													<div class="col">
+														<p id="smart-assist-intelligent-security-note"
+															attr.aria-label="smart-assist-intelligent-security-note">
+															{{'device.smartAssist.intelligentSecurity.note.description7' | translate}}										
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
