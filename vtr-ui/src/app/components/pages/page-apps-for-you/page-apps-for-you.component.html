@@ -29,7 +29,6 @@
 					</div>
 					<div class="col-4 app-name">
 						<div class="app-title">{{ appDetails.title }}</div>
-						<div class="app-price">Free</div>
 					</div>
 					<div class="col-6 btn-content" [ngSwitch]="installButtonStatus">
 						<div class="spinner-content app-spinner" *ngIf="appDetails.showStatus == statusEnum.INSTALLING">
