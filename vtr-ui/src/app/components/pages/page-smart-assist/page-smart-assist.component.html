@@ -44,7 +44,7 @@
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom padding-right-07"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
-											[class.disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
+											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
 											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
@@ -106,8 +106,7 @@
 										</vtr-ui-row-switch>
 									</li>
 									<li class="pt-3 pl-5 no-border-bottom margin-right-05"
-										[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
-										[class.disabled]="!intelligentSecurity.isHPDEnabled">
+										[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled">
 										<vtr-ui-row-switch [switchId]="'thinkpadZeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -115,12 +114,12 @@
 											[leftIcon]="['icomoon', 'icomoon-zero-touch-login']"
 											[showChildContent]="true"
 											[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginEnabled"
-											(toggleOnOff)="onZeroTouchLoginStatusToggle($event)" [theme]="'white'"
-											[disabled]="!intelligentSecurity.isHPDEnabled"
-											[rightIcon]="['far', 'question-circle']"
-											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
+											(toggleOnOff)="onZeroTouchLoginStatusToggle($event)"
+											[theme]="'white'"
+											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
-										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom">
+										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
+											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
 											<vtr-ui-row-switch [switchId]="'thinkpadDistanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false" [showChildContent]="true"
@@ -207,7 +206,7 @@
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
-											[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled"
+											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled"
 											[class.col-pad-margin]="isThinkPad">
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate"

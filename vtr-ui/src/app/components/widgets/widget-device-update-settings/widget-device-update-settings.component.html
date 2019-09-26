@@ -24,8 +24,8 @@
 													*ngIf="item.isCollapsible" (change)="optionChanged($event,item, in)"
 													(showDropDown)="showDropDown.emit(item)">
 												</vtr-ui-gaming-collapsible-container>
-												<vtr-ui-gaming-driver-popup *ngIf="item.isCollapsible"
-													 [showMePartially]="item.isDriverPopup"
+												<vtr-ui-gaming-driver-popup *ngIf="item.isCollapsible && item.isDriverPopup"
+													 [showMePartially]="item.isDriverPopup" [descriptionLabel]="item.ariaLabel"
 													[popupText]="item.driverPopupText" (driverpopval)="onClosed(item, in)">
 												</vtr-ui-gaming-driver-popup>
 												<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel + 'gear icon'"
@@ -45,10 +45,12 @@
 														[notChange]="item.readonly">
 													</vtr-ui-toggle>
 	
-													<vtr-ui-popover [item]="item" [showMePartially]="item.isPopup"
-														(closeClicked)="onClosed($event, in)">
+													<vtr-ui-popover [item]="item" [showMePartially]="item.isPopup" *ngIf="item.isPopup"
+													[descriptionLabel]="item.ariaLabel"
+														(closeClicked)="onClosed($event, in)" >
 													</vtr-ui-popover>
-													<vtr-ui-gaming-driver-popup [showMePartially]="item.isDriverPopup"
+													<vtr-ui-gaming-driver-popup [showMePartially]="item.isDriverPopup" *ngIf="item.isDriverPopup"
+														[descriptionLabel]="item.ariaLabel"
 														[popupText]="item.driverPopupText"
 														(driverpopval)="onClosed(item, in)">
 													</vtr-ui-gaming-driver-popup>

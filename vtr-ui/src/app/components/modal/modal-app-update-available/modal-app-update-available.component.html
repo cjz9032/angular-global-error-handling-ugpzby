@@ -6,7 +6,7 @@
 				class="icon-download"></fa-icon>
 		</div>
 		<div class="col-auto align-self-center description">
-			Hey! A newer version of Lenovo Vantage available.
+			{{ 'common.app-update.message' | translate}}
 		</div>
 	</div>
 
@@ -15,14 +15,14 @@
 			<button type="button"
 				class="btn btn-default modal-button"
 				(click)="onUpdateClick()">
-				UPDATE
+				{{ 'dashboard.feedback.form.yes' | translate}}
 			</button>
 		</div>
 		<div class="ml-0 mr-4 pl-0">
 			<div role="button"
 				class="btn btn-default modal-button-cancel"
 				(click)="onCancelClick()">
-				CANCEL
+				{{ 'systemUpdates.popup.cancelButton' | translate}}
 			</div>
 		</div>
 	</div>

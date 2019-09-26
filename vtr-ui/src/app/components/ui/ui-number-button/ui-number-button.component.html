@@ -1,7 +1,7 @@
 <div class="numbers-holder" [ngClass]="{'recording': recordingStatus}">
 	<div class="numpad-btn-wrapper">
 		<div class="numpad-btn" *ngIf="isNumberpad" (click)="isShowingPopup = !isShowingPopup" tabindex="1"
-			(keyup.enter)="isShowingPopup = !isShowingPopup" role="button" attr.aria-label="{{ 'gaming.macroKey.narrator.text3' | translate }}">
+			(keyup.enter)="isShowingPopup = !isShowingPopup" role="button" attr.aria-label="{{ 'gaming.macroKey.narrator.macrokeyNumpad' | translate }}">
 			<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink">
 				<defs>
@@ -29,8 +29,9 @@
 				id="macrokey_numpad-{{number.key}}" (click)="numberClicked(number)" vtrMetrics
 				[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick"
 				[metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}"
-				(keyup.enter)="numberClicked(number)" tabindex="1" role="button"
-				attr.aria-label="{{selectedNumber && number.key === selectedNumber.key ? ('selected macrokey numpad '+ number.key | translate): ('macrokey numpad '+number.key | translate)}}">
+				(keyup.enter)="numberClicked(number)" tabindex="1"
+				[attr.aria-label]="(selectedNumber && number.key === selectedNumber.key) ? 'selected macrokey numpad '+ number.key : 'macrokey numpad '+number.key"
+				role="button">
 				<div>
 					{{ number.key | translate }}
 				</div>

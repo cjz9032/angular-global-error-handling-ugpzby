@@ -6,14 +6,19 @@ import { MockWindows } from '../../utils/moked-api';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
-
-export interface WidgetCounters {
-	breachedAccountsScan: null | number;
-	websiteTrackersScan: null | number;
-	nonPrivatePasswordsScan: null | number;
+export enum ScanFeatures {
+	breachedAccountsScan = 'breachedAccountsScan',
+	websiteTrackersScan = 'websiteTrackersScan',
+	nonPrivatePasswordsScan = 'nonPrivatePasswordsScan',
 }
 
-function getCountOfIssues(status: FeaturesStatuses, issuesCount) {
+export interface WidgetCounters {
+	[ScanFeatures.breachedAccountsScan]: null | number;
+	[ScanFeatures.websiteTrackersScan]: null | number;
+	[ScanFeatures.nonPrivatePasswordsScan]: null | number;
+}
+
+function getCountOfIssues(status: FeaturesStatuses, issuesCount: number): number | null {
 	switch (status) {
 		case FeaturesStatuses.exist:
 			return issuesCount;
@@ -33,9 +38,9 @@ export class WidgetDataService {
 	windows = window['Windows'] || MockWindows;
 
 	private widgetCounters: WidgetCounters = {
-		breachedAccountsScan: null,
-		websiteTrackersScan: null,
-		nonPrivatePasswordsScan: null,
+		[ScanFeatures.breachedAccountsScan]: null,
+		[ScanFeatures.websiteTrackersScan]: null,
+		[ScanFeatures.nonPrivatePasswordsScan]: null,
 	};
 
 	constructor(
@@ -50,19 +55,19 @@ export class WidgetDataService {
 			map((issueCount) => getCountOfIssues(this.userDataGetStateService.websiteTrackersResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
-			this.updateWidgetCounters({websiteTrackersScan: count});
+			this.updateWidgetCounters({[ScanFeatures.websiteTrackersScan]: count});
 		});
 		this.countNumberOfIssuesService.breachedAccountsCount.pipe(
 			map((issueCount) => getCountOfIssues(this.userDataGetStateService.breachedAccountsResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
-			this.updateWidgetCounters({breachedAccountsScan: count});
+			this.updateWidgetCounters({[ScanFeatures.breachedAccountsScan]: count});
 		});
 		this.countNumberOfIssuesService.nonPrivatePasswordCount.pipe(
 			map((issueCount) => getCountOfIssues(this.userDataGetStateService.nonPrivatePasswordResult, issueCount)),
 			distinctUntilChanged()
 		).subscribe((count) => {
-			this.updateWidgetCounters({nonPrivatePasswordsScan: count});
+			this.updateWidgetCounters({[ScanFeatures.nonPrivatePasswordsScan]: count});
 		});
 	}
 

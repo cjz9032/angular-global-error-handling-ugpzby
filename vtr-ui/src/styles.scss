@@ -514,8 +514,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 
 	.modal-content {
-		background: none;
-		padding: 0;
+		border-radius: 1rem;
+		background: $light;
+		padding: 3rem 0 0 4rem;
+		overflow: hidden;
 	}
 }
 
@@ -824,8 +826,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 
 .Welcome-container-Modal {
-	.modal-content {
-		border-radius: $border_radius;
+	.modal-dialog {
+		max-width: 600px;
+		.modal-content {
+			border-radius: $border_radius;
+		}
 	}
 }
 
@@ -871,5 +876,5 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 button:focus, .button:focus {
 	outline: 0;
-	box-shadow: 0 0 0 0.4rem rgba(38,143,255,.5) !important;
+	box-shadow: 0 0 0 0.4rem rgba(38,143,255,.5);
 }

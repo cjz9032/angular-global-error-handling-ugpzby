@@ -47,6 +47,10 @@
 			overflow: hidden;
 			font-weight: $weight_light;
 
+			&:hover {
+				text-decoration: underline;
+			}
+
 			@media #{$mediaquery_10} {
 				font-size: 2rem;
 			}
@@ -98,6 +102,12 @@
 			fa-icon {
 				color: $main;
 				margin-left: 1rem;
+			}
+
+			&:hover {
+				.link-label {
+					border-bottom: none;
+				}
 			}
 		}
 	}
