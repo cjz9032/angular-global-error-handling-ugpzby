@@ -19,6 +19,7 @@ import * as metricsConst from 'src/app/enums/metrics.enum';
 @Injectable({
 	providedIn: 'root'
 })
+// As LenovoSystemUpdatePlugin not support S-Mode, all System Update feature are not supported in S-Mode.
 export class SystemUpdateService {
 
 	constructor(
@@ -155,11 +156,21 @@ export class SystemUpdateService {
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
 				}
 			}).catch((error) => {
+				this.percentCompleted = 0;
 				this.metricHelper.sendSystemUpdateMetric(
 					0,
 					'',
 					error.message,
 					MetricHelper.timeSpan(new Date(), timeStartSearch));
+				if (error &&
+					((error.description && error.description.includes('errorcode: 606'))
+					|| (error.errorcode && error.errorcode === 606))) {
+					this.getScheduleUpdateStatus(true);
+					this.isImcErrorOrEmptyResponse = true;
+				} else {
+					const payload = {status: 1 };
+					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+				}
 			});
 		}
 		return undefined;
@@ -292,6 +303,7 @@ export class SystemUpdateService {
 		}
 	}
 
+	// Please Notice that this function doesn't support S-Mode
 	public restartWindows() {
 		if (this.systemUpdateBridge) {
 			this.commonService.sendNotification(UpdateProgress.WindowsRebootRequested);

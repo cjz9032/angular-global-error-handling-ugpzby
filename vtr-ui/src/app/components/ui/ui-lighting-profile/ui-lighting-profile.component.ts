@@ -321,7 +321,8 @@ export class UiLightingProfileComponent implements OnInit {
 			}
 		}
 		if (LocalStorageKey.LightingProfileById !== undefined) {
-			let res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+			const res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+			this.getLightingBrightness();
 			this.getLightingProfileByIdFromcache(res);
 			this.getGamingLightingCapabilities();
 		}
