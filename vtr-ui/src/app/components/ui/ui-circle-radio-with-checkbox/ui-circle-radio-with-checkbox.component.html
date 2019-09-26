@@ -30,11 +30,10 @@
 			</fa-layers>
 
 		</label>
-		<div
+		<div tabindex="1"
 			[ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
 			id="{{textId}}-{{value}}-label"
 			attr.aria-label="{{textId}}-{{value}}-label"
-
-		>{{label | capitalizeFirst}}</div>
+			(keydown.enter)="onChange($event)">{{label | capitalizeFirst}}</div>
 	</div>
 </div>
