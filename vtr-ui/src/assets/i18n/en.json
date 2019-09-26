@@ -244,6 +244,7 @@
 				"popupClear": "macrokey popup ok",
 				"popupCancel": "macrokey popup cancel",
 				"popupClose": "close",
+				"optionSelected": "selected",
 				"numbersSelectedNumpad":"selected macrokey numpad",
 				"macrokeySettings1": {
 					"option1": "on",
