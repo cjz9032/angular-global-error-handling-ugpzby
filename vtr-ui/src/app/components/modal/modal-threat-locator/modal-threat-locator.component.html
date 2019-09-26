@@ -1,15 +1,4 @@
-<div class="modal-body vtr-modal-threat-locator" [ngClass]="{'connection-error-modal': !online}">
-	<div class="row justify-content-end">
-		<div class="btn-close">
-			<button id="sa-ws-btn-locatorclose"
-				type="button"
-				class="close"
-				aria-hidden="true"
-				(click)="closeModal()">
-				<fa-icon [icon]="['fas', 'times']"></fa-icon>
-			</button>
-		</div>
-	</div>
+<div class="modal-body vtr-modal-threat-locator" id="modal-threat-locator" [ngClass]="{'connection-error-modal': !online}">
 	<h1>Threat locator</h1>
 	<div class="iframe-container">
 		<div *ngIf="!online" class="disabled-network p-5">
@@ -22,4 +11,15 @@
 			scrolling="no"
 			frameborder="0"></iframe>
 	</div>
+	<a href="javascript:;"
+		role="button"
+		class="close-btn"
+		aria-hidden="true"
+		vtrMetrics
+		metricsItem="ThreatLocatorDialogCloseButton"
+		metricsEvent="FeatureClick"
+		metricsParent="Wifi Security"
+		(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
+	</a>
 </div>

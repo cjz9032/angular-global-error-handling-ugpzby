@@ -13,11 +13,13 @@
 			[label]="'security.antivirus.mcafee.launch' | translate"
 			[title]="'security.antivirus.mcafee.launch' | translate" [upperCaseLabel]="false" *ngIf="install"
 			[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
-		<a *ngIf="!install" [ngClass]="{'unclickable': !isOnline}" href="{{common.urlGetMcAfee}}" target="_blank">
-			<vtr-ui-button metricsEvent="FeatureClick" metricsItem="getMcafee"
-				[label]="'security.antivirus.mcafee.getMacfee' | translate"
-				[title]="'security.antivirus.mcafee.getMacfee' | translate" [upperCaseLabel]="false"
-				[isDisabled]="!isOnline" [linkId]="'sa-av-btn-visitmcafee'"></vtr-ui-button>
+		<a class="button d-flex align-items-center" *ngIf="!install" 
+		   metricsEvent="FeatureClick" metricsItem="getMcafee"
+		   [ngClass]="{'unclickable': !isOnline}" 
+		   href="{{common.urlGetMcAfee}}" 
+		   target="_blank"
+		   [title]="'security.antivirus.mcafee.getMacfee' | translate"
+		   [innerHTML]="'security.antivirus.mcafee.getMacfee' | translate">
 		</a>
 	</div>
 </div>

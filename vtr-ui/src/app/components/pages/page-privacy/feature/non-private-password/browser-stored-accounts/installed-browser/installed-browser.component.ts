@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { InstalledBrowser } from '../../../../common/services/browser-accounts.service';
+import { DEFAULT_SITES_FAVICON } from '../../../../common/services/data-knowledge.service';
 
 @Component({
 	selector: 'vtr-installed-browser',
@@ -16,6 +17,8 @@ export class InstalledBrowserComponent {
 
 	@Output() openAccordion = new EventEmitter<number>();
 	@Output() howToFixClick = new EventEmitter<string>();
+
+	defaultIcon = DEFAULT_SITES_FAVICON;
 
 	tryProductText = {
 		risk: 'People often reuse the same password for many websites. This leads to multiple account breaches if the password exposed.',

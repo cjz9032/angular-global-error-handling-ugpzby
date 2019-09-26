@@ -10,7 +10,7 @@
 	</div>
 	<!-- <vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
-	<vtr-smart-standby *ngIf="!isDesktopMachine"
+	<vtr-smart-standby *ngIf="!isDesktopMachine && !isPowerDriverMissing"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 	</vtr-smart-standby> -->
 	<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable"
@@ -63,7 +63,7 @@
 					</li> -->
 
 
-					<li class=""
+					<!-- <li class=""
 						*ngIf="machineType == 1 && isChargeThresholdAvailable">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
@@ -117,7 +117,7 @@
 								</vtr-battery-charge-threshold-settings>
 							</div>
 						</vtr-ui-row-switch>
-					</li>
+					</li> -->
 					<li class=""
 						*ngIf="true">
 						<vtr-battery-gauge-reset></vtr-battery-gauge-reset>
@@ -167,7 +167,7 @@
 
 	<!-- <div class="row py-5"
 		id="power"
-		*ngIf="!isDesktopMachine && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
+		*ngIf="!isDesktopMachine && !isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[vtrAppSearchScroller]="['search-usb-charging', 'search-easy-resume']"
@@ -264,7 +264,7 @@
 
 	<div class="row py-5"
 		id="other"
-		*ngIf="vantageToolbarStatus.available">
+		*ngIf="!isPowerDriverMissing && vantageToolbarStatus.available">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				[vtrAppSearchScroller]="['search-vantage-toolbar']"
@@ -292,7 +292,7 @@
 	</div>
 
 	<div class="row py-5"
-		*ngIf="machineType === 1 && isEnergyStarProduct">
+		*ngIf="machineType === 1 && isEnergyStarProduct && !isPowerDriverMissing">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.energyStar.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"

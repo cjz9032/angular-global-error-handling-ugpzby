@@ -3,18 +3,19 @@ import { Features } from '../nav-tabs/nav-tabs.service';
 import { ClearBreachesService } from './clear-data-strategy/clear-breaches.service';
 import { ClearTrackersService } from './clear-data-strategy/clear-trackers.service';
 import { ClearPasswordService } from './clear-data-strategy/clear-password.service';
+import { ScanFeatures, WidgetDataService } from '../../services/widget-data.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class ClearDataService {
-	private strategy: {[feature in Features]: () => void} = {
+	private strategy: { [feature in Features]: () => void } = {
 		[Features.breaches]: this.clearBreachesService.clearData.bind(this.clearBreachesService),
 		[Features.passwords]: this.clearPasswordService.clearData.bind(this.clearPasswordService),
 		[Features.trackers]: this.clearTrackersService.clearData.bind(this.clearTrackersService),
 	};
 
-	private texts: {[feature in Features]: {text: string, content: string}} = {
+	private texts: { [feature in Features]: {text: string, content: string} } = {
 		[Features.breaches]: {
 			text: 'Clear my breach results',
 			content: 'Are you sure you want to clear the information about found breaches?'
@@ -29,14 +30,27 @@ export class ClearDataService {
 		},
 	};
 
+	private featuresNames = {
+		[Features.breaches]: ScanFeatures.breachedAccountsScan,
+		[Features.trackers]: ScanFeatures.websiteTrackersScan,
+		[Features.passwords]: ScanFeatures.nonPrivatePasswordsScan,
+	};
+
 	constructor(
 		private clearBreachesService: ClearBreachesService,
 		private clearTrackersService: ClearTrackersService,
-		private clearPasswordService: ClearPasswordService
-	) {	}
+		private clearPasswordService: ClearPasswordService,
+		private widgetDataService: WidgetDataService
+	) {
+	}
 
 	clearData(feature: Features) {
 		this.strategy[feature]();
+		this.widgetDataService.updateWidgetCounters({[this.getFeatureName(feature)]: null});
+	}
+
+	getFeatureName(feature: Features): ScanFeatures {
+		return this.featuresNames[feature];
 	}
 
 	getText(feature: Features) {

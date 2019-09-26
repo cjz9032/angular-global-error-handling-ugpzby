@@ -1,7 +1,12 @@
 <div class="wifi-security-invitation-modal">
 	<div class="content-container" *ngIf="!startJoin">
 		<h1 *ngIf="!joinSuccess" [innerHTML]="header | translate"></h1>
-		<div role="button" class="close-btn" (click)="onCancelClick($event)">
+		<div role="button" class="close-btn" (click)="onCancelClick($event)"
+			id="chs-btn-inviatation-close"
+			vtrMetrics
+			metricsItem="CHSInvitationCloseButton"
+			metricsEvent="featureClick"
+			metricsParent="{{metricsParent}}">
 			<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 		</div>
 		<p *ngIf="!joinSuccess" class="description header-description pb-3"
@@ -11,8 +16,12 @@
 			[innerHTML]="description | translate">
 		</p>
 		<div class="form-group code-input-group p-3" [ngClass]="{'d-none': joinSuccess, 'joinfailed': joinFailed, 'input-focus': isFocusIn}">
-			<input type="text" class="form-control" placeholder="{{'security.homeprotection.invitationcode.invitationCode' | translate}}" #code
-				(keyup)="KeyPress($event)" (keyup.enter)="joinGroupBy(code.value)" (focusin)="focusIn()" (focusout)="focusOut()" maxlength="6">
+			<input type="text" id="chs-btn-inviatation-input" class="form-control"
+				placeholder="{{'security.homeprotection.invitationcode.invitationCode' | translate}}" #code
+				(keyup)="KeyPress($event)"
+				(keyup.enter)="joinGroupBy(code.value)"
+				(focusin)="focusIn()"
+				(focusout)="focusOut()" maxlength="6">
 		</div>
 		<div class="join-info">
 			<div class="d-flex flex-column" [ngClass]="{'joinGroupSuccess':joinSuccess}">
@@ -26,14 +35,18 @@
 		<div class="divider mt-5" *ngIf="!joinSuccess"></div>
 		<div class="d-flex flex-row">
 			<div class="ml-0 mr-4 pl-0 mt-4">
-				<button type="button" class="btn btn-default modal-button connect-button"
+				<button id="chs-btn-inviatation-connect" class="btn btn-default modal-button connect-button"
 					[ngClass]="{'connect-available':code.value.length === 6}"
 					(click)="joinGroupBy(code.value)"
 					[disabled]="!(code.value.length === 6)"
 					*ngIf="!joinSuccess"
 					[innerHTML]="'security.homeprotection.invitationcode.connect' | translate">
 				</button>
-				<button type="button" class="btn btn-default modal-button cancel-button"
+				<button id="chs-btn-inviatation-cancel" class="btn btn-default modal-button cancel-button"
+					vtrMetrics
+					metricsItem="CHSInvitationCancelButton"
+					metricsEvent="featureClick"
+					metricsParent="{{metricsParent}}"
 					(click)="onCancelClick(code.value)"
 					*ngIf="!joinSuccess"
 					[innerHTML]="'security.homeprotection.invitationcode.cancel' | translate">
@@ -42,7 +55,12 @@
 		</div>
 	</div>
 	<div class="loading-container flex-column" *ngIf="startJoin">
-		<div role="button" class="close-btn" (click)="onCancelClick($event)">
+		<div role="button" id="chs-btn-inviatation-closeButton" class="close-btn"
+			(click)="onCancelClick($event)"
+			vtrMetrics
+			metricsItem="CHSInvitationCloseButton"
+			metricsEvent="featureClick"
+			metricsParent="{{metricsParent}}">
 			<img [src]=" 'assets/icons/Close.svg' | svgInline | async">
 		</div>
 		<div class="spinner-border text-primary progress-spinner" role="status"></div>

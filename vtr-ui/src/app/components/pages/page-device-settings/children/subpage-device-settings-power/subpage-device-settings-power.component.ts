@@ -95,6 +95,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	batteryChargeThresholdCache: BatteryChargeThresholdCapability = undefined;
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
+	public isPowerDriverMissing = false;
 
 	headerMenuItems = [
 		{
@@ -1039,11 +1040,25 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getBatteryCharge(notification: AppNotification) {
-		if (notification && notification.type === 'ThresholdWarningNote') {
-			this.showWarningMsg = notification.payload;
-			this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-			this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case 'ThresholdWarningNote':
+					this.showWarningMsg = notification.payload;
+					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
+					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+					break;
+				case 'IsPowerDriverMissing':
+					if (this.machineType === 1 && notification.payload) {
+						this.isPowerDriverMissing = notification.payload;
+						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
+						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
+					}
+					break;
+			}
+
 		}
 	}
 
