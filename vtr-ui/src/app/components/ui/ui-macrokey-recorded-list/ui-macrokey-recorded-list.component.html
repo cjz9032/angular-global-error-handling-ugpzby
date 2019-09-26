@@ -12,16 +12,16 @@
 		</div>
 		<div class="col-6" *ngIf="!recordingStatus">
 			<div class="select-wrapper">
-				<vtr-ui-macrokey-collapsible-container [selectedValue]="repeatSelectedValue" [options]="repeatOptions"
+				<vtr-ui-lighting-effect [selectedValue]="repeatSelectedValue" [options]="repeatOptions[0]"
 					[enableDescription]="false" (change)="onRepeatChanged($event)">
-				</vtr-ui-macrokey-collapsible-container>
+				</vtr-ui-lighting-effect>
 			</div>
 		</div>
 		<div class="col-6" *ngIf="!recordingStatus">
 			<div class="select-wrapper">
-				<vtr-ui-macrokey-collapsible-container [selectedValue]="delaySelectedValue" [options]="intervalOptions"
+				<vtr-ui-lighting-effect [selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
 					(change)="onIntervalChanged($event)">
-				</vtr-ui-macrokey-collapsible-container>
+				</vtr-ui-lighting-effect>
 			</div>
 		</div>
 		<div class="col-sm-12">
