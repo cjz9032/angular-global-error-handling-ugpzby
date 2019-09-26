@@ -75,14 +75,16 @@
 			text-align: right;
 
 			.result-code-value-text {
-				font-size: 1.7rem;
-				color: $shade_darker;
+				font-size: 1.2rem;
+				color: $shade_dark;
+				font-weight:$weight_bold;
 			}
 
 			.left-result-code {
 				.result-code-complete-text {
-					font-size: 1.3rem;
-					color: $shade_lightest;	
+					font-size: 1.2rem;
+					color: $shade_darker;
+					font-weight:$weight_bold;	
 				}
 
 				.result-code-icon {
