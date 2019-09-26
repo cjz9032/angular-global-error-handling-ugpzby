@@ -21,7 +21,7 @@
 						tabindex="1" role="option" id="{{option.id}}"
 						(keydown)="keydownFn($event,i)"
 						[attr.aria-selected]="option.value===options.curSelected?'true':'false'" role="option"
-						attr.aria-label="{{option.value===selectedOption.value? (option.label | translate) +' selected':(option.label | translate)}}">
+						attr.aria-label="{{option.value===selectedOption.value? (option.label | translate) +( 'gaming.macroKey.narrator.optionSelected' | translate):(option.label | translate)}}">
 						<a class="dropdown-item" tabindex="-1">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
 						</a>
