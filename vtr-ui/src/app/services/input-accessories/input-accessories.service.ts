@@ -267,4 +267,8 @@ export class InputAccessoriesService {
 	private booleanPromise(value: boolean): Promise<boolean> {
 		return new Promise((resolve) => resolve(value));
 	}
+	// To Restart Windows
+	public restartMachine() {
+		this.keyboardManager.RestartMachine();
+	}
 }

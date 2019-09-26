@@ -99,7 +99,7 @@ export class CommonService {
 	}
 	public getDaysBetweenDates(firstDate: Date, secondDate: Date): number {
 		const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-		const diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
+		const diffDays = Math.ceil(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
 		return diffDays;
 	}
 
