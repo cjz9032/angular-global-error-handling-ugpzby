@@ -18,6 +18,8 @@ export enum AppsForYouEnum {
 	AppTypeDesktop = 'Desktop App',
 	AppTypeWindowStore = 'Windows Store App',
 	AppTypeWeb = 'Web App',
+	AppTypeWebId = '11e0f6f4-c867-4987-af4f-c81594c43b77',
 	AppTypeNative = 'Native',
+	AppTypeNativeId = 'b809e6af-c706-46cc-8838-f5a8c85dceec',
 	AdobeFamilyNameFilter = 'Yoga A940-27ICB'
 }
