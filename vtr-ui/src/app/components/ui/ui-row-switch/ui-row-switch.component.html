@@ -25,24 +25,29 @@
 									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
 								<span *ngIf="!isAdminRequired && leftIcon[0]==='icomoon'"
 									[ngClass]="'icomoon '+leftIcon[1]"></span>
-								<img *ngIf="isAdminRequired" class="adminLogo"/>
+								<img *ngIf="isAdminRequired"
+									class="adminLogo" />
 							</div>
 						</div>
 						<div class="col">
-							<div class="title" id="{{switchId}}-title"
-							attr.aria-label="{{switchId}}-title">{{ title }}</div>
+							<div class="title"
+								id="{{switchId}}-title"
+								attr.aria-label="{{switchId}}-title">{{ title }}</div>
 							<span>
-								<div class="caption" id="{{switchId}}-caption"
-								attr.aria-label="{{switchId}}-caption"
+								<div class="caption"
+									id="{{switchId}}-caption"
+									attr.aria-label="{{switchId}}-caption"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
 							<!-- {{ caption }} -->
 							<span id="{{'read_more_'+ switchId}}"
+								tabindex="1"
 								attr.aria-label="{{'read_more_'+ switchId}}"
 								class="read-more"
 								*ngIf="!contentExpand"
-								(click)="onReadMoreClick($event)">
+								(click)="onReadMoreClick($event)"
+								(keydown.enter)="onReadMoreClick($event)">
 								{{ readMoreText }}
 							</span>
 						</div>
@@ -57,12 +62,14 @@
 					[ngClass]="{'ml-auto': type!=='Camera'}"
 					*ngIf="resetText.length > 0">
 					<button id="{{switchId+ '-reset-btn'}}"
+						tabindex="1"
 						attr.aria-label="{{switchId+ '-reset-btn'}}"
 						type="button"
 						[disabled]="disabledAll"
 						class="btn"
 						[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
-						(click)="onResetClick($event)">
+						(click)="onResetClick($event)"
+						(keydown.enter)="onResetClick($event)">
 						{{ resetText }}
 					</button>
 
@@ -75,17 +82,20 @@
 						(toggle)="onOnOffChange($event)"
 						[showLoader]="showLoaderState"
 						[theme]="theme"
-						[isSwitchDisable] ="isDisabled"
+						[isSwitchDisable]="isDisabled"
+						[tabIndex]="1"
 						id="{{switchId}}-onOffButton"
 						aria-label="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
 				</div>
 				<div *ngIf="!isSwitchVisible && linkText"
 					class="p-0 link-text">
 					<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
+						tabindex="1"
 						id="{{switchId+ '_click_link'}}"
 						attr.aria-label="{{switchId+ '_click_link'}}"
 						href="javascript:void(0)"
 						(click)="onLinkClick(linkPath)"
+						(keydown.enter)="onLinkClick(linkPath)"
 						class="link-text">
 						{{linkText}}
 					</a>
@@ -104,43 +114,48 @@
 					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}"
 						attr.aria-label="{{switchId+ '_tooltip_right_icon'}}"
 						class="right-icon"
-						tabindex="0"
+						tabindex="1"
 						triggers="click:blur"
 						placement="auto"
 						[ngbTooltip]="tooltipRef"
 						[icon]="rightIcon"
 						container="body"
 						tooltipClass="vtr-tooltip"
-						(click)="onRightIconClick($event)"></fa-icon>
+						(click)="onRightIconClick($event)"
+						(keydown.enter)="onRightIconClick($event)"></fa-icon>
 				</div>
 				<div class="p-0"
 					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
+						tabindex="1"
 						attr.aria-label="{{switchId+ '_smartTooltip_right_icon'}}"
 						class="right-icon"
-						tabindex="0"
+						tabindex="1"
 						triggers="click:blur"
 						placement="auto"
 						[ngbTooltip]="smartTooltipRef"
 						[icon]="rightIcon"
 						container="body"
 						tooltipClass="vtr-tooltip"
-						(click)="onRightIconClick($event)"></fa-icon>
+						(click)="onRightIconClick($event)"
+						(keydown.enter)="onRightIconClick($event)"></fa-icon>
 				</div>
 
 				<div class="p-0"
 					*ngIf="rightIcon.length > 0 && voice">
 					<fa-icon vtrMetrics
+						tabindex="1"
 						metricsEvent="FeatureClick"
 						metricsParent="Device.SmartAssist"
 						metricsItem="{{metricsParent}}HelpIcon"
 						id="{{switchId+ '_voice_right_icon'}}"
 						attr.aria-label="{{switchId+ '_voice_right_icon'}}"
 						class="right-icon"
-						tabindex="0"
+						tabindex="1"
 						[icon]="rightIcon"
-						(click)="voicePopUp()"></fa-icon>
+						(click)="voicePopUp()"
+						(keydown.enter)="voicePopUp()"></fa-icon>
 				</div>
 				<!-- </div> -->
 			</div>
@@ -192,8 +207,9 @@
 	</div>
 </div>
 <ng-template #tooltipRef>
-	<div [innerHTML]='tooltipText' id="{{switchId}}-toolTip"
-	attr.aria-label="{{switchId}}-toolTip"></div>
+	<div [innerHTML]='tooltipText'
+		id="{{switchId}}-toolTip"
+		attr.aria-label="{{switchId}}-toolTip"></div>
 </ng-template>
 
 <!-- Intelligent-security distance sensitivity adjusting tooltip content -->
