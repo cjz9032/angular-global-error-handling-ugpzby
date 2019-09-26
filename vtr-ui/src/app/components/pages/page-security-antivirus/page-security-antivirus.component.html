@@ -142,7 +142,7 @@
 											</div>
 											<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'">
 												<p class="subtitle sub-font"
-													*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
+													*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 													<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
 														metricsItem="subscribe" metricsParent="security.antivirus"
 														href="{{common.urlGetMcAfee}}" target="_blank"></a>
