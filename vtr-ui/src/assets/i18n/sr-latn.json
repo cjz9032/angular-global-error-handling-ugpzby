@@ -1590,7 +1590,7 @@
                 "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
-                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa, udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i bili u mogućnosti da <b>zaštitimo ono što je važno.</b>",
+                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i kako biste bili u mogućnosti da <b>zaštitite ono što je važno.</b>",
                 "windowsSubtitle": "Osnovna zaštita pomoću programa Windows zaštitnik",
                 "topTip": "Najbolji saveti za bezbednost na mreži",
                 "topContent": "Naučite kako možete da se odbranite od najvećih pretnji na mreži današnjice <tag>PRIKAŽI SAVETE</tag>",

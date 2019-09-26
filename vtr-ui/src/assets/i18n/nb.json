@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</b> til å beskytte alle enhetene dine",
+                "recommends": "Hvorfor Lenovo anbefaler å beskytte alle enhetene dine med <b>McAfee</b>",
                 "award": "Prisbelønt antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
@@ -1590,7 +1590,7 @@
                 "notAvailable": "Ikke tilgjengelig"
             },
             "windowsDefender": {
-                "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Dette er ikke et dårlig valg, men vi tilbyr prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus i samarbeid med <b>McAfee</b>, slik at du kan <b>beskytte dine dyrebare data</b>.",
+                "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Det er ikke noe dårlig valg, men i samarbeid med <b>McAfee</b> tilbyr vi prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus, slik at du kan <b>beskytte det som er viktigst for deg</b>.",
                 "windowsSubtitle": "Grunnleggende beskyttelse med Windows Defender",
                 "topTip": "Topptips for nettsikkerhet",
                 "topContent": "Finn ut hvordan du kan forsvare deg mot de største truslene på nettet <tag>VIS TIPS</tag>",
@@ -1643,7 +1643,7 @@
                 "startFileScan": "Start filskanningen"
             },
             "others": {
-                "othersProtection": "{{protectedName}} gir grunnleggende beskyttelse for enheten din"
+                "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din"
             }
         },
         "wifisecurity": {

@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "바이러스 백신",
                 "back": "뒤로",
-                "recommends": "장치 보호를 위해 Lenovo가 <b>McAfee</b>를 권장 하는 이유",
+                "recommends": "장치 보호를 위해 Lenovo가 <b>McAfee</b>를 권장하는 이유",
                 "award": "수상 경력에 빛나는 안티바이러스",
                 "mcafeePremium": "McAfee LiveSafe 보호",
                 "protectedBy": "현재 {{protectedName}}(으)로 보호되고 있습니다. 그러나 McAfee LiveSafe를 사용하면 더 효과적으로 보호 받을 수 있습니다.",
@@ -1643,7 +1643,7 @@
                 "startFileScan": "파일 검사 시작"
             },
             "others": {
-                "othersProtection": "{{protectedName}} 장치에 대한 기본적인 보호 제공"
+                "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}"
             }
         },
         "wifisecurity": {
