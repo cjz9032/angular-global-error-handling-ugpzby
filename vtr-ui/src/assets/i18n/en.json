@@ -244,6 +244,7 @@
 				"popupClear": "macrokey popup ok",
 				"popupCancel": "macrokey popup cancel",
 				"popupClose": "close",
+				"optionSelected": "selected",
 				"numbersSelectedNumpad": "selected macrokey numpad",
 				"macrokeySettings1": {
 					"option1": "on",
@@ -421,6 +422,28 @@
 					"part1": "You can add up to 5 additional apps to boost",
 					"part2": "of",
 					"part3": "added"
+				}
+			}
+		},
+		"narrator": {
+			"networkBoost": {
+				"subPage": {
+					"addApps": "Add apps",
+					"remove": "Remove"
+				},
+				"turnOnModal": {
+					"confirmation": "Network boost turn on confirmation window opened",
+					"dontAskAgain": "Dont ask again",
+					"turnOnButton": "modal Turn networkBoost turn on",
+					"notOnButton": "modal Turn networkBoost not now"
+				},
+				"addApps": {
+					"addAppsTitle": "Networkboost add apps window opened",
+					"noAppsTitle": "No running Apps to add window",
+					"add": "add"
+				},
+				"common": {
+					"close": "close"
 				}
 			}
 		}
