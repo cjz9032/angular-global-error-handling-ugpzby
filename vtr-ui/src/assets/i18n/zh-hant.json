@@ -1611,7 +1611,7 @@
                 "getMacfee": "取得 McAfee",
                 "topBenefits": "為何 <b>Lenovo 建議使用 McAfee</b> 來保護您所有的裝置",
                 "awardTitle": "獲獎肯定的防毒軟體",
-                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦。",
+                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦",
                 "supportTitle": "免費、全天候的技術支援",
                 "supportSubtitle": "我們的專業安全團隊為您提供全天候的幫助，讓您高枕無憂",
                 "trialSubtitle": "您目前僅受 McAfee LiveSafe 30 天試用版的保護 - 還剩下 {{remainingDays}} 天！立即訂閱以延長您的保護。",
