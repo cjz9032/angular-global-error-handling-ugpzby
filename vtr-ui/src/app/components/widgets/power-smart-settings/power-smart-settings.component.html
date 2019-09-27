@@ -102,6 +102,7 @@
 								<a class="read-more-link"
 									*ngIf="!onReadMoreClick"
 									(click)="readMore()"
+									tabindex="1"
 									role="link"
 									attr.aria-label="'device.deviceSettings.power.powerSmartSettings.description5' | translate'+'-'+ 'device.deviceSettings.power.powerSmartSettings.readMore' | translate"
 									(keydown.enter)="readMore()">{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
@@ -123,6 +124,7 @@
 							<p class="text-right more-info"><a alt=""
 									(click)="coolingModesPopUp()"
 									(keydown.enter)="coolingModesPopUp()"
+									tabindex="1"
 									role="link"
 									attr.aria-label="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate' ">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a>
 							</p>
