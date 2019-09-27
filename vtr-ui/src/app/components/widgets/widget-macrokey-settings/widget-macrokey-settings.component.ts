@@ -23,31 +23,35 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyOptions: any = [
 		{
-			title: 'gaming.macroKey.status.on.title',
-			name: 'gaming.macroKey.status.on.title',
-			description: 'gaming.macroKey.status.on.description',
-			id: 'macro key settings on',
-			label: 'on',
-			metricitem: 'macrokey_settings_on',
-			value: 1
-		},
-		{
-			title: 'gaming.macroKey.status.whileGaming.title',
-			name: 'gaming.macroKey.status.whileGaming.title',
-			description: 'gaming.macroKey.status.whileGaming.description',
-			id: 'macro key settings enabled when gaming',
-			label: 'macro key settings enabled when gaming',
-			metricitem: 'macrokey_settings_enabled_when_gaming',
-			value: 2
-		},
-		{
-			title: 'gaming.macroKey.status.off.title',
-			name: 'gaming.macroKey.status.off.title',
-			description: 'gaming.macroKey.status.off.description',
-			id: 'macro key settings off',
-			label: 'macro key settings off',
-			metricitem: 'macrokey_settings_off',
-			value: 3
+			dropOptions: [
+				{
+					title: 'gaming.macroKey.status.on.title',
+					name: 'gaming.macroKey.status.on.title',
+					description: 'gaming.macroKey.status.on.description',
+					id: 'macro key settings on',
+					label: 'gaming.macroKey.narrator.macrokeySettings1.option1',
+					metricitem: 'macrokey_settings_on',
+					value: 1
+				},
+				{
+					title: 'gaming.macroKey.status.whileGaming.title',
+					name: 'gaming.macroKey.status.whileGaming.title',
+					description: 'gaming.macroKey.status.whileGaming.description',
+					id: 'macro key settings enabled when gaming',
+					label: 'gaming.macroKey.narrator.macrokeySettings1.option2',
+					metricitem: 'macrokey_settings_enabled_when_gaming',
+					value: 2
+				},
+				{
+					title: 'gaming.macroKey.status.off.title',
+					name: 'gaming.macroKey.status.off.title',
+					description: 'gaming.macroKey.status.off.description',
+					id: 'macro key settings off',
+					label: 'gaming.macroKey.narrator.macrokeySettings1.option3',
+					metricitem: 'macrokey_settings_off',
+					value: 3
+				}
+			]
 		}
 	];
 

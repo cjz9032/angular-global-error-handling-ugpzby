@@ -56,28 +56,33 @@
 
 		<div class="p-3 row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
-			<div class="p-0 pr-2 col-auto ">
-				<span *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
+			<div class="p-0 pr-2 col-auto "
+				[class.normal-ACAdapter-condition]="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport">
+				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
 					class="icomoon icomoon-ConditionGoodBattery"></span>
-				<span *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair"
+				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Fair"
 					class="icomoon icomoon-ConditionFairBattery"></span>
-				<span *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor &&
+				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
 					batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="icomoon icomoon-ConditionBadBattery"></span>
-				<span *ngIf="batteryConditions[i].conditionStatus == batteryQuality.AcError"
+				<span *ngIf="batteryConditions[i].conditionStatus==batteryStatus.AcAdapterStatus"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
 			<div class='col battery-conditions-tips'>
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
-					[innerHTML]="batteryConditionNote | translate:param2"
+					[innerHTML]="batteryConditionNote | translate:thresholdNoteParam"
+					id="myDevice-settings-battery-condition-tip"
+					attr.aria-label="myDevice-settings-battery-condition-tip"></span>
+				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport"
+					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
 					id="myDevice-settings-battery-condition-tip"
 					attr.aria-label="myDevice-settings-battery-condition-tip"></span>
 				<span
-					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error"
+					*ngIf="batteryConditions[i].condition!=batteryConditionsEnum.StoreLimitation && batteryConditions[i].condition!=batteryConditionsEnum.Error && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport"
 					[innerHTML]="batteryConditionNote | translate"
 					id="myDevice-settings-battery-condition-tip"
 					attr.aria-label="myDevice-settings-battery-condition-tip"></span>
-				<a *ngIf="batteryConditions[i].conditionStatus===batteryQuality.AcError&&shortAcErrNote"
+				<a *ngIf="batteryConditions[i].conditionStatus===batteryStatus.AcAdapterStatus && batteryConditions[i].condition!=batteryConditionsEnum.FullACAdapterSupport && shortAcErrNote"
 					class="link-label"
 					(click)="showDetailTip(i)"
 					id="myDevice-settings-batteryGauge-seeDetails-link"
@@ -90,7 +95,8 @@
 			<div class="row">
 				<p id="myDevice-settings-batteryGauge-threshold-note"
 					attr.aria-label="myDevice-settings-batteryGauge-threshold-note">
-					<span [innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate:param1"></span>
+					<span
+						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate:thresholdNoteParam"></span>
 				</p>
 			</div>
 		</div>
