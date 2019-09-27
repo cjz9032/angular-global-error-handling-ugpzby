@@ -1590,7 +1590,7 @@
                 "notAvailable": "Niet beschikbaar"
             },
             "windowsDefender": {
-                "optimallyProtected": "Het lijkt erop dat je momenteel Windows Defender gebruikt. Geen slechte keuze, maar voor de ultieme bescherming tegen Ransomware, malware en virussen, hebben we de handen ineengeslagen met <b>McAfee</b> om je bekroonde beveiliging te bieden, zodat je kunt <b>beschermen wat belangrijk is</b>.",
+                "optimallyProtected": "Het lijkt erop dat je momenteel Windows Defender gebruikt. Geen slechte keuze, maar voor de ultieme bescherming tegen ransomware, malware en virussen, hebben we de handen ineengeslagen met <b>McAfee</b> om je bekroonde beveiliging te bieden, zodat je kunt <b>beschermen wat belangrijk is.</b>",
                 "windowsSubtitle": "Windows Defender-basisbeveiliging",
                 "topTip": "De beste tips voor onlineveiligheid",
                 "topContent": "Ontdek hoe je je kunt verdedigen tegen de grootste onlinedreigingen van vandaag <tag>TIPS WEERGEVEN</tag>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "McAfee downloaden",
                 "topBenefits": "Waarom <b>Lenovo McAfee aanbeveelt</b> voor de beveiliging van al je apparaten",
                 "awardTitle": "Bekroonde Antivirus",
-                "awardSubtitle": "Voorkom dat virussen, malware en ransomware je pc infecteren.",
+                "awardSubtitle": "Voorkom dat virussen, malware en ransomware je pc infecteren",
                 "supportTitle": "Gratis, 24/7 deskundige technische ondersteuning ",
                 "supportSubtitle": "Ons toegewijde beveiligingsteam biedt je 24/7 hulp en gemoedsrust",
                 "trialSubtitle": "Je bent momenteel beschermd met een proefversie van 30-dagen van McAfee LiveSafe – nog maar {{remainingDays}} dagen! Abonneer je nu om je bescherming te verlengen.",
@@ -1643,7 +1643,7 @@
                 "startFileScan": "Start bestanden scannen"
             },
             "others": {
-                "othersProtection": "{{protectedName}} biedt basisbeveiliging voor uw apparaat"
+                "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat"
             }
         },
         "wifisecurity": {

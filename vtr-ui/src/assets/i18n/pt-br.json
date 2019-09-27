@@ -1590,7 +1590,7 @@
                 "notAvailable": "Não Disponível"
             },
             "windowsDefender": {
-                "optimallyProtected": "Parece que você está usando o Windows Defender no momento. Não é uma má escolha, mas para a segurança máxima contra ransomware, malware e vírus, nos associamos ao <b>McAfee</b> para oferecer segurança premiada para <b>proteger o que importa.</b>",
+                "optimallyProtected": "Parece que você está usando o Windows Defender no momento. Não é uma má escolha, mas para a segurança máxima contra ransomware, malware e vírus, nos associamos ao <b>McAfee</b> para oferecer segurança premiada para que você possa <b>proteger o que importa.</b>",
                 "windowsSubtitle": "Proteção básica do Windows Defender",
                 "topTip": "Principais dicas sobre segurança online",
                 "topContent": "Saiba como você pode se defender das maiores ameaças online atuais <tag>VER DICAS</tag>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Obter o McAfee",
                 "topBenefits": "Por que a <b>Lenovo recomenda o McAfee</b> para proteger todos os seus dispositivos",
                 "awardTitle": "Antivírus premiado",
-                "awardSubtitle": "Evite que vírus, malware e ransomware infectem seu PC.",
+                "awardSubtitle": "Evite que vírus, malware e ransomware infectem seu PC",
                 "supportTitle": "Suporte técnico especializado 24/7 gratuito ",
                 "supportSubtitle": "Obtenha assistência 24 horas por dia e tranquilidade da nossa equipe de segurança dedicada",
                 "trialSubtitle": "No momento, você está protegido por uma avaliação gratuita de 30 dias do McAfee LiveSafe – restam apenas {{remainingDays}} dias! Assine agora para estender sua proteção.",

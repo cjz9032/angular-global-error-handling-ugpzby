@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILLBAKA",
-                "recommends": "Varför Lenovo rekommenderar <b>McAfee</b> för att skydda alla dina enheter",
+                "recommends": "Därför <b>rekommenderar Lenovo McAfee</b> för att skydda alla dina enheter",
                 "award": "Prisbelönt antivirusprogram",
                 "mcafeePremium": "McAfee LiveSafe-skydd",
                 "protectedBy": "Du skyddas för närvarande med {{protectedName}}. Men du kan få ett bättre skydd med McAfee LiveSafe.",
@@ -1590,7 +1590,7 @@
                 "notAvailable": "Inte tillgänglig"
             },
             "windowsDefender": {
-                "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt</b>.",
+                "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt.</b>",
                 "windowsSubtitle": "Windows Defender grundskydd",
                 "topTip": "Bästa tipsen för säkerhet online",
                 "topContent": "Se hur du kan försvara dig mot dagens största onlinehot <tag>SE TIPS</tag>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Köp McAfee",
                 "topBenefits": "Varför <b>Lenovo rekommenderar McAfee</b> för att skydda alla dina enheter",
                 "awardTitle": "Prisbelönt antivirusprogram",
-                "awardSubtitle": "Förhindra att din dator smittas av virus, skadlig kod och ransomware.",
+                "awardSubtitle": "Förhindra att din dator smittas av virus, skadlig kod och ransomware",
                 "supportTitle": "Teknisk expertsupport utan kostnad dygnet runt ",
                 "supportSubtitle": "Vårt specialutbildade säkerhetsteam ger dig sinnesro och hjälp dygnet runt",
                 "trialSubtitle": "Du skyddas för närvarande med en 30-dagars provprenumeration på McAfee LiveSafe – endast {{remainingDays}} dagar kvar! Prenumerera nu för att förlänga ditt skydd.",

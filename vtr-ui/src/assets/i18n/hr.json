@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "Zaštita od virusa",
                 "back": "NATRAG",
-                "recommends": "Zašto tvrtka Lenovo preporuča <b>McAfee</b> za zaštitu svih vaših uređaja",
+                "recommends": "Zašto tvrtka Lenovo preporučuje <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, McAfee LiveSafe bi vam mogao pružiti bolju zaštitu.",
@@ -1590,7 +1590,7 @@
                 "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
-                "optimallyProtected": "Čini se da trenutno koristite Windows Defender. Nije loš izbor, ali za maksimalnu zaštitu protiv ucjenjivačkog softvera, zlonamjernog softvera i virusa, udružili smo se sa <b>McAfee</b> da bismo vam osigurali nagrađivanu sigurnost <b>kako biste mogli zaštiti ono što je važno.</b>",
+                "optimallyProtected": "Čini se da trenutno koristite Windows Defender. Nije loš izbor, ali za maksimalnu zaštitu protiv ucjenjivačkog softvera, zlonamjernog softvera i virusa, udružili smo se s tvrtkom <b>McAfee</b> kako bismo vam pružili nagrađivanu sigurnost kako biste mogli <b>zaštiti ono što je bitno.</b>",
                 "windowsSubtitle": "Windows Defender Basic zaštita",
                 "topTip": "Najbolji savjeti za internetsku sigurnost",
                 "topContent": "Saznajte kako se možete obraniti od najopasnijih mrežnih prijetnji <tag>PREGLED SAVJETA</tag>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Nabavite McAfee",
                 "topBenefits": "Zašto <b>tvrtka Lenovo preporuča McAfee</b> za zaštitu svih vaših uređaja",
                 "awardTitle": "Nagrađivani antivirus",
-                "awardSubtitle": "Spriječite da virusi, zlonamjerni softver i ucjenjivački softver zaraze vaše računalo.",
+                "awardSubtitle": "Spriječite da virusi, zlonamjerni softver i ucjenjivački softver zaraze vaše računalo",
                 "supportTitle": "Besplatna stručna tehnička podrška 24/7 ",
                 "supportSubtitle": "Nabavite neprestanu pomoć i mirno spavajte jer znate da je iza vas naš posvećeni sigurnosni tim",
                 "trialSubtitle": "Trenutno ste zaštićeni 30-dnevnim probnim McAfee LiveSafe – preostalo vam je još samo {{remainingDays}} dana! Pretplatite se sada kako biste proširili svoju zaštitu.",
@@ -1643,7 +1643,7 @@
                 "startFileScan": "Pokrenite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu vašem uređaju"
             }
         },
         "wifisecurity": {

@@ -1096,6 +1096,20 @@
 			color: $stop!important;
 		}
 	}
+	.vtr-recover-bad-sectors {
+		 background-color: $dark_cell;	
+		.header {	
+			.heading1 {
+				color: $gaming_lightest;				
+			}
+			.action-anchor {				
+				color: $gaming_info_link;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
 }
 
 .gaming-help-modal {

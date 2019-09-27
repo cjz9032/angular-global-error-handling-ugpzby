@@ -1590,7 +1590,7 @@
                 "notAvailable": "Není dostupná"
             },
             "windowsDefender": {
-                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom vám mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
+                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
                 "windowsSubtitle": "Základní ochrana Windows Defender",
                 "topTip": "Nejlepší tipy pro online bezpečnost",
                 "topContent": "Naučte se, jak se můžete bránit proti současným největším online hrozbám <tag>ZOBRAZIT TIPY</tag>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Získat program McAfee",
                 "topBenefits": "Proč <b>Lenovo doporučuje software McAfee</b> na ochranu všech vašich zařízení",
                 "awardTitle": "Oceňovaný antivirus",
-                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem.",
+                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem",
                 "supportTitle": "Zdarma, nepřetržitá odborná technická podpora ",
                 "supportSubtitle": "Získejte nepřetržitou asistenci a klid v duši díky našemu specializovanému bezpečnostnímu týmu",
                 "trialSubtitle": "Momentálně jste chráněni pouze 30denní zkušební verzí McAfee LiveSafe – počet zbývajících dnů jen {{remainingDays}}! Chcete-li rozšířit svou ochranu, přihlaste se k odběru nyní.",

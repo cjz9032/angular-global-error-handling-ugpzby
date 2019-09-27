@@ -98,7 +98,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				this.viewModel.mcafeestatusList = this.getMcafeeFeature(this.viewModel.mcafee);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.viewModel.mcafeestatusList);
 			}
-			if (this.viewModel.mcafee.metrics) {
+			if (this.viewModel.mcafee.metrics && this.viewModel.mcafee.metrics.length > 0) {
 				this.viewModel.metricsList = this.getMcafeeMetric(this.viewModel.mcafee.metrics);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList, this.viewModel.metricsList);
 			} else { this.showMetricsList = false; }

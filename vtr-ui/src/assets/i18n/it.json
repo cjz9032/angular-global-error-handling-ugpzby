@@ -1611,7 +1611,7 @@
                 "getMacfee": "Ottieni McAfee",
                 "topBenefits": "Perché <b>Lenovo consiglia McAfee</b> per proteggere tutti i tuoi dispositivi",
                 "awardTitle": "Antivirus premiato",
-                "awardSubtitle": "Impedisci a virus, malware e ransomware di infettare il tuo PC.",
+                "awardSubtitle": "Impedisci a virus, malware e ransomware di infettare il tuo PC",
                 "supportTitle": "Assistenza tecnica gratuita 24/7 ",
                 "supportSubtitle": "Ottieni assistenza costante e massima tranquillità grazie al nostro team di sicurezza dedicato",
                 "trialSubtitle": "Attualmente sei protetto da una versione di prova di 30 giorni di McAfee LiveSafe: solo {{remainingDays}} giorni alla scadenza! Abbonati ora per estendere la tua protezione.",
@@ -1643,7 +1643,7 @@
                 "startFileScan": "Avvia scansione dei file"
             },
             "others": {
-                "othersProtection": "{{protectedName}} offre la protezione di base per il dispositivo"
+                "othersProtection": "{{protectedName}} offre la protezione di base per il tuo dispositivo"
             }
         },
         "wifisecurity": {

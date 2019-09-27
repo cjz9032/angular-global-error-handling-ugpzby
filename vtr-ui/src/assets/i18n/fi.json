@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "Virustentorjunta",
                 "back": "EDELLINEN",
-                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfee</b>tä kaikkien laitteidesi suojaamiseen",
+                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "award": "Palkittu virustentorjuntaohjelmisto",
                 "mcafeePremium": "McAfee LiveSafe -suojaus",
                 "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Hanki McAfee nyt",
                 "topBenefits": "Näistä syistä <b>Lenovo suosittelee McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "awardTitle": "Palkittu virustentorjuntaohjelmisto",
-                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi.",
+                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi",
                 "supportTitle": "Ilmainen 24/7 asiantunteva tekninen tuki ",
                 "supportSubtitle": "Saat apua ja mielenrauhaa ympäri vuorokauden erikoistuneelta tietoturvatiimiltämme",
                 "trialSubtitle": "Olet tällä hetkellä suojattuna McAfee LiveSafen 30 päivän kokeiluversiolla – vain {{remainingDays}} päivää jäljellä! Tilaa nyt, jos haluat laajentaa suojausta.",
