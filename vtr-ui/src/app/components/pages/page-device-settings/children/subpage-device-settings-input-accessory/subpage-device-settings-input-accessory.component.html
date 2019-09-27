@@ -96,8 +96,8 @@
 							<div class="row pt-2" *ngIf="installedApps.length > 0; else noAppInstalled">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 									<div class="pl-2 pt-3 pb-4 prompting">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.hasInstalledAppsDescription' | translate}}</div>
-									<vtr-ui-rectangle-radio *ngFor="let installedApp of installedApps"
-															[radioId]="'voip-hotkeys-rectangle-radio'"
+									<vtr-ui-rectangle-radio *ngFor="let installedApp of installedApps; index as i"
+															[radioId]="'voip-hotkeys-rectangle-radio' + i"
 															[iconName]="'app-icon ' + iconName[installedApp.appName]"
 															[label]="voipAppName[installedApp.appName]"
 															[value]='installedApp.appName'
