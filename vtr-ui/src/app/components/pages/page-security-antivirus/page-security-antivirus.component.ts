@@ -416,6 +416,9 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		if (data) {
 			metricsFeature = data;
 		}
+		if (metricsFeature.length === 0) {
+			this.showMetricsList = false;
+		}
 		metricsFeature.forEach((e) => {
 			let value;
 			let id;

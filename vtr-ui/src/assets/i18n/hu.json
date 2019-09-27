@@ -475,7 +475,7 @@
             "loading": "Betöltés..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
         }
     },
     "privacy": {
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Fájlok vizsgálatának megkezdése"
             },
             "others": {
-                "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára"
+                "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
+                "unknown": "Ismeretlen"
             }
         },
         "wifisecurity": {

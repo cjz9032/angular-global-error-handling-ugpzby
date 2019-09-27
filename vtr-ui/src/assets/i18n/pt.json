@@ -475,7 +475,7 @@
             "loading": "Carregando..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Olá! Está disponível uma versão mais recente do Vantage, pretende carregá-la?"
         }
     },
     "privacy": {
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Iniciar verificação de ficheiros"
             },
             "others": {
-                "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo"
+                "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo",
+                "unknown": "Desconhecido"
             }
         },
         "wifisecurity": {

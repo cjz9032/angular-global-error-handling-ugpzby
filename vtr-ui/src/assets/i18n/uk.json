@@ -475,7 +475,7 @@
             "loading": "Завантаження..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Вітаємо! Доступна нова версія Vantage, завантажити її?"
         }
     },
     "privacy": {
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Розпочати сканування файлів"
             },
             "others": {
-                "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою"
+                "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою",
+                "unknown": "Невідома"
             }
         },
         "wifisecurity": {
