@@ -4,11 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
 	templateUrl: './page-lightingcustomize.component.html',
-	styleUrls: ['./page-lightingcustomize.component.scss']
+	styleUrls: [ './page-lightingcustomize.component.scss' ]
 })
 export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	isOnline = true;
@@ -22,12 +23,19 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	startDateTime: any = new Date();
 	metrics: any;
 
-	constructor(private cmsService: CMSService, private route: ActivatedRoute, private shellService: VantageShellService,private commonService: CommonService) {
+	constructor(
+		private cmsService: CMSService,
+		private route: ActivatedRoute,
+		private titleService: Title,
+		private shellService: VantageShellService,
+		private commonService: CommonService
+	) {
 		this.metrics = this.shellService.getMetrics();
 
 		this.route.params.subscribe((params) => {
 			this.currentProfileId = +params['id']; // (+) converts string 'id' to a number
 		});
+		this.titleService.setTitle('gaming.common.narrator.pageTitle.lighting');
 	}
 
 	ngOnInit() {
@@ -59,8 +67,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			}
 		});
 	}
-	ngOnDestroy() {
-	}
+	ngOnDestroy() {}
 
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
