@@ -1643,7 +1643,8 @@
                 "startFileScan": "파일 검사 시작"
             },
             "others": {
-                "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}"
+                "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
+                "unknown": "알 수 없음"
             }
         },
         "wifisecurity": {

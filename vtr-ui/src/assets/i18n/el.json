@@ -1643,7 +1643,8 @@
                 "startFileScan": "Έναρξη σάρωσης αρχείων"
             },
             "others": {
-                "othersProtection": "Το {{protectedName}} σάς προσφέρει βασική προστασία για τη συσκευή σας"
+                "othersProtection": "Το {{protectedName}} σάς προσφέρει βασική προστασία για τη συσκευή σας",
+                "unknown": "Άγνωστη"
             }
         },
         "wifisecurity": {

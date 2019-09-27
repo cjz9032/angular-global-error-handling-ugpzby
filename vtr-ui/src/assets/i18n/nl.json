@@ -1643,7 +1643,8 @@
                 "startFileScan": "Start bestanden scannen"
             },
             "others": {
-                "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat"
+                "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
+                "unknown": "Onbekend"
             }
         },
         "wifisecurity": {

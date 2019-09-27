@@ -24,7 +24,7 @@ export class AntiVirusViewModel {
 	};
 	otherAntiVirus: OtherInfo = {
 		status: false,
-		name: 'unknown',
+		name: 'security.antivirus.others.unknown',
 	};
 	metricsList: Array<any> = [0, 0, 0, 0];
 	otherFirewall: OtherInfo ;

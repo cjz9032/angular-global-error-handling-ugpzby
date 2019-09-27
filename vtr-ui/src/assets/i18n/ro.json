@@ -1643,7 +1643,8 @@
                 "startFileScan": "Pornire scanare fişiere"
             },
             "others": {
-                "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs."
+                "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs.",
+                "unknown": "Necunoscut"
             }
         },
         "wifisecurity": {

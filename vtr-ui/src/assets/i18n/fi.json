@@ -1643,7 +1643,8 @@
                 "startFileScan": "Aloita tiedostojen tarkistus"
             },
             "others": {
-                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen"
+                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
+                "unknown": "Tuntematon"
             }
         },
         "wifisecurity": {

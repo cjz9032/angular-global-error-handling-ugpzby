@@ -1643,7 +1643,8 @@
                 "startFileScan": "Starta genomsökning av filer"
             },
             "others": {
-                "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet"
+                "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
+                "unknown": "Okänd"
             }
         },
         "wifisecurity": {

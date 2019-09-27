@@ -1643,7 +1643,8 @@
                 "startFileScan": "Započnite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
+                "unknown": "Nepoznato"
             }
         },
         "wifisecurity": {

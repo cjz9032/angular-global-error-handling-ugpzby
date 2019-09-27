@@ -1643,7 +1643,8 @@
                 "startFileScan": "Start filscanning"
             },
             "others": {
-                "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed"
+                "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
+                "unknown": "Ukendt"
             }
         },
         "wifisecurity": {

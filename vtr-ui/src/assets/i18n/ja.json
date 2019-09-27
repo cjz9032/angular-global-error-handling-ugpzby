@@ -1643,7 +1643,8 @@
                 "startFileScan": "ファイルのスキャンを開始"
             },
             "others": {
-                "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します"
+                "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
+                "unknown": "不明"
             }
         },
         "wifisecurity": {
