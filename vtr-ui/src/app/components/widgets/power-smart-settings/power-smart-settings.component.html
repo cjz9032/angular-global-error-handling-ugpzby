@@ -101,7 +101,10 @@
 							<p>{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
 								<a class="read-more-link"
 									*ngIf="!onReadMoreClick"
-									(click)="readMore()">{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
+									(click)="readMore()"
+									role="link"
+									attr.aria-label="'device.deviceSettings.power.powerSmartSettings.description5' | translate'+'-'+ 'device.deviceSettings.power.powerSmartSettings.readMore' | translate"
+									(keydown.enter)="readMore()">{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 							</p>
 							<div *ngIf="onReadMoreClick">
 								<p> <span
@@ -118,7 +121,10 @@
 								</p>
 							</div>
 							<p class="text-right more-info"><a alt=""
-									(click)="coolingModesPopUp()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a>
+									(click)="coolingModesPopUp()"
+									(keydown.enter)="coolingModesPopUp()"
+									role="link"
+									attr.aria-label="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate' ">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a>
 							</p>
 						</div>
 					</div>
