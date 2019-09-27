@@ -475,7 +475,7 @@
             "loading": "...טעינה"
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
         }
     },
     "privacy": {

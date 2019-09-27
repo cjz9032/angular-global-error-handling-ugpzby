@@ -475,7 +475,7 @@
             "loading": "Ladataan..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
         }
     },
     "privacy": {

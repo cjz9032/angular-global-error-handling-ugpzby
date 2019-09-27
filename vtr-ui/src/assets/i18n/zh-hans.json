@@ -475,7 +475,7 @@
             "loading": "载入中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "您好！已有较新版本的 Vantage，您要加载吗？"
         }
     },
     "privacy": {
