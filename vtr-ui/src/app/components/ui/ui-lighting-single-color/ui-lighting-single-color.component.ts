@@ -13,7 +13,7 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	selectedOption: Options = new Options(
 		1,
 		'gaming.lightingProfile.lightingSingleLightingOption.option1.title',
-		'Always On'
+		"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option1.title' | translate"
 	);
 	@Output() public changeSingleColorOption = new EventEmitter<any>();
 	@Input() options: any;

@@ -21,6 +21,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	title = '';
+	headerTitle = '';
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	backId = 'apps-for-you-page-btn-back';
@@ -49,43 +50,15 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		FAILED_INSTALL: -1
 	};
 
-	mockScreenShots = [
-		{
-			id: 'apps-for-you-screenshot-1',
-			imageUrl: 'assets/images/apps-for-you/screenshot1(1).png',
-			position: 1,
-			isRepeat: false,
-			show: 'show',
-		},
-		{
-			id: 'apps-for-you-screenshot-2',
-			imageUrl: 'assets/images/apps-for-you/screenshot2[1].png',
-			position: 2,
-			isRepeat: false,
-			show: 'show',
-		},
-		{
-			id: 'apps-for-you-screenshot-3',
-			imageUrl: 'assets/images/apps-for-you/screenshot3-3.png',
-			position: 3,
-			isRepeat: false,
-			show: 'show',
-		},
-		{
-			id: 'apps-for-you-screenshot-4',
-			imageUrl: 'assets/images/apps-for-you/screenshot2[1].png',
-			position: 4,
-			isRepeat: false,
-			show: 'show',
-		},
-		// {
-		// 	id: 'apps-for-you-screenshot-5',
-		// 	imageUrl: 'assets/images/apps-for-you/screenshot3-3.png',
-		// 	position: 5,
-		// 	isRepeat: false,
-		// 	show: 'show',
-		// },
-	];
+	// mockScreenShots = [
+	// 	{
+	// 		id: 'apps-for-you-screenshot-1',
+	// 		imageUrl: 'assets/images/apps-for-you/screenshot1(1).png',
+	// 		position: 1,
+	// 		isRepeat: false,
+	// 		show: 'show',
+	// 	},
+	// ];
 	screenshotInterval: any;
 	showArrows = false;
 	arrowClickable = true;
@@ -106,8 +79,10 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			this.appsForYouService.getAppDetails(this.appGuid);
 			if (this.appGuid === AppsForYouEnum.AppGuidLenovoMigrationAssistant) {
 				this.metricsParent = 'AppsForYou.LMA';
+				this.headerTitle = 'appsForYou.menuText.lenovoMigrationAssistant';
 			} else if (this.appGuid === AppsForYouEnum.AppGuidAdobeCreativeCloud) {
 				this.metricsParent = 'AppsForYou.Adobe';
+				this.headerTitle = 'appsForYou.menuText.adobeRedemption';
 			} else {
 				this.metricsParent = 'AppsForYou';
 			}
@@ -151,16 +126,16 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	swipeRightToLeft() {
 		if (!this.arrowClickable) { return false; }
 		this.arrowClickable = false;
-		const screenshotNumber = this.mockScreenShots.length;
-		const preScreenShotIndex = this.mockScreenShots.findIndex(m => m.position === 0);
+		const screenshotNumber = this.appDetails.screenshots.length;
+		const preScreenShotIndex = this.appDetails.screenshots.findIndex(m => m.position === 0);
 		if (preScreenShotIndex > -1) {
-			const temp = JSON.parse(JSON.stringify(this.mockScreenShots[preScreenShotIndex]));
-			this.mockScreenShots.splice(preScreenShotIndex, 1);
+			const temp = JSON.parse(JSON.stringify(this.appDetails.screenshots[preScreenShotIndex]));
+			this.appDetails.screenshots.splice(preScreenShotIndex, 1);
 			temp.position = screenshotNumber;
-			this.mockScreenShots.push(temp);
+			this.appDetails.screenshots.push(temp);
 		}
 		setTimeout(() => {
-			this.mockScreenShots.forEach(ss => {
+			this.appDetails.screenshots.forEach(ss => {
 				ss.position--;
 			});
 			this.arrowClickable = true;
@@ -169,16 +144,16 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	swipeLeftToRight() {
 		if (!this.arrowClickable) { return false; }
 		this.arrowClickable = false;
-		const screenshotNumber = this.mockScreenShots.length;
-		const lastScreenShotIndex = this.mockScreenShots.findIndex(m => m.position === screenshotNumber);
+		const screenshotNumber = this.appDetails.screenshots.length;
+		const lastScreenShotIndex = this.appDetails.screenshots.findIndex(m => m.position === screenshotNumber);
 		if (lastScreenShotIndex > -1) {
-			const temp = JSON.parse(JSON.stringify(this.mockScreenShots[lastScreenShotIndex]));
-			this.mockScreenShots.splice(lastScreenShotIndex, 1);
+			const temp = JSON.parse(JSON.stringify(this.appDetails.screenshots[lastScreenShotIndex]));
+			this.appDetails.screenshots.splice(lastScreenShotIndex, 1);
 			temp.position = 0;
-			this.mockScreenShots.push(temp);
+			this.appDetails.screenshots.push(temp);
 		}
 		const timeout = setTimeout(() => {
-			this.mockScreenShots.forEach(ss => {
+			this.appDetails.screenshots.forEach(ss => {
 				ss.position++;
 			});
 			this.arrowClickable = true;
