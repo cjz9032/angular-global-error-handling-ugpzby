@@ -28,7 +28,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			private you are online.`;
 	btnText = 'Define my score';
 	privacyLevel = 'undefined';
-	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
+	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.png';
 	score;
 
 	isShowScore$ = this.scoreShowSpinnerService.isShow$;

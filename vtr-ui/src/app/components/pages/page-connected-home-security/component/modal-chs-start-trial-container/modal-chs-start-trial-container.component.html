@@ -3,9 +3,10 @@
 		<div role="button" id="chs-trialModal-btn-close"
 			href="javascript:;"
 			class="close-btn"
+			vtrMetrics
 			metricsItem="closeCHSTrialModal"
 			metricsEvent="featureClick"
-			metricsParent="ConnectedHomeSecurity"
+			metricsParent="{{metricsParent}}"
 			(click)="closeModal()">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""
@@ -30,9 +31,10 @@
 				[title]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
 			<button class="btn btn-default btn_cancel ml-4 pl-0 pr-0"
 				id="chs-trialModal-btn-countdownCancel"
+				vtrMetrics
 				metricsEvent="FeatureClick"
 				metricsItem="CHSTrialCountdownCancelButton"
-				metricsParent="ConnectedHomeSecurity"
+				metricsParent="{{metricsParent}}"
 				(click)="closeModal()"
 				[title]="'security.wifisecurity.locationmodal.cancel' | translate"
 				[innerHTML]="'security.wifisecurity.locationmodal.cancel' | translate">
@@ -57,7 +59,7 @@
 			<vtr-ui-button
 				linkId="chs-modal-btn-cancel"
 				metricsEvent="FeatureClick"
-				metricsItem="CHSTrialCancelButton"
+				metricsItem="CHSDisconnectCancelButton"
 				metricsParent="{{metricsParent}}"
 				buttonColor="gray"
 				(click)="closeModal()"

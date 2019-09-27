@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Enregistrement de touche macro pour"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -430,11 +445,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Soutien",
-            "homeSecurity": "Maison connectée",
             "privacy": "Confidentialité",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Conseil sécurité",
@@ -473,6 +488,9 @@
             "expand": "Développer",
             "loader": "Récupération du statut <br>",
             "loading": "Chargement..."
+        },
+        "app-update": {
+            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
         }
     },
     "privacy": {
@@ -1244,7 +1262,8 @@
                     "caption": "Le réglage de distance automatique met à jour automatiquement la distance de détection via un moteur AI.",
                     "options": {
                         "near": "Proche",
-                        "far": "Éloigné"
+                        "far": "Éloigné",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1264,13 +1283,17 @@
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
                     "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement.",
-                    "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées."
+                    "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
                     "screenTimeoutSettings": "Accédez aux paramètres de mise en veille de l'écran"
                 },
-                "resetToDefault": "Réinitialiser"
+                "resetToDefault": "Réinitialiser",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Écran intelligent",
@@ -1496,128 +1519,6 @@
             "fileNotFoundException": "Fichier introuvable."
         }
     },
-    "homeSecurity": {
-        "title": "Sécurité domestique connectée",
-        "notification": {
-            "recent": "Notifications de sécurité récentes",
-            "notifications": "Notifications",
-            "unsafeNetworkConnection": "Connexion réseau non sécurisée",
-            "networkUnsafe": "Réseau non sécurisé",
-            "deviceDisconnected": "Périphérique déconnecté",
-            "newDeviceDetected": "Nouveau périphérique détecté",
-            "unsafeDeviceDetected": "Périphérique non sécurisé détecté"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Protégez votre écosystème d'appareils",
-            "thisDevice": "Ce périphérique",
-            "allDevices": "Tous les périphériques",
-            "protected": "Protégé",
-            "notProtected": "Non protégé",
-            "trialExpired": "Version d'évaluation expirée",
-            "upgrade": "mettre à jour",
-            "inEcosystem": "Dans l'écosystème",
-            "ecosystemEnable": "Écosystème activé",
-            "inTrial": "En cours d'essai",
-            "addEcosystem": "Ajouter à l'écosystème",
-            "enableEcosystem": "Activer l'écosystème",
-            "startTrial": "Lancer la version d'évaluation",
-            "fullAccess": "Accès complet",
-            "renew": "Renouveler"
-        },
-        "overview": {
-            "overviewBlockTitle": "Présentation de la sécurité de l'écosystème",
-            "allDevices": "Tous les périphériques",
-            "myDevice": "Mon périphérique",
-            "thisComputer": "Cet ordinateur",
-            "secure": "SÉCURISER",
-            "needAttention": "NÉCESSITE VOTRE ATTENTION",
-            "manageAccount": "Gérer le compte",
-            "devices": "Périphériques",
-            "seeProtectedDevices": "Afficher les périphériques protégés",
-            "addDevice": "ajouter un périphérique",
-            "trialExpired": "Version d'évaluation expirée - Mettre à niveau pour protéger tous vos périphériques",
-            "upgrade": "mettre à jour",
-            "freeTrial": "Protéger tous vos périphériques - Version d'évaluation gratuite de 30 jours",
-            "startTrial": "Lancer la version d'évaluation",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Fourni par Coronet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "Retour",
-            "skip": "Passer",
-            "start": "DÉBUTER LE TOUR",
-            "done": "TERMINE",
-            "welcome1": "Bienvenue",
-            "welcomeDesc1": "Quelques clics suffisent pour protéger les PC, les périphériques mobiles et les périphériques connectés appartenant à votre famille et à vous-même.",
-            "welcomeDescStart": "Lancez votre version d'évaluation gratuite de 30 jours maintenant.",
-            "welcome2": "Exclusif pour Vantage",
-            "welcomeDesc2": "La Sécurité domestique connectée est directement intégrée à Vantage pour un accès rapide à l'état de protection de votre écosystème et aux alertes de sécurité.",
-            "create": "Créer votre compte",
-            "lenovoId": "avec Lenovo ID",
-            "notifications": "Recevoir <b>des</b> notifications sur l'état de votre domicile",
-            "monitor": "<b>Surveiller</b> la sécurité des périphériques de votre famille",
-            "peaceOfMind": "Une protection en tout temps vous permet d'avoir <b>l'esprit tranquille</b> !",
-            "signInLenovoId": "S'INSCRIRE AVEC LENOVO ID",
-            "haveLenovo": "Je n'ai pas de <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Créer un Lenovo ID",
-            "without": "Continuer <b>sans compte</b>",
-            "skipAndTrial": "IGNORE ET LANCER LA VERSION D'ÉVALUATION",
-            "alreadyHave": "J'ai déjà un compte de <b>Sécurité domestique connectée</b>",
-            "loginCHS": "Connexion à un compte CHS existant",
-            "locationTitle": "Activer le suivi géolocalisé",
-            "locationPermission": "Pour utiliser cette fonction correctement, vous devez activer le suivi géolocalisé pour ce périphérique"
-        },
-        "accountStatus": {
-            "title": "Ma Sécurité domestique connectée",
-            "startTrial": "Lancer la version d'évaluation",
-            "manageAccount": "Gérer le compte",
-            "upgradeAccount": "Mettre à niveau le compte",
-            "inTrialDetail1": "{{remainingDays}} jours restant jusqu'à la fin de la version d'évaluation.",
-            "inTrialDetail2": "Vous êtes actuellement au cours de la période d'évaluation. Vous disposez d'un accès illimité à toutes les fonctions.",
-            "trialExpiredDetail1": "Votre version d'évaluation a expiré.",
-            "trialExpiredDetail2": "Votre version d'évaluation a expiré et votre écosystème d'appareils n'est plus protégé.",
-            "upgradedDetail1": "Votre compte est actif jusqu'au {{expiredDate}}.",
-            "upgradedDetail2": "L'écosystème de l'appareil est actuellement protégé.",
-            "localAccountDetail2": "Cliquez sur le bouton ci-dessous pour lancer votre version d'évaluation gratuite de 30 jours.",
-            "alreadyHaveAccount": "Vous disposez déjà d'un code d'activation ?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Obtenir de l'aide"
@@ -1726,7 +1627,7 @@
                 "optimallyProtected": "Il semble que vous utilisez actuellement Windows Defender. Ceci n'est pas un mauvais choix, mais pour la sécurité ultime contre les rançongiciels, les logiciels malveillants et les virus, nous nous sommes associés avec <b>McAfee</b> pour vous offrir la sécurité primée et ainsi <b>protéger ce qui compte.</b>",
                 "windowsSubtitle": "Protection de base Windows Defender",
                 "topTip": "Les conseils indispensables pour la sécurité en ligne",
-                "topContent": "Découvrez comment vous pouvez vous défendre contre les plus grandes menaces en ligne d'aujourd'hui",
+                "topContent": "Découvrez comment vous pouvez vous défendre contre les plus grandes menaces en ligne d'aujourd'hui <tag>AFFICHER LES CONSEILS</tag>",
                 "view": "AFFICHER LES CONSEILS",
                 "buyNow": "Acheter maintenant",
                 "buy": "Achetez, téléchargez et installez la protection antivirus McAfee aujourd'hui pour profiter de caractéristiques de sécurité de niveau bancaire",
@@ -1766,8 +1667,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Analyse des vulnérabilités McAfee ",
                 "report": "Votre rapport sur la protection des menaces ",
-                "trialContent": "Vous avez utilisé la version d'évaluation de l'antivirus McAfee à bon escient. Mais dans {{remainingDays}} jours, votre version d'évalution expire et vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.",
-                "subscribeContent": "Vous avez utilisé McAfee à bon escient. Mais dans {{remainingDays}} jours, vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.",
+                "trialContent": "Vous avez utilisé la version d'évaluation de l'antivirus McAfee à bon escient. Mais dans {{remainingDays}} jours, votre version d'évalution expire et vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.<tag>S'abonner maintenant</tag>",
+                "subscribeContent": "Vous avez utilisé McAfee à bon escient. Mais dans {{remainingDays}} jours, vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.<tag>S'abonner maintenant</tag>",
                 "subscribeNow": "S'abonner maintenant",
                 "fileScan": "Fichiers analysés",
                 "Viruses": "Virus éliminés",
@@ -2570,6 +2471,121 @@
                 "readMore": "Afficher plus",
                 "readLess": "Afficher moins"
             }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     }
 }

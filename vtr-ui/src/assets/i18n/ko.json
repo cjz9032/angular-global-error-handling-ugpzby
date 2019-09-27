@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "매크로 키 기록 중"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -430,11 +445,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "지원",
-            "homeSecurity": "홈 연결",
             "privacy": "프라이버시",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "보안 어드바이저",
@@ -473,6 +488,9 @@
             "expand": "확장",
             "loader": "페치 상태",
             "loading": "로드 중..."
+        },
+        "app-update": {
+            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
         }
     },
     "privacy": {
@@ -1244,7 +1262,8 @@
                     "caption": "자동 거리 조정은 AI 엔진을 통해 감지 거리를 자동으로 업데이트합니다.",
                     "options": {
                         "near": "근처",
-                        "far": "보다 멀리"
+                        "far": "보다 멀리",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1264,13 +1283,17 @@
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
                     "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
-                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다."
+                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
                     "screenTimeoutSettings": "화면 시간 종료 설정으로 이동"
                 },
-                "resetToDefault": "재설정"
+                "resetToDefault": "재설정",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "지능형 화면",
@@ -1496,128 +1519,6 @@
             "fileNotFoundException": "파일을 찾을 수 없습니다."
         }
     },
-    "homeSecurity": {
-        "title": "홈 보안 연결",
-        "notification": {
-            "recent": "최근 보안 알림",
-            "notifications": "알림",
-            "unsafeNetworkConnection": "안전하지 않은 네트워크 연결",
-            "networkUnsafe": "안전하지 않은 네트워크",
-            "deviceDisconnected": "장치 연결이 끊어짐",
-            "newDeviceDetected": "새 장치가 검색됨",
-            "unsafeDeviceDetected": "안전하지 않은 장치가 검색됨"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "장치 생태계 보호",
-            "thisDevice": "이 장치",
-            "allDevices": "모든 장치",
-            "protected": "보호됨",
-            "notProtected": "보호되지 않음",
-            "trialExpired": "평가판 만료됨",
-            "upgrade": "업그레이드",
-            "inEcosystem": "생태계에서",
-            "ecosystemEnable": "생태계 사용",
-            "inTrial": "평가판에서",
-            "addEcosystem": "생태계에 추가",
-            "enableEcosystem": "생태계 활성화",
-            "startTrial": "평가판 시작",
-            "fullAccess": "전체 액세스",
-            "renew": "갱신"
-        },
-        "overview": {
-            "overviewBlockTitle": "생태계 보안 개요",
-            "allDevices": "모든 장치",
-            "myDevice": "내 장치",
-            "thisComputer": "이 컴퓨터",
-            "secure": "보안",
-            "needAttention": "주의 필요",
-            "manageAccount": "계정 관리",
-            "devices": "장치",
-            "seeProtectedDevices": "보호 장치 참고",
-            "addDevice": "장치 추가",
-            "trialExpired": "평가판 만료됨 - 모든 장치를 보호하도록 업그레이드",
-            "upgrade": "업그레이드",
-            "freeTrial": "모든 장치 보호 - 30일 무료 평가판",
-            "startTrial": "평가판 시작",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Coronet로 실행",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "뒤로",
-            "skip": "건너뛰기",
-            "start": "투어 시작",
-            "done": "완료",
-            "welcome1": "환영합니다",
-            "welcomeDesc1": "몇 번의 클릭 만으로 사용자 자신 및 가족을 위해 PC, 모바일 장치 및 연결 장치를 보호할 수 있습니다.",
-            "welcomeDescStart": "지금 30일 무료 평가판을 시작하십시오.",
-            "welcome2": "Vantage 전용",
-            "welcomeDesc2": "연결된 홈 보안은 사용자 생태계 및 보안 경고에 대한 보호 상태에 빠르게 액세스할 수 있도록 직접 Vantage에 작성됩니다.",
-            "create": "계정 만들기",
-            "lenovoId": "Lenovo ID 포함",
-            "notifications": "집 상태에 대한 <b>알림</b>을 받기",
-            "monitor": "가족 장치의 안전 <b>모니터링</b>",
-            "peaceOfMind": "항상 보고하고 있다는 점을 <b>안심</b>하십시오!",
-            "signInLenovoId": "Lenovo ID로 가입",
-            "haveLenovo": "<b>Lenovo ID</b>가 없음",
-            "createLenovo": "&nbsp;Lenovo ID 만들기",
-            "without": "<b>계정 없이</b> 계속",
-            "skipAndTrial": "건너뛰기 및 평가판 시작",
-            "alreadyHave": "이미 <b>연결된 홈 보안 계정</b>이 있음",
-            "loginCHS": "기존 CHS 계정으로 로그인",
-            "locationTitle": "위치 추적 활성화",
-            "locationPermission": "이 기능이 올바르게 작동하려면, 이 장치의 위치 추적을 활성화해야 합니다."
-        },
-        "accountStatus": {
-            "title": "내 연결된 홈 보안",
-            "startTrial": "평가판 시작",
-            "manageAccount": "계정 관리",
-            "upgradeAccount": "계정 업그레이드",
-            "inTrialDetail1": "평가판 종료까지 {{remainingDays}}일 남았습니다.",
-            "inTrialDetail2": "현재 평가판 기간 내에 있습니다. 모든 기능에 무제한 액세스할 수 있습니다.",
-            "trialExpiredDetail1": "평가판이 만료되었습니다.",
-            "trialExpiredDetail2": "평가판이 만료되어 장치 생태계가 더 이상 보호되지 않습니다.",
-            "upgradedDetail1": "계정이 {{expiredDate}}까지 활성 상태입니다.",
-            "upgradedDetail2": "장치 생태계가 현재 보호되고 있습니다.",
-            "localAccountDetail2": "30일 무료 평가판을 시작하려면, 아래 버튼을 클릭하십시오.",
-            "alreadyHaveAccount": "활성화 코드가 이미 있습니까?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "지원 가져오기"
@@ -1726,7 +1627,7 @@
                 "optimallyProtected": "현재 Windows Defender를 사용 중인 것 같습니다. 나쁜 선택은 아니지만 Lenovo는 랜섬웨어, 멀웨어 및 바이러스에 대한 궁극적인 안전을 위해 탁월한 보안 기능을 제공하는 <b>McAfee</b>와 협력하여 <b>중요 항목을 보호</b>할 수 있습니다.",
                 "windowsSubtitle": "Windows Defender 기본 보호",
                 "topTip": "온라인 안전을 위한 최고의 팁",
-                "topContent": "가장 큰 최신 온라인 위협에 방어하는 방법 알아보기",
+                "topContent": "가장 큰 최신 온라인 위협에 방어하는 방법 알아보기 <tag>팁 보기</tag>",
                 "view": "팁 보기",
                 "buyNow": "바로 구매",
                 "buy": "이러한 은행급 보안 기능을 활용하려면 지금 McAfee 바이러스 보호 기능을 구입, 다운로드 및 설치",
@@ -1766,8 +1667,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee 취약성 스캐너 ",
                 "report": "위협 보호 보고서 ",
-                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.",
-                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.",
+                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.<tag>지금 구독</tag>",
+                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.<tag>지금 구독</tag>",
                 "subscribeNow": "지금 구독",
                 "fileScan": "파일 스캔함",
                 "Viruses": "바이러스 제거됨",
@@ -2570,6 +2471,121 @@
                 "readMore": "자세히 읽기",
                 "readLess": "간단하게 읽기"
             }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     }
 }

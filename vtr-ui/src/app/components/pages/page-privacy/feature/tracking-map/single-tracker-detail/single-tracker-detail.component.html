@@ -55,7 +55,7 @@
 									[metricsItem]="'InstallButton'"
 									vtrOfflineMode
 									vtrOpenFigleafInstaller>
-								Install Now
+								{{'Install Now' | changeActionButtonText | async}}
 							</button>
 							<a class="tracker__link"
 							   routerLink="/privacy/landing"

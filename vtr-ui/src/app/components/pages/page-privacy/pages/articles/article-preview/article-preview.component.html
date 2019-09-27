@@ -13,6 +13,7 @@
 	</div>
 	<div class="article-preview__description">
 		<h2 class="article-preview__title"
+			[ngClass]="{'article-preview__title--offline': !isOnline}"
 			vtrCutMultilineTextWithDots [textToAppend]="article.Title"
 			title="{{article.Title}}"
 			(click)="openArticle.emit(article.ActionLink)"

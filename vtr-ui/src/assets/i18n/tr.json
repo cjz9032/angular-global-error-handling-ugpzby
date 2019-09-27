@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Şunun için Makro Tuşu Kaydediliyor"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -430,11 +445,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Destek",
-            "homeSecurity": "Bağlı Ev",
             "privacy": "Gizlilik",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Güvenlik Danışmanı",
@@ -473,6 +488,9 @@
             "expand": "Genişlet",
             "loader": "Durum <br> Alma",
             "loading": "Yükleniyor..."
+        },
+        "app-update": {
+            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
         }
     },
     "privacy": {
@@ -1244,7 +1262,8 @@
                     "caption": "Otomatik Uzaklık Ayarı, algılama uzaklığını bir yapay zeka altyapısı aracılığıyla otomatik olarak günceller.",
                     "options": {
                         "near": "Yakın",
-                        "far": "Uzak"
+                        "far": "Uzak",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1264,13 +1283,17 @@
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
                     "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Sıfır Dokunma ile Oturum Açma kullanılamaz.",
                     "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın.",
-                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır."
+                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
                     "screenTimeoutSettings": "Ekran zaman aşımı ayarlarına git"
                 },
-                "resetToDefault": "Sıfırla"
+                "resetToDefault": "Sıfırla",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Akıllı Ekran",
@@ -1496,128 +1519,6 @@
             "fileNotFoundException": "Dosya bulunamadı."
         }
     },
-    "homeSecurity": {
-        "title": "Bağlı Ev Güvenliği",
-        "notification": {
-            "recent": "En son güvenlik bildirimleri",
-            "notifications": "Bildirimler",
-            "unsafeNetworkConnection": "Güvenli olmayan ağ bağlantısı",
-            "networkUnsafe": "Ağ güvenli değil",
-            "deviceDisconnected": "Cihaz bağlantısı kesildi",
-            "newDeviceDetected": "Yeni cihaz algılandı",
-            "unsafeDeviceDetected": "Güvenli olmayan cihaz algılandı"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Cihazınızın ekosistemini koruyun",
-            "thisDevice": "Bu cihaz",
-            "allDevices": "Tüm Cihazlar",
-            "protected": "Korunuyor",
-            "notProtected": "Korunmuyor",
-            "trialExpired": "Deneme Süresi Doldu",
-            "upgrade": "yükselt",
-            "inEcosystem": "Ekosistemde",
-            "ecosystemEnable": "Ekosistem Etkinleştirildi",
-            "inTrial": "Deneme süresi devam ediyor",
-            "addEcosystem": "Ekosisteme Ekle",
-            "enableEcosystem": "Ekosistemi Etkinleştir",
-            "startTrial": "Deneme Süresini Başlat",
-            "fullAccess": "Tam Erişim",
-            "renew": "Yenile"
-        },
-        "overview": {
-            "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
-            "allDevices": "Tüm Cihazlar",
-            "myDevice": "Cihazım",
-            "thisComputer": "Bu bilgisayar",
-            "secure": "GÜVENLİ",
-            "needAttention": "İLGİLENMENİZ GEREKİYOR",
-            "manageAccount": "Hesabı Yönet",
-            "devices": "Cihazlar",
-            "seeProtectedDevices": "Korunan cihazları görün",
-            "addDevice": "cihaz ekle",
-            "trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
-            "upgrade": "yükselt",
-            "freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
-            "startTrial": "Deneme Süresini Başlat",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Coronet Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "Geri",
-            "skip": "Atla",
-            "start": "TURU BAŞLAT",
-            "done": "BİTTİ",
-            "welcome1": "Hoş Geldiniz",
-            "welcomeDesc1": "Yalnızca birkaç tıklamayla kendiniz ve aileniz için bilgisayarlarınızı, mobil cihazlarınızı ve bağlı cihazları koruyabilirsiniz.",
-            "welcomeDescStart": "30 günlük ücretsiz deneme sürenizi şimdi başlatın.",
-            "welcome2": "Vantage'a özel",
-            "welcomeDesc2": "Bağlı Ev Güvenliği, ekosisteminizin ve güvenlik uyarılarınızın koruma durumuna hızlı erişim için doğrudan Vantage'ın içinde yerleşik olarak bulunur.",
-            "create": "Lenovo ID ile",
-            "lenovoId": "hesabınızı oluşturun",
-            "notifications": "Evinizin durumu hakkında <b>bildirimler</b> alın",
-            "monitor": "Ailenizin cihazlarının güvenliğini <b>izleyin</b>",
-            "peaceOfMind": "Her zaman korunduğunuzu bilerek <b>rahat edin</b>!",
-            "signInLenovoId": "LENOVO ID İLE KAYDOL",
-            "haveLenovo": "<b>Lenovo ID'm</b> yok",
-            "createLenovo": "&nbsp;Lenovo ID oluşturun",
-            "without": "<b>Hesap olmadan</b> devam edin",
-            "skipAndTrial": "ATLA VE DENEME SÜRESİNİ BAŞLAT",
-            "alreadyHave": "<b>Bağlı Ev Güvenliği (CHS) Hesabım</b> zaten var",
-            "loginCHS": "Mevcut CHS hesabınızla giriş yapın",
-            "locationTitle": "Konum izlemeyi etkinleştir",
-            "locationPermission": "Bu özelliğin düzgün çalışması için bu cihazda konum izlemeyi etkinleştirmeniz gerekiyor"
-        },
-        "accountStatus": {
-            "title": "Bağlı Ev Güvenliğim",
-            "startTrial": "Deneme Süresini Başlat",
-            "manageAccount": "Hesabı Yönet",
-            "upgradeAccount": "Hesabı Yükselt",
-            "inTrialDetail1": "Deneme süresinin dolmasına {{remainingDays}} gün kaldı.",
-            "inTrialDetail2": "Şu anda deneme süresi içindesiniz. Tüm özelliklere sınırsız erişiminiz var.",
-            "trialExpiredDetail1": "Deneme süreniz doldu.",
-            "trialExpiredDetail2": "Deneme süreniz doldu ve artık cihaz ekosisteminiz korunmuyor.",
-            "upgradedDetail1": "Hesabınız {{expiredDate}} tarihine kadar etkin.",
-            "upgradedDetail2": "Cihaz ekosisteminiz şu anda korunuyor.",
-            "localAccountDetail2": "30 günlük ücretsiz deneme sürenizi başlatmak için aşağıdaki düğmeye tıklayın.",
-            "alreadyHaveAccount": "Etkinleştirme kodunuz zaten var mı?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Destek Alın"
@@ -1726,7 +1627,7 @@
                 "optimallyProtected": "Şu anda Windows Defender kullandığınız görülüyor. Kötü bir seçim değil ancak fidye yazılımlarına, kötü amaçlı yazılımlara ve virüslere karşı nihai koruma sağlamak üzere, <b>önemli olan içeriğinizi koruyabilmeniz için</b> <b>McAfee</b> ile birlikte size ödüllü bir güvenlik çözümü sunuyoruz.",
                 "windowsSubtitle": "Windows Defender Temel Koruması",
                 "topTip": "Çevrimiçi güvenlik için en iyi ipuçları",
-                "topContent": "Günümüzün en büyük çevrimiçi tehditlerine karşı nasıl korunabileceğinizi öğrenin",
+                "topContent": "Günümüzün en büyük çevrimiçi tehditlerine karşı nasıl korunabileceğinizi öğrenin <tag>İPUÇLARINI GÖRÜN</tag>",
                 "view": "İPUÇLARINI GÖRÜN",
                 "buyNow": "Şimdi Satın Al",
                 "buy": "Banka düzeyinde güvenlik özelliklerinden yararlanmak için McAfee virüsten koruma yazılımını hemen satın alın, indirin ve yükleyin",
@@ -1766,8 +1667,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Güvenlik Açığı Tarayıcısı ",
                 "report": "Tehdit Koruma Raporunuz ",
-                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.",
-                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.",
+                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.<tag>Şimdi Abone Ol</tag>",
+                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.<tag>Şimdi Abone Ol</tag>",
                 "subscribeNow": "Şimdi Abone Ol",
                 "fileScan": "Dosya tarandı",
                 "Viruses": "Virüs Temizlendi",
@@ -2570,6 +2471,121 @@
                 "readMore": "Okumaya Devam Et",
                 "readLess": "Okumayı Daralt"
             }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     }
 }

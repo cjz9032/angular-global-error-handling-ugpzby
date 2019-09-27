@@ -110,7 +110,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 
 	launchUserGuide() {
 		if (this.userGuide) {
-			this.userGuide.launch(this.commonService.isOnline, true);
+			this.userGuide.launchUg(this.commonService.isOnline, true);
 		}
 	}
 

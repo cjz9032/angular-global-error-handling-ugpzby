@@ -293,4 +293,8 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	// To Restart Windows
+	public restartMachine() {
+		this.keyboardManager.RestartMachine();
+	}
 }

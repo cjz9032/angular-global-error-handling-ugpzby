@@ -30,6 +30,13 @@
 			a.disabled {
 				pointer-events: auto;
 			}
+			.chevron-list {
+				li.black {
+					.detail {
+						color: $black_light!important;
+					}
+				}
+			}
 		}
 
 		.home-security {
@@ -60,8 +67,12 @@
 
 				vtr-ui-button {
 					max-width: 90%;
+					&.disable {
+						opacity: 0.7;
+					}
 					::ng-deep .button {
 						width: 100%;
+						background: $blue_gradient;
 					}
 				}
 			}
@@ -115,7 +126,7 @@
 		.coronet-logo {
 			width: 10rem;
 		}
-		.cutting-line {
+		hr {
 			border: 0.1rem solid $grey_light;
 			margin: 5rem 0 4rem 0;
 		}

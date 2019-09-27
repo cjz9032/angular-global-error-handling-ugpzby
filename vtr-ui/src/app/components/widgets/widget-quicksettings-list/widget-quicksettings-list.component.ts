@@ -81,7 +81,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			id: 'quicksettings wifisecurity',
 			ariaLabel: 'wifi security',
 			type: 'auto-updates',
-			settings: ''
+			settings: 'quicksettings_wifisecurity'
 		},
 		{
 			readMoreText: '',
@@ -167,7 +167,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		}
 
 		if (!this.gamingSettings.winKeyLockFeature) {
-			this.quickSettings[2].isVisible = false;
+			this.quickSettings[2].isVisible = true;
 		}
 		this.checkQuickSettingsVisibility();
 		// Initialize Quicksetting;

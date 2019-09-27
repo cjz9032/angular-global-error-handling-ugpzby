@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Înregistrarea tastei macro pentru"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -430,11 +445,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Asistenţă",
-            "homeSecurity": "Conectat acasă",
             "privacy": "Confidenţialitate",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Asistenţă securitate",
@@ -473,6 +488,9 @@
             "expand": "Extindere",
             "loader": "Obținerea <br> statutului",
             "loading": "se incarca..."
+        },
+        "app-update": {
+            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
         }
     },
     "privacy": {
@@ -1244,7 +1262,8 @@
                     "caption": "Ajustarea automată a distanței va actualiza automat distanța de detecție prin intermediul unui motor AI.",
                     "options": {
                         "near": "Lângă",
-                        "far": "Departe"
+                        "far": "Departe",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1264,13 +1283,17 @@
                     "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
                     "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
                     "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată.",
-                    "description6": "4. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate."
+                    "description6": "4. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
                     "screenTimeoutSettings": "Accesați setările de expirare a ecranului"
                 },
-                "resetToDefault": "Resetare"
+                "resetToDefault": "Resetare",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Ecran inteligent",
@@ -1496,128 +1519,6 @@
             "fileNotFoundException": "Fişierul nu a fost găsit."
         }
     },
-    "homeSecurity": {
-        "title": "Securitate conectată, la domiciliu",
-        "notification": {
-            "recent": "Notificări recente de securitate",
-            "notifications": "Notificări",
-            "unsafeNetworkConnection": "Conexiune nesigură la rețea",
-            "networkUnsafe": "Rețea nesigură",
-            "deviceDisconnected": "Dispozitiv deconectat",
-            "newDeviceDetected": "S-a detectat un dispozitiv nou",
-            "unsafeDeviceDetected": "S-a detectat un dispozitiv nesigur"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Protejați-vă ecosistemul dispozitivului",
-            "thisDevice": "Acest dispozitiv",
-            "allDevices": "Toate dispozitivele",
-            "protected": "Protejat",
-            "notProtected": "Neprotejat",
-            "trialExpired": "Perioadă de încercare expirată",
-            "upgrade": "upgrade",
-            "inEcosystem": "În ecosistem",
-            "ecosystemEnable": "Ecosistem activat",
-            "inTrial": "În perioada de probă",
-            "addEcosystem": "Adăugați la ecosistem",
-            "enableEcosystem": "Activați ecosistemul",
-            "startTrial": "Începeți perioada de probă",
-            "fullAccess": "Acces complet",
-            "renew": "Reînnoiți"
-        },
-        "overview": {
-            "overviewBlockTitle": "Prezentarea generală a securității ecosistemului",
-            "allDevices": "Toate dispozitivele",
-            "myDevice": "Dispozitivul meu",
-            "thisComputer": "Acest computer",
-            "secure": "SIGUR",
-            "needAttention": "ARE NEVOIE DE ATENȚIE",
-            "manageAccount": "Gestionare cont",
-            "devices": "Dispozitive",
-            "seeProtectedDevices": "Vedeți dispozitivele protejate",
-            "addDevice": "adăugați dispozitiv",
-            "trialExpired": "Perioadă de încercare expirată - Faceți upgrade la protecția tuturor dispozitivelor dvs.",
-            "upgrade": "upgrade",
-            "freeTrial": "Protejați-vă toate dispozitivele - Perioadă de probă gratuită de 30 de zile",
-            "startTrial": "Începeți perioada de probă",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Dezvoltat de Coronet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "Înapoi",
-            "skip": "Ignorare",
-            "start": "ÎNCEPEȚI TURUL",
-            "done": "EFECTUAT",
-            "welcome1": "Bine aţi venit",
-            "welcomeDesc1": "Cu doar câteva clicuri, veți putea să protejați computerele, dispozitivele mobile și dispozitivele conectate ale dvs. și ale familiei.",
-            "welcomeDescStart": "Începeți acum perioada de probă gratuită de 30 de zile.",
-            "welcome2": "Exclusiv pentru Vantage",
-            "welcomeDesc2": "Funcția Securitate conectată, la domiciliu este integrată în Vantage pentru acces rapid la starea de protecție a ecosistemului și la alertele de securitate.",
-            "create": "Creați-vă cont",
-            "lenovoId": "cu Lenovo ID",
-            "notifications": "Primiți <b>notificări</b> despre starea casei",
-            "monitor": "<b>Monitorizați</b> siguranța dispozitivelor familiei",
-            "peaceOfMind": "Obțineți <b>liniște sufletească</b> prin protecție permanentă!",
-            "signInLenovoId": "ÎNREGISTRAȚI-VĂ CU LENOVO ID",
-            "haveLenovo": "Nu am un <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Creați un Lenovo ID",
-            "without": "Continuați <b>fără cont</b>",
-            "skipAndTrial": "SĂRIȚI PESTE ȘI ÎNCEPEȚI TUTORIALUL",
-            "alreadyHave": "Am deja un <b>cont Securitate conectată, la domiciliu</b>",
-            "loginCHS": "Conectați-vă cu contul existent",
-            "locationTitle": "Activați monitorizarea locației",
-            "locationPermission": "Pentru ca această caracteristică să funcționeze corect, va trebui să activați monitorizarea locației pentru acest dispozitiv"
-        },
-        "accountStatus": {
-            "title": "Securitatea mea conectată, la domiciliu",
-            "startTrial": "Începeți perioada de probă",
-            "manageAccount": "Gestionare cont",
-            "upgradeAccount": "Upgrade cont",
-            "inTrialDetail1": "{{remainingDays}} zile rămase până la sfârșitul perioadei de probă.",
-            "inTrialDetail2": "Momentan sunteți în perioada de probă. Aveți acces nelimitat la toate caracteristicile.",
-            "trialExpiredDetail1": "Perioada de probă a expirat.",
-            "trialExpiredDetail2": "Perioada de probă a expirat, iar ecosistemul dispozitivului nu mai este protejat.",
-            "upgradedDetail1": "Contul dvs. este activ până pe {{expiredDate}}.",
-            "upgradedDetail2": "Ecosistemul dispozitivului este protejat momentan.",
-            "localAccountDetail2": "Dați clic pe butonul de mai jos pentru a începe perioada de probă gratuită de 30 de zile.",
-            "alreadyHaveAccount": "Aveți deja un cod de activare?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Obțineți asistență"
@@ -1726,7 +1627,7 @@
                 "optimallyProtected": "Se pare că folosiți acum Windows Defender. Nu este o alegere rea, însă, pentru o securitate maximă împotriva ransomware, malware și a virușilor, am făcut echipă cu <b>McAfee</b> pentru a vă oferi securitate premiată ca să puteți <b>proteja ceea ce contează.</b>",
                 "windowsSubtitle": "Protecție de bază Windows Defender",
                 "topTip": "Sfaturi importante pentru securitatea online",
-                "topContent": "Aflați cum vă puteți apăra împotriva celor mai mari amenințări online din prezent",
+                "topContent": "Aflați cum vă puteți apăra împotriva celor mai mari amenințări online din prezent <tag>VIZUALIZAȚI SFATURILE</tag>",
                 "view": "VIZUALIZAȚI SFATURILE",
                 "buyNow": "Cumpărați acum",
                 "buy": "Cumpărați, descărcați și instalați protecția antivirus McAfee astăzi, pentru a profita de aceste funcții de securitate similare celor folosite în mediul bancar",
@@ -1766,8 +1667,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Raportul dvs. de protecție împotriva amenințărilor ",
-                "trialContent": "Ați folosit cu succes versiunea de încercare a antivirusului McAfee. Însă au mai rămas {{remainingDays}} zile până când versiunea de încercare expiră, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.",
-                "subscribeContent": "Ați folosit cu succes McAfee. Însă au mai rămas {{remainingDays}} zile, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.",
+                "trialContent": "Ați folosit cu succes versiunea de încercare a antivirusului McAfee. Însă au mai rămas {{remainingDays}} zile până când versiunea de încercare expiră, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.<tag>Abonați-vă acum</tag>",
+                "subscribeContent": "Ați folosit cu succes McAfee. Însă au mai rămas {{remainingDays}} zile, sunteți expus riscului de a vă lăsa computerul vulnerabil. Nu riscați.<tag>Abonați-vă acum</tag>",
                 "subscribeNow": "Abonați-vă acum",
                 "fileScan": "Fișiere scanate",
                 "Viruses": "Viruși eliminați",
@@ -2570,6 +2471,121 @@
                 "readMore": "Citiţi mai mult",
                 "readLess": "Citiţi maI puţin"
             }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     }
 }

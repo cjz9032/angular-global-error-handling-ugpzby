@@ -13,12 +13,22 @@
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat,
 			linear-gradient(to left bottom, #4980fc, #2e62d9);
 		background-size: cover;
+		.button {
+			border: 0;
+		}
 	}
 
 	&.expired {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat,
 			linear-gradient(to left top, $stop_light, $stop_dark);
 		background-size: cover;
+		.button {
+			border: 0;
+			color: #c94000;
+			&:focus {
+				box-shadow: 0 0 0 0.4rem rgba(255, 150, 146, 0.5);
+			}
+		}
 	}
 
 	&.not-found {
@@ -87,12 +97,7 @@
 		text-overflow: ellipsis;
 
 		&:hover {
-			box-shadow: none;
 			background: $main_lightest;
-		}
-
-		&:focus {
-			box-shadow: none;
 		}
 	}
 

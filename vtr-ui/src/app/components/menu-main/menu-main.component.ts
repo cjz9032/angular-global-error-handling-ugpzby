@@ -102,6 +102,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			.then((result) => {
 				this.region = result.GEO;
 				this.showVpn();
+				this.initUnreadMessage();
 			})
 			.catch((e) => {
 				this.region = 'us';
@@ -152,7 +153,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		});
 
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			if (event.lang === 'en') {
+			if (this.translate.currentLang === 'en') {
 				this.showSearchMenu = true;
 			}
 		});
@@ -222,22 +223,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
-		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
-			LocalStorageKey.UnreadMessageCount,
-			undefined
-		);
-		if (cacheUnreadMessageCount) {
-			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
-			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
-			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
-		} else {
-			if (this.appsForYouService.showAdobeMenu()) {
-				this.UnreadMessageCount.totalMessage = 2;
-			} else {
-				this.UnreadMessageCount.totalMessage = 1;
-			}
-		}
-
 		this.hardwareScanService.getPluginInfo()
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
@@ -260,6 +245,25 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 	}
 
+	private initUnreadMessage() {
+		const cacheUnreadMessageCount = this.commonService.getLocalStorageValue(
+			LocalStorageKey.UnreadMessageCount,
+			undefined
+		);
+		if (cacheUnreadMessageCount) {
+			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
+			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
+			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
+		} else {
+			if (this.appsForYouService.showLmaMenu()) {
+				this.UnreadMessageCount.totalMessage++;
+			}
+			if (this.appsForYouService.showAdobeMenu()) {
+				this.UnreadMessageCount.totalMessage++;
+			}
+		}
+	}
+
 	updateUnreadMessageCount(item, event?) {
 		if (item.id === 'user') {
 			const target = event.target || event.srcElement || event.currentTarget;
@@ -267,17 +271,21 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			const id = idAttr.nodeValue;
 			let needUpdateLocalStorage = false;
 			if (id === 'menu-main-lnk-open-lma') {
-				if (this.UnreadMessageCount.totalMessage > 0) {
-					this.UnreadMessageCount.totalMessage--;
+				if (!this.UnreadMessageCount.lmaMenuClicked) {
+					if (this.UnreadMessageCount.totalMessage > 0) {
+						this.UnreadMessageCount.totalMessage--;
+					}
+					this.UnreadMessageCount.lmaMenuClicked = true;
+					needUpdateLocalStorage = true;
 				}
-				this.UnreadMessageCount.lmaMenuClicked = true;
-				needUpdateLocalStorage = true;
 			} else if (id === 'menu-main-lnk-open-adobe') {
-				if (this.UnreadMessageCount.totalMessage > 0) {
-					this.UnreadMessageCount.totalMessage--;
+				if (!this.UnreadMessageCount.adobeMenuClicked) {
+					if (this.UnreadMessageCount.totalMessage > 0) {
+						this.UnreadMessageCount.totalMessage--;
+					}
+					this.UnreadMessageCount.adobeMenuClicked = true;
+					needUpdateLocalStorage = true;
 				}
-				this.UnreadMessageCount.adobeMenuClicked = true;
-				needUpdateLocalStorage = true;
 			}
 			if (needUpdateLocalStorage) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);

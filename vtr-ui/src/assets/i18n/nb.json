@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Spiller inn makrotast for"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -430,11 +445,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Støtte",
-            "homeSecurity": "Tilkoblede hjem",
             "privacy": "Personvern",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Sikkerhetsrådgivning",
@@ -473,6 +488,9 @@
             "expand": "Utvid",
             "loader": "Henter <br> status",
             "loading": "Laster..."
+        },
+        "app-update": {
+            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
         }
     },
     "privacy": {
@@ -1244,7 +1262,8 @@
                     "caption": "Automatisk avstandsjustering vil automatisk oppdatere avstandsfølsomheten via en AI-motor.",
                     "options": {
                         "near": "Kort avstand",
-                        "far": "Lang avstand"
+                        "far": "Lang avstand",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1264,13 +1283,17 @@
                     "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
                     "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
-                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen."
+                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
                     "screenTimeoutSettings": "Gå til innstillingene for tidsutkobling av skjermen"
                 },
-                "resetToDefault": "Tilbakestill"
+                "resetToDefault": "Tilbakestill",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skjerm",
@@ -1496,128 +1519,6 @@
             "fileNotFoundException": "Fant ikke fil."
         }
     },
-    "homeSecurity": {
-        "title": "Sikkerhet for tilkoblede hjem",
-        "notification": {
-            "recent": "Nylige sikkerhetsvarsler",
-            "notifications": "Varsler",
-            "unsafeNetworkConnection": "Usikker nettverksforbindelse",
-            "networkUnsafe": "Usikkert nettverk",
-            "deviceDisconnected": "Enhet frakoblet",
-            "newDeviceDetected": "Ny enhet funnet",
-            "unsafeDeviceDetected": "Usikker enhet funnet"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Beskytt enhetens økosystem",
-            "thisDevice": "Denne enheten",
-            "allDevices": "Alle enheter",
-            "protected": "Beskyttet",
-            "notProtected": "Ikke beskyttet",
-            "trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
-            "upgrade": "oppgrader",
-            "inEcosystem": "I økosystem",
-            "ecosystemEnable": "Økosystem aktivert",
-            "inTrial": "I prøveperiode",
-            "addEcosystem": "Legg til økosystem",
-            "enableEcosystem": "Aktiver økosystem",
-            "startTrial": "Start prøveperiode",
-            "fullAccess": "Full tilgang",
-            "renew": "Forny"
-        },
-        "overview": {
-            "overviewBlockTitle": "Vis sikkerhetsoversikt for økosystemet",
-            "allDevices": "Alle enheter",
-            "myDevice": "Min enhet",
-            "thisComputer": "Denne datamaskinen",
-            "secure": "SIKKER",
-            "needAttention": "TRENGER OPPMERKSOMHET",
-            "manageAccount": "Administrer konto",
-            "devices": "Enheter",
-            "seeProtectedDevices": "Se beskyttede enheter",
-            "addDevice": "legg til enhet",
-            "trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
-            "upgrade": "oppgrader",
-            "freeTrial": "Beskytt alle enhetene dine - Gratis 30-dagers prøveperiode",
-            "startTrial": "Start prøveperiode",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Leveres av Coronet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "Tilbake",
-            "skip": "Hopp over",
-            "start": "START OMVISNING",
-            "done": "FERDIG",
-            "welcome1": "Velkommen",
-            "welcomeDesc1": "Med bare noen få klikk kan du beskytte PC-er, mobilenheter og tilkoblede enheter tilhørende deg og familien din.",
-            "welcomeDescStart": "Start en 30-dagers gratis prøveperiode nå.",
-            "welcome2": "Eksklusivt for Vantage",
-            "welcomeDesc2": "Sikkerhet for tilkoblede hjem er innebygd i Vantage for rask tilgang til beskyttelsesstatusen for økosystemet og sikkerhetsvarsler.",
-            "create": "Opprett en konto",
-            "lenovoId": "med Lenovo ID-en",
-            "notifications": "Motta <b>varslinger</b> om hjemmets status",
-            "monitor": "<b>Overvåk</b> sikkerheten til familiens enheter",
-            "peaceOfMind": "Få <b>ro i sjelen</b> med vissheten om at du alltid er beskyttet.",
-            "signInLenovoId": "REGISTRER DEG MED LENOVO ID",
-            "haveLenovo": "Jeg har ikke <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Opprett en Lenovo ID",
-            "without": "Fortsett <b>uten en konto</b>",
-            "skipAndTrial": "HOPP OVER OG START PRØVEPERIODE",
-            "alreadyHave": "Jeg har allerede en <b>Sikkerhet for tilkoblede hjem-konto</b>",
-            "loginCHS": "Logg på eksisterende Sikkerhet for tilkoblede hjem-konto",
-            "locationTitle": "Aktiver posisjonssporing",
-            "locationPermission": "For at denne funksjonen skal fungere på riktig måte, må du aktivere posisjonssporing for denne enheten"
-        },
-        "accountStatus": {
-            "title": "Min Sikkerhet for tilkoblede hjem",
-            "startTrial": "Start prøveperiode",
-            "manageAccount": "Administrer konto",
-            "upgradeAccount": "Oppgrader konto",
-            "inTrialDetail1": "{{remainingDays}} dager til prøveperioden er over.",
-            "inTrialDetail2": "Du er for tiden i prøveperioden. Du har ubegrenset tilgang til alle funksjoner.",
-            "trialExpiredDetail1": "Prøveperioden er utløpt.",
-            "trialExpiredDetail2": "Prøveperioden er utløpt og enhetens økosystem er ikke lenger beskyttet.",
-            "upgradedDetail1": "Kontoen din er aktiv til {{expiredDate}}.",
-            "upgradedDetail2": "Enhetens økosystem er beskyttet.",
-            "localAccountDetail2": "Klikk på knappen nedenfor for å starte en 30-dagers prøveperiode.",
-            "alreadyHaveAccount": "Har du allerede en aktiveringskode?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Få støtte"
@@ -1726,7 +1627,7 @@
                 "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Dette er ikke et dårlig valg, men vi tilbyr prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus i samarbeid med <b>McAfee</b>, slik at du kan <b>beskytte dine dyrebare data</b>.",
                 "windowsSubtitle": "Grunnleggende beskyttelse med Windows Defender",
                 "topTip": "Topptips for nettsikkerhet",
-                "topContent": "Finn ut hvordan du kan forsvare deg mot de største truslene på nettet",
+                "topContent": "Finn ut hvordan du kan forsvare deg mot de største truslene på nettet <tag>VIS TIPS</tag>",
                 "view": "VIS TIPS",
                 "buyNow": "Kjøp nå",
                 "buy": "Kjøp, last ned og installer McAfee-virusbeskyttelse i dag for å dra nytte av sikkerhetsfunksjoner på banknivå",
@@ -1766,8 +1667,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Sårbarhetsskanner ",
                 "report": "Rapport om trusselbeskyttelse ",
-                "trialContent": "Du har gjort god bruk av prøveversjonen av McAfee-antivirusprogramvaren. Nå er det imidlertid bare {{remainingDays}} dager igjen til prøveversjonen utløper, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.",
-                "subscribeContent": "Du har gjort god bruk av McAfee. Nå er det imidlertid bare {{remainingDays}} dager igjen, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.",
+                "trialContent": "Du har gjort god bruk av prøveversjonen av McAfee-antivirusprogramvaren. Nå er det imidlertid bare {{remainingDays}} dager igjen til prøveversjonen utløper, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.<tag>Abonner nå</tag>",
+                "subscribeContent": "Du har gjort god bruk av McAfee. Nå er det imidlertid bare {{remainingDays}} dager igjen, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.<tag>Abonner nå</tag>",
                 "subscribeNow": "Abonner nå",
                 "fileScan": "Skannede filer",
                 "Viruses": "Fjernede virus",
@@ -2570,6 +2471,121 @@
                 "readMore": "Les mer",
                 "readLess": "Les mindre"
             }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     }
 }
