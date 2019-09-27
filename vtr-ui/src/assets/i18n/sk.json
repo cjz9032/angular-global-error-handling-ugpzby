@@ -1643,7 +1643,8 @@
                 "startFileScan": "Spustiť kontrolu súborov"
             },
             "others": {
-                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia"
+                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia",
+                "unknown": "Neznáma"
             }
         },
         "wifisecurity": {

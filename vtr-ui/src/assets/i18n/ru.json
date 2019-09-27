@@ -1643,7 +1643,8 @@
                 "startFileScan": "Начать сканирование файлов"
             },
             "others": {
-                "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства"
+                "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства",
+                "unknown": "Неизвестно"
             }
         },
         "wifisecurity": {

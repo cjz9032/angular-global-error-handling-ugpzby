@@ -1643,7 +1643,8 @@
                 "startFileScan": "啟動檔案掃描"
             },
             "others": {
-                "othersProtection": "{{protectedName}}為您的裝置提供基本保護"
+                "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
+                "unknown": "不明"
             }
         },
         "wifisecurity": {

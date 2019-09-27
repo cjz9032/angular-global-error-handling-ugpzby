@@ -1643,7 +1643,8 @@
                 "startFileScan": "Fájlok vizsgálatának megkezdése"
             },
             "others": {
-                "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára"
+                "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
+                "unknown": "Ismeretlen"
             }
         },
         "wifisecurity": {

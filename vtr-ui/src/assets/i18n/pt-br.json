@@ -1643,7 +1643,8 @@
                 "startFileScan": "Iniciar verificação de arquivos"
             },
             "others": {
-                "othersProtection": "{{protectedName}} oferece proteção básica para seu dispositivo"
+                "othersProtection": "{{protectedName}} oferece proteção básica para seu dispositivo",
+                "unknown": "Desconhecido"
             }
         },
         "wifisecurity": {
