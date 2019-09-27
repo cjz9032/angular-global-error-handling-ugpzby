@@ -475,7 +475,7 @@
             "loading": "Načítava..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
         }
     },
     "privacy": {
@@ -1587,7 +1587,7 @@
                 "Blazing": "Blesková rýchlosť",
                 "BlazingText": "Optimalizovaný antivírus, ktorý nespomalí ani nenaruší chod aplikácie Lenovo Vantage",
                 "privacyTerms": "/   <tag>Zásady ochrany osobných údajov</tag>  |  <tag>Podmienky poskytovania služby</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nie je k dispozícii"
             },
             "windowsDefender": {
                 "optimallyProtected": "Zdá sa, že momentálne používate program Windows Defender. Nie je to zlá voľba, ale v záujme maximálnej bezpečnosti proti ransomvéru, malvéru a vírusom sme sa spojili so spoločnosťou <b>McAfee</b>, aby sme vám mohli ponúknuť oceňované zabezpečenie a <b>ochrániť to, na čom záleží.</b>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Získať aplikáciu McAfee",
                 "topBenefits": "Prečo <b>spoločnosť Lenovo odporúča aplikáciu McAfee</b> na ochranu všetkých vašich zariadení",
                 "awardTitle": "Oceňovaný antivírus",
-                "awardSubtitle": "Zabráňte infikovaniu svojho počítača vírusmi, škodlivým softvérom a ransomvérom.",
+                "awardSubtitle": "Zabráňte infikovaniu svojho počítača vírusmi, škodlivým softvérom a ransomvérom",
                 "supportTitle": "Bezplatná 24-hodinová odborná technická podpora ",
                 "supportSubtitle": "Získajte nepretržitú pomoc a zabudnite na starosti vďaka nášmu špecializovanému bezpečnostnému tímu",
                 "trialSubtitle": "Momentálne ste chránení 30-dňovou skúšobnou verziou aplikácie McAfee LiveSafe – už len na obdobie {{remainingDays}} dní! Ak chcete rozšíriť svoju ochranu, prihláste sa na odber.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Kontrola slabých miest zabezpečenia McAfee ",
                 "report": "Vaša správa o ochrane pred hrozbami ",
-                "trialContent": "Skúšobné obdobie antivírovej ochrany McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však platnosť skúšobnej verzie uplynie a hrozí, že váš počítač zostane zraniteľný. Neriskujte to.<tag>Zaregistrovať</tag>",
-                "subscribeContent": "Aplikáciu McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však hrozí, že váš počítač zostane zraniteľný. Neriskujte to.<tag>Zaregistrovať</tag>",
+                "trialContent": "Skúšobné obdobie antivírovej ochrany McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však platnosť skúšobnej verzie uplynie a hrozí, že váš počítač zostane zraniteľný. Neriskujte to. <tag>Zaregistrovať</tag>",
+                "subscribeContent": "Aplikáciu McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však hrozí, že váš počítač zostane zraniteľný. Neriskujte to. <tag>Zaregistrovať</tag>",
                 "subscribeNow": "Zaregistrovať",
                 "fileScan": "Skontrolované súbory",
                 "Viruses": "Odstránené vírusy",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Spustiť kontrolu súborov"
             },
             "others": {
-                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia"
+                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia",
+                "unknown": "Neznáma"
             }
         },
         "wifisecurity": {

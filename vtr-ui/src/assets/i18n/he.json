@@ -475,7 +475,7 @@
             "loading": "...טעינה"
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
         }
     },
     "privacy": {
@@ -1587,7 +1587,7 @@
                 "Blazing": "מהירות שאין כמוה",
                 "BlazingText": "אנטי-וירוס משופר שלא יאט או יפריע לחווית Lenovo Vantage שלכם",
                 "privacyTerms": "/   <tag>מדיניות פרטיות</tag>  |  <tag>תנאי השירות</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "לא זמין"
             },
             "windowsDefender": {
                 "optimallyProtected": "נראה שאתם משתמשים כרגע ב-Windows Defender. בחירה לא רעה, אך למען הבטיחות האולטימטיבית נגד תוכנות כופר, תוכנות זדוניות ווירוסים, התחברנו אל <b>McAfee</b> כדי להעניק לכם אבטחה עטורת פרסים כך שתוכלו <b>להגן על מה שחשוב.</b>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "קבלו את McAfee",
                 "topBenefits": "מדוע <b>Lenovo ממליצה על McAfee</b> לצורך הגנה על כל המכשירים שלכם",
                 "awardTitle": "אנטי-וירוס עטור פרסים",
-                "awardSubtitle": "מונע כניסת וירוסים, תוכנות זדוניות ותוכנות כופר במחשב שלכם.",
+                "awardSubtitle": "מונע כניסת וירוסים, תוכנות זדוניות ותוכנות כופר במחשב שלכם",
                 "supportTitle": "תמיכה טכנית בחינם, 24/7 ",
                 "supportSubtitle": "הודות לצוות האבטחה המסור שלנו ניתן לקבל סיוע מסביב לשעון וליהנות משקט נפשי",
                 "trialSubtitle": "אתם מוגנים כרגע על ידי גרסת ניסיון ל- 30 יום של McAfee LiveSafe - נותרו {{remainingDays}} ימים בלבד! הירשמו עכשיו כדי להאריך את תקופת ההגנה שלכם.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "סורק פגיעויות של McAfee ",
                 "report": "דוח הגנה מפני איומים ",
-                "trialContent": "נהניתם מגרסת הניסיון של האנטי-וירוס של McAfee. אבל נותרו רק {{remainingDays}} ימים עד תום תקופת הניסיון, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן.<tag>הירשמו כעת</tag>",
-                "subscribeContent": "נהניתם מגרסת הניסיון של McAfee. אבל נותרו רק {{remainingDays}} ימים, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן.<tag>הירשמו כעת</tag>",
+                "trialContent": "נהניתם מגרסת הניסיון של האנטי-וירוס של McAfee. אבל נותרו רק {{remainingDays}} ימים עד תום תקופת הניסיון, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן. <tag>הירשמו כעת</tag>",
+                "subscribeContent": "נהניתם מגרסת הניסיון של McAfee. אבל נותרו רק {{remainingDays}} ימים, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן. <tag>הירשמו כעת</tag>",
                 "subscribeNow": "הירשמו כעת",
                 "fileScan": "קבצים שנסרקו",
                 "Viruses": "וירוסים הושמדו",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "התחילו בסריקת קבצים"
             },
             "others": {
-                "othersProtection": "מציע הגנה בסיסית להתקן שלכם {{protectedName}}"
+                "othersProtection": "{{protectedName}} מציע הגנה בסיסית למכשיר שלכם",
+                "unknown": "לא ידוע"
             }
         },
         "wifisecurity": {

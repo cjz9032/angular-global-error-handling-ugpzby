@@ -98,7 +98,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				this.viewModel.mcafeestatusList = this.getMcafeeFeature(this.viewModel.mcafee);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.viewModel.mcafeestatusList);
 			}
-			if (this.viewModel.mcafee.metrics) {
+			if (this.viewModel.mcafee.metrics && this.viewModel.mcafee.metrics.length > 0) {
 				this.viewModel.metricsList = this.getMcafeeMetric(this.viewModel.mcafee.metrics);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList, this.viewModel.metricsList);
 			} else { this.showMetricsList = false; }
@@ -325,59 +325,78 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				}
 			});
 		} else if (data) {
-			featureList.push({
-				status: data[0].value,
-				title: this.virusScan,
-				installed: data[0].installed
-			});
-			featureList.push({
-				status: data[1].value,
-				title: this.fireWall,
-				installed: data[1].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.antiSpam,
-				installed: data[3].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.quickClean,
-				installed: data[4].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.vulnerability,
-				installed: data[5].installed
-			});
+			if (data.length < 6) {
+				data.forEach((feature) => {
+					featureList.push({
+						status: feature.value,
+						title: feature.key,
+						installed: feature.installed
+					});
+				});
+			} else {
+				featureList.push({
+					status: data[0].value,
+					title: this.virusScan,
+					installed: data[0].installed
+				});
+				featureList.push({
+					status: data[1].value,
+					title: this.fireWall,
+					installed: data[1].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.antiSpam,
+					installed: data[3].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.quickClean,
+					installed: data[4].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.vulnerability,
+					installed: data[5].installed
+				});
+			}
 		} else {
-			featureList.push({
-				status: mcafee.status,
-				title: this.virusScan,
-				installed: true
-			});
-			featureList.push({
-				status: mcafee.firewallStatus,
-				title: this.fireWall,
-				installed: true
-			});
-			featureList.push({
-				status: null,
-				title: this.antiSpam,
-				installed: mcafee.features[3].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.quickClean,
-				installed: mcafee.features[4].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.vulnerability,
-				installed: mcafee.features[5].installed
-			});
+			if (mcafee.features.length < 6) {
+				mcafee.features.forEach((feature) => {
+					featureList.push({
+						status: feature.value,
+						title: feature.key,
+						installed: feature.installed
+					});
+				});
+			} else {
+				featureList.push({
+					status: mcafee.status,
+					title: this.virusScan,
+					installed: true
+				});
+				featureList.push({
+					status: mcafee.firewallStatus,
+					title: this.fireWall,
+					installed: true
+				});
+				featureList.push({
+					status: null,
+					title: this.antiSpam,
+					installed: mcafee.features[3].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.quickClean,
+					installed: mcafee.features[4].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.vulnerability,
+					installed: mcafee.features[5].installed
+				});
+			}
 		}
-
 		return featureList;
 	}
 

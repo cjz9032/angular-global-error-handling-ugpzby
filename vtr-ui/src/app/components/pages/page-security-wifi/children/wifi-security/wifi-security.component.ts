@@ -34,7 +34,8 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
-	@Input() wifiIsShowMore: string;
+	@Input() isShowHistory: string;
+	@Input() brand: string;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	region = 'us';
@@ -64,13 +65,11 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			this.region = 'us';
 			this.language = 'en';
 		}).then(() => {
-			if (this.wifiIsShowMore !== 'false' && this.region === 'us' && this.language === 'en') {
-				this.isShowMore = true;
-			} else {
+			if (this.region !== 'us' || this.language !== 'en') {
 				this.isShowMore = false;
 			}
 		});
-		if (this.wifiIsShowMore === 'false') {
+		if (this.isShowHistory === 'false' || this.brand === 'think') {
 			this.isShowMore = false;
 		}
 

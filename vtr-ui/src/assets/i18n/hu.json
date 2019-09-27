@@ -475,7 +475,7 @@
             "loading": "Betöltés..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
         }
     },
     "privacy": {
@@ -1587,10 +1587,10 @@
                 "Blazing": "Villámgyors sebesség",
                 "BlazingText": "Optimalizált vírusirtó, amely nem lassítja és nem szakítja meg a Lenovo Vantage kínálta élményt",
                 "privacyTerms": "/   <tag>Adatvédelmi irányelvek</tag>  |  <tag>Használati feltételek</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nem érhető el"
             },
             "windowsDefender": {
-                "optimallyProtected": "Úgy tűnik, hogy jelenleg a Windows Defender alkalmazást használja. Nem rossz választás, de a zsarolóprogramok, rosszindulatú programok és a vírusok elleni felülmúlhatatlan biztonság érdekében összefogtunk a <b>McAfee</b>-vel, így díjnyertes biztonságot kínálunk, hogy <b>megóvhassa, ami számít</b>.",
+                "optimallyProtected": "Úgy tűnik, hogy jelenleg a Windows Defender alkalmazást használja. Nem rossz választás, de a zsarolóprogramok, rosszindulatú programok és a vírusok elleni felülmúlhatatlan biztonság érdekében összefogtunk a <b>McAfee</b>-vel, így díjnyertes biztonságot kínálunk, <b>hogy megóvhassa, ami számít.</b>",
                 "windowsSubtitle": "Windows Defender – alapvédelem",
                 "topTip": "Legfontosabb online biztonsági tippek",
                 "topContent": "Sajátítsa el, hogyan védekezhet napjaink legjelentősebb online fenyegetései ellen <tag>TIPPEK MEGTEKINTÉSE</tag>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "A McAfee beszerzése",
                 "topBenefits": "Miért <b>javasolja a Lenovo a McAfee-t</b> az összes eszköz védelmére",
                 "awardTitle": "Díjnyertes vírusirtó",
-                "awardSubtitle": "Megakadályozza, hogy a vírusok, a rosszindulatú programokat és a zsarolóprogramok a számítógépet megfertőzzék.",
+                "awardSubtitle": "Megakadályozza, hogy a vírusok, a rosszindulatú programokat és a zsarolóprogramok a számítógépet megfertőzzék",
                 "supportTitle": "Ingyenes, éjjel-nappali szakértői műszaki támogatás ",
                 "supportSubtitle": "Éjjel-nappal segítséget és lelki nyugalmat kínál elkötelezett biztonsági csapatunk",
                 "trialSubtitle": "Jelenleg a McAfee LiveSafe 30 napos próbaverziója védi – csak {{remainingDays}} nap van hátra! Iratkozzon fel most, hogy kibővítse védelmét.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Sebezhetőségkereső ",
                 "report": "A fenyegetésvédelmi jelentés ",
-                "trialContent": "Jól kiaknázta a McAfee vírusirtó próbaverzióját. Azonban már csak {{remainingDays}} nap van hátra a próbaidőszak lejáratáig, így fennáll annak kockázata, hogy a számítógép sebezhetővé válik. Ne kockáztasson.<tag>Feliratkozás</tag>",
-                "subscribeContent": "Jól kiaknázta a McAfee-t. Azonban már csak {{remainingDays}} nap van hátra, így fennáll annak kockázata, hogy a számítógép sebezhetővé válik. Ne kockáztasson.<tag>Feliratkozás</tag>",
+                "trialContent": "Jól kiaknázta a McAfee vírusirtó próbaverzióját. Azonban már csak {{remainingDays}} nap van hátra a próbaidőszak lejáratáig, így fennáll annak kockázata, hogy a számítógép sebezhetővé válik. Ne kockáztasson. <tag>Feliratkozás</tag>",
+                "subscribeContent": "Jól kiaknázta a McAfee-t. Azonban már csak {{remainingDays}} nap van hátra, így fennáll annak kockázata, hogy a számítógép sebezhetővé válik. Ne kockáztasson. <tag>Feliratkozás</tag>",
                 "subscribeNow": "Feliratkozás",
                 "fileScan": "Megvizsgált fájlok",
                 "Viruses": "Kiküszöbölt vírusok",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Fájlok vizsgálatának megkezdése"
             },
             "others": {
-                "othersProtection": "{{protectedName}} alapszintű védelmet biztosít az eszköz számára"
+                "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
+                "unknown": "Ismeretlen"
             }
         },
         "wifisecurity": {

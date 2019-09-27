@@ -475,7 +475,7 @@
             "loading": "Ladataan..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
         }
     },
     "privacy": {
@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "Virustentorjunta",
                 "back": "EDELLINEN",
-                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfee</b>tä kaikkien laitteidesi suojaamiseen",
+                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "award": "Palkittu virustentorjuntaohjelmisto",
                 "mcafeePremium": "McAfee LiveSafe -suojaus",
                 "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
@@ -1587,7 +1587,7 @@
                 "Blazing": "Salamannopea",
                 "BlazingText": "Optimoitu virustentorjunta, joka ei hidasta tai keskeytä Lenovo Vantage -kokemustasi",
                 "privacyTerms": "/   <tag>Tietosuojakäytäntö</tag>  |  <tag>Palveluehdot</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ei käytettävissä"
             },
             "windowsDefender": {
                 "optimallyProtected": "Näyttää siltä, että käytät tällä hetkellä Windows Defenderiä. Se ei ole huono valinta, mutta tarjotaksemme äärimmäisen hyvää suojausta kiristysohjelmia, haittaohjelmia ja viruksia vastaan, olemme yhdistäneet voimamme <b>McAfeen</b> kanssa. Yhdessä voimme tarjota sinulla palkittua suojausta niin, että voit <b>suojata tärkeät tietosi.</b>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Hanki McAfee nyt",
                 "topBenefits": "Näistä syistä <b>Lenovo suosittelee McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "awardTitle": "Palkittu virustentorjuntaohjelmisto",
-                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi.",
+                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi",
                 "supportTitle": "Ilmainen 24/7 asiantunteva tekninen tuki ",
                 "supportSubtitle": "Saat apua ja mielenrauhaa ympäri vuorokauden erikoistuneelta tietoturvatiimiltämme",
                 "trialSubtitle": "Olet tällä hetkellä suojattuna McAfee LiveSafen 30 päivän kokeiluversiolla – vain {{remainingDays}} päivää jäljellä! Tilaa nyt, jos haluat laajentaa suojausta.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Uhkien torjunta -raporttisi ",
-                "trialContent": "Olet hyödyntänyt McAfeen virustentorjunnan kokeiluversiosi hyvin. Sinulla on kuitenkin vain {{remainingDays}} päivää jäljellä siihen, kun kokeilujaksosi päättyy, ja vaarana on, että tietokoneesi jää haavoittuvaksi. Älä ota riskiä.<tag>Tilaa nyt</tag>",
-                "subscribeContent": "Olet hyödyntänyt McAfee-ohjelman kokeiluversion hyvin. Kokeiluversion on kuitenkin voimassa enää vain {{remainingDays}} päivää, ja vaarana on, että tietokoneesi tulee haavoittuvaksi. Älä ota riskiä.<tag>Tilaa nyt</tag>",
+                "trialContent": "Olet hyödyntänyt McAfeen virustentorjunnan kokeiluversiosi hyvin. Sinulla on kuitenkin vain {{remainingDays}} päivää jäljellä siihen, kun kokeilujaksosi päättyy, ja vaarana on, että tietokoneesi jää haavoittuvaksi. Älä ota riskiä. <tag>Tilaa nyt</tag>",
+                "subscribeContent": "Olet hyödyntänyt McAfee-ohjelman kokeiluversion hyvin. Kokeiluversion on kuitenkin voimassa enää vain {{remainingDays}} päivää, ja vaarana on, että tietokoneesi tulee haavoittuvaksi. Älä ota riskiä. <tag>Tilaa nyt</tag>",
                 "subscribeNow": "Tilaa nyt",
                 "fileScan": "Skannattuja tiedostoja",
                 "Viruses": "Poistettuja viruksia",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Aloita tiedostojen tarkistus"
             },
             "others": {
-                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen"
+                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
+                "unknown": "Tuntematon"
             }
         },
         "wifisecurity": {

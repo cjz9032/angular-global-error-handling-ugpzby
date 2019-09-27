@@ -475,7 +475,7 @@
             "loading": "Indlæser..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
         }
     },
     "privacy": {
@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAGE",
-                "recommends": "Hvorfor anbefaler Lenovo, at du bruger <b>McAfee</b> til at beskytte alle dine enheder",
+                "recommends": "Hvorfor anbefaler Lenovo, at du bruger <b>McAfee</b> til at beskytte alle dine enheder?",
                 "award": "Prisvindende antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er i øjeblikket beskyttet af {{protectedName}}. Men du kan blive endnu bedre beskyttet med McAfee LiveSafe.",
@@ -1587,7 +1587,7 @@
                 "Blazing": "Lynhurtig hastighed",
                 "BlazingText": "Optimeret antivirus, der ikke afbryder din Lenovo Vantage-oplevelse eller gør den langsommere",
                 "privacyTerms": "/   <tag>Politik om beskyttelse af personlige oplysninger</tag>  |  <tag>Vilkår for tjeneste</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ikke tilgængelig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det ser ud til, at du bruger Windows Defender i øjeblikket. Det er ikke et dårligt valg, men for at give dig den ultimative beskyttelse mod ransomware, malware og virus er vi gået sammen med <b>McAfee</b> og kan tilbyde dig prisvindende sikkerhed, så du kan <b>beskytte det, der betyder noget.</b>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Få McAfee",
                 "topBenefits": "Hvorfor <b>anbefaler Lenovo, at du bruger McAfee</b> til at beskytte alle dine enheder",
                 "awardTitle": "Prisvindende antivirus",
-                "awardSubtitle": "Undgå, at virus, malware og ransomware inficerer din pc.",
+                "awardSubtitle": "Undgå, at virus, malware og ransomware inficerer din pc",
                 "supportTitle": "Gratis teknisk support fra eksperter døgnet rundt ",
                 "supportSubtitle": "Få hjælp og ro i sindet døgnet rundt med hjælp fra vores dedikerede sikkerhedsteam",
                 "trialSubtitle": "Du er i øjeblikket beskyttet af en 30-dages prøveversion af McAfee LiveSafe – der er kun {{remainingDays}} dage tilbage! Abonner nu for at udvide din beskyttelse.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee-sårbarhedsscanner ",
                 "report": "Rapport om din trusselsbeskyttelse ",
-                "trialContent": "Du har brugt din prøveversion af McAfee-antivirus godt. Men med kun {{remainingDays}} dage tilbage af din prøveperiode risikerer du, at din computer bliver sårbar. Du må ikke risikere det.<tag>Abonnér nu</tag>",
-                "subscribeContent": "Du har brugt din McAfee godt. Men med kun {{remainingDays}} dage tilbage risikerer du, at din computer bliver sårbar. Du må ikke risikere det.<tag>Abonnér nu</tag>",
+                "trialContent": "Du har brugt din prøveversion af McAfee-antivirus godt. Men med kun {{remainingDays}} dage tilbage af din prøveperiode risikerer du, at din computer bliver sårbar. Du må ikke risikere det. <tag>Abonnér nu</tag>",
+                "subscribeContent": "Du har brugt din McAfee godt. Men med kun {{remainingDays}} dage tilbage risikerer du, at din computer bliver sårbar. Du må ikke risikere det. <tag>Abonnér nu</tag>",
                 "subscribeNow": "Abonnér nu",
                 "fileScan": "Scannede filer",
                 "Viruses": "Eliminerede virus",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Start filscanning"
             },
             "others": {
-                "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed"
+                "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
+                "unknown": "Ukendt"
             }
         },
         "wifisecurity": {

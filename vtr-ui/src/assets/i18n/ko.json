@@ -475,7 +475,7 @@
             "loading": "로드 중..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
         }
     },
     "privacy": {
@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "바이러스 백신",
                 "back": "뒤로",
-                "recommends": "장치 보호를 위해 Lenovo가 <b>McAfee</b>를 권장 하는 이유",
+                "recommends": "장치 보호를 위해 Lenovo가 <b>McAfee</b>를 권장하는 이유",
                 "award": "수상 경력에 빛나는 안티바이러스",
                 "mcafeePremium": "McAfee LiveSafe 보호",
                 "protectedBy": "현재 {{protectedName}}(으)로 보호되고 있습니다. 그러나 McAfee LiveSafe를 사용하면 더 효과적으로 보호 받을 수 있습니다.",
@@ -1587,7 +1587,7 @@
                 "Blazing": "빠른 속도",
                 "BlazingText": "Lenovo Vantage 환경을 느리게 하거나 방해하지 않는 최적화된 안티바이러스",
                 "privacyTerms": "/   <tag>개인정보보호정책</tag>  |  <tag>서비스 약관</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "사용할 수 없음"
             },
             "windowsDefender": {
                 "optimallyProtected": "현재 Windows Defender를 사용 중인 것 같습니다. 나쁜 선택은 아니지만 Lenovo는 랜섬웨어, 멀웨어 및 바이러스에 대한 궁극적인 안전을 위해 탁월한 보안 기능을 제공하는 <b>McAfee</b>와 협력하여 <b>중요 항목을 보호</b>할 수 있습니다.",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "McAfee 가져오기",
                 "topBenefits": "장치 보호를 위해 <b>Lenovo가 McAfee를 권장</b>하는 이유",
                 "awardTitle": "수상 경력에 빛나는 바이러스 백신",
-                "awardSubtitle": "바이러스, 멀웨어 및 랜섬웨어로부터 PC가 감염되는 것을 방지합니다.",
+                "awardSubtitle": "바이러스, 멀웨어 및 랜섬웨어로부터 PC가 감염되는 것을 방지합니다",
                 "supportTitle": "무료, 24/7 전문가 기술 지원 ",
                 "supportSubtitle": "전담 보안 팀에서 상시 지원하여 안심하고 사용",
                 "trialSubtitle": "현재 McAfee LiveSafe 30일 평가판 사용 중 - {{remainingDays}}일 남았습니다. 지금 가입하여 보호를 확장하십시오.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee 취약성 스캐너 ",
                 "report": "위협 보호 보고서 ",
-                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.<tag>지금 구독</tag>",
-                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.<tag>지금 구독</tag>",
+                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오. <tag>지금 구독</tag>",
+                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오. <tag>지금 구독</tag>",
                 "subscribeNow": "지금 구독",
                 "fileScan": "파일 스캔함",
                 "Viruses": "바이러스 제거됨",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "파일 검사 시작"
             },
             "others": {
-                "othersProtection": "{{protectedName}} 장치에 대한 기본적인 보호 제공"
+                "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
+                "unknown": "알 수 없음"
             }
         },
         "wifisecurity": {

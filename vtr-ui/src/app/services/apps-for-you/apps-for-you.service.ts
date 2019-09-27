@@ -251,6 +251,14 @@ export class AppsForYouService {
 		}
 	}
 
+	public showLmaMenu() {
+		if (!this.deviceService.isArm && !this.deviceService.isSMode) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	cancelInstall() {
 		this.isCancelInstall = true;
 		if (this.cancelToken) {

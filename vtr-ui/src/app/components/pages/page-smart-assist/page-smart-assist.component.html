@@ -48,9 +48,7 @@
 											[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginEnabled"
 											(toggleOnOff)="onZeroTouchLoginStatusToggle($event)"
 											[theme]="'white'"
-											[disabled]="!intelligentSecurity.isHPDEnabled"
-											[rightIcon]="['far', 'question-circle']"
-											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
+											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom padding-right-07"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
@@ -63,9 +61,7 @@
 												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 												(toggleOnOff)="onDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
-												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled"
-												[toolTipStatus]='true'
-												[rightIcon]="['far', 'question-circle']">
+												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider [rangeSliderId]="'distanceSensitivity'"

@@ -1734,7 +1734,7 @@
 				"getMacfee": "Get McAfee",
 				"topBenefits": "Why <b>Lenovo recommends McAfee</b> to protect all your devices",
 				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC.",
+				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC",
 				"MultiTitle": "Multi-device protection",
 				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
 				"networkTitle": "Home network protection",
@@ -1750,10 +1750,10 @@
 				"firewall": "Personal Firewall",
 				"antiSpam": "McAfee Anti-Spam",
 				"quickClean": "McAfee QuickClean",
-				"vulnerability": "McAfee Vulnerability Scanner ",
+				"vulnerability": "McAfee Vulnerability Scanner",
 				"report": "Your Threat Protection Report ",
-				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.<tag>Subscribe Now</tag>",
-				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.<tag>Subscribe Now</tag>",
+				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
+				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
 				"subscribeNow": "Subscribe Now",
 				"fileScan": "Files scanned",
 				"Viruses": "Viruses Eliminated",
@@ -1762,7 +1762,8 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "{{protectedName}} offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device",
+				"unknown": "Unknown"
 			}
 		},
 		"wifisecurity": {

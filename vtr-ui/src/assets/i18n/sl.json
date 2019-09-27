@@ -475,7 +475,7 @@
             "loading": "nalaganje..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
         }
     },
     "privacy": {
@@ -1587,7 +1587,7 @@
                 "Blazing": "Izjemna hitrost",
                 "BlazingText": "Optimiziran protivirusni program, ki vas ne bo upočasnil ali motil vaše izkušnje s programsko opremo Lenovo Vantage",
                 "privacyTerms": "/   <tag>Pravilnik o zasebnosti</tag>  |  <tag>Pogoji storitve</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ni na voljo"
             },
             "windowsDefender": {
                 "optimallyProtected": "Videti je, da trenutno uporabljate Windows Defender. To ni slaba izbira, vendar smo se za najboljšo zaščito pred izsiljevalsko in zlonamerno programsko opremo ter virusi povezali s podjetjem <b>McAfee</b>, da vam ponudimo nagrajeno varnostno rešitev, s katero boste lahko <b>zaščitili, kar je pomembno.</b>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Pridobite McAfee",
                 "topBenefits": "Zakaj <b>Lenovo priporoča McAfee</b> za zaščito vseh vaših naprav",
                 "awardTitle": "Nagrajena protivirusna zaščita",
-                "awardSubtitle": "Preprečite, da bi virusi, zlonamerna in izsiljevalska programska oprema okužili vaš računalnik.",
+                "awardSubtitle": "Preprečite, da bi virusi, zlonamerna in izsiljevalska programska oprema okužili vaš računalnik",
                 "supportTitle": "Brezplačna strokovna tehnična podpora 24 ur dnevno in vse dni v tednu ",
                 "supportSubtitle": "Naša predana varnostna skupina vam zagotavlja pomoč, ko jo potrebujete, in brezskrbno uporabo",
                 "trialSubtitle": "Trenutno ste zaščiteni s 30-dnevno preizkusno različico programske opreme McAfee LiveSafe – samo še {{remainingDays}} dni! Naročite se zdaj in podaljšajte zaščito.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Vaše poročilo o zaščiti pred nevarnostmi ",
-                "trialContent": "Preizkus protivirusne zaščite McAfee ste dobro izkoristili. Vendar je do konca vašega preizkusa samo še {{remainingDays}} dni, zato tvegate, da bo računalnik kmalu spet izpostavljen nevarnostim. Ne tvegajte.<tag>Naročite zdaj</tag>",
-                "subscribeContent": "Preizkus zaščite McAfee ste dobro izkoristili. Vendar je do konca preizkusa samo še {{remainingDays}} dni, zato tvegate, da bo računalnik kmalu spet izpostavljen nevarnostim. Ne tvegajte.<tag>Naročite zdaj</tag>",
+                "trialContent": "Preizkus protivirusne zaščite McAfee ste dobro izkoristili. Vendar je do konca vašega preizkusa samo še {{remainingDays}} dni, zato tvegate, da bo računalnik kmalu spet izpostavljen nevarnostim. Ne tvegajte. <tag>Naročite zdaj</tag>",
+                "subscribeContent": "Preizkus zaščite McAfee ste dobro izkoristili. Vendar je do konca preizkusa samo še {{remainingDays}} dni, zato tvegate, da bo računalnik kmalu spet izpostavljen nevarnostim. Ne tvegajte. <tag>Naročite zdaj</tag>",
                 "subscribeNow": "Naročite zdaj",
                 "fileScan": "Pregledane datoteke",
                 "Viruses": "Odpravljeni virusi",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Zaženite pregledovanje datotek"
             },
             "others": {
-                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo"
+                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo",
+                "unknown": "Neznan"
             }
         },
         "wifisecurity": {

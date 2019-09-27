@@ -475,7 +475,7 @@
             "loading": "Učitavanje..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
         }
     },
     "privacy": {
@@ -1587,10 +1587,10 @@
                 "Blazing": "Brzina munje",
                 "BlazingText": "Optimizovan antivirus koji neće usporiti ili prekinuti vaše iskustvo korišćenja programa Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politika privatnosti</tag>  |  <tag>Uslovi korišćenja usluge</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
-                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa, udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i bili u mogućnosti da <b>zaštitimo ono što je važno.</b>",
+                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i kako biste bili u mogućnosti da <b>zaštitite ono što je važno.</b>",
                 "windowsSubtitle": "Osnovna zaštita pomoću programa Windows zaštitnik",
                 "topTip": "Najbolji saveti za bezbednost na mreži",
                 "topContent": "Naučite kako možete da se odbranite od najvećih pretnji na mreži današnjice <tag>PRIKAŽI SAVETE</tag>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Nabavite McAfee",
                 "topBenefits": "Zbog čega <b>Lenovo preporučuje McAfee</b> za zaštitu svih vaših uređaja",
                 "awardTitle": "Nagrađivani antivirus",
-                "awardSubtitle": "Sprečite da virusi, malver i softver za ucenjivanje zaraze vaš računar.",
+                "awardSubtitle": "Sprečite da virusi, malver i softver za ucenjivanje zaraze vaš računar",
                 "supportTitle": "Besplatna, neprekidna stručna tehnička podrška ",
                 "supportSubtitle": "Dobijte pomoć i budite spokojni u bilo koje doba dana ili noći zahvaljujući našem posvećenom timu za bezbednost",
                 "trialSubtitle": "Trenutno ste zaštićeni 30-dnevnom probnom verzijom proizvoda McAfee LiveSafe – preostalo je samo {{remainingDays}} dana! Pretplatite se odmah da biste produžili zaštitu.",
@@ -1633,8 +1633,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee skener ranjivosti ",
                 "report": "Vaš izveštaj o zaštiti od pretnji ",
-                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.<tag>Pretplatite se sada</tag>",
-                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.<tag>Pretplatite se sada</tag>",
+                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati. <tag>Pretplatite se sada</tag>",
+                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati. <tag>Pretplatite se sada</tag>",
                 "subscribeNow": "Pretplatite se sada",
                 "fileScan": "Skenirane datoteke",
                 "Viruses": "Eliminisano virusa",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Započnite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
+                "unknown": "Nepoznato"
             }
         },
         "wifisecurity": {

@@ -475,7 +475,7 @@
             "loading": "ロード中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
         }
     },
     "privacy": {
@@ -1587,7 +1587,7 @@
                 "Blazing": "超高速",
                 "BlazingText": "Lenovo Vantage のパフォーマンスを低下させたり動作を中断したりしない最適化されたウイルス対策",
                 "privacyTerms": "/   <tag>プライバシー ポリシー</tag>  |  <tag>サービス契約条件</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "利用できません"
             },
             "windowsDefender": {
                 "optimallyProtected": "現在、Windows Defender を使用しているようです。悪い選択ではありませんが、ランサムウェア、マルウェア、ウイルスに対する安全性を最大限に高めるため、Lenovo では <b>McAfee</b> と協力して受賞歴のあるセキュリティを用意し、<b>重要な情報を保護</b>できるようにしました。",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "McAfee を入手する",
                 "topBenefits": "すべてのデバイスを保護するために <b>Lenovo が McAfee を推奨</b>している理由",
                 "awardTitle": "受賞歴のあるウイルス対策",
-                "awardSubtitle": "ウイルス、マルウェア、ランサムウェアが PC に感染するのを防ぎます。",
+                "awardSubtitle": "ウイルス、マルウェア、ランサムウェアが PC に感染するのを防ぎます",
                 "supportTitle": "24 時間年中無休の専門家による無料テクニカル・サポート",
                 "supportSubtitle": "専任のセキュリティ・チームが 24 時間体制でサポートするため、安心感を得ることができます",
                 "trialSubtitle": "現在、McAfee LiveSafe の 30 日間体験版により保護されています。残りわずか {{remainingDays}} 日です。今すぐサブスクライブして保護を延長しましょう。",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "ファイルのスキャンを開始"
             },
             "others": {
-                "othersProtection": "{{protectedName}}は、デバイスに基本的な保護機能を提供します"
+                "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
+                "unknown": "不明"
             }
         },
         "wifisecurity": {

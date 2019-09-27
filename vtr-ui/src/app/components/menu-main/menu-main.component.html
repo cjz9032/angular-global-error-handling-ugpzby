@@ -125,6 +125,8 @@
 							routerLinkActive="active"
 							id="navbarDropdown"
 							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
 							(click)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">
@@ -258,7 +260,7 @@
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
 								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
 							</div>
-							<a *ngIf="!deviceService.isArm && !deviceService.isSMode"
+							<a *ngIf="appsForYouService.showLmaMenu()"
 								class="dropdown-item link link-lma"
 								vtrMetrics
 								id="menu-main-lnk-open-lma"
