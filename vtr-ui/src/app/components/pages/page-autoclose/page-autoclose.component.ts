@@ -13,7 +13,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: [ './page-autoclose.component.scss' ]
+	styleUrls: ['./page-autoclose.component.scss']
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal: boolean = false;
@@ -40,7 +40,7 @@ export class PageAutocloseComponent implements OnInit {
 		private cmsService: CMSService,
 		private gamingAutoCloseService: GamingAutoCloseService,
 		private commonService: CommonService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
@@ -102,39 +102,33 @@ export class PageAutocloseComponent implements OnInit {
 	openTargetModal() {
 		try {
 			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
+			this.needToAsk = this.needToAsk === undefined || isNaN(this.needToAsk) ? false : this.needToAsk;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 			this.hiddenScroll(true);
-			if (this.toggleStatus) {
+			if (this.toggleStatus || this.needToAsk) {
 				this.showAppsModal = true;
-			} else if (!this.toggleStatus && (this.needToAsk || isUndefined(this.needToAsk))) {
+			} else {
 				this.showTurnOnModal = true;
-			} else if (!this.toggleStatus && !this.needToAsk) {
-				this.showAppsModal = true;
 			}
 		} catch (error) {
 			return undefined;
 		}
 	}
 
-	doNotShowAction(event: any) {
-		const status = event.target.checked;
+	doNotShowAction(status: any) {
 		try {
-			this.getNeedStatus = !status;
+			this.getNeedStatus = status;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	initTurnOnAction() {
-		this.needToAsk = this.getNeedStatus;
-		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
 
 	initNotNowAction(notNowStatus: boolean) {
-		this.needToAsk = this.getNeedStatus;
-		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
@@ -197,7 +191,7 @@ export class PageAutocloseComponent implements OnInit {
 						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 					}
 				});
-			} catch (error) {}
+			} catch (error) { }
 		} else {
 			const remApp = event.app;
 			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
@@ -218,6 +212,6 @@ export class PageAutocloseComponent implements OnInit {
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				}
 			});
-		} catch (err) {}
+		} catch (err) { }
 	}
 }
