@@ -1643,7 +1643,7 @@
                 "startFileScan": "Avvia scansione dei file"
             },
             "others": {
-                "othersProtection": "{{protectedName}} offre la protezione di base per il dispositivo"
+                "othersProtection": "{{protectedName}} offre la protezione di base per il tuo dispositivo"
             }
         },
         "wifisecurity": {

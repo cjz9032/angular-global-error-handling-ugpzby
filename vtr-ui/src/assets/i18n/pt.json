@@ -1590,7 +1590,7 @@
                 "notAvailable": "Não Disponível"
             },
             "windowsDefender": {
-                "optimallyProtected": "Parece que está a utilizar o Windows Defender. Não é uma má escolha, mas para a máxima segurança contra ransomware, malware e vírus, nos unimo-nos à <b>McAfee</b> para lhe oferecer uma segurança premiada, de modo a <b>proteger o que importa.</b>",
+                "optimallyProtected": "Parece que está a utilizar o Windows Defender. Não é uma má escolha, mas para a máxima segurança contra ransomware, malware e vírus, unimo-nos à <b>McAfee</b> para oferecer uma segurança premiada, de modo a <b>proteger o que importa.</b>",
                 "windowsSubtitle": "Proteção básica do Windows Defender",
                 "topTip": "Dicas para segurança online",
                 "topContent": "Aprenda a defender-se contra as atuais maiores ameaças online <tag>VER DICAS</tag>",
