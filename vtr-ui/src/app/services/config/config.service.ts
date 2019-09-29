@@ -41,6 +41,9 @@ export class ConfigService {
 			const machineInfo = this.deviceService.getMachineInfoSync();
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
+				if (isBetaUser) {
+					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
+				}
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
