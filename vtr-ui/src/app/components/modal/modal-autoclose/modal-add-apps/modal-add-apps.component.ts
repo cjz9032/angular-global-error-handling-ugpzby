@@ -39,9 +39,9 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 			this.loadingNoApps = this.runningList.length === 0 ? true : false;
 			this.loading = false;
 			if (this.loadingNoApps) {
-				this.ariaLabel = 'No running apps to add window';
+				this.ariaLabel = 'gaming.autoClose.modalTurnAutoCloseNarrator.running';
 			} else {
-				this.ariaLabel = 'Auto close add apps window opened';
+				this.ariaLabel = 'gaming.autoClose.modalTurnAutoCloseNarrator.open';
 			}
 			setTimeout(() => {
 				document.getElementById('close').focus();
