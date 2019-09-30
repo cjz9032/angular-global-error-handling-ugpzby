@@ -1,15 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
 	selector: 'vtr-page-macrokey',
 	templateUrl: './page-macrokey.component.html',
-	styleUrls: ['./page-macrokey.component.scss']
+	styleUrls: [ './page-macrokey.component.scss' ]
 })
-export class PageMacrokeyComponent implements OnInit, OnDestroy {
+export class PageMacrokeyComponent implements OnInit {
 	isOnline = true;
 	cardContentPositionA: any = {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
@@ -20,9 +21,14 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	backId = 'vtr-gaming-macrokey-btn-back';
 	startDateTime: any = new Date();
 	metrics: any;
-	constructor(private cmsService: CMSService, private shellService: VantageShellService,private commonService: CommonService) {
+	constructor(
+		private cmsService: CMSService,
+		private shellService: VantageShellService,
+		private titleService: Title,
+		private commonService: CommonService
+	) {
 		this.metrics = this.shellService.getMetrics();
-
+		this.titleService.setTitle('gaming.common.narrator.pageTitle.macroKey');
 	}
 
 	ngOnInit() {
@@ -54,8 +60,6 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 				}
 			}
 		});
-	}
-	ngOnDestroy() {
 	}
 
 	sendMetricsAsync(data: any) {
