@@ -52,7 +52,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public isEnergyStarProduct = false;
 	public energyStarCache: boolean;
 	public isChargeThresholdAvailable = false;
-
+	public gaugeResetCapability = false;
 	@Input() isCollapsed = true;
 	@Input() allowCollapse = true;
 	@Input() theme = 'white';
@@ -228,17 +228,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
 		}
-		// this.getBatteryAndPowerSettings(this.machineType);
-		// this.startMonitor();
-		// this.getVantageToolBarCapability();
+		this.getBatteryAndPowerSettings(this.machineType);
+		this.startMonitor();
+		this.getVantageToolBarCapability();
 
-		// this.getEnergyStarCapability();
+		this.getEnergyStarCapability();
 
-		// this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
+		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
-		// this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-		// 	this.getBatteryCharge(notification);
-		// });
+		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 
 	}
 
@@ -376,9 +376,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		// this.thresholdWarningSubscription.unsubscribe();
-		// this.stopMonitor();
-		// this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
+		this.thresholdWarningSubscription.unsubscribe();
+		this.stopMonitor();
+		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
 	}
 
@@ -407,6 +407,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.getAirplaneModeAutoDetectionOnThinkPad();
 				this.batteryCountStatusEventRef = this.getBatteryStatusEvent.bind(this);
 				await this.getBatteryThresholdInformation();
+				await this.getGaugeResetCapability();
 				await this.getAirplaneModeCapabilityThinkPad();
 				await this.getAlwaysOnUSBCapabilityThinkPad();
 				await this.getEasyResumeCapabilityThinkPad();
@@ -1210,4 +1211,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				console.log('setFlipToBootSettings.error', error);
 			});
 	}
+
+	getGaugeResetCapability() {
+		this.gaugeResetCapability = true;
+		// this.powerService.getGaugeResetCapability().then((response) => {
+		// 	console.log('Battery Gauge Reset', this.gaugeResetCapability);
+		// 	this.gaugeResetCapability = response;
+		// }).catch((err) => {
+		// 	console.log('Battery Gauge Reset', err);
+		// });
+	}
+
 }

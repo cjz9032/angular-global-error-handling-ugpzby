@@ -8,12 +8,12 @@
 				[textId]="'myDevice-settings-power'"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<!-- <vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
+	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
 	<vtr-smart-standby *ngIf="!isDesktopMachine && !isPowerDriverMissing"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
-	</vtr-smart-standby> -->
-	<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable"
+	</vtr-smart-standby>
+	<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable || gaugeResetCapability"
 		class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
@@ -23,7 +23,7 @@
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-batterySettings'">
 				<ul class="list-group list-group-flush">
-					<!-- <li class=""
+					<li class=""
 						*ngIf="showAirplanePowerModeSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
@@ -60,10 +60,10 @@
 								</div>
 							</div>
 						</vtr-ui-row-switch>
-					</li> -->
+					</li>
 
 
-					<!-- <li class=""
+					<li class=""
 						*ngIf="machineType == 1 && isChargeThresholdAvailable">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
@@ -117,13 +117,14 @@
 								</vtr-battery-charge-threshold-settings>
 							</div>
 						</vtr-ui-row-switch>
-					</li> -->
+					</li>
 					<li class=""
-						*ngIf="true">
-						<vtr-battery-gauge-reset></vtr-battery-gauge-reset>
+						*ngIf="gaugeResetCapability">
+						<vtr-battery-gauge-reset [gaugeResetCapability]="gaugeResetCapability">
+						</vtr-battery-gauge-reset>
 					</li>
 
-					<!-- <li class=""
+					<li class=""
 						*ngIf="expressChargingStatus.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
@@ -156,7 +157,7 @@
 							[switchId]="'ds-power-battery-conservationMode'"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
-					</li> -->
+					</li>
 
 				</ul>
 			</vtr-container-collapsible>
@@ -165,7 +166,7 @@
 
 
 
-	<!-- <div class="row py-5"
+	<div class="row py-5"
 		id="power"
 		*ngIf="!isDesktopMachine && !isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
 		<div class="col-10 mx-auto ">
@@ -311,6 +312,6 @@
 
 			</vtr-container-collapsible>
 		</div>
-	</div> -->
+	</div>
 
 </div>

@@ -244,7 +244,7 @@
 				"popupClear": "macrokey popup ok",
 				"popupCancel": "macrokey popup cancel",
 				"popupClose": "close",
-				"numbersSelectedNumpad":"selected macrokey numpad",
+				"numbersSelectedNumpad": "selected macrokey numpad",
 				"macrokeySettings1": {
 					"option1": "on",
 					"option2": "macro key settings enabled when gaming",
@@ -916,6 +916,19 @@
 						"btnLabel": {
 							"reset": "Reset",
 							"stop": "Stop"
+						},
+						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+						"FCCText": "From {{before}}Wh to {{after}}Wh",
+						"resetLog": {
+							"ERROR_SUCCESS": "Complete. Successful reset.",
+							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
+							"ERROR_LOGOFF": "Incomplete. User logged off.",
+							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
 						},
 						"popup": {
 							"description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",

@@ -210,13 +210,20 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 			this.initBatteryInformation();
 			const remainingPercentages = [];
+			const barCodes = [];
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
+				barCodes.push(info.barCode);
 			});
 			this.remainingPercentages = remainingPercentages;
 			this.sendThresholdWarning();
 			this.batteryHealth = this.batteryInfo[0].batteryHealth;
 			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
+			const payload = {
+				remainingPercentages: this.remainingPercentages,
+				barCode: barCodes
+			};
+			this.commonService.sendNotification('GaugeReset', payload);
 		} else {
 			this.batteryIndicator.batteryNotDetected = false;
 		}
