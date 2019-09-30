@@ -40,6 +40,7 @@
 								<div class="col px-20">
 									<div class="auto-set-checkbox custom-checkbox-gaming">
 										<input id="cb-airplane-mode"
+											#cbAirplaneMode
 											class="custom-control-input"
 											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
@@ -48,8 +49,7 @@
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
 											checked=""
-											(keydown.enter)='onAirplaneAutoModeStatusChange()'
-											(keypress)='onAirplaneAutoModeStatusChange()'
+											(keydown.enter)='cbAirplaneMode.click()'
 											[attr.aria-checked]="airplaneAutoDetection"
 											role="checkbox" />
 
