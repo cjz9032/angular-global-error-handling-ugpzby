@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Snimanje tastera makroa za"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "Brzina munje",
                 "BlazingText": "Optimizovan antivirus koji neće usporiti ili prekinuti vaše iskustvo korišćenja programa Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politika privatnosti</tag>  |  <tag>Uslovi korišćenja usluge</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
                 "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa, udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i bili u mogućnosti da <b>zaštitimo ono što je važno.</b>",
@@ -1639,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee skener ranjivosti ",
                 "report": "Vaš izveštaj o zaštiti od pretnji ",
-                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.<tag>Pretplatite se sada</tag>",
-                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.<tag>Pretplatite se sada</tag>",
+                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati. <tag>Pretplatite se sada</tag>",
+                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati. <tag>Pretplatite se sada</tag>",
                 "subscribeNow": "Pretplatite se sada",
                 "fileScan": "Skenirane datoteke",
                 "Viruses": "Eliminisano virusa",

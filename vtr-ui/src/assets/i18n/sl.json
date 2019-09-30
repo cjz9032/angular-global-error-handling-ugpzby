@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Snemanje makro tipke za"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "Izjemna hitrost",
                 "BlazingText": "Optimiziran protivirusni program, ki vas ne bo upočasnil ali motil vaše izkušnje s programsko opremo Lenovo Vantage",
                 "privacyTerms": "/   <tag>Pravilnik o zasebnosti</tag>  |  <tag>Pogoji storitve</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ni na voljo"
             },
             "windowsDefender": {
                 "optimallyProtected": "Videti je, da trenutno uporabljate Windows Defender. To ni slaba izbira, vendar smo se za najboljšo zaščito pred izsiljevalsko in zlonamerno programsko opremo ter virusi povezali s podjetjem <b>McAfee</b>, da vam ponudimo nagrajeno varnostno rešitev, s katero boste lahko <b>zaščitili, kar je pomembno.</b>",
@@ -1639,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Vaše poročilo o zaščiti pred nevarnostmi ",
-                "trialContent": "Preizkus protivirusne zaščite McAfee ste dobro izkoristili. Vendar je do konca vašega preizkusa samo še {{remainingDays}} dni, zato tvegate, da bo računalnik kmalu spet izpostavljen nevarnostim. Ne tvegajte.<tag>Naročite zdaj</tag>",
-                "subscribeContent": "Preizkus zaščite McAfee ste dobro izkoristili. Vendar je do konca preizkusa samo še {{remainingDays}} dni, zato tvegate, da bo računalnik kmalu spet izpostavljen nevarnostim. Ne tvegajte.<tag>Naročite zdaj</tag>",
+                "trialContent": "Preizkus protivirusne zaščite McAfee ste dobro izkoristili. Vendar je do konca vašega preizkusa samo še {{remainingDays}} dni, zato tvegate, da bo računalnik kmalu spet izpostavljen nevarnostim. Ne tvegajte. <tag>Naročite zdaj</tag>",
+                "subscribeContent": "Preizkus zaščite McAfee ste dobro izkoristili. Vendar je do konca preizkusa samo še {{remainingDays}} dni, zato tvegate, da bo računalnik kmalu spet izpostavljen nevarnostim. Ne tvegajte. <tag>Naročite zdaj</tag>",
                 "subscribeNow": "Naročite zdaj",
                 "fileScan": "Pregledane datoteke",
                 "Viruses": "Odpravljeni virusi",

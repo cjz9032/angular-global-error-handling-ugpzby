@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Macro code opnemen voor"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "Supersnel",
                 "BlazingText": "Geoptimaliseerde antivirussoftware die je Lenovo Vantage-ervaring niet vertraagt of onderbreekt",
                 "privacyTerms": "/   <tag>Privacybeleid</tag>  |  <tag>Servicevoorwaarden</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Niet beschikbaar"
             },
             "windowsDefender": {
                 "optimallyProtected": "Het lijkt erop dat je momenteel Windows Defender gebruikt. Geen slechte keuze, maar voor de ultieme bescherming tegen Ransomware, malware en virussen, hebben we de handen ineengeslagen met <b>McAfee</b> om je bekroonde beveiliging te bieden, zodat je kunt <b>beschermen wat belangrijk is</b>.",
@@ -1639,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee-kwetsbaarheidsscanner ",
                 "report": "Je dreigingsbeschermingsrapport ",
-                "trialContent": "Je hebt je proefversie van McAfee-antivirus goed gebruikt. Maar nu je proefperiode over slechts {{remainingDays}} dagen afloopt, loop je het risico dat je computer kwetsbaar wordt. Dat risico wil je toch niet lopen?<tag>Nu abonneren</tag>",
-                "subscribeContent": "Je hebt je proefversie van McAfee goed gebruikt. Maar over slechts {{remainingDays}} loop je het risico dat je computer kwetsbaar wordt. Dat risico wil je toch niet lopen?<tag>Nu abonneren</tag>",
+                "trialContent": "Je hebt je proefversie van McAfee-antivirus goed gebruikt. Maar nu je proefperiode over slechts {{remainingDays}} dagen afloopt, loop je het risico dat je computer kwetsbaar wordt. Dat risico wil je toch niet lopen? <tag>Nu abonneren</tag>",
+                "subscribeContent": "Je hebt je proefversie van McAfee goed gebruikt. Maar over slechts {{remainingDays}} loop je het risico dat je computer kwetsbaar wordt. Dat risico wil je toch niet lopen? <tag>Nu abonneren</tag>",
                 "subscribeNow": "Nu abonneren",
                 "fileScan": "Gescande bestanden",
                 "Viruses": "Uitgeschakelde virussen",

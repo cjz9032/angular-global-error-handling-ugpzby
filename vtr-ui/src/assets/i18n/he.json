@@ -81,12 +81,12 @@
                     "line2": "<b>סקירה כללית של ניהול תכונות</b> <br> חלק מהתכונות אינן זמינות בכל המכשירים",
                     "line3": "<b>אוברקלוקינג של מעבד </b><br> הגבירו את המהירות המרבית של המעבד",
                     "line4": "<b>אוברקלוקינג של RAM </b><br> הגבירו את המהירות המרבית של הזיכרון",
-                    "line5": "<b>שיפור הרשת </b><br> קבעו סדר עדיפויות לתעבורה ברשת עבור המשחק שבו אתם משחקים",
+                    "line5": "<b>שיפור הרשת </b><br> קבעו סדר עדיפויות לתעבורת רשת למשחק שבו אתם משחקים",
                     "line6": "<b>Dolby </b><br> כווננו את השמע באופן ספציפי למשחק עם טכנולוגיית Dolby",
                     "line7": "<b>מצב היברידי </b><br> השביתו את ההגדרות המתקדמות של GPU כשאתם לא משחקים כדי לשפר את ביצועי הסוללה",
                     "line8": "<b>טעינה מהירה </b><br> שחקו זמן רב יותר בדרכים עם טעינת סוללה מהירה יותר",
                     "line9": "<b>מנעול משטח מגע </b><br> הימנעו מהזנות מוטעות באמצעות השבתת משטח המגע בזמן שאתם משחקים",
-                    "line10": "<b>סגירה אוטומטית </b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
+                    "line10": "<b>סגירה אוטומטית</b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
                     "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון"
                 },
                 "systemInfo": {
@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "מקש מאקרו להקלטה עבור"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "מהירות שאין כמוה",
                 "BlazingText": "אנטי-וירוס משופר שלא יאט או יפריע לחווית Lenovo Vantage שלכם",
                 "privacyTerms": "/   <tag>מדיניות פרטיות</tag>  |  <tag>תנאי השירות</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "לא זמין"
             },
             "windowsDefender": {
                 "optimallyProtected": "נראה שאתם משתמשים כרגע ב-Windows Defender. בחירה לא רעה, אך למען הבטיחות האולטימטיבית נגד תוכנות כופר, תוכנות זדוניות ווירוסים, התחברנו אל <b>McAfee</b> כדי להעניק לכם אבטחה עטורת פרסים כך שתוכלו <b>להגן על מה שחשוב.</b>",
@@ -1639,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "סורק פגיעויות של McAfee ",
                 "report": "דוח הגנה מפני איומים ",
-                "trialContent": "נהניתם מגרסת הניסיון של האנטי-וירוס של McAfee. אבל נותרו רק {{remainingDays}} ימים עד תום תקופת הניסיון, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן.<tag>הירשמו כעת</tag>",
-                "subscribeContent": "נהניתם מגרסת הניסיון של McAfee. אבל נותרו רק {{remainingDays}} ימים, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן.<tag>הירשמו כעת</tag>",
+                "trialContent": "נהניתם מגרסת הניסיון של האנטי-וירוס של McAfee. אבל נותרו רק {{remainingDays}} ימים עד תום תקופת הניסיון, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן. <tag>הירשמו כעת</tag>",
+                "subscribeContent": "נהניתם מגרסת הניסיון של McAfee. אבל נותרו רק {{remainingDays}} ימים, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן. <tag>הירשמו כעת</tag>",
                 "subscribeNow": "הירשמו כעת",
                 "fileScan": "קבצים שנסרקו",
                 "Viruses": "וירוסים הושמדו",

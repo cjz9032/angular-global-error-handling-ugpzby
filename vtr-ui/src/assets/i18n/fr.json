@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Enregistrement de touche macro pour"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "Vitesse fulgurante",
                 "BlazingText": "Antivirus optimisé qui ne ralentira pas ou n'interrompra pas votre expérience Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politique de confidentialité</tag>  |  <tag>Conditions générales</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Non disponible"
             },
             "windowsDefender": {
                 "optimallyProtected": "Il semble que vous utilisez actuellement Windows Defender. Ceci n'est pas un mauvais choix, mais pour la sécurité ultime contre les rançongiciels, les logiciels malveillants et les virus, nous nous sommes associés avec <b>McAfee</b> pour vous offrir la sécurité primée et ainsi <b>protéger ce qui compte.</b>",
@@ -1639,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Analyse des vulnérabilités McAfee ",
                 "report": "Votre rapport sur la protection des menaces ",
-                "trialContent": "Vous avez utilisé la version d'évaluation de l'antivirus McAfee à bon escient. Mais dans {{remainingDays}} jours, votre version d'évalution expire et vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.<tag>S'abonner maintenant</tag>",
-                "subscribeContent": "Vous avez utilisé McAfee à bon escient. Mais dans {{remainingDays}} jours, vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.<tag>S'abonner maintenant</tag>",
+                "trialContent": "Vous avez utilisé la version d'évaluation de l'antivirus McAfee à bon escient. Mais dans {{remainingDays}} jours, votre version d'évalution expire et vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque. <tag>S'abonner maintenant</tag>",
+                "subscribeContent": "Vous avez utilisé McAfee à bon escient. Mais dans {{remainingDays}} jours, vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque. <tag>S'abonner maintenant</tag>",
                 "subscribeNow": "S'abonner maintenant",
                 "fileScan": "Fichiers analysés",
                 "Viruses": "Virus éliminés",

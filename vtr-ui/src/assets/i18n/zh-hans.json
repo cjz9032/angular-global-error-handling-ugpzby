@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "录制宏键，用于"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "闪速运行",
                 "BlazingText": "采用优化设计，丝毫不会减慢或干扰您的 Lenovo Vantage 体验",
                 "privacyTerms": "/   <tag>隐私政策</tag>  |  <tag>服务条款</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "不可用"
             },
             "windowsDefender": {
                 "optimallyProtected": "您目前使用的是 Windows Defender。这款软件也不错，但为了防范勒索软件、恶意软件和病毒，我们已联手 <b>McAfee</b> 为您打造终极安全之选，这一屡获殊荣的安全利器将有效地<b>保护您的各种重要资料。</b>",

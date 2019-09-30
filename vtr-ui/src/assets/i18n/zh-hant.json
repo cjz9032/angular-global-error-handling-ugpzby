@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "錄製的巨集鍵用於"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "極快的速度",
                 "BlazingText": "最佳化的防毒軟體，不會減慢或中斷您的 Lenovo Vantage 體驗",
                 "privacyTerms": "/   <tag>隱私權政策</tag>  |  <tag>服務條款</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "無法使用"
             },
             "windowsDefender": {
                 "optimallyProtected": "看起來您目前正在使用 Windows Defender。這個選擇也不錯，但為了終極抵禦勒索軟體、惡意軟體和病毒，我們與 <b>McAfee</b> 聯手提供獲獎肯定的安全保護，以便<b>保護珍貴的事物</b>。",

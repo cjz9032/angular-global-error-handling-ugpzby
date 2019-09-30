@@ -81,7 +81,7 @@
                     "line2": "<b>Özellik Yönetimine Genel Bakış</b> <br> Bazı özellikler tüm cihazlarda kullanılamaz",
                     "line3": "<b>CPU Hız Aşırtma </b><br> İşlemcinizi maksimum hızla çalıştırın",
                     "line4": "<b>RAM Hız Aşırtma </b><br> Belleğinizi maksimum hızla çalıştırın",
-                    "line5": "<b>Ağ Yükseltme </b><br> Oynadığınız oyunun ağ trafiğine öncelik verin",
+                    "line5": "<b>Ağ Yükseltme </b><br> Oyun oynarken ağ trafiğine öncelik verin",
                     "line6": "<b>Dolby </b><br> Dolby teknolojisiyle sesinizi oyun oynamak için özel olarak ayarlayın",
                     "line7": "<b>Hibrit Kipi </b><br> Pil performansını artırmak için oyun oynamadığınızda gelişmiş GPU ayarlarını devre dışı bırakın",
                     "line8": "<b>Hızlı Şarj </b><br> Daha hızlı pil şarjıyla hareket halindeyken daha uzun süre oyun oynayın",
@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Şunun için Makro Tuşu Kaydediliyor"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "Yıldırım hızında",
                 "BlazingText": "Lenovo Vantage deneyiminizi yavaşlatmayacak veya kesintiye uğratmayacak şekilde iyileştirilmiş virüsten koruma yazılımı",
                 "privacyTerms": "/   <tag>Gizlilik İlkesi</tag>  |  <tag>Hizmet Koşulları</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Kullanılamaz"
             },
             "windowsDefender": {
                 "optimallyProtected": "Şu anda Windows Defender kullandığınız görülüyor. Kötü bir seçim değil ancak fidye yazılımlarına, kötü amaçlı yazılımlara ve virüslere karşı nihai koruma sağlamak üzere, <b>önemli olan içeriğinizi koruyabilmeniz için</b> <b>McAfee</b> ile birlikte size ödüllü bir güvenlik çözümü sunuyoruz.",
@@ -1639,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Güvenlik Açığı Tarayıcısı ",
                 "report": "Tehdit Koruma Raporunuz ",
-                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.<tag>Şimdi Abone Ol</tag>",
-                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.<tag>Şimdi Abone Ol</tag>",
+                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın. <tag>Şimdi Abone Ol</tag>",
+                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın. <tag>Şimdi Abone Ol</tag>",
                 "subscribeNow": "Şimdi Abone Ol",
                 "fileScan": "Dosya tarandı",
                 "Viruses": "Virüs Temizlendi",

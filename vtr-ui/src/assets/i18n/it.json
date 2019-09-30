@@ -86,7 +86,7 @@
                     "line7": "<b>Modalità ibrida </b><br> Dis. imp. avanz. GPU quando il gioco non è in esec. per migliorare le prestazioni della batteria",
                     "line8": "<b>Carica rapida </b><br> Maggiore autonomia per giocare in viaggio con caricamenti più rapidi della batteria",
                     "line9": "<b>Blocco touchpad </b><br> Previeni input errati disabilitando il touchpad quando giochi",
-                    "line10": "<b>Chiusura automatica </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
+                    "line10": "<b>Chius. auto </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
                     "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento"
                 },
                 "systemInfo": {
@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Registrazione tasto macro per"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "Velocità senza paragoni",
                 "BlazingText": "Antivirus ottimizzato che non interferirà in alcun modo con la tua esperienza Lenovo Vantage",
                 "privacyTerms": "/   <tag>Informativa sulla privacy</tag>  |  <tag>Termini di servizio</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Non disponibile"
             },
             "windowsDefender": {
                 "optimallyProtected": "Al momento stai utilizzando Windows Defender. Una buona scelta, ma per garantirti sicurezza assoluta contro ransomware, malware e virus ci siamo avvalsi della collaborazione di <b>McAfee</b> per offrirti una sicurezza di livello superiore e consentirti di <b>proteggere al meglio ciò che più conta per te.</b>",
@@ -1639,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Report di protezione dalle minacce ",
-                "trialContent": "Stai facendo buon uso della tua versione di prova dell'antivirus McAfee. Restano però solo {{remainingDays}} giorni prima della scadenza della versione di prova, e il tuo computer potrebbe presto essere vulnerabile alle minacce. Non correre questo rischio.<tag>Abbonati ora</tag>",
-                "subscribeContent": "Stai facendo buon uso del tuo antivirus McAfee. Restano però solo {{remainingDays}} giorni prima della scadenza, e il tuo computer potrebbe presto essere vulnerabile alle minacce. Non correre questo rischio.<tag>Abbonati ora</tag>",
+                "trialContent": "Stai facendo buon uso della tua versione di prova dell'antivirus McAfee. Restano però solo {{remainingDays}} giorni prima della scadenza della versione di prova, e il tuo computer potrebbe presto essere vulnerabile alle minacce. Non correre questo rischio. <tag>Abbonati ora</tag>",
+                "subscribeContent": "Stai facendo buon uso del tuo antivirus McAfee. Restano però solo {{remainingDays}} giorni prima della scadenza, e il tuo computer potrebbe presto essere vulnerabile alle minacce. Non correre questo rischio. <tag>Abbonati ora</tag>",
                 "subscribeNow": "Abbonati ora",
                 "fileScan": "File esaminati",
                 "Viruses": "Virus eliminati",

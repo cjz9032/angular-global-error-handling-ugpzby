@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Nagrywanie klawisza makr dla"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "Błyskawiczna prędkość",
                 "BlazingText": "Zoptymalizowany program antywirusowy, który nie spowalnia ani nie zakłóca pracy Lenovo Vantage",
                 "privacyTerms": "/   <tag>Polityka prywatności</tag>  |  <tag>Warunki świadczenia usług</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Niedostępne"
             },
             "windowsDefender": {
                 "optimallyProtected": "Wydaje się, że obecnie korzystasz z programu Windows Defender. Nie jest to zły wybór, jednak by zapewnić najwyższy poziom zabezpieczenia przed ransomware, złośliwym oprogramowaniem i wirusami połączyliśmy siły z <b>McAfee</b> aby zaoferować ci wielokrotnie nagradzany program, który pomaga <b>chronić to, co jest ważne.</b>",
@@ -1639,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Skaner podatności McAfee ",
                 "report": "Twój raport zabezpieczeń ",
-                "trialContent": "W pełni wykorzystujesz wersję próbną programu antywirusowego McAfee. Ale do wygaśnięcia okresu próbnego pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj.<tag>Subskrybuj teraz</tag>",
-                "subscribeContent": "W pełni wykorzystujesz program antywirusowy McAfee. Ale do wygaśnięcia subskrypcji pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj.<tag>Subskrybuj teraz</tag>",
+                "trialContent": "W pełni wykorzystujesz wersję próbną programu antywirusowego McAfee. Ale do wygaśnięcia okresu próbnego pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj. <tag>Subskrybuj teraz</tag>",
+                "subscribeContent": "W pełni wykorzystujesz program antywirusowy McAfee. Ale do wygaśnięcia subskrypcji pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj. <tag>Subskrybuj teraz</tag>",
                 "subscribeNow": "Subskrybuj teraz",
                 "fileScan": "Przeskanowane pliki",
                 "Viruses": "Usunięte wirusy",

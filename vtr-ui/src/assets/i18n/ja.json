@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "マクロ・キーを記録"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -1593,7 +1608,7 @@
                 "Blazing": "超高速",
                 "BlazingText": "Lenovo Vantage のパフォーマンスを低下させたり動作を中断したりしない最適化されたウイルス対策",
                 "privacyTerms": "/   <tag>プライバシー ポリシー</tag>  |  <tag>サービス契約条件</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "利用できません"
             },
             "windowsDefender": {
                 "optimallyProtected": "現在、Windows Defender を使用しているようです。悪い選択ではありませんが、ランサムウェア、マルウェア、ウイルスに対する安全性を最大限に高めるため、Lenovo では <b>McAfee</b> と協力して受賞歴のあるセキュリティを用意し、<b>重要な情報を保護</b>できるようにしました。",

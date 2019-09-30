@@ -108,6 +108,15 @@
 					"sub2": "Facebook",
 					"sub3": "Instagram"
 				}
+			},
+			"narrator": {
+				"pageTitle": {
+					"device": "Lenovo Vantage home page",
+					"macroKey": "Macro key page",
+					"networkBoost": "network boost page",
+					"autoClose": "auto close page",
+					"lighting": "Lighting page"
+				}
 			}
 		},
 		"macroKey": {
@@ -244,6 +253,7 @@
 				"popupClear": "macrokey popup ok",
 				"popupCancel": "macrokey popup cancel",
 				"popupClose": "close",
+				"optionSelected": "selected",
 				"numbersSelectedNumpad": "selected macrokey numpad",
 				"macrokeySettings1": {
 					"option1": "on",
@@ -286,6 +296,70 @@
 					"title": "APPLIED"
 				}
 			},
+			"lightingeffectnarrator": {
+				"option1": {
+					"title": "front on"
+				},
+				"option2": {
+					"title": "front flicker"
+				},
+				"option3": {
+					"title": "front breath"
+				},
+				"option4": {
+					"title": "front wave"
+				},
+				"option5": {
+					"title": "front smooth"
+				},
+				"option6": {
+					"title": "front cpu temperature"
+				},
+				"option7": {
+					"title": "front cpu utilization"
+				},
+				"option8": {
+					"title": "front off"
+				},
+				"color": {
+					"title": "Color settings"
+				},
+				"lightingEffect": {
+					"title": "Lighting effect"
+				}
+			},
+			"lightingeffectsidenarrator": {
+				"option1": {
+					"title": "side on"
+				},
+				"option2": {
+					"title": "side flicker"
+				},
+				"option3": {
+					"title": "side breath"
+				},
+				"option4": {
+					"title": "side wave"
+				},
+				"option5": {
+					"title": "side smooth"
+				},
+				"option6": {
+					"title": "side cpu temperature"
+				},
+				"option7": {
+					"title": "side cpu utilization"
+				},
+				"option8": {
+					"title": "side off"
+				},
+				"color": {
+					"title": "Color settings"
+				},
+				"lightingEffect": {
+					"title": "Lighting effect"
+				}
+			},
 			"brightness": {
 				"text1": {
 					"title": "*Brightness setting doesn't apply on "
@@ -295,6 +369,23 @@
 				}
 			},
 			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "Always On"
+				},
+				"option2": {
+					"title": "Fast Blink"
+				},
+				"option3": {
+					"title": "Medium Blink"
+				},
+				"option4": {
+					"title": "Slow Blink"
+				},
+				"option5": {
+					"title": "Blink Level"
+				}
+			},
+			"lightingSingleLightingOptionnarrator": {
 				"option1": {
 					"title": "Always On"
 				},
@@ -341,6 +432,26 @@
 					"title": "Profile 3"
 				}
 			},
+			"lightingnarrator": {
+				"text1": {
+					"title": "Lighting profile off"
+				},
+				"text2": {
+					"title": "Lighting profile 1"
+				},
+				"text3": {
+					"title": "Lighting profile 2"
+				},
+				"text4": {
+					"title": "Lighting profile 3"
+				},
+				"Customize": {
+					"title": "set lighting profile"
+				},
+				"heading": {
+					"title": "to default:"
+				}
+			},
 			"colourwheel": {
 				"text1": {
 					"title": "Selecting colour not available to this effect."
@@ -362,6 +473,17 @@
 				},
 				"text7": {
 					"title": "Color"
+				}
+			},
+			"colourwheelnarrator": {
+				"text1": {
+					"title": "rgb red value"
+				},
+				"text2": {
+					"title": "rgb green value"
+				},
+				"text3": {
+					"title": "rgb blue value"
 				}
 			},
 			"lightingProfileHeading": {
@@ -389,12 +511,23 @@
 			"title": "Auto Close",
 			"addAppsButton": "Add",
 			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize the gaming performance. NOTE: This feature closes the app completely. So always make sure that you've saved your work.",
+			"autocClosenarrator": "Add",
+			"autocClosenarratorremove": "Remove",
+			"autocClosenarratorback": "Back to dashboard",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
 				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "TURN ON",
 				"btnCancel": "NOT NOW"
+			},
+			"modalTurnAutoCloseNarrator": {
+				"close": "Close",
+				"dontask": "Don't ask again",
+				"turnOn": "Turn on auto close",
+				"notNow": "Not now",
+				"running": "No running apps to add window",
+				"open": "Auto close add apps window opened"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
@@ -421,6 +554,28 @@
 					"part1": "You can add up to 5 additional apps to boost",
 					"part2": "of",
 					"part3": "added"
+				}
+			}
+		},
+		"narrator": {
+			"networkBoost": {
+				"subPage": {
+					"addApps": "Add apps",
+					"remove": "Remove"
+				},
+				"turnOnModal": {
+					"confirmation": "Network boost turn on confirmation window opened",
+					"dontAskAgain": "Dont ask again",
+					"turnOnButton": "modal Turn networkBoost turn on",
+					"notOnButton": "modal Turn networkBoost not now"
+				},
+				"addApps": {
+					"addAppsTitle": "Networkboost add apps window opened",
+					"noAppsTitle": "No running Apps to add window",
+					"add": "add"
+				},
+				"common": {
+					"close": "close"
 				}
 			}
 		}
@@ -714,7 +869,7 @@
 				"condition": {
 					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
 					"Good": "<b>The battery is in good condition.</b>",
-					"Exhaustion": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery.",
+					"Exhaustion": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
@@ -1808,8 +1963,8 @@
 				"quickClean": "McAfee QuickClean",
 				"vulnerability": "McAfee Vulnerability Scanner",
 				"report": "Your Threat Protection Report ",
-				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.<tag>Subscribe Now</tag>",
-				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.<tag>Subscribe Now</tag>",
+				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
+				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
 				"subscribeNow": "Subscribe Now",
 				"fileScan": "Files scanned",
 				"Viruses": "Viruses Eliminated",
