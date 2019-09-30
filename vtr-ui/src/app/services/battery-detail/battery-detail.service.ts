@@ -25,4 +25,23 @@ export class BatteryDetailService {
 			throw new Error(error.message);
 		}
 	}
+
+	public startMonitor(handler: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.battery.startBatteryMonitor((handler));
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopMonitor() {
+		if (this.isShellAvailable) {
+			this.battery.stopBatteryMonitor((response: boolean) => {
+				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
+			});
+		}
+	}
 }

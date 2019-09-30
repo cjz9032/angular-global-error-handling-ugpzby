@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Grabación de la tecla de macro"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "La batería tiene una <b>temperatura demasiado alta</b>. Retírela del sistema y deje que se enfríe a temperatura ambiente.",
                     "PermanentError": "La batería ha <b>fallado debido al desgaste normal.</b> No se puede cargar la batería. Sustituya la batería.",
                     "NotSupportACAdapterDetail": "<b>El adaptador de CA no es compatible.</b> Su sistema Lenovo no admite este adaptador de CA. Puede que se apague repentinamente. Conecte un adaptador de CA correcto.",
-                    "LimitedACAdapterSupportDetail": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto."
+                    "LimitedACAdapterSupportDetail": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
@@ -1233,7 +1249,8 @@
                     "caption": "El ajuste de distancia automático actualizará automáticamente la distancia de detección a través de un motor de IA.",
                     "options": {
                         "near": "Cerca",
-                        "far": "Lejos"
+                        "far": "Lejos",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
                     "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión sin interacción no funcionará.",
                     "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático.",
-                    "description6": "4. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán."
+                    "description6": "4. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
                     "screenTimeoutSettings": "Vaya a Configuración de tiempo de espera de pantalla"
                 },
-                "resetToDefault": "Restablecer"
+                "resetToDefault": "Restablecer",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Pantalla inteligente",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Velocidad ultrarrápida",
                 "BlazingText": "Antivirus optimizado que no ralentizará ni interrumpirá su experiencia Lenovo Vantage",
                 "privacyTerms": "/   <tag>Políticas de privacidad</tag>  |  <tag>Términos de servicio</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "No disponible"
             },
             "windowsDefender": {
                 "optimallyProtected": "Parece que actualmente usa Windows Defender. No es una mala elección, pero para la máxima seguridad contra ransomware, malware y virus, nos hemos asociado con <b>McAfee</b> para desactivar su seguridad galardonada para <b>proteger las cosas más importantes.</b>",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Su informe de protección contra amenazas ",
-                "trialContent": "Ha estado utilizando bien la versión de prueba del antivirus de McAfee. Pero con solo {{remainingDays}} días antes de que expire la versión de prueba, corre el riesgo de dejar a su sistema vulnerable. No se arriesgue.<tag>Suscribir ahora</tag>",
-                "subscribeContent": "Ha estado utilizando bien su McAfee. Pero con solo {{remainingDays}} días restantes, corre el riesgo de dejar a su sistema vulnerable. No se arriesgue.<tag>Suscribir ahora</tag>",
+                "trialContent": "Ha estado utilizando bien la versión de prueba del antivirus de McAfee. Pero con solo {{remainingDays}} días antes de que expire la versión de prueba, corre el riesgo de dejar a su sistema vulnerable. No se arriesgue. <tag>Suscribir ahora</tag>",
+                "subscribeContent": "Ha estado utilizando bien su McAfee. Pero con solo {{remainingDays}} días restantes, corre el riesgo de dejar a su sistema vulnerable. No se arriesgue. <tag>Suscribir ahora</tag>",
                 "subscribeNow": "Suscribir ahora",
                 "fileScan": "Archivos escaneados",
                 "Viruses": "Virus eliminados",

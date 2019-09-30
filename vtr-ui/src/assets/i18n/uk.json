@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Запис клавіші макросів для"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "Акумулятор <b>сильно нагрівся</b>. Вийміть його з комп’ютера та охолодіть до кімнатної температури.",
                     "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
-                    "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму."
+                    "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%.",
@@ -1233,7 +1249,8 @@
                     "caption": "Автоматичне регулювання відстані буде автоматично оновлювати відстань розпізнавання за допомогою штучного інтелекту.",
                     "options": {
                         "near": "Поблизу",
-                        "far": "Далеко"
+                        "far": "Далеко",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
                     "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
-                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено."
+                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
                     "screenTimeoutSettings": "Перейти до настройок часу очікування екрана"
                 },
-                "resetToDefault": "Скидання"
+                "resetToDefault": "Скидання",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Інтелектуальний екран",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Блискавична швидкість",
                 "BlazingText": "Оптимізований антивірус, який не вповільнює та не перешкоджає роботі Lenovo Vantage",
                 "privacyTerms": "/   <tag>Політика конфіденційності</tag>  |  <tag>Умови обслуговування</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Недоступно"
             },
             "windowsDefender": {
                 "optimallyProtected": "Схоже, ви використовуєте Захисник Windows. Непоганий вибір, але для максимальної безпеки від програм-шифрувальників із вимогою викупу, зловмисного ПЗ і вірусів, ми об'єднали зусилля з <b>McAfee</b>, щоб запропонувати вам передову безпеку для <b>захисту всього найважливішого</b>.",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Сканер вразливостей McAfee ",
                 "report": "Ваш звіт про захист від загроз ",
-                "trialContent": "Випробувальна версія антивірусу McAfee активно допомагає вам. Але до завершення ознайомлювального періоду залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте.<tag>Передплатіть зараз</tag>",
-                "subscribeContent": "McAfee активно допомагає вам. Але до завершення передплати залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте.<tag>Передплатіть зараз</tag>",
+                "trialContent": "Випробувальна версія антивірусу McAfee активно допомагає вам. Але до завершення ознайомлювального періоду залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте. <tag>Передплатіть зараз</tag>",
+                "subscribeContent": "McAfee активно допомагає вам. Але до завершення передплати залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте. <tag>Передплатіть зараз</tag>",
                 "subscribeNow": "Передплатіть зараз",
                 "fileScan": "Файли відскановано",
                 "Viruses": "Віруси видалено",

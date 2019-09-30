@@ -4,7 +4,7 @@
       <div (click)="openModal()" role="button" id="addButton"
        [ngClass]="{'isdisabled': runningAppsList && runningAppsList.length >=5}"
        (keyup.enter)="openModal()" [tabindex]="runningAppsList && runningAppsList.length >=5 ? -1 : 1"
-       aria-label="Add apps">
+       attr.aria-label="{{'gaming.narrator.networkBoost.subPage.addApps' | translate}}">
         <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>6.20pxIcon/add</title>
@@ -29,7 +29,7 @@
             </div>
 			<div class="remove-app" id="{{'remove'+i}}" (click)="removeApp(app.processPath,i)" role="area"
 				(keyup.enter)="removeApp(app.processPath,i)"  (focus)="app.isHovered=true" (focusout)="app.isHovered=false" [tabindex]="modalStatus? '-1':'1'" role="button"
-				attr.aria-label="{{'Remove '+ app.processDescription}}" role="button" >
+				attr.aria-label="{{'gaming.narrator.networkBoost.subPage.remove' | translate}} {{app.processDescription}}" role="button" >
 				<svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
 					<title>6.20pxIcon/Close</title>

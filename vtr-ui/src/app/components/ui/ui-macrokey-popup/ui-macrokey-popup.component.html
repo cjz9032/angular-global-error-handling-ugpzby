@@ -4,7 +4,7 @@
 			<div class="row justify-content-end">
 				<div class="btn-close">
 					<button type="button" class="close" aria-hidden="true" (click)="submitAction(false)"
-						aria-label="close" vtrMetrics [metricsItem]="'macrokey_popup_close'" metricsEvent="featureClick"
+					attr.aria-label="{{ 'gaming.macroKey.narrator.popupClose' | translate }}" vtrMetrics [metricsItem]="'macrokey_popup_close'" metricsEvent="featureClick"
 						tabindex="1" (keyup.enter)="submitAction(false)">
 						<fa-icon [icon]="['fal', 'times']"></fa-icon>
 					</button>
@@ -18,18 +18,18 @@
 			<div class="row">
 				<div *ngIf="modalContent.btnConfirm">
 					<button class="btn enable-button" (click)="submitAction(true)" id="macrokey_popup_clear"
-						aria-label="macrokey popup clear" vtrMetrics [metricsItem]="'macrokey_popup_clear'" tabindex="1"
+					attr.aria-label="{{ 'gaming.macroKey.popupContent.confirmButton.btnClear' | translate }}" vtrMetrics [metricsItem]="'macrokey_popup_clear'" tabindex="1"
 						(keyup.enter)="submitAction(true)"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
 					<a (click)="submitAction(false)" tabindex="1" (keyup.enter)="submitAction(false)"
 						(keydown)="keydownFn($event)" class="cancel-link active" id="macrokey_popup_cancel"
-						aria-label="macrokey popup cancel" role="button" vtrMetrics
+						attr.aria-label="{{ 'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate }}" role="button" vtrMetrics
 						[metricsItem]="'macrokey_popup_cancel'"
 						metricsEvent="featureClick">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</a>
 				</div>
 				<div *ngIf="!modalContent.btnConfirm">
 					<button class="btn enable-button" (click)="submitAction(true)" id="{{modalContent.metricsItemId}}"
-						aria-label="macrokey popup ok" vtrMetrics [metricsItem]="modalContent.metricsItemId"
+					attr.aria-label="{{ 'gaming.macroKey.popupContent.btnOk' | translate }}" vtrMetrics [metricsItem]="modalContent.metricsItemId"
 						metricsEvent="featureClick" tabindex="1" (keydown)="keydownFn($event)"
 						(keyup.enter)="submitAction(true)">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
 				</div>

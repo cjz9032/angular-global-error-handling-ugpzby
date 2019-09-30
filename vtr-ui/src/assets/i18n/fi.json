@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Makronäppäimen tallennus kohteelle"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "Akun lämpötila on <b>liian korkea</b>. Poista akku tietokoneesta ja jäähdytä se huoneenlämpöiseksi.",
                     "PermanentError": "Akussa on ilmennyt <b>vika normaalin kulumisen vuoksi.</b> Akkua ei voi ladata. Vaihda akku.",
                     "NotSupportACAdapterDetail": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
-                    "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen."
+                    "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
@@ -1233,7 +1249,8 @@
                     "caption": "Etäisyyden automaattinen muutto päivittää tunnistusetäisyyden automaattisesti tekoälymoduulin avulla.",
                     "options": {
                         "near": "Lähellä",
-                        "far": "Kaukana"
+                        "far": "Kaukana",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
                     "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
-                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä."
+                    "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
                     "screenTimeoutSettings": "Siirry näytön aikakatkaisun asetuksiin"
                 },
-                "resetToDefault": "Uudelleenasetus"
+                "resetToDefault": "Uudelleenasetus",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Älykäs näyttö",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Salamannopea",
                 "BlazingText": "Optimoitu virustentorjunta, joka ei hidasta tai keskeytä Lenovo Vantage -kokemustasi",
                 "privacyTerms": "/   <tag>Tietosuojakäytäntö</tag>  |  <tag>Palveluehdot</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ei käytettävissä"
             },
             "windowsDefender": {
                 "optimallyProtected": "Näyttää siltä, että käytät tällä hetkellä Windows Defenderiä. Se ei ole huono valinta, mutta tarjotaksemme äärimmäisen hyvää suojausta kiristysohjelmia, haittaohjelmia ja viruksia vastaan, olemme yhdistäneet voimamme <b>McAfeen</b> kanssa. Yhdessä voimme tarjota sinulla palkittua suojausta niin, että voit <b>suojata tärkeät tietosi.</b>",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Uhkien torjunta -raporttisi ",
-                "trialContent": "Olet hyödyntänyt McAfeen virustentorjunnan kokeiluversiosi hyvin. Sinulla on kuitenkin vain {{remainingDays}} päivää jäljellä siihen, kun kokeilujaksosi päättyy, ja vaarana on, että tietokoneesi jää haavoittuvaksi. Älä ota riskiä.<tag>Tilaa nyt</tag>",
-                "subscribeContent": "Olet hyödyntänyt McAfee-ohjelman kokeiluversion hyvin. Kokeiluversion on kuitenkin voimassa enää vain {{remainingDays}} päivää, ja vaarana on, että tietokoneesi tulee haavoittuvaksi. Älä ota riskiä.<tag>Tilaa nyt</tag>",
+                "trialContent": "Olet hyödyntänyt McAfeen virustentorjunnan kokeiluversiosi hyvin. Sinulla on kuitenkin vain {{remainingDays}} päivää jäljellä siihen, kun kokeilujaksosi päättyy, ja vaarana on, että tietokoneesi jää haavoittuvaksi. Älä ota riskiä. <tag>Tilaa nyt</tag>",
+                "subscribeContent": "Olet hyödyntänyt McAfee-ohjelman kokeiluversion hyvin. Kokeiluversion on kuitenkin voimassa enää vain {{remainingDays}} päivää, ja vaarana on, että tietokoneesi tulee haavoittuvaksi. Älä ota riskiä. <tag>Tilaa nyt</tag>",
                 "subscribeNow": "Tilaa nyt",
                 "fileScan": "Skannattuja tiedostoja",
                 "Viruses": "Poistettuja viruksia",

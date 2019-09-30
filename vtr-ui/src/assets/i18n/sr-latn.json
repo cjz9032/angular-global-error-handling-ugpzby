@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Snimanje tastera makroa za"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "Baterija je <b>pregrejana</b>. Uklonite je iz računara i ohladite je do sobne temperature.",
                     "PermanentError": "Baterija je <b>otkazala usled normalnog trošenja.</b> Nije moguće napuniti bateriju. Zamenite bateriju.",
                     "NotSupportACAdapterDetail": "<b>Adapter za naizmeničnu struju nije podržan.</b> Vaš Lenovo računar ne podržava ovaj adapter za naizmeničnu struju. To može izazvati iznenadno isključivanje. Priključite ispravan adapter za naizmeničnu struju.",
-                    "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju."
+                    "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
@@ -1233,7 +1249,8 @@
                     "caption": "Automatsko podešavanje razdaljine će automatski ažurirati rastojanje za detekciju putem mehanizma veštačke inteligencije.",
                     "options": {
                         "near": "Blizu",
-                        "far": "Daleko"
+                        "far": "Daleko",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
                     "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Bezdodirno prijavljivanje neće raditi.",
                     "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje.",
-                    "description6": "4. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene."
+                    "description6": "4. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sistema Windows Hello",
                     "screenTimeoutSettings": "Idite na postavke vremena čekanja za ekran"
                 },
-                "resetToDefault": "Poništi"
+                "resetToDefault": "Poništi",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentni ekran",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Brzina munje",
                 "BlazingText": "Optimizovan antivirus koji neće usporiti ili prekinuti vaše iskustvo korišćenja programa Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politika privatnosti</tag>  |  <tag>Uslovi korišćenja usluge</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
                 "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa, udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i bili u mogućnosti da <b>zaštitimo ono što je važno.</b>",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee skener ranjivosti ",
                 "report": "Vaš izveštaj o zaštiti od pretnji ",
-                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.<tag>Pretplatite se sada</tag>",
-                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.<tag>Pretplatite se sada</tag>",
+                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati. <tag>Pretplatite se sada</tag>",
+                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati. <tag>Pretplatite se sada</tag>",
                 "subscribeNow": "Pretplatite se sada",
                 "fileScan": "Skenirane datoteke",
                 "Viruses": "Eliminisano virusa",

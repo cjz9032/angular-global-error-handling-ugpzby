@@ -81,7 +81,7 @@
                     "line2": "<b>Pregled upravljanja značajkama</b> <br> Neke značajke nisu dostupne na svim uređajima",
                     "line3": "<b>Overclocking CPU-a </b><br> Povećajte maksimalnu brzinu procesora",
                     "line4": "<b>Overclocking RAM-a </b><br> Povećajte maksimalnu brzinu memorije",
-                    "line5": "<b>Ubrzanje mreže </b><br> Dodijelite viši prioritet mrežnom prometu za igru koju igrate",
+                    "line5": "<b>Ubrzanje mreže </b><br> Mrežnom prometu za igru koju igrate dodijelite viši prioritet",
                     "line6": "<b>Dolby </b><br> Prilagodite zvuk igranju pomoću tehnologije Dolby",
                     "line7": "<b>Hibridni način </b><br> Onemogućite napredne GPU postavke kada ne igrate da produžite trajanje baterije",
                     "line8": "<b>Brzo punjenje </b><br> Igrajte u pokretu uz brže punjenje baterije",
@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Snimanje makro tipke za"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "Baterija je <b>prevruća</b>. Izvadite je iz računala i ohladite na sobnu temperaturu.",
                     "PermanentError": "Baterija je <b>prestala raditi kao posljedica istrošenosti uslijed redovne uporabe.</b> Bateriju nije moguće puniti. Zamijenite bateriju.",
                     "NotSupportACAdapterDetail": "<b>Prilagodnik izmjeničnog napona nije podržan.</b> Vaše Lenovo računalo ne podržava ovaj prilagodnik izmjeničnog napona. To može uzrokovati naglo isključivanje. Spojite odgovarajući prilagodnik izmjeničnog napona.",
-                    "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona."
+                    "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
@@ -1233,7 +1249,8 @@
                     "caption": "Automatska prilagodba udaljenosti automatski će ažurirati udaljenost otkrivanja putem modula za umjetnu inteligenciju.",
                     "options": {
                         "near": "Blizu",
-                        "far": "Daleko"
+                        "far": "Daleko",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
                     "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava neće raditi.",
                     "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave.",
-                    "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene."
+                    "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sustava Windows Hello",
                     "screenTimeoutSettings": "Idi na postavke isteka vremena za zaslon"
                 },
-                "resetToDefault": "Ponovno postavljanje"
+                "resetToDefault": "Ponovno postavljanje",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentni zaslon",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Nevjerojatna brzina",
                 "BlazingText": "Optimizirani antivirus koji neće usporiti ili prekinuti vaše Lenovo Vantage iskustvo",
                 "privacyTerms": "/   <tag>Pravila o privatnosti</tag>  |  <tag>Uvjeti pružanja usluge</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
                 "optimallyProtected": "Čini se da trenutno koristite Windows Defender. Nije loš izbor, ali za maksimalnu zaštitu protiv ucjenjivačkog softvera, zlonamjernog softvera i virusa, udružili smo se sa <b>McAfee</b> da bismo vam osigurali nagrađivanu sigurnost <b>kako biste mogli zaštiti ono što je važno.</b>",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee skener ranjivosti ",
                 "report": "Izvješće o zaštiti prijetnji ",
-                "trialContent": "Već ste dobro iskoristili svoje McAfee antivirusno probno razdoblje. No vaše probno razdoblje završava za {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati.<tag>Pretplatite se sada</tag>",
-                "subscribeContent": "Dobro ste iskoristili svoj McAfee. No preostalo je još svega {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati.<tag>Pretplatite se sada</tag>",
+                "trialContent": "Već ste dobro iskoristili svoje McAfee antivirusno probno razdoblje. No vaše probno razdoblje završava za {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati. <tag>Pretplatite se sada</tag>",
+                "subscribeContent": "Dobro ste iskoristili svoj McAfee. No preostalo je još svega {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati. <tag>Pretplatite se sada</tag>",
                 "subscribeNow": "Pretplatite se sada",
                 "fileScan": "Datoteke skenirane",
                 "Viruses": "Virusi uklonjeni",

@@ -1,3 +1,4 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
@@ -9,6 +10,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -111,6 +113,7 @@ export class PageSupportComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
+		private modalService: NgbModal
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.warrantyData = this.supportService.warrantyData;
@@ -323,6 +326,15 @@ export class PageSupportComponent implements OnInit {
 		});
 	}
 
+	onFeedbackModal() {
+		this.modalService.open(FeedbackFormComponent, {
+			backdrop: true,
+			size: 'lg',
+			centered: true,
+			windowClass: 'feedback-modal'
+		});
+	}
+	
 	copyObjectArray(obj: any) {
 		return JSON.parse(JSON.stringify(obj));
 	}

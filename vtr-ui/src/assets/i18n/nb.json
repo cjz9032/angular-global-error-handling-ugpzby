@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Spiller inn makrotast for"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Ta det ut av maskinen og avkjøl det til romtemperatur.",
                     "PermanentError": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri.",
                     "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
-                    "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt."
+                    "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
@@ -1233,7 +1249,8 @@
                     "caption": "Automatisk avstandsjustering vil automatisk oppdatere avstandsfølsomheten via en AI-motor.",
                     "options": {
                         "near": "Kort avstand",
-                        "far": "Lang avstand"
+                        "far": "Lang avstand",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
                     "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
-                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen."
+                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
                     "screenTimeoutSettings": "Gå til innstillingene for tidsutkobling av skjermen"
                 },
-                "resetToDefault": "Tilbakestill"
+                "resetToDefault": "Tilbakestill",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skjerm",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Lynrask ytelse",
                 "BlazingText": "Optimalisert antivirus som verken avbryter eller reduserer hastigheten på Lenovo Vantage-opplevelsen",
                 "privacyTerms": "/   <tag>Personvernpolicy</tag>  |  <tag>Vilkår for bruk</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ikke tilgjengelig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Dette er ikke et dårlig valg, men vi tilbyr prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus i samarbeid med <b>McAfee</b>, slik at du kan <b>beskytte dine dyrebare data</b>.",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Sårbarhetsskanner ",
                 "report": "Rapport om trusselbeskyttelse ",
-                "trialContent": "Du har gjort god bruk av prøveversjonen av McAfee-antivirusprogramvaren. Nå er det imidlertid bare {{remainingDays}} dager igjen til prøveversjonen utløper, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.<tag>Abonner nå</tag>",
-                "subscribeContent": "Du har gjort god bruk av McAfee. Nå er det imidlertid bare {{remainingDays}} dager igjen, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.<tag>Abonner nå</tag>",
+                "trialContent": "Du har gjort god bruk av prøveversjonen av McAfee-antivirusprogramvaren. Nå er det imidlertid bare {{remainingDays}} dager igjen til prøveversjonen utløper, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten. <tag>Abonner nå</tag>",
+                "subscribeContent": "Du har gjort god bruk av McAfee. Nå er det imidlertid bare {{remainingDays}} dager igjen, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten. <tag>Abonner nå</tag>",
                 "subscribeNow": "Abonner nå",
                 "fileScan": "Skannede filer",
                 "Viruses": "Fjernede virus",

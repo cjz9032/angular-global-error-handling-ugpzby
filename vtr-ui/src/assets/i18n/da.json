@@ -81,7 +81,7 @@
                     "line2": "<b>Oversigt over funktionsstyring</b> <br> Nogle funktioner er ikke tilgængelige på alle enheder",
                     "line3": "<b>CPU-overclocking</b><br> Øg processorens hastighed til det optimale",
                     "line4": "<b>RAM-overclocking</b><br> Øg hukommelsens hastighed til det optimale",
-                    "line5": "<b>Netværksforstærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
+                    "line5": "<b>Netværksfor-stærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
                     "line6": "<b>Dolby</b><br> Optimer din lyd, især til spil, med Dolby-teknologi",
                     "line7": "<b>Hybridtilstand</b><br> Deaktiver avancerede GPU-indstillinger, når du ikke spiller, for at øge batteriets ydeevne",
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Optager makro-tast for"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Tag det ud af computeren, og lad det køle af til almindelig stuetemperatur.",
                     "PermanentError": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
                     "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
-                    "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter."
+                    "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
@@ -1233,7 +1249,8 @@
                     "caption": "Den automatiske afstandsjustering opdaterer automatisk registreringsafstanden via en AI-funktion.",
                     "options": {
                         "near": "Tæt på",
-                        "far": "Langt"
+                        "far": "Langt",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Hvis din computer er i Telt-, Tablet- eller Støtte-tilstand, fungerer disse funktioner muligvis ikke korrekt.",
                     "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Logon uden berøring fungerer ikke.",
                     "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon.",
-                    "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret."
+                    "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
                     "screenTimeoutSettings": "Gå til indstillinger for skærmtimeout"
                 },
-                "resetToDefault": "Nulstil"
+                "resetToDefault": "Nulstil",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skærm",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Lynhurtig hastighed",
                 "BlazingText": "Optimeret antivirus, der ikke afbryder din Lenovo Vantage-oplevelse eller gør den langsommere",
                 "privacyTerms": "/   <tag>Politik om beskyttelse af personlige oplysninger</tag>  |  <tag>Vilkår for tjeneste</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ikke tilgængelig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det ser ud til, at du bruger Windows Defender i øjeblikket. Det er ikke et dårligt valg, men for at give dig den ultimative beskyttelse mod ransomware, malware og virus er vi gået sammen med <b>McAfee</b> og kan tilbyde dig prisvindende sikkerhed, så du kan <b>beskytte det, der betyder noget.</b>",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee-sårbarhedsscanner ",
                 "report": "Rapport om din trusselsbeskyttelse ",
-                "trialContent": "Du har brugt din prøveversion af McAfee-antivirus godt. Men med kun {{remainingDays}} dage tilbage af din prøveperiode risikerer du, at din computer bliver sårbar. Du må ikke risikere det.<tag>Abonnér nu</tag>",
-                "subscribeContent": "Du har brugt din McAfee godt. Men med kun {{remainingDays}} dage tilbage risikerer du, at din computer bliver sårbar. Du må ikke risikere det.<tag>Abonnér nu</tag>",
+                "trialContent": "Du har brugt din prøveversion af McAfee-antivirus godt. Men med kun {{remainingDays}} dage tilbage af din prøveperiode risikerer du, at din computer bliver sårbar. Du må ikke risikere det. <tag>Abonnér nu</tag>",
+                "subscribeContent": "Du har brugt din McAfee godt. Men med kun {{remainingDays}} dage tilbage risikerer du, at din computer bliver sårbar. Du må ikke risikere det. <tag>Abonnér nu</tag>",
                 "subscribeNow": "Abonnér nu",
                 "fileScan": "Scannede filer",
                 "Viruses": "Eliminerede virus",

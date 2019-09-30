@@ -22,6 +22,8 @@ export class BatteryConditionModel {
 				return 'device.deviceSettings.batteryGauge.condition.MissingDriver';
 			case BatteryConditionsEnum.NotSupportACAdapter:
 				return 'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter';
+			case BatteryConditionsEnum.FullACAdapterSupport:
+				return 'device.deviceSettings.batteryGauge.condition.FullACAdapterSupport';
 			case BatteryConditionsEnum.LimitedACAdapterSupport:
 				return 'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport';
 			case BatteryConditionsEnum.StoreLimitation:

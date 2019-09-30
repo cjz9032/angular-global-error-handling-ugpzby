@@ -84,7 +84,7 @@
                     "line2": "<b>Přehled správy funkcí</b> <br> Některé funkce nejsou k dispozici na všech zařízeních",
                     "line3": "<b>Přetaktování CPU </b><br> Zvyšte maximální rychlost procesoru",
                     "line4": "<b>Přetaktování RAM </b><br> Zvyšte maximální rychlost paměti",
-                    "line5": "<b>Zvýšení výkonu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
+                    "line5": "<b>Zvýšení vý-konu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
                     "line6": "<b>Dolby </b><br> Vylaďte zvuk přímo pro hraní her pomocí technologie Dolby",
                     "line7": "<b>Hybridní režim </b><br> Zvyšte výdrž baterie deaktivací Upřesnit nastavení GPU, když nebudete hrát",
                     "line8": "<b>Rychlé nabíjení </b><br> Užijte si při hraní na cestách delší výdrž baterie díky rychlejšímu nabíjení",
@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Záznam klávesy makra pro"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "Baterie je <b>přehřátá</b>. Vyjměte ji z počítače a nechte ji vychladnout na pokojovou teplotu.",
                     "PermanentError": "Došlo k <b>selhání baterie z důvodu běžného opotřebení.</b> Baterii nelze nabít. Vyměňte ji.",
                     "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
-                    "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér."
+                    "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
@@ -1233,7 +1249,8 @@
                     "caption": "Automatické nastavení vzdálenosti automaticky aktualizuje vzdálenost rozpoznávání pomocí jádra umělé inteligence.",
                     "options": {
                         "near": "Malá",
-                        "far": "Velká"
+                        "far": "Velká",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
-                    "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté."
+                    "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
                     "screenTimeoutSettings": "Přechod na nastavení časového limitu vypnutí obrazovky"
                 },
-                "resetToDefault": "Reset"
+                "resetToDefault": "Reset",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentní obrazovka",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Blesková rychlost",
                 "BlazingText": "Optimalizovaný antivirový program, který nezpomalí ani nepřeruší vaše prostředí Lenovo Vantage",
                 "privacyTerms": "/   <tag>Zásady ochrany osobních údajů</tag>  |  <tag>Podmínky služby</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Není dostupná"
             },
             "windowsDefender": {
                 "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom vám mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Vaše zpráva o ochraně před hrozbami ",
-                "trialContent": "Používali jste zkušební verzi antiviru McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, riskujete tak budoucí zranitelnost svého počítače. Neriskujte to.<tag>Zapsat nyní</tag>",
-                "subscribeContent": "Používali jste software McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, a tak riskujete tak budoucí zranitelnost svého počítače. Neriskujte to.<tag>Zapsat nyní</tag>",
+                "trialContent": "Používali jste zkušební verzi antiviru McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, riskujete tak budoucí zranitelnost svého počítače. Neriskujte to. <tag>Zapsat nyní</tag>",
+                "subscribeContent": "Používali jste software McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, a tak riskujete tak budoucí zranitelnost svého počítače. Neriskujte to. <tag>Zapsat nyní</tag>",
                 "subscribeNow": "Zapsat nyní",
                 "fileScan": "Prohledané soubory",
                 "Viruses": "Odstraněné viry",

@@ -235,6 +235,21 @@
             },
             "recording": {
                 "title": "Makrotaste aufzeichnen für"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                }
             }
         },
         "lightingProfile": {
@@ -709,7 +724,8 @@
                     "OverheatedBattery": "Der Akku ist <b>zu heiß</b>. Entnehmen Sie ihn aus dem Computer, und lassen Sie ihn auf Raumtemperatur abkühlen.",
                     "PermanentError": "Am Akku ist <b>aufgrund von normalem Gebrauch ein Fehler aufgetreten</b>. Der Akku kann nicht aufgeladen werden. Tauschen Sie den Akku aus.",
                     "NotSupportACAdapterDetail": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
-                    "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an."
+                    "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",
@@ -1233,7 +1249,8 @@
                     "caption": "Die automatische Abstandsanpassung passt den Erkennungsabstand automatisch über eine AI-Engine an.",
                     "options": {
                         "near": "Nah",
-                        "far": "Weit"
+                        "far": "Weit",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1270,17 @@
                     "description3": "1. Wenn Ihr Computer im Zelt‑, Tablet‑ oder Standmodus ist, funktionieren diese Funktionen möglicherweise nicht ordnungsgemäß.",
                     "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die Zero-Touch-Anmeldung funktioniert nicht.",
                     "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann.",
-                    "description6": "4. Wenn der Flugzeugmodus auf Ihrem Computer aktiviert ist, sind die folgenden Funktionen deaktiviert."
+                    "description6": "4. Wenn der Flugzeugmodus auf Ihrem Computer aktiviert ist, sind die folgenden Funktionen deaktiviert.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello-Einstellungen aufrufen",
                     "screenTimeoutSettings": "Gehen Sie zu den Einstellungen für das Bildschirmzeitlimit"
                 },
-                "resetToDefault": "Zurücksetzen"
+                "resetToDefault": "Zurücksetzen",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligente Anzeige",
@@ -1587,7 +1608,7 @@
                 "Blazing": "Blitzschnelle Geschwindigkeit",
                 "BlazingText": "Optimierte Antivirenprogramme, die Ihr Lenovo Vantage-Erlebnis nicht verlangsamen oder unterbrechen",
                 "privacyTerms": "/   <tag>Datenschutzrichtlinie</tag>  |  <tag>Servicebedingungen</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nicht verfügbar"
             },
             "windowsDefender": {
                 "optimallyProtected": "Wie es scheint, verwenden Sie derzeit Windows Defender. Keine schlechte Wahl, aber für die ultimative Abwehr von Ransomware, Malware und Viren haben wir uns mit <b>McAfee</b> zusammengetan, um Ihnen preisgekrönte Sicherheit für den <b>Schutz Ihrer wichtigen Daten</b> zu bieten.",
@@ -1633,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Schwachstellen-Scanner ",
                 "report": "Ihr Bedrohungsschutzbericht ",
-                "trialContent": "Sie haben Ihre McAfee Antivirus-Testversion sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage bis zum Ablauf der Testversion und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht.<tag>Jetzt abonnieren</tag>",
-                "subscribeContent": "Sie haben Ihr McAfee-Programm sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht.<tag>Jetzt abonnieren</tag>",
+                "trialContent": "Sie haben Ihre McAfee Antivirus-Testversion sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage bis zum Ablauf der Testversion und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht. <tag>Jetzt abonnieren</tag>",
+                "subscribeContent": "Sie haben Ihr McAfee-Programm sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht. <tag>Jetzt abonnieren</tag>",
                 "subscribeNow": "Jetzt abonnieren",
                 "fileScan": "Dateien gescannt",
                 "Viruses": "Viren eliminiert",

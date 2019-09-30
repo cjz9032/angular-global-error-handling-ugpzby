@@ -1,12 +1,12 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.200",
+	"version": "1.0.202",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
 		"build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --prod",
-		"build": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng build --prod",
-		"serve": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng serve",
+		"build": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng build --prod",
+		"serve": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng serve",
 		"test": "ng test",
 		"lint": "ng lint",
 		"fix-no-console": "node prebuild/no-console.js",

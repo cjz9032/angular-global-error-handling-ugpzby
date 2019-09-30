@@ -40,7 +40,7 @@
 							vtrSendAnalytics
 							[metricsEvent]="'ItemClick'"
 							[metricsItem]="'InstallButton'">
-						Install now
+						{{'Install Now' | changeActionButtonText | async}}
 					</button>
 					<div class="scan-limit-pitch__button-link">
 						<a class="scan-limit-pitch__show-more"
