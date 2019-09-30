@@ -7,6 +7,7 @@ import {
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
+import {privacyPolicyLinks} from 'src/assets/privacy-policy-links/policylinks.json';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,6 +21,7 @@ export class ConfigService {
 	menuItemsPrivacy = menuItemsPrivacy;
 	appSearch = appSearch;
 	betaItem = betaItem;
+	privacyPolicyLinks = privacyPolicyLinks;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	constructor(
 		private deviceService: DeviceService,
@@ -83,5 +85,13 @@ export class ConfigService {
 			}
 		});
 		return menu;
+	}
+
+	getPrivacyPolicyLink(): Promise<any> {
+		return new Promise((resolve) => {
+			this.deviceService.getMachineInfo().then(val => {
+				resolve(privacyPolicyLinks[val.locale] || privacyPolicyLinks.default);
+			});
+		});
 	}
 }
