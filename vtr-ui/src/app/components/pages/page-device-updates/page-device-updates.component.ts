@@ -458,7 +458,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	public isUpdateListVisible() {
-		const isVisible = (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted;
+		const isVisible = ((this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted)
+		&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
+		|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
+		|| (this.optionalUpdates && this.optionalUpdates.length > 0)
+		|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
 		return isVisible;
 	}
 
