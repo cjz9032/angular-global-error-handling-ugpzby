@@ -475,7 +475,7 @@
             "loading": "载入中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "您好！已有较新版本的 Vantage，您要加载吗？"
         }
     },
     "privacy": {
@@ -1611,7 +1611,7 @@
                 "getMacfee": "获取 McAfee",
                 "topBenefits": "<b>Lenovo 为何建议您采用 McAfee</b> 来保护您的所有设备",
                 "awardTitle": "屡获殊荣的反病毒软件",
-                "awardSubtitle": "防止病毒、恶意软件和勒索软件侵袭您的电脑。",
+                "awardSubtitle": "防止病毒、恶意软件和勒索软件侵袭您的电脑",
                 "supportTitle": "全天候免费专家技术支持",
                 "supportSubtitle": "我们的专业安全团队贴心为您提供全天候协助，让您高枕无忧",
                 "trialSubtitle": "您目前正受到 McAfee LiveSafe 30 天试用版的保护 – 距结束仅剩 {{remainingDays}} 天！立即预订以延长您的保护服务。",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "启动文件扫描"
             },
             "others": {
-                "othersProtection": "{{protectedName}}为您的设备提供基本保护"
+                "othersProtection": "{{protectedName}}为您的设备提供基本保护",
+                "unknown": "未知"
             }
         },
         "wifisecurity": {

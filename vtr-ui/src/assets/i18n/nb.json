@@ -475,7 +475,7 @@
             "loading": "Laster..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
         }
     },
     "privacy": {
@@ -1574,7 +1574,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</b> til å beskytte alle enhetene dine",
+                "recommends": "Hvorfor Lenovo anbefaler å beskytte alle enhetene dine med <b>McAfee</b>",
                 "award": "Prisbelønt antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
@@ -1590,7 +1590,7 @@
                 "notAvailable": "Ikke tilgjengelig"
             },
             "windowsDefender": {
-                "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Dette er ikke et dårlig valg, men vi tilbyr prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus i samarbeid med <b>McAfee</b>, slik at du kan <b>beskytte dine dyrebare data</b>.",
+                "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Det er ikke noe dårlig valg, men i samarbeid med <b>McAfee</b> tilbyr vi prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus, slik at du kan <b>beskytte det som er viktigst for deg</b>.",
                 "windowsSubtitle": "Grunnleggende beskyttelse med Windows Defender",
                 "topTip": "Topptips for nettsikkerhet",
                 "topContent": "Finn ut hvordan du kan forsvare deg mot de største truslene på nettet <tag>VIS TIPS</tag>",
@@ -1611,7 +1611,7 @@
                 "getMacfee": "Skaff deg McAfee",
                 "topBenefits": "Hvorfor <b>Lenovo anbefaler McAfee</b> til å beskytte alle enhetene dine",
                 "awardTitle": "Prisbelønt antivirus",
-                "awardSubtitle": "Beskytt PC-en mot virus, skadelig programvare og løsepengevirus.",
+                "awardSubtitle": "Beskytt PC-en mot virus, skadelig programvare og løsepengevirus",
                 "supportTitle": "Gratis teknisk støtte døgnet rundt fra eksperter ",
                 "supportSubtitle": "Få hjelp og sinnsro døgnet rundt fra det dedikerte sikkerhetsteamet vårt",
                 "trialSubtitle": "Du beskyttes nå av en 30-dagers prøveversjon av McAfee LiveSafe – bare {{remainingDays}} dager igjen! Abonner nå for å forlenge beskyttelsen.",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Start filskanningen"
             },
             "others": {
-                "othersProtection": "{{protectedName}} gir grunnleggende beskyttelse for enheten din"
+                "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din",
+                "unknown": "Ukjent"
             }
         },
         "wifisecurity": {

@@ -1734,7 +1734,7 @@
 				"getMacfee": "Get McAfee",
 				"topBenefits": "Why <b>Lenovo recommends McAfee</b> to protect all your devices",
 				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC.",
+				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC",
 				"MultiTitle": "Multi-device protection",
 				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
 				"networkTitle": "Home network protection",
@@ -1762,7 +1762,8 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "{{protectedName}} offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device",
+				"unknown": "Unknown"
 			}
 		},
 		"wifisecurity": {

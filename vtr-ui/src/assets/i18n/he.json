@@ -475,7 +475,7 @@
             "loading": "...טעינה"
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
         }
     },
     "privacy": {
@@ -1611,7 +1611,7 @@
                 "getMacfee": "קבלו את McAfee",
                 "topBenefits": "מדוע <b>Lenovo ממליצה על McAfee</b> לצורך הגנה על כל המכשירים שלכם",
                 "awardTitle": "אנטי-וירוס עטור פרסים",
-                "awardSubtitle": "מונע כניסת וירוסים, תוכנות זדוניות ותוכנות כופר במחשב שלכם.",
+                "awardSubtitle": "מונע כניסת וירוסים, תוכנות זדוניות ותוכנות כופר במחשב שלכם",
                 "supportTitle": "תמיכה טכנית בחינם, 24/7 ",
                 "supportSubtitle": "הודות לצוות האבטחה המסור שלנו ניתן לקבל סיוע מסביב לשעון וליהנות משקט נפשי",
                 "trialSubtitle": "אתם מוגנים כרגע על ידי גרסת ניסיון ל- 30 יום של McAfee LiveSafe - נותרו {{remainingDays}} ימים בלבד! הירשמו עכשיו כדי להאריך את תקופת ההגנה שלכם.",
@@ -1643,7 +1643,8 @@
                 "startFileScan": "התחילו בסריקת קבצים"
             },
             "others": {
-                "othersProtection": "מציע הגנה בסיסית להתקן שלכם {{protectedName}}"
+                "othersProtection": "{{protectedName}} מציע הגנה בסיסית למכשיר שלכם",
+                "unknown": "לא ידוע"
             }
         },
         "wifisecurity": {
