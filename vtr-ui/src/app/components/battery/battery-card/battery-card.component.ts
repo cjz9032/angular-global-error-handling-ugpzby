@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild, ViewRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -7,7 +7,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { BatteryInformation, ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { ViewRef } from '@angular/core';
 import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
 import { BatteryConditionsEnum, BatteryStatus } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
@@ -119,12 +118,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		try {
 			if (this.batteryService.isShellAvailable) {
 				this.getBatteryDetails();
-				// this.getBatteryDetailsMonitor();
-
-				this.batteryCardTimer = setInterval(() => {
-					console.log('Trying after 30 seconds');
-					this.getBatteryDetails();
-				}, 30000);
+				this.getBatteryDetailsMonitor();
 			}
 		} catch (error) {
 			this.logger.error('getBatteryDetailOnCard: ' + error.message);
