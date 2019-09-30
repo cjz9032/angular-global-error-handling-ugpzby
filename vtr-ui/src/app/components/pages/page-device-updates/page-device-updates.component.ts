@@ -220,8 +220,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted) {
 			this.systemUpdateService.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
-		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates) {
+		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates && this.systemUpdateService.installedUpdates.length > 0) {
 			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
+		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.ignoredRebootDelayUpdates && this.systemUpdateService.ignoredRebootDelayUpdates.length > 0) {
+			this.setUpdateByCategory(this.systemUpdateService.ignoredRebootDelayUpdates);
 		}
 
 		this.getScheduleUpdateStatus(false);
