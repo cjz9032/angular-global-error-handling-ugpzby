@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { BaseVantageShellService } from './base-vantage-shell.service';
 import { environment } from '../../../environments/environment';
-import { CommonService } from '../../services/common/common.service';
+import { CommonService } from '../common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
@@ -15,7 +15,7 @@ declare var Windows;
 	providedIn: 'root'
 })
 
-export class VantageShellService implements BaseVantageShellService {
+export class VantageShellMockService implements BaseVantageShellService {
 	public readonly isShellAvailable;
 	private phoenix: any;
 	private shell: any;
@@ -63,6 +63,10 @@ export class VantageShellService implements BaseVantageShellService {
 		} else {
 			this.isShellAvailable = false;
 		}
+	}
+
+	private getPromise(value: any): Promise<any> {
+		return new Promise((resolve) => resolve(value));
 	}
 
 	public registerEvent(eventType: any, handler: any) {
@@ -129,12 +133,15 @@ export class VantageShellService implements BaseVantageShellService {
 	 * returns dashboard object from VantageShellService of JS Bridge
 	 */
 	public getDashboard(): any {
-		if (this.phoenix) {
-			return this.phoenix.dashboard;
-		}
-		return undefined;
+		const dashboard: any = {};
+		const obj = {
+			available: true,
+			status: true,
+			permission: true
+		};
+		dashboard.getMicphoneStatus = this.getPromise(obj);
+		return dashboard;
 	}
-
 	/**
 	 * returns dashboard object from VantageShellService of JS Bridge
 	 */
