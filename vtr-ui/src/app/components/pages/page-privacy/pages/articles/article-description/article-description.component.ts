@@ -5,6 +5,8 @@ import { FigleafOverviewService } from '../../../common/services/figleaf-overvie
 import { DifferenceInDays } from '../../../utils/helpers';
 import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
 import { AppStatuses } from '../../../userDataStatuses';
+import { Router } from '@angular/router';
+import { RoutersName } from '../../../privacy-routing-name';
 
 @Component({
 	selector: 'vtr-article-description',
@@ -32,10 +34,13 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 		map((res) => DifferenceInDays((Date.now()), res.expirationDate * 1000) || 1)
 	);
 
+	isLanding = this.router.url.includes(RoutersName.LANDING);
+
 	constructor(
 		private vantageCommunicationService: VantageCommunicationService,
 		private appStatusesService: AppStatusesService,
-		private figleafOverviewService: FigleafOverviewService
+		private figleafOverviewService: FigleafOverviewService,
+		private router: Router
 	) {}
 
 	ngAfterViewInit() {

@@ -13,6 +13,7 @@
 				{{'Install Now' | changeActionButtonText | async}}
 			</button>
 			<a class="pitch__link"
+			   *ngIf="!isLanding"
 			   routerLink="/privacy/landing"
 			   vtrSendAnalytics
 			   [metricsEvent]="'ItemClick'"

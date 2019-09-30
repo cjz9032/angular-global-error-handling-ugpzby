@@ -16,6 +16,7 @@ export class BigPitchComponent {
 	@Input() appStatuses: AppStatuses;
 	@Input() timeToExpires;
 	@Input() articleId: number;
+	@Input() isLanding = false;
 	@Output() clickMore = new EventEmitter();
 
 	appStatusesEnum = AppStatuses;
