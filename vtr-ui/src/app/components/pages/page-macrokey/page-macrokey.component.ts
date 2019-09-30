@@ -28,7 +28,8 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	backId = 'vtr-gaming-macrokey-btn-back';
 	startDateTime: any = new Date();
 	metrics: any;
-	constructor(private cmsService: CMSService, private shellService: VantageShellService,
+	constructor(
+		private cmsService: CMSService, private shellService: VantageShellService,
 		private commonService: CommonService, public dashboardService: DashboardService,
 		private upeService: UPEService, private loggerService: LoggerService,
 		private hypService: HypothesisService, private translate: TranslateService) {
@@ -40,12 +41,13 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
-
+		this.isOnline = this.commonService.isOnline;
 	}
 
 	ngOnInit() {
 	}
 
+	// Get the CMS content for the container card
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
