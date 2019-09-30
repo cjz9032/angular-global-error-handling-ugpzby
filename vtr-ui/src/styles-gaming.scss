@@ -1112,7 +1112,31 @@
 	}
 	.progress-value-text {
 		color:$light!important;
-	}		
+	}	
+
+	.final-result-code {
+		.result-code-value-text {
+			color: $light!important;
+		}
+
+		.left-result-code {
+			.result-code-complete-text {
+				color: $gaming_grey_lightest!important;
+			}
+		}
+	}
+	
+	.result-code{
+		.result-code-value-text {
+			color:$light!important;
+		}
+		.left-code-result{
+			.result-code-complete-text {
+				color: $gaming_grey_lightest!important;
+			}
+		}
+	}
+
 }
 
 .gaming-help-modal {
