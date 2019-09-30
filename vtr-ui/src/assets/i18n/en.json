@@ -108,6 +108,15 @@
 					"sub2": "Facebook",
 					"sub3": "Instagram"
 				}
+			},
+			"narrator": {
+				"pageTitle": {
+					"device": "Lenovo Vantage home page",
+					"macroKey": "Macro key page",
+					"networkBoost": "network boost page",
+					"autoClose": "auto close page",
+					"lighting": "Lighting page"
+				}
 			}
 		},
 		"macroKey": {
