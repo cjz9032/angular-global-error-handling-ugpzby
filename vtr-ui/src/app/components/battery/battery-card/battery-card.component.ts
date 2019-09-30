@@ -327,7 +327,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
-			// if (machineType === 1 && machineType === 3) {
 			if (isThinkPad) {
 				if (this.batteryGauge.acAdapterStatus && this.batteryGauge.acAdapterStatus !== null) {
 					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'supported' && this.batteryGauge.isAttached) {
@@ -410,10 +409,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		// if (this.batteryService.isShellAvailable) {
-		// 	this.batteryService.stopMonitor();
-		// }
-		clearTimeout(this.batteryCardTimer);
+		if (this.batteryService.isShellAvailable) {
+			this.batteryService.stopMonitor();
+		}
 		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
