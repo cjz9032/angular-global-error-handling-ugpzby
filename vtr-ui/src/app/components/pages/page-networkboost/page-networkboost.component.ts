@@ -5,29 +5,26 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { Component, OnInit } from '@angular/core';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { Title } from '@angular/platform-browser';
 
 @Component({
 	selector: 'vtr-page-networkboost',
 	templateUrl: './page-networkboost.component.html',
-	styleUrls: ['./page-networkboost.component.scss']
+	styleUrls: [ './page-networkboost.component.scss' ]
 })
 export class PageNetworkboostComponent implements OnInit {
 	public showTurnOnModal = false;
 	public showAppsModal = false;
 	changeListNum = 0;
 	appsCount = 0;
-	toggleStatus: boolean =
-		this.commonService.getLocalStorageValue(
-			LocalStorageKey.NetworkBoostStatus
-		) || false;
+	toggleStatus: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus) || false;
 	needToAsk: any;
 	autoCloseStatusObj: any = {};
 	needToAskStatusObj: any = {};
 	isOnline = true;
 	// CMS Content block
 	cardContentPositionA: any = {
-		FeatureImage:
-			'./../../../../assets/cms-cache/content-card-4x4-support.jpg'
+		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
 	};
 	cardContentPositionB: any = {
 		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
@@ -37,16 +34,17 @@ export class PageNetworkboostComponent implements OnInit {
 	constructor(
 		private cmsService: CMSService,
 		private networkBoostService: NetworkBoostService,
-		private commonService: CommonService
-	) {}
+		private commonService: CommonService,
+		private titleService: Title
+	) {
+		this.titleService.setTitle('gaming.common.narrator.pageTitle.networkBoost');
+	}
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.commonService.notification.subscribe(
-			(notification: AppNotification) => {
-				this.onNotification(notification);
-			}
-		);
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		const queryOptions = {
 			Page: 'dashboard',
 			Lang: 'EN',
@@ -57,32 +55,28 @@ export class PageNetworkboostComponent implements OnInit {
 			Brand: 'Lenovo'
 		};
 
-		this.cmsService
-			.fetchCMSContent(queryOptions)
-			.subscribe((response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(
-					response,
-					'half-width-top-image-title-link',
-					'position-F'
-				)[0];
-				if (cardContentPositionA) {
-					this.cardContentPositionA = cardContentPositionA;
-				}
+		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+			const cardContentPositionA = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-F'
+			)[0];
+			if (cardContentPositionA) {
+				this.cardContentPositionA = cardContentPositionA;
+			}
 
-				const cardContentPositionB = this.cmsService.getOneCMSContent(
-					response,
-					'half-width-title-description-link-image',
-					'position-B'
-				)[0];
-				if (cardContentPositionB) {
-					this.cardContentPositionB = cardContentPositionB;
-					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
-							'|'
-						)[0];
-					}
+			const cardContentPositionB = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-title-description-link-image',
+				'position-B'
+			)[0];
+			if (cardContentPositionB) {
+				this.cardContentPositionB = cardContentPositionB;
+				if (this.cardContentPositionB.BrandName) {
+					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 				}
-			});
+			}
+		});
 
 		// AutoClose Init
 		// this.toggleStatus = this.commonService.getLocalStorageValue();
@@ -92,16 +86,8 @@ export class PageNetworkboostComponent implements OnInit {
 	async openTargetModal() {
 		try {
 			this.needToAsk = this.networkBoostService.getNeedToAsk();
-			this.needToAsk =
-				this.needToAsk === undefined || isNaN(this.needToAsk)
-					? 0
-					: this.needToAsk;
-			console.log(
-				'NEED TO ASK FROM LOCAL =>',
-				this.needToAsk,
-				this.needToAsk === 1,
-				this.needToAsk === 2
-			);
+			this.needToAsk = this.needToAsk === undefined || isNaN(this.needToAsk) ? 0 : this.needToAsk;
+			console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk, this.needToAsk === 1, this.needToAsk === 2);
 			console.log('TOGGLE STATUS =>', this.toggleStatus);
 			if (this.toggleStatus) {
 				this.showAppsModal = true;
@@ -121,8 +107,7 @@ export class PageNetworkboostComponent implements OnInit {
 	private onNotification(notification: AppNotification) {
 		if (
 			notification &&
-			(notification.type === NetworkStatus.Offline ||
-				notification.type === NetworkStatus.Online)
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
 		) {
 			this.isOnline = notification.payload.isOnline;
 		}
@@ -170,18 +155,13 @@ export class PageNetworkboostComponent implements OnInit {
 	async setNetworkBoostStatus(event: any) {
 		try {
 			this.toggleStatus = event.switchValue;
-			await this.networkBoostService.setNetworkBoostStatus(
-				event.switchValue
-			);
+			await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
 			if (!this.toggleStatus) {
 				if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
 				}
 			}
-			this.commonService.setLocalStorageValue(
-				LocalStorageKey.NetworkBoostStatus,
-				this.toggleStatus
-			);
+			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
 			console.log(`ERROR in setNetworkBoostStatus()`, err);
 		}
@@ -198,10 +178,7 @@ export class PageNetworkboostComponent implements OnInit {
 	async getNetworkBoostStatus() {
 		try {
 			this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
-			this.commonService.setLocalStorageValue(
-				LocalStorageKey.NetworkBoostStatus,
-				this.toggleStatus
-			);
+			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
 			console.log(`ERROR in setNetworkBoostStatus()`, err);
 		}
