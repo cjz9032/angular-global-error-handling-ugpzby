@@ -108,6 +108,15 @@
 					"sub2": "Facebook",
 					"sub3": "Instagram"
 				}
+			},
+			"narrator": {
+				"pageTitle": {
+					"device": "Lenovo Vantage home page",
+					"macroKey": "Macro key page",
+					"networkBoost": "network boost page",
+					"autoClose": "auto close page",
+					"lighting": "Lighting page"
+				}
 			}
 		},
 		"macroKey": {
@@ -1919,8 +1928,8 @@
 				"quickClean": "McAfee QuickClean",
 				"vulnerability": "McAfee Vulnerability Scanner",
 				"report": "Your Threat Protection Report ",
-				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.<tag>Subscribe Now</tag>",
-				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.<tag>Subscribe Now</tag>",
+				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
+				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
 				"subscribeNow": "Subscribe Now",
 				"fileScan": "Files scanned",
 				"Viruses": "Viruses Eliminated",

@@ -1608,7 +1608,7 @@
                 "Blazing": "Blixtsnabb hastighet",
                 "BlazingText": "Optimerat antivirusprogram som inte saktar ned eller stör din Lenovo Vantage-upplevelse",
                 "privacyTerms": "/   <tag>Sekretesspolicy</tag>  |  <tag>Användarvillkor</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Inte tillgänglig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt</b>.",
@@ -1654,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee sårbarhetssökning ",
                 "report": "Din hotskyddsrapport ",
-                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det.<tag>Prenumerera nu</tag>",
-                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det.<tag>Prenumerera nu</tag>",
+                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
+                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
                 "subscribeNow": "Prenumerera nu",
                 "fileScan": "Filer skannade",
                 "Viruses": "Virus eliminerade",
