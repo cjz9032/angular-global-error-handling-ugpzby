@@ -9,6 +9,7 @@ import { FigleafOverviewService } from '../common/services/figleaf-overview.serv
 import { UpdateTriggersService } from '../common/services/update-triggers.service';
 import { TaskObserverService } from '../common/services/analytics/task-observer.service';
 import { WidgetDataService } from '../common/services/widget-data.service';
+import { AbTestsName } from '../utils/ab-test/ab-tests.type';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
@@ -39,6 +40,7 @@ const featurePageSettings: PageSettings = {
 	styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit, OnDestroy {
+	abTestsName = AbTestsName;
 	currentPageSettings: PageSettings;
 
 	private pagesSettings: { [path in RoutersName]: PageSettings } = {

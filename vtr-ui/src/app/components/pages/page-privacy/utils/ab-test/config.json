@@ -1,0 +1,13 @@
+{
+	"ptabVersion": 1,
+	"tests": {
+		"colorButton": {
+			"avaliableOptions": ["A", "B", "C"],
+			"defaultOptions": ["A"]
+		},
+		"colorLink": {
+			"avaliableOptions": ["A", "B"],
+			"defaultOptions": ["B"]
+		}
+	}
+}
