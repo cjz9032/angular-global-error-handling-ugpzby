@@ -5,6 +5,11 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { Component, OnInit } from '@angular/core';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { UPEService } from 'src/app/services/upe/upe.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 @Component({
 	selector: 'vtr-page-networkboost',
@@ -32,58 +37,35 @@ export class PageNetworkboostComponent implements OnInit {
 	cardContentPositionB: any = {
 		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
 	};
+	cardContentPositionBCms: any = {};
+	private isUPEFailed = false;
+	private isCmsLoaded = false;
 	backId = 'vtr-gaming-networkboost-btn-back';
 
 	constructor(
 		private cmsService: CMSService,
 		private networkBoostService: NetworkBoostService,
-		private commonService: CommonService
-	) {}
+		private commonService: CommonService,
+		public dashboardService: DashboardService,
+		private upeService: UPEService, private loggerService: LoggerService,
+		private hypService: HypothesisService, private translate: TranslateService
+	) {
+		this.isUPEFailed = false;  // init UPE request status
+		this.isCmsLoaded = false;
+		this.fetchCMSArticles();
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCMSArticles();
+		});
+		this.isOnline = this.commonService.isOnline;
+	}
 
 	ngOnInit() {
-		this.isOnline = this.commonService.isOnline;
 		this.commonService.notification.subscribe(
 			(notification: AppNotification) => {
 				this.onNotification(notification);
 			}
 		);
-		const queryOptions = {
-			Page: 'dashboard',
-			Lang: 'EN',
-			GEO: 'US',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
-		};
-
-		this.cmsService
-			.fetchCMSContent(queryOptions)
-			.subscribe((response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(
-					response,
-					'half-width-top-image-title-link',
-					'position-F'
-				)[0];
-				if (cardContentPositionA) {
-					this.cardContentPositionA = cardContentPositionA;
-				}
-
-				const cardContentPositionB = this.cmsService.getOneCMSContent(
-					response,
-					'half-width-title-description-link-image',
-					'position-B'
-				)[0];
-				if (cardContentPositionB) {
-					this.cardContentPositionB = cardContentPositionB;
-					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
-							'|'
-						)[0];
-					}
-				}
-			});
-
 		// AutoClose Init
 		// this.toggleStatus = this.commonService.getLocalStorageValue();
 		this.getNetworkBoostStatus();
@@ -214,4 +196,88 @@ export class PageNetworkboostComponent implements OnInit {
 			document.body.style.overflow = '';
 		}
 	}
+
+	// Get the CMS content for the container card
+	fetchCMSArticles() {
+		this.isOnline = this.commonService.isOnline;
+		const queryOptions = {
+			Page: 'dashboard'
+		};
+		this.getTileBSource().then((source) => {
+			this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+				const cardContentPositionA = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-F'
+				)[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+				}
+
+				const cardContentPositionB = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-B'
+				)[0];
+				if (cardContentPositionB) {
+					if (this.cardContentPositionB.BrandName) {
+						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
+							'|'
+						)[0];
+					}
+					cardContentPositionB.DataSource = 'cms';
+
+					this.cardContentPositionBCms = cardContentPositionB;
+					this.isCmsLoaded = true;
+					if (this.isUPEFailed || source === 'CMS') {
+						this.cardContentPositionB = this.cardContentPositionBCms;
+						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+					}
+				}
+			});
+			if (source === 'UPE') {
+				const upeParam = {
+					position: 'position-B'
+				};
+				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
+					const cardContentPositionB = this.upeService.getOneUPEContent(
+						upeResp,
+						'half-width-title-description-link-image',
+						'position-B'
+					)[0];
+					if (cardContentPositionB) {
+						this.cardContentPositionB = cardContentPositionB;
+						if (this.cardContentPositionB.BrandName) {
+							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+						}
+						cardContentPositionB.DataSource = 'upe';
+						this.dashboardService.cardContentPositionB = cardContentPositionB;
+						this.isUPEFailed = false;
+					}
+				}, (err) => {
+					this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+					this.isUPEFailed = true;
+					if (this.isCmsLoaded) {
+						this.cardContentPositionB = this.cardContentPositionBCms;
+						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+					}
+				});
+			}
+		});
+	}
+
+	private getTileBSource() {
+		return new Promise((resolve) => {
+			this.hypService.getFeatureSetting('TileBSource').then((source) => {
+				if (source === 'UPE') {
+					resolve('UPE');
+				} else {
+					resolve('CMS');
+				}
+			}, () => {
+				resolve('CMS');
+			});
+		});
+	}
+
 }

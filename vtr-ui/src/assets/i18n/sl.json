@@ -475,7 +475,7 @@
             "loading": "nalaganje..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
         }
     },
     "privacy": {
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Zaženite pregledovanje datotek"
             },
             "others": {
-                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo"
+                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo",
+                "unknown": "Neznan"
             }
         },
         "wifisecurity": {

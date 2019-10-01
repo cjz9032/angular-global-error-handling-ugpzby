@@ -475,7 +475,7 @@
             "loading": "Yükleniyor..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
         }
     },
     "privacy": {
@@ -1643,7 +1643,8 @@
                 "startFileScan": "Dosya taramasını başlat"
             },
             "others": {
-                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar"
+                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
+                "unknown": "Bilinmiyor"
             }
         },
         "wifisecurity": {

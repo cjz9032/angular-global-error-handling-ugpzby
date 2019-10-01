@@ -475,7 +475,7 @@
             "loading": "로드 중..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
         }
     },
     "privacy": {
@@ -1643,7 +1643,8 @@
                 "startFileScan": "파일 검사 시작"
             },
             "others": {
-                "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}"
+                "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
+                "unknown": "알 수 없음"
             }
         },
         "wifisecurity": {

@@ -475,7 +475,7 @@
             "loading": "载入中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "您好！已有较新版本的 Vantage，您要加载吗？"
         }
     },
     "privacy": {
@@ -1643,7 +1643,8 @@
                 "startFileScan": "启动文件扫描"
             },
             "others": {
-                "othersProtection": "{{protectedName}}为您的设备提供基本保护"
+                "othersProtection": "{{protectedName}}为您的设备提供基本保护",
+                "unknown": "未知"
             }
         },
         "wifisecurity": {
