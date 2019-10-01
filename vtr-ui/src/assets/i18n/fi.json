@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Näiden testien suoritus ei saa keskeytyä!",
         "doNotCloseOrMinimizeApp": "• Älä sulje tai pienennä tätä sovellusta.",
         "doNotSwitchApp": "• Älä vaihda toiseen sovellukseen.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Älä aseta tietokonetta lepotilaan, kirjaudu siitä ulos tai katkaise siitä virtaa."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Älä aseta tietokonetta lepotilaan, kirjaudu siitä ulos tai katkaise siitä virtaa.",
         "customize": {
             "name": "Mukautus",
             "test": "Mukauta testiä",

@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Questi test devono essere eseguiti senza interruzioni.",
         "doNotCloseOrMinimizeApp": "• Non chiudere o ridurre a icona questa app.",
         "doNotSwitchApp": "• Non passare ad altre app.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Non mettere il computer in modalità di sospensione, non uscire e non spegnere il computer."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Non mettere il computer in modalità di sospensione, non uscire e non spegnere il computer.",
         "customize": {
             "name": "Personalizza",
             "test": "Personalizza test",

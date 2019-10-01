@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "これらのテストは中断しないで実行する必要があります。",
         "doNotCloseOrMinimizeApp": "• このアプリを閉じたり、最小化したりしないでください。",
         "doNotSwitchApp": "• 他のアプリに切り替えないでください。",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• コンピューターをスリープ状態にしたり、サインアウトしたり、電源を切ったりしないでください。"
+        "doNotSleepOrSignOutOrTurnOffComputer": "• コンピューターをスリープ状態にしたり、サインアウトしたり、電源を切ったりしないでください。",
         "customize": {
             "name": "カスタマイズ",
             "test": "テストをカスタマイズ",

@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Disse tests skal køres uden afbrydelser!",
         "doNotCloseOrMinimizeApp": "• Du må ikke lukke eller minimere denne app.",
         "doNotSwitchApp": "• Du må ikke skifte til en anden app.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Du må ikke sætte computeren i slumretilstand eller logge af eller slukke for computeren."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Du må ikke sætte computeren i slumretilstand eller logge af eller slukke for computeren.",
         "customize": {
             "name": "Tilpas",
             "test": "Tilpas test",

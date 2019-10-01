@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Bu testler kesintisiz çalıştırılmalıdır!",
         "doNotCloseOrMinimizeApp": "• Bu uygulamayı kapatmayın veya küçültmeyin.",
         "doNotSwitchApp": "• Başka bir uygulamaya geçmeyin.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Bilgisayarınızı uyku kipine almayın, oturumu veya bilgisayarınızı kapatmayın."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Bilgisayarınızı uyku kipine almayın, oturumu veya bilgisayarınızı kapatmayın.",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",

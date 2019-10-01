@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Tyto testy nesmí být za chodu přerušeny!",
         "doNotCloseOrMinimizeApp": "• Nezavírejte ani minimalizujte tuto aplikaci.",
         "doNotSwitchApp": "• Nepřepínejte na jinou aplikaci.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Počítač nepřevádějte do stavu spánku, neodhlasujte se, ani počítač nevypínejte."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Počítač nepřevádějte do stavu spánku, neodhlasujte se, ani počítač nevypínejte.",
         "customize": {
             "name": "Přizpůsobit",
             "test": "Přizpůsobit test",

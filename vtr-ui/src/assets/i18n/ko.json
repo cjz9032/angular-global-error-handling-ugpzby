@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "이러한 테스트는 중단 없이 실행되어야 합니다!",
         "doNotCloseOrMinimizeApp": "• 이 앱을 닫거나 최소화해서는 안 됩니다.",
         "doNotSwitchApp": "• 다른 앱으로 전환해서는 안 됩니다.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• 컴퓨터를 절전 또는 로그아웃하거나 끄면 안 됩니다."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 컴퓨터를 절전 또는 로그아웃하거나 끄면 안 됩니다.",
         "customize": {
             "name": "사용자 정의",
             "test": "테스트 사용자 지정",

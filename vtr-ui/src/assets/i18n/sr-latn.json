@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Ovi testovi moraju da rade bez prekida!",
         "doNotCloseOrMinimizeApp": "• Nemojte zatvarati niti umanjivati ovu aplikaciju.",
         "doNotSwitchApp": "• Nemojte prelaziti na drugu aplikaciju.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Nemojte da stavljate računar u stanje spavanja ili da se odjavljujete sa njega ili da ga isključujete."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nemojte da stavljate računar u stanje spavanja ili da se odjavljujete sa njega ili da ga isključujete.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagodite test",

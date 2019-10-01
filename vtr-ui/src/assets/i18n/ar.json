@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة!",
         "doNotCloseOrMinimizeApp": "• لا تغلق هذا التطبيق أو تقم بتصغيره.",
         "doNotSwitchApp": "• لا تقم بالتبديل إلى تطبيق آخر.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• لا تُدخل جهاز الكمبيوتر في وضع السكون أو تسجل الخروج منه أو تغلقه."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• لا تُدخل جهاز الكمبيوتر في وضع السكون أو تسجل الخروج منه أو تغلقه.",
         "customize": {
             "name": "تخصيص",
             "test": "تخصيص اختبار",

@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Estes testes têm de ser executados sem interrupção!",
         "doNotCloseOrMinimizeApp": "• Não feche nem minimize esta aplicação.",
         "doNotSwitchApp": "• Não mude para outra aplicação.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Não termine sessão, não desligue ou computador nem o coloque em modo de suspensão."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Não termine sessão, não desligue ou computador nem o coloque em modo de suspensão.",
         "customize": {
             "name": "Personalizar",
             "test": "Personalizar teste",

@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Ці перевірки не можна переривати!",
         "doNotCloseOrMinimizeApp": "• Не закривайте та не згортайте цей додаток.",
         "doNotSwitchApp": "• Не переключайтеся на інший додаток.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Не переводьте комп'ютер до режиму сну, не вимикайте його та не виходьте з облікового запису."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Не переводьте комп'ютер до режиму сну, не вимикайте його та не виходьте з облікового запису.",
         "customize": {
             "name": "Настроїти",
             "test": "Настроювання тесту",

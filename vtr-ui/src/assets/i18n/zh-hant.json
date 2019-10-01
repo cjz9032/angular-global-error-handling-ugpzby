@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "這些測試在執行時不能中斷！",
         "doNotCloseOrMinimizeApp": "• 請勿關閉或將此應用程式最小化。",
         "doNotSwitchApp": "• 請勿切換至其他應用程式。",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• 請勿讓電腦進入睡眠模式，或登出或關閉電腦。"
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 請勿讓電腦進入睡眠模式，或登出或關閉電腦。",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",

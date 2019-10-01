@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "יש לאפשר לבדיקות האלה להתבצע ללא הפרעה!",
         "doNotCloseOrMinimizeApp": "• אין לסגור או למזער יישום זה.",
         "doNotSwitchApp": "• אין לעבור ליישום אחר.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• אין להעביר את המחשב למצב שינה, להתנתק ממנו או לכבות אותו."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• אין להעביר את המחשב למצב שינה, להתנתק ממנו או לכבות אותו.",
         "customize": {
             "name": "התאמה אישית",
             "test": "התאמה אישית של הבדיקה",

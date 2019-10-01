@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Ti preskusi se morajo izvajati brez prekinitev.",
         "doNotCloseOrMinimizeApp": "• Ne zapirajte ali minimizirajte tega programa.",
         "doNotSwitchApp": "• Ne preklopite na drug program.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne preklopite v način spanja, ne odjavite se in ne izklopite računalnika."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne preklopite v način spanja, ne odjavite se in ne izklopite računalnika.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagajanje preskusa",

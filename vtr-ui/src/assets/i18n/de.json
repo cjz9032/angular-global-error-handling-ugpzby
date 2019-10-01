@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Diese Tests müssen ohne Unterbrechung ausgeführt werden!",
         "doNotCloseOrMinimizeApp": "• Sie dürfen diese App nicht schließen oder minimieren.",
         "doNotSwitchApp": "• Sie dürfen nicht zu einer anderen App wechseln.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Sie dürfen den Computer nicht in den Energiesparmodus versetzen, sich abmelden oder den Computer ausschalten."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sie dürfen den Computer nicht in den Energiesparmodus versetzen, sich abmelden oder den Computer ausschalten.",
         "customize": {
             "name": "Anpassen",
             "test": "Test anpassen",

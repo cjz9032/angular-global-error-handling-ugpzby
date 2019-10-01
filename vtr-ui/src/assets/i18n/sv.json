@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "Testerna måste köras utan avbrott!",
         "doNotCloseOrMinimizeApp": "• Stäng eller minimera inte den här appen.",
         "doNotSwitchApp": "• Byt inte till en annan app.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• Sätt inte datorn i strömsparläge och logga inte ut från eller stäng av datorn."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sätt inte datorn i strömsparläge och logga inte ut från eller stäng av datorn.",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",

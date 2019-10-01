@@ -2327,7 +2327,7 @@
         "testsMustRunUniterrupted": "A tesztet nem szabad megszakítani!",
         "doNotCloseOrMinimizeApp": "• Ne zárja be, és ne alakítsa kisméretűre az alkalmazásablakot.",
         "doNotSwitchApp": "• Ne váltson át egy másik alkalmazásra.",
-        "doNotSleepOrSignOutOrTurnOffComputer": "• A számítógépet ne helyezze alvó módva és ne kapcsolja ki."
+        "doNotSleepOrSignOutOrTurnOffComputer": "• A számítógépet ne helyezze alvó módva és ne kapcsolja ki.",
         "customize": {
             "name": "Személyre szabás",
             "test": "Teszt testreszabása",
