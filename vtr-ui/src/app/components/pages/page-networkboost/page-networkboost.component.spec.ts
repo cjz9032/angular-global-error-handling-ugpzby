@@ -178,7 +178,7 @@ const notificationObj = {
 };
 
 
-fdescribe('PageNetworkboostComponent', () => {
+describe('PageNetworkboostComponent', () => {
 	let component: PageNetworkboostComponent;
 	let fixture: ComponentFixture<PageNetworkboostComponent>;
 	gamingNetworkBoostMock.isShellAvailable.and.returnValue(true);
