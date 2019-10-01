@@ -1213,13 +1213,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	getGaugeResetCapability() {
-		this.gaugeResetCapability = true;
-		// this.powerService.getGaugeResetCapability().then((response) => {
-		// 	console.log('Battery Gauge Reset', this.gaugeResetCapability);
-		// 	this.gaugeResetCapability = response;
-		// }).catch((err) => {
-		// 	console.log('Battery Gauge Reset', err);
-		// });
+		this.powerService.getGaugeResetCapability().then((response) => {
+			console.log('Battery Gauge Reset', this.gaugeResetCapability);
+			this.gaugeResetCapability = response;
+		}).catch((err) => {
+			console.log('Battery Gauge Reset', err);
+		});
 	}
 
 }
