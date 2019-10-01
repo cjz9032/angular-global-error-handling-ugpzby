@@ -139,26 +139,131 @@ export class VantageShellMockService implements BaseVantageShellService {
 			status: true,
 			permission: true
 		};
+		const sysInfoObj: any = {
+			disk: {
+				total: 1015723810816,
+				used: 885390389248
+			},
+			memory: {
+				total: 12533723136,
+				used: 10677587968
+			}
+		};
+		const warrantyObj: any = {
+			expired: new Date('Sat Apr 04 2020 05:30:00 GMT+0530 (India Standard Time)'),
+			status: 0
+		};
 		dashboard.getMicphoneStatus = this.getPromise(obj);
+		dashboard.getCameraStatus = this.getPromise(obj);
+		dashboard.getEyeCareModeState = this.getPromise(obj);
+		dashboard.getMemAndDiskUsage = this.getPromise(sysInfoObj);
+		dashboard.getWarrantyInformation = this.getPromise(warrantyObj);
 		return dashboard;
 	}
 	/**
 	 * returns dashboard object from VantageShellService of JS Bridge
 	 */
 	public getDevice(): any {
-		if (this.phoenix) {
-			return this.phoenix.device;
-		}
+		const device: any = {};
+		const obj = {
+			biosDate: '08292018',
+			biosVersion: 'R0PET47W 1.24 ',
+			brand: 'think',
+			country: 'us',
+			cpuAddressWidth: '64',
+			cpuArchitecture: 'AMD64',
+			cpuinfo: {
+				addressWidth: '64',
+				name: 'Intel(R) Core(TM) i3-7020U CPU @ 2.30GHz',
+				type: 'AMD64',
+				vendor: 'GenuineIntel',
+			},
+			deviceId: '0879eb1af41243f0af686ffe29eff508f6d1eb99fef906b2417be2ea0f5787fc',
+			eCVersion: '1.24',
+			enclosureType: 'notebook',
+			family: 'ThinkPad E480',
+			firstRunDate: '2019-06-18T00:54:24',
+			isGaming: false,
+			isSMode: false,
+			locale: 'en',
+			manufacturer: 'LENOVO',
+			memorys: [{
+				serialNumber: '8B264B0A',
+				sizeInBytes: 4194304,
+				type: 'DDR4'
+			}, {
+				serialNumber: '4A7D0400',
+				sizeInBytes: 8388608,
+				type: 'DDR4'
+			},
+			],
+			mt: '20KN',
+			mtm: '20KNS0DD00',
+			os: 'Windows 10 Pro',
+			osBitness: '64',
+			osName: 'Windows 10 Pro',
+			osVersionString: '10.0.18362.356',
+			serialnumber: 'PG01EBJS',
+			sku: 'LENOVO_MT_20KN_BU_Think_FM_ThinkPad E480',
+			subBrand: 'ThinkPad'
+		};
+
+		device.getMachineInfo = this.getPromise(obj);
+		device.getMachineInfoSync.brand = this.getPromise('think');
+		return device;
 	}
 
 	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */
 	public getSysinfo(): any {
-		if (this.phoenix) {
-			return this.phoenix.sysinfo;
-		}
-		return undefined;
+		const sysInfo: any = {};
+		const obj = {
+			biosDate: '08292018',
+			biosVersion: 'R0PET47W 1.24 ',
+			brand: 'think',
+			country: 'us',
+			cpuAddressWidth: '64',
+			cpuArchitecture: 'AMD64',
+			cpuinfo: {
+				addressWidth: '64',
+				name: 'Intel(R) Core(TM) i3-7020U CPU @ 2.30GHz',
+				type: 'AMD64',
+				vendor: 'GenuineIntel',
+			},
+			deviceId: '0879eb1af41243f0af686ffe29eff508f6d1eb99fef906b2417be2ea0f5787fc',
+			eCVersion: '1.24',
+			enclosureType: 'notebook',
+			family: 'ThinkPad E480',
+			firstRunDate: '2019-06-18T00:54:24',
+			isGaming: false,
+			isSMode: false,
+			locale: 'en',
+			manufacturer: 'LENOVO',
+			memorys: [{
+				serialNumber: '8B264B0A',
+				sizeInBytes: 4194304,
+				type: 'DDR4'
+			}, {
+				serialNumber: '4A7D0400',
+				sizeInBytes: 8388608,
+				type: 'DDR4'
+			},
+			],
+			mt: '20KN',
+			mtm: '20KNS0DD00',
+			os: 'Windows 10 Pro',
+			osBitness: '64',
+			osName: 'Windows 10 Pro',
+			osVersionString: '10.0.18362.356',
+			serialnumber: 'PG01EBJS',
+			sku: 'LENOVO_MT_20KN_BU_Think_FM_ThinkPad E480',
+			subBrand: 'ThinkPad'
+		};
+
+		sysInfo.getMachineInfo = this.getPromise(obj);
+		sysInfo.getMachineInfoSync.brand = this.getPromise('think');
+		return sysInfo;
 	}
 
 	/**
