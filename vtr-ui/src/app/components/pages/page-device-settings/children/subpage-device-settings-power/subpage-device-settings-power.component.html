@@ -38,20 +38,21 @@
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 							<div class="row">
 								<div class="col px-20">
-									<div class="auto-set-checkbox custom-checkbox-gaming">
+									<div class="auto-set-checkbox custom-checkbox-gaming"
+										tabindex="1"
+										(keydown.enter)='cbAirplaneMode.click()'
+										[attr.aria-checked]="airplaneAutoDetection"
+										attr.aria-labelledby="cb-airplane-mode"
+										role="checkbox">
 										<input id="cb-airplane-mode"
 											#cbAirplaneMode
 											class="custom-control-input"
 											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
-											tabindex="1"
 											name="airplane-mode-checkbox-id"
 											[(ngModel)]="airplaneAutoDetection"
 											(ngModelChange)='onAirplaneAutoModeStatusChange()'
-											checked=""
-											(keydown.enter)='cbAirplaneMode.click()'
-											[attr.aria-checked]="airplaneAutoDetection"
-											role="checkbox" />
+											checked="" />
 
 										<span class="checkmark"></span>
 										<label for="cb-airplane-mode">
