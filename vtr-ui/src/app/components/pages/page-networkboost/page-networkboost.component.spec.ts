@@ -1,3 +1,4 @@
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UiToggleComponent } from './../../ui/ui-toggle/ui-toggle.component';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CMSService } from 'src/app/services/cms/cms.service';
@@ -9,12 +10,19 @@ import { PageNetworkboostComponent } from './page-networkboost.component';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 import { HttpClient } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { of } from 'rxjs';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 const cmsServiceMock = jasmine.createSpyObj('CMSService', ['fetchCMSContent', 'getOneCMSContent']);
-const commonServiceMock = jasmine.createSpyObj('CommonService', ['isShellAvailable', 'notification', 'getLocalStorageValue', 'subscribe']);
+// const commonServiceMock = jasmine.createSpyObj('CommonService', ['isShellAvailable', 'notification', 'getLocalStorageValue', 'subscribe']);
 const gamingNetworkBoostMock = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'setNetworkBoostStatus', 'getNeedToAsk', 'onNotification']);
-
+const notification: Observable<AppNotification> = new BehaviorSubject<AppNotification>(
+	new AppNotification('init')
+);
+// commonServiceMock.notification.and.returnValue(notification);
+let commonServiceMock = {
+	isShellAvailable: true,
+	notification,
+	getLocalStorageValue(id) { return localStorage.getItem(id); }
+};
 const cmsCardResponse = {
 	Results: [
 		{
@@ -170,7 +178,7 @@ const notificationObj = {
 };
 
 
-describe('PageNetworkboostComponent', () => {
+fdescribe('PageNetworkboostComponent', () => {
 	let component: PageNetworkboostComponent;
 	let fixture: ComponentFixture<PageNetworkboostComponent>;
 	gamingNetworkBoostMock.isShellAvailable.and.returnValue(true);
