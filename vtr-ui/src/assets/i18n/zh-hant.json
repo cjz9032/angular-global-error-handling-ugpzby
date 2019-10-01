@@ -2324,6 +2324,10 @@
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
         "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
         "doNotUse": "在這項測試完成之前，請勿使用您的電腦",
+        "testsMustRunUniterrupted": "這些測試在執行時不能中斷！",
+        "doNotCloseOrMinimizeApp": "• 請勿關閉或將此應用程式最小化。",
+        "doNotSwitchApp": "• 請勿切換至其他應用程式。",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 請勿讓電腦進入睡眠模式，或登出或關閉電腦。"
         "customize": {
             "name": "自訂",
             "test": "自訂測試",

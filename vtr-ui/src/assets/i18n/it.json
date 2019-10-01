@@ -2324,6 +2324,10 @@
         "offline": "Questo dispositivo è in esecuzione in modalità offline, connettersi a Internet",
         "doNotSuspend": "Questi test devono essere eseguiti senza interruzioni. Non chiudere o ridurre a icona l'applicazione e non sospendere o spegnere il computer durante la scansione.",
         "doNotUse": "Non utilizzare il computer fino al completamento del test",
+        "testsMustRunUniterrupted": "Questi test devono essere eseguiti senza interruzioni.",
+        "doNotCloseOrMinimizeApp": "• Non chiudere o ridurre a icona questa app.",
+        "doNotSwitchApp": "• Non passare ad altre app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Non mettere il computer in modalità di sospensione, non uscire e non spegnere il computer."
         "customize": {
             "name": "Personalizza",
             "test": "Personalizza test",

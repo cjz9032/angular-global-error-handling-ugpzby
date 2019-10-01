@@ -2324,6 +2324,10 @@
         "offline": "Acest dispozitiv rulează în modul offline; vă rugăm să vă conectați la internet",
         "doNotSuspend": "Aceste teste trebuie să ruleze fără întreruperi! În timpul scanării, nu închideţi şi nu minimizaţi această aplicaţie, nu întrerupeţi şi nu opriţi computerul.",
         "doNotUse": "Nu utilizaţi computerul înainte de finalizarea acestui test",
+        "testsMustRunUniterrupted": "Aceste teste trebuie să ruleze fără întreruperi!",
+        "doNotCloseOrMinimizeApp": "• Nu închideți și nu minimizați această aplicație.",
+        "doNotSwitchApp": "• Nu comutați la altă aplicație.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nu activați modul repaus, nu vă deconectați și nu opriți computerul."
         "customize": {
             "name": "Personalizare",
             "test": "Personalizare test",

@@ -2324,6 +2324,10 @@
         "offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
         "doNotSuspend": "Ezeket a teszteket nem szabad megszakítani. Az ellenőrzés során ne állítsa kis méretűre és ne zárja be az alkalmazást, illetve ne függessze fel vagy kapcsolja ki a számítógépet.",
         "doNotUse": "Kérjük, a teszt befejeződéséig ne használja a számítógépet",
+        "testsMustRunUniterrupted": "A tesztet nem szabad megszakítani!",
+        "doNotCloseOrMinimizeApp": "• Ne zárja be, és ne alakítsa kisméretűre az alkalmazásablakot.",
+        "doNotSwitchApp": "• Ne váltson át egy másik alkalmazásra.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• A számítógépet ne helyezze alvó módva és ne kapcsolja ki."
         "customize": {
             "name": "Személyre szabás",
             "test": "Teszt testreszabása",

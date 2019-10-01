@@ -2324,6 +2324,10 @@
         "offline": "Ce périphérique fonctionne en mode hors connexion. Veuillez vous connecter à Internet",
         "doNotSuspend": "Ces tests doivent être exécutés sans interruption ! Ne fermez pas ou ne réduisez pas cette application, et n'interrompez pas ou n'éteignez pas votre ordinateur pendant l'analyse.",
         "doNotUse": "N'utilisez pas votre ordinateur tant que le test n'est pas terminé",
+        "testsMustRunUniterrupted": "Ces tests doivent être exécutés sans interruption !",
+        "doNotCloseOrMinimizeApp": "• Ne fermez pas ou ne réduisez pas cette application.",
+        "doNotSwitchApp": "• Ne pas basculez vers une autre application.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne mettez pas l'ordinateur en veille, ne vous déconnectez pas ou n'éteignez pas l'ordinateur."
         "customize": {
             "name": "Personnaliser",
             "test": "Personnaliser le test",

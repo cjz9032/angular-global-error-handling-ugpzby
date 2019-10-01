@@ -2324,6 +2324,10 @@
         "offline": "Uređaj radi u režimu van mreže, povežite internet",
         "doNotSuspend": "Ovi testovi moraju da rade bez prekida! Nemojte zatvarati niti umanjivati ovu aplikaciju i nemojte suspendovati niti isključiti računar tokom skeniranja.",
         "doNotUse": "Nemojte da koristite računar dok se test ne završi",
+        "testsMustRunUniterrupted": "Ovi testovi moraju da rade bez prekida!",
+        "doNotCloseOrMinimizeApp": "• Nemojte zatvarati niti umanjivati ovu aplikaciju.",
+        "doNotSwitchApp": "• Nemojte prelaziti na drugu aplikaciju.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nemojte da stavljate računar u stanje spavanja ili da se odjavljujete sa njega ili da ga isključujete."
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagodite test",
