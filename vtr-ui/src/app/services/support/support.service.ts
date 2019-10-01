@@ -41,6 +41,7 @@ export class SupportService {
 		if (this.userGuide) {
 			this.userGuide.refresh();
 		}
+		this.getWarrantyInfo(this.commonService.isOnline);
 	}
 
 	public getMachineInfo(): Promise<any> {
