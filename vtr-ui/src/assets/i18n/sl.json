@@ -2325,6 +2325,10 @@
         "offline": "Ta naprava deluje brez povezave, vzpostavite internetno povezavo",
         "doNotSuspend": "Ti preskusi se morajo izvajati brez prekinitev. Med pregledom ne zapirajte ali minimizirajte te aplikacije in računalnika ne preklapljajte v stanje pripravljenosti ali ga izklapljajte.",
         "doNotUse": "Računalnika ne uporabljajte, dokler se ne dokonča ta preskus.",
+        "testsMustRunUniterrupted": "Ti preskusi se morajo izvajati brez prekinitev.",
+        "doNotCloseOrMinimizeApp": "• Ne zapirajte ali minimizirajte tega programa.",
+        "doNotSwitchApp": "• Ne preklopite na drug program.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne preklopite v način spanja, ne odjavite se in ne izklopite računalnika.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagajanje preskusa",

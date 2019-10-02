@@ -2452,6 +2452,10 @@
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
 		"doNotUse": "Please refrain from using your computer until this test completes",
+		"testsMustRunUniterrupted": "These tests must run uniterrupted!",
+		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
+		"doNotSwitchApp": "• Do not switch to other app.",
+		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",
