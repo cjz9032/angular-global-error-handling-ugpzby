@@ -9,16 +9,34 @@ export type position = 'center' | 'right' | 'left' | 'top-right';
 })
 export class TooltipComponent {
 	@Input() positionContextTo: position = 'center';
+	@Input() showStrategy: 'hover' | 'click' = 'hover';
 	@ContentChild('tooltipText', { static: false }) tooltipText: TemplateRef<ElementRef>;
 	@ContentChild('tooltipContext', { static: false }) tooltipContext: TemplateRef<ElementRef>;
 
 	isShowContext = false;
 
 	showContext() {
-		this.isShowContext = true;
+		if (this.showStrategy === 'hover') {
+			this.isShowContext = true;
+		}
 	}
 
 	hideContext() {
+		if (this.showStrategy === 'hover') {
+			this.isShowContext = false;
+		}
+	}
+
+	changeContextByClick() {
+		if (this.showStrategy === 'click') {
+			this.isShowContext = !this.isShowContext;
+		}
+		if (this.showStrategy === 'hover') {
+			this.isShowContext = true;
+		}
+	}
+
+	hideContextByClick() {
 		this.isShowContext = false;
 	}
 }

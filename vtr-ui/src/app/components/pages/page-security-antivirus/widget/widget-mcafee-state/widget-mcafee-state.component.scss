@@ -9,18 +9,19 @@
   margin-bottom: 2rem;
   .group-item {
     border-bottom: 0.1rem dashed $shade_light;
-    padding: 1rem 0;
+	padding: 1rem 0;
 
     &:nth-last-child(2) {
       border-bottom: none;
       padding-bottom: 0;
-    }
+	}
 
     .text-color {
-      color: $good_dark;
+      color: $go_dark;
       font-size: 1.3rem;
+      font-weight: 600;
     }
-  
+
     .text-d-color {
       color: red;
       font-size: 1.3rem;
@@ -63,7 +64,7 @@
     list-style: none;
   }
 
-  button {
+  button,.button {
     height: 4rem;
     border-radius: 3rem;
     width: 30rem;
@@ -154,17 +155,15 @@
     }
   }
 
-  button {
+  .button{
     width: 22rem;
     background-color: $main;
-    a {
-      color: $light;
-      text-decoration: none;
-    }
+    color: $light;
+    text-decoration: none;
   }
 
   .visible {
     visibility: hidden !important;
   }
-  
+
 }

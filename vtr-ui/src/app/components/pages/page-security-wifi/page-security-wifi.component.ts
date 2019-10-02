@@ -18,6 +18,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -35,7 +36,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	backId = 'sa-ws-btn-back';
 	viewSecChkRoute = 'viewSecChkRoute';
 	cardContentPositionA: any = {};
-	wifiIsShowMore: boolean;
+	isShowHistory: boolean;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
 	homeSecurity: phoenix.ConnectedHomeSecurity;
@@ -49,6 +50,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	notificationSubscription: Subscription;
 	region = 'us';
 	language = 'en';
+	brand;
+	showChs = false;
 	intervalId: number;
 	interval = 15000;
 
@@ -64,12 +67,16 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private ngZone: NgZone,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
-		private router: Router
+		private router: Router,
+		private deviceService: DeviceService
 	) {	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
+		if (this.deviceService.getMachineInfoSync()) {
+			this.brand = this.deviceService.getMachineInfoSync().brand;
+		}
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
@@ -86,6 +93,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.language = result.Lang;
+			this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think';
 		}).catch(e => {
 			this.region = 'us';
 			this.language = 'en';
@@ -105,7 +113,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
 		}
-		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams.isShowMore;
+		this.isShowHistory = this.activeRouter.snapshot.queryParams.isShowMore;
 		this.pullCHS();
 	}
 

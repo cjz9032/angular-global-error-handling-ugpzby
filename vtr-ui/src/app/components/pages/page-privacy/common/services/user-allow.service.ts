@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { StorageService } from './storage.service';
+import { ALLOW_MAP__NAME, StorageService } from './storage.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class UserAllowService {
-	allowToShow = new BehaviorSubject(JSON.parse(this.storageService.getItem('allowMap')) || {
+	allowToShow = new BehaviorSubject(JSON.parse(this.storageService.getItem(ALLOW_MAP__NAME)) || {
 		trackingMap: false,
+		consentForVulnerablePassword: false
 	});
 
 	constructor(private storageService: StorageService) {
@@ -18,7 +19,12 @@ export class UserAllowService {
 		this.saveToStorage(this.allowToShow.value);
 	}
 
+	setConsentForVulnerablePassword(allow: boolean) {
+		this.allowToShow.next({...this.allowToShow.getValue(), consentForVulnerablePassword: allow});
+		this.saveToStorage(this.allowToShow.value);
+	}
+
 	private saveToStorage(allowMap) {
-		this.storageService.setItem('allowMap', JSON.stringify(allowMap));
+		this.storageService.setItem(ALLOW_MAP__NAME, JSON.stringify(allowMap));
 	}
 }

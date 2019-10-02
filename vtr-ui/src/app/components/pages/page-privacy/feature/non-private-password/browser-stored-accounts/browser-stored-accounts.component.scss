@@ -1,2 +1,9 @@
 @import "../../../styles/common-blocks";
 
+.browser-stored-account {
+	&__clear-data-wrapper {
+		width: 100%;
+		text-align: right;
+		padding-top: 2rem;
+	}
+}

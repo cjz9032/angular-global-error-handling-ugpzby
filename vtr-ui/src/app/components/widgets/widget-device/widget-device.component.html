@@ -4,41 +4,46 @@
 				src="assets/images/device.png" /> </div>
 		<div class="row mt-20">
 			<div class="col">
-				<div class="family" id="myDevice-machine-info"
-				attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
+				<div class="family"
+					id="myDevice-machine-info"
+					attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 col-lg-auto px-0">
-				<span class="d-lg-none sub-header-separator">
+			<div class="col-12 px-0">
+				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header" id="myDevice-serial"
-				attr.aria-label="myDevice-serial">{{'device.myDevice.serial' | translate}}: {{myDevice.sn}}</span>
+				<span class="device-sub-header"
+					id="myDevice-serial"
+					attr.aria-label="myDevice-serial">{{'device.myDevice.serial' | translate}}: {{myDevice.sn}}</span>
 
 			</div>
-			<div class="col-12 col-lg-auto px-0">
+			<div class="col-12 px-0">
 				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header" id="myDevice-product-number"
-				attr.aria-label="myDevice-product-number">{{'device.myDevice.productNumber' | translate}}:
+				<span class="device-sub-header"
+					id="myDevice-product-number"
+					attr.aria-label="myDevice-product-number">{{'device.myDevice.productNumber' | translate}}:
 					{{myDevice.productNo}}</span>
 			</div>
-			<div class="col-12 col-lg-auto px-0">
+			<div class="col-12 px-0">
 				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header text-wrap" id="myDevice-bios-version"
-				attr.aria-label="myDevice-bios-version">{{'device.myDevice.biosVersion'|translate}}:
+				<span class="device-sub-header text-wrap"
+					id="myDevice-bios-version"
+					attr.aria-label="myDevice-bios-version">{{'device.myDevice.biosVersion'|translate}}:
 					{{myDevice.bios}}</span>
 
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<div class="subheader" id="myDevice-status-title"
-				attr.aria-label="myDevice-status-title">{{'device.myDevice.subtitle'|translate}}</div>
+				<div class="subheader"
+					id="myDevice-status-title"
+					attr.aria-label="myDevice-status-title">{{'device.myDevice.subtitle'|translate}}</div>
 			</div>
 		</div>
 		<div class="row">
@@ -57,7 +62,8 @@
 								</div>
 								<div class="col-auto status-block p-0">
 									<div class="title"
-										[ngClass]="[!item.status?'good':'bad']" id="myDevice-system-details-{{item.id}}"
+										[ngClass]="[!item.status?'good':'bad']"
+										id="myDevice-system-details-{{item.id}}"
 										attr.aria-label="myDevice-system-details-{{item.id}}">
 										{{item.title}}
 										<span *ngIf="item.systemDetails"
@@ -66,9 +72,13 @@
 
 
 								</div>
-								<div class="col-auto text-right ml-auto pr-5">
+								<div class="col-auto text-right ml-auto p-0">
 
-									<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
+									<div *ngIf="item.status === 4"
+										class="spinner-content">
+										<div class="spinner-border text-secondary progress-spinner"
+											role="status"></div>
+									</div>
 
 									<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 									<a routerLink="/{{item.path}}"

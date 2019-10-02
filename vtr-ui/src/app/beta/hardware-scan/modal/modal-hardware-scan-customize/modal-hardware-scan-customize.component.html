@@ -1,11 +1,5 @@
 <div class="modal-body vtr-modal-hardware-scan-customize">
-	<div class="row justify-content-end">
-		<div class="btn-close">
-			<button type="button" class="close" aria-hidden="true" (click)="closeModal()">
-				<fa-icon [icon]="['fal', 'times']"></fa-icon>
-			</button>
-		</div>
-	</div>
+	
 	<div class="row modal-information">
 		<div class="title">{{ title }}</div>
 		<div class="description">{{ description }}</div>
@@ -19,4 +13,16 @@
 			<button class="action-button" vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan" (click)="onClickRun()">{{ buttonText }}</button>
 		</div>
 	</div>
+
+	<a role="button"
+		href="javascript:;"
+		class="close-btn"
+		vtrMetrics
+		metricsEvent="FeatureClick"
+		metricsParent="Device.HardwareScan"
+		(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
+	</a>
 </div>

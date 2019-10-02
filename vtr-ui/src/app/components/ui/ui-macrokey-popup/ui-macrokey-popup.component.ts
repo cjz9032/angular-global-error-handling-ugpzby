@@ -12,6 +12,8 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		const popupFocus = document.getElementById('close');
+		popupFocus.focus();
 	}
 
 	submitAction(isConfirm: boolean = false) {

@@ -147,6 +147,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			readonly: true,
 			id: 'legionedge hybridmode',
 			ariaLabel: 'hybrid mode',
+			descriptionLabel: 'hybrid mode window opened',
 			type: 'gaming.dashboard.device.legionEdge.hybridMode',
 			settings: ''
 		},
@@ -169,6 +170,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			id: 'legionedge touchpadlock',
 			ariaLabel: 'touchpadlock',
 			type: 'gaming.dashboard.device.legionEdge.touchpadLock',
+			descriptionLabel: 'Touchpad lock window opened',
 			settings: ''
 		}
 	];
@@ -183,7 +185,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 				description: 'gaming.dashboard.device.legionEdge.statusText.onText',
 				id: 'cpu overclock on',
-				ariaLabel:'on',
+				ariaLabel: 'on',
 				metricitem: 'cpu_overclock_on',
 				value: 1
 			},
@@ -192,7 +194,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 				description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
 				id: 'cpu overclock when gaming',
-				ariaLabel:'when gaming',
+				ariaLabel: 'when gaming',
 				metricitem: 'cpu_overclock_when_gaming',
 				value: 2
 			},
@@ -201,7 +203,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				name: 'gaming.dashboard.device.legionEdge.status.off',
 				description: 'gaming.dashboard.device.legionEdge.statusText.offText',
 				id: 'cpu overclock off',
-				ariaLabel:'off',
+				ariaLabel: 'off',
 				metricitem: 'cpu_overclock_off',
 				value: 3
 			}
@@ -209,9 +211,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	};
 	public cpuOCStatus: CPUOCStatus = new CPUOCStatus();
 	public setCpuOCStatus: any;
-	public cacheMemOCFeature: boolean = false;
-	public cacheHybridModeFeature: boolean = false;
-	public cacheAutoCloseFeature: boolean = false;
+	public cacheMemOCFeature = false;
+	public cacheHybridModeFeature = false;
+	public cacheAutoCloseFeature = false;
 	constructor(
 		private modalService: NgbModal,
 		private ngZone: NgZone,
@@ -226,12 +228,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private router: Router
 	) {}
 	ngOnInit() {
-		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapabilities) {
-				this.gamingCapabilities = response.payload;
-				this.legionEdgeInit();
-			}
-		});
+
 		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
@@ -273,6 +270,12 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[2].isChecked = this.getNetworkBoostCacheStatus();
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit();
+		this.commonService.getCapabalitiesNotification().subscribe((response) => {
+			if (response.type === Gaming.GamingCapabilities) {
+				this.gamingCapabilities = response.payload;
+				this.legionEdgeInit();
+			}
+		});
 	}
 
 	legionEdgeInit() {
@@ -284,8 +287,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
 		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
-		if (this.gamingCapabilities.fbnetFilter) {
+		if (gamingStatus.fbnetFilter) {
 			this.legionUpdate[2].readonly = false;
+		} else {
+			this.legionUpdate[2].readonly = true;
 		}
 		if (!gamingStatus.xtuService) {
 			this.drop.hideDropDown = true;
@@ -313,7 +318,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 
 		if (gamingStatus.networkBoostFeature) {
-			this.legionUpdate[2].readonly = false;
+			// this.legionUpdate[2].readonly = false;
 			this.renderNetworkBoostStatus();
 		}
 	}
@@ -330,7 +335,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public renderNetworkBoostStatus() {
 		this.gamingNetworkBoostService.getNetworkBoostStatus().then((networkBoostModeStatus) => {
-			console.log('networkBoostModeStatus--------------------------',networkBoostModeStatus)
+			console.log('networkBoostModeStatus--------------------------', networkBoostModeStatus);
 			if (networkBoostModeStatus !== undefined) {
 				this.NetworkBoostStatusObj.networkBoostStatus = networkBoostModeStatus;
 				this.setNetworkBoostCacheStatus(networkBoostModeStatus);
@@ -485,23 +490,29 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public onPopupClosed($event) {
 		const name = $event.name;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.legionUpdate[1].isDriverPopup = false;
+			this.legionUpdate[1].isPopup = false;
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.legionUpdate[4].isPopup = false;
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.title') {
 			this.legionUpdate[0].isDriverPopup = false;
+			this.legionUpdate[0].isPopup = false;
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.legionUpdate[2].isDriverPopup = false;
+			this.legionUpdate[2].isPopup = false;
 		}
 	}
 
 	public async toggleOnOffRamOCStatus($event) {
 		const { name, checked } = $event.target;
 		let status = $event.target.value;
-		status = status === "false" ? false : true;
+		status = status === 'false' ? false : status;
+		status = status === 'true' ? true : status;
 		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {

@@ -14,6 +14,7 @@
 				[metricsItemCategory]="item.category"
 				[metricsItemPosition]="blockPosition"
 				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -21,12 +22,13 @@
 							*ngIf="iconPlacement==='left'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
-								class="spinner-content">
+								class="spinner-content"
+								id="{{'icon-loading-' + item.id}}">
 								<div class="spinner-border text-secondary progress-spinner"
 									role="status"></div>
 							</div>
@@ -37,7 +39,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -46,6 +48,7 @@
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 							<div class="item-icon-class"
+								id="{{'icon-' + item.iconName + '-' + item.id}}"
 								*ngIf="item.iconName && item.color">
 								<fa-icon [icon]="['fal', item.iconName]"
 									class="icon"
@@ -78,11 +81,12 @@
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
+								id="{{'icon-loading-' + item.id}}"
 								class="spinner-content">
 								<div class="spinner-border text-secondary progress-spinner"
 									role="status"></div>
@@ -94,7 +98,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -105,7 +109,7 @@
 						</div>
 						<div *ngIf="chevronVisibility"
 							class="col col-1 text-center">
-							<div class="arrow"
+							<div class="arrow" id="{{'icon-arrow-' + item.id}}"
 								[ngClass]="{'blue-arrow': arrowColor==='blue-arrow'}">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
@@ -121,6 +125,7 @@
 				[metricsEvent]="metricsEvent"
 				(click)="launchSystemUri(item.path)"
 				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
 				*ngIf="item.isSystemLink!==undefined && item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -128,11 +133,12 @@
 							*ngIf="iconPlacement==='left'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
+								id="{{'icon-loading-' + item.id}}"
 								class="spinner-content">
 								<div class="spinner-border text-secondary progress-spinner"
 									role="status"></div>
@@ -144,7 +150,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -177,12 +183,13 @@
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 
 							</div>
 							<div *ngIf="item.status === 4"
+								id="{{'icon-loading-' + item.id}}"
 								class="spinner-content">
 								<div class="spinner-border text-secondary progress-spinner"
 									role="status"></div>
@@ -194,7 +201,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -205,7 +212,7 @@
 						</div>
 						<div *ngIf="chevronVisibility"
 							class="col col-1 text-center">
-							<div class="arrow">
+							<div class="arrow" id="{{'icon-arrow-' + item.id}}">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
 						</div>

@@ -179,9 +179,8 @@
 	}
 
 	.threat-locator {
-		// padding-left: 3rem;
-		background: url("../../../../../../assets/images/threat-locator-background.jpg");
-		border-radius: 0.8rem;
+		background: url("/assets/images/threat-locator-background.jpg");
+		border-radius: $border_radius;
 		border-top-left-radius: 0rem;
 		border-top-right-radius: 0rem;
 
@@ -189,7 +188,7 @@
 			margin: 3rem;
 			padding: 3rem;
 			background: $light;
-			border-radius: 0.8rem;
+			border-radius: $border_radius;
 
 			.col-check-location {
 				padding-right: 0rem;
@@ -205,7 +204,15 @@
 		}
 	}
 	.col-check-use-state{
-		margin: auto
+		margin: auto;
+	}
+
+	.enable-wifi-security {
+		::ng-deep .button {
+			min-height: 4rem !important;
+			font-size: 1.5rem !important;
+			font-weight: $weight_600 !important;
+		}
 	}
 
 	.content {
@@ -233,7 +240,7 @@
 
 		.cardBody {
 			border: 0.1rem solid $shade_lighter;
-			border-radius: 0.8rem;
+			border-radius: $border_radius;
 			background: $light;
 
 			.status-icon {
@@ -297,8 +304,6 @@
 					display: block;
 				}
 			}
-			// 	}
-			// }
 		}
 
 		.card-foot {
@@ -313,14 +318,13 @@
 
 	.wifiSecurity {
 		.card {
-			border-radius: 0.8rem;
+			border-radius: $border_radius;
 			border-bottom-left-radius: 0rem;
 			border-bottom-right-radius: 0rem;
 
 			&.collapsed {
-				border-bottom-left-radius: 0.8rem;
-				border-bottom-right-radius: 0.8rem;
-				// border: 0.1rem solid rgba(0, 0, 0, 0.125);
+				border-bottom-left-radius: $border_radius;
+				border-bottom-right-radius: $border_radius;
 			}
 
 			.no-gutters {
@@ -353,11 +357,11 @@
 			padding: 2.5rem;
 			background: $shade_extralight;
 			border: 0rem;
+			border-radius: $border_radius;
 
 			.collapse-control {
 				margin-top: -0.4rem;
 				display: inline-block;
-				// width: 15rem;
 				max-width: 70%;
 				margin-left: 1rem;
 				.collapse-text {
@@ -472,11 +476,11 @@
 
 		div.wifi:nth-last-child(1):nth-child(odd),
 		div.wifi:nth-last-child(2):nth-child(odd) {
-			border-bottom-left-radius: 0.8rem;
+			border-bottom-left-radius: $border_radius;
 			border-bottom: 0;
 		}
 		div.wifi:nth-last-child(1):nth-child(even) {
-			border-bottom-right-radius: 0.8rem;
+			border-bottom-right-radius: $border_radius;
 			border-bottom: 0;
 		}
 		div.wifi:nth-child(odd) {
@@ -504,10 +508,6 @@
 
 		vtr-ui-switch-onoff {
 			display: inline-block;
-		}
-		@media #{$mediaquery_12} {
-			// position: relative;
-			// top: -3rem;
 		}
 		.switch-disable {
 			opacity: 0.3;

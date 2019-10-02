@@ -28,26 +28,26 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	styleUrls: ['./widget-quicksettings.component.scss']
 })
 export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
-	public cameraStatus = new FeatureStatus(true, true);
-	public microphoneStatus = new FeatureStatus(false, true);
-	public eyeCareModeStatus = new FeatureStatus(true, true);
+	public cameraStatus = new FeatureStatus(true, false);
+	public microphoneStatus = new FeatureStatus(false, false);
+	public eyeCareModeStatus = new FeatureStatus(true, false);
 	private notificationSubscription: Subscription;
 	public isOnline: any = true;
 	public quickSettingsWidget = [
 		{
-			tooltipText: 'MICROPHONE',
+			// tooltipText: 'MICROPHONE',
 			state: true
 		},
 		{
-			tooltipText: 'CAMERA PRIVACY',
+			// tooltipText: 'CAMERA PRIVACY',
 			state: true
 		},
 		{
-			tooltipText: 'EYE CARE MODE',
+			// tooltipText: 'EYE CARE MODE',
 			state: true
 		}
 	];
-	private Windows:any;
+	private Windows: any;
 	private windowsObj: any;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
@@ -60,13 +60,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService) {
-			this.Windows = vantageShellService.getWindows();
-			this.windowsObj =  this.Windows.Devices.Enumeration.DeviceAccessInformation
-			.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
-	
+		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
+			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
+
 			this.windowsObj.addEventListener('accesschanged', () => {
 				this.getCameraPrivacyStatus();
 			});
+		}
 	}
 
 	ngOnInit() {
@@ -83,26 +85,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				this.initFeatures();
 			}
 		} else {
-				this.initFeatures();
+			this.initFeatures();
 		}
 	}
 
 	initDataFromCache() {
 		const cameraState: FeatureStatus = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy);
-		// const microphoneState: FeatureStatus =  this.commonService.getLocalStorageValue(LocalStorageKey.DashboardMicrophoneStatus);
-		// const eyeCareModeState: FeatureStatus =  this.commonService.getLocalStorageValue(LocalStorageKey.DashboardEyeCareMode);
 		if (cameraState) {
 			this.cameraStatus.available = cameraState.available;
 		}
-		// if (cameraState) {
-		// 	this.cameraStatus = cameraState;
-		// }
-		// if (microphoneState) {
-		// 	this.microphoneStatus = microphoneState;
-		// }
-		// if (eyeCareModeState) {
-		// 	this.eyeCareModeStatus = eyeCareModeState;
-		// }
 	}
 
 	ngOnDestroy() {
@@ -159,7 +150,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						console.log('getCameraPermission.then', result);
 						if (result) {
 							this.cameraStatus.permission = result.permission;
-							// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 							this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus); this.cameraStatus.isLoading = false;
 						}
 					}).catch(error => {
@@ -216,7 +206,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.cameraStatus = featureStatus;
 						this.cameraStatus.available = featureStatus.available;
 						this.cameraStatus.status = featureStatus.status;
-						// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, featureStatus);
 						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, featureStatus);
 						// if privacy available then start monitoring
 						if (featureStatus.available) {
@@ -238,10 +227,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		console.log('startMonitorHandlerForCamera', value);
-		// this.cameraStatus = value;
 		this.cameraStatus.available = value.available;
 		this.cameraStatus.status = value.status;
-		// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 		this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 	}
 
@@ -288,8 +275,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getMicrophoneStatus.then', featureStatus);
 					this.microphoneStatus = featureStatus;
-					// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, featureStatus);
-					// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardMicrophoneStatus, featureStatus);
 					if (featureStatus.available) {
 						this.deviceService.startMicrophoneMonitor();
 					}
@@ -309,8 +294,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					console.log('getEyeCareMode.then', featureStatus);
 					this.eyeCareModeStatus.available = featureStatus.available;
 					this.eyeCareModeStatus.status = featureStatus.status;
-					// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, featureStatus);
-					// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardEyeCareMode, featureStatus);
 				})
 				.catch(error => {
 					this.logger.error('getEyeCareMode', error.message);
@@ -333,7 +316,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.cameraStatus.isLoading = false;
 						this.cameraStatus.status = $event;
 						this.quickSettingsWidget[1].state = true;
-						// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 						this.commonService.setLocalStorageValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
 					}).catch(error => {
 						this.cameraStatus.isLoading = false;
@@ -361,8 +343,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						console.log('setMicrophoneStatus.then', value, $event);
 						this.microphoneStatus.status = $event;
 						this.quickSettingsWidget[0].state = true;
-						// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, this.microphoneStatus);
-						// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardMicrophoneStatus, this.microphoneStatus);
 					}).catch(error => {
 						this.microphoneStatus.isLoading = false;
 						this.quickSettingsWidget[0].state = true;
@@ -390,8 +370,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.eyeCareModeStatus.isLoading = false;
 						this.eyeCareModeStatus.status = $event;
 						this.quickSettingsWidget[2].state = true;
-						// this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
-						// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardEyeCareMode, this.eyeCareModeStatus);
 					}).catch(error => {
 
 						this.eyeCareModeStatus.isLoading = false;

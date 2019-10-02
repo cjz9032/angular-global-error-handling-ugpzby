@@ -8,12 +8,11 @@
 	<div class="container-fluid">
 		<div class="row">
 			<a href="javascript:;"
-				*ngIf="item.Thumbnail"
-				class="col col-12 image"
-				[style.background-image]="'url('+item.Thumbnail+')'"
+				class="article-conetnt"
+				tabindex="{{tabIndex}}"
 				vtrMetrics
-				id="{{'article-item-image-' + index}}"
-				attr.aria-label="{{'article-item-image-' + index}}"
+				id="{{'article-item-card-' + index}}"
+				attr.aria-label="{{'article-item-card-' + index}}"
 				metricsEvent="ArticleClick"
 				metricsParent="Page.Support"
 				metricsItemID="{{ item.Id }}"
@@ -22,59 +21,40 @@
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
-				<div *ngIf="item.Logo"
-					class="logo">
-					<span class="img"
-						*ngIf="item.Logo && item.Thumbnail">
-						<img src="{{item.Logo}}"
-							alt="{{item.LogoText}}">
-					</span>
-					<span *ngIf="item.LogoText"
-						class="text">{{item.LogoText}}</span>
+				<div *ngIf="item.Thumbnail"
+					class="image"
+					[style.background-image]="'url('+item.Thumbnail+')'">
+					<div *ngIf="item.Logo"
+						class="logo">
+						<span class="img"
+							*ngIf="item.Logo && item.Thumbnail">
+							<img src="{{item.Logo}}"
+								alt="{{item.LogoText}}">
+						</span>
+						<span *ngIf="item.LogoText"
+							class="text">{{item.LogoText}}</span>
+					</div>
 				</div>
-			</a>
-			<div *ngIf="item.Title"
-				class="col col-12 content">
-				<a href="javascript:;"
-					class="title"
-					vtrMetrics
-					id="{{'article-item-title-' + index}}"
-					attr.aria-label="{{'article-item-title-' + index}}"
-					metricsEvent="ArticleClick"
-					metricsParent="Page.Support"
-					metricsItemID="{{ item.Id }}"
-					metricsItemCategory="{{ itemCategory }}"
-					metricsItemPosition="{{ index }}"
-					metricsViewOrder="{{metricsDatas.viewOrder}}"
-					metricsPageNumber="{{metricsDatas.pageNumber}}"
-					[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
-					[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-					[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
-					(click)="showArticleDetails()">{{item.Title}}</a>
-				<div class="logo-text">
-					<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
-				</div>
-				<div *ngIf="item.ReadMore && item.Thumbnail"
-					[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
-					[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
-					class="read-more">
-					<a href="javascript:;"
-						vtrMetrics
-						id="{{'article-item-readmore-' + index}}"
-						attr.aria-label="{{'article-item-readmore-' + index}}"
-						metricsEvent="ArticleClick"
-						metricsParent="Page.Support"
-						metricsItemID="{{ item.Id }}"
-						metricsItemCategory="{{ itemCategory }}"
-						metricsItemPosition="{{ index }}"
-						metricsViewOrder="{{metricsDatas.viewOrder}}"
-						metricsPageNumber="{{metricsDatas.pageNumber}}"
-						(click)="showArticleDetails()">
+				<div *ngIf="item.Title"
+					class="col col-12 content">
+					<div href="javascript:;"
+						class="title"
+						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+					<div class="logo-text">
+						<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
+					</div>
+					<div *ngIf="item.ReadMore && item.Thumbnail"
+						[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						class="read-more">
 						<span class="link-label">Read More</span>
 						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-					</a>
+					</div>
 				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>
@@ -88,73 +68,52 @@
 	<div class="container-fluid">
 		<div class="row">
 			<a href="javascript:;"
-				*ngIf="item.FeatureImage"
-				class="col col-12 image"
-				[style.background-image]="'url('+item.FeatureImage+')'"
+				class="article-conetnt"
 				vtrMetrics
-				id="{{'article-item-image-' + index}}"
-				attr.aria-label="{{'article-item-image-' + index}}"
+				id="{{'article-item-card-' + index}}"
+				attr.aria-label="{{'article-item-card-' + index}}"
+				tabindex="{{tabIndex}}"
 				metricsEvent="ArticleClick"
 				metricsParent="Page.Support"
 				metricsItemID="{{item.Id}}"
+				metricsItemCategory=""
 				metricsItemPosition="{{index}}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
-				<div *ngIf="item.BrandImage"
-					class="logo">
-					<span class="img"
-						*ngIf="item.BrandImage && item.FeatureImage">
-						<img src="{{item.BrandImage}}"
-							alt="{{item.BrandName}}">
-					</span>
-					<span *ngIf="item.BrandName"
-						class="text">{{item.BrandName}}</span>
+				<div *ngIf="item.FeatureImage"
+					class="image"
+					[style.background-image]="'url('+item.FeatureImage+')'">
+					<div *ngIf="item.BrandImage"
+						class="logo">
+						<span class="img"
+							*ngIf="item.BrandImage && item.FeatureImage">
+							<img src="{{item.BrandImage}}"
+								alt="{{item.BrandName}}">
+						</span>
+						<span *ngIf="item.BrandName"
+							class="text">{{item.BrandName}}</span>
+					</div>
 				</div>
-			</a>
-			<div *ngIf="item.Title"
-				class="col col-12 content">
-				<a href="javascript:;"
-					class="title"
-					vtrMetrics
-					id="{{'article-item-title-' + index}}"
-					attr.aria-label="{{'article-item-title-' + index}}"
-					metricsEvent="ArticleClick"
-					metricsParent="Page.Support"
-					metricsItemID="{{item.Id}}"
-					metricsItemCategory=""
-					metricsItemPosition="{{index}}"
-					metricsViewOrder="{{metricsDatas.viewOrder}}"
-					metricsPageNumber="{{metricsDatas.pageNumber}}"
-					[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
-					[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-					[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
-					(click)="showArticleDetails()">{{item.Title}}</a>
-				<div class="logo-text">
-					<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
-				</div>
-				<div *ngIf="item.ActionLink && item.FeatureImage && item.Action"
-					[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
-					[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
-					class="read-more">
-					<a href="javascript:;"
-						vtrMetrics
-						id="{{'article-item-readmore-' + index}}"
-						attr.aria-label="{{'article-item-readmore-' + index}}"
-						metricsEvent="ArticleClick"
-						metricsParent="Page.Support"
-						metricsItemID="{{item.Id}}"
-						metricsItemCategory=""
-						metricsItemPosition="{{index}}"
-						metricsViewOrder="{{metricsDatas.viewOrder}}"
-						metricsPageNumber="{{metricsDatas.pageNumber}}"
-						(click)="showArticleDetails()"
-						href="javascript:;">
+				<div *ngIf="item.Title"
+					class="col col-12 content">
+					<div class="title"
+						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+					<div class="logo-text">
+						<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
+					</div>
+					<div *ngIf="item.ActionLink && item.FeatureImage && item.Action"
+						[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						class="read-more">
 						<span class="link-label">{{item.Action}}</span>
 						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-					</a>
+					</div>
 				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>

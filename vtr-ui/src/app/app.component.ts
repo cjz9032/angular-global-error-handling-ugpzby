@@ -27,6 +27,7 @@ import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
+import { AppUpdateService } from './services/app-update/app-update.service';
 
 declare var Windows;
 @Component({
@@ -57,6 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
+		private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -65,33 +67,25 @@ export class AppComponent implements OnInit, OnDestroy {
 			bridge: bridgeVersion.version
 		};
 
+		// check for new version of experience
+		this.appUpdateService.checkForUpdates();
+
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
 
-		if (vantageShellService.isShellAvailable) {
-			this.beta = vantageShellService.getBetaUser();
-			this.beta.getBetaUser().then((result) => {
-				if (!result) {
-					if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-						this.commonService.isBetaUser().then((data) => {
-							if (data === 0 || data === 3) {
-								this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-								this.beta.setBetaUser();
-							}
-						});
-					} else {
-						this.beta.setBetaUser();
-					}
-				} else {
-					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-				}
-			});
-		}
+		this.initIsBeta();
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
+		document.addEventListener('visibilitychange', (e) => {
+			if (document.hidden) {
+				this.sendAppSuspendMetric();
+			} else {
+				this.sendAppResumeMetric();
+			}
+		});
 
 		window.addEventListener(
 			'online',
@@ -109,13 +103,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			false
 		);
 
-		document.addEventListener('visibilitychange', (e) => {
-			if (document.hidden) {
-				this.sendAppSuspendMetric();
-			} else {
-				this.sendAppResumeMetric();
-			}
-		});
 		this.notifyNetworkState();
 	}
 
@@ -230,6 +217,39 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
+		setTimeout(() => { document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+	}
+
+	private initIsBeta() {
+		if (this.vantageShellService.isShellAvailable) {
+			this.beta = this.vantageShellService.getBetaUser();
+			this.deviceService.getIsARM().then((status) => {
+				if (!status) {
+					this.beta.getBetaUser().then((result) => {
+						if (!result) {
+							if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+								this.commonService.isBetaUser().then((data) => {
+									if (data === 0 || data === 3) {
+										this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+										this.beta.setBetaUser();
+									}
+								});
+							} else {
+								this.beta.setBetaUser();
+							}
+						} else {
+							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+						}
+					});
+				} else if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+					this.commonService.isBetaUser().then((data) => {
+						if (data === 0 || data === 3) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+						}
+					});
+				}
+			});
+		}
 	}
 
 	ngOnInit() {
@@ -446,12 +466,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	// Defect fix VAN-2988
 	@HostListener('window:keydown', ['$event'])
-	disableCtrlACV($event: KeyboardEvent) {
+	disableCtrlA($event: KeyboardEvent) {
+
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 
 		if (
 			($event.ctrlKey || $event.metaKey) &&
-			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86) && !isPrivacyTab
+			($event.keyCode === 65) && !isPrivacyTab
 		) {
 			$event.stopPropagation();
 			$event.preventDefault();

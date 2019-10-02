@@ -37,6 +37,7 @@ $line_height: 2.0rem;
 		border: 1px solid $menu_hover;
 		border-radius: 0.5rem;
 		position: relative;
+		overflow: hidden;
 		z-index: 11;
 
 		&.is-show-result {

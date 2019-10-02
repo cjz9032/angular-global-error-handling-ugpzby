@@ -19,6 +19,7 @@ import * as metricsConst from 'src/app/enums/metrics.enum';
 @Injectable({
 	providedIn: 'root'
 })
+// As LenovoSystemUpdatePlugin not support S-Mode, all System Update feature are not supported in S-Mode.
 export class SystemUpdateService {
 
 	constructor(
@@ -52,6 +53,7 @@ export class SystemUpdateService {
 	public isInstallationSuccess = false;
 	public isDownloadingCancel = false;
 	public isImcErrorOrEmptyResponse = false;
+	public isRebootRequiredDialogNeeded = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -154,11 +156,21 @@ export class SystemUpdateService {
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
 				}
 			}).catch((error) => {
+				this.percentCompleted = 0;
 				this.metricHelper.sendSystemUpdateMetric(
 					0,
 					'',
 					error.message,
 					MetricHelper.timeSpan(new Date(), timeStartSearch));
+				if (error &&
+					((error.description && error.description.includes('errorcode: 606'))
+					|| (error.errorcode && error.errorcode === 606))) {
+					this.getScheduleUpdateStatus(true);
+					this.isImcErrorOrEmptyResponse = true;
+				} else {
+					const payload = {status: 1 };
+					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+				}
 			});
 		}
 		return undefined;
@@ -253,6 +265,7 @@ export class SystemUpdateService {
 					this.isInstallationCompleted = true;
 					this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
 					this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
+					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstallationComplete, this.updateInfo);
 				}
 			} else if (response.checkForUpdatesResult) {
@@ -290,6 +303,7 @@ export class SystemUpdateService {
 		}
 	}
 
+	// Please Notice that this function doesn't support S-Mode
 	public restartWindows() {
 		if (this.systemUpdateBridge) {
 			this.commonService.sendNotification(UpdateProgress.WindowsRebootRequested);
@@ -543,6 +557,7 @@ export class SystemUpdateService {
 							(rebootDelayUpdate) => payload.updateList.push(rebootDelayUpdate));
 					}
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 				} else {
 					this.isInstallationCompleted = false;

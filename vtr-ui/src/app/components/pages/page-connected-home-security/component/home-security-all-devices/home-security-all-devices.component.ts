@@ -15,11 +15,11 @@ export class HomeSecurityAllDevicesComponent implements OnInit {
 
 	pluginAvailable = true;
 	itemStatusIconClass = {
-		1: 'female',
-		2: 'home',
-		3: 'tv',
-		4: 'wifi',
-		5: 'map-marker-alt',
+		1: 'familyMembers',
+		2: 'places',
+		3: 'personalDevice',
+		4: 'wifiNetworks',
+		5: 'homeDevices',
 	};
 
 	constructor() {	}
@@ -27,7 +27,7 @@ export class HomeSecurityAllDevicesComponent implements OnInit {
 	ngOnInit() {	}
 
 	getItemStatusIconClass(item) {
-		let itemStatIconClass = 'good';
+		let itemStatIconClass;
 		if (item.icon !== undefined && item.icon !== '') {
 			if (this.itemStatusIconClass.hasOwnProperty(item.icon)) {
 				itemStatIconClass = this.itemStatusIconClass[item.icon];

@@ -11,34 +11,40 @@
 		overflow: hidden;
 
 		li {
-			min-height: 6rem;
-			// padding: 1.5rem 1rem 1.5rem 0;
-			border-bottom: .1rem solid $shade_lighter;
+			height: auto;
+			padding: 1.5rem 1rem;
+			border-bottom: 0.1rem solid $shade_lighter;
 			color: $main_darker;
+
+			.item-icon {
+				&.status {
+					cursor: pointer;
+					.icon-bkg {
+						display: inline-block;
+						border-radius: 50%;
+						height: 2rem;
+						width: 2rem;
+						border-width: 0.2rem;
+						border-style: solid;
+						text-align: center;
+						cursor: pointer;
+						fa-icon {
+							font-size: 1.2rem;
+							line-height: 1.6rem;
+							color: $light;
+						}
+					}
+				}
+
+				fa-icon {
+					color: $main;
+					font-size: 1.9rem;
+					line-height: 3rem;
+				}
+			}
 
 			&:last-child {
 				border: none;
-			}
-
-
-			&.good {
-				.item-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-						background-color: $go_dark;
-						border-color: $go_dark;
-					}
-				}
-			}
-
-			&.bad {
-				.item-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						background-color: $stop_dark;
-						border-color: $stop_dark;
-					}
-				}
 			}
 
 			a {
@@ -46,17 +52,12 @@
 				height: 100%;
 				color: $shade_blue;
 				display: block;
-				padding: 1.5rem 1rem 1.5rem 0;
 				cursor: pointer;
 
 				&:hover {
 					text-decoration: none;
 					background-color: $shade_extralight;
 				}
-			}
-
-			.no-pointer {
-				padding: 1.5rem 1rem 1.5rem 0;
 			}
 
 			.item-icon {
@@ -94,42 +95,37 @@
 				height: 2rem;
 				width: 2rem;
 				line-height: 3rem;
-				cursor: pointer;
 			}
 
 			.item-text {
 				overflow: hidden;
-				display: flex;
-				align-items: center;
+				padding-left: 1rem;
 				cursor: pointer;
 				.title {
-					line-height: 1.8rem;
-					font-size: 1.4rem;
+					cursor: pointer;
+					font-size: $body;
 					font-weight: $weight_bold;
 					float: left;
-					cursor: pointer;
+					width: 100%;
+					padding-top: 0.1rem;
+					padding-right: 0.1rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					color: $blue-dark;
+
 					&.light-title {
 						font-weight: $weight_light;
+						cursor: pointer;
 					}
 				}
 
-				.detail {
-					padding-right: .5rem;
-					float: right;
-					text-align: right;
-					line-height: 2.8rem;
+				.sub-text{
 					font-size: 1.2rem;
-					color: $shade_dark;
-					font-style: italic;
-					cursor: pointer;
-					&.highlight {
-						color: $main_shade;
-						text-decoration: underline;
-
-						&:hover {
-							text-decoration: none;
-						}
-					}
+					margin-top: 2px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 			}
 

@@ -1,17 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'vtr-networkboost-turn-on',
   templateUrl: './networkboost-turn-on.component.html',
   styleUrls: ['./networkboost-turn-on.component.scss']
 })
-export class NetworkboostTurnOnComponent implements OnInit {
+export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
 
   runningList: any = {};
   addAppsList: string;
   statusAskAgain: boolean;
   setAutoClose: any;
-  public isChecked:any;
+  public isChecked: any;
   constructor() { }
 
   @Input() showTurnOnModal: boolean;
@@ -21,8 +21,10 @@ export class NetworkboostTurnOnComponent implements OnInit {
   @Output() actionNeedAsk = new EventEmitter<boolean>();
 
   ngOnInit() {
+    document.getElementById('nbTurnOnModal').focus();
   }
-
+  ngAfterViewInit() {
+  }
   async setAksAgain() {
     this.isChecked = !this.isChecked;
     this.statusAskAgain = this.isChecked;
@@ -31,9 +33,9 @@ export class NetworkboostTurnOnComponent implements OnInit {
   turnOnAction(isConfirm: boolean) {
     let status = 0;
     if (this.statusAskAgain) {
-        status = 2;
+      status = 2;
     }
-    this.actionTurnOn.emit({isConfirm, askAgainStatus: status });
+    this.actionTurnOn.emit({ isConfirm, askAgainStatus: status });
   }
 
   notNowAction(event) {
@@ -41,17 +43,18 @@ export class NetworkboostTurnOnComponent implements OnInit {
     if (this.statusAskAgain) {
       status = 1;
     }
-    this.actionNotNow.emit({askAgainStatus: status});
+    this.actionNotNow.emit({ askAgainStatus: status });
   }
 
   closeModal(action: boolean) {
     this.closeTurnOnModal.emit(action);
   }
 
-  keydownFn(event){
-    if(event.which === 9){
-      let txt = document.getElementById("close");
-      txt.focus();
+  keydownFn(event) {
+    if (event.which === 9) {
+      setTimeout(() => {
+        document.getElementById('closeButton').focus();
+      }, 2);
     }
   }
 }

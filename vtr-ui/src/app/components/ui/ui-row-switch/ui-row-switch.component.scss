@@ -12,6 +12,9 @@
 			// padding-right: 3rem;
 			padding-right: 0;
 			display: flex;
+			@media #{$mediaquery_X42}{
+			padding-left: 0
+			}
 			> div.right-align {
 				float: right;
 				::ng-deep span.switch {

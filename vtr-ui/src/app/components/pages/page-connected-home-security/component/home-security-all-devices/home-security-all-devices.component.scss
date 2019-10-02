@@ -1,13 +1,26 @@
 @import "../../../../../app.theme.scss";
 
 .vtr-home-security-all-devices {
+	font-size: 1.4rem;
 	.icon-bkg {
 		font-size: 4rem;
 	}
 	.blue {
-		color: $main_gstart;
-		fa-icon {
-			color: $main_gstart;
+		font-size: 2.4rem;
+		color: $blue-lighter;
+		.icomoon {
+			font-size: 4.8rem;
+		}
+	}
+	.font-weight-600 {
+		font-weight: $weight_600;
+	}
+	.fit-height {
+		height: 22rem;
+	}
+	@media #{$mediaquery_md} {
+		.fit-height {
+			height: auto;
 		}
 	}
 

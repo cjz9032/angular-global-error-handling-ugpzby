@@ -5,7 +5,9 @@
   background-color: rgb(20, 2, 63);
   margin-right: 2rem;
   padding: 1.5rem;
-
+  @media #{$mediaquery_md} {
+    margin:0 0 4rem 0;
+  }
   button {
     height: 4rem;
     border-radius: 3rem;
@@ -24,7 +26,6 @@
     text-overflow: ellipsis;
     letter-spacing: 0;
     align-self: center;
-    margin-left: 2.5rem;
   }
   .title {
     color: $light;

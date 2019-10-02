@@ -2,24 +2,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col col-12 hardwarescan-background">
-                <div class="vtr-widget-offline-info" *ngIf="!isOnline && !showProgress">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col col-12 offline-info-background">
-                                <div class="d-flex align-items-center w-100">
-                                    <div class="offline-icon">
-                                        <fa-icon [icon]="['fal', 'wifi-slash']" class="icon"></fa-icon>
-                                    </div>
-                                    <div class="w-100 offline-content">
-                                        <div class="row">
-                                            <div class="col title">{{offlineText}}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col title">{{title}}</div>
                 </div>
@@ -51,12 +33,12 @@
 
                     <div class="col col-12 row">
                         <div class="cancel-check" *ngIf="!(percent === 100)">
-                            <a [ngClass]="{'cancel-check-text': !disableCancel, 'disabled-cancel': disableCancel}" (click)="onCancel()">{{cancelText}}</a>
+                            <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" (click)="onCancel()">{{cancelText}}</button>
                         </div>
                         <div class="container final-result-code" *ngIf="getFinalResultCode()">
                             <span class="result-code-value-text">{{finalResultCodeText}}:</span>
-                            <span class="result-code-complete-text"> {{getFinalResultCode()}}</span>
-                            <fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="getTooltipInformation()" [icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
+                            <span class="result-code-complete-text">{{getFinalResultCode()}}</span>
+                            <fa-icon *ngIf="getTooltipInformation()" class="result-code-icon" triggers="click:blur" placement="auto" [ngbTooltip]="tooltipFinalResultCode" [icon]="['far', 'question-circle']" container="body" tooltipClass="vtr-tooltip">
                             </fa-icon>
                         </div>
                     </div>
@@ -66,7 +48,7 @@
     </div>
 </div>
 <ng-template #tooltipFinalResultCode>
-    <div [innerHTML]="tooltipInformation"></div>
+    <div [innerHTML]="getTooltipInformation()"></div>
     <div class='button-box'>
         <a [attr.href]="'https://support.lenovo.com/contactus'" target="_blank"><button
 				class='btn button'>{{ lenovoSupport }}</button>

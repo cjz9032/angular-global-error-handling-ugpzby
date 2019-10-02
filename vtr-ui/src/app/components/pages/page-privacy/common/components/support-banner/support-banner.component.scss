@@ -21,7 +21,6 @@
     margin: 0 0 0.2rem;
   }
   &__text {
-    font-weight: 300;
     margin: 0;
     font-size: 1.6rem;
     color: #667481;
@@ -43,7 +42,7 @@
       content: '';
       width: 2.6rem;
       height: 2.3rem;
-      background: url("/assets/icons/privacy-tab/icon-support-clock.svg") center no-repeat;
+      background: url("/assets/icons/privacy-tab/icon-support-clock.png") center no-repeat;
       background-size: cover;
     }
     strong {

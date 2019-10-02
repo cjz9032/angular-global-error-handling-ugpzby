@@ -430,11 +430,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Podrška",
-            "homeSecurity": "Povezana kućna bezbednost",
             "privacy": "Privatnost",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Savetnik za bezb.",
@@ -473,6 +473,9 @@
             "expand": "Raširi",
             "loader": "Status <br> preuzimanja",
             "loading": "Učitavanje..."
+        },
+        "app-update": {
+            "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
         }
     },
     "privacy": {
@@ -1482,119 +1485,6 @@
             "fileNotFoundException": "Datoteka nije pronađena."
         }
     },
-    "homeSecurity": {
-        "title": "Povezana kućna bezbednost",
-        "notification": {
-            "recent": "Nedavna bezbednosna obaveštenja",
-            "notifications": "Obaveštenja",
-            "unsafeNetworkConnection": "Mrežna veza nije bezbedna",
-            "networkUnsafe": "Mreža nije bezbedna",
-            "deviceDisconnected": "Uređaj nije povezan",
-            "newDeviceDetected": "Otkriven je novi uređaj",
-            "unsafeDeviceDetected": "Otkriveni uređaj nije bezbedan"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Zaštitite ekosistem uređaja",
-            "thisDevice": "Ovaj uređaj",
-            "allDevices": "Svi uređaji",
-            "protected": "Zaštićeno",
-            "notProtected": "Nije zaštićeno",
-            "trialExpired": "Probna verzija je istekla",
-            "upgrade": "nadogradnja",
-            "inEcosystem": "U ekosistemu",
-            "ecosystemEnable": "Ekosistem je omogućen",
-            "inTrial": "Tokom probnog perioda",
-            "addEcosystem": "Dodaj u ekosistem",
-            "enableEcosystem": "Omogući ekosistem",
-            "startTrial": "Započnite probni period",
-            "fullAccess": "Pun pristup",
-            "renew": "Obnova"
-        },
-        "overview": {
-            "overviewBlockTitle": "Pregled bezbednosti ekosistema",
-            "allDevices": "Svi uređaji",
-            "myDevice": "Moj uređaj",
-            "thisComputer": "Ovaj računar",
-            "secure": "BEZBEDNO",
-            "needAttention": "POTREBNA JE PAŽNJA",
-            "manageAccount": "Upravljanje nalogom",
-            "devices": "Uređaji",
-            "seeProtectedDevices": "Pogledajte zaštićene uređaje",
-            "addDevice": "dodajte uređaj",
-            "trialExpired": "Probna verzija je istekla - Nadogradite da biste zaštitili sve uređaje",
-            "upgrade": "nadogradnja",
-            "freeTrial": "Zaštitite sve uređaje - Besplatni tridesetodnevni probni period",
-            "startTrial": "Započnite probni period",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now"
-        },
-        "tour": {
-            "back": "Nazad",
-            "skip": "Preskoči",
-            "start": "ZAPOČNITE OBILAZAK",
-            "done": "GOTOVO",
-            "welcome1": "Dobro došli",
-            "welcomeDesc1": "U samo nekoliko klikova moći ćete da zaštitite računare, mobilne uređaje i povezane uređaje za vas i vašu porodicu.",
-            "welcomeDescStart": "Započnite svoj besplatni tridesetodnevni probni period.",
-            "welcome2": "Ekskluzivno za Vantage",
-            "welcomeDesc2": "Povezana kućna bezbednost je ugrađena direktno u Vantage za brzi pristup statusu zaštite vašeg ekosistema i bezbednosnih upozorenja.",
-            "create": "Kreirajte svoj nalog",
-            "lenovoId": "koristeći Lenovo ID",
-            "notifications": "Primajte <b>obaveštenja</b> o statusu kućne bezbednosti",
-            "monitor": "<b>Nadgledajte</b> bezbednost uređaja vaše porodice",
-            "peaceOfMind": "Budite <b>spokojni</b> jer ste zaštićeni sve vreme!",
-            "signInLenovoId": "REGISTRUJTE SE KORISTEĆI LENOVO ID",
-            "haveLenovo": "Nemam <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Kreirajte Lenovo ID",
-            "without": "Nastavite <b>bez naloga</b>",
-            "skipAndTrial": "PRESKOČITE I ZAPOČNITE PROBNI PERIOD",
-            "alreadyHave": "Već imam <b>nalog za povezanu kućnu bezbednost</b>",
-            "loginCHS": "Prijavite se na postojeći CHS nalog",
-            "locationTitle": "Omogućite praćenje lokacije",
-            "locationPermission": "Kako bi ova funkcija pravilno funkcionisala, moraćete da omogućite praćenje lokacije za ovaj uređaj"
-        },
-        "accountStatus": {
-            "title": "Moja povezana kućna bezbednost",
-            "startTrial": "Započnite probni period",
-            "manageAccount": "Upravljanje nalogom",
-            "upgradeAccount": "Nadogradite nalog",
-            "inTrialDetail1": "Preostali dani do kraja probnog perioda: {{remainingDays}}.",
-            "inTrialDetail2": "Trenutno ste unutar probnog perioda. Imate neograničeni pristup svim funkcijama.",
-            "trialExpiredDetail1": "Vaš probni period je istekao.",
-            "trialExpiredDetail2": "Vaš probni period je istekao i ekosistem uređaja više nije zaštićen.",
-            "upgradedDetail1": "Vaš nalog je aktivan do {{expiredDate}}.",
-            "upgradedDetail2": "Ekosistem vaših uređaja je trenutno zaštićen.",
-            "localAccountDetail2": "Kliknite na dugme ispod i započnite vaš tridesetodnevni probni period.",
-            "alreadyHaveAccount": "Već imate kod za aktivaciju?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "countdownTile": "You are about to launch the Connected Home Security web console...",
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?"
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Dobijte podršku"
@@ -1684,7 +1574,7 @@
             "common": {
                 "title": "Antivirusni program",
                 "back": "NAZAD",
-                "recommends": "Lenovo preporučuje <b>McAfee<b> za zaštitu svih vaših uređaja",
+                "recommends": "Zbog čega Lenovo preporučuje <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, možete da budete bolje zaštićeni pomoću usluge McAfee LiveSafe.",
@@ -1697,18 +1587,18 @@
                 "Blazing": "Brzina munje",
                 "BlazingText": "Optimizovan antivirus koji neće usporiti ili prekinuti vaše iskustvo korišćenja programa Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politika privatnosti</tag>  |  <tag>Uslovi korišćenja usluge</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
-                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa, udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i bili u mogućnosti da <b>zaštitimo ono što je važno.</b>",
+                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i kako biste bili u mogućnosti da <b>zaštitite ono što je važno.</b>",
                 "windowsSubtitle": "Osnovna zaštita pomoću programa Windows zaštitnik",
                 "topTip": "Najbolji saveti za bezbednost na mreži",
-                "topContent": "Naučite kako možete da se odbranite od najvećih pretnji na mreži današnjice",
+                "topContent": "Naučite kako možete da se odbranite od najvećih pretnji na mreži današnjice <tag>PRIKAŽI SAVETE</tag>",
                 "view": "PRIKAŽI SAVETE",
                 "buyNow": "Kupi odmah",
                 "buy": "Kupite, preuzmite i instalirajte McAfee zaštitu od virusa danas da biste iskoristili prednosti ovih bezbednosnih funkcija bankovnog nivoa",
-                "onlyBasic": "Only the basics here. While you may be protected against some online threats, you'll still be exposed to others",
-                "virus": "Virus protection",
+                "onlyBasic": "Ovde se nalaze samo osnove. Iako ste zaštićeni od nekih pretnji na mreži, možda ste i dalje izloženi drugima.",
+                "virus": "Zaštita od virusa",
                 "homeNetwork": "Zaštita kućne mreže",
                 "private": "Privatno, anonimno pregledanje",
                 "everyDevice": "Zaštita svakog uređaja",
@@ -1721,7 +1611,7 @@
                 "getMacfee": "Nabavite McAfee",
                 "topBenefits": "Zbog čega <b>Lenovo preporučuje McAfee</b> za zaštitu svih vaših uređaja",
                 "awardTitle": "Nagrađivani antivirus",
-                "awardSubtitle": "Sprečite da virusi, malver i softver za ucenjivanje zaraze vaš računar.",
+                "awardSubtitle": "Sprečite da virusi, malver i softver za ucenjivanje zaraze vaš računar",
                 "supportTitle": "Besplatna, neprekidna stručna tehnička podrška ",
                 "supportSubtitle": "Dobijte pomoć i budite spokojni u bilo koje doba dana ili noći zahvaljujući našem posvećenom timu za bezbednost",
                 "trialSubtitle": "Trenutno ste zaštićeni 30-dnevnom probnom verzijom proizvoda McAfee LiveSafe – preostalo je samo {{remainingDays}} dana! Pretplatite se odmah da biste produžili zaštitu.",
@@ -1743,17 +1633,18 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee skener ranjivosti ",
                 "report": "Vaš izveštaj o zaštiti od pretnji ",
-                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.",
-                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati.",
+                "trialContent": "Probna verzija McAfee antivirusa je bila od velike koristi. Ali sa samo {{remainingDays}} dana do isteka probne verzije, rizikujete da vam računar postane ranjiv. Nemojte rizikovati. <tag>Pretplatite se sada</tag>",
+                "subscribeContent": "Vaš McAfee antivirus je bio od velike koristi. Ali sa samo {{remainingDays}} dana do isteka, rizikujete da vam računar postane ranjiv. Nemojte rizikovati. <tag>Pretplatite se sada</tag>",
                 "subscribeNow": "Pretplatite se sada",
                 "fileScan": "Skenirane datoteke",
                 "Viruses": "Eliminisano virusa",
                 "blocked": "Blokirane loše veze",
                 "shredded": "Bezbedno uništene datoteke",
-                "startFileScan": "Start files scan"
+                "startFileScan": "Započnite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
+                "unknown": "Nepoznato"
             }
         },
         "wifisecurity": {
@@ -1827,7 +1718,9 @@
                 "joinChs": "Join Connected Home Security of your family",
                 "invitationCode": "Invitation code",
                 "connect": "CONNECTED",
-                "fail": "Incorrect code entered!"
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stanje bezbednosti",
@@ -2355,7 +2248,7 @@
         "OtherSettings": "Ostale postavke",
         "usageStatistics": "Statistika korišćenja",
         "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
-        "deviceStatistics": "Share statistic data with Lenovo",
+        "deviceStatistics": "Podelite statističke podatke sa kompanijom Lenovo",
         "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
         "Note": "Napomena: ",
         "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju."
@@ -2432,6 +2325,10 @@
         "offline": "Uređaj radi u režimu van mreže, povežite internet",
         "doNotSuspend": "Ovi testovi moraju da rade bez prekida! Nemojte zatvarati niti umanjivati ovu aplikaciju i nemojte suspendovati niti isključiti računar tokom skeniranja.",
         "doNotUse": "Nemojte da koristite računar dok se test ne završi",
+        "testsMustRunUniterrupted": "Ovi testovi moraju da rade bez prekida!",
+        "doNotCloseOrMinimizeApp": "• Nemojte zatvarati niti umanjivati ovu aplikaciju.",
+        "doNotSwitchApp": "• Nemojte prelaziti na drugu aplikaciju.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nemojte da stavljate računar u stanje spavanja ili da se odjavljujete sa njega ili da ga isključujete.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagodite test",
@@ -2545,6 +2442,121 @@
                 "readMore": "Pročitaj više",
                 "readLess": "Pročitaj manje"
             }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     }
 }

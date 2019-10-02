@@ -16,7 +16,6 @@ export class BreachedAccountComponent implements AfterViewInit {
 	@Input() openId = null;
 	@Input() isUserAuthorized = false;
 	@Input() isFigleafReadyForCommunication = false;
-	@Output() verifyClick = new EventEmitter<boolean>();
 	@Output() openFigleaf = new EventEmitter<string>();
 
 	breachedAccountsForShow: BreachedAccount[] = [];
@@ -51,10 +50,6 @@ export class BreachedAccountComponent implements AfterViewInit {
 
 	openFigleafEmit(link: string) {
 		this.openFigleaf.emit(link);
-	}
-
-	verifyClickEmit() {
-		this.verifyClick.emit(true);
 	}
 
 	trackByBreachedAccount(index) {

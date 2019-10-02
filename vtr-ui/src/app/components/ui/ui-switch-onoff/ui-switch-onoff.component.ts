@@ -5,7 +5,7 @@ import { CommonService } from '../../../services/common/common.service';
 @Component({
 	selector: 'vtr-ui-switch-onoff',
 	templateUrl: './ui-switch-onoff.component.html',
-	styleUrls: ['./ui-switch-onoff.component.scss']
+	styleUrls: [ './ui-switch-onoff.component.scss' ]
 })
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
@@ -15,14 +15,14 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Input() showLoader = false;
 	@Input() theme = 'white';
 	@Input() readonly = false;
+	@Input() tabIndex = 0;
 	@Input() isSwitchDisable = false;
+	@Input() ariaLabel: string;
 	uiSubscription: Subscription;
 
 	size = 'switch-xs';
 
-	constructor(
-		public commonService: CommonService
-	) { }
+	constructor(public commonService: CommonService) {}
 
 	ngOnInit() {
 		this.readonly = this.readonly || false;
@@ -59,7 +59,6 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 				this.toggle.emit($event);
 			}
 		}, 0);
-
 	}
 
 	/**
