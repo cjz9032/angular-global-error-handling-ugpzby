@@ -10,6 +10,7 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { ModalWifiSecurityInvitationComponent } from 'src/app/components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
+import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
 
 
 @Injectable({
@@ -28,7 +29,8 @@ export class DialogService {
 			const modal = this.modalService.open(ModalWifiSecurityInvitationComponent,
 			{
 				backdrop: 'static',
-				windowClass: 'wifi-security-location-modal'
+				windowClass: 'wifi-security-location-modal',
+				centered: true
 			});
 		}
 	}
@@ -113,6 +115,7 @@ export class DialogService {
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
 				size: 'lg',
+				centered: true,
 				windowClass: 'home-security-plugin-missing-modal'
 			});
 			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
@@ -133,6 +136,7 @@ export class DialogService {
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
 				size: 'lg',
+				centered: true,
 				windowClass: 'home-security-offline-modal'
 			});
 			errorMessageModal.componentInstance.header = 'security.wifisecurity.errorMessage.headerText';
@@ -167,7 +171,6 @@ export class DialogService {
 			this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false);
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
 				backdrop: 'static',
-				size: 'lg',
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
@@ -189,7 +192,6 @@ export class DialogService {
 
 			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
 				backdrop: 'static',
-				size: 'lg',
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
@@ -197,7 +199,7 @@ export class DialogService {
 		}
 	}
 
-	homeSecurityTrialModal(switchPage): NgbModalRef {
+	homeSecurityTrialModal(showWhichPage: CHSTrialModalPage): NgbModalRef {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -208,7 +210,7 @@ export class DialogService {
 				centered: true,
 				windowClass: 'trial-container-Modal'
 			});
-			trialModal.componentInstance.switchPage = switchPage;
+			trialModal.componentInstance.showWhichPage = showWhichPage;
 			return trialModal;
 		}
 	}

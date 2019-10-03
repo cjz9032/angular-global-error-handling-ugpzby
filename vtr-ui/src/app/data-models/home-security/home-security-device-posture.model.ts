@@ -15,17 +15,24 @@ class DevicePostureDetail {
 export class HomeSecurityDevicePosture {
 	homeDevicePosture: DevicePostureDetail[] = [];
 
-	constructor(devicePosture?: DevicePosture, public translate?: TranslateService) {
+	constructor(devicePosture?: DevicePosture, cacheDevicePosture?: HomeSecurityDevicePosture, public translate?: TranslateService) {
 		if (devicePosture && devicePosture.value.length > 0) {
-			this.createHomeDevicePosture(devicePosture.value);
+			if (cacheDevicePosture) {
+				this.createHomeDevicePosture(devicePosture.value, cacheDevicePosture);
+			} else {
+				this.createHomeDevicePosture(devicePosture.value);
+			}
 		}
 	}
 
-	createHomeDevicePosture(devicePosture: DeviceCondition[]) {
+	createHomeDevicePosture(devicePosture: DeviceCondition[], cacheDevicePosture?: HomeSecurityDevicePosture) {
 		const devicePostures = this.initDevicePosture();
 		devicePosture.forEach((item) => {
 			this.mappingDevicePosture(devicePostures, item);
 		});
+		if (devicePostures[0].status === 4 && cacheDevicePosture) {
+			devicePostures[0] = cacheDevicePosture.homeDevicePosture[0];
+		}
 		this.homeDevicePosture = devicePostures;
 	}
 
@@ -51,7 +58,7 @@ export class HomeSecurityDevicePosture {
 	}
 
 	assignValue(devicePostures: DevicePostureDetail[], vulnerable: boolean, index: number) {
-		devicePostures[index].status = vulnerable === true ? 1 : 6;
+		devicePostures[index].status = vulnerable === true ? 1 : 5;
 		devicePostures[index].detail = vulnerable === true ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
 		this.translate.stream(devicePostures[index].detail).subscribe((res) => {
 			devicePostures[index].detail = res;
@@ -69,12 +76,6 @@ export class HomeSecurityDevicePosture {
 			'security.homeprotection.securityhealth.deviceName7',
 			'security.homeprotection.securityhealth.deviceName3',
 		];
-		const obj = {
-			status: 4,
-			detail: '',
-			path: 'home-security',
-			type: 'security'
-		};
 		const devicePostures = titles.map((value) => {
 			this.translate.stream(value).subscribe((res) => {
 				value = res;

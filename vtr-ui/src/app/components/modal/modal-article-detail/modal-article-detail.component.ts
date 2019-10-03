@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, HostListener, SecurityContext } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, SecurityContext, AfterViewInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -12,7 +12,7 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 	styleUrls: ['./modal-article-detail.component.scss'],
 	providers: [TimerService]
 })
-export class ModalArticleDetailComponent implements OnInit {
+export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	articleId: string;
 	articleTitle = '';
 	articleImage = '';
@@ -61,6 +61,10 @@ export class ModalArticleDetailComponent implements OnInit {
 		);
 
 		this.timerService.start();
+	}
+
+	ngAfterViewInit() {
+		setTimeout(() => { document.getElementById('article-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	private getPageName(activatedRoute: ActivatedRoute) {

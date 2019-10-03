@@ -54,19 +54,18 @@
 			width: 35rem;
 		}
 
-		.battery-detail-button {
-			padding: 1rem 0;
-			border-radius: 2.5rem;
-			background: $gradient_main;
-			color: $light;
-			font-size: $base;
-			font-weight: $weight_bold;
-			letter-spacing: 0.1rem;
-
-			&:disabled {
-				opacity: 0.5;
+		.btn-disabled {
+			pointer-events: none;
+			::ng-deep .vtr-ui-button {
+				.button-box {
+					.button {
+						background: #e6eaeb;
+						color: #34495e;
+					}
+				}
 			}
 		}
+
 		.feature-note {
 			background-color: $shade_lightest;
 			border: 1px solid $shade_lighter;

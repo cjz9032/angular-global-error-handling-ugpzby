@@ -385,4 +385,26 @@ export class CMSService {
 				);
 		});
 	}
+
+	fetchCMSAppDetails(appId, queryParams) {
+		const defaults = {
+			Lang: this.localInfo.Lang
+		};
+
+		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
+
+		return new Promise((resolve, reject) => {
+			this.commsService.endpointGetCall('/api/v1/apps/' + appId,
+				CMSOption,
+				{}).subscribe(
+					(response: any) => {
+						resolve(response.Results);
+					},
+					error => {
+						console.log('fetchCMSAppDetails::error ', error);
+						reject('fetchCMSAppDetails error');
+					}
+				);
+		});
+	}
 }

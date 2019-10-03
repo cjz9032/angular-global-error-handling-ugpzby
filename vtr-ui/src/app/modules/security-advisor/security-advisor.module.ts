@@ -42,12 +42,17 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { faWifi as falWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
+import { faSadCry } from '@fortawesome/pro-light-svg-icons/faSadCry';
+import { faFrown } from '@fortawesome/free-regular-svg-icons/faFrown';
+import { faGrinBeamSweat } from '@fortawesome/pro-light-svg-icons/faGrinBeamSweat';
+import { faLaughWink } from '@fortawesome/free-regular-svg-icons/faLaughWink';
 import { CommonModalModule } from '../common/common-modal.module';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WidgetAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-antivirus/widget-antivirus.component';
 import { WidgetMcafeeStateComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-mcafee-state/widget-mcafee-state.component';
 import { WidgetMcafeeMetricComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-mcafee-metric/widget-mcafee-metric.component';
 import { WidgetCommonAntivirusComponent } from '../../components/pages/page-security-antivirus/widget/widget-common-antivirus/widget-common-antivirus.component';
+import { PercentIconPipe } from 'src/app/pipe/widget-security/percent-icon.pipe';
 
 library.add(faCircle);
 library.add(faCheck);
@@ -58,6 +63,11 @@ library.add(falCheck);
 library.add(falTimes);
 library.add(faChevronDown);
 library.add(faChevronUp);
+library.add(faSadCry);
+library.add(faFrown);
+library.add(faGrinBeamSweat);
+library.add(faLaughWink);
+
 
 @NgModule({
 	declarations: [
@@ -84,6 +94,7 @@ library.add(faChevronUp);
 		StatusTransformPipe,
 		PipeInstallPipe,
 		IconNamePipe,
+		PercentIconPipe,
 		WidgetAntivirusComponent,
 		WidgetMcafeeStateComponent,
 		WidgetMcafeeMetricComponent,

@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AppSearchService {
-	public scrollAnchor: string;
-	public readonly notification: Observable<string>;
+	public targetFeature: any = null;
 	private readonly scrollAnchors = {};
-	private notificationSubject: BehaviorSubject<string>;
+	private unSupportfeatureEvt: BehaviorSubject<string> = new BehaviorSubject('');
 	private loaded = false;
 	private isBetaUserPromise: any;
 	private betaRoutes = [];
+	private unsupportedFeatures;
+	private regionPromise: any;
 	public searchText = '';
 	public searchResults = [
 		/*{
@@ -43,10 +45,25 @@ export class AppSearchService {
 		private http: HttpClient,
 		private deviceService: DeviceService,
 		private configService: ConfigService,
-		private commonService: CommonService) {
-		this.notification = this.notificationSubject;
+		private commonService: CommonService,
+		private localInfoService: LocalInfoService) {
 		this.betaMenuMapPaths();
 		this.loadSearchIndex();
+		this.unsupportedFeatures = new Set();
+		const featuresArray = this.commonService.getLocalStorageValue(LocalStorageKey.UnSupportFeatures);
+		if (featuresArray !== undefined && featuresArray.length !== undefined) {
+			this.unsupportedFeatures = new Set(featuresArray);
+		}
+
+		this.regionPromise = new Promise((resolve) => {
+			this.localInfoService.getLocalInfo()
+			.then((result) => {
+				resolve(result.GEO);
+			})
+			.catch((e) => {
+				resolve('us');
+			});
+		});
 	}
 
 	betaMenuMapPaths() {
@@ -81,7 +98,21 @@ export class AppSearchService {
 			return false;
 		}
 
-		return await this.betaVerification(item);
+		const matchBeta = await this.betaVerification(item);
+		if (!matchBeta) {
+			return false;
+		}
+
+		if (item.regionSupport !== undefined) {
+			const region = await this.regionPromise;
+			if (item.regionSupport[0] === '-') {
+				return item.regionSupport.indexOf(region) === -1;
+			} else {
+				return item.regionSupport.indexOf(region) !== -1;
+			}
+		}
+
+		return true;
 	}
 
 	addFeatureToSet(dataSet, keyword, feature) {
@@ -205,16 +236,22 @@ export class AppSearchService {
 			}
 		);
 
-		this.searchResults = resultList;
-		return resultList;
+		this.searchResults = resultList.filter(item => !this.unsupportedFeatures.has(item.id));
 	}
 
-	activeScroll(anchorId: string) {
-		this.scrollAnchor = anchorId;
-		const handler = this.scrollAnchors[anchorId];
+	activeScroll() {
+		if (!this.targetFeature) {
+			return;
+		}
+
+		const handler = this.scrollAnchors[this.targetFeature.id];
 		if (handler) {
 			handler();
+			this.targetFeature = null;
+		} else {
+			this.collectError();
 		}
+
 	}
 
 	registerAnchor(anchorIdArray: Array<string>, scrollAction: any) {
@@ -235,5 +272,25 @@ export class AppSearchService {
 		anchorIdArray.forEach((anchorId) => {
 			this.scrollAnchors[anchorId] = null;
 		});
+	}
+
+	private collectError() {
+		if (this.targetFeature) {
+			this.unsupportedFeatures.add(this.targetFeature.id);
+			this.commonService.setLocalStorageValue(LocalStorageKey.UnSupportFeatures, Array.from(this.unsupportedFeatures));
+			this.searchResults = this.searchResults.filter(item => !this.unsupportedFeatures.has(item.id));
+			this.unSupportfeatureEvt.next(this.targetFeature.desc);
+			this.targetFeature = null;
+		}
+	}
+
+	isScrollPending(anchorIdArray: string[]) {
+		if (this.targetFeature && anchorIdArray.indexOf(this.targetFeature.id) !== -1) {
+			return true;
+		}
+	}
+
+	getUnsupportFeatureEvt() {
+		return this.unSupportfeatureEvt.asObservable();
 	}
 }

@@ -1,4 +1,13 @@
 <div class="vtr-page-lightingcustomize vtr-page container-fluid">
+		<div class="row" *ngIf="!isOnline">
+				<div class="col col-12 px-40 pb-40">
+					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
+						[isButtonVisible]="false" id="dashboard-btn-connectivity">
+					</vtr-widget-offline-info>
+				</div>
+			</div>
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"

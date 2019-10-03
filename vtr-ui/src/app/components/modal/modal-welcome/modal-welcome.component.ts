@@ -4,9 +4,9 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-import { HttpClient } from '@angular/common/http';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import {DeviceService}  from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -23,8 +23,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	metrics: any;
 	data: any = {
 		page2: {
-			title: 'How will you use it?',
-			subtitle: 'Click on one of these uses to tell is how you will use this machine?',
+			title: '',
+			subtitle: '',
 			radioValue: null,
 		}
 	};
@@ -37,10 +37,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	interestCopy = this.interests.slice(0, 8);
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
+	machineInfo: any;
 	constructor(
+		private deviceService: DeviceService,
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
-		private http: HttpClient,
 		public commonService: CommonService,
 		private timerService: TimerService) {
 		this.metrics = shellService.getMetrics();
@@ -48,6 +49,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		const self = this;
 		shellService.getMetricsPolicy((result) => {
 			self.privacyPolicy = result;
+		});
+		deviceService.getMachineInfo().then(val => {
+			this.machineInfo = val;
 		});
 	}
 

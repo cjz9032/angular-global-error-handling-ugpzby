@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
-import { EMPTY } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -44,9 +43,6 @@ export class DeviceService {
 		}
 		this.initIsArm();
 		this.initshowPrivacy();
-		this.getMachineInfo().then((info) => {
-			this.isSMode = info && info.isSMode;
-		});
 	}
 
 	private initIsArm() {
@@ -87,6 +83,8 @@ export class DeviceService {
 		if (this.hypSettings) {
 			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
 				this.showPrivacy = (privacy === 'enabled');
+			}, (error) => {
+				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
 			});
 		}
 	}
@@ -104,6 +102,7 @@ export class DeviceService {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
+					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {

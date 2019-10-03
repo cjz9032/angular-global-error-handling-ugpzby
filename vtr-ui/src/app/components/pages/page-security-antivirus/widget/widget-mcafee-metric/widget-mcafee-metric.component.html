@@ -9,21 +9,24 @@
   <div>
       <div class="row inner no-gutters">
           <img class="logo col-2"
-          [src]=" '../../../../../../assets/icons/SecurityAdvisor/Files_Scanned.svg' | svgInline | async" />
+          [src]=" '/assets/icons/SecurityAdvisor/Files_Scanned.svg' | svgInline | async" />
           <div class="height-line"></div>
           <div *ngIf="!showMetricButton" class="col-8 align-self-center">
               <div class="number" [innerHTML]="metricsList[0]"></div>
               <div class="subtitle" [innerHTML]="'security.antivirus.mcafee.fileScan' | translate"></div>
           </div>
-          <button *ngIf="showMetricButton" 
-            title="{{'security.antivirus.mcafee.launch' | translate}}"
+          <div class="col-8 row justify-content-center align-items-center">
+            <button *ngIf="showMetricButton" 
+            class="align-items-center mw-100"
+            title="{{'security.antivirus.mcafee.startFileScan' | translate}}"
             (click)="common.launch()"
             [innerHTML]="'security.antivirus.mcafee.startFileScan' | translate">
           </button>
+          </div>    
       </div>
       <div *ngIf="!showMetricButton" class="row inner no-gutters">
           <img class="logo col-2"
-          [src]=" '../../../../../../assets/icons/SecurityAdvisor/Virus_White.svg' | svgInline | async" />
+          [src]="'/assets/icons/SecurityAdvisor/Virus_White.svg' | svgInline | async" />
           <div class="height-line"></div>
           <div class="col-8 align-self-center">
               <div class="number" [innerHTML]="metricsList[1]"></div>
@@ -32,7 +35,7 @@
       </div>
       <div *ngIf="!showMetricButton" class="row inner no-gutters">
           <img class="logo col-2"
-          [src]=" '../../../../../../assets/icons/SecurityAdvisor/Hacker_Icon.svg' | svgInline | async" />
+          [src]=" '/assets/icons/SecurityAdvisor/Hacker_Icon.svg' | svgInline | async" />
           <div class="height-line"></div>
           <div class="col-8 align-self-center">
               <div class="number" [innerHTML]="metricsList[2]"></div>
@@ -41,7 +44,7 @@
       </div>
       <div *ngIf="!showMetricButton" class="row inner no-gutters">
           <img class="logo col-2"
-          [src]=" '../../../../../../assets/icons/SecurityAdvisor/Files_Shredded.svg' | svgInline | async" />
+          [src]=" '/assets/icons/SecurityAdvisor/Files_Shredded.svg' | svgInline | async" />
           <div class="height-line"></div>
           <div class="col-8 align-self-center">
               <div class="number" [innerHTML]="metricsList[3]"></div>

@@ -18,15 +18,37 @@
 									[account]="account"
 									[common]="common">
 								</vtr-home-security-after-signup>
-								<div class="pt-5"
-									*ngIf="account?.state !== 'local'">
-									<img class="w-100 img" src="../../../../assets/images/connected-home-security/card-gamestore.png" alt="" srcset="">
-								</div>
 								<vtr-home-security-content *ngIf="account?.state === 'local'"
 									page="homeSecurity"
 									[location]="homeSecurityLocation"
 									[permission]="permission">
 								</vtr-home-security-content>
+								<div class="article-card pt-5 col-12 mt-5"
+										*ngIf="account?.state !== 'local'">
+									<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
+										[img]="cardContentPositionA.FeatureImage"
+										[title]="cardContentPositionA.Title"
+										[logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionType]="cardContentPositionA.ActionType"
+										[actionLink]="cardContentPositionA.ActionLink" [type]="'article'"
+										[ratioX]="4" [ratioY]="4"
+										ariaLabel="chs-banner-bottom-article"
+										containerCardId="chs-banner-bottom-article">
+									</vtr-container-card>
+								</div>
+								<div class="bottom-content w-100" hidden>
+									<div class="d-none d-md-block">
+										<hr>
+										<vtr-widget-powered-by-info
+											[title]="'homeSecurity.overview.poweredBy'"
+											[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+											[imgUrl]="'assets/images/coronet-logo.svg'"
+											privacyUrl="https://homesecurity.coro.net/"
+											termsUrl="https://homesecurity.coro.net/">
+										</vtr-widget-powered-by-info>
+									</div>
+								</div>
 							</div>
                         </div>
                     </div>
@@ -40,17 +62,16 @@
 										<div class="container-fluid">
 											<div class="row">
 												<div class="col">
-													<div class="title">
+													<div class="subTitle">
 														{{'security.homeprotection.securityhealth.title' | translate}}
 													</div>
 													<div class="description"
 														*ngIf="homeSecurityLocation?.isLocationServiceOn">
 														<span
 															*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
-															<a vtrMetrics
-																id="sa-ws-lnk-sh-learnmore"
+															<a  id="chs-lnk-sh-learnmore"
+																vtrMetrics
 																metricsEvent="ArticleClick"
-																metricsItem="learnMoreAboutDevicePosture"
 																metricsItemPosition="3"
 																metricsPageNumber="1"
 																[metricsItemID]="devicePostureArticleId"
@@ -83,10 +104,19 @@
 													<!--Start of Security Health Advisor When LWS is disabled-->
 													<div class="security-health-disabled"
 														*ngIf="!homeSecurityLocation?.isLocationServiceOn">
-														<div class="security-health-disabled-list">
-															<div class="peace-of-mind">
-																{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
+														<div class="security-health-disabled-list d-flex flex-column align-items-center justify-content-center">
+															<div class="peace-of-mind mb-5" [innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
 															</div>
+															<vtr-ui-button
+																[ngClass]="{'disable': homeSecurityLocation?.isLoading}"
+																metricsItem="enableLocationSecurityHealth"
+																metricsEvent="featureClick"
+																(click)="dialogService?.openCHSPermissionModal()"
+																[isDisabled]="homeSecurityLocation?.isLoading"
+																linkId="chs-btn-enableLocation"
+																[title]="'security.homeprotection.securityhealth.button' | translate"
+																[label]="'security.homeprotection.securityhealth.button' | translate">
+															</vtr-ui-button>
 														</div>
 														<div class="coronet-section">
 															<div class="row">
@@ -95,7 +125,7 @@
 																<div class="p-0">
 																	<div class="pull right">
 																		<img class="coronet_logo_teal"
-																			src="../../../../assets/images/coronet-icon.png" />
+																			[src]="'assets/images/coronet-logo.svg' | svgInline | async"/>
 																	</div>
 																</div>
 															</div>
@@ -110,20 +140,37 @@
 							</div>
 							<div class="row article-card">
 								<div class="col col-12">
-									<vtr-container-card
-										[ratioX]="4"
-										[ratioY]="2"
+									<vtr-container-card order="2" [itemID]="cardContentPositionB.Id"
+										[img]="cardContentPositionB.FeatureImage"
+										[title]="cardContentPositionB.Title"
+										[logoText]="cardContentPositionB.BrandName"
+										[action]="cardContentPositionB.Action"
+										[actionType]="cardContentPositionB.ActionType"
+										[actionLink]="cardContentPositionB.ActionLink" [type]="'article'"
+										[ratioX]="4" [ratioY]="4"
 										type="corner-article"
 										cornerShift="large"
-										order="1"
 										sideFlag="r"
-										[containerCardId]="'chs-modal'">
+										ariaLabel="chs-modal-right-article"
+										containerCardId="chs-modal-right-article">
 									</vtr-container-card>
 								</div>
 							</div>
                         </div>
                     </div>
-                </div>
+				</div>
+				<div class="bottom-content w-100" hidden>
+					<div class="d-block d-md-none">
+						<hr>
+						<vtr-widget-powered-by-info
+							[title]="'homeSecurity.overview.poweredBy'"
+							[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+							privacyUrl="https://homesecurity.coro.net/"
+							termsUrl="https://homesecurity.coro.net/"
+							[imgUrl]="'assets/images/coronet-logo.svg'">
+						</vtr-widget-powered-by-info>
+					</div>
+				</div>
             </div>
         </div>
     </div>

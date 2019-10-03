@@ -3,9 +3,9 @@
 		*ngIf="label">
 		<button *ngIf="alreadyJoinGroup !== 'joined'"
 			title="{{tooltip?label:''}}"
-			[disabled]="isDisabled || isLoading"
+			[disabled]="isDisabled"
 			type="button"
-			class="btn button"
+			class="btn button {{getButtonColor(buttonColor)}}"
 			vtrMetrics
 			[routerLink]="routerPath"
 			routerLinkActive="active"
@@ -24,9 +24,7 @@
 						'text-upper-case': upperCaseLabel,
 						'regular-width': isRegular,
 						'min-height': btnHeight,
-						'btn-gradient': isGradient,
-						'btn-red': isRed,
-						'loading': isLoading}"
+						'btn-gradient': isGradient}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
 			title="{{tooltip?label:''}}"
@@ -48,7 +46,5 @@
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>
-		<div *ngIf="isLoading" class="loadingIcon spinner-border text-primary progress-spinner" role="status">
-		</div>
 	</div>
 </div>

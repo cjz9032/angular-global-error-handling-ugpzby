@@ -1,6 +1,6 @@
 <div class="vtr-home-security-card container-fluid">
 	<div class="row content">
-		<div class="col-lg-6 col-12 container-fluid">
+		<div class="col-lg-6 col-12 container-fluid p-5">
 			<div class="title">
 				<span [innerHTML]="'homeSecurity.card.startTrialTitle' | translate"></span>
 			</div>
@@ -9,17 +9,18 @@
 			</div>
 			<div class="button-box">
 				<vtr-ui-button
+					[ngClass]="{'disable': location?.isLoading}"
 					metricsEvent="featureClick"
 					metricsItem="startTrial"
 					(click)="openTrialModal()"
 					[title]="'homeSecurity.card.startTrial' | translate"
 					[label]="'homeSecurity.card.startTrial' | translate"
-					[isDisabled]="location?.isLocationServiceOn === undefined"
+					[isDisabled]="location?.isLoading"
 					linkId="chs-card-btn-startTrial">
 				</vtr-ui-button>
 			</div>
 		</div>
-		<div class="col-lg-6 col-12 container-fluid">
+		<div class="col-lg-6 col-12 container-fluid p-5">
 			<div class="title">
 				<span [innerHTML]="'homeSecurity.card.joinTitle' | translate"></span>
 			</div>
@@ -28,11 +29,12 @@
 			</div>
 			<div class="button-box">
 				<vtr-ui-button class="join"
+					[ngClass]="{'disable': location?.isLoading}"
 					metricsEvent="featureClick"
 					metricsItem="joinGroup"
 					[title]="'homeSecurity.card.join' | translate"
 					[label]="'homeSecurity.card.join' | translate"
-					[isDisabled]="location?.isLocationServiceOn === undefined"
+					[isDisabled]="location?.isLoading"
 					(onClick)="joinGroup()"
 					linkId="chs-card-btn-joinGroup">
 				</vtr-ui-button>

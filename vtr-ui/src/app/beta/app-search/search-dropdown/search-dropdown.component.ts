@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
-import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-search-dropdown',
@@ -15,7 +15,8 @@ export class SearchDropdownComponent implements AfterViewInit {
 	private searchTimer: any;
 	public searchTips = 'Search Query';
 	constructor(
-		public searchService: AppSearchService
+		public searchService: AppSearchService,
+		private router: Router
 	) {
 	}
 
@@ -36,11 +37,16 @@ export class SearchDropdownComponent implements AfterViewInit {
 	}
 
 	onResultClick(item: any) {
-		this.searchService.activeScroll(item.id);
+		this.searchService.targetFeature = item;
+		this.router.navigate([item.route]);
+		setTimeout(() => {
+			this.searchService.activeScroll();
+		}, 0);
 	}
 
 	onCleanClick() {
-		this.searchService.searchText = '';
+		this.searchInput.nativeElement.value = '';
+		this.onTextChange('');
 	}
 
 	onTextChange(keywords: string) {

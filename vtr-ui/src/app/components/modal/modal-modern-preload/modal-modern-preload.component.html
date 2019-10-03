@@ -30,7 +30,7 @@
 						<div class="custom-control custom-checkbox">
 							<input type="checkbox" class="custom-control-input" [(ngModel)]="app.isChecked"
 								id="modern-preload-app-{{app.udcId}}"
-								[disabled]="downloadButtonStatus === downloadButtonStatusEnum.DOWNLOADING"
+								[disabled]="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING"
 								attr.aria-label="modern-preload-app-{{app.udcId}}" (change)="checkedApp()" />
 							<label class="custom-control-label" for="modern-preload-app-{{app.udcId}}">
 								<div class="app-logo">
@@ -75,27 +75,27 @@
 					</div>
 				</div>
 				<div class="button-content mb-4">
-					<div class="btn-box mr-5" [ngSwitch]="downloadButtonStatus">
-						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.DOWNLOAD"
+					<div class="btn-box mr-5" [ngSwitch]="modernPreloadService.DownloadButtonStatus">
+						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOAD"
 							(onClick)="installEntitledApp()" metricsEvent="FeatureClick" metricsParent="Modern Preload"
 							metricsItem="btn.Download" [isFullWidth]="true" [isDisabled]="checkedAppList.length === 0"
 							[label]="'modernPreload.download' | translate">
 						</vtr-ui-button>
-						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.RESTART_DOWNLOAD"
+						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.RESTART_DOWNLOAD"
 							(onClick)="installEntitledApp()" metricsEvent="FeatureClick" metricsParent="Modern Preload"
 							metricsItem="btn.RestartDownload" [isFullWidth]="true"
 							[isDisabled]="checkedAppList.length === 0" [label]="'modernPreload.restartDownload' | translate">
 						</vtr-ui-button>
-						<vtr-ui-button *ngSwitchCase="downloadButtonStatusEnum.DOWNLOADING" [isFullWidth]="true"
+						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOADING" [isFullWidth]="true"
 							[isDisabled]="true" [label]="'modernPreload.downloading' | translate">
 						</vtr-ui-button>
 					</div>
-					<a *ngIf="downloadButtonStatus !== downloadButtonStatusEnum.DOWNLOADING" vtrMetrics
+					<a *ngIf="modernPreloadService.DownloadButtonStatus !== DownloadButtonStatusEnum.DOWNLOADING" vtrMetrics
 						metricsItem="ModernPreload.skipButton" metricsEvent="FeatureClick"
 						metricsParent="Modern Preload" id="modern-preload-skip-button"
 						attr.aria-label="modern-preload-skip-button" href="javascript:;" class="btn-skip"
 						(click)="closeModal()" [innerHTML]="'modernPreload.skip' | translate"></a>
-					<a *ngIf="downloadButtonStatus === downloadButtonStatusEnum.DOWNLOADING" vtrMetrics
+					<a *ngIf="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING" vtrMetrics
 						metricsItem="ModernPreload.CancelButton" metricsEvent="FeatureClick"
 						metricsParent="Modern Preload" id="modern-preload-cancel-button"
 						attr.aria-label="modern-preload-cancel-button" href="javascript:;" class="btn-skip"

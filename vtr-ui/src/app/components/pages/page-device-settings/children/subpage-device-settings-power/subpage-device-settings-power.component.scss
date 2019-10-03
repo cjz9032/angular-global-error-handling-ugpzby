@@ -177,6 +177,9 @@
 			position: absolute;
 			top: 0.5rem;
 			margin-right: 0.5rem;
+			z-index: 0;
+			opacity: 1;
+			outline: 0;
 		}
 		label {
 			color: $shade_darker;

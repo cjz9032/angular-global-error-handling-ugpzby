@@ -82,8 +82,11 @@
 				width: 1.5rem;
 				height: 1.5rem;
 				position: absolute;
-				top: 0.4rem;
+				top: 0.5rem;
 				margin-right: 0.5rem;
+				z-index: 0;
+				opacity: 1;
+				outline: 0;
 			}
 			label {
 				color: $shade_darker;

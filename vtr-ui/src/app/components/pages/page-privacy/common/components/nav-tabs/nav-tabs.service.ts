@@ -10,14 +10,14 @@ export interface FeatureSettings {
 	title?: string;
 }
 
-enum features {
+export enum Features {
 	breaches = 'breaches',
 	trackers = 'trackers',
 	passwords = 'passwords',
 }
 
 type TabsConfig = {
-	[feature in features]: {
+	[feature in Features]: {
 		[status in FeaturesStatuses]: FeatureSettings
 	};
 };
