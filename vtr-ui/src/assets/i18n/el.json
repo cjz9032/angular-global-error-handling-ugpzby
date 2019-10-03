@@ -81,7 +81,7 @@
                     "line2": "<b>Επισκόπηση διαχείρισης δυνατοτήτων</b> <br> Ορισμένες δυνατότητες δεν είναι διαθέσιμες σε όλες τις συσκευές",
                     "line3": "<b>Υπερχρονισμός CPU </b><br> Αυξήστε τη μέγιστη ταχύτητα του επεξεργαστή σας",
                     "line4": "<b>Υπερχρονισμός RAM </b><br> Αυξήστε τη μέγιστη ταχύτητα της μνήμης σας",
-                    "line5": "<b>Ενίσχυση δικτύου </b><br> Προτεραιότητα κυκλοφορίας δικτύου για το παιχνίδι που παίζετε",
+                    "line5": "<b>Ενίσχυση δικτύου </b><br> Προτεραιότητα της κυκλοφορίας δικτύου για το παιχνίδι που παίζετε",
                     "line6": "<b>Dolby </b><br> Συντονίστε τον ήχο σας ειδικά για τα παιχνίδια με την τεχνολογία Dolby",
                     "line7": "<b>Υβριδική λειτουργία </b><br> Απενεργοποίηση προηγμένων ρυθμίσεων GPU, όταν δεν παίζετε, για ενισχυμένη απόδοση μπαταρίας",
                     "line8": "<b>Γρήγορη φόρτιση </b><br> Παιχνίδι εν κινήσει με ταχύτερη φόρτιση της μπαταρίας",
@@ -107,6 +107,15 @@
                     "sub1": "Υποστήριξη",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "Χρώμα"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "Δεν υπάρχουν εφαρμογές σε λειτουργία για προσθήκη",
                 "body": "Θα εμφανιστούν μόνο οι εφαρμογές που εκτελούνται προς το παρόν. Ανοίξτε μια εφαρμογή που θέλετε να προσθέσετε και στην οποία να επιστρέψετε."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "Δυνατότητα προσθήκης έως 5 εφαρμογών επιπλέον για ενίσχυση",
                     "part2": "από",
                     "part3": "προστέθηκε"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -1608,7 +1763,7 @@
                 "Blazing": "Φοβερή ταχύτητα",
                 "BlazingText": "Βελτιστοποιημένο λογισμικό προστασίας από ιούς που δεν θα επιβραδύνει ή θα διακόψει την εμπειρία του Lenovo Vantage",
                 "privacyTerms": "/   <tag>Πολιτική απορρήτου</tag>  |  <tag>Όροι παροχής υπηρεσίας</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Δεν διατίθεται"
             },
             "windowsDefender": {
                 "optimallyProtected": "Φαίνεται ότι αυτήν την περίοδο χρησιμοποιείτε το Windows Defender. Δεν είναι κακή επιλογή, αλλά για την απόλυτη ασφάλεια από τα ransomware, το κακόβουλο λογισμικό και τους ιούς, έχουμε συνεργαστεί με τη <b>McAfee</b> για να σας προσφέρουμε βραβευμένη ασφάλεια έτσι ώστε να μπορείτε <b>να προστατεύσετε αυτό που έχει σημασία.</b>",
@@ -1654,8 +1809,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Σαρωτής ευπάθειας McAfee ",
                 "report": "Η Έκθεση Προστασίας από Απειλές σας ",
-                "trialContent": "Αξιοποιήσατε σωστά τη δοκιμή του λογισμικού προστασίας από ιούς McAfee. Αλλά με μόλις {{remainingDays}} ημέρες μέχρι τη λήξη της δοκιμής σας, κινδυνεύετε να αφήσετε τον υπολογιστή σας ευάλωτο. Μην ρισκάρετε.<tag>Εγγραφή τώρα για συνδρομή</tag>",
-                "subscribeContent": "Αξιοποιήσατε σωστά το McAfee. Αλλά με μόλις {{remainingDays}} ημέρες να απομένουν, κινδυνεύετε να αφήσετε τον υπολογιστή σας ευάλωτο. Μην ρισκάρετε.<tag>Εγγραφή τώρα για συνδρομή</tag>",
+                "trialContent": "Αξιοποιήσατε σωστά τη δοκιμή του λογισμικού προστασίας από ιούς McAfee. Αλλά με μόλις {{remainingDays}} ημέρες μέχρι τη λήξη της δοκιμής σας, κινδυνεύετε να αφήσετε τον υπολογιστή σας ευάλωτο. Μην ρισκάρετε. <tag>Εγγραφή τώρα για συνδρομή</tag>",
+                "subscribeContent": "Αξιοποιήσατε σωστά το McAfee. Αλλά με μόλις {{remainingDays}} ημέρες να απομένουν, κινδυνεύετε να αφήσετε τον υπολογιστή σας ευάλωτο. Μην ρισκάρετε. <tag>Εγγραφή τώρα για συνδρομή</tag>",
                 "subscribeNow": "Εγγραφή τώρα για συνδρομή",
                 "fileScan": "Αρχεία που έχουν σαρωθεί",
                 "Viruses": "Ιοί που έχουν εξαλειφθεί",
@@ -2574,5 +2729,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

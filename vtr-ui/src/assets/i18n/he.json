@@ -81,12 +81,12 @@
                     "line2": "<b>סקירה כללית של ניהול תכונות</b> <br> חלק מהתכונות אינן זמינות בכל המכשירים",
                     "line3": "<b>אוברקלוקינג של מעבד </b><br> הגבירו את המהירות המרבית של המעבד",
                     "line4": "<b>אוברקלוקינג של RAM </b><br> הגבירו את המהירות המרבית של הזיכרון",
-                    "line5": "<b>שיפור הרשת </b><br> קבעו סדר עדיפויות לתעבורה ברשת עבור המשחק שבו אתם משחקים",
+                    "line5": "<b>שיפור הרשת </b><br> קבעו סדר עדיפויות לתעבורת רשת למשחק שבו אתם משחקים",
                     "line6": "<b>Dolby </b><br> כווננו את השמע באופן ספציפי למשחק עם טכנולוגיית Dolby",
                     "line7": "<b>מצב היברידי </b><br> השביתו את ההגדרות המתקדמות של GPU כשאתם לא משחקים כדי לשפר את ביצועי הסוללה",
                     "line8": "<b>טעינה מהירה </b><br> שחקו זמן רב יותר בדרכים עם טעינת סוללה מהירה יותר",
                     "line9": "<b>מנעול משטח מגע </b><br> הימנעו מהזנות מוטעות באמצעות השבתת משטח המגע בזמן שאתם משחקים",
-                    "line10": "<b>סגירה אוטומטית </b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
+                    "line10": "<b>סגירה אוטומטית</b><br> נקו תהליכים שאינם נדרשים למשחק לפני שאתם מתחילים לשחק כדי לשפר את המשאבים הזמינים של המערכת",
                     "line11": "<b>מצב תרמי </b><br> הגדרת פרופיל ההתקן המועדף למהירות המאוורר ובקרת הצינון"
                 },
                 "systemInfo": {
@@ -107,6 +107,15 @@
                     "sub1": "תמיכה",
                     "sub2": "‏Facebook‏",
                     "sub3": "‏Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "צבע"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "אין אפליקציות פועלות שניתן להוסיף",
                 "body": "יוצגו רק אפליקציות שפועלות כעת. הפעילו אפליקציה שברצונכם להוסיף וחזרו."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "ניתן להוסיף עד 5 יישומים נוספים להאצה",
                     "part2": "מתוך",
                     "part3": "נוסף"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -1608,7 +1763,7 @@
                 "Blazing": "מהירות שאין כמוה",
                 "BlazingText": "אנטי-וירוס משופר שלא יאט או יפריע לחווית Lenovo Vantage שלכם",
                 "privacyTerms": "/   <tag>מדיניות פרטיות</tag>  |  <tag>תנאי השירות</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "לא זמין"
             },
             "windowsDefender": {
                 "optimallyProtected": "נראה שאתם משתמשים כרגע ב-Windows Defender. בחירה לא רעה, אך למען הבטיחות האולטימטיבית נגד תוכנות כופר, תוכנות זדוניות ווירוסים, התחברנו אל <b>McAfee</b> כדי להעניק לכם אבטחה עטורת פרסים כך שתוכלו <b>להגן על מה שחשוב.</b>",
@@ -1654,8 +1809,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "סורק פגיעויות של McAfee ",
                 "report": "דוח הגנה מפני איומים ",
-                "trialContent": "נהניתם מגרסת הניסיון של האנטי-וירוס של McAfee. אבל נותרו רק {{remainingDays}} ימים עד תום תקופת הניסיון, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן.<tag>הירשמו כעת</tag>",
-                "subscribeContent": "נהניתם מגרסת הניסיון של McAfee. אבל נותרו רק {{remainingDays}} ימים, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן.<tag>הירשמו כעת</tag>",
+                "trialContent": "נהניתם מגרסת הניסיון של האנטי-וירוס של McAfee. אבל נותרו רק {{remainingDays}} ימים עד תום תקופת הניסיון, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן. <tag>הירשמו כעת</tag>",
+                "subscribeContent": "נהניתם מגרסת הניסיון של McAfee. אבל נותרו רק {{remainingDays}} ימים, כך שאתם מסתכנים בכך שהמחשב שלכם יהיה שוב פגיע. חבל להסתכן. <tag>הירשמו כעת</tag>",
                 "subscribeNow": "הירשמו כעת",
                 "fileScan": "קבצים שנסרקו",
                 "Viruses": "וירוסים הושמדו",
@@ -2574,5 +2729,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "rtl",
+    "dirClass": "rtl"
 }

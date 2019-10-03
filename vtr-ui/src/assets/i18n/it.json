@@ -86,7 +86,7 @@
                     "line7": "<b>Modalità ibrida </b><br> Dis. imp. avanz. GPU quando il gioco non è in esec. per migliorare le prestazioni della batteria",
                     "line8": "<b>Carica rapida </b><br> Maggiore autonomia per giocare in viaggio con caricamenti più rapidi della batteria",
                     "line9": "<b>Blocco touchpad </b><br> Previeni input errati disabilitando il touchpad quando giochi",
-                    "line10": "<b>Chiusura automatica </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
+                    "line10": "<b>Chius. auto </b><br> Termina i processi non richiesti dai videogame prima di iniziare a giocare per ottimizzare le risorse di sistema disponibili",
                     "line11": "<b>Modalità termica </b><br> Imp. profilo dispositivo preferito per velocità ventola e controllo raffreddamento"
                 },
                 "systemInfo": {
@@ -107,6 +107,15 @@
                     "sub1": "Supporto",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "Colore"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "Nessuna app in esecuzione da aggiungere",
                 "body": "Verranno visualizzate solo le app in esecuzione. Avvia un'app che desideri aggiungere e riprova."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "Puoi aggiungere fino a 5 app",
                     "part2": "di",
                     "part3": "aggiunte"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -1608,7 +1763,7 @@
                 "Blazing": "Velocità senza paragoni",
                 "BlazingText": "Antivirus ottimizzato che non interferirà in alcun modo con la tua esperienza Lenovo Vantage",
                 "privacyTerms": "/   <tag>Informativa sulla privacy</tag>  |  <tag>Termini di servizio</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Non disponibile"
             },
             "windowsDefender": {
                 "optimallyProtected": "Al momento stai utilizzando Windows Defender. Una buona scelta, ma per garantirti sicurezza assoluta contro ransomware, malware e virus ci siamo avvalsi della collaborazione di <b>McAfee</b> per offrirti una sicurezza di livello superiore e consentirti di <b>proteggere al meglio ciò che più conta per te.</b>",
@@ -1654,8 +1809,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Report di protezione dalle minacce ",
-                "trialContent": "Stai facendo buon uso della tua versione di prova dell'antivirus McAfee. Restano però solo {{remainingDays}} giorni prima della scadenza della versione di prova, e il tuo computer potrebbe presto essere vulnerabile alle minacce. Non correre questo rischio.<tag>Abbonati ora</tag>",
-                "subscribeContent": "Stai facendo buon uso del tuo antivirus McAfee. Restano però solo {{remainingDays}} giorni prima della scadenza, e il tuo computer potrebbe presto essere vulnerabile alle minacce. Non correre questo rischio.<tag>Abbonati ora</tag>",
+                "trialContent": "Stai facendo buon uso della tua versione di prova dell'antivirus McAfee. Restano però solo {{remainingDays}} giorni prima della scadenza della versione di prova, e il tuo computer potrebbe presto essere vulnerabile alle minacce. Non correre questo rischio. <tag>Abbonati ora</tag>",
+                "subscribeContent": "Stai facendo buon uso del tuo antivirus McAfee. Restano però solo {{remainingDays}} giorni prima della scadenza, e il tuo computer potrebbe presto essere vulnerabile alle minacce. Non correre questo rischio. <tag>Abbonati ora</tag>",
                 "subscribeNow": "Abbonati ora",
                 "fileScan": "File esaminati",
                 "Viruses": "Virus eliminati",
@@ -2574,5 +2729,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

@@ -81,12 +81,12 @@
                     "line2": "<b>Översikt över funktionshantering</b> <br> Vissa funktioner är inte tillgängliga på alla enheter",
                     "line3": "<b>CPU-överklockning </b><br> Öka maxhastigheten för processorn",
                     "line4": "<b>RAM-överklockning </b><br> Öka maxhastigheten för minnet",
-                    "line5": "<b>Nätverksprestanda </b><br> Prioritera nätverkstrafik för det aktuella spelet",
+                    "line5": "<b>Nätverkspre-standa </b><br> Prioritera nätverkstrafik för det aktuella spelet",
                     "line6": "<b>Dolby </b><br> Specialanpassa ljudet för spel med Dolby-teknik",
                     "line7": "<b>Hybridläge </b><br> Inaktivera avancerade GPU-inställningar när du inte spelar för att förlänga batteritiden",
                     "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
-                    "line10": "<b>Stäng automatiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
+                    "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
                     "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
                 },
                 "systemInfo": {
@@ -107,6 +107,15 @@
                     "sub1": "Support",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "Färg"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "Det finns inga aktiva appar att lägga till",
                 "body": "Endast appar som är aktiva visas. Öppna en app som du vill lägga till och återkom."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "Lägg till upp till 5 appar",
                     "part2": "av",
                     "part3": "har lagts till"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -1608,7 +1763,7 @@
                 "Blazing": "Blixtsnabb hastighet",
                 "BlazingText": "Optimerat antivirusprogram som inte saktar ned eller stör din Lenovo Vantage-upplevelse",
                 "privacyTerms": "/   <tag>Sekretesspolicy</tag>  |  <tag>Användarvillkor</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Inte tillgänglig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt</b>.",
@@ -1654,8 +1809,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee sårbarhetssökning ",
                 "report": "Din hotskyddsrapport ",
-                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det.<tag>Prenumerera nu</tag>",
-                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det.<tag>Prenumerera nu</tag>",
+                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
+                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
                 "subscribeNow": "Prenumerera nu",
                 "fileScan": "Filer skannade",
                 "Viruses": "Virus eliminerade",
@@ -2574,5 +2729,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }
