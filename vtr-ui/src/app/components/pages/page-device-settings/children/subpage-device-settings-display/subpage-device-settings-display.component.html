@@ -23,8 +23,7 @@
 				(toggle)="onCardCollapse($event)"
 				[collapseLinkId]="'device-settings-display'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3"
-						*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
+					<li class="pt-3" *ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
 							componentName="Display color temperature"
@@ -49,8 +48,11 @@
 									</vtr-display-color-temp>
 									<div class="row">
 										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4"
-											id="day-time-color-temp-note" attr.aria-label="day-time-color-temp-note" >
-											<p>{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
+											id="day-time-color-temp-note" 
+											tabindex="1"
+											attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
+											<p>
+												{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
 											</p>
 										</div>
 									</div>

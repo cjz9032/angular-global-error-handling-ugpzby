@@ -31,19 +31,21 @@
 						</div>
 						<div class="col">
 							<div class="title"
+								tabindex="1"
 								id="{{switchId}}-title"
-								attr.aria-label="{{switchId}}-title">{{ title }}</div>
+								attr.aria-label="one {{switchId}}-title">{{ title }}</div>
 							<span>
 								<div class="caption"
 									id="{{switchId}}-caption"
-									attr.aria-label="{{switchId}}-caption"
+									tabindex="1"
+									attr.aria-label="two {{switchId}}-caption"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
-							<!-- {{ caption }} -->
+							<!-- {{ caption. add it only if there is a readmore, else comment it}} -->
+							<!-- attr.aria-label="hello {{'read_more_'+ switchId}}" --> 
 							<span id="{{'read_more_'+ switchId}}"
 								tabindex="1"
-								attr.aria-label="{{'read_more_'+ switchId}}"
 								class="read-more"
 								*ngIf="!contentExpand"
 								(click)="onReadMoreClick($event)"
@@ -63,7 +65,7 @@
 					*ngIf="resetText.length > 0">
 					<button id="{{switchId+ '-reset-btn'}}"
 						tabindex="1"
-						attr.aria-label="{{switchId+ '-reset-btn'}}"
+						attr.aria-label="three  {{switchId+ '-reset-btn'}}"
 						type="button"
 						[disabled]="disabledAll"
 						class="btn"
@@ -85,14 +87,14 @@
 						[isSwitchDisable]="isDisabled"
 						[tabIndex]="1"
 						id="{{switchId}}-onOffButton"
-						aria-label="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
+						attr.aria-label="four {{switchId}}-onOffButton"></vtr-ui-switch-onoff>
 				</div>
 				<div *ngIf="!isSwitchVisible && linkText"
 					class="p-0 link-text">
 					<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
 						tabindex="1"
 						id="{{switchId+ '_click_link'}}"
-						attr.aria-label="{{switchId+ '_click_link'}}"
+						attr.aria-label="five {{switchId+ '_click_link'}}"
 						href="javascript:void(0)"
 						(click)="onLinkClick(linkPath)"
 						(keydown.enter)="onLinkClick(linkPath)"
@@ -112,7 +114,7 @@
 					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
 					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
 					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}"
-						attr.aria-label="{{switchId+ '_tooltip_right_icon'}}"
+						attr.aria-label="six {{switchId+ '_tooltip_right_icon'}}"
 						class="right-icon"
 						tabindex="1"
 						triggers="click:blur keydown.enter:keydown.Tab"
@@ -129,7 +131,7 @@
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
 					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
 						tabindex="1"
-						attr.aria-label="{{switchId+ '_smartTooltip_right_icon'}}"
+						attr.aria-label="seven {{switchId+ '_smartTooltip_right_icon'}}"
 						class="right-icon"
 						triggers="click:blur keydown.enter:keydown.Tab"
 						placement="auto"
@@ -144,12 +146,11 @@
 				<div class="p-0"
 					*ngIf="rightIcon.length > 0 && voice">
 					<fa-icon vtrMetrics
-						tabindex="1"
 						metricsEvent="FeatureClick"
 						metricsParent="Device.SmartAssist"
 						metricsItem="{{metricsParent}}HelpIcon"
 						id="{{switchId+ '_voice_right_icon'}}"
-						attr.aria-label="{{switchId+ '_voice_right_icon'}}"
+						attr.aria-label="eight {{switchId+ '_voice_right_icon'}}"
 						class="right-icon"
 						tabindex="1"
 						[icon]="rightIcon"
@@ -208,7 +209,8 @@
 <ng-template #tooltipRef>
 	<div [innerHTML]='tooltipText'
 		id="{{switchId}}-toolTip"
-		attr.aria-label="{{switchId}}-toolTip"></div>
+		tabindex="1"
+		attr.aria-label="nine {{switchId}}-toolTip"></div>
 </ng-template>
 
 <!-- Intelligent-security distance sensitivity adjusting tooltip content -->
