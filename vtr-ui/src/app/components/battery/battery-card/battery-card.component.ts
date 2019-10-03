@@ -44,6 +44,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private powerSupplyStatusEventRef: any;
 	private remainingPercentageEventRef: any;
 	private remainingTimeEventRef: any;
+	private powerBatteryGaugeResetEventRef: any;
 	public isLoading = true;
 	public thresholdNoteParam: any;
 	public storeLimitationNoteParam: any;
@@ -77,10 +78,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
 		this.remainingPercentageEventRef = this.onRemainingPercentageEvent.bind(this);
 		this.remainingTimeEventRef = this.onRemainingTimeEvent.bind(this);
+		this.powerBatteryGaugeResetEventRef = this.onPowerBatteryGaugeResetEvent.bind(this);
 
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
+		this.shellServices.registerEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
 
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
@@ -111,6 +114,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryInfo = info.batteryInformation;
 			this.batteryGauge = info.batteryIndicatorInfo;
 			this.updateBatteryDetails();
+		}
+	}
+
+	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: any) {
+		console.log('onPowerBatteryGaugeResetEvent: Information', batteryGaugeResetInfo);
+		if (batteryGaugeResetInfo && batteryGaugeResetInfo.length > 0) {
+			// this.getBatteryGaugeResetInfo(batteryGaugeResetInfo);
+			this.commonService.sendNotification('GaugeResetInfo', batteryGaugeResetInfo);
 		}
 	}
 
@@ -423,5 +434,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 		this.notificationSubscription.unsubscribe();
+		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
 	}
 }

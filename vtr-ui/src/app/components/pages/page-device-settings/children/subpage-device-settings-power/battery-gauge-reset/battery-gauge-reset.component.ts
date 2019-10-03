@@ -18,7 +18,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	gaugeResetCapability: boolean;
 	batteryGaugeResetInfo: BatteryGaugeReset[] = [];
-	private powerBatteryGaugeResetEventRef: any;
+	// private powerBatteryGaugeResetEventRef: any;
 	notificationSubscription: Subscription;
 	progressText: string;
 	remainingPercentages: number[];
@@ -30,30 +30,25 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	constructor(public shellService: VantageShellService, public modalService: NgbModal, public powerService: PowerService, public commonService: CommonService) { }
 
 	ngOnInit() {
-		this.powerBatteryGaugeResetEventRef = this.onPowerBatteryGaugeResetEvent.bind(this);
-		this.shellService.registerEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
 		this.initBatteryGaugeResetInfo();
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
 
-	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: any) {
-		// console.log('onPowerBatteryGaugeResetEvent: ', batteryGaugeResetInfo);
-		// if (batteryGaugeResetInfo && batteryGaugeResetInfo.length > 0) {
-		// 	this.getBatteryGaugeResetInfo(batteryGaugeResetInfo);
-		// }
-	}
-
 	initBatteryGaugeResetInfo() {
-		this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
-		this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
-		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
+		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
+		// this.batteryGaugeResetInfo.push(new BatteryGaugeReset());
+		// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 
 	onNotification(notification: AppNotification) {
 		if (notification && notification.type === 'GaugeReset') {
 			this.remainingPercentages = notification.payload.remainingPercentages;
+		}
+		if (notification && notification.type === 'GaugeResetInfo') {
+			this.batteryGaugeResetInfo = notification.payload;
+			this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 		}
 	}
 
@@ -110,19 +105,19 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	startBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryGaugeResetInfo[index];
 		const argument = this.getResetParameters(gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
-		// try {
-		// 	const response = this.powerService.startBatteryGaugeReset(argument);
-		// 	if (response) {
-		// 		console.log('start battery reset succeeded', response);
-		// 	}
-		// } catch (error) {
-		// 	console.log('start battery reset failed', error);
-		// }
+		try {
+			const response = this.powerService.startBatteryGaugeReset(argument);
+			if (response) {
+				console.log('start battery reset succeeded', response);
+			}
+		} catch (error) {
+			console.log('start battery reset failed', error);
+		}
 
-		this.batteryGaugeResetInfo[index].IsResetRunning = true;
-		this.batteryGaugeResetInfo[index].Stage = 1;
-		this.batteryGaugeResetInfo[index].StageNum = 3;
-		this.batteryGaugeResetInfo[index].Starttime = (new Date()).toString();
+		// this.batteryGaugeResetInfo[index].IsResetRunning = true;
+		// this.batteryGaugeResetInfo[index].Stage = 1;
+		// this.batteryGaugeResetInfo[index].StageNum = 3;
+		// this.batteryGaugeResetInfo[index].Starttime = (new Date()).toString();
 		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 
 	}
@@ -130,20 +125,20 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	stopBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryGaugeResetInfo[index];
 		const argument = this.getResetParameters(gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
-		// try {
-		// 	const response = this.powerService.stopBatteryGaugeReset(argument);
-		// 	if (response) {
-		// 		console.log('start battery reset succeeded', response);
-		// 	}
-		// } catch (error) {
-		// 	console.log('start battery reset failed', error);
-		// }
+		try {
+			const response = this.powerService.stopBatteryGaugeReset(argument);
+			if (response) {
+				console.log('start battery reset succeeded', response);
+			}
+		} catch (error) {
+			console.log('start battery reset failed', error);
+		}
 
-		this.batteryGaugeResetInfo[index].IsResetRunning = false;
-		this.batteryGaugeResetInfo[index].Stage = 0;
-		this.batteryGaugeResetInfo[index].StageNum = 0;
-		this.batteryGaugeResetInfo[index].LastResetTime = (new Date()).toString();
-		this.batteryGaugeResetInfo[index].ResetErrorLog = 'ERROR_USER_CANCEL';
+		// this.batteryGaugeResetInfo[index].IsResetRunning = false;
+		// this.batteryGaugeResetInfo[index].Stage = 0;
+		// this.batteryGaugeResetInfo[index].StageNum = 0;
+		// this.batteryGaugeResetInfo[index].LastResetTime = (new Date()).toString();
+		// this.batteryGaugeResetInfo[index].ResetErrorLog = 'ERROR_USER_CANCEL';
 		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 
@@ -190,7 +185,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.shellService.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
+		// this.shellService.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
 	}
 
 }
