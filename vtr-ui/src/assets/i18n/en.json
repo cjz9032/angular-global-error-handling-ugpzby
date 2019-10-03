@@ -475,16 +475,10 @@
 					"title": "Color"
 				}
 			},
-			"colourwheelnarrator": {
-				"text1": {
-					"title": "rgb red value"
-				},
-				"text2": {
-					"title": "rgb green value"
-				},
-				"text3": {
-					"title": "rgb blue value"
-				}
+			"rgbValueNarrator": {
+				"red": "rgb red value edit",
+				"green": "rgb green value edit",
+				"blue": "rgb blue value edit"
 			},
 			"lightingProfileHeading": {
 				"text1": {
