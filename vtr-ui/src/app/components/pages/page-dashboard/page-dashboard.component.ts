@@ -27,6 +27,7 @@ import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/mo
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -94,7 +95,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.deviceService.getMachineInfo().then(() => {
 			this.setDefaultSystemStatus();
 		});
-		this.brand = this.deviceService.getMachineInfoSync().brand;
+		// this.brand = this.deviceService.getMachineInfoSync().brand;
+		this.brand = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, -1);
 		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
 			this.submit = value;
 			this.feedbackButtonText = this.submit;

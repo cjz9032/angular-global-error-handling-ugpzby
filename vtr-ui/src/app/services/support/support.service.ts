@@ -71,6 +71,8 @@ export class SupportService {
 				url: this.warrantyNormalUrl
 			};
 
+			if (this.getMachineInfo() === undefined) { return; }
+
 			this.getMachineInfo().then((machineInfo) => {
 				if (machineInfo) {
 					// machineInfo.serialnumber = 'R90HTPEU';
