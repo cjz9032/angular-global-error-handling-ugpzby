@@ -34,7 +34,7 @@ export class HypothesisService {
 							reject(error);
 						});
 				} else {
-					reject('getHypothesis failed');
+					// reject('getHypothesis failed');
 					this.devService.writeLog('getHypothesis failed: ');
 				}
 			} catch (ex) {
@@ -61,8 +61,6 @@ export class HypothesisService {
 					error => {
 						reject(error);
 						this.devService.writeLog('get hypothesis  getFeatureSetting: setting failed.' + error);
-					}).catch((msg) => {
-						this.devService.writeLog('get hypothesis  getFeatureSetting: catch.' + msg);
 					});
 			}
 		});

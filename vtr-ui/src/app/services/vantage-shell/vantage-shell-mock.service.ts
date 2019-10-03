@@ -153,14 +153,17 @@ export class VantageShellMockService implements BaseVantageShellService {
 		};
 		const sysUpdateObj: any = {
 			lastupdate: null,
-			 status: 0
+			status: 0
 		};
 		dashboard.getMicphoneStatus = this.getPromise(obj);
 		dashboard.getCameraStatus = this.getPromise(obj);
 		dashboard.getEyeCareModeState = this.getPromise(obj);
-		dashboard.getMemAndDiskUsage = this.getPromise(sysInfoObj);
-		dashboard.getWarrantyInformation = this.getPromise(warrantyObj);
-		dashboard.sysupdate = this.getPromise(sysUpdateObj);
+		dashboard.warranty = {};
+		dashboard.sysupdate = {};
+		dashboard.warranty.getWarrantyInformation = this.getPromise(warrantyObj);
+		dashboard.sysupdate.getMostRecentUpdateInfo = this.getPromise(sysUpdateObj);
+		dashboard.sysinfo = this.getSysinfo();
+		dashboard.sysinfo.getMemAndDiskUsage = this.getPromise(sysInfoObj);
 		return dashboard;
 	}
 	/**
