@@ -157,7 +157,6 @@ export class VantageShellMockService implements BaseVantageShellService {
 		};
 		dashboard.getMicphoneStatus = this.getPromise(obj);
 		dashboard.getCameraStatus = this.getPromise(obj);
-		dashboard.getEyeCareModeState = this.getPromise(obj);
 		dashboard.getMemAndDiskUsage = this.getPromise(sysInfoObj);
 		dashboard.getWarrantyInformation = this.getPromise(warrantyObj);
 		dashboard.sysupdate = this.getPromise(sysUpdateObj);
@@ -573,10 +572,20 @@ export class VantageShellMockService implements BaseVantageShellService {
 	 * returns EyecareMode object from VantageShellService of JS Bridge
 	 */
 	public getEyeCareMode(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.display.eyeCareMode;
-		}
-		return undefined;
+		const eyeCareMode: any = {};
+		const displayEyeCareMode: any = {};
+
+		const obj = {
+			available: true,
+			status: true,
+			permission: true,
+			isLoading: false
+		};
+
+		eyeCareMode.getEyeCareModeState = this.getPromise(obj);
+		displayEyeCareMode.initEyecaremodeSettings = this.getPromise(true);
+
+		return eyeCareMode;
 	}
 
 	/**
