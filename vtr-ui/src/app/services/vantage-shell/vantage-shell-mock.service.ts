@@ -153,11 +153,16 @@ export class VantageShellMockService implements BaseVantageShellService {
 			expired: new Date('Sat Apr 04 2020 05:30:00 GMT+0530 (India Standard Time)'),
 			status: 0
 		};
+		const sysUpdateObj: any = {
+			lastupdate: null,
+			 status: 0
+		};
 		dashboard.getMicphoneStatus = this.getPromise(obj);
 		dashboard.getCameraStatus = this.getPromise(obj);
 		dashboard.getEyeCareModeState = this.getPromise(obj);
 		dashboard.getMemAndDiskUsage = this.getPromise(sysInfoObj);
 		dashboard.getWarrantyInformation = this.getPromise(warrantyObj);
+		dashboard.sysupdate = this.getPromise(sysUpdateObj);
 		return dashboard;
 	}
 	/**
@@ -270,6 +275,8 @@ export class VantageShellMockService implements BaseVantageShellService {
 	 * returns warranty object from VantageShellService of JS Bridge
 	 */
 	public getWarranty(): any {
+		// {lastupdate: null, status: 0}
+
 		if (this.phoenix) {
 			return this.phoenix.warranty;
 		}
