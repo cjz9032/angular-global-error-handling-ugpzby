@@ -153,13 +153,17 @@ export class VantageShellMockService implements BaseVantageShellService {
 		};
 		const sysUpdateObj: any = {
 			lastupdate: null,
-			 status: 0
+			status: 0
 		};
 		dashboard.getMicphoneStatus = this.getPromise(obj);
 		dashboard.getCameraStatus = this.getPromise(obj);
-		dashboard.getMemAndDiskUsage = this.getPromise(sysInfoObj);
-		dashboard.getWarrantyInformation = this.getPromise(warrantyObj);
-		dashboard.sysupdate = this.getPromise(sysUpdateObj);
+		// dashboard.getEyeCareModeState = this.getPromise(obj);
+		dashboard.warranty = {};
+		dashboard.sysupdate = {};
+		dashboard.warranty.getWarrantyInformation = this.getPromise(warrantyObj);
+		dashboard.sysupdate.getMostRecentUpdateInfo = this.getPromise(sysUpdateObj);
+		dashboard.sysinfo = this.getSysinfo();
+		dashboard.sysinfo.getMemAndDiskUsage = this.getPromise(sysInfoObj);
 		return dashboard;
 	}
 	/**
@@ -574,7 +578,6 @@ export class VantageShellMockService implements BaseVantageShellService {
 	public getEyeCareMode(): any {
 		const eyeCareMode: any = {};
 		const displayEyeCareMode: any = {};
-
 		const obj = {
 			available: true,
 			status: true,
@@ -583,7 +586,7 @@ export class VantageShellMockService implements BaseVantageShellService {
 		};
 
 		eyeCareMode.getEyeCareModeState = this.getPromise(obj);
-		displayEyeCareMode.initEyecaremodeSettings = this.getPromise(true);
+		displayEyeCareMode.initEyecaremodeSettings = this.getPromise(false);
 
 		return eyeCareMode;
 	}

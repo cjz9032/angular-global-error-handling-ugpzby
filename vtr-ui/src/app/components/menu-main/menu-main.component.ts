@@ -118,17 +118,19 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			);
 			if (cacheShowWindowsHello) {
 				const securityItem = items.find((item) => item.id === 'security');
-				securityItem.subitems.push({
-					id: 'windows-hello',
-					label: 'common.menu.security.sub6',
-					path: 'windows-hello',
-					icon: '',
-					metricsEvent: 'itemClick',
-					metricsParent: 'navbar',
-					metricsItem: 'link.windowshello',
-					routerLinkActiveOptions: { exact: true },
-					subitems: []
-				});
+				if (securityItem) {
+					securityItem.subitems.push({
+						id: 'windows-hello',
+						label: 'common.menu.security.sub6',
+						path: 'windows-hello',
+						icon: '',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.windowshello',
+						routerLinkActiveOptions: { exact: true },
+						subitems: []
+					});
+				}
 			}
 			if (this.securityAdvisor) {
 				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
@@ -535,7 +537,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
-				if (!smartAssistItem) {
+				if (smartAssistItem) {
 					this.logger.info('get IsSmartAssistSupported');
 
 					// if cache has value true for IsSmartAssistSupported, add menu item

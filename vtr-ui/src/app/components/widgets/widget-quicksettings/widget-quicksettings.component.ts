@@ -167,7 +167,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public initEyecaremodeSettings() {
 		try {
 				this.eyeCareModeStatus.isLoading = true;
-				console.log('initEyecaremodeSettings.then ------------------->>>>>>>>>>>>>>>>');
 
 				this.displayService.initEyecaremodeSettings()
 					.then((result: boolean) => {
@@ -185,7 +184,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						this.logger.error('initEyecaremodeSettings', error.message);
 						return EMPTY;
 					});
-			
 		} catch (error) {
 			this.logger.error('initEyecaremodeSettings', error.message);
 			return EMPTY;
@@ -288,7 +286,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	private getEyeCareModeStatus() {
-		console.log('startMonitorForCameraPrivacy.then &&&&&&&&&&&&&&&');
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService
 				.getEyeCareMode()
