@@ -1,4 +1,6 @@
 {
+	"dir": "ltr",
+	"dirClass":"ltr",
 	"gaming": {
 		"dashboard": {
 			"device": {
