@@ -56,6 +56,7 @@ import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownloa
 import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
 import { BaseVantageShellService } from '../services/vantage-shell/base-vantage-shell.service';
 import { VantageShellMockService } from '../services/vantage-shell/vantage-shell-mock.service';
+import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 
 @NgModule({
 	declarations: [
@@ -65,6 +66,7 @@ import { VantageShellMockService } from '../services/vantage-shell/vantage-shell
 		ModalArticleDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
+		PageSettingsComponent,
 	],
 	imports: [
 		BrowserModule,

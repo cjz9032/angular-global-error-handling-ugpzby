@@ -16,13 +16,12 @@ declare var Windows;
 })
 
 export class VantageShellMockService implements BaseVantageShellService {
-	public readonly isShellAvailable;
+	public readonly isShellAvailable = true;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
-			this.isShellAvailable = true;
 			this.setConsoleLogProxy();
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
@@ -60,13 +59,12 @@ export class VantageShellMockService implements BaseVantageShellService {
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy
 			]);
-		} else {
-			this.isShellAvailable = false;
 		}
 	}
 
-	private getPromise(value: any): Promise<any> {
-		return new Promise((resolve) => resolve(value));
+	private getPromise(value: any) {
+		const promise = () => new Promise((resolve) => resolve(value));
+		return promise;
 	}
 
 	public registerEvent(eventType: any, handler: any) {
@@ -209,7 +207,7 @@ export class VantageShellMockService implements BaseVantageShellService {
 		};
 
 		device.getMachineInfo = this.getPromise(obj);
-		device.getMachineInfoSync.brand = this.getPromise('think');
+		device.getMachineInfoSync = this.getPromise(obj);
 		return device;
 	}
 
@@ -254,7 +252,7 @@ export class VantageShellMockService implements BaseVantageShellService {
 			mtm: '20KNS0DD00',
 			os: 'Windows 10 Pro',
 			osBitness: '64',
-			osName: 'Windows 10 Pro',
+			osName: 'Windows',
 			osVersionString: '10.0.18362.356',
 			serialnumber: 'PG01EBJS',
 			sku: 'LENOVO_MT_20KN_BU_Think_FM_ThinkPad E480',
@@ -262,7 +260,8 @@ export class VantageShellMockService implements BaseVantageShellService {
 		};
 
 		sysInfo.getMachineInfo = this.getPromise(obj);
-		sysInfo.getMachineInfoSync.brand = this.getPromise('think');
+		sysInfo.getMachineInfoSync = this.getPromise(obj);
+		sysInfo.getMachineType = this.getPromise(1);
 		return sysInfo;
 	}
 

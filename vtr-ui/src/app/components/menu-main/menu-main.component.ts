@@ -223,7 +223,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
-		if (this.hardwareScanService) {
+		if (this.hardwareScanService && this.hardwareScanService.getPluginInfo()) {
 			this.hardwareScanService.getPluginInfo()
 				.then((hwscanPluginInfo: any) => {
 					// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)

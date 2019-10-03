@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { CommonService } from '../common/common.service';
@@ -9,6 +8,7 @@ import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
+import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -28,7 +28,7 @@ export class DeviceService {
 	private machineInfo: any;
 
 	constructor(
-		private shellService: VantageShellService,
+		private shellService: BaseVantageShellService,
 		private commonService: CommonService,
 		public androidService: AndroidService,
 		private router: Router,
