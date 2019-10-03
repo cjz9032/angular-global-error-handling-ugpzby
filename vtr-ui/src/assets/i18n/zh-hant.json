@@ -808,7 +808,7 @@
         "deviceSettings": {
             "helpful": "實用內容",
             "batteryGauge": {
-                "subtitle": "電池性能",
+                "subtitle": "电池",
                 "hours": "小時",
                 "hour": "時",
                 "minutes": "分",
