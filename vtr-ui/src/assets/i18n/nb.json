@@ -1608,7 +1608,7 @@
                 "Blazing": "Lynrask ytelse",
                 "BlazingText": "Optimalisert antivirus som verken avbryter eller reduserer hastigheten på Lenovo Vantage-opplevelsen",
                 "privacyTerms": "/   <tag>Personvernpolicy</tag>  |  <tag>Vilkår for bruk</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ikke tilgjengelig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Dette er ikke et dårlig valg, men vi tilbyr prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus i samarbeid med <b>McAfee</b>, slik at du kan <b>beskytte dine dyrebare data</b>.",
@@ -1654,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Sårbarhetsskanner ",
                 "report": "Rapport om trusselbeskyttelse ",
-                "trialContent": "Du har gjort god bruk av prøveversjonen av McAfee-antivirusprogramvaren. Nå er det imidlertid bare {{remainingDays}} dager igjen til prøveversjonen utløper, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.<tag>Abonner nå</tag>",
-                "subscribeContent": "Du har gjort god bruk av McAfee. Nå er det imidlertid bare {{remainingDays}} dager igjen, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten.<tag>Abonner nå</tag>",
+                "trialContent": "Du har gjort god bruk av prøveversjonen av McAfee-antivirusprogramvaren. Nå er det imidlertid bare {{remainingDays}} dager igjen til prøveversjonen utløper, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten. <tag>Abonner nå</tag>",
+                "subscribeContent": "Du har gjort god bruk av McAfee. Nå er det imidlertid bare {{remainingDays}} dager igjen, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten. <tag>Abonner nå</tag>",
                 "subscribeNow": "Abonner nå",
                 "fileScan": "Skannede filer",
                 "Viruses": "Fjernede virus",

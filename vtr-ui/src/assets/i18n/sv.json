@@ -81,12 +81,12 @@
                     "line2": "<b>Översikt över funktionshantering</b> <br> Vissa funktioner är inte tillgängliga på alla enheter",
                     "line3": "<b>CPU-överklockning </b><br> Öka maxhastigheten för processorn",
                     "line4": "<b>RAM-överklockning </b><br> Öka maxhastigheten för minnet",
-                    "line5": "<b>Nätverksprestanda </b><br> Prioritera nätverkstrafik för det aktuella spelet",
+                    "line5": "<b>Nätverkspre-standa </b><br> Prioritera nätverkstrafik för det aktuella spelet",
                     "line6": "<b>Dolby </b><br> Specialanpassa ljudet för spel med Dolby-teknik",
                     "line7": "<b>Hybridläge </b><br> Inaktivera avancerade GPU-inställningar när du inte spelar för att förlänga batteritiden",
                     "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
-                    "line10": "<b>Stäng automatiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
+                    "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
                     "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
                 },
                 "systemInfo": {
@@ -1608,7 +1608,7 @@
                 "Blazing": "Blixtsnabb hastighet",
                 "BlazingText": "Optimerat antivirusprogram som inte saktar ned eller stör din Lenovo Vantage-upplevelse",
                 "privacyTerms": "/   <tag>Sekretesspolicy</tag>  |  <tag>Användarvillkor</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Inte tillgänglig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt</b>.",
@@ -1654,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee sårbarhetssökning ",
                 "report": "Din hotskyddsrapport ",
-                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det.<tag>Prenumerera nu</tag>",
-                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det.<tag>Prenumerera nu</tag>",
+                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
+                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
                 "subscribeNow": "Prenumerera nu",
                 "fileScan": "Filer skannade",
                 "Viruses": "Virus eliminerade",

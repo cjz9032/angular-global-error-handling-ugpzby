@@ -1608,7 +1608,7 @@
                 "Blazing": "Blitzschnelle Geschwindigkeit",
                 "BlazingText": "Optimierte Antivirenprogramme, die Ihr Lenovo Vantage-Erlebnis nicht verlangsamen oder unterbrechen",
                 "privacyTerms": "/   <tag>Datenschutzrichtlinie</tag>  |  <tag>Servicebedingungen</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nicht verfügbar"
             },
             "windowsDefender": {
                 "optimallyProtected": "Wie es scheint, verwenden Sie derzeit Windows Defender. Keine schlechte Wahl, aber für die ultimative Abwehr von Ransomware, Malware und Viren haben wir uns mit <b>McAfee</b> zusammengetan, um Ihnen preisgekrönte Sicherheit für den <b>Schutz Ihrer wichtigen Daten</b> zu bieten.",
@@ -1654,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Schwachstellen-Scanner ",
                 "report": "Ihr Bedrohungsschutzbericht ",
-                "trialContent": "Sie haben Ihre McAfee Antivirus-Testversion sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage bis zum Ablauf der Testversion und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht.<tag>Jetzt abonnieren</tag>",
-                "subscribeContent": "Sie haben Ihr McAfee-Programm sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht.<tag>Jetzt abonnieren</tag>",
+                "trialContent": "Sie haben Ihre McAfee Antivirus-Testversion sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage bis zum Ablauf der Testversion und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht. <tag>Jetzt abonnieren</tag>",
+                "subscribeContent": "Sie haben Ihr McAfee-Programm sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht. <tag>Jetzt abonnieren</tag>",
                 "subscribeNow": "Jetzt abonnieren",
                 "fileScan": "Dateien gescannt",
                 "Viruses": "Viren eliminiert",

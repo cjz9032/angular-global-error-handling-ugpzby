@@ -2,7 +2,7 @@ import { position } from './../page-privacy/common/components/tooltip/tooltip.co
 import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { isUndefined } from 'util';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
@@ -39,8 +39,11 @@ export class PageAutocloseComponent implements OnInit {
 	constructor(
 		private cmsService: CMSService,
 		private gamingAutoCloseService: GamingAutoCloseService,
-		private commonService: CommonService
-	) {}
+		private commonService: CommonService,
+		private titleService: Title
+	) {
+		this.titleService.setTitle('gaming.common.narrator.pageTitle.autoClose');
+	}
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;

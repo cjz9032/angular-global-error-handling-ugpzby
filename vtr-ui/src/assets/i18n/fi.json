@@ -1608,7 +1608,7 @@
                 "Blazing": "Salamannopea",
                 "BlazingText": "Optimoitu virustentorjunta, joka ei hidasta tai keskeytä Lenovo Vantage -kokemustasi",
                 "privacyTerms": "/   <tag>Tietosuojakäytäntö</tag>  |  <tag>Palveluehdot</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ei käytettävissä"
             },
             "windowsDefender": {
                 "optimallyProtected": "Näyttää siltä, että käytät tällä hetkellä Windows Defenderiä. Se ei ole huono valinta, mutta tarjotaksemme äärimmäisen hyvää suojausta kiristysohjelmia, haittaohjelmia ja viruksia vastaan, olemme yhdistäneet voimamme <b>McAfeen</b> kanssa. Yhdessä voimme tarjota sinulla palkittua suojausta niin, että voit <b>suojata tärkeät tietosi.</b>",
@@ -1654,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Uhkien torjunta -raporttisi ",
-                "trialContent": "Olet hyödyntänyt McAfeen virustentorjunnan kokeiluversiosi hyvin. Sinulla on kuitenkin vain {{remainingDays}} päivää jäljellä siihen, kun kokeilujaksosi päättyy, ja vaarana on, että tietokoneesi jää haavoittuvaksi. Älä ota riskiä.<tag>Tilaa nyt</tag>",
-                "subscribeContent": "Olet hyödyntänyt McAfee-ohjelman kokeiluversion hyvin. Kokeiluversion on kuitenkin voimassa enää vain {{remainingDays}} päivää, ja vaarana on, että tietokoneesi tulee haavoittuvaksi. Älä ota riskiä.<tag>Tilaa nyt</tag>",
+                "trialContent": "Olet hyödyntänyt McAfeen virustentorjunnan kokeiluversiosi hyvin. Sinulla on kuitenkin vain {{remainingDays}} päivää jäljellä siihen, kun kokeilujaksosi päättyy, ja vaarana on, että tietokoneesi jää haavoittuvaksi. Älä ota riskiä. <tag>Tilaa nyt</tag>",
+                "subscribeContent": "Olet hyödyntänyt McAfee-ohjelman kokeiluversion hyvin. Kokeiluversion on kuitenkin voimassa enää vain {{remainingDays}} päivää, ja vaarana on, että tietokoneesi tulee haavoittuvaksi. Älä ota riskiä. <tag>Tilaa nyt</tag>",
                 "subscribeNow": "Tilaa nyt",
                 "fileScan": "Skannattuja tiedostoja",
                 "Viruses": "Poistettuja viruksia",

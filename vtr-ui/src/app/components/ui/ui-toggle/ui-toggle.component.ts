@@ -41,8 +41,8 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		console.log('focus changed', this.focus, changes, Boolean(changes.focus.previousValue) !== this.focus);
-		if (Boolean(changes.focus.previousValue) !== this.focus && this.focus) {
+		//console.log('focus changed', this.focus, changes, Boolean(changes.focus.previousValue) !== this.focus);
+		if (changes && changes.focus && Boolean(changes.focus.previousValue) !== this.focus && this.focus) {
 			document.getElementById(this.onOffSwitchId + '_checkbox').focus();
 		}
 	}

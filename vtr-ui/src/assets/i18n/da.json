@@ -81,7 +81,7 @@
                     "line2": "<b>Oversigt over funktionsstyring</b> <br> Nogle funktioner er ikke tilgængelige på alle enheder",
                     "line3": "<b>CPU-overclocking</b><br> Øg processorens hastighed til det optimale",
                     "line4": "<b>RAM-overclocking</b><br> Øg hukommelsens hastighed til det optimale",
-                    "line5": "<b>Netværksforstærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
+                    "line5": "<b>Netværksfor-stærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
                     "line6": "<b>Dolby</b><br> Optimer din lyd, især til spil, med Dolby-teknologi",
                     "line7": "<b>Hybridtilstand</b><br> Deaktiver avancerede GPU-indstillinger, når du ikke spiller, for at øge batteriets ydeevne",
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
@@ -1608,7 +1608,7 @@
                 "Blazing": "Lynhurtig hastighed",
                 "BlazingText": "Optimeret antivirus, der ikke afbryder din Lenovo Vantage-oplevelse eller gør den langsommere",
                 "privacyTerms": "/   <tag>Politik om beskyttelse af personlige oplysninger</tag>  |  <tag>Vilkår for tjeneste</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ikke tilgængelig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det ser ud til, at du bruger Windows Defender i øjeblikket. Det er ikke et dårligt valg, men for at give dig den ultimative beskyttelse mod ransomware, malware og virus er vi gået sammen med <b>McAfee</b> og kan tilbyde dig prisvindende sikkerhed, så du kan <b>beskytte det, der betyder noget.</b>",
@@ -1654,8 +1654,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee-sårbarhedsscanner ",
                 "report": "Rapport om din trusselsbeskyttelse ",
-                "trialContent": "Du har brugt din prøveversion af McAfee-antivirus godt. Men med kun {{remainingDays}} dage tilbage af din prøveperiode risikerer du, at din computer bliver sårbar. Du må ikke risikere det.<tag>Abonnér nu</tag>",
-                "subscribeContent": "Du har brugt din McAfee godt. Men med kun {{remainingDays}} dage tilbage risikerer du, at din computer bliver sårbar. Du må ikke risikere det.<tag>Abonnér nu</tag>",
+                "trialContent": "Du har brugt din prøveversion af McAfee-antivirus godt. Men med kun {{remainingDays}} dage tilbage af din prøveperiode risikerer du, at din computer bliver sårbar. Du må ikke risikere det. <tag>Abonnér nu</tag>",
+                "subscribeContent": "Du har brugt din McAfee godt. Men med kun {{remainingDays}} dage tilbage risikerer du, at din computer bliver sårbar. Du må ikke risikere det. <tag>Abonnér nu</tag>",
                 "subscribeNow": "Abonnér nu",
                 "fileScan": "Scannede filer",
                 "Viruses": "Eliminerede virus",
