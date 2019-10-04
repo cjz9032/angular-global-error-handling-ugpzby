@@ -10,11 +10,11 @@
 		</div>
 	</div>
 
-	<div class="row py-5 smartsettings-card"
-		id="display">
+	<div class="row py-5 smartsettings-card" id="display" >
 		<div class="col-10 mx-auto ">
 			<!-- Display -->
-			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
+			<vtr-container-collapsible 
+				[cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
 				[vtrAppSearchScroller]="['search-display']"
 				componentName="display"
 				[isCollapsed]="false"
@@ -49,7 +49,6 @@
 									<div class="row">
 										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4"
 											id="day-time-color-temp-note" 
-											tabindex="1"
 											attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
 											<p>
 												{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
@@ -227,8 +226,6 @@
 						</li> -->
 
 				</ul>
-
-
 			</vtr-container-collapsible>
 		</div>
 	</div>
