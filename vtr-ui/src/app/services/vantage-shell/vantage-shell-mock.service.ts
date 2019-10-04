@@ -224,7 +224,7 @@ export class VantageShellMockService implements BaseVantageShellService {
 	 */
 	public getSysinfo(): any {
 		const sysInfo: any = {};
-		const obj = {
+		const machineInfo = {
 			biosDate: '08292018',
 			biosVersion: 'R0PET47W 1.24 ',
 			brand: 'think',
@@ -267,9 +267,28 @@ export class VantageShellMockService implements BaseVantageShellService {
 			subBrand: 'ThinkPad'
 		};
 
-		sysInfo.getMachineInfo = this.getPromise(obj);
-		sysInfo.getMachineInfoSync = this.getPromise(obj);
-		sysInfo.getMachineType = this.getPromise(1);
+		const hardwareInfo = {
+			processor: {
+				name: 'Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz',
+				type: 'i386',
+				addressWidth: '64',
+				vendor: 'Intel'
+
+			},
+			memory: {
+				total: 16943040000,
+				used: 8943040000,
+				type: 'DDR4'
+			},
+			disk: {
+				total: 419430400000,
+				used: 219430400000,
+			}
+		};
+		sysInfo.getMachineInfo = this.getPromise(machineInfo);
+		sysInfo.getMachineInfoSync = this.getPromise(machineInfo);
+		sysInfo.getMachineType = this.getPromise(1); // 1 = ThinkPad
+		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
 		return sysInfo;
 	}
 

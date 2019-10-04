@@ -154,7 +154,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.router.routerState.snapshot.url.indexOf('security') === -1 &&
 			this.router.routerState.snapshot.url.indexOf('dashboard') === -1
 		) {
-			if (this.securityAdvisor.wifiSecurity) {
+			if (this.securityAdvisor && this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
