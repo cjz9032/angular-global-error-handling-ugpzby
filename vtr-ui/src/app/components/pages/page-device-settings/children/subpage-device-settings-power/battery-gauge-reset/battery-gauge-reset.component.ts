@@ -3,7 +3,6 @@ import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-rese
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import { PowerService } from 'src/app/services/power/power.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
@@ -16,15 +15,18 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 })
 export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
-	@Input() batteryGaugeResetInfo: BatteryGaugeReset[] = [];
-	// private powerBatteryGaugeResetEventRef: any;
+	@Input() batteryGaugeResetInfo: BatteryGaugeReset[];
+	@Input() isACAttached: boolean;
+	@Input() remainingPercentages: number[];
+
+	// batteryGaugeResetInfo: BatteryGaugeReset[] = [];
 	notificationSubscription: Subscription;
 	progressText: string;
-	remainingPercentages: number[];
 	FCCParams: any[];
 	btnLabelText: string[] = [];
 	stageParams: any;
 	resetBtnDisabled: boolean[];
+	headings: string[];
 
 	constructor(public shellService: VantageShellService, public modalService: NgbModal, public powerService: PowerService, public commonService: CommonService) { }
 
@@ -43,8 +45,9 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	}
 
 	onNotification(notification: AppNotification) {
-		if (notification && notification.type === 'GaugeReset') {
+		if (notification && notification.type === 'BatteryInfoForGaugeReset') {
 			this.remainingPercentages = notification.payload.remainingPercentages;
+			this.isACAttached = notification.payload.isACAttached;
 		}
 		if (notification && notification.type === 'GaugeResetInfo') {
 			this.batteryGaugeResetInfo = notification.payload;
@@ -61,18 +64,18 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 			windowClass: 'Battery-Charge-Threshold-Modal'
 		});
 
-		modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.batteryGaugeReset.title';
-		modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.batteryGaugeReset.popup.cancel';
+		modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.gaugeReset.title';
+		modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.cancel';
 
 		if (this.batteryGaugeResetInfo[index].IsResetRunning) {
 
-			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.batteryGaugeReset.popup.description3';
+			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.description3';
 			modalRef.componentInstance.description2 = '';
-			modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.batteryGaugeReset.popup.yes';
+			modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.yes';
 		} else {
-			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.batteryGaugeReset.popup.description1';
-			modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.batteryGaugeReset.popup.description2';
-			modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.batteryGaugeReset.popup.continue';
+			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.description1';
+			modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.description2';
+			modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.continue';
 		}
 		modalRef.result.then(
 			result => {
@@ -93,56 +96,38 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		);
 	}
 
-	getResetParameters(barcode, batNumber) {
-		const argument = {
-			handler: this.getBatteryGaugeResetInfo.bind(this),
-			barCode: barcode,
-			batteryNumber: batNumber
-		};
-		return argument;
-	}
-
-	startBatteryGaugeReset(index) {
+	async startBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryGaugeResetInfo[index];
-		const argument = this.getResetParameters(gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
+		// const argument = this.getResetParameters(gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
 		try {
-			const response = this.powerService.startBatteryGaugeReset(argument);
+			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
 			if (response) {
 				console.log('start battery reset succeeded', response);
 			}
 		} catch (error) {
 			console.log('start battery reset failed', error);
 		}
-
-		// this.batteryGaugeResetInfo[index].IsResetRunning = true;
-		// this.batteryGaugeResetInfo[index].Stage = 1;
-		// this.batteryGaugeResetInfo[index].StageNum = 3;
-		// this.batteryGaugeResetInfo[index].Starttime = (new Date()).toString();
-		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
-
 	}
 
-	stopBatteryGaugeReset(index) {
+	async stopBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryGaugeResetInfo[index];
-		const argument = this.getResetParameters(gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
 		try {
-			const response = this.powerService.stopBatteryGaugeReset(argument);
+			const response = await this.powerService.stopBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
 			if (response) {
 				console.log('start battery reset succeeded', response);
 			}
 		} catch (error) {
 			console.log('start battery reset failed', error);
 		}
-
-		// this.batteryGaugeResetInfo[index].IsResetRunning = false;
-		// this.batteryGaugeResetInfo[index].Stage = 0;
-		// this.batteryGaugeResetInfo[index].StageNum = 0;
-		// this.batteryGaugeResetInfo[index].LastResetTime = (new Date()).toString();
-		// this.batteryGaugeResetInfo[index].ResetErrorLog = 'ERROR_USER_CANCEL';
-		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 
 	getBatteryGaugeResetInfo(response: any[]) {
+		const headings = [
+			'device.deviceSettings.batteryGauge.details.primary',
+			'device.deviceSettings.batteryGauge.details.secondary',
+			'device.deviceSettings.batteryGauge.details.tertiary'];
+
+		this.headings = [];
 		this.btnLabelText = [];
 		this.FCCParams = [];
 		this.resetBtnDisabled = [];
@@ -151,13 +136,17 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		if (response && response.length > 0) {
 			this.batteryGaugeResetInfo = response;
 			this.batteryGaugeResetInfo.forEach((battery) => {
+
+				const heading = response.length > 1 ? headings[count] : 'device.deviceSettings.batteryGauge.subtitle';
+				this.headings.push(heading);
+
 				this.stageParams = { stage: battery.Stage, stageNum: battery.StageNum };
 				this.FCCParams.push({ before: battery.FCCbefore, after: battery.FCCafter });
 				if (battery.IsResetRunning) {
 					resetRunningIndex = count;
-					this.btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.stop');
+					this.btnLabelText.push('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop');
 				} else {
-					this.btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.reset');
+					this.btnLabelText.push('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.reset');
 				}
 				count++;
 			});
@@ -171,6 +160,11 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 			}
 		}
 
+	}
+
+	updateGaugeResetInfo(value: BatteryGaugeReset) {
+		this.batteryGaugeResetInfo[value.BatteryNum - 1] = value;
+		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 
 	isValid(val: any) {

@@ -120,7 +120,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: any) {
 		console.log('onPowerBatteryGaugeResetEvent: Information', batteryGaugeResetInfo);
 		if (batteryGaugeResetInfo && batteryGaugeResetInfo.length > 0) {
-			// this.getBatteryGaugeResetInfo(batteryGaugeResetInfo);
 			this.commonService.sendNotification('GaugeResetInfo', batteryGaugeResetInfo);
 		}
 	}
@@ -215,10 +214,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 			this.initBatteryInformation();
 			const remainingPercentages = [];
-			const barCodes = [];
 			this.batteryInfo.forEach((info) => {
 				remainingPercentages.push(info.remainingPercent);
-				barCodes.push(info.barCode);
 			});
 			this.remainingPercentages = remainingPercentages;
 			this.sendThresholdWarning();
@@ -226,9 +223,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryIndicator.batteryNotDetected = this.batteryHealth === 4;
 			const payload = {
 				remainingPercentages: this.remainingPercentages,
-				barCode: barCodes
+				isACAttached: this.batteryGauge.isAttached
 			};
-			this.commonService.sendNotification('GaugeReset', payload);
+			this.commonService.sendNotification('BatteryInfoForGaugeReset', payload);
 		} else {
 			this.batteryIndicator.batteryNotDetected = false;
 		}

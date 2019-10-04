@@ -1,6 +1,6 @@
 {
 	"dir": "ltr",
-	"dirClass":"ltr",
+	"dirClass": "ltr",
 	"gaming": {
 		"dashboard": {
 			"device": {
@@ -1055,10 +1055,10 @@
 							"stop": "Stop charging at"
 						}
 					},
-					"batteryGaugeReset": {
+					"gaugeReset": {
 						"title": "Battery gauge reset",
 						"description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-						"barcode": "Barcode",
+						"barCode": "Barcode",
 						"progress": "Progress",
 						"remaining": "Remaining",
 						"startTime": "Start time",
@@ -1071,6 +1071,7 @@
 						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
 						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
 						"FCCText": "From {{before}}Wh to {{after}}Wh",
+						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"resetLog": {
 							"ERROR_SUCCESS": "Complete. Successful reset.",
 							"ERROR_SHUTDOWN": "Incomplete. System shut down.",

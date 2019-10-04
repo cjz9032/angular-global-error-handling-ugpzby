@@ -9,7 +9,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, EMPTY } from 'rxjs';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import {
 	FlipToBootCurrentModeEnum,
@@ -23,7 +23,6 @@ import { MetricService } from '../../../../../services/metric/metric.service';
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
 import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
 
 
@@ -97,7 +96,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
 	public isPowerDriverMissing = false;
+
 	gaugeResetInfo: BatteryGaugeReset[];
+	remainingPercentages: number[];
+	isACAttached: boolean;
 
 	headerMenuItems = [
 		{
@@ -1064,32 +1066,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				case 'GaugeResetInfo':
 					if (notification.payload) {
 						this.gaugeResetInfo = notification.payload;
-
-						// const btnLabelText = [];
-						// const FCCParams = [];
-						// const resetBtnDisabled = [];
-						// let resetRunningIndex = -1;
-						// let count = 0;
-						// this.gaugeResetInfo.forEach((battery) => {
-						// 	const stageParam = { stage: battery.Stage, stageNum: battery.StageNum };
-						// 	FCCParams.push({ before: battery.FCCbefore, after: battery.FCCafter });
-						// 	if (battery.IsResetRunning) {
-						// 		resetRunningIndex = count;
-						// 		btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.stop');
-						// 	} else {
-						// 		btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.reset');
-						// 	}
-						// 	count++;
-						// });
-
-						// for (let i = 0; i < this.gaugeResetInfo.length; i++) {
-						// 	if (i !== resetRunningIndex && resetRunningIndex !== -1) {
-						// 		resetBtnDisabled.push(true);
-						// 	} else {
-						// 		resetBtnDisabled.push(false);
-						// 	}
-						// }
-						// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
+						// this.gaugeResetInfoCache.gaugeResetInfo = this.gaugeResetInfo;
+						// this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
+					}
+					break;
+				case 'BatteryInfoForGaugeReset':
+					if (notification.payload) {
+						this.remainingPercentages = notification.payload.remainingPercentages;
+						this.isACAttached = notification.payload.isACAttached;
+						break;
 					}
 			}
 

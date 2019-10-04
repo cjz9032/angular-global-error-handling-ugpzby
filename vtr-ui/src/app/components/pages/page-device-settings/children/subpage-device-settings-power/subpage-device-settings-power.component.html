@@ -120,7 +120,9 @@
 					</li>
 					<li class=""
 						*ngIf="gaugeResetCapability && gaugeResetInfo">
-						<vtr-battery-gauge-reset [batteryGaugeResetInfo]="gaugeResetInfo">
+						<vtr-battery-gauge-reset [batteryGaugeResetInfo]="gaugeResetInfo"
+							[isACAttached]="isACAttached"
+							[remainingPercentages]="remainingPercentages">
 						</vtr-battery-gauge-reset>
 					</li>
 

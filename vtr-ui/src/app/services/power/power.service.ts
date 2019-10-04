@@ -595,11 +595,11 @@ export class PowerService {
 		}
 	}
 
-	public startBatteryGaugeReset(value: any): Promise<any> {
+	public startBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
 		console.log('start Battery Gauge Reset');
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(value);
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(handler, barCode, batteryNumber);
 			}
 			return undefined;
 		} catch (error) {
@@ -607,11 +607,11 @@ export class PowerService {
 		}
 	}
 
-	public stopBatteryGaugeReset(value: any): Promise<any> {
+	public stopBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
 		console.log('stop Battery Gauge Reset');
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(value);
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(handler, barCode, batteryNumber);
 			}
 			return undefined;
 		} catch (error) {
