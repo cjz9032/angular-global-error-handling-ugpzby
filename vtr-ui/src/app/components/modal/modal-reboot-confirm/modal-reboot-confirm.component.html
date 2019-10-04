@@ -3,7 +3,9 @@
 		<div class="btn-close">
 			<button type="button"
 				class="close"
+				tabindex="1"
 				aria-hidden="true"
+				aria-label="ds-reboot-popup-close-button"
 				(click)="closeModal()"
 				(keydown.enter)="closeModal()">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
@@ -20,10 +22,12 @@
 	<div class="row">
 		<button id="reboot-popup-enable"
 			attr.aria-label="reboot-popup-enable"
+			tabindex="1"
 			class="btn enable-button"
 			(click)="proceedToReboot()"
 			(keydown.enter)="proceedToReboot()">{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.reboot' | translate}}</button>
 		<a id="reboot-popup-cancel"
+			tabindex="1"
 			attr.aria-label="reboot-popup-cancel"
 			(click)="closeModal()"
 			(keydown.enter)="closeModal()"
