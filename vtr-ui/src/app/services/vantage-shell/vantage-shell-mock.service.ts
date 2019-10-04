@@ -147,13 +147,15 @@ export class VantageShellMockService implements BaseVantageShellService {
 				used: 10677587968
 			}
 		};
+
+		const today = (new Date()).toISOString();
 		const warrantyObj: any = {
-			expired: new Date('Sat Apr 04 2020 05:30:00 GMT+0530 (India Standard Time)'),
+			endDate: today,
 			status: 0
 		};
 		const sysUpdateObj: any = {
-			lastupdate: null,
-			status: 0
+			lastScanTime: today,
+			status: 1
 		};
 		dashboard.getMicphoneStatus = this.getPromise(obj);
 		dashboard.getCameraStatus = this.getPromise(obj);
