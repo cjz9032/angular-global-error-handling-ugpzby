@@ -660,11 +660,29 @@ export class VantageShellMockService implements BaseVantageShellService {
 	// }
 
 	public getPowerThinkPad(): any {
-		if (this.getPowerSettings() && this.getPowerSettings().thinkpad) {
-			return this.getPowerSettings().thinkpad;
+		const devicePowerThinkPad: any = {};
+		const batteryThresholdInfo: any = [{
+			batteryNum: 1,
+			checkBoxValue: false,
+			isCapable: true,
+			isOn: false,
+			startValue: 75,
+			stopValue: 80
+		},
+		{
+			batteryNum: 2,
+			checkBoxValue: false,
+			isCapable: true,
+			isOn: false,
+			startValue: 75,
+			stopValue: 80
+		}];
+		devicePowerThinkPad.sectionChargeThreshold.getChargeThresholdInfo = this.getPromise(batteryThresholdInfo);
+		// devicePowerThinkPad.sectionAirplaneMode.getAirplaneModeCapability = this.getPromise(true);
+		return devicePowerThinkPad;
+
 		}
-		return undefined;
-	}
+
 	// public getPowerItsIntelligentCooling(): any {
 	// 	if(this.phoenix){
 	// 		return this.phoenix.hwsettings.power.its.IntelligentCooling ;
