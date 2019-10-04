@@ -2325,6 +2325,10 @@
         "offline": "Tämä laite toimii offline-tilassa, muodosta Internet-yhteys",
         "doNotSuspend": "Näiden testien suoritus ei saa keskeytyä. Älä sulje tai pienennä tätä sovellusta. Älä siirrä tietokonetta keskeytystilaan tai katkaise tietokoneen virtaa tarkistuksen aikana.",
         "doNotUse": "Älä käytä tietokonetta, kunnes tämä testi on valmis",
+        "testsMustRunUniterrupted": "Näiden testien suoritus ei saa keskeytyä!",
+        "doNotCloseOrMinimizeApp": "• Älä sulje tai pienennä tätä sovellusta.",
+        "doNotSwitchApp": "• Älä vaihda toiseen sovellukseen.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Älä aseta tietokonetta lepotilaan, kirjaudu siitä ulos tai katkaise siitä virtaa.",
         "customize": {
             "name": "Mukautus",
             "test": "Mukauta testiä",

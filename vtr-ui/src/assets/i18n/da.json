@@ -2325,6 +2325,10 @@
         "offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
         "doNotSuspend": "Disse tests skal køres uden afbrydelser! Du må ikke lukke eller minimere denne app eller låse eller slukke din computer under søgningen.",
         "doNotUse": "Undlad at bruge din computer, før testen er færdig",
+        "testsMustRunUniterrupted": "Disse tests skal køres uden afbrydelser!",
+        "doNotCloseOrMinimizeApp": "• Du må ikke lukke eller minimere denne app.",
+        "doNotSwitchApp": "• Du må ikke skifte til en anden app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Du må ikke sætte computeren i slumretilstand eller logge af eller slukke for computeren.",
         "customize": {
             "name": "Tilpas",
             "test": "Tilpas test",

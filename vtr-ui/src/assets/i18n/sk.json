@@ -2325,6 +2325,10 @@
         "offline": "Toto zariadenie je v režime offline, pripojte ho k internetu",
         "doNotSuspend": "Tieto testy musia prebiehať bez prerušenia. Počas kontroly nezatvárajte ani neminimalizujte aplikáciu a neodstavujte ani nevypínajte počítač.",
         "doNotUse": "Počítač nepoužívajte, kým sa test nedokončí",
+        "testsMustRunUniterrupted": "Tieto testy musia prebiehať bez prerušenia.",
+        "doNotCloseOrMinimizeApp": "• Nezatvárajte ani neminimalizujte túto aplikáciu.",
+        "doNotSwitchApp": "• Neprepínajte na inú aplikáciu.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Neprechádzajte do režimu spánku, neodhlasujte sa ani počítač nevypínajte.",
         "customize": {
             "name": "Prispôsobiť",
             "test": "Prispôsobiť test",

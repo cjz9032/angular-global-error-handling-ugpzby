@@ -2325,6 +2325,10 @@
         "offline": "Op dit apparaat wordt de offline stand uitgevoerd. Maak verbinding met internet",
         "doNotSuspend": "Deze tests moeten zonder onderbreking worden uitgevoerd! Sluit of minimaliseer deze app niet, laat de computer niet in de slaapstand gaan en zet de computer niet uit tijdens de scan.",
         "doNotUse": "Gebruik de computer pas weer wanneer deze test is voltooid",
+        "testsMustRunUniterrupted": "Deze tests moeten zonder onderbreking worden uitgevoerd!",
+        "doNotCloseOrMinimizeApp": "• Deze app niet sluiten of minimaliseren.",
+        "doNotSwitchApp": "• Niet naar een andere app schakelen.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Niet afmelden of de computer uitschakelen of in de slaapstand zetten.",
         "customize": {
             "name": "Aanpassen",
             "test": "Test aanpassen",

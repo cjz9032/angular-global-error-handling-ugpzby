@@ -2325,6 +2325,10 @@
         "offline": "Este dispositivo está em execução no modo offline, conecte-se à Internet",
         "doNotSuspend": "Estes testes devem ser executados de forma ininterrupta. Não feche ou minimize este aplicativo, nem suspenda ou desligue o computador durante a verificação.",
         "doNotUse": "Não use seu computador até que este teste seja concluído",
+        "testsMustRunUniterrupted": "Estes testes devem ser executados de maneira ininterrupta.",
+        "doNotCloseOrMinimizeApp": "• Não feche nem minimize este aplicativo.",
+        "doNotSwitchApp": "• Não mude para outro aplicativo.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Não desconecte, desligue nem coloque o computador em suspensão.",
         "customize": {
             "name": "Personalizar",
             "test": "Personalizar Teste",

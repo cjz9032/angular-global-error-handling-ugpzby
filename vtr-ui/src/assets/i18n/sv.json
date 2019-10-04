@@ -2325,6 +2325,10 @@
         "offline": "Enheten körs offline. Anslut till internet",
         "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
         "doNotUse": "Använd inte datorn förrän testet har slutförts",
+        "testsMustRunUniterrupted": "Testerna måste köras utan avbrott!",
+        "doNotCloseOrMinimizeApp": "• Stäng eller minimera inte den här appen.",
+        "doNotSwitchApp": "• Byt inte till en annan app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sätt inte datorn i strömsparläge och logga inte ut från eller stäng av datorn.",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",
