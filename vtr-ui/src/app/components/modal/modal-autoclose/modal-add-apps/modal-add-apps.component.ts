@@ -5,7 +5,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 @Component({
 	selector: 'vtr-modal-add-apps',
 	templateUrl: './modal-add-apps.component.html',
-	styleUrls: [ './modal-add-apps.component.scss' ]
+	styleUrls: ['./modal-add-apps.component.scss']
 })
 export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	statusAskAgain: boolean;
@@ -16,7 +16,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	public loadingNoApps = false;
 	runningList: any = [];
 	public isChecked: any = [];
-	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 	public statusitem;
 	ariaLabel = 'Auto close add apps window opened';
 	//constructor() { }
@@ -63,6 +63,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
+		document.getElementById('main-wrapper').focus();
 	}
 
 	runappKeyup(event, index) {
