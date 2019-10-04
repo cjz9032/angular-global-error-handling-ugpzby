@@ -6,6 +6,7 @@ import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-de
 import { RouterChangeHandlerService } from '../../common/services/router-change-handler.service';
 
 import { RoutersName } from '../../privacy-routing-name';
+import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 
 interface PageSettings {
 	title: string;
@@ -25,6 +26,7 @@ const defaultPageSettings: PageSettings = {
 	styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit, OnDestroy {
+	testConfig = AbTestsName.colorButton;
 
 	title = 'Lenovo Privacy Essentials';
 	backButton = false;

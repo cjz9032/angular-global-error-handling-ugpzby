@@ -1,13 +1,13 @@
 {
 	"ptabVersion": 1,
-	"tests": {
-		"colorButton": {
+	"tests": [
+		{   "key": "colorButton",
 			"avaliableOptions": ["A", "B", "C"],
 			"defaultOptions": ["A"]
 		},
-		"colorLink": {
+		{  "key": "colorLink",
 			"avaliableOptions": ["A", "B"],
 			"defaultOptions": ["B"]
 		}
-	}
+	]
 }

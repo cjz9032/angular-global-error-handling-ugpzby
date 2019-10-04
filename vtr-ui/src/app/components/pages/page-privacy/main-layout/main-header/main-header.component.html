@@ -2,6 +2,11 @@
 	<h1 class="title" [ngClass]="{'title--icon': figLeafIcon}">
 		{{title}}
 		<button class="back-button" *ngIf="backButton" (click)="backClicked()">Back</button>
+		<vtr-ab-tests [testName]="testConfig">
+			<button *testOption="'A'">test1</button>
+			<button *testOption="'B'">test2</button>
+			<button *testOption="'C'">test3</button>
+		</vtr-ab-tests>
 	</h1>
 	<div *ngIf="forwardLink" class="forward-link">
 		<a routerLink="/{{forwardLink.path}}"><span class="forward-link-label">{{forwardLink.label}}</span></a>
