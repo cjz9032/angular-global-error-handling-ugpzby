@@ -23,6 +23,7 @@ export class UiGamingDriverPopupComponent implements OnInit {
 	close() {
 		this.showMePartially = !this.showMePartially;
 		this.driverpopval.emit(false);
+		document.getElementById('main-wrapper').focus();
 
 	}
 
