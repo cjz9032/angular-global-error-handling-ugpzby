@@ -588,10 +588,43 @@ export class VantageShellMockService implements BaseVantageShellService {
 	 * returns battery info object from VantageShellService of JS Bridge
 	 */
 	public getBatteryInfo(): any {
-		if (this.getPowerCommonSettings() && this.getPowerCommonSettings().batteryInfo) {
-			return this.getPowerCommonSettings().batteryInfo;
-		}
-		return undefined;
+		const battery: any = {
+				batteryInformation: [{
+				barCode: 'X2XP888JB1S',
+				batteryCondition: ['Normal'],
+				batteryHealth: 0,
+				chargeStatus: 2,
+				cycleCount: 98,
+				designCapacity: 45.28,
+				designVoltage: 11.1,
+				deviceChemistry: 'Li-Polymer',
+				firmwareVersion: '0005-0232-0100-0005',
+				fruPart: '01AV446',
+				fullChargeCapacity: 46.69,
+				manufacturer: 'SMP',
+				remainingCapacity: 23.84,
+				remainingChargeCapacity: 0,
+				remainingPercent: 52,
+				remainingTime: 99,
+				temperature: 32,
+				voltage: 11.222,
+				wattage: 10.57,
+			}],
+			batteryIndicatorInfo: {
+				acAdapterStatus: 'Supported',
+				acAdapterType: 'Legacy',
+				acWattage: 0,
+				isAirplaneModeEnabled: false,
+				isAttached: false,
+				isExpressCharging: false,
+				isPowerDriverMissing: false,
+				percentage: 61,
+				time: 111,
+				timeType: 'timeRemaining'
+			},
+		};
+		battery.getBatteryInformation = this.getPromise(battery);
+		return battery;
 	}
 	/**
 	 * returns EyecareMode object from VantageShellService of JS Bridge
@@ -660,7 +693,6 @@ export class VantageShellMockService implements BaseVantageShellService {
 	// }
 
 	public getPowerThinkPad(): any {
-		const devicePowerThinkPad: any = {};
 		const batteryThresholdInfo: any = [{
 			batteryNum: 1,
 			checkBoxValue: false,
@@ -677,11 +709,13 @@ export class VantageShellMockService implements BaseVantageShellService {
 			startValue: 75,
 			stopValue: 80
 		}];
-		devicePowerThinkPad.sectionChargeThreshold.getChargeThresholdInfo = this.getPromise(batteryThresholdInfo);
-		// devicePowerThinkPad.sectionAirplaneMode.getAirplaneModeCapability = this.getPromise(true);
+		const devicePowerThinkPad: any = {
+			sectionChargeThreshold: { getChargeThresholdInfo: this.getPromise(batteryThresholdInfo) },
+			sectionAirplaneMode: { getAirplaneModeCapability: this.getPromise(true) }
+		};
 		return devicePowerThinkPad;
 
-		}
+	}
 
 	// public getPowerItsIntelligentCooling(): any {
 	// 	if(this.phoenix){

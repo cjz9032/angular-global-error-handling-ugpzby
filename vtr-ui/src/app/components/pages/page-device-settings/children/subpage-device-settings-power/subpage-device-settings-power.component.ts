@@ -221,7 +221,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
-		this.checkPowerDriverMissing(this.isPowerDriverMissing);
 		this.getFlipToBootCapability();
 
 		if (this.isDesktopMachine) {
@@ -240,8 +239,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-
-	}
+		}
 
 	initDataFromCache() {
 		this.initAirplanePowerFromCache();
@@ -1051,6 +1049,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					break;
 				case "IsPowerDriverMissing":
 					this.checkPowerDriverMissing(notification.payload);
+					this.checkPowerDriverMissing(this.isPowerDriverMissing);
 					break;
 			}
 
