@@ -537,7 +537,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
-				if (smartAssistItem) {
+				if (!smartAssistItem) {
 					this.logger.info('get IsSmartAssistSupported');
 
 					// if cache has value true for IsSmartAssistSupported, add menu item
