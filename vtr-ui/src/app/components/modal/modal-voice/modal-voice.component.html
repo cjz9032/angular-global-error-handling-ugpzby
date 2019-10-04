@@ -17,7 +17,9 @@
 			metricsParent="Device.SmartAssist.{{metricsParent}}"
 			metricsItem="{{metricsParent}}ModalCloseIcon"
 			(click)="closeModal()"
-			(keydown.enter)="closeModal()">
+			tabindex="1"
+			(keydown.enter)="closeModal()"
+			(keydown.escape)="closeModal()">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""
 				srcset="">
