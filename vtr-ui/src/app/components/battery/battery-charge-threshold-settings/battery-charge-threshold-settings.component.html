@@ -110,7 +110,8 @@
 						<div class="col px-20">
 							<div class="auto-set-checkbox custom-checkbox-gaming">
 								<input type="checkbox" class="custom-control-input"
-									[id]="isCheckedAutoInput + randomNumber"
+									[id]="'batteryThreshold-options-checkboxText'"
+							        attr.aria-label="batteryThreshold-options-checkboxText"
 									[name]="isCheckedAutoInput + randomNumber"
 									[(ngModel)]="isCheckedAuto"
 									(ngModelChange)='toggleAutoChargeSettings($event)'>
