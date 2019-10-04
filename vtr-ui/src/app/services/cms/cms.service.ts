@@ -68,7 +68,7 @@ export class CMSService {
 		});
 	}
 
-	filterCMSContent(results) {
+	private filterCMSContent(results) {
 		return new Promise((resolve, reject) => {
 			const promises = [];
 

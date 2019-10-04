@@ -128,11 +128,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 		this.getPreviousContent();
 		this.fetchContent();
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchContent();
-		});
-
 		this.getWarrantyInfo(this.isOnline);
 	}
 

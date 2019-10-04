@@ -34,7 +34,7 @@ export class HypothesisService {
 							reject(error);
 						});
 				} else {
-					// reject('getHypothesis failed');
+					reject('getHypothesis failed');
 					this.devService.writeLog('getHypothesis failed: ');
 				}
 			} catch (ex) {
