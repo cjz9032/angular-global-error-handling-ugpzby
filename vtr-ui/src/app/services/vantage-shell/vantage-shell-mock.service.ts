@@ -62,8 +62,8 @@ export class VantageShellMockService implements BaseVantageShellService {
 		}
 	}
 
-	private getPromise(value: any) {
-		const promise = () => new Promise((resolve) => resolve(value));
+	private getPromise(returnValue: any, param?: any): any {
+		const promise = () => new Promise((resolve) => resolve(returnValue));
 		return promise;
 	}
 
@@ -796,10 +796,27 @@ export class VantageShellMockService implements BaseVantageShellService {
 	}
 
 	public getIntelligentSensing(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.lis.intelligentSensing;
-		}
-		return undefined;
+		const intelligentSensing = {
+			GetHPDCapability: this.getPromise(true),
+			GetHPDGlobalSetting: this.getPromise(true),
+			SetHPDGlobalSetting: this.getPromise(true),
+			GetHPDLeaveCapability: this.getPromise(true),
+			GetHPDPresentLeaveSetting: this.getPromise(true),
+			SetHPDPresentLeaveSetting: this.getPromise(true),
+			GetHPDApproachCapability: this.getPromise(true),
+			GetHPDApproachSetting: this.getPromise(true),
+			GetHPDApproachDistance: this.getPromise(2),
+			SetHPDApproachSetting: this.getPromise(true),
+			GetHPDAutoAdjustCapability: this.getPromise(true),
+			GetHPDAutoAdjustSetting: this.getPromise(true),
+			SetHPDAutoAdjustSetting: this.getPromise(true),
+			SetHPDApproachDistanceSetting: this.getPromise(true),
+			GetHPDLeaveWait: this.getPromise(2),
+			SetHPDLeaveWaitSetting: this.getPromise(true),
+			HPDSettingReset: this.getPromise(true),
+			GetFacialFeatureRegistered: this.getPromise(true),
+		};
+		return intelligentSensing;
 	}
 
 	public getMetricPreferencePlugin() {
