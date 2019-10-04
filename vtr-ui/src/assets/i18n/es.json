@@ -2404,7 +2404,8 @@
         "attention": "Atención",
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
-        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
+        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
+        "testNotApplicable": "Not applicable on custom scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

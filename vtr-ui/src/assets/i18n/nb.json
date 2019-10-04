@@ -2404,7 +2404,8 @@
         "attention": "NB",
         "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
         "cancelTextProgress": "Vent mens avbrytingen pågår",
-        "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten."
+        "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
+        "testNotApplicable": "Not applicable on custom scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

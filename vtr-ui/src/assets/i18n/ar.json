@@ -2404,7 +2404,8 @@
         "attention": "تنبيه",
         "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
         "cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء",
-        "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته."
+        "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته.",
+        "testNotApplicable": "Not applicable on custom scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2404,7 +2404,8 @@
         "attention": "שימו לב",
         "cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?",
         "cancelTextProgress": "המתינו לביצוע הביטול",
-        "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה."
+        "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה.",
+        "testNotApplicable": "Not applicable on custom scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

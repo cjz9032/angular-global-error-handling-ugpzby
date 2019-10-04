@@ -2404,7 +2404,8 @@
         "attention": "重要",
         "cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
-        "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。"
+        "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
+        "testNotApplicable": "Not applicable on custom scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

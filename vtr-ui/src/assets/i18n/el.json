@@ -2404,7 +2404,8 @@
         "attention": "Προσοχή",
         "cancelTextPrompt": "Σίγουρα θέλετε να ακυρώσετε τη διαδικασία;",
         "cancelTextProgress": "Περιμένετε να ακυρωθεί η πρόοδος",
-        "pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της."
+        "pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της.",
+        "testNotApplicable": "Not applicable on custom scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

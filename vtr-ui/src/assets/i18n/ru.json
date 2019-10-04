@@ -2404,7 +2404,8 @@
         "attention": "Внимание",
         "cancelTextPrompt": "Действительно отменить?",
         "cancelTextProgress": "Дождитесь отмены",
-        "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее."
+        "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
+        "testNotApplicable": "Not applicable on custom scan"
     },
     "smartPerformance": {
         "title": "Health & Support",
