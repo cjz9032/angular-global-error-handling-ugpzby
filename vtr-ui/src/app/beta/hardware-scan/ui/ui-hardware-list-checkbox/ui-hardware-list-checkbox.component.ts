@@ -17,7 +17,7 @@ export class UiHardwareListCheckboxComponent implements OnInit {
 	constructor(private translate: TranslateService,
 				private hardwareScanService: HardwareScanService) { }
 
-	ngOnInit() { }
+	ngOnInit() { this.onDeselectAllDevices(); }
 
 	onSelectDevice() {
 		this.hardwareScanService.setHasDevicesToRecover(this.devices.find(x => x.isSelected) !== undefined);
