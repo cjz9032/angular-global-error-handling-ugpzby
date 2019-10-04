@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
@@ -16,8 +16,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 })
 export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
-	gaugeResetCapability: boolean;
-	batteryGaugeResetInfo: BatteryGaugeReset[] = [];
+	@Input() batteryGaugeResetInfo: BatteryGaugeReset[] = [];
 	// private powerBatteryGaugeResetEventRef: any;
 	notificationSubscription: Subscription;
 	progressText: string;
@@ -31,6 +30,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.initBatteryGaugeResetInfo();
+		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -142,30 +142,32 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 
-	getBatteryGaugeResetInfo(response) {
+	getBatteryGaugeResetInfo(response: any[]) {
 		this.btnLabelText = [];
 		this.FCCParams = [];
-		this.batteryGaugeResetInfo = response;
+		this.resetBtnDisabled = [];
 		let resetRunningIndex = -1;
 		let count = 0;
-		this.batteryGaugeResetInfo.forEach((battery) => {
-			this.stageParams = { stage: battery.Stage, stageNum: battery.StageNum };
-			this.FCCParams.push({ before: battery.FCCbefore, after: battery.FCCafter });
-			if (battery.IsResetRunning) {
-				resetRunningIndex = count;
-				this.btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.stop');
-			} else {
-				this.btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.reset');
-			}
-			count++;
-		});
+		if (response && response.length > 0) {
+			this.batteryGaugeResetInfo = response;
+			this.batteryGaugeResetInfo.forEach((battery) => {
+				this.stageParams = { stage: battery.Stage, stageNum: battery.StageNum };
+				this.FCCParams.push({ before: battery.FCCbefore, after: battery.FCCafter });
+				if (battery.IsResetRunning) {
+					resetRunningIndex = count;
+					this.btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.stop');
+				} else {
+					this.btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.reset');
+				}
+				count++;
+			});
 
-		this.resetBtnDisabled = [];
-		for (let i = 0; i < response.length; i++) {
-			if (i !== resetRunningIndex && resetRunningIndex !== -1) {
-				this.resetBtnDisabled.push(true);
-			} else {
-				this.resetBtnDisabled.push(false);
+			for (let i = 0; i < response.length; i++) {
+				if (i !== resetRunningIndex && resetRunningIndex !== -1) {
+					this.resetBtnDisabled.push(true);
+				} else {
+					this.resetBtnDisabled.push(false);
+				}
 			}
 		}
 

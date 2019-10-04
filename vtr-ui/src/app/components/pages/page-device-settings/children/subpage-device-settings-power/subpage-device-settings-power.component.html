@@ -119,8 +119,8 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class=""
-						*ngIf="gaugeResetCapability">
-						<vtr-battery-gauge-reset [gaugeResetCapability]="gaugeResetCapability">
+						*ngIf="gaugeResetCapability && gaugeResetInfo">
+						<vtr-battery-gauge-reset [batteryGaugeResetInfo]="gaugeResetInfo">
 						</vtr-battery-gauge-reset>
 					</li>
 

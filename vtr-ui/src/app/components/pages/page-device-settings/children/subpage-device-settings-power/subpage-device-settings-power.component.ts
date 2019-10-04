@@ -24,6 +24,7 @@ import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.
 import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
 
 
 enum PowerMode {
@@ -71,7 +72,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public machineType: any;
 	private batteryCountStatusEventRef: any;
 
-	thresholdWarningSubscription: Subscription;
+	notificationSubscription: Subscription;
 
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
@@ -96,6 +97,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
 	public isPowerDriverMissing = false;
+	gaugeResetInfo: BatteryGaugeReset[];
 
 	headerMenuItems = [
 		{
@@ -236,7 +238,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
-		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+		console.log('=============Power Subpage ngOnit ===================');
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
@@ -376,7 +379,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.thresholdWarningSubscription.unsubscribe();
+		this.notificationSubscription.unsubscribe();
 		this.stopMonitor();
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
@@ -1058,6 +1061,36 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
 					}
 					break;
+				case 'GaugeResetInfo':
+					if (notification.payload) {
+						this.gaugeResetInfo = notification.payload;
+
+						// const btnLabelText = [];
+						// const FCCParams = [];
+						// const resetBtnDisabled = [];
+						// let resetRunningIndex = -1;
+						// let count = 0;
+						// this.gaugeResetInfo.forEach((battery) => {
+						// 	const stageParam = { stage: battery.Stage, stageNum: battery.StageNum };
+						// 	FCCParams.push({ before: battery.FCCbefore, after: battery.FCCafter });
+						// 	if (battery.IsResetRunning) {
+						// 		resetRunningIndex = count;
+						// 		btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.stop');
+						// 	} else {
+						// 		btnLabelText.push('device.deviceSettings.power.batterySettings.batteryGaugeReset.btnLabel.reset');
+						// 	}
+						// 	count++;
+						// });
+
+						// for (let i = 0; i < this.gaugeResetInfo.length; i++) {
+						// 	if (i !== resetRunningIndex && resetRunningIndex !== -1) {
+						// 		resetBtnDisabled.push(true);
+						// 	} else {
+						// 		resetBtnDisabled.push(false);
+						// 	}
+						// }
+						// this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
+					}
 			}
 
 		}
