@@ -15,11 +15,13 @@ declare var Windows;
 	providedIn: 'root'
 })
 
-export class VantageShellMockService implements BaseVantageShellService {
-	public readonly isShellAvailable = true;
+export class VantageShellMockService extends BaseVantageShellService {
+	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
+		super();
+		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			this.setConsoleLogProxy();

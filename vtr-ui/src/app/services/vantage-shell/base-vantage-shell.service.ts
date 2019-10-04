@@ -6,6 +6,7 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 	providedIn: 'root'
 })
 export abstract class BaseVantageShellService {
+	abstract isShellAvailable: boolean;
 	abstract registerEvent(eventType: any, handler: any);
 	abstract unRegisterEvent(eventType: any, handler: any);
 	abstract getLenovoId(): any;

@@ -15,11 +15,12 @@ declare var Windows;
 	providedIn: 'root'
 })
 
-export class VantageShellService implements BaseVantageShellService {
-	public readonly isShellAvailable;
+export class VantageShellService extends BaseVantageShellService {
+	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
+		super();
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			this.isShellAvailable = true;
