@@ -20,7 +20,7 @@ export class ModalRebootConfirmComponent implements OnInit {
 		this.activeModal.close('close');
 	}
 
-	@HostListener(HostListener'document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
 		this.closeModal();
 	}
 }
