@@ -17,6 +17,8 @@ export class ModalVoiceComponent implements OnInit {
 	closeModal() {
 		this.activeModal.close('close');
 	}
-
+	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+		this.closeModal();
+	}
 
 }
