@@ -30,7 +30,8 @@
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
 									</div>
 									<div class="row no-gutters"
-										*ngIf="showIntelligentCoolingModes">
+										*ngIf="showIntelligentCoolingModes"
+										role="radiogroup">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
 											[theme]="'blue'"
 											[radioId]="'radioICPerformance'"
