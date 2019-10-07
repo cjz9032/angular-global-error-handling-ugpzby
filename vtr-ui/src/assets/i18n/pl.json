@@ -645,7 +645,7 @@
             "loading": "Ładuję..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
         }
     },
     "privacy": {
@@ -1766,7 +1766,7 @@
                 "notAvailable": "Niedostępne"
             },
             "windowsDefender": {
-                "optimallyProtected": "Wydaje się, że obecnie korzystasz z programu Windows Defender. Nie jest to zły wybór, jednak by zapewnić najwyższy poziom zabezpieczenia przed ransomware, złośliwym oprogramowaniem i wirusami połączyliśmy siły z <b>McAfee</b> aby zaoferować ci wielokrotnie nagradzany program, który pomaga <b>chronić to, co jest ważne.</b>",
+                "optimallyProtected": "Wydaje się, że obecnie korzystasz z programu Windows Defender. Nie jest to zły wybór, jednak by zapewnić najwyższy poziom zabezpieczenia przed ransomware, złośliwym oprogramowaniem i wirusami, połączyliśmy siły z <b>McAfee</b>, aby zaoferować ci wielokrotnie nagradzany program, który pomaga <b>chronić to, co jest ważne.</b>",
                 "windowsSubtitle": "Podstawowa ochrona Windows Defender",
                 "topTip": "Najważniejsze wskazówki w zakresie bezpieczeństwa w sieci",
                 "topContent": "Dowiedz się, jak możesz się bronić przed największymi współczesnymi zagrożeniami internetowymi <tag>ZAPOZNAJ SIĘ ZE WSKAZÓWKAMI</tag>",
@@ -1787,7 +1787,7 @@
                 "getMacfee": "Pobierz program McAfee",
                 "topBenefits": "Dlaczego <b>Lenovo zaleca McAfee</b> w celu ochrony wszystkich twoich urządzeń",
                 "awardTitle": "Nagradzane oprogramowanie antywirusowe",
-                "awardSubtitle": "Zapobiega zainfekowaniu komputera przez wirusy, złośliwe oprogramowanie i ransomware.",
+                "awardSubtitle": "Zapobiega zainfekowaniu komputera przez wirusy, złośliwe oprogramowanie i ransomware",
                 "supportTitle": "Bezpłatne specjalistyczne wsparcie techniczne 24/7 ",
                 "supportSubtitle": "Możesz skorzystać z całodobowej pomocy, a dzięki naszemu wyspecjalizowanemu zespołowi ds. bezpieczeństwa śpisz spokojnie",
                 "trialSubtitle": "Obecnie jesteś chroniony dzięki 30-dniowej wersji próbnej McAfee LiveSafe – pozostało już tylko {{remainingDays}} dni! Subskrybuj już teraz, aby przedłużyć swoją ochronę.",
@@ -1819,7 +1819,8 @@
                 "startFileScan": "Rozpocznij skanowanie plików"
             },
             "others": {
-                "othersProtection": "{{protectedName}} oferuje podstawową ochronę urządzenia"
+                "othersProtection": "{{protectedName}} oferuje podstawową ochronę urządzenia",
+                "unknown": "Brak danych"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2501,10 @@
         "offline": "To urządzenie działa w trybie offline, połącz je z Internetem",
         "doNotSuspend": "Nie można przerywać wykonywania tych testów! Podczas skanowania nie zamykaj ani nie minimalizuj tej aplikacji, i nie wstrzymuj ani nie wyłączaj komputera.",
         "doNotUse": "Nie używaj komputera aż do zakończenia testu",
+        "testsMustRunUniterrupted": "Nie można przerywać wykonywania tych testów!",
+        "doNotCloseOrMinimizeApp": "• Nie zamykaj ani nie minimalizuj tej aplikacji.",
+        "doNotSwitchApp": "• Nie przełączaj do innej aplikacji.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nie przechodź do trybu uśpienia, nie wylogowuj się ani nie wyłączaj komputera.",
         "customize": {
             "name": "Dostosuj",
             "test": "Dostosuj test",

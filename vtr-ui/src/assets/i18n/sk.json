@@ -645,7 +645,7 @@
             "loading": "Načítava..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
         }
     },
     "privacy": {
@@ -1787,7 +1787,7 @@
                 "getMacfee": "Získať aplikáciu McAfee",
                 "topBenefits": "Prečo <b>spoločnosť Lenovo odporúča aplikáciu McAfee</b> na ochranu všetkých vašich zariadení",
                 "awardTitle": "Oceňovaný antivírus",
-                "awardSubtitle": "Zabráňte infikovaniu svojho počítača vírusmi, škodlivým softvérom a ransomvérom.",
+                "awardSubtitle": "Zabráňte infikovaniu svojho počítača vírusmi, škodlivým softvérom a ransomvérom",
                 "supportTitle": "Bezplatná 24-hodinová odborná technická podpora ",
                 "supportSubtitle": "Získajte nepretržitú pomoc a zabudnite na starosti vďaka nášmu špecializovanému bezpečnostnému tímu",
                 "trialSubtitle": "Momentálne ste chránení 30-dňovou skúšobnou verziou aplikácie McAfee LiveSafe – už len na obdobie {{remainingDays}} dní! Ak chcete rozšíriť svoju ochranu, prihláste sa na odber.",
@@ -1819,7 +1819,8 @@
                 "startFileScan": "Spustiť kontrolu súborov"
             },
             "others": {
-                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia"
+                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia",
+                "unknown": "Neznáma"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2501,10 @@
         "offline": "Toto zariadenie je v režime offline, pripojte ho k internetu",
         "doNotSuspend": "Tieto testy musia prebiehať bez prerušenia. Počas kontroly nezatvárajte ani neminimalizujte aplikáciu a neodstavujte ani nevypínajte počítač.",
         "doNotUse": "Počítač nepoužívajte, kým sa test nedokončí",
+        "testsMustRunUniterrupted": "Tieto testy musia prebiehať bez prerušenia.",
+        "doNotCloseOrMinimizeApp": "• Nezatvárajte ani neminimalizujte túto aplikáciu.",
+        "doNotSwitchApp": "• Neprepínajte na inú aplikáciu.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Neprechádzajte do režimu spánku, neodhlasujte sa ani počítač nevypínajte.",
         "customize": {
             "name": "Prispôsobiť",
             "test": "Prispôsobiť test",

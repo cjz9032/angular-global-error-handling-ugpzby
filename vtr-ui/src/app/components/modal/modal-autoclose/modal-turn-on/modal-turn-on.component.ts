@@ -25,7 +25,7 @@ export class ModalTurnOnComponent implements OnInit, AfterViewInit {
 
 	setAksAgain(event: any) {
 		this.isChecked = !this.isChecked;
-		this.actionNeedAsk.emit(event);
+		this.actionNeedAsk.emit(this.isChecked);
 	}
 
 	turnOnAction(isConfirm: boolean) {

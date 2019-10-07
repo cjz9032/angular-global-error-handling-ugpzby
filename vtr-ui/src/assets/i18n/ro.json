@@ -645,7 +645,7 @@
             "loading": "se incarca..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
         }
     },
     "privacy": {
@@ -1750,7 +1750,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ÎNAPOI",
-                "recommends": "De ce Lenovo recomandă <b>McAfee</b> pentru a vă proteja toate dispozitivele",
+                "recommends": "De ce recomandă Lenovo produsele <b>McAfee</b> pentru a vă proteja toate dispozitivele",
                 "award": "Antivirus premiat",
                 "mcafeePremium": "Protecție McAfee LiveSafe",
                 "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",
@@ -1787,7 +1787,7 @@
                 "getMacfee": "Obțineți McAfee",
                 "topBenefits": "De ce <b>Lenovo recomandă McAfee</b> pentru a vă proteja toate dispozitivele",
                 "awardTitle": "Antivirus premiat",
-                "awardSubtitle": "Împiedicați virușii, malware-ul și ransomware-ul să vă infecteze PC-ul.",
+                "awardSubtitle": "Împiedicați virușii, malware-ul și ransomware-ul să vă infecteze PC-ul",
                 "supportTitle": "Asistență tehnică expert 24/7, gratuită ",
                 "supportSubtitle": "Beneficiați de asistență non-stop și de un plus de siguranță din partea echipei noastre dedicate de securitate",
                 "trialSubtitle": "Sunteți protejat în prezent de o versiune de încercare McAfee LiveSafe de 30 de zile – au mai rămas {{remainingDays}} zile! Abonați-vă acum pentru a prelungi protecția.",
@@ -1819,7 +1819,8 @@
                 "startFileScan": "Pornire scanare fişiere"
             },
             "others": {
-                "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs."
+                "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs.",
+                "unknown": "Necunoscut"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2501,10 @@
         "offline": "Acest dispozitiv rulează în modul offline; vă rugăm să vă conectați la internet",
         "doNotSuspend": "Aceste teste trebuie să ruleze fără întreruperi! În timpul scanării, nu închideţi şi nu minimizaţi această aplicaţie, nu întrerupeţi şi nu opriţi computerul.",
         "doNotUse": "Nu utilizaţi computerul înainte de finalizarea acestui test",
+        "testsMustRunUniterrupted": "Aceste teste trebuie să ruleze fără întreruperi!",
+        "doNotCloseOrMinimizeApp": "• Nu închideți și nu minimizați această aplicație.",
+        "doNotSwitchApp": "• Nu comutați la altă aplicație.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nu activați modul repaus, nu vă deconectați și nu opriți computerul.",
         "customize": {
             "name": "Personalizare",
             "test": "Personalizare test",

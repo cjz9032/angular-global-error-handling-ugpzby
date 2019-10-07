@@ -645,7 +645,7 @@
             "loading": "nalaganje..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
         }
     },
     "privacy": {
@@ -1787,7 +1787,7 @@
                 "getMacfee": "Pridobite McAfee",
                 "topBenefits": "Zakaj <b>Lenovo priporoča McAfee</b> za zaščito vseh vaših naprav",
                 "awardTitle": "Nagrajena protivirusna zaščita",
-                "awardSubtitle": "Preprečite, da bi virusi, zlonamerna in izsiljevalska programska oprema okužili vaš računalnik.",
+                "awardSubtitle": "Preprečite, da bi virusi, zlonamerna in izsiljevalska programska oprema okužili vaš računalnik",
                 "supportTitle": "Brezplačna strokovna tehnična podpora 24 ur dnevno in vse dni v tednu ",
                 "supportSubtitle": "Naša predana varnostna skupina vam zagotavlja pomoč, ko jo potrebujete, in brezskrbno uporabo",
                 "trialSubtitle": "Trenutno ste zaščiteni s 30-dnevno preizkusno različico programske opreme McAfee LiveSafe – samo še {{remainingDays}} dni! Naročite se zdaj in podaljšajte zaščito.",
@@ -1819,7 +1819,8 @@
                 "startFileScan": "Zaženite pregledovanje datotek"
             },
             "others": {
-                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo"
+                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo",
+                "unknown": "Neznan"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2501,10 @@
         "offline": "Ta naprava deluje brez povezave, vzpostavite internetno povezavo",
         "doNotSuspend": "Ti preskusi se morajo izvajati brez prekinitev. Med pregledom ne zapirajte ali minimizirajte te aplikacije in računalnika ne preklapljajte v stanje pripravljenosti ali ga izklapljajte.",
         "doNotUse": "Računalnika ne uporabljajte, dokler se ne dokonča ta preskus.",
+        "testsMustRunUniterrupted": "Ti preskusi se morajo izvajati brez prekinitev.",
+        "doNotCloseOrMinimizeApp": "• Ne zapirajte ali minimizirajte tega programa.",
+        "doNotSwitchApp": "• Ne preklopite na drug program.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne preklopite v način spanja, ne odjavite se in ne izklopite računalnika.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagajanje preskusa",

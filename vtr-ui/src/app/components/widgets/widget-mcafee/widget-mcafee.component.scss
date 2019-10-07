@@ -63,3 +63,9 @@
 .mt-60 {
     margin-top: 60px;
 }
+
+.md-margin {
+    @media #{$mediaquery_md} {
+        margin-bottom: 4rem;
+      }
+}
