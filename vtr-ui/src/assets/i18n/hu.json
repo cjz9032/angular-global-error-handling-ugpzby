@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "Szín"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "Nincsenek hozzáadandó futó alkalmazások",
                 "body": "Csak a jelenleg futó alkalmazások jelennek meg. Indítsa el a hozzáadni kívánt alkalmazást, és lépjen vissza ide."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "További 5 gyorsítandó alkalmazást adhat hozzá",
                     "part2": "/",
                     "part3": "hozzáadva"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -490,7 +645,7 @@
             "loading": "Betöltés..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
         }
     },
     "privacy": {
@@ -1611,7 +1766,7 @@
                 "notAvailable": "Nem érhető el"
             },
             "windowsDefender": {
-                "optimallyProtected": "Úgy tűnik, hogy jelenleg a Windows Defender alkalmazást használja. Nem rossz választás, de a zsarolóprogramok, rosszindulatú programok és a vírusok elleni felülmúlhatatlan biztonság érdekében összefogtunk a <b>McAfee</b>-vel, így díjnyertes biztonságot kínálunk, hogy <b>megóvhassa, ami számít</b>.",
+                "optimallyProtected": "Úgy tűnik, hogy jelenleg a Windows Defender alkalmazást használja. Nem rossz választás, de a zsarolóprogramok, rosszindulatú programok és a vírusok elleni felülmúlhatatlan biztonság érdekében összefogtunk a <b>McAfee</b>-vel, így díjnyertes biztonságot kínálunk, <b>hogy megóvhassa, ami számít.</b>",
                 "windowsSubtitle": "Windows Defender – alapvédelem",
                 "topTip": "Legfontosabb online biztonsági tippek",
                 "topContent": "Sajátítsa el, hogyan védekezhet napjaink legjelentősebb online fenyegetései ellen <tag>TIPPEK MEGTEKINTÉSE</tag>",
@@ -1632,7 +1787,7 @@
                 "getMacfee": "A McAfee beszerzése",
                 "topBenefits": "Miért <b>javasolja a Lenovo a McAfee-t</b> az összes eszköz védelmére",
                 "awardTitle": "Díjnyertes vírusirtó",
-                "awardSubtitle": "Megakadályozza, hogy a vírusok, a rosszindulatú programokat és a zsarolóprogramok a számítógépet megfertőzzék.",
+                "awardSubtitle": "Megakadályozza, hogy a vírusok, a rosszindulatú programokat és a zsarolóprogramok a számítógépet megfertőzzék",
                 "supportTitle": "Ingyenes, éjjel-nappali szakértői műszaki támogatás ",
                 "supportSubtitle": "Éjjel-nappal segítséget és lelki nyugalmat kínál elkötelezett biztonsági csapatunk",
                 "trialSubtitle": "Jelenleg a McAfee LiveSafe 30 napos próbaverziója védi – csak {{remainingDays}} nap van hátra! Iratkozzon fel most, hogy kibővítse védelmét.",
@@ -1664,7 +1819,8 @@
                 "startFileScan": "Fájlok vizsgálatának megkezdése"
             },
             "others": {
-                "othersProtection": "{{protectedName}} alapszintű védelmet biztosít az eszköz számára"
+                "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
+                "unknown": "Ismeretlen"
             }
         },
         "wifisecurity": {
@@ -2345,6 +2501,10 @@
         "offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
         "doNotSuspend": "Ezeket a teszteket nem szabad megszakítani. Az ellenőrzés során ne állítsa kis méretűre és ne zárja be az alkalmazást, illetve ne függessze fel vagy kapcsolja ki a számítógépet.",
         "doNotUse": "Kérjük, a teszt befejeződéséig ne használja a számítógépet",
+        "testsMustRunUniterrupted": "A tesztet nem szabad megszakítani!",
+        "doNotCloseOrMinimizeApp": "• Ne zárja be, és ne alakítsa kisméretűre az alkalmazásablakot.",
+        "doNotSwitchApp": "• Ne váltson át egy másik alkalmazásra.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• A számítógépet ne helyezze alvó módva és ne kapcsolja ki.",
         "customize": {
             "name": "Személyre szabás",
             "test": "Teszt testreszabása",
@@ -2574,5 +2734,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }
