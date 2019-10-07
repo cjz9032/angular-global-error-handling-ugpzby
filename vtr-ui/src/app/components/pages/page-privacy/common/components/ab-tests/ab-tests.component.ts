@@ -1,15 +1,5 @@
-import {
-	AfterContentInit, AfterViewInit,
-	Component,
-	ContentChildren,
-	ElementRef,
-	Input,
-	OnInit,
-	QueryList,
-	TemplateRef, ViewChild
-} from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
-import config from '../../../utils/ab-test/config.json';
 import { AbTestsService } from './ab-tests.service';
 import { TestOptionDirective } from '../../directives/test-option.directive';
 
@@ -30,7 +20,7 @@ export class AbTestsComponent implements AfterContentInit {
 		this.findOption().display();
 	}
 
-	findOption() {
+	private findOption() {
 		return this.templates.find((option) => option.testOption === this.abTestsService.getDefaultOption(this.testName));
 	}
 }
