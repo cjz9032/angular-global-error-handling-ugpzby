@@ -44,6 +44,10 @@
 		position: relative;
 		z-index: 2;
 		overflow: hidden;
+		@media #{$white-on-black}{
+			background-color: $dark;
+			border-radius: 2.8rem;
+		}
 
 		.label {
 			// @media #{$mediaquery_X4} {
