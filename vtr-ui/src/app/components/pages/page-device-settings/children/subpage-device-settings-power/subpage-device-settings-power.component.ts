@@ -220,7 +220,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-
+		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
+		this.checkPowerDriverMissing(this.isPowerDriverMissing);
 		this.getFlipToBootCapability();
 
 		if (this.isDesktopMachine) {
@@ -1049,17 +1050,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
 					break;
 				case "IsPowerDriverMissing":
-					if (this.machineType === 1 && notification.payload) {
-						this.isPowerDriverMissing = notification.payload;
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "smartStandby");
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "battery");
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "power");
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "other");
-					}
+					this.checkPowerDriverMissing(notification.payload);
 					break;
 			}
 
 		}
+	}
+
+	public checkPowerDriverMissing(status) {
+		this.isPowerDriverMissing = status;
+		if (this.machineType === 1 && status) {
+			this.showAirplanePowerModeSection = false;
+			this.isChargeThresholdAvailable = false;
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "battery");
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "power");
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerDriverMissing, this.isPowerDriverMissing);
 	}
 
 	public showBatteryThresholdsettings(event) {

@@ -2,24 +2,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col col-12 hardwarescan-background">
-                <div class="vtr-widget-offline-info" *ngIf="!isOnline && !showProgress">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col col-12 offline-info-background">
-                                <div class="d-flex align-items-center w-100">
-                                    <div class="offline-icon">
-                                        <fa-icon [icon]="['fal', 'wifi-slash']" class="icon"></fa-icon>
-                                    </div>
-                                    <div class="w-100 offline-content">
-                                        <div class="row">
-                                            <div class="col title">{{offlineText}}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col title">{{title}}</div>
                 </div>
@@ -51,7 +33,7 @@
 
                     <div class="col col-12 row">
                         <div class="cancel-check" *ngIf="!(percent === 100)">
-                            <a [ngClass]="{'cancel-check-text': !disableCancel, 'disabled-cancel': disableCancel}" (click)="onCancel()">{{cancelText}}</a>
+                            <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" (click)="onCancel()">{{cancelText}}</button>
                         </div>
                         <div class="container final-result-code" *ngIf="getFinalResultCode()">
                             <span class="result-code-value-text">{{finalResultCodeText}}:</span>

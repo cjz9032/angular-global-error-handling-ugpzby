@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "색상"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "추가할 실행 중인 앱 없음",
                 "body": "현재 실행 중인 앱만 표시됩니다. 추가하려는 앱을 실행한 다음 다시 시도하십시오."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "최대 5개의 앱을 추가할 수 있습니다",
                     "part2": "/",
                     "part3": "추가됨"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -490,7 +645,7 @@
             "loading": "로드 중..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
         }
     },
     "privacy": {
@@ -1595,7 +1750,7 @@
             "common": {
                 "title": "바이러스 백신",
                 "back": "뒤로",
-                "recommends": "장치 보호를 위해 Lenovo가 <b>McAfee</b>를 권장 하는 이유",
+                "recommends": "장치 보호를 위해 Lenovo가 <b>McAfee</b>를 권장하는 이유",
                 "award": "수상 경력에 빛나는 안티바이러스",
                 "mcafeePremium": "McAfee LiveSafe 보호",
                 "protectedBy": "현재 {{protectedName}}(으)로 보호되고 있습니다. 그러나 McAfee LiveSafe를 사용하면 더 효과적으로 보호 받을 수 있습니다.",
@@ -1632,7 +1787,7 @@
                 "getMacfee": "McAfee 가져오기",
                 "topBenefits": "장치 보호를 위해 <b>Lenovo가 McAfee를 권장</b>하는 이유",
                 "awardTitle": "수상 경력에 빛나는 바이러스 백신",
-                "awardSubtitle": "바이러스, 멀웨어 및 랜섬웨어로부터 PC가 감염되는 것을 방지합니다.",
+                "awardSubtitle": "바이러스, 멀웨어 및 랜섬웨어로부터 PC가 감염되는 것을 방지합니다",
                 "supportTitle": "무료, 24/7 전문가 기술 지원 ",
                 "supportSubtitle": "전담 보안 팀에서 상시 지원하여 안심하고 사용",
                 "trialSubtitle": "현재 McAfee LiveSafe 30일 평가판 사용 중 - {{remainingDays}}일 남았습니다. 지금 가입하여 보호를 확장하십시오.",
@@ -1664,7 +1819,8 @@
                 "startFileScan": "파일 검사 시작"
             },
             "others": {
-                "othersProtection": "{{protectedName}} 장치에 대한 기본적인 보호 제공"
+                "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
+                "unknown": "알 수 없음"
             }
         },
         "wifisecurity": {
@@ -2345,6 +2501,10 @@
         "offline": "이 장치가 오프 라인 모드에서 실행 중입니다. 인터넷에 연결하십시오",
         "doNotSuspend": "이러한 테스트는 중단 없이 실행되어야 합니다! 이 앱을 닫거나 최소화하면 안 되며 스캔 중에는 컴퓨터를 절전 모드로 전환하거나 꺼서는 안 됩니다.",
         "doNotUse": "이 테스트가 완료될 때까지 컴퓨터 사용을 삼가 주십시오.",
+        "testsMustRunUniterrupted": "이러한 테스트는 중단 없이 실행되어야 합니다!",
+        "doNotCloseOrMinimizeApp": "• 이 앱을 닫거나 최소화해서는 안 됩니다.",
+        "doNotSwitchApp": "• 다른 앱으로 전환해서는 안 됩니다.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 컴퓨터를 절전 또는 로그아웃하거나 끄면 안 됩니다.",
         "customize": {
             "name": "사용자 정의",
             "test": "테스트 사용자 지정",
@@ -2574,5 +2734,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

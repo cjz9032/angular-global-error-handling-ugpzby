@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "Kleur"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "Er zijn geen actieve apps om toe te voegen",
                 "body": "Toont alleen apps die nu actief zijn. Open een app die u wilt toevoegen en kom vervolgens terug."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "Voeg maximaal 5 extra apps toe",
                     "part2": "van",
                     "part3": "toegevoegd"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -490,7 +645,7 @@
             "loading": "Bezig met laden..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
         }
     },
     "privacy": {
@@ -1611,7 +1766,7 @@
                 "notAvailable": "Niet beschikbaar"
             },
             "windowsDefender": {
-                "optimallyProtected": "Het lijkt erop dat je momenteel Windows Defender gebruikt. Geen slechte keuze, maar voor de ultieme bescherming tegen Ransomware, malware en virussen, hebben we de handen ineengeslagen met <b>McAfee</b> om je bekroonde beveiliging te bieden, zodat je kunt <b>beschermen wat belangrijk is</b>.",
+                "optimallyProtected": "Het lijkt erop dat je momenteel Windows Defender gebruikt. Geen slechte keuze, maar voor de ultieme bescherming tegen ransomware, malware en virussen, hebben we de handen ineengeslagen met <b>McAfee</b> om je bekroonde beveiliging te bieden, zodat je kunt <b>beschermen wat belangrijk is.</b>",
                 "windowsSubtitle": "Windows Defender-basisbeveiliging",
                 "topTip": "De beste tips voor onlineveiligheid",
                 "topContent": "Ontdek hoe je je kunt verdedigen tegen de grootste onlinedreigingen van vandaag <tag>TIPS WEERGEVEN</tag>",
@@ -1632,7 +1787,7 @@
                 "getMacfee": "McAfee downloaden",
                 "topBenefits": "Waarom <b>Lenovo McAfee aanbeveelt</b> voor de beveiliging van al je apparaten",
                 "awardTitle": "Bekroonde Antivirus",
-                "awardSubtitle": "Voorkom dat virussen, malware en ransomware je pc infecteren.",
+                "awardSubtitle": "Voorkom dat virussen, malware en ransomware je pc infecteren",
                 "supportTitle": "Gratis, 24/7 deskundige technische ondersteuning ",
                 "supportSubtitle": "Ons toegewijde beveiligingsteam biedt je 24/7 hulp en gemoedsrust",
                 "trialSubtitle": "Je bent momenteel beschermd met een proefversie van 30-dagen van McAfee LiveSafe – nog maar {{remainingDays}} dagen! Abonneer je nu om je bescherming te verlengen.",
@@ -1664,7 +1819,8 @@
                 "startFileScan": "Start bestanden scannen"
             },
             "others": {
-                "othersProtection": "{{protectedName}} biedt basisbeveiliging voor uw apparaat"
+                "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
+                "unknown": "Onbekend"
             }
         },
         "wifisecurity": {
@@ -2345,6 +2501,10 @@
         "offline": "Op dit apparaat wordt de offline stand uitgevoerd. Maak verbinding met internet",
         "doNotSuspend": "Deze tests moeten zonder onderbreking worden uitgevoerd! Sluit of minimaliseer deze app niet, laat de computer niet in de slaapstand gaan en zet de computer niet uit tijdens de scan.",
         "doNotUse": "Gebruik de computer pas weer wanneer deze test is voltooid",
+        "testsMustRunUniterrupted": "Deze tests moeten zonder onderbreking worden uitgevoerd!",
+        "doNotCloseOrMinimizeApp": "• Deze app niet sluiten of minimaliseren.",
+        "doNotSwitchApp": "• Niet naar een andere app schakelen.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Niet afmelden of de computer uitschakelen of in de slaapstand zetten.",
         "customize": {
             "name": "Aanpassen",
             "test": "Test aanpassen",
@@ -2574,5 +2734,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

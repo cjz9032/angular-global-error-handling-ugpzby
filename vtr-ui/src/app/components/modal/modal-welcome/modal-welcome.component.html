@@ -31,7 +31,7 @@
 						<div class="col-auto title2">
 							<ul>
 								<li>{{"welcometutorial.bullets1" | translate }}</li>
-								<li>{{"welcometutorial.bullets2" | translate }}</li>
+								<li *ngIf="machineInfo.brand!='think'" >{{"welcometutorial.bullets2" | translate }}</li>
 								<li>{{"welcometutorial.bullets3" | translate }}</li>
 							</ul>
 						</div>
