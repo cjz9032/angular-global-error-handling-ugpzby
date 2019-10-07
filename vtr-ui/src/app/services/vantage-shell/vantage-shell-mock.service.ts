@@ -591,7 +591,7 @@ export class VantageShellMockService extends BaseVantageShellService {
 	 */
 	public getBatteryInfo(): any {
 		const battery: any = {
-				batteryInformation: [{
+			batteryInformation: [{
 				barCode: 'X2XP888JB1S',
 				batteryCondition: ['Normal'],
 				batteryHealth: 0,
@@ -676,16 +676,27 @@ export class VantageShellMockService extends BaseVantageShellService {
 		return undefined;
 	}
 	public getVantageToolBar(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.power.common.vantageToolBar;
-		}
-		return undefined;
+		const devicePower: any = {};
+		const toolbarObj: any = {
+			available: true,
+			status: true
+		};
+
+		devicePower.getVantageToolBarStatus = this.getPromise(toolbarObj);
+		return devicePower;
 	}
 	public getPowerIdeaNoteBook(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.power.ideaNotebook;
-		}
-		return undefined;
+		const obj = {
+			available: true,
+			status: true
+		};
+		const devicePowerIdeaNoteBook = {
+			rapidChargeMode: { getRapidChargeModeStatus: this.getPromise(obj) },
+			conservationMode: { getConservationModeStatus: this.getPromise(obj) },
+			alwaysOnUSB: { getAlwaysOnUSBStatus: this.getPromise(obj), getUSBChargingInBatteryModeStatus: this.getPromise(obj)},
+			flipToBoot : {getFlipToBootCapability: this.getPromise({ErrorCode: 0, Supported: 1, CurrentMode: 1})}
+		};
+		return devicePowerIdeaNoteBook;
 	}
 	// public getPowerThinkPad(): any {
 	// 	if (this.phoenix) {
@@ -713,10 +724,12 @@ export class VantageShellMockService extends BaseVantageShellService {
 		}];
 		const devicePowerThinkPad: any = {
 			sectionChargeThreshold: { getChargeThresholdInfo: this.getPromise(batteryThresholdInfo) },
-			sectionAirplaneMode: { getAirplaneModeCapability: this.getPromise(true) }
+			sectionAirplaneMode: { getAirplaneModeCapability: this.getPromise(true) },
+			sectionAlwaysOnUsb: { getAlwaysOnUsbCapability: this.getPromise(true) },
+			sectionEasyResume: { getEasyResumeCapability: this.getPromise(true) },
+			sectionSmartStandby: { getSmartStandbyCapability: this.getPromise(true), getSmartStandbyEnabled: this.getPromise(true) }
 		};
 		return devicePowerThinkPad;
-
 	}
 
 	// public getPowerItsIntelligentCooling(): any {
@@ -1069,10 +1082,9 @@ export class VantageShellMockService extends BaseVantageShellService {
 	}
 
 	public getImcHelper(): any {
-		if (this.phoenix && this.phoenix.hwsettings.power.thinkpad.sectionImcHelper) {
-			return this.phoenix.hwsettings.power.thinkpad.sectionImcHelper;
-		}
-		return undefined;
+		const imcHelper: any = {getIsEnergyStarCapability : this.getPromise(true)};
+
+		return imcHelper;
 	}
 
 	// Active Protection System
