@@ -93,14 +93,14 @@
 							</div>
 							<div class="row">
 								<div class="col-12 pr-0">
-
-									<vtr-widget-permission-note
-										[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
-										[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
-										[path]="'ms-settings:privacy-location'"
-										*ngIf="enableSunsetToSunrise"
-										[linkId]="'display-eyeCareMode-privacy-settings-link'">
-									</vtr-widget-permission-note>
+									<div *ngIf="enableSunsetToSunrise">
+										<vtr-widget-permission-note
+											[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
+											[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
+											[path]="'ms-settings:privacy-location'"
+											[linkId]="'display-eyeCareMode-privacy-settings-link'">
+										</vtr-widget-permission-note>
+									</div>
 
 									<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
 										<ng-template #vtrwidgetpermissionnote>
@@ -175,8 +175,8 @@
 
 						</vtr-ui-row-switch>
 					</li>
-
-					<li class="pt-3" *ngIf="hasOLEDPowerControlCapability">
+					<!-- *ngIf="hasOLEDPowerControlCapability" -->
+					<li class="pt-3" >
 						<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
