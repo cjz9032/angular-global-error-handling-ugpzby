@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "Farbe"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "Keine laufenden Apps zum Hinzufügen",
                 "body": "Nur aktuell ausgeführte Apps sind sichtbar. Starten Sie eine App, um sie hinzuzufügen, und kehren Sie dann hierher zurück."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "Bis zu 5 weitere Apps hinzufügen",
                     "part2": "von",
                     "part3": "hinzugefügt"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -490,7 +645,7 @@
             "loading": "Wird geladen..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
         }
     },
     "privacy": {
@@ -1608,7 +1763,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZURÜCK",
-                "recommends": "Warum Lenovo <b>McAfee</b> für den Schutz Ihrer Geräte empfiehlt",
+                "recommends": "Warum Lenovo <b>McAfee</b> zum Schutz aller Ihrer Geräte empfiehlt",
                 "award": "Preisgekrönter Virenschutz",
                 "mcafeePremium": "McAfee LiveSafe-Schutz",
                 "protectedBy": "Sie werden derzeit von {{protectedName}} geschützt. McAfee LiveSafe bietet jedoch einen besseren Schutz.",
@@ -1621,10 +1776,10 @@
                 "Blazing": "Blitzschnelle Geschwindigkeit",
                 "BlazingText": "Optimierte Antivirenprogramme, die Ihr Lenovo Vantage-Erlebnis nicht verlangsamen oder unterbrechen",
                 "privacyTerms": "/   <tag>Datenschutzrichtlinie</tag>  |  <tag>Servicebedingungen</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nicht verfügbar"
             },
             "windowsDefender": {
-                "optimallyProtected": "Wie es scheint, verwenden Sie derzeit Windows Defender. Keine schlechte Wahl, aber für die ultimative Abwehr von Ransomware, Malware und Viren haben wir uns mit <b>McAfee</b> zusammengetan, um Ihnen preisgekrönte Sicherheit für den <b>Schutz Ihrer wichtigen Daten</b> zu bieten.",
+                "optimallyProtected": "Wie es scheint, verwenden Sie derzeit Windows Defender. Keine schlechte Wahl, aber für die ultimative Sicherheit vor Ransomware, Malware und Viren haben wir uns mit <b>McAfee</b> zusammengeschlossen, um Ihnen preisgekrönte Sicherheit zu bieten, damit Sie das <b>schützen können, was wichtig ist.</b>",
                 "windowsSubtitle": "Windows Defender Basisschutz",
                 "topTip": "Die besten Tipps für Ihre Online-Sicherheit",
                 "topContent": "Erfahren Sie, wie Sie sich gegen die größten Online-Bedrohungen von heute wehren können <tag>Abonnér nu</tag>",
@@ -1645,7 +1800,7 @@
                 "getMacfee": "McAfee herunterladen",
                 "topBenefits": "Warum <b>Lenovo McAfee</b> für den Schutz Ihrer Geräte empfiehlt",
                 "awardTitle": "Preisgekrönter Virenschutz",
-                "awardSubtitle": "Verhindern Sie, dass Viren, Malware und Ransomware Ihren PC infizieren.",
+                "awardSubtitle": "Verhindern Sie, dass Viren, Malware und Ransomware Ihren PC infizieren",
                 "supportTitle": "Kostenloser technischer Support rund um die Uhr ",
                 "supportSubtitle": "Holen Sie sich Unterstützung und Sicherheit von unserem engagierten Sicherheitsteam, das rund um die Uhr für Sie da ist",
                 "trialSubtitle": "Sie sind derzeit durch eine 30-Tage-Testversion von McAfee LiveSafe geschützt – aber nur noch {{remainingDays}} Tage! Abonnieren Sie jetzt, um Ihren Schutz zu erweitern.",
@@ -1667,8 +1822,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Schwachstellen-Scanner ",
                 "report": "Ihr Bedrohungsschutzbericht ",
-                "trialContent": "Sie haben Ihre McAfee Antivirus-Testversion sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage bis zum Ablauf der Testversion und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht.<tag>Jetzt abonnieren</tag>",
-                "subscribeContent": "Sie haben Ihr McAfee-Programm sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht.<tag>Jetzt abonnieren</tag>",
+                "trialContent": "Sie haben Ihre McAfee Antivirus-Testversion sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage bis zum Ablauf der Testversion und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht. <tag>Jetzt abonnieren</tag>",
+                "subscribeContent": "Sie haben Ihr McAfee-Programm sinnvoll genutzt. Allerdings verbleiben nur noch {{remainingDays}} Tage und Sie laufen Gefahr, Ihren Computer anfällig zu machen. Riskieren Sie das lieber nicht. <tag>Jetzt abonnieren</tag>",
                 "subscribeNow": "Jetzt abonnieren",
                 "fileScan": "Dateien gescannt",
                 "Viruses": "Viren eliminiert",
@@ -1677,7 +1832,8 @@
                 "startFileScan": "Überprüfung der Dateien starten"
             },
             "others": {
-                "othersProtection": "{{protectedName}} bietet einen Basisschutz für Ihr Gerät"
+                "othersProtection": "{{protectedName}} bietet Ihnen grundlegenden Schutz für Ihr Gerät",
+                "unknown": "Unbekannt"
             }
         },
         "wifisecurity": {
@@ -2358,6 +2514,10 @@
         "offline": "Dieses Gerät läuft im Offline-Modus, bitte stellen Sie eine Internetverbindung her",
         "doNotSuspend": "Diese Tests müssen ohne Unterbrechung ausgeführt werden! Während des Scans darf die App nicht geschlossen oder minimiert und der Computer weder angehalten noch heruntergefahren werden.",
         "doNotUse": "Verwenden Sie Ihren Computer erst wieder, wenn der Test abgeschlossen wurde",
+        "testsMustRunUniterrupted": "Diese Tests müssen ohne Unterbrechung ausgeführt werden!",
+        "doNotCloseOrMinimizeApp": "• Sie dürfen diese App nicht schließen oder minimieren.",
+        "doNotSwitchApp": "• Sie dürfen nicht zu einer anderen App wechseln.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sie dürfen den Computer nicht in den Energiesparmodus versetzen, sich abmelden oder den Computer ausschalten.",
         "customize": {
             "name": "Anpassen",
             "test": "Test anpassen",
@@ -2587,5 +2747,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

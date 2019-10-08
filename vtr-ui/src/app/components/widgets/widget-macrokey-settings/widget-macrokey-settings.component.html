@@ -8,7 +8,7 @@
 				<div class="col-sm-6 macrokey-status-wrapper" *ngIf="isNumpad">
 					<div class="select-wrapper">
 						<vtr-ui-lighting-effect [isRecording]="isRecording" [options]="macroKeyOptions[0]"
-							[selectedValue]="macroKeyTypeStatus.MacroKeyStatus" (change)="optionChanged($event)">
+							[selectedValue]="macroKeyTypeStatus.MacroKeyStatus" (change)="optionChanged($event)" [tabindex]="1">
 						</vtr-ui-lighting-effect>
 					</div>
 				</div>

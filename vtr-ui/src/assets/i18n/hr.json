@@ -81,7 +81,7 @@
                     "line2": "<b>Pregled upravljanja značajkama</b> <br> Neke značajke nisu dostupne na svim uređajima",
                     "line3": "<b>Overclocking CPU-a </b><br> Povećajte maksimalnu brzinu procesora",
                     "line4": "<b>Overclocking RAM-a </b><br> Povećajte maksimalnu brzinu memorije",
-                    "line5": "<b>Ubrzanje mreže </b><br> Dodijelite viši prioritet mrežnom prometu za igru koju igrate",
+                    "line5": "<b>Ubrzanje mreže </b><br> Mrežnom prometu za igru koju igrate dodijelite viši prioritet",
                     "line6": "<b>Dolby </b><br> Prilagodite zvuk igranju pomoću tehnologije Dolby",
                     "line7": "<b>Hibridni način </b><br> Onemogućite napredne GPU postavke kada ne igrate da produžite trajanje baterije",
                     "line8": "<b>Brzo punjenje </b><br> Igrajte u pokretu uz brže punjenje baterije",
@@ -107,6 +107,15 @@
                     "sub1": "Podrška",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "Boja"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "Nema pokrenutih aplikacija za dodavanje",
                 "body": "Na popisu će se prikazivati samo pokrenute aplikacije. Pokrenite aplikaciju koju želite dodati i vratite se."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "Možete dodati do 5 dodatnih aplikacija za poboljšanje",
                     "part2": "od",
                     "part3": "dodano"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -490,7 +645,7 @@
             "loading": "Učitavam..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"
         }
     },
     "privacy": {
@@ -1608,7 +1763,7 @@
             "common": {
                 "title": "Zaštita od virusa",
                 "back": "NATRAG",
-                "recommends": "Zašto tvrtka Lenovo preporuča <b>McAfee</b> za zaštitu svih vaših uređaja",
+                "recommends": "Zašto tvrtka Lenovo preporučuje <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, McAfee LiveSafe bi vam mogao pružiti bolju zaštitu.",
@@ -1621,10 +1776,10 @@
                 "Blazing": "Nevjerojatna brzina",
                 "BlazingText": "Optimizirani antivirus koji neće usporiti ili prekinuti vaše Lenovo Vantage iskustvo",
                 "privacyTerms": "/   <tag>Pravila o privatnosti</tag>  |  <tag>Uvjeti pružanja usluge</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
-                "optimallyProtected": "Čini se da trenutno koristite Windows Defender. Nije loš izbor, ali za maksimalnu zaštitu protiv ucjenjivačkog softvera, zlonamjernog softvera i virusa, udružili smo se sa <b>McAfee</b> da bismo vam osigurali nagrađivanu sigurnost <b>kako biste mogli zaštiti ono što je važno.</b>",
+                "optimallyProtected": "Čini se da trenutno koristite Windows Defender. Nije loš izbor, ali za maksimalnu zaštitu protiv ucjenjivačkog softvera, zlonamjernog softvera i virusa, udružili smo se s tvrtkom <b>McAfee</b> kako bismo vam pružili nagrađivanu sigurnost kako biste mogli <b>zaštiti ono što je bitno.</b>",
                 "windowsSubtitle": "Windows Defender Basic zaštita",
                 "topTip": "Najbolji savjeti za internetsku sigurnost",
                 "topContent": "Saznajte kako se možete obraniti od najopasnijih mrežnih prijetnji <tag>PREGLED SAVJETA</tag>",
@@ -1645,7 +1800,7 @@
                 "getMacfee": "Nabavite McAfee",
                 "topBenefits": "Zašto <b>tvrtka Lenovo preporuča McAfee</b> za zaštitu svih vaših uređaja",
                 "awardTitle": "Nagrađivani antivirus",
-                "awardSubtitle": "Spriječite da virusi, zlonamjerni softver i ucjenjivački softver zaraze vaše računalo.",
+                "awardSubtitle": "Spriječite da virusi, zlonamjerni softver i ucjenjivački softver zaraze vaše računalo",
                 "supportTitle": "Besplatna stručna tehnička podrška 24/7 ",
                 "supportSubtitle": "Nabavite neprestanu pomoć i mirno spavajte jer znate da je iza vas naš posvećeni sigurnosni tim",
                 "trialSubtitle": "Trenutno ste zaštićeni 30-dnevnim probnim McAfee LiveSafe – preostalo vam je još samo {{remainingDays}} dana! Pretplatite se sada kako biste proširili svoju zaštitu.",
@@ -1667,8 +1822,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee skener ranjivosti ",
                 "report": "Izvješće o zaštiti prijetnji ",
-                "trialContent": "Već ste dobro iskoristili svoje McAfee antivirusno probno razdoblje. No vaše probno razdoblje završava za {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati.<tag>Pretplatite se sada</tag>",
-                "subscribeContent": "Dobro ste iskoristili svoj McAfee. No preostalo je još svega {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati.<tag>Pretplatite se sada</tag>",
+                "trialContent": "Već ste dobro iskoristili svoje McAfee antivirusno probno razdoblje. No vaše probno razdoblje završava za {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati. <tag>Pretplatite se sada</tag>",
+                "subscribeContent": "Dobro ste iskoristili svoj McAfee. No preostalo je još svega {{remainingDays}} dana, nakon čega riskirate da svoje računalo ostavite ranjivim. Nemojte riskirati. <tag>Pretplatite se sada</tag>",
                 "subscribeNow": "Pretplatite se sada",
                 "fileScan": "Datoteke skenirane",
                 "Viruses": "Virusi uklonjeni",
@@ -1677,7 +1832,8 @@
                 "startFileScan": "Pokrenite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu vašem uređaju",
+                "unknown": "Nepoznato"
             }
         },
         "wifisecurity": {
@@ -2358,6 +2514,10 @@
         "offline": "Uređaj radi u izvanmrežnom načinu rada, povežite internet",
         "doNotSuspend": "Ovi se testovi moraju izvoditi bez prekida! Tijekom pregleda nemojte zatvarati ni minimizirati aplikaciju niti prebacivati računalo u stanje mirovanja ili ga isključivati.",
         "doNotUse": "Nemojte koristiti računalo dok se ovaj test ne dovrši",
+        "testsMustRunUniterrupted": "Ovi se testovi moraju izvoditi bez prekida!",
+        "doNotCloseOrMinimizeApp": "• Ne zatvarajte niti minimizirajte ovu aplikaciju.",
+        "doNotSwitchApp": "• Ne prelazite na drugu aplikaciju.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne otvarajte stanje mirovanja, ne odjavljujte se i nemojte isključivati računalo.",
         "customize": {
             "name": "Prilagodba",
             "test": "Prilagodi test",
@@ -2587,5 +2747,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

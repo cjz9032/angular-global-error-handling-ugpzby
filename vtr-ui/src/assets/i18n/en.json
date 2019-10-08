@@ -1,4 +1,6 @@
 {
+	"dir": "ltr",
+	"dirClass": "ltr",
 	"gaming": {
 		"dashboard": {
 			"device": {
@@ -107,6 +109,15 @@
 					"sub1": "Support",
 					"sub2": "Facebook",
 					"sub3": "Instagram"
+				}
+			},
+			"narrator": {
+				"pageTitle": {
+					"device": "Lenovo Vantage home page",
+					"macroKey": "Macro key page",
+					"networkBoost": "network boost page",
+					"autoClose": "auto close page",
+					"lighting": "Lighting page"
 				}
 			}
 		},
@@ -250,6 +261,11 @@
 					"option1": "on",
 					"option2": "macro key settings enabled when gaming",
 					"option3": "macro key settings off"
+				},
+				"numberInput": {
+					"title": "Number",
+					"bundledSelected": "is selected bundled",
+					"unbundledSelected": "is selected unbundled"
 				}
 			}
 		},
@@ -466,16 +482,10 @@
 					"title": "Color"
 				}
 			},
-			"colourwheelnarrator": {
-				"text1": {
-					"title": "rgb red value"
-				},
-				"text2": {
-					"title": "rgb green value"
-				},
-				"text3": {
-					"title": "rgb blue value"
-				}
+			"rgbValueNarrator": {
+				"red": "rgb red value edit",
+				"green": "rgb green value edit",
+				"blue": "rgb blue value edit"
 			},
 			"lightingProfileHeading": {
 				"text1": {
@@ -1914,7 +1924,7 @@
 				"getMacfee": "Get McAfee",
 				"topBenefits": "Why <b>Lenovo recommends McAfee</b> to protect all your devices",
 				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC.",
+				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC",
 				"MultiTitle": "Multi-device protection",
 				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
 				"networkTitle": "Home network protection",
@@ -1932,8 +1942,8 @@
 				"quickClean": "McAfee QuickClean",
 				"vulnerability": "McAfee Vulnerability Scanner",
 				"report": "Your Threat Protection Report ",
-				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.<tag>Subscribe Now</tag>",
-				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.<tag>Subscribe Now</tag>",
+				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
+				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
 				"subscribeNow": "Subscribe Now",
 				"fileScan": "Files scanned",
 				"Viruses": "Viruses Eliminated",
@@ -1942,7 +1952,8 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "{{protectedName}} offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device",
+				"unknown": "Unknown"
 			}
 		},
 		"wifisecurity": {
@@ -2631,6 +2642,10 @@
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
 		"doNotUse": "Please refrain from using your computer until this test completes",
+		"testsMustRunUniterrupted": "These tests must run uniterrupted!",
+		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
+		"doNotSwitchApp": "• Do not switch to other app.",
+		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

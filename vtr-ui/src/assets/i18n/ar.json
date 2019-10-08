@@ -1,4 +1,6 @@
 {
+    "dir": "rtl",
+    "dirClass": "rtl",
     "gaming": {
         "dashboard": {
             "device": {
@@ -107,6 +109,15 @@
                     "sub1": "الدعم",
                     "sub2": "‏Facebook",
                     "sub3": "‏Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -249,7 +260,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +395,118 @@
                 "heading": {
                     "title": "تحديد ملف التعريف:"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +527,17 @@
             "noRunningApps": {
                 "title": "لا توجد تطبيقات قيد التشغيل لإضافتها",
                 "body": "ستظهر التطبيقات قيد التشغيل حاليًا فقط. يُرجى تشغيل تطبيق تريد إضافته والمحاولة مجددًا."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +556,28 @@
                     "part1": "يمكنك إضافة 5 تطبيقات أخرى للتعزيز",
                     "part2": "من",
                     "part3": "المضافة"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -490,7 +647,7 @@
             "loading": "...جار التحميل"
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
         }
     },
     "privacy": {
@@ -1608,7 +1765,7 @@
             "common": {
                 "title": "مكافحة الفيروسات",
                 "back": "السابق",
-                "recommends": "توصي Lenovo باستخدام <b>McAfee</b> لحماية جميع أجهزتك",
+                "recommends": "لماذا Lenovo توصي بـ <b>McAfee</b> لحماية جميع أجهزتك",
                 "award": "برنامج مكافحة الفيروسات الحائز على جوائز",
                 "mcafeePremium": "حماية McAfee LiveSafe",
                 "protectedBy": "أنت محمي في الوقت الحالي من خلال {{protectedName}}. ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe.",
@@ -1621,10 +1778,10 @@
                 "Blazing": "سرعة فائقة",
                 "BlazingText": "برنامج مكافحة الفيروسات المحسن الذي لن يتسبب في إبطاء أو مقاطعة تجربة Lenovo Vantage",
                 "privacyTerms": "/   <tag>سياسة الخصوصية</tag>  |  <tag>شروط الخدمة</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "غير متوفر"
             },
             "windowsDefender": {
-                "optimallyProtected": "يبدو أنك تستخدم Windows Defender في الوقت الحالي. هذا الخيار ليس سيئًا، ولكن من أجل تأمين السلامة المطلقة ضد برامج الفدية والبرامج الضارة والفيروسات، قمنا بالتعاون مع شركة <b>McAfee</b> لكي نقدم لك برنامج أمان حائز على جوائز لتمكينك من <b>حماية كل الأشياء المهمة.</b>",
+                "optimallyProtected": "يبدو أنك تستخدم Windows Defender في الوقت الحالي. هذا الخيار ليس سيئًا، ولكن من أجل تأمين السلامة المطلقة ضد برامج الفدية والبرامج الضارة والفيروسات، قمنا بالتعاون مع شركة ‎<b>‎McAfee‎</b> لكي نقدم لك برنامج أمان حائز على جوائز لتمكينك من ‎‏<b>حماية كل الأشياء المهمة.</b>‎",
                 "windowsSubtitle": "الحماية الأساسية من Windows Defender",
                 "topTip": "أهم النصائح لتوفير السلامة عبر الإنترنت",
                 "topContent": "<tag>عرض النصائح</tag> تعرف على طرق الدفاع لمواجهة أهم التهديدات عبر الإنترنت في الوقت الحالي",
@@ -1645,7 +1802,7 @@
                 "getMacfee": "احصل على McAfee",
                 "topBenefits": "لماذا <b>تنصح Lenovo باستخدام منتجات McAfee</b> لحماية جميع أجهزتك",
                 "awardTitle": "برنامج مكافحة الفيروسات الحائز على جوائز",
-                "awardSubtitle": "منع الفيروسات والبرامج الضارة وبرامج الفدية من إصابة جهاز الكمبيوتر.",
+                "awardSubtitle": "منع الفيروسات والبرامج الضارة وبرامج الفدية من إصابة جهاز الكمبيوتر",
                 "supportTitle": "دعم تقني مجاني يوفره خبراء على مدار الساعة وطيلة أيام الأسبوع ",
                 "supportSubtitle": "احصل على المساعدة وراحة البال على مدار الساعة من فريقنا الأمني المخصص",
                 "trialSubtitle": "أنت محمي حاليًا من خلال إصدار تجريبي مدته 30 يومًا من McAfee LiveSafe – فقط {{remainingDays}} أيام متبقية! اشترك الآن لتمديد فترة حمايتك.",
@@ -1667,8 +1824,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "برنامج الفحص بحثًا عن الثغرات الأمنية من McAfee ",
                 "report": "تقرير الحماية من التهديدات ",
-                "trialContent": "لقد استخدمت الإصدار التجريبي من برنامج مكافحة الفيروسات من McAfee على نحو جيد. ولكن صلاحية الإصدار التجريبي تنتهي في غضون {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة.<tag>الاشتراك الآن</tag>",
-                "subscribeContent": "لقد استخدمت McAfee على نحو جيد. ولكن عدد الأيام المتبقية لهذا الإصدار التجريبي ليس سوى {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة.<tag>الاشتراك الآن</tag>",
+                "trialContent": "لقد استخدمت الإصدار التجريبي من برنامج مكافحة الفيروسات من McAfee على نحو جيد. ولكن صلاحية الإصدار التجريبي تنتهي في غضون {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة. <tag>الاشتراك الآن</tag>",
+                "subscribeContent": "لقد استخدمت McAfee على نحو جيد. ولكن عدد الأيام المتبقية لهذا الإصدار التجريبي ليس سوى {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة. <tag>الاشتراك الآن</tag>",
                 "subscribeNow": "الاشتراك الآن",
                 "fileScan": "فحص الملفات",
                 "Viruses": "القضاء على الفيروسات",
@@ -1677,7 +1834,8 @@
                 "startFileScan": "بدء فحص الملفات"
             },
             "others": {
-                "othersProtection": "يقدم لك الحماية الأساسية لجهازك {{protectedName}}"
+                "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
+                "unknown": "غير معروف"
             }
         },
         "wifisecurity": {
@@ -2358,6 +2516,10 @@
         "offline": "هذا الجهاز يعمل في وضع عدم الاتصال، يرجى الاتصال بالإنترنت",
         "doNotSuspend": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة! لا تعمل على إغلاق هذا التطبيق أو تصغيره، ولا توقف عمل الكمبيوتر بشكل مؤقت أو توقف تشغيله أثناء إجراء عملية الفحص.",
         "doNotUse": "يُرجى الامتناع عن استخدام الكمبيوتر حتى اكتمال هذا الاختبار",
+        "testsMustRunUniterrupted": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة!",
+        "doNotCloseOrMinimizeApp": "• لا تغلق هذا التطبيق أو تقم بتصغيره.",
+        "doNotSwitchApp": "• لا تقم بالتبديل إلى تطبيق آخر.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• لا تُدخل جهاز الكمبيوتر في وضع السكون أو تسجل الخروج منه أو تغلقه.",
         "customize": {
             "name": "تخصيص",
             "test": "تخصيص اختبار",

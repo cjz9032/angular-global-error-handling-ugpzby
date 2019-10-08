@@ -10,10 +10,10 @@
 	</div>
 	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
-	<vtr-smart-standby *ngIf="!isDesktopMachine && !isPowerDriverMissing"
+	<vtr-smart-standby *ngIf="!isDesktopMachine"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 	</vtr-smart-standby>
-	<div *ngIf="!isPowerDriverMissing && (showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable)"
+	<div *ngIf="(showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable)"
 		class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
@@ -24,7 +24,7 @@
 				[collapseLinkId]="'device-settings-batterySettings'">
 				<ul class="list-group list-group-flush">
 					<li class=""
-						*ngIf="showAirplanePowerModeSection">
+						*ngIf="showAirplanePowerModeSection && !isPowerDriverMissing">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
 							[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
@@ -64,7 +64,7 @@
 
 					<!-- MVP 2 feature -->
 					<li class=""
-						*ngIf="machineType == 1 && isChargeThresholdAvailable">
+						*ngIf="machineType == 1 && isChargeThresholdAvailable && !isPowerDriverMissing">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
@@ -260,7 +260,7 @@
 
 	<div class="row py-5"
 		id="other"
-		*ngIf="!isPowerDriverMissing && vantageToolbarStatus.available">
+		*ngIf="vantageToolbarStatus.available">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				[vtrAppSearchScroller]="['search-vantage-toolbar']"
@@ -288,7 +288,7 @@
 	</div>
 
 	<div class="row py-5"
-		*ngIf="machineType === 1 && isEnergyStarProduct && !isPowerDriverMissing">
+		*ngIf="machineType === 1 && isEnergyStarProduct">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.energyStar.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"

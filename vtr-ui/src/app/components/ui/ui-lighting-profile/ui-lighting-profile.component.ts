@@ -321,7 +321,8 @@ export class UiLightingProfileComponent implements OnInit {
 			}
 		}
 		if (LocalStorageKey.LightingProfileById !== undefined) {
-			let res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+			const res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+			this.getLightingBrightness();
 			this.getLightingProfileByIdFromcache(res);
 			this.getGamingLightingCapabilities();
 		}
@@ -416,7 +417,7 @@ export class UiLightingProfileComponent implements OnInit {
 		try {
 			if (response !== undefined) {
 				this.currentProfile = this.currentProfileId;
-				this.profileBrightness = response.brightness;
+				// this.profileBrightness = response.brightness;
 				if (response.lightInfo !== null && response.lightInfo.length > 0) {
 					if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple) {
 						if (this.lightingCapabilities.LedType_Complex.length > 1) {
@@ -571,7 +572,7 @@ export class UiLightingProfileComponent implements OnInit {
 				}
 
 				this.getLightingProfileById(this.currentProfileId);
-				this.getLightingBrightness();
+				// this.getLightingBrightness();
 			} else {
 				if (LocalStorageKey.LightingCapabilities !== undefined) {
 					response = this.commonService.getLocalStorageValue(LocalStorageKey.LightingCapabilities);
@@ -934,7 +935,12 @@ export class UiLightingProfileComponent implements OnInit {
 									this.currentProfileId = response.profileId;
 									this.currentProfile = response.profileId;
 									this.profileBrightness = response.brightness;
-
+									if (LocalStorageKey.ProfileBrightness !== undefined) {
+										this.commonService.setLocalStorageValue(
+											LocalStorageKey.ProfileBrightness,
+											response.brightness
+										);
+									}
 									if (this.lightingCapabilities.RGBfeature === 1) {
 										this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 									} else {
@@ -1004,6 +1010,12 @@ export class UiLightingProfileComponent implements OnInit {
 									this.currentProfileId = response.profileId;
 									this.currentProfile = response.profileId;
 									this.profileBrightness = response.brightness;
+									if (LocalStorageKey.ProfileBrightness !== undefined) {
+										this.commonService.setLocalStorageValue(
+											LocalStorageKey.ProfileBrightness,
+											response.brightness
+										);
+									}
 									if (this.lightingCapabilities.RGBfeature === 1) {
 										this.selectedSingleColorOptionId = response.lightInfo[0].lightEffectType;
 									} else {
@@ -1108,7 +1120,7 @@ export class UiLightingProfileComponent implements OnInit {
 		try {
 			if (LocalStorageKey.ProfileBrightness !== undefined) {
 				this.profileBrightness =
-					this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 0;
+					this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 1;
 			}
 		} catch (error) {}
 	}
@@ -1126,6 +1138,12 @@ export class UiLightingProfileComponent implements OnInit {
 						this.currentProfileId = response.profileId;
 						this.currentProfile = response.profileId;
 						this.profileBrightness = response.brightness;
+						if (LocalStorageKey.ProfileBrightness !== undefined) {
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.ProfileBrightness,
+								response.brightness
+							);
+						}
 						if (response.lightInfo.length > 0) {
 							if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple) {
 								if (this.lightingCapabilities.LedType_Complex.length > 1) {
@@ -1201,6 +1219,12 @@ export class UiLightingProfileComponent implements OnInit {
 							this.currentProfileId = response.profileId;
 							this.currentProfile = response.profileId;
 							this.profileBrightness = response.brightness;
+							if (LocalStorageKey.ProfileBrightness !== undefined) {
+								this.commonService.setLocalStorageValue(
+									LocalStorageKey.ProfileBrightness,
+									response.brightness
+								);
+							}
 							if (response.lightInfo.length > 0) {
 								if (this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple) {
 									if (this.lightingCapabilities.LightPanelType.length > 1) {
@@ -1375,6 +1399,12 @@ export class UiLightingProfileComponent implements OnInit {
 								}
 							}
 							this.profileBrightness = response.brightness;
+							if (LocalStorageKey.ProfileBrightness !== undefined) {
+								this.commonService.setLocalStorageValue(
+									LocalStorageKey.ProfileBrightness,
+									response.brightness
+								);
+							}
 						}
 					} else {
 						if (LocalStorageKey.LightingProfileById !== undefined) {
@@ -1449,6 +1479,12 @@ export class UiLightingProfileComponent implements OnInit {
 									}
 								}
 								this.profileBrightness = response.brightness;
+								if (LocalStorageKey.ProfileBrightness !== undefined) {
+									this.commonService.setLocalStorageValue(
+										LocalStorageKey.ProfileBrightness,
+										response.brightness
+									);
+								}
 							}
 						}
 					}
