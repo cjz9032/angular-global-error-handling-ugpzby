@@ -51,7 +51,7 @@
 				<div class="device-type">
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
 					<span *ngIf="machineFamilyName">{{machineFamilyName}}</span>
-					<vtr-ui-header-warranty *ngIf="machineFamilyName"
+					<vtr-ui-header-warranty *ngIf="machineFamilyName && deviceService.showWarranty"
 						[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 				</div>
 			</span>

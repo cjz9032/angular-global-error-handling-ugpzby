@@ -484,6 +484,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					});
 					warranty.status = 1;
 				}
+				warranty.isHidden = !this.deviceService.showWarranty;
 			}
 		});
 
