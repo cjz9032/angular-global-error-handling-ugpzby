@@ -17,12 +17,6 @@
 		}
 		.detail-container {
 			color: $shade_blue;
-			a {
-				font-weight: $weight_600;
-			}
-			.warning {
-				color: $button_red_start;
-			}
 			.subscription-btn {
 				vtr-ui-button ::ng-deep .button-box{
 					.button {
@@ -58,8 +52,4 @@
 			}
 		}
 	}
-	.warning {
-		color: $danger_dark;
-	}
-
 }

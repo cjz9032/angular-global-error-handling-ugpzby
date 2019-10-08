@@ -9,6 +9,7 @@
 			vtrMetrics
 			[routerLink]="routerPath"
 			routerLinkActive="active"
+			[href]="href"
 			[id]="linkId"
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
@@ -21,11 +22,15 @@
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true,
 						'halfWidth': isHalfWidth,
-						'text-upper-case': upperCaseLabel,
+						'text-upper-case': upperCaseLabel === true,
+						'text-capitalize': capitalizeLabel === true,
 						'regular-width': isRegular,
 						'min-height': btnHeight,
-						'btn-gradient': isGradient}"
-			(click)="onClickButton($event)">{{label}} </button>
+						'btn-gradient': isGradient,
+						'disable': isDisabled}"
+			(click)="onClickButton($event)">
+			<span class="text" [innerHTML]="label"></span>
+		</button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
 			title="{{tooltip?label:''}}"
 			type="button"

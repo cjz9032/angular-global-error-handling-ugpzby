@@ -34,7 +34,7 @@
 				metricsEvent="FeatureClick"
 				metricsItem="CHSWelcomeOpenLocationButton"
 				metricsParent="{{metricsParent}}"
-				(click)="openLocation($event)"
+				(onClick)="openLocation($event)"
 				[innerHTML]="'homeSecurity.tour.allow' | translate"
 				title="{{'homeSecurity.tour.allow' | translate}}">
 			</button>
@@ -44,7 +44,7 @@
 				metricsEvent="FeatureClick"
 				metricsItem="CHSWelcomeCancelLocationButton"
 				metricsParent="{{metricsParent}}"
-				(click)="closeModal()"
+				(onClick)="closeModal()"
 				[innerHTML]="'homeSecurity.tour.notNow' | translate"
 				title="{{'homeSecurity.tour.notNow' | translate}}">
 			</button>
@@ -61,14 +61,14 @@
 					metricsItem="CHSWelcomeNextButton"
 					metricsParent="{{metricsParent}}"
 					[label]="'tutorial.next' | translate"
-					(click)="next()"
+					(onClick)="next()"
 					[title]="'tutorial.next' | translate"></vtr-ui-button>
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
 					linkId="chs-tour-btn-done"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"
 					metricsParent="{{metricsParent}}"
-					(click)="closeModal()"
+					(onClick)="closeModal()"
 					[label]="'homeSecurity.tour.done' | translate"
 					[title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
 			</div>

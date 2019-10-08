@@ -68,7 +68,7 @@
 			letter-spacing: 0;
 		}
 		input:disabled{
-			background-color: white!important
+			background-color: $light!important
 		}
 		.form-control{
 			border: 0px;
@@ -100,17 +100,20 @@
 		color: $shade_blue;
 		&.connect-available {
 			background: $blue_gradient;
-			color: white;
+			color: $light;
 		}
 	}
 	.cancel-button {
-		background: white;
+		background: $light;
 		color: $blue-lighter;
 		border-bottom: 1px solid $blue-light;
 		height: 3rem;
 		padding-left: 0;
 		padding-right: 0;
 		border-radius: 0;
+		&:hover {
+			color: $blue-light;
+		}
 	}
 
 	.join-info{
