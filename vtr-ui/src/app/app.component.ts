@@ -27,7 +27,6 @@ import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
-import { AppUpdateService } from './services/app-update/app-update.service';
 
 declare var Windows;
 @Component({
@@ -58,7 +57,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
-		private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -66,9 +64,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			web: environment.appVersion,
 			bridge: bridgeVersion.version
 		};
-
-		// check for new version of experience
-		this.appUpdateService.checkForUpdates();
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
