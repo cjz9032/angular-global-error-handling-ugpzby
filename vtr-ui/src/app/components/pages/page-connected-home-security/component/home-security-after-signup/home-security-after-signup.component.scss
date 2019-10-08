@@ -35,11 +35,6 @@
 			border: 0.1rem solid $grey_light;
 		}
 	}
-	::ng-deep {
-		.button {
-			min-height: 4rem !important;
-		}
-	}
 	.common-btn{
 		::ng-deep {
 			.button-box {

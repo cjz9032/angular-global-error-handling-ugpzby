@@ -95,13 +95,8 @@
 		font-weight: $weight_bold;
 		margin: 1rem;
 	}
-	.connect-button {
-		background: $grey_light;
-		color: $shade_blue;
-		&.connect-available {
-			background: $blue_gradient;
-			color: $light;
-		}
+	vtr-ui-button {
+		display: inline-block;
 	}
 	.cancel-button {
 		background: $light;

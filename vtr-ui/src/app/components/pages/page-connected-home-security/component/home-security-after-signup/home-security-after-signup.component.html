@@ -61,6 +61,7 @@
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
+					btnHeight=true
 					[title]="'homeSecurity.overview.buyNow' | translate"
 					[label]="'homeSecurity.overview.buyNow' | translate">
 				</vtr-ui-button>
@@ -70,6 +71,7 @@
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
+					btnHeight=true
 					[title]="'homeSecurity.overview.renewNow' | translate"
 					[label]="'homeSecurity.overview.renewNow' | translate">
 				</vtr-ui-button>
@@ -79,6 +81,7 @@
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
+					btnHeight=true
 					[title]="'homeSecurity.overview.extendNow' | translate"
 					[label]="'homeSecurity.overview.extendNow' | translate">
 				</vtr-ui-button>
@@ -102,6 +105,7 @@
 				(click)="common.openCornet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
+				btnHeight=true
 				[title]="'homeSecurity.overview.goDashboard' | translate"
 				[label]="'homeSecurity.overview.goDashboard' | translate">
 			</vtr-ui-button>
@@ -119,6 +123,7 @@
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-disconnect"
 				buttonColor="red"
+				btnHeight=true
 				[title]="'homeSecurity.overview.disconnect' | translate"
 				[label]="'homeSecurity.overview.disconnect' | translate">
 			</vtr-ui-button>
