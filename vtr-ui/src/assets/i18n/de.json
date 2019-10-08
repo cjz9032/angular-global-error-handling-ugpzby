@@ -2354,7 +2354,7 @@
             "delete": "Löschen",
             "warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
             "scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Ihr Scan wurde geplant und wird am folgenden Tag im Hintergrund ausgeführt:"
         },
         "recoverBadSectors": {
             "title": "Wiederherstellung von fehlerhaften Sektoren",

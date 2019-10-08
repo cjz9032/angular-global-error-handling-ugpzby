@@ -8,18 +8,27 @@
 		</div>
 	</div>
 	<div class="col-auto px-0 align-self-center">
-		<vtr-ui-button [metricsItem]="'launchMcafee'" 
+		<vtr-ui-button  *ngIf="install"
+			metricsEvent="FeatureClick"
+			metricsItem="launchMcafee"
+			metricsParent="security.antivirus"
+			upperCaseLabel=false
+			[isDisabled]="isOnline === false"
 			(onClick)="common.launch()"
 			[label]="'security.antivirus.mcafee.launch' | translate"
-			[title]="'security.antivirus.mcafee.launch' | translate" [upperCaseLabel]="false" *ngIf="install"
+			[title]="'security.antivirus.mcafee.launch' | translate"
+			[upperCaseLabel]="false"
 			[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
-		<a class="button d-flex align-items-center" *ngIf="!install" 
-		   metricsEvent="FeatureClick" metricsItem="getMcafee"
-		   [ngClass]="{'unclickable': !isOnline}" 
-		   href="{{common.urlGetMcAfee}}" 
-		   target="_blank"
-		   [title]="'security.antivirus.mcafee.getMacfee' | translate"
-		   [innerHTML]="'security.antivirus.mcafee.getMacfee' | translate">
-		</a>
+		<vtr-ui-button *ngIf="!install"
+			linkId="sa-av-btn-getMcafee"
+			metricsEvent="FeatureClick"
+			metricsItem="getMcafee"
+			metricsParent="security.antivirus"
+			upperCaseLabel=false
+			[isDisabled]="isOnline === false"
+			[href]="common.urlGetMcAfee"
+			[label]="'security.antivirus.mcafee.getMacfee' | translate"
+			[title]="'security.antivirus.mcafee.getMacfee' | translate"
+			[upperCaseLabel]="false"></vtr-ui-button>
 	</div>
 </div>

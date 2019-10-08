@@ -165,7 +165,8 @@
 							<label class="custom-control-label"
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
-								<a class="linktext"
+								<a class="linktext" 
+									[ngClass]="{'lang-he-privacy-link':machineInfo.locale=='he'}"
 									href="https://www.lenovo.com/us/en/privacy"
 									target="_blank"
 									rel="noopener"
