@@ -486,19 +486,5 @@
 		"icon": ["fal", "flask"],
 		"forArm": false,
 		"subitems": []
-	}, {
-		"id": "app-search",
-		"label": " ",
-		"beta": true,
-		"path": null,
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.app-search",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"icon": ["fal", "search"],
-		"forArm": false,
-		"subitems": []
 	}]
 }
