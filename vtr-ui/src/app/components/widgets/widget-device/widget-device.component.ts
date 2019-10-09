@@ -278,6 +278,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 					});
 					warranty.status = 1;
 				}
+				warranty.isHidden = !this.deviceService.showWarranty;
 			}
 		});
 	}
