@@ -11,8 +11,9 @@
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable}"
 		(keydown.enter)="onChange($event)"
-		[attr.aria-label]="ariaLabel"
 		[attr.aria-checked]="value"
+		[attr.aria-disabled]="disabled"
+		[attr.aria-readonly]="readonly"
 		[attr.aria-labelledby]="onOffSwitchId+'_checkbox'"
 		role="checkbox"
 		tabindex="{{tabIndex}}">
@@ -35,7 +36,10 @@
 				[checked]="value"
 				[disabled]="disabled"
 				[readonly]="readonly"
-				[attr.aria-label]="ariaLabel"
+				[attr.aria-checked]="value"
+				[attr.aria-disabled]="disabled"
+				[attr.aria-readonly]="readonly"
+				attr.aria-label="{{onOffSwitchId+'_checkbox'}}"
 				(change)="onChange($event)"
 				(keydown.enter)="onChange($event)" />
 			<span class="switch {{ size }}"
