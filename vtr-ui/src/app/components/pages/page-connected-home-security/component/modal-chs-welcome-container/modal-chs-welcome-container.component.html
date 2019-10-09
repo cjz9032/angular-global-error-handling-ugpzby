@@ -34,7 +34,7 @@
 				metricsEvent="FeatureClick"
 				metricsItem="CHSWelcomeOpenLocationButton"
 				metricsParent="{{metricsParent}}"
-				(onClick)="openLocation($event)"
+				(click)="openLocation($event)"
 				[innerHTML]="'homeSecurity.tour.allow' | translate"
 				title="{{'homeSecurity.tour.allow' | translate}}">
 			</button>
@@ -44,7 +44,7 @@
 				metricsEvent="FeatureClick"
 				metricsItem="CHSWelcomeCancelLocationButton"
 				metricsParent="{{metricsParent}}"
-				(onClick)="closeModal()"
+				(click)="closeModal()"
 				[innerHTML]="'homeSecurity.tour.notNow' | translate"
 				title="{{'homeSecurity.tour.notNow' | translate}}">
 			</button>
