@@ -26,6 +26,7 @@ import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faAngleDown } from '@fortawesome/pro-light-svg-icons/faAngleDown';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
+import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 //#endregion
 
 
@@ -68,6 +69,7 @@ library.add(faSearch);
 		NgbDropdownModule,
 		FontAwesomeModule,
 		RouterModule,
+		UiButtonModule,
 		AppSearchModule
 	],
 	schemas: [

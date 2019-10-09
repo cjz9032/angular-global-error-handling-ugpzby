@@ -11,6 +11,7 @@
 			routerLinkActive="active"
 			[href]="href"
 			[id]="linkId"
+			[tabindex]="tabIndex"
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"
@@ -25,8 +26,9 @@
 						'text-upper-case': upperCaseLabel === true,
 						'text-capitalize': capitalizeLabel === true,
 						'regular-width': isRegular,
-						'min-height': btnHeight,
+						'btn-size-small': btnHeight,
 						'btn-gradient': isGradient,
+						'btn-in-red-bg': inRedBackground,
 						'disable': isDisabled}"
 			(click)="onClickButton($event)">
 			<span class="text" [innerHTML]="label"></span>
@@ -37,6 +39,7 @@
 			class="button disable"
 			[disabled]="false"
 			[id]="linkId"
+			[tabindex]="tabIndex"
 			vtrMetrics
 			[routerLink]="routerPath"
 			routerLinkActive="active"

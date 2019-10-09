@@ -26,11 +26,15 @@
 					</div>
 				</div>
 				<div class="button-box">
-					<a role="button" id="support-view-warranty-options" aria-label="support-view-warranty-options"
-						href="{{item.info.url}}" target="_blank" class="button"
-						title="{{'support.warranty.viewWarrantyOptions' | translate}}" vtrMetrics
-						metricsItem="ViewWarrantyOptionsButton" metricsEvent="FeatureClick"
-						metricsParent="{{pageParent}}">{{'support.warranty.viewWarrantyOptions' | translate}}</a>
+					<vtr-ui-button linkId="dashboard-view-warranty-options"
+						metricsEvent="FeatureClick"
+						metricsItem="ViewWarrantyOptionsButton"
+						[metricsParent]="pageParent"
+						buttonColor="gray"
+						[isFullWidth]="true"
+						[inRedBackground]="item.info.status==1"
+						[label]="'support.warranty.viewWarrantyOptions' | translate"
+						[href]="item.info.url"></vtr-ui-button>
 				</div>
 			</div>
 		</div>

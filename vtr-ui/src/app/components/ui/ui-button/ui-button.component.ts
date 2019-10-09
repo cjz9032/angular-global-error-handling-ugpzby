@@ -35,6 +35,8 @@ export class UiButtonComponent implements OnInit {
 	@Input() linkId: any;
 	@Input() routerPath: string;
 	@Input() href: string;
+	@Input() inRedBackground = false;
+	@Input() tabIndex = 0;
 
 	constructor() { }
 
