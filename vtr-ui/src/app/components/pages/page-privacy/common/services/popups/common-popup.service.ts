@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { debounceTime, filter } from 'rxjs/operators';
 
 interface PopUpInterface {
 	popUpId: string;
@@ -24,7 +24,8 @@ export class CommonPopupService {
 		return this.subjectState
 			.asObservable()
 			.pipe(
-				filter((value) => value.id === id)
+				filter((value) => value.id === id),
+				debounceTime(10)
 			);
 	}
 
