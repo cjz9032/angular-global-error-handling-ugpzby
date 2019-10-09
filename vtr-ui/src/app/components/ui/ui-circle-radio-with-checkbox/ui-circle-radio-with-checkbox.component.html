@@ -1,15 +1,23 @@
 <div class="vtr-ui-circle-radio-with-checkbox col-aut0 px-0"
-	[attr.aria-checked]="value"
-	attr.aria-labelledby="{{textId}}-{{value}}-label"
+	attr.aria-labelledby="{{radioId}}"
+	#radioButton
 	role="radio"
-	tabindex="1"
-	(keydown.enter)="radio.click()"
+	[tabIndex]="checked?1:-1"
+	[attr.aria-disabled]="disabled"
+	[attr.aria-checked]="checked"
+	[attr.aria-label]="radioId"
+	(keydown)="radioKBNavigation($event,radio)"
+	(focus)="checkOnFocus($event,radio)"
 	[ngClass]="{
 		'white-theme': theme === 'white',
 		'blue-theme': theme === 'blue'
 	}">
 	<div class="checkbox">
 		<input class="checkbox-custom"
+			attr.aria-labelledby="{{textId}}-{{value}}-label"
+			[attr.aria-disabled]="disabled"
+			[attr.aria-checked]="checked"
+			[attr.aria-label]="radioId"
 			id="{{radioId}}"
 			name="{{group}}"
 			type="radio"
@@ -37,6 +45,8 @@
 		</label>
 		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
 			id="{{textId}}-{{value}}-label"
-			attr.aria-label="{{textId}}-{{value}}-label">{{label | capitalizeFirst}}</div>
+			attr.aria-label="{{textId}}-{{value}}-label"
+			[attr.aria-disabled]="disabled"
+			[attr.aria-checked]="checked">{{label | capitalizeFirst}}</div>
 	</div>
 </div>

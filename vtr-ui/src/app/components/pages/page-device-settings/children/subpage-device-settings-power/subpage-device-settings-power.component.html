@@ -222,8 +222,14 @@
 							<div class="row">
 								<div class="col px-20">
 									<div class="auto-set-checkbox custom-checkbox-gaming"
-										*ngIf="usbChargingInBatteryModeStatus">
+										*ngIf="usbChargingInBatteryModeStatus"
+										tabindex="1"
+										(keydown.enter)='cbAlwaysOnUSB.click()'
+										[attr.aria-checked]="usbChargingCheckboxFlag"
+										attr.aria-labelledby="cb-always-on-usb"
+										role="checkbox">
 										<input id="cb-always-on-usb"
+											#cbAlwaysOnUSB
 											class="custom-control-input"
 											attr.aria-label="cb-always-on-usb"
 											type="checkbox"

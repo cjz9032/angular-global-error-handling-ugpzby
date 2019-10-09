@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -19,5 +19,9 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 
 	closeModal() {
 		this.activeModal.close('close');
+	}
+
+	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+		this.closeModal();
 	}
 }
