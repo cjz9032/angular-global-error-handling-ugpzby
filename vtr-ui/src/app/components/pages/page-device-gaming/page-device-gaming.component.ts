@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -29,7 +29,7 @@ import { Title } from '@angular/platform-browser';
 	styleUrls: [ './page-device-gaming.component.scss' ],
 	providers: [ NgbModalConfig, NgbModal ]
 })
-export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
+export class PageDeviceGamingComponent implements OnInit {
 	public static allCapablitiyFlag = false;
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
@@ -92,12 +92,6 @@ export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-	}
-
-	ngAfterViewInit(): void {
-		setTimeout(() => {
-			document.getElementById('main-wrapper').focus();
-		}, 5000);
 	}
 
 	fetchCmsContents(lang?: string) {
