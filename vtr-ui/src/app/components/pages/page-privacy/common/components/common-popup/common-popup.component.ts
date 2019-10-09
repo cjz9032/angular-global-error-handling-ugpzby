@@ -103,6 +103,8 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 			return;
 		}
 
+		this.isOpen = false;
+
 		this.commonPopupService.close(this.popUpId);
 		this.renderer.removeClass(this.document.body, 'modal-open');
 
