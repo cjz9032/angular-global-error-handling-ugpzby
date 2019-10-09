@@ -16,6 +16,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -53,6 +54,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
 	isModalShown: boolean;
+	isGaugeResetRunning: boolean;
 
 	constructor(
 		private modalService: NgbModal,
@@ -116,10 +118,15 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: any) {
+	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: BatteryGaugeReset[]) {
 		console.log('onPowerBatteryGaugeResetEvent: Information', batteryGaugeResetInfo);
 		if (batteryGaugeResetInfo && batteryGaugeResetInfo.length > 0) {
 			this.commonService.sendNotification('GaugeResetInfo', batteryGaugeResetInfo);
+			if (batteryGaugeResetInfo[0].isResetRunning || (batteryGaugeResetInfo.length > 1 && batteryGaugeResetInfo[1].isResetRunning)) {
+				this.isGaugeResetRunning = true;
+			} else {
+				this.isGaugeResetRunning = false;
+			}
 		}
 	}
 
@@ -305,7 +312,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			if (isThinkPad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
 				healthCondition = BatteryConditionsEnum.StoreLimitation;
 				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
-				this.thresholdNoteParam = { value: parseFloat(percentLimit.toFixed(1)) };
+				this.storeLimitationNoteParam = { value: parseFloat(percentLimit.toFixed(1)) };
 			}
 			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {

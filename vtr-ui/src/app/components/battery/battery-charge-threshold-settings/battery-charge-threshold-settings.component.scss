@@ -53,6 +53,7 @@
 				background: $main_lightest;
 			}
 			&.disabled {
+				pointer-events: none;
 				background: $shade_lightest;
 				color: $shade;
 			}
@@ -116,5 +117,11 @@
 			line-height: 1.8em;
 			padding: 1.5rem 2rem;
 		}
+	}
+	.disabled {
+		pointer-events: none;
+		background: $shade_lightest;
+		color: $shade;
+		opacity: 0.5;
 	}
 }

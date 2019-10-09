@@ -812,6 +812,7 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
+				"gaugeResetWarning": "Your battery gauge is currently been reset, do not disconnect the ac adapter until the reset is complete.",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
