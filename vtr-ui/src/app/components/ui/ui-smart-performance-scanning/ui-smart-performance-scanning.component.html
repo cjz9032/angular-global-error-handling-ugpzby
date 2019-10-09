@@ -15,11 +15,11 @@
 				<div *ngIf="showProgress"
 					class="col row">
 					<div class="col col-12 row progress-div">
-						<div class="col col-9 progress-title" id="su-cheking-updates-title"
+						<div class="col col-9 progress-title pb-4" id="su-cheking-updates-title"
 							aria-label="su-cheking-updates-title">Scanning system</div>
 						<div class="col col-3 progress-percent-text">
-							<div class="row progress-right">
-								<span class="progress-value-text">{{percent}}</span>
+							<div class="row d-flex justify-content-end">
+								<span class="progress-value-text pb-4">{{percent}}</span>
 								<span
 									class="progress-complete-text" id="su-progress-complete-text"
 									aria-label="su-progress-complete-text">Complete</span>
@@ -35,7 +35,7 @@
 						</div>
 					</div>
 					<div class="col col-12 row">
-						<div class="col col-12 cancel-check p-5">
+						<div class="col col-12 cancel-check p-5 d-flex justify-content-center">
 							<button type="button"
 								id="su_cancel_updates"
 								attr.aria-label="su_cancel_updates"
@@ -45,7 +45,7 @@
 								metricsItem="'btn.cancel'"
 								class="btn btn-link cancel-check"
 								[disabled]="percent === 0 || isCheckingStatus"
-								 >Cancel</button>
+								 >Cancel Scan</button>
 						</div>
 					</div>
 				</div>
@@ -89,10 +89,13 @@
     <div class="row">
         <div class="pc-info-card card-small malware-security-card">
             <div class="col-12">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between align-items-center">
                     <div class="heading">
                         <fa-icon [icon]="['fas', 'laptop']"></fa-icon>
                         <h3>Malware &amp; Security</h3>
+                    </div>
+                    <div class="status-text">
+                        <p>WAITING TO SCAN</p>
                     </div>
                 </div>
             </div>
@@ -101,10 +104,13 @@
     <div class="row">
         <div class="mb-5 pc-info-card card-small internet-performance-card">
             <div class="col-12">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between align-items-center">
                     <div class="heading">
                         <fa-icon [icon]="['fas', 'laptop']"></fa-icon>
                         <h3>Internet performance</h3>
+                    </div>
+                    <div class="status-text">
+                        <p>WAITING TO SCAN</p>
                     </div>
                 </div>
             </div>
