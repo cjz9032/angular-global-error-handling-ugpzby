@@ -707,6 +707,7 @@ export class VantageShellMockService extends BaseVantageShellService {
 		};
 
 		devicePower.getVantageToolBarStatus = this.getPromise(toolbarObj);
+		devicePower.stopMonitor = this.getPromise(true);
 		return devicePower;
 	}
 	public getPowerIdeaNoteBook(): any {

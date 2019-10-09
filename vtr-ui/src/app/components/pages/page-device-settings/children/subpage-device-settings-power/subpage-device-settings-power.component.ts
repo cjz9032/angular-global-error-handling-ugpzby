@@ -238,7 +238,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		}
+	}
 
 	initDataFromCache() {
 		this.initAirplanePowerFromCache();
@@ -374,10 +374,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.thresholdWarningSubscription.unsubscribe();
+		if (this.thresholdWarningSubscription) {
+			this.thresholdWarningSubscription.unsubscribe();
+		}
 		this.stopMonitor();
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
-
 	}
 
 	onSetSmartStandbyCapability(event: boolean) {
