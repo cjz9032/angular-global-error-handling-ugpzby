@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Действительно отменить?",
         "cancelTextProgress": "Дождитесь отмены",
         "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "При настраиваемом сканировании неприменимо"
     },
     "smartPerformance": {
         "title": "Health & Support",

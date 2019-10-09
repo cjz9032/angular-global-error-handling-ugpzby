@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
         "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning"
     },
     "smartPerformance": {
         "title": "Health & Support",

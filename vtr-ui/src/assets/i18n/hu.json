@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
         "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Egyéni ellenőrzésnél nem használható"
     },
     "smartPerformance": {
         "title": "Health & Support",

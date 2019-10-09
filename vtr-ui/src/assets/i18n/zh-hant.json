@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "您確定要取消嗎？",
         "cancelTextProgress": "請等待取消進度",
         "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "不適用於自訂掃描"
     },
     "smartPerformance": {
         "title": "Health & Support",

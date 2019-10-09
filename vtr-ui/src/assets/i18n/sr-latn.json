@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Želite li zaista da otkažete?",
         "cancelTextProgress": "Sačekajte otkazivanje",
         "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje"
     },
     "smartPerformance": {
         "title": "Health & Support",

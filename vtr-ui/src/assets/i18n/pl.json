@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Czy na pewno chcesz anulować?",
         "cancelTextProgress": "Poczekaj na anulowanie postępu",
         "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Nie dotyczy skanowania niestandardowego"
     },
     "smartPerformance": {
         "title": "Health & Support",

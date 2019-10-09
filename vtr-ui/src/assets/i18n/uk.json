@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Скасувати?",
         "cancelTextProgress": "Дочекайтеся завершення скасування",
         "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Не застосовується для настроюваного сканування"
     },
     "smartPerformance": {
         "title": "Health & Support",

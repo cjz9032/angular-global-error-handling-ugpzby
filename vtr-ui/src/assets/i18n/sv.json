@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Vill du verkligen avbryta?",
         "cancelTextProgress": "Vänta tills allt har avbrutits",
         "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Kan inte användas på anpassad sökning"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
         "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Özel tarama için geçerli değildir"
     },
     "smartPerformance": {
         "title": "Health & Support",

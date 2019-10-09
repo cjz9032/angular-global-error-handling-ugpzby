@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Haluatko varmasti peruuttaa?",
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
         "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Ei sovellu mukautettu tarkistus"
     },
     "smartPerformance": {
         "title": "Health & Support",

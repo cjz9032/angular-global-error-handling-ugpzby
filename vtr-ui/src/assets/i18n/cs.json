@@ -2405,7 +2405,7 @@
         "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
         "cancelTextProgress": "Počkejte na dokončení procesu zrušení",
         "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je.",
-        "testNotApplicable": "Not applicable on custom scan"
+        "testNotApplicable": "Nepoužitelné u vlastních kontrol"
     },
     "smartPerformance": {
         "title": "Health & Support",
