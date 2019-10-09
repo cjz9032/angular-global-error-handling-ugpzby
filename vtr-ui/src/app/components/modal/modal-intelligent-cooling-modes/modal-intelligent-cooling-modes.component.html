@@ -6,7 +6,9 @@
 				aria-hidden="true"
 				tabindex="1"
 				(click)="closeModal()"
-				(keydown.enter)="closeModal()">
+				(keydown.enter)="closeModal()"
+				attr.aria-label="device-deviceSettings-power-powerSmartSettings-intelligentCooling-intelligentCoolingModesModal-close"
+				id="device-deviceSettings-power-powerSmartSettings-intelligentCooling-intelligentCoolingModesModal-close">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</button>
 		</div>
@@ -59,7 +61,10 @@
 		<button class="btn close-button"
 			tabindex="1"
 			(click)="closeModal()"
-			(keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}</button>
+			(keydown.enter)="closeModal()"
+			attr.aria-label="device-deviceSettings-power-powerSmartSettings-intelligentCooling-intelligentCoolingModesModal-close-button"
+			id="device-deviceSettings-power-powerSmartSettings-intelligentCooling-intelligentCoolingModesModal-close-button">
+			{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}</button>
 	</div>
 
 </div>
