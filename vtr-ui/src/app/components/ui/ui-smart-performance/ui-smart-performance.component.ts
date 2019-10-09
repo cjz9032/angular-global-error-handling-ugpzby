@@ -11,7 +11,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	back = 'smartPerformance.back';
 	backarrow = '< ';
 	isScanning = false;
-	isScanningCompleted = false;
+	isScanningCompleted = true;
 	constructor(
 		private translate: TranslateService
 	) {
