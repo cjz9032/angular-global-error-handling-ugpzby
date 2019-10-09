@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 				const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
 
 				// if deviceInfo is available then load from cache else invoke JS bridge
-				if (cachedDeviceInfo && cachedDeviceInfo.locale) {
+				if (cachedDeviceInfo && cachedDeviceInfo.locale && !this.languageService.isLanguageLoaded) {
 					// this.deviceInfo = cachedDeviceInfo;
 					this.languageService.useLanguageByLocale(cachedDeviceInfo.locale);
 

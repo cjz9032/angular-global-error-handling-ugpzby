@@ -2325,6 +2325,10 @@
         "offline": "To urządzenie działa w trybie offline, połącz je z Internetem",
         "doNotSuspend": "Nie można przerywać wykonywania tych testów! Podczas skanowania nie zamykaj ani nie minimalizuj tej aplikacji, i nie wstrzymuj ani nie wyłączaj komputera.",
         "doNotUse": "Nie używaj komputera aż do zakończenia testu",
+        "testsMustRunUniterrupted": "Nie można przerywać wykonywania tych testów!",
+        "doNotCloseOrMinimizeApp": "• Nie zamykaj ani nie minimalizuj tej aplikacji.",
+        "doNotSwitchApp": "• Nie przełączaj do innej aplikacji.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nie przechodź do trybu uśpienia, nie wylogowuj się ani nie wyłączaj komputera.",
         "customize": {
             "name": "Dostosuj",
             "test": "Dostosuj test",

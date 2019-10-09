@@ -48,7 +48,7 @@ export class AppSearchService {
 		private commonService: CommonService,
 		private localInfoService: LocalInfoService) {
 		this.betaMenuMapPaths();
-		this.loadSearchIndex();
+		//this.loadSearchIndex();
 		this.unsupportedFeatures = new Set();
 		const featuresArray = this.commonService.getLocalStorageValue(LocalStorageKey.UnSupportFeatures);
 		if (featuresArray !== undefined && featuresArray.length !== undefined) {

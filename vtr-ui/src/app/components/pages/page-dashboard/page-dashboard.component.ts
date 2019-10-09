@@ -128,7 +128,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 		this.getPreviousContent();
 		this.fetchContent();
-		this.getWarrantyInfo(this.isOnline);
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchContent();
+		});
 	}
 
 	ngDoCheck(): void {
@@ -154,10 +157,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		}
 		this.qaService.destroyChangeSubscribed();
-	}
-
-	getWarrantyInfo(online: boolean) {
-		this.supportService.getWarrantyInfo(online);
 	}
 
 	private fetchContent(lang?: string) {
@@ -486,6 +485,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					});
 					warranty.status = 1;
 				}
+				warranty.isHidden = !this.deviceService.showWarranty;
 			}
 		});
 

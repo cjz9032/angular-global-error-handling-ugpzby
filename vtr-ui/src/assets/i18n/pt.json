@@ -2325,6 +2325,10 @@
         "offline": "Este dispositivo está a funcionar no modo offline. Estabeleça ligação à Internet",
         "doNotSuspend": "Estes testes têm de ser executados sem interrupção! Não feche nem minimize esta aplicação e não suspenda ou desligue o computador durante a verificação.",
         "doNotUse": "Procure não utilizar o computador até à conclusão do teste",
+        "testsMustRunUniterrupted": "Estes testes têm de ser executados sem interrupção!",
+        "doNotCloseOrMinimizeApp": "• Não feche nem minimize esta aplicação.",
+        "doNotSwitchApp": "• Não mude para outra aplicação.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Não termine sessão, não desligue ou computador nem o coloque em modo de suspensão.",
         "customize": {
             "name": "Personalizar",
             "test": "Personalizar teste",

@@ -880,7 +880,21 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	margin-top: 2rem !important;
 }
 
-button:focus, .button:focus {
-	outline: 0;
-	box-shadow: 0 0 0 0.4rem rgba(38,143,255,.5);
+.focus-blue-outline {
+	position: relative;
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	&:focus::after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: -0.4rem;
+		top: -0.4rem;
+		border-radius: 500px;
+		width: calc(100% + 0.8rem);
+		height: calc(100% + 0.8rem);
+		border: thin solid $menu_hover;
+	}
 }

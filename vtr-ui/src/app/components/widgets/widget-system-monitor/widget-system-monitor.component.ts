@@ -33,7 +33,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public showIcon = false;
 	public showAllHDs = false;
 	public gpuUsage: number;
-	public cpuUsage = 0.1;
+	public cpuUsage = 1;
 	public diskUsage: number;
 	public memoryUsed: string;
 	public loop: any;
@@ -105,7 +105,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.gpuMaxFrequency, gpuMaxFrequenceyCache);
 	}
 	GetgpuUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuUsage, this.getStackHeight(this.gpuCurrent * 100 / this.gpuMax));
+		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuUsage, this.gpuCurrent * 100 / this.gpuMax);
 	}
 	SetgpuUsageCache(gpuUsageCache) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.gpuUsage, gpuUsageCache);
@@ -131,7 +131,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ramCapacity, ramCapacityCache);
 	}
 	GetramUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.ramUsage, this.getStackHeight(this.ramCurrent * 100 / this.ramMax));
+		return this.commonService.getLocalStorageValue(LocalStorageKey.ramUsage, this.ramCurrent * 100 / this.ramMax);
 	}
 	SetramUsageCache(ramUsageCache) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ramUsage, ramUsageCache);
@@ -190,7 +190,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.cpuMax = this.GetcpuCapacityCache();
 		}
 		if (this.GetcpuUsageCache() !== undefined) {
-			this.cpuUsage = this.GetcpuUsageCache();
+			this.cpuUsage = this.GetcpuUsageCache() / 100;
 		}
 		if (this.GetcpuoverCache() !== undefined) {
 			this.cpuover = this.GetcpuoverCache();
@@ -202,7 +202,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.gpuMax = this.GetgpuMaxFrequencyCache();
 		}
 		if (this.GetgpuUsageCache() !== undefined) {
-			this.gpuUsage = this.GetgpuUsageCache();
+			this.gpuUsage = this.getStackHeight(this.GetgpuUsageCache() || 1);
 		}
 		if (this.GetgpuModulenameCache() !== undefined) {
 			this.gpuModuleName = this.GetgpuModulenameCache();
@@ -215,7 +215,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		}
 		if (this.GetramUsageCache() !== undefined) {
 			// this.ramUsage = this.GetramUsageCache();
-			this.memoryUsage = this.GetramUsageCache();
+			this.memoryUsage = this.getStackHeight(this.GetramUsageCache());
 		}
 		if (this.GetramaOverCache() !== undefined) {
 			this.ramOver = this.GetramaOverCache();

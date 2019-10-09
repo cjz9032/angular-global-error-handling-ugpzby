@@ -107,6 +107,10 @@
 	white-space: nowrap;
 }
 
+.warning {
+	color: $button_red_start !important;
+}
+
 // RESPONSIVE EFFORT
 // @media #{$mediaquery_4} {
 // 	.nmx-40 {

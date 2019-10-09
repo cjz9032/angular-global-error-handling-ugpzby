@@ -16,6 +16,7 @@
 					[title]="'homeSecurity.card.startTrial' | translate"
 					[label]="'homeSecurity.card.startTrial' | translate"
 					[isDisabled]="location?.isLoading"
+					btnHeight=true
 					linkId="chs-card-btn-startTrial">
 				</vtr-ui-button>
 			</div>
@@ -35,6 +36,8 @@
 					[title]="'homeSecurity.card.join' | translate"
 					[label]="'homeSecurity.card.join' | translate"
 					[isDisabled]="location?.isLoading"
+					buttonColor="gray"
+					btnHeight=true
 					(onClick)="joinGroup()"
 					linkId="chs-card-btn-joinGroup">
 				</vtr-ui-button>

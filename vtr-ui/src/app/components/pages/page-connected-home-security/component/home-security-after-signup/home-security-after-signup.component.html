@@ -31,25 +31,25 @@
 				<ng-container *ngIf="account?.state === 'trial'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.trialPeriod' | translate: {remainingDay: account?.expirationDay }">
-						<a [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
+						<a class="font-weight-bold" [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'trialExpired'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.trialExpiredPeriod' | translate">
-						<a class="warning"></a>
+						<a class="warning font-weight-bold"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'standard'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.subscriptionPeriod' | translate: {remainingDay: account?.expirationDay }">
-						<a [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
+						<a class="font-weight-bold" [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'standardExpired'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.subscriptionExpiredPeriod' | translate">
-						<a class="warning"></a>
+						<a class="warning font-weight-bold"></a>
 					</p>
 				</ng-container>
 				<p class="m-0 pl-0"><span>Lenovo ID: </span><span [innerHTML]="account?.lenovoId"></span></p>
@@ -61,6 +61,7 @@
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
+					btnHeight=true
 					[title]="'homeSecurity.overview.buyNow' | translate"
 					[label]="'homeSecurity.overview.buyNow' | translate">
 				</vtr-ui-button>
@@ -70,6 +71,7 @@
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
+					btnHeight=true
 					[title]="'homeSecurity.overview.renewNow' | translate"
 					[label]="'homeSecurity.overview.renewNow' | translate">
 				</vtr-ui-button>
@@ -79,6 +81,7 @@
 					(click)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
+					btnHeight=true
 					[title]="'homeSecurity.overview.extendNow' | translate"
 					[label]="'homeSecurity.overview.extendNow' | translate">
 				</vtr-ui-button>
@@ -102,6 +105,7 @@
 				(click)="common.openCornet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
+				btnHeight=true
 				[title]="'homeSecurity.overview.goDashboard' | translate"
 				[label]="'homeSecurity.overview.goDashboard' | translate">
 			</vtr-ui-button>
@@ -119,6 +123,7 @@
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-disconnect"
 				buttonColor="red"
+				btnHeight=true
 				[title]="'homeSecurity.overview.disconnect' | translate"
 				[label]="'homeSecurity.overview.disconnect' | translate">
 			</vtr-ui-button>

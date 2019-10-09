@@ -1,169 +1,183 @@
 @import "../../../../../app.theme";
 
 .list-group {
-  border-radius: $border_radius;
-  background: $shade_extralight;
-  border: 0.1rem solid $shade_lighter;
-  padding: 0 2rem;
-  margin-top: 2.7rem;
-  margin-bottom: 2rem;
-  .group-item {
-    border-bottom: 0.1rem dashed $shade_light;
-	padding: 1rem 0;
+	border-radius: $border_radius;
+	background: $shade_extralight;
+	border: 0.1rem solid $shade_lighter;
+	padding: 0 2rem;
+	margin-top: 2.7rem;
+	margin-bottom: 2rem;
 
-    &:nth-last-child(2) {
-      border-bottom: none;
-      padding-bottom: 0;
+	.group-item {
+		border-bottom: 0.1rem dashed $shade_light;
+		padding: 1rem 0;
+
+		&:nth-last-child(2) {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+
+		.text-color {
+			color: $go_dark;
+			font-size: 1.3rem;
+			font-weight: 600;
+		}
+
+		.text-d-color {
+			color: red;
+			font-size: 1.3rem;
+		}
 	}
 
-    .text-color {
-      color: $go_dark;
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
+	.group-delete-item {
+		border-bottom: 0.1rem dashed $shade_light;
+		padding: 1rem 0;
 
-    .text-d-color {
-      color: red;
-      font-size: 1.3rem;
-    }
-  }
+		&:nth-last-child(2) {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
 
-  .group-delete-item {
-    border-bottom: 0.1rem dashed $shade_light;
-    padding: 1rem 0;
-    &:nth-last-child(2) {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+		.text-color {
+			color: $light-grey;
+			font-size: 1.3rem;
+		}
 
-    .text-color {
-      color: $light-grey;
-      font-size: 1.3rem;
-    }
+		.text {
+			color: $light-grey;
+			font-weight: $weight_regular;
+		}
 
-    .text {
-      color: $light-grey;
-      font-weight: $weight_regular;
-    }
+		.times {
+			font-size: 1.6rem;
+			color: $light-grey;
+			padding: 0 2rem 0 1rem;
+		}
 
-    .times {
-      font-size: 1.6rem;
-      color: $light-grey;
-      padding: 0 2rem 0 1rem;
-    }
+		.divider {
+			height: 0.1rem;
+			background-color: $light-grey;
+			position: relative;
+			top: -0.8rem;
+		}
+	}
 
-    .divider {
-      height: 0.1rem;
-      background-color: $light-grey;
-      position: relative;
-      top: -0.8rem;
-    }
-  }
+	li {
+		list-style: none;
+	}
 
-  li {
-    list-style: none;
-  }
+	.button {
+		position: relative;
+		top: 2rem;
+		width: 22rem;
+		::ng-deep {
+			.button-box {
+				.button {
+					font-size: 2rem;
+					font-weight: $weight_600;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+	}
 
-  button,.button {
-    height: 4rem;
-    border-radius: 3rem;
-    width: 30rem;
-    border: 0.1rem solid $main;
-    background: white;
-    color: $main;
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0 2.5rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    letter-spacing: 0;
-    position: relative;
-    top: 2rem;
-  }
+	.white-button {
+		::ng-deep {
+			.button-box {
+				.button {
+					border: 0.1rem solid $main !important;
+					background: $light!important;
+					color: $main!important;
+				}
+			}
+		}
+	}
 
-  .text {
-    color: $shade_extradark;
-    padding: 1rem 0;
-    font-size: 1.8rem;
-    font-weight: $weight_bold;
-  }
+	.normal-button {
+		::ng-deep {
+			.button-box {
+				.button {
+					color: $light!important;
+					background: $main!important;
+				}
+			}
+		}
+	}
 
-  span:hover {
-    cursor: default;
-  }
+	.text {
+		color: $shade_extradark;
+		padding: 1rem 0;
+		font-size: 1.8rem;
+		font-weight: $weight_bold;
+	}
 
-  .bullet-icon {
-    .icon-bkg {
-      display: inline-block;
-      border-radius: 50%;
-      height: 3.3rem;
-      width: 3.3rem;
-      border-width: 0.3rem;
-      border-style: solid;
-      text-align: center;
+	span:hover {
+		cursor: default;
+	}
 
-      fa-icon {
-        font-size: 1.6rem;
-        line-height: 2.7rem;
-        color: $light;
-      }
-    }
+	.bullet-icon {
+		.icon-bkg {
+			display: inline-block;
+			border-radius: 50%;
+			height: 3.3rem;
+			width: 3.3rem;
+			border-width: 0.3rem;
+			border-style: solid;
+			text-align: center;
 
-    .icon-check {
-      background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-      background-color: $go_dark;
-      border-color: $go_dark;
-    }
+			fa-icon {
+				font-size: 1.6rem;
+				line-height: 2.7rem;
+				color: $light;
+			}
+		}
 
-    .icon-check:before {
-      content: "";
-    }
+		.icon-check {
+			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+			background-color: $go_dark;
+			border-color: $go_dark;
+		}
 
-    .icon-times {
-      background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-      background-color: $stop_dark;
-      border-color: $stop_dark;
-    }
+		.icon-check:before {
+			content: "";
+		}
 
-    .icon-dot {
-      border-width: 1rem;
-      border-color: $main;
-    }
-  }
+		.icon-times {
+			background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+			background-color: $stop_dark;
+			border-color: $stop_dark;
+		}
+
+		.icon-dot {
+			border-width: 1rem;
+			border-color: $main;
+		}
+	}
 }
 
 .windows-group {
-  .text {
-    font-size: 1.4rem;
-  }
+	.text {
+		font-size: 1.4rem;
+	}
 
-  .bullet-icon {
-    height: 3rem;
-    width: 3rem;
+	.bullet-icon {
+		height: 3rem;
+		width: 3rem;
 
-    .icon-bkg {
-      height: 3rem;
-      width: 3rem;
+		.icon-bkg {
+			height: 3rem;
+			width: 3rem;
 
-      fa-icon {
-        line-height: 2.4rem;
-      }
-    }
-  }
+			fa-icon {
+				line-height: 2.4rem;
+			}
+		}
+	}
 
-  .button{
-    width: 22rem;
-    background-color: $main;
-    color: $light;
-    text-decoration: none;
-  }
-
-  .visible {
-    visibility: hidden !important;
-  }
+	.visible {
+		visibility: hidden !important;
+	}
 
 }

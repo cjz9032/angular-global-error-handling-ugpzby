@@ -121,19 +121,15 @@
 									</vtr-ui-dropdown>
 								</section>
 								<section class="col-sm-5">
-									<div class="pt-4 text-center">
-										<button type="button"
-											id="manualActiveProtectionSuspension_btn"
-											attr.aria-label="manualActiveProtectionSuspension_btn"
-											[disabled]="!apsStatus"
-											class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
-											(click)="suspendNow()"
-											vtrMetrics
-											metricsEvent="ItemClick"
+									<div class="suspend-now-box">
+										<vtr-ui-button linkId="manualActiveProtectionSuspension_btn"
+											metricsEvent="FeatureClick"
+											metricsItem="ActiveProtectionSystem.ManualOverride.SuspendNow"
 											metricsParent="Device.SmartAssist"
-											metricsItem="ActiveProtectionSystem.ManualOverride.SuspendNow">
-											{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate }}
-										</button>
+											[isFullWidth]="true"
+											[isDisabled]="!apsStatus"
+											[label]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate"
+											(onClick)="suspendNow()"></vtr-ui-button>
 									</div>
 								</section>
 							</div>

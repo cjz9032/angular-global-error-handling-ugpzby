@@ -17,12 +17,6 @@
 		}
 		.detail-container {
 			color: $shade_blue;
-			a {
-				font-weight: $weight_600;
-			}
-			.warning {
-				color: $button_red_start;
-			}
 			.subscription-btn {
 				vtr-ui-button ::ng-deep .button-box{
 					.button {
@@ -41,11 +35,6 @@
 			border: 0.1rem solid $grey_light;
 		}
 	}
-	::ng-deep {
-		.button {
-			min-height: 4rem !important;
-		}
-	}
 	.common-btn{
 		::ng-deep {
 			.button-box {
@@ -58,8 +47,4 @@
 			}
 		}
 	}
-	.warning {
-		color: $danger_dark;
-	}
-
 }

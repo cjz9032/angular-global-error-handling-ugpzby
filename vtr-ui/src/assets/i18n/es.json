@@ -2325,6 +2325,10 @@
         "offline": "Este dispositivo se está ejecutando en modalidad sin conexión, conecte a Internet",
         "doNotSuspend": "¡Estas pruebas se deben ejecutar sin interrupciones! No cierre ni minimice esta aplicación, y no suspenda ni apague el equipo durante la exploración.",
         "doNotUse": "No utilice el equipo hasta que se complete esta prueba",
+        "testsMustRunUniterrupted": "¡Estas pruebas se deben ejecutar sin interrupciones!",
+        "doNotCloseOrMinimizeApp": "• No cierre ni minimice esta aplicación.",
+        "doNotSwitchApp": "• No cambie a otra aplicación.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• No suspenda ni cierre la sesión ni desactive su sistema.",
         "customize": {
             "name": "Personalizar",
             "test": "Prueba de personalización",

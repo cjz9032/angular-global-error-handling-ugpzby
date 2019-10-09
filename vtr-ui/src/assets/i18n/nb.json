@@ -2325,6 +2325,10 @@
         "offline": "Denne enheten kjører i frakoblet modus, så koble den til Internett",
         "doNotSuspend": "Disse testene må kjøre uavbrutt! Ikke lukk eller minimer denne appen, og ikke utsett eller slå av datamaskinen under skanningen.",
         "doNotUse": "Avstå fra å bruke datamaskinen før denne testen er fullført",
+        "testsMustRunUniterrupted": "Disse testene må kjøres uten forstyrrelser!",
+        "doNotCloseOrMinimizeApp": "• Ikke lukk eller minimer denne appen.",
+        "doNotSwitchApp": "• Ikke bytt til en annen app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ikke logg deg av datamaskinen, sett den i hvilemodus eller slå den av.",
         "battery": {
             "title": "Aktiver batteriladeterskel",
             "description": "Aktiverer du egendefinert batterilading, vil selve batteriet generelt sett vare lenger når du bruker denne enheten. Å ikke lade batteriet helt opp vil imidlertid gi kortere brukstid. For å aktivere denne funksjonen helt må du ta ut støpselet til datamaskinen og la batteriet lades helt ut eller til under terskelen for ladestopp.",

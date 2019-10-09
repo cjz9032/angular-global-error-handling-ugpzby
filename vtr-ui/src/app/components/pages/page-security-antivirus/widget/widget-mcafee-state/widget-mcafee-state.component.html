@@ -1,6 +1,5 @@
 <ul class="list-group" [ngClass]="{'windows-group': windowsDefender}">
-    <li class="group-item"
-      *ngFor="let list of statusList">
+    <li class="group-item" *ngFor="let list of statusList">
       <div class="row align-items-center">
         <div class="col-auto pl-0 pr-3">
           <div *ngIf="list.status!=='loading'" class="bullet-icon">
@@ -16,9 +15,9 @@
           </div>
         </div>
         <div class="col-auto text px-0 text-truncate"
-        [ngClass]="{'col-8': !windowsDefender}"
-        [title]="list.title | translate"
-        [innerHTML]="list.title | translate | characterLimit:28">
+			[ngClass]="{'col-8': !windowsDefender}"
+			[title]="list.title | translate"
+			[innerHTML]="list.title | translate | characterLimit:28">
         </div>
         <div class="col-auto text-right px-0 ml-auto"
             [ngClass]="{'col-2': !windowsDefender}">
@@ -54,17 +53,30 @@
       </div>
     </li>
     <li *ngIf="!windowsDefender" class="row justify-content-center">
-        <button  id="sa-av-button-launch-mcafee" vtrMetrics metricsEvent="itemClick"
-        metricsItem="launch mcafee" metricsParent="security.antivirus" class="font-weight-bold" (click)="common.launch()" title="{{'security.antivirus.mcafee.launch' | translate}}"
-        [innerHTML]="'security.antivirus.mcafee.launch' | translate"></button>
+		<vtr-ui-button
+			class="white-button button"
+			linkId="sa-av-button-launch-mcafee"
+			metricsEvent="itemClick"
+			metricsItem="launch mcafee"
+			metricsParent="security.antivirus"
+			upperCaseLabel=false
+			btnHeight=true
+			[label]="'security.antivirus.mcafee.launch' | translate"
+			(onClick)="common.launch()"
+			[title]="'security.antivirus.mcafee.launch' | translate"></vtr-ui-button>
     </li>
     <li *ngIf="windowsDefender" class="row justify-content-center">
-      <a class="button d-flex align-items-center justify-content-center"
-        [ngClass]="{'visible': !url, 'unclickable': !isOnline}"
-        id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-        metricsItem="subscribe" metricsParent="security.antivirus"
-        href="{{url}}" target="_blank"
-        title="{{'security.antivirus.windowsDefender.buyNow' | translate}}"
-        [innerHTML]="'security.antivirus.windowsDefender.buyNow' | translate"></a>
+		<vtr-ui-button class="normal-button button"
+			[ngClass]="{'visible': !url}"
+			linkId="sa-av-link-subscribe"
+			metricsEvent="itemClick"
+			metricsItem="subscribe"
+			metricsParent="security.antivirus"
+			upperCaseLabel=false
+			btnHeight=true
+			[isDisabled]="isOnline === false"
+			[label]="'security.antivirus.windowsDefender.buyNow' | translate"
+			[href]="url"
+			[title]="'security.antivirus.windowsDefender.buyNow' | translate"></vtr-ui-button>
     </li>
 </ul>

@@ -26,7 +26,7 @@
 				metricsEvent="FeatureClick"
 				metricsItem="CHSTrialGoNowButton"
 				metricsParent="{{metricsParent}}"
-				(click)="openCornet()"
+				(onClick)="openCornet()"
 				[label]="'homeSecurity.modal.goNow' | translate"
 				[title]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
 			<button class="btn btn-default btn_cancel ml-4 pl-0 pr-0"
@@ -53,7 +53,7 @@
 				metricsItem="CHSDisconnectButton"
 				metricsParent="{{metricsParent}}"
 				buttonColor="red"
-				(click)="disconnect()"
+				(onClick)="disconnect()"
 				[label]="'homeSecurity.overview.disconnect' | translate"
 				[title]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
 			<vtr-ui-button
@@ -62,7 +62,7 @@
 				metricsItem="CHSDisconnectCancelButton"
 				metricsParent="{{metricsParent}}"
 				buttonColor="gray"
-				(click)="closeModal()"
+				(onClick)="closeModal()"
 				[label]="'security.wifisecurity.locationmodal.cancel' | translate"
 				[title]="'security.wifisecurity.locationmodal.cancel' | translate"></vtr-ui-button>
 		</div>

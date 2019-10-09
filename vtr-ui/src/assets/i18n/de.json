@@ -2325,6 +2325,10 @@
         "offline": "Dieses Gerät läuft im Offline-Modus, bitte stellen Sie eine Internetverbindung her",
         "doNotSuspend": "Diese Tests müssen ohne Unterbrechung ausgeführt werden! Während des Scans darf die App nicht geschlossen oder minimiert und der Computer weder angehalten noch heruntergefahren werden.",
         "doNotUse": "Verwenden Sie Ihren Computer erst wieder, wenn der Test abgeschlossen wurde",
+        "testsMustRunUniterrupted": "Diese Tests müssen ohne Unterbrechung ausgeführt werden!",
+        "doNotCloseOrMinimizeApp": "• Sie dürfen diese App nicht schließen oder minimieren.",
+        "doNotSwitchApp": "• Sie dürfen nicht zu einer anderen App wechseln.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sie dürfen den Computer nicht in den Energiesparmodus versetzen, sich abmelden oder den Computer ausschalten.",
         "customize": {
             "name": "Anpassen",
             "test": "Test anpassen",
@@ -2350,7 +2354,7 @@
             "delete": "Löschen",
             "warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
             "scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Ihr Scan wurde geplant und wird am folgenden Tag im Hintergrund ausgeführt:"
         },
         "recoverBadSectors": {
             "title": "Wiederherstellung von fehlerhaften Sektoren",
