@@ -540,30 +540,54 @@ export class VantageShellMockService extends BaseVantageShellService {
 	 * returns dolby settings object from VantageShellService of JS Bridge
 	 */
 	public getDolbySettings(): any {
-		if (this.getAudioSettings() && this.getAudioSettings().dolby) {
-			return this.getAudioSettings().dolby;
-		}
-		return undefined;
+		const dolby: any = {};
+		const obj: any = {
+			available: true,
+			currentMode: 'Dynamic',
+			supporedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip']
+		};
+
+		dolby.getDolbyMode = this.getPromise(obj);
+
+		return dolby;
 	}
 
 	/**
 	 * returns microphone settings object from VantageShellService of JS Bridge
 	 */
 	public getMicrophoneSettings(): any {
-		if (this.getAudioSettings() && this.getAudioSettings().microphone) {
-			return this.getAudioSettings().microphone;
-		}
-		return undefined;
+		const microphone: any = {};
+		const micSupportedModes: any = {
+			current: 'MultipleVoices',
+			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices']
+		};
+
+		const micSettings = {
+			AEC: false,
+			autoOptimization: true,
+			available: true,
+			currentMode: 'MultipleVoices',
+			disableEffect: false,
+			keyboardNoiseSuppression: true,
+			muteDisabled: true,
+			permission: true,
+			volume: 100,
+		};
+		microphone.getSupportedModes = this.getPromise(micSupportedModes);
+		microphone.getMicrophoneSettings = this.getPromise(micSettings);
+
+		return microphone;
 	}
 
 	/**
 	 * returns smart settings object from VantageShellService of JS Bridge
 	 */
 	public getSmartSettings(): any {
-		if (this.getHwSettings() && this.getHwSettings().smartsettings) {
-			return this.getHwSettings().smartsettings;
-		}
-		return undefined;
+		const smartSettings: any = {
+			absFeature: { getDolbyFeatureStatus: this.getPromise({ available: true, status: true }) }
+		};
+
+		return smartSettings;
 	}
 
 	/**
@@ -693,8 +717,8 @@ export class VantageShellMockService extends BaseVantageShellService {
 		const devicePowerIdeaNoteBook = {
 			rapidChargeMode: { getRapidChargeModeStatus: this.getPromise(obj) },
 			conservationMode: { getConservationModeStatus: this.getPromise(obj) },
-			alwaysOnUSB: { getAlwaysOnUSBStatus: this.getPromise(obj), getUSBChargingInBatteryModeStatus: this.getPromise(obj)},
-			flipToBoot : {getFlipToBootCapability: this.getPromise({ErrorCode: 0, Supported: 1, CurrentMode: 1})}
+			alwaysOnUSB: { getAlwaysOnUSBStatus: this.getPromise(obj), getUSBChargingInBatteryModeStatus: this.getPromise(obj) },
+			flipToBoot: { getFlipToBootCapability: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 }) }
 		};
 		return devicePowerIdeaNoteBook;
 	}
@@ -1082,7 +1106,7 @@ export class VantageShellMockService extends BaseVantageShellService {
 	}
 
 	public getImcHelper(): any {
-		const imcHelper: any = {getIsEnergyStarCapability : this.getPromise(true)};
+		const imcHelper: any = { getIsEnergyStarCapability: this.getPromise(true) };
 
 		return imcHelper;
 	}
