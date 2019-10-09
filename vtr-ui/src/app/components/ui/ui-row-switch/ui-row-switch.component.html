@@ -80,10 +80,24 @@
 
 				<div class="p-0" [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
 					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
-					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}" attr.aria-label="show {{ title }} tooltip"
-						class="right-icon" tabindex="1" triggers="click:blur keydown.enter:keydown.Tab" placement="auto"
-						[ngbTooltip]="tooltipRef" [icon]="rightIcon" container="body" tooltipClass="vtr-tooltip"
-						(click)="onRightIconClick($event)" (keydown.enter)="onRightIconClick($event)"></fa-icon>
+					<fa-icon 
+						id="{{switchId+ '_tooltip_right_icon'}}" 
+						attr.aria-label="show {{ title }} tooltip"
+						class="right-icon" 
+						tabindex="1" 
+						triggers="click:blur keydown.enter:keydown.Tab" 
+						placement="auto" 
+						autoClose="false"
+						[ngbTooltip]="'Hello ther'" 
+						[icon]="rightIcon" 
+						container="body" 
+						tooltipClass="vtr-tooltip"
+						(click)="onRightIconClick($event)" 
+						(keydown.enter)="onRightIconClick($event)"
+						(shown)="toolTipHandler($event)"
+						(hidden)="toolTipHandler($event)"
+						>
+					</fa-icon>
 				</div>
 				<div class="p-0" [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
@@ -91,7 +105,8 @@
 						attr.aria-label="show {{ title }}, tooltip" class="right-icon"
 						triggers="click:blur keydown.enter:keydown.Tab" placement="auto" [ngbTooltip]="smartTooltipRef"
 						[icon]="rightIcon" container="body" tooltipClass="vtr-tooltip"
-						(click)="onRightIconClick($event)" (keydown.enter)="onRightIconClick($event)"></fa-icon>
+						(click)="onRightIconClick($event)" (keydown.enter)="onRightIconClick($event)" (shown)="toolTipHandler($event)"
+						(hidden)="toolTipHandler($event)"></fa-icon>
 				</div>
 
 				<div class="p-0" *ngIf="rightIcon.length > 0 && voice">
@@ -149,7 +164,7 @@
 	</div>
 </div>
 <ng-template #tooltipRef>
-	<div [innerHTML]='tooltipText' id="{{switchId}}-toolTip" tabindex="1" attr.aria-label="show {{ title }}, tooltip">
+	<div #tooltipBody [innerHTML]='tooltipText' id="{{switchId}}-toolTip" tabindex="1" attr.aria-label="tooltipText">
 	</div>
 </ng-template>
 

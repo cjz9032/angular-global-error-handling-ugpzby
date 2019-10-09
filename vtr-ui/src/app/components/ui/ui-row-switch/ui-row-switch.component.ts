@@ -147,7 +147,9 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 			this.deviceService.launchUri(linkPath);
 		}
 	}
-
+	public toolTipHandler(event) {
+		console.log('----------------------------------------------------------', event);
+	}
 	voicePopUp() {
 		console.log('modal open');
 		console.log(this.voiceValue);
