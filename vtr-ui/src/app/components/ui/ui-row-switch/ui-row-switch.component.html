@@ -34,7 +34,7 @@
 								tabindex="1"
 								id="{{switchId}}-title"
 								attr.aria-label="{{ title }}">
-									{{ title }}
+								{{ title }}
 							</div>
 							<span *ngIf="caption">
 								<div class="caption"
@@ -45,7 +45,7 @@
 								</div>
 							</span>
 							<!-- {{ caption. add it only if there is a readmore, else comment it}} -->
-							<!-- attr.aria-label="hello {{'read_more_'+ switchId}}" --> 
+							<!-- attr.aria-label="hello {{'read_more_'+ switchId}}" -->
 							<span id="{{'read_more_'+ switchId}}"
 								*ngIf="readMoreText && !contentExpand"
 								tabindex="1"
@@ -74,7 +74,8 @@
 						class="btn"
 						[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
 						(click)="onResetClick($event)"
-						(keydown.enter)="onResetClick($event)">
+						(keydown.enter)="onResetClick($event)"
+						[attr.aria-disabled]="disabledAll">
 						{{ resetText }}
 					</button>
 
