@@ -693,8 +693,8 @@ export class VantageShellMockService extends BaseVantageShellService {
 		const devicePowerIdeaNoteBook = {
 			rapidChargeMode: { getRapidChargeModeStatus: this.getPromise(obj) },
 			conservationMode: { getConservationModeStatus: this.getPromise(obj) },
-			alwaysOnUSB: { getAlwaysOnUSBStatus: this.getPromise(obj), getUSBChargingInBatteryModeStatus: this.getPromise(obj)},
-			flipToBoot : {getFlipToBootCapability: this.getPromise({ErrorCode: 0, Supported: 1, CurrentMode: 1})}
+			alwaysOnUSB: { getAlwaysOnUSBStatus: this.getPromise(obj), getUSBChargingInBatteryModeStatus: this.getPromise(obj) },
+			flipToBoot: { getFlipToBootCapability: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 }) }
 		};
 		return devicePowerIdeaNoteBook;
 	}
@@ -882,6 +882,17 @@ export class VantageShellMockService extends BaseVantageShellService {
 			SetHPDLeaveWaitSetting: this.getPromise(true),
 			HPDSettingReset: this.getPromise(true),
 			GetFacialFeatureRegistered: this.getPromise(true),
+			GetSmartSensecapability: this.getPromise(true),
+			GetWalkingCapability: this.getPromise(true),
+			GetWalkingSetting: this.getPromise(true),
+			GetHPDSensorType: this.getPromise(true),
+			GetWalkingCautionVisibility: this.getPromise(true),
+			GetBrowsingCapability: this.getPromise(true),
+			GetBrowsingSetting: this.getPromise(true),
+			GetBrowsingTime: this.getPromise(30),
+			SetWalkingMode: this.getPromise(true),
+			setBrowsingMode: this.getPromise(true),
+			SetBrowsingTime: this.getPromise(true),
 		};
 		return intelligentSensing;
 	}
@@ -923,10 +934,11 @@ export class VantageShellMockService extends BaseVantageShellService {
 	}
 
 	public getIntelligentMedia(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.lis.intelligentMedia;
-		}
-		return undefined;
+		const media = {
+			getVideoPauseResumeStatus: this.getPromise({ available: true, status: true }),
+			setVideoPauseResumeStatus: this.getPromise(true),
+		};
+		return media;
 	}
 
 	public getPreferenceSettings() {
@@ -1082,17 +1094,41 @@ export class VantageShellMockService extends BaseVantageShellService {
 	}
 
 	public getImcHelper(): any {
-		const imcHelper: any = {getIsEnergyStarCapability : this.getPromise(true)};
+		const imcHelper: any = { getIsEnergyStarCapability: this.getPromise(true) };
 
 		return imcHelper;
 	}
 
 	// Active Protection System
 	public getActiveProtectionSystem(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.aps.ActiveProtectionSystem; // returning APS Object with methods
-		}
-		return undefined;
+		const aps = {
+			getSensorStatus: this.getPromise(true),
+			getAPSCapability: this.getPromise(true),
+			getHDDStatus: this.getPromise(true),
+			getAPSMode: this.getPromise(true),
+			getPenCapability: this.getPromise(true),
+			getTouchCapability: this.getPromise(true),
+			getPSensorCapability: this.getPromise(true),
+			getAPSSensitivityLevel: this.getPromise(1),
+			getAutoDisableSetting: this.getPromise(true),
+			getSnoozeSetting: this.getPromise(true),
+			getSnoozeTime: this.getPromise(1),
+			getPenSetting: this.getPromise(true),
+			getPenDelayTime: this.getPromise(5),
+			getTouchInputSetting: this.getPromise(true),
+			getPSensorSetting: this.getPromise(true),
+			setAPSMode: this.getPromise(true),
+			setAPSSensitivityLevel: this.getPromise(true),
+			setAutoDisableSetting: this.getPromise(true),
+			setSnoozeSetting: this.getPromise(true),
+			setSnoozeTime: this.getPromise(true),
+			setPenSetting: this.getPromise(true),
+			setPenDelayTime: this.getPromise(true),
+			setTouchInputSetting: this.getPromise(true),
+			setPSensorSetting: this.getPromise(true),
+			sendSnoozeCommand: this.getPromise(true)
+		};
+		return aps;
 	}
 
 	/**
@@ -1106,10 +1142,13 @@ export class VantageShellMockService extends BaseVantageShellService {
 	}
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
-		if (this.phoenix) {
-			return this.phoenix.lenovovoice;
-		}
-		return undefined;
+		const voice = {
+			getCapability: this.getPromise(true),
+			getInstallStatus: this.getPromise(true),
+			downloadAndInstallVoiceApp: this.getPromise('InstallDone'),
+			launchVoiceApp: this.getPromise(true)
+		};
+		return voice;
 	}
 	// ==================== End Lenovo Voice
 
