@@ -12,17 +12,25 @@ export class UiGamingDriverPopupComponent implements OnInit {
 	@Input() popupText: any;
 	@Output() driverpopval = new EventEmitter<boolean>();
 	@Input() descriptionLabel = 'Gaming driver popup';
-	constructor(private router: Router) { }
+	isNowOpened = false;
+
+	constructor(private router: Router) {
+		setTimeout(() => {
+			this.isNowOpened = true;
+		}, 10);
+	 }
 
 	ngOnInit() {
 		if (!this.popupText || this.popupText.length < 2) {
 			this.popupText = 'gaming.dashboard.device.legionEdge.driverPopup.text';
 		}
 		document.getElementById('gamingDriverPopup').focus();
+		
 	}
 	close() {
 		this.showMePartially = !this.showMePartially;
 		this.driverpopval.emit(false);
+		document.getElementById('main-wrapper').focus();
 
 	}
 
@@ -34,6 +42,13 @@ export class UiGamingDriverPopupComponent implements OnInit {
 			setTimeout(() => {
 				document.getElementById('gaming-driverPopup-close').focus();
 			}, 2);
+		}
+	}
+	
+	onOutsideClick() {
+		console.log(this.isNowOpened, this.showMePartially, '------------------------<>')
+		if (this.isNowOpened) {
+			this.close();
 		}
 	}
 }
