@@ -1,7 +1,8 @@
 <div class="vtr-ui-list-chevron">
 	<ul class="chevron-list">
 		<li *ngFor="let item of items"
-			[ngClass]="getItemStatusClass(item)">
+			[ngClass]="getItemStatusClass(item)"
+			[hidden]="item.isHidden">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 
 			<a routerLink="/{{item.path}}"

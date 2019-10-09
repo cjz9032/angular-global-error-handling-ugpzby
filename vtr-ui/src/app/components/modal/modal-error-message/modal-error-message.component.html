@@ -8,15 +8,14 @@
 	</p>
 	<div class="d-flex">
 		<div class="ml-0 mr-4 pl-0">
-			<button id="{{cancelButtonId}}" type="button"
-				class="btn btn-default modal-button"
-				(click)="onCloseClick($event)"
-				vtrMetrics
-				metricsParent="Security.WifiSecurity"
+			<vtr-ui-button
+				metricsEvent="featureClick"
 				metricsItem="closeErrorMessage"
-				metricsEvent="featureClick">
-				{{closeText | translate}}
-			</button>
+				(click)="onCloseClick($event)"
+				[title]="closeText | translate"
+				[label]="closeText | translate"
+				[linkId]="cancelButtonId">
+			</vtr-ui-button>
 		</div>
 	</div>
 </div>

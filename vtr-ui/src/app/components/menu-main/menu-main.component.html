@@ -19,7 +19,7 @@
 			</a>
 		</div>
 		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem.hideMenus)"
-			class="navbar-brand pt-0">
+			class="navbar-brand p-0">
 
 			<img *ngIf="isGamingHome"
 				src="../../../assets/images/gaming/gaming-logo-small.png"
@@ -51,7 +51,7 @@
 				<div class="device-type">
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
 					<span *ngIf="machineFamilyName">{{machineFamilyName}}</span>
-					<vtr-ui-header-warranty *ngIf="machineFamilyName"
+					<vtr-ui-header-warranty *ngIf="machineFamilyName && deviceService.showWarranty"
 						[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 				</div>
 			</span>

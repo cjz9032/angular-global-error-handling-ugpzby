@@ -68,7 +68,7 @@
 			letter-spacing: 0;
 		}
 		input:disabled{
-			background-color: white!important
+			background-color: $light!important
 		}
 		.form-control{
 			border: 0px;
@@ -95,22 +95,20 @@
 		font-weight: $weight_bold;
 		margin: 1rem;
 	}
-	.connect-button {
-		background: $grey_light;
-		color: $shade_blue;
-		&.connect-available {
-			background: $blue_gradient;
-			color: white;
-		}
+	vtr-ui-button {
+		display: inline-block;
 	}
 	.cancel-button {
-		background: white;
+		background: $light;
 		color: $blue-lighter;
 		border-bottom: 1px solid $blue-light;
 		height: 3rem;
 		padding-left: 0;
 		padding-right: 0;
 		border-radius: 0;
+		&:hover {
+			color: $blue-light;
+		}
 	}
 
 	.join-info{

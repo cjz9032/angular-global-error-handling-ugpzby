@@ -24,6 +24,7 @@ export class DeviceService {
 	public showPrivacy = false;
 	public isGaming = false;
 	public isSMode = false;
+	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	private machineInfo: any;
 
@@ -104,6 +105,9 @@ export class DeviceService {
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
+					if (info.mtm && !this.showWarranty && info.mtm.substring(info.mtm.length - 2).toLocaleLowerCase() !== 'cd') {
+						this.showWarranty = true;
+					}
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {
 							this.is64bit = false;

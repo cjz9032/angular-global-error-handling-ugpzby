@@ -15,7 +15,6 @@ export class AntiVirusViewModel {
 		status: false,
 		enabled: false,
 		metrics: [],
-		launch() { return Promise.resolve(true); }
 	};
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,

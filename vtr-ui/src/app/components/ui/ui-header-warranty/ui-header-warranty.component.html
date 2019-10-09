@@ -47,18 +47,17 @@
 			</div>
 
 			<div class="button-box">
-				<a role="button"
-					href="{{warrantyData.info.url}}"
-					target="_blank"
-					class="button"
-					tabindex="1"
-					id="btn-header-warranty-options"
-					aria-label="btn-header-warranty-options"
-					title="{{'support.warranty.viewWarrantyOptions' | translate}}"
-					vtrMetrics
-					metricsItem="ViewWarrantyOptionsButton"
-					metricsEvent="FeatureClick"
-					metricsParent="{{pageParent}}">{{'support.warranty.viewWarrantyOptions' | translate}}</a>
+				<vtr-ui-button linkId="btn-header-warranty-options"
+						[tabIndex]="1"
+						metricsEvent="FeatureClick"
+						metricsItem="ViewWarrantyOptionsButton"
+						[metricsParent]="pageParent"
+						buttonColor="gray"
+						[isFullWidth]="true"
+						[btnHeight]="true"
+						[inRedBackground]="warrantyData.info.status==1"
+						[label]="'support.warranty.viewWarrantyOptions' | translate"
+						[href]="warrantyData.info.url"></vtr-ui-button>
 			</div>
 		</div>
 	</div>
