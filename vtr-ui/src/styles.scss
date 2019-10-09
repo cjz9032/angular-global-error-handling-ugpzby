@@ -69,61 +69,61 @@ a.disabled {
 // @media #{$dpiquery_5} {
 // }
 
-// @media #{$mediaquery_0} {
-// 	html {
-// 		font-size: 100%;
-// 	}
-// }
+@media #{$mediaquery_0} {
+	html {
+		font-size: 100%;
+	}
+}
 
-// @media #{$mediaquery_1} {
-// 	html {
-// 		font-size: 85%;
-// 	}
-// }
+@media #{$mediaquery_1} {
+	html {
+		font-size: 85%;
+	}
+}
 
-// @media #{$mediaquery_2} {
-// 	html {
-// 		font-size: 72%;
-// 	}
-// }
+@media #{$mediaquery_2} {
+	html {
+		font-size: 72%;
+	}
+}
 
-// @media #{$mediaquery_3} {
-// 	html {
-// 		font-size: 62.5%;
-// 	}
-// }
+@media #{$mediaquery_3} {
+	html {
+		font-size: 62.5%;
+	}
+}
 
-// @media #{$mediaquery_4} {
-// 	html {
-// 		font-size: 58%;
-// 	}
-// }
+@media #{$mediaquery_4} {
+	html {
+		font-size: 58%;
+	}
+}
 
-// @media #{$mediaquery_5} {
-// 	html {
-// 		font-size: 53%;
-// 	}
-// }
+@media #{$mediaquery_5} {
+	html {
+		font-size: 53%;
+	}
+}
 
-// @media #{$mediaquery_6} {
-// 	html {
-// 		font-size: 50%;
+@media #{$mediaquery_6} {
+	html {
+		font-size: 50%;
 
-// 		&.is-arm {
-// 			font-size: 60%;
-// 		}
-// 	}
-// }
+		&.is-arm {
+			font-size: 60%;
+		}
+	}
+}
 
-// @media #{$mediaquery_7} {
-// 	html {
-// 		font-size: 45%;
+@media #{$mediaquery_7} {
+	html {
+		font-size: 45%;
 
-// 		&.is-arm {
-// 			font-size: 47%;
-// 		}
-// 	}
-// }
+		&.is-arm {
+			font-size: 47%;
+		}
+	}
+}
 
 /* @media #{$mediaquery_5} {
   html {
@@ -161,71 +161,71 @@ button {
 	z-index: 0;
 }
 
-// RESPONSIVE EFFORT
-// .vtr-page {
-// 	height: 100%;
 
-// 	.vtr-page-header {
-// 		position: relative;
-// 		z-index: 0;
-// 	}
+.vtr-page {
+	height: 100%;
 
-// 	.vtr-page-content {
-// 		position: relative;
-// 		z-index: 1;
+	.vtr-page-header {
+		position: relative;
+		z-index: 0;
+	}
 
-// 		.vtr-page-left-column {
-// 			padding: 0 4rem 4rem $padding_side;
-// 			background-color: $shade_extralight;
+	.vtr-page-content {
+		position: relative;
+		z-index: 1;
 
-// 			h2 {
-// 				margin: 0;
-// 				color: $main_shade;
-// 				font-size: 4.5rem;
-// 				font-weight: $weight_light;
-// 				padding: 7rem 0 0 $padding_side;
-// 			}
+		.vtr-page-left-column {
+			padding: 0 4rem 4rem $padding_side;
+			background-color: $shade_extralight;
 
-// 			.header-subpage-content {
-// 				margin-left: $padding_side;
-// 			}
-// 		}
+			h2 {
+				margin: 0;
+				color: $main_shade;
+				font-size: 4.5rem;
+				font-weight: $weight_light;
+				padding: 7rem 0 0 $padding_side;
+			}
 
-// 		.vtr-page-right-column {
-// 			padding: 0 $padding_side 4rem 4rem;
-// 		}
+			.header-subpage-content {
+				margin-left: $padding_side;
+			}
+		}
 
+		.vtr-page-right-column {
+			padding: 0 $padding_side 4rem 4rem;
+		}
 
-// 		@media only screen and (min-width: 400px) and (max-width: 768px) {
-// 			.navbar {
-// 				justify-content: left !important;
-// 			}
+		// @media #{$mediaquery_500} {
+		@media only screen and (min-width: 400px) and (max-width: 768px) {
+			.navbar {
+				justify-content: left !important;
+			}
 
-// 			.vtr-page-left-column {
-// 				padding: 0 4rem 4rem 4rem;
-// 			}
+			.vtr-page-left-column {
+				padding: 0 4rem 4rem 4rem;
+			}
 
-// 			.vtr-page-right-column {
-// 				padding: 0 4rem 4rem 4rem;
-// 				margin-top: 4rem;
-// 			}
-// 		}
-// 	}
+			.vtr-page-right-column {
+				padding: 0 4rem 4rem 4rem;
+				margin-top: 4rem;
+			}
+		}
+	}
 
-// 	.vtr-page-shift-up {
-// 		margin-top: $shift_up_small;
-// 	}
+	.vtr-page-shift-up {
+		margin-top: $shift_up_small;
+	}
 
-// 	.vtr-page-shift-up-medium {
-// 		margin-top: $shift_up_medium;
-// 	}
+	.vtr-page-shift-up-medium {
+		margin-top: $shift_up_medium;
+	}
 
-// 	.widget-heading {
-// 		color: $main_shade;
-// 		font-size: $sub_header;
-// 		margin-top: 4rem;
-// 	}
-// }
+	.widget-heading {
+		color: $main_shade;
+		font-size: $sub_header;
+		margin-top: 4rem;
+	}
+}
 
 .list-group-item:first-child {
 	border-top-right-radius: $border_radius !important;
@@ -301,10 +301,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	font-family: "Segoe UI";
-	// RESPONSIVE EFFORT
-	// @media #{$mediaquery_xl} {
-	// 	max-width: 20rem;
-	// }
+	@media #{$mediaquery_xl} {
+		max-width: 20rem;
+	}
 
 	.tooltip-inner {
 		padding: 1.2rem;
@@ -401,15 +400,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-dialog {
 		max-width: 35%;
 
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_11} {
-		// 	max-width: 75%;
-		// 	margin: 0 auto;
-		// }
+		@media #{$mediaquery_11} {
+			max-width: 75%;
+			margin: 0 auto;
+		}
 
-		// @media #{$mediaquery_X8} {
-		// 	max-width: 50%;
-		// }
+		@media #{$mediaquery_X8} {
+			max-width: 50%;
+		}
 	}
 
 	.modal-content {
@@ -424,15 +422,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-dialog {
 		max-width: 35%;
 
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_11} {
-		// 	max-width: 75%;
-		// 	margin: 0 auto;
-		// }
+		@media #{$mediaquery_11} {
+			max-width: 75%;
+			margin: 0 auto;
+		}
 
-		// @media #{$mediaquery_X8} {
-		// 	max-width: 50%;
-		// }
+		@media #{$mediaquery_X8} {
+			max-width: 50%;
+		}
 	}
 
 	.modal-content {
@@ -447,15 +444,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-dialog {
 		max-width: 35%;
 
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_11} {
-		// 	max-width: 75%;
-		// 	margin: 0 auto;
-		// }
+		@media #{$mediaquery_11} {
+			max-width: 75%;
+			margin: 0 auto;
+		}
 
-		// @media #{$mediaquery_X8} {
-		// 	max-width: 50%;
-		// }
+		@media #{$mediaquery_X8} {
+			max-width: 50%;
+		}
 	}
 
 	.modal-content {
@@ -470,15 +466,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-dialog {
 		max-width: 40%;
 
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_11} {
-		// 	max-width: 75%;
-		// 	margin: 0 auto;
-		// }
+		@media #{$mediaquery_11} {
+			max-width: 75%;
+			margin: 0 auto;
+		}
 
-		// @media #{$mediaquery_X8} {
-		// 	max-width: 50%;
-		// }
+		@media #{$mediaquery_X8} {
+			max-width: 50%;
+		}
 	}
 
 	.modal-content {
@@ -609,15 +604,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		max-width: 70%;
 		overflow-y: initial !important;
 
-		// RESPONSIVE EFFORT
-		// @media #{$mediaquery_12} {
-		// 	max-width: 95%;
-		// 	margin: 1rem auto;
-		// }
+		@media #{$mediaquery_12} {
+			max-width: 95%;
+			margin: 1rem auto;
+		}
 
-		// @media #{$mediaquery_13} {
-		// 	max-width: 90%;
-		// }
+		@media #{$mediaquery_13} {
+			max-width: 90%;
+		}
 	}
 
 	.modal-content {

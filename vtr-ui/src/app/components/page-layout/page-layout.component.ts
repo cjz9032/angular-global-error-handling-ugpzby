@@ -13,8 +13,6 @@ export class PageLayoutComponent implements OnInit {
 	@Input() parentPath: string;
 	@Input() backLinkText: string;
 	@Input() menuItems: any[];
-	@Input() shiftLeftUp: boolean = false;
-	@Input() shiftRightUp: boolean = false;
 
 	constructor() { }
 
