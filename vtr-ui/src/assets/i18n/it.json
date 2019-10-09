@@ -645,7 +645,7 @@
             "loading": "Caricamento in corso..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
         }
     },
     "privacy": {
@@ -1787,7 +1787,7 @@
                 "getMacfee": "Ottieni McAfee",
                 "topBenefits": "Perché <b>Lenovo consiglia McAfee</b> per proteggere tutti i tuoi dispositivi",
                 "awardTitle": "Antivirus premiato",
-                "awardSubtitle": "Impedisci a virus, malware e ransomware di infettare il tuo PC.",
+                "awardSubtitle": "Impedisci a virus, malware e ransomware di infettare il tuo PC",
                 "supportTitle": "Assistenza tecnica gratuita 24/7 ",
                 "supportSubtitle": "Ottieni assistenza costante e massima tranquillità grazie al nostro team di sicurezza dedicato",
                 "trialSubtitle": "Attualmente sei protetto da una versione di prova di 30 giorni di McAfee LiveSafe: solo {{remainingDays}} giorni alla scadenza! Abbonati ora per estendere la tua protezione.",
@@ -1819,7 +1819,8 @@
                 "startFileScan": "Avvia scansione dei file"
             },
             "others": {
-                "othersProtection": "{{protectedName}} offre la protezione di base per il dispositivo"
+                "othersProtection": "{{protectedName}} offre la protezione di base per il tuo dispositivo",
+                "unknown": "Sconosciuto"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2501,10 @@
         "offline": "Questo dispositivo è in esecuzione in modalità offline, connettersi a Internet",
         "doNotSuspend": "Questi test devono essere eseguiti senza interruzioni. Non chiudere o ridurre a icona l'applicazione e non sospendere o spegnere il computer durante la scansione.",
         "doNotUse": "Non utilizzare il computer fino al completamento del test",
+        "testsMustRunUniterrupted": "Questi test devono essere eseguiti senza interruzioni.",
+        "doNotCloseOrMinimizeApp": "• Non chiudere o ridurre a icona questa app.",
+        "doNotSwitchApp": "• Non passare ad altre app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Non mettere il computer in modalità di sospensione, non uscire e non spegnere il computer.",
         "customize": {
             "name": "Personalizza",
             "test": "Personalizza test",

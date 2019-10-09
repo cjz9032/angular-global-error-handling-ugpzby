@@ -7,11 +7,13 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
-	styleUrls: ['./modal-welcome.component.scss'],
-	providers: [TimerService]
+	styleUrls: [ './modal-welcome.component.scss' ],
+	providers: [ TimerService ]
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	progress = 49;
@@ -24,36 +26,49 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		page2: {
 			title: '',
 			subtitle: '',
-			radioValue: null,
+			radioValue: null
 		}
 	};
 	interests = [
-		'games', 'news', 'entertainment', 'technology',
-		'sports', 'arts', 'regionalNews', 'politics',
-		'music', 'science'
+		'games',
+		'news',
+		'entertainment',
+		'technology',
+		'sports',
+		'arts',
+		'regionalNews',
+		'politics',
+		'music',
+		'science'
 	];
 	// to show small list. on click of More Interest show all.
 	interestCopy = this.interests.slice(0, 8);
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
 	privacyPolicyLink: 'https://www.lenovo.com/us/en/privacy/';
+	machineInfo: any;
 	constructor(
+		private deviceService: DeviceService,
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
 		public commonService: CommonService,
 		private configService: ConfigService,
-		private timerService: TimerService) {
+		private timerService: TimerService
+	) {
 		this.metrics = shellService.getMetrics();
 		this.privacyPolicy = this.metrics.metricsEnabled;
 		const self = this;
 		shellService.getMetricsPolicy((result) => {
 			self.privacyPolicy = result;
 		});
+		deviceService.getMachineInfo().then((val) => {
+			this.machineInfo = val;
+		});
 	}
 
 	ngOnInit() {
 		this.timerService.start();
-		this.configService.getPrivacyPolicyLink().then(policyLink => {
+		this.configService.getPrivacyPolicyLink().then((policyLink) => {
 			this.privacyPolicyLink = policyLink;
 		});
 	}
@@ -65,7 +80,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	next(page) {
-		this.metrics.metricsEnabled = (this.privacyPolicy === true);
+		this.metrics.metricsEnabled = this.privacyPolicy === true;
 		let tutorialData;
 		if (page < 2) {
 			const data = {

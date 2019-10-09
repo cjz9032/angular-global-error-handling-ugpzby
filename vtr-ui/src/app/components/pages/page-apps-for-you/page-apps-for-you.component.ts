@@ -206,11 +206,13 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
 		this.title = appDetails.title;
-		if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1) {
+		if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1
+			|| appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeWebId) !== -1) {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
 		} else if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeDesktop) !== -1
-			|| appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1) {
+			|| appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1
+			|| appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
 			this.updateInstallButtonStatus();
 		} else {
 			// TODO: Should be Windows Store App

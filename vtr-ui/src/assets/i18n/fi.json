@@ -645,7 +645,7 @@
             "loading": "Ladataan..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
         }
     },
     "privacy": {
@@ -1750,7 +1750,7 @@
             "common": {
                 "title": "Virustentorjunta",
                 "back": "EDELLINEN",
-                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfee</b>tä kaikkien laitteidesi suojaamiseen",
+                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "award": "Palkittu virustentorjuntaohjelmisto",
                 "mcafeePremium": "McAfee LiveSafe -suojaus",
                 "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
@@ -1787,7 +1787,7 @@
                 "getMacfee": "Hanki McAfee nyt",
                 "topBenefits": "Näistä syistä <b>Lenovo suosittelee McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "awardTitle": "Palkittu virustentorjuntaohjelmisto",
-                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi.",
+                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi",
                 "supportTitle": "Ilmainen 24/7 asiantunteva tekninen tuki ",
                 "supportSubtitle": "Saat apua ja mielenrauhaa ympäri vuorokauden erikoistuneelta tietoturvatiimiltämme",
                 "trialSubtitle": "Olet tällä hetkellä suojattuna McAfee LiveSafen 30 päivän kokeiluversiolla – vain {{remainingDays}} päivää jäljellä! Tilaa nyt, jos haluat laajentaa suojausta.",
@@ -1819,7 +1819,8 @@
                 "startFileScan": "Aloita tiedostojen tarkistus"
             },
             "others": {
-                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen"
+                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
+                "unknown": "Tuntematon"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2501,10 @@
         "offline": "Tämä laite toimii offline-tilassa, muodosta Internet-yhteys",
         "doNotSuspend": "Näiden testien suoritus ei saa keskeytyä. Älä sulje tai pienennä tätä sovellusta. Älä siirrä tietokonetta keskeytystilaan tai katkaise tietokoneen virtaa tarkistuksen aikana.",
         "doNotUse": "Älä käytä tietokonetta, kunnes tämä testi on valmis",
+        "testsMustRunUniterrupted": "Näiden testien suoritus ei saa keskeytyä!",
+        "doNotCloseOrMinimizeApp": "• Älä sulje tai pienennä tätä sovellusta.",
+        "doNotSwitchApp": "• Älä vaihda toiseen sovellukseen.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Älä aseta tietokonetta lepotilaan, kirjaudu siitä ulos tai katkaise siitä virtaa.",
         "customize": {
             "name": "Mukautus",
             "test": "Mukauta testiä",

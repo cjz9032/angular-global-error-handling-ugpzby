@@ -1,6 +1,6 @@
 {
 	"dir": "ltr",
-	"dirClass":"ltr",
+	"dirClass": "ltr",
 	"gaming": {
 		"dashboard": {
 			"device": {
@@ -261,6 +261,11 @@
 					"option1": "on",
 					"option2": "macro key settings enabled when gaming",
 					"option3": "macro key settings off"
+				},
+				"numberInput": {
+					"title": "Number",
+					"bundledSelected": "is selected bundled",
+					"unbundledSelected": "is selected unbundled"
 				}
 			}
 		},
@@ -1906,7 +1911,7 @@
 				"getMacfee": "Get McAfee",
 				"topBenefits": "Why <b>Lenovo recommends McAfee</b> to protect all your devices",
 				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC.",
+				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC",
 				"MultiTitle": "Multi-device protection",
 				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
 				"networkTitle": "Home network protection",
@@ -1934,7 +1939,8 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "{{protectedName}} offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device",
+				"unknown": "Unknown"
 			}
 		},
 		"wifisecurity": {
@@ -2623,6 +2629,10 @@
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
 		"doNotUse": "Please refrain from using your computer until this test completes",
+		"testsMustRunUniterrupted": "These tests must run uniterrupted!",
+		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
+		"doNotSwitchApp": "• Do not switch to other app.",
+		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

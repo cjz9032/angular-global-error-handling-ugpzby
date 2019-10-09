@@ -645,7 +645,7 @@
             "loading": "Yükleniyor..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
         }
     },
     "privacy": {
@@ -1787,7 +1787,7 @@
                 "getMacfee": "McAfee'yi Edinin",
                 "topBenefits": "<b>Lenovo tüm cihazlarınızı korumak için neden McAfee</b>'yi öneriyor",
                 "awardTitle": "Ödüllü Virüsten Koruma Yazılımı",
-                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin.",
+                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin",
                 "supportTitle": "Uzmanlardan 7/24 ücretsiz teknik destek ",
                 "supportSubtitle": "Özel güvenlik ekibimizden gün boyu yardım alın ve içiniz rahat etsin",
                 "trialSubtitle": "Şu anda McAfee LiveSafe'in 30 günlük ücretsiz deneme sürümü tarafından korunuyorsunuz – yalnızca {{remainingDays}} gün kaldı! Korunma süresini uzatmak için hemen abone olun.",
@@ -1819,7 +1819,8 @@
                 "startFileScan": "Dosya taramasını başlat"
             },
             "others": {
-                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar"
+                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
+                "unknown": "Bilinmiyor"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2501,10 @@
         "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
         "doNotSuspend": "Bu testler kesintisiz çalıştırılmalıdır! Bu uygulamayı kapatmayın veya küçültmeyin ve tarama sırasında bilgisayarınızı uyku moduna almayın ya da kapatmayın.",
         "doNotUse": "Test tamamlanana kadar lütfen bilgisayarınızı kullanmaktan kaçının",
+        "testsMustRunUniterrupted": "Bu testler kesintisiz çalıştırılmalıdır!",
+        "doNotCloseOrMinimizeApp": "• Bu uygulamayı kapatmayın veya küçültmeyin.",
+        "doNotSwitchApp": "• Başka bir uygulamaya geçmeyin.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Bilgisayarınızı uyku kipine almayın, oturumu veya bilgisayarınızı kapatmayın.",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",
