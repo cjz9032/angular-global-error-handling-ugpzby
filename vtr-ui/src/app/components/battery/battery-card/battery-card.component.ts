@@ -73,8 +73,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.getBatteryDetails();
 			}
 		});
-		this.getBatteryDetailOnCard();
-
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
 		this.remainingPercentageEventRef = this.onRemainingPercentageEvent.bind(this);
 		this.remainingTimeEventRef = this.onRemainingTimeEvent.bind(this);
@@ -88,6 +86,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+		this.getBatteryDetailOnCard();
 	}
 
 	onPowerSupplyStatusEvent(info: any) {
@@ -425,6 +424,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		if (this.batteryService.isShellAvailable) {
+			console.log('STOP MONITOR');
 			this.batteryService.stopMonitor();
 		}
 		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);

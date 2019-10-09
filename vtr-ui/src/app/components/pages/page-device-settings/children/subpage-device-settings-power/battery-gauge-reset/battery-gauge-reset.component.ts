@@ -67,7 +67,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.gaugeReset.title';
 		modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.cancel';
 
-		if (this.batteryGaugeResetInfo[index].IsResetRunning) {
+		if (this.batteryGaugeResetInfo[index].isResetRunning) {
 
 			modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.gaugeReset.popup.description3';
 			modalRef.componentInstance.description2 = '';
@@ -80,7 +80,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		modalRef.result.then(
 			result => {
 				if (result === 'positive') {
-					if (!this.batteryGaugeResetInfo[index].IsResetRunning) {
+					if (!this.batteryGaugeResetInfo[index].isResetRunning) {
 						this.startBatteryGaugeReset(index);
 					} else {
 						this.stopBatteryGaugeReset(index);
@@ -98,9 +98,9 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	async startBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryGaugeResetInfo[index];
-		// const argument = this.getResetParameters(gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
+		// const argument = this.getResetParameters(gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 		try {
-			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
+			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 			if (response) {
 				console.log('start battery reset succeeded', response);
 			}
@@ -112,7 +112,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	async stopBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryGaugeResetInfo[index];
 		try {
-			const response = await this.powerService.stopBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.Barcode, gaugeResetInfo.BatteryNum);
+			const response = await this.powerService.stopBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 			if (response) {
 				console.log('start battery reset succeeded', response);
 			}
@@ -140,9 +140,9 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 				const heading = response.length > 1 ? headings[count] : 'device.deviceSettings.batteryGauge.subtitle';
 				this.headings.push(heading);
 
-				this.stageParams = { stage: battery.Stage, stageNum: battery.StageNum };
-				this.FCCParams.push({ before: battery.FCCbefore, after: battery.FCCafter });
-				if (battery.IsResetRunning) {
+				this.stageParams = { stage: battery.stage, stageNum: battery.stageNum };
+				this.FCCParams.push({ before: battery.FCCBefore, after: battery.FCCAfter });
+				if (battery.isResetRunning) {
 					resetRunningIndex = count;
 					this.btnLabelText.push('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop');
 				} else {
@@ -163,7 +163,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	}
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
-		this.batteryGaugeResetInfo[value.BatteryNum - 1] = value;
+		this.batteryGaugeResetInfo[value.batteryNum - 1] = value;
 		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 

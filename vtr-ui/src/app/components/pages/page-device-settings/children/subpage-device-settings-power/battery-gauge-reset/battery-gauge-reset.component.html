@@ -25,23 +25,23 @@
 										<div class="col-4 label-text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.barCode' | translate}}
 										</div>
-										<div class="col-8 label-value">{{battery.Barcode}}</div>
+										<div class="col-8 label-value">{{battery.barCode}}</div>
 									</div>
 								</div>
 
 								<!-- Battery Gauge Reset Progress -->
-								<div *ngIf="battery.IsResetRunning">
+								<div *ngIf="battery.isResetRunning">
 									<div class="row"
-										*ngIf="isValid(battery.Stage) && isValid(battery.StageNum)">
+										*ngIf="isValid(battery.stage) && isValid(battery.stageNum)">
 										<div class="col-4 label-text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.progress' | translate}}
 										</div>
 										<div class="col-8 label-value"
-											*ngIf="battery.Stage==1||battery.Stage==3">
+											*ngIf="battery.stage==1||battery.stage==3">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText1' | translate : stageParams}}
 										</div>
 										<div class="col-8 label-value"
-											*ngIf="battery.Stage==2">
+											*ngIf="battery.stage==2">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText2' | translate : stageParams}}
 										</div>
 									</div>
@@ -53,41 +53,41 @@
 										<div class="col-8 label-value">{{remainingPercentages[i]}}<span>%</span></div>
 									</div>
 									<div class="row"
-										*ngIf="isValid(battery.Starttime)">
+										*ngIf="isValid(battery.startTime)">
 										<div class="col-4 label-text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.startTime' | translate}}
 										</div>
 										<div class="col-8 label-value">
-											{{battery.Starttime | date : 'M/d/yyyy h:mm:ss a'}}</div>
+											{{battery.startTime | date : 'M/d/yyyy h:mm:ss a'}}</div>
 									</div>
 								</div>
 
 								<!-- Last Battery Gauge reset result -->
-								<div *ngIf="!battery.IsResetRunning">
+								<div *ngIf="!battery.isResetRunning">
 									<div class="row"
-										*ngIf="isValid(battery.LastResetTime) || isValid(battery.ResetErrorLog)">
+										*ngIf="isValid(battery.lastResetTime) || isValid(battery.resetErrorLog)">
 										<div class="col-4 label-text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.lastReset' | translate}}
 										</div>
 										<div class="col-8 label-value">
-											{{battery.LastResetTime | date : 'M/d/yyyy h:mm:ss a'}}
-											<br *ngIf="isValid(battery.LastResetTime)">
-											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.ResetErrorLog | translate}}
+											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss a'}}
+											<br *ngIf="isValid(battery.lastResetTime)">
+											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
 										</div>
 									</div>
 									<div class="row"
-										*ngIf="isValid(battery.FCCbefore) && isValid(battery.FCCafter)">
+										*ngIf="isValid(battery.FCCBefore) && isValid(battery.FCCAfter)">
 										<div class="col-4 label-text">
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.fullChargeCapacity' | translate}}
 										</div>
 										<div class="col-8 label-value"
-											[innerHTML]="'device.deviceSettings.power.batterySettings.gaugeReset.FCCText' | translate: FCCParams">
+											[innerHTML]="'device.deviceSettings.power.batterySettings.gaugeReset.FCCText' | translate: FCCParams[i]">
 										</div>
 									</div>
 								</div>
 
 								<div class="row battery-gauge-btn"
-									[class.stop-btn]="battery.IsResetRunning"
+									[class.stop-btn]="battery.isResetRunning"
 									[class.disabled-btn]="resetBtnDisabled[i] || !isACAttached">
 									<vtr-ui-button metricsItem="Battery.Gauge.RESET"
 										metricsParent="Page.Settings"
