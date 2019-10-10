@@ -200,6 +200,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			if (notification.type === 'AirplaneModeStatus') {
 				this.batteryIndicator.isAirplaneMode = notification.payload;
 			}
+			if (notification.type === 'GaugeResetUpdate') {
+				this.onPowerBatteryGaugeResetEvent(notification.payload);
+			}
 		}
 	}
 

@@ -164,6 +164,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	updateGaugeResetInfo(value: BatteryGaugeReset) {
 		this.batteryGaugeResetInfo[value.batteryNum - 1] = value;
+		this.commonService.sendNotification('GaugeResetUpdate', this.batteryGaugeResetInfo);
 		this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
 	}
 
