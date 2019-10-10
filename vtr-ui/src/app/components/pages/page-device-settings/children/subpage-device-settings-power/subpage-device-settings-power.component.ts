@@ -223,6 +223,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
 		this.getVantageToolBarCapability();
+		this.getEnergyStarCapability();
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
@@ -230,8 +231,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
-
-		this.getEnergyStarCapability();
 
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 

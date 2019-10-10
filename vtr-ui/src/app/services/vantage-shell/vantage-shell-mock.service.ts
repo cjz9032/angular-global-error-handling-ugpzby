@@ -584,7 +584,7 @@ export class VantageShellMockService extends BaseVantageShellService {
 	 */
 	public getSmartSettings(): any {
 		const smartSettings: any = {
-			absFeature: { getDolbyFeatureStatus: this.getPromise({ available: true, status: true }) }
+			absFeature: { getDolbyFeatureStatus: this.getPromise({ available: true, status: false }) }
 		};
 
 		return smartSettings;
@@ -1160,10 +1160,23 @@ export class VantageShellMockService extends BaseVantageShellService {
 	 * returns Keyboard manager object  from VantageShellService of JS Bridge
 	 */
 	public getKeyboardManagerObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.kbdManager;
-		}
-		return undefined;
+		const kbdManager: any = {GetKeyboardMapCapability: this.getPromise(true),
+			 GetUDKCapability: this.getPromise(true),
+			 GetKBDLayoutName: this.getPromise('Standered'),
+			 GetKBDMachineType: this.getPromise('Other'),
+			 GetKbdHiddenKeyPerformanceModeCapability: this.getPromise(false),
+			 GetKbdHiddenKeyPrivacyFilterCapability: this.getPromise(true),
+			 GetKbdHiddenKeyMagnifierCapability: this.getPromise(false),
+			 GetKbdHiddenKeyBackLightCapability: this.getPromise(true),
+			 GetTopRowFnLockCapability: this.getPromise(true),
+			 GetTopRowFnStickKeyCapability: this.getPromise(true),
+			 GetTopRowPrimaryFunctionCapability: this.getPromise(true),
+			 GetFnLockStatus: this.getPromise(true),
+			 GetFnStickKeyStatus: this.getPromise(true),
+			 GetPrimaryFunctionStatus: this.getPromise(true)
+			};
+
+		return kbdManager;
 	}
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
@@ -1220,9 +1233,11 @@ export class VantageShellMockService extends BaseVantageShellService {
 	// ==================== End Hardware Scan
 
 	public getMouseAndTouchPad(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.inputControlLinks;
-		}
-		return undefined;
+		const inputControlLinks: any = {
+			GetMouseCapability: this.getPromise(true),
+			GetTouchpadCapability: this.getPromise(true)
+		};
+
+		return inputControlLinks;
 	}
 }
