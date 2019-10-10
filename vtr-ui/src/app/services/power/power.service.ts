@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from "./flipToBoot.interface";
+import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -13,7 +14,7 @@ export class PowerService {
 	private devicePowerItsIntelligentCooling: any;
 	public isShellAvailable = false;
 	public intelligentCoolingForIdeaPad: any;
-	constructor(shellService: VantageShellService) {
+	constructor(shellService: BaseVantageShellService) {
 		this.devicePower = shellService.getVantageToolBar();
 		if (this.devicePower) {
 			this.isShellAvailable = true;

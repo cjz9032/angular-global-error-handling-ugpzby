@@ -5,4 +5,5 @@ export interface IEnvironment {
 	appVersion: string;
 	upeClientID: string;
 	upeSharedKey: string;
+	allowMockService: boolean;
 }
