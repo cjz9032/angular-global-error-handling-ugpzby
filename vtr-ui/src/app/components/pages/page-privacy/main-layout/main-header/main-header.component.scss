@@ -49,7 +49,7 @@
         margin-left: 2rem;
         width: 9.7rem;
         height: 2.4rem;
-        background: url("/assets/icons/privacy-tab/icon-figleaf-logo.png") center no-repeat;
+        background: url("src/assets/icons/privacy-tab/icon-figleaf-logo.png") center no-repeat;
         background-size: cover;
 
         @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -58,7 +58,7 @@
         only screen and (min-device-pixel-ratio: 2),
         only screen and (min-resolution: 192dpi),
         only screen and (min-resolution: 2dppx) {
-          background: url("/assets/icons/privacy-tab/icon-figleaf-logo@2x.png") center no-repeat;
+          background: url("src/assets/icons/privacy-tab/icon-figleaf-logo@2x.png") center no-repeat;
           background-size: cover;
         }
       }
@@ -115,7 +115,7 @@
 			margin-right: 1.5rem - .7rem;
 			width: .7rem;
 			height: 1.1rem;
-			background: url("/assets/icons/privacy-tab/icon-white-back.svg") center no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-white-back.svg") center no-repeat;
 			background-size: cover;
 		}
 	}
