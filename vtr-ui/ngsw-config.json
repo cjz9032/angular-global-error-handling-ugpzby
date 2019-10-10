@@ -7,10 +7,10 @@
 			"resources": {
 				"files": [
 					"/index.html",
-					"/assets/fonts/**",
+					"assets/fonts/**",
 					"/*.css",
-					"/assets/i18n/**",
-					"/assets/cms-cache/**"
+					"assets/i18n/**",
+					"assets/cms-cache/**"
 				]
 			}
 		},
@@ -20,7 +20,7 @@
 			"updateMode": "prefetch",
 			"resources": {
 				"files": [
-					"/assets/**",
+					"assets/**",
 					"!/assets/privacy-json/trackers.json"
 				],
 				"urls": [

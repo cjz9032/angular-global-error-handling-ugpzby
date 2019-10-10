@@ -135,13 +135,15 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	initInputAccessories() {
-		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		if (this.machineType !== 1) {
-			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
-			return;
-		}
+		// this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		// if (this.machineType !== 1) {
+			// this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+			// return;
+		// }
 		const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-		const isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+		const isAvailable = inputAccessoriesCapability.isUdkAvailable
+						  	|| inputAccessoriesCapability.isKeyboardMapAvailable
+							|| inputAccessoriesCapability.isVoipAvailable;
 		if (!isAvailable) {
 			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 		}
