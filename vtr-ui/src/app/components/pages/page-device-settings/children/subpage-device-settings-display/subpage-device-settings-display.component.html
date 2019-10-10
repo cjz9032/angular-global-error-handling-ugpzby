@@ -12,7 +12,7 @@
 
 	<div class="row py-5 smartsettings-card"
 		id="display">
-		<div class="col-10 mx-auto ">
+		<div class="col-10 mx-auto  container-card">
 			<!-- Display -->
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
 				[vtrAppSearchScroller]="['search-display']"
@@ -236,7 +236,7 @@
 		*ngIf="this.isAllInOneMachineFlag"
 		id="camera"
 		[hidden]="isCameraHidden">
-		<div class="col-10 mx-auto ">
+		<div class="col-10 mx-auto  container-card ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
 				[vtrAppSearchScroller]="['search-camera']"
 				componentName="Camera"
@@ -355,7 +355,7 @@
 					</li>
 
 					<li class="pt-3"
-						*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
+						>
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
 							componentName="Camera Background Blur"
