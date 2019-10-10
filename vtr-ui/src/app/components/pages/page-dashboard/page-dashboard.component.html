@@ -128,21 +128,32 @@
 
 	<right-content>
 		<div class="container-fluid">
-			<div class="row no-gutters">
+			<div class="row no-gutters" *ngIf="warrantyData && deviceService.showWarranty">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
-
-					<div class="pt-6"
-						*ngIf="!deviceService.isArm">
-						<vtr-widget-quicksettings
-							[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
-						</vtr-widget-quicksettings>
-					</div>
 				</div>
-				<div class="col-sm-12 col-md-12 pb-40"
-					*ngIf="!deviceService.isArm">
+			</div>
+			<div class="row no-gutters" *ngIf="!deviceService.showWarranty">
+				<div class="col-sm-12 col-md-12 pb-60">
+					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+						[description]="'dashboard.feedback.subtitle' | translate"
+						[actionName]="'dashboard.feedback.button' | translate"
+						[action]="'feedback'"
+						(feedBackClick)="onFeedbackModal()">
+					</vtr-widget-feedback>
+				</div>
+			</div>
+			<div class="row no-gutters" *ngIf="!deviceService.isArm">
+				<div class="col-sm-12 col-md-12 pb-60">
+					<vtr-widget-quicksettings
+						[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
+					</vtr-widget-quicksettings>
+				</div>
+			</div>
+			<div class="row no-gutters" *ngIf="!deviceService.isArm">
+				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-status componentName="system status"
 						[title]="'dashboard.systemStatus.title' | translate"
 						[description]="'dashboard.systemStatus.subtitle' | translate"
@@ -152,9 +163,9 @@
 				</div>
 			</div>
 
-			<div class="row mb-40"
+			<div class="row no-gutters"
 				*ngIf="!androidService.isAndroid && deviceService.isArm">
-				<div class="col col-12 cont">
+				<div class="col-sm-12 col-md-12 pb-60 cont">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 						[description]="'common.qAndA.subtitle' | translate"
 						[items]="qaService.qas"
@@ -165,13 +176,15 @@
 
 			<div class="row no-gutters"
 				*ngIf="!deviceService.isArm && !deviceService.isSMode && brand !== 1">
-				<div class="col-sm-12 py-40">
+				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
 						[linkId]="'dashboard'">
 					</vtr-widget-security-status>
 				</div>
 			</div>
+
 			<div class="row no-gutters"
+				*ngIf="deviceService.showWarranty"
 				[vtrAppSearchScroller]="['search-feedback']">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
