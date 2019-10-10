@@ -25,7 +25,8 @@
 				tabindex="1"
 				ngbAutofocus
 				(click)="modal.dismiss('Cross click')"
-				(keydown.esc)="modal.dismiss('Cross click')">
+				(keydown.esc)="modal.dismiss('Cross click')"
+				(keydown.enter)="modal.dismiss('Cross click')">
 				<!-- <img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="X" /> -->
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 
@@ -112,8 +113,6 @@
 				metricsEvent="FeatureClick"
 				[isFullWidth]="true"
 				(click)="showDetailModal(batteryDetail)"
-				#showDetailModalButton
-				(keydown.enter)="showDetailModalOnEnter(batteryDetail,showDetailModalButton);"
 				[isDisabled]="isBatteryDetailsBtnDisabled"
 				id="myDevice-settings-battery-details-btn"
 				[linkId]="'myDevice-settings-battery-details-btn'"

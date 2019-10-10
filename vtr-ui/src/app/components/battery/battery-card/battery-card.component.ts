@@ -277,10 +277,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			);
 	}
 
-	showDetailModalOnEnter(content: any, showDetailModalButton: HTMLElement) {
-		showDetailModalButton.blur();
+	/* showDetailModalOnKDEnter(event: any, content: any) {
+		var target = event.target || event.srcElement || event.currentTarget;
 		this.showDetailModal(content);
-	}
+	} */
 
 	/**
 	 * sets a battery condition tip & icon from battery health & battery condition
