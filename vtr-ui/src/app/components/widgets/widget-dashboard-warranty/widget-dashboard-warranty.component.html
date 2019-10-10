@@ -4,7 +4,8 @@
 		<div class="row">
 			<div class="col" *ngIf="item.info.status >= 0">
 				<div class="title">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
-				<div class="content">
+				<div class="content"
+					*ngIf="item.info.status !== 2">
 					<div class="sub-description">
 						<div class="left-col">
 							<div class="pb-2 status-wrapper">
@@ -25,12 +26,24 @@
 						</div>
 					</div>
 				</div>
+				<div class="content"
+					*ngIf="item.info.status === 2">
+					<div class="sub-description pb-40">
+						{{'support.warranty.subDescription2' | translate}}
+						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
+						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
+					</div>
+				</div>
 				<div class="button-box">
-					<a role="button" id="support-view-warranty-options" aria-label="support-view-warranty-options"
-						href="{{item.info.url}}" target="_blank" class="button"
-						title="{{'support.warranty.viewWarrantyOptions' | translate}}" vtrMetrics
-						metricsItem="ViewWarrantyOptionsButton" metricsEvent="FeatureClick"
-						metricsParent="{{pageParent}}">{{'support.warranty.viewWarrantyOptions' | translate}}</a>
+					<vtr-ui-button linkId="dashboard-view-warranty-options"
+						metricsEvent="FeatureClick"
+						metricsItem="ViewWarrantyOptionsButton"
+						[metricsParent]="pageParent"
+						buttonColor="gray"
+						[isFullWidth]="true"
+						[inRedBackground]="item.info.status==1"
+						[label]="'support.warranty.viewWarrantyOptions' | translate"
+						[href]="item.info.url"></vtr-ui-button>
 				</div>
 			</div>
 		</div>

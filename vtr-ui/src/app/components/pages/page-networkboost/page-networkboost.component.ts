@@ -5,7 +5,6 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { Component, OnInit } from '@angular/core';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -17,6 +16,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 	styleUrls: ['./page-networkboost.component.scss']
 })
 export class PageNetworkboostComponent implements OnInit {
+
 	public showTurnOnModal = false;
 	public showAppsModal = false;
 	changeListNum = 0;
@@ -30,13 +30,8 @@ export class PageNetworkboostComponent implements OnInit {
 	needToAskStatusObj: any = {};
 	isOnline = true;
 	// CMS Content block
-	cardContentPositionA: any = {
-		FeatureImage:
-			'./../../../../assets/cms-cache/content-card-4x4-support.jpg'
-	};
-	cardContentPositionB: any = {
-		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
-	};
+	cardContentPositionA: any = {};
+	cardContentPositionB: any = {};
 	cardContentPositionBCms: any = {};
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
@@ -46,12 +41,12 @@ export class PageNetworkboostComponent implements OnInit {
 		private cmsService: CMSService,
 		private networkBoostService: NetworkBoostService,
 		private commonService: CommonService,
-		public dashboardService: DashboardService,
 		private upeService: UPEService, private loggerService: LoggerService,
 		private hypService: HypothesisService, private translate: TranslateService
 	) {
 		this.isUPEFailed = false;  // init UPE request status
 		this.isCmsLoaded = false;
+		this.setPreviousContent();
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -212,6 +207,7 @@ export class PageNetworkboostComponent implements OnInit {
 				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
+					this.networkBoostService.cardContentPositionA = this.cardContentPositionA;
 				}
 
 				const cardContentPositionB = this.cmsService.getOneCMSContent(
@@ -231,7 +227,7 @@ export class PageNetworkboostComponent implements OnInit {
 					this.isCmsLoaded = true;
 					if (this.isUPEFailed || source === 'CMS') {
 						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+						this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
 					}
 				}
 			});
@@ -251,7 +247,7 @@ export class PageNetworkboostComponent implements OnInit {
 							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 						}
 						cardContentPositionB.DataSource = 'upe';
-						this.dashboardService.cardContentPositionB = cardContentPositionB;
+						this.networkBoostService.cardContentPositionB = cardContentPositionB;
 						this.isUPEFailed = false;
 					}
 				}, (err) => {
@@ -259,7 +255,7 @@ export class PageNetworkboostComponent implements OnInit {
 					this.isUPEFailed = true;
 					if (this.isCmsLoaded) {
 						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+						this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
 					}
 				});
 			}
@@ -278,6 +274,11 @@ export class PageNetworkboostComponent implements OnInit {
 				resolve('CMS');
 			});
 		});
+	}
+
+	private setPreviousContent() {
+		this.cardContentPositionA = this.networkBoostService.cardContentPositionA;
+		this.cardContentPositionB = this.networkBoostService.cardContentPositionB;
 	}
 
 }

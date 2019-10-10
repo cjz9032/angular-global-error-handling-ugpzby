@@ -19,18 +19,15 @@
 				</div>
 				<div *ngIf="!showProgress && !isUpdateDownloading"
 					class="row">
-					<div class="col button-row">
-						<button class="action-button"
-							id="su_check_updates"
-							aria-label="su_check_updates"
-							[title]="buttonText"
-							tabindex="0"
-							vtrMetrics
-							metricsEvent="itemClick"
-							metricsParent="update-to-date"
+					<div class="button-row">
+						<vtr-ui-button linkId="su_check_updates"
+							metricsEvent="FeatureClick"
 							metricsItem="btn.Check For Updates"
-							[disabled]="isCheckingPluginStatus"
-							(click)="onCheckForUpdates()">{{buttonText}}</button>
+							metricsParent="Pages.SystemUpdate"
+							[isFullWidth]="true"
+							[isDisabled]="isCheckingPluginStatus"
+							[label]="buttonText"
+							(onClick)="onCheckForUpdates()"></vtr-ui-button>
 					</div>
 				</div>
 				<div *ngIf="showProgress"

@@ -645,6 +645,35 @@
 					}
 				}
 				.vtr-hardware-components {
+					.vtr-device-information{
+						background: $dark_cell;
+						.header {
+						.heading1 {
+						color: $gaming_info_link;
+						}
+						} 
+						vtr-ui-hardware-list-checkbox {
+						.vtr-ui-list-checkbox-hardware {
+						.list-group {
+						.list-group-item {
+						background-color: $gaming-Darkslate-blue;
+						border: 0.1rem solid $screen_dark_15;
+						.title {
+						color: $gaming_lightest;
+						}
+						.subtitle {
+						color: $gaming_grey_lightest;
+						}
+						}
+						}
+						}
+						}
+						.select-item-subtitle {
+						color: $gaming_grey_lightest;
+						} 
+						
+					}
+						
 					.hardware-scan-items {
 						background: $dark_cell;
 						.header {
@@ -1106,20 +1135,6 @@
 		p {
 			font-size: 1.5rem;
 			color: $stop !important;
-		}
-	}
-	.vtr-recover-bad-sectors {
-		background-color: $dark_cell;
-		.header {
-			.heading1 {
-				color: $gaming_lightest;
-			}
-			.action-anchor {
-				color: $gaming_info_link;
-				&:hover {
-					text-decoration: none;
-				}
-			}
 		}
 	}
 	.progress-value-text {

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { BaseVantageShellService } from './base-vantage-shell.service';
 import { environment } from '../../../environments/environment';
-import { CommonService } from '../../services/common/common.service';
+import { CommonService } from '../common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
@@ -15,15 +15,15 @@ declare var Windows;
 	providedIn: 'root'
 })
 
-export class VantageShellService extends BaseVantageShellService {
+export class VantageShellMockService extends BaseVantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		super();
+		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
 		if (this.shell) {
-			this.isShellAvailable = true;
 			this.setConsoleLogProxy();
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
@@ -61,9 +61,12 @@ export class VantageShellService extends BaseVantageShellService {
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy
 			]);
-		} else {
-			this.isShellAvailable = false;
 		}
+	}
+
+	private getPromise(returnValue: any, param?: any): any {
+		const promise = () => new Promise((resolve) => resolve(returnValue));
+		return promise;
 	}
 
 	public registerEvent(eventType: any, handler: any) {
@@ -130,35 +133,175 @@ export class VantageShellService extends BaseVantageShellService {
 	 * returns dashboard object from VantageShellService of JS Bridge
 	 */
 	public getDashboard(): any {
-		if (this.phoenix) {
-			return this.phoenix.dashboard;
-		}
-		return undefined;
-	}
+		const dashboard: any = {};
+		const obj = {
+			available: true,
+			status: true,
+			permission: true
+		};
+		const sysInfoObj: any = {
+			disk: {
+				total: 1015723810816,
+				used: 885390389248
+			},
+			memory: {
+				total: 12533723136,
+				used: 10677587968
+			}
+		};
 
+		const today = (new Date()).toISOString();
+		const warrantyObj: any = {
+			endDate: today,
+			status: 0
+		};
+		const sysUpdateObj: any = {
+			lastScanTime: today,
+			status: 1
+		};
+		dashboard.getMicphoneStatus = this.getPromise(obj);
+		dashboard.getCameraStatus = this.getPromise(obj);
+		// dashboard.getEyeCareModeState = this.getPromise(obj);
+		dashboard.warranty = {};
+		dashboard.sysupdate = {};
+		dashboard.warranty.getWarrantyInformation = this.getPromise(warrantyObj);
+		dashboard.sysupdate.getMostRecentUpdateInfo = this.getPromise(sysUpdateObj);
+		dashboard.sysinfo = this.getSysinfo();
+		dashboard.sysinfo.getMemAndDiskUsage = this.getPromise(sysInfoObj);
+		return dashboard;
+	}
 	/**
 	 * returns dashboard object from VantageShellService of JS Bridge
 	 */
 	public getDevice(): any {
-		if (this.phoenix) {
-			return this.phoenix.device;
-		}
+		const device: any = {};
+		const obj = {
+			biosDate: '08292018',
+			biosVersion: 'R0PET47W 1.24 ',
+			brand: 'Lenovo',
+			country: 'us',
+			cpuAddressWidth: '64',
+			cpuArchitecture: 'AMD64',
+			cpuinfo: {
+				addressWidth: '64',
+				name: 'Intel(R) Core(TM) i3-7020U CPU @ 2.30GHz',
+				type: 'AMD64',
+				vendor: 'GenuineIntel',
+			},
+			deviceId: '0879eb1af41243f0af686ffe29eff508f6d1eb99fef906b2417be2ea0f5787fc',
+			eCVersion: '1.24',
+			enclosureType: 'notebook',
+			family: 'ThinkPad E480',
+			firstRunDate: '2019-06-18T00:54:24',
+			isGaming: false,
+			isSMode: false,
+			locale: 'en',
+			manufacturer: 'LENOVO',
+			memorys: [{
+				serialNumber: '8B264B0A',
+				sizeInBytes: 4194304,
+				type: 'DDR4'
+			}, {
+				serialNumber: '4A7D0400',
+				sizeInBytes: 8388608,
+				type: 'DDR4'
+			},
+			],
+			mt: '20KN',
+			mtm: '20KNS0DD00',
+			os: 'Windows',
+			osBitness: '64',
+			osName: 'Windows 10 Pro',
+			osVersionString: '10.0.18362.356',
+			serialnumber: 'PG01EBJS',
+			sku: 'LENOVO_MT_20KN_BU_Think_FM_ThinkPad E480',
+			subBrand: 'ThinkPad'
+		};
+
+		device.getMachineInfo = this.getPromise(obj);
+		device.getMachineInfoSync = this.getPromise(obj);
+		return device;
 	}
 
 	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */
 	public getSysinfo(): any {
-		if (this.phoenix) {
-			return this.phoenix.sysinfo;
-		}
-		return undefined;
+		const sysInfo: any = {};
+		const machineInfo = {
+			biosDate: '08292018',
+			biosVersion: 'R0PET47W 1.24 ',
+			brand: 'Lenovo',
+			country: 'us',
+			cpuAddressWidth: '64',
+			cpuArchitecture: 'AMD64',
+			cpuinfo: {
+				addressWidth: '64',
+				name: 'Intel(R) Core(TM) i3-7020U CPU @ 2.30GHz',
+				type: 'AMD64',
+				vendor: 'GenuineIntel',
+			},
+			deviceId: '0879eb1af41243f0af686ffe29eff508f6d1eb99fef906b2417be2ea0f5787fc',
+			eCVersion: '1.24',
+			enclosureType: 'notebook',
+			family: 'ThinkPad E480',
+			firstRunDate: '2019-06-18T00:54:24',
+			isGaming: false,
+			isSMode: false,
+			locale: 'en',
+			manufacturer: 'LENOVO',
+			memorys: [{
+				serialNumber: '8B264B0A',
+				sizeInBytes: 4194304,
+				type: 'DDR4'
+			}, {
+				serialNumber: '4A7D0400',
+				sizeInBytes: 8388608,
+				type: 'DDR4'
+			},
+			],
+			mt: '20KN',
+			mtm: '20KNS0DD00',
+			os: 'Windows',
+			osBitness: '64',
+			osName: 'Windows',
+			osVersionString: '10.0.18362.356',
+			serialnumber: 'PG01EBJS',
+			sku: 'LENOVO_MT_20KN_BU_Think_FM_ThinkPad E480',
+			subBrand: 'ThinkPad'
+		};
+
+		const hardwareInfo = {
+			processor: {
+				name: 'Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz',
+				type: 'i386',
+				addressWidth: '64',
+				vendor: 'Intel'
+
+			},
+			memory: {
+				total: 16943040000,
+				used: 8943040000,
+				type: 'DDR4'
+			},
+			disk: {
+				total: 419430400000,
+				used: 219430400000,
+			}
+		};
+		sysInfo.getMachineInfo = this.getPromise(machineInfo);
+		sysInfo.getMachineInfoSync = this.getPromise(machineInfo);
+		sysInfo.getMachineType = this.getPromise(1); // 1 = ThinkPad
+		sysInfo.getHardwareInfo = this.getPromise(hardwareInfo);
+		return sysInfo;
 	}
 
 	/**
 	 * returns warranty object from VantageShellService of JS Bridge
 	 */
 	public getWarranty(): any {
+		// {lastupdate: null, status: 0}
+
 		if (this.phoenix) {
 			return this.phoenix.warranty;
 		}
@@ -397,30 +540,54 @@ export class VantageShellService extends BaseVantageShellService {
 	 * returns dolby settings object from VantageShellService of JS Bridge
 	 */
 	public getDolbySettings(): any {
-		if (this.getAudioSettings() && this.getAudioSettings().dolby) {
-			return this.getAudioSettings().dolby;
-		}
-		return undefined;
+		const dolby: any = {};
+		const obj: any = {
+			available: true,
+			currentMode: 'Dynamic',
+			supporedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip']
+		};
+
+		dolby.getDolbyMode = this.getPromise(obj);
+
+		return dolby;
 	}
 
 	/**
 	 * returns microphone settings object from VantageShellService of JS Bridge
 	 */
 	public getMicrophoneSettings(): any {
-		if (this.getAudioSettings() && this.getAudioSettings().microphone) {
-			return this.getAudioSettings().microphone;
-		}
-		return undefined;
+		const microphone: any = {};
+		const micSupportedModes: any = {
+			current: 'MultipleVoices',
+			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices']
+		};
+
+		const micSettings = {
+			AEC: false,
+			autoOptimization: true,
+			available: true,
+			currentMode: 'MultipleVoices',
+			disableEffect: false,
+			keyboardNoiseSuppression: true,
+			muteDisabled: true,
+			permission: true,
+			volume: 100,
+		};
+		microphone.getSupportedModes = this.getPromise(micSupportedModes);
+		microphone.getMicrophoneSettings = this.getPromise(micSettings);
+
+		return microphone;
 	}
 
 	/**
 	 * returns smart settings object from VantageShellService of JS Bridge
 	 */
 	public getSmartSettings(): any {
-		if (this.getHwSettings() && this.getHwSettings().smartsettings) {
-			return this.getHwSettings().smartsettings;
-		}
-		return undefined;
+		const smartSettings: any = {
+			absFeature: { getDolbyFeatureStatus: this.getPromise({ available: true, status: false }) }
+		};
+
+		return smartSettings;
 	}
 
 	/**
@@ -447,19 +614,61 @@ export class VantageShellService extends BaseVantageShellService {
 	 * returns battery info object from VantageShellService of JS Bridge
 	 */
 	public getBatteryInfo(): any {
-		if (this.getPowerCommonSettings() && this.getPowerCommonSettings().batteryInfo) {
-			return this.getPowerCommonSettings().batteryInfo;
-		}
-		return undefined;
+		const battery: any = {
+			batteryInformation: [{
+				barCode: 'X2XP888JB1S',
+				batteryCondition: ['Normal'],
+				batteryHealth: 0,
+				chargeStatus: 2,
+				cycleCount: 98,
+				designCapacity: 45.28,
+				designVoltage: 11.1,
+				deviceChemistry: 'Li-Polymer',
+				firmwareVersion: '0005-0232-0100-0005',
+				fruPart: '01AV446',
+				fullChargeCapacity: 46.69,
+				manufacturer: 'SMP',
+				remainingCapacity: 23.84,
+				remainingChargeCapacity: 0,
+				remainingPercent: 52,
+				remainingTime: 99,
+				temperature: 32,
+				voltage: 11.222,
+				wattage: 10.57,
+			}],
+			batteryIndicatorInfo: {
+				acAdapterStatus: 'Supported',
+				acAdapterType: 'Legacy',
+				acWattage: 0,
+				isAirplaneModeEnabled: false,
+				isAttached: false,
+				isExpressCharging: false,
+				isPowerDriverMissing: false,
+				percentage: 61,
+				time: 111,
+				timeType: 'timeRemaining'
+			},
+		};
+		battery.getBatteryInformation = this.getPromise(battery);
+		return battery;
 	}
 	/**
 	 * returns EyecareMode object from VantageShellService of JS Bridge
 	 */
 	public getEyeCareMode(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.display.eyeCareMode;
-		}
-		return undefined;
+		const eyeCareMode: any = {};
+		const displayEyeCareMode: any = {};
+		const obj = {
+			available: true,
+			status: true,
+			permission: true,
+			isLoading: false
+		};
+
+		eyeCareMode.getEyeCareModeState = this.getPromise(obj);
+		displayEyeCareMode.initEyecaremodeSettings = this.getPromise(false);
+
+		return eyeCareMode;
 	}
 
 	/**
@@ -491,16 +700,28 @@ export class VantageShellService extends BaseVantageShellService {
 		return undefined;
 	}
 	public getVantageToolBar(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.power.common.vantageToolBar;
-		}
-		return undefined;
+		const devicePower: any = {};
+		const toolbarObj: any = {
+			available: true,
+			status: true
+		};
+
+		devicePower.getVantageToolBarStatus = this.getPromise(toolbarObj);
+		devicePower.stopMonitor = this.getPromise(true);
+		return devicePower;
 	}
 	public getPowerIdeaNoteBook(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.power.ideaNotebook;
-		}
-		return undefined;
+		const obj = {
+			available: true,
+			status: true
+		};
+		const devicePowerIdeaNoteBook = {
+			rapidChargeMode: { getRapidChargeModeStatus: this.getPromise(obj) },
+			conservationMode: { getConservationModeStatus: this.getPromise(obj) },
+			alwaysOnUSB: { getAlwaysOnUSBStatus: this.getPromise(obj), getUSBChargingInBatteryModeStatus: this.getPromise(obj) },
+			flipToBoot: { getFlipToBootCapability: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 }) }
+		};
+		return devicePowerIdeaNoteBook;
 	}
 	// public getPowerThinkPad(): any {
 	// 	if (this.phoenix) {
@@ -510,11 +731,32 @@ export class VantageShellService extends BaseVantageShellService {
 	// }
 
 	public getPowerThinkPad(): any {
-		if (this.getPowerSettings() && this.getPowerSettings().thinkpad) {
-			return this.getPowerSettings().thinkpad;
-		}
-		return undefined;
+		const batteryThresholdInfo: any = [{
+			batteryNum: 1,
+			checkBoxValue: false,
+			isCapable: true,
+			isOn: false,
+			startValue: 75,
+			stopValue: 80
+		},
+		{
+			batteryNum: 2,
+			checkBoxValue: false,
+			isCapable: true,
+			isOn: false,
+			startValue: 75,
+			stopValue: 80
+		}];
+		const devicePowerThinkPad: any = {
+			sectionChargeThreshold: { getChargeThresholdInfo: this.getPromise(batteryThresholdInfo) },
+			sectionAirplaneMode: { getAirplaneModeCapability: this.getPromise(true) },
+			sectionAlwaysOnUsb: { getAlwaysOnUsbCapability: this.getPromise(true) },
+			sectionEasyResume: { getEasyResumeCapability: this.getPromise(true) },
+			sectionSmartStandby: { getSmartStandbyCapability: this.getPromise(true), getSmartStandbyEnabled: this.getPromise(true) }
+		};
+		return devicePowerThinkPad;
 	}
+
 	// public getPowerItsIntelligentCooling(): any {
 	// 	if(this.phoenix){
 	// 		return this.phoenix.hwsettings.power.its.IntelligentCooling ;
@@ -646,10 +888,38 @@ export class VantageShellService extends BaseVantageShellService {
 	}
 
 	public getIntelligentSensing(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.lis.intelligentSensing;
-		}
-		return undefined;
+		const intelligentSensing = {
+			GetHPDCapability: this.getPromise(true),
+			GetHPDGlobalSetting: this.getPromise(true),
+			SetHPDGlobalSetting: this.getPromise(true),
+			GetHPDLeaveCapability: this.getPromise(true),
+			GetHPDPresentLeaveSetting: this.getPromise(true),
+			SetHPDPresentLeaveSetting: this.getPromise(true),
+			GetHPDApproachCapability: this.getPromise(true),
+			GetHPDApproachSetting: this.getPromise(true),
+			GetHPDApproachDistance: this.getPromise(2),
+			SetHPDApproachSetting: this.getPromise(true),
+			GetHPDAutoAdjustCapability: this.getPromise(true),
+			GetHPDAutoAdjustSetting: this.getPromise(true),
+			SetHPDAutoAdjustSetting: this.getPromise(true),
+			SetHPDApproachDistanceSetting: this.getPromise(true),
+			GetHPDLeaveWait: this.getPromise(2),
+			SetHPDLeaveWaitSetting: this.getPromise(true),
+			HPDSettingReset: this.getPromise(true),
+			GetFacialFeatureRegistered: this.getPromise(true),
+			GetSmartSensecapability: this.getPromise(true),
+			GetWalkingCapability: this.getPromise(true),
+			GetWalkingSetting: this.getPromise(true),
+			GetHPDSensorType: this.getPromise(true),
+			GetWalkingCautionVisibility: this.getPromise(true),
+			GetBrowsingCapability: this.getPromise(true),
+			GetBrowsingSetting: this.getPromise(true),
+			GetBrowsingTime: this.getPromise(30),
+			SetWalkingMode: this.getPromise(true),
+			setBrowsingMode: this.getPromise(true),
+			SetBrowsingTime: this.getPromise(true),
+		};
+		return intelligentSensing;
 	}
 
 	public getMetricPreferencePlugin() {
@@ -689,10 +959,11 @@ export class VantageShellService extends BaseVantageShellService {
 	}
 
 	public getIntelligentMedia(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.lis.intelligentMedia;
-		}
-		return undefined;
+		const media = {
+			getVideoPauseResumeStatus: this.getPromise({ available: true, status: true }),
+			setVideoPauseResumeStatus: this.getPromise(true),
+		};
+		return media;
 	}
 
 	public getPreferenceSettings() {
@@ -848,35 +1119,74 @@ export class VantageShellService extends BaseVantageShellService {
 	}
 
 	public getImcHelper(): any {
-		if (this.phoenix && this.phoenix.hwsettings.power.thinkpad.sectionImcHelper) {
-			return this.phoenix.hwsettings.power.thinkpad.sectionImcHelper;
-		}
-		return undefined;
+		const imcHelper: any = { getIsEnergyStarCapability: this.getPromise(true) };
+
+		return imcHelper;
 	}
 
 	// Active Protection System
 	public getActiveProtectionSystem(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.aps.ActiveProtectionSystem; // returning APS Object with methods
-		}
-		return undefined;
+		const aps = {
+			getSensorStatus: this.getPromise(true),
+			getAPSCapability: this.getPromise(true),
+			getHDDStatus: this.getPromise(true),
+			getAPSMode: this.getPromise(true),
+			getPenCapability: this.getPromise(true),
+			getTouchCapability: this.getPromise(true),
+			getPSensorCapability: this.getPromise(true),
+			getAPSSensitivityLevel: this.getPromise(1),
+			getAutoDisableSetting: this.getPromise(true),
+			getSnoozeSetting: this.getPromise(true),
+			getSnoozeTime: this.getPromise(1),
+			getPenSetting: this.getPromise(true),
+			getPenDelayTime: this.getPromise(5),
+			getTouchInputSetting: this.getPromise(true),
+			getPSensorSetting: this.getPromise(true),
+			setAPSMode: this.getPromise(true),
+			setAPSSensitivityLevel: this.getPromise(true),
+			setAutoDisableSetting: this.getPromise(true),
+			setSnoozeSetting: this.getPromise(true),
+			setSnoozeTime: this.getPromise(true),
+			setPenSetting: this.getPromise(true),
+			setPenDelayTime: this.getPromise(true),
+			setTouchInputSetting: this.getPromise(true),
+			setPSensorSetting: this.getPromise(true),
+			sendSnoozeCommand: this.getPromise(true)
+		};
+		return aps;
 	}
 
 	/**
 	 * returns Keyboard manager object  from VantageShellService of JS Bridge
 	 */
 	public getKeyboardManagerObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.kbdManager;
-		}
-		return undefined;
+		const kbdManager: any = {GetKeyboardMapCapability: this.getPromise(true),
+			 GetUDKCapability: this.getPromise(true),
+			 GetKBDLayoutName: this.getPromise('Standered'),
+			 GetKBDMachineType: this.getPromise('Other'),
+			 GetKbdHiddenKeyPerformanceModeCapability: this.getPromise(false),
+			 GetKbdHiddenKeyPrivacyFilterCapability: this.getPromise(true),
+			 GetKbdHiddenKeyMagnifierCapability: this.getPromise(false),
+			 GetKbdHiddenKeyBackLightCapability: this.getPromise(true),
+			 GetTopRowFnLockCapability: this.getPromise(true),
+			 GetTopRowFnStickKeyCapability: this.getPromise(true),
+			 GetTopRowPrimaryFunctionCapability: this.getPromise(true),
+			 GetFnLockStatus: this.getPromise(true),
+			 GetFnStickKeyStatus: this.getPromise(true),
+			 GetPrimaryFunctionStatus: this.getPromise(true)
+			};
+
+		return kbdManager;
 	}
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
-		if (this.phoenix) {
-			return this.phoenix.lenovovoice;
-		}
-		return undefined;
+		const voice = {
+			getCapability: this.getPromise(true),
+			getInstallStatus: this.getPromise(true),
+			downloadAndInstallVoiceApp: this.getPromise('InstallDone'),
+			launchVoiceApp: this.getPromise(true)
+		};
+		return voice;
 	}
 	// ==================== End Lenovo Voice
 
@@ -923,9 +1233,11 @@ export class VantageShellService extends BaseVantageShellService {
 	// ==================== End Hardware Scan
 
 	public getMouseAndTouchPad(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.inputControlLinks;
-		}
-		return undefined;
+		const inputControlLinks: any = {
+			GetMouseCapability: this.getPromise(true),
+			GetTouchpadCapability: this.getPromise(true)
+		};
+
+		return inputControlLinks;
 	}
 }

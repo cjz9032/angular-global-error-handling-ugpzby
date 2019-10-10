@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
@@ -15,6 +14,7 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { TaskAction } from 'src/app/data-models/metrics/events.model';
 import * as metricsConst from 'src/app/enums/metrics.enum';
+import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,8 +23,8 @@ import * as metricsConst from 'src/app/enums/metrics.enum';
 export class SystemUpdateService {
 
 	constructor(
-		shellService: VantageShellService
-		, private commonService: CommonService) {
+		shellService: BaseVantageShellService,
+		private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
 		this.metricClient = shellService.getMetrics();
@@ -164,11 +164,11 @@ export class SystemUpdateService {
 					MetricHelper.timeSpan(new Date(), timeStartSearch));
 				if (error &&
 					((error.description && error.description.includes('errorcode: 606'))
-					|| (error.errorcode && error.errorcode === 606))) {
+						|| (error.errorcode && error.errorcode === 606))) {
 					this.getScheduleUpdateStatus(true);
 					this.isImcErrorOrEmptyResponse = true;
 				} else {
-					const payload = {status: 1 };
+					const payload = { status: 1 };
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
 				}
 			});
@@ -319,27 +319,27 @@ export class SystemUpdateService {
 	public getIgnoredUpdates() {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.getIgnoredUpdates()
-			.then((ignoredUpdates) => {
-				this.updateIgnoredStatus(ignoredUpdates);
-			});
+				.then((ignoredUpdates) => {
+					this.updateIgnoredStatus(ignoredUpdates);
+				});
 		}
 	}
 
 	public ignoreUpdate(packageName: string) {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.ignoreUpdate(packageName)
-			.then((ignoredUpdates) => {
-				this.updateIgnoredStatus(ignoredUpdates);
-			});
+				.then((ignoredUpdates) => {
+					this.updateIgnoredStatus(ignoredUpdates);
+				});
 		}
 	}
 
 	public unIgnoreUpdate(packageName: string) {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.unignoreUpdate(packageName)
-			.then((ignoredUpdates) => {
-				this.updateIgnoredStatus(ignoredUpdates);
-			});
+				.then((ignoredUpdates) => {
+					this.updateIgnoredStatus(ignoredUpdates);
+				});
 		}
 	}
 
@@ -389,7 +389,7 @@ export class SystemUpdateService {
 			});
 			if (coreqUpdate) {
 				if (!coreqUpdate.dependedByPackages.includes(dependedByPackage)) {
-					coreqUpdate.dependedByPackages = coreqUpdate.dependedByPackages +  ',' + dependedByPackage;
+					coreqUpdate.dependedByPackages = coreqUpdate.dependedByPackages + ',' + dependedByPackage;
 				}
 				coreqUpdate.isSelected = isSelected;
 				if (isSelected) {
@@ -573,7 +573,7 @@ export class SystemUpdateService {
 		}).catch((error) => {
 			if (error &&
 				((error.description && error.description.includes('errorcode: 606'))
-				|| (error.errorcode && error.errorcode === 606))) {
+					|| (error.errorcode && error.errorcode === 606))) {
 				setTimeout(() => {
 					this.getScheduleUpdateStatus(true);
 				}, 200);

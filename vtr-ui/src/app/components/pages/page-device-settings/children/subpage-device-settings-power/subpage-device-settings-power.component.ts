@@ -217,13 +217,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.getFlipToBootCapability();
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
-		this.checkPowerDriverMissing(this.isPowerDriverMissing);
-		this.getFlipToBootCapability();
-
+		this.getVantageToolBarCapability();
+		this.getEnergyStarCapability();
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
@@ -231,16 +231,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
-		this.getVantageToolBarCapability();
-
-		this.getEnergyStarCapability();
 
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
 		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-
 	}
 
 	initDataFromCache() {
@@ -377,10 +373,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.thresholdWarningSubscription.unsubscribe();
+		if (this.thresholdWarningSubscription) {
+			this.thresholdWarningSubscription.unsubscribe();
+		}
 		this.stopMonitor();
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
-
 	}
 
 	onSetSmartStandbyCapability(event: boolean) {
@@ -1051,6 +1048,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					break;
 				case "IsPowerDriverMissing":
 					this.checkPowerDriverMissing(notification.payload);
+					this.checkPowerDriverMissing(this.isPowerDriverMissing);
 					break;
 			}
 
@@ -1167,7 +1165,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getEnergyStarCapability() {
+	public getEnergyStarCapability() {
 		this.powerService.getEnergyStarCapability()
 			.then((response: boolean) => {
 				console.log('getEnergyStarCapability.then', response);
@@ -1180,7 +1178,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	private getFlipToBootCapability() {
+	public getFlipToBootCapability() {
 		// think machine should pass through the procedure;
 		if (+this.machineType === 1) {
 			return;

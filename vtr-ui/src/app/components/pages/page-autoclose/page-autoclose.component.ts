@@ -13,7 +13,6 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
 @Component({
 	selector: 'vtr-page-autoclose',
@@ -21,8 +20,8 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 	styleUrls: ['./page-autoclose.component.scss']
 })
 export class PageAutocloseComponent implements OnInit {
-	public showTurnOnModal: boolean = false;
-	public showAppsModal: boolean = false;
+	public showTurnOnModal = false;
+	public showAppsModal = false;
 	public autoCloseAppList: any;
 	// Toggle status
 	isOnline = true;
@@ -33,12 +32,8 @@ export class PageAutocloseComponent implements OnInit {
 	needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
 
 	// CMS Content block
-	cardContentPositionA: any = {
-		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
-	};
-	cardContentPositionB: any = {
-		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
-	};
+	cardContentPositionA: any = {};
+	cardContentPositionB: any = {};
 	cardContentPositionBCms: any = {};
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
@@ -48,12 +43,12 @@ export class PageAutocloseComponent implements OnInit {
 		private cmsService: CMSService,
 		private gamingAutoCloseService: GamingAutoCloseService,
 		private commonService: CommonService,
-		public dashboardService: DashboardService,
 		private upeService: UPEService, private loggerService: LoggerService,
 		private hypService: HypothesisService, private translate: TranslateService
 	) {
 		this.isUPEFailed = false;  // init UPE request status
 		this.isCmsLoaded = false;
+		this.setPreviousContent();
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -99,6 +94,7 @@ export class PageAutocloseComponent implements OnInit {
 				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
+					this.gamingAutoCloseService.cardContentPositionA = cardContentPositionA;
 				}
 
 				const cardContentPositionB = this.cmsService.getOneCMSContent(
@@ -118,7 +114,7 @@ export class PageAutocloseComponent implements OnInit {
 					this.isCmsLoaded = true;
 					if (this.isUPEFailed || source === 'CMS') {
 						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+						this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionBCms;
 					}
 				}
 			});
@@ -138,7 +134,7 @@ export class PageAutocloseComponent implements OnInit {
 							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 						}
 						cardContentPositionB.DataSource = 'upe';
-						this.dashboardService.cardContentPositionB = cardContentPositionB;
+						this.gamingAutoCloseService.cardContentPositionB = cardContentPositionB;
 						this.isUPEFailed = false;
 					}
 				}, (err) => {
@@ -146,7 +142,7 @@ export class PageAutocloseComponent implements OnInit {
 					this.isUPEFailed = true;
 					if (this.isCmsLoaded) {
 						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+						this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionBCms;
 					}
 				});
 			}
@@ -281,5 +277,10 @@ export class PageAutocloseComponent implements OnInit {
 				}
 			});
 		} catch (err) { }
+	}
+
+	private setPreviousContent() {
+		this.cardContentPositionA = this.gamingAutoCloseService.cardContentPositionA;
+		this.cardContentPositionB = this.gamingAutoCloseService.cardContentPositionB;
 	}
 }

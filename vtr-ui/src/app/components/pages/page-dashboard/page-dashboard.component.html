@@ -175,8 +175,8 @@
 			</div>
 
 			<div class="row no-gutters"
-				*ngIf="!deviceService.isArm && !deviceService.isSMode && brand !== 'think'">
-				<div class="col-sm-12 col-md-12 pb-60">
+				*ngIf="!deviceService.isArm && !deviceService.isSMode && brand !== 1 && !deviceService.isGaming">
+				<div class="col-sm-12 py-40">
 					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
 						[linkId]="'dashboard'">
 					</vtr-widget-security-status>
