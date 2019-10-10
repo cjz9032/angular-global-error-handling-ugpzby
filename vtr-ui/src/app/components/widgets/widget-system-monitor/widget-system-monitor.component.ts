@@ -216,6 +216,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		if (this.GetramUsageCache() !== undefined) {
 			// this.ramUsage = this.GetramUsageCache();
 			this.memoryUsage = this.getStackHeight(this.GetramUsageCache());
+			console.log('CACHE MEMORY USAGE => ', this.memoryUsage);
 		}
 		if (this.GetramaOverCache() !== undefined) {
 			this.ramOver = this.GetramaOverCache();
@@ -256,6 +257,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			}
 			if (hwInfo.memoryUsage !== null) {
 				 this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
+				 console.log('UPDATED MEMORY USAGE => ', this.memoryUsage);
 			}
 			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
