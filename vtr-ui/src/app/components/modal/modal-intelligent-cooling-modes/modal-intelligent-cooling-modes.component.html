@@ -3,9 +3,9 @@
 		<div class="btn-close">
 			<button type="button"
 				class="close"
-				tabindex="1"
 				(click)="closeModal()"
 				(keydown.enter)="closeModal()"
+				(keydown.esc)="closeModal()"
 				attr.aria-label="intelligentCoolingModesModal-close-modal"
 				id="intelligentCoolingModesModal-close-modal">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
