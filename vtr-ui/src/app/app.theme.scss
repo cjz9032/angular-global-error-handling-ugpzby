@@ -163,6 +163,16 @@ $gradient_gray: linear-gradient(90deg, $grey_lighter 0%, $light 100%);
 $blue_gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
 $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 
+$breakpoint_0: "only screen and (max-width: 576px)";
+$breakpoint_1: "only screen and (max-width: 768px)";
+$breakpoint_2: "only screen and (max-width: 992px)";
+$breakpoint_3: "only screen and (max-width: 1140px)";
+$breakpoint_4: "only screen and (max-width: 1400px)";
+$breakpoint_5: "only screen and (max-width: 1800px)";
+$breakpoint_6: "only screen and (max-width: 2200px)";
+$breakpoint_7: "only screen and (max-width: 3000px)";
+
+
 $mediaquery_0: "only screen and (max-width: 3600px)";
 $mediaquery_1: "only screen and (max-width: 3000px)";
 $mediaquery_2: "only screen and (max-width: 2600px)";
