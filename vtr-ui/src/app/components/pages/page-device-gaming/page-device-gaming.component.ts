@@ -66,7 +66,8 @@ export class PageDeviceGamingComponent implements OnInit {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-		this.titleService.setTitle('gaming.common.narrator.pageTitle.device');
+
+		this.titleService.setTitle(this.translate.instant('gaming.common.narrator.pageTitle.device'));
 	}
 
 	ngOnInit() {

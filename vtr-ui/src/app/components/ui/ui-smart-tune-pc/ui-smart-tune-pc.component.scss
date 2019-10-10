@@ -1,0 +1,30 @@
+@import '../../../app.theme.scss';
+.tabset1 {
+	.small-title{
+		font-size: 1rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+}
+.check-list {
+	padding-left: 2.2rem;
+	list-style: none;
+	list-style-position: outside;
+	li {
+		position: relative;
+		line-height: 3rem;
+		font-size: 1.4rem;
+		&::before{
+			position: absolute;
+			content: "";
+			height: 0.6rem;
+			width: 1.2rem;
+			left: -2rem;
+			border-left: 0.1rem solid $go;
+			border-bottom: 0.1rem solid $go;
+			transform: rotate(-45deg);
+			z-index: 1;
+			top: 1rem;
+		}
+	}
+}
