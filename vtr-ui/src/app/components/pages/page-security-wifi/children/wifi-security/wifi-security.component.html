@@ -200,10 +200,11 @@
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-5 text-right col-check-use-state"
 				*ngIf="data.wifiSecurity.state==='never-used'">
-				<vtr-ui-button class="enable-wifi-security"
+				<vtr-ui-button
 					metricsItem="enableWifiSecurity"
 					metricsEvent="featureClick"
 					[linkId]="'sa-ws-btn-enablewifisecurity'"
+					btnHeight=true
 					(click)="enableWifiSecurity()"
 					[title]="'security.wifisecurity.container.button' | translate"
 					[label]="'security.wifisecurity.container.button' | translate"
