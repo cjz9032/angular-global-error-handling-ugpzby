@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "Načítání..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "RESTARTOVAT",
                             "cancel": "TEĎ NE"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funkce horkých kláves VoIP:",
+						"description": {
+							"main": "Tato funkce umožňuje přijmout nebo odmítnout hovor VoIP stisknutím klávesových zkratek na klávesnici:",
+							"f10": "F10: přijmout hovor",
+							"f11": "F11: odmítnout nebo ukončit hovor"
+						},
+						"tooltip": "V současné době je tato funkce podporována pouze softwarem Skype for Business 2016 a Microsoft Teams 1.0.<br>Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace.",
+						"hasInstalledAppsDescription": "Vyberte aplikaci, ve které chcete klávesové zkratky používat:",
+						"noInstalledAppsDescription": "Tuto funkci podporují pouze dále uvedené aplikace: ",
+						"hasInstalledAppsNote": "Poznámka: U Microsoft Teams 1.0 nelze použít klávesu F11 k ukončení hovoru.",
+						"noInstalledAppsNote": "Poznámka: Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Uživatelem definovaná klávesa",
@@ -1766,7 +1778,7 @@
                 "notAvailable": "Není dostupná"
             },
             "windowsDefender": {
-                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom vám mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
+                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
                 "windowsSubtitle": "Základní ochrana Windows Defender",
                 "topTip": "Nejlepší tipy pro online bezpečnost",
                 "topContent": "Naučte se, jak se můžete bránit proti současným největším online hrozbám <tag>ZOBRAZIT TIPY</tag>",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Získat program McAfee",
                 "topBenefits": "Proč <b>Lenovo doporučuje software McAfee</b> na ochranu všech vašich zařízení",
                 "awardTitle": "Oceňovaný antivirus",
-                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem.",
+                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem",
                 "supportTitle": "Zdarma, nepřetržitá odborná technická podpora ",
                 "supportSubtitle": "Získejte nepřetržitou asistenci a klid v duši díky našemu specializovanému bezpečnostnímu týmu",
                 "trialSubtitle": "Momentálně jste chráněni pouze 30denní zkušební verzí McAfee LiveSafe – počet zbývajících dnů jen {{remainingDays}}! Chcete-li rozšířit svou ochranu, přihlaste se k odběru nyní.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Spusťte skenování souborů"
             },
             "others": {
-                "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení"
+                "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení",
+                "unknown": "Neznámé"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Toto zařízení je v režimu offline. Připojte jej k internetu",
         "doNotSuspend": "Tyto testy nesmí být přerušeny! Během kontroly nevypínejte ani neminimalizujte aplikaci, nevypínejte počítač ani jej neuveďte do režimu hibernace.",
         "doNotUse": "V průběhu testu nepoužívejte počítač",
+        "testsMustRunUniterrupted": "Tyto testy nesmí být za chodu přerušeny!",
+        "doNotCloseOrMinimizeApp": "• Nezavírejte ani minimalizujte tuto aplikaci.",
+        "doNotSwitchApp": "• Nepřepínejte na jinou aplikaci.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Počítač nepřevádějte do stavu spánku, neodhlasujte se, ani počítač nevypínejte.",
         "customize": {
             "name": "Přizpůsobit",
             "test": "Přizpůsobit test",

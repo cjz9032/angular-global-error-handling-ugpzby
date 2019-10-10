@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "Učitavanje..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                         },
                         "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
                         "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE"
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP funkcije prečica",
+						"description": {
+							"main": "Ova funkcija vam omogućava da se javite na VoIP poziv ili ga odbijete pritiskanjem prečica na tastaturi:",
+							"f10": "F10: javljanje na poziv",
+							"f11": "F11: odbijanje ili prekidanje poziva"
+						},
+						"tooltip": "Ova funkcija je trenutno podržana samo u aplikacijama Skype for Business 2016 i Microsoft Teams 1.0.<br>Da biste koristili ovu funkciju, prvo morate da preuzmete i instalirate aplikacije.",
+						"hasInstalledAppsDescription": "Izaberite aplikaciju u kojoj želite da koristite prečice:",
+						"noInstalledAppsDescription": "Ova funkcija podržava samo dolenavedene aplikacije: ",
+						"hasInstalledAppsNote": "Napomena: Taster F11 ne može da se koristi za prekidanje poziva u aplikaciji Microsoft Teams 1.0.",
+						"noInstalledAppsNote": "Napomene: Da biste koristili ovu funkciju, prvo morate da preuzmete i instalirate aplikacije."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Korisnički definisan taster",
@@ -1766,7 +1778,7 @@
                 "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
-                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa, udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i bili u mogućnosti da <b>zaštitimo ono što je važno.</b>",
+                "optimallyProtected": "Izgleda da trenutno koristite Windows zaštitnik. To nije loš izbor, ali za ultimativnu bezbednost od softvera za ucenjivanje, malvera i virusa udružili smo se sa kompanijom <b>McAfee</b> kako bismo vam ponudili nagrađivanu bezbednost i kako biste bili u mogućnosti da <b>zaštitite ono što je važno.</b>",
                 "windowsSubtitle": "Osnovna zaštita pomoću programa Windows zaštitnik",
                 "topTip": "Najbolji saveti za bezbednost na mreži",
                 "topContent": "Naučite kako možete da se odbranite od najvećih pretnji na mreži današnjice <tag>PRIKAŽI SAVETE</tag>",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Nabavite McAfee",
                 "topBenefits": "Zbog čega <b>Lenovo preporučuje McAfee</b> za zaštitu svih vaših uređaja",
                 "awardTitle": "Nagrađivani antivirus",
-                "awardSubtitle": "Sprečite da virusi, malver i softver za ucenjivanje zaraze vaš računar.",
+                "awardSubtitle": "Sprečite da virusi, malver i softver za ucenjivanje zaraze vaš računar",
                 "supportTitle": "Besplatna, neprekidna stručna tehnička podrška ",
                 "supportSubtitle": "Dobijte pomoć i budite spokojni u bilo koje doba dana ili noći zahvaljujući našem posvećenom timu za bezbednost",
                 "trialSubtitle": "Trenutno ste zaštićeni 30-dnevnom probnom verzijom proizvoda McAfee LiveSafe – preostalo je samo {{remainingDays}} dana! Pretplatite se odmah da biste produžili zaštitu.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Započnite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
+                "unknown": "Nepoznato"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Uređaj radi u režimu van mreže, povežite internet",
         "doNotSuspend": "Ovi testovi moraju da rade bez prekida! Nemojte zatvarati niti umanjivati ovu aplikaciju i nemojte suspendovati niti isključiti računar tokom skeniranja.",
         "doNotUse": "Nemojte da koristite računar dok se test ne završi",
+        "testsMustRunUniterrupted": "Ovi testovi moraju da rade bez prekida!",
+        "doNotCloseOrMinimizeApp": "• Nemojte zatvarati niti umanjivati ovu aplikaciju.",
+        "doNotSwitchApp": "• Nemojte prelaziti na drugu aplikaciju.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nemojte da stavljate računar u stanje spavanja ili da se odjavljujete sa njega ili da ga isključujete.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagodite test",

@@ -24,9 +24,9 @@ export class AntiVirusViewModel {
 	};
 	otherAntiVirus: OtherInfo = {
 		status: false,
-		name: 'unknown',
+		name: 'security.antivirus.others.unknown',
 	};
-	metricsList: Array<any> = [0, 0, 0, 0];
+	metricsList: Array<any> = [];
 	otherFirewall: OtherInfo ;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
@@ -38,6 +38,8 @@ export class AntiVirusViewModel {
 	}];
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
+	showMetricsList = true;
+	showMetricButton = true;
 
 	constructor(antiVirus: Antivirus, private commonService: CommonService) {
 		const cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
@@ -63,6 +65,14 @@ export class AntiVirusViewModel {
 		const cacheMcafeeStatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList);
 		if (cacheMcafeeStatusList) {
 			this.mcafeestatusList = cacheMcafeeStatusList;
+		}
+		const cacheShowMetricButton = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricButton);
+		if (typeof cacheShowMetricButton === 'boolean') {
+			this.showMetricButton = cacheShowMetricButton;
+		}
+		const cacheShowMetricList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricList);
+		if (typeof cacheShowMetricList === 'boolean') {
+			this.showMetricsList = cacheShowMetricList;
 		}
 		const cacheMcafeeMetricsList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList);
 		if (cacheMcafeeMetricsList) {

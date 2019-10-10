@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "Ladataan..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
                             "cancel": "EI NYT"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP-pikanäppäintoiminnot",
+						"description": {
+							"main": "Tämän toiminnon avulla voit vastata VoIP-puheluun tai hylätä sen painamalla näppäimistön pikanäppäimiä:",
+							"f10": "F10: vastaa puheluun",
+							"f11": "F11: puhelun hylkääminen tai katkaisu"
+						},
+						"tooltip": "Tällä hetkellä tätä toimintoa tuetaan vain Skype for Business 2016- ja Microsoft Teams 1.0 -ohjelmistoissa.<br>Jotta voit käyttää tätä toimintoa, sinun on ensin ladattava ja asennettava sovellukset.",
+						"hasInstalledAppsDescription": "Valitse sovellus, jossa haluat käyttää pikanäppäimiä:",
+						"noInstalledAppsDescription": "Tämä ominaisuus tukee vain seuraavia sovelluksia: ",
+						"hasInstalledAppsNote": "Huomautus: Jos kyseessä on Microsoft Teams 1.0, F11-näppäintä ei voi käyttää puhelun katkaisuun.",
+						"noInstalledAppsNote": "Huomautus: Jotta voit käyttää tätä toimintoa, sinun on ensin ladattava ja asennettava sovellukset."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Käyttäjän määrittämä näppäin",
@@ -1750,7 +1762,7 @@
             "common": {
                 "title": "Virustentorjunta",
                 "back": "EDELLINEN",
-                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfee</b>tä kaikkien laitteidesi suojaamiseen",
+                "recommends": "Näistä syistä Lenovo suosittelee <b>McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "award": "Palkittu virustentorjuntaohjelmisto",
                 "mcafeePremium": "McAfee LiveSafe -suojaus",
                 "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Hanki McAfee nyt",
                 "topBenefits": "Näistä syistä <b>Lenovo suosittelee McAfeetä</b> kaikkien laitteidesi suojaamiseen",
                 "awardTitle": "Palkittu virustentorjuntaohjelmisto",
-                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi.",
+                "awardSubtitle": "Estä virusten, haittaohjelmien ja kiristysohjelmien tarttuminen tietokoneellesi",
                 "supportTitle": "Ilmainen 24/7 asiantunteva tekninen tuki ",
                 "supportSubtitle": "Saat apua ja mielenrauhaa ympäri vuorokauden erikoistuneelta tietoturvatiimiltämme",
                 "trialSubtitle": "Olet tällä hetkellä suojattuna McAfee LiveSafen 30 päivän kokeiluversiolla – vain {{remainingDays}} päivää jäljellä! Tilaa nyt, jos haluat laajentaa suojausta.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Aloita tiedostojen tarkistus"
             },
             "others": {
-                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen"
+                "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
+                "unknown": "Tuntematon"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Tämä laite toimii offline-tilassa, muodosta Internet-yhteys",
         "doNotSuspend": "Näiden testien suoritus ei saa keskeytyä. Älä sulje tai pienennä tätä sovellusta. Älä siirrä tietokonetta keskeytystilaan tai katkaise tietokoneen virtaa tarkistuksen aikana.",
         "doNotUse": "Älä käytä tietokonetta, kunnes tämä testi on valmis",
+        "testsMustRunUniterrupted": "Näiden testien suoritus ei saa keskeytyä!",
+        "doNotCloseOrMinimizeApp": "• Älä sulje tai pienennä tätä sovellusta.",
+        "doNotSwitchApp": "• Älä vaihda toiseen sovellukseen.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Älä aseta tietokonetta lepotilaan, kirjaudu siitä ulos tai katkaise siitä virtaa.",
         "customize": {
             "name": "Mukautus",
             "test": "Mukauta testiä",

@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "Cargando..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "REINICIAR",
                             "cancel": "NO AHORA"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funciones de tecla de acceso directo VoIP",
+						"description": {
+							"main": "Esta característica le permite contestar o rechazar una llamada de VoIP pulsando las teclas de acceso directo en el teclado:",
+							"f10": "F10: contestar la llamada",
+							"f11": "F11: rechazar o cortar la llamada"
+						},
+						"tooltip": "Actualmente, esta característica solo es compatible con Skype for Business 2016 y Microsoft Teams 1.0.<br>Para utilizar la característica, debe descargar e instalar primero las aplicaciones.",
+						"hasInstalledAppsDescription": "Seleccione la aplicación en la que desea usar las teclas de acceso directo:",
+						"noInstalledAppsDescription": "Esta característica solo admite las aplicaciones siguientes: ",
+						"hasInstalledAppsNote": "Nota: para Microsoft Teams 1.0, la tecla F11 no se puede utilizar para cortar la llamada.",
+						"noInstalledAppsNote": "Nota: para utilizar la característica, debe descargar e instalar primero las aplicaciones."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Tecla definida por el usuario",
@@ -1766,7 +1778,7 @@
                 "notAvailable": "No disponible"
             },
             "windowsDefender": {
-                "optimallyProtected": "Parece que actualmente usa Windows Defender. No es una mala elección, pero para la máxima seguridad contra ransomware, malware y virus, nos hemos asociado con <b>McAfee</b> para desactivar su seguridad galardonada para <b>proteger las cosas más importantes.</b>",
+                "optimallyProtected": "Parece que actualmente usa Windows Defender. No es una mala elección, pero para la máxima seguridad contra ransomware, malware y virus, nos hemos asociado con <b>McAfee</b> para ofrecerle una seguridad galardonada para que pueda <b>proteger las cosas más importantes.</b>",
                 "windowsSubtitle": "Protección básica de Windows Defender",
                 "topTip": "Consejos principales para la seguridad en línea",
                 "topContent": "Descubra cómo puede defenderse de las mayores amenazas en línea de la actualidad <tag>VER CONSEJOS</tag>",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Obtenga McAfee",
                 "topBenefits": "Por qué <b>Lenovo recomienda McAfee</b> para proteger todos los dispositivos",
                 "awardTitle": "Antivirus galardonado",
-                "awardSubtitle": "Evite que los virus, el malware y el ransomware infecten su PC.",
+                "awardSubtitle": "Evite que los virus, el malware y el ransomware infecten su PC",
                 "supportTitle": "Soporte técnico experto gratuito las 24 horas, los 7 días de la semana ",
                 "supportSubtitle": "Obtenga asistencia las 24 horas del día y tranquilidad con nuestro equipo de seguridad dedicado",
                 "trialSubtitle": "Actualmente está protegido por una versión de prueba de 30 días de McAfee LiveSafe, ¡solo quedan {{remainingDays}} días! Suscríbase ahora para ampliar su protección.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Iniciar análisis de archivos"
             },
             "others": {
-                "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo"
+                "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo",
+                "unknown": "Desconocido"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Este dispositivo se está ejecutando en modalidad sin conexión, conecte a Internet",
         "doNotSuspend": "¡Estas pruebas se deben ejecutar sin interrupciones! No cierre ni minimice esta aplicación, y no suspenda ni apague el equipo durante la exploración.",
         "doNotUse": "No utilice el equipo hasta que se complete esta prueba",
+        "testsMustRunUniterrupted": "¡Estas pruebas se deben ejecutar sin interrupciones!",
+        "doNotCloseOrMinimizeApp": "• No cierre ni minimice esta aplicación.",
+        "doNotSwitchApp": "• No cambie a otra aplicación.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• No suspenda ni cierre la sesión ni desactive su sistema.",
         "customize": {
             "name": "Personalizar",
             "test": "Prueba de personalización",

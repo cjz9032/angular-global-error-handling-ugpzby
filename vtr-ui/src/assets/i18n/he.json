@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "...טעינה"
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "הפעלה מחדש",
                             "cancel": "לא עכשיו"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "פונקציות VoIP Hotkey",
+						"description": {
+							"main": "תכונה זו מאפשרת לכם לענות לשיחת VoIP או לדחות אותה על ידי לחיצה על מקשי הקיצור במקלדת:",
+							"f10": "F10: לענות לשיחה",
+							"f11": "F11: לדחות או לנתק את השיחה"
+						},
+						"tooltip": "נכון לעכשיו, תכונה זו נתמכת רק ב- Skype for Business 2016 וב-Microsoft Teams 1.0.<br>כדי להשתמש בתכונה, ראשית יש להוריד ולהתקין את היישומים האלה.",
+						"hasInstalledAppsDescription": "יש לבחור את היישום שבו ברצונכם להשתמש במקשי הקיצור:",
+						"noInstalledAppsDescription": "תכונה זו תומכת רק ביישומים הבאים: ",
+						"hasInstalledAppsNote": "הערה: עבור Microsoft Teams 1.0, לא ניתן להשתמש במקש F11 כדי לנתק את השיחה.",
+						"noInstalledAppsNote": "הערה: כדי להשתמש בתכונה, ראשית יש להוריד ולהתקין את היישומים האלה."
+					}
                 },
                 "userDefinedKey": {
                     "title": "מקש המוגדר על ידי המשתמש",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "קבלו את McAfee",
                 "topBenefits": "מדוע <b>Lenovo ממליצה על McAfee</b> לצורך הגנה על כל המכשירים שלכם",
                 "awardTitle": "אנטי-וירוס עטור פרסים",
-                "awardSubtitle": "מונע כניסת וירוסים, תוכנות זדוניות ותוכנות כופר במחשב שלכם.",
+                "awardSubtitle": "מונע כניסת וירוסים, תוכנות זדוניות ותוכנות כופר במחשב שלכם",
                 "supportTitle": "תמיכה טכנית בחינם, 24/7 ",
                 "supportSubtitle": "הודות לצוות האבטחה המסור שלנו ניתן לקבל סיוע מסביב לשעון וליהנות משקט נפשי",
                 "trialSubtitle": "אתם מוגנים כרגע על ידי גרסת ניסיון ל- 30 יום של McAfee LiveSafe - נותרו {{remainingDays}} ימים בלבד! הירשמו עכשיו כדי להאריך את תקופת ההגנה שלכם.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "התחילו בסריקת קבצים"
             },
             "others": {
-                "othersProtection": "מציע הגנה בסיסית להתקן שלכם {{protectedName}}"
+                "othersProtection": "{{protectedName}} מציע הגנה בסיסית למכשיר שלכם",
+                "unknown": "לא ידוע"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "המכשיר פועל במצב לא מקוון, יש לחבר אותו לאינטרנט",
         "doNotSuspend": "יש לאפשר לבדיקות האלה להתבצע ללא הפרעה! אין לסגור או לצמצם את היישום הזה, ואין להשהות או לכבות את המחשב בזמן הסריקה.",
         "doNotUse": "הימנעו משימוש במחשב שלכם עד לסיום הבדיקה",
+        "testsMustRunUniterrupted": "יש לאפשר לבדיקות האלה להתבצע ללא הפרעה!",
+        "doNotCloseOrMinimizeApp": "• אין לסגור או למזער יישום זה.",
+        "doNotSwitchApp": "• אין לעבור ליישום אחר.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• אין להעביר את המחשב למצב שינה, להתנתק ממנו או לכבות אותו.",
         "customize": {
             "name": "התאמה אישית",
             "test": "התאמה אישית של הבדיקה",

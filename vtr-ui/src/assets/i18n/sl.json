@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "nalaganje..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "VNOVIČNI ZAGON",
                             "cancel": "NE ZDAJ"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funkcije bližnjice VoIP",
+						"description": {
+							"main": "S to funkcijo lahko z uporabo bližnjice na tipkovnici sprejmete ali zavrnete klic VoIP:",
+							"f10": "F10: sprejem klica",
+							"f11": "F11: zavrnitev ali končanje klica"
+						},
+						"tooltip": "Trenutno to funkcija podpirata samo Skype za podjetja 2016 in Microsoft Teams 1.0.<br>Če želite uporabljati to funkcijo, morate najprej prenesti in namestiti programe.",
+						"hasInstalledAppsDescription": "Izberite program, s katerim želite uporabljati bližnjice:",
+						"noInstalledAppsDescription": "Ta funkcija podpira samo naslednje programe: ",
+						"hasInstalledAppsNote": "Opomba: v programu Microsoft Teams 1.0 tipke F11 ni mogoče uporabiti za zaključek klica.",
+						"noInstalledAppsNote": "Opomba: če želite uporabljati to funkcijo, morate najprej prenesti in namestiti programe."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Uporabniško določena tipka",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Pridobite McAfee",
                 "topBenefits": "Zakaj <b>Lenovo priporoča McAfee</b> za zaščito vseh vaših naprav",
                 "awardTitle": "Nagrajena protivirusna zaščita",
-                "awardSubtitle": "Preprečite, da bi virusi, zlonamerna in izsiljevalska programska oprema okužili vaš računalnik.",
+                "awardSubtitle": "Preprečite, da bi virusi, zlonamerna in izsiljevalska programska oprema okužili vaš računalnik",
                 "supportTitle": "Brezplačna strokovna tehnična podpora 24 ur dnevno in vse dni v tednu ",
                 "supportSubtitle": "Naša predana varnostna skupina vam zagotavlja pomoč, ko jo potrebujete, in brezskrbno uporabo",
                 "trialSubtitle": "Trenutno ste zaščiteni s 30-dnevno preizkusno različico programske opreme McAfee LiveSafe – samo še {{remainingDays}} dni! Naročite se zdaj in podaljšajte zaščito.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Zaženite pregledovanje datotek"
             },
             "others": {
-                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo"
+                "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo",
+                "unknown": "Neznan"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Ta naprava deluje brez povezave, vzpostavite internetno povezavo",
         "doNotSuspend": "Ti preskusi se morajo izvajati brez prekinitev. Med pregledom ne zapirajte ali minimizirajte te aplikacije in računalnika ne preklapljajte v stanje pripravljenosti ali ga izklapljajte.",
         "doNotUse": "Računalnika ne uporabljajte, dokler se ne dokonča ta preskus.",
+        "testsMustRunUniterrupted": "Ti preskusi se morajo izvajati brez prekinitev.",
+        "doNotCloseOrMinimizeApp": "• Ne zapirajte ali minimizirajte tega programa.",
+        "doNotSwitchApp": "• Ne preklopite na drug program.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne preklopite v način spanja, ne odjavite se in ne izklopite računalnika.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagajanje preskusa",

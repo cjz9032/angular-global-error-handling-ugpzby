@@ -13,6 +13,8 @@ export enum LocalStorageKey {
 	SecurityOtherFirewall = '[LocalStorageKey] SecurityOtherFirewall',
 	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
 	SecurityMcAfeeMetricList = '[LocalStorageKey] SecurityMcAfeeMetricList',
+	SecurityShowMetricList = '[LocalStorageKey] SecurityShowMetricList',
+	SecurityShowMetricButton = '[LocalStorageKey] SecurityShowMetricButton',
 	SecurityWindowsDefenderStatusList = '[LocalStorageKey] SecurityWindowsDefenderStatusList',
 	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
 	SecurityOthersFirewallStatusList = '[LocalStorageKey] SecurityOthersFirewallStatusList',
@@ -185,6 +187,6 @@ export enum LocalStorageKey {
 	// App Search
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
-	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation'
-
+	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
+	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing'
 }

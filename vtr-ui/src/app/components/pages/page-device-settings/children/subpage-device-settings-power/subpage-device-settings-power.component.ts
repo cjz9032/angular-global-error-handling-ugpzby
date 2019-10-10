@@ -227,8 +227,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-
-		// this.getFlipToBootCapability();
+		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
+		this.checkPowerDriverMissing(this.isPowerDriverMissing);
+		this.getFlipToBootCapability();
 
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
@@ -444,7 +445,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				break;
 		}
 		this.hideBatteryLink();
-		this.showPowerSettings();
+		this.hidePowerLink();
 	}
 
 	async getVantageToolBarCapability() {
@@ -1072,14 +1073,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
 					break;
-				case 'IsPowerDriverMissing':
-					if (this.machineType === 1 && notification.payload) {
-						this.isPowerDriverMissing = notification.payload;
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
-						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
-					}
+				case "IsPowerDriverMissing":
+					this.checkPowerDriverMissing(notification.payload);
 					break;
 				case 'GaugeResetInfo':
 					if (notification.payload) {
@@ -1104,6 +1099,45 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			}
 
 		}
+	}
+
+	public checkPowerDriverMissing(status) {
+		this.isPowerDriverMissing = status;
+		if (this.machineType === 1 && status) {
+			this.showAirplanePowerModeSection = false;
+			this.isChargeThresholdAvailable = false;
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "battery");
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "power");
+		}
+		const cacheValue = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
+		// if previous value is true & current value is false
+		if (this.machineType === 1 && cacheValue && !status) {
+			this.getAlwaysOnUSBCapabilityThinkPad();
+			this.showAirplanePowerModeSection = this.airplanePowerCache.toggleState.available;
+			this.isChargeThresholdAvailable = this.batteryChargeThresholdCache.available;
+			if (!this.commonService.isFoundInArray(this.headerMenuItems, "battery") && !this.hideBatteryLink()) {
+				// "battery" setting is not found & capability available. Go ahead on adding it.
+				const item = {
+					title: 'device.deviceSettings.power.batterySettings.title',
+					path: 'battery',
+					metricsItem: 'BatterySettings'
+				};
+				const addAtIndex = this.commonService.isFoundInArray(this.headerMenuItems, "other") ? this.headerMenuItems.length - 1 : this.headerMenuItems.length;
+
+				this.headerMenuItems.splice(addAtIndex, 0, item);
+			}
+			if (!this.commonService.isFoundInArray(this.headerMenuItems, "power") && !this.hidePowerLink()) {
+				// "power" setting is not found & capability available. Go ahead on adding it.
+				const item = {
+					title: 'device.deviceSettings.power.powerSettings.title',
+					path: 'power',
+					metricsItem: 'PowerSettings'
+				};
+				const addAtIndex = this.commonService.isFoundInArray(this.headerMenuItems, "other") ? this.headerMenuItems.length - 1 : this.headerMenuItems.length;
+				this.headerMenuItems.splice(addAtIndex, 0, item);
+			}
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerDriverMissing, this.isPowerDriverMissing);
 	}
 
 	public showBatteryThresholdsettings(event) {
@@ -1190,13 +1224,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			(this.conservationModeStatus && this.conservationModeStatus.available) || (this.expressChargingStatus && this.expressChargingStatus.available) ||
 			this.isChargeThresholdAvailable)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			return true;
 		}
+		return false;
 	}
 
-	showPowerSettings() {
+	hidePowerLink() {
 		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+			return true;
 		}
+		return false;
 	}
 
 	hideOtherSettingsLink() {

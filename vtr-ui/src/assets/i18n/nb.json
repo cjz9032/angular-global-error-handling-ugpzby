@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "Laster..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "START PÅ NYTT",
                             "cancel": "IKKE NÅ"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Hurtigtastfunksjoner for VoIP",
+						"description": {
+							"main": "Denne funksjonen lar deg besvare eller avvise VoIP-anrop ved å trykke på hurtigtastene på tastaturet:",
+							"f10": "F10: Besvar anropet",
+							"f11": "F11: Avvis anropet eller legg på"
+						},
+						"tooltip": "For øyeblikket støttes denne funksjonen bare av Skype for Business 2016 og Microsoft Teams 1.0.<br>Du må laste ned og installere appene før du kan bruke funksjonen.",
+						"hasInstalledAppsDescription": "Velg appen du vil bruke hurtigtastene i:",
+						"noInstalledAppsDescription": "Denne funksjonen støtter bare appene under: ",
+						"hasInstalledAppsNote": "Merk: I Microsoft Teams 1.0 kan F11 ikke brukes til å legge på.",
+						"noInstalledAppsNote": "Merk: Du må laste ned og installere appene før du kan bruke funksjonen."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Brukerdefinert tast",
@@ -1750,7 +1762,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "recommends": "Hvorfor Lenovo anbefaler <b>McAfee</b> til å beskytte alle enhetene dine",
+                "recommends": "Hvorfor Lenovo anbefaler å beskytte alle enhetene dine med <b>McAfee</b>",
                 "award": "Prisbelønt antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
@@ -1766,7 +1778,7 @@
                 "notAvailable": "Ikke tilgjengelig"
             },
             "windowsDefender": {
-                "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Dette er ikke et dårlig valg, men vi tilbyr prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus i samarbeid med <b>McAfee</b>, slik at du kan <b>beskytte dine dyrebare data</b>.",
+                "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Det er ikke noe dårlig valg, men i samarbeid med <b>McAfee</b> tilbyr vi prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus, slik at du kan <b>beskytte det som er viktigst for deg</b>.",
                 "windowsSubtitle": "Grunnleggende beskyttelse med Windows Defender",
                 "topTip": "Topptips for nettsikkerhet",
                 "topContent": "Finn ut hvordan du kan forsvare deg mot de største truslene på nettet <tag>VIS TIPS</tag>",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Skaff deg McAfee",
                 "topBenefits": "Hvorfor <b>Lenovo anbefaler McAfee</b> til å beskytte alle enhetene dine",
                 "awardTitle": "Prisbelønt antivirus",
-                "awardSubtitle": "Beskytt PC-en mot virus, skadelig programvare og løsepengevirus.",
+                "awardSubtitle": "Beskytt PC-en mot virus, skadelig programvare og løsepengevirus",
                 "supportTitle": "Gratis teknisk støtte døgnet rundt fra eksperter ",
                 "supportSubtitle": "Få hjelp og sinnsro døgnet rundt fra det dedikerte sikkerhetsteamet vårt",
                 "trialSubtitle": "Du beskyttes nå av en 30-dagers prøveversjon av McAfee LiveSafe – bare {{remainingDays}} dager igjen! Abonner nå for å forlenge beskyttelsen.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Start filskanningen"
             },
             "others": {
-                "othersProtection": "{{protectedName}} gir grunnleggende beskyttelse for enheten din"
+                "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din",
+                "unknown": "Ukjent"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Denne enheten kjører i frakoblet modus, så koble den til Internett",
         "doNotSuspend": "Disse testene må kjøre uavbrutt! Ikke lukk eller minimer denne appen, og ikke utsett eller slå av datamaskinen under skanningen.",
         "doNotUse": "Avstå fra å bruke datamaskinen før denne testen er fullført",
+        "testsMustRunUniterrupted": "Disse testene må kjøres uten forstyrrelser!",
+        "doNotCloseOrMinimizeApp": "• Ikke lukk eller minimer denne appen.",
+        "doNotSwitchApp": "• Ikke bytt til en annen app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ikke logg deg av datamaskinen, sett den i hvilemodus eller slå den av.",
         "battery": {
             "title": "Aktiver batteriladeterskel",
             "description": "Aktiverer du egendefinert batterilading, vil selve batteriet generelt sett vare lenger når du bruker denne enheten. Å ikke lade batteriet helt opp vil imidlertid gi kortere brukstid. For å aktivere denne funksjonen helt må du ta ut støpselet til datamaskinen og la batteriet lades helt ut eller til under terskelen for ladestopp.",

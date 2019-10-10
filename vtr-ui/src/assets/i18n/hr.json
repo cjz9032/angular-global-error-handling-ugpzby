@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "Učitavam..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "PONOVNO POKRETANJE",
                             "cancel": "NE SADA"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funkcije VoIP tipkovničkog prečaca",
+						"description": {
+							"main": "Ova značajka omogućuje odgovaranje ili odbijanje VoIP poziva pritiskom na tipkovničke prečace na tipkovnici:",
+							"f10": "F10: odgovor na poziv",
+							"f11": "F11: odbijanje ili prekid poziva"
+						},
+						"tooltip": "Ova je značajka trenutačno podržana samo na platformama Skypeu for Business 2016 i Microsoft Teams 1.0.<br>Kako biste upotrebljavali značajku, najprije morate preuzeti i instalirati aplikacije.",
+						"hasInstalledAppsDescription": "Odaberite aplikaciju na kojoj želite koristiti tipkovničke prečace:",
+						"noInstalledAppsDescription": "Ova značajka podržava samo aplikacije u nastavku: ",
+						"hasInstalledAppsNote": "Napomena: Na platformi Microsoft Teams 1.0, tipka F11 ne može se upotrebljavati za prekidanje poziva.",
+						"noInstalledAppsNote": "Napomena: Kako biste upotrebljavali značajku, najprije morate preuzeti i instalirati aplikacije."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Korisnički definirana tipka",
@@ -1750,7 +1762,7 @@
             "common": {
                 "title": "Zaštita od virusa",
                 "back": "NATRAG",
-                "recommends": "Zašto tvrtka Lenovo preporuča <b>McAfee</b> za zaštitu svih vaših uređaja",
+                "recommends": "Zašto tvrtka Lenovo preporučuje <b>McAfee</b> za zaštitu svih vaših uređaja",
                 "award": "Nagrađivani antivirus",
                 "mcafeePremium": "McAfee LiveSafe zaštita",
                 "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, McAfee LiveSafe bi vam mogao pružiti bolju zaštitu.",
@@ -1766,7 +1778,7 @@
                 "notAvailable": "Nije dostupno"
             },
             "windowsDefender": {
-                "optimallyProtected": "Čini se da trenutno koristite Windows Defender. Nije loš izbor, ali za maksimalnu zaštitu protiv ucjenjivačkog softvera, zlonamjernog softvera i virusa, udružili smo se sa <b>McAfee</b> da bismo vam osigurali nagrađivanu sigurnost <b>kako biste mogli zaštiti ono što je važno.</b>",
+                "optimallyProtected": "Čini se da trenutno koristite Windows Defender. Nije loš izbor, ali za maksimalnu zaštitu protiv ucjenjivačkog softvera, zlonamjernog softvera i virusa, udružili smo se s tvrtkom <b>McAfee</b> kako bismo vam pružili nagrađivanu sigurnost kako biste mogli <b>zaštiti ono što je bitno.</b>",
                 "windowsSubtitle": "Windows Defender Basic zaštita",
                 "topTip": "Najbolji savjeti za internetsku sigurnost",
                 "topContent": "Saznajte kako se možete obraniti od najopasnijih mrežnih prijetnji <tag>PREGLED SAVJETA</tag>",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Nabavite McAfee",
                 "topBenefits": "Zašto <b>tvrtka Lenovo preporuča McAfee</b> za zaštitu svih vaših uređaja",
                 "awardTitle": "Nagrađivani antivirus",
-                "awardSubtitle": "Spriječite da virusi, zlonamjerni softver i ucjenjivački softver zaraze vaše računalo.",
+                "awardSubtitle": "Spriječite da virusi, zlonamjerni softver i ucjenjivački softver zaraze vaše računalo",
                 "supportTitle": "Besplatna stručna tehnička podrška 24/7 ",
                 "supportSubtitle": "Nabavite neprestanu pomoć i mirno spavajte jer znate da je iza vas naš posvećeni sigurnosni tim",
                 "trialSubtitle": "Trenutno ste zaštićeni 30-dnevnim probnim McAfee LiveSafe – preostalo vam je još samo {{remainingDays}} dana! Pretplatite se sada kako biste proširili svoju zaštitu.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Pokrenite skeniranje datoteka"
             },
             "others": {
-                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj"
+                "othersProtection": "{{protectedName}} pruža osnovnu zaštitu vašem uređaju",
+                "unknown": "Nepoznato"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Uređaj radi u izvanmrežnom načinu rada, povežite internet",
         "doNotSuspend": "Ovi se testovi moraju izvoditi bez prekida! Tijekom pregleda nemojte zatvarati ni minimizirati aplikaciju niti prebacivati računalo u stanje mirovanja ili ga isključivati.",
         "doNotUse": "Nemojte koristiti računalo dok se ovaj test ne dovrši",
+        "testsMustRunUniterrupted": "Ovi se testovi moraju izvoditi bez prekida!",
+        "doNotCloseOrMinimizeApp": "• Ne zatvarajte niti minimizirajte ovu aplikaciju.",
+        "doNotSwitchApp": "• Ne prelazite na drugu aplikaciju.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne otvarajte stanje mirovanja, ne odjavljujte se i nemojte isključivati računalo.",
         "customize": {
             "name": "Prilagodba",
             "test": "Prilagodi test",

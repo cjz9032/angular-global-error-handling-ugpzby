@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "ロード中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "リブート",
                             "cancel": "今はしない"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP ホット・キーの機能",
+						"description": {
+							"main": "この機能を使用すると、キーボードのホット・キーを押すことで VoIP 通話に応答または拒否できます。",
+							"f10": "F10: 通話に応答する",
+							"f11": "F11: 通話を拒否または終了する"
+						},
+						"tooltip": "現在、この機能は Skype for Business 2016 および Microsoft Teams 1.0 でのみサポートされています。<br>この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。",
+						"hasInstalledAppsDescription": "ホット・キーを使用するアプリを選択します。",
+						"noInstalledAppsDescription": "この機能は、以下のアプリケーションのみをサポートします。",
+						"hasInstalledAppsNote": "注: Microsoft Teams 1.0 の場合、F11 キーを使用して通話を切ることはできません。",
+						"noInstalledAppsNote": "注: この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。"
+					}
                 },
                 "userDefinedKey": {
                     "title": "ユーザー定義キー",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "McAfee を入手する",
                 "topBenefits": "すべてのデバイスを保護するために <b>Lenovo が McAfee を推奨</b>している理由",
                 "awardTitle": "受賞歴のあるウイルス対策",
-                "awardSubtitle": "ウイルス、マルウェア、ランサムウェアが PC に感染するのを防ぎます。",
+                "awardSubtitle": "ウイルス、マルウェア、ランサムウェアが PC に感染するのを防ぎます",
                 "supportTitle": "24 時間年中無休の専門家による無料テクニカル・サポート",
                 "supportSubtitle": "専任のセキュリティ・チームが 24 時間体制でサポートするため、安心感を得ることができます",
                 "trialSubtitle": "現在、McAfee LiveSafe の 30 日間体験版により保護されています。残りわずか {{remainingDays}} 日です。今すぐサブスクライブして保護を延長しましょう。",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "ファイルのスキャンを開始"
             },
             "others": {
-                "othersProtection": "{{protectedName}}は、デバイスに基本的な保護機能を提供します"
+                "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
+                "unknown": "不明"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "このデバイスはオフラインモードです。インターネットに接続してください",
         "doNotSuspend": "これらのテストは中断しないで実行する必要があります。このアプリを閉じたり最小化したりしないでください。スキャン中にコンピューターを休止状態またはオフにしないでください。",
         "doNotUse": "このテストが終了するまでコンピューターの使用を避けてください",
+        "testsMustRunUniterrupted": "これらのテストは中断しないで実行する必要があります。",
+        "doNotCloseOrMinimizeApp": "• このアプリを閉じたり、最小化したりしないでください。",
+        "doNotSwitchApp": "• 他のアプリに切り替えないでください。",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• コンピューターをスリープ状態にしたり、サインアウトしたり、電源を切ったりしないでください。",
         "customize": {
             "name": "カスタマイズ",
             "test": "テストをカスタマイズ",

@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "Indlæser..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP-genvejsfunktioner:",
+						"description": {
+							"main": "Med denne funktion kan du besvare eller afvise et VoIP-opkald ved at trykke på genvejstasterne på tastaturet:",
+							"f10": "F10: Besvar opkaldet",
+							"f11": "F11: Afvis eller afbryd opkaldet"
+						},
+						"tooltip": "Denne funktion understøttes i øjeblikket kun i Skype for Business 2016 og Microsoft Teams 1.0.<br>Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
+						"hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
+						"noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
+						"hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
+						"noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Brugerdefineret tast",
@@ -1750,7 +1762,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAGE",
-                "recommends": "Hvorfor anbefaler Lenovo, at du bruger <b>McAfee</b> til at beskytte alle dine enheder",
+                "recommends": "Hvorfor anbefaler Lenovo, at du bruger <b>McAfee</b> til at beskytte alle dine enheder?",
                 "award": "Prisvindende antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er i øjeblikket beskyttet af {{protectedName}}. Men du kan blive endnu bedre beskyttet med McAfee LiveSafe.",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Få McAfee",
                 "topBenefits": "Hvorfor <b>anbefaler Lenovo, at du bruger McAfee</b> til at beskytte alle dine enheder",
                 "awardTitle": "Prisvindende antivirus",
-                "awardSubtitle": "Undgå, at virus, malware og ransomware inficerer din pc.",
+                "awardSubtitle": "Undgå, at virus, malware og ransomware inficerer din pc",
                 "supportTitle": "Gratis teknisk support fra eksperter døgnet rundt ",
                 "supportSubtitle": "Få hjælp og ro i sindet døgnet rundt med hjælp fra vores dedikerede sikkerhedsteam",
                 "trialSubtitle": "Du er i øjeblikket beskyttet af en 30-dages prøveversion af McAfee LiveSafe – der er kun {{remainingDays}} dage tilbage! Abonner nu for at udvide din beskyttelse.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Start filscanning"
             },
             "others": {
-                "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed"
+                "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
+                "unknown": "Ukendt"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
         "doNotSuspend": "Disse tests skal køres uden afbrydelser! Du må ikke lukke eller minimere denne app eller låse eller slukke din computer under søgningen.",
         "doNotUse": "Undlad at bruge din computer, før testen er færdig",
+        "testsMustRunUniterrupted": "Disse tests skal køres uden afbrydelser!",
+        "doNotCloseOrMinimizeApp": "• Du må ikke lukke eller minimere denne app.",
+        "doNotSwitchApp": "• Du må ikke skifte til en anden app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Du må ikke sætte computeren i slumretilstand eller logge af eller slukke for computeren.",
         "customize": {
             "name": "Tilpas",
             "test": "Tilpas test",

@@ -17,7 +17,7 @@
 										<div class="d-flex flex-column flex-md-row"
 											[vtrAppSearchScroller]="['search-anti-virus']">
 											<div class="align-self-center">
-												<img class="img-fluid" src="/assets/images/antivirus/protection.png" />
+												<img class="img-fluid" src="assets/images/antivirus/protection.png" />
 											</div>
 											<div class="col align-self-center px-5 mb-5 px-md-0 mb-md-0">
 												<div class="subtitle p-0"
@@ -120,16 +120,16 @@
 							<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
 						</div>
 
-						<div *ngIf="viewModel?.currentPage ==='mcafee'" [ngClass]="{'mcafee': !showMetricButton}">
+						<div *ngIf="viewModel?.currentPage ==='mcafee'" [ngClass]="{'mcafee': !viewModel.showMetricButton}">
 							<vtr-widget-offline-info *ngIf="!isOnline"
 								[title]="'dashboard.offlineInfo.title' | translate" [isSubtitleVisible]="false"
 								[isButtonVisible]="false"></vtr-widget-offline-info>
 							<div class="subheader" [ngClass]="{'mt-minus': isOnline}">
 								<div class="rounded-card-with-shadow p-5 bg-white">
-									<div class="row" [ngClass]="{'md-display': !showMetricButton}">
-										<div *ngIf="showMetricsList" class="col-md-5 px-0 col-12">
+									<div class="row" [ngClass]="{'md-display': !viewModel.showMetricButton}">
+										<div *ngIf="viewModel.showMetricsList" class="col-md-5 px-0 col-12">
 											<vtr-widget-mcafee-metric [metricsList]="viewModel.metricsList"
-												[showMetricButton]="showMetricButton" [common]="common">
+												[showMetricButton]="viewModel.showMetricButton" [common]="common">
 											</vtr-widget-mcafee-metric>
 											<div
 												*ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'">
@@ -149,7 +149,7 @@
 												</p>
 											</div>
 										</div>
-										<div class="col-md-7 col-12 px-0" [ngClass]="{'col-md-12': !showMetricsList}">
+										<div class="col-md-7 col-12 px-0" [ngClass]="{'col-md-12': !viewModel.showMetricsList}">
 											<div class="row justify-content-between">
 												<div class="row">
 													<img class="mcafee-logo align-self-start"

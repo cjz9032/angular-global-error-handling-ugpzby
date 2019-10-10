@@ -261,6 +261,11 @@
 					"option1": "on",
 					"option2": "macro key settings enabled when gaming",
 					"option3": "macro key settings off"
+				},
+				"numberInput": {
+					"title": "Number",
+					"bundledSelected": "is selected bundled",
+					"unbundledSelected": "is selected unbundled"
 				}
 			}
 		},
@@ -1355,6 +1360,19 @@
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
 						}
+					},
+					"VoipHotkeys": {
+						"title": "VoIP Hotkey Functions",
+						"description": {
+							"main": "This feature enables you to answer or reject a VoIP call by pressing the hotkeys on your keyboard:",
+							"f10": "F10: answer the call",
+							"f11": "F11: reject or hang up the call"
+						},
+						"tooltip": "Currently, this feature is supported only on Skype for Business 2016 and Microsoft Teams 1.0.<br>To use the feature, you need to download and install the apps first.",
+						"hasInstalledAppsDescription": "Select the app that you want to use the hotkeys on:",
+						"noInstalledAppsDescription": "This feature only support below applications: ",
+						"hasInstalledAppsNote": "Note: For Microsoft Teams 1.0, the F11 key cannot be used to hang up the call.",
+						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
 					}
 				},
 				"userDefinedKey": {
@@ -1943,7 +1961,7 @@
 				"getMacfee": "Get McAfee",
 				"topBenefits": "Why <b>Lenovo recommends McAfee</b> to protect all your devices",
 				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC.",
+				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC",
 				"MultiTitle": "Multi-device protection",
 				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
 				"networkTitle": "Home network protection",
@@ -1971,7 +1989,8 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "{{protectedName}} offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device",
+				"unknown": "Unknown"
 			}
 		},
 		"wifisecurity": {
@@ -2660,6 +2679,10 @@
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
 		"doNotUse": "Please refrain from using your computer until this test completes",
+		"testsMustRunUniterrupted": "These tests must run uniterrupted!",
+		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
+		"doNotSwitchApp": "• Do not switch to other app.",
+		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

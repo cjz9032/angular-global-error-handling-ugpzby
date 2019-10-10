@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "se incarca..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "REPORNIȚI",
                             "cancel": "NU ACUM"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funcţii tastă rapidă VoIP",
+						"description": {
+							"main": "Această caracteristică vă permite să răspundeţi sau să respingeţi un apel VoIP apăsând tastele rapide de pe tastatură:",
+							"f10": "F10: răspundeţi la apel",
+							"f11": "F11: respingeţi sau închideţi apelul"
+						},
+						"tooltip": "În prezent, această caracteristică este acceptată doar pe Skype for Business 2016 şi pe Microsoft Teams 1.0.<br>Pentru a utiliza caracteristica, mai întâi trebuie să descărcaţi şi să instalaţi aplicaţiile.",
+						"hasInstalledAppsDescription": "Selectaţi aplicaţia în care doriţi să utilizaţi tastele rapide:",
+						"noInstalledAppsDescription": "Această caracteristică acceptă doar aplicaţiile de mai jos: ",
+						"hasInstalledAppsNote": "Notă: Pentru Microsoft Teams 1.0, tasta F11 nu poate fi utilizată pentru a închide apelul.",
+						"noInstalledAppsNote": "Notă: Pentru a utiliza caracteristica, mai întâi trebuie să descărcaţi şi să instalaţi aplicaţiile."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Tastă definită de utilizator",
@@ -1750,7 +1762,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ÎNAPOI",
-                "recommends": "De ce Lenovo recomandă <b>McAfee</b> pentru a vă proteja toate dispozitivele",
+                "recommends": "De ce recomandă Lenovo produsele <b>McAfee</b> pentru a vă proteja toate dispozitivele",
                 "award": "Antivirus premiat",
                 "mcafeePremium": "Protecție McAfee LiveSafe",
                 "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Obțineți McAfee",
                 "topBenefits": "De ce <b>Lenovo recomandă McAfee</b> pentru a vă proteja toate dispozitivele",
                 "awardTitle": "Antivirus premiat",
-                "awardSubtitle": "Împiedicați virușii, malware-ul și ransomware-ul să vă infecteze PC-ul.",
+                "awardSubtitle": "Împiedicați virușii, malware-ul și ransomware-ul să vă infecteze PC-ul",
                 "supportTitle": "Asistență tehnică expert 24/7, gratuită ",
                 "supportSubtitle": "Beneficiați de asistență non-stop și de un plus de siguranță din partea echipei noastre dedicate de securitate",
                 "trialSubtitle": "Sunteți protejat în prezent de o versiune de încercare McAfee LiveSafe de 30 de zile – au mai rămas {{remainingDays}} zile! Abonați-vă acum pentru a prelungi protecția.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Pornire scanare fişiere"
             },
             "others": {
-                "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs."
+                "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs.",
+                "unknown": "Necunoscut"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Acest dispozitiv rulează în modul offline; vă rugăm să vă conectați la internet",
         "doNotSuspend": "Aceste teste trebuie să ruleze fără întreruperi! În timpul scanării, nu închideţi şi nu minimizaţi această aplicaţie, nu întrerupeţi şi nu opriţi computerul.",
         "doNotUse": "Nu utilizaţi computerul înainte de finalizarea acestui test",
+        "testsMustRunUniterrupted": "Aceste teste trebuie să ruleze fără întreruperi!",
+        "doNotCloseOrMinimizeApp": "• Nu închideți și nu minimizați această aplicație.",
+        "doNotSwitchApp": "• Nu comutați la altă aplicație.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nu activați modul repaus, nu vă deconectați și nu opriți computerul.",
         "customize": {
             "name": "Personalizare",
             "test": "Personalizare test",

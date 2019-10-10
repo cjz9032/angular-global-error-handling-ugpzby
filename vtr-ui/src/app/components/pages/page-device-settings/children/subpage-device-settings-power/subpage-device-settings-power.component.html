@@ -10,7 +10,7 @@
 	</div>
 	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
 		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
-	<vtr-smart-standby *ngIf="!isDesktopMachine && !isPowerDriverMissing"
+	<vtr-smart-standby *ngIf="!isDesktopMachine"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 	</vtr-smart-standby>
 	<div *ngIf="showAirplanePowerModeSection || conservationModeStatus?.available || expressChargingStatus?.available || isChargeThresholdAvailable || gaugeResetCapability"
@@ -24,7 +24,7 @@
 				[collapseLinkId]="'device-settings-batterySettings'">
 				<ul class="list-group list-group-flush">
 					<li class=""
-						*ngIf="showAirplanePowerModeSection">
+						*ngIf="showAirplanePowerModeSection && !isPowerDriverMissing">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
 							[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
@@ -64,7 +64,7 @@
 
 
 					<li class=""
-						*ngIf="machineType == 1 && isChargeThresholdAvailable">
+						*ngIf="machineType == 1 && isChargeThresholdAvailable && !isPowerDriverMissing">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
@@ -270,7 +270,7 @@
 
 	<div class="row py-5"
 		id="other"
-		*ngIf="!isPowerDriverMissing && vantageToolbarStatus.available">
+		*ngIf="vantageToolbarStatus.available">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				[vtrAppSearchScroller]="['search-vantage-toolbar']"
@@ -298,7 +298,7 @@
 	</div>
 
 	<div class="row py-5"
-		*ngIf="machineType === 1 && isEnergyStarProduct && !isPowerDriverMissing">
+		*ngIf="machineType === 1 && isEnergyStarProduct">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.energyStar.title' | translate"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
@@ -307,7 +307,7 @@
 				<div class="row energystar-container">
 					<div class="col-lg-2 col-md-2 col-sm-12">
 						<img class="img-fluid mx-auto d-block"
-							src="/assets/images/energystar.png">
+							src="assets/images/energystar.png">
 					</div>
 					<div class="col-lg-10 col-md-10 col-sm-12 align-self-center">
 						<p class="energystar-text">{{'device.deviceSettings.power.energyStar.description' | translate}}

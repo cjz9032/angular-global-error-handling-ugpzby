@@ -27,6 +27,12 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	batteryConditions: BatteryConditionModel[];
 	batteryChargeStatus = BatteryChargeStatus;
 
+	remainingHours: number[] = [];
+	remainingMinutes: number[] = [];
+
+	hourText: string;
+	minutesText: string;
+
 	constructor(
 		public shellServices: VantageShellService,
 		public commonService: CommonService,
@@ -64,11 +70,11 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 						response.detail[i].heading = response.detail.length > 1 ? headings[i] : '';
 						const id = response.detail[i].chargeStatus;
 
-						// response.detail[i].chargeStatusString = this.translate.instant(this.batteryChargeStatus.getBatteryChargeStatus(id));
+						response.detail[i].chargeStatusString = this.batteryChargeStatus.getBatteryChargeStatus(id);
 
-						this.translate.get(this.batteryChargeStatus.getBatteryChargeStatus(id)).subscribe((res: string) => {
-							response.detail[i].chargeStatusString = res;
-						});
+						// this.translate.get(this.batteryChargeStatus.getBatteryChargeStatus(id)).subscribe((res: string) => {
+						// 	response.detail[i].chargeStatusString = res;
+						// });
 
 						if (response.detail[i].chargeStatus === this.batteryChargeStatus.NO_ACTIVITY.id
 							|| response.detail[i].chargeStatus === this.batteryChargeStatus.ERROR.id
@@ -76,6 +82,18 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 							/// if chargeStatus is 'No activity' | 'Error' | 'Not installed'
 							// remaining time will not be displayed
 							response.detail[i].remainingTime = undefined;
+						} else {
+							const totalMin = response.detail[i].remainingTime;
+							this.remainingHours.push(Math.trunc(totalMin / 60));
+							this.remainingMinutes.push(Math.trunc(totalMin % 60));
+
+							this.hourText = this.remainingHours[i] > 0 && this.remainingHours[i] < 2 ?
+								'device.deviceSettings.batteryGauge.hour' :
+								'device.deviceSettings.batteryGauge.hours';
+
+							this.minutesText = this.remainingMinutes[i] > 0 && this.remainingMinutes[i] < 2 ?
+								'device.deviceSettings.batteryGauge.minute' :
+								'device.deviceSettings.batteryGauge.minutes';
 						}
 						if (response.indicator.timeText === 'timeCompletion') {
 							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.chargeCompletionTime';
@@ -84,11 +102,11 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 						}
 						const chemistry: string = response.detail[i].deviceChemistry;
 
-						this.translate.get('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase()).subscribe((res: string) => {
-							this.deviceChemistry[i] = res;
-						});
-						// this.deviceChemistry[i] = this.translate.instant(
-						// 	'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
+						// this.translate.get('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase()).subscribe((res: string) => {
+						// 	this.deviceChemistry[i] = res;
+						// });
+						this.deviceChemistry[i] =
+							'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase();
 					}
 				}
 			}

@@ -19,6 +19,7 @@ export class UiPopoverComponent implements OnInit {
 	close() {
 		this.showMePartially = !this.showMePartially;
 		this.closeClicked.emit(this.item);
+		document.getElementById('main-wrapper').focus();
 	}
 
 	runappKeyup(event) {

@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "загрузка..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Привет! Доступна более новая версия Vantage. Загрузить?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "ПЕРЕЗАГРУЗИТЬ",
                             "cancel": "НЕ СЕЙЧАС"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Функции горячих клавиш VoIP",
+						"description": {
+							"main": "Эта функция позволяет принимать или отклонять вызовы VoIP нажатием горячих клавиш на клавиатуре.",
+							"f10": "F10: ответить на звонок",
+							"f11": "F11: отклонить вызов (повесить трубку)"
+						},
+						"tooltip": "В настоящее время эта функция поддерживается только в Skype для бизнеса 2016 и Microsoft Teams 1.0.<br>Для использования этой функции необходимо скачать и установить приложения.",
+						"hasInstalledAppsDescription": "Выберите приложение, в котором вы хотите использовать горячие клавиши:",
+						"noInstalledAppsDescription": "Эта функция поддерживается только в следующих приложениях: ",
+						"hasInstalledAppsNote": "Примечание: в Microsoft Teams 1.0 невозможно отклонить вызов с помощью клавиши F11.",
+						"noInstalledAppsNote": "Примечание: для использования этой функции необходимо скачать и установить приложения."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Клавиша, определяемая пользователем",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Получить McAfee",
                 "topBenefits": "Почему <b>Lenovo рекомендует McAfee</b> для защиты всех ваших устройств",
                 "awardTitle": "Отмеченная наградами антивирусная программа",
-                "awardSubtitle": "Не допустите заражения своего ПК вирусами, вредоносным ПО и программами-вымогателями.",
+                "awardSubtitle": "Не допустите заражения своего ПК вирусами, вредоносным ПО и программами-вымогателями",
                 "supportTitle": "Бесплатная круглосуточная техническая поддержка экспертного уровня ",
                 "supportSubtitle": "Возможность получения помощи от специалистов нашей службы безопасности в любое время дня и ночи подарит покой и уверенность",
                 "trialSubtitle": "В настоящее время вы пользуетесь 30-дневной пробной версией McAfee LiveSafe — осталось всего {{remainingDays}} дней! Подпишитесь прямо сейчас, чтобы продлить свою защиту.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Начать сканирование файлов"
             },
             "others": {
-                "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства"
+                "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства",
+                "unknown": "Неизвестно"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Это устройство работает в автономном режиме, подключитесь к Интернету",
         "doNotSuspend": "Эти тесты необходимо выполнять непрерывно! Не закрывайте и не сворачивайте это приложение, а также не приостанавливайте работу компьютера и не выключайте его во время сканирования.",
         "doNotUse": "Не используйте компьютер до завершения этого теста",
+        "testsMustRunUniterrupted": "Эти тесты необходимо выполнять непрерывно!",
+        "doNotCloseOrMinimizeApp": "• Не закрывайте и не сворачивайте это приложение.",
+        "doNotSwitchApp": "• Не переключайтесь на другое приложение.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Не переводите компьютер в спящий режим, не отключайте его и не выходите из системы.",
         "customize": {
             "name": "Настройка",
             "test": "Настроить тест",

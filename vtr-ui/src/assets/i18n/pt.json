@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "Carregando..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Olá! Está disponível uma versão mais recente do Vantage, pretende carregá-la?"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "REINICIAR",
                             "cancel": "AGORA NÃO"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funções das teclas de atalho VoIP",
+						"description": {
+							"main": "Esta funcionalidade permite-lhe atender ou rejeitar uma chamada VoIP pressionando as teclas de atalho do teclado:",
+							"f10": "F10: atender a chamada",
+							"f11": "F11: rejeitar ou desligar a chamada"
+						},
+						"tooltip": "Atualmente, esta funcionalidade é suportada apenas no Skype for Business 2016 e Microsoft Teams 1.0.<br>Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações.",
+						"hasInstalledAppsDescription": "Selecione a aplicação em que pretende utilizar as teclas de atalho:",
+						"noInstalledAppsDescription": "Esta funcionalidade suporta apenas as seguintes aplicações: ",
+						"hasInstalledAppsNote": "Nota: Para Microsoft Teams 1.0, a tecla F11 não pode ser utilizada para desligar a chamada.",
+						"noInstalledAppsNote": "Nota: Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Tecla definida pelo utilizador",
@@ -1766,7 +1778,7 @@
                 "notAvailable": "Não Disponível"
             },
             "windowsDefender": {
-                "optimallyProtected": "Parece que está a utilizar o Windows Defender. Não é uma má escolha, mas para a máxima segurança contra ransomware, malware e vírus, nos unimo-nos à <b>McAfee</b> para lhe oferecer uma segurança premiada, de modo a <b>proteger o que importa.</b>",
+                "optimallyProtected": "Parece que está a utilizar o Windows Defender. Não é uma má escolha, mas para a máxima segurança contra ransomware, malware e vírus, unimo-nos à <b>McAfee</b> para oferecer uma segurança premiada, de modo a <b>proteger o que importa.</b>",
                 "windowsSubtitle": "Proteção básica do Windows Defender",
                 "topTip": "Dicas para segurança online",
                 "topContent": "Aprenda a defender-se contra as atuais maiores ameaças online <tag>VER DICAS</tag>",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "Obtenha o McAfee",
                 "topBenefits": "Porque <b>é que a Lenovo recomenda McAfee</b> para proteger todos os seus dispositivos",
                 "awardTitle": "Antivírus premiado",
-                "awardSubtitle": "Evita que vírus, malware e ransomware infetem o seu PC.",
+                "awardSubtitle": "Evita que vírus, malware e ransomware infetem o seu PC",
                 "supportTitle": "Suporte técnico especializado gratuito, 24 horas por dia, 7 dias por semana ",
                 "supportSubtitle": "Obtenha assistência 24 horas por dia com a nossa equipa de segurança dedicada",
                 "trialSubtitle": "Atualmente, o seu computador está protegido por um período de avaliação de 30 dias do McAfee LiveSafe - apenas {{remainingDays}} mais dias! Subscreva agora para ampliar a sua proteção.",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "Iniciar verificação de ficheiros"
             },
             "others": {
-                "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo"
+                "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo",
+                "unknown": "Desconhecido"
             }
         },
         "wifisecurity": {
@@ -2500,6 +2513,10 @@
         "offline": "Este dispositivo está a funcionar no modo offline. Estabeleça ligação à Internet",
         "doNotSuspend": "Estes testes têm de ser executados sem interrupção! Não feche nem minimize esta aplicação e não suspenda ou desligue o computador durante a verificação.",
         "doNotUse": "Procure não utilizar o computador até à conclusão do teste",
+        "testsMustRunUniterrupted": "Estes testes têm de ser executados sem interrupção!",
+        "doNotCloseOrMinimizeApp": "• Não feche nem minimize esta aplicação.",
+        "doNotSwitchApp": "• Não mude para outra aplicação.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Não termine sessão, não desligue ou computador nem o coloque em modo de suspensão.",
         "customize": {
             "name": "Personalizar",
             "test": "Personalizar teste",

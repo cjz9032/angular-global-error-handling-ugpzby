@@ -259,7 +259,12 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +500,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -645,7 +644,7 @@
             "loading": "載入中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
         }
     },
     "privacy": {
@@ -1322,7 +1321,20 @@
                             "reboot": "重新開機",
                             "cancel": "現在不要"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP 快速鍵功能",
+						"description": {
+							"main": "您可以透過這個功能，在鍵盤上按下快速鍵來接聽或拒接 VoIP 來電。",
+							"f10": "F10：接聽來電",
+							"f11": "F11：拒接或掛斷來電"
+						},
+						"tooltip": "目前這項功能僅支援 Skype for Business 2016 及 Microsoft Teams 1.0。<br>若要安裝這項功能，首先您必須下載及安裝上述應用程式。",
+						"hasInstalledAppsDescription": "選取您要在其中使用快速鍵的應用程式：",
+						"noInstalledAppsDescription": "這項功能僅支援下列應用程式：",
+						"hasInstalledAppsNote": "附註：用於 Microsoft Teams 1.0 時，使用 F11 鍵無法掛斷通話。",
+						"noInstalledAppsNote": "附註：若要安裝這項功能，首先您必須下載及安裝上述應用程式。"
+					}
                 },
                 "userDefinedKey": {
                     "title": "使用者定義鍵",
@@ -1787,7 +1799,7 @@
                 "getMacfee": "取得 McAfee",
                 "topBenefits": "為何 <b>Lenovo 建議使用 McAfee</b> 來保護您所有的裝置",
                 "awardTitle": "獲獎肯定的防毒軟體",
-                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦。",
+                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦",
                 "supportTitle": "免費、全天候的技術支援",
                 "supportSubtitle": "我們的專業安全團隊為您提供全天候的幫助，讓您高枕無憂",
                 "trialSubtitle": "您目前僅受 McAfee LiveSafe 30 天試用版的保護 - 還剩下 {{remainingDays}} 天！立即訂閱以延長您的保護。",
@@ -1819,7 +1831,8 @@
                 "startFileScan": "啟動檔案掃描"
             },
             "others": {
-                "othersProtection": "{{protectedName}}為您的裝置提供基本保護"
+                "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
+                "unknown": "不明"
             }
         },
         "wifisecurity": {
@@ -2395,7 +2408,7 @@
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovo 的隱私權政策",
-        "done": "DONE",
+        "done": "完成",
         "interests": {
             "games": "遊戲",
             "news": "新聞",
@@ -2500,6 +2513,10 @@
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
         "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
         "doNotUse": "在這項測試完成之前，請勿使用您的電腦",
+        "testsMustRunUniterrupted": "這些測試在執行時不能中斷！",
+        "doNotCloseOrMinimizeApp": "• 請勿關閉或將此應用程式最小化。",
+        "doNotSwitchApp": "• 請勿切換至其他應用程式。",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 請勿讓電腦進入睡眠模式，或登出或關閉電腦。",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",
