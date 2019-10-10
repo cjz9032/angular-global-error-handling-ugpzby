@@ -8,8 +8,8 @@
 				[textId]="'myDevice-settings-power'"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<vtr-power-smart-settings (isPowerSmartSettingHidden)="hidePowerSmartSetting(false)"
-		*ngIf="!isDesktopMachine"></vtr-power-smart-settings>
+	<vtr-power-smart-settings (isPowerSmartSettingHidden)="true||hidePowerSmartSetting(false)"
+		*ngIf="true||!isDesktopMachine"></vtr-power-smart-settings>
 	<vtr-smart-standby *ngIf="!isDesktopMachine && !isPowerDriverMissing"
 		(smartStandbyCapability)="onSetSmartStandbyCapability($event)">
 	</vtr-smart-standby>

@@ -581,7 +581,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		console.log('modal open');
 		this.modalService.open(ModalIntelligentCoolingModesComponent, {
 			backdrop: 'static',
-			size: 'sm',
+			size: 'lg',
+			keyboard: false,
 			centered: true,
 			windowClass: 'Intelligent-Cooling-Modes-Modal'
 		}).result.then(
@@ -596,6 +597,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		);
 	}
+
 
 	readMore() {
 		this.onReadMoreClick = true;
