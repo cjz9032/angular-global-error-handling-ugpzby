@@ -715,6 +715,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.cancel-modal {
+	.modal-dialog {
+		max-width: 27%;
+	}
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 1.5rem;
+	}
+}
 /*----- onclick-tooltip-style------*/
 .tooltip-click {
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
