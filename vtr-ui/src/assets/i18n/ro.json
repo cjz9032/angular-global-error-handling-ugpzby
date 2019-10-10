@@ -2404,7 +2404,8 @@
         "attention": "Atenţie",
         "cancelTextPrompt": "Sigur anulaţi?",
         "cancelTextProgress": "Aşteptaţi anularea progresului",
-        "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
+        "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi.",
+        "testNotApplicable": "Nu se aplică la scanarea personalizată"
     },
     "smartPerformance": {
         "title": "Health & Support",
