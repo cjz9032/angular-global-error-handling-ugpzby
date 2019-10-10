@@ -29,15 +29,23 @@
 		padding-top: 6rem;
 	}
 
-	.card-left {
-		@media #{$mediaquery_X8} {
-			padding: 4rem 4rem 4rem 8.5rem;
-		}
-	}
-
 	.vtr-page-right-column {
 		@media #{$mediaquery_X8} {
 			padding: 4rem 4rem 4rem 8.5rem;
 		}
+	}
+}
+
+.card-left {
+	padding: 2rem 2rem 2rem 4rem;
+	@media #{$mediaquery_xl} {
+		padding: 2rem 2rem 2rem 2rem;
+	}
+}
+
+.card-right {
+	padding: 2rem 4rem 2rem 2rem;
+	@media #{$mediaquery_xl} {
+		padding: 2rem 2rem 2rem 2rem;
 	}
 }
