@@ -23,6 +23,9 @@
 	.title {
 		font-size: 2.5rem;
 		font-weight: $weight_bold;
+		&.title-detail {
+			text-transform : capitalize;
+		}
 	}
 
 	.sub-title {
