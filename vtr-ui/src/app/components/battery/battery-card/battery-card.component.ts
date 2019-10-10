@@ -263,6 +263,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.modalService
 			.open(content, {
 				backdrop: 'static',
+				keyboard: false,
 				size: 'lg',
 				windowClass: 'battery-modal-size'
 			})
@@ -274,6 +275,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					// on close
 				}
 			);
+	}
+
+	showDetailModalOnEnter(content: any, showDetailModalButton: HTMLElement) {
+		showDetailModalButton.blur();
+		this.showDetailModal(content);
 	}
 
 	/**
@@ -425,4 +431,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 		this.notificationSubscription.unsubscribe();
 	}
+	/*
+		@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+			this.closeModal();
+		} */
+
 }
