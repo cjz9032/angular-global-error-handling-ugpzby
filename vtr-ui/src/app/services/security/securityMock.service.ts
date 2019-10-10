@@ -120,6 +120,7 @@ export class SecurityAdvisorMockService {
 			isDevicePermissionOn: true,
 			isLWSPluginInstalled: true,
 			hasSystemPermissionShowed: true,
+			isSupported: true,
 			launchLocationPrivacy() {
 				return Promise.resolve(true);
 			},

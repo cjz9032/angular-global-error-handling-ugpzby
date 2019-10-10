@@ -68,7 +68,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
-		private deviceService: DeviceService
+		public deviceService: DeviceService
 	) {	}
 
 	ngOnInit() {

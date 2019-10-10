@@ -4,7 +4,8 @@
 		<div class="row">
 			<div class="col" *ngIf="item.info.status >= 0">
 				<div class="title">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
-				<div class="content">
+				<div class="content"
+					*ngIf="item.info.status !== 2">
 					<div class="sub-description">
 						<div class="left-col">
 							<div class="pb-2 status-wrapper">
@@ -23,6 +24,14 @@
 								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="content"
+					*ngIf="item.info.status === 2">
+					<div class="sub-description pb-40">
+						{{'support.warranty.subDescription2' | translate}}
+						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
+						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
 					</div>
 				</div>
 				<div class="button-box">

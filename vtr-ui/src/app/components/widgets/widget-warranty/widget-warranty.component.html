@@ -4,7 +4,8 @@
 		<div class="row">
 			<div class="col"
 				*ngIf="item.info.status >= 0">
-				<div class="title pb-40">{{status.title[item.info.status] | translate}}</div>
+				<div class="title pb-40" *ngIf="item.info.status !== 2">{{status.title[item.info.status] | translate}}</div>
+				<div class="title title-detail pb-40" *ngIf="item.info.status === 2">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
 				<div class="content"
 					*ngIf="item.info.status == 1 || item.info.status == 0">
 					<div class="sub-title">
