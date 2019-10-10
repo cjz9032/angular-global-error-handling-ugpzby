@@ -1,4 +1,4 @@
-<div class="vtr-container-collapsible"
+ <div class="vtr-container-collapsible"
 	[ngClass]="{'white-theme': theme === 'white', 'blue-theme': theme === 'blue'}">
 	<div class="row">
 		<div class="col">
@@ -6,11 +6,12 @@
 				<div class="card-header">
 					<div class="container-fluid">
 						<div class="row align-items-center py-2">
-							<div class="col-auto px-2 text-left mr-auto header"
-									id="{{collapseLinkId+'-collapse-card-title'}}"
-									attr.aria-label="{{collapseLinkId+'-collapse-card-title'}}">
+							<p class="col-auto px-2 text-left mr-auto header"
+								id="{{collapseLinkId+'-collapse-card-title'}}"
+								tabindex="1"
+								attr.aria-label="{{ cardTitle + ',card' }}">
 								{{cardTitle}}
-							</div>
+							</p>
 							<div class="col-auto px-3"
 								*ngIf="allowCollapse">
 								<div class="collapse-control"
@@ -22,11 +23,16 @@
 									[metricsValue]="isCollapsed"
 									[metricsItem]="'btn.collapse'"
 									[metricsParent]="metricsParent"
-									(click)="onToggle()">
+									(click)="onToggle()"
+									(keydown.enter)="onToggle()"
+									role="region"
+									[attr.aria-expanded]="!isCollapsed"
+									[attr.aria-labelledby]="collapseLinkId+'-collapse-card-title'">
 									<div *ngIf="isCollapsed"
 										class="collapse-text"
 										id="{{collapseLinkId+'-expand-title'}}"
-										attr.aria-label="{{collapseLinkId+'-expand-title'}}">
+										attr.aria-label="{{collapseLinkId+'-expand-title'}}"
+										[attr.aria-label]>
 										<!-- Expand -->
 										{{'common.ui.expand' | translate}}
 									</div>
@@ -48,6 +54,7 @@
 				</div>
 				<div class="card-body"
 					[ngbCollapse]="isCollapsed">
+					<!-- what ever content is inside the component tags, goes here -->
 					<ng-content></ng-content>
 				</div>
 			</div>

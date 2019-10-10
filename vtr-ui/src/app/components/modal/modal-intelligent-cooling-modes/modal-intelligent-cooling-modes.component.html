@@ -3,8 +3,11 @@
 		<div class="btn-close">
 			<button type="button"
 				class="close"
-				aria-hidden="true"
-				(click)="closeModal()">
+				tabindex="1"
+				(click)="closeModal()"
+				(keydown.enter)="closeModal()"
+				attr.aria-label="intelligentCoolingModesModal-close-modal"
+				id="intelligentCoolingModesModal-close-modal">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</button>
 		</div>
@@ -55,7 +58,12 @@
 	<hr>
 	<div class="row">
 		<button class="btn close-button"
-			(click)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}</button>
+			tabindex="1"
+			(click)="closeModal()"
+			(keydown.enter)="closeModal()"
+			attr.aria-label="intelligentCoolingModesModal-close-button"
+			id="intelligentCoolingModesModal-close-button">
+			{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}</button>
 	</div>
 
 </div>

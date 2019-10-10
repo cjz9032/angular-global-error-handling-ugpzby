@@ -11,16 +11,19 @@
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable}"
 		(keydown.enter)="onChange($event)"
-		[attr.aria-label]="ariaLabel"
-		role="checkbox">
+		[attr.aria-checked]="value"
+		[attr.aria-disabled]="disabled"
+		[attr.aria-readonly]="readonly"
+		[attr.aria-labelledby]="onOffSwitchId+'_checkbox'"
+		role="checkbox"
+		tabindex="{{tabIndex}}">
 		<label class="pb-1 pl-1"
 			(click)="sendChangeEvent(toggle)"
 			(keydown.enter)="sendChangeEvent(toggle)"
 			vtrMetrics
 			metricsEvent="featureClick"
 			[metricsItem]="onOffSwitchId"
-			[metricsValue]="!value"
-			tabindex="{{tabIndex}}">
+			[metricsValue]="!value">
 			<input type="checkbox"
 				id="{{onOffSwitchId+'_checkbox'}}"
 				#toggle
@@ -33,7 +36,10 @@
 				[checked]="value"
 				[disabled]="disabled"
 				[readonly]="readonly"
-				[attr.aria-label]="ariaLabel"
+				[attr.aria-checked]="value"
+				[attr.aria-disabled]="disabled"
+				[attr.aria-readonly]="readonly"
+				attr.aria-label="{{onOffSwitchId+'_checkbox'}}"
 				(change)="onChange($event)"
 				(keydown.enter)="onChange($event)" />
 			<span class="switch {{ size }}"

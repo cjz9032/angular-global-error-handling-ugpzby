@@ -148,7 +148,8 @@
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
-								<a *ngIf="subitem.externallink"
+								<a ngbDropdownItem
+									*ngIf="subitem.externallink"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
@@ -165,7 +166,8 @@
 									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
 									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
 									role="menuitem">{{subitem.label | translate}}</a>
-								<a *ngIf="!subitem.externallink && subitem.path==='support'"
+								<a ngbDropdownItem
+									*ngIf="!subitem.externallink && subitem.path==='support'"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
@@ -180,7 +182,8 @@
 									(click)="onMenuItemClick(subitem)"
 									(keydown.enter)="onMenuItemClick(subitem)"
 									role="menuitem">{{subitem.label | translate}}</a>
-								<a *ngIf="!subitem.externallink  && subitem.path!=='support'"
+								<a ngbDropdownItem
+									*ngIf="!subitem.externallink  && subitem.path!=='support'"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"

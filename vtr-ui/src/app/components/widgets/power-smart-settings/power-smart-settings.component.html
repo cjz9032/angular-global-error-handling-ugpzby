@@ -8,8 +8,7 @@
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
-					<ul class=" list-group
-              list-group-flush">
+					<ul class="list-group list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch
 								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | titlecase"
@@ -30,7 +29,8 @@
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
 									</div>
 									<div class="row no-gutters"
-										*ngIf="showIntelligentCoolingModes">
+										*ngIf="showIntelligentCoolingModes"
+										role="radiogroup">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
 											[theme]="'blue'"
 											[radioId]="'radioICPerformance'"
@@ -101,7 +101,12 @@
 							<p>{{'device.deviceSettings.power.powerSmartSettings.description5' | translate}}
 								<a class="read-more-link"
 									*ngIf="!onReadMoreClick"
-									(click)="readMore()">{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
+									(click)="readMore()"
+									(keydown.enter)="readMore()"
+									tabindex="1"
+									role="link"
+									attr.aria-label="powerSmartSettings-intelligentCooling-read-more"
+									(keydown.enter)="readMore()">{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 							</p>
 							<div *ngIf="onReadMoreClick">
 								<p> <span
@@ -118,7 +123,11 @@
 								</p>
 							</div>
 							<p class="text-right more-info"><a alt=""
-									(click)="coolingModesPopUp()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a>
+									(click)="coolingModesPopUp()"
+									(keydown.enter)="coolingModesPopUp()"
+									tabindex="1"
+									role="link"
+									attr.aria-label="powerSmartSettings-intelligentCooling-more-info ">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a>
 							</p>
 						</div>
 					</div>
