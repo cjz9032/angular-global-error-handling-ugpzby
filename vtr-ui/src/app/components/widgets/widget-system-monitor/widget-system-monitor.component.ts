@@ -29,7 +29,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public memoryModuleName: string;
 	public ramOver: string;
 	public ramUsage: number;
-	public memoryUsage: number;
+	public memoryUsage = 30;
 	public showIcon = false;
 	public showAllHDs = false;
 	public gpuUsage: number;
@@ -43,7 +43,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	@Input() cpuMax = 2.2;
 	@Input() gpuCurrent = 0.33;
 	@Input() gpuMax = 3.3;
-	@Input() ramCurrent = 10.6;
+	@Input() ramCurrent = 9.6;
 	@Input() ramMax = 32;
 	public hds: any = [];
 	public defaultHds = [
@@ -131,7 +131,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ramCapacity, ramCapacityCache);
 	}
 	GetramUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.ramUsage, this.ramCurrent * 100 / this.ramMax);
+		return this.commonService.getLocalStorageValue(LocalStorageKey.ramUsage, this.memoryUsage);
 	}
 	SetramUsageCache(ramUsageCache) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ramUsage, ramUsageCache);
@@ -255,7 +255,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.cpuUsage = hwInfo.cpuUsage / 100;
 			}
 			if (hwInfo.memoryUsage !== null) {
-				this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
+				 this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
 			}
 			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
