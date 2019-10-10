@@ -358,7 +358,7 @@
 					</li>
 
 					<li class="pt-3"
-						>
+					*ngIf="cameraPrivacyModeStatus.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
 							componentName="Camera Background Blur"
