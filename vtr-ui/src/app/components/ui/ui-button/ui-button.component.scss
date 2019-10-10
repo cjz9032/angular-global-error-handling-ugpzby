@@ -36,6 +36,7 @@
 			}
 
 			&:focus {
+				outline: 0;
 				box-shadow: none;
 			}
 
@@ -79,7 +80,7 @@
 				background: $grey_light !important;
 			}
 			.text {
-				cursor: none;
+				cursor: default;
 				opacity: 0.5;
 			}
 		}
@@ -100,8 +101,9 @@
 			width: 25rem;
 		}
 
-		.min-height {
+		.btn-size-small {
 			min-height: 3.5rem;
+			font-size: 1.4rem;
 		}
 
 		.btn-gradient {
@@ -123,6 +125,13 @@
 			border: 0.1rem solid $grey_dark;
 			&:hover {
 				background: linear-gradient(90deg, $grey_lighter 0%, $grey_lighter 100%);
+			}
+		}
+		.btn-in-red-bg {
+			color: $stop_dark;
+			border: 0.1rem solid $alt;
+			&:focus::after {
+				border: thin solid $orange;
 			}
 		}
 	}

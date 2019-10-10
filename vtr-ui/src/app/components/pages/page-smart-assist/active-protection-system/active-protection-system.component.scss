@@ -42,17 +42,11 @@
 				padding-left: 0.3rem;
 			}
 		}
-		.battery-detail-button {
-			height: 5rem;
-			border-radius: 2.5rem;
-			background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
-				linear-gradient($gradient_angle, $light 0%, $light 100%);
-			color: $light;
-			font-size: $body;
-			font-weight: $weight_bold;
-			letter-spacing: 0.1rem;
-			margin-top: 3rem;
-			line-height: 1.2;
+		.suspend-now-box {
+			padding-top: 2.6rem;
+			display: flex;
+			align-items: center;
+			height: 100%;
 		}
 	}
 	.advanced {
