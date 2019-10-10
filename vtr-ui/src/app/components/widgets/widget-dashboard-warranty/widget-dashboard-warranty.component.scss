@@ -39,6 +39,7 @@
 		font-size: 2.4rem;
 		font-weight: $weight_bold;
 		padding-bottom: 1.5rem;
+		text-transform : capitalize;
 	}
 
 	.sub-title {
@@ -53,9 +54,6 @@
 		font-weight: $weight_medium;
 		line-height: 2rem;
 		padding-bottom: 2rem;
-		span {
-			opacity: .8;
-		}
 	}
 
 	.status-wrapper {
