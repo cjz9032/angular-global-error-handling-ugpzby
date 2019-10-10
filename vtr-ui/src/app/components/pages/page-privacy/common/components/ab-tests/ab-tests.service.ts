@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 import * as config from '../../../utils/ab-test/config.json';
+import { AbTestsBackendService } from './ab-tests-backend.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AbTestsService {
 
-	constructor() {
+	constructor(private abTestsBackendService: AbTestsBackendService) {
 	}
 
 	getDefaultOption(testName: AbTestsName) {
