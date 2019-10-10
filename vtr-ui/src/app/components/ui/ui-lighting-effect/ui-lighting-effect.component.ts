@@ -13,6 +13,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 })
 export class UiLightingEffectComponent implements OnInit, OnChanges{
 	@Input() public options;
+	@Input() public tabindex;
 	@Input() public selectedValue;
 	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();

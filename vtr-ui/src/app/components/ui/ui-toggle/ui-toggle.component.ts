@@ -41,10 +41,12 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		console.log('focus changed', this.focus, changes, Boolean(changes.focus.previousValue) !== this.focus);
-		if (Boolean(changes.focus.previousValue) !== this.focus && this.focus) {
+		// Note: commenting for now need to discuss on it. please check the requirement given for VAN-9331 before uncomment the line.
+
+		/* if (changes && changes.focus && Boolean(changes.focus.previousValue) !== this.focus && this.focus) {
 			document.getElementById(this.onOffSwitchId + '_checkbox').focus();
 		}
+		*/
 	}
 
 	/**
@@ -55,7 +57,7 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	sendChangeEvent($event) {
 		this.currentEvent = $event;
 		if (!this.disabled) { return; }
-		let setIntervalTimer = setInterval(() => {
+		const setIntervalTimer = setInterval(() => {
 			this.disabled = false;
 			this.timer++;
 			if (this.timer >= 50) {
@@ -63,7 +65,7 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 				this.timer = 0;
 				clearInterval(setIntervalTimer);
 			}
-		}, 1)
+		}, 1);
 		if (!this.notChange) {
 			this.value = !this.value;
 		}

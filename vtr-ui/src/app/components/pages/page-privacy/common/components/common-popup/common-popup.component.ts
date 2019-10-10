@@ -1,11 +1,12 @@
-import { Component, Input, OnInit, OnDestroy, ContentChild, TemplateRef } from '@angular/core';
-import { CommonPopupService, CommonPopupEventType } from '../../services/popups/common-popup.service';
+import { Component, ContentChild, Inject, Input, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
+import { CommonPopupEventType, CommonPopupService } from '../../services/popups/common-popup.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { AnalyticsService } from '../../services/analytics/analytics.service';
 import { GetParentForAnalyticsService } from '../../services/get-parent-for-analytics.service';
 import { RouterChangeHandlerService } from '../../services/router-change-handler.service';
 import { VIDEO_POPUP_ID } from '../../../main-layout/sidebar/video-widget/video-widget.component';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
 	selector: 'vtr-common-popup',
@@ -20,7 +21,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	isOpen = false;
 
 	analyticsData = {
-		'confirmationPopup': {
+		confirmationPopup: {
 			ItemName: 'BreachedAccountsClosePopupButton',
 			ItemParent: 'ConfirmYourEmailPopup',
 		},
@@ -55,9 +56,11 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	};
 
 	constructor(
+		@Inject(DOCUMENT) private document: any,
 		private commonPopupService: CommonPopupService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
 		private routerChangeHandlerService: RouterChangeHandlerService,
+		private renderer: Renderer2,
 		private analyticsService: AnalyticsService) {
 	}
 
@@ -77,6 +80,9 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 			)
 			.subscribe(({ id, isOpenState }: CommonPopupEventType) => {
 				this.isOpen = isOpenState;
+				if (this.isOpen) {
+					this.renderer.addClass(this.document.body, 'modal-open');
+				}
 			});
 
 		this.routerChangeHandlerService.onChange$
@@ -97,7 +103,10 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 			return;
 		}
 
+		this.isOpen = false;
+
 		this.commonPopupService.close(this.popUpId);
+		this.renderer.removeClass(this.document.body, 'modal-open');
 
 		const analyticsData = this.analyticsData[this.popUpId];
 

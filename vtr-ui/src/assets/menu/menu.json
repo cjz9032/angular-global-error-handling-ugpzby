@@ -149,10 +149,10 @@
 		"label": "common.menu.security.title",
 		"path": "security",
 		"icon": ["fal", "lock"],
-		"brand": "-[think]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
+		"brand": "-[think]",
 		"forArm": false,
 		"subitems": [{
 			"id": "security",
@@ -344,10 +344,10 @@
 		"label": "common.menu.security.title",
 		"path": "security",
 		"icon": ["fal", "lock"],
-		"brand": "-[think]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
+		"brand": "-[think]",
 		"forArm": false,
 		"subitems": [{
 			"id": "security",

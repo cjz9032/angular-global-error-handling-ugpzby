@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -249,7 +258,8 @@
                     "option1": "on",
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
-                }
+                },
+                "optionSelected": "selected"
             }
         },
         "lightingProfile": {
@@ -383,6 +393,118 @@
                 "text7": {
                     "title": "Renk"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "colourwheelnarrator": {
+                "text1": {
+                    "title": "rgb red value"
+                },
+                "text2": {
+                    "title": "rgb green value"
+                },
+                "text3": {
+                    "title": "rgb blue value"
+                }
             }
         },
         "autoClose": {
@@ -403,6 +525,17 @@
             "noRunningApps": {
                 "title": "Eklenecek çalışan uygulama yok",
                 "body": "Yalnızca çalışmakta olan uygulamalar gösterilir. Lütfen eklemek istediğiniz bir uygulamayı başlatıp geri gelin."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -421,6 +554,28 @@
                     "part1": "Yükseltme için en fazla 5 uygulama daha ekleyebilirsiniz",
                     "part2": "/",
                     "part3": "eklendi"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -490,7 +645,7 @@
             "loading": "Yükleniyor..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
         }
     },
     "privacy": {
@@ -1632,7 +1787,7 @@
                 "getMacfee": "McAfee'yi Edinin",
                 "topBenefits": "<b>Lenovo tüm cihazlarınızı korumak için neden McAfee</b>'yi öneriyor",
                 "awardTitle": "Ödüllü Virüsten Koruma Yazılımı",
-                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin.",
+                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin",
                 "supportTitle": "Uzmanlardan 7/24 ücretsiz teknik destek ",
                 "supportSubtitle": "Özel güvenlik ekibimizden gün boyu yardım alın ve içiniz rahat etsin",
                 "trialSubtitle": "Şu anda McAfee LiveSafe'in 30 günlük ücretsiz deneme sürümü tarafından korunuyorsunuz – yalnızca {{remainingDays}} gün kaldı! Korunma süresini uzatmak için hemen abone olun.",
@@ -1664,7 +1819,8 @@
                 "startFileScan": "Dosya taramasını başlat"
             },
             "others": {
-                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar"
+                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
+                "unknown": "Bilinmiyor"
             }
         },
         "wifisecurity": {
@@ -2345,6 +2501,10 @@
         "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
         "doNotSuspend": "Bu testler kesintisiz çalıştırılmalıdır! Bu uygulamayı kapatmayın veya küçültmeyin ve tarama sırasında bilgisayarınızı uyku moduna almayın ya da kapatmayın.",
         "doNotUse": "Test tamamlanana kadar lütfen bilgisayarınızı kullanmaktan kaçının",
+        "testsMustRunUniterrupted": "Bu testler kesintisiz çalıştırılmalıdır!",
+        "doNotCloseOrMinimizeApp": "• Bu uygulamayı kapatmayın veya küçültmeyin.",
+        "doNotSwitchApp": "• Başka bir uygulamaya geçmeyin.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Bilgisayarınızı uyku kipine almayın, oturumu veya bilgisayarınızı kapatmayın.",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",
@@ -2574,5 +2734,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

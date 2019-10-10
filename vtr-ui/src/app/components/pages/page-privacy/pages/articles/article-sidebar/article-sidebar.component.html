@@ -1,14 +1,14 @@
 <div *ngIf="showedArticle" class="article-widget">
-<!--    <div class="article-widget__top-description">-->
-<!--        <p class="article-widget__title">Privacy hub</p>-->
-<!--		<a class="article-widget__link"-->
-<!--		   vtrSendAnalytics-->
-<!--		   [metricsEvent]="'ItemClick'"-->
-<!--		   [metricsItem]="'ArticlesSeeAllButton'"-->
-<!--		   vtrOfflineMode positionContextTo="left"-->
-<!--		   routerLink="/privacy/articles">See all articles</a>-->
-<!--	</div>-->
-    <vtr-article-preview
+	<!--    <div class="article-widget__top-description">-->
+	<!--        <p class="article-widget__title">Privacy hub</p>-->
+	<!--		<a class="article-widget__link"-->
+	<!--		   vtrSendAnalytics-->
+	<!--		   [metricsEvent]="'ItemClick'"-->
+	<!--		   [metricsItem]="'ArticlesSeeAllButton'"-->
+	<!--		   vtrOfflineMode positionContextTo="left"-->
+	<!--		   routerLink="/privacy/articles">See all articles</a>-->
+	<!--	</div>-->
+	<vtr-article-preview
 		(openArticle)="openArticle($event)"
 		[article]="showedArticle"></vtr-article-preview>
 </div>
@@ -19,13 +19,15 @@
 				[article]="article"
 				data-analyticsName="ArticlePopup">
 			</vtr-article-description>
-			<a class="all-articles-link"
-			   data-analyticsName="NewsPopup"
-			   vtrSendAnalytics
-			   [metricsEvent]="'ItemClick'"
-			   [metricsItem]="'ArticlesSeeAllButton'"
-			   vtrOfflineMode
-			   routerLink="/privacy/articles">see all articles</a>
+			<div class="all-articles-block">
+				<a class="all-articles-link"
+				   data-analyticsName="NewsPopup"
+				   vtrSendAnalytics
+				   [metricsEvent]="'ItemClick'"
+				   [metricsItem]="'ArticlesSeeAllButton'"
+				   vtrOfflineMode
+				   routerLink="/privacy/articles">see all articles</a>
+			</div>
 		</ng-container>
 		<ng-container *ngIf="!article">
 			<vtr-spinner></vtr-spinner>

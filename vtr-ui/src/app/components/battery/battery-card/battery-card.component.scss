@@ -56,8 +56,16 @@
 
 		.btn-disabled {
 			pointer-events: none;
-			opacity: 0.5;
+			::ng-deep .vtr-ui-button {
+				.button-box {
+					.button {
+						background: #e6eaeb;
+						color: #34495e;
+					}
+				}
+			}
 		}
+
 		.feature-note {
 			background-color: $shade_lightest;
 			border: 1px solid $shade_lighter;
