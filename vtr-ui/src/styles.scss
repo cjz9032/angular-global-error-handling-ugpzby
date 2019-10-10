@@ -949,18 +949,23 @@ button:focus, .button:focus {
 						color: $main_light;
 					}
 					&::before {
-						content: 'âž§';
+						content: '';
 						position: absolute;
 						display: block;
 						// height: 4rem;
 						// height: 4rem;
 						font-size: 6rem;
 						color: $main_darkest;
-						transform: rotate(90deg);
+						//transform: rotate(90deg);
 						bottom: -3rem;
 						left: calc(50% - 2rem);
 						z-index: 0;
 						opacity: 0;
+						height: 0;
+						width: 0;
+						border-left: 20px solid transparent;
+						border-right: 20px solid transparent;
+						border-top: 20px solid $main_darkest;
 					}
 					&.active{
 						background: $main_lightest !important;
