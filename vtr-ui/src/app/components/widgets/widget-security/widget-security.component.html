@@ -5,7 +5,8 @@
 				<div class="row">
 					<div class="col circle-container">
 						<div class="circle percent-{{percentValue}}">
-							<fa-icon [icon]="percentValue | percentIcon"></fa-icon>
+							<img *ngIf="percentValue === 100" [src]=" 'assets/icons/SecurityAdvisor/Shield_check.svg' | svgInline | async" alt="" srcset="">
+							<img *ngIf="percentValue !== 100" [src]=" 'assets/icons/SecurityAdvisor/Shield_X.svg' | svgInline | async" alt="" srcset="">
 						</div>
 					</div>
 				</div>
