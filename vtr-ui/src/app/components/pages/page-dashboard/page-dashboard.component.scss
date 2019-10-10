@@ -20,6 +20,7 @@
 	.mt--50 {
 		margin-top: -5.3125rem;
 	}
+
 	.system-status-block {
 		padding-top: 7.5rem;
 	}
@@ -27,6 +28,13 @@
 	.pt-6 {
 		padding-top: 6rem;
 	}
+
+	.card-left {
+		@media #{$mediaquery_X8} {
+			padding: 4rem 4rem 4rem 8.5rem;
+		}
+	}
+
 	.vtr-page-right-column {
 		@media #{$mediaquery_X8} {
 			padding: 4rem 4rem 4rem 8.5rem;
