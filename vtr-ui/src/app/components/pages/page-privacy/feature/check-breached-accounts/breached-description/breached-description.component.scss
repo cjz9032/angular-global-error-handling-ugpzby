@@ -64,15 +64,15 @@
 		}
 
 		&--password:before {
-			background: url("/assets/icons/privacy-tab/icon-password-black.svg") 0 0 no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-password-black.svg") 0 0 no-repeat;
 		}
 
 		&--email:before {
-			background: url("/assets/icons/privacy-tab/icon-email-black.svg") 0 0 no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-email-black.svg") 0 0 no-repeat;
 		}
 
 		&--name:before {
-			background: url("/assets/icons/privacy-tab/icon-name-black.svg") 0 0 no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-name-black.svg") 0 0 no-repeat;
 		}
 	}
 }
