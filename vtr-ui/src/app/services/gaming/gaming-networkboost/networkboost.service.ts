@@ -10,6 +10,14 @@ export class NetworkBoostService {
 	private gamingNetworkBoost: any;
 	public isShellAvailable = false;
 
+	public cardContentPositionA: any = {
+		FeatureImage:
+			'./../../../../assets/cms-cache/content-card-4x4-support.jpg'
+	};
+	public cardContentPositionB: any = {
+		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+	};
+
 	constructor(private shellService: VantageShellService, private commonService: CommonService) {
 		this.gamingNetworkBoost = shellService.getNetworkBoost();
 		if (this.gamingNetworkBoost) {
