@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Bienvenido al uso de Actualización de sistema.",
-            "title": "Un sistema actualizado es un sistema en buen estado.",
+			"title": "Un sistema actualizado es un sistema en buen estado.",
+			"installingTitle": "Durante la actualización, no ponga su equipo en modalidad de suspensión o hibernación.",
             "last": "Última actualización: ",
             "next": "Siguiente actualización programada: ",
             "checkButton": "COMPROBAR ACTUALIZACIONES",

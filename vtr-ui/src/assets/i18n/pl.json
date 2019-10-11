@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Witamy w programie Aktualizacja systemu.",
-            "title": "Zaktualizowany system to wydajny system.",
+			"title": "Zaktualizowany system to wydajny system.",
+			"installingTitle": "W trakcie aktualizacji nie przełączaj komputera w tryb uśpienia ani hibernacji.",
             "last": "Ostatnia aktualizacja: ",
             "next": "Następna planowana aktualizacja: ",
             "checkButton": "SPRAWDŹ AKTUALIZACJE",

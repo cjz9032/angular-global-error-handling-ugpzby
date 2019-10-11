@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Slobodno se koristite Ažuriranjem sustava.",
-            "title": "Ažurirani sustav je zdrav sustav.",
+			"title": "Ažurirani sustav je zdrav sustav.",
+			"installingTitle": "Tijekom ažuriranja ne stavljajte računalo u stanje mirovanja ili hibernacije.",
             "last": "Zadnje ažuriranje: ",
             "next": "Sljedeće zakazano ažuriranje: ",
             "checkButton": "TRAŽI AŽURIRANJA",

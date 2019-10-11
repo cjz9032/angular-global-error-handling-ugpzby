@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
-            "title": "Een bijgewerkt systeem is een gezond systeem.",
+			"title": "Een bijgewerkt systeem is een gezond systeem.",
+			"installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",

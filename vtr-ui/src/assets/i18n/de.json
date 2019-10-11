@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Willkommen bei der Systemaktualisierung.",
-            "title": "Ein aktuelles System ist in gutem Zustand.",
+			"title": "Ein aktuelles System ist in gutem Zustand.",
+			"installingTitle": "Versetzen Sie Ihren Computer während der Aktualisierung nicht in den Energiesparmodus oder Ruhezustand.",
             "last": "Letzte Aktualisierung: ",
             "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",

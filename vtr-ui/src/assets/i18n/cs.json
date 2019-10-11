@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vítejte při použití Aktualizace systému.",
-            "title": "Aktualizovaný systém je zdravým systémem.",
+			"title": "Aktualizovaný systém je zdravým systémem.",
+			"installingTitle": "Během aktualizací zařízení nepřepínejte počítač do režimu spánku ani do režimu hibernace.",
             "last": "Poslední aktualizace: ",
             "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",

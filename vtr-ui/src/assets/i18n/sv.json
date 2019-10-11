@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Välkommen att använda Systemuppdatering.",
-            "title": "Ett uppdaterat system är ett friskt system.",
+			"title": "Ett uppdaterat system är ett friskt system.",
+			"installingTitle": "Sätt inte datorn i strömspar- eller viloläge under uppdateringarna.",
             "last": "Senast uppdaterat: ",
             "next": "Nästa schemalagda uppdatering: ",
             "checkButton": "SÖK EFTER UPPDATERINGAR",

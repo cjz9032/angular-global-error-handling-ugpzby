@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
-            "title": "A naprakész rendszer megfelelően működik.",
+			"title": "A naprakész rendszer megfelelően működik.",
+			"installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",

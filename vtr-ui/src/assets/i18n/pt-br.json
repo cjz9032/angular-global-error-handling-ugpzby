@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Bem-vindo ao uso da Atualização do Sistema.",
-            "title": "Um sistema atualizado é um sistema saudável.",
+			"title": "Um sistema atualizado é um sistema saudável.",
+			"installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR ATUALIZAÇÕES",

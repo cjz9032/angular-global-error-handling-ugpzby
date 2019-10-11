@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Dobro došli u Ažuriranje sistema.",
-            "title": "Ažuran sistem je zdrav sistem.",
+			"title": "Ažuran sistem je zdrav sistem.",
+			"installingTitle": "Tokom ažuriranja nemojte da prebacujete računar u režim spavanja ili hibernacije.",
             "last": "Poslednji put ažurirano: ",
             "next": "Sledeće planirano ažuriranje: ",
             "checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",

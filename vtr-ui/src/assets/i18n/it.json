@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Benvenuto in Aggiornamento del sistema.",
-            "title": "Un sistema aggiornato è un sistema sano.",
+			"title": "Un sistema aggiornato è un sistema sano.",
+			"installingTitle": "Durante gli aggiornamenti, non attivare la modalità Sospensione o Ibernazione del computer.",
             "last": "Ultimo aggiornamento: ",
             "next": "Prossimo aggiornamento pianificato: ",
             "checkButton": "VERIFICA DISPONIBILITÀ AGGIORNAMENTI",

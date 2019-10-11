@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vous êtes invité à utiliser la mise à jour du système.",
-            "title": "Un système à jour est un système sain.",
+			"title": "Un système à jour est un système sain.",
+			"installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",

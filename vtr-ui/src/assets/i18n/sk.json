@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vitajte v službe aktualizácie systému.",
-            "title": "Aktuálny systém je zdravý systém.",
+			"title": "Aktuálny systém je zdravý systém.",
+			"installingTitle": "Počas vykonávania aktualizácií neprepínajte svoj počítač do režimu spánku ani do režimu dlhodobého spánku.",
             "last": "Posledná aktualizácia: ",
             "next": "Ďalšia plánovaná aktualizácia: ",
             "checkButton": "VYHĽADAŤ AKTUALIZÁCIE",
