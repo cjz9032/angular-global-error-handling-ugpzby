@@ -29,11 +29,4 @@ export class UiPopoverComponent implements OnInit {
 			}, 2);
 		}
 	}
-
-	runappKeyup(event) {
-		if (event.which == 9) {
-			const focusElem = document.getElementById('gaming_popup_close');
-			focusElem.focus();
-		}
-	}
 }

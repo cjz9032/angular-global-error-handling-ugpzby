@@ -58,11 +58,4 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
       }, 2);
     }
   }
-
-  keydownFn(event){
-    if(event.which === 9){
-      let txt = document.getElementById("close");
-      txt.focus();
-    }
-  }
 }

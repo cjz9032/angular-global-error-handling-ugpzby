@@ -176,32 +176,6 @@ export class PageSmartAssistComponent
 		}
 	}
 
-	ngOnDestroy() {
-		document.removeEventListener('visibilitychange', this.visibilityChange);
-	}
-	initDataFromCache() {
-		try {
-			this.smartAssistCache = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCache, undefined);
-			if (this.smartAssistCache !== undefined) {
-				this.intelligentSecurity = this.smartAssistCache.intelligentSecurity;
-				this.intelligentScreen = this.smartAssistCache.intelligentScreen;
-				this.intelligentMedia = this.smartAssistCache.intelligentMedia;
-				this.isAPSAvailable = this.smartAssistCache.isAPSAvailable;
-				this.hpdSensorType = this.smartAssistCache.hpdSensorType;
-			} else {
-				this.smartAssistCache = new SmartAssistCache();
-				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
-				this.smartAssistCache.intelligentMedia = this.intelligentMedia;
-				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
-				this.smartAssistCache.hpdSensorType = this.hpdSensorType;
-				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-			}
-		} catch (error) {
-			console.log('initDataFromCache', error);
-		}
-	}
-
 	initVisibility() {
 		try {
 			console.log('initVisibility: ', this.smartAssistCapability);
@@ -718,36 +692,10 @@ export class PageSmartAssistComponent
 		this.getFacialRecognitionStatus();
 		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
 	}
-					}).catch(error => {
-						this.logger.error('getVideoPauseResumeStatus.error', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('getVideoPauseResumeStatus' + error.message);
-			return EMPTY;
-		}
-	}
 
-	initHPDSensorType() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.getHPDSensorType()
-					.then((type: number) => {
-						this.hpdSensorType = type;
-						this.smartAssistCache.hpdSensorType = this.hpdSensorType;
-						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-						console.log('getHPDSensorType: ', this.hpdSensorType);
-					}).catch(error => {
-						console.error('getHPDSensorType', error);
-					});
-			}
-		} catch (error) {
-			console.error('getHPDSensorType' + error.message);
-		}
-	}
 	ngOnDestroy() {
 		clearTimeout(this.getAutoScreenOffNoteStatus);
+		document.removeEventListener('visibilitychange', this.visibilityChange);
 	}
 
 }

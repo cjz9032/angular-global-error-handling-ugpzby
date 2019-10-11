@@ -74,13 +74,4 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 			}
 		}
 	}
-
-	runappKeyup(event, index) {
-		if (event.which === 9) {
-			if (index === this.runningList.length - 1) {
-				let txt1 = document.getElementById('close');
-				txt1.focus();
-			}
-		}
-	}
 }

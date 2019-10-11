@@ -27,11 +27,4 @@ export class UiMacrokeyPopupComponent implements OnInit {
 			txt1.focus();
 		}
 	}
-
-	keydownFn(event) {
-		if (event.which === 9) {
-			const txt1 = document.getElementById('close');
-			txt1.focus();
-		}
-	}
 }

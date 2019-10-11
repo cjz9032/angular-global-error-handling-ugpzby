@@ -389,13 +389,12 @@ export class AppComponent implements OnInit, OnDestroy {
 		} catch (error) {}
 	}
 
-	private notifyNetworkState(state) {
-		if (state && state.toString() === NetworkStatus.Available) {
-			this.commonService.isOnline = true;
-			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: true });
+	private notifyNetworkState() {
+		this.commonService.isOnline = navigator.onLine;
+		if (navigator.onLine) {
+			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
 		} else {
-			this.commonService.isOnline = false;
-			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: false });
+			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
 		}
 	}
 
