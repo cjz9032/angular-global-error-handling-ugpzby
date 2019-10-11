@@ -50,7 +50,13 @@
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 padding: 0;
-                border-bottom: 0.1rem solid $light;
+				border-bottom: 0.1rem solid $light;
+				&:hover {
+					text-decoration: none;
+				}
+				&:focus {
+					text-decoration: none;
+				}
             }
         }
     }
