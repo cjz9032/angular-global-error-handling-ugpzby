@@ -193,7 +193,44 @@
 					}
 				}
 			}
+			.icon-bar {
+				background: $main_lightest;
+				border-radius: 0.8rem;
 
+				.listed-task-icons {
+					padding-left: 0;
+					.icon-box {
+						width: 20%;
+						position: relative;
+						&::after {
+							content: '';
+							position: absolute;
+							height: 100%;
+							width: 1px;
+							background: $light;
+							right: 0;
+							top: 0;
+						}
+						&:last-child {
+							&::after {
+								display: none;
+							}
+						}
+						fa-icon {
+							font-size: 2.6rem;
+							margin-right: 0.8rem;
+							color: $main_shade;
+						}
+						p {
+							font-size: 1.4rem;
+							max-width: 6rem;
+							margin-top: 0.6rem;
+							line-height: 1.6rem;
+							color: $main_shade;
+						}
+					}
+				}
+			}
 		}
 		.free-scan {
 			background: $main_darkest;
