@@ -20,6 +20,14 @@ but not to any other element on the page. using ::ng-deep
 			/* slider selected area*/
 			.ng5-slider-selection {
 				background: $main;
+				@media #{$white-on-black}{
+					background-color: $highlight_bright;
+					
+				}
+				@media #{$black-on-white}{
+					background-color: darkviolet;
+					
+				}
 			}
 			/* slider thumb */
 			.ng5-slider-pointer {
@@ -29,6 +37,15 @@ but not to any other element on the page. using ::ng-deep
 				border-radius: 2.8rem;
 				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
 					linear-gradient($gradient_angle, $light 0%, $light 100%);
+
+					@media #{$white-on-black}{
+						background-color: $highlight_bright;
+						
+					}
+					@media #{$black-on-white}{
+						background-color: darkviolet;
+						
+					}
 				&::after {
 					display: block;
 					text-align: center;
@@ -111,5 +128,14 @@ but not to any other element on the page. using ::ng-deep
 
 	[disabled].ng5-slider .ng5-slider-pointer {
 		background-color: initial;
+		@media #{$white-on-black}{
+			background-color: green;
+			
+		}
+		@media #{$black-on-white}{
+			background-color: green;
+			
+		}
+
 	}
 }

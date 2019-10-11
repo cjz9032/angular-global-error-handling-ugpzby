@@ -131,8 +131,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchContent();
 		});
-
-		this.getWarrantyInfo(this.isOnline);
 	}
 
 	ngDoCheck(): void {
@@ -158,10 +156,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		}
 		this.qaService.destroyChangeSubscribed();
-	}
-
-	getWarrantyInfo(online: boolean) {
-		this.supportService.getWarrantyInfo(online);
 	}
 
 	private fetchContent(lang?: string) {

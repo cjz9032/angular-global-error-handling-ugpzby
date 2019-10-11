@@ -18,7 +18,9 @@
 			metricsItem="{{metricsParent}}ModalCloseIcon"
 			(click)="closeModal()"
 			tabindex="1"
-			(keydown.enter)="closeModal()">
+			(keydown.enter)="closeModal()"
+			attr.aria-label="device-smartAssist-voice-modal-close"
+			id="device-smartAssist-voice-modal-close">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""
 				srcset="">
@@ -134,6 +136,8 @@
 			role="button"
 			(click)="closeModal()"
 			(keydown.enter)="closeModal()"
+			attr.aria-label="device-smartAssist-voice-modal-close-button"
+			id="device-smartAssist-voice-modal-close-button"
 			vtrMetrics
 			metricsEvent="FeatureClick"
 			metricsParent="Device.SmartAssist.{{metricsParent}}"

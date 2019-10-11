@@ -1,8 +1,8 @@
 <div class="select-box">
 	<div class="dropdown">
 		<div class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()" (keydown.enter)="toggleOptions()"
-			[attr.aria-label]="'Lighting effect '+selectedOption.label" role="combobox"
-			[attr.aria-expanded]="showOptions" aria-haspopup="true" tabindex="0">
+			attr.aria-label="{{('gaming.lightingProfile.lightingeffectnarrator.lightingEffect.title' | translate)+(selectedOption.label | translate)}}" role="combobox"
+			[attr.aria-expanded]="showOptions" aria-haspopup="true" tabindex="{{tabindex}}">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
 		</div>
@@ -13,8 +13,8 @@
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
 						(mouseleave)="resetDescription(option)" (keydown.enter)="optionSelected(option)"
 						[attr.aria-selected]="option.value===options.curSelected?'true':'false'" role="option"
-						[attr.aria-label]="option.value===selectedOption.value?option.label+' selected':option.label"
-						tabindex="0" (focusout)="itemsFocused()">
+						[attr.aria-label]="option.value===selectedOption.value?(option.label | translate)+' selected':(option.label | translate)"
+						tabindex="{{tabindex}}" (focusout)="itemsFocused()">
 						<a class="dropdown-item" id="{{option.id}}" tabindex="-1" vtrMetrics
 							[metricsItem]="option.metricitem" metricsParam="{{option.metricitem}}"
 							metricsValue="{{option.value}}" metricsEvent="featureClick">

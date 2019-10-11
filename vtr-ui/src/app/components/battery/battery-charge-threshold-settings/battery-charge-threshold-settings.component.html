@@ -110,16 +110,10 @@
 					<div class="row"
 						*ngIf="!displayNoteOnly">
 						<div class="col px-20">
-							<div class="auto-set-checkbox custom-checkbox-gaming"
-								tabindex="1"
-								(keydown.enter)='isCheckedAutoInput.click()'
-								[attr.aria-checked]="isCheckedAuto"
-								attr.aria-labelledby="isCheckedAutoInput + randomNumber"
-								role="checkbox">
-								<input type="checkbox"
-									class="custom-control-input"
-									#isCheckedAutoInput
-									[id]="isCheckedAutoInput + randomNumber"
+							<div class="auto-set-checkbox custom-checkbox-gaming">
+								<input type="checkbox" class="custom-control-input"
+									[id]="'batteryThreshold-options-checkboxText'"
+							        attr.aria-label="batteryThreshold-options-checkboxText"
 									[name]="isCheckedAutoInput + randomNumber"
 									[(ngModel)]="isCheckedAuto"
 									(ngModelChange)='toggleAutoChargeSettings($event)'>

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild, ViewRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -7,7 +7,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { BatteryInformation, ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { ViewRef } from '@angular/core';
 import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
 import { BatteryConditionsEnum, BatteryStatus } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
@@ -119,12 +118,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		try {
 			if (this.batteryService.isShellAvailable) {
 				this.getBatteryDetails();
-				// this.getBatteryDetailsMonitor();
-
-				this.batteryCardTimer = setInterval(() => {
-					console.log('Trying after 30 seconds');
-					this.getBatteryDetails();
-				}, 30000);
+				this.getBatteryDetailsMonitor();
 			}
 		} catch (error) {
 			this.logger.error('getBatteryDetailOnCard: ' + error.message);
@@ -263,6 +257,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.modalService
 			.open(content, {
 				backdrop: 'static',
+				keyboard: false,
 				size: 'lg',
 				windowClass: 'battery-modal-size'
 			})
@@ -275,6 +270,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}
 			);
 	}
+
+	/* showDetailModalOnKDEnter(event: any, content: any) {
+		var target = event.target || event.srcElement || event.currentTarget;
+		this.showDetailModal(content);
+	} */
 
 	/**
 	 * sets a battery condition tip & icon from battery health & battery condition
@@ -333,11 +333,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
-			// if (machineType === 1 && machineType === 3) {
 			if (isThinkPad) {
 				if (this.batteryGauge.acAdapterStatus && this.batteryGauge.acAdapterStatus !== null) {
 					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'supported' && this.batteryGauge.isAttached) {
-						this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' ? 'ac' : this.batteryGauge.acAdapterType;
+						this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' ? 'ac' : 'USB-C';
 						this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: this.batteryGauge.acAdapterType };
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
 					}
@@ -416,13 +415,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		// if (this.batteryService.isShellAvailable) {
-		// 	this.batteryService.stopMonitor();
-		// }
-		clearTimeout(this.batteryCardTimer);
+		if (this.batteryService.isShellAvailable) {
+			this.batteryService.stopMonitor();
+		}
 		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 		this.notificationSubscription.unsubscribe();
 	}
+	/*
+		@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+			this.closeModal();
+		} */
+
 }

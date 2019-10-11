@@ -190,6 +190,11 @@ export class CommonService {
 		return array.filter(e => e.path !== path);
 	}
 
+	public isFoundInArray(array: any[], path: string) {
+		let element = array.find(e => e.path === path);
+		return element ? true : false;
+	}
+
 	public getCapabalitiesNotification(): Observable<any> {
 		return this.gamingCapabalities.asObservable();
 	}

@@ -74,7 +74,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
-		this.brand = this.deviceService.getMachineInfoSync().brand;
+		if (this.deviceService.getMachineInfoSync()) {
+			this.brand = this.deviceService.getMachineInfoSync().brand;
+		}
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
@@ -91,11 +93,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.language = result.Lang;
+			this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think';
 		}).catch(e => {
 			this.region = 'us';
 			this.language = 'en';
 		});
-		this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think';
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);

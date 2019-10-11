@@ -22,13 +22,18 @@
 				class="close-button bg-white"
 				id="myDevice-settings-battery-deatails-card-close-icon"
 				aria-label="myDevice-settings-battery-deatails-card-close-icon"
-				(click)="modal.dismiss('Cross click')">
+				tabindex="1"
+				ngbAutofocus
+				(click)="modal.dismiss('Cross click')"
+				(keydown.esc)="modal.dismiss('Cross click')"
+				(keydown.enter)="modal.dismiss('Cross click')">
 				<!-- <img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="X" /> -->
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 
 			</button>
 		</div>
-		<div class="modal-body">
+		<div class="modal-body"
+			tabindex="1">
 			<vtr-battery-detail [dataInfo]="batteryInfo"
 				[dataIndicator]="batteryIndicator"
 				[dataConditions]="batteryConditions"> </vtr-battery-detail>
@@ -54,7 +59,7 @@
 			</vtr-battery-indicator>
 		</div>
 
-		<div class="p-3 row"
+		<div class="row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto "
 				[class.normal-ACAdapter-condition]="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport">
@@ -90,7 +95,7 @@
 			</div>
 
 		</div>
-		<div class="feature-note p-2 mt-2"
+		<div class="feature-note p-3 mt-2"
 			*ngIf="chargeThresholdInfo?.isOn">
 			<div class="row">
 				<p id="myDevice-settings-batteryGauge-threshold-note"
@@ -112,7 +117,11 @@
 				id="myDevice-settings-battery-details-btn"
 				[linkId]="'myDevice-settings-battery-details-btn'"
 				[label]="'device.deviceSettings.batteryGauge.button' | translate"
-				aria-label="myDevice-settings-battery-details-btn"></vtr-ui-button>
+				attr.aria-label="myDevice-settings-battery-details-btn"
+				[attr.aria-disabled]="isBatteryDetailsBtnDisabled"
+				[tabindex]="1"></vtr-ui-button>
+
+
 		</div>
 	</div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ChangeContext } from 'ng5-slider';
 
@@ -23,7 +23,8 @@ import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-
 	templateUrl: './page-smart-assist.component.html',
 	styleUrls: ['./page-smart-assist.component.scss']
 })
-export class PageSmartAssistComponent implements OnInit {
+export class PageSmartAssistComponent 
+   implements OnInit, OnDestroy {
 
 	title = 'Smart Assist';
 	back = 'BACK';
@@ -42,12 +43,15 @@ export class PageSmartAssistComponent implements OnInit {
 	public zeroTouchLockTitle: string;
 	public options: any;
 	// public keepMyDisplay: boolean;
+	public getAutoScreenOffNoteStatus: any;
 	public intelligentScreen: IntelligentScreen;
 	public intelligentMedia = new FeatureStatus(false, true);
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
 	public hpdSensorType = 0;
+	public sensitivityVisibility = false;
+	public sesnsitivityAdjustVal = 0;
 	smartAssistCache: SmartAssistCache;
 
 	headerMenuItems: PageAnchorLink[] = [
@@ -116,6 +120,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.setIntelligentScreen();
 			this.initDataFromCache();
 			this.initSmartAssist(true);
+			this.getHPDLeaveSensitivityVisibilityStatus();
 		}
 	}
 
@@ -223,6 +228,46 @@ export class PageSmartAssistComponent implements OnInit {
 		}
 	}
 
+	public getHPDLeaveSensitivityVisibilityStatus() {
+		try {
+			this.smartAssist.getHPDLeaveSensitivityVisibility().then((value: any) => {
+				console.log('getHPDLeaveSensitivityVisibility value----->', value);
+				this.sensitivityVisibility = value;
+				if (this.sensitivityVisibility) {
+					this.getHPDLeaveSensitivityStatus();
+				}
+			});
+
+		} catch (error) {
+			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			return EMPTY;
+		}
+	}
+
+	public getHPDLeaveSensitivityStatus() {
+		try {
+			this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
+				this.sesnsitivityAdjustVal = value;
+				console.log('getHPDLeaveSensitivity value----->', value);
+			});
+		} catch (error) {
+			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			return EMPTY;
+		}
+	}
+
+	public setHPDLeaveSensitivitySetting(event) {
+		try {
+			this.smartAssist.SetHPDLeaveSensitivitySetting(event.value).then((value: any) => {
+				console.log('setHPDLeaveSensitivitySetting value----->', value);
+			});
+		} catch (error) {
+			this.logger.error('setHPDLeaveSensitivitySetting', error.message);
+			return EMPTY;
+		}
+	}
+
+
 	private apsAvailability() {
 		Promise
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
@@ -267,12 +312,21 @@ export class PageSmartAssistComponent implements OnInit {
 
 			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			this.getAutoScreenOffNoteStatusFunc();
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
 			return EMPTY;
 		});
 	}
 
+    private getAutoScreenOffNoteStatusFunc() {
+		this.getAutoScreenOffNoteStatus = setInterval(() => {
+			console.log('Trying after 30 seconds for getting auto screenOffNoteStatus');
+			this.smartAssist.getAutoScreenOffNoteStatus().then((response) => {
+				this.intelligentScreen.isAutoScreenOffNoteVisible = response;
+			});
+		}, 30000);
+	}
 	private initZeroTouchLogin() {
 		Promise.all([
 			this.smartAssist.getZeroTouchLoginVisibility(),
@@ -552,4 +606,8 @@ export class PageSmartAssistComponent implements OnInit {
 			console.error('getHPDSensorType' + error.message);
 		}
 	}
+	ngOnDestroy() {
+		clearTimeout(this.getAutoScreenOffNoteStatus);
+	}
+
 }

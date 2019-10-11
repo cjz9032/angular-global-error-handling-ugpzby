@@ -76,13 +76,14 @@
 
 			.result-code-value-text {
 				font-size: 1.7rem;
-				color: $shade_darker;
+				color: $shade_dark;
+				font-weight:$weight_bold;
 			}
 
 			.left-result-code {
 				.result-code-complete-text {
-					font-size: 1.9rem;
-					color: $shade_darkest;
+					font-size: 1.2rem;
+					color: $shade_darker;
 					font-weight: $weight_bold;
 				}
 

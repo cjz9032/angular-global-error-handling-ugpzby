@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Enregistrement de touche macro pour"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Couleur"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Aucune application en cours d'exécution à ajouter",
                 "body": "Seules les applications en cours d'exécution s'afficheront. Lancez une application à ajouter et revenez."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Vous pouvez ajouter un maximum de 5 applications à améliorer",
                     "part2": "sur",
                     "part3": "ajoutés récemment"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "Chargement..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Fonctions des touches de raccourci VoIP",
+						"description": {
+							"main": "Cette fonction vous permet de répondre à un appel VoIP ou de le rejeter en appuyant sur les touches de raccourci de votre clavier :",
+							"f10": "F10 : répondre à l'appel",
+							"f11": "F11 : rejeter ou mettre fin à l'appel"
+						},
+						"tooltip": "Cette fonction est actuellement prise en charge par Skype Entreprise 2016 et Microsoft Teams 1.0.<br>Pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications.",
+						"hasInstalledAppsDescription": "Sélectionnez l'application dans laquelle vous souhaitez utiliser les touches de raccourci :",
+						"noInstalledAppsDescription": "Cette fonction ne prend en charge que les applications suivantes : ",
+						"hasInstalledAppsNote": "Remarque : pour Microsoft Teams 1.0, la touche F11 ne peut pas être utilisée pour mettre fin à l'appel.",
+						"noInstalledAppsNote": "Remarque : pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Touche définie par l'utilisateur",
@@ -1593,7 +1775,7 @@
                 "Blazing": "Vitesse fulgurante",
                 "BlazingText": "Antivirus optimisé qui ne ralentira pas ou n'interrompra pas votre expérience Lenovo Vantage",
                 "privacyTerms": "/   <tag>Politique de confidentialité</tag>  |  <tag>Conditions générales</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Non disponible"
             },
             "windowsDefender": {
                 "optimallyProtected": "Il semble que vous utilisez actuellement Windows Defender. Ceci n'est pas un mauvais choix, mais pour la sécurité ultime contre les rançongiciels, les logiciels malveillants et les virus, nous nous sommes associés avec <b>McAfee</b> pour vous offrir la sécurité primée et ainsi <b>protéger ce qui compte.</b>",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "Télécharger McAfee",
                 "topBenefits": "Pourquoi <b>Lenovo recommande McAfee</b> pour protéger tous vos périphériques",
                 "awardTitle": "Logiciel antivirus primé",
-                "awardSubtitle": "Empêchez les virus, les logiciels malveillants et les rançongiciels d'infecter votre PC.",
+                "awardSubtitle": "Empêchez les virus, les logiciels malveillants et les rançongiciels d'infecter votre PC",
                 "supportTitle": "Soutien technique d'expert gratuit, 24h/24 et 7j/7 ",
                 "supportSubtitle": "Obtenez une assistance et une tranquillité d'esprit 24 heures sur 24 grâce à notre équipe de sécurité dédiée",
                 "trialSubtitle": "Vous êtes actuellement protégé par une version d'essai de 30 jours de McAfee LiveSafe qui expire dans {{remainingDays}} jours ! Abonnez-vous dès maintenant pour étendre votre protection.",
@@ -1639,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Analyse des vulnérabilités McAfee ",
                 "report": "Votre rapport sur la protection des menaces ",
-                "trialContent": "Vous avez utilisé la version d'évaluation de l'antivirus McAfee à bon escient. Mais dans {{remainingDays}} jours, votre version d'évalution expire et vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.<tag>S'abonner maintenant</tag>",
-                "subscribeContent": "Vous avez utilisé McAfee à bon escient. Mais dans {{remainingDays}} jours, vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque.<tag>S'abonner maintenant</tag>",
+                "trialContent": "Vous avez utilisé la version d'évaluation de l'antivirus McAfee à bon escient. Mais dans {{remainingDays}} jours, votre version d'évalution expire et vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque. <tag>S'abonner maintenant</tag>",
+                "subscribeContent": "Vous avez utilisé McAfee à bon escient. Mais dans {{remainingDays}} jours, vous courez le risque de laisser votre ordinateur vulnérable. Ne prenez pas ce risque. <tag>S'abonner maintenant</tag>",
                 "subscribeNow": "S'abonner maintenant",
                 "fileScan": "Fichiers analysés",
                 "Viruses": "Virus éliminés",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "Démarrer l'analyse des fichiers"
             },
             "others": {
-                "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique"
+                "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
+                "unknown": "Inconnu"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "Ce périphérique fonctionne en mode hors connexion. Veuillez vous connecter à Internet",
         "doNotSuspend": "Ces tests doivent être exécutés sans interruption ! Ne fermez pas ou ne réduisez pas cette application, et n'interrompez pas ou n'éteignez pas votre ordinateur pendant l'analyse.",
         "doNotUse": "N'utilisez pas votre ordinateur tant que le test n'est pas terminé",
+        "testsMustRunUniterrupted": "Ces tests doivent être exécutés sans interruption !",
+        "doNotCloseOrMinimizeApp": "• Ne fermez pas ou ne réduisez pas cette application.",
+        "doNotSwitchApp": "• Ne pas basculez vers une autre application.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne mettez pas l'ordinateur en veille, ne vous déconnectez pas ou n'éteignez pas l'ordinateur.",
         "customize": {
             "name": "Personnaliser",
             "test": "Personnaliser le test",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

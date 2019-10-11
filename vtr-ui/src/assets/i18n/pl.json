@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Nagrywanie klawisza makr dla"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Kolor"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Brak uruchomionych aplikacji do dodania",
                 "body": "Pokazane będą tylko aktualnie uruchomione aplikacje. Uruchom aplikację, którą chcesz dodać, i wróć."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Możesz dodać 5 aplikacji",
                     "part2": "z",
                     "part3": "dodano"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "Ładuję..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "URUCHOM PONOWNIE",
                             "cancel": "NIE TERAZ"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funkcje klawisza dostępu VoIP",
+						"description": {
+							"main": "Ta funkcja umożliwia odbieranie lub odrzucanie połączeń VoIP przez naciśnięcie klawiszy dostępu na klawiaturze:",
+							"f10": "F10: odebranie połączenia",
+							"f11": "F11: odrzucenie lub zawieszenie połączenia"
+						},
+						"tooltip": "Obecnie ta funkcja jest obsługiwana tylko w aplikacji Skype dla firm 2016 i Microsoft Teams 1.0.<br>Aby użyć tej funkcji, należy najpierw pobrać i zainstalować aplikacje.",
+						"hasInstalledAppsDescription": "Wybierz aplikację, w której chcesz używać klawiszy dostępu:",
+						"noInstalledAppsDescription": "Ta funkcja obsługuje tylko poniższe aplikacje: ",
+						"hasInstalledAppsNote": "Uwaga: w przypadku Microsoft Teams 1.0 klawisz F11 nie może być użyty do zawieszenia połączenia.",
+						"noInstalledAppsNote": "Uwaga: aby użyć tej funkcji, należy najpierw pobrać i zainstalować aplikacje."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Klawisz zdefiniowany przez użytkownika",
@@ -1593,10 +1775,10 @@
                 "Blazing": "Błyskawiczna prędkość",
                 "BlazingText": "Zoptymalizowany program antywirusowy, który nie spowalnia ani nie zakłóca pracy Lenovo Vantage",
                 "privacyTerms": "/   <tag>Polityka prywatności</tag>  |  <tag>Warunki świadczenia usług</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Niedostępne"
             },
             "windowsDefender": {
-                "optimallyProtected": "Wydaje się, że obecnie korzystasz z programu Windows Defender. Nie jest to zły wybór, jednak by zapewnić najwyższy poziom zabezpieczenia przed ransomware, złośliwym oprogramowaniem i wirusami połączyliśmy siły z <b>McAfee</b> aby zaoferować ci wielokrotnie nagradzany program, który pomaga <b>chronić to, co jest ważne.</b>",
+                "optimallyProtected": "Wydaje się, że obecnie korzystasz z programu Windows Defender. Nie jest to zły wybór, jednak by zapewnić najwyższy poziom zabezpieczenia przed ransomware, złośliwym oprogramowaniem i wirusami, połączyliśmy siły z <b>McAfee</b>, aby zaoferować ci wielokrotnie nagradzany program, który pomaga <b>chronić to, co jest ważne.</b>",
                 "windowsSubtitle": "Podstawowa ochrona Windows Defender",
                 "topTip": "Najważniejsze wskazówki w zakresie bezpieczeństwa w sieci",
                 "topContent": "Dowiedz się, jak możesz się bronić przed największymi współczesnymi zagrożeniami internetowymi <tag>ZAPOZNAJ SIĘ ZE WSKAZÓWKAMI</tag>",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "Pobierz program McAfee",
                 "topBenefits": "Dlaczego <b>Lenovo zaleca McAfee</b> w celu ochrony wszystkich twoich urządzeń",
                 "awardTitle": "Nagradzane oprogramowanie antywirusowe",
-                "awardSubtitle": "Zapobiega zainfekowaniu komputera przez wirusy, złośliwe oprogramowanie i ransomware.",
+                "awardSubtitle": "Zapobiega zainfekowaniu komputera przez wirusy, złośliwe oprogramowanie i ransomware",
                 "supportTitle": "Bezpłatne specjalistyczne wsparcie techniczne 24/7 ",
                 "supportSubtitle": "Możesz skorzystać z całodobowej pomocy, a dzięki naszemu wyspecjalizowanemu zespołowi ds. bezpieczeństwa śpisz spokojnie",
                 "trialSubtitle": "Obecnie jesteś chroniony dzięki 30-dniowej wersji próbnej McAfee LiveSafe – pozostało już tylko {{remainingDays}} dni! Subskrybuj już teraz, aby przedłużyć swoją ochronę.",
@@ -1639,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Skaner podatności McAfee ",
                 "report": "Twój raport zabezpieczeń ",
-                "trialContent": "W pełni wykorzystujesz wersję próbną programu antywirusowego McAfee. Ale do wygaśnięcia okresu próbnego pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj.<tag>Subskrybuj teraz</tag>",
-                "subscribeContent": "W pełni wykorzystujesz program antywirusowy McAfee. Ale do wygaśnięcia subskrypcji pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj.<tag>Subskrybuj teraz</tag>",
+                "trialContent": "W pełni wykorzystujesz wersję próbną programu antywirusowego McAfee. Ale do wygaśnięcia okresu próbnego pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj. <tag>Subskrybuj teraz</tag>",
+                "subscribeContent": "W pełni wykorzystujesz program antywirusowy McAfee. Ale do wygaśnięcia subskrypcji pozostało tylko {{remainingDays}} dni, a potem twój komputer będzie narażony na niebezpieczeństwo. Nie ryzykuj. <tag>Subskrybuj teraz</tag>",
                 "subscribeNow": "Subskrybuj teraz",
                 "fileScan": "Przeskanowane pliki",
                 "Viruses": "Usunięte wirusy",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "Rozpocznij skanowanie plików"
             },
             "others": {
-                "othersProtection": "{{protectedName}} oferuje podstawową ochronę urządzenia"
+                "othersProtection": "{{protectedName}} oferuje podstawową ochronę urządzenia",
+                "unknown": "Brak danych"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "To urządzenie działa w trybie offline, połącz je z Internetem",
         "doNotSuspend": "Nie można przerywać wykonywania tych testów! Podczas skanowania nie zamykaj ani nie minimalizuj tej aplikacji, i nie wstrzymuj ani nie wyłączaj komputera.",
         "doNotUse": "Nie używaj komputera aż do zakończenia testu",
+        "testsMustRunUniterrupted": "Nie można przerywać wykonywania tych testów!",
+        "doNotCloseOrMinimizeApp": "• Nie zamykaj ani nie minimalizuj tej aplikacji.",
+        "doNotSwitchApp": "• Nie przełączaj do innej aplikacji.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nie przechodź do trybu uśpienia, nie wylogowuj się ani nie wyłączaj komputera.",
         "customize": {
             "name": "Dostosuj",
             "test": "Dostosuj test",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

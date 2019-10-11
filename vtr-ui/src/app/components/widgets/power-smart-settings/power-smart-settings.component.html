@@ -105,7 +105,7 @@
 									(keydown.enter)="readMore()"
 									tabindex="1"
 									role="link"
-									attr.aria-label="'device.deviceSettings.power.powerSmartSettings.description5' | translate'+'-'+ 'device.deviceSettings.power.powerSmartSettings.readMore' | translate"
+									attr.aria-label="powerSmartSettings-intelligentCooling-read-more"
 									(keydown.enter)="readMore()">{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
 							</p>
 							<div *ngIf="onReadMoreClick">
@@ -122,12 +122,17 @@
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 								</p>
 							</div>
-							<p class="text-right more-info"><a alt=""
+							<p class="text-right more-info">
+								<!-- Do not need to add keydown.enter event handling for modal dialogue default will work without event handling provided the link is button , a href keyboard support will not work-->
+								<button alt=""
+									class="more-info-button"
+									type="button"
 									(click)="coolingModesPopUp()"
-									(keydown.enter)="coolingModesPopUp()"
 									tabindex="1"
 									role="link"
-									attr.aria-label="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate' ">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}</a>
+									attr.aria-label="powerSmartSettings-intelligentCooling-more-info ">
+									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}
+								</button>
 							</p>
 						</div>
 					</div>

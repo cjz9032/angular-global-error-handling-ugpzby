@@ -84,7 +84,7 @@
                     "line2": "<b>Přehled správy funkcí</b> <br> Některé funkce nejsou k dispozici na všech zařízeních",
                     "line3": "<b>Přetaktování CPU </b><br> Zvyšte maximální rychlost procesoru",
                     "line4": "<b>Přetaktování RAM </b><br> Zvyšte maximální rychlost paměti",
-                    "line5": "<b>Zvýšení výkonu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
+                    "line5": "<b>Zvýšení vý-konu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
                     "line6": "<b>Dolby </b><br> Vylaďte zvuk přímo pro hraní her pomocí technologie Dolby",
                     "line7": "<b>Hybridní režim </b><br> Zvyšte výdrž baterie deaktivací Upřesnit nastavení GPU, když nebudete hrát",
                     "line8": "<b>Rychlé nabíjení </b><br> Užijte si při hraní na cestách delší výdrž baterie díky rychlejšímu nabíjení",
@@ -107,6 +107,15 @@
                     "sub1": "Podpora",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Záznam klávesy makra pro"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "heading": {
                     "title": "Vyberte profil:"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Žádné spuštěné aplikace k přidání",
                 "body": "Zobrazí se pouze aktuálně spuštěné aplikace. Spusťte aplikaci, kterou chcete přidat, a vraťte se zpět."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "K urychlení lze přidat až 5 dalších aplikací",
                     "part2": "z",
                     "part3": "přidáno"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "Načítání..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "RESTARTOVAT",
                             "cancel": "TEĎ NE"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funkce horkých kláves VoIP:",
+						"description": {
+							"main": "Tato funkce umožňuje přijmout nebo odmítnout hovor VoIP stisknutím klávesových zkratek na klávesnici:",
+							"f10": "F10: přijmout hovor",
+							"f11": "F11: odmítnout nebo ukončit hovor"
+						},
+						"tooltip": "V současné době je tato funkce podporována pouze softwarem Skype for Business 2016 a Microsoft Teams 1.0.<br>Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace.",
+						"hasInstalledAppsDescription": "Vyberte aplikaci, ve které chcete klávesové zkratky používat:",
+						"noInstalledAppsDescription": "Tuto funkci podporují pouze dále uvedené aplikace: ",
+						"hasInstalledAppsNote": "Poznámka: U Microsoft Teams 1.0 nelze použít klávesu F11 k ukončení hovoru.",
+						"noInstalledAppsNote": "Poznámka: Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Uživatelem definovaná klávesa",
@@ -1593,10 +1775,10 @@
                 "Blazing": "Blesková rychlost",
                 "BlazingText": "Optimalizovaný antivirový program, který nezpomalí ani nepřeruší vaše prostředí Lenovo Vantage",
                 "privacyTerms": "/   <tag>Zásady ochrany osobních údajů</tag>  |  <tag>Podmínky služby</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Není dostupná"
             },
             "windowsDefender": {
-                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom vám mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
+                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
                 "windowsSubtitle": "Základní ochrana Windows Defender",
                 "topTip": "Nejlepší tipy pro online bezpečnost",
                 "topContent": "Naučte se, jak se můžete bránit proti současným největším online hrozbám <tag>ZOBRAZIT TIPY</tag>",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "Získat program McAfee",
                 "topBenefits": "Proč <b>Lenovo doporučuje software McAfee</b> na ochranu všech vašich zařízení",
                 "awardTitle": "Oceňovaný antivirus",
-                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem.",
+                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem",
                 "supportTitle": "Zdarma, nepřetržitá odborná technická podpora ",
                 "supportSubtitle": "Získejte nepřetržitou asistenci a klid v duši díky našemu specializovanému bezpečnostnímu týmu",
                 "trialSubtitle": "Momentálně jste chráněni pouze 30denní zkušební verzí McAfee LiveSafe – počet zbývajících dnů jen {{remainingDays}}! Chcete-li rozšířit svou ochranu, přihlaste se k odběru nyní.",
@@ -1639,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Vaše zpráva o ochraně před hrozbami ",
-                "trialContent": "Používali jste zkušební verzi antiviru McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, riskujete tak budoucí zranitelnost svého počítače. Neriskujte to.<tag>Zapsat nyní</tag>",
-                "subscribeContent": "Používali jste software McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, a tak riskujete tak budoucí zranitelnost svého počítače. Neriskujte to.<tag>Zapsat nyní</tag>",
+                "trialContent": "Používali jste zkušební verzi antiviru McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, riskujete tak budoucí zranitelnost svého počítače. Neriskujte to. <tag>Zapsat nyní</tag>",
+                "subscribeContent": "Používali jste software McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, a tak riskujete tak budoucí zranitelnost svého počítače. Neriskujte to. <tag>Zapsat nyní</tag>",
                 "subscribeNow": "Zapsat nyní",
                 "fileScan": "Prohledané soubory",
                 "Viruses": "Odstraněné viry",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "Spusťte skenování souborů"
             },
             "others": {
-                "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení"
+                "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení",
+                "unknown": "Neznámé"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "Toto zařízení je v režimu offline. Připojte jej k internetu",
         "doNotSuspend": "Tyto testy nesmí být přerušeny! Během kontroly nevypínejte ani neminimalizujte aplikaci, nevypínejte počítač ani jej neuveďte do režimu hibernace.",
         "doNotUse": "V průběhu testu nepoužívejte počítač",
+        "testsMustRunUniterrupted": "Tyto testy nesmí být za chodu přerušeny!",
+        "doNotCloseOrMinimizeApp": "• Nezavírejte ani minimalizujte tuto aplikaci.",
+        "doNotSwitchApp": "• Nepřepínejte na jinou aplikaci.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Počítač nepřevádějte do stavu spánku, neodhlasujte se, ani počítač nevypínejte.",
         "customize": {
             "name": "Přizpůsobit",
             "test": "Přizpůsobit test",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

@@ -81,7 +81,7 @@
                     "line2": "<b>Özellik Yönetimine Genel Bakış</b> <br> Bazı özellikler tüm cihazlarda kullanılamaz",
                     "line3": "<b>CPU Hız Aşırtma </b><br> İşlemcinizi maksimum hızla çalıştırın",
                     "line4": "<b>RAM Hız Aşırtma </b><br> Belleğinizi maksimum hızla çalıştırın",
-                    "line5": "<b>Ağ Yükseltme </b><br> Oynadığınız oyunun ağ trafiğine öncelik verin",
+                    "line5": "<b>Ağ Yükseltme </b><br> Oyun oynarken ağ trafiğine öncelik verin",
                     "line6": "<b>Dolby </b><br> Dolby teknolojisiyle sesinizi oyun oynamak için özel olarak ayarlayın",
                     "line7": "<b>Hibrit Kipi </b><br> Pil performansını artırmak için oyun oynamadığınızda gelişmiş GPU ayarlarını devre dışı bırakın",
                     "line8": "<b>Hızlı Şarj </b><br> Daha hızlı pil şarjıyla hareket halindeyken daha uzun süre oyun oynayın",
@@ -107,6 +107,15 @@
                     "sub1": "Destek",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Şunun için Makro Tuşu Kaydediliyor"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Renk"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Eklenecek çalışan uygulama yok",
                 "body": "Yalnızca çalışmakta olan uygulamalar gösterilir. Lütfen eklemek istediğiniz bir uygulamayı başlatıp geri gelin."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Yükseltme için en fazla 5 uygulama daha ekleyebilirsiniz",
                     "part2": "/",
                     "part3": "eklendi"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "Yükleniyor..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "YENİDEN YÜKLE",
                             "cancel": "ŞİMDİ DEĞİL"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP Kısayol Tuşları İşlevleri",
+						"description": {
+							"main": "Bu özellik, klavyenizdeki kısayol tuşlarına basarak bir VoIP aramasını yanıtlamanızı veya reddetmenizi sağlar:",
+							"f10": "F10: aramayı yanıtla",
+							"f11": "F11: aramayı reddet veya kapat"
+						},
+						"tooltip": "Şu anda, bu özellik yalnızca Skype Kurumsal 2016 ve Microsoft Teams 1.0'da desteklenmektedir.<br>Bu özelliği kullanmak için önce uygulamaları indirip yüklemeniz gerekir.",
+						"hasInstalledAppsDescription": "Kısayol tuşlarını kullanmak istediğiniz uygulamayı seçin:",
+						"noInstalledAppsDescription": "Bu özellik yalnızca aşağıdaki uygulamaları desteklemektedir: ",
+						"hasInstalledAppsNote": "Not: Microsoft Teams 1.0'da F11 tuşu aramayı kapatmak için kullanılamaz.",
+						"noInstalledAppsNote": "Not: Bu özelliği kullanmak için önce uygulamaları indirip yüklemeniz gerekir."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Kullanıcı Tanımlı Tuş",
@@ -1593,7 +1775,7 @@
                 "Blazing": "Yıldırım hızında",
                 "BlazingText": "Lenovo Vantage deneyiminizi yavaşlatmayacak veya kesintiye uğratmayacak şekilde iyileştirilmiş virüsten koruma yazılımı",
                 "privacyTerms": "/   <tag>Gizlilik İlkesi</tag>  |  <tag>Hizmet Koşulları</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Kullanılamaz"
             },
             "windowsDefender": {
                 "optimallyProtected": "Şu anda Windows Defender kullandığınız görülüyor. Kötü bir seçim değil ancak fidye yazılımlarına, kötü amaçlı yazılımlara ve virüslere karşı nihai koruma sağlamak üzere, <b>önemli olan içeriğinizi koruyabilmeniz için</b> <b>McAfee</b> ile birlikte size ödüllü bir güvenlik çözümü sunuyoruz.",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "McAfee'yi Edinin",
                 "topBenefits": "<b>Lenovo tüm cihazlarınızı korumak için neden McAfee</b>'yi öneriyor",
                 "awardTitle": "Ödüllü Virüsten Koruma Yazılımı",
-                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin.",
+                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin",
                 "supportTitle": "Uzmanlardan 7/24 ücretsiz teknik destek ",
                 "supportSubtitle": "Özel güvenlik ekibimizden gün boyu yardım alın ve içiniz rahat etsin",
                 "trialSubtitle": "Şu anda McAfee LiveSafe'in 30 günlük ücretsiz deneme sürümü tarafından korunuyorsunuz – yalnızca {{remainingDays}} gün kaldı! Korunma süresini uzatmak için hemen abone olun.",
@@ -1639,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Güvenlik Açığı Tarayıcısı ",
                 "report": "Tehdit Koruma Raporunuz ",
-                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.<tag>Şimdi Abone Ol</tag>",
-                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.<tag>Şimdi Abone Ol</tag>",
+                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın. <tag>Şimdi Abone Ol</tag>",
+                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın. <tag>Şimdi Abone Ol</tag>",
                 "subscribeNow": "Şimdi Abone Ol",
                 "fileScan": "Dosya tarandı",
                 "Viruses": "Virüs Temizlendi",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "Dosya taramasını başlat"
             },
             "others": {
-                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar"
+                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
+                "unknown": "Bilinmiyor"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
         "doNotSuspend": "Bu testler kesintisiz çalıştırılmalıdır! Bu uygulamayı kapatmayın veya küçültmeyin ve tarama sırasında bilgisayarınızı uyku moduna almayın ya da kapatmayın.",
         "doNotUse": "Test tamamlanana kadar lütfen bilgisayarınızı kullanmaktan kaçının",
+        "testsMustRunUniterrupted": "Bu testler kesintisiz çalıştırılmalıdır!",
+        "doNotCloseOrMinimizeApp": "• Bu uygulamayı kapatmayın veya küçültmeyin.",
+        "doNotSwitchApp": "• Başka bir uygulamaya geçmeyin.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Bilgisayarınızı uyku kipine almayın, oturumu veya bilgisayarınızı kapatmayın.",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

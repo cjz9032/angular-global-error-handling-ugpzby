@@ -81,12 +81,12 @@
                     "line2": "<b>Översikt över funktionshantering</b> <br> Vissa funktioner är inte tillgängliga på alla enheter",
                     "line3": "<b>CPU-överklockning </b><br> Öka maxhastigheten för processorn",
                     "line4": "<b>RAM-överklockning </b><br> Öka maxhastigheten för minnet",
-                    "line5": "<b>Nätverksprestanda </b><br> Prioritera nätverkstrafik för det aktuella spelet",
+                    "line5": "<b>Nätverkspre-standa </b><br> Prioritera nätverkstrafik för det aktuella spelet",
                     "line6": "<b>Dolby </b><br> Specialanpassa ljudet för spel med Dolby-teknik",
                     "line7": "<b>Hybridläge </b><br> Inaktivera avancerade GPU-inställningar när du inte spelar för att förlänga batteritiden",
                     "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
-                    "line10": "<b>Stäng automatiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
+                    "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
                     "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
                 },
                 "systemInfo": {
@@ -107,6 +107,15 @@
                     "sub1": "Support",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Spelar in makrotangent för"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Färg"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Det finns inga aktiva appar att lägga till",
                 "body": "Endast appar som är aktiva visas. Öppna en app som du vill lägga till och återkom."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Lägg till upp till 5 appar",
                     "part2": "av",
                     "part3": "har lagts till"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "Läser in..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "STARTA OM",
                             "cancel": "INTE NU"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP-snabbtangentsfunktioner",
+						"description": {
+							"main": "Med denna funktion kan du besvara eller avvisa ett VoIP-samtal genom att trycka på snabbtangenterna på tangentbordet:",
+							"f10": "F10: besvara samtalet",
+							"f11": "F11: avvisa eller avsluta samtalet"
+						},
+						"tooltip": "Funktionen stöds för närvarande endast med Skype för företag 2016 och Microsoft Teams 1.0.<br>Du måste ladda ned och installera apparna för att kunna använda funktionen.",
+						"hasInstalledAppsDescription": "Välj den app där du vill använda snabbtangenterna:",
+						"noInstalledAppsDescription": "Funktionen kan endast användas med följande program: ",
+						"hasInstalledAppsNote": "Obs! I Microsoft Teams 1.0 kan du inte använda F11-tangenten för att avsluta samtalet.",
+						"noInstalledAppsNote": "Obs! Du måste ladda ned och installera apparna för att kunna använda funktionen."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Användardefinierad tangent",
@@ -1580,7 +1762,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILLBAKA",
-                "recommends": "Varför Lenovo rekommenderar <b>McAfee</b> för att skydda alla dina enheter",
+                "recommends": "Därför <b>rekommenderar Lenovo McAfee</b> för att skydda alla dina enheter",
                 "award": "Prisbelönt antivirusprogram",
                 "mcafeePremium": "McAfee LiveSafe-skydd",
                 "protectedBy": "Du skyddas för närvarande med {{protectedName}}. Men du kan få ett bättre skydd med McAfee LiveSafe.",
@@ -1593,10 +1775,10 @@
                 "Blazing": "Blixtsnabb hastighet",
                 "BlazingText": "Optimerat antivirusprogram som inte saktar ned eller stör din Lenovo Vantage-upplevelse",
                 "privacyTerms": "/   <tag>Sekretesspolicy</tag>  |  <tag>Användarvillkor</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Inte tillgänglig"
             },
             "windowsDefender": {
-                "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt</b>.",
+                "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt.</b>",
                 "windowsSubtitle": "Windows Defender grundskydd",
                 "topTip": "Bästa tipsen för säkerhet online",
                 "topContent": "Se hur du kan försvara dig mot dagens största onlinehot <tag>SE TIPS</tag>",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "Köp McAfee",
                 "topBenefits": "Varför <b>Lenovo rekommenderar McAfee</b> för att skydda alla dina enheter",
                 "awardTitle": "Prisbelönt antivirusprogram",
-                "awardSubtitle": "Förhindra att din dator smittas av virus, skadlig kod och ransomware.",
+                "awardSubtitle": "Förhindra att din dator smittas av virus, skadlig kod och ransomware",
                 "supportTitle": "Teknisk expertsupport utan kostnad dygnet runt ",
                 "supportSubtitle": "Vårt specialutbildade säkerhetsteam ger dig sinnesro och hjälp dygnet runt",
                 "trialSubtitle": "Du skyddas för närvarande med en 30-dagars provprenumeration på McAfee LiveSafe – endast {{remainingDays}} dagar kvar! Prenumerera nu för att förlänga ditt skydd.",
@@ -1639,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee sårbarhetssökning ",
                 "report": "Din hotskyddsrapport ",
-                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det.<tag>Prenumerera nu</tag>",
-                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det.<tag>Prenumerera nu</tag>",
+                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
+                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
                 "subscribeNow": "Prenumerera nu",
                 "fileScan": "Filer skannade",
                 "Viruses": "Virus eliminerade",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "Starta genomsökning av filer"
             },
             "others": {
-                "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet"
+                "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
+                "unknown": "Okänd"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "Enheten körs offline. Anslut till internet",
         "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
         "doNotUse": "Använd inte datorn förrän testet har slutförts",
+        "testsMustRunUniterrupted": "Testerna måste köras utan avbrott!",
+        "doNotCloseOrMinimizeApp": "• Stäng eller minimera inte den här appen.",
+        "doNotSwitchApp": "• Byt inte till en annan app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sätt inte datorn i strömsparläge och logga inte ut från eller stäng av datorn.",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

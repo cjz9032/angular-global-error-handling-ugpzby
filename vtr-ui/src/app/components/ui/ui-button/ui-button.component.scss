@@ -15,6 +15,16 @@
 			top: 40%;
 		}
 		.button {
+			@media #{$black-on-white} {
+				
+				border: 0.1rem solid $dark;
+				
+			}
+			@media #{$white-on-black} {
+				
+				border: 0.1rem solid $light;
+				
+			}
 			@media #{$mediaquery_X4} {
 				min-width: 10rem;
 			}

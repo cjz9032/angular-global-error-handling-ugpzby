@@ -37,7 +37,7 @@
 						{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
 					<div class="col-3 col-sm-3 col-md-2 p-0 battery-value-text"
 						*ngIf="isValid(model.chargeStatusString)">
-						{{ model.chargeStatusString }}
+						{{ model.chargeStatusString | translate }}
 					</div>
 					<div *ngIf="isValid(model.wattage)"
 						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
@@ -87,7 +87,14 @@
 					</div>
 					<div *ngIf="isValid(model.remainingTime)"
 						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
-						{{ model.remainingTime | minutesToHourmin }}
+						<!-- {{ model.remainingTime | minutesToHourmin }} -->
+						<span *ngIf="isValid(remainingHours[i])">
+							{{remainingHours[i]}} {{hourText | translate}}
+						</span>
+						<span>
+							{{remainingMinutes[i]}} {{minutesText | translate}}
+						</span>
+
 					</div>
 					<div *ngIf="isValid(model.cycleCount)"
 						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
@@ -103,7 +110,7 @@
 					</div>
 					<div *ngIf="isValid(deviceChemistry[i])"
 						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
-						{{ deviceChemistry[i] }}
+						{{ deviceChemistry[i] | translate }}
 					</div>
 
 					<div *ngIf="isValid(model.remainingCapacity)"

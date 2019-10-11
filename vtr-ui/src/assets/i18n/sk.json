@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Nahrávanie klávesu makra pre"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Farba"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Žiadne spustené aplikácie na pridanie",
                 "body": "Zobrazia sa iba práve spustené aplikácie. Spustite aplikáciu, ktorú chcete pridať a vráťte sa späť."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Možno pridať až 5 apl. na zvýšenie výkonu",
                     "part2": "z",
                     "part3": "pridané/pridaných"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "Načítava..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "REŠTARTOVAŤ",
                             "cancel": "TERAZ NIE"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Funkcie klávesových skratiek VoIP",
+						"description": {
+							"main": "Táto funkcia umožňuje prijať alebo odmietnuť hovor VoIP stlačením klávesových skratiek na klávesnici:",
+							"f10": "F10: prijatie hovoru",
+							"f11": "F11: odmietnutie alebo ukončenie hovoru"
+						},
+						"tooltip": "V súčasnosti sa táto funkcia podporuje iba v programoch Skype for Business 2016 a Microsoft Teams 1.0.<br>Ak chcete používať túto funkciu, musíte si najprv stiahnuť a nainštalovať príslušné aplikácie.",
+						"hasInstalledAppsDescription": "Vyberte aplikáciu, v ktorej chcete používať klávesové skratky:",
+						"noInstalledAppsDescription": "Táto funkcia podporuje iba tieto aplikácie: ",
+						"hasInstalledAppsNote": "Poznámka: V prípade programov Microsoft Teams 1.0 nemožno kláves F11 použiť na ukončenie hovoru.",
+						"noInstalledAppsNote": "Poznámka: Ak chcete používať túto funkciu, musíte si najprv stiahnuť a nainštalovať príslušné aplikácie."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Kláves definovaný používateľom",
@@ -1593,7 +1775,7 @@
                 "Blazing": "Blesková rýchlosť",
                 "BlazingText": "Optimalizovaný antivírus, ktorý nespomalí ani nenaruší chod aplikácie Lenovo Vantage",
                 "privacyTerms": "/   <tag>Zásady ochrany osobných údajov</tag>  |  <tag>Podmienky poskytovania služby</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Nie je k dispozícii"
             },
             "windowsDefender": {
                 "optimallyProtected": "Zdá sa, že momentálne používate program Windows Defender. Nie je to zlá voľba, ale v záujme maximálnej bezpečnosti proti ransomvéru, malvéru a vírusom sme sa spojili so spoločnosťou <b>McAfee</b>, aby sme vám mohli ponúknuť oceňované zabezpečenie a <b>ochrániť to, na čom záleží.</b>",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "Získať aplikáciu McAfee",
                 "topBenefits": "Prečo <b>spoločnosť Lenovo odporúča aplikáciu McAfee</b> na ochranu všetkých vašich zariadení",
                 "awardTitle": "Oceňovaný antivírus",
-                "awardSubtitle": "Zabráňte infikovaniu svojho počítača vírusmi, škodlivým softvérom a ransomvérom.",
+                "awardSubtitle": "Zabráňte infikovaniu svojho počítača vírusmi, škodlivým softvérom a ransomvérom",
                 "supportTitle": "Bezplatná 24-hodinová odborná technická podpora ",
                 "supportSubtitle": "Získajte nepretržitú pomoc a zabudnite na starosti vďaka nášmu špecializovanému bezpečnostnému tímu",
                 "trialSubtitle": "Momentálne ste chránení 30-dňovou skúšobnou verziou aplikácie McAfee LiveSafe – už len na obdobie {{remainingDays}} dní! Ak chcete rozšíriť svoju ochranu, prihláste sa na odber.",
@@ -1639,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Kontrola slabých miest zabezpečenia McAfee ",
                 "report": "Vaša správa o ochrane pred hrozbami ",
-                "trialContent": "Skúšobné obdobie antivírovej ochrany McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však platnosť skúšobnej verzie uplynie a hrozí, že váš počítač zostane zraniteľný. Neriskujte to.<tag>Zaregistrovať</tag>",
-                "subscribeContent": "Aplikáciu McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však hrozí, že váš počítač zostane zraniteľný. Neriskujte to.<tag>Zaregistrovať</tag>",
+                "trialContent": "Skúšobné obdobie antivírovej ochrany McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však platnosť skúšobnej verzie uplynie a hrozí, že váš počítač zostane zraniteľný. Neriskujte to. <tag>Zaregistrovať</tag>",
+                "subscribeContent": "Aplikáciu McAfee intenzívne využívate. Už po {{remainingDays}} dňoch však hrozí, že váš počítač zostane zraniteľný. Neriskujte to. <tag>Zaregistrovať</tag>",
                 "subscribeNow": "Zaregistrovať",
                 "fileScan": "Skontrolované súbory",
                 "Viruses": "Odstránené vírusy",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "Spustiť kontrolu súborov"
             },
             "others": {
-                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia"
+                "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia",
+                "unknown": "Neznáma"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "Toto zariadenie je v režime offline, pripojte ho k internetu",
         "doNotSuspend": "Tieto testy musia prebiehať bez prerušenia. Počas kontroly nezatvárajte ani neminimalizujte aplikáciu a neodstavujte ani nevypínajte počítač.",
         "doNotUse": "Počítač nepoužívajte, kým sa test nedokončí",
+        "testsMustRunUniterrupted": "Tieto testy musia prebiehať bez prerušenia.",
+        "doNotCloseOrMinimizeApp": "• Nezatvárajte ani neminimalizujte túto aplikáciu.",
+        "doNotSwitchApp": "• Neprepínajte na inú aplikáciu.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Neprechádzajte do režimu spánku, neodhlasujte sa ani počítač nevypínajte.",
         "customize": {
             "name": "Prispôsobiť",
             "test": "Prispôsobiť test",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

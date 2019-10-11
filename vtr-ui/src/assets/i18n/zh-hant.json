@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "錄製的巨集鍵用於"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "顏色"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "沒有要新增的執行中應用程式",
                 "body": "只會顯示目前執行的應用程式。請啟動要新增的應用程式並返回。"
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "您最多可以新增 5 個要開啟的其他應用程式",
                     "part2": "/",
                     "part3": "已新增"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "載入中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
         }
     },
     "privacy": {
@@ -638,7 +807,7 @@
         "deviceSettings": {
             "helpful": "實用內容",
             "batteryGauge": {
-                "subtitle": "電池性能",
+                "subtitle": "电池",
                 "hours": "小時",
                 "hour": "時",
                 "minutes": "分",
@@ -1152,7 +1321,20 @@
                             "reboot": "重新開機",
                             "cancel": "現在不要"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP 快速鍵功能",
+						"description": {
+							"main": "您可以透過這個功能，在鍵盤上按下快速鍵來接聽或拒接 VoIP 來電。",
+							"f10": "F10：接聽來電",
+							"f11": "F11：拒接或掛斷來電"
+						},
+						"tooltip": "目前這項功能僅支援 Skype for Business 2016 及 Microsoft Teams 1.0。<br>若要安裝這項功能，首先您必須下載及安裝上述應用程式。",
+						"hasInstalledAppsDescription": "選取您要在其中使用快速鍵的應用程式：",
+						"noInstalledAppsDescription": "這項功能僅支援下列應用程式：",
+						"hasInstalledAppsNote": "附註：用於 Microsoft Teams 1.0 時，使用 F11 鍵無法掛斷通話。",
+						"noInstalledAppsNote": "附註：若要安裝這項功能，首先您必須下載及安裝上述應用程式。"
+					}
                 },
                 "userDefinedKey": {
                     "title": "使用者定義鍵",
@@ -1593,7 +1775,7 @@
                 "Blazing": "極快的速度",
                 "BlazingText": "最佳化的防毒軟體，不會減慢或中斷您的 Lenovo Vantage 體驗",
                 "privacyTerms": "/   <tag>隱私權政策</tag>  |  <tag>服務條款</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "無法使用"
             },
             "windowsDefender": {
                 "optimallyProtected": "看起來您目前正在使用 Windows Defender。這個選擇也不錯，但為了終極抵禦勒索軟體、惡意軟體和病毒，我們與 <b>McAfee</b> 聯手提供獲獎肯定的安全保護，以便<b>保護珍貴的事物</b>。",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "取得 McAfee",
                 "topBenefits": "為何 <b>Lenovo 建議使用 McAfee</b> 來保護您所有的裝置",
                 "awardTitle": "獲獎肯定的防毒軟體",
-                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦。",
+                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦",
                 "supportTitle": "免費、全天候的技術支援",
                 "supportSubtitle": "我們的專業安全團隊為您提供全天候的幫助，讓您高枕無憂",
                 "trialSubtitle": "您目前僅受 McAfee LiveSafe 30 天試用版的保護 - 還剩下 {{remainingDays}} 天！立即訂閱以延長您的保護。",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "啟動檔案掃描"
             },
             "others": {
-                "othersProtection": "{{protectedName}}為您的裝置提供基本保護"
+                "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
+                "unknown": "不明"
             }
         },
         "wifisecurity": {
@@ -2225,7 +2408,7 @@
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovo 的隱私權政策",
-        "done": "DONE",
+        "done": "完成",
         "interests": {
             "games": "遊戲",
             "news": "新聞",
@@ -2330,6 +2513,10 @@
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
         "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
         "doNotUse": "在這項測試完成之前，請勿使用您的電腦",
+        "testsMustRunUniterrupted": "這些測試在執行時不能中斷！",
+        "doNotCloseOrMinimizeApp": "• 請勿關閉或將此應用程式最小化。",
+        "doNotSwitchApp": "• 請勿切換至其他應用程式。",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 請勿讓電腦進入睡眠模式，或登出或關閉電腦。",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

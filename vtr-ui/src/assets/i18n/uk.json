@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Запис клавіші макросів для"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Колір"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Немає запущених програм для додавання",
                 "body": "Відобразяться лише запущені програми. Запустіть програму, яку необхідно додати, та поверніться."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Ви можете прискорити 5 програм",
                     "part2": "з",
                     "part3": "додано"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "Завантаження..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Вітаємо! Доступна нова версія Vantage, завантажити її?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "ПЕРЕЗАВАНТАЖИТИ",
                             "cancel": "НЕ ЗАРАЗ"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "Функції гарячих клавіш VoIP",
+						"description": {
+							"main": "Ця функція дає змогу приймати або відхиляти VoIP-дзвінки, натискаючи гарячі клавіші на клавіатурі:",
+							"f10": "F10: прийняти дзвінок",
+							"f11": "F11: відхилити або завершити дзвінок"
+						},
+						"tooltip": "Наразі ця функція підтримується лише в Skype for Business 2016 і Microsoft Teams 1.0.<br>Щоб скористатися цією функцією, потрібно спочатку завантажити та інсталювати програми.",
+						"hasInstalledAppsDescription": "Виберіть програму, у якій потрібно використовувати гарячі клавіші:",
+						"noInstalledAppsDescription": "Ця функція підтримує лише такі програми: ",
+						"hasInstalledAppsNote": "Примітка. У Microsoft Teams 1.0 не можна використовувати клавішу F11 для припинення дзвінків.",
+						"noInstalledAppsNote": "Примітка. Щоб скористатися цією функцією, потрібно спочатку завантажити та інсталювати програми."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Клавіша, яка визначається користувачем",
@@ -1593,10 +1775,10 @@
                 "Blazing": "Блискавична швидкість",
                 "BlazingText": "Оптимізований антивірус, який не вповільнює та не перешкоджає роботі Lenovo Vantage",
                 "privacyTerms": "/   <tag>Політика конфіденційності</tag>  |  <tag>Умови обслуговування</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Недоступно"
             },
             "windowsDefender": {
-                "optimallyProtected": "Схоже, ви використовуєте Захисник Windows. Непоганий вибір, але для максимальної безпеки від програм-шифрувальників із вимогою викупу, зловмисного ПЗ і вірусів, ми об'єднали зусилля з <b>McAfee</b>, щоб запропонувати вам передову безпеку для <b>захисту всього найважливішого</b>.",
+                "optimallyProtected": "Схоже, ви використовуєте Захисник Windows. Непоганий вибір, але для максимальної безпеки від програм-шифрувальників із вимогою викупу, зловмисного ПЗ і вірусів, ми об'єднали зусилля з <b>McAfee</b>, щоб запропонувати вам передову безпеку для <b>захисту всього найважливішого.</b>",
                 "windowsSubtitle": "Базовий захист Захисника Windows",
                 "topTip": "Основні поради щодо безпеки в Інтернеті",
                 "topContent": "Дізнайтеся, як ви можете захиститися від найбільших сучасних онлайн-загроз <tag>ПЕРЕГЛЯНУТИ ПОРАДИ</tag>",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "Отримайте McAfee",
                 "topBenefits": "Чому <b>Lenovo рекомендує McAfee</b> для захисту всіх ваших пристроїв",
                 "awardTitle": "Відзначений нагородами антивірус",
-                "awardSubtitle": "Вбережіть свій ПК від зараження вірусами, зловмисним ПЗ і програмами-шифрувальниками з вимогою викупу.",
+                "awardSubtitle": "Вбережіть свій ПК від зараження вірусами, зловмисним ПЗ і програмами-шифрувальниками з вимогою викупу",
                 "supportTitle": "Безкоштовна, цілодобова технічна підтримка від експертів ",
                 "supportSubtitle": "Отримайте цілодобову допомогу від нашої виділеної команди з безпеки",
                 "trialSubtitle": "Наразі вас захищає 30-денна ознайомлювальна версія McAfee LiveSafe – залишилося лише {{remainingDays}} дн.! Передплатіть зараз, щоб подовжити захист.",
@@ -1639,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "Сканер вразливостей McAfee ",
                 "report": "Ваш звіт про захист від загроз ",
-                "trialContent": "Випробувальна версія антивірусу McAfee активно допомагає вам. Але до завершення ознайомлювального періоду залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте.<tag>Передплатіть зараз</tag>",
-                "subscribeContent": "McAfee активно допомагає вам. Але до завершення передплати залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте.<tag>Передплатіть зараз</tag>",
+                "trialContent": "Випробувальна версія антивірусу McAfee активно допомагає вам. Але до завершення ознайомлювального періоду залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте. <tag>Передплатіть зараз</tag>",
+                "subscribeContent": "McAfee активно допомагає вам. Але до завершення передплати залишилося всього {{remainingDays}} дн. Після цього ваш комп'ютер залишиться без захисту. Не ризикуйте. <tag>Передплатіть зараз</tag>",
                 "subscribeNow": "Передплатіть зараз",
                 "fileScan": "Файли відскановано",
                 "Viruses": "Віруси видалено",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "Розпочати сканування файлів"
             },
             "others": {
-                "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою"
+                "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою",
+                "unknown": "Невідома"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "errorNoOptionSelected": "Виберіть варіант.",
         "doNotSuspend": "Ці перевірки не можна переривати! Не закривайте та не згортайте вікно цієї програми, а також не переводьте комп’ютер у режим сну й не вимикайте його під час сканування.",
         "doNotUse": "Не користуйтеся комп’ютером, доки перевірку не буде завершено",
+        "testsMustRunUniterrupted": "Ці перевірки не можна переривати!",
+        "doNotCloseOrMinimizeApp": "• Не закривайте та не згортайте цей додаток.",
+        "doNotSwitchApp": "• Не переключайтеся на інший додаток.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Не переводьте комп'ютер до режиму сну, не вимикайте його та не виходьте з облікового запису.",
         "customize": {
             "name": "Настроїти",
             "test": "Настроювання тесту",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

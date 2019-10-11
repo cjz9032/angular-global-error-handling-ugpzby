@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "录制宏键，用于"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "heading": {
                     "title": "选择概要文件："
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "没有任何要添加的正在运行的应用",
                 "body": "仅显示当前正在运行的应用。请启动要添加的应用并返回。"
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "最多可添加 5 个要加速的应用",
                     "part2": "/",
                     "part3": "已添加"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "载入中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "您好！已有较新版本的 Vantage，您要加载吗？"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "重新启动",
                             "cancel": "暂不"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP 热键功能",
+						"description": {
+							"main": "此功能让您可以通过按键盘上的热键来接听或拒绝 VoIP 电话：",
+							"f10": "F10：接听电话",
+							"f11": "F11：拒绝或挂断电话"
+						},
+						"tooltip": "目前，仅 Skype for Business 2016 和 Microsoft Teams 1.0 支持此功能。<br>要使用此功能，您需要先下载并安装应用程序。",
+						"hasInstalledAppsDescription": "选择要在其上使用热键的应用程序：",
+						"noInstalledAppsDescription": "此功能仅支持以下应用程序：",
+						"hasInstalledAppsNote": "注意：对于 Microsoft Teams 1.0，F11 键不能用于挂断电话。",
+						"noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。"
+					}
                 },
                 "userDefinedKey": {
                     "title": "用户自定义键",
@@ -1593,7 +1775,7 @@
                 "Blazing": "闪速运行",
                 "BlazingText": "采用优化设计，丝毫不会减慢或干扰您的 Lenovo Vantage 体验",
                 "privacyTerms": "/   <tag>隐私政策</tag>  |  <tag>服务条款</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "不可用"
             },
             "windowsDefender": {
                 "optimallyProtected": "您目前使用的是 Windows Defender。这款软件也不错，但为了防范勒索软件、恶意软件和病毒，我们已联手 <b>McAfee</b> 为您打造终极安全之选，这一屡获殊荣的安全利器将有效地<b>保护您的各种重要资料。</b>",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "获取 McAfee",
                 "topBenefits": "<b>Lenovo 为何建议您采用 McAfee</b> 来保护您的所有设备",
                 "awardTitle": "屡获殊荣的反病毒软件",
-                "awardSubtitle": "防止病毒、恶意软件和勒索软件侵袭您的电脑。",
+                "awardSubtitle": "防止病毒、恶意软件和勒索软件侵袭您的电脑",
                 "supportTitle": "全天候免费专家技术支持",
                 "supportSubtitle": "我们的专业安全团队贴心为您提供全天候协助，让您高枕无忧",
                 "trialSubtitle": "您目前正受到 McAfee LiveSafe 30 天试用版的保护 – 距结束仅剩 {{remainingDays}} 天！立即预订以延长您的保护服务。",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "启动文件扫描"
             },
             "others": {
-                "othersProtection": "{{protectedName}}为您的设备提供基本保护"
+                "othersProtection": "{{protectedName}}为您的设备提供基本保护",
+                "unknown": "未知"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "此设备正在脱机模式下运行，请连接因特网",
         "doNotSuspend": "请勿中断上述测试！请勿关闭或最小化此应用程序；扫描过程中请勿挂起或关闭计算机。",
         "doNotUse": "在此测试完成前，请不要使用计算机",
+        "testsMustRunUniterrupted": "请勿中断上述测试！",
+        "doNotCloseOrMinimizeApp": "• 不要关闭或最小化此应用程序。",
+        "doNotSwitchApp": "• 不要切换到其他应用程序。",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 请勿使计算机进入睡眠模式，或注销，或关闭计算机。",
         "customize": {
             "name": "定制",
             "test": "定制测试",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

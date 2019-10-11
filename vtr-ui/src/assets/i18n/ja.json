@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "マクロ・キーを記録"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "色"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "追加できる実行中のアプリはありません",
                 "body": "現在実行中のアプリのみが表示されます。追加したいアプリを起動してからここに戻ってください。"
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "最大 5 つのアプリを追加してブーストできます",
                     "part2": "の",
                     "part3": "追加された"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "ロード中..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "リブート",
                             "cancel": "今はしない"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP ホット・キーの機能",
+						"description": {
+							"main": "この機能を使用すると、キーボードのホット・キーを押すことで VoIP 通話に応答または拒否できます。",
+							"f10": "F10: 通話に応答する",
+							"f11": "F11: 通話を拒否または終了する"
+						},
+						"tooltip": "現在、この機能は Skype for Business 2016 および Microsoft Teams 1.0 でのみサポートされています。<br>この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。",
+						"hasInstalledAppsDescription": "ホット・キーを使用するアプリを選択します。",
+						"noInstalledAppsDescription": "この機能は、以下のアプリケーションのみをサポートします。",
+						"hasInstalledAppsNote": "注: Microsoft Teams 1.0 の場合、F11 キーを使用して通話を切ることはできません。",
+						"noInstalledAppsNote": "注: この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。"
+					}
                 },
                 "userDefinedKey": {
                     "title": "ユーザー定義キー",
@@ -1593,7 +1775,7 @@
                 "Blazing": "超高速",
                 "BlazingText": "Lenovo Vantage のパフォーマンスを低下させたり動作を中断したりしない最適化されたウイルス対策",
                 "privacyTerms": "/   <tag>プライバシー ポリシー</tag>  |  <tag>サービス契約条件</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "利用できません"
             },
             "windowsDefender": {
                 "optimallyProtected": "現在、Windows Defender を使用しているようです。悪い選択ではありませんが、ランサムウェア、マルウェア、ウイルスに対する安全性を最大限に高めるため、Lenovo では <b>McAfee</b> と協力して受賞歴のあるセキュリティを用意し、<b>重要な情報を保護</b>できるようにしました。",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "McAfee を入手する",
                 "topBenefits": "すべてのデバイスを保護するために <b>Lenovo が McAfee を推奨</b>している理由",
                 "awardTitle": "受賞歴のあるウイルス対策",
-                "awardSubtitle": "ウイルス、マルウェア、ランサムウェアが PC に感染するのを防ぎます。",
+                "awardSubtitle": "ウイルス、マルウェア、ランサムウェアが PC に感染するのを防ぎます",
                 "supportTitle": "24 時間年中無休の専門家による無料テクニカル・サポート",
                 "supportSubtitle": "専任のセキュリティ・チームが 24 時間体制でサポートするため、安心感を得ることができます",
                 "trialSubtitle": "現在、McAfee LiveSafe の 30 日間体験版により保護されています。残りわずか {{remainingDays}} 日です。今すぐサブスクライブして保護を延長しましょう。",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "ファイルのスキャンを開始"
             },
             "others": {
-                "othersProtection": "{{protectedName}}は、デバイスに基本的な保護機能を提供します"
+                "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
+                "unknown": "不明"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "このデバイスはオフラインモードです。インターネットに接続してください",
         "doNotSuspend": "これらのテストは中断しないで実行する必要があります。このアプリを閉じたり最小化したりしないでください。スキャン中にコンピューターを休止状態またはオフにしないでください。",
         "doNotUse": "このテストが終了するまでコンピューターの使用を避けてください",
+        "testsMustRunUniterrupted": "これらのテストは中断しないで実行する必要があります。",
+        "doNotCloseOrMinimizeApp": "• このアプリを閉じたり、最小化したりしないでください。",
+        "doNotSwitchApp": "• 他のアプリに切り替えないでください。",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• コンピューターをスリープ状態にしたり、サインアウトしたり、電源を切ったりしないでください。",
         "customize": {
             "name": "カスタマイズ",
             "test": "テストをカスタマイズ",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

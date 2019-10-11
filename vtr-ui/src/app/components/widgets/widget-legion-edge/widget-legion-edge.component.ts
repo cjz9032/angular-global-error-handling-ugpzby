@@ -426,7 +426,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 	}
 	openModal() {
-		this.modalService.open(ModalGamingLegionedgeComponent, { windowClass: 'gaming-help-modal' });
+		this.modalService.open(ModalGamingLegionedgeComponent, { backdrop:true, windowClass: 'gaming-help-modal' });
 	}
 	public renderRamOverClockStatus() {
 		if (this.gamingCapabilities.xtuService === true) {

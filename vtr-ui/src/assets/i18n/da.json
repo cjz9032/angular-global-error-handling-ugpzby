@@ -81,7 +81,7 @@
                     "line2": "<b>Oversigt over funktionsstyring</b> <br> Nogle funktioner er ikke tilgængelige på alle enheder",
                     "line3": "<b>CPU-overclocking</b><br> Øg processorens hastighed til det optimale",
                     "line4": "<b>RAM-overclocking</b><br> Øg hukommelsens hastighed til det optimale",
-                    "line5": "<b>Netværksforstærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
+                    "line5": "<b>Netværksfor-stærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
                     "line6": "<b>Dolby</b><br> Optimer din lyd, især til spil, med Dolby-teknologi",
                     "line7": "<b>Hybridtilstand</b><br> Deaktiver avancerede GPU-indstillinger, når du ikke spiller, for at øge batteriets ydeevne",
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
@@ -107,6 +107,15 @@
                     "sub1": "Support",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Optager makro-tast for"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Farve"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Der er ingen kørende apps at tilføje",
                 "body": "Kun apps, der kører i øjeblikket, vises. Start en app, du vil tilføje, og vend tilbage."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Du kan tilføje op til 5 yderligere apps",
                     "part2": "af",
                     "part3": "tilføjet"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -475,7 +644,7 @@
             "loading": "Indlæser..."
         },
         "app-update": {
-            "message": "Hey! A newer version of Vantage is available, do you want to load it?"
+            "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
         }
     },
     "privacy": {
@@ -1152,7 +1321,20 @@
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU"
                         }
-                    }
+                    },
+					"VoipHotkeys": {
+						"title": "VoIP-genvejsfunktioner:",
+						"description": {
+							"main": "Med denne funktion kan du besvare eller afvise et VoIP-opkald ved at trykke på genvejstasterne på tastaturet:",
+							"f10": "F10: Besvar opkaldet",
+							"f11": "F11: Afvis eller afbryd opkaldet"
+						},
+						"tooltip": "Denne funktion understøttes i øjeblikket kun i Skype for Business 2016 og Microsoft Teams 1.0.<br>Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
+						"hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
+						"noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
+						"hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
+						"noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
+					}
                 },
                 "userDefinedKey": {
                     "title": "Brugerdefineret tast",
@@ -1580,7 +1762,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAGE",
-                "recommends": "Hvorfor anbefaler Lenovo, at du bruger <b>McAfee</b> til at beskytte alle dine enheder",
+                "recommends": "Hvorfor anbefaler Lenovo, at du bruger <b>McAfee</b> til at beskytte alle dine enheder?",
                 "award": "Prisvindende antivirus",
                 "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er i øjeblikket beskyttet af {{protectedName}}. Men du kan blive endnu bedre beskyttet med McAfee LiveSafe.",
@@ -1593,7 +1775,7 @@
                 "Blazing": "Lynhurtig hastighed",
                 "BlazingText": "Optimeret antivirus, der ikke afbryder din Lenovo Vantage-oplevelse eller gør den langsommere",
                 "privacyTerms": "/   <tag>Politik om beskyttelse af personlige oplysninger</tag>  |  <tag>Vilkår for tjeneste</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Ikke tilgængelig"
             },
             "windowsDefender": {
                 "optimallyProtected": "Det ser ud til, at du bruger Windows Defender i øjeblikket. Det er ikke et dårligt valg, men for at give dig den ultimative beskyttelse mod ransomware, malware og virus er vi gået sammen med <b>McAfee</b> og kan tilbyde dig prisvindende sikkerhed, så du kan <b>beskytte det, der betyder noget.</b>",
@@ -1617,7 +1799,7 @@
                 "getMacfee": "Få McAfee",
                 "topBenefits": "Hvorfor <b>anbefaler Lenovo, at du bruger McAfee</b> til at beskytte alle dine enheder",
                 "awardTitle": "Prisvindende antivirus",
-                "awardSubtitle": "Undgå, at virus, malware og ransomware inficerer din pc.",
+                "awardSubtitle": "Undgå, at virus, malware og ransomware inficerer din pc",
                 "supportTitle": "Gratis teknisk support fra eksperter døgnet rundt ",
                 "supportSubtitle": "Få hjælp og ro i sindet døgnet rundt med hjælp fra vores dedikerede sikkerhedsteam",
                 "trialSubtitle": "Du er i øjeblikket beskyttet af en 30-dages prøveversion af McAfee LiveSafe – der er kun {{remainingDays}} dage tilbage! Abonner nu for at udvide din beskyttelse.",
@@ -1639,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee-sårbarhedsscanner ",
                 "report": "Rapport om din trusselsbeskyttelse ",
-                "trialContent": "Du har brugt din prøveversion af McAfee-antivirus godt. Men med kun {{remainingDays}} dage tilbage af din prøveperiode risikerer du, at din computer bliver sårbar. Du må ikke risikere det.<tag>Abonnér nu</tag>",
-                "subscribeContent": "Du har brugt din McAfee godt. Men med kun {{remainingDays}} dage tilbage risikerer du, at din computer bliver sårbar. Du må ikke risikere det.<tag>Abonnér nu</tag>",
+                "trialContent": "Du har brugt din prøveversion af McAfee-antivirus godt. Men med kun {{remainingDays}} dage tilbage af din prøveperiode risikerer du, at din computer bliver sårbar. Du må ikke risikere det. <tag>Abonnér nu</tag>",
+                "subscribeContent": "Du har brugt din McAfee godt. Men med kun {{remainingDays}} dage tilbage risikerer du, at din computer bliver sårbar. Du må ikke risikere det. <tag>Abonnér nu</tag>",
                 "subscribeNow": "Abonnér nu",
                 "fileScan": "Scannede filer",
                 "Viruses": "Eliminerede virus",
@@ -1649,7 +1831,8 @@
                 "startFileScan": "Start filscanning"
             },
             "others": {
-                "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed"
+                "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
+                "unknown": "Ukendt"
             }
         },
         "wifisecurity": {
@@ -2330,6 +2513,10 @@
         "offline": "Denne enhed er i offlinetilstand. Opret forbindelse til internettet",
         "doNotSuspend": "Disse tests skal køres uden afbrydelser! Du må ikke lukke eller minimere denne app eller låse eller slukke din computer under søgningen.",
         "doNotUse": "Undlad at bruge din computer, før testen er færdig",
+        "testsMustRunUniterrupted": "Disse tests skal køres uden afbrydelser!",
+        "doNotCloseOrMinimizeApp": "• Du må ikke lukke eller minimere denne app.",
+        "doNotSwitchApp": "• Du må ikke skifte til en anden app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Du må ikke sætte computeren i slumretilstand eller logge af eller slukke for computeren.",
         "customize": {
             "name": "Tilpas",
             "test": "Tilpas test",
@@ -2559,5 +2746,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }
