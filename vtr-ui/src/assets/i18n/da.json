@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Velkommen til brug af systemopdatering",
-            "title": "Et opdateret system er et velfungerende system.",
+			"title": "Et opdateret system er et velfungerende system.",
+			"installingTitle": "Under opdateringerne må du ikke sætte computeren i slumre- eller dvaletilstand.",
             "last": "Senest opdateret: ",
             "next": "Næste planlagte opdatering: ",
             "checkButton": "SØG EFTER OPDATERINGER",
@@ -2404,7 +2405,8 @@
         "attention": "Advarsel!",
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
-        "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den."
+        "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den.",
+        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning"
     },
     "smartPerformance": {
         "title": "Health & Support",

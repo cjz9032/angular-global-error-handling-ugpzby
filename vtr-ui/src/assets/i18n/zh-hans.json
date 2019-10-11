@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
-            "title": "保持最新状态的系统才是健康的系统。",
+			"title": "保持最新状态的系统才是健康的系统。",
+			"installingTitle": "在更新期间，请勿使计算机进入睡眠或休眠模式。",
             "last": "上次更新时间：",
             "next": "下次计划更新时间：",
             "checkButton": "检查更新",
@@ -2404,7 +2405,8 @@
         "attention": "注意",
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
-        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
+        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。",
+        "testNotApplicable": "不适用于定制扫描"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vítejte při použití Aktualizace systému.",
-            "title": "Aktualizovaný systém je zdravým systémem.",
+			"title": "Aktualizovaný systém je zdravým systémem.",
+			"installingTitle": "Během aktualizací zařízení nepřepínejte počítač do režimu spánku ani do režimu hibernace.",
             "last": "Poslední aktualizace: ",
             "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",
@@ -2404,7 +2405,8 @@
         "attention": "Upozornění",
         "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
         "cancelTextProgress": "Počkejte na dokončení procesu zrušení",
-        "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je."
+        "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je.",
+        "testNotApplicable": "Nepoužitelné u vlastních kontrol"
     },
     "smartPerformance": {
         "title": "Health & Support",

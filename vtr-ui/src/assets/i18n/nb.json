@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
-            "title": "Et oppdatert system er et velfungerende system.",
+			"title": "Et oppdatert system er et velfungerende system.",
+			"installingTitle": "Ikke sett maskinen i hvile- eller dvalemodus under oppdateringer.",
             "last": "Sist oppdatert: ",
             "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
@@ -2404,7 +2405,8 @@
         "attention": "NB",
         "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
         "cancelTextProgress": "Vent mens avbrytingen pågår",
-        "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten."
+        "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
+        "testNotApplicable": "Ikke aktuelt for egendefinert skanning"
     },
     "smartPerformance": {
         "title": "Health & Support",

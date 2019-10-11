@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vous êtes invité à utiliser la mise à jour du système.",
-            "title": "Un système à jour est un système sain.",
+			"title": "Un système à jour est un système sain.",
+			"installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
@@ -2404,7 +2405,8 @@
         "attention": "Attention",
         "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
-        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau."
+        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau.",
+        "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée"
     },
     "smartPerformance": {
         "title": "Health & Support",

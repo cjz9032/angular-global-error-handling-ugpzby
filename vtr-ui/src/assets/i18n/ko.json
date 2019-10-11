@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
-            "title": "최신 시스템은 정상적인 시스템입니다.",
+			"title": "최신 시스템은 정상적인 시스템입니다.",
+			"installingTitle": "업데이트하는 동안, 컴퓨터를 절전 모드 또는 최대 절전 모드로 전환하지 마십시오.",
             "last": "마지막 업데이트 날짜: ",
             "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
@@ -2404,7 +2405,8 @@
         "attention": "주의",
         "cancelTextPrompt": "정말 취소하시겠습니까?",
         "cancelTextProgress": "취소 진행을 기다리십시오",
-        "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오."
+        "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오.",
+        "testNotApplicable": "사용자 정의 스캔에 적용되지 않음"
     },
     "smartPerformance": {
         "title": "Health & Support",

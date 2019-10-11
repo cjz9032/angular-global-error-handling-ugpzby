@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "歡迎使用系統更新。",
-            "title": "保持最新狀態的系統才是健康的系統。",
+			"title": "保持最新狀態的系統才是健康的系統。",
+			"installingTitle": "在更新期間，請勿讓電腦進入睡眠或休眠模式。",
             "last": "上次更新：",
             "next": "下次的排定更新：",
             "checkButton": "檢查更新",
@@ -2404,7 +2405,8 @@
         "attention": "請注意",
         "cancelTextPrompt": "您確定要取消嗎？",
         "cancelTextProgress": "請等待取消進度",
-        "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。"
+        "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。",
+        "testNotApplicable": "不適用於自訂掃描"
     },
     "smartPerformance": {
         "title": "Health & Support",

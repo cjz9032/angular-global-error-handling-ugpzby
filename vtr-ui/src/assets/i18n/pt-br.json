@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Bem-vindo ao uso da Atualização do Sistema.",
-            "title": "Um sistema atualizado é um sistema saudável.",
+			"title": "Um sistema atualizado é um sistema saudável.",
+			"installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR ATUALIZAÇÕES",
@@ -2404,7 +2405,8 @@
         "attention": "Atenção",
         "cancelTextPrompt": "Tem certeza de que gostaria de cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
-        "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a."
+        "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a.",
+        "testNotApplicable": "Não aplicável em verificação personalizada"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -12,7 +12,7 @@
 					[ngClass]="{'disable': location?.isLoading}"
 					metricsEvent="featureClick"
 					metricsItem="startTrial"
-					(click)="openTrialModal()"
+					(onClick)="openTrialModal()"
 					[title]="'homeSecurity.card.startTrial' | translate"
 					[label]="'homeSecurity.card.startTrial' | translate"
 					[isDisabled]="location?.isLoading"

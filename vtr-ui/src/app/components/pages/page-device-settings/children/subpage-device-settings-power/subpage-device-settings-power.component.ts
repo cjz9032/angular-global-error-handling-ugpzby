@@ -223,6 +223,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
 		this.getVantageToolBarCapability();
+		this.getEnergyStarCapability();
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
@@ -231,14 +232,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
 
-		this.getEnergyStarCapability();
-
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
 		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		}
+	}
 
 	initDataFromCache() {
 		this.initAirplanePowerFromCache();
@@ -374,10 +373,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.thresholdWarningSubscription.unsubscribe();
+		if (this.thresholdWarningSubscription) {
+			this.thresholdWarningSubscription.unsubscribe();
+		}
 		this.stopMonitor();
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
-
 	}
 
 	onSetSmartStandbyCapability(event: boolean) {

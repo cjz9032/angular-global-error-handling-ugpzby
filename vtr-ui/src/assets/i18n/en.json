@@ -1410,6 +1410,7 @@
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
+			"installingTitle": "During the updates, do not put your computer into sleep or hibernate mode.",
 			"last": "Last updated: ",
 			"next": "Next scheduled update: ",
 			"checkButton": "CHECK FOR UPDATES ",
@@ -2456,6 +2457,7 @@
 		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
 		"doNotSwitchApp": "• Do not switch to other app.",
 		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
+		"testNotApplicable": "Not applicable on custom scan",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

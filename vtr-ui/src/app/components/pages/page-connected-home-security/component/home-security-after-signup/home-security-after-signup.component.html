@@ -58,7 +58,7 @@
 				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
 					btnHeight=true
@@ -68,7 +68,7 @@
 				<vtr-ui-button *ngIf="account?.state === 'standardExpired'"
 					metricsItem="renew"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
 					btnHeight=true
@@ -78,7 +78,7 @@
 				<vtr-ui-button
 					metricsItem="extendNow" *ngIf="account?.state === 'standard'"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
 					btnHeight=true
@@ -102,7 +102,7 @@
 			<vtr-ui-button
 				metricsItem="goToDashboard"
 				metricsEvent="featureClick"
-				(click)="common.openCornet()"
+				(onClick)="common.openCornet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
 				btnHeight=true
@@ -119,7 +119,7 @@
 			<vtr-ui-button
 				metricsItem="disconnect"
 				metricsEvent="featureClick"
-				(click)="disconnect()"
+				(onClick)="disconnect()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-disconnect"
 				buttonColor="red"
