@@ -69,7 +69,6 @@
 	.button {
 		position: relative;
 		top: 2rem;
-		width: 22rem;
 		::ng-deep {
 			.button-box {
 				.button {
@@ -90,6 +89,9 @@
 					border: 0.1rem solid $main !important;
 					background: $light!important;
 					color: $main!important;
+					font-size: 2rem !important;
+					min-width: 24rem !important;
+					font-weight: $weight_bold;
 				}
 			}
 		}
@@ -100,7 +102,7 @@
 			.button-box {
 				.button {
 					color: $light!important;
-					background: $main!important;
+					min-width: 20rem;
 				}
 			}
 		}

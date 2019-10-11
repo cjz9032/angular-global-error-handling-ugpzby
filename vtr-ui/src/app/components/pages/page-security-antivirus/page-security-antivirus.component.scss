@@ -352,9 +352,10 @@
 		::ng-deep {
 			.button-box {
 				.button {
-					font-size: 2rem !important;
+					font-size: 1.5rem !important;
 					font-weight: $weight_600 !important;
 					width: 100%;
+					min-height: 3rem;
 				}
 			}
 		}
@@ -367,6 +368,10 @@
 					border: 0.1rem solid $main;
 					background: $light;
 					color: $main;
+					&:hover {
+						background: $light;
+						color: $main;
+					}
 				}
 			}
 		}
