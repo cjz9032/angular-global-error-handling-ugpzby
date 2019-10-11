@@ -40,7 +40,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
-	private hasUDKCapability = false;
+	hasUDKCapability = false;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
