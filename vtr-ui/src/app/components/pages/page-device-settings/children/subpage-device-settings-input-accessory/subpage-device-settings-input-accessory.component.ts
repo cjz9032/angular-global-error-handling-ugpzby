@@ -5,8 +5,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SupportedAppEnum, VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
-import { VoipApp, VoipResponse } from '../../../../../data-models/input-accessories/voip.model';
+import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
+import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
 import { EMPTY } from 'rxjs';
 
 @Component({

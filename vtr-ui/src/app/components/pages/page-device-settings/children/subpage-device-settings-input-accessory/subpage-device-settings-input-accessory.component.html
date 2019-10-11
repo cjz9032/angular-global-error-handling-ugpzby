@@ -77,21 +77,21 @@
 						*ngIf="machineType === 1">
 						<vtr-top-row-functions></vtr-top-row-functions>
 					</li>
-					<li class="pt-3 voip" *ngIf="showVoipHotkeysSection">
+					<li class="pt-3 voip">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.title' | translate"
 							componentName="Input Accessories"
 							[caption]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.main' | translate"
-							[leftIcon]="['icomoon', 'VOIP-Hotkeys']"
+							[leftIcon]="['icomoon', 'icomoon-VOIP-Hotkeys']"
 							[showChildContent]="true"
 							[theme]="'white'"
 							[isLastChild]="true"
 							[rightIcon]="['far', 'question-circle']"
 							[tooltipText]="'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.tooltip' | translate"
 							[switchId]="'inputAccessories-VoipHotkeys'">
-							<div class="row pt-2 caption">
-								<div class="col-12 ml-2">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}</div>
-								<div class="col-12 ml-2">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f11' | translate}}</div>
+							<div class="row adjust-indent pt-2 caption">
+								<div class="col-12 adjust-margin">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f10' | translate}}</div>
+								<div class="col-12 adjust-margin">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.description.f11' | translate}}</div>
 							</div>
 							<div class="row pt-2" *ngIf="installedApps.length > 0; else noAppInstalled">
 								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -115,24 +115,24 @@
 								</div>
 							</div>
 							<ng-template #noAppInstalled>
-								<div class="row">
-									<div class="col-12">
-										<div class="pl-2 pt-3 pb-4 prompting">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}</div>
+								<div class="row adjust-indent">
+									<div class="col-12 adjust-margin">
+										<div class="pt-3 pb-4 prompting">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsDescription' | translate}}</div>
 									</div>
 								</div>
-								<div class="row mt-2">
-									<div class="col-12 pl-5">
+								<div class="row adjust-indent mt-2">
+									<div class="col-12 adjust-margin">
 										<span class="app-icon icon-s4b mr-4"></span>
 										<span class="app-text">Skype for Business 2016</span>
 									</div>
 								</div>
-								<div class="row mt-5 pb-4 mb-5">
-									<div class="col-12 pl-5">
+								<div class="row adjust-indent mt-5 pb-4 mb-5">
+									<div class="col-12 adjust-margin">
 										<span class="app-icon icon-teams mr-4"></span>
 										<span class="app-text">Microsoft Teams 1.0</span>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row adjust-indent">
 									<div class="feature-note col-12 pl-5 pr-5 pt-4 pb-4"
 										 id="noInstalledApps-note" attr.aria-label="noInstalledApps-note">
 										<p class="mb-0">{{'device.deviceSettings.inputAccessories.inputAccessory.VoipHotkeys.noInstalledAppsNote' | translate}}</p>
