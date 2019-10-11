@@ -40,6 +40,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
+	private hasUDKCapability = false;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -49,15 +50,18 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.getVoipHotkeysSettings();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
 			this.initDataFromCache();
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+			// udk capability
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 		}
 		this.getMouseAndTouchPadCapability();
+		this.getVoipHotkeysSettings();
 	}
 
 	getVoipHotkeysSettings() {
@@ -67,9 +71,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					return res;
 				}
 				this.showVoipHotkeysSection = true;
-				res.appList.forEach(element => {
-					if (element.isAppInstalled) {
+				res.appList.forEach(app => {
+					if (app.isAppInstalled) {
 						this.isAppInstalled = true;
+					}
+					if (app.isSelected) {
+						this.selectedApp = app;
 					}
 				});
 				if (this.isAppInstalled) {
@@ -87,6 +94,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		this.keyboardService.setVoipHotkeysSettings(app.appName)
 			.then(VoipResponse => {
 				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
+					this.selectedApp.isSelected = false;
 					this.selectedApp = prev;
 					this.selectedApp.isSelected = true;
 					return VoipResponse;
