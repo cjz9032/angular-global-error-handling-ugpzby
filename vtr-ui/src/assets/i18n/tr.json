@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
-            "title": "Güncel bir sistem, sağlıklı sistemdir.",
+			"title": "Güncel bir sistem, sağlıklı sistemdir.",
+			"installingTitle": "Güncellemeler sırasında bilgisayarınızı uyku veya hazırda bekleme kipine geçirmeyin.",
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",

@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
-            "title": "Et oppdatert system er et velfungerende system.",
+			"title": "Et oppdatert system er et velfungerende system.",
+			"installingTitle": "Ikke sett maskinen i hvile- eller dvalemodus under oppdateringer.",
             "last": "Sist oppdatert: ",
             "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",

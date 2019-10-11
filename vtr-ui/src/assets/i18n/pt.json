@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Bem-vindo à Atualização do Sistema.",
-            "title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+			"title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+			"installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES",

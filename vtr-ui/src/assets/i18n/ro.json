@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Începeţi utilizarea Actualizare sistem.",
-            "title": "Un sistem actualizat este un sistem sănătos.",
+			"title": "Un sistem actualizat este un sistem sănătos.",
+			"installingTitle": "În timpul actualizărilor, nu treceți computerul în modul repaus sau hibernare.",
             "last": "Ultima actualizare: ",
             "next": "Următoarea actualizare programată: ",
             "checkButton": "CĂUTAȚI ACTUALIZĂRI",

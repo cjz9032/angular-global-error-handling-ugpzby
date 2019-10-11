@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Tervetuloa käyttämään Järjestelmäpäivitystä.",
-            "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+			"title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+			"installingTitle": "Älä aseta tietokonetta lepo- tai horrostilaan päivitysten aikana.",
             "last": "Viimeksi päivitetty: ",
             "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",

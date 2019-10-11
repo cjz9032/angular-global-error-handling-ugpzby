@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Uporabite posodobitev sistema.",
-            "title": "Posodobljen sistem je zdrav sistem.",
+			"title": "Posodobljen sistem je zdrav sistem.",
+			"installingTitle": "Računalnika med posodabljanjem ne preklopite v stanje pripravljenosti ali mirovanje.",
             "last": "Zadnja posodobitev: ",
             "next": "Naslednja načrtovana posodobitev: ",
             "checkButton": "ISKANJE POSODOBITEV",
