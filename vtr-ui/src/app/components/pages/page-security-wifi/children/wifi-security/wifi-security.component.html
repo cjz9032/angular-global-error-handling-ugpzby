@@ -182,7 +182,7 @@
 									metricsEvent="featureClick"
 									metricsItem="checkYourLocation"
 									[isDisabled]="locatorButtonDisable"
-									(click)="openThreatLocator()"
+									(onClick)="openThreatLocator()"
 									[title]="'security.wifisecurity.threatlocator.button' | translate"
 									[label]="'security.wifisecurity.threatlocator.button' | translate"
 									[linkId]="'sa-ws-btn-openlocator'"></vtr-ui-button>
@@ -205,7 +205,7 @@
 					metricsEvent="featureClick"
 					[linkId]="'sa-ws-btn-enablewifisecurity'"
 					btnHeight=true
-					(click)="enableWifiSecurity()"
+					(onClick)="enableWifiSecurity()"
 					[title]="'security.wifisecurity.container.button' | translate"
 					[label]="'security.wifisecurity.container.button' | translate"
 					></vtr-ui-button>

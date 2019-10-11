@@ -2404,7 +2404,8 @@
         "attention": "Pažnja",
         "cancelTextPrompt": "Želite li zaista odustati?",
         "cancelTextProgress": "Pričekajte napredak otkazivanja",
-        "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju."
+        "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju.",
+        "testNotApplicable": "Nije primjenjivo za prilagođeni pregled"
     },
     "smartPerformance": {
         "title": "Health & Support",

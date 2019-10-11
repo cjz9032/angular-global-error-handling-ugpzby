@@ -57,7 +57,7 @@
 	</div>
 	<!-- start of page 2-->
 	<!-- end of page1-->
-	<div *ngSwitchCase="2">
+	<div *ngSwitchCase="2" #welcomepage2 tabindex="-1">
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.subtitle1' | translate">
@@ -76,7 +76,7 @@
 							<div class="device-image"
 								id="tutorial_personalUse"
 								attr.aria-label="tutorial_personalUse"
-								(click)="saveUsageType($event, 'PERSONAL')">
+								(click)="saveUsageType('PERSONAL')">
 								<input type="radio"
 									name="radio"
 									id="radio1"
@@ -87,7 +87,7 @@
 									for="radio1"
 									src="assets/images/welcome/personal-use.jpg"
 									class="" />
-								<label for="radio1"
+								<label for="radio1"  tabindex="1" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
 						</div>
@@ -95,7 +95,7 @@
 							<div class="device-image"
 								id="tutorial_businessUse"
 								attr.aria-label="tutorial_businessUse"
-								(click)="saveUsageType($event, 'BUSINESS')">
+								(click)="saveUsageType('BUSINESS')">
 								<input type="radio"
 									name="radio"
 									id="radio2"
@@ -105,7 +105,7 @@
 									for="radio2"
 									src="assets/images/welcome/business-use.jpg"
 									class="business" />
-								<label for="radio2"
+								<label for="radio2"  tabindex="2" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
 							</div>
 						</div>
@@ -113,17 +113,17 @@
 							<div class="device-image"
 								id="tutorial_customExp"
 								attr.aria-label="tutorial_customExp"
-								(click)="saveUsageType($event, 'CUSTOM')">
+								(click)="saveUsageType('CUSTOM')">
 								<input type="radio"
 									name="radio"
 									id="radio3"
 									value="custom"
 									#radio3 />
-								<img alt="Custom Experience"
+								<img alt="Custom Experience" 
 									for="radio3"
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
-								<label for="radio3"
+								<label for="radio3" tabindex="3	" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.custom" | translate }} </label>
 							</div>
 						</div>
@@ -141,32 +141,32 @@
 								[id]="interest + 'checkbox'"
 								#checkbox1
 								(click)="toggle($event, interest)" />
-							<label
+							<label tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
 								[for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
 						</div>
 					</div>
 					<div *ngIf="!hideMoreInterestBtn"
 						class="row justify-content-center align-items-center font-12-semi mb-4 col-12">
-						<div class="col-auto title2"
+						<div class="col-auto title2" tabindex="5" (keypress)="onKeyPress($event)"
 							id="tutorial_hide_moreInterest"
 							attr.aria-label="tutorial_hide_moreInterest"
 							(click)="moreInterestClicked()">
 							<span
-								class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
+								class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>				
 						</div>
 					</div>
 					<div class="row privacy-check mt-3">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox"
+							<input type="checkbox" tabindex="6" (keypress)="onKeyPress($event)"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
 								id="defaultUnchecked"
 								attr.aria-label="defaultUnchecked">
-							<label class="custom-control-label"
+							<label class="custom-control-label" 
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
-								<a class="linktext" 
+								<a class="linktext"  tabindex="7"
 									[ngClass]="{'lang-he-privacy-link':machineInfo.locale=='he'}"
 									href="https://www.lenovo.com/us/en/privacy"
 									target="_blank"
@@ -180,8 +180,8 @@
 				</div>
 
 				<div class="row justify-content-center align-items-center next-btn">
-					<div class="col-auto ">
-						<vtr-ui-button metricsParent="WelcomePage"
+					<div class="col-auto" tabindex="8" (keypress)="btnDoneOnKeyPress($event)" >
+						<vtr-ui-button metricsParent="WelcomePage"  
 							metricsEvent="featureClick"
 							[tooltip]="false"
 							[metricsItem]="'DONE'"

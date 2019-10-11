@@ -49,7 +49,7 @@
 												<div class="col-12">
 													<vtr-ui-button
 														*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
-														(click)="getSurfEasy()"
+														(onClick)="getSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="getSurfEasy"
 														[linkId]="'sa-vpn-btn-getsufeasy'"
@@ -59,7 +59,7 @@
 													</vtr-ui-button>
 													<vtr-ui-button
 														*ngIf="statusItem.status === 'installed'"
-														(click)="openSurfEasy()"
+														(onClick)="openSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="openSurfEasy"
 														[linkId]="'sa-vpn-btn-opensufeasy'"

@@ -38,7 +38,7 @@
 				<vtr-ui-button *ngIf="!joinSuccess"
 					metricsEvent="featureClick"
 					metricsItem="connect"
-					(click)="joinGroupBy(code.value)"
+					(onClick)="joinGroupBy(code.value)"
 					[title]="'security.homeprotection.invitationcode.connect' | translate"
 					[label]="'security.homeprotection.invitationcode.connect' | translate"
 					[isDisabled]="!(code.value.length === 6)"

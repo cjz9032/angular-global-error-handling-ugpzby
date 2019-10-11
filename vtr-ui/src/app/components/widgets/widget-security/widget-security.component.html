@@ -16,7 +16,10 @@
 					<span>{{security.title[percentValue === 100 ? 0 : 1] | translate}}</span>
 					<vtr-ui-tooltips class="pl-3 pt-2">
 						<ng-template #tooltipText>
-							<span class="tooltips-description__tooltip-text">i</span>
+							<span class="tooltips-description__tooltip-text"
+								(mouseenter)="hover=true;"
+								(mouseleave)="hover=false;"
+								[ngClass]="{'hover': hover}">i</span>
 						</ng-template>
 						<ng-template #tooltipContext>
 							<div class="tooltips-description__tooltip-context">

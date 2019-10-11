@@ -2404,7 +2404,8 @@
         "attention": "Attention",
         "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
-        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau."
+        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau.",
+        "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée"
     },
     "smartPerformance": {
         "title": "Health & Support",

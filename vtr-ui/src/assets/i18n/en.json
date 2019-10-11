@@ -2456,6 +2456,7 @@
 		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
 		"doNotSwitchApp": "• Do not switch to other app.",
 		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
+		"testNotApplicable": "Not applicable on custom scan",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

@@ -129,36 +129,35 @@
 
 	.tooltips-description {
 		padding: 0 7rem 0 4rem;
-		color: #FFFFFF;
+		color: $light;
 
 		&__title {
-			color: #FFFFFF;
+			color: $light;
 			font-size: 2.5rem;
-			font-weight: 600;
+			font-weight: $weight_600;
 			line-height: 2.9rem;
 			margin: 0 1rem 0.8rem 0;
 		}
 
 		&__text {
 			@extend %text-common;
-			color: #FFFFFF;
+			color: $light;
 		}
 
 		&__tooltip-text {
 			font-size: 12px;
 			line-height: 15px;
-			font-weight: 600;
-			color: #FFFFFF;
+			font-weight: $weight_600;
+			color: $light;
 			padding: 0 6px;
 			cursor: pointer;
-			border: 2px solid #FFFFFF;
+			border: 2px solid $light;
 			border-radius: 50%;
 			box-sizing: border-box;
-
-			&:hover {
-				background-color: #C2C8CE;
-				border-color: #C2C8CE;
-				color: #191C28;
+			&.hover {
+				background-color: $hover_gray;
+				border-color: $hover_gray;
+				color: $hover_dark;
 			}
 		}
 
@@ -177,7 +176,7 @@
 
 		&__tooltip-context-title {
 			@extend %text-common;
-			color: #191C28;
+			color: $hover_dark;
 			font-weight: bold;
 		}
 

@@ -112,7 +112,7 @@
 																[ngClass]="{'disable': homeSecurityLocation?.isLoading}"
 																metricsItem="enableLocationSecurityHealth"
 																metricsEvent="featureClick"
-																(click)="dialogService?.openCHSPermissionModal()"
+																(onClick)="dialogService?.openCHSPermissionModal()"
 																[isDisabled]="homeSecurityLocation?.isLoading"
 																linkId="chs-btn-enableLocation"
 																[title]="'security.homeprotection.securityhealth.button' | translate"

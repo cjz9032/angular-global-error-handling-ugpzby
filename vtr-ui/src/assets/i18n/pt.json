@@ -2404,7 +2404,8 @@
         "attention": "Atenção",
         "cancelTextPrompt": "Tem a certeza de que pretende cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
-        "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a."
+        "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a.",
+        "testNotApplicable": "Não aplicável na verificação personalizada"
     },
     "smartPerformance": {
         "title": "Health & Support",
