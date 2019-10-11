@@ -23,14 +23,7 @@
 							</div>
 						</div>
 						<div class="col">
-<<<<<<< HEAD
 							<div class="title" tabindex="1" id="{{switchId}}-title" attr.aria-label="{{ title }}">
-=======
-							<div class="title"
-								tabindex="1"
-								id="{{switchId}}-title"
-								attr.aria-label="{{ title }}">
->>>>>>> feature-hs-accessibilty
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
@@ -41,16 +34,8 @@
 							</span>
 							<!-- {{ caption. add it only if there is a readmore, else comment it}} -->
 							<!-- attr.aria-label="hello {{'read_more_'+ switchId}}" -->
-<<<<<<< HEAD
 							<span id="{{'read_more_'+ switchId}}" *ngIf="readMoreText && !contentExpand" tabindex="1"
 								class="read-more" (click)="onReadMoreClick($event)"
-=======
-							<span id="{{'read_more_'+ switchId}}"
-								*ngIf="readMoreText && !contentExpand"
-								tabindex="1"
-								class="read-more"
-								(click)="onReadMoreClick($event)"
->>>>>>> feature-hs-accessibilty
 								attr.aria-label="read more about, {{ title }}"
 								(keydown.enter)="onReadMoreClick($event)">
 								{{ readMoreText }}
