@@ -9,8 +9,8 @@ import {
 	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture
 } from '@lenovo/tan-client-bridge';
 import {
-	VantageShellService
-} from '../../../services/vantage-shell/vantage-shell.service';
+	BaseVantageShellService
+} from '../../../services/vantage-shell/base-vantage-shell.service';
 import {
 	HomeSecurityAccount
 } from 'src/app/data-models/home-security/home-security-account.model';
@@ -73,7 +73,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	};
 
 	constructor(
-		public vantageShellService: VantageShellService,
+		public vantageShellService: BaseVantageShellService,
 		public homeSecurityMockService: HomeSecurityMockService,
 		public devicePostureMockService: DevicePostureMockService,
 		public dialogService: DialogService,
