@@ -8,6 +8,7 @@ import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import {DeviceService}  from 'src/app/services/device/device.service';
 import { $ } from 'protractor';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -49,7 +50,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
 		public commonService: CommonService,
-		private timerService: TimerService) {
+		private timerService: TimerService,
+		private userService: UserService) {
 		this.metrics = shellService.getMetrics();
 		this.privacyPolicy = this.metrics.metricsEnabled;
 		const self = this;
@@ -136,6 +138,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
+			this.userService.sendSilentlyLoginMetric();
 			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
