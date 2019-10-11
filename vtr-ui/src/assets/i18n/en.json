@@ -1271,8 +1271,14 @@
 			"superResolution": {
 				"heading": "Intelligent Media",
 				"title": "Super resolution",
-				"desc": "This feature improves the video quality  when in a bad network environment or your video source is in a low resolution.",
-				"tooltip": "This feature intelligently optimize video quality based on the battery power condition/AC adapter/CPU temperature and only works for  below video player(local and online): Lenovo player Windows media player Storm player Thunderbolt player Note: If one of above factor not fulfilled, it might work even it is on."
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabied,it is recommended that you connect your computer with ac power.</label></p>",
+				"tooltip": "This feature works only on the following players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"This feature does not work when:",
+					"description1":"The computer is not connected to ac power and the battery power is lower than 20%.",
+					"description2":"The computer is not connected to ac power and the battery saver mode is enabled.",
+					"description3":"The CPU temperature is too high."
+				}
 			},
 			"voice": {
 				"title": "Voice",
