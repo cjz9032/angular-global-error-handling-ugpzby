@@ -62,8 +62,7 @@
 			upperCaseLabel=false
 			btnHeight=true
 			[label]="'security.antivirus.mcafee.launch' | translate"
-			(onClick)="common.launch()"
-			[title]="'security.antivirus.mcafee.launch' | translate"></vtr-ui-button>
+			(onClick)="common.launch()"></vtr-ui-button>
     </li>
     <li *ngIf="windowsDefender" class="row justify-content-center">
 		<vtr-ui-button class="normal-button button"
@@ -76,7 +75,6 @@
 			btnHeight=true
 			[isDisabled]="isOnline === false"
 			[label]="'security.antivirus.windowsDefender.buyNow' | translate"
-			[href]="url"
-			[title]="'security.antivirus.windowsDefender.buyNow' | translate"></vtr-ui-button>
+			[href]="url"></vtr-ui-button>
     </li>
 </ul>

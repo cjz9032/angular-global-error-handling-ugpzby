@@ -67,6 +67,9 @@
 
 				vtr-ui-button {
 					max-width: 90%;
+					::ng-deep .button {
+						width: 100%;
+					}
 				}
 			}
 
