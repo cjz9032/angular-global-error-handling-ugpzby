@@ -35,8 +35,18 @@
 		position: relative;
 		cursor: pointer;
 		z-index: 1;
-		a {
-			border-bottom: 0.1rem solid $light;
+		//a {
+		//	border-bottom: 0.1rem solid $light;
+		//}
+
+		span {
+			text-decoration: underline;
+		}
+
+		&:hover {
+			span {
+				text-decoration: none;
+			}
 		}
 	}
 	.forward-link {

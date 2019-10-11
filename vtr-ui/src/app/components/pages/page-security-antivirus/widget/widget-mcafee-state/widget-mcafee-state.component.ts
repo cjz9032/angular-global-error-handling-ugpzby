@@ -12,21 +12,22 @@ export class WidgetMcafeeStateComponent implements OnInit {
   @Input() common: AntivirusCommon;
   @Input() windowsDefender = false;
   @Input() url: string;
+  @Input() isOnline: boolean;
   windowsMcAfee = [{
-    status: 'not-installed',
-    title: 'security.antivirus.windowsDefender.virus'
+	status: 'not-installed',
+	title: 'security.antivirus.windowsDefender.virus'
   }, {
-    status: 'not-installed',
-    title: 'security.antivirus.windowsDefender.homeNetwork'
+	status: 'not-installed',
+	title: 'security.antivirus.windowsDefender.homeNetwork'
   }, {
-    status: 'not-installed',
-    title: 'security.antivirus.windowsDefender.private'
+	status: 'not-installed',
+	title: 'security.antivirus.windowsDefender.private'
   }, {
-    status: 'not-installed',
-    title: 'security.antivirus.windowsDefender.everyDevice'
+	status: 'not-installed',
+	title: 'security.antivirus.windowsDefender.everyDevice'
   }, {
-    status: 'not-installed',
-    title: 'security.antivirus.windowsDefender.password'
+	status: 'not-installed',
+	title: 'security.antivirus.windowsDefender.password'
   }];
   windowsList;
   constructor() {

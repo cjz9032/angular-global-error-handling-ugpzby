@@ -401,7 +401,7 @@
 					cursor: pointer;
 
 					&:hover {
-						text-decoration: none;
+						text-decoration: underline;
 					}
 
 					@media #{$mediaquery_7} {
@@ -421,7 +421,9 @@
 					color: $main;
 
 					&:hover {
-						text-decoration: none;
+						.link-label {
+							border-bottom: none;
+						}
 					}
 
 					.link-label {
@@ -523,7 +525,7 @@
 			font-size: 2.5rem;
 			font-weight: $weight_bold;
 
-			@media #{$mediaquery_X4} {
+		/*	@media #{$mediaquery_X4} {
 				font-size: 2rem;
 			}
 
@@ -541,7 +543,7 @@
 
 			@media #{$mediaquery_X3} {
 				font-size: 1.6rem;
-			}
+			}*/
 		}
 
 		.description {
@@ -553,7 +555,7 @@
 			color: $main_shade;
 			font-size: 2.2rem;
 
-			@media #{$mediaquery_X4} {
+			/*@media #{$mediaquery_X4} {
 				font-size: 1.8rem;
 			}
 
@@ -571,7 +573,7 @@
 
 			@media #{$mediaquery_X3} {
 				font-size: 1.6rem;
-			}
+			}*/
 		}
 
 		.logo {

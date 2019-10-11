@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { LocalInfoService } from '../local-info/local-info.service';
 import { CommonService } from '../common/common.service';
 import { ModernPreloadEnum } from 'src/app/enums/modern-preload.enum';
 import { DeviceService } from '../device/device.service';
@@ -24,11 +23,15 @@ export class ModernPreloadService {
 	}
 
 	public IsEntitled = false;
+	public EntitledAppList: any;
+	public IsInstalling = false;
+	public IsCancelInstall = false;
+	public DownloadButtonStatus: number;
 	private modernPreloadBridge: any;
 	private isInitialized = false;
 	private cancelToken = undefined;
-	private isCancelInstall = false;
 	private cmsAppList: any;
+	private installingAppList: any;
 
 	private initialize() {
 		let machineInfo = this.deviceService.getMachineInfoSync();
@@ -65,34 +68,55 @@ export class ModernPreloadService {
 		}
 	}
 
-	getAppList() {
-		if (this.isInitialized && (!this.cmsAppList || this.cmsAppList.length < 1)) {
+	getAppList(responseHandler) {
+		if (this.IsInstalling) {
+			const entitledAppList = this.checkInstallingApps();
+			this.sendResponseNotification(ModernPreloadEnum.GetEntitledAppListRespond, entitledAppList, responseHandler);
+		} else if (this.isInitialized && (!this.cmsAppList || this.cmsAppList.length < 1)) {
 			Promise.all([this.cmsService.fetchCMSEntitledAppList({ Lang: 'EN' }),
 			this.modernPreloadBridge.getEntitledAppList()])
 				.then((responses) => {
 					this.cmsAppList = responses[0];
 					this.logService.info('ModernPreloadService.getAppList cms response.', JSON.stringify(this.cmsAppList));
-					this.handleGetAppListResponse(responses[1].appList);
+					this.handleGetAppListResponse(responses[1].appList, responseHandler);
 				})
 				.catch((error) => {
 					this.logService.error('ModernPreloadService.getAppList error.', JSON.stringify(error));
-					this.commonService.sendNotification(ModernPreloadEnum.CommonException, error);
+					this.sendResponseNotification(ModernPreloadEnum.CommonException, error, responseHandler);
 				});
 		} else if (this.isInitialized) {
 			this.modernPreloadBridge.getEntitledAppList().then((response) => {
-				this.handleGetAppListResponse(response.appList);
+				this.handleGetAppListResponse(response.appList, responseHandler);
 			}).catch((error) => {
 				this.logService.error('ModernPreloadService.getAppList error.', JSON.stringify(error));
-				this.commonService.sendNotification(ModernPreloadEnum.CommonException, error);
+				this.sendResponseNotification(ModernPreloadEnum.CommonException, error, responseHandler);
 			});
 		}
 	}
 
-	private handleGetAppListResponse(bridgeAppList: any) {
+	private checkInstallingApps() {
+		if (this.IsInstalling && !this.IsCancelInstall) {
+			const entitledAppList = this.EntitledAppList.map(entitledApp => {
+				const installingApp = this.installingAppList.find(x => x.appID === entitledApp.appID);
+				if (installingApp && installingApp.appID) {
+					entitledApp.isChecked = true;
+				} else {
+					entitledApp.isChecked = false;
+				}
+				return entitledApp;
+			});
+			return entitledAppList;
+		} else {
+			return this.EntitledAppList;
+		}
+	}
+
+	private handleGetAppListResponse(bridgeAppList: any, responseHandler) {
 		if (bridgeAppList && this.cmsAppList) {
 			this.logService.info('ModernPreloadService.handleGetAppListResponse response.', JSON.stringify(bridgeAppList));
 			const mergedAppList: AppItem = this.mergeAppDetails(bridgeAppList, this.cmsAppList);
-			this.commonService.sendNotification(ModernPreloadEnum.GetEntitledAppListRespond, mergedAppList);
+			this.EntitledAppList = mergedAppList;
+			this.sendResponseNotification(ModernPreloadEnum.GetEntitledAppListRespond, mergedAppList, responseHandler);
 		}
 	}
 
@@ -108,91 +132,73 @@ export class ModernPreloadService {
 				app.udcId = app.partNum;
 				app.version = detailFromCMS.Version;
 			}
+			app.isChecked = app.status !== ModernPreloadEnum.StatusInstalled; // set default checked for not installed app
 		});
 		return appList;
 	}
 
-	installEntitledApp(sendAppList: AppItem[]) {
-		this.isCancelInstall = false;
-		this.installAppsOneByOne(sendAppList);
+	installEntitledApp(sendAppList: AppItem[], responseHandler) {
+		this.IsCancelInstall = false;
+		this.IsInstalling = true;
+		this.installingAppList = sendAppList;
+		this.installAppsOneByOne(sendAppList, responseHandler);
 	}
 
-	private installAppsOneByOne(sendAppList: AppItem[]) {
-		this.installApp(0, sendAppList);
+	private installAppsOneByOne(sendAppList: AppItem[], responseHandler) {
+		this.installApp(0, sendAppList, responseHandler);
 	}
 
-	private installApp(i: number, appList: AppItem[]) {
-		if (this.isInitialized && i < appList.length && !this.isCancelInstall) {
+	private installApp(i: number, appList: AppItem[], responseHandler) {
+		if (this.isInitialized && i < appList.length && !this.IsCancelInstall) {
 			this.cancelToken = {};
 			this.modernPreloadBridge.downloadOrInstallEntitledApps([appList[i]], (progressResponse) => {
 				this.logService.info('ModernPreloadService.installApp progress response.', JSON.stringify(progressResponse));
-				if (progressResponse && !this.isCancelInstall) {
-					this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppProgress, progressResponse);
+				if (progressResponse && !this.IsCancelInstall) {
+					this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppProgress, progressResponse, responseHandler);
 				}
 			}, this.cancelToken)
 				.then((response) => {
 					this.cancelToken = undefined;
 					this.logService.info('ModernPreloadService.installApp response.', JSON.stringify(response));
-					if (response.appList && i === appList.length - 1) {
-						this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppResult, response.appList);
-					} else if (response.appList && !this.isCancelInstall) {
-						this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppProgress, response.appList);
+					this.IsInstalling = !(i === appList.length - 1 || this.IsCancelInstall);
+					if (response.appList && i === appList.length - 1 && !this.IsCancelInstall) {
+						this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppResult, response.appList, responseHandler);
+					} else if (response.appList && i < appList.length - 1 && !this.IsCancelInstall) {
+						this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppProgress, response.appList, responseHandler);
 						i++;
-						this.installApp(i, appList);
+						this.installApp(i, appList, responseHandler);
 					}
 				}).catch((error) => {
 					this.logService.error('ModernPreloadService.installApp error.', JSON.stringify(error));
 					this.cancelToken = undefined;
-					if (error.errorcode === 499) {
-						this.commonService.sendNotification(ModernPreloadEnum.InstallationCancelled);
+					if (error.errorcode === 499 || this.IsCancelInstall) {
+						this.IsInstalling = false;
+						this.sendResponseNotification(ModernPreloadEnum.InstallationCancelled, null, responseHandler);
 					} else {
 						appList[i].progress = 100;
 						appList[i].status = appList[i].status === ModernPreloadEnum.StatusInstalled
 							? ModernPreloadEnum.StatusInstalled
 							: ModernPreloadEnum.StatusNotInstalled;
+						this.IsInstalling = !(i === appList.length - 1);
 						if (i === appList.length - 1) {
-							this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppResult, [appList[i]]);
+							this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppResult, [appList[i]], responseHandler);
 						} else {
-							this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppProgress, [appList[i]]);
+							this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppProgress, [appList[i]], responseHandler);
 							i++;
-							this.installApp(i, appList);
+							this.installApp(i, appList, responseHandler);
 						}
 					}
 				});
 		}
 	}
 
-	private installAllApp(appList: AppItem[]) {
-		if (this.isInitialized && !this.isCancelInstall) {
-			this.cancelToken = {};
-			this.modernPreloadBridge.downloadOrInstallEntitledApps(appList, (progressResponse) => {
-				if (progressResponse) {
-					this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppProgress, progressResponse);
-				}
-			}, this.cancelToken)
-				.then((response) => {
-					this.cancelToken = undefined;
-					if (response.appList) {
-						this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppResult, response.appList);
-					}
-				}).catch((error) => {
-					this.logService.error('ModernPreloadService.installAllApp error.', JSON.stringify(error));
-					this.cancelToken = undefined;
-					if (error.errorcode === 499) {
-						this.commonService.sendNotification(ModernPreloadEnum.InstallationCancelled);
-					} else if (error.errorcode === 1066 && appList.length === 1) {
-						appList[0].progress = 100;
-						appList[0].status = ModernPreloadEnum.StatusNotInstalled;
-						this.commonService.sendNotification(ModernPreloadEnum.InstallEntitledAppResult, appList);
-					} else {
-						this.commonService.sendNotification(ModernPreloadEnum.CommonException, error);
-					}
-				});
-		}
+	private sendResponseNotification(type: ModernPreloadEnum,  payload: any, responseHandler: any) {
+		const notification = { type, payload };
+		responseHandler(notification);
 	}
 
 	cancelInstall() {
-		this.isCancelInstall = true;
+		this.IsCancelInstall = true;
 		if (this.cancelToken) {
 			this.cancelToken.cancel();
 		}
@@ -214,4 +220,10 @@ export class AppItem {
 	verbose?: string;
 	isChecked?: boolean;
 	showStatus?: number;
+}
+
+export enum DownloadButtonStatusEnum {
+	DOWNLOAD = 1,
+	RESTART_DOWNLOAD = 2,
+	DOWNLOADING = 3
 }

@@ -1,4 +1,6 @@
 {
+	"dir": "ltr",
+	"dirClass": "ltr",
 	"gaming": {
 		"dashboard": {
 			"device": {
@@ -107,6 +109,15 @@
 					"sub1": "Support",
 					"sub2": "Facebook",
 					"sub3": "Instagram"
+				}
+			},
+			"narrator": {
+				"pageTitle": {
+					"device": "Lenovo Vantage home page",
+					"macroKey": "Macro key page",
+					"networkBoost": "network boost page",
+					"autoClose": "auto close page",
+					"lighting": "Lighting page"
 				}
 			}
 		},
@@ -235,6 +246,27 @@
 			},
 			"recording": {
 				"title": "Recording Macro Key For"
+			},
+			"narrator": {
+				"backDashboard": "Back to dashboard",
+				"macrokeyNumpad": "macrokey numpad",
+				"clearText": "macrokey clear records",
+				"popupOk": "macrokey popup clear",
+				"popupClear": "macrokey popup ok",
+				"popupCancel": "macrokey popup cancel",
+				"popupClose": "close",
+				"optionSelected": "selected",
+				"numbersSelectedNumpad": "selected macrokey numpad",
+				"macrokeySettings1": {
+					"option1": "on",
+					"option2": "macro key settings enabled when gaming",
+					"option3": "macro key settings off"
+				},
+				"numberInput": {
+					"title": "Number",
+					"bundledSelected": "is selected bundled",
+					"unbundledSelected": "is selected unbundled"
+				}
 			}
 		},
 		"lightingProfile": {
@@ -271,6 +303,70 @@
 					"title": "APPLIED"
 				}
 			},
+			"lightingeffectnarrator": {
+				"option1": {
+					"title": "front on"
+				},
+				"option2": {
+					"title": "front flicker"
+				},
+				"option3": {
+					"title": "front breath"
+				},
+				"option4": {
+					"title": "front wave"
+				},
+				"option5": {
+					"title": "front smooth"
+				},
+				"option6": {
+					"title": "front cpu temperature"
+				},
+				"option7": {
+					"title": "front cpu utilization"
+				},
+				"option8": {
+					"title": "front off"
+				},
+				"color": {
+					"title": "Color settings"
+				},
+				"lightingEffect": {
+					"title": "Lighting effect"
+				}
+			},
+			"lightingeffectsidenarrator": {
+				"option1": {
+					"title": "side on"
+				},
+				"option2": {
+					"title": "side flicker"
+				},
+				"option3": {
+					"title": "side breath"
+				},
+				"option4": {
+					"title": "side wave"
+				},
+				"option5": {
+					"title": "side smooth"
+				},
+				"option6": {
+					"title": "side cpu temperature"
+				},
+				"option7": {
+					"title": "side cpu utilization"
+				},
+				"option8": {
+					"title": "side off"
+				},
+				"color": {
+					"title": "Color settings"
+				},
+				"lightingEffect": {
+					"title": "Lighting effect"
+				}
+			},
 			"brightness": {
 				"text1": {
 					"title": "*Brightness setting doesn't apply on "
@@ -280,6 +376,23 @@
 				}
 			},
 			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "Always On"
+				},
+				"option2": {
+					"title": "Fast Blink"
+				},
+				"option3": {
+					"title": "Medium Blink"
+				},
+				"option4": {
+					"title": "Slow Blink"
+				},
+				"option5": {
+					"title": "Blink Level"
+				}
+			},
+			"lightingSingleLightingOptionnarrator": {
 				"option1": {
 					"title": "Always On"
 				},
@@ -326,6 +439,26 @@
 					"title": "Profile 3"
 				}
 			},
+			"lightingnarrator": {
+				"text1": {
+					"title": "Lighting profile off"
+				},
+				"text2": {
+					"title": "Lighting profile 1"
+				},
+				"text3": {
+					"title": "Lighting profile 2"
+				},
+				"text4": {
+					"title": "Lighting profile 3"
+				},
+				"Customize": {
+					"title": "set lighting profile"
+				},
+				"heading": {
+					"title": "to default:"
+				}
+			},
 			"colourwheel": {
 				"text1": {
 					"title": "Selecting colour not available to this effect."
@@ -348,6 +481,11 @@
 				"text7": {
 					"title": "Color"
 				}
+			},
+			"rgbValueNarrator": {
+				"red": "rgb red value edit",
+				"green": "rgb green value edit",
+				"blue": "rgb blue value edit"
 			},
 			"lightingProfileHeading": {
 				"text1": {
@@ -373,13 +511,24 @@
 		"autoClose": {
 			"title": "Auto Close",
 			"addAppsButton": "Add",
-			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely, so always make sure you've saved your work.",
+			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize the gaming performance. NOTE: This feature closes the app completely. So always make sure that you've saved your work.",
+			"autocClosenarrator": "Add",
+			"autocClosenarratorremove": "Remove",
+			"autocClosenarratorback": "Back to dashboard",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
 				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "TURN ON",
 				"btnCancel": "NOT NOW"
+			},
+			"modalTurnAutoCloseNarrator": {
+				"close": "Close",
+				"dontask": "Don't ask again",
+				"turnOn": "Turn on auto close",
+				"notNow": "Not now",
+				"running": "No running apps to add window",
+				"open": "Auto close add apps window opened"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
@@ -406,6 +555,28 @@
 					"part1": "You can add up to 5 additional apps to boost",
 					"part2": "of",
 					"part3": "added"
+				}
+			}
+		},
+		"narrator": {
+			"networkBoost": {
+				"subPage": {
+					"addApps": "Add apps",
+					"remove": "Remove"
+				},
+				"turnOnModal": {
+					"confirmation": "Network boost turn on confirmation window opened",
+					"dontAskAgain": "Dont ask again",
+					"turnOnButton": "modal Turn networkBoost turn on",
+					"notOnButton": "modal Turn networkBoost not now"
+				},
+				"addApps": {
+					"addAppsTitle": "Networkboost add apps window opened",
+					"noAppsTitle": "No running Apps to add window",
+					"add": "add"
+				},
+				"common": {
+					"close": "close"
 				}
 			}
 		}
@@ -473,6 +644,9 @@
 			"expand": "Expand",
 			"loader": "Fetching <br> Status",
 			"loading": "Loading..."
+		},
+		"app-update": {
+			"message": "Hey! A newer version of Vantage is available, do you want to load it?"
 		}
 	},
 	"privacy": {
@@ -696,7 +870,7 @@
 				"condition": {
 					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
 					"Good": "<b>The battery is in good condition.</b>",
-					"Exhaustion": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery.",
+					"Exhaustion": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
@@ -710,7 +884,7 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery."
+					"PermanentError": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one."
 				}
 			},
 			"power": {
@@ -804,7 +978,7 @@
 					"flipToBoot": {
 						"title": "Flip to boot",
 						"description": "This feature enables you to turn on your computer when you open the computer lid, just the same as you pressing the power button. ",
-						"tooltip": "This feature automatically starts the computer by openning the lid.  It is especially useful if you have set up the face log-in information in Windows Hello."
+						"tooltip": "This feature automatically starts the computer by opening the lid.  It is especially useful if you have set up the face log-in information in Windows Hello."
 					},
 					"or": "Or"
 				},
@@ -1136,7 +1310,7 @@
 						},
 						"subSectionThree": {
 							"title": "How to use Fn key combinations",
-							"description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of press and hold) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
+							"description": "Using the Normal method, to use the Fn key combinations, you need to press Fn+function keys. With the Fn Sticky key method, you can press (instead of pressing and holding) the Fn key to keep it in a pressed condition. Then press the desired function key. The action is equivalent to pressing the function key simultaneously with the Fn key.",
 							"radioButton": {
 								"nMehod": "Normal method",
 								"fnKeyMehod": "Fn Sticky Key method"
@@ -1237,11 +1411,15 @@
 						}
 					}
 				},
+				"sensitivityAdjusting": {
+					"title": "SENSITIVITY ADJUSTING"
+				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
 					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
+						"medium": "Medium",
 						"far": "Far"
 					},
 					"tooltipcontent": {
@@ -1262,7 +1440,8 @@
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
 					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Login will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
-					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
+					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},
 				"WindowsLink": {
 					"goToWindowsHello": "Go to Windows Hello Settings",
@@ -1294,8 +1473,8 @@
 				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
 				"activeProtection": {
 					"title": "Active Protection",
-					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection.",
-					"checkbox": "Ignore repetative shocks such as those of a train or a car"
+					"caption": "Change the sensitivity, in low sensitive mode, only harder shocks will activate protection.",
+					"checkbox": "Ignore repetitive shocks such as those of a train or a car"
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
@@ -1334,7 +1513,7 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as 5KPlayer, and etc. support this feature."
 			},
 			"voice": {
 				"title": "Voice",
@@ -1541,15 +1720,17 @@
 			"upgrade": "upgrade",
 			"freeTrial": "Protect all of your devices - Free 30 day trial",
 			"startTrial": "Start Trial",
-			"trialTitle": "Trial",
-			"subscriptionTitle": "Subscription",
-			"inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep protecting your home and family",
-			"trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"inSubscriptionDetail": "You are currently protecting your home and family with Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
+			"trialTitle": "Trial Period",
+			"subscriptionTitle": "Paid Subscription",
+			"inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+			"trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
 			"overviewTitle": "Overview",
 			"trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+			"trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
 			"subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+			"subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
 			"overviewTitleAdmin": "Overview of your Connected Home Security",
 			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
 			"familyMembers": "Family members",
@@ -1560,7 +1741,9 @@
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
 			"disconnect": "disconnect",
 			"goDashboard": "go to dashboard",
-			"extendNow": "extend",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
 			"poweredBy": "Powered by Coronet",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 		},
@@ -1569,25 +1752,14 @@
 			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",
-			"welcome1": "Welcome",
-			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family.",
-			"welcomeDescStart": "Start your free 30 day trial now.",
-			"welcome2": "Exclusive for Vantage",
-			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-			"create": "Create your account",
-			"lenovoId": "with Lenovo ID",
-			"notifications": "Receive <b>notifications</b> about your home's status",
-			"monitor": "<b>Monitor</b> the safety of your family's devices",
-			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-			"signInLenovoId": "SIGN-UP WITH LENOVO ID",
-			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
-			"createLenovo": "&nbsp;Create a Lenovo ID",
-			"without": "Proceed <b>without an account</b>",
-			"skipAndTrial": "SKIP AND START TRIAL",
-			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-			"loginCHS": "Login to existing CHS account",
-			"locationTitle": "Enable location tracking",
-			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
 		},
 		"accountStatus": {
 			"title": "My Connected Home Security",
@@ -1727,7 +1899,7 @@
 			"windowsDefender": {
 				"optimallyProtected": "It looks like you’re currently using Windows Defender. Not a bad choice, but for the ultimate safety against ransomware, malware, and viruses, we’ve teamed up with <b>McAfee</b> to offer you award-winning security so you can <b>protect what matters.</b>",
 				"topTip": "Top Tips for online safety",
-				"topContent": "Learn how you can defend against today's biggest online threats",
+				"topContent": "Learn how you can defend against today's biggest online threats <tag>VIEW TIPS</tag>",
 				"view": "VIEW TIPS",
 				"buyNow": "Buy Now",
 				"buy": "Buy,download,and install McAfee virus protection today to take advantage of these bank-grade security features",
@@ -1750,7 +1922,7 @@
 				"getMacfee": "Get McAfee",
 				"topBenefits": "Why <b>Lenovo recommends McAfee</b> to protect all your devices",
 				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC.",
+				"awardSubtitle": "Prevent viruses, malware and ransomware from infecting your PC",
 				"MultiTitle": "Multi-device protection",
 				"MultiSubtitle": "Protect every device you own – PCs, phones and tablets – perfect for families ",
 				"networkTitle": "Home network protection",
@@ -1766,10 +1938,10 @@
 				"firewall": "Personal Firewall",
 				"antiSpam": "McAfee Anti-Spam",
 				"quickClean": "McAfee QuickClean",
-				"vulnerability": "McAfee Vulnerability Scanner ",
+				"vulnerability": "McAfee Vulnerability Scanner",
 				"report": "Your Threat Protection Report ",
-				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it.",
-				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it.",
+				"trialContent": "You’ve been putting your McAfee antivirus trial to good use. But with only {{remainingDays}} days left until your trial expires, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
+				"subscribeContent": "You’ve been putting your McAfee to good use. But with only {{remainingDays}} days left, you run the risk of leaving your computer vulnerable. Don’t risk it. <tag>Subscribe Now</tag>",
 				"subscribeNow": "Subscribe Now",
 				"fileScan": "Files scanned",
 				"Viruses": "Viruses Eliminated",
@@ -1778,7 +1950,8 @@
 				"startFileScan": "Start files scan"
 			},
 			"others": {
-				"othersProtection": "{{protectedName}} offers you basic protection for your device"
+				"othersProtection": "{{protectedName}} offers you basic protection for your device",
+				"unknown": "Unknown"
 			}
 		},
 		"wifisecurity": {
@@ -1825,10 +1998,10 @@
 			"homesecurity": {
 				"title": "Connected Home Security",
 				"titleDescription": "Connected Home Security keeps you safe in three ways:",
-				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised",
-				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe",
+				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised.",
+				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe.",
 				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
-				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
+				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers.",
 				"subtitle": "Peace of Mind",
 				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
 				"tryNow": "Try Now",
@@ -2193,7 +2366,7 @@
 		},
 		"question4": {
 			"title": "Check your machine's battery use",
-			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operationg System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in yourtraditional <strong>control panel </strong>view, this feature is located in thenew <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or lastfrom last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applicationsrunning in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of thisfeature.It will display a list of the apps have used battery power in that period, and show you what percentage of yourbattery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional <strong>control panel </strong>view, this feature is located in thenew <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or lastfrom last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applications running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of thisfeature.It will display a list of the apps have used battery power in that period, and show you what percentage of yourbattery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
 			"heading1": "Symptom",
 			"para1": {
 				"span1": "Windows 10 includes a new",
@@ -2467,6 +2640,10 @@
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
 		"doNotUse": "Please refrain from using your computer until this test completes",
+		"testsMustRunUniterrupted": "These tests must run uniterrupted!",
+		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
+		"doNotSwitchApp": "• Do not switch to other app.",
+		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

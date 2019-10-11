@@ -1,4 +1,6 @@
 {
+    "dir": "rtl",
+    "dirClass": "rtl",
     "gaming": {
         "dashboard": {
             "device": {
@@ -107,6 +109,15 @@
                     "sub1": "الدعم",
                     "sub2": "‏Facebook",
                     "sub3": "‏Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -235,6 +246,27 @@
             },
             "recording": {
                 "title": "تسجيل مفتاح الماكرو لـ"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "heading": {
                     "title": "تحديد ملف التعريف:"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "لا توجد تطبيقات قيد التشغيل لإضافتها",
                 "body": "ستظهر التطبيقات قيد التشغيل حاليًا فقط. يُرجى تشغيل تطبيق تريد إضافته والمحاولة مجددًا."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "يمكنك إضافة 5 تطبيقات أخرى للتعزيز",
                     "part2": "من",
                     "part3": "المضافة"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -430,11 +601,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "الدعم",
-            "homeSecurity": "المنزل المتصل",
             "privacy": "الخصوصية",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "مستشار الأمان",
@@ -473,6 +644,9 @@
             "expand": "توسيع",
             "loader": "الجلب <br> الحالة",
             "loading": "...جار التحميل"
+        },
+        "app-update": {
+            "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
         }
     },
     "privacy": {
@@ -706,7 +880,8 @@
                     "OverheatedBattery": "البطارية <b>ساخنة أكثر من اللازم</b>. اعمل على إخراجها من الكمبيوتر وتبريدها وصولاً إلى درجة حرارة الغرفة.",
                     "PermanentError": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.</span>",
-                    "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب."
+                    "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لزيادة المدى العمري للبطارية، يجب تعيين البطارية بحيث يتوقف شحنها عند وصول الشحن إلى {{value}}%.",
@@ -1241,7 +1416,8 @@
                     "caption": "سيؤدي ضبط المسافة تلقائيًا إلى تحديث مسافة الكشف بشكل تلقائي عبر محرك AI.",
                     "options": {
                         "near": "قريب",
-                        "far": "بعيد"
+                        "far": "بعيد",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1261,13 +1437,17 @@
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
                     "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي.",
-                    "description6": "4. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات."
+                    "description6": "4. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
                     "screenTimeoutSettings": "إعدادات مهلة الذهاب إلى الشاشة"
                 },
-                "resetToDefault": "إعادة تعيين"
+                "resetToDefault": "إعادة تعيين",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "شاشة ذكية",
@@ -1493,128 +1673,6 @@
             "fileNotFoundException": "لم يتم العثور على الملف."
         }
     },
-    "homeSecurity": {
-        "title": "أمان المنزل المتصل",
-        "notification": {
-            "recent": "إعلامات الأمان الأخيرة",
-            "notifications": "الإعلامات",
-            "unsafeNetworkConnection": "اتصال الشبكة غير آمن",
-            "networkUnsafe": "الشبكة غير آمنة",
-            "deviceDisconnected": "تم قطع اتصال الجهاز",
-            "newDeviceDetected": "تم اكتشاف جهاز جديد",
-            "unsafeDeviceDetected": "تم اكتشاف جهاز غير آمن"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "حماية النظام البيئي جهازك",
-            "thisDevice": "هذا الجهاز",
-            "allDevices": "جميع الأجهزة",
-            "protected": "محمي",
-            "notProtected": "غير محمي",
-            "trialExpired": "انتهت صلاحية التجربة",
-            "upgrade": "ترقية",
-            "inEcosystem": "في النظام البيئي",
-            "ecosystemEnable": "تم تمكين النظام البيئي",
-            "inTrial": "في الإصدار التجريبي",
-            "addEcosystem": "إضافة إلى النظام البيئي",
-            "enableEcosystem": "تمكين النظام البيئي",
-            "startTrial": "بدء الإصدار التجريبي",
-            "fullAccess": "الوصول الكامل",
-            "renew": "تجديد"
-        },
-        "overview": {
-            "overviewBlockTitle": "نظرة عامة على أمان النظام البيئي",
-            "allDevices": "جميع الأجهزة",
-            "myDevice": "جهازي",
-            "thisComputer": "هذا الكمبيوتر",
-            "secure": "آمن",
-            "needAttention": "يحتاج إلى الانتباه",
-            "manageAccount": "إدارة الحساب",
-            "devices": "الأجهزة",
-            "seeProtectedDevices": "راجع الأجهزة المحمية",
-            "addDevice": "إضافة جهاز",
-            "trialExpired": "الترقية لحماية جميع أجهزتك - الترقية لحماية جميع أجهزت",
-            "upgrade": "ترقية",
-            "freeTrial": "إصدار تجريبي مجاني لمدة 30 يومًا - حماية جميع أجهزتك",
-            "startTrial": "بدء الإصدار التجريبي",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "مشغّلة بواسطة Coronet", 
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "السابق‬",
-            "skip": "تخطي",
-            "start": "بدء الجولة",
-            "done": "تم",
-            "welcome1": "مرحبًا",
-            "welcomeDesc1": "بمجرد نقرات قليلة ، يمكنك حماية الكمبيوتر الشخصي والأجهزة المحمولة والأجهزة المتصلة لك ولعائلتك.",
-            "welcomeDescStart": "ابدأ نسخة تجريبية مجانية لمدة 30 يومًا الآن.",
-            "welcome2": "حصري لـ Vantage",
-            "welcomeDesc2": "تم بناء أمان المنزل المتصل مباشرةً في Vantage لتمكين الوصول السريع إلى حالة حماية النظام البيئي وتنبيهات الأمان.",
-            "create": "إنشاء حسابك",
-            "lenovoId": "باستخدام Lenovo ID",
-            "notifications": "تلقي <b>إعلامات</b> حول حالة منزلك",
-            "monitor": "<b>مراقبة</b> سلامة أجهزة عائلتك",
-            "peaceOfMind": "الاستمتاع <b>براحة البال</b> عندما تعلم أن الحماية متوفرة لك بشكل دائم!",
-            "signInLenovoId": "التسجيل باستخدام LENOVO ID",
-            "haveLenovo": "ليس لديّ <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;إنشاء Lenovo ID",
-            "without": "المتابعة <b>من دون حساب</b>",
-            "skipAndTrial": "تخطي وبدء الإصدار التجريبي",
-            "alreadyHave": "لديّ <b>حساب في أمان المنزل المتصل</b>",
-            "loginCHS": "تسجيل الدخول إلى حساب CHS موجود",
-            "locationTitle": "تمكين تعقب الموقع",
-            "locationPermission": "لكي تعمل هذه الميزة بشكل صحيح، ستحتاج إلى تمكين تعقب الموقع لهذا الجهاز"
-        },
-        "accountStatus": {
-            "title": "أمان المنزل المتصل الخاص بي",
-            "startTrial": "بدء الإصدار التجريبي",
-            "manageAccount": "إدارة الحساب",
-            "upgradeAccount": "ترقية الحساب",
-            "inTrialDetail1": "{{remainingDays}} أيام متبقية حتى انتهاء الإصدار التجريبي.",
-            "inTrialDetail2": "أنت حاليًا ضمن فترة الإصدار التجريبي. لديك وصول محدود إلى جميع الميزات.",
-            "trialExpiredDetail1": "انتهت صلاحية إصدارك التجريبي.",
-            "trialExpiredDetail2": "انتهت صلاحية الإصدار التجريبي ولم يعد النظام البيئي لجهازك محميًا.",
-            "upgradedDetail1": "يبقى حسابك نشطًأ حتى {{expiredDate}}.",
-            "upgradedDetail2": "النظام البيئي لجهازك محمي في الوقت الحالي.",
-            "localAccountDetail2": "انقر فوق الزر أدناه لبدء الإصدار التجريبي المجاني لمدة 30 يومًا.",
-            "alreadyHaveAccount": "هل لديك رمز تنشيط؟"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "الحصول على دعم"
@@ -1704,7 +1762,7 @@
             "common": {
                 "title": "مكافحة الفيروسات",
                 "back": "السابق",
-                "recommends": "توصي Lenovo باستخدام <b>McAfee</b> لحماية جميع أجهزتك",
+                "recommends": "لماذا Lenovo توصي بـ <b>McAfee</b> لحماية جميع أجهزتك",
                 "award": "برنامج مكافحة الفيروسات الحائز على جوائز",
                 "mcafeePremium": "حماية McAfee LiveSafe",
                 "protectedBy": "أنت محمي في الوقت الحالي من خلال {{protectedName}}. ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe.",
@@ -1717,13 +1775,13 @@
                 "Blazing": "سرعة فائقة",
                 "BlazingText": "برنامج مكافحة الفيروسات المحسن الذي لن يتسبب في إبطاء أو مقاطعة تجربة Lenovo Vantage",
                 "privacyTerms": "/   <tag>سياسة الخصوصية</tag>  |  <tag>شروط الخدمة</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "غير متوفر"
             },
             "windowsDefender": {
-                "optimallyProtected": "يبدو أنك تستخدم Windows Defender في الوقت الحالي. هذا الخيار ليس سيئًا، ولكن من أجل تأمين السلامة المطلقة ضد برامج الفدية والبرامج الضارة والفيروسات، قمنا بالتعاون مع شركة <b>McAfee</b> لكي نقدم لك برنامج أمان حائز على جوائز لتمكينك من <b>حماية كل الأشياء المهمة.</b>",
+                "optimallyProtected": "يبدو أنك تستخدم Windows Defender في الوقت الحالي. هذا الخيار ليس سيئًا، ولكن من أجل تأمين السلامة المطلقة ضد برامج الفدية والبرامج الضارة والفيروسات، قمنا بالتعاون مع شركة ‎<b>‎McAfee‎</b> لكي نقدم لك برنامج أمان حائز على جوائز لتمكينك من ‎‏<b>حماية كل الأشياء المهمة.</b>‎",
                 "windowsSubtitle": "الحماية الأساسية من Windows Defender",
                 "topTip": "أهم النصائح لتوفير السلامة عبر الإنترنت",
-                "topContent": "تعرف على طرق الدفاع لمواجهة أهم التهديدات عبر الإنترنت في الوقت الحالي",
+                "topContent": "<tag>عرض النصائح</tag> تعرف على طرق الدفاع لمواجهة أهم التهديدات عبر الإنترنت في الوقت الحالي",
                 "view": "عرض النصائح",
                 "buyNow": "شراء الآن",
                 "buy": "بادر اليوم إلى شراء برنامج الحماية من الفيروسات من McAfee وتنزيله وتثبيته للاستفادة من ميزات الأمان هذه على مستوى البنوك",
@@ -1741,7 +1799,7 @@
                 "getMacfee": "احصل على McAfee",
                 "topBenefits": "لماذا <b>تنصح Lenovo باستخدام منتجات McAfee</b> لحماية جميع أجهزتك",
                 "awardTitle": "برنامج مكافحة الفيروسات الحائز على جوائز",
-                "awardSubtitle": "منع الفيروسات والبرامج الضارة وبرامج الفدية من إصابة جهاز الكمبيوتر.",
+                "awardSubtitle": "منع الفيروسات والبرامج الضارة وبرامج الفدية من إصابة جهاز الكمبيوتر",
                 "supportTitle": "دعم تقني مجاني يوفره خبراء على مدار الساعة وطيلة أيام الأسبوع ",
                 "supportSubtitle": "احصل على المساعدة وراحة البال على مدار الساعة من فريقنا الأمني المخصص",
                 "trialSubtitle": "أنت محمي حاليًا من خلال إصدار تجريبي مدته 30 يومًا من McAfee LiveSafe – فقط {{remainingDays}} أيام متبقية! اشترك الآن لتمديد فترة حمايتك.",
@@ -1763,8 +1821,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "برنامج الفحص بحثًا عن الثغرات الأمنية من McAfee ",
                 "report": "تقرير الحماية من التهديدات ",
-                "trialContent": "لقد استخدمت الإصدار التجريبي من برنامج مكافحة الفيروسات من McAfee على نحو جيد. ولكن صلاحية الإصدار التجريبي تنتهي في غضون {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة.",
-                "subscribeContent": "لقد استخدمت McAfee على نحو جيد. ولكن عدد الأيام المتبقية لهذا الإصدار التجريبي ليس سوى {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة.",
+                "trialContent": "لقد استخدمت الإصدار التجريبي من برنامج مكافحة الفيروسات من McAfee على نحو جيد. ولكن صلاحية الإصدار التجريبي تنتهي في غضون {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة. <tag>الاشتراك الآن</tag>",
+                "subscribeContent": "لقد استخدمت McAfee على نحو جيد. ولكن عدد الأيام المتبقية لهذا الإصدار التجريبي ليس سوى {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة. <tag>الاشتراك الآن</tag>",
                 "subscribeNow": "الاشتراك الآن",
                 "fileScan": "فحص الملفات",
                 "Viruses": "القضاء على الفيروسات",
@@ -1773,7 +1831,8 @@
                 "startFileScan": "بدء فحص الملفات"
             },
             "others": {
-                "othersProtection": "يقدم لك الحماية الأساسية لجهازك {{protectedName}}"
+                "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
+                "unknown": "غير معروف"
             }
         },
         "wifisecurity": {
@@ -2454,6 +2513,10 @@
         "offline": "هذا الجهاز يعمل في وضع عدم الاتصال، يرجى الاتصال بالإنترنت",
         "doNotSuspend": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة! لا تعمل على إغلاق هذا التطبيق أو تصغيره، ولا توقف عمل الكمبيوتر بشكل مؤقت أو توقف تشغيله أثناء إجراء عملية الفحص.",
         "doNotUse": "يُرجى الامتناع عن استخدام الكمبيوتر حتى اكتمال هذا الاختبار",
+        "testsMustRunUniterrupted": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة!",
+        "doNotCloseOrMinimizeApp": "• لا تغلق هذا التطبيق أو تقم بتصغيره.",
+        "doNotSwitchApp": "• لا تقم بالتبديل إلى تطبيق آخر.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• لا تُدخل جهاز الكمبيوتر في وضع السكون أو تسجل الخروج منه أو تغلقه.",
         "customize": {
             "name": "تخصيص",
             "test": "تخصيص اختبار",
@@ -2567,6 +2630,121 @@
                 "readMore": "اقرأ أكثر",
                 "readLess": "اقرأ أقل"
             }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
         }
     }
 }

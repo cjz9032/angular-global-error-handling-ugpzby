@@ -84,7 +84,7 @@
                     "line2": "<b>Přehled správy funkcí</b> <br> Některé funkce nejsou k dispozici na všech zařízeních",
                     "line3": "<b>Přetaktování CPU </b><br> Zvyšte maximální rychlost procesoru",
                     "line4": "<b>Přetaktování RAM </b><br> Zvyšte maximální rychlost paměti",
-                    "line5": "<b>Zvýšení výkonu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
+                    "line5": "<b>Zvýšení vý-konu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
                     "line6": "<b>Dolby </b><br> Vylaďte zvuk přímo pro hraní her pomocí technologie Dolby",
                     "line7": "<b>Hybridní režim </b><br> Zvyšte výdrž baterie deaktivací Upřesnit nastavení GPU, když nebudete hrát",
                     "line8": "<b>Rychlé nabíjení </b><br> Užijte si při hraní na cestách delší výdrž baterie díky rychlejšímu nabíjení",
@@ -107,6 +107,15 @@
                     "sub1": "Podpora",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Záznam klávesy makra pro"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "heading": {
                     "title": "Vyberte profil:"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Žádné spuštěné aplikace k přidání",
                 "body": "Zobrazí se pouze aktuálně spuštěné aplikace. Spusťte aplikaci, kterou chcete přidat, a vraťte se zpět."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "K urychlení lze přidat až 5 dalších aplikací",
                     "part2": "z",
                     "part3": "přidáno"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -430,11 +599,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Podpora",
-            "homeSecurity": "Připojeno Domů",
             "privacy": "Soukromí",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Bezpečnostního rádce",
@@ -473,6 +642,9 @@
             "expand": "Rozbalit",
             "loader": "Načítání <br> Status",
             "loading": "Načítání..."
+        },
+        "app-update": {
+            "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
         }
     },
     "privacy": {
@@ -706,7 +878,8 @@
                     "OverheatedBattery": "Baterie je <b>přehřátá</b>. Vyjměte ji z počítače a nechte ji vychladnout na pokojovou teplotu.",
                     "PermanentError": "Došlo k <b>selhání baterie z důvodu běžného opotřebení.</b> Baterii nelze nabít. Vyměňte ji.",
                     "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
-                    "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér."
+                    "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
@@ -1241,7 +1414,8 @@
                     "caption": "Automatické nastavení vzdálenosti automaticky aktualizuje vzdálenost rozpoznávání pomocí jádra umělé inteligence.",
                     "options": {
                         "near": "Malá",
-                        "far": "Velká"
+                        "far": "Velká",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1261,13 +1435,17 @@
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
-                    "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté."
+                    "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
                     "screenTimeoutSettings": "Přechod na nastavení časového limitu vypnutí obrazovky"
                 },
-                "resetToDefault": "Reset"
+                "resetToDefault": "Reset",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentní obrazovka",
@@ -1493,128 +1671,6 @@
             "fileNotFoundException": "Soubor nebyl nalezen."
         }
     },
-    "homeSecurity": {
-        "title": "Zabezpečení připojené domácnosti",
-        "notification": {
-            "recent": "Nedávná bezpečnostní oznámení",
-            "notifications": "Upozornění",
-            "unsafeNetworkConnection": "Nezabezpečené připojení k síti",
-            "networkUnsafe": "Síť není zabezpečená",
-            "deviceDisconnected": "Zařízení bylo odpojeno",
-            "newDeviceDetected": "Bylo zjištěno nové zařízení",
-            "unsafeDeviceDetected": "Bylo zjištěno nezabezpečené zařízení"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Chraňte ekosystém svých zařízení",
-            "thisDevice": "Toto zařízení",
-            "allDevices": "Všechna zařízení",
-            "protected": "Chráněno",
-            "notProtected": "Nechráněno",
-            "trialExpired": "Platnost zkušební verze vypršela",
-            "upgrade": "upgrade",
-            "inEcosystem": "V ekosystému",
-            "ecosystemEnable": "Ekosystém povolen",
-            "inTrial": "Zkušební",
-            "addEcosystem": "Přidat do ekosystému",
-            "enableEcosystem": "Povolit ekosystém",
-            "startTrial": "Spustit zkušební verzi",
-            "fullAccess": "Plný přístup",
-            "renew": "Obnovit"
-        },
-        "overview": {
-            "overviewBlockTitle": "Přehled zabezpečení ekosystému",
-            "allDevices": "Všechna zařízení",
-            "myDevice": "Mé zařízení",
-            "thisComputer": "Tento počítač",
-            "secure": "ZABEZPEČIT",
-            "needAttention": "VYŽADUJE POZORNOST",
-            "manageAccount": "Správa účtu",
-            "devices": "Zařízení",
-            "seeProtectedDevices": "Zobrazit chráněná zařízení",
-            "addDevice": "přidat zařízení",
-            "trialExpired": "Platnost zkušební verze vypršela - Upgrade na ochranu všech zařízení",
-            "upgrade": "upgrade",
-            "freeTrial": "Ochrana všech zařízení - Bezplatná 30denní zkušební verze",
-            "startTrial": "Spustit zkušební verzi",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Používá technologii Coronet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "Zpět",
-            "skip": "Přeskočit",
-            "start": "ZAHÁJIT PROHLÍDKU",
-            "done": "HOTOVO",
-            "welcome1": "Vítejte",
-            "welcomeDesc1": "Pouhých pár klepnutí vás dělí od ochrany počítače, mobilních zařízení a připojených zařízení používaných vámi nebo vašimi rodinnými příslušníky.",
-            "welcomeDescStart": "Ještě dnes vyzkoušejte bezplatnou 30denní zkušební verzi.",
-            "welcome2": "Exkluzivně pro Vantage",
-            "welcomeDesc2": "Zabezpečení připojené domácnosti je integrováno přímo v aplikaci Vantage a umožňuje rychlý přístup ke stavu ochrany vašeho ekosystému a výstrahám zabezpečení.",
-            "create": "Vytvořte si účet",
-            "lenovoId": "pomocí Lenovo ID",
-            "notifications": "Dostávejte <b>oznámení</b> o stavu vašeho domova",
-            "monitor": "<b>Sledujte</b> zabezpečení rodinných zařízení",
-            "peaceOfMind": "Užívejte si <b>pomyšlení</b>, že jste neustále chráněni!",
-            "signInLenovoId": "PŘIHLÁSIT POMOCÍ LENOVO ID",
-            "haveLenovo": "Nemám <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Vytvořit Lenovo ID",
-            "without": "Pokračovat <b>bez účtu</b>",
-            "skipAndTrial": "PŘESKOČIT A SPUSTIT ZKUŠEBNÍ VERZI",
-            "alreadyHave": "Již mám <b>účet zabezpečení připojené domácnosti</b>",
-            "loginCHS": "Přihlásit k existujícímu účtu ZPD",
-            "locationTitle": "Povolit sledování polohy",
-            "locationPermission": "Aby tato funkce správně fungovala, musíte pro dané zařízení povolit sledování polohy"
-        },
-        "accountStatus": {
-            "title": "Moje zabezpečení připojené domácnosti",
-            "startTrial": "Spustit zkušební verzi",
-            "manageAccount": "Správa účtu",
-            "upgradeAccount": "Upgradovat účet",
-            "inTrialDetail1": "{{remainingDays}} Dny zbývající do konce zkušební verze.",
-            "inTrialDetail2": "Momentálně používáte zkušební verzi. Máte neomezený přístup ke všem funkcím.",
-            "trialExpiredDetail1": "Vypršela platnost zkušební verze.",
-            "trialExpiredDetail2": "Vypršela platnost zkušební verze a ekosystém vašich zařízení již není chráněn.",
-            "upgradedDetail1": "Váš účet je aktivní do {{expiredDate}}.",
-            "upgradedDetail2": "Ekosystém zařízení je momentálně pod ochranou.",
-            "localAccountDetail2": "Klepnutím níže spustíte bezplatnou zkušební 30denní verzi.",
-            "alreadyHaveAccount": "Už máte aktivační kód?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Získejte podporu"
@@ -1717,13 +1773,13 @@
                 "Blazing": "Blesková rychlost",
                 "BlazingText": "Optimalizovaný antivirový program, který nezpomalí ani nepřeruší vaše prostředí Lenovo Vantage",
                 "privacyTerms": "/   <tag>Zásady ochrany osobních údajů</tag>  |  <tag>Podmínky služby</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Není dostupná"
             },
             "windowsDefender": {
-                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom vám mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
+                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
                 "windowsSubtitle": "Základní ochrana Windows Defender",
                 "topTip": "Nejlepší tipy pro online bezpečnost",
-                "topContent": "Naučte se, jak se můžete bránit proti současným největším online hrozbám",
+                "topContent": "Naučte se, jak se můžete bránit proti současným největším online hrozbám <tag>ZOBRAZIT TIPY</tag>",
                 "view": "ZOBRAZIT TIPY",
                 "buyNow": "Koupit nyní",
                 "buy": "Kupte si, stáhněte a instalujte antivirovou ochranu McAfee ještě dnes, abyste mohli využívat tyto funkce špičkového zabezpečení",
@@ -1741,7 +1797,7 @@
                 "getMacfee": "Získat program McAfee",
                 "topBenefits": "Proč <b>Lenovo doporučuje software McAfee</b> na ochranu všech vašich zařízení",
                 "awardTitle": "Oceňovaný antivirus",
-                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem.",
+                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem",
                 "supportTitle": "Zdarma, nepřetržitá odborná technická podpora ",
                 "supportSubtitle": "Získejte nepřetržitou asistenci a klid v duši díky našemu specializovanému bezpečnostnímu týmu",
                 "trialSubtitle": "Momentálně jste chráněni pouze 30denní zkušební verzí McAfee LiveSafe – počet zbývajících dnů jen {{remainingDays}}! Chcete-li rozšířit svou ochranu, přihlaste se k odběru nyní.",
@@ -1763,8 +1819,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Vulnerability Scanner ",
                 "report": "Vaše zpráva o ochraně před hrozbami ",
-                "trialContent": "Používali jste zkušební verzi antiviru McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, riskujete tak budoucí zranitelnost svého počítače. Neriskujte to.",
-                "subscribeContent": "Používali jste software McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, a tak riskujete tak budoucí zranitelnost svého počítače. Neriskujte to.",
+                "trialContent": "Používali jste zkušební verzi antiviru McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, riskujete tak budoucí zranitelnost svého počítače. Neriskujte to. <tag>Zapsat nyní</tag>",
+                "subscribeContent": "Používali jste software McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, a tak riskujete tak budoucí zranitelnost svého počítače. Neriskujte to. <tag>Zapsat nyní</tag>",
                 "subscribeNow": "Zapsat nyní",
                 "fileScan": "Prohledané soubory",
                 "Viruses": "Odstraněné viry",
@@ -1773,7 +1829,8 @@
                 "startFileScan": "Spusťte skenování souborů"
             },
             "others": {
-                "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení"
+                "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení",
+                "unknown": "Neznámé"
             }
         },
         "wifisecurity": {
@@ -2454,6 +2511,10 @@
         "offline": "Toto zařízení je v režimu offline. Připojte jej k internetu",
         "doNotSuspend": "Tyto testy nesmí být přerušeny! Během kontroly nevypínejte ani neminimalizujte aplikaci, nevypínejte počítač ani jej neuveďte do režimu hibernace.",
         "doNotUse": "V průběhu testu nepoužívejte počítač",
+        "testsMustRunUniterrupted": "Tyto testy nesmí být za chodu přerušeny!",
+        "doNotCloseOrMinimizeApp": "• Nezavírejte ani minimalizujte tuto aplikaci.",
+        "doNotSwitchApp": "• Nepřepínejte na jinou aplikaci.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Počítač nepřevádějte do stavu spánku, neodhlasujte se, ani počítač nevypínejte.",
         "customize": {
             "name": "Přizpůsobit",
             "test": "Přizpůsobit test",
@@ -2568,5 +2629,122 @@
                 "readLess": "Méně informací"
             }
         }
-    }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

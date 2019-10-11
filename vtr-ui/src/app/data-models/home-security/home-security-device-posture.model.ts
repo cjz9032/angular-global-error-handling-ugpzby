@@ -58,7 +58,7 @@ export class HomeSecurityDevicePosture {
 	}
 
 	assignValue(devicePostures: DevicePostureDetail[], vulnerable: boolean, index: number) {
-		devicePostures[index].status = vulnerable === true ? 1 : 6;
+		devicePostures[index].status = vulnerable === true ? 1 : 5;
 		devicePostures[index].detail = vulnerable === true ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
 		this.translate.stream(devicePostures[index].detail).subscribe((res) => {
 			devicePostures[index].detail = res;

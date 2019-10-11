@@ -81,7 +81,7 @@
                     "line2": "<b>Özellik Yönetimine Genel Bakış</b> <br> Bazı özellikler tüm cihazlarda kullanılamaz",
                     "line3": "<b>CPU Hız Aşırtma </b><br> İşlemcinizi maksimum hızla çalıştırın",
                     "line4": "<b>RAM Hız Aşırtma </b><br> Belleğinizi maksimum hızla çalıştırın",
-                    "line5": "<b>Ağ Yükseltme </b><br> Oynadığınız oyunun ağ trafiğine öncelik verin",
+                    "line5": "<b>Ağ Yükseltme </b><br> Oyun oynarken ağ trafiğine öncelik verin",
                     "line6": "<b>Dolby </b><br> Dolby teknolojisiyle sesinizi oyun oynamak için özel olarak ayarlayın",
                     "line7": "<b>Hibrit Kipi </b><br> Pil performansını artırmak için oyun oynamadığınızda gelişmiş GPU ayarlarını devre dışı bırakın",
                     "line8": "<b>Hızlı Şarj </b><br> Daha hızlı pil şarjıyla hareket halindeyken daha uzun süre oyun oynayın",
@@ -107,6 +107,15 @@
                     "sub1": "Destek",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Şunun için Makro Tuşu Kaydediliyor"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Renk"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Eklenecek çalışan uygulama yok",
                 "body": "Yalnızca çalışmakta olan uygulamalar gösterilir. Lütfen eklemek istediğiniz bir uygulamayı başlatıp geri gelin."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Yükseltme için en fazla 5 uygulama daha ekleyebilirsiniz",
                     "part2": "/",
                     "part3": "eklendi"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -430,11 +599,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Destek",
-            "homeSecurity": "Bağlı Ev",
             "privacy": "Gizlilik",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Güvenlik Danışmanı",
@@ -473,6 +642,9 @@
             "expand": "Genişlet",
             "loader": "Durum <br> Alma",
             "loading": "Yükleniyor..."
+        },
+        "app-update": {
+            "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
         }
     },
     "privacy": {
@@ -706,7 +878,8 @@
                     "OverheatedBattery": "Pilin <b>çok ısındı</b>. Bilgisayardan çıkarın ve oda sıcaklığında soğumasını sağlayın.",
                     "PermanentError": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin.",
                     "NotSupportACAdapterDetail": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
-                    "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın."
+                    "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
@@ -1241,7 +1414,8 @@
                     "caption": "Otomatik Uzaklık Ayarı, algılama uzaklığını bir yapay zeka altyapısı aracılığıyla otomatik olarak günceller.",
                     "options": {
                         "near": "Yakın",
-                        "far": "Uzak"
+                        "far": "Uzak",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1261,13 +1435,17 @@
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
                     "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Sıfır Dokunma ile Oturum Açma kullanılamaz.",
                     "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın.",
-                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır."
+                    "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello Ayarları'na git",
                     "screenTimeoutSettings": "Ekran zaman aşımı ayarlarına git"
                 },
-                "resetToDefault": "Sıfırla"
+                "resetToDefault": "Sıfırla",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Akıllı Ekran",
@@ -1493,128 +1671,6 @@
             "fileNotFoundException": "Dosya bulunamadı."
         }
     },
-    "homeSecurity": {
-        "title": "Bağlı Ev Güvenliği",
-        "notification": {
-            "recent": "En son güvenlik bildirimleri",
-            "notifications": "Bildirimler",
-            "unsafeNetworkConnection": "Güvenli olmayan ağ bağlantısı",
-            "networkUnsafe": "Ağ güvenli değil",
-            "deviceDisconnected": "Cihaz bağlantısı kesildi",
-            "newDeviceDetected": "Yeni cihaz algılandı",
-            "unsafeDeviceDetected": "Güvenli olmayan cihaz algılandı"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Cihazınızın ekosistemini koruyun",
-            "thisDevice": "Bu cihaz",
-            "allDevices": "Tüm Cihazlar",
-            "protected": "Korunuyor",
-            "notProtected": "Korunmuyor",
-            "trialExpired": "Deneme Süresi Doldu",
-            "upgrade": "yükselt",
-            "inEcosystem": "Ekosistemde",
-            "ecosystemEnable": "Ekosistem Etkinleştirildi",
-            "inTrial": "Deneme süresi devam ediyor",
-            "addEcosystem": "Ekosisteme Ekle",
-            "enableEcosystem": "Ekosistemi Etkinleştir",
-            "startTrial": "Deneme Süresini Başlat",
-            "fullAccess": "Tam Erişim",
-            "renew": "Yenile"
-        },
-        "overview": {
-            "overviewBlockTitle": "Ekosisteminizin Güvenliğine Genel Bakış",
-            "allDevices": "Tüm Cihazlar",
-            "myDevice": "Cihazım",
-            "thisComputer": "Bu bilgisayar",
-            "secure": "GÜVENLİ",
-            "needAttention": "İLGİLENMENİZ GEREKİYOR",
-            "manageAccount": "Hesabı Yönet",
-            "devices": "Cihazlar",
-            "seeProtectedDevices": "Korunan cihazları görün",
-            "addDevice": "cihaz ekle",
-            "trialExpired": "Deneme Süresi Doldu - Tüm cihazlarınızı korumak için yükseltin",
-            "upgrade": "yükselt",
-            "freeTrial": "Tüm cihazlarınızı koruyun - Ücretsiz 30 günlük deneme süresi",
-            "startTrial": "Deneme Süresini Başlat",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Coronet Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "Geri",
-            "skip": "Atla",
-            "start": "TURU BAŞLAT",
-            "done": "BİTTİ",
-            "welcome1": "Hoş Geldiniz",
-            "welcomeDesc1": "Yalnızca birkaç tıklamayla kendiniz ve aileniz için bilgisayarlarınızı, mobil cihazlarınızı ve bağlı cihazları koruyabilirsiniz.",
-            "welcomeDescStart": "30 günlük ücretsiz deneme sürenizi şimdi başlatın.",
-            "welcome2": "Vantage'a özel",
-            "welcomeDesc2": "Bağlı Ev Güvenliği, ekosisteminizin ve güvenlik uyarılarınızın koruma durumuna hızlı erişim için doğrudan Vantage'ın içinde yerleşik olarak bulunur.",
-            "create": "Lenovo ID ile",
-            "lenovoId": "hesabınızı oluşturun",
-            "notifications": "Evinizin durumu hakkında <b>bildirimler</b> alın",
-            "monitor": "Ailenizin cihazlarının güvenliğini <b>izleyin</b>",
-            "peaceOfMind": "Her zaman korunduğunuzu bilerek <b>rahat edin</b>!",
-            "signInLenovoId": "LENOVO ID İLE KAYDOL",
-            "haveLenovo": "<b>Lenovo ID'm</b> yok",
-            "createLenovo": "&nbsp;Lenovo ID oluşturun",
-            "without": "<b>Hesap olmadan</b> devam edin",
-            "skipAndTrial": "ATLA VE DENEME SÜRESİNİ BAŞLAT",
-            "alreadyHave": "<b>Bağlı Ev Güvenliği (CHS) Hesabım</b> zaten var",
-            "loginCHS": "Mevcut CHS hesabınızla giriş yapın",
-            "locationTitle": "Konum izlemeyi etkinleştir",
-            "locationPermission": "Bu özelliğin düzgün çalışması için bu cihazda konum izlemeyi etkinleştirmeniz gerekiyor"
-        },
-        "accountStatus": {
-            "title": "Bağlı Ev Güvenliğim",
-            "startTrial": "Deneme Süresini Başlat",
-            "manageAccount": "Hesabı Yönet",
-            "upgradeAccount": "Hesabı Yükselt",
-            "inTrialDetail1": "Deneme süresinin dolmasına {{remainingDays}} gün kaldı.",
-            "inTrialDetail2": "Şu anda deneme süresi içindesiniz. Tüm özelliklere sınırsız erişiminiz var.",
-            "trialExpiredDetail1": "Deneme süreniz doldu.",
-            "trialExpiredDetail2": "Deneme süreniz doldu ve artık cihaz ekosisteminiz korunmuyor.",
-            "upgradedDetail1": "Hesabınız {{expiredDate}} tarihine kadar etkin.",
-            "upgradedDetail2": "Cihaz ekosisteminiz şu anda korunuyor.",
-            "localAccountDetail2": "30 günlük ücretsiz deneme sürenizi başlatmak için aşağıdaki düğmeye tıklayın.",
-            "alreadyHaveAccount": "Etkinleştirme kodunuz zaten var mı?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Destek Alın"
@@ -1717,13 +1773,13 @@
                 "Blazing": "Yıldırım hızında",
                 "BlazingText": "Lenovo Vantage deneyiminizi yavaşlatmayacak veya kesintiye uğratmayacak şekilde iyileştirilmiş virüsten koruma yazılımı",
                 "privacyTerms": "/   <tag>Gizlilik İlkesi</tag>  |  <tag>Hizmet Koşulları</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Kullanılamaz"
             },
             "windowsDefender": {
                 "optimallyProtected": "Şu anda Windows Defender kullandığınız görülüyor. Kötü bir seçim değil ancak fidye yazılımlarına, kötü amaçlı yazılımlara ve virüslere karşı nihai koruma sağlamak üzere, <b>önemli olan içeriğinizi koruyabilmeniz için</b> <b>McAfee</b> ile birlikte size ödüllü bir güvenlik çözümü sunuyoruz.",
                 "windowsSubtitle": "Windows Defender Temel Koruması",
                 "topTip": "Çevrimiçi güvenlik için en iyi ipuçları",
-                "topContent": "Günümüzün en büyük çevrimiçi tehditlerine karşı nasıl korunabileceğinizi öğrenin",
+                "topContent": "Günümüzün en büyük çevrimiçi tehditlerine karşı nasıl korunabileceğinizi öğrenin <tag>İPUÇLARINI GÖRÜN</tag>",
                 "view": "İPUÇLARINI GÖRÜN",
                 "buyNow": "Şimdi Satın Al",
                 "buy": "Banka düzeyinde güvenlik özelliklerinden yararlanmak için McAfee virüsten koruma yazılımını hemen satın alın, indirin ve yükleyin",
@@ -1741,7 +1797,7 @@
                 "getMacfee": "McAfee'yi Edinin",
                 "topBenefits": "<b>Lenovo tüm cihazlarınızı korumak için neden McAfee</b>'yi öneriyor",
                 "awardTitle": "Ödüllü Virüsten Koruma Yazılımı",
-                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin.",
+                "awardSubtitle": "Virüslerin, kötü amaçlı yazılımların ve fidye yazılımlarının bilgisayarınıza bulaşmasını önleyin",
                 "supportTitle": "Uzmanlardan 7/24 ücretsiz teknik destek ",
                 "supportSubtitle": "Özel güvenlik ekibimizden gün boyu yardım alın ve içiniz rahat etsin",
                 "trialSubtitle": "Şu anda McAfee LiveSafe'in 30 günlük ücretsiz deneme sürümü tarafından korunuyorsunuz – yalnızca {{remainingDays}} gün kaldı! Korunma süresini uzatmak için hemen abone olun.",
@@ -1763,8 +1819,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee Güvenlik Açığı Tarayıcısı ",
                 "report": "Tehdit Koruma Raporunuz ",
-                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.",
-                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın.",
+                "trialContent": "McAfee virüsten koruma yazılımının deneme sürümünden memnun kaldığınızı umuyoruz. Ancak deneme sürümünüzün sona ermesine yalnızca {{remainingDays}} gün kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın. <tag>Şimdi Abone Ol</tag>",
+                "subscribeContent": "McAfee yazılımınızdan memnun kaldığınızı umuyoruz. Ancak yalnızca {{remainingDays}} gününüz kaldı. Bilgisayarınız savunmasız kalmak üzere. Bilgisayarınızı tehlikeye atmayın. <tag>Şimdi Abone Ol</tag>",
                 "subscribeNow": "Şimdi Abone Ol",
                 "fileScan": "Dosya tarandı",
                 "Viruses": "Virüs Temizlendi",
@@ -1773,7 +1829,8 @@
                 "startFileScan": "Dosya taramasını başlat"
             },
             "others": {
-                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar"
+                "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
+                "unknown": "Bilinmiyor"
             }
         },
         "wifisecurity": {
@@ -2454,6 +2511,10 @@
         "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
         "doNotSuspend": "Bu testler kesintisiz çalıştırılmalıdır! Bu uygulamayı kapatmayın veya küçültmeyin ve tarama sırasında bilgisayarınızı uyku moduna almayın ya da kapatmayın.",
         "doNotUse": "Test tamamlanana kadar lütfen bilgisayarınızı kullanmaktan kaçının",
+        "testsMustRunUniterrupted": "Bu testler kesintisiz çalıştırılmalıdır!",
+        "doNotCloseOrMinimizeApp": "• Bu uygulamayı kapatmayın veya küçültmeyin.",
+        "doNotSwitchApp": "• Başka bir uygulamaya geçmeyin.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Bilgisayarınızı uyku kipine almayın, oturumu veya bilgisayarınızı kapatmayın.",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",
@@ -2568,5 +2629,122 @@
                 "readLess": "Okumayı Daralt"
             }
         }
-    }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

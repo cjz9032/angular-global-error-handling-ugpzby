@@ -39,13 +39,20 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public isOnline = true;
+	public brand;
 	private protocalAction: any;
+	private isUPEFailed = false;
+	private isCmsLoaded = false;
+
+
+	warrantyData: { info: any; cache: boolean };
 
 	warrantyData: { info: any; cache: boolean };
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
 	cardContentPositionB: any = {};
+	cardContentPositionBCms: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
 	cardContentPositionE: any = {};
@@ -86,9 +93,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
-
-		this.setDefaultSystemStatus();
-
+		this.deviceService.getMachineInfo().then(() => {
+			this.setDefaultSystemStatus();
+		});
+		this.brand = this.deviceService.getMachineInfoSync().brand;
 		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
 			this.submit = value;
 			this.feedbackButtonText = this.submit;
@@ -96,6 +104,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		// Evaluate the translations for QA on language Change
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
+		this.isUPEFailed = false;  // init UPE request status
+		this.isCmsLoaded = false;
 		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchContent();
@@ -149,12 +159,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
-
 		this.qaService.destroyChangeSubscribed();
-	}
-
-	getWarrantyInfo(online: boolean) {
-		this.supportService.getWarrantyInfo(online);
 	}
 
 	private fetchContent(lang?: string) {
@@ -191,21 +196,24 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 							this.dashboardService.heroBannerItems = heroBannerItems;
 						}
 
-						if (source === 'CMS') {
-							const cardContentPositionB = this.cmsService.getOneCMSContent(
-								response,
-								'half-width-title-description-link-image',
-								'position-B'
-							)[0];
-							if (cardContentPositionB) {
-								this.cardContentPositionB = cardContentPositionB;
-								if (this.cardContentPositionB.BrandName) {
-									this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
-										'|'
-									)[0];
-								}
-								cardContentPositionB.DataSource = 'cms';
-								this.dashboardService.cardContentPositionB = cardContentPositionB;
+						const cardContentPositionB = this.cmsService.getOneCMSContent(
+							response,
+							'half-width-title-description-link-image',
+							'position-B'
+						)[0];
+						if (cardContentPositionB) {
+							if (this.cardContentPositionB.BrandName) {
+								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
+									'|'
+								)[0];
+							}
+							cardContentPositionB.DataSource = 'cms';
+
+							this.cardContentPositionBCms = cardContentPositionB;
+							this.isCmsLoaded = true;
+							if (this.isUPEFailed || source === 'CMS') {
+								this.cardContentPositionB = this.cardContentPositionBCms;
+								this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
 							}
 						}
 
@@ -279,6 +287,14 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						}
 						cardContentPositionB.DataSource = 'upe';
 						this.dashboardService.cardContentPositionB = cardContentPositionB;
+						this.isUPEFailed = false;
+					}
+				}, (err) => {
+					this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+					this.isUPEFailed = true;
+					if (this.isCmsLoaded) {
+						this.cardContentPositionB = this.cardContentPositionBCms;
+						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
 					}
 				});
 			}

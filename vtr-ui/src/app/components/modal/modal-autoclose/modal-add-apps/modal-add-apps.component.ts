@@ -16,8 +16,9 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	public loadingNoApps = false;
 	runningList: any = [];
 	public isChecked: any = [];
-	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 	public statusitem;
+	ariaLabel = 'Auto close add apps window opened';
 	//constructor() { }
 
 	ngOnInit() {
@@ -37,6 +38,11 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 			}
 			this.loadingNoApps = this.runningList.length === 0 ? true : false;
 			this.loading = false;
+			if (this.loadingNoApps) {
+				this.ariaLabel = 'gaming.autoClose.modalTurnAutoCloseNarrator.running';
+			} else {
+				this.ariaLabel = 'gaming.autoClose.modalTurnAutoCloseNarrator.open';
+			}
 			setTimeout(() => {
 				document.getElementById('close').focus();
 			}, 100);
@@ -57,6 +63,16 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
+		document.getElementById('main-wrapper').focus();
+	}
+
+	runappKeyup(event, index) {
+		if (event.which === 9) {
+			if (index === this.runningList.length - 1) {
+				let txt1 = document.getElementById('close');
+				txt1.focus();
+			}
+		}
 	}
 
 	runappKeyup(event, index) {

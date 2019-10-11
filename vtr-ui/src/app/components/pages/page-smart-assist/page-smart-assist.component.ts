@@ -28,7 +28,8 @@ import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-
 	templateUrl: './page-smart-assist.component.html',
 	styleUrls: ['./page-smart-assist.component.scss']
 })
-export class PageSmartAssistComponent implements OnInit, OnDestroy {
+export class PageSmartAssistComponent 
+   implements OnInit, OnDestroy {
 
 	title = 'Smart Assist';
 	back = 'BACK';
@@ -47,6 +48,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchLockTitle: string;
 	public options: any;
 	// public keepMyDisplay: boolean;
+	public getAutoScreenOffNoteStatus: any;
 	public intelligentScreen: IntelligentScreen;
 	public intelligentMedia = new FeatureStatus(false, true);
 	public lenovoVoice = new FeatureStatus(false, true);
@@ -56,6 +58,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private Windows: any;
 	private windowsObj: any;
 	public hpdSensorType = 0;
+	public sensitivityVisibility = false;
+	public sesnsitivityAdjustVal = 0;
 	smartAssistCache: SmartAssistCache;
 
 	headerMenuItems: PageAnchorLink[] = [
@@ -145,6 +149,30 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.setIntelligentScreen();
 			this.initDataFromCache();
 			this.initSmartAssist(true);
+			this.getHPDLeaveSensitivityVisibilityStatus();
+		}
+	}
+
+	initDataFromCache() {
+		try {
+			this.smartAssistCache = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCache, undefined);
+			if (this.smartAssistCache !== undefined) {
+				this.intelligentSecurity = this.smartAssistCache.intelligentSecurity;
+				this.intelligentScreen = this.smartAssistCache.intelligentScreen;
+				this.intelligentMedia = this.smartAssistCache.intelligentMedia;
+				this.isAPSAvailable = this.smartAssistCache.isAPSAvailable;
+				this.hpdSensorType = this.smartAssistCache.hpdSensorType;
+			} else {
+				this.smartAssistCache = new SmartAssistCache();
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
+				this.smartAssistCache.intelligentMedia = this.intelligentMedia;
+				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
+				this.smartAssistCache.hpdSensorType = this.hpdSensorType;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			}
+		} catch (error) {
+			console.log('initDataFromCache', error);
 		}
 	}
 
@@ -259,6 +287,46 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	public getHPDLeaveSensitivityVisibilityStatus() {
+		try {
+			this.smartAssist.getHPDLeaveSensitivityVisibility().then((value: any) => {
+				console.log('getHPDLeaveSensitivityVisibility value----->', value);
+				this.sensitivityVisibility = value;
+				if (this.sensitivityVisibility) {
+					this.getHPDLeaveSensitivityStatus();
+				}
+			});
+
+		} catch (error) {
+			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			return EMPTY;
+		}
+	}
+
+	public getHPDLeaveSensitivityStatus() {
+		try {
+			this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
+				this.sesnsitivityAdjustVal = value;
+				console.log('getHPDLeaveSensitivity value----->', value);
+			});
+		} catch (error) {
+			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			return EMPTY;
+		}
+	}
+
+	public setHPDLeaveSensitivitySetting(event) {
+		try {
+			this.smartAssist.SetHPDLeaveSensitivitySetting(event.value).then((value: any) => {
+				console.log('setHPDLeaveSensitivitySetting value----->', value);
+			});
+		} catch (error) {
+			this.logger.error('setHPDLeaveSensitivitySetting', error.message);
+			return EMPTY;
+		}
+	}
+
+
 	private apsAvailability() {
 		Promise
 			.all([this.smartAssist.getAPSCapability(), this.smartAssist.getSensorStatus(), this.smartAssist.getHDDStatus()])
@@ -303,12 +371,21 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			this.getAutoScreenOffNoteStatusFunc();
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
 			return EMPTY;
 		});
 	}
 
+    private getAutoScreenOffNoteStatusFunc() {
+		this.getAutoScreenOffNoteStatus = setInterval(() => {
+			console.log('Trying after 30 seconds for getting auto screenOffNoteStatus');
+			this.smartAssist.getAutoScreenOffNoteStatus().then((response) => {
+				this.intelligentScreen.isAutoScreenOffNoteVisible = response;
+			});
+		}, 30000);
+	}
 	private initZeroTouchLogin() {
 		Promise.all([
 			this.smartAssist.getZeroTouchLoginVisibility(),
@@ -641,4 +718,36 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.getFacialRecognitionStatus();
 		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
 	}
+					}).catch(error => {
+						this.logger.error('getVideoPauseResumeStatus.error', error.message);
+						return EMPTY;
+					});
+			}
+		} catch (error) {
+			this.logger.error('getVideoPauseResumeStatus' + error.message);
+			return EMPTY;
+		}
+	}
+
+	initHPDSensorType() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDSensorType()
+					.then((type: number) => {
+						this.hpdSensorType = type;
+						this.smartAssistCache.hpdSensorType = this.hpdSensorType;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+						console.log('getHPDSensorType: ', this.hpdSensorType);
+					}).catch(error => {
+						console.error('getHPDSensorType', error);
+					});
+			}
+		} catch (error) {
+			console.error('getHPDSensorType' + error.message);
+		}
+	}
+	ngOnDestroy() {
+		clearTimeout(this.getAutoScreenOffNoteStatus);
+	}
+
 }

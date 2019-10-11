@@ -14,7 +14,6 @@ import { GuardService } from '../../../services/guard/security-guardService.serv
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { McAfeeInfo, McafeeMetricsList } from '@lenovo/tan-client-bridge';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -45,8 +44,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	mcafeeArticleCategory: string;
 	isOnline = true;
 	notificationSubscription: Subscription;
-	showMetricsList = true;
-	showMetricButton = true;
 	common: AntivirusCommon;
 
 	@HostListener('window:focus')
@@ -99,10 +96,13 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				this.viewModel.mcafeestatusList = this.getMcafeeFeature(this.viewModel.mcafee);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.viewModel.mcafeestatusList);
 			}
-			if (this.viewModel.mcafee.metrics) {
+			if (this.viewModel.mcafee.metrics && this.viewModel.mcafee.metrics.length > 0) {
 				this.viewModel.metricsList = this.getMcafeeMetric(this.viewModel.mcafee.metrics);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList, this.viewModel.metricsList);
-			} else { this.showMetricsList = false; }
+			} else {
+				this.viewModel.showMetricsList = false;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, false);
+			}
 		}
 		if (this.antiVirus.windowsDefender) {
 			this.viewModel.windowsDefender = this.antiVirus.windowsDefender;
@@ -143,10 +143,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.viewModel.mcafeestatusList = this.getMcafeeFeature(this.viewModel.mcafee, data);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.viewModel.mcafeestatusList);
 			this.viewModel.antiVirusPage(this.antiVirus);
-		}).on(phoenix.EventTypes.avOthersEvent, () => {
-			if (this.antiVirus.others) {
-				if (this.antiVirus.others.firewall && this.antiVirus.others.firewall.length > 0) {
-					this.viewModel.otherFirewall = this.antiVirus.others.firewall[0];
+		}).on(phoenix.EventTypes.avOthersEvent, (data) => {
+			if (data) {
+				if (data.firewall && data.firewall.length > 0) {
+					this.viewModel.otherFirewall = data.firewall[0];
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, this.viewModel.otherFirewall);
 					this.viewModel.othersFirewallstatusList = [{
 						status: this.viewModel.otherFirewall.status,
@@ -157,8 +157,8 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, null);
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, null);
 				}
-				if (this.antiVirus.others.antiVirus && this.antiVirus.others.antiVirus.length > 0) {
-					this.viewModel.otherAntiVirus = this.antiVirus.others.antiVirus[0];
+				if (data.antiVirus && data.antiVirus.length > 0) {
+					this.viewModel.otherAntiVirus = data.antiVirus[0];
 					this.viewModel.othersAntistatusList = [{
 						status: this.viewModel.otherAntiVirus.status,
 						title: this.virusScan,
@@ -270,7 +270,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		articleDetailModal.componentInstance.articleId = this.mcafeeArticleId;
 	}
 
-	getMcafeeFeature(mcafee: McAfeeInfo, data?) {
+	getMcafeeFeature(mcafee: phoenix.McAfeeInfo, data?) {
 		const featureList = [{
 			status: mcafee.registered,
 			title: this.register,
@@ -326,59 +326,78 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				}
 			});
 		} else if (data) {
-			featureList.push({
-				status: data[0].value,
-				title: this.virusScan,
-				installed: data[0].installed
-			});
-			featureList.push({
-				status: data[1].value,
-				title: this.fireWall,
-				installed: data[1].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.antiSpam,
-				installed: data[3].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.quickClean,
-				installed: data[4].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.vulnerability,
-				installed: data[5].installed
-			});
+			if (data.length < 6) {
+				data.forEach((feature) => {
+					featureList.push({
+						status: feature.value,
+						title: feature.key,
+						installed: feature.installed
+					});
+				});
+			} else {
+				featureList.push({
+					status: data[0].value,
+					title: this.virusScan,
+					installed: data[0].installed
+				});
+				featureList.push({
+					status: data[1].value,
+					title: this.fireWall,
+					installed: data[1].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.antiSpam,
+					installed: data[3].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.quickClean,
+					installed: data[4].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.vulnerability,
+					installed: data[5].installed
+				});
+			}
 		} else {
-			featureList.push({
-				status: mcafee.status,
-				title: this.virusScan,
-				installed: true
-			});
-			featureList.push({
-				status: mcafee.firewallStatus,
-				title: this.fireWall,
-				installed: true
-			});
-			featureList.push({
-				status: null,
-				title: this.antiSpam,
-				installed: mcafee.features[3].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.quickClean,
-				installed: mcafee.features[4].installed
-			});
-			featureList.push({
-				status: null,
-				title: this.vulnerability,
-				installed: mcafee.features[5].installed
-			});
+			if (mcafee.features.length < 6) {
+				mcafee.features.forEach((feature) => {
+					featureList.push({
+						status: feature.value,
+						title: feature.key,
+						installed: feature.installed
+					});
+				});
+			} else {
+				featureList.push({
+					status: mcafee.status,
+					title: this.virusScan,
+					installed: true
+				});
+				featureList.push({
+					status: mcafee.firewallStatus,
+					title: this.fireWall,
+					installed: true
+				});
+				featureList.push({
+					status: null,
+					title: this.antiSpam,
+					installed: mcafee.features[3].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.quickClean,
+					installed: mcafee.features[4].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.vulnerability,
+					installed: mcafee.features[5].installed
+				});
+			}
 		}
-
 		return featureList;
 	}
 
@@ -391,7 +410,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		return featureList.splice(0, 0, registerList);
 	}
 
-	getMcafeeMetric(metrics: Array<McafeeMetricsList>, data?) {
+	getMcafeeMetric(metrics: Array<phoenix.McafeeMetricsList>, data?) {
 		const metricsList = [];
 		const list = [];
 		let metricsFeature = metrics;
@@ -399,7 +418,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			metricsFeature = data;
 		}
 		if (metricsFeature.length === 0) {
-			this.showMetricsList = false;
+			this.viewModel.showMetricsList = false;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, false);
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, true);
 		}
 		metricsFeature.forEach((e) => {
 			let value;
@@ -447,8 +469,11 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				list.push(metricsInfor);
 			}
 			if (list.filter(id => id > 0).length > 0) {
-				this.showMetricButton = false;
+				this.viewModel.showMetricButton = false;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, false);
 				return list;
+			} else {
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, true);
 			}
 		}
 		return metricsList;

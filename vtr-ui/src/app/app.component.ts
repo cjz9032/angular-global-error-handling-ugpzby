@@ -28,13 +28,14 @@ import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
 import { AppUpdateService } from './services/app-update/app-update.service';
+import { Title } from '@angular/platform-browser';
 
 declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
-	providers: [TimerService]
+	styleUrls: [ './app.component.scss' ],
+	providers: [ TimerService ]
 })
 export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
@@ -43,6 +44,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	private metricsClient: any;
 	private beta;
 	private subscription: Subscription;
+	pageTitle = this.isGaming ? 'gaming.common.narrator.pageTitle.device' : '';
 
 	constructor(
 		private displayService: DisplayService,
@@ -58,7 +60,8 @@ export class AppComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
-		private appUpdateService: AppUpdateService
+		private appUpdateService: AppUpdateService,
+		private titleService: Title
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -74,31 +77,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-
-		if (vantageShellService.isShellAvailable) {
-			this.beta = vantageShellService.getBetaUser();
-			this.beta.getBetaUser().then((result) => {
-				if (!result) {
-					if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-						this.commonService.isBetaUser().then((data) => {
-							if (data === 0 || data === 3) {
-								this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-								this.beta.setBetaUser();
-							}
-						});
-					} else {
-						this.beta.setBetaUser();
-					}
-				} else {
-					this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-				}
-			});
-		}
+		this.initIsBeta();
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
-
-
 		document.addEventListener('visibilitychange', (e) => {
 			if (document.hidden) {
 				this.sendAppSuspendMetric();
@@ -107,36 +89,23 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		});
 
+		window.addEventListener(
+			'online',
+			(e) => {
+				this.notifyNetworkState();
+			},
+			false
+		);
 
-		this.addInternetListener();
-	}
+		window.addEventListener(
+			'offline',
+			(e) => {
+				this.notifyNetworkState();
+			},
+			false
+		);
 
-	private addInternetListener() {
-		const win: any = window;
-		if (win.NetworkListener) {
-			win.NetworkListener.onnetworkchanged = (state) => {
-				this.notifyNetworkState(state);
-			};
-
-			if ( win.NetworkListener.isInternetAccess()) {
-				this.notifyNetworkState(NetworkStatus.Available);
-			} else {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}
-		} else {
-			window.addEventListener('online', (e) => {
-				this.notifyNetworkState(NetworkStatus.Available);
-			}, false);
-			window.addEventListener('offline', (e) => {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}, false);
-
-			if (navigator.onLine) {
-				this.notifyNetworkState(NetworkStatus.Available);
-			} else {
-				this.notifyNetworkState(NetworkStatus.Unavailable);
-			}
-		}
+		this.notifyNetworkState();
 	}
 
 	private launchWelcomeModal() {
@@ -144,7 +113,9 @@ export class AppComponent implements OnInit, OnDestroy {
 			.getIsARM()
 			.then((status: boolean) => {
 				if (!status || !this.deviceService.isAndroid) {
-					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(
+						LocalStorageKey.WelcomeTutorial
+					);
 					if (tutorial === undefined && navigator.onLine) {
 						this.openWelcomeModal(1);
 					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
@@ -152,7 +123,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					}
 				}
 			})
-			.catch((error) => { });
+			.catch((error) => {});
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -216,19 +187,25 @@ export class AppComponent implements OnInit, OnDestroy {
 	public sendAppLaunchMetric(lauchType: string) {
 		this.timerService.start();
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0));
+		this.metricsClient.sendAsync(
+			new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0)
+		);
 	}
 
 	public sendAppResumeMetric() {
 		this.timerService.start(); // restart timer
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0));
+		this.metricsClient.sendAsync(
+			new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0)
+		);
 	}
 
 	public sendAppSuspendMetric() {
 		const duration = this.timerService.stop();
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration));
+		this.metricsClient.sendAsync(
+			new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration)
+		);
 	}
 
 	openWelcomeModal(page: number) {
@@ -250,7 +227,41 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+		setTimeout(() => {
+			document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+		}, 0);
+	}
+
+	private initIsBeta() {
+		if (this.vantageShellService.isShellAvailable) {
+			this.beta = this.vantageShellService.getBetaUser();
+			this.deviceService.getIsARM().then((status) => {
+				if (!status) {
+					this.beta.getBetaUser().then((result) => {
+						if (!result) {
+							if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+								this.commonService.isBetaUser().then((data) => {
+									if (data === 0 || data === 3) {
+										this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+										this.beta.setBetaUser();
+									}
+								});
+							} else {
+								this.beta.setBetaUser();
+							}
+						} else {
+							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+						}
+					});
+				} else if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
+					this.commonService.isBetaUser().then((data) => {
+						if (data === 0 || data === 3) {
+							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
+						}
+					});
+				}
+			});
+		}
 	}
 
 	ngOnInit() {
@@ -290,6 +301,8 @@ export class AppComponent implements OnInit, OnDestroy {
 						element.scrollIntoView(true);
 					}
 				}
+				this.pageTitle = this.titleService.getTitle();
+				document.getElementById('main-wrapper').focus();
 			}
 		});
 
@@ -336,7 +349,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					// then relaunch app you will see the machineinfo in localstorage.
 					return value;
 				})
-				.catch((error) => { });
+				.catch((error) => {});
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -371,9 +384,9 @@ export class AppComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					})
-					.catch((error) => { });
+					.catch((error) => {});
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	private notifyNetworkState(state) {
@@ -427,7 +440,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	// 	});
 	// }
 
-	@HostListener('window:keyup', ['$event'])
+	@HostListener('window:keyup', [ '$event' ])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -452,10 +465,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			// 		keyboard: false
 			// 	});
 			// }
-		} catch (error) { }
+		} catch (error) {}
 	}
 
-	@HostListener('window:load', ['$event'])
+	@HostListener('window:load', [ '$event' ])
 	onLoad(event) {
 		this.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
@@ -467,14 +480,11 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', ['$event'])
-	disableCtrlACV($event: KeyboardEvent) {
+	@HostListener('window:keydown', [ '$event' ])
+	disableCtrlA($event: KeyboardEvent) {
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 
-		if (
-			($event.ctrlKey || $event.metaKey) &&
-			($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86) && !isPrivacyTab
-		) {
+		if (($event.ctrlKey || $event.metaKey) && $event.keyCode === 65 && !isPrivacyTab) {
 			$event.stopPropagation();
 			$event.preventDefault();
 		}

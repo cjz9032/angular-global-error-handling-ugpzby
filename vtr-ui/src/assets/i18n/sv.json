@@ -81,12 +81,12 @@
                     "line2": "<b>Översikt över funktionshantering</b> <br> Vissa funktioner är inte tillgängliga på alla enheter",
                     "line3": "<b>CPU-överklockning </b><br> Öka maxhastigheten för processorn",
                     "line4": "<b>RAM-överklockning </b><br> Öka maxhastigheten för minnet",
-                    "line5": "<b>Nätverksprestanda </b><br> Prioritera nätverkstrafik för det aktuella spelet",
+                    "line5": "<b>Nätverkspre-standa </b><br> Prioritera nätverkstrafik för det aktuella spelet",
                     "line6": "<b>Dolby </b><br> Specialanpassa ljudet för spel med Dolby-teknik",
                     "line7": "<b>Hybridläge </b><br> Inaktivera avancerade GPU-inställningar när du inte spelar för att förlänga batteritiden",
                     "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
-                    "line10": "<b>Stäng automatiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
+                    "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
                     "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
                 },
                 "systemInfo": {
@@ -107,6 +107,15 @@
                     "sub1": "Support",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
+                }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
                 }
             }
         },
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "Spelar in makrotangent för"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "Färg"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "Det finns inga aktiva appar att lägga till",
                 "body": "Endast appar som är aktiva visas. Öppna en app som du vill lägga till och återkom."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "Lägg till upp till 5 appar",
                     "part2": "av",
                     "part3": "har lagts till"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -430,11 +599,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Support",
-            "homeSecurity": "Uppkopplat hem",
             "privacy": "Sekretess",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Säkerhetsrådgivare",
@@ -473,6 +642,9 @@
             "expand": "Utöka",
             "loader": "Hämtar <br> status",
             "loading": "Läser in..."
+        },
+        "app-update": {
+            "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
         }
     },
     "privacy": {
@@ -706,7 +878,8 @@
                     "OverheatedBattery": "Batteriet är <b>för varmt</b>. Ta ut batteriet ur datorn och låt batteriet svalna i rumstemperatur.",
                     "PermanentError": "Batteriet har <b>försämrats till följd av vanlig användning.</b> Batteriet går inte att ladda. Byt ut batteriet.",
                     "NotSupportACAdapterDetail": "<b>Nätadaptern stöds inte.</b> Din Lenovo-dator saknar stöd för nätadaptern. Detta kan medföra plötslig avstängning. Anslut en lämplig nätadapter.",
-                    "LimitedACAdapterSupportDetail": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen."
+                    "LimitedACAdapterSupportDetail": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
@@ -1241,7 +1414,8 @@
                     "caption": "Automatisk avståndsjustering uppdaterar automatiskt identifieringsavståndet via en AI-motor.",
                     "options": {
                         "near": "Nära",
-                        "far": "Långt bort"
+                        "far": "Långt bort",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1261,13 +1435,17 @@
                     "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
                     "description4": "2. Om datorn är i viloläge eller avstängd. Beröringsfri inloggning fungerar inte.",
                     "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning.",
-                    "description6": "4. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade."
+                    "description6": "4. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
                     "screenTimeoutSettings": "Öppna inställningarna för skärmens tidsgräns"
                 },
-                "resetToDefault": "Återställ"
+                "resetToDefault": "Återställ",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skärm",
@@ -1493,128 +1671,6 @@
             "fileNotFoundException": "Filen hittades inte."
         }
     },
-    "homeSecurity": {
-        "title": "Säkerhet för uppkopplat hem",
-        "notification": {
-            "recent": "Senaste säkerhetsaviseringar",
-            "notifications": "Meddelanden",
-            "unsafeNetworkConnection": "Osäker nätverksanslutning",
-            "networkUnsafe": "Nätverket är osäkert",
-            "deviceDisconnected": "Enheten är frånkopplad",
-            "newDeviceDetected": "En ny enhet identifierades",
-            "unsafeDeviceDetected": "En osäker enhet identifierades"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Skydda enhetens ekosystem",
-            "thisDevice": "Denna enhet",
-            "allDevices": "Alla enheter",
-            "protected": "Skyddat",
-            "notProtected": "Inte skyddat",
-            "trialExpired": "Provprenumerationen har löpt ut",
-            "upgrade": "uppgradera",
-            "inEcosystem": "I ekosystemet",
-            "ecosystemEnable": "Ekosystemet har aktiverats",
-            "inTrial": "I provprenumeration",
-            "addEcosystem": "Lägg till i ekosystemet",
-            "enableEcosystem": "Aktivera ekosystemet",
-            "startTrial": "Starta provprenumeration",
-            "fullAccess": "Full åtkomst",
-            "renew": "Förnya"
-        },
-        "overview": {
-            "overviewBlockTitle": "Översikt över ekosystemets säkerhet",
-            "allDevices": "Alla enheter",
-            "myDevice": "Min enhet",
-            "thisComputer": "Den här datorn",
-            "secure": "SÄKERT",
-            "needAttention": "ÅTGÄRD KRÄVS",
-            "manageAccount": "Hantera konto",
-            "devices": "Enheter",
-            "seeProtectedDevices": "Se skyddade enheter",
-            "addDevice": "lägg till enhet",
-            "trialExpired": "Provprenumerationen har löpt ut - Uppgradera för att skydda alla dina enheter",
-            "upgrade": "uppgradera",
-            "freeTrial": "Skydda alla dina enheter - 30 dagars kostnadsfri provprenumeration",
-            "startTrial": "Starta provprenumeration",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Från Coronet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "Bakåt",
-            "skip": "Hoppa över",
-            "start": "STARTA RUNDTUR",
-            "done": "KLAR",
-            "welcome1": "Välkommen",
-            "welcomeDesc1": "Med bara några få klick kan du skydda datorer, mobila enheter och anslutna enheter för dig och din familj.",
-            "welcomeDescStart": "Starta den kostnadsfria 30-dagars provprenumerationen nu.",
-            "welcome2": "Endast för Vantage",
-            "welcomeDesc2": "Säkerhet för uppkopplat hem är inbyggt i Vantage så att du snabbt kan se hur skyddat ekosystemet är och läsa säkerhetsmeddelanden.",
-            "create": "Skapa ett konto",
-            "lenovoId": "med Lenovo ID",
-            "notifications": "Ta emot <b>meddelanden</b> om säkerhetsstatusen i ditt hem",
-            "monitor": "<b>Övervaka</b> skyddet av din familjs enheter",
-            "peaceOfMind": "Känn dig <b>trygg</b> med att ni alltid är skyddade!",
-            "signInLenovoId": "REGISTRERA DIG MED LENOVO ID",
-            "haveLenovo": "Jag har inget <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Skapa ett Lenovo ID",
-            "without": "Fortsätt <b>utan ett konto</b>",
-            "skipAndTrial": "HOPPA ÖVER OCH STARTA PROVPRENUMERATION",
-            "alreadyHave": "Jag har redan ett <b>Säkerhet för uppkopplat hem-konto</b>",
-            "loginCHS": "Logga in på befintligt konto",
-            "locationTitle": "Aktivera platsspårning",
-            "locationPermission": "För att funktionen ska fungera korrekt måste du aktivera platsspårning för denna enhet"
-        },
-        "accountStatus": {
-            "title": "Min Säkerhet för uppkopplat hem",
-            "startTrial": "Starta provprenumeration",
-            "manageAccount": "Hantera konto",
-            "upgradeAccount": "Uppgradera konto",
-            "inTrialDetail1": "{{remainingDays}} dagar kvar på provprenumerationen.",
-            "inTrialDetail2": "Provprenumerationen gäller fortfarande. Du har obegränsad åtkomst till alla funktioner.",
-            "trialExpiredDetail1": "Provprenumerationen har löpt ut.",
-            "trialExpiredDetail2": "Provprenumerationen har upphört och enhetens ekosystem är inte längre skyddat.",
-            "upgradedDetail1": "Kontot är aktivt till {{expiredDate}}.",
-            "upgradedDetail2": "Ekosystemet med enheter är skyddade för närvarande.",
-            "localAccountDetail2": "Klicka på knappen nedan för att starta din kostnadsfria 30 dagars provprenumeration.",
-            "alreadyHaveAccount": "Har du redan en aktiveringskod?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Få support"
@@ -1704,7 +1760,7 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILLBAKA",
-                "recommends": "Varför Lenovo rekommenderar <b>McAfee</b> för att skydda alla dina enheter",
+                "recommends": "Därför <b>rekommenderar Lenovo McAfee</b> för att skydda alla dina enheter",
                 "award": "Prisbelönt antivirusprogram",
                 "mcafeePremium": "McAfee LiveSafe-skydd",
                 "protectedBy": "Du skyddas för närvarande med {{protectedName}}. Men du kan få ett bättre skydd med McAfee LiveSafe.",
@@ -1717,13 +1773,13 @@
                 "Blazing": "Blixtsnabb hastighet",
                 "BlazingText": "Optimerat antivirusprogram som inte saktar ned eller stör din Lenovo Vantage-upplevelse",
                 "privacyTerms": "/   <tag>Sekretesspolicy</tag>  |  <tag>Användarvillkor</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "Inte tillgänglig"
             },
             "windowsDefender": {
-                "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt</b>.",
+                "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt.</b>",
                 "windowsSubtitle": "Windows Defender grundskydd",
                 "topTip": "Bästa tipsen för säkerhet online",
-                "topContent": "Se hur du kan försvara dig mot dagens största onlinehot",
+                "topContent": "Se hur du kan försvara dig mot dagens största onlinehot <tag>SE TIPS</tag>",
                 "view": "SE TIPS",
                 "buyNow": "Köp nu",
                 "buy": "Köp, ladda ned och installera McAfee virusskydd i dag för att dra nytta av dessa säkerhetsfunktioner i bankklass",
@@ -1741,7 +1797,7 @@
                 "getMacfee": "Köp McAfee",
                 "topBenefits": "Varför <b>Lenovo rekommenderar McAfee</b> för att skydda alla dina enheter",
                 "awardTitle": "Prisbelönt antivirusprogram",
-                "awardSubtitle": "Förhindra att din dator smittas av virus, skadlig kod och ransomware.",
+                "awardSubtitle": "Förhindra att din dator smittas av virus, skadlig kod och ransomware",
                 "supportTitle": "Teknisk expertsupport utan kostnad dygnet runt ",
                 "supportSubtitle": "Vårt specialutbildade säkerhetsteam ger dig sinnesro och hjälp dygnet runt",
                 "trialSubtitle": "Du skyddas för närvarande med en 30-dagars provprenumeration på McAfee LiveSafe – endast {{remainingDays}} dagar kvar! Prenumerera nu för att förlänga ditt skydd.",
@@ -1763,8 +1819,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee sårbarhetssökning ",
                 "report": "Din hotskyddsrapport ",
-                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det.",
-                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det.",
+                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
+                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
                 "subscribeNow": "Prenumerera nu",
                 "fileScan": "Filer skannade",
                 "Viruses": "Virus eliminerade",
@@ -1773,7 +1829,8 @@
                 "startFileScan": "Starta genomsökning av filer"
             },
             "others": {
-                "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet"
+                "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
+                "unknown": "Okänd"
             }
         },
         "wifisecurity": {
@@ -2454,6 +2511,10 @@
         "offline": "Enheten körs offline. Anslut till internet",
         "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
         "doNotUse": "Använd inte datorn förrän testet har slutförts",
+        "testsMustRunUniterrupted": "Testerna måste köras utan avbrott!",
+        "doNotCloseOrMinimizeApp": "• Stäng eller minimera inte den här appen.",
+        "doNotSwitchApp": "• Byt inte till en annan app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sätt inte datorn i strömsparläge och logga inte ut från eller stäng av datorn.",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",
@@ -2568,5 +2629,122 @@
                 "readLess": "Läs mindre"
             }
         }
-    }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

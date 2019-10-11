@@ -156,6 +156,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('initPowerSmartSettingsForIdeaPad: ' + error.message);
+			this.showIC = 0;
+			this.cache.showIC = this.showIC;
+			this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+			this.isPowerSmartSettingHidden.emit(true);
 			return EMPTY;
 		}
 	}
@@ -274,6 +278,14 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		try {
 			let isITS = false;
 			const its = await this.getDYTCRevision();
+			if (its === 0) {
+				console.log('ITS value is 0');
+				this.showIC = 0;
+				this.cache.showIC = this.showIC;
+				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+				this.isPowerSmartSettingHidden.emit(true);
+				return;
+			}
 			if (its === 4 || its === 5) {
 				// ITS supported or DYTC 4 or 5
 				isITS = true;
@@ -352,6 +364,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('initPowerSmartSettingsForThinkPad', error.message);
+			this.showIC = 0;
+			this.cache.showIC = this.showIC;
+			this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+			this.isPowerSmartSettingHidden.emit(true);
 			return EMPTY;
 		}
 	}

@@ -54,7 +54,7 @@
 			</vtr-battery-indicator>
 		</div>
 
-		<div class="p-3 row"
+		<div class="row"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto "
 				[class.normal-ACAdapter-condition]="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport">
@@ -90,7 +90,7 @@
 			</div>
 
 		</div>
-		<div class="feature-note p-2 mt-2"
+		<div class="feature-note p-3 mt-2"
 			*ngIf="chargeThresholdInfo?.isOn">
 			<div class="row">
 				<p id="myDevice-settings-batteryGauge-threshold-note"
@@ -101,13 +101,14 @@
 			</div>
 		</div>
 
-		<div class="pt-4 text-center">
+		<div class="pt-4 text-center"
+			[class.btn-disabled]="isBatteryDetailsBtnDisabled">
 			<vtr-ui-button metricsItem="See.Battery.Details"
 				metricsParent="Page.Settings"
 				metricsEvent="FeatureClick"
 				[isFullWidth]="true"
 				(click)="showDetailModal(batteryDetail)"
-				[disabled]="isBatteryDetailsBtnDisabled"
+				[isDisabled]="isBatteryDetailsBtnDisabled"
 				id="myDevice-settings-battery-details-btn"
 				[linkId]="'myDevice-settings-battery-details-btn'"
 				[label]="'device.deviceSettings.batteryGauge.button' | translate"

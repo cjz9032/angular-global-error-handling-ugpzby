@@ -43,6 +43,15 @@
 	.blur-1 {
 		opacity: 0.65;
 	}
+	.custom-row-swicth{
+		max-width: 60rem;
+		margin: 0 0 0 0.8rem;
+		.sensitivityTitle{
+			font-weight: $weight_bold;
+			margin-top: 3.5rem;
+			margin-bottom: 2rem;
+		  }
+	};	
 	.feature-note {
 		background-color: $shade_lightest;
 		border: 1px solid $shade_lighter;

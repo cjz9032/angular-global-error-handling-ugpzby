@@ -118,9 +118,12 @@
 	}
 
 	.bottom-content {
-		.cutting-line {
+		hr {
 			border: 0.1rem solid $grey_light;
 			margin: 5rem 0 4rem 0;
+		}
+		@media #{$mediaquery_X5} {
+			padding: 4rem 4rem 4rem 8.5rem;
 		}
 	}
 

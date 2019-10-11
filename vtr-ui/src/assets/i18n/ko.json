@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "매크로 키 기록 중"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "색상"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "추가할 실행 중인 앱 없음",
                 "body": "현재 실행 중인 앱만 표시됩니다. 추가하려는 앱을 실행한 다음 다시 시도하십시오."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "최대 5개의 앱을 추가할 수 있습니다",
                     "part2": "/",
                     "part3": "추가됨"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -430,11 +599,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "지원",
-            "homeSecurity": "홈 연결",
             "privacy": "프라이버시",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "보안 어드바이저",
@@ -473,6 +642,9 @@
             "expand": "확장",
             "loader": "페치 상태",
             "loading": "로드 중..."
+        },
+        "app-update": {
+            "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
         }
     },
     "privacy": {
@@ -706,7 +878,8 @@
                     "OverheatedBattery": "배터리가 <b>너무 뜨겁습니다</b>. 컴퓨터에서 배터리를 제거하여 상온 정도까지 식히십시오.",
                     "PermanentError": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
                     "NotSupportACAdapterDetail": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
-                    "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오."
+                    "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "배터리 없음",
                 "thresholdNote": "<b>참고:</b> 배터리 수명을 연장하기 위해 {{value}}%에서 충전이 멈추도록 배터리를 설정했습니다.",
@@ -1241,7 +1414,8 @@
                     "caption": "자동 거리 조정은 AI 엔진을 통해 감지 거리를 자동으로 업데이트합니다.",
                     "options": {
                         "near": "근처",
-                        "far": "보다 멀리"
+                        "far": "보다 멀리",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1261,13 +1435,17 @@
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
                     "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
-                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다."
+                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
                     "screenTimeoutSettings": "화면 시간 종료 설정으로 이동"
                 },
-                "resetToDefault": "재설정"
+                "resetToDefault": "재설정",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "지능형 화면",
@@ -1493,128 +1671,6 @@
             "fileNotFoundException": "파일을 찾을 수 없습니다."
         }
     },
-    "homeSecurity": {
-        "title": "홈 보안 연결",
-        "notification": {
-            "recent": "최근 보안 알림",
-            "notifications": "알림",
-            "unsafeNetworkConnection": "안전하지 않은 네트워크 연결",
-            "networkUnsafe": "안전하지 않은 네트워크",
-            "deviceDisconnected": "장치 연결이 끊어짐",
-            "newDeviceDetected": "새 장치가 검색됨",
-            "unsafeDeviceDetected": "안전하지 않은 장치가 검색됨"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "장치 생태계 보호",
-            "thisDevice": "이 장치",
-            "allDevices": "모든 장치",
-            "protected": "보호됨",
-            "notProtected": "보호되지 않음",
-            "trialExpired": "평가판 만료됨",
-            "upgrade": "업그레이드",
-            "inEcosystem": "생태계에서",
-            "ecosystemEnable": "생태계 사용",
-            "inTrial": "평가판에서",
-            "addEcosystem": "생태계에 추가",
-            "enableEcosystem": "생태계 활성화",
-            "startTrial": "평가판 시작",
-            "fullAccess": "전체 액세스",
-            "renew": "갱신"
-        },
-        "overview": {
-            "overviewBlockTitle": "생태계 보안 개요",
-            "allDevices": "모든 장치",
-            "myDevice": "내 장치",
-            "thisComputer": "이 컴퓨터",
-            "secure": "보안",
-            "needAttention": "주의 필요",
-            "manageAccount": "계정 관리",
-            "devices": "장치",
-            "seeProtectedDevices": "보호 장치 참고",
-            "addDevice": "장치 추가",
-            "trialExpired": "평가판 만료됨 - 모든 장치를 보호하도록 업그레이드",
-            "upgrade": "업그레이드",
-            "freeTrial": "모든 장치 보호 - 30일 무료 평가판",
-            "startTrial": "평가판 시작",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "Coronet로 실행",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "뒤로",
-            "skip": "건너뛰기",
-            "start": "투어 시작",
-            "done": "완료",
-            "welcome1": "환영합니다",
-            "welcomeDesc1": "몇 번의 클릭 만으로 사용자 자신 및 가족을 위해 PC, 모바일 장치 및 연결 장치를 보호할 수 있습니다.",
-            "welcomeDescStart": "지금 30일 무료 평가판을 시작하십시오.",
-            "welcome2": "Vantage 전용",
-            "welcomeDesc2": "연결된 홈 보안은 사용자 생태계 및 보안 경고에 대한 보호 상태에 빠르게 액세스할 수 있도록 직접 Vantage에 작성됩니다.",
-            "create": "계정 만들기",
-            "lenovoId": "Lenovo ID 포함",
-            "notifications": "집 상태에 대한 <b>알림</b>을 받기",
-            "monitor": "가족 장치의 안전 <b>모니터링</b>",
-            "peaceOfMind": "항상 보고하고 있다는 점을 <b>안심</b>하십시오!",
-            "signInLenovoId": "Lenovo ID로 가입",
-            "haveLenovo": "<b>Lenovo ID</b>가 없음",
-            "createLenovo": "&nbsp;Lenovo ID 만들기",
-            "without": "<b>계정 없이</b> 계속",
-            "skipAndTrial": "건너뛰기 및 평가판 시작",
-            "alreadyHave": "이미 <b>연결된 홈 보안 계정</b>이 있음",
-            "loginCHS": "기존 CHS 계정으로 로그인",
-            "locationTitle": "위치 추적 활성화",
-            "locationPermission": "이 기능이 올바르게 작동하려면, 이 장치의 위치 추적을 활성화해야 합니다."
-        },
-        "accountStatus": {
-            "title": "내 연결된 홈 보안",
-            "startTrial": "평가판 시작",
-            "manageAccount": "계정 관리",
-            "upgradeAccount": "계정 업그레이드",
-            "inTrialDetail1": "평가판 종료까지 {{remainingDays}}일 남았습니다.",
-            "inTrialDetail2": "현재 평가판 기간 내에 있습니다. 모든 기능에 무제한 액세스할 수 있습니다.",
-            "trialExpiredDetail1": "평가판이 만료되었습니다.",
-            "trialExpiredDetail2": "평가판이 만료되어 장치 생태계가 더 이상 보호되지 않습니다.",
-            "upgradedDetail1": "계정이 {{expiredDate}}까지 활성 상태입니다.",
-            "upgradedDetail2": "장치 생태계가 현재 보호되고 있습니다.",
-            "localAccountDetail2": "30일 무료 평가판을 시작하려면, 아래 버튼을 클릭하십시오.",
-            "alreadyHaveAccount": "활성화 코드가 이미 있습니까?"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "지원 가져오기"
@@ -1704,7 +1760,7 @@
             "common": {
                 "title": "바이러스 백신",
                 "back": "뒤로",
-                "recommends": "장치 보호를 위해 Lenovo가 <b>McAfee</b>를 권장 하는 이유",
+                "recommends": "장치 보호를 위해 Lenovo가 <b>McAfee</b>를 권장하는 이유",
                 "award": "수상 경력에 빛나는 안티바이러스",
                 "mcafeePremium": "McAfee LiveSafe 보호",
                 "protectedBy": "현재 {{protectedName}}(으)로 보호되고 있습니다. 그러나 McAfee LiveSafe를 사용하면 더 효과적으로 보호 받을 수 있습니다.",
@@ -1717,13 +1773,13 @@
                 "Blazing": "빠른 속도",
                 "BlazingText": "Lenovo Vantage 환경을 느리게 하거나 방해하지 않는 최적화된 안티바이러스",
                 "privacyTerms": "/   <tag>개인정보보호정책</tag>  |  <tag>서비스 약관</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "사용할 수 없음"
             },
             "windowsDefender": {
                 "optimallyProtected": "현재 Windows Defender를 사용 중인 것 같습니다. 나쁜 선택은 아니지만 Lenovo는 랜섬웨어, 멀웨어 및 바이러스에 대한 궁극적인 안전을 위해 탁월한 보안 기능을 제공하는 <b>McAfee</b>와 협력하여 <b>중요 항목을 보호</b>할 수 있습니다.",
                 "windowsSubtitle": "Windows Defender 기본 보호",
                 "topTip": "온라인 안전을 위한 최고의 팁",
-                "topContent": "가장 큰 최신 온라인 위협에 방어하는 방법 알아보기",
+                "topContent": "가장 큰 최신 온라인 위협에 방어하는 방법 알아보기 <tag>팁 보기</tag>",
                 "view": "팁 보기",
                 "buyNow": "바로 구매",
                 "buy": "이러한 은행급 보안 기능을 활용하려면 지금 McAfee 바이러스 보호 기능을 구입, 다운로드 및 설치",
@@ -1741,7 +1797,7 @@
                 "getMacfee": "McAfee 가져오기",
                 "topBenefits": "장치 보호를 위해 <b>Lenovo가 McAfee를 권장</b>하는 이유",
                 "awardTitle": "수상 경력에 빛나는 바이러스 백신",
-                "awardSubtitle": "바이러스, 멀웨어 및 랜섬웨어로부터 PC가 감염되는 것을 방지합니다.",
+                "awardSubtitle": "바이러스, 멀웨어 및 랜섬웨어로부터 PC가 감염되는 것을 방지합니다",
                 "supportTitle": "무료, 24/7 전문가 기술 지원 ",
                 "supportSubtitle": "전담 보안 팀에서 상시 지원하여 안심하고 사용",
                 "trialSubtitle": "현재 McAfee LiveSafe 30일 평가판 사용 중 - {{remainingDays}}일 남았습니다. 지금 가입하여 보호를 확장하십시오.",
@@ -1763,8 +1819,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee 취약성 스캐너 ",
                 "report": "위협 보호 보고서 ",
-                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.",
-                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오.",
+                "trialContent": "McAfee 안티바이러스 평가판을 잘 활용해왔습니다. 그러나 평가판 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오. <tag>지금 구독</tag>",
+                "subscribeContent": "McAfee를 잘 활용해왔습니다. 그러나 사용 기한이 {{remainingDays}}일 남았으며 이후에는 컴퓨터가 취약해질 위험이 있습니다. 위험을 감수하지 마십시오. <tag>지금 구독</tag>",
                 "subscribeNow": "지금 구독",
                 "fileScan": "파일 스캔함",
                 "Viruses": "바이러스 제거됨",
@@ -1773,7 +1829,8 @@
                 "startFileScan": "파일 검사 시작"
             },
             "others": {
-                "othersProtection": "{{protectedName}} 장치에 대한 기본적인 보호 제공"
+                "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
+                "unknown": "알 수 없음"
             }
         },
         "wifisecurity": {
@@ -2454,6 +2511,10 @@
         "offline": "이 장치가 오프 라인 모드에서 실행 중입니다. 인터넷에 연결하십시오",
         "doNotSuspend": "이러한 테스트는 중단 없이 실행되어야 합니다! 이 앱을 닫거나 최소화하면 안 되며 스캔 중에는 컴퓨터를 절전 모드로 전환하거나 꺼서는 안 됩니다.",
         "doNotUse": "이 테스트가 완료될 때까지 컴퓨터 사용을 삼가 주십시오.",
+        "testsMustRunUniterrupted": "이러한 테스트는 중단 없이 실행되어야 합니다!",
+        "doNotCloseOrMinimizeApp": "• 이 앱을 닫거나 최소화해서는 안 됩니다.",
+        "doNotSwitchApp": "• 다른 앱으로 전환해서는 안 됩니다.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 컴퓨터를 절전 또는 로그아웃하거나 끄면 안 됩니다.",
         "customize": {
             "name": "사용자 정의",
             "test": "테스트 사용자 지정",
@@ -2568,5 +2629,122 @@
                 "readLess": "간단하게 읽기"
             }
         }
-    }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

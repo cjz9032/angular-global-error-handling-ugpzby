@@ -23,22 +23,30 @@ export class MinutesToHourminPipe implements PipeTransform {
 		const hoursStr = hours > 0 && hours < 2 ? 'hour' : 'hours';
 		const minutesStr = minutes > 0 && minutes < 2 ? 'minute' : 'minutes'; */
 		if (Number.isNaN(minutes)) {
-			return '0 ' + this.translate.instant('device.deviceSettings.batteryGauge.minutes');
+			return '0 ' + this.getTranslation('device.deviceSettings.batteryGauge.minutes');
 		}
 
 		const hoursStr = hours > 0 && hours < 2 ?
-			this.translate.instant('device.deviceSettings.batteryGauge.hour') :
-			this.translate.instant('device.deviceSettings.batteryGauge.hours');
+			this.getTranslation('device.deviceSettings.batteryGauge.hour') :
+			this.getTranslation('device.deviceSettings.batteryGauge.hours');
 
 		const minutesStr = minutes > 0 && minutes < 2 ?
-			this.translate.instant('device.deviceSettings.batteryGauge.minute') :
-			this.translate.instant('device.deviceSettings.batteryGauge.minutes');
+			this.getTranslation('device.deviceSettings.batteryGauge.minute') :
+			this.getTranslation('device.deviceSettings.batteryGauge.minutes');
 
 
 		if (hours === 0) {
 			return `${minutes} ${minutesStr}`;
 		}
 		return `${hours} ${hoursStr} ${minutes} ${minutesStr}`;
+	}
+
+	getTranslation(text: string) {
+		let translation;
+		this.translate.get(text).subscribe((res: string) => {
+			translation = res;
+		});
+		return translation;
 	}
 
 }

@@ -26,6 +26,11 @@
 				font-weight: $weight_bold;
 				background: $main_darker;
 
+				fa-icon {
+					font-size: 10rem;
+					line-height: 15.5rem;
+				}
+
 				span.percent {
 					font-size: 2.5rem;
 				}
@@ -98,7 +103,7 @@
 			}
 		}
 		.button-row {
-			padding-left: 1rem;
+			padding-left: 0.5rem;
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;

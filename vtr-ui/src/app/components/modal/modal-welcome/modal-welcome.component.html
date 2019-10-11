@@ -8,12 +8,12 @@
 				<div class="banner-page-1 row justify-content-center align-items-center">
 					<div class="col-auto title-alignment">
 						<div class="row justify-content-center align-items-center">
-							<div class="col-auto title1">
+							<div class="col-auto title1 text-center">
 								{{ "welcometutorial.title1" | translate }}
 							</div>
 						</div>
 						<div class="row justify-content-center align-items-center ">
-							<div class="col-auto px-1 title1 uppercase">
+							<div class="col-auto px-1 title1 uppercase text-center">
 								{{ "welcometutorial.title2" | translate }}
 								<span>{{ "welcometutorial.title3" | translate }}</span>
 							</div>
@@ -31,7 +31,7 @@
 						<div class="col-auto title2">
 							<ul>
 								<li>{{"welcometutorial.bullets1" | translate }}</li>
-								<li>{{"welcometutorial.bullets2" | translate }}</li>
+								<li *ngIf="machineInfo.brand!='think'" >{{"welcometutorial.bullets2" | translate }}</li>
 								<li>{{"welcometutorial.bullets3" | translate }}</li>
 							</ul>
 						</div>
@@ -166,7 +166,7 @@
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
 								<a class="linktext"
-									href="https://www.lenovo.com/us/en/privacy"
+									href="{{privacyPolicyLink}}"
 									target="_blank"
 									rel="noopener"
 									[innerHTML]="'welcometutorial.privacypolicy' | translate">

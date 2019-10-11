@@ -9,19 +9,18 @@
   margin-bottom: 2rem;
   .group-item {
     border-bottom: 0.1rem dashed $shade_light;
-    padding: 1rem 0;
+	padding: 1rem 0;
 
     &:nth-last-child(2) {
       border-bottom: none;
       padding-bottom: 0;
-    }
+	}
 
     .text-color {
       color: $go_dark;
       font-size: 1.3rem;
       font-weight: 600;
     }
-  
     .text-d-color {
       color: red;
       font-size: 1.3rem;
@@ -159,11 +158,11 @@
     width: 22rem;
     background-color: $main;
     color: $light;
-    text-decoration: none;  
+    text-decoration: none;
   }
 
   .visible {
     visibility: hidden !important;
   }
-  
+
 }

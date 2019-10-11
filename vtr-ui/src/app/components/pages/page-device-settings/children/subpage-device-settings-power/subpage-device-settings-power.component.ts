@@ -95,6 +95,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	batteryChargeThresholdCache: BatteryChargeThresholdCapability = undefined;
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
+	public isPowerDriverMissing = false;
 
 	headerMenuItems = [
 		{
@@ -219,6 +220,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
+		this.checkPowerDriverMissing(this.isPowerDriverMissing);
+		this.getFlipToBootCapability();
 
 		this.getFlipToBootCapability();
 
@@ -236,7 +240,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
 		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.getBatteryCharge(notification);
+			this.onNotification(notification);
 		});
 
 	}
@@ -1039,12 +1043,31 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getBatteryCharge(notification: AppNotification) {
-		if (notification && notification.type === 'ThresholdWarningNote') {
-			this.showWarningMsg = notification.payload;
-			this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-			this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case "ThresholdWarningNote":
+					this.showWarningMsg = notification.payload;
+					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
+					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+					break;
+				case "IsPowerDriverMissing":
+					this.checkPowerDriverMissing(notification.payload);
+					break;
+			}
+
 		}
+	}
+
+	public checkPowerDriverMissing(status) {
+		this.isPowerDriverMissing = status;
+		if (this.machineType === 1 && status) {
+			this.showAirplanePowerModeSection = false;
+			this.isChargeThresholdAvailable = false;
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "battery");
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "power");
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerDriverMissing, this.isPowerDriverMissing);
 	}
 
 	public showBatteryThresholdsettings(event) {

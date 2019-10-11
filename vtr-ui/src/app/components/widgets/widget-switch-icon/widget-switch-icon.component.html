@@ -1,6 +1,6 @@
 <div class="vtr-widget-switch-icon"
-	*ngIf="!isLoading"
-	[ngClass]="{'disable-state': disable}"
+	[disabled]="isBlocked"
+	[ngClass]="{'disable-state': (disable || isLoading)}"
 	(click)="onChange($event)"
 	[title]="tooltipText"
 	id="qs-{{switchId}}-switch-icon"
@@ -10,12 +10,16 @@
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
 	<button class="switch-container"
-		[ngClass]="[value ? 'checked' : 'unchecked',disable ? 'disable-container' : '']" 
+		[ngClass]="[(value && !isLoading) ? 'checked' : 'unchecked', disable ? 'disable-container' : '']"
+		[ngClass]="{'unchecked': isLoading}"
 		[id]="findId(value,disable)">
-		<div class="title" [ngClass]="{'disable-container' : disable}"
+		<div class="title"
+			[ngClass]="{'disable-container' : disable}"
 			id="qs-{{switchId}}-switch-title"
 			attr.aria-label="qs-{{switchId}}-switch-title">{{ title }}</div>
-		<div class="icon-container d-block"  [ngClass]="{'disable-container' : disable}">
+		<div *ngIf="!isLoading"
+			class="icon-container d-block"
+			[ngClass]="{'disable-container' : disable}">
 			<i [class]="iconDefinition"
 				[ngClass]="{'enabled' : !isBlocked}"
 				*ngIf="!isBlocked"></i>
@@ -26,36 +30,8 @@
 				[ngClass]="{'disable-container' : disable}"
 				*ngIf="isBlocked && disable"></i>
 		</div>
-		<div class="row">
-			<div class="col">
-				<div class="switch-on-off">
-					<div *ngIf="!value"
-						class="switch-label off-label"
-						id="qs-{{switchId}}-switch-off"
-						attr.aria-label="qs-{{switchId}}-switch-off">
-						<span *ngIf="!disable">{{'common.ui.off' | translate}}</span>
-					</div>
-					<div *ngIf="value"
-						class="switch-label on-label"
-						id="qs-{{switchId}}-switch-on"
-						attr.aria-label="qs-{{switchId}}-switch-on">
-						{{'common.ui.on' | translate}}</div>
-				</div>
-			</div>
-		</div>
-	</button>
-</div>
-
-<div class="vtr-widget-switch-icon"
-	*ngIf="isLoading"
-	[ngClass]="['disable-state']"
-	[title]="tooltipText">
-	<div class="switch-container"
-		[ngClass]="['unchecked']" id="qs-{{switchId}}-switch-loading-state">
-		<div class="title"
-			id="qs-{{switchId}}-switch-title"
-			attr.aria-label="qs-{{switchId}}-switch-title">{{ title }}</div>
-		<div class="icon-container d-block position-relative">
+		<div *ngIf="isLoading"
+			class="icon-container d-block position-relative">
 			<div class="loader center-block">
 				<div class="spinner-border text-secondary progress-spinner"
 					role="status"></div>
@@ -64,7 +40,20 @@
 		<div class="row">
 			<div class="col">
 				<div class="switch-on-off">
-					<div class="switch-label off-label"
+					<div *ngIf="!value && !isLoading"
+						class="switch-label off-label"
+						id="qs-{{switchId}}-switch-off"
+						attr.aria-label="qs-{{switchId}}-switch-off">
+						<span *ngIf="!disable">{{'common.ui.off' | translate}}</span>
+						<span *ngIf="disable">&nbsp;</span>
+					</div>
+					<div *ngIf="value && !isLoading"
+						class="switch-label on-label"
+						id="qs-{{switchId}}-switch-on"
+						attr.aria-label="qs-{{switchId}}-switch-on">
+						{{'common.ui.on' | translate}}</div>
+					<div *ngIf="isLoading"
+						class="switch-label off-label"
 						id="qs-{{switchId}}-switch-loading"
 						attr.aria-label="qs-{{switchId}}-switch-loading">
 						{{'common.ui.loading' | translate}}
@@ -72,5 +61,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</button>
 </div>

@@ -1,7 +1,6 @@
 import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
-import * as phoenix from '@lenovo/tan-client-bridge';
 export class AntiVirusViewModel {
 	currentPage = 'windows';
 	mcafeeInstall: boolean;
@@ -25,22 +24,24 @@ export class AntiVirusViewModel {
 	};
 	otherAntiVirus: OtherInfo = {
 		status: false,
-		name: 'unknown',
+		name: 'security.antivirus.others.unknown',
 	};
-	metricsList: Array<any> = [0, 0, 0, 0];
+	metricsList: Array<any> = [];
 	otherFirewall: OtherInfo ;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
-		title: 'security.antivirus.common.virus',
+		title: 'security.antivirus.windowsDefender.virus',
 	}, {
 		status: this.windowsDefender.firewallStatus,
-		title: 'security.antivirus.common.homeNetwork',
+		title: 'security.antivirus.windowsDefender.homeNetwork',
 	}];
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
+	showMetricsList = true;
+	showMetricButton = true;
 
-	constructor(antiVirus: phoenix.Antivirus, private commonService: CommonService) {
+	constructor(antiVirus: Antivirus, private commonService: CommonService) {
 		const cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		if (cacheCurrentPage) {
 			this.currentPage = cacheCurrentPage;
@@ -64,6 +65,14 @@ export class AntiVirusViewModel {
 		const cacheMcafeeStatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList);
 		if (cacheMcafeeStatusList) {
 			this.mcafeestatusList = cacheMcafeeStatusList;
+		}
+		const cacheShowMetricButton = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricButton);
+		if (typeof cacheShowMetricButton === 'boolean') {
+			this.showMetricButton = cacheShowMetricButton;
+		}
+		const cacheShowMetricList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricList);
+		if (typeof cacheShowMetricList === 'boolean') {
+			this.showMetricsList = cacheShowMetricList;
 		}
 		const cacheMcafeeMetricsList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList);
 		if (cacheMcafeeMetricsList) {

@@ -29,9 +29,6 @@
 	.device-sub-header {
 		color: $shade_darkest;
 		font-size: $body;
-		@media #{$mediaquery_X1} {
-			font-size: 1.4rem;
-		}
 	}
 
 	.sub-header-separator {
@@ -161,6 +158,19 @@
 			@media #{$mediaquery_X3} {
 				width: 55%;
 			}
+		}
+	}
+
+	.device-sub-header.rtl {
+		float: left;
+	}
+
+	.status-list li .row.rtl {
+		display: flex;
+		flex-direction: row-reverse;
+		.text-right{
+			text-align: left !important;
+			flex-grow: 8;
 		}
 	}
 }

@@ -108,6 +108,15 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                }
             }
         },
         "macroKey": {
@@ -235,6 +244,27 @@
             },
             "recording": {
                 "title": "錄製的巨集鍵用於"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundledSelected": "is selected bundled",
+                    "unbundledSelected": "is selected unbundled"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +398,112 @@
                 "text7": {
                     "title": "顏色"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +524,17 @@
             "noRunningApps": {
                 "title": "沒有要新增的執行中應用程式",
                 "body": "只會顯示目前執行的應用程式。請啟動要新增的應用程式並返回。"
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +553,28 @@
                     "part1": "您最多可以新增 5 個要開啟的其他應用程式",
                     "part2": "/",
                     "part3": "已新增"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -430,11 +599,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "支援",
-            "homeSecurity": "連線家庭",
             "privacy": "隱私權",
             "beta": {
                 "title": "beta"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "安全顧問",
@@ -473,6 +642,9 @@
             "expand": "展開",
             "loader": "獲取狀態",
             "loading": "載入中..."
+        },
+        "app-update": {
+            "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
         }
     },
     "privacy": {
@@ -635,7 +807,7 @@
         "deviceSettings": {
             "helpful": "實用內容",
             "batteryGauge": {
-                "subtitle": "電池性能",
+                "subtitle": "电池",
                 "hours": "小時",
                 "hour": "時",
                 "minutes": "分",
@@ -706,7 +878,8 @@
                     "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
                     "PermanentError": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
                     "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
-                    "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。"
+                    "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
@@ -1241,7 +1414,8 @@
                     "caption": "自動距離調整將會透過 AI 引擎自動更新偵測距離。",
                     "options": {
                         "near": "近",
-                        "far": "遠"
+                        "far": "遠",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1261,13 +1435,17 @@
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
                     "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
-                    "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。"
+                    "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "跳至 Windows Hello 設定",
                     "screenTimeoutSettings": "前往螢幕逾時設定"
                 },
-                "resetToDefault": "重設"
+                "resetToDefault": "重設",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "智慧型螢幕",
@@ -1493,128 +1671,6 @@
             "fileNotFoundException": "找不到檔案。"
         }
     },
-    "homeSecurity": {
-        "title": "連線家庭安全性",
-        "notification": {
-            "recent": "最近的安全通知",
-            "notifications": "通知",
-            "unsafeNetworkConnection": "不安全的網路連線",
-            "networkUnsafe": "網路不安全",
-            "deviceDisconnected": "裝置已斷線",
-            "newDeviceDetected": "偵測到新裝置",
-            "unsafeDeviceDetected": "偵測到不安全的裝置"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "保護您的裝置生態系統",
-            "thisDevice": "這部裝置",
-            "allDevices": "全部裝置",
-            "protected": "受到保護",
-            "notProtected": "未受到保護",
-            "trialExpired": "試用已過期",
-            "upgrade": "升級",
-            "inEcosystem": "生態系統模式中",
-            "ecosystemEnable": "生態系統已啟用",
-            "inTrial": "試用模式中",
-            "addEcosystem": "新增到生態系統",
-            "enableEcosystem": "啟用生態系統",
-            "startTrial": "開始試用",
-            "fullAccess": "完整存取權",
-            "renew": "更新"
-        },
-        "overview": {
-            "overviewBlockTitle": "您的生態系統安全概要",
-            "allDevices": "全部裝置",
-            "myDevice": "我的裝置",
-            "thisComputer": "這台電腦",
-            "secure": "安全",
-            "needAttention": "需要關注",
-            "manageAccount": "管理帳戶",
-            "devices": "裝置",
-            "seeProtectedDevices": "請參閱受保護裝置",
-            "addDevice": "新增裝置",
-            "trialExpired": "試用已過期 - 升級以保護您的全部裝置",
-            "upgrade": "升級",
-            "freeTrial": "保護您的全部裝置 - 30 天免費試用版",
-            "startTrial": "開始試用",
-            "inTrialDetail": "You are currently in your trial period. your trial period ends in <tag>{{remainingDay}} days</tag>.",
-            "familyMembers": "Family members",
-            "places": "Places",
-            "personalDevices": "Personal devices",
-            "wifiNetworks": "Wi-fi networks",
-            "homeDevices": "Home devices",
-            "disconnectDevice": "Disconnect this device from Connected Home Security",
-            "disconnect": "disconnect",
-            "goDashboard": "go to dashboard",
-            "overviewTitleAdmin": "Overview of your Connected Home Security",
-            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-            "trialExpiredDetail": "Your trial has expired and your device ecosystem is no longer being protected.",
-            "inSubscriptionDetail": "You are currently in your subscription period. your subscription period ends in <tag>{{remainingDay}} days</tag>.",
-            "subscriptionExpiredDetail": "Your subscription has expired and your device ecosystem is no longer being protected.",
-            "overviewTitle": "Overview of your Connected Home Security",
-            "extendNow": "extend now",
-            "poweredBy": "搭載 Coronet",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-            "trialTitle": "Trial",
-            "subscriptionTitle": "Subscription",
-            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
-            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>"
-        },
-        "tour": {
-            "back": "上一頁",
-            "skip": "跳過",
-            "start": "開始導覽",
-            "done": "完成",
-            "welcome1": "歡迎使用",
-            "welcomeDesc1": "只需按幾下滑鼠，您和家人的 PC、行動裝置和所有連線裝置就能獲得保護。",
-            "welcomeDescStart": "立即開始 30 天免費試用。",
-            "welcome2": "Vantage 獨家",
-            "welcomeDesc2": "連線家庭安全性直接內建於 Vantage，可供快速存取生態系統和安全警報的保護狀態。",
-            "create": "建立您的帳戶",
-            "lenovoId": "使用 Lenovo ID",
-            "notifications": "接收關於您家中狀態的<b>通知</b>",
-            "monitor": "<b>監控</b>您家中裝置的安全性",
-            "peaceOfMind": "隨時保護全家裝置安全，讓您備感<b>安心</b>！",
-            "signInLenovoId": "使用 Lenovo ID 進行註冊",
-            "haveLenovo": "我沒有 <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;建立 Lenovo ID",
-            "without": "<b>無帳戶</b>情況下繼續",
-            "skipAndTrial": "跳過並開始試用",
-            "alreadyHave": "我已經有<b>連線家庭安全性帳戶</b>了",
-            "loginCHS": "登入現有的 CHS 帳戶",
-            "locationTitle": "啟用位置追蹤",
-            "locationPermission": "為了使這項功能正確運作，您必須啟用這部裝置的位置追踪"
-        },
-        "accountStatus": {
-            "title": "我的連線家庭安全性",
-            "startTrial": "開始試用",
-            "manageAccount": "管理帳戶",
-            "upgradeAccount": "升級帳戶",
-            "inTrialDetail1": "試用將在 {{remainingDays}} 天後結束。",
-            "inTrialDetail2": "您目前還在試用期間。您可以無限次存取各項功能。",
-            "trialExpiredDetail1": "您的試用已到期。",
-            "trialExpiredDetail2": "您的試用已到期，您的裝置生態系統將不再受到保護。",
-            "upgradedDetail1": "您的帳戶會持續有效直至 {{expiredDate}}。",
-            "upgradedDetail2": "您的裝置生態系統目前正受到保護。",
-            "localAccountDetail2": "按下面的按鈕，開始免費試用 30 天。",
-            "alreadyHaveAccount": "已經有啟動碼了嗎？"
-        },
-        "card": {
-            "startTrial": "Start Trial",
-            "startTrialTitle": "Create your Connected Home Security",
-            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-            "join": "join",
-            "joinTitle": "Join Connected Home Security of your family",
-            "joinDescription": "Become a part of your family security group."
-        },
-        "modal": {
-            "goNow": "Go now",
-            "disconnectedTitle": "You will no longer be protected by Connected Home Security, are you sure?",
-            "countdownTitle": "Launching web browser",
-            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-            "disconnecting": "Disconnecting..."
-        }
-    },
     "support": {
         "common": {
             "getSupport": "獲得支援"
@@ -1717,13 +1773,13 @@
                 "Blazing": "極快的速度",
                 "BlazingText": "最佳化的防毒軟體，不會減慢或中斷您的 Lenovo Vantage 體驗",
                 "privacyTerms": "/   <tag>隱私權政策</tag>  |  <tag>服務條款</tag>",
-                "notAvailable": "NOT AVAILABLE"
+                "notAvailable": "無法使用"
             },
             "windowsDefender": {
                 "optimallyProtected": "看起來您目前正在使用 Windows Defender。這個選擇也不錯，但為了終極抵禦勒索軟體、惡意軟體和病毒，我們與 <b>McAfee</b> 聯手提供獲獎肯定的安全保護，以便<b>保護珍貴的事物</b>。",
                 "windowsSubtitle": "Windows Defender 基本保護",
                 "topTip": "線上安全的關鍵要訣",
-                "topContent": "了解如何抵禦當今最大的線上威脅",
+                "topContent": "了解如何抵禦當今最大的線上威脅 <tag>查看要訣</tag>",
                 "view": "查看要訣",
                 "buyNow": "立即購買",
                 "buy": "立即購買、下載和安裝 McAfee 防毒保護，以運用這些銀行級安全功能",
@@ -1741,7 +1797,7 @@
                 "getMacfee": "取得 McAfee",
                 "topBenefits": "為何 <b>Lenovo 建議使用 McAfee</b> 來保護您所有的裝置",
                 "awardTitle": "獲獎肯定的防毒軟體",
-                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦。",
+                "awardSubtitle": "防止病毒、惡意軟體和勒索軟體感染您的電腦",
                 "supportTitle": "免費、全天候的技術支援",
                 "supportSubtitle": "我們的專業安全團隊為您提供全天候的幫助，讓您高枕無憂",
                 "trialSubtitle": "您目前僅受 McAfee LiveSafe 30 天試用版的保護 - 還剩下 {{remainingDays}} 天！立即訂閱以延長您的保護。",
@@ -1763,8 +1819,8 @@
                 "quickClean": "McAfee QuickClean",
                 "vulnerability": "McAfee 漏洞掃描程式",
                 "report": "您的威脅防護報告",
-                "trialContent": "您一直在充分運用 McAfee 防毒軟體試用版。但試用期只剩 {{remainingDays}} 天就要結束，您即將面臨讓電腦容易遭受攻擊的風險。切勿冒險。",
-                "subscribeContent": "您一直在充分運用 McAfee。但只剩 {{remainingDays}} 天，您就要面臨讓電腦容易遭受攻擊的風險。切勿冒險。",
+                "trialContent": "您一直在充分運用 McAfee 防毒軟體試用版。但試用期只剩 {{remainingDays}} 天就要結束，您即將面臨讓電腦容易遭受攻擊的風險。切勿冒險。<tag>立即訂閱</tag>",
+                "subscribeContent": "您一直在充分運用 McAfee。但只剩 {{remainingDays}} 天，您就要面臨讓電腦容易遭受攻擊的風險。切勿冒險。<tag>立即訂閱</tag>",
                 "subscribeNow": "立即訂閱",
                 "fileScan": "掃描的檔案",
                 "Viruses": "消除的病毒",
@@ -1773,7 +1829,8 @@
                 "startFileScan": "啟動檔案掃描"
             },
             "others": {
-                "othersProtection": "{{protectedName}}為您的裝置提供基本保護"
+                "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
+                "unknown": "不明"
             }
         },
         "wifisecurity": {
@@ -2349,7 +2406,7 @@
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovo 的隱私權政策",
-        "done": "DONE",
+        "done": "完成",
         "interests": {
             "games": "遊戲",
             "news": "新聞",
@@ -2454,6 +2511,10 @@
         "offline": "此裝置正在執行離線模式，請與網際網路連線",
         "doNotSuspend": "這些測試在執行時不能中斷！在掃描期間，請勿關閉或將此應用程式最小化，也請勿暫停或關閉電腦。",
         "doNotUse": "在這項測試完成之前，請勿使用您的電腦",
+        "testsMustRunUniterrupted": "這些測試在執行時不能中斷！",
+        "doNotCloseOrMinimizeApp": "• 請勿關閉或將此應用程式最小化。",
+        "doNotSwitchApp": "• 請勿切換至其他應用程式。",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 請勿讓電腦進入睡眠模式，或登出或關閉電腦。",
         "customize": {
             "name": "自訂",
             "test": "自訂測試",
@@ -2568,5 +2629,122 @@
                 "readLess": "較少內容"
             }
         }
-    }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

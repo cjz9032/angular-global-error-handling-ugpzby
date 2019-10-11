@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
-import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { TopRowFunctionsCapability } from 'src/app/data-models/device/top-row-functions-capability';
@@ -21,7 +20,6 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
-		public systemUpdateService: SystemUpdateService,
 		private logger: LoggerService,
 		private commonService: CommonService
 	) { }
@@ -117,7 +115,7 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 	public rebootToggleOnOff(event) {
 		this.keyboardService.setPrimaryFunction(event.switchValue).then((res: any) => {
 			if (res.RebootRequired === true) {
-				this.systemUpdateService.restartWindows();
+				this.keyboardService.restartMachine();
 			}
 		});
 	}

@@ -27,9 +27,11 @@
 									placement="bottom">
 									<button [ngClass]="['btn','btn-outline-shadow']"
 										ngbDropdownToggle
-										type="button" id="ip-userdefinedkey-dropdown-btn" attr.aria-label="ip-userdefinedkey-dropdown-btn">
+										type="button"
+										id="ip-userdefinedkey-dropdown-btn"
+										attr.aria-label="ip-userdefinedkey-dropdown-btn">
 										<div class="row d-flex justify-content-between">
-											<div class="col-11 pl-1 pr-1">
+											<div class="col-11 col-sm-10 pl-1 pr-0">
 												<div class="select-title"
 													id="ip-userdefinedkey-dropdown-title"
 													attr.aria-label="ip-userdefinedkey-dropdown-title">
@@ -39,7 +41,7 @@
 												<div class="select-text text-left"
 													id="userdefinedkey-selected-text"
 													attr.aria-label="userdefinedkey-selected-text">
-													{{selectedValue.title}}
+													{{selectedValue.title | translate}}
 												</div>
 											</div>
 											<div class="col-auto pl-0 pr-1">
@@ -56,7 +58,7 @@
 											*ngFor="let item of userDefinedKeyOptions, let i=index"
 											id="userdefinedkey-{{i}}"
 											attr.aria-label="userdefinedkey-{{i}}"
-											(click)="onChange(item)">{{item.title}}
+											(click)="onChange(item)">{{item.title | translate}}
 										</a>
 									</div>
 								</div>
@@ -119,8 +121,9 @@
 											<textarea class="form-control"
 												[(ngModel)]="description"
 												name="description"
-												(keydown)="onKeydown($event)" required></textarea>
-										</div>										
+												(keydown)="onKeydown($event)"
+												required></textarea>
+										</div>
 										<div class="col-12">
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
