@@ -661,7 +661,7 @@ export class PageSmartAssistComponent
 			fragment: 'anchor'
 		};
 		// this.router.navigate(['/device/device-settings/display-camera']);
-		this.router.navigate(['/device/device-settings/display-camera',navigationExtras]);
+		this.router.navigate(['/device/device-settings/display-camera'],navigationExtras);
 	}
 
 	getFacialRecognitionStatus() {

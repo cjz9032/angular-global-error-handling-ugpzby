@@ -18,7 +18,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { map, timeout, takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
@@ -177,13 +177,18 @@ export class SubpageDeviceSettingsDisplayComponent
 
 		this.cameraSession_id = this.route
 		.queryParamMap
-		.pipe(map(params => params.get('cameraSession_id') || 'None'))
+		.pipe(
+			takeWhile(par => {
+				return par.get('cameraSession_id') == 'camera';
+			}),
+		)
 		.subscribe(() => {
-			console.log(`get queryParamMap for navigation from smart assist`)
+			console.log(`get queryParamMap for navigation from smart assist`);
 			setTimeout(() => {
 				document.getElementById('camera').scrollIntoView();
 			},500);
 		})
+
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
