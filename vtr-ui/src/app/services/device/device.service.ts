@@ -94,7 +94,7 @@ export class DeviceService {
 	private initShowSearch(){
 		if (this.hypSettings) {
 			this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
-				this.showSearch = ((searchFeature || '') === 'true');
+				this.showSearch = ((searchFeature || '').toString() === 'true');
 			}, (error) => {
 				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
 			});
