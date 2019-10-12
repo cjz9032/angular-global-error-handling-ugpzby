@@ -428,7 +428,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			}
 		}).catch((error) => {
 			self.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
-			self.devService.writeLog('getLoginUrl() exception happen ' + error);
 			self.activeModal.dismiss();
 		});
 
