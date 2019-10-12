@@ -245,18 +245,21 @@
 												</div>
 												</div>
 											</div>
-											<div *ngIf="sensitivityVisibility" class="pl-4 custom-row-swicth bold-title pb-4">
+											<div *ngIf="sensitivityVisibility" 
+												class="pl-4 custom-row-swicth bold-title pb-4">
 												<h3 class="sensitivityTitle">
 													{{'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate}}
 												</h3>
 												<vtr-ui-range-slider [rangeSliderId]="'thinkpadSensitivity'"
-														[manualRefresh]="manualRefresh"
-														[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-														[minValue]="1" (change)="setHPDLeaveSensitivitySetting($event)"
-														[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
-														[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-														[maxValue]="3" [value]="sesnsitivityAdjustVal">
-													</vtr-ui-range-slider>
+													[manualRefresh]="manualRefresh"
+													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+													[minValue]="1"
+													(change)="setHPDLeaveSensitivitySetting($event)"
+													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
+													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+													[maxValue]="3"
+													[value]="sesnsitivityAdjustVal">
+												</vtr-ui-range-slider>
 												<div class="pt-3">
 													<div class="feature-note p-4">
 														<div class="row blur">

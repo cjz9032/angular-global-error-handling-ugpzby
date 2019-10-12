@@ -100,6 +100,11 @@
 			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
 		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
 			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
 			attr.aria-label="set lighting profile  {{currentProfileId}} to default" href="javascript:void(0);"
 			class="link"
 			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
