@@ -47,7 +47,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	warrantyData: { info: any; cache: boolean };
 
-
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
 	cardContentPositionB: any = {};

@@ -14,7 +14,8 @@
 					<div class="col">
 						<vtr-ui-header-subpage [items]="headerMenuItems"
 							[caption]="'device.smartAssist.description' | translate"
-							[menuTitle]="'device.smartAssist.jumpTo.title' | translate" [textId]="'smart-assist'"
+							[menuTitle]="'device.smartAssist.jumpTo.title' | translate"
+							[textId]="'smart-assist'"
 							[metricsParent]="'Device.SmartAssist'">
 						</vtr-ui-header-subpage>
 					</div>
@@ -28,7 +29,8 @@
 								componentName="intelligent security" [isCollapsed]="false" [allowCollapse]="true"
 								[theme]="'white'" (toggle)="onCardCollapse($event)">
 								<!-- IdeaPad section -->
-								<ul class="list-group list-group-flush" *ngIf="!isThinkPad">
+								<ul class="list-group list-group-flush"
+									*ngIf="!isThinkPad">
 									<li class="no-border-bottom ">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
@@ -168,7 +170,8 @@
 								<ul class="list-group list-group-flush pt-3" [class.pl-5]="isThinkPad"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
 									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
-									<li class="auto-screen-block" [class.margin-right-05]="isThinkPad">
+									<li class="auto-screen-block"
+										[class.margin-right-05]="isThinkPad">
 										<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"
@@ -274,14 +277,16 @@
 											[class.col-pad-margin]="isThinkPad">
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate"
-												[isSwitchVisible]="false" [theme]="'white'"
+												[isSwitchVisible]="false"
+												[theme]="'white'"
 												[rightIcon]="['far', 'question-circle']"
 												[tooltipText]="tooltipText| translate">
 											</vtr-ui-row-switch>
 
 											<div class="slider-note">
 												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_fast'"
-													[group]="'autoScreenLockTimer'" name="autoScreenLockTimerFast"
+													[group]="'autoScreenLockTimer'"
+													name="autoScreenLockTimerFast"
 													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
 													[value]="'1'"
 													[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
@@ -289,7 +294,8 @@
 													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
 												</vtr-ui-rounded-rectangle-radio>
 												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_medium'"
-													[group]="'autoScreenLockTimer'" name="autoScreenLockTimerMedium"
+													[group]="'autoScreenLockTimer'"
+													name="autoScreenLockTimerMedium"
 													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
 													[value]="'2'"
 													[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
@@ -297,7 +303,8 @@
 													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
 												</vtr-ui-rounded-rectangle-radio>
 												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_slow'"
-													[group]="'autoScreenLockTimer'" name="autoScreenLockTimerSlow"
+													[group]="'autoScreenLockTimer'"
+													name="autoScreenLockTimerSlow"
 													[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
 													[value]="'3'"
 													[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
@@ -398,7 +405,8 @@
 											(toggleOnOff)="onKeepMyDisplayToggle($event)"
 											[isSwitchChecked]="intelligentScreen.isReadingOrBrowsingEnabled">
 											<div class="pl-5 ml-5 pt-4">
-												<div class="display-dim-title" id="smart-assist-display-slider-title"
+												<div class="display-dim-title"
+													id="smart-assist-display-slider-title"
 													attr.aria-label="smart-assist-display-slider-title">
 													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
 												</div>
@@ -447,8 +455,11 @@
 					<div class="row py-5 smart-assist-card" id="voice" *ngIf="lenovoVoice.available">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
-								[cardTitle]="'device.smartAssist.voice.title' | translate" [isCollapsed]="false"
-								[allowCollapse]="true" [theme]="'white'" (toggle)="onCardCollapse($event)"
+								[cardTitle]="'device.smartAssist.voice.title' | translate"
+								[isCollapsed]="false"
+								[allowCollapse]="true"
+								[theme]="'white'"
+								(toggle)="onCardCollapse($event)"
 								[metricsParent]="'Device.SmartAssist'">
 								<vtr-voice></vtr-voice>
 							</vtr-container-collapsible>
@@ -476,7 +487,8 @@
 							</div>
 							<div class="row">
 								<div class="col col-12 cont">
-									<div class="widget-heading mb-40" id="smart-assist-qa-helpful-content-title"
+									<div class="widget-heading mb-40"
+										id="smart-assist-qa-helpful-content-title"
 										attr.aria-label="smart-assist-qa-helpful-content-title">
 										{{'device.deviceSettings.helpful' | translate}}
 									</div>

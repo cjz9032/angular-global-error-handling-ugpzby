@@ -193,7 +193,44 @@
 					}
 				}
 			}
+			.icon-bar {
+				background: $main_lightest;
+				border-radius: 0.8rem;
 
+				.listed-task-icons {
+					padding-left: 0;
+					.icon-box {
+						width: 20%;
+						position: relative;
+						&::after {
+							content: '';
+							position: absolute;
+							height: 100%;
+							width: 1px;
+							background: $light;
+							right: 0;
+							top: 0;
+						}
+						&:last-child {
+							&::after {
+								display: none;
+							}
+						}
+						fa-icon {
+							font-size: 2.6rem;
+							margin-right: 0.8rem;
+							color: $main_shade;
+						}
+						p {
+							font-size: 1.4rem;
+							max-width: 6rem;
+							margin-top: 0.6rem;
+							line-height: 1.6rem;
+							color: $main_shade;
+						}
+					}
+				}
+			}
 		}
 		.free-scan {
 			background: $main_darkest;
@@ -379,6 +416,7 @@
 		.labels {
 			.badge {
 				font-size: 1.2rem;
+				margin-bottom: 0.6rem;
 			}
 			.badge-primary{
 				position: relative;
@@ -395,23 +433,17 @@
 					border-left: 7px solid $main;
 				}
 			}
+			.badge-light {
+				background: transparent;
+			}
 		}
 		.junk-list {
 			position: relative;
 			padding-left: 3rem;
 			list-style: none;
 			li {
-				line-height: 3rem;
+				line-height: 2.7rem;
 				font-size: 1.2rem;
-				&:first-child{
-					font-weight: $weight_bold;
-				}
-				&:nth-last-child(2){
-					color: $screen_dark_15;
-				}
-				&:last-child{
-					color: $screen_dark_05;
-				}
 			}
 		}
 		&.recommended-action{
@@ -599,3 +631,61 @@
 	}
 }
 
+.ms-slider {
+	display: inline-block;
+	margin-top: -0.4rem;
+	height: 10rem;
+	overflow: hidden;
+	vertical-align: middle;
+	-webkit-mask-image: linear-gradient(transparent, white, white, white, transparent);
+	mask-image: linear-gradient(transparent, white, white, white, transparent);
+	mask-type: luminance;
+	mask-mode: alpha;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		height: 50%;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	}
+	.ms-slider__words {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		-webkit-animation-name: wordSlider;
+		animation-name: wordSlider;
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		-webkit-animation-duration: 20s;
+		animation-duration: 20s;
+	}
+}
+
+@keyframes wordSlider {
+	0%,
+	20% {
+		transform: translateY(0%);
+	}
+	21%,
+	40% {
+		transform: translateY(-20%);
+	}
+	41%,
+	60% {
+		transform: translateY(-40%);
+	}
+	61%,
+	80% {
+		transform: translateY(-60%);
+	}
+	81%,
+	100% {
+		transform: translateY(-80%);
+	}
+}
