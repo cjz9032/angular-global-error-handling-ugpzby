@@ -105,7 +105,7 @@ export class AppsForYouService {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
 		}).catch(e => {
-			this.logService.error('AppsForYouService.initialize getLocalInfo error.', JSON.stringify(e));
+			this.localInfo = undefined;
 		});
 	}
 
