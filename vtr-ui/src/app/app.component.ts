@@ -389,12 +389,12 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 
-					const isLocaleSame = this.languageService.isLocaleSame(value.locale);
+					// const isLocaleSame = this.languageService.isLocaleSame(value.locale);
 
-					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
+					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
 						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// update DeviceInfo values in case user switched language
+						// // update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 

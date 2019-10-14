@@ -38,23 +38,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 			});
 
 			if (this.deviceService.isShellAvailable) {
-				const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
-
-				// if deviceInfo is available then load from cache else invoke JS bridge
-				if (cachedDeviceInfo && cachedDeviceInfo.locale && !this.languageService.isLanguageLoaded) {
-					// this.deviceInfo = cachedDeviceInfo;
-					this.languageService.useLanguageByLocale(cachedDeviceInfo.locale);
-
-					// } else {
-					// 	// if cache not found or first run
-					// 	this.deviceService.getMachineInfo().then(info => {
-					// 		this.deviceInfo = { isGamingDevice: info.isGaming, locale: info.locale };
-					// 		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, this.deviceInfo);
-					// 		if (!this.languageService.isLanguageLoaded) {
-					// 			this.languageService.useLanguageByLocale(info.locale);
-					// 		}
-					// 	});
-				}
+				this.deviceService.getMachineInfo().then((value: any) => {
+					if (!this.languageService.isLanguageLoaded) {
+						this.languageService.useLanguageByLocale(value.locale);
+						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
+						// // update DeviceInfo values in case user switched language
+						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
+					}
+				});
 			} else {
 				// for browser
 				this.languageService.useLanguage();
