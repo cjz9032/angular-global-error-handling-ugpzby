@@ -169,6 +169,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.initZeroTouchLogin();
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
+			this.getSuperResolutionStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -183,8 +184,12 @@ export class PageSmartAssistComponent implements OnInit {
 				this.intelligentScreen.isIntelligentScreenVisible = true;
 				this.initIntelligentScreen();
 			}
+			if(this.smartAssistCapability.isSuperResolutionSupported)
+			{
+				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
+				this.getSuperResolutionStatus();
+			}
 		}
-		this.getSuperResolutionStatus();
 	}
 
 	private apsAvailability() {
