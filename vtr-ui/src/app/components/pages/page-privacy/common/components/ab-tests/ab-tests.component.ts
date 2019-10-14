@@ -17,10 +17,13 @@ export class AbTestsComponent implements AfterContentInit {
 	}
 
 	ngAfterContentInit() {
-		this.findOption().display();
+		this.findOption();
 	}
 
 	private findOption() {
-		return this.templates.find((option) => option.testOption === this.abTestsService.getDefaultOption(this.testName));
+		this.abTestsService.getCurrentOptions(this.testName).subscribe((current) => {
+			const currentTemplate = this.templates.find((option) => option.testOption === current.option);
+			currentTemplate.display();
+		});
 	}
 }

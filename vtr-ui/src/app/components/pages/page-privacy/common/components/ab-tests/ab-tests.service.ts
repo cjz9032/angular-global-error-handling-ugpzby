@@ -1,21 +1,39 @@
 import { Injectable } from '@angular/core';
+import { Test } from './ab-tests-backend.service';
+import { BehaviorSubject } from 'rxjs';
+import { filter, first, map } from 'rxjs/operators';
+import { StorageService } from '../../services/storage.service';
 import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
-import * as config from '../../../utils/ab-test/config.json';
-import { AbTestsBackendService } from './ab-tests-backend.service';
+
+export const BACKEND_CONFIG_VERSION = '[abTests] backendConfigVersion';
+export const AB_TESTS_CONFIG = '[abTests] config';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AbTestsService {
+	private currentOptions = new BehaviorSubject<Test[]>(this.getCurrentOptionsFromStorage());
 
-	constructor(private abTestsBackendService: AbTestsBackendService) {
+	constructor(
+		private storageService: StorageService,
+	) {
 	}
 
-	getDefaultOption(testName: AbTestsName) {
-		return this.findTest(testName).defaultOptions[0];
+	setCurrentOptions(value: Test[]) {
+		if (!this.currentOptions.getValue()) {
+			this.currentOptions.next(value);
+		}
 	}
 
-	private findTest(testName: AbTestsName) {
-		return config.tests.find((test) => test.key === testName);
+	getCurrentOptions(testName: AbTestsName) {
+		return this.currentOptions.pipe(
+			filter(res => res !== null),
+			map((tests) => tests.find((test) => test.key === testName)),
+			first()
+		);
+	}
+
+	private getCurrentOptionsFromStorage() {
+		return JSON.parse(this.storageService.getItem(AB_TESTS_CONFIG)) as Test[] || null;
 	}
 }

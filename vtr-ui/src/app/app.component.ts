@@ -29,6 +29,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
 import { AppUpdateService } from './services/app-update/app-update.service';
 import { Title } from '@angular/platform-browser';
+import { AbTestsGenerateConfigService } from './components/pages/page-privacy/common/components/ab-tests/ab-tests-generate-config.service';
 
 declare var Windows;
 @Component({
@@ -61,7 +62,8 @@ export class AppComponent implements OnInit, OnDestroy {
 		private languageService: LanguageService,
 		private logger: LoggerService,
 		private appUpdateService: AppUpdateService,
-		private titleService: Title
+		private titleService: Title,
+		private abTestsGenerateConfigService: AbTestsGenerateConfigService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -310,6 +312,8 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
 		// this.serverSwitchThis();
+
+		this.abTestsGenerateConfigService.shuffle();
 	}
 
 	ngOnDestroy() {
