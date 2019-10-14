@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
-                "unknown": "Nepoznato"
+                "unknown": "Nepoznato",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
-                "unknown": "Ismeretlen"
+                "unknown": "Ismeretlen",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

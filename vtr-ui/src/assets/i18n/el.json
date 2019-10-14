@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "Το {{protectedName}} σάς προσφέρει βασική προστασία για τη συσκευή σας",
-                "unknown": "Άγνωστη"
+                "unknown": "Άγνωστη",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

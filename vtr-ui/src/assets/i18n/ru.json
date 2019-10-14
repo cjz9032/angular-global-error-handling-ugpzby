@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства",
-                "unknown": "Неизвестно"
+                "unknown": "Неизвестно",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
