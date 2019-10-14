@@ -61,7 +61,7 @@
 			aria-label="menu-main-btn-navbar-toggler"
 			class="navbar-toggler"
 			tabindex="1"
-			type="button"
+			type="button" (keypress)="onKeyPress($event)"
 			(click)="toggleMenu($event)">
 			<span class="navbar-toggler-icon">
 				<fa-icon [icon]="['fas', 'bars']"></fa-icon>
