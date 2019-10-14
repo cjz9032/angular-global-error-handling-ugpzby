@@ -20,15 +20,13 @@
 				<div class="inputSection">
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
-						<div class="col-8 px-20 pb-4">
+						<div class="col-8 px-20 pb-4"
+							[class.disabled]="isCheckedAuto || isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
-								[class.disabled]="isCheckedAuto || isGuageResetRunning"
 								placement="bottom-right">
 								<button class="btn btn-outline-shadow"
-									[class.disabled]="isCheckedAuto || isGuageResetRunning"
 									ngbDropdownToggle
-									[disabled]="isCheckedAuto || isGuageResetRunning"
 									type="button"
 									id="{{textId}}-start-dropdown"
 									attr.aria-label="{{textId}}-start-dropdown">
@@ -67,15 +65,13 @@
 					</div>
 					<div class="row">
 						<!--start of right dropdown box for action in row-->
-						<div class="col-8 px-20 pb-4">
+						<div class="col-8 px-20 pb-4"
+							[class.disabled]="isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-right"
 								ngbDropdown
-								[class.disabled]="isGuageResetRunning"
 								placement="bottom-right">
 								<button class="btn btn-outline-shadow"
-									[class.disabled]="isGuageResetRunning"
 									ngbDropdownToggle
-									[disabled]="isGuageResetRunning"
 									type="button"
 									id="{{textId}}-stop-dropdown"
 									attr.aria-label="{{textId}}-stop-dropdown">
@@ -112,7 +108,8 @@
 						<!--end of right dropdown box for action in row-->
 					</div>
 					<div class="row"
-						*ngIf="!displayNoteOnly">
+						*ngIf="!displayNoteOnly"
+						[class.disabled]="isGaugeResetRunning">
 						<div class="col px-20">
 							<div class="auto-set-checkbox custom-checkbox-gaming">
 								<input type="checkbox"

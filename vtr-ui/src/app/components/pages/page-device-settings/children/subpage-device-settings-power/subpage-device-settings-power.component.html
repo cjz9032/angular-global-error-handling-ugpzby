@@ -91,7 +91,7 @@
 									[selectedStopAtCharge]="selectedStopAtChargeVal"
 									[selectedStartAtCharge]="selectedStartAtChargeVal"
 									[isCheckedAuto]="primaryCheckBox"
-									[isGuageResetRunning]="isGaugeResetRunning[0]"
+									[isGaugeResetRunning]="isGaugeResetRunning[0]"
 									(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
 									(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')"
 									[textId]="'threshold-primary-battery'">
@@ -109,7 +109,7 @@
 									[selectedStopAtCharge]="selectedStopAtChargeVal1"
 									[selectedStartAtCharge]="selectedStartAtChargeVal1"
 									[isCheckedAuto]="secondaryCheckBox"
-									[isGuageResetRunning]="isGaugeResetRunning[1]"
+									[isGaugeResetRunning]="isGaugeResetRunning[1]"
 									(sendBatteryDetails)="setChargeThresholdValues($event, 2, 'changedValues')"
 									(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')"
 									[textId]="'threshold-secondary-battery'">

@@ -8,16 +8,7 @@
 		cursor: pointer;
 	}
 	&.switch-disable {
-		opacity: 0.3;
 		pointer-events: none;
-
-		.switch {
-			cursor: pointer;
-		}
-
-		.switch-label {
-			cursor: pointer;
-		}
 	}
 }
 
@@ -138,11 +129,11 @@ input.wifi-checked + .switch.switch-xs > small {
 	width: 1.4rem;
 }
 
-/* DISABLED */
-
-.disabled .switch {
-	cursor: not-allowed;
-	opacity: 0.5;
+.switch-disable {
+	pointer-events: none;
+	.switch {
+		background: #e6eaeb !important;
+	}
 }
 
 /* Full Width Switch - Right Aligned */
