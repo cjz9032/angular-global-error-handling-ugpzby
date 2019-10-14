@@ -79,6 +79,7 @@ export class AppsForYouService {
 	private cancelToken = undefined;
 	private isCancelInstall = false;
 	private cmsAppDetailsArray = [];	// Cached app details
+	private cachedAppStatusArray = [];	// Cached app status
 	private cmsAppDetails: any;
 	private serialNumber: string;
 	private familyName: string;
@@ -225,6 +226,24 @@ export class AppsForYouService {
 					});
 				this.commonService.sendNotification(AppsForYouEnum.InstallAppResult, result);
 			}
+		}
+	}
+
+	public getAppStatus(appGuid) {
+		const findItem = this.cachedAppStatusArray.find(item => item.key === appGuid);
+		const appStatus = findItem ? findItem.value : undefined;
+		if (!appStatus) {
+			this.systemUpdateBridge.getAppStatus(appGuid).then(status => {
+				if (this.cachedAppStatusArray.findIndex(i => i.key === appGuid) === -1) {
+					this.cachedAppStatusArray.push({
+						key: appGuid,
+						value: status
+					});
+				}
+				this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, status);
+			});
+		} else {
+			this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, appStatus);
 		}
 	}
 
