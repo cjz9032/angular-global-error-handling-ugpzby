@@ -319,6 +319,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		event.stopPropagation();
 	}
 
+	onKeyPress($event){
+		if ($event.keyCode === 13) {
+			this.toggleMenu($event);
+		}
+	}
+
 	isParentActive(item) {
 		// console.log('IS PARENT ACTIVE', item.id, item.path);
 	}

@@ -644,6 +644,45 @@
 						}
 					}
 				}
+
+				//badsectorspage
+				.vtr-page-hardware-scan {
+					.vtr-device-information{						
+						vtr-recover-bad-sectors{
+							.vtr-recover-bad-sectors{
+								background: $dark_cell;
+								.header {
+								.heading1 {
+								color: $gaming_info_link;
+								}
+								} 
+								vtr-ui-hardware-list-checkbox {
+									.vtr-ui-list-checkbox-hardware {
+									.list-group {
+									.list-group-item {
+									background-color: $gaming-Darkslate-blue;
+									border: 0.1rem solid $screen_dark_15;
+									.title {
+									color: $gaming_lightest;
+									}
+									.subtitle {
+									color: $gaming_grey_lightest;
+									}
+									.select-item-subtitle {
+										color: $gaming_grey_lightest;
+										} 
+								}
+								}
+								}
+								}
+							}
+						}
+					}
+				}
+
+				//till here
+
+
 				.vtr-hardware-components {
 					.vtr-device-information{
 						background: $dark_cell;

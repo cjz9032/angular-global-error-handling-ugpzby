@@ -27,6 +27,8 @@ import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 
 declare var Windows;
 @Component({
@@ -58,6 +60,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
+		private appsForYouService: AppsForYouService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -342,6 +345,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.userService.loginSilently();
 		}
 
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
+		}
+
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
 			if (s instanceof NavigationEnd) {
@@ -382,12 +389,12 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 
-					const isLocaleSame = this.languageService.isLocaleSame(value.locale);
+					// const isLocaleSame = this.languageService.isLocaleSame(value.locale);
 
-					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
+					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
 						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// update DeviceInfo values in case user switched language
+						// // update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 

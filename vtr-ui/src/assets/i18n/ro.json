@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs.",
-                "unknown": "Necunoscut"
+                "unknown": "Necunoscut",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

@@ -43,8 +43,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	@Input() cpuMax = 2.2;
 	@Input() gpuCurrent = 0.33;
 	@Input() gpuMax = 3.3;
-	@Input() ramCurrent = 9.6;
-	@Input() ramMax = 32;
+	@Input() ramCurrent = 0;
+	@Input() ramMax = 0;
 	public hds: any = [];
 	public defaultHds = [
 		{

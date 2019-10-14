@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení",
-                "unknown": "Neznámé"
+                "unknown": "Neznámé",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

@@ -1552,10 +1552,10 @@
 			"wifiNetworks": "Wi-fi networks",
 			"homeDevices": "Home devices",
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
+			"disconnect": "Disconnect",
+			"goDashboard": "Go To Dashboard",
 			"buyNow": "Buy Now",
-			"extendNow": "extend now",
+			"extendNow": "Extend Now",
 			"renewNow": "Renew Now",
 			"poweredBy": "Powered by Coronet",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
@@ -1592,7 +1592,7 @@
 			"startTrial": "Start Trial",
 			"startTrialTitle": "Create your own Connected Home Security",
 			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
+			"join": "Join",
 			"joinTitle": "Join your family's Connected Home Security",
 			"joinDescription": "Become a part of your family security group."
 		},
@@ -1683,7 +1683,7 @@
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
 			"suspicious": "SUSPICIOUS",
-			"securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+			"securityScoreDepends": "Your security result depends on if you are:",
 			"antivirus": "Being protected by anti-virus software",
 			"password": "Having strong and complex passwords managed in a safe way",
 			"vpn": "Monitoring your network exposure to attackers",
@@ -1764,7 +1764,8 @@
 			},
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
-				"unknown": "Unknown"
+				"unknown": "Unknown",
+				"betterOffer":"Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {
@@ -1804,7 +1805,7 @@
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
-				"closeText": "close"
+				"closeText": "Close"
 			}
 		},
 		"homeprotection": {
