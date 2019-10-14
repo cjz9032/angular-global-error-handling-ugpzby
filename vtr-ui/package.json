@@ -1,12 +1,12 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.213",
+	"version": "1.0.214",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
 		"build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --prod",
-		"build": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng build --prod",
-		"serve": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng serve",
+		"build": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng build --prod",
+		"serve": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng serve",
 		"test": "ng test",
 		"lint": "ng lint",
 		"fix-no-console": "node prebuild/no-console.js",
@@ -20,8 +20,8 @@
 		"analyze": "webpack-bundle-analyzer dist/vtr-ui/stats.json",
 		"dev-stats": "ng build -c=dev --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
 		"source": "ng build -c=dev & source-map-explorer 'dist/vtr-ui/*.js'",
-		"build:dev": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng build -c=dev",
-		"mock-serve": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng serve --port 4300 -c=mock"
+		"build:dev": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng build -c=dev",
+		"mock-serve": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng serve --port 4300 -c=mock"
 	},
 	"private": true,
 	"dependencies": {

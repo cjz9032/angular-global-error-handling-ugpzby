@@ -44,6 +44,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChildren('interestChkboxs') interestChkboxs: any;
 	@ViewChildren('welcomepage2') welcomepage2: any;
 	shouldManuallyFocusPage2 = true;
+	shouldManuallyFocusMoreInterest =  false;
 
 	constructor(
 		private deviceService: DeviceService,
@@ -72,8 +73,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		const welcomeUseTime = welcomeEnd - this.welcomeStart;
 		console.log(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
 		this.interestChkboxs.changes.subscribe(() => {
-			if (this.interestChkboxs.length > 8) {
+			if (this.interestChkboxs.length > 8 && this.shouldManuallyFocusMoreInterest === true) {
 				this.interestChkboxs._results[this.interestChkboxs.length - 2].nativeElement.focus();
+				this.shouldManuallyFocusPage2 = false;
+				this.shouldManuallyFocusMoreInterest = false;
 			}
 		});
 
@@ -167,6 +170,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	onKeyPress($event) {
 		if ($event.keyCode === 13) {
 			$event.target.click();
+			this.shouldManuallyFocusMoreInterest = true;
 		}
 	}
 
