@@ -257,6 +257,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.modalService
 			.open(content, {
 				backdrop: 'static',
+				keyboard: false,
 				size: 'lg',
 				windowClass: 'battery-modal-size'
 			})
@@ -269,6 +270,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				}
 			);
 	}
+
+	/* showDetailModalOnKDEnter(event: any, content: any) {
+		var target = event.target || event.srcElement || event.currentTarget;
+		this.showDetailModal(content);
+	} */
 
 	/**
 	 * sets a battery condition tip & icon from battery health & battery condition
@@ -417,4 +423,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
 		this.notificationSubscription.unsubscribe();
 	}
+	/*
+		@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+			this.closeModal();
+		} */
+
 }

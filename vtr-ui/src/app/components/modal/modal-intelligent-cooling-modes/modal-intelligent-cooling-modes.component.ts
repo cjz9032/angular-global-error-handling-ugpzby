@@ -20,5 +20,9 @@ export class ModalIntelligentCoolingModesComponent implements OnInit {
 		this.closeModal();
 	}
 
+	@HostListener('document:keydown.enter', ['$event']) onKeydownEnterHandler(event: KeyboardEvent) {
+		this.closeModal();
+	}
+
 
 }
