@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
-                "unknown": "不明"
+                "unknown": "不明",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
-                "unknown": "Tuntematon"
+                "unknown": "Tuntematon",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

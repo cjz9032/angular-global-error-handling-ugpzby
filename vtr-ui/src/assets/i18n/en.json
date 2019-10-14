@@ -1683,7 +1683,7 @@
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
 			"suspicious": "SUSPICIOUS",
-			"securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+			"securityScoreDepends": "Your security result depends on if you are:",
 			"antivirus": "Being protected by anti-virus software",
 			"password": "Having strong and complex passwords managed in a safe way",
 			"vpn": "Monitoring your network exposure to attackers",
@@ -1764,7 +1764,8 @@
 			},
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
-				"unknown": "Unknown"
+				"unknown": "Unknown",
+				"betterOffer":"Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {

@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
-                "unknown": "Onbekend"
+                "unknown": "Onbekend",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
-                "unknown": "Inconnu"
+                "unknown": "Inconnu",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

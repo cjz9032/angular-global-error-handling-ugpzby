@@ -36,7 +36,7 @@ export class AntiVirusLandingViewModel {
 			id: 'sa-ov-link-firewall'
 		};
 		const subjectStatus = {
-			status: 2,
+			status: 1,
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
 		};

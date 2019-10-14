@@ -1645,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
-                "unknown": "Bilinmiyor"
+                "unknown": "Bilinmiyor",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
