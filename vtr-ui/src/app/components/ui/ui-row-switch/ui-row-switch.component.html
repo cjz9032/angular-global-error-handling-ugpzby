@@ -94,14 +94,12 @@
 						triggers="click:blur keydown.enter:keydown.Tab" 
 						placement="auto" 
 						autoClose="false"
-						[ngbTooltip]="'Hello ther'" 
+						[ngbTooltip]="tooltipRef" 
 						[icon]="rightIcon" 
 						container="body" 
 						tooltipClass="vtr-tooltip"
 						(click)="onRightIconClick($event)" 
 						(keydown.enter)="onRightIconClick($event)"
-						(shown)="toolTipHandler($event)"
-						(hidden)="toolTipHandler($event)"
 						>
 					</fa-icon>
 				</div>
@@ -170,7 +168,7 @@
 	</div>
 </div>
 <ng-template #tooltipRef>
-	<div #tooltipBody [innerHTML]='tooltipText' id="{{switchId}}-toolTip" tabindex="1" attr.aria-label="tooltipText">
+	<div [innerHTML]='tooltipText' id="{{switchId}}-toolTip" tabindex="1" attr.aria-label="tooltipText">
 	</div>
 </ng-template>
 
