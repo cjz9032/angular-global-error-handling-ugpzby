@@ -16,7 +16,6 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map, timeout, takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
