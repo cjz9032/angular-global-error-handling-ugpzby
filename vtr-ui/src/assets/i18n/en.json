@@ -1639,6 +1639,7 @@
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
+			"installingTitle": "During the updates, do not put your computer into sleep or hibernate mode.",
 			"last": "Last updated: ",
 			"next": "Next scheduled update: ",
 			"checkButton": "CHECK FOR UPDATES ",
@@ -1780,10 +1781,10 @@
 			"wifiNetworks": "Wi-fi networks",
 			"homeDevices": "Home devices",
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
+			"disconnect": "Disconnect",
+			"goDashboard": "Go To Dashboard",
 			"buyNow": "Buy Now",
-			"extendNow": "extend now",
+			"extendNow": "Extend Now",
 			"renewNow": "Renew Now",
 			"poweredBy": "Powered by Coronet",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
@@ -1820,7 +1821,7 @@
 			"startTrial": "Start Trial",
 			"startTrialTitle": "Create your own Connected Home Security",
 			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
+			"join": "Join",
 			"joinTitle": "Join your family's Connected Home Security",
 			"joinDescription": "Become a part of your family security group."
 		},
@@ -1851,7 +1852,7 @@
 			"endDate": "End date: ",
 			"status": "Status: ",
 			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
-			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
+			"subDescription2": "We were unable to locate the warranty details for your device. To view more options, please visit our support page.",
 			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS",
 			"offlineTips1": "Please connect to internet for latest warranty info.",
 			"offlineTips2": "Please connect internet to update warranty information."
@@ -1911,7 +1912,7 @@
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
 			"suspicious": "SUSPICIOUS",
-			"securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+			"securityScoreDepends": "Your security result depends on if you are:",
 			"antivirus": "Being protected by anti-virus software",
 			"password": "Having strong and complex passwords managed in a safe way",
 			"vpn": "Monitoring your network exposure to attackers",
@@ -1992,7 +1993,8 @@
 			},
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
-				"unknown": "Unknown"
+				"unknown": "Unknown",
+				"betterOffer":"Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {
@@ -2032,7 +2034,7 @@
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
-				"closeText": "close"
+				"closeText": "Close"
 			}
 		},
 		"homeprotection": {
@@ -2681,10 +2683,11 @@
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
 		"doNotUse": "Please refrain from using your computer until this test completes",
-		"testsMustRunUniterrupted": "These tests must run uniterrupted!",
+		"testsMustRunUniterrupted": "These tests must run uninterrupted!",
 		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
 		"doNotSwitchApp": "• Do not switch to other app.",
 		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
+		"testNotApplicable": "Not applicable on custom scan",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

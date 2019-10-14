@@ -203,7 +203,8 @@ export class CommonService {
 	}
 
 	public isBetaUser(): Promise<number> {
-		if (WinRT) {
+		const win: any = window;
+		if (WinRT && win.Windows) {
 			return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
 		}
 	}

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 
 import { CommsService } from '../comms/comms.service';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service'; // VAN-5872, server switch feature
 import { LocalStorageKey } from '../../enums/local-storage-key.enum'; // VAN-5872, server switch feature
 import { Observable } from 'rxjs/internal/Observable';
@@ -11,7 +10,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
-import { EMPTY } from 'rxjs';
+import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -32,7 +31,7 @@ export class CMSService {
 
 	constructor(
 		private commsService: CommsService,
-		private vantageShellService: VantageShellService,
+		private vantageShellService: BaseVantageShellService,
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
 		private devService: DevService,
@@ -69,7 +68,7 @@ export class CMSService {
 		});
 	}
 
-	filterCMSContent(results) {
+	private filterCMSContent(results) {
 		return new Promise((resolve, reject) => {
 			const promises = [];
 

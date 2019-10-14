@@ -19,6 +19,7 @@
 		<div class="col-10 mx-auto ">
 
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
+				[tabIndex]="0"
 				[vtrAppSearchScroller]="['search-airplane-mode', 'search-charge-threshold']"
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-batterySettings'">
@@ -178,6 +179,7 @@
 		*ngIf="!isDesktopMachine && !isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
+				[tabIndex]="0"
 				[vtrAppSearchScroller]="['search-usb-charging', 'search-easy-resume']"
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-powerSettings'">
@@ -275,6 +277,7 @@
 		*ngIf="vantageToolbarStatus.available">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
+				[tabIndex]="0"
 				[vtrAppSearchScroller]="['search-vantage-toolbar']"
 				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
 				[isCollapsed]="false"
@@ -303,6 +306,7 @@
 		*ngIf="machineType === 1 && isEnergyStarProduct">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="'device.deviceSettings.power.energyStar.title' | translate"
+				[tabIndex]="0"
 				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
 				[isCollapsed]="false"
 				[collapseLinkId]="'device-settings-power-otherSettings'">
