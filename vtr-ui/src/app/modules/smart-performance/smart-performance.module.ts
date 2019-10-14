@@ -16,6 +16,7 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExcla
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
 import { UiSmartPerformanceScanningComponent } from '../../components/ui/ui-smart-performance-scanning/ui-smart-performance-scanning.component';
+import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 
 library.add(faLaptop);
 library.add(faTrashAlt);
@@ -27,6 +28,7 @@ library.add(faExclamationTriangle);
 	  UiSmartPerformanceComponent,
     UiSmartTunePcComponent,
     UiSmartPerformanceScanningComponent,
+    ModalSmartPerformanceCancelComponent,
 
 
 	],
@@ -36,7 +38,7 @@ library.add(faExclamationTriangle);
   HeaderMainModule,
   FontAwesomeModule
   ],
-  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent],
-  bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent]
+  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent],
+  bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent]
 })
 export class SmartPerformanceModule { }
