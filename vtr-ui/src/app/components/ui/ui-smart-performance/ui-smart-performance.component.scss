@@ -231,6 +231,44 @@
 					}
 				}
 			}
+			&::ng-deep {
+				.tabset-main{
+					.nav-tabs {
+						.nav-item {
+							&:last-child {
+								position: relative;
+								&:before {
+									position: absolute;
+									content: '\2605';
+									top: -0.1rem;
+									left: 0.5rem;
+									color: #fff;
+									font-size: 2rem;
+									z-index: 9;
+								}
+								&:after {
+									position: absolute;
+									content: '';
+									width: 0; 
+									height: 0; 
+									border-left: 3rem solid transparent;
+									border-right: 3rem solid transparent;
+									border-bottom: 3rem solid #4579f0;
+									top: -0.3rem;
+									left: -1.8rem;
+									transform: rotate(-45deg);
+									z-index: 5;
+								}
+								.nav-link{
+									box-sizing: border-box;
+									border: 0.2rem solid $main !important;
+									position: relative;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		.free-scan {
 			background: $main_darkest;
