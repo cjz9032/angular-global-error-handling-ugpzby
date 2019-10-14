@@ -58,6 +58,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			}
 		}
 		this.getMouseAndTouchPadCapability();
+		this.getFnCtrlSwapCapabilities();
 	}
 
 	getVoipHotkeysSettings() {
@@ -291,9 +292,51 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		}
 	}
 
-	fnCtrlKey(event) {
-		this.switchValue = event.switchValue;
-	}
+	public getFnCtrlSwapCapabilities() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				Promise.all([
+					this.keyboardService.GetFnCtrlSwapCapability(),
+					this.keyboardService.GetFnAsCtrlCapability()
+				]).then((responses: any[]) => {
+					// console.log('------>>>>>>>>>>GetFnCtrlSwapCapability', responses[0]);
+					// console.log('------>>>>>>>>>>GetFnAsCtrlCapability', responses[1]);
+					if (responses[0]) {
+						this.getFnCtrlSwap();
+					}
+					if (responses[1]) {
+						this.getFnAsCtrl();
+					}
+				}).catch((error) => {
+					this.logger.error('GetFnCtrlSwapCapability', error.message);
+				});
+			}
+		} catch (error) {
+			this.logger.error('GetFnCtrlSwapCapability', error.message);
+			return EMPTY;
+		}
+		}
+		public getFnCtrlSwap() {
+			this.keyboardService.GetFnCtrlSwap().then(res => {
+				// console.log('------>>>>>>>>>>GetFnCtrlSwap status', res);
+			});
+		}
+		public getFnAsCtrl() {
+			this.keyboardService.GetFnAsCtrl().then(res => {
+				// console.log('------>>>>>>>>>>GetFnAsCtrl status', res);
+			});
+		}
+	public fnCtrlKey(event) {
+			this.switchValue = event.switchValue;
+			this.keyboardService.SetFnCtrlSwap(this.switchValue).then(res => {
+				console.log('------>>>>>>>>>>SetFnCtrlSwap status', res);
+				// if (res.RebootRequired === true) {
+				// 	this.keyboardService.restartMachine();
+				// }
+			}).catch((error) => {
+				this.logger.error('SetFnCtrlSwap', error.message);
+			});
+		}
 
 	public launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {

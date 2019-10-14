@@ -249,7 +249,58 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	public GetFnCtrlSwapCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnCtrlSwapCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 
+	public GetFnAsCtrlCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnAsCtrlCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public GetFnCtrlSwap() {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnCtrlSwap();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public GetFnAsCtrl() {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnAsCtrl();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public SetFnCtrlSwap(value) {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.SetFnCtrlSwap(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 	public getMouseCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {
