@@ -1,7 +1,9 @@
+import { TranslateService } from '@ngx-translate/core';
+import { DialogService } from './../../../services/dialog/dialog.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { PowerService } from './../../../services/power/power.service';
 import { AudioService } from 'src/app/services/audio/audio.service';
-import { Component, OnInit, Input, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -9,17 +11,17 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { Gaming } from 'src/app/enums/gaming.enum';
-import { EventTypes } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
 	templateUrl: './widget-quicksettings-list.component.html',
-	styleUrls: [ './widget-quicksettings-list.component.scss' ]
+	styleUrls: ['./widget-quicksettings-list.component.scss']
 })
 export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, OnDestroy {
 	@Input() title = '';
-
+	wifiSecurity: WifiSecurity;
 	public thermalModeStatusObj = new ThermalModeStatus();
 	public setThermalModeStatus: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
@@ -146,10 +148,32 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		private commonService: CommonService,
 		private shellServices: VantageShellService,
 		private audioService: AudioService,
-		private powerService: PowerService
-	) {}
+		private powerService: PowerService,
+		private dialogService: DialogService,
+		private ngZone: NgZone,
+		private translateService: TranslateService
+	) {
+		this.wifiSecurity = this.shellServices.getSecurityAdvisor().wifiSecurity;
+		// this.wifiSecurity.on(EventTypes.wsStateEvent, (status) => {
+		// 	this.updateStatus(status, this.wifiSecurity.isLocationServiceOn);
+		// 	if (status) {
+		// 		commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, status);
+		// 		commonService.setSessionStorageValue(SessionStorageKey.WidgetWifiStatus, status);
+		// 	}
+		// }).on(EventTypes.wsIsLocationServiceOnEvent, (status) => {
+		// 	this.updateStatus(this.wifiSecurity.state, status);
+		// });
+	}
 
 	ngOnInit() {
+		this.wifiSecurity = this.shellServices.getSecurityAdvisor().wifiSecurity;
+		this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
+		console.log('this.wifiSecurity======>', JSON.stringify(this.wifiSecurity));
+		this.wifiSecurity.getWifiState().then((res) => {
+			console.log('wifi State======>', res);
+		}, (error) => {
+			this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+		});
 		this.initialiseDolbyCache();
 		this.initialiseRapidChargeCache();
 		this.getDolbySettings();
@@ -186,8 +210,12 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 		});
 	}
-
-	ngAfterViewInit() {}
+	private handleError(err) {
+		if (err && err instanceof PluginMissingError) {
+			this.dialogService.wifiSecurityErrorMessageDialog();
+		}
+	}
+	ngAfterViewInit() { }
 	public unRegisterThermalModeEvent() {
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingThermalModeChangeEvent,
@@ -269,7 +297,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					);
 				}
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	public onOptionSelected(event) {
@@ -303,7 +331,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 						}
 					}
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		}
 	}
 
@@ -340,7 +368,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			} else {
 				this.quickSettings[3].isChecked = !value;
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public initialiseDolbyCache() {
@@ -351,7 +379,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			});
 			this.quickSettings[3].isVisible = available;
 			this.quickSettings[3].isChecked = status;
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public async initialiseRapidChargeSettings() {
@@ -375,7 +403,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					status: status
 				});
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public initialiseRapidChargeCache() {
@@ -389,5 +417,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	ngOnDestroy(): void {
 		this.unRegisterThermalModeEvent();
+		this.wifiSecurity = this.shellServices.getSecurityAdvisor().wifiSecurity;
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelGetWifiSecurityState();
+		}
 	}
 }
