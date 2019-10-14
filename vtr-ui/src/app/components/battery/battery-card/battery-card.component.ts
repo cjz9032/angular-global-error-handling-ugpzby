@@ -363,7 +363,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryConditions.forEach((batteryCondition) => {
 
 			let translation = batteryCondition.getBatteryConditionTip(batteryCondition.condition);
-			if (batteryCondition.conditionStatus === this.batteryStatus.AcAdapterStatus && !this.shortAcErrNote) {
+			if (batteryCondition.conditionStatus === this.batteryStatus.AcAdapterStatus && batteryCondition.condition !== this.batteryConditionsEnum.FullACAdapterSupport
+				&& !this.shortAcErrNote) {
 				translation += 'Detail';
 			}
 			if (batteryCondition.condition === BatteryConditionsEnum.UnsupportedBattery) {
