@@ -53,7 +53,7 @@ export class ConfigService {
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
-			const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en');
+			const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en') && this.deviceService.showCHSMenu;
 			if (!showCHSMenu) {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
