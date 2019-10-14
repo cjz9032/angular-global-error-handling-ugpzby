@@ -7,6 +7,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./modal-battery-charge-threshold.component.scss']
 })
 export class ModalBatteryChargeThresholdComponent implements OnInit {
+	title: string;
+	description1: string;
+	description2: string;
+	positiveResponseText: string;
+	negativeResponseText: string;
 
 	constructor(public activeModal: NgbActiveModal) { }
 
@@ -14,10 +19,10 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 	}
 
 	enableBatteryChargeThreshold() {
-		this.activeModal.close('enable');
+		this.activeModal.close('positive');
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.activeModal.close('negative');
 	}
 }
