@@ -54,7 +54,7 @@
 			</vtr-battery-indicator>
 		</div>
 
-		<div class="px-3 row"
+		<div class="row px-3"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto "
 				[class.normal-ACAdapter-condition]="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport">

@@ -1458,7 +1458,7 @@
 					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
-						"medium": "Medium",
+						"medium": "Middle",
 						"far": "Far"
 					},
 					"tooltipcontent": {

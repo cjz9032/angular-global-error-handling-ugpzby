@@ -715,6 +715,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.cancel-modal {
+	.modal-dialog {
+		max-width: 27%;
+	}
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 1.5rem;
+	}
+}
 /*----- onclick-tooltip-style------*/
 .tooltip-click {
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
@@ -923,7 +933,7 @@ button:focus, .button:focus {
 			.nav-item{
 				width: calc(25% - 1rem);
 				.nav-link {
-					height: 24rem;
+					height: 22rem;
 					border-radius: 0.5rem;
 					background: $main_darker;
 					border: none !important;

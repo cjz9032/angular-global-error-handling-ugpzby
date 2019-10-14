@@ -44,7 +44,7 @@
 								metricsParent="Pages.SystemUpdate"
 								metricsItem="'btn.cancel'"
 								class="btn btn-link cancel-check"
-								[disabled]="percent === 0 || isCheckingStatus"
+								(click)="openCancelScanModel()"
 								 >Cancel Scan</button>
 						</div>
 					</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 
 @Component({
   selector: 'vtr-ui-smart-performance-scanning',
@@ -9,9 +11,15 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	@Input() showProgress = true;
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
-
+  openCancelScanModel() {
+	  this.modalService.open(ModalSmartPerformanceCancelComponent, {
+		backdrop: 'static',
+		centered: true,
+		windowClass: 'cancel-modal'
+	});
+  }
 }
