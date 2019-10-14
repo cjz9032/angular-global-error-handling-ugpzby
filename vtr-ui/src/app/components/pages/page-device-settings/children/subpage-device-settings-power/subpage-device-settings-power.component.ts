@@ -1073,7 +1073,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
 					break;
-				case "IsPowerDriverMissing":
+				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
 					break;
 				case 'GaugeResetInfo':
@@ -1106,8 +1106,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.machineType === 1 && status) {
 			this.showAirplanePowerModeSection = false;
 			this.isChargeThresholdAvailable = false;
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "battery");
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "power");
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 		}
 		const cacheValue = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
 		// if previous value is true & current value is false
@@ -1115,25 +1115,25 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.getAlwaysOnUSBCapabilityThinkPad();
 			this.showAirplanePowerModeSection = this.airplanePowerCache.toggleState.available;
 			this.isChargeThresholdAvailable = this.batteryChargeThresholdCache.available;
-			if (!this.commonService.isFoundInArray(this.headerMenuItems, "battery") && !this.hideBatteryLink()) {
+			if (!this.commonService.isFoundInArray(this.headerMenuItems, 'battery') && !this.hideBatteryLink()) {
 				// "battery" setting is not found & capability available. Go ahead on adding it.
 				const item = {
 					title: 'device.deviceSettings.power.batterySettings.title',
 					path: 'battery',
 					metricsItem: 'BatterySettings'
 				};
-				const addAtIndex = this.commonService.isFoundInArray(this.headerMenuItems, "other") ? this.headerMenuItems.length - 1 : this.headerMenuItems.length;
+				const addAtIndex = this.commonService.isFoundInArray(this.headerMenuItems, 'other') ? this.headerMenuItems.length - 1 : this.headerMenuItems.length;
 
 				this.headerMenuItems.splice(addAtIndex, 0, item);
 			}
-			if (!this.commonService.isFoundInArray(this.headerMenuItems, "power") && !this.hidePowerLink()) {
+			if (!this.commonService.isFoundInArray(this.headerMenuItems, 'power') && !this.hidePowerLink()) {
 				// "power" setting is not found & capability available. Go ahead on adding it.
 				const item = {
 					title: 'device.deviceSettings.power.powerSettings.title',
 					path: 'power',
 					metricsItem: 'PowerSettings'
 				};
-				const addAtIndex = this.commonService.isFoundInArray(this.headerMenuItems, "other") ? this.headerMenuItems.length - 1 : this.headerMenuItems.length;
+				const addAtIndex = this.commonService.isFoundInArray(this.headerMenuItems, 'other') ? this.headerMenuItems.length - 1 : this.headerMenuItems.length;
 				this.headerMenuItems.splice(addAtIndex, 0, item);
 			}
 		}
