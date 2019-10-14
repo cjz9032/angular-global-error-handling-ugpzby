@@ -25,15 +25,15 @@
 	.battery-gauge-info {
 		font-size: $body;
 		max-width: 75rem;
-		background-color: $shade_lightest;
-		border: 1px solid $shade_lighter;
+		background-color: $grey_lighter;
+		border: 1px solid #ecf0f1;
 
 		.label-text {
 			color: $shade_light;
 			margin: 0.2rem 0;
 		}
 		.label-value {
-			color: $main_dark;
+			color: #34495e;
 			margin: 0.2rem 0;
 		}
 		.battery-gauge-btn {
