@@ -118,7 +118,8 @@
 					"networkBoost": "network boost page",
 					"autoClose": "auto close page",
 					"lighting": "Lighting page"
-				}
+				},
+				"mainMenuLink": "Header main logo"
 			}
 		},
 		"macroKey": {
@@ -264,8 +265,9 @@
 				},
 				"numberInput": {
 					"title": "Number",
-					"bundledSelected": "is selected bundled",
-					"unbundledSelected": "is selected unbundled"
+					"bundled": "bundled",
+					"unbundled": "unbundled",
+					"isSelected": "is selected"
 				}
 			}
 		},
