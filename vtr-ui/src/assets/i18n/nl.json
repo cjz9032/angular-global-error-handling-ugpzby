@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
-                "seeDetailsLink": "Bekijk meer informatie"
+                "seeDetailsLink": "Bekijk meer informatie",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Energiebeheer",
@@ -1032,6 +1035,42 @@
                         "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
                         "checkBoxDesc": "Automatische detectie",
                         "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1322,19 +1361,19 @@
                             "cancel": "NIET NU"
                         }
                     },
-					"VoipHotkeys": {
-						"title": "VoIP-sneltoetsfuncties",
-						"description": {
-							"main": "Met behulp van deze functie kunt u een VoIP-oproep beantwoorden of weigeren door de sneltoetsen op uw toetsenbord te gebruiken:",
-							"f10": "F10: de oproep beantwoorden",
-							"f11": "F11: de oproep weigeren of ophangen"
-						},
-						"tooltip": "Momenteel wordt deze functie alleen ondersteund in Skype voor Bedrijven 2016 en Microsoft Teams 1.0.<br>Als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren.",
-						"hasInstalledAppsDescription": "Selecteer de app waarin u de sneltoetsen wilt gebruiken.",
-						"noInstalledAppsDescription": "Deze functie biedt alleen ondersteuning voor de volgende toepassingen: ",
-						"hasInstalledAppsNote": "Opmerking: voor Microsoft Teams 1.0 kan de toets F11 niet worden gebruikt voor het ophangen van de oproep.",
-						"noInstalledAppsNote": "Opmerking: als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren."
-					}
+                    "VoipHotkeys": {
+                        "title": "VoIP-sneltoetsfuncties",
+                        "description": {
+                            "main": "Met behulp van deze functie kunt u een VoIP-oproep beantwoorden of weigeren door de sneltoetsen op uw toetsenbord te gebruiken:",
+                            "f10": "F10: de oproep beantwoorden",
+                            "f11": "F11: de oproep weigeren of ophangen"
+                        },
+                        "tooltip": "Momenteel wordt deze functie alleen ondersteund in Skype voor Bedrijven 2016 en Microsoft Teams 1.0.<br>Als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren.",
+                        "hasInstalledAppsDescription": "Selecteer de app waarin u de sneltoetsen wilt gebruiken.",
+                        "noInstalledAppsDescription": "Deze functie biedt alleen ondersteuning voor de volgende toepassingen: ",
+                        "hasInstalledAppsNote": "Opmerking: voor Microsoft Teams 1.0 kan de toets F11 niet worden gebruikt voor het ophangen van de oproep.",
+                        "noInstalledAppsNote": "Opmerking: als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren."
+                    }
                 },
                 "userDefinedKey": {
                     "title": "Door gebruiker gedefinieerde toets",
@@ -1597,8 +1636,8 @@
         },
         "banner": {
             "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
-			"title": "Een bijgewerkt systeem is een gezond systeem.",
-			"installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
+            "title": "Een bijgewerkt systeem is een gezond systeem.",
+            "installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
@@ -1834,7 +1873,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
                 "unknown": "Onbekend",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

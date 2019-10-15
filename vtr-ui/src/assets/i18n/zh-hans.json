@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
-                "seeDetailsLink": "查看详细信息"
+                "seeDetailsLink": "查看详细信息",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "电源管理",
@@ -1032,6 +1035,42 @@
                         "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。",
                         "checkBoxDesc": "自动检测",
                         "note": "如果已勾选自动检测功能，计算机将在其检测到机上环境后自动打开飞行电源模式，并在您离开时将其关闭。"
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1322,19 +1361,19 @@
                             "cancel": "暂不"
                         }
                     },
-					"VoipHotkeys": {
-						"title": "VoIP 热键功能",
-						"description": {
-							"main": "此功能让您可以通过按键盘上的热键来接听或拒绝 VoIP 电话：",
-							"f10": "F10：接听电话",
-							"f11": "F11：拒绝或挂断电话"
-						},
-						"tooltip": "目前，仅 Skype for Business 2016 和 Microsoft Teams 1.0 支持此功能。<br>要使用此功能，您需要先下载并安装应用程序。",
-						"hasInstalledAppsDescription": "选择要在其上使用热键的应用程序：",
-						"noInstalledAppsDescription": "此功能仅支持以下应用程序：",
-						"hasInstalledAppsNote": "注意：对于 Microsoft Teams 1.0，F11 键不能用于挂断电话。",
-						"noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。"
-					}
+                    "VoipHotkeys": {
+                        "title": "VoIP 热键功能",
+                        "description": {
+                            "main": "此功能让您可以通过按键盘上的热键来接听或拒绝 VoIP 电话：",
+                            "f10": "F10：接听电话",
+                            "f11": "F11：拒绝或挂断电话"
+                        },
+                        "tooltip": "目前，仅 Skype for Business 2016 和 Microsoft Teams 1.0 支持此功能。<br>要使用此功能，您需要先下载并安装应用程序。",
+                        "hasInstalledAppsDescription": "选择要在其上使用热键的应用程序：",
+                        "noInstalledAppsDescription": "此功能仅支持以下应用程序：",
+                        "hasInstalledAppsNote": "注意：对于 Microsoft Teams 1.0，F11 键不能用于挂断电话。",
+                        "noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。"
+                    }
                 },
                 "userDefinedKey": {
                     "title": "用户自定义键",
@@ -1597,8 +1636,8 @@
         },
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
-			"title": "保持最新状态的系统才是健康的系统。",
-			"installingTitle": "在更新期间，请勿使计算机进入睡眠或休眠模式。",
+            "title": "保持最新状态的系统才是健康的系统。",
+            "installingTitle": "在更新期间，请勿使计算机进入睡眠或休眠模式。",
             "last": "上次更新时间：",
             "next": "下次计划更新时间：",
             "checkButton": "检查更新",
@@ -1834,7 +1873,7 @@
             "others": {
                 "othersProtection": "{{protectedName}}为您的设备提供基本保护",
                 "unknown": "未知",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
