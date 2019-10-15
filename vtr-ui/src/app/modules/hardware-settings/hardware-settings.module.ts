@@ -16,7 +16,6 @@ import { CommonModule } from '@angular/common';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
-import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DisplayColorTempComponent } from 'src/app/components/display/display-color-temp/display-color-temp.component';
 import { DolbyModesTranslationPipe } from 'src/app/pipe/dolby-modes-translation.pipe';
@@ -135,7 +134,6 @@ library.add(faCalendarAlt);
 		CameraBackgroundBlurComponent,
 		CameraControlComponent,
 		ClockComponent,
-		ContainerCollapsibleComponent,
 		DisplayColorTempComponent,
 		DolbyModesTranslationPipe,
 		EyeCareModeComponent,
@@ -178,7 +176,7 @@ library.add(faCalendarAlt);
 		RouterModule,
 		NgbCollapseModule,
 		PageLayoutModule,
-		SettingsPageLayoutModule
+		SettingsPageLayoutModule,
 	],
 	exports: [
 		CommonModule,

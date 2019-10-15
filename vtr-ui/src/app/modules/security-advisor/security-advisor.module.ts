@@ -112,7 +112,7 @@ library.add(faLaughWink);
 		HeaderMainModule,
 		WidgetOfflineModule,
 		UiListChevronModule,
-		CommonModalModule
+		CommonModalModule,
 	],
 	providers: [
 		DialogService
