@@ -128,14 +128,23 @@ but not to any other element on the page. using ::ng-deep
 
 	[disabled].ng5-slider .ng5-slider-pointer {
 		background-color: initial;
+		// @media #{$white-on-black}{
+		// 	background-color: green;
+			
+		// }
+		// @media #{$black-on-white}{
+		// 	background-color: green;
+			
+		// }
+	}
+	[disabled].ng5-slider .ng5-slider-selection {
 		@media #{$white-on-black}{
-			background-color: green;
+			background-color: $go_dark;
 			
 		}
 		@media #{$black-on-white}{
-			background-color: green;
+			background-color: $go_dark;
 			
 		}
-
 	}
 }
