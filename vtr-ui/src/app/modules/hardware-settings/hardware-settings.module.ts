@@ -88,6 +88,7 @@ import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircl
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
+import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
 
 library.add(faCheck);
 library.add(faCheckCircle);
@@ -160,6 +161,7 @@ library.add(faCalendarAlt);
 		SubpageDeviceSettingsPowerComponent,
 		UserDefinedKeyComponent,
 		TopRowFunctionsComponent,
+		TopRowFunctionsIdeapadComponent,
 		VoiceComponent
 	],
 	imports: [
