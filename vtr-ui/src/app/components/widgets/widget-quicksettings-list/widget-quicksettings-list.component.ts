@@ -13,6 +13,7 @@ import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-cap
 import { Gaming } from 'src/app/enums/gaming.enum';
 import { EventTypes, WifiSecurity, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
@@ -151,9 +152,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		private powerService: PowerService,
 		private dialogService: DialogService,
 		private ngZone: NgZone,
-		private translateService: TranslateService
+		private translateService: TranslateService,
+		private securityAdvisorMockService: SecurityAdvisorMockService
 	) {
-		this.wifiSecurity = this.shellServices.getSecurityAdvisor().wifiSecurity;
+		//this.wifiSecurity = this.shellServices.getSecurityAdvisor().wifiSecurity;
 		// this.wifiSecurity.on(EventTypes.wsStateEvent, (status) => {
 		// 	this.updateStatus(status, this.wifiSecurity.isLocationServiceOn);
 		// 	if (status) {
@@ -166,17 +168,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	ngOnInit() {
-		this.wifiSecurity = this.shellServices.getSecurityAdvisor().wifiSecurity;
-		this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
-		console.log('this.wifiSecurity======>', JSON.stringify(this.wifiSecurity));
-		this.wifiSecurity.getWifiState().then((res) => {
-			console.log('wifi State======>', res);
-		}, (error) => {
-			this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-		});
 		this.initialiseDolbyCache();
 		this.initialiseRapidChargeCache();
 		this.getDolbySettings();
+		this.getWifiSecuritySettings();
 		this.initialiseRapidChargeSettings();
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.smartFanFeature
@@ -369,6 +364,27 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.quickSettings[3].isChecked = !value;
 			}
 		} catch (err) { }
+	}
+
+	public async getWifiSecuritySettings() {
+		try {
+			this.wifiSecurity = this.securityAdvisorMockService.getSecurityAdvisor().wifiSecurity;
+			this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
+			console.log('this.wifiSecurity======>', JSON.stringify(this.wifiSecurity));
+			this.wifiSecurity.getWifiState().then((res) => {
+				this.quickSettings[2].isVisible = res;
+				this.quickSettings[2].isChecked = res;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, res);
+			}, (error) => {
+				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+			});
+		} catch (err) {
+		} finally {
+			this.checkQuickSettingsVisibility();
+		}
+	}
+
+	public async setWifiSecuritySettings(value: any) {
 	}
 
 	public initialiseDolbyCache() {
