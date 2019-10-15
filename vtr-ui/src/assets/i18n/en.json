@@ -519,7 +519,7 @@
 			"autocClosenarratorback": "Back to dashboard",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
-				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
+				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "TURN ON",
 				"btnCancel": "NOT NOW"
@@ -534,7 +534,7 @@
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
-				"body": "Only apps currently running will be shown in the list below."
+				"body": "Only apps currently running will show in the list below."
 			},
 			"noRunningApps": {
 				"title": "No Running Apps To Add",
@@ -543,13 +543,13 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
+			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "TURN ON",
-				"btnCancel": "NOT NOW"
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -1091,8 +1091,8 @@
 							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
 						},
 						"popup": {
-							"description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-							"description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
 							"continue": "Continue",
 							"cancel": "Cancel",
 							"yes": "Yes",
@@ -1450,6 +1450,17 @@
 							"slow": "Slow"
 						},
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+					},
+					"facialRecognition": {
+						"title": "FACIAL RECOGNITION",
+						"caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+						"checkBox": "Turn on the camera and enable this feature",
+						"note": {
+							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+							"privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+							"windowsLink": "Go to Windows Settings to give access",
+							"privacyLink": "Go to Camera privacy mode to turn it off"
+						}
 					}
 				},
 				"sensitivityAdjusting": {

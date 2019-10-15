@@ -8,7 +8,7 @@ import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
+	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
 })
 export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
 	@Input() number: any;
@@ -19,6 +19,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	@Output() clearAll = new EventEmitter<any>();
 	public clearRecordPopup: Boolean = false;
 	public showModal: Boolean = false;
+	public deleteCalled: Boolean = false;
 	public ignoreInterval: Boolean = false;
 	public recordsList: any = [];
 	public pairCounter = {};
@@ -157,22 +158,28 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		popupWindowTitle: 'clear double confirm window'
 	};
 
-	constructor(private macrokeyService: MacrokeyService) { }
+	constructor(private macrokeyService: MacrokeyService) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
-	recordDelete(record, i) {
-		const remainingInputs = this.recordsData.inputs.filter(
-			(recordItem: any) => recordItem.pairName !== record.pairName
-		);
-		this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
-			if (responseStatus) {
-				this.recordsData.inputs = remainingInputs;
-				if (this.number.key === '0' || this.number.key === 'M1') {
-					this.macrokeyService.updateMacrokeyInitialKeyDataCache(this.recordsData.inputs);
-				}
+	async recordDelete(record, i) {
+		try {
+			if (!this.deleteCalled) {
+				this.deleteCalled = true;
+				const remainingInputs = this.recordsData.inputs.filter(
+					(recordItem: any) => recordItem.pairName !== record.pairName
+				);
+				await this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
+					this.deleteCalled = false;
+					if (responseStatus) {
+						this.recordsData.inputs = remainingInputs;
+						if (this.number.key === '0' || this.number.key === 'M1') {
+							this.macrokeyService.updateMacrokeyInitialKeyDataCache(this.recordsData.inputs);
+						}
+					}
+				});
 			}
-		});
+		} catch (err) {}
 	}
 
 	clearRecords() {

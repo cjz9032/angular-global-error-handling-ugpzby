@@ -9,7 +9,7 @@ import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 @Component({
 	selector: 'app-widget-system-monitor',
 	templateUrl: './widget-system-monitor.component.html',
-	styleUrls: ['./widget-system-monitor.component.scss']
+	styleUrls: [ './widget-system-monitor.component.scss' ]
 })
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuUseFrequency: string;

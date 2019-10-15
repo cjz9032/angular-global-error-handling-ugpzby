@@ -228,7 +228,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private router: Router
 	) {}
 	ngOnInit() {
-
 		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);

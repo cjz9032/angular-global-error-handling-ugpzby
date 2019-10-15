@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                 },
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
-                "seeDetailsLink": "Ver detalhes"
+                "seeDetailsLink": "Ver detalhes",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Alimentação",
@@ -1032,6 +1035,42 @@
                         "description": "Proteja a tomada CA do avião controlando o consumo de energia do sistema.Quando o Modo de Alimentação em Avião está ativado, o computador diminui o consumo de energia limitando a taxa de carregamento da bateria e o desempenho do sistema.",
                         "checkBoxDesc": "Deteção automática",
                         "note": "Se a Deteção automática estiver marcada, o computador ativa automaticamente o Modo de alimentação em avião quando deteta um ambiente a bordo de um avião e desativa-o quando deixa o avião."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1322,19 +1361,19 @@
                             "cancel": "AGORA NÃO"
                         }
                     },
-					"VoipHotkeys": {
-						"title": "Funções das teclas de atalho VoIP",
-						"description": {
-							"main": "Esta funcionalidade permite-lhe atender ou rejeitar uma chamada VoIP pressionando as teclas de atalho do teclado:",
-							"f10": "F10: atender a chamada",
-							"f11": "F11: rejeitar ou desligar a chamada"
-						},
-						"tooltip": "Atualmente, esta funcionalidade é suportada apenas no Skype for Business 2016 e Microsoft Teams 1.0.<br>Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações.",
-						"hasInstalledAppsDescription": "Selecione a aplicação em que pretende utilizar as teclas de atalho:",
-						"noInstalledAppsDescription": "Esta funcionalidade suporta apenas as seguintes aplicações: ",
-						"hasInstalledAppsNote": "Nota: Para Microsoft Teams 1.0, a tecla F11 não pode ser utilizada para desligar a chamada.",
-						"noInstalledAppsNote": "Nota: Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações."
-					}
+                    "VoipHotkeys": {
+                        "title": "Funções das teclas de atalho VoIP",
+                        "description": {
+                            "main": "Esta funcionalidade permite-lhe atender ou rejeitar uma chamada VoIP pressionando as teclas de atalho do teclado:",
+                            "f10": "F10: atender a chamada",
+                            "f11": "F11: rejeitar ou desligar a chamada"
+                        },
+                        "tooltip": "Atualmente, esta funcionalidade é suportada apenas no Skype for Business 2016 e Microsoft Teams 1.0.<br>Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações.",
+                        "hasInstalledAppsDescription": "Selecione a aplicação em que pretende utilizar as teclas de atalho:",
+                        "noInstalledAppsDescription": "Esta funcionalidade suporta apenas as seguintes aplicações: ",
+                        "hasInstalledAppsNote": "Nota: Para Microsoft Teams 1.0, a tecla F11 não pode ser utilizada para desligar a chamada.",
+                        "noInstalledAppsNote": "Nota: Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações."
+                    }
                 },
                 "userDefinedKey": {
                     "title": "Tecla definida pelo utilizador",
@@ -1409,6 +1448,17 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Seleccione a opção pretendida para bloquear o ecrã a uma velocidade rápida/média/baixa quando a sua presença não é detetada. Contudo, o tempo em que o ecrã será bloqueado também é afetado pelo cenário real do utilizador, pela capacidade do sensor e pelas definições de tempo limite do ecrã do Windows. Por isso, sugerimos que bloqueie instantaneamente o seu sistema antes de sair."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONHECIMENTO FACIAL",
+                        "caption": "Pode ativar a funcionalidade de reconhecimento facial e permitir-lhe aceder à sua câmara. Esta ferramenta captura a sua imagem para reconhecer com precisão a sua presença ou detetar quando deixa o seu dispositivo sem vigilância. Estes dados são processados localmente no seu dispositivo. A Lenovo não tem acesso nem utiliza estes dados.",
+                        "checkBox": "Ligue a câmara e ative esta funcionalidade",
+                        "note": {
+                            "permission": "O Lenovo Vantage não tem acesso à Câmara. A função da caixa de verificação não funcionará.",
+                            "privacyMode": "O modo de privacidade da câmara do Lenovo Vantage está ativado. A função da caixa de verificação não funcionará.",
+                            "windowsLink": "Vá às Definições do Windows para dar acesso",
+                            "privacyLink": "Vá para o modo de privacidade da câmara para a desativar"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1597,8 +1647,8 @@
         },
         "banner": {
             "neverChecked": "Bem-vindo à Atualização do Sistema.",
-			"title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
-			"installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
+            "title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+            "installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES",
@@ -1834,7 +1884,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo",
                 "unknown": "Desconhecido",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
