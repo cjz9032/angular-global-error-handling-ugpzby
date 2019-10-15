@@ -16,13 +16,56 @@ class Duration {
 })
 export class TimerServiceEx {
 	private counter = 0;
+	private enableCounting = true;
 	constructor() {
+		window.addEventListener('focus', () => {
+			this.onWindowFocus();
+		});
+
+		window.addEventListener('blur', () => {
+			this.onWindowBlur();
+		});
+
+		document.addEventListener('visibilitychange', () => {
+			if (document.hidden) {
+				this.onInvisable();
+			} else {
+				this.onVisable();
+			}
+		});
+
 		setInterval(() => {
-			this.counter += 1;
+			if (this.enableCounting) {
+				this.counter += 1;
+			}
 		}, 1000);
 	}
 
-	public getTick() {
+	private onWindowFocus(): void {
+		this.onResume();
+	}
+
+	private onInvisable(): void {
+		this.onResume();
+	}
+
+	private onWindowBlur(): void {
+		this.onSuspend();
+	}
+
+	private onVisable(): void {
+		this.onSuspend();
+	}
+
+	private onResume() {
+		this.enableCounting = true;
+	}
+
+	private onSuspend() {
+		this.enableCounting = false;
+	}
+
+	private getTick() {
 		return this.counter;
 	}
 
