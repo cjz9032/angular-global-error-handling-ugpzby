@@ -155,7 +155,6 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-
 	public getTopRowFnStickKeyCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -167,7 +166,6 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-
 	public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {

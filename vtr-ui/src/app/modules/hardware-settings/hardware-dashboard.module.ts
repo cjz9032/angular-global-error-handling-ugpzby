@@ -72,7 +72,7 @@ import { FeedbackModule } from '../feedback/feedback.module';
 		WidgetDashboardWarrantyComponent
 	],
 	providers: [MockService],
-	entryComponents: [FeedbackFormComponent],
+	entryComponents: [],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class HardwareDashboardModule {

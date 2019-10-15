@@ -18,7 +18,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: ['./page-autoclose.component.scss']
+	styleUrls: [ './page-autoclose.component.scss' ]
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -207,12 +207,16 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	initTurnOnAction() {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
 
 	initNotNowAction(notNowStatus: boolean) {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
