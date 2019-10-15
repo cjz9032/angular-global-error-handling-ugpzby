@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MetricsModule } from 'src/app/directives/metrics.module';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { UiApsSliderComponent } from 'src/app/components/ui/ui-aps-slider/ui-aps-slider.component';
@@ -25,6 +25,7 @@ import { UiSwitchTristateComponent } from 'src/app/components/ui/ui-switch-trist
 import { UiTimePickerComponent } from 'src/app/components/ui/ui-time-picker/ui-time-picker.component';
 import { UiTooltipsComponent } from 'src/app/components/ui/ui-tooltips/ui-tooltips.component';
 import { UiToggleComponent } from 'src/app/components/ui/ui-toggle/ui-toggle.component';
+import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -70,7 +71,8 @@ library.add(faChevronUp);
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
 		UiTooltipsComponent,
-		UiToggleComponent
+		UiToggleComponent,
+		ContainerCollapsibleComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -96,7 +98,8 @@ library.add(faChevronUp);
 		UiPopoverComponent,
 		MetricsModule,
 		UiTooltipsComponent,
-		UiToggleComponent
+		UiToggleComponent,
+		ContainerCollapsibleComponent
 	],
 	imports: [
 		CommonModule,
@@ -104,7 +107,8 @@ library.add(faChevronUp);
 		RouterModule,
 		MetricsModule,
 		NgbTooltipModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		NgbCollapseModule
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
