@@ -36,6 +36,7 @@ import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTo
 import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+import { FeedbackModule } from './feedback/feedback.module';
 
 library.add(faKeyboard);
 library.add(faQuestionCircle);
@@ -74,7 +75,8 @@ library.add(faCheck);
 		FontAwesomeModule,
 		ContainerCardModule,
 		MetricsModule,
-		WidgetOfflineModule
+		WidgetOfflineModule,
+		FeedbackModule
 	],
 	exports: [ TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule ],
 	providers: [ MockService ],
