@@ -14,8 +14,7 @@ export class AntiVirusViewModel {
 		firewallStatus: false,
 		status: false,
 		enabled: false,
-		metrics: [],
-		launch(): Promise<boolean> { return new Promise(() => true); } // added to fix build error
+		metrics: []
 	};
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,
@@ -96,7 +95,7 @@ export class AntiVirusViewModel {
 		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
 			this.currentPage = 'mcafee';
 			this.mcafeeInstall = true;
-		} else if (antiVirus.others) {
+		} else if (antiVirus.others && antiVirus.others.enabled) {
 			if (antiVirus.mcafee) {
 				this.mcafeeInstall = true;
 			} else { this.mcafeeInstall = false; }

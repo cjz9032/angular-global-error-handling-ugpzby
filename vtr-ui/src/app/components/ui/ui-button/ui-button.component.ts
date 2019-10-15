@@ -20,7 +20,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
 	@Input() metricsValue: string;
-	@Input() metricsEvent: string = 'FeatureClick';
+	@Input() metricsEvent = 'FeatureClick';
 	@Input() metricsParam: string;
 	@Input() metricsItemPosition: string;
 	@Input() metricsPageNumber: string;
@@ -37,6 +37,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() href: string;
 	@Input() inRedBackground = false;
 	@Input() tabIndex = 0;
+	@Input() isLoading = false;
 
 	constructor() { }
 
@@ -49,7 +50,7 @@ export class UiButtonComponent implements OnInit {
 	}
 
 	getButtonColor(buttonColor) {
-		if (!buttonColor) { return;	}
+		if (!buttonColor) { return; }
 		return `btn-${buttonColor}`;
 	}
 

@@ -64,7 +64,8 @@
 							</div>
 
 							{{item.label | translate}}
-							<span *ngIf="item.beta" class="beta">Beta</span>
+							<span *ngIf="item.beta"
+								class="beta">Beta</span>
 						</a>
 					</li>
 					<li *ngIf="item.subitems.length>0
@@ -80,7 +81,8 @@
 								<fa-icon [icon]="item.icon" class="fa-icon"></fa-icon>
 							</div>
 							{{item.label | translate}}
-							<span *ngIf="item.beta" class="beta">Beta</span>
+							<span *ngIf="item.beta"
+								class="beta">Beta</span>
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<fa-icon [icon]="['fas', 'square']" class="menu-pointer"></fa-icon>

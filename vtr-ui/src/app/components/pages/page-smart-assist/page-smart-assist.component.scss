@@ -43,15 +43,15 @@
 	.blur-1 {
 		opacity: 0.65;
 	}
-	.custom-row-swicth{
+	.custom-row-swicth {
 		max-width: 60rem;
 		margin: 0 0 0 0.8rem;
-		.sensitivityTitle{
+		.sensitivityTitle {
 			font-weight: $weight_bold;
 			margin-top: 3.5rem;
 			margin-bottom: 2rem;
-		  }
-	};	
+		}
+	}
 	.feature-note {
 		background-color: $shade_lightest;
 		border: 1px solid $shade_lighter;
@@ -195,5 +195,52 @@
 
 	@media only screen and (min-width: 400px) and (max-width: 768px) {
 		margin-top: -6rem;
+	}
+}
+
+.auto-set-checkbox {
+	margin-top: 2rem;
+	position: relative;
+	input {
+		width: 1.5rem;
+		height: 1.5rem;
+		position: absolute;
+		top: 0.5rem;
+		margin-right: 0.5rem;
+	}
+	label {
+		color: $shade_darker;
+		font-size: 1.5rem;
+		font-weight: $weight_light;
+		text-align: left;
+		padding-left: 2rem;
+	}
+}
+
+.permission-note {
+	width: 100%;
+	background-color: $shade_lightest;
+	font-size: 1.4rem;
+	border: 1px solid $shade_lighter;
+	justify-content: space-between;
+	.note-icon{
+		font-size: 20px;
+	}
+	.privacy-button {
+		font-size: 1.4rem;
+		letter-spacing: 0.76px;
+		text-align: left;
+	}
+}
+
+.facial-recognition {
+	h3 {
+		font-weight: $weight_bold;
+		color: $main_darker;
+	}
+	p {
+		font-size: $body;
+		font-weight: $weight_light;
+		max-width: 60rem;
 	}
 }

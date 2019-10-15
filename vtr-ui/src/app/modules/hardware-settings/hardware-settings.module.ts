@@ -196,4 +196,4 @@ library.add(faCalendarAlt);
 	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class HardwareSettingsModule { }
+export class HardwareSettingsModule {}

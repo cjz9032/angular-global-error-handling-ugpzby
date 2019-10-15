@@ -28,7 +28,6 @@ export class ConfigService {
 		private commonService: CommonService) {
 	}
 
-
 	getMenuItems(isGaming) {
 		if (isGaming) {
 			return this.menuItemsGaming;

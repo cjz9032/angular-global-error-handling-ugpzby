@@ -22,7 +22,7 @@
 		width: 18rem;
 		margin-right: 1rem;
 	}
-	@media #{$mediaquery_X42}{
+	@media #{$mediaquery_X42} {
 		width: 21rem;
 		margin-right: 1rem;
 	}
@@ -110,6 +110,22 @@
 	&.border-grey {
 		border: 0.3rem solid $shade_lightest;
 		// transition: all 50ms ease-in;
+	}
+	&.border-disabled {
+		border: 0.3rem solid #e6eaeb;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
+	&.border-checked-disabled {
+		border: 0.3rem solid #667481;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
 	}
 }
 .large-width {

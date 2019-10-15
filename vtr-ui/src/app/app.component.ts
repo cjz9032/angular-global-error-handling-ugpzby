@@ -384,6 +384,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 	}
 
+
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
 			// this.isMachineInfoLoaded = this.isTranslationLoaded();

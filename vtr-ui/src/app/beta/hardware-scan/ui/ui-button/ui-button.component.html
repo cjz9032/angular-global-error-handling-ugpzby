@@ -6,20 +6,10 @@
 			[disabled]="isDisabled"
 			type="button"
 			class="btn button"
-			vtrMetrics
 			[routerLink]="routerPath"
 			routerLinkActive="active"
 			[id]="linkId"
 			[attr.aria-label]="linkId"
-			[metricsItem]="metricsItem"
-			[metricsEvent]="metricsEvent"
-			[metricsParam]="metricsParam"
-			[metricsValue]="metricsValue"
-			[metricsItemPosition]="metricsItemPosition"
-			[metricsPageNumber]="metricsPageNumber"
-			[metricsItemID]="metricsItemID"
-			[metricsItemCategory]="metricsItemCategory"
-			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true,
 						'halfWidth': isHalfWidth,
 						'text-upper-case': upperCaseLabel,
@@ -38,15 +28,6 @@
 			[attr.aria-label]="linkId"
 			[routerLink]="routerPath"
 			routerLinkActive="active"
-			[metricsItem]="metricsItem"
-			[metricsEvent]="metricsEvent"
-			[metricsParam]="metricsParam"
-			[metricsValue]="metricsValue"
-			[metricsItemPosition]="metricsItemPosition"
-			[metricsPageNumber]="metricsPageNumber"
-			[metricsItemID]="metricsItemID"
-			[metricsItemCategory]="metricsItemCategory"
-			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>
 	</div>
