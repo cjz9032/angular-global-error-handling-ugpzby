@@ -108,6 +108,9 @@
 					"sub2": "Facebook",
 					"sub3": "Instagram"
 				}
+			},
+			"narrator": {
+				"mainMenuLink": "go back to home page"
 			}
 		},
 		"macroKey": {
@@ -1765,7 +1768,7 @@
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
 				"unknown": "Unknown",
-				"betterOffer":"Enjoy a better offer here!"
+				"betterOffer": "Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {
