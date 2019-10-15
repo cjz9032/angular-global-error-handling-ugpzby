@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -72,7 +72,7 @@ import { FeedbackModule } from '../feedback/feedback.module';
 		WidgetDashboardWarrantyComponent
 	],
 	providers: [MockService],
-	entryComponents: [],
+	entryComponents: [FeedbackFormComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class HardwareDashboardModule {

@@ -11,11 +11,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
-import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
@@ -27,6 +25,8 @@ import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/mo
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { BaseVantageShellService } from 'src/app/services/vantage-shell/base-vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -74,7 +74,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
-		private vantageShellService: VantageShellService,
+		private vantageShellService: BaseVantageShellService,
 		public androidService: AndroidService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private activatedRoute: ActivatedRoute,
@@ -94,7 +94,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.deviceService.getMachineInfo().then(() => {
 			this.setDefaultSystemStatus();
 		});
-		this.brand = this.deviceService.getMachineInfoSync().brand;
+		// this.brand = this.deviceService.getMachineInfoSync().brand;
+		this.brand = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, -1);
 		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
 			this.submit = value;
 			this.feedbackButtonText = this.submit;
@@ -151,7 +152,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.router.routerState.snapshot.url.indexOf('security') === -1 &&
 			this.router.routerState.snapshot.url.indexOf('dashboard') === -1
 		) {
-			if (this.securityAdvisor.wifiSecurity) {
+			if (this.securityAdvisor && this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}
 		}
@@ -484,6 +485,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					});
 					warranty.status = 1;
 				}
+				warranty.isHidden = !this.deviceService.showWarranty;
 			}
 		});
 

@@ -9,7 +9,7 @@
 	metricsEvent="featureClick"
 	[metricsValue]="!value"
 	[metricsItem]="metricsItem">
-	<button class="switch-container"
+	<button class="switch-container focus-blue-outline"
 		[ngClass]="[(value && !isLoading) ? 'checked' : 'unchecked', disable ? 'disable-container' : '']"
 		[ngClass]="{'unchecked': isLoading}"
 		[id]="findId(value,disable)">

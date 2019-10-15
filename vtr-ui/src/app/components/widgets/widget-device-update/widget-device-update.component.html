@@ -2,10 +2,15 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 systemupdate-background">
-				<div class="row">
+				<div class="row" *ngIf="!isUpdateDownloading">
 					<div class="col title"
 						id="system-update-title"
 						attr.aria-label="system-update-title">{{title}}</div>
+				</div>
+				<div class="row" *ngIf="isUpdateDownloading">
+					<div class="col title"
+						id="system-update-installing-title"
+						attr.aria-label="system-update-installing-title">{{'systemUpdates.banner.installingTitle' | translate}}</div>
 				</div>
 				<div class="row">
 					<div class="col row1"
@@ -19,18 +24,15 @@
 				</div>
 				<div *ngIf="!showProgress && !isUpdateDownloading"
 					class="row">
-					<div class="col button-row">
-						<button class="action-button"
-							id="su_check_updates"
-							aria-label="su_check_updates"
-							[title]="buttonText"
-							tabindex="0"
-							vtrMetrics
-							metricsEvent="itemClick"
-							metricsParent="update-to-date"
+					<div class="button-row">
+						<vtr-ui-button linkId="su_check_updates"
+							metricsEvent="FeatureClick"
 							metricsItem="btn.Check For Updates"
-							[disabled]="isCheckingPluginStatus"
-							(click)="onCheckForUpdates()">{{buttonText}}</button>
+							metricsParent="Pages.SystemUpdate"
+							[isFullWidth]="true"
+							[isDisabled]="isCheckingPluginStatus"
+							[label]="buttonText"
+							(onClick)="onCheckForUpdates()"></vtr-ui-button>
 					</div>
 				</div>
 				<div *ngIf="showProgress"

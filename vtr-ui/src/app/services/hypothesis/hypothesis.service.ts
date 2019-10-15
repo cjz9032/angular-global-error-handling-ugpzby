@@ -29,10 +29,10 @@ export class HypothesisService {
 						this.hypSettings = hyp;
 						resolve();
 					},
-					error => {
-						this.devService.writeLog('getHypothesis: ', error);
-						reject(error);
-					});
+						error => {
+							this.devService.writeLog('getHypothesis: ', error);
+							reject(error);
+						});
 				} else {
 					reject('getHypothesis failed');
 					this.devService.writeLog('getHypothesis failed: ');
