@@ -26,9 +26,8 @@
 				metricsEvent="FeatureClick"
 				metricsItem="CHSTrialGoNowButton"
 				metricsParent="{{metricsParent}}"
-				(click)="openCornet()"
-				[label]="'homeSecurity.modal.goNow' | translate"
-				[title]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
+				(onClick)="openCornet()"
+				[label]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
 			<button class="btn btn-default btn_cancel ml-4 pl-0 pr-0"
 				id="chs-trialModal-btn-countdownCancel"
 				vtrMetrics
@@ -53,18 +52,16 @@
 				metricsItem="CHSDisconnectButton"
 				metricsParent="{{metricsParent}}"
 				buttonColor="red"
-				(click)="disconnect()"
-				[label]="'homeSecurity.overview.disconnect' | translate"
-				[title]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
+				(onClick)="disconnect()"
+				[label]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
 			<vtr-ui-button
 				linkId="chs-modal-btn-cancel"
 				metricsEvent="FeatureClick"
 				metricsItem="CHSDisconnectCancelButton"
 				metricsParent="{{metricsParent}}"
 				buttonColor="gray"
-				(click)="closeModal()"
-				[label]="'security.wifisecurity.locationmodal.cancel' | translate"
-				[title]="'security.wifisecurity.locationmodal.cancel' | translate"></vtr-ui-button>
+				(onClick)="closeModal()"
+				[label]="'security.wifisecurity.locationmodal.cancel' | translate"></vtr-ui-button>
 		</div>
 	</div>
 	<!-- end of page2-->

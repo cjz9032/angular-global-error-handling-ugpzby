@@ -190,6 +190,11 @@ export class CommonService {
 		return array.filter(e => e.path !== path);
 	}
 
+	public isFoundInArray(array: any[], path: string) {
+		let element = array.find(e => e.path === path);
+		return element ? true : false;
+	}
+
 	public getCapabalitiesNotification(): Observable<any> {
 		return this.gamingCapabalities.asObservable();
 	}
@@ -198,7 +203,8 @@ export class CommonService {
 	}
 
 	public isBetaUser(): Promise<number> {
-		if (WinRT) {
+		const win: any = window;
+		if (WinRT && win.Windows) {
 			return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
 		}
 	}

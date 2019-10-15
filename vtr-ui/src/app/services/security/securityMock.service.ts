@@ -32,7 +32,10 @@ export class SecurityAdvisorMockService {
 			refresh() {
 				this.mitt.emit(EventTypes.avRefreshedEvent, this);
 				return Promise.resolve();
-			}
+			},
+			launch() {
+				return Promise.resolve(true);
+			},
 		},
 		passwordManager: {
 			status: 'not-installed',
@@ -117,6 +120,7 @@ export class SecurityAdvisorMockService {
 			isDevicePermissionOn: true,
 			isLWSPluginInstalled: true,
 			hasSystemPermissionShowed: true,
+			isSupported: true,
 			launchLocationPrivacy() {
 				return Promise.resolve(true);
 			},

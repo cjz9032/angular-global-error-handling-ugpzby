@@ -53,6 +53,10 @@ import { environment } from 'src/environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
+import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
+import { BaseVantageShellService } from '../services/vantage-shell/base-vantage-shell.service';
+import { VantageShellMockService } from '../services/vantage-shell/vantage-shell-mock.service';
+import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 
 @NgModule({
 	declarations: [
@@ -62,6 +66,7 @@ import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownloa
 		ModalArticleDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
+		PageSettingsComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -101,7 +106,8 @@ import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownloa
 		DisplayService,
 		CookieService,
 		CommsService,
-		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
+		{ provide: ErrorHandler, useClass: GlobalErrorHandler },
+		{ provide: BaseVantageShellService, useClass: environment.allowMockService ? VantageShellMockService : VantageShellService }
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

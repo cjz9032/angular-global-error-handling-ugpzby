@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                 },
                 "batteryNotDetected": "Аккумулятор не найден",
                 "thresholdNote": "<b>Примечание.</b> Для увеличения срока службы аккумулятора вы установили прекращение зарядки аккумулятора при заряде {{value}}%.",
-                "seeDetailsLink": "См. подробные сведения"
+                "seeDetailsLink": "См. подробные сведения",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Питание",
@@ -1032,6 +1035,42 @@
                         "description": "Защитите розетку переменного тока самолета, контролируя энергопотребление системой.Если флажок Автономный режим питания установлен, компьютер уменьшает потребление питания, ограничивая скорость зарядки аккумулятора и производительность системы.",
                         "checkBoxDesc": "Автоопределение",
                         "note": "Если автоматическое обнаружение включено, компьютер включает автономный режим питания автоматически, когда обнаруживает условия на борту самолета, и выключает его, когда вы покидаете самолет."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1321,6 +1360,19 @@
                             "reboot": "ПЕРЕЗАГРУЗИТЬ",
                             "cancel": "НЕ СЕЙЧАС"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Функции горячих клавиш VoIP",
+                        "description": {
+                            "main": "Эта функция позволяет принимать или отклонять вызовы VoIP нажатием горячих клавиш на клавиатуре.",
+                            "f10": "F10: ответить на звонок",
+                            "f11": "F11: отклонить вызов (повесить трубку)"
+                        },
+                        "tooltip": "В настоящее время эта функция поддерживается только в Skype для бизнеса 2016 и Microsoft Teams 1.0.<br>Для использования этой функции необходимо скачать и установить приложения.",
+                        "hasInstalledAppsDescription": "Выберите приложение, в котором вы хотите использовать горячие клавиши:",
+                        "noInstalledAppsDescription": "Эта функция поддерживается только в следующих приложениях: ",
+                        "hasInstalledAppsNote": "Примечание: в Microsoft Teams 1.0 невозможно отклонить вызов с помощью клавиши F11.",
+                        "noInstalledAppsNote": "Примечание: для использования этой функции необходимо скачать и установить приложения."
                     }
                 },
                 "userDefinedKey": {
@@ -1396,6 +1448,17 @@
                             "slow": "Медленно"
                         },
                         "toolTipContent": "Выберите скорость блокировки экрана (высокую, среднюю или низкую), если ваше присутствие не обнаружено. Также время блокировки экрана зависит от фактического сценария использования, возможностей датчиков и параметров тайм-аута экрана Windows. Поэтому мы настоятельно рекомендуем блокировать систему перед уходом."
+                    },
+                    "facialRecognition": {
+                        "title": "РАСПОЗНАВАНИЕ ЛИЦ",
+                        "caption": "Можно включить функцию распознавания лиц и предоставить ей доступ к своей камере. Инструмент зафиксирует ваше изображение, чтобы точно распознавать ваше присутствие и определять, когда вы оставляете свое устройство без присмотра. Эти данные обрабатываются локально, на вашем устройстве. Lenovo не имеет к ним доступа и не использует их.",
+                        "checkBox": "Включите камеру и активируйте эту функцию",
+                        "note": {
+                            "permission": "У Lenovo Vantage нет доступа к камере. Обозначенная флажком функция не будет работать.",
+                            "privacyMode": "Для камеры Lenovo Vantage включен режим конфиденциальности. Обозначенная флажком функция не будет работать.",
+                            "windowsLink": "Перейдите в раздел параметров Windows, чтобы предоставить доступ",
+                            "privacyLink": "Перейдите в режим конфиденциальности на камере, чтобы отключить функцию"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1585,6 +1648,7 @@
         "banner": {
             "neverChecked": "Вас приветствует программа \"Обновление системы\".",
             "title": "Регулярное обновление системы обеспечивает ее исправную работу.",
+            "installingTitle": "Во время обновлений не переводите компьютер в спящий режим или режим гибернации.",
             "last": "Последнее обновление: ",
             "next": "Следующее запланированное обновление: ",
             "checkButton": "ПРОВЕРИТЬ НАЛИЧИЕ ОБНОВЛЕНИЙ",
@@ -1819,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства",
-                "unknown": "Неизвестно"
+                "unknown": "Неизвестно",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2579,7 +2644,8 @@
         "attention": "Внимание",
         "cancelTextPrompt": "Действительно отменить?",
         "cancelTextProgress": "Дождитесь отмены",
-        "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее."
+        "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
+        "testNotApplicable": "При настраиваемом сканировании неприменимо"
     },
     "smartPerformance": {
         "title": "Health & Support",

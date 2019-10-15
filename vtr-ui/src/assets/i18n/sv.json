@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
-                "seeDetailsLink": "Visa information"
+                "seeDetailsLink": "Visa information",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Ström",
@@ -1032,6 +1035,42 @@
                         "description": "Skydda flygplanets eluttag genom att kontrollera systemets strömförbrukning.När Flygenergiläge är aktiverat minskas strömförbrukningen genom att batteriladdningstakten och systemprestanda begränsas.",
                         "checkBoxDesc": "Aktivera automatisk upptäckt",
                         "note": "Om funktionen Autodetektering är markerad slås flygläget på automatiskt när datorn upptäcker en flygplansmiljö och stänger av det när du lämnar miljön."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1321,6 +1360,19 @@
                             "reboot": "STARTA OM",
                             "cancel": "INTE NU"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-snabbtangentsfunktioner",
+                        "description": {
+                            "main": "Med denna funktion kan du besvara eller avvisa ett VoIP-samtal genom att trycka på snabbtangenterna på tangentbordet:",
+                            "f10": "F10: besvara samtalet",
+                            "f11": "F11: avvisa eller avsluta samtalet"
+                        },
+                        "tooltip": "Funktionen stöds för närvarande endast med Skype för företag 2016 och Microsoft Teams 1.0.<br>Du måste ladda ned och installera apparna för att kunna använda funktionen.",
+                        "hasInstalledAppsDescription": "Välj den app där du vill använda snabbtangenterna:",
+                        "noInstalledAppsDescription": "Funktionen kan endast användas med följande program: ",
+                        "hasInstalledAppsNote": "Obs! I Microsoft Teams 1.0 kan du inte använda F11-tangenten för att avsluta samtalet.",
+                        "noInstalledAppsNote": "Obs! Du måste ladda ned och installera apparna för att kunna använda funktionen."
                     }
                 },
                 "userDefinedKey": {
@@ -1396,6 +1448,17 @@
                             "slow": "Långsam"
                         },
                         "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIKTSIGENKÄNNING",
+                        "caption": "Du kan aktivera funktionen för ansiktsigenkänning och ge den åtkomst till kameran. Verktyget fångar upp din bild och känner igen din närvaro eller upptäcker när du lämnar enheten obevakad. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
+                        "checkBox": "Sätt på kameran och aktivera funktionen",
+                        "note": {
+                            "permission": "Lenovo Vantage har inte åtkomst till kameran. Kryssrutan fungerar inte.",
+                            "privacyMode": "Sekretessläget för kameran i Lenovo Vantage är aktiverat. Kryssrutan fungerar inte.",
+                            "windowsLink": "Öppna Windows-inställningar för att ge åtkomst",
+                            "privacyLink": "Öppna kamerans sekretessläge för att inaktivera det"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1585,6 +1648,7 @@
         "banner": {
             "neverChecked": "Välkommen att använda Systemuppdatering.",
             "title": "Ett uppdaterat system är ett friskt system.",
+            "installingTitle": "Sätt inte datorn i strömspar- eller viloläge under uppdateringarna.",
             "last": "Senast uppdaterat: ",
             "next": "Nästa schemalagda uppdatering: ",
             "checkButton": "SÖK EFTER UPPDATERINGAR",
@@ -1819,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
-                "unknown": "Okänd"
+                "unknown": "Okänd",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2579,7 +2644,8 @@
         "attention": "Viktigt",
         "cancelTextPrompt": "Vill du verkligen avbryta?",
         "cancelTextProgress": "Vänta tills allt har avbrutits",
-        "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den."
+        "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
+        "testNotApplicable": "Kan inte användas på anpassad sökning"
     },
     "smartPerformance": {
         "title": "Health & Support",

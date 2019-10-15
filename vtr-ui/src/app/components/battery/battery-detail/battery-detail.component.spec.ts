@@ -91,6 +91,8 @@ describe('BatteryDetailComponent', () => {
 		component.dataIndicator = dataIndicator;
 		component.dataConditions = dataConditions;
 		fixture.detectChanges();
+
+		component.batteryIndicator = new BatteryIndicator();
 	});
 
 	it('should create', () => {

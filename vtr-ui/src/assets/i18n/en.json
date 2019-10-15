@@ -118,7 +118,8 @@
 					"networkBoost": "network boost page",
 					"autoClose": "auto close page",
 					"lighting": "Lighting page"
-				}
+				},
+				"mainMenuLink": "Header main logo"
 			}
 		},
 		"macroKey": {
@@ -264,8 +265,9 @@
 				},
 				"numberInput": {
 					"title": "Number",
-					"bundledSelected": "is selected bundled",
-					"unbundledSelected": "is selected unbundled"
+					"bundled": "bundled",
+					"unbundled": "unbundled",
+					"isSelected": "is selected"
 				}
 			}
 		},
@@ -517,7 +519,7 @@
 			"autocClosenarratorback": "Back to dashboard",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
-				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
+				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "TURN ON",
 				"btnCancel": "NOT NOW"
@@ -532,7 +534,7 @@
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
-				"body": "Only apps currently running will be shown in the list below."
+				"body": "Only apps currently running will show in the list below."
 			},
 			"noRunningApps": {
 				"title": "No Running Apps To Add",
@@ -541,13 +543,13 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
+			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "TURN ON",
-				"btnCancel": "NOT NOW"
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -817,6 +819,7 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
+				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
@@ -874,7 +877,7 @@
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
-					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>",
+					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
@@ -1058,6 +1061,42 @@
 							"start": "Start charging when below",
 							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "Stop charging at"
+						}
+					},
+					"gaugeReset": {
+						"title": "Battery gauge reset",
+						"description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+						"barCode": "Barcode",
+						"progress": "Progress",
+						"remaining": "Remaining",
+						"startTime": "Start time",
+						"lastReset": "Last reset",
+						"fullChargeCapacity": "Full charge capacity",
+						"btnLabel": {
+							"reset": "Reset",
+							"stop": "Stop"
+						},
+						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+						"FCCText": "From {{before}} Wh to {{after}} Wh",
+						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+						"resetLog": {
+							"ERROR_SUCCESS": "Complete. Successful reset.",
+							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
+							"ERROR_LOGOFF": "Incomplete. User logged off.",
+							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+						},
+						"popup": {
+							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
+							"continue": "Continue",
+							"cancel": "Cancel",
+							"yes": "Yes",
+							"description3": "Are you sure you want to stop the battery gauge reset?"
 						}
 					},
 					"expressCharging": {
@@ -1323,6 +1362,19 @@
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
 						}
+					},
+					"VoipHotkeys": {
+						"title": "VoIP Hotkey Functions",
+						"description": {
+							"main": "This feature enables you to answer or reject a VoIP call by pressing the hotkeys on your keyboard:",
+							"f10": "F10: answer the call",
+							"f11": "F11: reject or hang up the call"
+						},
+						"tooltip": "Currently, this feature is supported only on Skype for Business 2016 and Microsoft Teams 1.0.<br>To use the feature, you need to download and install the apps first.",
+						"hasInstalledAppsDescription": "Select the app that you want to use the hotkeys on:",
+						"noInstalledAppsDescription": "This feature only support below applications: ",
+						"hasInstalledAppsNote": "Note: For Microsoft Teams 1.0, the F11 key cannot be used to hang up the call.",
+						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
 					}
 				},
 				"userDefinedKey": {
@@ -1398,6 +1450,17 @@
 							"slow": "Slow"
 						},
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+					},
+					"facialRecognition": {
+						"title": "FACIAL RECOGNITION",
+						"caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+						"checkBox": "Turn on the camera and enable this feature",
+						"note": {
+							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+							"privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+							"windowsLink": "Go to Windows Settings to give access",
+							"privacyLink": "Go to Camera privacy mode to turn it off"
+						}
 					}
 				},
 				"sensitivityAdjusting": {
@@ -1408,7 +1471,7 @@
 					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
-						"medium": "Medium",
+						"medium": "Middle",
 						"far": "Far"
 					},
 					"tooltipcontent": {
@@ -1587,6 +1650,7 @@
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
+			"installingTitle": "During the updates, do not put your computer into sleep or hibernate mode.",
 			"last": "Last updated: ",
 			"next": "Next scheduled update: ",
 			"checkButton": "CHECK FOR UPDATES ",
@@ -1728,10 +1792,10 @@
 			"wifiNetworks": "Wi-fi networks",
 			"homeDevices": "Home devices",
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
+			"disconnect": "Disconnect",
+			"goDashboard": "Go To Dashboard",
 			"buyNow": "Buy Now",
-			"extendNow": "extend now",
+			"extendNow": "Extend Now",
 			"renewNow": "Renew Now",
 			"poweredBy": "Powered by Coronet",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
@@ -1768,7 +1832,7 @@
 			"startTrial": "Start Trial",
 			"startTrialTitle": "Create your own Connected Home Security",
 			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
+			"join": "Join",
 			"joinTitle": "Join your family's Connected Home Security",
 			"joinDescription": "Become a part of your family security group."
 		},
@@ -1799,7 +1863,7 @@
 			"endDate": "End date: ",
 			"status": "Status: ",
 			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
-			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
+			"subDescription2": "We were unable to locate the warranty details for your device. To view more options, please visit our support page.",
 			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS",
 			"offlineTips1": "Please connect to internet for latest warranty info.",
 			"offlineTips2": "Please connect internet to update warranty information."
@@ -1859,7 +1923,7 @@
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
 			"suspicious": "SUSPICIOUS",
-			"securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+			"securityScoreDepends": "Your security result depends on if you are:",
 			"antivirus": "Being protected by anti-virus software",
 			"password": "Having strong and complex passwords managed in a safe way",
 			"vpn": "Monitoring your network exposure to attackers",
@@ -1940,7 +2004,8 @@
 			},
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
-				"unknown": "Unknown"
+				"unknown": "Unknown",
+				"betterOffer":"Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {
@@ -1980,7 +2045,7 @@
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
-				"closeText": "close"
+				"closeText": "Close"
 			}
 		},
 		"homeprotection": {
@@ -2629,10 +2694,11 @@
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
 		"doNotUse": "Please refrain from using your computer until this test completes",
-		"testsMustRunUniterrupted": "These tests must run uniterrupted!",
+		"testsMustRunUniterrupted": "These tests must run uninterrupted!",
 		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
 		"doNotSwitchApp": "• Do not switch to other app.",
 		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
+		"testNotApplicable": "Not applicable on custom scan",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

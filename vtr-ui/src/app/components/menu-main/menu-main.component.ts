@@ -58,7 +58,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	private unsupportFeatureEvt: Observable<string>;
 
 	showMenu = false;
-	showHWScanMenu: boolean = false;
+	showHWScanMenu = false;
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
@@ -118,17 +118,19 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			);
 			if (cacheShowWindowsHello) {
 				const securityItem = items.find((item) => item.id === 'security');
-				securityItem.subitems.push({
-					id: 'windows-hello',
-					label: 'common.menu.security.sub6',
-					path: 'windows-hello',
-					icon: '',
-					metricsEvent: 'itemClick',
-					metricsParent: 'navbar',
-					metricsItem: 'link.windowshello',
-					routerLinkActiveOptions: { exact: true },
-					subitems: []
-				});
+				if (securityItem) {
+					securityItem.subitems.push({
+						id: 'windows-hello',
+						label: 'common.menu.security.sub6',
+						path: 'windows-hello',
+						icon: '',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.windowshello',
+						routerLinkActiveOptions: { exact: true },
+						subitems: []
+					});
+				}
 			}
 			if (this.securityAdvisor) {
 				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
@@ -223,16 +225,18 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
-		this.hardwareScanService.getPluginInfo()
-			.then((hwscanPluginInfo: any) => {
-				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-				this.showHWScanMenu = hwscanPluginInfo !== undefined &&
-									  hwscanPluginInfo.LegacyPlugin === false &&
-									  hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
-			})
-			.catch(() => {
-				this.showHWScanMenu = false;
-			});
+		if (this.hardwareScanService && this.hardwareScanService.getPluginInfo()) {
+			this.hardwareScanService.getPluginInfo()
+				.then((hwscanPluginInfo: any) => {
+					// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
+					this.showHWScanMenu = hwscanPluginInfo !== undefined &&
+						hwscanPluginInfo.LegacyPlugin === false &&
+						hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
+				})
+				.catch(() => {
+					this.showHWScanMenu = false;
+				});
+		}
 	}
 
 	private loadMenuOptions(machineType: number) {
@@ -313,6 +317,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		this.updateSearchBoxState(false);
 		this.showMenu = !this.showMenu;
 		event.stopPropagation();
+	}
+
+	onKeyPress($event){
+		if ($event.keyCode === 13) {
+			this.toggleMenu($event);
+		}
 	}
 
 	isParentActive(item) {
@@ -622,8 +632,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	initInputAccessories() {
-		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
-			.then((responses: any[]) => {
+		Promise.all([
+			this.keyboardService.GetUDKCapability(),
+			this.keyboardService.GetKeyboardMapCapability(),
+			this.keyboardService.getVoipHotkeysSettings()
+		])
+			.then((responses) => {
 				try {
 					let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 					if (inputAccessoriesCapability === undefined) {
@@ -631,6 +645,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+					inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);

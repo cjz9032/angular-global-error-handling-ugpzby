@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                 },
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
-                "seeDetailsLink": "查看詳細資料"
+                "seeDetailsLink": "查看詳細資料",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "電源",
@@ -1032,6 +1035,42 @@
                         "description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
                         "checkBoxDesc": "自動偵測",
                         "note": "如果勾選自動偵測，當電腦偵測到機上環境時，將自動開啟機艙電源模式，並在您下機時將其關閉。"
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1321,6 +1360,19 @@
                             "reboot": "重新開機",
                             "cancel": "現在不要"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP 快速鍵功能",
+                        "description": {
+                            "main": "您可以透過這個功能，在鍵盤上按下快速鍵來接聽或拒接 VoIP 來電。",
+                            "f10": "F10：接聽來電",
+                            "f11": "F11：拒接或掛斷來電"
+                        },
+                        "tooltip": "目前這項功能僅支援 Skype for Business 2016 及 Microsoft Teams 1.0。<br>若要安裝這項功能，首先您必須下載及安裝上述應用程式。",
+                        "hasInstalledAppsDescription": "選取您要在其中使用快速鍵的應用程式：",
+                        "noInstalledAppsDescription": "這項功能僅支援下列應用程式：",
+                        "hasInstalledAppsNote": "附註：用於 Microsoft Teams 1.0 時，使用 F11 鍵無法掛斷通話。",
+                        "noInstalledAppsNote": "附註：若要安裝這項功能，首先您必須下載及安裝上述應用程式。"
                     }
                 },
                 "userDefinedKey": {
@@ -1396,6 +1448,17 @@
                             "slow": "慢"
                         },
                         "toolTipContent": "選取您所需的選項，即可在未偵測到人員在場時以快/中/慢等速度鎖定螢幕。然而，螢幕遭到鎖定的時間也會受到實際使用情況、感應器功能，以及 Windows 螢幕逾時設定的影響。因此、我們強烈建議您在離開座位前立即將系統上鎖。"
+                    },
+                    "facialRecognition": {
+                        "title": "臉部辨識",
+                        "caption": "您可以啟用臉部辨識功能並允許其存取您的攝影機。此工具會拍攝您的影像以便準確辨識您的在場狀態，或是偵測您的裝置是否因您離開而暫時無人看管。這份資料將由您的裝置本機進行處理，Lenovo 絕不會逕自存取或加以使用。",
+                        "checkBox": "開啟攝影機並啟用此功能",
+                        "note": {
+                            "permission": "Lenovo Vantage 沒有攝影機的存取權。勾選框的功能無法運作。",
+                            "privacyMode": "Lenovo Vantage 攝影機隱私模式已開啟。勾選框的功能無法運作。",
+                            "windowsLink": "移至 Windows 設定以授與存取權",
+                            "privacyLink": "移至攝影機隱私模式以將其關閉"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1585,6 +1648,7 @@
         "banner": {
             "neverChecked": "歡迎使用系統更新。",
             "title": "保持最新狀態的系統才是健康的系統。",
+            "installingTitle": "在更新期間，請勿讓電腦進入睡眠或休眠模式。",
             "last": "上次更新：",
             "next": "下次的排定更新：",
             "checkButton": "檢查更新",
@@ -1738,7 +1802,7 @@
             "good": "良好",
             "malicious": "惡意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您可以從安全分數了解自身的線上安全，最後得分將依下列條件而異：",
+            "securityScoreDepends": "您的安全結果依下列條件而異：",
             "antivirus": "是否獲得防毒軟體的保護",
             "password": "是否在安全方式中採用強式及複雜的密碼進行管理",
             "vpn": "是否監控網路遭受攻擊的風險",
@@ -1819,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
-                "unknown": "不明"
+                "unknown": "不明",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2579,7 +2644,8 @@
         "attention": "請注意",
         "cancelTextPrompt": "您確定要取消嗎？",
         "cancelTextProgress": "請等待取消進度",
-        "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。"
+        "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。",
+        "testNotApplicable": "不適用於自訂掃描"
     },
     "smartPerformance": {
         "title": "Health & Support",
