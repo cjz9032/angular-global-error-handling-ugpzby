@@ -1597,7 +1597,8 @@
         },
         "banner": {
             "neverChecked": "Bienvenido al uso de Actualización de sistema.",
-            "title": "Un sistema actualizado es un sistema en buen estado.",
+			"title": "Un sistema actualizado es un sistema en buen estado.",
+			"installingTitle": "Durante la actualización, no ponga su equipo en modalidad de suspensión o hibernación.",
             "last": "Última actualización: ",
             "next": "Siguiente actualización programada: ",
             "checkButton": "COMPROBAR ACTUALIZACIONES",
@@ -1832,7 +1833,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo",
-                "unknown": "Desconocido"
+                "unknown": "Desconocido",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2592,7 +2594,8 @@
         "attention": "Atención",
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
-        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
+        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
+        "testNotApplicable": "No se aplica a personalizar exploración"
     },
     "smartPerformance": {
         "title": "Health & Support",

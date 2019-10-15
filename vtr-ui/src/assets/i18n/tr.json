@@ -1597,7 +1597,8 @@
         },
         "banner": {
             "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
-            "title": "Güncel bir sistem, sağlıklı sistemdir.",
+			"title": "Güncel bir sistem, sağlıklı sistemdir.",
+			"installingTitle": "Güncellemeler sırasında bilgisayarınızı uyku veya hazırda bekleme kipine geçirmeyin.",
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
@@ -1832,7 +1833,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
-                "unknown": "Bilinmiyor"
+                "unknown": "Bilinmiyor",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2592,7 +2594,8 @@
         "attention": "Dikkat",
         "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
-        "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin."
+        "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
+        "testNotApplicable": "Özel tarama için geçerli değildir"
     },
     "smartPerformance": {
         "title": "Health & Support",

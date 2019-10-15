@@ -1597,7 +1597,8 @@
         },
         "banner": {
             "neverChecked": "Începeţi utilizarea Actualizare sistem.",
-            "title": "Un sistem actualizat este un sistem sănătos.",
+			"title": "Un sistem actualizat este un sistem sănătos.",
+			"installingTitle": "În timpul actualizărilor, nu treceți computerul în modul repaus sau hibernare.",
             "last": "Ultima actualizare: ",
             "next": "Următoarea actualizare programată: ",
             "checkButton": "CĂUTAȚI ACTUALIZĂRI",
@@ -1832,7 +1833,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs.",
-                "unknown": "Necunoscut"
+                "unknown": "Necunoscut",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2542,7 +2544,7 @@
             "delete": "Ştergere",
             "warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
             "scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Scanarea a fost programată și va rula în fundal la următoarea dată:"
         },
         "recoverBadSectors": {
             "title": "Recuperarea sectoarelor defecte",
@@ -2592,7 +2594,8 @@
         "attention": "Atenţie",
         "cancelTextPrompt": "Sigur anulaţi?",
         "cancelTextProgress": "Aşteptaţi anularea progresului",
-        "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
+        "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi.",
+        "testNotApplicable": "Nu se aplică la scanarea personalizată"
     },
     "smartPerformance": {
         "title": "Health & Support",

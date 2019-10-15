@@ -31,25 +31,25 @@
 				<ng-container *ngIf="account?.state === 'trial'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.trialPeriod' | translate: {remainingDay: account?.expirationDay }">
-						<a [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
+						<a class="font-weight-bold" [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'trialExpired'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.trialExpiredPeriod' | translate">
-						<a class="warning"></a>
+						<a class="warning font-weight-bold"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'standard'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.subscriptionPeriod' | translate: {remainingDay: account?.expirationDay }">
-						<a [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
+						<a class="font-weight-bold" [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'standardExpired'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.subscriptionExpiredPeriod' | translate">
-						<a class="warning"></a>
+						<a class="warning font-weight-bold"></a>
 					</p>
 				</ng-container>
 				<p class="m-0 pl-0"><span>Lenovo ID: </span><span [innerHTML]="account?.lenovoId"></span></p>
@@ -58,28 +58,28 @@
 				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
-					[title]="'homeSecurity.overview.buyNow' | translate"
+					btnHeight=true
 					[label]="'homeSecurity.overview.buyNow' | translate">
 				</vtr-ui-button>
 				<vtr-ui-button *ngIf="account?.state === 'standardExpired'"
 					metricsItem="renew"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
-					[title]="'homeSecurity.overview.renewNow' | translate"
+					btnHeight=true
 					[label]="'homeSecurity.overview.renewNow' | translate">
 				</vtr-ui-button>
 				<vtr-ui-button
 					metricsItem="extendNow" *ngIf="account?.state === 'standard'"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
-					[title]="'homeSecurity.overview.extendNow' | translate"
+					btnHeight=true
 					[label]="'homeSecurity.overview.extendNow' | translate">
 				</vtr-ui-button>
 			</div>
@@ -99,10 +99,10 @@
 			<vtr-ui-button
 				metricsItem="goToDashboard"
 				metricsEvent="featureClick"
-				(click)="common.openCornet()"
+				(onClick)="common.openCornet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
-				[title]="'homeSecurity.overview.goDashboard' | translate"
+				btnHeight=true
 				[label]="'homeSecurity.overview.goDashboard' | translate">
 			</vtr-ui-button>
 		</div>
@@ -115,11 +115,11 @@
 			<vtr-ui-button
 				metricsItem="disconnect"
 				metricsEvent="featureClick"
-				(click)="disconnect()"
+				(onClick)="disconnect()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-disconnect"
 				buttonColor="red"
-				[title]="'homeSecurity.overview.disconnect' | translate"
+				btnHeight=true
 				[label]="'homeSecurity.overview.disconnect' | translate">
 			</vtr-ui-button>
 		</div>

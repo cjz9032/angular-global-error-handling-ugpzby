@@ -1597,7 +1597,8 @@
         },
         "banner": {
             "neverChecked": "Dobro došli u Ažuriranje sistema.",
-            "title": "Ažuran sistem je zdrav sistem.",
+			"title": "Ažuran sistem je zdrav sistem.",
+			"installingTitle": "Tokom ažuriranja nemojte da prebacujete računar u režim spavanja ili hibernacije.",
             "last": "Poslednji put ažurirano: ",
             "next": "Sledeće planirano ažuriranje: ",
             "checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",
@@ -1832,7 +1833,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
-                "unknown": "Nepoznato"
+                "unknown": "Nepoznato",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2592,7 +2594,8 @@
         "attention": "Pažnja",
         "cancelTextPrompt": "Želite li zaista da otkažete?",
         "cancelTextProgress": "Sačekajte otkazivanje",
-        "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga."
+        "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga.",
+        "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje"
     },
     "smartPerformance": {
         "title": "Health & Support",

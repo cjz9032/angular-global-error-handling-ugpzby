@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-ui-button',
@@ -11,6 +12,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() isHalfWidth: boolean;
 	@Input() alreadyJoinGroup = 'unjoined';
 	@Input() upperCaseLabel = true;
+	@Input() capitalizeLabel = false;
 	@Output() onClick = new EventEmitter<any>();
 
 	@Input() tooltip = true;
@@ -28,15 +30,21 @@ export class UiButtonComponent implements OnInit {
 	@Input() isRegular = false;
 	@Input() btnHeight = false;
 	@Input() isGradient = false;
-	@Input() isRed = false;
 	@Input() buttonColor: string;
 	@Input() title: string;
 	@Input() linkId: any;
 	@Input() routerPath: string;
+	@Input() href: string;
+	@Input() inRedBackground = false;
+	@Input() tabIndex = 0;
 
 	constructor() { }
 
 	onClickButton(event) {
+		if (this.href) {
+			WinRT.launchUri(this.href);
+			return;
+		}
 		this.onClick.emit(event);
 	}
 

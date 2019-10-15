@@ -1597,7 +1597,8 @@
         },
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
-            "title": "A naprakész rendszer megfelelően működik.",
+			"title": "A naprakész rendszer megfelelően működik.",
+			"installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
@@ -1832,7 +1833,8 @@
             },
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
-                "unknown": "Ismeretlen"
+                "unknown": "Ismeretlen",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2592,7 +2594,8 @@
         "attention": "Figyelem",
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
-        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
+        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
+        "testNotApplicable": "Egyéni ellenőrzésnél nem használható"
     },
     "smartPerformance": {
         "title": "Health & Support",
