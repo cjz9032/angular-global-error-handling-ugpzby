@@ -90,7 +90,7 @@
 												class="white-btn"
 												linkId="sa-av-link-subscribe"
 												metricsEvent="itemClick"
-												metricsItem="subscribe"
+												metricsItem="btn.subscribe.no-antivirus"
 												metricsParent="security.antivirus"
 												upperCaseLabel=false
 												btnHeight=true
@@ -140,7 +140,7 @@
 												<p class="subtitle sub-font"
 													*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 													<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-														metricsItem="subscribe" metricsParent="security.antivirus"
+														metricsItem="link.subscribe" metricsParent="security.antivirus"
 														href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
 												</p>
 											</div>
@@ -148,7 +148,7 @@
 												<p class="subtitle sub-font"
 													*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 													<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-														metricsItem="subscribe" metricsParent="security.antivirus"
+														metricsItem="link.subscribe" metricsParent="security.antivirus"
 														href="{{common.urlGetMcAfee}}" target="_blank"></a>
 												</p>
 											</div>
@@ -167,7 +167,7 @@
 													<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
 														linkId="sa-av-link-subscribe"
 														metricsEvent="itemClick"
-														metricsItem="subscribe"
+														metricsItem="btn.subscribe"
 														metricsParent="security.antivirus"
 														upperCaseLabel=false
 														btnHeight=true
@@ -178,7 +178,7 @@
 														class="px-4"
 														linkId="sa-av-link-subscribe"
 														metricsEvent="itemClick"
-														metricsItem="subscribe"
+														metricsItem="btn.subscribe"
 														metricsParent="security.antivirus"
 														upperCaseLabel=false
 														btnHeight=true
@@ -211,7 +211,7 @@
 											<p class="subtitle sub-font"
 												*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-													metricsItem="subscribe" metricsParent="security.antivirus"
+													metricsItem="link.subscribe500" metricsParent="security.antivirus"
 													href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
 											</p>
 										</div>
@@ -220,7 +220,7 @@
 											<p class="subtitle sub-font"
 												*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-													metricsItem="subscribe" metricsParent="security.antivirus"
+													metricsItem="link.subscribe500" metricsParent="security.antivirus"
 													href="{{common.urlGetMcAfee}}" target="_blank"></a>
 											</p>
 										</div>
