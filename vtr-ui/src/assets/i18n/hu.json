@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
-                "seeDetailsLink": "Részletek megtekintése"
+                "seeDetailsLink": "Részletek megtekintése",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Tápellátás",
@@ -1032,6 +1035,42 @@
                         "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
                         "checkBoxDesc": "Automatikus észlelés",
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1322,19 +1361,19 @@
                             "cancel": "NE MOST"
                         }
                     },
-					"VoipHotkeys": {
-						"title": "Gyorsbillentyűkhöz kapcsolódó VoIP-funkciók",
-						"description": {
-							"main": "A funkció lehetővé teszi, hogy a megfelelő billentyűkkel fogadjon vagy elutasítson egy VoIP-hívást.",
-							"f10": "F10: hívás fogadása",
-							"f11": "F11: elutasítás, vagy a hívás befejezése"
-						},
-						"tooltip": "Ez a funkció jelenleg csak a Skype for Business 2016 és a Microsoft Teams 1.0 verzióban használható.<br>A funkció használatához le kell tölteni és telepíteni kell a megfelelő alkalmazást.",
-						"hasInstalledAppsDescription": "Válassza ki, melyik alkalmazással szeretné használni a gyorsbillentyűket:",
-						"noInstalledAppsDescription": "A funkció csak az alábbi alkalmazásokban áll rendelkezésre: ",
-						"hasInstalledAppsNote": "Megjegyzés: A Microsoft Teams 1.0 verzióban a hívás nem fejezhető be az F11 billentyűvel.",
-						"noInstalledAppsNote": "Megjegyzés: A funkció használatához először le kell tölteni és telepíteni kell az alkalmazásokat."
-					}
+                    "VoipHotkeys": {
+                        "title": "Gyorsbillentyűkhöz kapcsolódó VoIP-funkciók",
+                        "description": {
+                            "main": "A funkció lehetővé teszi, hogy a megfelelő billentyűkkel fogadjon vagy elutasítson egy VoIP-hívást.",
+                            "f10": "F10: hívás fogadása",
+                            "f11": "F11: elutasítás, vagy a hívás befejezése"
+                        },
+                        "tooltip": "Ez a funkció jelenleg csak a Skype for Business 2016 és a Microsoft Teams 1.0 verzióban használható.<br>A funkció használatához le kell tölteni és telepíteni kell a megfelelő alkalmazást.",
+                        "hasInstalledAppsDescription": "Válassza ki, melyik alkalmazással szeretné használni a gyorsbillentyűket:",
+                        "noInstalledAppsDescription": "A funkció csak az alábbi alkalmazásokban áll rendelkezésre: ",
+                        "hasInstalledAppsNote": "Megjegyzés: A Microsoft Teams 1.0 verzióban a hívás nem fejezhető be az F11 billentyűvel.",
+                        "noInstalledAppsNote": "Megjegyzés: A funkció használatához először le kell tölteni és telepíteni kell az alkalmazásokat."
+                    }
                 },
                 "userDefinedKey": {
                     "title": "Felhasználó által megadott billentyű",
@@ -1409,6 +1448,17 @@
                             "slow": "Lassú"
                         },
                         "toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben. A képernyő zárolási sebességére a tényleges felhasználói alkalmazás, a szenzor tulajdonságai és a Windows képernyőre vonatkozó időtúllépési beállításai is hatással vannak. Ezért határozottan azt javasoljuk, hogy azonnal zárolja a rendszert, amikor magára hagyja az eszközt."
+                    },
+                    "facialRecognition": {
+                        "title": "ARCFELISMERÉS",
+                        "caption": "Engedélyezheti az arcfelismerési funkciót, és lehetővé teheti, hogy hozzáférjen a kamerához. Ez az eszköz rögzíti a képét annak érdekében, hogy pontosan felismerje jelenlétét, vagy észlelje, ha a készüléket felügyelet nélkül hagyta. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                        "checkBox": "Kapcsolja be a kamerát, és engedélyezze a funkciót",
+                        "note": {
+                            "permission": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
+                            "privacyMode": "A Lenovo Vantage kamera adatvédelmi módja be van kapcsolva. A jelölőnégyzet funkciója nem működik.",
+                            "windowsLink": "A Windows beállításaiban adhatja meg a hozzáférést",
+                            "privacyLink": "Lépjen a Kamera adatvédelmi módba, hogy kikapcsolja"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1597,8 +1647,8 @@
         },
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
-			"title": "A naprakész rendszer megfelelően működik.",
-			"installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
+            "title": "A naprakész rendszer megfelelően működik.",
+            "installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
@@ -1834,7 +1884,7 @@
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
                 "unknown": "Ismeretlen",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
-                "seeDetailsLink": "Flere oplysninger"
+                "seeDetailsLink": "Flere oplysninger",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Strøm",
@@ -1032,6 +1035,42 @@
                         "description": "Beskyt flyets vekselstrømskontakt ved at styre systemets strømforbrug.Når Flytilstand er aktiveret, reducerer computeren strømforbruget ved at begrænse batteriopladningshastigheden og systemets ydeevne.",
                         "checkBoxDesc": "Automatisk registrering",
                         "note": "Hvis den automatiske søgefunktion er markeret, slår computeren automatisk Flytilstand til, når den registrerer et miljø om bord på et fly, og slår den fra, når du forlader flyet."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1322,19 +1361,19 @@
                             "cancel": "IKKE NU"
                         }
                     },
-					"VoipHotkeys": {
-						"title": "VoIP-genvejsfunktioner:",
-						"description": {
-							"main": "Med denne funktion kan du besvare eller afvise et VoIP-opkald ved at trykke på genvejstasterne på tastaturet:",
-							"f10": "F10: Besvar opkaldet",
-							"f11": "F11: Afvis eller afbryd opkaldet"
-						},
-						"tooltip": "Denne funktion understøttes i øjeblikket kun i Skype for Business 2016 og Microsoft Teams 1.0.<br>Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
-						"hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
-						"noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
-						"hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
-						"noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
-					}
+                    "VoipHotkeys": {
+                        "title": "VoIP-genvejsfunktioner:",
+                        "description": {
+                            "main": "Med denne funktion kan du besvare eller afvise et VoIP-opkald ved at trykke på genvejstasterne på tastaturet:",
+                            "f10": "F10: Besvar opkaldet",
+                            "f11": "F11: Afvis eller afbryd opkaldet"
+                        },
+                        "tooltip": "Denne funktion understøttes i øjeblikket kun i Skype for Business 2016 og Microsoft Teams 1.0.<br>Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
+                        "hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
+                        "noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
+                        "hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
+                        "noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
+                    }
                 },
                 "userDefinedKey": {
                     "title": "Brugerdefineret tast",
@@ -1409,6 +1448,17 @@
                             "slow": "Langsomt"
                         },
                         "toolTipContent": "Vælg den ønskede indstilling for at låse skærmen ved hurtig/mellem/langsom hastighed, når din tilstedeværelse ikke er registreret. Den tid, hvor skærmen er låst, er dog også påvirket af det aktuelle brugerscenarie, sensorfunktionen og Windows-indstillingerne for skærmtimeout. Vi anbefaler derfor, at du øjeblikkeligt låser systemet, før du forlader det."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIGTSGENKENDELSE",
+                        "caption": "Du kan aktivere ansigtsgenkendelsesfunktionen og tillade, at den får adgang til kameraet. Dette værktøj tager et billede af dig for at kunne registrere din tilstedeværelse med præcision eller registrere, når du har forladt din enhed uden opsyn. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                        "checkBox": "Tænd for kameraet, og aktivér denne funktion",
+                        "note": {
+                            "permission": "Lenovo Vantage har ikke adgang til kamera. Afkrydsningsfeltet fungerer ikke.",
+                            "privacyMode": "Privat kameratilstand er aktiveret for Lenovo Vantage. Afkrydsningsfeltet fungerer ikke.",
+                            "windowsLink": "Gå til Windows-indstillinger for at give adgang",
+                            "privacyLink": "Gå til privat kameratilstand for at slå det fra"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1597,8 +1647,8 @@
         },
         "banner": {
             "neverChecked": "Velkommen til brug af systemopdatering",
-			"title": "Et opdateret system er et velfungerende system.",
-			"installingTitle": "Under opdateringerne må du ikke sætte computeren i slumre- eller dvaletilstand.",
+            "title": "Et opdateret system er et velfungerende system.",
+            "installingTitle": "Under opdateringerne må du ikke sætte computeren i slumre- eller dvaletilstand.",
             "last": "Senest opdateret: ",
             "next": "Næste planlagte opdatering: ",
             "checkButton": "SØG EFTER OPDATERINGER",
@@ -1834,7 +1884,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
                 "unknown": "Ukendt",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {

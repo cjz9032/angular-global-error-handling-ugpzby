@@ -5,8 +5,7 @@
 
 	<left-content>
 		<div class="container-fluid">
-			<div class="row"
-				*ngIf="!isOnline">
+			<div class="row" *ngIf="!isOnline">
 				<div class="col col-12 px-40 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
@@ -156,8 +155,7 @@
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-status componentName="system status"
 						[title]="'dashboard.systemStatus.title' | translate"
-						[description]="'dashboard.systemStatus.subtitle' | translate"
-						[items]="systemStatus"
+						[description]="'dashboard.systemStatus.subtitle' | translate" [items]="systemStatus"
 						[linkId]="'dashboard-ss'">
 					</vtr-widget-status>
 				</div>
@@ -167,9 +165,7 @@
 				*ngIf="!androidService.isAndroid && deviceService.isArm">
 				<div class="col-sm-12 col-md-12 pb-60 cont">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
-						[description]="'common.qAndA.subtitle' | translate"
-						[items]="qaService.qas"
-						blockPosition="r4"
+						[description]="'common.qAndA.subtitle' | translate" [items]="qaService.qas" blockPosition="r4"
 						[linkId]="'dashboard-qa'"></vtr-widget-questions>
 				</div>
 			</div>

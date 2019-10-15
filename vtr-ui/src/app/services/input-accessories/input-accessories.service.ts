@@ -155,7 +155,6 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-
 	public getTopRowFnStickKeyCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -167,7 +166,6 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-
 	public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -249,7 +247,38 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	public GetFnCtrlSwapCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnCtrlSwapCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 
+	public GetFnCtrlSwap() {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnCtrlSwap();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public SetFnCtrlSwap(value) {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.SetFnCtrlSwap(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 	public getMouseCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {
