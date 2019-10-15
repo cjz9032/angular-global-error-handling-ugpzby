@@ -15,7 +15,7 @@ export class AntiVirusViewModel {
 		status: false,
 		enabled: false,
 		metrics: [],
-		launch() { return Promise.resolve(true); }
+		launch(): Promise<boolean> { return new Promise(() => true); } // added to fix build error
 	};
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,
@@ -27,7 +27,7 @@ export class AntiVirusViewModel {
 		name: 'security.antivirus.others.unknown',
 	};
 	metricsList: Array<any> = [];
-	otherFirewall: OtherInfo ;
+	otherFirewall: OtherInfo;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,

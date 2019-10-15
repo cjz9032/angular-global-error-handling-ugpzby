@@ -159,6 +159,9 @@
 	vtr-container-collapsible {
 		.vtr-container-collapsible.white-theme {
 			background: $dark_cell !important;
+			.card {
+				background: $dark_cell !important;
+			}
 		}
 	}
 	.vtr-page,
@@ -291,6 +294,7 @@
 
 							&.white-theme {
 								.card {
+									background-color: $dark_cell !important;
 									.card-header {
 										.header {
 											text-transform: uppercase;
@@ -460,6 +464,7 @@
 					background: $dark_cell !important;
 
 					.card {
+						background-color: $dark_cell !important;
 						.card-header {
 							.header {
 								color: $gaming_light_blue !important;
@@ -640,7 +645,81 @@
 						}
 					}
 				}
+
+				//badsectorspage				
+					.vtr-device-information{						
+						vtr-recover-bad-sectors{
+							.vtr-recover-bad-sectors{
+								background: $dark_cell;
+								.header {
+								.heading1 {
+								color: $gaming_info_link;
+								}
+								} 
+								.vtr-ui-list-checkbox-hardware {
+									.list-group {
+										.list-group-item {
+											background-color: $gaming-Darkslate-blue;
+											border: 0.1rem solid $screen_dark_15;
+											.title {
+											color: $gaming_lightest;
+											}
+											.subtitle {
+											color: $gaming_grey_lightest;
+											}
+											.select-item-subtitle {
+												color: $gaming_grey_lightest;
+											} 
+										}
+									}
+									.options {
+										.select-item {
+											color: $main;									
+										}							
+										.select-item-subtitle {
+											color: $shade_darker;
+										}
+									}
+
+								}
+							
+							}
+						}
+					}		
+
+				//till here
+
+
 				.vtr-hardware-components {
+					.vtr-device-information{
+						background: $dark_cell;
+						.header {
+						.heading1 {
+						color: $gaming_info_link;
+						}
+						} 
+						vtr-ui-hardware-list-checkbox {
+						.vtr-ui-list-checkbox-hardware {
+						.list-group {
+						.list-group-item {
+						background-color: $gaming-Darkslate-blue;
+						border: 0.1rem solid $screen_dark_15;
+						.title {
+						color: $gaming_lightest;
+						}
+						.subtitle {
+						color: $gaming_grey_lightest;
+						}
+						}
+						}
+						}
+						}
+						.select-item-subtitle {
+						color: $gaming_grey_lightest;
+						} 
+						
+					}
+						
 					.hardware-scan-items {
 						background: $dark_cell;
 						.header {
@@ -844,7 +923,7 @@
 				vtr-widget-questions {
 					.vtr-widget-questions {
 						background-color: auto;
-						background: $dark_cell;
+						background: $dark_cell !important;
 
 						.title {
 							color: $gaming_lightest !important;
@@ -1109,20 +1188,6 @@
 		p {
 			font-size: 1.5rem;
 			color: $stop !important;
-		}
-	}
-	.vtr-recover-bad-sectors {
-		background-color: $dark_cell;
-		.header {
-			.heading1 {
-				color: $gaming_lightest;
-			}
-			.action-anchor {
-				color: $gaming_info_link;
-				&:hover {
-					text-decoration: none;
-				}
-			}
 		}
 	}
 	.progress-value-text {

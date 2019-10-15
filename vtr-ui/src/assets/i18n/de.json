@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "Willkommen bei der Systemaktualisierung.",
-            "title": "Ein aktuelles System ist in gutem Zustand.",
+			"title": "Ein aktuelles System ist in gutem Zustand.",
+			"installingTitle": "Versetzen Sie Ihren Computer während der Aktualisierung nicht in den Energiesparmodus oder Ruhezustand.",
             "last": "Letzte Aktualisierung: ",
             "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} bietet Ihnen grundlegenden Schutz für Ihr Gerät",
-                "unknown": "Unbekannt"
+                "unknown": "Unbekannt",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2553,7 +2555,7 @@
             "delete": "Löschen",
             "warningBatterySaver": "Anmerkung: Geplante Scans werden im Akkusparmodus nicht ausgeführt",
             "scheduleIntervalLimit": "Ein weiterer Scan wurde bereits innerhalb einer 10-minütigen Zeitspanne geplant. Wählen Sie eine andere Zeit aus.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Ihr Scan wurde geplant und wird am folgenden Tag im Hintergrund ausgeführt:"
         },
         "recoverBadSectors": {
             "title": "Wiederherstellung von fehlerhaften Sektoren",
@@ -2603,7 +2605,8 @@
         "attention": "Achtung",
         "cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?",
         "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist",
-        "pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn."
+        "pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn.",
+        "testNotApplicable": "Nicht zutreffend bei benutzerdefinierter scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

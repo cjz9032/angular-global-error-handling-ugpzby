@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
-            "title": "Een bijgewerkt systeem is een gezond systeem.",
+			"title": "Een bijgewerkt systeem is een gezond systeem.",
+			"installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
-                "unknown": "Onbekend"
+                "unknown": "Onbekend",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "Let op",
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
-        "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
+        "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit.",
+        "testNotApplicable": "Niet van toepassing op aangepaste scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

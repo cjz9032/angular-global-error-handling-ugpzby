@@ -2,11 +2,9 @@ import {
 	Injectable
 } from '@angular/core';
 import {
-	VantageShellService
-} from '../vantage-shell/vantage-shell.service';
-import {
 	FeatureStatus
 } from 'src/app/data-models/common/feature-status.model';
+import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,8 +19,7 @@ export class SmartAssistService {
 	public isShellAvailable = false;
 	public isAPSavailable = false;
 
-	constructor(shellService: VantageShellService) {
-		console.log('SHELL SERVICE----------------------------------', shellService);
+	constructor(shellService: BaseVantageShellService) {
 		this.intelligentSensing = shellService.getIntelligentSensing();
 		this.intelligentMedia = shellService.getIntelligentMedia();
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
@@ -49,7 +46,6 @@ export class SmartAssistService {
 	 */
 	public getHPDVisibilityInThinkPad(): Promise<boolean> {
 		// HPD global switch status. true means show, false means hide
-		//return this.intelligentSensing.GetHPDGlobalCapability();
 		return this.intelligentSensing.GetHPDCapability();
 	}
 

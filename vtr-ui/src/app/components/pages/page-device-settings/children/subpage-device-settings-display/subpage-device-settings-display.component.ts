@@ -168,12 +168,6 @@ export class SubpageDeviceSettingsDisplayComponent
 			}
 		);
 
-		const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
-		// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-		if (welcomeTutorial && welcomeTutorial.page === 2) {
-			this.initFeatures();
-		}
-
 		this.cameraSession_id = this.route
 		.queryParamMap
 		.pipe(

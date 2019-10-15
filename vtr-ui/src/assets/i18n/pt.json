@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "Bem-vindo à Atualização do Sistema.",
-            "title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+			"title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+			"installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo",
-                "unknown": "Desconhecido"
+                "unknown": "Desconhecido",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "Atenção",
         "cancelTextPrompt": "Tem a certeza de que pretende cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
-        "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a."
+        "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a.",
+        "testNotApplicable": "Não aplicável na verificação personalizada"
     },
     "smartPerformance": {
         "title": "Health & Support",

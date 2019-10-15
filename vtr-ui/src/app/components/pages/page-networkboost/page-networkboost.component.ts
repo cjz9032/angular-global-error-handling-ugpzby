@@ -15,9 +15,10 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 @Component({
 	selector: 'vtr-page-networkboost',
 	templateUrl: './page-networkboost.component.html',
-	styleUrls: [ './page-networkboost.component.scss' ]
+	styleUrls: ['./page-networkboost.component.scss']
 })
 export class PageNetworkboostComponent implements OnInit {
+
 	public showTurnOnModal = false;
 	public showAppsModal = false;
 	changeListNum = 0;
@@ -28,12 +29,8 @@ export class PageNetworkboostComponent implements OnInit {
 	needToAskStatusObj: any = {};
 	isOnline = true;
 	// CMS Content block
-	cardContentPositionA: any = {
-		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
-	};
-	cardContentPositionB: any = {
-		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
-	};
+	cardContentPositionA: any = {};
+	cardContentPositionB: any = {};
 	cardContentPositionBCms: any = {};
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
@@ -53,6 +50,7 @@ export class PageNetworkboostComponent implements OnInit {
 		this.titleService.setTitle('gaming.common.narrator.pageTitle.networkBoost');
 		this.isUPEFailed = false; // init UPE request status
 		this.isCmsLoaded = false;
+		this.setPreviousContent();
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -226,6 +224,7 @@ export class PageNetworkboostComponent implements OnInit {
 				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
+					this.networkBoostService.cardContentPositionA = this.cardContentPositionA;
 				}
 
 				const cardContentPositionB = this.cmsService.getOneCMSContent(
@@ -243,7 +242,7 @@ export class PageNetworkboostComponent implements OnInit {
 					this.isCmsLoaded = true;
 					if (this.isUPEFailed || source === 'CMS') {
 						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+						this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
 					}
 				}
 			});
@@ -263,20 +262,30 @@ export class PageNetworkboostComponent implements OnInit {
 							if (this.cardContentPositionB.BrandName) {
 								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 							}
+							// 		cardContentPositionB.DataSource = 'upe';
+							// 		this.dashboardService.cardContentPositionB = cardContentPositionB;
+							// 		this.isUPEFailed = false;
+							// 	}
+							// },
+							// (err) => {
+							// 	this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+							// 	this.isUPEFailed = true;
+							// 	if (this.isCmsLoaded) {
+							// 		this.cardContentPositionB = this.cardContentPositionBCms;
+							// 		this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+							// 	}
 							cardContentPositionB.DataSource = 'upe';
-							this.dashboardService.cardContentPositionB = cardContentPositionB;
+							this.networkBoostService.cardContentPositionB = cardContentPositionB;
 							this.isUPEFailed = false;
 						}
-					},
-					(err) => {
+					}, (err) => {
 						this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
 						this.isUPEFailed = true;
 						if (this.isCmsLoaded) {
 							this.cardContentPositionB = this.cardContentPositionBCms;
-							this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+							this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
 						}
-					}
-				);
+					});
 			}
 		});
 	}
@@ -297,4 +306,10 @@ export class PageNetworkboostComponent implements OnInit {
 			);
 		});
 	}
+
+	private setPreviousContent() {
+		this.cardContentPositionA = this.networkBoostService.cardContentPositionA;
+		this.cardContentPositionB = this.networkBoostService.cardContentPositionB;
+	}
+
 }

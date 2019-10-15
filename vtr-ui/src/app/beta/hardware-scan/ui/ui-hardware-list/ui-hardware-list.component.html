@@ -28,12 +28,16 @@
 								</fa-icon>
 								<fa-icon [icon]="['fas', 'exclamation-triangle']" class="warning" *ngSwitchCase="4">
 								</fa-icon>
+								<fa-icon [icon]="['fas', 'ban']" class="not-applicable" *ngSwitchCase="6">
+								</fa-icon>
 								<fa-icon [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchDefault>
 								</fa-icon>
 							</div>
 						</div>
-						<div class="title">{{item.name}}</div> 
+						
+						<div class="title" [ngClass]="{'not-applicable': item.status === 6}">{{item.name}}</div>
 						<div class="subtitle" *ngIf="item.subname">{{item.subname}}</div>
+						<div class="span-not-applicable" *ngIf="item.status === 6">{{testNotApplicable}}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
 						<fa-icon class="result-code-icon" triggers="click:blur" placement="auto"
@@ -54,9 +58,12 @@
 								</fa-icon>
 								<fa-icon [icon]="['fas', 'exclamation-circle']" class="failure" *ngSwitchCase="5">
 								</fa-icon>
+								<fa-icon [icon]="['fas', 'ban']" class="not-applicable" *ngSwitchCase="6">
+								</fa-icon>
 								<fa-icon [icon]="['fas', 'question-circle']" *ngSwitchDefault>
 								</fa-icon>
 							</div>
+							
 						</div>
 					</div>
 				</div>

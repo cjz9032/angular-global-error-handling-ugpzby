@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "歡迎使用系統更新。",
-            "title": "保持最新狀態的系統才是健康的系統。",
+			"title": "保持最新狀態的系統才是健康的系統。",
+			"installingTitle": "在更新期間，請勿讓電腦進入睡眠或休眠模式。",
             "last": "上次更新：",
             "next": "下次的排定更新：",
             "checkButton": "檢查更新",
@@ -1762,7 +1763,7 @@
             "good": "良好",
             "malicious": "惡意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您可以從安全分數了解自身的線上安全，最後得分將依下列條件而異：",
+            "securityScoreDepends": "您的安全結果依下列條件而異：",
             "antivirus": "是否獲得防毒軟體的保護",
             "password": "是否在安全方式中採用強式及複雜的密碼進行管理",
             "vpn": "是否監控網路遭受攻擊的風險",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
-                "unknown": "不明"
+                "unknown": "不明",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "請注意",
         "cancelTextPrompt": "您確定要取消嗎？",
         "cancelTextProgress": "請等待取消進度",
-        "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。"
+        "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。",
+        "testNotApplicable": "不適用於自訂掃描"
     },
     "smartPerformance": {
         "title": "Health & Support",

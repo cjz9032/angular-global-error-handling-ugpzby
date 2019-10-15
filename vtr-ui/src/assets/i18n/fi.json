@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "Tervetuloa käyttämään Järjestelmäpäivitystä.",
-            "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+			"title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+			"installingTitle": "Älä aseta tietokonetta lepo- tai horrostilaan päivitysten aikana.",
             "last": "Viimeksi päivitetty: ",
             "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
-                "unknown": "Tuntematon"
+                "unknown": "Tuntematon",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "Huomio:",
         "cancelTextPrompt": "Haluatko varmasti peruuttaa?",
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
-        "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se."
+        "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
+        "testNotApplicable": "Ei sovellu mukautettu tarkistus"
     },
     "smartPerformance": {
         "title": "Health & Support",

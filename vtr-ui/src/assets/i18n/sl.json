@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "Uporabite posodobitev sistema.",
-            "title": "Posodobljen sistem je zdrav sistem.",
+			"title": "Posodobljen sistem je zdrav sistem.",
+			"installingTitle": "Računalnika med posodabljanjem ne preklopite v stanje pripravljenosti ali mirovanje.",
             "last": "Zadnja posodobitev: ",
             "next": "Naslednja načrtovana posodobitev: ",
             "checkButton": "ISKANJE POSODOBITEV",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo",
-                "unknown": "Neznan"
+                "unknown": "Neznan",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "Opozorilo",
         "cancelTextPrompt": "Ali ste prepričani, da želite preklicati?",
         "cancelTextProgress": "Počakajte na potek preklica",
-        "pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga."
+        "pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga.",
+        "testNotApplicable": "Ni upoštevno pri pregledu po meri"
     },
     "smartPerformance": {
         "title": "Health & Support",

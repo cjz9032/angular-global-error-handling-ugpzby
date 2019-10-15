@@ -769,7 +769,8 @@ export class HardwareScanService {
 			module.information = currentGroup.resultDescription;
 			for (let i = 0; i < currentGroup.testResultList.length; i++) {
 				module.listTest[i].status = currentGroup.testResultList[i].result;
-				if (module.listTest[i].status !== HardwareScanTestResult.Pass) {
+				if (module.listTest[i].status !== HardwareScanTestResult.Pass &&
+					module.listTest[i].status !== HardwareScanTestResult.Na) {
 					this.modules.status = false;
 				}
 				module.listTest[i].percent = currentGroup.testResultList[i].percentageComplete;

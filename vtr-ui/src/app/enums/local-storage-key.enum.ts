@@ -23,7 +23,6 @@ export enum LocalStorageKey {
 	SecurityWifiSecurityHistorys = '[LocalStorageKey] SecurityWifiSecurityHistorys',
 	SecurityWifiSecurityIsLocationServiceOn = '[LocalStorageKey] SecurityWifiSecurityIsLocationServiceOn',
 	SecurityHomeProtectionChsConsoleUrl = '[LocalStorageKey] SecurityHomeProtectionChsConsoleUrl',
-	SecurityHomeProtectionDevicePosture = '[LocalStorageKey] SecurityHomeProtectionDevicePosture',
 	SecurityHomeProtectionStatus = '[LocalStorageKey] SecurityHomeProtectionStatus',
 	SecurityHomeProtectionFamilyId = '[LocalStorageKey] SecurityHomeProtectionFamilyId',
 	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
@@ -187,5 +186,6 @@ export enum LocalStorageKey {
 	// App Search
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing'
 }

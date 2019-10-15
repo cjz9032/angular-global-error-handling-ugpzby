@@ -11,15 +11,16 @@
 	</ul>
 	<div class="d-flex">
 		<div class="ml-0 mr-4 pl-0">
-			<button id="{{agreeButtonId}}" type="button"
-				class="btn btn-default modal-button"
-				(click)="onOkClick($event)"
+			<vtr-ui-button
 				vtrMetrics
 				metricsParent="Security.WifiSecurity"
 				metricsItem="agreeOpenLocation"
-				metricsEvent="featureClick">
-				{{OkText | translate}}
-			</button>
+				metricsEvent="featureClick"
+				[linkId]="agreeButtonId"
+				(onClick)="onOkClick($event)"
+				[title]="OkText | translate"
+				[label]="OkText | translate"
+			></vtr-ui-button>
 		</div>
 		<div class="ml-0 mr-4 pl-0">
 			<div id="{{cancelButtonId}}" role="button"

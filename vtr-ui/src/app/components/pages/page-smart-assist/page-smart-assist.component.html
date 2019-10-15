@@ -25,6 +25,7 @@
 						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentSecurity'"
+								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
 								componentName="intelligent security" [isCollapsed]="false" [allowCollapse]="true"
 								[theme]="'white'" (toggle)="onCardCollapse($event)">
@@ -363,6 +364,7 @@
 						*ngIf="intelligentScreen.isIntelligentScreenVisible">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
+								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
 								componentName="intelligent screen" [isCollapsed]="false" [allowCollapse]="true"
 								[theme]="'white'" (toggle)="onCardCollapse($event)">
@@ -445,6 +447,7 @@
 					<div class="row py-5 smart-assist-card" id="aps" *ngIf='isAPSAvailable'>
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible [collapseLinkId]="'activeProtection'"
+								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
 								componentName="" [isCollapsed]="false" [allowCollapse]="true" [theme]="'white'"
 								(toggle)="onCardCollapse($event)">
@@ -458,6 +461,7 @@
 					<div class="row py-5 smart-assist-card" id="voice" *ngIf="lenovoVoice.available">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
+								[tabIndex]="0"
 								[cardTitle]="'device.smartAssist.voice.title' | translate"
 								[isCollapsed]="false"
 								[allowCollapse]="true"

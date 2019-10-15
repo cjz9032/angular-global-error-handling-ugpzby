@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
-            "title": "保持最新状态的系统才是健康的系统。",
+			"title": "保持最新状态的系统才是健康的系统。",
+			"installingTitle": "在更新期间，请勿使计算机进入睡眠或休眠模式。",
             "last": "上次更新时间：",
             "next": "下次计划更新时间：",
             "checkButton": "检查更新",
@@ -1762,7 +1763,7 @@
             "good": "良好",
             "malicious": "恶意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您的安全分数可以让您了解您的在线安全情况，其结果取决于您是否：",
+            "securityScoreDepends": "您的安全结果取决于您是否：",
             "antivirus": "受到反病毒软件的保护",
             "password": "以安全的方式管理安全程度强且复杂的密码",
             "vpn": "监控您的网络以防暴露给攻击者",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}}为您的设备提供基本保护",
-                "unknown": "未知"
+                "unknown": "未知",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "注意",
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
-        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
+        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。",
+        "testNotApplicable": "不适用于定制扫描"
     },
     "smartPerformance": {
         "title": "Health & Support",

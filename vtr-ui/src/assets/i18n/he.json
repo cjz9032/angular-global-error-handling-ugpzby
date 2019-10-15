@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "ברוכים הבאים לשימוש ב'עדכון המערכת'.",
-            "title": "מערכת עדכנית היא מערכת תקינה.",
+			"title": "מערכת עדכנית היא מערכת תקינה.",
+			"installingTitle": "במהלך העדכונים, אין להעביר את המחשב למצב שינה או המתנה.",
             "last": "עודכן לאחרונה: ",
             "next": "העדכון המתוכנן הבא: ",
             "checkButton": "חיפוש עדכונים",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} מציע הגנה בסיסית למכשיר שלכם",
-                "unknown": "לא ידוע"
+                "unknown": "לא ידוע",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "שימו לב",
         "cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?",
         "cancelTextProgress": "המתינו לביצוע הביטול",
-        "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה."
+        "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה.",
+        "testNotApplicable": "לא ישים בסריקה מותאמת אישית"
     },
     "smartPerformance": {
         "title": "Health & Support",

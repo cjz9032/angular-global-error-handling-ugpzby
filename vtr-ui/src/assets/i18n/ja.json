@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "システム アップデートへようこそ。",
-            "title": "最新のシステムは健全なシステムです。",
+			"title": "最新のシステムは健全なシステムです。",
+			"installingTitle": "更新時に、ご使用のコンピューターをスリープ状態または休止状態にしないでください。",
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
-                "unknown": "不明"
+                "unknown": "不明",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "重要",
         "cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
-        "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。"
+        "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
+        "testNotApplicable": "カスタム・スキャンには適用されません"
     },
     "smartPerformance": {
         "title": "Health & Support",

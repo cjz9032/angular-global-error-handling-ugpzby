@@ -515,9 +515,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.closeLegionEdgePopups();
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			if (this.gamingCapabilities.xtuService === false) {
-				this.legionUpdate[1].isDriverPopup = $event;
+				this.legionUpdate[1].isDriverPopup = true;
 			} else {
-				this.legionUpdate[1].isPopup = $event;
+				this.legionUpdate[1].isPopup = true;
 			}
 			this.gamingSystemUpdateService
 				.setRamOCStatus(!status)
@@ -525,7 +525,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.catch((error) => {});
 		}
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
-			this.legionUpdate[4].isPopup = $event;
+			this.legionUpdate[4].isPopup = true;
 			this.gamingHybridModeService
 				.setHybridModeStatus(!status)
 				.then((value: boolean) => {})
@@ -552,7 +552,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			this.gamingCapabilities.fbnetFilter = !!this.gamingCapabilities.fbnetFilter;
 			if (!this.gamingCapabilities.fbnetFilter) {
-				this.legionUpdate[2].isDriverPopup = $event;
+				this.legionUpdate[2].isDriverPopup = true;
 			} else {
 				await this.setNetworkBoostStatus(status);
 			}

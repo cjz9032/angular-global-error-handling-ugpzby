@@ -1608,7 +1608,8 @@
         },
         "banner": {
             "neverChecked": "Vitajte v službe aktualizácie systému.",
-            "title": "Aktuálny systém je zdravý systém.",
+			"title": "Aktuálny systém je zdravý systém.",
+			"installingTitle": "Počas vykonávania aktualizácií neprepínajte svoj počítač do režimu spánku ani do režimu dlhodobého spánku.",
             "last": "Posledná aktualizácia: ",
             "next": "Ďalšia plánovaná aktualizácia: ",
             "checkButton": "VYHĽADAŤ AKTUALIZÁCIE",
@@ -1843,7 +1844,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia",
-                "unknown": "Neznáma"
+                "unknown": "Neznáma",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2603,7 +2605,8 @@
         "attention": "Upozornenie",
         "cancelTextPrompt": "Naozaj chcete vykonať zrušenie?",
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
-        "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju."
+        "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju.",
+        "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu"
     },
     "smartPerformance": {
         "title": "Health & Support",
