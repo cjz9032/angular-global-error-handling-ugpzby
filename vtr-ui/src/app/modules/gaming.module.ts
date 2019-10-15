@@ -43,6 +43,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTop';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import { FeedbackModule } from './feedback/feedback.module';
 
 library.add(faSpinner);
 library.add(faCog);
@@ -89,7 +90,8 @@ library.add(faArrowAltToTop);
 		MetricsModule,
 		WidgetOfflineModule,
 		NgbModalModule,
-		NgbTooltipModule
+		NgbTooltipModule,
+		FeedbackModule
 	],
 	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
