@@ -14,8 +14,7 @@ export class AntiVirusViewModel {
 		firewallStatus: false,
 		status: false,
 		enabled: false,
-		metrics: [],
-		launch(): Promise<boolean> { return new Promise(() => true); } // added to fix build error
+		metrics: []
 	};
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,
