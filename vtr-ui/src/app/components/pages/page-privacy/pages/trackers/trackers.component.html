@@ -14,7 +14,7 @@
 				vtrSendAnalytics
 				[metricsEvent]="'ItemClick'"
 				[metricsItem]="'ViewInLenovoPrivacyEssentialsButton'"
-				*ngIf="(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0"
+				*ngIf="(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0 && (isConsentGiven$ | async)"
 				(click)="openFigleafApp()">
 			Block in the app
 		</button>

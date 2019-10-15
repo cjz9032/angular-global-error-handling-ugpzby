@@ -28,9 +28,7 @@ export class CountNumberOfIssuesService {
 	);
 	websiteTrackersCount = this.trackingMapService.trackingData$.pipe(
 		filter((trackingData) => trackingData.typeData === typeData.Users),
-		map((trackingData) => {
-			return Object.keys(trackingData.trackingData.trackers).length;
-		}),
+		map((trackingData) => Object.keys(trackingData.trackingData.trackers).length),
 		startWith(0),
 		shareReplay(1)
 	);
