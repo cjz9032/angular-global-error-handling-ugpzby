@@ -5,7 +5,7 @@
 			<h2 class="title"
 				id="{{textId}}-header-title">
 				<span tabindex="0"
-					[attr.aria-label]="title + ', page'">{{title}}</span>
+					attr.aria-label="{{title}}'page'">{{title}}</span>
 			</h2>
 		</div>
 	</div>
@@ -18,7 +18,7 @@
 					<div class="col">
 						<div class="caption"
 							id="{{textId}}-header-caption"
-							attr.aria-label="{{textId}}-header-caption"
+							attr.aria-label="{{caption}}"
 							tabindex="0">
 							{{caption}}
 						</div>
@@ -29,7 +29,7 @@
 					<div class="col">
 						<div class="menu-title"
 							id="{{textId}}-jumptToSettings-title"
-							attr.aria-label="{{textId}}-jumptToSettings-title">
+							attr.aria-label="{{menuTitle}}:">
 							{{menuTitle}}:
 						</div>
 					</div>
