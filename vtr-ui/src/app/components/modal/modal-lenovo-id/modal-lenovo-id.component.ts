@@ -195,12 +195,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 			// This is the link to clear cache for SSO production environment
 			this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
-			const LidSsoDevMode = this.commonService.getLocalStorageValue(LocalStorageKey.LidSsoDevMode);
-			if (LidSsoDevMode) {
-				this.isSsoDevMode = true;
-				// This is the link to clear cache for SSO dev environment
-				this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
-			}
 			this.cacheCleared = true;
 		}
 	}
