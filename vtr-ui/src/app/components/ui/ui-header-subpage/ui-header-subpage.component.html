@@ -4,7 +4,7 @@
 		<div class="col">
 			<h2 class="title"
 				id="{{textId}}-header-title">
-				<span tabindex="1"
+				<span tabindex="0"
 					[attr.aria-label]="title + ', page'">{{title}}</span>
 			</h2>
 		</div>
@@ -19,7 +19,7 @@
 						<div class="caption"
 							id="{{textId}}-header-caption"
 							attr.aria-label="{{textId}}-header-caption"
-							tabindex="1">
+							tabindex="0">
 							{{caption}}
 						</div>
 					</div>
@@ -39,7 +39,7 @@
 					<div *ngFor="let item of items; let i=index"
 						class="col-auto p-0">
 						<div class="menu-item"
-							tabindex="1"
+							tabindex="0"
 							vtrMetrics
 							metricsItem="{{item.metricsItem}}"
 							metricsEvent="FeatureClick"

@@ -4,7 +4,7 @@
 			<button type="button"
 				role="button"
 				class="close"
-				tabindex="1"
+				tabindex="0"
 				id="ds-threshold-popup-close-button"
 				aria-hidden="true"
 				attr.aria-label="ds-threshold-popup-close-button"
@@ -26,7 +26,7 @@
 	<hr>
 	<div class="row">
 		<button id="battery-threshold-popup-enable"
-			tabindex="1"
+			tabindex="0"
 			role="button"
 			attr.aria-label="battery-threshold-popup-enable"
 			class="btn enable-button"
@@ -34,7 +34,7 @@
 			(keydown.enter)="enableBatteryChargeThreshold()">{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.enable' | translate}}</button>
 		<a id="battery-threshold-popup-cancel"
 			attr.aria-label="battery-threshold-popup-cancel"
-			tabindex="1"
+			tabindex="0"
 			role="link"
 			(click)="closeModal()"
 			(keydown.enter)="closeModal()"

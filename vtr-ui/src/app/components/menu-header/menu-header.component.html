@@ -1,7 +1,7 @@
 <div class="vtr-menu-header">
 	<ng-container *ngFor="let tab of menuItems; let i=index;">
 		<div class="menu-header-tab {{tab.prop}}"
-			tabindex="1"
+			tabindex="0"
 			routerLink="/{{tab.path}}"
 			routerLinkActive="active"
 			(keydown.enter)="changeRoute(tab.path)"

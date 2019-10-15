@@ -22,7 +22,7 @@
 				class="close-button bg-white"
 				id="myDevice-settings-battery-deatails-card-close-icon"
 				aria-label="myDevice-settings-battery-deatails-card-close-icon"
-				tabindex="1"
+				tabindex="0"
 				ngbAutofocus
 				(click)="modal.dismiss('Cross click')"
 				(keydown.esc)="modal.dismiss('Cross click')"
@@ -33,7 +33,7 @@
 			</button>
 		</div>
 		<div class="modal-body"
-			tabindex="1">
+			tabindex="0">
 			<vtr-battery-detail [dataInfo]="batteryInfo"
 				[dataIndicator]="batteryIndicator"
 				[dataConditions]="batteryConditions"> </vtr-battery-detail>
@@ -119,7 +119,7 @@
 				[label]="'device.deviceSettings.batteryGauge.button' | translate"
 				attr.aria-label="myDevice-settings-battery-details-btn"
 				[attr.aria-disabled]="isBatteryDetailsBtnDisabled"
-				[tabindex]="1"></vtr-ui-button>
+				[tabindex]="0"></vtr-ui-button>
 
 
 		</div>

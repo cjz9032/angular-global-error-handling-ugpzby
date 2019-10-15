@@ -2,7 +2,7 @@
 	<div class="button-box">
 		<div *ngIf="alreadyJoinGroup !== 'joined'">
 			<button 
-				[tabindex]="tabindex"
+				[tabindex]="tabindex ? tabindex : 0"
 				title="{{tooltip?label:''}}"
 				[disabled]="isDisabled"
 				type="button"
@@ -32,7 +32,7 @@
 		</div>
 		<div *ngIf="alreadyJoinGroup === 'joined'">
 			<button 
-				[tabindex]="tabindex"
+			[tabindex]="tabindex ? tabindex : 0"
 				title="{{tooltip?label:''}}"
 				type="button"
 				class="button disable"
