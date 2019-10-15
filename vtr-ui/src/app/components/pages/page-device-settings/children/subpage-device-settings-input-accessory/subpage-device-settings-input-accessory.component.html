@@ -134,19 +134,19 @@
 							</ng-template>
 						</vtr-ui-row-switch>
 					</li>
-					<li class="pt-3">
+					<li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
 							componentName="Fn key and Ctrl key swap "
 							[caption]="'device.deviceSettings.inputAccessories.fnCtrlKey.description' | translate"
 							[leftIcon]="['fal','sync']" [showChildContent]="true" [theme]="'white'"
-							[isSwitchVisible]="true" [isSwitchChecked]="switchValue"
-							(rebootToggleOnOff)="fnCtrlKey($event)" [switchId]="'inputAccessories-fnCtrlKey'">
+							[isSwitchVisible]="true" [isSwitchChecked]="fnCtrlSwapStatus"
+							(toggleOnOff)="fnCtrlKey($event)" [switchId]="'inputAccessories-fnCtrlKey'">
 							<div class="row">
 								<div class="col-auto pt-3">
-									<img *ngIf="switchValue === true"
+									<img *ngIf="fnCtrlSwapStatus === true"
 										src="../../../../../../assets/images/Fn-Ctrl-key.PNG">
-									<img *ngIf="switchValue === false"
+									<img *ngIf="fnCtrlSwapStatus === false"
 										src="../../../../../../assets/images/Fn-Ctrl-key.PNG">
 								</div>
 							</div>
