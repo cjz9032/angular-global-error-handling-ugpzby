@@ -6,8 +6,17 @@
 	.button-box {
 		padding: 0.5rem;
 		position: relative;
-		@media #{$mediaquery_7} {
-			margin-top: 1.2rem;
+
+		.loadingIcon {
+			position: absolute;
+			left: 45%;
+			top: 40%;
+		}
+
+		.loadingIcon {
+			position: absolute;
+			left: 45%;
+			top: 40%;
 		}
 		.loadingIcon {
 			position: absolute;
@@ -28,7 +37,9 @@
 			@media #{$mediaquery_X4} {
 				min-width: 10rem;
 			}
-			min-height: 6rem;
+			padding: 0 2.5rem;
+			position: relative;
+			min-height: 5.2rem;
 			border-radius: 3rem;
 			min-width: 12rem;
 			background: $gradient_main;
@@ -39,12 +50,36 @@
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
-			// cursor: pointer;
-			padding: 0 2.5rem;
-			// max-width: 33rem;
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
+
+			&:hover {
+				background: $blue_gradient;
+			}
+
+			&:focus {
+				outline: 0;
+				box-shadow: none;
+			}
+
+			&:focus::after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: -0.4rem;
+				top: -0.4rem;
+				border-radius: 500px;
+				width: calc(100% + 0.8rem);
+				height: calc(100% + 0.8rem);
+				border: thin solid $menu_hover;
+			}
+
+			.text {
+				display: block;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				letter-spacing: 0;
+				cursor: pointer;
+			}
 		}
 
 		.text-upper-case {
@@ -56,7 +91,18 @@
 		}
 
 		.disable {
-			background: $button_disable;
+			background: $grey_light !important;
+			opacity: 1;
+			color: $shade_blue !important;
+			border: none !important;
+			cursor: default;
+			&:hover {
+				background: $grey_light !important;
+			}
+			.text {
+				cursor: default;
+				opacity: 0.5;
+			}
 		}
 
 		.loading {
@@ -74,27 +120,38 @@
 		.regular-width {
 			width: 25rem;
 		}
-		.min-height {
-			min-height: 32px !important;
+
+		.btn-size-small {
+			min-height: 3.5rem;
+			font-size: 1.4rem;
 		}
 
 		.btn-gradient {
 			background-color: $button_gradient_start;
 			background-image: linear-gradient(to right, $button_gradient_start, $button_gradient_end);
 		}
+
 		.btn-red {
 			background: $gradient_red;
 			color: $light;
-			&:focus {
-				box-shadow: 0 0 0 0.2rem $button_red_shadow;
+			&:hover {
+				background: linear-gradient(90deg, $button_red_start 0%, $button_red_start 100%);
 			}
 		}
+
 		.btn-gray {
 			background: $gradient_gray;
 			color: $shade_blue;
 			border: 0.1rem solid $grey_dark;
-			&:focus {
-				box-shadow: 0 0 0 0.2rem $text_light;
+			&:hover {
+				background: linear-gradient(90deg, $grey_lighter 0%, $grey_lighter 100%);
+			}
+		}
+		.btn-in-red-bg {
+			color: $stop_dark;
+			border: 0.1rem solid $alt;
+			&:focus::after {
+				border: thin solid $orange;
 			}
 		}
 	}

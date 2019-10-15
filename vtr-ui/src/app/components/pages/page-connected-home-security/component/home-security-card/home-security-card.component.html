@@ -12,10 +12,10 @@
 					[ngClass]="{'disable': location?.isLoading}"
 					metricsEvent="featureClick"
 					metricsItem="startTrial"
-					(click)="openTrialModal()"
-					[title]="'homeSecurity.card.startTrial' | translate"
+					(onClick)="openTrialModal()"
 					[label]="'homeSecurity.card.startTrial' | translate"
 					[isDisabled]="location?.isLoading"
+					btnHeight=true
 					linkId="chs-card-btn-startTrial">
 				</vtr-ui-button>
 			</div>
@@ -32,9 +32,10 @@
 					[ngClass]="{'disable': location?.isLoading}"
 					metricsEvent="featureClick"
 					metricsItem="joinGroup"
-					[title]="'homeSecurity.card.join' | translate"
 					[label]="'homeSecurity.card.join' | translate"
 					[isDisabled]="location?.isLoading"
+					buttonColor="gray"
+					btnHeight=true
 					(onClick)="joinGroup()"
 					linkId="chs-card-btn-joinGroup">
 				</vtr-ui-button>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-ui-button',
@@ -12,6 +13,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() alreadyJoinGroup = 'unjoined';
 	@Input() upperCaseLabel = true;
 	@Input() tabindex = 0;
+	@Input() capitalizeLabel = false;
 	@Output() onClick = new EventEmitter<any>();
 
 	@Input() tooltip = true;
@@ -19,7 +21,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
 	@Input() metricsValue: string;
-	@Input() metricsEvent: string = 'FeatureClick';
+	@Input() metricsEvent = 'FeatureClick';
 	@Input() metricsParam: string;
 	@Input() metricsItemPosition: string;
 	@Input() metricsPageNumber: string;
@@ -29,20 +31,27 @@ export class UiButtonComponent implements OnInit {
 	@Input() isRegular = false;
 	@Input() btnHeight = false;
 	@Input() isGradient = false;
-	@Input() isRed = false;
 	@Input() buttonColor: string;
 	@Input() title: string;
 	@Input() linkId: any;
 	@Input() routerPath: string;
+	@Input() href: string;
+	@Input() inRedBackground = false;
+	@Input() tabIndex = 0;
+	@Input() isLoading = false;
 
 	constructor() { }
 
 	onClickButton(event) {
+		if (this.href) {
+			WinRT.launchUri(this.href);
+			return;
+		}
 		this.onClick.emit(event);
 	}
 
 	getButtonColor(buttonColor) {
-		if (!buttonColor) { return;	}
+		if (!buttonColor) { return; }
 		return `btn-${buttonColor}`;
 	}
 

@@ -56,6 +56,9 @@
 				color: $blueHyperLink;
 				border-bottom: 0.1rem solid $blueHyperLink;
 				height: 3rem;
+				&:hover {
+					color: $blue-light;
+				}
 			}
 		}
 		&.page-two {

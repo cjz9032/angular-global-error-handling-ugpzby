@@ -491,13 +491,14 @@ export class HardwareScanService {
 	public async initLoadingModules(culture) {
 		this.hasItemsToRecoverBadSectors = false;
 		this.getAllItems(culture).then(() => {
-			this.getItemsToRecoverBadSectors().then((response) => {
-				this.devicesToRecoverBadSectors = response.categoryList[0];
-				console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
-				if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
-					this.hasItemsToRecoverBadSectors = true;
-				}
-			});
+			// Recover is hidden because CLI is under approval on SSRB - SR-2087 -->
+			// this.getItemsToRecoverBadSectors().then((response) => {
+			// 	this.devicesToRecoverBadSectors = response.categoryList[0];
+			// 	console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
+			// 	if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
+			// 		this.hasItemsToRecoverBadSectors = true;
+			// 	}
+			// });
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
 		});
@@ -768,7 +769,8 @@ export class HardwareScanService {
 			module.information = currentGroup.resultDescription;
 			for (let i = 0; i < currentGroup.testResultList.length; i++) {
 				module.listTest[i].status = currentGroup.testResultList[i].result;
-				if (module.listTest[i].status !== HardwareScanTestResult.Pass) {
+				if (module.listTest[i].status !== HardwareScanTestResult.Pass &&
+					module.listTest[i].status !== HardwareScanTestResult.Na) {
 					this.modules.status = false;
 				}
 				module.listTest[i].percent = currentGroup.testResultList[i].percentageComplete;

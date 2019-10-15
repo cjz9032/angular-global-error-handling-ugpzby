@@ -27,7 +27,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
 	public keyboardCompatibility: boolean;
-	public switchValue = false;
 	public stickyFunStatus = false;
 	public isTouchPadVisible = false;
 	public isMouseVisible = false;
@@ -36,6 +35,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public installedApps: VoipApp[] = [];
 	public showVoipHotkeysSection = false;
 	public isAppInstalled = false;
+	public fnCtrlSwapCapability: boolean = false;
+	public fnCtrlSwapStatus: boolean = false;
 	voipAppName = ['Skype For Business', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
@@ -56,6 +57,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+			this.getFnCtrlSwapCapability();
 		}
 		this.getMouseAndTouchPadCapability();
 	}
@@ -291,9 +293,56 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		}
 	}
 
-	fnCtrlKey(event) {
-		this.switchValue = event.switchValue;
-	}
+	public getFnCtrlSwapCapability() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnCtrlSwapCapability().then(res => {
+					this.fnCtrlSwapCapability = res;
+					if(this.fnCtrlSwapCapability){
+						this.getFnCtrlSwap();
+					}
+				}).catch((error) => {
+					this.logger.error('GetFnCtrlSwapCapability', error.message);
+				});
+			}
+		} catch (error) {
+			this.logger.error('GetFnCtrlSwapCapability', error.message);
+			return EMPTY;
+		}
+		}
+		public getFnCtrlSwap() {
+			try {
+				if (this.keyboardService.isShellAvailable) {
+					this.keyboardService.GetFnCtrlSwap().then(res => {
+						this.fnCtrlSwapStatus = res;
+					}).catch(error => {
+							this.logger.error('GetFnCtrlSwap error here', error.message);
+							return EMPTY;
+						});
+				}
+			} catch (error) {
+				this.logger.error('GetFnCtrlSwap', error.message);
+				return EMPTY;
+			}			
+		}
+
+	public fnCtrlKey(event) {
+			this.fnCtrlSwapStatus = event.switchValue;
+			try {
+				if (this.keyboardService.isShellAvailable) {
+					this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
+						// if (res.RebootRequired === true) {
+						// 	this.keyboardService.restartMachine();
+						// }
+					}).catch((error) => {
+						this.logger.error('SetFnCtrlSwap', error.message);
+					});
+				}
+			} catch (error) {
+				this.logger.error('SetFnCtrlSwap', error.message);
+				return EMPTY;
+			}				
+		}
 
 	public launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {

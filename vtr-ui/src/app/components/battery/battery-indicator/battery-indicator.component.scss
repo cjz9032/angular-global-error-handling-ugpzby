@@ -250,6 +250,18 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				font-size: 1rem !important;
 			}
 		}
+		.detail-battery {
+			left: -1rem !important;
+			.remaining-text {
+				font-size: 1rem !important;
+			}
+			.remaining-text-detail {
+				font-size: 1rem !important;
+			}
+		}
+		.detail-battery {
+			left: -1rem !important;
+		}
 
 		.battery-charging {
 			z-index: 5;

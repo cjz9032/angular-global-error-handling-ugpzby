@@ -5,7 +5,7 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 @Component({
 	selector: 'vtr-modal-add-apps',
 	templateUrl: './modal-add-apps.component.html',
-	styleUrls: ['./modal-add-apps.component.scss']
+	styleUrls: [ './modal-add-apps.component.scss' ]
 })
 export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	statusAskAgain: boolean;

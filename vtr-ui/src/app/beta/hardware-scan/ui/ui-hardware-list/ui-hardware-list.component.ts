@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-ui-hardware-list',
@@ -10,10 +11,10 @@ export class UiHardwareListComponent implements OnInit {
 	@Input() details: Array<any>;
 	@Input() template = 1;
 	@Input() collapsed: boolean = this.collapsed || false;
+  	public testNotApplicable = this.translate.instant('hardwareScan.testNotApplicable');
 	public information: string;
 
-
-	constructor() { }
+	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
 	}
