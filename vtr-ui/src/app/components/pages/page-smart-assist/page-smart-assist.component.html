@@ -128,11 +128,11 @@
 												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 												(toggleOnOff)="onDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
-												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
+												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled">
 											</vtr-ui-row-switch>
 											<!-- Add appropriate [enableSlider]="!intelligentSecurity.isZeroTouchLoginAdjustEnabled" -->
 											<div class="slider-note"
-												[class.disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
+												[class.disabled]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled">
 												<vtr-ui-range-slider [rangeSliderId]="'thinkpadDistanceSensitivity'"
 													[manualRefresh]="manualRefresh"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
@@ -143,7 +143,7 @@
 													[enableSlider]="!intelligentSecurity.isHPDEnabled || !intelligentSecurity.isZeroTouchLoginEnabled">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled || !intelligentSecurity.isHPDEnabled"
 													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
 													<div class="feature-note p-4">
 														<div class="row blur">
@@ -261,7 +261,8 @@
 													[maxValue]="3"
 													[value]="sesnsitivityAdjustVal">
 												</vtr-ui-range-slider>
-												<div class="pt-3">
+												<div class="pt-3"
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<div class="col">
@@ -283,11 +284,13 @@
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate"
 												[isSwitchVisible]="false"
 												[theme]="'white'"
+												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)"
 												[rightIcon]="['far', 'question-circle']"
 												[tooltipText]="tooltipText| translate">
 											</vtr-ui-row-switch>
 
-											<div class="slider-note">
+											<div class="slider-note"
+												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_fast'"
 													[group]="'autoScreenLockTimer'"
 													name="autoScreenLockTimerFast"
@@ -295,7 +298,7 @@
 													[value]="'1'"
 													[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
 													(change)="onZeroTouchLockTimerChange($event, '1')"
-													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
+													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 												</vtr-ui-rounded-rectangle-radio>
 												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_medium'"
 													[group]="'autoScreenLockTimer'"
@@ -304,7 +307,7 @@
 													[value]="'2'"
 													[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
 													(change)="onZeroTouchLockTimerChange($event, '2')"
-													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
+													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 												</vtr-ui-rounded-rectangle-radio>
 												<vtr-ui-rounded-rectangle-radio [radioId]="'autoScreenLockTimer_slow'"
 													[group]="'autoScreenLockTimer'"
@@ -313,14 +316,21 @@
 													[value]="'3'"
 													[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
 													(change)="onZeroTouchLockTimerChange($event, '3')"
-													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
+													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 												</vtr-ui-rounded-rectangle-radio>
 
-												<div class="feature-note screen-lock-note p-4 mt-2 mb-2 mr-2">
-													<p id="smart-assist-zeroTouchLock-note"
-														attr.aria-label="smart-assist-zeroTouchLock-note">
-														{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
-													</p>
+												<div class="pt-3"
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+													<div class="feature-note p-4">
+														<div class="row blur">
+															<div class="col">
+																<p id="smart-assist-zeroTouchLock-note"
+																	attr.aria-label="smart-assist-zeroTouchLock-note">
+																	{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
+																</p>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>

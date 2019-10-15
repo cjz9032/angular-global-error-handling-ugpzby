@@ -1091,8 +1091,8 @@
 							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
 						},
 						"popup": {
-							"description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-							"description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
 							"continue": "Continue",
 							"cancel": "Cancel",
 							"yes": "Yes",

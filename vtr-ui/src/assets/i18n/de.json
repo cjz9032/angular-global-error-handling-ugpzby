@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -262,8 +263,9 @@
                 "optionSelected": "selected",
                 "numberInput": {
                     "title": "Number",
-                    "bundledSelected": "is selected bundled",
-                    "unbundledSelected": "is selected unbundled"
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
                 }
             }
         },
@@ -883,7 +885,8 @@
                 },
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",
-                "seeDetailsLink": "Details anzeigen"
+                "seeDetailsLink": "Details anzeigen",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Stromversorgung",
@@ -1032,6 +1035,42 @@
                         "description": "Schützen Sie das Netzteil im Flugzeug, indem Sie den Stromverbrauch des Systems steuern.Wenn die Funktion Flugzeug-Energiemodus aktiviert ist, verringert der Computer den Stromverbrauch durch Beschränkung der Akkuladerate und der Systemleistung.",
                         "checkBoxDesc": "Automatische Erkennung",
                         "note": "Ist die Funktion für automatische Erkennung aktiviert, schaltet der Computer den Flugzeug-Energiemodus automatisch ein, sobald er eine Umgebung erkennt, die dem Inneren einer Flugzeugkabine entspricht, und schaltet ihn beim Verlassen dieser Umgebung wieder aus."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1322,19 +1361,19 @@
                             "cancel": "NICHT JETZT"
                         }
                     },
-					"VoipHotkeys": {
-						"title": "VoIP Hotkey-Funktionen",
-						"description": {
-							"main": "Mit dieser Funktion können Sie einen VoIP-Anruf durch Drücken der Hotkeys auf Ihrer Tastatur annehmen oder ablehnen:",
-							"f10": "F10: Anruf annehmen",
-							"f11": "F11: Anruf ablehnen oder auflegen"
-						},
-						"tooltip": "Derzeit wird diese Funktion nur von Skype for Business 2016 und Microsoft Teams 1.0 unterstützt.<br>Um die Funktion nutzen zu können, müssen Sie zuerst die Apps herunterladen und installieren.",
-						"hasInstalledAppsDescription": "Wählen Sie die App aus, für die Sie die Hotkeys verwenden möchten:",
-						"noInstalledAppsDescription": "Diese Funktion unterstützt nur folgende Anwendungen: ",
-						"hasInstalledAppsNote": "Hinweis: Bei Microsoft Teams 1.0 kann die Taste F11 nicht zum Auflegen des Anrufs verwendet werden.",
-						"noInstalledAppsNote": "Hinweis: Um die Funktion nutzen zu können, müssen Sie zuerst die Apps herunterladen und installieren."
-					}
+                    "VoipHotkeys": {
+                        "title": "VoIP Hotkey-Funktionen",
+                        "description": {
+                            "main": "Mit dieser Funktion können Sie einen VoIP-Anruf durch Drücken der Hotkeys auf Ihrer Tastatur annehmen oder ablehnen:",
+                            "f10": "F10: Anruf annehmen",
+                            "f11": "F11: Anruf ablehnen oder auflegen"
+                        },
+                        "tooltip": "Derzeit wird diese Funktion nur von Skype for Business 2016 und Microsoft Teams 1.0 unterstützt.<br>Um die Funktion nutzen zu können, müssen Sie zuerst die Apps herunterladen und installieren.",
+                        "hasInstalledAppsDescription": "Wählen Sie die App aus, für die Sie die Hotkeys verwenden möchten:",
+                        "noInstalledAppsDescription": "Diese Funktion unterstützt nur folgende Anwendungen: ",
+                        "hasInstalledAppsNote": "Hinweis: Bei Microsoft Teams 1.0 kann die Taste F11 nicht zum Auflegen des Anrufs verwendet werden.",
+                        "noInstalledAppsNote": "Hinweis: Um die Funktion nutzen zu können, müssen Sie zuerst die Apps herunterladen und installieren."
+                    }
                 },
                 "userDefinedKey": {
                     "title": "Benutzerdefinierte Taste",
@@ -1608,8 +1647,8 @@
         },
         "banner": {
             "neverChecked": "Willkommen bei der Systemaktualisierung.",
-			"title": "Ein aktuelles System ist in gutem Zustand.",
-			"installingTitle": "Versetzen Sie Ihren Computer während der Aktualisierung nicht in den Energiesparmodus oder Ruhezustand.",
+            "title": "Ein aktuelles System ist in gutem Zustand.",
+            "installingTitle": "Versetzen Sie Ihren Computer während der Aktualisierung nicht in den Energiesparmodus oder Ruhezustand.",
             "last": "Letzte Aktualisierung: ",
             "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",
@@ -1845,7 +1884,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} bietet Ihnen grundlegenden Schutz für Ihr Gerät",
                 "unknown": "Unbekannt",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
