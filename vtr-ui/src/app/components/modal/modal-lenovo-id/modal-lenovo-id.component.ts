@@ -102,7 +102,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private startBind: any;
 	private completeBInd: any;
 	private notificationSubscription: Subscription;
-	private isSsoDevMode = false;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -257,9 +256,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (eventData.isSuccess) {
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
-			}
-			if (self.isSsoDevMode && eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
-				 return;
 			}
 			self.webView.changeVisibility('spinnerCtrl', false);
 			self.webView.changeVisibility('webviewPlaceHolder', true);
