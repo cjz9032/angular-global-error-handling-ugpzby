@@ -13,6 +13,7 @@
 		[article]="showedArticle"></vtr-article-preview>
 </div>
 <vtr-common-popup [popUpId]="articlePopupId" size="large">
+	<h3>{{article?.Title}}</h3>
 	<ng-template>
 		<ng-container *ngIf="article">
 			<vtr-article-description
