@@ -36,6 +36,8 @@ import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTo
 import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+import { LocationNoticeModule } from './location-notice/location-notice.module';
+import { DialogService } from '../services/dialog/dialog.service';
 
 library.add(faKeyboard);
 library.add(faQuestionCircle);
@@ -68,16 +70,17 @@ library.add(faCheck);
 			loader: {
 				provide: TranslateLoader,
 				useFactory: HttpLoaderFactory,
-				deps: [ HttpClient ]
+				deps: [HttpClient]
 			}
 		}),
 		FontAwesomeModule,
 		ContainerCardModule,
 		MetricsModule,
-		WidgetOfflineModule
+		WidgetOfflineModule,
+		LocationNoticeModule,
 	],
-	exports: [ TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule ],
-	providers: [ MockService ],
+	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
+	providers: [MockService, DialogService],
 	entryComponents: [
 		WidgetLegionEdgeComponent,
 		ModalGamingLegionedgeComponent,
@@ -86,6 +89,6 @@ library.add(faCheck);
 		WidgetQuicksettingsListComponent,
 		WidgetLightingComponent
 	],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class GamingDashboardModule {}
+export class GamingDashboardModule { }
