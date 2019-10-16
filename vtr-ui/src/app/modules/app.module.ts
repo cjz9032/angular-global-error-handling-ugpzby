@@ -57,7 +57,7 @@ import { VantageShellService } from '../services/vantage-shell/vantage-shell.ser
 import { BaseVantageShellService } from '../services/vantage-shell/base-vantage-shell.service';
 import { VantageShellMockService } from '../services/vantage-shell/vantage-shell-mock.service';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -70,6 +70,7 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 	],
 	imports: [
 		BrowserModule,
+		BrowserAnimationsModule,
 		AppRoutingModule,
 		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
 		TranslateModule.forRoot({

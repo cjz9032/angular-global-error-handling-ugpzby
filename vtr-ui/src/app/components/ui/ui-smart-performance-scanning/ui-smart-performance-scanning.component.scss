@@ -50,68 +50,69 @@
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 padding: 0;
-				border-bottom: 0.1rem solid $light;
-				&:hover {
-					text-decoration: none;
-				}
-				&:focus {
-					text-decoration: none;
-				}
+                border-bottom: 0.1rem solid $light;
             }
         }
     }
 
-
-    .pc-info-card{
-        border-radius: 0.8rem;
-        border: 1px solid  $screen_dark_05;
-        background: $main_lightest;
-        padding: 1.5rem;
-        margin: 4rem auto 0rem auto;
-        width: 85%;
-        &.card-small{
-            margin: 2rem auto 0rem auto;
-            .heading {
-                .ng-fa-icon{
-                    font-size: 4rem;
-                    margin-right: 1.5rem;
-                    color: $main_shade;
-                }
-            }
-            .status-text{
-                flex-grow: 8;
-                p {
-                    text-transform: uppercase;
-                    font-size: 1.6rem;
-                    text-align: right;
-                    color: $shade_dark;
-                }
-            }
-        }
-        .heading {
-            display: flex;
-            align-items: center;
-            .ng-fa-icon{
-                font-size: 4.6rem;
-                margin-right: 1.5rem;
-                color: $main_gstart;
-            }
-            h2 {
-                font-size: 2.5rem;
-                padding: 0;
-                font-weight: $weight_medium;
-                color: $main_darkest;
-                text-transform: uppercase;
-            }
-            h3 {
-                font-size: 2rem;
-                padding: 0;
-                font-weight: $weight_medium;
-                color: $main_shade;
-                text-transform: uppercase;
-            }
-        }
-    }
+	.pc-info-card{
+		&::ng-deep {
+			.card {
+				border-radius: 0.8rem;
+				border: 1px solid  $screen_dark_05;
+				background: $main_lightest;
+				padding: 1.5rem;
+				margin: 4rem auto 0rem auto;
+				width: 85%;
+				.card-header {
+					background-color: transparent;
+					border-bottom: none;
+				}
+			}
+		}        &.card-small{
+			margin: 2rem auto 0rem auto;
+			.heading {
+				.ng-fa-icon{
+					font-size: 4rem;
+					margin-right: 1.5rem;
+					color: $main_shade;
+				}
+			}
+			.status-text{
+				flex-grow: 8;
+				p {
+					text-transform: uppercase;
+					font-size: 1.6rem;
+					text-align: right;
+					color: $shade_dark;
+				}
+			}
+		}
+		.heading {
+			display: flex;
+			align-items: center;
+			.ng-fa-icon{
+				font-size: 4.6rem;
+				margin-right: 1.5rem;
+				color: $main_gstart;
+			}
+			h2 {
+				font-size: 2.5rem;
+				padding: 0;
+				font-weight: $weight_medium;
+				color: $main_darkest;
+				text-transform: uppercase;
+			}
+			h3 {
+				font-size: 2rem;
+				padding: 0;
+				font-weight: $weight_medium;
+				color: $main_shade;
+				text-transform: uppercase;
+			}
+		}
+	}
+    
     .icon-box {
         width: 20%;
         position: relative;
@@ -141,5 +142,8 @@
             line-height: 1.6rem;
             color: $main_shade;
         }
-    }
+	}
+	.current-scan{
+		color: $main;
+	}
 }

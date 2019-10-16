@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 
 @Component({
   selector: 'vtr-ui-smart-performance',
@@ -11,9 +13,9 @@ export class UiSmartPerformanceComponent implements OnInit {
 	back = 'smartPerformance.back';
 	backarrow = '< ';
 	isScanning = false;
-	isScanningCompleted = true;
+	isScanningCompleted = false;
 	constructor(
-		private translate: TranslateService
+		private translate: TranslateService,private modalService: NgbModal
 	) {
 		this.translateStrings();
 	}
@@ -31,4 +33,18 @@ export class UiSmartPerformanceComponent implements OnInit {
 
 }
 
+public changeScanStatus() {
+	console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
+	this.isScanningCompleted = true; 
+	this.isScanning = false;
+}
+openSubscribeModal() {
+    this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
+        backdrop: 'static',
+        size: 'lg',
+        centered: true,
+        windowClass: 'subscribe-modal',
+
+    });
+}
 }

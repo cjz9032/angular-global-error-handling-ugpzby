@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 
@@ -11,9 +11,103 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	@Input() showProgress = true;
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
+	@Output() sendScanStatus = new EventEmitter();
+
+	index = 0;
+	@Input() activegroup = "Tune up performance";
+	public vdata=[
+		{
+			"percentage":0,
+			"status":{
+			   "category":"Tune Pc Performance",
+			   "subcategory":"Accumilated junk",
+			   "final":"completed"
+			},
+			"result":{
+			   "Tune":34,
+			   "Boost":14,
+			   "Secure":12
+			},
+			"rating":7
+		 },
+		{
+			"percentage":25,
+			"status":{
+			   "category":"Tune Pc Performance",
+			   "subcategory":"Registry Errors",
+			   "final":"completed"
+			},
+			"result":{
+			   "Tune":34,
+			   "Boost":14,
+			   "Secure":12
+			},
+			"rating":7
+		 },
+	 {
+		"percentage":50,
+		"status":{
+		   "category":"Malware & Security",
+		   "subcategory":"Malware Scan",
+		   "final":"completed"
+		},
+		"result":{
+		   "Tune":34,
+		   "Boost":14,
+		   "Secure":12
+		},
+		"rating":7
+	 },
+	 {
+		"percentage":60,
+		"status":{
+		   "category":"Malware & Security",
+		   "subcategory":"Annoying adware",
+		   "final":"completed"
+		},
+		"result":{
+		   "Tune":34,
+		   "Boost":14,
+		   "Secure":12
+		},
+		"rating":7
+	 },
+	 {
+		"percentage":75,
+		"status":{
+		   "category":"internetperformance",
+		   "subcategory":"Network Settings",
+		   "final":"completed"
+		},
+		"result":{
+		   "Tune":34,
+		   "Boost":14,
+		   "Secure":12
+		},
+		"rating":7
+	 },
+	 {
+		"percentage":100,
+		"status":{
+		   "category":"internetperformance",
+		   "subcategory":"e-junk",
+		   "final":"completed"
+		},
+		"result":{
+		   "Tune":34,
+		   "Boost":14,
+		   "Secure":12
+		},
+		"rating":7
+	 }
+	 
+	]
+	 public scanData : any = {};
+	 public timer: any;
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
+	this.GetScanStatus();	 
   }
   openCancelScanModel() {
 	  this.modalService.open(ModalSmartPerformanceCancelComponent, {
@@ -22,4 +116,35 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 		windowClass: 'cancel-modal'
 	});
   }
+  GetScanStatus() {		 
+	if(this.percent!==100)
+	{
+		this.timer = setInterval(() => {
+			if(this.index < this.vdata.length){
+			 this.GetScanData(this.index)
+			 this.index++;
+			 if(this.index==2)
+			 {
+				this.activegroup = "Malware & Security";
+			 }
+			 if(this.index==4)
+			 {
+				this.activegroup = "Internet performance";
+			 }
+			}	
+		 }, 2000);
+	
+	}
+}
+GetScanData(i: number) {
+	this.scanData = {};
+	console.log('************',i);
+	this.scanData =  this.vdata[i];
+	this.percent = this.scanData.percentage;
+	console.log('************',this.scanData);
+	if(this.percent ==  100){
+		this.sendScanStatus.emit()
+	}
+
+}
 }
