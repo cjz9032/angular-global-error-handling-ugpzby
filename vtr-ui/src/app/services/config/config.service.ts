@@ -7,6 +7,8 @@ import {
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
+import { HypothesisService } from '../hypothesis/hypothesis.service';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,6 +25,8 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	constructor(
 		private deviceService: DeviceService,
+		private hypSettings: HypothesisService,
+		private logger: LoggerService,
 		private commonService: CommonService) {
 	}
 
@@ -36,7 +40,7 @@ export class ConfigService {
 	}
 
 	getMenuItemsAsync(isGaming): Promise<any> {
-		return new Promise((resolve, reject) => {
+		return new Promise(async (resolve, reject) => {
 			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
 			const machineInfo = this.deviceService.getMachineInfoSync();
 			let resultMenu = Object.assign([], this.menuItemsGaming);
@@ -53,9 +57,13 @@ export class ConfigService {
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
-			const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en') && this.deviceService.showCHSMenu;
-			if (!showCHSMenu) {
-				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
+			if (this.hypSettings) {
+				await this.initShowCHSMenu().then((result) => {
+					const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en') && result;
+					if (!showCHSMenu) {
+						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
+					}
+				});
 			}
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
@@ -65,6 +73,14 @@ export class ConfigService {
 			}
 			resultMenu = this.brandFilter(resultMenu);
 			resolve(resultMenu.filter(item => !item.hide));
+		});
+	}
+
+	initShowCHSMenu() {
+		return this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
+			return ((result || '').toString() === 'true');
+		}, (error) => {
+			this.logger.error('DeviceService.initShowCHSMenu: promise rejected ', error);
 		});
 	}
 

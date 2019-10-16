@@ -4,6 +4,7 @@ import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { CommonService } from '../common/common.service';
 import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,6 +21,7 @@ export class SupportService {
 	};
 	warrantyData: { info: any, cache: boolean };
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
+	warrantyDataCache: { info: any, cache: boolean };
 
 	constructor(
 		private shellService: BaseVantageShellService,
@@ -31,13 +33,19 @@ export class SupportService {
 		this.metrics = shellService.getMetrics();
 		this.userGuide = shellService.getUserGuide();
 		this.commonService = commonService;
-		this.warrantyData = {
-			info: {
-				status: -1,
-				url: this.warrantyNormalUrl
-			},
-			cache: false
-		};
+		this.warrantyDataCache = this.commonService.getSessionStorageValue(SessionStorageKey.WarrantyDataCache, undefined);
+		if (this.warrantyDataCache) {
+			this.warrantyData = commonService.cloneObj(this.warrantyDataCache);
+		} else {
+			this.warrantyData = {
+				info: {
+					status: -1,
+					url: this.warrantyNormalUrl
+				},
+				cache: false
+			};
+			this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
+		}
 		if (this.userGuide) {
 			this.userGuide.refresh();
 		}
@@ -92,16 +100,22 @@ export class SupportService {
 						} else {
 							this.warrantyData.info = defaultWarranty;
 						}
+						this.warrantyDataCache = this.commonService.cloneObj(this.warrantyData);
+						this.warrantyDataCache.info.url = this.warrantyNormalUrl;
+						this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyDataCache);
 					}).catch((err) => {
 						console.log(err);
 						this.warrantyData.info = defaultWarranty;
+						this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
 					});
 				} else {
 					this.warrantyData.info = defaultWarranty;
+					this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
 				}
 			}).catch((err) => {
 				console.log(err);
 				this.warrantyData.info = defaultWarranty;
+				this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
 			});
 		}
 	}

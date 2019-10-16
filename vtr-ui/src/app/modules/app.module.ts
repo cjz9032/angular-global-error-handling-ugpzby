@@ -57,6 +57,7 @@ import { VantageShellService } from '../services/vantage-shell/vantage-shell.ser
 import { BaseVantageShellService } from '../services/vantage-shell/base-vantage-shell.service';
 import { VantageShellMockService } from '../services/vantage-shell/vantage-shell-mock.service';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { CommonUiModule } from './common/common-ui.module';
 
 @NgModule({
 	declarations: [
@@ -86,6 +87,7 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 		UiButtonModule,
 		RouterModule,
 		CommonPipeModule,
+		CommonUiModule,
 		FormsModule,
 		ReactiveFormsModule,
 		ModernPreloadModule,
@@ -96,6 +98,7 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
+		CommonUiModule,
 		ModernPreloadModule,
 		PageLayoutModule,
 	],

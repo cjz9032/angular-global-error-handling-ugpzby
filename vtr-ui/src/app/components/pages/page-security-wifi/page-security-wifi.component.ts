@@ -19,6 +19,7 @@ import { GuardService } from '../../../services/guard/security-guardService.serv
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -68,7 +69,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private hypSettings: HypothesisService
 	) {	}
 
 	ngOnInit() {
@@ -93,7 +95,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.language = result.Lang;
-			this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think';
+			if (this.hypSettings) {
+				this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((res) => {
+					this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think' && ((res || '').toString() === 'true');
+				});
+			}
 		}).catch(e => {
 			this.region = 'us';
 			this.language = 'en';
