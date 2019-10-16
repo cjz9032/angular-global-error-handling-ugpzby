@@ -10,6 +10,14 @@ import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } fro
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 
+declare var Windows;
+
+interface ShellVersion {
+	major: number;
+	minor: number;
+	build: number;
+}
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -59,7 +67,12 @@ export class ConfigService {
 			}
 			if (this.hypSettings) {
 				await this.initShowCHSMenu().then((result) => {
-					const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en') && result;
+					const shellVersion = {
+						major: 10,
+						minor: 1910,
+						build: 12
+					};
+					const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en') && result && this.isShowCHSByShellVersion(shellVersion);
 					if (!showCHSMenu) {
 						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 					}
@@ -82,6 +95,13 @@ export class ConfigService {
 		}, (error) => {
 			this.logger.error('DeviceService.initShowCHSMenu: promise rejected ', error);
 		});
+	}
+
+	isShowCHSByShellVersion(shellVersion: ShellVersion) {
+		const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+		return packageVersion.major !== shellVersion.major ? packageVersion.major > shellVersion.major :
+		packageVersion.minor !== shellVersion.minor ? packageVersion.minor > shellVersion.minor :
+		packageVersion.build >= shellVersion.build;
 	}
 
 	brandFilter(menu: Array<any>) {
