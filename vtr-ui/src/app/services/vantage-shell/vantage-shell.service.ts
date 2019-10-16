@@ -59,7 +59,8 @@ export class VantageShellService extends BaseVantageShellService {
 				Phoenix.Features.HardwareScan,
 				Phoenix.Features.BetaUser,
 				Phoenix.Features.DevicePosture,
-				Phoenix.Features.AdPolicy
+				Phoenix.Features.AdPolicy,
+				Phoenix.Features.Registry
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -925,6 +926,13 @@ export class VantageShellService extends BaseVantageShellService {
 	public getMouseAndTouchPad(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.input.inputControlLinks;
+		}
+		return undefined;
+	}
+
+	public getRegistryUtil(): Phoenix.RegistryFeature {
+		if (this.phoenix){
+			return this.phoenix.registry;
 		}
 		return undefined;
 	}
