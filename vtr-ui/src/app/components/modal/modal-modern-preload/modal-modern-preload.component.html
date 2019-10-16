@@ -11,6 +11,8 @@
 			</div>
 			<div class="spinner-content w-100 text-center">
 				<div class="spinner-border text-primary progress-spinner"
+					id="modern-preload-loading"
+					attr.aria-label="modern-preload-loading"
 					role="status"></div>
 			</div>
 			<div class="loading-text"
@@ -61,6 +63,7 @@
 									alt=""
 									srcset="">
 								<div class="status-text"
+									id="modern-preload-status-download-available-{{ app.appID }}"
 									[innerHTML]="'modernPreload.downloadAvailable' | translate"></div>
 							</div>
 							<div class="status-box download_complete"
@@ -70,6 +73,7 @@
 									alt=""
 									srcset="">
 								<div class="status-text"
+									id="modern-preload-status-download-complete-{{ app.appID }}"
 									[innerHTML]="'modernPreload.downloadComplete' | translate"></div>
 							</div>
 							<div class="status-box failed-install"
@@ -79,6 +83,7 @@
 									alt=""
 									srcset="">
 								<div class="status-text"
+									id="modern-preload-status-failed-install-{{ app.appID }}"
 									[innerHTML]="'modernPreload.failedInstall' | translate"></div>
 							</div>
 							<div class="status-box installed"
@@ -88,11 +93,13 @@
 									alt=""
 									srcset="">
 								<div class="status-text"
+									id="modern-preload-status-installed-{{ app.appID }}"
 									[innerHTML]="'modernPreload.installed' | translate"></div>
 							</div>
 							<div class="status-box downloading"
 								*ngSwitchCase="statusEnum.DOWNLOADING">
-								<div class="downloading-text">{{ app.progress }}% <span [innerHTML]="'modernPreload.downloading' | translate"></span></div>
+								<div class="downloading-text"
+									id="modern-preload-status-downloading-{{ app.appID }}">{{ app.progress }}% <span [innerHTML]="'modernPreload.downloading' | translate"></span></div>
 								<div class="progress-box w-100">
 									<ngb-progressbar type="success"
 										[value]="app.progress"
@@ -111,6 +118,8 @@
 						[ngSwitch]="modernPreloadService.DownloadButtonStatus">
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOAD"
 							(onClick)="installEntitledApp()"
+							id="modern-preload-download-button"
+							attr.aria-label="modern-preload-download-button"
 							metricsEvent="FeatureClick"
 							metricsParent="Modern Preload"
 							metricsItem="btn.Download"
@@ -120,6 +129,8 @@
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.RESTART_DOWNLOAD"
 							(onClick)="installEntitledApp()"
+							id="modern-preload-restart-download-button"
+							attr.aria-label="modern-preload-restart-download-button"
 							metricsEvent="FeatureClick"
 							metricsParent="Modern Preload"
 							metricsItem="btn.RestartDownload"
@@ -128,6 +139,8 @@
 							[label]="'modernPreload.restartDownload' | translate">
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOADING"
+							id="modern-preload-downloading-button"
+							attr.aria-label="modern-preload-downloading-button"
 							[isFullWidth]="true"
 							[isDisabled]="true"
 							[label]="'modernPreload.downloading' | translate">
@@ -189,6 +202,8 @@
 						<div class="button-content mb-4">
 							<div class="btn-box mr-5">
 								<vtr-ui-button (onClick)="retry()"
+									id="modern-preload-retry-button"
+									attr.aria-label="modern-preload-retry-button"
 									metricsEvent="FeatureClick"
 									metricsParent="Modern Preload"
 									metricsItem="btn.Retry"
