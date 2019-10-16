@@ -19,7 +19,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12 p-0">
+				<div class="col-sm-12 pb-20 pt-0 px-0">
 					<vtr-widget-carousel [data]="heroBannerItems"
 						order="1"
 						source="title"
@@ -35,7 +35,7 @@
 						link="thumbnailUrl">
 					</vtr-widget-carousel>
 				</div>
-				<div class="col-xl-6 p-0">
+				<div class="col-xl-6 py-20 card-left">
 					<vtr-container-card order="2"
 						[itemID]="cardContentPositionB.Id"
 						[img]="cardContentPositionB.FeatureImage"
@@ -55,7 +55,7 @@
 						aria-label="dashboard-card-b">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 p-0">
+				<div class="col-xl-6 py-20 card-right">
 					<vtr-container-card order="3"
 						[itemID]="cardContentPositionC.Id"
 						[img]="cardContentPositionC.FeatureImage"
@@ -73,7 +73,7 @@
 						aria-label="dashboard-card-c">
 					</vtr-container-card>
 				</div>
-				<div class="col-sm-12 p-0">
+				<div class="col-sm-12 py-20 px-0">
 					<vtr-container-card order="4"
 						[itemID]="cardContentPositionD.Id"
 						[img]="cardContentPositionD.FeatureImage"
@@ -90,7 +90,7 @@
 						aria-label="dashboard-card-d">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 p-0">
+				<div class="col-xl-6 py-20 card-left">
 					<vtr-container-card order="5"
 						[itemID]="cardContentPositionE.Id"
 						[img]="cardContentPositionE.FeatureImage"
@@ -107,7 +107,7 @@
 						aria-label="dashboard-card-e">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 p-0">
+				<div class="col-xl-6 py-20 card-right">
 					<vtr-container-card order="6"
 						[itemID]="cardContentPositionF.Id"
 						[img]="cardContentPositionF.FeatureImage"
@@ -131,14 +131,14 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row" *ngIf="warrantyData && deviceService.showWarranty">
-				<div class="col-sm-12 p-0">
+				<div class="col-sm-12 px-0 pb-20">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
 				</div>
 			</div>
 			<div class="row" *ngIf="!deviceService.showWarranty">
-				<div class="col-sm-12 p-0">
+				<div class="col-sm-12 px-0 pb-0">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"
@@ -148,14 +148,14 @@
 				</div>
 			</div>
 			<div class="row" *ngIf="!deviceService.isArm">
-				<div class="col-sm-12 p-0">
+				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-quicksettings
 						[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
 					</vtr-widget-quicksettings>
 				</div>
 			</div>
 			<div class="row" *ngIf="!deviceService.isArm">
-				<div class="col-sm-12 p-0">
+				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-status componentName="system status"
 						[title]="'dashboard.systemStatus.title' | translate"
 						[description]="'dashboard.systemStatus.subtitle' | translate" [items]="systemStatus"
@@ -166,7 +166,7 @@
 
 			<div class="row"
 				*ngIf="!androidService.isAndroid && deviceService.isArm">
-				<div class="col-sm-12 p-0">
+				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 						[description]="'common.qAndA.subtitle' | translate" [items]="qaService.qas" blockPosition="r4"
 						[linkId]="'dashboard-qa'"></vtr-widget-questions>
@@ -175,7 +175,7 @@
 
 			<div class="row"
 				*ngIf="!deviceService.isArm && !deviceService.isSMode && brand !== 1 && !deviceService.isGaming">
-				<div class="col-sm-12 p-0">
+				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
 						[linkId]="'dashboard'">
 					</vtr-widget-security-status>
@@ -185,7 +185,7 @@
 			<div class="row"
 				*ngIf="deviceService.showWarranty"
 				[vtrAppSearchScroller]="['search-feedback']">
-				<div class="col-sm-12  p-0">
+				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"

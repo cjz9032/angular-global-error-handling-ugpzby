@@ -38,10 +38,11 @@
 
 .vtr-page {
 	&.page-content-bg {
-		background: #f1f1f1;
-		background: linear-gradient(to right, #f1f1f1 40%, #ffffff 40%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1f1f1", endColorstr="#FFFFFF", GradientType=1);
+		background: $shade_extralight;
 		// RESPONSIVE EFFORT
+		// background: #f1f1f1;
+		// background: linear-gradient(to right, #f1f1f1 40%, #ffffff 40%);
+		// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1f1f1", endColorstr="#FFFFFF", GradientType=1);
 		// @media #{$mediaquery_md} {
 		// 	background: none !important;
 		// }
@@ -63,20 +64,25 @@
 			opacity: 0.15;
 		}
 	}
-	.vtr-page-column {
-		padding-top: 0;
-		padding-bottom: 0;
-		&.vtr-page-left-column{
-			padding-left: $padding_side;
-			padding-right: 3rem;
-			background-color: $shade_extralight;
-		}
-		&.vtr-page-right-column{
-			padding-right: $padding_side;
-			padding-left: 3rem;
-		}
-		.vtr-page-column-shift-up {
-			margin-top: -4rem;
+	.vtr-page-columns {
+		max-width: $max_page_width;
+		margin: 0 auto;
+		.vtr-page-column {
+			padding-top: 0;
+			padding-bottom: 0;
+			&.vtr-page-left-column{
+				padding-left: $padding_side;
+				padding-right: 3rem;
+				background-color: $shade_extralight;
+			}
+			&.vtr-page-right-column{
+				padding-right: $padding_side;
+				padding-left: 3rem;
+				background-color: $light;
+			}
+			.vtr-page-column-shift-up {
+				margin-top: -4rem;
+			}
 		}
 	}
 }

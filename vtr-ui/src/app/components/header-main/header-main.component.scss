@@ -23,10 +23,11 @@
 		color: $light;
 		font-size: $page_header;
 		font-weight: $weight_light;
-		display: inline-block;
-		margin: 0;
+		margin: 0 auto;
 		position: relative;
 		z-index: 1;
+		max-width: $max_page_width;
+		padding-left: $padding_side;
 	}
 	.back {
 		color: $light;
