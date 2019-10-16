@@ -73,12 +73,12 @@
 			@media #{$white-on-black}{
 				background-color: $dark;
 				border:none;
-				color:$highlight_bright;
+				color: $highlight_bright;
 			}
 			@media #{$black-on-white}{
 				background-color: $light;
 				border: none;
-				color:$highlight_bright;
+				color: darkviolet;
 			}
 	
 		}
