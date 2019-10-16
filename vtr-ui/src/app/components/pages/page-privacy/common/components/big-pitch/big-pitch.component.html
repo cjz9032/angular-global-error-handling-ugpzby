@@ -26,8 +26,14 @@
 	</div>
 	<div class="pitch__image-wrapper">
 		<img class="pitch__image"
+			 *ngIf="!isTrackerPitch"
 			 src="/assets/images/privacy-tab/pitch-block/Img_pitch_artic.png"
 			 srcset="/assets/images/privacy-tab/pitch-block/Img_pitch_artic@2x.png 2x"
+			 alt="Try FigLeaf">
+		<img class="pitch__image"
+			 *ngIf="isTrackerPitch"
+			 src="/assets/images/privacy-tab/pitch-block/block-tracking.png"
+			 srcset="/assets/images/privacy-tab/pitch-block/block-tracking@2x 2x"
 			 alt="Try FigLeaf">
 	</div>
 </div>

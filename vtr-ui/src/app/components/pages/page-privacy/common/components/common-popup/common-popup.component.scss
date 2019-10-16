@@ -1,3 +1,10 @@
+@import "../../../styles/common-blocks";
+
+:host ::ng-deep h3 {
+	@extend %subtitle;
+	padding: 3.5rem 3.5rem 0;
+}
+
 .popup {
 	$topNavZIndex: 10000;
 	z-index: ($topNavZIndex + 100);
@@ -22,15 +29,13 @@
 		width: 63rem;
 		max-width: 90%;
 		max-height: calc(-3.5rem + 100vh);
-		padding: 3.5rem 4rem 3rem 4rem;
-		margin: 2rem;
 		border-radius: 10px;
 		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
 		text-align: left;
 		position: relative;
 		display: inline-block;
 		vertical-align: middle;
-		overflow: auto;
+		overflow: hidden;
 
 		.popup_big & {
 			width: 86rem;
@@ -39,6 +44,12 @@
 		.popup_large & {
 			width: 109rem;
 		}
+	}
+
+	&__content {
+		max-height: calc(85vh);
+		overflow: auto;
+		padding: 3.5rem 4rem 3rem 4rem;
 	}
 
 	&__close {
