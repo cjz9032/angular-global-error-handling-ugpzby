@@ -43,9 +43,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	private protocalAction: any;
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
-
-
 	warrantyData: { info: any; cache: boolean };
+	public isWarrantyVisible = false;
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -111,7 +110,15 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		this.isOnline = this.commonService.isOnline;
-		this.warrantyData = this.supportService.warrantyData;
+		this.isWarrantyVisible = deviceService.showWarranty;
+		// this.warrantyData = this.supportService.warrantyData;
+		const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus, undefined);
+		if (cacheWarranty) {
+			this.warrantyData = {
+				info: cacheWarranty,
+				cache: true
+			};
+		}
 	}
 
 	ngOnInit() {
@@ -515,6 +522,14 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					break;
+				case LocalStorageKey.LastWarrantyStatus:
+					if (notification.payload) {
+						this.warrantyData = {
+							info: notification.payload,
+							cache: true
+						};
+					}
 					break;
 				default:
 					break;

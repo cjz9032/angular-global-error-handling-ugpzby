@@ -244,12 +244,12 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				} else {
 					warranty = this.deviceStatus[3];
 				}
-				const warrantyDate = this.commonService.formatDate(data.expired);
+				const warrantyDate = this.commonService.formatDate(data.endDate);
 				// in warranty
 				if (data.status === 0) {
 					const today = new Date();
-					const expired = new Date(data.expired);
-					const warrantyInDays = this.commonService.getDaysBetweenDates(today, expired);
+					const endDate = new Date(data.endDate);
+					const warrantyInDays = this.commonService.getDaysBetweenDates(today, endDate);
 
 					this.translate.stream('device.myDevice.warranty.detail.inWarranty').subscribe((value) => {
 						warranty.title = value;
