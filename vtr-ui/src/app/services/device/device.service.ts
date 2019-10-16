@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -29,7 +29,7 @@ export class DeviceService {
 	private machineInfo: any;
 	public showSearch = false;
 	constructor(
-		private shellService: BaseVantageShellService,
+		private shellService: VantageShellService,
 		private commonService: CommonService,
 		public androidService: AndroidService,
 		private router: Router,

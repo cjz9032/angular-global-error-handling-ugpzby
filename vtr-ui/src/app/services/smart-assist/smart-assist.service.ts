@@ -4,7 +4,7 @@ import {
 import {
 	FeatureStatus
 } from 'src/app/data-models/common/feature-status.model';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -19,7 +19,7 @@ export class SmartAssistService {
 	public isShellAvailable = false;
 	public isAPSavailable = false;
 
-	constructor(shellService: BaseVantageShellService) {
+	constructor(shellService: VantageShellService) {
 		this.intelligentSensing = shellService.getIntelligentSensing();
 		this.intelligentMedia = shellService.getIntelligentMedia();
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service

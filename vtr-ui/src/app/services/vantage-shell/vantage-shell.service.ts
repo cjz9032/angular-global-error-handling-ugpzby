@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { BaseVantageShellService } from './base-vantage-shell.service';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
@@ -15,12 +14,11 @@ declare var Windows;
 	providedIn: 'root'
 })
 
-export class VantageShellService extends BaseVantageShellService {
+export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
-		super();
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			this.isShellAvailable = true;
@@ -931,7 +929,7 @@ export class VantageShellService extends BaseVantageShellService {
 	}
 
 	public getRegistryUtil(): Phoenix.RegistryFeature {
-		if (this.phoenix){
+		if (this.phoenix) {
 			return this.phoenix.registry;
 		}
 		return undefined;

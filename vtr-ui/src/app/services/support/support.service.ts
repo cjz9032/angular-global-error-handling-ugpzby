@@ -3,8 +3,8 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal-find-us.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { CommonService } from '../common/common.service';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -24,7 +24,7 @@ export class SupportService {
 	warrantyDataCache: { info: any, cache: boolean };
 
 	constructor(
-		private shellService: BaseVantageShellService,
+		private shellService: VantageShellService,
 		private commonService: CommonService,
 		private modalService: NgbModal,
 	) {
