@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
-xdescribe('GamingAutocloseService', () => {
+xdescribe('GamingAutoCloseService', () => {
 	beforeEach(() => TestBed.configureTestingModule({}));
 
 	// it('should be created', () => {
-	// 	const service: GamingAutocloseService = TestBed.get(GamingAutocloseService);
+	// 	const service: GamingAutoCloseService = TestBed.get(GamingAutoCloseService);
 	// 	expect(service).toBeTruthy();
 	// });
 });

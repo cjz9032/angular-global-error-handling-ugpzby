@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "Запис клавіші макросів для"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "text7": {
                     "title": "Колір"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "Немає запущених програм для додавання",
                 "body": "Відобразяться лише запущені програми. Запустіть програму, яку необхідно додати, та поверніться."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "Ви можете прискорити 5 програм",
                     "part2": "з",
                     "part3": "додано"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -709,11 +880,13 @@
                     "OverheatedBattery": "Акумулятор <b>сильно нагрівся</b>. Вийміть його з комп’ютера та охолодіть до кімнатної температури.",
                     "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
-                    "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму."
+                    "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%.",
-                "seeDetailsLink": "Показати відомості"
+                "seeDetailsLink": "Показати відомості",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Живлення",
@@ -862,6 +1035,42 @@
                         "description": "Захистіть розетку живлення змінного струму в літаку, збалансувавши споживання електроенергії в системі.У режимі У літаку комп'ютер споживає менше електроенергії, обмежуючи швидкість заряду акумулятора та швидкодію системи.",
                         "checkBoxDesc": "Автовизначення",
                         "note": "Якщо функцію автовизначення ввімкнено та комп'ютер визначить, що знаходиться на борту літака, він автоматично перейде у режим \"У літаку\" та вийде з нього, коли виявить, що політ завершено."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1151,6 +1360,19 @@
                             "reboot": "ПЕРЕЗАВАНТАЖИТИ",
                             "cancel": "НЕ ЗАРАЗ"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Функції гарячих клавіш VoIP",
+                        "description": {
+                            "main": "Ця функція дає змогу приймати або відхиляти VoIP-дзвінки, натискаючи гарячі клавіші на клавіатурі:",
+                            "f10": "F10: прийняти дзвінок",
+                            "f11": "F11: відхилити або завершити дзвінок"
+                        },
+                        "tooltip": "Наразі ця функція підтримується лише в Skype for Business 2016 і Microsoft Teams 1.0.<br>Щоб скористатися цією функцією, потрібно спочатку завантажити та інсталювати програми.",
+                        "hasInstalledAppsDescription": "Виберіть програму, у якій потрібно використовувати гарячі клавіші:",
+                        "noInstalledAppsDescription": "Ця функція підтримує лише такі програми: ",
+                        "hasInstalledAppsNote": "Примітка. У Microsoft Teams 1.0 не можна використовувати клавішу F11 для припинення дзвінків.",
+                        "noInstalledAppsNote": "Примітка. Щоб скористатися цією функцією, потрібно спочатку завантажити та інсталювати програми."
                     }
                 },
                 "userDefinedKey": {
@@ -1226,6 +1448,17 @@
                             "slow": "Повільний"
                         },
                         "toolTipContent": "Виберіть потрібний параметр, щоб заблокувати свій екран (швидко, помірно або повільно), коли вашу присутність не виявлено. Але на час блокування екрана також впливають фактичний сценарій користувача, можливості датчиків і настройки часу очікування екрана Windows. Тож ми наполегливо радимо негайно блокувати екран, перш ніж перервати роботу."
+                    },
+                    "facialRecognition": {
+                        "title": "РОЗПІЗНАВАННЯ ОБЛИЧЧЯ",
+                        "caption": "Ви можете ввімкнути функцію розпізнавання обличчя й надати їй доступ до камери. Цей інструмент робить ваші знімки, щоб точно розпізнавати вашу присутність або виявляти, коли ви залишили свій пристрій без нагляду. Ці дані обробляються локально на вашому пристрої. Lenovo не має доступу до них і не використовує їх.",
+                        "checkBox": "Увімкніть камеру й цю функцію",
+                        "note": {
+                            "permission": "Lenovo Vantage не надано доступ до камери. Функція прапорця не працюватиме.",
+                            "privacyMode": "У Lenovo Vantage увімкнуто режим конфіденційності камери. Функція прапорця не працюватиме.",
+                            "windowsLink": "Перейдіть до настройок Windows, щоб надати доступ",
+                            "privacyLink": "Перейдіть до режиму конфіденційності камери, щоб вимкнути її"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1233,7 +1466,8 @@
                     "caption": "Автоматичне регулювання відстані буде автоматично оновлювати відстань розпізнавання за допомогою штучного інтелекту.",
                     "options": {
                         "near": "Поблизу",
-                        "far": "Далеко"
+                        "far": "Далеко",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1487,17 @@
                     "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
                     "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
-                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено."
+                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
                     "screenTimeoutSettings": "Перейти до настройок часу очікування екрана"
                 },
-                "resetToDefault": "Скидання"
+                "resetToDefault": "Скидання",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Інтелектуальний екран",
@@ -1410,6 +1648,7 @@
         "banner": {
             "neverChecked": "Запрошуємо скористатися функцією \"Оновлення системи\".",
             "title": "Оновлена система — це справна система.",
+            "installingTitle": "Під час оновлень не переводьте комп’ютер у режим сну або глибокого сну.",
             "last": "Останнє оновлення: ",
             "next": "Наступне планове оновлення: ",
             "checkButton": "ПЕРЕВІРИТИ НАЯВНІСТЬ ОНОВЛЕНЬ",
@@ -1644,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою",
-                "unknown": "Невідома"
+                "unknown": "Невідома",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2404,7 +2644,8 @@
         "attention": "Увага!",
         "cancelTextPrompt": "Скасувати?",
         "cancelTextProgress": "Дочекайтеся завершення скасування",
-        "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його."
+        "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його.",
+        "testNotApplicable": "Не застосовується для настроюваного сканування"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -2558,5 +2799,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

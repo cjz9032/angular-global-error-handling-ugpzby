@@ -58,31 +58,28 @@
 				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 					metricsItem="buyNow"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-buyNow"
 					btnHeight=true
-					[title]="'homeSecurity.overview.buyNow' | translate"
 					[label]="'homeSecurity.overview.buyNow' | translate">
 				</vtr-ui-button>
 				<vtr-ui-button *ngIf="account?.state === 'standardExpired'"
 					metricsItem="renew"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-renew"
 					btnHeight=true
-					[title]="'homeSecurity.overview.renewNow' | translate"
 					[label]="'homeSecurity.overview.renewNow' | translate">
 				</vtr-ui-button>
 				<vtr-ui-button
 					metricsItem="extendNow" *ngIf="account?.state === 'standard'"
 					metricsEvent="featureClick"
-					(click)="common.upgrade()"
+					(onClick)="common.upgrade()"
 					[isDisabled]="!common"
 					linkId="chs-btn-extendNow"
 					btnHeight=true
-					[title]="'homeSecurity.overview.extendNow' | translate"
 					[label]="'homeSecurity.overview.extendNow' | translate">
 				</vtr-ui-button>
 			</div>
@@ -102,11 +99,10 @@
 			<vtr-ui-button
 				metricsItem="goToDashboard"
 				metricsEvent="featureClick"
-				(click)="common.openCornet()"
+				(onClick)="common.openCornet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
 				btnHeight=true
-				[title]="'homeSecurity.overview.goDashboard' | translate"
 				[label]="'homeSecurity.overview.goDashboard' | translate">
 			</vtr-ui-button>
 		</div>
@@ -119,12 +115,11 @@
 			<vtr-ui-button
 				metricsItem="disconnect"
 				metricsEvent="featureClick"
-				(click)="disconnect()"
+				(onClick)="disconnect()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-disconnect"
 				buttonColor="red"
 				btnHeight=true
-				[title]="'homeSecurity.overview.disconnect' | translate"
 				[label]="'homeSecurity.overview.disconnect' | translate">
 			</vtr-ui-button>
 		</div>

@@ -7,14 +7,16 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
   styleUrls: ['./ui-smart-performance.component.scss']
 })
 export class UiSmartPerformanceComponent implements OnInit {
-title = 'smartPerformance.title';
-back = 'smartPerformance.back';
-backarrow = '< ';
-  constructor(
-	private translate: TranslateService
-  ) {
-	this.translateStrings();
-  }
+	title = 'smartPerformance.title';
+	back = 'smartPerformance.back';
+	backarrow = '< ';
+	isScanning = false;
+	isScanningCompleted = true;
+	constructor(
+		private translate: TranslateService
+	) {
+		this.translateStrings();
+	}
 
   ngOnInit() {
   }

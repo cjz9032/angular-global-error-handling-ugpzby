@@ -922,6 +922,14 @@ export class VantageShellService extends BaseVantageShellService {
 	}
 	// ==================== End Hardware Scan
 
+	// shellService
+	public getVoipHotkeysObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.voipHotkeys;
+		}
+		return undefined;
+	}
+
 	public getMouseAndTouchPad(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.input.inputControlLinks;

@@ -72,6 +72,7 @@
 			p {
 				font-size: 1.5rem;
 				color: $main_darker;
+				margin-bottom: 0rem;
 			}
 			a {
 				text-decoration: underline;
@@ -96,6 +97,14 @@
 				color: #f17f14;
 			}
 		}
+		.normal-ACAdapter-condition {
+			.icomoon-ConditionACAdapterError {
+				&:before {
+					color: #30d487;
+				}
+			}
+		}
+
 		.icomoon-ConditionBadBattery {
 			&:before {
 				color: #e74c3c;

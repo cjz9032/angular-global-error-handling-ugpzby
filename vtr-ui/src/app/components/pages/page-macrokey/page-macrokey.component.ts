@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Title } from '@angular/platform-browser';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -12,9 +13,9 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-page-macrokey',
 	templateUrl: './page-macrokey.component.html',
-	styleUrls: ['./page-macrokey.component.scss']
+	styleUrls: [ './page-macrokey.component.scss' ]
 })
-export class PageMacrokeyComponent implements OnInit, OnDestroy {
+export class PageMacrokeyComponent implements OnInit {
 	isOnline = true;
 	cardContentPositionA: any = {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
@@ -29,12 +30,20 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	startDateTime: any = new Date();
 	metrics: any;
 	constructor(
-		private cmsService: CMSService, private shellService: VantageShellService,
-		private commonService: CommonService, public dashboardService: DashboardService,
-		private upeService: UPEService, private loggerService: LoggerService,
-		private hypService: HypothesisService, private translate: TranslateService) {
+		private titleService: Title,
+		private cmsService: CMSService,
+		private shellService: VantageShellService,
+		private commonService: CommonService,
+		public dashboardService: DashboardService,
+		private upeService: UPEService,
+		private loggerService: LoggerService,
+		private hypService: HypothesisService,
+		private translate: TranslateService
+	) {
 		this.metrics = this.shellService.getMetrics();
-		this.isUPEFailed = false;  // init UPE request status
+		this.titleService.setTitle('gaming.common.narrator.pageTitle.macroKey');
+		this.metrics = this.shellService.getMetrics();
+		this.isUPEFailed = false; // init UPE request status
 		this.isCmsLoaded = false;
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -44,8 +53,7 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
@@ -71,9 +79,7 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 				)[0];
 				if (cardContentPositionB) {
 					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
-							'|'
-						)[0];
+						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 					}
 					cardContentPositionB.DataSource = 'cms';
 
@@ -89,54 +95,58 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 				const upeParam = {
 					position: 'position-B'
 				};
-				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
-					const cardContentPositionB = this.upeService.getOneUPEContent(
-						upeResp,
-						'half-width-title-description-link-image',
-						'position-B'
-					)[0];
-					if (cardContentPositionB) {
-						this.cardContentPositionB = cardContentPositionB;
-						if (this.cardContentPositionB.BrandName) {
-							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				this.upeService.fetchUPEContent(upeParam).subscribe(
+					(upeResp) => {
+						const cardContentPositionB = this.upeService.getOneUPEContent(
+							upeResp,
+							'half-width-title-description-link-image',
+							'position-B'
+						)[0];
+						if (cardContentPositionB) {
+							this.cardContentPositionB = cardContentPositionB;
+							if (this.cardContentPositionB.BrandName) {
+								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+							}
+							cardContentPositionB.DataSource = 'upe';
+							this.dashboardService.cardContentPositionB = cardContentPositionB;
+							this.isUPEFailed = false;
 						}
-						cardContentPositionB.DataSource = 'upe';
-						this.dashboardService.cardContentPositionB = cardContentPositionB;
-						this.isUPEFailed = false;
+					},
+					(err) => {
+						this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+						this.isUPEFailed = true;
+						if (this.isCmsLoaded) {
+							this.cardContentPositionB = this.cardContentPositionBCms;
+							this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+						}
 					}
-				}, (err) => {
-					this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-					this.isUPEFailed = true;
-					if (this.isCmsLoaded) {
-						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
-					}
-				});
+				);
 			}
 		});
 	}
 
 	private getTileBSource() {
 		return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then((source) => {
-				if (source === 'UPE') {
-					resolve('UPE');
-				} else {
+			this.hypService.getFeatureSetting('TileBSource').then(
+				(source) => {
+					if (source === 'UPE') {
+						resolve('UPE');
+					} else {
+						resolve('CMS');
+					}
+				},
+				() => {
 					resolve('CMS');
 				}
-			}, () => {
-				resolve('CMS');
-			});
+			);
 		});
 	}
 
-	ngOnDestroy() {
-	}
+	ngOnDestroy() {}
 
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
-		} else {
 		}
 	}
 }

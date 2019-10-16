@@ -160,4 +160,18 @@
 			}
 		}
 	}
+
+	
+	.device-sub-header .rtl {
+		display: inline-block;
+	}
+	/*
+	.status-list li .row.rtl {
+		display: flex;
+		flex-direction: row-reverse;
+		.text-right{
+			text-align: left !important;
+			flex-grow: 8;
+		}
+	}*/
 }

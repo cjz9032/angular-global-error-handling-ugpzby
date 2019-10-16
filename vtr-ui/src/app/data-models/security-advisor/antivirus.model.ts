@@ -14,7 +14,7 @@ export class AntiVirusViewModel {
 		firewallStatus: false,
 		status: false,
 		enabled: false,
-		metrics: [],
+		metrics: []
 	};
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,
@@ -26,7 +26,7 @@ export class AntiVirusViewModel {
 		name: 'security.antivirus.others.unknown',
 	};
 	metricsList: Array<any> = [];
-	otherFirewall: OtherInfo ;
+	otherFirewall: OtherInfo;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
@@ -95,7 +95,7 @@ export class AntiVirusViewModel {
 		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
 			this.currentPage = 'mcafee';
 			this.mcafeeInstall = true;
-		} else if (antiVirus.others) {
+		} else if (antiVirus.others && antiVirus.others.enabled) {
 			if (antiVirus.mcafee) {
 				this.mcafeeInstall = true;
 			} else { this.mcafeeInstall = false; }

@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "Makróbillentyű rögzítése ehhez"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "text7": {
                     "title": "Szín"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "Nincsenek hozzáadandó futó alkalmazások",
                 "body": "Csak a jelenleg futó alkalmazások jelennek meg. Indítsa el a hozzáadni kívánt alkalmazást, és lépjen vissza ide."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "További 5 gyorsítandó alkalmazást adhat hozzá",
                     "part2": "/",
                     "part3": "hozzáadva"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -709,11 +880,13 @@
                     "OverheatedBattery": "Az akkumulátor <b>túl meleg</b>. Vegye ki a számítógépből, és hagyja lehűlni szobahőmérsékletre.",
                     "PermanentError": "Az akkumulátor <b>elhasználódott</b>. Az akkumulátor nem tölthető. Cserélje ki az akkumulátort.",
                     "NotSupportACAdapterDetail": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
-                    "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert."
+                    "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
-                "seeDetailsLink": "Részletek megtekintése"
+                "seeDetailsLink": "Részletek megtekintése",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Tápellátás",
@@ -862,6 +1035,42 @@
                         "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
                         "checkBoxDesc": "Automatikus észlelés",
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1151,6 +1360,19 @@
                             "reboot": "ÚJRAINDÍTÁS",
                             "cancel": "NE MOST"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Gyorsbillentyűkhöz kapcsolódó VoIP-funkciók",
+                        "description": {
+                            "main": "A funkció lehetővé teszi, hogy a megfelelő billentyűkkel fogadjon vagy elutasítson egy VoIP-hívást.",
+                            "f10": "F10: hívás fogadása",
+                            "f11": "F11: elutasítás, vagy a hívás befejezése"
+                        },
+                        "tooltip": "Ez a funkció jelenleg csak a Skype for Business 2016 és a Microsoft Teams 1.0 verzióban használható.<br>A funkció használatához le kell tölteni és telepíteni kell a megfelelő alkalmazást.",
+                        "hasInstalledAppsDescription": "Válassza ki, melyik alkalmazással szeretné használni a gyorsbillentyűket:",
+                        "noInstalledAppsDescription": "A funkció csak az alábbi alkalmazásokban áll rendelkezésre: ",
+                        "hasInstalledAppsNote": "Megjegyzés: A Microsoft Teams 1.0 verzióban a hívás nem fejezhető be az F11 billentyűvel.",
+                        "noInstalledAppsNote": "Megjegyzés: A funkció használatához először le kell tölteni és telepíteni kell az alkalmazásokat."
                     }
                 },
                 "userDefinedKey": {
@@ -1226,6 +1448,17 @@
                             "slow": "Lassú"
                         },
                         "toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben. A képernyő zárolási sebességére a tényleges felhasználói alkalmazás, a szenzor tulajdonságai és a Windows képernyőre vonatkozó időtúllépési beállításai is hatással vannak. Ezért határozottan azt javasoljuk, hogy azonnal zárolja a rendszert, amikor magára hagyja az eszközt."
+                    },
+                    "facialRecognition": {
+                        "title": "ARCFELISMERÉS",
+                        "caption": "Engedélyezheti az arcfelismerési funkciót, és lehetővé teheti, hogy hozzáférjen a kamerához. Ez az eszköz rögzíti a képét annak érdekében, hogy pontosan felismerje jelenlétét, vagy észlelje, ha a készüléket felügyelet nélkül hagyta. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                        "checkBox": "Kapcsolja be a kamerát, és engedélyezze a funkciót",
+                        "note": {
+                            "permission": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
+                            "privacyMode": "A Lenovo Vantage kamera adatvédelmi módja be van kapcsolva. A jelölőnégyzet funkciója nem működik.",
+                            "windowsLink": "A Windows beállításaiban adhatja meg a hozzáférést",
+                            "privacyLink": "Lépjen a Kamera adatvédelmi módba, hogy kikapcsolja"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1233,7 +1466,8 @@
                     "caption": "Az Automatikus távolságkorrekció mesterséges intelligencia használatával automatikusan frissíti az érzékelési távolságot.",
                     "options": {
                         "near": "Közel",
-                        "far": "Távol"
+                        "far": "Távol",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1487,17 @@
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
-                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók."
+                    "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
                     "screenTimeoutSettings": "Ugrás a képernyő időtúllépésének beállításaihoz"
                 },
-                "resetToDefault": "Visszaállítás"
+                "resetToDefault": "Visszaállítás",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligens képernyő",
@@ -1410,6 +1648,7 @@
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
             "title": "A naprakész rendszer megfelelően működik.",
+            "installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
@@ -1644,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
-                "unknown": "Ismeretlen"
+                "unknown": "Ismeretlen",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2404,7 +2644,8 @@
         "attention": "Figyelem",
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
-        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
+        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
+        "testNotApplicable": "Egyéni ellenőrzésnél nem használható"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -2558,5 +2799,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

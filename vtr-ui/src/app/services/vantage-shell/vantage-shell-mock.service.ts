@@ -16,6 +16,7 @@ declare var Windows;
 })
 
 export class VantageShellMockService extends BaseVantageShellService {
+
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
@@ -1160,21 +1161,22 @@ export class VantageShellMockService extends BaseVantageShellService {
 	 * returns Keyboard manager object  from VantageShellService of JS Bridge
 	 */
 	public getKeyboardManagerObject(): any {
-		const kbdManager: any = {GetKeyboardMapCapability: this.getPromise(true),
-			 GetUDKCapability: this.getPromise(true),
-			 GetKBDLayoutName: this.getPromise('Standered'),
-			 GetKBDMachineType: this.getPromise('Other'),
-			 GetKbdHiddenKeyPerformanceModeCapability: this.getPromise(false),
-			 GetKbdHiddenKeyPrivacyFilterCapability: this.getPromise(true),
-			 GetKbdHiddenKeyMagnifierCapability: this.getPromise(false),
-			 GetKbdHiddenKeyBackLightCapability: this.getPromise(true),
-			 GetTopRowFnLockCapability: this.getPromise(true),
-			 GetTopRowFnStickKeyCapability: this.getPromise(true),
-			 GetTopRowPrimaryFunctionCapability: this.getPromise(true),
-			 GetFnLockStatus: this.getPromise(true),
-			 GetFnStickKeyStatus: this.getPromise(true),
-			 GetPrimaryFunctionStatus: this.getPromise(true)
-			};
+		const kbdManager: any = {
+			GetKeyboardMapCapability: this.getPromise(true),
+			GetUDKCapability: this.getPromise(true),
+			GetKBDLayoutName: this.getPromise('Standered'),
+			GetKBDMachineType: this.getPromise('Other'),
+			GetKbdHiddenKeyPerformanceModeCapability: this.getPromise(false),
+			GetKbdHiddenKeyPrivacyFilterCapability: this.getPromise(true),
+			GetKbdHiddenKeyMagnifierCapability: this.getPromise(false),
+			GetKbdHiddenKeyBackLightCapability: this.getPromise(true),
+			GetTopRowFnLockCapability: this.getPromise(true),
+			GetTopRowFnStickKeyCapability: this.getPromise(true),
+			GetTopRowPrimaryFunctionCapability: this.getPromise(true),
+			GetFnLockStatus: this.getPromise(true),
+			GetFnStickKeyStatus: this.getPromise(true),
+			GetPrimaryFunctionStatus: this.getPromise(true)
+		};
 
 		return kbdManager;
 	}
@@ -1239,5 +1241,9 @@ export class VantageShellMockService extends BaseVantageShellService {
 		};
 
 		return inputControlLinks;
+	}
+
+	public getVoipHotkeysObject() {
+		throw new Error('Method not implemented.');
 	}
 }

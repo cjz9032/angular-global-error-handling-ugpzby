@@ -81,4 +81,5 @@ export abstract class BaseVantageShellService {
 	abstract getBetaUser(): any;
 	abstract getHardwareScan(): any;
 	abstract getMouseAndTouchPad(): any;
+	abstract getVoipHotkeysObject(): any;
 }

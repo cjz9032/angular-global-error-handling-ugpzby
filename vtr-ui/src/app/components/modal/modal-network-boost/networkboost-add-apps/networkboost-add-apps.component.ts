@@ -14,7 +14,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	noAppsRunning = false;
 	currentLength = 0;
 	addAppsList: string;
-	ariaLabel = 'Networkboost add apps window opened';
+	ariaLabel = 'gaming.narrator.networkBoost.addApps.addAppsTitle';
 	statusAskAgain: boolean;
 	public isChecked: any = [];
 	noRunningInterval: any;
@@ -75,13 +75,13 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			this.loading = false;
 			this.runningList = [];
 			if (result && !isUndefined(result.processList)) {
-				 this.runningList = result.processList || [];
+				this.runningList = result.processList || [];
 			}
 			this.noAppsRunning = this.runningList.length === 0 ? true : false;
 			if (this.noAppsRunning) {
-				this.ariaLabel = 'No running Apps to add window';
+				this.ariaLabel = 'gaming.narrator.networkBoost.addApps.noAppsTitle';
 			} else {
-				this.ariaLabel = 'Networkboost add apps window opened';
+				this.ariaLabel = 'gaming.narrator.networkBoost.addApps.addAppsTitle';
 			}
 		} catch (error) {
 			this.loading = false;
@@ -97,6 +97,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
+		document.getElementById('main-wrapper').focus();
 	}
 	runappKeyup(event, i) {
 		if (event.which === 9) {

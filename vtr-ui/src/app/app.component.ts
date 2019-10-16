@@ -27,13 +27,17 @@ import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
+import { AppUpdateService } from './services/app-update/app-update.service';
+import { Title } from '@angular/platform-browser';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 
 declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
-	providers: [TimerService]
+	styleUrls: [ './app.component.scss' ],
+	providers: [ TimerService ]
 })
 export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
@@ -42,6 +46,8 @@ export class AppComponent implements OnInit, OnDestroy {
 	private metricsClient: any;
 	private beta;
 	private subscription: Subscription;
+	pageTitle = this.isGaming ? 'gaming.common.narrator.pageTitle.device' : '';
+	private totalDuration = 0; // itermittant app duratin will be added to it
 
 	constructor(
 		private displayService: DisplayService,
@@ -57,6 +63,9 @@ export class AppComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
+		private appUpdateService: AppUpdateService,
+		private titleService: Title,
+		private appsForYouService: AppsForYouService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -69,44 +78,109 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-
 		this.initIsBeta();
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
-		document.addEventListener('visibilitychange', (e) => {
-			if (document.hidden) {
-				this.sendAppSuspendMetric();
-			} else {
-				this.sendAppResumeMetric();
-			}
-		});
-
-		window.addEventListener(
-			'online',
-			(e) => {
-				this.notifyNetworkState();
-			},
-			false
-		);
-
-		window.addEventListener(
-			'offline',
-			(e) => {
-				this.notifyNetworkState();
-			},
-			false
-		);
-
+		window.addEventListener('online', (e) => {
+			this.notifyNetworkState();
+		}, false);
+		window.addEventListener('offline', (e) => {
+			this.notifyNetworkState();
+		}, false);
 		this.notifyNetworkState();
+		this.addInternetListener();
 	}
+
+	// TESTING ACTIVE DURATION
+	private getDuration() {
+		const component = this; // value of this is null/undefined inside the funtions
+		let isVisible = true; // internal flag, defaults to true
+		function onVisible() {
+			// prevent double execution
+			if (isVisible) {
+				return;
+			}
+			// console.log(' APP is VISIBLE-------------------------------------------------------');
+			component.sendAppResumeMetric();
+			// change flag value
+			isVisible = true;
+		} // end of onVisible
+		function onHidden() {
+			// prevent double execution
+			if (!isVisible) {
+				return;
+			}
+			// console.log(' APP is HIDDEN-------------------------------------------------------');
+			component.sendAppSuspendMetric();
+			// change flag value
+			isVisible = false;
+		} // end of onHidden
+		function handleVisibilityChange(forcedFlag) {
+			// forcedFlag is a boolean when this event handler is triggered by a
+			// focus or blur eventotherwise it's an Event object
+			if (typeof forcedFlag === 'boolean') {
+				if (forcedFlag) {
+					return onVisible();
+				}
+				return onHidden();
+			}
+			if (document.hidden) {
+				return onHidden();
+			}
+			return onVisible();
+		} // end of handleVisibilityChange
+		document.addEventListener('visibilitychange', handleVisibilityChange, false);
+		// extra event listeners for better behaviour
+		document.addEventListener('focus', () => {
+			handleVisibilityChange(true);
+		}, false);
+		document.addEventListener('blur', () => {
+			handleVisibilityChange(false);
+		}, false);
+		window.addEventListener('focus', () => {
+			handleVisibilityChange(true);
+		}, false);
+		window.addEventListener('blur', () => {
+			handleVisibilityChange(false);
+		}, false);
+	} // END OF DURATION
+
+	private addInternetListener() {
+		const win: any = window;
+		if (win.NetworkListener) {
+			win.NetworkListener.onnetworkchanged = (state) => {
+				this.notifyNetworkState();
+			};
+			if (win.NetworkListener.isInternetAccess()) {
+				this.notifyNetworkState();
+			} else {
+				this.notifyNetworkState();
+			}
+		} else {
+			window.addEventListener('online', (e) => {
+				this.notifyNetworkState();
+			}, false);
+			window.addEventListener('offline', (e) => {
+				this.notifyNetworkState();
+			}, false);
+
+			if (navigator.onLine) {
+				this.notifyNetworkState();
+			} else {
+				this.notifyNetworkState();
+			}
+		}
+	} // end of addInternetListener
 
 	private launchWelcomeModal() {
 		this.deviceService
 			.getIsARM()
 			.then((status: boolean) => {
 				if (!status || !this.deviceService.isAndroid) {
-					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(
+						LocalStorageKey.WelcomeTutorial
+					);
 					if (tutorial === undefined && navigator.onLine) {
 						this.openWelcomeModal(1);
 					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
@@ -114,7 +188,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					}
 				}
 			})
-			.catch((error) => { });
+			.catch((error) => {});
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -173,25 +247,26 @@ export class AppComponent implements OnInit, OnDestroy {
 	private sendAppLoadedMetric() {
 		const vanStub = this.vantageShellService.getVantageStub();
 		this.metricsClient.sendAsync(new AppLoaded(Date.now() - vanStub.navigateTime));
-	}
+	} // end of sendAppLoadedMetric
 
 	public sendAppLaunchMetric(lauchType: string) {
 		this.timerService.start();
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0));
-	}
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0, this.totalDuration));
+	} // end of sendAppLaunchMetric
 
 	public sendAppResumeMetric() {
 		this.timerService.start(); // restart timer
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0));
-	}
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0, this.totalDuration));
+	} // enf of sendAppResumeMetric
 
 	public sendAppSuspendMetric() {
 		const duration = this.timerService.stop();
+		this.totalDuration = this.totalDuration + duration;
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration));
-	}
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration, this.totalDuration));
+	} // end of sendAppSuspendMetric
 
 	openWelcomeModal(page: number) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent, {
@@ -212,7 +287,9 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		setTimeout(() => { document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+		setTimeout(() => {
+			document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+		}, 0);
 	}
 
 	private initIsBeta() {
@@ -248,6 +325,8 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		// active duration
+		this.getDuration();
 		// session storage is not getting clear after vantage is close.
 		// forcefully clearing session storage
 		if (this.deviceService.isAndroid) {
@@ -274,6 +353,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.userService.loginSilently();
 		}
 
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
+		}
+
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
 			if (s instanceof NavigationEnd) {
@@ -284,6 +367,8 @@ export class AppComponent implements OnInit, OnDestroy {
 						element.scrollIntoView(true);
 					}
 				}
+				this.pageTitle = this.titleService.getTitle();
+				document.getElementById('main-wrapper').focus();
 			}
 		});
 
@@ -314,12 +399,12 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 
-					const isLocaleSame = this.languageService.isLocaleSame(value.locale);
+					// const isLocaleSame = this.languageService.isLocaleSame(value.locale);
 
-					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
+					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
 						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// update DeviceInfo values in case user switched language
+						// // update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 
@@ -330,7 +415,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					// then relaunch app you will see the machineinfo in localstorage.
 					return value;
 				})
-				.catch((error) => { });
+				.catch((error) => {});
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -365,9 +450,9 @@ export class AppComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					})
-					.catch((error) => { });
+					.catch((error) => {});
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	private notifyNetworkState() {
@@ -420,7 +505,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	// 	});
 	// }
 
-	@HostListener('window:keyup', ['$event'])
+	@HostListener('window:keyup', [ '$event' ])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -445,10 +530,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			// 		keyboard: false
 			// 	});
 			// }
-		} catch (error) { }
+		} catch (error) {}
 	}
 
-	@HostListener('window:load', ['$event'])
+	@HostListener('window:load', [ '$event' ])
 	onLoad(event) {
 		this.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
@@ -460,15 +545,11 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', ['$event'])
+	@HostListener('window:keydown', [ '$event' ])
 	disableCtrlA($event: KeyboardEvent) {
-
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 
-		if (
-			($event.ctrlKey || $event.metaKey) &&
-			($event.keyCode === 65) && !isPrivacyTab
-		) {
+		if (($event.ctrlKey || $event.metaKey) && $event.keyCode === 65 && !isPrivacyTab) {
 			$event.stopPropagation();
 			$event.preventDefault();
 		}

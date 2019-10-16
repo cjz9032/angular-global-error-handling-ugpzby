@@ -27,7 +27,7 @@
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>
-				<div class="remaining-text text-uppercase"
+				<div [class]="isInDetailsModal?'remaining-text text-uppercase remaining-text-detail': 'remaining-text text-uppercase'"
 					*ngIf="timeText === 'timeRemaining'"
 					id="myDevice-settings-batteryGauge-remainingTime-title"
 					attr.aria-label="myDevice-settings-batteryGauge-remainingTime-title">

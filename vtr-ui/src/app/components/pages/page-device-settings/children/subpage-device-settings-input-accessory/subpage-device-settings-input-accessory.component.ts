@@ -5,6 +5,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SupportedAppEnum, VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
+import { VoipApp, VoipResponse } from '../../../../../data-models/input-accessories/voip.model';
 import { EMPTY } from 'rxjs';
 
 @Component({
@@ -25,10 +27,18 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
 	public keyboardCompatibility: boolean;
-	public switchValue = false;
 	public stickyFunStatus = false;
 	public isTouchPadVisible = false;
 	public isMouseVisible = false;
+
+	public selectedApp: VoipApp;
+	public installedApps: VoipApp[] = [];
+	public showVoipHotkeysSection = false;
+	public isAppInstalled = false;
+	public fnCtrlSwapCapability: boolean = false;
+	public fnCtrlSwapStatus: boolean = false;
+	voipAppName = ['Skype For Business', 'Microsoft Teams'];
+	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
 
@@ -36,17 +46,58 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		private keyboardService: InputAccessoriesService,
 		private commonService: CommonService,
 		private logger: LoggerService
-	) { }
+	) {
+	}
 
 	ngOnInit() {
+		this.getVoipHotkeysSettings();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
 			this.initDataFromCache();
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+			this.getFnCtrlSwapCapability();
 		}
 		this.getMouseAndTouchPadCapability();
+	}
+
+	getVoipHotkeysSettings() {
+		this.keyboardService.getVoipHotkeysSettings()
+			.then(res => {
+				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED || !res.capability) {
+					return res;
+				}
+				this.showVoipHotkeysSection = true;
+				res.appList.forEach(element => {
+					if (element.isAppInstalled) {
+						this.isAppInstalled = true;
+					}
+				});
+				if (this.isAppInstalled) {
+					this.installedApps = res.appList;
+				}
+			})
+			.catch(error => {
+				console.log('getVoipHotkeysSettings error', error);
+			});
+	}
+
+	setVoipHotkeysSettings(app: VoipApp) {
+		const prev = this.selectedApp;
+		this.selectedApp = app;
+		this.keyboardService.setVoipHotkeysSettings(app.appName)
+			.then(VoipResponse => {
+				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
+					this.selectedApp = prev;
+					this.selectedApp.isSelected = true;
+					return VoipResponse;
+				}
+				this.installedApps = VoipResponse.appList;
+			})
+			.catch(error => {
+				console.log('setVoipHotkeysSettings error', error);
+			});
 	}
 
 	initDataFromCache() {
@@ -112,6 +163,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			return EMPTY;
 		}
 	}
+
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
 		const type = machineType.toLowerCase();
@@ -195,6 +247,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
 		}
 	}
+
 	// To get Additional Capability Status
 	public getAdditionalCapabilities() {
 		this.shortcutKeys = [];
@@ -239,9 +292,57 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			return EMPTY;
 		}
 	}
-	fnCtrlKey(event) {
-		this.switchValue = event.switchValue;
-	}
+
+	public getFnCtrlSwapCapability() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnCtrlSwapCapability().then(res => {
+					this.fnCtrlSwapCapability = res;
+					if(this.fnCtrlSwapCapability){
+						this.getFnCtrlSwap();
+					}
+				}).catch((error) => {
+					this.logger.error('GetFnCtrlSwapCapability', error.message);
+				});
+			}
+		} catch (error) {
+			this.logger.error('GetFnCtrlSwapCapability', error.message);
+			return EMPTY;
+		}
+		}
+		public getFnCtrlSwap() {
+			try {
+				if (this.keyboardService.isShellAvailable) {
+					this.keyboardService.GetFnCtrlSwap().then(res => {
+						this.fnCtrlSwapStatus = res;
+					}).catch(error => {
+							this.logger.error('GetFnCtrlSwap error here', error.message);
+							return EMPTY;
+						});
+				}
+			} catch (error) {
+				this.logger.error('GetFnCtrlSwap', error.message);
+				return EMPTY;
+			}			
+		}
+
+	public fnCtrlKey(event) {
+			this.fnCtrlSwapStatus = event.switchValue;
+			try {
+				if (this.keyboardService.isShellAvailable) {
+					this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
+						// if (res.RebootRequired === true) {
+						// 	this.keyboardService.restartMachine();
+						// }
+					}).catch((error) => {
+						this.logger.error('SetFnCtrlSwap', error.message);
+					});
+				}
+			} catch (error) {
+				this.logger.error('SetFnCtrlSwap', error.message);
+				return EMPTY;
+			}				
+		}
 
 	public launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {

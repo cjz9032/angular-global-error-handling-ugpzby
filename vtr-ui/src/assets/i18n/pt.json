@@ -81,12 +81,12 @@
                     "line2": "<b>Descrição Geral da Gestão de Funcionalidades</b> <br> Algumas funcionalidades não disponíveis em todos os dispositivos",
                     "line3": "<b>Overclocking da CPU </b><br> Aumente a velocidade máxima do processador",
                     "line4": "<b>Overclocking da RAM </b><br> Aumente a velocidade máxima da memória",
-                    "line5": "<b>Reforço da Rede </b><br> Dê prioridade ao tráfego de rede para o jogo que está a jogar",
+                    "line5": "<b>Reforço da rede </b><br> Dê prioridade ao tráfego de rede para o jogo que está a jogar",
                     "line6": "<b>Dolby </b><br> Ajuste o áudio especificamente para jogos com a tecnologia Dolby",
                     "line7": "<b>Modo Híbrido </b><br> Desative as definições de GPU avançadas quando não estiver a jogar para melhorar o desempenho da bateria",
                     "line8": "<b>Carregamento Rápido </b><br> Jogue em viagem com carregamento mais rápido da bateria",
                     "line9": "<b>Bloqueio do Painel Tátil </b><br> Evite entradas acidentais desativando o painel tátil durante o jogo",
-                    "line10": "<b>Fechar Automaticamente </b><br> Limpe processos que não são necessários para o jogo antes de começar a jogar, de modo a maximizar os recursos de sistema disponíveis",
+                    "line10": "<b>Fechar auto-maticamente </b><br> Limpe processos que não são necessários para o jogo antes de começar a jogar, de modo a maximizar os recursos de sistema disponíveis",
                     "line11": "<b>Modo Térmico </b><br> Defina o perfil de dispositivo preferido para velocidade da ventoinha e controlo de arrefecimento"
                 },
                 "systemInfo": {
@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "Gravar Tecla de Macro Para"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "text7": {
                     "title": "Cor"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "Nenhuma aplicação em execução a adicionar",
                 "body": "Apenas serão apresentadas aplicações em execução. Inicie uma aplicação que pretende adicionar e volte."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "Pode adicionar até 5 aplicações adicionais para reforçar",
                     "part2": "de",
                     "part3": "adicionadas"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -709,11 +880,13 @@
                     "OverheatedBattery": "A bateria está <b>demasiado quente</b>. Remova-a do computador e arrefeça-a à temperatura ambiente.",
                     "PermanentError": "A bateria <b>falhou devido ao desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
                     "NotSupportACAdapterDetail": "<b>O transformador CA não é suportado.</b> O seu computador Lenovo não suporta este transformador CA. Poderá causar um encerramento súbito. Ligue um transformador CA correto.",
-                    "LimitedACAdapterSupportDetail": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto."
+                    "LimitedACAdapterSupportDetail": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
-                "seeDetailsLink": "Ver detalhes"
+                "seeDetailsLink": "Ver detalhes",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Alimentação",
@@ -862,6 +1035,42 @@
                         "description": "Proteja a tomada CA do avião controlando o consumo de energia do sistema.Quando o Modo de Alimentação em Avião está ativado, o computador diminui o consumo de energia limitando a taxa de carregamento da bateria e o desempenho do sistema.",
                         "checkBoxDesc": "Deteção automática",
                         "note": "Se a Deteção automática estiver marcada, o computador ativa automaticamente o Modo de alimentação em avião quando deteta um ambiente a bordo de um avião e desativa-o quando deixa o avião."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1151,6 +1360,19 @@
                             "reboot": "REINICIAR",
                             "cancel": "AGORA NÃO"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funções das teclas de atalho VoIP",
+                        "description": {
+                            "main": "Esta funcionalidade permite-lhe atender ou rejeitar uma chamada VoIP pressionando as teclas de atalho do teclado:",
+                            "f10": "F10: atender a chamada",
+                            "f11": "F11: rejeitar ou desligar a chamada"
+                        },
+                        "tooltip": "Atualmente, esta funcionalidade é suportada apenas no Skype for Business 2016 e Microsoft Teams 1.0.<br>Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações.",
+                        "hasInstalledAppsDescription": "Selecione a aplicação em que pretende utilizar as teclas de atalho:",
+                        "noInstalledAppsDescription": "Esta funcionalidade suporta apenas as seguintes aplicações: ",
+                        "hasInstalledAppsNote": "Nota: Para Microsoft Teams 1.0, a tecla F11 não pode ser utilizada para desligar a chamada.",
+                        "noInstalledAppsNote": "Nota: Para utilizar a funcionalidade, tem de transferir e instalar primeiro as aplicações."
                     }
                 },
                 "userDefinedKey": {
@@ -1226,6 +1448,17 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Seleccione a opção pretendida para bloquear o ecrã a uma velocidade rápida/média/baixa quando a sua presença não é detetada. Contudo, o tempo em que o ecrã será bloqueado também é afetado pelo cenário real do utilizador, pela capacidade do sensor e pelas definições de tempo limite do ecrã do Windows. Por isso, sugerimos que bloqueie instantaneamente o seu sistema antes de sair."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONHECIMENTO FACIAL",
+                        "caption": "Pode ativar a funcionalidade de reconhecimento facial e permitir-lhe aceder à sua câmara. Esta ferramenta captura a sua imagem para reconhecer com precisão a sua presença ou detetar quando deixa o seu dispositivo sem vigilância. Estes dados são processados localmente no seu dispositivo. A Lenovo não tem acesso nem utiliza estes dados.",
+                        "checkBox": "Ligue a câmara e ative esta funcionalidade",
+                        "note": {
+                            "permission": "O Lenovo Vantage não tem acesso à Câmara. A função da caixa de verificação não funcionará.",
+                            "privacyMode": "O modo de privacidade da câmara do Lenovo Vantage está ativado. A função da caixa de verificação não funcionará.",
+                            "windowsLink": "Vá às Definições do Windows para dar acesso",
+                            "privacyLink": "Vá para o modo de privacidade da câmara para a desativar"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1233,7 +1466,8 @@
                     "caption": "O Ajuste automático de distância atualizará automaticamente a distância de deteção através de um motor de IA.",
                     "options": {
                         "near": "Perto",
-                        "far": "Longe"
+                        "far": "Longe",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1487,17 @@
                     "description3": "1. Se o computador estiver no modo Tenda, Tablet ou Suporte, estas funcionalidades poderão não funcionar corretamente.",
                     "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O login sem toques não funcionará.",
                     "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático.",
-                    "description6": "4. Se o Modo de avião estiver ativo no computador, estas funcionalidades estão desativadas."
+                    "description6": "4. Se o Modo de avião estiver ativo no computador, estas funcionalidades estão desativadas.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vá para as definições Windows Hello",
                     "screenTimeoutSettings": "Aceda a Definições de tempo de espera do ecrã"
                 },
-                "resetToDefault": "Redefinir"
+                "resetToDefault": "Redefinir",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Ecrã Inteligente",
@@ -1410,6 +1648,7 @@
         "banner": {
             "neverChecked": "Bem-vindo à Atualização do Sistema.",
             "title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+            "installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES",
@@ -1644,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo",
-                "unknown": "Desconhecido"
+                "unknown": "Desconhecido",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2404,7 +2644,8 @@
         "attention": "Atenção",
         "cancelTextPrompt": "Tem a certeza de que pretende cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
-        "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a."
+        "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a.",
+        "testNotApplicable": "Não aplicável na verificação personalizada"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -2558,5 +2799,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

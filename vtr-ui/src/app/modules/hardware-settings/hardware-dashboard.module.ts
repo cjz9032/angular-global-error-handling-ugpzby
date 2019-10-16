@@ -27,12 +27,11 @@ import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
 import { CommonPipeModule } from '../common/common-pipe.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
+import { FeedbackModule } from '../feedback/feedback.module';
 
 @NgModule({
 	declarations: [
-		FeedbackFormComponent,
 		PageDashboardComponent,
-		WidgetFeedbackComponent,
 		WidgetSwitchIconComponent,
 		WidgetQuicksettingsComponent,
 		WidgetDashboardWarrantyComponent
@@ -56,7 +55,8 @@ import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/wid
 		NgbModalModule,
 		CommonPipeModule,
 		PageLayoutModule,
-		AppSearchModule
+		AppSearchModule,
+		FeedbackModule,
 	],
 	exports: [
 		MetricsModule,
@@ -72,7 +72,7 @@ import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/wid
 		WidgetDashboardWarrantyComponent
 	],
 	providers: [MockService],
-	entryComponents: [FeedbackFormComponent],
+	entryComponents: [],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class HardwareDashboardModule {

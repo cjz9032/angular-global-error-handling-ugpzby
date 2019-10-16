@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "录制宏键，用于"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "heading": {
                     "title": "选择概要文件："
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "没有任何要添加的正在运行的应用",
                 "body": "仅显示当前正在运行的应用。请启动要添加的应用并返回。"
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "最多可添加 5 个要加速的应用",
                     "part2": "/",
                     "part3": "已添加"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -710,10 +881,12 @@
                     "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
                     "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
                     "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
-                    "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。"
+                    "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
-                "seeDetailsLink": "查看详细信息"
+                "seeDetailsLink": "查看详细信息",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "电源管理",
@@ -862,6 +1035,42 @@
                         "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。",
                         "checkBoxDesc": "自动检测",
                         "note": "如果已勾选自动检测功能，计算机将在其检测到机上环境后自动打开飞行电源模式，并在您离开时将其关闭。"
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1151,6 +1360,19 @@
                             "reboot": "重新启动",
                             "cancel": "暂不"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP 热键功能",
+                        "description": {
+                            "main": "此功能让您可以通过按键盘上的热键来接听或拒绝 VoIP 电话：",
+                            "f10": "F10：接听电话",
+                            "f11": "F11：拒绝或挂断电话"
+                        },
+                        "tooltip": "目前，仅 Skype for Business 2016 和 Microsoft Teams 1.0 支持此功能。<br>要使用此功能，您需要先下载并安装应用程序。",
+                        "hasInstalledAppsDescription": "选择要在其上使用热键的应用程序：",
+                        "noInstalledAppsDescription": "此功能仅支持以下应用程序：",
+                        "hasInstalledAppsNote": "注意：对于 Microsoft Teams 1.0，F11 键不能用于挂断电话。",
+                        "noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。"
                     }
                 },
                 "userDefinedKey": {
@@ -1226,6 +1448,17 @@
                             "slow": "慢"
                         },
                         "toolTipContent": "当未检测到您的存在时，选择希望的方式以较快/中等/较慢的速度来锁定屏幕。然而，屏幕锁定的时间也会受到实际用户场景、传感器功能和 Windows 屏幕超时设置的影响。因此，我们强烈建议您在离开时即锁定系统。"
+                    },
+                    "facialRecognition": {
+                        "title": "面部识别",
+                        "caption": "您可以启用面部识别功能并允许其访问您的摄像头。此工具可拍摄您的图像，从而准确地识别您的在场状态，或检测您的设备是否因您离开而暂时无人照管。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                        "checkBox": "打开摄像头并启用此功能",
+                        "note": {
+                            "permission": "Lenovo Vantage 无法访问摄像头。复选框的功能将不起作用。",
+                            "privacyMode": "Lenovo Vantage 摄像头隐私模式已开启。复选框的功能将不起作用。",
+                            "windowsLink": "转到 Windows 设置以授予访问权限",
+                            "privacyLink": "转到摄像头隐私模式以将其关闭"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1233,7 +1466,8 @@
                     "caption": "自动距离调整将会通过人工智能引擎自动更新检测距离。",
                     "options": {
                         "near": "较近",
-                        "far": "较远"
+                        "far": "较远",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1487,17 @@
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
                     "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
-                    "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。"
+                    "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "重置"
+                "resetToDefault": "重置",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
@@ -1410,6 +1648,7 @@
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",
+            "installingTitle": "在更新期间，请勿使计算机进入睡眠或休眠模式。",
             "last": "上次更新时间：",
             "next": "下次计划更新时间：",
             "checkButton": "检查更新",
@@ -1563,7 +1802,7 @@
             "good": "良好",
             "malicious": "恶意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您的安全分数可以让您了解您的在线安全情况，其结果取决于您是否：",
+            "securityScoreDepends": "您的安全结果取决于您是否：",
             "antivirus": "受到反病毒软件的保护",
             "password": "以安全的方式管理安全程度强且复杂的密码",
             "vpn": "监控您的网络以防暴露给攻击者",
@@ -1644,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}}为您的设备提供基本保护",
-                "unknown": "未知"
+                "unknown": "未知",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2404,7 +2644,8 @@
         "attention": "注意",
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
-        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
+        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。",
+        "testNotApplicable": "不适用于定制扫描"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -2558,5 +2799,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

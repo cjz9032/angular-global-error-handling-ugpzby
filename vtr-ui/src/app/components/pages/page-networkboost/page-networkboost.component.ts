@@ -5,6 +5,8 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { Component, OnInit } from '@angular/core';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { Title } from '@angular/platform-browser';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -21,10 +23,7 @@ export class PageNetworkboostComponent implements OnInit {
 	public showAppsModal = false;
 	changeListNum = 0;
 	appsCount = 0;
-	toggleStatus: boolean =
-		this.commonService.getLocalStorageValue(
-			LocalStorageKey.NetworkBoostStatus
-		) || false;
+	toggleStatus: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus) || false;
 	needToAsk: any;
 	autoCloseStatusObj: any = {};
 	needToAskStatusObj: any = {};
@@ -41,10 +40,15 @@ export class PageNetworkboostComponent implements OnInit {
 		private cmsService: CMSService,
 		private networkBoostService: NetworkBoostService,
 		private commonService: CommonService,
-		private upeService: UPEService, private loggerService: LoggerService,
-		private hypService: HypothesisService, private translate: TranslateService
+		private titleService: Title,
+		public dashboardService: DashboardService,
+		private upeService: UPEService,
+		private loggerService: LoggerService,
+		private hypService: HypothesisService,
+		private translate: TranslateService
 	) {
-		this.isUPEFailed = false;  // init UPE request status
+		this.titleService.setTitle('gaming.common.narrator.pageTitle.networkBoost');
+		this.isUPEFailed = false; // init UPE request status
 		this.isCmsLoaded = false;
 		this.setPreviousContent();
 		this.fetchCMSArticles();
@@ -56,29 +60,51 @@ export class PageNetworkboostComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.commonService.notification.subscribe(
-			(notification: AppNotification) => {
-				this.onNotification(notification);
-			}
-		);
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		// AutoClose Init
 		// this.toggleStatus = this.commonService.getLocalStorageValue();
 		this.getNetworkBoostStatus();
-	}
+		const queryOptions = {
+			Page: 'dashboard',
+			Lang: 'EN',
+			GEO: 'US',
+			OEM: 'Lenovo',
+			OS: 'Windows',
+			Segment: 'SMB',
+			Brand: 'Lenovo'
+		};
 
+		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+			const cardContentPositionA = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-F'
+			)[0];
+			if (cardContentPositionA) {
+				this.cardContentPositionA = cardContentPositionA;
+			}
+
+			const cardContentPositionB = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-title-description-link-image',
+				'position-B'
+			)[0];
+			if (cardContentPositionB) {
+				this.cardContentPositionB = cardContentPositionB;
+				if (this.cardContentPositionB.BrandName) {
+					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				}
+			}
+		});
+	}
 	async openTargetModal() {
 		try {
 			this.needToAsk = this.networkBoostService.getNeedToAsk();
-			this.needToAsk =
-				this.needToAsk === undefined || isNaN(this.needToAsk)
-					? 0
-					: this.needToAsk;
-			console.log(
-				'NEED TO ASK FROM LOCAL =>',
-				this.needToAsk,
-				this.needToAsk === 1,
-				this.needToAsk === 2
-			);
+			this.needToAsk = this.needToAsk === undefined || isNaN(this.needToAsk) ? 0 : this.needToAsk;
+			console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk, this.needToAsk === 1, this.needToAsk === 2);
 			console.log('TOGGLE STATUS =>', this.toggleStatus);
 			if (this.toggleStatus) {
 				this.showAppsModal = true;
@@ -98,8 +124,7 @@ export class PageNetworkboostComponent implements OnInit {
 	private onNotification(notification: AppNotification) {
 		if (
 			notification &&
-			(notification.type === NetworkStatus.Offline ||
-				notification.type === NetworkStatus.Online)
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
 		) {
 			this.isOnline = notification.payload.isOnline;
 		}
@@ -147,18 +172,13 @@ export class PageNetworkboostComponent implements OnInit {
 	async setNetworkBoostStatus(event: any) {
 		try {
 			this.toggleStatus = event.switchValue;
-			await this.networkBoostService.setNetworkBoostStatus(
-				event.switchValue
-			);
+			await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
 			if (!this.toggleStatus) {
 				if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
 				}
 			}
-			this.commonService.setLocalStorageValue(
-				LocalStorageKey.NetworkBoostStatus,
-				this.toggleStatus
-			);
+			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
 			console.log(`ERROR in setNetworkBoostStatus()`, err);
 		}
@@ -175,10 +195,7 @@ export class PageNetworkboostComponent implements OnInit {
 	async getNetworkBoostStatus() {
 		try {
 			this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
-			this.commonService.setLocalStorageValue(
-				LocalStorageKey.NetworkBoostStatus,
-				this.toggleStatus
-			);
+			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
 			console.log(`ERROR in setNetworkBoostStatus()`, err);
 		}
@@ -217,9 +234,7 @@ export class PageNetworkboostComponent implements OnInit {
 				)[0];
 				if (cardContentPositionB) {
 					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
-							'|'
-						)[0];
+						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 					}
 					cardContentPositionB.DataSource = 'cms';
 
@@ -235,44 +250,60 @@ export class PageNetworkboostComponent implements OnInit {
 				const upeParam = {
 					position: 'position-B'
 				};
-				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
-					const cardContentPositionB = this.upeService.getOneUPEContent(
-						upeResp,
-						'half-width-title-description-link-image',
-						'position-B'
-					)[0];
-					if (cardContentPositionB) {
-						this.cardContentPositionB = cardContentPositionB;
-						if (this.cardContentPositionB.BrandName) {
-							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				this.upeService.fetchUPEContent(upeParam).subscribe(
+					(upeResp) => {
+						const cardContentPositionB = this.upeService.getOneUPEContent(
+							upeResp,
+							'half-width-title-description-link-image',
+							'position-B'
+						)[0];
+						if (cardContentPositionB) {
+							this.cardContentPositionB = cardContentPositionB;
+							if (this.cardContentPositionB.BrandName) {
+								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+							}
+							// 		cardContentPositionB.DataSource = 'upe';
+							// 		this.dashboardService.cardContentPositionB = cardContentPositionB;
+							// 		this.isUPEFailed = false;
+							// 	}
+							// },
+							// (err) => {
+							// 	this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+							// 	this.isUPEFailed = true;
+							// 	if (this.isCmsLoaded) {
+							// 		this.cardContentPositionB = this.cardContentPositionBCms;
+							// 		this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+							// 	}
+							cardContentPositionB.DataSource = 'upe';
+							this.networkBoostService.cardContentPositionB = cardContentPositionB;
+							this.isUPEFailed = false;
 						}
-						cardContentPositionB.DataSource = 'upe';
-						this.networkBoostService.cardContentPositionB = cardContentPositionB;
-						this.isUPEFailed = false;
-					}
-				}, (err) => {
-					this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-					this.isUPEFailed = true;
-					if (this.isCmsLoaded) {
-						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
-					}
-				});
+					}, (err) => {
+						this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+						this.isUPEFailed = true;
+						if (this.isCmsLoaded) {
+							this.cardContentPositionB = this.cardContentPositionBCms;
+							this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
+						}
+					});
 			}
 		});
 	}
 
 	private getTileBSource() {
 		return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then((source) => {
-				if (source === 'UPE') {
-					resolve('UPE');
-				} else {
+			this.hypService.getFeatureSetting('TileBSource').then(
+				(source) => {
+					if (source === 'UPE') {
+						resolve('UPE');
+					} else {
+						resolve('CMS');
+					}
+				},
+				() => {
 					resolve('CMS');
 				}
-			}, () => {
-				resolve('CMS');
-			});
+			);
 		});
 	}
 

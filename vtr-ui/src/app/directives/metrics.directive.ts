@@ -21,19 +21,19 @@ import {
 
 export interface MetricsData {
 	ItemType: string;
-	ItemName?: string;
-	ItemParent?: string;
-	ItemParm?: string;
-	ItemValue?: string;
-	viewOrder?: number;
-	ItemID?: string;
-	ItemCategory?: string;
-	ItemPosition?: string;
-	PageNumber?: string;
-	SettingParent?: string;
-	SettingName?: string;
-	SettingValue?: string;
-	SettingParm?: string;
+	ItemName ? : string;
+	ItemParent ? : string;
+	ItemParm ? : string;
+	ItemValue ? : string;
+	viewOrder ? : number;
+	ItemID ? : string;
+	ItemCategory ? : string;
+	ItemPosition ? : string;
+	PageNumber ? : string;
+	SettingParent ? : string;
+	SettingName ? : string;
+	SettingValue ? : string;
+	SettingParm ? : string;
 }
 
 

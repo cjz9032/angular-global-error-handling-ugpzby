@@ -1,4 +1,6 @@
 {
+	"dir": "ltr",
+	"dirClass": "ltr",
 	"gaming": {
 		"dashboard": {
 			"device": {
@@ -108,6 +110,16 @@
 					"sub2": "Facebook",
 					"sub3": "Instagram"
 				}
+			},
+			"narrator": {
+				"pageTitle": {
+					"device": "Lenovo Vantage home page",
+					"macroKey": "Macro key page",
+					"networkBoost": "network boost page",
+					"autoClose": "auto close page",
+					"lighting": "Lighting page"
+				},
+				"mainMenuLink": "Header main logo"
 			}
 		},
 		"macroKey": {
@@ -235,6 +247,28 @@
 			},
 			"recording": {
 				"title": "Recording Macro Key For"
+			},
+			"narrator": {
+				"backDashboard": "Back to dashboard",
+				"macrokeyNumpad": "macrokey numpad",
+				"clearText": "macrokey clear records",
+				"popupOk": "macrokey popup clear",
+				"popupClear": "macrokey popup ok",
+				"popupCancel": "macrokey popup cancel",
+				"popupClose": "close",
+				"optionSelected": "selected",
+				"numbersSelectedNumpad": "selected macrokey numpad",
+				"macrokeySettings1": {
+					"option1": "on",
+					"option2": "macro key settings enabled when gaming",
+					"option3": "macro key settings off"
+				},
+				"numberInput": {
+					"title": "Number",
+					"bundled": "bundled",
+					"unbundled": "unbundled",
+					"isSelected": "is selected"
+				}
 			}
 		},
 		"lightingProfile": {
@@ -271,6 +305,70 @@
 					"title": "APPLIED"
 				}
 			},
+			"lightingeffectnarrator": {
+				"option1": {
+					"title": "front on"
+				},
+				"option2": {
+					"title": "front flicker"
+				},
+				"option3": {
+					"title": "front breath"
+				},
+				"option4": {
+					"title": "front wave"
+				},
+				"option5": {
+					"title": "front smooth"
+				},
+				"option6": {
+					"title": "front cpu temperature"
+				},
+				"option7": {
+					"title": "front cpu utilization"
+				},
+				"option8": {
+					"title": "front off"
+				},
+				"color": {
+					"title": "Color settings"
+				},
+				"lightingEffect": {
+					"title": "Lighting effect"
+				}
+			},
+			"lightingeffectsidenarrator": {
+				"option1": {
+					"title": "side on"
+				},
+				"option2": {
+					"title": "side flicker"
+				},
+				"option3": {
+					"title": "side breath"
+				},
+				"option4": {
+					"title": "side wave"
+				},
+				"option5": {
+					"title": "side smooth"
+				},
+				"option6": {
+					"title": "side cpu temperature"
+				},
+				"option7": {
+					"title": "side cpu utilization"
+				},
+				"option8": {
+					"title": "side off"
+				},
+				"color": {
+					"title": "Color settings"
+				},
+				"lightingEffect": {
+					"title": "Lighting effect"
+				}
+			},
 			"brightness": {
 				"text1": {
 					"title": "*Brightness setting doesn't apply on "
@@ -280,6 +378,23 @@
 				}
 			},
 			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "Always On"
+				},
+				"option2": {
+					"title": "Fast Blink"
+				},
+				"option3": {
+					"title": "Medium Blink"
+				},
+				"option4": {
+					"title": "Slow Blink"
+				},
+				"option5": {
+					"title": "Blink Level"
+				}
+			},
+			"lightingSingleLightingOptionnarrator": {
 				"option1": {
 					"title": "Always On"
 				},
@@ -326,6 +441,26 @@
 					"title": "Profile 3"
 				}
 			},
+			"lightingnarrator": {
+				"text1": {
+					"title": "Lighting profile off"
+				},
+				"text2": {
+					"title": "Lighting profile 1"
+				},
+				"text3": {
+					"title": "Lighting profile 2"
+				},
+				"text4": {
+					"title": "Lighting profile 3"
+				},
+				"Customize": {
+					"title": "set lighting profile"
+				},
+				"heading": {
+					"title": "to default:"
+				}
+			},
 			"colourwheel": {
 				"text1": {
 					"title": "Selecting colour not available to this effect."
@@ -348,6 +483,11 @@
 				"text7": {
 					"title": "Color"
 				}
+			},
+			"rgbValueNarrator": {
+				"red": "rgb red value edit",
+				"green": "rgb green value edit",
+				"blue": "rgb blue value edit"
 			},
 			"lightingProfileHeading": {
 				"text1": {
@@ -374,16 +514,27 @@
 			"title": "Auto Close",
 			"addAppsButton": "Add",
 			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize the gaming performance. NOTE: This feature closes the app completely. So always make sure that you've saved your work.",
+			"autocClosenarrator": "Add",
+			"autocClosenarratorremove": "Remove",
+			"autocClosenarratorback": "Back to dashboard",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
-				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
+				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "TURN ON",
 				"btnCancel": "NOT NOW"
 			},
+			"modalTurnAutoCloseNarrator": {
+				"close": "Close",
+				"dontask": "Don't ask again",
+				"turnOn": "Turn on auto close",
+				"notNow": "Not now",
+				"running": "No running apps to add window",
+				"open": "Auto close add apps window opened"
+			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
-				"body": "Only apps currently running will be shown in the list below."
+				"body": "Only apps currently running will show in the list below."
 			},
 			"noRunningApps": {
 				"title": "No Running Apps To Add",
@@ -392,13 +543,13 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
+			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "TURN ON",
-				"btnCancel": "NOT NOW"
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -406,6 +557,28 @@
 					"part1": "You can add up to 5 additional apps to boost",
 					"part2": "of",
 					"part3": "added"
+				}
+			}
+		},
+		"narrator": {
+			"networkBoost": {
+				"subPage": {
+					"addApps": "Add apps",
+					"remove": "Remove"
+				},
+				"turnOnModal": {
+					"confirmation": "Network boost turn on confirmation window opened",
+					"dontAskAgain": "Dont ask again",
+					"turnOnButton": "modal Turn networkBoost turn on",
+					"notOnButton": "modal Turn networkBoost not now"
+				},
+				"addApps": {
+					"addAppsTitle": "Networkboost add apps window opened",
+					"noAppsTitle": "No running Apps to add window",
+					"add": "add"
+				},
+				"common": {
+					"close": "close"
 				}
 			}
 		}
@@ -646,6 +819,7 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
+				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
@@ -699,10 +873,11 @@
 				"condition": {
 					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
 					"Good": "<b>The battery is in good condition.</b>",
-					"Exhaustion": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery.",
+					"Exhaustion": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
+					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
@@ -712,7 +887,7 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery."
+					"PermanentError": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one."
 				}
 			},
 			"power": {
@@ -886,6 +1061,42 @@
 							"start": "Start charging when below",
 							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "Stop charging at"
+						}
+					},
+					"gaugeReset": {
+						"title": "Battery gauge reset",
+						"description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+						"barCode": "Barcode",
+						"progress": "Progress",
+						"remaining": "Remaining",
+						"startTime": "Start time",
+						"lastReset": "Last reset",
+						"fullChargeCapacity": "Full charge capacity",
+						"btnLabel": {
+							"reset": "Reset",
+							"stop": "Stop"
+						},
+						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+						"FCCText": "From {{before}} Wh to {{after}} Wh",
+						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+						"resetLog": {
+							"ERROR_SUCCESS": "Complete. Successful reset.",
+							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
+							"ERROR_LOGOFF": "Incomplete. User logged off.",
+							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+						},
+						"popup": {
+							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
+							"continue": "Continue",
+							"cancel": "Cancel",
+							"yes": "Yes",
+							"description3": "Are you sure you want to stop the battery gauge reset?"
 						}
 					},
 					"expressCharging": {
@@ -1151,6 +1362,19 @@
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
 						}
+					},
+					"VoipHotkeys": {
+						"title": "VoIP Hotkey Functions",
+						"description": {
+							"main": "This feature enables you to answer or reject a VoIP call by pressing the hotkeys on your keyboard:",
+							"f10": "F10: answer the call",
+							"f11": "F11: reject or hang up the call"
+						},
+						"tooltip": "Currently, this feature is supported only on Skype for Business 2016 and Microsoft Teams 1.0.<br>To use the feature, you need to download and install the apps first.",
+						"hasInstalledAppsDescription": "Select the app that you want to use the hotkeys on:",
+						"noInstalledAppsDescription": "This feature only support below applications: ",
+						"hasInstalledAppsNote": "Note: For Microsoft Teams 1.0, the F11 key cannot be used to hang up the call.",
+						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
 					}
 				},
 				"userDefinedKey": {
@@ -1226,13 +1450,28 @@
 							"slow": "Slow"
 						},
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+					},
+					"facialRecognition": {
+						"title": "FACIAL RECOGNITION",
+						"caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+						"checkBox": "Turn on the camera and enable this feature",
+						"note": {
+							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+							"privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+							"windowsLink": "Go to Windows Settings to give access",
+							"privacyLink": "Go to Camera privacy mode to turn it off"
+						}
 					}
+				},
+				"sensitivityAdjusting": {
+					"title": "SENSITIVITY ADJUSTING"
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
 					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
+						"medium": "Middle",
 						"far": "Far"
 					},
 					"tooltipcontent": {
@@ -1253,7 +1492,8 @@
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
 					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Login will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
-					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
+					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},
 				"WindowsLink": {
 					"goToWindowsHello": "Go to Windows Hello Settings",
@@ -1325,7 +1565,7 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as 5KPlayer, and etc. support this feature."
 			},
 			"voice": {
 				"title": "Voice",
@@ -1410,6 +1650,7 @@
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
+			"installingTitle": "During the updates, do not put your computer into sleep or hibernate mode.",
 			"last": "Last updated: ",
 			"next": "Next scheduled update: ",
 			"checkButton": "CHECK FOR UPDATES ",
@@ -1551,10 +1792,10 @@
 			"wifiNetworks": "Wi-fi networks",
 			"homeDevices": "Home devices",
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
+			"disconnect": "Disconnect",
+			"goDashboard": "Go To Dashboard",
 			"buyNow": "Buy Now",
-			"extendNow": "extend now",
+			"extendNow": "Extend Now",
 			"renewNow": "Renew Now",
 			"poweredBy": "Powered by Coronet",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
@@ -1591,7 +1832,7 @@
 			"startTrial": "Start Trial",
 			"startTrialTitle": "Create your own Connected Home Security",
 			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
+			"join": "Join",
 			"joinTitle": "Join your family's Connected Home Security",
 			"joinDescription": "Become a part of your family security group."
 		},
@@ -1682,7 +1923,7 @@
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
 			"suspicious": "SUSPICIOUS",
-			"securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+			"securityScoreDepends": "Your security result depends on if you are:",
 			"antivirus": "Being protected by anti-virus software",
 			"password": "Having strong and complex passwords managed in a safe way",
 			"vpn": "Monitoring your network exposure to attackers",
@@ -1763,7 +2004,8 @@
 			},
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
-				"unknown": "Unknown"
+				"unknown": "Unknown",
+				"betterOffer":"Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {
@@ -1803,7 +2045,7 @@
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
-				"closeText": "close"
+				"closeText": "Close"
 			}
 		},
 		"homeprotection": {
@@ -2456,6 +2698,7 @@
 		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
 		"doNotSwitchApp": "• Do not switch to other app.",
 		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
+		"testNotApplicable": "Not applicable on custom scan",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

@@ -6,14 +6,15 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import {DeviceService}  from 'src/app/services/device/device.service';
-import { $ } from 'protractor';
+import { ConfigService } from 'src/app/services/config/config.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
-	styleUrls: ['./modal-welcome.component.scss'],
-	providers: [TimerService]
+	styleUrls: [ './modal-welcome.component.scss' ],
+	providers: [ TimerService ]
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	progress = 49;
@@ -26,43 +27,57 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		page2: {
 			title: '',
 			subtitle: '',
-			radioValue: null,
+			radioValue: null
 		}
 	};
 	interests = [
-		'games', 'news', 'entertainment', 'technology',
-		'sports', 'arts', 'regionalNews', 'politics',
-		'music', 'science'
+		'games',
+		'news',
+		'entertainment',
+		'technology',
+		'sports',
+		'arts',
+		'regionalNews',
+		'politics',
+		'music',
+		'science'
 	];
 	// to show small list. on click of More Interest show all.
 	interestCopy = this.interests.slice(0, 8);
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
+	privacyPolicyLink: 'https://www.lenovo.com/us/en/privacy/';
 	machineInfo: any;
 
 	@ViewChildren('interestChkboxs') interestChkboxs: any;
 	@ViewChildren('welcomepage2') welcomepage2: any;
 	shouldManuallyFocusPage2 = true;
+	shouldManuallyFocusMoreInterest =  false;
 
 	constructor(
 		private deviceService: DeviceService,
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
 		public commonService: CommonService,
-		private timerService: TimerService) {
+		private configService: ConfigService,
+		private timerService: TimerService,
+		private userService: UserService) {
 		this.metrics = shellService.getMetrics();
 		this.privacyPolicy = this.metrics.metricsEnabled;
 		const self = this;
 		shellService.getMetricsPolicy((result) => {
 			self.privacyPolicy = result;
 		});
-		deviceService.getMachineInfo().then(val => {
+		deviceService.getMachineInfo().then((val) => {
 			this.machineInfo = val;
 		});
 	}
 
 	ngOnInit() {
 		this.timerService.start();
+		this.configService.getPrivacyPolicyLink().then((policyLink) => {
+			this.privacyPolicyLink = policyLink;
+		});
 	}
 
 	ngAfterViewInit() {
@@ -70,8 +85,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		const welcomeUseTime = welcomeEnd - this.welcomeStart;
 		console.log(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
 		this.interestChkboxs.changes.subscribe(() => {
-			if (this.interestChkboxs.length > 8) {
+			if (this.interestChkboxs.length > 8 && this.shouldManuallyFocusMoreInterest === true) {
 				this.interestChkboxs._results[this.interestChkboxs.length - 2].nativeElement.focus();
+				this.shouldManuallyFocusPage2 = false;
+				this.shouldManuallyFocusMoreInterest = false;
 			}
 		});
 
@@ -84,7 +101,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	next(page) {
-		this.metrics.metricsEnabled = (this.privacyPolicy === true);
+		this.metrics.metricsEnabled = this.privacyPolicy === true;
 		let tutorialData;
 		if (page < 2) {
 			const data = {
@@ -136,6 +153,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
+			this.userService.sendSilentlyLoginMetric();
 			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
@@ -164,10 +182,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	onKeyPress($event) {
 		if ($event.keyCode === 13) {
 			$event.target.click();
+			this.shouldManuallyFocusMoreInterest = true;
 		}
 	}
 
-	btnDoneOnKeyPress($event){
+	btnDoneOnKeyPress($event) {
 		if ($event.keyCode === 13) {
 			this.next(2);
 		}
