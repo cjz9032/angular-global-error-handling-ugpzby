@@ -484,10 +484,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	private setRunVersionToRegistry() {
 		setTimeout(() => {
-			let runVersion = this.vantageShellService.getShellVersion();
-			let regUtil = this.vantageShellService.getRegistryUtil();
+			const runVersion = this.vantageShellService.getShellVersion();
+			const regUtil = this.vantageShellService.getRegistryUtil();
 			if (runVersion && regUtil) {
-				let regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';
+				const regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';
 				regUtil.queryValue(regPath).then(val => {
 					if (!val || (val.keyList || []).length === 0) {
 						return ;
