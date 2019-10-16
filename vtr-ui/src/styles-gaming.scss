@@ -1216,6 +1216,111 @@
 			}
 		}
 	}
+// changes to be done from here
+	.vtr-home-security-content {
+		background-color: $gaming_dark;
+	
+		.header {
+			.heading {
+				color: $gaming_lightest!important;
+			}
+		}
+		.text-regular {
+			color: $gaming_lightest!important;
+		}
+	
+		.peace-of-mind {
+			.sub-heading {
+				color: $gaming_lightest!important;
+			}
+		}
+	
+		.bullet-list {
+			background-color: $light;
+	
+			li {
+				color: $gaming_lightest!important;
+			}
+		}
+	}
+
+	.vtr-home-security-card {
+		background-color: $gaming_darker!important;
+		border: 0.1rem solid $gaming_darkest!important;
+		.content {
+			.container-fluid:nth-child(2n + 1) {
+				border-right: 0.1rem solid $gaming_darkest!important;
+			}
+			.container-fluid {
+				.title {
+					color:  $gaming_lightest!important;
+				}
+	
+				.description {
+					color:  $gaming_lightest!important;
+				}
+			}
+		}
+	
+		@media #{$medium-screen} {
+			.content {
+				.container-fluid:nth-child(2n + 1) {
+					border-bottom: 0.1rem solid $gaming_darkest!important;
+				}
+			}
+		}
+	
+		@media #{$small-screen}{
+			.content {
+				.container-fluid:nth-child(2n + 1) {
+					border-bottom: 0.1rem solid $gaming_darkest!important;
+				}
+			}
+		}
+	}
+
+
+// changes to be done till here
+
+
+	.vtr-security-health {
+		background-color: $gaming_dark!important;	
+		.title {
+			color: $gaming_lightest!important;
+		}
+	}	
+	.vtr-home-security {
+		.header {
+			.heading {
+				color: $gaming_lightest!important;
+			}
+			.text-regular {
+				color: $gaming_light_blue!important;
+			}
+		}
+		.text-content {
+			color: $gaming_light_blue!important;
+		}
+
+		.peace-of-mind {
+			.sub-heading {
+				color: $gaming_light_blue!important;
+			}
+		}
+	}
+
+	.vtr-connected-home-status {
+		background-color: $gaming_dark!important;
+		.title {
+			color: $gaming_lightest;
+		}
+
+		.card-header {
+			background: $gaming_darkest!important;
+			color: $gaming_lightest!important;
+		}
+	}
+
 	.wifi-security {
 		.threat-locator-container {
 			background: $gaming_dark!important;
