@@ -24,13 +24,12 @@ import { ModernPreloadService } from 'src/app/services/modern-preload/modern-pre
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyId, AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
-import { EMPTY } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -319,7 +318,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		event.stopPropagation();
 	}
 
-	onKeyPress($event){
+	onKeyPress($event) {
 		if ($event.keyCode === 13) {
 			this.toggleMenu($event);
 		}
@@ -538,13 +537,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	private showSmartAssist() {
-		this.logger.info('inside showSmartAssist');
+		this.logger.info('MenuMainComponent.showSmartAssist : inside showSmartAssist');
 		this.getMenuItems().then((items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
-					this.logger.info('get IsSmartAssistSupported');
+					this.logger.info('MenuMainComponent.showSmartAssist : get IsSmartAssistSupported value');
 
 					// if cache has value true for IsSmartAssistSupported, add menu item
 					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
@@ -555,7 +554,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
-					this.logger.info('before Promise.all JS Bridge call');
+					this.logger.info('MenuMainComponent.showSmartAssist : before Promise.all JS Bridge call. Cache value', isSmartAssistSupported);
 
 					// still check if any of the feature supported. if yes then add menu
 					Promise.all([
@@ -569,7 +568,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.smartAssist.getHDDStatus()
 					])
 						.then((responses: any[]) => {
-							this.logger.info('inside Promise.all THEN JS Bridge call', responses);
+							this.logger.info('MenuMainComponent.showSmartAssist : promise then', responses);
 							// cache smart assist capability
 							const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
 							smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
@@ -581,7 +580,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 								LocalStorageKey.SmartAssistCapability,
 								smartAssistCapability
 							);
-							this.logger.info('inside Promise.all THEN JS Bridge call', smartAssistCapability);
+							this.logger.info('MenuMainComponent.showSmartAssist : smartAssistCapability', smartAssistCapability);
 
 							const isAvailable =
 								responses[0] ||
@@ -602,8 +601,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 							}
 						})
 						.catch((error) => {
-							this.logger.error('error in initSmartAssist.Promise.all()', error.message);
-							return EMPTY;
+							this.logger.error('MenuMainComponent.showSmartAssist: error in promise', error.message);
 						});
 				}
 			}
