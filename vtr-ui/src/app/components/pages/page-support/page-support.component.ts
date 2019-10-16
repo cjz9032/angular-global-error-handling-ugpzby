@@ -99,6 +99,12 @@ export class PageSupportComponent implements OnInit {
 		'assets/images/support/support-offline-3.jpg',
 		'assets/images/support/support-offline-4.jpg',
 	];
+	localCateIcons = [
+		'assets/images/support/design-innovation.svg',
+		'assets/images/support/how-to.svg',
+		'assets/images/support/lifestyle-entertainment.svg',
+		'assets/images/support/software-apps.svg',
+	]
 
 	cateStartTime: any;
 	contentStartTime: any;
@@ -233,6 +239,11 @@ export class PageSupportComponent implements OnInit {
 				const cateUseTime = cateEnd - this.cateStartTime;
 				if (response && response.length > 0) {
 					this.articleCategories = response.slice(0, 4);
+					response.forEach(cate => {
+						if (cate.Image) {
+							cate.Image = cate.Image.replace('(', '%28').replace(')', '%29');
+						}
+					});
 					const msg = `Performance: Support page get article category, ${cateUseTime}ms`;
 					this.loggerService.info(msg);
 				} else {
