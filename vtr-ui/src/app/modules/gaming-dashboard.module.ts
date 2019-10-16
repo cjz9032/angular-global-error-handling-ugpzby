@@ -38,6 +38,7 @@ import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { LocationNoticeModule } from './location-notice/location-notice.module';
 import { DialogService } from '../services/dialog/dialog.service';
+import { FeedbackModule } from './feedback/feedback.module';
 
 library.add(faKeyboard);
 library.add(faQuestionCircle);
@@ -78,6 +79,7 @@ library.add(faCheck);
 		MetricsModule,
 		WidgetOfflineModule,
 		LocationNoticeModule,
+		FeedbackModule
 	],
 	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	providers: [MockService, DialogService],

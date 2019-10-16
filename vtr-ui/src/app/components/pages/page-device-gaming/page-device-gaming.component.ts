@@ -443,4 +443,13 @@ export class PageDeviceGamingComponent implements OnInit {
 			}
 		}
 	}
+
+	onFeedbackModal() {
+		this.modalService.open(FeedbackFormComponent, {
+			backdrop: true,
+			size: 'lg',
+			centered: true,
+			windowClass: 'feedback-modal'
+		});
+	}
 }
