@@ -172,19 +172,11 @@
 							],
 							"serviceWorker": true
 						},
-<<<<<<< HEAD
 						"beta": {
 							"fileReplacements": [
 								{
 									"replace": "src/environments/environment.ts",
 									"with": "src/environments/environment.beta.ts"
-=======
-						"mock": {
-							"fileReplacements": [
-								{
-									"replace": "src/environments/environment.ts",
-									"with": "src/environments/environment.mock.ts"
->>>>>>> develop
 								},
 								{
 									"replace": "src/app/services/mock/mock.service.ts",
@@ -195,7 +187,6 @@
 									"with": "src/app/services/security/securityMock.service.prod.ts"
 								}
 							],
-<<<<<<< HEAD
 							"optimization": true,
 							"outputHashing": "all",
 							"sourceMap": false,
@@ -205,17 +196,6 @@
 							"extractLicenses": false,
 							"vendorChunk": false,
 							"buildOptimizer": true,
-=======
-							"optimization": false,
-							"outputHashing": "none",
-							"sourceMap": true,
-							"extractCss": true,
-							"namedChunks": true,
-							"aot": false,
-							"extractLicenses": false,
-							"vendorChunk": false,
-							"buildOptimizer": false,
->>>>>>> develop
 							"budgets": [
 								{
 									"type": "initial",
@@ -223,11 +203,7 @@
 									"maximumError": "15mb"
 								}
 							],
-<<<<<<< HEAD
 							"serviceWorker": true
-=======
-							"serviceWorker": false
->>>>>>> develop
 						}
 					}
 				},
