@@ -285,6 +285,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
 		// this.serverSwitchThis();
+		this.setRunVersionToRegistry();
 	}
 
 	ngOnDestroy() {
@@ -479,6 +480,26 @@ export class AppComponent implements OnInit, OnDestroy {
 					break;
 			}
 		}
+	}
+
+	private setRunVersionToRegistry() {
+		setTimeout(() => {
+			let runVersion = this.vantageShellService.getShellVersion();
+			let regUtil = this.vantageShellService.getRegistryUtil();
+			if (runVersion && regUtil) {
+				let regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';
+				regUtil.queryValue(regPath).then(val => {
+					if (!val || (val.keyList || []).length === 0) {
+						return ;
+					}
+					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then( val => {
+						if (val !== true) {
+							this.logger.error('failed to write shell run version to registry');
+						}
+					});
+				});
+			}
+			}, 2000);
 	}
 
 }
