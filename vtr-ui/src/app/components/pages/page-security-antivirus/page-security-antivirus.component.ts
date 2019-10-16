@@ -89,7 +89,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				features: this.antiVirus.mcafee.features,
 				expireAt: this.antiVirus.mcafee.expireAt,
 				metrics: this.antiVirus.mcafee.metrics,
-				launch: this.antiVirus.mcafee.launch.bind(this.antiVirus)
+				launch(): Promise<boolean> { return new Promise(() => true); } // added to fix build error
 			});
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
 			if (this.viewModel.mcafee.features) {

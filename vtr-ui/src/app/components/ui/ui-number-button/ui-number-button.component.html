@@ -6,7 +6,8 @@
 			<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink">
 				<defs>
-					<linearGradient x1="7.98495338%" y1="-30.2571913%" x2="82.5571836%" y2="111.917578%" id="linearGradient-1">
+					<linearGradient x1="7.98495338%" y1="-30.2571913%" x2="82.5571836%" y2="111.917578%"
+						id="linearGradient-1">
 						<stop stop-color="#5AA4FF" offset="0%"></stop>
 						<stop stop-color="#0078FF" offset="80.1269222%"></stop>
 						<stop stop-color="#1C88FF" offset="100%"></stop>
@@ -29,8 +30,10 @@
 				id="macrokey_numpad-{{number.key}}" (click)="numberClicked(number)" vtrMetrics
 				[metricsItem]="'macrokey_numpad-'+number.key" metricsEvent="featureClick"
 				[metricsParam]="'macrokey_numpad-'+number.key" metricsValue="{{number.key}}"
-				(keyup.enter)="numberClicked(number)" tabindex="1"
-				[attr.aria-label]="(number.status) ? ('gaming.macroKey.narrator.numberInput.title' | translate) + ' '+number.key+ ' '+ ('gaming.macroKey.narrator.numberInput.bundledSelected' | translate) : ('gaming.macroKey.narrator.numberInput.title' | translate)+ ' ' +number.key+ ' '+ ('gaming.macroKey.narrator.numberInput.unbundledSelected' | translate)"
+				(keyup.enter)="numberClicked(number); $event.target.focus();" tabindex="1"
+				[attr.aria-label]="(number.status) ? 
+				('gaming.macroKey.narrator.numberInput.title' | translate)+' '+number.key+' '+ (selectedNumber && number.key === selectedNumber.key ? ('gaming.macroKey.narrator.numberInput.isSelected' | translate):'')+' '+('gaming.macroKey.narrator.numberInput.bundled' | translate) : 
+				('gaming.macroKey.narrator.numberInput.title' | translate)+' '+number.key+' '+ (selectedNumber && number.key === selectedNumber.key ? ('gaming.macroKey.narrator.numberInput.isSelected' | translate):'')+' '+('gaming.macroKey.narrator.numberInput.unbundled' | translate)"
 				role="button">
 				<div>
 					{{ number.key | translate }}

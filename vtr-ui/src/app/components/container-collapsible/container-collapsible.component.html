@@ -8,14 +8,14 @@
 						<div class="row align-items-center py-2">
 							<p class="col-auto px-2 text-left mr-auto header"
 								id="{{collapseLinkId+'-collapse-card-title'}}"
-								tabindex="1"
+								tabindex="0"
 								attr.aria-label="{{ cardTitle + ',card' }}">
 								{{cardTitle}}
 							</p>
 							<div class="col-auto px-3"
 								*ngIf="allowCollapse">
 								<div class="collapse-control"
-									tabindex="1"
+									tabindex="0"
 									vtrMetrics
 									id="{{collapseLinkId+'-collapse-link'}}"
 									attr.aria-label="{{collapseLinkId+'-collapse-link'}}"

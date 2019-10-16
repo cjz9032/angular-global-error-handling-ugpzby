@@ -15,6 +15,11 @@ import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router, NavigationExtras } from '@angular/router';
+import { throttle, throttleTime, debounce, debounceTime } from 'rxjs/operators';
+import { of, fromEvent } from 'rxjs';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EMPTY } from 'rxjs';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 
@@ -49,6 +54,9 @@ export class PageSmartAssistComponent
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
+	private visibilityChange: any;
+	private Windows: any;
+	private windowsObj: any;
 	public hpdSensorType = 0;
 	public sensitivityVisibility = false;
 	public sesnsitivityAdjustVal = 0;
@@ -100,6 +108,9 @@ export class PageSmartAssistComponent
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private translate: TranslateService,
+		public modalService: NgbModal,
+		private router: Router,
+		private vantageShellService:VantageShellService
 	) {
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -107,6 +118,24 @@ export class PageSmartAssistComponent
 		});
 
 		this.fetchCMSArticles();
+
+		//below logic required to getZeroTouchLockFacialRecoStatus when window is maximized from minimized state
+		this.visibilityChange = this.onVisibilityChanged.bind(this);
+		document.addEventListener('visibilitychange', this.visibilityChange);
+		fromEvent(document.body, 'mouseenter')
+			.pipe(
+				throttleTime(2500)
+			)
+			.subscribe(() => {
+				this.onMouseEnterEvent();
+			});	
+		this.Windows = vantageShellService.getWindows();
+		this.windowsObj =  this.Windows.Devices.Enumeration.DeviceAccessInformation
+		.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
+
+		this.windowsObj.addEventListener('accesschanged', () => {
+			this.permissionChanged();
+		});
 	}
 
 	ngOnInit() {
@@ -183,6 +212,10 @@ export class PageSmartAssistComponent
 		this.intelligentSecurity.isZeroTouchLoginVisible = false;
 		this.intelligentSecurity.isIntelligentSecuritySupported = false;
 		this.intelligentSecurity.isWindowsHelloRegistered = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;
+		this.intelligentSecurity.facilRecognitionCameraAccess= true;
+		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 		this.intelligentSecurity.isDistanceSensitivityVisible = false;
 	}
 
@@ -295,7 +328,7 @@ export class PageSmartAssistComponent
 			this.smartAssist.getAutoScreenOffNoteStatus(),
 			this.smartAssist.getReadingOrBrowsingVisibility(),
 			this.smartAssist.getReadingOrBrowsingStatus(),
-			this.smartAssist.getReadingOrBrowsingTime()
+			this.smartAssist.getReadingOrBrowsingTime(),
 		]).then((responses: any[]) => {
 			this.intelligentScreen.isIntelligentScreenVisible = responses[0];
 			this.intelligentScreen.isAutoScreenOffVisible = responses[1];
@@ -358,7 +391,8 @@ export class PageSmartAssistComponent
 			this.smartAssist.getSelectedLockTimer(),
 			this.smartAssist.getHPDStatus(),
 			this.smartAssist.getHPDVisibilityInIdeaPad(),
-			this.smartAssist.getHPDVisibilityInThinkPad()
+			this.smartAssist.getHPDVisibilityInThinkPad(),
+			this.getFacialRecognitionStatus()
 		]).then((responses: any[]) => {
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
 			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
@@ -473,6 +507,14 @@ export class PageSmartAssistComponent
 			.then((isSuccess: boolean) => {
 				console.log('onZeroTouchLockTimerChange.setSelectedLockTimer', isSuccess, value);
 			});
+	}
+
+	public onZeroTouchLockFacialRecoChange() {
+		const value = this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled;
+		this.smartAssist.setZeroTouchLockFacialRecoStatus(value)
+			.then((isSuccess: boolean) => {
+			console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess} ; ${value}`);
+		});		
 	}
 
 	public onDistanceSensitivityAdjustToggle(event: any) {
@@ -606,8 +648,54 @@ export class PageSmartAssistComponent
 			console.error('getHPDSensorType' + error.message);
 		}
 	}
+
+	onClick(path) {
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
+	}
+
+	onJumpClick() {
+		let navigationExtras : NavigationExtras = {
+			queryParams: {'cameraSession_id': 'camera'},
+			fragment: 'anchor'
+		};
+		// this.router.navigate(['/device/device-settings/display-camera']);
+		this.router.navigate(['/device/device-settings/display-camera'],navigationExtras);
+	}
+
+	getFacialRecognitionStatus() {
+		return this.smartAssist.getZeroTouchLockFacialRecoStatus().then((res:any) => {
+			if (res) {
+				this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = res.available;
+				this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = res.status;
+				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
+				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
+			}
+			console.log(`getFacialRecognitionStatus refresh successed`);
+		})
+	}
+
+	onVisibilityChanged() {
+		if (!document.hidden) {
+			this.getFacialRecognitionStatus();
+			console.log(`zero touch lock facial recognition visibilityChanged - getFacialRecognitionStatus`)
+		}
+	}
+
+	onMouseEnterEvent() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition onMouseEnterEvent - getFacialRecognitionStatus`);
+	}
+
+	permissionChanged() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
+	}
+
 	ngOnDestroy() {
 		clearTimeout(this.getAutoScreenOffNoteStatus);
+		document.removeEventListener('visibilitychange', this.visibilityChange);
 	}
 
 }

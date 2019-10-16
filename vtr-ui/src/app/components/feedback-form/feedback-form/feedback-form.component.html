@@ -4,7 +4,6 @@
 		<div class="title">{{ 'dashboard.feedback.title' | translate }}</div>
 		<form name="feedBack"
 			class="feedback-form"
-			(submit)="onFeedBackSubmit()"
 			[formGroup]="feedbackForm"
 			novalidate>
 			<div class="line"></div>
@@ -58,14 +57,16 @@
 			</div>
 
 			<div class="d-flex">
-				<button type="submit"
-					class="button"
-					id="modal-btn-sendfeedback"
-					attr.aria-label="modal-btn-sendfeedback"
-					title="{{'dashboard.feedback.form.sendFeedback' | translate}}"
-					[disabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.qaPerformance === null && feedbackForm.value.qaUseFrequency === null">
-					{{'dashboard.feedback.form.sendFeedback' | translate}}
-				</button>
+				<div class="button-box">
+					<vtr-ui-button linkId="modal-btn-sendfeedback"
+						metricsEvent="FeatureClick"
+						metricsItem="SendFeedbackButton"
+						metricsParent="Page.Dashboard"
+						[isFullWidth]="true"
+						[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.qaPerformance === null && feedbackForm.value.qaUseFrequency === null"
+						[label]="'dashboard.feedback.form.sendFeedback' | translate"
+						(onClick)="onFeedBackSubmit()"></vtr-ui-button>
+				</div>
 				<div ngbDropdown 
 					class="d-inline-block dropdown-content">
 					<div class="dropdown-btn"

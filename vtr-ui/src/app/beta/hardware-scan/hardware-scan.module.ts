@@ -38,6 +38,7 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExcla
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
+import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
 
 library.add(faCaretUp);
 library.add(faCaretRight);
@@ -47,6 +48,7 @@ library.add(faExclamationTriangle);
 library.add(faExclamationCircle);
 library.add(faQuestionCircle);
 library.add(faAngleUp);
+library.add(faBan);
 
 
 @NgModule({

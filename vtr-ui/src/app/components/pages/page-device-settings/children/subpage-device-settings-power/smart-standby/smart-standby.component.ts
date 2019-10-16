@@ -180,6 +180,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	onSetDaysOfWeekOff(event) {
 		const daysOfWeekOff = event;
 		this.smartStandby.daysOfWeekOff = daysOfWeekOff;
+		this.cache.daysOfWeekOff = daysOfWeekOff;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 		try {
 			console.log('setSmartStandbyDaysOfWeekOff entered', event);
 			if (this.powerService.isShellAvailable) {

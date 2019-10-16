@@ -1,59 +1,60 @@
 <div class="vtr-ui-button">
-	<div class="button-box">
-		<div *ngIf="alreadyJoinGroup !== 'joined'">
-			<button 
-				[tabindex]="tabindex"
-				title="{{tooltip?label:''}}"
-				[disabled]="isDisabled"
-				type="button"
-				class="btn button {{getButtonColor(buttonColor)}}"
-				vtrMetrics
-				[routerLink]="routerPath"
-				routerLinkActive="active"
-				[id]="linkId"
-				[metricsItem]="metricsItem"
-				[metricsEvent]="metricsEvent"
-				[metricsParam]="metricsParam"
-				[metricsValue]="metricsValue"
-				[metricsItemPosition]="metricsItemPosition"
-				[metricsPageNumber]="metricsPageNumber"
-				[metricsItemID]="metricsItemID"
-				[metricsItemCategory]="metricsItemCategory"
-				[metricsParent]="metricsParent"
-				[ngClass]="{'fullWidth': isFullWidth === true,
-							'halfWidth': isHalfWidth,
-							'text-upper-case': upperCaseLabel,
-							'regular-width': isRegular,
-							'min-height': btnHeight,
-							'btn-gradient': isGradient}"
-				(click)="onClickButton($event)">
-				{{label}}
-			</button>
-		</div>
-		<div *ngIf="alreadyJoinGroup === 'joined'">
-			<button 
-				[tabindex]="tabindex"
-				title="{{tooltip?label:''}}"
-				type="button"
-				class="button disable"
-				[disabled]="false"
-				[id]="linkId"
-				vtrMetrics
-				[routerLink]="routerPath"
-				routerLinkActive="active"
-				[metricsItem]="metricsItem"
-				[metricsEvent]="metricsEvent"
-				[metricsParam]="metricsParam"
-				[metricsValue]="metricsValue"
-				[metricsItemPosition]="metricsItemPosition"
-				[metricsPageNumber]="metricsPageNumber"
-				[metricsItemID]="metricsItemID"
-				[metricsItemCategory]="metricsItemCategory"
-				[metricsParent]="metricsParent"
-				[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
-				(click)="onClickButton($event)">
-				{{label}}
-			</button>
+	<div class="button-box"
+		*ngIf="label">
+		<button *ngIf="alreadyJoinGroup !== 'joined'"
+			title="{{tooltip?label:''}}"
+			[disabled]="isDisabled || isLoading"
+			type="button"
+			class="btn button {{getButtonColor(buttonColor)}}"
+			vtrMetrics
+			[routerLink]="routerPath"
+			routerLinkActive="active"
+			[href]="href"
+			[id]="linkId"
+			[tabindex]="tabindex ? tabindex : 0"
+			[metricsItem]="metricsItem"
+			[metricsEvent]="metricsEvent"
+			[metricsParam]="metricsParam"
+			[metricsValue]="metricsValue"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsPageNumber]="metricsPageNumber"
+			[metricsItemID]="metricsItemID"
+			[metricsItemCategory]="metricsItemCategory"
+			[metricsParent]="metricsParent"
+			[ngClass]="{'fullWidth': isFullWidth === true,
+						'halfWidth': isHalfWidth,
+						'text-upper-case': upperCaseLabel === true,
+						'text-capitalize': capitalizeLabel === true,
+						'regular-width': isRegular,
+						'btn-size-small': btnHeight,
+						'btn-gradient': isGradient,
+						'btn-in-red-bg': inRedBackground,
+						'disable': isDisabled}"
+			(click)="onClickButton($event)">
+			<span class="text" [innerHTML]="label"></span>
+		</button>
+		<button *ngIf="alreadyJoinGroup === 'joined'"
+			title="{{tooltip?label:''}}"
+			type="button"
+			class="button disable"
+			[disabled]="false"
+			[id]="linkId"
+			[tabindex]="tabindex ? tabindex : 0"
+			vtrMetrics
+			[routerLink]="routerPath"
+			routerLinkActive="active"
+			[metricsItem]="metricsItem"
+			[metricsEvent]="metricsEvent"
+			[metricsParam]="metricsParam"
+			[metricsValue]="metricsValue"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsPageNumber]="metricsPageNumber"
+			[metricsItemID]="metricsItemID"
+			[metricsItemCategory]="metricsItemCategory"
+			[metricsParent]="metricsParent"
+			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
+			(click)="onClickButton($event)">{{label}} </button>
+		<div *ngIf="isLoading" class="loadingIcon spinner-border text-primary progress-spinner" role="status">
 		</div>
 	</div>
 </div>

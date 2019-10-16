@@ -7,8 +7,8 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { TranslateService } from '@ngx-translate/core';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { MetricService } from 'src/app/services/metric/metric.service';
-import {DashboardService} from 'src/app/services/dashboard/dashboard.service';
-import {map, mergeMap } from 'rxjs/operators';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { map, mergeMap } from 'rxjs/operators';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 @Component({
 	selector: 'vtr-widget-device',
@@ -31,7 +31,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private timer: TimerService,
 		private metrics: MetricService,
-		private dashboardServcie: DashboardService,
+		private dashboardService: DashboardService,
 		private adPolicyService: AdPolicyService
 	) {
 		this.myDevice = new MyDevice();
@@ -112,7 +112,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		const warranty = new Status();
 		warranty.id = 'warranty';
 		this.translate.stream('device.myDevice.warranty.notFound').subscribe((value) => {
-			warranty.title  = value;
+			warranty.title = value;
 		});
 		this.translate.stream('device.myDevice.warranty.detail.title').subscribe((value) => {
 			warranty.detail = value;
@@ -139,7 +139,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				const processor = this.deviceStatus[0];
 				processor.status = 0;
 				this.translate.stream('device.myDevice.processor.title').subscribe((value) => {
-					processor.title  = value;
+					processor.title = value;
 				});
 				processor.systemDetails = `${data.processor.name}`;
 
@@ -147,7 +147,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				const { total, used } = data.memory;
 				let type = data.memory.type;
 				this.translate.stream('device.myDevice.memory.title').subscribe((value) => {
-					memory.title  = value;
+					memory.title = value;
 				});
 
 				if (type.toLowerCase() === 'unknown') {
@@ -172,14 +172,14 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				}
 
 				const disk = this.deviceStatus[2];
-				const  totalDisk = data.disk.total;
+				const totalDisk = data.disk.total;
 				const usedDisk = data.disk.used;
 				this.translate.stream('device.myDevice.diskspace.title').subscribe((value) => {
-					disk.title   = value;
+					disk.title = value;
 				});
 
 				this.translate.stream('device.myDevice.of').subscribe((value) => {
-					disk.systemDetails   = `${this.commonService.formatBytes(usedDisk)} ${value} ${this.commonService.formatBytes(totalDisk)}`;
+					disk.systemDetails = `${this.commonService.formatBytes(usedDisk)} ${value} ${this.commonService.formatBytes(totalDisk)}`;
 				});
 
 				const percentDisk = parseInt(((usedDisk / totalDisk) * 100).toFixed(0), 10);
@@ -194,7 +194,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 
 		// sysupdate
 		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
-			this.dashboardServcie.getRecentUpdateInfo().subscribe(data => {
+			this.dashboardService.getRecentUpdateInfo().subscribe(data => {
 				if (data) {
 					const systemUpdate = this.deviceStatus[3];
 
@@ -236,7 +236,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		}
 
 		// warranty
-		this.dashboardServcie.getWarrantyInfo().subscribe(data => {
+		this.dashboardService.getWarrantyInfo().subscribe(data => {
 			if (data) {
 				let warranty;
 				if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
@@ -255,7 +255,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						warranty.title = value;
 					});
 					this.translate.stream('device.myDevice.warranty.detail.daysRemaining').subscribe((value) => {
-						warranty.systemDetails  = `${warrantyInDays} ${value}`;
+						warranty.systemDetails = `${warrantyInDays} ${value}`;
 					});
 
 					// days remaining`;
@@ -278,6 +278,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 					});
 					warranty.status = 1;
 				}
+				warranty.isHidden = !this.deviceService.showWarranty;
 			}
 		});
 	}

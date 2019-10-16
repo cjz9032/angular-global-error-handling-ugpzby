@@ -7,28 +7,17 @@
 	box-shadow: $drop_shadow;
 	padding: 3.6rem 4rem;
 	letter-spacing: 0;
-	margin-bottom: 4rem;
 
 	&.in-warranty {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat,
 			linear-gradient(to left bottom, #4980fc, #2e62d9);
 		background-size: cover;
-		.button {
-			border: 0;
-		}
 	}
 
 	&.expired {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat,
 			linear-gradient(to left top, $stop_light, $stop_dark);
 		background-size: cover;
-		.button {
-			border: 0;
-			color: #c94000;
-			&:focus {
-				box-shadow: 0 0 0 0.4rem rgba(255, 150, 146, 0.5);
-			}
-		}
 	}
 
 	&.not-found {
@@ -50,6 +39,7 @@
 		font-size: 2.4rem;
 		font-weight: $weight_bold;
 		padding-bottom: 1.5rem;
+		text-transform : capitalize;
 	}
 
 	.sub-title {
@@ -64,40 +54,11 @@
 		font-weight: $weight_medium;
 		line-height: 2rem;
 		padding-bottom: 2rem;
-		span {
-			opacity: .8;
-		}
 	}
 
 	.status-wrapper {
 		b {
 			white-space: nowrap;
-		}
-	}
-
-	.button {
-		text-transform: uppercase;
-		display: inline-block;
-		width: 100%;
-		height: 5rem;
-		line-height: 5rem;
-		border: 0.1rem solid $shade_blue;
-		border-radius: 10rem;
-		background: $light;
-		padding: 0 3rem;
-		color: $blue-dark;
-		font-size: 1.6rem;
-		letter-spacing: 0.15rem;
-		font-weight: $weight_bold;
-		text-align: center;
-		text-decoration: none;
-		cursor: pointer;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-
-		&:hover {
-			background: $main_lightest;
 		}
 	}
 
