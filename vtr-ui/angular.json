@@ -88,15 +88,15 @@
 									"with": "src/app/services/security/securityMock.service.prod.ts"
 								}
 							],
-							"optimization": true,
-							"outputHashing": "all",
+							"optimization": false,
+							"outputHashing": "none",
 							"sourceMap": true,
 							"extractCss": true,
 							"namedChunks": true,
-							"aot": true,
+							"aot": false,
 							"extractLicenses": false,
-							"vendorChunk": true,
-							"buildOptimizer": true,
+							"vendorChunk": false,
+							"buildOptimizer": false,
 							"budgets": [
 								{
 									"type": "initial",
