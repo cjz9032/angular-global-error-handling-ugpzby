@@ -115,7 +115,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				this.getMicrophoneSettings();
 			}
 		} else {
-				this.getMicrophoneSettings();
+			this.getMicrophoneSettings();
 		}
 	}
 
@@ -135,17 +135,18 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	initInputAccessories() {
-		// this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		// if (this.machineType !== 1) {
-			// this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
-			// return;
-		// }
-		const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-		const isAvailable = inputAccessoriesCapability.isUdkAvailable
-						  	|| inputAccessoriesCapability.isKeyboardMapAvailable
-							|| inputAccessoriesCapability.isVoipAvailable;
-		if (!isAvailable) {
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		if (this.machineType !== 1 && this.machineType !== 0) {
 			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+			return;
+		} else {
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			const isAvailable = inputAccessoriesCapability.isUdkAvailable
+				|| inputAccessoriesCapability.isKeyboardMapAvailable
+				|| inputAccessoriesCapability.isVoipAvailable;
+			if (!isAvailable) {
+				this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+			}
 		}
 	}
 
