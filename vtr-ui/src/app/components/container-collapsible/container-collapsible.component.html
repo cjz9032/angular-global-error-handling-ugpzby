@@ -22,6 +22,7 @@
 									[metricsValue]="isCollapsed"
 									[metricsItem]="'btn.collapse'"
 									[metricsParent]="metricsParent"
+									(keyup.enter)="onToggle()"
 									(click)="onToggle()">
 									<div *ngIf="isCollapsed"
 										class="collapse-text"

@@ -6,6 +6,9 @@
 	cursor: pointer;
 	label {
 		cursor: pointer;
+		.switch-label, .switch {
+			cursor: pointer;
+		}
 	}
 	&.switch-disable {
 		opacity: 0.3;

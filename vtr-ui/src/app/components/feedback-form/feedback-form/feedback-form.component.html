@@ -22,6 +22,7 @@
 						[value]="true">
 					<label class="form-check-label"
 						tabindex="0"
+						(keyup.enter)="setRadioStatus(qa.name, true)"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
 				<div class="form-check form-check-inline">
@@ -35,6 +36,7 @@
 						[value]="false">
 					<label class="form-check-label"
 						tabindex="0"
+						(keyup.enter)="setRadioStatus(qa.name, false)"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="line"></div>
