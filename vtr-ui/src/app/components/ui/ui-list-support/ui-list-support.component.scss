@@ -16,33 +16,6 @@
 			border-bottom: 0.1rem solid $shade_lighter;
 			color: $main_darker;
 
-			.item-icon {
-				&.status {
-					cursor: pointer;
-					.icon-bkg {
-						display: inline-block;
-						border-radius: 50%;
-						height: 2rem;
-						width: 2rem;
-						border-width: 0.2rem;
-						border-style: solid;
-						text-align: center;
-						cursor: pointer;
-						fa-icon {
-							font-size: 1.2rem;
-							line-height: 1.6rem;
-							color: $light;
-						}
-					}
-				}
-
-				fa-icon {
-					color: $main;
-					font-size: 1.9rem;
-					line-height: 3rem;
-				}
-			}
-
 			&:last-child {
 				border: none;
 			}
@@ -54,6 +27,12 @@
 				display: block;
 				cursor: pointer;
 
+				.item-icon-content {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
 				&:hover {
 					text-decoration: none;
 					background-color: $shade_extralight;
@@ -64,28 +43,10 @@
 				.icon-bkg {
 					cursor: pointer;
 				}
-				&.status {
-					.icon-bkg {
-						display: inline-block;
-						border-radius: 50%;
-						height: 2.4rem;
-						width: 2.4rem;
-						border-width: .2rem;
-						border-style: solid;
-						text-align: center;
-
-						fa-icon {
-							font-size: 1.2rem;
-							line-height: 2rem;
-							color: $light;
-						}
-					}
-				}
 
 				fa-icon {
 					color: $main;
 					font-size: 1.9rem;
-					line-height: 3rem;
 					cursor: pointer;
 				}
 			}
@@ -94,7 +55,7 @@
 				display: inline-block;
 				height: 2rem;
 				width: 2rem;
-				line-height: 3rem;
+				cursor: pointer;
 			}
 
 			.item-text {
