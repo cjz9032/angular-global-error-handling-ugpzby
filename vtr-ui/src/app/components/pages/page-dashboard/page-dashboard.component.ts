@@ -41,7 +41,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	public isOnline = true;
 	public brand;
 	private protocalAction: any;
-	private warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
+	public warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public warrantyUrl = '';
 
