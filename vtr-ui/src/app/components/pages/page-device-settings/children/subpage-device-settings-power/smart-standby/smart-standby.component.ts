@@ -23,6 +23,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	showDiffNote: boolean;
 	showDropDown: boolean[];
 	toggleSubscription: Subscription;
+	checkbox = false;
 
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
@@ -239,6 +240,10 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				}
 			}
 		}
+	}
+
+	onCheckboxClicked() {
+		//this.checkbox
 	}
 
 	ngOnDestroy() {

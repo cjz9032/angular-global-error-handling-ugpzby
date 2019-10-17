@@ -2,13 +2,13 @@
 	id="smartStandby"
 	*ngIf="smartStandby?.isCapable">
 	<div class="col-10 mx-auto ">
-		<vtr-container-collapsible 
+		<vtr-container-collapsible
 			[cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
 			[isCollapsed]="false"
 			[collapseLinkId]="'smartrStandby'">
 			<ul class="list-group list-group-flush">
 				<li class="">
-					<vtr-ui-row-switch 
+					<vtr-ui-row-switch
 						[caption]="'device.deviceSettings.power.smartStandby.description' | translate"
 						[isSwitchVisible]=true
 						[isLastChild]=true
@@ -20,12 +20,29 @@
 						[switchId]="'smartStandby'"
 						>
 					</vtr-ui-row-switch>
+					<div>
+						<div class="auto-set-checkbox">
+							<input id="cb-auto-standby"
+								class="custom-control-input"
+								attr.aria-label="cb-auto-standby"
+								type="checkbox"
+								tabindex="0"
+								name="auto-standby-checkbox-id"
+								[(ngModel)]="checkbox"
+								(ngModelChange)='onCheckboxClicked()'
+								checked="" />
+							<span class="checkmark"></span>
+							<label for="cb-auto-standby">
+								{{ 'device.deviceSettings.power.smartStandby.checkbox' | translate }}
+							</label>
+						</div>
+					</div>
 					<section *ngIf="smartStandby?.isEnabled">
 						<div class="smart-standby-timer">
 							<h5>
 								{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate | uppercase }}
 							</h5>
-							<vtr-ui-time-picker 
+							<vtr-ui-time-picker
 								[time]="smartStandbyStartTime"
 								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading1'"
 								[id]="'dropcheck1'"
