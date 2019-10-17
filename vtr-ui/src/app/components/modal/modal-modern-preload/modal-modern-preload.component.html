@@ -118,8 +118,7 @@
 						[ngSwitch]="modernPreloadService.DownloadButtonStatus">
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOAD"
 							(onClick)="installEntitledApp()"
-							id="modern-preload-download-button"
-							attr.aria-label="modern-preload-download-button"
+							linkId="modern-preload-download-button"
 							metricsEvent="FeatureClick"
 							metricsParent="Modern Preload"
 							metricsItem="btn.Download"
@@ -129,8 +128,7 @@
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.RESTART_DOWNLOAD"
 							(onClick)="installEntitledApp()"
-							id="modern-preload-restart-download-button"
-							attr.aria-label="modern-preload-restart-download-button"
+							linkId="modern-preload-restart-download-button"
 							metricsEvent="FeatureClick"
 							metricsParent="Modern Preload"
 							metricsItem="btn.RestartDownload"
@@ -139,8 +137,7 @@
 							[label]="'modernPreload.restartDownload' | translate">
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOADING"
-							id="modern-preload-downloading-button"
-							attr.aria-label="modern-preload-downloading-button"
+							linkId="modern-preload-downloading-button"
 							[isFullWidth]="true"
 							[isDisabled]="true"
 							[label]="'modernPreload.downloading' | translate">
@@ -202,8 +199,7 @@
 						<div class="button-content mb-4">
 							<div class="btn-box mr-5">
 								<vtr-ui-button (onClick)="retry()"
-									id="modern-preload-retry-button"
-									attr.aria-label="modern-preload-retry-button"
+									linkId="modern-preload-retry-button"
 									metricsEvent="FeatureClick"
 									metricsParent="Modern Preload"
 									metricsItem="btn.Retry"
