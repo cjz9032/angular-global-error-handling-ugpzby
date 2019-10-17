@@ -218,17 +218,6 @@
 											[items]="supportDatas.quicklinks"></vtr-widget-support>
 									</div>
 								</div>
-
-								<div class="row">
-									<div class="col col-12 pb-60">
-										<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
-											[description]="'dashboard.feedback.subtitle' | translate"
-											[actionName]="'dashboard.feedback.button' | translate" [action]="'feedback'"
-											(feedBackClick)="onFeedbackModal()">
-										</vtr-widget-feedback>
-									</div>
-								</div>
-
 								<div class="row d-none d-lg-block"
 								*ngIf="articlesType !== 'loading' && articles.right.length > 0">
 									<div class="col col-12 p-60">
