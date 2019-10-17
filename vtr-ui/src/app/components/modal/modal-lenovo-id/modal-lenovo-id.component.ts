@@ -102,7 +102,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private startBind: any;
 	private completeBInd: any;
 	private notificationSubscription: Subscription;
-	private isSsoDevMode = false;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -195,12 +194,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 			// This is the link to clear cache for SSO production environment
 			this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
-			const LidSsoDevMode = this.commonService.getLocalStorageValue(LocalStorageKey.LidSsoDevMode);
-			if (LidSsoDevMode) {
-				this.isSsoDevMode = true;
-				// This is the link to clear cache for SSO dev environment
-				this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
-			}
 			this.cacheCleared = true;
 		}
 	}
@@ -263,9 +256,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (eventData.isSuccess) {
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
-			}
-			if (self.isSsoDevMode && eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
-				 return;
 			}
 			self.webView.changeVisibility('spinnerCtrl', false);
 			self.webView.changeVisibility('webviewPlaceHolder', true);
@@ -426,6 +416,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				self.devService.writeLog('getLoginUrl() failed ' + result.status);
 				self.activeModal.dismiss();
 			}
+		}).catch((error) => {
+			self.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			self.activeModal.dismiss();
 		});
 
 	}

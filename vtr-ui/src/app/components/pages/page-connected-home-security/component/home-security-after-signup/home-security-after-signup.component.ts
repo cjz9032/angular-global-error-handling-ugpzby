@@ -5,6 +5,7 @@ import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-secur
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { HomeSecurityLocation } from 'src/app/data-models/home-security/home-security-location.model';
 
 @Component({
   selector: 'vtr-home-security-after-signup',
@@ -15,6 +16,8 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 	@Input() allDevices: HomeSecurityAllDevice;
 	@Input() account: HomeSecurityAccount;
 	@Input() common: HomeSecurityCommon;
+	@Input() location: HomeSecurityLocation;
+
 	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
 		public dialogService: DialogService,
@@ -26,8 +29,10 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 	disconnect() {
 		if (!this.commonService.isOnline) {
 			this.dialogService.homeSecurityOfflineDialog();
-		} else {
+		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.disconnect);
+		} else {
+			this.dialogService.openCHSPermissionModal();
 		}
 	}
 

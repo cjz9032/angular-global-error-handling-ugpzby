@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vous êtes invité à utiliser la mise à jour du système.",
-            "title": "Un système à jour est un système sain.",
+			"title": "Un système à jour est un système sain.",
+			"installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
-                "unknown": "Inconnu"
+                "unknown": "Inconnu",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Ce périphérique fonctionne en mode hors connexion. Veuillez vous connecter à Internet",
         "doNotSuspend": "Ces tests doivent être exécutés sans interruption ! Ne fermez pas ou ne réduisez pas cette application, et n'interrompez pas ou n'éteignez pas votre ordinateur pendant l'analyse.",
         "doNotUse": "N'utilisez pas votre ordinateur tant que le test n'est pas terminé",
+        "testsMustRunUniterrupted": "Ces tests doivent être exécutés sans interruption !",
+        "doNotCloseOrMinimizeApp": "• Ne fermez pas ou ne réduisez pas cette application.",
+        "doNotSwitchApp": "• Ne pas basculez vers une autre application.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne mettez pas l'ordinateur en veille, ne vous déconnectez pas ou n'éteignez pas l'ordinateur.",
         "customize": {
             "name": "Personnaliser",
             "test": "Personnaliser le test",
@@ -2400,7 +2406,8 @@
         "attention": "Attention",
         "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
-        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau."
+        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau.",
+        "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée"
     },
     "smartPerformance": {
         "title": "Health & Support",

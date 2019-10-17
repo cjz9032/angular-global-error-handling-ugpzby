@@ -4,7 +4,6 @@
 		<div class="title">{{ 'dashboard.feedback.title' | translate }}</div>
 		<form name="feedBack"
 			class="feedback-form"
-			(submit)="onFeedBackSubmit()"
 			[formGroup]="feedbackForm"
 			novalidate>
 			<div class="line"></div>
@@ -22,7 +21,8 @@
 						[attr.aria-label]="qa.idYes"
 						[value]="true">
 					<label class="form-check-label"
-						tabindex="0"
+						[tabindex]="feedbackSuccess ? -1 : 0"
+						(keyup.enter)="setRadioStatus(qa.name, true)"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
 				<div class="form-check form-check-inline">
@@ -35,7 +35,8 @@
 						[attr.aria-label]="qa.idNo"
 						[value]="false">
 					<label class="form-check-label"
-						tabindex="0"
+						[tabindex]="feedbackSuccess ? -1 : 0"
+						(keyup.enter)="setRadioStatus(qa.name, false)"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="line"></div>
@@ -51,6 +52,7 @@
 						class="form-control user-comment"
 						cols="30"
 						rows="10"
+						[tabindex]="feedbackSuccess ? -1 : 0"
 						formControlName="userComment"
 						pattern="^(?!\s*$).+"
 						required></textarea>
@@ -58,19 +60,22 @@
 			</div>
 
 			<div class="d-flex">
-				<button type="submit"
-					class="button"
-					id="modal-btn-sendfeedback"
-					attr.aria-label="modal-btn-sendfeedback"
-					title="{{'dashboard.feedback.form.sendFeedback' | translate}}"
-					[disabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.qaPerformance === null && feedbackForm.value.qaUseFrequency === null">
-					{{'dashboard.feedback.form.sendFeedback' | translate}}
-				</button>
+				<div class="button-box">
+					<vtr-ui-button linkId="modal-btn-sendfeedback"
+						metricsEvent="FeatureClick"
+						metricsItem="SendFeedbackButton"
+						metricsParent="Page.Dashboard"
+						[tabIndex]="feedbackSuccess ? -1 : 0"
+						[isFullWidth]="true"
+						[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.qaPerformance === null && feedbackForm.value.qaUseFrequency === null"
+						[label]="'dashboard.feedback.form.sendFeedback' | translate"
+						(onClick)="onFeedBackSubmit()"></vtr-ui-button>
+				</div>
 				<div ngbDropdown 
 					class="d-inline-block dropdown-content">
 					<div class="dropdown-btn"
 						id="feedback-dropdown"
-						tabindex="0"
+						[tabindex]="feedbackSuccess ? -1 : 0"
 						attr.aria-label="feedback-dropdown" ngbDropdownToggle>
 						<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
 					</div>
@@ -79,7 +84,7 @@
 						aria-labelledby="feedback-dropdown">
 						<div class="menu-pointer"></div>
 						<div class="dropdown-item" ngbDropdownItem
-							tabindex="0"
+							[tabindex]="feedbackSuccess ? -1 : 0"
 							vtrMetrics
 							id="modal-btn-submitScreeenshot"
 							attr.aria-label="modal-btn-submitScreeenshot"

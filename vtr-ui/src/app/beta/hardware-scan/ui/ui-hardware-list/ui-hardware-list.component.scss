@@ -102,6 +102,17 @@
 		}
 	}
 
+	.span-not-applicable {
+		color: $light-grey;
+		font-size: 1.4rem;
+		padding-left: 3rem;
+		font-weight: $weight_bold;
+	}
+
+	.not-applicable {
+		color: $light-grey;
+	}
+
 	.test-status {
 		min-width: 5.5rem;
 		text-align: center;
@@ -109,7 +120,7 @@
 		.progress-value-text {
 			font-size: 1.4rem !important;
 			font-weight: $weight_bold;
-			color:$light;
+			color:$dark;
 		}
 
 		.loading {

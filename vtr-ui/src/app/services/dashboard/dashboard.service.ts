@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -24,7 +24,9 @@ export class DashboardService {
 	public cardContentPositionE: any = {};
 	public cardContentPositionF: any = {};
 
-	constructor(shellService: VantageShellService, commonService: CommonService) {
+	constructor(
+		shellService: VantageShellService,
+		commonService: CommonService) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
 		this.sysinfo = null;
@@ -203,18 +205,20 @@ export class DashboardService {
 		try {
 			if (this.sysinfo && this.warranty) {
 				return new Observable((observer) => {
-					// from loccal storage
+					// from local storage
 					const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus);
 					if (cacheWarranty) {
 						observer.next(cacheWarranty);
 					}
-					const result = { expired: null, status: 2 };
+					// first launch will not have data, below code will break
+					const result = { endDate: null, status: 2, startDate: null };
 					this.sysinfo.getMachineInfo().then((data) =>
 						this.warranty.getWarrantyInformation(data.serialnumber).then(
 							(warrantyRep) => {
 								if (warrantyRep && warrantyRep.status !== 2) {
-									result.expired = warrantyRep.endDate;
+									result.endDate = new Date(warrantyRep.endDate);
 									result.status = warrantyRep.status;
+									result.startDate = new Date(warrantyRep.startDate);
 								}
 								this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
 								observer.next(result);

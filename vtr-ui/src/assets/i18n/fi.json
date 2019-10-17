@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Tervetuloa käyttämään Järjestelmäpäivitystä.",
-            "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+			"title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+			"installingTitle": "Älä aseta tietokonetta lepo- tai horrostilaan päivitysten aikana.",
             "last": "Viimeksi päivitetty: ",
             "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
-                "unknown": "Tuntematon"
+                "unknown": "Tuntematon",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Tämä laite toimii offline-tilassa, muodosta Internet-yhteys",
         "doNotSuspend": "Näiden testien suoritus ei saa keskeytyä. Älä sulje tai pienennä tätä sovellusta. Älä siirrä tietokonetta keskeytystilaan tai katkaise tietokoneen virtaa tarkistuksen aikana.",
         "doNotUse": "Älä käytä tietokonetta, kunnes tämä testi on valmis",
+        "testsMustRunUniterrupted": "Näiden testien suoritus ei saa keskeytyä!",
+        "doNotCloseOrMinimizeApp": "• Älä sulje tai pienennä tätä sovellusta.",
+        "doNotSwitchApp": "• Älä vaihda toiseen sovellukseen.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Älä aseta tietokonetta lepotilaan, kirjaudu siitä ulos tai katkaise siitä virtaa.",
         "customize": {
             "name": "Mukautus",
             "test": "Mukauta testiä",
@@ -2400,7 +2406,8 @@
         "attention": "Huomio:",
         "cancelTextPrompt": "Haluatko varmasti peruuttaa?",
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
-        "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se."
+        "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
+        "testNotApplicable": "Ei sovellu mukautettu tarkistus"
     },
     "smartPerformance": {
         "title": "Health & Support",

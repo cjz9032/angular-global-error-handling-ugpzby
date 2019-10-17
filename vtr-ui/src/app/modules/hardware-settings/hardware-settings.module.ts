@@ -16,7 +16,6 @@ import { CommonModule } from '@angular/common';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
-import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DisplayColorTempComponent } from 'src/app/components/display/display-color-temp/display-color-temp.component';
 import { DolbyModesTranslationPipe } from 'src/app/pipe/dolby-modes-translation.pipe';
@@ -34,7 +33,6 @@ import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-devic
 import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
 import { PageHardwarescanComponent } from 'src/app/components/pages/page-hardwarescan/page-hardwarescan.component';
 import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
-import { PageSettingsComponent } from 'src/app/components/pages/page-settings/page-settings.component';
 import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
 import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-smart-settings/power-smart-settings.component';
@@ -136,7 +134,6 @@ library.add(faCalendarAlt);
 		CameraBackgroundBlurComponent,
 		CameraControlComponent,
 		ClockComponent,
-		ContainerCollapsibleComponent,
 		DisplayColorTempComponent,
 		DolbyModesTranslationPipe,
 		EyeCareModeComponent,
@@ -148,7 +145,6 @@ library.add(faCalendarAlt);
 		PageDeviceUpdatesComponent,
 		PageHardwarescanComponent,
 		PageQuestionsComponent,
-		PageSettingsComponent,
 		PageSmartAssistComponent,
 		PageSupportDetailComponent,
 		PowerSmartSettingsComponent,
@@ -180,7 +176,7 @@ library.add(faCalendarAlt);
 		RouterModule,
 		NgbCollapseModule,
 		PageLayoutModule,
-		SettingsPageLayoutModule
+		SettingsPageLayoutModule,
 	],
 	exports: [
 		CommonModule,
@@ -191,7 +187,7 @@ library.add(faCalendarAlt);
 		SettingsPageLayoutModule,
 		RouterModule
 	],
-	providers: [ { provide: BaseCameraDetail, useClass: CameraDetailMockService } ],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
+	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class HardwareSettingsModule {}
+export class HardwareSettingsModule { }

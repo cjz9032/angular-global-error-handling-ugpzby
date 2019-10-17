@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Välkommen att använda Systemuppdatering.",
-            "title": "Ett uppdaterat system är ett friskt system.",
+			"title": "Ett uppdaterat system är ett friskt system.",
+			"installingTitle": "Sätt inte datorn i strömspar- eller viloläge under uppdateringarna.",
             "last": "Senast uppdaterat: ",
             "next": "Nästa schemalagda uppdatering: ",
             "checkButton": "SÖK EFTER UPPDATERINGAR",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
-                "unknown": "Okänd"
+                "unknown": "Okänd",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Enheten körs offline. Anslut till internet",
         "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
         "doNotUse": "Använd inte datorn förrän testet har slutförts",
+        "testsMustRunUniterrupted": "Testerna måste köras utan avbrott!",
+        "doNotCloseOrMinimizeApp": "• Stäng eller minimera inte den här appen.",
+        "doNotSwitchApp": "• Byt inte till en annan app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sätt inte datorn i strömsparläge och logga inte ut från eller stäng av datorn.",
         "customize": {
             "name": "Anpassa",
             "test": "Anpassa test",
@@ -2400,7 +2406,8 @@
         "attention": "Viktigt",
         "cancelTextPrompt": "Vill du verkligen avbryta?",
         "cancelTextProgress": "Vänta tills allt har avbrutits",
-        "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den."
+        "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
+        "testNotApplicable": "Kan inte användas på anpassad sökning"
     },
     "smartPerformance": {
         "title": "Health & Support",

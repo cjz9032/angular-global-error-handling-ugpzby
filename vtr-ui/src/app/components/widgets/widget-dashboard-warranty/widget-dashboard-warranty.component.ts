@@ -46,7 +46,9 @@ export class WidgetDashboardWarrantyComponent implements OnInit {
 		// if (day >= 0 && day <= 9) { day = `0${day}`; }
 		// const currentdate = year + op + month + op + day;
 		// return currentdate;
-
+		if ((date instanceof Date) === false) {
+			date = new Date(date);
+		}
 		return this.commonService.formatDate(date.toISOString());
 	}
 }

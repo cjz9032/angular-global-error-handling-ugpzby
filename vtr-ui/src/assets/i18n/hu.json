@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
-            "title": "A naprakész rendszer megfelelően működik.",
+			"title": "A naprakész rendszer megfelelően működik.",
+			"installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
-                "unknown": "Ismeretlen"
+                "unknown": "Ismeretlen",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Az eszköz offline módban fut, csatlakoztassa az internetre",
         "doNotSuspend": "Ezeket a teszteket nem szabad megszakítani. Az ellenőrzés során ne állítsa kis méretűre és ne zárja be az alkalmazást, illetve ne függessze fel vagy kapcsolja ki a számítógépet.",
         "doNotUse": "Kérjük, a teszt befejeződéséig ne használja a számítógépet",
+        "testsMustRunUniterrupted": "A tesztet nem szabad megszakítani!",
+        "doNotCloseOrMinimizeApp": "• Ne zárja be, és ne alakítsa kisméretűre az alkalmazásablakot.",
+        "doNotSwitchApp": "• Ne váltson át egy másik alkalmazásra.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• A számítógépet ne helyezze alvó módva és ne kapcsolja ki.",
         "customize": {
             "name": "Személyre szabás",
             "test": "Teszt testreszabása",
@@ -2400,7 +2406,8 @@
         "attention": "Figyelem",
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
-        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
+        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
+        "testNotApplicable": "Egyéni ellenőrzésnél nem használható"
     },
     "smartPerformance": {
         "title": "Health & Support",

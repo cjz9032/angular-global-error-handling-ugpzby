@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Slobodno se koristite Ažuriranjem sustava.",
-            "title": "Ažurirani sustav je zdrav sustav.",
+			"title": "Ažurirani sustav je zdrav sustav.",
+			"installingTitle": "Tijekom ažuriranja ne stavljajte računalo u stanje mirovanja ili hibernacije.",
             "last": "Zadnje ažuriranje: ",
             "next": "Sljedeće zakazano ažuriranje: ",
             "checkButton": "TRAŽI AŽURIRANJA",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu vašem uređaju",
-                "unknown": "Nepoznato"
+                "unknown": "Nepoznato",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Uređaj radi u izvanmrežnom načinu rada, povežite internet",
         "doNotSuspend": "Ovi se testovi moraju izvoditi bez prekida! Tijekom pregleda nemojte zatvarati ni minimizirati aplikaciju niti prebacivati računalo u stanje mirovanja ili ga isključivati.",
         "doNotUse": "Nemojte koristiti računalo dok se ovaj test ne dovrši",
+        "testsMustRunUniterrupted": "Ovi se testovi moraju izvoditi bez prekida!",
+        "doNotCloseOrMinimizeApp": "• Ne zatvarajte niti minimizirajte ovu aplikaciju.",
+        "doNotSwitchApp": "• Ne prelazite na drugu aplikaciju.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ne otvarajte stanje mirovanja, ne odjavljujte se i nemojte isključivati računalo.",
         "customize": {
             "name": "Prilagodba",
             "test": "Prilagodi test",
@@ -2400,7 +2406,8 @@
         "attention": "Pažnja",
         "cancelTextPrompt": "Želite li zaista odustati?",
         "cancelTextProgress": "Pričekajte napredak otkazivanja",
-        "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju."
+        "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju.",
+        "testNotApplicable": "Nije primjenjivo za prilagođeni pregled"
     },
     "smartPerformance": {
         "title": "Health & Support",

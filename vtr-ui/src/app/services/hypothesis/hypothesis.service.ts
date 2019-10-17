@@ -29,10 +29,10 @@ export class HypothesisService {
 						this.hypSettings = hyp;
 						resolve();
 					},
-					error => {
-						this.devService.writeLog('getHypothesis: ', error);
-						reject(error);
-					});
+						error => {
+							this.devService.writeLog('getHypothesis: ', error);
+							reject(error);
+						});
 				} else {
 					reject('getHypothesis failed');
 					this.devService.writeLog('getHypothesis failed: ');
@@ -62,6 +62,25 @@ export class HypothesisService {
 						reject(error);
 						this.devService.writeLog('get hypothesis  getFeatureSetting: setting failed.' + error);
 					});
+			}
+		});
+	}
+
+	public getAllSettings() {
+		return new Promise((resolve, reject) => {
+			if (this.hypSettings) {
+				resolve(this.hypSettings);
+			} else {
+				this.getHypothesis().then(() => {
+					if (this.hypSettings) {
+						resolve(this.hypSettings);
+					} else {
+						reject('get all hypothesis settings failed.');
+					}
+				},
+				error => {
+					reject(error);
+				});
 			}
 		});
 	}

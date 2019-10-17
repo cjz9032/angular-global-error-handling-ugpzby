@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Bienvenido al uso de Actualización de sistema.",
-            "title": "Un sistema actualizado es un sistema en buen estado.",
+			"title": "Un sistema actualizado es un sistema en buen estado.",
+			"installingTitle": "Durante la actualización, no ponga su equipo en modalidad de suspensión o hibernación.",
             "last": "Última actualización: ",
             "next": "Siguiente actualización programada: ",
             "checkButton": "COMPROBAR ACTUALIZACIONES",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo",
-                "unknown": "Desconocido"
+                "unknown": "Desconocido",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Este dispositivo se está ejecutando en modalidad sin conexión, conecte a Internet",
         "doNotSuspend": "¡Estas pruebas se deben ejecutar sin interrupciones! No cierre ni minimice esta aplicación, y no suspenda ni apague el equipo durante la exploración.",
         "doNotUse": "No utilice el equipo hasta que se complete esta prueba",
+        "testsMustRunUniterrupted": "¡Estas pruebas se deben ejecutar sin interrupciones!",
+        "doNotCloseOrMinimizeApp": "• No cierre ni minimice esta aplicación.",
+        "doNotSwitchApp": "• No cambie a otra aplicación.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• No suspenda ni cierre la sesión ni desactive su sistema.",
         "customize": {
             "name": "Personalizar",
             "test": "Prueba de personalización",
@@ -2400,7 +2406,8 @@
         "attention": "Atención",
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
-        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
+        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
+        "testNotApplicable": "No se aplica a personalizar exploración"
     },
     "smartPerformance": {
         "title": "Health & Support",

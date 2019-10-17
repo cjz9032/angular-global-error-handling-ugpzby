@@ -15,60 +15,9 @@
 			padding-left: 4rem;
 			padding-top: 5rem;
 
-			.circle {
+			img {
 				width: 16rem;
 				height: 16rem;
-				border-radius: 50%;
-				font-size: 5rem;
-				color: $light;
-				line-height: 16rem;
-				text-align: center;
-				font-weight: $weight_bold;
-				background: $main_darker;
-
-				fa-icon {
-					font-size: 10rem;
-					line-height: 15.5rem;
-				}
-
-				span.percent {
-					font-size: 2.5rem;
-				}
-			}
-			.circle{
-				&.percent-0{
-					background: linear-gradient(90deg, $percent_0_dark, $percent_0_light);
-				}
-				&.percent-20{
-					background: linear-gradient(90deg, $percent_20_dark, $percent_20_light);
-				}
-				&.percent-25{
-					background: linear-gradient(90deg, $percent_25_dark, $percent_25_light);
-				}
-				&.percent-33{
-					background: linear-gradient(90deg, $percent_33_dark, $percent_33_light);
-				}
-				&.percent-40{
-					background: linear-gradient(90deg, $percent_40_dark, $percent_40_light);
-				}
-				&.percent-50{
-					background: linear-gradient(90deg, $percent_50_dark, $percent_50_light);
-				}
-				&.percent-60{
-					background: linear-gradient(90deg, $percent_60_dark, $percent_60_light);
-				}
-				&.percent-66{
-					background: linear-gradient(90deg, $percent_66_dark, $percent_66_light);
-				}
-				&.percent-75{
-					background: linear-gradient(90deg, $percent_75_dark, $percent_75_light);
-				}
-				&.percent-80{
-					background: linear-gradient(90deg, $percent_80_dark, $percent_80_light);
-				}
-				&.percent-100{
-					background: linear-gradient(90deg, $percent_100_dark, $percent_100_light);
-				}
 			}
 		}
 		.title {
@@ -130,36 +79,35 @@
 
 	.tooltips-description {
 		padding: 0 7rem 0 4rem;
-		color: #FFFFFF;
+		color: $light;
 
 		&__title {
-			color: #FFFFFF;
+			color: $light;
 			font-size: 2.5rem;
-			font-weight: 600;
+			font-weight: $weight_600;
 			line-height: 2.9rem;
 			margin: 0 1rem 0.8rem 0;
 		}
 
 		&__text {
 			@extend %text-common;
-			color: #FFFFFF;
+			color: $light;
 		}
 
 		&__tooltip-text {
 			font-size: 12px;
 			line-height: 15px;
-			font-weight: 600;
-			color: #FFFFFF;
+			font-weight: $weight_600;
+			color: $light;
 			padding: 0 6px;
 			cursor: pointer;
-			border: 2px solid #FFFFFF;
+			border: 2px solid $light;
 			border-radius: 50%;
 			box-sizing: border-box;
-
-			&:hover {
-				background-color: #C2C8CE;
-				border-color: #C2C8CE;
-				color: #191C28;
+			&.hover {
+				background-color: $hover_gray;
+				border-color: $hover_gray;
+				color: $hover_dark;
 			}
 		}
 
@@ -178,7 +126,7 @@
 
 		&__tooltip-context-title {
 			@extend %text-common;
-			color: #191C28;
+			color: $hover_dark;
 			font-weight: bold;
 		}
 

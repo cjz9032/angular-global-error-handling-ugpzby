@@ -44,8 +44,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	mcafeeArticleCategory: string;
 	isOnline = true;
 	notificationSubscription: Subscription;
-	showMetricsList = true;
-	showMetricButton = true;
 	common: AntivirusCommon;
 
 	@HostListener('window:focus')
@@ -78,7 +76,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.translate);
-		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService);
+		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate);
 		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = Object.assign({}, {
 				localName: this.antiVirus.mcafee.localName,
@@ -90,8 +88,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				status: this.antiVirus.mcafee.status,
 				features: this.antiVirus.mcafee.features,
 				expireAt: this.antiVirus.mcafee.expireAt,
-				metrics: this.antiVirus.mcafee.metrics,
-				launch: this.antiVirus.mcafee.launch.bind(this.antiVirus)
+				metrics: this.antiVirus.mcafee.metrics
 			});
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
 			if (this.viewModel.mcafee.features) {
@@ -101,7 +98,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			if (this.viewModel.mcafee.metrics && this.viewModel.mcafee.metrics.length > 0) {
 				this.viewModel.metricsList = this.getMcafeeMetric(this.viewModel.mcafee.metrics);
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList, this.viewModel.metricsList);
-			} else { this.showMetricsList = false; }
+			} else {
+				this.viewModel.showMetricsList = false;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, false);
+			}
 		}
 		if (this.antiVirus.windowsDefender) {
 			this.viewModel.windowsDefender = this.antiVirus.windowsDefender;
@@ -417,7 +417,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			metricsFeature = data;
 		}
 		if (metricsFeature.length === 0) {
-			this.showMetricsList = false;
+			this.viewModel.showMetricsList = false;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, false);
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricList, true);
 		}
 		metricsFeature.forEach((e) => {
 			let value;
@@ -465,8 +468,11 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				list.push(metricsInfor);
 			}
 			if (list.filter(id => id > 0).length > 0) {
-				this.showMetricButton = false;
+				this.viewModel.showMetricButton = false;
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, false);
 				return list;
+			} else {
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMetricButton, true);
 			}
 		}
 		return metricsList;

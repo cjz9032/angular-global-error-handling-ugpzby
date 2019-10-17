@@ -67,12 +67,8 @@
 
 				vtr-ui-button {
 					max-width: 90%;
-					&.disable {
-						opacity: 0.7;
-					}
 					::ng-deep .button {
 						width: 100%;
-						background: $blue_gradient;
 					}
 				}
 			}

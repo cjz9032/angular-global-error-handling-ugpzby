@@ -32,7 +32,10 @@ export class SecurityAdvisorMockService {
 			refresh() {
 				this.mitt.emit(EventTypes.avRefreshedEvent, this);
 				return Promise.resolve();
-			}
+			},
+			launch() {
+				return Promise.resolve(true);
+			},
 		},
 		passwordManager: {
 			status: 'not-installed',

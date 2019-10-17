@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Bem-vindo ao uso da Atualização do Sistema.",
-            "title": "Um sistema atualizado é um sistema saudável.",
+			"title": "Um sistema atualizado é um sistema saudável.",
+			"installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR ATUALIZAÇÕES",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} oferece proteção básica para seu dispositivo",
-                "unknown": "Desconhecido"
+                "unknown": "Desconhecido",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Este dispositivo está em execução no modo offline, conecte-se à Internet",
         "doNotSuspend": "Estes testes devem ser executados de forma ininterrupta. Não feche ou minimize este aplicativo, nem suspenda ou desligue o computador durante a verificação.",
         "doNotUse": "Não use seu computador até que este teste seja concluído",
+        "testsMustRunUniterrupted": "Estes testes devem ser executados de maneira ininterrupta.",
+        "doNotCloseOrMinimizeApp": "• Não feche nem minimize este aplicativo.",
+        "doNotSwitchApp": "• Não mude para outro aplicativo.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Não desconecte, desligue nem coloque o computador em suspensão.",
         "customize": {
             "name": "Personalizar",
             "test": "Personalizar Teste",
@@ -2400,7 +2406,8 @@
         "attention": "Atenção",
         "cancelTextPrompt": "Tem certeza de que gostaria de cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
-        "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a."
+        "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a.",
+        "testNotApplicable": "Não aplicável em verificação personalizada"
     },
     "smartPerformance": {
         "title": "Health & Support",

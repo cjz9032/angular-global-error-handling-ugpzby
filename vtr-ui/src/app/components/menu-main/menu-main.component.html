@@ -7,7 +7,7 @@
 				class="menu-main-logo"
 				id="menu-main-lnk-l-logo"
 				aria-label="menu-main-lnk-l-logo"
-				tabindex="-1"
+				tabindex="1"
 				routerLinkActive="link-active"
 				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent"
@@ -19,7 +19,7 @@
 			</a>
 		</div>
 		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem.hideMenus)"
-			class="navbar-brand pt-0">
+			class="navbar-brand p-0">
 
 			<img *ngIf="isGamingHome"
 				src="../../../assets/images/gaming/gaming-logo-small.png"
@@ -27,10 +27,11 @@
 
 			<a id="menu-main-lnk-gaming-logo"
 				aria-label="menu-main-lnk-gaming-logo"
-				tabindex="-1"
+				tabindex="1"
 				*ngIf="!isGamingHome"
 				vtrMetrics
 				routerLinkActive="link-active"
+				[attr.aria-label]="('gaming.common.narrator.mainMenuLink' | translate)"
 				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
 				[metricsEvent]="items[0].metricsEvent"
 				[metricsParent]="'NavBar'"
@@ -51,7 +52,7 @@
 				<div class="device-type">
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
 					<span *ngIf="machineFamilyName">{{machineFamilyName}}</span>
-					<vtr-ui-header-warranty *ngIf="machineFamilyName"
+					<vtr-ui-header-warranty *ngIf="machineFamilyName && deviceService.showWarranty"
 						[pageParent]="'NavBar'"></vtr-ui-header-warranty>
 				</div>
 			</span>
@@ -61,7 +62,7 @@
 			aria-label="menu-main-btn-navbar-toggler"
 			class="navbar-toggler"
 			tabindex="1"
-			type="button"
+			type="button" (keypress)="onKeyPress($event)"
 			(click)="toggleMenu($event)">
 			<span class="navbar-toggler-icon">
 				<fa-icon [icon]="['fas', 'bars']"></fa-icon>
@@ -262,6 +263,7 @@
 							</div>
 							<a *ngIf="appsForYouService.showLmaMenu()"
 								class="dropdown-item link link-lma"
+								tabindex="1"
 								vtrMetrics
 								id="menu-main-lnk-open-lma"
 								attr.aria-label="menu-main-lnk-open-lma"
@@ -277,6 +279,7 @@
 							</a>
 							<a *ngIf="appsForYouService.showAdobeMenu()"
 								class="dropdown-item link link-lma"
+								tabindex="1"
 								vtrMetrics
 								id="menu-main-lnk-open-adobe"
 								attr.aria-label="menu-main-lnk-open-adobe"

@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
-            "title": "Güncel bir sistem, sağlıklı sistemdir.",
+			"title": "Güncel bir sistem, sağlıklı sistemdir.",
+			"installingTitle": "Güncellemeler sırasında bilgisayarınızı uyku veya hazırda bekleme kipine geçirmeyin.",
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
-                "unknown": "Bilinmiyor"
+                "unknown": "Bilinmiyor",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Bu cihaz çevrimdışı kipte çalışıyor, lütfen İnternet'e bağlanın",
         "doNotSuspend": "Bu testler kesintisiz çalıştırılmalıdır! Bu uygulamayı kapatmayın veya küçültmeyin ve tarama sırasında bilgisayarınızı uyku moduna almayın ya da kapatmayın.",
         "doNotUse": "Test tamamlanana kadar lütfen bilgisayarınızı kullanmaktan kaçının",
+        "testsMustRunUniterrupted": "Bu testler kesintisiz çalıştırılmalıdır!",
+        "doNotCloseOrMinimizeApp": "• Bu uygulamayı kapatmayın veya küçültmeyin.",
+        "doNotSwitchApp": "• Başka bir uygulamaya geçmeyin.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Bilgisayarınızı uyku kipine almayın, oturumu veya bilgisayarınızı kapatmayın.",
         "customize": {
             "name": "Özelleştir",
             "test": "Testi Özelleştir",
@@ -2400,7 +2406,8 @@
         "attention": "Dikkat",
         "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
-        "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin."
+        "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
+        "testNotApplicable": "Özel tarama için geçerli değildir"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
-            "title": "Een bijgewerkt systeem is een gezond systeem.",
+			"title": "Een bijgewerkt systeem is een gezond systeem.",
+			"installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
-                "unknown": "Onbekend"
+                "unknown": "Onbekend",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Op dit apparaat wordt de offline stand uitgevoerd. Maak verbinding met internet",
         "doNotSuspend": "Deze tests moeten zonder onderbreking worden uitgevoerd! Sluit of minimaliseer deze app niet, laat de computer niet in de slaapstand gaan en zet de computer niet uit tijdens de scan.",
         "doNotUse": "Gebruik de computer pas weer wanneer deze test is voltooid",
+        "testsMustRunUniterrupted": "Deze tests moeten zonder onderbreking worden uitgevoerd!",
+        "doNotCloseOrMinimizeApp": "• Deze app niet sluiten of minimaliseren.",
+        "doNotSwitchApp": "• Niet naar een andere app schakelen.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Niet afmelden of de computer uitschakelen of in de slaapstand zetten.",
         "customize": {
             "name": "Aanpassen",
             "test": "Test aanpassen",
@@ -2400,7 +2406,8 @@
         "attention": "Let op",
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
-        "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit."
+        "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit.",
+        "testNotApplicable": "Niet van toepassing op aangepaste scan"
     },
     "smartPerformance": {
         "title": "Health & Support",

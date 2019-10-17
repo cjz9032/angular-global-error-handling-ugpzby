@@ -41,7 +41,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		if (Windows) {
 			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
 			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
-			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}.${packageVersion.revision}`;
 		}
 		const jsBridgeVersion = this.shellService.getVersion();
 		this.bridgeVersion = (jsBridgeVersion) ? jsBridgeVersion : '';
@@ -101,6 +101,9 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 				break;
 			case 'zh-hant':
 				useLang = 'zh-Hant';
+				break;
+			case 'sr-latn':
+				useLang = 'sr';
 				break;
 			default:
 				break;

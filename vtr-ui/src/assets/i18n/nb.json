@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
-            "title": "Et oppdatert system er et velfungerende system.",
+			"title": "Et oppdatert system er et velfungerende system.",
+			"installingTitle": "Ikke sett maskinen i hvile- eller dvalemodus under oppdateringer.",
             "last": "Sist oppdatert: ",
             "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din",
-                "unknown": "Ukjent"
+                "unknown": "Ukjent",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Denne enheten kjører i frakoblet modus, så koble den til Internett",
         "doNotSuspend": "Disse testene må kjøre uavbrutt! Ikke lukk eller minimer denne appen, og ikke utsett eller slå av datamaskinen under skanningen.",
         "doNotUse": "Avstå fra å bruke datamaskinen før denne testen er fullført",
+        "testsMustRunUniterrupted": "Disse testene må kjøres uten forstyrrelser!",
+        "doNotCloseOrMinimizeApp": "• Ikke lukk eller minimer denne appen.",
+        "doNotSwitchApp": "• Ikke bytt til en annen app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ikke logg deg av datamaskinen, sett den i hvilemodus eller slå den av.",
         "battery": {
             "title": "Aktiver batteriladeterskel",
             "description": "Aktiverer du egendefinert batterilading, vil selve batteriet generelt sett vare lenger når du bruker denne enheten. Å ikke lade batteriet helt opp vil imidlertid gi kortere brukstid. For å aktivere denne funksjonen helt må du ta ut støpselet til datamaskinen og la batteriet lades helt ut eller til under terskelen for ladestopp.",
@@ -2400,7 +2406,8 @@
         "attention": "NB",
         "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
         "cancelTextProgress": "Vent mens avbrytingen pågår",
-        "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten."
+        "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
+        "testNotApplicable": "Ikke aktuelt for egendefinert skanning"
     },
     "smartPerformance": {
         "title": "Health & Support",

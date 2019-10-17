@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { CommonService } from '../common/common.service';
@@ -9,6 +8,7 @@ import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -24,9 +24,10 @@ export class DeviceService {
 	public showPrivacy = false;
 	public isGaming = false;
 	public isSMode = false;
+	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	private machineInfo: any;
-
+	public showSearch = false;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -43,6 +44,7 @@ export class DeviceService {
 		}
 		this.initIsArm();
 		this.initshowPrivacy();
+		this.initShowSearch();
 	}
 
 	private initIsArm() {
@@ -89,6 +91,16 @@ export class DeviceService {
 		}
 	}
 
+	private initShowSearch() {
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
+				this.showSearch = ((searchFeature || '').toString() === 'true');
+			}, (error) => {
+				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
+			});
+		}
+	}
+
 	public getDeviceInfo(): Promise<MyDevice> {
 		if (this.device) {
 			return this.device.getDeviceInfo();
@@ -104,6 +116,9 @@ export class DeviceService {
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
+					if (!this.showWarranty && (!info.mtm || (info.mtm && info.mtm.substring(info.mtm.length - 2).toLocaleLowerCase() !== 'cd'))) {
+						this.showWarranty = true;
+					}
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {
 							this.is64bit = false;

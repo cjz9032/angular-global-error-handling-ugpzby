@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from "./flipToBoot.interface";
+import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from './flipToBoot.interface';
 @Injectable({
 	providedIn: 'root'
 })
@@ -485,7 +485,7 @@ export class PowerService {
 	}
 
 	public setCtAutoCheckbox(value: any): Promise<any> {
-		//console.log('auto check value here ----->', value);
+		// console.log('auto check value here ----->', value);
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(

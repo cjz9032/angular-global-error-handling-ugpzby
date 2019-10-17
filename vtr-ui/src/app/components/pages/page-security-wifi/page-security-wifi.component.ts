@@ -19,6 +19,8 @@ import { GuardService } from '../../../services/guard/security-guardService.serv
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { ConfigService } from 'src/app/services/config/config.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -68,7 +70,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
-		private deviceService: DeviceService
+		public deviceService: DeviceService,
+		private hypSettings: HypothesisService,
+		private configService: ConfigService
 	) {	}
 
 	ngOnInit() {
@@ -93,7 +97,16 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.language = result.Lang;
-			this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think';
+			if (this.hypSettings) {
+				this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((res) => {
+					const shellVersion = {
+						major: 10,
+						minor: 1910,
+						build: 12
+					};
+					this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think' && ((res || '').toString() === 'true') && this.configService.isShowCHSByShellVersion(shellVersion);
+				});
+			}
 		}).catch(e => {
 			this.region = 'us';
 			this.language = 'en';

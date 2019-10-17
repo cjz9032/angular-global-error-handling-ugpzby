@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Dobro došli u Ažuriranje sistema.",
-            "title": "Ažuran sistem je zdrav sistem.",
+			"title": "Ažuran sistem je zdrav sistem.",
+			"installingTitle": "Tokom ažuriranja nemojte da prebacujete računar u režim spavanja ili hibernacije.",
             "last": "Poslednji put ažurirano: ",
             "next": "Sledeće planirano ažuriranje: ",
             "checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
-                "unknown": "Nepoznato"
+                "unknown": "Nepoznato",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "Uređaj radi u režimu van mreže, povežite internet",
         "doNotSuspend": "Ovi testovi moraju da rade bez prekida! Nemojte zatvarati niti umanjivati ovu aplikaciju i nemojte suspendovati niti isključiti računar tokom skeniranja.",
         "doNotUse": "Nemojte da koristite računar dok se test ne završi",
+        "testsMustRunUniterrupted": "Ovi testovi moraju da rade bez prekida!",
+        "doNotCloseOrMinimizeApp": "• Nemojte zatvarati niti umanjivati ovu aplikaciju.",
+        "doNotSwitchApp": "• Nemojte prelaziti na drugu aplikaciju.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Nemojte da stavljate računar u stanje spavanja ili da se odjavljujete sa njega ili da ga isključujete.",
         "customize": {
             "name": "Prilagodi",
             "test": "Prilagodite test",
@@ -2400,7 +2406,8 @@
         "attention": "Pažnja",
         "cancelTextPrompt": "Želite li zaista da otkažete?",
         "cancelTextProgress": "Sačekajte otkazivanje",
-        "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga."
+        "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga.",
+        "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje"
     },
     "smartPerformance": {
         "title": "Health & Support",

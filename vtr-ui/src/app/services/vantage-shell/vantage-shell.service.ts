@@ -15,7 +15,7 @@ declare var Windows;
 })
 
 export class VantageShellService {
-	public readonly isShellAvailable;
+	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
@@ -57,7 +57,8 @@ export class VantageShellService {
 				Phoenix.Features.HardwareScan,
 				Phoenix.Features.BetaUser,
 				Phoenix.Features.DevicePosture,
-				Phoenix.Features.AdPolicy
+				Phoenix.Features.AdPolicy,
+				Phoenix.Features.Registry
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -194,19 +195,15 @@ export class VantageShellService {
 				eventName = 'PageView';
 				break;
 			case 'featureclick':
-				eventName = 'FeatureClick';
-				break;
 			case 'itemclick':
-				eventName = 'ItemClick';
+				eventName = 'FeatureClick';
 				break;
 			case 'itemview':
 				eventName = 'ItemView';
 				break;
 			case 'articleclick':
-				eventName = 'ArticleClick';
-				break;
 			case 'docclick':
-				eventName = 'DocClick';
+				eventName = 'ArticleClick';
 				break;
 			case 'articleview':
 				eventName = 'ArticleView';
@@ -923,6 +920,13 @@ export class VantageShellService {
 	public getMouseAndTouchPad(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.input.inputControlLinks;
+		}
+		return undefined;
+	}
+
+	public getRegistryUtil(): Phoenix.RegistryFeature {
+		if (this.phoenix) {
+			return this.phoenix.registry;
 		}
 		return undefined;
 	}

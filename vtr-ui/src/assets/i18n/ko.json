@@ -1409,7 +1409,8 @@
         },
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
-            "title": "최신 시스템은 정상적인 시스템입니다.",
+			"title": "최신 시스템은 정상적인 시스템입니다.",
+			"installingTitle": "업데이트하는 동안, 컴퓨터를 절전 모드 또는 최대 절전 모드로 전환하지 마십시오.",
             "last": "마지막 업데이트 날짜: ",
             "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
@@ -1644,7 +1645,8 @@
             },
             "others": {
                 "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
-                "unknown": "알 수 없음"
+                "unknown": "알 수 없음",
+                "betterOffer":"Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2325,6 +2327,10 @@
         "offline": "이 장치가 오프 라인 모드에서 실행 중입니다. 인터넷에 연결하십시오",
         "doNotSuspend": "이러한 테스트는 중단 없이 실행되어야 합니다! 이 앱을 닫거나 최소화하면 안 되며 스캔 중에는 컴퓨터를 절전 모드로 전환하거나 꺼서는 안 됩니다.",
         "doNotUse": "이 테스트가 완료될 때까지 컴퓨터 사용을 삼가 주십시오.",
+        "testsMustRunUniterrupted": "이러한 테스트는 중단 없이 실행되어야 합니다!",
+        "doNotCloseOrMinimizeApp": "• 이 앱을 닫거나 최소화해서는 안 됩니다.",
+        "doNotSwitchApp": "• 다른 앱으로 전환해서는 안 됩니다.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• 컴퓨터를 절전 또는 로그아웃하거나 끄면 안 됩니다.",
         "customize": {
             "name": "사용자 정의",
             "test": "테스트 사용자 지정",
@@ -2400,7 +2406,8 @@
         "attention": "주의",
         "cancelTextPrompt": "정말 취소하시겠습니까?",
         "cancelTextProgress": "취소 진행을 기다리십시오",
-        "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오."
+        "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오.",
+        "testNotApplicable": "사용자 정의 스캔에 적용되지 않음"
     },
     "smartPerformance": {
         "title": "Health & Support",

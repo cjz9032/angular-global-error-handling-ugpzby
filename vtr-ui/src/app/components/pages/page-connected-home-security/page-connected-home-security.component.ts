@@ -9,9 +9,6 @@ import {
 	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture
 } from '@lenovo/tan-client-bridge';
 import {
-	VantageShellService
-} from '../../../services/vantage-shell/vantage-shell.service';
-import {
 	HomeSecurityAccount
 } from 'src/app/data-models/home-security/home-security-account.model';
 import {
@@ -37,6 +34,7 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/home-security-device-posture.model';
 import { HomeSecurityLocation } from 'src/app/data-models/home-security/home-security-location.model';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 
 @Component({
@@ -64,6 +62,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	interval = 15000;
 	devicePostureArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	devicePostureArticleCategory: string;
+	showContentA = false;
+	showContentB = false;
 
 	cardContentPositionA: any = {
 		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png'
@@ -155,7 +155,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 		}
-		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
+		let cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 		if (this.devicePosture && this.devicePosture.value.length > 0) {
 			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.devicePosture, cacheDevicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
@@ -194,6 +194,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 		this.chs.on(EventTypes.devicePostureEvent, (devicePosture) => {
 			if (devicePosture && devicePosture.value.length > 0) {
+				cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(devicePosture, cacheDevicePosture, this.translateService);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
 					homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
@@ -281,6 +282,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				.catch((err: Error) => this.handleResponseError(err));
 			this.pullCHS();
 		}
+		if (!this.showContentA || !this.showContentB) {
+			this.fetchCMSArticles();
+		}
 	}
 
 	@HostListener('document: visibilitychange')
@@ -367,7 +371,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				'position-left-content-row-1'
 			)[0];
 			if (cardContentPositionA) {
+				this.showContentA = true;
 				this.cardContentPositionA = cardContentPositionA;
+			} else {
+				this.showContentA = false;
 			}
 
 			const cardContentPositionB = this.cmsService.getOneCMSContent(
@@ -376,10 +383,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				'position-right-sidebar-row-1'
 			)[0];
 			if (cardContentPositionB) {
+				this.showContentB = true;
 				this.cardContentPositionB = cardContentPositionB;
 				if (this.cardContentPositionB.BrandName) {
 					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 				}
+			} else {
+				this.showContentB = false;
 			}
 		});
 		this.cmsService.fetchCMSArticle(this.devicePostureArticleId, { Lang: 'EN' }).then((response: any) => {

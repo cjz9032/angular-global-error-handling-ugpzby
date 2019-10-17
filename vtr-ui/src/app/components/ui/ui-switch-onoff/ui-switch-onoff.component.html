@@ -11,8 +11,7 @@
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable}">
 		<label class="pb-1 pl-1"
-			(click)="sendChangeEvent(toggle)"
-			(keydown.enter)="sendChangeEvent(toggle)"
+			(keyup.enter)="onChange(toggle)"
 			vtrMetrics
 			metricsEvent="featureClick"
 			[metricsItem]="onOffSwitchId"
@@ -31,6 +30,7 @@
 				[disabled]="disabled"
 				[readonly]="readonly"
 				[attr.aria-label]="ariaLabel"
+				(click)="sendChangeEvent(toggle)"
 				(change)="onChange($event)" />
 			<span class="switch {{ size }}"
 				id="{{onOffSwitchId+'_sizeStopProp'}}"

@@ -52,7 +52,6 @@
 			font-weight: $weight_bold;
 			width: $menu_height;
 			height: 100%;
-			//background-color: $main;
 			border: none;
 			text-align: center;
 			color: $light;
@@ -73,6 +72,9 @@
 
 		.navbar-brand a {
 			border: none;
+			display: block;
+			width: 100%;
+			height: 100%;
 		}
 
 		.navbar-text {
