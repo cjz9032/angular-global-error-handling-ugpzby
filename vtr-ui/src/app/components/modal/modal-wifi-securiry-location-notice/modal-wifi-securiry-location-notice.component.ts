@@ -32,6 +32,7 @@ export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
 	ngOnInit() {
 	}
 
+
 	// closeModal() {
 	// 	this.activeModal.close('close');
 	// }
@@ -52,6 +53,13 @@ export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
 			});
 		}
 		this.activeModal.close(false);
+		document.getElementById('main-wrapper').focus();
+	}
+
+	keydownFn(event) {
+		if (event.which === 9) {
+			document.getElementById('wifi-sec-modal').focus();
+		}
 	}
 }
 

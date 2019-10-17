@@ -57,6 +57,7 @@
 		<div class="row px-3"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto "
+				*ngIf="!(batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams.acWattage==0)"
 				[class.normal-ACAdapter-condition]="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport">
 				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
 					class="icomoon icomoon-ConditionGoodBattery"></span>
@@ -65,7 +66,8 @@
 				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Poor &&
 					batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="icomoon icomoon-ConditionBadBattery"></span>
-				<span *ngIf="batteryConditions[i].conditionStatus==batteryStatus.AcAdapterStatus"
+				<span
+					*ngIf="batteryConditions[i].conditionStatus==batteryStatus.AcAdapterStatus && !(batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams.acWattage==0)"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
 			<div class='col battery-conditions-tips'>
@@ -73,7 +75,8 @@
 					[innerHTML]="batteryConditionNote | translate:storeLimitationNoteParam"
 					id="myDevice-settings-battery-condition-tip"
 					attr.aria-label="myDevice-settings-battery-condition-tip"></span>
-				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport"
+				<span
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
 					id="myDevice-settings-battery-condition-tip"
 					attr.aria-label="myDevice-settings-battery-condition-tip"></span>

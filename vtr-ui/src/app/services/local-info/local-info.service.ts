@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,7 +11,7 @@ export class LocalInfoService {
 	private supportLanguages = ['en', 'zh-hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-latn', 'sv', 'tr', 'uk', 'zh-hant'];
 
 	constructor(
-		private shellService: BaseVantageShellService,
+		private shellService: VantageShellService,
 	) {
 		this.sysInfo = shellService.getSysinfo();
 	}
