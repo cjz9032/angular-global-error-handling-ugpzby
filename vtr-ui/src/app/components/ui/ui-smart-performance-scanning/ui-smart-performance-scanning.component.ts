@@ -140,7 +140,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 				this.activegroup = "Internet performance";
 			 }
 			}	
-		 }, 20000);
+		 }, 2000);
 	
 	}
 }

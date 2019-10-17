@@ -89,7 +89,12 @@
                             font-size: 1.6rem;
                             text-align: right;
                             color: $shade_dark;
-                        }
+						}
+						vtr-widget-speedometer {
+							position: absolute;
+							right: -54%;
+							top: 2.2rem;
+						}
                     }
                 }
                 &.panel-open{

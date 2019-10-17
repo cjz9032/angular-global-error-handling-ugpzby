@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
@@ -14,6 +14,7 @@ export class UiSmartPerformanceComponent implements OnInit {
 	backarrow = '< ';
 	isScanning = false;
 	isScanningCompleted = false;
+	@Input() activegroup = "Tune up performance";
 	constructor(
 		private translate: TranslateService,private modalService: NgbModal
 	) {
