@@ -37,13 +37,14 @@
 								<div class="row">
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
 										<div class="tryMcAfee card">
-											<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
-												[img]="cardContentPositionA.FeatureImage"
-												[title]="cardContentPositionA.Title"
-												[logoText]="cardContentPositionA.BrandName"
-												[action]="cardContentPositionA.Action"
-												[actionType]="cardContentPositionA.ActionType"
-												[actionLink]="cardContentPositionA.ActionLink" [type]="'article'"
+											<vtr-container-card order="1" [itemID]="cardContentPositionF.Id"
+												[img]="cardContentPositionF.FeatureImage"
+												[title]="cardContentPositionF.Title"
+												[logoText]="cardContentPositionF.BrandName"
+												[action]="cardContentPositionF.Action"
+												[dataSource]="cardContentPositionF.DataSource"
+												[actionType]="cardContentPositionF.ActionType"
+												[actionLink]="cardContentPositionF.ActionLink" [type]="'article'"
 												[ratioX]="4" [ratioY]="4" id="lighting_customize_crm_card_A"
 												aria-label="lighting_customize_crm_card_A">
 											</vtr-container-card>
@@ -58,6 +59,7 @@
 												[title]="cardContentPositionB.Title"
 												[logoText]="cardContentPositionB.BrandName"
 												[action]="cardContentPositionB.Action"
+												[dataSource]="cardContentPositionB.DataSource"
 												[actionType]="cardContentPositionB.ActionType"
 												[actionLink]="cardContentPositionB.ActionLink" [type]="'corner'"
 												[ratioX]="4" [ratioY]="2" [cornerShift]="'large'"

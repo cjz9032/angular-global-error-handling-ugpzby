@@ -1,6 +1,7 @@
 <div class="modal-body vtr-modal-license">
   <div role="button" class="close-btn" aria-hidden="true"
 				vtrMetrics
+				tabindex="0"
 				metricsItem="{{licenseModalMetrics.closeButton}}"
 				metricsEvent="FeatureClick"
 				metricsParent="{{licenseModalMetrics.pageName}}"
@@ -18,6 +19,7 @@
 	<div class="iframe-content" [class.show]="type!='txt' && !loading">
 		<iframe id="license-agreement-iframe" class="article-frame" src=""
 		attr.sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-		width="100%" height="100%" ></iframe>
+		width="100%" height="100%"
+		tabindex="0"></iframe>
 	</div>
 </div>
