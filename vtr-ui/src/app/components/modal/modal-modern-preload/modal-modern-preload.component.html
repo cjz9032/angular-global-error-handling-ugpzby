@@ -63,7 +63,8 @@
 									alt=""
 									srcset="">
 								<div class="status-text"
-									id="modern-preload-status-download-available-{{ app.appID }}"
+									role="text"
+									id="modern-preload-status-download-available-{{ app.udcId }}"
 									[innerHTML]="'modernPreload.downloadAvailable' | translate"></div>
 							</div>
 							<div class="status-box download_complete"
@@ -73,7 +74,8 @@
 									alt=""
 									srcset="">
 								<div class="status-text"
-									id="modern-preload-status-download-complete-{{ app.appID }}"
+									role="text"
+									id="modern-preload-status-download-complete-{{ app.udcId }}"
 									[innerHTML]="'modernPreload.downloadComplete' | translate"></div>
 							</div>
 							<div class="status-box failed-install"
@@ -83,7 +85,8 @@
 									alt=""
 									srcset="">
 								<div class="status-text"
-									id="modern-preload-status-failed-install-{{ app.appID }}"
+									role="text"
+									id="modern-preload-status-failed-install-{{ app.udcId }}"
 									[innerHTML]="'modernPreload.failedInstall' | translate"></div>
 							</div>
 							<div class="status-box installed"
@@ -93,13 +96,15 @@
 									alt=""
 									srcset="">
 								<div class="status-text"
-									id="modern-preload-status-installed-{{ app.appID }}"
+									role="text"
+									id="modern-preload-status-installed-{{ app.udcId }}"
 									[innerHTML]="'modernPreload.installed' | translate"></div>
 							</div>
 							<div class="status-box downloading"
 								*ngSwitchCase="statusEnum.DOWNLOADING">
 								<div class="downloading-text"
-									id="modern-preload-status-downloading-{{ app.appID }}">{{ app.progress }}% <span [innerHTML]="'modernPreload.downloading' | translate"></span></div>
+									role="text"
+									id="modern-preload-status-downloading-{{ app.udcId }}">{{ app.progress }}% <span [innerHTML]="'modernPreload.downloading' | translate"></span></div>
 								<div class="progress-box w-100">
 									<ngb-progressbar type="success"
 										[value]="app.progress"
