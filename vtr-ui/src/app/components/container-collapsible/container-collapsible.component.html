@@ -1,4 +1,4 @@
- <div class="vtr-container-collapsible"
+<div class="vtr-container-collapsible"
 	[ngClass]="{'white-theme': theme === 'white', 'blue-theme': theme === 'blue'}">
 	<div class="row">
 		<div class="col">
@@ -6,16 +6,16 @@
 				<div class="card-header">
 					<div class="container-fluid">
 						<div class="row align-items-center py-2">
-							<p class="col-auto px-2 text-left mr-auto header"
+							<div class="col-auto px-2 text-left mr-auto header"
 								id="{{collapseLinkId+'-collapse-card-title'}}"
 								tabindex="0"
 								attr.aria-label="{{ cardTitle + ',card' }}">
 								{{cardTitle}}
-							</p>
+							</div>
 							<div class="col-auto px-3"
 								*ngIf="allowCollapse">
 								<div class="collapse-control"
-									tabindex="0"
+									[tabindex]="tabIndex"
 									vtrMetrics
 									id="{{collapseLinkId+'-collapse-link'}}"
 									attr.aria-label="{{collapseLinkId+'-collapse-link'}}"
