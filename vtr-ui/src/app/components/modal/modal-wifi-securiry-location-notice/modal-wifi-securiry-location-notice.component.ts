@@ -30,7 +30,6 @@ export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
 	constructor(public activeModal: NgbActiveModal, private commonService: CommonService) { }
 
 	ngOnInit() {
-		document.getElementById('wifi-sec-modal').focus();
 	}
 
 
