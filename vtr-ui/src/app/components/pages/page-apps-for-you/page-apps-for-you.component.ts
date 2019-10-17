@@ -75,7 +75,11 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		this.route.params.subscribe((params) => {
-			this.appGuid = params.id;
+			if (!this.appGuid || this.appGuid !== params.id) {
+				this.appDetails = undefined;
+				this.installButtonStatus = undefined;
+				this.appGuid = params.id;
+			}
 			this.appsForYouService.getAppDetails(this.appGuid);
 			if (this.appGuid === AppsForYouEnum.AppGuidLenovoMigrationAssistant) {
 				this.metricsParent = 'AppsForYou.LMA';
@@ -177,24 +181,28 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					this.initAppDetails(notification.payload);
 					break;
 				case AppsForYouEnum.InstallAppProgress:
-					this.appDetails.showStatus = this.statusEnum.INSTALLING;
-					this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
-					break;
-				case AppsForYouEnum.InstallAppResult:
-					if (notification.payload === 'InstallDone' || notification.payload === 'InstalledBefore') {
-						this.appDetails.showStatus = this.statusEnum.INSTALLED;
-						this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
-					} else if (notification.payload === 'NotFinished') {
-						this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
-						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
-						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
-					} else if (notification.payload === 'InstallerRunning') {
+					if (this.appDetails && this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
 						this.appDetails.showStatus = this.statusEnum.INSTALLING;
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
-					} else {
-						this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
-						this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
-						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+					}
+					break;
+				case AppsForYouEnum.InstallAppResult:
+					if (this.appDetails && this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
+						if (notification.payload === 'InstallDone' || notification.payload === 'InstalledBefore') {
+							this.appDetails.showStatus = this.statusEnum.INSTALLED;
+							this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+						} else if (notification.payload === 'NotFinished') {
+							this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
+							this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
+							this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+						} else if (notification.payload === 'InstallerRunning') {
+							this.appDetails.showStatus = this.statusEnum.INSTALLING;
+							this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
+						} else {
+							this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
+							this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
+							this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+						}
 					}
 					break;
 				case AppsForYouEnum.GetAppStatusResult:
