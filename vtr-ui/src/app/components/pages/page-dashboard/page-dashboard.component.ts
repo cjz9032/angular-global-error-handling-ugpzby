@@ -26,7 +26,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { BaseVantageShellService } from 'src/app/services/vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -74,7 +74,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
-		private vantageShellService: BaseVantageShellService,
+		private vantageShellService: VantageShellService,
 		public androidService: AndroidService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private activatedRoute: ActivatedRoute,
