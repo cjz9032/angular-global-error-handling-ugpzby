@@ -35,8 +35,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public installedApps: VoipApp[] = [];
 	public showVoipHotkeysSection = false;
 	public isAppInstalled = false;
-	public fnCtrlSwapCapability: boolean = false;
-	public fnCtrlSwapStatus: boolean = false;
+	public fnCtrlSwapCapability = false;
+	public fnCtrlSwapStatus = false;
+	public isRestartRequired = false;
 	voipAppName = ['Skype For Business', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
@@ -298,7 +299,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetFnCtrlSwapCapability().then(res => {
 					this.fnCtrlSwapCapability = res;
-					if(this.fnCtrlSwapCapability){
+					if (this.fnCtrlSwapCapability) {
 						this.getFnCtrlSwap();
 					}
 				}).catch((error) => {
@@ -323,7 +324,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			} catch (error) {
 				this.logger.error('GetFnCtrlSwap', error.message);
 				return EMPTY;
-			}			
+			}
 		}
 
 	public fnCtrlKey(event) {
@@ -331,9 +332,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			try {
 				if (this.keyboardService.isShellAvailable) {
 					this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
-						// if (res.RebootRequired === true) {
-						// 	this.keyboardService.restartMachine();
-						// }
+						this.isRestartRequired = res.RebootRequired;
+						if (res.RebootRequired === true) {
+							this.keyboardService.restartMachine();
+						}
 					}).catch((error) => {
 						this.logger.error('SetFnCtrlSwap', error.message);
 					});
@@ -341,7 +343,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			} catch (error) {
 				this.logger.error('SetFnCtrlSwap', error.message);
 				return EMPTY;
-			}				
+			}
 		}
 
 	public launchProtocol(protocol: string) {

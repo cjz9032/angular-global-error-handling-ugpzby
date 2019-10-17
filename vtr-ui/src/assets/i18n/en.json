@@ -1402,7 +1402,8 @@
 				},
 				"fnCtrlKey": {
 					"title": "FN key and Ctrl key swap",
-					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+					"restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
 				},
 				"controlOptions": {
 					"more": "MORE",

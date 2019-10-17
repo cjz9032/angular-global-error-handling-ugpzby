@@ -4,7 +4,6 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,7 +13,7 @@ export class AudioService {
 	private dolby: any;
 	private smartSettings: any;
 	public isShellAvailable = false;
-	constructor(shellService: BaseVantageShellService) {
+	constructor(shellService: VantageShellService) {
 		this.microphone = shellService.getMicrophoneSettings();
 		this.dolby = shellService.getDolbySettings();
 		this.smartSettings = shellService.getSmartSettings();

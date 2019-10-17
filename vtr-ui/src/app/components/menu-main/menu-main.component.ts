@@ -635,7 +635,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		Promise.all([
 			this.keyboardService.GetUDKCapability(),
 			this.keyboardService.GetKeyboardMapCapability(),
-			this.keyboardService.getVoipHotkeysSettings()
+			// this.keyboardService.getVoipHotkeysSettings()
 		])
 			.then((responses) => {
 				try {
@@ -645,7 +645,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-					inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
+					// inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
