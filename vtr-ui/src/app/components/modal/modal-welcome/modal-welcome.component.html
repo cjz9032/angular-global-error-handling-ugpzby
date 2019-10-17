@@ -31,7 +31,8 @@
 						<div class="col-auto title2">
 							<ul>
 								<li>{{"welcometutorial.bullets1" | translate }}</li>
-								<li *ngIf="machineInfo.brand!='think'" >{{"welcometutorial.bullets2" | translate }}</li>
+								<li *ngIf="machineInfo && machineInfo.brand!=='think'">
+									{{"welcometutorial.bullets2" | translate }}</li>
 								<li>{{"welcometutorial.bullets3" | translate }}</li>
 							</ul>
 						</div>
@@ -56,7 +57,7 @@
 	</div>
 	<!-- start of page 2-->
 	<!-- end of page1-->
-	<div *ngSwitchCase="2">
+	<div *ngSwitchCase="2" #welcomepage2 tabindex="-1">
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.subtitle1' | translate">
@@ -75,7 +76,7 @@
 							<div class="device-image"
 								id="tutorial_personalUse"
 								attr.aria-label="tutorial_personalUse"
-								(click)="saveUsageType($event, 'PERSONAL')">
+								(click)="saveUsageType('PERSONAL')">
 								<input type="radio"
 									name="radio"
 									id="radio1"
@@ -86,7 +87,7 @@
 									for="radio1"
 									src="assets/images/welcome/personal-use.jpg"
 									class="" />
-								<label for="radio1"
+								<label for="radio1"  tabindex="1" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
 						</div>
@@ -94,7 +95,7 @@
 							<div class="device-image"
 								id="tutorial_businessUse"
 								attr.aria-label="tutorial_businessUse"
-								(click)="saveUsageType($event, 'BUSINESS')">
+								(click)="saveUsageType('BUSINESS')">
 								<input type="radio"
 									name="radio"
 									id="radio2"
@@ -104,7 +105,7 @@
 									for="radio2"
 									src="assets/images/welcome/business-use.jpg"
 									class="business" />
-								<label for="radio2"
+								<label for="radio2"  tabindex="2" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
 							</div>
 						</div>
@@ -112,7 +113,7 @@
 							<div class="device-image"
 								id="tutorial_customExp"
 								attr.aria-label="tutorial_customExp"
-								(click)="saveUsageType($event, 'CUSTOM')">
+								(click)="saveUsageType('CUSTOM')">
 								<input type="radio"
 									name="radio"
 									id="radio3"
@@ -122,7 +123,7 @@
 									for="radio3"
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
-								<label for="radio3"
+								<label for="radio3" tabindex="3	" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.custom" | translate }} </label>
 							</div>
 						</div>
@@ -140,13 +141,13 @@
 								[id]="interest + 'checkbox'"
 								#checkbox1
 								(click)="toggle($event, interest)" />
-							<label
+							<label class="bludFocusBoder" tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
 								[for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
 						</div>
 					</div>
 					<div *ngIf="!hideMoreInterestBtn"
 						class="row justify-content-center align-items-center font-12-semi mb-4 col-12">
-						<div class="col-auto title2"
+						<div class="col-auto title2" tabindex="5" (keypress)="onKeyPress($event)"
 							id="tutorial_hide_moreInterest"
 							attr.aria-label="tutorial_hide_moreInterest"
 							(click)="moreInterestClicked()">
@@ -156,7 +157,7 @@
 					</div>
 					<div class="row privacy-check mt-3">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox"
+							<input type="checkbox" tabindex="6" (keypress)="onKeyPress($event)"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
@@ -178,9 +179,9 @@
 				</div>
 
 				<div class="row justify-content-center align-items-center next-btn">
-					<div class="col-auto ">
+					<div class="col-auto" (keypress)="btnDoneOnKeyPress($event)" >
 						<vtr-ui-button metricsParent="WelcomePage"
-							metricsEvent="featureClick"
+							metricsEvent="featureClick" [tabIndex]= '8'
 							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"

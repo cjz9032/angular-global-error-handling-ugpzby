@@ -54,7 +54,7 @@ export class AppDetails {
 		this.category = new Category();
 		this.installtype = new Installtype();
 		this.screenshots = Array(new Screenshot());
-		this.recommendations =  Array(new Recommendation());
+		this.recommendations = Array(new Recommendation());
 	}
 }
 
@@ -79,6 +79,7 @@ export class AppsForYouService {
 	private cancelToken = undefined;
 	private isCancelInstall = false;
 	private cmsAppDetailsArray = [];	// Cached app details
+	private cachedAppStatusArray = [];	// Cached app status
 	private cmsAppDetails: any;
 	private serialNumber: string;
 	private familyName: string;
@@ -89,10 +90,12 @@ export class AppsForYouService {
 		let machineInfo = this.deviceService.getMachineInfoSync();
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
-				machineInfo = info;
-				this.serialNumber = machineInfo.serialnumber;
-				this.familyName = machineInfo.family;
-				this.isInitialized = true;
+				if (info) {
+					machineInfo = info;
+					this.serialNumber = machineInfo.serialnumber;
+					this.familyName = machineInfo.family;
+					this.isInitialized = true;
+				}
 			});
 		} else {
 			this.serialNumber = machineInfo.serialnumber;
@@ -155,7 +158,7 @@ export class AppsForYouService {
 	}
 
 	private serializeCMSAppDetails(detailFromCMS: any) {
-		const appDetails =  new AppDetails();
+		const appDetails = new AppDetails();
 		appDetails.id = detailFromCMS.Id;
 		appDetails.title = detailFromCMS.Title;
 		appDetails.image = detailFromCMS.Image;
@@ -187,7 +190,7 @@ export class AppsForYouService {
 		appDetails.by = detailFromCMS.By;
 		const dateString = detailFromCMS.Updated;
 		if (dateString && dateString.length >= 8) {
-			appDetails.updated =  dateString.substr(4, 2) + '-' +  dateString.substr(6, 2) + '-' + dateString.substr(0, 4);
+			appDetails.updated = dateString.substr(4, 2) + '-' + dateString.substr(6, 2) + '-' + dateString.substr(0, 4);
 		} else {
 			appDetails.updated = '';
 		}
@@ -201,7 +204,7 @@ export class AppsForYouService {
 
 		if (appDetails.by === '' &&
 			appDetails.updated === '' &&
-			appDetails.installtype.title === ''	&&
+			appDetails.installtype.title === '' &&
 			appDetails.category.title === '' &&
 			appDetails.privacyurl === '') {
 			appDetails.showAdditionalInfo = false;
@@ -218,11 +221,29 @@ export class AppsForYouService {
 			if (this.systemUpdateBridge) {
 				const applicationGuid = appGuid;
 				const result = await this.systemUpdateBridge.downloadAndInstallApp(applicationGuid, null,
-				  (progressResponse) => {
-					this.commonService.sendNotification(AppsForYouEnum.InstallAppProgress, progressResponse);
-				  });
+					(progressResponse) => {
+						this.commonService.sendNotification(AppsForYouEnum.InstallAppProgress, progressResponse);
+					});
 				this.commonService.sendNotification(AppsForYouEnum.InstallAppResult, result);
 			}
+		}
+	}
+
+	public getAppStatus(appGuid) {
+		const findItem = this.cachedAppStatusArray.find(item => item.key === appGuid);
+		const appStatus = findItem ? findItem.value : undefined;
+		if (!appStatus) {
+			this.systemUpdateBridge.getAppStatus(appGuid).then(status => {
+				if (this.cachedAppStatusArray.findIndex(i => i.key === appGuid) === -1) {
+					this.cachedAppStatusArray.push({
+						key: appGuid,
+						value: status
+					});
+				}
+				this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, status);
+			});
+		} else {
+			this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, appStatus);
 		}
 	}
 
@@ -244,7 +265,7 @@ export class AppsForYouService {
 	public showAdobeMenu() {
 		if (this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
 			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 &&
-			(this.localInfo.Segment.indexOf('SMB') !== -1 || this.localInfo.Segment.indexOf('Consumer') !== -1))  {
+			(this.localInfo.Segment.indexOf('SMB') !== -1 || this.localInfo.Segment.indexOf('Consumer') !== -1)) {
 			return true;
 		} else {
 			return false;

@@ -182,8 +182,7 @@
 									metricsEvent="featureClick"
 									metricsItem="checkYourLocation"
 									[isDisabled]="locatorButtonDisable"
-									(click)="openThreatLocator()"
-									[title]="'security.wifisecurity.threatlocator.button' | translate"
+									(onClick)="openThreatLocator()"
 									[label]="'security.wifisecurity.threatlocator.button' | translate"
 									[linkId]="'sa-ws-btn-openlocator'"></vtr-ui-button>
 							</div>
@@ -200,12 +199,12 @@
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-5 text-right col-check-use-state"
 				*ngIf="data.wifiSecurity.state==='never-used'">
-				<vtr-ui-button class="enable-wifi-security"
+				<vtr-ui-button
 					metricsItem="enableWifiSecurity"
 					metricsEvent="featureClick"
 					[linkId]="'sa-ws-btn-enablewifisecurity'"
-					(click)="enableWifiSecurity()"
-					[title]="'security.wifisecurity.container.button' | translate"
+					btnHeight=true
+					(onClick)="enableWifiSecurity()"
 					[label]="'security.wifisecurity.container.button' | translate"
 					></vtr-ui-button>
 			</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import packageFile from '../../../../package.json';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
 	providedIn: 'root'
@@ -15,7 +15,7 @@ export class LoggerService {
 	private logger: any;
 
 	constructor(private vantageShellService: VantageShellService) {
-		this.version = packageFile.version;
+		this.version = environment.appVersion;
 		this.logger = this.vantageShellService.getLogger();
 		if (this.logger) {
 			this.isShellAvailable = true;
@@ -33,6 +33,9 @@ export class LoggerService {
 		if (this.isShellAvailable) {
 			this.logger.debug(this.getMessage(message, data));
 		}
+		if (environment.allowMockService) {
+			console.log(this.getMessage(message, data));
+		}
 	}
 
 	//
@@ -40,11 +43,17 @@ export class LoggerService {
 		if (this.isShellAvailable) {
 			this.logger.error(this.getMessage(message, data));
 		}
+		if (environment.allowMockService) {
+			console.log(this.getMessage(message, data));
+		}
 	}
 
 	public info(message: string, data: any = {}): void {
 		if (this.isShellAvailable) {
 			this.logger.info(this.getMessage(message, data));
+		}
+		if (environment.allowMockService) {
+			console.log(this.getMessage(message, data));
 		}
 	}
 
@@ -53,8 +62,8 @@ export class LoggerService {
 	 * @param message message to log
 	 * @param param any param
 	 */
-	public logDate(message: string, ...param) {
-		const date = new Date();
-		console.log(`${date.toISOString()} | ${message}`, param);
-	}
+	// public logDate(message: string, ...param) {
+	// 	const date = new Date();
+	// 	console.log(`${date.toISOString()} | ${message}`, param);
+	// }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { VoipResponse } from '../../data-models/input-accessories/voip.model';
+import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,7 +12,7 @@ export class InputAccessoriesService {
 	public isShellAvailable = false;
 	private voipHotkeys;
 
-	constructor(shellService: VantageShellService) {
+	constructor(shellService: BaseVantageShellService) {
 		this.voipHotkeys = shellService.getVoipHotkeysObject();
 		this.keyboardManager = shellService.getKeyboardManagerObject();
 		this.mouseAndTouchPad = shellService.getMouseAndTouchPad();
@@ -154,7 +155,6 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-
 	public getTopRowFnStickKeyCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -166,7 +166,6 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-
 	public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -248,7 +247,38 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	public GetFnCtrlSwapCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnCtrlSwapCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 
+	public GetFnCtrlSwap() {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnCtrlSwap();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public SetFnCtrlSwap(value) {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.SetFnCtrlSwap(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 	public getMouseCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {

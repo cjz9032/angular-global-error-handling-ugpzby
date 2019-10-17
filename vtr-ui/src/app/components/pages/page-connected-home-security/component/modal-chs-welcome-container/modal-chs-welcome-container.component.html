@@ -61,16 +61,14 @@
 					metricsItem="CHSWelcomeNextButton"
 					metricsParent="{{metricsParent}}"
 					[label]="'tutorial.next' | translate"
-					(click)="next()"
-					[title]="'tutorial.next' | translate"></vtr-ui-button>
+					(onClick)="next()"></vtr-ui-button>
 				<vtr-ui-button *ngIf="isLocationServiceOn === true"
 					linkId="chs-tour-btn-done"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeDoneButton"
 					metricsParent="{{metricsParent}}"
-					(click)="closeModal()"
-					[label]="'homeSecurity.tour.done' | translate"
-					[title]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
+					(onClick)="closeModal()"
+					[label]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
 			</div>
 		</div>
 	</div>

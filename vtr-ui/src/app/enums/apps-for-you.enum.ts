@@ -2,6 +2,7 @@ export enum AppsForYouEnum {
 	GetAppDetailsRespond = '[AppsForYou] GetAppDetailsRespond',
 	InstallAppProgress = '[AppsForYou] InstallAppProgress',
 	InstallAppResult = '[AppsForYou] InstallAppResult',
+	GetAppStatusResult = '[AppsForYou] GetAppStatusResult',
 	CommonException = '[AppsForYou] CommonException',
 	InstallationCancelled = '[AppsForYou] InstallationCancelled',
 	StatusInstalled = 'installed',
