@@ -7,7 +7,7 @@
 			</vtr-header-main>
 		</div>
 	</div>
-	<div class="row vtr-page-content">	
+	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
 				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
@@ -189,7 +189,7 @@
 													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
-													
+
 													<div class="auto-set-checkbox" >
 														<input id="cb-zero-touch-lock"
 															attr.aria-label="cb-zero-touch-lock"
@@ -246,7 +246,7 @@
 												</div>
 												</div>
 											</div>
-											<div *ngIf="sensitivityVisibility" 
+											<div *ngIf="sensitivityVisibility"
 												class="pl-4 custom-row-swicth bold-title pb-4">
 												<h3 class="sensitivityTitle">
 													{{'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate}}
@@ -319,8 +319,7 @@
 													[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 												</vtr-ui-rounded-rectangle-radio>
 
-												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+												<div class="pt-3">
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<div class="col">
