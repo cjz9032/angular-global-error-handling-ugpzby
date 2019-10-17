@@ -92,8 +92,7 @@ export class SupportService {
 							this.warrantyData.info = result;
 							if (online) { this.warrantyData.cache = true; }
 							if (machineInfo.serialnumber) {
-								this.warrantyData.info.url =
-									`https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+								this.warrantyData.info.url = this.getWarrantyUrl(machineInfo.serialnumber);
 							} else {
 								this.warrantyData.info.url = this.warrantyNormalUrl;
 							}
@@ -164,5 +163,12 @@ export class SupportService {
 		if (this.userGuide) {
 			this.userGuide.launchUg(this.commonService.isOnline, launchPDF);
 		}
+	}
+
+	public getWarrantyUrl(serialNumber: string): string {
+		if (serialNumber && serialNumber.length > 0) {
+			return `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${serialNumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+		}
+		return this.warrantyNormalUrl;
 	}
 }

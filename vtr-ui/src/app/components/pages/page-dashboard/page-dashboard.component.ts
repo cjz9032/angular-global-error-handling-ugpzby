@@ -43,8 +43,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	private protocalAction: any;
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
-	warrantyData: { info: any; cache: boolean };
+	private warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
 	public isWarrantyVisible = false;
+	public warrantyUrl = '';
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -493,6 +494,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					warranty.status = 1;
 				}
 				warranty.isHidden = !this.deviceService.showWarranty;
+				this.isWarrantyVisible = this.deviceService.showWarranty;
 			}
 		});
 
@@ -529,7 +531,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 							info: notification.payload,
 							cache: true
 						};
+						this.warrantyData.info.url = this.warrantyUrl;
 					}
+					break;
+				case 'MachineInfo':
+					this.warrantyUrl = this.supportService.getWarrantyUrl(notification.payload.serialnumber);
 					break;
 				default:
 					break;
