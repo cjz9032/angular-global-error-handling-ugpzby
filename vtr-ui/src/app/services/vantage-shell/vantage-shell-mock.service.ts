@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { BaseVantageShellService } from './base-vantage-shell.service';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
@@ -15,13 +14,11 @@ declare var Windows;
 	providedIn: 'root'
 })
 
-export class VantageShellMockService extends BaseVantageShellService {
-
+export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
-		super();
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
 		if (this.shell) {
@@ -44,7 +41,6 @@ export class VantageShellMockService extends BaseVantageShellService {
 				Phoenix.Features.SecurityAdvisor,
 				Phoenix.Features.SystemInformation,
 				Phoenix.Features.HwSettings,
-				// Phoenix.Features.Gaming,
 				Phoenix.Features.SystemUpdate,
 				Phoenix.Features.Warranty,
 				Phoenix.Features.Permissions,
@@ -73,7 +69,6 @@ export class VantageShellMockService extends BaseVantageShellService {
 	public registerEvent(eventType: any, handler: any) {
 		if (this.phoenix) {
 			this.phoenix.on(eventType, (val) => {
-				// 	console.log('Event fired: ', eventType, val);
 				handler(val);
 			});
 		}
@@ -96,7 +91,6 @@ export class VantageShellMockService extends BaseVantageShellService {
 			const message = this.getMessage(msg);
 			consoleProxy.log(message, args);
 			if (logger) {
-				// msg = JSON.stringify(msg);
 				logger.info(message);
 			}
 		};
@@ -105,7 +99,6 @@ export class VantageShellMockService extends BaseVantageShellService {
 			const message = this.getMessage(msg);
 			consoleProxy.error(message, args);
 			if (logger) {
-				// msg = JSON.stringify(msg);
 				logger.error(message);
 			}
 		};
@@ -114,7 +107,6 @@ export class VantageShellMockService extends BaseVantageShellService {
 			const message = this.getMessage(msg);
 			consoleProxy.warn(message, args);
 			if (logger) {
-				// msg = JSON.stringify(msg);
 				logger.warn(message);
 			}
 		};
