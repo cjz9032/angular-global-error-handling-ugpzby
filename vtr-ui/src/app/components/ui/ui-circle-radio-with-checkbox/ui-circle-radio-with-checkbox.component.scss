@@ -64,14 +64,11 @@
 		.checkbox-custom:checked+.checkbox-custom-label {
 			background-color: $background;
 			@media #{$white-on-black}{
-				background-color: $dark;
-				border:none;
-				color: $highlight_bright;
+				background-color: $highlight_bright;;
+				
 			}
 			@media #{$black-on-white}{
-				background-color: $light;
-				border: none;
-				color: darkviolet;
+				background-color: darkviolet;
 			}
 
 		}
