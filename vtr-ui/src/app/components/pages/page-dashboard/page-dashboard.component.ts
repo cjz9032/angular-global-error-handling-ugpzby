@@ -574,12 +574,12 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		return new Promise((resolve) => {
 			this.hypService.getAllSettings().then((hyp: any) => {
 				if (hyp) {
-					this.tileSource.tileA = hyp.TileASource ? hyp.TileASource : 'CMS';
-					this.tileSource.tileB = hyp.TileBSource ? hyp.TileBSource : 'CMS';
-					this.tileSource.tileC = hyp.TileCSource ? hyp.TileCSource : 'CMS';
-					this.tileSource.tileD = hyp.TileDSource ? hyp.TileDSource : 'CMS';
-					this.tileSource.tileE = hyp.TileESource ? hyp.TileESource : 'CMS';
-					this.tileSource.tileF = hyp.TileFSource ? hyp.TileFSource : 'CMS';
+					this.tileSource.tileA = hyp.TileASource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileC = hyp.TileCSource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileD = hyp.TileDSource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileE = hyp.TileESource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileF = hyp.TileFSource === 'UPE' ? 'UPE' : 'CMS';
 				}
 				resolve();
 			}, () => {
