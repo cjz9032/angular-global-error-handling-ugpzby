@@ -954,7 +954,7 @@
 							"close": "close",
 							"coolingModesList": {
 								"list1": "Click on the windows battery-icon in the toolbar",
-								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+								"list2": "The Windows Power mode will appear, slide the slider to choose between optimal time or optimal performance."
 							}
 						}
 					},
