@@ -210,7 +210,7 @@ export class DashboardService {
 					if (cacheWarranty) {
 						observer.next(cacheWarranty);
 					}
-					const result = { endDate: null, status: 2, startDate: null };
+					const result = { endDate: cacheWarranty.endDate, status: cacheWarranty.status, startDate: cacheWarranty.startDate };
 					this.sysinfo.getMachineInfo().then((data) =>
 						this.warranty.getWarrantyInformation(data.serialnumber).then(
 							(warrantyRep) => {
