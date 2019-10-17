@@ -161,9 +161,11 @@ export class ModernPreloadService {
 					this.cancelToken = undefined;
 					this.logService.info('ModernPreloadService.installApp response.', JSON.stringify(response));
 					this.IsInstalling = !(i === appList.length - 1 || this.IsCancelInstall);
-					if (response.appList && i === appList.length - 1 && !this.IsCancelInstall) {
+					if (this.IsCancelInstall) {
+						this.sendResponseNotification(ModernPreloadEnum.InstallationCancelled, null, responseHandler);
+					} else if (response.appList && i === appList.length - 1) {
 						this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppResult, response.appList, responseHandler);
-					} else if (response.appList && i < appList.length - 1 && !this.IsCancelInstall) {
+					} else if (response.appList && i < appList.length - 1) {
 						this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppProgress, response.appList, responseHandler);
 						i++;
 						this.installApp(i, appList, responseHandler);

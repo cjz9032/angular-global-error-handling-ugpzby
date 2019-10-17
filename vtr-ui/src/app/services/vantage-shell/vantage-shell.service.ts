@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { BaseVantageShellService } from './base-vantage-shell.service';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
@@ -15,12 +14,11 @@ declare var Windows;
 	providedIn: 'root'
 })
 
-export class VantageShellService extends BaseVantageShellService {
+export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
-		super();
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			this.isShellAvailable = true;
@@ -59,7 +57,8 @@ export class VantageShellService extends BaseVantageShellService {
 				Phoenix.Features.HardwareScan,
 				Phoenix.Features.BetaUser,
 				Phoenix.Features.DevicePosture,
-				Phoenix.Features.AdPolicy
+				Phoenix.Features.AdPolicy,
+				Phoenix.Features.Registry
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -196,19 +195,15 @@ export class VantageShellService extends BaseVantageShellService {
 				eventName = 'PageView';
 				break;
 			case 'featureclick':
-				eventName = 'FeatureClick';
-				break;
 			case 'itemclick':
-				eventName = 'ItemClick';
+				eventName = 'FeatureClick';
 				break;
 			case 'itemview':
 				eventName = 'ItemView';
 				break;
 			case 'articleclick':
-				eventName = 'ArticleClick';
-				break;
 			case 'docclick':
-				eventName = 'DocClick';
+				eventName = 'ArticleClick';
 				break;
 			case 'articleview':
 				eventName = 'ArticleView';
@@ -925,6 +920,13 @@ export class VantageShellService extends BaseVantageShellService {
 	public getMouseAndTouchPad(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.input.inputControlLinks;
+		}
+		return undefined;
+	}
+
+	public getRegistryUtil(): Phoenix.RegistryFeature {
+		if (this.phoenix) {
+			return this.phoenix.registry;
 		}
 		return undefined;
 	}

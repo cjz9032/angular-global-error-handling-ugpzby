@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -28,9 +28,8 @@ export class DeviceService {
 	private isGamingDashboardLoaded = false;
 	private machineInfo: any;
 	public showSearch = false;
-	public showCHSMenu = false;
 	constructor(
-		private shellService: BaseVantageShellService,
+		private shellService: VantageShellService,
 		private commonService: CommonService,
 		public androidService: AndroidService,
 		private router: Router,
@@ -46,7 +45,6 @@ export class DeviceService {
 		this.initIsArm();
 		this.initshowPrivacy();
 		this.initShowSearch();
-		this.initShowCHSMenu();
 	}
 
 	private initIsArm() {
@@ -103,16 +101,6 @@ export class DeviceService {
 		}
 	}
 
-	private initShowCHSMenu() {
-		if (this.hypSettings) {
-			this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
-				this.showCHSMenu = ((result || '').toString() === 'true');
-			}, (error) => {
-				this.logger.error('DeviceService.initShowCHSMenu: promise rejected ', error);
-			});
-		}
-	}
-
 	public getDeviceInfo(): Promise<MyDevice> {
 		if (this.device) {
 			return this.device.getDeviceInfo();
@@ -128,7 +116,7 @@ export class DeviceService {
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
-					if (info.mtm && !this.showWarranty && info.mtm.substring(info.mtm.length - 2).toLocaleLowerCase() !== 'cd') {
+					if (!this.showWarranty && (!info.mtm || (info.mtm && info.mtm.substring(info.mtm.length - 2).toLocaleLowerCase() !== 'cd'))) {
 						this.showWarranty = true;
 					}
 					if (info && info.cpuArchitecture) {

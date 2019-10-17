@@ -19,9 +19,10 @@
 									id="{{collapseLinkId+'-collapse-link'}}"
 									attr.aria-label="{{collapseLinkId+'-collapse-link'}}"
 									metricsEvent="itemClick"
-									[metricsValue]="isCollapsed"
+									[metricsValue]="!isCollapsed"
 									[metricsItem]="'btn.collapse'"
 									[metricsParent]="metricsParent"
+									(keyup.enter)="onToggle()"
 									(click)="onToggle()">
 									<div *ngIf="isCollapsed"
 										class="collapse-text"

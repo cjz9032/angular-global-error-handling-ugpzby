@@ -21,7 +21,8 @@
 						[attr.aria-label]="qa.idYes"
 						[value]="true">
 					<label class="form-check-label"
-						tabindex="0"
+						[tabindex]="feedbackSuccess ? -1 : 0"
+						(keyup.enter)="setRadioStatus(qa.name, true)"
 						[for]="qa.idYes">{{'dashboard.feedback.form.yes' | translate}}</label>
 				</div>
 				<div class="form-check form-check-inline">
@@ -34,7 +35,8 @@
 						[attr.aria-label]="qa.idNo"
 						[value]="false">
 					<label class="form-check-label"
-						tabindex="0"
+						[tabindex]="feedbackSuccess ? -1 : 0"
+						(keyup.enter)="setRadioStatus(qa.name, false)"
 						[for]="qa.idNo">{{'dashboard.feedback.form.no' | translate}}</label>
 				</div>
 				<div class="line"></div>
@@ -50,6 +52,7 @@
 						class="form-control user-comment"
 						cols="30"
 						rows="10"
+						[tabindex]="feedbackSuccess ? -1 : 0"
 						formControlName="userComment"
 						pattern="^(?!\s*$).+"
 						required></textarea>
@@ -62,6 +65,7 @@
 						metricsEvent="FeatureClick"
 						metricsItem="SendFeedbackButton"
 						metricsParent="Page.Dashboard"
+						[tabIndex]="feedbackSuccess ? -1 : 0"
 						[isFullWidth]="true"
 						[isDisabled]="!feedbackForm.value.userComment && feedbackForm.value.qaNewStyle === null && feedbackForm.value.qaPerformance === null && feedbackForm.value.qaUseFrequency === null"
 						[label]="'dashboard.feedback.form.sendFeedback' | translate"
@@ -71,7 +75,7 @@
 					class="d-inline-block dropdown-content">
 					<div class="dropdown-btn"
 						id="feedback-dropdown"
-						tabindex="0"
+						[tabindex]="feedbackSuccess ? -1 : 0"
 						attr.aria-label="feedback-dropdown" ngbDropdownToggle>
 						<fa-icon [icon]="['fal', 'angle-down']"></fa-icon>
 					</div>
@@ -80,7 +84,7 @@
 						aria-labelledby="feedback-dropdown">
 						<div class="menu-pointer"></div>
 						<div class="dropdown-item" ngbDropdownItem
-							tabindex="0"
+							[tabindex]="feedbackSuccess ? -1 : 0"
 							vtrMetrics
 							id="modal-btn-submitScreeenshot"
 							attr.aria-label="modal-btn-submitScreeenshot"

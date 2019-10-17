@@ -14,7 +14,7 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { TaskAction } from 'src/app/data-models/metrics/events.model';
 import * as metricsConst from 'src/app/enums/metrics.enum';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,7 +23,7 @@ import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.ser
 export class SystemUpdateService {
 
 	constructor(
-		shellService: BaseVantageShellService,
+		shellService: VantageShellService,
 		private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
@@ -147,7 +147,7 @@ export class SystemUpdateService {
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
-					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
+					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
 					this.percentCompleted = 0;
@@ -276,7 +276,7 @@ export class SystemUpdateService {
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) {
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
-					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.checkForUpdatesResult.updateList) };
+					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.checkForUpdatesResult.updateList) };
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdatesAvailable, this.updateInfo);
 				} else {
 					this.percentCompleted = 0;

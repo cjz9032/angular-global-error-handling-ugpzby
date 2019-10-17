@@ -17,6 +17,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	private notificationSubscription: Subscription;
 	isOnline: boolean;
 	isAppInstallError = false;
+	isCancelling = false;
 	nowInstallingAppID = '';
 	appList: AppItem[] = [];
 	checkedAppList: any[] = [];
@@ -116,7 +117,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 					this.UpdateAppStatus(payload);
 					break;
 				case ModernPreloadEnum.InstallationCancelled:
-					this.installationCancelled();
+					this.isCancelling = false;
 					break;
 				case ModernPreloadEnum.CommonException:
 					this.page = this.PageNames.ERROR;
@@ -144,6 +145,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		this.checkedApp();
 		this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOAD;
 	}
+
 	UpdateAppStatus(apps: AppItem[], isResult?: boolean) {
 		let isInstallError = false;
 		apps.forEach((app: AppItem) => {
@@ -157,9 +159,6 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 				case ModernPreloadEnum.StatusNotInstalled:
 					setApp.showStatus = this.statusEnum.FAILED_INSTALL;
 					isInstallError = true;
-					if (app.appID === this.checkedAppList[this.checkedAppList.length - 1].appID) {
-						this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.RESTART_DOWNLOAD;
-					}
 					break;
 				case ModernPreloadEnum.StatusDownloaded:
 					setApp.showStatus = this.statusEnum.DOWNLOAD_COMPLETE;
@@ -176,7 +175,8 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 			this.isAppInstallError = true;
 		}
 	}
-	installationCancelled() {
+
+	installationCancell() {
 		if (this.nowInstallingAppID !== '') {
 			const setApp = this.appList.find(a => a.appID === this.nowInstallingAppID);
 			if (setApp.showStatus !== this.statusEnum.INSTALLED) {
@@ -212,9 +212,10 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	cancel() {
-		this.modernPreloadService.cancelInstall();
+		this.isCancelling = true;
 		this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.RESTART_DOWNLOAD;
-		this.installationCancelled();
+		this.modernPreloadService.cancelInstall();
+		this.installationCancell();
 	}
 
 	checkNetWork() {

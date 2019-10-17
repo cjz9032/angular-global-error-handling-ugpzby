@@ -26,7 +26,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { BaseVantageShellService } from 'src/app/services/vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -41,8 +41,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	public isOnline = true;
 	public brand;
 	private protocalAction: any;
-
 	warrantyData: { info: any; cache: boolean };
+	public isWarrantyVisible = false;
 
 	heroBannerItems = [] ;   // tile A
 	cardContentPositionB: any = {};
@@ -103,7 +103,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
-		private vantageShellService: BaseVantageShellService,
+		private vantageShellService: VantageShellService,
 		public androidService: AndroidService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private activatedRoute: ActivatedRoute,
@@ -138,7 +138,15 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 
 		this.isOnline = this.commonService.isOnline;
-		this.warrantyData = this.supportService.warrantyData;
+		this.isWarrantyVisible = deviceService.showWarranty;
+		// this.warrantyData = this.supportService.warrantyData;
+		const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus, undefined);
+		if (cacheWarranty) {
+			this.warrantyData = {
+				info: cacheWarranty,
+				cache: true
+			};
+		}
 	}
 
 	ngOnInit() {
@@ -758,6 +766,14 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					break;
+				case LocalStorageKey.LastWarrantyStatus:
+					if (notification.payload) {
+						this.warrantyData = {
+							info: notification.payload,
+							cache: true
+						};
+					}
 					break;
 				default:
 					break;

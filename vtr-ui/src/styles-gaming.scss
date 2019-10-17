@@ -1232,14 +1232,3 @@
 	}
 }
 
-// hide by Bob Liu: VAN-8765
-.is-gaming,
-.gaming-help-popup,
-.battery-modal-size {
-	button:focus,
-	span:focus,
-	*:focus {
-		outline: 0 !important;
-		box-shadow: none !important;
-	}
-}

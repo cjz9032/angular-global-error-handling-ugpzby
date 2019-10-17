@@ -96,4 +96,8 @@ export class FeedbackFormComponent implements OnInit {
 		const uriPath = 'mailto:' + email + '?subject=' + subject;
 		this.deviceService.launchUri(uriPath);
 	}
+
+	setRadioStatus(name: string, status: boolean) {
+		this.feedbackForm.patchValue({ [name]: status });
+	}
 }

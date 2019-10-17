@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,7 +9,7 @@ export class InputAccessoriesService {
 	private mouseAndTouchPad: any;
 	public isShellAvailable = false;
 
-	constructor(shellService: BaseVantageShellService) {
+	constructor(shellService: VantageShellService) {
 		this.keyboardManager = shellService.getKeyboardManagerObject();
 		this.mouseAndTouchPad = shellService.getMouseAndTouchPad();
 		if (this.keyboardManager) {

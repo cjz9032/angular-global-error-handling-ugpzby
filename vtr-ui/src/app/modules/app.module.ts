@@ -53,10 +53,8 @@ import { environment } from 'src/environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
-import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
-import { BaseVantageShellService } from '../services/vantage-shell/base-vantage-shell.service';
-import { VantageShellMockService } from '../services/vantage-shell/vantage-shell-mock.service';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { CommonUiModule } from './common/common-ui.module';
 
 @NgModule({
 	declarations: [
@@ -86,6 +84,7 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 		UiButtonModule,
 		RouterModule,
 		CommonPipeModule,
+		CommonUiModule,
 		FormsModule,
 		ReactiveFormsModule,
 		ModernPreloadModule,
@@ -96,6 +95,7 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
+		CommonUiModule,
 		ModernPreloadModule,
 		PageLayoutModule,
 	],
@@ -106,8 +106,7 @@ import { PageSettingsComponent } from '../components/pages/page-settings/page-se
 		DisplayService,
 		CookieService,
 		CommsService,
-		{ provide: ErrorHandler, useClass: GlobalErrorHandler },
-		{ provide: BaseVantageShellService, useClass: environment.allowMockService ? VantageShellMockService : VantageShellService }
+		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
 	],
 	entryComponents: [
 		ModalWelcomeComponent,
