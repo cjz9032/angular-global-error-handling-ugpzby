@@ -94,7 +94,7 @@ export class MetricService {
 
 	public sendAppLoadedMetric() {
 		const vanStub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppLoaded((Date.now() - vanStub.navigateTime) / 1000));
+		this.metricsClient.sendAsync(new AppLoaded((Date.now() - vanStub.navigateTime)));
 	}
 
 	public sendAppLaunchMetric() {
