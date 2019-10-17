@@ -10,7 +10,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { DevService } from '../dev/dev.service';
 import { LoggerService } from '../logger/logger.service';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -31,7 +31,7 @@ export class CMSService {
 
 	constructor(
 		private commsService: CommsService,
-		private vantageShellService: BaseVantageShellService,
+		private vantageShellService: VantageShellService,
 		private localInfoService: LocalInfoService,
 		private commonService: CommonService, // VAN-5872, server switch feature,
 		private devService: DevService,

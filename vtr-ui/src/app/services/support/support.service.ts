@@ -3,7 +3,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal-find-us.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { CommonService } from '../common/common.service';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,7 +22,7 @@ export class SupportService {
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 
 	constructor(
-		private shellService: BaseVantageShellService,
+		private shellService: VantageShellService,
 		private commonService: CommonService,
 		private modalService: NgbModal,
 	) {
