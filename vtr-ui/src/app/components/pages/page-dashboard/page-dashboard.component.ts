@@ -718,7 +718,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.dashboardService.getWarrantyInfo().subscribe((value) => {
 			if (value) {
 				const warranty = this.systemStatus[2];
-				const warrantyDate = this.commonService.formatDate(value.expired);
+				const warrantyDate = this.commonService.formatDate(value.endDate);
 				// in warranty
 				if (value.status === 0) {
 					this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
