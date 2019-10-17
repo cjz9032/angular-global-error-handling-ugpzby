@@ -1,16 +1,24 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
-import { Capability, TopRowFunctionsIdeapad } from './top-row-functions-ideapad.interface';
-import { from, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {
+	Capability, GetFnLockStatusResponse,
+	GetPrimaryKeyResponse,
+	StringBoolean,
+	TopRowFunctionsIdeapad
+} from './top-row-functions-ideapad.interface';
+import { from, Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+
+const CACHE_SIZE = 1;
 
 @Injectable({
 	providedIn: 'root'
 })
-export class TopRowFunctionsIdeapadService implements OnDestroy {
+export class TopRowFunctionsIdeapadService {
 	topRowFunctionsIdeaPadFeature: TopRowFunctionsIdeapad;
-	private capabilities: Capability[];
-	capabilities$;
+	private capability$: Observable<Capability[]>;
+	private primaryKey$: Observable<GetPrimaryKeyResponse>;
+	private fnLockStatus$: Observable<GetFnLockStatusResponse>;
 
 	constructor(
 		private shellService: VantageShellService
@@ -18,18 +26,57 @@ export class TopRowFunctionsIdeapadService implements OnDestroy {
 		this.topRowFunctionsIdeaPadFeature = this.shellService.getTopRowFunctionsIdeapad();
 	}
 
-	getCapability(): Observable<Capability[]> {
-		if (this.capabilities) {
-			return of(this.capabilities);
+	get capability() {
+		if (!this.capability$) {
+			this.capability$ = this.requestCapability().pipe(
+				shareReplay(CACHE_SIZE)
+			);
 		}
-		this.capabilities$ = from(this.topRowFunctionsIdeaPadFeature.getCapability())
+		return this.capability$;
+	}
+
+	requestCapability(): Observable<Capability[]> {
+		return from(this.topRowFunctionsIdeaPadFeature.getCapability())
 			.pipe(
 				map(res => res.payload.capabilityList)
 			);
-		return this.capabilities$;
 	}
 
-	ngOnDestroy(): void {
-		this.capabilities$.unsubscribe();
+	get primaryKey(): Observable<GetPrimaryKeyResponse> {
+		if (!this.primaryKey$) {
+			this.primaryKey$ = this.requestPrimaryKey().pipe(
+				shareReplay(CACHE_SIZE)
+			);
+		}
+		return this.primaryKey$;
+	}
+
+	requestPrimaryKey(): Observable<GetPrimaryKeyResponse> {
+		return from(this.topRowFunctionsIdeaPadFeature.getPrimaryKey())
+			.pipe(
+				map(res => res.payload)
+			);
+	}
+
+	get fnLockStatus(): Observable<GetFnLockStatusResponse> {
+		if (!this.fnLockStatus$) {
+			this.fnLockStatus$ = this.requestFnLockStatus().pipe(
+				shareReplay(CACHE_SIZE)
+			);
+		}
+		return this.fnLockStatus$;
+	}
+
+	requestFnLockStatus(): Observable<GetFnLockStatusResponse> {
+		return from(this.topRowFunctionsIdeaPadFeature.getFnLockStatus())
+			.pipe(
+				map(res => res.payload)
+			);
+	}
+
+	setFnLockStatus(fnLock: StringBoolean) {
+		// Every time set new fnLock status clear the cache.
+		this.fnLockStatus$ = null;
+		return from(this.topRowFunctionsIdeaPadFeature.setFnLockStatus(fnLock));
 	}
 }

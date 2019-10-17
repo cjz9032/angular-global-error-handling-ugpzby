@@ -28,14 +28,14 @@ export interface GetCapabilityResponse {
 	capabilityList: Capability[];
 }
 
-export enum Prime {
-	Hotkey = 'Hotkey',
-	Fnkey = 'Fnkey'
+export enum KeyType {
+	HOTKEY = 'Hotkey',
+	FNKEY = 'Fnkey'
 }
 
 export interface GetPrimaryKeyResponse {
 	errorCode: CommonErrorCode;
-	primeKey: Prime;
+	primeKey: KeyType;
 	enabled: NumberBoolean;
 }
 
@@ -55,4 +55,9 @@ export interface CommonResponse<T, K = null> {
 export enum CommonErrorCode {
 	FAILED = -1,
 	SUCCEED = 0
+}
+
+export enum StringBooleanEnum {
+	TRUTHY = 'True',
+	FALSY = 'False'
 }
