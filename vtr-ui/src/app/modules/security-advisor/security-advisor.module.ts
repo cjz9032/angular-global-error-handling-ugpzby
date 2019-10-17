@@ -1,3 +1,4 @@
+import { LocationNoticeModule } from './../location-notice/location-notice.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -112,7 +113,8 @@ library.add(faLaughWink);
 		HeaderMainModule,
 		WidgetOfflineModule,
 		UiListChevronModule,
-		CommonModalModule
+		CommonModalModule,
+		LocationNoticeModule
 	],
 	providers: [
 		DialogService

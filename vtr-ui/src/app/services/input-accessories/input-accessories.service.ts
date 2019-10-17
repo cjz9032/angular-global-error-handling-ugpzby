@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { VoipResponse } from '../../data-models/input-accessories/voip.model';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,7 +11,7 @@ export class InputAccessoriesService {
 	public isShellAvailable = false;
 	private voipHotkeys;
 
-	constructor(shellService: BaseVantageShellService) {
+	constructor(shellService: VantageShellService) {
 		this.voipHotkeys = shellService.getVoipHotkeysObject();
 		this.keyboardManager = shellService.getKeyboardManagerObject();
 		this.mouseAndTouchPad = shellService.getMouseAndTouchPad();
