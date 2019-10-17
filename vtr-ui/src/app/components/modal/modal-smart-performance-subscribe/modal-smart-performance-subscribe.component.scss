@@ -35,6 +35,12 @@ textarea:focus {
 		color: $main_shade;
 	}
 	.pricing-tables{
+		@media #{$medium-screen} {
+			justify-content: space-around !important;
+		}
+		@media #{$small-screen} {
+			justify-content: space-around !important;
+		}
 		.pricing-table-card {
 			background: $shade_lighter;
 			border-radius: 0.6rem;
@@ -43,9 +49,25 @@ textarea:focus {
 			text-align: center;
 			padding: 2rem 0.5rem;
 			position: relative;
+			@media #{$medium-screen} {
+				width: calc(33.33% - 2rem);
+				margin: 1rem 0;
+			}
+			@media #{$small-screen} {
+				width: calc(50% - 2rem);
+				margin: 1rem 0;
+			}
 			&.popular {
 				background: $main;
 				width: 20%;
+				@media #{$medium-screen} {
+					width: calc(33.33% - 2rem);
+					margin: 1rem 0;
+				}
+				@media #{$small-screen} {
+					width: calc(50% - 2rem);
+					margin: 1rem 0;
+				}
 				.popular-text{
 					display: block;
 					text-align: center;

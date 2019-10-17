@@ -19,6 +19,7 @@ import { UiSmartPerformanceScanningComponent } from '../../components/ui/ui-smar
 import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { WidgetSpeedometerComponent } from '../../components/widgets/widget-speedometer/widget-speedometer.component';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -31,6 +32,7 @@ library.add(faExclamationTriangle);
     UiSmartPerformanceScanningComponent,
     ModalSmartPerformanceCancelComponent,
     ModalSmartPerformanceSubscribeComponent,
+    WidgetSpeedometerComponent,
 
 
 	],
@@ -41,7 +43,7 @@ library.add(faExclamationTriangle);
   HeaderMainModule,
   FontAwesomeModule
   ],
-  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent],
-  bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent]
+  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent],
+  bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent]
 })
 export class SmartPerformanceModule { }

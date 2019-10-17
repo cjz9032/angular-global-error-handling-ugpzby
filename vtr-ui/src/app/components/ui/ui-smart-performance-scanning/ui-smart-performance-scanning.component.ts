@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
+import { WidgetSpeedometerComponent } from '../../widgets/widget-speedometer/widget-speedometer.component';
 
 @Component({
   selector: 'vtr-ui-smart-performance-scanning',
@@ -8,6 +9,11 @@ import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-pe
   styleUrls: ['./ui-smart-performance-scanning.component.scss']
 })
 export class UiSmartPerformanceScanningComponent implements OnInit {
+	// @ViewChild('speedometer') speedometer: WidgetSpeedometerComponent;
+	@ViewChild('speedometer', { static: false }) speedometer: WidgetSpeedometerComponent;
+
+	loop;
+	delay;
 	@Input() showProgress = true;
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
@@ -107,6 +113,8 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
+	this.scanData = this.vdata[0];
+	this.initSpeed();
 	this.GetScanStatus();	 
   }
   openCancelScanModel() {
@@ -132,7 +140,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 				this.activegroup = "Internet performance";
 			 }
 			}	
-		 }, 2000);
+		 }, 20000);
 	
 	}
 }
@@ -146,5 +154,17 @@ GetScanData(i: number) {
 		this.sendScanStatus.emit()
 	}
 
+}
+initSpeed() {
+		
+	const self = this;
+	self.loop = setInterval(function(){
+		self.speedometer.speedCurrent = Math.floor(Math.random() * (self.speedometer.speedMax/2)) + 1;
+	}, 200);
+
+	self.delay = setTimeout(function(){
+		clearInterval(self.loop);
+		self.speedometer.speedCurrent = self.speedometer.speedMax * .9;
+	}, 3000);
 }
 }

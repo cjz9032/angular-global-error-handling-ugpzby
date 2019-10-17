@@ -28,7 +28,7 @@
 			}
 			fa-icon {
 				color: #7D5FEF;
-				font-size: 15rem;
+				font-size: 9rem;
 			}
 			.action-button {
 				border-radius: 2.5rem;
@@ -580,8 +580,9 @@
 		margin: 2rem 0;
 		width: 100%;
 		padding: 3.5rem 2rem;
+		margin-bottom: 7rem;
 		.recomendation-text{
-			margin-bottom: 6rem;
+			margin-bottom: 2rem;
 			display: block;
 			color: $light !important;
 			font-weight: $weight_regular;
@@ -589,18 +590,50 @@
 			opacity: 1 !important;
 		}
 		.slider {
-			width: 100%;
-			height: 3rem;
-			background: linear-gradient(to right, #d02928, #d73f26, #dd5124, #e26222, #e77222, #de7d15, #d48708, #c99000, #ad9500, #909700, #729816, #51982c);
+			width: calc(100% - 1rem);
+			height: 1rem;
+			background: transparent;
 			border-radius: 2rem;
 			position: relative;
+			z-index: 0;
+			background-color: #52ffeb;
+			background-image: linear-gradient(90deg, #52ffeb 25%, #04ff5d 100%);
+			&::after{
+				position: absolute;
+				content: '';
+				width: calc(100% + 2rem);
+				height: 3rem;
+				background: linear-gradient(to right, #d02928, #d73f26, #dd5124, #e26222, #e77222, #de7d15, #d48708, #c99000, #ad9500, #909700, #729816, #51982c);
+				border-radius: 2rem;
+				top: -1rem;
+				left: -1rem;
+				z-index: 1;
+				animation-name: expanding;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: 1;
+				animation-duration: 1s;
+				animation-delay: 0.3s;
+			}
+			&::before{
+				position: absolute;
+				content: '';
+				width: calc(100% + 2rem);
+				height: 3rem;
+				background-image: linear-gradient(90deg, $light 25%, $dark 100%);
+				border-radius: 2rem;
+				top: -1rem;
+				left: -1rem;
+				z-index: 0;
+				opacity: 0.02;
+			}
 			.condition {
 				padding: 0 1.5rem;
 				font-size: 1.4rem;
 				text-transform: uppercase;
 				font-weight: $weight_bold;
 				.critical{
-					bottom: -4.5rem;
+					bottom: -6rem;
+					left: -1rem;
 					color: #D02928;
 					position: absolute;
 				}
@@ -608,15 +641,17 @@
 					right: 10px;
 					color: #51982C;
 					position: absolute;
-					bottom: -4.5rem;
+					bottom: -6rem;
+					right: -1rem;
 				}
 			}
 			.verticle-lines {
 				counter-reset: lines -1;
 				display: flex;
 				justify-content: space-between;
-				padding: 0 2rem;
-				margin-top: -4.3rem;
+				top: -0.9rem;
+				position: relative;
+				z-index: 2;
 				.line{
 					width: 0.1rem;
 					height: 2rem;
@@ -706,6 +741,12 @@
 		animation-duration: 20s;
 	}
 }
+.page-heading {
+	font-size: 4rem;
+    font-weight: 300;
+	padding: 3rem 0rem;
+	color: $main_shade;
+}
 
 @keyframes wordSlider {
 	0%,
@@ -729,9 +770,13 @@
 		transform: translateY(-80%);
 	}
 }
-.page-heading {
-	font-size: 4rem;
-    font-weight: 300;
-	padding: 3rem 0rem;
-	color: $main_shade;
+
+@keyframes expanding {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: calc(100% + 2rem);
+	}
 }
+
