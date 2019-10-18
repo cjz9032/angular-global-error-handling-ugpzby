@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Features } from '../nav-tabs/nav-tabs.service';
 import { ClearDataService } from './clear-data.service';
 import { TooltipComponent } from '../tooltip/tooltip.component';
@@ -13,7 +13,10 @@ export class ClearDataTooltipComponent {
 		this.currentFeature = feature;
 		this.currentText = this.clearDataService.getText(feature);
 	}
-	@ViewChild('tooltip', { static: false }) tooltip: TooltipComponent;
+
+	@Output() dataWasClear = new EventEmitter();
+
+	@ViewChild('tooltip', {static: false}) tooltip: TooltipComponent;
 
 	currentFeature: Features;
 	currentText: {text: string, content: string};
@@ -23,6 +26,7 @@ export class ClearDataTooltipComponent {
 
 	clearData() {
 		this.clearDataService.clearData(this.currentFeature);
+		this.dataWasClear.next(true);
 	}
 
 	closeTooltip() {

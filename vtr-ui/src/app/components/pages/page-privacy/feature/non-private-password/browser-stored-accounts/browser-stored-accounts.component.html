@@ -17,8 +17,6 @@
 	[texts]="tryProductText">
 </vtr-try-product-block>
 <div class="browser-stored-account__clear-data-wrapper"
-	 *ngIf="(openPasswordId === null) &&
-			isNonPrivatePasswordWasScanned &&
-			nonPrivatePasswordCount > 0">
-	<vtr-clear-data-tooltip [feature]="passwordFeatureName"></vtr-clear-data-tooltip>
+	 *ngIf="isNonPrivatePasswordWasScanned && nonPrivatePasswordCount > 0">
+	<vtr-clear-data-tooltip [feature]="passwordFeatureName" (dataWasClear)="openAccordion(null)"></vtr-clear-data-tooltip>
 </div>

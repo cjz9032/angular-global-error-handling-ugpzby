@@ -45,12 +45,8 @@
 
 	&__btn {
 		@extend %button-link;
-		color: #4A81FD;
-		font-size: 1.6rem;
-		font-weight: 500;
 		line-height: 2.3rem;
 		letter-spacing: 0.5px;
-		text-transform: initial;
 
 		&--expanded {
 			@extend %button-link--open;
