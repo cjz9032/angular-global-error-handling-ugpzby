@@ -5,6 +5,13 @@
 	font-size: 1.4rem;
 	color: $alt;
 	border: 1px solid $shade_lighter;
+	@media #{$black-on-white} {
+		color: $alt;
+	}
+	@media #{$white-on-black} {
+		color: $alt;
+	}
+
 
 	.privacy-button {
 		font-size: 1.2rem;

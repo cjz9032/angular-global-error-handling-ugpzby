@@ -1,7 +1,7 @@
 <div class="row py-5"
 	id="smartStandby"
 	*ngIf="smartStandby?.isCapable">
-	<div class="col-10 mx-auto ">
+	<div class="col-10 mx-auto container-border">
 		<vtr-container-collapsible
 			[cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
 			[isCollapsed]="false"
@@ -37,7 +37,7 @@
 							</label>
 						</div>
 					</div>
-					<div class="schedule">
+					<div *ngIf="!checkbox" class="schedule">
 							<h5>
 								{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate | uppercase }}
 							</h5>
@@ -51,7 +51,7 @@
 						</span>
 					</div>
 
-					<div class="click-to-change-collapse">
+					<div *ngIf="!checkbox" class="click-to-change-collapse">
 						<!-- header -->
 						<div class="collapse-header" (click)="onToggle()">
 							<div>

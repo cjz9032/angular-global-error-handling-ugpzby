@@ -36,7 +36,7 @@
     margin: 1rem 0rem 1rem 0rem;
     font-size: 1.4rem;
   }
-
+  
   .custom-control-input:disabled ~ .custom-control-label::before {
     // background-color: $light-grey;
     //border-color: $shade;
@@ -77,6 +77,39 @@
       width: 2rem;
       height: 2rem;
       left: -1.7rem;
+    }
+  }
+
+  .custom-checkbox {
+    @media #{$black-on-white}{  
+      .custom-control-input~.custom-control-label::after {
+        content: "";
+        position: absolute;
+        height: 1.7rem;
+        width: 1.7rem;
+        border: 1px solid $main_darker;
+        background: none;
+        left: -1.8rem;
+        background: $main_lightest;
+        z-index: 0;
+        border-radius: 2px;
+      }
+
+      .custom-control-input:checked~.custom-control-label::before {
+        content: "";
+        position: absolute;
+        border-radius: 0;
+        height: 5px;
+        width: 8px;
+        border: 2px solid $main_darker;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+        background: none;
+        left: -1.3rem;
+        top: 4px;
+        z-index: 1;
+      }
     }
   }
 }
