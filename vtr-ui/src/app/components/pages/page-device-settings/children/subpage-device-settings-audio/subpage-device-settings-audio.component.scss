@@ -2,6 +2,7 @@
 
 .subpage-device-settings-audio {
 	.smartsettings-card {
+		
 		.subtitle {
 			width: 100%;
 
@@ -23,6 +24,25 @@
 				border-bottom: 0.1rem solid $screen_light_15;
 			}
 		}
+	}
+	.container-card{
+		@media #{$black-on-white} {
+			
+			border: 0.1rem solid $dark;
+			border-radius: 1rem;
+			box-sizing: border-box;
+			
+			
+		}
+		@media #{$white-on-black} {
+			
+			border: 0.1rem solid $light;
+			border-radius: 1rem;
+			box-sizing: border-box;
+			
+			
+		}
+
 	}
 
 	ul.list-group {

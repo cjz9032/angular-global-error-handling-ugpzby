@@ -153,6 +153,7 @@ export enum LocalStorageKey {
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
+	VOIPCapability = '[LocalStorageKey] VOIPCapability',
 	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
 	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
 	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',

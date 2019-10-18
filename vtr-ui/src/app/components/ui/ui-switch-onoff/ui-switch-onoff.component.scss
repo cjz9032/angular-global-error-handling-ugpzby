@@ -46,11 +46,25 @@
 input + .switch {
 	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
 	margin-right: 0.7rem;
+	@media #{$black-on-white} {
+		background: $dark;
+	}
+	@media #{$white-on-black} {
+		background:$light;
+	}
+
 }
 
 input.wifi-checked + .switch {
 	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 	transition: background 1.2s;
+	@media #{$black-on-white} {
+		background: darkviolet;
+	}
+	@media #{$white-on-black} {
+		
+	}
+
 }
 
 .checkbox-double .switch {
