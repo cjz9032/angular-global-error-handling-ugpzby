@@ -131,7 +131,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraBlur = new CameraBlur();
 	isDTmachine = false;
 	isAllInOneMachineFlag = false;
-	cameraSession_id:Subscription;
+	cameraSessionId: Subscription;
 
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
@@ -143,7 +143,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		private cameraFeedService: CameraFeedService,
 		private logger: LoggerService,
 		private route: ActivatedRoute
-		) {
+	) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -168,19 +168,19 @@ export class SubpageDeviceSettingsDisplayComponent
 			}
 		);
 
-		this.cameraSession_id = this.route
-		.queryParamMap
-		.pipe(
-			takeWhile(par => {
-				return par.get('cameraSession_id') == 'camera';
-			}),
-		)
-		.subscribe(() => {
-			console.log(`get queryParamMap for navigation from smart assist`);
-			setTimeout(() => {
-				document.getElementById('camera').scrollIntoView();
-			},500);
-		})
+		this.cameraSessionId = this.route
+			.queryParamMap
+			.pipe(
+				takeWhile(par => {
+					return par.get('cameraSession_id') === 'camera';
+				}),
+			)
+			.subscribe(() => {
+				console.log(`get queryParamMap for navigation from smart assist`);
+				setTimeout(() => {
+					document.getElementById('camera').scrollIntoView();
+				}, 500);
+			});
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -190,7 +190,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.initFeatures();
 			}
 		} else {
-				this.initFeatures();
+			this.initFeatures();
 		}
 	}
 
@@ -253,7 +253,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	initFeatures()  {
+	initFeatures() {
 		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
 		this.getPrivacyGuardCapabilityStatus();
@@ -343,8 +343,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.stopEyeCareMonitor();
 		this.stopMonitorForCamera();
 		clearTimeout(this.privacyGuardInterval);
-		if (this.cameraSession_id) {
-			this.cameraSession_id.unsubscribe();
+		if (this.cameraSessionId) {
+			this.cameraSessionId.unsubscribe();
 		}
 	}
 
