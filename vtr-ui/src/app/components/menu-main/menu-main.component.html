@@ -36,13 +36,18 @@
 			</span>
 
 		</div>
-		<a id="menu-main-btn-navbar-toggler" aria-label="menu-main-btn-navbar-toggler" class="navbar-toggler"
-			tabindex="1" type="button" (click)="toggleMenu($event)">
+		<a id="menu-main-btn-navbar-toggler"
+			aria-label="menu-main-btn-navbar-toggler"
+			class="navbar-toggler"
+			tabindex="1"
+			type="button"
+			(click)="toggleMenu($event)"
+			(keydown.enter)="toggleMenu($event)">
 			<span class="navbar-toggler-icon">
 				<fa-icon [icon]="['fas', 'bars']"></fa-icon>
 			</span>
 			<!-- <fa-icon [icon]="['fas', 'bars']">
-			</fa-icon> -->
+					</fa-icon> -->
 			<span class="unread-count-tag"
 				*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
 		</a>
@@ -50,12 +55,22 @@
 			<ul class="navbar-nav ml-auto"
 				*ngIf="loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable">
 				<ng-container *ngFor="let item of items; let i=index">
-					<li *ngIf="item.subitems.length===0&&isCommomItem(item)&&showItem(item)" class="nav-item">
-						<a class="nav-link {{item.id}}" [ngClass]="{'beta-item':item.beta}" vtrMetrics tabindex="1"
-							id="menu-main-nav-lnk-{{item.id}}" [attr.aria-label]="item.id"
-							[metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent"
-							[metricsItem]="item.metricsItem" routerLink="/{{item.path}}" routerLinkActive="active"
-							(click)="onMenuItemClick(item)" (keydown.enter)="onMenuItemClick(item)"
+					<li *ngIf="item.subitems.length===0&&isCommomItem(item)&&showItem(item)"
+						class="nav-item">
+						<a class="nav-link {{item.id}}"
+							[ngClass]="{'beta-item':item.beta}"
+							vtrMetrics
+							tabindex="1"
+							id="menu-main-nav-lnk-{{item.id}}"
+							[attr.aria-label]="item.id"
+							[metricsEvent]="item.metricsEvent"
+							[metricsParent]="item.metricsParent"
+							[metricsItem]="item.metricsItem"
+							routerLink="/{{item.path}}"
+							routerLinkActive="active"
+							href="javascript:void(0)"
+							(click)="onMenuItemClick(item)"
+							(keydown.enter)="onMenuItemClick(item)"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon *ngIf="item.icon[0]!=='icomoon'" [icon]="item.icon" class="fa-icon"></fa-icon>
@@ -68,15 +83,33 @@
 								class="beta">Beta</span>
 						</a>
 					</li>
-					<li *ngIf="item.subitems.length>0
-						&&isCommomItem(item)
-						&&showItem(item)" class="nav-item dropdown" [ngClass]="{'active': isParentActive(item)}">
-						<a class="nav-link dropdown-toggle {{item.id}}" [ngClass]="{'beta-item':item.beta}" vtrMetrics
-							tabindex="1" id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}" [attr.aria-label]="item.id"
-							[metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent"
-							[metricsItem]="item.metricsItem" routerLink="/{{item.path}}" routerLinkActive="active"
-							id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-							(click)="onMenuItemClick(item)" *ngIf="item.label | translate">
+					<li ngbDropdown
+						*ngIf="item.subitems.length>0
+								&&isCommomItem(item)
+								&&showItem(item)"
+						role="menu"
+						class="nav-item dropdown"
+						[ngClass]="{'active': isParentActive(item)}">
+						<a ngbDropdownToggle
+							class="nav-link dropdown-toggle {{item.id}}"
+							[ngClass]="{'beta-item':item.beta}"
+							vtrMetrics
+							tabindex="1"
+							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
+							[attr.aria-label]="item.id"
+							[metricsEvent]="item.metricsEvent"
+							[metricsParent]="item.metricsParent"
+							[metricsItem]="item.metricsItem"
+							routerLink="/{{item.path}}"
+							routerLinkActive="active"
+							data-toggle="dropdown"
+							attr.aria-haspopup="true"
+							attr.aria-expanded="false"
+							href="javascript:void(0)"
+							(click)="onMenuItemClick(item)"
+							(keydown.enter)="onMenuItemClick(item)"
+							role="menuitem"
+							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon [icon]="item.icon" class="fa-icon"></fa-icon>
 							</div>
@@ -84,44 +117,83 @@
 							<span *ngIf="item.beta"
 								class="beta">Beta</span>
 						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<fa-icon [icon]="['fas', 'square']" class="menu-pointer"></fa-icon>
+						<div ngbDropdownMenu
+							class="dropdown-menu"
+							aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
+							<fa-icon [icon]="['fas', 'square']"
+								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
-								<a *ngIf="subitem.externallink" vtrMetrics tabindex="1"
+								<a ngbDropdownItem
+									*ngIf="subitem.externallink"
+									vtrMetrics
+									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
 									attr.aria-label="{{subitem.label | translate }}" routerLinkActive="link-active"
 									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
-									[metricsEvent]="subitem.metricsEvent" [metricsParent]="subitem.metricsParent"
-									[metricsItem]="subitem.metricsItem" class="dropdown-item link" target="_blank"
-									rel="noopener" href="javascript:void(0)"
-									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
-								<a *ngIf="!subitem.externallink && subitem.path==='support'" vtrMetrics tabindex="1"
+									[metricsEvent]="subitem.metricsEvent"
+									[metricsParent]="subitem.metricsParent"
+									[metricsItem]="subitem.metricsItem"
+									class="dropdown-item link"
+									target="_blank"
+									rel="noopener"
+									href="javascript:void(0)"
+									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
+									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
+									role="menuitem">{{subitem.label | translate}}</a>
+								<a ngbDropdownItem
+									*ngIf="!subitem.externallink && subitem.path==='support'"
+									vtrMetrics
+									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
 									attr.aria-label="{{subitem.label | translate}}" routerLinkActive="link-active"
 									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 									[metricsEvent]="subitem.metricsEvent" [metricsParent]="subitem.metricsParent"
 									[metricsItem]="subitem.metricsItem" class="dropdown-item link"
 									routerLink="{{subitem.path}}"
-									(click)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
-								<a *ngIf="!subitem.externallink  && subitem.path!=='support'" vtrMetrics tabindex="1"
+									(click)="onMenuItemClick(subitem)"
+									(keydown.enter)="onMenuItemClick(subitem)"
+									href="javascript:void(0)"
+									role="menuitem">{{subitem.label | translate}}</a>
+								<a ngbDropdownItem
+									*ngIf="!subitem.externallink  && subitem.path!=='support'"
+									vtrMetrics
+									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
 									attr.aria-label="{{subitem.label| translate}}" routerLinkActive="link-active"
 									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 									[metricsEvent]="subitem.metricsEvent" [metricsParent]="subitem.metricsParent"
 									[metricsItem]="subitem.metricsItem" class="dropdown-item link"
 									routerLink="/{{item.path}}/{{subitem.path}}"
-									(click)="onMenuItemClick(subitem)">{{subitem.label | translate}}</a>
+									(click)="onMenuItemClick(subitem)"
+									(keydown.enter)="onMenuItemClick(subitem)"
+									href="javascript:void(0)"
+									role="menuitem">{{subitem.label | translate}}</a>
 							</span>
 
 						</div>
 					</li>
-					<li *ngIf="item.id==='app-search'&&showItem(item)" class="nav-item search-nav-item">
-						<div class="search-nav-item-mask" *ngIf="showSearchBox" (click)="onClickSearchMask()"></div>
-						<a class="nav-link {{item.id}}" [ngClass]="{'beta-item':item.beta}"
-							[class.search-active]="showSearchBox" vtrMetrics tabindex="1"
-							id="menu-main-nav-lnk-{{item.id}}" attr.aria-label="{{item.label | translate}}"
-							[metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent"
-							[metricsItem]="item.metricsItem" (click)="onMenuItemClick(item, $event)"
+					<li *ngIf="item.id==='app-search'&&showItem(item)"
+						class="nav-item search-nav-item">
+						<div class="search-nav-item-mask"
+							*ngIf="showSearchBox"
+							id="search-nav-item-mask"
+							attr.aria-label="search-nav-item-mask"
+							tabindex="1"
+							(click)="onClickSearchMask()"
+							(keydown.enter)="onClickSearchMask()"></div>
+						<a class="nav-link {{item.id}}"
+							[ngClass]="{'beta-item':item.beta}"
+							[class.search-active]="showSearchBox"
+							vtrMetrics
+							tabindex="1"
+							id="menu-main-nav-lnk-{{item.id}}"
+							attr.aria-label="{{item.label | translate}}"
+							[metricsEvent]="item.metricsEvent"
+							[metricsParent]="item.metricsParent"
+							[metricsItem]="item.metricsItem"
+							href="javascript:void(0)"
+							(click)="onMenuItemClick(item, $event)"
+							(keydown.enter)="onMenuItemClick(item, $event)"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon *ngIf="item.icon[0]!=='icomoon'" [icon]="item.icon" class="fa-icon"></fa-icon>
@@ -138,22 +210,31 @@
 					</li>
 					<li *ngIf="item.id==='user'" class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
-							routerLink="/{{item.path}}"
-							routerLinkActive="active"
+									routerLink="/{{item.path}}"
+									routerLinkActive="active"
+									id="navbarDropdown"
+									role="button"
+									data-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false">
+									<div class="user-initials">
+										{{userService.initials}}
+									</div>
+								</a> -->
+
+						<a class="nav-link {{item.id}}"
 							id="navbarDropdown"
+							attr.aria-label="navbarDropdown"
+							*ngIf="userService.isLenovoIdSupported()"
+							[ngClass]="{'dropdown-toggle': true}"
 							role="button"
+							tabindex="1"
 							data-toggle="dropdown"
 							aria-haspopup="true"
-							aria-expanded="false">
-							<div class="user-initials">
-								{{userService.initials}}
-							</div>
-						</a> -->
-
-						<a class="nav-link {{item.id}}" id="navbarDropdown" attr.aria-label="navbarDropdown"
-							*ngIf="userService.isLenovoIdSupported()" [ngClass]="{'dropdown-toggle': true}"
-							role="button" tabindex="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-							(click)="onMenuItemClick(item)">
+							aria-expanded="false"
+							href="javascript:void(0)"
+							(click)="onMenuItemClick(item)"
+							(keydown.enter)="onMenuItemClick(item)">
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
 							</div>
@@ -171,7 +252,11 @@
 								[metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent"
 								metricsItem="LenovoMigrationAssistantButton"
 								[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidLenovoMigrationAssistant]"
-								(click)="updateUnreadMessageCount(item, $event)" href="javascript:void(0)">
+								tabindex="1"
+								href="javascript:void(0)"
+								(click)="updateUnreadMessageCount(item, $event)"
+								(keydown.enter)="updateUnreadMessageCount(item, $event)"
+								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
 								<span class="unread-tag" *ngIf="!UnreadMessageCount.lmaMenuClicked"></span>
 							</a>
@@ -180,39 +265,73 @@
 								[metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent"
 								metricsItem="AdobecRedemptionButton"
 								[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidAdobeCreativeCloud]"
-								(click)="updateUnreadMessageCount(item, $event)" href="javascript:void(0)">
+								href="javascript:void(0)"
+								(click)="updateUnreadMessageCount(item, $event)"
+								(keydown.enter)="updateUnreadMessageCount(item, $event)"
+								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.adobeRedemption' | translate }}
 								<span class="unread-tag" *ngIf="!UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a *ngIf="commonService.isOnline && !deviceService.isSMode && !deviceService.isGaming && modernPreloadService.IsEntitled"
-								vtrMetrics tabindex="1" id="menu-main-lnk-open-modern-preload"
-								attr.aria-label="menu-main-lnk-open-modern-preload" [metricsEvent]="item.metricsEvent"
-								[metricsParent]="item.metricsParent" metricsItem="ModernPreloadButton"
-								class="dropdown-item link" href="javascript:void(0)"
-								(click)="openModernPreloadModal()">{{ 'modernPreload.title' | translate }}</a>
-							<a vtrMetrics tabindex="1" id="menu-main-lnk-open-preference"
-								attr.aria-label="menu-main-lnk-open-preference" [metricsEvent]="item.metricsEvent"
-								[metricsParent]="item.metricsParent" metricsItem="SettingsButton"
-								class="dropdown-item link" href="javascript:void(0)" routerLink="settings"
-								(click)="onMenuItemClick(item)">{{ 'settings.preferenceSettings' | translate }}</a>
+								vtrMetrics
+								tabindex="1"
+								id="menu-main-lnk-open-modern-preload"
+								attr.aria-label="menu-main-lnk-open-modern-preload"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="ModernPreloadButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								(click)="openModernPreloadModal()"
+								(keydown.enter)="openModernPreloadModal()">{{ 'modernPreload.title' | translate }}</a>
+							<a vtrMetrics
+								tabindex="1"
+								id="menu-main-lnk-open-preference"
+								attr.aria-label="menu-main-lnk-open-preference"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="SettingsButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								routerLink="settings"
+								(click)="onMenuItemClick(item)"
+								(keydown.enter)="onMenuItemClick(item)">{{ 'settings.preferenceSettings' | translate }}</a>
 							<a *ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
-								vtrMetrics tabindex="1" id="menu-main-lnk-open-lenovoid-login"
-								attr.aria-label="menu-main-lnk-open-lenovoid-login" [metricsEvent]="item.metricsEvent"
-								[metricsParent]="item.metricsParent" metricsItem="LenovoIdSignInButton"
-								class="dropdown-item link" href="javascript:void(0)"
-								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.login' | translate}}</a>
+								vtrMetrics
+								tabindex="1"
+								id="menu-main-lnk-open-lenovoid-login"
+								attr.aria-label="menu-main-lnk-open-lenovoid-login"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoIdSignInButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)"
+								(keydown.enter)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
-								vtrMetrics tabindex="1" id="menu-main-lnk-open-lenovoid-unlock"
-								attr.aria-label="menu-main-lnk-open-lenovoid-unlock" [metricsEvent]="item.metricsEvent"
-								[metricsParent]="item.metricsParent" metricsItem="LenovoIdStarterIdButton"
-								class="dropdown-item link" href="javascript:void(0)"
-								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.unlockExclusives' | translate}}</a>
+								vtrMetrics
+								tabindex="1"
+								id="menu-main-lnk-open-lenovoid-unlock"
+								attr.aria-label="menu-main-lnk-open-lenovoid-unlock"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoIdStarterIdButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)"
+								(keydown.enter)="OpenLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
-								vtrMetrics tabindex="1" id="menu-main-lnk-user-logout"
-								attr.aria-label="menu-main-lnk-user-logout" [metricsEvent]="item.metricsEvent"
-								[metricsParent]="item.metricsParent" metricsItem="LenovoIdSignOutButton"
-								class="dropdown-item link" href="javascript:void(0)"
-								(click)="onLogout(); onMenuItemClick(item)">{{'lenovoId.logout' | translate}}</a>
+								vtrMetrics
+								tabindex="1"
+								id="menu-main-lnk-user-logout"
+								attr.aria-label="menu-main-lnk-user-logout"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoIdSignOutButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								(click)="onLogout(); onMenuItemClick(item)"
+								(keydown.enter)="onLogout(); onMenuItemClick(item)">{{'lenovoId.logout' | translate}}</a>
 						</div>
 					</li>
 					<div *ngIf="item.id==='home-security'" class="d-none">
@@ -225,5 +344,6 @@
 	<div class="search-dropdown-sm d-xl-none" *ngIf="showSearchBox">
 		<vtr-search-dropdown></vtr-search-dropdown>
 	</div>
-	<vtr-search-tips [featureDesc]="searchTips" *ngIf="!showSearchBox && searchTips"></vtr-search-tips>
+	<vtr-search-tips [featureDesc]="searchTips"
+		*ngIf="!showSearchBox && searchTips"></vtr-search-tips>
 </div>

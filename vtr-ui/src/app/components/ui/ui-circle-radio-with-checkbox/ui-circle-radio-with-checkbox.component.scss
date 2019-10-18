@@ -63,6 +63,14 @@
 
 		.checkbox-custom:checked+.checkbox-custom-label {
 			background-color: $background;
+			@media #{$white-on-black}{
+				background-color: $highlight_bright;;
+				
+			}
+			@media #{$black-on-white}{
+				background-color: darkviolet;
+			}
+
 		}
 
 

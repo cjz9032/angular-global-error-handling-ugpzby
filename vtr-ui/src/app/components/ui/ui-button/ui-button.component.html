@@ -11,7 +11,7 @@
 			routerLinkActive="active"
 			[href]="href"
 			[id]="linkId"
-			[tabindex]="tabIndex"
+			[tabindex]="tabindex ? tabindex : 0"
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"
@@ -39,7 +39,7 @@
 			class="button disable"
 			[disabled]="false"
 			[id]="linkId"
-			[tabindex]="tabIndex"
+			[tabindex]="tabindex ? tabindex : 0"
 			vtrMetrics
 			[routerLink]="routerPath"
 			routerLinkActive="active"

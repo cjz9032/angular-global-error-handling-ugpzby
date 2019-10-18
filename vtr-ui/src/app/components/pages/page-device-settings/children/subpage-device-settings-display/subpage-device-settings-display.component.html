@@ -12,10 +12,11 @@
 
 	<div class="row py-5 smartsettings-card"
 		id="display">
-		<div class="col-10 mx-auto ">
+		<div class="col-10 mx-auto  container-card">
 			<!-- Display -->
-			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
-				[tabIndex]="0"
+			<vtr-container-collapsible
+				[tabIndex]="0" 
+				[cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
 				[vtrAppSearchScroller]="['search-display']"
 				componentName="display"
 				[isCollapsed]="false"
@@ -24,8 +25,7 @@
 				(toggle)="onCardCollapse($event)"
 				[collapseLinkId]="'device-settings-display'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3"
-						*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
+					<li class="pt-3" *ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
 							componentName="Display color temperature"
@@ -50,8 +50,11 @@
 									</vtr-display-color-temp>
 									<div class="row">
 										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4"
-											id="day-time-color-temp-note" attr.aria-label="day-time-color-temp-note" >
-											<p>{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
+											id="day-time-color-temp-note"
+											tabindex="0" 
+											attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
+											<p>
+												{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
 											</p>
 										</div>
 									</div>
@@ -66,7 +69,6 @@
 							[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							componentName="Eye Care Mode"
 							[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
-							[caption]=""
 							[isSwitchVisible]="true"
 							[isLastChild]="false"
 							[leftIcon]="['fal', 'eye']"
@@ -92,14 +94,14 @@
 							</div>
 							<div class="row">
 								<div class="col-12 pr-0">
-
-									<vtr-widget-permission-note
-										[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
-										[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
-										[path]="'ms-settings:privacy-location'"
-										*ngIf="enableSunsetToSunrise"
-										[linkId]="'display-eyeCareMode-privacy-settings-link'">
-									</vtr-widget-permission-note>
+									<div *ngIf="enableSunsetToSunrise">
+										<vtr-widget-permission-note
+											[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
+											[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
+											[path]="'ms-settings:privacy-location'"
+											[linkId]="'display-eyeCareMode-privacy-settings-link'">
+										</vtr-widget-permission-note>
+									</div>
 
 									<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
 										<ng-template #vtrwidgetpermissionnote>
@@ -130,8 +132,9 @@
 							<div class="row">
 								<div class="col d-flex justify-content-between pt-2 pr-3">
 									<p class="privacy-guard-caption"
+										tabindex="0"
 										id="privacy-guard-description"
-										attr.aria-label="privacy-guard-description">
+										attr.aria-label="privacy guard description, {{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}">
 										{{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}
 									</p>
 									<!-- <img class="img-privacy-guard"
@@ -141,8 +144,9 @@
 							</div>
 							<div class="row">
 								<div class="feature-note p-4 m-4"
+										tabindex="0"
 										id="privacy-guard-note"
-										attr.aria-label="privacy-guard-note">
+										attr.aria-label="privacy guard note, {{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}">
 									<p>{{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}
 									</p>
 								</div>
@@ -161,7 +165,7 @@
 										<label class="custom-control-label"
 											for="cb-privacy-guard">
 											<span id="cb-privacy-guard-description"
-												attr.aria-label="cb-privacy-guard-description">
+												attr.aria-label="privacy guard password capability note, {{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}">
 												{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}
 											</span>
 										</label>
@@ -172,7 +176,7 @@
 
 						</vtr-ui-row-switch>
 					</li>
-
+					
 					<li class="pt-3" *ngIf="hasOLEDPowerControlCapability">
 						<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
 						<vtr-ui-row-switch
@@ -226,8 +230,6 @@
 						</li> -->
 
 				</ul>
-
-
 			</vtr-container-collapsible>
 		</div>
 	</div>
@@ -237,7 +239,7 @@
 		*ngIf="this.isAllInOneMachineFlag"
 		id="camera"
 		[hidden]="isCameraHidden">
-		<div class="col-10 mx-auto ">
+		<div class="col-10 mx-auto  container-card ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
 				[tabIndex]="0"
 				[vtrAppSearchScroller]="['search-camera']"
@@ -357,7 +359,7 @@
 					</li>
 
 					<li class="pt-3"
-						*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
+					*ngIf="cameraPrivacyModeStatus.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
 							componentName="Camera Background Blur"
