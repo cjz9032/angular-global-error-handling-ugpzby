@@ -138,7 +138,7 @@
 							metricsParent="Modern Preload"
 							metricsItem="btn.RestartDownload"
 							[isFullWidth]="true"
-							[isDisabled]="checkedAppList.length === 0 || isCancelling"
+							[isDisabled]="checkedAppList.length === 0 || modernPreloadService.IsCancelInstall"
 							[label]="'modernPreload.restartDownload' | translate">
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOADING"

@@ -26,6 +26,7 @@ export class ModernPreloadService {
 	public EntitledAppList: any;
 	public IsInstalling = false;
 	public IsCancelInstall = false;
+	public CurrentInstallingId = '';
 	public DownloadButtonStatus: number;
 	private modernPreloadBridge: any;
 	private isInitialized = false;
@@ -162,6 +163,7 @@ export class ModernPreloadService {
 					this.logService.info('ModernPreloadService.installApp response.', JSON.stringify(response));
 					this.IsInstalling = !(i === appList.length - 1 || this.IsCancelInstall);
 					if (this.IsCancelInstall) {
+						this.IsCancelInstall = false;
 						this.sendResponseNotification(ModernPreloadEnum.InstallationCancelled, null, responseHandler);
 					} else if (response.appList && i === appList.length - 1) {
 						this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppResult, response.appList, responseHandler);
@@ -175,6 +177,7 @@ export class ModernPreloadService {
 					this.cancelToken = undefined;
 					if (error.errorcode === 499 || this.IsCancelInstall) {
 						this.IsInstalling = false;
+						this.IsCancelInstall = false;
 						this.sendResponseNotification(ModernPreloadEnum.InstallationCancelled, null, responseHandler);
 					} else {
 						appList[i].progress = 100;
@@ -201,6 +204,7 @@ export class ModernPreloadService {
 
 	cancelInstall() {
 		this.IsCancelInstall = true;
+		this.DownloadButtonStatus = DownloadButtonStatusEnum.RESTART_DOWNLOAD;
 		if (this.cancelToken) {
 			this.cancelToken.cancel();
 		}
