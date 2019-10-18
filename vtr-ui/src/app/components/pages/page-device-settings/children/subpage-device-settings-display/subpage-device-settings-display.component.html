@@ -15,7 +15,7 @@
 		<div class="col-10 mx-auto  container-card">
 			<!-- Display -->
 			<vtr-container-collapsible
-				[tabIndex]="0" 
+				[tabIndex]="0"
 				[cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
 				[vtrAppSearchScroller]="['search-display']"
 				componentName="display"
@@ -51,7 +51,7 @@
 									<div class="row">
 										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4"
 											id="day-time-color-temp-note"
-											tabindex="0" 
+											tabindex="0"
 											attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
 											<p>
 												{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
@@ -176,7 +176,7 @@
 
 						</vtr-ui-row-switch>
 					</li>
-					
+
 					<li class="pt-3" *ngIf="hasOLEDPowerControlCapability">
 						<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
 						<vtr-ui-row-switch
@@ -359,7 +359,7 @@
 					</li>
 
 					<li class="pt-3"
-					*ngIf="cameraPrivacyModeStatus.available">
+					*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
 							componentName="Camera Background Blur"

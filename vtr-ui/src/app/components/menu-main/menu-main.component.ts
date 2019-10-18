@@ -1,5 +1,5 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, Optional } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
@@ -7,7 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { EventTypes, SecurityAdvisor, WindowsHello } from '@lenovo/tan-client-bridge';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
@@ -23,14 +23,13 @@ import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { AdPolicyId, AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
-import { EMPTY } from 'rxjs';
+import { AdPolicyEvent, AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
+import { EMPTY, Observable } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
-import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -635,7 +634,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		Promise.all([
 			this.keyboardService.GetUDKCapability(),
 			this.keyboardService.GetKeyboardMapCapability(),
-			this.keyboardService.getVoipHotkeysSettings()
+			// this.keyboardService.getVoipHotkeysSettings()
 		])
 			.then((responses) => {
 				try {
@@ -645,7 +644,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-					inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
+					// inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
@@ -654,6 +653,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				}
 			})
 			.catch((error) => { });
+		this.keyboardService.getVoipHotkeysSettings()
+			.then(response => {
+				if (response.capability) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.VOIPCapability, response.capability);
+				}
+				return response;
+			});
 	}
 
 	openModernPreloadModal() {
