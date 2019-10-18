@@ -80,9 +80,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 			)
 			.subscribe(({ id, isOpenState }: CommonPopupEventType) => {
 				this.isOpen = isOpenState;
-				if (this.isOpen) {
-					this.renderer.addClass(this.document.body, 'modal-open');
-				}
+				this.isOpen ? this.renderer.addClass(this.document.body, 'modal-open') : this.renderer.removeClass(this.document.body, 'modal-open');
 			});
 
 		this.routerChangeHandlerService.onChange$
@@ -99,6 +97,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	}
 
 	closePopup() {
+		console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>closePopup', this.popUpId);
 		if (!this.isOpen) {
 			return;
 		}

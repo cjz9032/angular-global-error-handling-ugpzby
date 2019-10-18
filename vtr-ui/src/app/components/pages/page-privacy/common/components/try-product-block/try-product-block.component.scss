@@ -59,6 +59,7 @@
 
 		a {
 			@extend %button-link;
+			@extend %button-link--to-right;
 			padding-right: 0;
 			position: relative;
 			border-bottom: 1px solid;
@@ -99,6 +100,14 @@
 				right: -15px;
 				top: 60%;
 				background-image: url("/assets/icons/privacy-tab/icon-download.svg");
+			}
+
+			a:hover:before {
+				background-image: url("/assets/icons/privacy-tab/icon-download-hover.svg");
+			}
+
+			a:active:before {
+				background-image: url("/assets/icons/privacy-tab/icon-download-active.svg");
 			}
 		}
 	}

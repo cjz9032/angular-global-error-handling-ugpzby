@@ -126,6 +126,18 @@ $topIndent: -5.6rem;
 		background-size: contain;
 	}
 
+	&:hover {
+		&:before {
+			background-image: url("/assets/icons/privacy-tab/icon-blue-arrow-hover.svg");
+		}
+	}
+
+	&:active {
+		&:before {
+			background-image: url("/assets/icons/privacy-tab/icon-blue-arrow-active.svg");
+		}
+	}
+
 	&__text {
 		text-decoration: none;
 		border-bottom: 1px solid;

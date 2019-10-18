@@ -12,7 +12,7 @@
 			<span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breached accounts found
 		</vtr-feature-header>
 
-		<button class="breaches-page__button"
+		<button class="breaches-page__button breaches-page__button--max-width"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
 				vtrSendAnalytics
 				[metricsEvent]="'ItemClick'"
