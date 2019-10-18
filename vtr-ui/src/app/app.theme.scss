@@ -147,7 +147,8 @@ $max_page_width: 160rem;
 $menu_height: 9rem;
 $header_height: 20.5rem;
 
-$padding_side: 10%;
+$padding_side: 8rem;
+$padding_side_sm: 5%;
 $gradient_angle: 135deg;
 $gradient_angle_reverse: 315deg;
 
@@ -165,15 +166,18 @@ $gradient_gray: linear-gradient(90deg, $grey_lighter 0%, $light 100%);
 $blue_gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
 $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 
+// RESPONSIVE EFFORT - The only media queries that should be used are the breakpoints below
 $breakpoint_sm: "only screen and (max-width: 575px)";
 $breakpoint_md: "only screen and (max-width: 767px)";
 $breakpoint_lg: "only screen and (max-width: 991px)";
 $breakpoint_xl: "only screen and (max-width: 1199px)";
 $breakpoint_xl2: "only screen and (max-width: 1399px)";
-$breakpoint_xl3: "only screen and (max-width: 1799px)";
-$breakpoint_xl4: "only screen and (max-width: 2199px)";
-$breakpoint_xl5: "only screen and (max-width: 2999px)";
+$breakpoint_xl3: "only screen and (max-width: 1599px)";
+$breakpoint_xl4: "only screen and (max-width: 1799px)";
+$breakpoint_xl5: "only screen and (max-width: 2199px)";
+$breakpoint_xl6: "only screen and (max-width: 2999px)";
 
+// RESPONSIVE EFFORT - The media queries below need to be depricated and removed from the app
 $mediaquery_0: "only screen and (max-width: 3600px)";
 $mediaquery_1: "only screen and (max-width: 3000px)";
 $mediaquery_2: "only screen and (max-width: 2600px)";
@@ -264,7 +268,6 @@ $weight_bold: 700;
 $weight_black: 900;
 
 $shift_up_small: -6rem;
-$padding_side: 8.5rem;
 
 // for battery indicator
 $yellow: #e6e73c;
