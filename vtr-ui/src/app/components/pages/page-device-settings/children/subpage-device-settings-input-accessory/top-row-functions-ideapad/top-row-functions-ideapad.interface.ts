@@ -3,13 +3,28 @@ export type StringFalsy = 'False';
 export type StringBoolean = StringTruthy | StringFalsy;
 export type NumberBoolean = 0 | 1;
 
+// export interface TopRowFunctionsIdeapad {
+//
+// 	getCapability(): Promise<CommonResponse<GetCapabilityResponse>>;
+//
+// 	getPrimaryKey(): Promise<CommonResponse<GetPrimaryKeyResponse>>;
+//
+// 	getFnLockStatus(): Promise<CommonResponse<GetFnLockStatusResponse>>;
+//
+// 	/**
+// 	 * @param fnLock "True|False" ATTENTION!!!!!  String type truthy or falsy.
+// 	 */
+// 	setFnLockStatus(fnLock: StringBoolean): Promise<CommonResponse<null>>;
+//
+// }
+
 export interface TopRowFunctionsIdeapad {
 
-	getCapability(): Promise<CommonResponse<GetCapabilityResponse>>;
+	getCapability(): Promise<GetCapabilityResponse>;
 
-	getPrimaryKey(): Promise<CommonResponse<GetPrimaryKeyResponse>>;
+	getPrimaryKey(): Promise<GetPrimaryKeyResponse>;
 
-	getFnLockStatus(): Promise<CommonResponse<GetFnLockStatusResponse>>;
+	getFnLockStatus(): Promise<GetFnLockStatusResponse>;
 
 	/**
 	 * @param fnLock "True|False" ATTENTION!!!!!  String type truthy or falsy.
@@ -23,9 +38,21 @@ export type Capability = {
 	[K in Capabilities]: boolean;
 };
 
+// export interface GetCapabilityResponse {
+// 	errorCode: CommonErrorCode;
+// 	capabilityList: Capability[];
+// }
+export interface CapabilityTemp {
+	key: string;
+	value: StringBoolean;
+}
+
 export interface GetCapabilityResponse {
-	errorCode: CommonErrorCode;
-	capabilityList: Capability[];
+	errorCode?: CommonErrorCode;
+	capabilityList: {
+		Items: CapabilityTemp[]
+	};
+	reservedInformation?: any;
 }
 
 export enum KeyType {
@@ -33,16 +60,41 @@ export enum KeyType {
 	FNKEY = 'Fnkey'
 }
 
-export interface GetPrimaryKeyResponse {
-	errorCode: CommonErrorCode;
-	primeKey: KeyType;
+// export interface GetPrimaryKeyResponse {
+// 	errorCode: CommonErrorCode;
+// 	primeKey: KeyType;
+// 	enabled: NumberBoolean;
+// }
+
+export interface PrimaryKeySetting {
+	key: string;
+	value: KeyType;
 	enabled: NumberBoolean;
+	errorCode?: CommonErrorCode;
+}
+
+export interface GetPrimaryKeyResponse {
+	settingList: {
+		setting: PrimaryKeySetting[];
+	};
+}
+
+// export interface GetFnLockStatusResponse {
+// 	errorCode: CommonErrorCode;
+// 	fnLock: boolean;
+// 	enabled: NumberBoolean;
+// }
+export interface FnLockStatus {
+	key: string;
+	value: StringBoolean;
+	enabled?: NumberBoolean;
+	errorCode?: CommonErrorCode;
 }
 
 export interface GetFnLockStatusResponse {
-	errorCode: CommonErrorCode;
-	fnLock: boolean;
-	enabled: NumberBoolean;
+	settingList: {
+		setting: FnLockStatus[];
+	};
 }
 
 // export interface CommonResponse<K> extends CommonResponseBase<null, K> {}

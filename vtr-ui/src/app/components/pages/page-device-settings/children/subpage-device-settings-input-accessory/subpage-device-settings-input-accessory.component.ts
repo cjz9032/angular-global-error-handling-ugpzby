@@ -5,11 +5,11 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SupportedAppEnum, VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
-import { VoipApp, VoipResponse } from '../../../../../data-models/input-accessories/voip.model';
+import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
+import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
 import { EMPTY, Subscription } from 'rxjs';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { pluck } from 'rxjs/operators';
+import { StringBooleanEnum } from './top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -43,7 +43,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
-	private fnLockCapability = false;
+	fnLockCapability = false;
 	private topRowFunctionsIdeapadSubscription: Subscription;
 
 	constructor(
@@ -67,8 +67,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		this.getMouseAndTouchPadCapability();
 		this.topRowFunctionsIdeapadSubscription = this.topRowFunctionsIdeapadService.capability.subscribe(capabilities => {
 			capabilities.forEach(capability => {
-				if (capability.hasOwnProperty('fnLock')) {
-					this.fnLockCapability = capability.fnLock;
+				if (capability.key === 'FnLock' && capability.value === StringBooleanEnum.TRUTHY) {
+					this.fnLockCapability = true;
 				}
 			});
 		});
@@ -335,7 +335,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			} catch (error) {
 				this.logger.error('GetFnCtrlSwap', error.message);
 				return EMPTY;
-			}			
+			}
 		}
 
 	public fnCtrlKey(event) {
@@ -353,7 +353,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			} catch (error) {
 				this.logger.error('SetFnCtrlSwap', error.message);
 				return EMPTY;
-			}				
+			}
 		}
 
 	public launchProtocol(protocol: string) {
