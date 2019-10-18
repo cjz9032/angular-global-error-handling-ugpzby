@@ -16,13 +16,16 @@
               <div class="subtitle" [innerHTML]="'security.antivirus.mcafee.fileScan' | translate"></div>
           </div>
           <div class="col-8 row justify-content-center align-items-center">
-            <button *ngIf="showMetricButton" 
-            class="align-items-center mw-100"
-            title="{{'security.antivirus.mcafee.startFileScan' | translate}}"
-            (click)="common.launch()"
-            [innerHTML]="'security.antivirus.mcafee.startFileScan' | translate">
-          </button>
-          </div>    
+			<vtr-ui-button *ngIf="showMetricButton"
+				linkId="sa-av-button-startFileScan"
+				metricsEvent="itemClick"
+				metricsItem="startFileScan"
+				metricsParent="security.antivirus"
+				upperCaseLabel=false
+				btnHeight=true
+				[label]="'security.antivirus.mcafee.startFileScan' | translate"
+				(onClick)="common.launch()"></vtr-ui-button>
+          </div>
       </div>
       <div *ngIf="!showMetricButton" class="row inner no-gutters">
           <img class="logo col-2"

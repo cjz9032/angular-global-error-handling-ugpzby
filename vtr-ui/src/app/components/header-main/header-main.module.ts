@@ -7,7 +7,7 @@ import { UiHeaderSubpageComponent } from '../ui/ui-header-subpage/ui-header-subp
 import { MenuHeaderComponent } from '../menu-header/menu-header.component';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSquare } from '@fortawesome/free-solid-svg-icons/faSquare';
-import { RouterModule } from '@angular/router/router';
+import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 

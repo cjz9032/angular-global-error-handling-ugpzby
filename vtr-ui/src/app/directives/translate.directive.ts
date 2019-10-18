@@ -44,6 +44,7 @@ export class TranslateDirective {
 				} else {
 					if (index < tagTextList.length) {
 						childElement.innerText = '';
+						childElement.nextElementSibling.className = childElement.className;
 						childElement.nextElementSibling.innerHTML = tagTextList[index];
 					}
 				}

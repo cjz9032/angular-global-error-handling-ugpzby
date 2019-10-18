@@ -7,6 +7,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./modal-reboot-confirm.component.scss']
 })
 export class ModalRebootConfirmComponent implements OnInit {
+public description: string;
 
   constructor(public activeModal: NgbActiveModal) { }
 

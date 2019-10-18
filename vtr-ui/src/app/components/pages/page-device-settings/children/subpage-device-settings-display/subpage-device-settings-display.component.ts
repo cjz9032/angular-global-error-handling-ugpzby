@@ -16,6 +16,8 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { ActivatedRoute } from '@angular/router';
+import { map, timeout, takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
@@ -129,6 +131,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraBlur = new CameraBlur();
 	isDTmachine = false;
 	isAllInOneMachineFlag = false;
+	cameraSession_id:Subscription;
 
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
@@ -138,8 +141,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
 		private cameraFeedService: CameraFeedService,
-		private logger: LoggerService) {
-
+		private logger: LoggerService,
+		private route: ActivatedRoute
+		) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -163,6 +167,20 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.logger.error(error.message);
 			}
 		);
+
+		this.cameraSession_id = this.route
+		.queryParamMap
+		.pipe(
+			takeWhile(par => {
+				return par.get('cameraSession_id') == 'camera';
+			}),
+		)
+		.subscribe(() => {
+			console.log(`get queryParamMap for navigation from smart assist`);
+			setTimeout(() => {
+				document.getElementById('camera').scrollIntoView();
+			},500);
+		})
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -325,6 +343,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.stopEyeCareMonitor();
 		this.stopMonitorForCamera();
 		clearTimeout(this.privacyGuardInterval);
+		if (this.cameraSession_id) {
+			this.cameraSession_id.unsubscribe();
+		}
 	}
 
 	/**

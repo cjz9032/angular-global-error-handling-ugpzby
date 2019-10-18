@@ -15,7 +15,7 @@ declare var Windows;
 })
 
 export class VantageShellService {
-	public readonly isShellAvailable;
+	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {

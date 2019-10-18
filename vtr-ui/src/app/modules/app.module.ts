@@ -53,6 +53,7 @@ import { environment } from 'src/environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
+import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 
 @NgModule({
 	declarations: [
@@ -62,6 +63,7 @@ import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownloa
 		ModalArticleDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
+		PageSettingsComponent,
 	],
 	imports: [
 		BrowserModule,

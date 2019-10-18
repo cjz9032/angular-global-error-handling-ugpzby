@@ -74,6 +74,14 @@
 		overflow: hidden;
 		z-index: 10;
 		top: 3.5rem;
+		@media #{$black-on-white} {
+			background-color: $high-contrast-grey;
+			border: 0.1rem solid $dark;
+		}
+		@media #{$white-on-black} {
+			background-color: $high-contrast-grey;
+			border: 0.1rem solid $light;
+		}
 		li {
 			list-style: none;
 			.dropdown-item {

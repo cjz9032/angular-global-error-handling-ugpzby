@@ -10,10 +10,14 @@ export class UiPopoverComponent implements OnInit {
 	@Input() item: any;
 	@Output() closeClicked = new EventEmitter<any>();
 	@Input() descriptionLabel = 'Gaming popover opened';
+	isNowOpened = false;
 	constructor() { }
 
 	ngOnInit() {
 		document.getElementById('gamingPopover').focus();
+		setTimeout(() => {
+			this.isNowOpened = true;
+		}, 10);
 	}
 
 	close() {
@@ -22,8 +26,14 @@ export class UiPopoverComponent implements OnInit {
 		document.getElementById('main-wrapper').focus();
 	}
 
+	onOutsideClick() {
+		if (this.isNowOpened) {
+			this.close();
+		}
+	}
+
 	runappKeyup(event) {
-		if (event.which == 9) {
+		if (event.which === 9) {
 			setTimeout(() => {
 				document.getElementById('gamingPopupClose').focus();
 			}, 2);

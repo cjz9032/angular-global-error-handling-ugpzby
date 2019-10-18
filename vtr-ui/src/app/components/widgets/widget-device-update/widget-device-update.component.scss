@@ -36,26 +36,7 @@
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
-
-			.action-button {
-				border-radius: 2.5rem;
-				background: $gradient_main;
-				text-transform: uppercase;
-				padding: 0 3rem;
-				color: $light;
-				font-size: $body;
-				height: 5rem;
-				font-weight: $weight_bold;
-				line-height: 5rem;
-				text-align: center;
-				border: 0rem;
-				cursor: pointer;
-			}
-
-			.action-button:disabled {
-				cursor: not-allowed;
-				opacity: 0.5;
-			}
+			max-width: 100%;
 		}
 
 		.progress-div {

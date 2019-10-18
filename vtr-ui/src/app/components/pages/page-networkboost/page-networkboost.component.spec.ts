@@ -11,18 +11,26 @@ import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost
 import { HttpClient } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { Observable, of, BehaviorSubject } from 'rxjs';
-const cmsServiceMock = jasmine.createSpyObj('CMSService', ['fetchCMSContent', 'getOneCMSContent']);
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+const cmsServiceMock = jasmine.createSpyObj('CMSService', ['fetchCMSContent', 'getOneCMSContent', 'fetchCMSArticles', 'getTileBSource', 'getFeatureSetting']);
 // const commonServiceMock = jasmine.createSpyObj('CommonService', ['isShellAvailable', 'notification', 'getLocalStorageValue', 'subscribe']);
 const gamingNetworkBoostMock = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'setNetworkBoostStatus', 'getNeedToAsk', 'onNotification']);
+const dashboardMock = jasmine.createSpyObj('DashboardService', ['isShellAvailable']);
+
 const notification: Observable<AppNotification> = new BehaviorSubject<AppNotification>(
 	new AppNotification('init')
 );
 // commonServiceMock.notification.and.returnValue(notification);
-let commonServiceMock = {
+const commonServiceMock = {
 	isShellAvailable: true,
 	notification,
 	getLocalStorageValue(id) { return localStorage.getItem(id); }
 };
+
+
+
+
+
 const cmsCardResponse = {
 	Results: [
 		{
@@ -193,7 +201,8 @@ describe('PageNetworkboostComponent', () => {
 				{ provide: CommsService },
 				{ provide: DevService },
 				{ provide: CMSService, useValue: cmsServiceMock },
-				{ provide: CommonService, useValue: commonServiceMock }
+				{ provide: CommonService, useValue: commonServiceMock },
+				{ provide: DashboardService, useValue: dashboardMock }
 			]
 		})
 			.compileComponents();
