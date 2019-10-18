@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { BaseVantageShellService } from './base-vantage-shell.service';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
@@ -15,12 +14,11 @@ declare var Windows;
 	providedIn: 'root'
 })
 
-export class VantageShellMockService extends BaseVantageShellService {
+export class VantageShellMockService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
-		super();
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
 		if (this.shell) {
