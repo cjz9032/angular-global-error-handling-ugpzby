@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -6,7 +6,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -142,9 +142,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 			const isAvailable = inputAccessoriesCapability.isUdkAvailable
-				|| inputAccessoriesCapability.isKeyboardMapAvailable
-				|| inputAccessoriesCapability.isVoipAvailable;
-			if (!isAvailable) {
+				|| inputAccessoriesCapability.isKeyboardMapAvailable;
+			const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
+			if (!isAvailable && !isVOIPAvailable) {
 				this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 			}
 		}
