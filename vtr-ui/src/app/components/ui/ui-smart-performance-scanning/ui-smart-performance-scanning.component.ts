@@ -21,6 +21,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 
 	index = 0;
 	@Input() activegroup = "Tune up performance";
+	currentCategory = 1;
 	public vdata=[
 		{
 			"percentage":0,
@@ -134,10 +135,12 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			 if(this.index==2)
 			 {
 				this.activegroup = "Malware & Security";
+				this.currentCategory=2;
 			 }
 			 if(this.index==4)
 			 {
 				this.activegroup = "Internet performance";
+				this.currentCategory=3;
 			 }
 			}	
 		 }, 2000);

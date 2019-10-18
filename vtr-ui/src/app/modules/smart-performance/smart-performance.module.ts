@@ -11,7 +11,14 @@ import { faLaptop } from '@fortawesome/free-solid-svg-icons/faLaptop';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt';
 
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
-
+import { faCalendarAlt } from '@fortawesome/pro-light-svg-icons/faCalendarAlt';
+import { faTachometerAltFast } from '@fortawesome/pro-light-svg-icons/faTachometerAltFast';
+import { faWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
+import { faShield } from '@fortawesome/pro-light-svg-icons/faShield';
+import { faBug } from '@fortawesome/free-solid-svg-icons/faBug';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
+import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
@@ -20,10 +27,18 @@ import { ModalSmartPerformanceCancelComponent } from '../../components/modal/mod
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { WidgetSpeedometerComponent } from '../../components/widgets/widget-speedometer/widget-speedometer.component';
+import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
-
+library.add(faCalendarAlt);
+library.add(faTachometerAltFast);
+library.add(faWifi);
+library.add(faShield);
+library.add(faBug);
+library.add(faCheck);
+library.add(faTimes);
+library.add(faChevronDown);
 @NgModule({
   declarations: [
 	  PageSmartPerformanceComponent,
@@ -33,6 +48,7 @@ library.add(faExclamationTriangle);
     ModalSmartPerformanceCancelComponent,
     ModalSmartPerformanceSubscribeComponent,
     WidgetSpeedometerComponent,
+    UiSmartPerformanceScanSummaryComponent,
 
 
 	],
@@ -43,7 +59,7 @@ library.add(faExclamationTriangle);
   HeaderMainModule,
   FontAwesomeModule
   ],
-  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent],
-  bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent]
+  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent],
+  bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent]
 })
 export class SmartPerformanceModule { }
