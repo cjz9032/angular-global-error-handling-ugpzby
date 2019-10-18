@@ -36,7 +36,7 @@
 				[attr.aria-checked]="value"
 				[attr.aria-disabled]="disabled"
 				[attr.aria-readonly]="readonly"
-				attr.aria-label="{{onOffSwitchId+'_checkbox'}}"
+				attr.aria-label="{{onOffSwitchId}}"
 				(change)="onChange($event)"
 				(keydown.enter)="onChange($event)" />
 			<span class="switch {{ size }}"
