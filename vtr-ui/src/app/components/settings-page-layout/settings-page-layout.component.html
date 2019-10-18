@@ -9,12 +9,12 @@
 				[textId]="textId"></vtr-header-main>
 		</div>
 	</div>
-	<div class="row vtr-page-content"
-		[class.pb-20]="increasePadding">
+	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-12 col-lg-7 col-xl-8 vtr-page-left-column">
+					<div class="col-sm-12 col-lg-7 col-xl-8 vtr-page-left-column"
+						[class.padding-bottom-20]="increasePadding">
 						<div class="vtr-page-shift-up nmx-40">
 							<!-- add the select attribute to ng-content -->
 							<ng-content select="left-content"></ng-content>
