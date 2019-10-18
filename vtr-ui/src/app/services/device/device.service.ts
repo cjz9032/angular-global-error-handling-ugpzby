@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -27,9 +27,10 @@ export class DeviceService {
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	private machineInfo: any;
-
+	public showSearch = false;
+	public showCHSMenu = false;
 	constructor(
-		private shellService: BaseVantageShellService,
+		private shellService: VantageShellService,
 		private commonService: CommonService,
 		public androidService: AndroidService,
 		private router: Router,
@@ -44,6 +45,8 @@ export class DeviceService {
 		}
 		this.initIsArm();
 		this.initshowPrivacy();
+		this.initShowSearch();
+		this.initShowCHSMenu();
 	}
 
 	private initIsArm() {
@@ -86,6 +89,26 @@ export class DeviceService {
 				this.showPrivacy = (privacy === 'enabled');
 			}, (error) => {
 				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
+			});
+		}
+	}
+
+	private initShowSearch() {
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
+				this.showSearch = ((searchFeature || '').toString() === 'true');
+			}, (error) => {
+				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
+			});
+		}
+	}
+
+	private initShowCHSMenu() {
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
+				this.showCHSMenu = ((result || '').toString() === 'true');
+			}, (error) => {
+				this.logger.error('DeviceService.initShowCHSMenu: promise rejected ', error);
 			});
 		}
 	}

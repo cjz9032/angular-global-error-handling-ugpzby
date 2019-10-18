@@ -40,6 +40,7 @@ import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-sm
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { SmartStandbyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
+import { BatteryGaugeResetComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/battery-gauge-reset/battery-gauge-reset.component';
 import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
@@ -63,6 +64,7 @@ import { faChevronCircleUp } from '@fortawesome/pro-light-svg-icons/faChevronCir
 import { faPlane } from '@fortawesome/pro-light-svg-icons/faPlane';
 import { faThumbtack } from '@fortawesome/pro-light-svg-icons/faThumbtack';
 import { faBatteryHalf } from '@fortawesome/pro-light-svg-icons/faBatteryHalf';
+import { faBatteryFull } from '@fortawesome/pro-light-svg-icons/faBatteryFull';
 import { faBatteryBolt } from '@fortawesome/pro-light-svg-icons/faBatteryBolt';
 import { faQuestionCircle, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faBatteryQuarter } from '@fortawesome/pro-light-svg-icons/faBatteryQuarter';
@@ -106,6 +108,7 @@ library.add(faTv);
 library.add(faCamera);
 library.add(faGem);
 library.add(faBatteryThreeQuarters);
+library.add(faBatteryFull);
 library.add(faChevronDown);
 library.add(faChevronUp);
 library.add(faCaretUp);
@@ -151,6 +154,7 @@ library.add(faCalendarAlt);
 		PageSupportDetailComponent,
 		PowerSmartSettingsComponent,
 		SmartStandbyComponent,
+		BatteryGaugeResetComponent,
 		SpinnerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
@@ -192,4 +196,4 @@ library.add(faCalendarAlt);
 	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class HardwareSettingsModule { }
+export class HardwareSettingsModule {}

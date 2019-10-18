@@ -81,7 +81,7 @@
                     "line2": "<b>Pregled upravljanja značajkama</b> <br> Neke značajke nisu dostupne na svim uređajima",
                     "line3": "<b>Overclocking CPU-a </b><br> Povećajte maksimalnu brzinu procesora",
                     "line4": "<b>Overclocking RAM-a </b><br> Povećajte maksimalnu brzinu memorije",
-                    "line5": "<b>Ubrzanje mreže </b><br> Dodijelite viši prioritet mrežnom prometu za igru koju igrate",
+                    "line5": "<b>Ubrzanje mreže </b><br> Mrežnom prometu za igru koju igrate dodijelite viši prioritet",
                     "line6": "<b>Dolby </b><br> Prilagodite zvuk igranju pomoću tehnologije Dolby",
                     "line7": "<b>Hibridni način </b><br> Onemogućite napredne GPU postavke kada ne igrate da produžite trajanje baterije",
                     "line8": "<b>Brzo punjenje </b><br> Igrajte u pokretu uz brže punjenje baterije",
@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "Snimanje makro tipke za"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "text7": {
                     "title": "Boja"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "Nema pokrenutih aplikacija za dodavanje",
                 "body": "Na popisu će se prikazivati samo pokrenute aplikacije. Pokrenite aplikaciju koju želite dodati i vratite se."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "Možete dodati do 5 dodatnih aplikacija za poboljšanje",
                     "part2": "od",
                     "part3": "dodano"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -709,11 +880,13 @@
                     "OverheatedBattery": "Baterija je <b>prevruća</b>. Izvadite je iz računala i ohladite na sobnu temperaturu.",
                     "PermanentError": "Baterija je <b>prestala raditi kao posljedica istrošenosti uslijed redovne uporabe.</b> Bateriju nije moguće puniti. Zamijenite bateriju.",
                     "NotSupportACAdapterDetail": "<b>Prilagodnik izmjeničnog napona nije podržan.</b> Vaše Lenovo računalo ne podržava ovaj prilagodnik izmjeničnog napona. To može uzrokovati naglo isključivanje. Spojite odgovarajući prilagodnik izmjeničnog napona.",
-                    "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona."
+                    "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
-                "seeDetailsLink": "Prikaži pojedinosti"
+                "seeDetailsLink": "Prikaži pojedinosti",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Napajanje",
@@ -862,6 +1035,42 @@
                         "description": "Kontrolom utroška energije sustava štitite naponsku utičnicu u zrakoplovu.Kada je omogućen način napajanja u zrakoplovu, računalo smanjuje potrošnju energije tako da ograničava brzinu punjenja baterije i performanse sustava.",
                         "checkBoxDesc": "Automatsko otkrivanje",
                         "note": "Ako je označeno Automatsko otkrivanje, računalo će automatski uključiti Način napajanja u zrakoplovu kada otkrije okruženje unutar zrakoplova i isključiti ga po napuštanju okruženja."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1151,6 +1360,19 @@
                             "reboot": "PONOVNO POKRETANJE",
                             "cancel": "NE SADA"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkcije VoIP tipkovničkog prečaca",
+                        "description": {
+                            "main": "Ova značajka omogućuje odgovaranje ili odbijanje VoIP poziva pritiskom na tipkovničke prečace na tipkovnici:",
+                            "f10": "F10: odgovor na poziv",
+                            "f11": "F11: odbijanje ili prekid poziva"
+                        },
+                        "tooltip": "Ova je značajka trenutačno podržana samo na platformama Skypeu for Business 2016 i Microsoft Teams 1.0.<br>Kako biste upotrebljavali značajku, najprije morate preuzeti i instalirati aplikacije.",
+                        "hasInstalledAppsDescription": "Odaberite aplikaciju na kojoj želite koristiti tipkovničke prečace:",
+                        "noInstalledAppsDescription": "Ova značajka podržava samo aplikacije u nastavku: ",
+                        "hasInstalledAppsNote": "Napomena: Na platformi Microsoft Teams 1.0, tipka F11 ne može se upotrebljavati za prekidanje poziva.",
+                        "noInstalledAppsNote": "Napomena: Kako biste upotrebljavali značajku, najprije morate preuzeti i instalirati aplikacije."
                     }
                 },
                 "userDefinedKey": {
@@ -1226,6 +1448,17 @@
                             "slow": "Sporo"
                         },
                         "toolTipContent": "Odaberite željenu opciju za zaključavanje zaslona na brzini Brzo/Srednje/Sporo kada nije otkrivena vaša prisutnost. Međutim, na vrijeme kada će zaslon biti zaključan utječe i stvarni korisnički scenarij, mogućnost senzora i postavke isteka vremena za zaslon sustava Windows. Stoga vam preporučujemo da sustav odmah zaključate prije odlaska."
+                    },
+                    "facialRecognition": {
+                        "title": "PREPOZNAVANJE LICA",
+                        "caption": "Možete omogućiti značajku prepoznavanja lica i omogućiti joj pristup kameri. Ovaj alat snima vašu sliku kako bi točno prepoznao vašu nazočnost ili otkrio kada ste uređaj ostavili bez nadzora. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
+                        "checkBox": "Uključite kameru i omogućite ovu značajku",
+                        "note": {
+                            "permission": "Lenovo Vantage nema pristup kameri. Funkcija potvrdnog okvira ne radi.",
+                            "privacyMode": "Uključen je način rada kamere za zaštitu privatnosti Lenovo Vantage. Funkcija potvrdnog okvira ne radi.",
+                            "windowsLink": "Idite na postavke sustava Windows za omogućivanje pristupa",
+                            "privacyLink": "Idite na način rada kamere za zaštitu privatnosti kako biste ga isključili"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1233,7 +1466,8 @@
                     "caption": "Automatska prilagodba udaljenosti automatski će ažurirati udaljenost otkrivanja putem modula za umjetnu inteligenciju.",
                     "options": {
                         "near": "Blizu",
-                        "far": "Daleko"
+                        "far": "Daleko",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1487,17 @@
                     "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
                     "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava neće raditi.",
                     "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave.",
-                    "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene."
+                    "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sustava Windows Hello",
                     "screenTimeoutSettings": "Idi na postavke isteka vremena za zaslon"
                 },
-                "resetToDefault": "Ponovno postavljanje"
+                "resetToDefault": "Ponovno postavljanje",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentni zaslon",
@@ -1410,6 +1648,7 @@
         "banner": {
             "neverChecked": "Slobodno se koristite Ažuriranjem sustava.",
             "title": "Ažurirani sustav je zdrav sustav.",
+            "installingTitle": "Tijekom ažuriranja ne stavljajte računalo u stanje mirovanja ili hibernacije.",
             "last": "Zadnje ažuriranje: ",
             "next": "Sljedeće zakazano ažuriranje: ",
             "checkButton": "TRAŽI AŽURIRANJA",
@@ -1644,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu vašem uređaju",
-                "unknown": "Nepoznato"
+                "unknown": "Nepoznato",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2559,5 +2799,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

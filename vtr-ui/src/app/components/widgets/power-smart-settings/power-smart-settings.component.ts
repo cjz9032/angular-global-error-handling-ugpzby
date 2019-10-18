@@ -156,6 +156,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('initPowerSmartSettingsForIdeaPad: ' + error.message);
+			this.showIC = 0;
+			this.cache.showIC = this.showIC;
+			this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+			this.isPowerSmartSettingHidden.emit(true);
 			return EMPTY;
 		}
 	}
@@ -593,7 +597,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		console.log('modal open');
 		this.modalService.open(ModalIntelligentCoolingModesComponent, {
 			backdrop: 'static',
-			size: 'sm',
+			size: 'lg',
+			keyboard: false,
 			centered: true,
 			windowClass: 'Intelligent-Cooling-Modes-Modal'
 		}).result.then(
@@ -608,6 +613,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		);
 	}
+
 
 	readMore() {
 		this.onReadMoreClick = true;

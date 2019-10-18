@@ -22,7 +22,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Output() sendBatteryDetails = new EventEmitter();
 	@Output() autoChecked = new EventEmitter<boolean>();
 	@Input() textId = '';
-
+	@Input() isGaugeResetRunning = false;
 
 
 	// Random number is used to have unique id of each input field
@@ -38,7 +38,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 	ngOnInit() { }
 
-	onChargeChange(id: string, newCharge: number, event: Event) {
+	onChargeChange(id: string, newCharge: number, event: Event, button: HTMLElement) {
+		
 		if (id === this.startChargeInput) {
 			if (this.selectedStartAtCharge !== newCharge) {
 				this.selectedStartAtCharge = newCharge;
@@ -63,7 +64,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		} else {
 			this.toggleAutoChargeSettings(true);
 		}
-
+		button.focus();
 	}
 
 	autoStartStopAtCharge() {

@@ -7,6 +7,7 @@ import {
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
+import {privacyPolicyLinks} from 'src/assets/privacy-policy-links/policylinks.json';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,12 +21,12 @@ export class ConfigService {
 	menuItemsPrivacy = menuItemsPrivacy;
 	appSearch = appSearch;
 	betaItem = betaItem;
+	privacyPolicyLinks = privacyPolicyLinks;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	constructor(
 		private deviceService: DeviceService,
 		private commonService: CommonService) {
 	}
-
 
 	getMenuItems(isGaming) {
 		if (isGaming) {
@@ -41,6 +42,9 @@ export class ConfigService {
 			const machineInfo = this.deviceService.getMachineInfoSync();
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
+				if (isBetaUser && this.deviceService.showSearch) {
+					resultMenu.splice(resultMenu.length - 1, 0 , this.appSearch);
+				}
 				resolve(resultMenu);
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
@@ -50,12 +54,15 @@ export class ConfigService {
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
-			const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en');
+			const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en') && this.deviceService.showCHSMenu;
 			if (!showCHSMenu) {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
+				if (this.deviceService.showSearch) {
+					resultMenu.splice(resultMenu.length - 1, 0 , this.appSearch);
+				}
 			}
 			resultMenu = this.brandFilter(resultMenu);
 			resolve(resultMenu.filter(item => !item.hide));
@@ -80,5 +87,13 @@ export class ConfigService {
 			}
 		});
 		return menu;
+	}
+
+	getPrivacyPolicyLink(): Promise<any> {
+		return new Promise((resolve) => {
+			this.deviceService.getMachineInfo().then(val => {
+				resolve(privacyPolicyLinks[val.locale] || privacyPolicyLinks.default);
+			});
+		});
 	}
 }

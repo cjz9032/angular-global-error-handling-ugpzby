@@ -1,3 +1,4 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
@@ -111,6 +112,7 @@ export class PageSupportComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
+		private modalService: NgbModal
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.warrantyData = this.supportService.warrantyData;
@@ -322,7 +324,7 @@ export class PageSupportComponent implements OnInit {
 			}
 		});
 	}
-
+	
 	copyObjectArray(obj: any) {
 		return JSON.parse(JSON.stringify(obj));
 	}

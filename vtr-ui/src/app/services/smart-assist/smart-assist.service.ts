@@ -4,7 +4,7 @@ import {
 import {
 	FeatureStatus
 } from 'src/app/data-models/common/feature-status.model';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -19,7 +19,7 @@ export class SmartAssistService {
 	public isShellAvailable = false;
 	public isAPSavailable = false;
 
-	constructor(shellService: BaseVantageShellService) {
+	constructor(shellService: VantageShellService) {
 		this.intelligentSensing = shellService.getIntelligentSensing();
 		this.intelligentMedia = shellService.getIntelligentMedia();
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
@@ -76,10 +76,34 @@ export class SmartAssistService {
 		return this.intelligentSensing.GetHPDPresentLeaveSetting();
 	}
 
+	// Get Sensitivity Visibility
+	public getHPDLeaveSensitivityVisibility(): Promise<boolean> {
+		return this.intelligentSensing.GetHPDLeaveSensitivityVisibility();
+	}
+
+	// Get HPDLeave Sensitivity
+	public getHPDLeaveSensitivity(): Promise<boolean> {
+		return this.intelligentSensing.GetHPDLeaveSensitivity();
+	}
+
+	// Set HPDLeave Sensitivity Setting
+	public SetHPDLeaveSensitivitySetting(value): Promise<boolean> {
+		return this.intelligentSensing.SetHPDLeaveSensitivitySetting(value);
+	}
 	// set auto adjust for IdeaPad models
 	public setZeroTouchLockStatus(value: boolean): Promise<boolean> {
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.SetHPDPresentLeaveSetting(option);
+	}
+
+	public getZeroTouchLockFacialRecoStatus(): Promise<boolean> {
+		return this.intelligentSensing.getLockFacialRecognitionSettings();
+	}
+
+	public setZeroTouchLockFacialRecoStatus(value: boolean):Promise<boolean> {
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.setLockFacialRecognitionSettings(option);
+
 	}
 
 	public getZeroTouchLoginVisibility(): Promise<boolean> {

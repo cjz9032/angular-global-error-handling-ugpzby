@@ -16,8 +16,8 @@
 				</span>
 				<span class="device-sub-header"
 					id="myDevice-serial"
-					attr.aria-label="myDevice-serial">{{'device.myDevice.serial' | translate}}: {{myDevice.sn}}</span>
-
+					attr.aria-label="myDevice-serial"
+					><span class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}</span>: {{myDevice.sn}}</span>
 			</div>
 			<div class="col-12 px-0">
 				<span class="sub-header-separator">
@@ -25,8 +25,8 @@
 				</span>
 				<span class="device-sub-header"
 					id="myDevice-product-number"
-					attr.aria-label="myDevice-product-number">{{'device.myDevice.productNumber' | translate}}:
-					{{myDevice.productNo}}</span>
+					attr.aria-label="myDevice-product-number"
+					><span class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}">{{'device.myDevice.productNumber' | translate}}</span>: {{myDevice.productNo}}</span>
 			</div>
 			<div class="col-12 px-0">
 				<span class="sub-header-separator">
@@ -34,16 +34,17 @@
 				</span>
 				<span class="device-sub-header text-wrap"
 					id="myDevice-bios-version"
-					attr.aria-label="myDevice-bios-version">{{'device.myDevice.biosVersion'|translate}}:
-					{{myDevice.bios}}</span>
-
+					attr.aria-label="myDevice-bios-version"
+					><span class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion' | translate}}</span>: {{myDevice.bios}}</span>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<div class="subheader"
 					id="myDevice-status-title"
-					attr.aria-label="myDevice-status-title">{{'device.myDevice.subtitle'|translate}}</div>
+					attr.aria-label="myDevice-status-title"
+					dir="{{'dir' | translate}}"
+					>{{'device.myDevice.subtitle'|translate}}</div>
 			</div>
 		</div>
 		<div class="row">
@@ -53,7 +54,7 @@
 						[ngClass]="[!item.status?'good':'bad']"
 						[hidden]="item.isHidden">
 						<div class="container-fluid">
-							<div class="row align-items-center">
+							<div class="row align-items-center {{'dirClass' | translate}}">
 								<div class="col-auto">
 									<div class="status-icon">
 										<div class="icon-bkg">
@@ -65,10 +66,14 @@
 									<div class="title"
 										[ngClass]="[!item.status?'good':'bad']"
 										id="myDevice-system-details-{{item.id}}"
-										attr.aria-label="myDevice-system-details-{{item.id}}">
+										attr.aria-label="myDevice-system-details-{{item.id}}"
+										dir="{{'dir' | translate}}"
+										>
 										{{item.title}}
 										<span *ngIf="item.systemDetails"
-											class='systemDetails'>({{item.systemDetails}})</span>
+											class='systemDetails'
+											dir="{{'dir' | translate}}"
+											>({{item.systemDetails}})</span>
 									</div>
 
 
@@ -91,8 +96,9 @@
 										attr.aria-label="myDevice-status-learn-more-{{item.id}}"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)">
 										<div class="detail"
-											[ngClass]="{'highlight':item.asLink}">
-											{{item.detail}} <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+											[ngClass]="{'highlight':item.asLink}"
+											>
+											<span class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}">{{item.detail}}</span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 										</div>
 									</a>
 									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
@@ -106,8 +112,9 @@
 										attr.aria-label="myDevice-status-learn-more-{{item.id}}"
 										(click)="deviceService.launchUri(item.path)">
 										<div class="detail"
-											[ngClass]="{'highlight':item.asLink}">
-											{{item.detail}} <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+											[ngClass]="{'highlight':item.asLink}"
+											>
+											<span class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}">{{item.detail}}</span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 										</div>
 									</a>
 									<!-- <div class="arrow">

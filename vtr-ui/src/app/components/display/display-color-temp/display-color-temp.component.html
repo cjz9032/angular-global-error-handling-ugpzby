@@ -1,7 +1,8 @@
 <div class="vtr-eye-care-mode">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-range-slider [step]="100"
+			<vtr-ui-range-slider 
+				[step]="100"
 				[manualRefresh]="manualRefresh"
 				[enableSlider]="enableSlider"
 				[minValue]="displayColorTempSettings.minimum"
@@ -17,6 +18,7 @@
 		<div class="reset-temperature">
 			<div class="button-box">
 				<vtr-ui-button (onClick)="onResetTemparature($event)"
+					[tabindex]="0"
 					metricsEvent="itemClick"
 					metricsParent="eye-care-mode"
 					metricsItem="btn.eye-care-mode.ResetTemparature"
@@ -24,9 +26,7 @@
 					[label]="'device.deviceSettings.displayCamera.display.dispColorTemp.reset' | translate"
 					[linkId]="'day-time-color-temp-reset-btn'">
 				</vtr-ui-button>
-
 			</div>
-
 		</div>
 	</div>
 

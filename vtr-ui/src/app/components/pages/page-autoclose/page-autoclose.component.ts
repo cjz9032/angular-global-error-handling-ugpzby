@@ -2,7 +2,7 @@ import { position } from './../page-privacy/common/components/tooltip/tooltip.co
 import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { isUndefined } from 'util';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
@@ -13,11 +13,12 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: ['./page-autoclose.component.scss']
+	styleUrls: [ './page-autoclose.component.scss' ]
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -43,10 +44,15 @@ export class PageAutocloseComponent implements OnInit {
 		private cmsService: CMSService,
 		private gamingAutoCloseService: GamingAutoCloseService,
 		private commonService: CommonService,
-		private upeService: UPEService, private loggerService: LoggerService,
-		private hypService: HypothesisService, private translate: TranslateService
+		private titleService: Title,
+		public dashboardService: DashboardService,
+		private upeService: UPEService,
+		private loggerService: LoggerService,
+		private hypService: HypothesisService,
+		private translate: TranslateService
 	) {
-		this.isUPEFailed = false;  // init UPE request status
+		this.titleService.setTitle('gaming.common.narrator.pageTitle.autoClose');
+		this.isUPEFailed = false; // init UPE request status
 		this.isCmsLoaded = false;
 		this.setPreviousContent();
 		this.fetchCMSArticles();
@@ -104,9 +110,7 @@ export class PageAutocloseComponent implements OnInit {
 				)[0];
 				if (cardContentPositionB) {
 					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
-							'|'
-						)[0];
+						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 					}
 					cardContentPositionB.DataSource = 'cms';
 
@@ -122,44 +126,60 @@ export class PageAutocloseComponent implements OnInit {
 				const upeParam = {
 					position: 'position-B'
 				};
-				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
-					const cardContentPositionB = this.upeService.getOneUPEContent(
-						upeResp,
-						'half-width-title-description-link-image',
-						'position-B'
-					)[0];
-					if (cardContentPositionB) {
-						this.cardContentPositionB = cardContentPositionB;
-						if (this.cardContentPositionB.BrandName) {
-							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				this.upeService.fetchUPEContent(upeParam).subscribe(
+					(upeResp) => {
+						const cardContentPositionB = this.upeService.getOneUPEContent(
+							upeResp,
+							'half-width-title-description-link-image',
+							'position-B'
+						)[0];
+						if (cardContentPositionB) {
+							this.cardContentPositionB = cardContentPositionB;
+							if (this.cardContentPositionB.BrandName) {
+								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+							}
+							// 		cardContentPositionB.DataSource = 'upe';
+							// 		this.dashboardService.cardContentPositionB = cardContentPositionB;
+							// 		this.isUPEFailed = false;
+							// 	}
+							// },
+							// (err) => {
+							// 	this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+							// 	this.isUPEFailed = true;
+							// 	if (this.isCmsLoaded) {
+							// 		this.cardContentPositionB = this.cardContentPositionBCms;
+							// 		this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+							// 	}
+							cardContentPositionB.DataSource = 'upe';
+							this.gamingAutoCloseService.cardContentPositionB = cardContentPositionB;
+							this.isUPEFailed = false;
 						}
-						cardContentPositionB.DataSource = 'upe';
-						this.gamingAutoCloseService.cardContentPositionB = cardContentPositionB;
-						this.isUPEFailed = false;
-					}
-				}, (err) => {
-					this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-					this.isUPEFailed = true;
-					if (this.isCmsLoaded) {
-						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionBCms;
-					}
-				});
+					}, (err) => {
+						this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+						this.isUPEFailed = true;
+						if (this.isCmsLoaded) {
+							this.cardContentPositionB = this.cardContentPositionBCms;
+							this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionBCms;
+						}
+					});
 			}
 		});
 	}
 
 	private getTileBSource() {
 		return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then((source) => {
-				if (source === 'UPE') {
-					resolve('UPE');
-				} else {
+			this.hypService.getFeatureSetting('TileBSource').then(
+				(source) => {
+					if (source === 'UPE') {
+						resolve('UPE');
+					} else {
+						resolve('CMS');
+					}
+				},
+				() => {
 					resolve('CMS');
 				}
-			}, () => {
-				resolve('CMS');
-			});
+			);
 		});
 	}
 
@@ -187,12 +207,16 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	initTurnOnAction() {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
 
 	initNotNowAction(notNowStatus: boolean) {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}

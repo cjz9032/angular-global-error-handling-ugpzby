@@ -51,18 +51,26 @@
 
 		.title {
 			position: absolute;
-			bottom: 4px;
+			//bottom: 4px;
 			left: 0;
 			right: 0;
 			font-weight: $weight_bold;
 			font-size: $caption;
 			color: $shade_light;
-			//top: 75px;
-			white-space: nowrap;
+			top: 75px;
+			//white-space: nowrap;
 		}
 
 		.checkbox-custom:checked+.checkbox-custom-label {
 			background-color: $background;
+			@media #{$white-on-black}{
+				background-color: $highlight_bright;;
+				
+			}
+			@media #{$black-on-white}{
+				background-color: darkviolet;
+			}
+
 		}
 
 

@@ -27,7 +27,7 @@
 	}
 
 	.banner-page-1 {
-		background: url("/assets/images/welcome/header-1.jpg") no-repeat;
+		background: url("src/assets/images/welcome/header-1.jpg") no-repeat;
 		background-size: cover;
 		background-position: center;
 		width: 100%;
@@ -49,7 +49,7 @@
 	}
 
 	.banner-page-2 {
-		background: url("/assets/images/welcome/header-2.jpg") no-repeat;
+		background: url("src/assets/images/welcome/header-2.jpg") no-repeat;
 		background-size: cover;
 		height: 10rem;
 		width: 100%;
@@ -504,5 +504,22 @@
 	.lang-he-privacy-link{
 		float: left;
 		margin-right: 10px;
+	}
+
+	.bludFocusBoder:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+
+	.bludFocusBoder:focus::after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: -0.4rem;
+		top: -0.4rem;
+		border-radius: 500px;
+		width: calc(100% + 0.8rem);
+		height: calc(100% + 0.8rem);
+		border: thin solid $menu_hover;
 	}
 }

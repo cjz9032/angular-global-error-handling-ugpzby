@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from "./flipToBoot.interface";
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
+import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from './flipToBoot.interface';
 @Injectable({
 	providedIn: 'root'
 })
@@ -14,7 +13,7 @@ export class PowerService {
 	private devicePowerItsIntelligentCooling: any;
 	public isShellAvailable = false;
 	public intelligentCoolingForIdeaPad: any;
-	constructor(shellService: BaseVantageShellService) {
+	constructor(shellService: VantageShellService) {
 		this.devicePower = shellService.getVantageToolBar();
 		if (this.devicePower) {
 			this.isShellAvailable = true;
@@ -486,7 +485,7 @@ export class PowerService {
 	}
 
 	public setCtAutoCheckbox(value: any): Promise<any> {
-		//console.log('auto check value here ----->', value);
+		// console.log('auto check value here ----->', value);
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
@@ -578,6 +577,41 @@ export class PowerService {
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyDaysOfWeekOff(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getGaugeResetCapability(): Promise<boolean> {
+		console.log('Battery Gauge Reset Capability');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.getGaugeResetCapability();
+			}
+		} catch (error) {
+			console.log('Battery Gauge Reset Error', error);
+		}
+	}
+
+	public startBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
+		console.log('start Battery Gauge Reset');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(handler, barCode, batteryNumber);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
+		console.log('stop Battery Gauge Reset');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(handler, barCode, batteryNumber);
 			}
 			return undefined;
 		} catch (error) {

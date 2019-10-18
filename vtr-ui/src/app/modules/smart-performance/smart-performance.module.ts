@@ -8,19 +8,37 @@ import { HeaderMainModule } from 'src/app/components/header-main/header-main.mod
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLaptop } from '@fortawesome/free-solid-svg-icons/faLaptop';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt';
 
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
+import { UiSmartPerformanceScanningComponent } from '../../components/ui/ui-smart-performance-scanning/ui-smart-performance-scanning.component';
+import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 
 library.add(faLaptop);
+library.add(faTrashAlt);
+library.add(faExclamationTriangle);
 
 @NgModule({
   declarations: [
 	  PageSmartPerformanceComponent,
-	  UiSmartPerformanceComponent
+	  UiSmartPerformanceComponent,
+    UiSmartTunePcComponent,
+    UiSmartPerformanceScanningComponent,
+    ModalSmartPerformanceCancelComponent,
+
+
 	],
-  imports: [
+  imports: [ CommonModule,
+	  NgbModule,
   SmartPerformanceRoutingModule,
   HeaderMainModule,
   FontAwesomeModule
-  ]
+  ],
+  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent],
+  bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent]
 })
 export class SmartPerformanceModule { }

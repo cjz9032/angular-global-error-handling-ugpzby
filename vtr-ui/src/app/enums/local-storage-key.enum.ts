@@ -153,6 +153,7 @@ export enum LocalStorageKey {
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
+	VOIPCapability = '[LocalStorageKey] VOIPCapability',
 	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
 	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
 	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
@@ -186,5 +187,6 @@ export enum LocalStorageKey {
 	// App Search
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing'
 }

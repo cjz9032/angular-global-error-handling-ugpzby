@@ -414,6 +414,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		border-radius: 1rem;
 		background: $light;
 		padding: 4rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+			border-radius: 1rem
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+			border-radius: 1rem;
+		}
+
+
 	}
 }
 
@@ -715,6 +725,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.cancel-modal {
+	.modal-dialog {
+		max-width: 27%;
+	}
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 1.5rem;
+	}
+}
 /*----- onclick-tooltip-style------*/
 .tooltip-click {
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
@@ -890,5 +910,134 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		width: calc(100% + 0.8rem);
 		height: calc(100% + 0.8rem);
 		border: thin solid $menu_hover;
+	}
+}
+
+.tabset1 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+	background: $shade_lightest !important;
+	color: $shade_darkest !important;
+	border-radius: 0 !important;
+	border-color: none !important;
+	padding-bottom: 2px;
+  }
+  .tabset1 .nav-tabs .nav-link
+  {
+	border: none !important;
+	border-right: 1px solid #ffffff !important;
+  }
+  .tabset1 .nav-link {
+	//margin-bottom: 25px !important;
+	color:  $shade_darkest !important;
+
+	padding:2rem !important;
+	font-size: 1.5rem;
+  }
+  .tabset1 .nav-tabs{
+	border-color: 0 !important;
+	border-bottom: 0 !important;
+	background: $shade_lighter !important;
+  }
+  .tabset1 .tab-content > .tab-pane
+  {
+	  padding: 2rem !important;
+	background: $shade_lightest !important;
+  }
+
+/*koch code*/
+.pc-performance-block{
+	.tabset-main{
+		width: 100%;
+		& > .nav-tabs{
+			display: flex;
+			justify-content: space-between !important;
+			padding: 1.5rem;
+			border-radius: 0.8rem;
+			background: $main_darkest;
+			margin-bottom: 8rem;
+			.nav-item{
+				width: calc(25% - 1rem);
+				.nav-link {
+					height: 22rem;
+					border-radius: 0.5rem;
+					background: $main_darker;
+					border: none !important;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					align-items: center;
+					font-size: 1.8rem;
+					text-transform: uppercase;
+					padding: 3.5rem;
+					text-align: center;
+					font-weight: $weight_bold;
+					line-height: 2rem;
+					color: $main_lightest;
+					position: relative;
+					z-index: 5;
+					.ng-fa-icon {
+						height: 12rem;
+						width: 12rem;
+						line-height: 12rem;
+						text-align: center;
+						font-size: 8rem;
+						color: $main_light;
+					}
+					&::before {
+						content: '';
+						position: absolute;
+						display: block;
+						// height: 4rem;
+						// height: 4rem;
+						font-size: 6rem;
+						color: $main_darkest;
+						//transform: rotate(90deg);
+						bottom: -3rem;
+						left: calc(50% - 2rem);
+						z-index: 0;
+						opacity: 0;
+						height: 0;
+						width: 0;
+						border-left: 20px solid transparent;
+						border-right: 20px solid transparent;
+						border-top: 20px solid $main_darkest;
+					}
+					&.active{
+						background: $main_lightest !important;
+						color: $main_darker;
+						.ng-fa-icon {
+							color: $main_light;
+						}
+						&::before {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		& > .tab-content{
+			vtr-ui-smart-tune-pc{
+				.tabset1 {
+					.nav-tabs {
+						display: flex;
+						justify-content: space-between !important;
+						.nav-item{
+							flex: 1;
+							.nav-link {
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								padding: 2rem 4rem !important;
+								line-height: 1.4rem;
+								.ng-fa-icon {
+									margin-right: 1.5rem;
+									font-size: 3rem;
+									color: $main_light;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

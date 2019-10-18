@@ -119,7 +119,7 @@
 									id="radio3"
 									value="custom"
 									#radio3 />
-								<img alt="Custom Experience" 
+								<img alt="Custom Experience"
 									for="radio3"
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
@@ -141,7 +141,7 @@
 								[id]="interest + 'checkbox'"
 								#checkbox1
 								(click)="toggle($event, interest)" />
-							<label tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
+							<label class="bludFocusBoder" tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
 								[for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
 						</div>
 					</div>
@@ -152,7 +152,7 @@
 							attr.aria-label="tutorial_hide_moreInterest"
 							(click)="moreInterestClicked()">
 							<span
-								class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>				
+								class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
 						</div>
 					</div>
 					<div class="row privacy-check mt-3">
@@ -163,12 +163,11 @@
 								class="custom-control-input"
 								id="defaultUnchecked"
 								attr.aria-label="defaultUnchecked">
-							<label class="custom-control-label" 
+							<label class="custom-control-label"
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
-								<a class="linktext"  tabindex="7"
-									[ngClass]="{'lang-he-privacy-link':machineInfo.locale=='he'}"
-									href="https://www.lenovo.com/us/en/privacy"
+								<a class="linktext"
+									href="{{privacyPolicyLink}}"
 									target="_blank"
 									rel="noopener"
 									[innerHTML]="'welcometutorial.privacypolicy' | translate">
@@ -180,9 +179,9 @@
 				</div>
 
 				<div class="row justify-content-center align-items-center next-btn">
-					<div class="col-auto" tabindex="8" (keypress)="btnDoneOnKeyPress($event)" >
-						<vtr-ui-button metricsParent="WelcomePage"  
-							metricsEvent="featureClick"
+					<div class="col-auto" (keypress)="btnDoneOnKeyPress($event)" >
+						<vtr-ui-button metricsParent="WelcomePage"
+							metricsEvent="featureClick" [tabIndex]= '8'
 							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"

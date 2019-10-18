@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "매크로 키 기록 중"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "text7": {
                     "title": "색상"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "추가할 실행 중인 앱 없음",
                 "body": "현재 실행 중인 앱만 표시됩니다. 추가하려는 앱을 실행한 다음 다시 시도하십시오."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "최대 5개의 앱을 추가할 수 있습니다",
                     "part2": "/",
                     "part3": "추가됨"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -709,11 +880,13 @@
                     "OverheatedBattery": "배터리가 <b>너무 뜨겁습니다</b>. 컴퓨터에서 배터리를 제거하여 상온 정도까지 식히십시오.",
                     "PermanentError": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
                     "NotSupportACAdapterDetail": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
-                    "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오."
+                    "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "배터리 없음",
                 "thresholdNote": "<b>참고:</b> 배터리 수명을 연장하기 위해 {{value}}%에서 충전이 멈추도록 배터리를 설정했습니다.",
-                "seeDetailsLink": "세부사항 참조"
+                "seeDetailsLink": "세부사항 참조",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "전원",
@@ -862,6 +1035,42 @@
                         "description": "시스템의 전력 소모를 제어하여 비행기의 AC 전원 콘센트를 보호하십시오.비행기 전원 모드를 사용하면, 컴퓨터가 배터리 충전율과 시스템 성능을 제한하여 전력 소모를 줄입니다.",
                         "checkBoxDesc": "자동 검색",
                         "note": "자동 탐지를 선택하면 비행기 탑승 환경을 탐지했을 때 컴퓨터가 비행기 전원 모드를 자동으로 켜고 비행기에서 내리면 끕니다."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1151,6 +1360,19 @@
                             "reboot": "다시 부팅",
                             "cancel": "나중에"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP 단축키 기능",
+                        "description": {
+                            "main": "이 기능을 사용하면 키보드의 단축키를 눌러 VoIP 통화에 응답하거나 거절할 수 있습니다:",
+                            "f10": "F10: 통화에 응답",
+                            "f11": "F11: 통화 거부 또는 통화 끊기"
+                        },
+                        "tooltip": "현재 이 기능은 비즈니스용 Skype 2016 및 Microsoft Teams 1.0에서만 지원됩니다.<br>이 기능을 사용하려면 먼저 앱을 다운로드하고 설치해야 합니다.",
+                        "hasInstalledAppsDescription": "단축키를 사용할 앱을 선택하십시오:",
+                        "noInstalledAppsDescription": "이 기능은 아래 응용 프로그램만 지원합니다: ",
+                        "hasInstalledAppsNote": "참고: Microsoft Teams 1.0의 경우 F11 키를 사용하여 전화를 끊을 수 없습니다.",
+                        "noInstalledAppsNote": "참고: 이 기능을 사용하려면 먼저 앱을 다운로드하고 설치해야 합니다."
                     }
                 },
                 "userDefinedKey": {
@@ -1226,6 +1448,17 @@
                             "slow": "느리게"
                         },
                         "toolTipContent": "사용자의 존재를 감지하지 못하면, 원하는 옵션을 선택하여 빠른/중간/느린 속도로 화면을 잠그십시오. 그러나 화면이 잠기는 시간도 실제 사용자 시나리오, 센서 능력 및 Windows 화면 시간 제한 설정의 영향을 받습니다. 따라서 시스템을 떠나기 전에 즉시 잠그는 것이 좋습니다."
+                    },
+                    "facialRecognition": {
+                        "title": "얼굴 인식",
+                        "caption": "얼굴 인식 기능을 사용하여 카메라에 액세스하도록 할 수 있습니다. 이 도구는 장치를 두고 자리를 떠날 때 사용자의 현재 상태를 정확하게 인식하거나 감지하기 위해 이미지를 캡처합니다. 이 데이터는 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
+                        "checkBox": "카메라를 켜고 이 기능 사용",
+                        "note": {
+                            "permission": "Lenovo Vantage가 카메라에 액세스할 수 없습니다. 선택란의 기능이 작동하지 않습니다.",
+                            "privacyMode": "Lenovo Vantage 카메라 개인 정보 모드가 켜져 있습니다. 선택란의 기능이 작동하지 않습니다.",
+                            "windowsLink": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다",
+                            "privacyLink": "카메라 개인 정보 모드로 이동하여 끄기"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1233,7 +1466,8 @@
                     "caption": "자동 거리 조정은 AI 엔진을 통해 감지 거리를 자동으로 업데이트합니다.",
                     "options": {
                         "near": "근처",
-                        "far": "보다 멀리"
+                        "far": "보다 멀리",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1487,17 @@
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
                     "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
-                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다."
+                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
                     "screenTimeoutSettings": "화면 시간 종료 설정으로 이동"
                 },
-                "resetToDefault": "재설정"
+                "resetToDefault": "재설정",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "지능형 화면",
@@ -1410,6 +1648,7 @@
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
             "title": "최신 시스템은 정상적인 시스템입니다.",
+            "installingTitle": "업데이트하는 동안, 컴퓨터를 절전 모드 또는 최대 절전 모드로 전환하지 마십시오.",
             "last": "마지막 업데이트 날짜: ",
             "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
@@ -1644,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
-                "unknown": "알 수 없음"
+                "unknown": "알 수 없음",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2559,5 +2799,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

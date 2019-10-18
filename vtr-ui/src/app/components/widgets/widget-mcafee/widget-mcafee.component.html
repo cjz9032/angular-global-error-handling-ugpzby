@@ -15,7 +15,6 @@
 			upperCaseLabel=false
 			(onClick)="common.launch()"
 			[label]="'security.antivirus.mcafee.launch' | translate"
-			[title]="'security.antivirus.mcafee.launch' | translate"
 			[upperCaseLabel]="false"
 			[linkId]="'sa-av-btn-launchmcafee'"></vtr-ui-button>
 		<vtr-ui-button *ngIf="!install"
@@ -27,7 +26,6 @@
 			[isDisabled]="isOnline === false"
 			[href]="common.urlGetMcAfee"
 			[label]="'security.antivirus.mcafee.getMacfee' | translate"
-			[title]="'security.antivirus.mcafee.getMacfee' | translate"
 			[upperCaseLabel]="false"></vtr-ui-button>
 	</div>
 </div>

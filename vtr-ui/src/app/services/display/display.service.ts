@@ -4,7 +4,6 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CommonService } from '../common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
-import { BaseVantageShellService } from '../vantage-shell/base-vantage-shell.service';
 @Injectable()
 export class DisplayService {
 	private displayEyeCareMode: any;
@@ -21,7 +20,7 @@ export class DisplayService {
 
 	constructor(
 		private devService: DevService,
-		shellService: BaseVantageShellService,
+		shellService: VantageShellService,
 		private commonService: CommonService
 	) {
 		this.displayEyeCareMode = shellService.getEyeCareMode();

@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "Macro code opnemen voor"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "text7": {
                     "title": "Kleur"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "Er zijn geen actieve apps om toe te voegen",
                 "body": "Toont alleen apps die nu actief zijn. Open een app die u wilt toevoegen en kom vervolgens terug."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "Voeg maximaal 5 extra apps toe",
                     "part2": "van",
                     "part3": "toegevoegd"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -709,11 +880,13 @@
                     "OverheatedBattery": "De batterij is <b>te heet</b>. Verwijder hem uit de computer en laat hem afkoelen tot kamertemperatuur.",
                     "PermanentError": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
                     "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
-                    "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan."
+                    "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
-                "seeDetailsLink": "Bekijk meer informatie"
+                "seeDetailsLink": "Bekijk meer informatie",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Energiebeheer",
@@ -862,6 +1035,42 @@
                         "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
                         "checkBoxDesc": "Automatische detectie",
                         "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1151,6 +1360,19 @@
                             "reboot": "OPNIEUW OPSTARTEN",
                             "cancel": "NIET NU"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-sneltoetsfuncties",
+                        "description": {
+                            "main": "Met behulp van deze functie kunt u een VoIP-oproep beantwoorden of weigeren door de sneltoetsen op uw toetsenbord te gebruiken:",
+                            "f10": "F10: de oproep beantwoorden",
+                            "f11": "F11: de oproep weigeren of ophangen"
+                        },
+                        "tooltip": "Momenteel wordt deze functie alleen ondersteund in Skype voor Bedrijven 2016 en Microsoft Teams 1.0.<br>Als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren.",
+                        "hasInstalledAppsDescription": "Selecteer de app waarin u de sneltoetsen wilt gebruiken.",
+                        "noInstalledAppsDescription": "Deze functie biedt alleen ondersteuning voor de volgende toepassingen: ",
+                        "hasInstalledAppsNote": "Opmerking: voor Microsoft Teams 1.0 kan de toets F11 niet worden gebruikt voor het ophangen van de oproep.",
+                        "noInstalledAppsNote": "Opmerking: als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren."
                     }
                 },
                 "userDefinedKey": {
@@ -1226,6 +1448,17 @@
                             "slow": "Traag"
                         },
                         "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd. Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat."
+                    },
+                    "facialRecognition": {
+                        "title": "GEZICHTSHERKENNING",
+                        "caption": "U kunt de gezichtsherkenningsfunctie inschakelen en toegang tot uw camera geven. Met deze tool wordt uw afbeelding vastgelegd om uw aanwezigheid nauwkeurig te herkennen of te detecteren wanneer u het apparaat hebt achtergelaten. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                        "checkBox": "Zet de camera aan en schakel deze functie in",
+                        "note": {
+                            "permission": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
+                            "privacyMode": "De privacymodus van Lenovo Vantage Camera is ingeschakeld. De functie van het selectievakje werkt niet.",
+                            "windowsLink": "Ga naar de Windows-instellingen om toegang te geven",
+                            "privacyLink": "Ga naar de privacymodus van de camera om deze uit te schakelen"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1233,7 +1466,8 @@
                     "caption": "De detectieafstand wordt via een AI-engine automatisch bijgewerkt.",
                     "options": {
                         "near": "Dichtbij",
-                        "far": "Ver"
+                        "far": "Ver",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1487,17 @@
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
                     "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden.",
-                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld."
+                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
                     "screenTimeoutSettings": "Ga naar de instellingen voor de time-out van het beeldscherm"
                 },
-                "resetToDefault": "Resetten"
+                "resetToDefault": "Resetten",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent beeldscherm",
@@ -1410,6 +1648,7 @@
         "banner": {
             "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
             "title": "Een bijgewerkt systeem is een gezond systeem.",
+            "installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
@@ -1644,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
-                "unknown": "Onbekend"
+                "unknown": "Onbekend",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2559,5 +2799,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

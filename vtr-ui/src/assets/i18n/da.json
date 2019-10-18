@@ -81,7 +81,7 @@
                     "line2": "<b>Oversigt over funktionsstyring</b> <br> Nogle funktioner er ikke tilgængelige på alle enheder",
                     "line3": "<b>CPU-overclocking</b><br> Øg processorens hastighed til det optimale",
                     "line4": "<b>RAM-overclocking</b><br> Øg hukommelsens hastighed til det optimale",
-                    "line5": "<b>Netværksforstærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
+                    "line5": "<b>Netværksfor-stærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
                     "line6": "<b>Dolby</b><br> Optimer din lyd, især til spil, med Dolby-teknologi",
                     "line7": "<b>Hybridtilstand</b><br> Deaktiver avancerede GPU-indstillinger, når du ikke spiller, for at øge batteriets ydeevne",
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "Optager makro-tast for"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,6 +400,112 @@
                 "text7": {
                     "title": "Farve"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -388,6 +526,17 @@
             "noRunningApps": {
                 "title": "Der er ingen kørende apps at tilføje",
                 "body": "Kun apps, der kører i øjeblikket, vises. Start en app, du vil tilføje, og vend tilbage."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -406,6 +555,28 @@
                     "part1": "Du kan tilføje op til 5 yderligere apps",
                     "part2": "af",
                     "part3": "tilføjet"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -709,11 +880,13 @@
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Tag det ud af computeren, og lad det køle af til almindelig stuetemperatur.",
                     "PermanentError": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
                     "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
-                    "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter."
+                    "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
-                "seeDetailsLink": "Flere oplysninger"
+                "seeDetailsLink": "Flere oplysninger",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Strøm",
@@ -862,6 +1035,42 @@
                         "description": "Beskyt flyets vekselstrømskontakt ved at styre systemets strømforbrug.Når Flytilstand er aktiveret, reducerer computeren strømforbruget ved at begrænse batteriopladningshastigheden og systemets ydeevne.",
                         "checkBoxDesc": "Automatisk registrering",
                         "note": "Hvis den automatiske søgefunktion er markeret, slår computeren automatisk Flytilstand til, når den registrerer et miljø om bord på et fly, og slår den fra, når du forlader flyet."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1151,6 +1360,19 @@
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-genvejsfunktioner:",
+                        "description": {
+                            "main": "Med denne funktion kan du besvare eller afvise et VoIP-opkald ved at trykke på genvejstasterne på tastaturet:",
+                            "f10": "F10: Besvar opkaldet",
+                            "f11": "F11: Afvis eller afbryd opkaldet"
+                        },
+                        "tooltip": "Denne funktion understøttes i øjeblikket kun i Skype for Business 2016 og Microsoft Teams 1.0.<br>Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
+                        "hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
+                        "noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
+                        "hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
+                        "noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
                     }
                 },
                 "userDefinedKey": {
@@ -1226,6 +1448,17 @@
                             "slow": "Langsomt"
                         },
                         "toolTipContent": "Vælg den ønskede indstilling for at låse skærmen ved hurtig/mellem/langsom hastighed, når din tilstedeværelse ikke er registreret. Den tid, hvor skærmen er låst, er dog også påvirket af det aktuelle brugerscenarie, sensorfunktionen og Windows-indstillingerne for skærmtimeout. Vi anbefaler derfor, at du øjeblikkeligt låser systemet, før du forlader det."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIGTSGENKENDELSE",
+                        "caption": "Du kan aktivere ansigtsgenkendelsesfunktionen og tillade, at den får adgang til kameraet. Dette værktøj tager et billede af dig for at kunne registrere din tilstedeværelse med præcision eller registrere, når du har forladt din enhed uden opsyn. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                        "checkBox": "Tænd for kameraet, og aktivér denne funktion",
+                        "note": {
+                            "permission": "Lenovo Vantage har ikke adgang til kamera. Afkrydsningsfeltet fungerer ikke.",
+                            "privacyMode": "Privat kameratilstand er aktiveret for Lenovo Vantage. Afkrydsningsfeltet fungerer ikke.",
+                            "windowsLink": "Gå til Windows-indstillinger for at give adgang",
+                            "privacyLink": "Gå til privat kameratilstand for at slå det fra"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1233,7 +1466,8 @@
                     "caption": "Den automatiske afstandsjustering opdaterer automatisk registreringsafstanden via en AI-funktion.",
                     "options": {
                         "near": "Tæt på",
-                        "far": "Langt"
+                        "far": "Langt",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1253,13 +1487,17 @@
                     "description3": "1. Hvis din computer er i Telt-, Tablet- eller Støtte-tilstand, fungerer disse funktioner muligvis ikke korrekt.",
                     "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Logon uden berøring fungerer ikke.",
                     "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon.",
-                    "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret."
+                    "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
                     "screenTimeoutSettings": "Gå til indstillinger for skærmtimeout"
                 },
-                "resetToDefault": "Nulstil"
+                "resetToDefault": "Nulstil",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skærm",
@@ -1410,6 +1648,7 @@
         "banner": {
             "neverChecked": "Velkommen til brug af systemopdatering",
             "title": "Et opdateret system er et velfungerende system.",
+            "installingTitle": "Under opdateringerne må du ikke sætte computeren i slumre- eller dvaletilstand.",
             "last": "Senest opdateret: ",
             "next": "Næste planlagte opdatering: ",
             "checkButton": "SØG EFTER OPDATERINGER",
@@ -1644,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
-                "unknown": "Ukendt"
+                "unknown": "Ukendt",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2559,5 +2799,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

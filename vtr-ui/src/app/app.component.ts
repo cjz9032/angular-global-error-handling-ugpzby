@@ -27,13 +27,17 @@ import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
+import { AppUpdateService } from './services/app-update/app-update.service';
+import { Title } from '@angular/platform-browser';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 
 declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
-	providers: [TimerService]
+	styleUrls: [ './app.component.scss' ],
+	providers: [ TimerService ]
 })
 export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
@@ -42,6 +46,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	private metricsClient: any;
 	private beta;
 	private subscription: Subscription;
+	pageTitle = this.isGaming ? 'gaming.common.narrator.pageTitle.device' : '';
 	private totalDuration = 0; // itermittant app duratin will be added to it
 
 	constructor(
@@ -58,6 +63,9 @@ export class AppComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
+		private appUpdateService: AppUpdateService,
+		private titleService: Title,
+		private appsForYouService: AppsForYouService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -69,7 +77,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-
 
 		this.initIsBeta();
 		this.metricsClient = this.vantageShellService.getMetrics();
@@ -171,7 +178,9 @@ export class AppComponent implements OnInit, OnDestroy {
 			.getIsARM()
 			.then((status: boolean) => {
 				if (!status || !this.deviceService.isAndroid) {
-					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(
+						LocalStorageKey.WelcomeTutorial
+					);
 					if (tutorial === undefined && navigator.onLine) {
 						this.openWelcomeModal(1);
 					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
@@ -179,7 +188,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					}
 				}
 			})
-			.catch((error) => { });
+			.catch((error) => {});
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -278,7 +287,9 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		setTimeout(() => { document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+		setTimeout(() => {
+			document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+		}, 0);
 	}
 
 	private initIsBeta() {
@@ -342,6 +353,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.userService.loginSilently();
 		}
 
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
+		}
+
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
 			if (s instanceof NavigationEnd) {
@@ -352,6 +367,8 @@ export class AppComponent implements OnInit, OnDestroy {
 						element.scrollIntoView(true);
 					}
 				}
+				this.pageTitle = this.titleService.getTitle();
+				document.getElementById('main-wrapper').focus();
 			}
 		});
 
@@ -382,12 +399,12 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 
-					const isLocaleSame = this.languageService.isLocaleSame(value.locale);
+					// const isLocaleSame = this.languageService.isLocaleSame(value.locale);
 
-					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
+					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
 						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// update DeviceInfo values in case user switched language
+						// // update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 
@@ -398,7 +415,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					// then relaunch app you will see the machineinfo in localstorage.
 					return value;
 				})
-				.catch((error) => { });
+				.catch((error) => {});
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -433,9 +450,9 @@ export class AppComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					})
-					.catch((error) => { });
+					.catch((error) => {});
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	private notifyNetworkState() {
@@ -488,7 +505,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	// 	});
 	// }
 
-	@HostListener('window:keyup', ['$event'])
+	@HostListener('window:keyup', [ '$event' ])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -513,10 +530,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			// 		keyboard: false
 			// 	});
 			// }
-		} catch (error) { }
+		} catch (error) {}
 	}
 
-	@HostListener('window:load', ['$event'])
+	@HostListener('window:load', [ '$event' ])
 	onLoad(event) {
 		this.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
@@ -528,15 +545,11 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', ['$event'])
+	@HostListener('window:keydown', [ '$event' ])
 	disableCtrlA($event: KeyboardEvent) {
-
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 
-		if (
-			($event.ctrlKey || $event.metaKey) &&
-			($event.keyCode === 65) && !isPrivacyTab
-		) {
+		if (($event.ctrlKey || $event.metaKey) && $event.keyCode === 65 && !isPrivacyTab) {
 			$event.stopPropagation();
 			$event.preventDefault();
 		}
