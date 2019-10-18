@@ -143,19 +143,7 @@
 			},
 			"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
 			"subitems": []
-		},{
-            "id": "smart-performance",
-            "label": "Smart performance",
-            "path": "smart-performance",
-            "icon": "",
-            "metricsEvent": "itemClick",
-            "metricsParent": "navbar",
-            "metricsItem": "",
-            "routerLinkActiveOptions": {
-                "exact": true
-            },
-            "subitems": []
-        }]
+		}]
 	}, {
 		"id": "security",
 		"label": "common.menu.security.title",
