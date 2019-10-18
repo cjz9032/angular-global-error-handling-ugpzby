@@ -877,15 +877,15 @@
 
 				@media #{$small-screen} {
 					margin-top: -0.1rem;
-					padding: 6rem 3rem 1.5rem 3rem;
-					background-color: $gaming_darkest;
+					padding: 6rem 3rem 1.5rem 3rem !important;
+					background-color: $gaming_darkest !important;
 					background-image: none;
 				}
 
 				@media #{$medium-screen} {
 					margin-top: -0.1rem;
-					padding: 6rem 6.5rem 4rem 6.5rem;
-					background-color: $gaming_darkest;
+					padding: 6rem 6.5rem 4rem 6.5rem !important;
+					background-color: $gaming_darkest !important;
 					background-image: none;
 				}
 
