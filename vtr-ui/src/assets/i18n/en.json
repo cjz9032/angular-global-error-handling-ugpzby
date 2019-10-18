@@ -645,7 +645,10 @@
 			"collapse": "Collapse",
 			"expand": "Expand",
 			"loader": "Fetching <br> Status",
-			"loading": "Loading..."
+			"loading": "Loading...",
+			"from": "from",
+			"to": "to",
+			"clickToChange": "click to change"
 		},
 		"app-update": {
 			"message": "Hey! A newer version of Vantage is available, do you want to load it?"
@@ -1036,7 +1039,8 @@
 						"weekends": "Weekends"
 					},
 					"warningtip": "Please select at least one day.",
-					"checkbox": "Auto adjusting your computer's active time based on your usage"
+					"checkbox": "Auto adjusting your computer's active time based on your usage",
+					"hyperlinkToGraph": "Click to see the activity and active time of your computer table"
 				},
 				"batterySettings": {
 					"title": "Battery settings",

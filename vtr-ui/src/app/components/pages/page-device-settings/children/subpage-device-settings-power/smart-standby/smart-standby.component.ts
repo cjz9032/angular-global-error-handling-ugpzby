@@ -25,6 +25,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	showDropDown: boolean[];
 	toggleSubscription: Subscription;
 	checkbox = false;
+	isCollapsed = false;
 
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
@@ -251,6 +252,14 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 
 	onCheckboxClicked() {
 		//this.checkbox
+	}
+
+	public onToggle() {
+		this.isCollapsed = !this.isCollapsed;
+	}
+
+	public showUsageGraph() {
+
 	}
 
 	ngOnDestroy() {
