@@ -28,11 +28,4 @@ export class UiHeaderWarrantyComponent implements OnInit {
 		this.supportService.getWarrantyInfo(online);
 	}
 
-	dateFormat(date: Date) {
-		if ((date instanceof Date) === false) {
-			date = new Date(date);
-		}
-		return this.commonService.formatDate(date.toISOString());
-	}
-
 }
