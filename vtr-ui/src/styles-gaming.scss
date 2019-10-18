@@ -1218,8 +1218,7 @@
 	}
 // changes to be done from here
 	.vtr-home-security-content {
-		background-color: $gaming_dark;
-	
+		background-color: $gaming_dark!important;	
 		.header {
 			.heading {
 				color: $gaming_lightest!important;
@@ -1235,9 +1234,7 @@
 			}
 		}
 	
-		.bullet-list {
-			background-color: $light;
-	
+		.bullet-list {				
 			li {
 				color: $gaming_lightest!important;
 			}
@@ -1285,7 +1282,7 @@
 
 	.vtr-security-health {
 		background-color: $gaming_dark!important;	
-		.title {
+		.subTitle {
 			color: $gaming_lightest!important;
 		}
 	}	
@@ -1300,6 +1297,9 @@
 		}
 		.text-content {
 			color: $gaming_light_blue!important;
+			.text-regular{
+				color:$gaming_lightest!important;
+			}
 		}
 
 		.peace-of-mind {
@@ -1311,13 +1311,14 @@
 
 	.vtr-connected-home-status {
 		background-color: $gaming_dark!important;
+		border: 0.1rem solid $gaming_dark!important;
 		.title {
-			color: $gaming_lightest;
+			color: $gaming_lightest!important;
 		}
-
 		.card-header {
 			background: $gaming_darkest!important;
 			color: $gaming_lightest!important;
+			border: 0.1rem solid $gaming_dark!important;
 		}
 	}
 

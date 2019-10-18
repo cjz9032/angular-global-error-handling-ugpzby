@@ -10,7 +10,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -323,15 +322,6 @@ export class PageSupportComponent implements OnInit {
 					this.articles.middleBottomSmall.push(article);
 				}
 			}
-		});
-	}
-
-	onFeedbackModal() {
-		this.modalService.open(FeedbackFormComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'feedback-modal'
 		});
 	}
 	
