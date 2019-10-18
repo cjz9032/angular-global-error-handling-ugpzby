@@ -12,7 +12,6 @@
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 
 		.circle-container {
-			padding-left: 4rem;
 			padding-top: 5rem;
 
 			img {
@@ -29,7 +28,7 @@
 			padding-top: 5rem;
 			padding-bottom: 2rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_X4} {
+			@media #{$mediaquery_X5} {
 				padding-left: 7rem;
 				span {
 					max-width: 33rem;
@@ -47,7 +46,7 @@
 			padding-left: 1rem;
 			padding-top: 0rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_X4} {
+			@media #{$mediaquery_X5} {
 				padding-left: 7rem;
 			}
 		}
@@ -56,7 +55,7 @@
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_X4} {
+			@media #{$mediaquery_X5} {
 				padding-left: 7rem;
 			}
 			vtr-ui-button {
