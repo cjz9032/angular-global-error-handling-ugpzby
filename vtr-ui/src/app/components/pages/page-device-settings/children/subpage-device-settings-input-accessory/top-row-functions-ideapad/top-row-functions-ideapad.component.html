@@ -18,7 +18,7 @@
 						<div class="mr-5">
 							<vtr-ui-rectangle-radio [radioId]="'radio1'"
 													[checked]="hotkey$ | async"
-													[group]="'radio'"
+													[group]="'top-row-functions-ideapad-radio'"
 													[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
 													[iconName]="'icomoon icomoon-Special-function'"
 													(change)="update$.next(keyType.HOTKEY)"
@@ -27,7 +27,7 @@
 						</div>
 						<div>
 							<vtr-ui-rectangle-radio [radioId]="'radio2'"
-													[group]="'radio'"
+													[group]="'top-row-functions-ideapad-radio'"
 													[checked]="fnkey$ | async"
 													[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
 													[iconName]="'icomoon icomoon-F1-F12-funciton'"
