@@ -18,20 +18,12 @@ export class TimerServiceEx {
 	private counter = 0;
 	private enableCounting = true;
 	constructor() {
-		window.addEventListener('focus', () => {
-			this.onWindowFocus();
+		document.addEventListener('vantageSessionLose', () => {
+			this.enableCounting = false;
 		});
 
-		window.addEventListener('blur', () => {
-			this.onWindowBlur();
-		});
-
-		document.addEventListener('visibilitychange', () => {
-			if (document.hidden) {
-				this.onInvisable();
-			} else {
-				this.onVisable();
-			}
+		document.addEventListener('vantageSessionResume', () => {
+			this.enableCounting = true;
 		});
 
 		setInterval(() => {
@@ -39,30 +31,6 @@ export class TimerServiceEx {
 				this.counter += 1;
 			}
 		}, 1000);
-	}
-
-	private onWindowFocus(): void {
-		this.onResume();
-	}
-
-	private onInvisable(): void {
-		this.onResume();
-	}
-
-	private onWindowBlur(): void {
-		this.onSuspend();
-	}
-
-	private onVisable(): void {
-		this.onSuspend();
-	}
-
-	private onResume() {
-		this.enableCounting = true;
-	}
-
-	private onSuspend() {
-		this.enableCounting = false;
 	}
 
 	private getTick() {
@@ -73,4 +41,3 @@ export class TimerServiceEx {
 		return new Duration(this);
 	}
 }
-

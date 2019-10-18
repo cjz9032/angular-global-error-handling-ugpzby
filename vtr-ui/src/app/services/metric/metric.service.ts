@@ -13,23 +13,16 @@ export class MetricService {
 	private metricsClient: any;
 	private blurStart = Date.now();
 	private durationCalculator;
+
 	private totalDuration = 0; 	// itermittant app duratin will be added to it
 	constructor(private shellService: VantageShellService, private timerService: TimerServiceEx) {
 		this.metricsClient = this.shellService.getMetrics();
-		window.addEventListener('focus', () => {
-			this.onWindowFocus();
+		document.addEventListener('vantageSessionLose', () => {
+			this.onLoseSession();
 		});
 
-		window.addEventListener('blur', () => {
-			this.onWindowBlur();
-		});
-
-		document.addEventListener('visibilitychange', () => {
-			if (document.hidden) {
-				this.onInvisable();
-			} else {
-				this.onVisable();
-			}
+		document.addEventListener('vantageSessionResume', () => {
+			this.onResumeSession();
 		});
 	}
 
@@ -110,47 +103,33 @@ export class MetricService {
 	}
 
 	public sendAppSuspendMetric() {
+		if (!this.durationCalculator) {
+			return;
+		}
+
 		const duration = this.durationCalculator.getDuration();
 		this.totalDuration += duration;
 		const stub = this.shellService.getVantageStub();
 		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration, this.totalDuration));
 	}
 
-	private onVisable(): void {
-		this.onSessionResume();
-	}
-
-	private onWindowFocus(): void {
-		this.onSessionResume();
-	}
-
-	private onWindowBlur(): void {
-		this.onLoseSession();
-	}
-
-	private onInvisable(): void {
-		this.onLoseSession();
-	}
-
 	private onLoseSession() {
-		if (!this.blurStart) {	// prevent double execution
-			this.blurStart = Date.now();
-
-			this.sendAppSuspendMetric();
-		}
+		this.sendAppSuspendMetric();
+		this.blurStart = Date.now();
 	}
 
-	private onSessionResume() {
-		if (this.blurStart) {	// prevent double execution
-			const idleDuration = Math.floor((Date.now() - this.blurStart) / 1000);
-			if (this.metricsClient.updateSessionId && idleDuration > 1800) { // 30 * min
-				this.metricsClient.updateSessionId();
-			}
+	private onResumeSession() {
+		this.sendAppResumeMetric();
 
-			this.sendAppResumeMetric();
-
-			this.blurStart = null;
+		if (this.blurStart) {
+			return;
 		}
+
+		const idleDuration = Math.floor((Date.now() - this.blurStart) / 1000);
+		if (this.metricsClient.updateSessionId && idleDuration > 1800) { // 30 * min
+			this.metricsClient.updateSessionId();
+		}
+		this.blurStart = null;
 	}
 
 }
