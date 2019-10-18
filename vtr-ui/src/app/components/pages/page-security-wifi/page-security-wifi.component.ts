@@ -94,23 +94,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 		this.fetchCMSArticles();
 
-		this.localInfoService.getLocalInfo().then(result => {
-			this.region = result.GEO;
-			this.language = result.Lang;
-			if (this.hypSettings) {
-				this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((res) => {
-					const shellVersion = {
-						major: 10,
-						minor: 1910,
-						build: 12
-					};
-					this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think' && ((res || '').toString() === 'true') && this.configService.isShowCHSByShellVersion(shellVersion);
-				});
-			}
-		}).catch(e => {
-			this.region = 'us';
-			this.language = 'en';
-		});
+		this.showChs = this.configService.showCHSMenu && this.brand !== 'think';
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);

@@ -20,12 +20,16 @@
 				border: none;
 			}
 
-			a {
+			button {
 				width: 100%;
 				height: 100%;
 				color: $shade_blue;
 				display: block;
 				cursor: pointer;
+				background: none;
+				border: none;
+				text-align: left;
+				letter-spacing: 0;
 
 				.item-icon-content {
 					display: flex;
