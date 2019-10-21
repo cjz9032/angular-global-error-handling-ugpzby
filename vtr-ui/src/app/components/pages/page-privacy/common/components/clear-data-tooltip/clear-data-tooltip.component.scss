@@ -17,10 +17,7 @@
 
 	&__button {
 		@extend %button-link;
-		font-weight: 600;
-
-		&:before {
-			display: none;
-		}
+		@extend %button-link--clear-text;
+		@extend %button-link--uppercase;
 	}
 }

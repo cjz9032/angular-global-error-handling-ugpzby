@@ -153,11 +153,6 @@ $leftIndent: 7.5rem;
 	&__preview-link {
 		@extend %button-link;
 
-		color: #4A81FD;
-		font-size: 1.6rem;
-		font-weight: 600;
-		line-height: 2.3rem;
-		letter-spacing: 0.5px;
 		display: none;
 
 		&:before {
@@ -187,11 +182,6 @@ $leftIndent: 7.5rem;
 		@extend %button-link;
 		text-transform: capitalize;
 		cursor: pointer;
-		color: #4A81FD;
-		font-size: 1.6rem;
-		font-weight: 500;
-		line-height: 2.3rem;
-		letter-spacing: 0.5px;
 
 		& span {
 			cursor: pointer;

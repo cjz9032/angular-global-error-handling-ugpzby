@@ -60,6 +60,7 @@
 
 	&__btn {
 		@extend %theme-btn;
+		min-width: 22rem;
 	}
 }
 

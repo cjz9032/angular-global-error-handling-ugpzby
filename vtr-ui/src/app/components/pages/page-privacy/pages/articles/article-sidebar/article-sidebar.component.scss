@@ -29,8 +29,8 @@
 }
 
 .all-articles-link {
+	@extend %button-link;
 	@extend %button-link__text;
-	font-size: 1.3rem;
-	text-transform: uppercase;
-	color: #4A81FD;
+	@extend %button-link--uppercase;
+	@extend %button-link--padding-0;
 }

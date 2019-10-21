@@ -74,7 +74,7 @@ export class EmailScannerService {
 	private getUserEmail() {
 		const emailFromSafeStorage = this.safeStorageService.getEmail() || '';
 		const hashFromLocalStorage = this.storageService.getItem(USER_EMAIL_HASH);
-		return getSha1Hash(emailFromSafeStorage) === hashFromLocalStorage ? emailFromSafeStorage : '';
+		return getSha1Hash(emailFromSafeStorage).toString() === hashFromLocalStorage ? emailFromSafeStorage : '';
 	}
 
 	setUserEmail(userEmail) {
