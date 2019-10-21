@@ -1,10 +1,12 @@
 <div ngbDropdown
+	#warrantyDrop="ngbDropdown"
 	class="d-inline-block dropdown-content"
 	*ngIf="warrantyData.info.status === 0 || warrantyData.info.status === 1">
 	<div class="dropdown-btn"
 		id="header-warranty-icon"
 		tabindex="1"
 		aria-label="header-warranty-icon"
+		(keyup.enter)="$event.stopPropagation(); warrantyDrop.open();"
 		ngbDropdownToggle>
 		<div class="icon-con in-warranty"
 			*ngIf="warrantyData.info.status === 0">
