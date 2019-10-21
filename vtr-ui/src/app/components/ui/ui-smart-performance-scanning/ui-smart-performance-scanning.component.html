@@ -22,7 +22,7 @@
 								<span class="progress-value-text pb-4">{{percent}}</span>
 								<span
 									class="progress-complete-text" id="su-progress-complete-text"
-									aria-label="su-progress-complete-text">Complete</span>
+									aria-label="su-progress-complete-text">% Complete</span>
 							</div>
 						</div>
 					</div>
@@ -44,15 +44,135 @@
 								metricsParent="Pages.SystemUpdate"
 								metricsItem="'btn.cancel'"
 								class="btn btn-link cancel-check"
-								(click)="openCancelScanModel()"
+								[disabled]="percent === 0 || isCheckingStatus" (click)="openCancelScanModel()"
 								 >Cancel Scan</button>
 						</div>
 					</div>
 				</div>
 
         </div>
-    </div>
-    <div class="row">
+	</div>
+	
+
+<div class="row">
+	<div class="pc-info-card pc-accordion w-100 my-5">
+		<div class="col-12">
+			<accordion [isAnimated]="true" [closeOthers]="true">
+				<accordion-group [isOpen]="activegroup === 'Tune up performance'">
+					<div class="d-flex justify-content-between" accordion-heading>
+						<div class="heading">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<h2>Tune up performance</h2>
+						</div>
+						<div *ngIf="currentCategory===1" class="status-text float-right pull-right" >
+							<vtr-widget-speedometer #speedometer></vtr-widget-speedometer>
+						</div>
+					</div>
+					<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p [ngClass]="{'text-primary': scanData.status.subcategory=='Accumilated junk'}">Accumulated Junk</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>Usability Issues</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>Windows Settings</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>System Errors</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<!-- <p>Registry Errors</p> -->
+							<p [ngClass]="{'text-primary': scanData.status.subcategory=='Registry Errors'}">Registry Errors</p>
+						</div>
+					</div>
+
+				</accordion-group>
+				<accordion-group [isOpen]="activegroup === 'Malware & Security'">
+					<div class="d-flex justify-content-between align-items-center" accordion-heading>
+						<div class="heading">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<h3>Malware &amp; Security</h3>
+						</div>
+						<div  *ngIf="currentCategory===2" class="status-text float-right pull-right">
+							<vtr-widget-speedometer #speedometer></vtr-widget-speedometer>
+						</div>
+					</div>
+					<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<!-- <p>Malware Scan</p> -->
+							<p [ngClass]="{'text-primary': scanData.status.subcategory=='Malware Scan'}">Malware Scan</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>Zero-day Infections</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>Security Settings</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>Errant Programs</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<!-- <p>Annoying adware</p> -->
+							<p [ngClass]="{'text-primary': scanData.status.subcategory=='Annoying adware'}">Annoying adware</p>
+						</div>
+					</div>
+				</accordion-group>
+				<accordion-group [isOpen]="activegroup === 'Internet performance'">
+					<div class="d-flex justify-content-between align-items-center" accordion-heading>
+						<div class="heading">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<h3>Internet performance</h3>
+						</div>
+						<!-- <div class="status-text float-right pull-right">
+							<p>WAITING TO SCAN</p>
+						</div> -->
+						<div  *ngIf="currentCategory===3" class="status-text float-right pull-right" >
+							<vtr-widget-speedometer #speedometer></vtr-widget-speedometer>
+						</div>
+					</div>
+					<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<!-- <p>Network Settings</p> -->
+							<p [ngClass]="{'text-primary': scanData.status.subcategory=='Network Settings'}">Network Settings</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>Browser Settings</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>Browser Security</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<p>Wi-Fi Performance</p>
+						</div>
+						<div class="icon-box d-flex justify-content-center">
+							<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+							<!-- <p>E-Junk</p> -->
+							<p [ngClass]="{'text-primary': scanData.status.subcategory=='e-junk'}">E-Junk</p>
+						</div>
+					</div>
+				</accordion-group>
+			</accordion>
+		</div>
+	</div>
+</div>
+
+
+    <!-- <div class="row">
         <div class="pc-info-card pc-tune">
             <div class="col-12">
                 <div class="d-flex justify-content-between">
@@ -64,7 +184,7 @@
                 <div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
                     <div class="icon-box d-flex justify-content-center">
                         <fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-                        <p>Accumulated Junk</p>
+						<p [ngClass]="{'text-primary': scanData.status.subcategory=='Accumilated junk'}">Accumulated Junk</p>
                     </div>
                     <div class="icon-box d-flex justify-content-center">
                         <fa-icon [icon]="['fas', 'laptop']"></fa-icon>
@@ -85,8 +205,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
+    </div> -->
+    <!-- <div class="row">
         <div class="pc-info-card card-small malware-security-card">
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
@@ -115,5 +235,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
