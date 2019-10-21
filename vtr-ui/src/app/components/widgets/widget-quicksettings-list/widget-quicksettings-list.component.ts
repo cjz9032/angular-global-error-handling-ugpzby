@@ -190,8 +190,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.initialiseRapidChargeSettings();
 		this.getWifiSecuritySettings();
 		this.runLocationService();
-		const cacheWifiSecurityState = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		cacheWifiSecurityState === 'enabled' ? this.quickSettings[2].isChecked = true : this.quickSettings[2].isChecked = false;
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.smartFanFeature
 		);
