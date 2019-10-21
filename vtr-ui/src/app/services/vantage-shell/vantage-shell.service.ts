@@ -35,10 +35,8 @@ export class VantageShellService {
 			});
 
 			this.phoenix.loadFeatures([
-				Phoenix.Features.Dashboard,
 				Phoenix.Features.Device,
 				Phoenix.Features.LenovoId,
-				Phoenix.Features.SystemInformation,
 				Phoenix.Features.HwSettings,
 				// Phoenix.Features.Gaming,
 				Phoenix.Features.SystemUpdate,
@@ -51,10 +49,7 @@ export class VantageShellService {
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
-				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
-				Phoenix.Features.BetaUser,
-				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy
 			]);
 		} else {
