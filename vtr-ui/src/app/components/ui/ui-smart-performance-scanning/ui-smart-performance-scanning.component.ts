@@ -19,9 +19,11 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	@Input() isCheckingStatus = false;
 	@Output() sendScanStatus = new EventEmitter();
 
+	sampleDesc = 'This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up';
 	index = 0;
 	@Input() activegroup = "Tune up performance";
 	currentCategory = 1;
+	subItems: any = {};
 	public vdata=[
 		{
 			"percentage":0,
@@ -116,7 +118,8 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
   ngOnInit() {
 	this.scanData = this.vdata[0];
 	this.initSpeed();
-	this.GetScanStatus();	 
+	this.GetScanStatus();	
+	this.updateTuneUpPerformanceSubItems('Performance', this.sampleDesc); 
   }
   openCancelScanModel() {
 	  this.modalService.open(ModalSmartPerformanceCancelComponent, {
@@ -136,11 +139,13 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			 {
 				this.activegroup = "Malware & Security";
 				this.currentCategory=2;
+				this.updateMalwareSubItems('Malware', this.sampleDesc);
 			 }
 			 if(this.index==4)
 			 {
 				this.activegroup = "Internet performance";
 				this.currentCategory=3;
+				this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
 			 }
 			}	
 		 }, 2000);
@@ -169,5 +174,42 @@ initSpeed() {
 		clearInterval(self.loop);
 		self.speedometer.speedCurrent = self.speedometer.speedMax * .9;
 	}, 3000);
+}
+updateTuneUpPerformanceSubItems(name, desc) {
+	this.subItems = {
+		name,
+		desc,
+		items: [
+			{key: 'Performance 1', isCurrent: true},
+			{key: 'Performance 2'},
+			{key: 'Performance 3'},
+			{key: 'Performance 4'}
+		]};
+	//this.subItemsList.emit(this.subItems);
+}
+updateMalwareSubItems(name, desc) {
+	this.subItems = {
+		name,
+		desc,
+		items: [
+			{key: 'Malware 1', isCurrent: true},
+			{key: 'Malware 2'},
+			{key: 'Malware 3'},
+			{key: 'Malware 4'},
+	]};
+	//this.subItemsList.emit(this.subItems);
+}
+
+updateInternetPerformanceSubItems(name, desc) {
+	this.subItems = {
+		name,
+		desc,
+		items: [
+			{key: 'IP 1', isCurrent: true},
+			{key: 'IP 2'},
+			{key: 'IP 3'},
+			{key: 'IP 4'}
+	]};
+	//this.subItemsList.emit(this.subItems);
 }
 }

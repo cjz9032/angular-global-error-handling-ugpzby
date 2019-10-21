@@ -6,15 +6,14 @@
 			</vtr-header-main>
 		</div>
 	</div>
-
-	<div class="row vtr-page-content">
+	<div class="row vtr-page-content" *ngIf="!isScanning && !isScanningCompleted">
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 						<div class="vtr-page-shift-up">
 							<div class="vtr-device-information">
-								<div class="container-fluid" *ngIf="!isScanning && !isScanningCompleted">
+								<div class="container-fluid">
 									<div class="row">
 										<div class="col col-12 offline-info-background py-5">
 											<div class="d-flex justify-content-center w-100">
@@ -278,9 +277,9 @@
 										</div>
 									</div>
 								</div>
-								 <vtr-ui-smart-performance-scanning 
+								 <!-- <vtr-ui-smart-performance-scanning 
 								*ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
-							</vtr-ui-smart-performance-scanning>
+							</vtr-ui-smart-performance-scanning> -->
 							<div class="system-scan-complete" *ngIf="isScanningCompleted">
 									<div class="row">
 										<div class="col col-12 offline-info-background">
@@ -331,179 +330,19 @@
 													Once today and every week thereafter. <a href="#" class="para-link">Learn more</a></p>
 												</div>
 											</div>
-											<!-- <div class="summary-results">
-												<accordion [isAnimated]="true" [closeOthers]="true">
-													<accordion-group [isOpen]="activegroup === 'Tune up performance'">
-														<div class="d-flex justify-content-between" accordion-heading>
-															<div class="heading">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<h3>Tune up performance</h3>
-															</div>
-															<div class="status-text float-right pull-right">
-																
-															</div>
-														</div>
-														<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p [ngClass]="{'text-primary': scanData.status.subcategory=='Accumilated junk'}">Accumulated Junk</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>Usability Issues</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>Windows Settings</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>System Errors</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-															 
-																<p [ngClass]="{'text-primary': scanData.status.subcategory=='Registry Errors'}">Registry Errors</p>
-															</div>
-														</div>
-									
-													</accordion-group>
-													<accordion-group [isOpen]="activegroup === 'Malware & Security'">
-														<div class="d-flex justify-content-between align-items-center" accordion-heading>
-															<div class="heading">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<h3>Malware &amp; Security</h3>
-															</div>
-															<div class="status-text float-right pull-right">
-																
-															</div>
-														</div>
-														<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-															 
-																<p [ngClass]="{'text-primary': scanData.status.subcategory=='Malware Scan'}">Malware Scan</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>Zero-day Infections</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>Security Settings</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>Errant Programs</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-															 
-																<p [ngClass]="{'text-primary': scanData.status.subcategory=='Annoying adware'}">Annoying adware</p>
-															</div>
-														</div>
-													</accordion-group>
-													<accordion-group [isOpen]="activegroup === 'Internet performance'">
-														<div class="d-flex justify-content-between align-items-center" accordion-heading>
-															<div class="heading">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<h3>Internet performance</h3>
-															</div>
-															<div class="status-text float-right pull-right">
-																<p>WAITING TO SCAN</p>
-															</div>
-														</div>
-														<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-															 
-																<p [ngClass]="{'text-primary': scanData.status.subcategory=='Network Settings'}">Network Settings</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>Browser Settings</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>Browser Security</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																<p>Wi-Fi Performance</p>
-															</div>
-															<div class="icon-box d-flex justify-content-center">
-																<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																 
-																<p [ngClass]="{'text-primary': scanData.status.subcategory=='e-junk'}">E-Junk</p>
-															</div>
-														</div>
-													</accordion-group>
-												</accordion>
-											</div> -->
 										</div>
 									</div>
 									<div class="row">
-											
-										<!-- <p>
-											<button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-													[attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-												Toggle
-											</button>
-											</p>
-											<div id="collapseExample" [ngbCollapse]="isCollapsed">
-											<div class="card">
-												<div class="card-body">
-												You can collapse this card by clicking Toggle
-												</div>
-											</div>
-										</div> -->
+									 
 									</div>
 								</div>
-								<vtr-ui-smart-performance-scan-summary></vtr-ui-smart-performance-scan-summary>
 							</div>							
 						</div>
 					</div>
 					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
-								<!-- <div class="row mb-40">
-									<div class="col col-12">
-										<div class="warranty-box expired">
-											<div class="row">
-												<div class="col">
-													<div class="title pb-40">warranty expired</div>
-													<div class="content">
-														<div class="sub-title">
-															1Y Depot warranty
-														</div>
-														<div class="sub-description pb-40">
-															This product has years limited warranty and it entitled to
-															depot repair service.
-															Customers may call their local service center for more
-															information.
-															Dealers may provide carry-in repair for this product.
-														</div>
-														<div class="sub-title">Warranty details</div>
-														<div class="sub-description pb-40">
-															<div class="pb-2">
-																Start date:<b>2017/12/13</b></div>
-															<div class="pb-2">
-																end date:<b>2018/12/12</b></div>
-															<div class="pb-2">
-																Status:<b>Expired</b>
-															</div>
-														</div>
-														<div class="button-box">
-															<a class="button">view warranty options</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div> -->
-
-								<div class="row mb-40"  *ngIf="!isScanning && !isScanningCompleted">
+								<div class="row mb-40" >
 									<div class="col col-12">
 										<div class="subscription-details sidebar-widget">
 											<div class="title pb-3">
@@ -547,10 +386,6 @@
 														<strong>Enable Scan</strong>
 													</div>
 													<div class="status d-flex justify-content-end">
-														<!-- <vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue"
-														[disabled]="disabledAll"
-														(toggle)="onAutoExposureChange($event)"
-														[onOffSwitchId]="'cameraSettings-autoExposure'"></vtr-ui-switch-onoff> -->
 														<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
 													</div>
 												</li>
@@ -628,4 +463,8 @@
 			</div>
 		</div>
 	</div>
+	<vtr-ui-smart-performance-scanning 
+*ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
+</vtr-ui-smart-performance-scanning>
+<vtr-ui-smart-performance-scan-summary *ngIf="isScanningCompleted"></vtr-ui-smart-performance-scan-summary>
 </div>
