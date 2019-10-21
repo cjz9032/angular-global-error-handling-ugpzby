@@ -148,8 +148,10 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
 		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
 		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
 		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+		}
 	}
 
 	ngOnInit() {

@@ -1,0 +1,132 @@
+<div class="vtr-ui-smart-performance-scan-summary">
+	<div class="vtr-device-information mt-5">
+		<div class="scan-summary-block">
+			<div class="row px-0">
+				<div class="navbar bkg-transparent justify-content-between w-100">
+
+					<div class="title-block col">
+						<h3>Scan summary:</h3>
+						<p>we are constantly tuning your computer</p>
+					</div>
+
+
+					<div class="summary-period col-auto pr-0 py-0">
+						<ul class="list-group list-group-horizontal">
+								<li class="list-group-item">Annual</li>
+								<li class="list-group-item">quarterly</li>
+								<li class="list-group-item">custom</li>
+								<li class="list-group-item cl">
+									<fa-icon [icon]="['fal', 'calendar-alt']"></fa-icon> October 8th 2019</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+			<div class="row my-5 d-flex justify-content-between px-0">
+					<div class="tune">
+						<div class="d-flex justify-content-between">
+							<div class="flex-column">
+								<h5>Tune</h5>
+								<div class="value">65 <span>GB</span></div>
+								<p>Disk space reclaimed</p>
+							</div>
+							<fa-icon [icon]="['fal', 'tachometer-alt-fast']"></fa-icon>
+						</div>
+					</div>
+					<div class="boost">
+						<div class="d-flex justify-content-between">
+							<div class="flex-column">
+								<h5>Boost</h5>
+								<div class="value">84</div>
+								<p>Fixes to improve performance</p>
+							</div>
+							<fa-icon [icon]="['fal', 'wifi']"></fa-icon>
+						</div>
+					</div>
+					<div class="secure">
+						<div class="d-flex justify-content-between">
+							<div class="flex-column">
+								<h5>Secure</h5>
+								<div class="value">11</div>
+								<p>fixes to improve security</p>
+							</div>
+							<fa-layers [fixedWidth]="true">
+								<fa-icon class="shield" [icon]="['fal', 'shield']"></fa-icon>
+								<fa-icon class="bug" [icon]="['fas', 'bug']"></fa-icon>
+							</fa-layers>
+						</div>
+					</div>
+			</div>
+			<div class="row px-0">
+				<div class="title-block">
+					<h3>Last 5 scan results:</h3>
+				</div>
+			</div>
+			<div class="row px-0">
+				<div class="col">
+					<div class="scan-list-container">
+						<div class="row">
+							<div class="col">
+									<ul class="scan-list">
+											<li class=" list-item list-heading">
+												<div class="container-fluid">
+													<div class="row align-items-center">
+															<div class="offset-1 col-8">
+																	Scan date:
+															</div>
+															<div class="col-2">
+																	Results:
+															</div>
+															<div class="col-1 px-0">
+																	Status
+															</div>
+													</div>
+											</div>
+
+											</li>
+											<li class=" list-item" *ngFor="let item of items;let ind=index">
+													<div class="container-fluid">
+														<div class="row align-items-center">
+																<div class="col-1 text-center">
+																		<fa-icon class="chevron-down" [icon]="['fal', 'chevron-down']" (click)="expandRow(ind)"></fa-icon>
+																</div>
+																<div class="col-8">
+																		<b>{{item.itemDate | date: 'dd/MM/yyyy'}}</b> <span> - {{item.itemDate | date: 'h:mm a'}}</span>
+																</div>
+																<div class="col-2">
+																		{{item.itemValue}}
+																</div>
+																<div class="col-1 px-2" *ngIf="item.itemstatus">
+																	<div class="icon-check">
+																		<div class="icon-bkg">
+																				<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-1 px-2" *ngIf="!item.itemstatus">
+																		<div class="icon-times">
+																				<div class="icon-bkg">
+																						<fa-icon [icon]="['fas', 'times']"></fa-icon>
+																				</div>
+																			</div>
+																</div>
+
+														</div>
+														<div class="row" *ngIf="toggleValue === ind">
+																<div class="offset-1 col-11">
+																		{{item.itemExpandValue}}
+																</div>
+														</div>
+												</div>
+											</li>
+
+										</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

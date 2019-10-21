@@ -154,13 +154,14 @@ export class VantageShellService {
 		};
 		dashboard.getMicphoneStatus = this.getPromise(obj);
 		dashboard.getCameraStatus = this.getPromise(obj);
-		// dashboard.getEyeCareModeState = this.getPromise(obj);
+		dashboard.getEyeCareModeState = this.getPromise(obj);
 		dashboard.warranty = {};
 		dashboard.sysupdate = {};
 		dashboard.warranty.getWarrantyInformation = this.getPromise(warrantyObj);
 		dashboard.sysupdate.getMostRecentUpdateInfo = this.getPromise(sysUpdateObj);
 		dashboard.sysinfo = this.getSysinfo();
 		dashboard.sysinfo.getMemAndDiskUsage = this.getPromise(sysInfoObj);
+
 		return dashboard;
 	}
 	/**
@@ -649,48 +650,73 @@ export class VantageShellService {
 	 * returns EyecareMode object from VantageShellService of JS Bridge
 	 */
 	public getEyeCareMode(): any {
-		const eyeCareMode: any = {};
-		const displayEyeCareMode: any = {};
 		const obj = {
 			available: true,
 			status: true,
 			permission: true,
 			isLoading: false
 		};
+		const dayTimeObj = {
+			available: true,
+			current: 6500,
+			eyemodestate: false,
+			maximum: 6500,
+			minimum: 1200,
+		};
+		const eyeCareObj = {
+			available: true,
+			current: 4500,
+			default: 4500,
+			eyecaremode: 4500,
+			maximum: 6500,
+			minimum: 1200,
+			status: false,
+		};
+		const displayEyeCareMode: any = {
+			getDaytimeColorTemperature: this.getPromise(dayTimeObj),
+			getDisplayColortemperature: this.getPromise(eyeCareObj),
+			getEyeCareModeState: this.getPromise(obj),
+			initEyecaremodeSettings: this.getPromise(true),
+			startMonitor: this.getPromise(true),
+			stopMonitor: this.getPromise(true),
+			statusChangedLocationPermission: this.getPromise(true)
+		};
 
-		eyeCareMode.getEyeCareModeState = this.getPromise(obj);
-		displayEyeCareMode.initEyecaremodeSettings = this.getPromise(false);
-
-		return eyeCareMode;
+		return displayEyeCareMode;
 	}
 
 	/**
 	 * returns Privacy Guard object from VantageShellService of JS Bridge
 	 */
 	public getPrivacyGuardObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.display.privacyGuard;
-		}
-		return undefined;
+		const privacyGuardSettings: any = {
+			getPrivacyGuardCapability: this.getPromise(true),
+			getPrivacyGuardOnPasswordCapability: this.getPromise(true)
+		};
+
+		return privacyGuardSettings;
 	}
 
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public getCameraPrivacy(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.camera.cameraPrivacy;
-		}
-		return undefined;
+		const cameraPrivacyStatus: any = {
+			getCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
+			startMonitor: this.getPromise(true)
+		};
+		return cameraPrivacyStatus;
 	}
 	/**
 	 * returns cameraSettings object from VantageShellService of JS Bridge
 	 */
 	public getCameraSettings(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.camera.cameraSettings;
-		}
-		return undefined;
+	 const cameraSettings: any = {
+		startMonitor: this.getPromise(true),
+		getCameraSettings: this.getPromise(true)
+	 };
+
+	 return cameraSettings;
 	}
 	public getVantageToolBar(): any {
 		const devicePower: any = {};
@@ -825,10 +851,19 @@ export class VantageShellService {
 	}
 
 	public getCameraBlur(): any {
-		if (this.phoenix && this.phoenix.hwsettings.camera.cameraBlur) {
-			return this.phoenix.hwsettings.camera.cameraBlur;
-		}
-		return undefined;
+		const obj = {
+			available: true,
+			currentMode: 'Blur',
+			enabled: true,
+			errorCode: 0,
+			supportedModes: [
+				'Blur',
+				'Comic',
+				'Sketch',
+			]
+		};
+		const cameraBlur: any = {getCameraBlurSettings: this.getPromise(obj) };
+		return cameraBlur;
 	}
 
 	public getCPUOCStatus(): any {
@@ -1186,10 +1221,9 @@ export class VantageShellService {
 
 	/** returns OledSettings object from VantageShellService of JS Bridge */
 	public getOledSettings(): any {
-		if (this.getHwSettings()) {
-			return this.getHwSettings().display.OLEDSettings;
-		}
-		return undefined;
+		const oledSettings = { getOLEDPowerControlCapability: this.getPromise(true) };
+
+		return oledSettings;
 	}
 
 	public getVersion(): any {
