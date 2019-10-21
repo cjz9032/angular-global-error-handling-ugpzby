@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Slobodno se koristite Ažuriranjem sustava.",
-			"title": "Ažurirani sustav je zdrav sustav.",
-			"installingTitle": "Tijekom ažuriranja ne stavljajte računalo u stanje mirovanja ili hibernacije.",
+            "title": "Ažurirani sustav je zdrav sustav.",
+            "installingTitle": "Tijekom ažuriranja ne stavljajte računalo u stanje mirovanja ili hibernacije.",
             "last": "Zadnje ažuriranje: ",
             "next": "Sljedeće zakazano ažuriranje: ",
             "checkButton": "TRAŽI AŽURIRANJA",
@@ -1564,7 +1564,7 @@
             "good": "DOBRO",
             "malicious": "ZLONAMJERNO",
             "suspicious": "SUMNJIVO",
-            "securityScoreDepends": "Vaš sigurnosni rezultat pruža vam predodžbu o tome koliko ste sigurni na mreži, rezultat ovisi o sljedećem:",
+            "securityScoreDepends": "Vaš sigurnosni rezultat ovisi o tome jeste li:",
             "antivirus": "Zaštita antivirusnim softverom",
             "password": "Snažne i složene lozinke kojima se upravlja na siguran način",
             "vpn": "Praćenje izloženosti vaše mreže napadačima",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu vašem uređaju",
                 "unknown": "Nepoznato",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Uživajte u boljoj ponudi ovdje!"
             }
         },
         "wifisecurity": {

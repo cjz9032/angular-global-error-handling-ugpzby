@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Începeţi utilizarea Actualizare sistem.",
-			"title": "Un sistem actualizat este un sistem sănătos.",
-			"installingTitle": "În timpul actualizărilor, nu treceți computerul în modul repaus sau hibernare.",
+            "title": "Un sistem actualizat este un sistem sănătos.",
+            "installingTitle": "În timpul actualizărilor, nu treceți computerul în modul repaus sau hibernare.",
             "last": "Ultima actualizare: ",
             "next": "Următoarea actualizare programată: ",
             "checkButton": "CĂUTAȚI ACTUALIZĂRI",
@@ -1564,7 +1564,7 @@
             "good": "BUN",
             "malicious": "RĂU-INTENȚIONAT",
             "suspicious": "SUSPECTED",
-            "securityScoreDepends": "Scorul dvs. de securitate vă oferă o idee despre cât de sigur sunteți online, iar rezultatul depinde de următoarele:",
+            "securityScoreDepends": "Rezultatul dvs. de securitate depinde dacă sunteţi:",
             "antivirus": "Dacă sunteți protejat de software antivirus",
             "password": "Dacă aveți parole puternice și complexe gestionate într-un mod sigur",
             "vpn": "Dacă rețeaua dvs. este monitorizată împotriva expunerii la atacatori",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs.",
                 "unknown": "Necunoscut",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Bucuraţi-vă de o ofertă mai bună aici!"
             }
         },
         "wifisecurity": {

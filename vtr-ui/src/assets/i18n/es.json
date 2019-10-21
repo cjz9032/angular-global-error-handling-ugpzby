@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Bienvenido al uso de Actualización de sistema.",
-			"title": "Un sistema actualizado es un sistema en buen estado.",
-			"installingTitle": "Durante la actualización, no ponga su equipo en modalidad de suspensión o hibernación.",
+            "title": "Un sistema actualizado es un sistema en buen estado.",
+            "installingTitle": "Durante la actualización, no ponga su equipo en modalidad de suspensión o hibernación.",
             "last": "Última actualización: ",
             "next": "Siguiente actualización programada: ",
             "checkButton": "COMPROBAR ACTUALIZACIONES",
@@ -1564,7 +1564,7 @@
             "good": "BIEN",
             "malicious": "MALINTENCIONADO",
             "suspicious": "SOSPECHOSO",
-            "securityScoreDepends": "La puntuación de seguridad le da una idea de qué tan seguro está en línea, el resultado depende de si:",
+            "securityScoreDepends": "Su resultado de seguridad depende de si está:",
             "antivirus": "Está protegido por software antivirus",
             "password": "Dispone de contraseñas seguras y complejas gestionadas de forma segura",
             "vpn": "Está supervisando la exposición de la red a los atacantes",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo",
                 "unknown": "Desconocido",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Disfrute de una mejor oferta aquí."
             }
         },
         "wifisecurity": {

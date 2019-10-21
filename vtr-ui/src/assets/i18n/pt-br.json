@@ -1564,7 +1564,7 @@
             "good": "BOA",
             "malicious": "PERIGOSA",
             "suspicious": "SUSPEITA",
-            "securityScoreDepends": "Sua pontuação de segurança dá uma ideia de como você está seguro on-line, o resultado depende se você:",
+            "securityScoreDepends": "O resultado de segurança depende se você:",
             "antivirus": "É protegido por um software antivírus",
             "password": "Tem senhas fortes e complexas gerenciadas de maneira segura",
             "vpn": "Monitora sua exposição de rede aos invasores",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} oferece proteção básica para seu dispositivo",
                 "unknown": "Desconhecido",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer":"Aproveite uma oferta melhor aqui!"
             }
         },
         "wifisecurity": {

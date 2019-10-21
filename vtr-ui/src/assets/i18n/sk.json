@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vitajte v službe aktualizácie systému.",
-			"title": "Aktuálny systém je zdravý systém.",
-			"installingTitle": "Počas vykonávania aktualizácií neprepínajte svoj počítač do režimu spánku ani do režimu dlhodobého spánku.",
+            "title": "Aktuálny systém je zdravý systém.",
+            "installingTitle": "Počas vykonávania aktualizácií neprepínajte svoj počítač do režimu spánku ani do režimu dlhodobého spánku.",
             "last": "Posledná aktualizácia: ",
             "next": "Ďalšia plánovaná aktualizácia: ",
             "checkButton": "VYHĽADAŤ AKTUALIZÁCIE",
@@ -1564,7 +1564,7 @@
             "good": "DOBRÉ",
             "malicious": "ŠKODLIVÉ",
             "suspicious": "PODOZRIVÉ",
-            "securityScoreDepends": "Vaše skóre zabezpečenia poskytuje predstavu o vašom zabezpečení online. Výsledok závisí od toho, či:",
+            "securityScoreDepends": "Výsledok zabezpečenia závisí od toho, či ste:",
             "antivirus": "Ste chránení antivírusovým softvérom;",
             "password": "Máte silné a zložité heslá, ktoré spravujete bezpečným spôsobom;",
             "vpn": "Monitorujete vystavenie svojej siete útočníkom;",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia",
                 "unknown": "Neznáma",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Lepšiu ponuku využite tu!"
             }
         },
         "wifisecurity": {

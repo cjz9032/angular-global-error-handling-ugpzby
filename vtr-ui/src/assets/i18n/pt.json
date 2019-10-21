@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Bem-vindo à Atualização do Sistema.",
-			"title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
-			"installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
+            "title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+            "installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES",
@@ -1564,7 +1564,7 @@
             "good": "BOA",
             "malicious": "MALICIOSA",
             "suspicious": "SUSPEITA",
-            "securityScoreDepends": "A sua pontuação de segurança permite-lhe ter uma ideia de quão seguro está online. O resultado depende de:",
+            "securityScoreDepends": "O seu resultado de segurança depende de estar:",
             "antivirus": "Estar protegido por software antivírus",
             "password": "Ter palavras-passe seguras e complexas geridas de uma forma segura",
             "vpn": "Monitorizar a exposição da sua rede a ataques",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo",
                 "unknown": "Desconhecido",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Aproveite uma oferta melhor aqui!"
             }
         },
         "wifisecurity": {

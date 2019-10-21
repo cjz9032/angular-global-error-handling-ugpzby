@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Willkommen bei der Systemaktualisierung.",
-			"title": "Ein aktuelles System ist in gutem Zustand.",
-			"installingTitle": "Versetzen Sie Ihren Computer während der Aktualisierung nicht in den Energiesparmodus oder Ruhezustand.",
+            "title": "Ein aktuelles System ist in gutem Zustand.",
+            "installingTitle": "Versetzen Sie Ihren Computer während der Aktualisierung nicht in den Energiesparmodus oder Ruhezustand.",
             "last": "Letzte Aktualisierung: ",
             "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",
@@ -1564,7 +1564,7 @@
             "good": "GUT",
             "malicious": "ZERSTÖRERISCH",
             "suspicious": "VERDÄCHTIG",
-            "securityScoreDepends": "Ihr Sicherheitsfaktor gibt Ihnen eine Vorstellung davon, wie sicher Sie online unterwegs sind. Das Ergebnis hängt davon ab, ob Sie:",
+            "securityScoreDepends": "Ihr Sicherheitsergebnis hängt davon ab, ob Sie:",
             "antivirus": "Durch Antivirensoftware geschützt sind",
             "password": "Starke, komplizierte und sicher verwaltete Passwörter verwenden",
             "vpn": "Ihr Netzwerk auf Angriffe von außen überwachen",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} bietet Ihnen grundlegenden Schutz für Ihr Gerät",
                 "unknown": "Unbekannt",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Nutzen Sie hier ein besseres Angebot!"
             }
         },
         "wifisecurity": {

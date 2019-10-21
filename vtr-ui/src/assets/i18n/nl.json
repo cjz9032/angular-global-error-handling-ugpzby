@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
-			"title": "Een bijgewerkt systeem is een gezond systeem.",
-			"installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
+            "title": "Een bijgewerkt systeem is een gezond systeem.",
+            "installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
@@ -1564,7 +1564,7 @@
             "good": "GOED",
             "malicious": "SCHADELIJK",
             "suspicious": "VERDACHT",
-            "securityScoreDepends": "Uw beveiligingsscore geeft u een idee hoe veilig u online bent, het resultaat is afhankelijk van het volgende:",
+            "securityScoreDepends": "Het resultaat van de beveiliging hangt af van het volgende:",
             "antivirus": "Beveiligd door antivirussoftware",
             "password": "Sterke en complexe wachtwoorden op een veilige manier beheren",
             "vpn": "Monitoring van uw netwerkblootstelling aan aanvallers",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
                 "unknown": "Onbekend",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Profiteer hier van een beter aanbod!"
             }
         },
         "wifisecurity": {
