@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MetricsModule } from 'src/app/directives/metrics.module';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { UiApsSliderComponent } from 'src/app/components/ui/ui-aps-slider/ui-aps-slider.component';
@@ -36,6 +36,7 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { faCircle as falCircle } from '@fortawesome/free-regular-svg-icons/faCircle';
 import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 
 library.add(faCircle);
 library.add(faCheckCircle);
@@ -65,7 +66,7 @@ library.add(faChevronUp);
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
-
+		ContainerCollapsibleComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
@@ -90,7 +91,7 @@ library.add(faChevronUp);
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
-
+		ContainerCollapsibleComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
@@ -104,6 +105,7 @@ library.add(faChevronUp);
 		RouterModule,
 		MetricsModule,
 		NgbTooltipModule,
+		NgbCollapseModule,
 		FontAwesomeModule
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
