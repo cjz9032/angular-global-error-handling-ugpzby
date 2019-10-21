@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Tervetuloa käyttämään Järjestelmäpäivitystä.",
-			"title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
-			"installingTitle": "Älä aseta tietokonetta lepo- tai horrostilaan päivitysten aikana.",
+            "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+            "installingTitle": "Älä aseta tietokonetta lepo- tai horrostilaan päivitysten aikana.",
             "last": "Viimeksi päivitetty: ",
             "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",
@@ -1564,7 +1564,7 @@
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
             "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Turvapisteet antavat käsityksen siitä, kuinka turvallista toimintasi verkossa on. Tulos riippuu vastauksista seuraaviin:",
+            "securityScoreDepends": "Turvallisuustulos riippuu vastauksista seuraaviin:",
             "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
             "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
             "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
                 "unknown": "Tuntematon",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Saat paremman tarjouksen täältä!"
             }
         },
         "wifisecurity": {

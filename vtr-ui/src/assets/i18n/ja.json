@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "システム アップデートへようこそ。",
-			"title": "最新のシステムは健全なシステムです。",
-			"installingTitle": "更新時に、ご使用のコンピューターをスリープ状態または休止状態にしないでください。",
+            "title": "最新のシステムは健全なシステムです。",
+            "installingTitle": "更新時に、ご使用のコンピューターをスリープ状態または休止状態にしないでください。",
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
@@ -1564,7 +1564,7 @@
             "good": "良好",
             "malicious": "悪意",
             "suspicious": "疑わしい",
-            "securityScoreDepends": "セキュリティー・スコアによって、お客様がオンライン時にどれほど安全かがわかります。以下の項目を実行しているかどうかで結果が変わります。",
+            "securityScoreDepends": "セキュリティの結果は、次の条件によって異なります。",
             "antivirus": "ウイルス対策ソフトウェアで保護されている",
             "password": "強力で複雑なパスワードを安全な方法で管理している",
             "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
                 "unknown": "不明",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "こちらでさらに優れた製品をお試しください。"
             }
         },
         "wifisecurity": {

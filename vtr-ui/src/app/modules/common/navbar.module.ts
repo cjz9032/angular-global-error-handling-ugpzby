@@ -27,6 +27,7 @@ import { faAngleDown } from '@fortawesome/pro-light-svg-icons/faAngleDown';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
+import { CommonPipeModule } from './common-pipe.module';
 //#endregion
 
 
@@ -58,6 +59,7 @@ library.add(faSearch);
 	exports: [
 		MenuMainComponent,
 		UiHeaderWarrantyComponent,
+		CommonPipeModule,
 		MetricsModule,
 		NgbDropdownModule,
 		AppSearchModule
@@ -68,6 +70,7 @@ library.add(faSearch);
 		TranslationModule.forChild(),
 		NgbDropdownModule,
 		FontAwesomeModule,
+		CommonPipeModule,
 		RouterModule,
 		UiButtonModule,
 		AppSearchModule

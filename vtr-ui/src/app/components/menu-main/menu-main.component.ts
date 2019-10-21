@@ -268,6 +268,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	updateUnreadMessageCount(item, event?) {
+		this.showMenu = false;
 		if (item.id === 'user') {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
@@ -650,6 +651,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	openModernPreloadModal() {
+		this.showMenu = false;
 		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
 			backdrop: 'static',
 			size: 'lg',

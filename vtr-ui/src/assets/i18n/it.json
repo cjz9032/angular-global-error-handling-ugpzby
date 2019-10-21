@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Benvenuto in Aggiornamento del sistema.",
-			"title": "Un sistema aggiornato è un sistema sano.",
-			"installingTitle": "Durante gli aggiornamenti, non attivare la modalità Sospensione o Ibernazione del computer.",
+            "title": "Un sistema aggiornato è un sistema sano.",
+            "installingTitle": "Durante gli aggiornamenti, non attivare la modalità Sospensione o Ibernazione del computer.",
             "last": "Ultimo aggiornamento: ",
             "next": "Prossimo aggiornamento pianificato: ",
             "checkButton": "VERIFICA DISPONIBILITÀ AGGIORNAMENTI",
@@ -1564,7 +1564,7 @@
             "good": "BUONA",
             "malicious": "DANNOSA",
             "suspicious": "SOSPETTA",
-            "securityScoreDepends": "Il tuo punteggio di sicurezza ti dà un'idea del livello di protezione del tuo ambiente; il risultato dipende da:",
+            "securityScoreDepends": "Il risultato della protezione dipende dalla scelta iniziale:",
             "antivirus": "La protezione con software antivirus",
             "password": "Password sicure e complesse che garantiscono la massima protezione",
             "vpn": "Monitoraggio dell'esposizione della rete contro i malintenzionati",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} offre la protezione di base per il tuo dispositivo",
                 "unknown": "Sconosciuto",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "La migliore offerta è qui!"
             }
         },
         "wifisecurity": {

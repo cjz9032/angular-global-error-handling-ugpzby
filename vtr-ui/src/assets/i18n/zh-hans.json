@@ -1564,7 +1564,7 @@
             "good": "良好",
             "malicious": "恶意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您的安全结果取决于您是否：",
+            "securityScoreDepends": "您的安全性结果取决于您是否：",
             "antivirus": "受到反病毒软件的保护",
             "password": "以安全的方式管理安全程度强且复杂的密码",
             "vpn": "监控您的网络以防暴露给攻击者",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}}为您的设备提供基本保护",
                 "unknown": "未知",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer":"在这里享受更好的服务！"
             }
         },
         "wifisecurity": {

@@ -30,6 +30,7 @@ export class ConfigService {
 	menuItemsPrivacy = menuItemsPrivacy;
 	appSearch = appSearch;
 	betaItem = betaItem;
+	showCHSMenu = false;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	constructor(
 		private deviceService: DeviceService,
@@ -72,8 +73,8 @@ export class ConfigService {
 						minor: 1910,
 						build: 12
 					};
-					const showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en') && result && this.isShowCHSByShellVersion(shellVersion);
-					if (!showCHSMenu) {
+					this.showCHSMenu = country.toLowerCase() === 'us' && locale.startsWith('en') && result && this.isShowCHSByShellVersion(shellVersion);
+					if (!this.showCHSMenu) {
 						resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 					}
 				});

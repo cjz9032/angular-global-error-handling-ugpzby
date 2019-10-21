@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Velkommen til brug af systemopdatering",
-			"title": "Et opdateret system er et velfungerende system.",
-			"installingTitle": "Under opdateringerne må du ikke sætte computeren i slumre- eller dvaletilstand.",
+            "title": "Et opdateret system er et velfungerende system.",
+            "installingTitle": "Under opdateringerne må du ikke sætte computeren i slumre- eller dvaletilstand.",
             "last": "Senest opdateret: ",
             "next": "Næste planlagte opdatering: ",
             "checkButton": "SØG EFTER OPDATERINGER",
@@ -1564,7 +1564,7 @@
             "good": "GODT",
             "malicious": "SKADELIGT",
             "suspicious": "MISTÆNKELIGT",
-            "securityScoreDepends": "Dit sikkerhedsresultat giver dig et indtryk af, hvor sikker du er online. Resultatet afhænger af, om du:",
+            "securityScoreDepends": "Dit sikkerhedsresultat afhænger af, om du er:",
             "antivirus": "Er beskyttet af antivirussoftware",
             "password": "Har stærke og komplekse adgangskoder, der administreres på en sikker måde",
             "vpn": "Overvåger om dit netværk udsættes for hackerangreb",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
                 "unknown": "Ukendt",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Få et bedre tilbud her!"
             }
         },
         "wifisecurity": {

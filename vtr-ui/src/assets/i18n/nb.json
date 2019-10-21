@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
-			"title": "Et oppdatert system er et velfungerende system.",
-			"installingTitle": "Ikke sett maskinen i hvile- eller dvalemodus under oppdateringer.",
+            "title": "Et oppdatert system er et velfungerende system.",
+            "installingTitle": "Ikke sett maskinen i hvile- eller dvalemodus under oppdateringer.",
             "last": "Sist oppdatert: ",
             "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
@@ -1564,7 +1564,7 @@
             "good": "GOD",
             "malicious": "SKADELIG",
             "suspicious": "MISTENKELIG",
-            "securityScoreDepends": "Sikkerhetsresultatet ditt gir deg en pekepinn på hvor sikker du er på nettet. Resultatet avhenger av følgende:",
+            "securityScoreDepends": "Sikkerhetsresultatet avhenger av om du er:",
             "antivirus": "Om du er beskyttet av antivirusprogramvare",
             "password": "Om du har sterke passord som du håndterer på en sikker måte",
             "vpn": "Om du overvåker nettverkets sårbarhet for angripere",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din",
                 "unknown": "Ukjent",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Få et bedre tilbud her!"
             }
         },
         "wifisecurity": {

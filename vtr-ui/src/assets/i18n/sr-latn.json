@@ -1564,7 +1564,7 @@
             "good": "DOBRO",
             "malicious": "ZLONAMERNO",
             "suspicious": "SUMNJIVO",
-            "securityScoreDepends": "Bezbednosna ocena vam daje ideju o tome koliko ste bezbedni na mreži, rezultat zavisi od toga:",
+            "securityScoreDepends": "Vaš rezultat bezbednosti zavisi od toga da li ste:",
             "antivirus": "Da li ste zaštićeni antivirusnim softverom",
             "password": "Da li imate jake i složene lozinke kojima upravljate na bezbedan način",
             "vpn": "Da li nadzirete izloženost mreže napadačima",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
                 "unknown": "Nepoznato",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer":"Uživajte u boljoj ponudi!"
             }
         },
         "wifisecurity": {

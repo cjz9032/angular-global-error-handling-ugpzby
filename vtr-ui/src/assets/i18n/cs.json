@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vítejte při použití Aktualizace systému.",
-			"title": "Aktualizovaný systém je zdravým systémem.",
-			"installingTitle": "Během aktualizací zařízení nepřepínejte počítač do režimu spánku ani do režimu hibernace.",
+            "title": "Aktualizovaný systém je zdravým systémem.",
+            "installingTitle": "Během aktualizací zařízení nepřepínejte počítač do režimu spánku ani do režimu hibernace.",
             "last": "Poslední aktualizace: ",
             "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",
@@ -1564,7 +1564,7 @@
             "good": "V POŘÁDKU",
             "malicious": "ŠKODLIVÝ KÓD",
             "suspicious": "PODEZŘELÝ KÓD",
-            "securityScoreDepends": "Vaše bezpečnostní skóre vám dá představu o tom, jak jste v bezpečí online, výsledek závisí na tom, zda jste:",
+            "securityScoreDepends": "Váš bezpečnostní výsledek závisí na tom, zda jste:",
             "antivirus": "Chráněni antivirovým softwarem",
             "password": "Chráněni silnými a složitými hesly s bezpečnou správou",
             "vpn": "Sledujete svou expozici útočníkům v síti",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení",
                 "unknown": "Neznámé",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Užijte si lepší nabídku zde!"
             }
         },
         "wifisecurity": {

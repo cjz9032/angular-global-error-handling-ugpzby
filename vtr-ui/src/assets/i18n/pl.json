@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Witamy w programie Aktualizacja systemu.",
-			"title": "Zaktualizowany system to wydajny system.",
-			"installingTitle": "W trakcie aktualizacji nie przełączaj komputera w tryb uśpienia ani hibernacji.",
+            "title": "Zaktualizowany system to wydajny system.",
+            "installingTitle": "W trakcie aktualizacji nie przełączaj komputera w tryb uśpienia ani hibernacji.",
             "last": "Ostatnia aktualizacja: ",
             "next": "Następna planowana aktualizacja: ",
             "checkButton": "SPRAWDŹ AKTUALIZACJE",
@@ -1564,7 +1564,7 @@
             "good": "DOBRY",
             "malicious": "ZŁOŚLIWY",
             "suspicious": "PODEJRZANY",
-            "securityScoreDepends": "Wynik bezpieczeństwa odzwierciedla Twój stopień bezpieczeństwa w sieci i jest zależny od tego, czy:",
+            "securityScoreDepends": "Twój wynik bezpieczeństwa zależy od tego, czy:",
             "antivirus": "Używasz oprogramowania antywirusowego",
             "password": "Używasz silnych i skomplikowanych haseł i zarządzasz nimi w bezpieczny sposób",
             "vpn": "Monitorujesz narażenie sieci na ataki",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} oferuje podstawową ochronę urządzenia",
                 "unknown": "Brak danych",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Tutaj znajdziesz lepszą ofertę!"
             }
         },
         "wifisecurity": {

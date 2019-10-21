@@ -520,6 +520,7 @@
 		border-radius: 500px;
 		width: calc(100% + 0.8rem);
 		height: calc(100% + 0.8rem);
-		border: thin solid $menu_hover;
+		border: none;
+		// border: thin solid $menu_hover; // commented due to cause of VAN-10277
 	}
 }

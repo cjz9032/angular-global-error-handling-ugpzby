@@ -1564,7 +1564,7 @@
             "good": "良好",
             "malicious": "惡意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您的安全結果依下列條件而異：",
+            "securityScoreDepends": "您的安全分數結果將依下列條件而異：",
             "antivirus": "是否獲得防毒軟體的保護",
             "password": "是否在安全方式中採用強式及複雜的密碼進行管理",
             "vpn": "是否監控網路遭受攻擊的風險",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
                 "unknown": "不明",
-                "betterOffer":"Enjoy a better offer here!"
+            	"betterOffer":"在此盡情享受更棒的優惠！"
             }
         },
         "wifisecurity": {

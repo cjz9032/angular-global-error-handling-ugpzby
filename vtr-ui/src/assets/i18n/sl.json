@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Uporabite posodobitev sistema.",
-			"title": "Posodobljen sistem je zdrav sistem.",
-			"installingTitle": "Računalnika med posodabljanjem ne preklopite v stanje pripravljenosti ali mirovanje.",
+            "title": "Posodobljen sistem je zdrav sistem.",
+            "installingTitle": "Računalnika med posodabljanjem ne preklopite v stanje pripravljenosti ali mirovanje.",
             "last": "Zadnja posodobitev: ",
             "next": "Naslednja načrtovana posodobitev: ",
             "checkButton": "ISKANJE POSODOBITEV",
@@ -1564,7 +1564,7 @@
             "good": "DOBRA",
             "malicious": "ZLONAMERNA",
             "suspicious": "SUMLJIVA",
-            "securityScoreDepends": "Vaša varnostna ocena vam pokaže, kako varni ste v spletu, rezultat pa je odvisen od tega, ali:",
+            "securityScoreDepends": "Vaš rezultat varnosti je odvisen od vaše vloge:",
             "antivirus": "Imate zaščito s protivirusno programsko opremo",
             "password": "Upravljate z močnimi in kompleksnimi gesli na varen način",
             "vpn": "Spremljate izpostavljenost napadalcem v omrežju",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo",
                 "unknown": "Neznan",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Boljšo ponudbo dobite tukaj!"
             }
         },
         "wifisecurity": {

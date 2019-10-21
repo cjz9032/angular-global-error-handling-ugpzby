@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
-			"title": "Güncel bir sistem, sağlıklı sistemdir.",
-			"installingTitle": "Güncellemeler sırasında bilgisayarınızı uyku veya hazırda bekleme kipine geçirmeyin.",
+            "title": "Güncel bir sistem, sağlıklı sistemdir.",
+            "installingTitle": "Güncellemeler sırasında bilgisayarınızı uyku veya hazırda bekleme kipine geçirmeyin.",
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
@@ -1564,7 +1564,7 @@
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
             "suspicious": "ŞÜPHELİ",
-            "securityScoreDepends": "Güvenlik puanınız çevrimiçinde ne kadar güvende olduğunuza dair bir fikir verir; sonuç, aşağıdakilere bağlıdır:",
+            "securityScoreDepends": "Güvenlik sonucunuz aşağıdakilere bağlıdır:",
             "antivirus": "Antivirüs yazılımı tarafından korunup korunmadığınız",
             "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
             "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
                 "unknown": "Bilinmiyor",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Burada daha iyi bir tekliften yararlanabilirsiniz!"
             }
         },
         "wifisecurity": {

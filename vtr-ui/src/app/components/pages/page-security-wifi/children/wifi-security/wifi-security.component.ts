@@ -35,7 +35,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	@Input() isShowHistory: string;
-	@Input() brand: string;
+	@Input() showChs = false;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	region = 'us';
@@ -52,7 +52,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		private localInfoService: LocalInfoService,
-		private dialogService: DialogService,
+		private dialogService: DialogService
 	) {
 		super();
 	}
@@ -64,15 +64,10 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		}).catch(e => {
 			this.region = 'us';
 			this.language = 'en';
-		}).then(() => {
-			if (this.region !== 'us' || this.language !== 'en') {
-				this.isShowMore = false;
-			}
 		});
-		if (this.isShowHistory === 'false' || this.brand === 'think') {
+		if (!this.showChs || this.isShowHistory === 'false') {
 			this.isShowMore = false;
 		}
-
 		this.data.wifiSecurity.on('cancelClick', () => {
 			this.cancelClick = true;
 		}).on('cancelClickFinish', () => {

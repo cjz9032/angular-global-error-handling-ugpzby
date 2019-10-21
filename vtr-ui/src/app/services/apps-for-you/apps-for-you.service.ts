@@ -222,8 +222,10 @@ export class AppsForYouService {
 				const applicationGuid = appGuid;
 				const result = await this.systemUpdateBridge.downloadAndInstallApp(applicationGuid, null,
 					(progressResponse) => {
+						this.updateCachedAppStatus(appGuid, 'InstallerRunning');
 						this.commonService.sendNotification(AppsForYouEnum.InstallAppProgress, progressResponse);
 					});
+				this.updateCachedAppStatus(appGuid, result);
 				this.commonService.sendNotification(AppsForYouEnum.InstallAppResult, result);
 			}
 		}
@@ -244,6 +246,13 @@ export class AppsForYouService {
 			});
 		} else {
 			this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, appStatus);
+		}
+	}
+
+	private updateCachedAppStatus(appGuid, status) {
+		const index = this.cachedAppStatusArray.findIndex(i => i.key === appGuid);
+		if (index !== -1) {
+			this.cachedAppStatusArray[index].value = status;
 		}
 	}
 

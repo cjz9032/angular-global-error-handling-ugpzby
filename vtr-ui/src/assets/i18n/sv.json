@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Välkommen att använda Systemuppdatering.",
-			"title": "Ett uppdaterat system är ett friskt system.",
-			"installingTitle": "Sätt inte datorn i strömspar- eller viloläge under uppdateringarna.",
+            "title": "Ett uppdaterat system är ett friskt system.",
+            "installingTitle": "Sätt inte datorn i strömspar- eller viloläge under uppdateringarna.",
             "last": "Senast uppdaterat: ",
             "next": "Nästa schemalagda uppdatering: ",
             "checkButton": "SÖK EFTER UPPDATERINGAR",
@@ -1564,7 +1564,7 @@
             "good": "BRA",
             "malicious": "SKADLIGT",
             "suspicious": "MISSTÄNKT",
-            "securityScoreDepends": "Din säkerhetspoäng ger dig en uppfattning om hur säker du är online. Resultatet beror på om du",
+            "securityScoreDepends": "Säkerhetsresultatet beror på om du:",
             "antivirus": "Skyddas av ett antivirusprogram",
             "password": "Har starka och komplexa lösenord som hanteras på ett säkert sätt",
             "vpn": "Övervakar nätverkets exponering för angripare",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
                 "unknown": "Okänd",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Här får du ett bättre erbjudande!"
             }
         },
         "wifisecurity": {

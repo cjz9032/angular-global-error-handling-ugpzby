@@ -29,6 +29,8 @@ import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.se
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
 import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { AppUpdateService } from './services/app-update/app-update.service';
+import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 
 declare var Windows;
 @Component({
@@ -43,6 +45,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	public isGaming: any = false;
 	private beta;
 	private subscription: Subscription;
+	private vantageFocusHelper = new VantageFocusHelper();
 
 	constructor(
 		private displayService: DisplayService,
@@ -58,7 +61,8 @@ export class AppComponent implements OnInit, OnDestroy {
 		private languageService: LanguageService,
 		private logger: LoggerService,
 		private appsForYouService: AppsForYouService,
-		private metricService: MetricService
+		private metricService: MetricService,
+		private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -71,7 +75,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-
 		this.initIsBeta();
 
 		//#endregion
@@ -83,61 +86,68 @@ export class AppComponent implements OnInit, OnDestroy {
 		}, false);
 		this.notifyNetworkState();
 		this.addInternetListener();
+		this.vantageFocusHelper.start();
 	}
 
-	// TESTING ACTIVE DURATION
-	// private getDuration() {
-	// 	const component = this; // value of this is null/undefined inside the funtions
-	// 	let isVisible = true; // internal flag, defaults to true
-	// 	function onVisible() {
-	// 		// prevent double execution
-	// 		if (isVisible) {
-	// 			return;
-	// 		}
-	// 		// console.log(' APP is VISIBLE-------------------------------------------------------');
-	// 		component.metricService.sendAppResumeMetric();
-	// 		// change flag value
-	// 		isVisible = true;
-	// 	} // end of onVisible
-	// 	function onHidden() {
-	// 		// prevent double execution
-	// 		if (!isVisible) {
-	// 			return;
-	// 		}
-	// 		// console.log(' APP is HIDDEN-------------------------------------------------------');
-	// 		component.metricService.sendAppSuspendMetric();
-	// 		// change flag value
-	// 		isVisible = false;
-	// 	} // end of onHidden
-	// 	function handleVisibilityChange(forcedFlag) {
-	// 		// forcedFlag is a boolean when this event handler is triggered by a
-	// 		// focus or blur eventotherwise it's an Event object
-	// 		if (typeof forcedFlag === 'boolean') {
-	// 			if (forcedFlag) {
-	// 				return onVisible();
-	// 			}
-	// 			return onHidden();
-	// 		}
-	// 		if (document.hidden) {
-	// 			return onHidden();
-	// 		}
-	// 		return onVisible();
-	// 	} // end of handleVisibilityChange
-	// 	document.addEventListener('visibilitychange', handleVisibilityChange, false);
-	// 	// extra event listeners for better behaviour
-	// 	document.addEventListener('focus', () => {
-	// 		handleVisibilityChange(true);
-	// 	}, false);
-	// 	document.addEventListener('blur', () => {
-	// 		handleVisibilityChange(false);
-	// 	}, false);
-	// 	window.addEventListener('focus', () => {
-	// 		handleVisibilityChange(true);
-	// 	}, false);
-	// 	window.addEventListener('blur', () => {
-	// 		handleVisibilityChange(false);
-	// 	}, false);
-	// } // END OF DURATION
+	ngOnInit() {
+		// check for update and download it but it will be available in next launch
+		this.appUpdateService.checkForUpdatesNoPrompt();
+
+		if (this.deviceService.isAndroid) {
+			return;
+		}
+		// session storage is not getting clear after vantage is close.
+		// forcefully clearing session storage
+		sessionStorage.clear();
+
+		this.getMachineInfo();
+		this.metricService.sendAppLaunchMetric();
+
+		// use when deviceService.isArm is set to true
+		// todo: enable below line when integrating ARM feature
+		// document.getElementById('html-root').classList.add('is-arm');
+
+		const self = this;
+		window.onresize = () => {
+			self.displayService.calcSize(self.displayService);
+		};
+		self.displayService.calcSize(self.displayService);
+
+		// When startup try to login Lenovo ID silently (in background),
+		//  if user has already logged in before, this call will login automatically and update UI
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
+			this.userService.loginSilently();
+		}
+
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
+		}
+
+		/********* add this for navigation within a page **************/
+		this.router.events.subscribe((s) => {
+			if (s instanceof NavigationEnd) {
+				const tree = this.router.parseUrl(this.router.url);
+				if (tree.fragment) {
+					const element = document.querySelector('#' + tree.fragment);
+					if (element) {
+						element.scrollIntoView(true);
+					}
+				}
+			}
+		});
+
+		this.checkIsDesktopOrAllInOneMachine();
+		this.settingsService.getPreferenceSettingsValue();
+		// VAN-5872, server switch feature
+		// this.serverSwitchThis();
+		this.setRunVersionToRegistry();
+	}
+
+	ngOnDestroy() {
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
+	}
 
 	private addInternetListener() {
 		const win: any = window;
@@ -233,64 +243,6 @@ export class AppComponent implements OnInit, OnDestroy {
 					});
 				}
 			});
-		}
-	}
-
-	ngOnInit() {
-		// active duration
-		// this.getDuration();
-		// session storage is not getting clear after vantage is close.
-		// forcefully clearing session storage
-		if (this.deviceService.isAndroid) {
-			return;
-		}
-		sessionStorage.clear();
-		this.getMachineInfo();
-		this.metricService.sendAppLaunchMetric();
-
-		// use when deviceService.isArm is set to true
-		// todo: enable below line when integrating ARM feature
-		// document.getElementById('html-root').classList.add('is-arm');
-
-		const self = this;
-		window.onresize = () => {
-			self.displayService.calcSize(self.displayService);
-		};
-		self.displayService.calcSize(self.displayService);
-
-		// When startup try to login Lenovo ID silently (in background),
-		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
-			this.userService.loginSilently();
-		}
-
-		if (this.appsForYouService.showLmaMenu()) {
-			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
-		}
-
-		/********* add this for navigation within a page **************/
-		this.router.events.subscribe((s) => {
-			if (s instanceof NavigationEnd) {
-				const tree = this.router.parseUrl(this.router.url);
-				if (tree.fragment) {
-					const element = document.querySelector('#' + tree.fragment);
-					if (element) {
-						element.scrollIntoView(true);
-					}
-				}
-			}
-		});
-
-		this.checkIsDesktopOrAllInOneMachine();
-		this.settingsService.getPreferenceSettingsValue();
-		// VAN-5872, server switch feature
-		// this.serverSwitchThis();
-		this.setRunVersionToRegistry();
-	}
-
-	ngOnDestroy() {
-		if (this.subscription) {
-			this.subscription.unsubscribe();
 		}
 	}
 

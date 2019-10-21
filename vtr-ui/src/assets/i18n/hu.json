@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
-			"title": "A naprakész rendszer megfelelően működik.",
-			"installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
+            "title": "A naprakész rendszer megfelelően működik.",
+            "installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
@@ -1564,7 +1564,7 @@
             "good": "JÓ",
             "malicious": "ROSSZINDULATÚ",
             "suspicious": "GYANÚS",
-            "securityScoreDepends": "A biztonsági pontszám azt jelzi, hogy mennyire van biztonságban a rendszere az interneten. Az eredményt a következők befolyásolják:",
+            "securityScoreDepends": "Adatainak biztonsága attól függ, hogy Ön:",
             "antivirus": "Vírusirtó szoftver használata",
             "password": "Erős, összetett, biztonságos módon kezelt jelszavak használata",
             "vpn": "A hálózat támadóknak való kitettségének mérése",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
                 "unknown": "Ismeretlen",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Kedvezőbb ajánlatot kínálunk Önnek!"
             }
         },
         "wifisecurity": {

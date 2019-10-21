@@ -1409,8 +1409,8 @@
         },
         "banner": {
             "neverChecked": "Vous êtes invité à utiliser la mise à jour du système.",
-			"title": "Un système à jour est un système sain.",
-			"installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
+            "title": "Un système à jour est un système sain.",
+            "installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
@@ -1564,7 +1564,7 @@
             "good": "BON",
             "malicious": "MALVEILLANT",
             "suspicious": "SUSPECT",
-            "securityScoreDepends": "Votre score de sécurité vous donne une idée de la manière dont votre navigation en ligne est sécurisée, le résultat dépend des éléments suivants :",
+            "securityScoreDepends": "Le résultat de la sécurité dépend de l'un des éléments suivants :",
             "antivirus": "Protection par un logiciel anti-virus",
             "password": "Utilisation de mots de passe complexes et sûrs gérés de manière sécurisée",
             "vpn": "Surveillance de l'exposition de votre réseau aux attaquants",
@@ -1646,7 +1646,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
                 "unknown": "Inconnu",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Profitez d'une meilleure offre ici !"
             }
         },
         "wifisecurity": {
