@@ -643,7 +643,10 @@
             "collapse": "Komprimer",
             "expand": "Utvid",
             "loader": "Henter <br> status",
-            "loading": "Laster..."
+            "loading": "Laster...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
@@ -881,7 +884,7 @@
                     "PermanentError": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri.",
                     "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>"
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
@@ -1120,7 +1123,9 @@
                         "everyday": "Hver dag",
                         "weekdays": "Uke dager",
                         "weekends": "Helger"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1400,7 +1405,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "MER",
@@ -1467,7 +1473,7 @@
                     "options": {
                         "near": "Kort avstand",
                         "far": "Lang avstand",
-                        "medium": "Medium"
+                        "medium": "Middels"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1488,7 +1494,7 @@
                     "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
                     "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
@@ -1496,7 +1502,7 @@
                 },
                 "resetToDefault": "Tilbakestill",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "JUSTERING AV FØLSOMHET"
                 }
             },
             "intelligentScreen": {
