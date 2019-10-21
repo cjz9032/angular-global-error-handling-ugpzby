@@ -1,21 +1,11 @@
 import { Injectable } from '@angular/core';
-import {
-	catchError,
-	debounceTime,
-	distinctUntilChanged,
-	filter,
-	map,
-	shareReplay,
-	startWith,
-	switchMapTo
-} from 'rxjs/operators';
-import { combineLatest, of } from 'rxjs';
-import { FigleafOverviewService, FigleafSettings } from '../../../common/services/figleaf-overview.service';
-import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
-import { BreachedAccount, BreachedAccountsService } from '../../../common/services/breached-accounts.service';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
-import { CountNumberOfIssuesService } from '../../../common/services/count-number-of-issues.service';
-import { FeaturesStatuses } from '../../../userDataStatuses';
+import { map, shareReplay } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
+import { coefficients } from './privacy-score-calculate/coefficients';
+import { ScoreForBreachedAccountsService } from './privacy-score-calculate/score-for-breached-accounts.service';
+import { ScoreForVulnerablePasswordsService } from './privacy-score-calculate/score-for-vulnerable-passwords.service';
+import { ScoreForTrackingToolsService } from './privacy-score-calculate/score-for-tracking-tools.service';
+import { ScoreForMonitoringService } from './privacy-score-calculate/score-for-monitoring.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -23,79 +13,19 @@ import { FeaturesStatuses } from '../../../userDataStatuses';
 export class PrivacyScoreService {
 
 	constructor(
-		private userDataGetStateService: UserDataGetStateService,
-		private figleafOverviewService: FigleafOverviewService,
-		private browserAccountsService: BrowserAccountsService,
-		private countNumberOfIssuesService: CountNumberOfIssuesService,
-		private breachedAccountsService: BreachedAccountsService) {
+		private scoreForVulnerablePasswordsService: ScoreForVulnerablePasswordsService,
+		private scoreForBreachedAccountsService: ScoreForBreachedAccountsService,
+		private scoreForTrackingToolsService: ScoreForTrackingToolsService,
+		private scoreForMonitoringService: ScoreForMonitoringService
+	) {
 	}
 
-	private readonly coefficients = {
-		breachedAccounts: 0.45,
-		breachMonitoring: 0.15,
-		trackingTools: 0.15,
-		nonPrivatelyStoredPasswords: 0.15,
-		minimalLevelOfScore: 0.1,
-		breachedAccountsFromKnownWebsites: 2 / 3,
-		breachedAccountsFromUnknownWebsites: 1 / 3,
-		withoutScan: 1 / 3
-	};
-
-	private ammountPasswordFromBrowser$ = this.userDataGetStateService.userDataStatus$.pipe(
-		map((userDataStatus) =>
-			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
-			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
-		distinctUntilChanged(),
-		filter(Boolean),
-		switchMapTo(this.browserAccountsService.installedBrowsersData.pipe(
-			map((installedBrowsersData) => {
-					return installedBrowsersData.browserData.reduce((acc, curr) => {
-						acc += curr.accountsCount;
-						return acc;
-					}, 0);
-				}
-			)))
-	);
-
-	private monitoringEnable$ = this.getFigleafSetting((settings: FigleafSettings) => settings.isBreachMonitoringEnabled);
-	private isAntitrackingEnabled$ = this.userDataGetStateService.userDataStatus$.pipe(
-		map((userDataStatus) =>
-			userDataStatus.websiteTrackersResult !== FeaturesStatuses.undefined &&
-			userDataStatus.websiteTrackersResult !== FeaturesStatuses.error),
-		filter(Boolean),
-		switchMapTo(
-			this.getFigleafSetting((settings: FigleafSettings) => settings.isAntitrackingEnabled)
-		),
-		catchError((err) => of(false))
-	);
-
-	private breachedAccountsFromKnownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain !== 'n/a');
-	private breachedAccountsFromUnknownWebsites$ = this.getBreachesAccount((x: BreachedAccount) => x.domain === 'n/a');
-
-	private scoreFromBreachedAccount$ = combineLatest([
-		this.breachedAccountsFromKnownWebsites$,
-		this.breachedAccountsFromUnknownWebsites$,
-	]).pipe(
-		map(([knownBreached, unknownBreached]) => {
-			const {
-				breachedAccountsFromKnownWebsites: Br,
-				breachedAccountsFromUnknownWebsites: Bn,
-				breachedAccounts: Kb,
-			} = this.coefficients;
-			const Nr = knownBreached;
-			const Nn = unknownBreached;
-
-			return (Br / (Nr + 1) + Bn / (Nr + Nn + 1)) * Kb;
-		})
-	);
-
 	newPrivacyScore$ = combineLatest([
-		this.getScoreFromBreachedAccount(),
-		this.getAmmountPasswordFromBrowser(),
-		this.getMonitoringEnable(),
-		this.getIsAntitrackingEnabled()
+		this.scoreForBreachedAccountsService.getScore(),
+		this.scoreForVulnerablePasswordsService.getScore(),
+		this.scoreForTrackingToolsService.getScore(),
+		this.scoreForMonitoringService.getScore()
 	]).pipe(
-		debounceTime(500),
 		map(([breachedAccountScore, passwordFromBrowserScore, monitoringScore, antitrackingScore]) => {
 			return Math.round(
 				(
@@ -103,7 +33,7 @@ export class PrivacyScoreService {
 					passwordFromBrowserScore +
 					monitoringScore +
 					antitrackingScore +
-					this.coefficients.minimalLevelOfScore
+					coefficients.minimalLevelOfScore
 				) * 100
 			);
 		}),
@@ -145,83 +75,5 @@ export class PrivacyScoreService {
 				text: 'You’re doing a great job controlling your privacy. Keep it up!',
 			};
 		}
-	}
-
-	private getBreachesAccount(filterFunc) {
-		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
-			filter((breachedAccounts) => breachedAccounts.error === null),
-			map((breachedAccounts) => breachedAccounts.breaches.filter(filterFunc).length)
-		);
-	}
-
-	private getFigleafSetting(mapFunc) {
-		return this.figleafOverviewService.figleafSettings$.pipe(
-			map(mapFunc),
-			startWith(false),
-		);
-	}
-
-	private getRange(ammountPassword: any | number) {
-		let range = 1;
-
-		if (ammountPassword > 30) {
-			range = 0;
-		}
-
-		if (ammountPassword > 10 && ammountPassword <= 30) {
-			range = 1 / 3;
-		}
-
-		if (ammountPassword > 0 && ammountPassword <= 10) {
-			range = 2 / 3;
-		}
-
-		return range;
-	}
-
-	private getScoreFromBreachedAccount() {
-		const defaultValue = (this.coefficients.breachedAccounts * this.coefficients.withoutScan) as number;
-
-		return this.scoreFromBreachedAccount$.pipe(
-			startWith(defaultValue),
-			catchError((err) => {
-				return of(defaultValue);
-			}),
-		);
-	}
-
-	private getAmmountPasswordFromBrowser() {
-		const defaultValue = (this.coefficients.nonPrivatelyStoredPasswords * this.coefficients.withoutScan) as number;
-
-		return this.ammountPasswordFromBrowser$.pipe(
-			map((response) => this.getRange(response)),
-			map((range) => Number(range) * this.coefficients.nonPrivatelyStoredPasswords),
-			startWith(defaultValue),
-			catchError((err) => {
-				return of(defaultValue);
-			}),
-		);
-	}
-
-	private getMonitoringEnable() {
-		return this.monitoringEnable$.pipe(
-			startWith(false),
-			map((isMonitoringEnable) => Number(isMonitoringEnable) * this.coefficients.breachMonitoring),
-			catchError((err) => {
-				return of(0);
-			}),
-		);
-	}
-
-	private getIsAntitrackingEnabled() {
-		const defaultValue = (this.coefficients.trackingTools * this.coefficients.withoutScan) as number;
-
-		return this.isAntitrackingEnabled$.pipe(
-			map((isAntitrackingEnabled) => Number(isAntitrackingEnabled) * this.coefficients.trackingTools),
-			startWith(defaultValue),
-			catchError((err) => {
-				return of(defaultValue);
-			}),
-		);
 	}
 }

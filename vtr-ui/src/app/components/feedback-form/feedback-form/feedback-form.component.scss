@@ -15,7 +15,7 @@
 	box-shadow: $drop_shadow;
 	padding: 4rem;
 	position: relative;
-	width: 52rem;
+	width: 100%;
 
 	.content {
 		.title {
@@ -73,7 +73,7 @@
 
 			label {
 				font-size: 1.6rem;
-				padding-left: 0.8rem;
+				padding-left: 2.8rem;
 				color: $shade_darkest;
 				position: relative;
 				margin-bottom: 0;
@@ -83,7 +83,7 @@
 					border-radius: 50%;
 					position: absolute;
 					top: .25rem;
-					left: -2rem;
+					left: 0;
 					display: block;
 					width: 2rem;
 					height: 2rem;
@@ -97,7 +97,7 @@
 					border-radius: 50%;
 					position: absolute;
 					top: .25rem;
-					left: -2rem;
+					left: 0;
 					display: block;
 					width: 2rem;
 					height: 2rem;
@@ -133,36 +133,13 @@
 		}
 
 		@media screen and (max-height: 600px) {
-				.user-comment {
-					height: 11rem;
-				}
+			.user-comment {
+				height: 11rem;
 			}
+		}
 
-		.button {
-			text-transform: uppercase;
-			height: 5rem;
-			line-height: 5rem;
-			border: none;
-			border-radius: 10rem;
-			background: $gradient_main;
-			padding: 0 3rem;
-			color: $light;
-			font-size: 1.5rem;
-			letter-spacing: 0.1rem;
-			font-weight: $weight_600;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			cursor: pointer;
-			-webkit-appearance: initial;
-			max-width: 26rem;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			overflow: hidden;
-
-			&:disabled {
-				opacity: .5;
-			}
+		.button-box {
+			max-width: 24rem;
 		}
 
 		.dropdown-content {
@@ -183,7 +160,7 @@
 				background-clip: padding-box;
 				border-radius: 0.9rem;
 				box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-				max-width: 29rem;
+				max-width: 28rem;
 
 				.menu-pointer {
 					width: 1.4rem;
@@ -249,6 +226,7 @@
 			&::after {
 				display: none;
 			}
+
 		}
 	}
 
@@ -283,7 +261,7 @@
 			font-weight: $weight_light;
 			text-align: center;
 			letter-spacing: 0.1rem;
-      opacity: .5;
+			opacity: .5;
 		}
 	}
 
@@ -293,8 +271,6 @@
 		top: 1.8rem;
 		width: 2.2rem;
 		height: 2.2rem;
-		font-size: 3rem;
-		color: rgba(73, 157, 253, 1) !important;
 		cursor: pointer;
 
 		&:hover {

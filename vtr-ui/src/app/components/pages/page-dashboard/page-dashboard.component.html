@@ -1,208 +1,196 @@
-<div class="vtr-page-dashboard vtr-page container-fluid">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main
-				[title]="deviceService.isArm || !commonService.isOnline ? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
-				[forwardLink]=""></vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<!--<div [ngClass]="{
-							'col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column':!deviceService.isArm,
-							'vtr-arm-page': deviceService.isArm
-						}">-->
-					<div [ngClass]="'col-sm-12 col-lg-7 col-xl-8 vtr-page-left-column'">
-						<div class="vtr-page-shift-up nmx-40">
+<vtr-page-layout
+	[pageTitle]="deviceService.isArm || !commonService.isOnline ||!userService.auth ||!userService.hasFirstName? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
+	[textId]="'dashboard'"
+	[pageCssClass]="'dashboard'">
 
-							<div class="container-fluid">
-								<div class="row"
-									*ngIf="!isOnline">
-									<div class="col col-12 px-40 pb-40">
-										<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
-											[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-											[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
-											[isSubtitleVisible]="false"
-											[isButtonVisible]="false"
-											id="dashboard-btn-connectivity"
-											(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col col-12 px-40 pb-40">
-										<vtr-widget-carousel [data]="heroBannerItems"
-											order="1"
-											source="title"
-											[interval]="2000"
-											cardTitle="title"
-											pauseOnHover="true"
-											image="url"
-											[showNavigationArrows]="true"
-											[showNavigationIndicators]="true"
-											[carouselId]="'dashboard-lnk-hero-banner'"
-											id="dashboard-lnk-hero-banner"
-											aria-label="dashboard-lnk-hero-banner"
-											link="thumbnailUrl"></vtr-widget-carousel>
-									</div>
-
-									<div class="col col-6 p-40">
-										<vtr-container-card order="2"
-											[itemID]="cardContentPositionB.Id"
-											[img]="cardContentPositionB.FeatureImage"
-											[caption]="cardContentPositionB.Description"
-											[title]="cardContentPositionB.Title"
-											[logoText]="cardContentPositionB.BrandName"
-											[action]="cardContentPositionB.Action"
-											[actionType]="cardContentPositionB.ActionType"
-											[actionLink]="cardContentPositionB.ActionLink"
-											[type]="'corner'"
-											[ratioX]="4"
-											[ratioY]="2"
-											[cornerShift]="'large'"
-											[containerCardId]="'dashboard-lnk-content-b'"
-											id="dashboard-card-b"
-											aria-label="dashboard-card-b">
-										</vtr-container-card>
-									</div>
-									<div class="col col-6 p-40">
-										<vtr-container-card order="3"
-											[itemID]="cardContentPositionC.Id"
-											[img]="cardContentPositionC.FeatureImage"
-											[caption]="cardContentPositionC.Description"
-											[title]="cardContentPositionC.Title"
-											[logoText]="cardContentPositionC.BrandName"
-											[action]="cardContentPositionC.Action"
-											[actionType]="cardContentPositionC.ActionType"
-											[actionLink]="cardContentPositionC.ActionLink"
-											[type]="'corner'"
-											[ratioX]="4"
-											[ratioY]="2"
-											[containerCardId]="'dashboard-lnk-content-c'"
-											id="dashboard-card-c"
-											aria-label="dashboard-card-c">
-										</vtr-container-card>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col col-12 p-40">
-									<vtr-container-card order="4"
-										[itemID]="cardContentPositionD.Id"
-										[img]="cardContentPositionD.FeatureImage"
-										[title]="cardContentPositionD.Title"
-										[logoText]="cardContentPositionD.BrandName"
-										[action]="cardContentPositionD.Action"
-										[actionType]="cardContentPositionD.ActionType"
-										[actionLink]="cardContentPositionD.ActionLink"
-										[type]="'highlight'"
-										[ratioX]="8"
-										[ratioY]="2"
-										[containerCardId]="'dashboard-lnk-content-d'"
-										id="dashboard-card-d"
-										aria-label="dashboard-card-d">
-									</vtr-container-card>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col col-6 p-40">
-									<vtr-container-card order="5"
-										[itemID]="cardContentPositionE.Id"
-										[img]="cardContentPositionE.FeatureImage"
-										[title]="cardContentPositionE.Title"
-										[logoText]="cardContentPositionE.BrandName"
-										[action]="cardContentPositionE.Action"
-										[actionType]="cardContentPositionE.ActionType"
-										[actionLink]="cardContentPositionE.ActionLink"
-										[type]="'article'"
-										[ratioX]="4"
-										[ratioY]="4"
-										[containerCardId]="'dashboard-lnk-content-e'"
-										id="dashboard-card-e"
-										aria-label="dashboard-card-e">
-									</vtr-container-card>
-								</div>
-								<div class="col col-6 p-40">
-									<vtr-container-card order="6"
-										[itemID]="cardContentPositionF.Id"
-										[img]="cardContentPositionF.FeatureImage"
-										[title]="cardContentPositionF.Title"
-										[logoText]="cardContentPositionF.BrandName"
-										[action]="cardContentPositionF.Action"
-										[actionType]="cardContentPositionF.ActionType"
-										[actionLink]="cardContentPositionF.ActionLink"
-										[type]="'article'"
-										[ratioX]="4"
-										[ratioY]="4"
-										[containerCardId]="'dashboard-lnk-content-f'"
-										id="dashboard-card-f"
-										aria-label="dashboard-card-f">
-									</vtr-container-card>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-5 col-xl-4 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
-								<div class="row no-gutters">
-									<div class="col-sm-12 col-md-12 pb-60">
-										<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
-											[description]="'dashboard.feedback.subtitle' | translate"
-											[actionName]="'dashboard.feedback.button' | translate"
-											[action]="'feedback'"
-											(feedBackClick)="onFeedbackModal()">
-										</vtr-widget-feedback>
-										<!-- </div> -->
-										<!-- </div> -->
-
-										<!-- <div class="row"
-										*ngIf="!deviceService.isArm"> -->
-										<!-- <div class="col-sm-12"> -->
-										<div class="pt-6"
-											*ngIf="!deviceService.isArm">
-											<vtr-widget-quicksettings></vtr-widget-quicksettings>
-										</div>
-									</div>
-									<!-- </div> -->
-
-									<!-- <div class="row"
-									*ngIf="!deviceService.isArm"> -->
-									<div class="col-sm-12 col-md-12 pb-40"
-										*ngIf="!deviceService.isArm">
-										<vtr-widget-status componentName="system status"
-											[title]="'dashboard.systemStatus.title' | translate"
-											[description]="'dashboard.systemStatus.subtitle' | translate"
-											[items]="systemStatus"
-											[linkId]="'dashboard-ss'">
-										</vtr-widget-status>
-									</div>
-								</div>
-
-								<div class="row mb-40"
-									*ngIf="!androidService.isAndroid && deviceService.isArm">
-									<div class="col col-12 cont">
-										<vtr-widget-questions [title]="'common.qAndA.title' | translate"
-											[description]="'common.qAndA.subtitle' | translate"
-											[items]="qaService.qas"
-											blockPosition="r4"></vtr-widget-questions>
-									</div>
-								</div>
-
-								<div class="row no-gutters"
-									*ngIf="!deviceService.isArm">
-									<div class="col-sm-12 py-40">
-										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-											[linkId]="'dashboard'">
-										</vtr-widget-security-status>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+	<left-content>
+		<div class="container-fluid">
+			<div class="row" *ngIf="!isOnline">
+				<div class="col col-12 px-40 pb-40">
+					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+						[isSubtitleVisible]="false"
+						[isButtonVisible]="false"
+						id="dashboard-btn-connectivity"></vtr-widget-offline-info>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 px-40 pb-20">
+					<vtr-widget-carousel [data]="heroBannerItems"
+						order="1"
+						source="title"
+						[interval]="5000"
+						cardTitle="title"
+						pauseOnHover="true"
+						image="url"
+						[showNavigationArrows]="true"
+						[showNavigationIndicators]="true"
+						[carouselId]="'dashboard-lnk-hero-banner'"
+						id="dashboard-lnk-hero-banner"
+						aria-label="dashboard-lnk-hero-banner"
+						link="thumbnailUrl">
+					</vtr-widget-carousel>
+				</div>
+				<div class="col-xl-6 card-left">
+					<vtr-container-card order="2"
+						[itemID]="cardContentPositionB.Id"
+						[img]="cardContentPositionB.FeatureImage"
+						[caption]="cardContentPositionB.Description"
+						[title]="cardContentPositionB.Title"
+						[logoText]="cardContentPositionB.BrandName"
+						[action]="cardContentPositionB.Action"
+						[actionType]="cardContentPositionB.ActionType"
+						[actionLink]="cardContentPositionB.ActionLink"
+						[dataSource]="cardContentPositionB.DataSource"
+						[type]="'corner'"
+						[ratioX]="4"
+						[ratioY]="2"
+						[cornerShift]="'large'"
+						[containerCardId]="'dashboard-lnk-content-b'"
+						id="dashboard-card-b"
+						aria-label="dashboard-card-b">
+					</vtr-container-card>
+				</div>
+				<div class="col-xl-6 card-right">
+					<vtr-container-card order="3"
+						[itemID]="cardContentPositionC.Id"
+						[img]="cardContentPositionC.FeatureImage"
+						[caption]="cardContentPositionC.Description"
+						[title]="cardContentPositionC.Title"
+						[logoText]="cardContentPositionC.BrandName"
+						[action]="cardContentPositionC.Action"
+						[actionType]="cardContentPositionC.ActionType"
+						[actionLink]="cardContentPositionC.ActionLink"
+						[type]="'corner'"
+						[ratioX]="4"
+						[ratioY]="2"
+						[containerCardId]="'dashboard-lnk-content-c'"
+						id="dashboard-card-c"
+						aria-label="dashboard-card-c">
+					</vtr-container-card>
+				</div>
+				<div class="col-sm-12 px-40 py-20">
+					<vtr-container-card order="4"
+						[itemID]="cardContentPositionD.Id"
+						[img]="cardContentPositionD.FeatureImage"
+						[title]="cardContentPositionD.Title"
+						[logoText]="cardContentPositionD.BrandName"
+						[action]="cardContentPositionD.Action"
+						[actionType]="cardContentPositionD.ActionType"
+						[actionLink]="cardContentPositionD.ActionLink"
+						[type]="'highlight'"
+						[ratioX]="8"
+						[ratioY]="2"
+						[containerCardId]="'dashboard-lnk-content-d'"
+						id="dashboard-card-d"
+						aria-label="dashboard-card-d">
+					</vtr-container-card>
+				</div>
+				<div class="col-xl-6 card-left">
+					<vtr-container-card order="5"
+						[itemID]="cardContentPositionE.Id"
+						[img]="cardContentPositionE.FeatureImage"
+						[title]="cardContentPositionE.Title"
+						[logoText]="cardContentPositionE.BrandName"
+						[action]="cardContentPositionE.Action"
+						[actionType]="cardContentPositionE.ActionType"
+						[actionLink]="cardContentPositionE.ActionLink"
+						[type]="'article'"
+						[ratioX]="4"
+						[ratioY]="4"
+						[containerCardId]="'dashboard-lnk-content-e'"
+						id="dashboard-card-e"
+						aria-label="dashboard-card-e">
+					</vtr-container-card>
+				</div>
+				<div class="col-xl-6 card-right">
+					<vtr-container-card order="6"
+						[itemID]="cardContentPositionF.Id"
+						[img]="cardContentPositionF.FeatureImage"
+						[title]="cardContentPositionF.Title"
+						[logoText]="cardContentPositionF.BrandName"
+						[action]="cardContentPositionF.Action"
+						[actionType]="cardContentPositionF.ActionType"
+						[actionLink]="cardContentPositionF.ActionLink"
+						[type]="'article'"
+						[ratioX]="4"
+						[ratioY]="4"
+						[containerCardId]="'dashboard-lnk-content-f'"
+						id="dashboard-card-f"
+						aria-label="dashboard-card-f">
+					</vtr-container-card>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<div class="row no-gutters" *ngIf="warrantyData && deviceService.showWarranty">
+				<div class="col-sm-12 col-md-12 pb-60">
+					<vtr-widget-dashboard-warranty [item]="warrantyData"
+						[isConnected]="isOnline">
+					</vtr-widget-dashboard-warranty>
+				</div>
+			</div>
+			<div class="row no-gutters" *ngIf="!deviceService.showWarranty">
+				<div class="col-sm-12 col-md-12 pb-60">
+					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+						[description]="'dashboard.feedback.subtitle' | translate"
+						[actionName]="'dashboard.feedback.button' | translate"
+						[action]="'feedback'"
+						(feedBackClick)="onFeedbackModal()">
+					</vtr-widget-feedback>
+				</div>
+			</div>
+			<div class="row no-gutters" *ngIf="!deviceService.isArm">
+				<div class="col-sm-12 col-md-12 pb-60">
+					<vtr-widget-quicksettings
+						[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
+					</vtr-widget-quicksettings>
+				</div>
+			</div>
+			<div class="row no-gutters" *ngIf="!deviceService.isArm">
+				<div class="col-sm-12 col-md-12 pb-60">
+					<vtr-widget-status componentName="system status"
+						[title]="'dashboard.systemStatus.title' | translate"
+						[description]="'dashboard.systemStatus.subtitle' | translate" [items]="systemStatus"
+						[linkId]="'dashboard-ss'">
+					</vtr-widget-status>
+				</div>
+			</div>
+
+			<div class="row no-gutters"
+				*ngIf="!androidService.isAndroid && deviceService.isArm">
+				<div class="col-sm-12 col-md-12 pb-60 cont">
+					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+						[description]="'common.qAndA.subtitle' | translate" [items]="qaService.qas" blockPosition="r4"
+						[linkId]="'dashboard-qa'"></vtr-widget-questions>
+				</div>
+			</div>
+
+			<div class="row no-gutters"
+				*ngIf="!deviceService.isArm && !deviceService.isSMode && brand !== 1 && !deviceService.isGaming">
+				<div class="col-sm-12 py-40">
+					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
+						[linkId]="'dashboard'">
+					</vtr-widget-security-status>
+				</div>
+			</div>
+
+			<div class="row no-gutters"
+				*ngIf="deviceService.showWarranty"
+				[vtrAppSearchScroller]="['search-feedback']">
+				<div class="col-sm-12 col-md-12 pb-60">
+					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+						[description]="'dashboard.feedback.subtitle' | translate"
+						[actionName]="'dashboard.feedback.button' | translate"
+						[action]="'feedback'"
+						(feedBackClick)="onFeedbackModal()">
+					</vtr-widget-feedback>
+				</div>
+			</div>
+		</div>
+	</right-content>
+</vtr-page-layout>

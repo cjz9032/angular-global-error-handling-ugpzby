@@ -5,6 +5,8 @@ class BatteryGaugeDetail {
 	public isAttached: boolean;
 	public isAirplaneModeEnabled: boolean;
 	public acAdapterStatus: string;
+	public acWattage: number;
+	public acAdapterType: string;
 	public isPowerDriverMissing: boolean;
 	public isExpressCharging: boolean;
 }

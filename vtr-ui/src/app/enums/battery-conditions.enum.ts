@@ -11,14 +11,18 @@ export enum BatteryConditionsEnum {
 	OverheatedBattery,
 	PermanentError,
 	HardwareAuthenticationError,
+	UnsupportedBattery,
+	NonThinkPadBattery,
+	NonLenovoUsbPowerAdapter,
 
 	MissingDriver,
 
 	NotSupportACAdapter,
 	LimitedACAdapterSupport,
+	FullACAdapterSupport,
 	StoreLimitation
 }
 
-export enum BatteryQuality {
-	Good, Fair, Poor, AcError
+export enum BatteryStatus {
+	Good, Fair, Poor, AcAdapterStatus
 }

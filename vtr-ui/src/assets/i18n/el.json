@@ -44,8 +44,8 @@
                     "driverPopup": {
                         "headerText": "Απαιτείται εγκατάσταση του προγράμματος οδήγησης",
                         "text": "Εγκαταστήστε το πρόγραμμα οδήγησης για να ενεργοποιήσετε τη λειτουργία Υπερχρονισμού RAM (Απαιτείται επανεκκίνηση)",
-                        "button": "Εγκατάσταση",
-                        "link": "άκυρο",
+                        "button": "ΕΓΚΑΤΑΣΤΑΣΗ",
+                        "link": "ΑΚΥΡΟ",
                         "networkBoostText": "Χρειάζεται να εγκαταστήσετε το πρόγραμμα οδήγησης για την Ενίσχυση δικτύου, ώστε να καταστεί αποτελεσματική",
                         "hybridModeText": "Χρειάζεται να εγκαταστήσετε το πρόγραμμα οδήγησης για την Υβριδική λειτουργία, ώστε να καταστεί αποτελεσματική",
                         "cpuOverclockText": "Εγκαταστήστε το πρόγραμμα οδήγησης για να ενεργοποιήσετε τη λειτουργία Υπερχρονισμού CPU (Απαιτείται επανεκκίνηση)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Απαιτείται εγκατάσταση του προγράμματος οδήγησης",
                         "text": "Εγκαταστήστε το πρόγραμμα οδήγησης για να ενεργοποιήσετε τον φωτισμό (Απαιτείται επανεκκίνηση)",
-                        "button": "Εγκατάσταση",
-                        "link": "άκυρο"
+                        "button": "ΕΓΚΑΤΑΣΤΑΣΗ",
+                        "link": "ΑΚΥΡΟ"
                     },
                     "lightingColorMessage": {
                         "text": "Η επιλογή χρώματος δεν είναι διαθέσιμη για τον σκοπό αυτό."
@@ -81,7 +81,7 @@
                     "line2": "<b>Επισκόπηση διαχείρισης δυνατοτήτων</b> <br> Ορισμένες δυνατότητες δεν είναι διαθέσιμες σε όλες τις συσκευές",
                     "line3": "<b>Υπερχρονισμός CPU </b><br> Αυξήστε τη μέγιστη ταχύτητα του επεξεργαστή σας",
                     "line4": "<b>Υπερχρονισμός RAM </b><br> Αυξήστε τη μέγιστη ταχύτητα της μνήμης σας",
-                    "line5": "<b>Ενίσχυση δικτύου </b><br> Προτεραιότητα κυκλοφορίας δικτύου για το παιχνίδι που παίζετε",
+                    "line5": "<b>Ενίσχυση δικτύου </b><br> Προτεραιότητα της κυκλοφορίας δικτύου για το παιχνίδι που παίζετε",
                     "line6": "<b>Dolby </b><br> Συντονίστε τον ήχο σας ειδικά για τα παιχνίδια με την τεχνολογία Dolby",
                     "line7": "<b>Υβριδική λειτουργία </b><br> Απενεργοποίηση προηγμένων ρυθμίσεων GPU, όταν δεν παίζετε, για ενισχυμένη απόδοση μπαταρίας",
                     "line8": "<b>Γρήγορη φόρτιση </b><br> Παιχνίδι εν κινήσει με ταχύτερη φόρτιση της μπαταρίας",
@@ -96,7 +96,7 @@
                     "info": "ΠΛΗΡ"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Γρήγορες ρυθμίσεις"
                 }
             }
         },
@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -146,8 +156,8 @@
                 },
                 "recorded": {
                     "title": "ΠΛΗΚΤΡΟ ΜΑΚΡΟΕΝΤΟΛΗΣ ΓΙΑ ",
-                    "deleteKey": "Πλήκτρο Delete",
-                    "clear": "Εκκαθ.",
+                    "deleteKey": "Delete",
+                    "clear": "ΕΚΚΑΘΑΡΙΣΗ",
                     "intervalStatus": {
                         "keep": {
                             "title": "Διατήρηση καθυστέρησης",
@@ -228,13 +238,35 @@
                     "body": "Η εγγραφή θα λήξει, εάν η εισαγωγή διακοπεί για περισσότερο από 10 δευτερόλεπτα."
                 },
                 "confirmButton": {
-                    "btnClear": "Εκκαθ.",
-                    "btnCancel": "Άκυρο"
+                    "btnClear": "ΕΚΚΑΘΑΡΙΣΗ",
+                    "btnCancel": "ΑΚΥΡΟ"
                 },
                 "btnOk": "OK"
             },
             "recording": {
                 "title": "Εγγραφή πλήκτρου μακροεντολής για"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -314,7 +346,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Απενεργοποίηση"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Προφίλ 1"
@@ -328,7 +360,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Απενεργοποίηση"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -368,26 +400,184 @@
                 "text7": {
                     "title": "Χρώμα"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Αυτόματο κλείσιμο",
+            "introLine": "Προσθέστε εφαρμογές για κλείσιμο όταν αρχίζετε ένα παιχνίδι. Θα ελευθερωθούν μη χρησιμοποιούμενοι πόροι για να μεγιστοποιηθεί η απόδοση του παιχνιδιού. ΣΗΜΕΙΩΣΗ: Αυτή η δυνατότητα κλείνει τελείως την εφαρμογή. Έτσι, να φροντίζετε πάντα για την αποθήκευση της εργασίας σας.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Να ενεργοποιηθεί το Αυτόματο κλείσιμο;",
+                "body": "Οι εφαρμογές που προσθέσατε θα κλείσουν όταν παίζετε παιχνίδια, απελευθερώνοντας πόρους για τα παιχνίδια.",
+                "checkedTitle": "Να μην ερωτηθώ ξανά",
+                "btnConfirm": "Ενεργοποίηση",
+                "btnCancel": "Όχι τώρα"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Προσθήκη εφαρμογών στο Αυτόματο κλείσιμο",
+                "body": "Στη λίστα παρακάτω θα εμφανιστούν μόνο οι εφαρμογές που εκτελούνται προς το παρόν."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Προσθήκη",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Δεν υπάρχουν εφαρμογές σε λειτουργία για προσθήκη",
+                "body": "Θα εμφανιστούν μόνο οι εφαρμογές που εκτελούνται προς το παρόν. Ανοίξτε μια εφαρμογή που θέλετε να προσθέσετε και στην οποία να επιστρέψετε."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
+            }
+        },
+        "networkBoost": {
+            "title": "Ενίσχυση δικτύου",
+            "introLine": "Εάν ενεργοποιήσετε την Ενίσχυση δικτύου, η προτεραιότητα των παιχνιδιών θα οριστεί αυτόματα στο υψηλότερο επίπεδο στο δίκτυό σας, μεγιστοποιώντας την ταχύτητα. Εάν χρησιμοποιείτε εφαρμογές ενώ παίζετε, π.χ. το Twitch ή το Discord, συνιστάται η προσθήκη τους στη λίστα παρακάτω, ώστε να λάβουν και αυτές προτεραιότητα στο δίκτυό σας.",
+            "modalTurn": {
+                "title": "Να ενεργοποιηθεί η Ενίσχυση δικτύου;",
+                "body": "Να ενεργοποιηθεί η Ενίσχυση δικτύου; Οι εφαρμογές που προσθέσατε θα μοιράζονται περισσότερο δίκτυο κατά την εκτέλεση.",
+                "checkedTitle": "Να μην ερωτηθώ ξανά",
+                "btnConfirm": "Ενεργοποίηση",
+                "btnCancel": "Όχι τώρα"
+            },
+            "modalAddApps": {
+                "title": "Προσθήκη εφαρμογών στην Ενίσχυση δικτύου",
+                "body": {
+                    "part1": "Δυνατότητα προσθήκης έως 5 εφαρμογών επιπλέον για ενίσχυση",
+                    "part2": "από",
+                    "part3": "προστέθηκε"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
+                }
             }
         }
     },
@@ -411,8 +601,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Υποστήριξη",
-            "homeSecurity": "Συνδεδεμένη οικία",
-            "privacy": "Προσωπικά δεδομένα"
+            "privacy": "Προσωπικά δεδομένα",
+            "beta": {
+                "title": "beta"
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Σύμβουλος ασφάλειας",
@@ -451,6 +644,9 @@
             "expand": "Επέκταση",
             "loader": "Λήψη της κατάστασης <br>",
             "loading": "Φόρτωση..."
+        },
+        "app-update": {
+            "message": "Γεια! Υπάρχει διαθέσιμη μια νεότερη έκδοση του Vantage, θέλετε να τη φορτώσετε;"
         }
     },
     "privacy": {
@@ -518,10 +714,10 @@
             "cameraPrivacy": "Κάμερα",
             "eyeCareMode": "Φροντίδα ματιών",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα και στο μικρόφωνο.",
+                "accessUrl": "Μεταβείτε στις ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση",
+                "microphoneNote": "Το Lenovo Vantage δεν έχει πρόσβαση στο μικρόφωνο.",
+                "cameraPrivacyNote": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα."
             }
         },
         "systemStatus": {
@@ -613,7 +809,6 @@
         "deviceSettings": {
             "helpful": "Χρήσιμο περιεχόμενο",
             "batteryGauge": {
-                "title": "ΜΕΤΡΗΤΗΣ ΜΠΑΤΑΡΙΑΣ",
                 "subtitle": "Εύρυθμη λειτουργία μπαταρίας",
                 "hours": "ώρες",
                 "hour": "ώρα",
@@ -676,22 +871,22 @@
                     "Bad": "<b>Παρουσιάστηκε σφάλμα μπαταρίας.</b> Δεν είναι δυνατή η φόρτιση/αποφόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
                     "NotDetected": "<b>Δεν εντοπίστηκε μπαταρία ή δεν</b> έχει συνδεθεί μπαταρία.",
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
-                    "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b> Ο υπολογιστής Lenovo δεν υποστηρίζει αυτόν τον μετασχηματιστή εναλλασσόμενου ρεύματος. Μπορεί να προκληθεί ξαφνική διακοπή λειτουργίας. Συνδέστε έναν κατάλληλο μετασχηματιστή εναλλασσόμενου ρεύματος.",
-                    "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής εναλλασσόμενου ρεύματος δεν μπορεί να παρέχει αρκετό ρεύμα</b> στον υπολογιστή Lenovo ώστε να επηρεάσει την απόδοση του συστήματος και την ταχύτητα φόρτισης. Συνδέστε ξανά το σωστό μετασχηματιστή εναλλασσόμενου ρεύματος.",
+                    "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
+                    "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
                     "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης.",
                     "StoreLimitation": "<b>Η μπαταρία μπορεί να αποθηκεύσει μόνο το {{value}}% από</b> την αρχική της χωρητικότητα πλήρους φόρτισης.",
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
                     "OverheatedBattery": "Η μπαταρία είναι <b>πολύ ζεστή</b>. Αφαιρέστε την από τον υπολογιστή και αφήστε την να επανέλθει σε θερμοκρασία δωματίου.",
                     "PermanentError": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b> Ο υπολογιστής Lenovo δεν υποστηρίζει αυτόν τον μετασχηματιστή εναλλασσόμενου ρεύματος. Μπορεί να προκληθεί ξαφνική διακοπή λειτουργίας. Συνδέστε έναν κατάλληλο μετασχηματιστή εναλλασσόμενου ρεύματος.",
+                    "LimitedACAdapterSupportDetail": "<b>Ο μετασχηματιστής εναλλασσόμενου ρεύματος δεν μπορεί να παρέχει αρκετό ρεύμα</b> στον υπολογιστή Lenovo ώστε να επηρεάσει την απόδοση του συστήματος και την ταχύτητα φόρτισης. Συνδέστε ξανά το σωστό μετασχηματιστή εναλλασσόμενου ρεύματος.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
-                "updating": "Ενημέρωση",
-                "voltageError": "Εσφαλμένη τάση μπαταρίας",
                 "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
                 "thresholdNote": "<b>Σημείωση:</b> Για να παρατείνετε τη διάρκεια ζωής της μπαταρίας, έχετε ορίσει το {{value}}% ως όριο διακοπής φόρτισης της μπαταρίας σας.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Βλέπε λεπτομέρειες",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Ενέργεια",
@@ -766,7 +961,8 @@
                             "battery&Quite": "ΜΠΑΤΑΡΙΑ & ΑΘΟΡΥΒΟ"
                         }
                     },
-                    "description5": "Η λειτουργία Έξυπνης ψύξης ρυθμίζει την ταχύτητα του ανεμιστήρα, τη μέγιστη απόδοση και διαχειρίζεται τη διάρκεια της μπαταρίας. Αυτή η δυνατότητα έχει 3 λειτουργίες (Αθόρυβη, Ισορροπημένη και Απόδοση) και είναι πλέον προσβάσιμη από το ρυθμιστικό ισχύος απόδοσης των Windows"
+                    "description5": "Η λειτουργία Έξυπνης ψύξης ρυθμίζει την ταχύτητα του ανεμιστήρα, τη μέγιστη απόδοση και διαχειρίζεται τη διάρκεια της μπαταρίας. Αυτή η δυνατότητα έχει 3 λειτουργίες (Αθόρυβη, Ισορροπημένη και Απόδοση) και είναι πλέον προσβάσιμη από το ρυθμιστικό ισχύος απόδοσης των Windows",
+                    "nocqldesc": "Η έξυπνη ψύξη σας δίνει τη δυνατότητα να ρυθμίσετε την απόδοση του συστήματος και τη θερμική θερμοκρασία. Στη λειτουργία \"Απόδοση\", βελτιστοποιεί την απόδοση του συστήματος. Ενώ βοηθά να διατηρήσετε το σύστημα πιο δροσερό ή πιο αθόρυβο στη λειτουργία \"Κρύο και αθόρυβο\"."
                 },
                 "powerSettings": {
                     "title": "Ρυθμίσεις ενέργειας",
@@ -779,6 +975,11 @@
                         "title": "Εύκολη επαναφορά",
                         "description": "Ενεργοποιήστε αυτή τη δυνατότητα, για να μειώσετε τον χρόνο επαναφοράς στην κανονική λειτουργία, αν ανοίγετε και κλείνετε συχνά το καπάκι του υπολογιστή σας.",
                         "tooltip": "Αυτή η δυνατότητα θα μειώσει το χρόνο επαναφοράς στην κανονική λειτουργία, αν ανοίγετε και κλείνετε συχνά το καπάκι του υπολογιστή σας. Όταν είναι ενεργοποιημένη, ο υπολογιστής σας θα μεταβαίνει σε μια λειτουργία χαμηλής ενέργειας όταν κλείνετε το καπάκι του, αλλά θα επανέρχεται σε κανονική λειτουργία αμέσως, αν το ξανανοίξετε μέσα σε 15 λεπτά από το κλείσιμο. Επίσης, με αυτήν τη δυνατότητα ο φορητός υπολογιστής επιχειρεί να ολοκληρώσει τις εκκρεμείς δραστηριότητες (όπως την αποστολή ενός email ή τη μεταφόρτωση ενός αρχείο) πριν από τη μετάβαση του συστήματος σε κατάσταση αναστολής λειτουργίας."
+                    },
+                    "flipToBoot": {
+                        "title": "Γυρίστε για εκκίνηση",
+                        "description": "Αυτή η δυνατότητα σάς επιτρέπει να ανάβετε τον υπολογιστή σας, όταν ανοίγετε το καπάκι του υπολογιστή, ακριβώς όπως όταν πατάτε το κουμπί τροφοδοσίας. ",
+                        "tooltip": "Αυτή η δυνατότητα ξεκινά αυτόματα τον υπολογιστή με το άνοιγμα του καπακιού.  Είναι ιδιαίτερα χρήσιμη, εάν έχετε ρυθμίσει τις πληροφορίες σύνδεσης προσώπου στο Windows Hello."
                     },
                     "or": "ή"
                 },
@@ -799,8 +1000,8 @@
                         "readMoreText": "Διαβάστε περισσότερα.",
                         "noteInfo": " Το όριο φορτίου μπαταρίας δεν είναι ακόμη πλήρως ενεργό. Αποσυνδέστε το μηχάνημά σας και αφήστε τη μπαταρία σας να εξαντληθεί στο ή κάτω από το όριο φόρτισης.",
                         "settings": {
-                            "title1": "Κατώτατο όριο για ενσωματωμένη μπαταρία",
-                            "title2": "Κατώτατο όριο για αφαιρούμενη μπαταρία"
+                            "title1": "Κατώτατο όριο για κύρια μπαταρία",
+                            "title2": "Κατώτατο όριο για δευτερεύουσα μπαταρία"
                         },
                         "popup": {
                             "title": "Ενεργοποίηση ορίου φορτίου μπαταρίας",
@@ -833,7 +1034,43 @@
                         "title": "Λειτουργία ενέργειας πτήσης",
                         "description": "Προστατεύστε την πρίζα AC του αεροπλάνου ελέγχοντας την κατανάλωση του συστήματός σας.Όταν είναι ενεργοποιημένη η Λειτουργία ενέργειας πτήσης, ο υπολογιστής μειώνει την κατανάλωση ενέργειας περιορίζοντας το ρυθμό φόρτισης της μπαταρίας και την απόδοση του συστήματος.",
                         "checkBoxDesc": "Αυτόματη ανίχνευση",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Αν είναι επιλεγμένος ο Αυτο-εντοπισμός, ο υπολογιστής σας θα ενεργοποιήσει τη λειτουργία Ενέργειας πτήσης αυτόματα, όταν εντοπίσει περιβάλλον εντός αεροπλάνου και θα την απενεργοποιήσει όταν αποχωρήσετε."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -972,7 +1209,7 @@
                             "warm": "Ζεστό (καλύτερο για τα μάτια)",
                             "cold": "Ψυχρό"
                         },
-                        "reset": "Επαναφορά θερμοκρασίας",
+                        "reset": "Επαναφορά",
                         "tooltip": "Η λειτουργία φροντίδας ματιών ρυθμίζει τη θερμοκρασία των χρωμάτων της οθόνης σας για φιλτράρισμα του μπλε φωτός και μείωση της κόπωσης των ματιών.",
                         "onSunsetToSunriseScheduleDescription": "Προγραμματίστε τη λειτουργία φροντίδας ματιών από το ηλιοβασίλεμα έως την ανατολή",
                         "note": {
@@ -986,7 +1223,7 @@
                             "warm": "Ζεστό (καλύτερο για τα μάτια)",
                             "cold": "Ψυχρό"
                         },
-                        "reset": "Επαναφορά θερμοκρασίας",
+                        "reset": "Επαναφορά",
                         "tooltip": "Η λειτουργία φροντίδας ματιών ρυθμίζει τη θερμοκρασία των χρωμάτων της οθόνης σας για φιλτράρισμα του μπλε φωτός και μείωση της κόπωσης των ματιών.",
                         "onSunsetToSunriseScheduleDescription": "Προγραμματίστε τη λειτουργία φροντίδας ματιών από το ηλιοβασίλεμα έως την ανατολή",
                         "note": {
@@ -1035,7 +1272,7 @@
                     "camera": {
                         "title": "Κάμερα",
                         "tooltip": "Κάντε κλικ εδώ για να επαναφέρετε τις ιδιότητες της κάμερας στις προεπιλεγμένες ρυθμίσεις.",
-                        "reset": "Επαναφορά στις εργοστασιακές ρυθμίσεις"
+                        "reset": "Επαναφορά"
                     },
                     "brightness": "Φωτεινότητα",
                     "contrast": "Αντίθεση",
@@ -1060,7 +1297,7 @@
             "inputAccessories": {
                 "title": "Εισαγωγή και αξεσουάρ",
                 "subtitle": "Ρυθμίσεις Εισαγωγής και αξεσουάρ",
-                "description": "H δυνατότητα Έξυπνης ανίχνευσης της Lenovo συνδυάζει τους διαφόρους αισθητήρες του υπολογιστή σας για να ανιχνεύσει τις δραστηριότητές σας και να προσαρμόσει τις ρυθμίσεις για βέλτιστη διαχείριση ενέργειας",
+                "description": "Αυτή η ενότητα σάς δίνει τη δυνατότητα να ορίσετε τις πιο συχνά χρησιμοποιούμενες λειτουργίες πληκτρολογίου και ποντικιού. Εξερευνήστε περισσότερες δυνατότητες εδώ.",
                 "inputAccessory": {
                     "title": "Έξυπνο πληκτρολόγιο",
                     "hiddenKeyboardFunctions": {
@@ -1091,6 +1328,51 @@
                         "tittle": "Fn + Διάστημα",
                         "description": "αλλαγή της κατάστασης του οπίσθιου φωτισμού του πληκτρολογίου",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Λειτουργία επάνω σειράς πληκτρολογίου",
+                        "showAdvSettings": "ΕΜΦΑΝΙΣΗ ΡΥΘΜΙΣΕΩΝ ΓΙΑ ΠΡΟΧΩΡΗΜΕΝΟΥΣ",
+                        "hideAdvSettings": "ΑΠΟΚΡΥΨΗ ΡΥΘΜΙΣΕΩΝ ΓΙΑ ΠΡΟΧΩΡΗΜΕΝΟΥΣ",
+                        "description": "Η επάνω σειρά του πληκτρολογίου παρέχει τις ακόλουθες δύο λειτουργίες. Επιλέξτε αυτήν που θέλετε:",
+                        "subSection": {
+                            "description": "Για να αλλάξετε τις δύο παραπάνω λειτουργίες, πατήστε Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "ΕΙΔΙΚΗ ΛΕΙΤΟΥΡΓΙΑ",
+                                "fnKey": "ΛΕΙΤΟΥΡΓΙΑ F1-F12"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Αντιστροφή της προεπιλεγμένης κύριας λειτουργίας",
+                            "description": "Όταν είναι ενεργοποιημένη, η προεπιλεγμένη κύρια λειτουργία θα αλλάξει από τις εργοστασιακές ρυθμίσεις στο αντίθετο. Επανεκκινήστε τον υπολογιστή σας για να εφαρμοστούν οι αλλαγές."
+                        },
+                        "subSectionThree": {
+                            "title": "Πώς θα χρησιμοποιήσετε τους συνδυασμούς πλήκτρων Fn",
+                            "description": "Χρησιμοποιώντας τη μέθοδο \"Κανονική\" για να χρησιμοποιήσετε τους συνδυασμούς πλήκτρων Fn, πρέπει να πατήσετε τα πλήκτρα λειτουργίας Fn+. Με τη μέθοδο ασύγχρονου πλήκτρου Fn μπορείτε να πατήσετε (αντί να πατήσετε παρατεταμένα) το πλήκτρο Fn για να διατηρηθεί ενεργοποιημένο. Κατόπιν, πατήστε το επιθυμητό πλήκτρο λειτουργίας. Η ενέργεια ισοδυναμεί με το ταυτόχρονο πάτημα του πλήκτρου λειτουργίας και του πλήκτρου Fn.",
+                            "radioButton": {
+                                "nMehod": "Κανονική μέθοδος",
+                                "fnKeyMehod": "Μέθοδος ασύγχρονου πλήκτρου Fn"
+                            },
+                            "note": "Όταν πατάτε το πλήκτρο Fn δύο φορές, το πλήκτρο Fn κλειδώνει στην κατάσταση πατημένο μέχρι να το πατήσετε ξανά. Όταν το πλήκτρο Fn είναι κλειδωμένο, ανάβει η ένδειξη Fn Lock. Μπορείτε να πατήσετε το επιθυμητό πλήκτρο λειτουργίας απευθείας για να εκκινήσετε τη μη προεπιλεγμένη λειτουργία."
+                        },
+                        "popup": {
+                            "title": "Επανεκκίνηση υπολογιστή",
+                            "description": "Η αλλαγή της προεπιλεγμένης λειτουργίας επάνω σειράς απαιτεί να κάνετε επανεκκίνηση του υπολογιστή σας. Είστε βέβαιοι ότι θέλετε επανεκκίνηση;",
+                            "reboot": "ΕΠΑΝΕΚΚΙΝΗΣΗ",
+                            "cancel": "ΟΧΙ ΤΩΡΑ"
+                        }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Λειτουργίες πλήκτρων συντόμευσης VoIP",
+                        "description": {
+                            "main": "Αυτή η λειτουργία σάς δίνει τη δυνατότητα να απαντήσετε ή να απορρίψετε μια κλήση VoIP πατώντας τα πλήκτρα συντόμευσης στο πληκτρολόγιό σας:",
+                            "f10": "F10: απάντηση κλήσης",
+                            "f11": "F11: απόρριψη ή τερματισμός κλήσης"
+                        },
+                        "tooltip": "Επί του παρόντος, αυτή η λειτουργία υποστηρίζεται μόνο στο Skype for Business 2016 και το Microsoft Teams 1.0.<br>Για να χρησιμοποιήσετε αυτήν τη λειτουργία, πρέπει πρώτα να πραγματοποιήσετε λήψη και να εγκαταστήσετε τις εφαρμογές.",
+                        "hasInstalledAppsDescription": "Επιλέξτε την εφαρμογή με την οποία θέλετε να χρησιμοποιείτε τα πλήκτρα συντόμευσης:",
+                        "noInstalledAppsDescription": "Αυτή η λειτουργία υποστηρίζει μόνο τις ακόλουθες εφαρμογές: ",
+                        "hasInstalledAppsNote": "Σημείωση: Στο Microsoft Teams 1.0, το πλήκτρο F11 δεν μπορεί να χρησιμοποιηθεί για τον τερματισμό της κλήσης.",
+                        "noInstalledAppsNote": "Σημείωση: Για να χρησιμοποιήσετε αυτήν τη λειτουργία, πρέπει πρώτα να πραγματοποιήσετε λήψη και να εγκαταστήσετε τις εφαρμογές."
                     }
                 },
                 "userDefinedKey": {
@@ -1118,10 +1400,13 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
+                    "more": "ΠΕΡΙΣΣΟΤΕΡΑ",
+                    "control1": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΛΗΚΤΡΟΛΟΓΙΟΥ ΑΦΗΣ",
+                    "control2": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΟΝΤΙΚΙΟΥ",
+                    "control3": "ΧΕΙΡΙΣΤΗΡΙΑ TRACKPOINT"
                 }
             }
         },
@@ -1163,6 +1448,17 @@
                             "slow": "Αργή"
                         },
                         "toolTipContent": "Επιλέξτε την επιθυμητή ρύθμιση για κλείδωμα της οθόνης σας με Υψηλή/Μέτρια/Χαμηλή ταχύτητα όταν δεν εντοπιστεί η παρουσία σας. Ωστόσο, ο χρόνος που θα παρέλθει για να κλειδώσει η οθόνη επηρεάζεται επίσης από τον πραγματικό χρήστη, τις δυνατότητες των αισθητήρων και τις ρυθμίσεις λήξης χρόνου οθόνης των Windows. Επομένως, προτείνουμε να κλειδώνετε σε κάθε περίπτωση και αμέσως το σύστημά σας πριν φύγετε απ' αυτό."
+                    },
+                    "facialRecognition": {
+                        "title": "ΑΝΑΓΝΩΡΙΣΗ ΠΡΟΣΩΠΟΥ",
+                        "caption": "Μπορείτε να ενεργοποιήσετε τη λειτουργία αναγνώρισης προσώπου και να της επιτρέψετε να έχει πρόσβαση στην κάμερά σας. Αυτό το εργαλείο καταγράφει την εικόνα σας για να αναγνωρίζει με ακρίβεια την παρουσία σας ή να εντοπίζει πότε έχετε αφήσει τη συσκευή σας χωρίς επιτήρηση. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
+                        "checkBox": "Ενεργοποιήστε την κάμερα και ενεργοποιήστε αυτήν τη λειτουργία",
+                        "note": {
+                            "permission": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
+                            "privacyMode": "Η λειτουργία απορρήτου της κάμερας Lenovo Vantage είναι ενεργοποιημένη. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
+                            "windowsLink": "Μεταβείτε στις Ρυθμίσεις των Windows για να δώσετε πρόσβαση",
+                            "privacyLink": "Μεταβείτε στη λειτουργία απορρήτου της Κάμερας για να την απενεργοποιήσετε"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1170,7 +1466,8 @@
                     "caption": "Η αυτόματη προσαρμογή της απόστασης θα ενημερώνει αυτόματα την απόσταση ανίχνευσης μέσω μιας μηχανής AI.",
                     "options": {
                         "near": "Κοντά",
-                        "far": "Μακριά"
+                        "far": "Μακριά",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1188,14 +1485,19 @@
                     "description1": "Αυτή η δυνατότητα βασίζεται στο Windows Hello. Βεβαιωθείτε ότι η αναγνώριση προσώπου είναι ενεργοποιημένη στις ρυθμίσεις των Windows.",
                     "description2": "Η δυνατότητα χρησιμοποιεί αισθητήρες και κάμερα για να ανιχνεύει την παρουσία σας. Ωστόσο, ΔΕΝ συλλέγει, αποθηκεύει ή διαρρέει προσωπικά δεδομένα ή εικόνες.",
                     "description3": "1. Εάν ο υπολογιστής σας είναι σε λειτουργία σκηνής, tablet ή ανάκλισης, οι δυνατότητες αυτές ενδέχεται να μη λειτουργούν σωστά.",
-                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η αυτόματη είσοδος με κάμερα IR δεν θα λειτουργήσει.",
-                    "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο."
+                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η σύνδεση χωρίς αφή δεν θα λειτουργήσει.",
+                    "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο.",
+                    "description6": "4. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Μετάβαση στις Ρυθμίσεις του Windows Hello",
                     "screenTimeoutSettings": "Μετάβαση στις ρυθμίσεις λήξης χρονικού ορίου οθόνης"
                 },
-                "resetToDefault": "ΕΠΑΝΑΦΟΡΑ ΣΤΙΣ ΠΡΟΕΠΙΛΕΓΜΕΝΕΣ ΡΥΘΜΙΣΕΙΣ"
+                "resetToDefault": "Επαναφορά",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Έξυπνη οθόνη",
@@ -1346,6 +1648,7 @@
         "banner": {
             "neverChecked": "Καλωσορίσατε στη χρήση της Ενημέρωσης συστήματος.",
             "title": "Το ενημερωμένο σύστημα είναι υγιές σύστημα.",
+            "installingTitle": "Κατά τη διάρκεια των ενημερώσεων, μην θέτετε τον υπολογιστή σε κατάσταση αναστολής λειτουργίας ή αδρανοποίησης.",
             "last": "Τελευταία ενημέρωση: ",
             "next": "Επόμενη προγραμματισμένη ενημέρωση: ",
             "checkButton": "ΕΛΕΓΧΟΣ ΓΙΑ ΕΝΗΜΕΡΩΣΕΙΣ",
@@ -1421,85 +1724,6 @@
             "fileNotFoundException": "Το αρχείο δεν βρέθηκε."
         }
     },
-    "homeSecurity": {
-        "title": "Ασφάλεια οικιακής σύνδεσης",
-        "notification": {
-            "recent": "Πρόσφατες ειδοποιήσεις ασφάλειας",
-            "notifications": "Ειδοποιήσεις"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Προστατεύστε το περιβάλλον της συσκευής σας",
-            "thisDevice": "Αυτή η συσκευή",
-            "allDevices": "Όλες οι συσκευές",
-            "protected": "Προστατεύεται",
-            "notProtected": "Δεν προστατεύεται",
-            "trialExpired": "Η δοκιμαστική έκδοση έληξε",
-            "upgrade": "αναβάθμιση",
-            "inEcosystem": "Στο περιβάλλον",
-            "ecosystemEnable": "Περιβάλλον ενεργοποιημένο",
-            "inTrial": "Σε δοκιμή",
-            "addEcosystem": "Προσθήκη στο περιβάλλον",
-            "enableEcosystem": "Ενεργοποίηση περιβάλλοντος",
-            "startTrial": "Έναρξη δοκιμής",
-            "fullAccess": "Πλήρης πρόσβαση",
-            "renew": "Ανανέωση"
-        },
-        "overview": {
-            "overviewBlockTitle": "Επισκόπηση ασφάλειας του περιβάλλοντός σας",
-            "allDevices": "Όλες οι συσκευές",
-            "myDevice": "Η συσκευή μου",
-            "thisComputer": "Αυτός ο υπολογιστής",
-            "secure": "ΑΣΦΑΛΗΣ",
-            "needAttention": "ΑΠΑΙΤΕΙΤΑΙ ΠΡΟΣΟΧΗ",
-            "manageAccount": "Διαχείριση λογαριασμού",
-            "devices": "Συσκευές",
-            "seeProtectedDevices": "Προβολή προστατευμένων συσκευών",
-            "addDevice": "προσθήκη συσκευής",
-            "trialExpired": "Η δοκιμαστική έκδοση έληξε - Πραγματοποιήστε αναβάθμιση για να προστατεύσετε όλες τις συσκευές σας",
-            "upgrade": "αναβάθμιση",
-            "freeTrial": "Προστατεύστε όλες τις συσκευές σας - Δωρεάν περίοδος δοκιμής 30 ημερών",
-            "startTrial": "Έναρξη δοκιμής"
-        },
-        "tour": {
-            "back": "Πίσω",
-            "skip": "Παράλειψη",
-            "start": "ΕΝΑΡΞΗ ΠΕΡΙΗΓΗΣΗΣ",
-            "done": "ΟΛΟΚΛΗΡΩΘΗΚΕ",
-            "welcome1": "Καλωσορίσατε",
-            "welcomeDesc1": "Με λίγα μόλις κλικ, θα μπορείτε να προστατεύσετε υπολογιστές, φορητές συσκευές και συνδεδεμένες συσκευές για εσάς και την οικογένειά σας.",
-            "welcomeDescStart": "Ξεκινήστε τη δωρεάν δοκιμή 30 ημερών τώρα.",
-            "welcome2": "Αποκλειστικά για το Vantage",
-            "welcomeDesc2": "Η ασφάλεια οικιακής σύνδεσης είναι απευθείας ενσωματωμένη στο Vantage για γρήγορη πρόσβαση στην κατάσταση προστασίας του οικοσυστήματός σας και για προειδοποιήσεις ασφάλειας.",
-            "create": "Δημιουργία του λογαριασμού σας",
-            "lenovoId": "με το Lenovo ID",
-            "notifications": "Λήψη <b>ειδοποιήσεων</b> σχετικά με την κατάσταση του σπιτιού σας",
-            "monitor": "<b>Παρακολούθηση</b> της ασφάλειας των συσκευών της οικογένειάς σας",
-            "peaceOfMind": "Μείνετε <b>ήσυχοι</b> ότι είστε διαρκώς προστατευμένοι!",
-            "signInLenovoId": "ΕΓΓΡΑΦΗ ΜΕ LENOVO ID",
-            "haveLenovo": "Δεν έχω <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Δημιουργία Lenovo ID",
-            "without": "Προχωρήστε <b>χωρίς λογαριασμό</b>",
-            "skipAndTrial": "ΠΑΡΑΒΛΕΨΗ ΚΑΙ ΕΝΑΡΞΗ ΔΟΚΙΜΗΣ",
-            "alreadyHave": "Έχω ήδη <b>λογαριασμό ασφάλειας οικιακής σύνδεσης</b>",
-            "loginCHS": "Σύνδεση σε υπάρχοντα λογαριασμό ασφάλειας οικιακής σύνδεσης (CHS)",
-            "locationTitle": "Ενεργοποίηση παρακολούθησης τοποθεσίας",
-            "locationPermission": "Προκειμένου αυτή η λειτουργία να λειτουργήσει σωστά, θα χρειαστεί να ενεργοποιήσετε την παρακολούθηση τοποθεσίας για αυτήν τη συσκευή"
-        },
-        "accountStatus": {
-            "title": "Η δική μου ασφάλεια οικιακής σύνδεσης",
-            "startTrial": "Έναρξη δοκιμής",
-            "manageAccount": "Διαχείριση λογαριασμού",
-            "upgradeAccount": "Αναβάθμιση λογαριασμού",
-            "inTrialDetail1": "Απομένουν {{remainingDays}} ημέρες μέχρι τη λήξη της δοκιμής.",
-            "inTrialDetail2": "Αυτήν τη στιγμή βρίσκεστε εντός της δοκιμαστικής περιόδου. Έχετε απεριόριστη πρόσβαση σε όλες τις δυνατότητες.",
-            "trialExpiredDetail1": "Η δοκιμαστική περίοδος έχει λήξει.",
-            "trialExpiredDetail2": "Η δοκιμαστική περίοδος έχει λήξει και το περιβάλλον της συσκευής σας δεν προστατεύεται πλέον.",
-            "upgradedDetail1": "Ο λογαριασμός σας είναι ενεργός έως {{expiredDate}}.",
-            "upgradedDetail2": "Το περιβάλλον της συσκευής σας προστατεύεται αυτήν τη στιγμή.",
-            "localAccountDetail2": "Κάντε κλικ στο ακόλουθο κουμπί για να ξεκινήσετε τη δωρεάν δοκιμή 30 ημερών.",
-            "alreadyHaveAccount": "Έχετε ήδη κωδικό ενεργοποίησης;"
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Λήψη υποστήριξης"
@@ -1513,6 +1737,7 @@
             "statusWarrantyNotFound": "Η εγγύηση δεν βρέθηκε",
             "yearDepotWarranty": "Εγγύηση Αποθήκης Y",
             "warrantyDetails": "Στοιχεία Εγγύησης:",
+            "warrantyDashboardDetails": "Στοιχεία Εγγύησης",
             "startDate": "Ημερομηνία έναρξης: ",
             "endDate": "Ημερομηνία λήξης: ",
             "status": "Κατάσταση: ",
@@ -1588,56 +1813,78 @@
             "common": {
                 "title": "Προστασία από ιούς",
                 "back": "ΠΙΣΩ",
-                "why": "Γιατί το McAfee;",
-                "recommends": "Η Lenovo συνιστά τη McAfee για την προστασία όλων των συσκευών σας με:",
-                "award": "Βραβευμένη προστασία από τις τελευταίες ηλεκτρονικές απειλές, συμπεριλαμβανομένων των ransomware και malware",
-                "dedicated": "Αποκλειστική ασφάλεια που υπερβαίνει συνεχώς σε επιδόσεις το Defender και άλλους κορυφαίους παρόχους AV",
-                "deviceToCloud": "Τεχνολογία συσκευής σε cloud που δεν θα επιβραδύνει τον υπολογιστή σας",
-                "poweredBy": "Υποστηρίζεται από την McAfee",
-                "privacyTerms": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>",
-                "mcafeePremium": "Προστασία ανώτερης αξίας με το McAfee",
+                "recommends": "Γιατί η Lenovo συνιστά το <b>McAfee</b> για την προστασία όλων των συσκευών σας",
+                "award": "Βραβευμένο λογισμικό προστασίας από ιούς",
+                "mcafeePremium": "Προστασία McAfee LiveSafe",
                 "protectedBy": "Προς το παρόν, προστατεύεστε με το {{protectedName}}. Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe.",
                 "virusScan": "ΣΑΡΩΣΗ ΓΙΑ ΙΟΥΣ",
                 "firewall": "ΤΕΙΧΟΣ ΠΡΟΣΤΑΣΙΑΣ",
                 "disabled": "ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
-                "enableVirusScan": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΣΑΡΩΣΗΣ ΓΙΑ ΙΟΥΣ",
-                "enablenFirewall": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΤΕΙΧΟΥΣ ΠΡΟΣΤΑΣΙΑΣ",
-                "enableFirewall": "ΕΝΕΡΓΟΠΟΙΗΣΗ ΤΕΙΧΟΥΣ ΠΡΟΣΤΑΣΙΑΣ"
+                "awardText": "Προστατεύστε τον νέο υπολογιστή σας Lenovo με δοκιμασμένη, αποδεδειγμένη προστασία από τις online απειλές",
+                "performance": "Στιβαρή απόδοση",
+                "performanceText": "Συνεπές, ακριβές και αξιόπιστο λογισμικό προστασίας από ιούς στο οποίο μπορείτε να βασίζεστε ότι θα σας βοηθήσει να παραμείνετε ασφαλείς",
+                "Blazing": "Φοβερή ταχύτητα",
+                "BlazingText": "Βελτιστοποιημένο λογισμικό προστασίας από ιούς που δεν θα επιβραδύνει ή θα διακόψει την εμπειρία του Lenovo Vantage",
+                "privacyTerms": "/   <tag>Πολιτική απορρήτου</tag>  |  <tag>Όροι παροχής υπηρεσίας</tag>",
+                "notAvailable": "Δεν διατίθεται"
             },
             "windowsDefender": {
-                "optimallyProtected": "Χωρίς βέλτιστη προστασία",
-                "subtitle": "Προς το παρόν προστατεύεστε από το Windows Defender.Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe. Μάθετε περισσότερα παρακάτω.",
-                "learnMore": "ΜΑΘΕΤΕ ΠΕΡΙΣΣΟΤΕΡΑ ΓΙΑ ΤΟ McAfee",
-                "windowsProtected": "Βασική προστασία του Windows Defender",
-                "windowsSubtitle": "Το Windows Defender προσφέρει βασική προστασία για τη συσκευή σας"
+                "optimallyProtected": "Φαίνεται ότι αυτήν την περίοδο χρησιμοποιείτε το Windows Defender. Δεν είναι κακή επιλογή, αλλά για την απόλυτη ασφάλεια από ransomware, κακόβουλο λογισμικό και ιούς, έχουμε συνεργαστεί με την <b>McAfee</b> για να σας προσφέρουμε βραβευμένη ασφάλεια έτσι ώστε να μπορείτε <b>να προστατεύσετε αυτό που έχει σημασία.</b>",
+                "windowsSubtitle": "Βασική προστασία του Windows Defender",
+                "topTip": "Κορυφαίες συμβουλές για την ασφάλεια στο διαδίκτυο",
+                "topContent": "Μάθετε πώς μπορείτε να αμυνθείτε από τις μεγαλύτερες online απειλές σήμερα <tag>ΔΕΙΤΕ ΣΥΜΒΟΥΛΕΣ</tag>",
+                "view": "ΔΕΙΤΕ ΣΥΜΒΟΥΛΕΣ",
+                "buyNow": "Αγορά τώρα",
+                "buy": "Αγοράστε, κατεβάστε και εγκαταστήστε την προστασία από ιούς McAfee σήμερα για να επωφεληθείτε από αυτές τις δυνατότητες ασφάλειας επιπέδου τράπεζας",
+                "onlyBasic": "Μόνο τα βασικά εδώ. Ενώ είστε προστατευμένοι από ορισμένες online απειλές, ίσως παραμένετε εκτεθειμένοι σε άλλες.",
+                "virus": "Προστασία από ιούς",
+                "homeNetwork": "Προστασία οικιακού δικτύου",
+                "private": "Ιδιωτική, ανώνυμη περιήγηση",
+                "everyDevice": "Προστασία κάθε συσκευής",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Προς το παρόν, προστατεύεστε με το McAfee LiveSafe",
-                "valid": "Ισχύει έως",
-                "upgrade": "Αναβάθμιση τώρα",
-                "launch": "ΕΚΚΙΝΗΣΗ McAfee",
-                "getMacfee": "ΑΠΟΚΤΗΣΗ ΤΟΥ McAfee",
-                "topBenefits": "Κορυφαία πλεονεκτήματα του McAfee LiveSafe",
+                "title": "Αντιμετώπιση ιών",
+                "subtitle": "Αυτήν τη στιγμή προστατεύεστε από το McAfee LiveSafe - απομένουν μόνο {{remainingDays}} μέρες! Εγγραφείτε τώρα για να παρατείνετε την προστασία σας.",
+                "launch": "Εκκίνηση McAfee",
+                "getMacfee": "Αποκτήστε το McAfee",
+                "topBenefits": "Γιατί <b>η Lenovo συνιστά το McAfee</b> για την προστασία όλων των συσκευών σας",
                 "awardTitle": "Βραβευμένο λογισμικό προστασίας από ιούς",
-                "awardSubtitle": "Μπλοκάρει ιούς, malware, ransomware, spyware, ανεπιθύμητα προγράμματα και πολλά άλλα στον υπολογιστή σας.",
-                "encryptedTitle": "Κρυπτογραφημένος χώρος αποθήκευσης",
-                "encryptedSubtitle": "Κρατήστε τα ευαίσθητα αρχεία ιδιωτικά, αποθηκεύοντας τα στον υπολογιστή σας με κρυπτογράφηση 128 bit.",
-                "identityTitle": "Προστασία από υποκλοπή ταυτότητας",
-                "identitySubtitle": "Πάρτε την ευθύνη για την προστασία της ταυτότητάς σας από υποκλοπή και απάτη.",
-                "supportTitle": "ΔΩΡΕΑΝ υποστήριξη πελατών",
-                "supportSubtitle": "Σας παρέχει κάλυψη μέσω τηλεφώνου, συνομιλίας (chat) ή online καθ' όλη τη διάρκεια της συνδρομής σας.",
-                "antiTitle": "Προστασία από ανεπιθύμητη αλληλογραφία",
-                "antiSubtitle": "Αποκλείει τα επικίνδυνα μηνύματα πριν φθάσουν στα Εισερχόμενά σας, αφαιρώντας τα email τα οποία ενδέχεται να περιέχουν επικίνδυνους συνδέσμους και ιούς.",
-                "virusTitle": "Υπόσχεση προστασίας από ιούς",
-                "virusSubtitle": "Σας παρέχει τη βεβαιότητα ότι σε περίπτωση μόλυνσης του υπολογιστή σας από ιό, ένας εμπειρογνώμονας της McAfee θα αποκτήσει απομακρυσμένη πρόσβαση στον υπολογιστή σας για να τον αφαιρέσει.",
-                "parentalTitle": "Γονικοί έλεγχοι",
-                "parentalSubtitle": "Αποκλείει δικτυακούς τόπους και αποτελέσματα αναζήτησης που δεν θέλετε να βλέπουν τα παιδιά σας. Επιπλέον, σας αφήνει να καθορίσετε τα όρια για πόσο χρόνο ξοδεύουν σε σύνδεση (online).",
-                "license": "Ισχύς αδείας έως",
-                "trial": "Ισχύς δοκιμαστικής έκδοσης έως"
+                "awardSubtitle": "Αποτρέψτε τους ιούς, το κακόβουλο λογισμικό και τα ransomware να μολύνουν τον υπολογιστή σας",
+                "supportTitle": "Δωρεάν τεχνική υποστήριξη 24 ώρες το 24ωρο και 7 ημέρες την εβδομάδα ",
+                "supportSubtitle": "Λάβετε βοήθεια όλο το εικοσιτετράωρο και σιγουριά από την ειδική ομάδα ασφαλείας μας",
+                "trialSubtitle": "Αυτήν τη στιγμή προστατεύεστε από δοκιμαστική έκδοση 30 ημερών του McAfee LiveSafe - απομένουν μόνο {{remainingDays}} μέρες! Εγγραφείτε τώρα για να παρατείνετε την προστασία σας.",
+                "discount": "Εγγύηση 100% επιστροφής χρημάτων",
+                "trialSubscribe": "Η δοκιμή λήγει σε {{remainingDays}} ημέρες - ΕΓΓΡΑΦΕΙΤΕ ΤΩΡΑ",
+                "subscribe": "Η συνδρομή λήγει σε {{remainingDays}} ημέρες - ΕΓΓΡΑΦΕΙΤΕ ΤΩΡΑ",
+                "MultiTitle": "Προστασία πολλαπλών συσκευών",
+                "MultiSubtitle": "Προστατέψτε κάθε συσκευή που διαθέτετε - υπολογιστές, τηλέφωνα και tablet - τέλειο για οικογένειες ",
+                "networkTitle": "Προστασία οικιακού δικτύου",
+                "networkSubtitle": "Ασφαλίστε το τείχος προστασίας και αποκλείστε την πρόσβαση των χάκερ στο οικιακό σας δίκτυο",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Αποθηκεύστε και διαχειριστείτε με ασφάλεια όλους τους κωδικούς σας στο διαδίκτυο σε μία και μόνο τοποθεσία",
+                "onlineTitle": "Ηλεκτρονικό απόρρητο",
+                "onlineSubtitle": "Συνδεθείτε με κρυπτογράφηση επιπέδου τράπεζας για να διασφαλίσετε όλες τις δραστηριότητές σας στο διαδίκτυο, ακόμα και σε δημόσια δίκτυα Wi-Fi ή ανοιχτά δίκτυα ",
+                "register": "Εγγραφή στο McAfee",
+                "virusScan": "Σάρωση για ιούς",
+                "firewall": "Προσωπικό τείχος προστασίας",
+                "antiSpam": "Προστασία από ανεπιθύμητη αλληλογραφία McAfee",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "Σαρωτής ευπάθειας McAfee ",
+                "report": "Η Έκθεση Προστασίας από Απειλές σας ",
+                "trialContent": "Αξιοποιήσατε σωστά τη δοκιμή του λογισμικού προστασίας από ιούς McAfee. Αλλά με μόλις {{remainingDays}} ημέρες μέχρι τη λήξη της δοκιμής σας, κινδυνεύετε να αφήσετε τον υπολογιστή σας ευάλωτο. Μην ρισκάρετε. <tag>Εγγραφή τώρα για συνδρομή</tag>",
+                "subscribeContent": "Αξιοποιήσατε σωστά το McAfee. Αλλά με μόλις {{remainingDays}} ημέρες να απομένουν, κινδυνεύετε να αφήσετε τον υπολογιστή σας ευάλωτο. Μην ρισκάρετε. <tag>Εγγραφή τώρα για συνδρομή</tag>",
+                "subscribeNow": "Εγγραφή τώρα για συνδρομή",
+                "fileScan": "Αρχεία που έχουν σαρωθεί",
+                "Viruses": "Ιοί που έχουν εξαλειφθεί",
+                "blocked": "Κακές συνδέσεις που αποκλείστηκαν",
+                "shredded": "Αρχεία που καταστράφηκαν με ασφάλεια",
+                "startFileScan": "Έναρξη σάρωσης αρχείων"
             },
             "others": {
-                "othersProtection": "σάς προσφέρει βασική προστασία για τη συσκευή σας"
+                "othersProtection": "Το {{protectedName}} σάς προσφέρει βασική προστασία για τη συσκευή σας",
+                "unknown": "Άγνωστη",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -1690,7 +1937,8 @@
                 "describe": "Οι μη ασφαλείς συσκευές και δίκτυα μπορούν να επιτρέψουν την εισαγωγή κακόβουλου λογισμικού, να οδηγήσουν σε υποκλοπή ταυτότητας και να διαρρεύσουν ιδιωτικές και χρηματοοικονομικές πληροφορίες. Ενεργοποιήστε αυτήν τη δυνατότητα για να μειώσετε τον κίνδυνο έκθεσης της συσκευής σας και του οικιακού δικτύου σας σε εισβολείς",
                 "subtitle": "Απαλλαχθείτε από τις έννοιες",
                 "subtitleDescribe": "Η Ασφάλεια οικιακής σύνδεσης θα σας ειδοποιήσει, εάν εντοπίσει τρωτό σημείο στη συσκευή ή στο οικιακό δίκτυό σας ή εάν είστε συνδεδεμένοι σε ένα δυνητικά κακόβουλο δίκτυο. Μάθετε ακόμη περισσότερα για την ασφάλεια οικιακής σύνδεσης <tag>εδώ</tag>.",
-                "tryNow": "Δοκιμή τώρα"
+                "tryNow": "Δοκιμή τώρα",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Εισαγωγή κωδικού πρόσκλησης",
@@ -1706,7 +1954,13 @@
                 "success": "Σύνδεση, επιτυχής",
                 "canUse": "Μπορείτε πλέον να αρχίσετε να χρησιμοποιείτε τη Ασφάλεια οικιακής σύνδεσης",
                 "tryAgain": "Εσφαλμένος κωδικός, δοκιμάστε ξανά!",
-                "activationCode": "ΚΩΔΙΚΟΣ ΕΝΕΡΓΟΠΟΙΗΣΗΣ"
+                "activationCode": "ΚΩΔΙΚΟΣ ΕΝΕΡΓΟΠΟΙΗΣΗΣ",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Εύρυθμη λειτουργία ασφαλείας",
@@ -1725,6 +1979,10 @@
                 "learnMoreAboutSecurityHealth": "Μάθετε περισσότερα για καθένα από αυτά τα στοιχεία, <tag>εδώ</tag>.",
                 "peaceOfMind": "Θέλεις περισσότερη ηρεμία;",
                 "button": "Ενεργοποίηση Ασφαλείας Wifi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1836,7 +2094,7 @@
         },
         "question1": {
             "title": "Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας    </div>    <hr />    <div style='margin-bottom:7rem;'>        Η δημιουργία αντιγράφων ασφαλείας είναι πάντα χρήσιμη. Να διατηρείτε αντίγραφα των αρχείων σας σε άλλη μονάδα σε περίπτωση που συμβεί κάτι στα πρωτότυπα αρχεία.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Ρύθμιση του αντιγράφου ασφαλείας    </div>    <hr />    <div class='mb-5'>        Επιλέξτε το κουμπί <span style='font-weight:bold'>Έναρξη (Start)</span>, επιλέξτε <span style='font-weight:bold'>Ρυθμίσεις (Settings)</span> > <span style='font-weight:bold'>Ενημέρωση και ασφάλεια (Update & security)</span> > <span style='font-weight:bold'>Αντίγραφο ασφαλείας (Backup)</span> > <span style='font-weight:bold'>Προσθήκη μονάδας (Add a drive)</span> και, στη συνέχεια, επιλέξτε μια εξωτερική μονάδα ή τοποθεσία δικτύου για τα αντίγραφα ασφαλείας.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Όλα εντάξει. Κάθε ώρα, θα δημιουργούμε ένα αντίγραφο ασφαλείας όλων των περιεχομένων του φακέλου χρήστη (C:\\\\Users\\\\username). Για να αλλάξετε το ποια αρχεία θα περιλαμβάνονται στα αντίγραφα ασφαλείας και πόσο συχνά θα δημιουργούνται αντίγραφα ασφαλείας, μεταβείτε στο στοιχείο <span style='font-weight:bold;'>Περισσότερες επιλογές</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Επαναφορά των αρχείων σας    </div>    <div class='mb-5'>        Αν σας λείπει ένα σημαντικό αρχείο ή φάκελος, δείτε τι μπορείτε να κάνετε για να το ανακτήσετε:    </div>    <div>        <div class='mb-3'>1. Πληκτρολογήστε <span style='font-weight:bold;'>Επαναφορά αρχείων</span> στο πλαίσιο αναζήτησης στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <span class='font-weight:bold'>Επαναφορά των αρχείων σας με το Ιστορικό αρχείων (Restore your files with File History)</span>.</div>        <div class='mb-3'>2. Αναζητήστε το αρχείο που χρειάζεστε και, στη συνέχεια, χρησιμοποιήστε τα βέλη για να δείτε όλες τις εκδόσεις</div>        <div class='mb-3'>3. Μόλις βρείτε την έκδοση που θέλετε, επιλέξτε <span style='font-weight:bold'>Επαναφορά (Restore)</span> για να την αποθηκεύσετε στην αρχική της τοποθεσία. Για να την αποθηκεύσετε σε διαφορετική τοποθεσία, πατήστε παρατεταμένα (ή κάντε δεξί κλικ) στην επιλογή <span style='font-weight:bold'>Επαναφορά (Restore)</span>, επιλέξτε <span style='font-weight:bold'>Επαναφορά σε (Restore to)</span> και, στη συνέχεια, επιλέξτε μια νέα τοποθεσία.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας    </div>    <hr />    <div class='faqInMb7'>        Η δημιουργία αντιγράφων ασφαλείας είναι πάντα χρήσιμη. Να διατηρείτε αντίγραφα των αρχείων σας σε άλλη μονάδα σε περίπτωση που συμβεί κάτι στα πρωτότυπα αρχεία.    </div>    <div class='faqInFs3Fb'>        Ρύθμιση του αντιγράφου ασφαλείας    </div>    <hr />    <div class='mb-5'>        Επιλέξτε το κουμπί <span class='faqInFb'>Έναρξη (Start)</span>, επιλέξτε <span class='faqInFb'>Ρυθμίσεις (Settings)</span> > <span class='faqInFb'>Ενημέρωση και ασφάλεια (Update & security)</span> > <span class='faqInFb'>Αντίγραφο ασφαλείας (Backup)</span> > <span class='faqInFb'>Προσθήκη μονάδας (Add a drive)</span> και, στη συνέχεια, επιλέξτε μια εξωτερική μονάδα ή τοποθεσία δικτύου για τα αντίγραφα ασφαλείας.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Όλα εντάξει. Κάθε ώρα, θα δημιουργούμε ένα αντίγραφο ασφαλείας όλων των περιεχομένων του φακέλου χρήστη (C:\\\\Users\\\\username). Για να αλλάξετε το ποια αρχεία θα περιλαμβάνονται στα αντίγραφα ασφαλείας και πόσο συχνά θα δημιουργούνται αντίγραφα ασφαλείας, μεταβείτε στο στοιχείο <span class='faqInFb'>Περισσότερες επιλογές</span>.    </div>    <div class='faqInFs3Fb'>        Επαναφορά των αρχείων σας    </div>    <div class='mb-5'>        Αν σας λείπει ένα σημαντικό αρχείο ή φάκελος, δείτε τι μπορείτε να κάνετε για να το ανακτήσετε:    </div>    <div>        <div class='mb-3'>1. Πληκτρολογήστε <span class='faqInFb'>Επαναφορά αρχείων</span> στο πλαίσιο αναζήτησης στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <span class='faqInFb'>Επαναφορά των αρχείων σας με το Ιστορικό αρχείων (Restore your files with File History)</span>.</div>        <div class='mb-3'>2. Αναζητήστε το αρχείο που χρειάζεστε και, στη συνέχεια, χρησιμοποιήστε τα βέλη για να δείτε όλες τις εκδόσεις</div>        <div class='mb-3'>3. Μόλις βρείτε την έκδοση που θέλετε, επιλέξτε <span class='faqInFb'>Επαναφορά (Restore)</span> για να την αποθηκεύσετε στην αρχική της τοποθεσία. Για να την αποθηκεύσετε σε διαφορετική τοποθεσία, πατήστε παρατεταμένα (ή κάντε δεξί κλικ) στην επιλογή <span class='faqInFb'>Επαναφορά (Restore)</span>, επιλέξτε <span class='faqInFb'>Επαναφορά σε (Restore to)</span> και, στη συνέχεια, επιλέξτε μια νέα τοποθεσία.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1877,7 +2135,7 @@
         },
         "question2": {
             "title": "Πώς να ανανεώσετε τον υπολογιστή σας",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Πώς να ανανεώσετε τον υπολογιστή σας    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Σύμπτωμα    </div>    <div style='padding:5px 0;'>        Αν ο υπολογιστής σας δεν αποδίδει τόσο καλά όσο στο παρελθόν και δεν γνωρίζετε τον λόγο, μπορείτε να κάνετε ανανέωση του υπολογιστή χωρίς να διαγράψετε τα προσωπικά σας αρχεία ή να αλλάξετε τις ρυθμίσεις σας. Τα Windows μπορούν να κάνουν \\\"ανανέωση\\\" του υπολογιστή ώστε να λειτουργεί σαν να επρόκειτο για νέα εγκατάσταση, χωρίς να γίνει διαγραφή των προσωπικών σας αρχείων.    </div>    <div style='padding:5px 0;'>        Ανανέωση του υπολογιστή. Θα συμβούν τα εξής: τα αρχεία και ο προσωπικές ρυθμίσεις σας δεν θα αλλάξουν    </div>    <div style='padding:5px 0;'>        <ul>            <li>Οι ρυθμίσεις του υπολογιστή θα επανέλθουν στις προεπιλεγμένες ρυθμίσεις</li>            <li>Οι εφαρμογές από το Windows Store θα διατηρηθούν</li>            <li>Οι εφαρμογές που έχετε εγκαταστήσει από δίσκο ή από δικτυακό τόπο θα καταργηθούν</li>            <li>Στην επιφάνεια εργασίας σας θα αποθηκευτεί μια λίστα των αρχείων που καταργήθηκαν</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Επηρεαζόμενες μάρκες    </div>    <div>        <ul>            <li>Όλοι οι επιτραπέζιοι και φορητοί υπολογιστές</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Λειτουργικό σύστημα    </div>    <div>        <ul>            <li>Windows 8, 8.1 και 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Λύση    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Πατήστε ή κάντε κλικ στην επιλογή <span style='font-weight:bold;'> Ρυθμίσεις (Settings) </span>                    </li>                    <li style='padding:5px 0;'>                        Πατήστε ή κάντε κλικ στην επιλογή <span style='font-weight:bold;'> Ενημέρωση και αποκατάσταση (Update and recovery)</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Πατήστε ή κάντε κλικ στην επιλογή <span style='font-weight:bold;'> Αποκατάσταση (Recovery)</span></div>                        <div style='padding:5px 0'>Στην περιοχή Ανανέωση του υπολογιστή, χωρίς να επηρεαστούν τα αρχεία σας (Refresh your PC without affecting your files), πατήστε ή κάντε κλικ στην επιλογή <span style='font-weight:bold;'> Γρήγορα αποτελέσματα (Get started).</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Επιλέξτε <span style='font-weight:bold;'> \\\"Επόμενο (Next)\\\"</span>.                    </li>                    <li style='padding:5px 0;'>                        Επιλέξτε <span style='font-weight:bold;'> \\\"Ανανέωση (Refresh)\\\" </span>για να ξεκινήσετε τη διαδικασία ανανέωσης.                    </li>                    <li style='padding:5px 0;'>                        Μόλις αρχίσει η διαδικασία ανανέωσης, μπορείτε να βρείτε μια λίστα των εφαρμογών που έχουν καταργηθεί στην επιφάνεια εργασίας                    </li>                    <li style='padding:5px 0;'>                        Μπορείτε να βρείτε τις εφαρμογές που έχουν καταργηθεί κατά την ανανέωση του συστήματός σας                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Αναζητήστε την επιλογή <span style='font-weight:bold;'> ανανέωση (refresh) </span>στο εργαλείο αναζήτησης που είναι διαθέσιμο στο Μενού έναρξης,</li>                    <li style='padding:5px 0;'>                        <div>Επιλέξτε <span style='font-weight:bold;'> \\\"Ανανέωση του υπολογιστή σας, χωρίς να επηρεαστούν τα αρχεία σας (Refresh your PC without affecting your files)\\\"</span> στα αποτελέσματα αναζήτησης όπως φαίνεται παρακάτω.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Κάντε κλικ στο κουμπί <span style='font-weight:bold;'> Γρήγορα αποτελέσματα (Get started) </span> ακριβώς κάτω από την κεφαλίδα<span style='font-weight:bold;'> \\\"Ανανέωση του υπολογιστή σας, χωρίς να επηρεαστούν τα αρχεία σας (Refresh your PC without affecting your files)\\\"</span> για να ξεκινήσετε την ανανέωση του υπολογιστή με Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Πρόσθετες πληροφορίες    </div>    <div>        Στις περισσότερες περιπτώσεις, αφού ξεκινήσετε, η ανανέωση του υπολογιστή ολοκληρώνεται από μόνη της. Ωστόσο, αν τα Windows χρειαστούν αρχεία που λείπουν, θα σας ζητηθεί να εισαγάγετε μέσα αποκατάστασης, τα οποία είναι συνήθως ένα δίσκος DVD ή μια μονάδα USB thumb (πολύ μικρού μεγέθους). Αν συμβεί αυτό, το τι θα χρειαστείτε θα εξαρτηθεί από τον υπολογιστή σας.    </div>    <div style='padding:10px 0'>        Αν έχετε αναβαθμίσει τον υπολογιστή σε Windows 8.1 ή Windows RT 8.1 με DVD, χρησιμοποιήστε εκείνον τον δίσκο. Αν δεν έχετε μέσα για Windows 8.1 ή Windows RT 8.1, επικοινωνήστε με την Υποστήριξη της Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Πώς να ανανεώσετε τον υπολογιστή σας    </div>    <hr>    <div class='faqInFs25FbP5'>        Σύμπτωμα    </div>    <div class='faqInP5'>        Αν ο υπολογιστής σας δεν αποδίδει τόσο καλά όσο στο παρελθόν και δεν γνωρίζετε τον λόγο, μπορείτε να κάνετε ανανέωση του υπολογιστή χωρίς να διαγράψετε τα προσωπικά σας αρχεία ή να αλλάξετε τις ρυθμίσεις σας. Τα Windows μπορούν να κάνουν \\\"ανανέωση\\\" του υπολογιστή ώστε να λειτουργεί σαν να επρόκειτο για νέα εγκατάσταση, χωρίς να γίνει διαγραφή των προσωπικών σας αρχείων.    </div>    <div class='faqInP5'>        Ανανέωση του υπολογιστή. Θα συμβούν τα εξής: τα αρχεία και ο προσωπικές ρυθμίσεις σας δεν θα αλλάξουν    </div>    <div class='faqInP5'>        <ul>            <li>Οι ρυθμίσεις του υπολογιστή θα επανέλθουν στις προεπιλεγμένες ρυθμίσεις</li>            <li>Οι εφαρμογές από το Windows Store θα διατηρηθούν</li>            <li>Οι εφαρμογές που έχετε εγκαταστήσει από δίσκο ή από δικτυακό τόπο θα καταργηθούν</li>            <li>Στην επιφάνεια εργασίας σας θα αποθηκευτεί μια λίστα των αρχείων που καταργήθηκαν</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Επηρεαζόμενες μάρκες    </div>    <div>        <ul>            <li>Όλοι οι επιτραπέζιοι και φορητοί υπολογιστές</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Λειτουργικό σύστημα    </div>    <div>        <ul>            <li>Windows 8, 8.1 και 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Λύση    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Πατήστε ή κάντε κλικ στην επιλογή <span class='faqInFb'> Ρυθμίσεις (Settings) </span>                    </li>                    <li class='faqInP5'>                        Πατήστε ή κάντε κλικ στην επιλογή <span class='faqInFb'> Ενημέρωση και αποκατάσταση (Update and recovery)</span>                    </li>                    <li class='faqInP5'>                        <div>Πατήστε ή κάντε κλικ στην επιλογή <span class='faqInFb'> Αποκατάσταση (Recovery)</span></div>                        <div class='faqInP5'>Στην περιοχή Ανανέωση του υπολογιστή, χωρίς να επηρεαστούν τα αρχεία σας (Refresh your PC without affecting your files), πατήστε ή κάντε κλικ στην επιλογή <span class='faqInFb'> Γρήγορα αποτελέσματα (Get started).</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Επιλέξτε <span class='faqInFb'> \\\"Επόμενο (Next)\\\"</span>.                    </li>                    <li class='faqInP5'>                        Επιλέξτε <span class='faqInFb'> \\\"Ανανέωση (Refresh)\\\" </span>για να ξεκινήσετε τη διαδικασία ανανέωσης.                    </li>                    <li class='faqInP5'>                        Μόλις αρχίσει η διαδικασία ανανέωσης, μπορείτε να βρείτε μια λίστα των εφαρμογών που έχουν καταργηθεί στην επιφάνεια εργασίας                    </li>                    <li class='faqInP5'>                        Μπορείτε να βρείτε τις εφαρμογές που έχουν καταργηθεί κατά την ανανέωση του συστήματός σας                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Αναζητήστε την επιλογή <span class='faqInFb'> ανανέωση (refresh) </span>στο εργαλείο αναζήτησης που είναι διαθέσιμο στο Μενού έναρξης,</li>                    <li class='faqInP5'>                        <div>Επιλέξτε <span class='faqInFb'> \\\"Ανανέωση του υπολογιστή σας, χωρίς να επηρεαστούν τα αρχεία σας (Refresh your PC without affecting your files)\\\"</span> στα αποτελέσματα αναζήτησης όπως φαίνεται παρακάτω.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Κάντε κλικ στο κουμπί <span class='faqInFb'> Γρήγορα αποτελέσματα (Get started) </span> ακριβώς κάτω από την κεφαλίδα<span class='faqInFb'> \\\"Ανανέωση του υπολογιστή σας, χωρίς να επηρεαστούν τα αρχεία σας (Refresh your PC without affecting your files)\\\"</span> για να ξεκινήσετε την ανανέωση του υπολογιστή με Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Πρόσθετες πληροφορίες    </div>    <div>        Στις περισσότερες περιπτώσεις, αφού ξεκινήσετε, η ανανέωση του υπολογιστή ολοκληρώνεται από μόνη της. Ωστόσο, αν τα Windows χρειαστούν αρχεία που λείπουν, θα σας ζητηθεί να εισαγάγετε μέσα αποκατάστασης, τα οποία είναι συνήθως ένα δίσκος DVD ή μια μονάδα USB thumb (πολύ μικρού μεγέθους). Αν συμβεί αυτό, το τι θα χρειαστείτε θα εξαρτηθεί από τον υπολογιστή σας.    </div>    <div class='faqInP10'>        Αν έχετε αναβαθμίσει τον υπολογιστή σε Windows 8.1 ή Windows RT 8.1 με DVD, χρησιμοποιήστε εκείνον τον δίσκο. Αν δεν έχετε μέσα για Windows 8.1 ή Windows RT 8.1, επικοινωνήστε με την Υποστήριξη της Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1951,7 +2209,7 @@
         },
         "question3": {
             "title": "Πώς να μάθετε τη CPU του υπολογιστή σας",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Πώς να μάθετε τη CPU του υπολογιστή σας</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Σύμπτωμα</h3><p>Οι όροι 32 bit και 64 bit αναφέρονται στον τρόπο με τον οποίο χειρίζεται τις πληροφορίες ο επεξεργαστής του υπολογιστή σας (ονομάζεται επίσης CPU). Η έκδοση 64 bit των Windows χειρίζεται μεγάλες ποσότητες δεδομένων της μνήμης τυχαίας προσπέλασης (RAM) πιο αποτελεσματικά από ένα σύστημα 32 bit.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Επηρεαζόμενες μάρκες</h3><p>Το παραπάνω σύμπτωμα σχετίζεται, ενδεικτικά, με τα ακόλουθα συστήματα:</p><ul>    <li>Όλοι οι επιτραπέζιοι και φορητοί υπολογιστές</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Λειτουργικό σύστημα</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Λύση</h3><p><strong><u>Windows 7 ή Vista</u></strong></p><ol>    <li>Ανοίξτε το Σύστημα κάνοντας κλικ στο <strong>Κουμπί έναρξης </strong>Εικόνα του <strong>Κουμπιού έναρξης,</strong> κάνοντας δεξί κλικ στην επιλογή Υπολογιστής (Computer) και, στη συνέχεια, κλικ στην επιλογή Ιδιότητες (Properties)  </li>    <li>Στην περιοχή Σύστημα (System), μπορείτε να δείτε τον τύπο του συστήματος.</li></ol><p><strong><u>Windows 8 και Windows 10</u></strong></p><p><strong>Μέθοδος 1:</strong> Δείτε το παράθυρο Σύστημα (System) στον Πίνακα ελέγχου</p><ol>    <li>Σαρώστε προς τα μέσα από τη δεξιά άκρη της οθόνης και, στη συνέχεια, πατήστε την επιλογή <strong>Αναζήτηση (Search)</strong>. Εναλλακτικά, αν χρησιμοποιείτε ποντίκι, μεταβείτε στην κάτω δεξιά γωνία της οθόνης και, στη συνέχεια, επιλέξτε <strong>Αναζήτηση (Search).</strong></li>    <li>Πληκτρολογήστε <strong>σύστημα</strong> στο πλαίσιο αναζήτησης και, στη συνέχεια, πατήστε ή κάντε κλικ στην επιλογή <strong>Ρυθμίσεις (Settings).</strong></li>    <li>Πατήστε ή κάντε κλικ στην επιλογή <strong>Σύστημα (System)</strong></li>    <li>Αν έχετε την έκδοση 64 bit των Windows 8, στο πεδίο Τύπος συστήματος (System type) κάτω από την κεφαλίδα Σύστημα (System) εμφανίζεται η ένδειξη <strong>Λειτουργικό σύστημα 64 bit (64 bit Operating System)</strong>. Αν έχετε την έκδοση 32 <strong>bit των Windows</strong> <strong>8,</strong> στο πεδίο Τύπος συστήματος (System type) κάτω από την κεφαλίδα Σύστημα (System) εμφανίζεται η ένδειξη <strong>Λειτουργικό σύστημα 32 bit (32 bit Operating System)</strong>.<br />  </li></ol><p><strong>Μέθοδος 2</strong>: Προβολή του παραθύρου Πληροφορίες συστήματος (System information)</p><ol>    <li>Σαρώστε προς τα μέσα από τη δεξιά άκρη της οθόνης και, στη συνέχεια, πατήστε την επιλογή <strong>Αναζήτηση (Search)</strong>. Εναλλακτικά, αν χρησιμοποιείτε ποντίκι, μεταβείτε στην κάτω δεξιά γωνία της οθόνης και, στη συνέχεια, επιλέξτε <strong>Αναζήτηση (Search).</strong></li>    <li>Στο πλαίσιο αναζήτησης, πληκτρολογήστε <strong>πληροφορίες συστήματος</strong></li>    <li>Πατήστε ή κάντε κλικ στην επιλογή<strong> Σύστημα (System)</strong>, πατήστε ή κάντε κλικ στην επιλογή <strong>Πληροφορίες συστήματος (System Information)</strong> και, στη συνέχεια, κάντε κλικ στην επιλογή <strong>Σύνοψη συστήματος (System Summary).</strong></li>    <li>Αν έχετε την έκδοση <strong>64 bit </strong>των Windows 8<strong>, </strong> στο πεδίο <strong>Τύπος συστήματος (System type)</strong> κάτω από την κεφαλίδα Στοιχείο (Item), εμφανίζεται η ένδειξη Υπολογιστής x64 (x64-based PC). <br /> <br /> Αν έχετε την έκδοση<strong> 32 bit</strong> των Windows 8, στο πεδίο <strong>Τύπος συστήματος (System type)</strong> κάτω από την κεφαλίδα Στοιχείο (Item) εμφανίζεται η ένδειξη Υπολογιστής x86 (x86-based PC).  </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Πώς να μάθετε τη CPU του υπολογιστή σας</div><hr><h3 class='faqInFs25FbP10'>Σύμπτωμα</h3><p>Οι όροι 32 bit και 64 bit αναφέρονται στον τρόπο με τον οποίο χειρίζεται τις πληροφορίες ο επεξεργαστής του υπολογιστή σας (ονομάζεται επίσης CPU). Η έκδοση 64 bit των Windows χειρίζεται μεγάλες ποσότητες δεδομένων της μνήμης τυχαίας προσπέλασης (RAM) πιο αποτελεσματικά από ένα σύστημα 32 bit.</p><h3 class='faqInFs25FbP10'>Επηρεαζόμενες μάρκες</h3><p>Το παραπάνω σύμπτωμα σχετίζεται, ενδεικτικά, με τα ακόλουθα συστήματα:</p><ul>    <li>Όλοι οι επιτραπέζιοι και φορητοί υπολογιστές</li></ul><h3 class='faqInFs25FbP10'>Λειτουργικό σύστημα</h3><ul>    <li>Windows 7, 8, 10</li></ul><h3 class='faqInFs25FbP10'>Λύση</h3><p><strong><u>Windows 7 ή Vista</u></strong></p><ol>    <li>Ανοίξτε το Σύστημα κάνοντας κλικ στο <strong>Κουμπί έναρξης </strong>Εικόνα του <strong>Κουμπιού έναρξης,</strong> κάνοντας δεξί κλικ στην επιλογή Υπολογιστής (Computer) και, στη συνέχεια, κλικ στην επιλογή Ιδιότητες (Properties)  </li>    <li>Στην περιοχή Σύστημα (System), μπορείτε να δείτε τον τύπο του συστήματος.</li></ol><p><strong><u>Windows 8 και Windows 10</u></strong></p><p><strong>Μέθοδος 1:</strong> Δείτε το παράθυρο Σύστημα (System) στον Πίνακα ελέγχου</p><ol>    <li>Σαρώστε προς τα μέσα από τη δεξιά άκρη της οθόνης και, στη συνέχεια, πατήστε την επιλογή <strong>Αναζήτηση (Search)</strong>. Εναλλακτικά, αν χρησιμοποιείτε ποντίκι, μεταβείτε στην κάτω δεξιά γωνία της οθόνης και, στη συνέχεια, επιλέξτε <strong>Αναζήτηση (Search).</strong></li>    <li>Πληκτρολογήστε <strong>σύστημα</strong> στο πλαίσιο αναζήτησης και, στη συνέχεια, πατήστε ή κάντε κλικ στην επιλογή <strong>Ρυθμίσεις (Settings).</strong></li>    <li>Πατήστε ή κάντε κλικ στην επιλογή <strong>Σύστημα (System)</strong></li>    <li>Αν έχετε την έκδοση 64 bit των Windows 8, στο πεδίο Τύπος συστήματος (System type) κάτω από την κεφαλίδα Σύστημα (System) εμφανίζεται η ένδειξη <strong>Λειτουργικό σύστημα 64 bit (64 bit Operating System)</strong>. Αν έχετε την έκδοση 32 <strong>bit των Windows</strong> <strong>8,</strong> στο πεδίο Τύπος συστήματος (System type) κάτω από την κεφαλίδα Σύστημα (System) εμφανίζεται η ένδειξη <strong>Λειτουργικό σύστημα 32 bit (32 bit Operating System)</strong>.<br />  </li></ol><p><strong>Μέθοδος 2</strong>: Προβολή του παραθύρου Πληροφορίες συστήματος (System information)</p><ol>    <li>Σαρώστε προς τα μέσα από τη δεξιά άκρη της οθόνης και, στη συνέχεια, πατήστε την επιλογή <strong>Αναζήτηση (Search)</strong>. Εναλλακτικά, αν χρησιμοποιείτε ποντίκι, μεταβείτε στην κάτω δεξιά γωνία της οθόνης και, στη συνέχεια, επιλέξτε <strong>Αναζήτηση (Search).</strong></li>    <li>Στο πλαίσιο αναζήτησης, πληκτρολογήστε <strong>πληροφορίες συστήματος</strong></li>    <li>Πατήστε ή κάντε κλικ στην επιλογή<strong> Σύστημα (System)</strong>, πατήστε ή κάντε κλικ στην επιλογή <strong>Πληροφορίες συστήματος (System Information)</strong> και, στη συνέχεια, κάντε κλικ στην επιλογή <strong>Σύνοψη συστήματος (System Summary).</strong></li>    <li>Αν έχετε την έκδοση <strong>64 bit </strong>των Windows 8<strong>, </strong> στο πεδίο <strong>Τύπος συστήματος (System type)</strong> κάτω από την κεφαλίδα Στοιχείο (Item), εμφανίζεται η ένδειξη Υπολογιστής x64 (x64-based PC). <br /> <br /> Αν έχετε την έκδοση<strong> 32 bit</strong> των Windows 8, στο πεδίο <strong>Τύπος συστήματος (System type)</strong> κάτω από την κεφαλίδα Στοιχείο (Item) εμφανίζεται η ένδειξη Υπολογιστής x86 (x86-based PC).  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2040,7 +2298,7 @@
         },
         "question4": {
             "title": "Έλεγχος της χρήσης μπαταρίας του υπολογιστή σας",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Έλεγχος της χρήσης μπαταρίας του υπολογιστή σας</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Σύμπτωμα</h3><p>Τα Windows 10 περιλαμβάνουν μια νέα οθόνη \\\"<strong>Χρήση μπαταρίας (Battery Use)\\\"</strong> που σας δείχνει ποια λειτουργία καταναλώνει την ισχύ του φορητού σας υπολογιστή. Αυτό σημαίνει ότι θα σας δείχνει ακριβώς ποιες εφαρμογές —είτε εφαρμογές επιτραπέζιου υπολογιστή ή \\\"γενικές\\\" εφαρμογές των Windows 10— καταναλώνουν πολύ μεγάλη ισχύ.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Επηρεαζόμενες μάρκες</h3><ul>    <li>Φορητοί υπολογιστές, επιτραπέζιοι υπολογιστές Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Επηρεαζόμενα συστήματα</h3><ul>    <li>Όλες οι χώρες</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Λειτουργικό σύστημα</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Λύση</h3><p>Αυτή η δυνατότητα είναι νέα στα Windows 10 και πρέπει πρώτα να την εντοπίσουμε, δεδομένου ότι δεν είναι αποθηκευμένη στην παραδοσιακή προβολή του <strong>πίνακα ελέγχου</strong>, αλλά βρίσκεται στη νέα εφαρμογή <strong>\\\"Ρυθμίσεις (Settings)\\\"</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Α. Βρείτε την οθόνη Χρήση μπαταρίας (Battery Use)</h3></p><p>1. Κάντε κλικ ή πατήστε την επιλογή <strong>\\\"Ρυθμίσεις (Settings)\\\"</strong> από το μενού έναρξης</p><p>2. Στις <strong>Ρυθμίσεις (Settings) </strong> επιλέξτε <strong>\\\"Σύστημα (System)\\\"</strong>και, στη συνέχεια, επιλέξτε <strong>\\\"Εξοικονόμηση μπαταρίας (Battery saver)\\\".<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Κάντε κλικ ή πατήστε τη σύνδεση <strong>\\\"Χρήση μπαταρίας (Battery use)\\\"</strong> κάτω από αυτή την κεφαλίδα για να δείτε περισσότερες λεπτομέρειες. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Β. Αναλύστε τη χρήση ενέργειας</h3><p>4 Μπορείτε να κάνετε αλλαγή ώστε να κάνετε την οθόνη χρήσης μπαταρίας να εμφανίζει τη χρήση μπαταρίας από τις τελευταίες 24 ώρες έως τις τελευταίες 48 ώρες ή από την τελευταία εβδομάδα</p><p>5 Ποσοστά για <strong>\\\"Σύστημα (System),\\\"</strong> \\\"<strong>Οθόνη (Display)</strong>\\\" και \\\" <strong>Wi-Fi\\\"</strong>. Αυτό δείχνει πόση ισχύς μπαταρίας έχει χρησιμοποιηθεί από τις διαδικασίες του συστήματος, την οθόνη,</p><p>6 Οι επιλογές <strong>\\\"Σε χρήση (In use)\\\"</strong> και <strong>\\\"Παρασκήνιο (Background)\\\"</strong> δείχνουν πόση ισχύς έχει χρησιμοποιηθεί από εφαρμογές όσο τις χρησιμοποιείτε, σε σύγκριση με τις εφαρμογές που εκτελούνται στο παρασκήνιο.</p><p>7 Αν οι εφαρμογές χρησιμοποιούν ισχύ στο παρασκήνιο, μπορείτε να κάνετε κλικ ή να πατήσετε τη σύνδεση <strong> \\\"Αλλαγή ρυθμίσεων εφαρμογών παρασκηνίου (Change background app settings)\\\" </strong>και να ρυθμίσετε τις παραμέτρους των εφαρμογών ώστε να μην εκτελούνται στο παρασκήνιο. Αυτό λειτουργεί μόνο στις γενικές εφαρμογές των Windows 10.</p><p>8 Πραγματοποιήστε κύλιση προς τα κάτω και θα δείτε μια λίστα εφαρμογών. Αυτή θεωρείται ότι είναι η πιο χρήσιμη ενότητα αυτής της δυνατότητας. Εμφανίζει μια λίστα με τις εφαρμογές που έχουν χρησιμοποιήσει ισχύ μπαταρίας εκείνη τη χρονική περίοδο και θα σας δείξει το ποσοστό ισχύος μπαταρίας που έχει χρησιμοποιήσει κάθε εφαρμογή</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Έλεγχος της χρήσης μπαταρίας του υπολογιστή σας</div><hr><h3 class='faqInFs25FbP10'>Σύμπτωμα</h3><p>Τα Windows 10 περιλαμβάνουν μια νέα οθόνη \\\"<strong>Χρήση μπαταρίας (Battery Use)\\\"</strong> που σας δείχνει ποια λειτουργία καταναλώνει την ισχύ του φορητού σας υπολογιστή. Αυτό σημαίνει ότι θα σας δείχνει ακριβώς ποιες εφαρμογές —είτε εφαρμογές επιτραπέζιου υπολογιστή ή \\\"γενικές\\\" εφαρμογές των Windows 10— καταναλώνουν πολύ μεγάλη ισχύ.</p><h3 class='faqInFs25FbP10'>Επηρεαζόμενες μάρκες</h3><ul>    <li>Φορητοί υπολογιστές, επιτραπέζιοι υπολογιστές Lenovo</li></ul><h3 class='faqInFs25FbP10'>Επηρεαζόμενα συστήματα</h3><ul>    <li>Όλες οι χώρες</li></ul><h3 class='faqInFs25FbP10'>Λειτουργικό σύστημα</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Λύση</h3><p>Αυτή η δυνατότητα είναι νέα στα Windows 10 και πρέπει πρώτα να την εντοπίσουμε, δεδομένου ότι δεν είναι αποθηκευμένη στην παραδοσιακή προβολή του <strong>πίνακα ελέγχου</strong>, αλλά βρίσκεται στη νέα εφαρμογή <strong>\\\"Ρυθμίσεις (Settings)\\\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>Α. Βρείτε την οθόνη Χρήση μπαταρίας (Battery Use)</h3></p><p>1. Κάντε κλικ ή πατήστε την επιλογή <strong>\\\"Ρυθμίσεις (Settings)\\\"</strong> από το μενού έναρξης</p><p>2. Στις <strong>Ρυθμίσεις (Settings) </strong> επιλέξτε <strong>\\\"Σύστημα (System)\\\"</strong>και, στη συνέχεια, επιλέξτε <strong>\\\"Εξοικονόμηση μπαταρίας (Battery saver)\\\".<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Κάντε κλικ ή πατήστε τη σύνδεση <strong>\\\"Χρήση μπαταρίας (Battery use)\\\"</strong> κάτω από αυτή την κεφαλίδα για να δείτε περισσότερες λεπτομέρειες. </p><p> </p><h3 class='faqInFs25FbP10'>Β. Αναλύστε τη χρήση ενέργειας</h3><p>4 Μπορείτε να κάνετε αλλαγή ώστε να κάνετε την οθόνη χρήσης μπαταρίας να εμφανίζει τη χρήση μπαταρίας από τις τελευταίες 24 ώρες έως τις τελευταίες 48 ώρες ή από την τελευταία εβδομάδα</p><p>5 Ποσοστά για <strong>\\\"Σύστημα (System),\\\"</strong> \\\"<strong>Οθόνη (Display)</strong>\\\" και \\\" <strong>Wi-Fi\\\"</strong>. Αυτό δείχνει πόση ισχύς μπαταρίας έχει χρησιμοποιηθεί από τις διαδικασίες του συστήματος, την οθόνη,</p><p>6 Οι επιλογές <strong>\\\"Σε χρήση (In use)\\\"</strong> και <strong>\\\"Παρασκήνιο (Background)\\\"</strong> δείχνουν πόση ισχύς έχει χρησιμοποιηθεί από εφαρμογές όσο τις χρησιμοποιείτε, σε σύγκριση με τις εφαρμογές που εκτελούνται στο παρασκήνιο.</p><p>7 Αν οι εφαρμογές χρησιμοποιούν ισχύ στο παρασκήνιο, μπορείτε να κάνετε κλικ ή να πατήσετε τη σύνδεση <strong> \\\"Αλλαγή ρυθμίσεων εφαρμογών παρασκηνίου (Change background app settings)\\\" </strong>και να ρυθμίσετε τις παραμέτρους των εφαρμογών ώστε να μην εκτελούνται στο παρασκήνιο. Αυτό λειτουργεί μόνο στις γενικές εφαρμογές των Windows 10.</p><p>8 Πραγματοποιήστε κύλιση προς τα κάτω και θα δείτε μια λίστα εφαρμογών. Αυτή θεωρείται ότι είναι η πιο χρήσιμη ενότητα αυτής της δυνατότητας. Εμφανίζει μια λίστα με τις εφαρμογές που έχουν χρησιμοποιήσει ισχύ μπαταρίας εκείνη τη χρονική περίοδο και θα σας δείξει το ποσοστό ισχύος μπαταρίας που έχει χρησιμοποιήσει κάθε εφαρμογή</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2108,7 +2366,7 @@
         },
         "question5": {
             "title": "Χρήση του υπολογιστή ως tablet",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Χρήση του υπολογιστή ως tablet</div><hr><p>Η λειτουργία tablet κάνει τα Windows πιο έξυπνα και εύχρηστα όταν έχετε συσκευή με οθόνη αφής.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Χρήση λειτουργίας tablet</h3><p>Για να ενεργοποιήσετε τη λειτουργία tablet, επιλέξτε <strong>κέντρο ενεργειών (action center)</strong> στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <strong>Λειτουργία tablet (Tablet mode)</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Σημείωση</h3><p>Για να δείτε αν η συσκευή σας μπορεί να ενεργοποιεί αυτόματα τη λειτουργία tablet, πραγματοποιήστε αναζήτηση για τη συσκευή σας στον δικτυακό τόπο του κατασκευαστή. Η υποστήριξη για αυτή τη δυνατότητα εξαρτάται από το υλικό, το πρόγραμμα οδήγησης που έχει εγκατασταθεί και τον τρόπο ρύθμισης της συσκευής από τον κατασκευαστή. </p><p> </p><p>Σε λειτουργία tablet, η εφαρμογές ανοίγουν σε λειτουργία πλήρους οθόνης, παρέχοντας σας περισσότερο χώρο για εργασία. Για να κλείσετε μια εφαρμογή, σύρετέ τη στο κάτω μέρος της οθόνης.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Συμβουλή</h3><p>Η γραμμή εργασιών είναι διαθέσιμη όταν ο υπολογιστή σας βρίσκεται σε λειτουργία tablet, αλλά μπορείτε να την αποκρύψετε αν θέλετε περισσότερο χώρο στην οθόνη. Επιλέξτε το κουμπί <strong>Έναρξη (Start)</strong>, επιλέξτε <strong>Ρυθμίσεις (Settings) </strong>> <strong>Σύστημα (System) </strong>> <strong>Λειτουργία tablet (Tablet mode) </strong>και, στη συνέχεια, ενεργοποιήστε τη επιλογή <strong>Αυτόματη απόκρυψη της γραμμής εργασιών σε λειτουργία tablet (Automatically hide the taskbar in tablet mode)</strong>. Για να δείτε την κρυμμένη γραμμή εργασιών, σαρώστε προς τα επάνω από το κάτω μέρος της οθόνης ή χρησιμοποιήστε το ποντίκι για να κάνετε κατάδειξη εκεί.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ταυτόχρονη χρήση δύο εφαρμογών</h3><p>Για να χρησιμοποιήσετε δύο εφαρμογές τη μία δίπλα στην άλλη σε λειτουργία tablet, σύρετε μια ανοικτή εφαρμογή προς τα κάτω και στο πλάι. Θα δείτε που θα κουμπώσει και θα δείτε τυχόν ανοικτές εφαρμογές δίπλα της.</p><p>Σε αυτή την προβολή, μπορείτε επίσης να κάνετε τα ακόλουθα:</p><ul>    <li>Να χρησιμοποιήσετε την κοινή ακμή μεταξύ δύο κουμπωμένων εφαρμογών για να αλλάξετε το μέγεθος και των δύο εφαρμογών ταυτόχρονα.</li>    <li>Ανοίξτε τη νέα εφαρμογή από την προβολή εργασιών &mdash;επιλέξτε <strong>Προβολή εργασιών (Task view)</strong> από τη γραμμή εργασιών, επιλέξτε μια εφαρμογή και, στη συνέχεια, σύρετέ τη στη μία πλευρά για να την κουμπώσετε στη διαιρεμένη οθόνη.</li>    <li>Χρησιμοποιήστε το κουμπί επιστροφή στη γραμμή εργασιών για να επιστρέψετε σε μία εφαρμογή ή να ανοίξετε μια εφαρμογή που χρησιμοποιούσατε νωρίτερα.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Χρήση του υπολογιστή ως tablet</div><hr><p>Η λειτουργία tablet κάνει τα Windows πιο έξυπνα και εύχρηστα όταν έχετε συσκευή με οθόνη αφής.</p><h3 class='faqInFs25FbP10'>Χρήση λειτουργίας tablet</h3><p>Για να ενεργοποιήσετε τη λειτουργία tablet, επιλέξτε <strong>κέντρο ενεργειών (action center)</strong> στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <strong>Λειτουργία tablet (Tablet mode)</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Σημείωση</h3><p>Για να δείτε αν η συσκευή σας μπορεί να ενεργοποιεί αυτόματα τη λειτουργία tablet, πραγματοποιήστε αναζήτηση για τη συσκευή σας στον δικτυακό τόπο του κατασκευαστή. Η υποστήριξη για αυτή τη δυνατότητα εξαρτάται από το υλικό, το πρόγραμμα οδήγησης που έχει εγκατασταθεί και τον τρόπο ρύθμισης της συσκευής από τον κατασκευαστή. </p><p> </p><p>Σε λειτουργία tablet, η εφαρμογές ανοίγουν σε λειτουργία πλήρους οθόνης, παρέχοντας σας περισσότερο χώρο για εργασία. Για να κλείσετε μια εφαρμογή, σύρετέ τη στο κάτω μέρος της οθόνης.</p><p> </p><h3 class='faqInFs25FbP10'>Συμβουλή</h3><p>Η γραμμή εργασιών είναι διαθέσιμη όταν ο υπολογιστή σας βρίσκεται σε λειτουργία tablet, αλλά μπορείτε να την αποκρύψετε αν θέλετε περισσότερο χώρο στην οθόνη. Επιλέξτε το κουμπί <strong>Έναρξη (Start)</strong>, επιλέξτε <strong>Ρυθμίσεις (Settings) </strong>> <strong>Σύστημα (System) </strong>> <strong>Λειτουργία tablet (Tablet mode) </strong>και, στη συνέχεια, ενεργοποιήστε τη επιλογή <strong>Αυτόματη απόκρυψη της γραμμής εργασιών σε λειτουργία tablet (Automatically hide the taskbar in tablet mode)</strong>. Για να δείτε την κρυμμένη γραμμή εργασιών, σαρώστε προς τα επάνω από το κάτω μέρος της οθόνης ή χρησιμοποιήστε το ποντίκι για να κάνετε κατάδειξη εκεί.</p><h3 class='faqInFs25FbP10'>Ταυτόχρονη χρήση δύο εφαρμογών</h3><p>Για να χρησιμοποιήσετε δύο εφαρμογές τη μία δίπλα στην άλλη σε λειτουργία tablet, σύρετε μια ανοικτή εφαρμογή προς τα κάτω και στο πλάι. Θα δείτε που θα κουμπώσει και θα δείτε τυχόν ανοικτές εφαρμογές δίπλα της.</p><p>Σε αυτή την προβολή, μπορείτε επίσης να κάνετε τα ακόλουθα:</p><ul>    <li>Να χρησιμοποιήσετε την κοινή ακμή μεταξύ δύο κουμπωμένων εφαρμογών για να αλλάξετε το μέγεθος και των δύο εφαρμογών ταυτόχρονα.</li>    <li>Ανοίξτε τη νέα εφαρμογή από την προβολή εργασιών &mdash;επιλέξτε <strong>Προβολή εργασιών (Task view)</strong> από τη γραμμή εργασιών, επιλέξτε μια εφαρμογή και, στη συνέχεια, σύρετέ τη στη μία πλευρά για να την κουμπώσετε στη διαιρεμένη οθόνη.</li>    <li>Χρησιμοποιήστε το κουμπί επιστροφή στη γραμμή εργασιών για να επιστρέψετε σε μία εφαρμογή ή να ανοίξετε μια εφαρμογή που χρησιμοποιούσατε νωρίτερα.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2148,7 +2406,7 @@
         },
         "question6": {
             "title": "Γνωριμία με την Cortana, την προσωπική βοηθό σας",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Γνωριμία με την Cortana, την προσωπική βοηθό σας</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Τι είναι η Cortana;</h3><hr /><p>Η Cortana είναι ο ψηφιακός σας βοηθός. Θα σας βοηθάει να κάνετε πράγματα.</p><p>Όσο περισσότερο χρησιμοποιείτε την Cortana, τόσο περισσότερο εξατομικευμένη θα γίνεται η εμπειρία σας.</p><p>Για να ξεκινήσετε, πληκτρολογήστε μια ερώτηση στο πλαίσιο αναζήτησης ή επιλέξτε το μικρόφωνο και μιλήστε στην Cortana. (Η πληκτρολόγηση λειτουργεί σε όλους τους τύπους υπολογιστών, αλλά χρειάζεστε μικρόφωνο για να μιλήσετε.)</p><p>Αν δεν είστε σίγουροι τι να πείτε, θα βλέπετε υποδείξεις στην οθόνη κλειδώματος και στην αρχική οθόνη της Cortana όταν επιλέξετε το πλαίσιο αναζήτησης στη γραμμή εργασιών.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Αρχική σελίδα 2. Φορητός υπολογιστής 3. Ρυθμίσεις 4. Σχόλια</li></ol><p>Δείτε μερικά πράγματα που μπορεί να κάνει η Cortana για εσάς:</p><ul>    <li>Παροχή υπενθυμίσεων με βάση την ώρα, τοποθεσίες ή άτομα.</li>    <li>Παρακολούθηση πακέτων, ομάδων, ενδιαφερόντων και πτήσεων.</li>    <li>Αποστολή email και κειμένων.</li>    <li>Διαχείριση του ημερολογίου και ενημέρωσή σας.</li>    <li>Δημιουργία και διαχείριση λιστών.</li>    <li>Συνομιλία και παιχνίδια.</li>    <li>Αναζήτηση στοιχείων, αρχείων, τοποθεσιών και πληροφοριών.</li>    <li>Άνοιγμα οποιασδήποτε εφαρμογής στο σύστημά σας.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Δοκιμάστε το εξής: Ορισμός υπενθύμισης</h3><hr /><p>Ένα από τα πράγματα που μπορεί να κάνει η Cortana είναι να σας δίνει υπενθυμίσεις. Μπορεί να σας υπενθυμίζει να κάνετε πράγματα βάσει ώρας, τοποθεσίας ή ακόμα και ατόμων.</p><p>Για παράδειγμα, πληκτρολογήστε ή πείτε, \\\"Θύμισέ μου να συγχαρώ την Τάνια την επόμενη φορά που θα τηλεφωνήσει.\\\"</p><p>Η υπενθύμιση θα εμφανιστεί μόλις λάβετε κλήση από την Τάνια.</p><p>Επιπρόσθετο πλεονέκτημα &mdash;αν έχετε τηλέφωνο Windows ή Cortana για iPhone ή Android, μπορείτε να ρυθμίσετε την Cortana να συγχρονίζει ειδοποιήσεις μεταξύ του υπολογιστή και του τηλεφώνου.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Γεια σου Cortana</h3><hr /><p>Ρυθμίστε την Cortana να σας ακούει κάθε φορά που λέτε \\\"Γεια σου Cortana\\\". Επιλέξτε το πλαίσιο αναζήτησης στη γραμμή εργασιών για να ανοίξετε την αρχική οθόνη της Cortana. Στη συνέχεια, επιλέξτε <strong>Ρυθμίσεις (Settings)</strong> και ενεργοποιήστε το χαρακτηριστικό <strong>Να επιτρέπεται να απαντάει η Cortana στη φράση \\\"Γεια σου Cortana\\\" (Let Cortana respond to 'Hey Cortana').</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Σημείωση</p><p>Η Cortana είναι διαθέσιμη μόνο σε ορισμένες χώρες/περιοχές και μερικές δυνατότητες της Cortana μπορεί να μην είναι διαθέσιμες παντού.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Γνωριμία με την Cortana, την προσωπική βοηθό σας</div><hr><h3 class='faqInFs25FbP10'>Τι είναι η Cortana;</h3><hr /><p>Η Cortana είναι ο ψηφιακός σας βοηθός. Θα σας βοηθάει να κάνετε πράγματα.</p><p>Όσο περισσότερο χρησιμοποιείτε την Cortana, τόσο περισσότερο εξατομικευμένη θα γίνεται η εμπειρία σας.</p><p>Για να ξεκινήσετε, πληκτρολογήστε μια ερώτηση στο πλαίσιο αναζήτησης ή επιλέξτε το μικρόφωνο και μιλήστε στην Cortana. (Η πληκτρολόγηση λειτουργεί σε όλους τους τύπους υπολογιστών, αλλά χρειάζεστε μικρόφωνο για να μιλήσετε.)</p><p>Αν δεν είστε σίγουροι τι να πείτε, θα βλέπετε υποδείξεις στην οθόνη κλειδώματος και στην αρχική οθόνη της Cortana όταν επιλέξετε το πλαίσιο αναζήτησης στη γραμμή εργασιών.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Αρχική σελίδα 2. Φορητός υπολογιστής 3. Ρυθμίσεις 4. Σχόλια</li></ol><p>Δείτε μερικά πράγματα που μπορεί να κάνει η Cortana για εσάς:</p><ul>    <li>Παροχή υπενθυμίσεων με βάση την ώρα, τοποθεσίες ή άτομα.</li>    <li>Παρακολούθηση πακέτων, ομάδων, ενδιαφερόντων και πτήσεων.</li>    <li>Αποστολή email και κειμένων.</li>    <li>Διαχείριση του ημερολογίου και ενημέρωσή σας.</li>    <li>Δημιουργία και διαχείριση λιστών.</li>    <li>Συνομιλία και παιχνίδια.</li>    <li>Αναζήτηση στοιχείων, αρχείων, τοποθεσιών και πληροφοριών.</li>    <li>Άνοιγμα οποιασδήποτε εφαρμογής στο σύστημά σας.</li></ul><h3 class='faqInFs25FbP10'>Δοκιμάστε το εξής: Ορισμός υπενθύμισης</h3><hr /><p>Ένα από τα πράγματα που μπορεί να κάνει η Cortana είναι να σας δίνει υπενθυμίσεις. Μπορεί να σας υπενθυμίζει να κάνετε πράγματα βάσει ώρας, τοποθεσίας ή ακόμα και ατόμων.</p><p>Για παράδειγμα, πληκτρολογήστε ή πείτε, \\\"Θύμισέ μου να συγχαρώ την Τάνια την επόμενη φορά που θα τηλεφωνήσει.\\\"</p><p>Η υπενθύμιση θα εμφανιστεί μόλις λάβετε κλήση από την Τάνια.</p><p>Επιπρόσθετο πλεονέκτημα &mdash;αν έχετε τηλέφωνο Windows ή Cortana για iPhone ή Android, μπορείτε να ρυθμίσετε την Cortana να συγχρονίζει ειδοποιήσεις μεταξύ του υπολογιστή και του τηλεφώνου.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Γεια σου Cortana</h3><hr /><p>Ρυθμίστε την Cortana να σας ακούει κάθε φορά που λέτε \\\"Γεια σου Cortana\\\". Επιλέξτε το πλαίσιο αναζήτησης στη γραμμή εργασιών για να ανοίξετε την αρχική οθόνη της Cortana. Στη συνέχεια, επιλέξτε <strong>Ρυθμίσεις (Settings)</strong> και ενεργοποιήστε το χαρακτηριστικό <strong>Να επιτρέπεται να απαντάει η Cortana στη φράση \\\"Γεια σου Cortana\\\" (Let Cortana respond to 'Hey Cortana').</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Σημείωση</p><p>Η Cortana είναι διαθέσιμη μόνο σε ορισμένες χώρες/περιοχές και μερικές δυνατότητες της Cortana μπορεί να μην είναι διαθέσιμες παντού.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2196,7 +2454,6 @@
         "personal": "Προσωπική χρήση",
         "business": "Επαγγελματική χρήση",
         "custom": "Προσαρμοσμένη εμπειρία",
-        "experience": "Εμπειρία",
         "privacytitle": "Βοηθήστε μας να βελτιώσουμε την ποιότητα της εφαρμογής, επιτρέποντας την ανώνυμη στατιστικών στοιχείων χρήσης.",
         "moreInterest": "+ περισσότερα ενδιαφέροντα",
         "title1": "Καλώς ορίσατε στο",
@@ -2231,7 +2488,318 @@
         "OtherSettings": "Άλλες ρυθμίσεις",
         "usageStatistics": "Στατιστικά χρήσης",
         "usageStatisticsDescription": "Να αποστέλλονται ανώνυμα στατιστικά χρήσης στη Lenovo.",
+        "deviceStatistics": "Κοινοποίηση στατιστικών δεδομένων στη Lenovo",
+        "deviceStatisticsDescription": "Κάνει κοινή χρήση στατιστικών δεδομένων με τη Lenovo προκειμένου να βελτιωθεί η αξιοπιστία και ο σχεδιασμός και να βελτιστοποιηθούν οι δυνατότητες του υπολογιστή σας.",
         "Note": "Σημείωση: ",
         "settingsNotes": "για να τεθούν σε ισχύ όλες οι ρυθμίσεις σε αυτήν τη σελίδα, απαιτείται επανεκκίνηση της εφαρμογής από τον χρήστη."
-    }
+    },
+    "modernPreload": {
+        "cancel": "Άκυρο",
+        "close": "Κλείσιμο",
+        "download": "Λήψη",
+        "downloadAvailable": "Λήψη διαθέσιμη",
+        "downloadComplete": "Η λήψη ολοκληρώθηκε",
+        "downloading": "Λήψη...",
+        "failedDownload": "Αποτυχία μεταφόρτωσης",
+        "failedInstall": "Αποτυχία εγκατάστασης",
+        "installed": "Εγκαταστάθηκε",
+        "restartDownload": "Επανέναρξη λήψης",
+        "retry": "Επανάληψη",
+        "skip": "Παράλειψη",
+        "noteDownloading": "Σημείωση: Μόλις κάνετε κλικ στο Λήψη, ενδέχεται να λάβετε μια ερώτηση από τα Windows για να μας επιτρέψετε να εγκαταστήσουμε το λογισμικό στη συσκευή σας. Μόλις ολοκληρωθεί η εγκατάσταση, οι εφαρμογές σας θα εμφανιστούν αυτόματα στην επιφάνεια εργασίας σας ή στο μενού Έναρξη.<br /><br />Μπορείτε να κλείσετε τη σελίδα Το λογισμικό μου και να συνεχίσετε να χρησιμοποιείτε το Lenovo Vantage. Μην κλείσετε το Lenovo Vantage κατά την εγκατάσταση.",
+        "noteFailedDownload": "Προσοχή: Κάτι πήγε στραβά και τη λήψη ή την εγκατάσταση. Βεβαιωθείτε ότι είστε συνδεδεμένοι στο Ίντερνετ και δοκιμάστε ξανά. Θυμηθείτε να κρατήσετε το Vantage ανοιχτό ενώ εγκαθιστούμε το λογισμικό. Μπορείτε να κλείσετε τη σελίδα Το Λογισμικό μου και συνεχίστε να εξερευνείτε το Vantage ή ελαχιστοποιήστε το Vantage ενώ ολοκληρώνουμε την εγκατάσταση του λογισμικού σας.",
+        "noteDownloadComplete": "Σημείωση: Μόλις κάνετε κλικ στο Λήψη, ενδέχεται να λάβετε μια ερώτηση από τα Windows για να μας επιτρέψετε να εγκαταστήσουμε το λογισμικό στη συσκευή σας. Μόλις ολοκληρωθεί η εγκατάσταση, οι εφαρμογές σας θα εμφανιστούν αυτόματα στην επιφάνεια εργασίας σας ή στο μενού Έναρξη.<br /><br />Μπορείτε να κλείσετε τη σελίδα Το λογισμικό μου και να συνεχίσετε να χρησιμοποιείτε το Lenovo Vantage. Μην κλείσετε το Lenovo Vantage κατά την εγκατάσταση.",
+        "noteDownloadAvailable": "Σημείωση: Μόλις κάνετε κλικ στο Λήψη, ενδέχεται να λάβετε μια ερώτηση από τα Windows για να μας επιτρέψετε να εγκαταστήσουμε το λογισμικό στη συσκευή σας. Μόλις ολοκληρωθεί η εγκατάσταση, οι εφαρμογές σας θα εμφανιστούν αυτόματα στην επιφάνεια εργασίας σας ή στο μενού Έναρξη.<br /><br />Μπορείτε να κλείσετε τη σελίδα Το λογισμικό μου και να συνεχίσετε να χρησιμοποιείτε το Lenovo Vantage. Μην κλείσετε το Lenovo Vantage κατά την εγκατάσταση.",
+        "sizeText": "Διαστάσεις",
+        "versionText": "Έκδοση",
+        "softwareDescription": "Κάντε κλικ στο Λήψη παρακάτω για να εξαργυρώσετε λογισμικό που αγοράστηκε με τη συσκευή σας. Εάν οποιαδήποτε στιγμή πρέπει να κάνετε λήψη του λογισμικού σας ξανά, μπορείτε να το κάνετε κάνοντας κλικ στο κουμπί Το λογισμικό μου στο μενού Vantage.",
+        "title": "Το λογισμικό μου",
+        "loadingDescription": "Περιμένετε μέχρι να προετοιμάσουμε μια λίστα με το λογισμικό που συμπεριλήφθηκε στην αγορά της συσκευής σας.",
+        "shortDescription": "Κατεβάστε και εγκαταστήστε λογισμικό που συμπεριλήφθηκε στην αγορά της συσκευής σας.",
+        "errorDescription": "<h2>Λυπούμαστε, παρουσιάστηκε κάποιο πρόβλημα κατά την ανάκτηση των πληροφοριών λήψης λογισμικού</h2>Δοκιμάστε να κάνετε κλικ στο κουμπί «Επανάληψη» παρακάτω ή δοκιμάστε ξανά αργότερα κάνοντας κλικ στο κουμπί «Το λογισμικό μου» στο μενού Vantage."
+    },
+    "hardwareScan": {
+        "name": "Σάρωση υλικού",
+        "title": "Εκτέλεση σάρωσης υλικού",
+        "subtitle": "Περιμένετε, έως ότου ολοκληρωθεί η σάρωση υλικού.",
+        "quickScan": "Γρήγορη σάρωση",
+        "finalResultCode": "Κωδικός τελικού αποτελέσματος",
+        "resultCode": "Κωδικός αποτελέσματος",
+        "cancel": "Άκυρο",
+        "complete": "Πλήρης",
+        "incomplete": "Δεν ολοκληρώθηκε",
+        "loadingComponents": "Φόρτωση εξαρτημάτων",
+        "hardwareComponents": "Εξαρτήματα υλικού",
+        "loadingDevices": "Φόρτωση συσκευών",
+        "select": "Επιλογή",
+        "deselect": "Αποεπιλογή",
+        "allOptions": "Όλες οι επιλογές",
+        "latestResult": "Τελευταίο αποτέλεσμα",
+        "back": "ΠΙΣΩ",
+        "viewResults": "Προβολή αποτελεσμάτων",
+        "save": "Αποθήκευση",
+        "details": "Λεπτομέρειες",
+        "recurrence": "Επανάληψη",
+        "interval": "Διάστημα",
+        "time": "Ώρα",
+        "type": "Τύπος",
+        "hours": "Ώρες",
+        "minutes": "Λεπτά",
+        "am": "π.μ.",
+        "pm": "μ.μ.",
+        "previousResult": "Προηγούμενα αποτελέσματα",
+        "lastScanOn": "Τελευταία σάρωση στις",
+        "result": "Αποτέλεσμα",
+        "viewDetailsLog": "Προβολή αρχείου καταγραφής λεπτομερειών",
+        "ok": "OK",
+        "notOk": "ΟΧΙ OK",
+        "notScanned": "ΔΕΝ ΣΑΡΩΘΗΚΕ",
+        "pass": "Επιτυχία",
+        "fail": "Αποτυχία",
+        "cancelled": "Ακυρώθηκε",
+        "warning": "Προειδοποίηση",
+        "errorResult": "Απαιτείται επιλογή μιας δοκιμής για εκτέλεση.",
+        "buy": "Αγορά τώρα",
+        "errorDeviceChoose": "Απαιτείται επιλογή μιας συσκευή για εκτέλεση.",
+        "errorNoOptionSelected": "Απαιτείται να ορίσετε μια επιλογή.",
+        "offline": "Αυτή η συσκευή εκτελεί λειτουργία χωρίς σύνδεση, παρακαλούμε συνδεθείτε στο Internet",
+        "doNotSuspend": "Αυτές οι δοκιμές πρέπει να εκτελεστούν χωρίς διακοπή! Μην κλείσετε ή ελαχιστοποιήσετε αυτήν την εφαρμογή και μην θέσετε σε κατάσταση αναστολής λειτουργίας ή απενεργοποιήσετε τον υπολογιστή σας στη διάρκεια της σάρωσης.",
+        "doNotUse": "Αποφύγετε τη χρήση του υπολογιστή σας έως ότου ολοκληρωθεί αυτή η δοκιμή",
+        "testsMustRunUniterrupted": "Αυτές οι δοκιμές πρέπει να εκτελεστούν χωρίς διακοπή!",
+        "doNotCloseOrMinimizeApp": "• Μην κλείσετε ή ελαχιστοποιήσετε αυτή την εφαρμογή.",
+        "doNotSwitchApp": "• Μην μεταβείτε σε άλλη εφαρμογή.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Μην θέσετε σε αναστολή λειτουργίας τον υπολογιστή και μην κάνετε αποσύνδεση ή απενεργοποίηση.",
+        "customize": {
+            "name": "Προσαρμογή",
+            "test": "Προσαρμογή δοκιμής",
+            "description": "Επιλογή των επιλογών παρακάτω για προσαρμογή της δοκιμής σας",
+            "runTests": "Εκτέλεση επιλεγμένων δοκιμών"
+        },
+        "scheduledScan": {
+            "name": "Προγραμματισμός σάρωσης",
+            "title": "Προγραμματισμός της σάρωσής σας",
+            "newScan": "Προγραμματισμός νέας σάρωσης",
+            "fullScan": "Πλήρης σάρωση",
+            "onlyOnce": "Μία φορά μόνο",
+            "eachDay": "Κάθε ημέρα",
+            "eachWeek": "Κάθε εβδομάδα",
+            "eachMonth": "Κάθε μήνα",
+            "eachYear": "Κάθε χρόνο",
+            "schedule": "Προγραμματισμός",
+            "date": "Ημερομηνία",
+            "pickDate": "Επιλογή ημερομηνίας",
+            "scanScheduled": "Προγραμματίστηκε σάρωση υλικού!",
+            "description": "Μια άλλη σάρωση ήταν ήδη προγραμματισμένη την ίδια στιγμή και ημερομηνία!",
+            "error": "Σφάλμα",
+            "delete": "Διαγραφή",
+            "warningBatterySaver": "Σημείωση: Οι προγραμματισμένες σαρώσεις δεν θα εκτελεστούν στη λειτουργία εξοικονόμησης μπαταρίας",
+            "scheduleIntervalLimit": "Μια άλλη σάρωση είχε ήδη προγραμματιστεί εντός χρονικού διαστήματος δέκα λεπτών. Επιλέξτε μια άλλη ώρα.",
+            "information": "Η σάρωση έχει προγραμματιστεί και θα εκτελεστεί στο παρασκήνιο την ακόλουθη ημερομηνία:"
+        },
+        "recoverBadSectors": {
+            "title": "Αποκατάσταση κατεστραμμένων τομέων",
+            "description": "Εργαλείο της Lenovo για τον εντοπισμό και την επιδιόρθωση κατεστραμμένων τομέων σε έναν δίσκο",
+            "goTo": "Μετάβαση στην αποκατάσταση κατεστραμμένων τομέων",
+            "localDevices": "Τοπικές συσκευές",
+            "numberSectors": "Αριθμός τομέων που αναγνώστηκαν",
+            "numberBadSectors": "Αριθμός κατεστραμμένων τομέων που εντοπίστηκαν",
+            "numberFixedSectors": "Αριθμός τομέων που επιδιορθώθηκαν",
+            "numberNonFixedSectors": "Αριθμός τομέων που δεν επιδιορθώθηκαν",
+            "status": "Κατάσταση λειτουργίας",
+            "elapsedTime": "Χρόνος που παρήλθε",
+            "hours": "Ώρες",
+            "hour": "Ώρα",
+            "minutes": "Λεπτά",
+            "minute": "Λεπτό",
+            "seconds": "Δευτερόλεπτα",
+            "second": "Δευτερόλεπτο",
+            "moreInfo": "Περιμένετε έως ότου ολοκληρωθεί η αποκατάσταση των κατεστραμμένων τομέων",
+            "systemEvent": "Η δοκιμή ματαιώθηκε επειδή παρουσιάστηκε ένα συμβάν συστήματος που θα μπορούσε να αλλοιώσει το αποτέλεσμα.",
+            "systemPasswordProtected": "Η συσκευή ενδέχεται να προστατεύεται με κωδικό πρόσβασης. Δοκιμάστε να απενεργοποιήσετε την προστασία με κωδικό πρόσβασης.",
+            "popup": {
+                "description": "Η εκτέλεση της σάρωσης και της επισκευής ενδέχεται να προκαλέσει απώλεια δεδομένων. Συνιστάται η δημιουργία αντιγράφου ασφαλείας πριν από την εκτέλεση αυτής της λειτουργίας. Σίγουρα θέλετε να συνεχίσετε;",
+                "yes": "Ναι",
+                "no": "Όχι"
+            }
+        },
+        "support": {
+            "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",
+            "subtitle": "Υποστήριξη Lenovo"
+        },
+        "eTicket": {
+            "header": "Εντοπίστηκε πρόβλημα υλικού.",
+            "problemDetected": "Η σάρωση υλικού έχει εντοπίσει πρόβλημα με τα ακόλουθα εξαρτήματα του υπολογιστή σας",
+            "ticketRequestQuestion": "Η Lenovo μπορεί να στείλει ένα ανταλλακτικό, εάν ο υπολογιστής σας καλύπτεται από εγγύηση. Θέλετε να υποβάλετε ένα δελτίο αντικατάστασης υλικού για την αντιμετώπιση του προβλήματος;",
+            "openTicket": "Άνοιγμα δελτίου"
+        },
+        "battery": {
+            "title": "Ενεργοποίηση ορίου φορτίου μπαταρίας",
+            "description": "Η ενεργοποίηση μιας προσαρμοσμένης φόρτισης μπαταρίας θα επιτρέψει τη συνολική εύρυθμη λειτουργία της μπαταρίας, ώστε να διαρκέσει περισσότερο καθώς χρησιμοποιείτε αυτήν τη συσκευή. Ωστόσο, η μη πλήρης φόρτιση θα επιφέρει μικρότερη διάρκεια εύρυθμης λειτουργίας της μπαταρίας. Για να ενεργοποιήσετε πλήρως αυτήν τη δυνατότητα, αποσυνδέστε το μηχάνημά σας και αφήστε τη μπαταρία σας να εξαντληθεί στο όριο διακοπής φόρτισης ή κάτω απ' αυτό.",
+            "enable": "Ενεργοποίηση"
+        },
+        "refreshModule": "Ανανέωση μονάδων",
+        "completed": "Ολοκληρώθηκε",
+        "notCompleted": "Δεν ολοκληρώθηκε",
+        "yes": "Ναι",
+        "attention": "Προσοχή",
+        "cancelTextPrompt": "Σίγουρα θέλετε να ακυρώσετε τη διαδικασία;",
+        "cancelTextProgress": "Περιμένετε να ακυρωθεί η πρόοδος",
+        "pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της.",
+        "testNotApplicable": "Δεν ισχύει σε προσαρμοσμένη σάρωση"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Η εγκατάσταση απέτυχε. Προσπαθήστε ξανά.",
+                "networkError": "Σφάλμα δικτύου.",
+                "installationCancelled": "Η εγκατάσταση ακυρώθηκε."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Εξαργύρωση Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Εγκατάσταση",
+                "installing": "Εγκατάσταση",
+                "installed": "Εγκαταστάθηκε",
+                "launch": "Εκκίνηση",
+                "seeMore": "Δείτε περισσότερα"
+            },
+            "fieldName": {
+                "description": "Περιγραφή",
+                "screenshots": "Στιγμιότυπα οθόνης",
+                "additionalInformation": "Πρόσθετες πληροφορίες",
+                "by": "Ανά:",
+                "updated": "Ενημερώθηκε:",
+                "type": "Τύπος:",
+                "category": "Κατηγορία:",
+                "legalAgreement": "Νομική συμφωνία",
+                "readMore": "Διαβάστε περισσότερα",
+                "readLess": "Διαβάστε λιγότερα"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

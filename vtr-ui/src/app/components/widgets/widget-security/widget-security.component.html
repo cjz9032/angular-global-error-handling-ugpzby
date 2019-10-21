@@ -4,7 +4,9 @@
 			<div class="col-3 col-sm-3 col-md-12 col-lg-3">
 				<div class="row">
 					<div class="col circle-container">
-						<div class="circle percent-{{percentValue}}">{{percentValue}}<span class="percent">%</span>
+						<div class="circle percent-{{percentValue}}">
+							<img *ngIf="percentValue === 100" [src]=" 'assets/icons/SecurityAdvisor/Shield_check.svg' | svgInline | async" alt="" srcset="">
+							<img *ngIf="percentValue !== 100" [src]=" 'assets/icons/SecurityAdvisor/Shield_X.svg' | svgInline | async" alt="" srcset="">
 						</div>
 					</div>
 				</div>
@@ -14,7 +16,10 @@
 					<span>{{security.title[percentValue === 100 ? 0 : 1] | translate}}</span>
 					<vtr-ui-tooltips class="pl-3 pt-2">
 						<ng-template #tooltipText>
-							<span class="tooltips-description__tooltip-text">i</span>
+							<span class="tooltips-description__tooltip-text"
+								(mouseenter)="hover=true;"
+								(mouseleave)="hover=false;"
+								[ngClass]="{'hover': hover}">i</span>
 						</ng-template>
 						<ng-template #tooltipContext>
 							<div class="tooltips-description__tooltip-context">
@@ -33,8 +38,7 @@
 				<p class="row1">{{security.subTitle[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<p class="row1">{{security.subTitle2[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<div class="button-row">
-					<vtr-ui-button id="sa-ov-btn-securityArticle"
-						aria-label="sa-ov-btn-securityArticle"
+					<vtr-ui-button
 						metricsItem="securityAdvisor101"
 						metricsEvent="ArticleClick"
 						metricsItemPosition="1"
@@ -42,8 +46,8 @@
 						[metricsItemID]="articleId"
 						[metricsItemCategory]="articleCategory"
 						[label]="'security.landing.security101' | translate"
-						[title]="'security.landing.security101' | translate"
 						(onClick)="buttonClick()"
+						[linkId]="'sa-ov-btn-securityArticle'"
 						[upperCaseLabel]=false></vtr-ui-button>
 				</div>
 			</div>

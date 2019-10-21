@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { DevService } from '../dev/dev.service';
 
@@ -29,10 +29,26 @@ export class CommsService {
 		});
 
 		httpOptions.params = httpQueryParams;
-
-		this.devService.writeLog('API GET ENDPOINT: ', url);
+		this.devService.writeLog('API GET ENDPOINT complete: ', url + '?' + httpOptions.params);
 		return this.http.get(url, httpOptions);
 	}
+
+
+	callUpeApi(api, queryParams: any = {}, httpOptions: any = {}) {
+		const url = this.env.upeApiRoot + api;
+
+		const reqHeader = new HttpHeaders({
+			'Content-Type': 'application/json;charset=UTF-8'
+		});
+
+		this.devService.writeLog('CALL UPE API: ', url);
+		return this.http.post(url, JSON.stringify(queryParams),
+			{
+				observe: 'response',
+				headers: reqHeader
+			});
+	}
+
 
 	flatGetCall(url) {
 		const self = this;

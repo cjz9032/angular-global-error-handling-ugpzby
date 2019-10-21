@@ -1,0 +1,90 @@
+@import "../../../app.theme";
+
+.toggle-button{
+	border: none;
+	height: 2.4rem;
+	width: 5.4rem;
+	border-radius:10rem;
+	cursor: pointer;
+	display: inline-block;
+	background: #f2f2f2;
+	position: relative;
+	vertical-align: middle;
+	transition: all 0.2s ease-in;
+	margin-top: 0.5rem;
+	@media #{$white-on-black} {
+		background: #f2f2f2;
+	}
+	@media #{$black-on-white} {
+		background: #f2f2f2;
+	}
+	&.selected{
+		background: linear-gradient(90deg, #2fcc74, #33dfa6);
+	}
+	.btnRound{
+		border: none;
+		height: 1.8rem;
+		width: 1.8rem;
+		border-radius:10rem;
+		cursor: pointer;
+		background: #6d6d6d;
+		@media #{$white-on-black} {
+			background: #6d6d6d;
+			box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
+		}
+		@media #{$black-on-white} {
+			background: #6d6d6d;
+			box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
+		}
+		position: absolute;
+		left: 0.3rem;
+		top: 0.25rem;
+		box-shadow: 0px 0.1rem 0.3rem rgba(0,0,0,0.4);
+		transition:all 0.2s ease-in;
+		visibility:visible;
+		&.selected{
+			background: #fbfdff;
+			left: 3.2rem;
+		}
+		@media #{$black-on-white} {
+			background: $gaming_darkest;
+		}
+		@media #{$white-on-black} {
+			background: $gaming_lightest;
+		}
+	}
+	.switch-label {
+		border: none;
+		font-size: 1.2rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #fbfdff;
+		position: absolute;
+		top: 0.4rem;
+		width: 3.5rem;
+		left: 0.3rem;
+		text-align: center;
+		letter-spacing:0rem;
+		margin-top: -0.3rem;
+		visibility:visible;
+		background: none;
+		@media #{$black-on-white} {
+			left: 0.4rem;
+		}
+		@media #{$white-on-black} { 
+			left: 0.4rem;
+		}
+		&.off-label {
+			left: 1.7rem;
+			color: #6d6d6d;
+			@media #{$black-on-white} {
+				left: 1.7rem;
+			}
+			@media #{$white-on-black} { 
+				left: 1.7rem;
+			}
+		}
+	}
+}
+
+

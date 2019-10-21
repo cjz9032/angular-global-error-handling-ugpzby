@@ -1,0 +1,80 @@
+<ul class="list-group" [ngClass]="{'windows-group': windowsDefender}">
+    <li class="group-item" *ngFor="let list of statusList">
+      <div class="row align-items-center">
+        <div class="col-auto pl-0 pr-3">
+          <div *ngIf="list.status!=='loading'" class="bullet-icon">
+            <div *ngIf="list.status !== 'disabled' && list.status !== 'not-installed'" class="icon-bkg icon-check">
+              <fa-icon [icon]="['fas', 'check']"></fa-icon>
+            </div>
+            <div *ngIf="list.status === 'disabled' || list.status === 'not-installed'" class="icon-bkg icon-times">
+              <fa-icon [icon]="['fas', 'times']"></fa-icon>
+            </div>
+          </div>
+          <div *ngIf="list.status==='loading'" class="spinner-content">
+            <div class="spinner-border text-primary progress-spinner" role="status"></div>
+          </div>
+        </div>
+        <div class="col-auto text px-0 text-truncate"
+			[ngClass]="{'col-8': !windowsDefender}"
+			[title]="list.title | translate"
+			[innerHTML]="list.title | translate | characterLimit:28">
+        </div>
+        <div class="col-auto text-right px-0 ml-auto"
+            [ngClass]="{'col-2': !windowsDefender}">
+		     <h3 class="text-truncate text-color mb-0"
+		      [ngClass]="{'text-d-color': list.status !== 'enabled' && list.status !== 'installed' }">
+			    <span class="text-uppercase"
+				title="{{list.status | statusText | translate | uppercase}}"
+				[innerHTML]="list.status | statusText | translate">
+			</span>
+		  </h3>
+        </div>
+      </div>
+    </li>
+    <li class="group-delete-item" *ngFor="let list of windowsList">
+      <div class="row align-items-center">
+        <div class="col-auto px-0">
+          <div *ngIf="list.status!=='loading'">
+            <div class="times">
+              <fa-icon [icon]="['fas', 'times']"></fa-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto text px-0">
+          <div [innerHTML]="list.title | translate | characterLimit:26"></div>
+          <div class="divider"></div>
+        </div>
+        <div class="col-auto px-0 ml-auto">
+          <h3 class="mb-1"><span class="text-uppercase text-color"
+              title="{{'security.antivirus.common.notAvailable' | translate}}"
+              [innerHTML]="'security.antivirus.common.notAvailable' | translate">
+          </span></h3>
+        </div>
+      </div>
+    </li>
+    <li *ngIf="!windowsDefender" class="row justify-content-center">
+		<vtr-ui-button
+			class="white-button button"
+			linkId="sa-av-button-launch-mcafee"
+			metricsEvent="itemClick"
+			metricsItem="launch mcafee"
+			metricsParent="security.antivirus"
+			upperCaseLabel=false
+			btnHeight=true
+			[label]="'security.antivirus.mcafee.launch' | translate"
+			(onClick)="common.launch()"></vtr-ui-button>
+    </li>
+    <li *ngIf="windowsDefender" class="row justify-content-center">
+		<vtr-ui-button class="normal-button button"
+			[ngClass]="{'visible': !url}"
+			linkId="sa-av-link-subscribe"
+			metricsEvent="itemClick"
+			metricsItem="subscribe"
+			metricsParent="security.antivirus"
+			upperCaseLabel=false
+			btnHeight=true
+			[isDisabled]="isOnline === false"
+			[label]="'security.antivirus.windowsDefender.buyNow' | translate"
+			[href]="url"></vtr-ui-button>
+    </li>
+</ul>

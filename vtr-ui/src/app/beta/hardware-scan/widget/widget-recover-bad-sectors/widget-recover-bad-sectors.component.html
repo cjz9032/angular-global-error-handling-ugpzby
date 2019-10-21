@@ -1,0 +1,27 @@
+<div class="vtr-widget-device-recover-bad-sectors">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title">{{title}}</div>
+				<div class="description">{{description}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="button-row">
+					<beta-vtr-ui-button
+						metricsEvent="ItemClick"
+						metricsParent="Device.HardwareScan"
+						metricsItem="'btn.'+textButton"
+						[isFullWidth]="true"
+						[icon] ="['fal', 'arrow-right']"
+						[label]="textButton"
+						[isDisabled]="disable"
+						[routerPath] = "recoverPath"
+						[active]="'true'">
+					</beta-vtr-ui-button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

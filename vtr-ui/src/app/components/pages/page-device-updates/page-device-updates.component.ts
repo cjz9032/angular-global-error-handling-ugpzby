@@ -4,7 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -23,6 +23,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -105,7 +106,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['fas', 'battery-three-quarters'],
+			leftImageSource: '../../../../../../assets/icons/Icon_critical_updates_20px.svg',
 			header: 'systemUpdates.autoUpdateSettings.critical.title',
 			name: 'critical-updates',
 			subHeader: '',
@@ -119,7 +120,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['fas', 'battery-three-quarters'],
+			leftImageSource: '../../../../../../assets/icons/Icon_recommended_updates_20px.svg',
 			header: 'systemUpdates.autoUpdateSettings.recommended.title',
 			name: 'recommended-updates',
 			subHeader: '',
@@ -133,7 +134,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		{
 			readMoreText: '',
 			rightImageSource: '',
-			leftImageSource: ['fas', 'battery-three-quarters'],
+			leftImageSource: '../../../../../../assets/icons/Icon_Windows_Update_20px.svg',
 			header: 'systemUpdates.autoUpdateSettings.windows.title',
 			name: 'windows-updates',
 			subHeader: '',
@@ -165,7 +166,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		private translate: TranslateService,
 		shellService: VantageShellService,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private router: Router
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
@@ -189,7 +191,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			if (this.protocalAction.toLowerCase() === 'enable') {
 				this.systemUpdateService.setUpdateSchedule(true, false);
 				const metricData = {
-					ItemType: 'featureClick',
+					ItemType: 'FeatureClick',
 					ItemName: 'chk.critical-updates',
 					ItemValue: 'True',
 					ItemParent: 'Device.SystemUpdate'
@@ -218,8 +220,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted) {
 			this.systemUpdateService.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
-		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates) {
+		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates && this.systemUpdateService.installedUpdates.length > 0) {
 			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
+		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.ignoredRebootDelayUpdates && this.systemUpdateService.ignoredRebootDelayUpdates.length > 0) {
+			this.setUpdateByCategory(this.systemUpdateService.ignoredRebootDelayUpdates);
 		}
 
 		this.getScheduleUpdateStatus(false);
@@ -229,6 +233,13 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.systemUpdateService.getUpdateSchedule();
 		this.systemUpdateService.getUpdateHistory();
 		this.setUpdateTitle();
+		this.popRebootDialogIfNecessary();
+	}
+
+	popRebootDialogIfNecessary() {
+		if (this.systemUpdateService.isRebootRequiredDialogNeeded) {
+			this.checkRebootRequested();
+		}
 	}
 
 	getCashValue() {
@@ -328,8 +339,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					// lastScanTime: "2019-03-12T18:24:03"
 					// nextScheduleScanTime: "2019-03-15T10:07:42"
 					// scheduleScanEnabled: true
-				}).catch(error => {
-					console.error('getLastUpdateScanDetail', error);
 				});
 		}
 	}
@@ -395,21 +404,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	private installAllUpdate(removeDelayedUpdates: boolean) {
+	private installUpdates(removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>, isInstallAll: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
-			this.isInstallingAllUpdates = true;
-			this.systemUpdateService.isInstallingAllUpdates = true;
+			this.isInstallingAllUpdates = isInstallAll;
+			this.systemUpdateService.isInstallingAllUpdates = isInstallAll;
 			this.resetState();
-			this.systemUpdateService.installAllUpdates(removeDelayedUpdates);
-		}
-	}
-
-	private installSelectedUpdate(removeDelayedUpdates: boolean) {
-		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
-			this.isInstallingAllUpdates = false;
-			this.systemUpdateService.isInstallingAllUpdates = false;
-			this.resetState();
-			this.systemUpdateService.installSelectedUpdates(removeDelayedUpdates);
+			this.systemUpdateService.installUpdatesList(removeDelayedUpdates, updateList, isInstallAll);
 		}
 	}
 
@@ -458,7 +458,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	public isUpdateListVisible() {
-		const isVisible = (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted;
+		const isVisible = ((this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted)
+		&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
+		|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
+		|| (this.optionalUpdates && this.optionalUpdates.length > 0)
+		|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
 		return isVisible;
 	}
 
@@ -470,6 +474,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	public showInstallConfirmation(source: string) {
+		const isInstallAll = source !== 'selected';
 		const modalRef = this.modalService
 			.open(ModalCommonConfirmationComponent, {
 				backdrop: 'static',
@@ -477,8 +482,18 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
-		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
 		let removeDelayedUpdates = false;
+		let updatesToInstall = [];
+
+		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));;
+		if (!isInstallAll) {
+			updatesToInstall = this.systemUpdateService.getSelectedUpdates(updatesToInstall);
+		} else {
+			this.systemUpdateService.selectCoreqUpdateForInstallAll(updatesToInstall);
+			updatesToInstall = this.systemUpdateService.getUnIgnoredUpdatesForInstallAll(updatesToInstall);
+		}
+		const { rebootType, packages } = this.systemUpdateService.getRebootType(updatesToInstall);
+
 		if (rebootType === UpdateRebootType.RebootDelayed) {
 			this.showRebootDelayedModal(modalRef);
 		} else if (rebootType === UpdateRebootType.RebootForced) {
@@ -488,7 +503,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		} else {
 			modalRef.dismiss();
 			// its normal update type installation which doesn't require rebooting/power-off
-			this.installUpdateBySource(source, removeDelayedUpdates);
+			this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
@@ -503,7 +518,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					} else {
 						removeDelayedUpdates = true;
 					}
-					this.installUpdateBySource(source, removeDelayedUpdates);
+					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, updatesToInstall);
 				}
 			},
 			reason => {
@@ -516,14 +531,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onGetSupportClick($event: any) {
 	}
 
-	private installUpdateBySource(source: string, removeDelayedUpdates: boolean) {
+	private installUpdateBySource(isInstallAll: boolean, removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>) {
 		this.isInstallFailedMessageToasted = false;
 		this.isRebootRequested = false;
-		if (source === 'selected') {
-			this.installSelectedUpdate(removeDelayedUpdates);
-		} else {
-			this.installAllUpdate(removeDelayedUpdates);
-		}
+		this.installUpdates(removeDelayedUpdates, updateList, isInstallAll);
 	}
 
 	private showRebootForceModal(modalRef: NgbModalRef) {
@@ -734,7 +745,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.getNextUpdatedScanText();
 					break;
 				case NetworkStatus.Online:
-					if (this.isCheckingPluginStatus) {
+					if (this.isCheckingPluginStatus
+						|| this.systemUpdateService.isImcErrorOrEmptyResponse) {
 						this.getScheduleUpdateStatus(false);
 					}
 					this.isOnline = notification.payload.isOnline;
@@ -757,6 +769,17 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);
+					break;
+				case AdPolicyEvent.AdPolicyUpdatedEvent:
+					if (!payload.IsSystemUpdateEnabled) {
+						if (this.isUpdateCheckInProgress) {
+							this.onCancelUpdateCheck();
+						}
+						if (this.isUpdateDownloading) {
+							this.onCancelUpdateDownload();
+						}
+						this.router.navigateByUrl('/dashboard');
+					}
 					break;
 				default:
 					break;
@@ -877,6 +900,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					} else {
 						modalRef.close();
 					}
+					this.systemUpdateService.isRebootRequiredDialogNeeded = false;
 				}
 			);
 		}

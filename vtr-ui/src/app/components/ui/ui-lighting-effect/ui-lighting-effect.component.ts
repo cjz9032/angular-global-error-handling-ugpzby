@@ -1,18 +1,20 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges,ViewChild } from '@angular/core';
 import { isUndefined } from 'util';
+import { LanguageService } from 'src/app/services/language/language.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-ui-lighting-effect',
 	templateUrl: './ui-lighting-effect.component.html',
-	styleUrls: ['./ui-lighting-effect.component.scss'],
+	styleUrls: [ './ui-lighting-effect.component.scss' ],
 	host: {
 		'(document:click)': 'generalClick($event)'
 	}
 })
-export class UiLightingEffectComponent implements OnInit {
+export class UiLightingEffectComponent implements OnInit, OnChanges{
 	@Input() public options;
+	@Input() public tabindex;
 	@Input() public selectedValue;
-
 	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();
 	@Input() enableBrightCondition1: boolean;
@@ -25,14 +27,28 @@ export class UiLightingEffectComponent implements OnInit {
 	public selectedDescription: string;
 	@Input() effectOptionName: string;
 	public selectedOption: any;
+	@Input() defaultLang: any;
+	@ViewChild('dropdownLightingEle', { static: false })
+	dropdownEle: ElementRef;
+	intervalObj: any;
+	isItemsFocused: boolean = false;
+	//for macrokey
+    @Input() public enableDescription: Boolean = true;
+	@Input() isRecording: Boolean = false;
+	defaultLanguage: any;
+	//end
 
-	constructor(private elementRef: ElementRef) { }
+	constructor(
+		private elementRef: ElementRef,
+		private languageService: LanguageService,
+		private deviceService: DeviceService
+	) {}
 
 	ngOnInit() {
-		// console.log('selected value in drop ng on it', this.selectedValue);
-		// this.selectedOption = this.options.dropOptions.filter(
-		// 	(option) => option.value === this.selectedValue
-		// )[0];
+		this.deviceService.getMachineInfo().then((value: any) => {
+			this.defaultLanguage = value.locale;
+		});
+		console.log('option itpeople', this.options);
 	}
 
 	public toggleOptions() {
@@ -42,6 +58,22 @@ export class UiLightingEffectComponent implements OnInit {
 			this.buttonName = 'Hide';
 		} else {
 			this.buttonName = 'Show';
+		}
+	}
+
+	itemsFocused() {
+		if (this.showOptions && !this.isItemsFocused) {
+			this.intervalObj = setInterval(() => {
+				if (this.dropdownEle) {
+					if (this.dropdownEle.nativeElement.querySelectorAll('li:focus').length === 0) {
+						this.showOptions = false;
+						this.isItemsFocused = false;
+						clearInterval(this.intervalObj);
+					}
+				}
+			}, 100);
+
+			this.isItemsFocused = true;
 		}
 	}
 
@@ -58,6 +90,7 @@ export class UiLightingEffectComponent implements OnInit {
 
 		this.showOptions = false;
 		this.change.emit(option);
+		document.getElementById('');
 	}
 
 	public changeDescription(option) {
@@ -77,6 +110,15 @@ export class UiLightingEffectComponent implements OnInit {
 			}
 		}
 	}
+
+	keydownFn(event, i) {
+		if (i === this.options.length - 1) {
+			if (event.keyCode === 9) {
+				this.showOptions = false;
+			}
+		}
+	}
+
 	ngOnChanges(changes) {
 		if (!isUndefined(this.options)) {
 			if (!isUndefined(this.options)) {
@@ -87,12 +129,5 @@ export class UiLightingEffectComponent implements OnInit {
 				}
 			}
 		}
-		// if (!isUndefined(changes.effectOptionName)) {
-		// 	if (changes.effectOptionName.previousValue !== changes.effectOptionName.currentValue) {
-		// 		this.effectOptionName = changes.effectOptionName.currentValue;
-		// 	}
-
-		// }
-
 	}
 }

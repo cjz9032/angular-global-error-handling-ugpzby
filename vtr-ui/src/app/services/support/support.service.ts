@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal-find-us.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
+import { CommonService } from '../common/common.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,6 +13,7 @@ export class SupportService {
 	private warranty: any;
 	metrics: any;
 	userGuide: any;
+	sn: string;
 	metricsDatas = {
 		viewOrder: 1,
 		pageNumber: 1,
@@ -21,12 +23,14 @@ export class SupportService {
 
 	constructor(
 		private shellService: VantageShellService,
+		private commonService: CommonService,
 		private modalService: NgbModal,
 	) {
 		this.sysinfo = shellService.getSysinfo();
 		this.warranty = shellService.getWarranty();
 		this.metrics = shellService.getMetrics();
 		this.userGuide = shellService.getUserGuide();
+		this.commonService = commonService;
 		this.warrantyData = {
 			info: {
 				status: -1,
@@ -37,6 +41,7 @@ export class SupportService {
 		if (this.userGuide) {
 			this.userGuide.refresh();
 		}
+		this.getWarrantyInfo(this.commonService.isOnline);
 	}
 
 	public getMachineInfo(): Promise<any> {
@@ -44,6 +49,14 @@ export class SupportService {
 			return this.sysinfo.getMachineInfo();
 		}
 		return undefined;
+	}
+
+	async getSerialnumber(): Promise<any> {
+		if (!this.sn) {
+			const machineInfo = await this.getMachineInfo();
+			this.sn = machineInfo.serialnumber;
+		}
+		return this.sn;
 	}
 
 	public getWarranty(serialnumber: string): Promise<any> {
@@ -59,10 +72,13 @@ export class SupportService {
 				url: this.warrantyNormalUrl
 			};
 
+			if (this.getMachineInfo() === undefined) { return; }
+
 			this.getMachineInfo().then((machineInfo) => {
 				if (machineInfo) {
 					// machineInfo.serialnumber = 'R90HTPEU';
 					// 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' machineInfo.serialnumber
+					if (machineInfo.serialnumber) { this.sn = machineInfo.serialnumber; }
 					this.getWarranty(machineInfo.serialnumber).then((result) => {
 						if (result) {
 							this.warrantyData.info = result;
@@ -117,12 +133,14 @@ export class SupportService {
 
 	showFindUsPop() {
 		const findUsModal: NgbModalRef = this.modalService.open(ModalFindUsComponent, {
+			backdrop: true,
 			centered: true,
-			windowClass: 'About-Modal'
+			windowClass: 'Find-Us-Modal'
 		});
 	}
 	showAboutPop() {
 		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
+			backdrop: true,
 			centered: true,
 			windowClass: 'About-Modal'
 		});
@@ -130,7 +148,7 @@ export class SupportService {
 
 	launchUserGuide(launchPDF?: boolean) {
 		if (this.userGuide) {
-			this.userGuide.launch(launchPDF);
+			this.userGuide.launchUg(this.commonService.isOnline, launchPDF);
 		}
 	}
 }

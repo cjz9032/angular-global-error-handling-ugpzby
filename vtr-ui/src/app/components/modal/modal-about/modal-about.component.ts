@@ -5,6 +5,7 @@ import { ModalLicenseComponent } from '../../modal/modal-license/modal-license.c
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { CommonService } from 'src/app/services/common/common.service';
 
 declare var Windows;
 @Component({
@@ -25,11 +26,13 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		public modalService: NgbModal,
 		private translate: TranslateService,
 		private shellService: VantageShellService,
+		private commonService: CommonService
 	) {
 		this.userGuide = shellService.getUserGuide();
 		if (this.userGuide) {
 			this.userGuide.refresh();
 		}
+		this.commonService = commonService;
 	}
 
 	ngOnInit() {
@@ -49,13 +52,15 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 	}
 
 	agreementClicked() {
-		const agreementUrl = `assets/licenses/Agreement/${this.lang}.html`;
+		const useLang = this.checkLangName(this.lang);
+		const agreementUrl = `assets/licenses/Agreement/${useLang}.html`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
 			pageContext: 'License agreement',
 			closeButton: 'LicenseAgreementCloseButton',
 		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'license-Modal'
@@ -74,6 +79,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 			closeButton: 'OtherSoftwareLicensesCloseButton',
 		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+			backdrop: true,
 			size: 'lg',
 			centered: true,
 			windowClass: 'license-Modal'
@@ -84,9 +90,30 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		this.closeModal();
 	}
 
+	checkLangName(lang: string) {
+		let useLang = lang.toLocaleLowerCase();
+		switch (useLang) {
+			case 'pt-br':
+				useLang = 'pt-BR';
+				break;
+			case 'zh-hans':
+				useLang = 'zh-Hans';
+				break;
+			case 'zh-hant':
+				useLang = 'zh-Hant';
+				break;
+			case 'sr-latn':
+				useLang = 'sr';
+				break;
+			default:
+				break;
+		}
+		return useLang;
+	}
+
 	launchUserGuide() {
 		if (this.userGuide) {
-			this.userGuide.launch(true);
+			this.userGuide.launchUg(this.commonService.isOnline, true);
 		}
 	}
 

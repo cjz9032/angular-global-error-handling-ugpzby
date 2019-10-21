@@ -6,8 +6,8 @@
 		[leftIcon]="['icomoon', 'icomoon-star']"
 		[showChildContent]="true"
 		[theme]="'white'"
-		[tooltipText]="'device.deviceSettings.inputAccessories.userDefinedKey.tooltip' | translate">
-
+		[tooltipText]="'device.deviceSettings.inputAccessories.userDefinedKey.tooltip' | translate"
+		[switchId]="'ds-ip-userdefined-key'">
 		<div class="row">
 			<div class="col-md-10 col-sm-12 col-lg-10 pt-5">
 				<div class="row">
@@ -27,15 +27,21 @@
 									placement="bottom">
 									<button [ngClass]="['btn','btn-outline-shadow']"
 										ngbDropdownToggle
-										type="button">
+										type="button"
+										id="ip-userdefinedkey-dropdown-btn"
+										attr.aria-label="ip-userdefinedkey-dropdown-btn">
 										<div class="row d-flex justify-content-between">
-											<div class="col-auto pl-1 pr-1">
-												<div class="select-title">
+											<div class="col-11 col-sm-10 pl-1 pr-0">
+												<div class="select-title"
+													id="ip-userdefinedkey-dropdown-title"
+													attr.aria-label="ip-userdefinedkey-dropdown-title">
 													{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title' | translate}}
 												</div>
 
-												<div class="select-text text-left">
-													{{selectedValue.title}}
+												<div class="select-text text-left"
+													id="userdefinedkey-selected-text"
+													attr.aria-label="userdefinedkey-selected-text">
+													{{selectedValue.title | translate}}
 												</div>
 											</div>
 											<div class="col-auto pl-0 pr-1">
@@ -49,8 +55,11 @@
 									<div ngbDropdownMenu
 										aria-labelledby="">
 										<a [ngClass]="['dropdown-item']"
-											*ngFor="let item of userDefinedKeyOptions"
-											(click)="onChange(item)">{{item.title}}</a>
+											*ngFor="let item of userDefinedKeyOptions, let i=index"
+											id="userdefinedkey-{{i}}"
+											attr.aria-label="userdefinedkey-{{i}}"
+											(click)="onChange(item)">{{item.title | translate}}
+										</a>
 									</div>
 								</div>
 							</div>
@@ -65,7 +74,8 @@
 									(ngSubmit)="udkSubmit(2)">
 									<div class="row no-gutters">
 										<div class="input-group mt-3">
-											<label>{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
+											<label id="ip-webseiteurl"
+												attr.aria-label="ip-webseiteurl">{{'device.deviceSettings.inputAccessories.userDefinedKey.website.url' | translate}}</label>
 											<textarea class="form-control"
 												[(ngModel)]="url"
 												name="url"
@@ -77,7 +87,9 @@
 												class="button"
 												[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"
 												[disabled]="form1.invalid || udkFormSubmitted"
-												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
+												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}"
+												id="ip-userdefined-key-applybtn"
+												attr.aria-label="ip-userdefined-key-applybtn">
 												{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}
 
 											</button>
@@ -89,7 +101,9 @@
 
 							<div class="col"
 								*ngIf="selectedValue.value == 3">
-								<div class="note align-items-center">
+								<div class="note align-items-center"
+									id="ip-accesories-note"
+									attr.aria-label="ip-accesories-note">
 									{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.note' | translate}}
 								</div>
 							</div>
@@ -102,14 +116,18 @@
 									(ngSubmit)="udkSubmit(3)">
 									<div class="row no-gutters">
 										<div class="input-group mt-3">
-											<label>{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
+											<label id="ip-texttobe-entered"
+												attr.aria-label="ip-texttobe-entered">{{'device.deviceSettings.inputAccessories.userDefinedKey.enterText.title' | translate}}</label>
 											<textarea class="form-control"
 												[(ngModel)]="description"
 												name="description"
+												(keydown)="onKeydown($event)"
 												required></textarea>
 										</div>
 										<div class="col-12">
-											<button type="submit"
+											<button id="ip-userdefined-key-applybtn"
+												attr.aria-label="ip-userdefined-key-applybtn"
+												type="submit"
 												class="button"
 												[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"
 												[disabled]="form2.invalid || udkFormSubmitted"

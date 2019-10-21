@@ -1,0 +1,19 @@
+<button class="toggle-button" [ngClass]="{'selected': value}" tabindex="1"
+	id="{{onOffSwitchId+'_checkbox'}}"
+	(click)="sendChangeEvent($event)"
+	[value]="value"
+	[name]="onOffSwitchId"
+	[attr.aria-label]="value ? toggleId+' on' : toggleId+' off'"
+	vtrMetrics
+	metricsEvent="featureClick"
+	[metricsItem]="onOffSwitchId"
+	[metricsValue]="!value">
+		<button tabindex="-1" class="btnRound" [ngClass]="{'selected': value}" [attr.name]="onOffSwitchId" [value]="value"
+		></button>
+		<button tabindex="-1" *ngIf="!value" [attr.name]="onOffSwitchId" [value]="value"
+			id="{{onOffSwitchId+'_off_sizeStopProp'}}"
+			class="switch-label off-label">{{'common.ui.off' | translate}}</button>
+		<button tabindex="-1" *ngIf="value" [attr.name]="onOffSwitchId" [value]="value"
+			id="{{onOffSwitchId+'_on_sizeStopProp'}}"
+			class="switch-label on-label">{{'common.ui.on' | translate}}</button>
+</button>

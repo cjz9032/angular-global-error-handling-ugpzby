@@ -1,5 +1,9 @@
 <div class="vtr-ui-rounded-rectangle-radio"
-	[ngClass]="{'border-blue':checked, 'border-grey':!checked}">
+	[ngClass]="{'border-blue':checked && !disabled,
+				'border-grey':!checked&&!disabled,
+				'large-width': isLarge,
+				'border-checked-disabled': checked && disabled,
+				'border-disabled': disabled && !checked}">
 	<input id="{{radioId}}"
 		attr.aria-label="{{radioId}}"
 		name="{{group}}"
@@ -13,7 +17,9 @@
 		vtrMetrics
 		metricsEvent="featureClick"
 		[metricsItem]="name"
-		[metricsValue]="value">
+		[metricsValue]="value"
+		id="{{radioId}}"
+		attr.aria-label="{{radioId}}">
 		<fa-layers [fixedWidth]="true"
 			class="icon-circle">
 			<fa-icon [icon]="['fal', 'circle']"></fa-icon>
@@ -21,6 +27,8 @@
 				transform="shrink-6"
 				*ngIf="checked"></fa-icon>
 		</fa-layers>
-		<span class="label">{{label}}</span>
+		<span class="label"
+			id="{{radioId}}-title"
+			attr.aria-label="{{radioId}}-title">{{label}}</span>
 	</label>
 </div>

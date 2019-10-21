@@ -1,12 +1,12 @@
 <div class="vtr-ui-list-chevron">
 	<ul class="chevron-list">
 		<li *ngFor="let item of items"
-			[ngClass]="getItemStatusClass(item)">
+			[ngClass]="getItemStatusClass(item)"
+			[hidden]="item.isHidden">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 
 			<a routerLink="/{{item.path}}"
 				id="{{linkId}}-{{item.id}}"
-				attr.aria-label="{{linkId}}-{{item.id}}"
 				[queryParams]="item.pathParams"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
@@ -15,6 +15,7 @@
 				[metricsItemCategory]="item.category"
 				[metricsItemPosition]="blockPosition"
 				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -22,12 +23,13 @@
 							*ngIf="iconPlacement==='left'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
-								class="spinner-content">
+								class="spinner-content"
+								id="{{'icon-loading-' + item.id}}">
 								<div class="spinner-border text-secondary progress-spinner"
 									role="status"></div>
 							</div>
@@ -38,7 +40,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -47,6 +49,7 @@
 								<img [src]="item.iconPath|svgInline|async" />
 							</div>
 							<div class="item-icon-class"
+								id="{{'icon-' + item.iconName + '-' + item.id}}"
 								*ngIf="item.iconName && item.color">
 								<fa-icon [icon]="['fal', item.iconName]"
 									class="icon"
@@ -58,20 +61,24 @@
 							<div class="row no-gutters"
 								[ngClass]="{'flex-column': item.notificationDetail}">
 								<div title="{{item.title}}"
-									class="title text-break"
-									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
+									class="title text-break {{'dirClass' | translate}}"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}"
+									dir="{{'dir' | translate}}"
+									>
 									{{item.title}}
 								</div>
 								<div title="{{item.detail}}"
-									class="col-4 detail text-break"
+									class="col-4 detail text-break {{'dirClass' | translate}}"
 									*ngIf="item.detail"
-									[ngClass]="getItemDetailClasses(item)">
+									[ngClass]="getItemDetailClasses(item)"
+									dir="{{'dir' | translate}}"
+									>
 									{{item.detail}}
 								</div>
 								<div *ngIf="item.subText"
 									class="sub-text">
-									<span title="{{item.subText}}">{{item.subText | characterLimit:20}}</span>
-									<span class="pl-3">{{item.date}}</span>
+									<span title="{{item.subText}}" class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}">{{item.subText | characterLimit:20}}</span>
+									<span class="pl-3" class="{{'dirClass' | translate}}" dir="{{'dir' | translate}}">{{item.date}}</span>
 								</div>
 							</div>
 						</div>
@@ -79,11 +86,12 @@
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
+								id="{{'icon-loading-' + item.id}}"
 								class="spinner-content">
 								<div class="spinner-border text-secondary progress-spinner"
 									role="status"></div>
@@ -95,7 +103,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -106,7 +114,7 @@
 						</div>
 						<div *ngIf="chevronVisibility"
 							class="col col-1 text-center">
-							<div class="arrow"
+							<div class="arrow" id="{{'icon-arrow-' + item.id}}"
 								[ngClass]="{'blue-arrow': arrowColor==='blue-arrow'}">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
@@ -117,12 +125,12 @@
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
 			<a href="javascript:void(0);"
 				id="{{linkId}}-{{item.id}}"
-				attr.aria-label="{{linkId}}-{{item.id}}"
 				vtrMetrics
 				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
 				[metricsEvent]="metricsEvent"
 				(click)="launchSystemUri(item.path)"
 				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
 				*ngIf="item.isSystemLink!==undefined && item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -130,11 +138,12 @@
 							*ngIf="iconPlacement==='left'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<div *ngIf="item.status === 4"
+								id="{{'icon-loading-' + item.id}}"
 								class="spinner-content">
 								<div class="spinner-border text-secondary progress-spinner"
 									role="status"></div>
@@ -146,7 +155,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -179,12 +188,13 @@
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
 								*ngIf="item.status !== undefined && item.status !== '' && item.status !== 4">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + getItemStatusIconClass(item) + '-' + item.id}}">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 
 							</div>
 							<div *ngIf="item.status === 4"
+								id="{{'icon-loading-' + item.id}}"
 								class="spinner-content">
 								<div class="spinner-border text-secondary progress-spinner"
 									role="status"></div>
@@ -196,7 +206,7 @@
 								container="body"></fa-icon>
 							<div class="item-icon"
 								*ngIf="item.icon">
-								<div class="icon-bkg">
+								<div class="icon-bkg" id="{{'icon-' + item.icon + '-' + item.id}}">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
@@ -207,7 +217,7 @@
 						</div>
 						<div *ngIf="chevronVisibility"
 							class="col col-1 text-center">
-							<div class="arrow">
+							<div class="arrow" id="{{'icon-arrow-' + item.id}}">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
 						</div>

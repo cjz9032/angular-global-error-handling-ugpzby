@@ -16,8 +16,10 @@
 			margin: 0;
 			padding: 0;
 			@media #{$mediaquery_12} {
-
 				width: 80%;
+			}
+			@media #{$mediaquery_X42} {
+				width: 75%
 			}
 		}
 		.hours-block,
@@ -125,6 +127,12 @@
 		display: block;
 		cursor: pointer;
 		margin-bottom: 0rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+		}
 	}
 
 	.dropdown {

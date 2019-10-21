@@ -1,61 +1,63 @@
 <div class="vtr-autoupdate-settings">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <div class="title">{{title}}</div>
-          <div class="description">{{description}}</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="settings-container">
-            <ul class="list-group">
-              <li class="list-group-item"
-                *ngFor="let item of items">
-				<div class="media pl-3 align-items-center"
-					id="{{item.name}}"
-					attr.aria-label="{{item.name}}">
-                  <fa-icon [icon]="item.leftImageSource"></fa-icon>
-                  <div class="media-body pb-0 mb-0 small pl-3">
-                    <div class="d-flex justify-content-between align-items-center w-100">
-                      <div class="update-title"
-                        [innerHTML]="item.header| sanitize : 'html'"></div>
-					  <a href="javascript:void();"
-                        *ngIf="item.isSwitchVisible"
-                        class="d-flex no-pointer">
-						<vtr-ui-switch-onoff
-							id="{{'su-auto-updates-onoff-'+item.name}}"
-							attr.aria-label="{{'su-auto-updates-onoff-'+item.name}}"
-							[name]="item.name"
-                          (toggle)="onToggleOnOff($event)" [value]="item.isChecked" [isSwitchDisable]="item.isDisabled" [disabled]="item.isDisabled">
-                        </vtr-ui-switch-onoff>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title">{{title}}</div>
+				<div class="description">{{description}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="settings-container">
+					<ul class="list-group">
+						<li class="list-group-item"
+							*ngFor="let item of items">
+							<div class="media pl-3 align-items-center"
+								id="{{item.name}}"
+								attr.aria-label="{{item.name}}">
+								<img [src]="item.leftImageSource|svgInline|async" />
+								<div class="media-body pb-0 mb-0 small pl-3">
+									<div class="d-flex justify-content-between align-items-center w-100">
+										<div class="update-title"
+											[innerHTML]="item.header| sanitize : 'html'"></div>
+										<div *ngIf="item.isSwitchVisible"
+											class="d-flex no-pointer">
+											<vtr-ui-switch-onoff id="{{'su-auto-updates-onoff-'+item.name}}"
+												attr.aria-label="{{'su-auto-updates-onoff-'+item.name}}"
+												[name]="item.name"
+												[onOffSwitchId]="item.name"
+												(toggle)="onToggleOnOff($event)"
+												[value]="item.isChecked"
+												[isSwitchDisable]="item.isDisabled"
+												[disabled]="item.isDisabled">
+											</vtr-ui-switch-onoff>
 
-                        <fa-icon class="question"
-                          triggers="click:blur"
-						  placement="auto"
-						  id="su_auto_updates_question_circle"
-						  aria-label="su_auto_updates_question_circle"
-                          [ngbTooltip]="item.tooltipText"
-                          [icon]="['far', 'question-circle']"
-                          container="body"
-                          tooltipClass="vtr-tooltip"></fa-icon>
-                      </a>
-                      <a href="javascript:void();"
-						class="link-text"
-						id="su-auto-updates-winSettingLink"
-						aria-label="su-auto-updates-winSettingLink"
-                        *ngIf="!item.isSwitchVisible"
-                        (click)="onLinkClick(item.linkPath)">
-                        {{item.linkText}}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+											<fa-icon class="question"
+												triggers="click:blur"
+												placement="auto"
+												id="su_auto_updates_question_circle"
+												aria-label="su_auto_updates_question_circle"
+												tabindex="0"
+												[ngbTooltip]="item.tooltipText"
+												[icon]="['far', 'question-circle']"
+												container="body"
+												tooltipClass="vtr-tooltip"></fa-icon>
+										</div>
+										<a href="javascript:void();"
+											class="link-text"
+											id="su-auto-updates-winSettingLink"
+											aria-label="su-auto-updates-winSettingLink"
+											*ngIf="!item.isSwitchVisible"
+											(click)="onLinkClick(item.linkPath)">
+											{{item.linkText}}
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

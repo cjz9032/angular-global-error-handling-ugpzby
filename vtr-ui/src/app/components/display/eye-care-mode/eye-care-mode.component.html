@@ -1,6 +1,6 @@
-<div class="vtr-eye-care-mode">
+<div class="vtr-eye-care-mode" >
 	<div class="row">
-		<div class="col">
+		<div class="col" *ngIf="eyeCareModeSettings.current">
 			<!-- <vtr-ui-range-slider
 				[minValueLegend]="'Warm (Better for eyes)'"
 				[maxValueLegend]="'Cold'"
@@ -30,6 +30,7 @@
 			</button> -->
 			<div class="button-box">
 				<vtr-ui-button (onClick)="onResetTemparature($event)"
+					[tabindex]="0"
 					metricsEvent="itemClick"
 					metricsParent="eye-care-mode"
 					metricsItem="btn.eye-care-mode.ResetTemparature"
@@ -43,36 +44,48 @@
 		</div>
 	</div>
 
-	<div class="custom-control custom-checkbox eye-care-checkbox"
-		*ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise">
+	<div class="custom-control custom-checkbox eye-care-checkbox" *ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise"
+		>
 		<input id="cb-eye-care-schedule"
+			tabindex="0"
 			attr.aria-label="cb-eye-care-schedule"
 			type="checkbox"
 			[disabled]="enableSunsetToSunrise"
+			attr.aria-disabled="enableSunsetToSunrise"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
+			attr.aria-hidden="sunsetToSunriseStatus.available && enableSunsetToSunrise"
+			attr.aria-checked="sunsetToSunriseStatus.status"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
-		<label class="custom-control-label"
+		<label class="custom-control-label" 
 			for="cb-eye-care-schedule">
 			<span class="text-capitalize"
-				[ngClass]="{'disabled':sunsetToSunriseStatus.available && enableSunsetToSunrise}">
+				tabindex="0"
+				[ngClass]="{'disabled':sunsetToSunriseStatus.available && enableSunsetToSunrise}"
+				id="cb-eye-care-schedule-text"
+				attr.aria-hidden="sunsetToSunriseStatus.available && enableSunsetToSunrise"
+				attr.aria-label="{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
+				{{sunriseToSunsetText}}, {{ enableSunsetToSunrise? 'currently disabled': 'currently available' }}">
 				<!-- Schedule eye care mode from sunset to sunrise  -->
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 				{{sunriseToSunsetText}}
 			</span>
 		</label>
 	</div>
-	<div class="custom-control custom-checkbox eye-care-checkbox"
-		*ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
+	<div class="custom-control custom-checkbox eye-care-checkbox" *ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
 		<input id="cb-eye-care-schedule"
+			tabindex="0"
 			attr.aria-label="cb-eye-care-schedule"
 			type="checkbox"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
+			attr.aria-checked="sunsetToSunriseStatus.status"
+			attr.aria-hidden="sunsetToSunriseStatus.available && !enableSunsetToSunrise"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
-		<label class="custom-control-label"
+		<label class="custom-control-label" 
 			for="cb-eye-care-schedule">
-			<span class="">
+			<span class=""
+				id="cb-eye-care-schedule-text">
 				<!-- Schedule eye care mode from sunset to sunrise  -->
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 				{{sunriseToSunsetText}}

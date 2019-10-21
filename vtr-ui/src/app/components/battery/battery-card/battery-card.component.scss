@@ -1,8 +1,7 @@
 @import "./../../../app.theme.scss";
 
-
-.close-button{
-	color: rgba(73, 106, 253, 1);
+.close-button {
+	color: #496afd;
 	font-weight: 400;
 	font-size: 2.4rem;
 	line-height: 1;
@@ -12,7 +11,7 @@
 	}
 }
 .vtr-battery-card {
-	@media #{$mediaquery_11} {
+		@media #{$mediaquery_11} {
 		padding-top: 8.5rem;
 	}
 	// @media #{$mediaquery_X5} {
@@ -25,7 +24,6 @@
 			url(../../../../assets/images/battery/BOTTOM.png);
 	}
 
-
 	.container {
 		border-radius: 1rem;
 		background-color: $light;
@@ -33,7 +31,7 @@
 		background-position: right top, right bottom;
 		background-repeat: no-repeat;
 		background-size: contain;
-		.battery-gauge-label {
+			.battery-gauge-label {
 			opacity: 0.58;
 			color: $main_dark;
 			font-size: $caption;
@@ -56,25 +54,25 @@
 			width: 35rem;
 		}
 
-		.battery-detail-button {
-			height: 5rem;
-			border-radius: 2.5rem;
-			background: $gradient_main;
-			color: $light;
-			font-size: $base;
-			font-weight: $weight_bold;
-			letter-spacing: 0.1rem;
-
-			&:disabled {
-				opacity: 0.5;
+		.btn-disabled {
+			pointer-events: none;
+			::ng-deep .vtr-ui-button {
+				.button-box {
+					.button {
+						background: #e6eaeb;
+						color: #34495e;
+					}
+				}
 			}
 		}
+	
 		.feature-note {
 			background-color: $shade_lightest;
 			border: 1px solid $shade_lighter;
 			p {
 				font-size: 1.5rem;
 				color: $main_darker;
+				margin-bottom: 0rem;
 			}
 			a {
 				text-decoration: underline;
@@ -86,22 +84,43 @@
 
 		.battery-conditions-tips {
 			font-size: $base;
-			z-index: 5;
 			width: 100%;
 			letter-spacing: 0;
+			padding: 0.5rem 0;
+			align-self: center;
 		}
-		.good {
-			color: #{$go_light};
+		.icomoon {
+			font-size: 3.5rem;
 		}
-		.poor {
-			color: #{$stop_dark};
+		.icomoon-ConditionACAdapterError {
+			&:before {
+				color: #f17f14;
+			}
 		}
-		.fair {
-			color: #{$orange};
+		.normal-ACAdapter-condition {
+			.icomoon-ConditionACAdapterError {
+				&:before {
+					color: #30d487;
+				}
+			}
 		}
-		.fair-inner-icon {
-			color: #{$light};
+
+		.icomoon-ConditionBadBattery {
+			&:before {
+				color: #e74c3c;
+			}
 		}
+		.icomoon-ConditionFairBattery {
+			&:before {
+				color: #f17f14;
+			}
+		}
+		.icomoon-ConditionGoodBattery {
+			&:before {
+				color: #30d487;
+			}
+		}
+
 		.loader {
 			position: absolute;
 			z-index: 999;
@@ -114,16 +133,49 @@
 			width: 50px;
 		}
 
-		.battery-conditions {
-			vertical-align: middle;
-			font-size: 14pt;
-		}
 		.link-label {
 			margin-left: 1rem;
-			color: #4a81fd;
+			color: $menu_hover;
 			text-decoration: underline;
 			cursor: pointer;
-			font-size: 1.8rem;
+			align-self: center;
+			font-size: $base;
+		}
+		
+	}
+	@media #{$black-on-white} {
+		
+		border: 0.1rem solid $dark;
+		border-radius: 1rem;
+	}
+	@media #{$white-on-black} {
+		
+		border: 0.1rem solid $light;
+		border-radius: 1rem;
+	}
+	
+}
+.modal-header{
+	@media #{$black-on-white} {
+		
+		border: 0.1rem solid $dark;
+		//border-radius: 1rem;
+	}
+	@media #{$white-on-black} {
+		
+		border: 0.1rem solid $light;
+		//border-radius: 1rem;
+	}
+	}
+	.modal-body{
+		@media #{$black-on-white} {
+		
+			border: 0.1rem solid $dark;
+			//border-radius: 1rem;
+		}
+		@media #{$white-on-black} {
+			
+			border: 0.1rem solid $light;
+			//border-radius: 1rem;
 		}
 	}
-}

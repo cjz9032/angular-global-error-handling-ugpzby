@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// font awesome
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fal } from '@fortawesome/pro-light-svg-icons';
 // Pages
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
 import { TrackersComponent } from './pages/trackers/trackers.component';
@@ -17,6 +13,8 @@ import { MainHeaderComponent } from './main-layout/main-header/main-header.compo
 import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
 // Modules
 import { PrivacyRoutingModule } from './privacy-routing.module';
+// Providers
+import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
 // Directives
 // Common UI components
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
@@ -36,12 +34,12 @@ import { ArticleDescriptionComponent } from './pages/articles/article-descriptio
 import { TrialExpiredWidgetComponent } from './main-layout/sidebar/trial-expired-widget/trial-expired-widget.component';
 import { OfflineWidgetComponent } from './main-layout/sidebar/offline-widget/offline-widget.component';
 import { VideoWidgetComponent } from './main-layout/sidebar/video-widget/video-widget.component';
-
-library.add(fal);
+import { CustomFontAwesomeModule } from './custom-font-awesome.module';
+import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 @NgModule({
 	imports: [
-		FontAwesomeModule,
+		CustomFontAwesomeModule,
 		PrivacyRoutingModule,
 		CommonModule,
 		ReactiveFormsModule,
@@ -51,7 +49,8 @@ library.add(fal);
 		TrackingMapModule,
 		NonPrivatePasswordModule,
 		VtrCommonModule,
-		OneClickScanModule
+		OneClickScanModule,
+		AppSearchModule
 	],
 	declarations: [
 		// Mail Layout Components
@@ -77,6 +76,9 @@ library.add(fal);
 		OfflineWidgetComponent,
 		VideoWidgetComponent,
 	],
+	providers: [
+		httpInterceptorProviders
+	]
 })
 export class PrivacyModule {
 }

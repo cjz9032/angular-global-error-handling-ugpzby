@@ -1,5 +1,5 @@
-<div class="vtr-ui-rectangle-radio">
-	<input id="{{radioId}}"
+<div class="vtr-ui-rectangle-radio" [ngClass]="{'border-blue':checked && !disabled, 'border-grey':!checked, 'disabled-class':disabled}">
+		<input id="{{radioId}}"
 		name="{{group}}"
 		type="radio"
 		[value]="value"
@@ -10,9 +10,11 @@
 		vtrMetrics
 		metricsEvent="featureClick"
 		[metricsItem]="'radio.'+label"
-		[metricsValue]="!radio.checked" />
+		[metricsValue]="!radio.checked"/>
 	<label for="{{radioId}}">
-		<span class="label">{{label}}</span>
+
+		<span class="label">{{label}}</span>		
+		<span class="{{iconName}} mt-3"></span>
 
 		<span *ngIf="!hideIcon" [ngClass]="'icomoon icomoon-'+getIconName(label)"></span>
 		<!--<fa-icon class="icon"

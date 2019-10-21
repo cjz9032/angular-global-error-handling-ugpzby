@@ -12,6 +12,9 @@
 			// padding-right: 3rem;
 			padding-right: 0;
 			display: flex;
+			@media #{$mediaquery_X42}{
+			padding-left: 0
+			}
 			> div.right-align {
 				float: right;
 				::ng-deep span.switch {
@@ -56,6 +59,17 @@
 				margin-bottom: 0.3rem;
 				margin-right: -0.2rem;
 				vertical-align: -0.12em;
+			}
+
+			.adminLogo {
+				width: 2rem;
+				height: 2rem;
+				margin-top: 0.5rem;
+				display: inline-block;
+				background-repeat: no-repeat no-repeat;
+				pointer-events: none;
+				background-image: url("../../../../assets/images/UACLogo.png");
+				background-position: center;
 			}
 		}
 
@@ -131,14 +145,18 @@
 
 		.btn-label {
 			margin: 0rem 0rem 1rem 0rem;
-			padding: 0.5rem 1rem;
+			padding: 0.5rem 1.5rem;
 			border-radius: 2.25rem;
 			background: $gradient_main;
 			color: $light;
-			font-size: 1.08rem;
+			font-size: $body;
 			font-weight: $weight_bold;
 			text-align: center;
 			text-transform: uppercase;
+			max-width: 12rem;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
 		}
 	}
 }

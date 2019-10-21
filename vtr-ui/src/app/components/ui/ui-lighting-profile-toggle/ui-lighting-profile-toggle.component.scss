@@ -39,7 +39,7 @@
 		background-image: $gaming_lighting_gradient;
 		z-index: -1;
 	}
-	.inner-toggle{
+	.inner-toggle {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -47,37 +47,57 @@
 		height: 100%;
 		position: relative;
 	}
-    input {
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        & ~ label {
-            color: $gaming;
-            font-size: 1.8rem;
-            width: 25%;
-            height: 4.2rem;
-            border-radius: 4.2rem;
-            margin: 0.4rem 0.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-            cursor: pointer;
-            @media #{$small-screen}{
-                white-space: nowrap;
-                overflow: hidden;
-                letter-spacing: 2rem;
-                text-indent: -20rem;
-                &#off{
-                    letter-spacing: 0;
-                    text-indent: 0;
-                }
-            }
-        }
-    }
+	input {
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		width: 25%;
+		height: 4.2rem;
+		&:nth-child(3) {
+			left: 25%;
+		}
+		&:nth-child(5) {
+			left: 50%;
+		}
+		&:nth-child(7) {
+			left: 75%;
+		}
+		& ~ label {
+			color: $gaming;
+			font-size: 1.8rem;
+			width: 25%;
+			height: 4.2rem;
+			border-radius: 4.2rem;
+			margin: 0.4rem 0.2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			z-index: 1;
+			cursor: pointer;
+			.num {
+				display: none;
+			}
+			@media #{$small-screen} {
+				white-space: nowrap;
+				overflow: hidden;
+				//letter-spacing: 2rem;
+				//text-indent: -20rem;
+				&#off {
+					letter-spacing: 0;
+					text-indent: 0;
+				}
+				& > span:nth-child(1) {
+					display: none;
+				}
+				.num {
+					display: block;
+				}
+			}
+		}
+	}
 
 	.toggle {
 		position: absolute;
@@ -88,7 +108,7 @@
 		transition: left 0.3s ease-in-out;
 		left: 0;
 	}
-	#off_radio:checked {
+	#profile_off_radio:checked {
 		& ~ #off {
 			color: $gaming_lightest;
 		}
@@ -96,7 +116,7 @@
 			left: 0%;
 		}
 	}
-	#first_radio:checked {
+	#profile_first_radio:checked {
 		& ~ #first_lbl {
 			color: $gaming_lightest;
 		}
@@ -104,7 +124,7 @@
 			left: 25%;
 		}
 	}
-	#second_radio:checked {
+	#profile_second_radio:checked {
 		& ~ #second_lbl {
 			color: $gaming_lightest;
 		}
@@ -112,7 +132,39 @@
 			left: 50%;
 		}
 	}
-	#third_radio:checked {
+	#profile_third_radio:checked {
+		& ~ #third_lbl {
+			color: $gaming_lightest;
+		}
+		& ~ .toggle {
+			left: 75%;
+		}
+	}
+	#single_off_radio:checked {
+		& ~ #off {
+			color: $gaming_lightest;
+		}
+		& ~ .toggle {
+			left: 0%;
+		}
+	}
+	#single_first_radio:checked {
+		& ~ #first_lbl {
+			color: $gaming_lightest;
+		}
+		& ~ .toggle {
+			left: 25%;
+		}
+	}
+	#single_second_radio:checked {
+		& ~ #second_lbl {
+			color: $gaming_lightest;
+		}
+		& ~ .toggle {
+			left: 50%;
+		}
+	}
+	#single_third_radio:checked {
 		& ~ #third_lbl {
 			color: $gaming_lightest;
 		}

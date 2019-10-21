@@ -1,0 +1,34 @@
+<div class="beta-vtr-ui-button">
+	<div class="button-box"
+		*ngIf="label">
+		<button *ngIf="alreadyJoinGroup !== 'joined'"
+			title="{{tooltip?label:''}}"
+			[disabled]="isDisabled"
+			type="button"
+			class="btn button"
+			[routerLink]="routerPath"
+			routerLinkActive="active"
+			[id]="linkId"
+			[attr.aria-label]="linkId"
+			[ngClass]="{'fullWidth': isFullWidth === true,
+						'halfWidth': isHalfWidth,
+						'text-upper-case': upperCaseLabel,
+						'regular-width': isRegular,
+						'min-height': btnHeight,
+						'btn-gradient': isGradient,
+						'action-button-disable': isDisabled}"
+			(click)="onClickButton($event)">{{label}} </button>
+		<button *ngIf="alreadyJoinGroup === 'joined'"
+			title="{{tooltip?label:''}}"
+			type="button"
+			class="button disable"
+			[disabled]="false"
+			[id]="linkId"
+			vtrMetrics
+			[attr.aria-label]="linkId"
+			[routerLink]="routerPath"
+			routerLinkActive="active"
+			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
+			(click)="onClickButton($event)">{{label}} </button>
+	</div>
+</div>

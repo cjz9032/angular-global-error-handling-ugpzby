@@ -3,7 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
 				[back]="back"
-				[title]="title">
+				[title]="title"
+				[backId]="'system-update-back-btn'">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -29,6 +30,7 @@
 
 											<vtr-widget-device-update [title]="updateTitle | translate"
 												*ngIf="isOnline"
+												[vtrAppSearchScroller]="['search-check-update']"
 												[subTitle1]="getLastUpdatedText()"
 												[subTitle2]="getNextUpdatedScanText()"
 												[buttonText]="'systemUpdates.banner.checkButton' | translate"
@@ -47,7 +49,7 @@
 									</div>
 									<vtr-available-updates *ngIf="isUpdateListVisible()"
 										[criticalUpdates]="criticalUpdates"
-														   [optionalUpdates]="optionalUpdates"
+										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
 										[ignoredUpdates]="ignoredUpdates"
 										[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
@@ -63,9 +65,10 @@
 										<div class="col col-12 installation-history-container p-5">
 											<vtr-container-collapsible
 												name="SystemUpdateHistory"
+												[tabIndex]="0"
 												[cardTitle]="'systemUpdates.history' | translate"
 												[isCollapsed]="false"
-												[linkId]="'su-history'">
+												[collapseLinkId]="'su-history'">
 												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 												</vtr-installation-history>
 											</vtr-container-collapsible>
@@ -79,8 +82,8 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row mb-40">
-									<div class="col col-12 cont">
-
+									<div class="col col-12 cont"
+									[vtrAppSearchScroller]="['search-critical-update', 'search-recommend-update', 'search-windows-update']">
 										<vtr-autoupdate-settings
 											[title]="'systemUpdates.autoUpdateSettings.title' | translate"
 											componentName="Auto Update Settings"

@@ -1,16 +1,20 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-import { HttpClient } from '@angular/common/http';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
+import { TimerService } from 'src/app/services/timer/timer.service';
+import { ConfigService } from 'src/app/services/config/config.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
-	styleUrls: ['./modal-welcome.component.scss']
+	styleUrls: [ './modal-welcome.component.scss' ],
+	providers: [ TimerService ]
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	progress = 49;
@@ -18,61 +22,97 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	page = 1;
 	privacyPolicy = true;
 	checkedArray: string[] = [];
-	startTime: number;
-	endTime: number;
 	metrics: any;
 	data: any = {
 		page2: {
-			title: 'How will you use it?',
-			subtitle: 'Click on one of these uses to tell is how you will use this machine?',
-			radioValue: null,
+			title: '',
+			subtitle: '',
+			radioValue: null
 		}
 	};
 	interests = [
-		'games', 'news', 'entertainment', 'technology',
-		'sports', 'arts', 'regionalNews', 'politics',
-		'music', 'science'
+		'games',
+		'news',
+		'entertainment',
+		'technology',
+		'sports',
+		'arts',
+		'regionalNews',
+		'politics',
+		'music',
+		'science'
 	];
 	// to show small list. on click of More Interest show all.
 	interestCopy = this.interests.slice(0, 8);
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
+	privacyPolicyLink: 'https://www.lenovo.com/us/en/privacy/';
+	machineInfo: any;
+
+	@ViewChildren('interestChkboxs') interestChkboxs: any;
+	@ViewChildren('welcomepage2') welcomepage2: any;
+	shouldManuallyFocusPage2 = true;
+	shouldManuallyFocusMoreInterest =  false;
+
 	constructor(
+		private deviceService: DeviceService,
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
-		private http: HttpClient,
-		public commonService: CommonService) {
-		this.startTime = new Date().getTime();
+		public commonService: CommonService,
+		private configService: ConfigService,
+		private timerService: TimerService,
+		private userService: UserService) {
 		this.metrics = shellService.getMetrics();
 		this.privacyPolicy = this.metrics.metricsEnabled;
 		const self = this;
 		shellService.getMetricsPolicy((result) => {
 			self.privacyPolicy = result;
 		});
+		deviceService.getMachineInfo().then((val) => {
+			this.machineInfo = val;
+		});
 	}
 
 	ngOnInit() {
+		this.timerService.start();
+		this.configService.getPrivacyPolicyLink().then((policyLink) => {
+			this.privacyPolicyLink = policyLink;
+		});
 	}
 
 	ngAfterViewInit() {
 		const welcomeEnd: any = new Date();
 		const welcomeUseTime = welcomeEnd - this.welcomeStart;
 		console.log(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
+		this.interestChkboxs.changes.subscribe(() => {
+			if (this.interestChkboxs.length > 8 && this.shouldManuallyFocusMoreInterest === true) {
+				this.interestChkboxs._results[this.interestChkboxs.length - 2].nativeElement.focus();
+				this.shouldManuallyFocusPage2 = false;
+				this.shouldManuallyFocusMoreInterest = false;
+			}
+		});
+
+		this.welcomepage2.changes.subscribe(() => {
+			if (this.welcomepage2.length > 0 && this.shouldManuallyFocusPage2) {
+				this.welcomepage2.first.nativeElement.focus();
+				this.shouldManuallyFocusPage2 = false;
+			}
+		});
 	}
 
 	next(page) {
-		this.metrics.metricsEnabled = (this.privacyPolicy === true);
+		this.metrics.metricsEnabled = this.privacyPolicy === true;
 		let tutorialData;
 		if (page < 2) {
-			this.endTime = new Date().getTime();
 			const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
-				PageDuration: Math.floor((this.endTime - this.startTime) / 1000)
+				PageContext: `page${page}`,
+				PageDuration: this.timerService.stop()
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
-			this.startTime = new Date().getTime();
+			this.timerService.start();
 			this.page = page;
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, null, null);
@@ -90,7 +130,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			});
 
 			const usageData = {
-				ItemType: 'featureClick',
+				ItemType: 'FeatureClick',
 				ItemName: 'UsageType',
 				ItemValue: this.data.page2.radioValue,
 				ItemParent: 'WelcomePage'
@@ -98,21 +138,22 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.metrics.sendAsync(usageData);
 
 			const interestData = {
-				ItemType: 'featureClick',
+				ItemType: 'FeatureClick',
 				ItemName: 'Interest',
 				ItemValue: this.checkedArray,
 				ItemParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(interestData);
 
-			this.endTime = new Date().getTime();
 			const data = {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
-				PageDuration: Math.floor((this.endTime - this.startTime) / 1000)
+				PageContext: `page${page}`,
+				PageDuration: this.timerService.stop()
 			};
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
+			this.userService.sendSilentlyLoginMetric();
 			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
@@ -138,10 +179,20 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 	}
 
-	saveUsageType($event, value) {
-		if ($event.target.checked) {
-			console.log(value);
+	onKeyPress($event) {
+		if ($event.keyCode === 13) {
+			$event.target.click();
+			this.shouldManuallyFocusMoreInterest = true;
 		}
+	}
+
+	btnDoneOnKeyPress($event) {
+		if ($event.keyCode === 13) {
+			this.next(2);
+		}
+	}
+
+	saveUsageType(value) {
 		if (this.data.page2.radioValue == null) {
 			this.progress += 16;
 		}

@@ -1,14 +1,18 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
-import { DevService } from '../../../services/dev/dev.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -55,13 +59,17 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;
 	machineType: number;
+	private notificationSubscription: Subscription;
+	public isOnline: any = true;
+
+
 	constructor(
-		private devService: DevService,
 		public qaService: QaService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public audioService: AudioService,
+		private logger: LoggerService,
 		private translate: TranslateService
 	) {
 		this.fetchCMSArticles();
@@ -69,8 +77,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchCMSArticles();
 		});
-
-		this.getMicrophoneSettings();
 
 		// Evaluate the translations for QA on language Change
 		// this.qaService.setTranslationService(this.translate);
@@ -87,7 +93,10 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
+		console.log('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		// translate subheader menus
 		/*this.menuItems.forEach(m => {
@@ -97,18 +106,47 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			});
 		});*/  // VAN-5872, server switch feature
 		this.initInputAccessories();
+
+		this.isOnline = this.commonService.isOnline;
+		if (this.isOnline) {
+			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
+			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
+			if (welcomeTutorial && welcomeTutorial.page === 2) {
+				this.getMicrophoneSettings();
+			}
+		} else {
+			this.getMicrophoneSettings();
+		}
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case LocalStorageKey.WelcomeTutorial:
+					if (payload.page === 2) {
+						this.getMicrophoneSettings();
+					}
+					break;
+				default:
+					break;
+			}
+		}
 	}
 
 	initInputAccessories() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		if (this.machineType !== 1) {
+		if (this.machineType !== 1 && this.machineType !== 0) {
 			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 			return;
-		}
-		const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-		const isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
-		if (!isAvailable) {
-			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+		} else {
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			const isAvailable = inputAccessoriesCapability.isUdkAvailable
+				|| inputAccessoriesCapability.isKeyboardMapAvailable;
+			const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
+			if (!isAvailable && !isVOIPAvailable) {
+				this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+			}
 		}
 	}
 
@@ -122,11 +160,13 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 							this.menuItems.splice(1, 1);
 						}
 					}).catch(error => {
-						console.error('getMicrophoneSettings', error);
+						this.logger.error('getMicrophoneSettings', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error('getMicrophoneSettings' + error.message);
+			this.logger.error('getMicrophoneSettings' + error.message);
+			return EMPTY;
 		}
 	}
 
@@ -146,7 +186,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('fetchCMSContent error', error.message);
 			}
 		);
 		this.cardContentPositionA = {
@@ -170,6 +210,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 	// VAN-5872, server switch feature
 	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 		this.qaService.destroyChangeSubscribed();
 	}
 

@@ -1,10 +1,14 @@
 <div class="vtr-oled-power-settings">
 	<div class="row">
 		<div class="col">
-			<p class="caption">
+			<p class="caption"
+				tabindex="0"
+				id="oled-power-settings-caption1" attr.aria-label="{{ description[0] }}" >
 				{{ description[0] }}
 			</p>
-			<p class="caption">
+			<p class="caption"
+				tabindex="0"
+				id="oled-power-settings-caption2" attr.aria-label="{{ description[1] }}" >
 				{{ description[1] }}
 			</p>
 		</div>
@@ -12,7 +16,10 @@
 
 	<div class="dropdown row">
 		<section class="col-sm-12 col-md-4">
-			<h5>{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}
+			<h5 id="oled-power-settings-tb-dimmer"
+				tabindex="0"
+				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}">
+				{{'device.deviceSettings.displayCamera.display.oledPowerSettings.taskBarDimmer' | translate}}
 			</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="taskBarDimmerValue"
@@ -25,7 +32,11 @@
 			</vtr-ui-dropdown>
 		</section>
 		<section class="col-sm-12 col-md-4">
-			<h5>{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}</h5>
+			<h5 id="oled-power-settings-bg-dimmer"
+				tabindex="0"
+				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}">
+				{{'device.deviceSettings.displayCamera.display.oledPowerSettings.backgroundDimmer' | translate}}
+			</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="backgroundDimmerValue"
 				(change)="onBackgroundDimmerChange($event)"
@@ -37,7 +48,11 @@
 			</vtr-ui-dropdown>
 		</section>
 		<section class="col-sm-12 col-md-4">
-			<h5>{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}</h5>
+			<h5 id="oled-power-settings-dp-dimmer"
+				tabindex="0"
+				attr.aria-label="{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}">
+				{{'device.deviceSettings.displayCamera.display.oledPowerSettings.displayDimmer' | translate}}
+			</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="displayDimmerValue"
 				(change)="onDisplayDimmerChange($event)"

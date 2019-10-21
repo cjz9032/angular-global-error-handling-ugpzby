@@ -2,7 +2,7 @@
 
 .title-main {
 	font-size: 3.4rem;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	font-weight: 500;
 	padding: 1.6rem 0;
 	@media #{$mediaquery_11} {
@@ -17,14 +17,27 @@
 
 .col-6 {
 	min-width: 30rem;
+	@media #{$mediaquery_X6} {
+		min-width: 35rem;
+	}
+
+	@media #{$mediaquery_16} {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	@media #{$mediaquery_X3} {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
 }
 
 .select-wrapper {
 	@media #{$mediaquery_16} {
-		width: 22.6rem;
+		width: auto;
 	}
 	@media #{$mediaquery_X3} {
-		width: 27.4rem;
+		width: auto;
 	}
 }
 
@@ -42,7 +55,7 @@
 	&.recording {
 		position: relative;
 		&::after {
-			content: 'Next input';
+			content: attr(data-line);
 			padding-top: 1rem;
 			position: absolute;
 			bottom: 19rem;
@@ -98,22 +111,50 @@
 			cursor: pointer;
 			position: relative;
 			svg {
-				vertical-align: bottom;
+				vertical-align: text-bottom;
+				path {								
+					@media #{$black-on-white}{
+						fill: $dark;
+						}
+					@media #{$white-on-black}{
+						fill: $light;
+						}					
+				}	
 			}
 			&:nth-child(odd) {
 				background-color: $gaming_hover;
+				@media #{$black-on-white}{
+					background-color:$high-contrast-grey;
+					}
+				@media #{$white-on-black}{
+					background-color:$high-contrast-grey;
+					}
 				border-radius: 0.3rem;
 				.key {
 					svg {
 						opacity: 0.8;
+						path {								
+							@media #{$black-on-white}{
+								fill: $dark;
+								}
+							@media #{$white-on-black}{
+								fill: $light;
+								}					
+						}						
 					}
 				}
 			}
 			&:hover {
-				color: $gaming_light_blue;
+				color: $gaming_light_blue;				
 				svg {
 					path {
-						fill: $gaming_light_blue;
+						fill: $gaming_light_blue;	
+						@media #{$black-on-white}{
+							fill: $dark;
+							}
+						@media #{$white-on-black}{
+							fill: $light;
+							}					
 					}
 				}
 				.interval {
@@ -133,7 +174,7 @@
 					font-weight: 500;
 					color: $gaming_light_blue;
 					&:hover {
-						width: 11rem;
+						width: auto;
 					}
 				}
 			}
@@ -208,7 +249,7 @@
 	font-weight: 700;
 	color: $gaming_light_blue;
 	display: inline-block;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	padding: 0.4rem;
 	svg {
 		path {

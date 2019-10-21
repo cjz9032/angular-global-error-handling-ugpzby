@@ -15,10 +15,11 @@
 			[metricsItem]="'radio.'+label"
 			[metricsValue]="!radio.checked">
 		<label for="{{radioId}}"
-			class="checkbox-custom-label">
+			class="checkbox-custom-label" id="{{radioId}}" attr.aria-label="{{radioId}}">
 			<div *ngIf="!hideIcon"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
 		</label>
-		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']">{{label|uppercase}}</div>
+		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
+			id="{{textId}}-{{value}}-label" attr.aria-label="{{textId}}-{{value}}-label">{{label|uppercase}}</div>
 	</div>
 </div>

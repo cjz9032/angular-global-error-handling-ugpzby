@@ -7,6 +7,15 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: $screen_dark_50;
+
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+		&:focus {
+			text-decoration: none;
+		}
+	}
 }
 ui-popover {
 	position: absolute;
@@ -20,6 +29,12 @@ ui-popover {
 	top: 25%;
 	left: 0;
 	margin: auto;
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
 	@media #{$small-screen} {
 		max-width: 45rem;
 	}
@@ -69,22 +84,34 @@ ui-popover {
 		padding: 1rem 3rem;
 		margin-top: 1rem;
 		font-weight: $weight_bold;
-		text-transform: uppercase;
+		//text-transform: uppercase;
 	}
 
 	.cancel-link {
+		height: 3.2rem;
 		color: $main;
 		font-size: 2rem;
-		text-decoration: underline;
 		vertical-align: middle;
-		padding: 1rem 3rem;
-		font-weight: $weight_bold;
-		margin-top: 1rem;
+		padding: 0 0.5rem;
+		font-weight: $weight_600;
+		margin-top: 1.8rem;
+		margin-left: 3rem;
+		border-bottom: 2px solid $btn_secondary_color;
 		cursor: pointer;
-		text-transform: uppercase;
+		&:hover{
+				text-decoration: none;
+			}
+	}
+}
 
-		&:hover {
-			text-decoration: underline;
-		}
+::ng-deep {
+	.vtr-menu-main {
+		z-index: 1 !important;
+	}
+	.vtr-page-content {
+		z-index: unset !important;
+	}
+	.modal-main-wrapper {
+		z-index: 2 !important;
 	}
 }

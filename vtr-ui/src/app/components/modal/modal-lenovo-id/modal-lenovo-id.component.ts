@@ -10,6 +10,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 enum ssoErroType {
 
@@ -101,6 +102,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private startBind: any;
 	private completeBInd: any;
 	private notificationSubscription: Subscription;
+	private isSsoDevMode = false;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -178,7 +180,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			return;
 		}
 
-		this.webView.create('<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);\'>  <div class=\'queryHeight\'>  <style>.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px; height: 80%;} @media only screen and (min-height: 768px) {.queryHeight{height: 60%;}} @media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}} @media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}} .close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: \'\';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id=\'btnClose\' attr.aria-label=\'lid-login-dialog-close-button\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>  <span class=\'close\'>&times;</span> <div style=\'height:45px;\'></div>  </div>    <div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'> <div id=\'spinnerCtrl\' class=\'spinner\'></div> <div id=\'webviewPlaceHolder\' attr.aria-label=\'lid-login-dialog-webview\'></div>    </div>  </div></div>');
+		this.webView.create('<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);\'>  <div class=\'queryHeight\'>  <style>.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto;border: 1px solid #888;max-width: 460px; height: 80%;} @media only screen and (min-height: 768px) {.queryHeight{height: 60%;}} @media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}} @media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}} .close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: \'\';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id=\'btnClose\' style=\'padding: 2px 16px;background-color: white;color: black;border-bottom: 1px solid #e5e5e5;\'>  <span class=\'close\' id=\'txtClose\' aria-current=\'true\'>&times;</span> <div style=\'height:45px;\'></div>  </div>    <div style=\'height: 100%; min-height: 400px;\' id=\'webviewBorder\'> <div id=\'spinnerCtrl\' class=\'spinner\'></div> <div id=\'webviewPlaceHolder\' attr.aria-label=\'lid-login-dialog-webview\'></div>    </div>  </div></div>');
 		this.webView.show();
 		this.eventBind = this.onEvent.bind(this);
 		this.startBind = this.onNavigationStart.bind(this);
@@ -190,10 +192,15 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (!this.cacheCleared) {
 			// Hide browser while clearing cache
 			this.webView.changeVisibility('webviewPlaceHolder', false);
-			// This is the link for SSO production environment
+
+			// This is the link to clear cache for SSO production environment
 			this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
-			// This is the link for SSO dev environment
-			// this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
+			const LidSsoDevMode = this.commonService.getLocalStorageValue(LocalStorageKey.LidSsoDevMode);
+			if (LidSsoDevMode) {
+				this.isSsoDevMode = true;
+				// This is the link to clear cache for SSO dev environment
+				this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
+			}
 			this.cacheCleared = true;
 		}
 	}
@@ -257,9 +264,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 				return;
 			}
-			// if (eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
-			// 	 return;
-			// }
+			if (self.isSsoDevMode && eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
+				 return;
+			}
 			self.webView.changeVisibility('spinnerCtrl', false);
 			self.webView.changeVisibility('webviewPlaceHolder', true);
 			const htmlContent = eventData.content;
@@ -419,6 +426,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				self.devService.writeLog('getLoginUrl() failed ' + result.status);
 				self.activeModal.dismiss();
 			}
+		}).catch((error) => {
+			self.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			self.activeModal.dismiss();
 		});
 
 	}

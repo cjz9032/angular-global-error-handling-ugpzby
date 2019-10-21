@@ -28,6 +28,12 @@
 							width: 1.8rem;
 							margin-top: 0.1rem;
 							transition: all 0.2s ease-in;
+							@media #{$black-on-white} {
+								background: $gaming_darkest;
+							}
+							@media #{$white-on-black} {
+								background: $gaming_lightest;
+							}
 						}
 					}
 					&.wifi-checked + .switch {
@@ -37,6 +43,12 @@
 							background: $gaming_lightest;
 							transition: all 0.2s ease-in;
 							left: 3.2rem;
+							@media #{$black-on-white} {
+								background: $gaming_darkest;
+							}
+							@media #{$white-on-black} {
+								background: $gaming_lightest;
+							}
 						}
 					}
 				}
@@ -128,5 +140,26 @@
 		@media #{$mediaquery_X39} {
 			margin-bottom: 74rem;
 		}
+	}
+}
+
+::ng-deep ngb-tooltip-window.tooltip {
+	.arrow {
+		left: calc(-1rem + 50%) !important;
+		height: 0.5rem !important;
+		&::before {
+			border-width: 0 1.2rem 1.2rem;
+			border-bottom-color: $gaming_lightest;
+		}
+	}
+	.tooltip-inner {
+		padding: 2.4rem !important;
+		text-align: center;
+		background-color: #fff;
+		font-size: 1.5rem !important;
+		border-radius: 0.4rem;
+		color: $gaming_dark !important;
+		white-space: nowrap;
+		display: table;
 	}
 }

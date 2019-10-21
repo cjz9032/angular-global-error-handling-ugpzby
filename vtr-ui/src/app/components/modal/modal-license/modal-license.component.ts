@@ -3,27 +3,31 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { TimerService } from 'src/app/services/timer/timer.service';
 
 @Component({
 	selector: 'vtr-modal-license',
 	templateUrl: './modal-license.component.html',
-	styleUrls: ['./modal-license.component.scss']
+	styleUrls: ['./modal-license.component.scss'],
+	providers: [TimerService]
 })
 export class ModalLicenseComponent implements OnInit, OnDestroy {
 
 	url: string;
 	/** type will be 'html' or 'txt' */
 	type: string;
-	articleBody: SafeHtml = '<div class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>';
+	articleBody: SafeHtml = '';
 	licenseModalMetrics: any;
 	pageDuration: number;
 	metrics: any;
+	loading = true;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private http: HttpClient,
 		private sanitizer: DomSanitizer,
 		private shellService: VantageShellService,
+		private timerService: TimerService
 	) {
 		this.metrics = this.shellService.getMetrics();
 	}
@@ -31,16 +35,15 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
 			if (this.type === 'txt') {
+				this.loading = false;
 				const openSource = results.replace(/\< /g, '<').replace(/ \>/g, '>').replace(/\</g, '< ').replace(/\>/g, ' >');
 				this.articleBody = `<pre>${openSource}</pre>`;
 			} else {
+				this.loading = false;
 				this.setIframeUrl();
 			}
 		});
-		this.pageDuration = 0;
-		setInterval(() => {
-			this.pageDuration += 1;
-		}, 1000);
+		this.timerService.start();
 	}
 
 	ngOnDestroy() {
@@ -48,7 +51,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			ItemType: 'PageView',
 			PageName: this.licenseModalMetrics.pageName,
 			PageContext: this.licenseModalMetrics.pageContext,
-			PageDuration: this.pageDuration,
+			PageDuration: this.timerService.stop(),
 			OnlineStatus: ''
 		};
 		this.sendMetricsAsync(pageViewMetrics);
@@ -56,8 +59,8 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	}
 
 	setIframeUrl() {
-			const licenseAgreementIframe: any = document.getElementById('license-agreement-iframe');
-			licenseAgreementIframe.src = this.url;
+		const licenseAgreementIframe: any = document.getElementById('license-agreement-iframe');
+		licenseAgreementIframe.src = this.url;
 	}
 
 	sendMetricsAsync(data: any) {

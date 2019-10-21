@@ -3,12 +3,15 @@
 		*ngIf="label">
 		<button *ngIf="alreadyJoinGroup !== 'joined'"
 			title="{{tooltip?label:''}}"
-			[disabled]="isDisabled"
+			[disabled]="isDisabled || isLoading"
 			type="button"
-			class="btn button"
+			class="btn button {{getButtonColor(buttonColor)}}"
 			vtrMetrics
+			[routerLink]="routerPath"
+			routerLinkActive="active"
+			[href]="href"
 			[id]="linkId"
-			[attr.aria-label]="linkId"
+			[tabindex]="tabindex ? tabindex : 0"
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"
@@ -20,19 +23,26 @@
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true,
 						'halfWidth': isHalfWidth,
-						'text-upper-case': upperCaseLabel,
+						'text-upper-case': upperCaseLabel === true,
+						'text-capitalize': capitalizeLabel === true,
 						'regular-width': isRegular,
-						'min-height': btnHeight, 
-						'btn-gradient': isGradient}"
-			(click)="onClickButton($event)">{{label}} </button>
+						'btn-size-small': btnHeight,
+						'btn-gradient': isGradient,
+						'btn-in-red-bg': inRedBackground,
+						'disable': isDisabled}"
+			(click)="onClickButton($event)">
+			<span class="text" [innerHTML]="label"></span>
+		</button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
 			title="{{tooltip?label:''}}"
 			type="button"
 			class="button disable"
 			[disabled]="false"
 			[id]="linkId"
-			[attr.aria-label]="linkId"	
+			[tabindex]="tabindex ? tabindex : 0"
 			vtrMetrics
+			[routerLink]="routerPath"
+			routerLinkActive="active"
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"
@@ -44,5 +54,7 @@
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>
+		<div *ngIf="isLoading" class="loadingIcon spinner-border text-primary progress-spinner" role="status">
+		</div>
 	</div>
 </div>

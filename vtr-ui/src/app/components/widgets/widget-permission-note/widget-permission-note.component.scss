@@ -5,9 +5,30 @@
 	font-size: 1.4rem;
 	color: $alt;
 	border: 1px solid $shade_lighter;
+	@media #{$black-on-white} {
+		color: $alt;
+		background-color: $shade_lightest;
+		border:none;
+	}
+	@media #{$white-on-black} {
+		color: $alt;
+		background-color: $shade_lightest;
+		border:none;
+	}
+
 
 	.privacy-button {
 		font-size: 1.2rem;
 		letter-spacing: 0.76px;
+		text-align: left;
+		@media #{$black-on-white} {
+			color: $yellow;
+			border:none;
+		}
+		@media #{$white-on-black} {
+			color: $blue-light;
+			border:none;
+			
+		}
 	}
 }

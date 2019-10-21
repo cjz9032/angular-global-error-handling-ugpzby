@@ -1,0 +1,55 @@
+@import "../../../../../app.theme.scss";
+
+.vtr-home-security-card {
+	width: 100%;
+	border-radius: $border_radius;
+	background-color: $shade_extralight;
+	border: 0.1rem solid $shade_lighter;
+	.content {
+		.container-fluid:nth-child(2n + 1) {
+			border-right: 0.1rem solid $shade_lighter;
+		}
+		.container-fluid {
+			padding: 2rem;
+			.title {
+				height: 8rem;
+				color: $shade_blue;
+				font-size: 2rem;
+				font-weight: $weight_bold;
+				line-height: 3rem;
+				padding-bottom: 2rem;
+			}
+
+			.description {
+				color: $shade_blue;
+				font-size: 1.6rem;
+				font-weight: 400;
+				height: 10rem;
+				margin-top: 0.5rem;
+				overflow: hidden;
+			}
+
+			vtr-ui-button{
+				display: inline-block;
+			}
+		}
+	}
+
+	@media #{$medium-screen} {
+		.content {
+			.container-fluid:nth-child(2n + 1) {
+				border-right: 0;
+				border-bottom: 0.1rem solid #e6e6e6;
+			}
+		}
+	}
+
+	@media #{$small-screen}{
+		.content {
+			.container-fluid:nth-child(2n + 1) {
+				border-right: 0;
+				border-bottom: 0.1rem solid #e6e6e6;
+			}
+		}
+	}
+}

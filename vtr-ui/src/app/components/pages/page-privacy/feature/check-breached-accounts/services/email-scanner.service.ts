@@ -1,14 +1,13 @@
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, Observable, of, Subject, throwError } from 'rxjs';
 import { catchError, switchMap, tap } from 'rxjs/operators';
-import { StorageService } from '../../../common/services/storage.service';
+import { StorageService, USER_EMAIL_HASH } from '../../../common/services/storage.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AccessTokenService } from '../../../common/services/access-token.service';
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 import { INVALID_TOKEN } from '../../../utils/error-codes';
-import { getHashCode } from '../../../utils/helpers';
+import { getSha1Hash } from '../../../utils/helpers';
 import { SafeStorageService } from '../../../common/services/safe-storage.service';
-import { PrivacyModule } from '../../../privacy.module';
 
 interface ConfirmationCodeValidationResponse {
 	status: string;
@@ -46,13 +45,12 @@ export enum ErrorNames {
 	noAccessToken = 'noAccessToken'
 }
 
-const USER_EMAIL_HASH = 'privacy-user-email-hash';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class EmailScannerService {
-	private _userEmail$ = new BehaviorSubject<string>('');
+	private _userEmail$ = new BehaviorSubject<string>(this.getUserEmail());
 	userEmail$ = this._userEmail$.asObservable();
 
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
@@ -73,12 +71,24 @@ export class EmailScannerService {
 	) {
 	}
 
+	private getUserEmail() {
+		const emailFromSafeStorage = this.safeStorageService.getEmail() || '';
+		const hashFromLocalStorage = this.storageService.getItem(USER_EMAIL_HASH);
+		return getSha1Hash(emailFromSafeStorage) === hashFromLocalStorage ? emailFromSafeStorage : '';
+	}
+
 	setUserEmail(userEmail) {
 		this._userEmail$.next(userEmail);
+		this.safeStorageService.setEmail(userEmail);
+	}
+
+	removeUserEmail() {
+		this._userEmail$.next('');
+		this.safeStorageService.removeEmail();
 	}
 
 	scanNotifierEmit() {
-		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
+		this.storageService.setItem(USER_EMAIL_HASH, getSha1Hash(this._userEmail$.getValue()));
 		this.safeStorageService.setEmail(this._userEmail$.getValue());
 		this.scanNotifier.next(true);
 	}
@@ -136,8 +146,7 @@ export class EmailScannerService {
 		return getBreachedAccounts.pipe(
 			switchMap((breaches: BreachedAccountsFromServerResponse) => {
 				this.loadingStatusChanged.next(false);
-				this.setUserEmail(breaches.userEmail);
-				return [this.transformBreachesFromServer(breaches)];
+				return [this.transformBreachesFromServer(breaches, accessToken)];
 			}),
 			catchError((error) => {
 				console.error('Confirmation Error', error);
@@ -151,7 +160,7 @@ export class EmailScannerService {
 		);
 	}
 
-	getBreachedAccountsByEmailWithToken() {
+	private getBreachedAccountsByEmailWithToken() {
 		const accessToken = this.accessTokenService.getAccessToken();
 		if (accessToken) {
 			const headers = new HttpHeaders({
@@ -166,13 +175,18 @@ export class EmailScannerService {
 		}
 	}
 
-	getBreachedAccountsWithoutToken() {
+	private getBreachedAccountsWithoutToken() {
 		let response: Observable<never | BreachedAccountsFromServerResponse> = EMPTY;
 		const SHA1HashFromEmail = this.storageService.getItem(USER_EMAIL_HASH);
 
 		if (SHA1HashFromEmail) {
 			response = this.http.get<BreachedAccountsFromServerResponse>(
 				`${this.environment.backendUrl}/api/v1/vantage/public/emailbreaches?email_hash=${SHA1HashFromEmail}`,
+				{
+					headers: new HttpHeaders({
+						'Accept-Version': 'v1.1'
+					})
+				}
 			);
 		}
 
@@ -183,18 +197,19 @@ export class EmailScannerService {
 		return response;
 	}
 
-	private transformBreachesFromServer(breaches: BreachedAccountsFromServerResponse) {
+	private transformBreachesFromServer(breaches: BreachedAccountsFromServerResponse, isHaveToken: string) {
 		return breaches.data.reduce((acc, breachData) => {
 			const date = new Date(breachData.publish_date * 1000);
 			const newData = {
 				domain: breachData.breach.site,
 				date: date.toDateString(),
 				email: breachData.email,
-				password: breachData.password_plaintext,
+				password: breachData.password_plaintext || '',
 				name: breachData.username,
 				details: breachData.breach.description,
 				image: '',
 				hasPassword: breachData.record_has_password,
+				isEmailConfirmed: !!isHaveToken
 			};
 			acc.push(newData);
 			return acc;

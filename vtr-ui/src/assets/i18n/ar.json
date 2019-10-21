@@ -1,4 +1,6 @@
 {
+    "dir": "rtl",
+    "dirClass": "rtl",
     "gaming": {
         "dashboard": {
             "device": {
@@ -6,7 +8,7 @@
                     "title": "الوضع الحراري",
                     "status": {
                         "performance": "الأداء",
-                        "balance": "توزان",
+                        "balance": "التوازن",
                         "quiet": "هادئ",
                         "performanceUid": "thermal_mode_performance",
                         "balanceUid": "thermal_mode_balance",
@@ -80,7 +82,7 @@
                     "header": "الإضاءة"
                 },
                 "legionEdgeModal": {
-                    "line1": "باستخدام Vantage Edge، سيتم تشغيل إعداداتك تلقائيًا تبعًا للاستخدام. \n أقصى أداء عند اللعب، عمر بطارية أطول في حالة التوقف عن اللعب.",
+                    "line1": "سيتم تشغيل إعداداتك تلقائيًا تبعًا للاستخدام. \n أقصى أداء عند اللعب، عمر بطارية أطول في حالة التوقف عن اللعب.",
                     "line2": "<b>نظرة عامة حول إدارة الميزات</b> <br> بعض الميزات غير متوفرة علي جميع الأجهزة",
                     "line3": "<b>كسر سرعة وحدة CPU</b><br> تعزيز السرعة القصوى للمعالج",
                     "line4": "<b>كسر سرعة وحدة RAM</b><br> تعزيز السرعة القصوى للذاكرة",
@@ -96,7 +98,7 @@
                     "systenTooltip": "قم بتمرير الماوس فوق CPU/GPU/RAM ومحركات الأقراص المختلفة لإظهار أوصافها بما في ذلك معلومات التصنيع والطراز"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "الإعدادات السريعة"
                 }
             }
         },
@@ -108,6 +110,16 @@
                     "sub2": "‏Facebook",
                     "sub3": "‏Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -235,6 +247,28 @@
             },
             "recording": {
                 "title": "تسجيل مفتاح الماكرو لـ"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -368,26 +402,184 @@
                 "heading": {
                     "title": "تحديد ملف التعريف:"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "إغلاق تلقائي",
+            "introLine": "إضافة تطبيقات تُغلق عند بدء تشغيل لعبة. سيقوم ذلك بتحرير الموارد غير المستخدمة لتحسين الأداء الخاص بالألعاب لأقصى حد. ملاحظة: تعمل هذه الميزة على إغلاق التطبيق تمامًا. لذا احرص دائمًا على حفظ عملك.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "هل تريد تشغيل الإغلاق التلقائي؟",
+                "body": "سيتم إغلاق التطبيقات التي أضفتها عند اللعب، مما يؤدي إلى تحرير الموارد للعب.",
+                "checkedTitle": "عدم السؤال مرة أخرى",
+                "btnConfirm": "تشغيل",
+                "btnCancel": "ليس الآن"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "إضافة تطبيقات للإغلاق التلقائي",
+                "body": "ستظهر التطبيقات قيد التشغيل فقط في القائمة أدناه."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "إضافة",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "لا توجد تطبيقات قيد التشغيل لإضافتها",
+                "body": "ستظهر التطبيقات قيد التشغيل حاليًا فقط. يُرجى تشغيل تطبيق تريد إضافته والمحاولة مجددًا."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
+            }
+        },
+        "networkBoost": {
+            "title": "تعزيز الشبكة",
+            "introLine": "تعزيز الشبكة يعيّن أولوية الألعاب إلى أعلى مستوى في شبكتك، يزيد السرعة إلى أقصى حد. إذا كنت تستخدم أي تطبيقات أثناء اللعب، فمن المستحسن أن تضيفها إلى القائمة أدناه لكي تتلقى هي أيضًا الأولوية على شبكتك.",
+            "modalTurn": {
+                "title": "هل تريد تشغيل تعزيز الشبكة؟",
+                "body": "هل تريد تشغيل تعزيز الشبكة؟ ستشارك التطبيقات التي أضفتها المزيد من الشبكات عند تشغيلها.",
+                "checkedTitle": "عدم السؤال مرة أخرى",
+                "btnConfirm": "تشغيل",
+                "btnCancel": "ليس الآن"
+            },
+            "modalAddApps": {
+                "title": "إضافة تطبيقات إلى تعزيز الشبكة",
+                "body": {
+                    "part1": "يمكنك إضافة 5 تطبيقات أخرى للتعزيز",
+                    "part2": "من",
+                    "part3": "المضافة"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
+                }
             }
         }
     },
@@ -411,8 +603,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "الدعم",
-            "homeSecurity": "المنزل المتصل",
-            "privacy": "الخصوصية"
+            "privacy": "الخصوصية",
+            "beta": {
+                "title": "beta"
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "مستشار الأمان",
@@ -451,6 +646,9 @@
             "expand": "توسيع",
             "loader": "الجلب <br> الحالة",
             "loading": "...جار التحميل"
+        },
+        "app-update": {
+            "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
         }
     },
     "privacy": {
@@ -518,10 +716,10 @@
             "cameraPrivacy": "الكاميرا",
             "eyeCareMode": "العناية بالعين",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "لا يتمتع Lenovo Vantage بالوصول إلى الميكروفون والكاميرا.",
+                "accessUrl": "انتقل إلى إعدادات Windows لمنح الوصول",
+                "microphoneNote": "لا يتمتع Lenovo Vantage بالوصول إلى الميكروفون.",
+                "cameraPrivacyNote": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا."
             }
         },
         "systemStatus": {
@@ -613,7 +811,6 @@
         "deviceSettings": {
             "helpful": "محتوى مفيد",
             "batteryGauge": {
-                "title": "مقياس البطارية",
                 "subtitle": "سلامة البطارية",
                 "hours": "ساعات",
                 "hour": "ساعة",
@@ -676,22 +873,22 @@
                     "Bad": "<b>حدث خطأ في البطارية.</b> لا يمكن شحن/تفريغ البطارية. استبدل البطارية.",
                     "NotDetected": "<b>لم يتم الكشف عن بطارية أو</b> البطارية غير موصولة.",
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
-                    "NotSupportACAdapter": "<b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.",
-                    "LimitedACAdapterSupport": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
+                    "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
+                    "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
                     "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
                     "OverheatedBattery": "البطارية <b>ساخنة أكثر من اللازم</b>. اعمل على إخراجها من الكمبيوتر وتبريدها وصولاً إلى درجة حرارة الغرفة.",
                     "PermanentError": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.</span>",
+                    "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
-                "updating": "جار التحديث",
-                "voltageError": "جهد البطارية غير صحيح",
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لزيادة المدى العمري للبطارية، يجب تعيين البطارية بحيث يتوقف شحنها عند وصول الشحن إلى {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "انظر التفاصيل",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "الطاقة",
@@ -766,13 +963,14 @@
                             "battery&Quite": "البطارية والهدوء"
                         }
                     },
-                    "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows"
+                    "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows",
+                    "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\"."
                 },
                 "powerSettings": {
                     "title": "إعدادات الطاقة",
                     "alwaysUSB": {
                         "title": "‏USB قيد التشغيل دائمًا",
-                        "description": "اشحن أجهزة USB عبر موصل USB قيد التشغيل دائمًا على الكمبيوتر، عندما يكون الكمبيوتر في وضع السكون أو الإسبات أو التوقف عن التشغيل.يمكن شحن الهاتف الذكي أو الكمبيوتر اللوحي بسرعة من موصل USB المرمز باللون الأصفر أو المطبوع بالحرير بواسطة هذه الرموز.",
+                        "description": "<span dir='rtl'>اشحن أجهزة USB عبر موصل USB قيد التشغيل دائمًا على الكمبيوتر، عندما يكون الكمبيوتر في وضع السكون أو الإسبات أو التوقف عن التشغيل.يمكن شحن الهاتف الذكي أو الكمبيوتر اللوحي بسرعة من موصل USB المرمز باللون الأصفر أو المطبوع بالحرير بواسطة هذه الرموز.</span>",
                         "checkbox": "تمكين شحن USB من بطارية الكمبيوتر المحمول عند إيقاف تشغيل الكمبيوتر."
                     },
                     "easyResume": {
@@ -780,13 +978,18 @@
                         "description": "مكّن هذه الميزة لتحسين وقت استئناف العمل إذا كنت تقوم بفتح غطاء الكمبيوتر وإغلاقه بشكل متكرر.",
                         "tooltip": "ستسمح هذه الميزة بتحسين وقت استئناف العمل إذا كنت تقوم بشكل متكرر بفتح غطاء الكمبيوتر وإغلاقه. عند تمكين هذه الميزة، سيدخل الكمبيوتر في وضع الطاقة المنخفضة عند إغلاق غطائه، ولكنه سيستأنف عمله على الفور عند إعادة فتح الغطاء في غضون 15 دقيقة من إغلاقه. تسمح هذه الميزة أيضًا للكمبيوتر المحمول بإنهاء الأنشطة المعلقة (كإرسال البريد الإلكتروني أو تنزيل ملف) قبل أن يدخل النظام في وضع التوقف المؤقت."
                     },
+                    "flipToBoot": {
+                        "title": "اقلب للتمهيد",
+                        "description": "تمكنك هذه الميزة من تشغيل الكمبيوتر عند فتح غطاء الكمبيوتر، تمامًا كما تضغط على زر الطاقة. ",
+                        "tooltip": "تعمل هذه الميزة تلقائيًا على تشغيل الكمبيوتر عن طريق فتح الغطاء.  يكون هذا مفيدًا بشكل خاص إذا قمت بإعداد معلومات تسجيل دخول الوجه في Windows Hello."
+                    },
                     "or": "أو"
                 },
                 "otherSettings": {
                     "title": "إعدادات أخرى",
                     "vantageToolbar": {
                         "title": "شريط أدوات Lenovo Vantage",
-                        "description": "قم بتثبيت شريط أدوات Vantage في شريط مهام Windows للحصول بسهولة على مزيد من تفاصيل البطارية والوصول إلى إعداداتك السريعة."
+                        "description": "<span dir='rtl'>قم بتثبيت شريط أدوات Vantage في شريط مهام Windows للحصول بسهولة على مزيد من تفاصيل البطارية والوصول إلى إعداداتك السريعة.</span>"
                     }
                 },
                 "batterySettings": {
@@ -799,8 +1002,8 @@
                         "readMoreText": "اقرأ أكثر.",
                         "noteInfo": " لا يزال حد شحن البطارية غير نشط بشكل كامل. الرجاء فصل الطاقة عن الجهاز، ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
                         "settings": {
-                            "title1": "حد البطارية المدمجة",
-                            "title2": "حد البطارية القابلة للإزالة"
+                            "title1": "حد البطارية الرئيسية",
+                            "title2": "حد البطارية الثانوية"
                         },
                         "popup": {
                             "title": "تمكين حد شحن البطارية",
@@ -833,7 +1036,43 @@
                         "title": "وضع الطاقة في الطائرة",
                         "description": "تمكّن من حماية مأخذ طاقة التيار المتردد في الطائرة عبر التحكم في استهلاك الطاقة في النظام.عند تمكين وضع الطاقة في الطائرة‬، يخفض الكمبيوتر استهلاك الطاقة من خلال الحد من سرعة شحن البطارية وأداء النظام.",
                         "checkBoxDesc": "الكشف التلقائي",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "إذا تم اختيار ميزة \"الكشف التلقائي\"، فسيقوم الكمبيوتر بتشغيل وضع الطاقة في الطائرة تلقائيًا عندما يكتشف بيئة متن الطائرة ويغلقه عند مغادرة هذه البيئة."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -972,7 +1211,7 @@
                             "warm": "دافئ (أفضل للعيون)",
                             "cold": "بارد"
                         },
-                        "reset": "إعادة تعيين درجة الحرارة",
+                        "reset": "إعادة تعيين",
                         "tooltip": "يقوم وضع العناية بالعين بضبط درجة حرارة ألوان جهاز العرض لتصفية الضوء الأزرق وتقليل إجهاد العين.",
                         "onSunsetToSunriseScheduleDescription": "جدولة وضع العناية بالعين من غروب الشمس حتى شروقها",
                         "note": {
@@ -986,7 +1225,7 @@
                             "warm": "دافئ (أفضل للعيون)",
                             "cold": "بارد"
                         },
-                        "reset": "إعادة تعيين درجة الحرارة",
+                        "reset": "إعادة تعيين",
                         "tooltip": "يقوم وضع العناية بالعين بضبط درجة حرارة ألوان جهاز العرض لتصفية الضوء الأزرق وتقليل إجهاد العين.",
                         "onSunsetToSunriseScheduleDescription": "جدولة وضع العناية بالعين من غروب الشمس حتى شروقها",
                         "note": {
@@ -1035,7 +1274,7 @@
                     "camera": {
                         "title": "الكاميرا",
                         "tooltip": "انقر هنا لإعادة تعيين خصائص الكاميرا إلى الإعدادات الافتراضية.",
-                        "reset": "إعادة تعيين إلى إعدادات المصنع"
+                        "reset": "إعادة تعيين"
                     },
                     "brightness": "السطوع",
                     "contrast": "التباين",
@@ -1060,7 +1299,7 @@
             "inputAccessories": {
                 "title": "الإدخال والملحقات",
                 "subtitle": "إعدادات الإدخال والملحقات",
-                "description": "تدمج ميزة \"الاستشعار الذكي من Lenovo\" أجهزة الاستشعار المختلفة على الكمبيوتر للكشف عن أنشطتك وضبط الإعدادات لإدارة الطاقة بشكل مثالي",
+                "description": "يمكّنك هذا القسم من ضبط وظائف لوحة المفاتيح والماوس الأكثر استخدامًا. استكشف المزيد من الميزات هنا.",
                 "inputAccessory": {
                     "title": "لوحة المفاتيح الذكية",
                     "hiddenKeyboardFunctions": {
@@ -1091,6 +1330,51 @@
                         "tittle": "Fn + مسافة",
                         "description": "تغيير حالات الإضاءة الخلفية للوحة المفاتيح",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "وظيفة الصف العلوي في لوحة المفاتيح",
+                        "description": "يوفر الصف العلوي من لوحة المفاتيح الوظيفتين التاليتين. حدد الوظيفة التي تريدها:",
+                        "subSection": {
+                            "description": "للتبديل بين الوظيفتين أعلاه، اضغط على Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "وظيفة خاصة",
+                                "fnKey": "وظيفة F1-F12"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "عكس الوظيفة الأساسية الافتراضية",
+                            "description": "عند التشغيل، سيتم تغيير الوظيفة الأساسية الافتراضية من إعدادات المصنع إلى العكس. أعد تشغيل الكمبيوتر لجعل التغييرات نافذة المفعول."
+                        },
+                        "subSectionThree": {
+                            "title": "كيفية استخدام مجموعات مفاتيح Fn",
+                            "description": "باستخدام الطريقة العادية، لاستخدام مجموعات المفاتيح Fn، تحتاج إلى الضغط على مفاتيح الوظائف Fn+. باستخدام طريقة تثبيت مفتاح Fn، يمكنك الضغط (بدلاً من الضغط مع الاستمرار) على مفتاح Fn لإبقائه في حالة ضغط. ثم اضغط على مفتاح الوظيفة المطلوب. الإجراء يعادل الضغط على مفتاح الوظيفة في نفس الوقت مع مفتاح Fn.",
+                            "radioButton": {
+                                "nMehod": "الطريقة العادية",
+                                "fnKeyMehod": "طريقة تثبيت مفتاح Fn"
+                            },
+                            "note": "عند الضغط على مفتاح Fn مرتين، يتم قفل مفتاح Fn في حالة الضغط حتى تضغط عليه مرة أخرى. عند قفل مفتاح Fn، يتم تشغيل مؤشر قفل Fn. يمكنك الضغط على مفتاح الوظيفة المطلوبة مباشرة لبدء الوظيفة غير الافتراضية."
+                        },
+                        "popup": {
+                            "title": "إعادة تشغيل الكمبيوتر",
+                            "description": "يتطلب تغيير وظيفة الصف العلوي الافتراضي إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟",
+                            "reboot": "إعادة تشغيل",
+                            "cancel": "ليس الآن"
+                        },
+                        "showAdvSettings": "إظهار الإعدادات المتقدمة",
+                        "hideAdvSettings": "إخفاء الإعدادات المتقدمة"
+                    },
+                    "VoipHotkeys": {
+                        "title": "وظائف مفتاح VoIP Hotkey",
+                        "description": {
+                            "main": "تمكنك هذه الميزة من الرد على مكالمة عبر بروتوكول الإنترنت (VoIP) أو رفضها عن طريق الضغط على مفاتيح الاختصار على لوحة المفاتيح:",
+                            "f10": "F10: الرد على المكالمة",
+                            "f11": "F11: رفض المكالمة أو تعليقها"
+                        },
+                        "tooltip": "حاليا، يتم اعتماد هذه الميزة فقط على تطبيق Skype for Business في عام 2016 و Microsoft Teams 1.0.<br>لاستخدام الميزة، تحتاج إلى تنزيل التطبيقات وتثبيتها أولاً.",
+                        "hasInstalledAppsDescription": "حدد التطبيق الذي تريد استخدام مفاتيح الاختصار عليه:",
+                        "noInstalledAppsDescription": "تدعم هذه الميزة التطبيقات أدناه فقط: ",
+                        "hasInstalledAppsNote": "ملاحظة: بالنسبة لـ Microsoft Teams 1.0، لا يمكن استخدام المفتاح F11 لتعليق المكالمة.",
+                        "noInstalledAppsNote": "ملاحظة: لاستخدام الميزة، تحتاج إلى تنزيل التطبيقات وتثبيتها أولاً."
                     }
                 },
                 "userDefinedKey": {
@@ -1118,10 +1402,13 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
+                    "more": "المزيد",
+                    "control1": "إعدادات تحكم لوحة اللمس",
+                    "control2": "إعدادات تحكم الماوس",
+                    "control3": "إعدادات تحكم TRACKPOINT"
                 }
             }
         },
@@ -1163,6 +1450,17 @@
                             "slow": "بطيئة"
                         },
                         "toolTipContent": "حدد الخيار الذي تريده لقفل الشاشة بسرعة سريعة/متوسطة/بطيئة عندما لا يتم الكشف عن وجودك. ومع ذلك، فإن وقت قفل الشاشة سوف يتأثر أيضًا بسيناريو المستخدم الفعلي، وقدرة المستشعر وإعدادات مهلة شاشة Windows. لذلك، نقترح ضرورة إغلاق النظام على الفور قبل المغادرة."
+                    },
+                    "facialRecognition": {
+                        "title": "التعرف على الوجه",
+                        "caption": "يمكنك تمكين ميزة التعرف على الوجه والسماح لها بالوصول إلى الكاميرا. تلتقط هذه الأداة صورتك من أجل التعرف بدقة على وجودك أو كشف عدم وجودك عندما تترك جهازك دون مراقبة. تتم معالجة هذه البيانات محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها.",
+                        "checkBox": "شغل الكاميرا وقم بتمكين هذه الميزة",
+                        "note": {
+                            "permission": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا. وظيفة مربع الاختيار لن تعمل.",
+                            "privacyMode": "وضع خصوصية كاميرا Lenovo Vantage قيد التشغيل. وظيفة مربع الاختيار لن تعمل.",
+                            "windowsLink": "انتقل إلى إعدادات Windows لمنح الوصول",
+                            "privacyLink": "انتقل إلى وضع خصوصية الكاميرا لإيقافها"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1170,7 +1468,8 @@
                     "caption": "سيؤدي ضبط المسافة تلقائيًا إلى تحديث مسافة الكشف بشكل تلقائي عبر محرك AI.",
                     "options": {
                         "near": "قريب",
-                        "far": "بعيد"
+                        "far": "بعيد",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1188,14 +1487,19 @@
                     "description1": "تعتمد هذه الميزة على Windows Hello. تأكد من تشغيل ميزة التعرف على الوجوه في إعدادات Windows.",
                     "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك. ومع ذلك، فإن الميزة لا تجمع أي بيانات شخصية.",
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
-                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن يعمل تسجيل دخول كاميرا الأشعة تحت الحمراء تلقائيًا.",
-                    "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي."
+                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
+                    "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي.",
+                    "description6": "4. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
                     "screenTimeoutSettings": "إعدادات مهلة الذهاب إلى الشاشة"
                 },
-                "resetToDefault": "إعادة تعيين إلى الإعدادات الافتراضية"
+                "resetToDefault": "إعادة تعيين",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "شاشة ذكية",
@@ -1346,6 +1650,7 @@
         "banner": {
             "neverChecked": "مرحبًا بك في استخدام تحديث النظام.",
             "title": "النظام المحدّث هو نظام سليم.",
+            "installingTitle": "أثناء التحديثات، احرص على عدم إدخال الكمبيوتر في وضع السكون أو الإسبات.",
             "last": "تاريخ التحديث الأخير: ",
             "next": "التحديث المجدول التالي: ",
             "checkButton": "التحقق من وجود تحديثات",
@@ -1421,85 +1726,6 @@
             "fileNotFoundException": "لم يتم العثور على الملف."
         }
     },
-    "homeSecurity": {
-        "title": "أمان المنزل المتصل",
-        "notification": {
-            "recent": "إعلامات الأمان الأخيرة",
-            "notifications": "الإعلامات"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "حماية النظام البيئي جهازك",
-            "thisDevice": "هذا الجهاز",
-            "allDevices": "جميع الأجهزة",
-            "protected": "محمي",
-            "notProtected": "غير محمي",
-            "trialExpired": "انتهت صلاحية التجربة",
-            "upgrade": "ترقية",
-            "inEcosystem": "في النظام البيئي",
-            "ecosystemEnable": "تم تمكين النظام البيئي",
-            "inTrial": "في الإصدار التجريبي",
-            "addEcosystem": "إضافة إلى النظام البيئي",
-            "enableEcosystem": "تمكين النظام البيئي",
-            "startTrial": "بدء الإصدار التجريبي",
-            "fullAccess": "الوصول الكامل",
-            "renew": "تجديد"
-        },
-        "overview": {
-            "overviewBlockTitle": "نظرة عامة على أمان النظام البيئي",
-            "allDevices": "جميع الأجهزة",
-            "myDevice": "جهازي",
-            "thisComputer": "هذا الكمبيوتر",
-            "secure": "آمن",
-            "needAttention": "يحتاج إلى الانتباه",
-            "manageAccount": "إدارة الحساب",
-            "devices": "الأجهزة",
-            "seeProtectedDevices": "راجع الأجهزة المحمية",
-            "addDevice": "إضافة جهاز",
-            "trialExpired": "الترقية لحماية جميع أجهزتك - الترقية لحماية جميع أجهزت",
-            "upgrade": "ترقية",
-            "freeTrial": "إصدار تجريبي مجاني لمدة 30 يومًا - حماية جميع أجهزتك",
-            "startTrial": "بدء الإصدار التجريبي"
-        },
-        "tour": {
-            "back": "السابق‬",
-            "skip": "تخطي",
-            "start": "بدء الجولة",
-            "done": "تم",
-            "welcome1": "مرحبًا",
-            "welcomeDesc1": "بمجرد نقرات قليلة ، يمكنك حماية الكمبيوتر الشخصي والأجهزة المحمولة والأجهزة المتصلة لك ولعائلتك.",
-            "welcomeDescStart": "ابدأ نسخة تجريبية مجانية لمدة 30 يومًا الآن.",
-            "welcome2": "حصري لـ Vantage",
-            "welcomeDesc2": "تم بناء أمان المنزل المتصل مباشرةً في Vantage لتمكين الوصول السريع إلى حالة حماية النظام البيئي وتنبيهات الأمان.",
-            "create": "إنشاء حسابك",
-            "lenovoId": "باستخدام Lenovo ID",
-            "notifications": "تلقي <b>إعلامات</b> حول حالة منزلك",
-            "monitor": "<b>مراقبة</b> سلامة أجهزة عائلتك",
-            "peaceOfMind": "الاستمتاع <b>براحة البال</b> عندما تعلم أن الحماية متوفرة لك بشكل دائم!",
-            "signInLenovoId": "التسجيل باستخدام LENOVO ID",
-            "haveLenovo": "ليس لديّ <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;إنشاء Lenovo ID",
-            "without": "المتابعة <b>من دون حساب</b>",
-            "skipAndTrial": "تخطي وبدء الإصدار التجريبي",
-            "alreadyHave": "لديّ <b>حساب في أمان المنزل المتصل</b>",
-            "loginCHS": "تسجيل الدخول إلى حساب CHS موجود",
-            "locationTitle": "تمكين تعقب الموقع",
-            "locationPermission": "لكي تعمل هذه الميزة بشكل صحيح، ستحتاج إلى تمكين تعقب الموقع لهذا الجهاز"
-        },
-        "accountStatus": {
-            "title": "أمان المنزل المتصل الخاص بي",
-            "startTrial": "بدء الإصدار التجريبي",
-            "manageAccount": "إدارة الحساب",
-            "upgradeAccount": "ترقية الحساب",
-            "inTrialDetail1": "{{remainingDays}} أيام متبقية حتى انتهاء الإصدار التجريبي.",
-            "inTrialDetail2": "أنت حاليًا ضمن فترة الإصدار التجريبي. لديك وصول محدود إلى جميع الميزات.",
-            "trialExpiredDetail1": "انتهت صلاحية إصدارك التجريبي.",
-            "trialExpiredDetail2": "انتهت صلاحية الإصدار التجريبي ولم يعد النظام البيئي لجهازك محميًا.",
-            "upgradedDetail1": "يبقى حسابك نشطًأ حتى {{expiredDate}}.",
-            "upgradedDetail2": "النظام البيئي لجهازك محمي في الوقت الحالي.",
-            "localAccountDetail2": "انقر فوق الزر أدناه لبدء الإصدار التجريبي المجاني لمدة 30 يومًا.",
-            "alreadyHaveAccount": "هل لديك رمز تنشيط؟"
-        }
-    },
     "support": {
         "common": {
             "getSupport": "الحصول على دعم"
@@ -1513,6 +1739,7 @@
             "statusWarrantyNotFound": "لم يتم العثور على الضمان",
             "yearDepotWarranty": "ضمان Y Depot",
             "warrantyDetails": "تفاصيل الضمان:",
+            "warrantyDashboardDetails": "تفاصيل الضمان",
             "startDate": "وقت البدء: ",
             "endDate": "تاريخ الانتهاء: ",
             "status": "الحالة: ",
@@ -1588,56 +1815,78 @@
             "common": {
                 "title": "مكافحة الفيروسات",
                 "back": "السابق",
-                "why": "لماذا اختيار McAfee؟",
-                "recommends": "توصي Lenovo باستخدام McAfee لحماية جميع أجهزتك عبر الميزات التالية:",
-                "award": "حماية حائزة على الجوائز من أحدث التهديدات عبر الإنترنت، والتي تشمل برامج الفدية والبرامج الضارة",
-                "dedicated": "أمان مخصص يتفوق باستمرار على Defender وغيره من أبرز موفري برامج مكافحة الفيروسات",
-                "deviceToCloud": "تقنية الانتقال من الجهاز إلى السحابة التي لن تسبب أي بطء في الكمبيوتر الشخصي",
-                "poweredBy": "مشغّل بواسطة McAfee",
-                "privacyTerms": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
-                "mcafeePremium": "حماية ممتازة بواسطة McAfee",
+                "recommends": "لماذا Lenovo توصي بـ <b>McAfee</b> لحماية جميع أجهزتك",
+                "award": "برنامج مكافحة الفيروسات الحائز على جوائز",
+                "mcafeePremium": "حماية McAfee LiveSafe",
                 "protectedBy": "أنت محمي في الوقت الحالي من خلال {{protectedName}}. ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe.",
                 "virusScan": "فحص الفيروسات",
                 "firewall": "جدار الحماية",
                 "disabled": "معطل",
-                "enableVirusScan": "تمكين فحص الفيروسات",
-                "enablenFirewall": "تمكين جدار الحماية",
-                "enableFirewall": "تمكين جدار الحماية"
+                "awardText": "تمكن من حماية الكمبيوتر الجديد من Lenovo بواسطة ميزة الحماية من التهديدات عبر الإنترنت المثبتة الفعالية والتي خضعت للاختبارات",
+                "performance": "أداء ثابت",
+                "performanceText": "برنامج للحماية من الفيروسات متناسق ودقيق وموثوق يمكنك الاعتماد عليه للمساعدة في الحفاظ على سلامتك",
+                "Blazing": "سرعة فائقة",
+                "BlazingText": "برنامج مكافحة الفيروسات المحسن الذي لن يتسبب في إبطاء أو مقاطعة تجربة Lenovo Vantage",
+                "privacyTerms": "/   <tag>سياسة الخصوصية</tag>  |  <tag>شروط الخدمة</tag>",
+                "notAvailable": "غير متوفر"
             },
             "windowsDefender": {
-                "optimallyProtected": "غير محمي بشكل مثالي",
-                "subtitle": "أنت محمي حاليًا بواسطة Windows Defender.ومع ذلك، يمكنك أن تكون محميًا بشكل أفضل مع McAfee LiveSafe. اعرف المزيد أدناه.",
-                "learnMore": "معرفة المزيد عن McAfee",
-                "windowsProtected": "الحماية الأساسية من Windows Defender",
-                "windowsSubtitle": "يقدم Windows Defender الحماية الأساسية لجهازك"
+                "optimallyProtected": "يبدو أنك تستخدم Windows Defender في الوقت الحالي. هذا الخيار ليس سيئًا، ولكن من أجل تأمين السلامة المطلقة ضد برامج الفدية والبرامج الضارة والفيروسات، قمنا بالتعاون مع شركة ‎<b>‎McAfee‎</b> لكي نقدم لك برنامج أمان حائز على جوائز لتمكينك من ‎‏<b>حماية كل الأشياء المهمة.</b>‎",
+                "windowsSubtitle": "الحماية الأساسية من Windows Defender",
+                "topTip": "أهم النصائح لتوفير السلامة عبر الإنترنت",
+                "topContent": "<tag>عرض النصائح</tag> تعرف على طرق الدفاع لمواجهة أهم التهديدات عبر الإنترنت في الوقت الحالي",
+                "view": "عرض النصائح",
+                "buyNow": "شراء الآن",
+                "buy": "بادر اليوم إلى شراء برنامج الحماية من الفيروسات من McAfee وتنزيله وتثبيته للاستفادة من ميزات الأمان هذه على مستوى البنوك",
+                "onlyBasic": "الأساسيات فقط هنا. على الرغم من أنك محمي ضد بعض التهديدات عبر الإنترنت ، فقد تظل عرضة للتهديدات الأخرى.",
+                "virus": "الحماية من الفيروسات",
+                "homeNetwork": "حماية الشبكة المنزلية",
+                "private": "الاستعراض الخاص والمجهول الهوية",
+                "everyDevice": "حماية لكل الأجهزة",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "أنت محمي في الوقت الحالي بواسطة McAfee LiveSafe",
-                "valid": "صالح حتى",
-                "upgrade": "الترقية الآن",
+                "title": "مكافحة الفيروسات",
+                "subtitle": "أنت محمي حاليًا من خلال McAfee LiveSafe – فقط {{remainingDays}} أيام متبقية! اشترك الآن لتمديد فترة حمايتك.",
                 "launch": "تشغيل McAfee",
-                "getMacfee": "الحصول على McAfee",
-                "topBenefits": "أهم فوائد McAfee LiveSafe",
+                "getMacfee": "احصل على McAfee",
+                "topBenefits": "لماذا <b>تنصح Lenovo باستخدام منتجات McAfee</b> لحماية جميع أجهزتك",
                 "awardTitle": "برنامج مكافحة الفيروسات الحائز على جوائز",
-                "awardSubtitle": "يعمل على حظر الفيروسات والبرامج الضارة وبرامج الفدية والبرامج غير المرغوب فيها والمزيد على جهاز الكمبيوتر الشخصي.",
-                "encryptedTitle": "التخزين المشفر",
-                "encryptedSubtitle": "حافظ على سرية ملفاتك الخاصة عن طريق تخزينها علي الكمبيوتر الخاص بك باستخدام تشفير 128 بت.",
-                "identityTitle": "الحماية من سرقة الهوية",
-                "identitySubtitle": "تولي مهمة حماية هويتك من السرقة والاحتيال.",
-                "supportTitle": "دعم عملاء مجاني",
-                "supportSubtitle": "هل تم التواصل معك عبر الهاتف أو الدردشة أو عبر الإنترنت طول فترة اشتراكك؟",
-                "antiTitle": "مكافحة البريد العشوائي",
-                "antiSubtitle": "يقوم بحظر الرسائل الخطرة قبل أن تصل إلى علبة الوارد من خلال إزالة رسائل البريد الإلكتروني التي قد تحتوي على ارتباطات وفيروسات خطرة.",
-                "virusTitle": "تعهد الحماية من الفيروسات",
-                "virusSubtitle": "تضمن لك أنه عندما يصل فيروس إلى جهاز الكمبيوتر، فسيقوم خبير McAfee بالوصول إلى جهاز الكمبيوتر عن بُعد لإزالته.",
-                "parentalTitle": "الرقابة الأبوية",
-                "parentalSubtitle": "حظر مواقع الويب ونتائج البحث التي لا تود أن يراها أطفالك. كما تتيح لك تعيين حدود الوقت الذي يقضونه على الإنترنت.",
-                "license": "الترخيص صالح حتى",
-                "trial": "الإصدار التجريبي صالح حتى"
+                "awardSubtitle": "منع الفيروسات والبرامج الضارة وبرامج الفدية من إصابة جهاز الكمبيوتر",
+                "supportTitle": "دعم تقني مجاني يوفره خبراء على مدار الساعة وطيلة أيام الأسبوع ",
+                "supportSubtitle": "احصل على المساعدة وراحة البال على مدار الساعة من فريقنا الأمني المخصص",
+                "trialSubtitle": "أنت محمي حاليًا من خلال إصدار تجريبي مدته 30 يومًا من McAfee LiveSafe – فقط {{remainingDays}} أيام متبقية! اشترك الآن لتمديد فترة حمايتك.",
+                "discount": "ضمان استعادة الاموال بنسبة 100%",
+                "trialSubscribe": "ينتهي الإصدار التجريبي في غضون {{remainingDays}} من الأيام — اشترك الآن",
+                "subscribe": "ينتهي الاشتراك في غضون {{remainingDays}} من الأيام — اشترك الآن",
+                "MultiTitle": "حماية أجهزة متعددة",
+                "MultiSubtitle": "حماية كل جهاز تملكه - أجهزة الكمبيوتر والهواتف والأجهزة اللوحية - مثالي للعائلات ",
+                "networkTitle": "حماية الشبكة المنزلية",
+                "networkSubtitle": "تأمين جدار الحماية ومنع المتسللين من الوصول إلى الشبكة المنزلية",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "تخزين وإدارة كلمات المرور عبر الإنترنت في مكان واحد",
+                "onlineTitle": "الخصوصية عبر الانترنت",
+                "onlineSubtitle": "الاتصال من خلال تشفير على مستوى البنوك للمساعدة في حماية جميع أنشطتك عبر الإنترنت، حتى على شبكة Wi-Fi العامة أو الشبكات المفتوحة ",
+                "register": "تسجيل McAfee",
+                "virusScan": "الفحص بحثًا عن فيروسات",
+                "firewall": "جدار حماية شخصي",
+                "antiSpam": "مكافحة البريد العشوائي من McAfee",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "برنامج الفحص بحثًا عن الثغرات الأمنية من McAfee ",
+                "report": "تقرير الحماية من التهديدات ",
+                "trialContent": "لقد استخدمت الإصدار التجريبي من برنامج مكافحة الفيروسات من McAfee على نحو جيد. ولكن صلاحية الإصدار التجريبي تنتهي في غضون {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة. <tag>الاشتراك الآن</tag>",
+                "subscribeContent": "لقد استخدمت McAfee على نحو جيد. ولكن عدد الأيام المتبقية لهذا الإصدار التجريبي ليس سوى {{remainingDays}} من الأيام، وبعدها سيكون الكمبيوتر عرضة للثغرات الأمنية. ابتعد عن هذه المخاطرة. <tag>الاشتراك الآن</tag>",
+                "subscribeNow": "الاشتراك الآن",
+                "fileScan": "فحص الملفات",
+                "Viruses": "القضاء على الفيروسات",
+                "blocked": "حظر الاتصالات السيئة",
+                "shredded": "حذف الملفات بطريقة آمنة",
+                "startFileScan": "بدء فحص الملفات"
             },
             "others": {
-                "othersProtection": "يقدم لك الحماية الأساسية لجهازك"
+                "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
+                "unknown": "غير معروف",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -1690,7 +1939,8 @@
                 "describe": "بإمكان الأجهزة والشبكات غير الآمنة إدخال البرامج الضارة، وبإمكانها أن تؤدي إلى سرقة الهوية وتسريب معلومات مالية وخاصة. يمكنك تمكين هذه الميزة للتقليل من مخاطر تعريض جهازك وشبكتك المنزلية للمهاجمين.",
                 "subtitle": "راحة البال",
                 "subtitleDescribe": "سوف ترسل لك ميزة أمان المنزل المتصل تنبيهًا إذا كشفت عن وجود ثغرة أمنية في جهازك أو شبكتك المنزلية، أو إذا كنت متصلاً بشبكة من المحتمل أن تكون ضارة. اعرف المزيد حول أمان المنزل المتصل <tag>هنا</tag>.",
-                "tryNow": "جرّبها الآن"
+                "tryNow": "جرّبها الآن",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "أدخل رمز الدعوة",
@@ -1706,7 +1956,13 @@
                 "success": "تم الاتصال بنجاح",
                 "canUse": "يمكنك الآن بدء استخدام ميزة أمان المنزل المتصل",
                 "tryAgain": "الرمز غير صحيح، يرجى إعادة المحاولة!",
-                "activationCode": "رمز التنشيط"
+                "activationCode": "رمز التنشيط",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "سلامة الأمن",
@@ -1725,6 +1981,10 @@
                 "learnMoreAboutSecurityHealth": "اعرف المزيد حول كل واحد من هذه المكونات <tag>هنا</tag>.",
                 "peaceOfMind": "هل تريد المزيد من راحة البال؟",
                 "button": "تمكين أمان شبكة Wifi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1836,7 +2096,7 @@
         },
         "question1": {
             "title": "نسخ احتياطي للملفات واستعادتها",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        نسخ احتياطي للملفات واستعادتها    </div>    <hr />    <div style='margin-bottom:7rem;'>        من المستحسن إنشاء نسخه احتياطية لملفاتك في كل الأوقات. احتفظ بنسخ من ملفاتك على محرك أقراص آخر تلافيًا لحدوث شيء ما للملفات الأصلية.    </div>    <div style='font-size:3rem;font-weight:bold;'>        إعداد عملية النسخ الاحتياطي    </div>    <hr />    <div class='mb-5'>        حدد زر <span style='font-weight:bold'>البدء</span>، وحدد <span style='font-weight:bold'>الإعدادات</span> > <span style='font-weight:bold'>التحديث والأمان</span> > <span style='font-weight:bold'>النسخ الاحتياطي</span> > <span style='font-weight:bold'>إضافة محرك أقراص</span>، ثم اختر محرك أقراص خارجيًا أو موقعًا على الشبكة لنسخك الاحتياطية.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        أصبح كل شيء جاهز. سنقوم، كل ساعة، بإجراء عملية نسخ احتياطي لكل محتويات مجلد المستخدم على جهازك (C:\\\\Users\\\\username). لتغيير الملفات التي يتم نسخها احتياطيًا أو عدد مرات حدوث النسخ الاحتياطي، انتقل إلى <span style='font-weight:bold;'>مزيد من الخيارات</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        استعادة ملفاتك    </div>    <div class='mb-5'>        إذا كنت تفتقد ملفًا أو مجلدًا مهمًا، فإليك كيفية استعادته:    </div>    <div>        <div class='mb-3'>1. اكتب <span style='font-weight:bold;'>استعادة الملفات</span> في مربع البحث على شريط المهام، ثم حدد <span class='font-weight:bold'> استعادة ملفاتك بواسطة محفوظات الملفات</span>.</div>        <div class='mb-3'>2. ابحث عن الملف المطلوب، ثم استخدم الأسهم لرؤية جميع إصداراته</div>        <div class='mb-3'>3. عندما تعثر على الإصدار المطلوب، اختر <span style='font-weight:bold'>استعادة</span> لحفظه في موقعه الأصلي. لحفظه في مكان آخر، اضغط باستمرار (أو انقر بزر الماوس الأيمن) على <span style='font-weight:bold'>استعادة</span>، وحدد <span style='font-weight:bold'>استعادة إلى</span>، ثم اختر موقعًا جديدًا.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        نسخ احتياطي للملفات واستعادتها    </div>    <hr />    <div class='faqInMb7'>        من المستحسن إنشاء نسخه احتياطية لملفاتك في كل الأوقات. احتفظ بنسخ من ملفاتك على محرك أقراص آخر تلافيًا لحدوث شيء ما للملفات الأصلية.    </div>    <div class='faqInFs3Fb'>        إعداد عملية النسخ الاحتياطي    </div>    <hr />    <div class='mb-5'>        حدد زر <span class='faqInFb'>البدء</span>، وحدد <span class='faqInFb'>الإعدادات</span> > <span class='faqInFb'>التحديث والأمان</span> > <span class='faqInFb'>النسخ الاحتياطي</span> > <span class='faqInFb'>إضافة محرك أقراص</span>، ثم اختر محرك أقراص خارجيًا أو موقعًا على الشبكة لنسخك الاحتياطية.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        أصبح كل شيء جاهز. سنقوم، كل ساعة، بإجراء عملية نسخ احتياطي لكل محتويات مجلد المستخدم على جهازك (C:\\\\Users\\\\username). لتغيير الملفات التي يتم نسخها احتياطيًا أو عدد مرات حدوث النسخ الاحتياطي، انتقل إلى <span class='faqInFb'>مزيد من الخيارات</span>.    </div>    <div class='faqInFs3Fb'>        استعادة ملفاتك    </div>    <div class='mb-5'>        إذا كنت تفتقد ملفًا أو مجلدًا مهمًا، فإليك كيفية استعادته:    </div>    <div>        <div class='mb-3'>1. اكتب <span class='faqInFb'>استعادة الملفات</span> في مربع البحث على شريط المهام، ثم حدد <span class='faqInFb'> استعادة ملفاتك بواسطة محفوظات الملفات</span>.</div>        <div class='mb-3'>2. ابحث عن الملف المطلوب، ثم استخدم الأسهم لرؤية جميع إصداراته</div>        <div class='mb-3'>3. عندما تعثر على الإصدار المطلوب، اختر <span class='faqInFb'>استعادة</span> لحفظه في موقعه الأصلي. لحفظه في مكان آخر، اضغط باستمرار (أو انقر بزر الماوس الأيمن) على <span class='faqInFb'>استعادة</span>، وحدد <span class='faqInFb'>استعادة إلى</span>، ثم اختر موقعًا جديدًا.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1877,7 +2137,7 @@
         },
         "question2": {
             "title": "كيفية تحديث الكمبيوتر",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        كيفية تحديث الكمبيوتر    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        العرض    </div>    <div style='padding:5px 0;'>        إذا لم يعد أداء جهاز الكمبيوتر جيدًا كما كان من قبل، ولم تكن على علم بالسبب، فيمكنك تحديث جهاز الكمبيوتر من دون حذف أي من ملفاتك الشخصية أو تغيير إعداداتك. بإمكان Windows \\\"تحديث\\\" الكمبيوتر الشخصي بحيث تكون هذه العملية مماثلة لعملية تثبيت جديدة من دون حذف ملفاتك الشخصية.    </div>    <div style='padding:5px 0;'>        إليك ما يحدث عند تحديث جهاز الكمبيوتر: لن يطرأ أي تغيير على ملفاتك وإعداداتك المخصصة    </div>    <div style='padding:5px 0;'>        <ul>            <li>ستعود إعدادات الكمبيوتر إلى الإعدادات الافتراضية</li>            <li>سيتم الاحتفاظ بالتطبيقات من متجر Windows</li>            <li>ستُزال التطبيقات التي قمت بتثبيتها من قرص أو من موقع ويب</li>            <li>سيتم حفظ قائمة بالملفات التي تمت إزالتها على سطح مكتبك</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        العلامات التجارية المتأثرة    </div>    <div>        <ul>            <li>جميع أجهزة سطح المكتب وأجهزة الكمبيوتر المحمولة</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        نظام التشغيل    </div>    <div>        <ul>            <li>Windows 8 و8.1 و10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        الحل    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        اضغط أو انقر فوق <span style='font-weight:bold;'> الإعدادات </span>                    </li>                    <li style='padding:5px 0;'>                        اضغط أو انقر فوق <span style='font-weight:bold;'> التحديث والاسترداد</span>                    </li>                    <li style='padding:5px 0;'>                        <div>اضغط أو انقر فوق <span style='font-weight:bold;'> الاسترداد</span></div>                        <div style='padding:5px 0'>ضمن \\\"تحديث الكمبيوتر دون التأثير على الملفات\\\"، اضغط أو انقر فوق <span style='font-weight:bold;'> بدء الاستخدام.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        انقر فوق <span style='font-weight:bold;'> \\\"التالي\\\"</span>.                    </li>                    <li style='padding:5px 0;'>                        انقر فوق <span style='font-weight:bold;'> \\\"تحديث\\\" </span>لبدء عملية التحديث.                    </li>                    <li style='padding:5px 0;'>                        بمجرد الانتهاء من عملية التحديث، يمكنك العثور على قائمة التطبيقات التي تمت إزالتها على سطح المكتب                    </li>                    <li style='padding:5px 0;'>                        يمكنك العثور على التطبيقات التي تمت إزالتها أثناء تحديث نظامك                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> ابحث عن <span style='font-weight:bold;'> تحديث </span>في أداة البحث المتوفرة في قائمة البدء</li>                    <li style='padding:5px 0;'>                        <div>انقر فوق <span style='font-weight:bold;'> \\\"تحديث الكمبيوتر دون التأثير على الملفات\\\"</span> في نتائج البحث كما هو موضح أدناه.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>انقر فوق الزر <span style='font-weight:bold;'> بدء الاستخدام </span> تمامًا أسفل العنوان<span style='font-weight:bold;'> \\\"تحديث الكمبيوتر دون التأثير على الملفات\\\"</span> لبدء تحديث كمبيوتر Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        مزيد من المعلومات    </div>    <div>        في معظم الحالات، تنتهي عملية تحديث الكمبيوتر من تلقاء نفسها بعد أن تبدأها. ومع ذلك، إذا كان Windows يحتاج إلى ملفات مفقودة، فسيُطلب منك إدخال وسائط الاسترداد، والتي عادةً ما تكون قرص DVD أو محرك أقراص محمول. إذا حدث ذلك، فإن ما ستحتاج إليه يتوقف على جهاز الكمبيوتر الذي تستخدمه.    </div>    <div style='padding:10px 0'>        إذا قمت بترقية الكمبيوتر إلى Windows 8.1 أو Windows RT 8.1 باستخدام قرص DVD، فاستخدم هذا القرص. إذا لم يكن لديك وسائط Windows 8.1 أو Windows RT 8.1، فاتصل بدعم Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        كيفية تحديث الكمبيوتر    </div>    <hr>    <div class='faqInFs25FbP5'>        العرض    </div>    <div class='faqInP5'>        إذا لم يعد أداء جهاز الكمبيوتر جيدًا كما كان من قبل، ولم تكن على علم بالسبب، فيمكنك تحديث جهاز الكمبيوتر من دون حذف أي من ملفاتك الشخصية أو تغيير إعداداتك. بإمكان Windows \\\"تحديث\\\" الكمبيوتر الشخصي بحيث تكون هذه العملية مماثلة لعملية تثبيت جديدة من دون حذف ملفاتك الشخصية.    </div>    <div class='faqInP5'>        إليك ما يحدث عند تحديث جهاز الكمبيوتر: لن يطرأ أي تغيير على ملفاتك وإعداداتك المخصصة    </div>    <div class='faqInP5'>        <ul>            <li>ستعود إعدادات الكمبيوتر إلى الإعدادات الافتراضية</li>            <li>سيتم الاحتفاظ بالتطبيقات من متجر Windows</li>            <li>ستُزال التطبيقات التي قمت بتثبيتها من قرص أو من موقع ويب</li>            <li>سيتم حفظ قائمة بالملفات التي تمت إزالتها على سطح مكتبك</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        العلامات التجارية المتأثرة    </div>    <div>        <ul>            <li>جميع أجهزة سطح المكتب وأجهزة الكمبيوتر المحمولة</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        نظام التشغيل    </div>    <div>        <ul>            <li>Windows 8 و8.1 و10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        الحل    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        اضغط أو انقر فوق <span class='faqInFb'> الإعدادات </span>                    </li>                    <li class='faqInP5'>                        اضغط أو انقر فوق <span class='faqInFb'> التحديث والاسترداد</span>                    </li>                    <li class='faqInP5'>                        <div>اضغط أو انقر فوق <span class='faqInFb'> الاسترداد</span></div>                        <div class='faqInP5'>ضمن \\\"تحديث الكمبيوتر دون التأثير على الملفات\\\"، اضغط أو انقر فوق <span class='faqInFb'> بدء الاستخدام.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        انقر فوق <span class='faqInFb'> \\\"التالي\\\"</span>.                    </li>                    <li class='faqInP5'>                        انقر فوق <span class='faqInFb'> \\\"تحديث\\\" </span>لبدء عملية التحديث.                    </li>                    <li class='faqInP5'>                        بمجرد الانتهاء من عملية التحديث، يمكنك العثور على قائمة التطبيقات التي تمت إزالتها على سطح المكتب                    </li>                    <li class='faqInP5'>                        يمكنك العثور على التطبيقات التي تمت إزالتها أثناء تحديث نظامك                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> ابحث عن <span class='faqInFb'> تحديث </span>في أداة البحث المتوفرة في قائمة البدء</li>                    <li class='faqInP5'>                        <div>انقر فوق <span class='faqInFb'> \\\"تحديث الكمبيوتر دون التأثير على الملفات\\\"</span> في نتائج البحث كما هو موضح أدناه.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>انقر فوق الزر <span class='faqInFb'> بدء الاستخدام </span> تمامًا أسفل العنوان<span class='faqInFb'> \\\"تحديث الكمبيوتر دون التأثير على الملفات\\\"</span> لبدء تحديث كمبيوتر Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        مزيد من المعلومات    </div>    <div>        في معظم الحالات، تنتهي عملية تحديث الكمبيوتر من تلقاء نفسها بعد أن تبدأها. ومع ذلك، إذا كان Windows يحتاج إلى ملفات مفقودة، فسيُطلب منك إدخال وسائط الاسترداد، والتي عادةً ما تكون قرص DVD أو محرك أقراص محمول. إذا حدث ذلك، فإن ما ستحتاج إليه يتوقف على جهاز الكمبيوتر الذي تستخدمه.    </div>    <div class='faqInP10'>        إذا قمت بترقية الكمبيوتر إلى Windows 8.1 أو Windows RT 8.1 باستخدام قرص DVD، فاستخدم هذا القرص. إذا لم يكن لديك وسائط Windows 8.1 أو Windows RT 8.1، فاتصل بدعم Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1951,7 +2211,7 @@
         },
         "question3": {
             "title": "كيفية التعرف على وحدة المعالجة المركزية لجهازك",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    كيفية التعرف على وحدة المعالجة المركزية لجهازك</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>العرض</h3><p>يشير المصطلحان 32 بت و64 بت إلى الطريقة التي يستخدمها معالج الكمبيوتر (يسمى أيضًا وحدة المعالجة المركزية) لمعالجة المعلومات. يعالج الإصدار 64 بت من Windows كميات كبيرة من ذاكرة الوصول العشوائي (RAM) بشكل أكثر فعالية من نظام 32 بت.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>العلامات التجارية المتأثرة</h3><p>ترتبط الأعراض المذكورة أعلاه بالأنظمة التالية، على سبيل المثال لا الحصر:</p><ul>    <li>جميع أجهزة سطح المكتب وأجهزة الكمبيوتر المحمولة</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>نظام التشغيل</h3><ul>    <li>Windows 7 و8 و10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>الحل</h3><p><strong><u>Windows 7 أو Vista</u></strong></p><ol>    <li>افتح النظام بالنقر فوق <strong>زر البدء </strong>صورة <strong>زر البدء،</strong> ثم النقر بزر الماوس الأيمن فوق \\\"الكمبيوتر\\\"، ثم النقر فوق \\\"خصائص\\\".  </li>    <li>تحت \\\"النظام\\\"، يمكنك عرض نوع النظام.</li></ol><p><strong><u>Windows 8 وWindows 10</u></strong></p><p><strong>الطريقة 1:</strong> عرض نافذة النظام في لوحة التحكم</p><ol>    <li>امسح للداخل من الحافة اليمنى للشاشة، ثم اضغط على <strong>بحث</strong>. أو إذا كنت تستخدم الماوس، فيمكنك الإشارة إلى الركن السفلي الأيمن من الشاشة، ثم النقر فوق <strong>بحث.</strong></li>    <li>اكتب <strong>النظام</strong> في مربع البحث، ثم اضغط أو انقر فوق <strong>الإعدادات.</strong></li>    <li>اضغط أو انقر فوق <strong>النظام</strong></li>    <li>إذا كنت تقوم بتشغيل إصدار 64 بت من نظام التشغيل Windows 8، فسيظهر <strong>نظام تشغيل 64 بت</strong> في حقل نوع النظام تحت العنوان \\\"النظام\\\" إذا كنت تقوم بتشغيل إصدار 32<strong> بت من نظام التشغيل Windows</strong> <strong>8، فسيظهر</strong> <strong>نظام تشغيل 32 بت </strong>في حقل نوع النظام تحت العنوان \\\"النظام\\\".<br />  </li></ol><p><strong>الطريقة 2</strong>: عرض نافذة معلومات النظام</p><ol>    <li>امسح للداخل من الحافة اليمنى للشاشة، ثم اضغط على <strong>بحث</strong>. أو إذا كنت تستخدم الماوس، فيمكنك الإشارة إلى الركن السفلي الأيمن من الشاشة، ثم النقر فوق <strong>بحث.</strong></li>    <li>في مربع البحث، اكتب <strong>معلومات النظام</strong></li>    <li>اضغط أو انقر فوق<strong> النظام</strong>، واضغط أو انقر فوق <strong>معلومات النظام،</strong> ثم انقر فوق <strong>ملخص النظام.</strong></li>    <li>إذا كنت تقوم بتشغيل إصدار <strong>64 بت </strong>من Windows 8<strong>، يظهر الخيار </strong> \\\"كمبيوتر مستند إلى x64\\\" في الحقل <strong>نوع النظام</strong> تحت العنوان \\\"العنصر\\\". <br /> <br /> إذا كنت تقوم بتشغيل إصدار<strong> 32 بت</strong> من Windows 8، يظهر الخيار \\\"كمبيوتر مستند إلى x86\\\" في الحقل <strong>نوع النظام</strong> تحت العنوان \\\"العنصر\\\".  </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    كيفية التعرف على وحدة المعالجة المركزية لجهازك</div><hr><h3 class='faqInFs25FbP10'>العرض</h3><p>يشير المصطلحان 32 بت و64 بت إلى الطريقة التي يستخدمها معالج الكمبيوتر (يسمى أيضًا وحدة المعالجة المركزية) لمعالجة المعلومات. يعالج الإصدار 64 بت من Windows كميات كبيرة من ذاكرة الوصول العشوائي (RAM) بشكل أكثر فعالية من نظام 32 بت.</p><h3 class='faqInFs25FbP10'>العلامات التجارية المتأثرة</h3><p>ترتبط الأعراض المذكورة أعلاه بالأنظمة التالية، على سبيل المثال لا الحصر:</p><ul>    <li>جميع أجهزة سطح المكتب وأجهزة الكمبيوتر المحمولة</li></ul><h3 class='faqInFs25FbP10'>نظام التشغيل</h3><ul>    <li>Windows 7 و8 و10</li></ul><h3 class='faqInFs25FbP10'>الحل</h3><p><strong><u>Windows 7 أو Vista</u></strong></p><ol>    <li>افتح النظام بالنقر فوق <strong>زر البدء </strong>صورة <strong>زر البدء،</strong> ثم النقر بزر الماوس الأيمن فوق \\\"الكمبيوتر\\\"، ثم النقر فوق \\\"خصائص\\\".  </li>    <li>تحت \\\"النظام\\\"، يمكنك عرض نوع النظام.</li></ol><p><strong><u>Windows 8 وWindows 10</u></strong></p><p><strong>الطريقة 1:</strong> عرض نافذة النظام في لوحة التحكم</p><ol>    <li>امسح للداخل من الحافة اليمنى للشاشة، ثم اضغط على <strong>بحث</strong>. أو إذا كنت تستخدم الماوس، فيمكنك الإشارة إلى الركن السفلي الأيمن من الشاشة، ثم النقر فوق <strong>بحث.</strong></li>    <li>اكتب <strong>النظام</strong> في مربع البحث، ثم اضغط أو انقر فوق <strong>الإعدادات.</strong></li>    <li>اضغط أو انقر فوق <strong>النظام</strong></li>    <li>إذا كنت تقوم بتشغيل إصدار 64 بت من نظام التشغيل Windows 8، فسيظهر <strong>نظام تشغيل 64 بت</strong> في حقل نوع النظام تحت العنوان \\\"النظام\\\" إذا كنت تقوم بتشغيل إصدار 32<strong> بت من نظام التشغيل Windows</strong> <strong>8، فسيظهر</strong> <strong>نظام تشغيل 32 بت </strong>في حقل نوع النظام تحت العنوان \\\"النظام\\\".<br />  </li></ol><p><strong>الطريقة 2</strong>: عرض نافذة معلومات النظام</p><ol>    <li>امسح للداخل من الحافة اليمنى للشاشة، ثم اضغط على <strong>بحث</strong>. أو إذا كنت تستخدم الماوس، فيمكنك الإشارة إلى الركن السفلي الأيمن من الشاشة، ثم النقر فوق <strong>بحث.</strong></li>    <li>في مربع البحث، اكتب <strong>معلومات النظام</strong></li>    <li>اضغط أو انقر فوق<strong> النظام</strong>، واضغط أو انقر فوق <strong>معلومات النظام،</strong> ثم انقر فوق <strong>ملخص النظام.</strong></li>    <li>إذا كنت تقوم بتشغيل إصدار <strong>64 بت </strong>من Windows 8<strong>، يظهر الخيار </strong> \\\"كمبيوتر مستند إلى x64\\\" في الحقل <strong>نوع النظام</strong> تحت العنوان \\\"العنصر\\\". <br /> <br /> إذا كنت تقوم بتشغيل إصدار<strong> 32 بت</strong> من Windows 8، يظهر الخيار \\\"كمبيوتر مستند إلى x86\\\" في الحقل <strong>نوع النظام</strong> تحت العنوان \\\"العنصر\\\".  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2040,7 +2300,7 @@
         },
         "question4": {
             "title": "التحقق من استخدام بطارية الجهاز",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    التحقق من استخدام بطارية الجهاز</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>العرض</h3><p>يتضمن Windows 10 شاشة جديدة \\\"<strong>استخدام البطارية\\\"</strong> تبين لك الأسباب التي تستنزف طاقة الكمبيوتر المحمول. يعني هذا الأمر أن هذه الشاشة ستعلمك بشكل دقيق عن التطبيقات، التطبيقات \\\"العالمية\\\" لنظام Windows 10 وتطبيقات سطح المكتب، التي تستهلك قدرًا كبيرًا من الطاقة.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>العلامات التجارية المتأثرة</h3><ul>    <li>أجهزة الكمبيوتر المحمولة وأجهزة كمبيوتر سطح المكتب من Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>الأنظمة المتأثرة</h3><ul>    <li>كل</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>نظام التشغيل</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>الحل</h3><p>تعتبر هذه الميزة جديدة في نظام التشغيل Windows 10، ونحن نحتاج إلى العثور على هذه الميزة أولاً لأنها غير مخزنة في طريقة عرض <strong>لوحة التحكم </strong>التقليدية. تقع هذه الميزة في تطبيق <strong>“الإعدادات”</strong> الجديد</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>أ. ابحث عن شاشة استخدام البطارية</h3></p><p>1. انقر أو اضغط على الخيار <strong>\\\"الإعدادات</strong>\\\" من قائمة البدء.</p><p>2. في <strong>الإعدادات </strong>، حدد <strong>“النظام”</strong>ثم حدد <strong>“موفر البطارية.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. انقر أو اضغط على الارتباط <strong>\\\"استخدام البطارية\\\"</strong> تحت هذا العنوان لرؤية المزيد من التفاصيل. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>ب. تحليل استخدام الطاقة لديك</h3><p>4 يمكنك تغيير شاشة استخدام البطارية بحيث تعرض معلومات حول استخدام البطارية من آخر 24 ساعة وصولاً إلى آخر 48 ساعة أو أخيرًا من الأسبوع الماضي</p><p>5 النسب المئوية لكل من <strong>“النظام،”</strong> “<strong>جهاز العرض،</strong>” و\\\"<strong>Wi-Fi”</strong>. توضح هذه النسب مقدار طاقة البطارية المستخدمة بواسطة عمليات النظام، وجهاز العرض.</p><p>6 يُظهر الخيار <strong>“قيد الاستخدام”</strong> بالإضافة إلى الخيار <strong>“الخفية”</strong> مقدار الطاقة الذي تستخدمه التطبيقات أثناء استخدامك لها، مقارنةً بالتطبيقات التي تعمل في الخلفية.</p><p>7 إذا كانت التطبيقات تستخدم الطاقة في الخلفية، فيمكنك الضغط أو النقر فوق الارتباط <strong> “تغيير إعدادات التطبيقات في الخلفية” </strong>وتكوين التطبيقات بحيث لا تعمل في الخلفية هذا يعمل فقط مع تطبيقات Windows 10 العالمية.</p><p>8 قم بالتمرير لأسفل إلى أبعد من ذلك وسترى قائمة بالتطبيقات، ويعتبر هذا القسم الأكثر إفادة في هذه الميزة. سيعرض قائمة بالتطبيقات التي استخدمت طاقة البطارية في تلك الفترة، وسيظهر لك النسبة المئوية من طاقة البطارية التي استخدمها كل تطبيق</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    التحقق من استخدام بطارية الجهاز</div><hr><h3 class='faqInFs25FbP10'>العرض</h3><p>يتضمن Windows 10 شاشة جديدة \\\"<strong>استخدام البطارية\\\"</strong> تبين لك الأسباب التي تستنزف طاقة الكمبيوتر المحمول. يعني هذا الأمر أن هذه الشاشة ستعلمك بشكل دقيق عن التطبيقات، التطبيقات \\\"العالمية\\\" لنظام Windows 10 وتطبيقات سطح المكتب، التي تستهلك قدرًا كبيرًا من الطاقة.</p><h3 class='faqInFs25FbP10'>العلامات التجارية المتأثرة</h3><ul>    <li>أجهزة الكمبيوتر المحمولة وأجهزة كمبيوتر سطح المكتب من Lenovo</li></ul><h3 class='faqInFs25FbP10'>الأنظمة المتأثرة</h3><ul>    <li>كل</li></ul><h3 class='faqInFs25FbP10'>نظام التشغيل</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>الحل</h3><p>تعتبر هذه الميزة جديدة في نظام التشغيل Windows 10، ونحن نحتاج إلى العثور على هذه الميزة أولاً لأنها غير مخزنة في طريقة عرض <strong>لوحة التحكم </strong>التقليدية. تقع هذه الميزة في تطبيق <strong>“الإعدادات”</strong> الجديد</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>أ. ابحث عن شاشة استخدام البطارية</h3></p><p>1. انقر أو اضغط على الخيار <strong>\\\"الإعدادات</strong>\\\" من قائمة البدء.</p><p>2. في <strong>الإعدادات </strong>، حدد <strong>“النظام”</strong>ثم حدد <strong>“موفر البطارية.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. انقر أو اضغط على الارتباط <strong>\\\"استخدام البطارية\\\"</strong> تحت هذا العنوان لرؤية المزيد من التفاصيل. </p><p> </p><h3 class='faqInFs25FbP10'>ب. تحليل استخدام الطاقة لديك</h3><p>4 يمكنك تغيير شاشة استخدام البطارية بحيث تعرض معلومات حول استخدام البطارية من آخر 24 ساعة وصولاً إلى آخر 48 ساعة أو أخيرًا من الأسبوع الماضي</p><p>5 النسب المئوية لكل من <strong>“النظام،”</strong> “<strong>جهاز العرض،</strong>” و\\\"<strong>Wi-Fi”</strong>. توضح هذه النسب مقدار طاقة البطارية المستخدمة بواسطة عمليات النظام، وجهاز العرض.</p><p>6 يُظهر الخيار <strong>“قيد الاستخدام”</strong> بالإضافة إلى الخيار <strong>“الخفية”</strong> مقدار الطاقة الذي تستخدمه التطبيقات أثناء استخدامك لها، مقارنةً بالتطبيقات التي تعمل في الخلفية.</p><p>7 إذا كانت التطبيقات تستخدم الطاقة في الخلفية، فيمكنك الضغط أو النقر فوق الارتباط <strong> “تغيير إعدادات التطبيقات في الخلفية” </strong>وتكوين التطبيقات بحيث لا تعمل في الخلفية هذا يعمل فقط مع تطبيقات Windows 10 العالمية.</p><p>8 قم بالتمرير لأسفل إلى أبعد من ذلك وسترى قائمة بالتطبيقات، ويعتبر هذا القسم الأكثر إفادة في هذه الميزة. سيعرض قائمة بالتطبيقات التي استخدمت طاقة البطارية في تلك الفترة، وسيظهر لك النسبة المئوية من طاقة البطارية التي استخدمها كل تطبيق</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2108,7 +2368,7 @@
         },
         "question5": {
             "title": "استخدام الكمبيوتر الشخصي ككمبيوتر لوحي",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    استخدام الكمبيوتر الشخصي ككمبيوتر لوحي</div><hr><p>يضفي وضع الكمبيوتر اللوحي المزيد من السهولة والبساطة على استخدام Windows عندما يكون لديك جهاز مزود بشاشة تعمل باللمس.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>استخدام وضع الكمبيوتر اللوحي</h3><p>لتشغيل وضع الكمبيوتر اللوحي، حدد <strong>مركز الإجراءات</strong> على شريط المهام، ثم حدد <strong>وضع الكمبيوتر اللوحي</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>ملحوظة</h3><p>لمعرفة ما إذا كان باستطاعة جهازك تشغيل وضع الكمبيوتر اللوحي تلقائيًا، ابحث عن جهازك على موقع الشركة المصنعة على الويب. يتوقف دعم هذه الميزة على الأجهزة وبرنامج التشغيل المثبت وكيفية إعداد جهازك بواسطة الشركة المصنعة. </p><p> </p><p>في وضع الكمبيوتر اللوحي، تفتح التطبيقات في ملء الشاشة، مما يمنحك مساحة أكبر للعمل. لإغلاق تطبيق، اسحبه إلى أسفل الشاشة.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>تلميح</h3><p>يتوفر شريط المهام عندما يكون الكمبيوتر في وضع الكمبيوتر اللوحي، ولكن إذا أردت الحصول على مساحة أكبر على الشاشة، فاعمل على إخفائه. حدد زر <strong>البدء</strong>، وحدد <strong>الإعدادات </strong>> <strong>النظام </strong>> <strong> وضع الكمبيوتر اللوحي </strong>، ثم قم بتشغيل الخيار <strong>إخفاء شريط المهام تلقائيًا في وضع الكمبيوتر اللوحي</strong>. لرؤية شريط المهام المخفي، اسحب لأعلى من أسفل الشاشة، أو استخدم الماوس للتمرير هناك.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>استخدام تطبيقين في الوقت نفسه</h3><p>لاستخدام تطبيقين جنبًا إلى جنب في وضع الكمبيوتر اللوحي، اسحب تطبيقًا مفتوحًا إلى الأسفل وإلى الجانب. سترى المكان حيث ستتم محاذاته، وسترى أي تطبيقات مفتوحة إلى جانبه.</p><p>في طريقة العرض هذه، يمكنك أيضًا:</p><ul>    <li>استخدام الحافة المشتركة بين تطبيقين مصغرين لتغيير حجم التطبيقين في نفس الوقت.</li>    <li>فتح تطبيق جديد من طريقة عرض المهمة&mdash;حدد <strong>طريقة عرض المهمة</strong> على شريط المهام، وتحديد تطبيق، ثم سحبه إلى جانب واحد لمحاذاته على شاشتك المقسمة.</li>    <li>استخدام زر السابق على شريط المهام للعودة إلى أحد التطبيقات، أو لفتح تطبيق كنت تستخدمه من قبل.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    استخدام الكمبيوتر الشخصي ككمبيوتر لوحي</div><hr><p>يضفي وضع الكمبيوتر اللوحي المزيد من السهولة والبساطة على استخدام Windows عندما يكون لديك جهاز مزود بشاشة تعمل باللمس.</p><h3 class='faqInFs25FbP10'>استخدام وضع الكمبيوتر اللوحي</h3><p>لتشغيل وضع الكمبيوتر اللوحي، حدد <strong>مركز الإجراءات</strong> على شريط المهام، ثم حدد <strong>وضع الكمبيوتر اللوحي</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>ملحوظة</h3><p>لمعرفة ما إذا كان باستطاعة جهازك تشغيل وضع الكمبيوتر اللوحي تلقائيًا، ابحث عن جهازك على موقع الشركة المصنعة على الويب. يتوقف دعم هذه الميزة على الأجهزة وبرنامج التشغيل المثبت وكيفية إعداد جهازك بواسطة الشركة المصنعة. </p><p> </p><p>في وضع الكمبيوتر اللوحي، تفتح التطبيقات في ملء الشاشة، مما يمنحك مساحة أكبر للعمل. لإغلاق تطبيق، اسحبه إلى أسفل الشاشة.</p><p> </p><h3 class='faqInFs25FbP10'>تلميح</h3><p>يتوفر شريط المهام عندما يكون الكمبيوتر في وضع الكمبيوتر اللوحي، ولكن إذا أردت الحصول على مساحة أكبر على الشاشة، فاعمل على إخفائه. حدد زر <strong>البدء</strong>، وحدد <strong>الإعدادات </strong>> <strong>النظام </strong>> <strong> وضع الكمبيوتر اللوحي </strong>، ثم قم بتشغيل الخيار <strong>إخفاء شريط المهام تلقائيًا في وضع الكمبيوتر اللوحي</strong>. لرؤية شريط المهام المخفي، اسحب لأعلى من أسفل الشاشة، أو استخدم الماوس للتمرير هناك.</p><h3 class='faqInFs25FbP10'>استخدام تطبيقين في الوقت نفسه</h3><p>لاستخدام تطبيقين جنبًا إلى جنب في وضع الكمبيوتر اللوحي، اسحب تطبيقًا مفتوحًا إلى الأسفل وإلى الجانب. سترى المكان حيث ستتم محاذاته، وسترى أي تطبيقات مفتوحة إلى جانبه.</p><p>في طريقة العرض هذه، يمكنك أيضًا:</p><ul>    <li>استخدام الحافة المشتركة بين تطبيقين مصغرين لتغيير حجم التطبيقين في نفس الوقت.</li>    <li>فتح تطبيق جديد من طريقة عرض المهمة&mdash;حدد <strong>طريقة عرض المهمة</strong> على شريط المهام، وتحديد تطبيق، ثم سحبه إلى جانب واحد لمحاذاته على شاشتك المقسمة.</li>    <li>استخدام زر السابق على شريط المهام للعودة إلى أحد التطبيقات، أو لفتح تطبيق كنت تستخدمه من قبل.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2148,7 +2408,7 @@
         },
         "question6": {
             "title": "التعرف على Cortana، مساعدك الشخصي",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    التعرف على Cortana، مساعدك الشخصي</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>ما المقصود بميزة Cortana؟</h3><hr /><p>تعتبر ميزة Cortana وكيلك الرقمي. سوف تساعدك على تنفيذ مهامك.</p><p>ويساعدك استخدام Cortana على إضفاء المزيد من الطابع الشخصي على تجربتك.</p><p>لبدء الاستخدام، اكتب سؤالاً في مربع البحث، أو حدد الميكروفون وتحدث مع Cortana. (تعمل الكتابة على جميع أنواع أجهزة الكمبيوتر، لكنك تحتاج إلى ميكروفون للتحدث.)</p><p>إذا لم تكن متأكدًا مما ستقوله، فسترى اقتراحات على شاشة التأمين، وفي صفحة Cortana الرئيسية عندما تحدد مربع البحث على شريط المهام.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>الصفحة الرئيسية 2. الكمبيوتر المحمول 3. الإعدادات 4. الملاحظات</li></ol><p>فيما يلي بعض الأشياء التي تستطيع Cortana القيام بها:</p><ul>    <li>تقديم تذكيرات استنادًا إلى الوقت أو الأماكن أو الأشخاص</li>    <li>تعقب العروض والفرق والاهتمامات والرحلات الجوية.</li>    <li>إرسال نصوص ورسائل إلكترونية.</li>    <li>إدارة تقويمك ومساعدتك في البقاء على اطلاع دائم.</li>    <li>إنشاء القوائم وإدارتها.</li>    <li>الدردشة وممارسة الألعاب.</li>    <li>البحث عن الحقائق والملفات والأماكن والمعلومات.</li>    <li>فتح أي تطبيق على نظامك.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>جرّب هذا الأمر: تعيين تذكير</h3><hr /><p>تعتبر التذكيرات أحد الأشياء التي يمكن لميزة Cortana القيام بها. باستطاعة هذه الميزة تذكيرك بالأشياء استنادًا إلى الوقت أو الأماكن أو حتى الأشخاص.</p><p>على سبيل المثال، أكتب أو قل \\\"ذكريني بتهنئة تانيا عندما تتصل في المرة القادمة\\\".</p><p>سيظهر التذكير عندما تتلقى اتصالاً من تانيا.</p><p>مكافأة إضافية &mdash; إذا كان لديك هاتف يعمل بنظام Windows أو Cortana لجهاز iPhone أو Android، فيمكنك تعيين Cortana لمزامنة الإشعارات بين جهاز الكمبيوتر والهاتف.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>مرحبًا Cortana؟</h3><hr /><p>يمكنك ضبط Cortana بحيث تسمعك في أي وقت تقول فيه \\\"مرحبًا Cortana\\\". حدد مربع البحث على شريط المهام لفتح صفحة Cortana الرئيسية. ثم حدد <strong>الإعدادات</strong> وقم بتشغيل الخيار <strong>السماح لـ Cortana بالرد على \\\"مرحبًا Cortana\\\".</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>ملحوظة</p><p>تتوفر Cortana فقط في بعض البلدان/المناطق ، وقد لا تتوفر بعض ميزات Cortana في كل مكان.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    التعرف على Cortana، مساعدك الشخصي</div><hr><h3 class='faqInFs25FbP10'>ما المقصود بميزة Cortana؟</h3><hr /><p>تعتبر ميزة Cortana وكيلك الرقمي. سوف تساعدك على تنفيذ مهامك.</p><p>ويساعدك استخدام Cortana على إضفاء المزيد من الطابع الشخصي على تجربتك.</p><p>لبدء الاستخدام، اكتب سؤالاً في مربع البحث، أو حدد الميكروفون وتحدث مع Cortana. (تعمل الكتابة على جميع أنواع أجهزة الكمبيوتر، لكنك تحتاج إلى ميكروفون للتحدث.)</p><p>إذا لم تكن متأكدًا مما ستقوله، فسترى اقتراحات على شاشة التأمين، وفي صفحة Cortana الرئيسية عندما تحدد مربع البحث على شريط المهام.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>الصفحة الرئيسية 2. الكمبيوتر المحمول 3. الإعدادات 4. الملاحظات</li></ol><p>فيما يلي بعض الأشياء التي تستطيع Cortana القيام بها:</p><ul>    <li>تقديم تذكيرات استنادًا إلى الوقت أو الأماكن أو الأشخاص</li>    <li>تعقب العروض والفرق والاهتمامات والرحلات الجوية.</li>    <li>إرسال نصوص ورسائل إلكترونية.</li>    <li>إدارة تقويمك ومساعدتك في البقاء على اطلاع دائم.</li>    <li>إنشاء القوائم وإدارتها.</li>    <li>الدردشة وممارسة الألعاب.</li>    <li>البحث عن الحقائق والملفات والأماكن والمعلومات.</li>    <li>فتح أي تطبيق على نظامك.</li></ul><h3 class='faqInFs25FbP10'>جرّب هذا الأمر: تعيين تذكير</h3><hr /><p>تعتبر التذكيرات أحد الأشياء التي يمكن لميزة Cortana القيام بها. باستطاعة هذه الميزة تذكيرك بالأشياء استنادًا إلى الوقت أو الأماكن أو حتى الأشخاص.</p><p>على سبيل المثال، أكتب أو قل \\\"ذكريني بتهنئة تانيا عندما تتصل في المرة القادمة\\\".</p><p>سيظهر التذكير عندما تتلقى اتصالاً من تانيا.</p><p>مكافأة إضافية &mdash; إذا كان لديك هاتف يعمل بنظام Windows أو Cortana لجهاز iPhone أو Android، فيمكنك تعيين Cortana لمزامنة الإشعارات بين جهاز الكمبيوتر والهاتف.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>مرحبًا Cortana؟</h3><hr /><p>يمكنك ضبط Cortana بحيث تسمعك في أي وقت تقول فيه \\\"مرحبًا Cortana\\\". حدد مربع البحث على شريط المهام لفتح صفحة Cortana الرئيسية. ثم حدد <strong>الإعدادات</strong> وقم بتشغيل الخيار <strong>السماح لـ Cortana بالرد على \\\"مرحبًا Cortana\\\".</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>ملحوظة</p><p>تتوفر Cortana فقط في بعض البلدان/المناطق ، وقد لا تتوفر بعض ميزات Cortana في كل مكان.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2196,7 +2456,6 @@
         "personal": "استخدام شخصي",
         "business": "استخدام في العمل",
         "custom": "تجربة مخصصة",
-        "experience": "تجربة",
         "privacytitle": "ساعد على تحسين جودة التطبيق من خلال السماح بعملية جمع إحصاءات الاستخدام مجهولة المصدر.",
         "moreInterest": "‏+ المزيد من الاهتمامات",
         "title1": "مرحبًا بك في",
@@ -2231,7 +2490,316 @@
         "OtherSettings": "إعدادات أخرى",
         "usageStatistics": "إحصائيات الاستخدام",
         "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
+        "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
+        "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
+    },
+    "modernPreload": {
+        "cancel": "إلغاء",
+        "close": "اغلاق",
+        "download": "تنزيل",
+        "downloadAvailable": "التنزيل متوفر",
+        "downloadComplete": "اكتمل التنزيل",
+        "downloading": "يتم الآن التنزيل...",
+        "failedDownload": "فشل التنزيل",
+        "failedInstall": "فشل التثبيت",
+        "installed": "مثبت",
+        "restartDownload": "إعادة تشغيل التنزيل",
+        "retry": "أعد المحاولة",
+        "skip": "تخطي",
+        "noteDownloading": "ملاحظة: بعد النقر فوق \"تنزيل\"، قد تظهر لك مطالبة من Windows للسماح لنا بتثبيت البرامج على جهازك. وفور الانتهاء من التثبيت، ستظهر تطبيقاتك تلقائيًا على سطح المكتب أو قائمة البدء.<br /><br />يمكنك إغلاق صفحة \"برامجي\" ومتابعة استخدام Lenovo Vantage. لا تغلق Lenovo Vantage أثناء التثبيت.",
+        "noteFailedDownload": "تنبيه: حدث خطأ ما أثناء التنزيل أو التثبيت. يُرجى التأكد من أنك متصل بالإنترنت وأعد المحاولة. احرص على إبقاء Vantage مفتوحًا بينما نقوم بتثبيت البرامج. يمكنك إغلاق صفحة \"برامجي\" ومتابعة استكشاف Vantage أو تصغير Vantage بينما نكمل عملية تثبيت البرامج.",
+        "noteDownloadComplete": "ملاحظة: بعد النقر فوق \"تنزيل\"، قد تظهر لك مطالبة من Windows للسماح لنا بتثبيت البرامج على جهازك. وفور الانتهاء من التثبيت، ستظهر تطبيقاتك تلقائيًا على سطح المكتب أو قائمة البدء.<br /><br />يمكنك إغلاق صفحة \"برامجي\" ومتابعة استخدام Lenovo Vantage. لا تغلق Lenovo Vantage أثناء التثبيت.",
+        "noteDownloadAvailable": "ملاحظة: بعد النقر فوق \"تنزيل\"، قد تظهر لك مطالبة من Windows للسماح لنا بتثبيت البرامج على جهازك. وفور الانتهاء من التثبيت، ستظهر تطبيقاتك تلقائيًا على سطح المكتب أو قائمة البدء.<br /><br />يمكنك إغلاق صفحة \"برامجي\" ومتابعة استخدام Lenovo Vantage. لا تغلق Lenovo Vantage أثناء التثبيت.",
+        "sizeText": "الحجم",
+        "versionText": "نسخة",
+        "softwareDescription": "انقر فوق \"تنزيل\" أدناه لاسترداد البرامج التي اشتريتها مع جهازك. إذا احتجت إلى تنزيل البرامج من جديد في أي وقت، فيمكنك القيام بذلك الآن عن طريق النقر فوق الزر \"برامجي\" من قائمة Vantage.",
+        "title": "برنامجي",
+        "loadingDescription": "يرجى الانتظار ريثما نقوم بتحضير قائمة بالبرامج التي كانت مضمنة في عملية شراء جهازك.",
+        "shortDescription": "يمكنك تنزيل وتثبيت البرامج التي كانت مضمنة في عملية شراء جهازك.",
+        "errorDescription": "<h2>عذرًا، حدث خطأ يتعلق باسترداد معلومات تنزيل البرامج</h2>حاول النقر فوق الزر \"إعادة المحاولة\" أدناه أو حاول مرة أخرى لاحقًا بالنقر فوق الزر \"برامجي\" في قائمة Vantage."
+    },
+    "hardwareScan": {
+        "name": "فحص الأجهزة",
+        "title": "إجراء فحص لمكونات الجهاز",
+        "subtitle": "الرجاء الانتظار، إذ يتم إجراء فحص لمكونات الجهاز",
+        "quickScan": "فحص سريع",
+        "finalResultCode": "رمز النتيجة النهائية",
+        "resultCode": "رمز النتيجة",
+        "cancel": "إلغاء",
+        "complete": "كامل",
+        "incomplete": "غير مكتمل",
+        "loadingComponents": "جارٍ تحميل المكونات",
+        "hardwareComponents": "مكونات الجهاز",
+        "loadingDevices": "جارٍ تحميل الجهاز",
+        "select": "تحديد",
+        "deselect": "إلغاء تحديد",
+        "allOptions": "كل الخيارات",
+        "latestResult": "آخر نتيجة",
+        "back": "السابق",
+        "viewResults": "عرض النتائج",
+        "save": "حفظ",
+        "details": "التفاصيل",
+        "recurrence": "تكرار",
+        "interval": "فاصل زمني",
+        "time": "الوقت",
+        "type": "النوع",
+        "hours": "ساعات",
+        "minutes": "دقائق",
+        "am": "صباحًا",
+        "pm": "مساءً",
+        "previousResult": "النتائج السابقة",
+        "lastScanOn": "آخر فحص في",
+        "result": "النتيجة",
+        "viewDetailsLog": "عرض سجل التفاصيل",
+        "ok": "موافق",
+        "notOk": "ليس كما يرام",
+        "notScanned": "لم يتم الفحص",
+        "pass": "نجاح",
+        "fail": "فشل",
+        "cancelled": "تم الإلغاء",
+        "warning": "تحذير",
+        "errorResult": "رجاء، يلزمك اختيار اختبار لإجرائه.",
+        "buy": "شراء الآن",
+        "errorDeviceChoose": "رجاءً، يلزمك اختيار جهاز لتشغيله.",
+        "errorNoOptionSelected": "رجاءً، أنت بحاجة لتحديد خيار.",
+        "offline": "هذا الجهاز يعمل في وضع عدم الاتصال، يرجى الاتصال بالإنترنت",
+        "doNotSuspend": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة! لا تعمل على إغلاق هذا التطبيق أو تصغيره، ولا توقف عمل الكمبيوتر بشكل مؤقت أو توقف تشغيله أثناء إجراء عملية الفحص.",
+        "doNotUse": "يُرجى الامتناع عن استخدام الكمبيوتر حتى اكتمال هذا الاختبار",
+        "testsMustRunUniterrupted": "يجب تشغيل هذه الاختبارات من دون أي مقاطعة!",
+        "doNotCloseOrMinimizeApp": "• لا تغلق هذا التطبيق أو تقم بتصغيره.",
+        "doNotSwitchApp": "• لا تقم بالتبديل إلى تطبيق آخر.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• لا تُدخل جهاز الكمبيوتر في وضع السكون أو تسجل الخروج منه أو تغلقه.",
+        "customize": {
+            "name": "تخصيص",
+            "test": "تخصيص اختبار",
+            "description": "حدد الخيار أدناه لتخصيص اختبارك",
+            "runTests": "إجراء اختبارات محددة"
+        },
+        "scheduledScan": {
+            "name": "جدولة فحص",
+            "title": "جدولة الفحص الخاص بك",
+            "newScan": "جدولة فحص جديد",
+            "fullScan": "فحص شامل",
+            "onlyOnce": "مرة واحدة فقط",
+            "eachDay": "كل يوم",
+            "eachWeek": "كل أسبوع",
+            "eachMonth": "كل شهر",
+            "eachYear": "كل عام",
+            "schedule": "جدولة",
+            "date": "التاريخ",
+            "pickDate": "اختر تاريخًا",
+            "scanScheduled": "تمت جدولة فحص مكونات الجهاز!",
+            "description": "كان من المقرر بالفعل إجراء فحص آخر في نفس الوقت والتاريخ!",
+            "error": "خطأ",
+            "delete": "حذف",
+            "warningBatterySaver": "ملاحظة: لن يتم إجراء عمليات الفحص المجدولة في وضع توفير البطارية",
+            "scheduleIntervalLimit": "كان من المقرر بالفعل إجراء مسح آخر في غضون فترة زمنية عشر دقائق. الرجاء اختيار وقت آخر.",
+            "information": "تمت جدولة فحصك وسيتم تشغيله في الخلفية في التاريخ التالي:"
+        },
+        "recoverBadSectors": {
+            "title": "استعادة القطاعات المصابة",
+            "description": "أداة Lenovo لاكتشاف القطاعات المصابة على القرص وعلاجها",
+            "goTo": "الانتقال إلى استعادة القطاعات المصابة",
+            "localDevices": "أجهزة محلية",
+            "numberSectors": "تمت قراءة بعض القطاعات",
+            "numberBadSectors": "تم العثور على بعض القطاعات",
+            "numberFixedSectors": "عدد القطاعات التم تمت معالجتها",
+            "numberNonFixedSectors": "عدد القطاعات التي لم تتم معالجتها",
+            "status": "حالة العملية",
+            "elapsedTime": "الوقت المنقضي",
+            "hours": "ساعات",
+            "hour": "ساعة",
+            "minutes": "دقائق",
+            "minute": "دقيقة",
+            "seconds": "ثوانٍ",
+            "second": "ثانية",
+            "moreInfo": "الرجاء الانتظار، إذ تتم استعادة القطاعات المصابة الآن",
+            "systemEvent": "تم إيقاف الاختبار بسبب وقوع حدث في النظام قد يؤثر سلبًا على النتيجة.",
+            "systemPasswordProtected": "قد يكون الجهاز محميًا بكلمة مرور. حاول تعطيل الحماية بكلمة مرور.",
+            "popup": {
+                "description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
+                "yes": "نعم",
+                "no": "لا"
+            }
+        },
+        "support": {
+            "title": "تنزيل أدوات تشخيص احترافية",
+            "subtitle": "دعم Lenovo"
+        },
+        "eTicket": {
+            "header": "تم اكتشاف مشكلة في مكونات الجهاز.",
+            "problemDetected": "بعد فحص مكونات الجهاز تبين وجود مشكلة في المكونات التالية للكمبيوتر",
+            "ticketRequestQuestion": "يمكن لشركة Lenovo أن تُرسل قطعة غيار إذا كان جهاز الكمبيوتر يخضع للضمان. هل تريد فتح تذكرة لاستبدال مكون الجهاز وحل المشكلة؟",
+            "openTicket": "فتح تذكرة"
+        },
+        "battery": {
+            "title": "تمكين حد شحن البطارية",
+            "description": "يؤدي تمكين شحن البطارية المخصص إلى أن تدوم سلامة البطارية أطول من ذي قبل أثناء استخدامك لهذا الجهاز. على الرغم من ذلك، سيؤدي عدم الشحن بشكل كامل إلى تقليل فترة تشغيل البطارية. وحتى يتسنى لك تمكين هذه الميزة بشكل كامل، افصل الطاقة عن الجهاز، ودع البطارية تستهلك الطاقة حتى تصل إلى حد إيقاف الشحن أو أقل منه.",
+            "enable": "تمكين"
+        },
+        "refreshModule": "تحديث الوحدات",
+        "completed": "مكتمل",
+        "notCompleted": "غير مكتمل",
+        "yes": "نعم",
+        "attention": "تنبيه",
+        "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
+        "cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء",
+        "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته.",
+        "testNotApplicable": "لا ينطبق على الفحص المخصص"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "فشل التثبيت. حاول من جديد.",
+                "networkError": "خطأ في الشبكة.",
+                "installationCancelled": "تم إلغاء التثبيت."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "استرداد Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "تثبيت",
+                "installing": "جارِ التثبيت",
+                "installed": "مثبت",
+                "launch": "اطلاق",
+                "seeMore": "رؤية المزيد"
+            },
+            "fieldName": {
+                "description": "الوصف",
+                "screenshots": "لقطات الشاشة",
+                "additionalInformation": "مزيد من المعلومات",
+                "by": "حسب:",
+                "updated": "تم التحديث:",
+                "type": "النوع:",
+                "category": "الفئة:",
+                "legalAgreement": "الاتفاقية القانونية",
+                "readMore": "اقرأ أكثر",
+                "readLess": "اقرأ أقل"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
     }
 }

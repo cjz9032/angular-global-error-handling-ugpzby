@@ -8,26 +8,21 @@
 		cursor: pointer;
 	}
 	&.switch-disable {
-		opacity: 0.3;
-		cursor: pointer;
-		
-		.switch {
-			cursor: pointer;
-		}
-
-		.switch-label {
-			cursor: pointer;
-		}
+		pointer-events: none;
 	}
 }
 
 .checkbox input {
 	position: absolute;
-	left: -9999.9rem;
+	opacity: 0;
+	top: 0.4rem;
+	height: 2.6rem;
+	width: 5.4rem;
 }
 
 .checkbox label {
 	padding-left: 0;
+	position: relative;
 }
 
 .switch {
@@ -51,11 +46,25 @@
 input + .switch {
 	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
 	margin-right: 0.7rem;
+	@media #{$black-on-white} {
+		background: $dark;
+	}
+	@media #{$white-on-black} {
+		background:$light;
+	}
+
 }
 
 input.wifi-checked + .switch {
 	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 	transition: background 1.2s;
+	@media #{$black-on-white} {
+		background: darkviolet;
+	}
+	@media #{$white-on-black} {
+		
+	}
+
 }
 
 .checkbox-double .switch {
@@ -134,11 +143,11 @@ input.wifi-checked + .switch.switch-xs > small {
 	width: 1.4rem;
 }
 
-/* DISABLED */
-
-.disabled .switch {
-	cursor: not-allowed;
-	opacity: 0.5;
+.switch-disable {
+	pointer-events: none;
+	.switch {
+		background: #e6eaeb !important;
+	}
 }
 
 /* Full Width Switch - Right Aligned */

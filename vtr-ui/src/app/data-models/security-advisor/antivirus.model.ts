@@ -1,21 +1,20 @@
 import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
-
-export class AntiVirusviewModel {
+export class AntiVirusViewModel {
 	currentPage = 'windows';
 	mcafeeInstall: boolean;
 	mcafee: McAfeeInfo = {
 		localName: 'McAfee LiveSafe',
 		subscription: 'unknown',
-		expireAt: new Date,
+		expireAt: 30,
 		registered: false,
-		trailUrl: 'unknown',
+		trialUrl: 'unknown',
 		features: [],
 		firewallStatus: false,
 		status: false,
 		enabled: false,
-		launch() { return Promise.resolve(true); }
+		metrics: []
 	};
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,
@@ -24,22 +23,24 @@ export class AntiVirusviewModel {
 	};
 	otherAntiVirus: OtherInfo = {
 		status: false,
-		name: 'unknown',
+		name: 'security.antivirus.others.unknown',
 	};
-	otherFirewall: OtherInfo ;
+	metricsList: Array<any> = [];
+	otherFirewall: OtherInfo;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
-		title: 'security.antivirus.common.virusScan',
+		title: 'security.antivirus.windowsDefender.virus',
 	}, {
 		status: this.windowsDefender.firewallStatus,
-		title: 'security.antivirus.common.firewall',
+		title: 'security.antivirus.windowsDefender.homeNetwork',
 	}];
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
+	showMetricsList = true;
+	showMetricButton = true;
 
-
-	constructor(public antiVirus: Antivirus, private commonService: CommonService) {
+	constructor(antiVirus: Antivirus, private commonService: CommonService) {
 		const cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		if (cacheCurrentPage) {
 			this.currentPage = cacheCurrentPage;
@@ -64,6 +65,18 @@ export class AntiVirusviewModel {
 		if (cacheMcafeeStatusList) {
 			this.mcafeestatusList = cacheMcafeeStatusList;
 		}
+		const cacheShowMetricButton = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricButton);
+		if (typeof cacheShowMetricButton === 'boolean') {
+			this.showMetricButton = cacheShowMetricButton;
+		}
+		const cacheShowMetricList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricList);
+		if (typeof cacheShowMetricList === 'boolean') {
+			this.showMetricsList = cacheShowMetricList;
+		}
+		const cacheMcafeeMetricsList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList);
+		if (cacheMcafeeMetricsList) {
+			this.metricsList = cacheMcafeeMetricsList;
+		}
 		const cacheWindowsList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList);
 		if (cacheWindowsList) {
 			this.windowsDefenderstatusList = cacheWindowsList;
@@ -79,10 +92,10 @@ export class AntiVirusviewModel {
 	}
 
 	antiVirusPage(antiVirus: Antivirus) {
-		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled)) {
+		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
 			this.currentPage = 'mcafee';
 			this.mcafeeInstall = true;
-		} else if (antiVirus.others) {
+		} else if (antiVirus.others && antiVirus.others.enabled) {
 			if (antiVirus.mcafee) {
 				this.mcafeeInstall = true;
 			} else { this.mcafeeInstall = false; }

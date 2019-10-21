@@ -11,7 +11,7 @@ reference : https://fonts.google.com/specimen/Rubik
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
 // @import "~bootstrap/dist/css/bootstrap.css";
-
+@import "./app/beta/beta-styles.scss";
 @import "app/app.theme";
 
 html {
@@ -41,11 +41,14 @@ li {
 	cursor: default;
 }
 
-body a > *,
-.no-pointer > *,
-.no-pointer > div,
-a > div {
+body a>*,
+.no-pointer>*,
+.no-pointer>div,
+a>div {
 	cursor: pointer !important;
+}
+a.disabled {
+	pointer-events: none;
 }
 
 // @media #{$dpiquery_0} {
@@ -68,19 +71,19 @@ a > div {
 
 @media #{$mediaquery_0} {
 	html {
-		font-size: 100%;
+		font-size: 62.5%;
 	}
 }
 
 @media #{$mediaquery_1} {
 	html {
-		font-size: 85%;
+		font-size: 62.5%;
 	}
 }
 
 @media #{$mediaquery_2} {
 	html {
-		font-size: 72%;
+		font-size: 62.5%;
 	}
 }
 
@@ -152,6 +155,12 @@ svg-icon {
 button {
 	letter-spacing: 0.1em;
 }
+
+// for bootstrap hamburger menu touch input
+.dropdown-backdrop{
+	z-index: 0;
+}
+
 
 .vtr-page {
 	height: 100%;
@@ -292,6 +301,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	font-family: "Segoe UI";
+	@media #{$mediaquery_xl} {
+		max-width: 20rem;
+	}
 
 	.tooltip-inner {
 		padding: 1.2rem;
@@ -376,6 +388,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-dialog {
 		max-width: 500px;
 		margin-top: 8rem;
+
 		.modal-content {
 			border-radius: $border_radius;
 		}
@@ -401,6 +414,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		border-radius: 1rem;
 		background: $light;
 		padding: 4rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+			border-radius: 1rem
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+			border-radius: 1rem;
+		}
+
+
 	}
 }
 
@@ -469,6 +492,45 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		padding: 4rem;
 	}
 }
+
+.modern-preload-modal {
+	.modal-dialog {
+		max-width: 85%;
+		margin: 1rem auto 0;
+		// margin: auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-dialog-centered {
+		min-height: calc(100vh - 2rem);
+	}
+
+	.modal-content {
+		background: none;
+		padding: 0;
+		// overflow: hidden;
+	}
+}
+
+.apps-for-you-dialog {
+	.modal-dialog {
+		max-width: 75%;
+		margin: 1rem auto 0;
+		overflow-y: initial !important;
+	}
+
+	.modal-dialog-centered {
+		min-height: calc(100vh - 2rem);
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 3rem 0 0 4rem;
+		overflow: hidden;
+	}
+}
+
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
@@ -619,7 +681,21 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .About-Modal {
 	.modal-dialog {
-		// max-width: 75%;
+		width: 47.8rem;
+		margin: 1.75rem auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: none;
+		border: none;
+	}
+}
+
+.Find-Us-Modal {
+	.modal-dialog {
+		width: 55rem;
 		margin: 1.75rem auto;
 		overflow-y: initial !important;
 	}
@@ -634,8 +710,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .feedback-modal {
 	.modal-dialog {
 		margin: 1.75rem auto;
-		overflow: auto;
-		// max-width: 70% !important;
+		width: 52rem;
 	}
 
 	.modal-content {
@@ -643,8 +718,23 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background: none;
 		border: none;
 	}
+
+	.modal-dialog-centered {
+		height: calc(100% - 3.5rem);
+		min-height: auto;
+	}
 }
 
+.cancel-modal {
+	.modal-dialog {
+		max-width: 27%;
+	}
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 1.5rem;
+	}
+}
 /*----- onclick-tooltip-style------*/
 .tooltip-click {
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
@@ -756,8 +846,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 
 .Welcome-container-Modal {
-	.modal-content {
-		border-radius: $border_radius;
+	.modal-dialog {
+		max-width: 70rem;
+		.modal-content {
+			border-radius: $border_radius;
+		}
 	}
 }
 
@@ -799,4 +892,152 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .is-android {
 	margin-top: 2rem !important;
+}
+
+.focus-blue-outline {
+	position: relative;
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	&:focus::after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: -0.4rem;
+		top: -0.4rem;
+		border-radius: 500px;
+		width: calc(100% + 0.8rem);
+		height: calc(100% + 0.8rem);
+		border: thin solid $menu_hover;
+	}
+}
+
+.tabset1 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+	background: $shade_lightest !important;
+	color: $shade_darkest !important;
+	border-radius: 0 !important;
+	border-color: none !important;
+	padding-bottom: 2px;
+  }
+  .tabset1 .nav-tabs .nav-link
+  {
+	border: none !important;
+	border-right: 1px solid #ffffff !important;
+  }
+  .tabset1 .nav-link {
+	//margin-bottom: 25px !important;
+	color:  $shade_darkest !important;
+
+	padding:2rem !important;
+	font-size: 1.5rem;
+  }
+  .tabset1 .nav-tabs{
+	border-color: 0 !important;
+	border-bottom: 0 !important;
+	background: $shade_lighter !important;
+  }
+  .tabset1 .tab-content > .tab-pane
+  {
+	  padding: 2rem !important;
+	background: $shade_lightest !important;
+  }
+
+/*koch code*/
+.pc-performance-block{
+	.tabset-main{
+		width: 100%;
+		& > .nav-tabs{
+			display: flex;
+			justify-content: space-between !important;
+			padding: 1.5rem;
+			border-radius: 0.8rem;
+			background: $main_darkest;
+			margin-bottom: 8rem;
+			.nav-item{
+				width: calc(25% - 1rem);
+				.nav-link {
+					height: 22rem;
+					border-radius: 0.5rem;
+					background: $main_darker;
+					border: none !important;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					align-items: center;
+					font-size: 1.8rem;
+					text-transform: uppercase;
+					padding: 3.5rem;
+					text-align: center;
+					font-weight: $weight_bold;
+					line-height: 2rem;
+					color: $main_lightest;
+					position: relative;
+					z-index: 5;
+					.ng-fa-icon {
+						height: 12rem;
+						width: 12rem;
+						line-height: 12rem;
+						text-align: center;
+						font-size: 8rem;
+						color: $main_light;
+					}
+					&::before {
+						content: '';
+						position: absolute;
+						display: block;
+						// height: 4rem;
+						// height: 4rem;
+						font-size: 6rem;
+						color: $main_darkest;
+						//transform: rotate(90deg);
+						bottom: -3rem;
+						left: calc(50% - 2rem);
+						z-index: 0;
+						opacity: 0;
+						height: 0;
+						width: 0;
+						border-left: 20px solid transparent;
+						border-right: 20px solid transparent;
+						border-top: 20px solid $main_darkest;
+					}
+					&.active{
+						background: $main_lightest !important;
+						color: $main_darker;
+						.ng-fa-icon {
+							color: $main_light;
+						}
+						&::before {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		& > .tab-content{
+			vtr-ui-smart-tune-pc{
+				.tabset1 {
+					.nav-tabs {
+						display: flex;
+						justify-content: space-between !important;
+						.nav-item{
+							flex: 1;
+							.nav-link {
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								padding: 2rem 4rem !important;
+								line-height: 1.4rem;
+								.ng-fa-icon {
+									margin-right: 1.5rem;
+									font-size: 3rem;
+									color: $main_light;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

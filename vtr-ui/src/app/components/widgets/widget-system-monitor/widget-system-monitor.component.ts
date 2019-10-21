@@ -4,12 +4,12 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
-import { SystemStatus } from 'src/app/data-models/gaming/system-status.model'
+import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 
 @Component({
 	selector: 'app-widget-system-monitor',
 	templateUrl: './widget-system-monitor.component.html',
-	styleUrls: ['./widget-system-monitor.component.scss']
+	styleUrls: [ './widget-system-monitor.component.scss' ]
 })
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuUseFrequency: string;
@@ -29,38 +29,39 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public memoryModuleName: string;
 	public ramOver: string;
 	public ramUsage: number;
-	public memoryUsage: number;
-	public showIcon: boolean = false;
+	public memoryUsage = 30;
+	public showIcon = false;
 	public showAllHDs = false;
 	public gpuUsage: number;
-	public cpuUsage: number;
+	public cpuUsage = 1;
 	public diskUsage: number;
 	public memoryUsed: string;
 	public loop: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
 	public SystemStatusObj: any = new SystemStatus();
-	@Input() cpuCurrent = .4;
+	@Input() cpuCurrent = 0.22;
 	@Input() cpuMax = 2.2;
-	@Input() gpuCurrent = 1.8;
+	@Input() gpuCurrent = 0.33;
 	@Input() gpuMax = 3.3;
-	@Input() ramCurrent = 15.7;
-	@Input() ramMax = 32;
+	@Input() ramCurrent = 0;
+	@Input() ramMax = 0;
 	public hds: any = [];
-	public defaultHds = [{
-		capacity: 476,
-		diskUsage: '14',
-		hddName: 'LENSE30512GMSP34MEAT3TA',
-		isSystemDisk: 'true',
-		type: 'SSD',
-		usedDisk: 71
-	}];
+	public defaultHds = [
+		{
+			capacity: 476,
+			diskUsage: '14',
+			hddName: 'LENSE30512GMSP34MEAT3TA',
+			isSystemDisk: 'true',
+			type: 'SSD',
+			usedDisk: 71
+		}
+	];
 
 	constructor(
 		private hwInfoService: HwInfoService,
 		private commonService: CommonService,
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private gamingCapabilityService: GamingAllCapabilitiesService
-
 	) { }
 
 	// CPU Panel Data
@@ -74,10 +75,10 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuCapacity);
 	}
 	SetcpuCapacityCache(cpuCapacityCache) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.cpuCapacity, cpuCapacityCache)
+		this.commonService.setLocalStorageValue(LocalStorageKey.cpuCapacity, cpuCapacityCache);
 	}
 	GetcpuUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuUsage);
+		return this.commonService.getLocalStorageValue(LocalStorageKey.cpuUsage, this.cpuUsage);
 	}
 	SetcpuUsageCache(cpuUsageCache) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.cpuUsage, cpuUsageCache);
@@ -104,7 +105,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.gpuMaxFrequency, gpuMaxFrequenceyCache);
 	}
 	GetgpuUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuUsage);
+		return this.commonService.getLocalStorageValue(LocalStorageKey.gpuUsage, this.gpuCurrent * 100 / this.gpuMax);
 	}
 	SetgpuUsageCache(gpuUsageCache) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.gpuUsage, gpuUsageCache);
@@ -130,7 +131,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ramCapacity, ramCapacityCache);
 	}
 	GetramUsageCache(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.ramUsage);
+		return this.commonService.getLocalStorageValue(LocalStorageKey.ramUsage, this.memoryUsage);
 	}
 	SetramUsageCache(ramUsageCache) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.ramUsage, ramUsageCache);
@@ -181,7 +182,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.isSystemDisk, isSystemDisk);
 	}
 
-
 	public getLocalSystemCache() {
 		if (this.GetcpuBaseFrequencyCache() !== undefined) {
 			this.cpuCurrent = this.GetcpuBaseFrequencyCache();
@@ -190,7 +190,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.cpuMax = this.GetcpuCapacityCache();
 		}
 		if (this.GetcpuUsageCache() !== undefined) {
-			this.cpuUsage = this.GetcpuUsageCache();
+			this.cpuUsage = this.GetcpuUsageCache() / 100;
 		}
 		if (this.GetcpuoverCache() !== undefined) {
 			this.cpuover = this.GetcpuoverCache();
@@ -202,7 +202,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.gpuMax = this.GetgpuMaxFrequencyCache();
 		}
 		if (this.GetgpuUsageCache() !== undefined) {
-			this.gpuUsage = this.GetgpuUsageCache();
+			this.gpuUsage = this.getStackHeight(this.GetgpuUsageCache() || 1);
 		}
 		if (this.GetgpuModulenameCache() !== undefined) {
 			this.gpuModuleName = this.GetgpuModulenameCache();
@@ -214,7 +214,9 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.ramMax = this.GetramCapacityCache();
 		}
 		if (this.GetramUsageCache() !== undefined) {
-			this.ramUsage = this.GetramUsageCache();
+			// this.ramUsage = this.GetramUsageCache();
+			this.memoryUsage = this.getStackHeight(this.GetramUsageCache());
+			console.log('CACHE MEMORY USAGE => ', this.memoryUsage);
 		}
 		if (this.GetramaOverCache() !== undefined) {
 			this.ramOver = this.GetramaOverCache();
@@ -237,16 +239,12 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		if (this.GethddNameCache() !== undefined) {
 			this.hddName = this.GethddNameCache();
 		}
-
-
 	}
 	public async getDynamicInfoService() {
 		try {
 			const hwInfo = await this.hwInfoService.getDynamicInformation();
 			this.formDynamicInformation(hwInfo);
-		} catch (err) {
-			console.log(`ERROR in getDynamicInfoService() of  widget-system-monitor.component`, err);
-		}
+		} catch (err) { }
 	}
 
 	public formDynamicInformation(hwInfo: any) {
@@ -258,11 +256,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.cpuUsage = hwInfo.cpuUsage / 100;
 			}
 			if (hwInfo.memoryUsage !== null) {
-				this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
+				 this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
+				 console.log('UPDATED MEMORY USAGE => ', this.memoryUsage);
 			}
 			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
-
 			}
 
 			this.SystemStatusObj.cpuBaseFrequency = this.cpuCurrent;
@@ -280,9 +278,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.SystemStatusObj.ramUsage = hwInfo.memoryUsage;
 			this.initialiseDisksList(hwInfo.diskList);
 			this.setFormDynamicInformationCache(hwInfo);
-		} catch (err) {
-			console.log(`ERROR in formDynamicInformation() of widget-system-monitor.component`, err);
-		}
+		} catch (err) { }
 	}
 
 	public initialiseDisksList(diskList: any[] = []) {
@@ -321,7 +317,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public getMachineInfoService() {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
-				console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 				if (hwInfo.cpuBaseFrequence !== '') {
 					this.cpuMax = hwInfo.cpuBaseFrequence;
 				}
@@ -332,7 +327,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				}
 				this.SystemStatusObj.gpuMaxFrequency = this.gpuMax;
 				this.commonService.setLocalStorageValue(LocalStorageKey.gpuMaxFrequency, this.gpuMax);
-				if (hwInfo.memorySize !== '') {
+				if (hwInfo.memorySize) {
 					this.ramMax = hwInfo.memorySize;
 				}
 				this.SystemStatusObj.ramCapacity = this.ramMax;
@@ -350,9 +345,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.SystemStatusObj.ramOver = this.ramOver;
 				this.commonService.setLocalStorageValue(LocalStorageKey.ramOver, this.ramOver);
 			});
-		} catch (error) {
-			console.error(error.message);
-		}
+		} catch (error) { }
 	}
 
 	convertToBoolean(input: string): boolean | undefined {
@@ -402,8 +395,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		if (pct > 1) {
 			pct = 1;
 		}
-		const deg = parseFloat((360 * (pct - .5)).toFixed(1));
-		if (pct > .5) {
+		const deg = parseFloat((360 * (pct - 0.5)).toFixed(1));
+		if (pct > 0.5) {
 			return deg;
 		} else {
 			return 0;
@@ -422,8 +415,12 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	getStackHeight(pct) {
-		if (pct > 100) { pct = 100; }
-		if (pct < 0) { pct = 0; }
+		if (pct > 100) {
+			pct = 100;
+		}
+		if (pct < 0) {
+			pct = 0;
+		}
 		const height = 100 - pct;
 		return height;
 	}
@@ -438,7 +435,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	getFloorPct(current, max) {
-		const pct = Math.floor((current / max) * 100);
+		const pct = Math.floor(current / max * 100);
 		return pct;
 	}
 }

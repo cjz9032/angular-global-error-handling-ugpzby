@@ -1,17 +1,18 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { PrivacyScoreService } from './privacy-score.service';
-import { filter, map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { combineLatest } from 'rxjs';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../../common/services/analytics/task-action-with-timeout.service';
+import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { ScoreShowSpinnerService } from './score-show-spinner.service';
 
 @Component({
 	selector: 'vtr-privacy-score',
@@ -27,20 +28,23 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			private you are online.`;
 	btnText = 'Define my score';
 	privacyLevel = 'undefined';
-	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
+	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.png';
 	score;
 
-	isFirstTimeVisitor$ = this.userDataGetStateService.userDataStatus$.pipe(
+	isShowScore$ = this.scoreShowSpinnerService.isShow$;
+
+	isFirstTimeVisitor$ = this.appStatusesService.globalStatus$.pipe(
 		map((userDataStatus) => userDataStatus.appState === AppStatuses.firstTimeVisitor)
 	);
 
 	constructor(
 		private privacyScoreService: PrivacyScoreService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private userDataGetStateService: UserDataGetStateService,
+		private appStatusesService: AppStatusesService,
 		private vantageCommunicationService: VantageCommunicationService,
 		private changeDetectorRef: ChangeDetectorRef,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
+		private scoreShowSpinnerService: ScoreShowSpinnerService,
 		private commonPopupService: CommonPopupService) {
 	}
 
@@ -49,11 +53,17 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			this.privacyScoreService.newPrivacyScore$,
 			this.isFirstTimeVisitor$
 		]).pipe(
-			filter(([score, isFirstTimeVisitor]) => !isFirstTimeVisitor),
 			takeUntil(instanceDestroyed(this)),
-		).subscribe(([score]) => {
-			this.setDataAccordingToScore(score);
-			this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
+		).subscribe(([score, isFirstTimeVisitor]) => {
+			if (isFirstTimeVisitor) {
+				this.setDataAccordingToScore(0);
+			}
+
+			if (!isFirstTimeVisitor) {
+				this.setDataAccordingToScore(score);
+				this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
+			}
+
 			this.changeDetectorRef.detectChanges();
 		});
 	}
@@ -62,7 +72,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	}
 
 	setDataAccordingToScore(score) {
-		const { privacyLevel, title, text } = this.privacyScoreService.getStaticDataAccordingToScore(score);
+		const {privacyLevel, title, text} = this.privacyScoreService.getStaticDataAccordingToScore(score);
 		this.score = score;
 		this.privacyLevel = privacyLevel;
 		this.title = title;

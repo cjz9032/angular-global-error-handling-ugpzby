@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM-overklokking",
                     "popup": {
                         "text": "Endringen vil være effektive etter at du har startet maskinen på nytt.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Installasjon av driver er påkrevd",
                         "text": "Installer driveren for å aktivere RAM-overklokking (krever omstart)",
-                        "button": "Installer",
-                        "link": "avbryt",
+                        "button": "INSTALLER",
+                        "link": "AVBRYT",
                         "networkBoostText": "Du må installere driveren for nettverks-forbedring for å kunne aktivere den",
                         "hybridModeText": "Du må installere driveren for hybrid-modus for å kunne aktivere den",
                         "cpuOverclockText": "Installer driveren for å aktivere CPU-overklokking (krever omstart)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Installasjon av driver er påkrevd",
                         "text": "Installer driveren for å aktivere belysning (krever omstart)",
-                        "button": "Installer",
-                        "link": "avbryt"
+                        "button": "INSTALLER",
+                        "link": "AVBRYT"
                     },
                     "lightingColorMessage": {
                         "text": "Valg av farge er ikke tilgjengelig for denne effekten."
@@ -96,7 +96,7 @@
                     "info": "INFORMASJON"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Hurtiginnstillinger"
                 }
             }
         },
@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -146,8 +156,8 @@
                 },
                 "recorded": {
                     "title": "MAKROTAST FOR ",
-                    "deleteKey": "Slett tast",
-                    "clear": "Nullstill",
+                    "deleteKey": "Slett",
+                    "clear": "FJERN",
                     "intervalStatus": {
                         "keep": {
                             "title": "Behold forsinkelse",
@@ -228,13 +238,35 @@
                     "body": "Innspillingen blir tidsavbrutt hvis inndata stopper i mer enn ti sekunder."
                 },
                 "confirmButton": {
-                    "btnClear": "Nullstill",
-                    "btnCancel": "Avbryt"
+                    "btnClear": "FJERN",
+                    "btnCancel": "AVBRYT"
                 },
                 "btnOk": "OK"
             },
             "recording": {
                 "title": "Spiller inn makrotast for"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -314,7 +346,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Av"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -328,7 +360,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Av"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -368,26 +400,184 @@
                 "text7": {
                     "title": "Farge"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Lukk automatisk",
+            "introLine": "Tilføy apper du vil lukke når spill startes. Frigjør ubrukte ressurser for å maksimere ytelsen i spill. Merk: Denne funksjonen lukker appen fullstendig. Derfor må alltid kontrollere at du har lagret arbeidet ditt.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Slå på automatisk lukking?",
+                "body": "Apper du har lagt til lukkes når du spiller, og frigjør ressurser for spilling.",
+                "checkedTitle": "Ikke spør igjen",
+                "btnConfirm": "Slå på",
+                "btnCancel": "Ikke nå"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Legg til apper som skal lukkes automatisk",
+                "body": "Bare apper som kjører vil vises i listen nedenfor."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Legg til",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Ingen kjørende apper å legge til",
+                "body": "Viser bare apper som kjører. Start appen du vil legge til, og kom tilbake."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
+            }
+        },
+        "networkBoost": {
+            "title": "Nettverks-forbedring",
+            "introLine": "Nettverksforbedring setter automatisk prioriteten på spill til høyeste nivå i nettverket for å maksimere hastigheten. Hvis du bruker apper som Twitch eller Discord under spilling, bør du legge dem til nedenfor slik at de også får prioritet på nettverket.",
+            "modalTurn": {
+                "title": "Slå på nettverksforbedring?",
+                "body": "Slå på nettverksforbedring? Apper du legger til deler mer nettverk når de kjøres.",
+                "checkedTitle": "Ikke spør igjen",
+                "btnConfirm": "Slå på",
+                "btnCancel": "Ikke nå"
+            },
+            "modalAddApps": {
+                "title": "Legg apper til i nettverksforbedring",
+                "body": {
+                    "part1": "Du kan legge til opptil fem apper til som du vil gi et løft",
+                    "part2": "av",
+                    "part3": "lagt til"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
+                }
             }
         }
     },
@@ -411,8 +601,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Støtte",
-            "homeSecurity": "Tilkoblede hjem",
-            "privacy": "Personvern"
+            "privacy": "Personvern",
+            "beta": {
+                "title": "beta"
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Sikkerhetsrådgivning",
@@ -451,6 +644,9 @@
             "expand": "Utvid",
             "loader": "Henter <br> status",
             "loading": "Laster..."
+        },
+        "app-update": {
+            "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
         }
     },
     "privacy": {
@@ -518,10 +714,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Øyebeskyttelse",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage har ikke tilgang til kamera.og mikrofon.",
+                "accessUrl": "Gå til Windows-innstillinger for å gi tilgang",
+                "microphoneNote": "Lenovo Vantage har ikke tilgang til mikrofon.",
+                "cameraPrivacyNote": "Lenovo Vantage har ikke tilgang til kamera."
             }
         },
         "systemStatus": {
@@ -613,7 +809,6 @@
         "deviceSettings": {
             "helpful": "Nyttig innhold",
             "batteryGauge": {
-                "title": "BATTERIMÅLER",
                 "subtitle": "Batterihelse",
                 "hours": "timer",
                 "hour": "time",
@@ -676,22 +871,22 @@
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
                     "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
-                    "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
-                    "LimitedACAdapterSupport": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
+                    "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
+                    "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
                     "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Ta det ut av maskinen og avkjøl det til romtemperatur.",
                     "PermanentError": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
+                    "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
-                "updating": "Oppdatering",
-                "voltageError": "Feil batterispenning",
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "For detaljer se",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Strøm",
@@ -766,7 +961,8 @@
                             "battery&Quite": "BATTERI OG STILLEGÅENDE"
                         }
                     },
-                    "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse"
+                    "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
+                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig»."
                 },
                 "powerSettings": {
                     "title": "Strøminnstillinger",
@@ -779,6 +975,11 @@
                         "title": "Enkel gjenopptakelse",
                         "description": "Aktiver denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte.",
                         "tooltip": "Denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte. Når den er aktivert, går datamaskinen i en modus med lavt strømforbruk når du lukker lokket, men gjenopptar umiddelbart hvis du åpner lokket innen 15 minutter etter at du lukket det. Denne funksjonen gjør også at den bærbare datamaskinen forsøker å fullføre aktiviteter som venter (som å sende e-post eller laste ned en fil) før systemet går i hvilemodus."
+                    },
+                    "flipToBoot": {
+                        "title": "Vend for å starte",
+                        "description": "Med denne funksjonen kan du slå på datamaskinen når du åpner lokket, på samme måte som når du trykker på på-knappen. ",
+                        "tooltip": "Denne funksjonen starter datamaskinen automatisk når du åpner lokket.  Dette er spesielt nyttig hvis du har aktivert ansiktspålogging i Windows Hello."
                     },
                     "or": "Eller"
                 },
@@ -799,8 +1000,8 @@
                         "readMoreText": "Les mer.",
                         "noteInfo": " Batteriladeterskelen er fremdeles ikke fullstendig aktiv. Koble fra maskinen din og la batterinivået gå ned til eller under terskelen for ladestopp.",
                         "settings": {
-                            "title1": "Terskel for innebygd batteri",
-                            "title2": "Terskel for avtakbart batteri"
+                            "title1": "Terskel for primærbatteri",
+                            "title2": "Terskel for sekundærbatteri"
                         },
                         "popup": {
                             "title": "Aktiver batteriladeterskel",
@@ -833,7 +1034,43 @@
                         "title": "Strømmodus for fly",
                         "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen.",
                         "checkBoxDesc": "Automatisk oppdagelse",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -972,7 +1209,7 @@
                             "warm": "Varm (bedre for øynene)",
                             "cold": "Kaldt"
                         },
-                        "reset": "Tilbakestill temperatur",
+                        "reset": "Tilbakestill",
                         "tooltip": "Øyebeskyttelsesmodus justerer automatisk skjermens fargetemperatur for å filtrere ut blått lys og redusere belastningen på øynene.",
                         "onSunsetToSunriseScheduleDescription": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "note": {
@@ -986,7 +1223,7 @@
                             "warm": "Varm (bedre for øynene)",
                             "cold": "Kaldt"
                         },
-                        "reset": "Tilbakestill temperatur",
+                        "reset": "Tilbakestill",
                         "tooltip": "Øyebeskyttelsesmodus justerer automatisk skjermens fargetemperatur for å filtrere ut blått lys og redusere belastningen på øynene.",
                         "onSunsetToSunriseScheduleDescription": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
                         "note": {
@@ -1035,7 +1272,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klikk her for å tilbakestille Kameraegenskaper til standardinnstillingene.",
-                        "reset": "Gjenopprett fabrikkinnstillinger"
+                        "reset": "Tilbakestill"
                     },
                     "brightness": "Lysstyrke",
                     "contrast": "Kontrast",
@@ -1060,7 +1297,7 @@
             "inputAccessories": {
                 "title": "Inndata og tilbehør",
                 "subtitle": "Innstillinger for inndata og tilbehør",
-                "description": "Lenovo Intelligent Sensing kombinerer de ulike sensorene på datamaskinen for å gjenkjenne aktivitetene dine og justere innstillingene for optimal strømstyring",
+                "description": "I denne delen kan du definere de mest brukte tastatur- og musefunksjonene. Utforsk flere funksjoner her.",
                 "inputAccessory": {
                     "title": "Smarttastatur",
                     "hiddenKeyboardFunctions": {
@@ -1091,6 +1328,51 @@
                         "tittle": "Fn + mellomrom",
                         "description": "endre status for tastaturets baklys",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Funksjoner på tastaturets øverste rad",
+                        "showAdvSettings": "VIS AVANSERTE INNSTILLINGER",
+                        "hideAdvSettings": "SKJUL AVANSERTE INNSTILLINGER",
+                        "description": "På tastaturets øverste rad finner du de følgende to funksjonene. Velg ønsket funksjon:",
+                        "subSection": {
+                            "description": "Trykk på Fn+Esc for å veksle mellom de to funksjonene over.",
+                            "radioButton": {
+                                "sFunKey": "SPESIALFUNKSJON",
+                                "fnKey": "FUNKSJON FOR F1–F12"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Reversere den standard primærfunksjonen",
+                            "description": "Når på vil den standard primærfunksjonen endres fra fabrikkinnstillingene til det motsatte. Start datamaskinen på nytt for at endringene skal tre i kraft."
+                        },
+                        "subSectionThree": {
+                            "title": "Slik bruker du Fn-tastekombinasjoner",
+                            "description": "Ved bruk av den normale metoden må du trykke på Fn+funksjonstaster for å bruke Fn-tastekombinasjonene. Med metoden for treg Fn-tast kan du holde inne Fn-tasten ved bare å trykke på den (i stedet for å holde den inne). Trykk deretter på ønsket funksjonstast. Dette tilsvarer å trykke på funksjonstasten og Fn-tasten samtidig.",
+                            "radioButton": {
+                                "nMehod": "Normal metode",
+                                "fnKeyMehod": "Metoden for treg Fn-tast"
+                            },
+                            "note": "Når du trykker to ganger på Fn-tasten, låses Fn-tasten i nedtrykket posisjon til du trykker på den igjen. Fn Lock-indikatoren lyser når Fn-tasten er låst. Du kan trykke direkte på ønsket funksjonstast for å bruke funksjonen som ikke er standard."
+                        },
+                        "popup": {
+                            "title": "Start datamaskinen på nytt",
+                            "description": "Du må starte datamaskinen på nytt hvis du endrer standardfunksjonen for den øverste raden. Er du sikker på at du vil starte på nytt?",
+                            "reboot": "START PÅ NYTT",
+                            "cancel": "IKKE NÅ"
+                        }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Hurtigtastfunksjoner for VoIP",
+                        "description": {
+                            "main": "Denne funksjonen lar deg besvare eller avvise VoIP-anrop ved å trykke på hurtigtastene på tastaturet:",
+                            "f10": "F10: Besvar anropet",
+                            "f11": "F11: Avvis anropet eller legg på"
+                        },
+                        "tooltip": "For øyeblikket støttes denne funksjonen bare av Skype for Business 2016 og Microsoft Teams 1.0.<br>Du må laste ned og installere appene før du kan bruke funksjonen.",
+                        "hasInstalledAppsDescription": "Velg appen du vil bruke hurtigtastene i:",
+                        "noInstalledAppsDescription": "Denne funksjonen støtter bare appene under: ",
+                        "hasInstalledAppsNote": "Merk: I Microsoft Teams 1.0 kan F11 ikke brukes til å legge på.",
+                        "noInstalledAppsNote": "Merk: Du må laste ned og installere appene før du kan bruke funksjonen."
                     }
                 },
                 "userDefinedKey": {
@@ -1118,10 +1400,13 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
+                    "more": "MER",
+                    "control1": "PEKEPLATEKONTROLLER",
+                    "control2": "MUSEKONTROLLER",
+                    "control3": "TRACKPOINT-KONTROLLER"
                 }
             }
         },
@@ -1163,6 +1448,17 @@
                             "slow": "Langsom"
                         },
                         "toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIKTSGJENKJENNING",
+                        "caption": "Du kan aktivere funksjonen for ansiktsgjenkjenning og gi den tilgang til kameraet. Denne funksjonen tar bilde av deg for å vite når du er til stede, og når du har forlatt enheten uten tilsyn. Disse dataene behandles lokalt på enheten. Lenovo har verken tilgang til eller bruker dem.",
+                        "checkBox": "Slå på kameraet og aktiver denne funksjonen",
+                        "note": {
+                            "permission": "Lenovo Vantage har ikke tilgang til kamera. Avmerkingsboksen vil ikke fungere.",
+                            "privacyMode": "Lenovo Vantage Personvernmodus for kamera er på. Avmerkingsboksen vil ikke fungere.",
+                            "windowsLink": "Gå til Windows-innstillingene for å gi tilgang",
+                            "privacyLink": "Gå til Personvernmodus for kamera for å slå av"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1170,7 +1466,8 @@
                     "caption": "Automatisk avstandsjustering vil automatisk oppdatere avstandsfølsomheten via en AI-motor.",
                     "options": {
                         "near": "Kort avstand",
-                        "far": "Lang avstand"
+                        "far": "Lang avstand",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1188,14 +1485,19 @@
                     "description1": "Denne funksjonen er avhengig av Windows Hello. Pass på at ansiktsgjenkjenning er aktivert i Windows-innstillingene.",
                     "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
                     "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
-                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Automatisk pålogging med det infrarøde kameraet vil ikke fungere.",
-                    "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk."
+                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
+                    "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
+                    "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
                     "screenTimeoutSettings": "Gå til innstillingene for tidsutkobling av skjermen"
                 },
-                "resetToDefault": "TILBAKESTILL TIL STANDARDINNSTILLINGENE"
+                "resetToDefault": "Tilbakestill",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skjerm",
@@ -1346,6 +1648,7 @@
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
             "title": "Et oppdatert system er et velfungerende system.",
+            "installingTitle": "Ikke sett maskinen i hvile- eller dvalemodus under oppdateringer.",
             "last": "Sist oppdatert: ",
             "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
@@ -1421,85 +1724,6 @@
             "fileNotFoundException": "Fant ikke fil."
         }
     },
-    "homeSecurity": {
-        "title": "Sikkerhet for tilkoblede hjem",
-        "notification": {
-            "recent": "Nylige sikkerhetsvarsler",
-            "notifications": "Varsler"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Beskytt enhetens økosystem",
-            "thisDevice": "Denne enheten",
-            "allDevices": "Alle enheter",
-            "protected": "Beskyttet",
-            "notProtected": "Ikke beskyttet",
-            "trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
-            "upgrade": "oppgrader",
-            "inEcosystem": "I økosystem",
-            "ecosystemEnable": "Økosystem aktivert",
-            "inTrial": "I prøveperiode",
-            "addEcosystem": "Legg til økosystem",
-            "enableEcosystem": "Aktiver økosystem",
-            "startTrial": "Start prøveperiode",
-            "fullAccess": "Full tilgang",
-            "renew": "Forny"
-        },
-        "overview": {
-            "overviewBlockTitle": "Vis sikkerhetsoversikt for økosystemet",
-            "allDevices": "Alle enheter",
-            "myDevice": "Min enhet",
-            "thisComputer": "Denne datamaskinen",
-            "secure": "SIKKER",
-            "needAttention": "TRENGER OPPMERKSOMHET",
-            "manageAccount": "Administrer konto",
-            "devices": "Enheter",
-            "seeProtectedDevices": "Se beskyttede enheter",
-            "addDevice": "legg til enhet",
-            "trialExpired": "Prøveversjonen er utløpt - Oppgrader for å beskytte alle enhetene dine",
-            "upgrade": "oppgrader",
-            "freeTrial": "Beskytt alle enhetene dine - Gratis 30-dagers prøveperiode",
-            "startTrial": "Start prøveperiode"
-        },
-        "tour": {
-            "back": "Tilbake",
-            "skip": "Hopp over",
-            "start": "START OMVISNING",
-            "done": "FERDIG",
-            "welcome1": "Velkommen",
-            "welcomeDesc1": "Med bare noen få klikk kan du beskytte PC-er, mobilenheter og tilkoblede enheter tilhørende deg og familien din.",
-            "welcomeDescStart": "Start en 30-dagers gratis prøveperiode nå.",
-            "welcome2": "Eksklusivt for Vantage",
-            "welcomeDesc2": "Sikkerhet for tilkoblede hjem er innebygd i Vantage for rask tilgang til beskyttelsesstatusen for økosystemet og sikkerhetsvarsler.",
-            "create": "Opprett en konto",
-            "lenovoId": "med Lenovo ID-en",
-            "notifications": "Motta <b>varslinger</b> om hjemmets status",
-            "monitor": "<b>Overvåk</b> sikkerheten til familiens enheter",
-            "peaceOfMind": "Få <b>ro i sjelen</b> med vissheten om at du alltid er beskyttet.",
-            "signInLenovoId": "REGISTRER DEG MED LENOVO ID",
-            "haveLenovo": "Jeg har ikke <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Opprett en Lenovo ID",
-            "without": "Fortsett <b>uten en konto</b>",
-            "skipAndTrial": "HOPP OVER OG START PRØVEPERIODE",
-            "alreadyHave": "Jeg har allerede en <b>Sikkerhet for tilkoblede hjem-konto</b>",
-            "loginCHS": "Logg på eksisterende Sikkerhet for tilkoblede hjem-konto",
-            "locationTitle": "Aktiver posisjonssporing",
-            "locationPermission": "For at denne funksjonen skal fungere på riktig måte, må du aktivere posisjonssporing for denne enheten"
-        },
-        "accountStatus": {
-            "title": "Min Sikkerhet for tilkoblede hjem",
-            "startTrial": "Start prøveperiode",
-            "manageAccount": "Administrer konto",
-            "upgradeAccount": "Oppgrader konto",
-            "inTrialDetail1": "{{remainingDays}} dager til prøveperioden er over.",
-            "inTrialDetail2": "Du er for tiden i prøveperioden. Du har ubegrenset tilgang til alle funksjoner.",
-            "trialExpiredDetail1": "Prøveperioden er utløpt.",
-            "trialExpiredDetail2": "Prøveperioden er utløpt og enhetens økosystem er ikke lenger beskyttet.",
-            "upgradedDetail1": "Kontoen din er aktiv til {{expiredDate}}.",
-            "upgradedDetail2": "Enhetens økosystem er beskyttet.",
-            "localAccountDetail2": "Klikk på knappen nedenfor for å starte en 30-dagers prøveperiode.",
-            "alreadyHaveAccount": "Har du allerede en aktiveringskode?"
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Få støtte"
@@ -1513,6 +1737,7 @@
             "statusWarrantyNotFound": "Fant ikke garanti",
             "yearDepotWarranty": "års servicesentergaranti",
             "warrantyDetails": "Garantidetaljer:",
+            "warrantyDashboardDetails": "Garantidetaljer",
             "startDate": "Startdato: ",
             "endDate": "Sluttdato: ",
             "status": "Status: ",
@@ -1588,56 +1813,78 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILBAKE",
-                "why": "Hvorfor McAfee?",
-                "recommends": "Lenovo anbefaler å beskytte alle enhetene dine med McAfee, som gir deg følgende:",
-                "award": "Prisbelønt beskyttelse mot de nyeste truslene på nettet, inkludert løsepengevirus og skadelig programvare",
-                "dedicated": "Dedikert sikkerhet som gjennomgående gir bedre resultater enn Defender og andre ledende antivirusleverandører",
-                "deviceToCloud": "Skyteknologi som ikke gjør PC-en tregere",
-                "poweredBy": "Leveres av McAfee",
-                "privacyTerms": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
-                "mcafeePremium": "McAfee Premium-beskyttelse",
+                "recommends": "Hvorfor Lenovo anbefaler å beskytte alle enhetene dine med <b>McAfee</b>",
+                "award": "Prisbelønt antivirus",
+                "mcafeePremium": "McAfee LiveSafe-beskyttelse",
                 "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
                 "virusScan": "VIRUSSØK",
                 "firewall": "BRANNMUR",
                 "disabled": "DEAKTIVERT",
-                "enableVirusScan": "AKTIVER VIRUSSØK",
-                "enablenFirewall": "AKTIVER BRANNMUR",
-                "enableFirewall": "AKTIVER BRANNMUR"
+                "awardText": "Beskytt den nye Lenovo-PC-en mot trusler på nettet med testet og anerkjent beskyttelse",
+                "performance": "Bunnsolide resultater",
+                "performanceText": "Stabil, presis og pålitelig antivirus som holder deg trygg",
+                "Blazing": "Lynrask ytelse",
+                "BlazingText": "Optimalisert antivirus som verken avbryter eller reduserer hastigheten på Lenovo Vantage-opplevelsen",
+                "privacyTerms": "/   <tag>Personvernpolicy</tag>  |  <tag>Vilkår for bruk</tag>",
+                "notAvailable": "Ikke tilgjengelig"
             },
             "windowsDefender": {
-                "optimallyProtected": "Ikke optimalt beskyttet",
-                "subtitle": "Du blir for øyeblikket beskyttet av Windows Defender.Du kan imidlertid beskyttes bedre med McAfee LiveSafe. Finn ut mer nedenfor.",
-                "learnMore": "FINN UT MER OM McAfee",
-                "windowsProtected": "Windows Defender grunnleggende beskyttelse",
-                "windowsSubtitle": "Windows defender gir grunnleggende beskyttelse for enheten din"
+                "optimallyProtected": "Det ser ut til at du bruker Windows Defender for øyeblikket. Det er ikke noe dårlig valg, men i samarbeid med <b>McAfee</b> tilbyr vi prisbelønt sikkerhet og den beste beskyttelsen mot løsepengevirus, skadelig programvare og virus, slik at du kan <b>beskytte det som er viktigst for deg</b>.",
+                "windowsSubtitle": "Grunnleggende beskyttelse med Windows Defender",
+                "topTip": "Topptips for nettsikkerhet",
+                "topContent": "Finn ut hvordan du kan forsvare deg mot de største truslene på nettet <tag>VIS TIPS</tag>",
+                "view": "VIS TIPS",
+                "buyNow": "Kjøp nå",
+                "buy": "Kjøp, last ned og installer McAfee-virusbeskyttelse i dag for å dra nytte av sikkerhetsfunksjoner på banknivå",
+                "onlyBasic": "Dette er bare det grunnleggende. Selv om du er beskyttet mot noen av truslene på nettet, kan du fremdeles være sårbar overfor andre.",
+                "virus": "Virusbeskyttelse",
+                "homeNetwork": "Beskyttelse av hjemmenettverk",
+                "private": "Privat, anonym surfing",
+                "everyDevice": "Beskyttelse av alle enheter",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Du er for øyeblikket beskyttet av McAfee LiveSafe",
-                "valid": "Gyldig til",
-                "upgrade": "Oppgrader nå",
-                "launch": "START McAfee",
-                "getMacfee": "Få tak i McAfee",
-                "topBenefits": "De beste fordelene til McAfee LiveSafe",
-                "awardTitle": "Prisvinnende antivirus",
-                "awardSubtitle": "Blokkerer virus, skadelig programvare, spionvare, uønskede program og mye mer på PC-en din.",
-                "encryptedTitle": "Kryptert lagring",
-                "encryptedSubtitle": "Beskytt sensitive filer ved å lagre dem med 128-biters kryptering på PC-en.",
-                "identityTitle": "Beskyttelse mot identitetstyveri",
-                "identitySubtitle": "Ta kontrollen, og beskytt identiteten din mot tyveri og svindel.",
-                "supportTitle": "GRATIS kundestøtte",
-                "supportSubtitle": "Du er dekket via telefon, chatting eller via nettet så lenge du abonnerer.",
-                "antiTitle": "Antispam",
-                "antiSubtitle": "Blokkerer skadelige meldinger før de når innboksen din ved å fjerne e-post som kan inneholde farlige koblinger eller virus.",
-                "virusTitle": "Løfte om virusbeskyttelse",
-                "virusSubtitle": "Gir deg trygghet for at hvis PC-en din får et virus, vil en McAfee-ekspert kunne fjerne det fra datamaskinen din fra utsiden.",
-                "parentalTitle": "Tilgangskontroll",
-                "parentalSubtitle": "Blokkerer nettsider og søkeresultater som du ikke vil at barna dine skal se. Lar deg også sette grenser for hvor mye tid de bruker på nettet.",
-                "license": "Lisens gyldig til",
-                "trial": "Prøveversjon gyldig til"
+                "title": "Antivirus",
+                "subtitle": "Du beskyttes nå av McAfee LiveSafe – bare {{remainingDays}} dager igjen! Abonner nå for å forlenge beskyttelsen.",
+                "launch": "Start McAfee",
+                "getMacfee": "Skaff deg McAfee",
+                "topBenefits": "Hvorfor <b>Lenovo anbefaler McAfee</b> til å beskytte alle enhetene dine",
+                "awardTitle": "Prisbelønt antivirus",
+                "awardSubtitle": "Beskytt PC-en mot virus, skadelig programvare og løsepengevirus",
+                "supportTitle": "Gratis teknisk støtte døgnet rundt fra eksperter ",
+                "supportSubtitle": "Få hjelp og sinnsro døgnet rundt fra det dedikerte sikkerhetsteamet vårt",
+                "trialSubtitle": "Du beskyttes nå av en 30-dagers prøveversjon av McAfee LiveSafe – bare {{remainingDays}} dager igjen! Abonner nå for å forlenge beskyttelsen.",
+                "discount": "Få pengene tilbake hvis du ikke er fornøyd",
+                "trialSubscribe": "Prøveversjonen slutter om {{remainingDays}} dager – ABONNER NÅ",
+                "subscribe": "Abonnementet slutter om {{remainingDays}} dager – ABONNER NÅ",
+                "MultiTitle": "Beskyttelse av flere enheter",
+                "MultiSubtitle": "Beskytt alle enhetene dine – PC-er, telefoner og nettbrett – perfekt for familier ",
+                "networkTitle": "Beskyttelse av hjemmenettverk",
+                "networkSubtitle": "Sikre brannmuren og beskytt hjemmenettverket mot hackere",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Sikker oppbevaring og administrasjon av alle passordene på ett sted",
+                "onlineTitle": "Personvern på nettet",
+                "onlineSubtitle": "Koble til med kryptering på banknivå for å sikre alle aktivitetene på nettet, selv på offentlige Wi-Fi-nettverk eller åpne nettverk ",
+                "register": "Registrering for McAfee",
+                "virusScan": "Virusskanning",
+                "firewall": "Personlig brannmur",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Sårbarhetsskanner ",
+                "report": "Rapport om trusselbeskyttelse ",
+                "trialContent": "Du har gjort god bruk av prøveversjonen av McAfee-antivirusprogramvaren. Nå er det imidlertid bare {{remainingDays}} dager igjen til prøveversjonen utløper, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten. <tag>Abonner nå</tag>",
+                "subscribeContent": "Du har gjort god bruk av McAfee. Nå er det imidlertid bare {{remainingDays}} dager igjen, og datamaskinen kan dermed bli sårbar. Unngå denne sårbarheten. <tag>Abonner nå</tag>",
+                "subscribeNow": "Abonner nå",
+                "fileScan": "Skannede filer",
+                "Viruses": "Fjernede virus",
+                "blocked": "Ugyldige tilkoblinger blokkert",
+                "shredded": "Filer trygt makulert",
+                "startFileScan": "Start filskanningen"
             },
             "others": {
-                "othersProtection": "gir grunnleggende beskyttelse for enheten din"
+                "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din",
+                "unknown": "Ukjent",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -1690,7 +1937,8 @@
                 "describe": "Usikre enheter og nettverk kan medføre skadelig programvare, føre til identitetstyveri og lekke private og økonomiske opplysninger. Aktiver denne funksjonen for å redusere risikoen for enheten din og at hjemmenettverket ditt utsettes for angripere",
                 "subtitle": "Trygghet",
                 "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Lær enda mer om Sikkerhet for tilkoblede hjem <tag>her</tag>.",
-                "tryNow": "Prøv nå"
+                "tryNow": "Prøv nå",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Skriv inn invitasjonskode",
@@ -1706,7 +1954,13 @@
                 "success": "Tilkobling vellykket",
                 "canUse": "Du kan nå begynne å bruke Sikkerhet for tilkoblede hjem",
                 "tryAgain": "Koden er feil. Prøv på nytt.",
-                "activationCode": "AKTIVERINGSKODE"
+                "activationCode": "AKTIVERINGSKODE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Sikkerhetstilstand",
@@ -1725,6 +1979,10 @@
                 "learnMoreAboutSecurityHealth": "Få mer informasjon om hver av disse komponentene <tag>her</tag>.",
                 "peaceOfMind": "Vil du ha mer trygghet?",
                 "button": "Aktiver WiFi-sikkerhet"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1836,7 +2094,7 @@
         },
         "question1": {
             "title": "Sikkerhetskopier og gjenopprett filene dine",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Sikkerhetskopier og gjenopprett filene dine    </div>    <hr />    <div style='margin-bottom:7rem;'>        Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Konfigurere din sikkerhetskopi    </div>    <hr />    <div class='mb-5'>        Velg på<span style='font-weight:bold'> Start</span> -knappen, <span style='font-weight:bold'>velg</span> innstillinger <span style='font-weight:bold'>> Oppdater & sikkerhets</span> <span style='font-weight:bold'>></span> sikkerhets <span style='font-weight:bold'>kopi > Legg</span> til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\\\Users\\\\username). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets <span style='font-weight:bold;'>kopieringen</span>skal skje, kan du gå til flere alternativer.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Restaurer filene dine    </div>    <div class='mb-5'>        Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:    </div>    <div>        <div class='mb-3'>1. Skriv <span style='font-weight:bold;'>Gjenopprett filer</span> i søke boksen på oppgave linjen, og velg <span class='font-weight:bold'>Gjenopprett filene med fillogg.</span></div>        <div class='mb-3'>2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den</div>        <div class='mb-3'>3. Når du finner den versjonen du ønsker, velger <span style='font-weight:bold'>du</span> Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (<span style='font-weight:bold'>eller</span> høyre klikker <span style='font-weight:bold'>) Gjenopprett</span>, velger Gjenopprett til og velger deretter en ny plassering.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Sikkerhetskopier og gjenopprett filene dine    </div>    <hr />    <div class='faqInMb7'>        Det er alltid godt å ha en sikkerhets kopi. Behold kopier av filene dine på en annen stasjon hvis det er noe som skjer med originalene.    </div>    <div class='faqInFs3Fb'>        Konfigurere din sikkerhetskopi    </div>    <hr />    <div class='mb-5'>        Velg på<span class='faqInFb'> Start</span> -knappen, <span class='faqInFb'>velg</span> innstillinger <span class='faqInFb'>> Oppdater & sikkerhets</span> <span class='faqInFb'>></span> sikkerhets <span class='faqInFb'>kopi > Legg</span> til en stasjon, og velg deretter en ekstern stasjon eller en nettverks plassering for sikkerhets kopier.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Alt er klart. Hver time sikkerhetskopierer vi alt i bruker mappen din (C:\\\\Users\\\\username). Hvis du vil endre hvilke filer som blir sikkerhets kopi ert eller hvor ofte sikkerhets <span class='faqInFb'>kopieringen</span>skal skje, kan du gå til flere alternativer.    </div>    <div class='faqInFs3Fb'>        Restaurer filene dine    </div>    <div class='mb-5'>        Hvis du mangler en viktig fil eller mappe, kan du få den tilbake på denne måten:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Gjenopprett filer</span> i søke boksen på oppgave linjen, og velg <span class='faqInFb'>Gjenopprett filene med fillogg.</span></div>        <div class='mb-3'>2. Se etter filen du trenger, og bruk deretter pilene til å se alle versjonene av den</div>        <div class='mb-3'>3. Når du finner den versjonen du ønsker, velger <span class='faqInFb'>du</span> Gjenopprett for å lagre den på den opprinnelige plasseringen. Hvis du vil lagre den på et annet sted, trykker du på og holder nede (<span class='faqInFb'>eller</span> høyre klikker <span class='faqInFb'>) Gjenopprett</span>, velger Gjenopprett til og velger deretter en ny plassering.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1877,7 +2135,7 @@
         },
         "question2": {
             "title": "Slik oppfrisker du datamaskinen din",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Slik oppfrisker du datamaskinen din    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Symptom    </div>    <div style='padding:5px 0;'>        Hvis PC-en ikke er i det sammen hengende, og du ikke vet hvorfor, kan du oppdatere PCen uten å slette noen av de personlige filene eller endre innstillingene. Windows kan \\\"oppdatere\\\" PC-en din slik at den er mer som en ny installering uten å slette dine personlige filer.    </div>    <div style='padding:5px 0;'>        Oppdater PC-en, her er det som skjer: filene og de egen definerte innstillingene endres ikke    </div>    <div style='padding:5px 0;'>        <ul>            <li>PC-innstillingene blir endret tilbake til standard verdiene</li>            <li>Apper fra Windows store blir beholdt</li>            <li>Apper du installerte fra plate eller nettsted vil bli fjernet</li>            <li>En liste over filer som fjernes, vil bli lagret på skrive bordet</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Berørte merker    </div>    <div>        <ul>            <li>Alle stasjonære og bærbare</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Operativsystem    </div>    <div>        <ul>            <li>Windows 8, 8.1 & 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Løsning    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Klikk eller trykk <span style='font-weight:bold;'> Innstillinger </span>                    </li>                    <li style='padding:5px 0;'>                        Trykk på eller <span style='font-weight:bold;'> Klikk på Oppdater og Gjenopprett</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Klikk eller trykk <span style='font-weight:bold;'> Gjenoppretting</span></div>                        <div style='padding:5px 0'>I delen Forny PCen uten å påvirke filene, klikk eller trykk <span style='font-weight:bold;'> Kom i gang.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Klikk på <span style='font-weight:bold;'> Neste </span>.                    </li>                    <li style='padding:5px 0;'>                        Klikk på <span style='font-weight:bold;'>Forfriske </span>for å starte oppdateringsprosessen.                    </li>                    <li style='padding:5px 0;'>                        Når oppdaterings prosessen er fullført, kan du finne en liste over fjernede apper på skrive bordet                    </li>                    <li style='padding:5px 0;'>                        Du kan finne de fjernede appene mens du oppdaterer systemet                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Søk etter <span style='font-weight:bold;'>oppdatering </span>i søke verktøyet som er tilgjengelig på Start-menyen,</li>                    <li style='padding:5px 0;'>                        <div>Klikk på <span style='font-weight:bold;'> ' Oppdater PCen uten å påvirke filene '</span> i søke resultatene som vist nedenfor.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Klikk på knappen <span style='font-weight:bold;'>komme i </span>gang rett under overskriften<span style='font-weight:bold;'> ' Oppdater PCen uten å påvirke filene ' for å</span> starte oppdateringen av Windows 10-PCen din.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Tilleggsinformasjon    </div>    <div>        Når du i de fleste tilfeller begynner å oppdatere PCen din, avsluttes den på egenhånd. Hvis Windows imidlertid trenger filer, blir du bedt om å sette inn gjenopprettings medier, som vanligvis er en DVD plate-eller tommel stasjon. Hvis dette skjer, er det du trenger, avhengig av PC-en.    </div>    <div style='padding:10px 0'>        Hvis du oppgraderte PCen til Windows 8,1 eller Windows RT 8,1 med en DVD, bruker du denne platen. Hvis du ikke har Windows 8,1 eller Windows RT 8,1-medier, kontakter du Microsoft kunde støtte.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Slik oppfrisker du datamaskinen din    </div>    <hr>    <div class='faqInFs25FbP5'>        Symptom    </div>    <div class='faqInP5'>        Hvis PC-en ikke er i det sammen hengende, og du ikke vet hvorfor, kan du oppdatere PCen uten å slette noen av de personlige filene eller endre innstillingene. Windows kan \\\"oppdatere\\\" PC-en din slik at den er mer som en ny installering uten å slette dine personlige filer.    </div>    <div class='faqInP5'>        Oppdater PC-en, her er det som skjer: filene og de egen definerte innstillingene endres ikke    </div>    <div class='faqInP5'>        <ul>            <li>PC-innstillingene blir endret tilbake til standard verdiene</li>            <li>Apper fra Windows store blir beholdt</li>            <li>Apper du installerte fra plate eller nettsted vil bli fjernet</li>            <li>En liste over filer som fjernes, vil bli lagret på skrive bordet</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Berørte merker    </div>    <div>        <ul>            <li>Alle stasjonære og bærbare</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operativsystem    </div>    <div>        <ul>            <li>Windows 8, 8.1 & 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Løsning    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Klikk eller trykk <span class='faqInFb'> Innstillinger </span>                    </li>                    <li class='faqInP5'>                        Trykk på eller <span class='faqInFb'> Klikk på Oppdater og Gjenopprett</span>                    </li>                    <li class='faqInP5'>                        <div>Klikk eller trykk <span class='faqInFb'> Gjenoppretting</span></div>                        <div class='faqInP5'>I delen Forny PCen uten å påvirke filene, klikk eller trykk <span class='faqInFb'> Kom i gang.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Klikk på <span class='faqInFb'> Neste </span>.                    </li>                    <li class='faqInP5'>                        Klikk på <span class='faqInFb'>Forfriske </span>for å starte oppdateringsprosessen.                    </li>                    <li class='faqInP5'>                        Når oppdaterings prosessen er fullført, kan du finne en liste over fjernede apper på skrive bordet                    </li>                    <li class='faqInP5'>                        Du kan finne de fjernede appene mens du oppdaterer systemet                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Søk etter <span class='faqInFb'>oppdatering </span>i søke verktøyet som er tilgjengelig på Start-menyen,</li>                    <li class='faqInP5'>                        <div>Klikk på <span class='faqInFb'> ' Oppdater PCen uten å påvirke filene '</span> i søke resultatene som vist nedenfor.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Klikk på knappen <span class='faqInFb'>komme i </span>gang rett under overskriften<span class='faqInFb'> ' Oppdater PCen uten å påvirke filene ' for å</span> starte oppdateringen av Windows 10-PCen din.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Tilleggsinformasjon    </div>    <div>        Når du i de fleste tilfeller begynner å oppdatere PCen din, avsluttes den på egenhånd. Hvis Windows imidlertid trenger filer, blir du bedt om å sette inn gjenopprettings medier, som vanligvis er en DVD plate-eller tommel stasjon. Hvis dette skjer, er det du trenger, avhengig av PC-en.    </div>    <div class='faqInP10'>        Hvis du oppgraderte PCen til Windows 8,1 eller Windows RT 8,1 med en DVD, bruker du denne platen. Hvis du ikke har Windows 8,1 eller Windows RT 8,1-medier, kontakter du Microsoft kunde støtte.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1951,7 +2209,7 @@
         },
         "question3": {
             "title": "Bli kjent med datamaskinens prosessor",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Bli kjent med datamaskinens prosessor</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3><p>Begrepene 32-bits og 64-bit henviser til hvordan prosessoren til en data maskin (også kalt en CPU) håndterer informasjon. 64-biters versjonen av Windows håndterer store mengder RAM (Random Access Memory) mer effektivt enn et 32-bits system.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Berørte merker</h3><p>Symptomet ovenfor er knyttet til, men ikke begrenset til, disse systemene:</p><ul>    <li>Alle stasjonære og bærbare</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operativsystem</h3><ul>    <li>Windows 7 , 8 , 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Løsning</h3><p><strong><u>Windows 7 eller Vista</u></strong></p><ol>    <li>Åpne systemet ved å klikke <strong>på Start </strong>-knappen på <strong>Start-knappen</strong>, høyre klikk på data maskinen og deretter på egenskaper  </li>    <li>Under system kan du se system typen.</li></ol><p><strong><u>Windows 8 og Windows 10</u></strong></p><p><strong>Metode 1:</strong> Vis system-vinduet i kontroll panel</p><ol>    <li>Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong></li>    <li>Skriv <strong>systemet</strong> i søke boksen og trykk eller klikk <strong>på innstillinger.</strong></li>    <li>Klikk eller trykk på <strong>System</strong></li>    <li>Hvis du kjører en 64-biters versjon av Windows 8, <strong>blir 64-biters operativ system</strong> vist i feltet system type under system overskriften. Hvis du kjører en 32<strong>-biters versjon av Windows</strong><strong>8,</strong><strong>blir 32-biters operativ </strong>system vist i feltet system type under system overskriften.<br />  </li></ol><p><strong>Metode 2</strong>: Se vinduet Systeminformasjon</p><ol>    <li>Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong></li>    <li>Skriv inn <strong>system informasjon i søke boksen</strong></li>    <li>Trykk eller klikk<strong> på</strong>system, trykk på <strong>eller klikk på</strong> system informasjon, <strong>og klikk på system Sammendrag.</strong></li>    <li>Hvis du kjører <strong>en 64 -biters </strong>versjon av Windows 8<strong>, </strong> blir det vist en x64 <strong>basert PC i feltet system</strong>type under element overskriften. <br /> <br /> Hvis du kjører<strong> en 32-biters</strong> versjon av Windows 8, blir x86-basert PC <strong>vist i feltet system</strong> type under element overskriften.  </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Bli kjent med datamaskinens prosessor</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Begrepene 32-bits og 64-bit henviser til hvordan prosessoren til en data maskin (også kalt en CPU) håndterer informasjon. 64-biters versjonen av Windows håndterer store mengder RAM (Random Access Memory) mer effektivt enn et 32-bits system.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><p>Symptomet ovenfor er knyttet til, men ikke begrenset til, disse systemene:</p><ul>    <li>Alle stasjonære og bærbare</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 7 , 8 , 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p><strong><u>Windows 7 eller Vista</u></strong></p><ol>    <li>Åpne systemet ved å klikke <strong>på Start </strong>-knappen på <strong>Start-knappen</strong>, høyre klikk på data maskinen og deretter på egenskaper  </li>    <li>Under system kan du se system typen.</li></ol><p><strong><u>Windows 8 og Windows 10</u></strong></p><p><strong>Metode 1:</strong> Vis system-vinduet i kontroll panel</p><ol>    <li>Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong></li>    <li>Skriv <strong>systemet</strong> i søke boksen og trykk eller klikk <strong>på innstillinger.</strong></li>    <li>Klikk eller trykk på <strong>System</strong></li>    <li>Hvis du kjører en 64-biters versjon av Windows 8, <strong>blir 64-biters operativ system</strong> vist i feltet system type under system overskriften. Hvis du kjører en 32<strong>-biters versjon av Windows</strong><strong>8,</strong><strong>blir 32-biters operativ </strong>system vist i feltet system type under system overskriften.<br />  </li></ol><p><strong>Metode 2</strong>: Se vinduet Systeminformasjon</p><ol>    <li>Dra inn fra høyre kant av skjermen og trykk deretter <strong>Søk</strong>. Hvis du bruker musen, peker du på nederste høyre hjørne på skjermen og klikker <strong>på Søk.</strong></li>    <li>Skriv inn <strong>system informasjon i søke boksen</strong></li>    <li>Trykk eller klikk<strong> på</strong>system, trykk på <strong>eller klikk på</strong> system informasjon, <strong>og klikk på system Sammendrag.</strong></li>    <li>Hvis du kjører <strong>en 64 -biters </strong>versjon av Windows 8<strong>, </strong> blir det vist en x64 <strong>basert PC i feltet system</strong>type under element overskriften. <br /> <br /> Hvis du kjører<strong> en 32-biters</strong> versjon av Windows 8, blir x86-basert PC <strong>vist i feltet system</strong> type under element overskriften.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2040,7 +2298,7 @@
         },
         "question4": {
             "title": "Kontrollere datamaskinens batteriforbruk",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \\\"universelle\\\" apper-bruker for mye strøm.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\\\"Settings\\\"-</strong> appen</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \\\"</strong>Settings\\\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \\\"batteris paring\\\". <br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\\\"på \\\"batteri Bruk\\\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyser strøm forbruket</h3><p>4 Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5 <strong>\\\"system\\\",</strong> \\\"<strong>skjerm</strong>\\\" og \\\" <strong>Wi-Fi\\\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6 <strong>\\\"alternativene\\\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7 Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \\\"endre innstillinger for bakgrunns </strong>app\\\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8 Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollere datamaskinens batteriforbruk</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 inneholder et nytt <strong>batteri bruks</strong> skjerm bilde som viser hva som skjer med din bærbare juice. Det betyr at du kan se nøyaktig hvilke applikasjoner – både stasjonære og Windows 10 \\\"universelle\\\" apper-bruker for mye strøm.</p><h3 class='faqInFs25FbP10'>Berørte merker</h3><ul>    <li>Lenovo bærbare maskiner, stasjonære maskiner</li></ul><h3 class='faqInFs25FbP10'>Gjelder for følgende systemer</h3><ul>    <li>Alle</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Løsning</h3><p>Denne funksjonen er ny i Windows 10, men vi må først finne denne funksjonen fordi den ikke er lagret i den tradisjonelle <strong>kontroll panel </strong>visningen, denne funksjonen finnes i den nye <strong>\\\"Settings\\\"-</strong> appen</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Finn batteri bruk skjermen</h3></p><p>1. Klikk på eller trykk <strong>på \\\"</strong>Settings\\\"-alternativet på Start-menyen</p><p>2. Velg <strong>system </strong> <strong>under innstillinger</strong>, og velg <strong>deretter \\\"batteris paring\\\". <br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klikk på eller trykk <strong>\\\"på \\\"batteri Bruk\\\"</strong> -koblingen under denne overskriften for å se flere detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyser strøm forbruket</h3><p>4 Du kan endre for å gjøre batteriet til å bruke skjermen til å se batteri bruk fra de siste 24 timene til de siste 48 timene eller sist fra forrige uke</p><p>5 <strong>\\\"system\\\",</strong> \\\"<strong>skjerm</strong>\\\" og \\\" <strong>Wi-Fi\\\"</strong> prosenter. Dette viser hvor mye batteri strøm som er brukt av system prosesser, skjermen,</p><p>6 <strong>\\\"alternativene\\\"</strong> i bruk og <strong> bakgrunn</strong> viser hvor mye strøm som brukes av applikasjoner mens du bruker dem, sammenlignet med programmer som kjøres i bakgrunnen.</p><p>7 Hvis apper bruker strøm i bakgrunnen, kan du klikke på eller trykke på <strong>koblingen \\\"endre innstillinger for bakgrunns </strong>app\\\" og konfigurere apper slik at de ikke kan kjøres i bakgrunnen. Dette fungerer bare for universelle Windows 10-apper.</p><p>8 Rull nedover og du vil se en liste over applikasjoner, anses dette som den mest nyttige delen av denne funksjonen. Det vil se ut som en liste over appene har brukt batteriet i den perioden, og viser deg hvilken prosent del av batteriet du har brukt i hver app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2108,7 +2366,7 @@
         },
         "question5": {
             "title": "Bruke datamaskinen som et nettbrett",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 class='faqInFs25FbP10'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 class='faqInFs25FbP10'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 class='faqInFs25FbP10'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2148,7 +2406,7 @@
         },
         "question6": {
             "title": "Bli kjent med Cortana, din personlige assistent",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Bli kjent med Cortana, din personlige assistent</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hva er Cortana?</h3><hr /><p>Cortana er den digitale agenten. Hun hjelper deg med å få ting gjort.</p><p>Jo mer du bruker Cortana, jo mer personlig blir opplevelse.</p><p>Skriv et spørsmål i søke boksen eller velg mikrofonen og snakk med Cortana for å komme i gang. (Innskriving fungerer for alle typer PCer, men du trenger en mikrofon for å snakke.)</p><p>Hvis du ikke er sikker på hva du skal si, vil du se forslag på låse skjermen din og på Cortana-hjemmesiden når du velger søk-boksen på oppgave linjen.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Hjem 2. Notat blokk 3. Settings 4. Spillkontroller</li></ol><p>Her er noen ting Cortana kan gjøre for deg:</p><ul>    <li>Gi deg påminnelser basert på tid, steder eller personer.</li>    <li>Spore pakker, grupper, interesser og flights.</li>    <li>Sende e-postmeldinger og-tekster.</li>    <li>Administrer kalenderen din og hold deg oppdatert.</li>    <li>Opprett og administrer lister.</li>    <li>Chit chat og spill spill.</li>    <li>Finn opplysninger, filer, steder og info.</li>    <li>Åpne en hvilken som helst app på systemet.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Prøv dette: Sett en påminnelse</h3><hr /><p>En av tingene Cortana kan gjøre er å gi deg påminnelser. Hun kan minne deg på å gjøre ting basert på tid, steder eller til og med personer.</p><p>Du kan for eksempel skrive eller si ' Påminn meg til congratulate Tanya neste gang hun ringer.'</p><p>Påminnelsen blir vist når du mottar en oppringing fra Tanya.</p><p>Ekstra bonus &mdash; hvis du har en Windows Phone eller Cortana for iPhone eller Android, kan du definere at Cortana skal synkronisere meldinger mellom PCen og telefonen.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hei Cortana?</h3><hr /><p>Oppgi at Cortana skal høre deg når du sier \\\" Hei Cortana.\\\" Velg søke boksen på oppgave linjen for å åpne Cortana-hjemmesiden. Velg <strong>deretter innstillinger</strong> og slå på <strong>la Cortana svare på Hey Cortana.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Merk</p><p>Cortana er bare tilgjengelig i visse land/regioner, og noen Cortana-funksjoner er kanskje ikke tilgjengelige overalt.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Bli kjent med Cortana, din personlige assistent</div><hr><h3 class='faqInFs25FbP10'>Hva er Cortana?</h3><hr /><p>Cortana er den digitale agenten. Hun hjelper deg med å få ting gjort.</p><p>Jo mer du bruker Cortana, jo mer personlig blir opplevelse.</p><p>Skriv et spørsmål i søke boksen eller velg mikrofonen og snakk med Cortana for å komme i gang. (Innskriving fungerer for alle typer PCer, men du trenger en mikrofon for å snakke.)</p><p>Hvis du ikke er sikker på hva du skal si, vil du se forslag på låse skjermen din og på Cortana-hjemmesiden når du velger søk-boksen på oppgave linjen.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Hjem 2. Notat blokk 3. Settings 4. Spillkontroller</li></ol><p>Her er noen ting Cortana kan gjøre for deg:</p><ul>    <li>Gi deg påminnelser basert på tid, steder eller personer.</li>    <li>Spore pakker, grupper, interesser og flights.</li>    <li>Sende e-postmeldinger og-tekster.</li>    <li>Administrer kalenderen din og hold deg oppdatert.</li>    <li>Opprett og administrer lister.</li>    <li>Chit chat og spill spill.</li>    <li>Finn opplysninger, filer, steder og info.</li>    <li>Åpne en hvilken som helst app på systemet.</li></ul><h3 class='faqInFs25FbP10'>Prøv dette: Sett en påminnelse</h3><hr /><p>En av tingene Cortana kan gjøre er å gi deg påminnelser. Hun kan minne deg på å gjøre ting basert på tid, steder eller til og med personer.</p><p>Du kan for eksempel skrive eller si ' Påminn meg til congratulate Tanya neste gang hun ringer.'</p><p>Påminnelsen blir vist når du mottar en oppringing fra Tanya.</p><p>Ekstra bonus &mdash; hvis du har en Windows Phone eller Cortana for iPhone eller Android, kan du definere at Cortana skal synkronisere meldinger mellom PCen og telefonen.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hei Cortana?</h3><hr /><p>Oppgi at Cortana skal høre deg når du sier \\\" Hei Cortana.\\\" Velg søke boksen på oppgave linjen for å åpne Cortana-hjemmesiden. Velg <strong>deretter innstillinger</strong> og slå på <strong>la Cortana svare på Hey Cortana.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Merk</p><p>Cortana er bare tilgjengelig i visse land/regioner, og noen Cortana-funksjoner er kanskje ikke tilgjengelige overalt.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2196,7 +2454,6 @@
         "personal": "Personlig bruk",
         "business": "Jobbrelatert bruk",
         "custom": "Egendefinert brukeropplevelse",
-        "experience": "Erfaring",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
@@ -2231,7 +2488,318 @@
         "OtherSettings": "Andre innstillinger",
         "usageStatistics": "Statistikk over bruk",
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
+        "deviceStatistics": "Del statistiske data med Lenovo",
+        "deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
-    }
+    },
+    "modernPreload": {
+        "cancel": "Avbryt",
+        "close": "Lukk",
+        "download": "Last ned",
+        "downloadAvailable": "En nedlasting er tilgjengelig",
+        "downloadComplete": "Nedlastingen er ferdig",
+        "downloading": "Laster ned...",
+        "failedDownload": "Mislykket nedlasting",
+        "failedInstall": "Installeringen mislyktes",
+        "installed": "Installert",
+        "restartDownload": "Start nedlastingen på nytt",
+        "retry": "Prøv igjen",
+        "skip": "Hopp over",
+        "noteDownloading": "Merk: Når du har klikket på Last ned, kan det hende du får en melding fra Windows som ber deg tillate at programvaren installeres på enheten. Når installasjonen er fullført, vises appene automatisk på skrivebordet eller Start-menyen.<br /><br />Du kan lukke siden Min programvare og fortsette å bruke Lenovo Vantage. Ikke lukk Lenovo Vantage under installasjonen.",
+        "noteFailedDownload": "Varsel: Noe gikk galt under nedlastingen eller installasjonen. Sjekk at du er tilkoblet Internett, og prøv på nytt. Ikke lukk Vantage mens programvaren installeres. Du kan lukke siden Min programvare og fortsette å utforske Vantage, eller du kan minimere Vantage mens installasjonen av programvaren fullføres.",
+        "noteDownloadComplete": "Merk: Når du har klikket på Last ned, kan det hende du får en melding fra Windows som ber deg tillate at programvaren installeres på enheten. Når installasjonen er fullført, vises appene automatisk på skrivebordet eller Start-menyen.<br /><br />Du kan lukke siden Min programvare og fortsette å bruke Lenovo Vantage. Ikke lukk Lenovo Vantage under installasjonen.",
+        "noteDownloadAvailable": "Merk: Når du har klikket på Last ned, kan det hende du får en melding fra Windows som ber deg tillate at programvaren installeres på enheten. Når installasjonen er fullført, vises appene automatisk på skrivebordet eller Start-menyen.<br /><br />Du kan lukke siden Min programvare og fortsette å bruke Lenovo Vantage. Ikke lukk Lenovo Vantage under installasjonen.",
+        "sizeText": "Størrelse",
+        "versionText": "Versjon",
+        "softwareDescription": "Klikk på nedlastingsalternativet under for å få programvaren som var inkludert i kjøpet av enheten. Hvis du noensinne må laste ned programvaren på nytt, kan du gjøre dette ved å klikke på knappen Min programvare på Vantage-menyen.",
+        "title": "Min programvare",
+        "loadingDescription": "Vent litt mens det lages en liste over programvaren som var inkludert i kjøpet av enheten.",
+        "shortDescription": "Last ned og installer programvare som var inkludert i kjøpet av enheten.",
+        "errorDescription": "<h2>Beklager, men informasjonen om nedlasting av programvare kunne ikke hentes</h2>Prøv å klikke på knappen Prøv igjen under, eller prøv på nytt senere ved å klikke på knappen Min programvare på Vantage-menyen."
+    },
+    "hardwareScan": {
+        "errorNoOptionSelected": "Du må velge et alternativ.",
+        "errorDeviceChoose": "Du må velge en enhet du vil bruke.",
+        "buy": "Kjøp nå",
+        "name": "Maskinvaresøk",
+        "title": "Utfør en maskinvaresøk",
+        "subtitle": "Vent mens maskinvaresøk utføres",
+        "quickScan": "Hurtig kanalsøk",
+        "finalResultCode": "Sluttresultatkode",
+        "resultCode": "Resultatkode",
+        "cancel": "Avbryt",
+        "complete": "Fullført",
+        "incomplete": "Ufullstendig",
+        "loadingComponents": "Finne komponenter",
+        "hardwareComponents": "Maskinvare Komponenter",
+        "loadingDevices": "Enheter som lastes",
+        "select": "Velg",
+        "deselect": "Angre velg",
+        "allOptions": "Alle muligheter",
+        "latestResult": "Siste resultat",
+        "back": "TILBAKE",
+        "viewResults": "Vis resultater",
+        "save": "Lagre",
+        "details": "Detaljer",
+        "recurrence": "Gjentagelse",
+        "interval": "Intervall",
+        "time": "Tid",
+        "type": "Type",
+        "hours": "Timer",
+        "minutes": "Minutter",
+        "am": "AM",
+        "pm": "PM",
+        "previousResult": "Tidligere resultater",
+        "lastScanOn": "Siste søk",
+        "result": "Resultat",
+        "viewDetailsLog": "Vis detaljer Logg",
+        "ok": "OK",
+        "notOk": "IKKE OK",
+        "notScanned": "IKKE SKANNET",
+        "pass": "Bestått",
+        "fail": "Feil",
+        "cancelled": "Avbrutt",
+        "warning": "Advarsel",
+        "errorResult": "Du må velge en test for å kjøre den.",
+        "offline": "Denne enheten kjører i frakoblet modus, så koble den til Internett",
+        "doNotSuspend": "Disse testene må kjøre uavbrutt! Ikke lukk eller minimer denne appen, og ikke utsett eller slå av datamaskinen under skanningen.",
+        "doNotUse": "Avstå fra å bruke datamaskinen før denne testen er fullført",
+        "testsMustRunUniterrupted": "Disse testene må kjøres uten forstyrrelser!",
+        "doNotCloseOrMinimizeApp": "• Ikke lukk eller minimer denne appen.",
+        "doNotSwitchApp": "• Ikke bytt til en annen app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Ikke logg deg av datamaskinen, sett den i hvilemodus eller slå den av.",
+        "battery": {
+            "title": "Aktiver batteriladeterskel",
+            "description": "Aktiverer du egendefinert batterilading, vil selve batteriet generelt sett vare lenger når du bruker denne enheten. Å ikke lade batteriet helt opp vil imidlertid gi kortere brukstid. For å aktivere denne funksjonen helt må du ta ut støpselet til datamaskinen og la batteriet lades helt ut eller til under terskelen for ladestopp.",
+            "enable": "Aktiver"
+        },
+        "customize": {
+            "name": "Tilpass",
+            "test": "Tilpass testen",
+            "description": "Velg alternativene nedenfor for å tilpasse testen",
+            "runTests": "Kjør valgte tester"
+        },
+        "scheduledScan": {
+            "name": "Planlegg skanning",
+            "title": "Planlegg skanningen",
+            "newScan": "Planlegg ny skanning",
+            "fullScan": "Fullstendig skanning",
+            "onlyOnce": "Bare en gang",
+            "eachDay": "Hver dag",
+            "eachWeek": "Hver uke",
+            "eachMonth": "Hver måned",
+            "eachYear": "Hvert år",
+            "schedule": "Plan",
+            "date": "Dato",
+            "pickDate": "Velg en dato",
+            "scanScheduled": "En maskinvaresøk var planlagt!",
+            "description": "En annen skanning er allerede planlagt på samme tid og dato!",
+            "error": "Feil",
+            "delete": "Slett",
+            "warningBatterySaver": "Merk: Planlagte skanninger vil ikke bli utført i batterisparingsmodus",
+            "scheduleIntervalLimit": "En ny skanning var allerede planlagt innenfor en periode på ti minutter. Velg en annen tid.",
+            "information": "Søket er planlagt og kommer til å kjøre i bakgrunnen på denne datoen:"
+        },
+        "recoverBadSectors": {
+            "title": "Gjenopprett skadde sektorer",
+            "description": "Lenovo-verktøy for å oppdage og reparere skadede sektorer på en disk",
+            "goTo": "Gå for å gjenopprette dårlige sektorer",
+            "localDevices": "Lokale enheter",
+            "numberSectors": "Antall sektorer lest",
+            "numberBadSectors": "Antall skadde sektorer funnet",
+            "numberFixedSectors": "Antall sektorer fikset",
+            "numberNonFixedSectors": "Antall sektorer ikke fikset",
+            "status": "Operasjons status",
+            "elapsedTime": "Tid som er gått",
+            "hours": "Timer",
+            "hour": "Time",
+            "minutes": "Minutter",
+            "minute": "Minutt",
+            "seconds": "Sekunder",
+            "second": "Sekund",
+            "moreInfo": "Vent litt mens Gjenopprett ugyldige sektorer blir utført",
+            "systemEvent": "Testen ble avbrutt fordi det har oppstått en systemhendelse som kan påvirke resultatet.",
+            "systemPasswordProtected": "Enheten kan være passordbeskyttet. Prøv å deaktivere passordbeskyttelsen.",
+            "popup": {
+                "yes": "Ja",
+                "no": "Nei",
+                "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
+            }
+        },
+        "support": {
+            "title": "Last ned profesjonelle feil søkings verktøy",
+            "subtitle": "Lenovo Support"
+        },
+        "eTicket": {
+            "header": "Maskinvareproblem oppdaget.",
+            "problemDetected": "Maskinvaresøk har oppdaget et problem med følgende av datamaskinens komponenter",
+            "ticketRequestQuestion": "Lenovo kan sende deg en ny del hvis datamaskinen fremdeles dekkes av garantien. Vil du opprette en forespørsel om utskiftning av maskinvare for å løse problemet",
+            "openTicket": "Opprett forespørsel"
+        },
+        "refreshModule": "Oppdater moduler",
+        "completed": "Fullført",
+        "notCompleted": "Ikke fullført",
+        "yes": "Ja",
+        "attention": "NB",
+        "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
+        "cancelTextProgress": "Vent mens avbrytingen pågår",
+        "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
+        "testNotApplicable": "Ikke aktuelt for egendefinert skanning"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
+                "networkError": "Nettverksfeil.",
+                "installationCancelled": "Installasjonen er avbrutt."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-innløsning",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installerer",
+                "installed": "Installert",
+                "launch": "Start",
+                "seeMore": "Se mer"
+            },
+            "fieldName": {
+                "description": "Beskrivelse",
+                "screenshots": "Skjermbilder",
+                "additionalInformation": "Tilleggsinformasjon",
+                "by": "Av:",
+                "updated": "Oppdatert:",
+                "type": "Type:",
+                "category": "Kategori:",
+                "legalAgreement": "Juridisk avtale",
+                "readMore": "Les mer",
+                "readLess": "Les mindre"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

@@ -1,27 +1,19 @@
 <div class="vtr-body vtr-modal-welcome"
+	id="modal-welcome"
 	[ngSwitch]="page">
-	<!-- <div class="modal-header">
-		<button type="button"
-			class="close close-button"
-			data-dismiss="modal"
-			(click)="onTutorialClose()"
-			aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
-	</div> -->
-	<!-- <div class="vtr-modal-body"> -->
 	<div *ngSwitchCase="1">
 		<div class="card shadow-sm">
-			<div class="card-body p-0">
+			<div class="card-body p-0"
+				*ngIf="'welcometutorial.title1' | translate">
 				<div class="banner-page-1 row justify-content-center align-items-center">
 					<div class="col-auto title-alignment">
 						<div class="row justify-content-center align-items-center">
-							<div class="col-auto title1">
+							<div class="col-auto title1 text-center">
 								{{ "welcometutorial.title1" | translate }}
 							</div>
 						</div>
 						<div class="row justify-content-center align-items-center ">
-							<div class="col-auto px-1 title1 uppercase">
+							<div class="col-auto px-1 title1 uppercase text-center">
 								{{ "welcometutorial.title2" | translate }}
 								<span>{{ "welcometutorial.title3" | translate }}</span>
 							</div>
@@ -38,12 +30,10 @@
 					<div class="row no-gutters justify-content-center align-items-center">
 						<div class="col-auto title2">
 							<ul>
-								<li *ngIf="'welcometutorial.bullets1' | translate">
-									{{"welcometutorial.bullets1" | translate }}</li>
-								<li *ngIf="'welcometutorial.bullets2' | translate">
+								<li>{{"welcometutorial.bullets1" | translate }}</li>
+								<li *ngIf="machineInfo && machineInfo.brand!=='think'">
 									{{"welcometutorial.bullets2" | translate }}</li>
-								<li *ngIf="'welcometutorial.bullets3' | translate">
-									{{"welcometutorial.bullets3" | translate }}</li>
+								<li>{{"welcometutorial.bullets3" | translate }}</li>
 							</ul>
 						</div>
 					</div>
@@ -62,22 +52,15 @@
 						</vtr-ui-button>
 					</div>
 				</div>
-				<!-- <div class="vtr-progress-bar">
-						<ul id="skill">
-							<li>
-								<span class="bar1 html-css" [style.width]="progress + '%'"></span>
-								<span class="bar2"></span>
-							</li>
-						</ul>
-					</div> -->
 			</div>
 		</div>
 	</div>
 	<!-- start of page 2-->
 	<!-- end of page1-->
-	<div *ngSwitchCase="2">
+	<div *ngSwitchCase="2" #welcomepage2 tabindex="-1">
 		<div class="card shadow-sm">
-			<div class="card-body p-0">
+			<div class="card-body p-0"
+				*ngIf="'welcometutorial.subtitle1' | translate">
 				<div class="banner-page-2 row justify-content-center align-items-center">
 				</div>
 				<div class="content-page-2"
@@ -93,23 +76,18 @@
 							<div class="device-image"
 								id="tutorial_personalUse"
 								attr.aria-label="tutorial_personalUse"
-								(click)="saveUsageType($event, 'PERSONAL')">
+								(click)="saveUsageType('PERSONAL')">
 								<input type="radio"
 									name="radio"
 									id="radio1"
 									value="personal"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.personal"
-									[metricsValue]="!radio1.checked"
 									#radio1 />
 								<img for="radio1"
 									alt="Personal Use"
 									for="radio1"
 									src="assets/images/welcome/personal-use.jpg"
 									class="" />
-								<label for="radio1"
+								<label for="radio1"  tabindex="1" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
 						</div>
@@ -117,22 +95,17 @@
 							<div class="device-image"
 								id="tutorial_businessUse"
 								attr.aria-label="tutorial_businessUse"
-								(click)="saveUsageType($event, 'BUSINESS')">
+								(click)="saveUsageType('BUSINESS')">
 								<input type="radio"
 									name="radio"
 									id="radio2"
 									value="business"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.business"
-									[metricsValue]="!radio2.checked"
 									#radio2 />
 								<img alt="Business Use"
 									for="radio2"
 									src="assets/images/welcome/business-use.jpg"
 									class="business" />
-								<label for="radio2"
+								<label for="radio2"  tabindex="2" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
 							</div>
 						</div>
@@ -140,23 +113,18 @@
 							<div class="device-image"
 								id="tutorial_customExp"
 								attr.aria-label="tutorial_customExp"
-								(click)="saveUsageType($event, 'CUSTOM')">
+								(click)="saveUsageType('CUSTOM')">
 								<input type="radio"
 									name="radio"
 									id="radio3"
 									value="custom"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.custom"
-									[metricsValue]="!radio3.checked"
 									#radio3 />
 								<img alt="Custom Experience"
 									for="radio3"
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
-								<label for="radio3"
-									class="centered">{{ "welcometutorial.custom" | translate }}<br>{{ "welcometutorial.experience" | translate }}</label>
+								<label for="radio3" tabindex="3	" (keypress)="onKeyPress($event)"
+									class="centered">{{ "welcometutorial.custom" | translate }} </label>
 							</div>
 						</div>
 					</div>
@@ -171,20 +139,15 @@
 							*ngFor="let interest of interestCopy">
 							<input type="checkbox"
 								[id]="interest + 'checkbox'"
-								vtrMetrics
-								metricsEvent="featureClick"
-								[metricsItem]="'chk.' + interest"
-								metricsParent="WelcomePage"
-								[metricsValue]="!checkbox1.checked"
 								#checkbox1
 								(click)="toggle($event, interest)" />
-							<label
+							<label class="bludFocusBoder" tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
 								[for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
 						</div>
 					</div>
 					<div *ngIf="!hideMoreInterestBtn"
 						class="row justify-content-center align-items-center font-12-semi mb-4 col-12">
-						<div class="col-auto title2"
+						<div class="col-auto title2" tabindex="5" (keypress)="onKeyPress($event)"
 							id="tutorial_hide_moreInterest"
 							attr.aria-label="tutorial_hide_moreInterest"
 							(click)="moreInterestClicked()">
@@ -194,7 +157,7 @@
 					</div>
 					<div class="row privacy-check mt-3">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox"
+							<input type="checkbox" tabindex="6" (keypress)="onKeyPress($event)"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
@@ -203,9 +166,8 @@
 							<label class="custom-control-label"
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
-								<!-- Help us improve the quality of the app by allowing anonymous collection of usage statistics -->
 								<a class="linktext"
-									href="https://www.lenovo.com/us/en/privacy"
+									href="{{privacyPolicyLink}}"
 									target="_blank"
 									rel="noopener"
 									[innerHTML]="'welcometutorial.privacypolicy' | translate">
@@ -217,9 +179,9 @@
 				</div>
 
 				<div class="row justify-content-center align-items-center next-btn">
-					<div class="col-auto ">
+					<div class="col-auto" (keypress)="btnDoneOnKeyPress($event)" >
 						<vtr-ui-button metricsParent="WelcomePage"
-							metricsEvent="featureClick"
+							metricsEvent="featureClick" [tabIndex]= '8'
 							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"
@@ -230,14 +192,6 @@
 						</vtr-ui-button>
 					</div>
 				</div>
-				<!-- <div class="vtr-progress-bar">
-						<ul id="skill">
-							<li>
-								<span class="bar1 html-css" [style.width]="progress + '%'"></span>
-								<span class="bar2"></span>
-							</li>
-						</ul>
-					</div> -->
 			</div>
 		</div>
 	</div>

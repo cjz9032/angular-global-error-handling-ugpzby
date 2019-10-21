@@ -29,9 +29,6 @@
 	.device-sub-header {
 		color: $shade_darkest;
 		font-size: $body;
-		@media #{$mediaquery_X1} {
-			font-size: 1.4rem;
-		}
 	}
 
 	.sub-header-separator {
@@ -99,6 +96,8 @@
 				}
 			}
 			a {
+				display: block;
+				padding: 0.2rem;
 				&:hover {
 					text-decoration: none;
 				}
@@ -138,7 +137,6 @@
 			.detail {
 				font-size: $body;
 				text-decoration: underline;
-				margin-right: -3rem;
 				&.highlight {
 					text-decoration: underline;
 					&:hover {
@@ -162,4 +160,18 @@
 			}
 		}
 	}
+
+	
+	.device-sub-header .rtl {
+		display: inline-block;
+	}
+	/*
+	.status-list li .row.rtl {
+		display: flex;
+		flex-direction: row-reverse;
+		.text-right{
+			text-align: left !important;
+			flex-grow: 8;
+		}
+	}*/
 }

@@ -12,13 +12,7 @@ xdescribe('WidgetDeviceComponent', () => {
     })
     .compileComponents();
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(WidgetDeviceComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
+  
   it('should create', () => {
     expect(component).toBeTruthy();
   });

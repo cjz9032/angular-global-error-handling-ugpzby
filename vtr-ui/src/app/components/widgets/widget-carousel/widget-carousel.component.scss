@@ -16,6 +16,10 @@
 		z-index: 0;
 	}
 
+	.carousel-link {
+		display: block;
+	}
+
 	a.no-link {
 		cursor: default;
 		pointer-events: none;
@@ -27,26 +31,30 @@
 
 	.carousel-caption {
 		position: absolute;
-		top: 5%;
-		left: 3%;
-		padding: 0;
+		top: 0;
+		left: 0;
+		padding: 2.5rem;
 		right: 0 !important;
 		text-align: left;
 		z-index: 1;
 
 		.title {
 			padding: 0;
-			font-size: 3rem;
+			font-size: 2.4rem;//3rem
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-			max-width: 60%;
+			//max-width: 60%;
+			/*@media #{$mediaquery_X31} {
+				max-width: 80%;
+				font-size: 2.4rem;
+			}*/
 		}
 
 		.source {
 			padding: 0;
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-			font-size: 1.4rem;
+			font-size: 2rem;//1.4rem
 			font-weight: $weight_medium;
 			text-transform: uppercase;
 		}
@@ -55,7 +63,7 @@
 	.image {
 		border-radius: $border_radius;
 		width: 100%;
-		min-height: 26.6rem;
+		background-size: cover;
 	}
 }
 
@@ -63,8 +71,11 @@
 ::ng-deep {
 	.vtr-widget-carousel {
 		.carousel {
-			&:focus {
-				outline: none;
+			// &:focus {
+			// 	outline: none;
+			// }
+			.carousel-inner {
+				overflow: inherit;
 			}
 
 			.carousel-control-prev,

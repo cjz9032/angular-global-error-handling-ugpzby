@@ -1,214 +1,28 @@
 @import "../../../../../app.theme.scss";
 
 .vtr-home-security-all-devices {
-    height: 100%;
-    position: relative;
-    .loading {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    a {
-        text-decoration: underline;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: $weight_medium;
-    }
-    ::ng-deep {
-        .button-box {
-            .button {
-                min-height: 4rem !important;
-            }
-        }
-    }
-    .content {
-        height: 100%;
-        width: 100%;
-        z-index: 3;
-        position: absolute;
-        border-radius: $border_radius;
-		background: $shade_lightest;
-		&.show-overlay {
-			z-index: 1;
-			opacity: 0.6;
-			filter: blur(3px);
-        }
-        .icon-container {
-            border-right: 0.1rem solid $shade_lighter;
-            > .row {
-                height: 100%;
-            }
-            .icon {
-                font-size: 5rem;
-                color: $main;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .text {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding-left: 0;
-                .all-device-name {
-                    justify-content: center;
-                    font-size: 1.5rem;
-					font-weight: $weight_bold;
-                }
-            }
-        }
-        .device-info {
-            > .row {
-                height: 100%;
-                > .col-7 {
-                    padding: 0;
-                }
-            }
-            .number-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                .icon {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: absolute;
-                    .circle {
-						max-width: 95%;
-					}
-                }
-                .device-number {
-                    font-size: 5rem;
-                    font-weight: $weight_600;
-                    &.sizeChange {
-                        font-size: 4rem;
-                    }
-                }
-            }
-            .text {
-                display: flex;
-                flex-direction: column;
-				justify-content: center;
-				padding-left: 0;
-                .device-text {
-                    justify-content: center;
-                    font-size: 1.5rem;
-					font-weight: $weight_bold;
-                }
-                .status {
-                    > h3 {
-						margin-bottom: 0rem;
-						.badge-danger {
-							cursor: pointer;
-						}
-                    }
-                    .button-red {
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-        .add-device {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0px;
-        height: 100%;
-        width: 100%;
-		z-index: 2;
-		justify-content: center;
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-			border-radius: $border_radius;
-			opacity: 0.9;
-            .text {
-                display: flex;
-                justify-content: center;
-                font-size: 1.8rem;
-                font-weight: $weight_600;
-                color: black;
-            }
-            .text-description {
-                display: flex;
-                justify-content: center;
-                font-size: 1.5rem;
-                font-weight: $weight_medium;
-            }
-
-            ::ng-deep {
-                .vtr-ui-button {
-                    display: block;
-                    .button-box {
-                        display: flex;
-                        justify-content: center;
-                    }
-                }
-            }
-        }
+	font-size: 1.4rem;
+	.icon-bkg {
+		font-size: 4rem;
 	}
-
-	@media #{$medium-screen} {
-		.content{
-			.icon-container{
-				border-bottom: 0.1rem solid $shade_lighter;
-				height: 50%;
-				.icon{
-					font-size: 8rem;
-				}
-			}
-		}
-
-		.device-info-and-add-device{
-			height: 50%;
-		}
-
-		.device-text-add-device{
-			.text{
-				padding-left: 0;
-			}
+	.blue {
+		font-size: 2.4rem;
+		color: $blue-lighter;
+		.icomoon {
+			font-size: 4.8rem;
 		}
 	}
-
-	@media #{$small-screen} {
-		.icon-container{
-			height: 45% ;
-			border-bottom: 0.1rem solid $shade_lighter;
-			.icon{
-				font-size: 8rem !important;
-			}
-		}
-
-		.device-info-and-add-device{
-			height: 55% ;
-		}
-
-		.device-text-add-device{
-			.text{
-				padding-left: 0;
-				justify-content: flex-end !important;
-			}
-			.add-device {
-				display: flex;
-				justify-content: flex-start;
-				align-items: flex-start;
-				padding: 0;
-				::ng-deep vtr-ui-button{
-					.button-box{
-						padding-left: 0
-					}
-				}
-			}
+	.font-weight-600 {
+		font-weight: $weight_600;
+	}
+	.fit-height {
+		height: 22rem;
+	}
+	@media #{$mediaquery_md} {
+		.fit-height {
+			height: auto;
 		}
 	}
 
 }
+

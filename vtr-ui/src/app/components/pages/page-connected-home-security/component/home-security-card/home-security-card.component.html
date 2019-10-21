@@ -1,0 +1,45 @@
+<div class="vtr-home-security-card container-fluid">
+	<div class="row content">
+		<div class="col-lg-6 col-12 container-fluid p-5">
+			<div class="title">
+				<span [innerHTML]="'homeSecurity.card.startTrialTitle' | translate"></span>
+			</div>
+			<div class="description">
+				<span [innerHTML]="'homeSecurity.card.startTrialDescription' | translate"></span>
+			</div>
+			<div class="button-box">
+				<vtr-ui-button
+					[ngClass]="{'disable': location?.isLoading}"
+					metricsEvent="featureClick"
+					metricsItem="startTrial"
+					(onClick)="openTrialModal()"
+					[label]="'homeSecurity.card.startTrial' | translate"
+					[isDisabled]="location?.isLoading"
+					btnHeight=true
+					linkId="chs-card-btn-startTrial">
+				</vtr-ui-button>
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 container-fluid p-5">
+			<div class="title">
+				<span [innerHTML]="'homeSecurity.card.joinTitle' | translate"></span>
+			</div>
+			<div class="description">
+				<span [innerHTML]="'homeSecurity.card.joinDescription' | translate"></span>
+			</div>
+			<div class="button-box">
+				<vtr-ui-button class="join"
+					[ngClass]="{'disable': location?.isLoading}"
+					metricsEvent="featureClick"
+					metricsItem="joinGroup"
+					[label]="'homeSecurity.card.join' | translate"
+					[isDisabled]="location?.isLoading"
+					buttonColor="gray"
+					btnHeight=true
+					(onClick)="joinGroup()"
+					linkId="chs-card-btn-joinGroup">
+				</vtr-ui-button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -26,6 +26,10 @@
 				font-weight: $weight_bold;
 				background: $main_darker;
 
+				img {
+					width: 60%
+				}
+
 				span.percent {
 					font-size: 2.5rem;
 				}
@@ -77,6 +81,9 @@
 			padding-right: 5rem;
 			@media #{$mediaquery_X4} {
 				padding-left: 7rem;
+				span {
+					max-width: 33rem;
+				}
 			}
 			@media #{$mediaquery_lg} {
 				font-size: 2.8rem;
@@ -95,7 +102,7 @@
 			}
 		}
 		.button-row {
-			padding-left: 1rem;
+			padding-left: 0.5rem;
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
@@ -122,46 +129,54 @@
 
 	.tooltips-description {
 		padding: 0 7rem 0 4rem;
-		color: #FFFFFF;
+		color: $light;
 
 		&__title {
-			color: #FFFFFF;
+			color: $light;
 			font-size: 2.5rem;
-			font-weight: 600;
+			font-weight: $weight_600;
 			line-height: 2.9rem;
 			margin: 0 1rem 0.8rem 0;
 		}
 
 		&__text {
 			@extend %text-common;
-			color: #FFFFFF;
+			color: $light;
 		}
 
 		&__tooltip-text {
 			font-size: 12px;
 			line-height: 15px;
-			font-weight: 600;
-			color: #FFFFFF;
+			font-weight: $weight_600;
+			color: $light;
 			padding: 0 6px;
 			cursor: pointer;
-			border: 2px solid #FFFFFF;
+			border: 2px solid $light;
 			border-radius: 50%;
 			box-sizing: border-box;
-
-			&:hover {
-				background-color: #C2C8CE;
-				border-color: #C2C8CE;
-				color: #191C28;
+			&.hover {
+				background-color: $hover_gray;
+				border-color: $hover_gray;
+				color: $hover_dark;
 			}
 		}
 
 		&__tooltip-context {
 			width: 50rem;
+			@media #{$mediaquery_md} {
+				width: 34rem;
+			}
+			@media #{$mediaquery_13} {
+				width: 28rem;
+			}
+			@media #{$mediaquery_sm} {
+				width: 20rem;
+			}
 		}
 
 		&__tooltip-context-title {
 			@extend %text-common;
-			color: #191C28;
+			color: $hover_dark;
 			font-weight: bold;
 		}
 

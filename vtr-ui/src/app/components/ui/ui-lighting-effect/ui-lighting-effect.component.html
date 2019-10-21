@@ -1,17 +1,23 @@
 <div class="select-box">
 	<div class="dropdown">
-		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()">
+		<div class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()" (keydown.enter)="toggleOptions()"
+			attr.aria-label="{{('gaming.lightingProfile.lightingeffectnarrator.lightingEffect.title' | translate)+(selectedOption.label | translate)}}" role="combobox"
+			[attr.aria-expanded]="showOptions" aria-haspopup="true" tabindex="{{tabindex}}">
 			<span *ngIf="selectedOption">{{ selectedOption.name | translate }}</span>
 			<fa-icon class="icon" [icon]="['fal', 'chevron-down']"></fa-icon>
-		</a>
+		</div>
 		<ng-container *ngIf="showOptions">
-			<div class="gaming-dropdown-menu">
+			<div class="gaming-dropdown-menu" #dropdownLightingEle role="listbox" tabindex="-1">
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': selectedOption && option.name === selectedOption.name }"
 						(click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
-						(mouseleave)="resetDescription(option)" vtrMetrics [metricsItem]="option.id"
-						metricsEvent="featureClick" id="{{option.id}}" attr.aria-label = "{{option.id}}">
-						<a class="dropdown-item">
+						(mouseleave)="resetDescription(option)" (keydown.enter)="optionSelected(option)"
+						[attr.aria-selected]="option.value===options.curSelected?'true':'false'" role="option"
+						[attr.aria-label]="option.value===selectedOption.value?(option.label | translate)+' selected':(option.label | translate)"
+						tabindex="{{tabindex}}" (focusout)="itemsFocused()">
+						<a class="dropdown-item" id="{{option.id}}" tabindex="-1" vtrMetrics
+							[metricsItem]="option.metricitem" metricsParam="{{option.metricitem}}"
+							metricsValue="{{option.value}}" metricsEvent="featureClick">
 							<fa-icon class="icon" [icon]="['fal', 'check']"></fa-icon>{{ option.name  | translate}}
 						</a>
 					</li>
@@ -22,7 +28,16 @@
 			</div>
 		</ng-container>
 	</div>
-	<p class="brightCondition" *ngIf="enableBrightCondition1">
-		{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
-		{{'gaming.lightingProfile.brightness.text2.title' | translate}}</p>
+	<p class="brightCondition"
+		ngbTooltip="{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}	{{'gaming.lightingProfile.brightness.text2.title' | translate}}"
+		 *ngIf="enableBrightCondition1" id="lighting_brightness_setting_msg"
+		attr.aria-label="lighting_brightness_setting_msg">
+		<span *ngIf="defaultLang === 'ar'" dir="rtl">
+			{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+			{{'gaming.lightingProfile.brightness.text2.title' | translate}}
+		</span>
+		<span *ngIf="defaultLang !== 'ar'">
+			{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
+			{{'gaming.lightingProfile.brightness.text2.title' | translate}}
+		</span> </p>
 </div>

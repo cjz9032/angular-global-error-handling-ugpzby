@@ -3,6 +3,11 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
+import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
+import { EMPTY } from 'rxjs';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -13,26 +18,117 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
 	title = 'device.deviceSettings.inputAccessories.title';
 	public shortcutKeys: any[] = [];
-	public privacyIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
-	public kbdBlIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
-	public merlynIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
-	public zoomIcon = '../../../../../../assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
+	public privacyIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
+	public kbdBlIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
+	public merlynIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
+	public zoomIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
 
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
-	public keyboardCompatability: boolean;
-	public switchValue = false;
-	constructor(private keyboardService: InputAccessoriesService, private commonService: CommonService, ) { }
+	public keyboardCompatibility: boolean;
+	public stickyFunStatus = false;
+	public isTouchPadVisible = false;
+	public isMouseVisible = false;
+
+	public selectedApp: VoipApp;
+	public installedApps: VoipApp[] = [];
+	public showVoipHotkeysSection = false;
+	public isAppInstalled = false;
+	public fnCtrlSwapCapability = false;
+	public fnCtrlSwapStatus = false;
+	public isRestartRequired = false;
+	voipAppName = ['Skype For Business', 'Microsoft Teams'];
+	iconName: string[] = ['icon-s4b', 'icon-teams'];
+
+	public inputAccessoriesCapability: InputAccessoriesCapability;
+	hasUDKCapability = false;
+
+	constructor(
+		private keyboardService: InputAccessoriesService,
+		private commonService: CommonService,
+		private logger: LoggerService
+	) {
+	}
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
-			let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability)
-			this.keyboardCompatability = inputAccessoriesCapability.isKeyboardMapAvailable;
-			if (this.keyboardCompatability) {
+			this.initDataFromCache();
+			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+			// udk capability
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
+			this.getFnCtrlSwapCapability();
+		}
+		this.getMouseAndTouchPadCapability();
+		this.getVoipHotkeysSettings();
+	}
+
+	getVoipHotkeysSettings() {
+		this.keyboardService.getVoipHotkeysSettings()
+			.then(res => {
+				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED || !res.capability) {
+					return res;
+				}
+				this.showVoipHotkeysSection = true;
+				res.appList.forEach(app => {
+					if (app.isAppInstalled) {
+						this.isAppInstalled = true;
+					}
+					if (app.isSelected) {
+						this.selectedApp = app;
+					}
+				});
+				if (this.isAppInstalled) {
+					this.installedApps = res.appList;
+				}
+			})
+			.catch(error => {
+				console.log('getVoipHotkeysSettings error', error);
+			});
+	}
+
+	setVoipHotkeysSettings(app: VoipApp) {
+		const prev = this.selectedApp;
+		this.selectedApp = app;
+		this.keyboardService.setVoipHotkeysSettings(app.appName)
+			.then(VoipResponse => {
+				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
+					this.selectedApp.isSelected = false;
+					this.selectedApp = prev;
+					this.selectedApp.isSelected = true;
+					return VoipResponse;
+				}
+				this.installedApps = VoipResponse.appList;
+			})
+			.catch(error => {
+				console.log('setVoipHotkeysSettings error', error);
+			});
+	}
+
+	initDataFromCache() {
+		this.initHiddenKbdFnFromCache();
+	}
+
+	initHiddenKbdFnFromCache() {
+		try {
+			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+			if (this.inputAccessoriesCapability !== undefined) {
+				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
+				if (this.inputAccessoriesCapability.image && this.inputAccessoriesCapability.image.length > 0) {
+					this.image = this.inputAccessoriesCapability.image;
+				}
+				if (this.inputAccessoriesCapability.additionalCapabilitiesObj) {
+					this.additionalCapabilitiesObj = this.inputAccessoriesCapability.additionalCapabilitiesObj;
+				}
+			} else {
+				this.inputAccessoriesCapability = new InputAccessoriesCapability();
+			}
+		} catch (error) {
+			console.log('initHiddenKbdFnFromCache', error);
 		}
 	}
 
@@ -46,11 +142,13 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 					}
 				})
 					.catch(error => {
-						console.error('keyboard Layout name error here', error);
+						this.logger.error('keyboard Layout name error here', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getKBDLayoutName', error.message);
+			return EMPTY;
 		}
 	}
 
@@ -60,16 +158,21 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetKBDMachineType().then((value: any) => {
 					this.getKeyboardMap(layOutName, value);
+					this.inputAccessoriesCapability.image = this.image;
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					this.getAdditionalCapabilities();
 				})
 					.catch(error => {
-						console.error('keyboard Layout name error here', error);
+						this.logger.error('keyboard Layout name error here', error.message);
+						return EMPTY;
 					});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getKBDMachineType', error.message);
+			return EMPTY;
 		}
 	}
+
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
 		const type = machineType.toLowerCase();
@@ -153,6 +256,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
 		}
 	}
+
 	// To get Additional Capability Status
 	public getAdditionalCapabilities() {
 		this.shortcutKeys = [];
@@ -182,19 +286,92 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
 						}
 						this.additionalCapabilitiesObj = {
-							performane: response[0],
+							performance: response[0],
 							privacy: response[1],
 							magnifier: response[2],
 							backLight: response[3],
 						};
+						this.inputAccessoriesCapability.additionalCapabilitiesObj = this.additionalCapabilitiesObj;
+						this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					}
 				});
 			}
 		} catch (error) {
-			console.error(error.message);
+			this.logger.error('getAdditionalCapabilities', error.message);
+			return EMPTY;
 		}
 	}
-	fnCtrlKey(event) {
-		this.switchValue = event.switchValue;
+
+	public getFnCtrlSwapCapability() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnCtrlSwapCapability().then(res => {
+					this.fnCtrlSwapCapability = res;
+					if (this.fnCtrlSwapCapability) {
+						this.getFnCtrlSwap();
+					}
+				}).catch((error) => {
+					this.logger.error('GetFnCtrlSwapCapability', error.message);
+				});
+			}
+		} catch (error) {
+			this.logger.error('GetFnCtrlSwapCapability', error.message);
+			return EMPTY;
+		}
+		}
+		public getFnCtrlSwap() {
+			try {
+				if (this.keyboardService.isShellAvailable) {
+					this.keyboardService.GetFnCtrlSwap().then(res => {
+						this.fnCtrlSwapStatus = res;
+					}).catch(error => {
+							this.logger.error('GetFnCtrlSwap error here', error.message);
+							return EMPTY;
+						});
+				}
+			} catch (error) {
+				this.logger.error('GetFnCtrlSwap', error.message);
+				return EMPTY;
+			}
+		}
+
+	public fnCtrlKey(event) {
+			this.fnCtrlSwapStatus = event.switchValue;
+			try {
+				if (this.keyboardService.isShellAvailable) {
+					this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
+						this.isRestartRequired = res.RebootRequired;
+						if (res.RebootRequired === true) {
+							this.keyboardService.restartMachine();
+						}
+					}).catch((error) => {
+						this.logger.error('SetFnCtrlSwap', error.message);
+					});
+				}
+			} catch (error) {
+				this.logger.error('SetFnCtrlSwap', error.message);
+				return EMPTY;
+			}
+		}
+
+	public launchProtocol(protocol: string) {
+		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
+			WinRT.launchUri(protocol);
+		}
+	}
+
+	public getMouseAndTouchPadCapability() {
+		if (this.keyboardService.isShellAvailable) {
+			Promise.all([
+				this.keyboardService.getMouseCapability(),
+				this.keyboardService.getTouchPadCapability()
+			]).then((responses: any[]) => {
+				this.logger.info('SubpageDeviceSettingsInputAccessoryComponent: getMouseAndTouchPadCapability.response', responses);
+				this.isMouseVisible = responses[0];
+				this.isTouchPadVisible = responses[1];
+			}).catch((error) => {
+				this.logger.error('SubpageDeviceSettingsInputAccessoryComponent: error in getMouseAndTouchPadCapability.Promise.all()', error);
+			});
+		}
 	}
 }

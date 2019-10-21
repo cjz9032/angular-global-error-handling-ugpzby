@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
@@ -15,15 +14,17 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { TaskAction } from 'src/app/data-models/metrics/events.model';
 import * as metricsConst from 'src/app/enums/metrics.enum';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
 })
+// As LenovoSystemUpdatePlugin not support S-Mode, all System Update feature are not supported in S-Mode.
 export class SystemUpdateService {
 
 	constructor(
-		shellService: VantageShellService
-		, private commonService: CommonService) {
+		shellService: VantageShellService,
+		private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
 		this.metricClient = shellService.getMetrics();
@@ -51,6 +52,8 @@ export class SystemUpdateService {
 	public isInstallationCompleted = false;
 	public isInstallationSuccess = false;
 	public isDownloadingCancel = false;
+	public isImcErrorOrEmptyResponse = false;
+	public isRebootRequiredDialogNeeded = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -121,9 +124,6 @@ export class SystemUpdateService {
 					console.log('getUpdateHistory', response);
 					this.installationHistory = response;
 					this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
-				}).catch((error) => {
-					// get current status
-					console.log('getUpdateHistory.error', error);
 				});
 		}
 	}
@@ -147,7 +147,7 @@ export class SystemUpdateService {
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
-					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
+					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
 					this.percentCompleted = 0;
@@ -156,12 +156,21 @@ export class SystemUpdateService {
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
 				}
 			}).catch((error) => {
+				this.percentCompleted = 0;
 				this.metricHelper.sendSystemUpdateMetric(
 					0,
 					'',
 					error.message,
 					MetricHelper.timeSpan(new Date(), timeStartSearch));
-				console.log('checkForUpdates.error', error);
+				if (error &&
+					((error.description && error.description.includes('errorcode: 606'))
+						|| (error.errorcode && error.errorcode === 606))) {
+					this.getScheduleUpdateStatus(true);
+					this.isImcErrorOrEmptyResponse = true;
+				} else {
+					const payload = { status: 1 };
+					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+				}
 			});
 		}
 		return undefined;
@@ -173,9 +182,6 @@ export class SystemUpdateService {
 				.then((status: boolean) => {
 					console.log('cancelUpdateCheck then', status);
 					// todo: ui changes to show on update cancel
-				})
-				.catch((error) => {
-					console.log('cancelUpdateCheck.error', error);
 				});
 		}
 	}
@@ -189,7 +195,14 @@ export class SystemUpdateService {
 				this.processScheduleUpdate(response.payload, true);
 			}).then((response: ScheduleUpdateStatus) => {
 				console.log('getScheduleUpdateStatus response', response);
+				this.isImcErrorOrEmptyResponse = false;
 				this.processScheduleUpdate(response, false);
+			}).catch((error) => {
+				if (error && error.errorcode === 606) {
+					setTimeout(() => {
+						this.getScheduleUpdateStatus(canReportProgress);
+					}, 200);
+				}
 			});
 		}
 	}
@@ -258,6 +271,7 @@ export class SystemUpdateService {
 					this.isInstallationCompleted = true;
 					this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
 					this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
+					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstallationComplete, this.updateInfo);
 				}
 			} else if (response.checkForUpdatesResult) {
@@ -268,7 +282,7 @@ export class SystemUpdateService {
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) {
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
-					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.checkForUpdatesResult.updateList) };
+					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.checkForUpdatesResult.updateList) };
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdatesAvailable, this.updateInfo);
 				} else {
 					this.percentCompleted = 0;
@@ -280,20 +294,10 @@ export class SystemUpdateService {
 		}
 	}
 
-	public installAllUpdates(removeDelayedUpdates: boolean) {
+	public installUpdatesList(removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>, isInstallAll: boolean) {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
-			this.selectCoreqUpdateForInstallAll();
-			const unIgnoredUpdates = this.getUnIgnoredUpdatesForInstallAll(this.updateInfo.updateList);
-			const updates = this.mapToInstallRequest(unIgnoredUpdates, removeDelayedUpdates);
-			this.installUpdates(updates, true);
-		}
-	}
-
-	public installSelectedUpdates(removeDelayedUpdates: boolean) {
-		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
-			const updatesToInstall = this.getSelectedUpdates(this.updateInfo.updateList);
-			const updates = this.mapToInstallRequest(updatesToInstall, removeDelayedUpdates);
-			this.installUpdates(updates, false);
+			const updates = this.mapToInstallRequest(updateList, removeDelayedUpdates);
+			this.installUpdates(updates, isInstallAll);
 		}
 	}
 
@@ -305,6 +309,7 @@ export class SystemUpdateService {
 		}
 	}
 
+	// Please Notice that this function doesn't support S-Mode
 	public restartWindows() {
 		if (this.systemUpdateBridge) {
 			this.commonService.sendNotification(UpdateProgress.WindowsRebootRequested);
@@ -313,9 +318,6 @@ export class SystemUpdateService {
 					if (status) {
 						this.commonService.sendNotification(UpdateProgress.WindowsRebooting);
 					}
-				})
-				.catch((error) => {
-					console.log('cancelUpdateCheck.error', error);
 				});
 		}
 	}
@@ -323,36 +325,27 @@ export class SystemUpdateService {
 	public getIgnoredUpdates() {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.getIgnoredUpdates()
-			.then((ignoredUpdates) => {
-				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('getIgnoredUpdates.error', error);
-			});
+				.then((ignoredUpdates) => {
+					this.updateIgnoredStatus(ignoredUpdates);
+				});
 		}
 	}
 
 	public ignoreUpdate(packageName: string) {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.ignoreUpdate(packageName)
-			.then((ignoredUpdates) => {
-				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('ignoreUpdate.error', error);
-			});
+				.then((ignoredUpdates) => {
+					this.updateIgnoredStatus(ignoredUpdates);
+				});
 		}
 	}
 
 	public unIgnoreUpdate(packageName: string) {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.unignoreUpdate(packageName)
-			.then((ignoredUpdates) => {
-				this.updateIgnoredStatus(ignoredUpdates);
-			})
-			.catch((error) => {
-				console.log('unIgnoreUpdate.error', error);
-			});
+				.then((ignoredUpdates) => {
+					this.updateIgnoredStatus(ignoredUpdates);
+				});
 		}
 	}
 
@@ -383,12 +376,12 @@ export class SystemUpdateService {
 		}
 	}
 
-	private selectCoreqUpdateForInstallAll() {
-		if (this.updateInfo.updateList && this.updateInfo.updateList.length > 0) {
-			this.updateInfo.updateList.forEach((update) => {
+	public selectCoreqUpdateForInstallAll(updateList: any) {
+		if (updateList && updateList.length > 0) {
+			updateList.forEach((update) => {
 				if (update.coreqPackageID && !update.isIgnored) {
 					const coreqPackages = update.coreqPackageID.split(',');
-					this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, true, update.packageID);
+					this.selectCoreqUpdate(updateList, coreqPackages, true, update.packageID);
 				}
 			});
 
@@ -401,7 +394,9 @@ export class SystemUpdateService {
 				return value.packageID === coreqPackage;
 			});
 			if (coreqUpdate) {
-				coreqUpdate.dependedByPackages = coreqUpdate.dependedByPackages +  ',' + dependedByPackage;
+				if (!coreqUpdate.dependedByPackages.includes(dependedByPackage)) {
+					coreqUpdate.dependedByPackages = coreqUpdate.dependedByPackages + ',' + dependedByPackage;
+				}
 				coreqUpdate.isSelected = isSelected;
 				if (isSelected) {
 					coreqUpdate.isDependency = true;
@@ -476,13 +471,13 @@ export class SystemUpdateService {
 	}
 
 	// returns reboot type and array of update name which requires pop up to show before installation
-	public getRebootType(updateList: Array<AvailableUpdateDetail>, source: string): { rebootType: UpdateRebootType, packages: Array<string> } {
+	public getRebootType(updateList: Array<AvailableUpdateDetail>): { rebootType: UpdateRebootType, packages: Array<string> } {
 		let rebootType = UpdateRebootType.Unknown;
 		const packages = new Array<string>();
 
-		const rebootDelayedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootDelayed, source);
-		const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced, source);
-		const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced, source);
+		const rebootDelayedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootDelayed);
+		const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced);
+		const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced);
 
 		// Priority #1 RebootDelayed : return details of it, no need to check other.
 		if (rebootDelayedUpdates && rebootDelayedUpdates.length > 0) {
@@ -515,14 +510,15 @@ export class SystemUpdateService {
 		return { rebootType, packages };
 	}
 
-	private getUpdateByRebootType(updateList: Array<AvailableUpdateDetail>, rebootType: UpdateRebootType, source: string): Array<AvailableUpdateDetail> {
+	private getUpdateByRebootType(updateList: Array<AvailableUpdateDetail>, rebootType: UpdateRebootType): Array<AvailableUpdateDetail> {
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return ((value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase()) && (value.isSelected || (source === 'all' && !value.isIgnored)));
+			return (value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase());
 		});
 		return updates;
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
+		this.isImcErrorOrEmptyResponse = false;
 		if (updates.length === 0) {
 			this.installedUpdates = [];
 			const payload = new AvailableUpdate();
@@ -567,6 +563,7 @@ export class SystemUpdateService {
 							(rebootDelayUpdate) => payload.updateList.push(rebootDelayUpdate));
 					}
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 				} else {
 					this.isInstallationCompleted = false;
@@ -574,14 +571,19 @@ export class SystemUpdateService {
 				}
 			} else {
 				// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
-				this.getScheduleUpdateStatus(true);
+				setTimeout(() => {
+					this.getScheduleUpdateStatus(true);
+				}, 2500);
+				this.isImcErrorOrEmptyResponse = true;
 			}
 		}).catch((error) => {
-			console.log(error);
 			if (error &&
 				((error.description && error.description.includes('errorcode: 606'))
-				|| (error.errorcode && error.errorcode === 606))) {
-				this.getScheduleUpdateStatus(true);
+					|| (error.errorcode && error.errorcode === 606))) {
+				setTimeout(() => {
+					this.getScheduleUpdateStatus(true);
+				}, 200);
+				this.isImcErrorOrEmptyResponse = true;
 			}
 		});
 	}
@@ -706,11 +708,28 @@ export class SystemUpdateService {
 	public getUnIgnoredUpdatesForInstallAll(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
-				return !value.isIgnored || (value.isIgnored && value.isDependency);
+				if (!value.isIgnored) {
+					return true;
+				} else if (value.isDependency) {
+					return this.IsUpdateDependedByUnIgnoredPackage(updateList, value.dependedByPackages);
+				}
 			});
 			return updates;
 		}
 		return undefined;
+	}
+
+	private IsUpdateDependedByUnIgnoredPackage(updateList: Array<AvailableUpdateDetail>, dependedByPackages: string) {
+		let result = false;
+		const dependedPacks = dependedByPackages.split(',');
+		dependedPacks.forEach((pack) => {
+			updateList.forEach((update) => {
+				if (!update.isIgnored && update.packageID === pack) {
+					result = true;
+				}
+			});
+		});
+		return result;
 	}
 
 	public dateDiffInDays(date: string) {
@@ -734,9 +753,6 @@ export class SystemUpdateService {
 					this.isDownloadingCancel = true;
 					this.isInstallingAllUpdates = true;
 					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
-				})
-				.catch((error) => {
-					console.log('cancelDownload.error', error);
 				});
 		}
 	}

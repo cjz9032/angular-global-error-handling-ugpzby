@@ -2,54 +2,53 @@
 	<!-- update list with checkbox section -->
 	<ul class="list-group"
 		*ngIf="!isInstallationCompleted">
-		<li class="list-group-item"
+		<li class="list-group-item" id="su_item_candidate"
 			*ngFor="let item of items; let i = index">
 			<div class="media pl-3 align-items-center">
 				<div class="media-body pb-0 mb-0 small">
 					<div class="d-flex justify-content-between align-items-center w-100">
 						<div class="custom-control custom-checkbox update-checkbox">
 							<input type="checkbox"
-								id="{{ 'updateCheckbox_'  + item.packageID + '_' + randomNumber + i}}"
-								attr.aria-label="{{ 'updateCheckbox_'  + item.packageID + '_' + randomNumber + i}}"
+								id="{{ 'updateCheckbox_'  + item.packageID }}"
 								[disabled]="item.isDependency"
 								class="custom-control-input"
 								[checked]="item.isSelected"
 								[name]="item.packageName"
 								(change)="onCheckChange($event)" />
 							<label class="custom-control-label "
-								for="{{ 'updateCheckbox_'  + item.packageID + '_' + randomNumber + i}}">
+								for="{{ 'updateCheckbox_'  + item.packageID }}"
+								id="{{'su_item_' + item.packageID}}" role="article">
 								<span class="update-title">
 									{{item.packageDesc}}</span>
 							</label>
 
 							<div class="button-box pl-1"
 								*ngIf="item.packageRebootType === 'RebootForced'">
-								<div class="btn-round-sm">
+								<div class="btn-round-sm" id="{{'su_rebootForced_'+item.packageID}}" role="article">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootRequiredTag' | translate}}
 								</div>
 							</div>
 							<div class="button-box pl-1"
 								*ngIf="item.packageRebootType === 'RebootDelayed'">
-								<div class="btn-round-sm">
+								<div class="btn-round-sm" id="{{'su_rebootDelayed_'+item.packageID}}" role="article">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootDelayTag' | translate}}
 								</div>
 							</div>
 							<div class="button-box pl-1"
 								*ngIf="item.packageRebootType === 'PowerOffForced'">
-								<div class="btn-round-sm">
+								<div class="btn-round-sm" id="{{'su_powerOffForced_'+item.packageID}}" role="article">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
 								</div>
 							</div>
 							<div class="button-box pl-1"
 								*ngIf="item.isDependency">
-								<div class="btn-round-sm">
+								<div class="btn-round-sm" id="{{'su_depended_'+item.packageID}}" role="article">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.dependedPackage' | translate}}
 								</div>
 							</div>
 						</div>
 						<a href="javascript:void();"
-						id="su_question_mark"
-						aria-label="su_question_mark">
+						id="{{'su_item_question_mark_' + item.packageID}}">
 							<fa-icon class="question"
 								triggers="click:blur"
 								placement="auto"
@@ -68,20 +67,20 @@
 	<!-- Installation completed section -->
 	<ul class="list-group"
 		*ngIf="isInstallationCompleted">
-		<li class="list-group-item"
+		<li class="list-group-item" id="{{'su_item_installed_' + item.packageID}}"
 			*ngFor="let item of items">
 			<div class="media pl-3 align-items-center">
 					<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
 						<div class="icon-check">
 							<div class="icon-bg text-center">
-								<fa-icon [icon]="['fas', 'check']"></fa-icon>
+								<fa-icon id="{{'su_item_installed_icon_success_' + item.packageID}}" role="article" [icon]="['fas', 'check']"></fa-icon>
 							</div>
 						</div>
 					</div>
 					<ng-template #elseBlock>
 						<div class="icon-times">
 							<div class="icon-bg text-center">
-								<fa-icon [icon]="['fas', 'times']"></fa-icon>
+								<fa-icon id="{{'su_item_installed_icon_failure_' + item.packageID}}" role="article" [icon]="['fas', 'times']"></fa-icon>
 							</div>
 						</div>
 					</ng-template>
@@ -89,12 +88,12 @@
 							<!---div class="d-flex justify-content-between align-items-center w-100"-->
 						<div class="row">
 							<div class="col col-11 item-text">
-								<div class="row">
+								<div class="row" id="{{'su_item_installed_description_' + item.packageID}}" role="article">
 									<div class="d-flex justify-content-between align-items-center w-100">
 										<div class="update-title">{{item.packageDesc}}</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row" id="{{'su_item_installed_failReason_' + item.packageID}}" role="article">
 									<div class="col">
 										<div class="d-flex justify-content-between align-items-center w-100">
 											<div class="fail-reason" *ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' && !item.isACAttached && item.packageRebootType.toLocaleLowerCase() === 'rebootdelayed'">{{'systemUpdates.updateCheckbox.failReason' | translate}}</div>
@@ -138,8 +137,7 @@
 				<a href="javascript:void(0)"
 					class="read"
 				   vtrMetrics
-				   id="su-package-readme"
-				   aria-label="su-package-readme"
+				   id="{{'su-package-readme-'+ packageID}}"
 				   metricsItem="readme"
 				   metricsEvent="featureClick"
 				   (click)="onReadMoreClick($event)">{{'systemUpdates.readMore' | translate}}</a>
@@ -150,8 +148,7 @@
 				<a href="javascript:void(0)"
 					class="ignore"
 					vtrMetrics
-					id="su-ignore-update"
-				    aria-label="su-ignore-update"
+					id="{{'su-ignore-update-'+ packageID}}"
 				    metricsItem="ignore"
 					metricsEvent="featureClick"
 					metricsParam="{{ 'packageID=' + packageID }}"
@@ -163,8 +160,7 @@
 				<a href="javascript:void(0)"
 					class="ignore"
 					vtrMetrics
-					id="su-unIgnore-update"
-				    aria-label="su-unIgnore-update"
+					id="{{'su-unignore-update-'+ packageID}}"
 				    metricsItem="attend"
 					metricsEvent="featureClick"
 					metricsParam="{{ 'packageID=' + packageID }}"

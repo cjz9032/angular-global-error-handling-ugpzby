@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, merge, of, Subject } from 'rxjs';
-import { catchError, map, switchMap, take } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, map, switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
 import { convertBrowserNameToBrowserData } from '../../utils/helpers';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
 import { UpdateTriggersService } from './update-triggers.service';
+import { UserAllowService } from './user-allow.service';
 
 export interface InstalledBrowser {
 	name: string;
@@ -24,8 +25,6 @@ export interface InstalledBrowserDataState {
 	providedIn: 'root'
 })
 export class BrowserAccountsService {
-	isConsentGiven$ = new BehaviorSubject(!!this.storageService.getItem('isConsentGiven'));
-
 	installedBrowsersData$ = new BehaviorSubject<InstalledBrowserDataState>({browserData: [], error: null});
 	installedBrowsersData = this.installedBrowsersData$.asObservable();
 
@@ -36,15 +35,20 @@ export class BrowserAccountsService {
 		private vantageCommunicationService: VantageCommunicationService,
 		private storageService: StorageService,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
-		private updateTriggersService: UpdateTriggersService
+		private updateTriggersService: UpdateTriggersService,
+		private userAllowService: UserAllowService
 	) {
 		this.getInstalledBrowsersDefaultData();
 	}
 
-	getInstalledBrowsersDefaultData() {
+	private getInstalledBrowsersDefaultData() {
 		merge(
 			this.updateTriggersService.shouldUpdate$,
-			this.updateBrowsersData$.asObservable()
+			this.updateBrowsersData$.asObservable(),
+			this.userAllowService.allowToShow.pipe(
+				map((allowMap) => allowMap.consentForVulnerablePassword),
+				distinctUntilChanged()
+			),
 		).pipe(
 			switchMap(() => {
 				return this.vantageCommunicationService.getInstalledBrowsers().pipe(
@@ -56,7 +60,7 @@ export class BrowserAccountsService {
 			})
 		).subscribe((browserData) => {
 			this.installedBrowsersData$.next({browserData, error: null});
-			const isConsentGiven = this.isConsentGiven$.getValue();
+			const isConsentGiven = this.userAllowService.allowToShow.getValue().consentForVulnerablePassword;
 			if (isConsentGiven) {
 				this.sendTaskAcrion();
 			}
@@ -64,13 +68,12 @@ export class BrowserAccountsService {
 	}
 
 	giveConcent() {
-		this.storageService.setItem('isConsentGiven', 'true');
-		this.isConsentGiven$.next(true);
+		this.userAllowService.setConsentForVulnerablePassword(true);
 		this.updateBrowsersData();
 	}
 
-	concatPasswords(browserData: InstalledBrowser[]) {
-		const isConsentGiven = this.isConsentGiven$.getValue();
+	private concatPasswords(browserData: InstalledBrowser[]) {
+		const isConsentGiven = this.userAllowService.allowToShow.getValue().consentForVulnerablePassword;
 
 		if (isConsentGiven) {
 			const browsersNamesArray = browserData.map((browser) => browser.name);
@@ -97,7 +100,7 @@ export class BrowserAccountsService {
 	}
 
 	private concatPasswordsCount(browserData: ReturnType<typeof convertBrowserNameToBrowserData>) {
-		const isConsentGiven = this.isConsentGiven$.getValue();
+		const isConsentGiven = this.userAllowService.allowToShow.getValue().consentForVulnerablePassword;
 
 		if (isConsentGiven) {
 			const browsersNamesArray = browserData.map((browser) => browser.name);
@@ -106,7 +109,7 @@ export class BrowserAccountsService {
 					browserData.map((browser) => ({...browser, accountsCount: accessiblePasswords[browser.name]}))
 				),
 				catchError((error) => {
-					this.installedBrowsersData$.next({browserData: [], error: error});
+					this.installedBrowsersData$.next({browserData: [], error});
 					this.sendTaskAcrion();
 					return EMPTY;
 				})

@@ -13,7 +13,7 @@
 	&.disabled {
 		opacity: 0.5;
 		&:after {
-			content: '';
+			content: "";
 			position: absolute;
 			width: 100%;
 			height: 100%;
@@ -30,7 +30,7 @@
 		.icon {
 			position: relative;
 			font-size: 2.2rem;
-			top: -0.5rem!important;
+			top: -0.5rem !important;
 		}
 		&::after {
 			display: none;
@@ -38,7 +38,13 @@
 	}
 	.gaming-dropdown-menu {
 		width: 100%;
-		background-color: $gaming_shade;
+		background-color: $gaming_shade;	
+		@media #{$black-on-white}{
+			border:0.1rem solid $dark;
+			}
+		@media #{$white-on-black}{
+			border:0.1rem solid $light;
+			}	
 		border: none;
 		border-radius: 0.8rem;
 		position: absolute;
@@ -72,6 +78,15 @@
 				}
 				&:hover {
 					background: $gaming_hover;
+					@media #{$black-on-white}{
+						background-color:$high-contrast-grey;					
+						}
+					@media #{$white-on-black}{
+						background-color:$high-contrast-grey;						
+						}
+				}
+				&:focus {
+					background: $gaming_hover;
 				}
 			}
 			&.selected {
@@ -92,6 +107,9 @@
 			p {
 				font-size: 1.4rem;
 				color: $main_lightest;
+				&[lang="ar"] {
+					text-align: right;
+				}
 			}
 		}
 	}

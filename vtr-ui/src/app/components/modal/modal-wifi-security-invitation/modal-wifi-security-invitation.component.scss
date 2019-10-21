@@ -13,10 +13,6 @@
 		color: $main_dark;
 		letter-spacing: 0;
 	}
-	.activation{
-		visibility: hidden;
-		margin-top: 1.5rem;
-	}
 	.description {
 		font-size: 1.3rem;
 		font-weight: $weight_bold;
@@ -24,7 +20,10 @@
 		text-transform: uppercase;
 		opacity: .4;
 		letter-spacing: 0;
-		margin-bottom: 2.5rem;
+	}
+	.header-description {
+		text-transform: none;
+		font-weight: $weight_600;
 	}
 	.close-btn{
 		position: absolute;
@@ -52,8 +51,11 @@
 	}
 	.code-input-group{
 		box-shadow: $drop_shadow;
-		border: 1px solid #e0e0e0;
-		border-radius: 0.5rem;
+		border: 1px solid $grey_light;
+		border-radius: $border_radius_sm;
+		&.input-focus {
+			border: 1px solid $menu_hover;
+		}
 		input{
 			font-weight:$weight_bold;
 		}
@@ -66,43 +68,64 @@
 			letter-spacing: 0;
 		}
 		input:disabled{
-			background-color: white!important
+			background-color: $light!important
 		}
 		.form-control{
 			border: 0px;
 			font-size: 1.6rem;
-			padding: 0 3rem 1.5rem;
+			padding: 1.5rem 3rem 1.5rem 0;
 			letter-spacing: 0.2rem;
 			text-transform: uppercase;
 			margin-bottom: 0.1rem;
-			width: 99%;
+			margin-top: 0.1rem;
+			margin-left: 2rem;
+			width: 80%;
 		}
 		.form-control:focus{
-			box-shadow:0px 0px;
+			box-shadow: 0px 0px;
 		}
 	}
 	.modal-button {
 		background: $gradient_main;
-		border-radius: 5rem;
+		border-radius: 6rem;
 		padding: 0 3rem;
 		height: 5rem;
 		font-size: 1.5rem;
 		color: $light;
 		font-weight: $weight_bold;
+		margin: 1rem;
 	}
+	vtr-ui-button {
+		display: inline-block;
+	}
+	.cancel-button {
+		background: $light;
+		color: $blue-lighter;
+		border-bottom: 1px solid $blue-light;
+		height: 3rem;
+		padding-left: 0;
+		padding-right: 0;
+		border-radius: 0;
+		&:hover {
+			color: $blue-light;
+		}
+	}
+
 	.join-info{
 		line-height: 2.5rem;
 		font-size: 1.3rem;
 		font-weight: $weight_bold;
-		padding-top: 1.5rem;
-		
-		.success{
-			font-weight: $weight_bold;
-			font-size: 2.5rem;
+
+		.joinGroupSuccess{
+			height: 20rem;
+			justify-content: center;
+			align-items: center;
 		}
-		.successIcon{
-			color:$go_dark;
-			font-size: 2.5rem;
+		.success{
+			font-weight: $weight_medium;
+			font-size: 2rem;
+			line-height: 3rem;
+			color: $shade_blue;
 		}
 		.successtitle{
 			font-weight: $weight_regular;
@@ -111,19 +134,44 @@
 		}
 		.failed{
 			color: $alt;
-			font-weight: $weight_bold;
+			font-weight: $weight_medium;
 			font-size: 1.8rem;
 		}
 	}
 
+	.divider {
+		height: 0.1rem;
+		background-color: $shade_lighter;
+	}
 	.joinfailed{
-		border: 1px solid #F8D5D5;
-		background-color: #FEF8F8;
-		box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+		border: 1px solid $border_light;
+		background-color: $text_light;
+		box-shadow: none;
 
 		input{
 			color: $alt;
-			background-color: #FEF8F8;
+			background-color: $text_light;
 		}
+	}
+
+	.loading-container {
+		height: 20rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.spinner-border {
+			color: $blue-light;
+			width: 6rem;
+			height: 6rem;
+			border-width: 0.5rem;
+		}
+		.connecting {
+			font-size: 2rem;
+		}
+	}
+
+	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+		color: $shade_light;
+		text-transform: lowercase;
 	}
 }

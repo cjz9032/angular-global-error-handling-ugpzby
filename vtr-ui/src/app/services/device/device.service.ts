@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { CommonService } from '../common/common.service';
@@ -7,6 +6,9 @@ import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
+import { HypothesisService } from '../hypothesis/hypothesis.service';
+import { LoggerService } from '../logger/logger.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,14 +23,19 @@ export class DeviceService {
 	public is64bit = true;
 	public showPrivacy = false;
 	public isGaming = false;
+	public isSMode = false;
+	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	private machineInfo: any;
-
+	public showSearch = false;
+	public showCHSMenu = false;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
 		public androidService: AndroidService,
-		private router: Router) {
+		private router: Router,
+		private logger: LoggerService,
+		private hypSettings: HypothesisService) {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
@@ -36,41 +43,11 @@ export class DeviceService {
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
-		// if (this.microphone) {
-		// 	this.startDeviceMonitor();
-		// }
 		this.initIsArm();
 		this.initshowPrivacy();
+		this.initShowSearch();
+		this.initShowCHSMenu();
 	}
-
-	// private loadGamingDashboard() {
-	// 	if (!this.isGamingDashboardLoaded) {
-	// 		this.isGamingDashboardLoaded = true;
-	// 		if (this.isGaming) {
-	// 			this.router.navigateByUrl('/device-gaming');
-	// 		} else {
-	// 			this.router.navigateByUrl('/dashboard');
-	// 		}
-	// 	}
-	// }
-
-	// private initIsGaming() {
-	// 	try {
-	// 		if (this.isShellAvailable) {
-	// 			this.getMachineInfo()
-	// 				.then((machineInfo: any) => {
-	// 					if (machineInfo.isGaming !== undefined) {
-	// 						console.log('initIsGaming', machineInfo.isGaming);
-	// 						this.isGaming = machineInfo.isGaming;
-	// 					}
-	// 				}).catch(error => {
-	// 					console.error('initIsGaming', error);
-	// 				});
-	// 		}
-	// 	} catch (error) {
-	// 		console.error('initArm' + error.message);
-	// 	}
-	// }
 
 	private initIsArm() {
 		try {
@@ -78,10 +55,12 @@ export class DeviceService {
 				.then((status: boolean) => {
 					this.isArm = status;
 				}).catch(error => {
-					console.error('initArm', error);
+					this.logger.error('initArm', error.message);
+					return false;
 				});
 		} catch (error) {
-			console.error('initArm' + error.message);
+			this.logger.error('initArm' + error.message);
+			return false;
 		}
 	}
 
@@ -98,20 +77,39 @@ export class DeviceService {
 				return isArm;
 			}
 		} catch (error) {
-			console.error('getIsARM' + error.message);
+			this.logger.error('getIsARM' + error.message);
+			return isArm;
 		}
 	}
 
 	private initshowPrivacy() {
 		// set this.showPrivacy appropriately based on machineInfo data
-		try {
-			if (this.isShellAvailable) {
-				this.shellService.calcDeviceFilter('{"var":"HypothesisGroups.PrivacyTab"}').then((privacy) => {
-					this.showPrivacy = (privacy === 'enabled');
-				});
-			}
-		} catch (error) {
-			console.error('initPrivacy' + error.message);
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
+				this.showPrivacy = (privacy === 'enabled');
+			}, (error) => {
+				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
+			});
+		}
+	}
+
+	private initShowSearch() {
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
+				this.showSearch = ((searchFeature || '').toString() === 'true');
+			}, (error) => {
+				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
+			});
+		}
+	}
+
+	private initShowCHSMenu() {
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
+				this.showCHSMenu = ((result || '').toString() === 'true');
+			}, (error) => {
+				this.logger.error('DeviceService.initShowCHSMenu: promise rejected ', error);
+			});
 		}
 	}
 
@@ -128,7 +126,11 @@ export class DeviceService {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
+					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
+					if (info.mtm && !this.showWarranty && info.mtm.substring(info.mtm.length - 2).toLocaleLowerCase() !== 'cd') {
+						this.showWarranty = true;
+					}
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {
 							this.is64bit = false;

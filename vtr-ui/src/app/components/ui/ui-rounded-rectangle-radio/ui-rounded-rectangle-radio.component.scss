@@ -22,6 +22,10 @@
 		width: 18rem;
 		margin-right: 1rem;
 	}
+	@media #{$mediaquery_X42} {
+		width: 21rem;
+		margin-right: 1rem;
+	}
 	@media #{$mediaquery_X16} {
 		width: 16.5rem;
 		margin-right: 1rem;
@@ -40,8 +44,7 @@
 		position: relative;
 		z-index: 2;
 		overflow: hidden;
-
-		.label {
+			.label {
 			// @media #{$mediaquery_X4} {
 			// 	padding-right: .5rem;
 			// 	font-size: 1rem;
@@ -51,7 +54,7 @@
 
 			// }
 			position: absolute;
-			top: 1.8rem;
+			top: 50%;
 			left: 6rem;
 			color: $main_darkest;
 			font-size: 1.5rem;
@@ -59,6 +62,7 @@
 			word-wrap: break-word;
 			word-break: break-all;
 			padding-right: 1rem;
+			transform: translateY(-50%);
 		}
 
 		.icon-circle {
@@ -66,6 +70,17 @@
 			color: $main;
 			top: 1.3rem;
 			left: 1.3rem;
+			@media #{$white-on-black}{
+				background-color: $dark;
+				border:none;
+				color: $highlight_bright;
+			}
+			@media #{$black-on-white}{
+				background-color: $light;
+				border: none;
+				color: darkviolet;
+			}
+	
 		}
 
 		fa-icon.icon {
@@ -74,7 +89,7 @@
 			top: 9rem;
 			font-size: 3.2rem;
 			color: $main;
-		}
+			}
 
 		span.question {
 			position: absolute;
@@ -88,7 +103,7 @@
 	input[type="radio"]:not(:checked) + label::after {
 		opacity: 0;
 		transition: all 1s ease;
-	}
+		}
 	input:checked + label::after {
 		opacity: 1;
 	}
@@ -106,4 +121,23 @@
 		border: 0.3rem solid $shade_lightest;
 		// transition: all 50ms ease-in;
 	}
+	&.border-disabled {
+		border: 0.3rem solid #e6eaeb;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
+	&.border-checked-disabled {
+		border: 0.3rem solid #667481;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
+}
+.large-width {
+	width: 29rem;
 }

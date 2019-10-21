@@ -33,15 +33,13 @@ export class WidgetLightingComponent implements OnInit {
 		this.setprofId = 0;
 		this.getCapabilities();
 		this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities) {
+			if (response.type === Gaming.GamingCapabilities) {
 				this.getCapabilities();
 			}
 		});
 	}
 
 	public getCapabilities() {
-		console.log('capabilities global values -------------lighting widget dashboard');
-
 		this.ledSetFeature = this.commonService.getLocalStorageValue(LocalStorageKey.ledSetFeature);
 		this.ledDriver = this.commonService.getLocalStorageValue(LocalStorageKey.ledDriver);
 
@@ -71,26 +69,19 @@ export class WidgetLightingComponent implements OnInit {
 				this.gamingLightingService.getLightingProfileId().then((response: any) => {
 					this.didSuccess = response.didSuccess;
 					this.profileId = response.profileId;
-					console.log('getLightingProfileId------------response---------------->', JSON.stringify(response));
 					if (!this.didSuccess) {
 						if (LocalStorageKey.ProfileId !== undefined) {
 							this.setprofId = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId) || 0;
 						}
-						console.log('status---false: ' + this.setprofId);
 					} else {
 						if (LocalStorageKey.ProfileId !== undefined) {
 							this.commonService.setLocalStorageValue(LocalStorageKey.ProfileId, this.profileId);
 						}
 						this.setprofId = this.profileId;
-						console.log(
-							'getLightingProfileId---cache----------true: ',
-							JSON.stringify(this.commonService.getLocalStorageValue(LocalStorageKey.ProfileId))
-						);
 					}
 				});
 			}
 		} catch (error) {
-			console.error('getLightingProfileId: ' + error.message);
 		}
 	}
 
@@ -126,12 +117,10 @@ export class WidgetLightingComponent implements OnInit {
 				}
 			}
 		} catch (error) {
-			console.error('setLightingProfileId: ' + error.message);
 		}
 	}
 
 	public checkStatus(id) {
-		console.log('check status', id + ' ' + this.setprofId);
 		if (id) {
 			this.isdriverpopup = true;
 		}

@@ -1,24 +1,34 @@
-<ui-popover *ngIf="showMePartially">
-	<div class="modal-body vtr-ui-popover">
+<ui-popover tabindex="1" id="gamingPopover"
+ [attr.aria-label]="'system restart is required window'" vtrOutsideClick (clickOutside)="onOutsideClick()">
+	<div class="modal-body vtr-ui-popover" tabindex="-1"  >
 		<div class="row justify-content-end">
 			<div class="btn-close">
-				<button type="button" class="close" aria-hidden="true" (click)="close()" vtrMetrics
-					[metricsItem]="'popover_close'" metricsEvent="featureClick">
-					<fa-icon [icon]="['fal', 'times']"></fa-icon>
-				</button>
+				<a type="button" class="close" aria-hidden="true"
+				tabindex="1"  (click)="close()" (keyup.enter)="close()" vtrMetrics
+					[metricsItem]="'popover_close'" metricsEvent="featureClick" 
+					id="gamingPopupClose" attr.aria-label="gaming popup close" 
+					role="button" aria-labelledby="popup_close">
+					<fa-icon [icon]="['fal', 'times']" ></fa-icon>
+			</a>
 			</div>
 		</div>
-		<div class="content-body">
+		<div class="content-body"  role="dialog" aria-labelledby="restart_popup" tabindex="-1">
 			<h1>{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</h1>
 			<p></p>
 		</div>
 		<hr>
-		<div class="row">
-			<button id="gaming_legionedge_popup_close" attr.aria-label="gaming_legionedge_popup_close"
+		<div class="row" >
+			<a id="gaming_popup_ok" attr.aria-label="gaming popup ok" tabindex="1"
 				class="btn enable-button" vtrMetrics
 				[metricsItem]="'popover_ok'"
 				metricsEvent="featureClick"
-				(click)="close()">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</button>
+				(click)="close()" 
+				(keyup.enter)="close()" (keydown)="runappKeyup($event)"
+				 role="button">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</a>
 		</div>
 	</div>
+	<span id="restart_popup" style="visibility: hidden;">{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</span>
+	<span id="popup_close" style="visibility: hidden;">close</span>
+
 </ui-popover>
+

@@ -10,7 +10,10 @@
 							[isCharging]="batteryIndicator.charging"
 							[isExpressCharging]="batteryIndicator.expressCharging"
 							[batteryNotDetected]="batteryIndicator.batteryNotDetected"
-							[timeText]="batteryIndicator.timeText">
+							[timeText]="batteryIndicator.timeText"
+							[isAirplaneMode]="batteryIndicator.isAirplaneMode"
+							[isChargeThresholdOn]="batteryIndicator.isChargeThresholdOn"
+							[isInDetailsModal]="true">
 						</vtr-battery-indicator>
 					</div>
 				</div>
@@ -28,234 +31,162 @@
 					</div>
 				</div>
 				<div class="row">
-					<!-- row-1 -->
-					<!-- <div class="row"> -->
-					<div class="col-2 p-0 battery-label-text"
+
+					<div class="col-3 col-sm-3 col-md-2 p-0 battery-label-text"
 						*ngIf="isValid(model.chargeStatusString)">
 						{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
-					<div class="col-2 p-0 battery-value-text"
+					<div class="col-3 col-sm-3 col-md-2 p-0 battery-value-text"
 						*ngIf="isValid(model.chargeStatusString)">
-						{{ model.chargeStatusString }}
+						{{ model.chargeStatusString | translate }}
 					</div>
 					<div *ngIf="isValid(model.wattage)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}
 					</div>
 					<div *ngIf="isValid(model.wattage)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.wattage + " W"}}
 					</div>
 					<div *ngIf="isValid(model.barCode)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.barcode' | translate }}
 					</div>
 					<div *ngIf="isValid(model.barCode)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.barCode }}
 					</div>
-					<!-- </div> -->
-					<!-- row-2 -->
-					<!-- <div class="row"> -->
+
 					<div *ngIf="isValid(model.remainingPercent)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.remainingPercent' | translate }}
 					</div>
 					<div *ngIf="isValid(model.remainingPercent)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.remainingPercent }}%
 					</div>
 					<div *ngIf="isValid(model.temperature)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.temp' | translate }}
 					</div>
 					<div *ngIf="isValid(model.temperature)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.temperature }} &#176;C
 					</div>
 					<div *ngIf="isValid(model.fruPart)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.frupn' | translate }}
 					</div>
 					<div *ngIf="isValid(model.fruPart)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.fruPart }}
 					</div>
-					<!-- </div> -->
-					<!-- row-3 -->
-					<!-- <div class="row"> -->
+
 					<div *ngIf="isValid(model.remainingTime)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{ model.remainingTimeText | translate }}
 					</div>
 					<div *ngIf="isValid(model.remainingTime)"
-						class="col-2 p-0 battery-value-text">
-						{{ model.remainingTime | minutesToHourmin }}
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
+						<!-- {{ model.remainingTime | minutesToHourmin }} -->
+						<span *ngIf="isValid(remainingHours[i])">
+							{{remainingHours[i]}} {{hourText | translate}}
+						</span>
+						<span>
+							{{remainingMinutes[i]}} {{minutesText | translate}}
+						</span>
+
 					</div>
 					<div *ngIf="isValid(model.cycleCount)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.cycleCount' | translate }}
 					</div>
 					<div *ngIf="isValid(model.cycleCount)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.cycleCount }}
 					</div>
 					<div *ngIf="isValid(deviceChemistry[i])"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.chemistry' | translate }}
 					</div>
 					<div *ngIf="isValid(deviceChemistry[i])"
-						class="col-2 p-0 battery-value-text">
-						{{ deviceChemistry[i] }}
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
+						{{ deviceChemistry[i] | translate }}
 					</div>
-					<!-- </div> -->
-					<!-- row-4 -->
-					<!-- <div class="row"> -->
+
 					<div *ngIf="isValid(model.remainingCapacity)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.remainingCap' | translate }}
 					</div>
 					<div *ngIf="isValid(model.remainingCapacity)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.remainingCapacity }} Wh
 					</div>
 					<div *ngIf="isValid(model.manufacturer)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.manufacturer.title' | translate }}
 					</div>
 					<div *ngIf="isValid(model.manufacturer)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.manufacturer }}
 					</div>
 					<div *ngIf="isValid(model.designCapacity)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.designCap' | translate }}
 					</div>
 					<div *ngIf="isValid(model.designCapacity)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.designCapacity }} Wh
 					</div>
-					<!-- </div> -->
-					<!-- row-5 -->
-					<!-- <div class="row"> -->
+
 					<div *ngIf="isValid(model.fullChargeCapacity)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }}
 					</div>
 					<div *ngIf="isValid(model.fullChargeCapacity)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.fullChargeCapacity }} Wh
 					</div>
 					<div *ngIf="isValid(model.manufactureDate)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.manufDt' | translate }}
 					</div>
 					<div *ngIf="isValid(model.manufactureDate)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.manufactureDate | date: 'MM/dd/yyyy' }}
 					</div>
 					<div *ngIf="isValid(model.designVoltage)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.designVolt' | translate }}
 					</div>
 					<div *ngIf="isValid(model.designVoltage)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.designVoltage }} V
 					</div>
-					<!-- </div> -->
-					<!-- row-5 -->
-					<!-- <div class="row"> -->
+
 					<div *ngIf="isValid(model.voltage)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.volts' | translate }}</div>
 					<div *ngIf="isValid(model.voltage)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.voltage }} V
 					</div>
 					<div *ngIf="isValid(model.firstUseDate)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.firstUseDt' | translate }}
 					</div>
 					<div *ngIf="isValid(model.firstUseDate)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.firstUseDate | date: 'MM/dd/yyyy' }}
 					</div>
 					<div *ngIf="isValid(model.firmwareVersion)"
-						class="col-2 p-0 battery-label-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.firmwareVer' | translate }}
 					</div>
 					<div *ngIf="isValid(model.firmwareVersion)"
-						class="col-2 p-0 battery-value-text">
+						class="col-3 col-sm-3 col-md-2 p-0 battery-value-text">
 						{{ model.firmwareVersion }}
 					</div>
-					<!-- </div> -->
 				</div>
-				<!-- battery gauge section - raj : required in MVP 2 -->
-				<!-- <div class="battery-gauge p-5 mt-5">
-					<div class="container-fluid">
-						<div class="row mb-3">
-							<div class="col">
-								<h4 class="align-middle">
-									<span class="text-uppercase pr-3 battery-gauge-heading">
-										{{ model.batteryGaugeDetail.heading }}
-									</span>
-								</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="p-0 col-8">
-								<div class="row">
-									<div class="p-0 col-3 battery-label-text">
-										Bar-Code
-									</div>
-									<div class="p-0 col-3 battery-value-text">
-										{{ model.batteryGaugeDetail.barCode }}
-									</div>
-									<div class="p-0 col-3 battery-label-text">
-										Log
-									</div>
-									<div class="p-0 col-3 battery-value-text">
-										{{
-										model.batteryGaugeDetail.logDateTime
-										}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="p-0 col-3 battery-label-text">
-										Status
-									</div>
-									<div class="p-0 col-3 battery-value-text">
-										{{ model.batteryGaugeDetail.status }}
-									</div>
-									<div class="p-0 col-3"></div>
-									<div class="p-0 col-3 battery-value-text">
-										{{
-										model.batteryGaugeDetail
-										.lastRunStatus
-										}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="p-0 col-3 battery-label-text">
-										Remaining
-									</div>
-									<div class="p-0 col-3 battery-value-text">
-										{{
-										model.batteryGaugeDetail.remaining
-										}}%
-									</div>
-									<div class="p-0 col-3"></div>
-									<div class="p-0 col-3"></div>
-								</div>
-							</div>
-							<div class="col-4 align-self-center text-center">
-								<button type="button"
-									class="btn btn-primary btn-lg battery-button text-uppercase">
-									Perform Gauge Reset
-								</button>
-							</div>
-						</div>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</div>

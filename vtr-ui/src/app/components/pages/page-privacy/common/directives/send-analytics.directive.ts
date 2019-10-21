@@ -1,17 +1,18 @@
 import { Directive, ElementRef, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { GetParentForAnalyticsService } from '../services/get-parent-for-analytics.service';
-import { AnalyticsService, ItemTypes } from '../services/analytics.service';
+import { AnalyticsService, ItemTypes } from '../services/analytics/analytics.service';
 
 @Directive({
 	selector: '[vtrSendAnalytics]'
 })
 export class SendAnalyticsDirective implements OnInit, OnDestroy {
+	private viewEvents = [ItemTypes.PageView, ItemTypes.ArticleView];
 	myCurrentElement = this.el.nativeElement;
 
 	@Input() metricsEvent: string; // ItemType
 	@Input() metricsItem: string; // ItemName
 	@Input() metricsValue?: string; // ItemValue
-	@Input() metricsParam?: string | object; // ItemParm
+	@Input() metricsParam?: object; // ItemParm
 	@Input() pageContext?: string; // PageContext
 	@Input() metricsParent?: string; // ItemParent
 	@Input() customPageName?: string;
@@ -46,22 +47,23 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		if (this.metricsEvent === ItemTypes.PageView) {
+		if (this.viewEvents.includes(this.metricsEvent as ItemTypes)) {
 			this.pageInitTime = +Date.now();
 		}
 	}
 
 	ngOnDestroy() {
-		if (this.metricsEvent === ItemTypes.PageView) {
+		if (this.viewEvents.includes(this.metricsEvent as ItemTypes)) {
 			this.pageDestroyTime = +Date.now();
-			this.pageDuration = (this.pageDestroyTime - this.pageInitTime) / 1000;
+			this.pageDuration = Math.round((this.pageDestroyTime - this.pageInitTime) / 1000);
 
 			const dataToSendOnPageView = {
 				PageContext: this.pageContext,
 				PageDuration: this.pageDuration,
+				ItemParm: this.metricsParam,
 			};
 
-			this.analyticsService.sendPageViewData(dataToSendOnPageView, this.customPageName);
+			this.analyticsService.sendPageViewData(dataToSendOnPageView, this.customPageName, this.metricsEvent);
 		}
 	}
 }

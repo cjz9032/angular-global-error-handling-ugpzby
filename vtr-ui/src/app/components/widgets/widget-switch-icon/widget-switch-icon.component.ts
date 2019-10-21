@@ -28,27 +28,33 @@ export class WidgetSwitchIconComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		console.log(this.title, this.iconDefinition);
 	}
 
 	onChange(event: Event) {
 
-		if (this.disable) {
+		if (this.disable || this.isLoading) {
 			this.value = false;
 			event.stopPropagation();
 			return;
 		}
 
 		if (this.isCamera) {
-			console.log('WIDGET SWITCH ICON VALUE', this.value);
 			this.toggle.emit(this.value);
 		} else {
 			this.value = !this.value;
-			console.log('WIDGET SWITCH ICON VALUE', this.value);
 			this.toggle.emit(this.value);
 
 		}
 	}
+	findId(value, disable) {
+		if (value && !disable) {
+			return 'qs-' + this.switchId + '-switch-on-state';
+		} else if (!value && !disable) {
+			return 'qs-' + this.switchId + '-switch-off-state';
+		} else {
+			return 'qs-' + this.switchId + '-switch-disable-state';
+		}
 
+	}
 
 }

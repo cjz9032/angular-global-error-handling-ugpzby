@@ -1,7 +1,7 @@
-<div class="tooltip-fg">
+<div class="tooltip-fg" (vtrClickOutside)="hideContextByClick()" (mouseleave)="hideContext()">
 	<div class="tooltip-fg__text"
-		 (mouseenter)="showContext()"
-		 (mouseleave)="hideContext()">
+		 (click)="changeContextByClick()"
+		 (mouseenter)="showContext()">
 		<ng-container [ngTemplateOutlet]="tooltipText"></ng-container>
 	</div>
 	<div class="tooltip-fg__context tooltip-fg__context--right-to-left"

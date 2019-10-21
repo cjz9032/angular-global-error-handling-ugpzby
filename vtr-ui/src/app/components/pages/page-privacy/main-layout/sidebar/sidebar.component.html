@@ -1,29 +1,9 @@
-<aside class="sidebar" *ngIf="videoWatched">
-	<ng-container *ngTemplateOutlet="videoWatchedTemplate"></ng-container>
-</aside>
-<aside class="sidebar" *ngIf="!videoWatched">
-	<ng-container *ngTemplateOutlet="videoDidntWatchTemplate"></ng-container>
-</aside>
-
-<ng-template #videoDidntWatchTemplate>
+<aside class="sidebar">
 	<vtr-offline-widget></vtr-offline-widget>
 	<vtr-sidebar-install-widget></vtr-sidebar-install-widget>
 	<vtr-trial-expired-widget></vtr-trial-expired-widget>
-	<vtr-video-widget
-		[margin]="'top'"
-		(videoWatched$)="saveToStorage()"
-		*ngIf="!videoWatched"></vtr-video-widget>
+	<vtr-video-widget [margin]="'top'"></vtr-video-widget>
 	<vtr-faq></vtr-faq>
-	<vtr-article-sidebar></vtr-article-sidebar>
 	<vtr-support-widget></vtr-support-widget>
-</ng-template>
-
-<ng-template #videoWatchedTemplate>
-	<vtr-offline-widget></vtr-offline-widget>
-	<vtr-sidebar-install-widget></vtr-sidebar-install-widget>
-	<vtr-trial-expired-widget></vtr-trial-expired-widget>
-	<vtr-faq></vtr-faq>
 	<vtr-article-sidebar></vtr-article-sidebar>
-	<vtr-support-widget></vtr-support-widget>
-	<vtr-video-widget [margin]="'bottom'"></vtr-video-widget>
-</ng-template>
+</aside>

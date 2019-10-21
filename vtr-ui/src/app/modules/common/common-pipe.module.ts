@@ -9,8 +9,8 @@ import { StatusTextPipe } from 'src/app/pipe/ui-security-statusbar/status-text.p
 import { SuccessClassPipe } from 'src/app/pipe/security-wifi/success-class.pipe';
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { TextClassPipe } from 'src/app/pipe/ui-security-statusbar/text-class.pipe';
-import { UniqueIdPipe } from 'src/app/pipe/unique-id.pipe';
 import { StripTagsPipe } from 'src/app/pipe/strip-tags/strip-tags.pipe';
+import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
 
 @NgModule({
 	declarations: [
@@ -23,8 +23,8 @@ import { StripTagsPipe } from 'src/app/pipe/strip-tags/strip-tags.pipe';
 		SuccessClassPipe,
 		SvgInlinePipe,
 		TextClassPipe,
-		UniqueIdPipe,
-		StripTagsPipe
+		StripTagsPipe,
+		RemoveSpacePipe,
 	],
 	exports: [
 		CapitalizeFirstPipe,
@@ -37,9 +37,9 @@ import { StripTagsPipe } from 'src/app/pipe/strip-tags/strip-tags.pipe';
 		SuccessClassPipe,
 		SvgInlinePipe,
 		TextClassPipe,
-		UniqueIdPipe,
 		StripTagsPipe,
-		SanitizeModule
+		SanitizeModule,
+		RemoveSpacePipe,
 	],
 	imports: [
 		SanitizeModule,

@@ -6,6 +6,10 @@
 			type="button"
 			href="javascript:;"
 			class="close-btn"
+			vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="Device.SmartAssist.InstallFailed"
+			metricsItem="InstallFailedModalCloseIcon"
 			(click)="closeModal()">
 			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 				alt=""
@@ -13,18 +17,24 @@
 		</a>
 	</div>
 	<div class="row">
-		<h1 class="mb-4"> {{'device.smartAssist.voice.modalInstallationFailed.title' | translate}}</h1>
+		<h1 class="mb-4"  id="download_failed_modal_title"
+		attr.aria-label="download_failed_modal_title"> {{'device.smartAssist.voice.modalInstallationFailed.title' | translate}}</h1>
 	</div>
 	<div class="row">
 		<div class="col">
 			<div class="number-list">
-				<p class="text-regular">{{'device.smartAssist.voice.modalInstallationFailed.desc' | translate}}</p>
+				<p class="text-regular" id="download_failed_modal_desc"
+				attr.aria-label="download_failed_modal_desc">{{'device.smartAssist.voice.modalInstallationFailed.desc' | translate}}</p>
 			</div>
 		</div>
 	</div>
 	<div class="line"></div>
 	<div class="row">
-		<button id="download_failed_modal_close_btn"
+		<button vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="Device.SmartAssist.InstallFailed"
+			metricsItem="InstallFailedModalCloseButton" 
+			id="download_failed_modal_close_btn"
 			attr.aria-label="download_failed_modal_close_btn"
 			class="btn close-button"
 			(click)="closeModal()">{{'device.smartAssist.voice.modalInstallationFailed.btnText' | translate}}</button>

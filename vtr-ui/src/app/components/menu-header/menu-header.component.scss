@@ -7,7 +7,7 @@
 		display: inline-block;
 		color: $light;
 		opacity: 0.5;
-		margin: 0 2rem;
+		margin: 0 2rem 0.1rem;
 		&:first-child {
 			margin-left: 0.5rem;
 		}
@@ -18,11 +18,9 @@
 				display: inline-block;
 			}
 		}
-		&:focus {
-			outline: none;
-		}
+
 		.tab-label {
-			font-size: $title;
+			font-size: $subpage_menu_title;
 			font-weight: $weight_600;
 			padding-bottom: 2rem;
 			cursor: pointer;
@@ -41,6 +39,15 @@
 				font-size: 3rem;
 				transform: rotate(45deg);
 				z-index: 0;
+
+				@media #{$black-on-white} {
+					color:$light;
+				}
+				@media #{$white-on-black} {
+					color: $dark;
+				}
+		
+
 			}
 		}
 	}

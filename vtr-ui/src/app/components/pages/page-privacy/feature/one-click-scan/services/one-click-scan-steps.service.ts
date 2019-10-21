@@ -14,7 +14,7 @@ export enum OneClickScanSteps {
 
 const STEPS_WITHOUT_COUNTER = [OneClickScanSteps.SCAN];
 
-	@Injectable({
+@Injectable({
 	providedIn: 'root'
 })
 export class OneClickScanStepsService {
@@ -38,10 +38,10 @@ export class OneClickScanStepsService {
 
 	private getStepsMap() {
 		return Object.values(OneClickScanSteps).map((step, index, array) => ({
-				step,
-				wasShow: false,
-				index,
-				length: this.calculateLength(array)
+			step,
+			wasShow: false,
+			index,
+			length: this.calculateLength(array)
 		}));
 	}
 

@@ -14,7 +14,8 @@ export class ContainerCollapsibleComponent extends BaseComponent {
 	@Input() theme = 'white';
 	@Input() collapseLinkId: string;
 	@Output() toggle = new EventEmitter();
-
+	@Input() metricsParent: string;
+	@Input() tabIndex = 1;
 	constructor() {
 		super();
 	}

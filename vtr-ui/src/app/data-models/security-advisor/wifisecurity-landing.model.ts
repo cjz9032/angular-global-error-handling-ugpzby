@@ -35,7 +35,7 @@ export class WifiSecurityLandingViewModel {
 		};
 		const subjectStatus = {
 			title: 'common.securityAdvisor.wifi',
-			status: 2,
+			status: 1,
 			type: 'security',
 		};
 		translate.stream(wfStatus.detail).subscribe((res) => {

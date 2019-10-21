@@ -36,47 +36,40 @@ import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
 import { RouterModule } from '@angular/router';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
-import { ModalAboutComponent } from '../components/modal/modal-about/modal-about.component';
-import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { CommonPipeModule } from './common/common-pipe.module';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
-import { SharedModule } from './shared.module';
-import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
-import { faWifiSlash} from '@fortawesome/pro-light-svg-icons/faWifiSlash';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-library.add(faCheck);
-library.add(faExclamation);
-library.add(faBolt);
-library.add(faChevronRight);
-library.add(faTimesCircle);
-library.add(faCaretUp);
-library.add(faCaretDown);
-library.add(faPlusCircle);
-library.add(faMinusCircle);
-library.add(faChevronUp);
-library.add(faChevronDown);
-library.add(faCircleNotch);
-library.add(faBrowser);
-library.add(faGift);
-library.add(faCommentAltDots);
-library.add(faShoePrints);
-library.add(faWifiSlash);
-library.add(faFlask);
-
+import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
+import { ModernPreloadModule } from './modern-preload/modern-preload.module';
+import { PageLayoutModule } from '../components/page-layout/page-layout.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { environment } from 'src/environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
+import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
+import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
 	declarations: [
 		AppComponent,
 		HomeComponent,
 		ModalWelcomeComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent,
-		ModalServerSwitchComponent
+		ModalServerSwitchComponent,
+		ModalAppUpdateAvailableComponent,
+		PageSettingsComponent,
 	],
 	imports: [
 		BrowserModule,
+		BrowserAnimationsModule,
+		AppRoutingModule,
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
@@ -85,20 +78,24 @@ library.add(faFlask);
 			},
 			isolate: false
 		}),
-		AppRoutingModule,
 		NavbarModule,
 		NgbModalModule,
 		NgbTooltipModule,
 		UiButtonModule,
 		RouterModule,
 		CommonPipeModule,
-		SharedModule,
+		FormsModule,
+		ReactiveFormsModule,
+		ModernPreloadModule,
+		PageLayoutModule,
+		FontAwesomeModule
 	],
 	exports: [
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
-		SharedModule,
+		ModernPreloadModule,
+		PageLayoutModule,
 	],
 	providers: [
 		CommonService,
@@ -111,13 +108,37 @@ library.add(faFlask);
 	],
 	entryComponents: [
 		ModalWelcomeComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
 		ModalArticleDetailComponent,
-		ModalLicenseComponent,
-		ModalServerSwitchComponent
+		ModalServerSwitchComponent,
+		ModalAppUpdateAvailableComponent,
 	],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+	constructor() {
+		library.add(faCheck);
+		library.add(faExclamation);
+		library.add(faBolt);
+		library.add(faChevronRight);
+		library.add(faTimesCircle);
+		library.add(faCaretUp);
+		library.add(faCaretRight);
+		library.add(faCaretDown);
+		library.add(faPlusCircle);
+		library.add(faMinusCircle);
+		library.add(faChevronUp);
+		library.add(faChevronDown);
+		library.add(faCircleNotch);
+		library.add(faBrowser);
+		library.add(faGift);
+		library.add(faCommentAltDots);
+		library.add(faShoePrints);
+		library.add(faWifiSlash);
+		library.add(faFlask);
+		library.add(faExclamationTriangle);
+		library.add(faExclamationCircle);
+		library.add(faQuestionCircle);
+		library.add(faCloudDownload);
+	}
+}

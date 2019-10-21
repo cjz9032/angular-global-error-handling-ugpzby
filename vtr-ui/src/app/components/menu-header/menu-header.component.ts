@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DevService } from 'src/app/services/dev/dev.service';
-import { R3TargetBinder } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-menu-header',
@@ -11,13 +10,9 @@ export class MenuHeaderComponent implements OnInit {
 
 	@Input() menuItems = [];
 
-	constructor(
-		private devService: DevService
-	) { }
+	constructor(public router: Router) { }
 
-	ngOnInit() {
-		this.devService.writeLog('HEADER MENU INIT', this.menuItems);
-	}
+	ngOnInit() { }
 
 	getActiveTab() {
 		let activeTab = {};
@@ -41,5 +36,7 @@ export class MenuHeaderComponent implements OnInit {
 			}
 		}
 	}
-
+	changeRoute(routeValue, queryParams?: any) {
+		this.router.navigate(["/" + routeValue], queryParams);
+	}
 }

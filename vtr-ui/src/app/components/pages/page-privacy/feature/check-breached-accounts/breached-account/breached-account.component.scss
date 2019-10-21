@@ -9,6 +9,11 @@ $leftIndent: 7.5rem;
 	margin: 0 0 1.25rem 0;
 	padding: 2rem;
 
+	&--unverify {
+		background-color: #EDF2F3;
+		margin-top: 3rem;
+	}
+
 	&__image {
 		display: flex;
 		position: relative;
@@ -63,6 +68,10 @@ $leftIndent: 7.5rem;
 		align-items: center;
 		min-height: 4.7rem;
 		width: 33%;
+
+		&--unverify {
+			width: auto;
+		}
 	}
 
 	&__chips {
@@ -98,11 +107,11 @@ $leftIndent: 7.5rem;
 		}
 
 		&--password:before {
-			background: url("/assets/icons/privacy-tab/icon-password-red.svg") 0 0 no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-password-red.svg") 0 0 no-repeat;
 		}
 
 		&--email:before {
-			background: url("/assets/icons/privacy-tab/icon-email-red.svg") 0 0 no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-email-red.svg") 0 0 no-repeat;
 		}
 	}
 
@@ -113,6 +122,10 @@ $leftIndent: 7.5rem;
 		font-size: 1.7rem;
 		font-weight: bold;
 		line-height: 2.3rem;
+
+		&--red {
+			color: red;
+		}
 	}
 
 	&__credentials {

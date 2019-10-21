@@ -1,0 +1,32 @@
+<div class="vtr-widget-hardware-scan-status" *ngIf="hasPreviousResults()">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title">{{title}}</div>
+				<div class="description" *ngIf="isLoadingDone()">{{description}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<div class="text-center" *ngIf="!isLoadingDone()">
+				<vtr-spinner></vtr-spinner>
+			</div>
+			<vtr-ui-hardware-list *ngIf="isLoadingDone()" [items]="item.modules" [template]="3">
+			</vtr-ui-hardware-list>
+		</div>
+	</div>
+	<div class="button-row">
+		<beta-vtr-ui-button
+			metricsEvent="ItemClick"
+			metricsParent="Device.HardwareScan"
+			metricsItem="'btn.'+textButton"
+			[isFullWidth]="true"
+			[label]="buttonText"
+			[isDisabled]="!isLoadingDone()"
+			[routerPath] = "viewResultsPath"
+			[active]="'true'"
+			(onClick)="onPreviousResults()">
+		</beta-vtr-ui-button>
+	</div>
+</div>

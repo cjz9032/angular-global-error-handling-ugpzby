@@ -15,7 +15,7 @@
 	box-shadow: $drop_shadow;
 	padding: 4rem;
 	position: relative;
-	width: 47.8rem;
+	width: 100%;
 
 	.img-con {
 		height: 28rem;
@@ -41,8 +41,7 @@
 	}
 
 	.description {
-		width: 76%;
-		margin-left: 12%;
+		width: 100%;
 		font-size: 1.6rem;
 		font-weight: $weight_regular;
 		color: #667481;

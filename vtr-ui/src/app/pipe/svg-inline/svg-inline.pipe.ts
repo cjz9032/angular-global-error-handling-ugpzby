@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform, OnDestroy } from '@angular/core';
+import { Pipe, PipeTransform, OnDestroy, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable, Subscription } from 'rxjs';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Pipe({
 	name: 'svgInline',
@@ -16,6 +16,7 @@ export class SvgInlinePipe implements PipeTransform, OnDestroy {
 
 	getContent(url) {
 		return new Promise(resovle => {
+			url = this.sanitizer.sanitize(SecurityContext.URL, url);
 			const request = new XMLHttpRequest();
 			request.open('GET', url, true);
 			request.send(null);
@@ -34,6 +35,7 @@ export class SvgInlinePipe implements PipeTransform, OnDestroy {
 				if (value.substring(value.lastIndexOf('.')) === '.svg' && !this.commonService.isOnline) {
 					this.getContent(value).then(val => {
 						val = `data:image/svg+xml;base64,${btoa(val + '')}`;
+						val = this.sanitizer.sanitize(SecurityContext.URL,val).replace('unsafe:','');
 						val = this.sanitizer.bypassSecurityTrustResourceUrl(val + '');
 						observer.next(val);
 						observer.complete();

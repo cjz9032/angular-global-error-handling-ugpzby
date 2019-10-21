@@ -14,23 +14,18 @@
 
 	&.expired {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat, linear-gradient(to left top, #F17F14, #ED4E04);
-
-		.button {
-			color: #c94000;
-		}
 	}
 
 	&.not-found {
 		background: url("../../../../assets/images/warranty-bg.png") no-repeat, linear-gradient(to left bottom, #bbb, #888);
-
-		.button {
-			color: $shade_darkest;
-		}
 	}
 
 	.title {
 		font-size: 2.5rem;
 		font-weight: $weight_bold;
+		&.title-detail {
+			text-transform : capitalize;
+		}
 	}
 
 	.sub-title {
@@ -45,36 +40,5 @@
 		font-weight: $weight_medium;
 		opacity: .8;
 		line-height: 2.3rem;
-	}
-
-	.button {
-		text-transform: uppercase;
-		display: inline-block;
-		width: 100%;
-		height: 5rem;
-		line-height: 5rem;
-		border: none;
-		border-radius: 10rem;
-		background: $light;
-		padding: 0 3rem;
-		color: $main;
-		font-size: 1.5rem;
-		letter-spacing: 0.1rem;
-		font-weight: $weight_bold;
-		text-align: center;
-		text-decoration: none;
-		cursor: pointer;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-
-		&:hover {
-			box-shadow: none;
-			background: $main_lightest;
-		}
-
-		&:focus {
-			box-shadow: none;
-		}
 	}
 }

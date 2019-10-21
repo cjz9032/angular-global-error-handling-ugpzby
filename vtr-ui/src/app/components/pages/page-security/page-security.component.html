@@ -1,4 +1,4 @@
-<div class="vtr-page-security vtr-page">
+<div class="vtr-page-security vtr-page" [vtrAppSearchScroller]="['search-security-status']">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [title]="'common.menu.security.title' | translate"
@@ -17,6 +17,7 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-widget-security *ngIf="isOnline"
+											[showWindowsHello]="windowsHelloLandingViewModel? true : false"
 											[percentValue]="score"></vtr-widget-security>
 										<vtr-widget-offline-info *ngIf="!isOnline"
 											[title]="'dashboard.offlineInfo.title' | translate"
@@ -89,7 +90,6 @@
 															<li class="wifi-link">
 																<a routerLink="wifi-security"
 																	id="sa-ov-link-seeAllNetwork"
-																	aria-label="sa-ov-link-seeAllNetwork"
 																	[queryParams]="{isShowMore:false}"
 																	vtrMetrics
 																	metricsEvent="FeatureClick"
@@ -119,9 +119,7 @@
 				<div class="col-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row"
-								id="sa-ov-modal-article"
-								aria-label="sa-ov-modal-article">
+							<div class="row">
 								<div class="col col-12">
 									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
 										[caption]="cardContentPositionA.Description"
@@ -137,7 +135,7 @@
 										order="1"
 										sideFlag="r"
 										cornerShift="large"
-										[containerCardId]="'security-tips-card'">
+										[containerCardId]="'sa-ov-modal'">
 									</vtr-container-card>
 								</div>
 							</div>

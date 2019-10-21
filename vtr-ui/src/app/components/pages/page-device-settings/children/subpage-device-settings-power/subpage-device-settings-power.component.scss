@@ -34,8 +34,25 @@
 			color: $main;
 		}
 	}
-
-	.smartsettings-card {
+	.container-card{
+		@media #{$black-on-white} {
+			//background-color: $high-contrast-grey;
+			border: 0.1rem solid $dark;
+			border-radius: 1rem;
+			box-sizing: border-box;
+			
+			
+		}
+		@media #{$white-on-black} {
+			//background-color: $high-contrast-grey;
+			border: 0.1rem solid $light;
+			border-radius: 1rem;
+			box-sizing: border-box;
+			
+			
+		}
+	}	.smartsettings-card {
+		
 		.subtitle {
 			width: 100%;
 
@@ -177,6 +194,9 @@
 			position: absolute;
 			top: 0.5rem;
 			margin-right: 0.5rem;
+			z-index: 0;
+			opacity: 1;
+			outline: 0;
 		}
 		label {
 			color: $shade_darker;

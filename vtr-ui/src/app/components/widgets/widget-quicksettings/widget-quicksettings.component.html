@@ -2,34 +2,36 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12">
-				<div class="heading">{{'dashboard.quickSettings.title' | translate}}</div>
+				<div class="heading"
+					id="dashboard-quick-settings-title"
+					attr.aria-label="dashboard-quick-settings-title">{{'dashboard.quickSettings.title' | translate}}
+				</div>
 				<div [ngClass]="cameraStatus.available ? 'widget-icon-3': 'widget-icon-2'">
 					<div class="text-left">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
-							#microphone
 							[value]="microphoneStatus.status && microphoneStatus.permission"
 							[title]="'dashboard.quickSettings.microphone' | translate"
 							metricsItem="microphone"
 							id="qs-switch-microphone"
 							aria-label="qs-switch-microphone"
-							[switchId]="'qs-switch-icon-microphone'"
+							[switchId]="'microphone'"
 							[isBlocked]="!microphoneStatus.status"
 							(toggle)="onMicrophoneStatusToggle($event)"
 							[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state)"
 							[isLoading]="microphoneStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
-					<div class="text-center">
-						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Camera2x'"
-							[offIconDefinition]="'icomoon icomoon-LE-Camera-privacy-mode2x'"
-							#camera
+					<div *ngIf="cameraStatus.available"
+						class="text-center">
+						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-Camera'"
+							[offIconDefinition]="'icomoon icomoon-Camera-slash'"
 							[value]="!cameraStatus.status && cameraStatus.permission"
 							[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 							metricsItem="camera"
 							id="qs-switch-camera"
 							aria-label="qs-switch-camera"
-							[switchId]="'qs-switch-icon-camera'"
+							[switchId]="'camera'"
 							[isBlocked]="cameraStatus.status || !cameraStatus.permission"
 							[isCamera]="true"
 							(toggle)="onCameraStatusToggle($event)"
@@ -40,64 +42,122 @@
 					<div class="text-right">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
-							#eyecare
 							[title]="'dashboard.quickSettings.eyeCareMode' | translate"
 							metricsItem="eyeCareMode"
 							id="qs-switch-eyeCareMode"
 							aria-label="qs-switch-eyeCareMode"
-							[switchId]="'qs-switch-icon-eyeCareMode'"
+							[switchId]="'eyeCareMode'"
 							[value]="eyeCareModeStatus.status"
 							[isBlocked]="!eyeCareModeStatus.status"
 							(toggle)="onEyeCareModeToggle($event)"
 							[disable]="!(eyeCareModeStatus.available && quickSettingsWidget[2].state)"
 							[isLoading]="eyeCareModeStatus.isLoading"></vtr-widget-switch-icon>
 					</div>
-				</div>
+				</div>			
 			</div>
 		</div>
-		
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
-			<div *ngIf="!microphoneStatus.permission || !cameraStatus.permission"
-				class="row permission-note mt-5">
+			<div *ngIf="!microphoneStatus.permission && cameraStatus.permission"
+				class="row permission-note mt-4">
 				<div class="col-12 p-3 d-flex">
 					<div class="col-1 pl-0 text-center">
-						<fa-icon [icon]="['fas', 'exclamation-circle']" class="note-icon">
-					</fa-icon>	
+						<fa-icon [icon]="['fas', 'exclamation-circle']"
+							class="note-icon">
+						</fa-icon>
 					</div>
 					<div class="col-11 pr-0 pl-2">
-						<div *ngIf="!microphoneStatus.permission && cameraStatus.permission">
-							<p class="mb-0 mt-auto">
+						<p class="mb-0 mt-auto"
+							id="qs-microphone-note"
+							attr.aria-label="qs-microphone-note">
+							{{'dashboard.quickSettings.note.microphoneNote' | translate}}
+						</p>
+						<button type="button"
+							class="btn btn-link privacy-button pl-0"
+							(click)="onClick('ms-settings:privacy-microphone')"
+							id="qs-microphone-access-link"
+							attr.aria-label="qs-microphone-access-link">
+							{{'dashboard.quickSettings.note.accessUrl' | translate}}
+						</button>
+					</div>
+				</div>
+			</div>
+			<div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission"
+				class="row permission-note mt-4">
+				<div class="col-12 p-3 d-flex">
+					<div class="col-1 pl-0 text-center">
+						<fa-icon [icon]="['fas', 'exclamation-circle']"
+							class="note-icon">
+						</fa-icon>
+					</div>
+					<div class="col-11 pr-0 pl-2">
+						<p class="mb-0 mt-auto"
+							id="qs-camera-note"
+							attr.aria-label="qs-camera-note">
+							{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
+						</p>
+						<button type="button"
+							class="btn btn-link privacy-button pl-0"
+							(click)="onClick('ms-settings:privacy-webcam')"
+							id="qs-camera-access-link"
+							attr.aria-label="qs-camera-access-link">
+							{{'dashboard.quickSettings.note.accessUrl' | translate}}
+						</button>
+					</div>
+				</div>
+			</div>
+			<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading"
+				class="row permission-note mt-4">
+				<div class="col-12 p-3 d-flex">
+					<div class="col-1 pl-0 text-center">
+						<fa-icon [icon]="['fas', 'exclamation-circle']"
+							class="note-icon">
+						</fa-icon>
+					</div>
+					<div class="col-11 pr-0 pl-2"
+						*ngIf="!cameraStatus.available">
+						<div class="col-11 pr-0 pl-2">
+							<p class="mb-0 mt-auto"
+								id="qs-microphone-dt-machine-note"
+								attr.aria-label="qs-microphone-dt-machine-note">
 								{{'dashboard.quickSettings.note.microphoneNote' | translate}}
 							</p>
 							<button type="button"
 								class="btn btn-link privacy-button pl-0"
-								(click)="onClick('ms-settings:privacy-microphone')">
-								{{'dashboard.quickSettings.note.accessUrl' | translate}}
-							</button>
-						</div>
-						<div *ngIf="!cameraStatus.permission && microphoneStatus.permission">
-							<p class="mb-0 mt-auto">
-								{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
-							</p>
-							<button type="button"
-								class="btn btn-link privacy-button pl-0"
-								(click)="onClick('ms-settings:privacy-webcam')">
-								{{'dashboard.quickSettings.note.accessUrl' | translate}}
-							</button>
-						</div>
-						<div *ngIf="!microphoneStatus.permission && !cameraStatus.permission">
-							<p class="mb-0 mt-auto">
-								{{'dashboard.quickSettings.note.microphoneAndcameraPrivacyNotes' | translate}}								
-							</p>
-							<button type="button"
-								class="btn btn-link privacy-button pl-0"
-								(click)="onClick('ms-settings:privacy-webcam')">
+								(click)="onClick('ms-settings:privacy-microphone')"
+								id="qs-microphone-dt-machine-access-ink"
+								attr.aria-label="qs-microphone-dt-machine-access-ink">
 								{{'dashboard.quickSettings.note.accessUrl' | translate}}
 							</button>
 						</div>
 					</div>
+					<div class="col-11 pr-0 pl-2"
+						*ngIf="cameraStatus.available">
+						<p class="mb-0 mt-auto"
+							id="qs-microphone-camera-note"
+							attr.aria-label="qs-microphone-camera-note">
+							{{'dashboard.quickSettings.note.microphoneAndcameraPrivacyNotes' | translate}}
+						</p>
+						<button type="button"
+							class="btn btn-link privacy-button pl-0"
+							(click)="onClick('ms-settings:privacy-webcam')"
+							id="qs-microphone-camera-access-ink"
+							attr.aria-label="qs-microphone-camera-access-ink">
+							{{'dashboard.quickSettings.note.accessUrl' | translate}}
+						</button>
+					</div>
 				</div>
 			</div>
+		</div>
+		<div class="text-right link-text text-uppercase mt-4">
+			<a class="nav-link"
+				vtrMetrics
+				id="qs-lnk-my-device-settings"
+				attr.aria-label="qs-lnk-my-device-settings"
+				[metricsEvent]="'FeatureClick'"
+				[metricsItem]="'MyDeviceSettings'"
+				routerLink="/device/device-settings">
+				{{'common.menu.device.sub2' | translate}}
+			</a>
 		</div>
 	</div>
 </div>

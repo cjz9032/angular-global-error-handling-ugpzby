@@ -1,3 +1,4 @@
+import { SettingsPageLayoutModule } from './../../components/settings-page-layout/settings-page-layout.module';
 import { ActiveProtectionSystemAdvancedComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system-advanced/active-protection-system-advanced.component';
 import { ActiveProtectionSystemComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
 import { AutoupdateSettingsComponent } from 'src/app/components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
@@ -33,24 +34,25 @@ import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-devic
 import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
 import { PageHardwarescanComponent } from 'src/app/components/pages/page-hardwarescan/page-hardwarescan.component';
 import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
-import { PageSettingsComponent } from 'src/app/components/pages/page-settings/page-settings.component';
 import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
 import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-smart-settings/power-smart-settings.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { SmartStandbyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
+import { BatteryGaugeResetComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/battery-gauge-reset/battery-gauge-reset.component';
 import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { UserDefinedKeyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
+import { TopRowFunctionsComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions/top-row-functions.component';
 import { VoiceComponent } from 'src/app/components/pages/page-smart-assist/voice/voice.component';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { CommonModalModule } from '../common/common-modal.module';
-
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -62,8 +64,9 @@ import { faChevronCircleUp } from '@fortawesome/pro-light-svg-icons/faChevronCir
 import { faPlane } from '@fortawesome/pro-light-svg-icons/faPlane';
 import { faThumbtack } from '@fortawesome/pro-light-svg-icons/faThumbtack';
 import { faBatteryHalf } from '@fortawesome/pro-light-svg-icons/faBatteryHalf';
+import { faBatteryFull } from '@fortawesome/pro-light-svg-icons/faBatteryFull';
 import { faBatteryBolt } from '@fortawesome/pro-light-svg-icons/faBatteryBolt';
-import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
+import { faQuestionCircle, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faBatteryQuarter } from '@fortawesome/pro-light-svg-icons/faBatteryQuarter';
 import { faTachometerFast } from '@fortawesome/pro-light-svg-icons/faTachometerFast';
 import { faMicrophone } from '@fortawesome/pro-light-svg-icons/faMicrophone';
@@ -81,10 +84,11 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
-import { faCircle as faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
+import { faCircle } from '@fortawesome/pro-light-svg-icons/faCircle';
 import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
-
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 
 library.add(faCheck);
 library.add(faCheckCircle);
@@ -104,6 +108,7 @@ library.add(faTv);
 library.add(faCamera);
 library.add(faGem);
 library.add(faBatteryThreeQuarters);
+library.add(faBatteryFull);
 library.add(faChevronDown);
 library.add(faChevronUp);
 library.add(faCaretUp);
@@ -116,7 +121,9 @@ library.add(falTimes);
 library.add(faCircle);
 library.add(falCircle);
 library.add(faSync);
-
+library.add(faCircleNotch);
+library.add(faAngleRight);
+library.add(faCalendarAlt);
 
 @NgModule({
 	declarations: [
@@ -143,17 +150,18 @@ library.add(faSync);
 		PageDeviceUpdatesComponent,
 		PageHardwarescanComponent,
 		PageQuestionsComponent,
-		PageSettingsComponent,
 		PageSmartAssistComponent,
 		PageSupportDetailComponent,
 		PowerSmartSettingsComponent,
 		SmartStandbyComponent,
+		BatteryGaugeResetComponent,
 		SpinnerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
 		SubpageDeviceSettingsInputAccessoryComponent,
 		SubpageDeviceSettingsPowerComponent,
 		UserDefinedKeyComponent,
+		TopRowFunctionsComponent,
 		VoiceComponent
 	],
 	imports: [
@@ -172,20 +180,20 @@ library.add(faSync);
 		WidgetSecurityStatusModule,
 		NgbDropdownModule,
 		RouterModule,
-		NgbCollapseModule
+		NgbCollapseModule,
+		PageLayoutModule,
+		SettingsPageLayoutModule
 	],
 	exports: [
 		CommonModule,
 		CommonUiModule,
 		CommonWidgetModule,
 		CommonModalModule,
+		PageLayoutModule,
+		SettingsPageLayoutModule,
+		RouterModule
 	],
-	providers: [
-		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class HardwareSettingsModule { }
+export class HardwareSettingsModule {}

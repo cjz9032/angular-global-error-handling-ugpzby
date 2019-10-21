@@ -21,16 +21,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: ['./page-device-gaming.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
+	styleUrls: [ './page-device-gaming.component.scss' ],
+	providers: [ NgbModalConfig, NgbModal ]
 })
 export class PageDeviceGamingComponent implements OnInit {
 	public static allCapablitiyFlag = false;
-	firstName = 'User';
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -61,24 +61,18 @@ export class PageDeviceGamingComponent implements OnInit {
 		private loggerService: LoggerService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		vantageShellService: VantageShellService,
+		private titleService: Title
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+
+		this.titleService.setTitle(this.translate.instant('gaming.common.narrator.pageTitle.device'));
 	}
 
 	ngOnInit() {
-		const self = this;
-
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!self.userService.auth) {
-				self.firstName = value;
-			}
-		});
 		this.isOnline = this.commonService.isOnline;
-		console.log('Status of internet ================>', this.isOnline);
 		if (this.dashboardService.isShellAvailable) {
-			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
 		}
 
@@ -86,15 +80,12 @@ export class PageDeviceGamingComponent implements OnInit {
 			this.gamingAllCapabilitiesService
 				.getCapabilities()
 				.then((response) => {
-					console.log(`-------------------///////////////////////////////  From getCapabilities()----------------`);
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
 					PageDeviceGamingComponent.allCapablitiyFlag = true;
 				})
-				.catch((err) => {
-					console.log(`ERROR in appComponent getCapabilities()`, err);
-				});
+				.catch((err) => {});
 		}
-		this.setDefaultCMSContent();
+		this.getPreviousContent();
 
 		this.fetchCmsContents();
 
@@ -112,7 +103,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			queryOptions = {
 				Page: 'dashboard',
 				Lang: lang,
-				GEO: 'US',
+				GEO: 'US'
 			};
 		}
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
@@ -134,6 +125,7 @@ export class PageDeviceGamingComponent implements OnInit {
 						});
 					if (heroBannerItems && heroBannerItems.length) {
 						this.heroBannerItems = heroBannerItems;
+						this.dashboardService.heroBannerItems = heroBannerItems;
 					}
 
 					const cardContentPositionB = this.cmsService.getOneCMSContent(
@@ -146,6 +138,7 @@ export class PageDeviceGamingComponent implements OnInit {
 						if (this.cardContentPositionB.BrandName) {
 							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 						}
+						this.dashboardService.cardContentPositionB = cardContentPositionB;
 					}
 
 					const cardContentPositionC = this.cmsService.getOneCMSContent(
@@ -158,6 +151,7 @@ export class PageDeviceGamingComponent implements OnInit {
 						if (this.cardContentPositionC.BrandName) {
 							this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
 						}
+						this.dashboardService.cardContentPositionC = cardContentPositionC;
 					}
 
 					const cardContentPositionD = this.cmsService.getOneCMSContent(
@@ -167,6 +161,7 @@ export class PageDeviceGamingComponent implements OnInit {
 					)[0];
 					if (cardContentPositionD) {
 						this.cardContentPositionD = cardContentPositionD;
+						this.dashboardService.cardContentPositionD = cardContentPositionD;
 					}
 
 					const cardContentPositionE = this.cmsService.getOneCMSContent(
@@ -176,6 +171,7 @@ export class PageDeviceGamingComponent implements OnInit {
 					)[0];
 					if (cardContentPositionE) {
 						this.cardContentPositionE = cardContentPositionE;
+						this.dashboardService.cardContentPositionE = cardContentPositionE;
 					}
 
 					const cardContentPositionF = this.cmsService.getOneCMSContent(
@@ -185,6 +181,7 @@ export class PageDeviceGamingComponent implements OnInit {
 					)[0];
 					if (cardContentPositionF) {
 						this.cardContentPositionF = cardContentPositionF;
+						this.dashboardService.cardContentPositionF = cardContentPositionF;
 					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
@@ -192,115 +189,19 @@ export class PageDeviceGamingComponent implements OnInit {
 					this.fetchCmsContents('en');
 				}
 			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
+			(error) => {}
 		);
 	}
 
-	public onConnectivityClick($event: any) { }
+	public onConnectivityClick($event: any) {}
 
-	private setDefaultCMSContent() {
-		this.heroBannerItems = [
-			{
-				albumId: 1,
-				id: 1,
-				source: 'Vantage',
-				title: 'Welcome to the next generation of Lenovo Vantage!',
-				url: './../../../../assets/cms-cache/Vantage3Hero-zone0.jpg',
-				ActionLink: null
-			}
-		];
-
-		this.cardContentPositionB = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'half-width-title-description-link-image',
-			Position: 'position-B',
-			ExpirationDate: null,
-			Filters: null
-		};
-
-		this.cardContentPositionC = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'half-width-title-description-link-image',
-			Position: 'position-C',
-			ExpirationDate: null,
-			Filters: null
-		};
-
-		this.cardContentPositionD = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/Gamestore8x3-zone3.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: 'https://gamestore.lenovo.com/',
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'full-width-title-image-background',
-			Position: 'position-D',
-			ExpirationDate: null,
-			Filters: null
-		};
-
-		this.cardContentPositionE = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'half-width-top-image-title-link',
-			Position: 'position-E',
-			ExpirationDate: null,
-			Filters: null
-		};
-
-		this.cardContentPositionF = {
-			Title: '',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: './../../../../assets/cms-cache/content-card-4x4-award.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'half-width-top-image-title-link',
-			Position: 'position-F',
-			ExpirationDate: null,
-			Filters: null
-		};
+	private getPreviousContent() {
+		this.heroBannerItems = this.dashboardService.heroBannerItems;
+		this.cardContentPositionB = this.dashboardService.cardContentPositionB;
+		this.cardContentPositionC = this.dashboardService.cardContentPositionC;
+		this.cardContentPositionD = this.dashboardService.cardContentPositionD;
+		this.cardContentPositionE = this.dashboardService.cardContentPositionE;
+		this.cardContentPositionF = this.dashboardService.cardContentPositionF;
 	}
 
 	private getSystemInfo() {
@@ -308,11 +209,8 @@ export class PageDeviceGamingComponent implements OnInit {
 			.getSystemInfo()
 			.then((value: any) => {
 				this.systemStatus = this.mapSystemInfoResponse(value);
-				console.log('getSystemInfo.then', value, this.systemStatus);
 			})
-			.catch((error) => {
-				console.error('getSystemInfo', error);
-			});
+			.catch((error) => {});
 	}
 
 	private getSecurityStatus() {
@@ -320,11 +218,8 @@ export class PageDeviceGamingComponent implements OnInit {
 			.getSecurityStatus()
 			.then((value: any) => {
 				this.securityStatus = this.mapSecurityStatusResponse(value);
-				console.log('getSecurityStatus.then', value);
 			})
-			.catch((error) => {
-				console.error('getSecurityStatus', error);
-			});
+			.catch((error) => {});
 	}
 
 	private mapSystemInfoResponse(response: any): Status[] {
@@ -543,12 +438,18 @@ export class PageDeviceGamingComponent implements OnInit {
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					break;
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
-					break;
 				default:
 					break;
 			}
 		}
+	}
+
+	onFeedbackModal() {
+		this.modalService.open(FeedbackFormComponent, {
+			backdrop: true,
+			size: 'lg',
+			centered: true,
+			windowClass: 'feedback-modal'
+		});
 	}
 }

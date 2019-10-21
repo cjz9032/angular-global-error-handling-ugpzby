@@ -1,9 +1,7 @@
 import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
-import { PageSupportComponent } from '../components/pages/page-support/page-support.component';
-import { GuardService } from '../services/guard/security-guardService.service';
 
 const routes: Routes = [
 
@@ -47,12 +45,20 @@ const routes: Routes = [
 		loadChildren: './support/support.module#SupportModule'
 	},
 	{
+		path: 'apps-for-you/:id',
+		loadChildren: './apps-for-you/apps-for-you.module#AppsForYouModule'
+	},
+	{
 		path: 'android',
 		loadChildren: './android/android-dashboard.module#AndroidDashboardModule'
 	},
 	{
 		path: 'beta',
-		loadChildren: '../beta-module/beta-module.module#BetaModuleModule'
+		loadChildren: '../beta/beta.module#BetaModule'
+	},
+	{
+		path: 'device/smart-performance',
+		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
 	},
 	{
 		path: '',
@@ -63,6 +69,8 @@ const routes: Routes = [
 		path: '**',
 		component: HomeComponent
 	}
+
+
 ];
 
 
@@ -72,7 +80,7 @@ const routes: Routes = [
 			useHash: true,
 			scrollPositionRestoration: 'enabled',
 			enableTracing: false,
-			// preloadingStrategy: PreloadAllModules
+			preloadingStrategy: PreloadAllModules
 		})
 	],
 	exports: [RouterModule]

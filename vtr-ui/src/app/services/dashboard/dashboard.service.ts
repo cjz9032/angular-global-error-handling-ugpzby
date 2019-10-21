@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -16,8 +16,17 @@ export class DashboardService {
 	private warranty: any;
 	public isShellAvailable = false;
 	private commonService: CommonService;
+	public heroBannerItems = [];
+	public cardContentPositionA: any = {};
+	public cardContentPositionB: any = {};
+	public cardContentPositionC: any = {};
+	public cardContentPositionD: any = {};
+	public cardContentPositionE: any = {};
+	public cardContentPositionF: any = {};
 
-	constructor(shellService: VantageShellService, commonService: CommonService) {
+	constructor(
+		shellService: VantageShellService,
+		commonService: CommonService) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
 		this.sysinfo = null;
@@ -31,6 +40,8 @@ export class DashboardService {
 		if (this.eyeCareMode) {
 			this.isShellAvailable = true;
 		}
+
+		this.setDefaultCMSContent();
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
@@ -98,7 +109,6 @@ export class DashboardService {
 		} catch (error) {
 			throw Error(error.message);
 		}
-
 	}
 
 	public setEyeCareMode(value: boolean): Promise<boolean> {
@@ -155,7 +165,7 @@ export class DashboardService {
 	public getRecentUpdateInfo(): Observable<any> {
 		try {
 			if (this.sysupdate) {
-				return new Observable(observer => {
+				return new Observable((observer) => {
 					// from loccal storage
 					const cacheSu = this.commonService.getLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus);
 					if (cacheSu) {
@@ -163,26 +173,27 @@ export class DashboardService {
 					}
 					// from su plugin
 					const result = { lastupdate: null, status: 0 };
-					this.sysupdate.getMostRecentUpdateInfo().then((data) => {
-						if (data && data.lastScanTime) {
-							result.lastupdate = data.lastScanTime;
-							result.status = 1;
-						} else {
-							result.lastupdate = null;
-							result.status = 0;
+					this.sysupdate.getMostRecentUpdateInfo().then(
+						(data) => {
+							if (data && data.lastScanTime) {
+								result.lastupdate = data.lastScanTime;
+								result.status = 1;
+							} else {
+								result.lastupdate = null;
+								result.status = 0;
+							}
+							// save to localstorage
+							this.commonService.setLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus, result);
+							observer.next(result);
+							observer.complete();
+						},
+						(e) => {
+							observer.next(result);
+							this.commonService.setLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus, result);
+							observer.complete();
 						}
-						// save to localstorage
-						this.commonService.setLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus, result);
-						observer.next(result);
-						observer.complete();
-					}, (e) => {
-						console.error('get last update info failed:' + JSON.stringify(e));
-						observer.next(result);
-						this.commonService.setLocalStorageValue(LocalStorageKey.LastSystemUpdateStatus, result);
-						observer.complete();
-					});
-				}
-				);
+					);
+				});
 			}
 			return undefined;
 		} catch (error) {
@@ -193,27 +204,30 @@ export class DashboardService {
 	public getWarrantyInfo(): Observable<any> {
 		try {
 			if (this.sysinfo && this.warranty) {
-				return new Observable(observer => {
+				return new Observable((observer) => {
 					// from loccal storage
 					const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus);
 					if (cacheWarranty) {
 						observer.next(cacheWarranty);
 					}
 					const result = { expired: null, status: 2 };
-					this.sysinfo.getMachineInfo().then(
-						data => this.warranty.getWarrantyInformation(data.serialnumber).then((warrantyRep) => {
-							if (warrantyRep && warrantyRep.status !== 2) {
-								result.expired = warrantyRep.endDate;
-								result.status = warrantyRep.status;
+					this.sysinfo.getMachineInfo().then((data) =>
+						this.warranty.getWarrantyInformation(data.serialnumber).then(
+							(warrantyRep) => {
+								if (warrantyRep && warrantyRep.status !== 2) {
+									result.expired = warrantyRep.endDate;
+									result.status = warrantyRep.status;
+								}
+								this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
+								observer.next(result);
+								observer.complete();
+							},
+							() => {
+								this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
+								observer.next(result);
+								observer.complete();
 							}
-							this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
-							observer.next(result);
-							observer.complete();
-						}, () => {
-							this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
-							observer.next(result);
-							observer.complete();
-						})
+						)
 					);
 				});
 			}
@@ -223,4 +237,106 @@ export class DashboardService {
 		}
 	}
 
+	private setDefaultCMSContent() {
+		this.heroBannerItems = [
+			{
+				albumId: 1,
+				id: 1,
+				source: 'Vantage',
+				title: 'Welcome to the next generation of Lenovo Vantage!',
+				url: '/assets/cms-cache/Vantage3Hero-zone0.jpg',
+				ActionLink: null
+			}
+		];
+
+		this.cardContentPositionB = {
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: '/assets/cms-cache/Alexa4x3-zone1.jpg',
+			Action: '',
+			ActionType: 'External',
+			ActionLink: null,
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-title-description-link-image',
+			Position: 'position-B',
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionC = {
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: '/assets/cms-cache/Security4x3-zone2.jpg',
+			Action: '',
+			ActionType: 'External',
+			ActionLink: null,
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-title-description-link-image',
+			Position: 'position-C',
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionD = {
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: '/assets/cms-cache/Gamestore8x3-zone3.jpg',
+			Action: '',
+			ActionType: 'External',
+			ActionLink: null,
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'full-width-title-image-background',
+			Position: 'position-D',
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionE = {
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: '/assets/cms-cache/content-card-4x4-support.jpg',
+			Action: '',
+			ActionType: 'External',
+			ActionLink: null,
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-top-image-title-link',
+			Position: 'position-E',
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionF = {
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: '/assets/cms-cache/content-card-4x4-award.jpg',
+			Action: '',
+			ActionType: 'External',
+			ActionLink: null,
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-top-image-title-link',
+			Position: 'position-F',
+			ExpirationDate: null,
+			Filters: null
+		};
+	}
 }

@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Injectable({
 	providedIn: 'root'
@@ -98,7 +99,7 @@ export class CommonService {
 	}
 	public getDaysBetweenDates(firstDate: Date, secondDate: Date): number {
 		const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-		const diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
+		const diffDays = Math.ceil(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
 		return diffDays;
 	}
 
@@ -112,6 +113,14 @@ export class CommonService {
 		window.localStorage.setItem(key, JSON.stringify(value));
 		// notify component that local storage value updated.
 		this.sendNotification(key, value);
+	}
+
+	public haveLocalStorageKey(key: LocalStorageKey | DashboardLocalStorageKey, defaultValue?: any): any {
+		const value = window.localStorage.getItem(key);
+		if (value === null || value === undefined) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -181,10 +190,22 @@ export class CommonService {
 		return array.filter(e => e.path !== path);
 	}
 
+	public isFoundInArray(array: any[], path: string) {
+		let element = array.find(e => e.path === path);
+		return element ? true : false;
+	}
+
 	public getCapabalitiesNotification(): Observable<any> {
 		return this.gamingCapabalities.asObservable();
 	}
 	public sendGamingCapabilitiesNotification(action, payload) {
 		this.gamingCapabalities.next({ type: action, payload });
+	}
+
+	public isBetaUser(): Promise<number> {
+		const win: any = window;
+		if (WinRT && win.Windows) {
+			return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
+		}
 	}
 }

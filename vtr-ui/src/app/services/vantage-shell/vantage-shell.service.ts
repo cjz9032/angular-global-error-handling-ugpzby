@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Container } from 'inversify';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
@@ -7,20 +6,28 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { Container, BindingScopeEnum } from 'inversify';
+
+declare var Windows;
 
 @Injectable({
 	providedIn: 'root'
 })
+
 export class VantageShellService {
+	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
+			this.isShellAvailable = true;
 			this.setConsoleLogProxy();
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
-			this.phoenix = Phoenix.default(new Container(), {
+			this.phoenix = Phoenix.default(new Container({
+				defaultScope: BindingScopeEnum.Singleton
+			}), {
 				metricsBroker: metricClient,
 				hsaPowerBroker: powerClient,
 				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
@@ -28,16 +35,12 @@ export class VantageShellService {
 			});
 
 			this.phoenix.loadFeatures([
-				Phoenix.Features.Dashboard,
 				Phoenix.Features.Device,
 				Phoenix.Features.LenovoId,
-				Phoenix.Features.SecurityAdvisor,
-				Phoenix.Features.SystemInformation,
 				Phoenix.Features.HwSettings,
 				// Phoenix.Features.Gaming,
 				Phoenix.Features.SystemUpdate,
 				Phoenix.Features.Warranty,
-				Phoenix.Features.Permissions,
 				Phoenix.Features.UserGuide,
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
@@ -46,15 +49,18 @@ export class VantageShellService {
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
-				Phoenix.Features.ConnectedHomeSecurity
+				Phoenix.Features.HardwareScan,
+				Phoenix.Features.AdPolicy
 			]);
+		} else {
+			this.isShellAvailable = false;
 		}
 	}
 
 	public registerEvent(eventType: any, handler: any) {
 		if (this.phoenix) {
 			this.phoenix.on(eventType, (val) => {
-			// 	console.log('Event fired: ', eventType, val);
+				// 	console.log('Event fired: ', eventType, val);
 				handler(val);
 			});
 		}
@@ -73,29 +79,36 @@ export class VantageShellService {
 	private setConsoleLogProxy() {
 		const consoleProxy = Object.assign({}, console);
 		const logger = this.getLogger();
-		console.log = (msg) => {	
-			consoleProxy.log(msg);
-			if(logger){
-				msg = JSON.stringify(msg);
-				logger.info(msg);
-			}
-		};
-		
-		console.error = (err) => {		
-			consoleProxy.error(err);
-			if(logger){
-				err = JSON.stringify(err);
-				logger.error(err);
+		console.log = (msg, ...args) => {
+			const message = this.getMessage(msg);
+			consoleProxy.log(message, args);
+			if (logger) {
+				// msg = JSON.stringify(msg);
+				logger.info(message);
 			}
 		};
 
-		console.warn = (msg) => {		
-			consoleProxy.warn(msg);
-			if(logger){
-				msg = JSON.stringify(msg);
-				logger.warn(msg);
+		console.error = (msg, ...args) => {
+			const message = this.getMessage(msg);
+			consoleProxy.error(message, args);
+			if (logger) {
+				// msg = JSON.stringify(msg);
+				logger.error(message);
 			}
-		};		
+		};
+
+		console.warn = (msg, ...args) => {
+			const message = this.getMessage(msg);
+			consoleProxy.warn(message, args);
+			if (logger) {
+				// msg = JSON.stringify(msg);
+				logger.warn(message);
+			}
+		};
+	}
+
+	private getMessage(message: string, data: any = {}) {
+		return `v${environment.appVersion}:- ${message}`;
 	}
 
 	public getLenovoId(): any {
@@ -143,6 +156,71 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getShellVersion() {
+		if (Windows) {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			return `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+		}
+
+		return '';
+	}
+
+	private normalizeEventName(eventName) {
+		eventName = eventName.toLowerCase();
+		switch (eventName) {
+			case 'firstrun':
+				eventName = 'FirstRun';
+				break;
+			case 'apploaded':
+				eventName = 'AppLoaded';
+				break;
+			case 'articledisplay':
+				eventName = 'ArticleDisplay';
+				break;
+			case 'appaction':
+				eventName = 'AppAction';
+				break;
+			case 'getenvinfo':
+				eventName = 'GetEnvInfo';
+				break;
+			case 'pageview':
+				eventName = 'PageView';
+				break;
+			case 'featureclick':
+				eventName = 'FeatureClick';
+				break;
+			case 'itemclick':
+				eventName = 'ItemClick';
+				break;
+			case 'itemview':
+				eventName = 'ItemView';
+				break;
+			case 'articleclick':
+				eventName = 'ArticleClick';
+				break;
+			case 'docclick':
+				eventName = 'DocClick';
+				break;
+			case 'articleview':
+				eventName = 'ArticleView';
+				break;
+			case 'docview':
+				eventName = 'DocView';
+				break;
+			case 'taskaction':
+				eventName = 'TaskAction';
+				break;
+			case 'settingupdate':
+				eventName = 'SettingUpdate';
+				break;
+			case 'userfeedback':
+				eventName = 'UserFeedback';
+				break;
+		}
+
+		return eventName;
+	}
+
 	/**
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
@@ -150,13 +228,16 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.metrics) {
 			const metricClient = this.phoenix.metrics;
 			if (!metricClient.isInit) {
+				const jsBridgeVesion = this.getVersion() || '';
+				const shellVersion = this.getShellVersion();
 				metricClient.init({
-					appVersion: environment.appVersion,
+					appVersion: `Web:${environment.appVersion};Bridge:${jsBridgeVesion};Shell:${shellVersion}`,
 					appId: MetricHelper.getAppId('dß'),
 					appName: 'vantage3',
 					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
+				const that = this;
 				metricClient.isInit = true;
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
@@ -164,11 +245,19 @@ export class VantageShellService {
 					try {
 						// automatically fill the OnlineStatus for page view event
 						if (!data.OnlineStatus) {
-							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
+
+						const isBeta = that.commonService.getLocalStorageValue(
+							LocalStorageKey.BetaUser
+						);
+						if (isBeta) {
+							data.IsBetaUser = true;
+						}
+
+						data.ItemType = that.normalizeEventName(data.ItemType);
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
-						console.log('an error ocurr when sending metrics event', ex);
 						return Promise.resolve({
 							status: 0,
 							desc: 'ok'
@@ -218,6 +307,26 @@ export class VantageShellService {
 	}
 
 	/**
+	 * returns modern preload object from VantageShellService of JS Bridge
+	 */
+	public getModernPreload(): any {
+		if (this.phoenix) {
+			return this.phoenix.modernPreload;
+		}
+		return undefined;
+	}
+
+	/**
+	 * returns ad policy object from VantageShellService of JS Bridge
+	 */
+	public getAdPolicy(): any {
+		if (this.phoenix) {
+			return this.phoenix.adPolicy;
+		}
+		return undefined;
+	}
+
+	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */
 	public getSystemUpdate(): any {
@@ -229,6 +338,9 @@ export class VantageShellService {
 
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
 		if (this.phoenix) {
+			if (!this.phoenix.securityAdvisor) {
+				this.phoenix.loadFeatures([Phoenix.Features.SecurityAdvisor]);
+			}
 			return this.phoenix.securityAdvisor;
 		}
 		return undefined;
@@ -236,6 +348,9 @@ export class VantageShellService {
 
 	public getPermission(): any {
 		if (this.phoenix) {
+			if (!this.phoenix.permissions) {
+				this.phoenix.loadFeatures([Phoenix.Features.Permissions]);
+			}
 			return this.phoenix.permissions;
 		}
 		return undefined;
@@ -243,7 +358,20 @@ export class VantageShellService {
 
 	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
 		if (this.phoenix) {
+			if (!this.phoenix.connectedHomeSecurity) {
+				this.phoenix.loadFeatures([Phoenix.Features.ConnectedHomeSecurity]);
+			}
 			return this.phoenix.connectedHomeSecurity;
+		}
+		return undefined;
+	}
+
+	public getDevicePosture(): Phoenix.DevicePosture {
+		if (this.phoenix) {
+			if (!this.phoenix.devicePosture) {
+				this.phoenix.loadFeatures([Phoenix.Features.DevicePosture]);
+			}
+			return this.phoenix.devicePosture;
 		}
 		return undefined;
 	}
@@ -423,13 +551,9 @@ export class VantageShellService {
 	}
 	public calcDeviceFilter(filter) {
 		if (this.phoenix) {
-			try {
-				return this.phoenix.deviceFilter.calc(filter);
-			} catch (error) {
-				console.log(`VantageShellService.calcDeviceFilter: ${filter}`, error);
-			}
+			return this.phoenix.deviceFilter.calc(filter);
 		}
-		return null;
+		return undefined;
 	}
 	public getLogger(): any {
 		if (this.shell) {
@@ -601,7 +725,6 @@ export class VantageShellService {
 			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
-			console.log('getGamingAuto========>>>>>>>', this.phoenix.gaming);
 			return this.phoenix.gaming.gamingAutoClose;
 		}
 		return undefined;
@@ -614,7 +737,6 @@ export class VantageShellService {
 			if (!this.phoenix.gaming) {
 				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
-			console.log('Deleting the following macro key ---->', macroKey);
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
 		}
 		return undefined;
@@ -784,15 +906,44 @@ export class VantageShellService {
 	}
 
 	public getVantageStub(): any {
-		let vanStub = {
+		const win = window as any;
+		return win.VantageStub || {
 			appStartTime: 0,
 			navigateTime: 0,
-			domloadedTime: 0
+			domloadedTime: 0,
+			launchParms: null,
+			launchType: null
 		};
+	}
 
-		if (this.shell && this.shell.VantageStub.instance) {
-			vanStub = this.shell.VantageStub.instance;
+	public getBetaUser(): any {
+		if (this.phoenix) {
+			return this.phoenix.betaUser;
 		}
-		return vanStub;
+		return undefined;
+	}
+
+	// =================== Start Hardware Scan
+	public getHardwareScan(): any {
+		if (this.phoenix) {
+			return this.phoenix.hardwareScan;
+		}
+		return undefined;
+	}
+	// ==================== End Hardware Scan
+
+	// shellService
+	public getVoipHotkeysObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.voipHotkeys;
+		}
+		return undefined;
+	}
+
+	public getMouseAndTouchPad(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.inputControlLinks;
+		}
+		return undefined;
 	}
 }

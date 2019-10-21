@@ -6,14 +6,17 @@ import { isUndefined } from 'util';
 @Component({
 	selector: 'vtr-ui-lighting-single-color',
 	templateUrl: './ui-lighting-single-color.component.html',
-	styleUrls: ['./ui-lighting-single-color.component.scss']
+	styleUrls: [ './ui-lighting-single-color.component.scss' ]
 })
 export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	@Input() selectedOptionId: any;
-	selectedOption: Options = new Options(1, 'Always On');
+	selectedOption: Options = new Options(
+		1,
+		'gaming.lightingProfile.lightingSingleLightingOption.option1.title',
+		"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option1.title' | translate"
+	);
 	@Output() public changeSingleColorOption = new EventEmitter<any>();
 	@Input() options: any;
-
 
 	getValue(optionId) {
 		this.selectedOption = this.options.filter((item) => item.id === optionId)[0];
@@ -21,14 +24,17 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 		this.changeSingleColorOption.emit(optionId);
 	}
 	public singleColorOpt: any = LightEffectSimpleType;
-	constructor() { }
+	constructor() {}
 
 	ngOnInit() {}
 	ngOnChanges(changes) {
 		if (!isUndefined(changes.selectedOptionId)) {
 			if (changes.selectedOptionId.previousValue !== changes.selectedOptionId.currentValue) {
 				this.selectedOptionId = changes.selectedOptionId.currentValue;
-				console.log('selectedOptionId changed------------------------------------ssss', changes.selectedOptionId.currentValue);
+				console.log(
+					'selectedOptionId changed------------------------------------ssss',
+					changes.selectedOptionId.currentValue
+				);
 			}
 		}
 	}
@@ -36,5 +42,4 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	isChecked(id: number) {
 		return id && id === this.selectedOptionId;
 	}
-
 }

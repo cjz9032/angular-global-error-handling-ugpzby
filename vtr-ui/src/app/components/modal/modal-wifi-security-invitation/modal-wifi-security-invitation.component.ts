@@ -1,6 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
+import { MetricService } from 'src/app/services/metric/metric.service';
+import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
@@ -9,21 +12,27 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class ModalWifiSecurityInvitationComponent implements OnInit {
 
-	@Input() emitter: EventEmitter<any>;
-	securityAdvisor: any;
+	chs: ConnectedHomeSecurity;
 
-	header = 'security.homeprotection.invitationcode.enterCode';
-	description = 'security.homeprotection.invitationcode.addHome';
+	header = 'security.homeprotection.invitationcode.joinFamilyAccount';
+	headerDescription = 'security.homeprotection.invitationcode.joinChs';
+	description = 'security.homeprotection.invitationcode.enterCode';
 
 	OkText = 'security.homeprotection.invitationcode.continue';
 	CancelText = 'security.homeprotection.invitationcode.cancel';
+	metricsParent = 'HomeSecurity';
 
 	startJoin = false;
 	joinSuccess = false;
 	joinFailed = false;
+	isFocusIn = false;
 
-	constructor(public activeModal: NgbActiveModal, vantageShellService: VantageShellService) {
-		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+	constructor(
+		public activeModal: NgbActiveModal,
+		vantageShellService: VantageShellService,
+		public metrics: MetricService,
+		public metricsTranslateService: MetricsTranslateService) {
+		this.chs = vantageShellService.getConnectedHomeSecurity();
 	}
 
 	ngOnInit() {
@@ -46,20 +55,34 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		this.startJoin = true;
 		this.joinSuccess = false;
 		this.joinFailed = false;
-		if (this.securityAdvisor) {
-			this.securityAdvisor.homeProtection.joinGroupBy(code)
-				.then((result) => {
+		const metricsData = {
+			ItemParent: this.metricsParent,
+			ItemName: this.metricsTranslateService.translate('CHSInvitationConnectFailed'),
+			ItemType: 'FeatureClick'
+		};
+		if (this.chs) {
+			this.chs.joinAccount(code)
+				.then((response) => {
 					this.startJoin = false;
-					if (result) {
+					if (response.result === 'Success') {
 						this.joinSuccess = true;
-						this.emitter.emit('invitationsuccess');
+						metricsData.ItemName = this.metricsTranslateService.translate('CHSInvitationConnectSuccess');
+						setTimeout(() => {
+							this.closeModal();
+						}, 3000);
 					} else {
 						this.joinFailed = true;
 					}
+				}).catch((err) => {
+					this.startJoin = false;
+					this.joinFailed = true;
+				}).finally(() => {
+					this.metrics.sendMetrics(metricsData);
 				});
 		} else {
 			this.startJoin = false;
 			this.joinFailed = true;
+			this.metrics.sendMetrics(metricsData);
 		}
 	}
 
@@ -70,6 +93,16 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	show() {
 		const show: HTMLElement = document.querySelector('.activation');
 		show.style.visibility = 'visible';
+	}
+
+	focusIn() {
+		if (!this.joinFailed) {
+			this.isFocusIn = true;
+		}
+	}
+
+	focusOut() {
+		this.isFocusIn = false;
 	}
 
 }

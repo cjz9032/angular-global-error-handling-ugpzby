@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Permit } from '../services/one-click-scan-steps.service';
+import { BreachedAccountsFacadeService } from '../../../pages/breached-accounts/breached-accounts-facade.service';
 
 @Component({
 	selector: 'vtr-enter-email',
@@ -8,6 +9,11 @@ import { Permit } from '../services/one-click-scan-steps.service';
 })
 export class EnterEmailComponent implements Permit {
 	@Output() allow = new EventEmitter<boolean>();
+	scanCounter$ = this.breachedAccountsFacadeService.scanCounter$;
+	scanCounterLimit = 2;
+
+	constructor(private breachedAccountsFacadeService: BreachedAccountsFacadeService) {
+	}
 
 	allowEmitter() {
 		this.allow.emit(true);

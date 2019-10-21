@@ -3,6 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
 
 @NgModule({
 	imports: [
@@ -16,7 +17,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 			isolate: false
 		})
 	],
-	exports: [TranslateModule, TranslatePipe]
+	exports: [TranslateModule, TranslatePipe],
+	providers: [
+		httpInterceptorProviders
+	]
 })
 export class TranslationModule {
 	static forChild(): ModuleWithProviders {

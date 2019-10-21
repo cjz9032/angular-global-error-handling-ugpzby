@@ -39,13 +39,13 @@
                     "ramOverlock": "RAM-överklockning",
                     "popup": {
                         "text": "Ändringen får effekt när datorn startas om.",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "Drivrutinsinstallation krävs",
                         "text": "Installera drivrutin för att aktivera RAM-överklockning (omstart krävs)",
-                        "button": "Installera",
-                        "link": "avbryt",
+                        "button": "INSTALLERA",
+                        "link": "AVBRYT",
                         "networkBoostText": "Du måste installera en drivrutin för att använda Nätverksprestanda",
                         "hybridModeText": "Du måste installera en drivrutin för att använda Hybridläge",
                         "cpuOverclockText": "Installera drivrutin för att aktivera CPU-överklockning (omstart krävs)"
@@ -57,8 +57,8 @@
                     "lightingDriverPopup": {
                         "headerText": "Drivrutinsinstallation krävs",
                         "text": "Installera drivrutin för att aktivera belysning (omstart krävs)",
-                        "button": "Installera",
-                        "link": "avbryt"
+                        "button": "INSTALLERA",
+                        "link": "AVBRYT"
                     },
                     "lightingColorMessage": {
                         "text": "Det går inte att välja färg med denna effekt."
@@ -81,12 +81,12 @@
                     "line2": "<b>Översikt över funktionshantering</b> <br> Vissa funktioner är inte tillgängliga på alla enheter",
                     "line3": "<b>CPU-överklockning </b><br> Öka maxhastigheten för processorn",
                     "line4": "<b>RAM-överklockning </b><br> Öka maxhastigheten för minnet",
-                    "line5": "<b>Nätverksprestanda </b><br> Prioritera nätverkstrafik för det aktuella spelet",
+                    "line5": "<b>Nätverkspre-standa </b><br> Prioritera nätverkstrafik för det aktuella spelet",
                     "line6": "<b>Dolby </b><br> Specialanpassa ljudet för spel med Dolby-teknik",
                     "line7": "<b>Hybridläge </b><br> Inaktivera avancerade GPU-inställningar när du inte spelar för att förlänga batteritiden",
                     "line8": "<b>Snabbladdning </b><br> Spela längre på språng med snabbare batteriladdning",
                     "line9": "<b>Styrplattelås </b><br> Förhindra oavsiktlig inmatning genom att inaktivera styrplattan medan du spelar",
-                    "line10": "<b>Stäng automatiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
+                    "line10": "<b>Stäng auto-matiskt </b><br> Rensa onödiga processer innan du börjar spela för att maximera tillgängliga systemresurser",
                     "line11": "<b>Temperaturläge </b><br> Ange önskad enhetsprofil för fläkthastighet och kylningskontroll"
                 },
                 "systemInfo": {
@@ -96,7 +96,7 @@
                     "info": "INFORMATION"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Snabbinställningar"
                 }
             }
         },
@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -146,8 +156,8 @@
                 },
                 "recorded": {
                     "title": "MAKROTANGENT FÖR ",
-                    "deleteKey": "Delete-tangent",
-                    "clear": "Radera",
+                    "deleteKey": "Delete",
+                    "clear": "RENSA",
                     "intervalStatus": {
                         "keep": {
                             "title": "Behåll fördröjning",
@@ -228,13 +238,35 @@
                     "body": "Inspelningen stoppas efter 10 sekunders inaktivitet."
                 },
                 "confirmButton": {
-                    "btnClear": "Radera",
-                    "btnCancel": "Avbryt"
+                    "btnClear": "RENSA",
+                    "btnCancel": "AVBRYT"
                 },
                 "btnOk": "OK"
             },
             "recording": {
                 "title": "Spelar in makrotangent för"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -314,7 +346,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Av"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -328,7 +360,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Av"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -368,26 +400,184 @@
                 "text7": {
                     "title": "Färg"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Stäng automatiskt",
+            "introLine": "Lägg till appar som ska stängas när spel startas. Detta frigör outnyttjade resurser för maximering av spelets prestanda. OBS: den här funktionen stänger appen helt. Så se alltid till att du har sparat arbetet.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Vill du aktivera Stäng automatiskt?",
+                "body": "Appar som du har lagt till stängs när du spelar och frigör resurser för spelet.",
+                "checkedTitle": "Fråga inte igen",
+                "btnConfirm": "Aktivera",
+                "btnCancel": "Inte nu"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Lägg till appar i Stäng automatiskt",
+                "body": "Endast appar som är aktiva visas i listan nedan."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Lägg till",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Det finns inga aktiva appar att lägga till",
+                "body": "Endast appar som är aktiva visas. Öppna en app som du vill lägga till och återkom."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
+            }
+        },
+        "networkBoost": {
+            "title": "Nätverksprestanda",
+            "introLine": "Aktiverad nätverksprestanda prioriterar automatiskt spel till högsta nivå i ditt nätverk och maximerar hastigheten. Om du använder appar när du spelar, som Twitch eller Discord, bör du lägga till dem i listan nedan så att de också prioriteras i nätverket.",
+            "modalTurn": {
+                "title": "Vill du aktivera Nätverksprestanda?",
+                "body": "Vill du aktivera Nätverksprestanda? Appar som du har lagt till kommer att dela fler nätverk när de körs.",
+                "checkedTitle": "Fråga inte igen",
+                "btnConfirm": "Aktivera",
+                "btnCancel": "Inte nu"
+            },
+            "modalAddApps": {
+                "title": "Lägg till appar i Nätverksprestanda",
+                "body": {
+                    "part1": "Lägg till upp till 5 appar",
+                    "part2": "av",
+                    "part3": "har lagts till"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
+                }
             }
         }
     },
@@ -411,8 +601,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Support",
-            "homeSecurity": "Uppkopplat hem",
-            "privacy": "Sekretess"
+            "privacy": "Sekretess",
+            "beta": {
+                "title": "beta"
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Säkerhetsrådgivare",
@@ -451,6 +644,9 @@
             "expand": "Utöka",
             "loader": "Hämtar <br> status",
             "loading": "Läser in..."
+        },
+        "app-update": {
+            "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
         }
     },
     "privacy": {
@@ -518,10 +714,10 @@
             "cameraPrivacy": "Kamera",
             "eyeCareMode": "Ögonskydd",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage har inte åtkomst till kameran eller mikrofonen.",
+                "accessUrl": "Ge åtkomst via inställningarna i Windows",
+                "microphoneNote": "Lenovo Vantage har inte åtkomst till mikrofonen.",
+                "cameraPrivacyNote": "Lenovo Vantage har inte åtkomst till kameran."
             }
         },
         "systemStatus": {
@@ -613,7 +809,6 @@
         "deviceSettings": {
             "helpful": "Praktisk information",
             "batteryGauge": {
-                "title": "BATTERIMÄTARE",
                 "subtitle": "Batteriets tillstånd",
                 "hours": "timmar",
                 "hour": "timme",
@@ -676,22 +871,22 @@
                     "Bad": "<b>Ett batterifel har uppstått.</b> Batteriet går inte att ladda/ladda ur. Byt ut batteriet.",
                     "NotDetected": "<b>Inget batteri upptäcktes</b> eller batteriet är inte anslutet.",
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
-                    "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b> Din Lenovo-dator saknar stöd för nätadaptern. Detta kan medföra plötslig avstängning. Anslut en lämplig nätadapter.",
-                    "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen.",
+                    "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
+                    "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
                     "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen.",
                     "StoreLimitation": "<b>Batteriet kan endast lagra {{value}}% av</b> sin ursprungliga laddningskapacitet.",
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",
                     "OverheatedBattery": "Batteriet är <b>för varmt</b>. Ta ut batteriet ur datorn och låt batteriet svalna i rumstemperatur.",
                     "PermanentError": "Batteriet har <b>försämrats till följd av vanlig användning.</b> Batteriet går inte att ladda. Byt ut batteriet.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Nätadaptern stöds inte.</b> Din Lenovo-dator saknar stöd för nätadaptern. Detta kan medföra plötslig avstängning. Anslut en lämplig nätadapter.",
+                    "LimitedACAdapterSupportDetail": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
-                "updating": "Uppdaterar",
-                "voltageError": "Felaktig batterispänning",
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Visa information",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Ström",
@@ -766,7 +961,8 @@
                             "battery&Quite": "BATTERI OCH TYST"
                         }
                     },
-                    "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows"
+                    "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
+                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”."
                 },
                 "powerSettings": {
                     "title": "Ströminställningar",
@@ -779,6 +975,11 @@
                         "title": "Program för smidig återgång",
                         "description": "Aktivera denna funktion för att datorn ska starta snabbare om du ofta öppnar och stänger datorlocket.",
                         "tooltip": "Funktionen förkortar tiden det tar att återgå till arbetsläge om du ofta öppnar eller stänger datorlocket. När den är aktiverad försätts datorn i ett lågenergiläge när du stänger locket, men återgår direkt till arbetsläge om du öppnar locket igen inom 15 minuter. Funktionen gör även att din bärbara dator kan försöka avsluta pågående aktiviteter (som att skicka ett e-postmeddelande eller hämta en fil) innan systemet försätts i vänteläge."
+                    },
+                    "flipToBoot": {
+                        "title": "Starta när locket öppnas",
+                        "description": "Med hjälp av den här funktionen kan du slå på datorn genom att öppna locket, precis som när du trycker på strömbrytaren. ",
+                        "tooltip": "Den här funktionen startar datorn automatiskt när locket öppnas.  Funktionen är särskilt användbar om du har ställt in biometrisk ansiktsigenkänning med Windows Hello."
                     },
                     "or": "Eller"
                 },
@@ -799,8 +1000,8 @@
                         "readMoreText": "Läs mer.",
                         "noteInfo": " Gränsvärdet för batteriladdning är fortfarande inte helt aktiverat. Koppla från enheten och ladda ur batteriet till gränsvärdet för laddningsstopp eller mer.",
                         "settings": {
-                            "title1": "Gränsvärde för inbyggt batteri",
-                            "title2": "Gränsvärde för löstagbart batteri"
+                            "title1": "Gränsvärde för primärt batteri",
+                            "title2": "Gränsvärde för sekundärt batteri"
                         },
                         "popup": {
                             "title": "Aktivera gränsvärde för batteriladdning",
@@ -833,7 +1034,43 @@
                         "title": "Flygenergiläge",
                         "description": "Skydda flygplanets eluttag genom att kontrollera systemets strömförbrukning.När Flygenergiläge är aktiverat minskas strömförbrukningen genom att batteriladdningstakten och systemprestanda begränsas.",
                         "checkBoxDesc": "Aktivera automatisk upptäckt",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Om funktionen Autodetektering är markerad slås flygläget på automatiskt när datorn upptäcker en flygplansmiljö och stänger av det när du lämnar miljön."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -972,7 +1209,7 @@
                             "warm": "Varmt (bättre för ögonen)",
                             "cold": "Kall"
                         },
-                        "reset": "Nollställ temperatur",
+                        "reset": "Återställ",
                         "tooltip": "Ögonskyddsläge justerar automatiskt färgtemperaturen på bildskärmen och filtrerar bort blått ljus för att minska belastningen på ögonen.",
                         "onSunsetToSunriseScheduleDescription": "Schemalägg ögonskyddsläge från morgon till kväll",
                         "note": {
@@ -986,7 +1223,7 @@
                             "warm": "Varmt (bättre för ögonen)",
                             "cold": "Kall"
                         },
-                        "reset": "Nollställ temperatur",
+                        "reset": "Återställ",
                         "tooltip": "Ögonskyddsläge justerar automatiskt färgtemperaturen på bildskärmen och filtrerar bort blått ljus för att minska belastningen på ögonen.",
                         "onSunsetToSunriseScheduleDescription": "Schemalägg ögonskyddsläge från morgon till kväll",
                         "note": {
@@ -1035,7 +1272,7 @@
                     "camera": {
                         "title": "Kamera",
                         "tooltip": "Klicka här för att återställa standardinställningarna för kameran.",
-                        "reset": "Återställ fabriksinställningar"
+                        "reset": "Återställ"
                     },
                     "brightness": "Ljusstyrka",
                     "contrast": "Kontrast",
@@ -1060,7 +1297,7 @@
             "inputAccessories": {
                 "title": "Inmatning och tillbehör",
                 "subtitle": "Inställningar för inmatning och tillbehör",
-                "description": "Lenovo Intelligent avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för optimalt energisparläge",
+                "description": "I detta avsnitt kan du ställa in de tangentbords- och musfunktioner du använder oftast. Se fler funktioner här.",
                 "inputAccessory": {
                     "title": "Intelligent tangentbord",
                     "hiddenKeyboardFunctions": {
@@ -1091,6 +1328,51 @@
                         "tittle": "Fn + Blanksteg",
                         "description": "ändra tillstånd för tangentbordets bakgrundsbelysning",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Funktioner på tangentbordets översta rad",
+                        "showAdvSettings": "VISA AVANCERADE INSTÄLLNINGAR",
+                        "hideAdvSettings": "DÖLJ AVANCERADE INSTÄLLNINGAR",
+                        "description": "Tangentbordets översta rad har följande två funktioner. Välj den du vill ha:",
+                        "subSection": {
+                            "description": "Om du vill växla mellan de två funktionerna ovan trycker du på Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIALFUNKTION",
+                                "fnKey": "F1–F12-FUNKTION"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Ändra vilken primär funktion som är standard",
+                            "description": "När den är på ändras den primära standardfunktionen från fabriksinställningarna till motsatsen. Starta om datorn så att ändringarna börjar gälla."
+                        },
+                        "subSectionThree": {
+                            "title": "Använda Fn-tangentkombinationer",
+                            "description": "Med normalmetoden måste du trycka på Fn+funktionstangenter för att använda Fn-tangentkombinationer. Med metoden Fn Tröga tangenter kan du trycka på (i stället för att hålla ned) Fn-tangenten för behålla den i nedtryckt läge. Tryck sedan på önskad funktionstangent. Åtgärden motsvarar att trycka på funktionstangenten samtidigt som Fn-tangenten.",
+                            "radioButton": {
+                                "nMehod": "Normal metod",
+                                "fnKeyMehod": "Metoden Fn Tröga tangenter"
+                            },
+                            "note": "Om du trycker två gånger på Fn-tangenten är den låst i nedtryckt läge tills att du trycker på Fn igen. När Fn-tangenten är låst lyser Fn Lock-indikatorn. Du kan trycka på önskad funktionstangent direkt för att initiera den funktion som inte är inställd som standard."
+                        },
+                        "popup": {
+                            "title": "Starta om datorn",
+                            "description": "Om du ändrar standardfunktionen för den översta raden måste du starta om datorn. Vill du starta om?",
+                            "reboot": "STARTA OM",
+                            "cancel": "INTE NU"
+                        }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-snabbtangentsfunktioner",
+                        "description": {
+                            "main": "Med denna funktion kan du besvara eller avvisa ett VoIP-samtal genom att trycka på snabbtangenterna på tangentbordet:",
+                            "f10": "F10: besvara samtalet",
+                            "f11": "F11: avvisa eller avsluta samtalet"
+                        },
+                        "tooltip": "Funktionen stöds för närvarande endast med Skype för företag 2016 och Microsoft Teams 1.0.<br>Du måste ladda ned och installera apparna för att kunna använda funktionen.",
+                        "hasInstalledAppsDescription": "Välj den app där du vill använda snabbtangenterna:",
+                        "noInstalledAppsDescription": "Funktionen kan endast användas med följande program: ",
+                        "hasInstalledAppsNote": "Obs! I Microsoft Teams 1.0 kan du inte använda F11-tangenten för att avsluta samtalet.",
+                        "noInstalledAppsNote": "Obs! Du måste ladda ned och installera apparna för att kunna använda funktionen."
                     }
                 },
                 "userDefinedKey": {
@@ -1118,10 +1400,13 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
+                    "more": "MER",
+                    "control1": "HANTERING AV STYRPLATTA",
+                    "control2": "HANTERING AV MUS",
+                    "control3": "TRACKPOINT-KONTROLLER"
                 }
             }
         },
@@ -1163,6 +1448,17 @@
                             "slow": "Långsam"
                         },
                         "toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIKTSIGENKÄNNING",
+                        "caption": "Du kan aktivera funktionen för ansiktsigenkänning och ge den åtkomst till kameran. Verktyget fångar upp din bild och känner igen din närvaro eller upptäcker när du lämnar enheten obevakad. Informationen bearbetas lokalt på datorn. Lenovo har inte till åtkomst till denna information och använder den inte.",
+                        "checkBox": "Sätt på kameran och aktivera funktionen",
+                        "note": {
+                            "permission": "Lenovo Vantage har inte åtkomst till kameran. Kryssrutan fungerar inte.",
+                            "privacyMode": "Sekretessläget för kameran i Lenovo Vantage är aktiverat. Kryssrutan fungerar inte.",
+                            "windowsLink": "Öppna Windows-inställningar för att ge åtkomst",
+                            "privacyLink": "Öppna kamerans sekretessläge för att inaktivera det"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1170,7 +1466,8 @@
                     "caption": "Automatisk avståndsjustering uppdaterar automatiskt identifieringsavståndet via en AI-motor.",
                     "options": {
                         "near": "Nära",
-                        "far": "Långt bort"
+                        "far": "Långt bort",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1188,14 +1485,19 @@
                     "description1": "Funktionen bygger på Windows Hello. Kontrollera att ansiktsigenkänning är aktiverat i Windows-inställningarna.",
                     "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro. Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
                     "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
-                    "description4": "2. Om datorn är i viloläge eller avstängd. Automatisk inloggning med IR-kamera fungerar inte.",
-                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning."
+                    "description4": "2. Om datorn är i viloläge eller avstängd. Beröringsfri inloggning fungerar inte.",
+                    "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning.",
+                    "description6": "4. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
                     "screenTimeoutSettings": "Öppna inställningarna för skärmens tidsgräns"
                 },
-                "resetToDefault": "ÅTERSTÄLL STANDARDINSTÄLLNINGAR"
+                "resetToDefault": "Återställ",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skärm",
@@ -1346,6 +1648,7 @@
         "banner": {
             "neverChecked": "Välkommen att använda Systemuppdatering.",
             "title": "Ett uppdaterat system är ett friskt system.",
+            "installingTitle": "Sätt inte datorn i strömspar- eller viloläge under uppdateringarna.",
             "last": "Senast uppdaterat: ",
             "next": "Nästa schemalagda uppdatering: ",
             "checkButton": "SÖK EFTER UPPDATERINGAR",
@@ -1421,85 +1724,6 @@
             "fileNotFoundException": "Filen hittades inte."
         }
     },
-    "homeSecurity": {
-        "title": "Säkerhet för uppkopplat hem",
-        "notification": {
-            "recent": "Senaste säkerhetsaviseringar",
-            "notifications": "Meddelanden"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Skydda enhetens ekosystem",
-            "thisDevice": "Denna enhet",
-            "allDevices": "Alla enheter",
-            "protected": "Skyddat",
-            "notProtected": "Inte skyddat",
-            "trialExpired": "Provprenumerationen har löpt ut",
-            "upgrade": "uppgradera",
-            "inEcosystem": "I ekosystemet",
-            "ecosystemEnable": "Ekosystemet har aktiverats",
-            "inTrial": "I provprenumeration",
-            "addEcosystem": "Lägg till i ekosystemet",
-            "enableEcosystem": "Aktivera ekosystemet",
-            "startTrial": "Starta provprenumeration",
-            "fullAccess": "Full åtkomst",
-            "renew": "Förnya"
-        },
-        "overview": {
-            "overviewBlockTitle": "Översikt över ekosystemets säkerhet",
-            "allDevices": "Alla enheter",
-            "myDevice": "Min enhet",
-            "thisComputer": "Den här datorn",
-            "secure": "SÄKERT",
-            "needAttention": "ÅTGÄRD KRÄVS",
-            "manageAccount": "Hantera konto",
-            "devices": "Enheter",
-            "seeProtectedDevices": "Se skyddade enheter",
-            "addDevice": "lägg till enhet",
-            "trialExpired": "Provprenumerationen har löpt ut - Uppgradera för att skydda alla dina enheter",
-            "upgrade": "uppgradera",
-            "freeTrial": "Skydda alla dina enheter - 30 dagars kostnadsfri provprenumeration",
-            "startTrial": "Starta provprenumeration"
-        },
-        "tour": {
-            "back": "Bakåt",
-            "skip": "Hoppa över",
-            "start": "STARTA RUNDTUR",
-            "done": "KLAR",
-            "welcome1": "Välkommen",
-            "welcomeDesc1": "Med bara några få klick kan du skydda datorer, mobila enheter och anslutna enheter för dig och din familj.",
-            "welcomeDescStart": "Starta den kostnadsfria 30-dagars provprenumerationen nu.",
-            "welcome2": "Endast för Vantage",
-            "welcomeDesc2": "Säkerhet för uppkopplat hem är inbyggt i Vantage så att du snabbt kan se hur skyddat ekosystemet är och läsa säkerhetsmeddelanden.",
-            "create": "Skapa ett konto",
-            "lenovoId": "med Lenovo ID",
-            "notifications": "Ta emot <b>meddelanden</b> om säkerhetsstatusen i ditt hem",
-            "monitor": "<b>Övervaka</b> skyddet av din familjs enheter",
-            "peaceOfMind": "Känn dig <b>trygg</b> med att ni alltid är skyddade!",
-            "signInLenovoId": "REGISTRERA DIG MED LENOVO ID",
-            "haveLenovo": "Jag har inget <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Skapa ett Lenovo ID",
-            "without": "Fortsätt <b>utan ett konto</b>",
-            "skipAndTrial": "HOPPA ÖVER OCH STARTA PROVPRENUMERATION",
-            "alreadyHave": "Jag har redan ett <b>Säkerhet för uppkopplat hem-konto</b>",
-            "loginCHS": "Logga in på befintligt konto",
-            "locationTitle": "Aktivera platsspårning",
-            "locationPermission": "För att funktionen ska fungera korrekt måste du aktivera platsspårning för denna enhet"
-        },
-        "accountStatus": {
-            "title": "Min Säkerhet för uppkopplat hem",
-            "startTrial": "Starta provprenumeration",
-            "manageAccount": "Hantera konto",
-            "upgradeAccount": "Uppgradera konto",
-            "inTrialDetail1": "{{remainingDays}} dagar kvar på provprenumerationen.",
-            "inTrialDetail2": "Provprenumerationen gäller fortfarande. Du har obegränsad åtkomst till alla funktioner.",
-            "trialExpiredDetail1": "Provprenumerationen har löpt ut.",
-            "trialExpiredDetail2": "Provprenumerationen har upphört och enhetens ekosystem är inte längre skyddat.",
-            "upgradedDetail1": "Kontot är aktivt till {{expiredDate}}.",
-            "upgradedDetail2": "Ekosystemet med enheter är skyddade för närvarande.",
-            "localAccountDetail2": "Klicka på knappen nedan för att starta din kostnadsfria 30 dagars provprenumeration.",
-            "alreadyHaveAccount": "Har du redan en aktiveringskod?"
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Få support"
@@ -1513,6 +1737,7 @@
             "statusWarrantyNotFound": "Garantin hittades inte",
             "yearDepotWarranty": "Verkstadsgaranti år",
             "warrantyDetails": "Garantiinformation:",
+            "warrantyDashboardDetails": "Garantiinformation",
             "startDate": "Startdatum: ",
             "endDate": "Slutdatum: ",
             "status": "Status: ",
@@ -1588,56 +1813,78 @@
             "common": {
                 "title": "Antivirus",
                 "back": "TILLBAKA",
-                "why": "Varför McAfee?",
-                "recommends": "Lenovo rekommenderar McAfee för att skydda alla dina enheter med",
-                "award": "prisbelönt skydd mot de senaste onlinehoten, inräknat ransomware och skadlig programvara",
-                "dedicated": "specialanpassade säkerhetsfunktioner som kontinuerligt ger bättre resultat än Defender och andra ledande antivirusprogram",
-                "deviceToCloud": "enhet-till-moln-teknik som inte gör din dator långsammare",
-                "poweredBy": "Från McAfee",
-                "privacyTerms": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
-                "mcafeePremium": "McAfee premiumskydd",
+                "recommends": "Därför <b>rekommenderar Lenovo McAfee</b> för att skydda alla dina enheter",
+                "award": "Prisbelönt antivirusprogram",
+                "mcafeePremium": "McAfee LiveSafe-skydd",
                 "protectedBy": "Du skyddas för närvarande med {{protectedName}}. Men du kan få ett bättre skydd med McAfee LiveSafe.",
                 "virusScan": "VIRUSKONTROLL",
                 "firewall": "BRANDVÄGG",
                 "disabled": "INAKTIVERAD",
-                "enableVirusScan": "AKTIVERA VIRUSKONTROLL",
-                "enablenFirewall": "AKTIVERA BRANDVÄGG",
-                "enableFirewall": "AKTIVERA BRANDVÄGG"
+                "awardText": "Skydda din nya Lenovo-dator med ett testat och beprövat skydd mot onlinehot",
+                "performance": "Stabil prestanda",
+                "performanceText": "Konsekvent, exakt och tillförlitligt antivirusprogram som du kan lita på",
+                "Blazing": "Blixtsnabb hastighet",
+                "BlazingText": "Optimerat antivirusprogram som inte saktar ned eller stör din Lenovo Vantage-upplevelse",
+                "privacyTerms": "/   <tag>Sekretesspolicy</tag>  |  <tag>Användarvillkor</tag>",
+                "notAvailable": "Inte tillgänglig"
             },
             "windowsDefender": {
-                "optimallyProtected": "Inte optimalt skyddad",
-                "subtitle": "Du skyddas för närvarande med Windows Defender.Men du kan få ett bättre skydd med McAfee LiveSafe. Läs mer nedan.",
-                "learnMore": "LÄS MER OM McAfee",
-                "windowsProtected": "Windows Defender grundskydd",
-                "windowsSubtitle": "Windows Defender ger ett grundskydd av din enhet"
+                "optimallyProtected": "Det verkar som att du använder Windows Defender för närvarande. Det är inget dåligt val, men för att erbjuda bästa möjliga skydd mot ransomware, skadlig programvara och virus samarbetar vi med <b>McAfee</b> för att ge dig prisbelönt säkerhet så att du kan <b>skydda det som är viktigt.</b>",
+                "windowsSubtitle": "Windows Defender grundskydd",
+                "topTip": "Bästa tipsen för säkerhet online",
+                "topContent": "Se hur du kan försvara dig mot dagens största onlinehot <tag>SE TIPS</tag>",
+                "view": "SE TIPS",
+                "buyNow": "Köp nu",
+                "buy": "Köp, ladda ned och installera McAfee virusskydd i dag för att dra nytta av dessa säkerhetsfunktioner i bankklass",
+                "onlyBasic": "Endast grundläggande skydd. Du skyddas mot vissa onlinehot men kan fortfarande vara utsatt för andra.",
+                "virus": "Virusskydd",
+                "homeNetwork": "Skydd av hemnätverk",
+                "private": "Privat och anonym surfning",
+                "everyDevice": "Skydd av alla enheter",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Du skyddas för närvarande med McAfee LiveSafe",
-                "valid": "Giltig till",
-                "upgrade": "Uppgradera nu",
-                "launch": "STARTA McAfee",
-                "getMacfee": "KÖP McAfee",
-                "topBenefits": "Största fördelarna med McAfee LiveSafe",
+                "title": "Antivirus",
+                "subtitle": "Du skyddas för närvarande av McAfee LiveSafe – endast {{remainingDays}} dagar kvar! Prenumerera nu för att förlänga ditt skydd.",
+                "launch": "Starta McAfee",
+                "getMacfee": "Köp McAfee",
+                "topBenefits": "Varför <b>Lenovo rekommenderar McAfee</b> för att skydda alla dina enheter",
                 "awardTitle": "Prisbelönt antivirusprogram",
-                "awardSubtitle": "Blockerar virus, skadlig programvara, ransomware, spionprogram, oönskade program och annat på din dator.",
-                "encryptedTitle": "Krypterad lagring",
-                "encryptedSubtitle": "Skydda känsliga filer genom att lagra dem på datorn med 128-bitars kryptering.",
-                "identityTitle": "Skydd mot identitetsstöld",
-                "identitySubtitle": "Vidta åtgärder för att skydda din identitet mot stöld och bedrägeri.",
-                "supportTitle": "GRATIS kundsupport",
-                "supportSubtitle": "Du har tillgång till support via telefon, chatt och online under hela din prenumeration.",
-                "antiTitle": "Skräppostfilter",
-                "antiSubtitle": "Blockerar farliga meddelanden innan de når din inkorg genom att ta bort e-post som kan innehålla riskabla länkar och virus.",
-                "virusTitle": "Löfte om virusskydd",
-                "virusSubtitle": "Om din dator smittas av virus kan en McAfee-expert ta bort det via fjärråtkomst till din dator.",
-                "parentalTitle": "Föräldrakontroller",
-                "parentalSubtitle": "Blockerar webbplatser och sökresultat som du inte vill att barnen ska se. Du kan också ange gränser för hur länge de får vara online.",
-                "license": "Licensen är giltig till",
-                "trial": "Provversionen är giltig till"
+                "awardSubtitle": "Förhindra att din dator smittas av virus, skadlig kod och ransomware",
+                "supportTitle": "Teknisk expertsupport utan kostnad dygnet runt ",
+                "supportSubtitle": "Vårt specialutbildade säkerhetsteam ger dig sinnesro och hjälp dygnet runt",
+                "trialSubtitle": "Du skyddas för närvarande med en 30-dagars provprenumeration på McAfee LiveSafe – endast {{remainingDays}} dagar kvar! Prenumerera nu för att förlänga ditt skydd.",
+                "discount": "100 % pengarna tillbaka-garanti",
+                "trialSubscribe": "Provprenumerationen upphör om {{remainingDays}} dagar – PRENUMERERA NU",
+                "subscribe": "Prenumerationen upphör om {{remainingDays}} dagar – PRENUMERERA NU",
+                "MultiTitle": "Skydd av flera enheter",
+                "MultiSubtitle": "Skydda alla dina enheter – datorer, mobiler och surfplattor – perfekt för familjer ",
+                "networkTitle": "Skydd av hemnätverk",
+                "networkSubtitle": "Skydda din brandvägg och hindra hackare från att komma åt ditt hemnätverk",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Lagra och hantera alla dina onlinelösenord på en enda säker plats",
+                "onlineTitle": "Sekretess online",
+                "onlineSubtitle": "Anslut med kryptering i bankklass för att skydda alla dina onlineaktiviteter, också i offentliga Wi-Fi-nätverk och öppna nätverk ",
+                "register": "McAfee-registrering",
+                "virusScan": "Virusgenomsökning",
+                "firewall": "Personlig brandvägg",
+                "antiSpam": "McAfee skräppostfilter",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee sårbarhetssökning ",
+                "report": "Din hotskyddsrapport ",
+                "trialContent": "Du har haft god nytta av din provprenumeration på McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar tills provprenumerationen går ut riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
+                "subscribeContent": "Du har haft god nytta av McAfees antivirusprogram. Men med bara {{remainingDays}} dagar kvar riskerar du att din dator blir sårbar. Gör inte det. <tag>Prenumerera nu</tag>",
+                "subscribeNow": "Prenumerera nu",
+                "fileScan": "Filer skannade",
+                "Viruses": "Virus eliminerade",
+                "blocked": "Skadliga anslutningar blockerade",
+                "shredded": "Filer strimlade",
+                "startFileScan": "Starta genomsökning av filer"
             },
             "others": {
-                "othersProtection": "ger ett grundskydd av din enhet"
+                "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
+                "unknown": "Okänd",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -1690,7 +1937,8 @@
                 "describe": "Osäkra enheter och nätverk kan introducera skadlig programvara, leda till identitetsstöld och avslöja privat och ekonomisk information. Aktivera funktionen för att minska risken för att enheten och hemnätverket exponeras för angripare.",
                 "subtitle": "Sinnesro",
                 "subtitleDescribe": "Säkerhet för uppkopplat hem skickar ett meddelande om det upptäcker en sårbarhet på enheten eller i hemnätverket eller om du ansluter till ett skadligt nätverk. Läs mer om Säkerhet för uppkopplat hem <tag>här</tag>.",
-                "tryNow": "Prova nu"
+                "tryNow": "Prova nu",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Ange inbjudningskod",
@@ -1706,7 +1954,13 @@
                 "success": "Anslutningen är klar",
                 "canUse": "Nu kan du börja använda Säkerhet för uppkopplat hem",
                 "tryAgain": "Koden är felaktig, försök igen!",
-                "activationCode": "AKTIVERINGSKOD"
+                "activationCode": "AKTIVERINGSKOD",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Säkerhetstillstånd",
@@ -1725,6 +1979,10 @@
                 "learnMoreAboutSecurityHealth": "Läs mer om de olika komponenterna <tag>här</tag>.",
                 "peaceOfMind": "Vill du få större sinnesro?",
                 "button": "Aktivera WiFi-säkerhet"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1836,7 +2094,7 @@
         },
         "question1": {
             "title": "Säkerhetskopiera och återställa filer",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Säkerhetskopiera och återställa filer    </div>    <hr />    <div style='margin-bottom:7rem;'>        Det är alltid bra att ha en säkerhetskopia. Förvara kopior av dina filer på en annan disk om något skulle hända med originalen.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Konfigurera säkerhetskopiering    </div>    <hr />    <div class='mb-5'>        Klicka på <span style='font-weight:bold'>Start</span>-knappen och sedan <span style='font-weight:bold'>Inställningar</span> > <span style='font-weight:bold'>Uppdatering och säkerhet</span> > <span style='font-weight:bold'>Säkerhetskopiera</span> > <span style='font-weight:bold'>Lägg till en enhet</span> och välj sedan en extern hårddisk eller nätverksplats för dina säkerhetskopior.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Så var det klart. Varje timme säkerhetskopieras nu allt i din användarmapp (C:\\\\Users\\\\username). Om du vill ändra vilka filer som säkerhetskopieras eller hur ofta säkerhetskopieringen sker klickar du på <span style='font-weight:bold;'>Fler alternativ</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Återställa dina filer    </div>    <div class='mb-5'>        Om du saknar en viktig fil eller mapp kan du få tillbaka den på följande sätt:    </div>    <div>        <div class='mb-3'>1. Skriv <span style='font-weight:bold;'>Återställ filer</span> i sökrutan i aktivitetsfältet och klicka sedan på <span class='font-weight:bold'> Återställ dina filer med Filhistorik</span>.</div>        <div class='mb-3'>2. Leta reda på den fil du behöver och använd sedan piltangenterna för att se alla versioner</div>        <div class='mb-3'>3. När du hittar den version du vill använda klickar du på <span style='font-weight:bold'>Återställ</span> för att spara den på sin ursprungliga plats. Om du vill spara den på en annan plats klickar och håller (eller högerklickar) du på <span style='font-weight:bold'>Återställ</span> och sedan <span style='font-weight:bold'>Återställ till</span>, och väljer sedan den plats du vill spara på.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Säkerhetskopiera och återställa filer    </div>    <hr />    <div class='faqInMb7'>        Det är alltid bra att ha en säkerhetskopia. Förvara kopior av dina filer på en annan disk om något skulle hända med originalen.    </div>    <div class='faqInFs3Fb'>        Konfigurera säkerhetskopiering    </div>    <hr />    <div class='mb-5'>        Klicka på <span class='faqInFb'>Start</span>-knappen och sedan <span class='faqInFb'>Inställningar</span> > <span class='faqInFb'>Uppdatering och säkerhet</span> > <span class='faqInFb'>Säkerhetskopiera</span> > <span class='faqInFb'>Lägg till en enhet</span> och välj sedan en extern hårddisk eller nätverksplats för dina säkerhetskopior.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Så var det klart. Varje timme säkerhetskopieras nu allt i din användarmapp (C:\\\\Users\\\\username). Om du vill ändra vilka filer som säkerhetskopieras eller hur ofta säkerhetskopieringen sker klickar du på <span class='faqInFb'>Fler alternativ</span>.    </div>    <div class='faqInFs3Fb'>        Återställa dina filer    </div>    <div class='mb-5'>        Om du saknar en viktig fil eller mapp kan du få tillbaka den på följande sätt:    </div>    <div>        <div class='mb-3'>1. Skriv <span class='faqInFb'>Återställ filer</span> i sökrutan i aktivitetsfältet och klicka sedan på <span class='faqInFb'> Återställ dina filer med Filhistorik</span>.</div>        <div class='mb-3'>2. Leta reda på den fil du behöver och använd sedan piltangenterna för att se alla versioner</div>        <div class='mb-3'>3. När du hittar den version du vill använda klickar du på <span class='faqInFb'>Återställ</span> för att spara den på sin ursprungliga plats. Om du vill spara den på en annan plats klickar och håller (eller högerklickar) du på <span class='faqInFb'>Återställ</span> och sedan <span class='faqInFb'>Återställ till</span>, och väljer sedan den plats du vill spara på.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1877,7 +2135,7 @@
         },
         "question2": {
             "title": "Uppdatera datorn",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Uppdatera datorn    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Symptom    </div>    <div style='padding:5px 0;'>        Om datorn inte fungerar som den har gjort tidigare och du inte vet varför kan du uppdatera datorn utan att ta bort några personliga filer eller ändra några inställningar. Windows kan ”uppdatera” datorn, så att den fungerar som efter en ny installation utan att radera dina filer.    </div>    <div style='padding:5px 0;'>        Uppdatera datorn, så här går det till: Dina filer och anpassade inställningar kommer inte att påverkas    </div>    <div style='padding:5px 0;'>        <ul>            <li>Datorinställningarna återställs till standardvärden</li>            <li>Appar från Windows Store sparas</li>            <li>Appar som installerats från skivor eller webbplatser tas bort</li>            <li>En lista på de borttagna filerna sparas på skrivbordet</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Berörda varumärken    </div>    <div>        <ul>            <li>Alla stationära och bärbara datorer</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Operativsystem    </div>    <div>        <ul>            <li>Windows 8, 8.1 och 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Lösning    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Tryck eller klicka på <span style='font-weight:bold;'> Inställningar </span>                    </li>                    <li style='padding:5px 0;'>                        Tryck eller klicka på <span style='font-weight:bold;'> Uppdatera/återställa</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Tryck eller klicka på <span style='font-weight:bold;'> Återställning</span></div>                        <div style='padding:5px 0'>Gå till avsnittet Återställ datorn utan att dina filer påverkas och tryck eller klicka på <span style='font-weight:bold;'> Kom igång.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Tryck på <span style='font-weight:bold;'> Nästa</span>.                    </li>                    <li style='padding:5px 0;'>                        Tryck på <span style='font-weight:bold;'> Återställ </span>för att börja återställningen.                    </li>                    <li style='padding:5px 0;'>                        När uppdateringen är klar hittar du en lista över borttagna appar på skrivbordet                    </li>                    <li style='padding:5px 0;'>                        Du kan se de borttagna apparna medan du uppdaterar systemet                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> Sök på <span style='font-weight:bold;'> uppdatera </span>i sökverktyget i Start-menyn.</li>                    <li style='padding:5px 0;'>                        <div>Klicka på <span style='font-weight:bold;'> Återställ datorn utan att dina filer påverkas</span> i sökresultaten enligt instruktionerna nedan.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Klicka på texten <span style='font-weight:bold;'> Kom igång</span> strax under rubriken <span style='font-weight:bold;'> Återställ datorn utan att dina filer påverkas </span> för att börja uppdatera din dator med Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Mer information    </div>    <div>        I de flesta fall avslutas uppdateringen av sig själv. Om Windows behöver filer som saknas, kommer du emellertid att ombes sätta in ett återställningsmedium; oftast en DVD-skiva eller ett USB-minne. I dessa fall beror det på datorn vad du behöver.    </div>    <div style='padding:10px 0'>        Om du har uppgraderat datorn till Windows 8.1 eller Windows RT 8.1 med en DVD använder du den skivan. Om du inte har någon skiva med Windows 8.1 eller Windows RT 8.1 kan du kontakta Microsofts support.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Uppdatera datorn    </div>    <hr>    <div class='faqInFs25FbP5'>        Symptom    </div>    <div class='faqInP5'>        Om datorn inte fungerar som den har gjort tidigare och du inte vet varför kan du uppdatera datorn utan att ta bort några personliga filer eller ändra några inställningar. Windows kan ”uppdatera” datorn, så att den fungerar som efter en ny installation utan att radera dina filer.    </div>    <div class='faqInP5'>        Uppdatera datorn, så här går det till: Dina filer och anpassade inställningar kommer inte att påverkas    </div>    <div class='faqInP5'>        <ul>            <li>Datorinställningarna återställs till standardvärden</li>            <li>Appar från Windows Store sparas</li>            <li>Appar som installerats från skivor eller webbplatser tas bort</li>            <li>En lista på de borttagna filerna sparas på skrivbordet</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Berörda varumärken    </div>    <div>        <ul>            <li>Alla stationära och bärbara datorer</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operativsystem    </div>    <div>        <ul>            <li>Windows 8, 8.1 och 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Lösning    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Tryck eller klicka på <span class='faqInFb'> Inställningar </span>                    </li>                    <li class='faqInP5'>                        Tryck eller klicka på <span class='faqInFb'> Uppdatera/återställa</span>                    </li>                    <li class='faqInP5'>                        <div>Tryck eller klicka på <span class='faqInFb'> Återställning</span></div>                        <div class='faqInP5'>Gå till avsnittet Återställ datorn utan att dina filer påverkas och tryck eller klicka på <span class='faqInFb'> Kom igång.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Tryck på <span class='faqInFb'> Nästa</span>.                    </li>                    <li class='faqInP5'>                        Tryck på <span class='faqInFb'> Återställ </span>för att börja återställningen.                    </li>                    <li class='faqInP5'>                        När uppdateringen är klar hittar du en lista över borttagna appar på skrivbordet                    </li>                    <li class='faqInP5'>                        Du kan se de borttagna apparna medan du uppdaterar systemet                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Sök på <span class='faqInFb'> uppdatera </span>i sökverktyget i Start-menyn.</li>                    <li class='faqInP5'>                        <div>Klicka på <span class='faqInFb'> Återställ datorn utan att dina filer påverkas</span> i sökresultaten enligt instruktionerna nedan.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Klicka på texten <span class='faqInFb'> Kom igång</span> strax under rubriken <span class='faqInFb'> Återställ datorn utan att dina filer påverkas </span> för att börja uppdatera din dator med Windows 10.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Mer information    </div>    <div>        I de flesta fall avslutas uppdateringen av sig själv. Om Windows behöver filer som saknas, kommer du emellertid att ombes sätta in ett återställningsmedium; oftast en DVD-skiva eller ett USB-minne. I dessa fall beror det på datorn vad du behöver.    </div>    <div class='faqInP10'>        Om du har uppgraderat datorn till Windows 8.1 eller Windows RT 8.1 med en DVD använder du den skivan. Om du inte har någon skiva med Windows 8.1 eller Windows RT 8.1 kan du kontakta Microsofts support.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1951,7 +2209,7 @@
         },
         "question3": {
             "title": "Se din dators processor",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Se din dators processor</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3><p>Termerna ”32 bitar” och ”64 bitar” handlar om hur datorns processor (även kallad CPU) hanterar information. 64-bitarsversionen av Windows hanterar stora mängder arbetsminne (RAM) mer effektivt än ett 32-bitarssystem.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Berörda varumärken</h3><p>Ovanstående symptom är associerat med men inte begränsat till följande system:</p><ul>    <li>Alla stationära och bärbara datorer</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operativsystem</h3><ul>    <li>Windows 7, 8 och 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Lösning</h3><p><strong><u>Windows 7 eller Vista</u></strong></p><ol>    <li>Öppna System genom att klicka på <strong>Start-knappen </strong>Bild på <strong>Start-knappen,</strong> högerklicka på Dator och sedan klicka på Egenskaper  </li>    <li>Under System ser du systemtypen.</li></ol><p><strong><u>Windows 8 och Windows 10</u></strong></p><p><strong>Metod 1:</strong> Öppna Systemfönstret i Kontrollpanelen</p><ol>    <li>Svep inåt från skärmens högra sida och tryck sedan på <strong>Sök</strong>. Med en mus kan du peka i nedre högra hörnet på skärmen och sedan klicka på <strong>Sök</strong>.</li>    <li>Skriv <strong>system</strong> i sökrutan och tryck eller klicka sedan på <strong>Inställningar.</strong></li>    <li>Tryck eller klicka på <strong>System</strong></li>    <li>Om du kör en 64-bitarsversion av Windows 8 står det <strong>64-bitars operativsystem</strong> i fältet Systemtyp under rubriken System. Om du kör en 32-<strong>bitarsversion av Windows</strong> <strong>8</strong> står det <strong>32-bitars operativsystem</strong> i fältet Systemtyp under rubriken System.  </li></ol><p><strong>Metod 2</strong>: Visa fönstret Systeminformation</p><ol>    <li>Svep inåt från skärmens högra sida och tryck sedan på <strong>Sök</strong>. Med en mus kan du peka i nedre högra hörnet på skärmen och sedan klicka på <strong>Sök</strong>.</li>    <li>Skriv <strong>systeminformation</strong> i sökrutan</li>    <li>Tryck eller klicka på<strong> System</strong>, tryck eller klicka på <strong>Systeminformation</strong> och klicka sedan på <strong>Systemöversikt.</strong></li>    <li>Om du kör en <strong>64-bitars </strong>version av Windows 8<strong> står det </strong> x64-baserad dator i fältet <strong>Systemtyp</strong> under rubriken Objekt. <br /> <br /> Om du kör en<strong> 32-bitars</strong> version av Windows 8 står det x86-baserad dator i fältet <strong>Systemtyp</strong> under rubriken Objekt.  </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Se din dators processor</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Termerna ”32 bitar” och ”64 bitar” handlar om hur datorns processor (även kallad CPU) hanterar information. 64-bitarsversionen av Windows hanterar stora mängder arbetsminne (RAM) mer effektivt än ett 32-bitarssystem.</p><h3 class='faqInFs25FbP10'>Berörda varumärken</h3><p>Ovanstående symptom är associerat med men inte begränsat till följande system:</p><ul>    <li>Alla stationära och bärbara datorer</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 7, 8 och 10</li></ul><h3 class='faqInFs25FbP10'>Lösning</h3><p><strong><u>Windows 7 eller Vista</u></strong></p><ol>    <li>Öppna System genom att klicka på <strong>Start-knappen </strong>Bild på <strong>Start-knappen,</strong> högerklicka på Dator och sedan klicka på Egenskaper  </li>    <li>Under System ser du systemtypen.</li></ol><p><strong><u>Windows 8 och Windows 10</u></strong></p><p><strong>Metod 1:</strong> Öppna Systemfönstret i Kontrollpanelen</p><ol>    <li>Svep inåt från skärmens högra sida och tryck sedan på <strong>Sök</strong>. Med en mus kan du peka i nedre högra hörnet på skärmen och sedan klicka på <strong>Sök</strong>.</li>    <li>Skriv <strong>system</strong> i sökrutan och tryck eller klicka sedan på <strong>Inställningar.</strong></li>    <li>Tryck eller klicka på <strong>System</strong></li>    <li>Om du kör en 64-bitarsversion av Windows 8 står det <strong>64-bitars operativsystem</strong> i fältet Systemtyp under rubriken System. Om du kör en 32-<strong>bitarsversion av Windows</strong> <strong>8</strong> står det <strong>32-bitars operativsystem</strong> i fältet Systemtyp under rubriken System.  </li></ol><p><strong>Metod 2</strong>: Visa fönstret Systeminformation</p><ol>    <li>Svep inåt från skärmens högra sida och tryck sedan på <strong>Sök</strong>. Med en mus kan du peka i nedre högra hörnet på skärmen och sedan klicka på <strong>Sök</strong>.</li>    <li>Skriv <strong>systeminformation</strong> i sökrutan</li>    <li>Tryck eller klicka på<strong> System</strong>, tryck eller klicka på <strong>Systeminformation</strong> och klicka sedan på <strong>Systemöversikt.</strong></li>    <li>Om du kör en <strong>64-bitars </strong>version av Windows 8<strong> står det </strong> x64-baserad dator i fältet <strong>Systemtyp</strong> under rubriken Objekt. <br /> <br /> Om du kör en<strong> 32-bitars</strong> version av Windows 8 står det x86-baserad dator i fältet <strong>Systemtyp</strong> under rubriken Objekt.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2040,7 +2298,7 @@
         },
         "question4": {
             "title": "Kontrollera datorns batteriförbrukning",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Kontrollera datorns batteriförbrukning</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3><p>Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Berörda varumärken</h3><ul>    <li>Lenovos bärbara och stationära datorer</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Berörda system</h3><ul>    <li>Alla</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Lösning</h3><p>Den här funktionen är ny i Windows 10, vi behöver hitta den här funktionen eftersom den inte finns i din vanliga <strong>kontrollpanel</strong>. Du hittar den istället i den nya appen <strong>”Inställningar”</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Hitta batterianvändningsskärmen</h3></p><p>1. Klicka eller tryck på alternativet <strong>Inställningar</strong> i startmenyn</p><p>2. Väl inne i <strong>Inställningar</strong> klickar du på <strong>”System”</strong> och sedan <strong>”Batterisparfunktionen”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicka eller tryck på länken <strong>”Batterianvändning”</strong> under rubriken för att se detaljer. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analysera din energiförbrukning</h3><p>4 Du kan ändra från att visa batterianvändning för de senaste 24 timmarna till de senaste 48 timmarna eller den senaste veckan</p><p>5 Procent för <strong>”System,”</strong> ”<strong>Bildskärm</strong>” och ”<strong>Wi-Fi”</strong>. Detta visas hur mycket av batteriet som har används av systemet, bildskärmen,</p><p>6 Alternativen <strong>”Används”</strong> och <strong>”Bakgrund”</strong> visar hur mycket energi som används av appar medan de används jämfört med appar som körs i bakgrunden.</p><p>7 Om appar använder energi i bakgrunden kan du klicka eller trycka på <strong>Ändra inställningarna för bakgrundsappar</strong> och konfigurera appar så att de inte körs i bakgrunden. Detta fungerar endast för universella Windows 10-appar.</p><p>8 Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollera datorns batteriförbrukning</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.</p><h3 class='faqInFs25FbP10'>Berörda varumärken</h3><ul>    <li>Lenovos bärbara och stationära datorer</li></ul><h3 class='faqInFs25FbP10'>Berörda system</h3><ul>    <li>Alla</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösning</h3><p>Den här funktionen är ny i Windows 10, vi behöver hitta den här funktionen eftersom den inte finns i din vanliga <strong>kontrollpanel</strong>. Du hittar den istället i den nya appen <strong>”Inställningar”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hitta batterianvändningsskärmen</h3></p><p>1. Klicka eller tryck på alternativet <strong>Inställningar</strong> i startmenyn</p><p>2. Väl inne i <strong>Inställningar</strong> klickar du på <strong>”System”</strong> och sedan <strong>”Batterisparfunktionen”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicka eller tryck på länken <strong>”Batterianvändning”</strong> under rubriken för att se detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysera din energiförbrukning</h3><p>4 Du kan ändra från att visa batterianvändning för de senaste 24 timmarna till de senaste 48 timmarna eller den senaste veckan</p><p>5 Procent för <strong>”System,”</strong> ”<strong>Bildskärm</strong>” och ”<strong>Wi-Fi”</strong>. Detta visas hur mycket av batteriet som har används av systemet, bildskärmen,</p><p>6 Alternativen <strong>”Används”</strong> och <strong>”Bakgrund”</strong> visar hur mycket energi som används av appar medan de används jämfört med appar som körs i bakgrunden.</p><p>7 Om appar använder energi i bakgrunden kan du klicka eller trycka på <strong>Ändra inställningarna för bakgrundsappar</strong> och konfigurera appar så att de inte körs i bakgrunden. Detta fungerar endast för universella Windows 10-appar.</p><p>8 Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2108,7 +2366,7 @@
         },
         "question5": {
             "title": "Använda datorn som pekplatta",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2148,7 +2406,7 @@
         },
         "question6": {
             "title": "Lära känna Cortana, din personliga assistent",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Lära känna Cortana, din personliga assistent</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Vad är Cortana?</h3><hr /><p>Cortana är din digitala assistent. Hon hjälper dig att göra saker.</p><p>Ju mer du använder Cortana, desto mer anpassad blir din användarupplevelse.</p><p>Börja med att skriva en fråga i sökrutan eller klicka på mikrofonen och prata med Cortana. (Det går att skriva på alla datorer, men du måste ha en mikrofon för att kunna prata.)</p><p>Om du inte vet vad du ska säga visas några förslag på låsskärmen och på startsidan för Cortana när du klickar på sökfältet i aktivitetsfältet.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Hem 2. Bärbar dator 3. Inställningar 4. Feedback</li></ol><p>Här är några saker Cortana kan göra:</p><ul>    <li>Ge dig påminnelser baserade på tid, plats eller personer.</li>    <li>Spåra försändelser, idrottslag, intressen och flyg.</li>    <li>Skicka e-postmeddelanden och SMS.</li>    <li>Hantera din kalender och ge dig uppdateringar.</li>    <li>Skapa och hantera listor.</li>    <li>Småprata och spela spel.</li>    <li>Hitta fakta, filer, platser och information.</li>    <li>Öppna alla appar i systemet.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Prova det här: Skapa en påminnelse</h3><hr /><p>En av sakerna Cortana kan göra är att påminna dig om saker. Hon kan påminna dig om att göra saker baserat på tid, platser eller till och med personer.</p><p>Skriv eller säg till exempel ”Påminn mig att gratulera Tanya nästa gång hon ringer.”</p><p>Påminnelsen kommer att visas när du får ett samtal från Tanya.</p><p>Extra bonus: Om du har en Windows Phone eller Cortana för iPhone eller Android kan Cortana synkronisera aviseringar mellan datorn och mobilen.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hej Cortana?</h3><hr /><p>Gör så att Cortana hör varje gång du säger ”Hej Cortana”. Öppna sökfältet i aktivitetsfältet för att komma till startsidan för Cortana. Klicka på <strong>Inställningar</strong> och markera <strong>Let Cortana respond to ”Hey Cortana.”</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Anmärkning</p><p>Cortana kan endast användas i vissa länder och regioner, och inte alla Cortana-funktioner är tillgängliga överallt.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Lära känna Cortana, din personliga assistent</div><hr><h3 class='faqInFs25FbP10'>Vad är Cortana?</h3><hr /><p>Cortana är din digitala assistent. Hon hjälper dig att göra saker.</p><p>Ju mer du använder Cortana, desto mer anpassad blir din användarupplevelse.</p><p>Börja med att skriva en fråga i sökrutan eller klicka på mikrofonen och prata med Cortana. (Det går att skriva på alla datorer, men du måste ha en mikrofon för att kunna prata.)</p><p>Om du inte vet vad du ska säga visas några förslag på låsskärmen och på startsidan för Cortana när du klickar på sökfältet i aktivitetsfältet.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Hem 2. Bärbar dator 3. Inställningar 4. Feedback</li></ol><p>Här är några saker Cortana kan göra:</p><ul>    <li>Ge dig påminnelser baserade på tid, plats eller personer.</li>    <li>Spåra försändelser, idrottslag, intressen och flyg.</li>    <li>Skicka e-postmeddelanden och SMS.</li>    <li>Hantera din kalender och ge dig uppdateringar.</li>    <li>Skapa och hantera listor.</li>    <li>Småprata och spela spel.</li>    <li>Hitta fakta, filer, platser och information.</li>    <li>Öppna alla appar i systemet.</li></ul><h3 class='faqInFs25FbP10'>Prova det här: Skapa en påminnelse</h3><hr /><p>En av sakerna Cortana kan göra är att påminna dig om saker. Hon kan påminna dig om att göra saker baserat på tid, platser eller till och med personer.</p><p>Skriv eller säg till exempel ”Påminn mig att gratulera Tanya nästa gång hon ringer.”</p><p>Påminnelsen kommer att visas när du får ett samtal från Tanya.</p><p>Extra bonus: Om du har en Windows Phone eller Cortana för iPhone eller Android kan Cortana synkronisera aviseringar mellan datorn och mobilen.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Gör så att Cortana hör varje gång du säger ”Hej Cortana”. Öppna sökfältet i aktivitetsfältet för att komma till startsidan för Cortana. Klicka på <strong>Inställningar</strong> och markera <strong>Let Cortana respond to ”Hey Cortana.”</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Anmärkning</p><p>Cortana kan endast användas i vissa länder och regioner, och inte alla Cortana-funktioner är tillgängliga överallt.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2196,7 +2454,6 @@
         "personal": "Privat",
         "business": "Arbete",
         "custom": "Skräddarsydd upplevelse",
-        "experience": "Erfarenhet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
         "moreInterest": "+ fler intressen",
         "title1": "Välkommen till",
@@ -2231,7 +2488,318 @@
         "OtherSettings": "Andra inställningar",
         "usageStatistics": "Användningsstatistik",
         "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
+        "deviceStatistics": "Dela statistisk information med Lenovo",
+        "deviceStatisticsDescription": "Delar statistiska data med Lenovo för att förbättra tillförlitlighet och design, och för att optimera funktioner på din dator.",
         "Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
-    }
+    },
+    "modernPreload": {
+        "cancel": "Avbryt",
+        "close": "Stäng",
+        "download": "Hämta",
+        "downloadAvailable": "Hämtning tillgänglig",
+        "downloadComplete": "Hämtningen är klar",
+        "downloading": "Hämtar...",
+        "failedDownload": "Hämtningen misslyckades",
+        "failedInstall": "Installationen misslyckades",
+        "installed": "Installerad",
+        "restartDownload": "Starta om hämtning",
+        "retry": "Försök igen",
+        "skip": "Hoppa över",
+        "noteDownloading": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "noteFailedDownload": "Varning! Ett problem inträffade under hämtningen eller installationen. Kontrollera att datorn är ansluten till internet och försök igen. Kom ihåg att behålla Vantage öppet medan programvaran installeras. Du kan stänga sidan Min programvara och fortsätta använda Vantage, eller minimera Vantage medan installationen slutförs.",
+        "noteDownloadComplete": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "noteDownloadAvailable": "Obs! När du klickar på Hämta kan det visas ett Windows-meddelande där du blir ombedd att ge oss tillstånd att installera programvaran på din enhet. När du är klar med installationen visas apparna automatiskt på skrivbordet eller Start-menyn.<br /><br />Du kan stänga sidan Min programvara och fortsätta använda Lenovo Vantage. Stäng inte Lenovo Vantage under installationen.",
+        "sizeText": "Storlek",
+        "versionText": "Version",
+        "softwareDescription": "Klicka på Hämta nedan för att hämta programvara som inkluderades i köpet av din enhet. Om du behöver ladda ned programvaran igen vid ett senare tillfälle kan du göra detta genom att välja Min programvara på Vantage-menyn.",
+        "title": "MIn programvara",
+        "loadingDescription": "Vänta medan vi skapar en lista med programvara som var inkluderad i köpet av enheten.",
+        "shortDescription": "Hämta och installera programvara som var inkluderad i köpet av din enhet.",
+        "errorDescription": "<h2>Det gick inte att hämta information om nedladdning av programvara</h2>Prova att klicka på Försök igen nedan, eller gör ett nytt försök senare genom att klicka på Min programvara på Vantage-menyn."
+    },
+    "hardwareScan": {
+        "name": "Maskinvarugenomsökning",
+        "title": "Kör en maskinvarugenomsökning",
+        "subtitle": "Vänta medan maskinvarugenomsökningen sker",
+        "quickScan": "Snabb genomsökning",
+        "finalResultCode": "Slutlig resultatkod",
+        "resultCode": "Resultatkod",
+        "cancel": "Avbryt",
+        "complete": "Slutförd",
+        "incomplete": "Ofullständigt",
+        "loadingComponents": "Läser in komponenter",
+        "hardwareComponents": "Maskinvarukomponenter",
+        "loadingDevices": "Enheter läses in",
+        "select": "Välj",
+        "deselect": "Avmarkera",
+        "allOptions": "Alla alternativ",
+        "latestResult": "Senaste resultat",
+        "back": "TILLBAKA",
+        "viewResults": "Visa resultat",
+        "save": "Spara",
+        "details": "Information",
+        "recurrence": "Frekvens",
+        "interval": "Intervall",
+        "time": "Tidpunkt",
+        "type": "Typ",
+        "hours": "Timmar",
+        "minutes": "Minuter",
+        "am": "förmiddag",
+        "pm": "eftermiddag",
+        "previousResult": "Tidigare resultat",
+        "lastScanOn": "Senaste genomsökning",
+        "result": "Resultat",
+        "viewDetailsLog": "Visa informationslogg",
+        "ok": "OK",
+        "notOk": "INTE OK",
+        "notScanned": "INTE GENOMSÖKT",
+        "pass": "Godkänd",
+        "fail": "Ej godkänd",
+        "cancelled": "Avbrutet",
+        "warning": "Varning",
+        "errorResult": "Du måste välja ett test som ska köras.",
+        "buy": "Köp nu",
+        "errorDeviceChoose": "Du måste välja en enhet som ska köras.",
+        "errorNoOptionSelected": "Du måste välja ett alternativ.",
+        "offline": "Enheten körs offline. Anslut till internet",
+        "doNotSuspend": "Testerna måste köra utan att avbrytas! Stäng eller minimera inte appen, och sätt inte datorn i viloläge eller stäng av den under genomsökningen.",
+        "doNotUse": "Använd inte datorn förrän testet har slutförts",
+        "testsMustRunUniterrupted": "Testerna måste köras utan avbrott!",
+        "doNotCloseOrMinimizeApp": "• Stäng eller minimera inte den här appen.",
+        "doNotSwitchApp": "• Byt inte till en annan app.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Sätt inte datorn i strömsparläge och logga inte ut från eller stäng av datorn.",
+        "customize": {
+            "name": "Anpassa",
+            "test": "Anpassa test",
+            "description": "Välj alternativen nedan för att anpassa testet",
+            "runTests": "Kör valda tester"
+        },
+        "scheduledScan": {
+            "name": "Schemalägg genomsökning",
+            "title": "Schemalägg genomsökningen",
+            "newScan": "Schemalägg ny genomsökning",
+            "fullScan": "Full genomsökning",
+            "onlyOnce": "En gång",
+            "eachDay": "Varje dag",
+            "eachWeek": "Varje vecka",
+            "eachMonth": "Varje månad",
+            "eachYear": "Varje år",
+            "schedule": "Schemalägg",
+            "date": "Datum",
+            "pickDate": "Välj ett datum",
+            "scanScheduled": "En maskinvarusökning har schemalagts!",
+            "description": "En annan genomsökning har redan schemalagts för samma tid och datum!",
+            "error": "Fel",
+            "delete": "Ta bort",
+            "warningBatterySaver": "Obs! Schemalagda sökningar fungerar inte i batterisparläge",
+            "scheduleIntervalLimit": "En annan genomsökning är schemalagd inom tio minuter. Välj en annan tid.",
+            "information": "Genomsökningen har schemalagts och kommer att köras i bakgrunden följande datum:"
+        },
+        "recoverBadSectors": {
+            "title": "Återställa skadade sektorer",
+            "description": "Lenovos verktyg för att hitta och korrigera skadade sektorer på en hårddisk",
+            "goTo": "Fortsätt med att återställa skadade sektorer",
+            "localDevices": "Lokala enheter",
+            "numberSectors": "Antal lästa sektorer",
+            "numberBadSectors": "Antal skadade sektorer",
+            "numberFixedSectors": "Antal åtgärdade sektorer",
+            "numberNonFixedSectors": "Antal icke-åtgärdade sektorer",
+            "status": "Driftsstatus",
+            "elapsedTime": "Tidsåtgång",
+            "hours": "Timmar",
+            "hour": "Timme",
+            "minutes": "Minuter",
+            "minute": "Minut",
+            "seconds": "Sekunder",
+            "second": "Sekund",
+            "moreInfo": "Vänta medan skadade sektorer återställs",
+            "systemEvent": "Testet avbröts på grund av en systemhändelse som kan påverka resultatet.",
+            "systemPasswordProtected": "Enheten kanske är lösenordsskyddad. Prova att inaktivera lösenordsskyddet.",
+            "popup": {
+                "description": "Genomsökningen och reparationen kan resultera i att data går förlorade. Vi rekommenderar att du skapar en säkerhetskopia innan du utför denna åtgärd. Vill du fortsätta?",
+                "yes": "Ja",
+                "no": "Nej"
+            }
+        },
+        "support": {
+            "title": "Hämta professionella diagnostikverktyg",
+            "subtitle": "Lenovo-supporten"
+        },
+        "eTicket": {
+            "header": "Maskinvaruproblem påträffades.",
+            "problemDetected": "Vid genomsökningen av maskinvaran påträffades ett problem med följande datorkomponenter",
+            "ticketRequestQuestion": "Lenovo kan skicka en ersättningsdel om datorn omfattas av garanti. Vill du skapa ett ärende för utbyte av maskinvara för att åtgärda problemet?",
+            "openTicket": "Skapa ärende"
+        },
+        "battery": {
+            "title": "Aktivera gränsvärde för batteriladdning",
+            "description": "Genom att aktivera anpassad batteriladdning kan du få batteriet att räcka längre när du använder enheten. Mindre än full laddning ger kortare batteritid under körning. Aktivera funktionen genom att koppla från enheten och ladda ur batteriet till stoppunkten eller mer.",
+            "enable": "Aktivera"
+        },
+        "refreshModule": "Uppdatera moduler",
+        "completed": "Slutfört",
+        "notCompleted": "Inte slutfört",
+        "yes": "Ja",
+        "attention": "Viktigt",
+        "cancelTextPrompt": "Vill du verkligen avbryta?",
+        "cancelTextProgress": "Vänta tills allt har avbrutits",
+        "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
+        "testNotApplicable": "Kan inte användas på anpassad sökning"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installationen misslyckades. Försök igen.",
+                "networkError": "Nätverksfel.",
+                "installationCancelled": "Installationen avbröts."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-inlösen",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installera",
+                "installing": "Installerar",
+                "installed": "Installerad",
+                "launch": "Starta",
+                "seeMore": "Mer information"
+            },
+            "fieldName": {
+                "description": "Beskrivning",
+                "screenshots": "Skärmbilder",
+                "additionalInformation": "Mer information",
+                "by": "Av:",
+                "updated": "Uppdaterad:",
+                "type": "Typ:",
+                "category": "Kategori:",
+                "legalAgreement": "Avtal",
+                "readMore": "Läs mer",
+                "readLess": "Läs mindre"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

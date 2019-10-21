@@ -13,14 +13,15 @@ export class HeaderMainComponent implements OnInit {
 
 	@Input() title: string;
 	@Input() back: string;
-	@Input() backarrow: string;
+	@Input() backarrow = '<';
 	@Input() forwardLink: { path: string, label: string };
 	@Input() menuItems: any[];
 	@Input() parentPath: string;
 	@Input() backId: string;
+	@Input() ariaLabel: string;
 	@Input() isInnerBack = false;
 	@Output() innerBack = new EventEmitter();
-
+	@Input() textId: string;
 	constructor(private router: Router) { }
 
 	ngOnInit() {
@@ -28,10 +29,8 @@ export class HeaderMainComponent implements OnInit {
 		if (this.parentPath !== '' && this.parentPath !== undefined) {
 			this.menuItems.forEach((d, i) => {
 				d.path = self.parentPath + '/' + d.path;
-				console.log('UPDATED PATH', d.path);
 			});
 		}
-		console.log('MENU ITEMS UPDATED', this.menuItems);
 	}
 
 	onInnerBack() {

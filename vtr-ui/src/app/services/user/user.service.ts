@@ -21,11 +21,14 @@ export class UserService {
 	cookies: any = {};
 	public auth = false;
 	public starter = false;
+	public silentlyLoginSuccess = false;
 	token = '';
-
+	public hasFirstName = true;
 	public firstName = 'User';
 	lastName = '';
-	initials = '';
+	initials = 'U';
+	accountState = null;
+	starterStatus = null;
 
 	private lid: any;
 	private metrics: any;
@@ -42,7 +45,7 @@ export class UserService {
 		public deviceService: DeviceService
 	) {
 		this.translate.stream('lenovoId.user').subscribe((firstName) => {
-			if (!this.auth) {
+			if (!this.auth && firstName !== 'lenovoId.user') {
 				this.setName(firstName, this.lastName);
 			}
 		});
@@ -105,26 +108,23 @@ export class UserService {
 
 	async loginSilently(appFeature = null) {
 		const self = this;
-		let loginSuccess = false;
 		this.commonService.sendNotification(LenovoIdStatus.Pending, this.auth);
 		const isStarterAccount = await this.lidStarterHelper.isStarterAccountScenario();
 		if (!isStarterAccount && self.lid) {
-			const accountState = this.hadEverSignIn();
-			const starterStatus = this.getStarterIdStatus();
 			self.lid.loginSilently().then(result => {
 				if (result.success && result.status === 0) {
-					loginSuccess = true;
+					this.silentlyLoginSuccess = true;
 					self.lid.getUserProfile().then(profile => {
 						if (profile.success && profile.status === 0) {
 							self.setName(profile.firstName, profile.lastName);
 							self.setAuth(true);
 							self.commonService.sendNotification(LenovoIdStatus.SignedIn, appFeature);
-							self.sendSigninMetrics('success', starterStatus, accountState, 'AppOpen');
+							self.sendSilentlyLoginMetric();
 						}
 					});
 				} else {
 					self.commonService.sendNotification(LenovoIdStatus.SignedOut, appFeature);
-					self.sendSigninMetrics('failure(rc=UserInteractionRequired)', starterStatus, accountState, 'AppOpen');
+					self.sendSilentlyLoginMetric();
 				}
 			}).catch((res) => {
 				self.devService.writeLog('loginSilently() Exception happen ', res);
@@ -133,14 +133,26 @@ export class UserService {
 			this.lidStarterHelper.getStarterAccountToken().then((token) => {
 				if (token && self.lidStarterHelper.isStarterToken(token)) {
 					self.starter = true;
-					const accountState = self.hadEverSignIn();
-					const starterStatus = self.getStarterIdStatus();
-					self.sendSigninMetrics('success', starterStatus, accountState, 'AppOpen');
+					self.sendSilentlyLoginMetric();
 				}
 				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
 			}).catch(() => {
 				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
 			});
+		}
+	}
+
+	public sendSilentlyLoginMetric() {
+		if (!this.accountState) {
+			this.accountState = this.hadEverSignIn();
+		}
+		if (!this.starterStatus) {
+			this.starterStatus = this.getStarterIdStatus();
+		}
+		if (this.starter === true || this.silentlyLoginSuccess === true) {
+			this.sendSigninMetrics('success', this.starterStatus, this.accountState, 'AppOpen');
+		} else {
+			this.sendSigninMetrics('failure(rc=UserInteractionRequired)', this.starterStatus, this.accountState, 'AppOpen');
 		}
 	}
 
@@ -238,6 +250,7 @@ export class UserService {
 	}
 
 	setName(firstName: string, lastName: string) {
+		this.hasFirstName = !!firstName;
 		if (!firstName && !lastName) {
 			this.translate.stream('lenovoId.user').subscribe((value) => {
 				this.firstName = value;

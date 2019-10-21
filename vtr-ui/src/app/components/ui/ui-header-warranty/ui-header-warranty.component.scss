@@ -58,7 +58,7 @@
 		background-clip: padding-box;
 		border-radius: 0.9rem;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-		width: 28rem;
+		width: 32rem;
 
 		&.in-warranty {
 			background: linear-gradient(to left bottom, #4980FC, #2E62D9);
@@ -77,6 +77,9 @@
 
 			.button {
 				color: #c94000;
+				&:focus {
+					box-shadow: 0 0 0 0.4rem rgba(255, 150, 146, 0.5);
+				}
 			}
 		}
 
@@ -129,38 +132,6 @@
 			.sub-description {
 				font-size: 1.4rem;
 				opacity: .8;
-			}
-
-		}
-
-		.button {
-			text-transform: uppercase;
-			display: inline-block;
-			width: 100%;
-			height: 3rem;
-			line-height: 3rem;
-			border: none;
-			border-radius: 10rem;
-			background: $light;
-			padding: 0 1.5rem;
-			color: $main;
-			font-size: 1.3rem;
-			letter-spacing: 0;
-			font-weight: $weight_bold;
-			text-align: center;
-			text-decoration: none;
-			cursor: pointer;
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-
-			&:hover {
-				box-shadow: none;
-				background: $main_lightest;
-			}
-
-			&:focus {
-				box-shadow: none;
 			}
 		}
 	}

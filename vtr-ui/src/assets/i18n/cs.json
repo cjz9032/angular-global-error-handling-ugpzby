@@ -39,7 +39,7 @@
                     "ramOverlock": "Přetaktování RAM",
                     "popup": {
                         "text": "Změny se projeví po restartování počítače.",
-                        "button": "ok"
+                        "button": "U redu"
                     },
                     "driverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
@@ -47,14 +47,14 @@
                         "networkBoostText": "Aby bylo možné použít posílení sítě, je třeba nainstalovat ovladač",
                         "hybridModeText": "Aby bylo možné použít hybridní režim, je třeba nainstalovat ovladač",
                         "cpuOverclockText": "Chcete-li aktivovat přetaktování CPU, nainstalujte ovladač (vyžaduje restartování)",
-                        "button": "Nainstalujte si",
-                        "link": "storno"
+                        "button": "NAINSTALOVAT",
+                        "link": "STORNO"
                     },
                     "lightingDriverPopup": {
                         "headerText": "Je vyžadována instalace ovladače",
                         "text": "Chcete-li aktivovat osvětlení, nainstalujte ovladač (vyžaduje restartování)",
-                        "button": "Nainstalujte si",
-                        "link": "storno"
+                        "button": "NAINSTALOVAT",
+                        "link": "STORNO"
                     },
                     "lightingColorMessage": {
                         "text": "Výběr barvy není u tohoto efektu k dispozici."
@@ -84,7 +84,7 @@
                     "line2": "<b>Přehled správy funkcí</b> <br> Některé funkce nejsou k dispozici na všech zařízeních",
                     "line3": "<b>Přetaktování CPU </b><br> Zvyšte maximální rychlost procesoru",
                     "line4": "<b>Přetaktování RAM </b><br> Zvyšte maximální rychlost paměti",
-                    "line5": "<b>Zvýšení výkonu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
+                    "line5": "<b>Zvýšení vý-konu sítě </b><br> Upřednostněte v síťovém provozu hru, kterou hrajete",
                     "line6": "<b>Dolby </b><br> Vylaďte zvuk přímo pro hraní her pomocí technologie Dolby",
                     "line7": "<b>Hybridní režim </b><br> Zvyšte výdrž baterie deaktivací Upřesnit nastavení GPU, když nebudete hrát",
                     "line8": "<b>Rychlé nabíjení </b><br> Užijte si při hraní na cestách delší výdrž baterie díky rychlejšímu nabíjení",
@@ -96,7 +96,7 @@
                     "systenTooltip": "Umístěním kurzoru na CPU/GPU/RAM a různé jednotky zobrazíte jejich popisy, včetně informací o výrobci a modelu"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "Rychlé nastavení"
                 }
             }
         },
@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -146,8 +156,8 @@
                 },
                 "recorded": {
                     "title": "KLÁVESA MAKRA PRO ",
-                    "deleteKey": "Klávesa Delete",
-                    "clear": "Vymazat",
+                    "deleteKey": "Delete",
+                    "clear": "VYMAZAT",
                     "intervalStatus": {
                         "keep": {
                             "title": "Udržet zpoždění",
@@ -228,13 +238,35 @@
                     "body": "Čas záznamu vyprší, pokud se vstup na více než 10 sekund zastaví."
                 },
                 "confirmButton": {
-                    "btnClear": "Vymazat",
-                    "btnCancel": "Storno"
+                    "btnClear": "VYMAZAT",
+                    "btnCancel": "STORNO"
                 },
                 "btnOk": "OK"
             },
             "recording": {
                 "title": "Záznam klávesy makra pro"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -314,7 +346,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Vypnuto"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -351,7 +383,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Vypnuto"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -368,26 +400,184 @@
                 "heading": {
                     "title": "Vyberte profil:"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "Automaticky zavřít",
+            "introLine": "Přidejte aplikace, které se při spuštění hry zavřou. Můžete tak uvolnit nevyužité zdroje a zvýšit výkon. POZNÁMKA: Tato funkce aplikace úplně zavře. Vždy si tedy zkontrolujte, že máte svou práci uloženou.",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "Chcete zapnout automatické zavírání?",
+                "body": "Přidané aplikace se zavřou, když budete hrát, čímž se uvolní systémové prostředky pro hraní her.",
+                "checkedTitle": "Znovu se neptat",
+                "btnConfirm": "Zapnout",
+                "btnCancel": "Teď ne"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "Přidat aplikace k automatickému zavření",
+                "body": "V seznamu dole budou uvedeny jen aktuálně spuštěné aplikace."
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "Přidat",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "Žádné spuštěné aplikace k přidání",
+                "body": "Zobrazí se pouze aktuálně spuštěné aplikace. Spusťte aplikaci, kterou chcete přidat, a vraťte se zpět."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
+            }
+        },
+        "networkBoost": {
+            "title": "Zvýšení výkonu sítě",
+            "introLine": "Když aktivujete zvýšení výkonu sítě, hrám ve vaší síti se automaticky nastaví nejvyšší priorita a zvýší se tak rychlost. Pokud při hraní používáte nějaké aplikace (například Twitch nebo Discord), doporučujeme vám přidat je do seznamu také, aby i ony měly v síti prioritu.",
+            "modalTurn": {
+                "title": "Chcete zapnout zvýšení výkonu sítě?",
+                "body": "Chcete zapnout zvýšení výkonu sítě? Přidané aplikace budou při spuštění sdílet větší část síťového výkonu.",
+                "checkedTitle": "Znovu se neptat",
+                "btnConfirm": "Zapnout",
+                "btnCancel": "Teď ne"
+            },
+            "modalAddApps": {
+                "title": "Přidat aplikace ke zvýšení výkonu sítě",
+                "body": {
+                    "part1": "K urychlení lze přidat až 5 dalších aplikací",
+                    "part2": "z",
+                    "part3": "přidáno"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
+                }
             }
         }
     },
@@ -411,8 +601,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "Podpora",
-            "homeSecurity": "Připojeno Domů",
-            "privacy": "Soukromí"
+            "privacy": "Soukromí",
+            "beta": {
+                "title": "beta"
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Bezpečnostního rádce",
@@ -451,6 +644,9 @@
             "expand": "Rozbalit",
             "loader": "Načítání <br> Status",
             "loading": "Načítání..."
+        },
+        "app-update": {
+            "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
         }
     },
     "privacy": {
@@ -518,10 +714,10 @@
             "cameraPrivacy": "Fotoaparát",
             "eyeCareMode": "Péče o oči",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage nemá přístup ke kameře ani k mikrofonu.",
+                "accessUrl": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows",
+                "microphoneNote": "Lenovo Vantage nemá přístup k mikrofonu.",
+                "cameraPrivacyNote": "Lenovo Vantage nemá přístup ke kameře."
             }
         },
         "systemStatus": {
@@ -613,7 +809,6 @@
         "deviceSettings": {
             "helpful": "Užitečný obsah",
             "batteryGauge": {
-                "title": "UKAZATEL STAVU BATERIE",
                 "subtitle": "Stav baterie",
                 "hours": "hodiny",
                 "hour": "hodina",
@@ -676,22 +871,22 @@
                     "Bad": "<b>Došlo k chybě baterie.</b> Baterii nelze nabít/vybít. Vyměňte ji.",
                     "NotDetected": "<b>Nebyla zjištěna žádná baterie</b> nebo baterie není připojena.",
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
-                    "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
-                    "LimitedACAdapterSupport": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Znovu připojte správný napájecí adaptér.",
+                    "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
+                    "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
                     "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač.",
                     "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{value}}%</b> své původní kapacity.",
                     "HighTemperature": "<b>Vybíjení</b> bylo zastaveno kvůli <b>přehřátí baterie</b>.",
                     "TrickleCharge": "Baterie je <b>zcela vybitá</b> a je třeba ji nabít. To může trvat deset i více hodin.",
                     "OverheatedBattery": "Baterie je <b>přehřátá</b>. Vyjměte ji z počítače a nechte ji vychladnout na pokojovou teplotu.",
                     "PermanentError": "Došlo k <b>selhání baterie z důvodu běžného opotřebení.</b> Baterii nelze nabít. Vyměňte ji.",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
+                    "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
-                "updating": "Aktualizování",
-                "voltageError": "Nesprávné napětí baterie",
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "Zobrazit podrobnosti",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Napájení",
@@ -766,7 +961,8 @@
                             "battery&Quite": "BATERIE A TICHO"
                         }
                     },
-                    "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows"
+                    "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows",
+                    "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší."
                 },
                 "powerSettings": {
                     "title": "Nastavení napájení",
@@ -779,6 +975,11 @@
                         "title": "Rychlé znovuspuštění",
                         "description": "Aktivujte tuto funkci, zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko.",
                         "tooltip": "Tato funkce zrychlí obnovení provozu počítače v případě, že často otevíráte a zavíráte jeho víko. Je-li zapnuta, počítač po zavření víka přejde do režimu nízké spotřeby, v případě znovuotevření víka během 15 sekund od jeho zavření se však okamžitě vrátí k běžnému provozu. Kromě toho se díky ní notebook může pokusit dokončit započaté činnosti (například odeslání e-mailu nebo stahování souboru) ještě předtím, než přejde do pohotovostního režimu."
+                    },
+                    "flipToBoot": {
+                        "title": "Překlopte a zavádějte",
+                        "description": "Tato funkce umožňuje zapnout počítač při otevření víka počítače stejně jako po stisknutí tlačítka napájení. ",
+                        "tooltip": "Tato funkce automaticky spustí počítač otevřením víka.  To je zvláště užitečné, pokud jste v systému Windows Hello nastavili přihlašovací údaje podle obličeje."
                     },
                     "or": "Nebo"
                 },
@@ -799,8 +1000,8 @@
                         "readMoreText": "Další informace.",
                         "noteInfo": " Prahová hodnota nabíjení baterie stále není plně aktivní. Odpojte počítač a nechte baterii vybít na nebo pod limit nabíjení baterie.",
                         "settings": {
-                            "title1": "Prahová hodnota pro vestavěnou baterii",
-                            "title2": "Prahová hodnota pro vyjímatelnou baterii"
+                            "title1": "Prahová hodnota pro primární baterii",
+                            "title2": "Prahová hodnota pro sekundární baterii"
                         },
                         "popup": {
                             "title": "Povolit limit nabíjení baterie",
@@ -833,7 +1034,43 @@
                         "title": "Napájecí schéma Letadlo",
                         "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače.Je-li aktivní napájecí režim Letadlo, omezí počítač spotřebu elektrické energie zpomalením nabíjení baterie a snížením výkonu systému.",
                         "checkBoxDesc": "Automatická detekce",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "Je li zaškrtnuta automatická detekce, aktivuje počítač automaticky napájecí schéma Letadlo, když detekuje prostředí letadla a vypne jej, když prostředí letadla opustíte."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -972,7 +1209,7 @@
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
-                        "reset": "Resetovat teplotu",
+                        "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
@@ -986,7 +1223,7 @@
                             "warm": "Teplé (lepší pro oči)",
                             "cold": "Studená"
                         },
-                        "reset": "Resetovat teplotu",
+                        "reset": "Reset",
                         "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
                         "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
@@ -1035,7 +1272,7 @@
                     "camera": {
                         "title": "Fotoaparát",
                         "tooltip": "Kliknutím sem obnovíte výchozí nastavení vlastností kamery.",
-                        "reset": "Obnovit nastavení z výroby"
+                        "reset": "Reset"
                     },
                     "brightness": "Jas",
                     "contrast": "Kontrast",
@@ -1060,7 +1297,7 @@
             "inputAccessories": {
                 "title": "Vstup & Příslušenství",
                 "subtitle": "Vstup & Příslušenství – Nastavení",
-                "description": "Technologie inteligentní detekce Lenovo rozpoznává pomocí různých snímačů v počítači vaši aktuální činnost a přizpůsobuje podle ní řízení spotřeby",
+                "description": "Tato část umožňuje nastavit nejčastěji používané funkce klávesnice a myši. Prozkoumejte další funkce zde.",
                 "inputAccessory": {
                     "title": "Inteligentní klávesnice",
                     "hiddenKeyboardFunctions": {
@@ -1091,6 +1328,51 @@
                         "tittle": "Fn + Mezerník",
                         "description": "změna stavu podsvícení klávesnice",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "Funkce horní řady kláves na klávesnici",
+                        "showAdvSettings": "ZOBRAZIT ROZŠÍŘENÁ NASTAVENÍ",
+                        "hideAdvSettings": "SKRÝT ROZŠÍŘENÁ NASTAVENÍ",
+                        "description": "Horní řada klávesnice poskytuje následující dvě funkce. Vyberte požadovanou:",
+                        "subSection": {
+                            "description": "Chcete-li přepnout dvě výše uvedené funkce, stiskněte kombinaci kláves Fn+Esc.",
+                            "radioButton": {
+                                "sFunKey": "SPECIÁLNÍ FUNKCE",
+                                "fnKey": "FUNKCE F1–F12"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "Přepnutí výchozí primární funkce",
+                            "description": "Je-li tato funkce zapnutá, výchozí primární funkce se změní z továrního nastavení na opačné. Aby se tyto změny projevily, restartujte počítač."
+                        },
+                        "subSectionThree": {
+                            "title": "Jak používat kombinace s klávesou Fn",
+                            "description": "Chcete-li použít kombinace kláves Fn, použijte normální kombinaci kláves Fn+funkční klávesy. Použitím metody trvalého zapnutí Fn stačí jen stisknout klávesu Fn (namísto toho, abyste ji museli stisknout a držet) a klávesa zůstane aktivní. Poté stiskněte požadovanou funkční klávesu. Tato akce odpovídá současnému stisknutí funkční klávesy a klávesy Fn.",
+                            "radioButton": {
+                                "nMehod": "Normální metoda",
+                                "fnKeyMehod": "Metoda s trvalým stiskem klávesy Fn"
+                            },
+                            "note": "Pokud klávesu Fn stisknete dvakrát po sobě, zůstane stav klávesy Fn uzamčen jako stisknutý až do dalšího stisku klávesy Fn. Je-li klávesa Fn uzamčena, svítí indikátor Fn Lock. Nyní lze stisknout požadovanou funkční klávesu přímo a vyvolat tak její alternativní funkci."
+                        },
+                        "popup": {
+                            "title": "Restartujte počítač",
+                            "description": "V případě změny funkce horní řady kláves je nutno počítač restartovat, aby se změny projevily. Skutečně chcete restartovat?",
+                            "reboot": "RESTARTOVAT",
+                            "cancel": "TEĎ NE"
+                        }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkce horkých kláves VoIP:",
+                        "description": {
+                            "main": "Tato funkce umožňuje přijmout nebo odmítnout hovor VoIP stisknutím klávesových zkratek na klávesnici:",
+                            "f10": "F10: přijmout hovor",
+                            "f11": "F11: odmítnout nebo ukončit hovor"
+                        },
+                        "tooltip": "V současné době je tato funkce podporována pouze softwarem Skype for Business 2016 a Microsoft Teams 1.0.<br>Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace.",
+                        "hasInstalledAppsDescription": "Vyberte aplikaci, ve které chcete klávesové zkratky používat:",
+                        "noInstalledAppsDescription": "Tuto funkci podporují pouze dále uvedené aplikace: ",
+                        "hasInstalledAppsNote": "Poznámka: U Microsoft Teams 1.0 nelze použít klávesu F11 k ukončení hovoru.",
+                        "noInstalledAppsNote": "Poznámka: Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace."
                     }
                 },
                 "userDefinedKey": {
@@ -1118,10 +1400,13 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
+                    "more": "DALŠÍ",
+                    "control1": "OVLÁDÁNÍ DOTYKOVÉ PLOŠKY",
+                    "control2": "OVLÁDÁNÍ MYŠI",
+                    "control3": "OVLÁDÁNÍ TRACKPOINT"
                 }
             }
         },
@@ -1163,6 +1448,17 @@
                             "slow": "Pomalá"
                         },
                         "toolTipContent": "Výběrem požadované možnosti uzamkněte obrazovku rychle/středně/pomalu, pokud není zjištěna přítomnost. Dobu, za jakou bude obrazovka uzamčena, však ovlivňuje také momentální scénář uživatele, možnosti snímače a nastavení časového limitu obrazovky systému Windows. Proto důrazně doporučujeme, abyste svůj systém okamžitě uzamkli, než jej opustíte."
+                    },
+                    "facialRecognition": {
+                        "title": "ROZPOZNÁVÁNÍ OBLIČEJE",
+                        "caption": "Můžete povolit funkci rozpoznávání obličeje a umožnit jí přístup k fotoaparátu. Tento nástroj zachytí váš snímek, aby přesně rozpoznal vaši přítomnost nebo zjistil, kdy jste zařízení nechali bez dozoru. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
+                        "checkBox": "Zapněte fotoaparát a povolte tuto funkci",
+                        "note": {
+                            "permission": "Lenovo Vantage nemá přístup ke kameře. Funkce zaškrtávacího políčka nebude fungovat.",
+                            "privacyMode": "Režim ochrany osobních údajů fotoaparátu Lenovo Vantage je zapnutý. Funkce zaškrtávacího políčka nebude fungovat.",
+                            "windowsLink": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows",
+                            "privacyLink": "Chcete-li jej vypnout, přejděte do režimu ochrany osobních údajů fotoaparátu"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1170,7 +1466,8 @@
                     "caption": "Automatické nastavení vzdálenosti automaticky aktualizuje vzdálenost rozpoznávání pomocí jádra umělé inteligence.",
                     "options": {
                         "near": "Malá",
-                        "far": "Velká"
+                        "far": "Velká",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1188,14 +1485,19 @@
                     "description1": "Tato funkce závisí na Windows Hello. Ujistěte se, že je v nastavení systému Windows zapnuto rozpoznávání obličeje.",
                     "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát. Tato funkce však neshromažďuje žádné osobní údaje.",
                     "description3": "1. Tyto funkce nemusí pracovat správně, pokud je počítač v režimu Stan, Tablet nebo Stojan.",
-                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Automatické přihlášení pomocí infračervené kamery nebude funkční.",
-                    "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení."
+                    "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
+                    "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
+                    "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté.",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
                     "screenTimeoutSettings": "Přechod na nastavení časového limitu vypnutí obrazovky"
                 },
-                "resetToDefault": "OBNOVIT VÝCHOZÍ NASTAVENÍ"
+                "resetToDefault": "Reset",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentní obrazovka",
@@ -1346,6 +1648,7 @@
         "banner": {
             "neverChecked": "Vítejte při použití Aktualizace systému.",
             "title": "Aktualizovaný systém je zdravým systémem.",
+            "installingTitle": "Během aktualizací zařízení nepřepínejte počítač do režimu spánku ani do režimu hibernace.",
             "last": "Poslední aktualizace: ",
             "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",
@@ -1421,85 +1724,6 @@
             "fileNotFoundException": "Soubor nebyl nalezen."
         }
     },
-    "homeSecurity": {
-        "title": "Zabezpečení připojené domácnosti",
-        "notification": {
-            "recent": "Nedávná bezpečnostní oznámení",
-            "notifications": "Upozornění"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "Chraňte ekosystém svých zařízení",
-            "thisDevice": "Toto zařízení",
-            "allDevices": "Všechna zařízení",
-            "protected": "Chráněno",
-            "notProtected": "Nechráněno",
-            "trialExpired": "Platnost zkušební verze vypršela",
-            "upgrade": "upgrade",
-            "inEcosystem": "V ekosystému",
-            "ecosystemEnable": "Ekosystém povolen",
-            "inTrial": "Zkušební",
-            "addEcosystem": "Přidat do ekosystému",
-            "enableEcosystem": "Povolit ekosystém",
-            "startTrial": "Spustit zkušební verzi",
-            "fullAccess": "Plný přístup",
-            "renew": "Obnovit"
-        },
-        "overview": {
-            "overviewBlockTitle": "Přehled zabezpečení ekosystému",
-            "allDevices": "Všechna zařízení",
-            "myDevice": "Mé zařízení",
-            "thisComputer": "Tento počítač",
-            "secure": "ZABEZPEČIT",
-            "needAttention": "VYŽADUJE POZORNOST",
-            "manageAccount": "Správa účtu",
-            "devices": "Zařízení",
-            "seeProtectedDevices": "Zobrazit chráněná zařízení",
-            "addDevice": "přidat zařízení",
-            "trialExpired": "Platnost zkušební verze vypršela - Upgrade na ochranu všech zařízení",
-            "upgrade": "upgrade",
-            "freeTrial": "Ochrana všech zařízení - Bezplatná 30denní zkušební verze",
-            "startTrial": "Spustit zkušební verzi"
-        },
-        "tour": {
-            "back": "Zpět",
-            "skip": "Přeskočit",
-            "start": "ZAHÁJIT PROHLÍDKU",
-            "done": "HOTOVO",
-            "welcome1": "Vítejte",
-            "welcomeDesc1": "Pouhých pár klepnutí vás dělí od ochrany počítače, mobilních zařízení a připojených zařízení používaných vámi nebo vašimi rodinnými příslušníky.",
-            "welcomeDescStart": "Ještě dnes vyzkoušejte bezplatnou 30denní zkušební verzi.",
-            "welcome2": "Exkluzivně pro Vantage",
-            "welcomeDesc2": "Zabezpečení připojené domácnosti je integrováno přímo v aplikaci Vantage a umožňuje rychlý přístup ke stavu ochrany vašeho ekosystému a výstrahám zabezpečení.",
-            "create": "Vytvořte si účet",
-            "lenovoId": "pomocí Lenovo ID",
-            "notifications": "Dostávejte <b>oznámení</b> o stavu vašeho domova",
-            "monitor": "<b>Sledujte</b> zabezpečení rodinných zařízení",
-            "peaceOfMind": "Užívejte si <b>pomyšlení</b>, že jste neustále chráněni!",
-            "signInLenovoId": "PŘIHLÁSIT POMOCÍ LENOVO ID",
-            "haveLenovo": "Nemám <b>Lenovo ID</b>",
-            "createLenovo": "&nbsp;Vytvořit Lenovo ID",
-            "without": "Pokračovat <b>bez účtu</b>",
-            "skipAndTrial": "PŘESKOČIT A SPUSTIT ZKUŠEBNÍ VERZI",
-            "alreadyHave": "Již mám <b>účet zabezpečení připojené domácnosti</b>",
-            "loginCHS": "Přihlásit k existujícímu účtu ZPD",
-            "locationTitle": "Povolit sledování polohy",
-            "locationPermission": "Aby tato funkce správně fungovala, musíte pro dané zařízení povolit sledování polohy"
-        },
-        "accountStatus": {
-            "title": "Moje zabezpečení připojené domácnosti",
-            "startTrial": "Spustit zkušební verzi",
-            "manageAccount": "Správa účtu",
-            "upgradeAccount": "Upgradovat účet",
-            "inTrialDetail1": "{{remainingDays}} Dny zbývající do konce zkušební verze.",
-            "inTrialDetail2": "Momentálně používáte zkušební verzi. Máte neomezený přístup ke všem funkcím.",
-            "trialExpiredDetail1": "Vypršela platnost zkušební verze.",
-            "trialExpiredDetail2": "Vypršela platnost zkušební verze a ekosystém vašich zařízení již není chráněn.",
-            "upgradedDetail1": "Váš účet je aktivní do {{expiredDate}}.",
-            "upgradedDetail2": "Ekosystém zařízení je momentálně pod ochranou.",
-            "localAccountDetail2": "Klepnutím níže spustíte bezplatnou zkušební 30denní verzi.",
-            "alreadyHaveAccount": "Už máte aktivační kód?"
-        }
-    },
     "support": {
         "common": {
             "getSupport": "Získejte podporu"
@@ -1513,6 +1737,7 @@
             "statusWarrantyNotFound": "Záruka nebyla nalezena.",
             "yearDepotWarranty": "R záruky typu Depot",
             "warrantyDetails": "Podrobnosti o záruce:",
+            "warrantyDashboardDetails": "Podrobnosti o záruce",
             "startDate": "Datum zahájení: ",
             "endDate": "Datum ukončení: ",
             "status": "Stav: ",
@@ -1588,56 +1813,78 @@
             "common": {
                 "title": "Antivirus",
                 "back": "ZPĚT",
-                "why": "Proč McAfee?",
-                "recommends": "Lenovo doporučuje společnost McAfee, která do všech vašich zařízení přinese:",
-                "award": "oceňovanou ochranu před nejnovějšími internetovými hrozbami, včetně ransomwaru a malwaru",
-                "dedicated": "specializované zabezpečení, které dlouhodobě překonává aplikaci Defender a jiná antivirová řešení předních poskytovatelů",
-                "deviceToCloud": "technologii zařízení-cloud, která nezpomalí váš počítač",
-                "poweredBy": "Používá technologii McAfee",
-                "privacyTerms": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
-                "mcafeePremium": "Prémiová ochrana McAfee",
+                "recommends": "Proč Lenovo doporučuje software <b>McAfee</b> na ochranu všech vašich zařízení",
+                "award": "Oceňovaný antivirus",
+                "mcafeePremium": "Ochrana McAfee LiveSafe",
                 "protectedBy": "Nyní vás chrání program {{protectedName}}. Můžete se však chránit lépe pomocí programu McAfee LiveSafe.",
                 "virusScan": "VYHLEDÁVÁNÍ VIRŮ",
                 "firewall": "FIREWALL",
                 "disabled": "ZAKÁZÁNO",
-                "enableVirusScan": "POVOLIT VYHLEDÁVÁNÍ VIRŮ",
-                "enablenFirewall": "POVOLIT BRÁNU FIREWALL",
-                "enableFirewall": "POVOLIT BRÁNU FIREWALL"
+                "awardText": "Chraňte svůj nový počítač Lenovo pomocí ověřené a prověřené ochrany před online hrozbami",
+                "performance": "Výkon pevný jako skála",
+                "performanceText": "Konzistentní, přesný a spolehlivý antivirový program, na který se můžete spolehnout",
+                "Blazing": "Blesková rychlost",
+                "BlazingText": "Optimalizovaný antivirový program, který nezpomalí ani nepřeruší vaše prostředí Lenovo Vantage",
+                "privacyTerms": "/   <tag>Zásady ochrany osobních údajů</tag>  |  <tag>Podmínky služby</tag>",
+                "notAvailable": "Není dostupná"
             },
             "windowsDefender": {
-                "optimallyProtected": "Ochrana není optimální",
-                "subtitle": "Momentálně vás chrání Windows Defender.Můžete se však chránit lépe pomocí McAfee LiveSafe. Další informace najdete níže.",
-                "learnMore": "DALŠÍ INFORMACE O McAfee",
-                "windowsProtected": "Základní ochrana Windows Defender",
-                "windowsSubtitle": "Windows Defender nabízí základní ochranu zařízení"
+                "optimallyProtected": "Vypadá to, že aktuálně používáte program Windows Defender. Není to špatná volba, ale kvůli maximální bezpečnosti proti ransomwaru, malwaru a virům jsme se spojili se společností <b>McAfee</b>, abychom mohli nabídnout oceněné zabezpečení a mohli tak <b>chránit, na čem záleží.</b>",
+                "windowsSubtitle": "Základní ochrana Windows Defender",
+                "topTip": "Nejlepší tipy pro online bezpečnost",
+                "topContent": "Naučte se, jak se můžete bránit proti současným největším online hrozbám <tag>ZOBRAZIT TIPY</tag>",
+                "view": "ZOBRAZIT TIPY",
+                "buyNow": "Koupit nyní",
+                "buy": "Kupte si, stáhněte a instalujte antivirovou ochranu McAfee ještě dnes, abyste mohli využívat tyto funkce špičkového zabezpečení",
+                "onlyBasic": "Zde pouze základy. I když jste chráněni před některými online hrozbami, můžete být jiným hrozbám stále vystaveni.",
+                "virus": "Antivirová ochrana",
+                "homeNetwork": "Ochrana domácí sítě",
+                "private": "Soukromé, anonymní prohlížení",
+                "everyDevice": "Ochrana všech zařízení",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "Nyní vás chrání McAfee LiveSafe",
-                "valid": "Platnost do",
-                "upgrade": "Aktualizovat",
-                "launch": "SPUSTIT McAfee",
-                "getMacfee": "ZÍSKAT McAfee",
-                "topBenefits": "Hlavní výhody programu McAfee LiveSafe",
+                "title": "Antivirus",
+                "subtitle": "Momentálně jste chráněni verzí McAfee LiveSafe – počet zbývajících dnů jen {{remainingDays}}! Chcete-li rozšířit svou ochranu, přihlaste se k odběru nyní.",
+                "launch": "Spustit antivirus McAfee",
+                "getMacfee": "Získat program McAfee",
+                "topBenefits": "Proč <b>Lenovo doporučuje software McAfee</b> na ochranu všech vašich zařízení",
                 "awardTitle": "Oceňovaný antivirus",
-                "awardSubtitle": "Blokuje viry, malware, ransomware, spyware, nežádoucí aplikace a další programy ve vašem počítači.",
-                "encryptedTitle": "Šifrované úložiště",
-                "encryptedSubtitle": "Díky 128bitovému šifrování zůstanou citlivé soubory ve vašem počítači uchovány v tajnosti.",
-                "identityTitle": "Ochrana proti krádeži identity",
-                "identitySubtitle": "Převezměte kontrolu nad ochranou své identity před její krádeží nebo zneužitím.",
-                "supportTitle": "BEZPLATNÁ zákaznická podpora",
-                "supportSubtitle": "Po dobu trvání předplatného se o vás postaráme prostřednictvím telefonu, chatu nebo online.",
-                "antiTitle": "Ochrana proti nevyžádané poště",
-                "antiSubtitle": "Blokuje nebezpečné zprávy a odstraňuje e-maily, které mohou obsahovat rizikové odkazy a viry, ještě než se dostanou do vaší schránky.",
-                "virusTitle": "Záruka antivirové ochrany",
-                "virusSubtitle": "Poskytuje jistotu, že v případě napadení počítače virem vám odborník společnosti McAfee pomůže virus odstranit přes vzdálenou plochu.",
-                "parentalTitle": "Rodičovská kontrola",
-                "parentalSubtitle": "Blokuje webové stránky a výsledky hledání, které nechcete ukázat dětem. Také umožňuje nastavit limity, kolik času mohou trávit na internetu.",
-                "license": "Licence platí do",
-                "trial": "Zkušební verze platí do"
+                "awardSubtitle": "Zabraňte infikování počítače viry, malwarem a ransomwarem",
+                "supportTitle": "Zdarma, nepřetržitá odborná technická podpora ",
+                "supportSubtitle": "Získejte nepřetržitou asistenci a klid v duši díky našemu specializovanému bezpečnostnímu týmu",
+                "trialSubtitle": "Momentálně jste chráněni pouze 30denní zkušební verzí McAfee LiveSafe – počet zbývajících dnů jen {{remainingDays}}! Chcete-li rozšířit svou ochranu, přihlaste se k odběru nyní.",
+                "discount": "100% záruka vrácení peněz",
+                "trialSubscribe": "Zkušební verze končí za {{remainingDays}} dny - PŘIHLÁSIT SE NYNÍ",
+                "subscribe": "Přihlášení končí za {{remainingDays}} dny – PŘIHLÁSIT SE NYNÍ",
+                "MultiTitle": "Ochrana více zařízení",
+                "MultiSubtitle": "Chraňte každé zařízení, které vlastníte - počítače, telefony a tablety - ideální pro rodiny s dětmi ",
+                "networkTitle": "Ochrana domácí sítě",
+                "networkSubtitle": "Zabezpečte svůj firewall a zabraňte hackerům v přístupu k domácí síti",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "Zabezpečení ukládá a spravuje všechna vaše hesla online na jednom místě",
+                "onlineTitle": "Soukromí online",
+                "onlineSubtitle": "Připojujte se s šifrováním na úrovni banky a zajistěte si tak všechny své online aktivity, a to i ve veřejných sítích Wi-Fi nebo v otevřených sítích ",
+                "register": "Registrace McAfee",
+                "virusScan": "Antivirová kontrola",
+                "firewall": "Osobní Firewall",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner ",
+                "report": "Vaše zpráva o ochraně před hrozbami ",
+                "trialContent": "Používali jste zkušební verzi antiviru McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, riskujete tak budoucí zranitelnost svého počítače. Neriskujte to. <tag>Zapsat nyní</tag>",
+                "subscribeContent": "Používali jste software McAfee správně. Ale do konce zkušební doby zbývá již jen {{remainingDays}} dní, a tak riskujete tak budoucí zranitelnost svého počítače. Neriskujte to. <tag>Zapsat nyní</tag>",
+                "subscribeNow": "Zapsat nyní",
+                "fileScan": "Prohledané soubory",
+                "Viruses": "Odstraněné viry",
+                "blocked": "Blokovaná špatná připojení",
+                "shredded": "Soubory bezpečně skartovány",
+                "startFileScan": "Spusťte skenování souborů"
             },
             "others": {
-                "othersProtection": "nabízí základní ochranu zařízení"
+                "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení",
+                "unknown": "Neznámé",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -1690,7 +1937,8 @@
                 "describe": "Do nezabezpečených zařízení a sítí může proniknout malware a způsobit krádež identity nebo únik soukromých a finančních informací. Zapnutím této funkce snížíte riziko vystavení vašeho zařízení a domácí sítě útočníkům.",
                 "subtitle": "Mír v duši",
                 "subtitleDescribe": "Pokud zabezpečení připojené domácnosti zjistí chybu v zabezpečení zařízení nebo domácí síti nebo rozpozná připojení k potenciálně škodlivé síti, odešle vám výstrahu. <tag>Zde</tag> zjistíte ještě více informací o zabezpečení připojené domácnosti.",
-                "tryNow": "Chci to vyzkoušet"
+                "tryNow": "Chci to vyzkoušet",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "Zadejte kód pozvánky",
@@ -1706,7 +1954,13 @@
                 "success": "Připojení bylo úspěšné",
                 "canUse": "Nyní můžete začít používat zabezpečení připojené domácnosti",
                 "tryAgain": "Nesprávný kód, zadejte jej znovu.",
-                "activationCode": "KÓD AKTIVACE"
+                "activationCode": "KÓD AKTIVACE",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "Stav zabezpečení",
@@ -1725,6 +1979,10 @@
                 "learnMoreAboutSecurityHealth": "Další informace o jednotlivých součástech <tag>získáte zde</tag>.",
                 "peaceOfMind": "Toužíte po větším klidu?",
                 "button": "Zapnout zabezpečení Wi-Fi"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1836,7 +2094,7 @@
         },
         "question1": {
             "title": "Zálohování a obnovení souborů",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Zálohování a obnovení souborů    </div>    <hr />    <div style='margin-bottom:7rem;'>        Vždy je dobré mít zálohu. Uchovávejte kopie svých souborů na jiném disku pro případ, že se něco stane s původními soubory.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Nastavení zálohy    </div>    <hr />    <div class='mb-5'>        Klepněte na tlačítko <span style='font-weight:bold'>Start</span> a vyberte <span style='font-weight:bold'>Nastavení</span> > <span style='font-weight:bold'>Aktualizace a zabezpečení</span> > <span style='font-weight:bold'>Zálohování</span> > <span style='font-weight:bold'>Přidat jednotku</span> a poté vyberte externí jednotku nebo síťové umístění, kam se má záloha uložit.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Vše je připraveno. Každou hodinu vytvoříme zálohu veškerého obsahu vaší uživatelské složky (C:\\\\Users\\\\username). Chcete-li změnit, které soubory se mají zálohovat nebo jak často má záloha probíhat, otevřete nabídku <span style='font-weight:bold;'>Další možnosti</span>.    </div>    <div style='font-size:3rem;font-weight:bold;'>        Obnovení souborů    </div>    <div class='mb-5'>        Pokud zjistíte, že vám chybí důležitý soubor nebo složka, můžete ji obnovit následujícím způsobem:    </div>    <div>        <div class='mb-3'>1. Do vyhledávacího pole na hlavním panelu zadejte <span style='font-weight:bold;'>obnovit soubory</span> a poté vyberte položku <span class='font-weight:bold'>Obnovit soubory pomocí služby Historie souborů</span>.</div>        <div class='mb-3'>2. Vyhledejte požadovaný soubor a pomocí šipek procházejte mezi všemi verzemi souboru</div>        <div class='mb-3'>3. Po nalezení požadované verze jej volbou <span style='font-weight:bold'>Obnovit</span> uložíte do původního umístění. Jestliže jej chcete uložit jinam, stiskněte a držte, nebo klikněte pravým tlačítkem na volbu <span style='font-weight:bold'>Obnovit</span>, vyberte možnost <span style='font-weight:bold'>Obnovit do</span> a poté vyberte nové umístění.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Zálohování a obnovení souborů    </div>    <hr />    <div class='faqInMb7'>        Vždy je dobré mít zálohu. Uchovávejte kopie svých souborů na jiném disku pro případ, že se něco stane s původními soubory.    </div>    <div class='faqInFs3Fb'>        Nastavení zálohy    </div>    <hr />    <div class='mb-5'>        Klepněte na tlačítko <span class='faqInFb'>Start</span> a vyberte <span class='faqInFb'>Nastavení</span> > <span class='faqInFb'>Aktualizace a zabezpečení</span> > <span class='faqInFb'>Zálohování</span> > <span class='faqInFb'>Přidat jednotku</span> a poté vyberte externí jednotku nebo síťové umístění, kam se má záloha uložit.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Vše je připraveno. Každou hodinu vytvoříme zálohu veškerého obsahu vaší uživatelské složky (C:\\\\Users\\\\username). Chcete-li změnit, které soubory se mají zálohovat nebo jak často má záloha probíhat, otevřete nabídku <span class='faqInFb'>Další možnosti</span>.    </div>    <div class='faqInFs3Fb'>        Obnovení souborů    </div>    <div class='mb-5'>        Pokud zjistíte, že vám chybí důležitý soubor nebo složka, můžete ji obnovit následujícím způsobem:    </div>    <div>        <div class='mb-3'>1. Do vyhledávacího pole na hlavním panelu zadejte <span class='faqInFb'>obnovit soubory</span> a poté vyberte položku <span class='faqInFb'>Obnovit soubory pomocí služby Historie souborů</span>.</div>        <div class='mb-3'>2. Vyhledejte požadovaný soubor a pomocí šipek procházejte mezi všemi verzemi souboru</div>        <div class='mb-3'>3. Po nalezení požadované verze jej volbou <span class='faqInFb'>Obnovit</span> uložíte do původního umístění. Jestliže jej chcete uložit jinam, stiskněte a držte, nebo klikněte pravým tlačítkem na volbu <span class='faqInFb'>Obnovit</span>, vyberte možnost <span class='faqInFb'>Obnovit do</span> a poté vyberte nové umístění.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1877,7 +2135,7 @@
         },
         "question2": {
             "title": "Jak obnovit počítač",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        Jak obnovit počítač    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        Příznak    </div>    <div style='padding:5px 0;'>        Pokud váš počítač nefunguje tak dobře jako dříve a vy neutušíte proč, můžete jej obnovit, aniž byste přišli o jakékoli osobní soubory nebo nastavení. „Částečné obnovení počítače“ systému Windows je spíše něco jako nová instalace bez odstranění osobních souborů.    </div>    <div style='padding:5px 0;'>        Částečné obnovení počítače, Stane se toto: Vaše soubory nebo přizpůsobená nastavení se nijak nezmění    </div>    <div style='padding:5px 0;'>        <ul>            <li>Nastavení počítače se změní zpět do výchozího nastavení</li>            <li>Budou zachovány aplikace z obchodu Windows Store</li>            <li>Z disku nebo webové stránky budou odebrány instalované aplikace</li>            <li>Na plochu bude uložen seznam odebraných souborů</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Značky, kterých se to týká    </div>    <div>        <ul>            <li>Všechny stolní počítače a notebooky</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Operační systém    </div>    <div>        <ul>            <li>Windows 8, 8.1 a 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        Řešení    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8 / 8.1</span>                <ol>                    <li style='padding:5px 0;'>                        Klepněte nebo klikněte na položku <span style='font-weight:bold;'>Nastavení</span>                    </li>                    <li style='padding:5px 0;'>                        Klepněte nebo klikněte na volbu <span style='font-weight:bold;'>Aktualizace a obnovení</span>                    </li>                    <li style='padding:5px 0;'>                        <div>Klepněte nebo klikněte na volbu <span style='font-weight:bold;'>Obnovení</span></div>                        <div style='padding:5px 0'>V části „Částečné obnovení počítače, které neovlivní soubory“ klepněte nebo klikněte na možnost <span style='font-weight:bold;'>Začínáme</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        Klikněte na tlačítko <span style='font-weight:bold;'>Další</span>.                    </li>                    <li style='padding:5px 0;'>                        Kliknutím na tlačítko <span style='font-weight:bold;'>Obnovit</span> spusťte proces obnovení.                    </li>                    <li style='padding:5px 0;'>                        Když proces obnovení skončí, na ploše se zobrazí seznam odebraných aplikací                    </li>                    <li style='padding:5px 0;'>                        Můžete si prohlédnout aplikace odebrané během obnovení systému                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> V nástroji vyhledávání v nabídce Start zadejte <span style='font-weight:bold;'>obnovení</span>.</li>                    <li style='padding:5px 0;'>                        <div>Mezi níže zobrazenými výsledky hledání klikněte na položku <span style='font-weight:bold;'>Částečné obnovení počítače, které neovlivní soubory</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div>Kliknutím na tlačítko <span style='font-weight:bold;'>Spustit</span> hned pod záhlavím <span style='font-weight:bold;'>Částečné obnovení počítače, které neovlivní soubory</span> spusťte obnovení počítače.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        Další informace    </div>    <div>        Ve většině případů se obnovení počítače samo dokončí. Pokud však systém Windows vyžaduje chybějící soubory, budete požádáni o vložení média pro obnovení, což je obvykle disk DVD nebo jednotka USB flash. Pokud se tak stane, požadované soubory závisí na konfiguraci počítače.    </div>    <div style='padding:10px 0'>        Pokud jste svůj počítač upgradovali na systém Windows 8.1 nebo Windows RT 8.1 pomocí disku DVD, použijte tento disk. Pokud nemáte médium se systémem Windows 8.1 nebo Windows RT 8.1, obraťte se na podporu Microsoft.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Jak obnovit počítač    </div>    <hr>    <div class='faqInFs25FbP5'>        Příznak    </div>    <div class='faqInP5'>        Pokud váš počítač nefunguje tak dobře jako dříve a vy neutušíte proč, můžete jej obnovit, aniž byste přišli o jakékoli osobní soubory nebo nastavení. „Částečné obnovení počítače“ systému Windows je spíše něco jako nová instalace bez odstranění osobních souborů.    </div>    <div class='faqInP5'>        Částečné obnovení počítače, Stane se toto: Vaše soubory nebo přizpůsobená nastavení se nijak nezmění    </div>    <div class='faqInP5'>        <ul>            <li>Nastavení počítače se změní zpět do výchozího nastavení</li>            <li>Budou zachovány aplikace z obchodu Windows Store</li>            <li>Z disku nebo webové stránky budou odebrány instalované aplikace</li>            <li>Na plochu bude uložen seznam odebraných souborů</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Značky, kterých se to týká    </div>    <div>        <ul>            <li>Všechny stolní počítače a notebooky</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Operační systém    </div>    <div>        <ul>            <li>Windows 8, 8.1 a 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Řešení    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8 / 8.1</span>                <ol>                    <li class='faqInP5'>                        Klepněte nebo klikněte na položku <span class='faqInFb'>Nastavení</span>                    </li>                    <li class='faqInP5'>                        Klepněte nebo klikněte na volbu <span class='faqInFb'>Aktualizace a obnovení</span>                    </li>                    <li class='faqInP5'>                        <div>Klepněte nebo klikněte na volbu <span class='faqInFb'>Obnovení</span></div>                        <div class='faqInP5'>V části „Částečné obnovení počítače, které neovlivní soubory“ klepněte nebo klikněte na možnost <span class='faqInFb'>Začínáme</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Klikněte na tlačítko <span class='faqInFb'>Další</span>.                    </li>                    <li class='faqInP5'>                        Kliknutím na tlačítko <span class='faqInFb'>Obnovit</span> spusťte proces obnovení.                    </li>                    <li class='faqInP5'>                        Když proces obnovení skončí, na ploše se zobrazí seznam odebraných aplikací                    </li>                    <li class='faqInP5'>                        Můžete si prohlédnout aplikace odebrané během obnovení systému                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> V nástroji vyhledávání v nabídce Start zadejte <span class='faqInFb'>obnovení</span>.</li>                    <li class='faqInP5'>                        <div>Mezi níže zobrazenými výsledky hledání klikněte na položku <span class='faqInFb'>Částečné obnovení počítače, které neovlivní soubory</span>.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Kliknutím na tlačítko <span class='faqInFb'>Spustit</span> hned pod záhlavím <span class='faqInFb'>Částečné obnovení počítače, které neovlivní soubory</span> spusťte obnovení počítače.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Další informace    </div>    <div>        Ve většině případů se obnovení počítače samo dokončí. Pokud však systém Windows vyžaduje chybějící soubory, budete požádáni o vložení média pro obnovení, což je obvykle disk DVD nebo jednotka USB flash. Pokud se tak stane, požadované soubory závisí na konfiguraci počítače.    </div>    <div class='faqInP10'>        Pokud jste svůj počítač upgradovali na systém Windows 8.1 nebo Windows RT 8.1 pomocí disku DVD, použijte tento disk. Pokud nemáte médium se systémem Windows 8.1 nebo Windows RT 8.1, obraťte se na podporu Microsoft.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1951,7 +2209,7 @@
         },
         "question3": {
             "title": "Jako poznat typ procesoru v počítači",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Jako poznat typ procesoru v počítači</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Příznak</h3><p>Pojmy „32bitový“ a „64bitový“ označují způsob, jakým procesor počítače (také nazývaný CPU) zpracovává informace. 64bitová verze systému Windows zpracovává velké množství paměti RAM efektivněji než 32bitový systém.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Značky, kterých se to týká</h3><p>Výše uvedený příznak se mimo jiných týká následujících systémů:</p><ul>    <li>Všechny stolní počítače a notebooky</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operační systém</h3><ul>    <li>Windows 7, 8 a 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Řešení</h3><p><strong><u>Windows 7 nebo Vista</u></strong></p><ol>    <li>Na <strong>tlačítku Start</strong> klikněte na obrázek <strong>tlačítka Start,</strong> pravým tlačítkem klikněte na Počítač a kliknutím na položku Vlastnosti otevřete část Systém  </li>    <li>V části Systém vidíte typ systému.</li></ol><p><strong><u>Windows 8 a Windows 10</u></strong></p><p><strong>1. způsob:</strong> V Ovládacích panelech zobrazte okno Systém</p><ol>    <li>Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.</li>    <li>Do vyhledávacího pole zadejte <strong>systém</strong> a klepněte nebo klikněte na položku <strong>Nastavení.</strong></li>    <li>Klepněte nebo klikněte na položku <strong>Systém</strong></li>    <li>Pokud používáte 64bitovou verzi systému Windows 8, v poli Typ systému pod záhlavím Systém je zobrazeno <strong>64bitový operační systém</strong>. Pokud používáte 32<strong> bitovou verzi systému Windows</strong> <strong>8,</strong> <strong>v poli Typ systému pod záhlavím </strong>Systém je zobrazeno 32bitový operační systém.<br />  </li></ol><p><strong>2. způsob</strong>: Zobrazení okna Systémové informace</p><ol>    <li>Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.</li>    <li>Do vyhledávacího pole zadejte text <strong>systémové informace</strong></li>    <li>Klepněte nebo klikněte na položku <strong>Systém</strong>, klepněte nebo klikněte na položku <strong>Systémové informace</strong> a poté klikněte na položku <strong>Souhrn systémových informací</strong>.</li>    <li>Pokud používáte <strong>64bitovou </strong>verzi systému Windows 8<strong>, </strong>v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x64-based PC“. <br /> <br />Pokud používáte<strong> 32bitovou </strong>verzi systému Windows 8, v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x86-based PC“.  </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Jako poznat typ procesoru v počítači</div><hr><h3 class='faqInFs25FbP10'>Příznak</h3><p>Pojmy „32bitový“ a „64bitový“ označují způsob, jakým procesor počítače (také nazývaný CPU) zpracovává informace. 64bitová verze systému Windows zpracovává velké množství paměti RAM efektivněji než 32bitový systém.</p><h3 class='faqInFs25FbP10'>Značky, kterých se to týká</h3><p>Výše uvedený příznak se mimo jiných týká následujících systémů:</p><ul>    <li>Všechny stolní počítače a notebooky</li></ul><h3 class='faqInFs25FbP10'>Operační systém</h3><ul>    <li>Windows 7, 8 a 10</li></ul><h3 class='faqInFs25FbP10'>Řešení</h3><p><strong><u>Windows 7 nebo Vista</u></strong></p><ol>    <li>Na <strong>tlačítku Start</strong> klikněte na obrázek <strong>tlačítka Start,</strong> pravým tlačítkem klikněte na Počítač a kliknutím na položku Vlastnosti otevřete část Systém  </li>    <li>V části Systém vidíte typ systému.</li></ol><p><strong><u>Windows 8 a Windows 10</u></strong></p><p><strong>1. způsob:</strong> V Ovládacích panelech zobrazte okno Systém</p><ol>    <li>Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.</li>    <li>Do vyhledávacího pole zadejte <strong>systém</strong> a klepněte nebo klikněte na položku <strong>Nastavení.</strong></li>    <li>Klepněte nebo klikněte na položku <strong>Systém</strong></li>    <li>Pokud používáte 64bitovou verzi systému Windows 8, v poli Typ systému pod záhlavím Systém je zobrazeno <strong>64bitový operační systém</strong>. Pokud používáte 32<strong> bitovou verzi systému Windows</strong> <strong>8,</strong> <strong>v poli Typ systému pod záhlavím </strong>Systém je zobrazeno 32bitový operační systém.<br />  </li></ol><p><strong>2. způsob</strong>: Zobrazení okna Systémové informace</p><ol>    <li>Na pracovní ploše přetáhněte prstem z pravého okraje a klepněte na volbu <strong>Hledat</strong>. Pokud používáte myš, přesuňte ukazatel do pravého dolního rohu obrazovky a klikněte na možnost <strong>Hledat</strong>.</li>    <li>Do vyhledávacího pole zadejte text <strong>systémové informace</strong></li>    <li>Klepněte nebo klikněte na položku <strong>Systém</strong>, klepněte nebo klikněte na položku <strong>Systémové informace</strong> a poté klikněte na položku <strong>Souhrn systémových informací</strong>.</li>    <li>Pokud používáte <strong>64bitovou </strong>verzi systému Windows 8<strong>, </strong>v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x64-based PC“. <br /> <br />Pokud používáte<strong> 32bitovou </strong>verzi systému Windows 8, v poli <strong>Typ systému </strong>ve sloupci Položka je zobrazeno „x86-based PC“.  </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2040,7 +2298,7 @@
         },
         "question4": {
             "title": "Kontrola využití baterie počítače",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Kontrola využití baterie počítače</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Příznak</h3><p>Windows 10 obsahuje novou obrazovku <strong>Využití baterie</strong>, která vás informuje, co přesně spotřebovává energii notebooku. To znamená, že budete přesně vědět, které počítačové aplikace nebo univerzální aplikace systému Windows 10 využívají nejvíce energie.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Značky, kterých se to týká</h3><ul>    <li>Notebooky a stolní počítače Lenovo</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Systémy, kterých se to týká</h3><ul>    <li>Všechny</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operační systém</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Řešení</h3><p>Jelikož je tato funkce nově přidaná do systému Windows 10, musíte ji nejprve najít, protože se nenachází klasicky na <strong>Ovládacích panelech</strong>, ale je součástí nové aplikace <strong>Nastavení</strong></p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Přejděte na obrazovku Využití baterie</h3></p><p>1. V nabídce Start klikněte nebo klepněte na možnost <strong>Nastavení</strong></p><p>2. V části <strong>Nastavení</strong> vyberte položku <strong>Systém</strong> a poté vyberte volbu <strong>Spořič baterie.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Kliknutím nebo klepnutím na odkaz <strong>Využití baterie</strong> pod záhlavím Spořič baterie zobrazíte další podrobnosti. </p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyzujte využití energie</h3><p>4. Údaje na obrazovce Využití baterie můžete změnit, aby se zobrazovalo využití baterie za posledních 24 nebo 48 hodin, nebo za minulý týden</p><p>5. Procenta u položek <strong>Systém</strong>, <strong>Displej</strong> a <strong>Wi-Fi</strong>. znázorňují, kolik energie baterie používají systémové procesy a displej.</p><p>6. Volby <strong>Využití</strong> a <strong>Na pozadí</strong> ukazují, kolik energie spotřebují aplikace, když je používáte, ve srovnání s aplikacemi běžícími na pozadí.</p><p>7. Pokud aplikace používají napájení na pozadí, můžete kliknout nebo klepnout na ikonu <strong>Změnit nastavení aplikací běžících na pozadí </strong>a změnit jejich konfiguraci, aby neběžely na pozadí. To však platí pouze pro univerzální aplikace systému Windows 10.</p><p>8. Přejděte dále dolů, kde se nachází seznam aplikací, což je asi nejužitečnější část této funkce. Seznam obsahuje aplikace, které využily energii baterie za dané období, a u každé z nich je uvedeno procento využité energie</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrola využití baterie počítače</div><hr><h3 class='faqInFs25FbP10'>Příznak</h3><p>Windows 10 obsahuje novou obrazovku <strong>Využití baterie</strong>, která vás informuje, co přesně spotřebovává energii notebooku. To znamená, že budete přesně vědět, které počítačové aplikace nebo univerzální aplikace systému Windows 10 využívají nejvíce energie.</p><h3 class='faqInFs25FbP10'>Značky, kterých se to týká</h3><ul>    <li>Notebooky a stolní počítače Lenovo</li></ul><h3 class='faqInFs25FbP10'>Systémy, kterých se to týká</h3><ul>    <li>Všechny</li></ul><h3 class='faqInFs25FbP10'>Operační systém</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Řešení</h3><p>Jelikož je tato funkce nově přidaná do systému Windows 10, musíte ji nejprve najít, protože se nenachází klasicky na <strong>Ovládacích panelech</strong>, ale je součástí nové aplikace <strong>Nastavení</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Přejděte na obrazovku Využití baterie</h3></p><p>1. V nabídce Start klikněte nebo klepněte na možnost <strong>Nastavení</strong></p><p>2. V části <strong>Nastavení</strong> vyberte položku <strong>Systém</strong> a poté vyberte volbu <strong>Spořič baterie.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Kliknutím nebo klepnutím na odkaz <strong>Využití baterie</strong> pod záhlavím Spořič baterie zobrazíte další podrobnosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analyzujte využití energie</h3><p>4. Údaje na obrazovce Využití baterie můžete změnit, aby se zobrazovalo využití baterie za posledních 24 nebo 48 hodin, nebo za minulý týden</p><p>5. Procenta u položek <strong>Systém</strong>, <strong>Displej</strong> a <strong>Wi-Fi</strong>. znázorňují, kolik energie baterie používají systémové procesy a displej.</p><p>6. Volby <strong>Využití</strong> a <strong>Na pozadí</strong> ukazují, kolik energie spotřebují aplikace, když je používáte, ve srovnání s aplikacemi běžícími na pozadí.</p><p>7. Pokud aplikace používají napájení na pozadí, můžete kliknout nebo klepnout na ikonu <strong>Změnit nastavení aplikací běžících na pozadí </strong>a změnit jejich konfiguraci, aby neběžely na pozadí. To však platí pouze pro univerzální aplikace systému Windows 10.</p><p>8. Přejděte dále dolů, kde se nachází seznam aplikací, což je asi nejužitečnější část této funkce. Seznam obsahuje aplikace, které využily energii baterie za dané období, a u každé z nich je uvedeno procento využité energie</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2108,7 +2366,7 @@
         },
         "question5": {
             "title": "Použití počítače jako tabletu",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Použití počítače jako tabletu</div><hr><p>Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Použití režimu tabletu</h3><p>Chcete-li zapnout režim tabletu, na hlavním panelu vyberte <strong>centrum akcí</strong> a zvolte <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Poznámka</h3><p>Pokud chcete vědět, zda se vaše zařízení umí automaticky přepnout do režimu tabletu, vyhledejte své zařízení na webu jeho výrobce. Podpora této funkce závisí na hardwaru, nainstalovaném ovladači a způsobu nastavení zařízení výrobcem. </p><p> </p><p>V režimu tabletu se aplikace otevírají na celou obrazovku, díky čemuž máte více prostoru pro práci. Chcete-li aplikaci zavřít, přetáhněte ji do dolní části obrazovky.</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3><p>V režimu tabletu se zobrazuje hlavní panel, ale pokud chcete na obrazovce více prostoru, můžete jej skrýt. Vyberte tlačítko <strong>Start</strong>, vyberte položky <strong>Nastavení </strong>> <strong>Systém </strong>> <strong>Režim tabletu</strong> a zapněte funkci <strong>Automaticky skrývat hlavní panel v režimu tabletu</strong>. Chcete-li skrytý hlavní panel zobrazit, od dolní části obrazovky přejeďte prstem nahoru nebo do dolní části obrazovky umístěte ukazatel myši.</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Použití dvou aplikací současně</h3><p>Chcete-li v režimu tabletu používat dvě aplikace vedle sebe, přetáhněte otevřenou aplikaci dolů a na stranu. Uvidíte, kam se přichytí, a vedle ní uvidíte všechny otevřené aplikace.</p><p>V tomto zobrazení také můžete:</p><ul>    <li>Pomocí sdílené hrany mezi dvěma přichycenými aplikacemi změnit velikost obou aplikací najednou.</li>    <li>V zobrazení úloh otevřít novou aplikaci: Na hlavním panelu vyberte <strong>zobrazení úloh</strong>, vyberte aplikaci a přetáhněte ji na jednu stranu rozdělené obrazovky.</li>    <li>Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Použití počítače jako tabletu</div><hr><p>Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.</p><h3 class='faqInFs25FbP10'>Použití režimu tabletu</h3><p>Chcete-li zapnout režim tabletu, na hlavním panelu vyberte <strong>centrum akcí</strong> a zvolte <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Pokud chcete vědět, zda se vaše zařízení umí automaticky přepnout do režimu tabletu, vyhledejte své zařízení na webu jeho výrobce. Podpora této funkce závisí na hardwaru, nainstalovaném ovladači a způsobu nastavení zařízení výrobcem. </p><p> </p><p>V režimu tabletu se aplikace otevírají na celou obrazovku, díky čemuž máte více prostoru pro práci. Chcete-li aplikaci zavřít, přetáhněte ji do dolní části obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>V režimu tabletu se zobrazuje hlavní panel, ale pokud chcete na obrazovce více prostoru, můžete jej skrýt. Vyberte tlačítko <strong>Start</strong>, vyberte položky <strong>Nastavení </strong>> <strong>Systém </strong>> <strong>Režim tabletu</strong> a zapněte funkci <strong>Automaticky skrývat hlavní panel v režimu tabletu</strong>. Chcete-li skrytý hlavní panel zobrazit, od dolní části obrazovky přejeďte prstem nahoru nebo do dolní části obrazovky umístěte ukazatel myši.</p><h3 class='faqInFs25FbP10'>Použití dvou aplikací současně</h3><p>Chcete-li v režimu tabletu používat dvě aplikace vedle sebe, přetáhněte otevřenou aplikaci dolů a na stranu. Uvidíte, kam se přichytí, a vedle ní uvidíte všechny otevřené aplikace.</p><p>V tomto zobrazení také můžete:</p><ul>    <li>Pomocí sdílené hrany mezi dvěma přichycenými aplikacemi změnit velikost obou aplikací najednou.</li>    <li>V zobrazení úloh otevřít novou aplikaci: Na hlavním panelu vyberte <strong>zobrazení úloh</strong>, vyberte aplikaci a přetáhněte ji na jednu stranu rozdělené obrazovky.</li>    <li>Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve.</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2148,7 +2406,7 @@
         },
         "question6": {
             "title": "Seznamte se s Cortanou, svým osobním asistentem",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    Seznamte se s Cortanou, svým osobním asistentem</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Co je Cortana?</h3><hr /><p>Cortana je vaše digitální sekretářka. Pomůže vám zařídit, co potřebujete.</p><p>Čím více budete Cortanu používat, tím osobnější bude váš vztah.</p><p>Chcete-li s Cortanou začít pracovat, do vyhledávacího pole zadejte otázku nebo vyberte mikrofon a otázku položte přímo Cortaně. (Psát lze na všech typech počítačů, ale pro mluvení potřebujete mikrofon.)</p><p>Pokud nevíte, co říci, výběrem vyhledávacího okna na hlavním panelu se na zamykací obrazovce a domovské stránce Cortany zobrazí návrhy.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Domů 2. Notebook 3. Nastavení 4. Zpětná vazba</li></ol><p>Co pro vás může Cortana udělat:</p><ul>    <li>Připomenout vám naplánované události na základě času, míst nebo osob.</li>    <li>Sledovat zásilky, týmy, zájmy nebo odlety.</li>    <li>Odesílat e-maily a textové zprávy.</li>    <li>Spravovat kalendář a průběžně vás informovat.</li>    <li>Vytvářet a spravovat seznamy.</li>    <li>Povídat si a hrát hry.</li>    <li>Hledat faktické údaje, soubory, místa a informace.</li>    <li>Otevřít libovolnou aplikaci v systému.</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Zkuste tohle: Nastavte upomínku</h3><hr /><p>Jednou z věcí, které Cortana dokáže, je upozornit vás na plánované události. Může vás upomenout na základě času, místa nebo dokonce i osob.</p><p>Například napište nebo řekněte: „Připomeň mi, abych popřál Lucce, jak mi bude příště volat.“</p><p>Jak bude Lucka volat, upomínka se zobrazí.</p><p>Speciální bonus &mdash; Pokud používáte telefon Windows nebo iPhone či Android s Cortanou, můžete pro Cortanu nastavit synchronizaci oznámení mezi vaším počítačem a telefonem.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Ahoj, Cortano</h3><hr /><p>Nastavte Cortanu, aby vás slyšela, když řeknete „ahoj, Cortano“. Výběrem vyhledávacího pole na hlavním panelu otevřete domovskou stránku Cortany. Poté vyberte položku <strong>Nastavení</strong> a zapněte volbu <strong>Ať Cortana odpovídá na Ahoj, Cortano</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Poznámka</p><p>Cortana je k dispozici pouze v některých zemích/oblastech a některé její funkce nemusí být dostupné všude.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Seznamte se s Cortanou, svým osobním asistentem</div><hr><h3 class='faqInFs25FbP10'>Co je Cortana?</h3><hr /><p>Cortana je vaše digitální sekretářka. Pomůže vám zařídit, co potřebujete.</p><p>Čím více budete Cortanu používat, tím osobnější bude váš vztah.</p><p>Chcete-li s Cortanou začít pracovat, do vyhledávacího pole zadejte otázku nebo vyberte mikrofon a otázku položte přímo Cortaně. (Psát lze na všech typech počítačů, ale pro mluvení potřebujete mikrofon.)</p><p>Pokud nevíte, co říci, výběrem vyhledávacího okna na hlavním panelu se na zamykací obrazovce a domovské stránce Cortany zobrazí návrhy.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Domů 2. Notebook 3. Nastavení 4. Zpětná vazba</li></ol><p>Co pro vás může Cortana udělat:</p><ul>    <li>Připomenout vám naplánované události na základě času, míst nebo osob.</li>    <li>Sledovat zásilky, týmy, zájmy nebo odlety.</li>    <li>Odesílat e-maily a textové zprávy.</li>    <li>Spravovat kalendář a průběžně vás informovat.</li>    <li>Vytvářet a spravovat seznamy.</li>    <li>Povídat si a hrát hry.</li>    <li>Hledat faktické údaje, soubory, místa a informace.</li>    <li>Otevřít libovolnou aplikaci v systému.</li></ul><h3 class='faqInFs25FbP10'>Zkuste tohle: Nastavte upomínku</h3><hr /><p>Jednou z věcí, které Cortana dokáže, je upozornit vás na plánované události. Může vás upomenout na základě času, místa nebo dokonce i osob.</p><p>Například napište nebo řekněte: „Připomeň mi, abych popřál Lucce, jak mi bude příště volat.“</p><p>Jak bude Lucka volat, upomínka se zobrazí.</p><p>Speciální bonus &mdash; Pokud používáte telefon Windows nebo iPhone či Android s Cortanou, můžete pro Cortanu nastavit synchronizaci oznámení mezi vaším počítačem a telefonem.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Ahoj, Cortano</h3><hr /><p>Nastavte Cortanu, aby vás slyšela, když řeknete „ahoj, Cortano“. Výběrem vyhledávacího pole na hlavním panelu otevřete domovskou stránku Cortany. Poté vyberte položku <strong>Nastavení</strong> a zapněte volbu <strong>Ať Cortana odpovídá na Ahoj, Cortano</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Poznámka</p><p>Cortana je k dispozici pouze v některých zemích/oblastech a některé její funkce nemusí být dostupné všude.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2196,7 +2454,6 @@
         "personal": "Osobní použití",
         "business": "Obchodní použití",
         "custom": "Vlastní zkušenost",
-        "experience": "Zkusenosti",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
         "moreInterest": "+ další zájmy",
         "title1": "Vítá vás",
@@ -2231,7 +2488,318 @@
         "OtherSettings": "Další nastavení",
         "usageStatistics": "Statistiky využití",
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
+        "deviceStatistics": "Sdílejte statistická data se společností Lenovo",
+        "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
         "Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
-    }
+    },
+    "modernPreload": {
+        "cancel": "Storno",
+        "close": "Zavřít",
+        "download": "Stáhnout",
+        "downloadAvailable": "Stažení k dispozici",
+        "downloadComplete": "Stahování dokončeno",
+        "downloading": "Stahování...",
+        "failedDownload": "Stahování se nezdařilo.",
+        "failedInstall": "Neúspěšná instalace",
+        "installed": "Nainstalováno",
+        "restartDownload": "Spustit stahování znovu",
+        "retry": "Opakovat",
+        "skip": "Přeskočit",
+        "noteDownloading": "Poznámka: Po kliknutí na tlačítko Stáhnout se může zobrazit výzva systému Windows, aby bylo možné nainstalovat software do vašeho zařízení. Po dokončení instalace se aplikace automaticky zobrazí na ploše nebo v nabídce Start.<br /><br />Můžete zavřít stránku Můj software a pokračovat v používání programu Lenovo Vantage. Během instalace program Lenovo Vantage nezavírejte.",
+        "noteFailedDownload": "Upozornění: během stahování nebo instalace se něco pokazilo. Ujistěte se, že jste připojeni k internetu, a zkuste to znovu. Během instalace nezapomeňte nechat program Vantage otevřený. Stránku Můj software můžete zavřít a při dokončení instalace softwaru pokračovat v používání programu Vantage, který můžete případně také minimalizovat.",
+        "noteDownloadComplete": "Poznámka: Po kliknutí na tlačítko Stáhnout se může zobrazit výzva systému Windows, aby bylo možné nainstalovat software do vašeho zařízení. Po dokončení instalace se aplikace automaticky zobrazí na ploše nebo v nabídce Start.<br /><br />Můžete zavřít stránku Můj software a pokračovat v používání programu Lenovo Vantage. Během instalace program Lenovo Vantage nezavírejte.",
+        "noteDownloadAvailable": "Poznámka: Po kliknutí na tlačítko Stáhnout se může zobrazit výzva systému Windows, aby bylo možné nainstalovat software do vašeho zařízení. Po dokončení instalace se aplikace automaticky zobrazí na ploše nebo v nabídce Start.<br /><br />Můžete zavřít stránku Můj software a pokračovat v používání programu Lenovo Vantage. Během instalace program Lenovo Vantage nezavírejte.",
+        "sizeText": "Velikost",
+        "versionText": "Verze",
+        "softwareDescription": "Klepnutím na tlačítko Stáhnout níže můžete získat software zakoupený se zařízením. Pokud budete potřebovat stáhnout software znovu, můžete tak učinit kliknutím na tlačítko Můj software v nabídce Vantage.",
+        "title": "Můj software",
+        "loadingDescription": "Počkejte, než se připraví seznam softwaru, který byl zahrnut do nákupu vašeho zařízení.",
+        "shortDescription": "Stáhněte a nainstalujte software, který byl zahrnut do nákupu zařízení.",
+        "errorDescription": "<h2>Omlouváme se, při načítání informací o stahování softwaru došlo k potížím.</h2>Zkuste kliknout na tlačítko „Opakovat“ nebo akci opakujte později kliknutím na tlačítko „Můj software“ v nabídce Vantage."
+    },
+    "hardwareScan": {
+        "name": "Kontrola hardwaru",
+        "title": "Spusťte kontrolu hardwaru",
+        "subtitle": "Počkejte na dokončení kontroly hardwaru",
+        "quickScan": "Rychlá kontrola",
+        "finalResultCode": "Výsledný kód",
+        "resultCode": "Výsledný kód",
+        "cancel": "Storno",
+        "complete": "Dokončeno",
+        "incomplete": "Nedokončeno",
+        "loadingComponents": "Načítání součástí",
+        "hardwareComponents": "Hardwarové součásti",
+        "loadingDevices": "Načítání zařízení",
+        "select": "Pomocí tlačítka",
+        "deselect": "Zrušit výběr",
+        "allOptions": "Všechny možnosti",
+        "latestResult": "Nejnovější výsledek",
+        "back": "ZPĚT",
+        "viewResults": "Zobrazit výsledky",
+        "save": "Uložit",
+        "details": "Podrobnosti",
+        "recurrence": "Opakování",
+        "interval": "Interval",
+        "time": "Čas",
+        "type": "Typ",
+        "hours": "Hodin",
+        "minutes": "Minut",
+        "am": "dop.",
+        "pm": "odp.",
+        "previousResult": "Předchozí výsledky",
+        "lastScanOn": "Minulá kontrola",
+        "result": "Výsledek",
+        "viewDetailsLog": "Zobrazit protokol podrobností",
+        "ok": "OK",
+        "notOk": "NENÍ OK",
+        "notScanned": "NEKONTROLOVÁNO",
+        "pass": "Akce byla úspěšná.",
+        "fail": "Akce nebyla úspěšná.",
+        "cancelled": "Zrušeno",
+        "warning": "Varování",
+        "errorResult": "Je nutno vybrat test, který chcete spustit.",
+        "buy": "Koupit",
+        "errorDeviceChoose": "Musíte vybrat zařízení, které chcete spustit.",
+        "errorNoOptionSelected": "Musíte vybrat některou z možností.",
+        "offline": "Toto zařízení je v režimu offline. Připojte jej k internetu",
+        "doNotSuspend": "Tyto testy nesmí být přerušeny! Během kontroly nevypínejte ani neminimalizujte aplikaci, nevypínejte počítač ani jej neuveďte do režimu hibernace.",
+        "doNotUse": "V průběhu testu nepoužívejte počítač",
+        "testsMustRunUniterrupted": "Tyto testy nesmí být za chodu přerušeny!",
+        "doNotCloseOrMinimizeApp": "• Nezavírejte ani minimalizujte tuto aplikaci.",
+        "doNotSwitchApp": "• Nepřepínejte na jinou aplikaci.",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• Počítač nepřevádějte do stavu spánku, neodhlasujte se, ani počítač nevypínejte.",
+        "customize": {
+            "name": "Přizpůsobit",
+            "test": "Přizpůsobit test",
+            "description": "Přizpůsob si test výběrem možností níže",
+            "runTests": "Spustit vybrané testy"
+        },
+        "scheduledScan": {
+            "name": "Naplánovat kontrolu",
+            "title": "Naplánujte si kontrolu",
+            "newScan": "Naplánovat novou kontrolu",
+            "fullScan": "Kompletní kontrola",
+            "onlyOnce": "Pouze jednou",
+            "eachDay": "Každý den",
+            "eachWeek": "Každý týden",
+            "eachMonth": "Každý měsíc",
+            "eachYear": "Každý rok",
+            "schedule": "Naplánovat",
+            "date": "Datum",
+            "pickDate": "Vyberte datum",
+            "scanScheduled": "Kontrola hardwaru byla naplánována.",
+            "description": "Další kontrola již byla naplánována na stejný čas a datum!",
+            "error": "Chyba",
+            "delete": "Odstranit",
+            "warningBatterySaver": "Poznámka: Plánovaná skenování se neprovedou v režimu úspory baterie",
+            "scheduleIntervalLimit": "Další skenování bylo naplánováno již během deseti minut. Zvolte jiný čas.",
+            "information": "Vaše kontrola byla naplánována a bude spuštěna na pozadí dne:"
+        },
+        "recoverBadSectors": {
+            "title": "Obnovit vadné sektory",
+            "description": "Nástroj Lenovo k vyhledání a opravě vadných sektorů na disku",
+            "goTo": "Přejít k obnově vadných sektorů",
+            "localDevices": "Místní zařízení",
+            "numberSectors": "Počet načtených sektorů",
+            "numberBadSectors": "Počet nalezených vadných sektorů",
+            "numberFixedSectors": "Počet opravených sektorů",
+            "numberNonFixedSectors": "Počet neopravených sektorů",
+            "status": "Stav operace",
+            "elapsedTime": "Uběhlý čas",
+            "hours": "Hodin",
+            "hour": "Hodina",
+            "minutes": "Minut",
+            "minute": "Minuta",
+            "seconds": "Sekund",
+            "second": "Sekunda",
+            "systemEvent": "Test byl přerušen, protože došlo k systémové události, která by mohla ovlivnit jeho výsledek.",
+            "systemPasswordProtected": "Je možné, že jednotka pevného disku je chráněna heslem. Zkuste vypnout ochranu heslem.",
+            "moreInfo": "Počkejte na dokončení obnovy vadných sektorů",
+            "popup": {
+                "description": "Během procesu kontroly a opravy může dojít ke ztrátě dat. Před spuštěním této operace proto doporučujeme provést zálohu. Opravdu chcete pokračovat?",
+                "yes": "Ano",
+                "no": "Ne"
+            }
+        },
+        "support": {
+            "title": "Stáhnout profesionální diagnostické nástroje",
+            "subtitle": "Podpora Lenovo"
+        },
+        "eTicket": {
+            "header": "Byl zjištěn problém s hardwarem.",
+            "problemDetected": "Při kontrole hardwaru byl zjištěn problém s následujícími součástmi počítače",
+            "ticketRequestQuestion": "Pokud je váš počítač v záruce, může společnost Lenovo zaslat náhradní díl. Chcete otevřít hlášení výměny hardwaru a vyřešit problém?",
+            "openTicket": "Otevřít hlášení"
+        },
+        "battery": {
+            "title": "Povolit limit nabíjení baterie",
+            "description": "Aktivací vlastního nabíjení baterie prodloužíte celkovou výdrž baterie při používání tohoto zařízení. Bez nabíjení do plna se však zkrátí provozní životnost baterie. Chcete-li tuto funkci plně aktivovat, odpojte počítač a nechte baterii vybít na nebo pod limit nabíjení baterie.",
+            "enable": "Povolit"
+        },
+        "refreshModule": "Aktualizovat moduly",
+        "completed": "Dokončeno",
+        "notCompleted": "Nedokončeno",
+        "yes": "Ano",
+        "attention": "Upozornění",
+        "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
+        "cancelTextProgress": "Počkejte na dokončení procesu zrušení",
+        "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je.",
+        "testNotApplicable": "Nepoužitelné u vlastních kontrol"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalace se nezdařila. Zkuste akci opakovat.",
+                "networkError": "Chyba sítě.",
+                "installationCancelled": "Instalace zrušena."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Kompenzace Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Nainstalujte si",
+                "installing": "Instalace",
+                "installed": "Nainstalováno",
+                "launch": "Spustit",
+                "seeMore": "Další informace"
+            },
+            "fieldName": {
+                "description": "Popis",
+                "screenshots": "Snímky obrazovky",
+                "additionalInformation": "Další informace",
+                "by": "Od:",
+                "updated": "Aktualizováno:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Právní ujednání",
+                "readMore": "Další informace",
+                "readLess": "Méně informací"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

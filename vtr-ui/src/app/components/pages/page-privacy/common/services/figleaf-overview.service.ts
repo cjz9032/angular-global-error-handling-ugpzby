@@ -27,6 +27,7 @@ export interface FigleafStatus {
 	appVersion: string;
 	licenseType: licenseTypes;
 	expirationDate: number;
+	daysToExpiration: number;
 }
 
 export interface FigleafSettings {
@@ -64,8 +65,8 @@ export class FigleafOverviewService implements OnDestroy {
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private updateTriggersService: UpdateTriggersService
 	) {
-		this.isFigleafClosed();
-		this.isFigleafReady();
+		this.isFigleafClosed$();
+		this.isFigleafReady$();
 	}
 
 	ngOnDestroy() {
@@ -94,7 +95,7 @@ export class FigleafOverviewService implements OnDestroy {
 		return {...payload, licenseType};
 	}
 
-	private isFigleafClosed() {
+	private isFigleafClosed$() {
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 			filter(isFigleafReadyForCommunication => !isFigleafReadyForCommunication),
 			takeUntil(instanceDestroyed(this)),
@@ -106,7 +107,7 @@ export class FigleafOverviewService implements OnDestroy {
 		});
 	}
 
-	private isFigleafReady() {
+	private isFigleafReady$() {
 		merge(
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$,
 			this.updateTriggersService.shouldUpdate$

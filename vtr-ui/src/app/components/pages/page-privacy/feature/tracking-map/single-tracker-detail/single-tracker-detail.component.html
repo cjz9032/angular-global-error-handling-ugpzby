@@ -22,10 +22,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="tracker__text" *ngIf="trackingMapSingleData.tracker.metadata.description">
+				<div class="tracker__text tracker__text--main" *ngIf="trackingMapSingleData.tracker.metadata.description">
 					{{trackingMapSingleData.tracker.metadata.description}}
 				</div>
-				<div class="tracker__text" *ngIf="!trackingMapSingleData.tracker.metadata.description">
+				<div class="tracker__text tracker__text--main" *ngIf="!trackingMapSingleData.tracker.metadata.description">
 					{{trackingMapSingleData.tracker.company_name}} uses trackers to learn your online behavior and interests, and improve how you interact with its services.
 				</div>
 
@@ -55,7 +55,7 @@
 									[metricsItem]="'InstallButton'"
 									vtrOfflineMode
 									vtrOpenFigleafInstaller>
-								Install Now
+								{{'Install Now' | changeActionButtonText | async}}
 							</button>
 							<a class="tracker__link"
 							   routerLink="/privacy/landing"

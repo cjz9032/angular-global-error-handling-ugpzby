@@ -3,6 +3,7 @@
 	*ngIf="warrantyData.info.status === 0 || warrantyData.info.status === 1">
 	<div class="dropdown-btn"
 		id="header-warranty-icon"
+		tabindex="1"
 		aria-label="header-warranty-icon"
 		ngbDropdownToggle>
 		<div class="icon-con in-warranty"
@@ -24,35 +25,39 @@
 		<div class="dropdown-item"
 			ngbDropdownItem>
 			<div class="title pb-3"
-				*ngIf="warrantyData.info.status === 0">
+				*ngIf="warrantyData.info.status === 0" id="in-warranty-title" 
+				attr.aria-label="in-warranty-title">
 				{{'support.warranty.titleInWarranty' | translate}}
 			</div>
 			<div class="title pb-3"
-				*ngIf="warrantyData.info.status === 1">
+				*ngIf="warrantyData.info.status === 1" id="expired-warranty-title" 
+				attr.aria-label="expired-warranty-title">
 				{{'support.warranty.titleWarrantyExpired' | translate}}
 			</div>
 
 			<div class="sub-description pb-4">
-				<div class="pb-1">
+				<div class="pb-1" id="warranty-start-date" 
+					attr.aria-label="warranty-start-date">
 					{{'support.warranty.startDate' | translate}}<b>{{ dateFormat(warrantyData.info.startDate) }}</b>
 				</div>
-				<div>
+				<div id="warranty-end-date" 
+					attr.aria-label="warranty-end-date">
 					{{'support.warranty.endDate' | translate}}<b>{{ dateFormat(warrantyData.info.endDate) }}</b>
 				</div>
 			</div>
 
 			<div class="button-box">
-				<a role="button"
-					href="{{warrantyData.info.url}}"
-					target="_blank"
-					class="button"
-					id="btn-header-warranty-options"
-					aria-label="btn-header-warranty-options"
-					title="{{'support.warranty.viewWarrantyOptions' | translate}}"
-					vtrMetrics
-					metricsItem="ViewWarrantyOptionsButton"
-					metricsEvent="FeatureClick"
-					metricsParent="{{pageParent}}">{{'support.warranty.viewWarrantyOptions' | translate}}</a>
+				<vtr-ui-button linkId="btn-header-warranty-options"
+						[tabIndex]="1"
+						metricsEvent="FeatureClick"
+						metricsItem="ViewWarrantyOptionsButton"
+						[metricsParent]="pageParent"
+						buttonColor="gray"
+						[isFullWidth]="true"
+						[btnHeight]="true"
+						[inRedBackground]="warrantyData.info.status==1"
+						[label]="'support.warranty.viewWarrantyOptions' | translate"
+						[href]="warrantyData.info.url"></vtr-ui-button>
 			</div>
 		</div>
 	</div>

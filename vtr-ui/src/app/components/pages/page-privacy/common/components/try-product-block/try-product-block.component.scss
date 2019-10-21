@@ -59,12 +59,11 @@
 
 		a {
 			@extend %button-link;
-
-			span {
-				border-bottom: 1px solid;
-				font-weight: 600;
-				cursor: pointer;
-			}
+			padding-right: 0;
+			position: relative;
+			border-bottom: 1px solid;
+			font-weight: 600;
+			cursor: pointer;
 		}
 
 		&.offline-active {
@@ -84,17 +83,22 @@
 		&--to-right {
 			a {
 				@extend %button-link--to-right;
+
+				&:before {
+					right: -15px;
+				}
 			}
 		}
 
 		&--download {
 			a:before {
+				position: absolute;
 				transform: translateY(-50%);
 				width: 1.4rem;
 				height: 1.2rem;
-				right: 5px;
+				right: -15px;
 				top: 60%;
-				background-image: url("/assets/icons/privacy-tab/icon-download.svg");
+				background-image: url("src/assets/icons/privacy-tab/icon-download.svg");
 			}
 		}
 	}

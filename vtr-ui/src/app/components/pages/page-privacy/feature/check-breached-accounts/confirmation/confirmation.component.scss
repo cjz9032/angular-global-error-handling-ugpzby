@@ -12,7 +12,7 @@
 		margin: 0;
 		width: 2rem;
 		height: 2rem;
-		background: url("/assets/icons/privacy-tab/close-icon.svg") center center no-repeat;
+		background: url("src/assets/icons/privacy-tab/close-icon.svg") center center no-repeat;
 		background-size: contain;
 	}
 	&__title {
@@ -58,7 +58,7 @@
 		margin: 0;
 
 		&--bold {
-			font-weight: 500;
+			font-weight: 600;
 		}
 	}
 	&__steps {

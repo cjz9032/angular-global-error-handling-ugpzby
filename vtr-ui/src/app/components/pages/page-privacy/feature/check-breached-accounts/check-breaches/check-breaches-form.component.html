@@ -2,14 +2,14 @@
     <form class="check-breaches__form" [formGroup]="emailForm" (submit)="handleEmailScan()">
         <div class="check-breaches__input-wrapper"
              [ngClass]="{
-             	'check-breaches__input-wrapper--small': size === 'small',
+             	'check-breaches__input-wrapper--small': strategy === 'emitEmail',
 			 	'check-breaches__input-wrapper--focused': isFormFocused,
-			 	'check-breaches__input-wrapper--validation-error': emailWasSubmitted && emailForm.dirty && emailForm.touched && emailForm.invalid,
-			 	'check-breaches__input-wrapper--server-error': (serverError$ | async) && size !== 'small'
+			 	'check-breaches__input-wrapper--validation-error': emailWasSubmitted && emailForm.touched && emailForm.invalid,
+			 	'check-breaches__input-wrapper--server-error': (serverError$ | async) && strategy !== 'emitEmail'
 			 }">
             <div class="check-breaches__input-with-id">
                 <input class="check-breaches__input" type="text"
-                       [class.check-breaches__input--validation-error]="emailWasSubmitted && emailForm.dirty && emailForm.touched && emailForm.invalid"
+                       [class.check-breaches__input--validation-error]="emailWasSubmitted && emailForm.touched && emailForm.invalid"
                        (focus)="handleFocus()"
                        (blur)="handleBlur()"
                        placeholder="Enter your email"
@@ -28,7 +28,7 @@
                 <vtr-simple-loader></vtr-simple-loader>
             </div>
             <button class="check-breaches__button"
-                    [class.check-breaches__button--error]="(emailForm.dirty && emailForm.touched && emailForm.invalid || (isLoading$ | async))"
+                    [class.check-breaches__button--error]="(emailForm.touched && emailForm.dirty && emailForm.invalid || (isLoading$ | async))"
 					vtrSendAnalytics
                     [metricsEvent]="'ItemClick'"
                     [metricsItem]="'RunCheckupButton'"
@@ -37,14 +37,13 @@
                 Checkup
             </button>
         </div>
-
-        <div *ngIf="emailWasSubmitted && emailForm.dirty && emailForm.touched && emailForm.invalid"
+        <div *ngIf="emailWasSubmitted && emailForm.touched && emailForm.invalid"
              class="check-error check-error--validation">
-            <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
+            <img class="check-error__img" src="assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Please enter a valid email address.</p>
         </div>
-        <div *ngIf="(serverError$ | async) && size !== 'small'" class="check-error check-error--server">
-            <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
+        <div *ngIf="(serverError$ | async) && strategy !== 'emitEmail'" class="check-error check-error--server">
+            <img class="check-error__img" src="assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Sorry, the server is not available at the moment. Please try again later.</p>
         </div>
     </form>

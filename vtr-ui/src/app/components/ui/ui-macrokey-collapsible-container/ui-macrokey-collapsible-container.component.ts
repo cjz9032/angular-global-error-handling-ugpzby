@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, OnChanges, ViewChild } from '@angular/core';
 import { isUndefined } from 'util';
+import { LanguageService } from 'src/app/services/language/language.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-ui-macrokey-collapsible-container',
@@ -21,10 +23,23 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 	public selectedOption: any;
 	public currentDescription: string;
 	public selectedDescription: string;
+	defaultLanguage: any;
+	@ViewChild('dropdownLightingEle', { static: false })
+	dropdownEle: ElementRef;
+	intervalObj: any;
+	isItemsFocused: boolean = false;
 
-	constructor(private elementRef: ElementRef) {}
+	constructor(
+		private elementRef: ElementRef,
+		private languageService: LanguageService,
+		private deviceService: DeviceService
+	) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.deviceService.getMachineInfo().then((value: any) => {
+			this.defaultLanguage = value.locale;
+		});
+	}
 
 	public toggleOptions() {
 		this.showOptions = !this.showOptions;
@@ -34,6 +49,22 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 			this.buttonName = 'Hide';
 		} else {
 			this.buttonName = 'Show';
+		}
+	}
+
+	itemsFocused() {
+		if (this.showOptions && !this.isItemsFocused) {
+			this.intervalObj = setInterval(() => {
+				if (this.dropdownEle) {
+					if (this.dropdownEle.nativeElement.querySelectorAll('li:focus').length === 0) {
+						this.showOptions = false;
+						this.isItemsFocused = false;
+						clearInterval(this.intervalObj);
+					}
+				}
+			}, 100);
+
+			this.isItemsFocused = true;
 		}
 	}
 
@@ -66,6 +97,14 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 		}
 	}
 
+	keydownFn(event, i) {
+		if (i === this.options.length - 1) {
+			if (event.keyCode === 9) {
+				this.showOptions = false;
+			}
+		}
+	}
+
 	ngOnChanges(changes) {
 		if (!isUndefined(this.options)) {
 			if (!isUndefined(this.options)) {
@@ -78,3 +117,4 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 		}
 	}
 }
+

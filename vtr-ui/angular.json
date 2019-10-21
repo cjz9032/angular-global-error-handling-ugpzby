@@ -31,6 +31,7 @@
 							"src/assets",
 							"src/mock-api",
 							"src/manifest.webmanifest",
+							"src/pre-load.js",
 							"src/vantage-worker.min.js"
 						],
 						"styles": [
@@ -44,6 +45,175 @@
 								{
 									"replace": "src/environments/environment.ts",
 									"with": "src/environments/environment.prod.ts"
+								},
+								{
+									"replace": "src/app/services/mock/mock.service.ts",
+									"with": "src/app/services/mock/mock.service.prod.ts"
+								},
+								{
+									"replace": "src/app/services/security/securityMock.service.ts",
+									"with": "src/app/services/security/securityMock.service.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": true,
+							"aot": true,
+							"extractLicenses": false,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "10mb",
+									"maximumError": "15mb"
+								}
+							],
+							"serviceWorker": true
+						},
+						"dev": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.dev.ts"
+								},
+								{
+									"replace": "src/app/services/mock/mock.service.ts",
+									"with": "src/app/services/mock/mock.service.prod.ts"
+								},
+								{
+									"replace": "src/app/services/security/securityMock.service.ts",
+									"with": "src/app/services/security/securityMock.service.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": true,
+							"extractCss": true,
+							"namedChunks": true,
+							"aot": true,
+							"extractLicenses": false,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "10mb",
+									"maximumError": "15mb"
+								}
+							],
+							"serviceWorker": true
+						},
+						"qa": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.qa.ts"
+								},
+								{
+									"replace": "src/app/services/mock/mock.service.ts",
+									"with": "src/app/services/mock/mock.service.prod.ts"
+								},
+								{
+									"replace": "src/app/services/security/securityMock.service.ts",
+									"with": "src/app/services/security/securityMock.service.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": true,
+							"aot": true,
+							"extractLicenses": false,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "10mb",
+									"maximumError": "15mb"
+								}
+							],
+							"serviceWorker": true
+						},
+						"stage": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.stage.ts"
+								},
+								{
+									"replace": "src/app/services/mock/mock.service.ts",
+									"with": "src/app/services/mock/mock.service.prod.ts"
+								},
+								{
+									"replace": "src/app/services/security/securityMock.service.ts",
+									"with": "src/app/services/security/securityMock.service.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": true,
+							"aot": true,
+							"extractLicenses": false,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "10mb",
+									"maximumError": "15mb"
+								}
+							],
+							"serviceWorker": true
+						},
+						"mock": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.mock.ts"
+								},
+								{
+									"replace": "src/app/services/mock/mock.service.ts",
+									"with": "src/app/services/mock/mock.service.prod.ts"
+								},
+								{
+									"replace": "src/app/services/security/securityMock.service.ts",
+									"with": "src/app/services/security/securityMock.service.prod.ts"
+								},
+								{
+									"replace": "src/app/services/vantage-shell/vantage-shell.service.ts",
+									"with": "src/app/services/vantage-shell/vantage-shell-mock.service.ts"
+								}
+							],
+							"optimization": false,
+							"outputHashing": "none",
+							"sourceMap": true,
+							"extractCss": true,
+							"namedChunks": true,
+							"aot": false,
+							"extractLicenses": false,
+							"vendorChunk": false,
+							"buildOptimizer": false,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "10mb",
+									"maximumError": "15mb"
+								}
+							],
+							"serviceWorker": false
+						},
+						"beta": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.beta.ts"
 								},
 								{
 									"replace": "src/app/services/mock/mock.service.ts",
@@ -85,6 +255,9 @@
 					"configurations": {
 						"production": {
 							"browserTarget": "vtr-ui:build:production"
+						},
+						"mock": {
+							"browserTarget": "vtr-ui:build:mock"
 						}
 					}
 				},
@@ -101,10 +274,6 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.spec.json",
 						"karmaConfig": "karma.conf.js",
-						"assets": [
-							"src/favicon.ico",
-							"src/assets"
-						],
 						"styles": [
 							"src/styles.scss"
 						],

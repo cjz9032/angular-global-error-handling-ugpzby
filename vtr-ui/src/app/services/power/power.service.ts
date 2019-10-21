@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from './flipToBoot.interface';
 @Injectable({
 	providedIn: 'root'
 })
@@ -136,6 +137,20 @@ export class PowerService {
 		} catch (error) {
 			throw error;
 		}
+	}
+
+	public getFlipToBootCapability(): Promise<FlipToBootInterface> {
+		if (this.devicePowerIdeaNoteBook) {
+			return this.devicePowerIdeaNoteBook.flipToBoot.getFlipToBootCapability();
+		}
+		return undefined;
+	}
+
+	public setFlipToBootSettings(status: FlipToBootSetStatus): Promise<FlipToBootErrorStatusInterface> {
+		if (this.devicePowerIdeaNoteBook) {
+			return this.devicePowerIdeaNoteBook.flipToBoot.setFlipToBootSettings(status);
+		}
+		return undefined;
 	}
 
 	// End Express/Rapid Charging mode for IdeaNoteBook
@@ -470,7 +485,7 @@ export class PowerService {
 	}
 
 	public setCtAutoCheckbox(value: any): Promise<any> {
-		//console.log('auto check value here ----->', value);
+		// console.log('auto check value here ----->', value);
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
@@ -519,14 +534,14 @@ export class PowerService {
 		return undefined;
 	}
 
-	public getSmartStandbyActiveStartEnd(): Promise<boolean> {
+	public getSmartStandbyActiveStartEnd(): Promise<string> {
 		if (this.devicePowerThinkPad) {
 			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyActiveStartEnd();
 		}
 		return undefined;
 	}
 
-	public getSmartStandbyDaysOfWeekOff(): Promise<boolean> {
+	public getSmartStandbyDaysOfWeekOff(): Promise<string> {
 		if (this.devicePowerThinkPad) {
 			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyDaysOfWeekOff();
 		}
@@ -562,6 +577,41 @@ export class PowerService {
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyDaysOfWeekOff(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getGaugeResetCapability(): Promise<boolean> {
+		console.log('Battery Gauge Reset Capability');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.getGaugeResetCapability();
+			}
+		} catch (error) {
+			console.log('Battery Gauge Reset Error', error);
+		}
+	}
+
+	public startBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
+		console.log('start Battery Gauge Reset');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(handler, barCode, batteryNumber);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
+		console.log('stop Battery Gauge Reset');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(handler, barCode, batteryNumber);
 			}
 			return undefined;
 		} catch (error) {

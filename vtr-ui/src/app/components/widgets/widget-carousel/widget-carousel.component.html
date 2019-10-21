@@ -1,5 +1,7 @@
-<div class="vtr-widget-carousel">
-	<ngb-carousel *ngIf="carouselModel"
+<div class="vtr-widget-carousel"
+	#carouselContainer
+	[style.height.px]="carouselContainer.clientWidth * 340 / 944">
+	<ngb-carousel tabindex="-1" *ngIf="carouselModel"
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
@@ -7,32 +9,39 @@
 			<a *ngIf="isOnline"
 				[href]="model.link"
 				vtrMetrics
-				[id]="carouselId+''+cIndex"
-				[attr.aria-label]="carouselId+''+cIndex"
+				id="{{carouselId}}-{{cIndex}}"
+				attr.aria-label="{{carouselId}}-{{cIndex}}"
 				metricsEvent="articleclick"
 				[metricsItemID]="model.id"
 				[metricsItemPosition]="order"
 				[metricsParent]="'dashboard'"
+				[metricsPageNumber]="cIndex + 1"
 				target="_blank"
 				rel="noopener"
 				class="carousel-link"
 				[ngClass]="{'no-link': !model.link}"
-				(click)="linkClicked($event, model.link)">
-				<img [src]="model.image"
-					class="image img-fluid">
+				(click)="linkClicked($event, model.linkType, model.link)">
+				<div class="image img-fluid"
+						[style.backgroundImage]="'url(' + model.image + ')'"
+						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">
-					<h3 class="source" [innerHTML]="model.source"></h3>
-					<h2 class="title" [innerHTML]="model.cardTitle"></h2>
+					<h3 class="source" [innerHTML]="model.source" id="{{carouselId}}-{{cIndex}}-source"
+					attr.aria-label="{{carouselId}}-{{cIndex}}-source"></h3>
+					<h2 class="title" [innerHTML]="model.cardTitle" id="{{carouselId}}-{{cIndex}}-title"
+					attr.aria-label="{{carouselId}}-{{cIndex}}-title"></h2>
 				</div>
 			</a>
 			<div *ngIf="!isOnline"
 				class="carousel-link default-cursor"
 				[ngClass]="{'no-link': !model.link}">
-				<img [src]="model.image"
-					class="image img-fluid">
+				<div class="image img-fluid"
+						[style.backgroundImage]="'url(' + model.image + ')'"
+						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">
-					<h3 class="source" [innerHTML]="model.source"></h3>
-					<h2 class="title" [innerHTML]="model.cardTitle"></h2>
+					<h3 class="source" [innerHTML]="model.source" id="{{carouselId}}-{{cIndex}}-source"
+					attr.aria-label="{{carouselId}}-{{cIndex}}-source"></h3>
+					<h2 class="title" [innerHTML]="model.cardTitle" id="{{carouselId}}-{{cIndex}}-title"
+					attr.aria-label="{{carouselId}}-{{cIndex}}-title"></h2>
 				</div>
 			</div>
 		</ng-template>

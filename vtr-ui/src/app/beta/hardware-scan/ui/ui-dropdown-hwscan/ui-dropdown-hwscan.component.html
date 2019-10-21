@@ -1,0 +1,17 @@
+<div class="vtr-ui-dropdown-hwscan">
+  <div class="col col-12">
+    <div ngbDropdown  class="d-inline-block col-12">
+      <button  (change)="selected()" class="btn dropdown-button" id="dropdownMenu1" ngbDropdownToggle [ngClass]="{'small': isSmall === true}" >
+        <div [ngClass]="{'larger-subtitle': subIsLarge, 'subtitle': !subIsLarge}">{{subtitle}}</div>
+        <div class="dropdown-button-elements" [ngClass]="{'has-subtitle': subtitle, 'no-subtitle': !subtitle}">
+          <span>{{selectedItem}}</span>
+          <fa-icon class="icon" [icon]="['fal', 'angle-down']"></fa-icon>
+        </div>
+      </button>
+      <div class= "dropdown-menu" [ngClass]="{'force-scroll': items.length > 5 ,'small': isSmall === true}" ngbDropdownMenu aria-labelledby="dropdownMenu1">
+        <button class= "dropdown-items" *ngFor= "let item of items;" (click)="select(item.name);" ngbDropdownItem>{{item.name}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+

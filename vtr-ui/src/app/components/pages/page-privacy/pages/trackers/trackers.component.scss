@@ -27,6 +27,12 @@
 		@extend %text-common;
 		font-size: 1.6rem;
 	}
+
+	&__clear-data-wrapper {
+		width: 100%;
+		text-align: right;
+		padding-top: 2rem;
+	}
 }
 
 .trackers-concent {

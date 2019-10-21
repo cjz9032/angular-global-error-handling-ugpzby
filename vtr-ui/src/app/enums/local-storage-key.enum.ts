@@ -12,6 +12,9 @@ export enum LocalStorageKey {
 	SecurityOtherAntiVirus = '[LocalStorageKey] SecurityOtherAntiVirus',
 	SecurityOtherFirewall = '[LocalStorageKey] SecurityOtherFirewall',
 	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
+	SecurityMcAfeeMetricList = '[LocalStorageKey] SecurityMcAfeeMetricList',
+	SecurityShowMetricList = '[LocalStorageKey] SecurityShowMetricList',
+	SecurityShowMetricButton = '[LocalStorageKey] SecurityShowMetricButton',
 	SecurityWindowsDefenderStatusList = '[LocalStorageKey] SecurityWindowsDefenderStatusList',
 	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
 	SecurityOthersFirewallStatusList = '[LocalStorageKey] SecurityOthersFirewallStatusList',
@@ -20,7 +23,6 @@ export enum LocalStorageKey {
 	SecurityWifiSecurityHistorys = '[LocalStorageKey] SecurityWifiSecurityHistorys',
 	SecurityWifiSecurityIsLocationServiceOn = '[LocalStorageKey] SecurityWifiSecurityIsLocationServiceOn',
 	SecurityHomeProtectionChsConsoleUrl = '[LocalStorageKey] SecurityHomeProtectionChsConsoleUrl',
-	SecurityHomeProtectionDevicePosture = '[LocalStorageKey] SecurityHomeProtectionDevicePosture',
 	SecurityHomeProtectionStatus = '[LocalStorageKey] SecurityHomeProtectionStatus',
 	SecurityHomeProtectionFamilyId = '[LocalStorageKey] SecurityHomeProtectionFamilyId',
 	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
@@ -28,13 +30,13 @@ export enum LocalStorageKey {
 	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
 	SecurityLandingScore = '[LocalStorageKey] SecurityLandingScore',
 	SecurityLandingMaliciousWifi = '[LocalStorageKey] SecurityLandingMaliciousWifi',
-	HomeProtectionDevicePosture = '[LocalStorageKey] HomeProtectionDevicePosture',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
 	LidFakeDeviceID = '[LocalStorageKey] LidFakeDeviceID',
 	LidStarterAccount = '[LocalStorageKey] LidStarterAccount',
 	LidFirstSignInDate = '[LocalStorageKey] LidFirstSignInDate',
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
+	LidSsoDevMode = '[LocalStorageKey] LidSsoDevMode',
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
 	CurrentThermalModeFeature = '[LocalStorageKey] CurrentThermalModeFeature',
@@ -45,7 +47,12 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityAccount = '[LocalStorageKey] ConnectedHomeSecurityAccount',
 	ConnectedHomeSecurityMyDevice = '[LocalStorageKey] ConnectedHomeSecurityMyDevice',
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
+	ConnectedHomeSecurityDevicePosture = '[LocalStorageKey] ConnectedHomeSecurityDevicePosture',
+	ConnectedHomeSecurityLocation = '[LocalStorageKey] ConnectedHomeSecurityLocation',
 	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
+	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
+	NetworkBoosNeedToAskPopup = '[LocalStorageKey] NetworkBoosNeedToAskPopup',
+
 	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
@@ -146,10 +153,40 @@ export enum LocalStorageKey {
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
+	VOIPCapability = '[LocalStorageKey] VOIPCapability',
+	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
+	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
+	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
 
 	// Auto close storage key
 	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
+	BetaUser = '[LocalStorageKey] BetaUser',
+	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
+	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
+	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
+	EasyResumeCapability = '[LocalStorageKey] EasyResumeCapability',
+	VantageToolbarCapability = '[LocalStorageKey] VantageToolbarCapability',
+	EnergyStarCapability = '[LocalStorageKey] EnergyStarCapability',
+	AirplanePowerModeCapability = '[LocalStorageKey] AirplanePowerModeCapability',
+	BatteryChargeThresholdCapability = '[LocalStorageKey] BatteryChargeThresholdCapability',
+	ExpressChargingCapability = '[LocalStorageKey] ExpressChargingCapability',
+	ConservationModeCapability = '[LocalStorageKey] ConservationModeCapability',
+	DisplayColorTempCapability = '[LocalStorageKey] DisplayColorTempCapability',
+	DisplayEyeCareModeCapability = '[LocalStorageKey] DisplayEyeCareModeCapability',
 
+	// Apps For You storage key
+	UnreadMessageCount = '[LocalStorageKey] UnreadMessageCount',
+
+	SmartAssistCache = '[LocalStorageKey] SmartAssistCache',
+	DolbyAudioToggleCache = '[LocalStorageKey] DolbyAudioToggleCache',
+
+	// Ad policy local storage key
+	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
+	// App Search
+	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
+	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
+	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
+	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing'
 }

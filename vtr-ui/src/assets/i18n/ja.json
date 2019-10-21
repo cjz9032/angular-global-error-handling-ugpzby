@@ -39,7 +39,7 @@
                     "ramOverlock": "RAM クロックアップ",
                     "popup": {
                         "text": "コンピューターを再起動すると、変更内容が有効になります。",
-                        "button": "ok"
+                        "button": "OK"
                     },
                     "driverPopup": {
                         "headerText": "ドライバーのインストールが必要です",
@@ -96,7 +96,7 @@
                     "info": "情報"
                 },
                 "quickSettingstitle": {
-                    "title": "Quick Settings"
+                    "title": "クイック設定"
                 }
             }
         },
@@ -108,6 +108,16 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -146,7 +156,7 @@
                 },
                 "recorded": {
                     "title": "マクロ・キー",
-                    "deleteKey": "キーを削除",
+                    "deleteKey": "を削除",
                     "clear": "クリア",
                     "intervalStatus": {
                         "keep": {
@@ -235,6 +245,28 @@
             },
             "recording": {
                 "title": "マクロ・キーを記録"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -314,7 +346,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "オフ"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "プロファイル 1"
@@ -328,7 +360,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "オフ"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -368,26 +400,184 @@
                 "text7": {
                     "title": "色"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
-            "title": "Auto Close",
-            "introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize performance. NOTE: This will close the app completely,so always make sure you've saved your work.",
+            "title": "自動クローズ",
+            "introLine": "ゲーム開始時に閉じるアプリを追加します。未使用リソースが解放されゲームのパフォーマンスが最大化されます。注: この機能はアプリを完全に閉じます。そのため、必ず作業内容を保存してください。",
             "modalTurnAutoClose": {
-                "title": "Turn on Auto Close ?",
-                "body": "Apps you added will be closed when you game, freeing resources for gaming.",
-                "checkedTitle": "Don't ask again",
-                "btnConfirm": "Turn on",
-                "btnCancel": "Not now"
+                "title": "自動クローズを有効にしますか?",
+                "body": "追加したアプリはゲーム中は閉じられ、ゲーム用のリソースが解放されます。",
+                "checkedTitle": "次回から表示しない",
+                "btnConfirm": "オンにする",
+                "btnCancel": "今はしない"
             },
             "modalAddApps": {
-                "title": "Add apps to Auto Close",
-                "body": "Only apps currently running will show in the list below."
+                "title": "自動クローズにアプリを追加",
+                "body": "リストには、現在実行中のアプリのみが表示されます。"
             },
-            "addAppsButton": "Add",
+            "addAppsButton": "追加",
             "noRunningApps": {
-                "title": "No Running Apps To Add",
-                "body": "Only apps that are currently running will show. Please launch an app that you want to add and come back."
+                "title": "追加できる実行中のアプリはありません",
+                "body": "現在実行中のアプリのみが表示されます。追加したいアプリを起動してからここに戻ってください。"
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
+            }
+        },
+        "networkBoost": {
+            "title": "ネットワーク・ブースト",
+            "introLine": "ネットワーク・ブーストを有効にすると、ネットワーク内でゲームが自動的に最優先になり、速度が最大になります。ゲーム中に Twitch や Discord などのアプリを使用している場合は、以下のリストに追加してネットワークで優先されるようにします。",
+            "modalTurn": {
+                "title": "ネットワーク・ブーストを有効にしますか?",
+                "body": "ネットワーク・ブーストを有効にしますか?追加したアプリは、実行中により多くのネットワークを共有します。",
+                "checkedTitle": "次回から表示しない",
+                "btnConfirm": "オンにする",
+                "btnCancel": "今はしない"
+            },
+            "modalAddApps": {
+                "title": "ネットワーク・ブーストにアプリを追加",
+                "body": {
+                    "part1": "最大 5 つのアプリを追加してブーストできます",
+                    "part2": "の",
+                    "part3": "追加された"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
+                }
             }
         }
     },
@@ -411,8 +601,11 @@
                 "sub6": "Windows Hello"
             },
             "support": "サポート",
-            "homeSecurity": "接続ホーム",
-            "privacy": "プライバシー"
+            "privacy": "プライバシー",
+            "beta": {
+                "title": "beta"
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "セキュリティー・アドバイザー",
@@ -451,6 +644,9 @@
             "expand": "展開",
             "loader": "取得ステータス",
             "loading": "ロード中..."
+        },
+        "app-update": {
+            "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
         }
     },
     "privacy": {
@@ -518,10 +714,10 @@
             "cameraPrivacy": "カメラ",
             "eyeCareMode": "アイ・ケア",
             "note": {
-                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
-                "accessUrl": "Go to Windows settings to give access",
-                "microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-                "cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera."
+                "microphoneAndcameraPrivacyNotes": "Lenovo Vantage がカメラとマイクロホンにアクセスできません。",
+                "accessUrl": "Windows 設定に移動してアクセスできるようにします",
+                "microphoneNote": "Lenovo Vantage がマイクロホンにアクセスできません。",
+                "cameraPrivacyNote": "Lenovo Vantage がカメラにアクセスできません。"
             }
         },
         "systemStatus": {
@@ -613,7 +809,6 @@
         "deviceSettings": {
             "helpful": "役に立つコンテンツ",
             "batteryGauge": {
-                "title": "バッテリー・ゲージ",
                 "subtitle": "バッテリー状態",
                 "hours": "時間",
                 "hour": "時",
@@ -676,22 +871,22 @@
                     "Bad": "<b>バッテリー・エラーが発生しました。</b>バッテリーを充電/放電できません。バッテリーを交換してください。",
                     "NotDetected": "<b>バッテリーが検出されないか</b>、接続されていません。",
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
-                    "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
-                    "LimitedACAdapterSupport": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。",
+                    "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
+                    "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
                     "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。",
                     "StoreLimitation": "<b>バッテリーはフル充電容量の {{value}}%</b> しか充電できません。",
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
                     "OverheatedBattery": "バッテリーが<b>熱くなって</b>います。コンピューターから取り外して、室温まで冷ましてください。",
                     "PermanentError": "<b>正常摩耗のためバッテリーは故障</b>しています。バッテリーが充電できません。バッテリーを交換してください。",
-                    "NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
-                    "LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    "NotSupportACAdapterDetail": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
+                    "LimitedACAdapterSupportDetail": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
-                "updating": "更新中",
-                "voltageError": "誤ったバッテリー電圧",
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
-                "seeDetailsLink": "See Details"
+                "seeDetailsLink": "詳細を見る",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "電源",
@@ -766,7 +961,8 @@
                             "battery&Quite": "バッテリー & 静音"
                         }
                     },
-                    "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています"
+                    "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています",
+                    "nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。"
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -779,6 +975,11 @@
                         "title": "イージー・レジューム",
                         "description": "この機能を有効にして、コンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。",
                         "tooltip": "この機能はコンピュータのふたを頻繁に開閉する場合に再開までの時間を改善します。有効にすると、ふたを閉めたときコンピューターは低電力モードになりますが、15 分以内に再度ふたを開けるとすぐに再開します。また、この機能により、ノートブックはシステムが一時停止になる前に保留中の操作 (メールの送信やファイルのダウンロードなど) を完了させることができます。"
+                    },
+                    "flipToBoot": {
+                        "title": "開いてブート",
+                        "description": "この機能により、コンピューターのふたを開くだけで、電源ボタンを押すのと同じようにコンピューターの電源を入れることができます。",
+                        "tooltip": "この機能は、ふたを開くことでコンピューターを自動的に起動します。Windows Hello で顔認証のログイン情報を設定すれば、特に便利です。"
                     },
                     "or": "または"
                 },
@@ -799,8 +1000,8 @@
                         "readMoreText": "表示を多くする。",
                         "noteInfo": " バッテリー充電のしきい値がまだ完全にアクティブではありません。マシンの電源を切り、充電停止しきい値以下までバッテリを放電してください。",
                         "settings": {
-                            "title1": "内蔵バッテリーのしきい値",
-                            "title2": "取り外し可能なバッテリーのしきい値"
+                            "title1": "プライマリー・バッテリーのしきい値",
+                            "title2": "セカンダリ・バッテリーのしきい値"
                         },
                         "popup": {
                             "title": "バッテリー充電しきい値を有効にする",
@@ -833,7 +1034,43 @@
                         "title": "飛行機電源モード",
                         "description": "システムの消費電力量を制御することで飛行機の AC 電源コンセントを保護します。飛行機電源モードを有効にすると、コンピューターはバッテリー充電率とシステム・パフォーマンスを制限して電力消費量を抑えます。",
                         "checkBoxDesc": "自動検出",
-                        "note": "If Auto detection is checked, your computer will turn on Airplane power mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+                        "note": "自動検出が選択されている場合は、コンピューターは飛行機に搭乗している環境を検出すると自動的に飛行機電源モードをオンにし、飛行機を離れると飛行機電源モードをオフにします。"
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -972,7 +1209,7 @@
                             "warm": "暖色 (目に優しい)",
                             "cold": "寒色"
                         },
-                        "reset": "温度をリセット",
+                        "reset": "リセット",
                         "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
                         "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
@@ -986,7 +1223,7 @@
                             "warm": "暖色 (目に優しい)",
                             "cold": "寒色"
                         },
-                        "reset": "温度をリセット",
+                        "reset": "リセット",
                         "tooltip": "アイ・ケア・モードでは、ディスプレイの色温度が調整されてブルーライトがフィルターで除去され、目の負担が軽減されます。",
                         "onSunsetToSunriseScheduleDescription": "日没から日の出までのアイ・ケア・モードのスケジュール",
                         "note": {
@@ -1035,7 +1272,7 @@
                     "camera": {
                         "title": "カメラ",
                         "tooltip": "カメラのプロパティをデフォルト設定にリセットするには、ここをクリックしてください。",
-                        "reset": "工場出荷時の状態にリセット"
+                        "reset": "リセット"
                     },
                     "brightness": "明るさ",
                     "contrast": "コントラスト",
@@ -1060,7 +1297,7 @@
             "inputAccessories": {
                 "title": "入力およびアクセサリ",
                 "subtitle": "入力およびアクセサリ設定",
-                "description": "Lenovo インテリジェント・センサーはコンピューターのさまざまなセンサーを組み合わせて操作を検出し、最適な電源管理の設定を調整します",
+                "description": "このセクションでは、最も頻繁に使用されるキーボードおよびマウス機能を設定できます。その他の機能についてはこちらをご覧ください。",
                 "inputAccessory": {
                     "title": "インテリジェント・キーボード",
                     "hiddenKeyboardFunctions": {
@@ -1091,6 +1328,51 @@
                         "tittle": "Fn + スペース",
                         "description": "キーボードのバックライトの状態を変更します",
                         "image": ""
+                    },
+                    "topRowFunctions": {
+                        "title": "キーボードの最上部行の機能",
+                        "showAdvSettings": "詳細設定を表示する",
+                        "hideAdvSettings": "詳細設定を非表示にする",
+                        "description": "キーボードの一番上の行には、次の 2 つの機能があります。使用するものを選択してください:",
+                        "subSection": {
+                            "description": "上記の 2 つの機能を切り替えるには、Fn+Esc を押します。",
+                            "radioButton": {
+                                "sFunKey": "特殊機能",
+                                "fnKey": "F1 ～ F12 機能"
+                            }
+                        },
+                        "subSectionTwo": {
+                            "title": "デフォルトの主要機能を逆にする",
+                            "description": "オンの場合、デフォルトのプライマリ機能は工場出荷時の設定とは逆に変更されます。これらの変更を有効にするには、コンピューターを再起動してください。"
+                        },
+                        "subSectionThree": {
+                            "title": "Fn キーとの組み合わせの使用",
+                            "description": "通常の方法を使用して、Fn キーの組み合わせを使用するには、Fn+ファンクション・キーを押す必要があります。Fn Sticky キーの方法を使用すると、Fn キーを押すことで (押したままにしなくても) キーが押された状態を維持できます。その後、目的のファンクション・キーを押します。この操作は、Fn キーと同時にファンクション・キーを押す場合と同様です。",
+                            "radioButton": {
+                                "nMehod": "通常の方法",
+                                "fnKeyMehod": "Fn Sticky キーを使用した方法"
+                            },
+                            "note": "Fn キーを 2 回押すと、Fn キーをもう一度押すまで、Fn キーは押された状態でロックされます。Fn キーがロックされているときは、Fn Lock インジケーターが点灯します。目的のファンクション・キーを直接押して、デフォルトではない機能を起動できます。"
+                        },
+                        "popup": {
+                            "title": "コンピューターを再起動する",
+                            "description": "最上部の行の機能を変更するには、コンピューターを再起動する必要があります。再起動しますか?",
+                            "reboot": "リブート",
+                            "cancel": "今はしない"
+                        }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP ホット・キーの機能",
+                        "description": {
+                            "main": "この機能を使用すると、キーボードのホット・キーを押すことで VoIP 通話に応答または拒否できます。",
+                            "f10": "F10: 通話に応答する",
+                            "f11": "F11: 通話を拒否または終了する"
+                        },
+                        "tooltip": "現在、この機能は Skype for Business 2016 および Microsoft Teams 1.0 でのみサポートされています。<br>この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。",
+                        "hasInstalledAppsDescription": "ホット・キーを使用するアプリを選択します。",
+                        "noInstalledAppsDescription": "この機能は、以下のアプリケーションのみをサポートします。",
+                        "hasInstalledAppsNote": "注: Microsoft Teams 1.0 の場合、F11 キーを使用して通話を切ることはできません。",
+                        "noInstalledAppsNote": "注: この機能を使用するには、最初にアプリをダウンロードしてインストールする必要があります。"
                     }
                 },
                 "userDefinedKey": {
@@ -1118,10 +1400,13 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "more": "MORE",
-                    "control1": "TOUCHPAD CONTROLS",
-                    "control2": "MOUSE CONTROLS"
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                },
+                "controlOptions": {
+                    "more": "詳細",
+                    "control1": "タッチパッド・コントロール",
+                    "control2": "マウス・コントロール",
+                    "control3": "TRACKPOINT 制御"
                 }
             }
         },
@@ -1163,6 +1448,17 @@
                             "slow": "遅く"
                         },
                         "toolTipContent": "ユーザーの存在が検出されない場合に、画面をロックするオプションを高速/中間/低速から選択します。ただし、画面がロックされる時間は実際のユーザー・シナリオ、センサーの機能、および Windows の画面タイムアウト設定の影響も受けます。そのため、席を離れるときはすぐにシステムをロックすることを強くお勧めします。"
+                    },
+                    "facialRecognition": {
+                        "title": "顔認識",
+                        "caption": "顔認識機能を有効にして、カメラにアクセスできるようにすることができます。このツールは画像をキャプチャして、ユーザーの存在を正確に認識したり、デバイスを無人の状態にしたことを検出したりします。このデータはデバイスでローカルに処理されます。Lenovo はアクセスも使用もしません。",
+                        "checkBox": "カメラの電源を入れて、この機能を有効にします。",
+                        "note": {
+                            "permission": "Lenovo Vantage がカメラにアクセスできません。チェックボックスの機能は動作しません。",
+                            "privacyMode": "Lenovo Vantage カメラのプライバシーモードがオンになっています。チェックボックスの機能は動作しません。",
+                            "windowsLink": "Windows の設定に移動してアクセスできるようにします",
+                            "privacyLink": "カメラのプライバシーモードに移動してオフにします"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1170,7 +1466,8 @@
                     "caption": "自動距離調整は、AI エンジン経由で検出距離を自動更新します。",
                     "options": {
                         "near": "近い",
-                        "far": "遠い"
+                        "far": "遠い",
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1189,13 +1486,18 @@
                     "description2": "この機能はセンサーとカメラを使ってユーザーの存在を検出します。ただし、この機能が個人のデータを収集することはありません。",
                     "description3": "1. コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
                     "description4": "2. コンピューターが休止状態またはオフであるとき、タッチレスログインは機能しません。",
-                    "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。"
+                    "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。",
+                    "description6": "4. お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。",
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 設定に移動",
                     "screenTimeoutSettings": "画面のタイムアウト設定に移動します"
                 },
-                "resetToDefault": "デフォルト設定にリセットする"
+                "resetToDefault": "リセット",
+                "sensitivityAdjusting": {
+                    "title": "SENSITIVITY ADJUSTING"
+                }
             },
             "intelligentScreen": {
                 "title": "インテリジェント・スクリーン",
@@ -1346,6 +1648,7 @@
         "banner": {
             "neverChecked": "システム アップデートへようこそ。",
             "title": "最新のシステムは健全なシステムです。",
+            "installingTitle": "更新時に、ご使用のコンピューターをスリープ状態または休止状態にしないでください。",
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
@@ -1421,85 +1724,6 @@
             "fileNotFoundException": "ファイルが見つかりません。"
         }
     },
-    "homeSecurity": {
-        "title": "接続ホーム・セキュリティー",
-        "notification": {
-            "recent": "最近のセキュリティー通知",
-            "notifications": "通知"
-        },
-        "ecosystem": {
-            "ecosystemBlockTitle": "デバイスのエコシステムを保護する",
-            "thisDevice": "このデバイス",
-            "allDevices": "すべてのデバイス",
-            "protected": "保護",
-            "notProtected": "未保護",
-            "trialExpired": "試用期限切れ",
-            "upgrade": "アップグレード",
-            "inEcosystem": "エコシステムで",
-            "ecosystemEnable": "エコシステムが有効",
-            "inTrial": "トライアルで",
-            "addEcosystem": "エコシステムに追加",
-            "enableEcosystem": "エコシステムを有効にする",
-            "startTrial": "トライアルを開始する",
-            "fullAccess": "完全アクセス",
-            "renew": "更新"
-        },
-        "overview": {
-            "overviewBlockTitle": "エコシステム・セキュリティーの概要",
-            "allDevices": "すべてのデバイス",
-            "myDevice": "デバイス",
-            "thisComputer": "このコンピューター",
-            "secure": "安全",
-            "needAttention": "注意が必要",
-            "manageAccount": "アカウントの管理",
-            "devices": "デバイス",
-            "seeProtectedDevices": "保護されたデバイスを見る",
-            "addDevice": "デバイスの追加",
-            "trialExpired": "試用期限切れ - アップグレードして、すべてのデバイスを保護する",
-            "upgrade": "アップグレード",
-            "freeTrial": "すべてのデバイスを保護する - 30 日間無料トライアル",
-            "startTrial": "トライアルを開始する"
-        },
-        "tour": {
-            "back": "戻る",
-            "skip": "スキップ",
-            "start": "ツアーを開始する",
-            "done": "完了",
-            "welcome1": "ようこそ",
-            "welcomeDesc1": "数回のクリックで、ご自身とご家族のために、PC、モバイル・デバイス、および接続中のデバイスを保護することができます。",
-            "welcomeDescStart": "今すぐ 30 日間無料トライアルを始めましょう。",
-            "welcome2": "Vantage 専用",
-            "welcomeDesc2": "接続ホーム・セキュリティーは、Vantage に直接組み込まれており、これにより、エコシステムの保護ステータスとセキュリティーのアラートにすばやくアクセスできます。",
-            "create": "アカウントの作成",
-            "lenovoId": "Lenovo ID で",
-            "notifications": "家の状況に関する<b>通知</b>を受け取る",
-            "monitor": "ご家族のデバイスの安全性を<b>モニタリングする</b>",
-            "peaceOfMind": "常に保護されていることによる<b>心の平安</b>を得てください！",
-            "signInLenovoId": "Lenovo ID で登録する",
-            "haveLenovo": "<b>Lenovo ID</b> を持っていません",
-            "createLenovo": "&nbsp;Lenovo ID の作成",
-            "without": "<b>アカウントなし</b>で進む",
-            "skipAndTrial": "スキップして、トライアルを開始する",
-            "alreadyHave": "<b>接続ホーム・セキュリティー・アカウント</b>をすでに持っています",
-            "loginCHS": "既存の CHS アカウントにログインする",
-            "locationTitle": "位置追跡を有効にする",
-            "locationPermission": "この機能が正しく動作するには、このデバイスの位置追跡を有効にする必要があります"
-        },
-        "accountStatus": {
-            "title": "接続ホーム・セキュリティー",
-            "startTrial": "トライアルを開始する",
-            "manageAccount": "アカウントの管理",
-            "upgradeAccount": "アカウントのアップグレード",
-            "inTrialDetail1": "{{remainingDays}}トライアルが終了するまでの日数。",
-            "inTrialDetail2": "現在トライアル期間内です。すべての機能に無制限にアクセスできます。",
-            "trialExpiredDetail1": "トライアルの期限が切れています。",
-            "trialExpiredDetail2": "トライアルの期限が切れているため、デバイスのエコシステムは保護されていません。",
-            "upgradedDetail1": "アカウントは{{expiredDate}}まで有効です。",
-            "upgradedDetail2": "デバイス・エコシステムは現在保護されています。",
-            "localAccountDetail2": "下のボタンをクリックして 30 日間の無料トライアルを開始する。",
-            "alreadyHaveAccount": "アクティベーション・コードをすでにお持ちですか？"
-        }
-    },
     "support": {
         "common": {
             "getSupport": "サポートを受ける"
@@ -1513,6 +1737,7 @@
             "statusWarrantyNotFound": "保証が見つかりませんでした",
             "yearDepotWarranty": "Y デポ保証",
             "warrantyDetails": "保証の詳細:",
+            "warrantyDashboardDetails": "保証の詳細",
             "startDate": "開始日:",
             "endDate": "終了日:",
             "status": "ステータス:",
@@ -1588,56 +1813,78 @@
             "common": {
                 "title": "アンチウィルス",
                 "back": "戻る",
-                "why": "なぜ McAfee?",
-                "recommends": "Lenovo では、以下の機能を備えた McAfee を使用してすべてのデバイスを保護することを推奨しています。",
-                "award": "ランサムウェアやマルウェアなど、最新のオンラインの脅威からの受賞歴のある保護",
-                "dedicated": "Defender や他の主要 AV プロバイダーより常に高いパフォーマンスを発揮する専用セキュリティー",
-                "deviceToCloud": "PC のパフォーマンスを低下させないデバイス - クラウド間テクノロジー",
-                "poweredBy": "McAfee 搭載",
-                "privacyTerms": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>の詳細を読む",
-                "mcafeePremium": "McAfee プレミアムプロテクション",
+                "recommends": "すべてのデバイスを保護するために Lenovo が <b>McAfee</b> を推奨している理由",
+                "award": "受賞歴のあるウイルス対策",
+                "mcafeePremium": "McAfee LiveSafe プロテクション",
                 "protectedBy": "現在、{{protectedName}} によって保護されています。ただし、McAfee LiveSafe を使用すると、より適切に保護される可能性があります。",
                 "virusScan": "ウイルス・スキャン",
                 "firewall": "ファイアウォール",
                 "disabled": "無効",
-                "enableVirusScan": "ウイルス・スキャンを有効にする",
-                "enablenFirewall": "ファイアウォールを有効にする",
-                "enableFirewall": "ファイアウォールを有効にする"
+                "awardText": "オンラインの脅威に対するテスト済みの実績のある保護によって新しい Lenovo PC を保護可能",
+                "performance": "信頼できるパフォーマンス",
+                "performanceText": "安心してセキュリティを任せることができる、一貫性、正確性、信頼性の高いウイルス対策",
+                "Blazing": "超高速",
+                "BlazingText": "Lenovo Vantage のパフォーマンスを低下させたり動作を中断したりしない最適化されたウイルス対策",
+                "privacyTerms": "/   <tag>プライバシー ポリシー</tag>  |  <tag>サービス契約条件</tag>",
+                "notAvailable": "利用できません"
             },
             "windowsDefender": {
-                "optimallyProtected": "最適に保護されていません",
-                "subtitle": "現在、Windows Defender によって保護されています。しかし、McAfee LiveSafe を使用すると、より適切に保護できます。下記のさらに詳しい説明を見る。",
-                "learnMore": "McAfee の詳細情報",
-                "windowsProtected": "Windows Defender 基本保護",
-                "windowsSubtitle": "Windows Defender は、デバイスに基本的な保護機能を提供します"
+                "optimallyProtected": "現在、Windows Defender を使用しているようです。悪い選択ではありませんが、ランサムウェア、マルウェア、ウイルスに対する安全性を最大限に高めるため、Lenovo では <b>McAfee</b> と協力して受賞歴のあるセキュリティを用意し、<b>重要な情報を保護</b>できるようにしました。",
+                "windowsSubtitle": "Windows Defender 基本保護",
+                "topTip": "オンラインの安全性に関する重要なヒント",
+                "topContent": "現在見られるオンラインの最大の脅威からどのように防御できるかを調べる<tag>ヒントを見る<tag>",
+                "view": "ヒントを見る",
+                "buyNow": "今すぐ購入する",
+                "buy": "McAfee ウイルス対策を今すぐ購入、ダウンロード、インストールして、このような銀行レベルのセキュリティ機能を活用しましょう",
+                "onlyBasic": "ここでは基本のみです。一部のオンラインの脅威から保護されていますが、他の脅威にさらされる可能性があります。",
+                "virus": "ウィルス保護",
+                "homeNetwork": "ホーム・ネットワーク保護",
+                "private": "プライベートな匿名ブラウジング",
+                "everyDevice": "あらゆるデバイスの保護",
+                "password": "Password Manager"
             },
             "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "現在、McAfee LiveSafe によって保護されています",
-                "valid": "有効期限:",
-                "upgrade": "今すぐアップグレード",
+                "title": "アンチウィルス",
+                "subtitle": "現在、McAfee LiveSafe により保護されています。残りわずか {{remainingDays}} 日です。今すぐサブスクライブして保護を延長しましょう。",
                 "launch": "McAfee を起動する",
                 "getMacfee": "McAfee を入手する",
-                "topBenefits": "McAfee LiveSafe の最も重要なメリット",
+                "topBenefits": "すべてのデバイスを保護するために <b>Lenovo が McAfee を推奨</b>している理由",
                 "awardTitle": "受賞歴のあるウイルス対策",
-                "awardSubtitle": "ウイルス、マルウェア、ランサムウェア、スパイウェア、不要なプログラムなどを PC 上でブロックします。",
-                "encryptedTitle": "暗号化ストレージ",
-                "encryptedSubtitle": "128ビット暗号化を使用して PC に保存することで、機密性の高いファイルを秘密の状態にします。",
-                "identityTitle": "個人情報の盗難保護",
-                "identitySubtitle": "盗難や詐欺から個人情報を自分自身で守りましょう。",
-                "supportTitle": "無料のカスタマー・サポート",
-                "supportSubtitle": "電話、チャット、またはサブスクリプション期間中のオンラインで生活をカバーできていますか。",
-                "antiTitle": "スパム対策",
-                "antiSubtitle": "危険なリンクやウイルスを含む可能性のあるメールを削除して、危険なメッセージが受信トレイに届かないようにブロックします。",
-                "virusTitle": "ウィルス保護の誓約",
-                "virusSubtitle": "PC がウイルスに感染した場合、McAfee の専門家がコンピューターにリモートからアクセスしてウイルスを駆除してくれるという安心を与えてくれます。",
-                "parentalTitle": "保護者による制限",
-                "parentalSubtitle": "子供に見せたくない Web サイトや検索結果をブロックします。また、オンラインで費やす時間の限度を設定することもできます。",
-                "license": "ライセンス有効期限",
-                "trial": "試用版有効期限"
+                "awardSubtitle": "ウイルス、マルウェア、ランサムウェアが PC に感染するのを防ぎます",
+                "supportTitle": "24 時間年中無休の専門家による無料テクニカル・サポート",
+                "supportSubtitle": "専任のセキュリティ・チームが 24 時間体制でサポートするため、安心感を得ることができます",
+                "trialSubtitle": "現在、McAfee LiveSafe の 30 日間体験版により保護されています。残りわずか {{remainingDays}} 日です。今すぐサブスクライブして保護を延長しましょう。",
+                "discount": "100% 返金保証",
+                "trialSubscribe": "体験版はあと {{remainingDays}} 日で終了します — 今すぐサブスクライブ",
+                "subscribe": "サブスクリプションはあと {{remainingDays}} 日で終了します — 今すぐサブスクライブ",
+                "MultiTitle": "複数デバイスの保護",
+                "MultiSubtitle": "所有するすべてのデバイス (PC、携帯電話、タブレット) を保護します – ご家族に最適",
+                "networkTitle": "ホーム・ネットワーク保護",
+                "networkSubtitle": "ファイアウォールを保護し、ハッカーがホーム・ネットワークにアクセスできないようにします",
+                "passwordTitle": "Password Manager",
+                "passwordSubtitle": "すべてのオンライン・パスワードを 1 カ所に安全に保存して管理できます",
+                "onlineTitle": "オンライン・プライバシー",
+                "onlineSubtitle": "銀行レベルの暗号化で接続し、公共の Wi-Fi やオープン・ネットワーク上でもすべてのオンライン・アクティビティを保護します",
+                "register": "McAfee の登録",
+                "virusScan": "ウイルス・スキャン",
+                "firewall": "パーソナル・ファイアウォール",
+                "antiSpam": "McAfee Anti-Spam",
+                "quickClean": "McAfee QuickClean",
+                "vulnerability": "McAfee Vulnerability Scanner",
+                "report": "専用の脅威保護レポート",
+                "trialContent": "McAfee ウイルス対策の体験版が有効に利用されています。ただし、あとわずか {{remainingDays}} 日で体験版が終了するため、コンピューターが脆弱になるリスクがあります。今から対策しましょう。<tag>今すぐ購読する</tag>",
+                "subscribeContent": "McAfee が有効に利用されています。ただし、あとわずか {{remainingDays}} 日で期間が終了するため、コンピューターが脆弱になるリスクがあります。今から対策しましょう。<tag>今すぐ購読する</tag>",
+                "subscribeNow": "今すぐ購読する",
+                "fileScan": "スキャンされたファイル",
+                "Viruses": "除去されたウイルス",
+                "blocked": "ブロックされた不正な接続",
+                "shredded": "安全にシュレッダー処理されたファイル",
+                "startFileScan": "ファイルのスキャンを開始"
             },
             "others": {
-                "othersProtection": "は、デバイスに基本的な保護機能を提供します"
+                "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
+                "unknown": "不明",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -1690,7 +1937,8 @@
                 "describe": "安全でないデバイスやネットワークでは、マルウェアが侵入し、個人情報の盗難、プライベート情報や財務情報の漏えいが生じる可能性があります。この機能を有効にして、デバイスとホーム・ネットワークを攻撃者に晒してしまうリスクを軽減してください",
                 "subtitle": "安心を手に入れる",
                 "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーについての詳細は、<tag>ここで</tag>ご確認ください。",
-                "tryNow": "今すぐ試してみる"
+                "tryNow": "今すぐ試してみる",
+                "goToChs": "go to connected home security"
             },
             "invitationcode": {
                 "button": "招待コードの入力",
@@ -1706,7 +1954,13 @@
                 "success": "接続に成功しました",
                 "canUse": "これで、接続ホーム・セキュリティーの使用を開始できます",
                 "tryAgain": "コードが間違っています。再試行してください!",
-                "activationCode": "アクティベーション・コード"
+                "activationCode": "アクティベーション・コード",
+                "joinChs": "Join Connected Home Security of your family",
+                "invitationCode": "Invitation code",
+                "connect": "CONNECTED",
+                "fail": "Incorrect code entered!",
+                "joinFamilyAccount": "Join family account",
+                "connecting": "Connecting..."
             },
             "securityhealth": {
                 "title": "セキュリティーの健全性",
@@ -1725,6 +1979,10 @@
                 "learnMoreAboutSecurityHealth": "各コンポーネントの詳細については、<tag>こちらを参照してください</tag>。",
                 "peaceOfMind": "より確実な安心をお求めですか?",
                 "button": "WiFi セキュリティーを有効にする"
+            },
+            "homeStatus": {
+                "protected": "Protected",
+                "notProtected": "Not Protected"
             }
         },
         "vpn": {
@@ -1836,7 +2094,7 @@
         },
         "question1": {
             "title": "ファイルをバックアップし、復元する",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        ファイルをバックアップし、復元する    </div>    <hr />    <div style='margin-bottom:7rem;'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div style='font-size:3rem;font-weight:bold;'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span style='font-weight:bold'>「スタート」</span>ボタンを選択し、<span style='font-weight:bold'>「設定」</span> > <span style='font-weight:bold'>「更新とセキュリティ」</span> > <span style='font-weight:bold'>「バックアップ」</span> > <span style='font-weight:bold'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\\\Users\\\\username) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span style='font-weight:bold;'>「その他のオプション」</span>に進みます。    </div>    <div style='font-size:3rem;font-weight:bold;'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span style='font-weight:bold;'>「ファイルを復元」</span>と入力して、次に<span class='font-weight:bold'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span style='font-weight:bold'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span style='font-weight:bold'>「復元」</span>を長押し（または右クリック）し、<span style='font-weight:bold'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        ファイルをバックアップし、復元する    </div>    <hr />    <div class='faqInMb7'>        どんな場合でもバックアップを取っておくのは良いことです。オリジナルに問題が発生した場合に備えて、ファイルのコピーを別のドライブに保存してください。    </div>    <div class='faqInFs3Fb'>        バックアップの設定    </div>    <hr />    <div class='mb-5'>        <span class='faqInFb'>「スタート」</span>ボタンを選択し、<span class='faqInFb'>「設定」</span> > <span class='faqInFb'>「更新とセキュリティ」</span> > <span class='faqInFb'>「バックアップ」</span> > <span class='faqInFb'>「ドライブの追加」</span>の順に選択して、次にバックアップ用の外付けドライブまたはネットワークの場所を選択します。    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        設定完了。毎時間、ユーザー・フォルダー (C:\\\\Users\\\\username) 内の全ファイルをバックアップします。バックアップするファイル、バックアップの頻度を変更するには、<span class='faqInFb'>「その他のオプション」</span>に進みます。    </div>    <div class='faqInFs3Fb'>        ファイルの復元    </div>    <div class='mb-5'>        重要なファイルやフォルダーが見つからない場合は、以下の手順で元に戻すことができます。    </div>    <div>        <div class='mb-3'>1.タスク バーの検索ボックスに<span class='faqInFb'>「ファイルを復元」</span>と入力して、次に<span class='faqInFb'>「ファイル履歴をファイルを復元」</span>を選択します。</div>        <div class='mb-3'>2.必要なファイルを探し、次に矢印を使って、そのすべてのバージョンを表示します</div>        <div class='mb-3'>3.必要なバージョンが見つかったら、<span class='faqInFb'>「復元」</span>を選択して、元の場所にそれを保存します。別の場所に保存するには、<span class='faqInFb'>「復元」</span>を長押し（または右クリック）し、<span class='faqInFb'>「復元先」</span>を選択して、次に新しい場所を選択します。</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -1877,7 +2135,7 @@
         },
         "question2": {
             "title": "PC を更新する方法",
-            "description": "<div>    <div style='font-size:4rem;font-weight:bold;'>        PC を更新する方法    </div>    <hr>    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>        症状    </div>    <div style='padding:5px 0;'>        お使いの PC が以前のように機能しておらず、その理由が分からない場合は、個人用ファイルを削除したり、設定を変更したりせずに PC をリフレッシュできます。Windows では PC を「リフレッシュ」できます。PC のリフレッシュは、個人用ファイルを削除せずに、新たにインストールするのに似ています。    </div>    <div style='padding:5px 0;'>        PC のリフレッシュにより、ファイルとカスタマイズした設定は変更されません    </div>    <div style='padding:5px 0;'>        <ul>            <li>PC の設定はデフォルトに戻ります</li>            <li>Windows ストアからのアプリは維持されます</li>            <li>ディスクまたは Web サイトからインストールしたアプリは削除されます</li>            <li>削除したファイルのリストはデスクトップに保存されます</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        影響を受けるブランド    </div>    <div>        <ul>            <li>すべてのデスクトップとラップトップ</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        オペレーション・システム    </div>    <div>        <ul>            <li>Windows 8、8.1、および 10</li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>        解決法    </div>    <div>        <ul class='list-unstyled'>            <li>                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>                <ol>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「設定」</span>をタップまたはクリックします                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「更新と回復」</span>をタップまたはクリックします                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'>「回復」</span>タップまたはクリックします</div>                        <div style='padding:5px 0'>「ファイルに影響を与えないように PC をリフレッシュする」から<span style='font-weight:bold;'>「開始する」</span>をタップまたはクリックします。</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「次へ」</span>をクリックします。                    </li>                    <li style='padding:5px 0;'>                        <span style='font-weight:bold;'>「リフレッシュ」</span>をクリックし、リフレッシュ・プロセスを開始します。                    </li>                    <li style='padding:5px 0;'>                        リフレッシュ・プロセスが完了すると、デスクトップに「削除されたアプリ」の一覧が表示されます                    </li>                    <li style='padding:5px 0;'>                        システムをリフレッシュしている間に、削除されたアプリを見つけることができます                    </li>                </ol>            </li>            <li style='padding:10px 0;'>                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>                <ol>                    <li style='padding:5px 0;'> 「スタート」メニューにある検索ツールで、<span style='font-weight:bold;'>「リフレッシュ」</span>を検索します。</li>                    <li style='padding:5px 0;'>                        <div>以下に示す検索結果の<span style='font-weight:bold;'>「ファイルに影響を与えないように PC をリフレッシュする」</span>をクリックします。</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li style='padding:5px 0;'>                        <div><span style='font-weight:bold;'>「ファイルに影響を与えないように PC をリフレッシュする」</span>の見出しのすぐ下にある<span style='font-weight:bold;'>「開始する」</span>ボタンをクリックして、Windows 10 PCのリフレッシュを開始します。</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div style='font-size:2.5rem;font-weight:bold;'>        追加情報    </div>    <div>        ほとんどの場合、PC のリフレッシュを開始したら、プロセスは自動的に終了します。ただし、Windows にファイルが見つからない場合は、リカバリー・メディア (通常は DVD ディスクまたは USB フラッシュ・ドライブ) を挿入するように求められます。その場合、必要なことは、ご使用の PC により異なります。    </div>    <div style='padding:10px 0'>        DVD を使用して、ご使用の PC を Windows 8.1 または Windows RT 8.1 にアップグレードした場合は、そのディスクを使用します。Windows 8.1 または Windows RT 8.1 のメディアがない場合は、Microsoft サポートにご連絡ください。    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        PC を更新する方法    </div>    <hr>    <div class='faqInFs25FbP5'>        症状    </div>    <div class='faqInP5'>        お使いの PC が以前のように機能しておらず、その理由が分からない場合は、個人用ファイルを削除したり、設定を変更したりせずに PC をリフレッシュできます。Windows では PC を「リフレッシュ」できます。PC のリフレッシュは、個人用ファイルを削除せずに、新たにインストールするのに似ています。    </div>    <div class='faqInP5'>        PC のリフレッシュにより、ファイルとカスタマイズした設定は変更されません    </div>    <div class='faqInP5'>        <ul>            <li>PC の設定はデフォルトに戻ります</li>            <li>Windows ストアからのアプリは維持されます</li>            <li>ディスクまたは Web サイトからインストールしたアプリは削除されます</li>            <li>削除したファイルのリストはデスクトップに保存されます</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        影響を受けるブランド    </div>    <div>        <ul>            <li>すべてのデスクトップとラップトップ</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        オペレーション・システム    </div>    <div>        <ul>            <li>Windows 8、8.1、および 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        解決法    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        <span class='faqInFb'>「設定」</span>をタップまたはクリックします                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>「更新と回復」</span>をタップまたはクリックします                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>「回復」</span>タップまたはクリックします</div>                        <div class='faqInP5'>「ファイルに影響を与えないように PC をリフレッシュする」から<span class='faqInFb'>「開始する」</span>をタップまたはクリックします。</div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>「次へ」</span>をクリックします。                    </li>                    <li class='faqInP5'>                        <span class='faqInFb'>「リフレッシュ」</span>をクリックし、リフレッシュ・プロセスを開始します。                    </li>                    <li class='faqInP5'>                        リフレッシュ・プロセスが完了すると、デスクトップに「削除されたアプリ」の一覧が表示されます                    </li>                    <li class='faqInP5'>                        システムをリフレッシュしている間に、削除されたアプリを見つけることができます                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> 「スタート」メニューにある検索ツールで、<span class='faqInFb'>「リフレッシュ」</span>を検索します。</li>                    <li class='faqInP5'>                        <div>以下に示す検索結果の<span class='faqInFb'>「ファイルに影響を与えないように PC をリフレッシュする」</span>をクリックします。</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div><span class='faqInFb'>「ファイルに影響を与えないように PC をリフレッシュする」</span>の見出しのすぐ下にある<span class='faqInFb'>「開始する」</span>ボタンをクリックして、Windows 10 PCのリフレッシュを開始します。</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        追加情報    </div>    <div>        ほとんどの場合、PC のリフレッシュを開始したら、プロセスは自動的に終了します。ただし、Windows にファイルが見つからない場合は、リカバリー・メディア (通常は DVD ディスクまたは USB フラッシュ・ドライブ) を挿入するように求められます。その場合、必要なことは、ご使用の PC により異なります。    </div>    <div class='faqInP10'>        DVD を使用して、ご使用の PC を Windows 8.1 または Windows RT 8.1 にアップグレードした場合は、そのディスクを使用します。Windows 8.1 または Windows RT 8.1 のメディアがない場合は、Microsoft サポートにご連絡ください。    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -1951,7 +2209,7 @@
         },
         "question3": {
             "title": "ご使用のマシンの CPU を知る方法",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    ご使用のマシンの CPU を知る方法</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3><p>32 ビットと 64 ビットという用語は、コンピューターのプロセッサー (CPUとも呼ばれる) が情報を処理する方法を表します。64 ビット版の Windows は、32 ビットのシステムよりも効率的に大量のランダム・アクセス・メモリー (RAM) を処理します。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるブランド</h3><p>上記の症状は、以下のシステムに関連しますが、これらに限定されません。</p><ul>    <li>すべてのデスクトップとラップトップ</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>オペレーティング・システム</h3><ul>    <li>Windows 7、8、10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決法</h3><p><strong><u>Windows 7 または Vista の場合</u></strong></p><ol>    <li><strong>「スタート」ボタン</strong>の<strong>「スタート」ボタン</strong>の画像をクリックして、システムを開き、「コンピューター」を右クリックし、「プロパティ」をクリックします  </li>    <li>「システム」から、システムのタイプを表示できます。</li></ol><p><strong><u>Windows 8 および Windows 10 の場合</u></strong></p><p><strong>方法 1:</strong> コントロール パネルの「システム」ウィンドウを表示します</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム」</strong>と入力してから、<strong>「設定」</strong>をタップまたはクリックします。</li>    <li><strong>「システム」</strong>をタップまたはクリックします</li>    <li>64 ビット版の Windows 8 を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「64 ビット オペレーティング システム」</strong>と表示されます。32 <strong>ビット版の Windows</strong> <strong>8</strong> を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「32 ビット オペレーティング システム」</strong>と表示されます。<br /> </li></ol><p><strong>方法 2</strong>: システム情報ウィンドウの表示</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム情報」</strong>と入力します</li>    <li><strong>「システム」</strong>をタップまたはクリックし、<strong>「システム情報」</strong>をタップまたはクリックして、次に<strong>「システムの要約」</strong>をタップまたはクリックします。</li>    <li><strong>64 ビット</strong>版の Windows 8 を実行している場合<strong>、</strong>「項目」の見出し下の <strong>「システムの種類」</strong>に「x64 ベース PC」が表示されます。<br /><br /><strong>32 ビット</strong>版の Windows 8 を実行している場合、「項目」の見出しの下の<strong>「システムの種類」</strong>に「x86 ベース PC」が表示されます。 </li></ol><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    ご使用のマシンの CPU を知る方法</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>32 ビットと 64 ビットという用語は、コンピューターのプロセッサー (CPUとも呼ばれる) が情報を処理する方法を表します。64 ビット版の Windows は、32 ビットのシステムよりも効率的に大量のランダム・アクセス・メモリー (RAM) を処理します。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><p>上記の症状は、以下のシステムに関連しますが、これらに限定されません。</p><ul>    <li>すべてのデスクトップとラップトップ</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 7、8、10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p><strong><u>Windows 7 または Vista の場合</u></strong></p><ol>    <li><strong>「スタート」ボタン</strong>の<strong>「スタート」ボタン</strong>の画像をクリックして、システムを開き、「コンピューター」を右クリックし、「プロパティ」をクリックします  </li>    <li>「システム」から、システムのタイプを表示できます。</li></ol><p><strong><u>Windows 8 および Windows 10 の場合</u></strong></p><p><strong>方法 1:</strong> コントロール パネルの「システム」ウィンドウを表示します</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム」</strong>と入力してから、<strong>「設定」</strong>をタップまたはクリックします。</li>    <li><strong>「システム」</strong>をタップまたはクリックします</li>    <li>64 ビット版の Windows 8 を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「64 ビット オペレーティング システム」</strong>と表示されます。32 <strong>ビット版の Windows</strong> <strong>8</strong> を実行している場合は、「システム」の見出しの「システムのタイプ」フィールドに<strong>「32 ビット オペレーティング システム」</strong>と表示されます。<br /> </li></ol><p><strong>方法 2</strong>: システム情報ウィンドウの表示</p><ol>    <li>画面の右端から内側にスワイプして、次に<strong>「検索」</strong>をタップします。または、マウスを使用している場合は、画面の右下隅をポイントしてから、<strong>「検索」</strong>をクリックします。</li>    <li>検索ボックスに<strong>「システム情報」</strong>と入力します</li>    <li><strong>「システム」</strong>をタップまたはクリックし、<strong>「システム情報」</strong>をタップまたはクリックして、次に<strong>「システムの要約」</strong>をタップまたはクリックします。</li>    <li><strong>64 ビット</strong>版の Windows 8 を実行している場合<strong>、</strong>「項目」の見出し下の <strong>「システムの種類」</strong>に「x64 ベース PC」が表示されます。<br /><br /><strong>32 ビット</strong>版の Windows 8 を実行している場合、「項目」の見出しの下の<strong>「システムの種類」</strong>に「x86 ベース PC」が表示されます。 </li></ol><p> </p>",
             "heading1": "Symptom",
             "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
             "heading2": "Affected Brands",
@@ -2040,7 +2298,7 @@
         },
         "question4": {
             "title": "マシンのバッテリーの使用を確認する",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    マシンのバッテリーの使用を確認する</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 電力使用率を分析する</h3><p>4 バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5 <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6 <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7 バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    マシンのバッテリーの使用を確認する</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 には、ラップトップのバッテリー残量を表示する、新しい<strong>「バッテリーの使用」</strong>画面が含まれます。この画面では、どのアプリ (デスクトップと Windows 10 の両方の「ユニバーサル」アプリ) が電力を消費しすぎているのかを正確に知ることができます。</p><h3 class='faqInFs25FbP10'>影響を受けるブランド</h3><ul>    <li>Lenovo のラップトップ、デスクトップ</li></ul><h3 class='faqInFs25FbP10'>影響を受けるシステム</h3><ul>    <li>すべて</li></ul><h3 class='faqInFs25FbP10'>オペレーティング・システム</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決法</h3><p>この機能は Windows 10で新しく追加されました。従来の<strong>「コントロール パネル」</strong>の表示には格納されていないため、この機能を最初に見つける必要があります。この機能は新しい<strong>「設定」</strong>アプリにあります</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. バッテリー使用画面を見つける</h3></p><p>1.「スタート」メニューから<strong>「設定」</strong>のオプションをクリックまたはタップします</p><p>2.<strong>「設定」</strong>で、<strong>「システム」</strong><strong>「バッテリー節約機能」の順に選択します。 <br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.この見出しの下の<strong>「バッテリーの使用」</strong>リンクをクリックまたはタップして、詳細を表示します。</p><p> </p><h3 class='faqInFs25FbP10'>B. 電力使用率を分析する</h3><p>4 バッテリー使用画面を変更して、過去 24 時間、48 時間、または先週からのバッテリー使用量を表示することができます</p><p>5 <strong>「システム」</strong>、<strong>「ディスプレイ」、</strong><strong>「Wi-Fi」</strong>の割合がわかります。これは、システムの処理、ディスプレイで消費された電力を表示します。</p><p>6 <strong>「使用中」</strong>および<strong>「バックグラウンド」</strong>オプションは、バックグラウンドで実行中のアプリと比較して、アプリ使用中の消費電力を示します。</p><p>7 バックグラウンドで電力を消費するアプリがある場合、<strong>「バックグラウンド アプリの設定を変更する」</strong>リンクをクリックまたはタップして、アプリがバックグラウンドで起動しないように設定します。これは、ユニバーサル Windows 10 アプリにのみ有効です。</p><p>8 下にスクロールすると、アプリの一覧が表示されます。これは、この機能の最も便利なセクションです。一定期間にバッテリーを消費したアプリの一覧を表示します。また、各アプリが使用した電力の割合を示します</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2108,7 +2366,7 @@
         },
         "question5": {
             "title": "PC をタブレットのように使用する",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 class='faqInFs25FbP10'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 class='faqInFs25FbP10'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 class='faqInFs25FbP10'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
             "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
@@ -2148,7 +2406,7 @@
         },
         "question6": {
             "title": "パーソナル・アシスタントの Cortana についてもっと知る",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>    パーソナル・アシスタントの Cortana についてもっと知る</div><hr><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana とは?</h3><hr /><p>Cortana は、デジタル・エージェントです。Cortana は、ユーザーの作業を支援します。</p><p>Cortana を使用すればするほど、ユーザーの体験はよりパーソナライズされたものになります。</p><p>開始するには、検索ボックスに質問を入力するか、マイクを選択して Cortana に話しかけてください。(すべてのタイプの PC で入力できますが、通話するにはマイクが必要です。)</p><p>何を言うべきかわからない場合は、ロック画面に、またタスク バーの検索ボックスを選択すると、Cortana ホームに候補が表示されます。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>ホーム 2. ノートブック 3. 設定 4. フィードバック</li></ol><p>以下は、Cortana がユーザーのためにできることの例です。</p><ul>    <li>時間、場所、または人に基づいてリマインダーを提供する。</li>    <li>荷物、チーム、興味、およびフライトを追跡する。</li>    <li>メールとテキストを送信する。</li>    <li>カレンダーを管理して、最新の状態に保つ。</li>    <li>リストを作成および管理する。</li>    <li>チャットをしたり、ゲームをしたりする。</li>    <li>ファクト、ファイル、場所、および情報を見つける。</li>    <li>システム上の任意のアプリを開く。</li></ul><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>これを試してください: リマインダーのセット</h3><hr /><p>Cortana ができることの 1 つは、リマインダーをセットすることです。Cortana は、時間、場所、または人に基づき、ユーザーに行うべきことを教えることができます。</p><p>たとえば、「次回 Tanya から電話があったら、彼女におめでとうを言うのを思い出させてください」と入力するか、または言います。</p><p>Tanya から電話を受けると、リマインダーが表示されます。</p><p>追加のボーナス &mdash; Windows Phone または iPhone または Android 用の Cortana を使用している場合は、Cortana を設定して、PC とスマートフォンの間で通知を同期することができます。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>コルタナさん</h3><hr /><p>「コルタナさん」と言うとき常にユーザーの声を聞くように Cortana を設定します。タスク バーの検索ボックスを選択して、Cortana ホームを開きます。次に<strong>「設定」</strong>を選択して、<strong>「「コルタナさん」と言ったら Cortana が応答するようにする」</strong>をオンにします。</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>お願い</p><p>Cortana は、特定の国/地域でしか利用できません。また、Cortana の機能の一部はどこでも利用できるわけではありません。</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    パーソナル・アシスタントの Cortana についてもっと知る</div><hr><h3 class='faqInFs25FbP10'>Cortana とは?</h3><hr /><p>Cortana は、デジタル・エージェントです。Cortana は、ユーザーの作業を支援します。</p><p>Cortana を使用すればするほど、ユーザーの体験はよりパーソナライズされたものになります。</p><p>開始するには、検索ボックスに質問を入力するか、マイクを選択して Cortana に話しかけてください。(すべてのタイプの PC で入力できますが、通話するにはマイクが必要です。)</p><p>何を言うべきかわからない場合は、ロック画面に、またタスク バーの検索ボックスを選択すると、Cortana ホームに候補が表示されます。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>ホーム 2. ノートブック 3. 設定 4. フィードバック</li></ol><p>以下は、Cortana がユーザーのためにできることの例です。</p><ul>    <li>時間、場所、または人に基づいてリマインダーを提供する。</li>    <li>荷物、チーム、興味、およびフライトを追跡する。</li>    <li>メールとテキストを送信する。</li>    <li>カレンダーを管理して、最新の状態に保つ。</li>    <li>リストを作成および管理する。</li>    <li>チャットをしたり、ゲームをしたりする。</li>    <li>ファクト、ファイル、場所、および情報を見つける。</li>    <li>システム上の任意のアプリを開く。</li></ul><h3 class='faqInFs25FbP10'>これを試してください: リマインダーのセット</h3><hr /><p>Cortana ができることの 1 つは、リマインダーをセットすることです。Cortana は、時間、場所、または人に基づき、ユーザーに行うべきことを教えることができます。</p><p>たとえば、「次回 Tanya から電話があったら、彼女におめでとうを言うのを思い出させてください」と入力するか、または言います。</p><p>Tanya から電話を受けると、リマインダーが表示されます。</p><p>追加のボーナス &mdash; Windows Phone または iPhone または Android 用の Cortana を使用している場合は、Cortana を設定して、PC とスマートフォンの間で通知を同期することができます。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>コルタナさん</h3><hr /><p>「コルタナさん」と言うとき常にユーザーの声を聞くように Cortana を設定します。タスク バーの検索ボックスを選択して、Cortana ホームを開きます。次に<strong>「設定」</strong>を選択して、<strong>「「コルタナさん」と言ったら Cortana が応答するようにする」</strong>をオンにします。</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>お願い</p><p>Cortana は、特定の国/地域でしか利用できません。また、Cortana の機能の一部はどこでも利用できるわけではありません。</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2196,7 +2454,6 @@
         "personal": "個人用",
         "business": "仕事用",
         "custom": "カスタム・エクスペリエンス",
-        "experience": "経験",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
         "moreInterest": "+ その他のことに興味がある",
         "title1": "ようこそ",
@@ -2231,7 +2488,318 @@
         "OtherSettings": "他の設定",
         "usageStatistics": "利用統計",
         "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
+        "deviceStatistics": "Lenovoと統計データを共有する",
+        "deviceStatisticsDescription": "統計データを Lenovo と共有し、ご使用のコンピューターの機能の信頼性、設計、最適化の改善に役立てます。",
         "Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
-    }
+    },
+    "modernPreload": {
+        "cancel": "キャンセル",
+        "close": "閉じる",
+        "download": "ダウンロード",
+        "downloadAvailable": "ダウンロードできます",
+        "downloadComplete": "ダウンロードが完了しました",
+        "downloading": "ダウンロード中...",
+        "failedDownload": "ダウンロード失敗",
+        "failedInstall": "インストール失敗",
+        "installed": "インストール済み",
+        "restartDownload": "ダウンロードを再開",
+        "retry": "再試行",
+        "skip": "スキップ",
+        "noteDownloading": "注: 「ダウンロード」をクリックすると、デバイスへのソフトウェアのインストールを許可するように Windows から指示される場合があります。アプリのインストールが完了すると、デスクトップまたは「スタート」メニューに自動的に表示されます。<br /><br />「マイ・ソフトウェア」ページを閉じて Lenovo Vantage の使用を続行できます。インストール中に Lenovo Vantage を閉じないでください。",
+        "noteFailedDownload": "警告: ダウンロード中またはインストール中に問題が発生しました。インターネットに接続していることを確認して再試行してください。ソフトウェアのインストール中は Vantage を開いたままにしてください。ソフトウェアのインストールが終わるまで、「マイ・ソフトウェア」ページを閉じて Vantage を使用し続けることができます。または、Vantage を最小化してもかまいません。",
+        "noteDownloadComplete": "注: 「ダウンロード」をクリックすると、デバイスへのソフトウェアのインストールを許可するように Windows から指示される場合があります。アプリのインストールが完了すると、デスクトップまたは「スタート」メニューに自動的に表示されます。<br /><br />「マイ・ソフトウェア」ページを閉じて Lenovo Vantage の使用を続行できます。インストール中に Lenovo Vantage を閉じないでください。",
+        "noteDownloadAvailable": "注: 「ダウンロード」をクリックすると、デバイスへのソフトウェアのインストールを許可するように Windows から指示される場合があります。アプリのインストールが完了すると、デスクトップまたは「スタート」メニューに自動的に表示されます。<br /><br />「マイ・ソフトウェア」ページを閉じて Lenovo Vantage の使用を続行できます。インストール中に Lenovo Vantage を閉じないでください。",
+        "sizeText": "サイズ",
+        "versionText": "バージョン",
+        "softwareDescription": "ご使用のデバイスで購入したソフトウェアを使用するには、以下の「ダウンロード」をクリックします。ソフトウェアを再度ダウンロードする必要がある場合はいつでも、Vantage メニューの「マイ・ソフトウェア」ボタンをクリックして行うことができます。",
+        "title": "マイ・ソフトウェア",
+        "loadingDescription": "デバイスの購入に含まれていたソフトウェアのリストを準備しています。少々お待ちください。",
+        "shortDescription": "デバイスの購入に含まれていたソフトウェアのダウンロードおよびインストールを行います。",
+        "errorDescription": "<h2>ソフトウェアのダウンロード情報の取得中に問題が発生しました</h2>下の「再試行」ボタンをクリックするか、後で Vantage メニューの「マイ・ソフトウェア」ボタンをクリックして、もう一度やり直してください。"
+    },
+    "hardwareScan": {
+        "name": "ハードウェア・スキャン",
+        "title": "ハードウェア・スキャンを実行",
+        "subtitle": "ハードウェア・スキャンを実行しています。お待ちください",
+        "quickScan": "簡易スキャン",
+        "finalResultCode": "最終結果コード",
+        "resultCode": "リザルト・コード",
+        "cancel": "キャンセル",
+        "complete": "完了",
+        "incomplete": "未完了",
+        "loadingComponents": "コンポーネントをロード中",
+        "hardwareComponents": "ハードウェア・コンポーネント",
+        "loadingDevices": "デバイスのロード中",
+        "select": "ツールバーで",
+        "deselect": "選択解除",
+        "allOptions": "すべてのオプション",
+        "latestResult": "最新の結果",
+        "back": "戻る",
+        "viewResults": "結果の表示",
+        "save": "上書き保存",
+        "details": "詳細",
+        "recurrence": "再発",
+        "interval": "間隔",
+        "time": "時刻",
+        "type": "タイプ",
+        "hours": "時間",
+        "minutes": "分",
+        "am": "AM",
+        "pm": "午後",
+        "previousResult": "前の結果",
+        "lastScanOn": "前回のスキャン日",
+        "result": "結果",
+        "viewDetailsLog": "詳細の表示ログ",
+        "ok": "OK",
+        "notOk": "NOT OK",
+        "notScanned": "未スキャン",
+        "pass": "成功",
+        "fail": "失敗",
+        "cancelled": "キャンセルされました",
+        "warning": "警告",
+        "errorResult": "はい、実行するテストを選択する必要があります。",
+        "buy": "すぐに購入",
+        "errorDeviceChoose": "使用するデバイスを選択する必要があります。",
+        "errorNoOptionSelected": "オプションを選択する必要があります。",
+        "offline": "このデバイスはオフラインモードです。インターネットに接続してください",
+        "doNotSuspend": "これらのテストは中断しないで実行する必要があります。このアプリを閉じたり最小化したりしないでください。スキャン中にコンピューターを休止状態またはオフにしないでください。",
+        "doNotUse": "このテストが終了するまでコンピューターの使用を避けてください",
+        "testsMustRunUniterrupted": "これらのテストは中断しないで実行する必要があります。",
+        "doNotCloseOrMinimizeApp": "• このアプリを閉じたり、最小化したりしないでください。",
+        "doNotSwitchApp": "• 他のアプリに切り替えないでください。",
+        "doNotSleepOrSignOutOrTurnOffComputer": "• コンピューターをスリープ状態にしたり、サインアウトしたり、電源を切ったりしないでください。",
+        "customize": {
+            "name": "カスタマイズ",
+            "test": "テストをカスタマイズ",
+            "description": "以下のオプションを選択してテストをカスタマイズします",
+            "runTests": "選択したテストを実行"
+        },
+        "scheduledScan": {
+            "name": "スキャンのスケジュール",
+            "title": "スキャンのスケジュール",
+            "newScan": "新規スキャンのスケジュール",
+            "fullScan": "フル・スキャン",
+            "onlyOnce": "一回のみ",
+            "eachDay": "毎日",
+            "eachWeek": "毎週",
+            "eachMonth": "毎月",
+            "eachYear": "毎年",
+            "schedule": "スケジュール",
+            "date": "日付",
+            "pickDate": "日付を選択",
+            "scanScheduled": "ハードウェア・スキャンがスケジュールされました!",
+            "description": "別のスキャンが同じ日時にすでにスケジュールされています。",
+            "error": "エラー",
+            "delete": "削除",
+            "warningBatterySaver": "注: スケジュール・スキャンは、バッテリー節約モードでは実行されません",
+            "scheduleIntervalLimit": "10分以内に別のスキャンが既にスケジュールされています。別の時間を選択してください。",
+            "information": "スキャンがスケジュールされました。次の日にバックグラウンドで実行されます。"
+        },
+        "recoverBadSectors": {
+            "title": "不良セクターの復元",
+            "description": "ディスク上の不良セクターを検出して修正するための Lenovo ツール",
+            "goTo": "不良セクター復元へ進む",
+            "localDevices": "ローカル・デバイス",
+            "numberSectors": "読み取られたセクターの数",
+            "numberBadSectors": "検出された不良セクターの数",
+            "numberFixedSectors": "修正されたセクターの数",
+            "numberNonFixedSectors": "未修正のセクターの数",
+            "status": "操作ステータス",
+            "elapsedTime": "経過時間",
+            "hours": "時間",
+            "hour": "時間",
+            "minutes": "分",
+            "minute": "分",
+            "seconds": "秒",
+            "second": "秒",
+            "moreInfo": "不良セクターの復元を実行しています。お待ちください",
+            "systemEvent": "テスト結果に影響を及ぼす可能性があるシステム・イベントが発生したため、テストが中止されました。",
+            "systemPasswordProtected": "デバイスはパスワードで保護されている可能性があります。パスワードの保護を無効にしてください。",
+            "popup": {
+                "description": "スキャンと修復を実行すると、データが失われる可能性があります。この操作を実行する前にバックアップを作成することをお勧めします。続行してもよろしいですか",
+                "yes": "はい",
+                "no": "いいえ"
+            }
+        },
+        "support": {
+            "title": "プロの診断ツールをダウンロードする",
+            "subtitle": "Lenovo サポート"
+        },
+        "eTicket": {
+            "header": "ハードウェアの問題が検出されました。",
+            "problemDetected": "ハードウェア・スキャンで、コンピューターの次のコンポーネントに問題が検出されました",
+            "ticketRequestQuestion": "お使いのコンピューターが保証期間中の場合、Lenovo は交換部品を送ることができます。ハードウェア交換チケットを開き、問題に対処しますか",
+            "openTicket": "チケットを開く"
+        },
+        "battery": {
+            "title": "バッテリー充電しきい値を有効にする",
+            "description": "カスタムのバッテリー充電を有効にすると、このデバイスを使用したときに全般的なバッテリー状態が持続します。しかし、フル充電していないと、バッテリーによる稼働時間が少なくなります。この機能を完全に有効にするには、マシンの電源を切り、充電停止しきい値以下までバッテリーを放電してください。",
+            "enable": "有効にする"
+        },
+        "refreshModule": "モジュールの更新",
+        "completed": "完了",
+        "notCompleted": "未完了",
+        "yes": "はい",
+        "attention": "重要",
+        "cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
+        "cancelTextProgress": "キャンセルの進捗をお待ちください",
+        "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
+        "testNotApplicable": "カスタム・スキャンには適用されません"
+    },
+    "smartPerformance": {
+        "title": "Health & Support",
+        "back": "BACK"
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "インストールが失敗しました。再度試行してください。",
+                "networkError": "ネットワーク・エラー。",
+                "installationCancelled": "インストールがキャンセルされました。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe の引き換え",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "インストール",
+                "installing": "インストール",
+                "installed": "インストール済み",
+                "launch": "起動",
+                "seeMore": "詳細を見る"
+            },
+            "fieldName": {
+                "description": "説明",
+                "screenshots": "スクリーンショット",
+                "additionalInformation": "追加情報",
+                "by": "作者:",
+                "updated": "更新:",
+                "type": "タイプ:",
+                "category": "カテゴリー:",
+                "legalAgreement": "法的合意",
+                "readMore": "表示を多くする",
+                "readLess": "表示を少なくする"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "notification": {
+            "recent": "Recent security notifications",
+            "notifications": "Notifications",
+            "unsafeNetworkConnection": "Unsafe network connection",
+            "networkUnsafe": "Network unsafe",
+            "deviceDisconnected": "Device disconnected",
+            "newDeviceDetected": "New device detected",
+            "unsafeDeviceDetected": "Unsafe device detected"
+        },
+        "ecosystem": {
+            "ecosystemBlockTitle": "Protect your device ecosystem",
+            "thisDevice": "This device",
+            "allDevices": "All Devices",
+            "protected": "Protected",
+            "notProtected": "Not Protected",
+            "trialExpired": "Trial expired",
+            "upgrade": "upgrade",
+            "inEcosystem": "In Ecosystem",
+            "ecosystemEnable": "Ecosystem Enabled",
+            "inTrial": "In trial",
+            "addEcosystem": "Add to Ecosystem",
+            "enableEcosystem": "Enable Ecosystem",
+            "startTrial": "Start Trial",
+            "fullAccess": "Full Access",
+            "renew": "Renew"
+        },
+        "overview": {
+            "overviewBlockTitle": "Your Ecosystem Security Overview",
+            "allDevices": "All Devices",
+            "myDevice": "My Device",
+            "thisComputer": "This computer",
+            "secure": "SECURE",
+            "needAttention": "NEEDS ATTENTION",
+            "manageAccount": "Manage account",
+            "devices": "Devices",
+            "seeProtectedDevices": "See protected devices",
+            "addDevice": "add device",
+            "trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+            "upgrade": "upgrade",
+            "freeTrial": "Protect all of your devices - Free 30 day trial",
+            "startTrial": "Start Trial",
+            "trialTitle": "Trial subscription",
+            "subscriptionTitle": "Paid subscription",
+            "inTrialDetail": "You are currently in your trial period. Subscribe to Connected Home Security today to keep your home and family protected.",
+            "trialExpiredDetail": "Your trial period has expired. Please purchase a subscription to keep your home and family protected!",
+            "inSubscriptionDetail": "You have an active subscription of Connected Home Security. Good job protecting your home and family!",
+            "subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired. Please renew now to keep your home and family protected!",
+            "overviewTitle": "Overview",
+            "trialPeriod": "Trial period: <tag>{{remainingDay}} days remaining</tag>",
+            "trialExpiredPeriod": "Trial period: <tag>Expired</tag>",
+            "subscriptionPeriod": "Subscription period: <tag>{{remainingDay}} days remaining</tag>",
+            "subscriptionExpiredPeriod": "Subscription period: <tag>Expired</tag>",
+            "overviewTitleAdmin": "Overview of your Connected Home Security",
+            "overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+            "familyMembers": "Family members",
+            "places": "Places",
+            "personalDevices": "Personal devices",
+            "wifiNetworks": "Wi-fi networks",
+            "homeDevices": "Home devices",
+            "disconnectDevice": "Disconnect this device from Connected Home Security",
+            "disconnect": "disconnect",
+            "goDashboard": "go to dashboard",
+            "buyNow": "Buy Now",
+            "extendNow": "extend now",
+            "renewNow": "Renew Now",
+            "poweredBy": "Powered by Coronet",
+            "privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+        },
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcomeTitle": "welcome to connected home security",
+            "welcomeSubTitle": "30 days of protection for free",
+            "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "locationTitle": "Enable location permissions",
+            "locationPermission": "Allow Lenovo Vantage to access this device's location?",
+            "allow": "Allow",
+            "notNow": "Not now"
+        },
+        "accountStatus": {
+            "title": "My Connected Home Security",
+            "startTrial": "Start Trial",
+            "manageAccount": "Manage Account",
+            "upgradeAccount": "Upgrade Account",
+            "inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+            "inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+            "trialExpiredDetail1": "Your trial has expired.",
+            "trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+            "upgradedDetail1": "You account is active until {{expiredDate}}.",
+            "upgradedDetail2": "Your device ecosystem is currently being protected.",
+            "localAccountDetail2": "Click the button below to start your free 30 day trial.",
+            "alreadyHaveAccount": "Already have an activation code?"
+        },
+        "card": {
+            "startTrial": "Start Trial",
+            "startTrialTitle": "Create your own Connected Home Security",
+            "startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+            "join": "join",
+            "joinTitle": "Join your family's Connected Home Security",
+            "joinDescription": "Become a part of your family security group."
+        },
+        "modal": {
+            "countdownTitle": "Launching web browser",
+            "countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+            "goNow": "Go now",
+            "disconnectedTitle": "Disconnect from protection?",
+            "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+            "disconnecting": "Disconnecting..."
+        }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

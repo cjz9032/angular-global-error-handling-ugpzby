@@ -49,7 +49,8 @@
       }
     }
     .gaming-device-image {
-      width: 40%;
+	  width: 40%;
+	  min-height: 44rem;
       @media #{$small-screen}{
         justify-content: flex-end;
         width: 100%;
@@ -109,6 +110,7 @@
               background: $gaming_shade;
               margin-bottom: 5rem;
               .dropdown-toggle {
+                cursor: pointer;
                 padding-left: 2rem;
                 padding-right: 2rem;
                 line-height: 4.8rem;
@@ -139,7 +141,7 @@
     .link {
       color:  $gaming_info_link;
       text-decoration: none;
-      text-transform: uppercase;
+      //text-transform: uppercase;
       font-weight: $weight_bold;
       font-size: 1.6rem;
       display: inline-block;

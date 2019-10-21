@@ -13,7 +13,6 @@
 		.feed {
 			@extend .base-preview;
 			background-color: $dark;
-			transform: rotateY(180deg);
 			&.disable {
 				cursor: not-allowed;
 			}
@@ -43,6 +42,22 @@
 		display: none;
 	}
 	.slider-item-text{
-		font-size: 2.5rem;
+		font-size: 1.3rem;
+		color: $shade_blue;
 	}
+	/* portrait */
+	@media screen and (orientation:portrait) {
+		/* portrait-specific styles */
+		.feed{
+		transform: rotate(90deg);
+		}
+	}
+	/* landscape */
+	@media screen and (orientation:landscape) {
+		/* landscape-specific styles */
+		.feed{
+		transform: rotateY(180deg);
+		}
+	}
+
 }
