@@ -278,7 +278,7 @@
 										</div>
 									</div>
 								</div>
-								 <vtr-ui-smart-performance-scanning 
+								 <vtr-ui-smart-performance-scanning  (subItemsList)="updateSubItemsList($event)"
 								*ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
 							</vtr-ui-smart-performance-scanning>
 							<div class="system-scan-complete" *ngIf="isScanningCompleted">
@@ -578,10 +578,11 @@
 											</div>
 											<div class="title pb-3">
 												<fa-icon [icon]="['fas', 'laptop']" class="mr-2"></fa-icon>
-												Accumulated Junk
+												{{currentSubItemCategory.name}}
 											</div>
 											<div class="card-info">
-												<p>This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up?</p>
+												<!-- <p>This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up?</p> -->
+												<p>{{currentSubItemCategory.desc}}</p>
 											</div>
 											<div class="d-flex">
 												<div class="labels d-flex flex-column">
@@ -590,11 +591,11 @@
 												</div>
 												<div class="ms-slider">
 													<ul class="junk-list ms-slider__words">
-														<li class="ms-slider__word">Optimizing windows settings</li>
-														<li class="ms-slider__word">Applying registry and shortcut fixes</li>
+														<li class="ms-slider__word" *ngFor="let item of subItems">{{item.key}}</li>
+														<!-- <li class="ms-slider__word">Applying registry and shortcut fixes</li>
 														<li class="ms-slider__word">Scanning and fixing critical services</li>
 														<li class="ms-slider__word">Modifying windows settings</li>
-														<li class="ms-slider__word">Improving start-up performance</li>
+														<li class="ms-slider__word">Improving start-up performance</li> -->
 													</ul>
 												</div>
 											</div>
