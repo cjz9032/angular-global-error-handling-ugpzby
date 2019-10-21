@@ -626,4 +626,72 @@ export class PageSmartAssistComponent
 			console.error('getSuperResolutionStatus' + error.message);
 		}
 	}
+
+	initHPDSensorType() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getHPDSensorType()
+					.then((type: number) => {
+						this.hpdSensorType = type;
+						this.smartAssistCache.hpdSensorType = this.hpdSensorType;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+						console.log('getHPDSensorType: ', this.hpdSensorType);
+					}).catch(error => {
+						console.error('getHPDSensorType', error);
+					});
+			}
+		} catch (error) {
+			console.error('getHPDSensorType' + error.message);
+		}
+	}
+
+	onClick(path) {
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
+	}
+
+	onJumpClick() {
+		let navigationExtras : NavigationExtras = {
+			queryParams: {'cameraSession_id': 'camera'},
+			fragment: 'anchor'
+		};
+		// this.router.navigate(['/device/device-settings/display-camera']);
+		this.router.navigate(['/device/device-settings/display-camera'],navigationExtras);
+	}
+
+	getFacialRecognitionStatus() {
+		return this.smartAssist.getZeroTouchLockFacialRecoStatus().then((res:any) => {
+			if (res) {
+				this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = res.available;
+				this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = res.status;
+				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
+				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
+			}
+			console.log(`getFacialRecognitionStatus refresh successed`);
+		})
+	}
+
+	onVisibilityChanged() {
+		if (!document.hidden) {
+			this.getFacialRecognitionStatus();
+			console.log(`zero touch lock facial recognition visibilityChanged - getFacialRecognitionStatus`)
+		}
+	}
+
+	onMouseEnterEvent() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition onMouseEnterEvent - getFacialRecognitionStatus`);
+	}
+
+	permissionChanged() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
+	}
+
+	ngOnDestroy() {
+		clearTimeout(this.getAutoScreenOffNoteStatus);
+		document.removeEventListener('visibilitychange', this.visibilityChange);
+	}
+
 }
