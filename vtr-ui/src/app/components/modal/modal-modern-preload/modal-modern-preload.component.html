@@ -34,9 +34,13 @@
 				<div class="description"
 					[innerHTML]="'modernPreload.softwareDescription' | translate"></div>
 				<div class="row no-gutters"
+					id="modern-preload-app-list"
+					role="list"
 					*ngIf="appList">
 					<div class="col-12 col-md-6 app-item"
-						*ngFor="let app of appList">
+						*ngFor="let app of appList"
+						id="modern-preload-app-item-{{app.udcId}}"
+						role="listitem">
 						<div class="custom-control custom-checkbox">
 							<input type="checkbox"
 								class="custom-control-input"
