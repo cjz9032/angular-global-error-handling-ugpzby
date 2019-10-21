@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -703,7 +706,7 @@
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
-                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新以安装最新的驱动程序。",
+                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新以安装最新的驱动程序。您也可以从<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">这里</a>安装驱动程序。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
-			"title": "保持最新状态的系统才是健康的系统。",
-			"installingTitle": "在更新期间，请勿使计算机进入睡眠或休眠模式。",
+            "title": "保持最新状态的系统才是健康的系统。",
+            "installingTitle": "在更新期间，请勿使计算机进入睡眠或休眠模式。",
             "last": "上次更新时间：",
             "next": "下次计划更新时间：",
             "checkButton": "检查更新",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}}为您的设备提供基本保护",
                 "unknown": "未知",
-                "betterOffer":"在这里享受更好的服务！"
+                "betterOffer": "在这里享受更好的服务！"
             }
         },
         "wifisecurity": {

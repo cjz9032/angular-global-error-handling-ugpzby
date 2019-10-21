@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "Dobro došli u Ažuriranje sistema.",
-			"title": "Ažuran sistem je zdrav sistem.",
-			"installingTitle": "Tokom ažuriranja nemojte da prebacujete računar u režim spavanja ili hibernacije.",
+            "title": "Ažuran sistem je zdrav sistem.",
+            "installingTitle": "Tokom ažuriranja nemojte da prebacujete računar u režim spavanja ili hibernacije.",
             "last": "Poslednji put ažurirano: ",
             "next": "Sledeće planirano ažuriranje: ",
             "checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
                 "unknown": "Nepoznato",
-                "betterOffer":"Uživajte u boljoj ponudi!"
+                "betterOffer": "Uživajte u boljoj ponudi!"
             }
         },
         "wifisecurity": {
