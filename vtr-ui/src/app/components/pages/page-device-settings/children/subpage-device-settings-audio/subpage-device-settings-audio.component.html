@@ -50,7 +50,7 @@
 							[isSwitchChecked]="autoDolbyFeatureStatus.status"
 							[showLoaderState]="autoDolbyFeatureLoader"
 							[switchId]="'audio-automatic-dolby'">
-							<div class="row no-gutters"	*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available" role="radiogroup" tabindex="0">
+							<div class="row no-gutters"	*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available" role="list" tabindex="0" aria-label="dolby audio more list, select using arrow keys">
 								<vtr-ui-circle-radio-with-checkbox
 									*ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
 									[theme]="'blue'"

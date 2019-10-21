@@ -101,6 +101,13 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				content: "";
 				border-left-width: 0;
 			}
+			@media #{$black-on-white} {
+				border:none;
+			}
+			@media #{$white-on-black} {
+						border:none;
+				
+			}
 		}
 
 		.battery {

@@ -119,7 +119,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 
 		this.radioButtons.forEach(radioButton => {
 			radioButton.setAttribute('aria-checked', 'false');
-			// radioButton.tabIndex = -1; // the unchecked item should also be tabbable
+			radioButton.tabIndex = -1; // the unchecked item should also be tabbable
 		});
 		/* for (let i = 0; i < this.radioButtons.length; i++) {
 			const rb = this.radioButtons[i];
@@ -129,7 +129,7 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 
 		} */
 		currentItem.setAttribute('aria-checked', 'true');
-		// currentItem.tabIndex = 1; // tabitem need not be set to 1 unnecessarly
+		currentItem.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
 		currentItem.focus();
 
 	}

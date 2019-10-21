@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
 
 @Component({
 	selector: 'vtr-smart-standby',
@@ -23,13 +24,18 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	showDiffNote: boolean;
 	showDropDown: boolean[];
 	toggleSubscription: Subscription;
+	checkbox = false;
+	isCollapsed = false;
 
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(
 		public powerService: PowerService,
 		private logger: LoggerService,
-		public commonService: CommonService) { }
+		public commonService: CommonService,
+		public smartStandbyService: SmartStandbyService) {
+			this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
+		 }
 
 	ngOnInit() {
 		this.showSmartStandby();
@@ -72,6 +78,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				this.smartStandby.activeStartEnd = activeStartEnd;
 				this.splitStartEndTime();
 				this.smartStandby.daysOfWeekOff = daysOffWeek;
+				this.smartStandbyService.days = daysOffWeek;
 				this.cache.activeStartEnd = this.smartStandby.activeStartEnd;
 				this.cache.daysOfWeekOff = this.smartStandby.daysOfWeekOff;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
@@ -98,6 +105,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.smartStandby.isEnabled = this.cache.isEnabled;
 			this.smartStandby.activeStartEnd = this.cache.activeStartEnd;
 			this.smartStandby.daysOfWeekOff = this.cache.daysOfWeekOff;
+			this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
 		} else {
 			this.cache = new SmartStandby();
 		}
@@ -180,6 +188,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	onSetDaysOfWeekOff(event) {
 		const daysOfWeekOff = event;
 		this.smartStandby.daysOfWeekOff = daysOfWeekOff;
+		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
 		this.cache.daysOfWeekOff = daysOfWeekOff;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartStandbyCapability, this.cache);
 		try {
@@ -239,6 +248,18 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				}
 			}
 		}
+	}
+
+	onCheckboxClicked() {
+		//this.checkbox
+	}
+
+	public onToggle() {
+		this.isCollapsed = !this.isCollapsed;
+	}
+
+	public showUsageGraph() {
+
 	}
 
 	ngOnDestroy() {
