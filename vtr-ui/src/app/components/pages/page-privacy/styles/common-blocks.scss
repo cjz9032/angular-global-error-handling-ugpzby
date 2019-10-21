@@ -49,12 +49,9 @@ $topIndent: -5.6rem;
 		padding: 1.5rem 1rem;
 	}
 
+	&:focus,
 	&:hover {
 		background: #2955BC;
-	}
-
-	&:focus {
-		background: #346CEF;
 	}
 
 	&--transparent {
