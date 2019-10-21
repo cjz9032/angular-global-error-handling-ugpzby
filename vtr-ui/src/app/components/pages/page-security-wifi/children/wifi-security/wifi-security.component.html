@@ -4,8 +4,12 @@
 			<div class="col">
 				<div class="heading">{{'security.wifisecurity.container.title' | translate}}</div>
 			</div>
-			<div class="pull right"><img class="coronet-logo"
-					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" /></div>
+			<div  class="pull right" >
+					<img *ngIf="!deviceService.isGaming"  class="coronet-logo"
+					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" />
+					<img *ngIf="deviceService.isGaming"  class="coronet-logo"
+					[src]="'assets/images/coronet-logo-gaming.svg' | svgInline | async" />					
+			</div>
 		</div>
 		<div class="row mt-20 no-gutters">
 			<div class="col-12">
