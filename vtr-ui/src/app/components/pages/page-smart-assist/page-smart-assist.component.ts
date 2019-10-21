@@ -266,6 +266,35 @@ export class PageSmartAssistComponent
 				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
 				this.getSuperResolutionStatus();
 			}
+			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+		}
+	}
+
+	public getHPDLeaveSensitivityVisibilityStatus() {
+		try {
+			this.smartAssist.getHPDLeaveSensitivityVisibility().then((value: any) => {
+				console.log('getHPDLeaveSensitivityVisibility value----->', value);
+				this.sensitivityVisibility = value;
+				if (this.sensitivityVisibility) {
+					this.getHPDLeaveSensitivityStatus();
+				}
+			});
+
+		} catch (error) {
+			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			return EMPTY;
+		}
+	}
+
+	public getHPDLeaveSensitivityStatus() {
+		try {
+			this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
+				this.sesnsitivityAdjustVal = value;
+				console.log('getHPDLeaveSensitivity value----->', value);
+			});
+		} catch (error) {
+			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			return EMPTY;
 		}
 	}
 

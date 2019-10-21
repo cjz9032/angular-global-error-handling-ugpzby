@@ -19,8 +19,11 @@ export class IntelligentMediaComponent implements OnInit {
 	@Input() isSRLoading = true;
 	@Input() superResolutionAvailable = true;
 	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
-
-	constructor(private smartAssist: SmartAssistService) { }
+	
+	constructor(
+		private smartAssist: SmartAssistService,
+		private logger: LoggerService,
+	) { }
 
 	ngOnInit() {
 	}

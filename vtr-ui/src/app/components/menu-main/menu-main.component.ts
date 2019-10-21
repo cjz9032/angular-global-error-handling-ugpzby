@@ -567,34 +567,46 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.smartAssist.getSensorStatus(),
 						this.smartAssist.getHDDStatus(),
 						this.smartAssist.getSuperResolutionStatus()
-					]).then((responses: any[]) => {
-						this.logger.error('inside Promise.all THEN JS Bridge call', responses);
+					])
+						.then((responses: any[]) => {
+							this.logger.info('inside Promise.all THEN JS Bridge call', responses);
+							// cache smart assist capability
+							const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
+							smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
+							smartAssistCapability.isLenovoVoiceSupported = responses[2];
+							smartAssistCapability.isIntelligentMediaSupported = responses[3];
+							smartAssistCapability.isIntelligentScreenSupported = responses[4];
+							smartAssistCapability.isAPSSupported = responses[5] && responses[6] && responses[7] > 0;
+							smartAssistCapability.isSuperResolutionSupported = responses[8];
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.SmartAssistCapability,
+								smartAssistCapability
+							);
+							this.logger.info('inside Promise.all THEN JS Bridge call', smartAssistCapability);
 
-						console.log('showSmartAssist.Promise.all()', responses);
-						console.log('Smart Assist Expressions', responses[0] || responses[1] || responses[2] || responses[3].available || responses[4] || (responses[5] && responses[6] && (responses[7] > 0)) || responses[8].available);
-						// cache smart assist capability
-						const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
-						smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
-						smartAssistCapability.isLenovoVoiceSupported = responses[2];
-						smartAssistCapability.isIntelligentMediaSupported = responses[3];
-						smartAssistCapability.isIntelligentScreenSupported = responses[4];
-						smartAssistCapability.isAPSSupported = (responses[5] && responses[6] && (responses[7] > 0));
-						smartAssistCapability.isSuperResolutionSupported = responses[8];
-						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
-						this.logger.error('inside Promise.all THEN JS Bridge call', smartAssistCapability);
+							const isAvailable =
+								responses[0] ||
+								responses[1] ||
+								responses[2] ||
+								responses[3].available ||
+								responses[4] ||
+								(responses[5] && responses[6] && responses[7] > 0) || 
+								responses[8].available;
+							// const isAvailable = true;
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.IsSmartAssistSupported,
+								isAvailable
+							);
 
-						const isAvailable =
-							(responses[0] || responses[1] || responses[2] || responses[3].available || responses[4]) || (responses[5] && responses[6] && (responses[7] > 0)) || responses[8].available;
-						// const isAvailable = true;
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsSmartAssistSupported, isAvailable);
-
-						// avoid duplicate entry. if not added earlier then add menu
-						if (isAvailable && !isSmartAssistSupported) {
-							this.addSmartAssistMenu(myDeviceItem);
-						}
-					}).catch((error) => {
-						this.logger.error('error in initSmartAssist.Promise.all()', error);
-					});
+							// avoid duplicate entry. if not added earlier then add menu
+							if (isAvailable && !isSmartAssistSupported) {
+								this.addSmartAssistMenu(myDeviceItem);
+							}
+						})
+						.catch((error) => {
+							this.logger.error('error in initSmartAssist.Promise.all()', error.message);
+							return EMPTY;
+						});
 				}
 			}
 		});

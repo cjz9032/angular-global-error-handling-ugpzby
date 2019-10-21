@@ -565,3 +565,111 @@
 	}
 }
 
+  .icomoon-NoBatteryError {
+	&:before {
+	  content: $icomoon-NoBatteryError;
+	}
+  }
+  .icomoon-normal {
+	&:before {
+	  content: $icomoon-normal;
+	}
+  }
+  .icomoon-onlymyvoice {
+	&:before {
+	  content: $icomoon-onlymyvoice;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-performance {
+	&:before {
+	  content: $icomoon-performance;
+	}
+  }
+  .icomoon-personalDevice {
+	&:before {
+	  content: $icomoon-personalDevice;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-places {
+	&:before {
+	  content: $icomoon-places;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-privacy-guard {
+	&:before {
+	  content: $icomoon-privacy-guard;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-Special-function {
+	&:before {
+	  content: $icomoon-Special-function;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-star {
+	&:before {
+	  content: $icomoon-star;
+	}
+  }
+  .icomoon-Top-row-keys {
+	&:before {
+	  content: $icomoon-Top-row-keys;
+	  color: #418afd;
+	}
+  }
+  .icomoon-translation {
+	&:before {
+	  content: $icomoon-translation;
+	}
+  }
+  .icomoon-voicerecognition {
+	&:before {
+	  content: $icomoon-voicerecognition;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-voice-to-text {
+	&:before {
+	  content: $icomoon-voice-to-text;
+	}
+  }
+  .icomoon-voip {
+	&:before {
+	  content: $icomoon-voip;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-VOIP-Hotkeys {
+	&:before {
+	  content: $icomoon-VOIP-Hotkeys;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-wifiNetworks {
+	&:before {
+	  content: $icomoon-wifiNetworks;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-zero-touch-lock {
+	&:before {
+	  content: $icomoon-zero-touch-lock;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-zero-touch-login {
+	&:before {
+	  content: $icomoon-zero-touch-login;
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-zero-touch-playback {
+	&:before {
+	  content: $icomoon-zero-touch-playback;
+	  color: #4a81fd;
+	}
+  }
