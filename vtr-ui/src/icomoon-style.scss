@@ -557,14 +557,7 @@
 	&:before {
 	  content: $icomoon-music;
 	}
-}
-.icomoon-superResolution {
-	&:before {
-		content: $icomoon-superResolution;
-		color: #4a81fd;
-	}
-}
-
+  }
   .icomoon-NoBatteryError {
 	&:before {
 	  content: $icomoon-NoBatteryError;
@@ -673,3 +666,9 @@
 	  color: #4a81fd;
 	}
   }
+  .icomoon-superResolution {
+	&:before {
+		content: $icomoon-superResolution;
+		color: #4a81fd;
+	}
+}
