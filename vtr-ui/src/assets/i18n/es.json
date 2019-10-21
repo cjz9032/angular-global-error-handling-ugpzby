@@ -2242,7 +2242,7 @@
         "settingsDescription": "En la página de configuración de preferencias, puede elegir entre activar/desactivar la notificación de mensajes basándose en las categorías de mensaje de Vantage, tenga en cuenta que, incluso si todas las categorías de mensajes están inhabilitadas, puede recibir ocasionalmente un mensaje crítico del sistema de Vantage cuando sea necesario.",
         "messagesInLenovoVantage": "Mensajes en Lenovo Vantage",
         "appFeatures": "Características de aplicación",
-        "appFeaturesDescription": "Mensajes pertinentes a la System Update, artículos y otras características destacadas.",
+        "appFeaturesDescription": "Mensajes pertinentes a la Actualización de sistema, artículos y otras características destacadas.",
         "marketing": "Marketing",
         "marketingDescription": "Mensajes de promoción, incluidas las ofertas especiales de Lenovo.",
         "actionTriggered": "Acción activada",

@@ -2242,7 +2242,7 @@
         "settingsDescription": "Tercih ayarı sayfasında, ileti bildirimini Vantage'ın ileti kategorilerine göre açıp kapatabilirsiniz. Tüm ileti kategorileri devre dışı bırakılmış olsa bile Vantage uygulamasından gerektiğinde Sistem Kritik iletileri alabileceğinizi lütfen unutmayın.",
         "messagesInLenovoVantage": "Lenovo Vantage'da İletiler",
         "appFeatures": "Uygulama özellikleri",
-        "appFeaturesDescription": "System Update, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
+        "appFeaturesDescription": "Sistem Güncellemesi, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
         "marketing": "Pazarlama",
         "marketingDescription": "Lenovo özel teklifleri de dahil olmak üzere promosyon iletileri.",
         "actionTriggered": "Tetiklenen Eylem",

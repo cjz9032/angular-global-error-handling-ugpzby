@@ -2242,7 +2242,7 @@
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",
         "appFeatures": "Az alkalmazás funkciói",
-        "appFeaturesDescription": "A System Update szolgáltatással kapcsolatos üzenetek, cikkek és további fontos funkciók.",
+        "appFeaturesDescription": "A Rendszerfrissítéssel kapcsolatos üzenetek, cikkek és további fontos tudnivalók.",
         "marketing": "Marketing",
         "marketingDescription": "Promóciós üzenetek, többek között a Lenovo különleges ajánlatai.",
         "actionTriggered": "Aktivált művelet",

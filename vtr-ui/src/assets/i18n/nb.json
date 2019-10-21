@@ -2242,7 +2242,7 @@
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",
         "appFeatures": "Appfunksjoner",
-        "appFeaturesDescription": "Meldinger relatert til System Update, artikler og andre viktige funksjoner.",
+        "appFeaturesDescription": "Meldinger relatert til Systemoppdatering, artikler og andre viktige funksjoner.",
         "marketing": "Markedsføring",
         "marketingDescription": "Markedsføringsrelaterte meldinger, inkludert spesialtilbud fra Lenovo.",
         "actionTriggered": "Utløst av handlinger",

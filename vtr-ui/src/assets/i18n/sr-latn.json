@@ -2242,7 +2242,7 @@
         "settingsDescription": "Na stranici „Postavke željenih opcija“, možete da odaberete da uključite/isključite obaveštenja porukama na osnovu kategorija Vantage poruka. Imajte u vidu da, čak i ako su sve kategorije poruka onemogućene, možete i dalje povremeno dobijati sistemske kritične poruke od aplikacije Vantage kada je to neophodno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
         "appFeatures": "Funkcije aplikacije",
-        "appFeaturesDescription": "Poruke koje se odnose na aplikaciju System Update, članke i druge značajne funkcije.",
+        "appFeaturesDescription": "Poruke koje se odnose na Ažuriranje sistema, članke i druge značajne funkcije.",
         "marketing": "Marketing",
         "marketingDescription": "Promotivne poruke uključujući Lenovo posebne ponude.",
         "actionTriggered": "Pokrenuta radnja",

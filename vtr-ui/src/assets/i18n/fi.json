@@ -2242,7 +2242,7 @@
         "settingsDescription": "Oletusasetusten määrityssivulla voit ottaa käyttöön tai poistaa käytöstä viesti-ilmoitukset Vantagen viestiluokkien perusteella. Huomaa, että vaikka kaikki viestiluokat on poistettu käytöstä, voit silloin tällöin edelleen saada järjestelmälle tärkeitä viestejä Vantagelta, mikäli tarpeen.",
         "messagesInLenovoVantage": "Lenovo Vantage -sovelluksen viestit",
         "appFeatures": "Sovelluksen ominaisuudet",
-        "appFeaturesDescription": "System Update, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
+        "appFeaturesDescription": "Järjestelmäpäivityksiä, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
         "marketing": "Markkinointi",
         "marketingDescription": "Kampanjaviestit, mukaan lukien Lenovon erikoistarjoukset.",
         "actionTriggered": "Toiminto käynnistetty",

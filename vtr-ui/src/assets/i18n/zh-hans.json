@@ -2242,7 +2242,7 @@
         "settingsDescription": "在“首选项设置”页面，您可以根据 Vantage 的消息类别来选择开启/关闭消息通知，请注意，即使禁用所有消息类别，您仍可能偶尔收到 Vantage 在必要时发出的系统重要消息。",
         "messagesInLenovoVantage": "Lenovo Vantage 中的消息",
         "appFeatures": "应用程序功能",
-        "appFeaturesDescription": "有关 System Update、文章和其他重要功能的消息。",
+        "appFeaturesDescription": "有关系统更新、文章和其他重要功能的消息。",
         "marketing": "市场营销",
         "marketingDescription": "包括 Lenovo 特别优惠在内的促销消息。",
         "actionTriggered": "触发的操作",

@@ -2242,7 +2242,7 @@
         "settingsDescription": "På siden med præferenceindstillinger kan du vælge at aktivere/deaktivere meddelelser om beskeder baseret på kategorierne for Vantages besked. Bemærk, at selvom alle beskedkategorierne er deaktiverede, kan du stadig få vist systemkritiske beskeder fra Vantage, når det er nødvendigt.",
         "messagesInLenovoVantage": "Meddelelser i Lenovo Vantage",
         "appFeatures": "Appfunktioner",
-        "appFeaturesDescription": "Meddelelser om System Update, artikler og andre vigtige funktioner.",
+        "appFeaturesDescription": "Meddelelser om systemopdatering, artikler og andre vigtige funktioner.",
         "marketing": "Markedsføring",
         "marketingDescription": "Reklamebeskeder, herunder Lenovos særtilbud.",
         "actionTriggered": "Udløst handling",
